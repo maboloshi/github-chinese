@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         GitHub 汉化插件
-// @namespace    http://github.com/
+// @description  汉化 GitHub 界面的部分菜单及内容。
 // @version      0.1
-// @description  GitHub 汉化插件
 // @author       楼教主
+// @license      MIT
+// @namespace    https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @grant        none
 // @require      http://www.52cik.com/github-hans/locals.js
+// @icon         https://assets-cdn.github.com/pinned-octocat.svg
+// @run-at       document-end
+// @grant        none
 // ==/UserScript==
-/* jshint -W097 */
 
 (function () {
 	'use strict';
