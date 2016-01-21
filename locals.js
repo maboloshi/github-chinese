@@ -5,7 +5,7 @@ __GitHub_I18N['zh'] = {
 	// 通用
 	"Search GitHub": "GitHub 一下！",
 	"Pull requests": "合并请求",
-	"Issues": "问题",
+	"Issues": " 问题",
 	"Gist": "代码片段",
 
 	"You have no unread notifications": "您没有未读通知",
@@ -54,9 +54,23 @@ __GitHub_I18N['zh'] = {
 
 
 	// 仓库页
+	"Code": " 代码",
+	"Pulse": " 统计",
+	"Graphs": " 图表",
 	"Watch": " 关注",
 	"Star": " 点赞",
 	"Fork": " 收藏",
 	"Pull Request": "合并请求",
 
+	"commits": "次提交",
+	"branches": "个分支",
+	"releases": "次发布",
+	"contributor": "个贡献者",
+	"Copy to clipboard": "复制到剪切板",
+
+	"New pull request": "发起合并请求",
+	"New file": "新建文件",
+	"Find file": "查找文件",
+	"Download ZIP": "下载 ZIP",
+	
 };
