@@ -49,6 +49,7 @@ __GitHub_I18N['zh'] = {
 	
 	// 个人首页
 	"Follow": " 关注",
+	"Unfollow": " 取消关注",
 	"Change your avatar": "修改头像",
 	"Followers": "粉丝",
 	"Starred": "赞了",
