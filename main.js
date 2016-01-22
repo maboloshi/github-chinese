@@ -43,9 +43,9 @@
 					}
 				} else if (attr = el.getAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
 					el.setAttribute('aria-label', translate(attr));
-				} else {
-					walk(el); // 递归遍历
 				}
+				
+				walk(el); // 递归遍历节点
 			} else if (el.nodeType === 3) { // 文本节点处理
 				el.data = translate(el.data);
 			}
@@ -53,6 +53,9 @@
 	}
 
 	function translate(key) {
+		// todo 添加 字符串部分替换 如 "2 days"
 		return __GitHub_I18N['zh'][key.trim()] || key;
 	}
 })();
+
+
