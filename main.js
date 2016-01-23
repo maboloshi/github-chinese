@@ -34,8 +34,6 @@
         for (; i < len; i++) {
             el = nodes[i];
 
-            /(files|highlight\s+tab-size)\s+js-(navigation|file-line)-container/.test(el.className) && console.log(el);
-
             if (el.nodeType === 1) {
                 if (el.tagName === "INPUT") { // 输入框 按钮 处理
                     if (el.type === "button" || el.type === "submit") {
