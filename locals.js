@@ -3,7 +3,7 @@ var __GitHub_I18N = {};
 
 __GitHub_I18N['zh'] = {
     // 通用
-    "Search GitHub": "GitHub 一下！",
+    "Search GitHub": "GitHub 一下，你就知道",
     "Pull requests": "合并请求",
     "Issues": " 问题 ",
     "Gist": "代码片段",
@@ -81,6 +81,8 @@ __GitHub_I18N['zh'] = {
 
     "Pull Requests": " 合并请求",
     "Issues reported": " 问题报告",
+
+    "pushed to": " 提交了 ",
 
 
     // 仓库页
