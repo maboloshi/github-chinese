@@ -46,7 +46,7 @@
                 }
 
                 // todo 的跳过 readme, 文件列表, 代码显示
-                if (el.id !== 'readme' && !/(files|highlight\s+tab-size)\s+js-(navigation|file-line)-container/.test(el.className) ) {
+                if (el.id !== 'readme' && !/(files|highlight\s+tab-size)\s+js-(navigation|file-line)-container|breadcrumb/.test(el.className)) {
                     walk(el);
                 }
             } else if (el.nodeType === 3) { // 文本节点处理
