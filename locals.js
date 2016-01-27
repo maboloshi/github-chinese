@@ -96,6 +96,15 @@ __GitHub_I18N['zh'] = {
     "Unstar": " 取消点赞",
     "Pull Request": " 合并请求 ",
 
+    "Notifications": "通知类型",
+    "Not watching": "取消关注",
+    "Watching": "关注",
+    "Ignoring": "忽略",
+
+    "Be notified when participating or @mentioned.": "仅参与交谈或@我时通知我.",
+    "Be notified of all conversations.": "所有交谈都通知我.",
+    "Never be notified.": "忽略任何通知.",
+
     "commits": "次提交",
     "branch": "个分支",
     "branches": "个分支",
@@ -115,6 +124,7 @@ __GitHub_I18N['zh'] = {
     "New file": "新建文件",
     "Find file": "查找文件",
     "Download ZIP": "下载 ZIP",
+    "History": "历史记录",
 
     "Edit": "修改",
     "Save": "保存",
