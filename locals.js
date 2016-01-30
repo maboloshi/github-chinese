@@ -83,6 +83,7 @@ __GitHub_I18N['zh'] = {
     "Issues reported": " 问题报告",
 
     "pushed to": " 提交了 ",
+    "opened pull request": " 提交了合并请求 ",
 
 
     // 仓库页
