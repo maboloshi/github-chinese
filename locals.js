@@ -134,5 +134,6 @@ __GitHub_I18N['zh'] = {
     "Website": "网址",
     "Short description of this repository": "简短的描述下这个仓库",
     "Website for this repository (optional)": "这个仓库的演示网址 (可不填)",
+    "Create a new file here": "创建一个新的文件",
     
 };
