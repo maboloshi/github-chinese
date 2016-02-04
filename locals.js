@@ -115,6 +115,13 @@ __GitHub_I18N['zh'] = {
     "contributors": "个贡献者",
     "Copy to clipboard": "复制到剪切板",
 
+    "Choose a clone URL": "",
+    "HTTPS\n                            (recommended)": "HTTPS (推荐)",
+    "Clone with Git or checkout with SVN using the repository's web address.": "克隆 Git 或 检出 SVN 使用仓库的 web 地址.",
+    "SSH": "SSH",
+    "Clone with an SSH key and passphrase from your GitHub settings.": "克隆的 SSH 密钥通过 GitHub 设置。",
+    "Learn more about clone URLs": "更多的克隆方法",
+
     "Branch:": "分支:",
     "Switch branches/tags": "选择分支或标签",
     "Branches": " 分支 ",
