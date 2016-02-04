@@ -3,7 +3,7 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      0.3.0
+// @version      1.0.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
@@ -17,6 +17,12 @@
 (function () {
     'use strict';
 
+    // 要翻译的页面正则
+    var rePage = /\b(vis-public|page-(dashboard|profile|account)|homepage|signup|session-authentication)\b/;
+    var page = document.body.className.match(rePage);
+
+    page = page ? page[1] : false;
+    
     walk(document.body); // 立即翻译
 
     $(document).ajaxComplete(function() {
@@ -55,8 +61,33 @@
         }
     }
 
-    function translate(key) {
-        // todo 添加 字符串部分替换 如 "2 days"
-        return __GitHub_I18N['zh'][key.trim()] || key;
+    function translate(key) { // 翻译
+        var str;
+
+        key = key.trim();
+        str = transPage('pubilc', key); // 公共翻译
+
+        if (str !== key) { return str; } // 已公共翻译
+        if (page === false) { return key; } // 未知页面
+
+        return transPage(page, key); // 翻译已知页面
     }
+
+    function transPage(page, key) {
+        var str, res, len, i;
+        // 静态翻译
+        str = I18N['zh'][page]['static'][key];
+        if (str) { return str; }
+
+        // 正则翻译
+        if (res = I18N['zh'][page]['regexp']) {
+            for (i = 0, len = res.length; i < len; i++) {
+                str = key.replace(res[i][0], res[i][1]);
+                if (str !== key) { return str; }
+            }
+        }
+
+        return key;
+    }
+
 })();
