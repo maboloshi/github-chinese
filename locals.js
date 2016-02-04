@@ -108,7 +108,6 @@ I18N.zh = {
             "Current streak": "当前连续贡献天数",
 
             "commits": " 次提交 ",
-
             "Pull Requests": " 合并请求",
             "Issues reported": " 问题报告",
 

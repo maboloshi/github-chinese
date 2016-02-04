@@ -14,30 +14,27 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
+(function (document) {
     'use strict';
+
+    var body = document.body;
 
     // 要翻译的页面正则
     var rePage = /\b(vis-public|page-(dashboard|profile|account)|homepage|signup|session-authentication)\b/;
-    var page = document.body.className.match(rePage);
-
+    var page = body.className.match(rePage);
     page = page ? page[1] : false;
     
-    walk(document.body); // 立即翻译
+    walk(body); // 立即翻译
 
     $(document).ajaxComplete(function() {
-        walk(document.body); // ajax 请求后再次翻译
+        walk(body); // ajax 请求后再次翻译
     });
 
     function walk(node) {
-        var nodes = node.childNodes;
+        var nodes, i, len, el, attr; 
+        nodes = node.childNodes;
 
-        var i = 0;
-        var len = nodes.length;
-        var el = null; // 遍历元素用
-        var attr; // 元素属性
-
-        for (; i < len; i++) {
+        for (i = 0, len = nodes.length; i < len; i++) {
             el = nodes[i];
 
             if (el.nodeType === 1) {
@@ -75,6 +72,7 @@
 
     function transPage(page, key) {
         var str, res, len, i;
+
         // 静态翻译
         str = I18N['zh'][page]['static'][key];
         if (str) { return str; }
@@ -90,4 +88,4 @@
         return key;
     }
 
-})();
+})(document);
