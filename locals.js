@@ -35,7 +35,7 @@ I18N.zh = {
 
                 var dt = {second:'秒', minute:'分钟', hour:'小时', day:'天', month: '月', year:'年'};
 
-                return ' - ' + d + dt[t] + '之前';
+                return d + dt[t] + '之前';
             }],
         ],
     },
@@ -50,6 +50,10 @@ I18N.zh = {
             "Private": "私有",
             "Sources": "源码",
             "Forks": "收藏",
+
+            "View": "查看 ",
+            "new broadcast": " 条新公告",
+            "new broadcasts": " 条新公告",
             
             // 动态 状态词
             "starred": " 赞了 ",
@@ -57,11 +61,13 @@ I18N.zh = {
             "created repository": " 创建了仓库 ",
             "opened issue": " 新建问题 ",
             "close issue": " 关闭问题 ",
+            "added": " 添加了 ",
+            "to": " 到 ",
             
             "More": "更多",
         },
         "regexp": [ // 正则翻译
-        	["Show \d+ more repositories…", "显示 $1 更多的仓库…"],
+            [/Show \d+ more repositories…/, "显示 $1 更多的仓库…"],
         ],
     },
 
