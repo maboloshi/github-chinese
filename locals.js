@@ -67,7 +67,7 @@ I18N.zh = {
             "More": "更多",
         },
         "regexp": [ // 正则翻译
-            [/Show \d+ more repositories…/, "显示 $1 更多的仓库…"],
+            [/Show (\d+) more repositories…/, "显示 $1 个更多的仓库…"],
         ],
     },
 
@@ -131,8 +131,20 @@ I18N.zh = {
             "Forks": "收藏",
             "Mirrors": "镜像",
             "New": " 新建",
+
+            "Period:": "最近:",
+            "Filter activity": "选择时间",
+            "1 day": "一天",
+            "3 days": "三天",
+            "1 week": "一周",
+            "1 month": "一个月",
+
+            "User actions": "用户操作",
+            "Block user": "阻止该用户",
+            "Report abuse": "举报该用户",
         },
         "regexp": [ // 正则翻译
+            [/Pushed (\d+) commits? to/, "提交了 $1 次到"],
         ],
     },
 
