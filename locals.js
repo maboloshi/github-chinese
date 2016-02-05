@@ -61,6 +61,7 @@ I18N.zh = {
             "More": "更多",
         },
         "regexp": [ // 正则翻译
+        	["Show \d+ more repositories…", "显示 $1 更多的仓库…"],
         ],
     },
 
