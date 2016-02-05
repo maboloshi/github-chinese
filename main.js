@@ -3,38 +3,41 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.0.0
+// @version      1.0.1
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js
+// @require      http://www.52cik.com/github-hans/locals.js?v1.0.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
-(function (document) {
+(function () {
     'use strict';
-
-    var body = document.body;
-
+    
     // 要翻译的页面正则
     var rePage = /\b(vis-public|page-(dashboard|profile|account)|homepage|signup|session-authentication)\b/;
-    var page = body.className.match(rePage);
+    var page = document.body.className.match(rePage);
+
     page = page ? page[1] : false;
     
-    walk(body); // 立即翻译
+    walk(document.body); // 立即翻译
 
-    $(document).ajaxComplete(function() {
-        walk(body); // ajax 请求后再次翻译
+    $(document).ajaxComplete(function () {
+        walk(document.body); // ajax 请求后再次翻译
     });
 
     function walk(node) {
-        var nodes, i, len, el, attr; 
-        nodes = node.childNodes;
+        var nodes = node.childNodes;
 
-        for (i = 0, len = nodes.length; i < len; i++) {
+        var i = 0;
+        var len = nodes.length;
+        var el = null; // 遍历元素用
+        var attr; // 元素属性
+
+        for (; i < len; i++) {
             el = nodes[i];
 
             if (el.nodeType === 1) {
@@ -58,16 +61,19 @@
         }
     }
 
-    function translate(key) { // 翻译
+    function translate(data) { // 翻译
         var str;
+        var _key = data.trim();
+        
+        if (_key === '') { return data; } // 空字符返回原始数据
+        
+        str = transPage('pubilc', _key); // 公共翻译
+        if (str !== _key) { return str; } // 已公共翻译
+        
+        if (page === false) { return data; } // 未知页面不翻译
 
-        key = key.trim();
-        str = transPage('pubilc', key); // 公共翻译
-
-        if (str !== key) { return str; } // 已公共翻译
-        if (page === false) { return key; } // 未知页面
-
-        return transPage(page, key); // 翻译已知页面
+        str = transPage(page, _key); // 翻译已知页面
+        return str === _key ? data : str; // 未翻译返回原始数据
     }
 
     function transPage(page, key) {
@@ -85,7 +91,7 @@
             }
         }
 
-        return key;
+        return key; // 没有翻译条目
     }
 
-})(document);
+})();
