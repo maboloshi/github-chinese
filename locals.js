@@ -7,7 +7,8 @@ I18N.zh = {
             "This repository": "当前仓库",
             "Search": "搜索",
 
-            "Pull requests": " 合并请求 ",
+            "Pull Request": " 合并请求 ",
+            "Pull Requests": " 合并请求 ",
             "Issues": " 问题 ",
             "Gist": "代码片段",
             
@@ -115,7 +116,6 @@ I18N.zh = {
             "Current streak": "当前连续贡献天数",
 
             "commits": " 次提交 ",
-            "Pull Requests": " 合并请求",
             "Issues reported": " 问题报告",
 
             "pushed to": " 提交了 ",
