@@ -8,6 +8,13 @@
 **本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
 
 
+## 预览
+
+![gif][gif]
+
+
 [1]: http://tampermonkey.net/ "Tampermonkey"
 [2]: 
 https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 汉化插件"
+
+[gif]: http://dn-52cik.qbox.me/pics/github-hans.gif
