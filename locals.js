@@ -27,6 +27,9 @@ I18N.zh = {
             "Help": "帮助",
             "Settings": "设置",
             "Sign out": "退出",
+
+            "Previous": "上一页",
+            "Next": "下一页",
         },
         "regexp": [ // 正则翻译
             [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
@@ -85,7 +88,7 @@ I18N.zh = {
             "Public activity": " 动态",
             "Edit profile": " 修改设置",
             "Popular repositories": "流行的仓库",
-            "Repositories contributed to": "您贡献过的仓库",
+            "Repositories contributed to": "贡献过的仓库",
             "Contribution activity": "近期贡献信息",
 
             "Jan": "1月",
@@ -151,6 +154,95 @@ I18N.zh = {
 
     "page-account": { // 个人设置
         "static": { // 静态翻译
+            // 菜单
+            "Personal settings": "个人设置",
+            "Profile": "基本信息",
+            "Account settings": "账户设置",
+            "Emails": "邮箱设置",
+            "Notification center": "通知设置",
+            "Billing": "财务信息",
+            "SSH keys": "SSH keys",
+            "Security": "安全信息",
+            "Applications": "应用设置",
+            "Personal access tokens": "访问令牌",
+            "Repositories": "仓库管理",
+            "Organizations": "组织管理",
+
+            // Profile 菜单
+            "Public profile": "基本资料",
+            "Profile picture": "我的头像",
+            "Upload new picture": "上传新图片",
+            "You can also drag and drop a picture from your computer.": "您也可以直接拖拽照片镜像上传.",
+            "Name": "昵称",
+            "Public email": "公共邮箱",
+            "Don’t show my email address": "不显示我的邮箱",
+            "You can add or remove verified email addresses in your": "您可以添加或删除邮件地址在您的 ",
+            "personal email settings": "邮箱设置",
+            "URL": "网站",
+            "Company": "公司",
+            "Location": "地址",
+            "Update profile": "更新质料",
+
+            "GitHub Developer Program": "GitHub 开发者计划",
+            "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗?",
+            "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
+            "or read more about it at our": "或了解更多信息在我们的",
+            "Developer site": "开发者站点",
+
+            "Jobs profile": "就业状态",
+            "Available for hire": "求HR带走",
+            "Save jobs profile": "保存状态",
+
+            // Account settings 菜单
+            "Change password": "修改密码",
+            "Old password": "旧的密码",
+            "New password": "新的密码",
+            "Confirm new password": "再次输入新的密码",
+            "Update password": "更新",
+            "I forgot my password": "我忘记我的密码了",
+            "Looking for two-factor authentication? You can find it in": "使用双重认证？你可以去",
+            "Security": "安全信息",
+            "Change username": "修改用户名",
+            "Changing your username can have": "修改您的用户名会导致",
+            "unintended side effects": "意想不到的副作用",
+            "Delete account": "删除账号",
+            "Once you delete your account, there is no going back. Please be certain.": "一旦您删除了帐户，就没办法恢复，请三思而行。",
+            "Delete your account": "确认删除",
+
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "page-new-repo": { // 新建仓库
+        "static": { // 静态翻译
+            "Create a new repository": "创建一个新的仓库",
+            "A repository contains all the files for your project, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
+            "Owner": "创建者",
+            "Repository name": "仓库名",
+            "Great repository names are short and memorable. Need inspiration? How about": "一个好的仓库名应该是简单容易被记住的，需要来点灵感吗？这个名字怎么样 ",
+            "Description": "描述 ",
+            "(optional)": "(可选)",
+            "Public": "公共 (免费)",
+            "Anyone can see this repository. You choose who can commit.": "任何人都可以看到这个仓库，您可以选择谁能提交。",
+            "Private": "私有 (收费)",
+            "You choose who can see and commit to this repository.": "你可以选择谁可以看和提交到该仓库。",
+            "Initialize this repository with a README": "使用 README.md 初始化仓库",
+            "This will let you immediately clone the repository to your computer. Skip this step if you’re importing an existing repository.": "这将让您可以立刻克隆该仓库到你的电脑。如果您要提交已有的仓库，请忽略这个选项。",
+            "Add .gitignore:": "添加 .gitignore 文件",
+            "Filter ignores…": "筛选忽略文件…",
+            "Add a license:": "添加发布许可",
+            "Filter licenses…": "筛选许可…",
+            "None": "无",
+            "Need help picking a license? We’ve built a site just for you.": "需要帮你挑选一个许可吗？我们为您供了参考页面。",
+            "Create repository": "创建仓库",
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "page-create-org": { // 新建组织
+        "static": { // 静态翻译
         },
         "regexp": [ // 正则翻译
         ],
@@ -167,6 +259,16 @@ I18N.zh = {
             "Code": " 代码",
             "Pulse": " 统计",
             "Graphs": " 图表",
+
+            // 仓库描述编辑
+            "Edit": "编辑",
+            "Description": "描述",
+            "Short description of this repository": "简短的描述下你的仓库",
+            "Website": "网址",
+            "Website for this repository (optional)": "这个仓库的网址 (可选)",
+            "Save": "保存",
+            "or": "或",
+            "Cancel": "取消",
 
             // 关注通知设置
             "Notifications": "通知类型",
@@ -204,6 +306,17 @@ I18N.zh = {
             "SSH": "SSH",
             "Clone with an SSH key and passphrase from your GitHub settings.": "克隆的 SSH 密钥通过 GitHub 设置。",
             "Learn more about clone URLs": "更多的克隆方法",
+
+            // 关注者页面
+            "Watchers": "关注者",
+            "Follow": " 关注",
+            "Unfollow": " 取消关注",
+
+            // 点赞者页面
+            "Stargazers": "点赞的人",
+            "All": "全部",
+            "You know": "你关注的",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
