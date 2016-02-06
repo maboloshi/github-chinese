@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.0.1
+// @version      1.0.2
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.0.0
+// @require      http://www.52cik.com/github-hans/locals.js?v1.0.2
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -18,7 +18,7 @@
     'use strict';
     
     // 要翻译的页面正则
-    var rePage = /\b(vis-public|page-(dashboard|profile|account)|homepage|signup|session-authentication)\b/;
+    var rePage = /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/;
     var page = document.body.className.match(rePage);
 
     page = page ? page[1] : false;
