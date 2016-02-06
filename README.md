@@ -22,8 +22,8 @@
 https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 汉化插件"
 
 
-[png-1]: https://52cik.github.io/github-hans/preview/1.png
-[png-2]: https://52cik.github.io/github-hans/preview/2.png
-[png-3]: https://52cik.github.io/github-hans/preview/3.png
-[png-4]: https://52cik.github.io/github-hans/preview/4.png
-[github-hans]: https://52cik.github.io/github-hans/preview/github-hans.gif "github-hans"
+[png-1]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/1.png
+[png-2]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/2.png
+[png-3]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/3.png
+[png-4]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/4.png
+[github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/github-hans.gif "github-hans"
