@@ -10,11 +10,20 @@
 
 ## 预览
 
-![github-hans][github-hans]
+  ![预览][png1] 
+  ![预览][png2] 
+  ![预览][png3] 
+  ![预览][png4] 
+  ![github-hans][github-hans] 
 
 
 [1]: http://tampermonkey.net/ "Tampermonkey"
 [2]: 
 https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 汉化插件"
 
-[github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/github-hans.gif "github-hans"
+
+[png-1]: http://52cik.github.io/github-hans/preview/1.png
+[png-2]: http://52cik.github.io/github-hans/preview/2.png
+[png-3]: http://52cik.github.io/github-hans/preview/3.png
+[png-4]: http://52cik.github.io/github-hans/preview/4.png
+[github-hans]: http://52cik.github.io/github-hans/preview/github-hans.gif "github-hans"
