@@ -317,10 +317,47 @@ I18N.zh = {
             "All": "全部",
             "You know": "你关注的",
 
+            // issues 页面
+            "Filters": "筛选",
+            "Open issues and pull requests": "开放的问题或请求",
+            "Your issues": "您提出的问题",
+            "Your pull requests": "您的请求合并",
+            "Everything assigned to you": "任何关于您的",
+            "Everything mentioning you": "提及你的",
+            "View advanced search syntax": "查看高级搜索语法",
+
+            "Labels": " 标签 ",
+            "Milestones": " 里程碑 ",
+            "Author": " 作者 ",
+            "Assignee": " 代理人 ",
+            "Sort": " 排序 ",
+
+            "Filter by author": "筛选用户",
+            "Filter users": "筛选用户名",
+            "Filter by label": "筛选标签",
+            "Filter labels": "筛选标签",
+            "Unlabeled": "无标签",
+            "Filter by milestone": "筛选里程碑",
+            "Filter milestones": "筛选里程碑",
+            "Issues with no milestone": "无里程碑",
+            "Filter by who’s assigned": "筛选代理人",
+            "Filter users": "筛选代理人",
+            "Assigned to nobody": "无代理人",
+            "Sort by": "排序",
+            "Newest": "最新的",
+            "Oldest": "最老的",
+            "Most commented": "最多评论",
+            "Least commented": "最少评论",
+            "Recently updated": "最近更新",
+            "Least recently updated": "最早更新",
+
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
+            [/(\d+) Open/, "$1 个开放的"],
+            [/(\d+) Closed/, "$1 个关闭的"],
         ],
     },
 
