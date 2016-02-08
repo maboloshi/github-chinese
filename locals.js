@@ -350,7 +350,15 @@ I18N.zh = {
             "Least commented": "最少评论",
             "Recently updated": "最近更新",
             "Least recently updated": "最早更新",
+            "View all issues in this milestone": "查看这个里程碑的所有问题",
 
+            // New collaborator 页面
+            "New collaborator": "添加合作者",
+            "Collaborators": "合作者",
+            "Push access to the repository": "当前仓库的推送权限",
+            "This repository doesn’t have any collaborators yet. Use the form below to add a collaborator.": "当前仓库没有合作者，您可以在下面输入框添加合作者。",
+            "Search by username, full name or email address": "搜索用户名, 全名, 邮箱地址：",
+            "Add collaborator": "添加合作者",
 
         },
         "regexp": [ // 正则翻译
@@ -358,6 +366,7 @@ I18N.zh = {
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
             [/(\d+) Open/, "$1 个开放的"],
             [/(\d+) Closed/, "$1 个关闭的"],
+            [/View all issues opened by (.+)/, "查看所有 $1 的问题"],
         ],
     },
 
