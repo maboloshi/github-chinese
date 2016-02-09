@@ -30,6 +30,13 @@ I18N.zh = {
 
             "Previous": "上一页",
             "Next": "下一页",
+
+            "Period:": "最近:",
+            "Filter activity": "选择时间",
+            "1 day": "一天",
+            "3 days": "三天",
+            "1 week": "一周",
+            "1 month": "一个月",
         },
         "regexp": [ // 正则翻译
             [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
@@ -135,13 +142,6 @@ I18N.zh = {
             "Forks": "收藏",
             "Mirrors": "镜像",
             "New": " 新建",
-
-            "Period:": "最近:",
-            "Filter activity": "选择时间",
-            "1 day": "一天",
-            "3 days": "三天",
-            "1 week": "一周",
-            "1 month": "一个月",
 
             "User actions": "用户操作",
             "Block user": "阻止该用户",
