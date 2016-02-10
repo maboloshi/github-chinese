@@ -188,7 +188,7 @@ I18N.zh = {
             "Profile updated successfully": "资料更新成功。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-            "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗?",
+            "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗？",
             "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
             ",\n        or read more about it at our": " 或了解更多信息在我们的 ",
             "Developer site": "开发者站点",
