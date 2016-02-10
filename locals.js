@@ -185,6 +185,7 @@ I18N.zh = {
             "Company": "公司",
             "Location": "地址",
             "Update profile": "更新资料",
+            "Profile updated successfully": "资料更新成功。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
             "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗?",
