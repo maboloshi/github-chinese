@@ -3,7 +3,7 @@ var I18N = {};
 I18N.zh = {
     "pubilc": { // 公共区域翻译
         "static": { // 静态翻译
-            "Search GitHub": "GitHub 一下，你就知道",
+            "Search GitHub": "GitHub 一下，您就知道",
             "This repository": "当前仓库",
             "Search": "搜索",
 
@@ -37,6 +37,9 @@ I18N.zh = {
             "3 days": "三天",
             "1 week": "一周",
             "1 month": "一个月",
+
+            "Confirm password to continue": "确认密码后才能继续操作",
+            "Confirm password": "继续",
         },
         "regexp": [ // 正则翻译
             [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
@@ -117,7 +120,7 @@ I18N.zh = {
 
             "Includes contributions from private repositories you can access.": "您可以访问包括私人仓库。",
             "Summary of pull requests, issues opened, and commits.": "包括 合并请求, 提问, 提交.",
-            "Learn how we count contributions": " 你想知道如何计算贡献的吗",
+            "Learn how we count contributions": " 您想知道如何计算贡献的吗",
             "Less": "少",
             "More": "多",
             "Contributions in the last year": "过去一年的贡献",
@@ -157,7 +160,7 @@ I18N.zh = {
             // 菜单
             "Personal settings": "个人设置",
             "Profile": "基本信息",
-            "Account settings": "账户设置",
+            "Account settings": "帐户设置",
             "Emails": "邮箱设置",
             "Notification center": "通知设置",
             "Billing": "财务信息",
@@ -200,17 +203,44 @@ I18N.zh = {
             "Confirm new password": "再次输入新的密码",
             "Update password": "更新",
             "I forgot my password": "我忘记我的密码了",
-            "Looking for two-factor authentication? You can find it in": "使用双重认证？你可以去",
+            "Looking for two-factor authentication? You can find it in": "使用双重认证？您可以去",
             "Security": "安全信息",
             "Change username": "修改用户名",
             "Changing your username can have": "修改您的用户名会导致",
             "unintended side effects": "意想不到的副作用",
-            "Delete account": "删除账号",
+            "Delete account": "删除帐户",
             "Once you delete your account, there is no going back. Please be certain.": "一旦您删除了帐户，就没办法恢复，请三思而行。",
             "Delete your account": "确认删除",
 
+            // Emails 菜单
+            "Your": "您的",
+            "primary GitHub email address": " GitHub Email 主帐户 ",
+            "will be used for account-related notifications\n        (e.g. account changes and billing receipts) as well as any web-based GitHub operations\n        (e.g. edits and merges).": "将被用于接收相关通知 (例如：账单信息)，以及任何基于 web 的 GitHub 操作 (例如：编辑或合并操作)。",
+            "Primary": "主帐户",
+            "Private": "私有",
+            "Public": "公开",
+            "This email will be used as the 'from' address for web-based GitHub operations.": "该邮箱将被用作\"发件人\"地址。",
+            "Your primary email address is now public.": "主邮件地址现在是公开的。",
+            "Your primary email address is now private.": "主邮件地址现在是保密的。",
+            "Set as primary": "设为主帐户",
+            "Add email address": "添加 Email 地址",
+            "Add": "添加",
+            "Keep my email address private": "将我的邮件地址保密",
+            "We will use": "我们将使用 ",
+            "when performing web-based Git operations and\n              sending email on your behalf. If you want command line Git operations to use your private email you must": " 作为默认\"发件人\"地址以您的名义发送电子邮件。如果您想在命令行 Git 的操作中使用您的私人邮件地址，您必须在",
+            "set your email in Git": " Git 中设置您的电子邮件地址",
+            "Email preferences": "Email 偏好设置",
+            "Receive all emails, except those I unsubscribe from.": "接收所有邮件，除了那些我退订的信息。",
+            "We'll occasionally contact you with the latest news and happenings from the GitHub Universe.": "我们将会把 GitHub Universe 的最新消息和事件发送给您。",
+            "Learn more": "查看更多",
+            "Only receive account related emails, and those I subscribe to.": "只接收帐户相关的电子邮件，以及我的订阅的信息。",
+            "We'll only send you legal or administrative emails, and any emails you’ve specifically subscribed to.": "我们只向您发送法律或行政邮件以及您订阅信息。",
+            "Save email preferences": "保存偏好",
+            "Successfully updated your email preferences.": "Email 偏好设置修改成功。",
+            "Looking for activity notification controls? Check the": "想要了解更详细的通知设置，请请前往 ",
         },
         "regexp": [ // 正则翻译
+            [/This email will not be used as the 'from' address for web-based GitHub operations - we will instead use ([^@]+@users.noreply.github.com)./, "该邮箱不会被用作 \"发件人\" 地址，我们会改用 ($1) 作为默认 \"发件人\" 地址。"],
         ],
     },
 
@@ -226,15 +256,15 @@ I18N.zh = {
             "Public": "公共 (免费)",
             "Anyone can see this repository. You choose who can commit.": "任何人都可以看到这个仓库，您可以选择谁能提交。",
             "Private": "私有 (收费)",
-            "You choose who can see and commit to this repository.": "你可以选择谁可以看和提交到该仓库。",
+            "You choose who can see and commit to this repository.": "您可以选择谁可以看和提交到该仓库。",
             "Initialize this repository with a README": "使用 README.md 初始化仓库",
-            "This will let you immediately clone the repository to your computer. Skip this step if you’re importing an existing repository.": "这将让您可以立刻克隆该仓库到你的电脑。如果您要提交已有的仓库，请忽略这个选项。",
+            "This will let you immediately clone the repository to your computer. Skip this step if you’re importing an existing repository.": "这将让您可以立刻克隆该仓库到您的电脑。如果您要提交已有的仓库，请忽略这个选项。",
             "Add .gitignore:": "添加 .gitignore 文件",
             "Filter ignores…": "筛选忽略文件…",
             "Add a license:": "添加发布许可",
             "Filter licenses…": "筛选许可…",
             "None": "无",
-            "Need help picking a license? We’ve built a site just for you.": "需要帮你挑选一个许可吗？我们为您供了参考页面。",
+            "Need help picking a license? We’ve built a site just for you.": "需要帮您挑选一个许可吗？我们为您供了参考页面。",
             "Create repository": "创建仓库",
         },
         "regexp": [ // 正则翻译
@@ -263,7 +293,7 @@ I18N.zh = {
             // 仓库描述编辑
             "Edit": "编辑",
             "Description": "描述",
-            "Short description of this repository": "简短的描述下你的仓库",
+            "Short description of this repository": "简短的描述下您的仓库",
             "Website": "网址",
             "Website for this repository (optional)": "这个仓库的网址 (可选)",
             "Save": "保存",
@@ -315,7 +345,7 @@ I18N.zh = {
             // 点赞者页面
             "Stargazers": "点赞的人",
             "All": "全部",
-            "You know": "你关注的",
+            "You know": "您关注的",
 
             // issues 页面
             "Filters": "筛选",
@@ -323,7 +353,7 @@ I18N.zh = {
             "Your issues": "您提出的问题",
             "Your pull requests": "您的请求合并",
             "Everything assigned to you": "任何关于您的",
-            "Everything mentioning you": "提及你的",
+            "Everything mentioning you": "提及您的",
             "View advanced search syntax": "查看高级搜索语法",
 
             "Labels": " 标签 ",
@@ -379,13 +409,13 @@ I18N.zh = {
 
     "session-authentication": { // 登录页
         "static": { // 静态翻译
-            "Sign in to GitHub": "登录 GitHub 帐号",
+            "Sign in to GitHub": "登录 GitHub 帐户",
             "Username or email address": "用户名/邮箱",
             "Password": "密码",
             "Forgot password?": "忘记密码",
             "Sign in": "登录",
             "New to GitHub?": "第一次来 GitHub?",
-            "Create an account": " 那就注册个账号吧",
+            "Create an account": " 那就注册个帐户吧",
         }
     },
 
