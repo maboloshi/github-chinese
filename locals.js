@@ -219,7 +219,7 @@ I18N.zh = {
             "Primary": "主帐户",
             "Private": "私有",
             "Public": "公开",
-            "This email will be used as the 'from' address for web-based GitHub operations.": "该邮箱将被用作\"发件人\"地址。",
+            "This email will be used as the 'from' address for web-based GitHub operations.": "该邮箱将被用作 \"发件人\" 地址",
             "Your primary email address is now public.": "主邮件地址现在是公开的。",
             "Your primary email address is now private.": "主邮件地址现在是保密的。",
             "Set as primary": "设为主帐户",
@@ -241,6 +241,7 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             [/This email will not be used as the 'from' address for web-based GitHub operations - we will instead use ([^@]+@users.noreply.github.com)./, "该邮箱不会被用作 \"发件人\" 地址，我们会改用 ($1) 作为默认 \"发件人\" 地址。"],
+            [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的 Email 主帐户已经更改为 $1"],
         ],
     },
 
