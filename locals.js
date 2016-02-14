@@ -86,6 +86,7 @@ I18N.zh = {
 
     "page-profile": { // 个人首页
         "static": { // 静态翻译
+            "Joined on": "注册于 ",
             "Follow": " 关注",
             "Unfollow": " 取消关注",
             "Change your avatar": "修改头像",
