@@ -39,6 +39,8 @@ I18N.zh = {
             "1 month": "一个月",
 
             "Confirm password to continue": "确认密码后才能继续操作",
+            "Password": "密码",
+            "(Forgot password)": "(忘记密码)",
             "Confirm password": "继续",
         },
         "regexp": [ // 正则翻译
@@ -282,6 +284,22 @@ I18N.zh = {
             "Payment history": "支付记录",
             "Amounts shown in USD": "以美元显示",
             "You have not made any payments.": "没有支付记录",
+
+            // Security 菜单
+            "Two-factor authentication": "双重认证",
+            "Status:": "状态:",
+            "Off": "未开启",
+            "Set up two-factor authentication": "设置双重认证",
+            "provides another layer of security to your account.": "为您的帐户提供了另一层安全保障。",
+            "Sessions": "会话信息",
+            "This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.": "这是您登陆的设备会话列表，如果不是您本人操作，可以关闭该会话。",
+            "Your current session": "您当前的会话",
+            "Location:": "地址",
+            "Signed in:": "登陆于",
+            "Last accessed on": "最后访问时间 ",
+            "Revoke": "关闭",
+            "Security history": "操作记录",
+            "This is a security log of important events involving your account.": "这是您帐户的操作日志",
         },
         "regexp": [ // 正则翻译
             [/This email will not be used as the 'from' address for web-based GitHub operations - we will instead use ([^@]+@users.noreply.github.com)./, "该邮箱不会被用作 \"发件人\" 地址，我们会改用 ($1) 作为默认 \"发件人\" 地址。"],
