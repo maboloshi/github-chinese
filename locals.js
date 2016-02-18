@@ -491,6 +491,7 @@ I18N.zh = {
             "Search by username, full name or email address": "搜索用户名, 全名, 邮箱地址：",
             "Add collaborator": "添加合作者",
 
+            // Compare changes 页面
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
