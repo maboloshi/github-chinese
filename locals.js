@@ -438,6 +438,11 @@ I18N.zh = {
             "Clone with an SSH key and passphrase from your GitHub settings.": "克隆的 SSH 密钥通过 GitHub 设置。",
             "Learn more about clone URLs": "更多的克隆方法",
 
+            "File uploading is now available": "现在可以上传文件了",
+            "You can now drag and drop files into your repositories.": "您可以直接拖拽文件到该仓库界面进行上传。",
+            "Learn more": "查看详情",
+            "Dismiss": " 我知道了",
+
             // 关注者页面
             "Watchers": "关注者",
             "Follow": " 关注",
