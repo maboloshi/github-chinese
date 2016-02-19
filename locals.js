@@ -12,6 +12,7 @@ I18N.zh = {
             "Gist": "代码片段",
             
             "You have no unread notifications": "您没有未读通知",
+            "You have unread notifications": "您有未读通知",
             "Create new…": "新建…",
             "View profile and more": "查看更多信息",
 
