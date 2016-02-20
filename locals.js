@@ -424,8 +424,8 @@ I18N.zh = {
 
             "commit": "次提交",
             "commits": "次提交",
-            "branch": "个分支",
-            "branches": "个分支",
+            "branch": "分支",
+            "branches": "分支",
             "release": "次发布",
             "releases": "次发布",
             "contributor": "个贡献者",
@@ -435,6 +435,7 @@ I18N.zh = {
 
             "New pull request": "发起合并请求",
             "New file": "新建文件",
+            "Upload files": "上传文件",
             "Find file": "查找文件",
             "Download ZIP": "下载 ZIP",
             "History": "历史记录",
@@ -508,6 +509,29 @@ I18N.zh = {
             "This repository doesn’t have any collaborators yet. Use the form below to add a collaborator.": "当前仓库没有合作者，您可以在下面输入框添加合作者。",
             "Search by username, full name or email address": "搜索用户名, 全名, 邮箱地址：",
             "Add collaborator": "添加合作者",
+
+            // Upload files 页面
+            "Drag files here to add them to your repository": "拖拽文件添加到当前仓库",
+            "Drag additional files here to add them to your repository": "拖拽其他文件添加到当前仓库",
+            "Drop to upload your files": "拖拽上传您的文件",
+            "Or": "或 ",
+            "choose your files": "选择文件",
+            "Yowza, that’s a big file. Try again with a file smaller than 25MB.": "我勒个擦，这么大的文件，单文件不得超过25MB",
+            "Yowza, that’s a lot of files. Try again with fewer than 100 files.": "我勒个擦，这么多文件，一次不能超过100个",
+            "This file is empty.": "这个文件是空的",
+            "Something went really wrong, and we can’t process that file.": "遇到错误，我们处理不了这个文件。",
+            "Uploading": "文件上传中 ",
+            "of": "",
+            "files": "",
+            "Commit changes": "提交变更",
+            "Add files via upload": "通过添加文件上传",
+            "Optional extended description": "可选的描述",
+            "Add an optional extended description…": "添加描述... (可选)",
+            "Commit directly to the": "提交到 ",
+            "Create a": "创建",
+            "new branch": " 新分支 ",
+            "for this commit and start a pull request.": "为这个提交，并且发起一个合并请求。",
+            "Learn more about pull requests.": " 了解更多合并请求。",
 
             // Compare changes 页面
         },
