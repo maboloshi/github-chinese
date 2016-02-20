@@ -420,6 +420,7 @@ I18N.zh = {
             "contributor": "个贡献者",
             "contributors": "个贡献者",
             "Copy to clipboard": "复制到剪切板",
+            "Copied!": "复制成功!",
 
             "New pull request": "发起合并请求",
             "New file": "新建文件",
