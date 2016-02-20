@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.0.3
+// @version      1.1.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.0.3
+// @require      http://www.52cik.com/github-hans/locals.js?v1.1.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -22,6 +22,7 @@
     page = page ? page[1] : false;
     
     walk(document.body); // 立即翻译
+    timeElement(); // 时间节点翻译
 
     $(document).ajaxComplete(function () {
         walk(document.body); // ajax 请求后再次翻译
@@ -94,6 +95,43 @@
         }
 
         return key; // 没有翻译条目
+    }
+
+    function timeElement () { // 时间节点翻译
+        var RelativeTimeElement$getFormattedDate = RelativeTimeElement.prototype.getFormattedDate;
+        var TimeAgoElement$getFormattedDate = TimeAgoElement.prototype.getFormattedDate;
+        var LocalTimeElement$getFormattedDate = LocalTimeElement.prototype.getFormattedDate;
+
+        var RelativeTime = function(str) { // 相对时间解析
+            return str.replace(/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function(m, d, t) {
+                if (m === 'just now') { return '刚刚'; }
+
+                if (d[0] === 'a') { d = '1'; } // a, an 修改为 1
+
+                var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
+
+                return d + ' ' + dt[t] + '之前';
+            });
+        };
+
+        RelativeTimeElement.prototype.getFormattedDate = function() {
+            var str = RelativeTimeElement$getFormattedDate.call(this);
+            return RelativeTime(str);
+        };
+
+        TimeAgoElement.prototype.getFormattedDate = function() {
+            var str = TimeAgoElement$getFormattedDate.call(this);
+            return RelativeTime(str);
+        };
+
+        LocalTimeElement.prototype.getFormattedDate = function() {
+            return this.title.replace(/ .+$/, '');
+        };
+
+        // 立即翻译
+        $('time').each(function (i, el) {
+            el.textContent = el.getFormattedDate();
+        });
     }
 
 })();
