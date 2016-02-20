@@ -1,5 +1,16 @@
 var I18N = {};
 
+I18N.conf = {
+    // 要翻译的页面正则
+    rePage: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/,
+
+    // 面包屑 breadcrumb
+    // 文件列表 files js-navigation-container js-active-navigation-container
+    // 代码高亮 highlight tab-size js-file-line-container
+    // 代码差异 data highlight blob-wrapper
+    reIgnore: /(breadcrumb|files js-navigation-container|highlight tab-size|highlight blob-wrapper)/,
+};
+
 I18N.zh = {
     "pubilc": { // 公共区域翻译
         "static": { // 静态翻译
