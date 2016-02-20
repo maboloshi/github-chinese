@@ -169,6 +169,7 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             [/Pushed (\d+) commits? to/, "提交了 $1 次到"],
+            [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
         ],
     },
 
