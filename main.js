@@ -3,38 +3,30 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.1.1
+// @version      1.1.2
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.1.1
+// @require      http://www.52cik.com/github-hans/locals.js?v1.1.2
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
 (function (window, document, undefined) {
     'use strict';
-    
+
     // 要翻译的页面正则
     var page = document.body.className.match(I18N.conf.rePage);
     page = page ? page[1] : false;
-    
+
     walk(document.body); // 立即翻译
+    timeElement(); // 时间节点翻译
 
     $(document).ajaxComplete(function () {
         walk(document.body); // ajax 请求后再次翻译
     });
-
-    (function callee() { // 确保 time 元素已注册
-        if (!window.RelativeTimeElement) {
-            setTimeout(callee, 10);
-            return false;
-        }
-
-        timeElement(); // 时间节点翻译
-    })();
 
 
     function walk(node) {
@@ -76,12 +68,12 @@
     function translate(data) { // 翻译
         var str;
         var _key = data.trim();
-        
+ 
         if (_key === '') { return data; } // 空字符返回原始数据
-        
+
         str = transPage('pubilc', _key); // 公共翻译
         if (str !== _key) { return str; } // 已公共翻译
-        
+
         if (page === false) { return data; } // 未知页面不翻译
 
         str = transPage(page, _key); // 翻译已知页面
@@ -143,7 +135,9 @@
 
         // 遍历 time 元素进行翻译
         $('time').each(function (i, el) {
-            el.textContent = el.getFormattedDate();
+            if (el.getFormattedDate) { // 跳过未注册的 time 元素
+                el.textContent = el.getFormattedDate();
+            }
         });
     }
 
