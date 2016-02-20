@@ -56,14 +56,6 @@ I18N.zh = {
             "Confirm password": "继续",
         },
         "regexp": [ // 正则翻译
-            [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
-                if (m === 'just now') { return '刚刚'; }
-                if (d[0] === 'a') { d = '1 '; }
-
-                var dt = {second:'秒', minute:'分钟', hour:'小时', day:'天', month: '月', year:'年'};
-
-                return d + dt[t] + '之前';
-            }],
         ],
     },
 
