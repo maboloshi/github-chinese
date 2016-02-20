@@ -47,6 +47,10 @@
                     }
                 } else if (attr = el.getAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
                     el.setAttribute('aria-label', translate(attr));
+                    
+                    if (attr = el.getAttribute('data-copied-hint')) { // 复制成功提示
+                        el.setAttribute('data-copied-hint', translate(attr));
+                    }
                 }
 
                 // todo 的跳过 readme, 文件列表, 代码显示
