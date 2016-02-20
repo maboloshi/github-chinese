@@ -86,6 +86,8 @@ I18N.zh = {
             "starred": " 赞了 ",
             "forked": " 收藏了 ",
             "created repository": " 创建了仓库 ",
+            "opened pull request": " 发起了合并请求 ",
+            "commented on pull request": " 评论了合并请求 ",
             "opened issue": " 新建问题 ",
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
