@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.1.2
+// @version      1.2.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.1.2
+// @require      http://www.52cik.com/github-hans/locals.js?v1.2.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -21,8 +21,9 @@
     var page = document.body.className.match(I18N.conf.rePage);
     page = page ? page[1] : false;
 
-    walk(document.body); // 立即翻译
     timeElement(); // 时间节点翻译
+    walk(document.body); // 立即翻译
+    contributions(); // // 贡献日历 基于事件翻译
 
     $(document).ajaxComplete(function () {
         walk(document.body); // ajax 请求后再次翻译
@@ -139,6 +140,31 @@
                 el.textContent = el.getFormattedDate();
             }
         });
+    }
+
+    function contributions() { // 贡献日历 基于事件翻译
+        var tip = document.getElementsByClassName('svg-tip-one-line');
+
+        setTimeout(function () {
+            $('.js-calendar-graph').on('mouseover', '.day', function() {
+                var $tip = $(tip);
+
+                var str = $tip.text().trim().replace(/^(No|\d+) contributions? on (.+)$/, function(m, i, d) {
+                    var str = '<strong>';
+                    str += i === 'No' ? '无贡献' : (i + ' 次贡献');
+                    str += '</strong> ';
+
+                    var dt = new Date(d);
+                    dt.setHours(dt.getHours() + 8); // 为了获取 +8 时区的 ISO 时间。
+                    str += dt.toISOString().split('T')[0]; // 得到 yyyy-mm-dd 这样的格式
+
+                    return str;
+                });
+
+                $tip.html(str);
+                $tip.css('left', $(this).offset().left - tip[0].offsetWidth / 2 + 5.5);
+            });
+        }, 99);
     }
 
 })(window, document);
