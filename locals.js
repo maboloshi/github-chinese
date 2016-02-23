@@ -8,7 +8,8 @@ I18N.conf = {
     // 文件列表 files js-navigation-container js-active-navigation-container
     // 代码高亮 highlight tab-size js-file-line-container
     // 代码差异 data highlight blob-wrapper
-    reIgnore: /(breadcrumb|files js-navigation-container|highlight tab-size|highlight blob-wrapper)/,
+    // wiki内容 markdown-body
+    reIgnore: /(breadcrumb|files js-navigation-container|highlight tab-size|highlight blob-wrapper|markdown-body)/,
 };
 
 I18N.zh = {
