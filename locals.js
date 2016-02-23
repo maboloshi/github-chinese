@@ -197,7 +197,7 @@ I18N.zh = {
             "Billing": "财务信息",
             "SSH keys": "SSH keys",
             "Security": "安全信息",
-            "Applications": "应用设置",
+            "OAuth applications": "授权应用",
             "Personal access tokens": "访问令牌",
             "Repositories": "仓库管理",
             "Organizations": "组织管理",
