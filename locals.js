@@ -103,6 +103,7 @@ I18N.zh = {
             "Following": "关注",
             "Organizations": "组织",
             "Contributions": " 贡献",
+            "Public contributions": " 贡献",
             "Repositories": " 仓库",
             "Public activity": " 动态",
             "Edit profile": " 修改设置",
@@ -141,9 +142,23 @@ I18N.zh = {
             "Pull Requests": " 合并请求 ",
             "Issues reported": " 问题报告",
 
+            // 状态
+            "starred": " 赞了 ",
+            "forked": " 收藏了 ",
+            "forked from": " 收藏至 ",
+            "created repository": " 创建了仓库 ",
+            "opened pull request": " 发起了合并请求 ",
+            "commented on pull request": " 评论了合并请求 ",
+            "opened issue": " 新建问题 ",
+            "close issue": " 关闭问题 ",
+            "added": " 添加了 ",
+            "to": " 到 ",
+            "Updated": "更新 ",
             "pushed to": " 提交了 ",
-            "opened pull request": " 提交了合并请求 ",
-            "at": " 在 ",
+            "closed issue": " 关闭了问题 ",
+            "merged pull request": " 合并了请求 ",
+            "commented on issue": " 提交了评论 ",
+
 
             // 仓库 tab
             "Find a repository…": "搜索仓库…",
