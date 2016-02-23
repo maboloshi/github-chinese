@@ -1,11 +1,31 @@
 # GitHub 汉化插件
 
-给新手的福利。。
-很多新手朋友不太会玩 GitHub，而且全英文更是看的头晕眼花的，所以做了个小工具方便新手朋友使用，熟悉后关掉插件恢复英文模式，依然闭着眼睛都知道功能在哪。
+[![Packagist License][badge_license]](LICENSE)
+[badge_downloads]: https://img.shields.io/packagist/dt/arcanedev/log-viewer.svg?style=flat-square
 
-> 目前仅支持 [Tampermonkey][1] 插件，请先安装 [Tampermonkey][1]，然后再点击 [GitHub 汉化插件][2] 安装脚本即可。
+*By [52cik &copy;](http://www.52cik.com/)*
 
-**本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
+提供对 github.com 的汉化
+
+## 特性 (Features)
+
+1. 使用 **百度 / Google 翻译** 出来的结果不一定能达到程序员之间交流的效果
+2. 英语不太好的同学的福利
+3. 给新手的福利. 很多新手朋友不太会玩 GitHub，, 而且全英文更是看的头晕眼花的
+
+## 安装
+
+1. 依赖: 使用 chrome 内核浏览器安装 [Tampermonkey][1] 插件
+2. 进入 [Tampermonkey][1] -> 插件设置 -> 添加脚本 -> 复制 `main.js` `locals.js` 文件内容 -> 添加 即可
+3. 访问 github.com, 即可发现网站已汉化, 不需要此插件即可
+
+> 目前仅支持 [Tampermonkey][1] 插件
+
+## 待办 (TODO)
+
+1. 添加github部分名词解释. 新手可能不太理解部分名词具体表达的意思, 比如 `pull request`
+2. 整理部分 git&github 学习资料, 帮助新手 **更快** 上手 git&github
+3. **本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
 
 
 ## 插件分流下载 :bowtie:
