@@ -14,6 +14,11 @@
 点击这里 [Tampermonkey_v3.12.58.crx][Tampermonkey] 下载插件。
 
 
+## 插件设置为每日更新，因为翻译的比较频繁
+
+![everyday][everyday] 
+
+
 ## 预览
 
   ![预览][png-1] 
@@ -32,6 +37,7 @@ https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6
 [png-2]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/2.png
 [png-3]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/3.png
 [png-4]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/4.png
+[everyday]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/everyday.png
 [github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/github-hans.gif "github-hans"
 
 [Tampermonkey]: http://www.52cik.com/github-hans/Tampermonkey_v3.12.58.crx "Tampermonkey"
