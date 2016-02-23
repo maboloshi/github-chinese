@@ -10,7 +10,8 @@
 
 ## 插件分流下载 :bowtie:
 
-很多人打不开谷歌插件中心，那我就下载下来了，放在了根目录 Tampermonkey_v3.12.58.crx 方便大家使用。
+很多人打不开谷歌插件中心，那我就下载下来了，放在了根目录下，方便大家使用。
+点击 [Tampermonkey_v3.12.58.crx][Tampermonkey] 下载。
 
 
 ## 预览
@@ -32,3 +33,5 @@ https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6
 [png-3]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/3.png
 [png-4]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/4.png
 [github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/github-hans.gif "github-hans"
+
+[Tampermonkey]: http://www.52cik.com/github-hans/Tampermonkey_v3.12.58.crx "Tampermonkey"
