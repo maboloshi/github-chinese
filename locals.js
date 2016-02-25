@@ -55,6 +55,8 @@ I18N.zh = {
             "Password": "密码",
             "(Forgot password)": "(忘记密码)",
             "Confirm password": "继续",
+
+            "Updated": "更新 ",
         },
         "regexp": [ // 正则翻译
         ],
@@ -86,7 +88,6 @@ I18N.zh = {
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
-            "Updated": "更新 ",
             "pushed to": " 提交了 ",
             "closed issue": " 关闭了问题 ",
             "merged pull request": " 合并了请求 ",
@@ -160,7 +161,6 @@ I18N.zh = {
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
-            "Updated": "更新 ",
             "pushed to": " 提交了 ",
             "closed issue": " 关闭了问题 ",
             "merged pull request": " 合并了请求 ",
@@ -549,6 +549,15 @@ I18N.zh = {
             "new branch": " 新分支 ",
             "for this commit and start a pull request.": "为这个提交，并且发起一个合并请求。",
             "Learn more about pull requests.": " 了解更多合并请求。",
+
+            // Find file 页面
+            "You’ve activated the": "您已激活",
+            "file finder": " 文件搜索模式 ",
+            ".\n        Start typing to filter the file list. Use": "。输入关键词查找您的文件。使用 ",
+            "and": " 和 ",
+            "to navigate,": " 选择文件 ",
+            "to view files,": " 查看文件 ",
+            "to exit.": " 返回。",
 
             // Compare changes 页面
         },
