@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.2.0
+// @version      1.3.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.2.0
+// @require      http://www.52cik.com/github-hans/locals.js?v1.3.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -19,6 +19,11 @@
 
     // 要翻译的页面正则
     var page = document.body.className.match(I18N.conf.rePage);
+
+    if (!page) { // 扩展 pathname 匹配
+        page = location.pathname.match(I18N.conf.rePageEx);
+    }
+console.log(page);
     page = page ? page[1] : false;
 
     timeElement(); // 时间节点翻译
