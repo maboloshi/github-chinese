@@ -647,6 +647,24 @@ I18N.zh = {
 
     "stars": { // 点赞页面
         "static": { // 静态翻译
+            "Showcases": " 展柜",
+            "Trending": " 趋势",
+            "Stars": " 已赞",
+
+            "Search starred repositories…": "搜索点赞的仓库…",
+            "Sort:": "排序:",
+            "Sort options": "排序选项",
+            "Recently starred": "最近关注的",
+            "Recently active": "最近活动的",
+            "Most stars": "最多赞的",
+            "Unstar": "取消点赞",
+
+            "All stars": "所有仓库",
+            "Your repositories": "您的仓库",
+            "Others' repositories": "其他仓库",
+
+            "Filter by languages": "赛选语言",
+            "Jump to a friend": "去好基友那",
         },
         "regexp": [ // 正则翻译
         ],
