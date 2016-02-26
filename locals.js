@@ -1,14 +1,29 @@
 var I18N = {};
 
 I18N.conf = {
-    // 要翻译的页面正则
+    /**
+     * 要翻译的页面正则
+     */
     rePage: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/,
 
-    // 面包屑 breadcrumb
-    // 文件列表 files js-navigation-container js-active-navigation-container
-    // 代码高亮 highlight tab-size js-file-line-container
-    // 代码差异 data highlight blob-wrapper
-    // wiki内容 markdown-body
+    /**
+     * 匹配 pathname 页面的正则
+     * 
+     * 通知页面 /notifications
+     * 关注页面 /watching
+     * 点赞页面 /stars
+     */
+    rePageEx: /\/(notifications|watching|stars)/,
+
+    /**
+     * 忽略区域的 class 正则
+     * 
+     * 面包屑 breadcrumb
+     * 文件列表 files js-navigation-container js-active-navigation-container
+     * 代码高亮 highlight tab-size js-file-line-container
+     * 代码差异 data highlight blob-wrapper
+     * wiki内容 markdown-body
+     */
     reIgnore: /(breadcrumb|files js-navigation-container|highlight tab-size|highlight blob-wrapper|markdown-body)/,
 };
 
@@ -590,6 +605,47 @@ I18N.zh = {
     },
 
     "signup": { // 注册页
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "notifications": { // 通知页面
+        "static": { // 静态翻译
+            "Notifications": " 通知",
+            "Watching": " 关注的仓库",
+            "Unread": "未读",
+            "Participating": "参与话题",
+            "All notifications": "所有通知",
+
+            "No new notifications.": "没有新的通知。",
+            "Depending on": "根据 ",
+            "your notification settings": "您的通知设置",
+            ", you’ll see updates here for your conversations in watched repositories.": "，您将看到您关注仓库的更新信息。",  
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "watching": { // 关注的仓库页面
+        "static": { // 静态翻译
+            "Notifications": " 通知",
+            "Watching": " 关注的仓库",
+
+            "Watched repositories": "关注的仓库",
+            "Sorted by most recently watched.": "按最近关注排序",
+            "Unwatch all": "取消所有关注",
+            "Unwatch": "取消关注",
+            "Notification settings": "通知设置",
+            "You can change how you receive notifications from your account settings.": "您可以修改接收通知的方式。",
+            "Change notification settings": "修改通知设置",
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "stars": { // 点赞页面
         "static": { // 静态翻译
         },
         "regexp": [ // 正则翻译
