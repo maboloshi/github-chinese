@@ -23,7 +23,7 @@
     if (!page) { // 扩展 pathname 匹配
         page = location.pathname.match(I18N.conf.rePageEx);
     }
-console.log(page);
+
     page = page ? page[1] : false;
 
     timeElement(); // 时间节点翻译
@@ -74,7 +74,7 @@ console.log(page);
     function translate(data) { // 翻译
         var str;
         var _key = data.trim();
- 
+
         if (_key === '') { return data; } // 空字符返回原始数据
 
         str = transPage('pubilc', _key); // 公共翻译
