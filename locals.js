@@ -8,7 +8,7 @@ I18N.conf = {
 
     /**
      * 匹配 pathname 页面的正则
-     * 
+     *
      * 通知页面 /notifications
      * 关注页面 /watching
      * 点赞页面 /stars
@@ -17,7 +17,7 @@ I18N.conf = {
 
     /**
      * 忽略区域的 class 正则
-     * 
+     *
      * 面包屑 breadcrumb
      * 文件列表 files js-navigation-container js-active-navigation-container
      * 代码高亮 highlight tab-size js-file-line-container
@@ -37,7 +37,7 @@ I18N.zh = {
             "Pull requests": "合并请求",
             "Issues": " 问题 ",
             "Gist": "代码片段",
-            
+
             "You have no unread notifications": "您没有未读通知",
             "You have unread notifications": "您有未读通知",
             "Create new…": "新建…",
@@ -46,7 +46,7 @@ I18N.zh = {
             "New repository": " 新建仓库",
             "New organization": " 新建组织",
             "New issue": " 新建问题",
-            
+
             "Signed in as": "您好 ",
             "Your profile": "您的主页",
             "Your stars": "点赞的项目",
@@ -91,7 +91,7 @@ I18N.zh = {
             "View": "查看 ",
             "new broadcast": " 条新公告",
             "new broadcasts": " 条新公告",
-            
+
             // 动态 状态词
             "starred": " 赞了 ",
             "forked": " 收藏了 ",
@@ -376,6 +376,15 @@ I18N.zh = {
             "Drag & drop": "拖拽上传",
             "or": "或者",
             "choose an image": "选择图片",
+
+            // Personal access tokens 页面
+            "Generate new token": "创建新的密令",
+            "Tokens you have generated that can be used to access the": "密令可以用来访问 ",
+            "Full control of private repositories": "完全控制私有仓库",
+            "Edit": "编辑",
+            "Delete": "删除",
+            "Personal access tokens function like ordinary OAuth access tokens. They\n      can be used instead of a password for Git over HTTPS, or can be used to": "访问令牌功能类似于OAuth，他可以代替密码给 Git Https 访问，",
+            "authenticate to the API over Basic Authentication": "或用来进行API调用的验证",
         },
         "regexp": [ // 正则翻译
             [/This email will not be used as the 'from' address for web-based GitHub operations - we will instead use ([^@]+@users.noreply.github.com)./, "该邮箱不会被用作 \"发件人\" 地址，我们会改用 ($1) 作为默认 \"发件人\" 地址。"],
@@ -430,7 +439,7 @@ I18N.zh = {
             "Star": " 点赞",
             "Unstar": " 取消点赞",
             "Fork": " 收藏",
-            
+
             "Code": " 代码",
             "Pulse": " 统计",
             "Graphs": " 图表",
@@ -622,7 +631,7 @@ I18N.zh = {
             "No new notifications.": "没有新的通知。",
             "Depending on": "根据 ",
             "your notification settings": "您的通知设置",
-            ", you’ll see updates here for your conversations in watched repositories.": "，您将看到您关注仓库的更新信息。",  
+            ", you’ll see updates here for your conversations in watched repositories.": "，您将看到您关注仓库的更新信息。",
         },
         "regexp": [ // 正则翻译
         ],
