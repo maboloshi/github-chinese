@@ -385,6 +385,14 @@ I18N.zh = {
             "Delete": "删除",
             "Personal access tokens function like ordinary OAuth access tokens. They\n      can be used instead of a password for Git over HTTPS, or can be used to": "访问令牌功能类似于OAuth，他可以代替密码给 Git Https 访问，",
             "authenticate to the API over Basic Authentication": "或用来进行API调用的验证",
+
+            // Organizations 页面
+            "You are not a member of any organizations.": "您暂无任何组织。",
+            "Transform account": "账户变更",
+            "Account transformation warning": "账户变更警告",
+            "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
+            "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth tokens, SSH keys, Job Profile, 等）将被删除。",
+            "create a new personal account": "创建一个新的个人帐户",
         },
         "regexp": [ // 正则翻译
             [/This email will not be used as the 'from' address for web-based GitHub operations - we will instead use ([^@]+@users.noreply.github.com)./, "该邮箱不会被用作 \"发件人\" 地址，我们会改用 ($1) 作为默认 \"发件人\" 地址。"],
@@ -395,6 +403,11 @@ I18N.zh = {
             [/Using\n\s+([\d.]+) of\n\s+(\d+) GB\/month/, "＄$1, $2GB/月"],
             [/Using\n\s+([\d.]+) of\n\s+(\d+) GB/, "＄$1, $2GB"],
             [/(\d+) Authorized applications?/, "$1 个授权应用"],
+            [/Turn (\w+) into an organization/, "变更 $1 为一个组织"],
+            [/You will no longer be able to sign into (\w+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将不能作为账户登录到 $1。（所有管理权限将赋予您选择的所有者）"],
+            [/Any commits credited to (\w+) will no longer be linked to this GitHub account/, "任何提交归功于 $1 将不再链接到这个 GitHub 帐户"],
+            [/If you are using (\w+) as a personal account, you should/, "如果您正在使用 $1 作为个人帐户，您应"],
+            [/before transforming (\w+) into an organization./, "在转化 $1 组织之前。"],
         ],
     },
 
