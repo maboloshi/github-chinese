@@ -596,7 +596,12 @@ I18N.zh = {
             "to view files,": " 查看文件 ",
             "to exit.": " 返回。",
 
-            // Compare changes 页面
+            // Pull Requests 页面
+            "There aren’t any open pull requests.": "暂无请求合并。",
+            "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到你要找的，或者尝试",
+            "a new search query": "新的搜索查询",
+            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的你超级有帮助的。",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
