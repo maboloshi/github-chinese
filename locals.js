@@ -602,6 +602,10 @@ I18N.zh = {
             "a new search query": "新的搜索查询",
             ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的你超级有帮助的。",
 
+            // wiki 页面
+            "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
+            "Create the first page": "创建第一个页面",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
@@ -609,6 +613,7 @@ I18N.zh = {
             [/(\d+) Open/, "$1 个开放的"],
             [/(\d+) Closed/, "$1 个关闭的"],
             [/View all issues opened by (.+)/, "查看所有 $1 的问题"],
+            [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"],
         ],
     },
 
