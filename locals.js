@@ -606,6 +606,13 @@ I18N.zh = {
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
 
+            "Create new page": "创建新页面",
+            "Write": "编辑",
+            "Preview": "预览",
+            "Edit mode:": "编辑模式:",
+            "Edit Message": "提交信息",
+            "Save Page": "保存页面",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
