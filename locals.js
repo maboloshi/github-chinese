@@ -613,6 +613,15 @@ I18N.zh = {
             "Edit Message": "提交信息",
             "Save Page": "保存页面",
 
+            // settings 页面
+            "Options": "基本选项",
+            "Repository name": "仓库名",
+            "Rename": "重命名",
+            "Features": "特性",
+            "GitHub Wikis is a simple way to let others contribute content.\n      Any GitHub user can create and edit pages to use for documentation,\n      examples, support, or anything you wish.": "GitHub wikis 是一个简单的方法让别人贡献内容。GitHub 的任何用户都可以创建和编辑页面中使用的文档，示例，支持或任何你想。",
+            "Restrict editing to collaborators only": "编辑限制只有合作者可以",
+            "Public wikis will still be readable by everyone.": "公共 wikis 仍然会受到大家的可读性",
+            "GitHub Issues adds lightweight issue tracking tightly integrated with\n      your repository. Add issues to milestones, label issues, and\n      close & reference issues from commit messages.": "GitHub 与您的存储库添加轻量级问题跟踪紧密集成的问题。添加里程碑的问题，标签问题，并密切与参考问题提交消息。",
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
