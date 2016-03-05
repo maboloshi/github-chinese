@@ -622,6 +622,19 @@ I18N.zh = {
             "Restrict editing to collaborators only": "编辑限制只有合作者可以",
             "Public wikis will still be readable by everyone.": "公共 wikis 仍然会受到大家的可读性",
             "GitHub Issues adds lightweight issue tracking tightly integrated with\n      your repository. Add issues to milestones, label issues, and\n      close & reference issues from commit messages.": "GitHub 与您的存储库添加轻量级问题跟踪紧密集成的问题。添加里程碑的问题，标签问题，并密切与参考问题提交消息。",
+
+            "GitHub Pages": "GitHub 项目演示页面",
+            "Your site is published at": " 您的演示地址为: ",
+            "Update your site": "更新您的站点",
+            "To update your site, push your HTML or": "更新您的站点，可以直接上传 html 或者使用 ",
+            "updates to\n      your": " 更新到 ",
+            "branch.\n    Read the": " 分支。详情请阅读 ",
+            "Pages help article": "演示页面帮助",
+            "for more information.": " 获取更多信息 ",
+            "Overwrite site": "覆盖现有站点",
+            "Replace your existing site by using our automatic page generator. Author your content in our Markdown editor, select a theme, then publish.": "通过使用我们的自动页面生成器替换现有的网站。您可以在我们的 Markdown 编辑器，选择一个主题，然后发布。",
+            "Launch automatic page generator": "启动自动生成器",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
