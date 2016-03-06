@@ -53,7 +53,7 @@ I18N.zh = {
             "Explore": "激动的探索",
             "Integrations": "集成工具",
             "Help": "帮助",
-            "Settings": "设置",
+            "Settings": " 设置 ",
             "Sign out": "退出",
 
             "Previous": "上一页",
@@ -634,6 +634,17 @@ I18N.zh = {
             "Overwrite site": "覆盖现有站点",
             "Replace your existing site by using our automatic page generator. Author your content in our Markdown editor, select a theme, then publish.": "通过使用我们的自动页面生成器替换现有的网站。您可以在我们的 Markdown 编辑器，选择一个主题，然后发布。",
             "Launch automatic page generator": "启动自动生成器",
+
+            "Danger Zone": "无限区",
+            "Make this repository private": "将该仓库设为私有仓库",
+            "Please": "请",
+            "upgrade your plan": " 更新您的私有仓库计划 ",
+            "to make this repository private.": "让这个仓库转为私有。",
+            "Transfer ownership": "转让所有权",
+            "Transfer": "转让",
+            "Transfer this repository to another user or to an organization where you have admin rights.": "此存储库转移到其他用户或组织，在这里您具有管理员权限。",
+            "Delete this repository": "删除此仓库",
+            "Once you delete a repository, there is no going back. Please be certain.": "一旦删除您的仓库，将无法找回。请您三思。",
 
         },
         "regexp": [ // 正则翻译
