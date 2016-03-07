@@ -646,6 +646,16 @@ I18N.zh = {
             "Delete this repository": "删除此仓库",
             "Once you delete a repository, there is no going back. Please be certain.": "一旦删除您的仓库，将无法找回。请您三思。",
 
+            "Default branch": "默认分支",
+            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是“基地”分支在你的资料库，对所有拉请求和代码的提交是自动进行的，除非您指定一个不同的分支。",
+            "Update": "更新",
+            "Switch default branch": "选择默认分支",
+            "Filter branches": "搜索分支",
+            "Protected branches": "受保护的分支",
+            "Protect branches to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.\n    New to protected branches?": "受保护分支禁用强制 push，避免删除分支机构，合并可选要求前状态检查。创建新的受保护的分支机构？",
+            "Learn more.": "查看更多信息",
+            "No protected branches yet.": "暂无受保护分支",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
