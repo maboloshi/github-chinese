@@ -487,6 +487,10 @@ I18N.zh = {
             "Copy to clipboard": "复制到剪切板",
             "Copied!": "复制成功!",
 
+            "Your recently pushed branches:": "您最近提交的分支:",
+            "(less than a minute ago)": " 不到一分钟前 ",
+            "Compare & pull request": " 比较 & 合并请求 ",
+
             "New pull request": "发起合并请求",
             "New file": "新建文件",
             "Upload files": "上传文件",
@@ -635,8 +639,11 @@ I18N.zh = {
             "Replace your existing site by using our automatic page generator. Author your content in our Markdown editor, select a theme, then publish.": "通过使用我们的自动页面生成器替换现有的网站。您可以在我们的 Markdown 编辑器，选择一个主题，然后发布。",
             "Launch automatic page generator": "启动自动生成器",
 
-            "Danger Zone": "无限区",
+            "Danger Zone": "危险区",
             "Make this repository private": "将该仓库设为私有仓库",
+            "Public forks can’t be made private.\n    Please": "收藏的的仓库，无法转为私有，请",
+            "duplicate the repository": "复制一份该仓库。",
+            "Make private": "转为私有",
             "Please": "请",
             "upgrade your plan": " 更新您的私有仓库计划 ",
             "to make this repository private.": "让这个仓库转为私有。",
@@ -655,6 +662,15 @@ I18N.zh = {
             "Protect branches to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.\n    New to protected branches?": "受保护分支禁用强制 push，避免删除分支机构，合并可选要求前状态检查。创建新的受保护的分支机构？",
             "Learn more.": "查看更多信息",
             "No protected branches yet.": "暂无受保护分支",
+
+            "Are you ABSOLUTELY sure?": "您确定一定以及肯定？",
+            "Unexpected bad things will happen if you don’t read this!": "请仔细阅读以下提示信息！！！",
+            "This action": "该操作是",
+            "CANNOT": "不可逆的",
+            "be undone. This will permanently delete the": "，您将永久删除 ",
+            "repository, wiki, issues, and comments, and remove all collaborator associations.": " 仓库，wiki，问题和提交内容，并且移除所有合作者。",
+            "Please type in the name of the repository to confirm.": "请您输入该仓库名以确认删除它。",
+            "I understand the consequences, delete this repository": "我确定一定以及肯定删除它",
 
         },
         "regexp": [ // 正则翻译
