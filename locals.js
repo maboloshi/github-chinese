@@ -74,6 +74,8 @@ I18N.zh = {
             "Updated": "更新 ",
         },
         "regexp": [ // 正则翻译
+          // 仓库删除提示
+          [/Your repository "([^"]+)" was successfully deleted\./, "您的 \"$1\" 仓库以成功被删除了。"],
         ],
     },
 
