@@ -111,6 +111,14 @@ I18N.zh = {
             "commented on issue": " 提交了评论 ",
 
             "More": "更多",
+
+            // 首次加入组织通知
+            "You’ve been added to the": "您已经被添加到 ",
+            "organization!": " 组织！",
+            "Here are some quick tips for a first-time organization member.": "以下是首次加入组织的一些提示。",
+            "Use the switch context button in the upper left corner of this page\n        to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在(",
+            ")\n        and organizations you are a member of.": ")和组织身份之间进行切换。",
+            "After you switch contexts you’ll see an organization-focused\n        dashboard that lists out organization repositories and activities.": "当您切换身份，您会看到一个组织为中心的页面，其中列出了组织库和活动。",
         },
         "regexp": [ // 正则翻译
             [/Show (\d+) more repositories…/, "显示 $1 个更多的仓库…"],
