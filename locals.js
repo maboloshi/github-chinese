@@ -112,6 +112,11 @@ I18N.zh = {
 
             "More": "更多",
 
+
+            "Switch dashboard context": "切换默认身份",
+            "Manage organizations": "管理组织",
+            "Create organization": "创建组织",
+
             // 首次加入组织通知
             "You’ve been added to the": "您已经被添加到 ",
             "organization!": " 组织！",
