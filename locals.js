@@ -174,6 +174,7 @@ I18N.zh = {
             "Contributions in the last year": "过去一年的贡献",
             "Longest streak": "连续贡献最长天数",
             "Current streak": "当前连续贡献天数",
+            "No recent contributions": "最近没有贡献",
 
             "commits": " 次提交 ",
             "Pull Request": " 合并请求 ",
@@ -214,6 +215,7 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             [/Pushed (\d+) commits? to/, "提交了 $1 次到"],
             [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
+            [/([^ ]+) has no activity during this period\./, "$1 近期没有任何活动。"],
         ],
     },
 
