@@ -689,6 +689,18 @@ I18N.zh = {
             "Please type in the name of the repository to confirm.": "请您输入该仓库名以确认删除它。",
             "I understand the consequences, delete this repository": "我确定一定以及肯定删除它",
 
+            // Compare changes 页面
+            "Compare changes": "变更比较",
+            "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果你需要，也可以",
+            "compare across forks": "比较收藏和源仓库",
+            "base:": "基础库:",
+            "compare:": "比较库:",
+            "Create pull request": " 创建合并请求",
+            "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或收藏来讨论和查看变化。",
+            "Compare and review just about anything": "比较和审查任何文件",
+            "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和收藏的仓库。",
+            "Example comparisons": "比较例子",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
