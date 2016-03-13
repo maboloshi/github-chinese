@@ -701,6 +701,19 @@ I18N.zh = {
             "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和收藏的仓库。",
             "Example comparisons": "比较例子",
 
+            // issues 页面
+            "No description provided.": "没有具体描述。",
+            "Add your reaction": "添加您的表情",
+            "Pick your reaction": "选择您的表情",
+            "Leave a comment": "发表评论",
+            "Milestone": "里程碑",
+            "Unsubscribe": "取消订阅",
+            "Attach files by dragging & dropping,": "拖拽添加附件，",
+            "selecting them": "或选择文件，",
+            ", or pasting\n        from the clipboard.": "或复制黏贴内容。",
+            "Styling with Markdown is supported": "支持 Markdown 功能。",
+            "Close issue": "关闭问题",
+            "Comment": "提交",
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
@@ -709,6 +722,7 @@ I18N.zh = {
             [/(\d+) Closed/, "$1 个关闭的"],
             [/View all issues opened by (.+)/, "查看所有 $1 的问题"],
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"],
+            [/(\d+) participants?/, "$1 参与者"],
         ],
     },
 
