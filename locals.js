@@ -4,7 +4,7 @@ I18N.conf = {
     /**
      * 要翻译的页面正则
      */
-    rePage: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/,
+    rePageClass: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/,
 
     /**
      * 匹配 pathname 页面的正则
@@ -13,7 +13,14 @@ I18N.conf = {
      * 关注页面 /watching
      * 点赞页面 /stars
      */
-    rePageEx: /\/(notifications|watching|stars)/,
+    rePagePath: /\/(notifications|watching|stars)/,
+
+    /**
+     * 匹配 url 页面的正则
+     *
+     * 代码片段页面 gist
+     */
+    rePageUrl: /(gist)\.github.com/,
 
     /**
      * 忽略区域的 class 正则
@@ -810,4 +817,33 @@ I18N.zh = {
         "regexp": [ // 正则翻译
         ],
     },
+
+
+    "gist": { // 代码片段页面
+      "static": { // 静态翻译
+        "Search…": "搜索代码片段…",
+        "All gists": "所有片段",
+        "New gist": "新建片段",
+        "View profile and more": "查看更多信息",
+        "See all of your gists": "查看您的所有片段",
+        "Instantly share code, notes, and snippets.": "即时分享你的代码，笔记，片段，以及灵感。",
+        "Gist description…": "片段描述",
+
+        "Filename including extension…": "文件名 (包括扩展名)",
+        "Indent mode": "缩进模式",
+        "Spaces": "空格",
+        "Tabs": "TAB",
+        "Indent size": "缩进大小",
+        "Line wrap mode": "换行模式",
+        "No wrap": "无换行",
+        "Soft wrap": "软换行",
+        "Add file": "添加文件",
+        "Create secret gist": "创建私有片段",
+        "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有片段搜索引擎是搜不到的，但是你可以分享您的 url 给他们。",
+        "Create public gist": "创建公共片段",
+
+      },
+      "regexp": [ // 正则翻译
+      ],
+    }
 };
