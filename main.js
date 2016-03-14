@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.3.0
+// @version      1.3.1
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*github.com/*
 // @match        https://*github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.3.0
+// @require      http://www.52cik.com/github-hans/locals.js?v1.3.1
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -18,10 +18,14 @@
     'use strict';
 
     // 要翻译的页面正则
-    var page = document.body.className.match(I18N.conf.rePage);
+    var page = document.body.className.match(I18N.conf.rePageClass);
 
     if (!page) { // 扩展 pathname 匹配
-        page = location.pathname.match(I18N.conf.rePageEx);
+        page = location.pathname.match(I18N.conf.rePagePath);
+    }
+
+    if (!page) { // 扩展 url 匹配
+        page = location.href.match(I18N.conf.rePageUrl);
     }
 
     page = page ? page[1] : false;
@@ -55,7 +59,7 @@
                     }
                 } else if (attr = el.getAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
                     el.setAttribute('aria-label', translate(attr));
-                    
+
                     if (attr = el.getAttribute('data-copied-hint')) { // 复制成功提示
                         el.setAttribute('data-copied-hint', translate(attr));
                     }
