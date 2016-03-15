@@ -822,8 +822,12 @@ I18N.zh = {
     "gist": { // 代码片段页面
       "static": { // 静态翻译
         "Search…": "搜索代码片段…",
-        "All gists": "所有片段",
+        "All gists": " 所有片段 ",
         "New gist": "新建片段",
+        "Your gists": "您的片段",
+        "Starred gists": "已赞片段",
+        "Your GitHub profile": "设置",
+
         "View profile and more": "查看更多信息",
         "See all of your gists": "查看您的所有片段",
         "Instantly share code, notes, and snippets.": "即时分享你的代码，笔记，片段，以及灵感。",
@@ -842,8 +846,28 @@ I18N.zh = {
         "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有片段搜索引擎是搜不到的，但是你可以分享您的 url 给他们。",
         "Create public gist": "创建公共片段",
 
+        // All gists 页面
+        "Sort:": "排序:",
+        "Sort options": "排序选项",
+        "Recently created": "最近创建的",
+        "Least recently created": "最早创建的",
+        "Recently updated": "最近更新的",
+        "Least recently updated": "最早更新的",
+        "Filter:": "筛选:",
+        "Filter options": "筛选选项",
+        "Public & Secret": "公共 & 私有",
+        "Public only": "仅公共",
+        "Secret only": "仅私有",
+        "forked from": " 收藏自 ",
+        "Created": "创建于 ",
+
       },
       "regexp": [ // 正则翻译
+        [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
+        [/(\d+) files?/, " $1 文件"],
+        [/(\d+) forks?/, " $1 收藏"],
+        [/(\d+) comments?/, " $1 评论"],
+        [/(\d+) stars?/, " $1 赞"],
       ],
     }
 };
