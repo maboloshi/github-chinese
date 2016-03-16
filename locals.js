@@ -488,7 +488,7 @@ I18N.zh = {
             "Website": "网址",
             "Website for this repository (optional)": "这个仓库的网址 (可选)",
             "Save": "保存",
-            "or": "或",
+            "or": " 或 ",
             "Cancel": "取消",
 
             // 关注通知设置
@@ -721,6 +721,19 @@ I18N.zh = {
             "Styling with Markdown is supported": "支持 Markdown 功能。",
             "Close issue": "关闭问题",
             "Comment": "提交",
+
+            // 新建空仓库
+            "Quick setup": "快速安装",
+            "— if you’ve done this kind of thing before": " - 如果你以前做过这样的事",
+            "Set up in Desktop": " 安装到桌面 ",
+            "We recommend every repository include a": "我们推荐每个仓库都包括 ",
+            ",\n            and": "，和 ",
+            "…or create a new repository on the command line": "…或在命令行上创建一个新的仓库",
+            "…or push an existing repository from the command line": "…或从命令行中推送现有的仓库",
+            "…or import code from another repository": "…或从另一个仓库库导入代码",
+            "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目。",
+            "Import code": "导入代码",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
@@ -860,6 +873,52 @@ I18N.zh = {
         "Secret only": "仅私有",
         "forked from": " 收藏自 ",
         "Created": "创建于 ",
+        "View": "查看: ",
+
+        // View 代码 页面
+        "Edit": " 编辑 ",
+        "Delete": " 删除 ",
+        "Star": " 点赞 ",
+        "Unstar": " 取消点赞 ",
+        "User actions": "用户操作",
+        "Report abuse": "举报该用户",
+
+        "Code": " 代码 ",
+        "Revisions": " 修订 ",
+
+        "What would you like to do?": "你想做什么？",
+        "Embed this gist in your website.": "Embed 可嵌入到您的网页中。",
+        "Copy sharable URL for this gist.": "复制 URL 共享这个片段。",
+        "Clone with Git or checkout with SVN using the repository's web address.": "Git 克隆或 SVN 检出该仓库所使用的 web 地址。",
+        "Clone with an SSH key and passphrase from your GitHub settings.": "使用 SSH 密钥克隆",
+        "Learn more about clone URLs": "更多的克隆方法",
+
+        "Copy to clipboard": "复制到剪切板",
+        "Copied!": "复制成功!",
+        "Download ZIP": "下载 ZIP",
+        "Permalink": "永久链接",
+        "Raw": "源码",
+
+        "Write": "编辑",
+        "Preview": "预览",
+
+        "Add header text": "标题",
+        "Add bold text <cmd+b>": "加粗 <cmd+b>",
+        "Add italic text <cmd+i>": "斜体 <cmd+i>",
+        "Insert a quote": "插入引用",
+        "Insert code": "插入代码",
+        "Add a link <cmd+k>": "连接 <cmd+k>",
+        "Add a bulleted list": "添加无序列表",
+        "Add a numbered list": "添加有序列表",
+        "Add a task list": "添加任务列表",
+        "Leave a comment": "留下评论",
+
+        "Attach files by dragging & dropping,": "拖拽添加附件，",
+        "selecting them": "或选择文件，",
+        ", or pasting\n        from the clipboard.": "或复制黏贴内容。",
+        "Styling with Markdown is supported": "支持 Markdown 功能。",
+        "Close issue": "关闭问题",
+        "Comment": "提交",
 
       },
       "regexp": [ // 正则翻译
@@ -868,6 +927,7 @@ I18N.zh = {
         [/(\d+) forks?/, " $1 收藏"],
         [/(\d+) comments?/, " $1 评论"],
         [/(\d+) stars?/, " $1 赞"],
+        [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
       ],
     }
 };
