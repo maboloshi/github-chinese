@@ -12,8 +12,9 @@ I18N.conf = {
      * 通知页面 /notifications
      * 关注页面 /watching
      * 点赞页面 /stars
+     * 问题页面 /issues
      */
-    rePagePath: /\/(notifications|watching|stars)/,
+    rePagePath: /\/(notifications|watching|stars|issues)/,
 
     /**
      * 匹配 url 页面的正则
@@ -824,13 +825,24 @@ I18N.zh = {
             "Your repositories": "您的仓库",
             "Others' repositories": "其他仓库",
 
-            "Filter by languages": "赛选语言",
+            "Filter by languages": "筛选语言",
             "Jump to a friend": "去好基友那",
         },
         "regexp": [ // 正则翻译
         ],
     },
 
+    "issues": { // 问题页面
+      "static": { // 静态翻译
+        "Created": "已创建",
+        "Assigned": "分已配",
+        "Mentioned": "提到的",
+      },
+      "regexp": [ // 正则翻译
+        [/(\d+) Open/, " $1 未处理"],
+        [/(\d+) Closed/, " $1 已处理"],
+      ],
+    },
 
     "gist": { // 代码片段页面
       "static": { // 静态翻译
