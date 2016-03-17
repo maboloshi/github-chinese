@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.3.2
+// @version      1.3.3
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.3.2
+// @require      http://www.52cik.com/github-hans/locals.js?v1.3.3
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -34,7 +34,8 @@
     walk(document.body); // 立即翻译
     contributions(); // // 贡献日历 基于事件翻译
 
-    $(document).ajaxComplete(function () {
+    $(document).ajaxComplete(function (event, xhr, settings) {
+        // console.log(settings.url);
         walk(document.body); // ajax 请求后再次翻译
     });
 
@@ -108,17 +109,17 @@
         return key; // 没有翻译条目
     }
 
-    function timeElement () { // 时间节点翻译
+    function timeElement() { // 时间节点翻译
         var RelativeTimeElement$getFormattedDate = RelativeTimeElement.prototype.getFormattedDate;
         var TimeAgoElement$getFormattedDate = TimeAgoElement.prototype.getFormattedDate;
         var LocalTimeElement$getFormattedDate = LocalTimeElement.prototype.getFormattedDate;
 
-        var RelativeTime = function(str, el) { // 相对时间解析
+        var RelativeTime = function (str, el) { // 相对时间解析
             if (/^on ([\w ]+)$/.test(str)) {
                 return '于 ' + el.title.replace(/ .+$/, '');
             }
 
-            return str.replace(/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function(m, d, t) {
+            return str.replace(/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
                 if (m === 'just now') { return '刚刚'; }
 
                 if (d[0] === 'a') { d = '1'; } // a, an 修改为 1
@@ -129,17 +130,17 @@
             });
         };
 
-        RelativeTimeElement.prototype.getFormattedDate = function() {
+        RelativeTimeElement.prototype.getFormattedDate = function () {
             var str = RelativeTimeElement$getFormattedDate.call(this);
             return RelativeTime(str, this);
         };
 
-        TimeAgoElement.prototype.getFormattedDate = function() {
+        TimeAgoElement.prototype.getFormattedDate = function () {
             var str = TimeAgoElement$getFormattedDate.call(this);
             return RelativeTime(str, this);
         };
 
-        LocalTimeElement.prototype.getFormattedDate = function() {
+        LocalTimeElement.prototype.getFormattedDate = function () {
             return this.title.replace(/ .+$/, '');
         };
 
@@ -154,26 +155,38 @@
     function contributions() { // 贡献日历 基于事件翻译
         var tip = document.getElementsByClassName('svg-tip-one-line');
 
-        setTimeout(function () {
-            $('.js-calendar-graph').on('mouseover', '.day', function() {
-                var $tip = $(tip);
+        /* 调试用
+         var $includeFragment = $('include-fragment'); // IncludeFragmentElement 元素
+         console.log($includeFragment.length ? '回调' : '直接加载');
+         */
 
-                var str = $tip.text().trim().replace(/^(No|\d+) contributions? on (.+)$/, function(m, i, d) {
-                    var str = '<strong>';
-                    str += i === 'No' ? '无贡献' : (i + ' 次贡献');
-                    str += '</strong> ';
+        // 等待 IncludeFragmentElement 元素加载完毕后绑定事件, 类似 jq 的 live 事件
+        $.observe(".js-calendar-graph-svg", function () {
+            setTimeout(function mouseover() {
+                $('.js-calendar-graph').on('mouseover', '.day', function () {
+                    if (tip.length === 0) { // 没有 tip 元素时推出防止报错
+                        return true;
+                    }
 
-                    var dt = new Date(d);
-                    dt.setHours(dt.getHours() + 8); // 为了获取 +8 时区的 ISO 时间。
-                    str += dt.toISOString().split('T')[0]; // 得到 yyyy-mm-dd 这样的格式
+                    var $tip = $(tip);
 
-                    return str;
+                    var str = $tip.text().trim().replace(/^(No|\d+) contributions? on (.+)$/, function (m, i, d) {
+                        var str = '<strong>';
+                        str += i === 'No' ? '无贡献' : (i + ' 次贡献');
+                        str += '</strong> ';
+
+                        var dt = new Date(d);
+                        dt.setHours(dt.getHours() + 8); // 为了获取 +8 时区的 ISO 时间。
+                        str += dt.toISOString().split('T')[0]; // 得到 yyyy-mm-dd 这样的格式
+
+                        return str;
+                    });
+
+                    $tip.html(str);
+                    $tip.css('left', $(this).offset().left - tip[0].offsetWidth / 2 + 5.5);
                 });
-
-                $tip.html(str);
-                $tip.css('left', $(this).offset().left - tip[0].offsetWidth / 2 + 5.5);
-            });
-        }, 99);
+            }, 999);
+        });
     }
 
 })(window, document);
