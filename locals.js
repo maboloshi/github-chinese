@@ -361,7 +361,7 @@ I18N.zh = {
             "Primary email address": "主邮箱地址",
             "Save": "保存",
             "Custom routing": "自定义",
-            "You can send notifications to different": "你可以发送通知不同的",
+            "You can send notifications to different": "您可以发送通知不同的",
             "verified": "验证",
             "email addresses depending on the organization that owns the repository.": "电子邮件地址取决于组织拥有仓库。",
 
@@ -659,9 +659,9 @@ I18N.zh = {
 
             // Pull Requests 页面
             "There aren’t any open pull requests.": "暂无请求合并。",
-            "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到你要找的，或者尝试",
+            "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
             "a new search query": "新的搜索查询",
-            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的你超级有帮助的。",
+            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的您超级有帮助的。",
 
             // wiki 页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
@@ -679,7 +679,7 @@ I18N.zh = {
             "Repository name": "仓库名",
             "Rename": "重命名",
             "Features": "特性",
-            "GitHub Wikis is a simple way to let others contribute content.\n      Any GitHub user can create and edit pages to use for documentation,\n      examples, support, or anything you wish.": "GitHub wikis 是一个简单的方法让别人贡献内容。GitHub 的任何用户都可以创建和编辑页面中使用的文档，示例，支持或任何你想。",
+            "GitHub Wikis is a simple way to let others contribute content.\n      Any GitHub user can create and edit pages to use for documentation,\n      examples, support, or anything you wish.": "GitHub wikis 是一个简单的方法让别人贡献内容。GitHub 的任何用户都可以创建和编辑页面中使用的文档，示例，支持或任何您想。",
             "Restrict editing to collaborators only": "编辑限制只有合作者可以",
             "Public wikis will still be readable by everyone.": "公共 wikis 仍然会受到大家的可读性",
             "GitHub Issues adds lightweight issue tracking tightly integrated with\n      your repository. Add issues to milestones, label issues, and\n      close & reference issues from commit messages.": "GitHub 与您的存储库添加轻量级问题跟踪紧密集成的问题。添加里程碑的问题，标签问题，并密切与参考问题提交消息。",
@@ -711,7 +711,7 @@ I18N.zh = {
             "Once you delete a repository, there is no going back. Please be certain.": "一旦删除您的仓库，将无法找回。请您三思。",
 
             "Default branch": "默认分支",
-            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是“基地”分支在你的资料库，对所有拉请求和代码的提交是自动进行的，除非您指定一个不同的分支。",
+            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是“基地”分支在您的资料库，对所有拉请求和代码的提交是自动进行的，除非您指定一个不同的分支。",
             "Update": "更新",
             "Switch default branch": "选择默认分支",
             "Filter branches": "搜索分支",
@@ -731,7 +731,7 @@ I18N.zh = {
 
             // Compare changes 页面
             "Compare changes": "变更比较",
-            "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果你需要，也可以",
+            "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
             "compare across forks": "比较收藏和源仓库",
             "base:": "基础库:",
             "compare:": "比较库:",
@@ -757,7 +757,7 @@ I18N.zh = {
 
             // 新建空仓库
             "Quick setup": "快速安装",
-            "— if you’ve done this kind of thing before": " - 如果你以前做过这样的事",
+            "— if you’ve done this kind of thing before": " - 如果您以前做过这样的事",
             "Set up in Desktop": " 安装到桌面 ",
             "We recommend every repository include a": "我们推荐每个仓库都包括 ",
             ",\n            and": "，和 ",
@@ -784,40 +784,50 @@ I18N.zh = {
             "Personal": "个人",
             "Open source": "开源",
             "Business": "商业",
+
             "Pricing": "定价",
             "Support": "支持",
+
             "Sign in": "登录",
             "Sign up": "注册",
+
             "Pick a username": "选择一个用户名",
-            "Your email address": "你的邮件地址",
+            "Your email address": "您的邮件地址",
             "Create a password": "创建一个密码",
-            "Sign up for GitHub": "注册GitHub",
-            "Use at least one letter, one numeral, and seven characters.": "使用至少一个字母，一个数字，和七个字符。",
-            "How\xa0people build\xa0software": "人们如何构建软件",
-            "Millions of developers use GitHub to build personal projects, support their businesses, and\xa0work together on open source technologies.": "数以百万计的开发人员使用GitHub建立个人项目，支持他们的业务，和一起工作的开源技术。",
-            "Welcome home, developers": "开发者们，欢迎回来",
-            "GitHub fosters a fast, flexible, and collaborative development process that lets you work on your own or with others.": "GitHub上发展了一个快速，灵活和协作开发过程，让你对自己或与他人合作。",
-            "By clicking \"Sign up for GitHub\", you agree to our": "GitHub上发展了一个快速，灵活和协作开发过程，让你对自己或与他人合作。",
+            "Sign up for GitHub": "注册 GitHub",
+
+            "Use at least one letter, one numeral, and seven characters.": "密码需要字母和数字组成的 7 位以上字符串。",
+            "By clicking \"Sign up for GitHub\", you agree to our": "点击 “注册 GitHub”，表示您同意我们的 ",
             "terms of service": "服务条款",
-            "and": "和",
-            "privacy policy": "隐私政策",
+            "and": " 和 ",
+            "privacy policy": "隐私政策条款",
             "We'll occasionally send you account related emails.": "我们会偶尔发送您的帐户相关的电子邮件。",
-            ".": "。",
-            "For everything you build": "为你所建造的一切",
-            "Host and manage your code on GitHub. You can keep your work private or share it with the world.": "主机和在GitHub上管理你的代码。你可以把你的工作或私人与世界分享。",
+
+            "How\xa0people build\xa0software": "人们如何构建软件",
+            "Millions of developers use GitHub to build personal projects, support their businesses, and\xa0work together on open source technologies.": "数以百万计的开发人员使用 GitHub 建立个人项目，支持他们的企业，共同在开放源码技术。",
+
+            "Welcome home, developers": "欢迎回来，开发者们",
+            "GitHub fosters a fast, flexible, and collaborative development process that lets you work on your own or with others.": "GitHub 提供了一个快速，灵活和协作开发过程，让您对自己或与他人合作。",
+
+            "For everything you build": "为您打造",
+            "Host and manage your code on GitHub. You can keep your work private or share it with the world.": "主机和管理您的代码在 GitHub 上。您可以把您的工作或私人与世界分享。",
             "A better way to work": "一个更好的工作方式",
-            "From hobbyists to professionals, GitHub helps developers simplify the way they build software.": "从业余爱好者的专业人士，GitHub帮助开发人员简化的方式构建软件。",
+            "From hobbyists to professionals, GitHub helps developers simplify the way they build software.": "从业余爱好者到专业人士，GitHub 帮助开发人员简化的方式构建软件。",
             "Millions of projects": "数以百万计的项目",
-            "GitHub is home to millions of open source projects. Try one out or get inspired to create your own.": "GitHub是一家开源项目数百万。尝试一个或获得灵感来创造你自己的。",
-            "One platform, from start to finish": "一个平台，从开始到结束",
-            "With hundreds of integrations, GitHub is flexible enough to be at the center of your development process.": "成百上千的集成，GitHub是足够灵活，能够在你的发展过程的中心。",
-            "Who uses GitHub?": "谁使用GitHub的？",
-            "Individuals ": "个人",
-            "Use GitHub to create a personal project, whether you want to experiment with a new programming language or host your life’s work.": "使用GitHub上创建一个个人项目，无论你想用一个新的编程语言的实验或托管您一生的工作。",
-            "A better way to work": "一个更好的工作方式",
-            "A better way to work": "一个更好的工作方式",
-            "A better way to work": "一个更好的工作方式",
-            "A better way to work": "一个更好的工作方式",
+            "GitHub is home to millions of open source projects. Try one out or get inspired to create your own.": "GitHub 是数百万开源项目的家园。尝试一个或获得灵感来创造您自己的项目。",
+            "One platform, from start to finish": "一个平台，从始至终",
+            "With hundreds of integrations, GitHub is flexible enough to be at the center of your development process.": "成百上千的集成，GitHub 是足够灵活的，能够在您的发展过程的中心。",
+
+            "Who uses GitHub?": "谁在使用 GitHub ?",
+            "Individuals": "个人 ",
+            "Use GitHub to create a personal project, whether you want to experiment with a new programming language or host your life’s work.": "使用 GitHub 来创建一个个人项目，不管您想要尝试一个新的编程语言或主机在您生活及工作。",
+            "Communities": "社区 ",
+            "GitHub hosts one of the largest collections of open source software. Create, manage, and work on some of today’s most influential technologies.": "GitHub 主机是最大的开放源码软件的集合之一。创建，管理，以及在一些当今最具影响力的技术工作。",
+            "Businesses": "企业 ",
+            "Businesses of all sizes use GitHub to support their development process and securely build software.": "各种规模的企业使用的 GitHub 支持其发展过程中，安全地构建软件。",
+
+            "GitHub is proud to host projects and organizations like": "GitHub 是自豪地举办项目和组织，如 ",
+            "Public projects are always free. Private plans start at $7/month.": "公共项目是免费的。私人项目需要支付 7 美元一个月的费用。",
         },
         "regexp": [ // 正则翻译
         ],
@@ -928,9 +938,9 @@ I18N.zh = {
             "Least recently updated": "最早更新",
 
             "No results matched your search.": "没有符合您的搜索结果。",
-            "Use the links above to find what you’re looking for, or try": "使用上面的链接找到你要找的内容，或尝试",
+            "Use the links above to find what you’re looking for, or try": "使用上面的链接找到您要找的内容，或尝试",
             "a new search query": "新的搜索查询",
-            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。过滤菜单也是快速找到问题最相关的你超级有帮助的。",
+            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。过滤菜单也是快速找到问题最相关的您超级有帮助的。",
             "ProTip!": "专业提示！",
             "Updated in the last three days": "更新了最后三天：",
         },
@@ -951,7 +961,7 @@ I18N.zh = {
 
             "View profile and more": "查看更多信息",
             "See all of your gists": "查看您的所有片段",
-            "Instantly share code, notes, and snippets.": "即时分享你的代码，笔记，片段，以及灵感。",
+            "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
             "Gist description…": "片段描述",
 
             "Filename including extension…": "文件名 (包括扩展名)",
@@ -964,7 +974,7 @@ I18N.zh = {
             "Soft wrap": "软换行",
             "Add file": "添加文件",
             "Create secret gist": "创建私有片段",
-            "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有片段搜索引擎是搜不到的，但是你可以分享您的 url 给他们。",
+            "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有片段搜索引擎是搜不到的，但是您可以分享您的 url 给他们。",
             "Create public gist": "创建公共片段",
 
             // All gists 页面
@@ -994,7 +1004,7 @@ I18N.zh = {
             "Code": " 代码 ",
             "Revisions": " 修订 ",
 
-            "What would you like to do?": "你想做什么？",
+            "What would you like to do?": "您想做什么？",
             "Embed this gist in your website.": "Embed 可嵌入到您的网页中。",
             "Copy sharable URL for this gist.": "复制 URL 共享这个片段。",
             "Clone with Git or checkout with SVN using the repository's web address.": "Git 克隆或 SVN 检出该仓库所使用的 web 地址。",
