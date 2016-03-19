@@ -36,6 +36,13 @@ I18N.conf = {
 };
 
 I18N.zh = {
+    "title": { // 标题翻译
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
     "pubilc": { // 公共区域翻译
         "static": { // 静态翻译
             "Search GitHub": "GitHub 一下，您就知道",
@@ -991,7 +998,7 @@ I18N.zh = {
             "Secret only": "仅私有",
             "forked from": " 收藏自 ",
             "Created": "创建于 ",
-            "View": "查看: ",
+            "View": " 查看 ",
 
             // View 代码 页面
             "Edit": " 编辑 ",
