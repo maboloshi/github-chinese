@@ -125,6 +125,20 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             // 仓库删除提示
             [/Your repository "([^"]+)" was successfully deleted\./, "您的 \"$1\" 仓库以成功被删除了。"],
+
+            /**
+             * 匹配时间格式
+             *
+             * Mar 19, 2015 – Mar 19, 2016
+             * January 26 – March 19
+             * March 26
+             *
+             * 不知道是否稳定, 暂时先试用着. 2016-03-19 20:46:45
+             */
+            [/(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:, (\d+)|)/g, function (all, month, date, year) {
+                var monthKey = {"Jan": "1月","Feb": "2月","Mar": "3月","Apr": "4月","May": "5月","Jun": "6月","Jul": "7月","Aug": "8月","Sep": "9月","Oct": "10月","Nov": "11月","Dec": "12月"};
+                return ' ' + (year ? year + '年' : '') + monthKey[month.substring(0,3)] + date + '日 ';
+            }],
         ],
     },
 
@@ -265,6 +279,8 @@ I18N.zh = {
             [/Pushed (\d+) commits? to/, "提交了 $1 次到"],
             [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
             [/([^ ]+) has no activity during this period\./, "$1 近期没有任何活动。"],
+            [/(\d+) total/, "$1 次"],
+            [/(\d+) days?/, "$1 天"],
         ],
     },
 
@@ -523,6 +539,7 @@ I18N.zh = {
             "Graphs": " 图表",
 
             // 仓库描述编辑
+            "No description or website provided.": "没有提供说明和网站信息.",
             "Edit": "编辑",
             "Description": "描述",
             "Short description of this repository": "简短的描述下您的仓库",
