@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.3.4
+// @version      1.4.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.3.4
+// @require      http://www.52cik.com/github-hans/locals.js?v1.4.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -34,66 +34,114 @@
     contributions(); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
     walk(document.body); // 立即翻译页面
 
-    $(document).ajaxComplete(function (event, xhr, settings) {
-        // console.log(settings.url);
+    $(document).ajaxComplete(function () {
         walk(document.body); // ajax 请求后再次翻译页面
     });
 
 
+    /**
+     * 遍历节点
+     *
+     * @param {Element} node 节点
+     */
     function walk(node) {
         var nodes = node.childNodes;
 
-        var i = 0;
-        var len = nodes.length;
-        var el = null; // 遍历元素用
-        var attr; // 元素属性
+        for (var i = 0, len = nodes.length; i < len; i++) {
+            var el = nodes[i];
+            // todo 1. 修复多属性翻译问题; 2. 添加事件翻译, 如论预览信息;
 
-        for (; i < len; i++) {
-            el = nodes[i];
-            // todo 1. 未变动节点不重复赋值; 2. 修复多属性翻译问题; 3. 添加事件翻译, 如论预览信息;
+            if (el.nodeType === 1) {
 
-            if (el.nodeType === 1) { // 元素节点属性翻译
-                if (el.tagName === "INPUT") { // 输入框 按钮 处理
-                    if (el.type === "button" || el.type === "submit") {
-                        el.value = translate(el.value);
+                // 元素节点属性翻译
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
+                    if (el.type === 'button' || el.type === 'submit') {
+                        transElement(el, 'value');
                     } else {
-                        el.placeholder = translate(el.placeholder);
+                        transElement(el, 'placeholder');
                     }
-                } else if (attr = el.getAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
-                    el.setAttribute('aria-label', translate(attr));
+                } else if (el.hasAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
+                    transElement(el, 'aria-label', true);
 
-                    if (attr = el.getAttribute('data-copied-hint')) { // 复制成功提示
-                        el.setAttribute('data-copied-hint', translate(attr));
+                    if (el.hasAttribute('data-copied-hint')) { // 复制成功提示
+                        transElement(el.dataset, 'copiedHint');
                     }
+                } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
+                    transElement(el, 'label');
                 }
 
                 // 跳过 readme, 文件列表, 代码显示
                 if (el.id !== 'readme' && !I18N.conf.reIgnore.test(el.className)) {
-                    walk(el);
+                    walk(el); // 遍历子节点
                 }
             } else if (el.nodeType === 3) { // 文本节点翻译
-                el.data = translate(el.data);
+                transElement(el, 'data');
             }
+
         }
     }
 
 
-    function translate(data) { // 翻译
-        var str;
-        var _key = data.trim();
+    /**
+     * 翻译节点对应属性内容
+     *
+     * @param {object} el 对象
+     * @param {string} field 属性字段
+     * @param {boolean} isAttr 是否是 attr 属性
+     *
+     * @returns {boolean}
+     */
+    function transElement(el, field, isAttr) {
+        var transText = false; // 翻译后的文本
 
-        if (_key === '') { return data; } // 空字符返回原始数据
+        if (isAttr === undefined) {
+            transText = translate(el[field]);
+        } else {
+            transText = translate(el.getAttribute(field));
+        }
 
-        str = transPage('pubilc', _key); // 公共翻译
-        if (str !== _key) { return str; } // 已公共翻译
+        if (transText === false) { // 无翻译则退出
+            return false;
+        }
 
-        if (page === false) { return data; } // 未知页面不翻译
-
-        str = transPage(page, _key); // 翻译已知页面
-        return str === _key ? data : str; // 未翻译返回原始数据
+        if (isAttr === undefined) {
+            el[field] = transText;
+        } else {
+            el.setAttribute(field, transText);
+        }
     }
 
 
+    /**
+     * 翻译文本
+     *
+     * @param {string} text 待翻译字符串
+     *
+     * @returns {string|boolean}
+     */
+    function translate(text) { // 翻译
+        var str;
+        var _key = text.trim();
+
+        if (_key === '') { return false; } // 内容为空不翻译
+
+        str = transPage('pubilc', _key); // 公共翻译
+        if (str !== false && str !== _key) { return str; } // 已公共翻译
+
+        if (page === false) { return false; } // 未知页面不翻译
+
+        return transPage(page, _key); // 翻译已知页面
+    }
+
+
+    /**
+     * 翻译页面内容
+     *
+     * @param {string} page 页面
+     * @param {string} key 待翻译内容
+     *
+     * @returns {string|boolean}
+     */
     function transPage(page, key) {
         var str, res, len, i;
 
@@ -109,14 +157,17 @@
             }
         }
 
-        return key; // 没有翻译条目
+        return false; // 没有翻译条目
     }
 
 
-    function timeElement() { // 时间节点翻译
+    /**
+     * 时间节点翻译
+     */
+    function timeElement() {
         var RelativeTimeElement$getFormattedDate = RelativeTimeElement.prototype.getFormattedDate;
         var TimeAgoElement$getFormattedDate = TimeAgoElement.prototype.getFormattedDate;
-        var LocalTimeElement$getFormattedDate = LocalTimeElement.prototype.getFormattedDate;
+        // var LocalTimeElement$getFormattedDate = LocalTimeElement.prototype.getFormattedDate;
 
         var RelativeTime = function (str, el) { // 相对时间解析
             if (/^on ([\w ]+)$/.test(str)) {
@@ -157,12 +208,15 @@
     }
 
 
-    function contributions() { // 贡献日历 基于事件翻译
+    /**
+     * 贡献日历 基于事件翻译
+     */
+    function contributions() {
         var tip = document.getElementsByClassName('svg-tip-one-line');
 
         // 等待 IncludeFragmentElement 元素加载完毕后绑定事件
         $.observe(".js-calendar-graph-svg", function () {
-            setTimeout(function mouseover() { // 延时绑定 mouseover 事件，否则没法翻译
+            setTimeout(function () { // 延时绑定 mouseover 事件，否则没法翻译
                 var $calendar = $('.js-calendar-graph');
                 walk($calendar[0]); // 翻译日历部分
 
