@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.4.0
+// @version      1.4.1
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.4.0
+// @require      http://www.52cik.com/github-hans/locals.js?v1.4.1
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -215,7 +215,8 @@
         var tip = document.getElementsByClassName('svg-tip-one-line');
 
         // 等待 IncludeFragmentElement 元素加载完毕后绑定事件
-        $.observe(".js-calendar-graph-svg", function () {
+        var observe = require('github/observe').observe;
+        observe(".js-calendar-graph-svg", function () {
             setTimeout(function () { // 延时绑定 mouseover 事件，否则没法翻译
                 var $calendar = $('.js-calendar-graph');
                 walk($calendar[0]); // 翻译日历部分
