@@ -1028,6 +1028,7 @@ I18N.zh = {
             "Code": " 代码 ",
             "Revisions": " 修订 ",
 
+            // 代码页面
             "What would you like to do?": "您想做什么？",
             "Embed this gist in your website.": "Embed 可嵌入到您的网页中。",
             "Copy sharable URL for this gist.": "复制 URL 共享这个片段。",
@@ -1040,6 +1041,13 @@ I18N.zh = {
             "Download ZIP": "下载 ZIP",
             "Permalink": "永久链接",
             "Raw": "源码",
+
+            // 修订页面
+            "Unified": " 同屏 ",
+            "Split": " 分屏 ",
+            "created": " 创建",
+            "this gist": "该片段于 ",
+
         },
         "regexp": [ // 正则翻译
             [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
