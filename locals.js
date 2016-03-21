@@ -1004,7 +1004,7 @@ I18N.zh = {
 
         },
         "regexp": [ // 正则翻译
-            [/We’ve found (\d+) repository results/, "我们为您找到 $1 个相关结果"],
+            [/We’ve found ([\d,]+) repository results/, "我们为您找到 $1 个相关结果"],
             [/We couldn’t find any repositories matching '(.+)'/, "我们没有找到任何与 '$1' 相关的结果"],
         ],
     },
