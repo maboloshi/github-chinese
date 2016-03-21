@@ -13,8 +13,9 @@ I18N.conf = {
      * 关注页面 /watching
      * 点赞页面 /stars
      * 问题页面 /issues
+     * 搜索页面 /search
      */
-    rePagePath: /\/(notifications|watching|stars|issues)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search)/,
 
     /**
      * 匹配 url 页面的正则
@@ -973,6 +974,41 @@ I18N.zh = {
             [/(\d+) Closed/, " $1 已处理"],
         ],
     },
+
+
+    "search": { // 搜索页面
+        "static": { // 静态翻译
+            "Search more than": " 这里有超过 ",
+            "repositories": " 的仓库供您搜索",
+
+            "Repositories": " 仓库 ",
+            "Code": " 代码 ",
+            "Users": " 用户 ",
+
+            "Languages": " 语言 ",
+
+            "Advanced search": "高级搜索",
+            "Cheat sheet": "搜索技巧",
+            "You could try an": "您可以试一试 ",
+            "advanced search": "高级搜索",
+
+            "Sort:": "排序:",
+            "Sort options": "排序选项",
+            "Best match": "最佳匹配",
+            "Most stars": "最多赞",
+            "Fewest stars": "最少赞",
+            "Most forks": "最多收藏",
+            "Fewest forks": "最少收藏",
+            "Recently updated": "最近更新",
+            "Least recently updated": "最早更新",
+
+        },
+        "regexp": [ // 正则翻译
+            [/We’ve found (\d+) repository results/, "我们为您找到 $1 个相关结果"],
+            [/We couldn’t find any repositories matching '(.+)'/, "我们没有找到任何与 '$1' 相关的结果"],
+        ],
+    },
+
 
     "gist": { // 代码片段页面
         "static": { // 静态翻译
