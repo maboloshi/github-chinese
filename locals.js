@@ -792,6 +792,16 @@ I18N.zh = {
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目。",
             "Import code": "导入代码",
 
+
+            // 提交详情页面
+            "committed": " 提交于 ",
+            "Merge pull request": "合并请求",
+
+            "Copy the full SHA": "复制完整的 SHA",
+            "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
+
+            "Newer": "新的",
+            "Older": "旧的",
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
@@ -801,6 +811,8 @@ I18N.zh = {
             [/View all issues opened by (.+)/, "查看所有 $1 的问题"],
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"],
             [/(\d+) participants?/, "$1 参与者"],
+            [/Commits on (.+)/, "提交于 $1"],
+            [/from (.+)/, "从 $1"],
         ],
     },
 
