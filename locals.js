@@ -792,8 +792,7 @@ I18N.zh = {
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目。",
             "Import code": "导入代码",
 
-
-            // 提交详情页面
+            // commits 页面
             "committed": " 提交于 ",
             "Merge pull request": "合并请求",
 
@@ -802,6 +801,21 @@ I18N.zh = {
 
             "Newer": "新的",
             "Older": "旧的",
+
+            // branches 页面
+            "Overview": "概述",
+            "Yours": "您的",
+            "Active": "活跃的",
+            "Stale": "陈旧的",
+            "All branches": "所有分支",
+            "Search branches…": "搜索分支…",
+
+            "Active branches": "活跃的分支",
+            "Stale branches": "陈旧的分支",
+            "View more active branches": "查看更多活跃的分支 ",
+            "View more stale branches": "查看更多陈旧的分支 ",
+            "Compare": " 比较 ",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
