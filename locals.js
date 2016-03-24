@@ -1153,6 +1153,11 @@ I18N.zh = {
             "created": " 创建",
             "this gist": "该片段于 ",
 
+            // 编辑代码页面
+            "Editing": " 编辑 ",
+            "Make secret": " 转为私有 ",
+            "Cancel": "取消",
+            "Update public gist": "更新片段",
         },
         "regexp": [ // 正则翻译
             [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
