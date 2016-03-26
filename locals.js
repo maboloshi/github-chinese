@@ -810,12 +810,31 @@ I18N.zh = {
             "All branches": "所有分支",
             "Search branches…": "搜索分支…",
 
+            "Your branches": "您的分支",
+            "You haven’t pushed any branches to this repository.": "您没有提交任何分支到该仓库。",
             "Active branches": "活跃的分支",
+            "There aren’t any active branches.": "没有任何活跃的分支。",
             "Stale branches": "陈旧的分支",
+            "There aren’t any stale branches.": "没有任何陈旧的分支。",
             "View more active branches": "查看更多活跃的分支 ",
             "View more stale branches": "查看更多陈旧的分支 ",
             "Compare": " 比较 ",
+            "Change default branch": "更改默认分支",
 
+            // Releases 页面
+            "Releases": "发布",
+            "Pre-release": "预发布",
+            "Downloads": " 下载 ",
+            "Notes": " 说明 ",
+            "There aren’t any releases here": "没有任何发布内容",
+            "Create a new release": "创建一个发布",
+            "Releases are powered by": "发布是通过在仓库中标记",
+            "tagging specific points of history": " 特定历史版本 ",
+            "in a repository. They’re great for marking release points like": "，用于发布的版本类似 ",
+
+            "Latest release": "最新发布",
+            "Read release notes": "阅读发布说明",
+            "released this": " 发布它 ",
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
@@ -827,6 +846,8 @@ I18N.zh = {
             [/(\d+) participants?/, "$1 参与者"],
             [/Commits on (.+)/, "提交于 $1"],
             [/from (.+)/, "从 $1"],
+            [/(\d+) commits?/, "$1 次提交"],
+            [/to ([^\n]+)[\n\s]+since this release/, " 到 $1 分支在此发布中。"],
         ],
     },
 
