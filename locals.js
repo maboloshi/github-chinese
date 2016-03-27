@@ -835,15 +835,21 @@ I18N.zh = {
             "Latest release": "最新发布",
             "Read release notes": "阅读发布说明",
             "released this": " 发布它 ",
+            "tagged this": " 标注 ",
 
             "Draft a new release": "起草新版本发布",
             "Add release notes": "添加发布说明",
             "Edit release notes": "编辑发布说明",
             "(No release notes)": "(没有发布说明)",
+            "Release notes": "发布说明",
 
             "Edit tag": "修改标签",
             "Edit release": "修改发布",
             "Delete": " 删除 ",
+            "Are you sure?": "您确定一定以及肯定吗？",
+            "This will delete the information for this tag.": "将删除该标签的所有信息。",
+            "Delete this tag": "删除此标签",
+            "Your tag was removed": "标签删除成功！",
 
             "Existing tag": " 已存在的标签",
             "Markdown supported": " Markdown 语法支持",
@@ -855,6 +861,7 @@ I18N.zh = {
             "Save draft": "保存草稿",
             "Saved!": "已保存",
             "Saving draft failed. Try again?": "保存失败，再试一次？",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
