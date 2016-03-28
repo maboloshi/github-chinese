@@ -862,6 +862,21 @@ I18N.zh = {
             "Saved!": "已保存",
             "Saving draft failed. Try again?": "保存失败，再试一次？",
 
+            // 图表页面
+            "Contributors": "贡献者",
+            "Traffic": "流量",
+            "Commits": "提交",
+            "Code frequency": "频率",
+            "Punch card": "时刻",
+            "Network": "网络",
+            "Members": "成员",
+
+            "Contributions to master, excluding merge commits": "对主分支的贡献，不包括合并提交",
+            "Contributions:": "贡献者:",
+            "Filter contributions": "筛选贡献者",
+            "Additions": "添加数量",
+            "Deletions": "删除数量",
+
         },
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
