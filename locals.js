@@ -119,9 +119,11 @@ I18N.zh = {
             "selecting them": "或选择文件",
             ", or pasting\n        from the clipboard.": "，或复制黏贴内容。",
             "Styling with Markdown is supported": "支持 Markdown 功能哦。",
+
             "Close issue": "关闭问题",
             "Comment": "提交",
             "Submit new issue": "提交新问题",
+            "Comment on this commit": "提交",
         },
         "regexp": [ // 正则翻译
             // 仓库删除提示
