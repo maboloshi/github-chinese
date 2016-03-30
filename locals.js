@@ -4,7 +4,7 @@ I18N.conf = {
     /**
      * 要翻译的页面正则
      */
-    rePageClass: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication)\b/,
+    rePageClass: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication|oauth)\b/,
 
     /**
      * 匹配 pathname 页面的正则
@@ -46,6 +46,15 @@ I18N.zh = {
 
     "pubilc": { // 公共区域翻译
         "static": { // 静态翻译
+            // 未登录部分
+            "Personal": "个人",
+            "Open source": "开源",
+            "Business": "商业",
+            "Pricing": "定价",
+            "Support": "支持",
+            "Sign in": "登录",
+            "Sign up": "注册",
+
             "Search GitHub": "GitHub 一下，您就知道",
             "This repository": "当前仓库",
             "Search": "搜索",
@@ -897,16 +906,6 @@ I18N.zh = {
 
     "homepage": { // 未登录首页
         "static": { // 静态翻译
-            "Personal": "个人",
-            "Open source": "开源",
-            "Business": "商业",
-
-            "Pricing": "定价",
-            "Support": "支持",
-
-            "Sign in": "登录",
-            "Sign up": "注册",
-
             "Pick a username": "选择一个用户名",
             "Your email address": "您的邮件地址",
             "Create a password": "创建一个密码",
@@ -1232,5 +1231,23 @@ I18N.zh = {
             [/(\d+) stars?/, " $1 赞"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
         ],
-    }
+    },
+
+    "oauth": { // 应用授权
+        "static": { // 静态翻译
+            "Authorize application": "应用授权",
+            "by": " 的 ",
+            "would like permission to access your account": " 想访问您的帐户",
+            "Review permissions": "查看权限",
+            "Public data only": "仅公共数据",
+            "Limited access to your public data": "仅限访问您的公共数据",
+            "This application will be able to identify you and read public information.": "此应用程序将能识别您的身份和读取您的公共信息。",
+            "Learn more": "更多",
+
+            "Visit application’s website": "访问应用官网",
+            "Learn more about OAuth": "查看更多授权信息",
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
 };
