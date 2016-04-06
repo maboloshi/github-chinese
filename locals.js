@@ -133,6 +133,7 @@ I18N.zh = {
             "Comment": "提交",
             "Submit new issue": "提交新问题",
             "Comment on this commit": "提交",
+            "Close and comment": "提交并关闭",
         },
         "regexp": [ // 正则翻译
             // 仓库删除提示
