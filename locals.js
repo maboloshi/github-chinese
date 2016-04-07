@@ -255,6 +255,7 @@ I18N.zh = {
             "commits": " 次提交 ",
             "Pull Request": " 合并请求 ",
             "Pull Requests": " 合并请求 ",
+            "Issue reported": " 问题报告",
             "Issues reported": " 问题报告",
 
             // 动态 状态词
