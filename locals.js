@@ -59,7 +59,7 @@ I18N.zh = {
             "This repository": "当前仓库",
             "Search": "搜索",
 
-            "Pull requests": "合并请求",
+            "Pull requests": "拉取请求",
             "Issues": " 问题 ",
             "Gist": "代码片段",
 
@@ -121,7 +121,7 @@ I18N.zh = {
             "Add a numbered list": "添加有序列表",
             "Add a task list": "添加任务列表",
             "Directly mention a user or team": "直接提到用户或团队",
-            "Reference an issue or pull request": "参考问题或合并请求",
+            "Reference an issue or pull request": "参考问题或拉取请求",
             "Leave a comment": "留下评论",
 
             "Attach files by dragging & dropping,": "拖拽添加附件，",
@@ -175,15 +175,15 @@ I18N.zh = {
             "forked": " 收藏了 ",
             "forked from": " 收藏至 ",
             "created repository": " 创建了仓库 ",
-            "opened pull request": " 发起了合并请求 ",
-            "commented on pull request": " 评论了合并请求 ",
+            "opened pull request": " 发起了拉取请求 ",
+            "commented on pull request": " 评论了拉取请求 ",
             "opened issue": " 新建问题 ",
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
             "pushed to": " 提交了 ",
             "closed issue": " 关闭了问题 ",
-            "merged pull request": " 合并了请求 ",
+            "merged pull request": " 合并了拉取请求 ",
             "commented on issue": " 提交了评论 ",
 
             "More": "更多",
@@ -243,7 +243,7 @@ I18N.zh = {
             "F": "周五",
 
             "Includes contributions from private repositories you can access.": "您可以访问包括私人仓库。",
-            "Summary of pull requests, issues opened, and commits.": "包括 合并请求, 提问, 提交.",
+            "Summary of pull requests, issues opened, and commits.": "包括 拉取请求, 提问, 提交.",
             "Learn how we count contributions": " 您想知道如何计算贡献的吗",
             "Less": "少",
             "More": "多",
@@ -253,8 +253,8 @@ I18N.zh = {
             "No recent contributions": "最近没有贡献",
 
             "commits": " 次提交 ",
-            "Pull Request": " 合并请求 ",
-            "Pull Requests": " 合并请求 ",
+            "Pull Request": " 拉取请求 ",
+            "Pull Requests": " 拉取请求 ",
             "Issue reported": " 问题报告",
             "Issues reported": " 问题报告",
 
@@ -263,15 +263,15 @@ I18N.zh = {
             "forked": " 收藏了 ",
             "forked from": " 收藏至 ",
             "created repository": " 创建了仓库 ",
-            "opened pull request": " 发起了合并请求 ",
-            "commented on pull request": " 评论了合并请求 ",
+            "opened pull request": " 发起了拉取请求 ",
+            "commented on pull request": " 评论了拉取请求 ",
             "opened issue": " 新建问题 ",
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
             "pushed to": " 提交了 ",
             "closed issue": " 关闭了问题 ",
-            "merged pull request": " 合并了请求 ",
+            "merged pull request": " 合并了拉取请求 ",
             "commented on issue": " 提交了评论 ",
 
 
@@ -585,9 +585,9 @@ I18N.zh = {
 
             "Your recently pushed branches:": "您最近提交的分支:",
             "(less than a minute ago)": " 不到一分钟前 ",
-            "Compare & pull request": " 比较 & 合并请求 ",
+            "Compare & pull request": " 比较 & 拉取请求 ",
 
-            "New pull request": "发起合并请求",
+            "New pull request": "发起拉取请求",
             "New file": "新建文件",
             "Upload files": "上传文件",
             "Find file": "查找文件",
@@ -623,9 +623,9 @@ I18N.zh = {
 
             // issues 页面
             "Filters": "筛选",
-            "Open issues and pull requests": "开放的问题或请求",
+            "Open issues and pull requests": "开放的问题或拉取请求",
             "Your issues": "您提出的问题",
-            "Your pull requests": "您的请求合并",
+            "Your pull requests": "您的拉取请求",
             "Everything assigned to you": "任何关于您的",
             "Everything mentioning you": "提及您的",
             "View advanced search syntax": "查看高级搜索语法",
@@ -683,8 +683,8 @@ I18N.zh = {
             "Commit directly to the": "提交到 ",
             "Create a": "创建",
             "new branch": " 新分支 ",
-            "for this commit and start a pull request.": "为这个提交，并且发起一个合并请求。",
-            "Learn more about pull requests.": " 了解更多合并请求。",
+            "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。",
+            "Learn more about pull requests.": " 了解更多拉取请求。",
 
             // Find file 页面
             "You’ve activated the": "您已激活",
@@ -696,7 +696,7 @@ I18N.zh = {
             "to exit.": " 返回。",
 
             // Pull Requests 页面
-            "There aren’t any open pull requests.": "暂无请求合并。",
+            "There aren’t any open pull requests.": "暂无拉取请求。",
             "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
             "a new search query": "新的搜索查询",
             ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的您超级有帮助的。",
@@ -722,8 +722,17 @@ I18N.zh = {
             "Public wikis will still be readable by everyone.": "公共 wikis 仍然会受到大家的可读性",
             "GitHub Issues adds lightweight issue tracking tightly integrated with\n      your repository. Add issues to milestones, label issues, and\n      close & reference issues from commit messages.": "GitHub 与您的存储库添加轻量级问题跟踪紧密集成的问题。添加里程碑的问题，标签问题，并密切与参考问题提交消息。",
 
+            "Merge button": "合并按钮",
+            "When merging pull requests, you can allow merge commits, squashing, or both.": "当合并拉取请求时，您可以允许合并提交，压缩。",
+            "Allow merge commits": "允许合并提交",
+            "Add all commits from the head branch to the base branch with a merge commit.": "从head分支的所有提交合并提交到base分支。",
+            "Allow squash merging": "允许压缩合并",
+            "Combine all commits from the head branch into a single commit in the base branch.": "从head分支的所有提交压缩提交到base分支。",
+            "You must select at least one option": "您至少要选择一个选项。",
+
             "GitHub Pages": "GitHub 项目演示页面",
             "Your site is published at": " 您的演示地址为: ",
+            "Your site is ready to be published at": " 您的演示地址为: ",
             "Update your site": "更新您的站点",
             "To update your site, push your HTML or": "更新您的站点，可以直接上传 html 或者使用 ",
             "updates to\n      your": " 更新到 ",
@@ -749,7 +758,7 @@ I18N.zh = {
             "Once you delete a repository, there is no going back. Please be certain.": "一旦删除您的仓库，将无法找回。请您三思。",
 
             "Default branch": "默认分支",
-            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是“基地”分支在您的资料库，对所有拉请求和代码的提交是自动进行的，除非您指定一个不同的分支。",
+            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是“基地”分支在您的资料库，对所有拉取请求和代码的提交是自动进行的，除非您指定一个不同的分支。",
             "Update": "更新",
             "Switch default branch": "选择默认分支",
             "Filter branches": "搜索分支",
@@ -773,7 +782,7 @@ I18N.zh = {
             "compare across forks": "比较收藏和源仓库",
             "base:": "基础库:",
             "compare:": "比较库:",
-            "Create pull request": " 创建合并请求",
+            "Create pull request": " 创建拉取请求",
             "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或收藏来讨论和查看变化。",
             "Compare and review just about anything": "比较和审查任何文件",
             "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和收藏的仓库。",
@@ -807,7 +816,7 @@ I18N.zh = {
 
             // commits 页面
             "committed": " 提交于 ",
-            "Merge pull request": "合并请求",
+            "Merge pull request": "拉取请求",
 
             "Copy the full SHA": "复制完整的 SHA",
             "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
@@ -900,7 +909,7 @@ I18N.zh = {
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"],
             [/(\d+) participants?/, "$1 参与者"],
             [/Commits on (.+)/, "提交于 $1"],
-            [/from (.+)/, "从 $1"],
+            // bug [/from (.+)/, "从 $1"],
             [/(\d+) commits?/, "$1 次提交"],
             [/to ([^\n]+)[\n\s]+since this release/, " 到 $1 分支在此发布中。"],
         ],
