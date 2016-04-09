@@ -547,6 +547,7 @@ I18N.zh = {
             "Star": " 点赞",
             "Unstar": " 取消点赞",
             "Fork": " 收藏",
+            "Where should we fork this repository?": "您想把该仓库收藏到哪个角色下？",
 
             "Code": " 代码",
             "Pulse": " 统计",
