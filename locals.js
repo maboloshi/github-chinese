@@ -1063,6 +1063,7 @@ I18N.zh = {
             "Least commented": "最少评论",
             "Recently updated": "最近更新",
             "Least recently updated": "最早更新",
+            "Most reactions": "最多回应",
 
             "No results matched your search.": "没有符合您的搜索结果。",
             "Use the links above to find what you’re looking for, or try": "使用上面的链接找到您要找的内容，或尝试",
