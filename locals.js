@@ -303,16 +303,17 @@ I18N.zh = {
             // 菜单
             "Personal settings": "个人设置",
             "Profile": "基本信息",
-            "Account settings": "帐户设置",
+            "Account": "帐户设置",
             "Emails": "邮箱设置",
-            "Notification center": "通知设置",
+            "Notifications": "通知设置",
             "Billing": "财务信息",
-            "SSH keys": "SSH keys",
+            "SSH and GPG keys": "SSH 和 GPG keys",
             "Security": "安全信息",
             "OAuth applications": "授权应用",
             "Personal access tokens": "访问令牌",
             "Repositories": "仓库管理",
             "Organizations": "组织管理",
+            "Saved replies": "快捷回复",
 
             // Profile 菜单
             "Public profile": "基本资料",
