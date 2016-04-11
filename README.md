@@ -24,7 +24,16 @@
 > 目前仅支持 [Tampermonkey][1] 插件
 >
 > 很多人打不开谷歌插件中心，我已经下载好放在了根目录下方便大家使用。  
-> 点击这里 [Tampermonkey_v3.12.58.crx][Tampermonkey] 分流下载插件。
+> 点击这里 [Tampermonkey_v4.0.25.crx][Tampermonkey] 分流下载插件。
+
+
+**PS: 最近 Tampermonkey 更新较大，可能无法打开插件地址，所以可以尝试如下方法手动安装脚本**
+1. 下载 [Tampermonkey_v4.0.25.crx][Tampermonkey] 插件
+2. 在 chrome 里打开 chrome://extensions/ 这里地址
+3. 把刚才下载到的 Tampermonkey_v4.0.25.crx 拖进去就好了
+4. 接着点浏览器右上角的插件图标，选择 “添加新脚本...”
+5. 然后将 https://github.com/52cik/github-hans/blob/gh-pages/main.js 源码复制进去
+6. 最后保存即可
 
 
 ## 待办 (TODO)
@@ -66,7 +75,7 @@
 [everyday]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/everyday.png
 [github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/github-hans.gif "github-hans"
 
-[Tampermonkey]: http://www.52cik.com/github-hans/Tampermonkey_v3.12.58.crx "Tampermonkey"
+[Tampermonkey]: http://www.52cik.com/github-hans/Tampermonkey_v4.0.25.crx "Tampermonkey"
 
 
 [issues-url]: https://github.com/52cik/github-hans/issues
