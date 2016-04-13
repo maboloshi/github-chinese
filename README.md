@@ -28,6 +28,7 @@
 
 
 **PS: 最近 Tampermonkey 更新较大，可能无法打开插件地址，所以可以尝试如下方法手动安装脚本**  
+
 1. 下载 [Tampermonkey_v4.0.25.crx][Tampermonkey] 插件
 2. 在 chrome 里打开 chrome://extensions/ 这里地址
 3. 把刚才下载到的 Tampermonkey_v4.0.25.crx 拖进去就好了
