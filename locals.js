@@ -164,7 +164,7 @@ I18N.zh = {
             "Public": "公共",
             "Private": "私有",
             "Sources": "源码",
-            "Forks": "收藏",
+            "Forks": "派生",
 
             "View": "查看 ",
             "new broadcast": " 条新公告",
@@ -172,8 +172,8 @@ I18N.zh = {
 
             // 动态 状态词
             "starred": " 赞了 ",
-            "forked": " 收藏了 ",
-            "forked from": " 收藏至 ",
+            "forked": " 派生了 ",
+            "forked from": " 派生至 ",
             "created repository": " 创建了仓库 ",
             "opened pull request": " 发起了拉取请求 ",
             "commented on pull request": " 评论了拉取请求 ",
@@ -181,7 +181,7 @@ I18N.zh = {
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
-            "pushed to": " 提交了 ",
+            "pushed to": " 推送了 ",
             "closed issue": " 关闭了问题 ",
             "merged pull request": " 合并了拉取请求 ",
             "commented on issue": " 提交了评论 ",
@@ -269,7 +269,7 @@ I18N.zh = {
             "close issue": " 关闭问题 ",
             "added": " 添加了 ",
             "to": " 到 ",
-            "pushed to": " 提交了 ",
+            "pushed to": " 推送了 ",
             "closed issue": " 关闭了问题 ",
             "merged pull request": " 合并了拉取请求 ",
             "commented on issue": " 提交了评论 ",
@@ -281,7 +281,7 @@ I18N.zh = {
             "Public": "公共",
             "Private": "私有",
             "Sources": "源码",
-            "Forks": "收藏",
+            "Forks": "派生",
             "Mirrors": "镜像",
             "New": " 新建",
 
@@ -290,7 +290,7 @@ I18N.zh = {
             "Report abuse": "举报该用户",
         },
         "regexp": [ // 正则翻译
-            [/Pushed (\d+) commits? to/, "提交了 $1 次到"],
+            [/Pushed (\d+) commits? to/, "推送了 $1 次提交到"],
             [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
             [/([^ ]+) has no activity during this period\./, "$1 近期没有任何活动。"],
             [/(\d+) total/, "$1 次"],
@@ -547,8 +547,8 @@ I18N.zh = {
             "Unwatch": " 取消关注",
             "Star": " 点赞",
             "Unstar": " 取消点赞",
-            "Fork": " 收藏",
-            "Where should we fork this repository?": "您想把该仓库收藏到哪个角色下？",
+            "Fork": " 派生",
+            "Where should we fork this repository?": "您想把该仓库派生到哪个角色下？",
 
             "Code": " 代码",
             "Pulse": " 统计",
@@ -585,7 +585,7 @@ I18N.zh = {
             "Copy to clipboard": "复制到剪切板",
             "Copied!": "复制成功!",
 
-            "Your recently pushed branches:": "您最近提交的分支:",
+            "Your recently pushed branches:": "您最近推送的分支:",
             "(less than a minute ago)": " 不到一分钟前 ",
             "Compare & pull request": " 比较 & 拉取请求 ",
 
@@ -736,7 +736,7 @@ I18N.zh = {
             "Your site is published at": " 您的演示地址为: ",
             "Your site is ready to be published at": " 您的演示地址为: ",
             "Update your site": "更新您的站点",
-            "To update your site, push your HTML or": "更新您的站点，可以直接上传 html 或者使用 ",
+            "To update your site, push your HTML or": "更新您的站点，可以直接推送 html 或者使用 ",
             "updates to\n      your": " 更新到 ",
             "branch.\n    Read the": " 分支。详情请阅读 ",
             "Pages help article": "演示页面帮助",
@@ -747,7 +747,7 @@ I18N.zh = {
 
             "Danger Zone": "危险区",
             "Make this repository private": "将该仓库设为私有仓库",
-            "Public forks can’t be made private.\n    Please": "收藏的的仓库，无法转为私有，请",
+            "Public forks can’t be made private.\n    Please": "派生的的仓库，无法转为私有，请",
             "duplicate the repository": "复制一份该仓库。",
             "Make private": "转为私有",
             "Please": "请",
@@ -765,7 +765,7 @@ I18N.zh = {
             "Switch default branch": "选择默认分支",
             "Filter branches": "搜索分支",
             "Protected branches": "受保护的分支",
-            "Protect branches to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.\n    New to protected branches?": "受保护分支禁用强制 push，避免删除分支机构，合并可选要求前状态检查。创建新的受保护的分支机构？",
+            "Protect branches to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.\n    New to protected branches?": "受保护分支禁用强制推送，避免删除分支机构，合并可选要求前状态检查。创建新的受保护的分支机构？",
             "Learn more.": "查看更多信息",
             "No protected branches yet.": "暂无受保护分支",
 
@@ -781,13 +781,13 @@ I18N.zh = {
             // Compare changes 页面
             "Compare changes": "变更比较",
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
-            "compare across forks": "比较收藏和源仓库",
+            "compare across forks": "比较派生库和源仓库",
             "base:": "基础库:",
             "compare:": "比较库:",
             "Create pull request": " 创建拉取请求",
-            "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或收藏来讨论和查看变化。",
+            "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或派生来讨论和查看变化。",
             "Compare and review just about anything": "比较和审查任何文件",
-            "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和收藏的仓库。",
+            "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和派生的仓库。",
             "Example comparisons": "比较例子",
 
             // issues 页面
@@ -835,7 +835,7 @@ I18N.zh = {
             "Search branches…": "搜索分支…",
 
             "Your branches": "您的分支",
-            "You haven’t pushed any branches to this repository.": "您没有提交任何分支到该仓库。",
+            "You haven’t pushed any branches to this repository.": "您没有推送任何分支到该仓库。",
             "Active branches": "活跃的分支",
             "There aren’t any active branches.": "没有任何活跃的分支。",
             "Stale branches": "陈旧的分支",
@@ -1101,8 +1101,8 @@ I18N.zh = {
             "Best match": "最佳匹配",
             "Most stars": "最多赞",
             "Fewest stars": "最少赞",
-            "Most forks": "最多收藏",
-            "Fewest forks": "最少收藏",
+            "Most forks": "最多派生",
+            "Fewest forks": "最少派生",
             "Recently updated": "最近更新",
             "Least recently updated": "最早更新",
 
@@ -1118,20 +1118,20 @@ I18N.zh = {
 
             "Repositories options": "仓库选项",
             "With this many stars": "指定被赞数",
-            "With this many forks": "指定收藏数",
+            "With this many forks": "指定派生数",
             "Of this size": "仓库大小",
             "Pushed to": "推送于",
             "Return repositories": "搜索结果 ",
             "not": "不",
             "and": "要",
             "only": "只",
-            "including forks.": " 包括被收藏的仓库。",
+            "including forks.": " 包括被派生的仓库。",
 
             "Code options": "代码选项",
             "With this extension": "文件后缀",
             "Of this file size": "文件大小",
             "In this path": "文件路径",
-            "Return code from forked repositories": "搜索结果包括被收藏的仓库。",
+            "Return code from forked repositories": "搜索结果包括被派生的仓库。",
 
             "Issues options": "问题选项",
             "In the state": "问题状态",
@@ -1196,7 +1196,7 @@ I18N.zh = {
             "Public & Secret": "公共 & 私有",
             "Public only": "仅公共",
             "Secret only": "仅私有",
-            "forked from": " 收藏自 ",
+            "forked from": " 派生自 ",
             "Created": "创建于 ",
             "View": " 查看 ",
 
@@ -1240,7 +1240,7 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
             [/(\d+) files?/, " $1 文件"],
-            [/(\d+) forks?/, " $1 收藏"],
+            [/(\d+) forks?/, " $1 派生"],
             [/(\d+) comments?/, " $1 评论"],
             [/(\d+) stars?/, " $1 赞"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
