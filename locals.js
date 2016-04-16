@@ -1210,6 +1210,8 @@ I18N.zh = {
 
             "Code": " 代码 ",
             "Revisions": " 修订 ",
+            "Stars": " 被赞 ",
+            "Forks": " 派生 ",
 
             // 代码页面
             "What would you like to do?": "您想做什么？",
@@ -1236,6 +1238,10 @@ I18N.zh = {
             "Make secret": " 转为私有 ",
             "Cancel": "取消",
             "Update public gist": "更新片段",
+
+            // 已赞页面
+            "Starred": " 赞了 ",
+            "You don’t have any starred gists yet.": "您还没有赞过任何片段。",
         },
         "regexp": [ // 正则翻译
             [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
