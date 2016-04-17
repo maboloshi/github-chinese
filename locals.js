@@ -13,9 +13,10 @@ I18N.conf = {
      * 关注页面 /watching
      * 点赞页面 /stars
      * 问题页面 /issues
+     * 拉取请求 /pulls
      * 搜索页面 /search
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search|pulls)/,
 
     /**
      * 匹配 url 页面的正则
@@ -1271,3 +1272,5 @@ I18N.zh = {
         ],
     },
 };
+
+I18N.zh.pulls = I18N.zh.issues; // 共用翻译
