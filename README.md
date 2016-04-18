@@ -8,7 +8,7 @@
   [![license MIT][license-image]][license-url]
 
 
-> **GitHub 更新，导致之前版本无法正常使用，请大家及时升级。**
+> **2016-04-18 GitHub 更新，导致之前版本无法正常使用，请大家及时升级。**
 
 
 ## 特性 (Features)
