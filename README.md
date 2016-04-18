@@ -8,6 +8,9 @@
   [![license MIT][license-image]][license-url]
 
 
+> **GitHub 更新，导致之前版本无法正常使用，请大家及时升级。**
+
+
 ## 特性 (Features)
 
 1. 给像我这样英文渣渣同学的福利。
