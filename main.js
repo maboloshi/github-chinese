@@ -3,19 +3,22 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.4.1
+// @version      1.4.2
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.4.1
+// @require      http://www.52cik.com/github-hans/locals.js?v1.4.2
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
 (function (window, document, undefined) {
     'use strict';
+
+    // 2016-04-18 github 将 jquery 以 amd 加载，不暴露到全局了。
+    var $ = require('github/jquery')['default'];
 
     // 要翻译的页面正则
     var page = document.body.className.match(I18N.conf.rePageClass);
@@ -165,6 +168,10 @@
      * 时间节点翻译
      */
     function timeElement() {
+        if (!window.RelativeTimeElement) { // 防止报错
+          return;
+        }
+
         var RelativeTimeElement$getFormattedDate = RelativeTimeElement.prototype.getFormattedDate;
         var TimeAgoElement$getFormattedDate = TimeAgoElement.prototype.getFormattedDate;
         // var LocalTimeElement$getFormattedDate = LocalTimeElement.prototype.getFormattedDate;
@@ -200,7 +207,8 @@
         };
 
         // 遍历 time 元素进行翻译
-        $('time').each(function (i, el) {
+        // 2016-04-16 github 改版，不再用 time 标签了。
+        $('time, relative-time, time-ago, local-time').each(function (i, el) {
             if (el.getFormattedDate) { // 跳过未注册的 time 元素
                 el.textContent = el.getFormattedDate();
             }
