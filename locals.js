@@ -249,7 +249,7 @@ I18N.zh = {
             "Less": "少",
             "More": "多",
             "Contributions in the last year": "过去一年的贡献",
-            "Longest streak": "连续贡献最长天数",
+            "Longest streak": "最长连续贡献天数",
             "Current streak": "当前连续贡献天数",
             "No recent contributions": "最近没有贡献",
 
