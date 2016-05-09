@@ -127,7 +127,7 @@ I18N.zh = {
 
             "Attach files by dragging & dropping,": "拖拽添加附件，",
             "selecting them": "或选择文件",
-            ", or pasting\n        from the clipboard.": "，或复制黏贴内容。",
+            ", or pasting\n        from the clipboard.": "，或复制粘贴内容。",
             "Styling with Markdown is supported": "支持 Markdown 功能哦。",
 
             "Close issue": "关闭问题",
@@ -138,7 +138,7 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             // 仓库删除提示
-            [/Your repository "([^"]+)" was successfully deleted\./, "您的 \"$1\" 仓库以成功被删除了。"],
+            [/Your repository "([^"]+)" was successfully deleted\./, "您的 \"$1\" 仓库已被成功删除。"],
 
             /**
              * 匹配时间格式
@@ -382,7 +382,7 @@ I18N.zh = {
             "We'll only send you legal or administrative emails, and any emails you’ve specifically subscribed to.": "我们只向您发送法律或行政邮件以及您订阅信息。",
             "Save email preferences": "保存偏好",
             "Successfully updated your email preferences.": "Email 偏好设置修改成功。",
-            "Looking for activity notification controls? Check the": "想要了解更详细的通知设置，请请前往 ",
+            "Looking for activity notification controls? Check the": "想要了解更详细的通知设置，请前往 ",
 
             // Notification center 菜单
             "How you receive notifications": "通知设置",
@@ -720,7 +720,7 @@ I18N.zh = {
             "Repository name": "仓库名",
             "Rename": "重命名",
             "Features": "特性",
-            "GitHub Wikis is a simple way to let others contribute content.\n      Any GitHub user can create and edit pages to use for documentation,\n      examples, support, or anything you wish.": "GitHub wikis 是一个简单的方法让别人贡献内容。GitHub 的任何用户都可以创建和编辑页面中使用的文档，示例，支持或任何您想。",
+            "GitHub Wikis is a simple way to let others contribute content.\n      Any GitHub user can create and edit pages to use for documentation,\n      examples, support, or anything you wish.": "GitHub Wikis 是一个简单的方法让别人贡献内容。GitHub 的任何用户都可以创建和编辑页面中使用的文档，示例，支持或任何您想。",
             "Restrict editing to collaborators only": "编辑限制只有合作者可以",
             "Public wikis will still be readable by everyone.": "公共 wikis 仍然会受到大家的可读性",
             "GitHub Issues adds lightweight issue tracking tightly integrated with\n      your repository. Add issues to milestones, label issues, and\n      close & reference issues from commit messages.": "GitHub 与您的存储库添加轻量级问题跟踪紧密集成的问题。添加里程碑的问题，标签问题，并密切与参考问题提交消息。",
@@ -1274,3 +1274,4 @@ I18N.zh = {
 };
 
 I18N.zh.pulls = I18N.zh.issues; // 共用翻译
+
