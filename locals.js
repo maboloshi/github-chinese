@@ -60,7 +60,7 @@ I18N.zh = {
             "This repository": "当前仓库",
             "Search": "搜索",
 
-            "Pull requests": "拉取请求",
+            "Pull requests": " 拉取请求 ",
             "Issues": " 问题 ",
             "Gist": "代码片段",
 
@@ -704,6 +704,25 @@ I18N.zh = {
             "a new search query": "新的搜索查询",
             ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的您超级有帮助的。",
 
+            "Conversation": " 交谈 ",
+            "Files changed": " 更改的文件 ",
+            "commented": " 评论 ",
+            "merged commit": " 以合并提交 ",
+            "into": " 到 ",
+
+            "Revert": " 还原 ",
+
+            "Avoid bugs by automatically running your tests.": "通过持续集成测试来避免BUG。",
+            "Continuous integration can help catch bugs by running your tests automatically.": "持续集成可以通过自动运行您的测试有助于捕获错误。",
+            "Merge your code with confidence using one of our continuous integration providers.": "合并您的代码使用我们信任的持续集成供应商。",
+
+            "This branch has no conflicts with the base branch": "该分支与base支没有冲突",
+            "Merging can be performed automatically.": "可以自动地执行合并。",
+            "You can also": "您也可以在 ",
+            "open this in GitHub Desktop": "GitHub桌面版本",
+            "or view": " 打开，或通过 ",
+            "command line instructions": "命令行查看",
+
             // wiki 页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
@@ -819,7 +838,9 @@ I18N.zh = {
 
             // commits 页面
             "committed": " 提交于 ",
-            "Merge pull request": "拉取请求",
+            "Merge pull request": " 合并拉取请求 ",
+            "Confirm  merge": " 确认合并 ",
+            "Close pull request": " 关闭拉取请求 ",
 
             "Copy the full SHA": "复制完整的 SHA",
             "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
