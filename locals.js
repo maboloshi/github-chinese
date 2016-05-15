@@ -286,9 +286,13 @@ I18N.zh = {
             "Mirrors": "镜像",
             "New": " 新建",
 
-            "User actions": "用户操作",
-            "Block user": "阻止该用户",
-            "Report abuse": "举报该用户",
+            "Block or report": " 阻止或举报 ",
+            "Learn more about blocking a user.": "查看详细的阻止用户信息。",
+            "Block or report this user": "阻止或举报该用户",
+            "Block user": " 阻止该用户 ",
+            "Hide content and notifications from this user.": "屏蔽所有来自该用户的通知消息。",
+            "Report abuse": " 举报该用户 ",
+            "Contact Support about this user's behavior.": "将该用户行为上报。",
         },
         "regexp": [ // 正则翻译
             [/Pushed (\d+) commits? to/, "推送了 $1 次提交到"],
