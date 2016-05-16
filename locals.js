@@ -65,6 +65,7 @@ I18N.zh = {
             "Pull requests": "拉取请求",
             "Issues": "问题",
             "Gist": "代码片段",
+            "Your dashboard": "返回首页",
 
             "You have no unread notifications": "您没有未读通知",
             "You have unread notifications": "您有未读通知",
