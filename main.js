@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.4.2
+// @version      1.5.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.4.2
+// @require      http://www.52cik.com/github-hans/locals.js?v1.5.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -33,11 +33,13 @@
 
     page = page ? page[1] : false; // 取页面 key
 
+    transTitle(); // 页面标题翻译
     timeElement(); // 时间节点翻译
     contributions(); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
     walk(document.body); // 立即翻译页面
 
     $(document).ajaxComplete(function () {
+        transTitle();
         walk(document.body); // ajax 请求后再次翻译页面
     });
 
@@ -54,7 +56,7 @@
             var el = nodes[i];
             // todo 1. 修复多属性翻译问题; 2. 添加事件翻译, 如论预览信息;
 
-            if (el.nodeType === 1) {
+            if (el.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
                 // 元素节点属性翻译
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
@@ -77,11 +79,25 @@
                 if (el.id !== 'readme' && !I18N.conf.reIgnore.test(el.className)) {
                     walk(el); // 遍历子节点
                 }
-            } else if (el.nodeType === 3) { // 文本节点翻译
+            } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
                 transElement(el, 'data');
             }
 
         }
+    }
+
+
+    /**
+     * 翻译页面标题
+     */
+    function transTitle() {
+        var title = translate(document.title, 'title');
+
+        if (title === false) { // 无翻译则退出
+            return false;
+        }
+
+        document.title = title;
     }
 
 
@@ -97,16 +113,17 @@
     function transElement(el, field, isAttr) {
         var transText = false; // 翻译后的文本
 
-        if (isAttr === undefined) {
-            transText = translate(el[field]);
+        if (isAttr === undefined) { // 非属性翻译
+            transText = translate(el[field], page);
         } else {
-            transText = translate(el.getAttribute(field));
+            transText = translate(el.getAttribute(field), page);
         }
 
         if (transText === false) { // 无翻译则退出
             return false;
         }
 
+        // 替换翻译后的内容
         if (isAttr === undefined) {
             el[field] = transText;
         } else {
@@ -122,18 +139,26 @@
      *
      * @returns {string|boolean}
      */
-    function translate(text) { // 翻译
+    function translate(text, page) { // 翻译
         var str;
         var _key = text.trim();
 
         if (_key === '') { return false; } // 内容为空不翻译
 
         str = transPage('pubilc', _key); // 公共翻译
-        if (str !== false && str !== _key) { return str; } // 已公共翻译
+
+        if (str !== false && str !== _key) { // 公共翻译完成
+            str = transPage('pubilc', str) || str;  // 二次公共翻译（为了弥补正则部分翻译的情况）
+            return text.replace(_key, str);  // 替换原字符，保留空白部分
+        }
 
         if (page === false) { return false; } // 未知页面不翻译
 
-        return transPage(page, _key); // 翻译已知页面
+        str = transPage(page, _key); // 翻译已知页面
+        if (str === false || str === '' ) { return false; } // 未知内容不翻译
+
+        str = transPage('pubilc', str) || str; // 二次公共翻译（为了弥补正则部分翻译的情况）
+        return text.replace(_key, str); // 替换原字符，保留空白部分
     }
 
 
@@ -146,7 +171,8 @@
      * @returns {string|boolean}
      */
     function transPage(page, key) {
-        var str, res, len, i;
+        var str; // 翻译结果
+        var res; // 正则数组
 
         // 静态翻译
         str = I18N['zh'][page]['static'][key];
@@ -154,7 +180,7 @@
 
         // 正则翻译
         if (res = I18N['zh'][page]['regexp']) {
-            for (i = 0, len = res.length; i < len; i++) {
+            for (var i = 0, len = res.length; i < len; i++) {
                 str = key.replace(res[i][0], res[i][1]);
                 if (str !== key) { return str; }
             }
