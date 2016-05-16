@@ -15,8 +15,9 @@ I18N.conf = {
      * 问题页面 /issues
      * 拉取请求 /pulls
      * 搜索页面 /search
+     * 趋势页面 /trending
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search|pulls)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending)/,
 
     /**
      * 匹配 url 页面的正则
@@ -77,11 +78,16 @@ I18N.zh = {
             "Signed in as": "您好",
             "Your profile": "您的主页",
             "Your stars": "点赞的项目",
-            "Explore": "激动的探索",
-            "Integrations": "集成工具",
+            "Explore": "探索",
+            "Integrations": "集成",
             "Help": "帮助",
             "Settings": "设置",
             "Sign out": "退出",
+
+            "Showcases": "展柜",
+            "Trending": "趋势",
+            "Stars": "已赞",
+
 
             "Previous": "上一页",
             "Next": "下一页",
@@ -141,6 +147,11 @@ I18N.zh = {
             "Followers": "粉丝",
             "Follow": "关注",
             "Unfollow": "取消关注",
+            "Watch": "关注",
+            "Unwatch": "取消关注",
+            "Star": "点赞",
+            "Unstar": "取消点赞",
+            "Fork": "派生",
         },
         "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
             // 仓库删除提示
@@ -552,11 +563,6 @@ I18N.zh = {
 
     "vis-public": { // 仓库页
         "static": { // 静态翻译
-            "Watch": "关注",
-            "Unwatch": "取消关注",
-            "Star": "点赞",
-            "Unstar": "取消点赞",
-            "Fork": "派生",
             "Where should we fork this repository?": "您想把该仓库派生到哪个角色下？",
 
             "Code": "代码",
@@ -1035,7 +1041,6 @@ I18N.zh = {
             "Watched repositories": "关注的仓库",
             "Sorted by most recently watched.": "按最近关注排序",
             "Unwatch all": "取消所有关注",
-            "Unwatch": "取消关注",
             "Notification settings": "通知设置",
             "You can change how you receive notifications from your account settings.": "您可以修改接收通知的方式。",
             "Change notification settings": "修改通知设置",
@@ -1046,10 +1051,6 @@ I18N.zh = {
 
     "stars": { // 点赞页面
         "static": { // 静态翻译
-            "Showcases": "展柜",
-            "Trending": "趋势",
-            "Stars": "已赞",
-
             "Search starred repositories…": "搜索点赞的仓库…",
             "Sort:": "排序:",
             "Sort options": "排序选项",
@@ -1068,6 +1069,43 @@ I18N.zh = {
         "regexp": [ // 正则翻译
         ],
     },
+
+    "trending": { // 趋势页面
+        "static": { // 静态翻译
+            "Trending in open source": "开源趋势",
+            "See what the GitHub community is most excited about today.": "看看 GitHub 社会今天最受关注的项目。",
+            "See what the GitHub community is most excited about this week.": "看看 GitHub 社会本周最受关注的项目。",
+            "See what the GitHub community is most excited about this month.": "看看 GitHub 社会本月最受关注的项目。",
+
+            "Trending developers": "开发者趋势",
+            "These are the organizations and developers building the hot tools today.": "这是今天创建热门项目的组织和开发人员。",
+            "These are the organizations and developers building the hot tools this week.": "这是本周创建热门项目的组织和开发人员。",
+            "These are the organizations and developers building the hot tools this month.": "这是本月创建热门项目的组织和开发人员。",
+
+            "Repositories": "仓库",
+            "Developers": "开发者",
+
+            "Trending:": "趋势:",
+            "Adjust time span": "调整的时间跨度",
+            "today": "今天",
+            "this week": "本周",
+            "this month": "本月",
+
+            "All languages": "所有语言",
+            "Unknown languages": "未知语言",
+
+            "Other:": "其他:",
+            "Languages": "语言",
+            "Other Languages": "其他语言",
+            "Filter Languages": "筛选语言",
+        },
+        "regexp": [ // 正则翻译
+            [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
+            [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
+            [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
+        ],
+    },
+
 
     "issues": { // 问题页面
         "static": { // 静态翻译
