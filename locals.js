@@ -135,6 +135,11 @@ I18N.zh = {
             "Submit new issue": "提交新问题",
             "Comment on this commit": "提交",
             "Close and comment": "提交并关闭",
+
+            // 公共动作词
+            "Followers": "粉丝",
+            "Follow": " 关注",
+            "Unfollow": " 取消关注",
         },
         "regexp": [ // 正则翻译
             // 仓库删除提示
@@ -210,10 +215,7 @@ I18N.zh = {
     "page-profile": { // 个人首页
         "static": { // 静态翻译
             "Joined on": "注册于 ",
-            "Follow": " 关注",
-            "Unfollow": " 取消关注",
             "Change your avatar": "修改头像",
-            "Followers": "粉丝",
             "Starred": "赞了",
             "Following": "关注",
             "Organizations": "组织",
@@ -620,8 +622,6 @@ I18N.zh = {
 
             // 关注者页面
             "Watchers": "关注者",
-            "Follow": " 关注",
-            "Unfollow": " 取消关注",
 
             // 点赞者页面
             "Stargazers": "点赞的人",
