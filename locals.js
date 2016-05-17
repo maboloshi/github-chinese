@@ -606,23 +606,28 @@ I18N.zh = {
             "Compare & pull request": "比较 & 拉取请求",
 
             "New pull request": "发起拉取请求",
-            "New file": "新建文件",
+            "Create new file": "新建文件",
             "Upload files": "上传文件",
             "Find file": "查找文件",
+            "Copy path": "复制路径",
+            "Clone or download": "克隆或下载",
             "Download ZIP": "下载 ZIP",
             "History": "历史记录",
+
+            "Use SSH": "使用 SSH",
+            "Use HTTPS": "使用 HTTPS",
+            "Open in Desktop": "从桌面版打开",
+
+            "Clone with SSH": "通过 SSH 克隆",
+            "Clone with HTTPS": "通过 HTTPS 克隆",
+            "Use an SSH key and passphrase from account.": "使用 SSH 密钥和密码访问。",
+            "Use Git or checkout with SVN using the web URL.": "使用 git 或 svn 检出该仓库。",
 
             "Branch:": "分支:",
             "Switch branches/tags": "选择分支或标签",
             "Branches": "分支",
             "Tags": "标签",
             "Nothing to show": "暂无",
-
-            "Choose a clone URL": "选择克隆 URL",
-            "Clone with Git or checkout with SVN using the repository's web address.": "克隆 Git 或 检出 SVN 使用仓库的 web 地址.",
-            "SSH": "SSH",
-            "Clone with an SSH key and passphrase from your GitHub settings.": "克隆的 SSH 密钥通过 GitHub 设置。",
-            "Learn more about clone URLs": "更多的克隆方法",
 
             "File uploading is now available": "现在可以上传文件了",
             "You can now drag and drop files into your repositories.": "您可以直接拖拽文件到该仓库界面进行上传。",
