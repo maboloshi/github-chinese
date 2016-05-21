@@ -135,7 +135,7 @@ I18N.zh = {
 
             "Attach files by dragging & dropping,": "拖拽添加附件，",
             "selecting them": "或选择文件",
-           ", or pasting\n        from the clipboard.": "，或复制粘贴内容。",
+            ", or pasting\n        from the clipboard.": "，或复制粘贴内容。",
             "Styling with Markdown is supported": "支持 Markdown 功能哦。",
 
             "Close issue": "关闭问题",
@@ -168,8 +168,21 @@ I18N.zh = {
              * 不知道是否稳定, 暂时先试用着. 2016-03-19 20:46:45
              */
             [/(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:, (\d+)|)/g, function (all, month, date, year) {
-                var monthKey = {"Jan": "1月","Feb": "2月","Mar": "3月","Apr": "4月","May": "5月","Jun": "6月","Jul": "7月","Aug": "8月","Sep": "9月","Oct": "10月","Nov": "11月","Dec": "12月"};
-                return (year ? year + '年' : '') + monthKey[month.substring(0,3)] + date + '日';
+                var monthKey = {
+                    "Jan": "1月",
+                    "Feb": "2月",
+                    "Mar": "3月",
+                    "Apr": "4月",
+                    "May": "5月",
+                    "Jun": "6月",
+                    "Jul": "7月",
+                    "Aug": "8月",
+                    "Sep": "9月",
+                    "Oct": "10月",
+                    "Nov": "11月",
+                    "Dec": "12月"
+                };
+                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + date + '日';
             }],
             [/Joined on/, "注册于"],
         ],
@@ -264,10 +277,21 @@ I18N.zh = {
             "Learn how we count contributions": "您想知道如何计算贡献的吗",
             "Less": "少",
             "More": "多",
-            "Contributions in the last year": "过去一年的贡献",
-            "Longest streak": "最长连续贡献天数",
-            "Current streak": "当前连续贡献天数",
-            "No recent contributions": "最近没有贡献",
+
+            // "Contributions in the last year": "过去一年的贡献",
+            // "Longest streak": "最长连续贡献天数",
+            // "Current streak": "当前连续贡献天数",
+            // "No recent contributions": "最近没有贡献",
+
+            // 2016-05-20 更新贡献日历部分
+            "Contribution settings": "贡献设置",
+            "Select which contributions to show": "选择要显示哪​​些贡献",
+            "Public contributions only": "仅公共的贡献",
+            "Visitors to your profile will only see your\n                          contributions to public repositories.": "访客到您的个人资料只会看到公共仓库部分的贡献。",
+            "Public and private contributions": "公共和私人贡献",
+            "Visitors to your profile will see your public and\n                          anonymized private contributions.": "访客到您的个人资料将会看到您的公共和匿名的私人贡献。",
+            "Visitors will now see only your public contributions.": "访客只会看到您公共仓库部分的贡献。",
+            "Visitors will now see your public and anonymized private contributions.": "访客将看到您的公共和匿名的私人贡献。",
 
             "commits": "次提交",
             "Pull Request": "拉取请求",
@@ -316,6 +340,7 @@ I18N.zh = {
             [/([^ ]+) has no activity during this period\./, "$1 近期没有任何活动。"],
             [/(\d+) total/, "$1 次"],
             [/(\d+) days?/, "$1 天"],
+            [/([\d,]+) contributions in the last year/, "$1 次贡献在过去的一年中"],
         ],
     },
 
@@ -355,7 +380,7 @@ I18N.zh = {
             "GitHub Developer Program": "GitHub 开发者计划",
             "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗？",
             "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
-           ",\n        or read more about it at our": "或了解更多信息在我们的",
+            ",\n        or read more about it at our": "或了解更多信息在我们的",
             "Developer site": "开发者站点",
 
             "Jobs profile": "就业状态",
@@ -837,7 +862,7 @@ I18N.zh = {
             "Unsubscribe": "取消订阅",
             "Attach files by dragging & dropping,": "拖拽添加附件，",
             "selecting them": "或选择文件，",
-           ", or pasting\n        from the clipboard.": "或复制黏贴内容。",
+            ", or pasting\n        from the clipboard.": "或复制黏贴内容。",
             "Styling with Markdown is supported": "支持 Markdown 功能。",
             "Close issue": "关闭问题",
             "Comment": "提交",
@@ -847,7 +872,7 @@ I18N.zh = {
             "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
             "Set up in Desktop": "安装到桌面",
             "We recommend every repository include a": "我们推荐每个仓库都包括",
-           ",\n            and": "，和",
+            ",\n            and": "，和",
             "…or create a new repository on the command line": "…或在命令行上创建一个新的仓库",
             "…or push an existing repository from the command line": "…或从命令行中推送现有的仓库",
             "…or import code from another repository": "…或从另一个仓库库导入代码",
@@ -1033,7 +1058,7 @@ I18N.zh = {
             "No new notifications.": "没有新的通知。",
             "Depending on": "根据",
             "your notification settings": "您的通知设置",
-           ", you’ll see updates here for your conversations in watched repositories.": "，您将看到您关注仓库的更新信息。",
+            ", you’ll see updates here for your conversations in watched repositories.": "，您将看到您关注仓库的更新信息。",
         },
         "regexp": [ // 正则翻译
         ],
