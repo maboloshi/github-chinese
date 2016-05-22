@@ -377,6 +377,12 @@ I18N.zh = {
             "Update profile": "更新资料",
             "Profile updated successfully": "资料更新成功。",
 
+            "Contributions": "贡献",
+            "Include private contributions on my profile": "在我的主页显示私人贡献",
+            "Get credit for all your work by showing the number of contributions to\n            private repositories on your profile without any repository or\n            organization information.": "显示所有包括私人仓库的贡献到您的个人资料页面，不包括组织仓库信息。",
+            "Learn how we count contributions": "查看如统计贡献",
+            "Update contributions": "更新贡献",
+
             "GitHub Developer Program": "GitHub 开发者计划",
             "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具,集成了GitHub吗？",
             "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
@@ -386,6 +392,7 @@ I18N.zh = {
             "Jobs profile": "就业状态",
             "Available for hire": "求HR带走",
             "Save jobs profile": "保存状态",
+
 
             // Account settings 菜单
             "Change password": "修改密码",
