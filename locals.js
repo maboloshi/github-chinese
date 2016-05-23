@@ -750,6 +750,7 @@ I18N.zh = {
 
             // Pull Requests 页面
             "There aren’t any open pull requests.": "暂无拉取请求。",
+            "There aren’t any open issues.": "暂无开放的问题。",
             "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
             "a new search query": "新的搜索查询",
             ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到问题最相关的您超级有帮助的。",
