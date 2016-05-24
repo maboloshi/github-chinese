@@ -1305,6 +1305,8 @@ I18N.zh = {
             "forked from": "派生自",
             "Created": "创建于",
             "View": "查看",
+            "Newer": "新的",
+            "Older": "旧的",
 
             // View 代码 页面
             "Edit": "编辑",
