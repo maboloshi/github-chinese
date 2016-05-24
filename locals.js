@@ -74,6 +74,7 @@ I18N.zh = {
 
             "New repository": "新建仓库",
             "New organization": "新建组织",
+            "Import repository": "导入仓库",
             "New issue": "新建问题",
 
             "Signed in as": "您好",
