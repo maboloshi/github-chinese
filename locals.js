@@ -787,6 +787,9 @@ I18N.zh = {
             "Save Page": "保存页面",
 
             // settings 页面
+            "Webhooks & services": "Web钩子 & 服务",
+            "Deploy keys": "部署密钥",
+
             "Options": "基本选项",
             "Repository name": "仓库名",
             "Rename": "重命名",
