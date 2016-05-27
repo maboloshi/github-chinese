@@ -1383,5 +1383,6 @@ I18N.zh = {
     },
 };
 
-I18N.zh.pulls = I18N.zh.issues; // 共用翻译
 
+// 公共复用翻译部分
+I18N.zh.pulls = I18N.zh.issues;
