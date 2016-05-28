@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.5.1
+// @version      1.6.0
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.5.1
+// @require      http://www.52cik.com/github-hans/locals.js?v1.6.0
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -149,15 +149,16 @@
      */
     function translate(text, page) { // 翻译
         var str;
-        var _key = text.trim();
+        var _key = text.trim(); // 去除首尾空格的 key
+        var _key_neat = _key.replace(/\s{2,}/g, ' '); // 去除多余换行空格等字符，(试验测试阶段，有问题再恢复)
 
-        if (_key === '') {
+        if (_key_neat === '') {
             return false;
         } // 内容为空不翻译
 
-        str = transPage('pubilc', _key); // 公共翻译
+        str = transPage('pubilc', _key_neat); // 公共翻译
 
-        if (str !== false && str !== _key) { // 公共翻译完成
+        if (str !== false && str !== _key_neat) { // 公共翻译完成
             str = transPage('pubilc', str) || str;  // 二次公共翻译（为了弥补正则部分翻译的情况）
             return text.replace(_key, str);  // 替换原字符，保留空白部分
         }
@@ -166,7 +167,7 @@
             return false;
         } // 未知页面不翻译
 
-        str = transPage(page, _key); // 翻译已知页面
+        str = transPage(page, _key_neat); // 翻译已知页面
         if (str === false || str === '') {
             return false;
         } // 未知内容不翻译
