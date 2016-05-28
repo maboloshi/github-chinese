@@ -288,9 +288,9 @@ I18N.zh = {
             "Contribution settings": "贡献设置",
             "Select which contributions to show": "选择要显示哪​​些贡献",
             "Public contributions only": "仅公共的贡献",
-            "Visitors to your profile will only see your\n                          contributions to public repositories.": "访客到您的个人资料只会看到公共仓库部分的贡献。",
+            "Visitors to your profile will only see your\n                        contributions to public repositories.": "访客到您的个人资料只会看到公共仓库部分的贡献。",
             "Public and private contributions": "公共和私人贡献",
-            "Visitors to your profile will see your public and\n                          anonymized private contributions.": "访客到您的个人资料将会看到您的公共和匿名的私人贡献。",
+            "Visitors to your profile will see your public and\n                        anonymized private contributions.": "访客到您的个人资料将会看到您的公共和匿名的私人贡献。",
             "Visitors will now see only your public contributions.": "访客只会看到您公共仓库部分的贡献。",
             "Visitors will now see your public and anonymized private contributions.": "访客将看到您的公共和匿名的私人贡献。",
 
