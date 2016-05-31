@@ -16,8 +16,9 @@ I18N.conf = {
      * 拉取请求 /pulls
      * 搜索页面 /search
      * 趋势页面 /trending
+     * 未登录首页 /
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|$)/,
 
     /**
      * 匹配 url 页面的正则
@@ -1008,8 +1009,15 @@ I18N.zh = {
             "privacy policy": "隐私政策条款",
             "We'll occasionally send you account related emails.": "我们会偶尔发送您的帐户相关的电子邮件。",
 
-            "How\xa0people build\xa0software": "人们如何构建软件",
-            "Millions of developers use GitHub to build personal projects, support their businesses, and\xa0work together on open source technologies.": "数以百万计的开发人员使用 GitHub 建立个人项目，支持他们的企业，共同在开放源码技术。",
+            "How people build software": "人们如何构建软件",
+            "Millions of developers use GitHub to build personal projects, support their businesses, and work together on open source technologies.": "数以百万计的开发人员使用 GitHub 建立个人项目，支持他们的企业，共同在开放源码技术。",
+
+            "Introducing unlimited": "引入无限制的",
+            "private repositories": "私人仓库",
+            "All of our paid plans on GitHub.com now include unlimited private repositories.": "所有在我们 GitHub.com 上的付费用户，我们将提供无限制的私人仓库。",
+            "Sign up": "注册",
+            "to get started or": "开始使用或",
+            "read more about this change on our blog": "阅读更多信息在我们的博客上",
 
             "Welcome home, developers": "欢迎回来，开发者们",
             "GitHub fosters a fast, flexible, and collaborative development process that lets you work on your own or with others.": "GitHub 提供了一个快速，灵活和协作开发过程，让您对自己或与他人合作。",
@@ -1032,7 +1040,7 @@ I18N.zh = {
             "Businesses of all sizes use GitHub to support their development process and securely build software.": "各种规模的企业使用的 GitHub 支持其发展过程中，安全地构建软件。",
 
             "GitHub is proud to host projects and organizations like": "GitHub 是自豪地举办项目和组织，如",
-            "Public projects are always free. Private plans start at $7/month.": "公共项目是免费的。私人项目需要支付 7 美元一个月的费用。",
+            "Public projects are always free. Work together across unlimited private repositories for $7 / month.": "公共项目是免费的。私人项目需要支付 7 美元一个月的费用。",
         },
         "regexp": [ // 正则翻译
         ],
