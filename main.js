@@ -91,7 +91,7 @@
             page = location.href.match(I18N.conf.rePageUrl);
         }
 
-        return page ? page[1] : false; // 取页面 key
+        return page ? page[1] || 'homepage' : false; // 取页面 key
     }
 
     /**
@@ -150,7 +150,9 @@
     function translate(text, page) { // 翻译
         var str;
         var _key = text.trim(); // 去除首尾空格的 key
-        var _key_neat = _key.replace(/\s{2,}/g, ' '); // 去除多余换行空格等字符，(试验测试阶段，有问题再恢复)
+        var _key_neat = _key
+            .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
+            .replace(/\s{2,}/g, ' '); // 去除多余换行空格等字符，(试验测试阶段，有问题再恢复)
 
         if (_key_neat === '') {
             return false;
