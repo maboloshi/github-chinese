@@ -489,7 +489,7 @@ I18N.zh = {
             "Automatically watch repositories": "自动关注仓库",
             "Participating": "参与话题",
             "When you participate in a conversation or someone brings you in with an": "当有人",
-            "@mention": "@提到您",
+            "@mention": "@用户名",
             "Watching": "关注仓库",
             "Updates to any repositories or threads you’re watching.": "当您关注的仓库更新时。",
             "Your notification settings apply to the": "通知设置将应用到",
