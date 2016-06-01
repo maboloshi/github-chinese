@@ -16,6 +16,7 @@ I18N.conf = {
      * 拉取请求 /pulls
      * 搜索页面 /search
      * 趋势页面 /trending
+     *
      * 未登录首页 /
      */
     rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|$)/,
@@ -155,10 +156,17 @@ I18N.zh = {
             "Star": "点赞",
             "Unstar": "取消点赞",
             "Fork": "派生",
+
+            // 邮箱验证提示
+            "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮件地址以便开启所有 GitHub 功能。",
+            "Configure email settings": "修改电子邮件设置",
+            "Your email was verified.": "您的邮件地址验证成功！",
         },
         "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
             // 仓库删除提示
             [/Your repository "([^"]+)"was successfully deleted\./, "您的 \"$1\"仓库已被成功删除。"],
+            // 邮箱验证提示
+            [/An email containing verification instructions was sent to (.+)\./, "验证邮件已发送到 $1。"],
 
             /**
              * 匹配时间格式
@@ -192,6 +200,25 @@ I18N.zh = {
 
     "page-dashboard": { // 已登录的首页
         "static": { // 静态翻译
+            // 新手帮助
+            "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
+            "Using the Hello World guide, you’ll create a repository, start a branch,": "使用 Hello World 指南，您将创建一个仓库，开始一个分支，",
+            "write comments, and open a pull request.": "写评论，并创建一个拉取请求。(教程内容就不翻译了...)",
+            "Let's get started!": "让我们开始吧！",
+            "Hide this notice forever": "永久的隐藏该信息",
+
+            "Welcome to GitHub! What’s next?": "欢迎来到 GitHub！下一步干什么？",
+            "Create a repository": "创建一个仓库",
+            "Tell us about yourself": "介绍一下你自己",
+            "Browse interesting repositories": "浏览有趣资料库",
+            "on Twitter": "在 Twitter 上",
+
+            "You don’t have any repositories yet!": "您目前还没有任何仓库！",
+            "Create your first repository": "创建您的第一个仓库",
+            "or": "或者",
+            "learn more about Git and GitHub": "学习更多关于 Git 和 GitHub 知识",
+
+            // 已有仓库的项目
             "Repositories you contribute to": "您贡献过的仓库",
             "Your repositories": "您的仓库",
             "Find a repository…": "搜索仓库…",
@@ -1062,6 +1089,68 @@ I18N.zh = {
 
     "signup": { // 注册页
         "static": { // 静态翻译
+            "Join GitHub": "加入 GitHub",
+            "The best way to design, build, and ship software.": "最优的方式来设计、构建和存储软件",
+
+            "Step 1:": "第一步:",
+            "Set up a personal account": "建立个人账户",
+            "Step 2:": "第二步:",
+            "Choose your plan": "选择您的方案",
+            "Step 3:": "第三步:",
+            "Go to your dashboard": "去到您的首页",
+
+            // Step 1:
+            "Create your personal account": "创建您的个人账户",
+            "Username": "用户名 (也是您个人首页的二级地址)",
+            "This will be your username — you can enter your organization’s username next.": "这将是您的用户名 - 也可以是您组织或公司的名称。",
+            "Email Address": "Email 地址",
+            "You will occasionally receive account related emails. We promise not to share your email with anyone.": "该邮箱用于接收相关的通知邮件。我们承诺不公开您的电子邮件给任何人。",
+            "Password": "密码",
+            "Use at least one lowercase letter, one numeral, and seven characters.": "密码需要字母和数字组成的 7 位以上字符串。",
+            "By clicking on \"Create an account\" below, you are agreeing to the": "点击下面的“创建账户”，表示您同意我们的",
+            "Terms of Service": "服务条款",
+            "and the": "和",
+            "Privacy Policy": "隐私政策",
+            "Create an account": "创建账户",
+
+            "You’ll love GitHub": "您将会爱上 GitHub",
+            "Unlimited": "无限多的",
+            "collaborators": "合作者",
+            "public repositories": "公共仓库",
+            "Great communication": "良好的沟通",
+            "Friction-less development": "无摩擦开发",
+            "Open source community": "开源社区",
+
+            // Step 2:
+            "Welcome to GitHub": "欢迎来到 GitHub",
+            "You’ve taken your first step into a larger world,": "您已经迈出了第一步进入到更大的世界，",
+            "Choose your personal plan": "选择您的个人方案",
+            "Unlimited public repositories for free.": "无限的公共仓库免费使用",
+            "Unlimited private repositories": "无限的私人仓库",
+            "for": "需",
+            "$7/month.": "$7/月",
+            "¥46.06/month.": "¥46.06/月.",
+            "(view in CNY)": "(显示人民币价格)",
+            "(view in USD)": "(显示美元价格)",
+            "Don’t worry, you can cancel or upgrade at any time.": "别担心，你可以随时升级或取消这个方案。",
+            "Charges to your account will be made in ": "汇率问题说明，不翻译了...",
+            "Secure": "安全",
+            "Enter your billing details": "输入您的帐单明细",
+            "Pay with": "支付方式",
+            "Credit card": "信用卡",
+            "PayPal account": "PayPal 账户",
+            "Credit card number": "信用卡号",
+            "Accepted cards": "支持的卡",
+            "Help me set up an organization next": "帮我建立一个组织",
+            "Organizations are separate from personal accounts and are best suited for businesses who need to manage permissions for many employees.": "组织是独立于个人账户，是最适合需要管理权限对许多员工的企业。",
+            "Learn more about organizations.": "阅读更多关于组织的信息。",
+            "Finish sign up": "完成注册",
+
+            "Both plans include:": "这两种方案包括：",
+            "Collaborative code review": "协作代码审查",
+            "Issue tracking": "问题跟踪",
+            "Unlimited public repositories": "无限制的公共仓库",
+            "Join any organization": "加入任何组织",
         },
         "regexp": [ // 正则翻译
         ],
