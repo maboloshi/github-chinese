@@ -3,13 +3,13 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.6.0
+// @version      1.6.1
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.6.0
+// @require      http://www.52cik.com/github-hans/locals.js?v1.6.1
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
@@ -63,6 +63,10 @@
                     }
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
+                }
+
+                if (el.hasAttribute('data-disable-with')) { // 按钮等待提示
+                    transElement(el.dataset, 'disableWith');
                 }
 
                 // 跳过 readme, 文件列表, 代码显示
