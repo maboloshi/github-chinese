@@ -194,6 +194,22 @@ I18N.zh = {
                 };
                 return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + date + '日';
             }],
+            /**
+             * 相对时间格式处理
+             */
+            [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
+                if (m === 'just now') {
+                    return '刚刚';
+                }
+
+                if (d[0] === 'a') {
+                    d = '1';
+                } // a, an 修改为 1
+
+                var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
+
+                return d + ' ' + dt[t] + '之前';
+            }],
             [/Joined on/, "注册于"],
         ],
     },
@@ -270,6 +286,8 @@ I18N.zh = {
 
     "page-profile": { // 个人首页
         "static": { // 静态翻译
+            "Updating your profile with your name, location, and a profile picture helps other GitHub users get to know you.": "更新您的资料信息包括姓名，地址，头像等资料，让其他用户更容易的了解您。",
+
             "Joined on": "注册于",
             "Change your avatar": "修改头像",
             "Starred": "赞了",
@@ -343,7 +361,6 @@ I18N.zh = {
             "closed issue": "关闭了问题",
             "merged pull request": "合并了拉取请求",
             "commented on issue": "提交了评论",
-
 
             // 仓库 tab
             "Find a repository…": "搜索仓库…",
@@ -611,6 +628,7 @@ I18N.zh = {
             "None": "无",
             "Need help picking a license? We’ve built a site just for you.": "需要帮您挑选一个许可吗？我们为您供了参考页面。",
             "Create repository": "创建仓库",
+            "Creating repository…": "创建仓库中…",
         },
         "regexp": [ // 正则翻译
         ],
@@ -777,6 +795,10 @@ I18N.zh = {
             "to view files,": "查看文件",
             "to exit.": "返回。",
 
+            // 拉取请求信息提示
+            "Your recently pushed branches:": "你最近推送的分支:",
+            "Compare & pull request": "比较 & 拉取请求",
+
             // Pull Requests 页面
             "There aren’t any open pull requests.": "暂无拉取请求。",
             "There aren’t any open issues.": "暂无开放的问题。",
@@ -789,6 +811,7 @@ I18N.zh = {
             "commented": "评论",
             "merged commit": "以合并提交",
             "into": "到",
+            "from": "来自",
 
             "Revert": "还原",
 
@@ -796,12 +819,26 @@ I18N.zh = {
             "Continuous integration can help catch bugs by running your tests automatically.": "持续集成可以通过自动运行您的测试有助于捕获错误。",
             "Merge your code with confidence using one of our continuous integration providers.": "合并您的代码使用我们信任的持续集成供应商。",
 
+            "Add more commits by pushing to the": "添加更多来至于",
+            "branch on": "分支的提交推送到",
+
             "This branch has no conflicts with the base branch": "该分支与base支没有冲突",
             "Merging can be performed automatically.": "可以自动地执行合并。",
             "You can also": "您也可以在",
             "open this in GitHub Desktop": "GitHub桌面版本",
             "or view": "打开，或通过",
             "command line instructions": "命令行查看",
+
+            //// 直接提交拉取请求
+            "Open a pull request": "新建一个拉取请求",
+            "Create a new pull request by comparing changes across two branches. If you need to, you can also": "通过比较两个分支的更改来创建一个新的拉请求。如果需要，还可以",
+            "Able to merge.": "可被合并。",
+            "These branches can be automatically merged.": "该分支可被自动合并。",
+            "file changed": "个文件变更",
+            "files changed": "个文件变更",
+            "commit comment": "次提交",
+            "commit comments": "次提交",
+            "No commit comments for this range": "该范围变更没有提交注释",
 
             // wiki 页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
@@ -1017,6 +1054,7 @@ I18N.zh = {
             [/(\d+) participants?/, "$1 参与者"],
             [/Commits on (.+)/, "提交于 $1"],
             // bug [/from (.+)/, "从 $1"],
+            [/wants to merge (\d+) commits? into/, "需要合并 $1 次提交到"],
             [/(\d+) commits?/, "$1 次提交"],
             [/to ([^\n]+)[\n\s]+since this release/, "到 $1 分支在此发布中。"],
         ],
