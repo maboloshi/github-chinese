@@ -1251,9 +1251,9 @@ I18N.zh = {
     "trending": { // 趋势页面
         "static": { // 静态翻译
             "Trending in open source": "开源趋势",
-            "See what the GitHub community is most excited about today.": "看看 GitHub 社会今天最受关注的项目。",
-            "See what the GitHub community is most excited about this week.": "看看 GitHub 社会本周最受关注的项目。",
-            "See what the GitHub community is most excited about this month.": "看看 GitHub 社会本月最受关注的项目。",
+            "See what the GitHub community is most excited about today.": "看看 GitHub 社区今天最受关注的项目。",
+            "See what the GitHub community is most excited about this week.": "看看 GitHub 社区本周最受关注的项目。",
+            "See what the GitHub community is most excited about this month.": "看看 GitHub 社区本月最受关注的项目。",
 
             "Trending developers": "开发者趋势",
             "These are the organizations and developers building the hot tools today.": "这是今天创建热门项目的组织和开发人员。",
