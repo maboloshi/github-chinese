@@ -295,6 +295,7 @@ I18N.zh = {
             "Organizations": "组织",
             "Contributions": "贡献",
             "Public contributions": "贡献",
+            "Overview": "概述",
             "Repositories": "仓库",
             "Public activity": "动态",
             "Edit profile": "修改设置",
