@@ -59,7 +59,7 @@ I18N.zh = {
             "Sign in": "登录",
             "Sign up": "注册",
 
-            "Search GitHub": "GitHub 一下，您就知道",
+            "Search GitHub": "GitHub 一下，你就知道",
             "This repository": "当前仓库",
             "Search": "搜索",
 
