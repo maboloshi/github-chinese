@@ -146,6 +146,8 @@ I18N.zh = {
             "Submit new issue": "提交新问题",
             "Comment on this commit": "提交",
             "Close and comment": "提交并关闭",
+            "Reopen and comment": "提交并重新打开",
+            "Reopen issue": "重新打开问题",
 
             // 公共动作词
             "Followers": "粉丝",
@@ -723,6 +725,24 @@ I18N.zh = {
             "You know": "您关注的",
 
             // issues 页面
+            "opened this": "打开这个",
+            "Issue": "问题",
+            "added a commit that closed this issue": "在提交时关闭了这个问题",
+            "closed this in": "关闭于",
+
+            "No description provided.": "没有具体描述。",
+            "Add your reaction": "添加您的表情",
+            "Pick your reaction": "选择您的表情",
+            "Leave a comment": "发表评论",
+            "Milestone": "里程碑",
+            "Unsubscribe": "取消订阅",
+            "Attach files by dragging & dropping,": "拖拽添加附件，",
+            "selecting them": "或选择文件，",
+            ", or pasting from the clipboard.": "或复制黏贴内容。",
+            "Styling with Markdown is supported": "支持 Markdown 功能。",
+            "Close issue": "关闭问题",
+            "Comment": "提交",
+
             "Filters": "筛选",
             "Open issues and pull requests": "开放的问题或拉取请求",
             "Your issues": "您提出的问题",
@@ -732,9 +752,14 @@ I18N.zh = {
             "View advanced search syntax": "查看高级搜索语法",
 
             "Labels": "标签",
+            "None yet": "暂无",
             "Milestones": "里程碑",
+            "No milestone": "无里程碑",
             "Author": "作者",
-            "Assignee": "代理人",
+            "Assignee": "受理人",
+            "Assignees": "受理人",
+            "No one—": "无人 - ",
+            "assign yourself": " 受理自己",
             "Sort": "排序",
 
             "Filter by author": "筛选用户",
@@ -931,20 +956,6 @@ I18N.zh = {
             "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和派生的仓库。",
             "Example comparisons": "比较例子",
 
-            // issues 页面
-            "No description provided.": "没有具体描述。",
-            "Add your reaction": "添加您的表情",
-            "Pick your reaction": "选择您的表情",
-            "Leave a comment": "发表评论",
-            "Milestone": "里程碑",
-            "Unsubscribe": "取消订阅",
-            "Attach files by dragging & dropping,": "拖拽添加附件，",
-            "selecting them": "或选择文件，",
-            ", or pasting from the clipboard.": "或复制黏贴内容。",
-            "Styling with Markdown is supported": "支持 Markdown 功能。",
-            "Close issue": "关闭问题",
-            "Comment": "提交",
-
             // 新建空仓库
             "Quick setup": "快速安装",
             "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
@@ -1048,16 +1059,17 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             [/HTTPS\s+(recommended)/, "HTTPS (推荐)"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
-            [/(\d+) Open/, "$1 个开放的"],
-            [/(\d+) Closed/, "$1 个关闭的"],
+            [/([\d,]+) Open/, "$1 个开放的"],
+            [/([\d,]+) Closed/, "$1 个关闭的"],
             [/View all issues opened by (.+)/, "查看所有 $1 的问题"],
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"],
-            [/(\d+) participants?/, "$1 参与者"],
+            [/([\d,]+) participants?/, "$1 参与者"],
             [/Commits on (.+)/, "提交于 $1"],
             // bug [/from (.+)/, "从 $1"],
-            [/wants to merge (\d+) commits? into/, "需要合并 $1 次提交到"],
-            [/(\d+) commits?/, "$1 次提交"],
+            [/wants to merge ([\d,]+) commits? into/, "需要合并 $1 次提交到"],
+            [/([\d,]+) commits?/, "$1 次提交"],
             [/to ([^\n]+)[\n\s]+since this release/, "到 $1 分支在此发布中。"],
+            [/· ([\d,]+) comments?/, "$1 次提交"]
         ],
     },
 
