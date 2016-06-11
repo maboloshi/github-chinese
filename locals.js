@@ -16,10 +16,11 @@ I18N.conf = {
      * 拉取请求 /pulls
      * 搜索页面 /search
      * 趋势页面 /trending
+     * 导入仓库 /new/import
      *
      * 未登录首页 /
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|$)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|$|new\/import)/,
 
     /**
      * 匹配 url 页面的正则
@@ -637,6 +638,29 @@ I18N.zh = {
         ],
     },
 
+    "new/import": { // 导入仓库
+        "static": { // 静态翻译
+            // 第一页
+            "Import your project to GitHub": "导入您的项目到 GitHub",
+            "Import all the files, including the revision history, from another version control system.": "导入的所有文件，包括修订历史记录，从另一个版本控制系统。",
+            "Your old repository’s clone URL": "你的老仓库 URL 地址",
+            "Learn more about the types of": "仓库更多类型的帮助",
+            "supported VCS": "支持 VCS",
+            "Your new repository details": "新仓库描述",
+            "Owner": "所有者",
+            "Name": "仓库名",
+            "Your new repository will be": "新仓库将会",
+            "public": "公开",
+            ". In order to make this repository private, you’ll need to": "如果想使这个仓库转为私有的，你需要",
+            "upgrade your account": "升级帐户",
+            "Cancel": "取消",
+            "Begin import": "开始导入",
+            "Preparing import…": "准备导入…",
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
     "page-create-org": { // 新建组织
         "static": { // 静态翻译
         },
@@ -646,6 +670,15 @@ I18N.zh = {
 
     "vis-public": { // 仓库页
         "static": { // 静态翻译
+            // 导入仓库 第二页
+            "Preparing your new repository": "准备新的存储库",
+            "There is no need to keep this window open, we’ll email you when the import is done.": "没有必要在这个窗口傻等，当导入完成时，我们会向您发送电子邮件。",
+            "Detecting your project’s version control system…": "检测项目的版本控制系统…",
+            "Importing  commits and revision history…": "导入提交和历史版本…",
+            "Importing complete! Your new repository": "导入完成，您的新仓库",
+            "is ready.": "已经就绪。",
+
+            // 仓库页面
             "Where should we fork this repository?": "您想把该仓库派生到哪个角色下？",
 
             "Code": "代码",
