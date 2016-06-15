@@ -11,7 +11,7 @@ I18N.conf = {
      *
      * 通知页面 /notifications
      * 关注页面 /watching
-     * 点赞页面 /stars
+     * 加星页面 /stars
      * 问题页面 /issues
      * 拉取请求 /pulls
      * 搜索页面 /search
@@ -25,7 +25,7 @@ I18N.conf = {
     /**
      * 匹配 url 页面的正则
      *
-     * 代码片段页面 gist
+     * 代码段页面 gist
      */
     rePageUrl: /(gist)\.github.com/,
 
@@ -67,7 +67,7 @@ I18N.zh = {
             "Pull Requests": "拉取请求",
             "Pull requests": "拉取请求",
             "Issues": "问题",
-            "Gist": "代码片段",
+            "Gist": "代码段",
             "Your dashboard": "返回首页",
 
             "You have no unread notifications": "您没有未读通知",
@@ -82,7 +82,7 @@ I18N.zh = {
 
             "Signed in as": "您好",
             "Your profile": "您的主页",
-            "Your stars": "点赞的项目",
+            "Your stars": "加星的项目",
             "Explore": "探索",
             "Integrations": "集成",
             "Help": "帮助",
@@ -91,7 +91,7 @@ I18N.zh = {
 
             "Showcases": "展柜",
             "Trending": "趋势",
-            "Stars": "已赞",
+            "Stars": "已加星",
 
 
             "Previous": "上一页",
@@ -156,8 +156,8 @@ I18N.zh = {
             "Unfollow": "取消关注",
             "Watch": "关注",
             "Unwatch": "取消关注",
-            "Star": "点赞",
-            "Unstar": "取消点赞",
+            "Star": "加星",
+            "Unstar": "取消加星",
             "Fork": "派生",
 
             // 邮箱验证提示
@@ -252,7 +252,7 @@ I18N.zh = {
             "new broadcasts": "条新公告",
 
             // 动态 状态词
-            "starred": "赞了",
+            "starred": "加星",
             "forked": "派生了",
             "forked from": "派生至",
             "created repository": "创建了仓库",
@@ -293,7 +293,7 @@ I18N.zh = {
 
             "Joined on": "注册于",
             "Change your avatar": "修改头像",
-            "Starred": "赞了",
+            "Starred": "加星",
             "Following": "关注",
             "Organizations": "组织",
             "Contributions": "贡献",
@@ -351,7 +351,7 @@ I18N.zh = {
             "Issues reported": "问题报告",
 
             // 动态 状态词
-            "starred": "赞了",
+            "starred": "加星",
             "forked": "收藏了",
             "forked from": "收藏至",
             "created repository": "创建了仓库",
@@ -752,10 +752,10 @@ I18N.zh = {
             // 关注者页面
             "Watchers": "关注者",
 
-            // 点赞者页面
-            "Stargazers": "点赞的人",
+            // 加星的人者页面
+            "Stargazers": "加星的人",
             "All": "全部",
-            "You know": "您关注的",
+            "You know": "我关注的",
 
             // issues 页面
             "opened this": "打开这个",
@@ -1286,18 +1286,18 @@ I18N.zh = {
         ],
     },
 
-    "stars": { // 点赞页面
+    "stars": { // 加星页面
         "static": { // 静态翻译
-            "Search starred repositories…": "搜索点赞的仓库…",
+            "Search starred repositories…": "搜索加星的仓库…",
             "Sort:": "排序:",
             "Sort options": "排序选项",
             "Recently starred": "最近关注的",
             "Recently active": "最近活动的",
-            "Most stars": "最多赞的",
-            "Unstar": "取消点赞",
+            "Most stars": "最多加星的",
+            "Unstar": "取消加星",
 
             "All stars": "所有仓库",
-            "Your repositories": "您的仓库",
+            "Your repositories": "我的仓库",
             "Others' repositories": "其他仓库",
 
             "Filter by languages": "筛选语言",
@@ -1337,9 +1337,9 @@ I18N.zh = {
             "Filter Languages": "筛选语言",
         },
         "regexp": [ // 正则翻译
-            [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
-            [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
-            [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
+            [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 加星$2创建者"],
+            [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 加星$2创建者"],
+            [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 加星$2创建者"],
         ],
     },
 
@@ -1402,8 +1402,8 @@ I18N.zh = {
             "Sort:": "排序:",
             "Sort options": "排序选项",
             "Best match": "最佳匹配",
-            "Most stars": "最多赞",
-            "Fewest stars": "最少赞",
+            "Most stars": "最多加星项目",
+            "Fewest stars": "最少加星项目",
             "Most forks": "最多派生",
             "Fewest forks": "最少派生",
             "Recently updated": "最近更新",
@@ -1420,7 +1420,7 @@ I18N.zh = {
             "Everything else": "其他语言",
 
             "Repositories options": "仓库选项",
-            "With this many stars": "指定被赞数",
+            "With this many stars": "指定被加星数",
             "With this many forks": "指定派生数",
             "Of this size": "仓库大小",
             "Pushed to": "推送于",
@@ -1460,19 +1460,19 @@ I18N.zh = {
     },
 
 
-    "gist": { // 代码片段页面
+    "gist": { // 代码段页面
         "static": { // 静态翻译
-            "Search…": "搜索代码片段…",
-            "All gists": "所有片段",
-            "New gist": "新建片段",
-            "Your gists": "您的片段",
-            "Starred gists": "已赞片段",
+            "Search…": "搜索代码段…",
+            "All gists": "所有代码段",
+            "New gist": "新建代码段",
+            "Your gists": "您的代码段",
+            "Starred gists": "已加星代码段",
             "Your GitHub profile": "设置",
 
             "View profile and more": "查看更多信息",
-            "See all of your gists": "查看您的所有片段",
-            "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
-            "Gist description…": "片段描述",
+            "See all of your gists": "查看您的所有代码段",
+            "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，代码段，以及灵感。",
+            "Gist description…": "代码段描述",
 
             "Filename including extension…": "文件名 (包括扩展名)",
             "Indent mode": "缩进模式",
@@ -1483,9 +1483,9 @@ I18N.zh = {
             "No wrap": "无换行",
             "Soft wrap": "软换行",
             "Add file": "添加文件",
-            "Create secret gist": "创建私有片段",
-            "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有片段搜索引擎是搜不到的，但是您可以分享您的 url 给他们。",
-            "Create public gist": "创建公共片段",
+            "Create secret gist": "创建私有代码段",
+            "Secret gists are hidden from search engines but visible to anyone you give the URL.": "私有代码段搜索引擎是搜不到的，但是您可以分享您的 url 给他们。",
+            "Create public gist": "创建公共代码段",
 
             // All gists 页面
             "Sort:": "排序:",
@@ -1508,20 +1508,20 @@ I18N.zh = {
             // View 代码 页面
             "Edit": "编辑",
             "Delete": "删除",
-            "Star": "点赞",
-            "Unstar": "取消点赞",
+            "Star": "加星",
+            "Unstar": "取消加星",
             "User actions": "用户操作",
             "Report abuse": "举报该用户",
 
             "Code": "代码",
             "Revisions": "修订",
-            "Stars": "被赞",
+            "Stars": "被加星",
             "Forks": "派生",
 
             // 代码页面
             "What would you like to do?": "您想做什么？",
             "Embed this gist in your website.": "Embed 可嵌入到您的网页中。",
-            "Copy sharable URL for this gist.": "复制 URL 共享这个片段。",
+            "Copy sharable URL for this gist.": "复制 URL 共享这个代码段。",
             "Clone with Git or checkout with SVN using the repository's web address.": "Git 克隆或 SVN 检出该仓库所使用的 web 地址。",
             "Clone with an SSH key and passphrase from your GitHub settings.": "使用 SSH 密钥克隆",
             "Learn more about clone URLs": "更多的克隆方法",
@@ -1536,24 +1536,24 @@ I18N.zh = {
             "Unified": "同屏",
             "Split": "分屏",
             "created": "创建",
-            "this gist": "该片段于",
+            "this gist": "该代码段于",
 
             // 编辑代码页面
             "Editing": "编辑",
             "Make secret": "转为私有",
             "Cancel": "取消",
-            "Update public gist": "更新片段",
+            "Update public gist": "更新代码段",
 
-            // 已赞页面
-            "Starred": "赞了",
-            "You don’t have any starred gists yet.": "您还没有赞过任何片段。",
+            // 加星页面
+            "Starred": "加星",
+            "You don’t have any starred gists yet.": "您还没有加星过任何代码段。",
         },
         "regexp": [ // 正则翻译
             [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
             [/(\d+) files?/, "$1 文件"],
             [/(\d+) forks?/, "$1 派生"],
             [/(\d+) comments?/, "$1 评论"],
-            [/(\d+) stars?/, "$1 赞"],
+            [/(\d+) stars?/, "$1 加星"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub 桌面版，保存 $1 到您的电脑。"],
         ],
     },
