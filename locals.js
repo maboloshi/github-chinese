@@ -307,6 +307,12 @@ I18N.zh = {
             "Repositories contributed to": "贡献过的仓库",
             "Contribution activity": "近期贡献信息",
 
+            "Select up to five public repositories you'd like to show.": "最多可选择五个要显示的公共仓库。",
+            "Show:": "显示:",
+            "Your repositories": "您的仓库",
+            "Repositories you contribute to": "您贡献过的仓库",
+            "Save pinned repositories": "保存固定仓库",
+
             "Jan": "1月",
             "Feb": "2月",
             "Mar": "3月",
