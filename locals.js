@@ -16,11 +16,12 @@ I18N.conf = {
      * 拉取请求 /pulls
      * 搜索页面 /search
      * 趋势页面 /trending
+     * 展示页面 /showcases
      * 导入仓库 /new/import
      *
      * 未登录首页 /
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|$|new\/import)/,
+    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|showcases|$|new\/import)/,
 
     /**
      * 匹配 url 页面的正则
@@ -303,6 +304,7 @@ I18N.zh = {
             "Public activity": "动态",
             "Edit profile": "修改设置",
             "Popular repositories": "流行的仓库",
+            "Pinned repositories": "固定的仓库",
             "Customize your pinned repositories": "自定义您的固定仓库",
             "Repositories contributed to": "贡献过的仓库",
             "Contribution activity": "近期贡献信息",
@@ -1348,6 +1350,14 @@ I18N.zh = {
             [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
             [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
         ],
+    },
+
+    "showcases": { // 展示页面
+        "static": { // 静态翻译
+            "Open source showcases": "开源展示",
+            "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于你最感兴趣的话题。",
+            "Search showcases": "搜索展示",
+        },
     },
 
 
