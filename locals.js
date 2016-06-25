@@ -167,11 +167,6 @@ I18N.zh = {
             "Your email was verified.": "您的邮件地址验证成功！",
         },
         "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
-            // 仓库删除提示
-            [/Your repository "([^"]+)"was successfully deleted\./, "您的 \"$1\"仓库已被成功删除。"],
-            // 邮箱验证提示
-            [/An email containing verification instructions was sent to (.+)\./, "验证邮件已发送到 $1。"],
-
             /**
              * 匹配时间格式
              *
@@ -214,6 +209,12 @@ I18N.zh = {
 
                 return d + ' ' + dt[t] + '之前';
             }],
+
+            // 仓库删除提示
+            [/Your repository "([^"]+)"was successfully deleted\./, "您的 \"$1\"仓库已被成功删除。"],
+            // 邮箱验证提示
+            [/An email containing verification instructions was sent to (.+)\./, "验证邮件已发送到 $1。"],
+            // 头像下面的注册信息
             [/Joined on/, "注册于"],
         ],
     },
