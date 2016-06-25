@@ -3,19 +3,21 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。
 // @copyright    2016, 楼教主 (http://www.52cik.com/)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.6.1
+// @version      1.6.2
 // @author       楼教主
 // @license      MIT
 // @homepageURL  https://github.com/52cik/github-hans
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      http://www.52cik.com/github-hans/locals.js?v1.6.1
+// @require      http://www.52cik.com/github-hans/locals.js?v1.6.2
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
 
 (function (window, document, undefined) {
     'use strict';
+
+    var lang = 'zh'; // 中文
 
     // 2016-04-18 github 将 jquery 以 amd 加载，不暴露到全局了。
     var $ = require('github/jquery')['default'];
@@ -87,12 +89,12 @@
         // 先匹配 body 的 class
         var page = document.body.className.match(I18N.conf.rePageClass);
 
-        if (!page) { // 扩展 pathname 匹配
-            page = location.pathname.match(I18N.conf.rePagePath);
-        }
-
         if (!page) { // 扩展 url 匹配
             page = location.href.match(I18N.conf.rePageUrl);
+        }
+
+        if (!page) { // 扩展 pathname 匹配
+            page = location.pathname.match(I18N.conf.rePagePath);
         }
 
         return page ? page[1] || 'homepage' : false; // 取页面 key
@@ -196,13 +198,14 @@
         var res; // 正则数组
 
         // 静态翻译
-        str = I18N['zh'][page]['static'][key];
+        str = I18N[lang][page]['static'][key];
         if (str) {
             return str;
         }
 
         // 正则翻译
-        if (res = I18N['zh'][page]['regexp']) {
+        res = I18N[lang][page].regexp;
+        if (res) {
             for (var i = 0, len = res.length; i < len; i++) {
                 str = key.replace(res[i][0], res[i][1]);
                 if (str !== key) {
@@ -232,19 +235,9 @@
                 return '于 ' + el.title.replace(/ .+$/, '');
             }
 
-            return str.replace(/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
-                if (m === 'just now') {
-                    return '刚刚';
-                }
-
-                if (d[0] === 'a') {
-                    d = '1';
-                } // a, an 修改为 1
-
-                var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
-
-                return d + ' ' + dt[t] + '之前';
-            });
+            // 使用字典公共翻译的第二个正则翻译相对时间
+            var time_ago = I18N[lang].pubilc.regexp[1];
+            return str.replace(time_ago[0], time_ago[1]);
         };
 
         RelativeTimeElement.prototype.getFormattedDate = function () {
@@ -289,22 +282,15 @@
                         return true;
                     }
 
+                    var data = $(this).data(); // 获取节点上的 data
                     var $tip = $(tip[0]);
 
-                    var str = $tip.text().trim().replace(/^(No|\d+) contributions? on (.+)$/, function (m, i, d) {
-                        var str = '<strong>';
-                        str += i === 'No' ? '无贡献' : (i + ' 次贡献');
-                        str += '</strong> ';
+                    $tip.html(data.count + ' 次贡献 ' + data.date);
 
-                        var dt = new Date(d);
-                        dt.setMinutes(dt.getMinutes() - dt.getTimezoneOffset()); // 修正时区。
-                        str += dt.toISOString().split('T')[0]; // 得到 yyyy-mm-dd 这样的格式
+                    var rect = this.getBoundingClientRect(); // 获取元素位置
+                    var left = rect.left + window.pageXOffset - tip[0].offsetWidth / 2 + 5.5;
 
-                        return str;
-                    });
-
-                    $tip.html(str);
-                    $tip.css('left', $(this).offset().left - tip[0].offsetWidth / 2 + 5.5);
+                    $tip.css('left', left);
                 });
             }, 999);
         });
