@@ -433,7 +433,10 @@ I18N.zh = {
             "personal email settings": "邮箱设置",
             "URL": "网站",
             "Company": "公司",
+            "You can": "您可以",
+            "other users and organizations to link to them.": "其他用户和组织链接到他们。",
             "Location": "地址",
+            "your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
             "Update profile": "更新资料",
             "Profile updated successfully": "资料更新成功。",
 
