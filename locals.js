@@ -971,6 +971,10 @@ I18N.zh = {
             "Overwrite site": "覆盖现有站点",
             "Replace your existing site by using our automatic page generator. Author your content in our Markdown editor, select a theme, then publish.": "通过使用我们的自动页面生成器替换现有的网站。您可以在我们的 Markdown 编辑器，选择一个主题，然后发布。",
             "Launch automatic page generator": "启动自动生成器",
+            "Enforce HTTPS": "强制 HTTPS",
+            "— Unavailable for your site because you have a custom domain configured (": "- 无法为您的网站开启，因为您配置了一个自定义域名 (",
+            "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人偷窥或篡改的交通到您的网站。",
+            "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 后，您的网站将只能通过 HTTPS 访问。",
 
             "Danger Zone": "危险区",
             "Make this repository private": "将该仓库设为私有仓库",
