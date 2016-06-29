@@ -960,6 +960,8 @@ I18N.zh = {
             "GitHub Pages": "GitHub 项目演示页面",
             "Your site is published at": "您的演示地址为:",
             "Your site is ready to be published at": "您的演示地址为:",
+            "Custom domain": "自定义域名",
+            "Custom domains allow you to serve your site from a domain other than": "自定义域名也许你用其他域名访问",
             "Update your site": "更新您的站点",
             "To update your site, push your HTML or": "更新您的站点，可以直接推送 html 或者使用",
             "updates to your": "更新到",
