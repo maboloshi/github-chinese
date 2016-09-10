@@ -925,6 +925,15 @@ I18N.zh = {
             "commit comments": "次提交",
             "No commit comments for this range": "该范围变更没有提交注释",
 
+            "Comparing changes": "比较变更",
+            "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果你需要，你也可以",
+            "base fork:": "基派生:",
+            "There isn’t anything to compare.": "没有任何东西可比较。",
+            "is up to date with all commits from": "已是最新，提交于",
+            ". Try": "。尝试",
+            "switching the base": "切换基础库",
+            "for your comparison.": "来进行比较。",
+
             // wiki 页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
