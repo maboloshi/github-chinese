@@ -408,6 +408,12 @@ I18N.zh = {
             "Report abuse": "举报该用户",
             "Contact Support about this user's behavior.": "将该用户行为上报。",
 
+            "Search repositories…": "搜索这些查库…",
+            "Type:": "类型:",
+            "Select type:": "选择类型:",
+            "Language:": "语言:",
+            "Select language:": "选择语言:",
+
             "Jump to": "跳转到",
             "First pull request": "第一次拉取请求",
             "First issue": "第一次提问",
