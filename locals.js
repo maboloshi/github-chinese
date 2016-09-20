@@ -728,6 +728,7 @@ I18N.zh = {
             "Code": "代码",
             "Pulse": "统计",
             "Graphs": "图表",
+            "Projects": "项目",
 
             // 仓库描述编辑
             "No description or website provided.": "没有提供说明和网站信息.",
@@ -964,6 +965,10 @@ I18N.zh = {
             ". Try": "。尝试",
             "switching the base": "切换基础库",
             "for your comparison.": "来进行比较。",
+
+            // projects 页面
+            "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
+            "Create a project": "创建一个项目",
 
             // wiki 页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "wiki 为您的仓库提供了一个更好的文档资料。",
