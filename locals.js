@@ -429,6 +429,7 @@ I18N.zh = {
             [/Pushed (\d+) commits? to/, "推送了 $1 次提交到"],
             [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
             [/([^ ]+) has no activity during this period\./, "$1 近期没有任何活动。"],
+            [/([\s\S]+?) has no activity yet for this period\./, "$1 近期没有任何活动。"],
             [/(\d+) total/, "$1 次"],
             [/(\d+) days?/, "$1 天"],
             [/([\d,]+) contributions in the last year/, "$1 次贡献在过去的一年中"],
