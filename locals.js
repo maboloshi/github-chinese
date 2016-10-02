@@ -1328,6 +1328,8 @@ I18N.zh = {
 
     "notifications": { // 通知页面
         "static": { // 静态翻译
+            "Mark all as read": "全部标为已读",
+
             "Notifications": "通知",
             "Watching": "关注的仓库",
             "Unread": "未读",
