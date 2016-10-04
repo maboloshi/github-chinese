@@ -425,6 +425,7 @@ I18N.zh = {
             [/Created (\d+)[\s\r\n]+commits? in[\s\r\n]+(\d+)[\s\r\n]+repositor(y|ies)/, "在 $1 个库中创建了 $2 次提交"],
             [/Created (\d+)[\s\r\n]+repositor(y|ies)/, "创建了 $1 个仓库"],
             [/Opened (\d+)[\s\r\n]+other[\s\r\n]+pull requests?/, "发起了 $1 个拉取请求"],
+            [/Opened (\d+)[\s\r\n]+other[\s\r\n]+issues/, "开了 $1 个其他问题"],
             [/(\d+) commits?/, "$1 次提交"],
             [/Pushed (\d+) commits? to/, "推送了 $1 次提交到"],
             [/Follow ([^’]+)’s activity feed/, "关注 $1 的 feed"],
