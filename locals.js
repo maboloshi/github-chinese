@@ -1330,6 +1330,9 @@ I18N.zh = {
     "notifications": { // 通知页面
         "static": { // 静态翻译
             "Mark all as read": "全部标为已读",
+            "Are you sure?": "您确定吗？",
+            "Are you sure you want to mark all unread notifications as read?": "你确定要将所有的未读通知标记为已读？",
+            "Mark all notifications as read": "全部标为已读",
 
             "Notifications": "通知",
             "Watching": "关注的仓库",
