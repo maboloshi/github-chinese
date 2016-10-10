@@ -409,10 +409,19 @@ I18N.zh = {
             "Contact Support about this user's behavior.": "将该用户行为上报。",
 
             "Search repositories…": "搜索这些查库…",
+            "Search starred repositories…": "搜索点赞的仓库…",
             "Type:": "类型:",
             "Select type:": "选择类型:",
             "Language:": "语言:",
             "Select language:": "选择语言:",
+            "All languages": "所有语言",
+
+            "Sort:": "排序:",
+            "Sort options": "排序选项",
+            "Recently starred": "最近关注的",
+            "Recently active": "最近活动的",
+            "Most stars": "最多赞的",
+            "Unstar": "取消点赞",
 
             "Jump to": "跳转到",
             "First pull request": "第一次拉取请求",
@@ -1367,14 +1376,6 @@ I18N.zh = {
 
     "stars": { // 点赞页面
         "static": { // 静态翻译
-            "Search starred repositories…": "搜索点赞的仓库…",
-            "Sort:": "排序:",
-            "Sort options": "排序选项",
-            "Recently starred": "最近关注的",
-            "Recently active": "最近活动的",
-            "Most stars": "最多赞的",
-            "Unstar": "取消点赞",
-
             "All stars": "所有仓库",
             "Your repositories": "您的仓库",
             "Others' repositories": "其他仓库",
