@@ -20,21 +20,26 @@
     var lang = 'zh'; // 中文
 
     // 2016-04-18 github 将 jquery 以 amd 加载，不暴露到全局了。
-    var $ = require('github/jquery')['default'];
+    // var $ = require('github/jquery')['default'];
 
     // 要翻译的页面
     var page = getPage();
 
     transTitle(); // 页面标题翻译
     timeElement(); // 时间节点翻译
-    contributions(); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
+    // setTimeout(contributions, 100); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
     walk(document.body); // 立即翻译页面
 
-    $(document).ajaxComplete(function () {
-        transTitle();
-        walk(document.body); // ajax 请求后再次翻译页面
+    // 2017-03-19 github 屏蔽 require 改为 Promise 形式的 ghImport
+    define('github-hans-ajax', ['./jquery'], function($) {
+        $(document).ajaxComplete(function () {
+            transTitle();
+            walk(document.body); // ajax 请求后再次翻译页面
+        });
     });
-
+    ghImport('github-hans-ajax')['catch'](function(e) {
+        setTimeout(function() { throw e });
+    });
 
     /**
      * 遍历节点
@@ -256,7 +261,8 @@
 
         // 遍历 time 元素进行翻译
         // 2016-04-16 github 改版，不再用 time 标签了。
-        $('time, relative-time, time-ago, local-time').each(function (i, el) {
+        var times = document.querySelectorAll('time, relative-time, time-ago, local-time');
+        Array.prototype.forEach.call(times, function (el) {
             if (el.getFormattedDate) { // 跳过未注册的 time 元素
                 el.textContent = el.getFormattedDate();
             }
@@ -271,28 +277,35 @@
         var tip = document.getElementsByClassName('svg-tip-one-line');
 
         // 等待 IncludeFragmentElement 元素加载完毕后绑定事件
-        var observe = require('github/observe').observe;
-        observe(".js-calendar-graph-svg", function () {
-            setTimeout(function () { // 延时绑定 mouseover 事件，否则没法翻译
-                var $calendar = $('.js-calendar-graph');
-                walk($calendar[0]); // 翻译日历部分
+        // var observe = require('github/observe').observe;
 
-                $calendar.on('mouseover', '.day', function () {
-                    if (tip.length === 0) { // 没有 tip 元素时退出防止报错
-                        return true;
-                    }
+        define('github/hans-contributions', ['./observe'], function (observe) {
+            observe(".js-calendar-graph-svg", function () {
+                setTimeout(function () { // 延时绑定 mouseover 事件，否则没法翻译
+                    var $calendar = $('.js-calendar-graph');
+                    walk($calendar[0]); // 翻译日历部分
 
-                    var data = $(this).data(); // 获取节点上的 data
-                    var $tip = $(tip[0]);
+                    $calendar.on('mouseover', '.day', function () {
+                        if (tip.length === 0) { // 没有 tip 元素时退出防止报错
+                            return true;
+                        }
 
-                    $tip.html(data.count + ' 次贡献 ' + data.date);
+                        var data = $(this).data(); // 获取节点上的 data
+                        var $tip = $(tip[0]);
 
-                    var rect = this.getBoundingClientRect(); // 获取元素位置
-                    var left = rect.left + window.pageXOffset - tip[0].offsetWidth / 2 + 5.5;
+                        $tip.html(data.count + ' 次贡献 ' + data.date);
 
-                    $tip.css('left', left);
-                });
-            }, 999);
+                        var rect = this.getBoundingClientRect(); // 获取元素位置
+                        var left = rect.left + window.pageXOffset - tip[0].offsetWidth / 2 + 5.5;
+
+                        $tip.css('left', left);
+                    });
+                }, 999);
+            });
+        });
+
+        ghImport('github/hans-contributions')['catch'](function(e) {
+            setTimeout(function() { throw e });
         });
     }
 
