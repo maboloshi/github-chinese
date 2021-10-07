@@ -43,13 +43,28 @@ I18N.conf = {
     /**
      * 忽略区域的 class 正则
      *
-     * 面包屑 breadcrumb
+     * 仓库名和用户名 repo-and-owner (仅出现在：应用安装授权页和设置页 选定仓库)
+     * 面包屑 breadcrumb 误伤有点多 取消; 使用如下2条规则代替
+     *  目录位置栏 d-sm-block
+     *  文件位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
      * 代码高亮 highlight tab-size js-file-line-container
      * 代码差异 data highlight blob-wrapper
-     * wiki内容 markdown-body
+     * wiki, 评论内容等 markdown-body
      */
-    reIgnore: /(breadcrumb|files js-navigation-container|highlight tab-size|highlight blob-wrapper|markdown-body)/,
+    reIgnoreClass: /(repo-and-owner|d-sm-block|js-path-segment|final-path|files js-navigation-container|highlight tab-size|highlight blob-wrapper|markdown-body)/,
+
+    /**
+     * 忽略区域的 itemprop 属性正则
+     * name 列表页 仓库名
+     * text
+     */
+    reIgnoreItemprop: /(name|text)/,
+
+    /**
+     * 忽略区域的 特定元素id 正则
+     */
+    reIgnoreId: /(readme)/,
 };
 
 I18N.zh = {

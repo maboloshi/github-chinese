@@ -86,7 +86,9 @@
                 }
 
                 // 跳过 readme, 文件列表, 代码显示
-                if (el.id !== 'readme' && !I18N.conf.reIgnore.test(el.className)) {
+                if (!I18N.conf.reIgnoreId.test(el.id) &&
+                    !I18N.conf.reIgnoreClass.test(el.className) &&
+                    !I18N.conf.reIgnoreItemprop.test(el.getAttribute("itemprop"))) {
                     walk(el); // 遍历子节点
                 }
             } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
