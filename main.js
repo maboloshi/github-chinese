@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         GitHub 汉化插件
-// @description  汉化 GitHub 界面的部分菜单及内容。
-// @copyright    2016, 楼教主 (http://www.52cik.com/)
+// @description  汉化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
+// @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
 // @version      1.6.4
-// @author       楼教主
+// @author       沙漠之子
 // @license      MIT
-// @homepageURL  https://github.com/52cik/github-hans
+// @homepageURL  https://github.com/maboloshi/github-chinese
 // @match        http://*.github.com/*
 // @match        https://*.github.com/*
-// @require      https://52cik.github.io/github-hans/locals.js?v1.6.4
+// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.6.4
 // @run-at       document-end
 // @grant        none
 // ==/UserScript==
