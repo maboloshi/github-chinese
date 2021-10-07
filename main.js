@@ -168,15 +168,16 @@
      * @returns {string|boolean}
      */
     function translate(text, page) { // 翻译
+
+        if (!isNaN(text)) {
+            return false;
+        } // 内容为空, 空白字符和或数字 不翻译
+
         var str;
         var _key = text.trim(); // 去除首尾空格的 key
         var _key_neat = _key
             .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
             .replace(/\s{2,}/g, ' '); // 去除多余换行空格等字符，(试验测试阶段，有问题再恢复)
-
-        if (_key_neat === '') {
-            return false;
-        } // 内容为空不翻译
 
         str = transPage('pubilc', _key_neat); // 公共翻译
 
