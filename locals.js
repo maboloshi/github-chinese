@@ -2,33 +2,43 @@ var I18N = {};
 
 I18N.conf = {
     /**
-     * 要翻译的页面正则
+     * 要翻译的页面正则(不含仓库页)
+     *
+     * 2021-10-07 11:53:34
+     * GitHub 网站更新 调整 Class 过滤规则
+     * 且过滤 Class 并不是总是生效，增加 PathName 规则补充
      */
-    rePageClass: /\b(vis-public|page-(dashboard|profile|account|new-repo|create-org)|homepage|signup|session-authentication|oauth)\b/,
+    rePageClass: /\b(page-(profile|account|new-repo|create-org)|session-authentication)\b/,
 
     /**
      * 匹配 pathname 页面的正则
      *
+     * 注册页面 /signup
+     * 登录二步验证 /login/oauth
+     * 登录页面 /login
+     * 密码重置 /password_reset
+     * 组织页面 /orgs
+     * 探索页面 /explore
+     * 订阅页面 /notifications/subscriptions
      * 通知页面 /notifications
      * 关注页面 /watching
-     * 点赞页面 /stars
-     * 问题页面 /issues
+     * 星标页面 /stars
+     * 议题页面 /issues
      * 拉取请求 /pulls
      * 搜索页面 /search
      * 趋势页面 /trending
      * 展示页面 /showcases
      * 导入仓库 /new/import
-     *
-     * 未登录首页 /
+     * ...
      */
-    rePagePath: /\/(notifications|watching|stars|issues|search|pulls|trending|showcases|$|new\/import)/,
+    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps)/,
 
     /**
-     * 匹配 url 页面的正则
+     * 要翻译的页面正则(仅仓库页)
      *
-     * 代码片段页面 gist
+     * 2021-10-07 11:57:34
      */
-    rePageUrl: /(gist)\.github.com/,
+    rePagePathRepo: /\/(settings)/,
 
     /**
      * 忽略区域的 class 正则
@@ -449,7 +459,7 @@ I18N.zh = {
         ],
     },
 
-    "page-account": { // 个人设置
+    "page-account": { // 个人设置 = /settings
         "static": { // 静态翻译
             // 菜单
             "Personal settings": "个人设置",
@@ -668,7 +678,14 @@ I18N.zh = {
         ],
     },
 
-    "page-new-repo": { // 新建仓库
+    "settings/apps": {
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "page-new-repo": { // 新建仓库 /new
         "static": { // 静态翻译
             "Create a new repository": "创建一个新的仓库",
             "A repository contains all the files for your project, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
@@ -719,6 +736,13 @@ I18N.zh = {
         ],
     },
 
+    "new/project": { // 新建项目
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
     "page-create-org": { // 新建组织
         "static": { // 静态翻译
         },
@@ -726,7 +750,7 @@ I18N.zh = {
         ],
     },
 
-    "vis-public": { // 仓库页
+    "repository": { // 仓库页面
         "static": { // 静态翻译
             // 导入仓库 第二页
             "Preparing your new repository": "准备新的存储库",
@@ -1205,6 +1229,13 @@ I18N.zh = {
         ],
     },
 
+    "repository/settings": { // 仓库设置页面 /<user-name>/<repo-name>/settings
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
     "homepage": { // 未登录首页
         "static": { // 静态翻译
             "Pick a username": "选择一个用户名",
@@ -1256,7 +1287,7 @@ I18N.zh = {
         ],
     },
 
-    "session-authentication": { // 登录页
+    "session-authentication": { // 登录页 包含(/login, /session, /sessions/two-factor, sessions/recovery等)
         "static": { // 静态翻译
             "Sign in to GitHub": "登录 GitHub 帐户",
             "Username or email address": "用户名/邮箱",
@@ -1377,7 +1408,14 @@ I18N.zh = {
         ],
     },
 
-    "stars": { // 点赞页面
+    "notifications/subscriptions": { //订阅的仓库页面
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "stars": { // 星标页面
         "static": { // 静态翻译
             "All stars": "所有仓库",
             "Your repositories": "您的仓库",
@@ -1435,7 +1473,7 @@ I18N.zh = {
     },
 
 
-    "issues": { // 问题页面
+    "issues": { // 议题页面
         "static": { // 静态翻译
             "Created": "已创建",
             "Assigned": "已分配",
@@ -1649,7 +1687,7 @@ I18N.zh = {
         ],
     },
 
-    "oauth": { // 应用授权
+    "login/oauth": { // 应用授权
         "static": { // 静态翻译
             "Authorize application": "应用授权",
             "by": "的",
@@ -1666,8 +1704,48 @@ I18N.zh = {
         "regexp": [ // 正则翻译
         ],
     },
+
+    "orgs": { // 组织页面
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "explore": { // 探索页面
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "marketplace": { // 应用商店
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
 };
 
 
 // 公共复用翻译部分
 I18N.zh.pulls = I18N.zh.issues;
+// 重定向
+I18N.zh.settings = I18N.zh["page-account"];
+I18N.zh["settings/apps/authorizations"] = I18N.zh.settings;
+I18N.zh["settings/tokens"] = I18N.zh["settings/apps"];
+I18N.zh["settings/developers"] = I18N.zh["settings/apps"];
+I18N.zh["settings/applications/new"] = I18N.zh["settings/apps"];
+
+I18N.zh.login = I18N.zh["session-authentication"];
+I18N.zh.session = I18N.zh["session-authentication"];
+I18N.zh.sessions = I18N.zh["session-authentication"];
+I18N.zh.password_reset = I18N.zh["session-authentication"];
+
+I18N.zh.new = I18N.zh["page-new-repo"];
+I18N.zh["new/import"] = I18N.zh["page-new-repo"];
+I18N.zh["import"] = I18N.zh["page-new-repo"];
+
+I18N.zh["installations/new"] = I18N.zh["login/oauth"];
+
+I18N.zh.apps = I18N.zh.marketplace;

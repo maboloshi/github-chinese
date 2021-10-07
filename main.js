@@ -98,20 +98,54 @@
 
     /**
      * 获取翻译页面
+     *
+     * 2021-10-07 11:48:50
+     * 参考 v2.0 中规则
      */
     function getPage() {
-        // 先匹配 body 的 class
-        var page = document.body.className.match(I18N.conf.rePageClass);
+        // 站点，如 gist, developer, help 等，默认主站是 github
+        const site = location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
+        const pathname = location.pathname; // 当前路径
+        const isLogin = /logged-in/.test(document.body.className); // 是否登录
 
-        if (!page) { // 扩展 url 匹配
-            page = location.href.match(I18N.conf.rePageUrl);
+        // 用于确定 个人首页，组织首页，仓库页 然后做判断
+        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
+        //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
+        // 如 maboloshi?tab=repositories 等
+        const isOrganization = analyticsLocation === '/<org-login>'; // 仅组织首页 其标签页使用 Pathname 过滤(/orgs/)
+        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
+
+        if (site === 'gist') { // Gist 站点
+            return 'gist';
         }
+
+        if (pathname === '/' && site === 'github') { // github.com 首页
+            return isLogin ? 'page-dashboard' : 'homepage';
+        } //登录 或 未登录
+
+        // 仅个人首页 其标签页识别不了 优先使用 Class 过滤(/page-profile/)
+        // if (isProfile) { // 个人首页
+        //     return 'page-profile';
+        // }
+
+        if (isRepository) { // 仓库页
+            var t = location.pathname.match(I18N.conf.rePagePathRepo);
+            return t ? 'repository/'+t[1] : 'repository';
+        }
+
+        // 仅组织首页 其标签页使用 Pathname 过滤(/orgs/)
+        if (isOrganization) { // 组织主页 别名
+            return 'orgs';
+        }
+
+        // 匹配 body 的 class
+        var page = document.body.className.match(I18N.conf.rePageClass);
 
         if (!page) { // 扩展 pathname 匹配
             page = location.pathname.match(I18N.conf.rePagePath);
         }
 
-        return page ? page[1] || 'homepage' : false; // 取页面 key
+        return page ? page[1] : false; // 取页面 key
     }
 
     /**
