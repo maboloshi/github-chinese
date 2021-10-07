@@ -26,7 +26,7 @@
     var page = getPage();
 
     transTitle(); // 页面标题翻译
-    timeElement(); // 时间节点翻译
+    // timeElement(); // 时间节点翻译
     // setTimeout(contributions, 100); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
     walk(document.body); // 立即翻译页面
     watchUpdate();
