@@ -179,6 +179,10 @@
             .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
             .replace(/\s{2,}/g, ' '); // 去除多余换行空格等字符，(试验测试阶段，有问题再恢复)
 
+        if (page === 'title') {
+            return transPage('title', _key_neat);
+        } // 翻译网页标题
+
         str = transPage('pubilc', _key_neat); // 公共翻译
 
         if (str !== false && str !== _key_neat) { // 公共翻译完成
