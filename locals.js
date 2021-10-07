@@ -189,6 +189,12 @@ I18N.zh = {
             "Unstar": "取消点赞",
             "Fork": "派生",
 
+            // 相对时间
+            "just now": "刚刚",
+            "now": "当前",
+            "yesterday": "昨天",
+            "last month": "上个月",
+
             // 邮箱验证提示
             "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮件地址以便开启所有 GitHub 功能。",
             "Configure email settings": "修改电子邮件设置",
@@ -198,13 +204,51 @@ I18N.zh = {
             /**
              * 匹配时间格式
              *
+             * 日 月 或 日 月 年
+             * 4 Sep
+             * 30 Dec 2020
+             *
+             * 增加 带介词 on 的格式，on 翻译不体现
+             * on 4 Sep
+             * on 30 Dec 2020
+             *
+             * 不知道是否稳定, 暂时先试用着. 2021-10-04 15:19:18
+             */
+            [/(on |)(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)( \d{4}|)/g, function (all, on, date, month, year) {
+                var monthKey = {
+                    "Jan": "1月",
+                    "Feb": "2月",
+                    "Mar": "3月",
+                    "Apr": "4月",
+                    "May": "5月",
+                    "Jun": "6月",
+                    "Jul": "7月",
+                    "Aug": "8月",
+                    "Sep": "9月",
+                    "Oct": "10月",
+                    "Nov": "11月",
+                    "Dec": "12月"
+                };
+                return (year ? year + '年' : '') + monthKey[month] + date + '日';
+            }],
+
+             /**
+             * 匹配时间格式
+             *
+             * 月 日 或 月 日, 年
              * Mar 19, 2015 – Mar 19, 2016
              * January 26 – March 19
              * March 26
              *
              * 不知道是否稳定, 暂时先试用着. 2016-03-19 20:46:45
+             *
+             * 更新于 2021-10-04 15:19:18
+             * 增加 带介词 on 的格式，on 翻译不体现
+             * on Mar 19, 2015
+             * on March 26
+             *
              */
-            [/(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:, (\d+)|)/g, function (all, month, date, year) {
+            [/(on |)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:, (\d+)|)/g, function (all, on, month, date, year) {
                 var monthKey = {
                     "Jan": "1月",
                     "Feb": "2月",
@@ -224,11 +268,7 @@ I18N.zh = {
             /**
              * 相对时间格式处理
              */
-            [/just now|(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
-                if (m === 'just now') {
-                    return '刚刚';
-                }
-
+            [/(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
                 if (d[0] === 'a') {
                     d = '1';
                 } // a, an 修改为 1
