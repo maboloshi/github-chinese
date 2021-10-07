@@ -271,4 +271,49 @@
         return false; // 没有翻译条目
     }
 
+    /**
+     * 翻译描述
+     *
+     * 2021-10-06 16:41:54
+     * 来自：k1995/github-i18n-plugin
+     * 改写为原生代码
+     */
+  function translateDesc(el) {
+    let element = document.querySelector(el);
+
+    if (!element) {
+        return;
+    }
+
+    element.insertAdjacentHTML('afterend', "<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
+    let translate_me = document.getElementById('translate-me')
+
+    translate_me.onclick = function() {
+      // get description text
+      const desc = element
+        .firstChild
+        .nodeValue
+        .trim();
+
+      if(!desc) {
+        return;
+      }
+
+      GM_xmlhttpRequest({
+        method: "GET",
+        url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
+        onload: function(res) {
+          if (res.status === 200) {
+           translate_me.style.display="none";
+            // render result
+            const text = res.responseText;
+            element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span><br/>"+text);
+          } else {
+            alert("翻译失败");
+          }
+        }
+      });
+    };
+  }
+
 })(window, document);
