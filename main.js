@@ -29,17 +29,26 @@
     timeElement(); // 时间节点翻译
     // setTimeout(contributions, 100); // 贡献日历翻译 (日历是内嵌或ajax的, 所以基于回调事件处理)
     walk(document.body); // 立即翻译页面
+    watchUpdate();
 
-    // 2017-03-19 github 屏蔽 require 改为 Promise 形式的 ghImport
-    define('github-hans-ajax', ['./jquery'], function($) {
-        $(document).ajaxComplete(function () {
+    /**
+     * 监听节点变化, 触发和调用翻译函数
+     *
+     * 2021-10-07 11:28:30
+     * 使用原生API 代替 jQuery 的 `ajaxComplete`函数
+     */
+    function watchUpdate() {
+        const m = window.MutationObserver || window.WebKitMutationObserver;
+        const observer = new m(function (mutations, observer) {
             transTitle();
-            walk(document.body); // ajax 请求后再次翻译页面
+            walk(document.body);
         });
-    });
-    ghImport('github-hans-ajax')['catch'](function(e) {
-        setTimeout(function() { throw e });
-    });
+        observer.observe(document.body, {
+          subtree: true,
+          characterData: true,
+          childList: true,
+        });
+    }
 
     /**
      * 遍历节点
