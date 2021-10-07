@@ -218,7 +218,7 @@
         str = transPage('pubilc', _key_neat); // 公共翻译
 
         if (str !== false && str !== _key_neat) { // 公共翻译完成
-            str = transPage('pubilc', str) || str;  // 二次公共翻译（为了弥补正则部分翻译的情况）
+            str = transPage('pubilc', str, true) || str;  // 二次公共翻译（为了弥补正则部分翻译的情况）
             return text.replace(_key, str);  // 替换原字符，保留空白部分
         }
 
@@ -231,7 +231,7 @@
             return false;
         } // 未知内容不翻译
 
-        str = transPage('pubilc', str) || str; // 二次公共翻译（为了弥补正则部分翻译的情况）
+        str = transPage('pubilc', str, true) || str; // 二次公共翻译（为了弥补正则部分翻译的情况）
         return text.replace(_key, str); // 替换原字符，保留空白部分
     }
 
@@ -241,17 +241,20 @@
      *
      * @param {string} page 页面
      * @param {string} key 待翻译内容
+     * @param {boolean} isRegexp 是否仅翻译正则部分
      *
      * @returns {string|boolean}
      */
-    function transPage(page, key) {
+    function transPage(page, key, isRegexp=false) {
         var str; // 翻译结果
         var res; // 正则数组
 
         // 静态翻译
-        str = I18N[lang][page]['static'][key];
-        if (str) {
-            return str;
+        if (!isRegexp) {
+            str = I18N[lang][page]['static'][key];
+            if (str) {
+                return str;
+            }
         }
 
         // 正则翻译
