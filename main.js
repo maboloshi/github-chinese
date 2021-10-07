@@ -7,8 +7,8 @@
 // @author       沙漠之子
 // @license      MIT
 // @homepageURL  https://github.com/maboloshi/github-chinese
-// @match        http://*.github.com/*
-// @match        https://*.github.com/*
+// @match        https://github.com/*
+// @match        https://gist.github.com/*
 // @require      https://maboloshi.github.io/github-chinese/locals.js?v1.6.4
 // @run-at       document-end
 // @grant        none
