@@ -213,8 +213,11 @@ I18N.zh = {
              * on 30 Dec 2020
              *
              * 不知道是否稳定, 暂时先试用着. 2021-10-04 15:19:18
+             *
+             * Tip:
+             * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
              */
-            [/(on |)(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)( \d{4}|)/g, function (all, on, date, month, year) {
+            [/(?:on |)(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)( \d{4}|)/g, function (all, date, month, year) {
                 var monthKey = {
                     "Jan": "1月",
                     "Feb": "2月",
@@ -247,8 +250,23 @@ I18N.zh = {
              * on Mar 19, 2015
              * on March 26
              *
+             * 更新于 2021-10-10 13:44:36
+             * 星期, 月 日 年  // 个人访问令牌 有效期
+             * on Tue, Nov 9 2021
+             *
+             * Tip:
+             * 正则中的 ?? 前面的字符 重复0次或1次
              */
-            [/(on |)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:, (\d+)|)/g, function (all, on, month, date, year) {
+            [/(?:on |)(?:(Sun|Mon|Tue|Wed|Thur|Fri|Sat), |)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:,?? (\d+)|)/g, function (all, week, month, date, year) {
+                var weekKey = {
+                    "Sun"  : "周日",
+                    "Mon"  : "周一",
+                    "Tue"  : "周二",
+                    "Wed"  : "周三",
+                    "Thur" : "周四",
+                    "Fri"  : "周五",
+                    "Sat"  : "周六",
+                };
                 var monthKey = {
                     "Jan": "1月",
                     "Feb": "2月",
@@ -263,7 +281,7 @@ I18N.zh = {
                     "Nov": "11月",
                     "Dec": "12月"
                 };
-                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + date + '日';
+                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + date + '日' + (week ? ', ' + weekKey[week] : '');
             }],
             /**
              * 相对时间格式处理
