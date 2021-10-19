@@ -201,40 +201,6 @@ I18N.zh = {
             "Your email was verified.": "您的邮件地址验证成功！",
         },
         "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
-            /**
-             * 匹配时间格式
-             *
-             * 日 月 或 日 月 年
-             * 4 Sep
-             * 30 Dec 2020
-             *
-             * 增加 带介词 on 的格式，on 翻译不体现
-             * on 4 Sep
-             * on 30 Dec 2020
-             *
-             * 不知道是否稳定, 暂时先试用着. 2021-10-04 15:19:18
-             *
-             * Tip:
-             * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
-             */
-            [/(?:on |)(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)( \d{4}|)/g, function (all, date, month, year) {
-                var monthKey = {
-                    "Jan": "1月",
-                    "Feb": "2月",
-                    "Mar": "3月",
-                    "Apr": "4月",
-                    "May": "5月",
-                    "Jun": "6月",
-                    "Jul": "7月",
-                    "Aug": "8月",
-                    "Sep": "9月",
-                    "Oct": "10月",
-                    "Nov": "11月",
-                    "Dec": "12月"
-                };
-                return (year ? year + '年' : '') + monthKey[month] + date + '日';
-            }],
-
              /**
              * 匹配时间格式
              *
@@ -253,17 +219,26 @@ I18N.zh = {
              * 更新于 2021-10-10 13:44:36
              * 星期, 月 日 年  // 个人访问令牌 有效期
              * on Tue, Nov 9 2021
+             * 
+             * 2021-10-19 12:04:19 融合更多规则
+             *
+             * 4 Sep
+             * 30 Dec 2020
+             *
+             * on 4 Sep
+             * on 30 Dec 2020
              *
              * Tip:
              * 正则中的 ?? 前面的字符 重复0次或1次
+             * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
              */
-            [/(?:on |)(?:(Sun|Mon|Tue|Wed|Thur|Fri|Sat), |)(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)?|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+)(?:,?? (\d+)|)/g, function (all, week, month, date, year) {
+            [/(?:on |)(?:(\d{1,2}) |)(?:(Sun|Mon|Tue|Wed|Thu|Fri|Sat), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
                 var weekKey = {
                     "Sun"  : "周日",
                     "Mon"  : "周一",
                     "Tue"  : "周二",
                     "Wed"  : "周三",
-                    "Thur" : "周四",
+                    "Thu"  : "周四",
                     "Fri"  : "周五",
                     "Sat"  : "周六",
                 };
@@ -281,7 +256,9 @@ I18N.zh = {
                     "Nov": "11月",
                     "Dec": "12月"
                 };
-                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + date + '日' + (week ? ', ' + weekKey[week] : '');
+                var date = date1 ? date1 : date2;
+                var year = year1 ? year1 : year2;
+                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week] : '');
             }],
             /**
              * 相对时间格式处理
