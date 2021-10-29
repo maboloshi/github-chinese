@@ -33,16 +33,44 @@
      * 使用原生API 代替 jQuery 的 `ajaxComplete`函数
      */
     function watchUpdate() {
-        const m = window.MutationObserver || window.WebKitMutationObserver;
-        const observer = new m(function (mutations, observer) {
-            transTitle();
-            walk(document.body);
-        });
-        observer.observe(document.body, {
+        const m =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
+        var currentPath = location.pathname;
+        new m(function (mutations) {
+            /**
+             * 仅翻译变更部分 不在全局匹配
+             *
+             * 且仅监听:
+             *    1. 节点增加
+             *    2. 节点属性的变化
+             *
+             * 2021-10-10 15:24:49
+             * 遍历节点 函数 walk 需相应打2个补丁 适配
+             * */
+            if(location.pathname !== currentPath) {
+                currentPath = location.pathname;
+                page = getPage(); // 仅当,页面地址发生变化时运行
+            }
+            for(let mutation of mutations) { // for速度比forEach快
+                if (mutation.addedNodes || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
+                    walk(mutation.target);
+                }
+            }
+        }).observe(document.body, {
           subtree: true,
           characterData: true,
           childList: true,
+          attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
         });
+
+        new m(function(mutations) {
+            transTitle();
+        }).observe(
+            document.querySelector('title'),
+            { characterData: true, childList: true }
+        );
     }
 
     /**
@@ -53,8 +81,8 @@
     function walk(node) {
         var nodes = node.childNodes;
 
-        for (var i = 0, len = nodes.length; i < len; i++) {
-            var el = nodes[i];
+        for (var i = 0, len = nodes.length; i <= len; i++) { // 遍历节点
+            var el = nodes[i] ? nodes[i] : node; //可能还要优化 该节点不存在子节点
             // todo 1. 修复多属性翻译问题; 2. 添加事件翻译, 如论预览信息;
 
             if (el.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
@@ -83,13 +111,14 @@
                 // 跳过 readme, 文件列表, 代码显示
                 if (!I18N.conf.reIgnoreId.test(el.id) &&
                     !I18N.conf.reIgnoreClass.test(el.className) &&
-                    !I18N.conf.reIgnoreItemprop.test(el.getAttribute("itemprop"))) {
+                    !I18N.conf.reIgnoreItemprop.test(el.getAttribute("itemprop")) &&
+                    el != node
+                   ) {
                     walk(el); // 遍历子节点
                 }
             } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
                 transElement(el, 'data');
             }
-
         }
     }
 
