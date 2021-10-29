@@ -23,7 +23,7 @@
     var page = getPage();
 
     transTitle(); // 页面标题翻译
-    walk(document.body); // 立即翻译页面
+    traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
     /**
@@ -55,7 +55,7 @@
             }
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
-                    walk(mutation.target);
+                    traverseNode(mutation.target);
                 }
             }
         }).observe(document.body, {
@@ -78,7 +78,16 @@
      *
      * @param {Element} node 节点
      */
-    function walk(node) {
+    function traverseNode(node) {
+        // 跳过忽略
+        if (I18N.conf.reIgnoreId.test(node.id) ||
+            I18N.conf.reIgnoreClass.test(node.className) ||
+            I18N.conf.reIgnoreTag.test(node.tagName) ||
+            (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
+           ) {
+            return;
+        }
+
         var nodes = node.childNodes;
 
         for (var i = 0, len = nodes.length; i <= len; i++) { // 遍历节点
@@ -97,9 +106,15 @@
                 } else if (el.hasAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
                     transElement(el, 'aria-label', true);
 
-                    if (el.hasAttribute('data-copied-hint')) { // 复制成功提示
-                        transElement(el.dataset, 'copiedHint');
+                    if (el.hasAttribute('data-copy-feedback')) { // 复制成功提示
+                        transElement(el,'data-copy-feedback',true );
                     }
+                    if (el.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
+                        transElement(el, 'data-confirm', true);
+                    }
+                } else if (el.tagName === 'BUTTON' && el.hasAttribute('data-confirm')) {
+                    transElement(el, 'data-confirm', true); // 翻译 浏览器 提示对话框
+
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
                 }
@@ -107,14 +122,8 @@
                 if (el.hasAttribute('data-disable-with')) { // 按钮等待提示
                     transElement(el.dataset, 'disableWith');
                 }
-
-                // 跳过 readme, 文件列表, 代码显示
-                if (!I18N.conf.reIgnoreId.test(el.id) &&
-                    !I18N.conf.reIgnoreClass.test(el.className) &&
-                    !I18N.conf.reIgnoreItemprop.test(el.getAttribute("itemprop")) &&
-                    el != node
-                   ) {
-                    walk(el); // 遍历子节点
+                if (el != node) {
+                    traverseNode(el); // 遍历子节点
                 }
             } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
                 transElement(el, 'data');
