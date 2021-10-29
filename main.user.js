@@ -147,7 +147,7 @@
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
-        const isOrganization = analyticsLocation === '/<org-login>'; // 仅组织首页 其标签页使用 Pathname 过滤(/orgs/)
+        const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
         if (site === 'gist') { // Gist 站点
@@ -164,20 +164,20 @@
         // }
 
         if (isRepository) { // 仓库页
-            var t = location.pathname.match(I18N.conf.rePagePathRepo);
+            let t = pathname.match(I18N.conf.rePagePathRepo);
             return t ? 'repository/'+t[1] : 'repository';
         }
 
-        // 仅组织首页 其标签页使用 Pathname 过滤(/orgs/)
-        if (isOrganization) { // 组织主页 别名
-            return 'orgs';
+        if (isOrganization) { // 组织页
+            let t = pathname.match(I18N.conf.rePagePathOrg);
+            return t ? 'orgs/'+t[1] : 'orgs';
         }
 
         // 匹配 body 的 class
         var page = document.body.className.match(I18N.conf.rePageClass);
 
         if (!page) { // 扩展 pathname 匹配
-            page = location.pathname.match(I18N.conf.rePagePath);
+            page = pathname.match(I18N.conf.rePagePath);
         }
 
         return page ? page[1] : false; // 取页面 key
