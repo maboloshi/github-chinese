@@ -328,10 +328,7 @@
 
         translate_me.onclick = function() {
             // get description text
-            const desc = element
-            .firstChild
-            .nodeValue
-            .trim();
+            const desc = element.textContent.trim();
 
             if(!desc) {
                 return;
