@@ -31,7 +31,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps)/,
+    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps|account\/organizations\/new)/,
+
+    // 仓库路径
+    rePagePathRepo: /\/(settings)/,
+
+    // 组织路径
+    rePagePathOrg: /\/(settings|billing_managers\/new)/,
 
     /**
      * 要翻译的页面正则(仅仓库页)
@@ -43,28 +49,32 @@ I18N.conf = {
     /**
      * 忽略区域的 class 正则
      *
-     * 仓库名和用户名 repo-and-owner (仅出现在：应用安装授权页和设置页 选定仓库)
-     * 面包屑 breadcrumb 误伤有点多 取消; 使用如下2条规则代替
-     *  目录位置栏 d-sm-block
-     *  文件位置栏 |js-path-segment|final-path
+     * 代码编辑器 内容 代码高亮 CodeMirror
+     * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
+     * 文件,目录位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
-     * 代码高亮 highlight tab-size js-file-line-container
-     * 代码差异 data highlight blob-wrapper
-     * wiki, 评论内容等 markdown-body
+     * 评论内容等 comment-body
+     * 文件搜索模式 js-tree-finder-virtual-filter
      */
-    reIgnoreClass: /(repo-and-owner|d-sm-block|js-path-segment|final-path|files js-navigation-container|highlight tab-size|highlight blob-wrapper|markdown-body)/,
+    reIgnoreClass: /(CodeMirror|blob-code|repo-and-owner|js-path-segment|final-path|files js-navigation-container|comment-body|markdown-title|js-tree-finder-virtual-filter)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
      * name 列表页 仓库名
-     * text
      */
-    reIgnoreItemprop: /(name|text)/,
+    reIgnoreItemprop: /(name)/,
 
     /**
      * 忽略区域的 特定元素id 正则
      */
     reIgnoreId: /(readme)/,
+
+    /**
+     * 忽略区域的 标签 正则
+     * /i 规则不区分大小写
+     */
+    reIgnoreTag: /(code|link|img|table|article|marked-text)/i,
+    // 文件搜索模式 文件列表条目 marked-text
 };
 
 I18N.zh = {
