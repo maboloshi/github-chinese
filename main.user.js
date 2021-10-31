@@ -11,7 +11,7 @@
 // @match        https://gist.github.com/*
 // @require      https://maboloshi.github.io/github-chinese/locals.js?v1.6.4
 // @run-at       document-end
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function (window, document, undefined) {
