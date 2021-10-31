@@ -13,6 +13,11 @@
 本次维护基本恢复和保留大部分功能如：页面正则翻译（含日期的正则）。页面词条可能被我切得太碎不方便后期维护（先这样吧！）
 
 ---
+<details>
+  <summary>原始说明</summary>
+
+## 原始说明:
+
 > 给像我这样英文渣渣同学的福利。
 
   [![GitHub issues][issues-image]][issues-url]
@@ -107,3 +112,4 @@
 
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+</details>
