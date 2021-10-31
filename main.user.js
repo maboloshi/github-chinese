@@ -26,6 +26,10 @@
     traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
+    // 翻译描述
+    translateDesc(".mt-3.f4"); //仓库简介翻译
+    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+
     /**
      * 监听节点变化, 触发和调用翻译函数
      *
