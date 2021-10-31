@@ -256,7 +256,6 @@
         str = transPage('pubilc', _key_neat); // 公共翻译
 
         if (str !== false && str !== _key_neat) { // 公共翻译完成
-            str = transPage('pubilc', str, true) || str;  // 二次公共翻译（为了弥补正则部分翻译的情况）
             return text.replace(_key, str);  // 替换原字符，保留空白部分
         }
 
@@ -269,7 +268,6 @@
             return false;
         } // 未知内容不翻译
 
-        str = transPage('pubilc', str, true) || str; // 二次公共翻译（为了弥补正则部分翻译的情况）
         return text.replace(_key, str); // 替换原字符，保留空白部分
     }
 
