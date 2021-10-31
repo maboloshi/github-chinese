@@ -724,6 +724,7 @@ I18N.zh = {
                 "Top languages": "热门语言",
                     "Loading…": "载入中…",
                 "Most used topics": "最常用的话题",
+                "Developer Program Member": "开发者计划成员",
 
             "This organization has no repositories.": "该组织暂无仓库。",
             "Create a new repository": "创建新仓库",
@@ -780,6 +781,7 @@ I18N.zh = {
             [/Block or report (\w+)/, "拉黑或举报 $1"],
             [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
             [/(\d+) remaining/, "$1 剩余"], // 置顶项目 剩余
+            [/(\w+.*) doesn't have any public repositories yet./, "$1 暂未有任何公共仓库。"],
             [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+) in (\w+.*)/, "在 $2 年中向 $3, 贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
@@ -1473,11 +1475,11 @@ I18N.zh = {
                 "public repositories": "公开仓库",
                 ". Any changes here will override those limits.": " 的设置中。此处的全局设置将覆盖那些仓库的局部设置。",
                 "Limit to existing users": "仅限现有用户",
-                "Users that have recently created their account will be unable to interact with your repositories.": "最近创建帐户的用户将无法与您的仓库互动。",
+                    "Users that have recently created their account will be unable to interact with your repositories.": "最近创建帐户的用户将无法与您的仓库互动。",
                 "Limit to prior contributors": "仅限于先前的贡献者",
-                "Users that have not previously committed to the default branch of one of your repositories will be unable to interact with that repository.": "从未提交到您某个仓库默认分支的用户将无法与该仓库互动。",
+                    "Users that have not previously committed to the default branch of one of your repositories will be unable to interact with that repository.": "以前从未提交到您某个仓库默认分支的用户将无法与该仓库互动。",
                 "Limit to repository collaborators": "仅限仓库协作者",
-                "Users that are not collaborators of one of your repositories will not be able to interact with that repository.": "不是您某个仓库的协作者的用户将不能与该仓库互动。",
+                    "Users that are not collaborators of one of your repositories will not be able to interact with that repository.": "不是您某个仓库的协作者将无法与该仓库互动。",
                 "New users": "新用户",
                 "Users": "用户",
                 "Contributors": "贡献者",
@@ -2057,6 +2059,10 @@ I18N.zh = {
                 // 顶部提醒
                 "This repository has been archived by the owner. It is now read-only.": "此仓库已由所有者存档。它现在是只读的。",
 
+                // 被 GitHub 官方禁用
+                "This repository has been disabled.": "此仓库已被禁用。",
+                "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
+
                 // 公共部分 - 头部条
                 "Public": "公共",
                 "Private": "私有",
@@ -2278,14 +2284,15 @@ I18N.zh = {
                     "Your repository details have been saved.": "您的仓库简述已保存。",
 
                 "Releases": "发行版",
-                "No releases published": "未发布任何版本",
-                "Latest": "最新",
-                // "Create a new release": "创建发行版",
+                    "No releases published": "未发布任何版本",
+                    "Latest": "最新",
+                    // "Create a new release": "创建发行版",
                 // "Packages": "软件包",
-                "No packages published": "未发布软件包",
-                "Publish your first package": "发布软件包",
+                    "No packages published": "未发布软件包",
+                    "Publish your first package": "发布软件包",
                 "Sponsor this project": "赞助本项目",
-                "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助者的信息",
+                    "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助者的信息",
+                "Used by": "使用者",
                 //"Contributors": "贡献者",
                 "Environments": "环境",
                 "Languages": "语言",
@@ -2808,6 +2815,7 @@ I18N.zh = {
                     "Hide whitespace": "隐藏空白",
                     "Apply and reload": "应用并重新加载",
                 "Show whitespace": "显示空白",
+                "Refresh": "刷新",
 
                 "files viewed": "查看过的文件",
                     "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -2830,6 +2838,7 @@ I18N.zh = {
 
                 "Load diff": "载入差异",
                 "This file was deleted.": "该文件已被删除",
+                "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
 
             // /<user-name>/<repo-name>/pull/<ID>/commits/<full SHA>
                 // 上一页
@@ -3904,6 +3913,8 @@ I18N.zh = {
                     // 顶部提醒
                     "Workflow disabled successfully.": "工作流程已成功禁用。",
                 // "Re-run jobs": "重新运行作业",
+
+                "This workflow has no runs yet.": "此工作流程尚未运行。",
             // /actions/runs/1377924356
                 // 标题
                 "Re-run all jobs": "重新运行所有作业",
@@ -3916,7 +3927,6 @@ I18N.zh = {
 
                 // 左侧栏
                 "Summary": "摘要",
-                // "Workflow file": "工作流程文件",
                 "Jobs": "作业",
 
                 //状态条
@@ -3932,6 +3942,9 @@ I18N.zh = {
                 "Billable time": "计费时间",
                 "Artifacts": "附件",
 
+            // /actions/runs/1377924356/workflow
+                "Workflow file": "工作流程文件",
+                "Workflow file for this run": "本次运行的工作流程文件",
 
             // /runs/3989101564?check_suite_focus=true
                 "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
@@ -3944,6 +3957,30 @@ I18N.zh = {
                     "View raw logs": "查看原始日志",
 
                 "Try broadening your search filters.": "尝试扩大您的搜索过滤器。",
+
+                // GitHub Pages
+                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
+                "succeeded": "成功于",
+                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
+                "Your website is ready at": "您的网站已准备就绪，网址为",
+                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+
+            // /deployments
+                // [/Deployed to (\w+.*)/, "部署到 $1"],
+                "was deployed by": "被部署",
+                "Deployment history": "部署历史",
+                "Show:": "显示：",
+                    "All environments": "所有环境",
+                "Loading information…": "载入信息…",
+                "at": "在",
+                "Deployed by": "部署者",
+                "Inactive": "不活跃",
+                "View deployment": "查看部署情况",
+
+            // /deployments/activity_log?environment=github-pages
+                "Deployments": "部署",
+                "/ History": "/ 历史",
+
         },
         "regexp": [ // 正则翻译
             // 评论框头部栏 (议题 & 拉取请求)
@@ -3998,7 +4035,7 @@ I18N.zh = {
             [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
             // bug [/from (.+)/, "从 $1"],
             [/wants to merge ([\d,]+) commits? into/, "需要合并 $1 次提交到"],
-            [/([\d,]+) commits?/, "$1 次提交"],
+            [/([\d,]+) commits?$/, "$1 次提交"],
             [/· ([\d,]+) comments?/, "$1 次提交"],
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
             [/edited by (\w+)/,"被 $1 编辑"], //评论框 被他人编辑
@@ -4006,6 +4043,7 @@ I18N.zh = {
             [/(\d+) Draft/,"$1 草案"],// 安全建议页
             [/(\d+) Published/,"$1 发布"],// 安全建议页
             // 具体某个提交页面
+            [/This commit closes issue (#\d+)./, "此提交关闭了提议 $1。"],
             [/(\d+) parents?/, "$1 个父"],
             [/(\d+) changed files?/, "$1 个更改的文件"],
             [/(\d+) additions?/, "$1 处增加"],
@@ -4019,7 +4057,7 @@ I18N.zh = {
             [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork (\w+.*), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
             [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             [/(\d+) skipped, (\d+) successful, and (\d+) failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
-            [/(\d+) successful checks?/, "$ 次成功检查"],
+            [/(\d+) successful checks?/, "$1 次成功检查"],
             [/(\d+) checks? passed/, "$1 次检查通过"],
             [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
             [/All (\d+) file types? selected/, "所有 $1 中文件类型被选中"],
@@ -4042,6 +4080,10 @@ I18N.zh = {
             [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
             [/Open issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
             // [/Closed issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的已关闭议题正在被转换为讨论。"], // 标签页面
+            [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/(\d+) commits? ahead (\w+.*)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/(\d+) commits? behind (\w+.*)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/Deployed to (\w+.*)/, "部署到 $1"], // 部署页面 /deployments
         ],
     },
 
@@ -4558,15 +4600,16 @@ I18N.zh = {
                 "account settings": "互动限制",
 
                 "Limit to existing users": "仅限现有用户",
-                "Users that have recently created their account will be unable to interact with the repository.": "最近创建帐户的用户将无法与您的仓库互动。",
+                    "Users that have recently created their account will be unable to interact with the repository.": "最近创建帐户的用户将无法与该仓库互动。",
                 "Limit to prior contributors": "仅限于先前的贡献者",
-                "Users that have not previously": "",
-                // "committed": "",
-                "to the default branch of one of your repositories will be unable to interact with that repository.": "",
+                    "Users that have not previously": "以前从未",
+                    "committed": "提交",
+                    // [/to the (\w+.*) branch of this repository will be unable to interact with the repository./, "到该仓库的 $1 分支的用户将无法与该仓库互动。"],
                 "Limit to repository collaborators": "仅限仓库协作者",
-                "Users that are not": "",
-                // "collaborators": "",
-                "of one of your repositories will not be able to interact with that repository.": "",
+                    "Users that are not": "不是",
+                    // "collaborators": "",
+                    // "of one of your repositories will not be able to interact with that repository.": "",
+                    "will not be able to interact with the repository.": "将无法与该仓库互动。",
 
                 "New users": "新用户",
                 "Users": "用户",
@@ -4592,7 +4635,7 @@ I18N.zh = {
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
             [/Enabled with about (\w+.*) remaining./, ""],
-
+            [/to the (\w+.*) branch of this repository will be unable to interact with the repository./, "到该仓库 $1 分支的用户将无法与您的仓库互动。"], // 仓库互动限制
         ],
     },
 
@@ -5065,7 +5108,6 @@ I18N.zh = {
         ],
     },
 
-
     "search": { // 搜索页面
         "static": { // 静态翻译
             // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
@@ -5331,6 +5373,9 @@ I18N.zh = {
             "Download ZIP": "下载 Zip 压缩包",
             "Permalink": "永久链接",
 
+            // 顶部提醒
+            "Gist deleted successfully.": "代码片段已成功删除。",
+
             // 代码标签卡
             "Raw": "源码",
 
@@ -5350,6 +5395,7 @@ I18N.zh = {
             "Display the source diff": "显示源差异",
             "Display the rich diff": "显示富差异",
             "Empty file.": "空文件。",
+            // [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "/$1 处添加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
 
             // 星标标签卡
             "Stargazers": "追星者",
@@ -5405,10 +5451,11 @@ I18N.zh = {
             [/(\d+) stars?/, "$1 星标"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
             //代码修订
-            [/(\d+) changes?: (\d+) additions? & (\d+) deletions?/, " $1 处更改：$2 处增加 & $3 处删除"],
             [/(\d+) changed file/, "$1 个更改的文件"],
-            [/(\d+) additions?/, "$1 处增加"],
-            [/(\d+) deletions?/, "$1 处删除"],
+            [/(\d+) additions?$/, "$1 处增加"],
+            [/(\d+) deletions?$/, "$1 处删除"],
+            [/(\d+) changes?: (\d+) additions? & (\d+) deletions?/, " $1 处更改：$2 处增加 & $3 处删除"],
+            [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "/$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
             [/edited by (\w+)/,"被 $1 编辑"], //评论框 被他人编辑
             [/Joined/,"加入于"], //星标标签卡
@@ -5904,11 +5951,11 @@ I18N.zh = {
                 "public repositories": "公开仓库",
                 ". Any changes here will override those limits.": " 的设置中。此处的全局设置将覆盖那些仓库的局部设置。",
                 "Limit to existing users": "仅限现有用户",
-                "Users that have recently created their account will be unable to interact with this organization's repositories.": "最近创建帐户的用户将无法与您组织的仓库互动。",
+                    "Users that have recently created their account will be unable to interact with this organization's repositories.": "最近创建帐户的用户将无法与您组织的仓库互动。",
                 "Limit to prior contributors": "仅限于先前的贡献者",
-                "Users that have not previously committed to the default branch of a repository in this organization will be unable to interact with that repository.": "从未提交到您组织某个仓库默认分支的用户将无法与该仓库互动。",
+                    "Users that have not previously committed to the default branch of a repository in this organization will be unable to interact with that repository.": "以前从未提交到您组织某个仓库默认分支的用户将无法与该仓库互动。",
                 "Limit to repository collaborators": "仅限仓库协作者",
-                "Users that are not collaborators of a repository in this organization will not be able to interact with that repository.": "不是您组织某个仓库的协作者的用户将不能与该仓库互动。",
+                    "Users that are not collaborators of a repository in this organization will not be able to interact with that repository.": "不是您组织某个仓库的协作者将无法与该仓库互动。",
                 "New users": "新用户",
                 "Users": "用户",
                 "Contributors": "贡献者",
@@ -5936,6 +5983,7 @@ I18N.zh = {
 
 // 公共复用翻译部分
 I18N.zh.pulls = I18N.zh.issues;
+
 // 重定向
 I18N.zh.settings = I18N.zh["page-account"];
 I18N.zh["settings/apps/authorizations"] = I18N.zh.settings;
