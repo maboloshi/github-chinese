@@ -4,12 +4,12 @@
 // @description  汉化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
-// @version      1.6.4
+// @version      1.7.0
 // @author       沙漠之子
 // @license      MIT
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.6.4
+// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
