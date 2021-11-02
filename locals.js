@@ -84,7 +84,7 @@ I18N.zh = {
             "Join GitHub · GitHub": "加入 GitHub · GitHub",
             "Forgot your password? · GitHub": "忘记您的密码了吗？· GitHub",
             "Forgot your password?": "忘记您的密码了吗？",
-            "GitHub · Where software is built": "",
+            "GitHub · Where software is built": "GitHub - 软件构建的地方",
             "Create a New Repository": "创建新仓库",
             "Import a Repository": "导入仓库",
             "New Project": "创建项目",
@@ -328,6 +328,7 @@ I18N.zh = {
             "Verified": "已验证",
             "Partially verified": "部分验证",
             "Unverified": "未验证",
+
             // 邮箱验证提示
             "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮件地址以便开启所有 GitHub 功能。",
             "Configure email settings": "修改电子邮件设置",
@@ -758,8 +759,8 @@ I18N.zh = {
             "Owners": "所有者",
 
             "Organization visibility": "组织可见性",
-            "Your membership is visible to everyone and is displayed on your public profile.": "",
-            "Your membership is only visible to other members of this organization.": "",
+            "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
+            "Your membership is only visible to other members of this organization.": "您的成员资格只对本组织的其他成员可见。",
 
             "Owner": "所有者",
             "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
@@ -851,6 +852,7 @@ I18N.zh = {
             "Moderation settings": "审查设置",
             "Blocked users": "黑名单",
             "Interaction limits": "互动限制",
+            "Code review limits": "代码审查限制",
 
             // Profile 个人资料 https://github.com/settings/profile
                 "Public profile": "基本资料",
@@ -1494,6 +1496,13 @@ I18N.zh = {
                 // 顶部提醒
                 "User interaction limit settings saved.": "用户交互限制设置已保存。",
 
+            // Code review limits 代码审查限制 https://github.com/settings/code_review_limits
+                "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制那些有权批准或请求更改公共仓库中拉取请求的用户。",
+                "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
+                "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
+                "Limit reviews on all repositories": "限制对所有仓库的审查",
+                "Remove review limits from all repositories": "取消对所有仓库的审查限制",
+
             // 启用双因素身份验证 https://github.com/settings/two_factor_authentication/setup/intro
                 // 提示
                 "You’re about to change your two-factor authentication device. This will invalidate your current two-factor devices and recovery codes. This will not affect your fallback SMS configuration. It can be updated on the two-factor settings page.": "您即将更改双因素身份验证设备。这将使您当前的双因素设备和恢复码失效。这不会影响您的备用 SMS 配置。它可以在双因素设置页面上更新。",
@@ -2053,6 +2062,21 @@ I18N.zh = {
                 "Importing  commits and revision history…": "导入提交和历史版本…",
                 "Importing complete! Your new repository": "导入完成，您的新仓库",
                 "is ready.": "已经就绪。",
+
+            // 初始化空仓库 /<user-name>/<repo-name>/
+                "Quick setup": "快速安装",
+                "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
+                "Set up in Desktop": "安装到 GitHub Desktop",
+                "Get started by": "通过",
+                "creating a new file": "创建一个新文件",
+                "uploading an existing file": "上传一个现有的文件",
+                ". We recommend every repository include a": "来开始。我们推荐每个仓库都包括",
+                ", and": "，和",
+                "…or create a new repository on the command line": "…或在命令行上创建一个新的仓库",
+                "…or push an existing repository from the command line": "…或从命令行中推送现有的仓库",
+                "…or import code from another repository": "…或从另一个仓库库导入代码",
+                "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
+                "Import code": "导入代码",
 
             // 仓库页面 /<user-name>/<repo-name>/
                 // "Where should we fork this repository?": "您想该仓库复刻到哪个角色下？",
@@ -2710,6 +2734,7 @@ I18N.zh = {
                     "Add your review": "添加您的评论",
                 // [/At least 1 approving review is required by reviewers with write access./, ""],
                 "Some checks haven’t completed yet": "有些检查还没有完成",
+                // [/1 in progress check/, "$1个正在进行的检查"],
                 "Some checks were not successful": "有些检查不成功",
                 // [/1 skipped, 4 successful, and 2 failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
                 "All checks have passed": "所有检查均已通过",
@@ -3187,9 +3212,13 @@ I18N.zh = {
             "GitHub commits guide": "GitHub 提交指南",
 
             // 具体某个提交页面 /<user-name>/<repo-name>/commit/<full SHA>
+                // 访问已删除的提交
+                "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "这个提交不属于本仓库的任何分支，可能属于仓库以外的分支。",
+
                 "Browse files": "浏览文件",
                 "Loading branch information": "载入分支信息",
 
+                // [/This commit closes issue (#\d+)./, "此提交关闭了提议 $1。"], //具体提交页面
                 "committed": "提交于",
                 "commit": "提交",
 
@@ -3265,6 +3294,8 @@ I18N.zh = {
                 "There aren’t any stale branches.": "没有任何陈旧的分支。",
                 "View more active branches": "查看更多活跃的分支",
                 "View more stale branches": "查看更多陈旧的分支",
+
+                // [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
 
             // "Compare": "比较",
             // "Change default branch": "更改默认分支",
@@ -3666,7 +3697,7 @@ I18N.zh = {
                 "Got it": "知道了",
 
                 "Pinned discussions": "置顶讨论",
-                "When you start a discussion,": "当你开始讨论时，",
+                "When you start a discussion,": "当您开始讨论时，",
                 "you can choose to feature it": "您可以选择将",
                 "here by pinning it.": "其置顶在此处。",
                 // 左侧栏
@@ -3683,7 +3714,7 @@ I18N.zh = {
                 "Be sure to mark someone’s comment as an answer if it helps you resolve your question — they deserve the credit!": "如果某人的评论有助于您解决问题，请务必将其标记为答案——他们值得称赞！",
                 "Community guidelines": "社区指南",
                 "New": "新",
-                "Top:": "",
+                "Top:": "顶部：",
                 "Today": "今天",
                 "Past week": "上周",
                 "Past month": "上个月",
@@ -3790,6 +3821,8 @@ I18N.zh = {
 
             "bug": "臭虫",
                 "Something isn't working": "有些东西不工作",
+            "dependencies": "依赖性",
+                "Pull requests that update a dependency file": "更新一个依赖文件的拉动请求",
             "documentation": "文档",
                 "Improvements or additions to documentation": "文档的改进或补充",
             "duplicate": "重复",
@@ -3860,7 +3893,8 @@ I18N.zh = {
                 "Filter workflow runs": "过滤工作流程",
                     "Narrow your search": "缩小搜索范围",
 
-                // [/124 workflow runs/, ""],
+                // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
+                // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
                 "Event": "事件",
                     "Filter by event": "按事件过滤",
                     "Find an event": "查找事件",
@@ -3893,6 +3927,10 @@ I18N.zh = {
                 "Cancel run": "取消运行",
                 "Delete workflow run": "删除工作流程运行",
 
+                // 筛选结果
+                "all workflow runs": "所有工作流程运行",
+                "or try different filters.": "或尝试不同的筛选器。",
+
             // /<user-name>/<repo-name>/actions/workflows/<file>.yml
                 "This workflow has a": "这个工作流程有一个",
                 "event trigger.": "事件触发器。",
@@ -3915,7 +3953,7 @@ I18N.zh = {
                 // "Re-run jobs": "重新运行作业",
 
                 "This workflow has no runs yet.": "此工作流程尚未运行。",
-            // /actions/runs/1377924356
+            // /<user-name>/<repo-name>/actions/runs/1377924356
                 // 标题
                 "Re-run all jobs": "重新运行所有作业",
                 //右侧按钮
@@ -3942,11 +3980,11 @@ I18N.zh = {
                 "Billable time": "计费时间",
                 "Artifacts": "附件",
 
-            // /actions/runs/1377924356/workflow
+            // /<user-name>/<repo-name>/actions/runs/1377924356/workflow
                 "Workflow file": "工作流程文件",
                 "Workflow file for this run": "本次运行的工作流程文件",
 
-            // /runs/3989101564?check_suite_focus=true
+            // /<user-name>/<repo-name>/runs/3989101564?check_suite_focus=true
                 "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
 
                 "Search logs": "搜索日志",
@@ -3965,7 +4003,7 @@ I18N.zh = {
                 "Your website is ready at": "您的网站已准备就绪，网址为",
                 "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
 
-            // /deployments
+            // /<user-name>/<repo-name>/deployments
                 // [/Deployed to (\w+.*)/, "部署到 $1"],
                 "was deployed by": "被部署",
                 "Deployment history": "部署历史",
@@ -3975,9 +4013,12 @@ I18N.zh = {
                 "at": "在",
                 "Deployed by": "部署者",
                 "Inactive": "不活跃",
+                "Abandoned": "废弃",
                 "View deployment": "查看部署情况",
 
-            // /deployments/activity_log?environment=github-pages
+                "View full deployment history": "查看完整的部署历史",
+
+            // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
                 "Deployments": "部署",
                 "/ History": "/ 历史",
 
@@ -4056,6 +4097,7 @@ I18N.zh = {
             [/Joined/,"加入于"], // 追星者，关注者页面
             [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork (\w+.*), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
             [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
             [/(\d+) skipped, (\d+) successful, and (\d+) failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
             [/(\d+) successful checks?/, "$1 次成功检查"],
             [/(\d+) checks? passed/, "$1 次检查通过"],
@@ -4084,6 +4126,8 @@ I18N.zh = {
             [/(\d+) commits? ahead (\w+.*)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
             [/(\d+) commits? behind (\w+.*)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
             [/Deployed to (\w+.*)/, "部署到 $1"], // 部署页面 /deployments
+            [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
+            [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
         ],
     },
 
@@ -4174,6 +4218,7 @@ I18N.zh = {
                 "Pages": "GitHub Pages",
                 "Moderation settings": "审查设置",
                 "Interaction limits": "互动限制",
+                "Code review limits": "代码审查限制",
 
 
             // 设置页面 /<user-name>/<repo-name>/settings ====================================
@@ -4237,9 +4282,9 @@ I18N.zh = {
 
                 "Merge button": "合并按钮",
                     "You must select at least one option": "您必须至少选择一个选项",
-                "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "合并拉取请求时，您可以允许合并提交、压缩或变基的任意组合。必须至少启用一个选项。如果您在任何受保护分支上启用了线性历史要求，则必须启用压缩或变基。",
+                "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "当合并拉取请求时，您可以允许合并提交、压缩或变基的任意组合。必须至少启用一个选项。如果您在任何受保护分支上启用了线性历史要求，则必须启用压缩或变基。",
 
-                "Allow merge commits": "允许提交合并",
+                "Allow merge commits": "允许合并提交",
                 "Add all commits from the head branch to the base branch with a merge commit.": "使用合并提交将所有从头部分支的提交添加到基础分支。",
 
                 "Allow squash merging": "允许压缩合并",
@@ -4411,6 +4456,22 @@ I18N.zh = {
                 "Add": "添加",
                 "to this repository": "到这个仓库",
 
+            // 安全 & 分析页面 /<user-name>/<repo-name>/settings/security_analysis
+                "Configure security and analysis features": "配置安全和分析功能",
+                "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
+                "Dependency graph": "依赖关系图",
+                    "Understand your dependencies.": "了解您的依赖项。",
+                    "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
+                "Dependabot alerts": "Dependabot 警报",
+                    "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        "Dependabot security updates need Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+                // "Code scanning": "代码扫描",
+                    "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
+                    "Set up": "设置",
+
             // 分支管理页面 /<user-name>/<repo-name>/settings/branches====================================
                 "Default branch": "默认分支",
                 "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是仓库中的 “基础” 分支，所有的拉取请求和代码提交都是针对该分支进行的，除非您指定一个不同的分支。",
@@ -4512,37 +4573,59 @@ I18N.zh = {
                 // 顶部提醒
                 "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
 
-            // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
-                "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
-                "Your site is published at": "您的站点发布在",
-                "Source": "来源",
-                // 禁用时
-                "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Pages 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Pages。",
-                // 启用时
-                "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
-                "branch.": "分支。",
-                "Branch:": "分支：",
-                "Select branch": "选择分支",
-                "None": "无",
-                "Select folder": "选择文件夹",
-                "/ (root)": "/ (根目录)",
+            // 操作页面 /<user-name>/<repo-name>/settings/actions
+                "Actions permissions": "操作权限",
+                    "Allow all actions": "允许所有操作",
+                        "Any action can be used, regardless of who authored it or where it is defined.": "可以使用任何操作，而不管它是谁创作的或在哪里定义的。",
+                "Disable Actions": "禁用操作",
+                    "The Actions tab is hidden and no workflows can run.": "“操作” 选项卡将被隐藏，无法运行任何工作流程。",
+                "Allow local actions only": "仅允许本地操作",
+                    // [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的存储库中定义的操作。"], // 操作页面
+                "Allow select actions": "允许选择操作",
+                    // [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的存储库中定义的操作。"], // 操作页面
+                    "Learn more about allowing specific actions to run.": "了解更多关于允许运行特定操作的信息。",
 
-                "Theme Chooser": "设置主题",
-                "Select a theme to publish your site with a Jekyll theme using the": "选择一个主题，用 jekyll 主题发布您的站点，使用",
-                "Select a theme to publish your site with a Jekyll theme.": "选择一个主题，用 Jekyll 主题发布您的站点。",
-                "Choose a theme": "选择一个主题",
-                "Hide thumbnails": "隐藏缩略图",
-                "Show thumbnails": "显示缩略图",
-                "Select theme": "选择主题",
+                "Artifact and log retention": "工件和日志保留",
+                    "This is the duration that artifacts and logs will be retained.": "这是工件和日志将被保留的时间。",
+                    "days": "天",
 
-                "Custom domain": "自定义域",
-                "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
-                "Remove": "移除",
+                "Fork pull request workflows from outside collaborators": "来自外部合作者的复刻拉取请求工作流程",
+                    "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部合作者的子集需要批准才能对他们的拉动请求运行工作流程。",
+                "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行审批",
+                    "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 帐户的首次贡献者才需要获得批准才能运行工作流程。",
+                "Require approval for first-time contributors": "要求对首次贡献者进行审批",
+                    "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流程。",
+                "Require approval for all outside collaborators": "要求对所有外部合作者进行审批",
+                    "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部合作者将始终需要批准才能在他们的拉动请求上运行工作流程。",
 
-                "Enforce HTTPS": "强制执行 HTTPS",
-                "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一个加密层，防止他人窥探或篡改您站点的流量。",
-                "When HTTPS is enforced, your site will only be served over HTTPS.": "当 HTTPS 被强制执行时，您的站点将只通过 HTTPS 提供服务。",
-                "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
+                "Workflow permissions": "工作流程权限",
+                    "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+                    "Read and write permissions": "读取和写入权限",
+                        "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
+                    "Read repository contents permission": "只读权限",
+                        "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+
+            // 运行器页面 /<user-name>/<repo-name>/settings/actions/runners
+                "New self-hosted runner": "新建自托管运行器",
+                "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。",
+                "Learn more about self-hosted runners": "了解更多关于自托管运行器的信息",
+                "There are no runners configured": "暂无设置运行器",
+                "Learn more about using runners": "了解更多关于使用运行器的信息",
+                "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
+
+            // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
+                "/ Create self-hosted runner": "/ 创建自托管运行器",
+                "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions Runner。下载并配置 GitHub Actions Runner 后，您同意",
+                    "GitHub Terms of Service": "GitHub 服务条款",
+                    "GitHub Corporate Terms of Service": "GitHub 企业服务条款",
+                    ", as applicable.": "，如适用。",
+                "Runner image": "运行器镜像",
+                "Architecture": "架构",
+                "Download": "下载",
+                "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我们建议在 “\\actions-runner” 下配置运行器。这将有助于避免与 Windows 上的服务标识文件夹权限和长路径限制相关的问题。",
+                "Using your self-hosted runner": "使用您的自托管运行器",
+                "For additional details about configuring, running, or shutting down the runner, please check out our": "关于配置、运行或关闭运行器的其他细节，请查看我们的",
+                "product docs": "产品文档",
 
             // 仓库 环境 /<user-name>/<repo-name>/settings/environments
                 "New environment": "新建环境",
@@ -4561,36 +4644,93 @@ I18N.zh = {
                 "Name": "名称",
                 "Configure environment": "设置环境",
                 // [/Environment \"(\w+)\" created./, "环境 \"$1\" 已创建。"],
+
+            // 编辑环境 /<user-name>/<repo-name>/settings/environments/19897411/edit
                 "/ Configure": "/ 设置",
                 "Environment protection rules": "环境保护规则",
-                "Can be used to configure manual approvals and timeouts.": "",
+                "Can be used to configure manual approvals and timeouts.": "可用于配置人工审批和超时。",
 
-                "Required reviewers": "",
-                "Specify people or teams that may approve workflow runs when they access this environment.": "",
-                    "Add up to 6 more reviewers": "",
-                    "Search for people or teams…": "",
-                "Wait timer": "",
-                "Set an amount of time to wait before allowing deployments to proceed.": "",
-                    "minutes": "",
-                "Save protection rules": "",
+                "Required reviewers": "所需的审查员",
+                "Specify people or teams that may approve workflow runs when they access this environment.": "指定访问此环境时可以批准工作流运行的人员或团队。",
+                    "Add up to": "最多添加",
+                    "more reviewers": "位审查员",
+                    "Search for people or teams...": "搜索人员或团队...",
+                "Wait timer": "等待计时器",
+                "Set an amount of time to wait before allowing deployments to proceed.": "设置一个允许部署前的等待时间。",
+                    "minutes": "分钟",
+                "Save protection rules": "保存保护规则",
 
-                "Deployment branches": "",
-                    "Can be used to limit what branches can deploy to this environment using branch name patterns.": "",
-                    "All branches": "",
-                    "Any branch from this repository can deploy.": "",
-                    "Protected branches": "",
-                    "Deployment limited to branches with protection rules.": "",
-                    "Selected branches": "",
-                    "Specify a list of branches using branch name patterns.": "",
-                "Environment secrets": "",
-                "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment.": "",
+                "Deployment branches": "部署分支",
+                    "Can be used to limit what branches can deploy to this environment using branch name patterns.": "可以使用分支名称模式来限制哪些分支可以部署到这个环境。",
+                    "All branches": "全部分支",
+                    "Any branch from this repository can deploy.": "该仓库的任何分支都可以部署。",
+                    "Protected branches": "受保护的分支",
+                    "Deployment limited to branches with protection rules.": "部署仅限于具有保护规则的分支。",
+                    "Selected branches": "选中的分支",
+                    "Specify a list of branches using branch name patterns.": "使用分支名称模式指定一个分支列表",
+                "Environment secrets": "环境密钥",
+                "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment.": "密钥是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问。",
                 "Add Secret": "添加密钥",
                 "Add secret": "添加密钥",
                     // 添加密钥对话框
                     "Value": "值",
-                    "Secret value": "",
+                    "Secret value": "密钥值",
 
-            // 仓库 互动限制 /<user-name>/<repo-name>/settings/interaction_limits
+            // 操作密钥 /<user-name>/<repo-name>/settings/secrets/actions
+
+
+            // Dependabot 密钥 /<user-name>/<repo-name>/settings/secrets/dependabot
+
+
+            // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
+                "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
+                // 发布状态
+                "Your site is published at": "您的站点发布在",
+                "Your site is ready to be published at": "您的网站已准备好发布在",
+
+                "Source": "来源",
+                // 禁用时
+                "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Pages 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Pages。",
+                "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Pages 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Pages 站点。",
+                // 启用时
+                "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
+                "branch.": "分支。",
+                "Branch:": "分支：",
+                "Select branch": "选择分支",
+                "None": "无",
+                "Select folder": "选择文件夹",
+                "/ (root)": "/ (根目录)",
+
+                "You can't disable GitHub Pages while having a": "您无法禁用 GitHub Pages，当仓库存在",
+                "branch in this repository. Read more on how to": "分支。阅读更多关如何",
+                "unpublish your GitHub Pages site": "取消发布 GitHub Pages 站点",
+
+                "Theme Chooser": "设置主题",
+                "Select a theme to publish your site with a Jekyll theme using the": "选择一个主题，用 jekyll 主题发布您的站点，使用",
+                "Select a theme to publish your site with a Jekyll theme.": "选择一个主题，用 Jekyll 主题发布您的站点。",
+                "Choose a theme": "选择一个主题",
+                "Hide thumbnails": "隐藏缩略图",
+                "Show thumbnails": "显示缩略图",
+                "Select theme": "选择主题",
+
+                "Custom domain": "自定义域",
+                "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
+                "Remove": "移除",
+                    "Check again": "再检查一次",
+                    // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
+                    "Please wait for the DNS check to complete.": "请等待 DNS 检查结束。",
+                    // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
+                    // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
+                    // 顶部提醒
+                    "No changes to custom domain.": "没有对自定义域进行修改。",
+                    "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
+
+                "Enforce HTTPS": "强制 HTTPS",
+                "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
+                "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
+                "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
+
+            // 审查设置 (仓库)互动限制 /<user-name>/<repo-name>/settings/interaction_limits
             // 同全局
                 "Temporary interaction limits": "临时互动限制",
                 "Temporarily restrict which external users can interact with your repository (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的时间段内，可临时限制哪些外部用户与您的仓库互动（评论、打开议题或创建拉取请求）。",
@@ -4628,6 +4768,13 @@ I18N.zh = {
 
                 // 顶部提醒
                 "Repository interaction limit settings saved.": "仓库交互限制设置已保存。",
+
+            // Code review limits 代码审查限制 /<user-name>/<repo-name>/settings/code_review_limits
+                "Restrict users who are permitted to approve or request changes on pull requests in this repository.": "限制那些有权批准或请求更改该仓库中拉取请求的用户。",
+                "Limit to users explicitly granted": "限于明确授予",
+                "read": "读取",
+                "or higher access": "或 更高权限的用户",
+                    "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "启用后，只有被明确授予该仓库访问权的用户才能提交 “批准” 或 “请求更改” 的拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
         },
         "regexp": [ // 正则翻译
             [/Choose another branch to use as the default branch of (\w+.*) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
@@ -4636,6 +4783,13 @@ I18N.zh = {
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
             [/Enabled with about (\w+.*) remaining./, ""],
             [/to the (\w+.*) branch of this repository will be unable to interact with the repository./, "到该仓库 $1 分支的用户将无法与您的仓库互动。"], // 仓库互动限制
+            // Github Pages 自定义域检测
+            [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行中。"],
+            [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
+            [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at \[YOUR USERNAME\].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
+            [/\((\w+.*)\). We recommend you change this to a CNAME record pointing to/, "($1)。我们建议您将 CNAME 记录设置为指向"],
+            [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的存储库中定义的操作。"], // 操作页面
+            [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的存储库中定义的操作。"], // 操作页面
         ],
     },
 
@@ -5384,6 +5538,7 @@ I18N.zh = {
             "Split": "分屏",
             "created": "创建",
             "revised": "修订",
+            "renamed": "重命名",
             "this gist": "该片段于",
             "with": "包含",
             "and": "和",
@@ -5395,6 +5550,7 @@ I18N.zh = {
             "Display the source diff": "显示源差异",
             "Display the rich diff": "显示富差异",
             "Empty file.": "空文件。",
+            "File renamed without changes.": "文件仅重命名，内容没有更改。",
             // [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "/$1 处添加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
 
             // 星标标签卡
@@ -5669,7 +5825,6 @@ I18N.zh = {
                 "Website": "网站",
                 "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
                 "Report abuse": "举报滥用",
-                // "": "",
 
             // /marketplace/actions/merge-upstream
                 "Latest version": "最新发行版",
