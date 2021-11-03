@@ -274,6 +274,7 @@ I18N.zh = {
             "Create a new saved reply…": "创建新快捷回复…",
 
             "Close issue": "关闭议题", // issue页 评论框
+            "Close with comment": "评论并关闭议题", // issue页 评论框
             "Close pull request": "关闭拉取请求", // pull页 评论框
             "Comment": "评论",
             "Submit new issue": "提交新议题",
@@ -1295,8 +1296,8 @@ I18N.zh = {
                 "Save": "保存",
                 "Choose which email updates you receive on conversations you’re participating in or watching": "选择您要收到正在参与或关注的对话中的邮件更新",
                 "Comments on Issues and Pull Requests": "关于议题和拉取请求的评论",
-                "Pull Request reviews": "拉动请求审核",
-                "Pull Request pushes": "拉动请求推送",
+                "Pull Request reviews": "拉取请求审核",
+                "Pull Request pushes": "拉取请求推送",
                 "Include your own updates": "包括您自己的更新",
 
                 "Custom routing": "自定义",
@@ -1664,21 +1665,21 @@ I18N.zh = {
                 "Users will be redirected to this URL after installing your GitHub App to complete additional setup.": "用户在安装完 GitHub 应用后，会被重定向到这个网址，以完成额外的设置。",
                 "Redirect on update": "更新时重定向",
                 "Redirect users to the 'Setup URL' after installations are updated (E.g. repositories added/removed).": "在安装后更新时将用户重定向到 “设置网址”（例如: 添加/删除仓库）。",
-                "Webhook": "Web 挂钩",
+                "Webhook": "Web 钩子",
                 "Active": "激活",
-                "We will deliver event details when this hook is triggered.": "当挂钩被触发时，我们将提供事件详细信息。",
-                "Webhook URL": "Web 挂钩网址",
+                "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
+                "Webhook URL": "Web 钩子网址",
                 "Events will POST to this URL. Read our": "事件将 POST 到此网址。阅读",
-                "webhook documentation": "关于 Web 挂钩",
+                "webhook documentation": "关于 Web 钩子",
                 "for more information.": "以获取更多信息。",
-                "Webhook secret (optional)": "Web 挂钩隐私 (可选)",
+                "Webhook secret (optional)": "Web 钩子隐私 (可选)",
                 "Read our": "阅读我们",
-                "webhook secret documentation": "Web 挂钩隐私文档",
+                "webhook secret documentation": "Web 钩子隐私文档",
                 "SSL verification": "SSL 验证",
                 "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
                 "Enable SSL verification": "启用 SSL 验证",
                 "Disable": "禁用",
-                "(not recommended)": "不推荐）",
+                "(not recommended)": "（不推荐）",
                 "Access:": "访问权限：",
                 "Select an access level": "选择访问级别",
                 "No access": "禁止访问",
@@ -1712,8 +1713,8 @@ I18N.zh = {
                 "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
                 "Pull requests": "拉取请求",
                 "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
-                "Webhooks": "Web 挂钩",
-                "Manage the post-receive hooks for a repository.": "管理仓库的接收后挂钩。",
+                "Webhooks": "Web 钩子",
+                "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
                 "Projects": "项目",
                 "Manage repository projects, columns, and cards.": "管理仓库项目、栏目和卡片。",
                 "Secret scanning alerts": "隐私扫描警报",
@@ -1736,7 +1737,7 @@ I18N.zh = {
                 "Manage access to an organization.": "管理对组织的访问。",
                 "Events": "活动",
                 "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
-                "Manage the post-receive hooks for an organization.": "管理组织的接收后挂钩。",
+                "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
                 "Plan": "计划",
                 "View an organization's plan.": "查看组织的计划。",
                 "Manage organization projects, columns, and cards.": "管理组织项目、栏目和卡片。",
@@ -1772,7 +1773,7 @@ I18N.zh = {
                 "Subscribe to events": "订阅事件",
                 "Based on the permissions you’ve selected, what events would you like to subscribe to?": "根据您选择的权限，您想订阅哪些事件？",
                 "Meta": "元",
-                "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的挂钩被删除时。",
+                "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的钩子被删除时。",
                 "Security advisory": "安全提示",
                 "Security advisory published, updated, or withdrawn.": "发布、更新或撤销的安全提示",
                 "Where can this GitHub App be installed?": "这款 GitHub 应用可以安装在哪里？",
@@ -1873,10 +1874,10 @@ I18N.zh = {
                 "Full control of user public keys": "完全控制用户公钥",
                 "Write user public keys": "写入用户公钥",
                 "Read user public keys": "读取用户公钥",
-                "Full control of repository hooks": "完全控制仓库挂钩",
-                "Write repository hooks": "写入仓库挂钩",
-                "Read repository hooks": "读取仓库挂钩",
-                "Full control of organization hooks": "完全控制组织挂钩",
+                "Full control of repository hooks": "完全控制仓库钩子",
+                "Write repository hooks": "写入仓库钩子",
+                "Read repository hooks": "读取仓库钩子",
+                "Full control of organization hooks": "完全控制组织钩子",
                 "Create gists": "创建 Gist",
                 "Access notifications": "访问通知",
                 "Update ALL user data": " 更新所有用户数据",
@@ -2485,8 +2486,8 @@ I18N.zh = {
                 "removed their assignment": "取消了他们的任务",
                 "assigned": "分配的",
                 "and unassigned": "和未分配的",
-                "marked this pull request as draft": "将此拉动请求标记为草案",
-                "marked this pull request as ready for review": "将此拉动请求标记为可供审查",
+                "marked this pull request as draft": "将此拉取请求标记为草案",
+                "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
 
                 // 右侧栏 补充
                 // 同 /<user-name>/<repo-name>/pull/ID
@@ -2685,9 +2686,9 @@ I18N.zh = {
                         "Reopened": "重新打开",
                             "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
                     // 拉取请求
-                        "Receive a notification when this pull request has been merged.": "当拉动请求被合并时，收到通知。",
-                        "Receive a notification when this pull request has been closed.": "当拉动请求被关闭时，收到通知。",
-                        "Receive a notification when this pull request has been reopened.": "当拉动请求被重新打开时，收到通知。",
+                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
+                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
+                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "If checked,": "如果选中，",
@@ -2711,7 +2712,7 @@ I18N.zh = {
                 "Show all reviewers": "显示所有审查人",
                 "Hide all reviewers": "隐藏所有审查人",
                 "New changes since you last viewed": "自您上次查看以来的新变化",
-                "mentioned this pull request": "提及这个拉动请求",
+                "mentioned this pull request": "提及这个拉取请求",
                 "dismissed": "驳回",
                 "\’s": "的",
                 "stale review": "陈旧审查",
@@ -3229,7 +3230,8 @@ I18N.zh = {
                 // "Split": "分屏",
 
                 "Binary file not shown.": "不显示二进制文件",
-                "File renamed without changes.": "文件重命名并未更改。",
+                "Empty file.": "空文件。",
+                "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
                 // 修改的文件 左侧 展开按钮
                 "Expand all": "展开全部",
@@ -3304,6 +3306,8 @@ I18N.zh = {
                 //"Releases": "发布",
                 // 无发行版时
                 "There aren’t any releases here": "没有任何发行版",
+                "You can create a release to package software, along with release notes and links to binary files, for other people to use. Learn more about releases in": "您可以创建一个发行版来打包软件，以及发行说明和二进制文件链接，供其他人使用。了解有关发布的更多信息查看",
+                "our docs": "文档",
                 "Releases are powered by": "发行版是指通过对仓库中",
                 "tagging specific points of history": "特定历史点",
                 "in a repository. They’re great for marking release points like": "进行标记来发布。用于发布的版本号类似",
@@ -3822,11 +3826,11 @@ I18N.zh = {
             "bug": "臭虫",
                 "Something isn't working": "有些东西不工作",
             "dependencies": "依赖性",
-                "Pull requests that update a dependency file": "更新一个依赖文件的拉动请求",
+                "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
             "documentation": "文档",
                 "Improvements or additions to documentation": "文档的改进或补充",
             "duplicate": "重复",
-                "This issue or pull request already exists": "这个议题或拉动请求已经存在",
+                "This issue or pull request already exists": "这个议题或拉取请求已经存在",
             "enhancement": "增强",
                 "New feature or request": "新功能或请求",
             "good first issue": "好的第一个议题",
@@ -3873,7 +3877,7 @@ I18N.zh = {
 
             // 里程碑页面 /<user-name>/<repo-name>/milestones
                 "New milestone": "新建里程牌",
-                "Create a new milestone to help organize your issues and pull requests. Learn more about": "创建一个新的里程碑来帮助组织您的议题和拉动请求。了解更多关于",
+                "Create a new milestone to help organize your issues and pull requests. Learn more about": "创建一个新的里程碑来帮助组织您的议题和拉取请求。了解更多关于",
                 "milestones and issues": "里程碑和议题",
                 "Due date (optional)": "截止日期（可选）",
 
@@ -4206,7 +4210,7 @@ I18N.zh = {
                 "Repository roles": "仓库规则",
                 "Security & analysis": "安全 & 分析",
                 "Branches": "分支",
-                "Webhooks": "Web 挂钩",
+                "Webhooks": "Web 钩子",
                 // "Notifications": "通知",
                 "Integrations": "集成",
                 "Deploy keys": "部署密钥",
@@ -4224,10 +4228,13 @@ I18N.zh = {
             // 设置页面 /<user-name>/<repo-name>/settings ====================================
                 "Repository name": "仓库名称",
                 "Rename": "重命名",
-                    "is available.": "名称可用。",
+                    // [/is available./, "名称可用。"],
                     "The repository": "仓库",
                     "already exists on this account.": "已经存在于此帐户。",
                     "Your new repository will be created as": "您的新仓库将被创建为",
+                    // 顶部提醒
+                    "Repository name was not changed": "仓库名称未更改",
+
                 "Template repository": "模板库",
                 "Template repositories let users generate new repositories with the same directory structure and files.": "模板仓库允许用户生成具有相同目录结构和文件的新仓库。",
 
@@ -4481,7 +4488,11 @@ I18N.zh = {
                     "to:": "为：",
                     "Most projects name the default branch": "大多数项目将默认分支名为",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
-                    "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
+                        "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
+                    // GitHub Pages所在 分支
+                    "Renaming this branch:": "重命名该分支",
+                    "Will unpublish current GitHub Pages site.": "将取消发布当前的 GitHub Pages 站点。",
+                    "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                 "Switch to another branch": "切换到另一分支",
                     // 分支切换对话框
                     "Switch default branch to another branch": "将默认分支切换到另一分支",
@@ -4499,19 +4510,64 @@ I18N.zh = {
                 "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。对分支保护规则感到陌生？",
                 "No branch protection rules defined yet.": "尚未定义分支保护规则。",
 
+            // Hook 页面 /<user-name>/<repo-name>/settings/hooks====================================
+            "Add webhook": "添加钩子",
+            "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
+            "Webhooks Guide": "Web 钩子指南",
+
+            // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
+            "Webhooks /": "Web 钩子 /",
+            "We’ll send a": "我们将",
+            "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
+            "etc": "等",
+            "). More information can be found in": "）。更多信息可以在",
+            "our developer documentation": "开发人员文档",
+
+            "Payload URL": "有效载荷 URL",
+            "Content type": "内容类型",
+            "Secret": "机密",
+
+            "SSL verification": "SSL 验证",
+            "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
+            "Enable SSL verification": "启用 SSL 验证",
+            "Disable": "禁用",
+            "(not recommended)": "（不推荐）",
+
+            "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
+                "Just the": "仅",
+                "push": "推送",
+                "event.": "事件。",
+                "Send me": "发送给我",
+                "everything": "所有",
+                "Let me select individual events.": "让我选择单个事件。",
+                "Active": "激活",
+                "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
+
+            // 通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
+            "Setup email addresses to receive notifications when push events are triggered.": "设置电子邮箱地址，以便在推送事件被触发时收到通知。",
+            "Address": "电子邮箱地址",
+            "Whitespace separated email addresses (at most two).": "用空格分隔的电子邮箱地址（最多两个）。",
+            "Approved header": "批准的标题",
+            "Sets the": "设置",
+            "Approved": "批准",
+            "header to automatically approve the message in a read-only or moderated mailing list.": "标头以自动批准只读或审核邮件列表中的邮件。",
+            "We will send notification emails to the listed addresses when a":"我们将向所列地址发送通知邮件，当",
+            "event is triggered.":"事件被触发。",
+            "Setup notifications": "设置通知",
+
             // 新建分支保护规则 页面 /<user-name>/<repo-name>/settings/branch_protection_rules/new====================================
                 "Branch protection rule": "分支保护规则",
                 "Branch name pattern": "分支名称模式",
                 "Protect matching branches": "保护匹配的分支",
-                "Require a pull request before merging": "要求在合并前提交拉动请求",
+                "Require a pull request before merging": "要求在合并前提交拉取请求",
                 "When enabled, all commits must be made to a non-protected branch and submitted via a pull request before they can be merged into a branch that matches this rule.": "启用后，所有提交都必须提交到不受保护的分支，并通过拉取请求提交，然后才能将它们合并到与此规则匹配的分支中。",
                     "Require approvals": "需要批准",
                     "When enabled, pull requests targeting a matching branch require a number of approvals and no changes requested before they can be merged.": "启用后，针对匹配分支的拉取请求需要经过多次批准，并且在合并之前不需要更改。",
                     "Required number of approvals before merging:": "合并前所需的审批数量：",
-                    "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉动请求审批",
-                    "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查提交将撤销拉动请求的审查批准。",
+                    "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求审批",
+                    "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查提交将撤销拉取请求的审查批准。",
                         "Require review from Code Owners": "要求代码所有者的审查",
-                        "Require an approved review in pull requests including files with a designated code owner.": "要求在拉动请求中进行批准审查，包括有指定代码所有者的文件。",
+                        "Require an approved review in pull requests including files with a designated code owner.": "要求在拉取请求中进行批准审查，包括有指定代码所有者的文件。",
                     "Require status checks to pass before merging": "要求在合并前通过状态检查",
                     "Choose which": "选择那些",
                     "status checks": "状态检查",
@@ -4580,23 +4636,29 @@ I18N.zh = {
                 "Disable Actions": "禁用操作",
                     "The Actions tab is hidden and no workflows can run.": "“操作” 选项卡将被隐藏，无法运行任何工作流程。",
                 "Allow local actions only": "仅允许本地操作",
-                    // [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的存储库中定义的操作。"], // 操作页面
+                    // [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
                 "Allow select actions": "允许选择操作",
-                    // [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的存储库中定义的操作。"], // 操作页面
+                    // [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
                     "Learn more about allowing specific actions to run.": "了解更多关于允许运行特定操作的信息。",
+                    "Allow actions created by GitHub": "允许由 GitHub 创建的操作",
+                    "Allow Marketplace actions by": "允许市场操作，",
+                    "verified creators": "由经验证的创建者创建",
+                    "Allow specified actions": "允许指定的操作",
+                    "Enter a comma-separated list of actions": "输入以逗号分隔的操作列表",
+                    "Wildcards, tags, and SHAs are allowed. Examples:": "允许使用通配符、标签和 SHA。例如：",
 
                 "Artifact and log retention": "工件和日志保留",
                     "This is the duration that artifacts and logs will be retained.": "这是工件和日志将被保留的时间。",
                     "days": "天",
 
                 "Fork pull request workflows from outside collaborators": "来自外部合作者的复刻拉取请求工作流程",
-                    "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部合作者的子集需要批准才能对他们的拉动请求运行工作流程。",
+                    "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部合作者的子集需要批准才能对他们的拉取请求运行工作流程。",
                 "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行审批",
                     "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 帐户的首次贡献者才需要获得批准才能运行工作流程。",
                 "Require approval for first-time contributors": "要求对首次贡献者进行审批",
                     "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流程。",
                 "Require approval for all outside collaborators": "要求对所有外部合作者进行审批",
-                    "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部合作者将始终需要批准才能在他们的拉动请求上运行工作流程。",
+                    "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部合作者将始终需要批准才能在他们的拉取请求上运行工作流程。",
 
                 "Workflow permissions": "工作流程权限",
                     "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
@@ -4638,6 +4700,7 @@ I18N.zh = {
                 "Deleting an environment will delete all secrets and protection rules associated with the environment.": "删除环境将删除与环境关联的所有密钥和保护规则。",
                 "I understand, delete this environment": "我明白了，依然删除这个环境",
                 // 顶部提醒
+                "Environment deleted.": "环境已删除。",
 
             // 仓库 新建环境 /<user-name>/<repo-name>/settings/environments/new
                 "/ Add": "/ 添加",
@@ -4677,9 +4740,33 @@ I18N.zh = {
                     "Secret value": "密钥值",
 
             // 操作密钥 /<user-name>/<repo-name>/settings/secrets/actions
+            "Actions secrets": "操作密钥",
+            "New repository secret": "新建仓库机密",
+            "Secrets are environment variables that are": "秘密是环境变量",
+            "encrypted": "被加密",
+            ". Anyone with": "。任何对此仓库具有",
+            "collaborator": "协作者",
+            "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
+            "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "秘密不会传递给来自复刻的拉取请求触发的工作流程。",
 
+            "There are no secrets for this repository's environments.": "这个仓库的环境暂无秘密。",
+            "Encrypted environment secrets allow you to store sensitive information, such as access tokens, in your repository environments.": "加密的环境机密允许您在仓库环境中存储敏感信息，例如访问令牌。",
+            "Manage your environments and add environment secrets": "管理您的环境并添加环境机密",
+            
+            "Repository secrets": "仓库机密",
+            "There are no secrets for this repository.": "这个仓库暂无秘密。",
+            "Encrypted secrets allow you to store sensitive information, such as access tokens, in your repository.": "加密的机密允许您在仓库中存储敏感信息，例如访问令牌。",
+
+            // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
+            "/ New secret": "新建机密",
 
             // Dependabot 密钥 /<user-name>/<repo-name>/settings/secrets/dependabot
+            "Dependabot secrets": "Dependabot 密钥",
+            "Secrets are credentials that are": "秘密是凭证",
+            "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
+            "Secrets are not passed to forks.": "秘密不会传递给复刻。",
+            "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的机密允许您存储私有访问令牌，以便 Dependabot 可以从私有注册表更新依赖项。",
+
 
 
             // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
@@ -4788,8 +4875,8 @@ I18N.zh = {
             [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
             [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at \[YOUR USERNAME\].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
             [/\((\w+.*)\). We recommend you change this to a CNAME record pointing to/, "($1)。我们建议您将 CNAME 记录设置为指向"],
-            [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的存储库中定义的操作。"], // 操作页面
-            [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的存储库中定义的操作。"], // 操作页面
+            [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
         ],
     },
 
@@ -5107,7 +5194,7 @@ I18N.zh = {
                 "Comment": "评论",
                 "You commented on the thread.": "您评论了这个话题。",
                 "Manual": "手册",
-                "You subscribed to the thread (via an Issue or Pull Request).": "您订阅了该主题（通过议题或拉动请求）。",
+                "You subscribed to the thread (via an Issue or Pull Request).": "您订阅了该主题（通过议题或拉取请求）。",
                 "Mention": "提及",
                 "You were specifically @mentioned in the content.": "在内容中特别 @您。",
                 "Review Requested": "请求审查",
@@ -5644,7 +5731,7 @@ I18N.zh = {
                 "read and write all public and private repository data": "读写所有公共和私有仓库数据",
                 ". This includes the following:": "。这包括以下内容：",
                 "Wikis": "维基",
-                "Webhooks and services": "Web 挂钩和服务",
+                "Webhooks and services": "Web 钩子和服务",
                 "Deploy keys": "部署密钥",
                 "Collaboration invites": "合作的邀请",
 
