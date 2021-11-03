@@ -40,23 +40,19 @@ I18N.conf = {
     rePagePathOrg: /\/(settings|billing_managers\/new)/,
 
     /**
-     * 要翻译的页面正则(仅仓库页)
-     *
-     * 2021-10-07 11:57:34
-     */
-    rePagePathRepo: /\/(settings)/,
-
-    /**
      * 忽略区域的 class 正则
      *
      * 代码编辑器 内容 代码高亮 CodeMirror
+     * 代码高亮 blob-code
      * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
      * 文件,目录位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
-     * 评论内容等 comment-body
+     * 评论内容等 js-comment-body
      * 文件搜索模式 js-tree-finder-virtual-filter
+     * 仓库文件列表 js-navigation-open Link--primary
+     * 洞察-->复刻-->仓库列表 network 或 repo
      */
-    reIgnoreClass: /(CodeMirror|blob-code|repo-and-owner|js-path-segment|final-path|files js-navigation-container|comment-body|markdown-title|js-tree-finder-virtual-filter)/,
+    reIgnoreClass: /(CodeMirror|blob-code|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
