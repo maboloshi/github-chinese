@@ -1,8 +1,29 @@
-# GitHub 汉化插件
+# GitHub 中文化插件
+> 本项目源自: [52cik/github-hans](https://github.com/52cik/github-hans)
+
+  [![GitHub issues][issues-image]][issues-url]
+  [![GitHub stars][stars-image]][stars-url]
+  [![GitHub forks][forks-image]][forks-url]
+  [![license MIT][license-image]][license-url]
+
+## 功能
+- 中文化 GitHub 菜单栏，标题，按钮等公共组件
+- 保留、完善正则功能
+- 除基础组件中文化外，还支持对 “项目描述” 进行人机翻译 (参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin))
+
+## 安装
+1. 请先安装用户脚本管理器如: [Tampermonkey][Tampermonkey], [violentmonkey][violentmonkey] 等，支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
+2. 然后再点击这个链接 [GitHub 中文化插件][main.user.js] 安装脚本即可。
+3. 刷新下页面，即可发现网站已中文化。
+
+> 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
 
 ## 更新说明:
 
-### 2021-10-07 13:16:16
+#### 2021-10-31 21:49:00
+正式发布 1.7.0 版本
+
+#### 2021-10-07 13:16:16
 
 原作者[楼教主](https://github.com/52cik/github-hans)已停止维护多年，且近年来 GitHub 页面结构的变化，导致原有的脚本无法正常工作。
 
@@ -12,72 +33,27 @@
 
 本次维护基本恢复和保留大部分功能如：页面正则翻译（含日期的正则）。页面词条可能被我切得太碎不方便后期维护（先这样吧！）
 
----
-<details>
-  <summary>原始说明</summary>
-
-## 原始说明:
-
-> 给像我这样英文渣渣同学的福利。
-
-  [![GitHub issues][issues-image]][issues-url]
-  [![GitHub stars][stars-image]][stars-url]
-  [![GitHub forks][forks-image]][forks-url]
-  [![license MIT][license-image]][license-url]
-
-
-> **2017-03-19 GitHub 更新，导致之前版本无法正常使用，请大家及时升级。**  
-> **2016-04-18 GitHub 更新，导致之前版本无法正常使用，请大家及时升级。**
-
-
-## 特性 (Features)
-
-1. 给像我这样英文渣渣同学的福利。
-2. 很多新手朋友不太会玩 GitHub，主要是全英文看的头晕眼花。
-3. 熟悉后关掉插件恢复英文模式，依然闭着眼睛都知道功能在哪。
-
-
-## 安装
-
-1. 请先安装 [Tampermonkey][1] 插件，支持 Chrome, Opera Next 和 Safari 浏览器。
-2. 然后再点击这个链接 [GitHub 汉化插件][2] 安装脚本即可。
-3. 刷新下页面，即可发现网站已汉化。
-
-> 目前仅支持 [Tampermonkey][1] 插件
->
-> 很多人打不开谷歌插件中心，我已经下载好放在了根目录下方便大家使用。  
-> 点击这里 [Tampermonkey_v4.2.7.crx][Tampermonkey] 分流下载插件。
-
-
-**PS: 最近 Tampermonkey 更新较大，可能无法打开插件地址，所以可以尝试如下方法手动安装脚本**  
-
-1. 下载 [Tampermonkey_v4.2.7.crx][Tampermonkey] 插件
-2. 在 chrome 里打开 chrome://extensions/ 这里地址(浏览器需登录，页面打开开发者模式开关)
-3. 把刚才下载到的 Tampermonkey_v4.2.7.crx 拖进去就好了
-4. 接着点浏览器右上角的插件图标，选择 “添加新脚本...”
-5. 然后将 https://github.com/52cik/github-hans/blob/gh-pages/main.js 源码复制进去
-6. 最后保存即可
-
-
 ## 待办 (TODO)
 
 1. 添加 GitHub 名词解释，新手可能不太理解部分名词具体表达的意思，比如 `pull request`。
-2. 整理部分 git&github 学习资料, 帮助新手**更快**上手 git&github。
+2. 整理部分 git & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
 3. **本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
 
+## 贡献
 
-## 相关概念及资料文档
+目前，已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
 
-> ps: 由于本插件是之前心血来潮搞出来的，一开始没有参照相关资料，所以有些词汇可能有点差异，今后的翻译和修复都会遵循以下文档。
+相关概念及资料文档:
 
 1. [Pro Git 第二版 简体中文](https://www.gitbook.com/book/bingohuang/progit2/details)
 2. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
 3. [Git官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+4. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
 
-## 插件设置为每日更新，因为翻译的比较频繁
+## 插件设置建议为每日更新，因为翻译更新可能比较频繁
 
-  ![everyday][everyday]
-
+  ![Tampermonkey-everyday][everyday-1]
+  ![violentmonkey-everyday][everyday-2]
 
 ## 预览
 
@@ -85,31 +61,30 @@
   ![预览][png-2]
   ![预览][png-3]
   ![预览][png-4]
-  ![github-hans][github-hans]
+  ![github-chinese][github-chinese]
 
 
-[1]: http://tampermonkey.net/ "Tampermonkey"
-[2]: https://openuserjs.org/install/52cik/GitHub_%E6%B1%89%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 汉化插件"
+[Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
+[violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 
-[png-1]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/1.png
-[png-2]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/2.png
-[png-3]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/3.png
-[png-4]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/4.png
-[everyday]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/everyday.png
-[github-hans]: https://raw.githubusercontent.com/52cik/github-hans/gh-pages/preview/github-hans.gif "github-hans"
+[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 汉化插件"
 
-[Tampermonkey]: http://www.52cik.com/github-hans/Tampermonkey_v4.2.7.crx "Tampermonkey"
+[png-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/1.png
+[png-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/2.png
+[png-3]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/3.png
+[png-4]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/4.png
+[everyday-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-1.png
+[everyday-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-2.png
+[github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp "github-chinese"
 
+[issues-url]: https://github.com/maboloshi/github-chinese/issues
+[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese.svg
 
-[issues-url]: https://github.com/52cik/github-hans/issues
-[issues-image]: https://img.shields.io/github/issues/52cik/github-hans.svg
+[stars-url]: https://github.com/maboloshi/github-chinese/stargazers
+[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese.svg
 
-[stars-url]: https://github.com/52cik/github-hans/stargazers
-[stars-image]: https://img.shields.io/github/stars/52cik/github-hans.svg
-
-[forks-url]: https://github.com/52cik/github-hans/network
-[forks-image]: https://img.shields.io/github/forks/52cik/github-hans.svg
+[forks-url]: https://github.com/maboloshi/github-chinese/network
+[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese.svg
 
 [license-url]: https://opensource.org/licenses/MIT
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
-</details>
