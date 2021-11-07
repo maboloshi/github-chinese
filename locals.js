@@ -235,6 +235,9 @@ I18N.zh = {
             "Suggest an answer": "建议一个答案", // 具体讨论页
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
             "Nothing to preview": "没有什么可预览",
+            // 取消按钮 提醒信息
+            "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
+
 
             "Add header text": "添加标题文本",
             "Add bold text <ctrl+b>": "添加粗体文本 <ctrl+b>",
@@ -678,6 +681,9 @@ I18N.zh = {
                 "Least recently updated": "最近最少更新",
             // 清楚筛选
             "Clear current search query and sorts": "清除当前的搜索查询和分类",
+
+            "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
+            "Kanban-style project board": "看板式项目板",
 
             "You don't have any projects yet.": "您还没有任何项目。",
             "There are no projects matching your search.": "没有符合您搜索条件的项目。",
@@ -2148,8 +2154,9 @@ I18N.zh = {
                 "Contributor": "贡献者",
                 "Owner": "所有者",
                 "Author": "作者",
-                    "You are the author of this issue.": "您是这个议题的作者。",
+                    "You are the author of this issue.": "您是这个议题的作者。",  // 议题
                     "You are the author of this pull request.": "您是这个拉取请求的作者。", // 拉取请求
+                    "This user is the author of this pull request.": "该用户是这个拉取请求的作者。",// 拉取请求
                 "Member": "成员",
                     //[/This user is a member of the (\w+.*)./, "该用户是 $1 组织的成员。"],
                 "Collaborator": "协作者",
@@ -2159,6 +2166,7 @@ I18N.zh = {
                 "Quote reply": "引用回复",
                 "Reference in new issue": "引用到新议题",
                 "Report content": "举报内容",
+                "Report": "举报",
 
                 "commented": "评论于",
                 "— with": "— 通过",
@@ -2620,6 +2628,7 @@ I18N.zh = {
                     "Convert to draft": "设置为草案",
                     // 下拉
                     "Request up to 15 reviewers": "最多请求 15 个审查人",
+                    // [/approved these changes/, "批准这些更改"], // 具体的拉取请求 审查人
 
                 "Assignees": "受理人",
                     "No one assigned": "无人受理",
@@ -2701,6 +2710,7 @@ I18N.zh = {
                 "Outdated": "陈旧的",
                 "Resolve conversation": "解决对话",
                 "Unresolve conversation": "未解决对话",
+                    "marked this conversation as resolved.": "将此对话标记为已解决。",
                 // "Changes requested": "更改请求",
                 "Change requested": "更改请求",
                 "Show resolved": "显示已解决",
@@ -2716,9 +2726,11 @@ I18N.zh = {
                 "force-pushed": "强制推送",
                 "branch from": "分支从",
                 "and others": "和其他成员",
-                "approved these changes": "批准更改",
+                "approved these changes": "批准这些更改",
+                    "See review": "查看审查",
                 "started a review": "开始审查",
                 "self-requested a review": "自我要求审查",
+                "left a comment": "发表评论",
 
                 // 拉取请求状态
                 "This pull request is still a work in progress": "此拉取请求仍在进行中",
@@ -2730,10 +2742,14 @@ I18N.zh = {
                 // "Review required": "需要审查", // 拉取请求 页面状态词
                     "Add your review": "添加您的评论",
                 // [/At least 1 approving review is required by reviewers with write access./, ""],
+                "Changes approved": "变更已获批准",
+                // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查人进行审查。"],
+                // [/(\d+) approvals?/, "$1 项批准"],
                 "Some checks haven’t completed yet": "有些检查还没有完成",
                 // [/1 in progress check/, "$1个正在进行的检查"],
                 "Some checks were not successful": "有些检查不成功",
                 // [/1 skipped, 4 successful, and 2 failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
+                // [/1 skipped, 4 successful, and 2 expected checks/, "$1 个跳过, $2 个成功, $3 个预先检查"],
                 "All checks have passed": "所有检查均已通过",
                 // [/5 successful checks/, ""],
                 // [/6 checks passed/, ""],
@@ -2743,6 +2759,7 @@ I18N.zh = {
                     "Required": "必须",
                 "Merging is blocked": "合并被阻止",
                 "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
+                "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
                 // [/Merging can be performed automatically with 1 approving review./, ""],
 
                 "Merge pull request": "合并拉取请求",
@@ -3235,6 +3252,7 @@ I18N.zh = {
 
                 // 修改的文件 右侧下拉
                 "Show comments": "显示评论",
+                "Show annotations": "显示注释",
                 "View file": "查看文件",
                 "Edit file": "编辑文件",
                 "Delete file": "删除文件",
@@ -3604,7 +3622,7 @@ I18N.zh = {
 
             // 新建安全建议草案 /security/advisories/new >>>>>>>>>>>>>>>>>>>>>>
 
-            // 文件代码页面 /blob/<brach>/<Patch>/<file_name> >>>>>>>>>>>>>>>>>>>>>>
+            // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<Patch>/<file_name> >>>>>>>>>>>>>>>>>>>>>>
                 "Download": "下载",
                 "View raw": "查看原始数据",
                 "(Sorry about that, but we can’t show files that are this big right now.)": "（很抱歉，但我们现在无法显示这么大的文件。）",
@@ -4072,6 +4090,7 @@ I18N.zh = {
             [/The (\w+.*) branch has been deleted./, "$1 分支已被删除。"], // 具体拉取请求 重新打开拉取请求 /<user-name>/<repo-name>/pull/ID
             [/merged (\d+) commits? into/, "已合并 $1 个提交到"],
             [/added a commit to (\w+.*) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
+            [/approved these changes/, "批准这些更改"], // 具体的拉取请求 审查人
             // [/Commits on (.+)/, "提交于 $1"],
             [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
             // bug [/from (.+)/, "从 $1"],
@@ -4097,8 +4116,11 @@ I18N.zh = {
             [/Joined/,"加入于"], // 追星者，关注者页面
             [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork (\w+.*), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
             [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查人进行审查。"],
+            [/(\d+) approvals?/, "$1 项批准"],
             [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
-            [/(\d+) skipped, (\d+) successful, and (\d+) failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
+            [/(\d+) skipped, (\d+) successful, and (\d+) failing checks/, "$1 个跳过, $2 个成功, $3 个失败"],
+            [/(\d+) skipped, (\d+) successful, and (\d+) expected checks/, "$1 个跳过, $2 个成功, $3 个预先检查"],
             [/(\d+) successful checks?/, "$1 次成功检查"],
             [/(\d+) checks? passed/, "$1 次检查通过"],
             [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
@@ -4480,14 +4502,15 @@ I18N.zh = {
                 "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是仓库中的 “基础” 分支，所有的拉取请求和代码提交都是针对该分支进行的，除非您指定一个不同的分支。",
                 "Rename branch": "重命名分支",
                     // 重命名分支对话框
-                    "Rename this branch": "重命名该分支",
+                    "Rename this branch": "重命名分支",
                     "to:": "为：",
                     "Most projects name the default branch": "大多数项目将默认分支名为",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
                         "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
                     // GitHub Pages所在 分支
-                    "Renaming this branch:": "重命名该分支",
+                    "Renaming this branch:": "重命名分支",
                     "Will unpublish current GitHub Pages site.": "将取消发布当前的 GitHub Pages 站点。",
+                        "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
                     "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                 "Switch to another branch": "切换到另一分支",
                     // 分支切换对话框
@@ -4505,51 +4528,6 @@ I18N.zh = {
                 "Add rule": "添加规则",
                 "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。对分支保护规则感到陌生？",
                 "No branch protection rules defined yet.": "尚未定义分支保护规则。",
-
-            // Hook 页面 /<user-name>/<repo-name>/settings/hooks====================================
-            "Add webhook": "添加钩子",
-            "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
-            "Webhooks Guide": "Web 钩子指南",
-
-            // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
-            "Webhooks /": "Web 钩子 /",
-            "We’ll send a": "我们将",
-            "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
-            "etc": "等",
-            "). More information can be found in": "）。更多信息可以在",
-            "our developer documentation": "开发人员文档",
-
-            "Payload URL": "有效载荷 URL",
-            "Content type": "内容类型",
-            "Secret": "机密",
-
-            "SSL verification": "SSL 验证",
-            "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
-            "Enable SSL verification": "启用 SSL 验证",
-            "Disable": "禁用",
-            "(not recommended)": "（不推荐）",
-
-            "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
-                "Just the": "仅",
-                "push": "推送",
-                "event.": "事件。",
-                "Send me": "发送给我",
-                "everything": "所有",
-                "Let me select individual events.": "让我选择单个事件。",
-                "Active": "激活",
-                "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
-
-            // 通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
-            "Setup email addresses to receive notifications when push events are triggered.": "设置电子邮箱地址，以便在推送事件被触发时收到通知。",
-            "Address": "电子邮箱地址",
-            "Whitespace separated email addresses (at most two).": "用空格分隔的电子邮箱地址（最多两个）。",
-            "Approved header": "批准的标题",
-            "Sets the": "设置",
-            "Approved": "批准",
-            "header to automatically approve the message in a read-only or moderated mailing list.": "标头以自动批准只读或审核邮件列表中的邮件。",
-            "We will send notification emails to the listed addresses when a":"我们将向所列地址发送通知邮件，当",
-            "event is triggered.":"事件被触发。",
-            "Setup notifications": "设置通知",
 
             // 新建分支保护规则 页面 /<user-name>/<repo-name>/settings/branch_protection_rules/new====================================
                 "Branch protection rule": "分支保护规则",
@@ -4588,6 +4566,51 @@ I18N.zh = {
                 "Allow users with push access to delete matching branches.": "允许有推送权限的用户删除匹配的分支。",
 
                 "Create": "创建",
+
+            // Web 钩子 页面 /<user-name>/<repo-name>/settings/hooks====================================
+                "Add webhook": "添加钩子",
+                "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
+                "Webhooks Guide": "Web 钩子指南",
+
+            // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
+                "Webhooks /": "Web 钩子 /",
+                "We’ll send a": "我们将",
+                "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
+                "etc": "等",
+                "). More information can be found in": "）。更多信息可以在",
+                "our developer documentation": "开发人员文档",
+
+                "Payload URL": "有效载荷 URL",
+                "Content type": "内容类型",
+                "Secret": "机密",
+
+                "SSL verification": "SSL 验证",
+                "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
+                "Enable SSL verification": "启用 SSL 验证",
+                "Disable": "禁用",
+                "(not recommended)": "（不推荐）",
+
+                "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
+                    "Just the": "仅",
+                    "push": "推送",
+                    "event.": "事件。",
+                    "Send me": "发送给我",
+                    "everything": "所有",
+                    "Let me select individual events.": "让我选择单个事件。",
+                    "Active": "激活",
+                    "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
+
+            // 通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
+                "Setup email addresses to receive notifications when push events are triggered.": "设置电子邮箱地址，以便在推送事件被触发时收到通知。",
+                "Address": "电子邮箱地址",
+                "Whitespace separated email addresses (at most two).": "用空格分隔的电子邮箱地址（最多两个）。",
+                "Approved header": "批准的标题",
+                "Sets the": "设置",
+                "Approved": "批准",
+                "header to automatically approve the message in a read-only or moderated mailing list.": "标头以自动批准只读或审核邮件列表中的邮件。",
+                "We will send notification emails to the listed addresses when a":"我们将向所列地址发送通知邮件，当",
+                "event is triggered.":"事件被触发。",
+                "Setup notifications": "设置通知",
 
             // 集成 页面 /<user-name>/<repo-name>/settings/installations====================================
             // 全局设置在 Applications 应用 /settings/installations
@@ -4736,34 +4759,32 @@ I18N.zh = {
                     "Secret value": "密钥值",
 
             // 操作密钥 /<user-name>/<repo-name>/settings/secrets/actions
-            "Actions secrets": "操作密钥",
-            "New repository secret": "新建仓库机密",
-            "Secrets are environment variables that are": "秘密是环境变量",
-            "encrypted": "被加密",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "秘密不会传递给来自复刻的拉取请求触发的工作流程。",
+                "Actions secrets": "操作密钥",
+                "New repository secret": "新建仓库机密",
+                "Secrets are environment variables that are": "秘密是环境变量",
+                "encrypted": "被加密",
+                ". Anyone with": "。任何对此仓库具有",
+                "collaborator": "协作者",
+                "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
+                "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "秘密不会传递给来自复刻的拉取请求触发的工作流程。",
 
-            "There are no secrets for this repository's environments.": "这个仓库的环境暂无秘密。",
-            "Encrypted environment secrets allow you to store sensitive information, such as access tokens, in your repository environments.": "加密的环境机密允许您在仓库环境中存储敏感信息，例如访问令牌。",
-            "Manage your environments and add environment secrets": "管理您的环境并添加环境机密",
-            
-            "Repository secrets": "仓库机密",
-            "There are no secrets for this repository.": "这个仓库暂无秘密。",
-            "Encrypted secrets allow you to store sensitive information, such as access tokens, in your repository.": "加密的机密允许您在仓库中存储敏感信息，例如访问令牌。",
+                "There are no secrets for this repository's environments.": "这个仓库的环境暂无秘密。",
+                "Encrypted environment secrets allow you to store sensitive information, such as access tokens, in your repository environments.": "加密的环境机密允许您在仓库环境中存储敏感信息，例如访问令牌。",
+                "Manage your environments and add environment secrets": "管理您的环境并添加环境机密",
+
+                "Repository secrets": "仓库机密",
+                "There are no secrets for this repository.": "这个仓库暂无秘密。",
+                "Encrypted secrets allow you to store sensitive information, such as access tokens, in your repository.": "加密的机密允许您在仓库中存储敏感信息，例如访问令牌。",
 
             // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
-            "/ New secret": "新建机密",
+                "/ New secret": "新建机密",
 
             // Dependabot 密钥 /<user-name>/<repo-name>/settings/secrets/dependabot
-            "Dependabot secrets": "Dependabot 密钥",
-            "Secrets are credentials that are": "秘密是凭证",
-            "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
-            "Secrets are not passed to forks.": "秘密不会传递给复刻。",
-            "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的机密允许您存储私有访问令牌，以便 Dependabot 可以从私有注册表更新依赖项。",
-
-
+                "Dependabot secrets": "Dependabot 密钥",
+                "Secrets are credentials that are": "秘密是凭证",
+                "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
+                "Secrets are not passed to forks.": "秘密不会传递给复刻。",
+                "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的机密允许您存储私有访问令牌，以便 Dependabot 可以从私有注册表更新依赖项。",
 
             // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
                 "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
@@ -5075,6 +5096,7 @@ I18N.zh = {
             "Mark as read": "标记为已读",
             "Mark as unread": "标记为未读",
             "Mark as done": "标记为已完成",
+            "Move to inbox": "移动到收件箱",
 
              "Clear selection":"清除选中",
 
@@ -5370,7 +5392,6 @@ I18N.zh = {
                 "Basic search": "基本搜索",
                 "This search": "该搜索",
                 "Finds repositories with…": "查找仓库...",
-
 
             // 搜索结果页面 https://github.com/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
                 // 左侧菜单
@@ -5795,6 +5816,7 @@ I18N.zh = {
             "Organization account name": "组织帐户名称",
             // [/The name \'(\d+)\' is already taken./, "名称 '$1' 已被采用。"],
             // [/The name \'(\d+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
+            // [/Organization name \'(\w+.*)\' is unavailable./, "组织名称 \'$1\' 不可用。"], //
             "This will be the name of your account on GitHub.": "这将是您在 GitHub 上的帐户名称。",
             "Your URL will be: https://github.com/": "您的网址将是：https://github.com/",
             "Contact email": "联系电子邮箱",
@@ -5807,10 +5829,10 @@ I18N.zh = {
             "By creating an account, you agree to the": "创建帐户即表示您同意",
             "Terms of Service": "服务条款",
             ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
-            " GitHub Privacy Statement": "GitHub 隐私声明",
+            "GitHub Privacy Statement": "GitHub 隐私声明",
             ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
 
-        // https://github.com/organizations/maboloshi-inuyasha/invite
+            // https://github.com/organizations/maboloshi-inuyasha/invite
             "Start collaborating": "开始合作",
             // [/Welcome to/, "欢迎来到"],
             "Add organization members": "添加组织成员",
@@ -5827,6 +5849,7 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             [/The name \'(\w+.*)\' is already taken./, "名称 '$1' 已被采用。"],
             [/The name \'(\w+.*)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
+            [/Organization name \'(\w+.*)\' is unavailable./, "组织名称 \'$1\' 不可用。"],
             [/I.e.,/, "即："],
         ],
     },
