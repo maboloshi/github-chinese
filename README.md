@@ -67,7 +67,7 @@
 [Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
 [violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 
-[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 汉化插件"
+[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件"
 
 [png-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/1.png
 [png-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/2.png

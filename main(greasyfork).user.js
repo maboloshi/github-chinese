@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         GitHub 汉化插件
+// @name         GitHub 中文化插件
 // @namespace    https://github.com/maboloshi/github-chinese
-// @description  汉化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
+// @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://assets-cdn.github.com/pinned-octocat.svg
 // @version      1.7.0
