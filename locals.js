@@ -52,7 +52,7 @@ I18N.conf = {
      * 仓库文件列表 js-navigation-open Link--primary
      * 洞察-->复刻-->仓库列表 network 或 repo
      */
-    reIgnoreClass: /(CodeMirror|blob-code|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
