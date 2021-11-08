@@ -78,13 +78,13 @@
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp "github-chinese"
 
 [issues-url]: https://github.com/maboloshi/github-chinese/issues
-[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese.svg
+[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github
 
 [stars-url]: https://github.com/maboloshi/github-chinese/stargazers
-[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese.svg
+[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github
 
 [forks-url]: https://github.com/maboloshi/github-chinese/network
-[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese.svg
+[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github
 
 [license-url]: https://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github
