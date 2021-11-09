@@ -132,6 +132,7 @@ I18N.zh = {
             // 搜索栏
             "Search or jump to…": "搜索或跳转到…",
             "In this repository": "当前仓库",
+            "In this organization": "当前组织",
             "In this user": "当前用户",
             "All GitHub": "整个 GitHub",
             "Jump to": "跳转到",
@@ -2433,6 +2434,7 @@ I18N.zh = {
                 "Get started": "开始",
                 "Don’t see your issue here?": "在这里没有看到您的议题？",
                 "Open a blank issue.": "打开一个空白议题。",
+                "Edit templates": "编辑模板",
 
             // 新建空白议题  /<user-name>/<repo-name>/issues/new
             "Title": "标题",
@@ -3046,6 +3048,18 @@ I18N.zh = {
 
                     // 排序 补充
                     "Name": "名称",
+                "Sort tasks": "排序任务",
+                "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "将议题和拉取请求添加到你的看板中，并将它们与包含想法或任务清单的笔记卡一起进行优先排序。",
+                "Plan your project": "规划项目",
+                "Sort tasks into columns by status. You can label columns with status indicators like \"To Do\", \"In Progress\", and \"Done\".": "将任务按状态分类成列。你可以用 “待办”、“进行中” 和 “已完成” 等状态指标给各栏贴上标签。",
+                "Automate your workflow": "自动化工作流程",
+                "Set up triggering events to save time on project management—we’ll move tasks into the right columns for you.": "设置触发事件，以节省项目管理的时间——我们将为您把任务移到正确的栏目中。",
+                "Track progress": "追踪进度",
+                "Keep track of everything happening in your project and see exactly what’s changed since the last time you looked.": "追踪项目中发生的一切，并准确查看自上次查看以来发生的变化。",
+                "Share status": "共享状态",
+                "Each card has a unique URL, making it easy to share and discuss individual tasks with your team.": "每张卡片都有一个唯一的 URL，可以轻松地与您的团队共享和讨论个人任务。",
+                "Wrap up": "结束工作",
+                "After you wrap up your work, close your project board to remove it from your active projects list. On to the next project!": "结束工作后，关闭项目板，并从活动项目列表中删除。进入下一个项目！",
 
             // 新建项目页面  /<user-name>/<repo-name>/projects/new >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Create a new project": "创建新项目",
@@ -3670,12 +3684,12 @@ I18N.zh = {
                 "Search this file…": "搜索这个文件...", // csv 文件
 
             // 代码追溯页面 /<user-name>/<repo-name>/blame/<branch>/<file>
-            "Normal view": "正常视图",
-            "View blame prior to this change": "查看此修改的早期修订",
+                "Normal view": "正常视图",
+                "View blame prior to this change": "查看此修改的早期修订",
 
             // 提交中文件历史 /<user-name>/<repo-name>/commits/<branch>/<file> 或 /<user-name>/<repo-name>/commits/<full SHA>/<file>
-            "History for": "历史：",
-            "View at this point in the history": "在这一历史节点上查看",
+                "History for": "历史：",
+                "View at this point in the history": "在这一历史节点上查看",
 
             // 讨论分类 /<user-name>/<repo-name>/discussions/categories
                 // [/(\d+) categories?/, "$1 个分类"],
@@ -3821,60 +3835,63 @@ I18N.zh = {
                 "The original post will be copied into a new issue, and the discussion will remain active.": "原帖将被复制到一个新的议题中，讨论将保持活跃。",
                 "OK, got it!": "好的，我知道了！",
 
+                "Convert issues": "转换为议题",
+                // [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
+                // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+                // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
+                "Issue will be locked": "议题将被锁定",
+                // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
+                "Existing links will redirect to the new discussion": "现有链接将重定向到新讨论",
+                // "All comments and reactions will be the same as the issue": "所有评论和反应将与议题相同",
+                "Discussions do not have milestones": "讨论没有里程碑",
+                "Discussions cannot be added to projects": "讨论不能被添加到项目中",
+                "Discussions do not have assignees": "讨论没有受理人",
+                "You must choose a category for the discussion to belong to. You will be able to change this after the conversion is complete.": "您必须为讨论选择一个所属的类别。在转换完成后，您将能够更改此设置。",
+                "Choose a category": "选择类别",
+                "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
+                "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
+                // 顶部提醒
+                // [/Open issues with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
+
             // 标签页面 /<user-name>/<repo-name>/labels
-            "Search all labels": "搜索所有标签",
-            "New label": "新建标签",
-                "Label preview": "标签预览",
-                "Label name": "标签名",
-                "Description (optional)": "描述（可选）",
-                "Color": "颜色",
-                    "Get a new color": "获得新颜色",
-                    "Choose from default colors:": "从默认颜色中选择：",
-                "Create label": "创建标签",
+                "Search all labels": "搜索所有标签",
+                "New label": "新建标签",
+                    "Label preview": "标签预览",
+                    "Label name": "标签名",
+                    "Description (optional)": "描述（可选）",
+                    "Color": "颜色",
+                        "Get a new color": "获得新颜色",
+                        "Choose from default colors:": "从默认颜色中选择：",
+                    "Create label": "创建标签",
 
-            "Alphabetically": "按字母顺序",
-            "Reverse alphabetically": "按字母倒序",
-            "Most issues": "最多的议题",
-            "Fewest issues": "最少的议题",
+                "Alphabetically": "按字母顺序",
+                "Reverse alphabetically": "按字母倒序",
+                "Most issues": "最多的议题",
+                "Fewest issues": "最少的议题",
 
-            "bug": "臭虫",
-                "Something isn't working": "有些东西不工作",
-            "dependencies": "依赖性",
-                "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
-            "documentation": "文档",
-                "Improvements or additions to documentation": "文档的改进或补充",
-            "duplicate": "重复",
-                "This issue or pull request already exists": "这个议题或拉取请求已经存在",
-            "enhancement": "增强",
-                "New feature or request": "新功能或请求",
-            "good first issue": "好的第一个议题",
-                "Good for newcomers": "适合新人",
-            "help wanted": "需要帮助",
-                "Extra attention is needed": "需要特别关注",
-            "invalid": "无效",
-                "This doesn't seem right": "这似乎不对",
-            "question": "问题",
-                "Further information is requested": "要求提供更多信息",
-            "wontfix": "不会修复",
-                "This will not be worked on": "这将不会被处理",
+                "bug": "臭虫",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的第一个议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
 
-            "Convert issues": "转换为议题",
-            // [/Convert (\d+) issues? to discussions/, "将 $1 个议题转换为讨论"], // 标签页面
-            // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
-            // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
-            "Issue will be locked": "议题将被锁定",
-            // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
-            "Existing links will redirect to the new discussion": "现有链接将重定向到新讨论",
-            // "All comments and reactions will be the same as the issue": "所有评论和反应将与议题相同",
-            "Discussions do not have milestones": "讨论没有里程碑",
-            "Discussions cannot be added to projects": "讨论不能被添加到项目中",
-            "Discussions do not have assignees": "讨论没有受理人",
-            "You must choose a category for the discussion to belong to. You will be able to change this after the conversion is complete.": "您必须为讨论选择一个所属的类别。在转换完成后，您将能够更改此设置。",
-            "Choose a category": "选择类别",
-            "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
-            "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
-            // 顶部提醒
-            // [/Open issues with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
+                // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+                // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
 
             // 里程碑页面 /<user-name>/<repo-name>/milestones
                 "You haven’t created any Milestones.": "您尚未创建任何里程碑。",
@@ -3889,13 +3906,42 @@ I18N.zh = {
                 "Most complete": "最完整",
                 "Least issues": "最少的议题",
 
-            // 里程碑页面 /<user-name>/<repo-name>/milestones
+                "No due date": "没有截止日期",
+                "(more)": "（更多）",
+                "Show less": "显示更少",
+                // 完成进度条
+                "complete": "已完成",
+                "open": "打开",
+                "closed": "关闭",
+
+            // 新建里程碑页面 /<user-name>/<repo-name>/milestones/new
                 "New milestone": "新建里程牌",
                 "Create a new milestone to help organize your issues and pull requests. Learn more about": "创建一个新的里程碑来帮助组织您的议题和拉取请求。了解更多关于",
                 "milestones and issues": "里程碑和议题",
                 "Due date (optional)": "截止日期（可选）",
 
                 "Create milestone": "创建里程碑",
+
+            // 新建操作 /<user-name>/<repo-name>/actions/new
+                "Get started with GitHub Actions": "开始使用 GitHub Actions",
+                "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow template to get started.": "构建、测试和部署您的代码。以您想要的方式进行代码审查、分支管理和议题分类。选择一个工作流模板以开始使用。",
+                "Skip this and": "跳过并",
+                "set up a workflow yourself": "建立工作流程",
+
+                "Workflows made for your repository": "为您的存储库制作的工作流程",
+                "Suggested": "推荐的",
+                "Deploy your code with these popular services": "使用这些流行的服务部署您的代码",
+                "Continuous integration workflows": "持续集成工作流程",
+                "More continuous integration workflows...": "更多持续集成工作流程...",
+                "Automate every step in your process": "自动化流程中的每一步",
+
+                "Learn more about GitHub Actions": "了解更多关于 GitHub Actions 的信息",
+                "Getting started and core concepts": "入门和核心概念",
+                "New to Actions? Start here. Learn the core concepts and how to get started.": "初次接触 Actions？从这里开始。了解核心概念和如何开始。",
+                "Configuring and managing workflows": "配置和管理工作流程",
+                "Create custom workflows to control your project's life cycle processes.": "创建自定义工作流程以控制项目的生命周期过程。",
+                "Language and framework guides": "语言与框架指南",
+                "Guides for projects written in many programming languages.": "项目指南由多种编程语言编写。",
 
             // 操作 /<user-name>/<repo-name>/actions
                 "Automate your workflow from idea to production": "",
@@ -4140,10 +4186,12 @@ I18N.zh = {
             [/(\d+) comments?/, "$1 条评论"], // 具体讨论
             [/(\d+) repl(y|ies)?/, "$1 条回复"], // 具体讨论
             [/(\d+) suggested answers?/, "$1 个建议答案"], // 具体讨论
-            [/Convert (\d+) issues? to discussions/, "将 $1 个议题转换为讨论"], // 标签页面
-            [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+            [/Convert (\d+) issues? to (a |)discussions?/, "将 $1 个议题转换为讨论"], // 标签页面?
+            [/Are you sure you want to convert (\d+) issues? with the following label to (a |)discussions?\?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
             [/Open issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
             // [/Closed issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的已关闭议题正在被转换为讨论。"], // 标签页面
+            [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+            [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
             [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"], // 分支页面 /<user-name>/<repo-name>/branches
             [/(\d+) commits? ahead (\w+.*)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
             [/(\d+) commits? behind (\w+.*)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
