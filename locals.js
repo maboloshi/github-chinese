@@ -796,18 +796,18 @@ I18N.zh = {
             }],// 贡献日历
             [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
             // 贡献信息
-            [/Created (\d+)[\s\r\n]+commits? in[\s\r\n]+(\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个仓库中创建了 $1 次提交"],
-            [/Created (\d+)[\s\r\n]+repositor(y|ies)/, "创建了 $1 个仓库"],
-            [/Opened (\d+)[\s\r\n]+pull requests? in (\d+) repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个拉取请求"],
-            [/Opened (\d+)[\s\r\n]+other[\s\r\n]+pull requests? in (\d+) repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个拉取请求"],
-            [/Opened (\d+)[\s\r\n]+issues? in[\s\r\n]+(\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个议题"],
-            [/Opened (\d+)[\s\r\n]+other[\s\r\n]+issues? in[\s\r\n]+(\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个其他议题"],
-            [/Reviewed (\d+)[\s\r\n]+pull requests? in[\s\r\n]+(\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个仓库中审查了 $1 个拉取请求"],
-            [/Answered (\d+)[\s\r\n]+discussions?[\s\r\n]+in (\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个仓库中答复了 $1 个讨论"],
-            [/Started (\d+)[\s\r\n]+discussion[\s\r\n]+in (\d+)[\s\r\n]+repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
+            [/Created (\d+) commits? in (\d+) repositor(y|ies)/, "在 $2 个仓库中创建了 $1 次提交"],
+            [/Created (\d+) repositor(y|ies)/, "创建了 $1 个仓库"],
+            [/Opened (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个拉取请求"],
+            [/Opened (\d+) other pull requests? in (\d+) repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个拉取请求"],
+            [/Opened (\d+) issues? in (\d+) repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个议题"],
+            [/Opened (\d+) other issues? in (\d+) repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个其他议题"],
+            [/Reviewed (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 个仓库中审查了 $1 个拉取请求"],
+            [/Answered (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中答复了 $1 个讨论"],
+            [/Started (\d+) discussion in (\d+) repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
             [/(\d+) commits?/, "$1 次提交"],
             [/(\d+) pull requests?/, "$1 次拉取请求"],
-            [/that received (\d+)[\s\r\n]+comments?/  , "收到 $1 条评论"],
+            [/that received (\d+) comments?/  , "收到 $1 条评论"],
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
             [/(\d+) comments?/, "$1 条评论"],
             [/(\d+) tasks? done/, "$1 个任务完成"],
@@ -1601,7 +1601,7 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             // 帐户 /settings/admin
             [/is available\./, "可用。"],
-            [/Username (\w+) is not available\.[\s\r\n]+Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
+            [/Username (\w+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
             [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 \"添加继任者\"，我承认我是 $1 帐户的所有者，并授权 GitHub 将该帐户内的内容转移给我的 GitHub 继任者。"],
             [/immediately delete all of your repositories \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
             // Emails 页面
@@ -5995,8 +5995,8 @@ I18N.zh = {
             [/(\d+) other languages? supported/, "$1 种其他语言支持"],
             [/(\w+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
             // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
-            [/By clicking "Issue plan changes", you are agreeing to[\s\r\n]+(\w+.*)’s/, "点击 “议题计划更改”，您同意 $1 的"],
-            [/By clicking "Complete order and begin installation", you are agreeing to[\s\r\n]+(\w+.*)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
+            [/By clicking "Issue plan changes", you are agreeing to (\w+.*)’s/, "点击 “议题计划更改”，您同意 $1 的"],
+            [/By clicking "Complete order and begin installation", you are agreeing to (\w+.*)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
             [/Next: Authorize (\w+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
         ],
     },
