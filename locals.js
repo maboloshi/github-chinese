@@ -500,284 +500,294 @@ I18N.zh = {
 
     "page-profile": { // 个人首页
         "static": { // 静态翻译
-            // 左侧用户信息栏
-            "Change your avatar": "修改头像",
-            "You have blocked this user": "您已拉黑此用户",
-            "Follow": "关注",
-            "Sponsor": "赞助",
-            "follower": "关注者",
-            "followers": "关注者",
-            "following": "关注",
-            "Joined": "加入于",
-            "Achievements": "成就",
-            "Highlights": "高光时刻",
-            "Organizations": "组织",
-            "Block or Report": "拉黑或举报",
-            "Unblock or report user": "取消拉黑或举报",
+            // 个人首页 公关部分
+                // 左侧用户信息栏
+                "Change your avatar": "修改头像",
+                "You have blocked this user": "您已拉黑此用户",
+                "Follow": "关注",
+                "Sponsor": "赞助",
+                "follower": "关注者",
+                "followers": "关注者",
+                "following": "关注",
+                "Joined": "加入于",
+                "Achievements": "成就",
+                "Highlights": "高光时刻",
+                "Organizations": "组织",
+                "Block or Report": "拉黑或举报",
+                "Unblock or report user": "取消拉黑或举报",
 
-            // 编辑个人资料
-            "Edit profile": "编辑个人资料",
-            "Name": "名称",
-            "Bio": "个人简介",
-            "Add a bio": "添加个人简介",
-            "Company": "公司",
-            "Location": "位置",
-            "Website": "网站",
-            "Twitter username": "Twitter 用户名",
+                // 编辑个人资料
+                "Edit profile": "编辑个人资料",
+                "Name": "名称",
+                "Bio": "个人简介",
+                "Add a bio": "添加个人简介",
+                "Company": "公司",
+                "Location": "位置",
+                "Website": "网站",
+                "Twitter username": "Twitter 用户名",
 
-            // 成就浮动界面
-            "Arctic Code Vault Contributor": "北极代码库贡献者",
-            "contributed code to several repositories in the": "为多个仓库贡献了代码，在",
-            ", and more!": "，更多！",
+                // 成就浮动界面
+                "Arctic Code Vault Contributor": "北极代码库贡献者",
+                "contributed code to several repositories in the": "为多个仓库贡献了代码，在",
+                ", and more!": "，更多！",
 
-            // 拉黑 & 举报用户对话框
-            // [/Block or report (\w+)/, "拉黑或举报 $1"],
-            "Block user": "拉黑用户",
-            "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
-            "blocking users": "拉黑用户",
+                // 拉黑 & 举报用户对话框
+                // [/Block or report (\w+)/, "拉黑或举报 $1"],
+                "Block user": "拉黑用户",
+                "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "blocking users": "拉黑用户",
 
-            "Unblock user": "取消拉黑",
-            "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "Unblock user": "取消拉黑",
+                "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
 
-            "Report abuse": "举报滥用",
-            "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
-            "reporting abuse": "举报滥用",
+                "Report abuse": "举报滥用",
+                "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
+                "reporting abuse": "举报滥用",
 
             // 概述标签卡 即主页 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            "Customize your pins": "自定义置顶",
-            // 设置置顶项目对话框
-            "Edit pinned items": "设置置顶项目",
-            "Select up to six public repositories or gists you’d like to show.": "最多选择 6 个要显示的公共仓库或代码片段。",
-            "Filter repositories and gists": "过滤仓库和代码片段",
-            "Show:": "显示：",
-            "Save pins": "保存置顶",
-            // 顶部提醒
-            "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
-            // 拖拽排序提醒
-            "Order updated.": "置顶已更新。",
+                "Customize your pins": "自定义置顶",
+                // 设置置顶项目对话框
+                "Edit pinned items": "设置置顶项目",
+                "Select up to six public repositories or gists you’d like to show.": "最多选择 6 个要显示的公共仓库或代码片段。",
+                "Filter repositories and gists": "过滤仓库和代码片段",
+                "Show:": "显示：",
+                "Save pins": "保存置顶",
+                // 顶部提醒
+                "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
+                // 拖拽排序提醒
+                "Order updated.": "置顶已更新。",
 
-            "Pinned": "已置顶",
-            "Popular repositories": "流行的仓库",
+                "Pinned": "已置顶",
+                "Popular repositories": "流行的仓库",
 
-            // 公共词
-            "Public": "公共",
-            "Private": "私有",
-            "Public archive": "公共存档",
-            "Private archive": "私有存档",
-            "Public template": "公共模板",
-
-            "Learn how we count contributions": "您想知道如何计算贡献的吗",
-            "Less": "更少",
-            "More": "更多",
-            "Contribution settings": "贡献设置",
-            // 贡献设置下拉菜单
-            "Private contributions": "私人贡献",
-            "Turning on private contributions will show anonymized private activity on your profile.": "开启私人贡献则将在您的个人资料上显示匿名的私人活动。",
-            "Visitors will now see your public and anonymized private contributions.": "访客将看到您的公开和匿名的私人贡献。",
-            "Turning off private contributions will show only public activity on your profile.": "关闭私人贡献则将仅在您的个人资料中显示公开活动。",
-            "Visitors will now see only your public contributions.": "访问者现在只能看到您的公开贡献。",
-            "Activity overview": "活动概览",
-            "Turning off the activity overview will hide the section on your profile.": "关闭活动概览则将隐藏您的个人资料中的部分内容。",
-            "The 'Activity overview' section will no longer appear on your profile.": "“活动概览” 部分将不再出现在您的个人资料中。",
-            "Turning on the activity overview will show an overview of your activity across organizations and repositories.": "开启活动概览将显示跨组织和仓库的活动概览。",
-            "Others will now see 'Activity overview' when they view your profile.": "其他人在查看您的资料时，现在会看到 “活动概述”。",
-
-            "Contribution activity": "贡献信息",
-
-            "Search by name": "搜索组织名",
-            "Contributed to": "贡献给了",
-            "Activity in": "活动在",
-            "No activity overview available.": "没有可用的活动概览。",
-
-            "open": "打开",
-            "closed": "已关闭",
-            "merged": "已合并",
-            "pull request": "拉取请求",
-
-            "commits": "次提交",
-            "comments": "次评论",
-            "Commits": "提交",
-            "Code review": "代码审查",
-
-            "Created their first repository": "创建了他们的第一个仓库",
-            "Created an issue in": "创建一个议题在",
-            "Created a pull request in": "创建一个拉取请求在",
-            "First repository": "第一个仓库",
-            "First pull request": "第一次拉取请求",
-            "First issue": "第一次提问",
-            "Opened their first issue on GitHub in": "打开了他们第一个议题",
-            "Opened their first pull request on GitHub in": "打开了他们第一个议题",
-            "Joined GitHub": "刚加入 GitHub",
-            //"Show more activity": "显示更多",
-            "Show more activity": "加载更多动态",
-            "Loading...": "加载中...",
-
-            "Seeing something unexpected? Take a look at the": "看到了一些意想不到的东西？请看一下",
-            "GitHub profile guide": "GitHub 个人资料指南",
-
-        // 仓库标签卡 ?tab=repositories >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-            // "Search repositories…": "搜索这些查库…",
-            // "Search starred repositories…": "搜索点赞的仓库…",
-
-            // 搜索, 筛选 & 排序工具栏
-            "Find a repository…": "搜索仓库…",
-            "Type": "类型",
-                // 下拉菜单
-                "Select type": "选择类型",
-                "All": "全部",
+                // 公共词
                 "Public": "公共",
                 "Private": "私有",
-                "Sources": "源码",
-                "Forks": "复刻",
-                "Archived": "存档",
-                "Mirrors": "镜像",
-            "Language": "语言",
-                // 下拉菜单
-                "Select language": "选择语言",
-                "All languages": "所有语言",
-            "Sort": "排序",
-                // 下拉菜单
-                "Select order": "选择排序",
-                "Last updated": "最近更新",
-                // "Name": "仓库名",
-                // "Recently starred": "最近关注的",
-                // "Recently active": "最近活动的",
-                // "Most stars": "最多赞的",
-                // "Unstar": "取消点赞",
-            "New": "新建",
+                "Public archive": "公共存档",
+                "Private archive": "私有存档",
+                "Public template": "公共模板",
 
-            // 筛选结果
-            "results for": "结果在",
-            "public": "公共",
-            "private": "私有",
-            "source": "源码",
-            "forked": "复刻",
-            "archived": "存档",
-            "mirror": "镜像",
-            "repositories matching": "仓库的匹配",
-            "results for repositories matching": "结果在匹配的仓库",
-            // "repositories sorted by": "仓库，排序按",
-            "written in": "使用语言",
-            "results for repositories written in": "",
-            "sorted by": "，排序按",
-            "last updated": "最近更新",
-            "name": "仓库名",
-            "stars": "星标",
+                "Learn how we count contributions": "您想知道如何计算贡献的吗",
+                "Less": "更少",
+                "More": "更多",
+                "Contribution settings": "贡献设置",
+                // 贡献设置下拉菜单
+                "Private contributions": "私人贡献",
+                "Turning on private contributions will show anonymized private activity on your profile.": "开启私人贡献则将在您的个人资料上显示匿名的私人活动。",
+                "Visitors will now see your public and anonymized private contributions.": "访客将看到您的公开和匿名的私人贡献。",
+                "Turning off private contributions will show only public activity on your profile.": "关闭私人贡献则将仅在您的个人资料中显示公开活动。",
+                "Visitors will now see only your public contributions.": "访问者现在只能看到您的公开贡献。",
+                "Activity overview": "活动概览",
+                "Turning off the activity overview will hide the section on your profile.": "关闭活动概览则将隐藏您的个人资料中的部分内容。",
+                "The 'Activity overview' section will no longer appear on your profile.": "“活动概览” 部分将不再出现在您的个人资料中。",
+                "Turning on the activity overview will show an overview of your activity across organizations and repositories.": "开启活动概览将显示跨组织和仓库的活动概览。",
+                "Others will now see 'Activity overview' when they view your profile.": "其他人在查看您的资料时，现在会看到 “活动概述”。",
 
-            "Clear filter": "清除筛选",
+                "Contribution activity": "贡献信息",
 
-            // [/\(w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
+                "Search by name": "搜索组织名",
+                "Contributed to": "贡献给了",
+                "Activity in": "活动在",
+                "No activity overview available.": "没有可用的活动概览。",
 
-            // 项目 状态词
-            "Updated": "更新于",
-            "Forked from": "复刻自",
+                "open": "打开",
+                "closed": "已关闭",
+                "merged": "已合并",
+                "pull request": "拉取请求",
 
-        // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            "Sort by": "排序方式",
-                // 排序下拉菜单
-                "Newest": "最新",
-                "Oldest": "最早",
-                "Recently updated": "近期更新内容",
-                "Least recently updated": "最近最少更新",
-            // 清楚筛选
-            "Clear current search query and sorts": "清除当前的搜索查询和分类",
+                "commits": "次提交",
+                "comments": "次评论",
+                "Commits": "提交",
+                "Code review": "代码审查",
 
-            "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
-            "Kanban-style project board": "看板式项目板",
+                "Created their first repository": "创建了他们的第一个仓库",
+                "Created an issue in": "创建一个议题在",
+                "Created a pull request in": "创建一个拉取请求在",
+                "First repository": "第一个仓库",
+                "First pull request": "第一次拉取请求",
+                "First issue": "第一次提问",
+                "Opened their first issue on GitHub in": "打开了他们第一个议题",
+                "Opened their first pull request on GitHub in": "打开了他们第一个议题",
+                "Joined GitHub": "刚加入 GitHub",
+                //"Show more activity": "显示更多",
+                "Show more activity": "加载更多动态",
+                "Loading...": "加载中...",
 
-            "You don't have any projects yet.": "您还没有任何项目。",
-            "There are no projects matching your search.": "没有符合您搜索条件的项目。",
-            "Learn More": "了解更多",
+                "Seeing something unexpected? Take a look at the": "看到了一些意想不到的东西？请看一下",
+                "GitHub profile guide": "GitHub 个人资料指南",
 
+            // 仓库标签卡 ?tab=repositories >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-            // 软件包标签卡
-            "Get started with GitHub Packages": "开始使用 GitHub 软件包",
-            "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
-            "Choose a registry": "选择一个注册表",
+                // "Search repositories…": "搜索这些查库…",
+                // "Search starred repositories…": "搜索点赞的仓库…",
 
-            // 赞助标签卡
-            // [/is sponsoring/, "正在赞助"],
-            "organization or developer:": "个组织或开发者：",
-        // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            "Filters": "过滤",
-                // 过滤下拉菜单
-                "Find repositories…": "搜索仓库…",
-                "Recently starred": "最近关注的",
-                "Recently active": "最近活动的",
-                "Most stars": "最多赞的",
-                "Languages": "语言",
+                // 搜索, 筛选 & 排序工具栏
+                "Find a repository…": "搜索仓库…",
+                "Type": "类型",
+                    // 下拉菜单
+                    "Select type": "选择类型",
+                    "All": "全部",
+                    "Public": "公共",
+                    "Private": "私有",
+                    "Sources": "源码",
+                    "Forks": "复刻",
+                    "Archived": "存档",
+                    "Mirrors": "镜像",
+                "Language": "语言",
+                    // 下拉菜单
+                    "Select language": "选择语言",
+                    "All languages": "所有语言",
+                "Sort": "排序",
+                    // 下拉菜单
+                    "Select order": "选择排序",
+                    "Last updated": "最近更新",
+                    // "Name": "仓库名",
+                    // "Recently starred": "最近关注的",
+                    // "Recently active": "最近活动的",
+                    // "Most stars": "最多赞的",
+                    // "Unstar": "取消点赞",
+                "New": "新建",
 
-            //筛选结果
-            // "Clear filter": "清除筛选",
+                // 筛选结果
+                "results for": "结果在",
+                "public": "公共",
+                "private": "私有",
+                "source": "源码",
+                "forked": "复刻",
+                "archived": "存档",
+                "mirror": "镜像",
+                "repositories matching": "仓库的匹配",
+                "results for repositories matching": "结果在匹配的仓库",
+                // "repositories sorted by": "仓库，排序按",
+                "written in": "使用语言",
+                "results for repositories written in": "",
+                "sorted by": "，排序按",
+                "last updated": "最近更新",
+                "name": "仓库名",
+                "stars": "星标",
 
-        //>>>>>>>>>>>>>>>>>> 组织页面 <<<<<<<<<<<<<<<<<<<<<
-            // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
+                "Clear filter": "清除筛选",
 
-            "People": "成员",
-            "Teams": "团队",
+                // [/\(w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
 
-            // 右侧栏
-                // "People": "成员",
-                    "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
-                    "Invite someone": "邀请他人",
-                        // 邀请对话框
-                        // [/Invite a member to/, "邀请成员加入"],
-                        "Search by username, full name, or email address": "搜索用户名, 全名, 邮箱地址：",
-                        "Invite": "邀请",
-                        "Invite a billing manager": "邀请一位计费经理",
-                "Top languages": "热门语言",
-                    "Loading…": "载入中…",
-                "Most used topics": "最常用的话题",
-                "Developer Program Member": "开发者计划成员",
+                // 项目 状态词
+                "Updated": "更新于",
+                "Forked from": "复刻自",
 
-            "This organization has no repositories.": "该组织暂无仓库。",
-            "Create a new repository": "创建新仓库",
-            "View all repositories": "查看所有仓库",
+            // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Sort by": "排序方式",
+                    // 排序下拉菜单
+                    "Newest": "最新",
+                    "Oldest": "最早",
+                    "Recently updated": "近期更新内容",
+                    "Least recently updated": "最近最少更新",
+                // 清楚筛选
+                "Clear current search query and sorts": "清除当前的搜索查询和分类",
 
-            // 设置置顶
-            "Select up to six public repositories you’d like to show.": "最多选择 6 个您要显示的公共仓库。",
-            "No repositories or gists found.": "没有发现仓库或 Gists。",
+                "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
+                "Kanban-style project board": "看板式项目板",
 
+                "You don't have any projects yet.": "您还没有任何项目。",
+                "There are no projects matching your search.": "没有符合您搜索条件的项目。",
+                "Learn More": "了解更多",
 
-        // 成员标签页 https://github.com/orgs/maboloshi-inuyasha/people
-            "Organization permissions": "组织权限",
-            "Members": "成员",
-            "Outside collaborators": "外部合作者",
-            "Pending collaborators": "待定合作者",
-            "Pending invitations": "待定邀请",
-            "Failed invitations": "失败的邀请",
+                "No description": "无描述",
+                "Close": "关闭",
+                "Closed": "已关闭",
+                "Reopen": "重新打开",
 
-            "Find a member…": "搜索成员…",
+                // 顶部提醒
+                "Project closed.": "项目已关闭。",
+                "Project reopened.": "项目已重新打开。",
 
-            "Export": "导出",
-            "Invite member": "邀请成员",
+            // 软件包标签卡 ?tab=packages >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Get started with GitHub Packages": "开始使用 GitHub 软件包",
+                "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
+                "Choose a registry": "选择一个注册表",
 
-            "Filter by two-factor authentication": "按双因素身份验证筛选",
-            "Everyone": "所有人",
-            "Enabled": "禁用",
-            "Disabled": "启用",
+            // 赞助标签卡 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                // [/is sponsoring/, "正在赞助"],
+                "organization or developer:": "个组织或开发者：",
 
-            "Role": "角色",
-            "Filter by role": "筛选角色",
-            "Owners": "所有者",
+            // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Filters": "过滤",
+                    // 过滤下拉菜单
+                    "Find repositories…": "搜索仓库…",
+                    "Recently starred": "最近关注的",
+                    "Recently active": "最近活动的",
+                    "Most stars": "最多赞的",
+                    "Languages": "语言",
 
-            "Organization visibility": "组织可见性",
-            "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
-            "Your membership is only visible to other members of this organization.": "您的成员资格只对本组织的其他成员可见。",
+                //筛选结果
+                // "Clear filter": "清除筛选",
 
-            "Owner": "所有者",
-            "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
-            // [/0 teams/, ""],
+            //>>>>>>>>>>>>>>>>>> 组织主页 <<<<<<<<<<<<<<<<<<<<<
+                // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
 
-            "Manage": "管理",
-            "Convert to outside collaborator": "转为外部合作者",
-            "Remove from organization": "从组织移除",
+                "People": "成员",
+                "Teams": "团队",
 
-            "This organization has no public members.": "该组织没有公开的成员。",
+                // 右侧栏
+                    // "People": "成员",
+                        "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
+                        "Invite someone": "邀请他人",
+                            // 邀请对话框
+                            // [/Invite a member to/, "邀请成员加入"],
+                            "Search by username, full name, or email address": "搜索用户名, 全名, 邮箱地址：",
+                            "Invite": "邀请",
+                            "Invite a billing manager": "邀请一位计费经理",
+                    "Top languages": "热门语言",
+                        "Loading…": "载入中…",
+                    "Most used topics": "最常用的话题",
+                    "Developer Program Member": "开发者计划成员",
 
-            // 项目标签页 https://github.com/orgs/exions/projects
-            "There aren't any public projects yet": "该组织没有公共项目。",
+                "This organization has no repositories.": "该组织暂无仓库。",
+                "Create a new repository": "创建新仓库",
+                "View all repositories": "查看所有仓库",
+
+                // 设置置顶
+                "Select up to six public repositories you’d like to show.": "最多选择 6 个您要显示的公共仓库。",
+                "No repositories or gists found.": "没有发现仓库或 Gists。",
+                // 顶部提醒
+                "You’re not a member of any teams in this organization.": "您不是该组织中任何团队的成员。",
+            // 成员标签页 https://github.com/orgs/<orgs-name>/people
+                "Organization permissions": "组织权限",
+                "Members": "成员",
+                "Outside collaborators": "外部合作者",
+                "Pending collaborators": "待定合作者",
+                "Pending invitations": "待定邀请",
+                "Failed invitations": "失败的邀请",
+
+                "Find a member…": "搜索成员…",
+
+                "Export": "导出",
+                "Invite member": "邀请成员",
+
+                "Filter by two-factor authentication": "按双因素身份验证筛选",
+                "Everyone": "所有人",
+                "Enabled": "禁用",
+                "Disabled": "启用",
+
+                "Role": "角色",
+                "Filter by role": "筛选角色",
+                "Owners": "所有者",
+
+                "Organization visibility": "组织可见性",
+                "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
+                "Your membership is only visible to other members of this organization.": "您的成员资格只对本组织的其他成员可见。",
+
+                "Owner": "所有者",
+                "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
+                // [/0 teams/, ""],
+
+                "Manage": "管理",
+                "Convert to outside collaborator": "转为外部合作者",
+                "Remove from organization": "从组织移除",
+
+                "This organization has no public members.": "该组织没有公开的成员。",
+
+            // 项目标签页 https://github.com/orgs/<orgs-name>/projects
+                "There aren't any public projects yet": "该组织没有公共项目。",
 
             // https://github.com/orgs/maboloshi-inuyasha/teams
         },
@@ -849,6 +859,7 @@ I18N.zh = {
             "SSH and GPG keys": "SSH 与 GPG 公钥",
             // "Repository": "仓库"
             "Packages": "软件包",
+            "Pages": "GitHub Pages",
             "Organizations": "组织",
             "Saved replies": "快捷回复",
             "Applications": "应用",
@@ -1361,6 +1372,12 @@ I18N.zh = {
                 "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
                 "Search deleted packages": "搜索已删除的软件包",
 
+            // GitHub Pages https://github.com/settings/pages
+                "Verified domains": "经过验证的域名",
+                "Add a domain": "添加域名",
+                "There are no verified domains.": "暂无经过验证的域名",
+                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
+
             // Organizations 组织 https://github.com/settings/organizations
                 "You are not a member of any organizations.": "您暂无任何组织。",
 
@@ -1443,7 +1460,7 @@ I18N.zh = {
                 "Search for a repository": "搜索仓库",
 
                 "Danger zone": "危险区",
-                "Suspend your installation": "暂停安装",
+                "Suspend your installation": "暂停使用",
                 "This will block the app access to your resources.": "这将阻止应用访问您的资源。",
                 "Suspend": "暂停",
                 "This will remove the app and revoke access to all resources.": "这将删除应用并撤销对所有资源的访问权限。",
@@ -1733,7 +1750,7 @@ I18N.zh = {
                 "Dependabot alerts": "Dependabot 警报",
                 "Retrieve Dependabot alerts.": "检索 Dependabot 警报。",
                 "Workflows": "工作流程",
-                "Update GitHub Action workflow files.": "更新 GitHub Action 工作流程文件。",
+                "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
                 "Organization permissions": "组织权限",
                 "Members": "成员",
                 "Organization members and teams.": "组织成员和团队。",
@@ -1818,6 +1835,7 @@ I18N.zh = {
                 "Revoke all": "全部撤销",
                 "Tokens you have generated that can be used to access the": "生成令牌用于访问",
                 "Expires": "有效期至",
+                "Expired": "有效期至",
                 "This token has no expiration date": "此令牌未设置有效期",
                 "Regenerate": "重新生成",
                 "this token to take advantage of the": "此令牌使用",
@@ -1867,7 +1885,7 @@ I18N.zh = {
                 "Access public repositories": "访问公共仓库",
                 "Access repository invitations": "访问仓库邀请",
                 "Read and write security events": "读写安全事件",
-                "Update GitHub Action workflows": "更新 GitHub 操作工作流程",
+                "Update GitHub Action workflows": "更新 GitHub Actions 工作流程",
                 "Upload packages to GitHub Package Registry": "将包上传到 GitHub Packages 包注册",
                 "Download packages from GitHub Package Registry": "从 GitHub Packages 包注册表下载包",
                 "Delete packages from GitHub Package Registry": "从 GitHub Packages 包注册表中删除包",
@@ -2194,7 +2212,7 @@ I18N.zh = {
                     "See Dependabot alerts": "查看 Dependabot 警报",
 
                 // 已上架的 GitHub Action 项目
-                    "Use this GitHub Action with your project": "将此 GitHub 操作用于您的项目",
+                    "Use this GitHub Action with your project": "将此 GitHub Actions 用于您的项目",
                     "Add this Action to an existing workflow or create a new one.": "将此操作添加到现有工作流程或创建新工作流程。",
                     "View on Marketplace": "去商城查看",
 
@@ -2211,6 +2229,12 @@ I18N.zh = {
                     "Search for a tag": "搜索标签",
                     "Nothing to show": "暂无",
                     "View all tags": "查看全部标签",
+
+                // 默认分支被重命名 
+                    "The default branch has been renamed!": "默认分支已被重新命名!",
+                    "is now named": "已被重新命名为",
+                    "If you have a local clone, you can update it by running the following commands.": "如果您有一个本地克隆，您可以通过运行以下命令来更新它。",
+                    "OK, got it": "好的，我知道了！",
 
                 "branch": "分支",
                 "branches": "分支",
@@ -2960,6 +2984,10 @@ I18N.zh = {
             "Commit changes": "提交更改", //  自有仓库
             "Propose changes": "提议更改", //  他人仓库
 
+            // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
+                // 顶部提醒
+                "File successfully deleted.": "文件已成功删除。",
+
             // Upload files 上传文件页面 /<user-name>/<repo-name>/upload/<branch>
                 // 自有仓库
                     "Drag files here to add them to your repository": "拖拽文件添加到当前仓库",
@@ -3311,10 +3339,14 @@ I18N.zh = {
                     "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                     "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
                     "Rename branch": "重命名分支",
+                    "Saving…": "保存中…",
 
                     // 重命名分支对话框
                     "Rename this branch": "重命名分支",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
+
+                    // 顶部提醒
+                    // [/Branch main will be renamed to (\w+.*) shortly./,"主分支将很快重命名为 $1"], //默认主分支默认 重命名成功
 
                 "Your branches": "您的分支",
                 "You haven’t pushed any branches to this repository.": "您没有推送任何分支到该仓库。",
@@ -4195,6 +4227,9 @@ I18N.zh = {
             [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"], // 分支页面 /<user-name>/<repo-name>/branches
             [/(\d+) commits? ahead (\w+.*)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
             [/(\d+) commits? behind (\w+.*)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/Branch (\w+.*) will be renamed to (\w+.*) shortly./,"$1 分支将很快重命名为 $2"],  // 分支页面 顶部提醒 当分支重命名成功
+            [/is already the branch name./, "已经是分支的名称了。"], // 分支页面 重命名分支
+            [/Your branch name will be/, "您的分支的名称将重命名为"], // 分支页面 重命名分支
             [/Deployed to (\w+.*)/, "部署到 $1"], // 部署页面 /deployments
             [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
             [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
@@ -4552,10 +4587,13 @@ I18N.zh = {
                     // 重命名分支对话框
                     "Rename this branch": "重命名分支",
                     "to:": "为：",
+                    // [/is already the branch name./, "已经是分支的名称了。"],
+                    // [/Your branch name will be/, "您的分支的名称将重命名为"],
                     "Most projects name the default branch": "大多数项目将默认分支名为",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
                         "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
-                    // GitHub Pages所在 分支
+                    "Saving…": "保存中…",
+                    // 重命名 GitHub Pages 所在分支
                     "Renaming this branch:": "重命名分支",
                     "Will unpublish current GitHub Pages site.": "将取消发布当前的 GitHub Pages 站点。",
                         "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
@@ -4882,6 +4920,10 @@ I18N.zh = {
                 "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
                 "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
 
+                // 私有库 启用 Github Pages 提醒
+                "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Pages",
+                "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
+
             // 审查设置 (仓库)互动限制 /<user-name>/<repo-name>/settings/interaction_limits
             // 同全局
                 "Temporary interaction limits": "临时互动限制",
@@ -4930,6 +4972,8 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             [/Choose another branch to use as the default branch of (\w+.*) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
+            [/is already the branch name./, "已经是分支的名称了。"], // 重命名分支 对话框
+            [/Your branch name will be/, "您的分支的名称将重命名为"], // 重命名分支 对话框
             [/Default branch changed to (\w+)/, "默认分支已经更改为 $1"], // 顶部提醒 当默认分支更改成功
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
