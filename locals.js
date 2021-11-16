@@ -2365,6 +2365,8 @@ I18N.zh = {
                 "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可过滤的列表中。要开始，您应该",
                 "create an issue": "创建议题",
 
+                "There aren’t any open issues.": "暂无开放的议题。",
+
                 // 状态词
                 "Open": "打开",
                 "Closed": "已关闭",
@@ -2625,7 +2627,8 @@ I18N.zh = {
                     // 筛选结果
                     "There aren’t any open pull requests.": "暂无拉取请求。",
 
-            // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/ID >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<ID> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
                 // 代码
                 "Checkout with GitHub CLI": "使用 GitHub CLI 检出",
                 "Checkout with GitHub Desktop": "使用 GitHub Desktop 检出",
@@ -2758,6 +2761,10 @@ I18N.zh = {
                 "self-requested a review": "自我要求审查",
                 "left a comment": "发表评论",
 
+                // 
+                "This branch has not been deployed": "该分支尚未部署",
+                "No deployments": "未部署",
+
                 // 拉取请求状态
                 "This pull request is still a work in progress": "此拉取请求仍在进行中",
                     "Only those with": "只有对此仓库具有",
@@ -2788,10 +2795,43 @@ I18N.zh = {
                 "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
                 // [/Merging can be performed automatically with 1 approving review./, ""],
 
-                "Merge pull request": "合并拉取请求",
+
+                // [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
+                "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。",
+                "The base branch does not accept merge commits. Alternate merge methods are preferred.": "基础分支不接受合并提交。其他合并方法是首选。",
+                // [/The k1995:master branch requires linear history/, "$1 分支为要求线性历史记录"],
+                "Learn more about required linear history.": "了解更多关于要求线性历史记录。",
+
+                "Checking for ability to merge automatically…": "检测自动合并的能力…",
+                "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
+                "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
+                    "Merging can be performed automatically.": "可以自动地执行合并。",
+
+                "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。",
+                    "Rebase and merge can be performed automatically.": "可以自动执行变基和合并。",
+
                     "You’re not": "您无",
                     "authorized": "权限",
                     "to merge this pull request.": "合并此拉取请求。",
+
+                "Merge pull request": "合并拉取请求",
+                // 合并拉取请求 按钮下拉
+                    "Create a merge commit": "创建合并提交",
+                        "All commits from this branch will be added to the base branch via a merge commit.": "该分支的所有提交都将通过合并提交加入到基础分支中。",
+                    "Squash and merge": "压缩与合并",
+                        // [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
+                    "Rebase and merge": "变基与合并",
+                        // [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基并合并到基础分支中。"],
+
+                //确认合并 对话框
+                "Confirm merge": "确认合并",
+                "Merging…": "合并中…",
+
+                "You can also": "您也可以",
+                "open this in GitHub Desktop": "在 GitHub Desktop 中打开",
+                "or view": "，或通过",
+                "command line instructions": "命令行查看",
+
                 // "Merged": "已合并",
                 "View details": "查看详情",
                 "Hide details": "隐藏详情",
@@ -2821,6 +2861,18 @@ I18N.zh = {
                 "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
                 "Resolve conflicts": "解决冲突",
                 "Conflicting files": "冲突的文件:",
+
+                "Add more commits by pushing to the": "添加更多提交，通过推送到",
+                "branch on": "分支在",
+
+                // "Avoid bugs by automatically running your tests.": "通过持续集成测试来避免BUG。",
+                // "Continuous integration can help catch bugs by running your tests automatically.": "持续集成可以通过自动运行您的测试有助于捕获错误。",
+                // "Merge your code with confidence using one of our continuous integration providers.": "合并您的代码使用我们信任的持续集成供应商。",
+
+                // "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
+                // "a new search query": "新的搜索查询",
+                // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到议题最相关的您超级有帮助的。",
+
 
                 // 状态词
                 "reviewed": "审查",
@@ -3028,44 +3080,6 @@ I18N.zh = {
             // 拉取请求信息提示
             "Your recently pushed branches:": "您最近推送的分支：",
             "Compare & pull request": "比较 & 拉取请求",
-
-            // Pull Requests 页面
-            // "There aren’t any open pull requests.": "暂无拉取请求。",
-            "There aren’t any open issues.": "暂无开放的议题。",
-            "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
-            "a new search query": "新的搜索查询",
-            ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到议题最相关的您超级有帮助的。",
-
-            // "Conversation": "交谈",
-            // "Files changed": "更改的文件",
-            // "commented": "评论",
-            // "merged commit": "已合并提交",
-            // "into": "到",
-            // "from": "来自",
-
-            "Revert": "还原",
-
-            "Avoid bugs by automatically running your tests.": "通过持续集成测试来避免BUG。",
-            "Continuous integration can help catch bugs by running your tests automatically.": "持续集成可以通过自动运行您的测试有助于捕获错误。",
-            "Merge your code with confidence using one of our continuous integration providers.": "合并您的代码使用我们信任的持续集成供应商。",
-
-            "Add more commits by pushing to the": "添加更多提交，通过推送到",
-            "branch on": "分支在",
-
-            // [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
-            "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。",
-            "The base branch does not accept merge commits. Alternate merge methods are preferred.": "基础分支不接受合并提交。其他合并方法是首选。",
-            // [/The k1995:master branch requires linear history/, "$1 分支为要求线性历史记录"],
-            "Learn more about required linear history.": "了解更多关于要求线性历史记录。",
-            "Checking for ability to merge automatically…": "检测自动合并的能力…",
-            "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
-            "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
-            "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。",
-            "Merging can be performed automatically.": "可以自动地执行合并。",
-            "You can also": "您也可以",
-            "open this in GitHub Desktop": "在 GitHub Desktop 中打开",
-            "or view": "，或通过",
-            "command line instructions": "命令行查看",
 
             // 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
@@ -4162,11 +4176,15 @@ I18N.zh = {
             [/Success: Your tests passed on (\w+)/, "成功：您的测试在 $1 上通过了"], // 对勾 的提醒
             [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
             [/View all issues opened by (.+)/, "查看所有 $1 的议题"],
-            [/([\d,]+) participants?/, "$1 位参与者"], // /<user-name>/<repo-name>/pull/ID
-            [/(\w+) left review comments/, "$1 发表了审查评论"], // /<user-name>/<repo-name>/pull/ID
-            [/users with write access to (\w+.*) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求 /<user-name>/<repo-name>/pull/ID
+            // 具体拉取请求 /<user-name>/<repo-name>/pull/ID
+            [/([\d,]+) participants?/, "$1 位参与者"],
+            [/(\w+) left review comments/, "$1 发表了审查评论"],
+            [/users with write access to (\w+.*) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"],
             [/The (\w+.*) branch has been deleted./, "$1 分支已被删除。"], // 具体拉取请求 重新打开拉取请求 /<user-name>/<repo-name>/pull/ID
             [/merged (\d+) commits? into/, "已合并 $1 个提交到"],
+            [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
+
+            [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基并合并到基础分支中。"],
             [/added a commit to (\w+.*) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
             [/approved these changes/, "批准这些更改"], // 具体的拉取请求 审查人
             // [/Commits on (.+)/, "提交于 $1"],
