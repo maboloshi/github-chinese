@@ -5,6 +5,7 @@
   [![GitHub stars][stars-image]][stars-url]
   [![GitHub forks][forks-image]][forks-url]
   [![license MIT][license-image]][license-url]
+  [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
 ## 功能
 - 中文化 GitHub 菜单栏，标题，按钮等公共组件
@@ -13,7 +14,9 @@
 
 ## 安装
 1. 请先安装用户脚本管理器如: [Tampermonkey][Tampermonkey], [violentmonkey][violentmonkey] 等，支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
-2. 然后再点击这个链接 [GitHub 中文化插件][main.user.js] 安装脚本即可。
+2. 然后再点击链接之一，安装脚本即可。
+  -  [GitHub 中文化插件 - github 托管][main.user.js] 
+  -  [GitHub 中文化插件 - greasyfork 托管][main(greasyfork).user.js] 
 3. 刷新下页面，即可发现网站已中文化。
 
 > 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
@@ -67,7 +70,8 @@
 [Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
 [violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 
-[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件"
+[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件 - GitHub 托管"
+[main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 [png-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/1.png
 [png-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/2.png
@@ -78,13 +82,16 @@
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp "github-chinese"
 
 [issues-url]: https://github.com/maboloshi/github-chinese/issues
-[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github
+[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github&label=Issue
 
 [stars-url]: https://github.com/maboloshi/github-chinese/stargazers
-[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github
+[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github&label=Star
 
 [forks-url]: https://github.com/maboloshi/github-chinese/network
-[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github
+[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github&label=Fork
 
 [license-url]: https://opensource.org/licenses/MIT
-[license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github
+[license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
+
+[greasyFork-url]: https://greasyfork.org/scripts/435208
+[greasyFork-image]: https://img.shields.io/badge/dynamic/json?style=flat-square&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
