@@ -3,7 +3,7 @@
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
-// @icon         https://assets-cdn.github.com/pinned-octocat.svg
+// @icon         https://github.githubassets.com/pinned-octocat.svg
 // @version      1.7.1
 // @author       沙漠之子
 // @license      MIT
@@ -63,10 +63,10 @@
                 }
             }
         }).observe(document.body, {
-          subtree: true,
-          characterData: true,
-          childList: true,
-          attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
+            subtree: true,
+            characterData: true,
+            childList: true,
+            attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
         });
 
         new m(function(mutations) {
