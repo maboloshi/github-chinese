@@ -51,8 +51,9 @@ I18N.conf = {
      * 文件搜索模式 js-tree-finder-virtual-filter
      * 仓库文件列表 js-navigation-open Link--primary
      * 洞察-->复刻-->仓库列表 network 或 repo
+     * 快捷键 按键 js-modifier-key
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-source-js|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network|js-modifier-key)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -69,8 +70,9 @@ I18N.conf = {
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(code|link|img|table|marked-text)/i,
+    reIgnoreTag: /(code|link|img|marked-text|^em$)/i, 
     // 文件搜索模式 文件列表条目 marked-text
+    // ^em$ --> 避免勿过滤 theme-picker, command-palette-item
 };
 
 I18N.zh = {
