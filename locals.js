@@ -31,10 +31,10 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps|account\/organizations\/new)/,
+    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects)/,
 
     // 仓库路径
-    rePagePathRepo: /\/(settings)/,
+    rePagePathRepo: /\/(settings|projects|search)/,
 
     // 组织路径
     rePagePathOrg: /\/(settings|billing_managers\/new)/,
@@ -761,6 +761,9 @@ I18N.zh = {
                 "Forked from": "复刻自",
 
             // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Welcome to the all-new projects": "欢迎访问全新的项目",
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给你一个实时的画布来对议题和拉动请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合你的需要。",
+
                 "Sort by": "排序方式",
                     // 排序下拉菜单
                     "Newest": "最新",
@@ -2123,46 +2126,6 @@ I18N.zh = {
         ],
     },
 
-    "new/project": { // 新建项目
-        "static": { // 静态翻译
-            "Create a new project": "创建新项目",
-            "Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.": "在这里协调、跟踪和更新您的工作，使项目保持透明，并按计划进行。",
-            "Project board name": "项目板名称",
-            "Description": "描述",
-            "(optional)": "(可选)",
-            "Project template": "项目模板",
-            "Save yourself time with a pre-configured project board template.": "使用预先配置的项目板模板可为您节省时间。",
-            "Template:": "模板：",
-                "Templates": "模板",
-                "None": "无",
-                    "Start from scratch with a completely blank project board. You can add columns and configure automation settings yourself.": "从一个完全空白的项目板开始。您可以自己添加栏目并配置自动化设置。",
-                "Basic kanban": "基础看板",
-                    "Basic kanban-style board with columns for To do, In progress and Done.": "基础风格看板，带有待办、进行中和已完成等栏目。",
-                "Automated kanban": "自动化看板",
-                    "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "带有内置触发器的风格看板，可以自动将议题和拉取请求移到待办、进行中和已完成栏目中。",
-                "Automated kanban with reviews": "带审查的自动看板",
-                    "Everything included in the Automated kanban template with additional triggers for pull request reviews.": "除了包含自动化看板模板中的所有内容，还有拉取请求审查的额外触发器。",
-                "Bug triage": "BUG 分类",
-                    "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待办事项、高优先级、低优先级和已关闭的栏目对错误进行分类和优先级排序。",
-            "Visibility": "可见性",
-                "Public": "公共",
-                    "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
-                "Private": "私有",
-                    "You choose who can see and make changes to this project.": "您可以选择谁可以查看此项目并对其进行更改。",
-            "Linked repositories": "关联仓库",
-                "Search": "搜索",
-                "to link repositories to this project for more accurate suggestions and better search results.": "将仓库关联到此项目，以获得更准确的建议和更好的搜索结果。",
-                "Search by repository name": "搜索仓库名",
-                "You've reached the limit of 25 linked repositories.": "您已经达到了 25 个关联仓库的上限。",
-                "Linked repositories:": "关联仓库",
-                "None yet!": "啥也木有！",
-            "Create project": "创建项目",
-
-        },
-        "regexp": [ // 正则翻译
-        ],
-    },
-
     "page-create-org": { // 新建组织
         "static": { // 静态翻译
         },
@@ -2600,7 +2563,6 @@ I18N.zh = {
                 "outdated": "陈旧的",
                 "Draft": "草案",
 
-
             // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
                 "Get started": "开始",
                 "Don’t see your issue here?": "在这里没有看到您的议题？",
@@ -2608,7 +2570,7 @@ I18N.zh = {
                 "Edit templates": "编辑模板",
 
             // 新建空白议题  /<user-name>/<repo-name>/issues/new
-            "Title": "标题",
+                "Title": "标题",
 
             // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=857
                 "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
@@ -2661,8 +2623,8 @@ I18N.zh = {
                 "deleted the": "删除了",
                 "locked and limited conversation to collaborators": "锁定并限制与合作者的讨论",
                 "removed their assignment": "取消了他们的任务",
-                "assigned": "分配的",
-                "and unassigned": "和未分配的",
+                "assigned": "分配给了",
+                "and unassigned": "和取消了分配给",
                 "marked this pull request as draft": "将此拉取请求标记为草案",
                 "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
 
@@ -2856,6 +2818,7 @@ I18N.zh = {
                 "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
                 "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
                 "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
+                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
                 "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
                 "You’re ignoring this repository.": "您忽略了这个仓库。",
                 "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
@@ -3064,7 +3027,10 @@ I18N.zh = {
                 "File filter": "文件筛选",
                     "Filter by extension": "筛选文件后缀名",
                         "No extension": "无后缀名",
-                        // [/All (\d+) file types? selected/, "所有 $1 中文件类型被选中"],
+                        // [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"],
+                        // [/Select all 1 file types?/, "选择所有 $1 种文件类型"],
+                        "Only manifest files": "仅清单文件",
+                    "There are no files selected for viewing": "没有选择要查看的文件",
                     "Viewed files": "查看过的文件",
                     // "filter file types": "过滤文件类型",
                     // "filter viewed files": "过滤已查看文件",
@@ -3117,6 +3083,7 @@ I18N.zh = {
                 "Load diff": "载入差异",
                 "This file was deleted.": "该文件已被删除",
                 "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
+                "Some generated files are not rendered by default.": "某些生成的文件默认不呈现。",
 
             // /<user-name>/<repo-name>/pull/<ID>/commits/<full SHA>
                 // 上一页
@@ -3171,36 +3138,36 @@ I18N.zh = {
                     "Learn more about pull requests.": "了解更多关于拉取请求的信息。",
 
             // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
-            // 与用户名同名仓库
-            "is a special repository: its": "是一个特殊的仓库：它的",
-            "will appear on your profile!": "将出现在您的个人资料中！",
-            // "New": "新",
-            "is now a special repository: its": "现在是一个特殊的仓库：它的",
+                // 与用户名同名仓库 编辑 README
+                    "is a special repository: its": "是一个特殊的仓库：它的",
+                    "will appear on your profile!": "将出现在您的个人资料中！",
+                    // "New": "新",
+                    "is now a special repository: its": "现在是一个特殊的仓库：它的",
 
-            // 仅对于 .gitignore 文件
-            "Want to use a": "想使用",
-            "template?": "模板吗？",
-            "Filter ignores…": "过滤忽略…",
-            "Choose .gitignore:": "选择 .gitignore：",
-            "none": "无",
+                // 编辑 .gitignore 文件
+                    "Want to use a": "想使用",
+                    "template?": "模板吗？",
+                    "Filter ignores…": "过滤忽略…",
+                    "Choose .gitignore:": "选择 .gitignore：",
+                    "none": "无",
 
-            // 针对 工作流程文件
-            "Start commit": "开始提交",
-            "Space": "空格",
-            "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
-            "Documentation": "文档",
+                // 编辑 工作流程文件 .github/workflows/xxxx.yml
+                    "Start commit": "开始提交",
+                    "Space": "空格",
+                    "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
+                    "Documentation": "文档",
 
-            // 快捷键
-            "Code editor": "代码编辑器",
-            // "Preview changes": "预览更改",
-            "Toggle line comment": "切换行评论",
+                // 快捷键
+                "Code editor": "代码编辑器",
+                // "Preview changes": "预览更改",
+                "Toggle line comment": "切换行评论",
 
-            // "Edit file": "编辑文件",
-            // "Preview": "预览",
-            "Show diff": "显示差异",
+                // "Edit file": "编辑文件",
+                // "Preview": "预览",
+                "Show diff": "显示差异",
 
-            "Commit changes": "提交更改", //  自有仓库
-            "Propose changes": "提议更改", //  他人仓库
+                "Commit changes": "提交更改", //  自有仓库
+                "Propose changes": "提议更改", //  他人仓库
 
             // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
                 // 顶部提醒
@@ -3233,7 +3200,6 @@ I18N.zh = {
                     "Uploads are disabled.": "上传功能已禁用。",
                     "File uploads require push access to this repository.": "文件上传需要推送访问此仓库。",
 
-
             // Find file 页面 /<user-name>/<repo-name>/find/<branch>
                 "You’ve activated the": "您已激活",
                 "file finder": "文件搜索模式",
@@ -3246,50 +3212,6 @@ I18N.zh = {
             // 拉取请求信息提示
             "Your recently pushed branches:": "您最近推送的分支：",
             "Compare & pull request": "比较 & 拉取请求",
-
-            // 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
-                "Create a project": "创建一个项目",
-
-                "Organize your issues with project boards": "使用项目板组织您的议题",
-                "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存代码的同一个地方管理项目吗？在 GitHub 上设置项目板以简化和自动化您的工作流程。",
-
-                    // 排序 补充
-                    "Name": "名称",
-                "Sort tasks": "排序任务",
-                "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "将议题和拉取请求添加到您的看板中，并将它们与包含想法或任务清单的笔记卡一起进行优先排序。",
-                "Plan your project": "规划项目",
-                "Sort tasks into columns by status. You can label columns with status indicators like \"To Do\", \"In Progress\", and \"Done\".": "将任务按状态分类成列。您可以用 “待办”、“进行中” 和 “已完成” 等状态指标给各栏贴上标签。",
-                "Automate your workflow": "自动化工作流程",
-                "Set up triggering events to save time on project management—we’ll move tasks into the right columns for you.": "设置触发事件，以节省项目管理的时间——我们将为您把任务移到正确的栏目中。",
-                "Track progress": "追踪进度",
-                "Keep track of everything happening in your project and see exactly what’s changed since the last time you looked.": "追踪项目中发生的一切，并准确查看自上次查看以来发生的变化。",
-                "Share status": "共享状态",
-                "Each card has a unique URL, making it easy to share and discuss individual tasks with your team.": "每张卡片都有一个唯一的 URL，可以轻松地与您的团队共享和讨论个人任务。",
-                "Wrap up": "结束工作",
-                "After you wrap up your work, close your project board to remove it from your active projects list. On to the next project!": "结束工作后，关闭项目板，并从活动项目列表中删除。进入下一个项目！",
-
-            // 新建项目页面  /<user-name>/<repo-name>/projects/new >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                "Create a new project": "创建新项目",
-                "Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.": "在这里协调、跟踪和更新您的工作，使项目保持透明和按计划进行。",
-                "Project board name": "项目板名称",
-                // "Description": "描述",
-                "(optional)": "(可选)",
-                "Project template": "项目模板",
-                "Save yourself time with a pre-configured project board template.": "使用预先配置的项目板模板可为您节省时间。",
-                "Template:": "模板:",
-                    "Templates": "模板",
-                    "None": "无",
-                        "Start from scratch with a completely blank project board. You can add columns and configure automation settings yourself.": "从一个完全空白的项目板开始。您可以自己添加栏目并配置自动化设置。",
-                    "Basic kanban": "基础看板",
-                        "Basic kanban-style board with columns for To do, In progress and Done.": "基础风格看板，带有待处理、进行中和已完成等栏目。",
-                    "Automated kanban": "自动化看板",
-                        "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "带有内置触发器的风格看板，可以自动将议题和拉取请求移到待处理、进行中和已完成栏目中。",
-                    "Automated kanban with reviews": "带审查的自动看板",
-                        "Everything included in the Automated kanban template with additional triggers for pull request reviews.": "除了包含自动化看板模板中的所有内容，还有拉取请求审查的额外触发器。",
-                    "Bug triage": "BUG 分类",
-                        "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待处理事项、高优先级、低优先级和已关闭的栏目对错误进行分类和优先级排序。",
-                "Create project": "创建项目",
 
             // wiki 页面  /<user-name>/<repo-name>/wiki >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "Wiki 为您的仓库提供了一个更好的文档资料。",
@@ -3542,7 +3464,7 @@ I18N.zh = {
             // "Compare": "比较",
             // "Change default branch": "更改默认分支",
 
-            // Releases 页面 /<user-name>/<repo-name>/releases
+            // 发行版 页面 /<user-name>/<repo-name>/releases
                 //"Releases": "发布",
                 // 无发行版时
                 "There aren’t any releases here": "没有任何发行版",
@@ -3601,7 +3523,7 @@ I18N.zh = {
                 "Your tag was removed": "您的标签已删除",
                 "Your release was removed": "您的发行版已删除",
 
-            // 创建发行版 /releases/new >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 创建发行版 /releases/new 和 编辑发行版 /releases/edit/<tag>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 // 提醒条
                 "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
                 "Discard draft": "丢弃草案",
@@ -3683,10 +3605,6 @@ I18N.zh = {
                 "If you’re new to releasing software, we highly recommend reading about": "如果您是发布新手，我们强烈建议阅读关于",
                 "semantic versioning.": "语义化版本。",
 
-
-            // 编辑发行版 /releases/edit/<tag>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            // 同 创建发行版 /releases/new
-
             // "Add release notes": "添加发布说明",
             // "Edit release notes": "编辑发布说明",
             // "(No release notes)": "(没有发布说明)",
@@ -3710,6 +3628,9 @@ I18N.zh = {
             "Network": "网络",
             // "Members": "成员",
             "Forks": "复刻",
+
+            // 私有库禁用部分功能的提醒
+            "Upgrade to GitHub Pro or make this repository public to enable this feature.": "升级到 GitHub Pro 或将此仓库设为公开以启用此功能。",
 
             // 贡献者 /<user-name>/<repo-name>/graphs/contributors
             "Contributions to master, excluding merge commits and bot accounts": "对主分支的贡献，不包括合并提交和机器人帐户",
@@ -3832,6 +3753,8 @@ I18N.zh = {
 
             // 具体某条Dependabot 警报
             "Create Dependabot security update": "创建 Dependabot 警报更新",
+                // 顶部提醒
+                // [/Started generating a security update for (\w+.*)./, "开始为 $1 生成安全更新。"],
             "Dismiss": "驳回",
             // 下拉菜单 补充
             "This alert is inaccurate or incorrect": "此警报不准确或不正确",
@@ -4264,7 +4187,8 @@ I18N.zh = {
                 // "Re-run jobs": "重新运行作业",
 
                 "This workflow has no runs yet.": "此工作流程尚未运行。",
-            // /<user-name>/<repo-name>/actions/runs/1377924356
+
+            // /<user-name>/<repo-name>/actions/runs/<id>
                 // 快捷键
                 "Go to workflow file": "跳转到工作流程文件",
                 "Toggle timestamps in logs": "切换日志中的时间戳",
@@ -4297,11 +4221,11 @@ I18N.zh = {
                 "Billable time": "计费时间",
                 "Artifacts": "附件",
 
-            // /<user-name>/<repo-name>/actions/runs/1377924356/workflow
+            // /<user-name>/<repo-name>/actions/runs/<id>/workflow
                 "Workflow file": "工作流程文件",
                 "Workflow file for this run": "本次运行的工作流程文件",
 
-            // /<user-name>/<repo-name>/runs/3989101564?check_suite_focus=true
+            // /<user-name>/<repo-name>/runs/<id>?check_suite_focus=true
                 "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
 
                 "Search logs": "搜索日志",
@@ -4339,6 +4263,22 @@ I18N.zh = {
                 "Deployments": "部署",
                 "/ History": "/ 历史",
 
+            // /<user-name>/<repo-name>/pkgs/container/<pag name>
+                "Install from the command line:": "从命令行安装：",
+                "Recent tagged image versions": "最近被标记的镜像版本",
+                "latest": "最新",
+                // [/Published (\d.*) · Digest/, "发布于 $1 · 摘要"],
+                "Number of downloads for the version": "该版本的下载量",
+                "View all tagged versions": "查看所有被标记的版本",
+                "Last published": "最新发布",
+                "Total downloads": "总下载量",
+                "Open an issue": "打开一个议题",
+
+            // /<user-name>/<repo-name>/pkgs/container/<pag name>/versions
+                "All Versions": "所有版本",
+                // [/(\d+) tagged/, "$1 个标记"],
+                // [/(\d+) untagged/, "$1 个未标记"],
+
         },
         "regexp": [ // 正则翻译
             [/had recent pushes less than/, "分支有了最近的推送，不到"], //仓库首页 最近有了新提交提醒
@@ -4353,6 +4293,7 @@ I18N.zh = {
             [/This user has previously committed to the (\w+.*) repository./, "该用户之前已提交给 $1 仓库。"],
             // 所有者
             [/This user is the owner of the (\w+.*) repository./, "该用户是 $1 仓库的所有者。"],
+            [/You are the owner of the (\w+.*) repository./, "您是 $1 仓库的所有者。"],
             [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
             [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
             [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
@@ -4429,7 +4370,8 @@ I18N.zh = {
             [/(\d+) successful checks?/, "$1 次成功检查"],
             [/(\d+) checks? passed/, "$1 次检查通过"],
             [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
-            [/All (\d+) file types? selected/, "所有 $1 中文件类型被选中"],
+            [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"],
+            [/Select all (\d+) file types?/, "选择所有 $1 种文件类型"],
             [/Unresolved conversations/, "未解决的讨论"],
             [/Reresolved conversations/, "已解决的讨论"],
             [/(\d+) of (\d+) files?/, "$1 / $2 个文件"],
@@ -4460,6 +4402,10 @@ I18N.zh = {
             [/Deployed to (\w+.*)/, "部署到 $1"], // 部署页面 /deployments
             [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
             [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
+            [/Started generating a security update for (\w+.*)./, "开始为 $1 生成安全更新。"], // 创建 Dependabot 警报更新
+            [/Published (\d.*) · Digest/, "发布于 $1 · 摘要"], // 仓库-->包
+            [/(\d+) tagged/, "$1 个标记"], // 仓库-->包-->所有版本
+            [/(\d+) untagged/, "$1 个未标记"], // 仓库-->包-->所有版本
         ],
     },
 
@@ -4811,10 +4757,13 @@ I18N.zh = {
                     "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
                 "Dependabot alerts": "Dependabot 警报",
                     "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
+                    "Enable Dependabot alerts": "启用 Dependabot 警报",
+                        "Dependabot alerts need the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。",
                 "Dependabot security updates": "Dependabot 安全更新",
                     "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
                     "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                         "Dependabot security updates need Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+                        "Dependabot security updates need the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和  Dependabot 警报，因此我们也将启用它。",
                 // "Code scanning": "代码扫描",
                     "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
                     "Set up": "设置",
@@ -5740,8 +5689,13 @@ I18N.zh = {
                 "For more information, visit our": "有关更多信息，请访问我们的",
                 "search help section": "搜索帮助章节",
                 "Basic search": "基本搜索",
-                "This search": "该搜索",
+                "This search": "关键规则",
                 "Finds repositories with…": "查找仓库...",
+                "Repository search": "仓库搜索",
+                "Code search": "代码搜索",
+                "Issue search": "议题搜索",
+                "User search": "用户搜索",
+                "": "",
 
             // 搜索结果页面 https://github.com/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
                 // 左侧菜单
@@ -5762,52 +5716,85 @@ I18N.zh = {
                 "Cheat sheet": "搜索技巧",
 
                 "Sort:": "排序：",
-                // 筛选下拉
-                "Sort options": "排序选项",
-                "Best match": "最佳匹配",
-                "Most stars": "最多星标",
-                "Fewest stars": "最少星标",
-                "Most forks": "最多复刻",
-                "Fewest forks": "最少复刻",
-                "Recently updated": "最近更新",
-                "Least recently updated": "最早更新",
-                // 代码
-                "Recently indexed": "最近索引",
-                "Least recently indexed": "最早索引",
-                // 提交
-                "Recently committed": "最近提交",
-                "Least recently committed": "最早提交",
-                "Recently authored": "最近撰写",
-                "Least recently authored": "最早撰写",
-                // 议题
-                "Most commented": "最多评论",
-                "Least commented": "最少评论",
-                "Newest": "最新",
-                "Oldest": "最早",
-                // 软件包
-                "Most downloads": "最多下载",
-                "Fewest downloads": "最少下载",
-                // 用户
-                "Most followers": "最多关注者",
-                "Fewest followers": "最少关注者",
-                "Most recently joined": "最近加入",
-                "Fewest recently joined": "最早加入",
-                "Least recently joined": "最早加入",
-                "Most repositories": "最多仓库",
-                "Fewest repositories": "最少仓库",
+                    // 筛选下拉
+                    "Sort options": "排序选项",
+                    "Best match": "最佳匹配",
+                    "Most stars": "最多星标",
+                    "Fewest stars": "最少星标",
+                    "Most forks": "最多复刻",
+                    "Fewest forks": "最少复刻",
+                    "Recently updated": "最近更新",
+                    "Least recently updated": "最早更新",
+                    // 代码
+                    "Recently indexed": "最近索引",
+                    "Least recently indexed": "最早索引",
+                    // 提交
+                    "Recently committed": "最近提交",
+                    "Least recently committed": "最早提交",
+                    "Recently authored": "最近撰写",
+                    "Least recently authored": "最早撰写",
+                    // 议题
+                    "Most commented": "最多评论",
+                    "Least commented": "最少评论",
+                    "Newest": "最新",
+                    "Oldest": "最早",
+                    // 软件包
+                    "Most downloads": "最多下载",
+                    "Fewest downloads": "最少下载",
+                    // 用户
+                    "Most followers": "最多关注者",
+                    "Fewest followers": "最少关注者",
+                    "Most recently joined": "最近加入",
+                    "Fewest recently joined": "最早加入",
+                    "Least recently joined": "最早加入",
+                    "Most repositories": "最多仓库",
+                    "Fewest repositories": "最少仓库",
 
                 // 部分状态词
-                "Updated": "更新于",
-                "Last indexed": "最近索引",
-                "committed": "提交",
+                "Updated": "更新于", // &type=repositories
+                "Last indexed": "最近索引于", // &type=code
                 "committ": "提交",
-                "opened": "打开",
-                "Last updated": "最近更新",
+                "committed": "提交于", // &type=commits
+                "opened": "打开于", // &type=issues
+                "Last updated": "最近更新于", // &type=wikis
+                "posted": "发布于", // &type=discussions
+
+                // &type=repositories
+                    "See topic": "查看主题",
+
+                    "Public": "公共",
+                    "Private": "私有",
+                    "Public archive": "公共存档",
+                    "Private archive": "私有存档",
+
+                    "Sponsor": "赞助",
+                    // [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+                    // 赞助对话框
+                    "External links": "外部链接",
+                    "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                    "Report abuse": "举报滥用",
 
                 "You could try an": "您可以尝试",
                 "You could": "您可以",
                 "search all of GitHub": "搜索整个 GitHub",
                 "or try an": "或尝试",
+
+                // &type=code
+                    "Showing the top match"         : "显示前 1 个匹配",
+                    "Showing the top two matches"   : "显示前 2 个匹配",
+                    "Showing the top three matches" : "显示前 3 个匹配",
+                    "Showing the top four matches"  : "显示前 4 个匹配",
+                    "Showing the top five matches"  : "显示前 5 个匹配",
+                    "Showing the top six matches"   : "显示前 6 个匹配",
+                    "Showing the top seven matches" : "显示前 7 个匹配",
+                // &type=topics
+                    "Related:": "相关的：",
+                // &type=registrypackages
+                    "latest": "最新",
+
+            //  仓库 中 搜索结果页面 /<user-name>/<repo-name>/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
+                "or view": "或查看",
+                "all results on GitHub": "GitHub 上的所有结果",
 
             // 高级搜索 https://github.com/search/advanced >>>>>>>>>>>>>>>>>>>>>>>>
                 // 高级搜索
@@ -5868,8 +5855,18 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             // 搜索结果页
-            [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?|discussions?|users?)/, "$2 个相关结果"],
+            [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?|discussions?|users?) in/, "$2 个相关结果在"],
+            [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?$|discussions?|users?)/, "$2 个相关结果"],
+            [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)' in/, "我们没有找到任何与 '$4' 相关的结果在"],
             [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)'/, "我们没有找到任何与 '$4' 相关的结果"],
+            [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
+            [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+            [/(\d+) comments?/, "$1 条评论"], // &type=discussions
+            [/(\d+k?) downloads?/, "$1 次下载"], // &type=registrypackages
+            //[/(\d+)k downloads?/, "$1 千次下载"], // &type=registrypackages
+            [/(\d+k?) repositor(y|ies)/, "$1 个仓库"], // &type=topics
+            // [/(\d+)k repositor(y|ies)/, "$1 千个仓库"], // &type=topics
+            [/and (\d+) more/, "和其他 $1 个"], // &type=topics
         ],
     },
 
@@ -6125,21 +6122,21 @@ I18N.zh = {
                 "would like permission to:": "希望获得以下许可：",
                 "Know which resources you can access": "了解您可以访问哪些资源",
 
-            // /apps/codacy-production/installations/new/permissions?target_id=7850715
-                "All repositories": "所有仓库",
-                "This applies to all current": "这适用于所有当前",
-                "and": "和",
-                "future repositories.": "未来的仓库。",
-                "Only select repositories": "仅选定的仓库",
-                "Select repositories": "选择仓库",
-                "Search for a repository": "搜索仓库",
-                "with these permissions:": "授权以下权限：",
-                "User permissions": "用户权限",
-                "Install & Authorize": "安装 & 授权",
-                "Next: you'll be redirected to": "下一步：您将被重定向到",
+            // // /apps/codacy-production/installations/new/permissions?target_id=7850715
+            //     "All repositories": "所有仓库",
+            //     "This applies to all current": "这适用于所有当前",
+            //     "and": "和",
+            //     "future repositories.": "未来的仓库。",
+            //     "Only select repositories": "仅选定的仓库",
+            //     "Select repositories": "选择仓库",
+            //     "Search for a repository": "搜索仓库",
+            //     "with these permissions:": "授权以下权限：",
+            //     "User permissions": "用户权限",
+            //     "Install & Authorize": "安装 & 授权",
+            //     "Next: you'll be redirected to": "下一步：您将被重定向到",
 
-            // >>>>>具体的权限不打算汉化<<<<<<<
-            // >>>>>具体的权限不打算汉化<<<<<<<
+            // // >>>>>具体的权限不打算汉化<<<<<<<
+            // // >>>>>具体的权限不打算汉化<<<<<<<
         },
         "regexp": [ // 正则翻译
             // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
@@ -6172,6 +6169,8 @@ I18N.zh = {
 
     "account/organizations/new": { // 创建组织
         "static": { // 静态翻译
+            // 创建免费的组织 https://github.com/account/organizations/new?coupon=&plan=team_free
+            // 第 1 页
             "Tell us about your organization": "告诉我们您的组织",
             "Set up your organization": "设置您的组织",
             "Organization account name": "组织帐户名称",
@@ -6186,14 +6185,18 @@ I18N.zh = {
             "My personal account": "我的个人账户",
                 // [/I.e.,/, "即："],
             "A business or institution": "企业或机构",
-            "For example: GitHub, Inc., Example Institute, American Red Cross": "比如说：GitHub, Inc., Example Institute, American Red Cross",
+                "For example: GitHub, Inc., Example Institute, American Red Cross": "比如说：GitHub, Inc., Example Institute, American Red Cross",
+                "Name of business or institution this organization belongs to": "该组织所属的企业或机构的名称",
+                "This business or institution — not": "该企业或机构 — 不是",
+                "(your personal account) — will control this organization account.": "（您的个人帐户）— 将控制此组织帐户。",
             "By creating an account, you agree to the": "创建帐户即表示您同意",
             "Terms of Service": "服务条款",
             ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
             "GitHub Privacy Statement": "GitHub 隐私声明",
             ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
 
-            // https://github.com/organizations/maboloshi-inuyasha/invite
+            // https://github.com/organizations/<org-name>/invite
+            // 第 2 页 邀请成员
             "Start collaborating": "开始合作",
             // [/Welcome to/, "欢迎来到"],
             "Add organization members": "添加组织成员",
@@ -6203,8 +6206,8 @@ I18N.zh = {
             "Complete setup": "完成设置",
             "Skip this step": "跳过",
 
-            // https://github.com/orgs/maboloshi-inuyasha/invitations/bulk_create_for_new_org
-            // https://github.com/orgs/maboloshi-inuyasha/welcome_survey/new
+            // https://github.com/orgs/<org-name>/invitations/bulk_create_for_new_org
+            // https://github.com/orgs/<org-name>/welcome_survey/new
 
         },
         "regexp": [ // 正则翻译
@@ -6286,8 +6289,12 @@ I18N.zh = {
             // /apps/codacy-production
                 "GitHub App": "GitHub 应用",
                 "Read more about this app on the Marketplace": "了解更多有关商城中此应用程序的信息",
+
                 "Install": "安装",
                 "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
+                "Configure": "设置",
+                "Manage your installation settings.": "管理安装设置。",
+
                 "Developer": "开发者",
                 "Website": "网站",
                 "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
@@ -6302,6 +6309,22 @@ I18N.zh = {
                 "Links": "链接",
                 "Open issues": "打开议题",
                 "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
+
+            // /apps/codacy-production/installations/new/permissions?target_id=7850715
+                "All repositories": "所有仓库",
+                "This applies to all current": "这适用于所有当前",
+                "and": "和",
+                "future repositories.": "未来的仓库。",
+                "Only select repositories": "仅选定的仓库",
+                "Select repositories": "选择仓库",
+                "Search for a repository": "搜索仓库",
+                "with these permissions:": "授权以下权限：",
+                "User permissions": "用户权限",
+                "Install & Authorize": "安装 & 授权",
+                "Next: you'll be redirected to": "下一步：您将被重定向到",
+
+            // >>>>>具体的权限不打算汉化<<<<<<<
+            // >>>>>具体的权限不打算汉化<<<<<<<
         },
         "regexp": [ // 正则翻译
             // /marketplace/codacy
@@ -6314,7 +6337,7 @@ I18N.zh = {
         ],
     },
 
-    "orgs/settings": { // 组织 设置页面
+    "orgs/settings": { // 组织 - 设置页面
         "static": { // 静态翻译
             // 授权访问 (已经合并到组织设置)
                 "Confirm access": "授权访问",
@@ -6600,6 +6623,419 @@ I18N.zh = {
          ],
     },
 
+    "projects": { // 项目页面(含仓库项目)
+        "static": { // 静态翻译
+            // >>>>>>>>>>>>>>>>>>仓库 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                // 头部条
+                "Public": "公共",
+                "Private": "私有",
+                "Public archive": "公共存档",
+                "Private archive": "私有存档",
+
+                "forked from": "复刻自",
+
+                "Ignoring": "忽略",
+                "Stop ignoring": "取消忽略",
+                "Watch": "订阅",
+                "Unwatch": "取消订阅",
+
+                "Star": "星标",
+                "Unstar": "已加星标",
+                "Fork": "复刻",
+                "Unfork": "取消复刻",
+
+                // 赞助对话框
+                "External links": "外部链接",
+                "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                "Report abuse": "举报滥用",
+
+                // 关注 & 订阅通知设置 下拉菜单
+                "Notifications": "通知类型",
+                "Participating and @mentions": "参与和 @您",
+                "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您时接收来自此仓库的通知。",
+                "All Activity": "所有活动",
+                "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+                "Ignore": "忽略",
+                "Never be notified.": "永不接收通知。",
+                "Custom": "自定义",
+                "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您之外还要接收通知的事件。",
+                "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
+                // "Releases": "发行版",
+                // "Discussions": "讨论",
+                "Security alerts": "安全警报",
+                //"Cancel": "取消",
+                "Apply": "应用",
+
+                // 标签栏
+                "Code": "代码",
+                "Pull requests": "拉取请求",
+                "Discussions": "讨论",
+                "Actions": "操作",
+                "Projects": "项目",
+                "Security": "安全",
+                "Insights": "洞察",
+                "Settings": "设置",
+
+                // 键盘快捷键
+                    "Open in github.dev editor"  : "在 github.dev 编辑器中打开",
+                    "Focus secondary search bar" : "聚焦二级搜索栏",
+                    "Go to Code"                 : "跳转到代码",
+                    "Go to Issues"               : "跳转到议题",
+                    "Go to Pull Requests"        : "跳转到拉取请求",
+                    "Go to Actions"              : "跳转到操作",
+                    "Go to Projects"             : "跳转到项目",
+                    "Go to Wiki"                 : "跳转到 Wiki",
+                    "Go to Discussions"          : "跳转到讨论",
+
+            // 新建项目 https://github.com/new/project
+              //同 仓库 新建项目页面  /<user-name>/<repo-name>/projects/new
+                "Create a new project": "创建新项目",
+                "Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.": "在这里协调、跟踪和更新您的工作，使项目保持透明，并按计划进行。",
+                "Project board name": "项目板名称",
+                "Description": "描述",
+                "(optional)": "(可选)",
+                "Project template": "项目模板",
+                "Save yourself time with a pre-configured project board template.": "使用预先配置的项目板模板可为您节省时间。",
+                "Template:": "模板：",
+                    "Templates": "模板",
+                    "None": "无",
+                        "Start from scratch with a completely blank project board. You can add columns and configure automation settings yourself.": "从一个完全空白的项目板开始。您可以自己添加栏目并配置自动化设置。",
+                    "Basic kanban": "基础看板",
+                        "Basic kanban-style board with columns for To do, In progress and Done.": "基础风格看板，带有待办、进行中和已完成等栏目。",
+                    "Automated kanban": "自动化看板",
+                        "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "带有内置触发器的风格看板，可以自动将议题和拉取请求移到待办、进行中和已完成栏目中。",
+                    "Automated kanban with reviews": "带审查的自动看板",
+                        "Everything included in the Automated kanban template with additional triggers for pull request reviews.": "除了包含自动化看板模板中的所有内容，还有拉取请求审查的额外触发器。",
+                    "Bug triage": "BUG 分类",
+                        "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待办事项、高优先级、低优先级和已关闭的栏目对错误进行分类和优先级排序。",
+                "Visibility": "可见性",
+                    "Public": "公共",
+                        "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
+                    "Private": "私有",
+                        "You choose who can see and make changes to this project.": "您可以选择谁可以查看此项目并对其进行更改。",
+                "Linked repositories": "关联仓库",
+                    "Search": "搜索",
+                    "to link repositories to this project for more accurate suggestions and better search results.": "将仓库关联到此项目，以获得更准确的建议和更好的搜索结果。",
+                    "Search by repository name": "搜索仓库名",
+                    "You've reached the limit of 25 linked repositories.": "您已经达到了 25 个关联仓库的上限。",
+                    "Linked repositories:": "关联仓库",
+                    "None yet!": "啥也木有！",
+                "Create project": "创建项目",
+
+            // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
+                "Create a project": "创建一个项目",
+
+                "Organize your issues with project boards": "使用项目板组织您的议题",
+                "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存代码的同一个地方管理项目吗？在 GitHub 上设置项目板以简化和自动化您的工作流程。",
+
+                "Sort tasks": "排序任务",
+                "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "将议题和拉取请求添加到您的看板中，并将它们与包含想法或任务清单的笔记卡一起进行优先排序。",
+                "Plan your project": "规划项目",
+                "Sort tasks into columns by status. You can label columns with status indicators like \"To Do\", \"In Progress\", and \"Done\".": "将任务按状态分类成列。您可以用 “待办”、“进行中” 和 “已完成” 等状态指标给各栏贴上标签。",
+                "Automate your workflow": "自动化工作流程",
+                "Set up triggering events to save time on project management—we’ll move tasks into the right columns for you.": "设置触发事件，以节省项目管理的时间——我们将为您把任务移到正确的栏目中。",
+                "Track progress": "追踪进度",
+                "Keep track of everything happening in your project and see exactly what’s changed since the last time you looked.": "追踪项目中发生的一切，并准确查看自上次查看以来发生的变化。",
+                "Share status": "共享状态",
+                "Each card has a unique URL, making it easy to share and discuss individual tasks with your team.": "每张卡片都有一个唯一的 URL，可以轻松地与您的团队共享和讨论个人任务。",
+                "Wrap up": "结束工作",
+                "After you wrap up your work, close your project board to remove it from your active projects list. On to the next project!": "结束工作后，关闭项目板，并从活动项目列表中删除。进入下一个项目！",
+
+                "Try the": "尝试",
+                "new projects today.": "新版项目。",
+                "Repository access coming soon ✨": "仓库访问即将推出✨",
+
+                "Sort": "排序",
+                "Sort by": "排序方式",
+                    // 排序下拉菜单
+                    "Newest": "最新",
+                    "Oldest": "最早",
+                    "Recently updated": "近期更新内容",
+                    "Least recently updated": "最近最少更新",
+                    "Name": "名称",
+                // 清除筛选
+                "Clear current search query, filters, and sorts": "清除当前的搜索查询、过滤器和排序方式",
+
+                "No description": "无描述",
+                "Close": "关闭",
+                "Closed": "已关闭",
+                "Reopen": "重新打开",
+
+                // 顶部提醒
+                "Project closed.": "项目已关闭。",
+                "Project reopened.": "项目已重新打开。",
+
+            // https://github.com/users/maboloshi/projects/<id>
+                // 键盘快捷键
+                    "Project card shortcuts": "项目卡快捷键",
+                        "Open the issue or pull request associated with the focused card in the sidebar": "聚焦卡片的侧边栏中打开相关联的议题或拉取请求",
+                    "Moving a card": "移动卡片",
+                        "Start moving the focused card": "开始移动聚焦卡片",
+                        "Cancel the move in progress": "取消正在进行的移动",
+                        "Complete the move in progress": "完成正在进行的移动",
+                        "Move card down": "向下移动卡片",
+                        "Move card to the bottom of the column": "移动到项目栏底部",
+                        "Move card up": "向上移动卡片",
+                        "Move card to the top of the column": "移动到项目栏顶部",
+                        "Move card to the bottom of the column on the left": "移动到左侧项目栏底部",
+                        "Move card to the top of the column on the left": "移动到左侧项目栏顶部",
+                        "Move card to the bottom of the leftmost column": "移动到最左侧项目栏底部",
+                        "Move card to the top of the leftmost column": "移动到最左侧项目栏顶部",
+                        "Move card to the bottom of the column on the right": "移动到右侧项目栏底部",
+                        "Move card to the top of the column on the right": "移动到右侧项目栏顶部",
+                        "Move card to the bottom of the rightmost column": "移动到最右侧项目栏底部",
+                        "Move card to the top of the rightmost column": "移动到最右侧项目栏顶部",
+                    "Moving a column": "移动栏目",
+                        "Start moving the focused column": "开始移动聚焦栏目",
+                        "Move column to the left": "将栏目移到左侧",
+                        "Move column to the leftmost position": "将栏目移到最左侧",
+                        "Move column to the right": "将栏目移到右侧",
+                        "Move column to the rightmost position": "将栏目移到最右侧",
+                // 顶部提醒
+                "Project created from Basic kanban template.": "已从基础看板模板创建项目。",
+
+                "Updated": "更新于",
+                "Filter cards": "筛选卡片",
+                    "Narrow your search": "缩小搜索范围",
+                // 工具栏
+                "Add cards": "添加卡片",
+                    "You can use the filters available in": "您可使用的筛选器在",
+                    "issue search": "议题搜索",
+                    "Loading search results…": "载入搜索结果…",
+                    "Search results": "搜索结果",
+                    "More": "更多",
+                    "Loading more...": "载入更多...",
+                "Fullscreen": "全屏",
+                "Exit fullscreen": "退出全屏",
+                "Menu": "菜单",
+                    "This project doesn’t have a description.": "该项目没有描述。",
+                    "Add description": "添加描述",
+                    "Close project": "关闭项目",
+                        "Are you sure you want to close": "您确定要关闭",
+                    "Activity": "活动",
+                    // ... 展开
+                    "Copy": "复制",
+                    "Loading activity": "载入活动",
+                    "View archive": "查看活动",
+                    "Showing all activity": "显示所有活动",
+                // 活动 状态词
+                    "added": "添加了",
+                    "created the project": "创建了项目",
+                    "updated the project": "更新了项目",
+                    "created the column": "创建了栏目",
+                    "To do.": "待办。",
+                    "Done.": "已完成。",
+                    "In progress.": "进行中。",
+                    "archived": "存档了",
+                    "restored": "恢复了",
+                    "moved": "移动了",
+                    "from": "从",
+                    "From": "从",
+
+                // 编辑对话框
+                    "Edit project": "编辑项目",
+                    "Name": "名称",
+                    "Description": "描述",
+                    "Track project progress": "跟踪项目进度",
+                        "A progress bar will be displayed to help you visualize the overall progress of your project based on your automated To Do, In Progress, and Done columns.": "将显示一个进度条，以帮助您根据您的自动化的待办、进行中和已完成栏目，直观地了解项目的总体进展。",
+                    "Save project": "保存项目",
+                    // [/Delete/, "删除"],
+                    "Once you delete a project, there is no going back. Please be certain.": "删除项目后，将无法撤回。请确认。",
+                    "Delete project": "删除项目",
+
+                // 复制项目
+                    "Copy project board": "复制项目板",
+                    "Your copy of this project includes column names and positions. Cards will not be copied.": "此项目的副本包括栏目名称和位置。卡片不会被复制。",
+                    "Owner": "所有者",
+                        "Choose an owner": "选择所有者",
+                        "Search organizations and repositories": "搜索组织和仓库",
+                        "Suggested": "建议",
+                        "Everything else": "其他一切",
+                    "Project board name": "项目板名称",
+                    "Copy project": "复制项目",
+
+                // 存档的卡片
+                    "Archived cards": "存档的卡片",
+                    "Loading archived cards…": "载入存档的卡片…",
+                    "Show all archived cards": "显示所有存档卡片",
+                    "Filter by note or issue title": "筛选注释或提议标题",
+                    "Column:": "栏目：",
+                        "All": "所有",
+                    "Restore": "恢复",
+                    "No archived cards": "无存档卡片",
+                    "You haven't archived any cards yet.": "您尚未归档任何卡片。",
+
+                "This project doesn’t have any columns or cards.": "该项目没有任何栏目或卡片。",
+
+                "Add a column": "添加栏目",
+                "Add column": "添加栏目",
+                    "Column name": "栏目名称",
+                    "Enter a column name (To Do, In Progress, Done)": "输入栏目名称（待办、进行中、已完成）",
+                    "Automation": "自动化",
+                    "Choose a preset to enable progress tracking, automation, and better context sharing across your project.": "选择一个预设，以便在您的项目中实现进度跟踪、自动化和更好的内容共享。",
+                    "Loading…": "载入中…",
+                    "Preset:": "预设：",
+                        "Select type": "选择类型",
+                        "None": "无",
+                            "This column will not be automated": "本栏目将不会自动化",
+                        "To do": "待办",
+                            "Planned but not started": "已计划但未开始",
+                            "Move issues here when…": "当…时，将议题移至此处",
+                                "Newly added": "新添加的",
+                                    "Issues will automatically move here when added to this project.": "添加到此项目时，议题将自动移至此处。",
+                                "Reopened": "重新打开",
+                                    "If a closed issue in this project reopens, it will automatically move here.": "如果此项目中已关闭的议题重新打开，它将自动移至此处。",
+                            "Move pull requests here when…": "当…时，将拉取请求移到此处",
+                                "Pull requests will automatically move here when added to this project.": "添加到此项目时，拉取请求将自动移至此处。",
+                                "If a closed pull request in this project reopens, it will automatically move here.": "如果此项目中已关闭的拉取请求重新打开，它将自动移至此处。",
+                        "In progress": "进行中",
+                            "Actively being worked on": "正在积极开展工作",
+                            "Approved by reviewer": "由审查人批准",
+                            "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉动请求达到所需的最低批准审查数量时，将自动移至此处。当另一栏启用了 “",
+                            "automation enabled.": "” 的自动化功能时推荐使用。",
+                            "Pending approval by reviewer": "由审查人待批准",
+                            "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查人请求更改或不再满足所需的最小批准审查数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
+                        "Done": "已完成",
+                            "Items are complete": "项目已完成",
+                            "Closed": "已关闭",
+                                "If an open issue in this project is closed, it will automatically move here.": "如果该项目中的一个打开的议题被关闭，它将自动转移到这里。",
+                            "Merged": "已合并",
+                                "If an open pull request in this project is merged, it will automatically move here.": "如果该项目中的一个打开的拉取请求被合并，它将自动转移到这里。",
+                            "Closed with unmerged commits": "已关闭的未合并的提交",
+                                "If an open pull request in this project is closed with unmerged commits, it will automatically move here.": "如果该项目中的一个打开的拉取请求因未合并提交而关闭，它将自动移到这里。",
+                    "Create column": "创建栏目",
+
+                "Edit column": "编辑栏目",
+                "Manage automation": "管理自动化",
+                "Archive all cards": "存档所有卡片",
+                    "Archiving cards...": "存档卡片...",
+                "Copy column link": "复制栏目链接",
+                "Delete column": "删除栏目",
+
+                // "Manage automation for To do": "管理待办的自动化",
+                // "Manage automation for In progress": "管理进行中的自动化",
+                // "Manage automation for Done": "管理已完成的自动化",
+                "Update automation": "更新自动化设置",
+
+                "Add a note to this column": "向此栏目添加注释",
+                "Enter a note": "输入注释",
+                "Add": "添加",
+
+                // "Edit To do": "编辑 “待办”",
+                // "Edit In progress": "编辑 “进行中”",
+                // "Edit Done": "编辑 “已完成”",
+                "Update column": "更新栏目",
+
+                "Cards": "卡片",
+                "Automation": "自动化",
+
+                // "Archive all cards in To do": "存档所有 “待办” 卡片",
+                // "Archive all cards in In progress": "存档所有 “进行中” 卡片",
+                // "Archive all cards in Done": "存档所有 “已完成” 卡片",
+                "Are you sure you want to archive all cards in the": "您确定要将存档所有卡片",
+                "column? You will not be able to undo this action.": "栏目？您将无法撤消此操作。",
+
+                // "Delete To do": "删除 “待办” ",
+                // "Delete In progress": "删除 “进行中” ",
+                // "Delete Done": "删除 “已完成” ",
+                "This action will remove any cards and automation preset associated with the column.": "此操作将删除与该列关联的所有卡片和自动化预设。",
+
+                "Copy card link": "复制卡片链接",
+                "Convert to issue": "转换为议题",
+                    "Convert note to issue":"转换注释为议题",
+                    "Repository":"仓库",
+                        "Choose a repository for this issue":"为这个议题选择一个仓库",
+                        "Find a repository":"查找仓库",
+                        "Title":"标题",
+                        "Body":"内容",
+                "Edit note": "编辑注释",
+                    "Note": "注释",
+                    "Save note": "保存注释",
+                "Archive": "存档",
+                "Delete note": "删除注释",
+                    "This will remove this note from the project": "这将从项目中删除该注释",
+
+            // https://github.com/users/maboloshi/projects/3?add_cards_query=is%3Aopen
+                // 顶部提醒
+                "Project created from Automated kanban template.": "已从自动化看板模板创建项目。",
+
+                "Automated as": "自动化为",
+                "Manage": "管理",
+
+                // 管理自动化 补充
+                "The": " ",
+                "column is already using this rule.": "栏目已在使用此规则。",
+
+                // 复制项目板 补充
+                "Your copy of this project includes column names, positions, and automation settings. Cards will not be copied.": "此项目的副本包括栏目名称、位置和自动化设置。卡片不会被复制。",
+                "Automation settings": "自动化设置",
+                "Copy automation settings.": "复制自动化设置。",
+                "Includes automation settings for": "包括自动化设置，关于",
+                "To do, In progress, and Done": "待办、进行中和已完成",
+
+
+                "Pull Request closed without merge": "拉取请求关闭而不合并",
+                "Pull Request merged": "合并拉取请求",
+                "Issue closed": "议题已关闭",
+                "Pull Request reopened": "拉取请求已重新打开",
+                "Issue reopened": "议题已重新打开",
+                "Pull Request pending card added": "添加了拉取请求待办卡",
+                "Issue pending card added": "添加了议题待办卡",
+
+                "automation": "自动化",
+                "to the": "到",
+                "column.": "栏目。",
+
+            // https://github.com/users/maboloshi/projects/4?add_cards_query=is%3Aopen
+                // 顶部提醒
+                "Project created from Automated kanban with reviews template.": "已从自动看板与审查模板创建项目。",
+
+            // https://github.com/users/maboloshi/projects/5?add_cards_query=is%3Aopen
+                // 顶部提醒
+                "Project created from Bug triage template.": "已从错误分类模板创建项目。",
+
+                "Needs triage": "需要分流",
+                "High priority": "高优先级",
+                "Low priority": "低优先级",
+
+            // https://github.com/users/maboloshi/projects/1/settings
+                "Collaboration settings": "协作设置",
+                    "Options": "选项",
+                        "Visibility": "可见性",
+                        "Visibility settings only impact the project itself. Project content that belongs to a repository the user does not have access to will be redacted.": "可见性设置只影响项目本身。属于用户无权访问的仓库的项目内容将被编辑。",
+                        "Public": "公开",
+                            "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
+                        "Private": "私密",
+                            "You choose who can see and make changes to this project.": "您可以选择谁查看此项目并对其进行更改。",
+                // 协作者
+                    "This project doesn’t have any collaborators yet. Use the form below to add a collaborator.": "该项目还没有任何协作者。使用下面的表格添加协作者。",
+                    "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
+
+                    "You’ll only be able to find a GitHub user by their email address if they’ve chosen to list it publicly. Otherwise, use their username instead.": "只有当 GitHub 用户选择公开电子邮箱地址时，您才能通过他们的电子邮箱地址找到他们。否则，请使用他们的用户名代替。",
+                    "Add collaborator": "Add collaborator",
+                    // [/isn’t a GitHub member/, "不是 GitHub 成员"],
+                "Linked repositories": "关联仓库",
+                    "Link a repository": "关联仓库",
+                    "Get more accurate suggestions and better search results by linking up to 25 repositories to this project.": "通过将多达 25 个仓库关联到这个项目，获得更准确的建议和更好的搜索结果。",
+                    // [/(\d+) linked repositories/, "$1 个关联仓库"],
+                    "This project doesn’t have any linked repositories yet.": "该项目暂无任何关联的仓库。",
+
+            // https://github.com/users/maboloshi/projects/2/edit
+                "(optional)": "(可选)",
+                "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
+        },
+        "regexp": [ // 正则翻译
+            [/Delete/, "删除"],
+            [/Edit/, "编辑"],
+            [/Manage automation for/, "管理自动化"],
+            [/Archive all cards in/, "存档所有"],
+            [/(\d+) linked repositories/, "$1 个关联仓库"],
+            [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
+            [/([\d,]+) Closed/, "$1 已关闭"],
+        ],
+    },
+
 };
 
 
@@ -6621,10 +7057,13 @@ I18N.zh.password_reset = I18N.zh["session-authentication"];
 
 I18N.zh.new = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
-I18N.zh["import"] = I18N.zh["page-new-repo"];
 
 I18N.zh["installations/new"] = I18N.zh["login/oauth"];
 
 I18N.zh.apps = I18N.zh.marketplace;
 I18N.zh.orgs = I18N.zh["page-profile"];
 I18N.zh["billing_managers/new"] = I18N.zh["orgs/settings"];
+
+I18N.zh["new/project"] = I18N.zh.projects;
+I18N.zh["repository/projects"] = I18N.zh.projects;
+I18N.zh["repository/search"] = I18N.zh.search;
