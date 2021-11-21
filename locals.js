@@ -437,7 +437,7 @@ I18N.zh = {
              * 更新于 2021-10-10 13:44:36
              * 星期, 月 日 年  // 个人访问令牌 有效期
              * on Tue, Nov 9 2021
-             * 
+             *
              * 2021-10-19 12:04:19 融合更多规则
              *
              * 4 Sep
@@ -480,15 +480,20 @@ I18N.zh = {
             }],
             /**
              * 相对时间格式处理
+             *
+             * 更新于 2021-11-21 16:47:14
+             * 1. 添加 前缀词
+             * 2. xxx之内的相对时间格式
+             *  in 6 minutes
              */
-            [/(an?|\d+) (second|minute|hour|day|month|year)s? ago/, function (m, d, t) {
+            [/(?:(over|about|in) |)(an?|\d+) (second|minute|hour|day|month|year)s?( ago|)/, function (m, pre, d, t) {
                 if (d[0] === 'a') {
                     d = '1';
                 } // a, an 修改为 1
 
                 var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
 
-                return d + ' ' + dt[t] + '之前';
+                return (pre === 'about' ? '大约 ' : '') + d + ' ' + dt[t] + (pre === 'in' ? '之内' : (pre === 'over' ? '多之前' : '之前'));
             }],
         ],
     },
