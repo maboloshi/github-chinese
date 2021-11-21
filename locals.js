@@ -175,8 +175,9 @@ I18N.zh = {
             "Set status": "状态设置",
             "Your profile": "我的个人资料",
             "Your repositories": "我的仓库",
-            "Your organizations": "我的组织",
             "Your codespaces": "我的代码空间",
+            "Your organizations": "我的组织",
+            "Your enterprises": "我的企业",
             "Your projects": "我的项目",
             "Your stars": "我的标星页面",
             "Your gists": "我的代码片段",
@@ -737,30 +738,35 @@ I18N.zh = {
                 "New": "新建",
 
                 // 筛选结果
-                "results for": "结果在",
-                "public": "公共",
-                "private": "私有",
-                "source": "源码",
-                "forked": "复刻",
-                "archived": "存档",
-                "mirror": "镜像",
-                "repositories matching": "仓库的匹配",
-                "results for repositories matching": "结果在匹配的仓库",
+                "result for": "个结果在",
+                "results for": "个结果在",
+                    "public": "公共",
+                    "private": "私有",
+                    "source": "源码",
+                    "forked": "复刻",
+                    "archived": "存档",
+                    "mirror": "镜像",
+                "repositories matching": "仓库中匹配了",
+                "result for repositories matching": "个结果在仓库中匹配了",
+                "results for repositories matching": "个结果在仓库中匹配了",
                 // "repositories sorted by": "仓库，排序按",
-                "written in": "使用语言",
-                "results for repositories written in": "",
+                "written in": "，使用语言",
+                // "results for repositories written in": "",
                 "sorted by": "，排序按",
-                "last updated": "最近更新",
-                "name": "仓库名",
-                "stars": "星标",
+                    "last updated": "最近更新",
+                    "name": "仓库名",
+                    "stars": "星标",
 
                 "Clear filter": "清除筛选",
 
-                // [/\(w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
+                // [/(\w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
 
                 // 项目 状态词
                 "Updated": "更新于",
                 "Forked from": "复刻自",
+
+                // 曲线图提示
+                "Past year of activity": "过去一年的活动",
 
             // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Welcome to the all-new projects": "欢迎访问全新的项目",
@@ -827,6 +833,7 @@ I18N.zh = {
                             "Search by username, full name, or email address": "搜索用户名, 全名, 邮箱地址：",
                             "Invite": "邀请",
                             "Invite a billing manager": "邀请一位计费经理",
+                        "View all": "查看全部",
                     "Top languages": "热门语言",
                         "Loading…": "载入中…",
                     "Most used topics": "最常用的话题",
@@ -880,7 +887,22 @@ I18N.zh = {
             // 项目标签页 https://github.com/orgs/<orgs-name>/projects
                 "There aren't any public projects yet": "该组织没有公共项目。",
 
-            // https://github.com/orgs/maboloshi-inuyasha/teams
+            // https://github.com/orgs/<orgs-name>/teams
+
+            // 软件包 https://github.com/orgs/<orgs-name>/packages
+                "Type:": "类型：",
+                "Search packages…": "搜索软件包…",
+                "Visibility:": "可见性：",
+                    "Select visibility": "选择可见性",
+                    "Internal": "内部",
+                "Sort by:": "排序方式：",
+                    "Select sort view": "选择排序视图",
+                    "Most downloads": "下载量最多",
+                    "Least downloads": "下载量最少",
+                "Clear current search query, filters, and sorts": "清除当前的搜索查询、过滤器和排序方式",
+                "Published": "发布于",
+                "in": "在",
+
         },
         "regexp": [ // 正则翻译
             [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
@@ -918,6 +940,7 @@ I18N.zh = {
             [/Contribution activity in (\w+.*)/, "在 $1 中的贡献活动"],
             [/(\w+) had no activity in (\w+.*) during this period./, "在此期间，$1 在 $2 中没有活动。"],
             [/(\w+) has no activity in (\w+.*) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
+            [/(\w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
             [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
             [/([\d,]+) Closed/, "$1 已关闭"],
             // 组织页面
@@ -925,6 +948,7 @@ I18N.zh = {
             [/doesn’t have any public projects./, "没有任何公共项目。"],
             [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
             [/Invite a member to/, "邀请成员加入"],
+            [/(\d+) packages?/, "$1 软件包"],
         ],
     },
 
@@ -2427,6 +2451,7 @@ I18N.zh = {
                 // "About": "关于"，
                 "No description, website, or topics provided.": "未提供描述、网站或主题。",
                 "Readme": "自述文件",
+                "Code of conduct": "行为准则",
 
                 // 仓库描述编辑 对话框
                 "Edit repository details": "编辑仓库简述",
@@ -2557,8 +2582,8 @@ I18N.zh = {
                 "advanced search": "高级搜索",
 
                 // 状态词
-                "was merged": "已合并",
-                "was closed": "已关闭",
+                "was merged": "合并",
+                "was closed": "关闭",
                 "Approved": "已批准",
                 "Review required": "需要审查", // 拉取请求 页面状态词
                     "Review required before merging": "合并前需要审查",
@@ -3109,6 +3134,11 @@ I18N.zh = {
                 "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
 
             // 新建文件页面 /<user-name>/<repo-name>/new/<branch>
+                // 组织仓库 编辑文件页面
+                "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
+                "created a fork of this project": "为该项目创建复刻",
+                "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建议的更改。提交更改会将其写入复刻中的新分支，这样您就可以发送拉取请求。",
+
                 "Name your file…": "文件名…",
                 "in": "在",
                 "Cancel changes": "取消更改",
@@ -3372,6 +3402,13 @@ I18N.zh = {
             "GitHub commits guide": "GitHub 提交指南",
 
             // 具体某个提交页面 /<user-name>/<repo-name>/commit/<full SHA>
+                // 快捷键
+                "Browsing commits": "浏览提交",
+                // "": "提交评论",
+                "Close form": "关闭评论",
+                "Parent commit": "父提交",
+                "Other parent commit": "其他父提交",
+
                 // 访问已删除的提交
                 "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "这个提交不属于本仓库的任何分支，可能属于仓库以外的分支。",
 
@@ -3814,14 +3851,19 @@ I18N.zh = {
                 "Display the rendered blob": "解析后视图", // md 文件
                 "Raw": "源码",
                 "Blame": "追溯",
-                "Open this file in GitHub Desktop":"在 GitHub Desktop 中打开",
-                "Copy raw contents":"复制原码内容",
-                "Edit this file":"编辑本文件",
-                "Edit the file in your fork of this project": "在您的复刻中编辑该文件", // 他人库
-                "Fork this project and edit the file": "复刻项目再编辑文件", // 他人库
+                // GitHub Desktop 图标
+                    "Open this file in GitHub Desktop":"在 GitHub Desktop 中打开",
+                    "You must be on a branch to open this file in GitHub Desktop": "您必须在分支上才能在 GitHub Desktop 中打开",
+                "Copy raw contents": "复制源码内容",
+                // 文件编辑图标
+                "Edit this file": "编辑本文件",
+                    "Edit the file in your fork of this project": "在您的复刻中编辑该文件", // 他人库
+                    "Fork this project and edit the file": "复刻项目再编辑文件", // 他人库
+                // 文件删除图标
                 "Delete this file":"删除本文件",
-                "Delete the file in your fork of this project": "在您的复刻中删除该文件", // 他人库
-                "Fork this project and delete the file": "复刻项目再删除文件", // 他人库
+                    "Delete the file in your fork of this project": "在您的复刻中删除该文件", // 他人库
+                    "Fork this project and delete the file": "复刻项目再删除文件", // 他人库
+                "You must be on a branch to make or propose changes to this file": "您必须在分支上才能对此文件进行操作或提议更改", // 历史文件
 
                 "Copy line": "复制行",
                 "Copy lines": "复制行",
@@ -4046,6 +4088,10 @@ I18N.zh = {
                 "You haven’t created any Milestones.": "您尚未创建任何里程碑。",
                 "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑为特定版本或项目创建议题和拉取请求的集合。",
 
+                // 组织 仓库 里程碑
+                "No Milestones found!": "没有发现里程碑!",
+                "If this project had milestones, we’d show you them here. Promise!": "如果该项目有里程碑，我们会在此处向您展示。",
+
                 "Create a Milestone": "创建里程碑",
 
                 // 排序补充
@@ -4266,8 +4312,9 @@ I18N.zh = {
                 "/ History": "/ 历史",
 
             // /<user-name>/<repo-name>/pkgs/container/<pag name>
+                "Installation": "安装",
                 "Install from the command line:": "从命令行安装：",
-                "Recent tagged image versions": "最近被标记的镜像版本",
+                "Recent tagged image versions": "最近被标记的映像版本",
                 "latest": "最新",
                 // [/Published (\d.*) · Digest/, "发布于 $1 · 摘要"],
                 "Number of downloads for the version": "该版本的下载量",
@@ -4317,6 +4364,8 @@ I18N.zh = {
             // 议题 & 拉取请求
             [/([\d,]+) Open/, "$1 打开"],
             [/([\d,]+) Closed/, "$1 已关闭"],
+            [/#(\d+) opened/, "#$1 打开"],
+            [/#(\d+) by/, "#$1 被"],
             [/([\d,]+) linked issues?/, "$1 个关联议题"],
             [/(\d+) tasks? done/, "$1 个任务完成"],
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
@@ -4405,9 +4454,11 @@ I18N.zh = {
             [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
             [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
             [/Started generating a security update for (\w+.*)./, "开始为 $1 生成安全更新。"], // 创建 Dependabot 警报更新
-            [/Published (\d.*) · Digest/, "发布于 $1 · 摘要"], // 仓库-->包
+            [/Published (.*) · Digest/, "发布于 $1 · 摘要"], // 仓库-->包
+            // [/Published about (\d.*) · Digest/, "发布于大约 $1 · 摘要"], // 仓库-->包
             [/(\d+) tagged/, "$1 个标记"], // 仓库-->包-->所有版本
             [/(\d+) untagged/, "$1 个未标记"], // 仓库-->包-->所有版本
+            [/Downloads for the last (\d+) days/, "过去 $1 天的下载量"],
         ],
     },
 
@@ -5092,12 +5143,13 @@ I18N.zh = {
                 "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Pages 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Pages 站点。",
                 // 启用时
                 "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
+                "folder in the": "目录在",
                 "branch.": "分支。",
                 "Branch:": "分支：",
                 "Select branch": "选择分支",
-                "None": "无",
+                    "None": "无",
                 "Select folder": "选择文件夹",
-                "/ (root)": "/ (根目录)",
+                    "/ (root)": "/ (根目录)",
 
                 "You can't disable GitHub Pages while having a": "您无法禁用 GitHub Pages，当仓库存在",
                 "branch in this repository. Read more on how to": "分支。阅读更多关如何",
@@ -6015,7 +6067,7 @@ I18N.zh = {
             "Display the rich diff": "显示富差异",
             "Empty file.": "空文件。",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
-            // [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "/$1 处添加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
+            // [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处添加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
 
             // 星标标签卡
             "Stargazers": "追星者",
@@ -6075,7 +6127,7 @@ I18N.zh = {
             [/(\d+) additions?$/, "$1 处增加"],
             [/(\d+) deletions?$/, "$1 处删除"],
             [/(\d+) changes?: (\d+) additions? & (\d+) deletions?/, " $1 处更改：$2 处增加 & $3 处删除"],
-            [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "/$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
+            [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
             [/edited by (\w+)/,"被 $1 编辑"], //评论框 被他人编辑
             [/Joined/,"加入于"], //星标标签卡
