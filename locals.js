@@ -121,6 +121,10 @@ I18N.zh = {
 
     "pubilc": { // 公共区域翻译
         "static": { // 静态翻译
+            //
+            "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
+            "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
+
             // 顶部栏 (未登录)
             "Why GitHub?": "为何选择 GitHub？",
             "Team": "团队",
@@ -767,7 +771,7 @@ I18N.zh = {
                 "repositories matching": "仓库中匹配了",
                 "result for repositories matching": "个结果在仓库中匹配了",
                 "results for repositories matching": "个结果在仓库中匹配了",
-                // "repositories sorted by": "仓库，排序按",
+                "repositories sorted by": "仓库，排序按",
                 "written in": "，使用语言",
                 // "results for repositories written in": "",
                 "sorted by": "，排序按",
@@ -945,7 +949,7 @@ I18N.zh = {
             [/Opened (\d+) other issues? in (\d+) repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个其他议题"],
             [/Reviewed (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 个仓库中审查了 $1 个拉取请求"],
             [/Answered (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中答复了 $1 个讨论"],
-            [/Started (\d+) discussion in (\d+) repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
+            [/Started (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
             [/(\d+) commits?/, "$1 次提交"],
             [/(\d+) pull requests?/, "$1 次拉取请求"],
             [/that received (\d+) comments?/  , "收到 $1 条评论"],
@@ -1154,15 +1158,15 @@ I18N.zh = {
                     "Cancel plan and delete this account": "取消计划并删除此帐户",
 
             // Appearance 外观 https://github.com/settings/appearance
-                "Theme preferences": "主题偏好",
+                "Theme preferences": "主题首选项",
                 "Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.": "选择 GitHub 在您眼中的样子。选择单一主题，或与您的系统同步并自动在白天和夜晚的主题之间切换。",
                 "Theme mode": "主题模式",
                     "Single theme": "单一主题",
                     "Sync with system": "与系统同步",
                 "GitHub will use your selected theme": "GitHub 将使用您选择的主题",
                 "GitHub theme will match your system active settings": "GitHub 主题将匹配您的系统设置",
-                "Default light": "亮 - 默认",
-                "Default dark": "暗 - 默认",
+                "Light default": "亮 - 默认",
+                "Dark default": "暗 - 默认",
                 "Dark dimmed": "昏暗",
                 "Dark high contrast": "暗 - 高对比",
                 "Dark colorblind": "暗 - 色盲友好",
@@ -1173,10 +1177,10 @@ I18N.zh = {
                 "This theme will be active when your system is set to “light mode”": "当您的系统设置为 “灯光模式” 时，该主题将被激活。",
                 "This theme will be active when your system is set to “dark mode”": "当您的系统设置为 “暗夜模式” 时，该主题将被激活。",
 
-                "Emoji skin tone preference": "表情符号肤色偏好",
+                "Emoji skin tone preference": "表情符号肤色首选项",
                 "Preferred default emoji skin tone": "默认的表情符号肤色",
 
-                "Tab size preference": "制表符偏好",
+                "Tab size preference": "制表符首选项",
                 "Choose the number of spaces a tab is equal to when rendering code": "在渲染代码时，选择一个制表符等于多少个空格",
                 "8 (Default)": "8 (默认)",
 
@@ -1191,6 +1195,9 @@ I18N.zh = {
                 "that don't use modifier keys in their activation. For example, the": "，这些快捷键在激活时不使用修改键。例如，",
                 "shortcut takes you to the notifications page and": "快捷键会带您到通知页面，并且",
                 "opens a list of contextually-relevant keyboard shortcuts.": "打开一个与上下文相关的键盘快捷键列表。",
+
+                // 顶部提醒
+                "Keyboard shortcut preference successfully saved.": "键盘快捷键首选项已成功保存。",
 
             // Account security 帐户安全 https://github.com/settings/security
                 "Change password": "更改密码",
@@ -2926,7 +2933,7 @@ I18N.zh = {
                 "Add more commits by pushing to the": "添加更多提交，通过推送到",
                 "branch on": "分支在",
 
-                // 
+                //
                 "This branch has not been deployed": "该分支尚未部署",
                 "No deployments": "未部署",
 
@@ -3487,22 +3494,35 @@ I18N.zh = {
 
                 "Updated": "更新",
 
-                    // 重命名默认分支对话框
-                    "Rename default branch": "重命名默认分支",
+                    // 重命名分支对话框
+                    "Rename default branch": "重命名默认分支", // 重命名默认分支 标题
+                    "Rename this branch": "重命名分支", // 重命名其他分支 标题
                     "Rename": "重命名",
                     "to:": "为：",
                     "Most projects name the default branch": "大多数项目将默认分支名为",
                     "Renaming this branch:": "重命名此分支：",
-                    "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
-                        "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
-                    "Will not update your members' local environments.": "不会更新您成员的本地环境。",
-                    "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
+                        // 该分支存在来自其他分支的拉取请求时
+                            "Will update": "将更新",
+                            "pull request targeting this branch.": "个针对该分支的拉取请求。",
+
+                        // 该分支存在用于其他分支的拉取请求时
+                            "Will close": "将关闭",
+                            "open pull request for this branch.": "个该分支的拉取请求。",
+
+                        // 重命名 GitHub Pages 所在分支
+                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
+                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
+
+                        "Will not update your members' local environments.": "不会更新您成员的本地环境。",
+                    "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
+                        "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
+
                     "Rename branch": "重命名分支",
                     "Saving…": "保存中…",
 
-                    // 重命名分支对话框
-                    "Rename this branch": "重命名分支",
-                    "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
+                    // 删除分支后
+                    "Restore": "还原",
+                    "Deleted just now by": "刚刚被删除",
 
                     // 顶部提醒
                     // [/Branch main will be renamed to ([^ ]+) shortly./,"主分支将很快重命名为 $1"], //默认主分支默认 重命名成功
@@ -3615,7 +3635,7 @@ I18N.zh = {
 
                 // 附加文件
                 "Attach binaries by dropping them here or selecting them.": "拖拽文件到这来或选择它们来附加文件。",
-                "Uploading your release now…": "正在上传到您的发行版...",
+                "Uploading your release now…": "正在上传到您的发行版…",
                 "An attachment with that filename already exists.": "同名附件已经存在。",
                 "Try a different file.": "请尝试不同的文件。",
                 "We don’t support that file type.  try zipping it.": "我们不支持该文件类型，请尝试压缩它。",
@@ -3673,61 +3693,198 @@ I18N.zh = {
 
 
             // 洞察页面 /<user-name>/<repo-name>/pulse >>>>>>>>>>>>>>>>>>>
-            // 左侧菜单
-            "Pulse": "统计",
-            "Contributors": "贡献者",
-            "Community": "社区",
-            "Traffic": "流量",
-            "Commits": "提交",
-            "Code frequency": "代码频率",
-            "Dependency graph": "依赖关系图",
-            // "Punch card": "时刻",
-            "Network": "网络",
-            // "Members": "成员",
-            "Forks": "复刻",
+                // 公共部分
+                // 左侧菜单
+                "Pulse": "统计",
+                "Contributors": "贡献者",
+                "Community": "社区",
+                "Traffic": "流量",
+                "Commits": "提交",
+                "Code frequency": "代码频率",
+                "Dependency graph": "依赖关系图",
+                // "Punch card": "时刻",
+                "Network": "网络",
+                // "Members": "成员",
+                "Forks": "复刻",
 
-            // 私有库禁用部分功能的提醒
-            "Upgrade to GitHub Pro or make this repository public to enable this feature.": "升级到 GitHub Pro 或将此仓库设为公开以启用此功能。",
+                // 私有库禁用部分功能的提醒
+                "Upgrade to GitHub Pro or make this repository public to enable this feature.": "升级到 GitHub Pro 或将此仓库设为公开以启用此功能。",
+
+            // 统计 /<user-name>/<repo-name>/pulse
+                "Period:": "周期：",
+                    "Filter activity": "筛选活动",
+                    "24 hours": "24 小时",
+                    "3 days": "3 天",
+                    "1 week": "1 周",
+                    "1 month": "1 个月",
+                "Active Pull Request": "活跃的拉取请求",
+                "Active Issue": "活跃的议题",
+                "Active Pull Requests": "活跃的拉取请求",
+                "Active Issues": "活跃的议题",
+                "Merged Pull Request": "合并的拉动请求",
+                "Merged Pull Requests": "合并的拉动请求",
+                "Open Pull Request": "打开的拉取请求",
+                "Open Pull Requests": "打开的拉取请求",
+                "Closed Issues": "关闭的议题",
+                "New Issue": "新议题",
+                "New Issues": "新议题",
+
+                "Excluding merges,": "不包括合并，",
+                // [/(\d+) authors?/, "$1 位作者"],
+                "have pushed": "推送了",
+                // [/to gh-pages and/, "到 $1 分支和"],
+                // [/to all branches. On gh-pages,/ "到全部分支。在 $1 分支，"],
+                // [/(\d+) files?/, "$1 个文件"],
+                "have changed and there have been": "已经发生了变化，并且有",
+                "additions": "处增加",
+                "deletions": "处删除",
+                "Pull request merged by": "",
+                "Pull requests merged by": "",
+                "Pull request opened by": "",
+                "Pull requests opened by": "",
+                "Issue closed by": "",
+                "Issues closed by": "",
+                "people": "",
+                "Sometimes conversations happen on old items that aren’t yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时会针对尚未关闭的旧项目进行讨论。以下是所有未解决的讨论的议题和拉取请求的列表。",
+                // [/• (\d+) new comments/, "• $1 个新评论"],
+
+
+                "merged": "已合并",
+                "opened": "打开",
+                "closed": "已关闭",
 
             // 贡献者 /<user-name>/<repo-name>/graphs/contributors
-            "Contributions to master, excluding merge commits and bot accounts": "对主分支的贡献，不包括合并提交和机器人帐户",
-            "Contributions:": "贡献者：",
-            // 下拉菜单
-            "Filter contributions": "筛选贡献者",
-            "Additions": "添加数量",
-            "Deletions": "删除数量",
+                "Loading contributions…": "载入贡献者…",
+                // "Contributions to master, excluding merge commits and bot accounts": "对主分支的贡献，不包括合并提交和机器人帐户",
+                "Contributions:": "贡献者：",
+                    // 下拉菜单
+                    "Filter contributions": "筛选贡献者",
+                    "Additions": "添加数量",
+                    "Deletions": "删除数量",
+                    // [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1分支，不包括合并提交和机器人帐户"],
+                "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
 
-            // 月历
-            "January"   : "1月",
-            "February"  : "2月",
-            "March"     : "3月",
-            "April"     : "4月",
-            "May"       : "5月",
-            "June"      : "6月",
-            "July"      : "7月",
-            "August"    : "8月",
-            "September" : "9月",
-            "October"   : "10月",
-            "November"  : "11月",
-            "December"  : "12月",
+            // 社区 /<user-name>/<repo-name>/community
+                "Community profile": "社区简介",
+                "Here’s how this project compares to": "以下是该项目内容，不同于",
+                "recommended community standards": "推荐的社区标准",
+                "Checklist": "检查清单",
+                "Add": "添加",
+                "Writing contributing guidelines": "编写贡献指南",
+                "License": "许可证",
+                "Issue templates": "议题模板",
+                "Pull request template": "拉取请求模板",
+                "Repository admins accept content reports": "仓库管理员接受内容报告", // 组织仓库?
+                "What is": "什么是",
+                "the community profile": "社区简介",
 
+            // 流量 /<user-name>/<repo-name>/graphs/traffic
+                "Git clones":"Git 克隆",
+                "Clones":"次克隆",
+                "Unique cloners":"独特的克隆者",
+                "Visitors":"访客",
+                "":"",
+                "":"",
+                "Referring sites":"引荐网站",
+                "Site":"站点",
+                "Views":"浏览",
+                "Unique visitors":"独特的访客",
+                "Popular content":"热门内容",
+                "Content":"内容",
+                "":"",
+                "":"",
+                // 月历
+                "January"   : "1月",
+                "February"  : "2月",
+                "March"     : "3月",
+                "April"     : "4月",
+                "May"       : "5月",
+                "June"      : "6月",
+                "July"      : "7月",
+                "August"    : "8月",
+                "September" : "9月",
+                "October"   : "10月",
+                "November"  : "11月",
+                "December"  : "12月",
 
-            // 提交 /graphs/commit-activity
-            "Sunday"    : "周日",
-            "Monday"    : "周一",
-            "Tuesday"   : "周二",
-            "Wednesday" : "周三",
-            "Thursday"  : "周四",
-            "Friday"    : "周五",
-            "Saturday"  : "周六",
+            // 提交 /<user-name>/<repo-name>/graphs/commit-activity
+                "Sunday"    : "周日",
+                "Monday"    : "周一",
+                "Tuesday"   : "周二",
+                "Wednesday" : "周三",
+                "Thursday"  : "周四",
+                "Friday"    : "周五",
+                "Saturday"  : "周六",
 
-            // 网络图 /network
-            "Network graph": "网络图",
-            "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to.": "最近提交到此仓库的时间轴及其网络图按最近推送的顺序排序。",
-            "Keyboard shortcuts available": "可用的键盘快捷键",
+            // 代码频率 /<user-name>/<repo-name>/graphs/code-frequency
+                "per week": "每周",
 
-            // 频率
-            "per week": "每周",
+            // 依赖关系图 - 依赖关系 /network/dependencies
+                "Enable the dependency graph": "启用依赖关系图",
+                "Track this repository’s dependencies and sub-dependencies": "追踪该仓库的依赖关系和子依赖关系",
+                "If you’d like to enable the": "如果您想启用",
+                "dependency graph": "依赖关系图",
+                "vulnerability alerting": "漏洞警报",
+                "click on \"Allow access\" below to enable it.": "点击下面的 “允许访问” 来启用它。",
+                "Learn more about how we use your data": "了解更多关于我们如何使用您的数据的信息",
+                "Allow access": "允许访问",
+
+                "No manifest files found": "未找到清单文件",
+                "To enable the dependency graph, your repository must define dependencies in": "要启用依赖关系图，您的仓库必须存在",
+                "one of the supported manifest file types": "一个支持的清单文件",
+                ", like": "，例如",
+
+                "Dependencies": "依赖关系",
+                "These dependencies are defined in": "这些依赖关系被定义在",
+                "’s manifest files, such as": "的清单文件，例如",
+                "Dependencies defined in": "依赖关系被定义在",
+
+                // 发现已知漏洞
+                "Dependencies defined in these manifest files have known security vulnerabilities and should be updated:": "这些清单文件中定义的依赖项具有已知的安全漏洞，应更新：",
+                // [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
+                "Known security vulnerability in": "已知的安全漏洞，在",
+                    "Known vulnerability found": "发现已知漏洞",
+                    "update suggested:": "更新建议：",
+                    "Always verify the validity and compatibility of suggestions with your codebase.": "始终验证建议与代码库的有效性和兼容性。",
+
+                // [/(\d+) more dependencies/, "更多 $1 个依赖项"],
+                // [/Load (\d+) more…/, "加载更多 $1个…"],
+
+            // 依赖关系图 - 依赖者 /network/dependents
+                "GitHub does not currently determine the dependents of private repositories": "GitHub 目前无法确定私有仓库的依赖者",
+
+                "Dependents": "依赖者",
+                "We haven’t found any dependents for this repository yet.": "我们尚未找到这个仓库的任何依赖者。",
+                "We’ll keep looking!": "我们会继续寻找！",
+
+                // [/(\d+) Repositor(y|ies)/, "$1 仓库"],
+                // [/(\d+) Packages?/, "$1 软件包"],
+
+            // 依赖关系图 - 依赖机器人 /network/updates
+                "Enable Dependabot": "启用 Dependabot",
+                "Dependabot isn't enabled": "未启用 Dependabot",
+
+                "Dependabot version updates aren't configured yet": "尚未配置 Dependabot 版本更新",
+                "Dependabot creates pull requests to keep your dependencies up-to-date.": "Dependabot 创建拉取请求以保持您的依赖项是最新的。",
+                "Create config file": "创建配置文件",
+
+            // 网络图 /<user-name>/<repo-name>/network
+                "Network graph": "网络图",
+                "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to.": "最近提交到此仓库的时间轴及其网络图按最近推送的顺序排序。",
+
+                "The repository network shows the 100 most recently pushed forks. Do you need to see more forks? Please": "仓库网络图显示最近推送的 100 个复刻。您需要看到更多的复刻吗？请",
+                "give us feedback": "给我们反馈",
+                "on your usage of this feature.": "关于您使用此功能的情况。",
+                "Keyboard shortcuts available": "可用的键盘快捷键",
+
+            // 复刻 /<user-name>/<repo-name>/network/members
+                "No one has forked this repository yet.": "目前，暂无人复刻该仓库。",
+                "Forks are a great way to contribute to a repository. After": "复刻是给该仓库做贡献的好方法。首先",
+                "forking a repository": "复刻仓库",
+                ", you can send the original author a": "，然后您可向原作者发送一个",
+                "pull request": "拉取请求",
+
+                "Woah, this network is huge! We’re showing only some of this network’s repositories.": "哇，这个网络太庞大了! 我们只展示了这个网络中的一部分仓库。",
 
             // 安全标签卡 /<user-name>/<repo-name>/security
             // 安全概述
@@ -4142,7 +4299,7 @@ I18N.zh = {
                 "Skip this and": "跳过并",
                 "set up a workflow yourself": "建立工作流程",
 
-                "Workflows made for your repository": "为您的仓库制作的工作流程",
+                "Workflows made for your repository": "为您的仓库设置工作流程",
                 "Suggested": "推荐的",
                 "Deploy your code with these popular services": "使用这些流行的服务部署您的代码",
                 "Continuous integration workflows": "持续集成工作流程",
@@ -4305,10 +4462,15 @@ I18N.zh = {
 
                 // GitHub Pages
                 "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
+                "Page Build": "页面构建",
                 "succeeded": "成功于",
                 "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
                 "Your website is ready at": "您的网站已准备就绪，网址为",
                 "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+
+                "Re-run all checks": "重新运行所有检查",
+                //顶部提醒
+                "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
             // /<user-name>/<repo-name>/deployments
                 // [/Deployed to ([^ ]+)/, "部署到 $1"],
@@ -4328,6 +4490,11 @@ I18N.zh = {
             // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
                 "Deployments": "部署",
                 "/ History": "/ 历史",
+
+            // 软件包 /<user-name>/<repo-name>/packages
+                "Get started with GitHub Packages": "开始使用 GitHub 软件包",
+                "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
+                "Choose a registry": "选择一个注册表",
 
             // /<user-name>/<repo-name>/pkgs/container/<pag name>
                 "Installation": "安装",
@@ -4453,7 +4620,7 @@ I18N.zh = {
             [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],// 讨论页面
             [/(\d+) categories?/, "$1 个分类"], // 讨论分类
             [/(\d+) answers?/, "$1 位答复者"], // 具体讨论
-            [/(\d+) comments?/, "$1 条评论"], // 具体讨论
+            [/(\d+) comments?$/, "$1 条评论"], // 具体讨论
             [/(\d+) repl(y|ies)?/, "$1 条回复"], // 具体讨论
             [/(\d+) suggested answers?/, "$1 个建议答案"], // 具体讨论
             [/Convert (\d+) issues? to (a |)discussions?/, "将 $1 个议题转换为讨论"], // 标签页面?
@@ -4477,6 +4644,21 @@ I18N.zh = {
             [/(\d+) tagged/, "$1 个标记"], // 仓库-->包-->所有版本
             [/(\d+) untagged/, "$1 个未标记"], // 仓库-->包-->所有版本
             [/Downloads for the last (\d+) days/, "过去 $1 天的下载量"],
+            // 统计页
+            [/(\d+) authors?/, "$1 位作者"],
+            [/to ([^ ]+) and/, "到 $1 分支和"],
+            [/to all branches. On ([^ ]+),/, "到全部分支。在 $1 分支，"],
+            [/(\d+) files?/, "$1 个文件"],
+            [/Contributions to ([^ ]+), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人帐户"],
+            [/(\d+) commented on/, "$1 评论于",],
+            [/• (\d+) new comments?/, "• $1 个新评论"],
+            // 依赖关系图- 依赖关系
+            [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
+            [/(\d+) more dependencies/, "更多 $1 个依赖项"],
+            [/Load (\d+) more…/, "加载更多 $1个…"],
+            // 依赖关系图- 依赖项
+            [/(\d+) Repositor(y|ies)/, "$1 仓库"],
+            [/(\d+) Packages?/, "$1 软件包"],
         ],
     },
 
@@ -4845,18 +5027,29 @@ I18N.zh = {
                 "Rename branch": "重命名分支",
                     // 重命名分支对话框
                     "Rename this branch": "重命名分支",
+                    // "Rename": "重命名",
                     "to:": "为：",
                     // [/is already the branch name./, "已经是分支的名称了。"],
                     // [/Your branch name will be/, "您的分支的名称将重命名为"],
                     "Most projects name the default branch": "大多数项目将默认分支名为",
+                    "Renaming this branch:": "重命名此分支：",
+                        // 该分支存在来自其他分支的拉取请求时
+                            "Will update": "将更新",
+                            "pull request targeting this branch.": "个针对该分支的拉取请求。",
+
+                        // 该分支存在用于其他分支的拉取请求时
+                            "Will close": "将关闭",
+                            "open pull request for this branch.": "个该分支的拉取请求。",
+
+                        // 重命名 GitHub Pages 所在分支
+                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
+                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
+
+                        "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
                         "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
                     "Saving…": "保存中…",
-                    // 重命名 GitHub Pages 所在分支
-                    "Renaming this branch:": "重命名分支",
-                    "Will unpublish current GitHub Pages site.": "将取消发布当前的 GitHub Pages 站点。",
-                        "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
-                    "Will not update your members' local environments.": "不会更新您成员的本地环境。",
+
                 "Switch to another branch": "切换到另一分支",
                     // 分支切换对话框
                     "Switch default branch to another branch": "将默认分支切换到另一分支",
@@ -4870,6 +5063,10 @@ I18N.zh = {
                     "I understand, update the default branch.": "我明白了，依然更新默认分支",
 
                 "Branch protection rules": "分支保护规则",
+                // 私有库 启用 分支保护 提醒
+                "Protected branches are available to Pro, Team, and Enterprise users": "专业版、团队版和企业版用户均可使用分支保护功能",
+                "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "对代码分支的合并方式实施限制，包括要求由选定的合作者进行审查，或者只允许特定的贡献者在特定的分支上工作。",
+
                 "Add rule": "添加规则",
                 "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。对分支保护规则感到陌生？",
                 "No branch protection rules defined yet.": "尚未定义分支保护规则。",
@@ -4913,9 +5110,14 @@ I18N.zh = {
                 "Create": "创建",
 
             // Web 钩子 页面 /<user-name>/<repo-name>/settings/hooks====================================
-                "Add webhook": "添加钩子",
+                "Add webhook": "添加 Web 钩子",
                 "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
                 "Webhooks Guide": "Web 钩子指南",
+
+                // 删除对话框
+                    "Delete webhook?": "删除 Web 钩子？",
+                    "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
+                    "Yes, delete webhook": "是的，删除 Web 钩子",
 
             // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
                 "Webhooks /": "Web 钩子 /",
@@ -4925,15 +5127,22 @@ I18N.zh = {
                 "). More information can be found in": "）。更多信息可以在",
                 "our developer documentation": "开发人员文档",
 
-                "Payload URL": "有效载荷 URL",
+                "Payload URL": "有效负载 URL",
                 "Content type": "内容类型",
-                "Secret": "机密",
+                "Secret": "密钥",
+                    "Leave blank to remove secret": "留空以删除密钥",
 
                 "SSL verification": "SSL 验证",
                 "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
                 "Enable SSL verification": "启用 SSL 验证",
                 "Disable": "禁用",
                 "(not recommended)": "（不推荐）",
+                    "Are you sure?": "您确定吗？",
+                    "Warning": "警告",
+                    ": Disabling SSL verification has serious implications.": "：禁用 SSL 验证具有严重的影响。",
+                    "SSL verification helps ensure that hook payloads are delivered to your URL endpoint securely, keeping your data away from prying eyes. Disabling this option is": "SSL 验证有助于确保钩子有效负载安全地传送到您的 URL 端点，使您的数据远离窥探。禁用此选项是",
+                    "not recommended": "不推荐的",
+                    "Disable, I understand my webhooks may not be secure": "禁用，我明白我的 web 钩子可能不安全",
 
                 "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
                     "Just the": "仅",
@@ -4942,8 +5151,113 @@ I18N.zh = {
                     "Send me": "发送给我",
                     "everything": "所有",
                     "Let me select individual events.": "让我选择单个事件。",
+                        "Branch or tag creation": "分支或标签创建",
+                        "Branch or tag created.": "分支或标签的创建",
+                        "Branch or tag deletion": "分支或标签删除",
+                        "Branch or tag deleted.": "分支或标签的删除",
+                        // "分支保护规则": "",
+                        "Branch protection rule created, deleted or edited.": "分支保护规则的创建、删除或编辑。",
+                        "Check runs": "检查运行",
+                        "Check run is created, requested, rerequested, or completed.": "检查运行的创建、请求、重新请求或完成。",
+                        "Check suites": "检查套件",
+                        "Check suite is requested, rerequested, or completed.": "检查套件的请求、重新请求或已完成。",
+                        "Code scanning alerts": "代码扫描警报",
+                        "Code Scanning alert created, fixed in branch, or closed": "代码扫描警报的创建、在分支中的修复或关闭",
+                        "Collaborator add, remove, or changed": "协作者的添加、删除或更改",
+                        "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
+                        "Commit comments": "提交评论",
+                        "Commit or diff commented on.": "提交或差异评论。",
+                        // "部署密钥": "",
+                        "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
+                        "Deployment statuses": "部署状态",
+                        "Deployment status updated from the API.": "从 API 更新的部署状态。",
+                        "Deployments": "部署",
+                        "Repository was deployed or a deployment was deleted.": "仓库的部署或删除部署。",
+                        "Discussion comments": "讨论评论",
+                        "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
+                        // "讨论": "",
+                        "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
+                        // "": "复刻",
+                        "Repository forked.": "仓库复刻。",
+                        "Issue comments": "发表评论",
+                        "Issue comment created, edited, or deleted.": "议题评论的创建、编辑或删除。",
+                        // "": "议题",
+                        "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "议题的打开、编辑、删除、转移、钉住、取消钉住、关闭、重新打开、分配、未分配、标记、未标记、密闭、去密闭、锁定或解锁。",
+                        // "": "标签",
+                        "Label created, edited or deleted.": "标签的创建、编辑或删除。",
+                        "Meta": "元数据",
+                        "This particular hook is deleted.": "这个特定的钩子被删除。",
+                        // "": "里程碑",
+                        "Milestone created, closed, opened, edited, or deleted.": "里程碑的创建、关闭、打开、编辑或删除。",
+                        // "": "软件包",
+                        "GitHub Packages published or updated in a repository.": "在仓库中 GitHub 软件包的发布或更新 。",
+                        "Page builds": "页面构建",
+                        "Pages site built.": "页面站点建成。",
+                        "Project cards": "项目卡",
+                        "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
+                        "Project columns": "项目栏目",
+                        "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
+                        // "": "项目",
+                        "Project created, updated, or deleted.": "项目的创建、更新或删除。",
+                        "Pull request review comments": "拉动请求的审查评论",
+                        "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
+                        "Pull request review threads": "拉动请求的审查线程",
+                        "A pull request review thread was resolved or unresolved.": "拉取请求审查线程的解决或未解决。",
+                        "Pull request reviews": "拉取请求审查",
+                        "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或驳回。",
+                        // "": "拉取请求",
+                        "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
+                        "Pushes": "推送",
+                        "Git push to a repository.": "Git 推送到仓库",
+                        "Registry packages": "注册软件包",
+                        "Registry package published or updated in a repository.": "注册软件包的发布或更新。",
+                        // "": "发行版",
+                        "Release created, edited, published, unpublished, or deleted.": "发行版的创建、编辑、发布、取消发布或删除。",
+                        // "": "仓库",
+                        "Repository created, deleted, archived, unarchived, publicized, privatized, edited, renamed, or transferred.": "仓库的创建、删除、存档、取消存档、公开、私有化、编辑、重命名或转移。",
+                        "Repository imports": "仓库导入",
+                        "Repository import succeeded, failed, or cancelled.": "仓库导入的成功、失败或取消。",
+                        "Repository vulnerability alerts": "仓库漏洞警报",
+                        "Dependabot alert (aka dependency vulnerability alert) created, resolved, or dismissed on a repository.": "Dependabot 警报（又名依赖漏洞警报）在仓库上的创建、解决或解除。",
+                        "Secret scanning alerts": "密钥扫描警报",
+                        "Secrets scanning alert created, resolved, or reopened": "密钥扫描警报的创建、解决或重新打开",
+                        // "": "星标",
+                        "A star is created or deleted from a repository.": "从仓库中创建或删除星标。",
+                        "Statuses": "状态",
+                        "Commit status updated from the API.": "从 API 更新的提交状态。",
+                        "Team adds": "团队添加",
+                        "Team added or modified on a repository.": "在仓库上添加或修改的团队。",
+                        "Visibility changes": "可见性变化",
+                        "Repository changes from private to public.": "仓库从私有更改为公共。",
+                        "Watches": "关注",
+                        "User stars a repository.": "用户给一个仓库加星标。",
+                        "Wiki": "",
+                        "Wiki page updated.": "Wiki 页面的更新。",
+                        "Workflow jobs": "工作流程的工作",
+                        "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
+                        "Workflow runs": "工作流程的运行",
+                        "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
                     "Active": "激活",
                     "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
+
+                // 顶部提醒
+                "Okay, that hook was successfully created. We sent a ping payload to test it out! Read more about it at https://docs.github.com/webhooks/#ping-event.": "好的，这个钩子已经成功创建。我们发送了一个 ping 负载来测试它! 阅读更多关于它的信息，请访问 https://docs.github.com/webhooks/#ping-event。",
+
+            // 管理 钩子 /<user-name>/<repo-name>/settings/hooks/<ID>
+                "Manage webhook": "管理 Web 钩子",
+                "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此密钥，则可以更改它，但请注意，使用此密钥的任何集成都需要更新。 —",
+                "Change Secret": "更改密钥",
+                "Update webhook": "更新  Web 钩子",
+                "Delete webhook": "删除  Web 钩子",
+
+            //  /<user-name>/<repo-name>/settings/hooks/<ID>/deliveries
+                "Recent Deliveries": "最近交付",
+                "Request": "请求",
+                "Response": "应答",
+                "Redeliver": "重新交付",
+
+                // [/Completed in (\d+) seconds./, "在 (\d+) 秒内完成。"],
+
 
             // 通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
                 "Setup email addresses to receive notifications when push events are triggered.": "设置电子邮箱地址，以便在推送事件被触发时收到通知。",
@@ -5250,6 +5564,7 @@ I18N.zh = {
                     "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "启用后，只有被明确授予该仓库访问权的用户才能提交 “批准” 或 “请求更改” 的拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
         },
         "regexp": [ // 正则翻译
+            [/is available\./, "可用。"],
             [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
             [/is already the branch name./, "已经是分支的名称了。"], // 重命名分支 对话框
             [/Your branch name will be/, "您的分支的名称将重命名为"], // 重命名分支 对话框
@@ -5265,6 +5580,7 @@ I18N.zh = {
             [/\(([^ ]+)\). We recommend you change this to a CNAME record pointing to/, "($1)。我们建议您将 CNAME 记录设置为指向"],
             [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
             [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/Completed in (.+) seconds./, "在 $1 秒内完成。"], // 管理 Web 钩子-->最近交付
         ],
     },
 
@@ -5338,13 +5654,13 @@ I18N.zh = {
                 "I understand, get started": "我知道了，开始吧",
                 "Two-factor authentication failed.": "双因素身份验证失败。",
 
-            // https://github.com/sessions/two-factor/recovery
+            // 双因素验证恢复 https://github.com/sessions/two-factor/recovery
                 "Two-factor recovery": "双因素验证恢复",
                 "Recovery code": "恢复码",
                 "You can enter one of your recovery codes in case you lost access to your mobile device.": "如果您无法访问移动设备，则可以输入恢复码。",
                 "Still having problems?": "还是有问题？",
 
-            // https://github.com/sessions/recovery
+            // 帐户恢复 https://github.com/sessions/recovery
                 "Account recovery": "帐户恢复",
                 "First we need to verify an email address": "首先，我们需要验证一个电子邮箱地址",
                 "by sending a one-time password to all addresses associated with this account.": "用于通过向该帐户关联的所有地址发送一次性密码。",
@@ -5403,22 +5719,22 @@ I18N.zh = {
             "Welcome to GitHub!": "欢迎来到 GitHub!",
             "Let’s begin the adventure": "让我们开始探险吧",
             "Enter your email": "输入您的邮箱地址",
+                "Email is invalid or already taken": "电子邮件无效或已被占用",
             "Continue": "继续",
-            "Email is invalid or already taken": "电子邮件无效或已被占用",
             "Create a password": "创建密码",
-            "Password is too short": "密码太短",
-            "Password needs a number and lowercase letter": "密码需要有数字和小写字母",
-            "Password is strong": "密码很强壮",
-            "Make sure it's": "请确保",
-            "at least 15 characters": "至少需要15个字符",
-            "OR": " 或者",
-            "at least 8 characters": "至少需要8个字符",
-            "including a number": "包括数字",
-            "and a lowercase letter": "和小写字母",
-            "password may be compromised": "密码可能被泄露",
-            "password is in a list of passwords commonly used on other websites": "密码在其他网站常用的密码列表中",
+                "Password is too short": "密码太短",
+                "Password needs a number and lowercase letter": "密码需要有数字和小写字母",
+                "Password is strong": "密码很强壮",
+                "Make sure it's": "请确保",
+                "at least 15 characters": "至少需要15个字符",
+                "OR": " 或者",
+                "at least 8 characters": "至少需要8个字符",
+                "including a number": "包括数字",
+                "and a lowercase letter": "和小写字母",
+                "password may be compromised": "密码可能被泄露",
+                "password is in a list of passwords commonly used on other websites": "密码在其他网站常用的密码列表中",
             "Enter a username": "输入您的用户名",
-            "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。",
+                "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。",
             "Would you like to receive product updates and announcements via email?": "您是否愿意通过电子邮件接收产品更新和公告？",
             "Type \"y\" for yes or \"n\" for no": "输入 \"y\" 表示愿意，输入 \"n\" 表示不愿意。",
             "Verify your account": "验证您的帐户",
@@ -5831,6 +6147,11 @@ I18N.zh = {
                 "Last updated": "最近更新于", // &type=wikis
                 "posted": "发布于", // &type=discussions
 
+                "You could try an": "您可以尝试",
+                "You could": "您可以",
+                "search all of GitHub": "搜索整个 GitHub",
+                "or try an": "或尝试",
+
                 // &type=repositories
                     "See topic": "查看主题",
 
@@ -5846,11 +6167,6 @@ I18N.zh = {
                     "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
                     "Report abuse": "举报滥用",
 
-                "You could try an": "您可以尝试",
-                "You could": "您可以",
-                "search all of GitHub": "搜索整个 GitHub",
-                "or try an": "或尝试",
-
                 // &type=code
                     "Showing the top match"         : "显示前 1 个匹配",
                     "Showing the top two matches"   : "显示前 2 个匹配",
@@ -5859,8 +6175,10 @@ I18N.zh = {
                     "Showing the top five matches"  : "显示前 5 个匹配",
                     "Showing the top six matches"   : "显示前 6 个匹配",
                     "Showing the top seven matches" : "显示前 7 个匹配",
+
                 // &type=topics
                     "Related:": "相关的：",
+
                 // &type=registrypackages
                     "latest": "最新",
 
@@ -5929,8 +6247,8 @@ I18N.zh = {
             // 搜索结果页
             [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?|discussions?|users?) in/, "$2 个相关结果在"],
             [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?$|discussions?|users?)/, "$2 个相关结果"],
-            [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)' in/, "我们没有找到任何与 '$4' 相关的结果在"],
-            [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)'/, "我们没有找到任何与 '$4' 相关的结果"],
+            [/We couldn(’|')t find (any|anything) (repositor(?:y|ies)|codes?|commits?|issues?|discussions?|packages?|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)' in/, "我们没有找到任何与 '$4' 相关的结果在"],
+            [/We couldn(’|')t find (any|anything) (repositor(?:y|ies)|codes?|commits?|issues?|discussions?|packages?|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)'/, "我们没有找到任何与 '$4' 相关的结果"],
             [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
             [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
             [/(\d+) comments?/, "$1 条评论"], // &type=discussions
