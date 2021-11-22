@@ -208,7 +208,7 @@ I18N.zh = {
             "Never": "永不",
             "Visible to": "可见",
                 "Your status will be visible to everyone": "所有人都可以看到您的状态",
-                // [/Only members of (\w+.*) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
+                // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
             "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
             "in 30 minutes": "30 分钟",
             "in 1 hour": "1 小时",
@@ -581,7 +581,7 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
-            [/Your repository \"(\w+.*)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
+            [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
             [/(\d+) releases?/, "$1 个发行版"],
             [/(\d+) repositor(y|ies)/, "$1 个仓库"],
             [/(\d+) followers?/, "$1 个关注者"],
@@ -626,7 +626,7 @@ I18N.zh = {
                 ", and more!": "，更多！",
 
                 // 拉黑 & 举报用户对话框
-                // [/Block or report (\w+)/, "拉黑或举报 $1"],
+                // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
                 "Block user": "拉黑用户",
                 "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
                 "blocking users": "拉黑用户",
@@ -764,7 +764,7 @@ I18N.zh = {
 
                 "Clear filter": "清除筛选",
 
-                // [/(\w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
+                // [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
 
                 // 项目 状态词
                 "Updated": "更新于",
@@ -911,12 +911,12 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
-            [/Block or report (\w+)/, "拉黑或举报 $1"],
+            [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
             [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
             [/(\d+) remaining/, "$1 剩余"], // 置顶项目 剩余
-            [/(\w+.*) doesn't have any public repositories yet./, "$1 暂未有任何公共仓库。"],
+            [/([^ ]+) doesn't have any public repositories yet./, "$1 暂未有任何公共仓库。"],
             [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
-            [/([\d,]+) contributions? in (\d+) in (\w+.*)/, "在 $2 年中向 $3, 贡献 $1 次"],
+            [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
             [/(\d+) contributions? in private repositories?/, "私人仓库 $1 个贡献"],
             [/(\d+|No) contributions?/, function (all, number) {
@@ -939,13 +939,13 @@ I18N.zh = {
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
             [/(\d+) comments?/, "$1 条评论"],
             [/(\d+) tasks? done/, "$1 个任务完成"],
-            [/(\w+) doesn't have any projects yet./, "$1 目前还没有任何项目。"],
-            [/(\w+) has no activity yet for this period./, "$1 目前还没有活动。"],
-            [/(\w+) had no activity during this period./, "$1 在此期间没有活动。"],
-            [/Contribution activity in (\w+.*)/, "在 $1 中的贡献活动"],
-            [/(\w+) had no activity in (\w+.*) during this period./, "在此期间，$1 在 $2 中没有活动。"],
-            [/(\w+) has no activity in (\w+.*) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
-            [/(\w+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
+            [/([^ ]+) doesn't have any projects yet./, "$1 目前还没有任何项目。"],
+            [/([^ ]+) has no activity yet for this period./, "$1 目前还没有活动。"],
+            [/([^ ]+) had no activity during this period./, "$1 在此期间没有活动。"],
+            [/Contribution activity in ([^ ]+)/, "在 $1 中的贡献活动"],
+            [/([^ ]+) had no activity in ([^ ]+) during this period./, "在此期间，$1 在 $2 中没有活动。"],
+            [/([^ ]+) has no activity in ([^ ]+) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
+            [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
             [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
             [/([\d,]+) Closed/, "$1 已关闭"],
             // 组织页面
@@ -1747,7 +1747,7 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             // 帐户 /settings/admin
             [/is available\./, "可用。"],
-            [/Username (\w+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
+            [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
             [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 \"添加继任者\"，我承认我是 $1 帐户的所有者，并授权 GitHub 将该帐户内的内容转移给我的 GitHub 继任者。"],
             [/immediately delete all of your repositories \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
             // Emails 页面
@@ -1755,30 +1755,30 @@ I18N.zh = {
             [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
             //  仓库
             [/(\d+) collaborators/, "$1 协作者"],
-            [/No recoverable repositories were found for (\w+)\./, "没有找到 $1 的可恢复仓库。"],
+            [/No recoverable repositories were found for ([^ ]+)\./, "没有找到 $1 的可恢复仓库。"],
             // 组织 页面
-            [/Turn (\w+) into an organization/, "变更 $1 为一个组织"],
+            [/Turn ([^ ]+) into an organization/, "变更 $1 为一个组织"],
             // /settings/apps/authorizations
-            [/You will no longer be able to sign in to (\w+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
-            [/Any commits credited to (\w+) will no longer be linked to this GitHub account/, "任何属于 $1 的提交将不再关联到这个 GitHub 帐户"],
-            [/If you are using (\w+) as a personal account, you should/, "如果您正在使用 $1 作为个人帐户，您应"],
-            [/before transforming (\w+) into an organization./, "在转化 $1 组织之前。"],
+            [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
+            [/Any commits credited to ([^ ]+) will no longer be linked to this GitHub account/, "任何属于 $1 的提交将不再关联到这个 GitHub 帐户"],
+            [/If you are using ([^ ]+) as a personal account, you should/, "如果您正在使用 $1 作为个人帐户，您应"],
+            [/before transforming ([^ ]+) into an organization./, "在转化 $1 组织之前。"],
             // 软件库
-            [/No recoverable packages were found for (\w+)./, "没有找到 $1 的可恢复包。"],
+            [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
             [/(\d+) applications?/, "$1 个应用"],
             // /settings/applications
-            [/(\w+) will no longer be able to access your GitHub account. You cannot undo this action./, "$1 将无法再访问您的 GitHub 帐户。您无法撤消此操作。"],
-            [/(\w+) has been revoked from your account./, "$1 已经从您的帐户中被撤销了。"],
+            [/([^ ]+) will no longer be able to access your GitHub account. You cannot undo this action./, "$1 将无法再访问您的 GitHub 帐户。您无法撤消此操作。"],
+            [/([^ ]+) has been revoked from your account./, "$1 已经从您的帐户中被撤销了。"],
             [/Last used within the last (\d+) weeks? · Owned by/, "最后一次使用是最近 $1 周之内 · 作者"],
             [/Last used within the last (\d+) months? · Owned by/, "最后一次使用是最近 $1 月之内 · 作者"],
-            [/Reporting (\w+.*) will contact Support about abuse on the application./, "举报 $1 将就应用程序滥用问题联系支持人员。"],
-            [/Revoke (\w+)/, "撤销 $1"],
-            [/Report (\w+)/, "举报 $1"],
+            [/Reporting ([^ ]+) will contact Support about abuse on the application./, "举报 $1 将就应用程序滥用问题联系支持人员。"],
+            [/Revoke ([^ ]+)/, "撤销 $1"],
+            [/Report ([^ ]+)/, "举报 $1"],
             // /settings/installations/5478903
             [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
-            [/Uninstall "(\w+)"/, "卸载 “$1”"],
+            [/Uninstall "([^ ]+)"/, "卸载 “$1”"],
             // /settings/billing
-            [/You've cancelled your subscription to (\w+.*)\. This plan change will take effect on (\d{4}-\d{2}-\d{2})./, "您已取消订阅 $1 。此计划更改将于 $2 生效。"],
+            [/You've cancelled your subscription to ([^ ]+)\. This plan change will take effect on (\d{4}-\d{2}-\d{2})./, "您已取消订阅 $1 。此计划更改将于 $2 生效。"],
         ],
     },
 
@@ -2153,7 +2153,7 @@ I18N.zh = {
 
         },
         "regexp": [ // 正则翻译
-            [/(\w+) is available\./,"$1 名称可用。"],
+            [/([^ ]+) is available\./,"$1 名称可用。"],
         ],
     },
 
@@ -2266,9 +2266,9 @@ I18N.zh = {
                     "You are the author of this pull request.": "您是这个拉取请求的作者。", // 拉取请求
                     "This user is the author of this pull request.": "该用户是这个拉取请求的作者。",// 拉取请求
                 "Member": "成员",
-                    //[/This user is a member of the (\w+.*)./, "该用户是 $1 组织的成员。"],
+                    //[/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
                 "Collaborator": "协作者",
-                    //[/This user has been invited to collaborate on the (\w+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
+                    //[/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
                 "Pick your reaction": "选择您的表情",
                 "Copy link": "复制链接",
                 "Quote reply": "引用回复",
@@ -2800,7 +2800,7 @@ I18N.zh = {
                 // 右侧栏
                 "Reviewers": "审查人",
                     "Loading suggestions…": "载入推荐…",
-                    // [/(\w+) left review comments/, "$1 发表了审查评论"],
+                    // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
                     "Still in progress?": "仍在进行中吗？",
                     "Convert to draft": "设置为草案",
@@ -2876,7 +2876,7 @@ I18N.zh = {
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "If checked,": "如果选中，",
-                    // [/users with write access to (\w+.*) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
+                    // [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
                     "to your": "到您的",
                     "branch. You can always change this setting later.": "分支。您以后可以随时更改此设置。",
                 "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问密钥",
@@ -3492,7 +3492,7 @@ I18N.zh = {
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
 
                     // 顶部提醒
-                    // [/Branch main will be renamed to (\w+.*) shortly./,"主分支将很快重命名为 $1"], //默认主分支默认 重命名成功
+                    // [/Branch main will be renamed to ([^ ]+) shortly./,"主分支将很快重命名为 $1"], //默认主分支默认 重命名成功
 
                 "Your branches": "您的分支",
                 "You haven’t pushed any branches to this repository.": "您没有推送任何分支到该仓库。",
@@ -3503,7 +3503,7 @@ I18N.zh = {
                 "View more active branches": "查看更多活跃的分支",
                 "View more stale branches": "查看更多陈旧的分支",
 
-                // [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
+                // [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
 
             // "Compare": "比较",
             // "Change default branch": "更改默认分支",
@@ -3798,7 +3798,7 @@ I18N.zh = {
             // 具体某条Dependabot 警报
             "Create Dependabot security update": "创建 Dependabot 警报更新",
                 // 顶部提醒
-                // [/Started generating a security update for (\w+.*)./, "开始为 $1 生成安全更新。"],
+                // [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"],
             "Dismiss": "驳回",
             // 下拉菜单 补充
             "This alert is inaccurate or incorrect": "此警报不准确或不正确",
@@ -4016,7 +4016,7 @@ I18N.zh = {
                     "The discussion itself won't be deleted, it just won't be shown prominently above the list of discussions.": "讨论本身不会被删除，只是不会突出显示在讨论列表上方。",
                     "Deleting spotlight…": "删除聚光灯…",
                     // 顶部提醒
-                    // [/Discussion \"(\w+.*)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+                    // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
                 "Create issue from discussion": "从讨论中创建议题",
                 "Delete discussion": "删除讨论",
                     "Are you sure you want to delete this discussion?": "您确定要删除此讨论吗？",
@@ -4047,7 +4047,7 @@ I18N.zh = {
                 "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
                 "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
                 // 顶部提醒
-                // [/Open issues with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
+                // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
 
             // 标签页面 /<user-name>/<repo-name>/labels
                 "Search all labels": "搜索所有标签",
@@ -4298,7 +4298,7 @@ I18N.zh = {
                 "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
 
             // /<user-name>/<repo-name>/deployments
-                // [/Deployed to (\w+.*)/, "部署到 $1"],
+                // [/Deployed to ([^ ]+)/, "部署到 $1"],
                 "was deployed by": "被部署",
                 "Deployment history": "部署历史",
                 "Show:": "显示：",
@@ -4339,32 +4339,32 @@ I18N.zh = {
             [/had recent pushes/, "分支有了最近的推送，"], // 仓库首页 最近有了新提交提醒
             // 评论框头部栏 (议题 & 拉取请求)
             // 成员
-            [/This user is a member of the (\w+.*) organization./, "该用户是 $1 组织的成员。"],
+            [/This user is a member of the ([^ ]+) organization./, "该用户是 $1 组织的成员。"],
             // 协作者
-            [/This user has been invited to collaborate on the (\w+.*) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
+            [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
             // 贡献者
-            [/You have previously committed to the (\w+.*) repository./, "您之前已经提交到过 $1 仓库。"],
-            [/This user has previously committed to the (\w+.*) repository./, "该用户之前已提交给 $1 仓库。"],
+            [/You have previously committed to the ([^ ]+) repository./, "您之前已经提交到过 $1 仓库。"],
+            [/This user has previously committed to the ([^ ]+) repository./, "该用户之前已提交给 $1 仓库。"],
             // 所有者
-            [/This user is the owner of the (\w+.*) repository./, "该用户是 $1 仓库的所有者。"],
-            [/You are the owner of the (\w+.*) repository./, "您是 $1 仓库的所有者。"],
-            [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+            [/This user is the owner of the ([^ ]+) repository./, "该用户是 $1 仓库的所有者。"],
+            [/You are the owner of the ([^ ]+) repository./, "您是 $1 仓库的所有者。"],
+            [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
             [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
             [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
             // 个人仓库 贡献和获取操作后 信息提示条
-            [/Successfully fetched and fast-forwarded from upstream (\w+.*)\./, "成功从上游的 $1 中获取并快速转发。"],
+            [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游的 $1 中获取并快速转发。"],
             // 个人仓库当前分支状态
-            // [/This branch is even with (\w+.*)\./, "该分支与上游 $1 相同。"],
-            [/This branch is up to date with (\w+.*)\./, "该分支与上游 $1 保持同步。"],
-            [/This branch is (\d+) commits? behind (\w+.*)\./, "该分支落后上游 $2 $1 个提交。"],
-            [/This branch is (\d+) commits? ahead, (\d+) commits? behind (\w+.*)\./, "该分支领先上游 $3 $1 个提交，落后 $2 个提交。"],
+            // [/This branch is even with ([^ ]+)\./, "该分支与上游 $1 相同。"],
+            [/This branch is up to date with ([^ ]+)\./, "该分支与上游 $1 保持同步。"],
+            [/This branch is (\d+) commits? behind ([^ ]+)\./, "该分支落后上游 $2 $1 个提交。"],
+            [/This branch is (\d+) commits? ahead, (\d+) commits? behind ([^ ]+)\./, "该分支领先上游 $3 $1 个提交，落后 $2 个提交。"],
             // 贡献
-            [/This branch is not ahead of the upstream (\w+.*)\./, "该分支并不领先上游 $1。"],
-            [/This branch is (\d+) commits? ahead of (\w+.*)\./, "该分支领先上游 $2 $1个提交。"],
+            [/This branch is not ahead of the upstream ([^ ]+)\./, "该分支并不领先上游 $1。"],
+            [/This branch is (\d+) commits? ahead of ([^ ]+)\./, "该分支领先上游 $2 $1个提交。"],
             //获取上游.
-            [/This branch is not behind the upstream (\w+.*)\./, "该分支并不落后上游 $1。"], //相同时
+            [/This branch is not behind the upstream ([^ ]+)\./, "该分支并不落后上游 $1。"], //相同时
             [/This branch is (\d+) commits? behind the upstream/, "该分支落后上游 $1 个提交,"],
-            [/Fetch and merge (\d+) upstream commits? from (\w+.*)\./, "从上游 $2 获取并合并 $1 个提交。"],
+            [/Fetch and merge (\d+) upstream commits? from ([^ ]+)\./, "从上游 $2 获取并合并 $1 个提交。"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
             // 议题 & 拉取请求
             [/([\d,]+) Open/, "$1 打开"],
@@ -4375,22 +4375,22 @@ I18N.zh = {
             [/(\d+) tasks? done/, "$1 个任务完成"],
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
             [/(\d+) tasks?/, "$1 个任务"],
-            [/This issue will close once commit (\w+) is merged into the \'(\w+)\' branch./, "一旦提交 $1 被合并到 '$2' 分支，这个议题就会关闭。"],
+            [/This issue will close once commit ([^ ]+) is merged into the \'([^ ]+)\' branch./, "一旦提交 $1 被合并到 '$2' 分支，这个议题就会关闭。"],
             [/This issue will close when (\d+) is merged/, "这个议题将在 $1 合并后关闭"],
             [/(\d+) contributors?/, "$1 位贡献者"],
-            [/Failure: Your tests failed on (\w+)/, "失败：您的测试在 $1 上失败了"], // X 的提醒
-            [/Success: Your tests passed on (\w+)/, "成功：您的测试在 $1 上通过了"], // 对勾 的提醒
+            [/Failure: Your tests failed on ([^ ]+)/, "失败：您的测试在 $1 上失败了"], // X 的提醒
+            [/Success: Your tests passed on ([^ ]+)/, "成功：您的测试在 $1 上通过了"], // 对勾 的提醒
             [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
             [/View all issues opened by (.+)/, "查看所有 $1 的议题"],
             // 具体拉取请求 /<user-name>/<repo-name>/pull/ID
             [/([\d,]+) participants?/, "$1 位参与者"],
-            [/(\w+) left review comments/, "$1 发表了审查评论"],
-            [/users with write access to (\w+.*) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"],
-            [/The (\w+.*) branch has been deleted./, "$1 分支已被删除。"], // 具体拉取请求 重新打开拉取请求
+            [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+            [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"],
+            [/The ([^ ]+) branch has been deleted./, "$1 分支已被删除。"], // 具体拉取请求 重新打开拉取请求
             [/merged (\d+) commits? into/, "已合并 $1 个提交到"],
             [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
             [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基合并到基础分支中。"],
-            [/added a commit to (\w+.*) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
+            [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
             [/approved these changes/, "批准这些更改"], // 具体的拉取请求 审查人
             // [/Commits on (.+)/, "提交于 $1"],
             [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
@@ -4399,7 +4399,7 @@ I18N.zh = {
             [/([\d,]+) commits?$/, "$1 次提交"],
             [/· ([\d,]+) comments?/, "$1 次提交"],
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
-            [/edited by (\w+)/,"被 $1 编辑"], //评论框 被他人编辑
+            [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
             [/(\d+) hidden items/,"$1 条隐藏信息"], //议题页 评论太多 需要点击载入
             [/(\d+) Draft/,"$1 草案"],// 安全建议页
             [/(\d+) Published/,"$1 发布"],// 安全建议页
@@ -4411,11 +4411,11 @@ I18N.zh = {
             [/(\d+) deletions?/, "$1 处删除"],
             [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
             //某个标签 tag /releases/tag/<tag>
-            [/to (\w+) since this tag/, "到 $1，从这个标签开始"],
+            [/to ([^ ]+) since this tag/, "到 $1，从这个标签开始"],
             [/to ([^\n]+)[\n\s]+since this release/, "到 $1，从这个发行版开始"],
             [/(\d+) review approvals?/, "$1 次审查批准"],// 拉取请求页 "已批准' 浮动提示
             [/Joined/,"加入于"], // 追星者，关注者页面
-            [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork (\w+.*), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
+            [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork ([^ ]+), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
             [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查人进行审查。"],
             [/(\d+) approvals?/, "$1 项批准"],
@@ -4432,12 +4432,12 @@ I18N.zh = {
             [/Reresolved conversations/, "已解决的讨论"],
             [/(\d+) of (\d+) files?/, "$1 / $2 个文件"],
             [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
-            [/The (\w+) branch requires linear history/, "$1 分支为要求线性历史记录"],
+            [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"], // wiki页面
             [/edited this page/, "编辑此页"], // wiki
             [/(\d+) revisions?/, "$1 次修订"], // wiki
             [/Editing/, "编辑"], //编辑 wiki
-            [/Discussion \"(\w+.*)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],// 讨论页面
+            [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],// 讨论页面
             [/(\d+) categories?/, "$1 个分类"], // 讨论分类
             [/(\d+) answers?/, "$1 位答复者"], // 具体讨论
             [/(\d+) comments?/, "$1 条评论"], // 具体讨论
@@ -4445,20 +4445,20 @@ I18N.zh = {
             [/(\d+) suggested answers?/, "$1 个建议答案"], // 具体讨论
             [/Convert (\d+) issues? to (a |)discussions?/, "将 $1 个议题转换为讨论"], // 标签页面?
             [/Are you sure you want to convert (\d+) issues? with the following label to (a |)discussions?\?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
-            [/Open issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
-            // [/Closed issues? with label \'(\w+.*)\' are being converted to discussions./, "带有 \"$1 \"标签的已关闭议题正在被转换为讨论。"], // 标签页面
+            [/Open issues? with label \'([^ ]+)\' are being converted to discussions./, "带有 \"$1 \"标签的打开议题正在被转换为讨论。"], // 标签页面
+            // [/Closed issues? with label \'([^ ]+)\' are being converted to discussions./, "带有 \"$1 \"标签的已关闭议题正在被转换为讨论。"], // 标签页面
             [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
             [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
-            [/(\d+) commits? ahead, (\d+) commits? behind (\w+.*)/, "领先 $1 个提交，落后 $2 个提交于 $3"], // 分支页面 /<user-name>/<repo-name>/branches
-            [/(\d+) commits? ahead (\w+.*)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
-            [/(\d+) commits? behind (\w+.*)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
-            [/Branch (\w+.*) will be renamed to (\w+.*) shortly./,"$1 分支将很快重命名为 $2"],  // 分支页面 顶部提醒 当分支重命名成功
+            [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/(\d+) commits? ahead ([^ ]+)/, "领先 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/(\d+) commits? behind ([^ ]+)/, "落后 $1 个提交于 $2"], // 分支页面 /<user-name>/<repo-name>/branches
+            [/Branch ([^ ]+) will be renamed to ([^ ]+) shortly./,"$1 分支将很快重命名为 $2"],  // 分支页面 顶部提醒 当分支重命名成功
             [/is already the branch name./, "已经是分支的名称了。"], // 分支页面 重命名分支
             [/Your branch name will be/, "您的分支的名称将重命名为"], // 分支页面 重命名分支
-            [/Deployed to (\w+.*)/, "部署到 $1"], // 部署页面 /deployments
+            [/Deployed to ([^ ]+)/, "部署到 $1"], // 部署页面 /deployments
             [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
             [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
-            [/Started generating a security update for (\w+.*)./, "开始为 $1 生成安全更新。"], // 创建 Dependabot 警报更新
+            [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"], // 创建 Dependabot 警报更新
             [/Published (.*) · Digest/, "发布于 $1 · 摘要"], // 仓库-->包
             // [/Published about (\d.*) · Digest/, "发布于大约 $1 · 摘要"], // 仓库-->包
             [/(\d+) tagged/, "$1 个标记"], // 仓库-->包-->所有版本
@@ -4987,9 +4987,9 @@ I18N.zh = {
                 "Disable Actions": "禁用操作",
                     "The Actions tab is hidden and no workflows can run.": "“操作” 选项卡将被隐藏，无法运行任何工作流程。",
                 "Allow local actions only": "仅允许本地操作",
-                    // [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
+                    // [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
                 "Allow select actions": "允许选择操作",
-                    // [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
+                    // [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
                     "Learn more about allowing specific actions to run.": "了解更多关于允许运行特定操作的信息。",
                     "Allow actions created by GitHub": "允许由 GitHub 创建的操作",
                     "Allow Marketplace actions by": "允许市场操作，",
@@ -5068,7 +5068,7 @@ I18N.zh = {
                 "/ Add": "/ 添加",
                 "Name": "名称",
                 "Configure environment": "设置环境",
-                // [/Environment \"(\w+)\" created./, "环境 \"$1\" 已创建。"],
+                // [/Environment \"([^ ]+)\" created./, "环境 \"$1\" 已创建。"],
 
             // 编辑环境 /<user-name>/<repo-name>/settings/environments/19897411/edit
                 "/ Configure": "/ 设置",
@@ -5204,7 +5204,7 @@ I18N.zh = {
                 "Limit to prior contributors": "仅限于先前的贡献者",
                     "Users that have not previously": "以前从未",
                     "committed": "提交",
-                    // [/to the (\w+.*) branch of this repository will be unable to interact with the repository./, "到该仓库的 $1 分支的用户将无法与该仓库互动。"],
+                    // [/to the ([^ ]+) branch of this repository will be unable to interact with the repository./, "到该仓库的 $1 分支的用户将无法与该仓库互动。"],
                 "Limit to repository collaborators": "仅限仓库协作者",
                     "Users that are not": "不是",
                     // "collaborators": "",
@@ -5237,21 +5237,21 @@ I18N.zh = {
                     "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "启用后，只有被明确授予该仓库访问权的用户才能提交 “批准” 或 “请求更改” 的拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
         },
         "regexp": [ // 正则翻译
-            [/Choose another branch to use as the default branch of (\w+.*) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
+            [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
             [/is already the branch name./, "已经是分支的名称了。"], // 重命名分支 对话框
             [/Your branch name will be/, "您的分支的名称将重命名为"], // 重命名分支 对话框
-            [/Default branch changed to (\w+)/, "默认分支已经更改为 $1"], // 顶部提醒 当默认分支更改成功
+            [/Default branch changed to ([^ ]+)/, "默认分支已经更改为 $1"], // 顶部提醒 当默认分支更改成功
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
-            [/Enabled with about (\w+.*) remaining./, ""],
-            [/to the (\w+.*) branch of this repository will be unable to interact with the repository./, "到该仓库 $1 分支的用户将无法与您的仓库互动。"], // 仓库互动限制
+            [/Enabled with about ([^ ]+) remaining./, ""],
+            [/to the ([^ ]+) branch of this repository will be unable to interact with the repository./, "到该仓库 $1 分支的用户将无法与您的仓库互动。"], // 仓库互动限制
             // Github Pages 自定义域检测
-            [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行中。"],
-            [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
-            [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at \[YOUR USERNAME\].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
-            [/\((\w+.*)\). We recommend you change this to a CNAME record pointing to/, "($1)。我们建议您将 CNAME 记录设置为指向"],
-            [/Only actions defined in a repository within (\w+.*) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
-            [/Only actions that match specified criteria, plus actions defined in a repository within (\w+.*), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/([^ ]+) DNS check is in progress./, "$1 的 DNS 检查正在进行中。"],
+            [/([^ ]+) is improperly configured/, "$1 配置不正确"],
+            [/Your site's DNS settings are using a custom subdomain, ([^ ]+), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at \[YOUR USERNAME\].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
+            [/\(([^ ]+)\). We recommend you change this to a CNAME record pointing to/, "($1)。我们建议您将 CNAME 记录设置为指向"],
+            [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
         ],
     },
 
@@ -5417,7 +5417,7 @@ I18N.zh = {
             ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
         },
         "regexp": [ // 正则翻译
-            [/Username (\w+) is not available./, "用户名 $1 不可用。"],
+            [/Username ([^ ]+) is not available./, "用户名 $1 不可用。"],
         ],
     },
 
@@ -5721,7 +5721,7 @@ I18N.zh = {
             [/([\d,]+) linked issues?/, "$1 个关联议题"],
             [/([\d,]+) linked pull requests?/, "$1 个关联拉取请求"],
             [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
-            [/Assigned to (\w+)/, "分配给 $1"],
+            [/Assigned to ([^ ]+)/, "分配给 $1"],
         ],
     },
 
@@ -5827,7 +5827,7 @@ I18N.zh = {
                     "Private archive": "私有存档",
 
                     "Sponsor": "赞助",
-                    // [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+                    // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
                     // 赞助对话框
                     "External links": "外部链接",
                     "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
@@ -5919,7 +5919,7 @@ I18N.zh = {
             [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)' in/, "我们没有找到任何与 '$4' 相关的结果在"],
             [/We couldn(’|')t find (any|anything) (repositories|codes|commits|issues|discussions|packages|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)'/, "我们没有找到任何与 '$4' 相关的结果"],
             [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
-            [/Sponsor (\w+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+            [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
             [/(\d+) comments?/, "$1 条评论"], // &type=discussions
             [/(\d+k?) downloads?/, "$1 次下载"], // &type=registrypackages
             //[/(\d+)k downloads?/, "$1 千次下载"], // &type=registrypackages
@@ -6134,7 +6134,7 @@ I18N.zh = {
             [/(\d+) changes?: (\d+) additions? & (\d+) deletions?/, " $1 处更改：$2 处增加 & $3 处删除"],
             [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
-            [/edited by (\w+)/,"被 $1 编辑"], //评论框 被他人编辑
+            [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
             [/Joined/,"加入于"], //星标标签卡
         ],
     },
@@ -6202,12 +6202,12 @@ I18N.zh = {
             [/Verify your GitHub identity/, "验证您的 GitHub 身份"],
             [/has not been installed on any accounts you have access to./, "尚未安装在您有权访问的任何帐户上。"],
             [/Learn more about/, "了解更多关于"],
-            [/More than (\w+)/, "超过 $1"],
+            [/More than ([^ ]+)/, "超过 $1"],
             // /apps/codacy-production/installations/new/permissions?target_id=7850715
             [/Install & Authorize on your personal account/, "安装和授权到您的个人帐户"],
             [/Install & Authorize/, "安装和授权"],
-            [/Authorize (\w+.*)/, "授权 $1"], // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login 调整位置避免覆盖
-            [/Installing and authorizing (\w+.*) immediately grants these permissions on your account:/, "安装和授权 $1则会立即授予您帐户的以下权限："],
+            [/Authorize ([^ ]+)/, "授权 $1"], // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login 调整位置避免覆盖
+            [/Installing and authorizing ([^ ]+) immediately grants these permissions on your account:/, "安装和授权 $1则会立即授予您帐户的以下权限："],
             [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
         ],
     },
@@ -6235,7 +6235,7 @@ I18N.zh = {
             "Organization account name": "组织帐户名称",
             // [/The name \'(\d+)\' is already taken./, "名称 '$1' 已被采用。"],
             // [/The name \'(\d+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
-            // [/Organization name \'(\w+.*)\' is unavailable./, "组织名称 \'$1\' 不可用。"], //
+            // [/Organization name \'([^ ]+)\' is unavailable./, "组织名称 \'$1\' 不可用。"], //
             "This will be the name of your account on GitHub.": "这将是您在 GitHub 上的帐户名称。",
             "Your URL will be: https://github.com/": "您的网址将是：https://github.com/",
             "Contact email": "联系电子邮箱",
@@ -6270,9 +6270,9 @@ I18N.zh = {
 
         },
         "regexp": [ // 正则翻译
-            [/The name \'(\w+.*)\' is already taken./, "名称 '$1' 已被采用。"],
-            [/The name \'(\w+.*)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
-            [/Organization name \'(\w+.*)\' is unavailable./, "组织名称 \'$1\' 不可用。"],
+            [/The name \'([^ ]+)\' is already taken./, "名称 '$1' 已被采用。"],
+            [/The name \'([^ ]+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
+            [/Organization name \'([^ ]+)\' is unavailable./, "组织名称 \'$1\' 不可用。"],
             [/I.e.,/, "即："],
         ],
     },
@@ -6388,11 +6388,11 @@ I18N.zh = {
         "regexp": [ // 正则翻译
             // /marketplace/codacy
             [/(\d+) other languages? supported/, "$1 种其他语言支持"],
-            [/(\w+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
+            [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
             // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
-            [/By clicking "Issue plan changes", you are agreeing to (\w+.*)’s/, "点击 “议题计划更改”，您同意 $1 的"],
-            [/By clicking "Complete order and begin installation", you are agreeing to (\w+.*)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
-            [/Next: Authorize (\w+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
+            [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
+            [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
+            [/Next: Authorize ([^ ]+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
         ],
     },
 
@@ -6678,7 +6678,7 @@ I18N.zh = {
         },
         "regexp": [ // 正则翻译
             // 软件库
-            [/No recoverable packages were found for (\w+.*)./, "没有找到 $1 的可恢复包。"],
+            [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
          ],
     },
 
