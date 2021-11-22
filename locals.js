@@ -485,15 +485,23 @@ I18N.zh = {
              * 1. 添加 前缀词
              * 2. xxx之内的相对时间格式
              *  in 6 minutes
+             *
+             * 更新于 2021-11-22 11:54:30
+             * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
+             *  7 months
              */
-            [/(?:(over|about|in) |)(an?|\d+) (second|minute|hour|day|month|year)s?( ago|)/, function (m, pre, d, t) {
+            [/(?:(over|about|in) |)(an?|\d+) (second|minute|hour|day|month|year)s?( ago|)/, function (all, prefix, d, t, suffix) {
                 if (d[0] === 'a') {
                     d = '1';
                 } // a, an 修改为 1
 
                 var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
 
-                return (pre === 'about' ? '大约 ' : '') + d + ' ' + dt[t] + (pre === 'in' ? '之内' : (pre === 'over' ? '多之前' : '之前'));
+                if (suffix) {
+                    return (prefix === 'about' ? '大约 ' : '') + d + ' ' + dt[t] + (prefix === 'over' ? '多之前' : '之前');
+                } else {
+                    return (prefix === 'in' ? d + ' ' + dt[t] + '之内' : all);
+                }
             }],
         ],
     },
