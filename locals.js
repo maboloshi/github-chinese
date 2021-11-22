@@ -419,7 +419,7 @@ I18N.zh = {
             "Your email was verified.": "您的邮件地址验证成功！",
         },
         "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
-             /**
+            /**
              * 匹配时间格式
              *
              * 月 日 或 月 日, 年
@@ -435,7 +435,7 @@ I18N.zh = {
              * on March 26
              *
              * 更新于 2021-10-10 13:44:36
-             * 星期, 月 日 年  // 个人访问令牌 有效期
+             * on 星期(简写), 月 日 年  // 个人访问令牌 有效期
              * on Tue, Nov 9 2021
              *
              * 2021-10-19 12:04:19 融合更多规则
@@ -446,11 +446,16 @@ I18N.zh = {
              * on 4 Sep
              * on 30 Dec 2020
              *
+             * 2021-11-22 12:51:57 新增 格式
+             *
+             * 星期(全称), 月 日, 年 // 仓库-->洞察-->流量 图示标识
+             * Sunday, November 14, 2021
+             *
              * Tip:
              * 正则中的 ?? 前面的字符 重复0次或1次
              * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
              */
-            [/(?:on |)(?:(\d{1,2}) |)(?:(Sun|Mon|Tue|Wed|Thu|Fri|Sat), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
+            [/(?:on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
                 var weekKey = {
                     "Sun"  : "周日",
                     "Mon"  : "周一",
@@ -476,7 +481,7 @@ I18N.zh = {
                 };
                 var date = date1 ? date1 : date2;
                 var year = year1 ? year1 : year2;
-                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week] : '');
+                return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
             }],
             /**
              * 相对时间格式处理
