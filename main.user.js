@@ -6,7 +6,7 @@
 // @icon         https://github.githubassets.com/pinned-octocat.svg
 // @version      1.7.1
 // @author       沙漠之子
-// @license      MIT
+// @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
 // @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.0

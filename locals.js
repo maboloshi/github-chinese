@@ -1,3 +1,25 @@
+/*******************************************************************************
+
+    locals.js - 搭配用户脚本插件`GitHub 中文化插件`的页面匹配规则, 翻译忽略规则,
+                词条库文件
+    Copyright (C) 2016-2021 楼教主 (https://github.com/52cik)
+    Copyright (C) 2021-当前 沙漠之子 (https://github.com/maboloshi)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    Home: https://github.com/maboloshi/github-chinese
+*/
 var I18N = {};
 
 I18N.conf = {

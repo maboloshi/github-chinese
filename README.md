@@ -4,7 +4,7 @@
   [![GitHub issues][issues-image]][issues-url]
   [![GitHub stars][stars-image]][stars-url]
   [![GitHub forks][forks-image]][forks-url]
-  [![license MIT][license-image]][license-url]
+  [![license GPL-3.0][license-image]][license-url]
   [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
 ## 功能
@@ -22,6 +22,9 @@
 > 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
 
 ## 更新说明:
+
+#### 2021-11-23 10:51:22
+更新许可证为 [GPL-3.0][license-url] 希望大家依据许可证使用
 
 #### 2021-10-31 21:49:00
 正式发布 1.7.0 版本
@@ -90,7 +93,7 @@
 [forks-url]: https://github.com/maboloshi/github-chinese/network
 [forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github&label=Fork
 
-[license-url]: https://opensource.org/licenses/MIT
+[license-url]: https://opensource.org/licenses/GPL-3.0
 [license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
 
 [greasyFork-url]: https://greasyfork.org/scripts/435208
