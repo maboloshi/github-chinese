@@ -862,6 +862,8 @@ I18N.zh = {
                 //筛选结果
                 // "Clear filter": "清除筛选",
 
+                "Topics": "主题",
+
             //>>>>>>>>>>>>>>>>>> 组织主页 <<<<<<<<<<<<<<<<<<<<<
                 // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
 
@@ -2547,6 +2549,11 @@ I18N.zh = {
                 "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可过滤的列表中。要开始，您应该",
                 "create an issue": "创建议题",
 
+                "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉动请求",
+                "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
+                "discover issues": "探索议题",
+                "labeled with": "标记为",
+
                 "There aren’t any open issues.": "暂无开放的议题。",
 
                 // 状态词
@@ -2602,6 +2609,8 @@ I18N.zh = {
                 "Assignee": "受理人",
                     "Filter by who’s assigned": "筛选受理人",
                     "Assigned to nobody": "无受理人",
+                    // [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
+                    "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
 
                 "Sort": "排序",
                     "Sort by": "排序",
@@ -2701,6 +2710,8 @@ I18N.zh = {
                 "and unassigned": "和取消了分配给",
                 "marked this pull request as draft": "将此拉取请求标记为草案",
                 "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
+                "dismissed a stale review via": "驳回了一个陈旧的审查，通过",
+                "requested changes": "请求更改",
 
                 // 右侧栏 补充
                 // 同 /<user-name>/<repo-name>/pull/ID
@@ -2945,6 +2956,7 @@ I18N.zh = {
                 "stale review": "陈旧审查",
                 "via": "通过",
                 "force-pushed": "强制推送",
+                "the": " ",
                 "branch from": "分支从",
                 "and others": "和其他成员",
                 "approved these changes": "批准这些更改",
@@ -2961,6 +2973,7 @@ I18N.zh = {
 
                 // 拉取请求状态
                 "This pull request is still a work in progress": "此拉取请求仍在进行中",
+                "This pull request can be automatically merged by project collaborators": "此拉取请求可以由项目合作者自动合并",
                     "Only those with": "只有对此仓库具有",
                     "write access": "写入访问权限",
                     "to this repository can merge pull requests.": "的才可合并拉取请求。",
@@ -2985,6 +2998,8 @@ I18N.zh = {
                     "Details": "细节",
                     "Required": "必须",
                 "Merging is blocked": "合并被阻止",
+                "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
+
                 "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
                 "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
                 // [/Merging can be performed automatically with 1 approving review./, ""],
@@ -3235,6 +3250,9 @@ I18N.zh = {
                     "Space": "空格",
                     "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
                     "Documentation": "文档",
+
+                // 编辑 LICENSE 许可证文件
+                    "Choose a license template": "选择一个许可证模板",
 
                 // 快捷键
                 "Code editor": "代码编辑器",
@@ -4267,7 +4285,7 @@ I18N.zh = {
                     "This issue or pull request already exists": "这个议题或拉取请求已经存在",
                 "enhancement": "增强",
                     "New feature or request": "新功能或请求",
-                "good first issue": "好的第一个议题",
+                "good first issue": "好的首发议题",
                     "Good for newcomers": "适合新人",
                 "help wanted": "需要帮助",
                     "Extra attention is needed": "需要特别关注",
@@ -4535,6 +4553,58 @@ I18N.zh = {
                 // [/(\d+) tagged/, "$1 个标记"],
                 // [/(\d+) untagged/, "$1 个未标记"],
 
+            // 添加许可证 /community/license/new?branch=main
+                "Add a license to your project": "为您的项目添加许可证",
+                "Choose a license to add to your project": "选择要添加到项目的许可证",
+                "Select a template on the left to get started.": "在左侧选择一个模板开始。",
+                "Learn more about": "了解更多关于",
+                "which license best fits your project": "哪种许可证最适合您的项目",
+
+            // 添加许可证 /community/license/new?branch=<branch name>&template=<template name>
+                // 右侧栏
+                    "You’ll have a chance to review before committing a": "您将有机会在提交之前进行审查",
+                    "file to a new branch or the root of your project.": "文件到新分支或项目的根目录。",
+                    "Review and submit": "审查并提交",
+
+                // 中间栏 顶部 权限信息
+                    "Permissions": "许可事项",
+                    "Limitations": "限制条件",
+                        "Commercial use": "商业用途",
+                        "Modification": "修改",
+                        "Distribution": "分布",
+                        "Patent use": "专利使用",
+                        "Private use": "私人使用",
+                        "Trademark use": "商标使用",
+                        "Liability": "责任",
+                        "Warranty": "担保",
+                        "Disclose source": "开源",
+                        "Same license": "相同的许可证",
+                    "Conditions": "条件",
+                        "License and copyright notice": "许可和版权声明",
+                        "State changes": "状态变化",
+                        "License and copyright notice for source": "来源许可和版权声明",
+                        "Network use is distribution": "网络使用即分发",
+                        "Same license (library)": "相同的许可证（库）",
+                        "Same license (file)": "相同的许可证（文件）",
+
+                    "This is not legal advice.": "这并不是法律建议。",
+                    "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
+
+
+            // /contribute
+                "Contribute to": "贡献于",
+                "Make your first contribution to this repository by tackling one of the issues listed below.": "通过解决下面列出的一个议题，为这个仓库做出您的第一个贡献。",
+                "Each issue displayed here is a \"good first issue,\" selected for its relative approachability for first-time contributors.": "此处显示的每个议题都是 “好的首发议题”，因其对首次贡献者来说相对容易。",
+
+                "Read the contributing guidelines": "阅读贡献指南",
+
+                "Good first issues": "好的首发议题",
+                "See all issues": "查看所有议题",
+
+                "This repo doesn't have any good first issues, yet": "该仓库暂无任何好的首发议题",
+                "Once its maintainers label issues and pull requests for new contributors, they will begin to appear here.": "一旦它的维护者为新的贡献者标记了议题和拉取请求，它们就会开始出现在这里。",
+                "All issues in this repository": "此仓库中的所有议题",
+
         },
         "regexp": [ // 正则翻译
             [/had recent pushes less than/, "分支有了最近的推送，不到"], //仓库首页 最近有了新提交提醒
@@ -4583,6 +4653,7 @@ I18N.zh = {
             [/Failure: Your tests failed on ([^ ]+)/, "失败：您的测试在 $1 上失败了"], // X 的提醒
             [/Success: Your tests passed on ([^ ]+)/, "成功：您的测试在 $1 上通过了"], // 对勾 的提醒
             [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
+            [/(\d+) reviews? requesting changes/, "$1 项更改请求审查"], // 已请求更改 的提醒 /pulls
             [/View all issues opened by (.+)/, "查看所有 $1 的议题"],
             // 具体拉取请求 /<user-name>/<repo-name>/pull/ID
             [/([\d,]+) participants?/, "$1 位参与者"],
@@ -4593,7 +4664,9 @@ I18N.zh = {
             [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
             [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基合并到基础分支中。"],
             [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
-            [/approved these changes/, "批准这些更改"], // 具体的拉取请求 审查人
+            [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"], // 具体的拉取请求 审查人
+            [/([^ ]+) requested changes/, "$1 请求更改"], // 具体的拉取请求 审查人
+            [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查人
             // [/Commits on (.+)/, "提交于 $1"],
             [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
             // bug [/from (.+)/, "从 $1"],
@@ -4621,9 +4694,15 @@ I18N.zh = {
             [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查人进行审查。"],
             [/(\d+) approvals?/, "$1 项批准"],
+            [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查员进行更改"],
+            [/(\d+) change requested/, "$1 项更改请求"],
             [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
-            [/(\d+) skipped, (\d+) successful, and (\d+) failing checks/, "$1 个跳过, $2 个成功, $3 个失败"],
-            [/(\d+) skipped, (\d+) successful, and (\d+) expected checks/, "$1 个跳过, $2 个成功, $3 个预先检查"],
+            [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
+            [/(\d+) successful and (\d+) failing checks?/, "$1 个成功, $2 个失败检查"],
+            [/(\d+) skipped, (\d+) successful, and (\d+) failing checks?/, "$1 个跳过, $2 个成功, $3 个失败检查"],
+            [/(\d+) skipped, (\d+) successful, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个预先检查"],
+            [/(\d+) skipped, (\d+) successful, (\d+) queue, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个排队, $4 个预先检查"],
+            [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
             [/(\d+) neutral checks?/, "$1 次中立检查"],
             [/(\d+) successful checks?/, "$1 次成功检查"],
             [/(\d+) checks? passed/, "$1 次检查通过"],
@@ -4635,6 +4714,7 @@ I18N.zh = {
             [/(\d+) of (\d+) files?/, "$1 / $2 个文件"],
             [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
             [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
+            [/(\d+) similar comments?/, "$1 条类似评论"],
             [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 wiki"], // wiki页面
             [/edited this page/, "编辑此页"], // wiki
             [/(\d+) revisions?/, "$1 次修订"], // wiki
@@ -5656,10 +5736,12 @@ I18N.zh = {
                 "What’s this?": "这是什么？",
                 "6-digit code": "6位验证码",
                 "Verify": "验证",
-                "Verifying": "验证中",
-                "Verifying…": "验证中…",
-                "Open the two-factor authentication app on your device to view your authentication code and verify your identity.": "打开设备上的两因素身份验证程序以查看身份验证码并验证您的身份。",
-                "Having problems?": "有议题吗？",
+                    "Verifying": "验证中",
+                    "Verifying…": "验证中…",
+                "Open the two-factor authentication app on your device to view your authentication code and verify your identity.": "打开设备上的双因素身份验证程序以查看身份验证码并验证您的身份。",
+                "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的双因素身份验证程序（TOTOP）以查看您的身份验证码。",
+                "Having problems?": "有问题吗？",
+                    "Use a recovery code": "使用恢复码",
                 "Enter a two-factor recovery code": "输入恢复码",
                 "Can’t access your two-factor device or valid recovery codes?": "无法访问您的双因素验证设备或有效的恢复码？",
 
@@ -5681,6 +5763,10 @@ I18N.zh = {
                 "Recovery code": "恢复码",
                 "You can enter one of your recovery codes in case you lost access to your mobile device.": "如果您无法访问移动设备，则可以输入恢复码。",
                 "Still having problems?": "还是有问题？",
+
+                "If you are unable to access your mobile device, enter one of your recovery codes to verify your identity.": "如果您无法访问您的移动设备，请输入您的一个恢复码以验证您的身份。",
+                "Locked out?": "被锁在外面了吗？",
+                "Try recovering your account": "请尝试恢复您的帐户",
 
             // 帐户恢复 https://github.com/sessions/recovery
                 "Account recovery": "帐户恢复",
