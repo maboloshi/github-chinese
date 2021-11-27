@@ -203,6 +203,7 @@ I18N.zh = {
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的个人资料",
+            "Your sponsorships": "我的捐助者",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
             "Your organizations": "我的组织",
@@ -408,6 +409,18 @@ I18N.zh = {
                 "Filter to discussions": "筛选讨论",
                 "Filter to projects": "筛选项目",
                 "Filter to open issues, pull requests, and discussions": "筛选打开的议题、拉取请求和讨论",
+
+            //
+            "Committed to this repository": "已提交过这个仓库",
+            "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
+            "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+            "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
+
+            "Owns this repository": "拥有这个仓库",
+            "Left a review": "留下了一个评论",
+
+            "Opened this pull request": "打开了此拉取请求",
+
 
             // 公共词 高频词
             "Followers": "关注者",
@@ -1054,7 +1067,7 @@ I18N.zh = {
                     "Set new profile picture": "设置新的个人头像",
                 //"You can also drag and drop a picture from your computer.": "您也可以直接拖拽照片镜像上传.",
                 "Name": "昵称",
-                "Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.": "您的名字可能会出现在 GitHub 上，您的贡献或被提及的地方。您可以在随时删除它。",
+                "Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.": "您的昵称可能会出现在 GitHub 上，您的贡献或被提及的地方。您可以在随时删除它。",
                 "Public email": "公开电子邮箱",
                 "Select a verified email to display": "选择显示一个已验证的电子邮箱",
                 "You have set your email address to private. To toggle email privacy, go to": "您已将电子邮箱地址设置为私密。需要切换电子邮箱地址的私密性，请转到",
@@ -1669,7 +1682,7 @@ I18N.zh = {
             // Blocked users 黑名单 https://github.com/settings/blocked_users
                 "Block a user": "拉黑用户",
                 "Blocking a user prevents the following on all your repositories:": "拉黑用户可以防止所有仓库中的以下操作：",
-                "opening or commenting on issues or pull requests": "打开或评论问题或拉取请求",
+                "opening or commenting on issues or pull requests": "打开或评论议题或拉取请求",
                 "starring, forking, or watching": "加星标、复刻、关注",
                 "adding or editing wiki pages": "添加或编辑 Wiki 页面",
                 "Additionally, blocked users are not able to:": "此外，被拉黑用户无法：",
@@ -1707,7 +1720,7 @@ I18N.zh = {
                 "3 days": "3 天",
                 "1 week": "1 周",
                 "1 month": "1 个月",
-                "6 months": "6个月",
+                "6 months": "6 个月",
                 // 顶部提醒
                 "User interaction limit settings saved.": "用户交互限制设置已保存。",
 
@@ -2574,6 +2587,9 @@ I18N.zh = {
                 // [/Want to contribute to ([^ ]+)/, "想为 $1 做贡献吗？"], /issues
                 "If you have a bug or an idea, read the": "如果您发现一个错误或有任何想法，请阅读",
                 "before opening an issue.": "，在打开议题之前。",
+                "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。你也可以看看",
+                "Open Source Guide": "开源指南",
+
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
                 "Dismiss for all repositories": "对所有仓库均不在提示",
@@ -2663,8 +2679,8 @@ I18N.zh = {
                 "advanced search": "高级搜索",
 
                 // 状态词
-                "was merged": "合并",
-                "was closed": "关闭",
+                "was merged": "合并于",
+                "was closed": "关闭于",
                 "Approved": "已批准",
                 "Review required": "需要审查", // 拉取请求 页面状态词
                     "Review required before merging": "合并前需要审查",
@@ -2682,7 +2698,7 @@ I18N.zh = {
 
             // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
                 "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
-                ". Take a look before submitting an issue:": "。在提交问题之前先看一下：",
+                ". Take a look before submitting an issue:": "。在提交议题之前先看一下：",
                 "Contributing guidelines": "贡献指南",
                 "Last updated": "最后更新",
 
@@ -2703,7 +2719,7 @@ I18N.zh = {
                 "added a commit that closed this issue": "在提交时关闭了这个议题",
                 "closed this in": "关闭于",
                 "added the": "添加了",
-                "added": "添加",
+                "added": "添加了",
                 "and removed": "并移除了",
                 "removed the": "移除了",
                 "label": "标签",
@@ -2874,7 +2890,7 @@ I18N.zh = {
                 "wants to merge": "希望合并",
                 "commit into": "个提交到",
                 "commits into": "个提交到",
-                "from": "从",
+                "from": "来自",
 
                 // 标签栏
                 "Conversation": "讨论",
@@ -2987,7 +3003,7 @@ I18N.zh = {
                 "\’s": "的",
                 "stale review": "陈旧审查",
                 "via": "通过",
-                "force-pushed": "强制推送",
+                "force-pushed": "强制推送了",
                 "the": " ",
                 "branch from": "分支从",
                 "and others": "和其他成员",
@@ -3266,6 +3282,9 @@ I18N.zh = {
                     "new branch": "新分支",
                     "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。",
                     "Learn more about pull requests.": "了解更多关于拉取请求的信息。",
+
+                // 顶部提醒
+                // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
 
             // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
                 // 与用户名同名仓库 编辑 README
@@ -3808,19 +3827,27 @@ I18N.zh = {
                 "Excluding merges,": "不包括合并，",
                 // [/(\d+) authors?/, "$1 位作者"],
                 "have pushed": "推送了",
+                "has pushed": "推送了",
                 // [/to gh-pages and/, "到 $1 分支和"],
                 // [/to all branches. On gh-pages,/ "到全部分支。在 $1 分支，"],
                 // [/(\d+) files?/, "$1 个文件"],
                 "have changed and there have been": "已经发生了变化，并且有",
                 "additions": "处增加",
                 "deletions": "处删除",
-                "Pull request merged by": "",
-                "Pull requests merged by": "",
-                "Pull request opened by": "",
-                "Pull requests opened by": "",
-                "Issue closed by": "",
-                "Issues closed by": "",
-                "people": "",
+                "Want to help out?": "想帮忙吗？",
+                "Fork this repository": "复刻仓库",
+                "Release published by": "个发行版已发布由",
+                "published": "发布",
+                "Pull request merged by": "个拉取请求已合并由",
+                "Pull requests merged by": "个拉取请求已合并由",
+                "Pull request opened by": "个拉取请求打开由",
+                "Pull requests opened by": "个拉取请求打开由",
+                "Issue closed by": "个议题已关闭由",
+                "Issues closed by": "个议题已关闭由",
+                "Issue opened by": "个议题打开由",
+                "Issues opened by": "个议题打开由",
+                "person": "人",
+                "people": "人",
                 "Sometimes conversations happen on old items that aren’t yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时会针对尚未关闭的旧项目进行讨论。以下是所有未解决的讨论的议题和拉取请求的列表。",
                 // [/• (\d+) new comments/, "• $1 个新评论"],
 
@@ -3846,8 +3873,10 @@ I18N.zh = {
                 "recommended community standards": "推荐的社区标准",
                 "Checklist": "检查清单",
                 "Add": "添加",
+                "Propose": "倡议",
                 "Writing contributing guidelines": "编写贡献指南",
                 "License": "许可证",
+                "Choosing a license": "选择许可证",
                 "Issue templates": "议题模板",
                 "Pull request template": "拉取请求模板",
                 "Repository admins accept content reports": "仓库管理员接受内容报告", // 组织仓库?
@@ -4064,7 +4093,42 @@ I18N.zh = {
             "Click here": "点击这里",
             "to see the currently running workflows.": "查看当前正在运行的工作流程。",
 
+            // Dependabot 警报 /security/dependabot >>>>>>>>>>>>>>>>>>>>>>
+                "Welcome to Dependabot alerts!": "欢迎使用 Dependabot 警报！",
+                "Dependabot alerts track security vulnerabilities that apply to your repository’s dependencies. As alerts are created, they’ll appear here.": "Dependabot 警报跟踪适用于仓库依赖项的安全漏洞。创建警报后，它们将显示在此处。",
+
             // 新建安全建议草案 /security/advisories/new >>>>>>>>>>>>>>>>>>>>>>
+                "Open a draft security advisory": "打开一个安全公告草案",
+                "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打开后，您可以与协作者私下讨论，并创建一个临时的私有复刻，在那里你们可以协作进行修复。如果您已经修复了该漏洞，只需填写安全公告草案，然后发布即可。",
+                "Affected product": "受影响的产品",
+                "Ecosystem": "生态系统",
+                    "Select an ecosystem": "选择一个生态系统",
+                    "Go": "",
+                    "Other": "其他",
+                "Affected versions": "受影响的版本",
+                "Patched versions": "补丁版本",
+                "Add another affected product": "添加另一个受影响的产品",
+                "Select severity": "选择严重程度",
+                    "Low": "低风险",
+                    "Moderate": "中风险",
+                    "Critical": "高风险",
+                    "Assess severity using CVSS": "使用 CVSS 评估严重程度",
+                "Common weakness enumerator (CWE)": "常见弱点枚举器 (CWE)",
+                    "Search by CWE": "按 CWE 搜索",
+                "CVE identifier": "CVE 标识符",
+                    "Request CVE ID later": "稍后请求 CVE ID",
+                    "I have an existing CVE ID": "我有一个现有的 CVE ID",
+
+                "Create draft security advisory": "创建安全公告草案",
+
+                // 右侧栏
+                "Access and visibility": "访问和可见性",
+                    "Until it is published, this draft security advisory will only be visible to the owner of": "在发布之前，此安全公告草案仅对以下的所有者可见",
+                    ". Other users and teams may be added once the advisory is created.": "。 其他用户和团队可以在咨询创建后加入。",
+                "Once published, security advisories on public repositories are visible to everyone.": "一旦发布，公共仓库上的安全公告对所有人都是可见的。",
+                "Once reviewed by GitHub, security advisories may be broadcast on the": "一旦通过 GitHub 的审查，安全公告就可以出现在",
+                "GitHub Advisory Database": "GitHub 咨询数据库",
+                ". They may also trigger Dependabot alerts to users that depend on this repository.": "。它们还可能向依赖此仓库的用户触发 Dependabot 警报。",
 
             // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<Patch>/<file_name> >>>>>>>>>>>>>>>>>>>>>>
                 // 快捷键
@@ -4602,6 +4666,13 @@ I18N.zh = {
                 // 右侧栏
                     "You’ll have a chance to review before committing a": "您将有机会在提交之前进行审查",
                     "file to a new branch or the root of your project.": "文件到新分支或项目的根目录。",
+
+                    "To adopt": "采用",
+                    ", enter your details. You’ll have a chance to review before committing a": "，输入您的详细信息。您将有机会在提交之前进行审查",
+                    "Year": "年份",
+                        "The current year": "当前年份",
+                    "Full name": "全名",
+                        "The full name or username of the repository owner": "仓库所有者的全名或用户名",
                     "Review and submit": "审查并提交",
 
                 // 中间栏 顶部 权限信息
@@ -4680,7 +4751,7 @@ I18N.zh = {
             [/([\d,]+) Open/, "$1 打开"],
             [/([\d,]+) Closed/, "$1 已关闭"],
             [/#(\d+) opened/, "#$1 打开"],
-            [/#(\d+) by/, "#$1 被"],
+            // [/#(\d+) by/, "#$1 被"],
             [/([\d,]+) linked issues?/, "$1 个关联议题"],
             [/(\d+) tasks? done/, "$1 个任务完成"],
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
@@ -4801,6 +4872,7 @@ I18N.zh = {
             // 依赖关系图- 依赖项
             [/(\d+) Repositor(y|ies)/, "$1 仓库"],
             [/(\d+) Packages?/, "$1 软件包"],
+            [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"], // /new/<branch> 选择了许可证
         ],
     },
 
@@ -5030,6 +5102,7 @@ I18N.zh = {
                         "pages": "GitHub Page",
                         "published from this repository.": "发布自这个仓库。",
                     "Dependency graph, Dependabot alerts, and Dependabot security updates will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图、Dependabot 警报和 Dependabot 安全更新将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
+                    "Dependency graph and Dependabot alerts will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图和 Dependabot 警报将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
                     "Dependency graph will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图将保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
                     // 与用户名同名仓库
                     "The README in this repository will no longer be shown on your public profile once this repository is private.": "一旦此仓库设置为私有的，此仓库中的 README 将不再显示在您的公开个人资料中。",
@@ -5515,7 +5588,7 @@ I18N.zh = {
                 "Runner image": "运行器镜像",
                 "Architecture": "架构",
                 "Download": "下载",
-                "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我们建议在 “\\actions-runner” 下配置运行器。这将有助于避免与 Windows 上的服务标识文件夹权限和长路径限制相关的问题。",
+                "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我们建议在 “\\actions-runner” 下配置运行器。这将有助于避免与 Windows 上的服务标识文件夹权限和长路径限制相关的议题。",
                 "Using your self-hosted runner": "使用您的自托管运行器",
                 "For additional details about configuring, running, or shutting down the runner, please check out our": "关于配置、运行或关闭运行器的其他细节，请查看我们的",
                 "product docs": "产品文档",
@@ -5659,6 +5732,12 @@ I18N.zh = {
                 "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Pages",
                 "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
 
+                // 
+                "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
+                "Try it risk-free for 14 days": "14天免费",
+                "using a GitHub Enterprise organization, or": "试用 GitHub 企业组织，或",
+                "learn more about changing the visibility of your GitHub Pages site": "了解更多关于改变您的 GitHub Pages 站点的可见性的信息",
+
             // 审查设置 (仓库)互动限制 /<user-name>/<repo-name>/settings/interaction_limits
             // 同全局
                 "Temporary interaction limits": "临时互动限制",
@@ -5693,7 +5772,7 @@ I18N.zh = {
                 "3 days": "3 天",
                 "1 week": "1 周",
                 "1 month": "1 个月",
-                "6 months": "6个月",
+                "6 months": "6 个月",
 
                 // 顶部提醒
                 "Repository interaction limit settings saved.": "仓库交互限制设置已保存。",
@@ -5738,12 +5817,15 @@ I18N.zh = {
             "Sign up": "注册",
 
             // "Built for developers": "专为开发者打造",
+            "Where the world builds software": "世界构建软件的地方",
+            "Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.": "数以百万计的开发者和公司在 GitHub — 世界上最大、最先进的开发平台上构建、发布和维护他们的软件。",
             "Email address": "电子邮箱地址",
             "Sign up for GitHub": "注册 GitHub",
             // "Refresh": "刷新",
+            "million": "百万",
             "Developers": "开发者",
             "Organizations": "组织",
-            "Fortune 50": "财富 50 强",
+            "Fortune 100": "财富 100 强",
         },
         "regexp": [ // 正则翻译
         ],
@@ -7111,7 +7193,7 @@ I18N.zh = {
             // Blocked users 黑名单 /organizations/<org-login>/settings/user_blocks
                 "Block a user": "拉黑用户",
                 "Blocking a user prevents the following on all your repositories:": "拉黑用户可以防止所有仓库中的以下操作：",
-                "opening or commenting on issues or pull requests": "打开或评论问题或拉取请求",
+                "opening or commenting on issues or pull requests": "打开或评论议题或拉取请求",
                 "starring, forking, or watching": "加星标、复刻、关注",
                 "adding or editing wiki pages": "添加或编辑 Wiki 页面",
 
@@ -7151,7 +7233,7 @@ I18N.zh = {
                 "3 days": "3 天",
                 "1 week": "1 周",
                 "1 month": "1 个月",
-                "6 months": "6个月",
+                "6 months": "6 个月",
                 // 顶部提醒
                 "User interaction limit settings saved.": "用户交互限制设置已保存。",
 
@@ -7369,8 +7451,8 @@ I18N.zh = {
                     "archived": "存档了",
                     "restored": "恢复了",
                     "moved": "移动了",
-                    "from": "从",
-                    "From": "从",
+                    "from": "来自",
+                    "From": "来自",
 
                 // 编辑对话框
                     "Edit project": "编辑项目",
