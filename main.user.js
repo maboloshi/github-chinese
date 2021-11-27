@@ -122,6 +122,9 @@
                 } else if (el.tagName === 'BUTTON' && el.hasAttribute('data-confirm-cancel-text')) {
                     transElement(el, 'data-confirm-cancel-text', true); // 取消按钮 提醒
 
+                } else if (el.hasAttribute('cancel-confirm-text')) {
+                    transElement(el, 'cancel-confirm-text', true); // 取消按钮 提醒
+
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
                 }
