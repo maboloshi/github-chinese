@@ -133,7 +133,9 @@
                     traverseNode(el); // 遍历子节点
                 }
             } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
-                transElement(el, 'data');
+                if (el.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
+                    transElement(el, 'data');
+                }
             }
         }
     }
