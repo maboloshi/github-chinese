@@ -1,4 +1,4 @@
-# GitHub 中文化插件
+# [GitHub 中文化插件][project-url]
 > 本项目源自: [52cik/github-hans](https://github.com/52cik/github-hans)
 
   [![GitHub issues][issues-image]][issues-url]
@@ -69,6 +69,22 @@
   ![预览][png-4]
   ![github-chinese][github-chinese]
 
+[project-url]: https://github.com/maboloshi/github-chinese "GitHub 中文化插件"
+
+[issues-url]: https://github.com/maboloshi/github-chinese/issues "议题"
+[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github&label=Issue
+
+[stars-url]: https://github.com/maboloshi/github-chinese/stargazers "星标"
+[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github&label=Star
+
+[forks-url]: https://github.com/maboloshi/github-chinese/network "复刻"
+[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github&label=Fork
+
+[license-url]: https://opensource.org/licenses/GPL-3.0  "许可证"
+[license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
+
+[greasyFork-url]: https://greasyfork.org/scripts/435208  "GreasyFork - GitHub 中文化插件"
+[greasyFork-image]: https://img.shields.io/badge/dynamic/json?style=flat-square&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
 
 [Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
 [violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
@@ -82,19 +98,4 @@
 [png-4]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/4.png
 [everyday-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-1.png
 [everyday-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-2.png
-[github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp "github-chinese"
-
-[issues-url]: https://github.com/maboloshi/github-chinese/issues
-[issues-image]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github&label=Issue
-
-[stars-url]: https://github.com/maboloshi/github-chinese/stargazers
-[stars-image]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github&label=Star
-
-[forks-url]: https://github.com/maboloshi/github-chinese/network
-[forks-image]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github&label=Fork
-
-[license-url]: https://opensource.org/licenses/GPL-3.0
-[license-image]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
-
-[greasyFork-url]: https://greasyfork.org/scripts/435208
-[greasyFork-image]: https://img.shields.io/badge/dynamic/json?style=flat-square&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
+[github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
