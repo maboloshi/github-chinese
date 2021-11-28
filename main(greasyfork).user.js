@@ -122,6 +122,8 @@
                 } else if (el.tagName === 'BUTTON' && el.hasAttribute('data-confirm-cancel-text')) {
                     transElement(el, 'data-confirm-cancel-text', true); // 取消按钮 提醒
 
+                } else if (el.hasAttribute('cancel-confirm-text')) {
+                    transElement(el, 'cancel-confirm-text', true); // 取消按钮 提醒
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
                 }
@@ -133,7 +135,9 @@
                     traverseNode(el); // 遍历子节点
                 }
             } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
-                transElement(el, 'data');
+                if (el.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
+                    transElement(el, 'data');
+                }
             }
         }
     }
