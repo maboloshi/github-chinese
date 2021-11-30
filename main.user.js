@@ -12,6 +12,7 @@
 // @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
+// @connect      www.githubs.cn
 // ==/UserScript==
 
 (function (window, document, undefined) {
