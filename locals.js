@@ -264,6 +264,8 @@ I18N.zh = {
             // 评论编辑器翻译
             "Write": "撰写",
             "Preview": "预览",
+                "There is no content to preview.": "没有内容可供预览。",
+                "This file is empty.": "这是一个空文件。",
             "Leave a comment": "发表评论",
             "Write a reply": "发表回复", // 具体讨论页
             "Write a comment": "发表回复", // 具体讨论页
@@ -760,13 +762,14 @@ I18N.zh = {
                 "comments": "次评论",
                 "Commits": "提交",
                 "Code review": "代码审查",
+                "Built by": "构建者",
 
                 "Created their first repository": "创建了他们的第一个仓库",
                 "Created an issue in": "创建一个议题在",
                 "Created a pull request in": "创建一个拉取请求在",
                 "First repository": "第一个仓库",
                 "First pull request": "第一次拉取请求",
-                "First issue": "第一次提问",
+                "First issue": "第一次议题",
                 "Opened their first issue on GitHub in": "打开了他们第一个议题",
                 "Opened their first pull request on GitHub in": "打开了他们第一个议题",
                 "Joined GitHub": "刚加入 GitHub",
@@ -823,7 +826,7 @@ I18N.zh = {
                 "results for repositories matching": "个结果在仓库中匹配了",
                 "repositories sorted by": "仓库，排序按",
                 "written in": "，使用语言",
-                // "results for repositories written in": "",
+                "results for repositories written in": "个结果在仓库中使用语言",
                 "sorted by": "，排序按",
                     "last updated": "最近更新",
                     "name": "仓库名",
@@ -2533,6 +2536,7 @@ I18N.zh = {
                 // "About": "关于"，
                 "No description, website, or topics provided.": "未提供描述、网站或主题。",
                 "Readme": "自述文件",
+                "View license": "查看许可证",
                 "Code of conduct": "行为准则",
 
                 // 仓库描述编辑 对话框
@@ -2759,7 +2763,7 @@ I18N.zh = {
 
                 // 右侧栏 补充
                 // 同 /<user-name>/<repo-name>/pull/<id>
-                "Linked pull requests": "关联拉取请求",
+                "Linked pull requests": "关联的拉取请求",
                     "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
                     // 下拉
                     "Link a pull request from this repository": "关联来自此仓库的拉取请求",
@@ -2940,7 +2944,7 @@ I18N.zh = {
                     //下拉
                     "Set milestone": "设置里程碑",
 
-                "Linked issues": "关联议题",
+                "Linked issues": "关联的议题",
                     "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
                     // 下拉
                     "Link an issue from this repository": "关联来自此仓库的议题",
@@ -3835,6 +3839,7 @@ I18N.zh = {
                 // [/to all branches. On gh-pages,/ "到全部分支。在 $1 分支，"],
                 // [/(\d+) files?/, "$1 个文件"],
                 "have changed and there have been": "已经发生了变化，并且有",
+                "has changed and there have been": "已经发生了变化，并且有",
                 "additions": "处增加",
                 "deletions": "处删除",
                 "Want to help out?": "想帮忙吗？",
@@ -4422,6 +4427,7 @@ I18N.zh = {
                 "Least issues": "最少的议题",
 
                 "No due date": "没有截止日期",
+                // [/Due by (.*)/, "截止日期 $1"], // 里程碑截止日期
                 "(more)": "（更多）",
                 "Show less": "显示更少",
                 // 完成进度条
@@ -4625,6 +4631,7 @@ I18N.zh = {
                     "All environments": "所有环境",
                 "Loading information…": "载入信息…",
                 "at": "在",
+                "Deployed": "部署",
                 "Deployed by": "部署者",
                 "Inactive": "不活跃",
                 "Abandoned": "废弃",
@@ -4753,8 +4760,8 @@ I18N.zh = {
             // 议题 & 拉取请求
             [/([\d,]+) Open/, "$1 打开"],
             [/([\d,]+) Closed/, "$1 已关闭"],
-            [/#(\d+) opened/, "#$1 打开"],
-            // [/#(\d+) by/, "#$1 被"],
+            [/#(\d+) opened/, "#$1 打开于"],
+            [/#(\d+) by/, "#$1 打开者"],
             [/([\d,]+) linked issues?/, "$1 个关联议题"],
             [/(\d+) tasks? done/, "$1 个任务完成"],
             [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
@@ -4876,6 +4883,7 @@ I18N.zh = {
             [/(\d+) Repositor(y|ies)/, "$1 仓库"],
             [/(\d+) Packages?/, "$1 软件包"],
             [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"], // /new/<branch> 选择了许可证
+            [/Due by (.*)/, "截止日期 $1"], // 里程碑页面 里程碑截止日期
         ],
     },
 
@@ -5172,6 +5180,9 @@ I18N.zh = {
                 "I understand the consequences, archive this repository": "我明白后果，依然存档该仓库",
                 // "This repository has been archived by the owner. It is now read-only.": "此仓库已由所有者存档。它现在是只读的。",
 
+                // 顶部提醒
+                // [/Your repository \"([^ ]+)\" was successfully archived./, "您的仓库 “$1” 已成功归档。"], //仓库归档
+
                 "Unarchive this repository": "解除仓库存档",
                 "Mark this repository as unarchived and read-write.": "将此仓库标记为未归档和可读写。",
 
@@ -5189,6 +5200,9 @@ I18N.zh = {
 
                 "Delete this repository": "删除仓库",
                 "Once you delete a repository, there is no going back. Please be certain.": "您一旦删除仓库，将再也无法恢复。请确认。",
+
+                // 顶部提醒
+                // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除归档。"], //仓库解除归档
 
                 // 删除仓库对话框
                 "Are you absolutely sure?": "您完全确定吗？",
@@ -5473,6 +5487,10 @@ I18N.zh = {
                 "Request": "请求",
                 "Response": "应答",
                 "Redeliver": "重新交付",
+                    "Redeliver payload?": "重新交付有效负载？",
+                    "The payload will be delivered to": "该有效负载将被发送到",
+                    "using the current webhook configuration.": "使用当前的 Web 钩子 配置。",
+                    "Yes, redeliver this payload": "是的，重新发送此有效负载",
 
                 // [/Completed in (\d+) seconds./, "在 (\d+) 秒内完成。"],
 
@@ -5793,6 +5811,8 @@ I18N.zh = {
             [/is already the branch name./, "已经是分支的名称了。"], // 重命名分支 对话框
             [/Your branch name will be/, "您的分支的名称将重命名为"], // 重命名分支 对话框
             [/Default branch changed to ([^ ]+)/, "默认分支已经更改为 $1"], // 顶部提醒 当默认分支更改成功
+            [/Your repository \"([^ ]+)\" was successfully archived./, "您的仓库 “$1” 已成功归档。"], //顶部提醒 仓库归档
+            [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除归档。"], //顶部提醒 仓库解除归档
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
             [/Enabled with about ([^ ]+) remaining./, ""],
@@ -6648,6 +6668,9 @@ I18N.zh = {
 
             // 编辑代码页面
             "Editing": "编辑",
+            "Edit file": "编辑文件",
+            "Preview changes": "预览更改",
+            "Loading preview…": "载入预览…",
             "Make secret": "转为私密",
             "Make public": "转为公开",
             "Cancel": "取消",
@@ -7311,6 +7334,24 @@ I18N.zh = {
                     "Go to Wiki"                 : "跳转到 Wiki",
                     "Go to Discussions"          : "跳转到讨论",
 
+            // 公共词 简版 议题&拉取请求信息
+                "opened by": "打开者",
+                "Opened in": "打开在",
+                "commented": "评论于",
+                "Show less": "显示更少",
+                "Show more": "显示更多",
+                "Assignees": "受理人",
+                    "No one assigned": "无人受理",
+                "Labels": "标签",
+                "Milestone": "里程碑",
+                    "No milestone": "尚无里程碑",
+                "Linked pull requests": "关联的拉取请求",
+                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
+                "None yet": "暂无",
+                "Go to issue for full details": "跳转到议题以获取完整详细信息",
+
+                "Loading details…": "载入细节…",
+
             // 新建项目 https://github.com/new/project
               //同 仓库 新建项目页面  /<user-name>/<repo-name>/projects/new
                 "Create a new project": "创建新项目",
@@ -7337,12 +7378,12 @@ I18N.zh = {
                         "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
                     "Private": "私有",
                         "You choose who can see and make changes to this project.": "您可以选择谁可以查看此项目并对其进行更改。",
-                "Linked repositories": "关联仓库",
+                "Linked repositories": "关联的仓库",
                     "Search": "搜索",
                     "to link repositories to this project for more accurate suggestions and better search results.": "将仓库关联到此项目，以获得更准确的建议和更好的搜索结果。",
                     "Search by repository name": "搜索仓库名",
                     "You've reached the limit of 25 linked repositories.": "您已经达到了 25 个关联仓库的上限。",
-                    "Linked repositories:": "关联仓库",
+                    // "Linked repositories:": "关联的仓库",
                     "None yet!": "啥也木有！",
                 "Create project": "创建项目",
 
@@ -7639,7 +7680,7 @@ I18N.zh = {
                     "You’ll only be able to find a GitHub user by their email address if they’ve chosen to list it publicly. Otherwise, use their username instead.": "只有当 GitHub 用户选择公开电子邮箱地址时，您才能通过他们的电子邮箱地址找到他们。否则，请使用他们的用户名代替。",
                     "Add collaborator": "Add collaborator",
                     // [/isn’t a GitHub member/, "不是 GitHub 成员"],
-                "Linked repositories": "关联仓库",
+                "Linked repositories": "关联的仓库",
                     "Link a repository": "关联仓库",
                     "Get more accurate suggestions and better search results by linking up to 25 repositories to this project.": "通过将多达 25 个仓库关联到这个项目，获得更准确的建议和更好的搜索结果。",
                     // [/(\d+) linked repositories/, "$1 个关联仓库"],
@@ -7657,6 +7698,7 @@ I18N.zh = {
             [/(\d+) linked repositories/, "$1 个关联仓库"],
             [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
             [/([\d,]+) Closed/, "$1 已关闭"],
+            [/(\d+) tasks? done/, "$1 个任务完成"],
         ],
     },
 
