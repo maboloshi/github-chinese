@@ -75,7 +75,7 @@ I18N.conf = {
      * 洞察-->复刻-->仓库列表 network 或 repo
      * 快捷键 按键 js-modifier-key
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|network|js-modifier-key)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -1073,7 +1073,7 @@ I18N.zh = {
                     "Set new profile picture": "设置新的个人头像",
                 //"You can also drag and drop a picture from your computer.": "您也可以直接拖拽照片镜像上传.",
                 "Name": "昵称",
-                "Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.": "您的昵称可能会出现在 GitHub 上，您的贡献或被提及的地方。您可以在随时删除它。",
+                "Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.": "您的昵称可能会出现在 GitHub 上，您的贡献或被提及的地方。您可以随时删除它。",
                 "Public email": "公开电子邮箱",
                 "Select a verified email to display": "选择显示一个已验证的电子邮箱",
                 "You have set your email address to private. To toggle email privacy, go to": "您已将电子邮箱地址设置为私密。需要切换电子邮箱地址的私密性，请转到",
@@ -1336,6 +1336,7 @@ I18N.zh = {
                 "Redeem coupon": "兑换优惠券",
                 "Current plan": "当前计划",
                 "Compare all plans": "比较所有计划",
+
                 //"GitHub Free": "GitHub 免费",
                 "The basics for all developers": "基础计划（所有开发者）",
                 "Unlimited public/private repos": "无限的公共/私人仓库",
@@ -1343,16 +1344,23 @@ I18N.zh = {
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
                 "Community support": "社区支持",
+
+                "Start your first organization account": "开设您的第一个组织账户",
+                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
+                "Create an organization": "创建组织",
+
                 "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
+
                 "GitHub Sponsors": "GitHub 赞助",
                 "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
                 "Start sponsoring": "开始赞助",
                 "You’re currently not sponsoring anyone.": "您目前没有赞助任何人。",
                 "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
+
                 "Change plan": "更改计划",
                 "Cancel plan": "取消计划",
-                "Do you have any questions? Contact": "对话框您有任何问题吗？请联系",
+                "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
                 // "Billing overview": "财务信息",
                 // "Plan": "方案",
@@ -1389,10 +1397,18 @@ I18N.zh = {
                 "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
 
             // Security log 安全日志 https://github.com/settings/security-log
+                "Loading audit log entries…": "正在加载审核日志条目...",
                 "Filters": "过滤",
+                    "Yesterday’s activity": "昨天的活动",
+                    "Repository management": "仓库管理",
+                    "Billing updates": "帐单更新",
                 "Search your security log": "搜索您的安全日志",
+                "Clear current search query": "清除当前的搜索查询",
                 "Export": "导出",
                 "Recent events": "最近的事件",
+                // [/Found (\d+) events?/, "发现 $1 个活动"],
+                "Newer": "新的",
+                "Older": "旧的",
 
             // Security & analysis 安全 & 分析 https://github.com/settings/security_analysis
                 "Configure security and analysis features": "配置安全和分析功能",
@@ -1426,6 +1442,8 @@ I18N.zh = {
                 "Primary": "主帐户",
                 "This email will be used for account-related notifications and can also be used for password resets.": "该电子邮箱将用于与帐户有关的通知，也可用于密码重置。",
                 "Not visible in emails": "在电子邮件中不可见",
+                "Visible in emails": "在电子邮件中可见",
+                    "This email may be used as the 'author' or 'committer' address for web-based Git operations, e.g., edits and merges.": "该电子邮箱可用作基于 Web 的 Git 操作（例如：编辑和合并）的 ‘作者’ 或 ‘提交者’ 地址。",
                 "Receives notifications": "接收通知",
                 "This email address is the default used for GitHub notifications, i.e., replies to issues, pull requests, etc.": "该电子邮箱默认用于 GitHub 的通知，即对议题和拉取请求的回复，等等。",
                 "At least one email is required.": "至少需要一个电子邮箱。",
@@ -1434,34 +1452,48 @@ I18N.zh = {
 
                 "Add email address": "添加电子邮箱",
                 "Email address": "电子邮箱",
-                "Resend verification email": "重新发送验证邮件",
-                "Your email was verified.": "您的电子邮箱已被验证。",
+                    // 顶部提醒
+                    "Resend verification email": "重新发送验证邮件",
+                    "Your email was verified.": "您的电子邮箱已被验证。",
+
                 "Primary email address": "主电子邮箱",
+                // 未电子邮箱隐私
+                "will be used for account-related notifications and can be used for password resets.": "将用于与帐户相关的通知，并可用于密码重置。",
+                // 电子邮箱隐私
                 "Because you have email privacy enabled,": "因为您已经启用了电子邮箱隐私，",
                 "will be used for account-related notifications as well as password resets.": "将用于与帐户相关的通知以及密码重置。",
                 "will be used for web-based Git operations, e.g., edits and merges.": "将用于基于 Web 的 Git 操作，例如编辑和合并。",
+                // 顶部提醒
                 "Your primary email was changed to": "您的主电子邮箱已更改为",
                 ". Your default notification email address is still set to": "。您的默认通知电子邮箱仍然设置为",
                 ". Would you like to update that as well?": "。您也想更新它吗？",
                 "Yes， update my notification email": "是的，更新我的通知电子邮箱",
+
                 "Backup email address": "备用电子邮箱",
                 "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的备用 GitHub 电子邮箱将额外的用作安全相关帐户通知，也可以用于密码重置。",
                 "Allow all verified emails": "允许所有已验证的电子邮箱",
+                    // 顶部提醒
+                    "All verified emails can now be used for password resets.": "所有已验证的电子邮箱现在均可用于密码重置。",
                 "Only allow primary email": "仅允许主电子邮箱",
+                    // 顶部提醒
+                    "Only your primary email address can now be used for password resets.": "现在只有您的主电子邮箱可用于密码重置。",
                 "Please add a verified email, in addition to your primary email, in order to choose a backup email address.": "请在您的主电子邮箱之外，添加一个经验证的电子邮箱，以便选择一个备用电子邮箱。",
-                "All verified emails can now be used for password resets.": "所有已验证的电子邮箱现在均可用于密码重置。",
+
                 "Keep my email addresses private": "保持我的电子邮箱地址的私密性",
+                    // 顶部提醒
+                    "Your primary email address is now public. To select which email to display on your profile, visit": "您的主电子邮箱地址现已公开。要选择在您的个人资料中显示哪个电子邮箱，请访问",
+                    "profile settings.": "个人资料设置。",
+                    "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主电子邮箱地址现已设为私密。如果您以前公开过您的电子邮箱，我们已经从您的个人资料中删除了它。",
                 "We’ll remove your public profile email and use": "我们将删除您的公开个人资料中的电子邮箱，并使用",
-                "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "执行基于 Web 的 Git 操作（例如编辑和合并）并以您的名义发送电子邮件。如果您想在命令行 Git 操作中使用您的私人电子邮箱，您必须",
+                "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "执行基于 Web 的 Git 操作（例如：编辑和合并）并以您的名义发送电子邮件。如果您想在命令行 Git 操作中使用您的私人电子邮箱，您必须",
                 "set your email in Git": "在 Git 中设置您的电子邮箱",
                 "Commits pushed to GitHub using this email will still be associated with your account.": "使用此电子邮箱推送到 GitHub 的提交仍将与您的帐户相关联。",
-                "Your primary email address is now public. to select which email to display on your profile, visit": "您的主电子邮箱现在是公开的。要选择在您的个人资料上显示的电子邮箱，请访问",
-                "Profile settings.": "个人资料设置。",
-                "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主电子邮箱现在是私密的。如果您以前公开了您的电子邮箱，我们已经从您的个人资料中删除了它。",
+
                 "Block command line pushes that expose my email": "阻止在命令行推送中暴露我的电子邮箱",
+                    // 顶部提醒
+                    "Commits pushed with a private email will no longer be blocked.": "使用私人电子邮箱推送的提交将不再被阻止。",
+                    "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人电子邮箱推送的提交将被阻止，您会看到一个警告。",
                 "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "当您推送到 GitHub 时，我们会检查最近的提交。如果该提交的作者电子邮箱是您 GitHub 帐户上的私人电子邮箱，我们会阻止推送并警告您不要暴露您的私人电子邮箱。",
-                "Commits pushed with a private email will no longer be blocked.": "使用私人电子邮箱推送的提交将不再被阻止。",
-                "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人电子邮箱推送的提交将被阻止，您会看到一个警告。",
 
                 "Email preferences": "邮件首选项",
                     "Receive all emails, except those I unsubscribe from.": "接收所有的邮件，除了那些我取消订阅的邮件。",
@@ -1475,6 +1507,7 @@ I18N.zh = {
                 "Save email preferences": "保存邮件首选项",
                 // 顶部提醒
                     "Successfully updated your email preferences.": "成功更新了您的邮件首选项。",
+
                 "Looking for activity notification controls? Check the": "正在寻找活动通知控制？请检查",
                 "Notification center": "通知中心",
 
@@ -1482,41 +1515,44 @@ I18N.zh = {
                 //"How you receive notifications": "通知设置",
                 "Choose how you receive notifications. These notification settings apply to the": "选择接收通知的方式。这些通知设置适用于",
                 "things you’re watching": "您正在关注的内容",
+
                 "Automatic watching": "自动关注",
-                "When you’re given push access to a repository, automatically receive notifications for it.": "当您给一个仓库推送权限时，自动接收相关通知。",
+                    "When you’re given push access to a repository, automatically receive notifications for it.": "当您给一个仓库推送权限时，自动接收相关通知。",
                 "Automatically watch repositories": "自动关注仓库",
-                "When you’re added to or join a team, automatically receive notifications for that team’s discussions.": "当您被添加或加入团队时，会自动接收该团队讨论的通知。",
+                    "When you’re added to or join a team, automatically receive notifications for that team’s discussions.": "当您被添加或加入团队时，会自动接收该团队讨论的通知。",
                 "Automatically watch teams": "自动关注团队",
+
                 "Participating": "参与话题",
                 "Notifications for the conversations you are participating in, or if someone cites you with an": "通知您正在参与的对话，或者如果有人",
-                "When you participate in a conversation or someone brings you in with an": "当有人",
                 //"@mention": "@您",
                 "Email": "电子邮件",
                 "Web and Mobile": "网站 和 移动设备",
+
                 "Watching": "关注仓库",
-                "Notifications for all repositories, teams, or conversations you’re watching.": "所有您正在关注的仓库、团队或对话的通知。",
-                // "Updates to any repositories or threads you’re watching.": "当您关注的仓库更新时。",
-                // "Your notification settings apply to the": "通知设置将应用到",
-                // "repositories you’re watching": "您关注的仓库",
-                // "Notification email": "接收通知的邮箱",
-                // "Primary email address": "主邮箱地址",
-                // "Save": "保存",
+                    "Notifications for all repositories, teams, or conversations you’re watching.": "所有您正在关注的仓库、团队或对话的通知。",
+
                 "Dependabot alerts": "Dependabot 警报",
-                "When you’re given access to": "当您获得",
-                ", automatically receive notifications when a new vulnerability is found in one of your dependencies.": " 访问权限时，当您的某个依赖关系中发现新的漏洞时，就会自动收到通知。",
+                    "When you’re given access to": "当您获得",
+                    ", automatically receive notifications when a new vulnerability is found in one of your dependencies.": " 访问权限时，当您的某个依赖关系中发现新的漏洞时，就会自动收到通知。",
                 "UI alerts": "用户界面警报",
-                "UI alerts display warnings in a repository’s file and code views.": "在仓库的文件和代码视图中显示警告。",
+                    "UI alerts display warnings in a repository’s file and code views.": "在仓库的文件和代码视图中显示警告。",
                 "Command Line": "命令行",
-                "Command Line alerts display warnings as a callback when you push to a repository with vulnerabilities.": "当您推送到存在漏洞的仓库时，命令行将发出警告。",
+                    "Command Line alerts display warnings as a callback when you push to a repository with vulnerabilities.": "当您推送到存在漏洞的仓库时，命令行将发出警告。",
                 "Web": "网站",
+
                 "Receive security alert notifications via email": "通过电子邮件接收安全警报通知",
                 "Email each time a vulnerability is found": "每次发现漏洞时发送电子邮件",
                 "Email a digest summary of vulnerabilities": "发送漏洞摘要电子邮件",
+                    "Daily security email digest": "每日安全邮件摘要",
+                    "Weekly security email digest": "每周安全邮件摘要",
 
                 "Actions": "操作",
-                "Notifications for workflow runs on repositories set up with": "仓库的工作流程通知，设置在",
-                "GitHub Actions": "",
+                    "Notifications for workflow runs on repositories set up with": "仓库的工作流程通知，设置在",
+                    "GitHub Actions": "",
                 "Send notifications for failed workflows only": "只为失败的工作流程发送通知",
+
+                "Organization alerts": "组织警告",
+                    "When you are given admin permissions to an organization, automatically receive notifications when a new deploy key is added.": "当您被赋予一个组织的管理权限时，当一个新的部署密钥被添加时，自动收到通知。",
 
                 "Email notification preferences": "邮件通知偏好",
                 "Default notification email": "默认通知电子邮箱",
@@ -1590,6 +1626,11 @@ I18N.zh = {
                 "Add a domain": "添加域名",
                 "There are no verified domains.": "暂无经过验证的域名",
                 "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
+
+            // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
+                "Add a verified domain": "添加一个经过验证的域名",
+                "What domain would you like to add?": "您想添加什么域名？",
+                "Add domain": "添加域名",
 
             // Organizations 组织 https://github.com/settings/organizations
                 "You are not a member of any organizations.": "您暂无任何组织。",
@@ -1867,6 +1908,7 @@ I18N.zh = {
             [/Uninstall "([^ ]+)"/, "卸载 “$1”"],
             // /settings/billing
             [/You've cancelled your subscription to ([^ ]+)\. This plan change will take effect on (\d{4}-\d{2}-\d{2})./, "您已取消订阅 $1 。此计划更改将于 $2 生效。"],
+            [/Found (\d+) events?/, "发现 $1 个活动"], // 安全日志
         ],
     },
 
@@ -1977,7 +2019,7 @@ I18N.zh = {
                 "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
                 "Plan": "计划",
                 "View an organization's plan.": "查看组织的计划。",
-                "Manage organization projects, columns, and cards.": "管理组织项目、栏目和卡片。",
+                "Manage organization projects and projects beta (where available).": "管理组织项目和项目测试版（如果可用）。",
                 "Manage organization secrets.": "管理组织隐私",
                 "Self-hosted runners": "自托管运行器",
                 "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
@@ -2699,6 +2741,8 @@ I18N.zh = {
                 "Don’t see your issue here?": "在这里没有看到您的议题？",
                 "Open a blank issue.": "打开一个空白议题。",
                 "Edit templates": "编辑模板",
+
+                "View organization templates": "查看组织模板", // 组织仓库
 
             // 新建空白议题  /<user-name>/<repo-name>/issues/new
                 "Title": "标题",
@@ -5479,11 +5523,14 @@ I18N.zh = {
                 "Manage webhook": "管理 Web 钩子",
                 "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此密钥，则可以更改它，但请注意，使用此密钥的任何集成都需要更新。 —",
                 "Change Secret": "更改密钥",
-                "Update webhook": "更新  Web 钩子",
-                "Delete webhook": "删除  Web 钩子",
+                "Update webhook": "更新 Web 钩子",
+                // 顶部提醒
+                    "Okay, the hook was successfully updated.": "好的，Web 钩子已经成功更新。",
+                "Delete webhook": "删除 Web 钩子",
 
             //  /<user-name>/<repo-name>/settings/hooks/<id>/deliveries
                 "Recent Deliveries": "最近交付",
+                    "redelivery": "再交付",
                 "Request": "请求",
                 "Response": "应答",
                 "Redeliver": "重新交付",
@@ -6061,6 +6108,7 @@ I18N.zh = {
             "mention": "提及",
             "commented": "评论",
             "author": "作者",
+            "manual": "手动",
 
             "View all gist notifications": "查看全部 Gist 通知", // 仓库分组模式
 
@@ -6114,13 +6162,13 @@ I18N.zh = {
             // 关注 & 订阅通知设置 下拉菜单
             // "Notifications": "通知类型",
             "Participating and @mentions": "参与和 @您",
-            "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您时接收来自此仓库的通知。",
+            "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
             "All Activity": "所有活动",
             "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
             "Ignore": "忽略",
             "Never be notified.": "永不接收通知。",
             // "Custom": "自定义",
-            "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您之外还要接收通知的事件。",
+            "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
             "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
             "Releases": "发行版",
             "Discussions": "讨论",
@@ -6152,7 +6200,7 @@ I18N.zh = {
                 "You created the thread.": "您创造了这个话题。",
                 "Comment": "评论",
                 "You commented on the thread.": "您评论了这个话题。",
-                "Manual": "手册",
+                "Manual": "手动",
                 "You subscribed to the thread (via an Issue or Pull Request).": "您订阅了该主题（通过议题或拉取请求）。",
                 "Mention": "提及",
                 "You were specifically @mentioned in the content.": "在内容中特别 @您。",
@@ -7383,7 +7431,7 @@ I18N.zh = {
                     "to link repositories to this project for more accurate suggestions and better search results.": "将仓库关联到此项目，以获得更准确的建议和更好的搜索结果。",
                     "Search by repository name": "搜索仓库名",
                     "You've reached the limit of 25 linked repositories.": "您已经达到了 25 个关联仓库的上限。",
-                    // "Linked repositories:": "关联的仓库",
+                    "Linked repositories:": "关联的仓库",
                     "None yet!": "啥也木有！",
                 "Create project": "创建项目",
 
