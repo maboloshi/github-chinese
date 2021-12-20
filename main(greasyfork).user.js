@@ -300,7 +300,7 @@
         // 静态翻译
         if (!isRegexp) {
             str = I18N[lang][page]['static'][key];
-            if (str) {
+            if (typeof str === 'string') {
                 return str;
             }
         }
