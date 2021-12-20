@@ -28,7 +28,7 @@
     watchUpdate();
 
     // 翻译描述
-    translateDesc(".mt-3.f4"); //仓库简介翻译
+    translateDesc(".my-3.f4"); //仓库简介翻译
     translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
 
     /**

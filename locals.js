@@ -429,7 +429,8 @@ I18N.zh = {
             "Follow": "关注",
             "Unfollow": "取消关注",
             "Star": "星标",
-            "Unstar": "已加星标",
+            // "Unstar": "已加星标",
+            "Starred": "已加星标",
             "Fork": "复刻",
             "Save": "保存",
             "Delete": "删除",
@@ -630,6 +631,17 @@ I18N.zh = {
             "Explore repositories": "探索仓库",
             "Explore more →": "探索更多 →",
 
+           //
+            "Add to list": "添加到清单",
+            "View lists": "查看清单",
+            "You don't have any lists yet.": "您尚无任何清单。",
+            "Create list": "创建清单",
+                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                "⭐️ Name this list": "⭐️ 清单名称",
+                "Write a description": "简单描述",
+                "Lists are currently in beta.": "清单目前处于测试阶段。",
+                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                "Creating...": "创建中...",
 
             "Switch dashboard context": "切换默认身份",
             "Manage organizations": "管理组织",
@@ -882,18 +894,63 @@ I18N.zh = {
                 "organization or developer:": "个组织或开发者：",
 
             // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-                "Filters": "过滤",
-                    // 过滤下拉菜单
-                    "Find repositories…": "搜索仓库…",
+                "Lists": "清单",
+                 "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Create": "创建",
+                    "Creating...": "创建中...",
+
+                "Create your first list": "创建您的第一个清单",
+                "Lists make it easier to organize and curate repositories that you have starred.": "列表可使您更容易组织和策划你您的星标仓库。",
+                "Create your first list.": "创建您的第一个清单。",
+
+                // "Filters": "过滤",
+                //     // 过滤下拉菜单
+                //     "Find repositories…": "搜索仓库…",
+                "Search stars": "搜索星标",
+                "Type: All"    : "类型：全部",
+                "Type: Public" : "类型：公共",
+                "Type: Private": "类型：私有",
+                "Type: Sources": "类型：源码",
+                "Type: Forks"  : "类型：复刻",
+                "Type: Mirrors": "类型：镜像",
+                "Sort by: Recently starred": "排序：最近关注的",
+                "Sort by: Recently active": "排序：最近活动的",
+                "Sort by: Most stars": "排序：最多赞的",
                     "Recently starred": "最近关注的",
                     "Recently active": "最近活动的",
                     "Most stars": "最多赞的",
                     "Languages": "语言",
 
                 //筛选结果
+                "starred repositories": "星标仓库",
                 // "Clear filter": "清除筛选",
 
+                "That’s it. You’ve reached the end of your stars.": "而已。您已经到了星海的尽头。",
+
                 "Topics": "主题",
+
+                "Add to list": "添加到清单",
+                "View lists": "查看清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+
+                // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+
+            // https://github.com/stars/<repo-name>/lists/<清单>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Edit list": "编辑清单",
+                    "Delete list": "删除清单",
+                        "Are you sure you want to delete this list?": "您确定要删除此清单吗？",
+                            // 顶部提醒
+                            // [/Deleted \"(.*)\"./, "已删除 “$1”。], // 删除星标清单
+                    "Save list": "保存清单",
+                    "Saving...": "保存中...",
+                "Add repositories to this list": "添加仓库到此清单",
+                "Star repositories on GitHub to keep track of your favorite projects and inspirational code.": "GitHub上的星标仓库可以跟踪您最喜欢的项目和鼓舞人心的代码。",
+                "Explore repositories.": "探索仓库。",
 
             //>>>>>>>>>>>>>>>>>> 组织主页 <<<<<<<<<<<<<<<<<<<<<
                 // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
@@ -2360,6 +2417,18 @@ I18N.zh = {
                 //"Cancel": "取消",
                 "Apply": "应用",
 
+                //
+                "Add to list": "添加到清单",
+                "View lists": "查看清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+                "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Creating...": "创建中...",
+
                 // 标签栏
                 "Code": "代码",
                 "Pull requests": "拉取请求",
@@ -2580,6 +2649,11 @@ I18N.zh = {
                 "Readme": "自述文件",
                 "View license": "查看许可证",
                 "Code of conduct": "行为准则",
+                "star": "星标",
+                "stars": "星标",
+                "watching": "订阅",
+                "fork": "复刻",
+                "forks": "复刻",
 
                 // 仓库描述编辑 对话框
                 "Edit repository details": "编辑仓库简述",
@@ -4983,6 +5057,18 @@ I18N.zh = {
                 //"Cancel": "取消",
                 "Apply": "应用",
 
+                //
+                "Add to list": "添加到清单",
+                "View lists": "查看清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+                "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Creating...": "创建中...",
+
                 // 标签栏
                 "Code": "代码",
                 "Pull requests": "拉取请求",
@@ -7360,6 +7446,18 @@ I18N.zh = {
                 "Security alerts": "安全警报",
                 //"Cancel": "取消",
                 "Apply": "应用",
+
+               //
+                "Add to list": "添加到清单",
+                "View lists": "查看清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+                "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Creating...": "创建中...",
 
                 // 标签栏
                 "Code": "代码",
