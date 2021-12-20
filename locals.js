@@ -412,12 +412,6 @@ I18N.zh = {
                 "Filter to projects": "筛选项目",
                 "Filter to open issues, pull requests, and discussions": "筛选打开的议题、拉取请求和讨论",
 
-            //
-            "Committed to this repository": "已提交过这个仓库",
-            "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
-            "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
-            "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
-
             "Owns this repository": "拥有这个仓库",
             "Left a review": "留下了一个评论",
 
@@ -631,6 +625,12 @@ I18N.zh = {
             "Explore repositories": "探索仓库",
             "Explore more →": "探索更多 →",
 
+            // 用户 浮动信息卡
+                "Committed to this repository": "已提交过这个仓库",
+                "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
+                "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+                "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
+
            //
             "Add to list": "添加到清单",
             "View lists": "查看清单",
@@ -661,6 +661,7 @@ I18N.zh = {
             "Go to your pull requests": "跳转到您的拉取请求",
         },
         "regexp": [ // 正则翻译
+            [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
             [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
             [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
             [/(\d+) releases?/, "$1 个发行版"],
@@ -839,6 +840,10 @@ I18N.zh = {
                 "repositories sorted by": "仓库，排序按",
                 "written in": "，使用语言",
                 "results for repositories written in": "个结果在仓库中使用语言",
+                "star matching": "个星标匹配", //?tab=stars
+                "stars matching": "个星标匹配", //?tab=stars
+                "star written in": "个星标使用语言", //?tab=stars
+                "stars written in": "个星标使用语言", //?tab=stars
                 "sorted by": "，排序按",
                     "last updated": "最近更新",
                     "name": "仓库名",
@@ -1043,7 +1048,7 @@ I18N.zh = {
             [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
             [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
             [/(\d+) remaining/, "$1 剩余"], // 置顶项目 剩余
-            [/([^ ]+) doesn't have any public repositories yet./, "$1 暂未有任何公共仓库。"],
+            [/([^ ]+) doesn('|’)t have any public repositories yet./, "$1 暂未有任何公共仓库。"],
             [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
@@ -1077,6 +1082,8 @@ I18N.zh = {
             [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
             [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
             [/([\d,]+) Closed/, "$1 已关闭"],
+            [/Deleted \"(.*)\"./, "已删除 “$1”。"], // 删除星标清单
+            [/(\d+) repositor(y|ies)/, "$1 个仓库"],
             // 组织页面
             [/\((\d+) issues? need help\)/, "($1 个议题需要帮助）"],
             [/doesn’t have any public projects./, "没有任何公共项目。"],
@@ -2429,6 +2436,18 @@ I18N.zh = {
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
 
+                // 用户 浮动信息卡
+                    "Committed to this repository": "已提交过这个仓库",
+                    "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
+                    "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+                    "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
+                    // [/Member of Homebrew/, ""],
+                    // [/Member of Homebrew, and (\d+) more/, ""],
+
+                // 组织  浮动信息卡
+                    // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+                    // [/(\d+) members?/, "$1 个成员"],
+
                 // 标签栏
                 "Code": "代码",
                 "Pull requests": "拉取请求",
@@ -2526,6 +2545,11 @@ I18N.zh = {
                         // "评论": "",
                         "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                         "and click": "和点击",
+
+                // 复刻中 点击复刻按钮
+                    // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+                    "It should only take a few seconds.": "应该只需要几秒钟的时间。",
+                    "Refresh": "刷新",
 
                 // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/
                 // 仓库主页 Dependabot 警告框
@@ -2847,6 +2871,7 @@ I18N.zh = {
                 "added": "添加了",
                 "and removed": "并移除了",
                 "removed the": "移除了",
+                "removed": "移除了",
                 "label": "标签",
                 "labels": "标签",
                 "self-assigned this": "自己受理了该议题",
@@ -2878,6 +2903,7 @@ I18N.zh = {
                 "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
                 "dismissed a stale review via": "忽略了一个陈旧的审查，通过",
                 "requested changes": "请求了更改",
+                "added a commit that referenced this issue": "添加了一个引用此问题的提交",
 
                 // 右侧栏 补充
                 // 同 /<user-name>/<repo-name>/pull/<id>
@@ -3321,7 +3347,7 @@ I18N.zh = {
                     "Hide whitespace": "隐藏空白",
                     "Apply and reload": "应用并重新加载",
                 "Show whitespace": "显示空白",
-                "Refresh": "刷新",
+                // "Refresh": "刷新",
 
                 "files viewed": "查看过的文件",
                     "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -3938,13 +3964,14 @@ I18N.zh = {
                     "1 week": "1 周",
                     "1 month": "1 个月",
                 "Active Pull Request": "活跃的拉取请求",
-                "Active Issue": "活跃的议题",
                 "Active Pull Requests": "活跃的拉取请求",
+                "Active Issue": "活跃的议题",
                 "Active Issues": "活跃的议题",
                 "Merged Pull Request": "合并的拉取请求",
                 "Merged Pull Requests": "合并的拉取请求",
                 "Open Pull Request": "打开的拉取请求",
                 "Open Pull Requests": "打开的拉取请求",
+                "Closed Issue": "关闭的议题",
                 "Closed Issues": "关闭的议题",
                 "New Issue": "新议题",
                 "New Issues": "新议题",
@@ -3976,6 +4003,7 @@ I18N.zh = {
                 "people": "人",
                 "Sometimes conversations happen on old items that aren’t yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时会针对尚未关闭的旧项目进行讨论。以下是所有未解决的讨论的议题和拉取请求的列表。",
                 // [/• (\d+) new comments/, "• $1 个新评论"],
+                "Unresolved conversation": "个未解决的讨论",
 
 
                 "merged": "已合并",
@@ -3999,6 +4027,8 @@ I18N.zh = {
                 "recommended community standards": "推荐的社区标准",
                 "Checklist": "检查清单",
                 "Add": "添加",
+                // "": "描述",
+                    "Add a description to your repository so people understand the goals of your project.": "向您的存储库添加描述，以便人们了解您项目的目标。",
                 "Propose": "倡议",
                 "Writing contributing guidelines": "编写贡献指南",
                 "License": "许可证",
@@ -4123,28 +4153,31 @@ I18N.zh = {
             // 安全概述
             "Security overview": "安全概述",
             "Security policy": "安全政策",
-            "Define how users should report security vulnerabilities for this repository": "定义用户应如何报告此仓库的安全漏洞",
+                "Define how users should report security vulnerabilities for this repository": "定义用户应如何报告此仓库的安全漏洞",
 
-            "Suggest how users should report security vulnerabilities for this repository": "建议用户应如何报告此仓库的安全漏洞",
-            "Suggest a security policy": "安全政策建议",
+                "Suggest how users should report security vulnerabilities for this repository": "建议用户应如何报告此仓库的安全漏洞",
+                "Suggest a security policy": "安全政策建议",
+
+                "View how to securely report security vulnerabilities for this repository": "查看如何安全地报告此仓库的安全漏洞",
+                "View security policy": "查看安全策略",
 
             "Security advisories": "安全公告",
-            "View or disclose security advisories for this repository": "查看或公开此仓库的安全公告",
-            "View security advisories": "查看安全公告",
-            "View security advisories for this repository": "查看此仓库的安全公告",
+                "View or disclose security advisories for this repository": "查看或公开此仓库的安全公告",
+                "View security advisories": "查看安全公告",
+                "View security advisories for this repository": "查看此仓库的安全公告",
 
             "Dependabot alerts": "Dependabot 警报",
-            "— Active": "— 激活",
-            "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
-            "Enable Dependabot alerts": "启用 Dependabot 警报",
-            "View Dependabot alerts": "查看 Dependabot 警报",
+                "— Active": "— 激活",
+                "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
+                "Enable Dependabot alerts": "启用 Dependabot 警报",
+                "View Dependabot alerts": "查看 Dependabot 警报",
 
             "Code scanning alerts": "代码扫描警报",
-            "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
-            "Set up code scanning": "设置代码扫描",
-            // 私有库
-            "Advanced Security is only available for Organizations": "高级安全只适用于组织",
-            "Find out more": "了解更多",
+                "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
+                "Set up code scanning": "设置代码扫描",
+                // 私有库
+                "Advanced Security is only available for Organizations": "高级安全只适用于组织",
+                "Find out more": "了解更多",
 
             // "Vulnerability details": "漏洞详情",
             "high severity": "高风险",
@@ -4269,12 +4302,14 @@ I18N.zh = {
                 "Download": "下载",
                 "View raw": "查看原始数据",
                 "(Sorry about that, but we can’t show files that are this big right now.)": "（很抱歉，但我们现在无法显示这么大的文件。）",
+                "Sorry, something went wrong.": "抱歉，出了一些问题。",
+                "Reload?": "重新加载？",
 
                 "View runs": "查看工作流程", // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
                 // 地址栏 最右侧 下拉菜单
                 "Go to line": "跳转到行",
                     "Jump to line…": "跳转到行",
-                    "Go":"确定",
+                    // "Go":"确定",
                 "Go to definition": "跳转到定义",
                     // 代码定义筛选对话框
                     "Code definitions": "代码定义",
@@ -4316,6 +4351,11 @@ I18N.zh = {
                 "Reference in new discussion": "引用到新讨论",
 
                 "Search this file…": "搜索这个文件...", // csv 文件
+
+                //
+                "This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.": "此文件包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在一个能显示隐藏的 Unicode 字符的编辑器中打开文件。",
+                "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
+                "Show hidden characters": "显示隐藏字符",
 
             // 代码追溯页面 /<user-name>/<repo-name>/blame/<branch>/<file>
                 "Normal view": "正常视图",
@@ -4844,7 +4884,10 @@ I18N.zh = {
 
         },
         "regexp": [ // 正则翻译
-            [/had recent pushes less than/, "分支有了最近的推送，不到"], //仓库首页 最近有了新提交提醒
+            [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
+            [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+            [/Forking ([^ ]+)/, "复刻 $1 中"], // 仓库首页 复刻中...
+            [/had recent pushes less than/, "分支有了最近的推送，不到"], // 仓库首页 最近有了新提交提醒
             [/had recent pushes/, "分支有了最近的推送，"], // 仓库首页 最近有了新提交提醒
             // 评论框头部栏 (议题 & 拉取请求)
             // 成员
@@ -6067,14 +6110,25 @@ I18N.zh = {
                 // 定时确认确认您的帐户恢复设置
                 "Confirm your account recovery settings": "确认您的帐户恢复设置",
                 "Are your account recovery settings up to date? If not, you risk getting locked out of your account.": "您的帐户恢复设置是否最新？如果没有，您就有被锁定帐户的风险。",
+                "Two-factor methods": "双重身份验证方式",
+                    "Authenticator app": "“身份验证器” 应用",
+                    "Security keys": "安全密钥",
+                        "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                        "No security keys": "未配置安全密钥",
+                    "SMS number": "手机号码",
+                "Recovery options": "恢复选项",
+                    "Recovery codes": "恢复码",
+                        "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                        "Viewed": "查看于",
+                    "Fallback SMS number": "备用手机号码",
+                        "Providing a fallback SMS number will allow GitHub to send your two-factor authentication codes to an alternate device if you lose your primary device.": "如果您丢失主要设备，提供备用手机号码将允许 GitHub 将您的双重身份验证码发送到备用设备。",
+                    "No fallback SMS number": "未设置备用手机号码",
+                "Configured": "已配置",
+                "Not configured": "未配置",
+                // "No recovery tokens": "未设置恢复令牌",
                 "Update": "更新",
                 "Confirm": "确认",
                 "Remind me later": "稍后提醒我",
-                "Configured": "已配置",
-                "No security keys": "未配置安全密钥",
-                "Not configured": "未配置",
-                "No fallback SMS number": "未设置备用手机号码",
-                "No recovery tokens": "未设置恢复令牌",
 
             // 授权访问 (已经合并到settings)
             "Confirm access": "授权访问",
@@ -6154,6 +6208,12 @@ I18N.zh = {
             "Unsubscribe": "退订",
 
             "Filter notifications": "过滤通知",
+                "Sorry, we don't support the": "抱歉，我们不支持",
+                "filter yet.": "过滤器。",
+                "Learn more about filters.": "了解更多关于过滤器的信息。",
+
+                "- submit": "- 提交",
+
                 "Available filters": "可用过滤器",
                 "filter by repository": "筛选仓库",
                 "filter by status or discussion type": "筛选状态或评论类型",
@@ -6164,6 +6224,10 @@ I18N.zh = {
             "Date": "日期",
             "Repository": "仓库",
             // [/(\d+) new notifications?/, "$1 条新通知"], // 通知管理页
+
+            // 筛选结果
+            "No results": "无结果",
+            "No notifications matched your query.": "没有与您的查询相匹配的通知。",
 
             "Select all": "全选",
             "selected": "个被选中",
@@ -6195,6 +6259,7 @@ I18N.zh = {
             "commented": "评论",
             "author": "作者",
             "manual": "手动",
+            "state change": "状态更改",
 
             "View all gist notifications": "查看全部 Gist 通知", // 仓库分组模式
 
@@ -6218,6 +6283,13 @@ I18N.zh = {
             "Filter inbox by…": "过滤收件箱…",
             "Create new filter": "创建新规则",
             "Create": "创建",
+
+            "All caught up!": "处理完了！",
+            "Take a break, write some code, do what you do best.": "休息一下，写一些代码，做您最擅长的事。",
+            "Save something important": "保存重要的东西",
+            "Notifications you save will appear here to read later.": "您保存的通知会出现在这里，以便以后阅读。",
+            "Mark notifications as done so you can move on with your work.": "将通知标记为已完成，以便您可以继续工作。",
+            "New activity appears in your inbox.": "新活动出现在您的收件箱中。",
         },
         "regexp": [ // 正则翻译
             [/(\d+) selected/, "$1 个被选中"],
@@ -6376,6 +6448,11 @@ I18N.zh = {
 
     "issues": { // 议题页面
         "static": { // 静态翻译
+            "Public": "公共",
+            "Private": "私有",
+            "Public archive": "公共存档",
+            "Private archive": "私有存档",
+
             "Created": "已创建",
             "Assigned": "已分配",
             "Mentioned": "提到的",
@@ -6439,6 +6516,9 @@ I18N.zh = {
             [/([\d,]+) linked pull requests?/, "$1 个关联拉取请求"],
             [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
             [/Assigned to ([^ ]+)/, "分配给 $1"],
+            [/Updated/, "更新于"],
+            [/#(\d+) opened/, "#$1 打开于"],
+            [/#(\d+) by/, "#$1 打开者"],
         ],
     },
 
@@ -6820,6 +6900,7 @@ I18N.zh = {
             "Copy link": "复制链接",
             "Quote reply": "引用回复",
             "Report content": "举报内容",
+            "Report": "举报",
 
             "You are the owner of the gist.": "您是代码片段的所有者。",
             "You are the author of this gist.": "您是代码片段的作者。",
