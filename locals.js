@@ -70,12 +70,12 @@ I18N.conf = {
      * 文件,目录位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
      * 评论内容等 js-comment-body
+     * 评论编辑区域 comment-form-textarea
      * 文件搜索模式 js-tree-finder-virtual-filter
      * 仓库文件列表 js-navigation-open Link--primary
-     * 洞察-->复刻-->仓库列表 network 或 repo
      * 快捷键 按键 js-modifier-key
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -92,8 +92,9 @@ I18N.conf = {
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(code|link|img|marked-text|^em$)/i, 
-    // 文件搜索模式 文件列表条目 marked-text
+    reIgnoreTag: /(code|^script$|link|img|marked-text|^em$|pre)/i,
+    // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
+    // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^em$ --> 避免勿过滤 theme-picker, command-palette-item
 };
 
