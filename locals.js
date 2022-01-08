@@ -667,6 +667,7 @@ I18N.zh = {
             [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
             [/(\d+) releases?/, "$1 个发行版"],
             [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+            [/(\d+) members?/, "$1 个成员"],
             [/(\d+) followers?/, "$1 个关注者"],
             [/(\d+) commits? to/, "$1 个提交到"],
             [/(\d+) more commits? »/, "$1 个更多提交到"],
@@ -787,6 +788,8 @@ I18N.zh = {
                 "Opened their first issue on GitHub in": "打开了他们第一个议题",
                 "Opened their first pull request on GitHub in": "打开了他们第一个议题",
                 "Joined GitHub": "刚加入 GitHub",
+                "Joined the": "加入",
+                "organization": "组织",
                 //"Show more activity": "显示更多",
                 "Show more activity": "加载更多动态",
                 "Loading...": "加载中...",
@@ -911,7 +914,7 @@ I18N.zh = {
                     "Creating...": "创建中...",
 
                 "Create your first list": "创建您的第一个清单",
-                "Lists make it easier to organize and curate repositories that you have starred.": "列表可使您更容易组织和策划你您的星标仓库。",
+                "Lists make it easier to organize and curate repositories that you have starred.": "列表可使您更容易组织和策划您的星标仓库。",
                 "Create your first list.": "创建您的第一个清单。",
 
                 // "Filters": "过滤",
@@ -945,6 +948,13 @@ I18N.zh = {
                 "You don't have any lists yet.": "您尚无任何清单。",
 
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+
+                // 他人库 星标页 补充
+                "Search starred repositories": "搜索星标仓库",
+                "Starred repositories": "星标仓库",
+                "Starred topics": "星标主题",
+
+                // [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
 
             // https://github.com/stars/<repo-name>/lists/<清单>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Edit list": "编辑清单",
@@ -1083,8 +1093,10 @@ I18N.zh = {
             [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
             [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
             [/([\d,]+) Closed/, "$1 已关闭"],
-            [/Deleted \"(.*)\"./, "已删除 “$1”。"], // 删除星标清单
+            [/Deleted \"(.*)\"./, "已删除 “$1”。"], // 删除星标清单 顶部提醒
+            [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
             [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+            [/(\d+) members?/, "$1 个成员"],
             // 组织页面
             [/\((\d+) issues? need help\)/, "($1 个议题需要帮助）"],
             [/doesn’t have any public projects./, "没有任何公共项目。"],
@@ -2385,6 +2397,15 @@ I18N.zh = {
                 "This repository has been disabled.": "此仓库已被禁用。",
                 "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
 
+                // 仓库违反 DMCA
+                "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
+                "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
+                "publicly posted": "公开发布",
+                "If you are the repository owner, and you believe that your repository was disabled as a result of mistake or misidentification, you have the right to file a counter notice and have the repository reinstated. Our help articles provide more details on our": "如果您是仓库所有者，并且您认为您的仓库由于错误或误认而被禁用，您有权提交反通知并恢复仓库。我们的帮助文章提供了关于我们的更多详细信息",
+                "DMCA takedown policy": "DMCA 删除政策",
+                "how to file a counter notice": "如何提交反通知",
+                ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
+
                 // 公共部分 - 头部条
                 "Public": "公共",
                 "Private": "私有",
@@ -2393,10 +2414,14 @@ I18N.zh = {
 
                 "forked from": "复刻自",
 
+                "Unpin": "取消置顶",
+
                 "Ignoring": "忽略",
                 "Stop ignoring": "取消忽略",
                 "Watch": "订阅",
                 "Unwatch": "取消订阅",
+
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
 
                 "Star": "星标",
                 "Unstar": "已加星标",
@@ -2466,6 +2491,7 @@ I18N.zh = {
                 "Back to notifications": "回到通知",
                 "Done": "已完成",
                 "Unsubscribe": "退订",
+                "Mark as read": "标记为已读",
                 "Mark as unread": "标记为未读",
                 "Save": "保存",
 
@@ -2721,6 +2747,11 @@ I18N.zh = {
                 // "contributor": "个贡献者",
                 // "contributors": "个贡献者",
 
+            // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
+                "Delete directory": "删除文件夹",
+            // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+                "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
+                "file.": "文件。",
             // 议题标签卡 issues 页面 /<user-name>/<repo-name>/issues
                 // 欢迎信息
                 "Welcome to issues!": "欢迎关注议题！",
@@ -2735,7 +2766,7 @@ I18N.zh = {
                 // [/Want to contribute to ([^ ]+)/, "想为 $1 做贡献吗？"], /issues
                 "If you have a bug or an idea, read the": "如果您发现一个错误或有任何想法，请阅读",
                 "before opening an issue.": "，在打开议题之前。",
-                "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。你也可以看看",
+                "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
                 "Open Source Guide": "开源指南",
 
                 // 忽略 下拉
@@ -2886,6 +2917,7 @@ I18N.zh = {
                 "· May be fixed by": " · 可通过该方案修复",
                 "pinned this issue": "置顶议题",
                 "unpinned this issue": "取消置顶",
+                "Repository owner locked as": "仓库所有者锁定为",
                 "locked as": "锁定为",
                     "off-topic": "离题",
                     "too heated": "过热",
@@ -3105,8 +3137,9 @@ I18N.zh = {
                 "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
                 "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
                 "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
-                "You’re ignoring this repository.": "您忽略了这个仓库。",
+                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
                 "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
+                "You’re ignoring this repository.": "您忽略了这个仓库。",
 
                     // 通知设置对话框
                     "Notification settings": "通知设置",
@@ -3340,7 +3373,7 @@ I18N.zh = {
                     "Filter changed files": "筛选已更改文件",
                 // 差异视图
                     "Diff view": "差异视图",
-                    // "Always": "总是", 取消
+                    // "Always": "总是", 
                     "Unified": "同屏",
                     "Split": "分屏",
                     // "Just for now": "仅当前",
@@ -3964,18 +3997,18 @@ I18N.zh = {
                     "3 days": "3 天",
                     "1 week": "1 周",
                     "1 month": "1 个月",
-                "Active Pull Request": "活跃的拉取请求",
-                "Active Pull Requests": "活跃的拉取请求",
-                "Active Issue": "活跃的议题",
-                "Active Issues": "活跃的议题",
-                "Merged Pull Request": "合并的拉取请求",
-                "Merged Pull Requests": "合并的拉取请求",
-                "Open Pull Request": "打开的拉取请求",
-                "Open Pull Requests": "打开的拉取请求",
-                "Closed Issue": "关闭的议题",
-                "Closed Issues": "关闭的议题",
-                "New Issue": "新议题",
-                "New Issues": "新议题",
+                "Active pull request": "活跃的拉取请求",
+                "Active pull requests": "活跃的拉取请求",
+                "Active issue": "活跃的议题",
+                "Active issues": "活跃的议题",
+                "Merged pull request": "合并的拉取请求",
+                "Merged pull requests": "合并的拉取请求",
+                "Open pull request": "打开的拉取请求",
+                "Open pull requests": "打开的拉取请求",
+                "Closed issue": "关闭的议题",
+                "Closed issues": "关闭的议题",
+                "New issue": "新议题",
+                "New issues": "新议题",
 
                 "Excluding merges,": "不包括合并，",
                 // [/(\d+) authors?/, "$1 位作者"],
@@ -4029,7 +4062,7 @@ I18N.zh = {
                 "Checklist": "检查清单",
                 "Add": "添加",
                 // "": "描述",
-                    "Add a description to your repository so people understand the goals of your project.": "向您的存储库添加描述，以便人们了解您项目的目标。",
+                    "Add a description to your repository so people understand the goals of your project.": "向您的仓库添加描述，以便人们了解您项目的目标。",
                 "Propose": "倡议",
                 "Writing contributing guidelines": "编写贡献指南",
                 "License": "许可证",
@@ -4082,8 +4115,14 @@ I18N.zh = {
                 "per week": "每周",
 
             // 依赖关系图 - 依赖关系 /network/dependencies
+                "The dependency graph is not enabled": "依赖关系图未启用",
+                "The dependency graph has not yet been enabled by an organization owner or a user with admin permissions for this repository. Once enabled, you can": "依赖关系图还没有被组织所有者或具有该仓库管理权限的用户启用。一旦启用，您可以",
+                "track this repository’s dependencies": "追踪此仓库的依赖关系",
+
                 "Enable the dependency graph": "启用依赖关系图",
                 "Track this repository’s dependencies and sub-dependencies": "追踪该仓库的依赖关系和子依赖关系",
+                "The": " ",
+                "is not enabled for this repository. Click on “Enable the dependency graph” below to enable it.": "暂未启用。单击下面的 “启用依赖关系图” 以启用它。",
                 "If you’d like to enable the": "如果您想启用",
                 "dependency graph": "依赖关系图",
                 "vulnerability alerting": "漏洞警报",
@@ -4125,6 +4164,7 @@ I18N.zh = {
             // 依赖关系图 - 依赖机器人 /network/updates
                 "Enable Dependabot": "启用 Dependabot",
                 "Dependabot isn't enabled": "未启用 Dependabot",
+                "Dependabot isn't enabled on forks by default": "默认情况下，Dependabot 不会在复刻上启用。",
 
                 "Dependabot version updates aren't configured yet": "尚未配置 Dependabot 版本更新",
                 "Dependabot creates pull requests to keep your dependencies up-to-date.": "Dependabot 创建拉取请求以保持您的依赖项是最新的。",
@@ -4259,7 +4299,7 @@ I18N.zh = {
 
             // 新建安全建议草案 /security/advisories/new >>>>>>>>>>>>>>>>>>>>>>
                 "Open a draft security advisory": "打开一个安全公告草案",
-                "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打开后，您可以与协作者私下讨论，并创建一个临时的私有复刻，在那里你们可以协作进行修复。如果您已经修复了该漏洞，只需填写安全公告草案，然后发布即可。",
+                "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打开后，您可以与协作者私下讨论，并创建一个临时的私有复刻，在那里您们可以协作进行修复。如果您已经修复了该漏洞，只需填写安全公告草案，然后发布即可。",
                 "Affected product": "受影响的产品",
                 "Ecosystem": "生态系统",
                     "Select an ecosystem": "选择一个生态系统",
@@ -4289,6 +4329,11 @@ I18N.zh = {
                 "Once reviewed by GitHub, security advisories may be broadcast on the": "一旦通过 GitHub 的审查，安全公告就可以出现在",
                 "GitHub Advisory Database": "GitHub 咨询数据库",
                 ". They may also trigger Dependabot alerts to users that depend on this repository.": "。它们还可能向依赖此仓库的用户触发 Dependabot 警报。",
+
+            // 安全政策 /security/policy
+                "No security policy detected": "未检测到安全策略",
+                "This project has not set up a": "该项目尚未设置",
+                "file yet.": "文件。",
 
             // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<Patch>/<file_name> >>>>>>>>>>>>>>>>>>>>>>
                 // 快捷键
@@ -4883,6 +4928,31 @@ I18N.zh = {
                 "Once its maintainers label issues and pull requests for new contributors, they will begin to appear here.": "一旦它的维护者为新的贡献者标记了议题和拉取请求，它们就会开始出现在这里。",
                 "All issues in this repository": "此仓库中的所有议题",
 
+            // 接受邀请 /<user-name>/<repo-name>/invitations
+                "invited you to collaborate": "邀请您进行协作",
+                "Accept invitation": "接受邀请",
+                "Decline": "拒绝",
+                "Owners": "拥有者",
+                "Your public profile information": "您的公开个人资料信息",
+                "Certain activity": "某些活动",
+                "within this repository": "在这个仓库中",
+                "Country of request origin": "请求的来源国",
+                "Your access level for this repository": "您对该仓库的访问等级",
+                "Your IP address": "您的 IP 地址",
+                "Is this user sending spam or malicious content?": "此用户是否发送垃圾邮件或恶意内容？",
+
+            // 仓库通知状态管理 /<user-name>/<repo-name>/subscription
+                "Your": "您的",
+                "notifications status": "通知状态",
+                "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在版本库内讨论什么，比如拉动请求、问题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
+                "Not watching": "不关注",
+                    "You will only receive notifications when you participate or are @mentioned.": "只有当您参与或被 @您 时，您才会收到通知。",
+                "Releases only": "仅发行版",
+                    "You will only receive notifications for new releases, or when you participate or are @mentioned.": "您只会收到新版本的通知，或者当您参与或被 @您 时。",
+                "Watching": "关注",
+                    "You will receive all notifications for this repository.": "您将收到此仓库的所有通知。",
+                "Ignored": "忽略",
+                    "You will not receive any notifications for this repository.": "您将不会收到有关此仓库的任何通知。",
         },
         "regexp": [ // 正则翻译
             [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -5046,6 +5116,15 @@ I18N.zh = {
             [/(\d+) Packages?/, "$1 软件包"],
             [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"], // /new/<branch> 选择了许可证
             [/Due by (.*)/, "截止日期 $1"], // 里程碑页面 里程碑截止日期
+            [/Branch main will be renamed to ([^ ]+) shortly./,"主分支将很快重命名为 $1"],
+            [/Branch ([^ ]+) was renamed to ([^ ]+)./,"分支 $1 已经重命名为 $2 。"],
+            [/You now have triage access to the ([^ ]+) repository./,"您现在拥有了对 $1 仓库的分级访问权限。"],
+            [/of ([^ ]+) will be able to see:/, "$1 将能够看到："], // 邀请页
+            [/Block ([^ ]+)/, "拉黑 $1"],
+            [/There hasn’t been any commit activity on ([^ ]+) in the last 24 hours./, "在过去的 24 小时里，$1 没有任何提交活动。"],
+            [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在过去的 3 天里，$1 没有任何提交活动。"],
+            [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
+            [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
         ],
     },
 
@@ -5069,10 +5148,14 @@ I18N.zh = {
 
                 "forked from": "复刻自",
 
+                "Unpin": "取消置顶",
+
                 "Ignoring": "忽略",
                 "Stop ignoring": "取消忽略",
                 "Watch": "订阅",
                 "Unwatch": "取消订阅",
+
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
 
                 "Star": "星标",
                 "Unstar": "已加星标",
@@ -5930,9 +6013,9 @@ I18N.zh = {
                 "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Pages",
                 "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
 
-                // 
+                //
                 "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
-                "Try it risk-free for 14 days": "14天免费",
+                "Try risk-free for 30 days": "无风险试用 30 天",
                 "using a GitHub Enterprise organization, or": "试用 GitHub 企业组织，或",
                 "learn more about changing the visibility of your GitHub Pages site": "了解更多关于改变您的 GitHub Pages 站点的可见性的信息",
 
@@ -6307,6 +6390,13 @@ I18N.zh = {
             "Custom": "自定义",
             // "Ignoring": "忽略",
 
+            "Unwatch suggestions": "取消订阅建议",
+            "These repositories may be causing unnecessary notifications.": "这些仓库可能导致不必要的通知。",
+
+            //
+            "Are you sure?": "您确定吗?",
+            // [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个资料库的关注，您将只在参与或 @您 时收到通知。"], //取消所以关注
+
             "Ignoring": "忽略",
             "Stop ignoring": "取消忽略",
             "Watch": "订阅",
@@ -6317,6 +6407,11 @@ I18N.zh = {
             // "Stop ignoring": "取消忽略",
             //"Sorted by most recently watched.": "按最近关注排序",
             "Unwatch all": "取消所有关注",
+                "Unwatch repository owner": "取消关注仓库所有者",
+                "Find a repository owner": "查找仓库所有者",
+                "All repositories": "所有仓库",
+                 // [/([^ ]+)'s repositories/, "$1 的仓库"],
+            "Stop watching all repositories": "取消关注所有的仓库",
 
             // 关注 & 订阅通知设置 下拉菜单
             // "Notifications": "通知类型",
@@ -6340,6 +6435,10 @@ I18N.zh = {
             "Change notification settings": "修改通知设置",
         },
         "regexp": [ // 正则翻译
+            [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个资料库的关注，您将只在参与或 @您 时收到通知。"],
+            [/Unwatch (\d+) repositor(y|ies)/, "取消对 $1 个仓库关注"],
+            [/You will stop receiving notifications for the (\d+) repositor(y|ies) you are watching./, "您将停止接收您正在关注的 $1 个仓库的通知。"],
+            [/([^ ]+)'s repositories/, "$1 的仓库"],
         ],
     },
 
@@ -6383,6 +6482,9 @@ I18N.zh = {
             "Repository:": "仓库：",
             "Clear current filters": "清除当前筛选器",
             "No results matched your search.": "没有符合您的搜索结果。",
+
+            "selected": "个被选中",
+            "Unsubscribe": "取消订阅",
 
             "opened": "打开",
             "• subscribed": "• 订阅于",
