@@ -236,6 +236,7 @@ I18N.zh = {
             "Edit status": "编辑状态",
             "What's happening?": "发生了什么？",
             "Busy": "繁忙中",
+            "I may be slow to respond.": "我的反应可能比较慢。",
             "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
             "Clear status": "清除状态",
             "Never": "永不",
@@ -469,7 +470,7 @@ I18N.zh = {
             "Configure email settings": "修改电子邮箱设置",
             "Your email was verified.": "您的电子邮箱地址验证成功！",
         },
-        "regexp": [ // 正则翻译 (公共区域正则会二次调用翻译，为了弥补部分翻译的情况)
+        "regexp": [ // 正则翻译
             /**
              * 匹配时间格式
              *
@@ -578,7 +579,7 @@ I18N.zh = {
             "Welcome to GitHub! What’s next?": "欢迎来到 GitHub！下一步干什么？",
             "Create a repository": "创建一个仓库",
             "Tell us about yourself": "介绍一下您自己",
-            "Browse interesting repositories": "浏览有趣资料库",
+            "Browse interesting repositories": "浏览有趣的仓库",
             "on Twitter": "在 Twitter 上",
 
             "You don’t have any repositories yet!": "您目前还没有任何仓库！",
@@ -900,6 +901,13 @@ I18N.zh = {
                 "Get started with GitHub Packages": "开始使用 GitHub 软件包",
                 "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
                 "Choose a registry": "选择一个注册表",
+                "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用程序的软件平台——小型轻量级执行环境。",
+                "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
+                "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
+                "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.": "分发用于 Ruby 编程语言的 Ruby 程序和库的标准格式。",
+                "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.": "npm是一个JavaScript的包管理器，包含在Node.js中。它使开发人员能够轻松地分享和重用代码。",
+                "Containers": "容器",
+                "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
 
             // 赞助标签卡 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 // [/is sponsoring/, "正在赞助"],
@@ -1251,11 +1259,11 @@ I18N.zh = {
                 "Start export": "开始导出",
                 "Recent exports": "近期导出",
                 "New export": "新建导出",
+                "We're preparing your export! We'll send you an email when it's finished.": "我们正在为您准备导出！我们完成后会发一封电子邮件。",
                 "New exports cannot be requested while an export is currently in progress": "当前正在导出中，无法请求新的导出",
                 "Resend email with link": "重新发送带有链接的邮件",
                 "Download deleted": "导出内容已删除",
                 "Job queued to delete file.": "正在排队删除文件的作业。",
-                "We're preparing your export! we'll send you an email when it's finished.": "我们正在为您准备导出！我们完成后会发一封电子邮件。",
 
                 "Successor settings": "设置继任者",
                 "designated below": "下面指定的",
@@ -1283,7 +1291,7 @@ I18N.zh = {
                     "This is extremely important.": "这是极其重要的。",
                     "We will": "我们将",
                     ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的复刻、Wiki、议题、拉取请求和 GitHub Pages 站点。",
-                    "You will no longer be billed, and your username will be available to anyone on GitHub.": "您将不再被收取费用，并且您的用户名将被 GitHub 上的任何人使用。",
+                    "You will no longer be billed, and after 90 days your username will be available to anyone on GitHub.": "您将不再被收取费用，并且 90 天后您的用户名将被 GitHub 上的任何人使用。",
                     "For more help, read our article \"": "如需更多帮助，请阅读我们的文章 “",
                     "Deleting your user account": "删除您的帐户",
                     "\".": "”。",
@@ -1689,7 +1697,7 @@ I18N.zh = {
             // Repository 仓库 https://github.com/settings/repositories
                 "Repository default branch": "仓库默认分支",
                 "Choose the default branch for your new personal repositories. You might want to change the default name due to different workflows, or because your integrations still require “master” as the default branch name. You can always change the default branch name on individual repositories.": "为您新的个人仓库选择默认的分支。由于工作流程的不同，或者由于您的集成仍然需要 “master” 作为默认分支名，您可能想改变默认名称。您可以随时改变个人仓库的默认分支名称。",
-                "Learn more about default branches.": "了解有关默认分支的更多信息。",
+                "Learn more about default branches.": "了解更多关于默认分支的信息。",
                 "Update": "更新",
                 "Deleted repositories": "删除的仓库",
 
@@ -1748,9 +1756,9 @@ I18N.zh = {
                 "Authorized GitHub Apps": "授权的 GitHub 应用",
                 "No authorized applications": "无授权申请",
                 "You have no applications authorized to access your account.": "您没有授权访问您的帐户的应用程序。",
-                "Authorized OAuth Apps": "授权的 OAuth 应用",
 
             // https://github.com/settings/applications
+                "Authorized OAuth Apps": "授权的 OAuth 应用",
                 "You have granted": "您已经授权",
                 "access to your account.": "访问您的帐户。",
                 "Revoke all": "撤销全部",
@@ -1817,7 +1825,7 @@ I18N.zh = {
                 "follow your account’s public activity": "关注您的帐户的公共活动",
                 "send you notifications by @mentioning your username in public repositories": "在公共仓库中通过 @您 向您发送通知",
                 "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
-                    "Learn more about blocking a user": "了解更多有关拉黑用户的信息",
+                    "Learn more about blocking a user": "了解更多关于拉黑用户的信息",
                 "Block user": "拉黑用户",
                 "You have not blocked any users.": "您还没有拉黑任何用户。",
                 "Unblock": "取消拉黑",
@@ -2127,7 +2135,7 @@ I18N.zh = {
                 "Manage a user's profile settings.": "管理用户的个人信息设置。",
                 "Starring": "星标",
                 "List and manage repositories a user is starring.": "列出和管理用户已加星标的仓库。",
-                "Watching": "订阅",
+                "Watching": "关注",
                 "List and change repositories a user is subscribed to.": "列出和更改用户订阅的仓库。",
                 "Subscribe to events": "订阅事件",
                 "Based on the permissions you’ve selected, what events would you like to subscribe to?": "根据您选择的权限，您想订阅哪些事件？",
@@ -2421,8 +2429,8 @@ I18N.zh = {
 
                 "Ignoring": "忽略",
                 "Stop ignoring": "取消忽略",
-                "Watch": "订阅",
-                "Unwatch": "取消订阅",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
 
                 "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
 
@@ -2433,7 +2441,7 @@ I18N.zh = {
 
                 // 赞助对话框
                 "External links": "外部链接",
-                "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
 
                 // 关注 & 订阅通知设置 下拉菜单
@@ -2705,7 +2713,7 @@ I18N.zh = {
                 "Code of conduct": "行为准则",
                 "star": "星标",
                 "stars": "星标",
-                "watching": "订阅",
+                "watching": "关注",
                 "fork": "复刻",
                 "forks": "复刻",
 
@@ -2755,6 +2763,7 @@ I18N.zh = {
             // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
                 "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
                 "file.": "文件。",
+
             // 议题标签卡 issues 页面 /<user-name>/<repo-name>/issues
                 // 欢迎信息
                 "Welcome to issues!": "欢迎关注议题！",
@@ -2771,6 +2780,8 @@ I18N.zh = {
                 "before opening an issue.": "，在打开议题之前。",
                 "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
                 "Open Source Guide": "开源指南",
+                "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
+                "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
 
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
@@ -3244,7 +3255,7 @@ I18N.zh = {
                 // [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
                 "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。",
                 "The base branch does not accept merge commits. Alternate merge methods are preferred.": "基础分支不接受合并提交。其他合并方法是首选。",
-                // [/The k1995:master branch requires linear history/, "$1 分支为要求线性历史记录"],
+                // [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
                 "Learn more about required linear history.": "了解更多关于要求线性历史记录。",
 
                 "Checking for ability to merge automatically…": "检测自动合并的能力…",
@@ -3376,7 +3387,7 @@ I18N.zh = {
                     "Filter changed files": "筛选已更改文件",
                 // 差异视图
                     "Diff view": "差异视图",
-                    // "Always": "总是", 
+                    // "Always": "总是",
                     "Unified": "同屏",
                     "Split": "分屏",
                     // "Just for now": "仅当前",
@@ -3475,7 +3486,7 @@ I18N.zh = {
                 // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
 
             // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
-                // 与用户名同名仓库 编辑 README
+                // 与用户名同名仓库 编辑 README.md 文件
                     "is a special repository: its": "是一个特殊的仓库：它的",
                     "will appear on your profile!": "将出现在您的个人资料中！",
                     // "New": "新",
@@ -3678,7 +3689,7 @@ I18N.zh = {
             "Discuss and review the changes in this comparison with others.": "与他人讨论并回顾此次对比中的变化。",
             "Learn about pull requests": "了解拉取请求",
 
-            "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的250个提交。",
+            "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的 250 个提交。",
 
             "You’ll need to use two different branch names to get a valid comparison.": "您需要使用两个不同的分支名称来进行有效的比较。",
             "Check out some of these sample comparisons.": "看看这些比较的例子吧。",
@@ -3828,7 +3839,7 @@ I18N.zh = {
                 //"Releases": "发布",
                 // 无发行版时
                 "There aren’t any releases here": "没有任何发行版",
-                "You can create a release to package software, along with release notes and links to binary files, for other people to use. Learn more about releases in": "您可以创建一个发行版来打包软件，以及发行说明和二进制文件链接，供其他人使用。了解有关发布的更多信息查看",
+                "You can create a release to package software, along with release notes and links to binary files, for other people to use. Learn more about releases in": "您可以创建一个发行版来打包软件，以及发行说明和二进制文件链接，供其他人使用。了解更多关于发布的信息查看",
                 "our docs": "文档",
                 "Releases are powered by": "发行版是指通过对仓库中",
                 "tagging specific points of history": "特定历史点",
@@ -4042,7 +4053,6 @@ I18N.zh = {
                 // [/• (\d+) new comments/, "• $1 个新评论"],
                 "Unresolved conversation": "个未解决的讨论",
 
-
                 "merged": "已合并",
                 "opened": "打开",
                 "closed": "已关闭",
@@ -4078,32 +4088,29 @@ I18N.zh = {
 
             // 流量 /<user-name>/<repo-name>/graphs/traffic
                 "Git clones":"Git 克隆",
-                "Clones":"次克隆",
-                "Unique cloners":"独特的克隆者",
+                "Clones":"克隆",
+                "Unique cloners":"唯一克隆者",
+                "clones":"次克隆",
+                "clone":"次克隆",
+                "unique cloners":"个唯一克隆者",
+                "unique cloner":"个唯一克隆者",
                 "Visitors":"访客",
-                "":"",
-                "":"",
+
                 "Referring sites":"引荐网站",
                 "Site":"站点",
                 "Views":"浏览",
-                "Unique visitors":"独特的访客",
+                "Unique visitors":"唯一访客",
+                "views":"次浏览",
+                "view":"次浏览",
+                "unique visitors":"个唯一访客",
+                "unique visitor":"个唯一访客",
                 "Popular content":"热门内容",
                 "Content":"内容",
-                "":"",
-                "":"",
-                // 月历
-                "January"   : "1月",
-                "February"  : "2月",
-                "March"     : "3月",
-                "April"     : "4月",
-                "May"       : "5月",
-                "June"      : "6月",
-                "July"      : "7月",
-                "August"    : "8月",
-                "September" : "9月",
-                "October"   : "10月",
-                "November"  : "11月",
-                "December"  : "12月",
+
+                "We don’t have enough data to show anything useful.": "我们没有足够的数据来显示任何有用的东西。",
+                "It usually takes about a week to populate this graph.": "通常需要一周左右的时间来填充此图表。",
+                "It looks like traffic to your repository is a little light. Go spread the word and check back later!": "看起来您的仓库的流量有点少呀。去宣传一下吧，稍后再回来查看！",
+
 
             // 提交 /<user-name>/<repo-name>/graphs/commit-activity
                 "Sunday"    : "周日",
@@ -4193,114 +4200,138 @@ I18N.zh = {
 
                 "Woah, this network is huge! We’re showing only some of this network’s repositories.": "哇，这个网络太庞大了! 我们只展示了这个网络中的一部分仓库。",
 
-            // 安全标签卡 /<user-name>/<repo-name>/security
-            // 安全概述
-            "Security overview": "安全概述",
-            "Security policy": "安全政策",
-                "Define how users should report security vulnerabilities for this repository": "定义用户应如何报告此仓库的安全漏洞",
+            // 安全标签卡 & 安全概述 /<user-name>/<repo-name>/security
+                "Security overview": "安全概述",
+                "Security policy": "安全政策",
+                    "Define how users should report security vulnerabilities for this repository": "定义用户应如何报告此仓库的安全漏洞",
 
-                "Suggest how users should report security vulnerabilities for this repository": "建议用户应如何报告此仓库的安全漏洞",
-                "Suggest a security policy": "安全政策建议",
+                    "Suggest how users should report security vulnerabilities for this repository": "建议用户应如何报告此仓库的安全漏洞",
+                    "Suggest a security policy": "安全政策建议",
 
-                "View how to securely report security vulnerabilities for this repository": "查看如何安全地报告此仓库的安全漏洞",
-                "View security policy": "查看安全策略",
+                    "View how to securely report security vulnerabilities for this repository": "查看如何安全地报告此仓库的安全漏洞",
+                    "View security policy": "查看安全策略",
 
-            "Security advisories": "安全公告",
-                "View or disclose security advisories for this repository": "查看或公开此仓库的安全公告",
-                "View security advisories": "查看安全公告",
-                "View security advisories for this repository": "查看此仓库的安全公告",
+                "Security advisories": "安全公告",
+                    "View or disclose security advisories for this repository": "查看或公开此仓库的安全公告",
+                    "View security advisories": "查看安全公告",
+                    "View security advisories for this repository": "查看此仓库的安全公告",
 
-            "Dependabot alerts": "Dependabot 警报",
-                "— Active": "— 激活",
-                "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
-                "Enable Dependabot alerts": "启用 Dependabot 警报",
-                "View Dependabot alerts": "查看 Dependabot 警报",
+                "Dependabot alerts": "Dependabot 警报",
+                    "— Active": "— 激活",
+                    "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
+                    "Enable Dependabot alerts": "启用 Dependabot 警报",
+                    "View Dependabot alerts": "查看 Dependabot 警报",
 
-            "Code scanning alerts": "代码扫描警报",
-                "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
-                "Set up code scanning": "设置代码扫描",
-                // 私有库
-                "Advanced Security is only available for Organizations": "高级安全只适用于组织",
-                "Find out more": "了解更多",
+                "Code scanning alerts": "代码扫描警报",
+                    "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
+                    "Set up code scanning": "设置代码扫描",
+                    // 私有库
+                    "Advanced Security is only available for Organizations": "高级安全只适用于组织",
+                    "Find out more": "了解更多",
 
-            // "Vulnerability details": "漏洞详情",
-            "high severity": "高风险",
-            "moderate severity": "中风险",
-            "low severity": "低风险",
-            // "Create dependabot security update": "创建可靠的安全更新",
+                // "Vulnerability details": "漏洞详情",
+                "High severity": "高风险",
+                "Moderate severity": "中风险",
+                "Low severity": "低风险",
+                // "Create dependabot security update": "创建可靠的安全更新",
 
-            // 安全政策
-            "Set up a security policy": "制定安全政策",
-            "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
-            "Start setup": "开始设置",
+            // 安全政策 /<user-name>/<repo-name>/security/policy
+                "Set up a security policy": "制定安全政策",
+                "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
+                "Start setup": "开始设置",
 
-            // 安全公告
-            "Security Advisories": "安全建议",
-            "Privately discuss, fix, and publish information about security vulnerabilities in your repository's code.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
-            "New draft security advisory": "新的安全建议草案",
-            "There aren’t any draft security advisories": "没有任何安全建议草案",
+                "No security policy detected": "未检测到安全策略",
+                "This project has not set up a": "该项目尚未设置",
+                "file yet.": "文件。",
 
-            // 他人库
-            "View information about security vulnerabilities from this repository's maintainers.": "查看仓库维护者提供的安全漏洞信息。",
-            "There aren’t any published security advisories": "没有任何已发布的安全公告",
+            // 安全公告 /<user-name>/<repo-name>/security/advisories
+                "Security Advisories": "安全公告",
+                "Privately discuss, fix, and publish information about security vulnerabilities in your repository's code.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
+                "New draft security advisory": "新的安全建议草案",
+                "There aren’t any draft security advisories": "没有任何安全建议草案",
 
-            // Dependabot 警报
-            "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
-            "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
-            "this repository’s settings": "在仓库的设置中",
-            "Dismiss all": "忽略全部",
-            // 下拉菜单
-            "A fix has already been started": "修复已经开始",
-            "No bandwidth to fix this": "没有带宽来修复",
-            "Risk is tolerable to this project": "风险可承受",
-            "Vulnerable code is not actually used": "漏洞代码实际未使用",
-            "Manage repository vulnerability settings": "管理仓库漏洞设置",
-            "Manage account notification settings": "管理帐户通知设置",
+                // 他人库
+                "View information about security vulnerabilities from this repository's maintainers.": "查看仓库维护者提供的安全漏洞信息。",
+                "There aren’t any published security advisories": "没有任何已发布的安全公告",
 
-            "Manifest": "清单",
-            // 清单下拉
-            "Filter by manifest": "筛选清单",
-            "Filter manifests": "筛选清单",
-            "All": "所有",
-
-            // 排序下拉 补充词条
-            "Severity": "严重等级",
-            "Manifest path": "表现方式",
-            "Package name": "软件包名称",
-
-            // 底部信息
-            "surface known security vulnerabilities in some dependency manifest files.": "表面已知的安全漏洞在某些依赖性清单文件中。",
-            "Dependabot security updates": "Dependabot 安全更新",
-            "automatically keep your application up-to-date by updating dependencies in response to these alerts.": "通过响应这些警报更新依赖项，自动保持您的应用程序是最新的。",
-            "Dependabot version updates": "Dependabot 版本更新",
-            "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
-
-            // 具体某条Dependabot 警报
-            "Create Dependabot security update": "创建 Dependabot 警报更新",
-                // 顶部提醒
-                // [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"],
-            "Dismiss": "忽略",
-            // 下拉菜单 补充
-            "This alert is inaccurate or incorrect": "此警报不准确或不正确",
-
-            // 状态词
-            "opened this alert": "打开此警报",
-
-            // 代码扫描器
-            "Get started with code scanning": "开始使用代码扫描",
-            "Automatically detect common vulnerabilities and coding errors": "自动检测常见漏洞和编码错误",
-            "Set up this workflow": "设置此工作流程",
-            "Security analysis from the Marketplace": "来自商城的安全分析工具",
-            "View in marketplace →": "在商城中查看 →",
-            "Already created a code scanning workflow?": "已经创建了代码扫描工作流程？",
-            "Click here": "点击这里",
-            "to see the currently running workflows.": "查看当前正在运行的工作流程。",
-
-            // Dependabot 警报 /security/dependabot >>>>>>>>>>>>>>>>>>>>>>
+            // Dependabot 警报 /<user-name>/<repo-name>/security/dependabot
                 "Welcome to Dependabot alerts!": "欢迎使用 Dependabot 警报！",
                 "Dependabot alerts track security vulnerabilities that apply to your repository’s dependencies. As alerts are created, they’ll appear here.": "Dependabot 警报跟踪适用于仓库依赖项的安全漏洞。创建警报后，它们将显示在此处。",
 
-            // 新建安全建议草案 /security/advisories/new >>>>>>>>>>>>>>>>>>>>>>
+                "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
+                "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
+                "this repository’s settings": "在仓库的设置中",
+                "Dismiss all": "忽略全部",
+                // 下拉菜单
+                "A fix has already been started": "修复已经开始",
+                "No bandwidth to fix this": "没有带宽来修复",
+                "Risk is tolerable to this project": "风险可承受",
+                "Vulnerable code is not actually used": "漏洞代码实际未使用",
+                "Manage repository vulnerability settings": "管理仓库漏洞设置",
+                "Manage account notification settings": "管理帐户通知设置",
+
+                "Manifest": "清单",
+                // 清单下拉
+                "Filter by manifest": "筛选清单",
+                "Filter manifest": "筛选清单",
+                "All": "所有",
+
+                // 排序下拉 补充词条
+                "Severity": "严重等级",
+                "Manifest path": "表现方式",
+                "Package name": "软件包名称",
+
+                // 底部信息
+                "surface known security vulnerabilities in some dependency manifest files.": "表面已知的安全漏洞在某些依赖性清单文件中。",
+                "Dependabot security updates": "Dependabot 安全更新",
+                "automatically keep your application up-to-date by updating dependencies in response to these alerts.": "通过响应这些警报更新依赖项，自动保持您的应用程序是最新的。",
+                "Dependabot version updates": "Dependabot 版本更新",
+                "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
+
+            // 具体某条Dependabot 警报 /security/dependabot/XXXX/XXXX/open
+                "Create Dependabot security update": "创建 Dependabot 警报更新",
+                    // 顶部提醒
+                    // [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"],
+                "Dismiss": "忽略",
+                // 下拉菜单 补充
+                "This alert is inaccurate or incorrect": "此警报不准确或不正确",
+
+                // 状态词
+                "opened this alert": "打开此警报",
+
+                // [/Dependabot cannot update ([^ ]+) to a non-vulnerable version/, "Dependabot 无法将 $1 更新为无漏洞的版本"],
+                "The latest possible version that can be installed is": "最新可以安装版本是",
+                "because of the following conflicting dependency:": "，但是存在以下冲突的依赖关系：",
+                "View logs": "查看日志",
+                "learn more about troubleshooting Dependabot errors": "了解更多关于排除 Dependabot 错误的信息",
+
+                "The earliest fixed version is": "最早修复版本为",
+
+                "vulnerability found in": "漏洞发现于",
+                "vulnerabilities found in": "漏洞发现于",
+                "Remediation":"补救措施",
+                "to version": "到版本",
+                "or later. For example:": "或更高。例如：",
+                "or…": "或者…",
+
+                "Vulnerable versions:": "脆弱版本：",
+                "Patched version:": "补丁版本：",
+                "Impact": "影响",
+                "Patches": "补丁",
+                "Workarounds": "解决方法",
+                "References": "参考信息",
+
+            // 代码扫描器 /<user-name>/<repo-name>/security/code-scanning
+                "Get started with code scanning": "开始使用代码扫描",
+                "Automatically detect common vulnerabilities and coding errors": "自动检测常见漏洞和编码错误",
+                "Set up this workflow": "设置此工作流程",
+                "Security analysis from the Marketplace": "来自商城的安全分析工具",
+                "View in marketplace →": "在商城中查看 →",
+                "Already created a code scanning workflow?": "已经创建了代码扫描工作流程？",
+                "Click here": "点击这里",
+                "to see the currently running workflows.": "查看当前正在运行的工作流程。",
+
+            // 新建安全公告草案 /security/advisories/new >>>>>>>>>>>>>>>>>>>>>>
                 "Open a draft security advisory": "打开一个安全公告草案",
                 "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打开后，您可以与协作者私下讨论，并创建一个临时的私有复刻，在那里您们可以协作进行修复。如果您已经修复了该漏洞，只需填写安全公告草案，然后发布即可。",
                 "Affected product": "受影响的产品",
@@ -4314,7 +4345,8 @@ I18N.zh = {
                 "Select severity": "选择严重程度",
                     "Low": "低风险",
                     "Moderate": "中风险",
-                    "Critical": "高风险",
+                    "High": "高风险",
+                    "Critical": "关键风险",
                     "Assess severity using CVSS": "使用 CVSS 评估严重程度",
                 "Common weakness enumerator (CWE)": "常见弱点枚举器 (CWE)",
                     "Search by CWE": "按 CWE 搜索",
@@ -4332,11 +4364,6 @@ I18N.zh = {
                 "Once reviewed by GitHub, security advisories may be broadcast on the": "一旦通过 GitHub 的审查，安全公告就可以出现在",
                 "GitHub Advisory Database": "GitHub 咨询数据库",
                 ". They may also trigger Dependabot alerts to users that depend on this repository.": "。它们还可能向依赖此仓库的用户触发 Dependabot 警报。",
-
-            // 安全政策 /security/policy
-                "No security policy detected": "未检测到安全策略",
-                "This project has not set up a": "该项目尚未设置",
-                "file yet.": "文件。",
 
             // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<Patch>/<file_name> >>>>>>>>>>>>>>>>>>>>>>
                 // 快捷键
@@ -4916,7 +4943,6 @@ I18N.zh = {
                     "This is not legal advice.": "这并不是法律建议。",
                     "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
 
-
             // /contribute
                 "Contribute to": "贡献于",
                 "Make your first contribution to this repository by tackling one of the issues listed below.": "通过解决下面列出的一个议题，为这个仓库做出您的第一个贡献。",
@@ -4947,7 +4973,7 @@ I18N.zh = {
             // 仓库通知状态管理 /<user-name>/<repo-name>/subscription
                 "Your": "您的",
                 "notifications status": "通知状态",
-                "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在版本库内讨论什么，比如拉动请求、问题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
+                "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在版本库内讨论什么，比如拉取请求、议题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
                 "Not watching": "不关注",
                     "You will only receive notifications when you participate or are @mentioned.": "只有当您参与或被 @您 时，您才会收到通知。",
                 "Releases only": "仅发行版",
@@ -5043,7 +5069,7 @@ I18N.zh = {
             [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
             //某个标签 tag /releases/tag/<tag>
             [/to ([^ ]+) since this tag/, "到 $1，从这个标签开始"],
-            [/to ([^\n]+)[\n\s]+since this release/, "到 $1，从这个发行版开始"],
+            [/to ([^ ]+) since this release/, "到 $1，从这个发行版开始"],
             [/(\d+) review approvals?/, "$1 次审查批准"],// 拉取请求页 "已批准' 浮动提示
             [/Joined/,"加入于"], // 追星者，关注者页面
             [/You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork ([^ ]+), so you can send a pull request./, "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻 $1 中的新分支，这样您就可以发送拉取请求。"], // 新建, 编辑文件页面
@@ -5128,6 +5154,7 @@ I18N.zh = {
             [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在过去的 3 天里，$1 没有任何提交活动。"],
             [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
             [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
+            [/Dependabot cannot update ([^ ]+) to a non-vulnerable version/, "Dependabot 无法将 $1 更新为无漏洞的版本"], // 某个 Dependabot 警报
         ],
     },
 
@@ -5155,8 +5182,8 @@ I18N.zh = {
 
                 "Ignoring": "忽略",
                 "Stop ignoring": "取消忽略",
-                "Watch": "订阅",
-                "Unwatch": "取消订阅",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
 
                 "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
 
@@ -5167,7 +5194,7 @@ I18N.zh = {
 
                 // 赞助对话框
                 "External links": "外部链接",
-                "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
 
                 // 关注 & 订阅通知设置 下拉菜单
@@ -6317,7 +6344,7 @@ I18N.zh = {
             "No notifications matched your query.": "没有与您的查询相匹配的通知。",
 
             "Select all": "全选",
-            "selected": "个被选中",
+            "selected": "条被选中",
             "Mark as read": "标记为已读",
             "Mark as unread": "标记为未读",
             "Mark as done": "标记为已完成",
@@ -6337,7 +6364,7 @@ I18N.zh = {
 
             "Manage notifications": "管理通知",
             "Notification settings": "通知设置",
-            "Watched repositories": "订阅的仓库",
+            "Watched repositories": "关注的仓库",
             "Subscriptions": "订阅",
             "Watching": "关注",
 
@@ -6370,6 +6397,7 @@ I18N.zh = {
             "Filter inbox by…": "过滤收件箱…",
             "Create new filter": "创建新规则",
             "Create": "创建",
+            "Query": "规则",
 
             "All caught up!": "处理完了！",
             "Take a break, write some code, do what you do best.": "休息一下，写一些代码，做您最擅长的事。",
@@ -6379,9 +6407,11 @@ I18N.zh = {
             "New activity appears in your inbox.": "新活动出现在您的收件箱中。",
         },
         "regexp": [ // 正则翻译
-            [/(\d+) selected/, "$1 个被选中"],
-            [/Select all (\d+) notifications?/, "选中全部 $1 个通知"],
-            [/View all (\d+) notifications?/, "查看全部 $1 个通知"], // 仓库分组模式
+            [/(\d+) selected/, "$1 条被选中"],
+            [/Select all (\d+) notifications?/, "选中全部 $1 条通知"],
+            [/View all (\d+) notifications?/, "查看全部 $1 条通知"], // 仓库分组模式
+            [/(\d+) new notifications?/, "$1 条新通知"],
+            [/of (\d+)/, " 共 $1 条"],
         ],
     },
 
@@ -6393,24 +6423,24 @@ I18N.zh = {
             "Custom": "自定义",
             // "Ignoring": "忽略",
 
-            "Unwatch suggestions": "取消订阅建议",
+            "Unwatch suggestions": "取消关注建议",
             "These repositories may be causing unnecessary notifications.": "这些仓库可能导致不必要的通知。",
 
             //
             "Are you sure?": "您确定吗?",
-            // [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个资料库的关注，您将只在参与或 @您 时收到通知。"], //取消所以关注
+            // [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个仓库的关注，您将只在参与或 @您 时收到通知。"], //取消所以关注
 
             "Ignoring": "忽略",
             "Stop ignoring": "取消忽略",
-            "Watch": "订阅",
-            "Unwatch": "取消订阅",
+            "Watch": "关注",
+            "Unwatch": "取消关注",
 
             //"Watched repositories": "关注的仓库",
 
             // "Stop ignoring": "取消忽略",
             //"Sorted by most recently watched.": "按最近关注排序",
             "Unwatch all": "取消所有关注",
-                "Unwatch repository owner": "取消关注仓库所有者",
+                "Unwatch repositories by owner": "按所有者取消关注仓库",
                 "Find a repository owner": "查找仓库所有者",
                 "All repositories": "所有仓库",
                  // [/([^ ]+)'s repositories/, "$1 的仓库"],
@@ -6438,7 +6468,7 @@ I18N.zh = {
             "Change notification settings": "修改通知设置",
         },
         "regexp": [ // 正则翻译
-            [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个资料库的关注，您将只在参与或 @您 时收到通知。"],
+            [/By unwatching these (\d+) repositor(y|ies), you will only receive notifications when participating or @mentioned./, "取消对这 $1 个仓库的关注，您将只在参与或 @您 时收到通知。"],
             [/Unwatch (\d+) repositor(y|ies)/, "取消对 $1 个仓库关注"],
             [/You will stop receiving notifications for the (\d+) repositor(y|ies) you are watching./, "您将停止接收您正在关注的 $1 个仓库的通知。"],
             [/([^ ]+)'s repositories/, "$1 的仓库"],
@@ -6657,7 +6687,6 @@ I18N.zh = {
                 "Code search": "代码搜索",
                 "Issue search": "议题搜索",
                 "User search": "用户搜索",
-                "": "",
 
             // 搜索结果页面 https://github.com/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
                 // 左侧菜单
@@ -6738,7 +6767,7 @@ I18N.zh = {
                     // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
                     // 赞助对话框
                     "External links": "外部链接",
-                    "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                    "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                     "Report abuse": "举报滥用",
 
                 // &type=code
@@ -6946,7 +6975,7 @@ I18N.zh = {
             "Clone with Git or checkout with SVN using the repository’s web address.": "通过仓库 web 地址进行 Git 克隆或 SVN 检出。",
             "Clone via SSH": "通过 SSH 方式克隆",
             "Clone with an SSH key and passphrase from your GitHub settings.": "通过 GitHub 设置中的 SSH 密钥和密码进行克隆。",
-            "Learn more about clone URLs": "了解有关克隆地址的更多信息",
+            "Learn more about clone URLs": "了解更多关于克隆地址的信息",
 
             "Copy to clipboard": "复制到剪切板",
             "Copied!": "复制成功!",
@@ -7169,7 +7198,7 @@ I18N.zh = {
             // [/Welcome to/, "欢迎来到"],
             "Add organization members": "添加组织成员",
             "Organization members will be able to view repositories, organize into teams, review code, and tag other members using @mentions.": "组织成员将能够使用 @提及来查看仓库、组织成团队、审查代码以及标记其他成员。",
-            "Learn more about permissions for organizations →": "了解更多有关组织权限的信息 →",
+            "Learn more about permissions for organizations →": "了解更多关于组织权限的信息 →",
             "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
             "Complete setup": "完成设置",
             "Skip this step": "跳过",
@@ -7256,7 +7285,7 @@ I18N.zh = {
 
             // /apps/codacy-production
                 "GitHub App": "GitHub 应用",
-                "Read more about this app on the Marketplace": "了解更多有关商城中此应用程序的信息",
+                "Read more about this app on the Marketplace": "了解更多关于商城中此应用程序的信息",
 
                 "Install": "安装",
                 "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
@@ -7545,7 +7574,7 @@ I18N.zh = {
                 "adding or editing wiki pages": "添加或编辑 Wiki 页面",
 
                 "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
-                    "Learn more about blocking a user": "了解更多有关拉黑用户的信息",
+                    "Learn more about blocking a user": "了解更多关于拉黑用户的信息",
                 "Block options": "拉黑选项",
                     "For 1 day": "1 天",
                     "For 3 days": "3 天",
@@ -7604,8 +7633,8 @@ I18N.zh = {
 
                 "Ignoring": "忽略",
                 "Stop ignoring": "取消忽略",
-                "Watch": "订阅",
-                "Unwatch": "取消订阅",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
 
                 "Star": "星标",
                 "Unstar": "已加星标",
@@ -7614,7 +7643,7 @@ I18N.zh = {
 
                 // 赞助对话框
                 "External links": "外部链接",
-                "Learn more about funding links in repositories": "了解更多关于资料库中的赞助链接的信息",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
 
                 // 关注 & 订阅通知设置 下拉菜单
@@ -7764,7 +7793,7 @@ I18N.zh = {
                 "Project closed.": "项目已关闭。",
                 "Project reopened.": "项目已重新打开。",
 
-            // https://github.com/users/maboloshi/projects/<id>
+            // https://github.com/users/<user-name>/projects/<id>
                 // 键盘快捷键
                     "Project card shortcuts": "项目卡快捷键",
                         "Open the issue or pull request associated with the focused card in the sidebar": "聚焦卡片的侧边栏中打开相关联的议题或拉取请求",
@@ -7954,7 +7983,7 @@ I18N.zh = {
                 "Delete note": "删除注释",
                     "This will remove this note from the project": "这将从项目中删除该注释",
 
-            // https://github.com/users/maboloshi/projects/3?add_cards_query=is%3Aopen
+            // https://github.com/users/<user-name>/projects/3?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Automated kanban template.": "已从自动化看板模板创建项目。",
 
@@ -7985,11 +8014,11 @@ I18N.zh = {
                 "to the": "到",
                 "column.": "栏目。",
 
-            // https://github.com/users/maboloshi/projects/4?add_cards_query=is%3Aopen
+            // https://github.com/users/<user-name>/projects/4?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Automated kanban with reviews template.": "已从自动看板与审查模板创建项目。",
 
-            // https://github.com/users/maboloshi/projects/5?add_cards_query=is%3Aopen
+            // https://github.com/users/<user-name>/projects/5?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Bug triage template.": "已从错误分类模板创建项目。",
 
@@ -7997,7 +8026,7 @@ I18N.zh = {
                 "High priority": "高优先级",
                 "Low priority": "低优先级",
 
-            // https://github.com/users/maboloshi/projects/1/settings
+            // https://github.com/users/<user-name>/projects/1/settings
                 "Collaboration settings": "协作设置",
                     "Options": "选项",
                         "Visibility": "可见性",
@@ -8019,7 +8048,7 @@ I18N.zh = {
                     // [/(\d+) linked repositories/, "$1 个关联仓库"],
                     "This project doesn’t have any linked repositories yet.": "该项目暂无任何关联的仓库。",
 
-            // https://github.com/users/maboloshi/projects/2/edit
+            // https://github.com/users/<user-name>/projects/2/edit
                 "(optional)": "(可选)",
                 "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
         },
