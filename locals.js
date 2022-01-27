@@ -74,8 +74,9 @@ I18N.conf = {
      * 文件搜索模式 js-tree-finder-virtual-filter
      * 仓库文件列表 js-navigation-open Link--primary
      * 快捷键 按键 js-modifier-key
+     * 洞察-->流量-->热门内容列表 capped-list-label
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -92,10 +93,11 @@ I18N.conf = {
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(code|^script$|link|img|marked-text|^em$|pre)/i,
+    reIgnoreTag: /(code|^script$|link|img|marked-text|^em$|^pre$)/i,
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^em$ --> 避免勿过滤 theme-picker, command-palette-item
+    // ^pre$ --> 避免勿过滤
 };
 
 I18N.zh = {
