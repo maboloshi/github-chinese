@@ -542,6 +542,7 @@ I18N.zh = {
              *    over xxx ago // 里程碑页面 最后更新时间
              *    about xxx ago // 里程碑页面 最后更新时间
              *    almost xxx ago // 里程碑页面 最后更新时间
+             *    less than xxx ago // 导出帐户数据
              * 2. xxx之内的相对时间格式
              *  in 6 minutes // 拉取请求页面
              *
@@ -557,7 +558,7 @@ I18N.zh = {
                 var dt = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
 
                 if (suffix) {
-                    return (prefix === 'about' || prefix === 'almost' ? '大约 ' : '') + d + ' ' + dt[t] + (prefix === 'over' ? '多之前' : '之前');
+                    return (prefix === 'about' || prefix === 'almost' ? '大约 ' : prefix === 'less than' ? '不到 ' : '') + d + ' ' + dt[t] + (prefix === 'over' ? '多之前' : '之前');
                 } else {
                     return (prefix === 'in' ? d + ' ' + dt[t] + '之内' : all);
                 }
