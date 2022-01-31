@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects)/,
+    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history)/,
 
     // 仓库路径
-    rePagePathRepo: /\/(settings|projects|search)/,
+    rePagePathRepo: /\/(settings|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /\/(settings|billing_managers\/new)/,
+    rePagePathOrg: /\/(dashboard|settings\/(apps\/new|applications\/new)|settings|billing_managers\/new|repositories\/new|topics|billing\/history|domain\/new)/,
 
     /**
      * 忽略区域的 class 正则
@@ -119,6 +119,7 @@ I18N.zh = {
             "Your Repositories": "您的仓库",
             "Your Projects": "您的项目",
             "Your Packages": "您的软件包",
+            "Your Stars": "您的星标",
             "Your Profile": "个人资料",
             "Account settings": "帐户设置",
             "Appearance": "外观",
@@ -178,11 +179,8 @@ I18N.zh = {
             "Jump to": "跳转到",
 
             // 顶部栏 & 小屏左上角下拉栏 (已登录)
-            "Dashboard": "仪表盘",
-            "Pull": "拉取",
-            "request": "请求",
-            "s": " ",
-            //"Pull requests": "拉取请求"
+            "Dashboard": "仪表板",
+            //"Pull requests": "拉取请求"  // 使用 Selector 规则翻译
             "Issues": "议题",
             "Marketplace": "应用商城",
             "Explore": "探索",
@@ -246,6 +244,7 @@ I18N.zh = {
             "Clear status": "清除状态",
             "Never": "永不",
             "Visible to": "可见",
+                "Everyone": "所有人",
                 "Your status will be visible to everyone": "所有人都可以看到您的状态",
                 // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
             "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
@@ -281,42 +280,44 @@ I18N.zh = {
             "Suggest an answer": "建议一个答案", // 具体讨论页
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
             "Nothing to preview": "没有什么可预览",
+            "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
             // 取消按钮 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
 
-            "Add header text": "添加标题文本",
-            "Add bold text <ctrl+b>": "添加粗体文本 <ctrl+b>",
-            "Add italic text <ctrl+i>": "添加斜体文本 <ctrl+i>",
-            "Insert a quote <ctrl+.>": "插入引用 <ctrl+.>",
-            "Insert a quote <ctrl+shift+.>": "插入引用 <ctrl+shift+.>",
-            "Insert code <ctrl+e>": "插入代码 <ctrl+e>",
-            "Add a link <ctrl+k>": "添加链接 <ctrl+k>",
-            "Add a bulleted list <ctrl+shift+8>": "添加无序列表 <ctrl+shift+8>",
-            "Add a numbered list <ctrl+shift+7>": "添加有序列表 <ctrl+shift+7>",
-            "Add a numbered list <ctrl+shift+9>": "添加有序列表 <ctrl+shift+9>",
-            // "Add a task list": "添加任务列表",
-            "Add a task list <ctrl+shift+l>": "添加任务列表 <ctrl+shift+l>",// 具体提交页 进行某条代码评论
+            "Add heading text": "添加标题文本",
+            "Add bold text, <Ctrl+b>": "添加粗体文本 <Ctrl+b>",
+            "Add italic text, <Ctrl+i>": "添加斜体文本 <Ctrl+i>",
+            "Add a quote, <Ctrl+Shift+.>": "添加引用 <Ctrl+Shift+.>",
+            "Add code, <Ctrl+e>": "添加代码 <Ctrl+e>",
+            "Add a link, <Ctrl+k>": "添加链接 <Ctrl+k>",
+            "Add a bulleted list, <Ctrl+Shift+8>": "添加无序列表 <Ctrl+Shift+8>",
+            "Add a numbered list, <Ctrl+Shift+7>": "添加有序列表 <Ctrl+Shift+7>",
+            "Add a task list, <Ctrl+Shift+l>": "添加任务列表 <Ctrl+Shift+l>",
             "Directly mention a user or team": "直接提及用户或团队",
-            "Attach an image or video": "附加图片或视频",
+            "Attach an image or video": "附加图片或视频", // 小屏
             "Reference an issue, pull request or discussion": "引用议题，拉取请求或讨论",
             "Reference an issue, pull request, or discussion": "引用议题，拉取请求或讨论",
             "Reference an issue or pull request": "引用议题或拉取请求",
-            "Insert a reply": "插入回复",
+            "Add saved reply": "添加快捷回复",
+                "Select a reply": "选择回复",
+                "Filter replies…": "筛选回复",
+                "Default replies": "默认快捷回复",
+                "Duplicate issue": "重复议题",
+                // "Duplicate of #": "重复 #",
+                "Duplicate pull request": "重复拉取请求",
+                // "Duplicate of #": "重复 #",
+                "Create a new saved reply…": "创建新快捷回复…",
+
+            // 小屏 插入链接 对话框
+                "Insert Link": "插入链接",
+                "Link Text": "链接文本",
+                "Add": "添加",
 
             "Attach files by dragging & dropping, selecting or pasting them.": "通过拖放，选择或粘贴来附加文件。",
             "Attach files by selecting or pasting them.": "通过选择或粘贴来附加文件。",
             "Styling with Markdown is supported": "支持 Markdown 功能哦。",
             "Uploading your files…": "正在上传您的文件…",
-
-            "Select a reply": "选择回复",
-            "Filter replies…": "筛选回复",
-            "Default replies": "默认快捷回复",
-            "Duplicate issue": "重复议题",
-            // "Duplicate of #": "重复 #",
-            "Duplicate pull request": "重复拉取请求",
-            // "Duplicate of #": "重复 #",
-            "Create a new saved reply…": "创建新快捷回复…",
 
             "Close issue": "关闭议题", // issue页 评论框
             "Close with comment": "评论并关闭议题", // issue页 评论框
@@ -333,7 +334,7 @@ I18N.zh = {
             "Answer": "答复", // 具体讨论页
             "Start discussion": "开始讨论", // 新建讨论
 
-            // 全局快捷键对话框
+            // 全局快捷键对话框 - 快捷键 ? 打开
             "Keyboard shortcuts": "键盘快捷键",
             "Site-wide shortcuts": "全站快捷键",
                 "Open command palette": "打开命令面板",
@@ -348,22 +349,37 @@ I18N.zh = {
                 "Open selection": "打开选择",
             "View all keyboard shortcuts": "查看所有键盘快捷键",
 
-            // 命令面板
+            // 命令面板 - ctrl k 或 ctrl alt k 打开
+                // Tip
+                    "Go to your accessibility settings to change your keyboard shortcuts": "跳转到您的无障碍设置，以更改您的键盘快捷键",
+                    "to search discussions": "搜索讨论", // 键入 #
+                    "to search issues": "搜索议题", // 键入 #
+                    "to search pull requests": "搜索拉取请求", // 键入 #
+                    "to search projects": "搜索项目", // 键入 !
+                    "to search people and organizations": "搜索成员和组织", // 键入 @
+                    "to activate command mode": "激活命令模式", // 键入 >
+                    "Type is:issue to filter to issues": "键入 is:issue 以筛选议题",
+                    "Type is:pr to filter to pull requests": "键入 is:pr 以筛选拉取请求",
+                    "Type is:open to filter to open content": "键入 is:open 以筛选打开的内容",
+                    "Type author:@me to search your content": "键入 author:@me 以筛选您的内容",
+                    "Type": "请键入",
+                    "for help and tips": "寻求帮助和提示", // 键入 ?
+
                 "Search or jump to...": "搜索或跳转到…",
                 "Clear": "清除",
-                "Type": "类型",
-                "for issues and pull requests,": "议题和拉取请求，",
-                "for issues, pull requests, and projects,": "议题、拉取请求和项目，",
-                "for files, and": "文件，",
-                "for commands, and": "命令，",
-                "for commands": "命令，",
-                "for help": "帮助",
+                // "for issues and pull requests,": "议题和拉取请求，",
+                // "for issues, pull requests, and projects,": "议题、拉取请求和项目，",
+                // "for files, and": "文件，",
+                // "for commands, and": "命令，",
+                // "for commands": "命令，",
+                // "for help": "帮助",
 
                 "Pages": "页面",
                 "Notifications": "通知",
                 "Discussions": "讨论",
                 "Actions": "操作",
                 "Insights": "洞察",
+                "Organizations": "组织",
                 "Users": "用户",
                 "to jump to": "去跳转",
                 "to search": "去搜索",
@@ -382,6 +398,7 @@ I18N.zh = {
 
                 // @ 模式
                 "Search or jump to a repository": "搜索或跳转到仓库",
+                "Search or jump to a user, organization, or repository": "搜索或跳转到用户、组织或仓库",
 
                 // / 文件模式
                 "Search files": "搜索文件",
@@ -390,17 +407,20 @@ I18N.zh = {
                 // > 命令模式
                 "Run a command": "运行命令",
                 "Run command": "运行命令",
-                "Commands": "命令",
+                // "Commands": "命令",
+                "Global Commands": "全局命令",
+                "New issue": "新建议题",
+                "New file": "新建文件",
                 "Switch theme to default dark": "切换主题为 暗 - 默认",
                 "Switch theme to dark dimmed": "切换主题为 昏暗",
                 "Switch theme to default light": "切换主题为 亮 - 默认",
                 "Switch theme to dark high contrast": "切换主题为 暗 - 高对比",
                 "Switch theme settings to sync with system": "切换主题为 与系统同步",
-                "New file": "新建文件",
 
                 // ? 模式
                 "Modes": "模式",
                 "Search for": "搜索",
+                "across all of GitHub": "在整个 GitHub中",
                 "issues, pull requests, discussions,": "议题、拉取请求、讨论",
                 "organizations, repositories,": "组织、仓库",
                 "projects": "项目",
@@ -421,12 +441,6 @@ I18N.zh = {
                 "Filter to projects": "筛选项目",
                 "Filter to open issues, pull requests, and discussions": "筛选打开的议题、拉取请求和讨论",
 
-            "Owns this repository": "拥有这个仓库",
-            "Left a review": "留下了一个评论",
-
-            "Opened this pull request": "打开了此拉取请求",
-
-
             // 公共词 高频词
             "Followers": "关注者",
             "Follow": "关注",
@@ -442,15 +456,18 @@ I18N.zh = {
             "Added on": "添加于",
             "Loading...": "载入中...",
             "Copied!": "复制成功!",
+            "Copy to clipboard": "复制到剪切板",
 
             "and": "和",
             "or": "或",
             "to": "到",
             "by": "由",
+            "on": "于",
 
             "Learn more": "了解更多",
             "Learn More": "了解更多",
             "Learn more.": "了解更多。",
+            ",": "，",
             ".": "。",
 
             // 名词
@@ -578,10 +595,11 @@ I18N.zh = {
                 all = minute ? minute + '分' + second + '秒' : second + '秒';
                 return (prefix ? all + '之内' : all);
             }],
+            [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
         ],
     },
 
-    "page-dashboard": { // 已登录的首页
+    "page-dashboard": { // 已登录的首页 - 仪表板(含组织)
         "static": { // 静态翻译
             // 新手帮助
             "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
@@ -599,14 +617,29 @@ I18N.zh = {
             "You don’t have any repositories yet!": "您目前还没有任何仓库！",
             "Create your first repository": "创建您的第一个仓库",
             "or": "或者",
-            "learn more about Git and GitHub": "学习更多关于 Git 和 GitHub 知识",
+            "Learn more about Git and GitHub": "学习更多关于 Git 和 GitHub 知识",
+
+            // 组织
+            // [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"],
+            // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
+            "View and create teams": "查看并创建团队",
+            "See all owners": "查看所有所有者",
+            // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
+            "Return to your personal dashboard": "返回到您的个人仪表板",
+            // "Learn more about Git and GitHub": "了解更多关于 Git 和 GitHub 的信息",
 
             // 已有仓库的项目
             // 左侧栏
+            "View organization": "查看组织", // 组织
+            "Browse organization's repositories": "浏览组织的仓库", // 组织
+            "Recent Repositories": "近期仓库",
             "New": "新建",
             "Find a repository…": "搜索仓库…",
             "Show more": "显示更多",
+            "Your teams": "您的团队",
+            "Find a team…": "搜索团队…",
             "Recent activity": "近期活动",
+                "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
 
             "Public": "公共",
             "Private": "私有",
@@ -632,6 +665,9 @@ I18N.zh = {
             "created a repository": "创建了仓库",
             "Forked to": "复刻为",
             "of": "",
+            "made": "将",
+            "public": "设为公共",
+            "committed": "提交于",
 
             "Read more": "阅读更多内容",
 
@@ -639,16 +675,20 @@ I18N.zh = {
             "Loading more…": "载入更多…",
 
             "Subscribe to your news feed": "订阅您的新闻提要",
+            "Subscribe to the": "订阅", // 组织
+            "organization news feed": "组织的新闻提要", // 组织
 
             // 右侧栏
             "Explore repositories": "探索仓库",
             "Explore more →": "探索更多 →",
 
             // 用户 浮动信息卡
-                "Committed to this repository": "已提交过这个仓库",
-                "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
-                "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
-                "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
+                "Member of": "隶属组织",
+                // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+
+            // 组织  浮动信息卡
+                // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+                // [/(\d+) members?/, "$1 个成员"],
 
            //
             "Add to list": "添加到清单",
@@ -662,9 +702,9 @@ I18N.zh = {
                 "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                 "Creating...": "创建中...",
 
-            "Switch dashboard context": "切换默认身份",
-            "Manage organizations": "管理组织",
-            "Create organization": "创建组织",
+            "Switch dashboard context": "切换默认身份", // 组织
+            "Manage organizations": "管理组织", // 组织
+            "Create organization": "创建组织", // 组织
 
             // 首次加入组织通知
             "You’ve been added to the": "您已经被添加到",
@@ -675,11 +715,13 @@ I18N.zh = {
             "After you switch contexts you’ll see an organization-focused dashboard that lists out organization repositories and activities.": "当您切换身份，您会看到一个组织为中心的页面，其中列出了组织库和活动。",
 
             // 快捷键
-            "Dashboards": "仪表盘",
+            "Dashboards": "仪表板",
             "Go to your issues": "跳转到您的议题",
             "Go to your pull requests": "跳转到您的拉取请求",
         },
         "regexp": [ // 正则翻译
+            [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
+            [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
             [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
             [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
             [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
@@ -691,10 +733,13 @@ I18N.zh = {
             [/(\d+) more commits? »/, "$1 个更多提交到"],
             [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
             [/Updated/, "更新于"],
+            [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
+            [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
+            [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"], // 组织
         ],
     },
 
-    "page-profile": { // 个人首页
+    "page-profile": { // 个人首页 (含组织)
         "static": { // 静态翻译
             // 个人首页 公关部分
                 // 左侧用户信息栏
@@ -717,6 +762,9 @@ I18N.zh = {
                 "Name": "名称",
                 "Bio": "个人简介",
                 "Add a bio": "添加个人简介",
+                    "You can": "您可",
+                    "@mention": "@用户名或组织名",
+                    "other users and organizations to link to them.": "链接到其他用户和组织。",
                 "Company": "公司",
                 "Location": "位置",
                 "Website": "网站",
@@ -745,7 +793,7 @@ I18N.zh = {
                 // 设置置顶项目对话框
                 "Edit pinned items": "设置置顶项目",
                 "Select up to six public repositories or gists you’d like to show.": "最多选择 6 个要显示的公共仓库或代码片段。",
-                "Filter repositories and gists": "过滤仓库和代码片段",
+                "Filter repositories and gists": "筛选仓库和代码片段",
                 "Show:": "显示：",
                 "Save pins": "保存置顶",
                 // 顶部提醒
@@ -822,7 +870,7 @@ I18N.zh = {
 
                 // 搜索, 筛选 & 排序工具栏
                 "Find a repository…": "搜索仓库…",
-                "Type": "类型",
+                // "Type": "类型", 与全局冲突 使用 Selector 规则翻译
                     // 下拉菜单
                     "Select type": "选择类型",
                     "All": "全部",
@@ -841,10 +889,10 @@ I18N.zh = {
                     "Select order": "选择排序",
                     "Last updated": "最近更新",
                     // "Name": "仓库名",
-                    // "Recently starred": "最近关注的",
-                    // "Recently active": "最近活动的",
-                    // "Most stars": "最多赞的",
-                    // "Unstar": "取消点赞",
+                    // "Recently starred": "最近星标",
+                    // "Recently active": "最近活跃",
+                    // "Most stars": "最多星标",
+                    // "Unstar": "取消星标",
                 "New": "新建",
 
                 // 筛选结果
@@ -892,7 +940,7 @@ I18N.zh = {
                     "Oldest": "最早",
                     "Recently updated": "近期更新内容",
                     "Least recently updated": "最近最少更新",
-                // 清楚筛选
+                // 清除筛选
                 "Clear current search query and sorts": "清除当前的搜索查询和分类",
 
                 "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
@@ -919,7 +967,7 @@ I18N.zh = {
                 "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
                 "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
                 "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.": "分发用于 Ruby 编程语言的 Ruby 程序和库的标准格式。",
-                "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.": "npm是一个JavaScript的包管理器，包含在Node.js中。它使开发人员能够轻松地分享和重用代码。",
+                "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.": "npm 是一个 JavaScript 的包管理器，包含在 Node.js 中。它使开发人员能够轻松地分享和重用代码。",
                 "Containers": "容器",
                 "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
 
@@ -942,8 +990,8 @@ I18N.zh = {
                 "Lists make it easier to organize and curate repositories that you have starred.": "列表可使您更容易组织和策划您的星标仓库。",
                 "Create your first list.": "创建您的第一个清单。",
 
-                // "Filters": "过滤",
-                //     // 过滤下拉菜单
+                // "Filters": "筛选",
+                //     // 筛选下拉菜单
                 //     "Find repositories…": "搜索仓库…",
                 "Search stars": "搜索星标",
                 "Type: All"    : "类型：全部",
@@ -952,12 +1000,12 @@ I18N.zh = {
                 "Type: Sources": "类型：源码",
                 "Type: Forks"  : "类型：复刻",
                 "Type: Mirrors": "类型：镜像",
-                "Sort by: Recently starred": "排序：最近关注的",
-                "Sort by: Recently active": "排序：最近活动的",
-                "Sort by: Most stars": "排序：最多赞的",
-                    "Recently starred": "最近关注的",
-                    "Recently active": "最近活动的",
-                    "Most stars": "最多赞的",
+                "Sort by: Recently starred": "排序：最近星标",
+                "Sort by: Recently active": "排序：最近活跃",
+                "Sort by: Most stars": "排序：最多星标",
+                    "Recently starred": "最近星标",
+                    "Recently active": "最近活跃",
+                    "Most stars": "最多星标",
                     "Languages": "语言",
 
                 //筛选结果
@@ -999,6 +1047,8 @@ I18N.zh = {
                 "People": "成员",
                 "Teams": "团队",
 
+                "Send feedback": "发送反馈",
+
                 // 右侧栏
                     // "People": "成员",
                         "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
@@ -1007,7 +1057,11 @@ I18N.zh = {
                             // [/Invite a member to/, "邀请成员加入"],
                             "Search by username, full name, or email address": "搜索用户名, 全名, 邮箱地址：",
                             "Invite": "邀请",
-                            "Invite a billing manager": "邀请一位计费经理",
+                            "Invite a billing manager": "邀请一位账单管理员",
+                            "Authenticate your members with SAML single sign-on": "使用 SAML 单点登录对您的成员进行身份验证",
+                            "Try risk-free for 30 days": "无风险试用 30 天",
+                            "learn more about SAML": "了解更多关于 SAML 的信息",
+                            "dismiss this message": "忽略此消息。",
                         "View all": "查看全部",
                     "Top languages": "热门语言",
                         "Loading…": "载入中…",
@@ -1023,46 +1077,6 @@ I18N.zh = {
                 "No repositories or gists found.": "没有发现仓库或 Gists。",
                 // 顶部提醒
                 "You’re not a member of any teams in this organization.": "您不是该组织中任何团队的成员。",
-            // 成员标签页 https://github.com/orgs/<orgs-name>/people
-                "Organization permissions": "组织权限",
-                "Members": "成员",
-                "Outside collaborators": "外部协作者",
-                "Pending collaborators": "待定协作者",
-                "Pending invitations": "待定邀请",
-                "Failed invitations": "失败的邀请",
-
-                "Find a member…": "搜索成员…",
-
-                "Export": "导出",
-                "Invite member": "邀请成员",
-
-                "Filter by two-factor authentication": "按双重身份验证筛选",
-                "Everyone": "所有人",
-                "Enabled": "禁用",
-                "Disabled": "启用",
-
-                "Role": "角色",
-                "Filter by role": "筛选角色",
-                "Owners": "所有者",
-
-                "Organization visibility": "组织可见性",
-                "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
-                "Your membership is only visible to other members of this organization.": "您的成员资格只对本组织的其他成员可见。",
-
-                "Owner": "所有者",
-                "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
-                // [/0 teams/, ""],
-
-                "Manage": "管理",
-                "Convert to outside collaborator": "转为外部协作者",
-                "Remove from organization": "从组织移除",
-
-                "This organization has no public members.": "该组织没有公开的成员。",
-
-            // 项目标签页 https://github.com/orgs/<orgs-name>/projects
-                "There aren't any public projects yet": "该组织没有公共项目。",
-
-            // https://github.com/orgs/<orgs-name>/teams
 
             // 软件包 https://github.com/orgs/<orgs-name>/packages
                 "Type:": "类型：",
@@ -1078,6 +1092,94 @@ I18N.zh = {
                 "Published": "发布于",
                 "in": "在",
 
+            // 成员标签页 https://github.com/orgs/<orgs-name>/people
+                "Organization permissions": "组织权限",
+                "Members": "成员",
+                "Outside collaborators": "外部协作者",
+                "Pending collaborators": "待定协作者",
+                "Pending invitations": "待定邀请",
+                "Failed invitations": "失败邀请",
+
+                "Find a member…": "搜索成员…",
+
+                "Export": "导出",
+                "Invite member": "邀请成员",
+
+                "Filter by two-factor authentication": "按双重身份验证筛选",
+                "Everyone": "所有人",
+                "Enabled": "禁用",
+                "Disabled": "启用",
+
+                "Role": "角色",
+                "Filter by role": "按角色筛选",
+                "Owners": "所有者",
+
+                "Organization visibility": "组织可见性",
+                "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
+                "Your membership is only visible to other members of this organization.": "您的成员资格只对本组织的其他成员可见。",
+
+                "Owner": "所有者",
+                "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
+                // [/0 teams/, ""],
+
+                "Manage": "管理",
+                "Convert to outside collaborator…": "转为外部协作者…",
+                "Remove from organization…": "从组织移除…",
+
+                "This organization has no public members.": "该组织没有公开的成员。",
+
+            // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
+                "Find a collaborator…": "寻找协作者…",
+                "Select all": "全选",
+                "No one outside of the organization has access to its repositories.": "组织外部的任何人都无法访问其仓库。",
+
+            // 待定协作者 https://github.com/orgs/<orgs-name>/pending_collaborators
+                "Find a pending collaborator…": "寻找待定协作者…",
+                "There aren't any pending collaborators.": "暂无任何待定的协作者",
+
+            // 待定邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
+                // [/(\d+) Pending invitations?/, "个待定邀请"],
+                "No pending invitations.": "暂无待定邀请。",
+
+            // 失败邀请 https://github.com/orgs/<orgs-name>/people/failed_invitations
+                // [/(\d+) Failed invitations?/, "个失败邀请"],
+                "No failed invitations.": "暂无失败邀请。",
+
+            // 团队标签卡 https://github.com/orgs/<orgs-name>/teams
+                "Seamless communication with teams": "与团队的无缝沟通",
+                "Teams are a great way for groups of people to communicate and work on code together. Take a look at why they’re great.": "团队是一群人在一起交流和编写代码的好方法。看看为什么他们很棒。",
+                "Flexible repository access": "灵活的仓库访问",
+                    "You can add repositories to your teams with more flexible levels of access (Admin, Write, Read).": "您可以将仓库添加到您的团队中，并有更灵活的访问级别（管理员、写入、读取）。",
+                "Request to join teams": "申请加入团队",
+                    "Members can quickly request to join any team. An owner or team maintainer can approve the request.": "成员可以快速申请加入任何团队。一个所有者或团队维护者可以批准该请求。",
+                "Team mentions": "团队提及",
+                    "Use team @mentions (ex.": "使用团队 @提及（例如",
+                    "for the entire team) in any comment, issue, or pull request.": "对于整个团队）在任何评论、议题或拉取请求中。",
+                    "New team": "新建团队",
+
+            // 创建团队 /orgs/<org-login>/new-team
+                "Create new team": "新建团队",
+                "Team name": "团队名称",
+                "You’ll use this name to mention this team in conversations.": "您将使用此名称在对话中提及此团队。",
+                "Description": "描述",
+                "What is this team all about?": "这个团队是什么？",
+                "Parent team": "父团队",
+                    "There are no teams that can be selected.": "没有可以选择的团队。",
+                "Team visibility": "团队可见性",
+                    "Visible": "可见",
+                        "Recommended": "推荐",
+                        "A visible team can be seen and": "可见的团队可以被看到并",
+                        "@mentioned": "@提及",
+                        "by every member of this organization.": "本组织的每一位成员。",
+                    "Secret": "私密",
+                        "A secret team can only be seen by its members and may not be nested.": "私密团队只能被其成员看到，而且不能被嵌套。",
+                "Create team": "创建团队",
+
+            // 项目标签页 https://github.com/orgs/<orgs-name>/projects
+                // "There aren't any public projects yet": "该组织没有公共项目。",
+                "There aren't any projects yet": "该组织没有项目。",
+                "Try starting a new one.": "尝试开始一个新的项目。",
+
         },
         "regexp": [ // 正则翻译
             [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
@@ -1088,7 +1190,7 @@ I18N.zh = {
             [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
             [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
-            [/(\d+) contributions? in private repositories?/, "私人仓库 $1 个贡献"],
+            [/(\d+) contributions? in private repositories?/, "私有仓库 $1 个贡献"],
             [/(\d+|No) contributions?/, function (all, number) {
                 return number === 'No' ? "无贡献" : number+" 次贡献";
             }],// 贡献日历
@@ -1122,13 +1224,16 @@ I18N.zh = {
             [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
             [/(\d+) repositor(y|ies)/, "$1 个仓库"],
             [/(\d+) members?/, "$1 个成员"],
+            [/\((\d+) issues? needs? help\)/, "($1 个议题需要帮助）"],
+            [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
             // 组织页面
-            [/\((\d+) issues? need help\)/, "($1 个议题需要帮助）"],
             [/doesn’t have any public projects./, "没有任何公共项目。"],
             [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
             [/Invite a member to/, "邀请成员加入"],
             [/(\d+) packages?/, "$1 软件包"],
-            [/\((\d+) issues? needs help\)/, "（$1 个议题需要帮助）"],
+            [/(\d+) teams?/, "$1 团队"],
+            [/(\d+) Pending invitations?/, "待定邀请"],
+            [/(\d+) Failed invitations?/, "失败邀请"],
         ],
     },
 
@@ -1138,32 +1243,41 @@ I18N.zh = {
             "Switch to another account": "切换到另一个帐户", // 存在组织时
             "Go to your personal profile": "去我的个人资料",
             // 左侧菜单
-            // "Settings": "设置",
-            "Account settings": "帐户设置",
             "Profile": "个人资料",
             "Account": "帐户",
             "Appearance": "外观",
             "Accessibility": "无障碍",
-            "Account security": "帐户安全",
-            "Billing & plans": "计费 & 计划",
-            "Security log": "安全日志",
-            "Security & analysis": "安全 & 分析",
-            "Sponsorship log": "赞助日志",
-            "Emails": "电子邮箱",
             "Notifications": "通知",
-            "Scheduled reminders": "定时提醒",
+
+            "Access": "访问",
+            "Billing and plans": "账单和计划",
+            "Emails": "电子邮箱",
+            "Password and authentication": "密码和身份验证",
             "SSH and GPG keys": "SSH 与 GPG 公钥",
+            "Organizations": "组织",
+            "Moderation": "节制",
+                "Blocked users": "黑名单",
+                "Interaction limits": "互动限制",
+                "Code review limits": "代码审查限制",
+
+            "Code, planning, and automation": "代码、规划和自动化",
             // "Repository": "仓库"
             "Packages": "软件包",
             "Pages": "GitHub Pages",
-            "Organizations": "组织",
             "Saved replies": "快捷回复",
+
+            // "Security": "安全",
+            "Code security and analysis": "代码安全性与分析",
+
+            "Integrations": "整合",
             "Applications": "应用",
+            "Scheduled reminders": "定时提醒",
+
+            "Archives": "存档",
+            "Security log": "安全日志",
+            "Sponsorship log": "赞助日志",
+
             "Developer settings": "开发者设置",
-            "Moderation settings": "审查设置",
-            "Blocked users": "黑名单",
-            "Interaction limits": "互动限制",
-            "Code review limits": "代码审查限制",
 
             // Profile 个人资料 https://github.com/settings/profile
                 "Public profile": "基本资料",
@@ -1188,13 +1302,13 @@ I18N.zh = {
                 "Tell us a little bit about yourself": "自我介绍一下您自己的相关信息",
                 "You can": "您可以",
                 "@mention": "@用户名或组织名",
-                "other users and organizations to link to them.": "关联其他用户和组织。",
+                "other users and organizations to link to them.": "链接到其他用户和组织。",
                 "URL": "网站",
                 "Twitter username": "Twitter 用户名",
                 "Company": "公司",
-                "your company’s GitHub organization to link it.": "关联您所在公司的 GitHub 组织。",
+                "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
                  //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
-                "Location": "地址",
+                "Location": "位置",
                 "All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears. Please see our": "此页面上的所有字段都是可选的，可以随时删除，填写这些字段，即表示您同意我们在您的个人资料出现的任何地方共享此数据。请参阅我们的",
                 "privacy statement": "隐私声明",
                 "to learn more about how we use this information.": "以了解更多关于我们如何使用这些信息。",
@@ -1215,7 +1329,7 @@ I18N.zh = {
 
                 "Contributions": "贡献",
                 "Include private contributions on my profile": "在我的个人资料显示私人贡献",
-                "Get credit for all your work by showing the number of contributions to private repositories on your profile without any repository or organization information.": "显示所有包括私人仓库的贡献到您的个人资料页面，不包括仓库或组织信息。",
+                "Get credit for all your work by showing the number of contributions to private repositories on your profile without any repository or organization information.": "显示所有包括私有仓库的贡献到您的个人资料页面，不包括仓库或组织信息。",
                 "Learn how we count contributions": "查看如统计贡献",
                 "Update contributions": "更新贡献",
 
@@ -1265,6 +1379,7 @@ I18N.zh = {
                     "are available.": "都可以使用。",
                     "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，不能以连字符开始或结束。",
                 "Looking to manage account security settings? You can find them in the": "想管理帐户安全设置？您可以找到它们在",
+                "Account security": "账户安全",
                 "tab.": "选项页。",
 
                 "Export account data": "导出帐户数据",
@@ -1292,7 +1407,7 @@ I18N.zh = {
                     "Your account is currently an owner in these organizations:": "您的帐户目前是以下组织的所有者：", // 存在组织
                     "You must": "您必须先",
                     "remove yourself": "删除您自己",
-                    "transfer ownership": "转移所有权",
+                    "transfer ownership": "转让所有权",
                     "delete": "删除",
                     "these organizations before you can delete your user.": "这些组织，您才可以删除您的用户。",
                 "Delete your account": "删除帐户",
@@ -1300,7 +1415,7 @@ I18N.zh = {
                 "downgrade your account": "降级您的帐户",
                 "to a": "为",
                 "FREE": "免费",
-                "account? We won’t charge your payment information anymore.": "帐户吗？我们不会再收取您的付款信息。",
+                "account? We won’t charge your payment information anymore.": "帐户吗？我们不会再收取您的支付信息。",
                     "Are you sure you want to do this?": "您确定要这么做吗？",
                     "This is extremely important.": "这是极其重要的。",
                     "We will": "我们将",
@@ -1347,93 +1462,92 @@ I18N.zh = {
                 "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 样式的纯文本编辑器的字体首选项（例如拉取请求和议题描述、评论。）",
                 "Use a fixed-width (monospace) font when editing Markdown": "编辑 Markdown 时使用固定宽度（等宽）字体",
 
-            // Accessibility 无障碍 https://github.com/settings/appearance
-                "Enable character key shortcuts": "启用字符快捷键",
-                "This setting can enable": "此设置可以启用",
+            // Accessibility 无障碍 https://github.com/settings/accessibility
                 "GitHub keyboard shortcuts": "GitHub 键盘快捷键",
-                "that don't use modifier keys in their activation. For example, the": "，这些快捷键在激活时不使用修改键。例如，",
-                "shortcut takes you to the notifications page and": "快捷键会带您到通知页面，并且",
-                "opens a list of contextually-relevant keyboard shortcuts.": "打开一个与上下文相关的键盘快捷键列表。",
+                "General": "通常",
+                "Character keys": "字符键",
+                    "GitHub shortcuts": "GitHub 快捷键",
+                    "that don't use modifier keys in their activation. For example, the": "，这些快捷键在激活时不使用修改键。例如，",
+                    "shortcut to navigate notifications, or": "快捷键来导航到通知，或",
+                    "to view context relevant shortcuts.": "查看与上下文相关的快捷键。",
+                    "Learn more about character key shortcuts": "了解更多关于字符快捷键的信息",
+
+                "Command palette": "命令面板",
+                    "Modify the shortcuts to trigger the Command Palette for the default search mode and the command mode": "修改快捷键以触发默认搜索模式和命令模式的命令面板",
+                    "Search mode": "搜索模式",
+                        "control + k or control + alt + k (default)": "control + k 或 control + alt + k (默认)",
+                        "Disabled": "禁用",
+                    "Command mode": "命令模式",
+                        "control + shift + k (default)": "control + shift + k (默认)",
 
                 // 顶部提醒
                 "Keyboard shortcut preference successfully saved.": "键盘快捷键首选项已成功保存。",
 
-            // Account security 帐户安全 https://github.com/settings/security
-                "Change password": "更改密码",
-                "Old password": "旧密码",
-                "New password": "新密码",
-                "Confirm new password": "确认新密码",
-                "Make sure it's": "请确保",
-                "at least 15 characters": "至少需要15个字符",
-                "OR": " 或者",
-                "at least 8 characters": "至少需要8个字符",
-                "including a number": "包括数字",
-                "and a lowercase letter": "和小写字母",
-                "Password is too short (minimum is 8 characters)": "密码太短（最少8个字符）",
-                "Password is too short (minimum is 8 characters), needs at least 1 lowercase letter, and is in a list of passwords commonly used on other websites": "密码太短（最少8个字符），至少需要1个小写字母，而且已在其他网站常用密码列表中",
-                "Password is too short (minimum is 8 characters), needs at least 1 lowercase letter, cannot include your login, and is in a list of passwords commonly used on other websites": "密码太短（最少为8个字符），至少需要1个小写字母，而且不能包括您的登录名，以及在其他网站常用的密码列表中。",
-                "Password is too short (minimum is 8 characters), needs at least 1 number, cannot include your login, and is in a list of passwords commonly used on other websites": "密码太短（最少8个字符），需要至少1个数字，不能包含您的登录名，以及在其他网站常用的密码列表中",
-                "Password is too short (minimum is 8 characters) and is in a list of passwords commonly used on other websites": "密码太短（最少为8个字符），而且已在其他网站常用的密码列表中。",
-                "Password needs at least 1 lowercase letter and is in a list of passwords commonly used on other websites": "密码需要至少 1 个小写字母，而且已在其他网站常用的密码列表中",
-                "Password is in a list of passwords commonly used on other websites": "密码在其他网站常用的密码列表中",
-                "Update password": "更新密码",
-                "I forgot my password": "我忘记了我的密码",
+            // Notification center 通知 https://github.com/settings/notifications
+                //"How you receive notifications": "通知设置",
+                "Choose how you receive notifications. These notification settings apply to the": "选择接收通知的方式。这些通知设置适用于",
+                "things you’re watching": "您正在关注的内容",
 
-                // 双重身份验证
-                // 顶部提醒
-                "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
+                "Automatic watching": "自动关注",
+                    "When you’re given push access to a repository, automatically receive notifications for it.": "当您给一个仓库推送权限时，自动接收相关通知。",
+                "Automatically watch repositories": "自动关注仓库",
+                    "When you’re added to or join a team, automatically receive notifications for that team’s discussions.": "当您被添加或加入团队时，会自动接收该团队讨论的通知。",
+                "Automatically watch teams": "自动关注团队",
 
-                "Two-factor authentication": "双重身份验证",
-                "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
-                "Enable two-factor authentication": "启用双重身份验证",
+                "Participating": "参与话题",
+                "Notifications for the conversations you are participating in, or if someone cites you with an": "通知您正在参与的对话，或者如果有人",
+                //"@mention": "@您",
+                "Email": "电子邮件",
+                "Web and Mobile": "网站 和 移动设备",
 
-                "Enable": "启用",
-                "Enabled": "启用",
-                "Disable": "停用",
-                "Add": "添加",
-                "Added": "添加",
-                "Two-factor methods": "双重身份验证方式",
-                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
-                "Authenticator app": "“身份验证器” 应用",
-                "Security keys": "安全密钥",
-                "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
-                "SMS number": "手机号码",
-                "Recovery options": "恢复选项",
-                "Recovery codes": "恢复码",
-                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
-                "Downloaded": "已下载",
-                "Show": "显示",
-                "Fallback SMS number": "备用手机号码",
-                "Providing a fallback SMS number will allow GitHub to send your two-factor authentication codes to an alternate device if you lose your primary device.": "如果您丢失主要设备，提供备用手机号码将允许 GitHub 将您的双重身份验证码发送到备用设备。",
-                "Recovery tokens": "恢复令牌",
-                "Account recovery with Facebook is a simple way to recover your account.": "使用 Facebook 恢复帐户是一种恢复帐户的简单方法。",
-                "Configured": "已配置",
-                "Not configured": "未配置",
-                "No security keys": "未配置安全密钥",
-                "Viewed": "查看于",
-                "No fallback SMS number": "未设置备用手机号码",
-                "No recovery tokens": "未设置恢复令牌",
+                "Watching": "关注仓库",
+                    "Notifications for all repositories, teams, or conversations you’re watching.": "所有您正在关注的仓库、团队或对话的通知。",
 
-                "Sessions": "会话",
-                "This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.": "这是已登录您帐户的设备列表。 撤销任何您不认识的会话。",
-                "See more": "查看更多",
-                "Your current session": "您当前的会话",
-                "Last accessed on": "最后访问日期：",
-                "Session details": "会话详情",
-                "Revoke session": "撤销会话",
-                "Device:": "设备：",
-                "Last location:": "最后的位置：",
-                "Signed in:": "登录：",
-                "View all sessions": "查看所有会话",
+                "Dependabot alerts": "Dependabot 警报",
+                    "When you’re given access to": "当您获得",
+                    ", automatically receive notifications when a new vulnerability is found in one of your dependencies.": " 访问权限时，当您的某个依赖关系中发现新的漏洞时，就会自动收到通知。",
+                "UI alerts": "用户界面警报",
+                    "UI alerts display warnings in a repository’s file and code views.": "在仓库的文件和代码视图中显示警告。",
+                "Command Line": "命令行",
+                    "Command Line alerts display warnings as a callback when you push to a repository with vulnerabilities.": "当您推送到存在漏洞的仓库时，命令行将发出警告。",
+                "Web": "网站",
 
-            // Billing & plans 计费 & 计划 https://github.com/settings/billing
-                "Personal billing": "个人帐单",
-                "Current monthly bill": "当前月度帐单",
-                "Switch to yearly billing": "转为按年计费",
-                "Next payment due": "下一次到期的付款",
-                "View payment history": "查看付款记录",
+                "Receive security alert notifications via email": "通过电子邮件接收安全警报通知",
+                "Email each time a vulnerability is found": "每次发现漏洞时发送电子邮件",
+                "Email a digest summary of vulnerabilities": "发送漏洞摘要电子邮件",
+                    "Daily security email digest": "每日安全邮件摘要",
+                    "Weekly security email digest": "每周安全邮件摘要",
+
+                "Actions": "操作",
+                    "Notifications for workflow runs on repositories set up with": "仓库的工作流程通知，设置在",
+                    "GitHub Actions": "",
+                "Send notifications for failed workflows only": "只为失败的工作流程发送通知",
+
+                "Organization alerts": "组织警告",
+                    "When you are given admin permissions to an organization, automatically receive notifications when a new deploy key is added.": "当您被赋予一个组织的管理权限时，当一个新的部署密钥被添加时，自动收到通知。",
+
+                "Email notification preferences": "邮件通知偏好",
+                "Default notification email": "默认通知电子邮箱",
+                "Save": "保存",
+                "Choose which email updates you receive on conversations you’re participating in or watching": "选择您要收到正在参与或关注的对话中的邮件更新",
+                "Comments on Issues and Pull Requests": "关于议题和拉取请求的评论",
+                "Pull Request reviews": "拉取请求审核",
+                "Pull Request pushes": "拉取请求推送",
+                "Include your own updates": "包括您自己的更新",
+
+                "Custom routing": "自定义",
+                "You can send notifications to different": "您可以发送通知到不同的",
+                "verified": "经验证",
+                "email addresses depending on the organization that owns the repository.": "的电子邮箱，根据拥有仓库的组织。",
+
+            // 账单和计划 https://github.com/settings/billing
+                "Personal billing": "个人账单",
+                "Current monthly bill": "当前月度账单",
+                "Switch to yearly billing": "切换到按年计费",
+                "Next payment due": "下一次到期的支付",
+                "View payment history": "查看支付记录",
                 "Payment information": "支付信息",
-                "Update payment method": "更新付款方式",
+                "Update payment method": "更新支付方式",
                 "Manage spending limit": "管理支出限额",
                 "Redeem coupon": "兑换优惠券",
                 "Current plan": "当前计划",
@@ -1441,7 +1555,7 @@ I18N.zh = {
 
                 //"GitHub Free": "GitHub 免费",
                 "The basics for all developers": "基础计划（所有开发者）",
-                "Unlimited public/private repos": "无限的公共/私人仓库",
+                "Unlimited public/private repos": "无限的公共/私有仓库",
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
@@ -1450,6 +1564,10 @@ I18N.zh = {
                 "Start your first organization account": "开设您的第一个组织账户",
                 "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
                 "Create an organization": "创建组织",
+
+                // [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人账户外，您还有 $1 个组织账户"],
+                "Manage your organization accounts": "管理您的组织账户",
+                    "Create a new organization": "创建新组织",
 
                 "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
@@ -1464,80 +1582,92 @@ I18N.zh = {
                 "Cancel plan": "取消计划",
                 "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
-                // "Billing overview": "财务信息",
-                // "Plan": "方案",
-                // "Free": "免费",
-                // "Change plan": "修改计划",
-                // "Cancel plan": "取消计划",
-                // "per month for": "每月 -",
-                // "Learn more about Git LFS": "什么是 Git LFS (大文件存储)？",
-                // "Purchase more": "购买更多",
-                // "Billing cycle": "结算周期",
-                // "Bandwidth": "带宽",
-                // "Bandwidth quota resets every billing cycle": "带宽配额每个周期重置",
-                // "Storage": "存储",
-                // "Payment": "支付方式",
-                // "No payment method on file.": "没有设置支付方式",
-                // "Add payment method": "添加支付方式",
-                // "Payment history": "支付记录",
-                // "Amounts shown in USD": "以美元显示",
+            // 支付信息 https://github.com/settings/billing/payment_information
+                "Billing & plans": "账单和计划",
+                "/ Payment information": "/ 支付信息",
 
-            // https://github.com/settings/billing/payment_information
-                "/ Payment information": "/ 付款信息",
-                "Billing Information": "帐单信息",
+                "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
+
+                "Billing Information": "账单信息",
+                "First name": "名字",
+                "Last name": "姓氏",
                 "Address": "地址",
-                "Payment method": "付款方法",
+                "City": "城市",
+                "Postal/Zip code": "邮政编码",
+                "Country/Region": "国家/地区",
+                    "Choose your country": "选择您所在的国家/地区",
+                "State/Province": "州/省",
+                "You have not added any billing information.": "您尚未添加账单方式。",
+
+                "Payment method": "支付方式",
                 "Add Information": "添加信息",
-                "You have not added a payment method.": "您尚未添加付款方式。",
-                "Last payment": "最后一次付款",
+                "You have not added a payment method.": "您尚未添加支付方式。",
+
+                "Last payment": "最后一次支付",
                 "You have not made any payments.": "您尚未支付任何款项。",
+
                 "Coupon": "优惠劵",
                 "Redeem a coupon": "兑换优惠券",
                 "You don’t have an active coupon.": "您没有有效的优惠券。",
+
                 "Additional Information": "附加信息",
+                    "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
                 "Add information": "添加信息",
                 "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
 
-            // Security log 安全日志 https://github.com/settings/security-log
-                "Loading audit log entries…": "正在加载审核日志条目...",
-                "Filters": "过滤",
-                    "Yesterday’s activity": "昨天的活动",
-                    "Repository management": "仓库管理",
-                    "Billing updates": "帐单更新",
-                "Search your security log": "搜索您的安全日志",
-                "Clear current search query": "清除当前的搜索查询",
-                "Export": "导出",
-                "Recent events": "最近的事件",
-                // [/Found (\d+) events?/, "发现 $1 个活动"],
-                "Newer": "新的",
-                "Older": "旧的",
+                // 对话框
+                "Extra billing information": "额外的账单信息",
+                "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
+                "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
+                "Full business name or address of record": "企业全称或记录地址",
+                "Save contact information": "保存联系信息",
 
-            // Security & analysis 安全 & 分析 https://github.com/settings/security_analysis
-                "Configure security and analysis features": "配置安全和分析功能",
-                "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
-                "Disable all": "禁用全部",
-                "Enable all": "启用全部",
-                "Dependency graph": "依赖关系图",
-                "Understand your dependencies.": "了解您的依赖项。",
-                "Automatically enable for new private repositories": "为新私有仓库自动启用",
-                //"": "Dependabot 警报",
-                "Be alerted when a new vulnerability is found in one of your dependencies.": "在您的依赖项中发现新漏洞时收到警报。",
-                "Automatically enable for new repositories": "为新仓库自动启用",
-                "Dependabot security updates": "Dependabot 安全更新",
-                "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
+            // 支付方式 https://github.com/settings/billing/payment
+                "/ Payment method": "/ 支付方式",
+                "Loading payment information…": "正在加载支付信息…",
+                "Pay with": "支付方式：",
+                    "Credit card": "信用卡",
+                        "Card Number": "卡号",
+                        "Expiration Date": "终止日期",
+                            "- Select One -": "- 选择一个 -",
+                        "Address 1": "地址 1",
+                        "Address 2": "地址 2",
+                        "Country": "国家/地区",
+                        "City": "城市",
+                        "State": "州/省",
+                        "Postal Code": "邮政编码",
+                        "Submit": "提交",
+                    "PayPal account": "PayPal 帐户",
+                        "Sign in to": "登录到",
+                        "Connecting to PayPal…": "正在连接到 PayPal…",
+                "Back to billing settings": "返回账单设置",
+                "There are no upcoming charges to your account.": "您的帐户没有即将发生的费用。",
 
-            // Sponsorship log 赞助日志 https://github.com/settings/sponsors-log
-                "Sponsors log": "赞助日志",
-                "New sponsorships, changes, and cancellations": "新的赞助、更改和取消",
-                "Period:": "周期：",
-                "Filter activity": "过滤活动",
-                "All-time": "所有时间",
-                "Past Day": "过去一天",
-                "Past Week": "过去一周",
-                "Past Month": "过去一月",
-                "Past Year": "过去一年",
-                "No sponsorship activity in this time period": "这段时间没有赞助活动",
-                "This is where you can review activity from your sponsorships.": "您可以在此处查看您的赞助活动。",
+            // 支出限额 https://github.com/settings/billing/spending_limit
+                "/ Monthly spending limit": "/ 每月支付限额",
+                "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
+                "Actions spending limits": "操作支付限额",
+                "Packages spending limits": "软件包支付限额",
+
+                "Payment method is missing": "缺失支付方式",
+                "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
+                "Add payment method": "添加支付方式",
+
+                "Limit spending": "限制支出",
+                    "Set up a spending limit on a monthly basis": "设置每月支出限额",
+                    "Update limit": "更新限额",
+                    // [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
+                "Unlimited spending": "不限制支出",
+                    "Pay as much as needed to keep Actions & Packages running": "按需支付，以保持操作和软件包的运行",
+
+                "Email alerts": "电子邮件提醒",
+                "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "当使用率达到 75%、90% 和 100% 的阈值时，会收到电子邮件通知。",
+                "Included resources alerts": "包含资源提醒",
+                "Spending limit alerts": "支出限额提醒",
+
+            // 账单历史 https://github.com/account/billing/history
+                "/ Payment history": "/ 支付历史",
+                "Amounts shown in USD": "以美元显示的金额",
 
             // Emails 电子邮箱 https://github.com/settings/emails
                 "Email settings": "电子邮箱设置",
@@ -1613,62 +1743,77 @@ I18N.zh = {
                 "Looking for activity notification controls? Check the": "正在寻找活动通知控制？请检查",
                 "Notification center": "通知中心",
 
-            // Notification center 通知 https://github.com/settings/notifications
-                //"How you receive notifications": "通知设置",
-                "Choose how you receive notifications. These notification settings apply to the": "选择接收通知的方式。这些通知设置适用于",
-                "things you’re watching": "您正在关注的内容",
+            // 密码和身份身份验证 - 帐户安全 https://github.com/settings/security
+                "Change password": "更改密码",
+                "Old password": "旧密码",
+                "New password": "新密码",
+                "Confirm new password": "确认新密码",
+                "Make sure it's": "请确保",
+                "at least 15 characters": "至少需要15个字符",
+                "OR": " 或者",
+                "at least 8 characters": "至少需要8个字符",
+                "including a number": "包括数字",
+                "and a lowercase letter": "和小写字母",
+                "Password is too short (minimum is 8 characters)": "密码太短（最少8个字符）",
+                "Password is too short (minimum is 8 characters), needs at least 1 lowercase letter, and is in a list of passwords commonly used on other websites": "密码太短（最少8个字符），至少需要1个小写字母，而且已在其他网站常用密码列表中",
+                "Password is too short (minimum is 8 characters), needs at least 1 lowercase letter, cannot include your login, and is in a list of passwords commonly used on other websites": "密码太短（最少为8个字符），至少需要1个小写字母，而且不能包括您的登录名，以及在其他网站常用的密码列表中。",
+                "Password is too short (minimum is 8 characters), needs at least 1 number, cannot include your login, and is in a list of passwords commonly used on other websites": "密码太短（最少8个字符），需要至少1个数字，不能包含您的登录名，以及在其他网站常用的密码列表中",
+                "Password is too short (minimum is 8 characters) and is in a list of passwords commonly used on other websites": "密码太短（最少为8个字符），而且已在其他网站常用的密码列表中。",
+                "Password needs at least 1 lowercase letter and is in a list of passwords commonly used on other websites": "密码需要至少 1 个小写字母，而且已在其他网站常用的密码列表中",
+                "Password is in a list of passwords commonly used on other websites": "密码在其他网站常用的密码列表中",
+                "Update password": "更新密码",
+                "I forgot my password": "我忘记了我的密码",
 
-                "Automatic watching": "自动关注",
-                    "When you’re given push access to a repository, automatically receive notifications for it.": "当您给一个仓库推送权限时，自动接收相关通知。",
-                "Automatically watch repositories": "自动关注仓库",
-                    "When you’re added to or join a team, automatically receive notifications for that team’s discussions.": "当您被添加或加入团队时，会自动接收该团队讨论的通知。",
-                "Automatically watch teams": "自动关注团队",
+                // 双重身份验证
+                // 顶部提醒
+                "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
 
-                "Participating": "参与话题",
-                "Notifications for the conversations you are participating in, or if someone cites you with an": "通知您正在参与的对话，或者如果有人",
-                //"@mention": "@您",
-                "Email": "电子邮件",
-                "Web and Mobile": "网站 和 移动设备",
+                "Two-factor authentication": "双重身份验证",
+                "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
+                "Enable two-factor authentication": "启用双重身份验证",
 
-                "Watching": "关注仓库",
-                    "Notifications for all repositories, teams, or conversations you’re watching.": "所有您正在关注的仓库、团队或对话的通知。",
+                "Enable": "启用",
+                "Enabled": "启用",
+                "Disable": "停用",
+                "Add": "添加",
+                "Added": "添加",
+                "Two-factor methods": "双重身份验证方式",
+                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
+                "Authenticator app": "“身份验证器” 应用",
+                "Security keys": "安全密钥",
+                "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                "GitHub Mobile": "GitHub 移动应用",
+                "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录账户，可以使用 GitHub 移动应用来进行双重身份验证。",
+                "No devices": "没有设备",
+                // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
+                "SMS number": "手机号码",
+                "Recovery options": "恢复选项",
+                "Recovery codes": "恢复码",
+                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                "Downloaded": "已下载",
+                "Show": "显示",
+                "Fallback SMS number": "备用手机号码",
+                "Providing a fallback SMS number will allow GitHub to send your two-factor authentication codes to an alternate device if you lose your primary device.": "如果您丢失主要设备，提供备用手机号码将允许 GitHub 将您的双重身份验证码发送到备用设备。",
+                "Recovery tokens": "恢复令牌",
+                "Account recovery with Facebook is a simple way to recover your account.": "使用 Facebook 恢复帐户是一种恢复帐户的简单方法。",
+                "Configured": "已配置",
+                "Not configured": "未配置",
+                "No security keys": "未配置安全密钥",
+                "Viewed": "查看于",
+                "No fallback SMS number": "未设置备用手机号码",
+                "No recovery tokens": "未设置恢复令牌",
 
-                "Dependabot alerts": "Dependabot 警报",
-                    "When you’re given access to": "当您获得",
-                    ", automatically receive notifications when a new vulnerability is found in one of your dependencies.": " 访问权限时，当您的某个依赖关系中发现新的漏洞时，就会自动收到通知。",
-                "UI alerts": "用户界面警报",
-                    "UI alerts display warnings in a repository’s file and code views.": "在仓库的文件和代码视图中显示警告。",
-                "Command Line": "命令行",
-                    "Command Line alerts display warnings as a callback when you push to a repository with vulnerabilities.": "当您推送到存在漏洞的仓库时，命令行将发出警告。",
-                "Web": "网站",
-
-                "Receive security alert notifications via email": "通过电子邮件接收安全警报通知",
-                "Email each time a vulnerability is found": "每次发现漏洞时发送电子邮件",
-                "Email a digest summary of vulnerabilities": "发送漏洞摘要电子邮件",
-                    "Daily security email digest": "每日安全邮件摘要",
-                    "Weekly security email digest": "每周安全邮件摘要",
-
-                "Actions": "操作",
-                    "Notifications for workflow runs on repositories set up with": "仓库的工作流程通知，设置在",
-                    "GitHub Actions": "",
-                "Send notifications for failed workflows only": "只为失败的工作流程发送通知",
-
-                "Organization alerts": "组织警告",
-                    "When you are given admin permissions to an organization, automatically receive notifications when a new deploy key is added.": "当您被赋予一个组织的管理权限时，当一个新的部署密钥被添加时，自动收到通知。",
-
-                "Email notification preferences": "邮件通知偏好",
-                "Default notification email": "默认通知电子邮箱",
-                "Save": "保存",
-                "Choose which email updates you receive on conversations you’re participating in or watching": "选择您要收到正在参与或关注的对话中的邮件更新",
-                "Comments on Issues and Pull Requests": "关于议题和拉取请求的评论",
-                "Pull Request reviews": "拉取请求审核",
-                "Pull Request pushes": "拉取请求推送",
-                "Include your own updates": "包括您自己的更新",
-
-                "Custom routing": "自定义",
-                "You can send notifications to different": "您可以发送通知到不同的",
-                "verified": "经验证",
-                "email addresses depending on the organization that owns the repository.": "的电子邮箱，根据拥有仓库的组织。",
+                "Sessions": "会话",
+                "This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.": "这是已登录您帐户的设备列表。 撤销任何您不认识的会话。",
+                "See more": "查看更多",
+                "Your current session": "您当前的会话",
+                "Last accessed on": "最后访问日期：",
+                "Session details": "会话详情",
+                "Revoke session": "撤销会话",
+                "Device:": "设备：",
+                "Last location:": "最后的位置：",
+                "Signed in:": "登录：",
+                "View all sessions": "查看所有会话",
 
             // SSH and GPG keys SSH 与 GPG 公钥 https://github.com/settings/keys
                 "SSH keys": "SSH 密钥",
@@ -1708,6 +1853,72 @@ I18N.zh = {
                 "I understand, delete this GPG key": "我明白了，依然删除该 GPG 密钥",
                 "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
 
+            // Organizations 组织 https://github.com/settings/organizations
+                "You are not a member of any organizations.": "您暂无任何组织。",
+
+                "owner": "所有者",
+                "Leave": "离开",
+
+                "Transform account": "帐户变更",
+                "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
+                "Account transformation warning": "帐户变更警告",
+                "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
+                "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
+                "create a new personal account": "创建一个新的个人帐户",
+                "The total amount of collaborators across private repositories will be the total amount of seats for the organization": "创建一个新的个人帐户",
+
+            // Blocked users 黑名单 https://github.com/settings/blocked_users
+                "Block a user": "拉黑用户",
+                "Blocking a user prevents the following on all your repositories:": "拉黑用户可以防止所有仓库中的以下操作：",
+                "opening or commenting on issues or pull requests": "打开或评论议题或拉取请求",
+                "starring, forking, or watching": "加星标、复刻、关注",
+                "adding or editing wiki pages": "添加或编辑 Wiki 页面",
+                "Additionally, blocked users are not able to:": "此外，被拉黑用户无法：",
+                "invite you as a collaborator to their repositories": "邀请您作为其仓库的协作者",
+                "follow your account’s public activity": "关注您的帐户的公共活动",
+                "send you notifications by @mentioning your username in public repositories": "在公共仓库中通过 @您 向您发送通知",
+                "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
+                    "Learn more about blocking a user": "了解更多关于拉黑用户的信息",
+                "Block user": "拉黑用户",
+                "You have not blocked any users.": "您还没有拉黑任何用户。",
+                "Unblock": "取消拉黑",
+                "Warn me when a blocked user is a prior contributor to a repository": "请警告我，当被拉黑的用户是仓库的先前贡献者时",
+                "On repositories you haven’t contributed to yet, we’ll warn you when a user you’ve blocked has previously made contributions.": "在您还没有贡献的仓库里，当您拉黑的用户之前有贡献时，我们会警告您。",
+
+            // Interaction limits 互动限制 https://github.com/settings/interaction_limits
+                "Temporary interaction limits": "临时互动限制",
+                "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的时间段内，可临时限制哪些外部用户与您的仓库互动（评论、打开议题或创建拉取请求）。",
+                "This may be used to force a \"cool-down\" period during heated discussions or prevent unwanted interactions.": "可用于在激烈讨论期间，强制进入 “冷静” 期或防止不必要的互动。",
+                "Interaction limits may already exist in your account's": "互动限制可能已经存在于您的",
+                "public repositories": "公开仓库",
+                ". Any changes here will override those limits.": " 的设置中。此处的全局设置将覆盖那些仓库的局部设置。",
+                "Limit to existing users": "仅限现有用户",
+                    "Users that have recently created their account will be unable to interact with your repositories.": "最近创建帐户的用户将无法与您的仓库互动。",
+                "Limit to prior contributors": "仅限于先前的贡献者",
+                    "Users that have not previously committed to the default branch of one of your repositories will be unable to interact with that repository.": "以前从未提交到您某个仓库默认分支的用户将无法与该仓库互动。",
+                "Limit to repository collaborators": "仅限仓库协作者",
+                    "Users that are not collaborators of one of your repositories will not be able to interact with that repository.": "不是您某个仓库的协作者将无法与该仓库互动。",
+                "New users": "新用户",
+                "Users": "用户",
+                "Contributors": "贡献者",
+                "Collaborators": "协作者",
+                // 交互限制时间 下拉菜单
+                "Enable interaction limits for:": "启用交互限制：",
+                "24 hours": "24 小时",
+                "3 days": "3 天",
+                "1 week": "1 周",
+                "1 month": "1 个月",
+                "6 months": "6 个月",
+                // 顶部提醒
+                "User interaction limit settings saved.": "用户交互限制设置已保存。",
+
+            // Code review limits 代码审查限制 https://github.com/settings/code_review_limits
+                "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制允许批准或请求更改公共仓库中拉取请求的用户。",
+                "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
+                "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
+                "Limit reviews on all repositories": "限制对所有仓库的审查",
+                "Remove review limits from all repositories": "取消对所有仓库的审查限制",
+
             // Repository 仓库 https://github.com/settings/repositories
                 "Repository default branch": "仓库默认分支",
                 "Choose the default branch for your new personal repositories. You might want to change the default name due to different workflows, or because your integrations still require “master” as the default branch name. You can always change the default branch name on individual repositories.": "为您新的个人仓库选择默认的分支。由于工作流程的不同，或者由于您的集成仍然需要 “master” 作为默认分支名，您可能想改变默认名称。您可以随时改变个人仓库的默认分支名称。",
@@ -1723,30 +1934,28 @@ I18N.zh = {
                 "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
                 "Search deleted packages": "搜索已删除的软件包",
 
+                "Deleted": "删除于",
+                // [/by/, "由"], // 删除的仓库
+                "Restore": "恢复",
+                "Queue…": "排队中…",
+                "Done!": "完成!",
+
+                // 恢复仓库 对话框
+                // [/Are you sure you want to restore ([^ ]+)?/, "您确定要恢复 $1 吗？"],
+                "This repository will be in a private state when it is restored. To change this state, go to settings once the repo is restored.": "此仓库在恢复时将处于私有状态。要更改此状态，请在仓库恢复后转到设置。",
+                "Any team or collaborator permissions that previously existed for this repository will not be restored. If you require specific team or collaborator permissions, you will need to configure them in settings.": "此仓库以前存在的任何团队或协作者的权限将不会被恢复。如果您需要特定的团队或协作者权限，则需要在设置中配置。",
+                "I understand, restore this repository": "我明白了，依然恢复该仓库。",
+
             // GitHub Pages https://github.com/settings/pages
-                "Verified domains": "经过验证的域名",
+                "Verified domains": "经验证的域名",
                 "Add a domain": "添加域名",
-                "There are no verified domains.": "暂无经过验证的域名",
+                "There are no verified domains.": "暂无经验证的域名",
                 "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
 
             // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
-                "Add a verified domain": "添加一个经过验证的域名",
+                "Add a verified domain": "经验证的域名",
                 "What domain would you like to add?": "您想添加什么域名？",
                 "Add domain": "添加域名",
-
-            // Organizations 组织 https://github.com/settings/organizations
-                "You are not a member of any organizations.": "您暂无任何组织。",
-
-                "owner": "所有者",
-                "Leave": "离开",
-
-                "Transform account": "帐户变更",
-                "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
-                "Account transformation warning": "帐户变更警告",
-                "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
-                "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
-                "create a new personal account": "创建一个新的个人帐户",
-                "The total amount of collaborators across private repositories will be the total amount of seats for the organization": "创建一个新的个人帐户",
 
             // Saved replies 快捷回复 https://github.com/settings/replies
                 "Saved replies are re-usable text snippets that you can use throughout GitHub comment fields. Saved replies can save you time if you’re often typing similar responses.": "快捷回复是可重复使用的文本片段，您可以在整个 GitHub 评论区使用。如果您经常输入类似的回复，快捷回复可以节省您的时间。",
@@ -1761,10 +1970,107 @@ I18N.zh = {
                 "Update saved reply": "更新快捷回复",
                 "Your saved reply was updated successfully.": "您的快捷回复已成功更新。",
 
+            // 代码安全性与分析 https://github.com/settings/security_analysis
+                "Configure security and analysis features": "配置安全和分析功能",
+                "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
+
+                "Disable all": "禁用全部",
+                "Enable all": "启用全部",
+
+                "Dependency graph": "依赖关系图",
+                    "Understand your dependencies.": "了解您的依赖项。",
+                    "Automatically enable for new private repositories": "为新私有仓库自动启用",
+
+                    // 对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                    "You're about to disable dependency graph on all your private repositories. This will also disable Dependabot alerts and Dependabot security updates on those repositories.": "您即将禁用您所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。",
+                    "Enable by default for new private repositories": "默认为新私有仓库启用",
+
+                    "Enable dependency graph": "启用依赖关系图",
+                    "You're about to enable dependency graph on all your private repositories.": "您即将启用您所有私有仓库上的依赖关系图。",
+
+                // "Dependabot alerts": "Dependabot 警报",
+                    "Be alerted when a new vulnerability is found in one of your dependencies.": "在您的依赖项中发现新漏洞时收到警报。",
+                    "Automatically enable for new repositories": "为新仓库自动启用",
+
+                    // 对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                        "You're about to disable Dependabot alerts on all your repositories. This will also disable Dependabot security updates on those repositories.": "您即将禁用您所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。",
+                        "Enable by default for new repositories": "默认为新仓库启用",
+
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                        "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
+
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
+
+                    // 对话框
+                    "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
+                    "You're about to disable Dependabot security updates on all your repositories.": "您即将禁用您所有仓库上的 Dependabot 安全更新。",
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                    "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。",
+
             // Applications 应用 https://github.com/settings/installations
                 "Installed GitHub Apps": "安装的 GitHub 应用",
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
                 "Configure": "配置",
+
+            // 定时提醒 https://github.com/settings/reminders
+                "Edit reminder": "编辑提醒者",
+
+            // 新的预定提醒 https://github.com/settings/reminders/<组织名>
+                "New scheduled reminder": "新建预定提醒",
+                "Slack workspace": "Slack 工作区",
+                "Authorize Slack workspace": "授权 Slack 工作区",
+                "Days": "天",
+                    "Weekdays": "工作日",
+                    "Monday"    : "周一",
+                    "Tuesday"   : "周二",
+                    "Wednesday" : "周三",
+                    "Thursday"  : "周四",
+                    "Friday"    : "周五",
+                    "Saturday"  : "周六",
+                    "Sunday"    : "周日",
+                "Times": "时间",
+                    "Filter": "筛选",
+                "Review requests assigned to you": "审查分配给您的请求",
+                    "Receive reminders for reviews waiting on you.": "接收等待您的审查提醒。",
+                "Review requests assigned to your team": "审查分配给您团队的请求",
+                    "Receive reminders for reviews waiting on your team.": "接收等待您的团队的审查提醒。",
+                "Enable real-time alerts": "启用实时警报",
+                    "Receive immediate Slack messages when certain events happen": "当某些事件发生时，会立即收到 Slack 消息",
+
+                "You will only receive notifications from public repositories in this organization because the current plan for": "您将只收到来自该组织中公共仓库的通知，因为目前",
+                "does not support reminders for private repositories.": "的计划不支持私人仓库的提醒。",
+                "Upgrade to Team": "升级为团队",
+                "Create reminder": "创建提醒者",
+
+            // Security log 安全日志 https://github.com/settings/security-log
+                "Loading audit log entries…": "正在加载审核日志条目...",
+                "Filters": "筛选",
+                    "Yesterday’s activity": "昨天的活动",
+                    "Repository management": "仓库管理",
+                    "Billing updates": "账单更新",
+                "Search your security log": "搜索您的安全日志",
+                "Clear current search query": "清除当前的搜索查询",
+                "Export": "导出",
+                "Recent events": "最近的事件",
+                // [/Found (\d+) events?/, "发现 $1 个活动"],
+                "Newer": "新的",
+                "Older": "旧的",
+
+            // Sponsorship log 赞助日志 https://github.com/settings/sponsors-log
+                "Sponsors log": "赞助日志",
+                "New sponsorships, changes, and cancellations": "新的赞助、更改和取消",
+                "Period:": "周期：",
+                "Filter activity": "筛选活动",
+                "All-time": "所有时间",
+                "Past Day": "过去一天",
+                "Past Week": "过去一周",
+                "Past Month": "过去一月",
+                "Past Year": "过去一年",
+                "No sponsorship activity in this time period": "这段时间没有赞助活动",
+                "This is where you can review activity from your sponsorships.": "您可以在此处查看您的赞助活动。",
 
             // https://github.com/settings/apps/authorizations
                 "Authorized GitHub Apps": "授权的 GitHub 应用",
@@ -1819,66 +2125,18 @@ I18N.zh = {
                 "Suspend your installation": "暂停使用",
                 "This will block the app access to your resources.": "这将阻止应用访问您的资源。",
                 "Suspend": "暂停",
+                    // 取消按钮 提醒信息
+                    "Are you sure you want to suspend this GitHub App?": "您确定要暂停此 GitHub 应用程序吗？",
                 "This will remove the app and revoke access to all resources.": "这将删除应用并撤销对所有资源的访问权限。",
                 "Uninstall": "卸载",
+                    // 取消按钮 提醒信息
+                    // [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 1 个仓库中卸载此 GitHub 应用程序吗？"],
 
 
                 "Report abuse": "举报滥用",
                 "Revoke": "撤销",
                 "Read more about connecting with third-party applications at": "了解更多关于与第三方应用程序连接的信息，请访问",
                 "GitHub Help": "GitHub 帮助",
-
-            // Blocked users 黑名单 https://github.com/settings/blocked_users
-                "Block a user": "拉黑用户",
-                "Blocking a user prevents the following on all your repositories:": "拉黑用户可以防止所有仓库中的以下操作：",
-                "opening or commenting on issues or pull requests": "打开或评论议题或拉取请求",
-                "starring, forking, or watching": "加星标、复刻、关注",
-                "adding or editing wiki pages": "添加或编辑 Wiki 页面",
-                "Additionally, blocked users are not able to:": "此外，被拉黑用户无法：",
-                "invite you as a collaborator to their repositories": "邀请您作为其仓库的协作者",
-                "follow your account’s public activity": "关注您的帐户的公共活动",
-                "send you notifications by @mentioning your username in public repositories": "在公共仓库中通过 @您 向您发送通知",
-                "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
-                    "Learn more about blocking a user": "了解更多关于拉黑用户的信息",
-                "Block user": "拉黑用户",
-                "You have not blocked any users.": "您还没有拉黑任何用户。",
-                "Unblock": "取消拉黑",
-                "Warn me when a blocked user is a prior contributor to a repository": "请警告我，当被拉黑的用户是仓库的先前贡献者时",
-                "On repositories you haven’t contributed to yet, we’ll warn you when a user you’ve blocked has previously made contributions.": "在您还没有贡献的仓库里，当您拉黑的用户之前有贡献时，我们会警告您。",
-
-            // Interaction limits 互动限制 https://github.com/settings/interaction_limits
-                "Temporary interaction limits": "临时互动限制",
-                "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的时间段内，可临时限制哪些外部用户与您的仓库互动（评论、打开议题或创建拉取请求）。",
-                "This may be used to force a \"cool-down\" period during heated discussions or prevent unwanted interactions.": "可用于在激烈讨论期间，强制进入 “冷静” 期或防止不必要的互动。",
-                "Interaction limits may already exist in your account's": "互动限制可能已经存在于您的",
-                "public repositories": "公开仓库",
-                ". Any changes here will override those limits.": " 的设置中。此处的全局设置将覆盖那些仓库的局部设置。",
-                "Limit to existing users": "仅限现有用户",
-                    "Users that have recently created their account will be unable to interact with your repositories.": "最近创建帐户的用户将无法与您的仓库互动。",
-                "Limit to prior contributors": "仅限于先前的贡献者",
-                    "Users that have not previously committed to the default branch of one of your repositories will be unable to interact with that repository.": "以前从未提交到您某个仓库默认分支的用户将无法与该仓库互动。",
-                "Limit to repository collaborators": "仅限仓库协作者",
-                    "Users that are not collaborators of one of your repositories will not be able to interact with that repository.": "不是您某个仓库的协作者将无法与该仓库互动。",
-                "New users": "新用户",
-                "Users": "用户",
-                "Contributors": "贡献者",
-                "Collaborators": "协作者",
-                // 交互限制时间 下拉菜单
-                "Enable interaction limits for:": "启用交互限制：",
-                "24 hours": "24 小时",
-                "3 days": "3 天",
-                "1 week": "1 周",
-                "1 month": "1 个月",
-                "6 months": "6 个月",
-                // 顶部提醒
-                "User interaction limit settings saved.": "用户交互限制设置已保存。",
-
-            // Code review limits 代码审查限制 https://github.com/settings/code_review_limits
-                "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制那些有权批准或请求更改公共仓库中拉取请求的用户。",
-                "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
-                "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
-                "Limit reviews on all repositories": "限制对所有仓库的审查",
-                "Remove review limits from all repositories": "取消对所有仓库的审查限制",
 
             // 启用双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
                 // 提示
@@ -1946,6 +2204,17 @@ I18N.zh = {
                 "Please note that SMS deliverability is only available in": "请注意，短信送达仅适用于",
                 "certain countries": "某部分国家/地区",
                 "Set fallback": "设置备用手机号码",
+                "Setting fallback…": "设置备用手机号码中…",
+
+                "\{\"error\"\:\"We tried delivering an SMS to that number, but the number doesn't seem to be valid.\"\}": "\{\"错误\"\: \"我们尝试向该号码发送短信，但该号码似乎无效。\" \}",
+                // 验证备用手机号码对话框
+                "Verify your fallback number": "验证您的备用手机号码",
+                "Verification code": "验证码",
+                "We sent a verification code to your phone.": "我们向您的手机发送了一个验证码。",
+                "Verify": "验证",
+                "Verifying…": "验证中…",
+                "Verification failed. Please re-enter the OTP again.": "验证失败。请重新输入 OTP。",
+                "You have exceeded our SMS rate limit. You will not be able to send another SMS for the next hour.": "您已经超出了我们的短信速率限制。在接下来的一小时内，您将不能再发送短信。",
 
                 // 交付选项
                 "Delivery options": "交付选项",
@@ -1953,7 +2222,7 @@ I18N.zh = {
                 "authenticator application": "“身份验证器” 应用",
                 "Reconfigure two-factor authentication": "重新配置双重身份验证",
                 // 安全密钥
-                "Security keys can be used as your second factor of authentication instead of a verification code.": "安全密钥可用作您的第二个验证步骤，而不是验证码。",
+                "Security keys can be used as your second factor of authentication instead of a verification code.": "安全密钥可用作您的第二个身份验证因素，而不是验证码。",
                 "about configuring a security key.": "关于配置安全密钥。",
                 "Register new security key": "注册新安全密钥",
                 "Enter a nickname for this security key": "输入安全密钥的昵称",
@@ -1961,6 +2230,12 @@ I18N.zh = {
                     "Follow your browser's steps to register your security key with GitHub.": "按照浏览器的步骤，向 Github 注册安全密钥。",
                     "Security key registration failed.": "安全密钥注册失败。",
                     "Try again": "请重试",
+                // GitHub 移动应用
+                "GitHub Mobile can be used as your second factor of authentication instead of a verification code.": "GitHub 移动应用可用作您的第二个身份验证因素，而不是验证码。",
+                "about two-factor authentication with GitHub Mobile.": "关于 GitHub 移动应用的双重身份验证。",
+                "To configure your device, install GitHub Mobile for": "要配置您的设备，请安装 GitHub 移动应用适用于",
+                "and sign in to your account.": "，并登录您的帐户。",
+                // [/registered on/, "注册于"], // 已注册
 
                 "Back to settings": "返回设置",
 
@@ -1979,7 +2254,7 @@ I18N.zh = {
             // 帐户 /settings/admin
             [/is available\./, "可用。"],
             [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
-            [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我承认我是 $1 帐户的所有者，并授权 GitHub 将该帐户内的内容转移给我的 GitHub 继任者。"],
+            [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我承认我是 $1 帐户的所有者，并授权 GitHub 将该帐户内的内容转让给我的 GitHub 继任者。"],
             [/immediately delete all of your repositories \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
             // Emails 页面
             [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
@@ -2011,14 +2286,25 @@ I18N.zh = {
             // /settings/billing
             [/You've cancelled your subscription to ([^ ]+)\. This plan change will take effect on (\d{4}-\d{2}-\d{2})./, "您已取消订阅 $1 。此计划更改将于 $2 生效。"],
             [/Found (\d+) events?/, "发现 $1 个活动"], // 安全日志
+            [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"], // 支付限额
+            [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人账户外，您还有 $1 个组织账户"],
+            [/Okay, ([^ ]+) was updated for the ([^ ]+) account./, "好的，$1 已针对 $2 帐户进行了更新。"],
+            [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用程序吗？"],
+            [/by/, "由"], // 删除的仓库
+            [/Are you sure you want to restore ([^ ]+)?/, "您确定要恢复 $1 吗？"], // 删除的仓库
+            [/outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
+            [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您确定要离开 $1 吗？您将失去对所有仓库和团队的访问权。"], // 设置 - 组织 离开按钮 提醒
+            [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您确定要离开 $1 吗？您将失去对所有仓库的访问权。"], // 设置 - 组织 离开按钮 提醒
+            [/(\d+) devices?/, "$1 个设备"], // 设置--> 密码和身份验证页
+            [/registered on/, "注册于"], // 双重身份验证设置页
         ],
     },
 
     "settings/apps": {
         "static": { // 静态翻译
             // GitHub 应用程序 https://github.com/settings/apps
-                "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
                 "Register a new GitHub App": "注册新的 GitHub 应用程序",
+                "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
                 "New GitHub App": "新 GitHub 应用程序",
                 "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用程序的更多信息",
                 "developer documentation": "开发者文档",
@@ -2066,102 +2352,117 @@ I18N.zh = {
                 "No access": "禁止访问",
                 "Read-only": "只读",
                 "Read & write": "读写",
+
                 "Repository permissions": "仓库权限",
                 "Actions": "操作",
-                "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
+                    "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
                 "Administration": "管理",
-                "Repository creation, deletion, settings, teams, and collaborators.": "仓库创建、删除、设置、团队和协作者。",
+                    "Repository creation, deletion, settings, teams, and collaborators.": "仓库创建、删除、设置、团队和协作者。",
                 "Checks": "检查",
-                "Checks on code.": "检查代码。",
-                "Content references": "内容引用",
-                "Get notified of content references, and create content attachments.": "获取有关内容引用的通知，并创建内容附件。",
+                    "Checks on code.": "检查代码。",
+                // "Content references": "内容引用",
+                    // "Get notified of content references, and create content attachments.": "获取有关内容引用的通知，并创建内容附件。",
                 "Contents": "内容",
-                "Repository contents, commits, branches, downloads, releases, and merges.": "仓库内容、提交、分支、下载、发布和合并。",
+                    "Repository contents, commits, branches, downloads, releases, and merges.": "仓库内容、提交、分支、下载、发布和合并。",
+                "Dependabot secrets": "Dependabot 机密",
+                    "Manage Dependabot repository secrets.": "管理 Dependabot 仓库的机密。",
                 "Deployments": "部署",
-                "Deployments and deployment statuses.": "部署和部署状态。",
+                    "Deployments and deployment statuses.": "部署和部署状态。",
                 "Discussions": "讨论",
-                "Discussions and related comments and labels.": "讨论及相关评论和标签。",
+                    "Discussions and related comments and labels.": "讨论及相关评论和标签。",
                 "Environments": "环境",
-                "Manage repository environments.": "管理仓库环境。",
+                    "Manage repository environments.": "管理仓库环境。",
                 "Issues": "议题",
-                "Issues and related comments, assignees, labels, and milestones.": "议题及相关评论、受理人、标签和里程碑。",
+                    "Issues and related comments, assignees, labels, and milestones.": "议题及相关评论、受理人、标签和里程碑。",
                 "Metadata": "元数据",
-                "Search repositories, list collaborators, and access repository metadata.": "搜索仓库、列出协作者，访问仓库元数据。",
-                "Organization packages": "组织软件包",
+                    "Search repositories, list collaborators, and access repository metadata.": "搜索仓库、列出协作者，访问仓库元数据。",
+                // "Organization packages": "组织软件包",
                 "Packages": "软件包",
-                "Packages published to the GitHub Package Platform.": "发布软件包到 GitHub Package 平台。",
+                    "Packages published to the GitHub Package Platform.": "发布软件包到 GitHub Package 平台。",
                 "Pages": "",
-                "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
+                    "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
                 "Pull requests": "拉取请求",
-                "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
+                    "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
                 "Webhooks": "Web 钩子",
-                "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
+                    "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
                 "Projects": "项目",
-                "Manage repository projects, columns, and cards.": "管理仓库项目、栏目和卡片。",
+                    "Manage repository projects, columns, and cards.": "管理仓库项目、栏目和卡片。",
                 "Secret scanning alerts": "隐私扫描警报",
-                "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
+                    "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
                 "Secrets": "隐私",
-                "Manage repository secrets.": "管理仓库隐私。",
+                    "Manage Actions repository secrets.": "管理操作仓库隐私。",
                 "Security events": "安全事件",
-                "View and manage security events like code scanning alerts.": "查看和管理安全事件，如代码扫描警报。",
+                    "View and manage security events like code scanning alerts.": "查看和管理安全事件，如代码扫描警报。",
                 "Single file": "单个文件",
-                "Manage just a single file.": "只管理单个文件。",
+                    "Manage just a single file.": "只管理单个文件。",
                 "Commit statuses": "提交状态",
-                "Commit statuses.": "提交状态。",
+                    "Commit statuses.": "提交状态。",
                 "Dependabot alerts": "Dependabot 警报",
-                "Retrieve Dependabot alerts.": "检索 Dependabot 警报。",
+                    "Retrieve Dependabot alerts.": "检索 Dependabot 警报。",
                 "Workflows": "工作流程",
-                "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
+                    "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
+
                 "Organization permissions": "组织权限",
                 "Members": "成员",
-                "Organization members and teams.": "组织成员和团队。",
+                    "Organization members and teams.": "组织成员和团队。",
                 "Manage access to an organization.": "管理对组织的访问。",
+                    "Organization dependabot secrets": "组织 Dependabot 机密",
+                    "Manage Dependabot organization secrets.": "管理 Dependabot 组织的机密。",
                 "Events": "活动",
-                "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
-                "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
+                    "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
+                // Web 钩子
+                    "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
                 "Plan": "计划",
-                "View an organization's plan.": "查看组织的计划。",
-                "Manage organization projects and projects beta (where available).": "管理组织项目和项目测试版（如果可用）。",
-                "Manage organization secrets.": "管理组织隐私",
+                    "View an organization's plan.": "查看组织的计划。",
+                // 项目
+                    "Manage organization projects and projects beta (where available).": "管理组织项目和项目测试版（如果可用）。",
+                // 隐私
+                    "Manage Actions organization secrets.": "管理操作组织隐私",
                 "Self-hosted runners": "自托管运行器",
-                "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
+                    "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
                 "Blocking users": "拉黑用户",
-                "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
                 "Team discussions": "团队讨论",
-                "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
+                    "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
+
                 "User permissions": "用户权限",
                 "These permissions are granted on an individual user basis as part of the": "这些权限是在个人用户的基础上授予的，作为",
                 "User authorization flow": "用户授权流程",
                 ". They will be also be displayed during account installation for transparency.": "。它们也将在帐户安装期间显示以确保透明度。",
                 "Block another user": "拉黑其他用户",
-                "View and manage users blocked by the user.": "查看和管理被用户拉黑的用户。",
+                    "View and manage users blocked by the user.": "查看和管理被用户拉黑的用户。",
                 "Email addresses": "电子邮箱地址",
-                "Manage a user's email addresses.": "管理用户的电子邮箱地址。",
-                "A user's followers": "用户的关注者",
-                "Create and modify a user's gists and comments.": "创建和修改用户的代码片段和评论。",
+                    "Manage a user's email addresses.": "管理用户的电子邮箱地址。",
+                // 关注者
+                    "A user's followers": "用户的关注者",
+                // Gist
+                    "Create and modify a user's gists and comments.": "创建和修改用户的代码片段和评论。",
                 "GPG keys": "GPG 密钥",
-                "View and manage a user's GPG keys.": "查看和管理用户的 GPG 密钥。",
+                    "View and manage a user's GPG keys.": "查看和管理用户的 GPG 密钥。",
                 "Interaction limits": "交互限制",
-                "Interaction limits on repositories": "仓库的交互限制",
+                    "Interaction limits on repositories": "仓库的交互限制",
                 "Git SSH keys": "Git SSH 密钥",
-                "View a user's plan.": "查看用户的计划。",
+                // 计划
+                    "View a user's plan.": "查看用户的计划。",
                 "Profile": "个人信息",
-                "Manage a user's profile settings.": "管理用户的个人信息设置。",
+                    "Manage a user's profile settings.": "管理用户的个人信息设置。",
                 "Starring": "星标",
-                "List and manage repositories a user is starring.": "列出和管理用户已加星标的仓库。",
+                    "List and manage repositories a user is starring.": "列出和管理用户已加星标的仓库。",
                 "Watching": "关注",
-                "List and change repositories a user is subscribed to.": "列出和更改用户订阅的仓库。",
+                    "List and change repositories a user is subscribed to.": "列出和更改用户订阅的仓库。",
+
                 "Subscribe to events": "订阅事件",
                 "Based on the permissions you’ve selected, what events would you like to subscribe to?": "根据您选择的权限，您想订阅哪些事件？",
                 "Meta": "元",
-                "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的钩子被删除时。",
+                    "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的钩子被删除时。",
                 "Security advisory": "安全提示",
-                "Security advisory published, updated, or withdrawn.": "发布、更新或撤销的安全提示",
+                    "Security advisory published, updated, or withdrawn.": "发布、更新或撤销的安全提示",
+
                 "Where can this GitHub App be installed?": "这款 GitHub 应用可以安装在哪里？",
                 "Only on this account": "仅在当前帐户",
-                "Only allow this GitHub App to be installed on the": "只允许该 GitHub 应用被安装在",
+                    "Only allow this GitHub App to be installed on the": "只允许该 GitHub 应用被安装在",
                 "account.": "帐户。",
-                "Any account": "任何帐户",
+                    "Any account": "任何帐户",
                 "Allow this GitHub App to be installed by any user or organization.": "允许任何用户或组织安装此 GitHub 应用。",
                 "Create GitHub App": "创建 GitHub 应用",
 
@@ -2190,7 +2491,7 @@ I18N.zh = {
             // 开发者设置/个人访问令牌 https://github.com/settings/tokens
                 "Developer settings": "开发者设置",
                 "GitHub Apps": "GitHub 应用程序",
-                "OAuth Apps": "OAuth 应用程序",
+                "Oauth Apps": "OAuth 应用程序",
                 "Personal access tokens": "个人访问令牌",
                 "Generate new token": "生成新令牌",
                 "Revoke all": "全部撤销",
@@ -2234,7 +2535,6 @@ I18N.zh = {
                 "Custom...": "自定义...",
                 "No expiration": "无有效期",
                 "The token will never expire!": "此令牌永不过期！",
-                // "Beep bop! Tokens that live forever are scary. Expiration dates are highly recommended!": "哔哔！永不过期的令牌是可怕的。强烈建议设置有效期！",
                 "GitHub strongly recommends that you set an expiration date for your token to help keep your information secure.": "GitHub 强烈建议您为令牌设置有效期，以帮助确保您的信息安全。",
 
                 "Select scopes": "选择作用域",
@@ -2326,12 +2626,17 @@ I18N.zh = {
                     "already exists on this account.": "已经存在于此帐户。",
                     "Your new repository will be created as": "您的新仓库将被创建为",
 
+                    // 用户名同名仓库
                     "You found a secret!": "您发现了一个秘密！",
                     "is a ✨": "是一个",
                     "special": "特别的",
                     "✨ repository that you can use to add a": "仓库，您可以用它来添加一个",
                     "to your GitHub profile. Make sure it’s public and initialize it with a": "到您的 GitHub 个人资料。确保它是公开的，并在初始化时加入一个",
                     "to get started.": "以便开始工作。",
+                     // 组织 .github 仓库
+                    "to your organization's GitHub profile. Make sure it’s public and initialize it with a": "到您组织的 GitHub 个人资料。确保它是公开的，并在初始化时加入一个",
+                    "in the": "在",
+                    "directory to get started.": "目录下以便开始工作。",
 
                 "Description": "描述",
                 "(optional)": "(可选)",
@@ -2347,13 +2652,13 @@ I18N.zh = {
                 "Choose which files not to track from a list of templates.": "从模板列表中选择哪些文件不需要跟踪。",
                 ".gitignore template:": ".gitignore 模板：",
                     ".gitignore template": ".gitignore 模板",
-                    "Filter ignores…": "过滤忽略…",
+                    "Filter ignores…": "筛选忽略…",
                     "None": "无",
                 "Choose a license": "选择许可证",
                 "A license tells others what they can and can't do with your code.": "许可证告诉其他人，他们可以使用您的代码做什么和不能做什么。",
                 "License:": "许可证：",
                     "License": "许可证",
-                    "Filter licenses...": "过滤许可证…",
+                    "Filter licenses...": "筛选许可证…",
                 "This will set": "这将设置",
                 "as the default branch.": "为默认分支。",
                 "Change the default name in": "改变默认名称在",
@@ -2389,7 +2694,7 @@ I18N.zh = {
         ],
     },
 
-    "repository": { // 仓库页面
+    "repository": { // 仓库页面(含组织仓库)
         "static": { // 静态翻译
             // 导入仓库 第二页 /<user-name>/<repo-name>/import
                 "Preparing your new repository": "准备您的新仓库",
@@ -2400,6 +2705,11 @@ I18N.zh = {
                 "is ready.": "已经就绪。",
 
             // 初始化空仓库 /<user-name>/<repo-name>/
+                // 组织仓库
+                "Give access to the people you work with": "授予与您一起工作的同伴的访问权限",
+                "You should give access to the collaborators and teams you need to work with.": "您应该给您需要合作的协作者和团队提供访问权限。",
+                "Add teams and collaborators": "添加团队和协作者",
+
                 "Quick setup": "快速安装",
                 "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
                 "Set up in Desktop": "安装到 GitHub Desktop",
@@ -2439,6 +2749,7 @@ I18N.zh = {
 
                 "forked from": "复刻自",
 
+                "Pin": "置顶", // 组织仓库
                 "Unpin": "取消置顶",
 
                 "Ignoring": "忽略",
@@ -2487,13 +2798,18 @@ I18N.zh = {
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
 
-                // 用户 浮动信息卡
+                 // 用户 浮动信息卡
+                    "Owns this repository": "拥有这个仓库",
+                    "Left a review": "留下了一个评论",
                     "Committed to this repository": "已提交过这个仓库",
                     "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
                     "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
                     "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
-                    // [/Member of Homebrew/, ""],
-                    // [/Member of Homebrew, and (\d+) more/, ""],
+                    "Member of": "隶属组织",
+                    // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+                    "Opened this issue": "打开了该议题",
+                    "Opened this pull request": "打开了该拉取请求",
+                    "Opened this pull request (their first ever)": "打开了该拉取请求（他们有史以来的第一个请求）",
 
                 // 组织  浮动信息卡
                     // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
@@ -2558,6 +2874,7 @@ I18N.zh = {
 
                 // 键盘快捷键
                     "Open in github.dev editor"  : "在 github.dev 编辑器中打开",
+                    "Open github.dev editor in a new tab"  : "在新标签页中打开 github.dev 编辑器",
                     "Focus secondary search bar" : "聚焦二级搜索栏",
                     "Go to Code"                 : "跳转到代码",
                     "Go to Issues"               : "跳转到议题",
@@ -2709,16 +3026,23 @@ I18N.zh = {
                 // 右侧栏
 
                 // 与用户名同名仓库 编辑 README
-                "is a special repository. Its": "是一个特殊的仓库。",
-                "Its": "它的",
+                "is a special repository. Its": "是一个特殊的仓库。它的",
                 "will appear on your public profile!": "将出现在您的公开个人资料中！",
                 "Edit README": "编辑 README",
-                "Visit profile": "查看个人资料",
+                "Visit profile": "查看资料",
 
                 "is special. If you": "是特殊的。如果您",
                 "make this a public repository": "将仓库设置为公开",
                 ", its": "，它的",
                 "Go to Settings": "前往设置",
+
+                // 组织下.github 仓库 README
+                    "is a special repository. Create a": "是一个特殊的仓库。创建",
+                    "and it will appear on the organization's profile!": "并将出现在该组织资料中!",
+                    "Add profile README": "添加 profile/README",
+
+                    "is a special repository. The": "是一个特殊的仓库。",
+                    "will appear on the organization's profile!": "将出现在该组织资料中!",
 
                 // "About": "关于"，
                 "No description, website, or topics provided.": "未提供描述、网站或主题。",
@@ -2781,7 +3105,7 @@ I18N.zh = {
             // 议题标签卡 issues 页面 /<user-name>/<repo-name>/issues
                 // 欢迎信息
                 "Welcome to issues!": "欢迎关注议题！",
-                "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可过滤的列表中。要开始，您应该",
+                "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
                 "create an issue": "创建议题",
 
                 "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
@@ -2826,7 +3150,7 @@ I18N.zh = {
                     "Everything mentioning you": "任何提及您的",
                     "View advanced search syntax": "查看高级搜索语法",
 
-                "Clear current search query, filters, and sorts": "清除当前的搜索查询、过滤器和排序方式",
+                "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
                 "Labels": "标签",
                 "Milestones": "里程碑",
@@ -2834,28 +3158,28 @@ I18N.zh = {
 
                 // 筛选工作条
                 // "Author": "作者",
-                    "Filter by author": "筛选用户",
+                    "Filter by author": "按用户筛选",
                     "Filter users": "筛选用户名",
 
                 "Label": "标签",
-                    "Filter by label": "筛选标签",
+                    "Filter by label": "按标签筛选",
                     "Filter labels": "筛选标签",
                     "Unlabeled": "无标签",
 
                 // "Projects": "项目",
-                    "Filter by project": "筛选项目",
+                    "Filter by project": "按项目筛选",
                     "Filter projects": "筛选项目",
                     "Repository": "仓库",
                     "Organization": "组织",
                     "No projects found. Sorry about that.": "很抱歉，未找到任何项目。",
 
                 // "Milestones": "里程碑",
-                    "Filter by milestone": "筛选里程碑",
+                    "Filter by milestone": "按里程碑筛选",
                     "Filter milestones": "筛选里程碑",
                     "Issues with no milestone": "无里程碑",
 
                 "Assignee": "受理人",
-                    "Filter by who’s assigned": "筛选受理人",
+                    "Filter by who’s assigned": "按受理人筛选",
                     "Assigned to nobody": "无受理人",
                     // [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
                     "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
@@ -3053,7 +3377,7 @@ I18N.zh = {
             // 拉取请求 标签卡 /<user-name>/<repo-name>/pulls >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 // 欢迎信息
                 "Welcome to pull requests!": "欢迎使用拉取请求！",
-                "Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should": "拉取请求可帮助您与其他人协作处理代码。创建拉取请求后，它们将出现在可搜索和可过滤的列表中。要开始，您应该",
+                "Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should": "拉取请求可帮助您与其他人协作处理代码。创建拉取请求后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
                 "create a pull request": "创建拉取请求",
 
                 // [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"], // /pulls
@@ -3067,7 +3391,7 @@ I18N.zh = {
 
                 "Reviews": "审查",
                     // 筛选工作条
-                    "Filter by reviews": "筛选审查",
+                    "Filter by reviews": "按审查筛选",
                     "No reviews": "未经审查",
                     // "Review required": "需要审查",
                     "Approved review": "已批准的审查",
@@ -3128,7 +3452,7 @@ I18N.zh = {
                     // 下拉框
                     "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
                     "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
-                    "Clear assignees": "清楚受理人",
+                    "Clear assignees": "清除受理人",
                     "Type or choose a user": "输入或选择用户",
                     "Suggestions": "建议",
 
@@ -3351,12 +3675,17 @@ I18N.zh = {
                 // 状态词
                 "reviewed": "审查",
                 "requested a review from": "请求审查",
-                "reply…": "回复…",
+                "Reply...": "回复...",
 
                 // 底部捐助
                 "Show your support for": "通过赞助来表达您对",
                 "by sponsoring them.": "的支持。",
                 "Sponsor": "赞助",
+
+                // 代码审查回复
+                "Suggestions cannot be applied on outdated comments.": "建议不要应用于过时的评论。",
+                "Suggested change": "更改建议",
+                "This code change can be committed by users with write permissions.": "具有写入权限的用户可以提交此代码更改。",
 
             // 提交 标签卡 /<user-name>/<repo-name>/pull/<id>/commits
                 "Copy the full SHA": "复制完整的 SHA",
@@ -3375,17 +3704,17 @@ I18N.zh = {
                     "Select commit": "选择提交",
                     "Hold shift + click to select a range": "按住 shift + 单击以选择一个范围",
                 "File filter": "文件筛选",
-                    "Filter by extension": "筛选文件后缀名",
+                    "Filter by extension": "按文件后缀名筛选",
                         "No extension": "无后缀名",
                         // [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"],
                         // [/Select all 1 file types?/, "选择所有 $1 种文件类型"],
                         "Only manifest files": "仅清单文件",
                     "There are no files selected for viewing": "没有选择要查看的文件",
                     "Viewed files": "查看过的文件",
-                    // "filter file types": "过滤文件类型",
-                    // "filter viewed files": "过滤已查看文件",
+                    // "filter file types": "筛选文件类型",
+                    // "filter viewed files": "筛选已查看文件",
                     // "hide viewed files": "隐藏已查看文件",
-                    // "filter by context": "过滤内容",
+                    // "filter by context": "按内容筛选",
                 "Clear filters": "清除筛选",
                 "Conversations": "讨论",
                     "Jump to conversation": "跳转到讨论",
@@ -3413,8 +3742,7 @@ I18N.zh = {
 
                 "files viewed": "查看过的文件",
                     "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
-                "Review": "审查",
-                "changes": "更改",
+                // "Review changes": "审查更改", // 使用 Selector 规则翻译
                     // 下拉
                     "Finish your review": "完成审查",
                         "Submit general feedback without explicit approval.": "未批准，并提出一般性反馈意见。",
@@ -3503,13 +3831,18 @@ I18N.zh = {
                 // 与用户名同名仓库 编辑 README.md 文件
                     "is a special repository: its": "是一个特殊的仓库：它的",
                     "will appear on your profile!": "将出现在您的个人资料中！",
+
                     // "New": "新",
                     "is now a special repository: its": "现在是一个特殊的仓库：它的",
+
+                // 组织下.github 仓库 编辑 /profile/README.md 文件
+                    "is a special repository: this": "是一个特殊的仓库：这个",
+                    "will appear on your organization's profile!": "将出现在您的组织资料中!",
 
                 // 编辑 .gitignore 文件
                     "Want to use a": "想使用",
                     "template?": "模板吗？",
-                    "Filter ignores…": "过滤忽略…",
+                    "Filter ignores…": "筛选忽略…",
                     "Choose .gitignore:": "选择 .gitignore：",
                     "none": "无",
 
@@ -3669,13 +4002,13 @@ I18N.zh = {
             // 分支选择栏
             "base repository:": "基础仓库：",
                 "Choose a Base Repository": "选择基础仓库",
-                "Filter repos": "过滤仓库",
+                "Filter repos": "筛选仓库",
             "head repository:": "头部仓库：",
                 "Choose a Head Repository": "选择头部仓库",
             "base:": "基础库：",
                 "Choose a base ref": "选择基础引用",
-                "Find a branch": "筛选分支",
-                "Find a tag": "筛选标签",
+                "Find a branch": "搜索分支",
+                "Find a tag": "搜索标签",
             "compare:": "比较库：",
                 "Choose a head ref": "选择头部引用",
 
@@ -3721,6 +4054,8 @@ I18N.zh = {
             "This commit was signed with the committer’s": "此提交已签署使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
+            "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
+
             "Learn about vigilant mode": "了解警戒模式",
 
             // "Copy the full SHA": "复制完整的 SHA",
@@ -4006,6 +4341,7 @@ I18N.zh = {
                 "Pulse": "统计",
                 "Contributors": "贡献者",
                 "Community": "社区",
+                "Community Standards": "社区准则",
                 "Traffic": "流量",
                 "Commits": "提交",
                 "Code frequency": "代码频率",
@@ -4015,8 +4351,12 @@ I18N.zh = {
                 // "Members": "成员",
                 "Forks": "复刻",
 
+                "People": "成员", //组织仓库
+
                 // 私有库禁用部分功能的提醒
                 "Upgrade to GitHub Pro or make this repository public to enable this feature.": "升级到 GitHub Pro 或将此仓库设为公开以启用此功能。",
+                // 他人私有库
+                "Contact an administrator to upgrade to GitHub Team or make this repository public to enable this feature.": "请联系管理员升级到 GitHub 团队或将此设为仓库公开以启用此功能。",
 
             // 统计 /<user-name>/<repo-name>/pulse
                 "Period:": "周期：",
@@ -4082,18 +4422,43 @@ I18N.zh = {
                     // [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1分支，不包括合并提交和机器人帐户"],
                 "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
 
-            // 社区 /<user-name>/<repo-name>/community
-                "Community profile": "社区简介",
+            // 社区 /<user-name>/<repo-name>/graphs/community
+                "Community insights": "社区见解",
+                "Last 30 days": "最近 30 天",
+                "Last 3 months": "最近 3 个月",
+                "Last year": "最近 1 年",
+
+                "Contribution activity": "贡献活动",
+                    "Count of total contribution activity to Discussions, Issues, and PRs": "对讨论、议题和拉取请求的总贡献活动计数",
+                    "discussions": "讨论",
+                    "Quantity": "数量",
+                    "Timeline": "时间轴",
+                    // [/(\d+) pull requests created/, "$1 个拉取请求创建"],
+                "We tried our best, but the graph wouldn’t load. Try reloading the page.": "我们尽了最大努力，但图表无法加载。尝试重新加载页面。",
+                "Discussions page views": "讨论页面浏览量",
+                    "Total page views to Discussions segmented by logged in vs anonymous users.": "按登录用户与匿名用户划分的讨论的总页面浏览量。",
+                "Discussions daily contributors": "每日讨论的贡献者",
+                    "Count of unique users who have reacted, upvoted, marked an answer, commented, or posted in the selected period.": "在所选时间段内，作出反应、投票、标记答案、评论或发帖的唯一用户的数量。",
+                "Discussions new contributors": "讨论的新贡献者",
+                    "Count of unique new users to Discussions who have reacted, upvoted, marked an answer, commented, or posted in the selected period.": "在所选时间段内，对讨论作出反应、投票、标记答案、评论或发帖的唯一新用户的数量。",
+
+            // 社区准则 /<user-name>/<repo-name>/community
                 "Here’s how this project compares to": "以下是该项目内容，不同于",
                 "recommended community standards": "推荐的社区标准",
                 "Checklist": "检查清单",
                 "Add": "添加",
-                // "": "描述",
+                "Propose": "提议",
+
+                // "Description": "描述",
                     "Add a description to your repository so people understand the goals of your project.": "向您的仓库添加描述，以便人们了解您项目的目标。",
-                "Propose": "倡议",
-                "Writing contributing guidelines": "编写贡献指南",
+                "README": "自述文件（README）",
+                    "Writing a README": "编写自述文件（README）",
+                // "Code of conduct": "行为准则",
+                    "What is a code of conduct?": "什么是行为准则？",
+                "Contributing": "贡献",
+                    "Writing contributing guidelines": "编写贡献指南",
                 "License": "许可证",
-                "Choosing a license": "选择许可证",
+                    "Choosing a license": "选择许可证",
                 "Issue templates": "议题模板",
                 "Pull request template": "拉取请求模板",
                 "Repository admins accept content reports": "仓库管理员接受内容报告", // 组织仓库?
@@ -4124,7 +4489,6 @@ I18N.zh = {
                 "We don’t have enough data to show anything useful.": "我们没有足够的数据来显示任何有用的东西。",
                 "It usually takes about a week to populate this graph.": "通常需要一周左右的时间来填充此图表。",
                 "It looks like traffic to your repository is a little light. Go spread the word and check back later!": "看起来您的仓库的流量有点少呀。去宣传一下吧，稍后再回来查看！",
-
 
             // 提交 /<user-name>/<repo-name>/graphs/commit-activity
                 "Sunday"    : "周日",
@@ -4209,10 +4573,17 @@ I18N.zh = {
                 "No one has forked this repository yet.": "目前，暂无人复刻该仓库。",
                 "Forks are a great way to contribute to a repository. After": "复刻是给该仓库做贡献的好方法。首先",
                 "forking a repository": "复刻仓库",
-                ", you can send the original author a": "，然后您可向原作者发送一个",
+                ", you can send the original author a": "，然后您可向原作者发送",
                 "pull request": "拉取请求",
 
                 "Woah, this network is huge! We’re showing only some of this network’s repositories.": "哇，这个网络太庞大了! 我们只展示了这个网络中的一部分仓库。",
+
+            // 成员 /<组织名>/<repo-name>/people
+                "Outside collaborators": "外部协作者",
+
+                // [/(\d+) person has access to this repository/, "$1 人有权访问此仓库"],
+
+            // 成员权限详情 /orgs/<组织名>/people/<用户名>/repositories/<组织名>/<repo-name>
 
             // 安全标签卡 & 安全概述 /<user-name>/<repo-name>/security
                 "Security overview": "安全概述",
@@ -4242,6 +4613,8 @@ I18N.zh = {
                     // 私有库
                     "Advanced Security is only available for Organizations": "高级安全只适用于组织",
                     "Find out more": "了解更多",
+                    "Code scanning for private repositories is part of GitHub Advanced Security": "私有仓库的代码扫描是 GitHub 高级安全的一部分", //组织仓库
+                    "Contact sales": "联系销售", //组织仓库
 
                 // "Vulnerability details": "漏洞详情",
                 "High severity": "高风险",
@@ -4269,26 +4642,35 @@ I18N.zh = {
                 "There aren’t any published security advisories": "没有任何已发布的安全公告",
 
             // Dependabot 警报 /<user-name>/<repo-name>/security/dependabot
-                "Welcome to Dependabot alerts!": "欢迎使用 Dependabot 警报！",
-                "Dependabot alerts track security vulnerabilities that apply to your repository’s dependencies. As alerts are created, they’ll appear here.": "Dependabot 警报跟踪适用于仓库依赖项的安全漏洞。创建警报后，它们将显示在此处。",
-
                 "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
                 "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
                 "this repository’s settings": "在仓库的设置中",
-                "Dismiss all": "忽略全部",
-                // 下拉菜单
-                "A fix has already been started": "修复已经开始",
-                "No bandwidth to fix this": "没有带宽来修复",
-                "Risk is tolerable to this project": "风险可承受",
-                "Vulnerable code is not actually used": "漏洞代码实际未使用",
-                "Manage repository vulnerability settings": "管理仓库漏洞设置",
-                "Manage account notification settings": "管理帐户通知设置",
 
+                "Tell us how to make Dependabot alerts work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 Dependabot 警报更好地为您服务。",
+
+                "Welcome to Dependabot alerts!": "欢迎使用 Dependabot 警报！",
+                "Dependabot alerts track security vulnerabilities that apply to your repository’s dependencies. As alerts are created, they’ll appear here.": "Dependabot 警报跟踪适用于仓库依赖项的安全漏洞。创建警报后，它们将显示在此处。",
+
+                "Dismiss all": "忽略全部",
+                    // 下拉菜单
+                    "A fix has already been started": "修复已经开始",
+                    "No bandwidth to fix this": "没有带宽来修复",
+                    "Risk is tolerable to this project": "风险可承受",
+                    "Vulnerable code is not actually used": "漏洞代码实际未使用",
+                    "Manage repository vulnerability settings": "管理仓库漏洞设置",
+                    "Manage account notification settings": "管理帐户通知设置",
+
+                "Package": "软件包",
+                    "Filter by package": "按软件包筛选",
+                    "Filter package": "筛选软件包",
+                "Ecosystem": "生态系统",
+                    "Filter by ecosystem": "按生态系统筛选",
+                    "Filter ecosystem": "筛选生态系统",
                 "Manifest": "清单",
-                // 清单下拉
-                "Filter by manifest": "筛选清单",
-                "Filter manifest": "筛选清单",
-                "All": "所有",
+                    // 清单下拉
+                    "Filter by manifest": "按清单筛选",
+                    "Filter manifest": "筛选清单",
+                    "All": "所有",
 
                 // 排序下拉 补充词条
                 "Severity": "严重等级",
@@ -4302,38 +4684,66 @@ I18N.zh = {
                 "Dependabot version updates": "Dependabot 版本更新",
                 "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
 
-            // 具体某条Dependabot 警报 /security/dependabot/XXXX/XXXX/open
-                "Create Dependabot security update": "创建 Dependabot 警报更新",
-                    // 顶部提醒
-                    // [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"],
+             // 具体某条Dependabot 警报 /security/dependabot/<id>
                 "Dismiss": "忽略",
-                // 下拉菜单 补充
-                "This alert is inaccurate or incorrect": "此警报不准确或不正确",
+                    // 下拉菜单 补充
+                    "Reason": "原因",
+                        "This alert is inaccurate or incorrect": "此警报不准确或不正确",
 
-                // 状态词
-                "opened this alert": "打开此警报",
-
+                "Opened": "打开",
                 // [/Dependabot cannot update ([^ ]+) to a non-vulnerable version/, "Dependabot 无法将 $1 更新为无漏洞的版本"],
                 "The latest possible version that can be installed is": "最新可以安装版本是",
                 "because of the following conflicting dependency:": "，但是存在以下冲突的依赖关系：",
-                "View logs": "查看日志",
-                "learn more about troubleshooting Dependabot errors": "了解更多关于排除 Dependabot 错误的信息",
-
+                "because of the following conflicting dependencies:": "，但是存在以下冲突的依赖关系：",
                 "The earliest fixed version is": "最早修复版本为",
+                "View logs": "查看日志",
+                "Learn more about troubleshooting Dependabot errors": "了解更多关于排除 Dependabot 错误的信息",
 
-                "vulnerability found in": "漏洞发现于",
-                "vulnerabilities found in": "漏洞发现于",
-                "Remediation":"补救措施",
-                "to version": "到版本",
-                "or later. For example:": "或更高。例如：",
-                "or…": "或者…",
+                "Patched version": "补丁版本",
 
-                "Vulnerable versions:": "脆弱版本：",
-                "Patched version:": "补丁版本：",
                 "Impact": "影响",
                 "Patches": "补丁",
                 "Workarounds": "解决方法",
+                "Workarounds / Mitigations": "解决方法/缓解措施",
                 "References": "参考信息",
+                "For more information": "更多信息",
+
+                // 右侧栏
+                    "CVSS base metrics": "CVSS 基本指标",
+                        "Attack vector": "攻击载体",
+                            "More severe the more the remote (logically and physically) an attacker can be in order to exploit the vulnerability": "攻击者为了利用该漏洞，可以在远程（逻辑上和物理上）攻击时更严重",
+                        "Attack complexity": "攻击复杂性",
+                            "More severe for the least complex attacks": "当最不复杂的攻击时更严重",
+                        "Privileges required": "所需权限",
+                            "More severe if no privileges are required": "当不需要权限时更严重",
+                            "None": "无",
+                        "User interaction": "用户交互",
+                            "More severe when no user interaction is required": "当不需要用户交互时更严重",
+                        "Scope": "范围",
+                            "More severe when a scope change occurs, e.g. one vulnerable component impacts resources in components beyond its security scope": "当范围发生变化时更严重，例如一个易受攻击的组件会影响超出其安全范围的组件中的资源",
+                            "Unchanged": "无变化",
+                        "Confidentiality": "保密性",
+                            "More severe when loss of data confidentiality is highest, measuring the level of data access available to an unauthorized user": "当数据保密性损失最高时更为严重，衡量未授权用户可获得的数据访问级别",
+                        "Integrity": "完整性",
+                            "More severe when loss of data integrity is the highest, measuring the consequence of data modification possible by an unauthorized user": "当数据完整性损失最高时更为严重，衡量未授权用户可能修改数据的后果",
+                        "Availability": "可利用性",
+                            "More severe when the loss of impacted component availability is highest": "当受影响的组件可用性损失最高时更为严重",
+                    "Weaknesses": "缺陷",
+                    "See advisory in GitHub Advisory Database": "请参阅 GitHub 咨询数据库中的咨询",
+                    "See all of your affected repositories": "查看您所有受影响的仓库",
+
+                // 生成安全更新
+                    // 顶部提醒
+                        // [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"],
+                    // [/Creating a security update for ([^ ]+)/, "为 $1 创建安全更新"],
+                    "Dependabot is creating a security update to fix": "Dependabot 正在创建一个安全更新来修复",
+                    // [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
+                    // [/on ([^ ]+) in/, "关于 $1 在"],
+                    // [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
+                    "or later. For example:": "或更高。例如：",
+
+             // 具体某条Dependabot 警报 日志 /security/dependabot/<id>/update-logs/<id2>
+                "Update logs": "更新日志",
 
             // 代码扫描器 /<user-name>/<repo-name>/security/code-scanning
                 "Get started with code scanning": "开始使用代码扫描",
@@ -4427,6 +4837,7 @@ I18N.zh = {
                 "Edit this file": "编辑本文件",
                     "Edit the file in your fork of this project": "在您的复刻中编辑该文件", // 他人库
                     "Fork this project and edit the file": "复刻项目再编辑文件", // 他人库
+                    "You must be able to fork a repository to propose changes": "您必须复刻仓库以提出更改", // 存档仓库
                 // 文件删除图标
                 "Delete this file":"删除本文件",
                     "Delete the file in your fork of this project": "在您的复刻中删除该文件", // 他人库
@@ -4525,12 +4936,15 @@ I18N.zh = {
                 "There are no matching unanswered discussions.": "没有匹配的未答复讨论。",
                 "You can open a": "您可以打开一个",
                 "new discussion": "新讨论",
-                "to ask questions about this repository or get help.": "，询问关于这个资源库的问题或获得帮助。",
+                "to ask questions about this repository or get help.": "，询问关于这个仓库的问题或获得帮助。",
 
                 "asked": "回复",
                 "started": "标星",
                 "· Unanswered":" · 未答复",
                 "· Answered":" · 已答复",
+
+                // 下拉补充
+                "to exclude labels.": "去排除标签。",
 
             // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
                 "Select category": "选择分类",
@@ -4694,16 +5108,17 @@ I18N.zh = {
             // 新建操作 /<user-name>/<repo-name>/actions/new
                 "Get started with GitHub Actions": "开始使用 GitHub Actions",
                 "Choose a workflow template": "选择一个工作流程模板",
-                "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow template to get started.": "构建、测试和部署您的代码。以您想要的方式进行代码审查、分支管理和议题分类。选择一个工作流模板以开始使用。",
+                "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式进行代码审查、分支管理和议题分类。选择一个工作流以开始使用。",
                 "Skip this and": "跳过并",
                 "set up a workflow yourself": "建立工作流程",
+                "Search workflows": "搜索工作流",
 
-                "Workflows made for your repository": "为您的仓库设置工作流程",
-                "Suggested": "推荐的",
-                "Deploy your code with these popular services": "使用这些流行的服务部署您的代码",
-                "Continuous integration workflows": "持续集成工作流程",
-                "More continuous integration workflows...": "更多持续集成工作流程...",
-                "Automate every step in your process": "自动化流程中的每一步",
+                "Suggested for this repository": "建议该仓库采用",
+                "Configure": "设置",
+                "Deployment": "部署",
+                "Continuous integration": "持续集成",
+                "Automation": "自动化",
+                "Browse all categories": "浏览所有类别",
 
                 "Learn more about GitHub Actions": "了解更多关于 GitHub Actions 的信息",
                 "Getting started and core concepts": "入门和核心概念",
@@ -4712,6 +5127,9 @@ I18N.zh = {
                 "Create custom workflows to control your project's life cycle processes.": "创建自定义工作流程以控制项目的生命周期过程。",
                 "Language and framework guides": "语言与框架指南",
                 "Guides for projects written in many programming languages.": "项目指南由多种编程语言编写。",
+
+            // 新建操作 /<user-name>/<repo-name>/actions/new?category=xxxx
+                // [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
 
             // 操作 /<user-name>/<repo-name>/actions
                 "Automate your workflow from idea to production": "从创意到产品，使您的工作流程自动化",
@@ -4746,20 +5164,21 @@ I18N.zh = {
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
                 //筛选条
-                "Filter workflow runs": "过滤工作流程",
+                "Filter workflow runs": "筛选工作流程",
                     "Narrow your search": "缩小搜索范围",
 
                 // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
                 // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
                 "Event": "事件",
-                    "Filter by event": "按事件过滤",
+                    "Filter by event": "按事件筛选",
                     "Find an event": "查找事件",
                     "push": "推送",
                     "schedule": "日程",
                     "watch": "关注",
-                    "workflow_dispatch": "工作流程的调度",
+                    "workflow_dispatch": "工作流程调度",
+                    "dynamic": "动态",
                 // 状态
-                    "Filter by status": "按状态过滤",
+                    "Filter by status": "按状态筛选",
                     "Find a status": "查找状态",
                     "queued": "排队",
                     "in progress": "正在进行中",
@@ -4774,9 +5193,9 @@ I18N.zh = {
                     "skipped": "跳过",
                     "stale": "陈旧",
                 "Branch": "分支",
-                    "Filter by branch": "按分支过滤",
+                    "Filter by branch": "按分支筛选",
                 "Actor": "角色",
-                    "Filter by actor": "按角色过滤",
+                    "Filter by actor": "按角色筛选",
                     "Find a user": "查找用户",
 
                 // 日志 右侧按钮
@@ -4787,6 +5206,11 @@ I18N.zh = {
                 "all workflow runs": "所有工作流程运行",
                 "or try different filters.": "或尝试不同的筛选器。",
 
+                // 列表区域
+                    // 工作流程运行状态
+                    "In progress": "进行中",
+                    "Pending": "待定中",
+
             // /<user-name>/<repo-name>/actions/workflows/<file>.yml
                 "This workflow has a": "这个工作流程有一个",
                 "event trigger.": "事件触发器。",
@@ -4794,6 +5218,12 @@ I18N.zh = {
                 "Run workflow": "运行工作流程",
                     "Use workflow from": "使用工作流程来自：",
                     "Select branch": "选择分支",
+                    "Select ref": "选择引用",
+                    "Select a tag": "选择标签",
+
+                        "Workflow does not exist or does not have a": "工作流程不存在或没有",
+                        "trigger in this branch.": "触发在此分支。",
+                        "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
                     // 顶部提醒
                     "Workflow run was successfully requested.": "工作流程已成功请求运行。",
 
@@ -4831,17 +5261,26 @@ I18N.zh = {
                 "Jobs": "作业",
 
                 //状态条
+                "Triggered via pull request": "通过拉取请求触发",
                 "Triggered via issues": "通过议题触发",
                 "Triggered via push": "通过推送触发",
-                "Triggered via schedule": "通过调度触发",
+                "Triggered via schedule": "通过计划表触发",
+                "Triggered via dynamic": "通过动态触发",
+                "Triggered via GitHub Pages": "通过 GitHub 页面触发",
                 "Manually triggered": "手动触发",
 
                 // 状态
                     "Success": "成功",
                     "Failure": "失败",
+                    "Cancelled": "取消",
                 "Total duration": "总时长",
                 "Billable time": "计费时间",
                 "Artifacts": "附件",
+                    "Produced during runtime": "在运行期间生成",
+                    "Size": "大小",
+                "Annotations": "说明",
+                    // [/1 error/, "$1 个错误"],
+                    "Show more": "显示更多",
 
             // /<user-name>/<repo-name>/actions/runs/<id>/workflow
                 "Workflow file": "工作流程文件",
@@ -4857,7 +5296,7 @@ I18N.zh = {
                     "Download log archive": "下载日志存档",
                     "View raw logs": "查看原始日志",
 
-                "Try broadening your search filters.": "尝试扩大您的搜索过滤器。",
+                "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
 
                 // GitHub Pages
                 "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
@@ -4957,7 +5396,7 @@ I18N.zh = {
                     "This is not legal advice.": "这并不是法律建议。",
                     "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
 
-            // /contribute
+            // /<user-name>/<repo-name>/contribute
                 "Contribute to": "贡献于",
                 "Make your first contribution to this repository by tackling one of the issues listed below.": "通过解决下面列出的一个议题，为这个仓库做出您的第一个贡献。",
                 "Each issue displayed here is a \"good first issue,\" selected for its relative approachability for first-time contributors.": "此处显示的每个议题都是 “好的首发议题”，因其对首次贡献者来说相对容易。",
@@ -4975,7 +5414,7 @@ I18N.zh = {
                 "invited you to collaborate": "邀请您进行协作",
                 "Accept invitation": "接受邀请",
                 "Decline": "拒绝",
-                "Owners": "拥有者",
+                "Owners": "所有者",
                 "Your public profile information": "您的公开个人资料信息",
                 "Certain activity": "某些活动",
                 "within this repository": "在这个仓库中",
@@ -4996,12 +5435,52 @@ I18N.zh = {
                     "You will receive all notifications for this repository.": "您将收到此仓库的所有通知。",
                 "Ignored": "忽略",
                     "You will not receive any notifications for this repository.": "您将不会收到有关此仓库的任何通知。",
+
+            // 项目标签卡 /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                // "Sort by": "排序方式",
+                //     // 排序下拉菜单
+                //     "Newest": "最新",
+                //     "Oldest": "最早",
+                //     "Recently updated": "近期更新内容",
+                //     "Least recently updated": "最近最少更新",
+                    "Name": "名称",
+                // 清除筛选
+                "Clear current search query and sorts": "清除当前的搜索查询和分类",
+
+                "There aren't any projects yet": "尚无任何项目",
+                "Try starting a new one.": "尝试开始一个新的。",
+
+                "No description": "无描述",
+                "Close": "关闭",
+                "Closed": "已关闭",
+                "Reopen": "重新打开",
+
+                // 顶部提醒
+                "Project closed.": "项目已关闭。",
+                "Project reopened.": "项目已重新打开。",
+
+            // 项目标签卡 /<user-name>/<repo-name>/projects?type=beta >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "Welcome to the all-new projects": "欢迎访问全新的项目",
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
+
+                // [/(\d+) projects?/, "$1 个项目"],
+                "Add project": "添加项目",
+                    "No recent projects": "没有近期项目",
+                    "Go to your profile to create a new project": "转到您的个人资料，以创建新项目",
+                    // [/Go to the ([^ ]+) organization to create a new project/, "转到 $1 组织，以创建新项目"],
+
+                "Easily access your projects here": "在此轻松访问您的项目",
+                "Add a project for it to appear in this list or go to": "添加项目，使其出现在此列表中，或进入",
+                "your projects": "您的项目",
+                "Add an organization project for it to appear in this list or go to": "添加组织项目，使其出现在此列表中，或进入", // 组织仓库 项目
+                "organization projects": "组织项目", // 组织仓库 项目
+                "to create a new one.": "去创建新项目。",
         },
         "regexp": [ // 正则翻译
+            [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
             [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
             [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
             [/Forking ([^ ]+)/, "复刻 $1 中"], // 仓库首页 复刻中...
-            [/had recent pushes less than/, "分支有了最近的推送，不到"], // 仓库首页 最近有了新提交提醒
             [/had recent pushes/, "分支有了最近的推送，"], // 仓库首页 最近有了新提交提醒
             // 评论框头部栏 (议题 & 拉取请求)
             // 成员
@@ -5078,8 +5557,9 @@ I18N.zh = {
             [/This commit closes issue (#\d+)./, "此提交关闭了提议 $1。"],
             [/(\d+) parents?/, "$1 个父"],
             [/(\d+) changed files?/, "$1 个更改的文件"],
-            [/(\d+) additions?/, "$1 处增加"],
-            [/(\d+) deletions?/, "$1 处删除"],
+            [/(\d+) additions?$/, "$1 处增加"],
+            [/(\d+) deletions?$/, "$1 处删除"],
+            [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
             [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
             //某个标签 tag /releases/tag/<tag>
             [/to ([^ ]+) since this tag/, "到 $1，从这个标签开始"],
@@ -5096,6 +5576,7 @@ I18N.zh = {
             [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
             [/(\d+) successful and (\d+) failing checks?/, "$1 个成功, $2 个失败检查"],
             [/(\d+) skipped, (\d+) successful, and (\d+) failing checks?/, "$1 个跳过, $2 个成功, $3 个失败检查"],
+            [/(\d+) skipped, (\d+) successful, (\d+) cancelled, and (\d+) failing checks?/, "$1 个跳过, $2 个成功, $3 个取消, $4 个失败检查"],
             [/(\d+) skipped, (\d+) successful, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个预先检查"],
             [/(\d+) skipped, (\d+) successful, (\d+) queue, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个排队, $4 个预先检查"],
             [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
@@ -5136,7 +5617,6 @@ I18N.zh = {
             [/Deployed to ([^ ]+)/, "部署到 $1"], // 部署页面 /deployments
             [/(\d+) workflow runs?$/, "$1 个工作流程运行"], // 操作 /<user-name>/<repo-name>/actions
             [/(\d+) workflow run results?/, "$1 个工作流程运行结果"],
-            [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"], // 创建 Dependabot 警报更新
             [/Published (.*) · Digest/, "发布于 $1 · 摘要"], // 仓库-->包
             // [/Published about (\d.*) · Digest/, "发布于大约 $1 · 摘要"], // 仓库-->包
             [/(\d+) tagged/, "$1 个标记"], // 仓库-->包-->所有版本
@@ -5168,11 +5648,20 @@ I18N.zh = {
             [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在过去的 3 天里，$1 没有任何提交活动。"],
             [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
             [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
+            [/Started generating a security update for ([^ ]+)./, "开始为 $1 生成安全更新。"], // 某个 Dependabot 警报 创建 Dependabot 警报更新 顶部提醒
             [/Dependabot cannot update ([^ ]+) to a non-vulnerable version/, "Dependabot 无法将 $1 更新为无漏洞的版本"], // 某个 Dependabot 警报
+            [/Creating a security update for ([^ ]+)/, "为 $1 创建安全更新"], // 某个 Dependabot 警报
+            [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"], // 某个 Dependabot 警报
+            [/on ([^ ]+) in/, "关于 $1 在"], // 某个 Dependabot 警报
+            [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"], // 某个 Dependabot 警报
+            [/commits? the week of (\d+月\d+日)/, "个提交在 $1 该星期"], // 洞察 --> 提交
+            [/Found (\d+) workflows?/, "发现 $1 个工作流程"], // 新建操作 类别
+            [/(\d+) projects?/, "$1 个项目"], // projects?type=beta
+            [/Go to the ([^ ]+) organization to create a new project/, "转到 $1 组织，以创建新项目"],
         ],
     },
 
-    "repository/settings": { // 仓库设置页面 /<user-name>/<repo-name>/settings
+    "repository/settings": { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
         "static": { // 静态翻译
             // 授权访问 (已经合并到仓库设置)
                 "Confirm access": "授权访问",
@@ -5192,6 +5681,7 @@ I18N.zh = {
 
                 "forked from": "复刻自",
 
+                "Pin": "置顶", // 组织仓库
                 "Unpin": "取消置顶",
 
                 "Ignoring": "忽略",
@@ -5252,6 +5742,7 @@ I18N.zh = {
 
                 // 键盘快捷键
                     "Open in github.dev editor"  : "在 github.dev 编辑器中打开",
+                    "Open github.dev editor in a new tab"  : "在新标签页中打开 github.dev 编辑器",
                     "Focus secondary search bar" : "聚焦二级搜索栏",
                     "Go to Code"                 : "跳转到代码",
                     "Go to Issues"               : "跳转到议题",
@@ -5269,27 +5760,35 @@ I18N.zh = {
 
 
                 // 左侧菜单
-                "Options": "选项",
-                "Manage access": "访问管理",
-                "Repository roles": "仓库规则",
-                "Security & analysis": "安全 & 分析",
+                "General": "通常",
+
+                "Access": "访问",
+                // "Collaborators": "协作者",
+                "Collaborators and teams": "协作者和团队", // 组织仓库
+                "Team and member roles": "团队和成员职责",  // 组织仓库
+                "Moderation options": "节制选项",
+                    "Interaction limits": "互动限制",
+                    "Code review limits": "代码审查限制",
+
+                "Code and automation": "代码与自动化",
                 "Branches": "分支",
-                "Webhooks": "Web 钩子",
-                // "Notifications": "通知",
-                "Integrations": "集成",
-                "Deploy keys": "部署密钥",
                 // "Actions": "操作",
-                    "General": "通常",
+                    // "General": "通常",
                     "Runners": "运行器",
+                "Webhooks": "Web 钩子",
                 "Environments": "环境",
-                "Secrets": "机密",
                 "Pages": "GitHub Pages",
-                "Moderation settings": "审查设置",
-                "Interaction limits": "互动限制",
-                "Code review limits": "代码审查限制",
 
+                // "Security": "安全",
+                "Code security and analysis": "代码安全性与分析",
+                "Deploy keys": "部署密钥",
+                "Secrets": "机密",
 
-            // 设置页面 /<user-name>/<repo-name>/settings ====================================
+                "Integrations": "集成",
+                "Integrated apps": "集成应用",
+                "Email notifications": "邮件通知",
+
+            // 通常 - 设置页面 /<user-name>/<repo-name>/settings ====================================
                 "Repository name": "仓库名称",
                 "Rename": "重命名",
                     // [/is available./, "名称可用。"],
@@ -5315,11 +5814,14 @@ I18N.zh = {
 
                 "Features": "功能",
                 // "Wikis": "",
+                    "Wikis host documentation for your repository.": "Wikis 为您的仓库托管文档。",
+                    "Restrict editing to collaborators only": "仅限协作者进行编辑",
+                    "Restrict editing to users in teams with push access only": "仅限具有推送访问权限的团队中的成员进行编辑", //组织仓库
+                        "Public wikis will still be readable by everyone.": "公共 Wikis 仍然可供所有人阅读。",
+
                 // 私人库 启用 Wiki 提醒
                     "Upgrade or make this repository public to enable Wikis": "升级或公开此仓库，以启用 Wiki",
                     "GitHub Wikis is a simple way to let others contribute content. Any GitHub user can create and edit pages to use for documentation, examples, support, or anything you wish.": "GitHub Wikis 是一种让他人贡献内容的简单方法。任何 GitHub 用户都可以创建和编辑页面，用于文档、示例、支持或任何您想要的东西。",
-                    "Restrict editing to collaborators only": "仅限协作者进行编辑",
-                    "Public wikis will still be readable by everyone.": "公共 Wikis 仍然可供所有人阅读。",
                     // "Upgrade": "升级",
 
                 // 议题
@@ -5327,6 +5829,9 @@ I18N.zh = {
                 "Get organized with issue templates": "使用议题模板进行组织",
                 "Give contributors issue templates that help you cut through the noise and help them push your project forward.": "为贡献者提供议题模板，帮助您消除干扰并帮助他们推进您的项目。",
                 "Set up templates": "设置模板",
+
+                "Allow forking": "允许复刻", // 组织仓库
+                "If disabled, existing forks will be unaffected.": "如果禁用，现有复刻将不受影响。", // 组织仓库
 
                 // 赞助
                 "Sponsorships": "赞助",
@@ -5351,29 +5856,33 @@ I18N.zh = {
                 "Engage your community by having discussions right in your repository, where your community already lives": "通过在您的社区已经存在的仓库中进行讨论来吸引您的社区",
                 "Set up discussions": "建立讨论",
 
-                "Merge button": "合并按钮",
+                // "Pull Requests": "拉取请求",
+                    "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "当合并拉取请求时，您可以允许合并提交、压缩或变基的任意组合。必须至少启用一个选项。如果您在任何受保护分支上启用了线性历史要求，则必须启用压缩或变基。",
+
                     "You must select at least one option": "您必须至少选择一个选项",
-                "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "当合并拉取请求时，您可以允许合并提交、压缩或变基的任意组合。必须至少启用一个选项。如果您在任何受保护分支上启用了线性历史要求，则必须启用压缩或变基。",
+                    "Allow merge commits": "允许合并提交",
+                        "Add all commits from the head branch to the base branch with a merge commit.": "使用合并提交将所有从头部分支的提交添加到基础分支。",
 
-                "Allow merge commits": "允许合并提交",
-                "Add all commits from the head branch to the base branch with a merge commit.": "使用合并提交将所有从头部分支的提交添加到基础分支。",
+                    "Allow squash merging": "允许压缩合并",
+                        "Combine all commits from the head branch into a single commit in the base branch.": "将来自头部分支的所有提交合并到基础分支中的单个提交中。",
 
-                "Allow squash merging": "允许压缩合并",
-                "Combine all commits from the head branch into a single commit in the base branch.": "将来自头部分支的所有提交合并到基础分支中的单个提交中。",
+                    "Allow rebase merging": "允许变基合并",
+                        "Add all commits from the head branch onto the base branch individually.": "将来自头部分支的所有提交单独添加到基础分支。",
 
-                "Allow rebase merging": "允许变基合并",
-                "Add all commits from the head branch onto the base branch individually.": "将来自头部分支的所有提交单独添加到基础分支。",
+                    "Control how and when users are prompted to update their branches if there are new changes available in the base branch.": "如果基础分支中有可用的新更改，则控制提示用户更新其分支的方式和时间。",
+                    "Always suggest updating pull request branches": "始终建议更新拉取请求分支",
+                        "Whenever there are new changes available in the base branch, present an “update branch” option in the pull request.": "每当基础分支中有可用的新更改时，就在拉取请求中显示 “更新分支” 选项。",
 
-                "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "一旦所有必需的审查和状态检查都通过，您可以允许设置拉取请求自动合并。",
+                    "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "一旦所有必需的审查和状态检查都通过，您可以允许设置拉取请求自动合并。",
 
-                "Allow auto-merge": "允许自动合并",
-                "Waits for merge requirements to be met and then merges automatically.": "等待满足合并要求，然后自动合并。",
-                "Why is this option disabled?": "为什么该选项被禁用？",
+                    "Allow auto-merge": "允许自动合并",
+                        "Waits for merge requirements to be met and then merges automatically.": "等待满足合并要求，然后自动合并。",
+                        "Why is this option disabled?": "为什么该选项被禁用？",
 
-                "After pull requests are merged, you can have head branches deleted automatically.": "合并拉取请求后，您可以自动删除头部分支。",
+                    "After pull requests are merged, you can have head branches deleted automatically.": "合并拉取请求后，您可以自动删除头部分支。",
 
-                "Automatically delete head branches": "自动删除头部分支",
-                "Deleted branches will still be able to be restored.": "删除的分支仍然可以恢复。",
+                        "Automatically delete head branches": "自动删除头部分支",
+                            "Deleted branches will still be able to be restored.": "删除的分支仍然可以恢复。",
 
                 "Archives": "档案",
                 "When creating source code archives, you can choose to include files stored using Git LFS in the archive.": "创建源代码存档时，您可以选择在存档中包含使用 Git LFS 存储的文件。",
@@ -5420,6 +5929,17 @@ I18N.zh = {
                     "The README in this repository will no longer be shown on your public profile once this repository is private.": "一旦此仓库设置为私有的，此仓库中的 README 将不再显示在您的公开个人资料中。",
                     "Code scanning will become unavailable.": "代码扫描将不可用。",
                     "Current forks will remain public and will be separated from this repository.": "当前的复刻将继续保持公开状态，并将与此仓库分离。",
+                    // 组织仓库
+                    "You can": "您可以",
+                    "upgrade your plan": "升级您的计划",
+                    "to also avoid losing access to:": "以避免失去对以下内容的访问权限：",
+                        "Codeowners": "代码所有者",
+                        "functionality.": "功能。",
+                        "wikis.": "Wiki。",
+                        "Pulse, Contributors, Community, Traffic, Commits, Code Frequency": "统计、贡献者、社区、流量、提交、代码频率",
+                        "Network": "网络",
+                        "Insights page.": "洞察标签卡",
+                        "Branch protection rules.": "分支保护规则。",
                 "Please type": "请键入",
                 "to confirm.": "进行确定。",
                 "I understand, change repository visibility.": "我明白了，依然更改该仓库的可见性。",
@@ -5438,7 +5958,7 @@ I18N.zh = {
                 "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性操作。",
                 "If": "如果",
                 "username": "指定的用户",
-                "is using GitHub Free and accepts the transfer, they will lose access to private repository features:": "正在使用 GitHub Free 计划并接受转移，那么他们将无法访问私有仓库如下功能：",
+                "is using GitHub Free and accepts the transfer, they will lose access to private repository features:": "正在使用 GitHub Free 计划并接受转让，那么他们将无法访问私有仓库如下功能：",
                 "Code owners": "代码所有者",
                 "Any existing": "任何现有的",
                 "wikis": "Wiki",
@@ -5456,9 +5976,9 @@ I18N.zh = {
                 // "Branch protection rules": "分支保护规则",
                 "can": "可",
                 "upgrade": "升级",
-                "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转移之前，以避免失去访问权。",
+                "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
                 "Username or organization name": "用户名或组织名称",
-                "Type": "请输入",
+                "Type": "请键入",
                 // "to confirm.": "进行确定。",
                 "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
 
@@ -5511,19 +6031,30 @@ I18N.zh = {
                 "cannot": "不能",
                 "be undone. This will permanently delete the": "被撤消。这将永久删除",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有协作者关联。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有团队关联。", // 组织仓库
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
                 "I understand the consequences, delete this repository": "我明白后果，依然删除该仓库",
 
-            // 访问管理页面 /<user-name>/<repo-name>/settings/access ====================================
-                // "Manage access": "访问管理",
+            // 协作者 / 协作者和团队 - 访问管理页面 /<user-name>/<repo-name>/settings/access ====================================
                 "Who has access": "谁有权访问",
                 "public repository": "公共仓库",
                 "This repository is public and visible to anyone.": "该仓库是公开的，对任何人都可见。",
                 "private repository": "私有仓库",
                 "Only those with access to this repository can view it.": "只有拥有该仓库访问权的用户才能查看。",
                 "Manage": "管理",
+
                 "Direct access": "直接访问",
                 "collaborators have access to this repository. Only you can contribute to this repository.": "个协作者有权访问此仓库。 只有您可以对此仓库做出贡献。",
+                // 组织仓库
+                "teams or members have access to this repository. Only": "团队或成员有权访问此仓库。只有",
+                "Owners": "所有者",
+                "can contribute to this repository.": "可以为此仓库做出贡献。",
+
+                // 组织仓库
+                "Base role": "基本角色",
+                "can access this repository.": "可以访问此仓库。",
+
+                "Manage access": "访问管理",
                 "You haven't invited any collaborators yet": "您尚未邀请任何协作者",
                 // "invite a collaborator": "邀请协作者",
                 "Add people": "添加他人",
@@ -5535,16 +6066,108 @@ I18N.zh = {
                 "Add": "添加",
                 "to this repository": "到这个仓库",
 
-            // 安全 & 分析页面 /<user-name>/<repo-name>/settings/security_analysis
+                // 组织仓库
+                "Create team": "创建组织",
+                "You haven't added any teams or people yet": "您尚未添加团队或成员",
+                "Organization owners can manage individual and team access to the organization's repositories. Team maintainers can also manage a team's repository access.": "组织所有者可以管理成员和团队对组织仓库的访问。团队维护者也可以管理一个团队的仓库访问。",
+                "Learn more about organization access": "了解更多关于组织访问权限的信息",
+                "Add teams": "添加团队",
+
+                "Add people to": "添加成员到",
+                "Select a member above": "在上面选择一名成员",
+                "Add teams to": "添加团队",
+                "Search by team name": "按团队名称搜索",
+                "Select a team above": "在上面选择一个团队",
+
+            // 团队和成员职责 (组织仓库) /<user-name>/<repo-name>/settings/role_details
+                "Manage Access": "管理访问",
+                "Role Details": "角色详情",
+
+                "Repository Roles": "仓库角色",
+                "Listed below are all the available roles that can be granted to members and teams in this organization. Expand a role to view the details of the permissions included.": "下面列出了可以授予该组织的成员和团队的所有可用角色。展开角色，查看所包含的权限细节。",
+
+                "Pre-defined Roles": "预定义角色",
+                "Read": "只读",
+                    "Default repository role": "默认仓库角色",
+                    "Read and clone repositories. Open and comment on issues and pull requests.": "读取和克隆仓库。打开并评论议题和拉取请求。",
+                "Triage": "分级",
+                    "Read permissions plus manage issues and pull requests.": "读取权限以及管理议题和拉取请求。",
+                    "Issue and Pull Request": "议题和拉取请求",
+                        "Assign or remove a user": "分配或删除用户",
+                        "Remove an assigned user": "删除分配的用户",
+                        "Remove a label": "删除标签",
+                        "Add or remove a label": "添加或删除标签",
+                    "Issue": "议题",
+                        "Close an issue": "关闭议题",
+                        "Reopen a closed issue": "重新打开已关闭的议题",
+                        "Mark an issue as a duplicate": "将议题标记为重复",
+                    "Pull Request": "拉取请求",
+                        "Close a pull request": "关闭拉取请求",
+                        "Reopen a closed pull request": "重新打开已关闭的拉取请求",
+                        "Request a pull request review": "请求拉取请求审查",
+                    "Repository": "仓库",
+                        "Set milestones": "设置里程碑",
+                    // "": "讨论",
+                        "Convert issues to discussions": "将议题转化为讨论",
+                        "Delete a discussion": "删除讨论",
+                        "Edit a discussion category": "编辑讨论类别",
+                        "Create a discussion category": "创建讨论类别",
+                        "Mark or unmark discussion answers": "标记或取消标记讨论答案",
+                        "Hide or unhide discussion comments": "隐藏或取消隐藏讨论评论",
+                "Write": "可写",
+                    "Triage permissions plus read, clone and push to repositories.": "分级权限以及读取、克隆和推送到仓库。",
+                    // "": "安全",
+                        "View code scanning results": "查看代码扫描结果",
+                        "Dismiss or reopen code scanning results": "忽略或重新打开代码扫描结果",
+                "Maintain": "维护",
+                    "Write permissions plus manage issues, pull requests and some repository settings.": "写入权限以及管理议题、拉取请求和一些仓库设置。",
+                    // "": "仓库",
+                        "Manage pull request merging settings": "管理拉取请求的合并设置",
+                        "Manage GitHub Page settings": "管理 GitHub 页面设置",
+                        "Manage project settings": "管理项目设置",
+                        "Manage wiki settings": "管理 wiki 设置",
+                        "Manage topics": "管理主题",
+                        "Push commits to protected branches": "将提交推送到受保护的分支",
+                        "Set interaction limits": "设置交互限制",
+                        // "": "",
+                        "Set the social preview": "设置社交预览",
+                        "Edit repository metadata": "编辑仓库元数据",
+                "Admin": "管理员",
+                    "Full access to repositories including sensitive and destructive actions.": "对仓库的完全访问权限，包括敏感和破坏性操作。",
+                    // "": "议题",
+                        "Delete an issue": "删除议题",
+                    // "": "仓库",
+                        "Manage deploy keys": "管理部署密钥",
+                        "Manage webhooks": "管理 web 钩子",
+                    // "": "安全",
+                        "Delete code scanning results": "删除代码扫描结果",
+                        "View secret scanning results": "查看密钥扫描结果",
+                        "Dismiss or reopen secret scanning results": "忽略或重新打开密钥扫描结果",
+                        "View Dependabot alerts results": "查看 Dependabot 警报结果",
+                        "Dismiss Dependabot alerts results": "忽略 Dependabot 警报结果",
+                "Custom Roles": "自定义角色",
+                    "These roles are created and managed by organization administrators.": "这些角色由组织管理员创建和管理。",
+                    "There are no custom roles yet!": "目前尚无自定义的角色!",
+                    "Learn more about custom roles": "了解更多关于自定义角色的信息",
+
+            // 代码安全性与分析 /<user-name>/<repo-name>/settings/security_analysis
                 "Configure security and analysis features": "配置安全和分析功能",
                 "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
                 "Dependency graph": "依赖关系图",
                     "Understand your dependencies.": "了解您的依赖项。",
                     "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
+
+                    //对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                    "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。",
                 "Dependabot alerts": "Dependabot 警报",
                     "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
                         "Dependabot alerts need the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。",
+
+                    // 对话框
+                    "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                    "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。",
                 "Dependabot security updates": "Dependabot 安全更新",
                     "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
                     "Enable Dependabot security updates": "启用 Dependabot 安全更新",
@@ -5553,6 +6176,18 @@ I18N.zh = {
                 // "Code scanning": "代码扫描",
                     "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
                     "Set up": "设置",
+
+                // 组织仓库
+                "Access to alerts": "访问警报",
+                "Admins, users, and teams in the list below have permission to view and manage Dependabot or secret scanning alerts. These users may be notified when a new vulnerability is found in one of this repository's dependencies and when a secret or key is checked in. They will also see additional details when viewing Dependabot security updates. Individuals can manage how they receive these alerts in their": "以下列表中的管理员、用户和团队有权限查看和管理 Dependabot 或秘钥扫描警报。当在此仓库的依赖项之一中发现新的漏洞，以及当密钥或令牌被嵌入时，可能会通知这些用户。在查看 Dependabot 安全更新时，他们还会看到其他详细信息。用户可以管理他们如何接收这些警报，在他们的",
+                "notification settings": "通知设置",
+
+                "Choose the people or teams you would like to grant access": "选择您要授予访问权限的人员或团队",
+                "Search for people or teams": "搜索人员或团队",
+                "People and teams with access": "具有访问权限的人员和团队",
+                "Organization administrators, repository administrators, and teams with the security manager role": "具有安全管理员角色的组织管理员、仓库管理员和团队",
+                "These members always see Dependabot and secret scanning alerts.": "这些成员总是能看到 Dependabot 和密钥扫描警报。",
+                "Save changes": "保存更改",
 
             // 分支管理页面 /<user-name>/<repo-name>/settings/branches====================================
                 "Default branch": "默认分支",
@@ -5647,6 +6282,9 @@ I18N.zh = {
                 "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
                 "Webhooks Guide": "Web 钩子指南",
 
+                "We will also send events from this repository to your": "我们还将把这个仓库的事件发送到您的", // 组织仓库
+                "organization webhooks": "组织 Web 钩子", // 组织仓库
+
                 // 删除对话框
                     "Delete webhook?": "删除 Web 钩子？",
                     "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
@@ -5685,91 +6323,91 @@ I18N.zh = {
                     "everything": "所有",
                     "Let me select individual events.": "让我选择单个事件。",
                         "Branch or tag creation": "分支或标签创建",
-                        "Branch or tag created.": "分支或标签的创建",
+                            "Branch or tag created.": "分支或标签的创建。",
                         "Branch or tag deletion": "分支或标签删除",
-                        "Branch or tag deleted.": "分支或标签的删除",
-                        // "分支保护规则": "",
-                        "Branch protection rule created, deleted or edited.": "分支保护规则的创建、删除或编辑。",
+                            "Branch or tag deleted.": "分支或标签的删除。",
+                        // "Branch protection rules": "分支保护规则",
+                            "Branch protection rule created, deleted or edited.": "分支保护规则的创建、删除或编辑。",
                         "Check runs": "检查运行",
-                        "Check run is created, requested, rerequested, or completed.": "检查运行的创建、请求、重新请求或完成。",
+                            "Check run is created, requested, rerequested, or completed.": "检查运行的创建、请求、重新请求或完成。",
                         "Check suites": "检查套件",
-                        "Check suite is requested, rerequested, or completed.": "检查套件的请求、重新请求或已完成。",
+                            "Check suite is requested, rerequested, or completed.": "检查套件的请求、重新请求或已完成。",
                         "Code scanning alerts": "代码扫描警报",
-                        "Code Scanning alert created, fixed in branch, or closed": "代码扫描警报的创建、在分支中的修复或关闭",
+                            "Code Scanning alert created, fixed in branch, or closed": "代码扫描警报的创建、在分支中的修复或关闭",
                         "Collaborator add, remove, or changed": "协作者的添加、删除或更改",
-                        "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
+                            "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
                         "Commit comments": "提交评论",
-                        "Commit or diff commented on.": "提交或差异评论。",
-                        // "部署密钥": "",
-                        "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
+                            "Commit or diff commented on.": "提交或差异评论。",
+                        // "Deploy keys": "部署密钥",
+                            "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
                         "Deployment statuses": "部署状态",
-                        "Deployment status updated from the API.": "从 API 更新的部署状态。",
+                            "Deployment status updated from the API.": "从 API 更新的部署状态。",
                         "Deployments": "部署",
-                        "Repository was deployed or a deployment was deleted.": "仓库的部署或删除部署。",
+                            "Repository was deployed or a deployment was deleted.": "仓库的部署或删除部署。",
                         "Discussion comments": "讨论评论",
-                        "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
-                        // "讨论": "",
-                        "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
-                        // "": "复刻",
-                        "Repository forked.": "仓库复刻。",
+                            "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
+                        // "Discussion": "讨论",
+                            "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
+                        // "Forks": "复刻",
+                            "Repository forked.": "仓库复刻。",
                         "Issue comments": "发表评论",
-                        "Issue comment created, edited, or deleted.": "议题评论的创建、编辑或删除。",
-                        // "": "议题",
-                        "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "议题的打开、编辑、删除、转移、钉住、取消钉住、关闭、重新打开、分配、未分配、标记、未标记、密闭、去密闭、锁定或解锁。",
-                        // "": "标签",
-                        "Label created, edited or deleted.": "标签的创建、编辑或删除。",
+                            "Issue comment created, edited, or deleted.": "议题评论的创建、编辑或删除。",
+                        // "Issue": "议题",
+                            "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "议题的打开、编辑、删除、转移、钉住、取消钉住、关闭、重新打开、分配、未分配、标记、未标记、密闭、去密闭、锁定或解锁。",
+                        // "Labels": "标签",
+                            "Label created, edited or deleted.": "标签的创建、编辑或删除。",
                         "Meta": "元数据",
-                        "This particular hook is deleted.": "这个特定的钩子被删除。",
-                        // "": "里程碑",
+                            "This particular hook is deleted.": "这个特定的钩子被删除。",
+                        // "Milestones": "里程碑",
                         "Milestone created, closed, opened, edited, or deleted.": "里程碑的创建、关闭、打开、编辑或删除。",
-                        // "": "软件包",
-                        "GitHub Packages published or updated in a repository.": "在仓库中 GitHub 软件包的发布或更新 。",
+                        // "Packages": "软件包",
+                            "GitHub Packages published or updated in a repository.": "在仓库中 GitHub 软件包的发布或更新 。",
                         "Page builds": "页面构建",
-                        "Pages site built.": "页面站点建成。",
+                            "Pages site built.": "页面站点建成。",
                         "Project cards": "项目卡",
-                        "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
+                            "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
                         "Project columns": "项目栏目",
-                        "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
+                            "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
                         // "": "项目",
-                        "Project created, updated, or deleted.": "项目的创建、更新或删除。",
+                            "Project created, updated, or deleted.": "项目的创建、更新或删除。",
                         "Pull request review comments": "拉取请求的审查评论",
-                        "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
+                            "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
                         "Pull request review threads": "拉取请求的审查线程",
-                        "A pull request review thread was resolved or unresolved.": "拉取请求审查线程的解决或未解决。",
+                            "A pull request review thread was resolved or unresolved.": "拉取请求审查线程的解决或未解决。",
                         "Pull request reviews": "拉取请求审查",
-                        "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或忽略。",
+                            "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或忽略。",
                         // "": "拉取请求",
-                        "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
+                            "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
                         "Pushes": "推送",
-                        "Git push to a repository.": "Git 推送到仓库",
+                            "Git push to a repository.": "Git 推送到仓库。",
                         "Registry packages": "注册软件包",
-                        "Registry package published or updated in a repository.": "注册软件包的发布或更新。",
-                        // "": "发行版",
-                        "Release created, edited, published, unpublished, or deleted.": "发行版的创建、编辑、发布、取消发布或删除。",
+                            "Registry package published or updated in a repository.": "注册软件包的发布或更新。",
+                        // "Releases": "发行版",
+                            "Release created, edited, published, unpublished, or deleted.": "发行版的创建、编辑、发布、取消发布或删除。",
                         // "": "仓库",
-                        "Repository created, deleted, archived, unarchived, publicized, privatized, edited, renamed, or transferred.": "仓库的创建、删除、存档、取消存档、公开、私有化、编辑、重命名或转移。",
+                            "Repository created, deleted, archived, unarchived, publicized, privatized, edited, renamed, or transferred.": "仓库的创建、删除、存档、取消存档、公开、私有化、编辑、重命名或转让。",
                         "Repository imports": "仓库导入",
-                        "Repository import succeeded, failed, or cancelled.": "仓库导入的成功、失败或取消。",
+                            "Repository import succeeded, failed, or cancelled.": "仓库导入的成功、失败或取消。",
                         "Repository vulnerability alerts": "仓库漏洞警报",
-                        "Dependabot alert (aka dependency vulnerability alert) created, resolved, or dismissed on a repository.": "Dependabot 警报（又名依赖漏洞警报）在仓库上的创建、解决或解除。",
+                            "Dependabot alert (aka dependency vulnerability alert) created, resolved, or dismissed on a repository.": "Dependabot 警报（又名依赖漏洞警报）在仓库上的创建、解决或解除。",
                         "Secret scanning alerts": "密钥扫描警报",
-                        "Secrets scanning alert created, resolved, or reopened": "密钥扫描警报的创建、解决或重新打开",
+                            "Secrets scanning alert created, resolved, or reopened": "密钥扫描警报的创建、解决或重新打开",
                         // "": "星标",
-                        "A star is created or deleted from a repository.": "从仓库中创建或删除星标。",
+                            "A star is created or deleted from a repository.": "从仓库中创建或删除星标。",
                         "Statuses": "状态",
-                        "Commit status updated from the API.": "从 API 更新的提交状态。",
+                            "Commit status updated from the API.": "从 API 更新的提交状态。",
                         "Team adds": "团队添加",
-                        "Team added or modified on a repository.": "在仓库上添加或修改的团队。",
+                            "Team added or modified on a repository.": "在仓库上添加或修改的团队。",
                         "Visibility changes": "可见性变化",
-                        "Repository changes from private to public.": "仓库从私有更改为公共。",
+                            "Repository changes from private to public.": "仓库从私有更改为公共。",
                         "Watches": "关注",
-                        "User stars a repository.": "用户给一个仓库加星标。",
+                            "User stars a repository.": "用户给一个仓库加星标。",
                         "Wiki": "",
-                        "Wiki page updated.": "Wiki 页面的更新。",
+                            "Wiki page updated.": "Wiki 页面的更新。",
                         "Workflow jobs": "工作流程的工作",
-                        "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
+                            "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
                         "Workflow runs": "工作流程的运行",
-                        "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
+                            "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
                     "Active": "激活",
                     "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
 
@@ -5799,7 +6437,7 @@ I18N.zh = {
                 // [/Completed in (\d+) seconds./, "在 (\d+) 秒内完成。"],
 
 
-            // 通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
+            // 邮件通知管理 页面 /<user-name>/<repo-name>/settings/notifications/edit ====================================
                 "Setup email addresses to receive notifications when push events are triggered.": "设置电子邮箱地址，以便在推送事件被触发时收到通知。",
                 "Address": "电子邮箱地址",
                 "Whitespace separated email addresses (at most two).": "用空格分隔的电子邮箱地址（最多两个）。",
@@ -5811,7 +6449,7 @@ I18N.zh = {
                 "event is triggered.":"事件被触发。",
                 "Setup notifications": "设置通知",
 
-            // 集成 页面 /<user-name>/<repo-name>/settings/installations====================================
+            // 集成应用 页面 /<user-name>/<repo-name>/settings/installations====================================
             // 全局设置在 Applications 应用 /settings/installations
                 "Installed GitHub Apps": "安装的 GitHub 应用",
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
@@ -5867,6 +6505,9 @@ I18N.zh = {
 
                 "Artifact and log retention": "工件和日志保留",
                     "This is the duration that artifacts and logs will be retained.": "这是工件和日志将被保留的时间。",
+                    "Your organization administrator has set a maximum limit of": "您的组织管理员已将上限设置为", //组织仓库
+                    "days.": "天。", //组织仓库
+
                     "days": "天",
 
                 "Fork pull request workflows": "复刻拉取请求工作流程",
@@ -5906,7 +6547,7 @@ I18N.zh = {
 
             // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
                 "/ Create self-hosted runner": "/ 创建自托管运行器",
-                "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions Runner。下载并配置 GitHub Actions Runner 后，您同意",
+                "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。下载并配置 GitHub Actions 运行器 后，您同意",
                     "GitHub Terms of Service": "GitHub 服务条款",
                     "GitHub Corporate Terms of Service": "GitHub 企业服务条款",
                     ", as applicable.": "，如适用。",
@@ -5979,6 +6620,9 @@ I18N.zh = {
 
                 "Updated": "更新于",
 
+                // 顶部提醒
+                "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
+
                 // 环境机密
                 "There are no secrets for this repository's environments.": "此仓库的环境暂无机密。",
                 "Encrypted environment secrets allow you to store sensitive information, such as access tokens, in your repository environments.": "加密的环境机密允许您在仓库环境中存储敏感信息，例如访问令牌。",
@@ -5988,13 +6632,31 @@ I18N.zh = {
                 "There are no secrets for this repository.": "此仓库暂无机密。",
                 "Encrypted secrets allow you to store sensitive information, such as access tokens, in your repository.": "加密的机密允许您在仓库中存储敏感信息，例如访问令牌。",
 
+                //组织仓库
+                "Secrets can also be created at the organization level and authorized for use in this repository.": "机密也可以在组织层面上创建，并授权在这个仓库中使用。",
+                "Organization secrets": "组织机密",
+                "Manage organization secrets": "管理组织机密",
+                "Organization secrets can only be used by public repositories on your plan.": "组织机密只能由您计划中的公共仓库使用。",
+                "If you would like to use organization secrets in a private repository, you will need to upgrade your plan.": "如果您想在私有仓库中使用组织机密，则需要升级您的计划。",
+
+                // 删除机密对话框
+                "Remove secret": "删除机密",
+                    "Are you sure you want to delete": "您确定要删除",
+                    "Yes, remove this secret": "是的，删除该机密",
+
+                // 顶部提醒
+                    "Repository secret added.": "添加了仓库机密。",
+                    "Repository secret deleted.": "删除了仓库机密。",
+
             // 更新操作机密 /<user-name>/<repo-name>/settings/secrets/actions/<name>
                 "/ Update secret": "/ 更新机密",
                 "Update secret": "更新机密",
+                    "Updating…": "更新中…",
 
             // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
                 "/ New secret": "/ 新建机密",
                 "Add secret": "添加机密",
+                    "Adding…": "添加中…",
 
             // Dependabot 机密 /<user-name>/<repo-name>/settings/secrets/dependabot
                 "Dependabot secrets": "Dependabot 机密",
@@ -6002,6 +6664,11 @@ I18N.zh = {
                 "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
                 "Secrets are not passed to forks.": "机密不会传递给复刻。",
                 "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的机密允许您存储私有访问令牌，以便 Dependabot 可以从私有注册表更新依赖项。",
+
+                // 组织仓库
+                "No organization secrets have been authorized for this repository.": "该仓库暂无授权任何组织机密。",
+                // [/Organization secrets for ([^ ]+) can be managed within/, "$1  的组织机密可以管理，在"],
+                "organization settings": "组织设置",
 
             // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
                 "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
@@ -6103,7 +6770,7 @@ I18N.zh = {
                 "Repository interaction limit settings saved.": "仓库交互限制设置已保存。",
 
             // Code review limits 代码审查限制 /<user-name>/<repo-name>/settings/code_review_limits
-                "Restrict users who are permitted to approve or request changes on pull requests in this repository.": "限制那些有权批准或请求更改该仓库中拉取请求的用户。",
+                "Restrict users who are permitted to approve or request changes on pull requests in this repository.": "限制允许批准或请求更改该仓库中拉取请求的用户。",
                 "Limit to users explicitly granted": "限于明确授予",
                 "read": "读取",
                 "or higher access": "或 更高权限的用户",
@@ -6119,6 +6786,7 @@ I18N.zh = {
             [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除归档。"], //顶部提醒 仓库解除归档
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
             [/Invite collaborator/, "邀请协作者"], // 访问管理 -> 邀请协作者
+            [/Invite outside collaborator/, "邀请外部协作者"], // 访问管理 -> 邀请成员 组织仓库
             [/Enabled with about ([^ ]+) remaining./, ""],
             [/to the ([^ ]+) branch of this repository will be unable to interact with the repository./, "到该仓库 $1 分支的用户将无法与您的仓库互动。"], // 仓库互动限制
             // Github Pages 自定义域检测
@@ -6129,6 +6797,8 @@ I18N.zh = {
             [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
             [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
             [/Completed in (.+) seconds./, "在 $1 秒内完成。"], // 管理 Web 钩子-->最近交付
+            [/Organization secrets for ([^ ]+) can be managed within/, "$1  的组织机密可以管理，在"], // 组织仓库 --> Dependabot 机密
+            [/(\d+) members?/, "$1 个成员"],
         ],
     },
 
@@ -6329,25 +6999,25 @@ I18N.zh = {
             "Saved": "已保存",
             "Save": "保存",
             "Done": "已完成",
-            "Filters": "过滤",
+            "Filters": "筛选",
             "Dismiss": "关闭",
             "get started": "开始",
             "Subscribe": "订阅",
             "Unsubscribe": "退订",
 
-            "Filter notifications": "过滤通知",
+            "Filter notifications": "筛选通知",
                 "Sorry, we don't support the": "抱歉，我们不支持",
-                "filter yet.": "过滤器。",
-                "Learn more about filters.": "了解更多关于过滤器的信息。",
+                "filter yet.": "筛选器。",
+                "Learn more about filters.": "了解更多关于筛选器的信息。",
 
                 "- submit": "- 提交",
 
-                "Available filters": "可用过滤器",
-                "filter by repository": "筛选仓库",
-                "filter by status or discussion type": "筛选状态或评论类型",
-                "filter by notification reason": "筛选通知原因",
-                "filter by notification author": "筛选通知作者",
-                "filter by organization": "筛选组织",
+                "Available filters": "可用筛选器",
+                "filter by repository": "按仓库筛选",
+                "filter by status or discussion type": "按状态或评论类型筛选",
+                "filter by notification reason": "按通知原因筛选",
+                "filter by notification author": "按通知作者筛选",
+                "filter by organization": "按组织筛选",
             "Group by:": "分组：",
             "Date": "日期",
             "Repository": "仓库",
@@ -6408,7 +7078,7 @@ I18N.zh = {
             "🙌 Team mentioned": "🙌 提到的团队",
             "👀 Review requested": "👀 审查请求",
             "Name": "名称",
-            "Filter inbox by…": "过滤收件箱…",
+            "Filter inbox by…": "筛选收件箱…",
             "Create new filter": "创建新规则",
             "Create": "创建",
             "Query": "规则",
@@ -6496,7 +7166,7 @@ I18N.zh = {
             "Subscriptions": "订阅",
 
             "Reason": "原因",
-                "Filter by reason": "过滤原因",
+                "Filter by reason": "按原因筛选",
                 "Any reason": "任何原因",
                 "Show all subscriptions": "显示所有订阅",
                 "Assign": "分配",
@@ -6516,8 +7186,8 @@ I18N.zh = {
                 "Team Mention": "提及团队",
                 "You were on a team that was mentioned.": "您在团队中被提及。",
             "Repository": "仓库",
-                "Filter by repository": "按仓库过滤",
-                "Filter repository": "过滤仓库",
+                "Filter by repository": "按仓库筛选",
+                "Filter repository": "筛选仓库",
                 "All repositories": "所有仓库",
                 "Loading repositories…": "载入仓库中…",
             "Sort:": "排序：",
@@ -6545,7 +7215,7 @@ I18N.zh = {
             "Your repositories": "您的仓库",
             "Others' repositories": "其他仓库",
 
-            "Filter by languages": "筛选语言",
+            "Filter by languages": "按语言筛选",
             "Jump to a friend": "去好基友那",
         },
         "regexp": [ // 正则翻译
@@ -6616,7 +7286,7 @@ I18N.zh = {
             "Public repositories only": "只有公共库",
 
             "Organization": "组织",
-            "Filter by organization or owner": "通过组织或所有者筛选",
+            "Filter by organization or owner": "按组织或所有者筛选",
             "Filter organizations": "筛选组织",
 
             "Sort": "排序",
@@ -6649,7 +7319,7 @@ I18N.zh = {
 
             // "Use the links above to find what you’re looking for, or try": "使用上面的链接找到您要找的内容，或尝试",
             // "a new search query": "新的搜索查询",
-            // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。过滤菜单也是快速找到议题最相关的您超级有帮助的。",
+            // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。筛选菜单也是快速找到议题最相关的您超级有帮助的。",
             // "Updated in the last three days": "更新了最后三天：",
             "ProTip!": "专业提示！",
                 "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
@@ -6918,6 +7588,10 @@ I18N.zh = {
             "Mark as unread": "标记为未读",
             "Save": "保存",
 
+            // 用户 浮动信息卡
+            "Member of": "隶属组织",
+            // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+
             // 新建片段页面
             "View your gists": "查看您的所有片段",
             "Gist description…": "片段描述…",
@@ -6940,14 +7614,14 @@ I18N.zh = {
 
             // All gists 标签卡
             // 筛选 & 排序工具栏
-            "Sort:": "排序：",
+            "Sort:": "排序:",
             "Sort options": "排序选项",
-            "Recently created": "最近创建的",
-            "Least recently created": "最早创建的",
-            "Recently updated": "最近更新的",
-            "Least recently updated": "最早更新的",
+            "Recently created": "最近创建",
+            "Least recently created": "最早创建",
+            "Recently updated": "最近更新",
+            "Least recently updated": "最早更新",
 
-            "Type:": "类型：",
+            "Type:": "类型:",
             "Filter options": "筛选选项",
             "All": "所有",
             "Public": "公共",
@@ -7001,6 +7675,7 @@ I18N.zh = {
 
             // 代码标签卡
             "Raw": "源码",
+            "Load earlier comments...": "载入早期的评论...",
 
             // 修订标签卡
             "Unified": "同屏",
@@ -7088,6 +7763,7 @@ I18N.zh = {
             [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
             [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
             [/Joined/,"加入于"], //星标标签卡
+            [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         ],
     },
 
@@ -7164,13 +7840,6 @@ I18N.zh = {
         ],
     },
 
-    "orgs": { // 组织页面
-        "static": { // 静态翻译
-        },
-        "regexp": [ // 正则翻译
-        ],
-    },
-
     "explore": { // 探索页面
         "static": { // 静态翻译
         },
@@ -7219,7 +7888,6 @@ I18N.zh = {
 
             // https://github.com/orgs/<org-name>/invitations/bulk_create_for_new_org
             // https://github.com/orgs/<org-name>/welcome_survey/new
-
         },
         "regexp": [ // 正则翻译
             [/The name \'([^ ]+)\' is already taken./, "名称 '$1' 已被采用。"],
@@ -7258,7 +7926,7 @@ I18N.zh = {
                 "User(s) in this plan": "个用户在计划中",
                 "Install it for free": "免费安装",
                 "Buy with GitHub": "通过 GitHub 购买",
-                "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和付款信息。",
+                "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
                 "terms of service": "服务条款",
                 "privacy policy": "隐私政策",
                 ", and": "和",
@@ -7348,6 +8016,24 @@ I18N.zh = {
         ],
     },
 
+    "orgs": { // 组织页面
+        "static": { // 静态翻译
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
+    "orgs/domain/new": { // 组织 - 添加域名
+        "static": { // 静态翻译
+            "Verified & approved domains": "经验证和批准的域名",
+            "Add a domain": "添加域名",
+            "What domain would you like to add?": "您想添加什么域名？",
+            "Add domain": "添加域名",
+        },
+        "regexp": [ // 正则翻译
+        ],
+    },
+
     "orgs/settings": { // 组织 - 设置页面
         "static": { // 静态翻译
             // 授权访问 (已经合并到组织设置)
@@ -7364,49 +8050,66 @@ I18N.zh = {
                 "Switch to another account": "切换到另一个帐户", // 存在组织时
                 "Go to your organization profile": "去我的组织主页",
                 // 左侧菜单
-                "Account settings": "帐户设置",
-                "Profile": "组织资料",
-                "Billing & plans": "计费 & 计划",
-                "Member privileges": "会员特权",
-                "Organization security": "组织安全",
-                "Security & analysis": "安全 & 分析",
-                "Verified & approved domains": "验证和批准的域",
-                "Audit log": "审计日志",
-                "Sponsorship log": "赞助日志",
-                "Webhooks": "Web 钩子",
-                "Third-party access": "第三方访问",
-                "Installed GitHub Apps": "安装的 GitHub 应用",
-                "Scheduled reminders": "定时提醒",
-                "Repository topics": "仓库主题",
-                "Repository defaults": "仓库默认值",
-                "Deleted repositories": "删除的仓库",
-                "Projects": "项目",
-                "Teams": "团队",
-                "Actions": "操作",
-                "Packages": "软件包",
-                "Secrets": "机密",
-                "Developer settings": "开发者设置",
-                "Moderation settings": "审查设置",
+                "General": "常规",
+                "Access": "访问",
+                "Billing and plans": "账单和计划",
+                "Member privileges": "成员权限",
+                "Team discussions": "团队讨论",
+                "Moderation": "节制",
                     "Blocked users": "黑名单",
                     "Interaction limits": "互动限制",
+                    "Code review limits": "代码审查限制",
 
-            // Profile 组织资料 /organizations/<org-login>/settings/profile
+                "Code, planning, and automation": "代码、规划和自动化",
+                "Repository": "仓库",
+                    "Repository defaults": "仓库默认值",
+                    "Repository topics": "仓库主题",
+                "Actions": "操作",
+                    "Runners": "运行器",
+                    "Runner groups": "运行器组",
+                "Webhooks": "Web 钩子",
+                "Packages": "软件包",
+                "Projects": "项目",
+
+                "Security": "安全",
+                "Authentication security": "身份验证安全",
+                "Code security and analysis": "代码安全性与分析",
+                "Verified and approved domains": "经验证和批准的域名",
+                "Secrets": "机密",
+
+                "Integrations": "整合",
+                "Third-party access": "第三方访问",
+                "GitHub Apps": "GitHub 应用",
+                "Scheduled reminders": "定时提醒",
+
+                "Archive": "存档",
+                "Logs": "日志",
+                    "Sponsorship log": "赞助日志",
+                    "Audit log": "审计日志",
+                "Deleted repositories": "删除的仓库",
+
+                "Developer settings": "开发者设置",
+                    "OAuth Apps": "OAuth 应用程序",
+                    "Publisher Verification": "发布者验证",
+                "Account settings": "帐户设置",
+
+            // 组织资料 /organizations/<org-login>/settings/profile
                 "Organization profile": "基本资料",
                     "Profile picture": "我的头像",
                         "Upload new picture": "上传新头像",
                         "Note: To apply for a publisher verification your organization's profile picture should not be irrelevant, abusive or vulgar. It should not be a default image provided by GitHub.": "注意：需要申请发布者验证，您的组织的个人资料图片不应该是不相关的、辱骂性的或粗俗的。它不应该是由 GitHub 提供的默认图片。",
                     "Organization display name": "组织显示名称",
                     "Email (will be public)": "公开电子邮箱",
-                    "Description": "组织简介",
+                    "Description": "描述",
                     "URL": "网站",
                     "Twitter username": "Twitter 用户名",
-                    "Location": "地址",
-                        "Select a location": "选择地址",
-                        "Find a location...": "搜索地址...",
-                        "Clear Location": "清除地址",
-                    "Billing email": "帐单电子邮箱",
+                    "Location": "位置",
+                        "Select a location": "选择位置",
+                        "Find a location...": "搜索位置...",
+                        "Clear Location": "清除位置",
+                    "Billing email": "账单电子邮箱",
                     "(Private)": "（私人）",
-                        "Add more billing email recipients in the":"添加更多的帐单邮件收件人在",
+                        "Add more billing email recipients in the":"添加更多的账单邮件收件人在",
                         "billing page": "账单页面",
                     "Gravatar email": "Gravatar 电子邮箱",
                     "Sponsors update email": "赞助者更新电子邮箱",
@@ -7456,27 +8159,28 @@ I18N.zh = {
 
                        "Are you sure you want to delete this?": "您确定要删除吗？",
                        "Deleting the": "删除",
-                       "organization will delete all of its repositories.": "组织，将会删除其所有仓库。",
+                       "organization will delete all of its repositories. The": "组织，将会删除其所有仓库。",
+                       "username will be unavailable for 90 days.": "用户名将在 90 天内不可用。",
                        "Before proceeding, please be sure to review the": "在继续之前，请务必查看",
                        "regarding account deletion.": "关于帐户删除。",
                        "Enter this organization’s name to confirm": "请输入组织的名称，进行确认",
                        "Cancel plan and delete the organization": "取消计划并删除此组织",
 
-            // Billing & plans 计费 & 计划 /organizations/<org-login>/settings/billing
-                // "Personal billing": "个人帐单",
-                "Current monthly bill": "当前月度帐单",
-                "Switch to yearly billing": "转为按年计费",
-                "Next payment due": "下一次到期的付款",
-                "View payment history": "查看付款记录",
+            // 账单和计划 /organizations/<org-login>/settings/billing
+                // "Personal billing": "个人账单",
+                "Current monthly bill": "当前月度账单",
+                "Switch to yearly billing and save": "切换到按年计费并保存",
+                "Next payment due": "下一次到期的支付",
+                "View payment history": "查看支付记录",
                 "Payment information": "支付信息",
-                "Update payment method": "更新付款方式",
+                "Update payment method": "更新支付方式",
                 "Manage spending limit": "管理支出限额",
                 "Redeem coupon": "兑换优惠券",
                 "Current plan": "当前计划",
                 "Compare all plans": "比较所有计划",
                 //"GitHub Free": "GitHub 免费",
                 "The basics for organizations and developers": "组织和开发者的基本计划",
-                "Unlimited public/private repos": "无限的公共/私人仓库",
+                "Unlimited public/private repos": "无限的公共/私有仓库",
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
@@ -7493,92 +8197,209 @@ I18N.zh = {
                 // "Cancel plan": "取消计划",
                 // "Do you have any questions? Contact": "对话框您有任何问题吗？请联系",
 
-                "Billing management": "帐单管理",
+                "Billing management": "账单管理",
                 "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
-                "Billing managers": "帐单管理员",
-                    "You have not invited any billing managers": "您尚未邀请任何帐单管理员",
+                "Billing managers": "账单管理员",
+                    "You have not invited any billing managers": "您尚未邀请任何账单管理员",
                     "Invite": "邀请",
                 "Email recipients": "邮件接收者",
                 "Add": "添加",
                 "Primary": "主账户",
 
-                "Edit billing email address": "编辑帐单电子邮箱",
+                "Edit billing email address": "编辑账单电子邮箱",
                 "Billing primary email": "账单主账户邮箱",
                 "Update": "更新",
 
-                "Add billing recipient": "添加帐单接收者",
-                "Add billing recipient email": "添加帐单接收者邮箱",
+                "Add billing recipient": "添加账单接收者",
+                "Add billing recipient email": "添加账单接收者邮箱",
 
-                // "Billing overview": "财务信息",
-                // "Plan": "方案",
-                // "Free": "免费",
-                // "Change plan": "修改计划",
-                // "Cancel plan": "取消计划",
-                // "per month for": "每月 -",
-                // "Learn more about Git LFS": "什么是 Git LFS (大文件存储)？",
-                // "Purchase more": "购买更多",
-                // "Billing cycle": "结算周期",
-                // "Bandwidth": "带宽",
-                // "Bandwidth quota resets every billing cycle": "带宽配额每个周期重置",
-                // "Storage": "存储",
-                // "Payment": "支付方式",
-                // "No payment method on file.": "没有设置支付方式",
-                // "Add payment method": "添加支付方式",
-                // "Payment history": "支付记录",
-                // "Amounts shown in USD": "以美元显示",
+            // 支付信息 /organizations/<org-login>/settings/billing/payment_information
+                "Billing & plans": "账单和计划",
+                "/ Payment information": "/ 支付信息",
 
-            // '/organizations/<org-login>/billing_managers/new'
-                "/ Add a billing manager": "/ 添加帐单管理员",
+                // "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
 
-            // Security & analysis 安全 & 分析 /organizations/<org-login>/settings/security_analysis
-                "Configure security and analysis features": "配置安全和分析功能",
-                "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your organization's repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您组织的仓库执行只读分析的权限。",
-                "Disable all": "禁用全部",
-                "Enable all": "启用全部",
-                "Dependency graph": "依赖关系图",
-                "Understand your dependencies.": "了解您的依赖项。",
-                "Automatically enable for new private repositories": "为新私有仓库自动启用",
-                "Dependabot alerts": "Dependabot 警报",
-                "Be alerted when a new vulnerability is found in one of your dependencies.": "在您的依赖项中发现新漏洞时收到警报。",
-                "Automatically enable for new repositories": "为新仓库自动启用",
-                "Dependabot security updates": "Dependabot 安全更新",
-                "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
+                // "Billing Information": "账单信息",
+                // "First name": "名字",
+                // "Last name": "姓氏",
+                // "Address": "地址",
+                // "City": "城市",
+                // "Postal/Zip code": "邮政编码",
+                // "Country/Region": "国家/地区",
+                //     "Choose your country": "选择您所在的国家/地区",
+                // "State/Province": "州/省",
 
-            // Audit log 审计日志 /organizations/<org-login>/settings/audit-log
-                "Filters": "过滤",
-                "Search audit log": "搜索审计日志",
-                "Export Git Events": "导出 Git 事件",
-                "Export": "导出",
-                "Recent events": "最近的事件",
+                "Payment method": "支付方式",
+                "You have not added a payment method.": "您尚未添加支付方式。",
+                // "Add Information": "添加信息",
 
-            // Sponsorship log 赞助日志 /organizations/<org-login>/settings/sponsors-log
-                "Sponsors log": "赞助日志",
-                "New sponsorships, changes, and cancellations": "新的赞助、更改和取消",
-                "Period:": "周期：",
-                    "Filter activity": "过滤活动",
-                    "All-time": "所有时间",
-                    "Past Day": "过去一天",
-                    "Past Week": "过去一周",
-                    "Past Month": "过去一月",
-                    "Past Year": "过去一年",
-                "No sponsorship activity in this time period": "这段时间没有赞助活动",
-                // "This is where you can review activity from your sponsorships.": "您可以在此处查看您的赞助活动。",
-                // This is where you can review activity from inuyasha-maboloshi's sponsorships.
+                "Last payment": "最后一次支付",
+                "You have not made any payments.": "您尚未支付任何款项。",
 
-            // 删除的仓库 /organizations/<org-login>/settings/deleted_repositories
-                "Deleted Repositories": "删除的仓库",
-                // No recoverable repositories were found for maboloshi-inuyasha.
-                "It may take up to an hour for repositories to be displayed here. You can only restore repositories that have no forks or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复没有复刻或没有被复刻的仓库。",
+                "Coupon": "优惠劵",
+                "You don’t have an active coupon.": "您没有有效的优惠券。",
+                "Redeem a coupon": "兑换优惠券",
 
-            // Packages 软件包 /organizations/<org-login>/settings/packages
-                "Deleted Packages": "删除软件包",
-                "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。",
-                "Search deleted packages": "搜索已删除的软件包",
+                "Extra Information": "额外信息",
+                    "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
+                "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
+                "Add information": "添加信息",
 
-            // 安装的 GitHub 应用 /organizations/<org-login>/settings/installations
-                // "Installed GitHub Apps": "安装的 GitHub 应用",
-                "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
-                "Configure": "配置",
+                // 对话框
+                "Extra billing information": "额外的账单信息",
+                "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
+                "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
+                "Full business name or address of record": "企业全称或记录地址",
+                "Save contact information": "保存联系信息",
+
+            // 支付方式 /organizations/<org-login>/settings/billing/payment
+                "/ Payment method": "/ 支付方式",
+                "Loading payment information…": "正在加载支付信息…",
+                "Pay with": "支付方式：",
+                    "Credit card": "信用卡",
+                        "Card Number": "卡号",
+                        "Expiration Date": "终止日期",
+                            "- Select One -": "- 选择一个 -",
+                        "Address 1": "地址 1",
+                        "Address 2": "地址 2",
+                        "Country": "国家/地区",
+                        "City": "城市",
+                        "State": "州/省",
+                        "Postal Code": "邮政编码",
+                        "Submit": "提交",
+                    "PayPal account": "PayPal 帐户",
+                        "Sign in to": "登录到",
+                        "Connecting to PayPal…": "正在连接到 PayPal…",
+                "Back to billing settings": "返回账单设置",
+                "There are no upcoming charges to your account.": "您的帐户没有即将发生的费用。",
+
+            // 支出限额 /organizations/<org-login>/settings/billing/spending_limit
+                "/ Monthly spending limit": "/ 每月支付限额",
+                "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
+                "Actions spending limits": "操作支付限额",
+                "Packages spending limits": "软件包支付限额",
+
+                "Payment method is missing": "缺失支付方式",
+                "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
+                "Add payment method": "添加支付方式",
+
+                "Limit spending": "限制支出",
+                    "Set up a spending limit on a monthly basis": "设置每月支出限额",
+                    "Update limit": "更新限额",
+                    // [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
+                "Unlimited spending": "不限制支出",
+                    "Pay as much as needed to keep Actions & Packages running": "按需支付，以保持操作和软件包的运行",
+
+                "Email alerts": "电子邮件提醒",
+                "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "当使用率达到 75%、90% 和 100% 的阈值时，会收到电子邮件通知。",
+                "Included resources alerts": "包含资源提醒",
+                "Spending limit alerts": "支出限额提醒",
+
+            // 账单历史 /organizations/<org-login>/billing/history
+                "/ Payment history": "/ 支付历史",
+                "Amounts shown in USD": "以美元显示的金额",
+
+            // 成员权限 /organizations/<org-login>/settings/member_privileges
+                "Member repository permissions": "成员仓库权限",
+                "Base permissions": "基本权限",
+                "Base permissions to the organization’s repositories apply to all members and excludes outside collaborators. Since organization members can have permissions from multiple sources, members and collaborators who have been granted a higher level of access than the base permissions will retain their higher permission privileges.": "组织仓库的基本权限适用于所有成员，不包括外部协作者。由于组织成员可以拥有多个来源的权限，已经被授予比基本权限更高的访问级别的成员和协作者将保留他们更高的权限。",
+
+                "Organization member permissions": "组织成员的权限",
+                    "No permission": "无权限",
+                        "Members will only be able to clone and pull public repositories. To give a member additional access, you’ll need to add them to teams or make them collaborators on individual repositories.": "成员只能克隆和拉取公共仓库。要为成员提供额外的访问权限，您需要将他们添加到团队中，或者让他们成为单个仓库的协作者。",
+                        // 对话框
+                            "Change base permission to \"No permission\"": "将基本权限更改为 “无权限”",
+                            "You are about to change the base repository permission for this organization.": "您即将更改此组织仓库的基本权限。",
+                            // [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"],
+                    "Read": "只读",
+                        "Members will be able to clone and pull all repositories.": "成员将能够克隆和拉取所有仓库。",
+                        // 对话框
+                            "Change base permission to \"Read\"": "将基本权限更改为 “只读”",
+                    "Write": "可写",
+                        "Members will be able to clone, pull, and push all repositories.": "成员将能够克隆、拉取和推送所有仓库。",
+                        // 对话框
+                            "Change base permission to \"Write\"": "将基本权限更改为 “可写”",
+                    "Admin": "管理员",
+                        "Members will be able to clone, pull, push, and add new collaborators to all repositories.": "成员将能够克隆、拉取、推送和向所有仓库添加新的协作者。",
+                        // 对话框
+                            "Change base permission to \"Admin\"": "将基本权限更改为 “管理员”",
+                    // 顶部提醒
+                        "Base repository permission removed.": "基本仓库权限已被删除。",
+                        "Base repository permission updated to \"Read\".": "基本仓库权限已更新为 “只读” 。",
+                        "Base repository permission updated to \"Write\".": "基本仓库权限已更新为 “可写” 。",
+                        "Base repository permission updated to \"Admin\".": "基本仓库权限已更新为 “管理员” 。",
+
+                    "Repository creation": "仓库创建",
+                        "Members will be able to create only selected repository types. Outside collaborators can never create repositories.": "成员将只能创建选定类型的仓库。外部协作者永远不能创建仓库。",
+                        "Public": "公共",
+                            "Members will be able to create public repositories, visible to anyone.": "成员将能够创建任何人都可见的公共仓库。",
+                            "Why is this option disabled?": "为什么该选项被禁用？",
+                        "Private": "私有",
+                            "Members will be able to create private repositories, visible to organization members with permission.": "成员将能够创建私有仓库，对有权限的组织成员可见。",
+                    // 顶部提醒
+                        "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+
+                        "Repository forking": "仓库复刻",
+                            "Allow forking of private repositories": "允许复刻私有仓库",
+                            "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果启用，则私有和公共仓库都允许复刻。如果禁用，则只允许复刻公共仓库。此设置也可以在每个仓库中进行配置。",
+                    // 顶部提醒
+                        "Repository forking setting updated!": "仓库复刻设置已经更新!",
+
+                    "Pages creation": "页面创建",
+                        "Members will be able to publish sites with only the selected access controls.": "成员将能够发布仅只有选定的访问控制的站点。",
+                        // "Public": "公共",
+                            "Members will be able to create public sites, visible to anyone.": "成员将能够创建任何人都可见的公共站点。",
+                        // "Private": "私有",
+                            "Members will be able to create private sites, visible to anyone with permission.": "成员将能够创建私有站点，对任何有权限的人可见。",
+                    "Admin repository permissions": "管理员仓库权限",
+                        "Repository visibility change": "仓库可见性更改",
+                            "Allow members to change repository visibilities for this organization": "允许成员更改此组织的仓库可见性",
+                            "If enabled, members with admin permissions for the repository will be able to change its visibility. If disabled, only organization owners can change repository visibilities.": "如果启用，对仓库有管理权限的成员将能够更改其可见性。如果禁用，只有组织所有者可以更改仓库的可见性。",
+                        // 顶部提醒
+                            "Members can now change repository visibility.": "成员现在可以更改仓库可见性。",
+                            "Members can no longer change repository visibility.": "成员不能再更改仓库可见性。",
+
+                        "Repository deletion and transfer": "仓库的删除和转让",
+                            "Allow members to delete or transfer repositories for this organization": "允许成员删除或转让此组织的仓库",
+                            "If enabled, members with admin permissions for the repository will be able to delete or transfer": "如果启用，对仓库有管理权限的成员将能够删除或转让",
+                            "public": "公共",
+                            "private": "私有",
+                            "repositories. If disabled, only organization owners can delete or transfer repositories.": "仓库。如果禁用，只有组织所有者可以删除或转让仓库。",
+                        // 顶部提醒
+                            "Members can now delete or transfer repositories.": "成员现在可以删除或转让仓库。",
+                            "Members can no longer delete or transfer repositories.": "成员不能再删除或转让仓库。",
+
+                        "Issue deletion": "议题删除",
+                            "Allow repository administrators to delete issues for this organization": "允许仓库管理员删除此组织的议题",
+                            "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
+                        // 顶部提醒
+                            "Members can now delete issues.": "成员现在可以删除议题。",
+                            "Members can no longer delete issues.": "成员不能再删除议题。",
+
+                    "Repository discussions": "仓库讨论",
+                        "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
+                        // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
+                        "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
+                    // 顶部提醒
+                        "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
+                        "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
+
+                    "Member team permissions": "成员团队权限",
+                        "Team creation rules": "团队创建规则",
+                            "Allow members to create teams": "允许成员创建团队",
+                            "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
+                        // 顶部提醒
+                            "Members can now create teams.": "成员现在可以创建团队。",
+                            "Members can no longer create teams.": "成员不能再创建团队。",
+
+            // 团队讨论 /organizations/<org-login>/settings/teams
+                "Team discussions provide a place for a team to have conversations that span across projects or repositories and that don’t belong in an issue or a pull request.": "团队讨论为团队提供了一个进行跨项目或仓库，且不属于议题或拉取请求的对话的场所。",
+                "Enable team discussions for this organization": "为此组织启用团队讨论",
+                    "This allows members to start discussions in any team in the": "这允许成员在任何团队中开始讨论，在",
+                "organization.": "组织中。",
+                // 顶部提醒
+                    "Team discussions enabled for this organization.": "该组织启用了团队讨论。",
+                    "Team discussions disabled for this organization.": "该组织禁用了团队讨论。",
 
             // Blocked users 黑名单 /organizations/<org-login>/settings/user_blocks
                 "Block a user": "拉黑用户",
@@ -7627,10 +8448,674 @@ I18N.zh = {
                 // 顶部提醒
                 "User interaction limit settings saved.": "用户交互限制设置已保存。",
 
+            // 代码审查限制 /organizations/<org-login>/settings/code_review_limits
+                "Restrict users who are permitted to approve or request changes on pull requests in public repositories within this organization.": "限制该组织内允许批准或请求更改公共仓库中拉取请求的用户。",
+                "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查的限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直到取消设置。",
+                "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
+                "Limit reviews on all repositories": "限制对所有仓库的审查",
+                "Remove review limits from all repositories": "取消对所有仓库的审查限制",
+
+            // 仓库默认分支 /organizations/<org-login>/settings/repository-defaults
+                "Repository default branch": "仓库默认分支",
+                    "Choose the default branch for new repositories in this organization. You might want to change the default name due to different workflows, or because your integrations still require “master” as the default branch name. You can always change the default branch name on individual repositories.": "为该组织中的新仓库选择默认的分支。由于工作流程的不同，或者由于您的集成仍然需要 “master” 作为默认分支名，您可能想改变默认名称。您可以随时改变单个仓库的默认分支名称。",
+                    "Learn more about default branches.": "了解更多关于默认分支的信息。",
+                // "Update": "更新",
+                "Updating…": "更新中…",
+                // 顶部提醒
+                    // [/New repositories created in ([^ ]+) will use main as their default branch./, "在 $1 中创建的新仓库将使用 main 作为其默认分支。"],
+
+                "Repository labels": "仓库标签",
+                    "Set the labels that will be included when a new repository is created in this organization.": "设置在此组织中创建新的仓库时将包含的标签。",
+                    "Learn more about managing default labels for your organization.": "了解更多关于为您的组织管理默认标签的信息。",
+                "New label": "新建标签",
+                    "Label preview": "标签预览",
+                    "Label name": "标签名",
+                    "Description (optional)": "描述（可选）",
+                    "Color": "颜色",
+                        "Get a new color": "获得新颜色",
+                        "Choose from default colors:": "从默认颜色中选择：",
+                    "Create label": "创建标签",
+                    "Saving...": "保存中...",
+                    "Save changes": "保存更改",
+                // 删除提醒
+                "Are you sure? Deleting a label will remove as a default, and no future repositories will receive this label when created.": "您确定吗？删除标签将作为默认值删除，以后的仓库在创建时不会收到此标签。",
+
+                "label": "个标签",
+                "labels": "个标签",
+                "bug": "臭虫",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+            // 仓库主题 /orgs/<org-login>/topics
+                "No repositories": "尚无仓库",
+
+            // '/organizations/<org-login>/billing_managers/new'
+                "Billing": "账单",
+                "/ Add a billing manager": "/ 添加账单管理员",
+                "A": "",
+                "billing manager": "账单管理员",
+                "is a user who manages the billing settings of your organization.": "是管理您组织的账单设置的用户。",
+                "have the ability to:": "具备以下能力：",
+                    "Change the billing plan": "更改账单计划",
+                    "Add, update, or remove payment methods": "添加、更新或删除支付方式",
+                    // "": "查看支付记录",
+                    "Download, and receive receipts": "下载并接收收据",
+                    "View a list of billing managers": "查看帐单管理员列表",
+                    "Invite additional billing managers": "邀请其他账单管理员",
+                    "Remove other existing billing managers": "移除其他现有的账单管理员",
+                    "Start, modify, or cancel sponsorships": "开始、修改或取消赞助",
+                "be able to:": "能够：",
+                    "Create or access repositories in your organization": "在您的组织中创建或访问仓库",
+                    "See private members of your organization": "查看您组织的私人成员",
+                    "Be seen in the list of organization members": "在组织成员列表中可见",
+                    "Use the organization’s payment method": "使用组织的支付方式",
+                    "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
+                "Search people": "搜索成员",
+                "Send invitation": "发送邀请",
+
+            // 操作页面 /organizations/<org-login>/settings/actions
+                "Actions permissions": "操作权限",
+
+                "Policies": "政策",
+                    "Choose which repositories are permitted to use GitHub Actions.": "选择允许哪些仓库使用 GitHub Actions。",
+                    "All repositories": "所有仓库",
+                        "Actions can be run by any repository in the organization": "操作可以由组织中的任何仓库运行",
+                    "Selected repositories": "选定的仓库",
+                        "Actions can only be run by specifically selected repositories": "操作只能由特定选择的仓库运行",
+                        // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+                        // 对话框
+                            "Select the organization repositories that may use Actions.": "选择可以使用操作的组织仓库。",
+                            "Filter repositories": "筛选仓库",
+                            "No repositories found.": "未找到仓库。",
+                            "Select repositories": "选定仓库",
+                    "Disabled": "禁用",
+                        "GitHub Actions is disabled for all repositories in the organization": "对组织中的所有仓库禁用 GitHub Actions",
+
+                    "Allow all actions": "允许所有操作",
+                        "Any action can be used, regardless of who authored it or where it is defined.": "可以使用任何操作，而不管它是谁创作的或在哪里定义的。",
+                    "Allow local actions only": "仅允许本地操作",
+                        // [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
+                    "Allow select actions": "允许选择操作",
+                        // [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
+                        "Learn more about allowing specific actions to run.": "了解更多关于允许运行特定操作的信息。",
+                        "Allow actions created by GitHub": "允许由 GitHub 创建的操作",
+                        "Allow Marketplace actions by": "允许市场操作，",
+                        "verified creators": "由经验证的创建者创建",
+                        "Allow specified actions": "允许指定的操作",
+                        "Applies to": "适用于",
+                        "repositories only": "仓库，仅仅",
+                            "Workflows using these actions in private repositories will fail.": "在私有仓库中使用这些操作的工作流程将失败。",
+                            "Using a list of specific actions is only supported for public repositories on your current GitHub plan. To have this list apply to private repositories,": "只有当前 GitHub 计划中的公共仓库才支持使用特定操作列表。要将此列表应用于私有仓库，",
+                            "upgrade your plan": "升级您的计划",
+                        "Enter a comma-separated list of actions": "输入以逗号分隔的操作列表",
+                        "Wildcards, tags, and SHAs are allowed. Examples:": "允许使用通配符、标签和 SHA。例如：",
+
+                "Artifact and log retention": "工件和日志保留",
+                    "This is the default duration that repositories will retain all artifacts and logs.": "这是仓库保留所有工件和日志的默认期限。",
+                    "days": "天",
+
+                "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
+                    "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
+                    "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行审批",
+                        "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 帐户的首次贡献者才需要获得批准才能运行工作流程。",
+                    "Require approval for first-time contributors": "要求对首次贡献者进行审批",
+                        "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流程。",
+                    "Require approval for all outside collaborators": "要求对所有外部协作者进行审批",
+                        "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流程。",
+
+                "Fork pull request workflows in private repositories": "私有仓库的复刻拉取请求工作流程",
+                    "These settings apply to private repositories. Repository administrators will only be able to change the settings that are enabled here.": "这些设置适用于私有仓库。仓库管理员只能改变这里启用的设置。",
+                    "Run workflows from fork pull requests": "从复刻拉取请求运行工作流程",
+                        "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "这告诉 Actions 运行工作流程，来自仓库复刻的拉取请求。请注意，这样做将使这些复刻的维护者有能力在源码库上使用具有读取权限的令牌。",
+                        "Send write tokens to workflows from fork pull requests.": "从复刻拉取请求，发送可写令牌到工作流程",
+                            "This tells Actions to send tokens with": "这告诉 Actions 发送令牌",
+                            "write": "写入",
+                            "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "权限到工作流程，来自仓库复刻的拉取请求。请注意，这样做将授予这些复刻的维护者",
+                            "permissions against the source repository.": "权限，针对源仓库。",
+                        "Send secrets to workflows from fork pull requests.": "从复刻拉取请求，发送机密到工作流程",
+                            "This tells Actions to send repository secrets to workflows from pull requests originating from repository forks.": "这告诉 Actions 发送仓库机密到工作流程，来自仓库复刻的拉取请求。",
+
+                "Workflow permissions": "工作流程权限",
+                    "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this organization. You can specify more granular permissions in the workflow using YAML.": "在组织中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+                    "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
+                        "Read and write permissions": "读取和写入权限",
+                            "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
+                        "Read repository contents permission": "只读权限",
+                            "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                        "Allow GitHub Actions to approve pull requests": "允许 GitHub Actions 批准拉取请求",
+                            "This controls whether GitHub Actions can submit approving pull request reviews.": "这控制 GitHub Actions 是否可以提交批准的拉取请求审查。",
+
+            // 运行器页面 /organizations/<org-login>/settings/actions/runners
+                "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows. Runners added to this organization can be used to process jobs in multiple repositories in your organization.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。添加到该组织的运行器可以用来处理您的组织中的多个仓库的工作。",
+                "Learn more about self-hosted runners": "了解更多关于自托管运行器的信息",
+
+                "Search runners": "搜索运行器",
+                "New runner": "创建运行器",
+
+                "There are no runners configured": "暂无设置运行器",
+                "Learn more about using runners": "了解更多关于使用运行器的信息",
+                "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
+
+            // 创建运行器页面 /organizations/<org-login>/settings/actions/runners/new
+                "/ Create self-hosted runner": "/ 创建自托管运行器",
+                "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。下载并配置 GitHub Actions 运行器 后，您同意",
+                    "GitHub Terms of Service": "GitHub 服务条款",
+                    "GitHub Corporate Terms of Service": "GitHub 企业服务条款",
+                    ", as applicable.": "，如适用。",
+                "Runner image": "运行器镜像",
+                "Architecture": "架构",
+                "Download": "下载",
+                "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我们建议在 “\\actions-runner” 下配置运行器。这将有助于避免与 Windows 上的服务标识文件夹权限和长路径限制相关的议题。",
+                "Using your self-hosted runner": "使用您的自托管运行器",
+                "For additional details about configuring, running, or shutting down the runner, please check out our": "关于配置、运行或关闭运行器的其他细节，请查看我们的",
+                "product docs": "产品文档",
+
+            // 运行器组 /organizations/<org-login>/settings/actions/runner-groups
+                "Control access to your runners by specifying the repositories that are able to use your shared organization runners. Upgrade to an Enterprise plan to create groups.": "通过指定能够使用您的共享组织运行器的仓库来控制对运行器的访问。升级到企业计划以创建组。",
+                "New runner group": "创建运行器组",
+
+                "Group": "组",
+                "Default": "默认",
+                    "This group cannot be deleted and new runners will be automatically assigned to this group if no other group is specified.": "该组不能被删除，如果没有指定其他组，新的运行器将被自动分配到该组。",
+                    "All repositories, excluding public repositories": "所有仓库，不包括公共仓库",
+
+            // Web 钩子 /organizations/<org-login>/settings/hooks 同仓库 Web 钩子 页面 /<user-name>/<repo-name>/settings/hooks====================================
+                "Add webhook": "添加 Web 钩子",
+                "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
+                "Webhooks Guide": "Web 钩子指南",
+
+                // 删除对话框
+                    "Delete webhook?": "删除 Web 钩子？",
+                    "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
+                    "Yes, delete webhook": "是的，删除 Web 钩子",
+
+           // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
+                "Webhooks /": "Web 钩子 /",
+                "We’ll send a": "我们将",
+                "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
+                "etc": "等",
+                "). More information can be found in": "）。更多信息可以在",
+                "our developer documentation": "开发人员文档",
+
+                "Payload URL": "有效负载 URL",
+                "Content type": "内容类型",
+                "Secret": "密钥",
+                    "Leave blank to remove secret": "留空以删除密钥",
+
+                "SSL verification": "SSL 验证",
+                "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
+                "Enable SSL verification": "启用 SSL 验证",
+                "Disable": "禁用",
+                "(not recommended)": "（不推荐）",
+                    "Are you sure?": "您确定吗？",
+                    "Warning": "警告",
+                    ": Disabling SSL verification has serious implications.": "：禁用 SSL 验证具有严重的影响。",
+                    "SSL verification helps ensure that hook payloads are delivered to your URL endpoint securely, keeping your data away from prying eyes. Disabling this option is": "SSL 验证有助于确保钩子有效负载安全地传送到您的 URL 端点，使您的数据远离窥探。禁用此选项是",
+                    "not recommended": "不推荐的",
+                    "Disable, I understand my webhooks may not be secure": "禁用，我明白我的 web 钩子可能不安全",
+
+                "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
+                    "Just the": "仅",
+                    "push": "推送",
+                    "event.": "事件。",
+                    "Send me": "发送给我",
+                    "everything": "所有",
+                    "Let me select individual events.": "让我选择单个事件。",
+                        "Branch or tag creation": "分支或标签创建",
+                            "Branch or tag created.": "分支或标签的创建。",
+                        "Branch or tag deletion": "分支或标签删除",
+                            "Branch or tag deleted.": "分支或标签的删除。",
+                        "Branch protection rules": "分支保护规则",
+                            "Branch protection rule created, deleted or edited.": "分支保护规则的创建、删除或编辑。",
+                        "Check runs": "检查运行",
+                            "Check run is created, requested, rerequested, or completed.": "检查运行的创建、请求、重新请求或完成。",
+                        "Check suites": "检查套件",
+                            "Check suite is requested, rerequested, or completed.": "检查套件的请求、重新请求或已完成。",
+                        "Code scanning alerts": "代码扫描警报",
+                            "Code Scanning alert created, fixed in branch, or closed": "代码扫描警报的创建、在分支中的修复或关闭",
+                        "Collaborator add, remove, or changed": "协作者的添加、删除或更改",
+                            "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
+                        "Commit comments": "提交评论",
+                            "Commit or diff commented on.": "提交或差异评论。",
+                        "Deploy keys": "部署密钥",
+                            "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
+                        "Deployment statuses": "部署状态",
+                            "Deployment status updated from the API.": "从 API 更新的部署状态。",
+                        "Deployments": "部署",
+                            "Repository was deployed or a deployment was deleted.": "仓库的部署或删除部署。",
+                        "Discussion comments": "讨论评论",
+                            "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
+                        // "Discussion": "讨论",
+                            "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
+                        "Forks": "复刻",
+                            "Repository forked.": "仓库复刻。",
+                        "Issue comments": "发表评论",
+                            "Issue comment created, edited, or deleted.": "议题评论的创建、编辑或删除。",
+                        // "Issue": "议题",
+                            "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "议题的打开、编辑、删除、转移、钉住、取消钉住、关闭、重新打开、分配、未分配、标记、未标记、密闭、去密闭、锁定或解锁。",
+                        "Labels": "标签",
+                            "Label created, edited or deleted.": "标签的创建、编辑或删除。",
+                        "Memberships": "团队成员", // 组织设置
+                            "Team membership added or removed.": "添加或删除团队成员。",
+                        "Meta": "元数据",
+                            "This particular hook is deleted.": "这个特定的钩子被删除。",
+                        "Milestones": "里程碑",
+                        "Milestone created, closed, opened, edited, or deleted.": "里程碑的创建、关闭、打开、编辑或删除。",
+                        "Org blocks": "组织黑名单", // 组织设置
+                            "A user has been blocked or unblocked.": "用户拉黑或解除拉黑。",
+                        "Organizations": "组织", // 组织设置
+                            "Organization deleted, renamed, member invited, member added, or member removed.": "组织被删除、重命名、邀请成员、添加成员或删除成员。",
+                        // "Packages": "软件包",
+                            "GitHub Packages published or updated in a repository.": "在仓库中 GitHub 软件包的发布或更新 。",
+                        "Page builds": "页面构建",
+                            "Pages site built.": "页面站点建成。",
+                        "Project cards": "项目卡",
+                            "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
+                        "Project columns": "项目栏目",
+                            "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
+                        // "": "项目",
+                            "Project created, updated, or deleted.": "项目的创建、更新或删除。",
+                        "Pull request review comments": "拉取请求的审查评论",
+                            "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
+                        "Pull request review threads": "拉取请求的审查线程",
+                            "A pull request review thread was resolved or unresolved.": "拉取请求审查线程的解决或未解决。",
+                        "Pull request reviews": "拉取请求审查",
+                            "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或忽略。",
+                        // "": "拉取请求",
+                            "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
+                        "Pushes": "推送",
+                            "Git push to a repository.": "Git 推送到仓库。",
+                        "Registry packages": "注册软件包",
+                            "Registry package published or updated in a repository.": "注册软件包的发布或更新。",
+                        "Releases": "发行版",
+                            "Release created, edited, published, unpublished, or deleted.": "发行版的创建、编辑、发布、取消发布或删除。",
+                        // "": "仓库",
+                            "Repository created, deleted, archived, unarchived, publicized, privatized, edited, renamed, or transferred.": "仓库的创建、删除、存档、取消存档、公开、私有化、编辑、重命名或转让。",
+                        "Repository imports": "仓库导入",
+                            "Repository import succeeded, failed, or cancelled.": "仓库导入的成功、失败或取消。",
+                        "Repository vulnerability alerts": "仓库漏洞警报",
+                            "Dependabot alert (aka dependency vulnerability alert) created, resolved, or dismissed on a repository.": "Dependabot 警报（又名依赖漏洞警报）在仓库上的创建、解决或解除。",
+                        "Secret scanning alerts": "密钥扫描警报",
+                            "Secrets scanning alert created, resolved, or reopened": "密钥扫描警报的创建、解决或重新打开",
+                        // "": "星标",
+                            "A star is created or deleted from a repository.": "从仓库中创建或删除星标。",
+                        "Statuses": "状态",
+                            "Commit status updated from the API.": "从 API 更新的提交状态。",
+                        "Team adds": "团队添加",
+                            "Team added or modified on a repository.": "在仓库上添加或修改的团队。",
+                        "Teams": "团队",  // 组织设置
+                            "Team is created, deleted, edited, or added to/removed from a repository.": "团队被创建、删除、编辑或添加到仓库/从仓库中删除。",
+                        "Visibility changes": "可见性变化",
+                            "Repository changes from private to public.": "仓库从私有更改为公共。",
+                        "Watches": "关注",
+                            "User stars a repository.": "用户给一个仓库加星标。",
+                        "Wiki": "",
+                            "Wiki page updated.": "Wiki 页面的更新。",
+                        "Workflow jobs": "工作流程的工作",
+                            "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
+                        "Workflow runs": "工作流程的运行",
+                            "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
+                    "Active": "激活",
+                    "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
+
+                // 顶部提醒
+                "Okay, that hook was successfully created. We sent a ping payload to test it out! Read more about it at https://docs.github.com/webhooks/#ping-event.": "好的，这个钩子已经成功创建。我们发送了一个 ping 负载来测试它! 阅读更多关于它的信息，请访问 https://docs.github.com/webhooks/#ping-event。",
+
+            // 管理 钩子 /<user-name>/<repo-name>/settings/hooks/<id>
+                "Manage webhook": "管理 Web 钩子",
+                "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此密钥，则可以更改它，但请注意，使用此密钥的任何集成都需要更新。 —",
+                "Change Secret": "更改密钥",
+                "Update webhook": "更新 Web 钩子",
+                // 顶部提醒
+                    "Okay, the hook was successfully updated.": "好的，Web 钩子已经成功更新。",
+                "Delete webhook": "删除 Web 钩子",
+
+            //  /<user-name>/<repo-name>/settings/hooks/<id>/deliveries
+                "Recent Deliveries": "最近交付",
+                    "redelivery": "再交付",
+                "Request": "请求",
+                "Response": "应答",
+                "Redeliver": "重新交付",
+                    "Redeliver payload?": "重新交付有效负载？",
+                    "The payload will be delivered to": "该有效负载将被发送到",
+                    "using the current webhook configuration.": "使用当前的 Web 钩子 配置。",
+                    "Yes, redeliver this payload": "是的，重新发送此有效负载",
+
+                // [/Completed in (\d+) seconds./, "在 (\d+) 秒内完成。"],
+
+            // Packages 软件包 /organizations/<org-login>/settings/packages
+                "Packages permissions": "软件包权限",
+                "Container Creation": "容器创建",
+                "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
+                // "": "公共",
+                    "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
+                // "": "私有",
+                    "Members will be able to create private packages, visible to organization members with permission.": "成员将能够创建私有包，对具有权限的组织成员可见。",
+                "Internal": "内部",
+                    "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
+
+                "Deleted Packages": "删除软件包",
+                "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。",
+                "Search deleted packages": "搜索已删除的软件包",
+
+            // 组织 GitHub Pages /organizations/<org-login>/settings/pages 同个人设置 GitHub Pages https://github.com/settings/pages
+                "Verified domains": "经验证的域名",
+                "Add a domain": "添加域名",
+                "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
+                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
+
+            // 组织 GitHub Pages - 添加域名 /organizations/<org-login>/settings/pages_verified_domains/new 同个人设置 GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
+                "Add a verified domain": "经验证的域名",
+                "What domain would you like to add?": "您想添加什么域名？",
+                "Add domain": "添加域名",
+
+            // 项目 /organizations/<org-login>/settings/projects
+                "Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目板可以帮助您组织和安排工作的优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目板。",
+                "Enable projects for the organization": "启用项目，为组织",
+                    "This allows members to create projects for the": "允许成员创建项目，为",
+                    "organization. You can add issues from any": "组织。您可添加议题，为",
+                    "-owned repository. This does not affect projects in": "组织拥有的仓库。这并不影响",
+                    "-owned repositories in any way.": "组织拥有的仓库，以任何方式。",
+                "Enable projects for all repositories": "启用项目，为所有仓库",
+                    "This allows members to create projects in all repositories in the": "这允许成员在所有仓库中创建项目，在",
+                    "organization. This affects every project at the repository level in the": "组织中。这会影响仓库级别的每个项目，在",
+                    "organization. You can still disable projects for a specific repository in repository settings.": "组织中。您仍然可以在仓库设置中禁用特定仓库的项目。",
+                "Organization project permissions": "组织项目权限",
+                "Permissions can be managed in the project’s settings on a per-project basis.": "可以在每个项目的项目设置中管理权限。",
+                "View all projects": "查看所有项目",
+
+            // 身份验证安全  /organizations/<org-login>/settings/security
+                "Two-factor authentication": "双重身份验证",
+                "Requiring an additional authentication method adds another level of security for your organization.": "要求额外的身份验证方法为您的组织增加了另一个级别的安全性。",
+                // [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
+                "Members, billing managers, and outside collaborators who do not have two-factor authentication enabled for their personal account will be removed from the organization and will receive an email notifying them about the change.": "未为其个人帐户启用双重身份验证的成员、账单管理员和外部协作者将从组织中删除，并会收到一封电子邮件，通知他们有关更改。",
+
+                // 顶部提醒
+                    "Enabling two-factor authentication requirement.": "启用双重身份验证。",
+                    "Disabled two-factor authentication requirement.": "禁用双重身份验证。",
+
+                "SSH Certificate Authorities": "SSH 证书颁发机构",
+                "Provide SSH certificates that members can use to access your resources with Git": "提供 SSH 证书，成员可以用 Git 来访问您的资源",
+                "Try risk-free for 30 days": "无风险试用 30 天",
+                "learn more": "了解更多",
+                ", or": "，或",
+                "dismiss this message.": "忽略此消息。",
+
+                "IP allow list": "IP 白名单",
+                "An IP allow list lets your organization limit access based on the IP address a person is accessing from.": "IP  白名单可让您的组织根据成员访问的 IP 地址来限制访问。",
+                "Restrict access to your organization's assets by configuring a list of IP addresses that are allowed to connect": "通过配置 IP 白名单来限制对组织资产的访问",
+
+            // 代码安全性与分析 /organizations/<org-login>/settings/security_analysis
+                "Configure security and analysis features": "配置安全和分析功能",
+                "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your organization's repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您组织的仓库执行只读分析的权限。",
+
+                "Disable all": "禁用全部",
+                "Enable all": "启用全部",
+
+                "Dependency graph": "依赖关系图",
+                    "Understand your dependencies.": "了解您的依赖项。",
+                    "Automatically enable for new private repositories": "为新私有仓库自动启用",
+
+                    // 对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                    // [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
+                    "Enable by default for new private repositories": "默认为新私有仓库启用",
+
+                    "Enable dependency graph": "启用依赖关系图",
+                    // [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
+
+                "Dependabot alerts": "Dependabot 警报",
+                    "Be alerted when a new vulnerability is found in one of your dependencies.": "在您的依赖项中发现新漏洞时收到警报。",
+                    "Automatically enable for new repositories": "为新仓库自动启用",
+
+                    // 对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                        // [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
+                        "Enable by default for new repositories": "默认为新仓库启用",
+
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                        // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
+
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Easily upgrade to non-vulnerable dependencies.": "轻松升级到无漏洞的依赖项。",
+
+                    // 对话框
+                    "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
+                    // [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
+
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                    // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+
+                "Security managers": "安全管理员",
+                "Grant a team permission to manage security alerts and settings across your organization. This team will also be granted read access to all repositories.": "授予团队管理整个组织的安全警报和设置的权限。该团队还将被授予对所有仓库的读取权限。",
+                "Learn more about these security privileges": "了解更多关于这些安全特权的信息",
+                "Search for teams": "搜索团队",
+
+            // 经验证和批准的域名 /organizations/<org-login>/settings/domains
+                "Verified & approved domains": "经验证和批准的域名",
+                "You can verify the domains controlled by your organization to confirm your organization's identity on GitHub. A": "您可以验证组织控制的域，以确认组织在 GitHub 上的身份。一个",
+                "badge will be added to your organization's profile page if all of the domains displayed on your profile (e.g. public email or website URL) are verified. You may also approve a domain by first adding it to the list of eligible domains. Approved domains may be used for email notification routing to users with verified emails that do not belong to a domain that you can verify.": "的徽章，您的组织的资料页面上显示，则表明您的资料中显示的所有域名（例如公共电子邮箱地址或网站 URL）都经过验证。您也可以通过，首先将一个域名添加到合格的域名列表中来批准该域名。已批准的域名可用于通过电子邮件通知具有经过验证的邮箱地址的用户，这些电子邮箱地址不属于您可以验证的域名。",
+
+            // 操作机密 /organizations/<org-login>/settings/secrets/actions
+                "Actions secrets": "操作机密",
+                "New organization secret": "新建组织机密",
+                "Secrets are environment variables that are": "机密是环境变量",
+                "encrypted": "被加密",
+                ". Anyone with": "。任何对此仓库具有",
+                "collaborator": "协作者",
+                // "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
+                "access to the repositories with access to each secret can use it for Actions.": "访问权限的人都可以访问仓库的每个机密用于操作。",
+                "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
+
+                "Organization secrets cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密。",
+                "Please consider": "请考虑",
+                "upgrading your plan": "升级您的计划",
+                "if you require this functionality.": "如果您需要此功能。",
+
+                "There are no secrets for this organization.": "这个组织没有机密。",
+                "Secrets created at the organization level can be shared with specified repositories.": "在组织层面创建的机密可以与指定的仓库共享。",
+
+                "Available to": "适用于",
+                "Updated": "更新于",
+                "Remove": "移除",
+
+                // 顶部提醒
+                    "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
+                    "Secret added.": "添加了机密。",
+                    "Secret deleted.": "删除了机密。",
+
+                // 删除机密对话框
+                "Remove secret": "删除机密",
+                    "Are you sure you want to delete": "您确定要删除",
+                    "Yes, remove this secret from the organization": "是的，从组织中删除该机密",
+
+            // 更新操作机密 /organizations/<org-login>/settings/secrets/actions/<name>
+                "/ Update secret": "/ 更新机密",
+                "Secret values are encrypted and cannot be displayed, but you can": "机密值已加密，无法显示，但您可以",
+                "enter a new value.": "输入一个新值。",
+                "Update secret": "更新机密",
+                    "Updating…": "更新中…",
+
+            // 新建组织机密 /organizations/<org-login>/settings/secrets/actions/new
+                "/ New secret": "/ 新建机密",
+                "Add secret": "添加机密",
+                    "Adding…": "添加中…",
+
+                "Name": "名称",
+                "Value": "值",
+
+                "Repository access": "仓库权限",
+                "Public repositories": "公共仓库",
+                "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "此机密可能会被组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
+                "Private repositories": "私有仓库",
+                // "": "选定的仓库",
+                "This secret may only be used by specifically selected repositories.": "此秘密只能由特别选定的仓库使用。",
+                    // 机密仓库访问 对话框
+                    "Secret repository access": "机密仓库访问",
+                    "Select the organization repositories that may use this secret.": "选择可以使用该机密的组织仓库。",
+                    "Update selection": "更新选择",
+
+            // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot
+                "Dependabot secrets": "Dependabot 机密",
+                "Secrets are credentials that are": "机密是凭证",
+                // "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
+                "access to the repositories with access to each secret can use it for Dependabot.": "访问权限的人都可以访问仓库的每个机密用于 Dependabot。",
+                "Secrets are not passed to forks.": "机密不会传递给复刻。",
+
+            // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot/new
+                "This secret may be used by any repository in the organization.": "组织中的任何仓库都可以使用此机钥。",
+                "This secret may be used by any private repository in the organization.": "组织中的任何私有仓库都可以使用此机钥。",
+
+            // 第三方访问 /organizations/<org-login>/settings/oauth_application_policy
+                "Third-party application access policy": "第三方应用访问策略",
+                "Policy:": "策略：",
+                    "Access restricted": "访问受限",
+                        "Only approved applications can access data in this organization. Applications owned by": "只有获得批准的应用程序才能访问该组织中的数据。应用程序由",
+                        "always have access.": "拥有的始终可以访问。",
+                        "Remove restrictions": "解除限制",
+                        // 解除限制对话框
+                        "You’re about to remove all third-party application restrictions. Please read this carefully.": "您即将删除所有第三方应用程序限制。请仔细阅读。",
+                        "Removing third-party application restrictions will immediately give member authorized applications access to private data in the": "取消第三方应用程序的限制，将立即允许成员授权的应用程序访问私人数据，在",
+                        "Please be sure you want to do this.": "请确定您想这么做。",
+                        "Yes, remove application restrictions": "是的，取消应用限制",
+                    "No restrictions": "未受限",
+                        "All applications authorized by organization members have access to": "所有由组织成员授权的应用程序都可以访问",
+                        "’s data.": "的数据。",
+                        "Setup application access restrictions": "设置应用程序访问限制",
+
+                "No pending requests": "没有待处理的请求",
+                "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用程序时，这些请求将在此处列出以供您批准。您可以浏览",
+                "your own authorized applications": "您授权的应用程序",
+
+                "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用程序可以代表组织成员进行操作。您的访问策略决定了哪些应用程序可以访问您组织中的数据。",
+                "Read more about third-party access and organizations.": "阅读更多关于第三方访问和组织的信息。",
+
+            // 设置应用程序访问限制 /settings/oauth_application_policy/confirm
+                "Third-party application restrictions": "",
+                "create an extra layer of security that allows owners to better control how applications access data in their organization.": "",
+                "Organization owners maintain a whitelist of trusted applications.": "",
+
+            // GitHub 应用 /organizations/<org-login>/settings/installations
+                "Installed GitHub Apps": "安装的 GitHub 应用",
+                "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
+
+                "Pending GitHub Apps installation requests": "待处理的 GitHub 应用程序安装请求",
+                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以申请安装 GitHub 应用程序。待处理的请求列在下面。",
+
+            // 定时提醒 /organizations/<org-login>/settings/reminders
+                "No scheduled reminders created.": "未创建预定提醒。",
+                "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保持项目进展，您现在可以提醒您的团队关于他们需要审查的拉取请求。",
+
+                "Connect a Slack workspace to get started": "连接 Slack 工作区以开始使用",
+                // 对话框
+                "Add Slack workspace": "添加 Slack 工作区",
+                "We have rolled out a new version of the GitHub app in Slack. If you are currently on the old app, please consider switching over to the new app! More info about migration can be found": "我们已经在 Slack 中推出了新版本的 GitHub 应用。如果您目前使用的是旧版应用，请考虑切换到新版应用！更多关于迁移的信息可以点击",
+                "here.": "这里。",
+                "1. Clicking on 'Add' will configure your Slack workspace with the new GitHub app.": "1. 点击 “添加” 将用新的 GitHub 应用程序配置您的 Slack 工作区。",
+                "2. If you already have the old app in Slack, it will uninstall the legacy app and install the new one.": "2. 如果您在 Slack 中已有旧应用程序，它将卸载旧应用程序并安装新应用程序。",
+                "Add workspace": "添加工作区",
+
+            // Sponsorship log 赞助日志 /organizations/<org-login>/settings/sponsors-log
+                "Sponsors log": "赞助日志",
+                "New sponsorships, changes, and cancellations": "新的赞助、更改和取消",
+                "Period:": "周期：",
+                    "Filter activity": "筛选活动",
+                    "All-time": "所有时间",
+                    "Past Day": "过去一天",
+                    "Past Week": "过去一周",
+                    "Past Month": "过去一月",
+                    "Past Year": "过去一年",
+                "No sponsorship activity in this time period": "这段时间没有赞助活动",
+                // "This is where you can review activity from your sponsorships.": "您可以在此处查看您的赞助活动。",
+                // [/This is where you can review activity from ([^ ]+)'s sponsorships./ "在这里您可以查看 $1 赞助的活动。"],
+
+            // Audit log 审计日志 /organizations/<org-login>/settings/audit-log
+                "Loading audit log entries…": "正在加载审计日志条目…",
+                "Filters": "筛选",
+                "Search audit logs": "搜索审计日志",
+                "Export Git Events": "导出 Git 事件",
+                    "Export Git events": "导出 Git 事件",
+                    "Export file will be limited to 100 Mb.": "导出文件将限制为 100 Mb。",
+                    "Select events from:": "选择事件，从：",
+                    "To:": "到：",
+                    "Download Results": "下载结果",
+                "Export": "导出",
+                "Recent events": "最近的事件",
+
+                "Newer": "新的",
+                "Older": "旧的",
+
+            // 删除的仓库 /organizations/<org-login>/settings/deleted_repositories
+                "Deleted Repositories": "删除的仓库",
+                // [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
+                "It may take up to an hour for repositories to be displayed here. You can only restore repositories that have no forks or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复没有复刻或没有被复刻的仓库。",
+
+            // OAuth 应用程序 /organizations/<org-login>/settings/applications
+                "No Organization Owned Applications": "没有组织拥有的应用程序",
+                "Do you want to develop an application that uses the": "您想开发一个应用程序，使用",
+                "? Register an application to generate OAuth tokens.": "？注册应用程序以生成 OAuth 令牌。",
+                "Register an application": "注册应用程序",
+
+            // GitHub 应用程序 /organizations/<org-login>/settings/apps
+                "New GitHub App": "新 GitHub 应用程序",
+                "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
+                "Register a new GitHub App": "注册新的 GitHub 应用程序",
+                "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用程序的更多信息",
+                "developer documentation": "开发者文档",
+
+                "Management": "管理人员",
+                "Choose members that are allowed to manage all GitHub Apps belonging to this organization.": "选择允许管理属于该组织的所有 GitHub 应用程序的成员。",
+                "Organization owner": "组织所有者",
+                "Search by username or full name": "按用户名或全名搜索",
+                "Grant": "授予",
+
+            // 发布者验证 /organizations/<org-login>/settings/publisher
+                "There must be 1 or more GitHub/OAuth App registered by the organization to request publisher verification": "组织必须有 1 个或多个 GitHub/OAuth 应用程序才能请求发布者验证",
+                "You can request publisher verification for your organization. A": "您可以为您的组织请求发布者验证。一个",
+                "badge will be added to your apps published in the marketplace, recognizing that apps and other published materials were created by you.": "徽章将添加到您在市场上发布的应用程序中，以识别应用程序和其他已发布材料是由您创建的。",
+                "Learn more about publisher verification.": "了解更多关于发布者验证的信息。",
+
         },
         "regexp": [ // 正则翻译
             // 软件库
             [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
+            [/(\d+) labels?/, "$1 个标签"],
+            [/New repositories created in ([^ ]+) will use ([^ ]+) as their default branch./, "在 $1 中创建的新仓库将使用 $2 作为其默认分支。"],
+            [/Your default branch name will be ([^ ]+)/, "您的默认分支名称将是 $1"],
+            [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
+            [/([^ ]+) repositories you contribute to/, "您贡献的 $1 仓库"],
+            [/There are no repositories in ([^ ]+) that you’ve contributed to and that you can set topics on./, "$1  中没有您贡献过的并且可以设置主题的仓库。"],
+            [/Only actions defined in a repository within ([^ ]+) can be used./, "只能使用在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/Only actions that match specified criteria, plus actions defined in a repository within ([^ ]+), can be used./, "只能使用符合指定条件的操作，以及在 $1 中的仓库中定义的操作。"], // 操作页面
+            [/selected repositor(y|ies)/, "个选定的仓库"],
+            [/This is where you can review activity from ([^ ]+)'s sponsorships./,  "在这里您可以查看 $1 赞助的活动。"],
+            [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
+            [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
+            [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
+            [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
+            [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
+            [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
+            [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
+            [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
+            [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+            [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"], // 组织 基本权限更改
          ],
     },
 
@@ -7701,6 +9186,7 @@ I18N.zh = {
 
                 // 键盘快捷键
                     "Open in github.dev editor"  : "在 github.dev 编辑器中打开",
+                    "Open github.dev editor in a new tab"  : "在新标签页中打开 github.dev 编辑器",
                     "Focus secondary search bar" : "聚焦二级搜索栏",
                     "Go to Code"                 : "跳转到代码",
                     "Go to Issues"               : "跳转到议题",
@@ -7796,7 +9282,7 @@ I18N.zh = {
                     "Least recently updated": "最近最少更新",
                     "Name": "名称",
                 // 清除筛选
-                "Clear current search query, filters, and sorts": "清除当前的搜索查询、过滤器和排序方式",
+                "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
                 "No description": "无描述",
                 "Close": "关闭",
@@ -7900,7 +9386,7 @@ I18N.zh = {
                     "Archived cards": "存档的卡片",
                     "Loading archived cards…": "载入存档的卡片…",
                     "Show all archived cards": "显示所有存档卡片",
-                    "Filter by note or issue title": "筛选注释或提议标题",
+                    "Filter by note or issue title": "按注释或提议标题筛选",
                     "Column:": "栏目：",
                         "All": "所有",
                     "Restore": "恢复",
@@ -7997,7 +9483,7 @@ I18N.zh = {
                 "Delete note": "删除注释",
                     "This will remove this note from the project": "这将从项目中删除该注释",
 
-            // https://github.com/users/<user-name>/projects/3?add_cards_query=is%3Aopen
+            // 自动化看板模板项目 https://github.com/users/<user-name>/projects/<id>?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Automated kanban template.": "已从自动化看板模板创建项目。",
 
@@ -8028,11 +9514,11 @@ I18N.zh = {
                 "to the": "到",
                 "column.": "栏目。",
 
-            // https://github.com/users/<user-name>/projects/4?add_cards_query=is%3Aopen
+            // 自动看板与审查模板项目 https://github.com/users/<user-name>/projects/<id>?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Automated kanban with reviews template.": "已从自动看板与审查模板创建项目。",
 
-            // https://github.com/users/<user-name>/projects/5?add_cards_query=is%3Aopen
+            // 错误分类模板项目 https://github.com/users/<user-name>/projects/<id>?add_cards_query=is%3Aopen
                 // 顶部提醒
                 "Project created from Bug triage template.": "已从错误分类模板创建项目。",
 
@@ -8040,7 +9526,7 @@ I18N.zh = {
                 "High priority": "高优先级",
                 "Low priority": "低优先级",
 
-            // https://github.com/users/<user-name>/projects/1/settings
+            // https://github.com/users/<user-name>/projects/<id>/settings
                 "Collaboration settings": "协作设置",
                     "Options": "选项",
                         "Visibility": "可见性",
@@ -8062,7 +9548,7 @@ I18N.zh = {
                     // [/(\d+) linked repositories/, "$1 个关联仓库"],
                     "This project doesn’t have any linked repositories yet.": "该项目暂无任何关联的仓库。",
 
-            // https://github.com/users/<user-name>/projects/2/edit
+            // https://github.com/users/<user-name>/projects/<id>/edit
                 "(optional)": "(可选)",
                 "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
         },
@@ -8087,10 +9573,13 @@ I18N.zh.pulls = I18N.zh.issues;
 // 重定向
 I18N.zh.settings = I18N.zh["page-account"];
 I18N.zh["settings/apps/authorizations"] = I18N.zh.settings;
+I18N.zh["account/billing/history"] = I18N.zh.settings;
 
 I18N.zh["settings/tokens"] = I18N.zh["settings/apps"];
 I18N.zh["settings/developers"] = I18N.zh["settings/apps"];
 I18N.zh["settings/applications/new"] = I18N.zh["settings/apps"];
+I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/apps"];
+I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps"];
 
 I18N.zh.login = I18N.zh["session-authentication"];
 I18N.zh.session = I18N.zh["session-authentication"];
@@ -8099,13 +9588,17 @@ I18N.zh.password_reset = I18N.zh["session-authentication"];
 
 I18N.zh.new = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
+I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
+I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
 I18N.zh["installations/new"] = I18N.zh["login/oauth"];
 
 I18N.zh.apps = I18N.zh.marketplace;
 I18N.zh.orgs = I18N.zh["page-profile"];
-I18N.zh["billing_managers/new"] = I18N.zh["orgs/settings"];
+I18N.zh["orgs/billing_managers/new"] = I18N.zh["orgs/settings"];
+I18N.zh["orgs/billing/history"] = I18N.zh["orgs/settings"];
+I18N.zh["orgs/topics"] = I18N.zh["orgs/settings"];
 
 I18N.zh["new/project"] = I18N.zh.projects;
-I18N.zh["repository/projects"] = I18N.zh.projects;
+I18N.zh["repository/projects/new"] = I18N.zh.projects;
 I18N.zh["repository/search"] = I18N.zh.search;
