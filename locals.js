@@ -564,6 +564,15 @@ I18N.zh = {
                     return (prefix === 'in' ? d + ' ' + dt[t] + '之内' : all);
                 }
             }],
+            /**
+             * 匹配时间格式 2
+             *
+             * in 5m 20s
+             */
+            [/^(?:(in) |)(?:(\d+)m |)(\d+)s/,function (all, prefix, minute, second) {
+                all = minute ? minute + '分' + second + '秒' : second + '秒';
+                return (prefix ? all + '之内' : all);
+            }],
         ],
     },
 
