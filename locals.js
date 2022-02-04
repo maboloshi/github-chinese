@@ -101,6 +101,12 @@ I18N.conf = {
 };
 
 I18N.zh = {
+    "selector": [ // 元素筛选器规则
+        ["body > div.position-relative.js-header-wrapper > header > div.Header-item.Header-item--full.flex-column.flex-md-row.width-full.flex-order-2.flex-md-order-none.mr-0.mr-md-3.mt-3.mt-md-0.Details-content--hidden-not-important.d-md-flex > nav > a:nth-child(2)", "拉取请求"], // 顶部条 拉取请求
+        ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
+        ["#review-changes-modal > summary > span.js-review-changes", "审查更改"], // 拉取请求 更改的文件
+    ],
+
     "title": { // 标题翻译
         "static": { // 静态翻译
             "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
