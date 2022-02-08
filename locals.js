@@ -93,10 +93,9 @@ I18N.conf = {
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(code|^script$|link|img|marked-text|^em$|^pre$)/i,
+    reIgnoreTag: /(code|^script$|link|img|marked-text|^pre$)/i,
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
-    // ^em$ --> 避免勿过滤 theme-picker, command-palette-item
     // ^pre$ --> 避免勿过滤
 };
 
