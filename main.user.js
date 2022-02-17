@@ -105,35 +105,37 @@
 
                 // 元素节点属性翻译
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
-                    if (el.type === 'button' || el.type === 'submit') {
+                    if (el.type === 'button' || el.type === 'submit' || el.type === 'reset') {
+                        if (el.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
+                            transElement(el, 'data-confirm', true);
+                        }
                         transElement(el, 'value');
                     } else {
                         transElement(el, 'placeholder');
                     }
-                } else if (el.hasAttribute('aria-label')) { // 带提示的元素，类似 tooltip 效果的
-                    transElement(el, 'aria-label', true);
-
-                    if (el.hasAttribute('data-copy-feedback')) { // 复制成功提示
-                        transElement(el,'data-copy-feedback',true );
+                } else if (el.tagName === 'BUTTON'){
+                    if (el.hasAttribute('aria-label')) {
+                        transElement(el, 'aria-label', true); // 翻译 浏览器 提示对话框
                     }
-                    if (el.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
-                        transElement(el, 'data-confirm', true);
+                    if (el.hasAttribute('data-confirm')) {
+                        transElement(el, 'data-confirm', true); // 翻译 浏览器 提示对话框 ok
                     }
-                } else if (el.tagName === 'BUTTON' && el.hasAttribute('data-confirm')) {
-                    transElement(el, 'data-confirm', true); // 翻译 浏览器 提示对话框
-
-                } else if (el.tagName === 'BUTTON' && el.hasAttribute('data-confirm-cancel-text')) {
-                    transElement(el, 'data-confirm-cancel-text', true); // 取消按钮 提醒
-
-                } else if (el.hasAttribute('cancel-confirm-text')) {
-                    transElement(el, 'cancel-confirm-text', true); // 取消按钮 提醒
-
+                    if (el.hasAttribute('data-confirm-text')) {
+                        transElement(el, 'data-confirm-text', true); // 翻译 浏览器 提示对话框 ok
+                    }
+                    if (el.hasAttribute('data-confirm-cancel-text')) {
+                        transElement(el, 'data-confirm-cancel-text', true); // 取消按钮 提醒
+                    }
+                    if (el.hasAttribute('cancel-confirm-text')) {
+                        transElement(el, 'cancel-confirm-text', true); // 取消按钮 提醒
+                    }
+                    if (el.hasAttribute('data-disable-with')) { // 按钮等待提示
+                        transElement(el.dataset, 'disableWith');
+                    }
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
-                }
-
-                if (el.hasAttribute('data-disable-with')) { // 按钮等待提示
-                    transElement(el.dataset, 'disableWith');
+                } else if (/tooltipped/.test(el.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+                    transElement(el, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
                 }
                 if (el != node) {
                     traverseNode(el); // 遍历子节点
@@ -204,7 +206,7 @@
     function transTitle() {
         var title = translate(document.title, 'title');
 
-        if (title === false) { // 无翻译则退出
+        if (!title) { // 无翻译则退出
             return false;
         }
 
@@ -221,21 +223,21 @@
      *
      * @returns {boolean}
      */
-    function transElement(el, field, isAttr) {
-        var transText = false; // 翻译后的文本
+    function transElement(el, field, isAttr=false) {
+        var transText; // 翻译后的文本
 
-        if (isAttr === undefined) { // 非属性翻译
+        if (!isAttr) { // 非属性翻译
             transText = translate(el[field], page);
         } else {
             transText = translate(el.getAttribute(field), page);
         }
 
-        if (transText === false) { // 无翻译则退出
+        if (!transText) { // 无翻译则退出
             return false;
         }
 
         // 替换翻译后的内容
-        if (isAttr === undefined) {
+        if (!isAttr) {
             el[field] = transText;
         } else {
             el.setAttribute(field, transText);
@@ -270,16 +272,16 @@
 
         str = transPage('pubilc', _key_neat); // 公共翻译
 
-        if (str !== false && str !== _key_neat) { // 公共翻译完成
+        if (str && str !== _key_neat) { // 公共翻译完成
             return text.replace(_key, str);  // 替换原字符，保留空白部分
         }
 
-        if (page === false) {
+        if (!page) {
             return false;
         } // 未知页面不翻译
 
         str = transPage(page, _key_neat); // 翻译已知页面
-        if (str === false || str === '') {
+        if (!str) {
             return false;
         } // 未知内容不翻译
 
@@ -298,7 +300,6 @@
      */
     function transPage(page, key, isRegexp=false) {
         var str; // 翻译结果
-        var res; // 正则数组
 
         // 静态翻译
         if (!isRegexp) {
@@ -309,7 +310,7 @@
         }
 
         // 正则翻译
-        res = I18N[lang][page].regexp;
+        var res = I18N[lang][page].regexp; // 正则数组
         if (res) {
             for (var i = 0, len = res.length; i < len; i++) {
                 str = key.replace(res[i][0], res[i][1]);
@@ -333,7 +334,7 @@
         let element = document.querySelector(el);
 
         if (!element) {
-            return;
+            return false;
         }
 
         element.insertAdjacentHTML('afterend', "<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
@@ -344,7 +345,7 @@
             const desc = element.textContent.trim();
 
             if(!desc) {
-                return;
+                return false;
             }
 
             GM_xmlhttpRequest({
@@ -371,7 +372,7 @@
      * 灵感参考自：k1995/github-i18n-plugin
      */
     function translateBySelector() {
-        res = I18N[lang].selector;
+        var res = I18N[lang].selector; // 数组
         if (res) {
             for (var i = 0, len = res.length; i < len; i++) {
                 let element = document.querySelector(res[i][0])
