@@ -25,6 +25,11 @@
     var RegExp = GM_getValue("RegExp", 1);
     var lang = 'zh'; // 中文
 
+    // 翻译规则重定向
+    for (let key in I18N.conf.redirect) {
+        I18N[lang][key] = I18N[lang][I18N.conf.redirect[key]];
+    }
+
     // 要翻译的页面
     var page = getPage();
 

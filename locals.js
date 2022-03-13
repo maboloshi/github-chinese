@@ -97,6 +97,43 @@ I18N.conf = {
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤
+
+    // 页面重定向规则
+    "redirect": {
+        "pulls": "issues",
+
+        "settings": "page-account",
+        "settings/apps/authorizations": "page-account",
+        "account/billing/history": "page-account",
+
+        "settings/tokens": "settings/apps",
+        "settings/developers": "settings/apps",
+        "settings/applications/new": "settings/apps",
+        "orgs/settings/applications/new": "settings/apps",
+        "orgs/settings/apps/new": "settings/apps",
+
+        "login": "session-authentication",
+        "session": "session-authentication",
+        "sessions": "session-authentication",
+        "password_reset": "session-authentication",
+
+        "new": "page-new-repo",
+        "new/import": "page-new-repo",
+        "orgs/repositories/new": "page-new-repo",
+        "orgs/dashboard": "page-dashboard",
+
+        "installations/new": "login/oauth",
+
+        "apps": "marketplace",
+        "orgs": "page-profile",
+        "orgs/billing_managers/new": "orgs/settings",
+        "orgs/billing/history": "orgs/settings",
+        "orgs/topics": "orgs/settings",
+
+        "new/project": "projects",
+        "repository/projects/new": "projects",
+        "repository/search": "search",
+    },
 };
 
 I18N.zh = {
@@ -9947,40 +9984,3 @@ I18N.zh = {
     },
 
 };
-
-
-// 公共复用翻译部分
-I18N.zh.pulls = I18N.zh.issues;
-
-// 重定向
-I18N.zh.settings = I18N.zh["page-account"];
-I18N.zh["settings/apps/authorizations"] = I18N.zh.settings;
-I18N.zh["account/billing/history"] = I18N.zh.settings;
-
-I18N.zh["settings/tokens"] = I18N.zh["settings/apps"];
-I18N.zh["settings/developers"] = I18N.zh["settings/apps"];
-I18N.zh["settings/applications/new"] = I18N.zh["settings/apps"];
-I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/apps"];
-I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps"];
-
-I18N.zh.login = I18N.zh["session-authentication"];
-I18N.zh.session = I18N.zh["session-authentication"];
-I18N.zh.sessions = I18N.zh["session-authentication"];
-I18N.zh.password_reset = I18N.zh["session-authentication"];
-
-I18N.zh.new = I18N.zh["page-new-repo"];
-I18N.zh["new/import"] = I18N.zh["page-new-repo"];
-I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
-I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
-
-I18N.zh["installations/new"] = I18N.zh["login/oauth"];
-
-I18N.zh.apps = I18N.zh.marketplace;
-I18N.zh.orgs = I18N.zh["page-profile"];
-I18N.zh["orgs/billing_managers/new"] = I18N.zh["orgs/settings"];
-I18N.zh["orgs/billing/history"] = I18N.zh["orgs/settings"];
-I18N.zh["orgs/topics"] = I18N.zh["orgs/settings"];
-
-I18N.zh["new/project"] = I18N.zh.projects;
-I18N.zh["repository/projects/new"] = I18N.zh.projects;
-I18N.zh["repository/search"] = I18N.zh.search;
