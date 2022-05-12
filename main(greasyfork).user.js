@@ -384,6 +384,8 @@
                 let element = document.querySelector(res[i][0])
                 if (element) {
                     element.textContent = res[i][1];
+                } else if (document.getElementsByClassName(res[i][0]).length != 0) {
+                    document.getElementsByClassName(res[i][0])[0].textContent = res[i][1];
                 }
             }
         }
