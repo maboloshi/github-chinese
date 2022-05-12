@@ -12,12 +12,17 @@
 // @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.7.5
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_registerMenuCommand
+// @grant        GM_notification
 // @connect      www.githubs.cn
 // ==/UserScript==
 
 (function (window, document, undefined) {
     'use strict';
 
+    var RegExp = GM_getValue("RegExp", 1);
     var lang = 'zh'; // 中文
 
     // 要翻译的页面
@@ -310,12 +315,14 @@
         }
 
         // 正则翻译
-        var res = I18N[lang][page].regexp; // 正则数组
-        if (res) {
-            for (var i = 0, len = res.length; i < len; i++) {
-                str = key.replace(res[i][0], res[i][1]);
-                if (str !== key) {
-                    return str;
+        if (RegExp){
+            var res = I18N[lang][page].regexp; // 正则数组
+            if (res) {
+                for (var i = 0, len = res.length; i < len; i++) {
+                    str = key.replace(res[i][0], res[i][1]);
+                    if (str !== key) {
+                        return str;
+                    }
                 }
             }
         }
@@ -382,5 +389,16 @@
             }
         }
     }
+
+    GM_registerMenuCommand("正则切换", () => {
+        if (RegExp){
+            GM_setValue("RegExp", 0);
+            GM_notification("已关闭正则功能");
+        } else {
+            GM_setValue("RegExp", 1);
+            GM_notification("已开启正则功能");
+            location.reload();
+        }
+    })
 
 })(window, document);
