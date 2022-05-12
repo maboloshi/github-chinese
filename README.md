@@ -23,6 +23,12 @@
 
 ## 更新说明:
 
+#### 2022-05-12 13:53:46
+更新至 1.7.6
+1. 日常更新词库和忽略规则
+2. 添加手动开启/禁用正则翻译，添加切换菜单
+3. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
+
 #### 2022-02-26 12:36:14
 更新至 1.7.5
 
@@ -68,17 +74,8 @@
 3. [Git官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
 4. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
 
-## 插件设置建议为每日更新，因为翻译更新可能比较频繁
-
-  ![Tampermonkey-everyday][everyday-1]
-  ![violentmonkey-everyday][everyday-2]
-
 ## 预览
 
-  ![预览][png-1]
-  ![预览][png-2]
-  ![预览][png-3]
-  ![预览][png-4]
   ![github-chinese][github-chinese]
 
 [project-url]: https://github.com/maboloshi/github-chinese "GitHub 中文化插件"
@@ -104,10 +101,4 @@
 [main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
-[png-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/1.png
-[png-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/2.png
-[png-3]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/3.png
-[png-4]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/4.png
-[everyday-1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-1.png
-[everyday-2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/everyday-2.png
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
