@@ -139,7 +139,7 @@
                 } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                     transElement(el, 'label');
                 } else if (/tooltipped/.test(el.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
-                        transElement(el, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
+                    transElement(el, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
                 }
                 if (el != node) {
                     traverseNode(el); // 遍历子节点
@@ -359,7 +359,7 @@
                 url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
                 onload: function(res) {
                     if (res.status === 200) {
-                         translate_me.style.display="none";
+                        translate_me.style.display="none";
                         // render result
                         const text = res.responseText;
                         element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span><br/>"+text);
