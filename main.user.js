@@ -71,9 +71,8 @@
             }
         }).observe(document.body, {
             subtree: true,
-            characterData: true,
             childList: true,
-            attributeFilter: ['value', 'placeholder', 'aria-label', 'data', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
+            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
         });
 
         new m(function(mutations) {
@@ -81,7 +80,7 @@
             translateBySelector(); // Selector 翻译 目前先跟随 url 即页面标题变化
         }).observe(
             document.querySelector('title'),
-            { characterData: true, childList: true }
+            { childList: true }
         );
     }
 
