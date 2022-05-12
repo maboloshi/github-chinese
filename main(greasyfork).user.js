@@ -259,37 +259,35 @@
      */
     function translate(text, page) { // 翻译
 
-        if (!isNaN(text)) {
+        if (!isNaN(text) || /^[\s]*[\u4e00-\u9fa5]|[\u4e00-\u9fa5][\s]*$/.test(text)) { ///^[\u4e00-\u9fa5]+.*$/.test(text)
             return false;
-        } // 内容为空, 空白字符和或数字 不翻译
+        } // 内容为空, 空白字符和或数字, 已翻译汉字 不翻译
 
         var str;
         var _key = text.trim(); // 去除首尾空格的 key
         var _key_neat = _key
             .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
-            .replace(/\s{2,}/g, ' ') // 去除多余空白字符，(试验测试阶段，有问题再恢复)
-            .replace(/[\s\r\n]+/g, ' '); // 替换中间的换行符为空格; 后期正则翻译规则可以不用考虑换行符的问题了
+            .replace(/[\s]+/g, ' ') // 去除多余空白字符(空格 换行符)，(试验测试阶段，有问题再恢复)
 
         if (page === 'title') {
             return transPage('title', _key_neat);
         } // 翻译网页标题
 
-        str = transPage('pubilc', _key_neat); // 公共翻译
-
-        if (str && str !== _key_neat) { // 公共翻译完成
-            return text.replace(_key, str);  // 替换原字符，保留空白部分
-        }
-
-        if (!page) {
-            return false;
+        if (page) {
+            str = transPage(page, _key_neat); // 翻译已知页面 (局部优先)
         } // 未知页面不翻译
 
-        str = transPage(page, _key_neat); // 翻译已知页面
+        if (str && str !== _key_neat) { // 已知页面翻译完成
+            return str;
+        }
+
+        str = transPage('pubilc', _key_neat); // 公共翻译
+
         if (!str) {
             return false;
         } // 未知内容不翻译
 
-        return text.replace(_key, str); // 替换原字符，保留空白部分
+        return str;
     }
 
 
