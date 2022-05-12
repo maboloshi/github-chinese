@@ -66,6 +66,7 @@ I18N.conf = {
      *
      * 代码编辑器 内容 代码高亮 CodeMirror
      * 代码高亮 blob-code
+     * blob-code blob-code-inner js-file-line?
      * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
      * 文件,目录位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
@@ -76,7 +77,7 @@ I18N.conf = {
      * 快捷键 按键 js-modifier-key
      * 洞察-->流量-->热门内容列表 capped-list-label
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold)/, // hx_kbd
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -87,7 +88,7 @@ I18N.conf = {
     /**
      * 忽略区域的 特定元素id 正则
      */
-    reIgnoreId: /(readme)/,
+    reIgnoreId: /(readme)/, //jump-to-results
 
     /**
      * 忽略区域的 标签 正则
@@ -621,7 +622,7 @@ I18N.zh = {
              * 匹配时间格式
              *
              * 月 日 或 月 日, 年
-             * Mar 19, 2015 – Mar 19, 2016
+             * Mar 19, 2015 – Mar 19, 2016 仓库-->洞察-->统计 #repo-content-pjax-container > div > div > div.Layout-main > div.Subhead > h2
              * January 26 – March 19
              * March 26
              *
@@ -634,6 +635,7 @@ I18N.zh = {
              *
              * 更新于 2021-10-10 13:44:36
              * on 星期(简写), 月 日 年  // 个人访问令牌 有效期
+             * #expiration-helper-note > p
              * on Tue, Nov 9 2021
              *
              * 2021-10-19 12:04:19 融合更多规则
@@ -647,6 +649,7 @@ I18N.zh = {
              * 2021-11-22 12:51:57 新增 格式
              *
              * 星期(全称), 月 日, 年 // 仓库-->洞察-->流量 图示标识
+             * body > div.svg-tip.web-views.comparison.n > span
              * Sunday, November 14, 2021
              *
              * Tip:

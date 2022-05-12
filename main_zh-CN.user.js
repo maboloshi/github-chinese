@@ -9,7 +9,7 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.7.6
+// @require      https://github.com/maboloshi/github-chinese/raw/js2json/locals.js?v1.7.6
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -22,7 +22,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    var RegExp = GM_getValue("RegExp", 1);
+    var enable_RegExp = GM_getValue("RegExp", 1);
     var lang = 'zh'; // 中文
 
     // 翻译规则重定向
@@ -317,7 +317,7 @@
         }
 
         // 正则翻译
-        if (RegExp){
+        if (enable_RegExp){
             var res = I18N[lang][page].regexp; // 正则数组
             if (res) {
                 for (var i = 0, len = res.length; i < len; i++) {
@@ -393,6 +393,53 @@
             }
         }
     }
+
+    /**
+     * 深度克隆 JS 对象, 并对 正则和函数 字符串化
+     *
+     * 2022-03-20 20:14:50
+     * 改编 deepClone 函数自: https://juejin.cn/post/6889327058158092302
+     */
+    function deepCloneR(target,cache = new Map()){
+      if(cache.get(target)){
+          return cache.get(target)
+      }
+      if(target instanceof Object){
+          let dist ;
+          if(target instanceof Array){
+            // 拷贝数组
+            dist = [];
+          }else if(target instanceof Function){
+            // 函数 --> 字符串
+              dist = "("+target.toString()+")"; // 给函数字符串 添加()
+          }else if(target instanceof RegExp){
+            // 正则表达式 -> 字符串
+           dist = target.toString().replace(/^\/|\/$/g, ""); // 正则 转 字符串 并去除行尾 /
+          }else{
+            // 拷贝普通对象
+            dist = {};
+          }
+          // 将属性和拷贝后的值作为一个map
+          cache.set(target, dist);
+          for(let key in target){
+              // 过滤掉原型身上的属性
+            if (target.hasOwnProperty(key)) {
+                dist[key] = deepCloneR(target[key], cache);
+            }
+          }
+          return dist;
+      }else{
+          return target;
+      }
+    }
+
+    // JS 对象 --> JSON 对象 并输出到 Web 控制台
+    GM_registerMenuCommand("输出JSON词库到后台", () => {
+        var I18N_new = deepCloneR(I18N);
+        I18N_new.dict = I18N_new.zh;
+        delete I18N_new.zh;
+        console.log("I18N_json",JSON.stringify(I18N_new, null, 4));
+    })
 
     GM_registerMenuCommand("正则切换", () => {
         if (RegExp){

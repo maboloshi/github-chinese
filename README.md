@@ -10,7 +10,10 @@
 ## 功能
 - 中文化 GitHub 菜单栏，标题，按钮等公共组件
 - 保留、完善正则功能
-- 除基础组件中文化外，还支持对 “项目描述” 进行人机翻译 (参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin))
+- 参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin) 很多想法
+  + 对 “项目描述” 进行人机翻译
+  + 基于 JSON 格式的词条库文件
+- 繁体词库由[繁化姬项目][繁化姬项目] 简->繁
 
 ## 安装
 1. 请先安装用户脚本管理器如: [Tampermonkey][Tampermonkey], [violentmonkey][violentmonkey] 等，支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
@@ -22,6 +25,13 @@
 > 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
 
 ## 更新说明:
+
+#### 2022-05-12 15:44:00
+更新至 1.7.6(a)
+1. 新版 main.user.js 将使用 JSON 格式词条库文件，便于后期支持更多语言版本
+2. 原版 main.user.js --> main_zh-CN.user.js 仅用于日常维护中文词条库文件 locals_zh-CN.js
+3. 简中 JSON 格式词条库文件, 由 main_zh-CN.user.js 后台将 locals_zh-CN.js --> zh-CN.json
+4. 繁中 JSON 格式词条库文件, 由 [繁化姬项目][繁化姬项目]翻译将 zh-CN.json --> zh-TW.json
 
 #### 2022-05-12 13:53:46
 更新至 1.7.6
@@ -102,3 +112,5 @@
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
+
+[繁化姬项目]: https://zhconvert.org/ "繁化姬项目"

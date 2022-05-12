@@ -1,17 +1,21 @@
 // ==UserScript==
 // @name         GitHub 中文化插件
+// @name:zh-TW   GitHub 繁體中文化外掛
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
+// @description:zh-TW  中文化 GitHub 介面的部分選單及內容。原作者為樓教主(http://www.52cik.com/)與 maboloshi(https://github.com/maboloshi/github-chinese)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.7.6
+// @version      1.7.6(a)
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.6
+// @resource     zh-CN https://github.com/maboloshi/github-chinese/raw/js2json/locales/zh-CN.json?v1.7.6
+// @resource     zh-TW https://github.com/maboloshi/github-chinese/raw/js2json/locales/zh-TW.json?v1.7.6
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
+// @grant        GM_getResourceText
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
@@ -22,13 +26,10 @@
 (function (window, document, undefined) {
     'use strict';
 
-    var RegExp = GM_getValue("RegExp", 1);
-    var lang = 'zh'; // 中文
-
-    // 翻译规则重定向
-    for (let key in I18N.conf.redirect) {
-        I18N[lang][key] = I18N[lang][I18N.conf.redirect[key]];
-    }
+    var enable_RegExp = GM_getValue("RegExp", 1);
+    const SUPPORT_LANG = ["zh-CN", "zh-TW"];
+    const lang = (navigator.language || navigator.userLanguage);
+    const locales = getLocales(lang);
 
     // 要翻译的页面
     var page = getPage();
@@ -41,6 +42,16 @@
     // 翻译描述
     translateDesc(".f4.my-3"); //仓库简介翻译
     translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+
+    function getLocales(lang) {
+        if(SUPPORT_LANG.includes(lang)) {
+            return JSON.parse(GM_getResourceText(lang));
+        }
+        return {
+            conf: {},
+            dict: {}
+        };
+    }
 
     /**
      * 监听节点变化, 触发和调用翻译函数
@@ -96,10 +107,10 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.reIgnoreId.test(node.id) ||
-            I18N.conf.reIgnoreClass.test(node.className) ||
-            I18N.conf.reIgnoreTag.test(node.tagName) ||
-            (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
+        if (new RegExp(locales.conf.reIgnoreId).test(node.id) ||
+            new RegExp(locales.conf.reIgnoreClass).test(node.className) ||
+            new RegExp(locales.conf.reIgnoreTag).test(node.tagName) ||
+            (node.getAttribute && new RegExp(locales.conf.reIgnoreItemprop).test(node.getAttribute("itemprop")))
            ) {
             return;
         }
@@ -190,23 +201,23 @@
         // }
 
         if (isRepository) { // 仓库页
-            let t = pathname.match(I18N.conf.rePagePathRepo);
-            return t ? 'repository/'+t[1] : 'repository';
+            let t = pathname.match(new RegExp(locales.conf.rePagePathRepo));
+            return t ? locales.conf.redirect['repository/'+t[1]] ? locales.conf.redirect['repository/'+t[1]] : 'repository/'+t[1] : 'repository';
         }
 
         if (isOrganization) { // 组织页
-            let t = pathname.match(I18N.conf.rePagePathOrg);
-            return t ? 'orgs/'+t[1] : 'orgs';
+            let t = pathname.match(new RegExp(locales.conf.rePagePathOrg));
+            return t ? locales.conf.redirect['orgs/'+t[1]] ? locales.conf.redirect['orgs/'+t[1]] : 'orgs/'+t[1] : 'page-profile'; // orgs 重定向 page-profile
         }
 
         // 匹配 body 的 class
-        var page = document.body.className.match(I18N.conf.rePageClass);
+        var page = document.body.className.match(new RegExp(locales.conf.rePageClass));
 
         if (!page) { // 扩展 pathname 匹配
-            page = pathname.match(I18N.conf.rePagePath);
+            page = pathname.match(new RegExp(locales.conf.rePagePath));
         }
 
-        return page ? page[1] : false; // 取页面 key
+        return page ? locales.conf.redirect[page[1]] ? locales.conf.redirect[page[1]] : page[1] : false; // 取页面 key
     }
 
     /**
@@ -264,7 +275,7 @@
      */
     function translate(text, page) { // 翻译
 
-        if (!isNaN(text) || /^[\s]*[\u4e00-\u9fa5]|[\u4e00-\u9fa5][\s]*$/.test(text)) {
+        if (!isNaN(text) || /^[\s]*[\u4e00-\u9fa5]|[\u4e00-\u9fa5][\s]*$/.test(text)) { ///^[\u4e00-\u9fa5]+.*$/.test(text)
             return false;
         } // 内容为空, 空白字符和或数字, 已翻译汉字 不翻译
 
@@ -310,18 +321,22 @@
 
         // 静态翻译
         if (!isRegexp) {
-            str = I18N[lang][page]['static'][key];
+            str = locales.dict[page]['static'][key];
             if (typeof str === 'string') {
                 return str;
             }
         }
 
         // 正则翻译
-        if (RegExp){
-            var res = I18N[lang][page].regexp; // 正则数组
+        if (enable_RegExp){
+            var res = locales.dict[page].regexp; // 正则数组
             if (res) {
                 for (var i = 0, len = res.length; i < len; i++) {
-                    str = key.replace(res[i][0], res[i][1]);
+                    if (!res[i][1].startsWith("(function")) {
+                        str = key.replace(new RegExp(res[i][0]), res[i][1]);
+                    } else {
+                        str = key.replace(new RegExp(res[i][0]), new Function('return' + res[i][1])());
+                    }
                     if (str !== key) {
                         return str;
                     }
@@ -362,7 +377,7 @@
                 url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
                 onload: function(res) {
                     if (res.status === 200) {
-                        translate_me.style.display="none";
+                         translate_me.style.display="none";
                         // render result
                         const text = res.responseText;
                         element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span><br/>"+text);
@@ -381,7 +396,7 @@
      * 灵感参考自：k1995/github-i18n-plugin
      */
     function translateBySelector() {
-        var res = I18N[lang].selector; // 数组
+        var res = locales.dict.selector; // 数组
         if (res) {
             for (var i = 0, len = res.length; i < len; i++) {
                 let element = document.querySelector(res[i][0])
@@ -394,8 +409,9 @@
         }
     }
 
+
     GM_registerMenuCommand("正则切换", () => {
-        if (RegExp){
+        if (enable_RegExp){
             GM_setValue("RegExp", 0);
             GM_notification("已关闭正则功能");
         } else {
