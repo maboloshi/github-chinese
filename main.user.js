@@ -118,7 +118,7 @@
                         transElement(el, 'placeholder');
                     }
                 } else if (el.tagName === 'BUTTON'){
-                    if (el.hasAttribute('aria-label')) {
+                    if (el.hasAttribute('aria-label') && /tooltipped/.test(el.className)) {
                         transElement(el, 'aria-label', true); // 翻译 浏览器 提示对话框
                     }
                     if (el.hasAttribute('data-confirm')) {
