@@ -99,55 +99,61 @@
             return;
         }
 
-        var nodes = node.childNodes;
+        if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
-        for (var i = 0, len = nodes.length; i <= len; i++) { // 遍历节点
-            var el = nodes[i] ? nodes[i] : node; //可能还要优化 该节点不存在子节点
-            // todo 1. 修复多属性翻译问题; 2. 添加事件翻译, 如论预览信息;
+            // 翻译时间元素
+            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME') {
+                transTimeElement(node);
+                return;
+            }
 
-            if (el.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
+            // 元素节点属性翻译
+            if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
+                if (node.type === 'button' || node.type === 'submit' || node.type === 'reset') {
+                    if (node.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
+                        transElement(node, 'data-confirm', true);
+                    }
+                    transElement(node, 'value');
+                } else {
+                    transElement(node, 'placeholder');
+                }
+            } else if (node.tagName === 'BUTTON'){
+                if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
+                    transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
+                }
+                if (node.hasAttribute('title')) {
+                    transElement(node, 'title', true); // 翻译 浏览器 提示对话框
+                }
+                if (node.hasAttribute('data-confirm')) {
+                    transElement(node, 'data-confirm', true); // 翻译 浏览器 提示对话框 ok
+                }
+                if (node.hasAttribute('data-confirm-text')) {
+                    transElement(node, 'data-confirm-text', true); // 翻译 浏览器 提示对话框 ok
+                }
+                if (node.hasAttribute('data-confirm-cancel-text')) {
+                    transElement(node, 'data-confirm-cancel-text', true); // 取消按钮 提醒
+                }
+                if (node.hasAttribute('cancel-confirm-text')) {
+                    transElement(node, 'cancel-confirm-text', true); // 取消按钮 提醒
+                }
+                if (node.hasAttribute('data-disable-with')) { // 按钮等待提示
+                    transElement(node.dataset, 'disableWith');
+                }
+            } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
+                transElement(node, 'label');
+            } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+                transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
+            }
 
-                // 元素节点属性翻译
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
-                    if (el.type === 'button' || el.type === 'submit' || el.type === 'reset') {
-                        if (el.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
-                            transElement(el, 'data-confirm', true);
-                        }
-                        transElement(el, 'value');
-                    } else {
-                        transElement(el, 'placeholder');
-                    }
-                } else if (el.tagName === 'BUTTON'){
-                    if (el.hasAttribute('aria-label') && /tooltipped/.test(el.className)) {
-                        transElement(el, 'aria-label', true); // 翻译 浏览器 提示对话框
-                    }
-                    if (el.hasAttribute('data-confirm')) {
-                        transElement(el, 'data-confirm', true); // 翻译 浏览器 提示对话框 ok
-                    }
-                    if (el.hasAttribute('data-confirm-text')) {
-                        transElement(el, 'data-confirm-text', true); // 翻译 浏览器 提示对话框 ok
-                    }
-                    if (el.hasAttribute('data-confirm-cancel-text')) {
-                        transElement(el, 'data-confirm-cancel-text', true); // 取消按钮 提醒
-                    }
-                    if (el.hasAttribute('cancel-confirm-text')) {
-                        transElement(el, 'cancel-confirm-text', true); // 取消按钮 提醒
-                    }
-                    if (el.hasAttribute('data-disable-with')) { // 按钮等待提示
-                        transElement(el.dataset, 'disableWith');
-                    }
-                } else if (el.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
-                    transElement(el, 'label');
-                } else if (/tooltipped/.test(el.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
-                    transElement(el, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
+            if (node.childNodes.length >0) {
+                for (const child of node.childNodes) {
+                    traverseNode(child); // 遍历子节点
                 }
-                if (el != node) {
-                    traverseNode(el); // 遍历子节点
-                }
-            } else if (el.nodeType === Node.TEXT_NODE) { // 文本节点翻译
-                if (el.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
-                    transElement(el, 'data');
-                }
+            }
+
+        } else if (node.nodeType === Node.TEXT_NODE) { // 文本节点翻译
+            if (node.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
+                transElement(node, 'data');
             }
         }
     }
