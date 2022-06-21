@@ -217,6 +217,24 @@
         document.title = title;
     }
 
+    /**
+     * 时间元素翻译
+     *
+     * @param {Element} node 节点
+     */
+    function transTimeElement(el) {
+        let str; // 翻译结果
+        let key = el.textContent;
+        let res = I18N[lang].pubilc.regexp;
+
+        for (let i = 0; i < 3; i++) { // 公共正则中时间规则
+            str= key.replace(res[i][0], res[i][1]);
+            if (str !== key) {
+                el.textContent = str;
+                break;
+            }
+        }
+    }
 
     /**
      * 翻译节点对应属性内容
