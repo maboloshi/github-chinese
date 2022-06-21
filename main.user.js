@@ -29,7 +29,7 @@
     var page = getPage();
 
     transTitle(); // 页面标题翻译
-    translateBySelector(); // Selector 翻译
+    transBySelector(); // Selector 翻译
     traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
@@ -77,7 +77,7 @@
 
         new m(function(mutations) {
             transTitle();
-            translateBySelector(); // Selector 翻译 目前先跟随 url 即页面标题变化
+            transBySelector(); // Selector 翻译 目前先跟随 url 即页面标题变化
         }).observe(
             document.querySelector('title'),
             { childList: true }
@@ -396,18 +396,20 @@
     /**
      * js原生选择器 翻译元素
      *
+     * @param {string} JS 选择器或 CSS 选择器
+     *
      * 2022-02-04 19:46:44
      * 灵感参考自：k1995/github-i18n-plugin
      */
-    function translateBySelector() {
-        var res = I18N[lang].selector; // 数组
+    function transBySelector() {
+        let res = I18N[lang].selector; // 数组
         if (res) {
-            for (var i = 0, len = res.length; i < len; i++) {
-                let element = document.querySelector(res[i][0])
+            for (let [a, b] of res) {
+                let element = document.querySelector(a)
                 if (element) {
-                    element.textContent = res[i][1];
-                } else if (document.getElementsByClassName(res[i][0]).length != 0) {
-                    document.getElementsByClassName(res[i][0])[0].textContent = res[i][1];
+                    element.textContent = b;
+                } else if (document.getElementsByClassName(a).length > 0) {
+                    document.getElementsByClassName(a)[0].textContent = b;
                 }
             }
         }
