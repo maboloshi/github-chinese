@@ -293,27 +293,24 @@
      */
     function translate(text, page) { // 翻译
 
-        if (!isNaN(text) || /^[\s]*[\u4e00-\u9fa5]|[\u4e00-\u9fa5][\s]*$/.test(text)) {
+        // 内容为空, 空白字符和或数字, 不存在英文字母和符号,. 跳过
+        if (!isNaN(text) || !/[a-zA-Z,.]+/.test(text)) {
             return false;
-        } // 内容为空, 空白字符和或数字, 已翻译汉字 不翻译
-
-        var str;
-        var _key = text.trim(); // 去除首尾空格的 key
-        var _key_neat = _key
-            .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
-            .replace(/[\s]+/g, ' ') // 去除多余空白字符(空格 换行符)，(试验测试阶段，有问题再恢复)
+        }
+        let str;
+        let _key = text.trim(); // 去除首尾空格的 key
+        let _key_neat = _key.replace(/\xa0|[\s]+/g, ' ') // 去除多余空白字符(&nbsp; 空格 换行符)
 
         if (page) {
             str = transPage(page, _key_neat); // 翻译已知页面 (局部优先)
         } // 未知页面不翻译
 
         if (str && str !== _key_neat) { // 已知页面翻译完成
-            return str;
+            return text.replace(_key, str);  // 替换原字符，保留首尾空白部分
         }
 
         return false;
     }
-
 
     /**
      * 翻译页面内容
