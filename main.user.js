@@ -312,13 +312,7 @@
             return str;
         }
 
-        str = transPage('pubilc', _key_neat); // 公共翻译
-
-        if (!str) {
-            return false;
-        } // 未知内容不翻译
-
-        return str;
+        return false;
     }
 
 
@@ -327,27 +321,25 @@
      *
      * @param {string} page 页面
      * @param {string} key 待翻译内容
-     * @param {boolean} isRegexp 是否仅翻译正则部分
      *
      * @returns {string|boolean}
      */
-    function transPage(page, key, isRegexp=false) {
-        var str; // 翻译结果
+    function transPage(page, key) {
+        let str; // 翻译结果
 
         // 静态翻译
-        if (!isRegexp) {
-            str = I18N[lang][page]['static'][key];
-            if (typeof str === 'string') {
-                return str;
-            }
+        str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+        if (typeof str === 'string') {
+            return str;
         }
 
         // 正则翻译
         if (RegExp){
-            var res = I18N[lang][page].regexp; // 正则数组
+            let res = I18N[lang][page].regexp; // 正则数组
+            res.push(...I18N[lang]['pubilc'].regexp); // 追加公共正则 es6
             if (res) {
-                for (var i = 0, len = res.length; i < len; i++) {
-                    str = key.replace(res[i][0], res[i][1]);
+                for (let [a, b] of res) {
+                    str = key.replace(a, b);
                     if (str !== key) {
                         return str;
                     }
