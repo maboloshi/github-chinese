@@ -214,13 +214,24 @@
      * 翻译页面标题
      */
     function transTitle() {
-        var title = translate(document.title, 'title');
+        let str; // 翻译结果
+        let key = document.title;
 
-        if (!title) { // 无翻译则退出
-            return false;
+        // 静态翻译
+        str = I18N[lang]['title']['static'][key];
+        if (str) {
+            document.title =  str;
+            return;
         }
 
-        document.title = title;
+        let res = I18N[lang]['title'].regexp; // 正则标题
+        for (let [a, b] of res) {
+            str = key.replace(a, b);
+            if (str !== key) {
+                document.title =  str;
+                break;
+            }
+        }
     }
 
     /**
@@ -292,10 +303,6 @@
         var _key_neat = _key
             .replace(/\xa0/g, ' ') // 替换 &nbsp; 空格导致的 bug
             .replace(/[\s]+/g, ' ') // 去除多余空白字符(空格 换行符)，(试验测试阶段，有问题再恢复)
-
-        if (page === 'title') {
-            return transPage('title', _key_neat);
-        } // 翻译网页标题
 
         if (page) {
             str = transPage(page, _key_neat); // 翻译已知页面 (局部优先)
