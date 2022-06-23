@@ -263,26 +263,25 @@
      * @returns {boolean}
      */
     function transElement(el, field, isAttr=false) {
-        var transText; // 翻译后的文本
+        let str; // 翻译后的文本
 
         if (!isAttr) { // 非属性翻译
-            transText = translate(el[field], page);
+            str = translate(el[field], page);
         } else {
-            transText = translate(el.getAttribute(field), page);
+            str = translate(el.getAttribute(field), page);
         }
 
-        if (!transText) { // 无翻译则退出
+        if (!str) { // 无翻译则退出
             return false;
         }
 
         // 替换翻译后的内容
         if (!isAttr) {
-            el[field] = transText;
+            el[field] = str;
         } else {
-            el.setAttribute(field, transText);
+            el.setAttribute(field, str);
         }
     }
-
 
     /**
      * 翻译文本
