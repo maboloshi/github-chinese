@@ -34,8 +34,8 @@
     watchUpdate();
 
     // 翻译描述
-    translateDesc(".f4.my-3"); //仓库简介翻译
-    translateDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+    transDesc(".f4.my-3"); //仓库简介翻译
+    transDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
 
     /**
      * 监听节点变化, 触发和调用翻译函数
@@ -350,11 +350,13 @@
     /**
      * 翻译描述
      *
+     * @param {string} JS 选择器
+     *
      * 2021-10-06 16:41:54
      * 来自：k1995/github-i18n-plugin
      * 改写为原生代码
      */
-    function translateDesc(el) {
+    function transDesc(el) {
         let element = document.querySelector(el);
 
         if (!element) {
