@@ -177,6 +177,12 @@
         const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
+        // 优先匹配 body 的 class
+        let page = document.body.className.match(I18N.conf.rePageClass);
+        if (page) {
+            return page[1];
+        }
+
         if (site === 'gist') { // Gist 站点
             return 'gist';
         }
@@ -200,13 +206,8 @@
             return t ? 'orgs/'+t[1] : 'orgs';
         }
 
-        // 匹配 body 的 class
-        var page = document.body.className.match(I18N.conf.rePageClass);
-
-        if (!page) { // 扩展 pathname 匹配
-            page = pathname.match(I18N.conf.rePagePath);
-        }
-
+        // 扩展 pathname 匹配
+        page = pathname.match(I18N.conf.rePagePath);
         return page ? page[1] : false; // 取页面 key
     }
 
