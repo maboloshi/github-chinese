@@ -9,7 +9,7 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.6
+// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.7.7
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
