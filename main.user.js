@@ -62,7 +62,7 @@
              * */
             if(location.pathname !== currentPath) {
                 currentPath = location.pathname;
-                page = getPage(); // 仅当,页面地址发生变化时运行
+                page = getPage(); // 仅当, 页面地址发生变化时运行 更新全局变量 page
             }
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
