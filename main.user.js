@@ -63,25 +63,21 @@
             if(location.pathname !== currentPath) {
                 currentPath = location.pathname;
                 page = getPage(); // 仅当, 页面地址发生变化时运行 更新全局变量 page
+
+                // 目前先跟随 url
+                transTitle(); // 标题翻译
+                transBySelector(); // Selector 翻译
             }
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
                     traverseNode(mutation.target);
                 }
             }
-        }).observe(document.body, {
+        }).observe(document.documentElement, {
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
         });
-
-        new m(function(mutations) {
-            transTitle();
-            transBySelector(); // Selector 翻译 目前先跟随 url 即页面标题变化
-        }).observe(
-            document.querySelector('title'),
-            { childList: true }
-        );
     }
 
     /**
