@@ -48,7 +48,7 @@
             window.MutationObserver ||
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
-        var currentPath = location.pathname;
+        let currentURL = document.URL;
         new m(function (mutations) {
             /**
              * 仅翻译变更部分 不在全局匹配
@@ -60,8 +60,8 @@
              * 2021-10-10 15:24:49
              * 遍历节点 函数 walk 需相应打2个补丁 适配
              * */
-            if(location.pathname !== currentPath) {
-                currentPath = location.pathname;
+            if(document.URL !== currentURL) {
+                currentURL = document.URL;
                 page = getPage(); // 仅当, 页面地址发生变化时运行 更新全局变量 page
 
                 // 目前先跟随 url
