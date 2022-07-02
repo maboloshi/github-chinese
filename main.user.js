@@ -49,7 +49,9 @@
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
         let currentURL = document.URL;
-        new m(function (mutations) {
+
+        // 监视 BODY 变化
+        const observer = new m(function (mutations, observer) {
             /**
              * 仅翻译变更部分 不在全局匹配
              *
@@ -57,9 +59,7 @@
              *    1. 节点增加
              *    2. 节点属性的变化
              *
-             * 2021-10-10 15:24:49
-             * 遍历节点 函数 walk 需相应打2个补丁 适配
-             * */
+             **/
             if(document.URL !== currentURL) {
                 currentURL = document.URL;
                 page = getPage(); // 仅当, 页面地址发生变化时运行 更新全局变量 page
@@ -73,11 +73,32 @@
                     traverseNode(mutation.target);
                 }
             }
-        }).observe(document.documentElement, {
+        });
+        const config = {
             subtree: true,
             childList: true,
-            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复)
-        });
+            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复) , 'datetime'
+        }
+        observer.observe(document.body, config);
+
+        // 监视最顶层，仅当新增 BODY 时，重新翻译 BODY，并再次监视 BODY 的更新
+        new m(function(mutations) {
+            for(let mutation of mutations) {
+                if (mutation.addedNodes.length > 0) { // 仅当节点增加
+                    for (const node of mutation.addedNodes){
+                        if (node.nodeName === 'BODY') { // 增加的节点为 BODY
+                            page = getPage();
+                            transTitle(); // 页面标题翻译
+                            transBySelector(); // Selector 翻译
+                            traverseNode(document.body); // 立即翻译页面
+
+                            observer.observe(document.body, config); // 再次监视 BODY
+                            return;
+                        }
+                    }
+                }
+            }
+        }).observe(document.documentElement, {childList: true});
     }
 
     /**
