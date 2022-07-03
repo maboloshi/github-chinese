@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new|security-log)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history)/,
+    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new|security-log)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history)/,
 
     // 仓库路径
-    rePagePathRepo: /\/(settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(settings|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /\/(dashboard|settings\/(apps\/new|applications\/new)|settings|billing_managers\/new|repositories\/new|topics|billing\/history|domain\/new)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(dashboard|settings\/(apps\/new|applications\/new)|settings|billing_managers\/new|repositories\/new|topics|billing\/history|domain\/new)/,
 
     /**
      * 忽略区域的 class 正则
