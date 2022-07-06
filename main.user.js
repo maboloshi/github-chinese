@@ -380,8 +380,8 @@
             return false;
         }
 
-        element.insertAdjacentHTML('afterend', "<a id='translate-me' href='#' style='color:rgb(27, 149, 224);font-size: small'>翻译</a>");
-        let translate_me = document.getElementById('translate-me')
+        element.insertAdjacentHTML('afterend', "<div id='translate-me' style='color: rgb(27, 149, 224); font-size: small; cursor: pointer'>翻译</div>");
+        let translate_me = document.getElementById('translate-me');
 
         translate_me.onclick = function() {
             // get description text
