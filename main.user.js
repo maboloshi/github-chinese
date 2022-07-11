@@ -70,6 +70,12 @@
             }
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
+
+                    // TURBO-FRAME TURBO 框架处理
+                    if (mutation.target.tagName === 'TURBO-FRAME' && mutation.target.src) {
+                        page = getPage(mutation.target.src); //获取 TURBO 框架 对应 page
+                    }
+
                     traverseNode(mutation.target);
                 }
             }
@@ -178,24 +184,51 @@
     /**
      * 获取翻译页面
      *
+     * @param {string} TURBO 框架 src 地址
+     *
      * 2021-10-07 11:48:50
      * 参考 v2.0 中规则
      */
-    function getPage() {
+    function getPage(src="") {
+        var Location = location;
+        var Document = document;
+
+        // 解析 TURBO 框架
+        if(src){
+            Location = new URL(src);
+            GM_xmlhttpRequest({
+                method: "GET",
+                headers: {"Accept": "text/html, application/xhtml+xml"},
+                url: src,
+                responseType: "document",
+                // synchronous: true,
+                onload: function(res) {
+                    if (res.status === 200) {
+                        Document = res.response;
+                    } else {
+                        Document = false;
+                    }
+                }
+            });
+            if (!Document) {
+                return false;
+            }
+        }
+
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
-        const pathname = location.pathname; // 当前路径
-        const isLogin = /logged-in/.test(document.body.className); // 是否登录
+        const site = Location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
+        const pathname = Location.pathname; // 当前路径
+        const isLogin = /logged-in/.test(Document.body.className); // 是否登录
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
-        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
+        const analyticsLocation = (Document.getElementsByName('analytics-location')[0] || 0).content || '';
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
         const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
         // 优先匹配 body 的 class
-        let page = document.body.className.match(I18N.conf.rePageClass);
+        let page = Document.body.className.match(I18N.conf.rePageClass);
         if (page) {
             return page[1];
         }
