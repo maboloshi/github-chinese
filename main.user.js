@@ -466,6 +466,7 @@
     GM_registerMenuCommand("正则切换", () => {
         if (RegExp){
             GM_setValue("RegExp", 0);
+            RegExp = 0;
             GM_notification("已关闭正则功能");
         } else {
             GM_setValue("RegExp", 1);
