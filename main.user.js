@@ -102,9 +102,18 @@
                             return;
                         }
                     }
+                } else if(mutation.type === 'attributes') {
+                    if (mutation.target.className === 'translated-ltr') {
+                        observer.disconnect();
+                    } else {
+                        observer.observe(document.body, config);
+                    }
                 }
             }
-        }).observe(document.documentElement, {childList: true});
+        }).observe(document.documentElement, {
+            childList: true,
+            attributeFilter: ['class']
+        });
     }
 
     /**
