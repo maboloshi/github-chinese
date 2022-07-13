@@ -101,11 +101,10 @@ I18N.conf = {
 
 I18N.zh = {
     "selector": [ // 元素筛选器规则
-        ["#global-nav > a:nth-child(2)", "拉取请求"], // 顶部条 拉取请求
+        ["a[aria-label='Pull requests you created']", "拉取请求"], // 顶部条 拉取请求
         ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
-        ["#review-changes-modal > summary > span.js-review-changes", "审查更改"], // 拉取请求 更改的文件
-        ["#review-changes-modal > summary > span.hide-sm > span.js-review-changes", "审查更改"], // 拉取请求 更改的文件
-        ["btn-primary btn float-none float-md-right", "更新评论"],
+        ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
+        ["a[data-target='branch-filter.allFilter']", "所有分支"], // /branches
     ],
 
     "title": { // 标题翻译
