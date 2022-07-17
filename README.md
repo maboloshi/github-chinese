@@ -26,6 +26,27 @@
 
 ## 📝 更新说明
 
+### 2022-07-17 14:04:44
+
+更新至 1.7.9
+
+GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/defunkt/jquery-pjax) 切换到 [hotwired/turbo](turbo.hotwired.dev), 导致已有的动态监测方式逐步失效
+
+目前, 通过以下修复:
+
+1. 新增 `BODY` 元素新增监视
+1. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
+1. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
+1. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
+
+其他更新:
+
+1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
+1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
+1. 修复`关闭正则`无法生效, 需要刷新页面才生效
+1. 日常更新词库和忽略规则
+1. 更新`JS 筛选器`规则
+
 ### 2022-06-29 13:27:12
 
 更新至 1.7.8
