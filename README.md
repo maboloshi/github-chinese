@@ -8,6 +8,11 @@
   [![license GPL-3.0][license-image]][license-url]
   [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
+## 💖星标历史
+
+<!-- [![Star History Chart](https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline)](https://star-history.com/#maboloshi/github-chinese&Timeline) -->
+<img src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" alt="Star History Chart" data-canonical-src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline" style="max-width:80%; margin: 0 auto;">
+
 ## 🚩功能
 
 - 中文化 GitHub 菜单栏，标题，按钮等公共组件
@@ -155,3 +160,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
+
+## 🎁 打赏
+
+<img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="300">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="300">
