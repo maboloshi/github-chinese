@@ -11,7 +11,7 @@
 ## 💖星标历史
 
 <!-- [![Star History Chart](https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline)](https://star-history.com/#maboloshi/github-chinese&Timeline) -->
-<img src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" alt="Star History Chart" data-canonical-src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline" style="max-width:80%; margin: 0 auto;">
+<img src="https://camo.githubusercontent.com/8039feea33a30dd2eeea51c9e46365f9e35b60f84e6b424d5244e83a4707c530/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6d61626f6c6f7368692f6769746875622d6368696e65736526747970653d54696d656c696e65" alt="Star History Chart" data-canonical-src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline" width="75%">
 
 ## 🚩功能
 
@@ -163,4 +163,5 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## 🎁 打赏
 
-<img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="300">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="300">
+<img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="35%">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="35%">
+
