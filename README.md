@@ -23,8 +23,9 @@
 
 1. 请先安装用户脚本管理器如: [Tampermonkey][Tampermonkey], [violentmonkey][violentmonkey] 等，支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
 1. 然后再点击链接之一，安装脚本即可。
-    - [GitHub 中文化插件 - github 托管][main.user.js]【开发版】（相对及时更新）
-    - [GitHub 中文化插件 - greasyfork 托管][main(greasyfork).user.js]【发布版】（仅大版本更新）
+    - [GitHub 中文化插件 - github 托管【开发版】（相对及时更新）][main.user.js]
+        > 注意: 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
+    - [GitHub 中文化插件 - greasyfork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
 
 > 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
