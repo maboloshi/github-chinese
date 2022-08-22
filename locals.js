@@ -1793,6 +1793,17 @@ I18N.zh = {
                 "500MB of Packages storage": "500MB 的包存储空间",
                 "Community support": "社区支持",
 
+                "Not included:": "不包含：",
+                "Protected branches on all repos": "所有仓库上的受保护分支",
+                "Access to Codespaces": "访问代码空间",
+                "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
+                "Required status checks": "所需的状态检查",
+                "Code owners": "代码所有者",
+                "Required reviewers": "所需的审阅者",
+                "Pages for static website hosting": "静态网站页面托管",
+                "Web-based support": "基于网络的支持",
+                "See all features and compare plans": "查看所有功能并比较计划",
+
                 "Start your first organization account": "开设您的第一个组织帐户",
                 "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
                 "Create an organization": "创建组织",
@@ -8913,6 +8924,18 @@ I18N.zh = {
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
                 "Community support": "社区支持",
+
+                "Not included:": "不包含：",
+                "Protected branches on all repos": "所有仓库上的受保护分支",
+                "Access to Codespaces": "访问代码空间",
+                "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
+                "Required status checks": "所需的状态检查",
+                "Code owners": "代码所有者",
+                "Required reviewers": "所需的审阅者",
+                "Pages for static website hosting": "静态网站页面托管",
+                "Web-based support": "基于网络的支持",
+                "See all features and compare plans": "查看所有功能并比较计划",
+
                 "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
 
