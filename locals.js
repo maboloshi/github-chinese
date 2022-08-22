@@ -2953,11 +2953,40 @@ I18N.zh = {
                 "Begin import": "开始导入",
                 "Preparing import…": "准备导入…",
 
+            // 复刻仓库 /<user-name>/<repo-name>/fork
+                "Create a new fork": "创建新复刻",
+                "A": " ",
+                "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
+                "View existing forks.": "查看现有复刻。",
+
+                "Owners": "所有者",
+                "Repository name": "仓库名称",
+
+                    // [/is available./, "名称可用。"], // 复刻页面
+                    "The repository": "仓库",
+                    "already exists on this account.": "已经存在于此帐户。",
+                    "Your new repository will be created as": "您的新仓库将被创建为",
+
+                "By default, forks are named the same as their parent repository. You can customize the name to distinguish it further.": "默认情况下，复刻的名称与他们的父仓库相同。您可以自定义名称以进一步区分它。",
+                "(optional)": "（可选）",
+
+                "Copy the": "仅复制",
+                "branch only": "分支",
+                // [/Contribute back to ([^ ]+) by adding your own branch./, "通过添加您自己的分支来回馈 $1。"],
+
+                "You are creating a fork in your personal account.": "您正在向您的个人帐户中创建一个复刻。",
+                "Create fork": "创建复刻",
+
         },
         "regexp": [ // 正则翻译
             [/([^ ]+) is available\./,"$1 名称可用。"],
             [/You are creating a public repository in the ([^ ]+) organization./,"您正在 $1 组织中创建一个公共仓库。"], // 创建组织的公共仓库
             [/You are creating a private repository in the ([^ ]+) organization./,"您正在 $1 组织中创建一个私有仓库。"], // 创建组织的私有仓库
+            [/\(fork already exists\)/, "（复刻已存在）"], // 复刻页面
+            [/\(repository already exists\)/, "（仓库已存在）"], // 复刻页面
+            [/is available./, "名称可用。"], // 复刻页面
+            [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 组织中创建一个复刻。"], // 复刻页面
+            [/Contribute back to ([^ ]+) by adding your own branch./, "通过添加您自己的分支来回馈 $1。"],
         ],
     },
 
@@ -2990,24 +3019,6 @@ I18N.zh = {
                 "…or import code from another repository": "…或从另一个仓库导入代码",
                 "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
                 "Import code": "导入代码",
-
-            // 复刻仓库 /<user-name>/<repo-name>/fork
-                "A": " ",
-                "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
-                "View existing forks.": "查看现有复刻。",
-
-                "Owners": "所有者",
-                "Repository name": "仓库名称",
-
-                    // [/is available./, "名称可用。"], // 复刻页面
-                    "The repository": "仓库",
-                    "already exists on this account.": "已经存在于此帐户。",
-                    "Your new repository will be created as": "您的新仓库将被创建为",
-
-                "By default, forks are named the same as their parent repository. You can customize the name to distinguish it further.": "默认情况下，复刻的名称与他们的父仓库相同。您可以自定义名称以进一步区分它。",
-                "(optional)": "（可选）",
-                "You are creating a fork in your personal account.": "您正在向您的个人帐户中创建一个复刻。",
-                "Create fork": "创建复刻",
 
             // 仓库页面 /<user-name>/<repo-name>/
                 // 顶部提醒
@@ -6196,10 +6207,6 @@ I18N.zh = {
             [/Renamed from/, "重命名自"], // 提交中文件历史
             [/Renamed to/, "重命名到"], // 提交中文件历史
             [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："], // 分支页面
-            [/\(fork already exists\)/, "（复刻已存在）"], // 复刻页面
-            [/\(repository already exists\)/, "（仓库已存在）"], // 复刻页面
-            [/is available./, "名称可用。"], // 复刻页面
-            [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 组织中创建一个复刻。"], // 复刻页面
         ],
     },
 
