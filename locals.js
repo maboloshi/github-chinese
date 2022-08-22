@@ -2953,6 +2953,88 @@ I18N.zh = {
                 "Begin import": "开始导入",
                 "Preparing import…": "准备导入…",
 
+                // 仓库头部条
+                "Pin": "置顶", // 组织仓库
+                "Edit Pins": "编辑置顶", // 组织仓库
+                    "Pin to…": "置顶到…",
+                    "Profile": "个人资料页",
+                        "Pin this to your personal profile, visible to everyone": "将此置顶到您的个人资料，对所有人可见",
+                        "Limit reached": "已达上限",
+                    "Public pins in this organization": "该组织的公共置顶",
+                        "Visible to anyone": "对任何人可见",
+                    "Private pins in this organization": "该组织的私有置顶",
+                        "Visible to members only": "仅对成员可见",
+                "Unpin": "取消置顶",
+
+                "Ignoring": "忽略",
+                "Stop ignoring": "取消忽略",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
+
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
+
+                "Star": "星标",
+                "Unstar": "已加星标",
+                "Fork": "复刻",
+                "Unfork": "取消复刻",
+
+                // 赞助对话框
+                "External links": "外部链接",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
+                "Report abuse": "举报滥用",
+
+                // 关注 & 订阅通知设置 下拉菜单
+                "Notifications": "通知类型",
+                "Participating and @mentions": "参与和 @您",
+                "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
+                "All Activity": "所有活动",
+                "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+                "Ignore": "忽略",
+                "Never be notified.": "永不接收通知。",
+                "Custom": "自定义",
+                "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+                "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
+                // "Releases": "发行版",
+                // "Discussions": "讨论",
+                "Security alerts": "安全警报",
+                //"Cancel": "取消",
+                "Apply": "应用",
+
+                // 复刻下拉
+                "Your existing forks": "您现有的复刻",
+                "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
+                "Create a new fork": "创建复刻",
+
+                //
+                "Add to list": "添加到清单",
+                "Lists": "清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+                "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Creating...": "创建中...",
+
+                 // 用户 浮动信息卡
+                    "Recently edited these files": "最近编辑过这些文件",
+                    "Owns this repository": "拥有这个仓库",
+                    "Left a review": "留下了一个评论",
+                    "Committed to this repository": "已提交过这个仓库",
+                    "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
+                    "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+                    "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
+                    "Member of": "隶属组织",
+                    // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+                    "Opened this issue": "打开了该议题",
+                    "Opened this pull request": "打开了该拉取请求",
+                    "Opened this pull request (their first ever)": "打开了该拉取请求（他们有史以来的第一个请求）",
+
+                // 组织  浮动信息卡
+                    // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+                    // [/(\d+) members?/, "$1 个成员"],
+
             // 复刻仓库 /<user-name>/<repo-name>/fork
                 "Create a new fork": "创建新复刻",
                 "A": " ",
@@ -2987,6 +3069,9 @@ I18N.zh = {
             [/is available./, "名称可用。"], // 复刻页面
             [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 组织中创建一个复刻。"], // 复刻页面
             [/Contribute back to ([^ ]+) by adding your own branch./, "通过添加您自己的分支来回馈 $1。"],
+            [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
+            [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
+            [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         ],
     },
 
