@@ -7616,9 +7616,14 @@ I18N.zh = {
                 "Confirm access": "授权访问",
                 //"Password": "密码",
                 //"Forgot password?": "忘记密码？",
+                "When your phone is ready, click the button below.": "手机准备就绪后，单击下面的按钮。",
+                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+
+                "Use your password": "使用您的密码",
+
                 "You are entering": "您正在进入",
                 "sudo mode": "Sudo 模式",
-                ". We won’t ask for your password again for a few hours.": " 。我们将在未来几个小时内不再要求您输入密码。",
+                ". After you've performed a sudo-protected action, you'll only be asked to re-authenticate again after a few hours of inactivity.": "。在您执行了受 sudo 保护的操作后，在几个小时不活动后才会要求您重新进行身份验证。",
 
         },
         "regexp": [ // 正则翻译
