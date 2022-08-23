@@ -5124,8 +5124,19 @@ I18N.zh = {
             // 成员权限详情 /orgs/<组织名>/people/<用户名>/repositories/<组织名>/<repo-name>
 
             // 安全标签卡 & 安全概述 /<user-name>/<repo-name>/security
+
+                // 公共部分
+                "Reporting": "报告",
+                    "Policy": "政策",
+                    "Advisories": "咨询",
+                "Vulnerability alerts": "漏洞警报",
+
+                "Disabled": "禁用",
+                "Enabled": "启用",
+                "Needs setup": "需要设置",
+
                 "Security overview": "安全概述",
-                "Security policy": "安全政策",
+                "Security policy •": "安全政策 •",
                     "Define how users should report security vulnerabilities for this repository": "定义用户应如何报告此仓库的安全漏洞",
 
                     "Suggest how users should report security vulnerabilities for this repository": "建议用户应如何报告此仓库的安全漏洞",
@@ -5134,18 +5145,18 @@ I18N.zh = {
                     "View how to securely report security vulnerabilities for this repository": "查看如何安全地报告此仓库的安全漏洞",
                     "View security policy": "查看安全策略",
 
-                "Security advisories": "安全公告",
+                "Security advisories •": "安全公告 •",
                     "View or disclose security advisories for this repository": "查看或公开此仓库的安全公告",
                     "View security advisories": "查看安全公告",
                     "View security advisories for this repository": "查看此仓库的安全公告",
 
-                "Dependabot alerts": "Dependabot 警报",
+                "Dependabot alerts •": "Dependabot 警报 •",
                     "— Active": "— 激活",
                     "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
                     "View Dependabot alerts": "查看 Dependabot 警报",
 
-                "Code scanning alerts": "代码扫描警报",
+                "Code scanning alerts •": "代码扫描警报 •",
                     "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
                     "Set up code scanning": "设置代码扫描",
                     // 私有库
@@ -5180,6 +5191,8 @@ I18N.zh = {
                 "There aren’t any published security advisories": "没有任何已发布的安全公告",
 
             // Dependabot 警报 /<user-name>/<repo-name>/security/dependabot
+                "Dependabot alerts": "Dependabot 警报",
+
                 "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
                 "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
                 "this repository’s settings": "在仓库的设置中",
@@ -5189,8 +5202,10 @@ I18N.zh = {
                 "Welcome to Dependabot alerts!": "欢迎使用 Dependabot 警报！",
                 "Dependabot alerts track security vulnerabilities that apply to your repository’s dependencies. As alerts are created, they’ll appear here.": "Dependabot 警报跟踪适用于仓库依赖项的安全漏洞。创建警报后，它们将显示在此处。",
 
+                "Dismiss alert": "忽略警报",
                 "Dismiss alerts": "忽略警报",
                     // 下拉菜单
+                    "Select a reason to dismiss": "选择驳回理由",
                     "A fix has already been started": "修复已经开始",
                     "No bandwidth to fix this": "没有带宽来修复",
                     "Risk is tolerable to this project": "风险可承受",
@@ -5205,14 +5220,16 @@ I18N.zh = {
                     "Filter by ecosystem": "按生态系统筛选",
                     "Filter ecosystem": "筛选生态系统",
                 "Manifest": "清单",
-                    // 清单下拉
                     "Filter by manifest": "按清单筛选",
                     "Filter manifest": "筛选清单",
                     "All": "所有",
-
-                // 排序下拉 补充词条
                 "Severity": "严重等级",
                     "Filter by severity": "按严重性筛选",
+
+                // 排序下拉 补充词条
+                    "Most important": "最重要的",
+                    "Manifest path": "表现路径",
+                    "Package name": "包名称",
 
                 "Closed as": "关闭",
                 "Filter by resolution": "按决议筛选",
