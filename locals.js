@@ -6918,15 +6918,15 @@ I18N.zh = {
                     "I understand, update the default branch.": "我明白了，依然更新默认分支",
 
                 "Branch protection rules": "分支保护规则",
-                // 私有库 启用 分支保护 提醒
-                "Protected branches are available to Pro, Team, and Enterprise users": "专业版、团队版和企业版用户均可使用分支保护功能",
-                "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "对代码分支的合并方式实施限制，包括要求由选定的协作者进行审查，或者只允许特定的贡献者在特定的分支上工作。",
-
                 "Add rule": "添加规则",
-                "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。对分支保护规则感到陌生？",
-                "No branch protection rules defined yet.": "尚未定义分支保护规则。",
 
-                "Your protected branch rules won't be enforced on this private repository until you move to a GitHub Team or Enterprise organization account.": "您的受保护分支规则不会在这个私有仓库上执行，直到您转移到 GitHub 团队或企业组织账户。",
+                "You haven't protected any of your branches": "您没有保护任何分支",
+                "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
+                "Learn more about protected branches": "了解更多关于受保护分支的信息",
+                "Add branch protection rule": "添加分支保护规则",
+
+                // 私有库 分支保护 未执行 提醒
+                "Your protected branch rules won't be enforced on this private repository until you move to a GitHub Team or Enterprise organization account.": "您的受保护分支规则不会在这个私有仓库上执行，直到您迁移至 GitHub 团队或企业组织账户。",
                 "Move to an organization": "转移到组织",
 
                 "Not enforced": "未执行",
@@ -6936,6 +6936,14 @@ I18N.zh = {
 
             // 新建分支保护规则 页面 /<user-name>/<repo-name>/settings/branch_protection_rules/new====================================
                 "Branch protection rule": "分支保护规则",
+
+                "Protect your most important branches": "保护您最重要的分支",
+                    "define whether collaborators can delete or force push to the branch and set requirements for any pushes to the branch, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送到分支，并对任何推送到分支的内容设置要求，如通过状态检查或线性提交历史。",
+                    "Your GitHub Free plan": "您的 GitHub 免费计划",
+                    "can only enforce rules on its public repositories, like this one.": "只能对其公共仓库执行规则，例如这个。",
+                    "Your rules won't be enforced on this private repository until": "您的规则将不会在此私有仓库上强制执行，直到",
+                    "move to a GitHub Team or Enterprise organization account": "迁移至 GitHub 团队或企业组织账户",
+
                 "Branch name pattern": "分支名称模式",
                 "Protect matching branches": "保护匹配的分支",
                 "Require a pull request before merging": "要求在合并前提交拉取请求",
@@ -6966,12 +6974,19 @@ I18N.zh = {
                             "No deployment environments found": "尚无部署环境",
                             "Sorry, we couldn’t find any deployments for this repository.": "抱歉，我们找不到此仓库的任何部署。",
                             "Deployment environments found in this repository": "在此仓库中找到的部署环境",
+                "Do not allow bypassing the above settings": "不允许绕过上述设置",
+                "The above settings will apply to admins and custom roles with the \"bypass branch protections\" permission.": "上述设置将应用于具有“绕过分支保护”权限的管理员和自定义角色。",
+
                 "Include administrators": "包括管理员",
                 "Enforce all configured restrictions above for administrators.": "对管理员执行上述所有配置进行限制。",
 
                 "Rules applied to everyone including administrators": "规则适用于每个人，包括管理员",
                 "Allow force pushes": "允许强制推送",
-                "Permit force pushes for all users with push access.": "允许所有有推送权限的用户强制推送。",
+                    "Permit force pushes for all users with push access.": "允许所有有推送权限的用户强制推送。",
+                    "Specify who can force push": "指定谁可以强制推送",
+                        "Only these people, teams, or apps are allowed to force push.": "仅允许这些人、团队或应用强制推送。",
+                        "Search for people, teams, or apps": "搜索人员、团队或应用",
+                        "People, teams, or apps who can force push": "可以强制推送的人员、团队或应用",
                 "Allow deletions": "允许删除",
                 "Allow users with push access to delete matching branches.": "允许有推送权限的用户删除匹配的分支。",
 
