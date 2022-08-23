@@ -464,7 +464,7 @@ I18N.zh = {
                 // "for commands": "命令，",
                 // "for help": "帮助",
 
-                "Pages": "GitHub Page",
+                "Pages": "GitHub Pages",
                 "Notifications": "通知",
                 "Discussions": "讨论",
                 "Actions": "操作",
@@ -1512,7 +1512,7 @@ I18N.zh = {
             // "Repository": "仓库"
             "Packages": "软件包",
             "Copilot": "GitHub Copilot",
-            "Pages": "GitHub Page",
+            "Pages": "GitHub Pages",
             "Saved replies": "快捷回复",
 
             // "Security": "安全",
@@ -1639,7 +1639,7 @@ I18N.zh = {
                     "Are you sure you want to do this?": "您确定要这么做吗？",
                     "This is extremely important.": "这是极其重要的。",
                     "We will": "我们将",
-                    ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的复刻、Wiki、议题、拉取请求和 GitHub Page 站点。",
+                    ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的复刻、Wiki、议题、拉取请求和 GitHub Pages 站点。",
                     "You will no longer be billed, and after 90 days your username will be available to anyone on GitHub.": "您将不再被收取费用，并且 90 天后您的用户名将被 GitHub 上的任何人使用。",
                     "For more help, read our article \"": "如需更多帮助，请阅读我们的文章 “",
                     "Deleting your user account": "删除您的帐户",
@@ -2202,7 +2202,7 @@ I18N.zh = {
                 "Verified domains": "经验证的域名",
                 "Add a domain": "添加域名",
                 "There are no verified domains.": "暂无经验证的域名",
-                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Page。",
+                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
 
             // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
                 "Add a verified domain": "经验证的域名",
@@ -2639,7 +2639,7 @@ I18N.zh = {
                 // "Organization packages": "组织软件包",
                 "Packages": "软件包",
                     "Packages published to the GitHub Package Platform.": "发布软件包到 GitHub Package 平台。",
-                "Pages": "Github Page",
+                "Pages": "GitHub Pages",
                     "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
                 "Pull requests": "拉取请求",
                     "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
@@ -4672,8 +4672,8 @@ I18N.zh = {
                             "open pull request for this branch.": "个该分支的拉取请求。",
 
                         // 重命名 GitHub Pages 所在分支
-                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Page 站点。",
-                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Page 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Page 站点。",
+                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
+                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
 
                         "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
@@ -5933,16 +5933,16 @@ I18N.zh = {
                 "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
 
                 // GitHub Pages
-                "GitHub Pages / Page Build": "GitHub Page / 页面构建",
+                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
                 "Page Build": "页面构建",
                 "succeeded": "成功于",
-                "GitHub Pages successfully built your site.": "GitHub Page 成功构建了您的站点。",
+                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
                 "Your website is ready at": "您的网站已准备就绪，网址为",
-                "View more details on GitHub Pages": "在 GitHub Page 查看更多细节",
+                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
 
                 "Re-run all checks": "重新运行所有检查",
                 //顶部提醒
-                "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Page 的检查。",
+                "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
             // /<user-name>/<repo-name>/deployments
                 // [/Deployed to ([^ ]+)/, "部署到 $1"],
@@ -6435,7 +6435,7 @@ I18N.zh = {
                     "Runners": "运行器",
                 "Webhooks": "Web 钩子",
                 "Environments": "环境",
-                "Pages": "GitHub Page",
+                "Pages": "GitHub Pages",
 
                 // "Security": "安全",
                 "Code security and analysis": "代码安全性与分析",
@@ -6601,7 +6601,7 @@ I18N.zh = {
                     "All": "所有",
                         "stars and watchers": "追星者和关注者",
                         "of this repository.": "对于这个仓库。",
-                        "pages": "GitHub Page",
+                        "pages": "GitHub Pages",
                         "published from this repository.": "发布自这个仓库。",
                     "Dependency graph, Dependabot alerts, and Dependabot security updates will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图、Dependabot 警报和 Dependabot 安全更新将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
                     "Dependency graph and Dependabot alerts will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图和 Dependabot 警报将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
@@ -6905,8 +6905,8 @@ I18N.zh = {
                             "open pull request for this branch.": "个该分支的拉取请求。",
 
                         // 重命名 GitHub Pages 所在分支
-                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Page 站点。",
-                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Page 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Page 站点。",
+                            "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
+                                "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
 
                         "Will not update your members' local environments.": "不会更新您成员的本地环境。",
                     "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
@@ -7435,7 +7435,7 @@ I18N.zh = {
 
             // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
                 "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
-                "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "该仓库已存档。相关的 GitHub Page 网站仍然发布，但设置是只读的。",
+                "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "该仓库已存档。相关的 GitHub Pages 网站仍然发布，但设置是只读的。",
 
                 // 发布状态
                 "Your site is published at": "您的站点发布在",
@@ -7443,10 +7443,10 @@ I18N.zh = {
 
                 "Source": "来源",
                 // 禁用时
-                "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Page 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Page。",
-                "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Page 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Page 站点。",
+                "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Pages 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Pages。",
+                "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Pages 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Pages 站点。",
                 // 启用时
-                "Your GitHub Pages site is currently being built from the": "您的 GitHub Page 站点，目前正建立于",
+                "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
                 "folder in the": "目录在",
                 "branch.": "分支。",
                 "Branch:": "分支：",
@@ -7455,9 +7455,9 @@ I18N.zh = {
                 "Select folder": "选择文件夹",
                     "/ (root)": "/ (根目录)",
 
-                "You can't disable GitHub Pages while having a": "您无法禁用 GitHub Page，当仓库存在",
+                "You can't disable GitHub Pages while having a": "您无法禁用 GitHub Pages，当仓库存在",
                 "branch in this repository. Read more on how to": "分支。阅读更多关如何",
-                "unpublish your GitHub Pages site": "取消发布 GitHub Page 站点",
+                "unpublish your GitHub Pages site": "取消发布 GitHub Pages 站点",
 
                 "Theme Chooser": "设置主题",
                 "Select a theme to publish your site with a Jekyll theme using the": "选择一个主题，用 jekyll 主题发布您的站点，使用",
@@ -7478,7 +7478,7 @@ I18N.zh = {
                     // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
                     // 顶部提醒
                     "No changes to custom domain.": "没有对自定义域进行修改。",
-                    "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Page，请记得删除此域的任何 GitHub Page 的 DNS 记录。",
+                    "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
 
                 "Enforce HTTPS": "强制 HTTPS",
                 "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
@@ -7486,14 +7486,14 @@ I18N.zh = {
                 "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
 
                 // 私有库 启用 Github Pages 提醒
-                "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Page",
-                "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Page 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
+                "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Pages",
+                "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
 
                 //
                 "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
                 "Try risk-free for 30 days": "无风险试用 30 天",
                 "using a GitHub Enterprise organization, or": "试用 GitHub 企业组织，或",
-                "learn more about changing the visibility of your GitHub Pages site": "了解更多关于改变您的 GitHub Page 站点的可见性的信息",
+                "learn more about changing the visibility of your GitHub Pages site": "了解更多关于改变您的 GitHub Pages 站点的可见性的信息",
 
             // 审查设置 (仓库)互动限制 /<user-name>/<repo-name>/settings/interaction_limits
             // 同全局 同组织仓库
@@ -9792,7 +9792,7 @@ I18N.zh = {
                 "Verified domains": "经验证的域名",
                 "Add a domain": "添加域名",
                 "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
-                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Page。",
+                "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
 
             // 组织 GitHub Pages - 添加域名 /organizations/<org-login>/settings/pages_verified_domains/new 同个人设置 GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
                 "Add a verified domain": "经验证的域名",
