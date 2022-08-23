@@ -6526,9 +6526,17 @@ I18N.zh = {
                     "You must select at least one option": "您必须至少选择一个选项",
                     "Allow merge commits": "允许合并提交",
                         "Add all commits from the head branch to the base branch with a merge commit.": "使用合并提交将所有从头部分支的提交添加到基础分支。",
+                            "Default message": "默认信息",
+                                "Default commit message presented when merging a pull request with merge.": "当合并拉取请求时显示的默认提交信息。",
+                            "Default to pull request title": "默认为拉取请求标题",
+                            "Default to pull request title and description": "默认为拉取请求标题和描述",
 
                     "Allow squash merging": "允许压缩合并",
                         "Combine all commits from the head branch into a single commit in the base branch.": "将来自头部分支的所有提交合并到基础分支中的单个提交中。",
+                            // "Default message": "默认信息",
+                                "Default commit message presented when merging a pull request with squash.": "当用压缩合并拉取请求时显示的默认提交信息。",
+                            "Default to pull request title and commit details": "默认为拉取请求标题和提交详细信息",
+
                         "Default to PR title for squash merge commits": "默认将拉取请求的标题作为压缩合并提交的信息",
                         "This will pre-populate the commit message with the PR title when performing a squash merge.": "在执行压缩合并时，将在提交信息中添加拉取请求的标题。",
 
