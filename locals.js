@@ -2066,37 +2066,53 @@ I18N.zh = {
                 "generating SSH keys": "生成 SSH 密钥",
                 "or troubleshoot": "或解决",
                 "common SSH problems": "常见的 SSH 问题",
+
                 "GPG keys": "GPG 密钥",
                 "New GPG key": "新建 GPG 密钥",
                 "There are no GPG keys associated with your account.": "没有与您的帐户关联的 GPG 密钥。",
                 "This is a list of GPG keys associated with your account. Remove any keys that you do not recognize.": "这是与您的帐户相关的 GPG 密钥的列表。删除任何您无法识别的密钥。",
+
                 "Email address:": "电子邮件地址：",
                 "Key ID:": "密钥 ID：",
                 "Subkeys:": "子密钥：",
+
                 "Learn how to": "了解如何",
                 "generate a GPG key and add it to your account": "生成 GPG 密钥并将其添加到您的帐户",
+
                 "Vigilant mode": "警戒模式",
                 "Flag unsigned commits as unverified": "将未签名的提交标记为未验证",
                 "This will include any commit attributed to your account but not signed with your GPG or S/MIME key.": "这将包括任何归属于您的帐户但没有用您的 GPG 或 S/MIME 密钥签名的提交。",
                 "Note that this will include your existing unsigned commits.": "请注意，这将包括您现有的未签名的提交。",
                 "Learn about vigilant mode": "了解警戒模式",
-                "/ Add new": "/ 新添",
-                "Title": "标题",
-                "Key": "密钥",
-                "Add SSH key": "添加 SSH 密钥",
-                "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
-                "We got an error doing that.": "我们在这样做时出错了。",
-                "Add GPG key": "添加 GPG 密钥",
+
+                // SSH 密钥删除 对话框
                 "Are you sure you want to delete this SSH key?": "您确定要删除此 SSH 密钥吗？",
                 "This action": "该操作",
                 "cannot": "不能",
                 "be undone. This will permanently delete the SSH key and if you’d like to use it in the future, you will need to upload it again.": "被撤销。这将永久地删除 SSH 密钥，如果您想在未来使用它，您将需要再次上传它。",
                 "I understand, please delete this SSH key": "我明白了，依然删除该 SSH 密钥",
+
+                // GPG 密钥删除 对话框
                 "Are you sure you want to delete this GPG key?": "您确定要删除此 GPG 密钥吗？",
                 "be undone. This will permanently delete the GPG key, and if you’d like to use it in the future, you will need to upload it again.": "被撤销。这将永久地删除 GPG 密钥，如果您想在未来使用它，您将需要再次上传它。",
                 "Any commits you signed with this key will become unverified after removing it.": "删除后，您使用此密钥签名的任何提交都将变成未验证。",
                 "I understand, delete this GPG key": "我明白了，依然删除该 GPG 密钥",
                 "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
+
+            // 添加 SSH 公钥 https://github.com/settings/ssh/new
+                "/ Add new": "/ 新添",
+                "Title": "标题",
+                "Key type": "密钥类型",
+                    "Authentication Key": "认证密钥",
+                    "Signing Key": "签名密钥",
+                "Key": "密钥",
+                "Add SSH key": "添加 SSH 密钥",
+
+                "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
+                "We got an error doing that.": "我们在这样做时出错了。",
+
+            // 添加 GPG 公钥 https://github.com/settings/gpg/new
+                "Add GPG key": "添加 GPG 密钥",
 
             // Organizations 组织 https://github.com/settings/organizations
                 "You are not a member of any organizations.": "您暂无任何组织。",
@@ -4554,6 +4570,8 @@ I18N.zh = {
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
 
+                "GPG key ID:": "GPG 密钥 ID：",
+                "SSH Key Fingerprint:": "SSH 密钥指纹：",
                 "Learn about vigilant mode": "了解警戒模式",
 
                 // "Copy the full SHA": "复制完整的 SHA",
