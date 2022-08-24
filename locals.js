@@ -4661,6 +4661,7 @@ I18N.zh = {
                 "New branch": "新建分支",
                     // 创建分支对话框
                     "Branch source": "源分支",
+                        "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                         "Choose a source branch": "选择一个源分支",
                     "Share feedback": "分享反馈",
 
