@@ -4657,7 +4657,7 @@ I18N.zh = {
                 "Yours": "您的",
                 "Active": "活跃的",
                 "Stale": "陈旧的",
-                //"All branches": "所有分支",
+                "All branches": "所有分支",
                 "New branch": "新建分支",
                     // 创建分支对话框
                     "Branch source": "源分支",
