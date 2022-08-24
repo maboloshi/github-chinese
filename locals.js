@@ -7454,59 +7454,81 @@ I18N.zh = {
 
             // GitHub Pages 页面 /<user-name>/<repo-name>/settings/pages====================================
                 "is designed to host your personal, organization, or project pages from a GitHub repository.": "旨在从 GitHub 仓库托管您的个人、组织或项目页面。",
-                "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "该仓库已存档。相关的 GitHub Pages 网站仍然发布，但设置是只读的。",
-
-                // 发布状态
-                "Your site is published at": "您的站点发布在",
-                "Your site is ready to be published at": "您的网站已准备好发布在",
-
-                "Source": "来源",
-                // 禁用时
-                "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Pages 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Pages。",
-                "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Pages 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Pages 站点。",
-                // 启用时
-                "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
-                "folder in the": "目录在",
-                "branch.": "分支。",
-                "Branch:": "分支：",
-                "Select branch": "选择分支",
-                    "None": "无",
-                "Select folder": "选择文件夹",
-                    "/ (root)": "/ (根目录)",
-
-                "You can't disable GitHub Pages while having a": "您无法禁用 GitHub Pages，当仓库存在",
-                "branch in this repository. Read more on how to": "分支。阅读更多关如何",
-                "unpublish your GitHub Pages site": "取消发布 GitHub Pages 站点",
-
-                "Theme Chooser": "设置主题",
-                "Select a theme to publish your site with a Jekyll theme using the": "选择一个主题，用 jekyll 主题发布您的站点，使用",
-                "Select a theme to publish your site with a Jekyll theme.": "选择一个主题，用 Jekyll 主题发布您的站点。",
-                "Choose a theme": "选择一个主题",
-                // /<user-name>/<repo-name>/settings/pages/themes?
-                    "Hide thumbnails": "隐藏缩略图",
-                    "Show thumbnails": "显示缩略图",
-                    "Select theme": "选择主题",
-
-                "Custom domain": "自定义域",
-                "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
-                "Remove": "移除",
-                    "Check again": "再检查一次",
-                    // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
-                    "Please wait for the DNS check to complete.": "请等待 DNS 检查结束。",
-                    // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
-                    // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
-                    // 顶部提醒
-                    "No changes to custom domain.": "没有对自定义域进行修改。",
-                    "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
-
-                "Enforce HTTPS": "强制 HTTPS",
-                "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
-                "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
-                "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
-
-                // 私有库 启用 Github Pages 提醒
+                // 私有库 提醒
                 "Upgrade or make this repository public to enable Pages": "升级或公开该仓库，以启用 GitHub Pages",
                 "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在从 GitHub 仓库中托管您的个人、组织或项目页面。",
+                // 存档时 提醒
+                "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "该仓库已存档。相关的 GitHub Pages 网站仍然发布，但设置是只读的。",
+
+                // 已发布时
+                "Your site is live at": "您的站点在",
+                    "Last": "最近",
+                    "deployed": "部署",
+                "Visit site": "访问网站",
+                "Unpublish site": "取消站点发布",
+
+                "Build and deployment": "构建和部署",
+                    // 顶部提醒
+                        "GitHub Pages source saved.": "GitHub Pages 源已保存。",
+                "Source": "来源",
+                    // "GitHub Actions": "",
+                        "Best for using frameworks and customizing your build process": "最适合使用框架和自定义构建过程",
+                    "Deploy from a branch": "从分支部署",
+                        "Classic Pages experience": "经典页面体验",
+
+                // GitHub Actions 部署模式
+                    "Send feedback": "发送反馈",
+                    "Use a suggested workflow,": "使用建议的工作流程，",
+                    "browse all workflows": "浏览所有工作流程",
+                    ", or": "，或",
+                    "create your own": "自建",
+
+                    "Workflow details will appear here once your site has been deployed.": "部署站点后，工作流程详细信息将显示在此处。",
+                    "View workflow runs.": "查看工作流程运行情况。",
+
+                    "Your site was last deployed to the":"您的站点上次部署到",
+                    "environment by the":"环境，由",
+                    "pages build and deployment": "页面构建和部署",
+                    "workflow.":"工作流程。",
+                    "Learn more about deploying to GitHub Pages using custom workflows": "了解更多关于使用自定义工作流程部署到 GitHub Pages 的信息",
+
+                // 从分支部署模式
+                "Branch": "分支",
+                    // 禁用时
+                    "GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository.": "GitHub Pages 目前已被禁用。在下面选择一个源，为该仓库启用 GitHub Pages。",
+                    "GitHub Pages is currently disabled. You must first add content to your repository before you can publish a GitHub Pages site.": "GitHub Pages 目前已被禁用。您必须先将内容添加到您的仓库，然后才能发布 GitHub Pages 站点。",
+                    // 启用时
+                    "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
+                    "folder in the": "目录在",
+                    "branch.": "分支。",
+
+                    "Select branch": "选择分支",
+                        "None": "无",
+                    "Select folder": "选择文件夹",
+                        "/ (root)": "/ (根目录)",
+
+                    "Learn how to": "了解如何",
+                    "add a Jekyll theme": "添加 Jekyll 主题",
+                    "to your site.": "到你的站点。",
+
+                "Custom domain": "自定义域",
+                    "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
+                        "Remove": "移除",
+                        "Check again": "再检查一次",
+                        // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
+                        "Please wait for the DNS check to complete.": "请等待 DNS 检查结束。",
+                        // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
+                        // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
+
+                        // 顶部提醒
+                        "No changes to custom domain.": "没有对自定义域进行修改。",
+                        "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
+
+                    "Enforce HTTPS": "强制 HTTPS",
+                        "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
+
+                        "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
+                        "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
 
                 //
                 "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
