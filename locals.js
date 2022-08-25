@@ -6967,6 +6967,15 @@ I18N.zh = {
 
                 // [/Currently applies to (\d+) branchs?/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
 
+                // 删除分支保护规则
+                "Delete this branch protection rule?": "删除此分支保护规则？",
+                "This action cannot be undone.": "此操作无法撤消。",
+                "I understand, delete this rule.": "我明白了，依然删除此规则。",
+
+                // 顶部提醒
+                "Branch protection rule settings saved.": "分支保护规则设置已保存。",
+                "Branch protection rule was successfully deleted.": "分支保护规则已成功删除。",
+
             // 新建分支保护规则 页面 /<user-name>/<repo-name>/settings/branch_protection_rules/new====================================
                 "Branch protection rule": "分支保护规则",
 
