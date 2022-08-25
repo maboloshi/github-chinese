@@ -3425,15 +3425,20 @@ I18N.zh = {
                     "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
                     "Open pull request": "打开拉取请求",
 
-                "Fetch upstream": "获取上游",
-                    // 获取上游按钮下拉菜单
-                    "Keep your fork up-to-date with the upstream repository.": "使您的复刻与上游仓库保持同步。",
+                "Sync fork": "同步复刻",
+                    // 同步复刻按钮下拉菜单
+                    "This branch is out-of-date": "此分支已过时",
+                    // [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通过从上游仓库同步 $1 个提交来更新分支，以使该分支保持最新。"], // 同步复刻
+                    // [/This branch is not behind the upstream ([^ ]+)/, "该分支不落后与上游 $1"], // 同步复刻
                     "No new commits to fetch. Enjoy your day!": "尚无新提交。祝您愉快！", //相同
                     "Compare": "对比",
-                    "Fetch and merge":"获取并合并",
+                    "Update branch":"更新分支",
                     "Fetching and merging…":"正在获取和合并中…",
-                    "Open a pull request to fetch upstream and review changes or resolve conflicts.": "打开拉取请求去获取上游并查看更改或解决冲突。",
-                    "and has conflicts that must be resolved.": "并且有冲突必须解决。",
+
+                    // [/Discard (\d+) commits? to make this branch match the upstream repository. (\d+)commits? will be removed from this branch./, "丢弃 $1 个提交，以使本分支与上游仓库一致。$2 个提交将从本分支中删除。"],
+                    "You can resolve merge conflicts using the command line and a text editor.": "您可以使用命令行和文本编辑器解决合并冲突。",
+                    // [/Discard (\d+) commits?/, "丢弃 $1 个提交"],
+                    "Discarding changes...": "放弃更改...",
 
                 // "Choose a head ref": "选择一个头引用",
 
@@ -6154,18 +6159,19 @@ I18N.zh = {
             [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
             [/\+ ([\d,]+) packages?/, "+ $1 个软件包"], // 仓库首页右侧栏 软件包
             [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
-            // 个人仓库 贡献和获取操作后 信息提示条
-            [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游的 $1 中获取并快速转发。"],
-            // 个人仓库当前分支状态
-            // [/This branch is even with ([^ ]+)\./, "该分支与上游 $1 相同。"],
-            [/This branch is up to date with ([^ ]+)\./, "该分支与上游 $1 保持同步。"],
+            // 个人仓库 贡献和同步复刻操作后 信息提示条
+            [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
+            [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
+            // 同步复刻
+            [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通过从上游仓库同步 $1 个提交来更新分支，以使该分支保持最新。"],
+            [/This branch is not behind the upstream ([^ ]+)/, "该分支不落后与上游 $1"],
+            [/Discard (\d+) commits? to make this branch match the upstream repository. (\d+) commits? will be removed from this branch./, "丢弃 $1 个提交，以使本分支与上游仓库一致。$2 个提交将从本分支中删除。"],
+            [/Discard (\d+) commits?/, "丢弃 $1 个提交"],
             // 贡献
             [/This branch is not ahead of the upstream ([^ ]+)\./, "该分支并不领先上游 $1。"],
             [/This branch is (\d+) commits? ahead of ([^ ]+)\./, "该分支领先上游 $2 $1个提交。"],
-            //获取上游.
-            [/This branch is not behind the upstream ([^ ]+)\./, "该分支并不落后上游 $1。"], //相同时
-            [/This branch is (\d+) commits? behind the upstream/, "该分支落后上游 $1 个提交，"],
-            [/Fetch and merge (\d+) upstream commits? from ([^ ]+)\./, "从上游 $2 获取并合并 $1 个提交。"],
+            // 个人仓库当前分支状态
+            [/This branch is up to date with ([^ ]+)\./, "该分支与上游 $1 保持同步。"],
             [/(\d+) commits? ahead/, "领先 $1 个提交"],
             [/(\d+) commits? behind/, "落后 $1 个提交"],
             [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
