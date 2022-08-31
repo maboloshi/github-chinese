@@ -4273,14 +4273,9 @@ I18N.zh = {
                 "Resolve conflicts": "解决冲突",
                 "Conflicting files": "冲突的文件:",
 
-                // "Avoid bugs by automatically running your tests.": "通过持续集成测试来避免BUG。",
-                // "Continuous integration can help catch bugs by running your tests automatically.": "持续集成可以通过自动运行您的测试有助于捕获错误。",
-                // "Merge your code with confidence using one of our continuous integration providers.": "合并您的代码使用我们信任的持续集成供应商。",
-
-                // "Use the links above to find what you’re looking for, or try": "使用上面的链接来找到您要找的，或者尝试",
-                // "a new search query": "新的搜索查询",
-                // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。搜索栏也是快速找到议题最相关的您超级有帮助的。",
-
+                "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
+                "Add rule": "添加规则",
+                // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
                 // 状态词
                 "reviewed": "审查",
@@ -6317,6 +6312,7 @@ I18N.zh = {
             // 具体拉取请求 /<user-name>/<repo-name>/pull/<id>
             [/([\d,]+) participants?/, "$1 位参与者"],
             [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+            [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"],  // 具体拉取请求
             [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"],
             [/The ([^ ]+) branch has been deleted./, "$1 分支已被删除。"], // 具体拉取请求 重新打开拉取请求
             [/merged (\d+) commits? into/, "已合并 $1 个提交到"],
