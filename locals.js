@@ -10118,7 +10118,7 @@ I18N.zh = {
                 "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "此机密可能会被组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
                 "Private repositories": "私有仓库",
                 // "": "选定的仓库",
-                "This secret may only be used by specifically selected repositories.": "此秘密只能由特别选定的仓库使用。",
+                "This secret may only be used by specifically selected repositories.": "此机密只能由特定仓库使用。",
                     // 机密仓库访问 对话框
                     "Secret repository access": "机密仓库访问",
                     "Select the organization repositories that may use this secret.": "选择可以使用该机密的组织仓库。",
@@ -10132,8 +10132,8 @@ I18N.zh = {
                 "Secrets are not passed to forks.": "机密不会传递给复刻。",
 
             // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot/new
-                "This secret may be used by any repository in the organization.": "组织中的任何仓库都可以使用此机钥。",
-                "This secret may be used by any private repository in the organization.": "组织中的任何私有仓库都可以使用此机钥。",
+                "This secret may be used by any repository in the organization.": "组织中的任何仓库都可以使用此机密。",
+                "This secret may be used by any private repository in the organization.": "组织中的任何私有仓库都可以使用此机密。",
 
             // 第三方访问 /organizations/<org-login>/settings/oauth_application_policy
                 "Third-party application access policy": "第三方应用访问策略",
