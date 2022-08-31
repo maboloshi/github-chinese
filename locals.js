@@ -9985,19 +9985,13 @@ I18N.zh = {
                 "Add domain": "添加域名",
 
             // 项目 /organizations/<org-login>/settings/projects
-                "Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目板可以帮助您组织工作并确定其优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目板。",
+                "Projects on GitHub help you organize and prioritize your work. You can create projects for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目可以帮助您组织和安排工作的优先级。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目。",
                 "Enable projects for the organization": "启用项目，为组织",
                     "This allows members to create projects for the": "允许成员创建项目，为",
-                    "organization. You can add issues from any": "组织。您可添加议题，为",
-                    "-owned repository. This does not affect projects in": "组织拥有的仓库。这并不影响",
-                    "-owned repositories in any way.": "组织拥有的仓库，以任何方式。",
-                "Enable projects for all repositories": "启用项目，为所有仓库",
-                    "This allows members to create projects in all repositories in the": "这允许成员在所有仓库中创建项目，在",
-                    "organization. This affects every project at the repository level in the": "组织中。这会影响仓库级别的每个项目，在",
-                    "organization. You can still disable projects for a specific repository in repository settings.": "组织中。您仍然可以在仓库设置中禁用特定仓库的项目。",
-                "Organization project permissions": "组织项目权限",
-                "Permissions can be managed in the project’s settings on a per-project basis.": "可以在每个项目的项目设置中管理权限。",
-                "View all projects": "查看所有项目",
+                    "organization. Members can create projects to organize and track issues from any": "组织。成员可以创建项目来组织和跟踪来自任何",
+                    "-owned repository.": "组织拥有的仓库。",
+                "Allow members to change project visibilities for this organization": "允许成员更改此组织的项目可见性",
+                    "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果启用，在项目上有管理权限的成员可以将项目设为公开或私有。如果禁用，则只有组织所有者可以将项目设为公开或私有。默认情况下，所有项目都是私有的。",
 
             // 身份验证安全  /organizations/<org-login>/settings/security
                 "Two-factor authentication": "双重身份验证",
