@@ -962,6 +962,7 @@ I18N.zh = {
                 "started following": "开始关注了",
                 "Updated": "更新于",
                 "created a repository": "创建了仓库",
+                "created a branch in": "创建了一个分支在",
                 "Forked to": "复刻为",
                 "of": "",
                 "made": "将",
@@ -977,7 +978,7 @@ I18N.zh = {
                 "Subscribe to the": "订阅", // 组织
                 "organization news feed": "组织的新闻提要", // 组织
 
-            "For you": "为您",
+            "For you": "为您推荐",
                 "Filter": "筛选",
                 "Filter your feed": "筛选提要",
                 "Announcements": "公告",
@@ -989,6 +990,9 @@ I18N.zh = {
                 "Welcome to the new feed!": "欢迎来到新的提要!",
                 "We’re updating the cards and ranking all the time, so check back regularly. At first, you might need to follow some people or star some repositories to get started": "我们一直在更新卡片和排名，所以请定期查看。一开始，您可能需要关注一些人或标星一些仓库才能开始",
                 "Send feedback": "发送反馈",
+
+                "Show all": "显示所有",
+                "Show less": "显示更少",
 
                 "published a release": "发布发行版",
                 "forked a repository": "复刻仓库",
@@ -1924,6 +1928,7 @@ I18N.zh = {
                 "Manage your organization accounts": "管理您的组织帐户",
                     "Create a new organization": "创建新组织",
 
+                "Add-ons": "附加组件",
                 "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
 
@@ -2674,7 +2679,7 @@ I18N.zh = {
             [/You've cancelled your subscription to ([^ ]+)\. This plan change will take effect on (\d{4}-\d{2}-\d{2})./, "您已取消订阅 $1 。此计划更改将于 $2 生效。"],
             [/Found (\d+) events?/, "发现 $1 个活动"], // 安全日志
             [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"], // 支付限额
-            [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
+            [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
             [/Okay, ([^ ]+) was updated for the ([^ ]+) account./, "好的，$1 已针对 $2 帐户进行了更新。"],
             [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用程序吗？"],
             [/by/, "由"], // 删除的仓库
@@ -3849,6 +3854,7 @@ I18N.zh = {
                 "requested changes": "请求了更改",
                 "added a commit that referenced this issue": "添加了一个引用此问题的提交",
                 "referenced this issue": "提及这个议题",
+                "closed this as completed": "已完成，关闭",
 
                 "This comment has been minimized.": "此评论已最小化。",
                 "Show comment": "显示评论",
@@ -5943,6 +5949,7 @@ I18N.zh = {
                     "Filter by event": "按事件筛选",
                     "Find an event": "查找事件",
                     "push": "推送",
+                    "pull_request": "拉取请求",
                     "schedule": "日程",
                     "watch": "关注",
                     "workflow_dispatch": "工作流程调度",
@@ -7799,6 +7806,7 @@ I18N.zh = {
 
                 "Two-factor authentication": "双重身份验证",
                 "Authentication code": "验证码",
+                    "More information about Authentication Codes": "更多关于验证码的信息",
                 //"Signing in…": "登录中…",
                 "6-digit code": "6位验证码",
                 "Verify": "验证",
@@ -8778,6 +8786,7 @@ I18N.zh = {
 
             "You are the owner of the gist.": "您是代码片段的所有者。",
             "You are the author of this gist.": "您是代码片段的作者。",
+            "You are the author of this .": "您是代码片段的作者。",
 
             "commented": "评论于",
             "Update comment": "更新评论",
@@ -9241,6 +9250,7 @@ I18N.zh = {
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
 
+                "Add-ons": "附加组件",
                 "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
 
@@ -9675,6 +9685,7 @@ I18N.zh = {
 
                 "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
                     "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
+                    "Learn more about approving workflow runs from public forks.": "了解更多关于批准来自公共复刻的工作流运行的信息。",
                     "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行审批",
                         "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 帐户的首次贡献者才需要获得批准才能运行工作流程。",
                     "Require approval for first-time contributors": "要求对首次贡献者进行审批",
@@ -9701,6 +9712,7 @@ I18N.zh = {
                             "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                         "Read repository contents permission": "只读权限",
                             "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                        "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                             "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 是否可以创建拉取请求或提交批准的拉取请求审查。",
 
