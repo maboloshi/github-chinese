@@ -1132,10 +1132,9 @@ I18N.zh = {
 
             // 概述标签卡 即主页 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Customize your pins": "自定义置顶",
-                "Customize your public pins": "自定义公共置顶", // 组织页
                 // 设置置顶项目对话框
-                "Edit pinned public items": "设置置顶公共项目",
-                "Select up to six public repositories or gists you'd like to show.": "最多选择 6 个要显示的公共仓库或代码片段。",
+                "Edit pinned items": "设置置顶项目",
+                "Select up to six public repositories or gists you'd like to show to anyone.": "最多选择 6 个您想向任何人展示的公共仓库或代码片段。",
                 "Select up to six public repositories you'd like to show.": "最多选择 6 个要显示的公共仓库。", // 组织页
                 "Filter repositories and gists": "筛选仓库和代码片段",
                 "Filter repositories": "筛选仓库", // 组织页
@@ -1404,19 +1403,28 @@ I18N.zh = {
                     "View as:": "浏览：",
                         "Switch profile context": "切换视角",
                         "Member": "成员",
-                    "You are viewing this page as a public user.": "您正在以公共用户身份浏览此页面。",
-                    // [/You are viewing this page as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份浏览此页面。",
+
+                    // 公共视角
+                        "You are viewing the README and pinned repositories as a public user.": "您正在以公共用户的身份查看自述文件和置顶仓库。",
+
+                    // 组织成员视角
+                        // [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
+
                     "pin repositories": "置顶仓库",
                     "visible to anyone.": "让任何人都能看到。",
-                    "create a README file": "创建 README 文件",
                     "visible only to members of the organization.": "仅对组织成员可见。",
+
+                    "Get started with tasks": "开始任务",
+                    "that most successful organizations complete.": "大多数成功的组织都会完成。",
+                    "hide the tasks we've suggested": "隐藏我们建议的任务",
+                    "on this page and bring them back later.": "在此页面上，以后再把它们带回来。",
 
                     // "People": "成员",
                         "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
                         "Invite someone": "邀请他人",
                             // 邀请对话框
                             // [/Invite a member to/, "邀请成员加入"],
-                            "Search by username, full name or email address": "搜索用户名, 全名或邮箱地址：",
+                            "Search by username, full name or email address": "搜索用户名，全名或邮箱地址：",
                             "Invite": "邀请",
                             "Invite a billing manager": "邀请一位账单管理员",
                             "Authenticate your members with SAML single sign-on": "使用 SAML 单点登录对您的成员进行身份验证",
@@ -1430,15 +1438,46 @@ I18N.zh = {
                     "Most used topics": "最常用的话题",
                     "Developer Program Member": "开发者计划成员",
 
+                "Create new repository": "新建仓库",
+                "Import": "导入",
+
                 "This organization has no repositories.": "该组织暂无仓库。",
-                "Create a new repository": "创建新仓库",
                 "View all repositories": "查看所有仓库",
 
                 // 设置置顶
-                "Select up to six public repositories you’d like to show.": "最多选择 6 个您要显示的公共仓库。",
+                "Edit pinned repositories": "设置置顶项目",
+                "Select up to six public repositories you'd like to show to anyone.": "最多选择 6 个您想向任何人展示的公共仓库。",
+                "Select up to six public, internal, or private repositories you'd like to show only to members of the organization.": "最多选择 6 个您想仅向组织成员展示的公共、内部或私有仓库。",
                 "No repositories or gists found.": "没有发现仓库或 Gists。",
                 // 顶部提醒
                 "You’re not a member of any teams in this organization.": "您不是该组织中任何团队的成员。",
+
+                // 入门任务
+                "We think you’re gonna like it here.": "我们认为您会喜欢这里的。",
+                "We’ve suggested some tasks here on your organization's overview to help you get started.": "我们在这里就您的组织概况提出了一些任务，以帮助您开始工作。",
+                "Invite your people": "邀请同伴",
+                    "Invite your first member": "邀请首位成员",
+                        "Find people by their GitHub username or email address.": "通过 GitHub 用户名或电子邮件地址找到他们。",
+                    "Customize members' permissions": "自定义成员权限",
+                        "Set everyone’s base permissions for your code.": "为您的代码设置每个人的基本权限。",
+                "Collaborative coding": "协助编码",
+                    "See more about collaborative coding": "查看更多关于协作式编码的信息",
+                    "Create a pull request": "创建拉取请求",
+                        "Propose and collaborate on changes to a repository.": "就对仓库的更改提出建议并进行协作。",
+                    "Create a branch protection rule": "创建分支保护规则",
+                        "Enforce certain workflows for one or more branches.": "为一个或多个分支强制执行某些工作流程。",
+                "Automation and CI/CD": "自动化和 CI/CD",
+                    "See more about automation and CI/CD": "查看更多有关自动化和 CI/CD 的信息",
+                    "Auto-assign new issues": "自动分配新议题",
+                        "Try automatically assigning work with GitHub Actions.": "尝试使用 GitHub Actions 自动分配工作。",
+                    "Run a continuous integration test": "运行持续集成测试",
+                        "Validate your code using a CI workflow.": "使用 CI 工作流程验证您的代码。",
+                "Discover new GitHub features": "发现 GitHub 的新功能",
+                    "See all features": "查看所有功能",
+                    "Client apps": "客户端应用",
+                    "Project management": "项目管理",
+                    "Team administration": "团队管理",
+                    "Community": "社区",
 
             // 软件包 https://github.com/orgs/<orgs-name>/packages
                 "Type:": "类型：",
@@ -1597,7 +1636,7 @@ I18N.zh = {
             [/(\d+) teams?/, "$1 团队"],
             [/(\d+) Pending invitations?/, "待定邀请"],
             [/(\d+) Failed invitations?/, "失败邀请"],
-            [/You are viewing this page as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份浏览此页面。"],
+            [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         ],
     },
 
