@@ -7175,6 +7175,8 @@ I18N.zh = {
                     "can only enforce rules on its public repositories, like this one.": "只能对其公共仓库执行规则，例如这个。",
                     "Your rules won't be enforced on this private repository until": "您的规则将不会在此私有仓库上强制执行，直到",
                     "move to a GitHub Team or Enterprise organization account": "迁移至 GitHub 团队或企业组织账户",
+                    "Your rules won't be enforced on this private repository until you": "您的规则将不会在此私有仓库上强制执行，直到您",
+                    "upgrade this organization account to GitHub Team or Enterprise": "升级组织账户至 GitHub 团队或企业版", // 组织
 
                 "Branch name pattern": "分支名称模式",
                 "Protect matching branches": "保护匹配的分支",
