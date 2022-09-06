@@ -7212,7 +7212,9 @@ I18N.zh = {
                             "Sorry, we couldn’t find any deployments for this repository.": "抱歉，我们找不到此仓库的任何部署。",
                             "Deployment environments found in this repository": "在此仓库中找到的部署环境",
                 "Do not allow bypassing the above settings": "不允许绕过上述设置",
-                "The above settings will apply to admins and custom roles with the \"bypass branch protections\" permission.": "上述设置将应用于具有“绕过分支保护”权限的管理员和自定义角色。",
+                    "The above settings will apply to administrators and custom roles with the \"bypass branch protections\" permission.": "上述设置将应用于具有 “绕过分支保护” 权限的管理员和自定义角色。",
+                "Restrict who can push to matching branches": "限制谁可以推送到匹配的分支",
+                    "Specify people, teams, or apps allowed to push to matching branches. Required status checks will still prevent these people, teams, and apps from merging if the checks fail.": "指定允许推送到匹配分支的人员、团队或应用程序。如果检查失败，所需的状态检查仍然会阻止这些人、团队和应用程序的合并。",
 
                 "Include administrators": "包括管理员",
                 "Enforce all configured restrictions above for administrators.": "对管理员执行上述所有配置进行限制。",
