@@ -105,7 +105,7 @@ I18N.zh = {
         ["a[aria-label='Pull requests you created']", "拉取请求"], // 顶部条 拉取请求
         ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
-        ["a[data-target='branch-filter.allFilter']", "所有分支"], // /branches
+        ["a[data-target='branch-filter.allFilter']", "所有分支"], // /branches/all
     ],
 
     "title": { // 标题翻译
@@ -964,6 +964,7 @@ I18N.zh = {
                 "Updated": "更新于",
                 "created a repository": "创建了仓库",
                 "created a branch in": "创建了一个分支在",
+                "in": "分支在",
                 "Forked to": "复刻为",
                 "of": "",
                 "made": "将",
@@ -1059,14 +1060,13 @@ I18N.zh = {
             "Go to your pull requests": "跳转到您的拉取请求",
         },
         "regexp": [ // 正则翻译
+            [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
             [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
             [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
             [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
             [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
             [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
             [/(\d+) releases?/, "$1 个发行版"],
-            [/(\d+) repositor(y|ies)/, "$1 个仓库"],
-            [/(\d+) members?/, "$1 个成员"],
             [/(\d+) followers?/, "$1 个关注者"],
             [/(\d+) comments?/, "$1 条评论"],
             [/(\d+) commits? to/, "$1 个提交到"],
@@ -1281,7 +1281,7 @@ I18N.zh = {
                 "Welcome to the all-new projects": "欢迎访问全新的项目",
                 "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
 
-                "Learn more about Projects beta": "了解更多关于项目 beta 版", // ?tab=projects&type=beta
+                "Learn more about projects": "了解更多关于项目", // ?tab=projects
 
                 "Sort by": "排序方式",
                     // 排序下拉菜单
@@ -6314,7 +6314,7 @@ I18N.zh = {
                 "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
 
                 // [/(\d+) projects?/, "$1 个项目"],
-                "Learn more about Projects beta": "了解更多关于项目 beta 版",
+                "Learn more about projects": "了解更多关于项目",
                 "Add project": "添加项目",
                     "No recent projects": "没有近期项目",
                     "Go to your profile to create a new project": "转到您的个人资料，以创建新项目",
@@ -6415,6 +6415,7 @@ I18N.zh = {
             [/from ([^ ]+) to ([^ ]+)/, "从 $1 到 $2。"],
             [/(\d+) parents?/, "$1 个父"],
             [/(\d+) changed files?/, "$1 个更改的文件"],
+            [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
             [/(\d+) additions?$/, "$1 处增加"],
             [/(\d+) deletions?$/, "$1 处删除"],
             [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
@@ -6721,6 +6722,7 @@ I18N.zh = {
                 "Set up sponsor button": "设置赞助按钮",
 
                 // 项目
+                "Projects (classic)": "项目（经典）",
                 "Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目板可以帮助您组织工作并确定其优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目板",
 
                 "Preserve this repository": "保留这个仓库",
@@ -9553,7 +9555,7 @@ I18N.zh = {
                 "There are no mannequins in this organization": "该组织尚无占位帐户",
                 "Mannequins represent authors of imported contributions. They do not have profile pages and cannot sign in. Their contributions can be reattributed to other members of your organization.": "占位帐户代表导入贡献的作者。他们没有个人资料页，也不能登录。他们的贡献可以重新归属于您组织的其他成员。",
                 "Attribution Invitations": "归属邀请",
-                "Below are the mannequin reattribution invitations that have been sent within this organization. If the state is \"invited,\" then the user has not yet replied; if it is \"completed,\" then the user has accepted and their contributions have been reattributed, and if it is \"rejected,\" then the user opted not to be credited for that mannequin's contributions.": "以下是该组织内已发送的占位帐户重新归属的邀请。如果状态是“已邀请”，则用户尚未回复；如果是“已完成”，那么用户已经接受并且他们的贡献已经被重新归属；如果是“已拒绝”，那么用户选择不记入该占位帐户的贡献。",
+                "Below are the mannequin reattribution invitations that have been sent within this organization. If the state is \"invited,\" then the user has not yet replied; if it is \"completed,\" then the user has accepted and their contributions have been reattributed, and if it is \"rejected,\" then the user opted not to be credited for that mannequin's contributions.": "以下是该组织内已发送的占位帐户重新归属的邀请。如果状态是 “已邀请”，则用户尚未回复；如果是 “已完成”，那么用户已经接受并且他们的贡献已经被重新归属；如果是 “已拒绝”，那么用户选择不记入该占位帐户的贡献。",
                 "No attribution invitations have been sent": "尚未发出归属邀请",
 
             // Blocked users 黑名单 /organizations/<org-login>/settings/user_blocks
