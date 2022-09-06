@@ -434,14 +434,16 @@
             }
 
             GM_xmlhttpRequest({
-                method: "GET",
-                url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
+                method: "POST",
+                url: "https://www.iflyrec.com/TranslationService/v1/textTranslation",
+                headers: {"Content-Type" : "application/json"},
+                data : JSON.stringify({"from":"2","to":"1","contents":[{"text":desc,"frontBlankLine":0}]}),
                 onload: function(res) {
                     if (res.status === 200) {
                         translate_me.style.display="none";
                         // render result
-                        const text = res.responseText;
-                        element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span><br/>"+text);
+                        const text = JSON.parse(res.responseText).biz[0].translateResult;
+                        element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>"+text);
                     } else {
                         alert("翻译失败");
                     }
