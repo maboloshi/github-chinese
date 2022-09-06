@@ -75,8 +75,9 @@ I18N.conf = {
      * 仓库文件列表 js-navigation-open Link--primary
      * 快捷键 按键 js-modifier-key
      * 洞察-->流量-->热门内容列表 capped-list-label
+     * realease 页面 描述主体 markdown-body my-3
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
