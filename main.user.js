@@ -134,7 +134,7 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME') {
+            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME' || node.tagName === 'LOCAL-TIME') {
                 transTimeElement(node);
                 return;
             }
