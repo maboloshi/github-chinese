@@ -302,10 +302,10 @@
     function transTimeElement(el) {
         let str; // 翻译结果
         let key = el.textContent;
-        let res = I18N[lang].pubilc.regexp;
+        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
 
-        for (let i = 0; i < 3; i++) { // 公共正则中时间规则
-            str= key.replace(res[i][0], res[i][1]);
+        for (let [a, b] of res) {
+            str= key.replace(a, b);
             if (str !== key) {
                 el.textContent = str;
                 break;
