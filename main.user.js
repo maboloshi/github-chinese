@@ -16,7 +16,7 @@
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @grant        GM_notification
-// @connect      www.githubs.cn
+// @connect      www.iflyrec.com
 // ==/UserScript==
 
 (function (window, document, undefined) {
