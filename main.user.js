@@ -436,7 +436,10 @@
             GM_xmlhttpRequest({
                 method: "POST",
                 url: "https://www.iflyrec.com/TranslationService/v1/textTranslation",
-                headers: {"Content-Type" : "application/json"},
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'Origin': 'https://www.iflyrec.com',
+                },
                 data : JSON.stringify({"from":"2","to":"1","contents":[{"text":desc,"frontBlankLine":0}]}),
                 onload: function(res) {
                     if (res.status === 200) {
