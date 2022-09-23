@@ -7261,6 +7261,7 @@ I18N.zh = {
 
             // 标签 页面 /<user-name>/<repo-name>/settings/tag_protection===============================
                 "Protected tags": "受保护的标签",
+                "Protected tags are available to Pro, Team, and Enterprise users": "专业版、团队版和企业版用户均可使用受保护的标签", //私有库
                 "Protected tags can only be created or deleted by users with enhanced permissions defined by your organization owners.": "受保护的标签只能由具有由组织所有者定义的增强权限的用户创建或删除。",
                 "Learn more about protected tags": "了解更多关于受保护标签的信息",
                 "No protected tag rules exist yet": "尚无受保护的标签规则存在",
