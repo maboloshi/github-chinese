@@ -3967,6 +3967,14 @@ I18N.zh = {
                         "Checkout in your local repository": "在本地仓库检出",
                         "Run the following commands in your local clone.": "在您的本地克隆中运行以下指令。",
 
+                    //
+                        "Link a branch or pull request": "关联分支或拉取请求",
+                        "Select a repository to search for branches and pull requests or": "选择一个仓库来搜索分支和拉取请求或",
+                        "create a branch": "创建一分支",
+                        "Search for repositories": "搜索仓库",
+                        "Link a branch, pull request, or": "关联分支、拉取请求或",
+                        "Search for branches or pull requests": "搜索分支或拉取请求",
+
                 "Lock conversation": "锁定对话",
                     "Lock conversation on this issue": "锁定关于此议题的对话",
                     "Other users": "其他用户",
