@@ -4781,6 +4781,7 @@ I18N.zh = {
                 "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
+                "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
                 "GPG key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
