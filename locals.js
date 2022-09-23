@@ -2203,6 +2203,7 @@ I18N.zh = {
 
                 "Two-factor methods": "双重身份验证方式",
                     "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
+                    "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
 
                 "Primary two-factor method": "主要双重身份验证方式",
                     "Change": "更改",
