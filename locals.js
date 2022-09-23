@@ -6077,6 +6077,7 @@ I18N.zh = {
                 // 列表区域
                     // 工作流程运行状态
                     "In progress": "进行中",
+                    "Queued": "排队中",
                     "Pending": "待定中",
 
             // /<user-name>/<repo-name>/actions/workflows/<file>.yml
