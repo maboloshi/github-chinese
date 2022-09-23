@@ -7925,7 +7925,7 @@ I18N.zh = {
                     "Use a recovery code or request a reset": "使用恢复码或请求重置",
 
             // https://github.com/sessions/two-factor/mobile
-                "We sent you a sign-in request on your GitHub Mobile app. Approve the request to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。批准验证您的身份的请求。",
+                "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
                 "We could not verify your identity": "我们无法核实您的身份",
                 "Retry": "重试",
 
