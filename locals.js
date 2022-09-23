@@ -3343,6 +3343,7 @@ I18N.zh = {
                 "Private": "私有",
                 "Public archive": "公共存档",
                 "Private archive": "私有存档",
+                "Public template": "公共模板",
 
                 "forked from": "复刻自",
                 "generated from": "创建自",
@@ -3615,6 +3616,8 @@ I18N.zh = {
                 "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                 // "Copy to clipboard": "复制到剪切板",
                 // "Copied!": "复制成功!",
+
+                "Use this template": "使用此模板",
 
                 // 个人仓库 当前分支状态
                 "This branch is": "该分支",
