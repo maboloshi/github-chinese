@@ -556,6 +556,12 @@ I18N.zh = {
                 "Filter to projects": "筛选项目",
                 "Filter to open issues, pull requests, and discussions": "筛选打开的议题、拉取请求和讨论",
 
+                // 议题页面
+                "Edit issue title": "编辑议题标题",
+                "Edit issue body": "编辑议题内容",
+                "Transfer issue…": "转移议题…",
+                "Delete issue…": "删除议题…",
+
             // 公共词 高频词
             "Followers": "关注者",
             "Follow": "关注",
