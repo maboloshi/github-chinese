@@ -7154,10 +7154,13 @@ I18N.zh = {
                 "Branch protection rules": "分支保护规则",
                 "Add rule": "添加规则",
 
-                "You haven't protected any of your branches": "您没有保护任何分支",
-                "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
-                "Learn more about protected branches": "了解更多关于受保护分支的信息",
-                "Add branch protection rule": "添加分支保护规则",
+                "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。初次接触分支保护规则？",
+
+                "No branch protection rules defined yet.": "尚未定义分支保护规则。",
+                // "You haven't protected any of your branches": "您没有保护任何分支",
+                // "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
+                // "Learn more about protected branches": "了解更多关于受保护分支的信息",
+                // "Add branch protection rule": "添加分支保护规则",
 
                 // 私有库 分支保护 未执行 提醒
                 "Your protected branch rules won't be enforced on this private repository until you move to a GitHub Team or Enterprise organization account.": "您的受保护分支规则不会在这个私有仓库上执行，直到您迁移至 GitHub 团队或企业组织账户。",
