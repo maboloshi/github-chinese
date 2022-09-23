@@ -6742,8 +6742,7 @@ I18N.zh = {
                 "Set up sponsor button": "设置赞助按钮",
 
                 // 项目
-                "Projects (classic)": "项目（经典）",
-                "Project boards on GitHub help you organize and prioritize your work. You can create project boards for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目板可以帮助您组织工作并确定其优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目板",
+                "Projects on GitHub help you organize and prioritize your work. You can create projects for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目可以帮助您组织工作并确定其优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目",
 
                 "Preserve this repository": "保留这个仓库",
                 "Include this code in the": "将此代码包含在",
