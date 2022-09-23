@@ -4058,6 +4058,9 @@ I18N.zh = {
                 "and": "和",
                 "code of conduct": "行为准则",
 
+                "This issue has been deleted.": "该议题已被删除。",
+                "deleted this from": "删除了这个，从",
+
             // 仓库 --> 拉取请求 标签卡 /<user-name>/<repo-name>/pulls >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 // 欢迎信息
                 "Welcome to pull requests!": "欢迎使用拉取请求！",
