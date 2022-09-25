@@ -1720,12 +1720,18 @@ I18N.zh = {
                 "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
                  //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
                 "Location": "位置",
+                "Display current local time": "显示当前当地时间",
+                    "Other users will see the time difference from their local time.": "其他用户将看到与本地时间的时差。",
+                    "Time zone": "时区",
+
                 "All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears. Please see our": "此页面上的所有字段都是可选的，可以随时删除，填写这些字段，即表示您同意我们在您的个人资料出现的任何地方共享此数据。请参阅我们的",
                 "privacy statement": "隐私声明",
                 "to learn more about how we use this information.": "以了解更多关于我们如何使用这些信息。",
                 "Update profile": "更新资料",
                 // 顶部提醒
                     "Profile updated successfully": "资料更新成功。",
+                    "Profile updated successfully —": "资料更新成功 —",
+                    "view your profile.": "查看您的个人资料。",
 
                 "Contributions & Activity": "贡献与活动",
                     "Make profile private and hide activity": "将个人资料设置为私密，并隐藏活动",
