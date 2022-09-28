@@ -392,7 +392,7 @@
         // 正则翻译
         if (enable_RegExp){
             let res = I18N[lang][page].regexp; // 正则数组
-            res.push(...I18N[lang]['pubilc'].regexp); // 追加公共正则 es6
+            res= res.concat(I18N[lang]['pubilc'].regexp); // 追加公共正则
             if (res) {
                 for (let [a, b] of res) {
                     str = key.replace(a, b);
