@@ -22,7 +22,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    var RegExp = GM_getValue("RegExp", 1);
+    var enable_RegExp = GM_getValue("enable_RegExp", 1);
     var lang = 'zh'; // 中文
 
     // 要翻译的页面
@@ -390,7 +390,7 @@
         }
 
         // 正则翻译
-        if (RegExp){
+        if (enable_RegExp){
             let res = I18N[lang][page].regexp; // 正则数组
             res.push(...I18N[lang]['pubilc'].regexp); // 追加公共正则 es6
             if (res) {
@@ -479,12 +479,12 @@
     }
 
     GM_registerMenuCommand("正则切换", () => {
-        if (RegExp){
-            GM_setValue("RegExp", 0);
-            RegExp = 0;
+        if (enable_RegExp){
+            GM_setValue("enable_RegExp", 0);
+            enable_RegExp = 0;
             GM_notification("已关闭正则功能");
         } else {
-            GM_setValue("RegExp", 1);
+            GM_setValue("enable_RegExp", 1);
             GM_notification("已开启正则功能");
             location.reload();
         }
