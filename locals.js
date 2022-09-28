@@ -8630,6 +8630,13 @@ I18N.zh = {
                 // &type=registrypackages
                     "latest": "最新",
 
+            //  仓库 中 搜索结果页面 /<user-name>/<repo-name>/search >>>>>>>>>>>>>>>>>>>>>>>>
+                "Code Search could not process your request, please try different search criteria.": "代码搜索无法处理您的请求，请尝试不同的搜索标准。",
+                "We track these errors automatically, but if the problem persists feel free to":"我们自动跟踪这些错误，但如果问题持续存在，请随时",
+                "contact us":"与我们联系",
+                ". We will update any status on our":"。我们将更新任何状态，在我们",
+                "status site.":"状态网站。",
+
             //  仓库 中 搜索结果页面 /<user-name>/<repo-name>/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
                 "or view": "或查看",
                 "all results on GitHub": "GitHub 上的所有结果",
