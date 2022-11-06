@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|developers|applications\/new|security-log)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(apps\/authorizations|apps|tokens|personal-access-tokens|developers|applications\/new|security-log)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(settings|search|projects\/new)/,
@@ -2850,7 +2850,8 @@ I18N.zh = {
                     "Read-only": "只读",
                     "Read and write": "读写",
 
-                    // [/(/d+) Selected/, "$1 项被选中"],
+                    "Selected": "项被选中",
+                    "mandatory": "强制",
 
                 "Repository permissions": "仓库权限",
                     "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
@@ -3015,22 +3016,44 @@ I18N.zh = {
                 "Device Flow documentation": "设备流程文档",
                 "Register application": "注册应用",
 
-            // 开发者设置/个人访问令牌 https://github.com/settings/tokens
+            // 开发者设置/精细化的个人访问令牌 https://github.com/settings/tokens?type=beta
+                "Fine-grained personal access tokens": "精细化的个人访问令牌",
+                    "Need an API token for scripts or testing?": "需要用于脚本或测试的 API 令牌？",
+                    "Generate a personal access token": "生成个人访问令牌",
+                    "for quick access to the": "用于快速访问",
+
+                    "These are fine-grained, repository-scoped tokens suitable for personal": "这些都是精细化的、仓库域的令牌，适合个人",
+                    "use and for using Git over HTTPS.": "使用和通过 HTTPS 使用 Git。",
+
+                    "Make sure to copy your personal access token now as you will not be able to see this again.": "请务必立即复制您的个人访问令牌，因为您将无法再次看到它。",
+                    "Loading expiration ...": "载入有效期 ...",
+                // 顶部提醒
+                    "Deleted personal access token": "已删除个人访问令牌",
+
+
+            // 开发者设置/个人访问令牌（经典） https://github.com/settings/tokens
                 "Developer settings": "开发者设置",
                 "GitHub Apps": "GitHub 应用程序",
                 "OAuth Apps": "OAuth 应用程序",
                 "Personal access tokens": "个人访问令牌",
-                "Generate new token": "生成新令牌",
-                "Revoke all": "全部撤销",
-                "Tokens you have generated that can be used to access the": "生成令牌用于访问",
-                "Expires": "有效期至",
+                    "Fine-grained tokens": "精细化的令牌",
+                    "Tokens (classic)": "令牌（经典）",
+
+                "Personal access tokens (classic)": "个人访问令牌（经典）",
+                    "Generate new token": "生成新令牌",
+                        "Fine-grained, repo-scoped": "精细化、 仓库域",
+                        "Generate new token (classic)": "生成新令牌（经典）",
+                            "For general use": "一般用途",
+                    "Revoke all": "全部撤销",
+                    "Tokens you have generated that can be used to access the": "生成令牌用于访问",
+                    "Expires": "有效期至",
                 "Expired": "有效期至",
                 "This token has no expiration date": "此令牌未设置有效期",
-                "Regenerate": "重新生成",
-                "this token to take advantage of the": "此令牌使用",
-                "new token formats": "新的令牌格式",
-                "Personal access tokens function like ordinary OAuth access tokens. They can be used instead of a password for Git over HTTPS, or can be used to": "个人访问令牌的功能类似于普通的 OAuth 访问令牌。它们可以用来代替 HTTPS 上 Git 的密码，或者可以用来",
-                "authenticate to the API over Basic Authentication": "通过 ‘基本身份验证’ 对 API 进行身份验证",
+                    "Regenerate": "重新生成",
+                    "this token to take advantage of the": "此令牌使用",
+                    "new token formats": "新的令牌格式",
+                    "Personal access tokens (classic) function like ordinary OAuth access tokens. They can be used instead of a password for Git over HTTPS, or can be used to": "个人访问令牌（经典）的功能类似于普通的 OAuth 访问令牌。它们可以用来代替 HTTPS 上 Git 的密码，或者可以用来",
+                    "authenticate to the API over Basic Authentication": "通过 ‘基本身份验证’ 对 API 进行身份验证",
 
                 "Never used": "尚未使用",
                 "Last used within the last week": "最后一次使用是最近 1 周之内",
@@ -3044,8 +3067,54 @@ I18N.zh = {
                 "Type your username to confirm": "输入您的用户名进行确认",
                 "I understand, revoke access for everything": "我明白了，依然撤销对一切的访问",
 
+            // 创建精细化个人访问令牌 https://github.com/settings/personal-access-tokens/new
+                "New fine-grained personal access token": "新建精细化个人访问令牌",
+                "Create a fine-grained, repository-scoped token suitable for personal API use and for using Git over HTTPS.": "创建精细化的、仓库域的令牌，适合个人 API 使用和通过 HTTPS 使用 Git。",
+                "Token name": "令牌名称",
+                    "A unique name for this token. May be visible to resource owners.": "此令牌的唯一名称。可能对资源所有者可见。",
+                    "Name can't be blank": "名称不能为空",
+                "Description": "描述",
+                "What is this token for?": "这个令牌是用来做什么的？",
+                "Resource owner": "资源所有者",
+
+                "Custom expiration can't be blank. Please choose a date.": "自定义过期时间不能为空。请选择日期。",
+
+                "Repository access": "仓库访问",
+                    "Public Repositories (read-only)": "公共仓库（只读）",
+                    "All repositories": "所有仓库",
+                        "This applies to all current": "这适用于资源所有者拥有的所有当前",
+                        "future repositories owned by the resource owner.": "未来的仓库。",
+                        "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
+                    "Only select repositories": "仅选定的仓库",
+                        "Select at least one repository. Max 50 repositories.": "至少选择一个仓库。最多 50 个仓库。",
+                        "Select repositories": "选择仓库",
+                        "Search for a repository": "搜索仓库",
+                        // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+
+                    // 帐户权限
+                        "User permissions permit access to resources under your personal GitHub account.": "用户权限允许访问您个人 GitHub 帐户下的资源。",
+                        "Private repository invitations": "私有仓库邀请",
+                            "View a user's invitations to private repositories": "查看用户对私有仓库的邀请",
+
+                    // 概述
+                        // [/(\d+) permissions for none of your repositories/, ""],
+                        // [/(\d+) Account permissions/, "$1 项帐户权限"],
+                        "permission": "项权限",
+                        "s": " ",
+                        "for": " ",
+                        "none": "无",
+                        "all": "所有",
+                        "of your repositories": "您的仓库",
+                        "Account permission": "项帐户权限",
+                        "Access: Read-only": "访问权限：只读",
+                        "Access: Read and write": "访问权限：读写",
+
+                    "This token will expire": "此令牌将过期：",
+                    "on an unselected custom date.": "未选择的自定义日期。",
+                    "This token will be ready for use immediately.": "该令牌将即可可用。",
+
             // 创建新个人访问令牌 https://github.com/settings/tokens/new
-                "New personal access token": "新的个人访问令牌",
+                "New personal access token (classic)": "新建个人访问令牌（经典）",
                 "Note": "备注",
                     "Note can't be blank": "备注不能为空",
                 "What’s this token for?": "这个令牌有什么用？",
@@ -3118,7 +3187,7 @@ I18N.zh = {
                 "I understand, delete this token": "我明白了，依然删除该令牌。",
 
             // 编辑个人访问令牌 https://github.com/settings/tokens/<id>
-                "Edit personal access token": "编辑个人访问令牌",
+                "Edit personal access token (classic)": "编辑个人访问令牌（经典）",
                 "If you’ve lost or forgotten this token, you can regenerate it, but be aware that any scripts or applications using this token will need to be updated.": "如果您丢失或忘记了此令牌，则可以重新生成它，但请注意，需要更新使用此令牌的任何脚本或应用程序。",
                 "This token has no expiration date. To set a new expiration date, you must": "此令牌未设置有效期。要设置新的有效期，您必须",
                 "regenerate the token": "重新生成令牌",
@@ -3127,7 +3196,7 @@ I18N.zh = {
                 "Delete this token": "删除令牌",
 
             // 重新生成个人访问令牌 https://github.com/settings/tokens/<id>/regenerate
-                "Regenerate personal access token": "重新生成个人访问令牌",
+                "Regenerate personal access token (classic)": "重新生成个人访问令牌（经典）",
                 "Submitting this form will generate a new token. Be aware that any scripts or applications using this token will need to be updated.": "提交此表单将产生一个新的令牌。请注意，任何使用该令牌的脚本或应用程序将需要更新。",
                 "Regenerate token": "重新生成令牌",
 
@@ -3137,6 +3206,8 @@ I18N.zh = {
             [/The token will expire/, "该令牌有效期至"],
             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
             [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
+
+            [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
         ],
     },
 
@@ -10925,6 +10996,7 @@ I18N.zh["settings/apps/authorizations"] = I18N.zh.settings;
 I18N.zh["account/billing/history"] = I18N.zh.settings;
 
 I18N.zh["settings/tokens"] = I18N.zh["settings/apps"];
+I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/apps"];
 I18N.zh["settings/developers"] = I18N.zh["settings/apps"];
 I18N.zh["settings/applications/new"] = I18N.zh["settings/apps"];
 I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/apps"];
