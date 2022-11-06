@@ -1905,6 +1905,17 @@ I18N.zh = {
                 // 顶部提醒
                 "Motion preferences successfully saved.": "动态首选项已成功保存。",
 
+                "Editor settings": "编辑器设置",
+                    "URL paste behavior": "URL 粘贴行为",
+                    "Select if URLs should be formatted on paste. You can use": "选择是否应在粘贴时格式化 URL。您可以使用",
+                    "to paste a link in the opposite way.": "以相反的方式粘贴链接。",
+                    "Formatted link": "格式化链接",
+                        "Pasting a URL while having text selected will format to a Markdown link": "在选择了文本的情况下，粘贴 URL 将格式化为 Markdown 链接",
+                    "Plain text": "纯文本",
+                        "Pasting a URL while having text selected will replace the text": "在选择了文本的情况下，粘贴 URL 将替换文本",
+                        // 顶部提醒
+                        "Paste behavior preferences successfully saved. ": "粘贴行为首选项已成功保存。",
+
             // Notification center 通知 https://github.com/settings/notifications
                 "Default notifications email": "默认邮件通知设置",
                     "Choose where you'd like emails to be sent. You can add more email addresses. Use custom routes to specify different email addresses to be used for individual organizations.": "选择您希望将邮件发送到的邮箱。您可以添加更多电子邮件地址。使用自定义路由来指定用于各个组织的不同电子邮件地址。",
