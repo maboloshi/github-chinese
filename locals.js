@@ -1745,6 +1745,12 @@ I18N.zh = {
                 "Show Achievements on my profile": "在我的个人资料上显示成就",
                 "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
+                "GitHub Developer Program": "GitHub 开发者计划",
+                "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用程序、服务或工具？",
+                "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
+                ", or read more about it at our": "，或阅读更多关于它的信息在我们的",
+                "Developer site": "开发者网站",
+
                 "Jobs profile": "就业状态",
                 "Available for hire": "求 HR 带走",
                 "Save jobs profile": "保存状态",
