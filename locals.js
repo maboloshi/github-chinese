@@ -1745,6 +1745,22 @@ I18N.zh = {
                 "Show Achievements on my profile": "在我的个人资料上显示成就",
                 "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
+                "Jobs profile": "就业状态",
+                "Available for hire": "求 HR 带走",
+                "Save jobs profile": "保存状态",
+                    // 顶部提醒
+                    "Profile updated successfully —": "个人资料更新成功 —",
+                    "view your profile.": "查看您的个人资料。",
+
+                "Trending settings": "趋势设置",
+                "Preferred spoken language": "首选语言",
+                "No Preference": "未设置",
+                "We'll use this language preference to filter the trending repository lists on": "我们将使用此语言偏好来过滤趋势仓库列表在",
+                "and our": "和我们的",
+                "Trending Repositories": "趋势仓库",
+                "page.": "页面。",
+                "Save Trending settings": "保存趋势设置",
+
             // Account settings 帐户设置 https://github.com/settings/admin
                 "Change username": "更改用户名",
                 "Changing your username can have": "更改您的用户名可能会有",
