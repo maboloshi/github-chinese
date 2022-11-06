@@ -2837,18 +2837,24 @@ I18N.zh = {
                 "Webhook secret (optional)": "Web 钩子隐私 (可选)",
                 "Read our": "阅读我们",
                 "webhook secret documentation": "Web 钩子隐私文档",
-                "SSL verification": "SSL 验证",
-                "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
-                "Enable SSL verification": "启用 SSL 验证",
-                "Disable": "禁用",
-                "(not recommended)": "（不推荐）",
-                "Access:": "访问权限：",
-                "Select an access level": "选择访问级别",
-                "No access": "禁止访问",
-                "Read-only": "只读",
-                "Read and write": "读写",
+
+                "Permissions": "权限",
+                    "User permissions are granted on an individual user basis as part of the": "用户权限的授予是以单个用户为基础的，是一个环节",
+                    "User authorization flow": "用户授权流程",
+                    "permissions documentation": "权限文档",
+                    "for information about specific permissions.": "以了解有关特定权限的信息。",
+
+                    "Access:": "访问权限：",
+                    "Select an access level": "选择访问级别",
+                    "No access": "禁止访问",
+                    "Read-only": "只读",
+                    "Read and write": "读写",
+
+                    // [/(/d+) Selected/, "$1 项被选中"],
 
                 "Repository permissions": "仓库权限",
+                    "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
+
                     "Actions": "操作",
                         "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
                     "Administration": "管理",
@@ -2890,7 +2896,7 @@ I18N.zh = {
                     "Pages": "GitHub Pages",
                         "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
                     "Projects": "项目",
-                        "Manage repository projects, columns, and cards.": "管理仓库项目、栏目和卡片。",
+                        "Manage classic projects within a repository.": "管理仓库中的经典项目。",
                     "Pull requests": "拉取请求",
                         "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
                     "Secret scanning alerts": "隐私扫描警报",
@@ -2905,6 +2911,8 @@ I18N.zh = {
                         "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
 
                 "Organization permissions": "组织权限",
+                    "Organization permissions permit access to organization related resources.": "组织权限允许访问组织相关资源。",
+
                     // 管理
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
@@ -2919,12 +2927,14 @@ I18N.zh = {
                         "Manage Codespaces for an organization.": "管理组织的代码空间。",
                     "Organization codespaces secrets": "组织代码空间机密",
                         "Manage Codespaces Secrets for an organization.": "管理组织的代码空间机密。",
+                    "Organization codespaces settings": "组织代码空间设置",
+                        "Manage Codespaces settings for an organization.": "管理组织的代码空间设置。",
                     "Organization dependabot secrets": "组织 Dependabot 机密",
                         "Manage Dependabot organization secrets.": "管理 Dependabot 组织的机密。",
                     "Plan": "计划",
                         "View an organization's plan.": "查看组织的计划。",
                     // 项目
-                        "Manage organization projects and projects beta (where available).": "管理组织项目和项目测试版（如果可用）。",
+                        "Manage projects for an organization.": "管理组织的项目。",
                     // 隐私
                         "Manage Actions organization secrets.": "管理操作组织隐私",
                     "Self-hosted runners": "自托管运行器",
@@ -2934,10 +2944,8 @@ I18N.zh = {
                     // Web 钩子
                         "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
 
-                "User permissions": "用户权限",
-                    "These permissions are granted on an individual user basis as part of the": "这些权限是在个人用户的基础上授予的，作为",
-                    "User authorization flow": "用户授权流程",
-                    ". They will be also be displayed during account installation for transparency.": "。它们也将在帐户安装期间显示以确保透明度。",
+                "Account permissions": "帐户权限",
+                    "These permissions are granted on an individual user basis as part of the User authorization flow.": "这些权限是在单个用户的基础上授予的，作为用户授权流程的一部分",
 
                     "Block another user": "拉黑其他用户",
                         "View and manage users blocked by the user.": "查看和管理被用户拉黑的用户。",
