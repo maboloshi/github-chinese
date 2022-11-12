@@ -135,7 +135,8 @@
 
             // 翻译时间元素
             if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME' || node.tagName === 'LOCAL-TIME') {
-                transTimeElement(node);
+                transTimeElement(node.shadowRoot);
+                watchTimeElement(node.shadowRoot);
                 return;
             }
 
@@ -311,6 +312,24 @@
                 break;
             }
         }
+    }
+
+    /**
+     * 监听时间元素变化, 触发和调用时间元素翻译
+     *
+     * @param {Element} node 节点
+     */
+    function watchTimeElement(el) {
+        const m =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
+
+        new m(function(mutations) {
+            transTimeElement(mutations[0].addedNodes[0]);
+        }).observe(el, {
+            childList: true
+        });
     }
 
     /**
