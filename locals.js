@@ -9334,6 +9334,7 @@ I18N.zh = {
                 "General": "常规",
                 "Access": "访问",
                 "Billing and plans": "账单和计划",
+                "Repository roles": "仓库角色",
                 "Member privileges": "成员权限",
                 "Team discussions": "团队讨论",
                 "Import/Export": "导入/导出",
@@ -9594,6 +9595,24 @@ I18N.zh = {
             // 账单历史 /organizations/<org-login>/billing/history
                 "/ Payment history": "/ 支付历史",
                 "Amounts shown in USD": "以美元显示的金额",
+
+            // 仓库角色 /organizations/<org-login>/settings/roles
+                "Roles are used to grant access and permissions for teams and members. In addition to the available pre-defined roles, you can create up to 0 custom roles to fit your needs.": "角色是用来为团队和成员授予访问和权限的。除了可用的预定义角色外，您可以创建多达 0 个自定义角色以满足您的需求。",
+                "Pre-defined roles": "预定义角色",
+                    "You can": "您可",
+                    "set the base role": "设置基础角色",
+                    "for this organization from one of these roles.": "从该组织的这些角色中设置",
+                        // "": "只读",
+                            "Read and clone repositories. Open and comment on issues and pull requests.": "读取和克隆仓库。打开并评论问题和拉取请求。",
+                        "Triage": "分级",
+                            "Read permissions plus manage issues and pull requests.": "读取权限外加管理议题和拉取请求的权限。",
+                        // "": "可写",
+                            "Triage permissions plus read, clone and push to repositories.": "分级权限外加读取、克隆和推送到仓库。",
+                        "Maintain": "维护",
+                            "Write permissions plus manage issues, pull requests and some repository settings.": "可写权限外加管理议题、拉取请求和一些仓库设置。",
+                        // 管理员
+                            "Full access to repositories including sensitive and destructive actions.": "对仓库的完全访问权限，包括敏感和破坏性操作。",
+                            "Modify Admin Role": "修改管理角色",
 
             // 成员权限 /organizations/<org-login>/settings/member_privileges
                 "Member repository permissions": "成员仓库权限",
