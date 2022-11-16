@@ -245,6 +245,9 @@ I18N.zh = {
             "Team": "团队",
             "Enterprise": "企业",
             // "Pricing": "价格",
+            "Product": "产品",
+            "Solutions": "解决方案",
+            "Open Source": "开源",
             "Search": "搜索",
             "Sign in": "登录",
             "Sign up": "注册",
@@ -300,6 +303,7 @@ I18N.zh = {
             "Your stars": "我的标星页面",
             "Your gists": "我的代码片段",
             "Upgrade": "升级",
+            "Try Enterprise": "试用企业版",
             "Feature preview": "功能预览",
                 // 对话框
                 "Enable": "启用",
@@ -1980,7 +1984,7 @@ I18N.zh = {
                         "You can send notifications to different": "您可以将通知发送到不同的",
                         "verified": "经确认",
                         "email addresses depending on the organization that owns the repository.": "电子邮件地址，根据拥有仓库的组织。",
-                        "is your current default email for notifications.": "是你目前默认的通知邮箱。",
+                        "is your current default email for notifications.": "是您目前默认的通知邮箱。",
 
                         "No custom routes yet.": "尚无自定义路由",
                         "Add new route": "添加新路由",
@@ -7866,7 +7870,7 @@ I18N.zh = {
 
                     "Learn how to": "了解如何",
                     "add a Jekyll theme": "添加 Jekyll 主题",
-                    "to your site.": "到你的站点。",
+                    "to your site.": "到您的站点。",
 
                 "Custom domain": "自定义域",
                     "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
@@ -10409,7 +10413,7 @@ I18N.zh = {
                 "This secret may be used by any repository in the organization.": "组织中的任何仓库都可以使用此机密。",
                 "This secret may be used by any private repository in the organization.": "组织中的任何私有仓库都可以使用此机密。",
 
-            // 第三方访问 /organizations/<org-login>/settings/oauth_application_policy
+            // OAuth 应用策略 /organizations/<org-login>/settings/oauth_application_policy
                 "Third-party application access policy": "第三方应用访问策略",
                 "Policy:": "策略：",
                     "Access restricted": "访问受限",
@@ -10433,7 +10437,7 @@ I18N.zh = {
                 "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用程序可以代表组织成员进行操作。您的访问策略决定了哪些应用程序可以访问您组织中的数据。",
                 "Read more about third-party access and organizations.": "阅读更多关于第三方访问和组织的信息。",
 
-            // 设置应用程序访问限制 /settings/oauth_application_policy/confirm
+            // 设置应用程序访问限制 /organizations/<org-login>/settings/oauth_application_policy/confirm
                 "Third-party application restrictions": "第三方应用限制",
                 "create an extra layer of security that allows owners to better control how applications access data in their organization.": "创建一个额外的安全层，使所有者能够更好地控制应用如何访问其组织中的数据。",
                 "Organization owners maintain a whitelist of trusted applications.": "组织所有者维护受信任应用白名单。",
