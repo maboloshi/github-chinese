@@ -9656,14 +9656,19 @@ I18N.zh = {
                             "Why is this option disabled?": "为什么该选项被禁用？",
                         "Private": "私有",
                             "Members will be able to create private repositories, visible to organization members with permission.": "成员将能够创建私有仓库，对有权限的组织成员可见。",
-                    // 顶部提醒
-                        "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
 
-                        "Repository forking": "仓库复刻",
-                            "Allow forking of private repositories": "允许复刻私有仓库",
-                            "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果启用，则私有和公共仓库都允许复刻。如果禁用，则只允许复刻公共仓库。此设置也可以在每个仓库中进行配置。",
-                    // 顶部提醒
-                        "Repository forking setting updated!": "仓库复刻设置已经更新!",
+                        // 顶部提醒
+                            "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+                            "Members can now create public repositories.": "成员现在可以创建公共仓库。",
+                            "Members can now create public and private repositories.": "成员现在可以创建公共和私有仓库。",
+                            "Members can no longer create public or private repositories.": "成员不能再创建公共或私有仓库。",
+
+                    "Repository forking": "仓库复刻",
+                        "Allow forking of private repositories": "允许复刻私有仓库",
+                        "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果启用，则私有和公共仓库都允许复刻。如果禁用，则只允许复刻公共仓库。此设置也可以在每个仓库中进行配置。",
+
+                        // 顶部提醒
+                            "Repository forking setting updated!": "仓库复刻设置已经更新!",
 
                     "Pages creation": "页面创建",
                         "Members will be able to publish sites with only the selected access controls.": "成员将能够发布仅只有选定的访问控制的站点。",
@@ -9671,6 +9676,15 @@ I18N.zh = {
                             "Members will be able to create public sites, visible to anyone.": "成员将能够创建任何人都可见的公共站点。",
                         // "Private": "私有",
                             "Members will be able to create private sites, visible to anyone with permission.": "成员将能够创建私有站点，对任何有权限的人可见。",
+
+                    "Integration access requests": "集成访问请求",
+                        "Allow integration requests from outside collaborators": "允许来自外部协作者的集成请求",
+                            "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够请求 GitHub 或 OAuth 应用程序访问该组织及其资源。",
+
+                        // 顶部提醒
+                            "Outside collaborators can now request third party access.": "外部协作者现在可以请求第三方访问。",
+                            "Outside collaborators can no longer request third party access.  ": "外部协作者将不能再请求第三方访问。",
+
                     "Admin repository permissions": "管理员仓库权限",
                         "Repository visibility change": "仓库可见性更改",
                             "Allow members to change repository visibilities for this organization": "允许成员更改此组织的仓库可见性",
@@ -9700,14 +9714,16 @@ I18N.zh = {
                         "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
                         // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
                         "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
-                    // 顶部提醒
-                        "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
-                        "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
+
+                        // 顶部提醒
+                            "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
+                            "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
 
                     "Member team permissions": "成员团队权限",
                         "Team creation rules": "团队创建规则",
                             "Allow members to create teams": "允许成员创建团队",
                             "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
+
                         // 顶部提醒
                             "Members can now create teams.": "成员现在可以创建团队。",
                             "Members can no longer create teams.": "成员不能再创建团队。",
