@@ -135,8 +135,12 @@
 
             // 翻译时间元素
             if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME' || node.tagName === 'LOCAL-TIME') {
-                transTimeElement(node.shadowRoot);
-                watchTimeElement(node.shadowRoot);
+                if (node.shadowRoot) {
+                    transTimeElement(node.shadowRoot);
+                    watchTimeElement(node.shadowRoot);
+                 } else {
+                     transTimeElement(node);
+                 }
                 return;
             }
 
