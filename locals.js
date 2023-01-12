@@ -845,15 +845,21 @@ I18N.zh = {
              * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
              *  7 months
              */
-            [/^just now|^now|^last month|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year)s?( ago|)/, function (all, prefix, count, unit, suffix) {
+            [/^just now|^now|^last year|^last month|^last week|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year|week)s?( ago|)/, function (all, prefix, count, unit, suffix) {
                 if (all === 'now') {
                     return '现在';
                 }
                 if (all === 'just now') {
                     return '刚刚';
                 }
+                if (all === 'last year') {
+                    return '最近 1 年';
+                }
                 if (all === 'last month') {
                     return '上个月';
+                }
+                if (all === 'last week') {
+                    return '上周';
                 }
                 if (all === 'yesterday') {
                     return '昨天';
@@ -862,7 +868,7 @@ I18N.zh = {
                     count = '1';
                 } // a, an 修改为 1
 
-                var unitKey = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年'};
+                var unitKey = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年', week: '周'};
 
                 if (suffix) {
                     return (prefix === 'about' || prefix === 'almost' ? '大约 ' : prefix === 'less than' ? '不到 ' : '') + count + ' ' + unitKey[unit] + (prefix === 'over' ? '多之前' : '之前');
