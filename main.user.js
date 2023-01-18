@@ -183,40 +183,39 @@
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
         const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
+        // 一级名称 orgs 或者 organizations
+        // const isOrganization = /\/orgs/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
         // 优先匹配 body 的 class
-        let page = document.body.className.match(I18N.conf.rePageClass);
-        if (page) {
-            return page[1];
+        let page, t = document.body.className.match(I18N.conf.rePageClass);
+        if (t) {
+            if (t[1] === 'page-profile') {
+                page = location.search.replace(/tab=(\w+)/, '$1') ? 'page-profile/' + RegExp.$1 : pathname.match(/^\/(starts)/) ? 'page-profile/starts' : t[1];
+            } else {
+                page = t[1];
+            }
+        } else if (site === 'gist') { // Gist 站点
+            page = 'gist';
+        } else if (pathname === '/' && site === 'github') { // github.com 首页
+            page = isLogin ? 'page-dashboard' : 'homepage';
+        } else if  (isRepository) { // 仓库页
+            t = pathname.match(I18N.conf.rePagePathRepo);
+            page = t ? 'repository/'+ t[1] : 'repository';
+        } else if  (isOrganization) { // 组织页
+            t = pathname.match(I18N.conf.rePagePathOrg);
+            page = t ? 'orgs/'+ t[1] : 'orgs';
+        } else {
+            t = pathname.match(I18N.conf.rePagePath);
+            page = t ? t[1] : false; // 取页面 key
         }
 
-        if (site === 'gist') { // Gist 站点
-            return 'gist';
+        if (!page || I18N[lang][page] == undefined){
+            console.log("请注意对应 page %s 词库节点不存在", page);
+            // return false;
+            page = false;
         }
-
-        if (pathname === '/' && site === 'github') { // github.com 首页
-            return isLogin ? 'page-dashboard' : 'homepage';
-        } //登录 或 未登录
-
-        // 仅个人首页 其标签页识别不了 优先使用 Class 过滤(/page-profile/)
-        // if (isProfile) { // 个人首页
-        //     return 'page-profile';
-        // }
-
-        if (isRepository) { // 仓库页
-            let t = pathname.match(I18N.conf.rePagePathRepo);
-            return t ? 'repository/'+t[1] : 'repository';
-        }
-
-        if (isOrganization) { // 组织页
-            let t = pathname.match(I18N.conf.rePagePathOrg);
-            return t ? 'orgs/'+t[1] : 'orgs';
-        }
-
-        // 扩展 pathname 匹配
-        page = pathname.match(I18N.conf.rePagePath);
-        return page ? page[1] : false; // 取页面 key
+        return page;
     }
 
     /**
