@@ -285,6 +285,7 @@ I18N.zh = {
             // 右上角新建按钮下拉菜单
             "New repository": "新建仓库",
             "Import repository": "导入仓库",
+            "New codespace": "新建代码空间",
             "New gist": "新建代码片段",
             "New organization": "新建组织",
             "New project": "新建项目",
@@ -302,6 +303,7 @@ I18N.zh = {
             "Your discussions": "我的讨论",
             "Your stars": "我的标星页面",
             "Your gists": "我的代码片段",
+            "Your sponsors": "我的赞助者",
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
             "Feature preview": "功能预览",
@@ -621,6 +623,10 @@ I18N.zh = {
             // 标签提示
             "New feature or request": "新功能或要求",
 
+            // 更换新手机, 要求重新下载恢复码的全局提醒
+            "Don't get locked out - if you get a new phone this season, be sure to transfer your authenticator app data to the new phone. Enable cloud back up if your authenticator app supports it and consider": "不要被锁在门外——如果您在这个季节买了一部新手机，请务必将您的身份验证器应用数据传输到新手机。如果您的身份验证器应用支持云备份，请启用它并考虑",
+            "redownloading your recovery codes": "重新下载您的恢复码",
+            ", just to be safe.": "，以确保安全。",
             // 日历
             "Jan": "1月",
             "Feb": "2月",
@@ -917,7 +923,7 @@ I18N.zh = {
             // 左侧栏
             "View organization": "查看组织", // 组织
             "Browse organization's repositories": "浏览组织的仓库", // 组织
-            "Recent Repositories": "近期仓库",
+            "Top Repositories": "置顶仓库",
             "New": "新建",
             "Find a repository…": "搜索仓库…",
             "Show more": "显示更多",
@@ -1035,7 +1041,7 @@ I18N.zh = {
             // 右侧栏
             "Latest changes": "最新变化",
             "View changelog →": "查看更新日志 →",
-            "Explore repositories": "探索仓库",
+            "Explore Repositories": "探索仓库",
             "Explore more →": "探索更多 →",
 
             // 用户 浮动信息卡
@@ -1126,6 +1132,8 @@ I18N.zh = {
                     "other users and organizations to link to them.": "链接到其他用户和组织。",
                 "Company": "公司",
                 "Location": "位置",
+                "Display current local time": "显示当前当地时间",
+                "same time": "相同时间",
                 "Website": "网站",
                 "Twitter username": "Twitter 用户名",
 
@@ -1294,12 +1302,13 @@ I18N.zh = {
                 "Past year of activity": "过去一年的活动",
 
             // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                "There aren't any projects yet": "尚无任何项目",
                 "Welcome to the all-new projects": "欢迎访问全新的项目",
                 "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
 
                 "Learn more about projects": "了解更多关于项目", // ?tab=projects
 
-                "Sort by": "排序方式",
+                "Sort": "排序",
                     // 排序下拉菜单
                     "Newest": "最新",
                     "Oldest": "最早",
@@ -1342,9 +1351,14 @@ I18N.zh = {
 
             // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                 "Lists": "清单",
+
+                "Sort by": "排序方式",
                 // 排序补充
                     "Name ascending (A-Z)": "名称升序 (A-Z)",
                     "Name descending (Z-A)": "名称降序 (Z-A)",
+                    "Newest": "最新",
+                    "Oldest": "最早",
+                    "Last updated": "最后更新",
                 "Create list": "创建清单",
                     "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                     "⭐️ Name this list": "⭐️ 清单名称",
@@ -1366,6 +1380,19 @@ I18N.zh = {
                 "Type: Forks"  : "类型：复刻",
                 "Type: Mirrors": "类型：镜像",
                 "Type: Templates": "类型：模板",
+                    "All"    : "全部",
+                    "Public" : "公共",
+                    "Private": "私有",
+                    "Sources": "源码",
+                    "Forks"  : "复刻",
+                    "Mirrors": "镜像",
+                    "Templates": "模板",
+                "Language": "语言",
+                    // 下拉菜单
+                    "Select language": "选择语言",
+                    "All languages": "所有语言",
+                "Sort": "排序",
+                    // 下拉菜单
                 "Sort by: Recently starred": "排序：最近星标",
                 "Sort by: Recently active": "排序：最近活跃",
                 "Sort by: Most stars": "排序：最多星标",
@@ -1375,9 +1402,26 @@ I18N.zh = {
                     "Languages": "语言",
 
                 //筛选结果
+                "result for": "个结果在",
+                "results for": "个结果在",
+                    "public": "公共",
+                    "private": "私有",
+                    "source": "源码",
+                    "forked": "复刻",
+                    "archived": "存档",
+                    "mirror": "镜像",
+                    "template": "模板",
+                "star matching": "个星标匹配", //?tab=stars
+                "stars matching": "个星标匹配", //?tab=stars
+                "star written in": "个星标使用语言", //?tab=stars
+                "stars written in": "个星标使用语言", //?tab=stars
                 "starred repositories": "星标仓库",
+                "starred repositories written in": "星标仓库使用语言",
                 // "Clear filter": "清除筛选",
 
+              // 项目 状态词
+              "Updated": "更新于",
+              "Forked from": "复刻自",
                 "That’s it. You’ve reached the end of your stars.": "而已。您已经到了星海的尽头。",
 
                 "Topics": "主题",
@@ -1663,7 +1707,7 @@ I18N.zh = {
             "Switch to another account": "切换到另一个帐户", // 存在组织时
             "Go to your personal profile": "去我的个人资料",
             // 左侧菜单
-            "Profile": "个人资料",
+            "Public profile": "基本资料",
             "Account": "帐户",
             "Appearance": "外观",
             "Accessibility": "无障碍",
@@ -1924,7 +1968,7 @@ I18N.zh = {
                     "Plain text": "纯文本",
                         "Pasting a URL while having text selected will replace the text": "在选择了文本的情况下，粘贴 URL 将替换文本",
                         // 顶部提醒
-                        "Paste behavior preferences successfully saved. ": "粘贴行为首选项已成功保存。",
+                        "Paste behavior preferences successfully saved.": "粘贴行为首选项已成功保存。",
 
             // Notification center 通知 https://github.com/settings/notifications
                 "Default notifications email": "默认邮件通知设置",
@@ -2018,6 +2062,8 @@ I18N.zh = {
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
+                "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
+                "15GB of Codespaces storage": "15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
@@ -2059,13 +2105,14 @@ I18N.zh = {
 
                 "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
 
-                "Billing Information": "账单信息",
+                "Billing information": "账单信息",
                 "First name": "名字",
                 "Last name": "姓氏",
                 "Address (P.O. box, company name, c/o)": "地址（邮政信箱、公司名称、c/o）",
                 "Address line 2 (Apartment, suite, unit)": "地址第 2 行（公寓、套房、单元）",
                 "City": "城市",
                 "Postal/Zip code": "邮政编码",
+                    "Required for certain countries": "某些国家/地区需要",
                 "Country/Region": "国家/地区",
                     "Choose your country": "选择您所在的国家/地区",
                 "State/Province": "州/省",
@@ -2082,7 +2129,7 @@ I18N.zh = {
                 "Redeem a coupon": "兑换优惠券",
                 "You don’t have an active coupon.": "您没有有效的优惠券。",
 
-                "Additional Information": "附加信息",
+                "Additional information": "附加信息",
                     "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
                 "Add information": "添加信息",
                 "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
@@ -2116,15 +2163,15 @@ I18N.zh = {
                 "There are no upcoming charges to your account.": "您的帐户没有即将发生的费用。",
 
             // 支出限额 https://github.com/settings/billing/spending_limit
-                "/ Monthly spending limit": "/ 每月支付限额",
+                "/ Monthly spending limits": "/ 每月支付限额",
                 "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
-                "Actions spending limits": "操作支付限额",
-                "Packages spending limits": "软件包支付限额",
+                "spending limits": "支付限额",
 
                 "Payment method is missing": "缺失支付方式",
                 "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
                 "Add payment method": "添加支付方式",
 
+                "Actions & Packages": "操作与软件包",
                 "Limit spending": "限制支出",
                     "Set up a spending limit on a monthly basis": "设置每月支出限额",
                     "Update limit": "更新限额",
@@ -2136,6 +2183,9 @@ I18N.zh = {
                 "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "当使用率达到 75%、90% 和 100% 的阈值时，会收到电子邮件通知。",
                 "Included resources alerts": "包含资源提醒",
                 "Spending limit alerts": "支出限额提醒",
+
+            // 代码空间
+                "Pay as much as needed to keep Codespaces running": "按需支付，以保持代码空间的运行",
 
             // 账单历史 https://github.com/account/billing/history
                 "/ Payment history": "/ 支付历史",
@@ -2347,6 +2397,7 @@ I18N.zh = {
                 "You are not a member of any organizations.": "您暂无任何组织。",
 
                 "owner": "所有者",
+                "Compare plans": "比较计划",
                 "Leave": "离开",
 
                 "Transform account": "帐户变更",
@@ -2550,9 +2601,13 @@ I18N.zh = {
             // Security log 安全日志 https://github.com/settings/security-log
                 "Loading audit log entries…": "正在加载日志条目...",
                 "Filters": "筛选",
-                    "Yesterday’s activity": "昨天的活动",
+                    "Filter audit logs": "筛选审计日志",
+                    "Yesterday's activity": "昨天的活动",
                     "Repository management": "仓库管理",
                     "Billing updates": "账单更新",
+                    "Personal access token activity": "个人访问令牌活动",
+                    "View advanced search syntax": "查看高级搜索语法",
+                "Search audit logs": "搜索审计日志",
                 "Search your security log": "搜索您的安全日志",
                 "Clear current search query": "清除当前的搜索查询",
                 "Export": "导出",
@@ -2831,7 +2886,10 @@ I18N.zh = {
                 "Request user authorization (OAuth) during installation": "在安装期间请求用户授权 (OAuth)",
                 "Requests that the installing user grants access to their identity during installation of your App": "请求用户在安装应用期间授予其身份访问权限。",
                 "Identifying and authorizing users for GitHub Apps documentation": "关于 GitHub 应用程序识别并授权用户的文档",
+                "Enable Device Flow": "启用设备流",
                 "Allow this GitHub App to authorize users via the Device Flow.": "允许此 GitHub 应用通过设备流程授权用户。",
+                "Read the": "阅读",
+                "Device Flow documentation": "设备流程文档",
                 "Post installation": "安装完成后",
                 "Setup URL (optional)": "设置网址 (可选)",
                 "Users will be redirected to this URL after installing your GitHub App to complete additional setup.": "用户在安装完 GitHub 应用后，会被重定向到这个网址，以完成额外的设置。",
@@ -2929,7 +2987,7 @@ I18N.zh = {
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
                     "Custom roles": "自定义角色",
-                        "Create, edit, delete and list custom roles.": "创建、编辑、删除和列出自定义角色。",
+                        "Create, edit, delete and list custom organization and repository roles.": "创建、编辑、删除和列出自定义组织和仓库角色。",
                     "Events": "活动",
                         "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
                     "Members": "成员",
@@ -3102,9 +3160,108 @@ I18N.zh = {
                         // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
 
                     // 帐户权限
+                    "Permissions": "权限",
+                        "Read our": "阅读我们的",
+                        "permissions documentation": "权限文档",
+                        "for information about specific permissions.": "以了解有关具体权限的信息。",
+
+                        "Access:": "访问权限：",
+                        "Select an access level": "选择访问级别",
+                        "No access": "禁止访问",
+                        "Read-only": "只读",
+                        "Read and write": "读写",
+
+                        "Selected": "项被选中",
+                        "mandatory": "强制",
+
+                    "Repository permissions": "仓库权限",
+                        "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
+
+                        "Actions": "操作",
+                            "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
+                        "Administration": "管理",
+                            "Repository creation, deletion, settings, teams, and collaborators.": "仓库创建、删除、设置、团队和协作者。",
+                        "Checks": "检查",
+                            "Checks on code.": "检查代码。",
+                        "Code scanning alerts": "代码扫描警报",
+                            "View and manage code scanning alerts.": "查看和管理代码扫描警报。",
+                        // "": "代码空间",
+                            "Create, edit, delete and list Codespaces.": "创建、编辑、删除和列出代码空间。",
+                        "Codespaces lifecycle admin": "代码空间的生命周期管理",
+                            "Manage the lifecycle of Codespaces, including starting and stopping.": "管理代码空间的生命周期，包括启动和停止。",
+                        "Codespaces metadata": "代码空间元数据",
+                            "Access Codespaces metadata including the devcontainers and machine type.": "访问代码空间元数据，包括开发容器和机器类型。",
+                        "Codespaces secrets": "代码空间机密",
+                            "Restrict Codespaces user secrets modifications to specific repositories.": "限制代码空间的用户机密对特定仓库的修改。",
+                        "Commit statuses": "提交状态",
+                            "Commit statuses.": "提交状态。",
+                        "Contents": "内容",
+                            "Repository contents, commits, branches, downloads, releases, and merges.": "仓库内容、提交、分支、下载、发布和合并。",
+                        "Dependabot alerts": "Dependabot 警报",
+                            "Retrieve Dependabot alerts.": "检索 Dependabot 警报。",
+                        "Dependabot secrets": "Dependabot 机密",
+                            "Manage Dependabot repository secrets.": "管理 Dependabot 仓库的机密。",
+                        "Deployments": "部署",
+                            "Deployments and deployment statuses.": "部署和部署状态。",
+                        "Discussions": "讨论",
+                            "Discussions and related comments and labels.": "讨论及相关评论和标签。",
+                        "Environments": "环境",
+                            "Manage repository environments.": "管理仓库环境。",
+                        "Issues": "议题",
+                            "Issues and related comments, assignees, labels, and milestones.": "议题及相关评论、受理人、标签和里程碑。",
+                        "Merge queues": "合并列队",
+                            "Manage a repository's merge queues": "管理仓库的合并队列。",
+                        "Metadata": "元数据",
+                            "Search repositories, list collaborators, and access repository metadata.": "搜索仓库、列出协作者，访问仓库元数据。",
+                        "Packages": "软件包",
+                            "Packages published to the GitHub Package Platform.": "发布软件包到 GitHub Package 平台。",
+                        "Pages": "GitHub Pages",
+                            "Retrieve Pages statuses, configuration, and builds, as well as create new builds.": "检索页面状态、配置和构建，以及创建新的构建。",
+                        "Projects": "项目",
+                            "Manage classic projects within a repository.": "管理仓库中的经典项目。",
+                        "Pull requests": "拉取请求",
+                            "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
+                        "Secret scanning alerts": "隐私扫描警报",
+                            "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
+                        "Secrets": "隐私",
+                            "Manage Actions repository secrets.": "管理操作仓库隐私。",
+                        "Single file": "单个文件",
+                            "Manage just a single file.": "只管理单个文件。",
+                        "Webhooks": "Web 钩子",
+                            "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
+                        "Workflows": "工作流程",
+                            "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
+
+                    "Account permissions": "帐户权限",
                         "User permissions permit access to resources under your personal GitHub account.": "用户权限允许访问您个人 GitHub 帐户下的资源。",
+
+                        "Block another user": "拉黑其他用户",
+                            "View and manage users blocked by the user.": "查看和管理被用户拉黑的用户。",
+                        "Codespaces user secrets": "代码空间用户机密",
+                            "Manage Codespaces user secrets.": "管理代码空间用户机密。",
+                        "Email addresses": "电子邮箱地址",
+                            "Manage a user's email addresses.": "管理用户的电子邮箱地址。",
+                        // 关注者
+                            "A user's followers": "用户的关注者",
+                        "GPG keys": "GPG 密钥",
+                            "View and manage a user's GPG keys.": "查看和管理用户的 GPG 密钥。",
+                        // Gist
+                            "Create and modify a user's gists and comments.": "创建和修改用户的代码片段和评论。",
+                        "Git SSH keys": "Git SSH 密钥",
+                        "Interaction limits": "交互限制",
+                            "Interaction limits on repositories": "仓库的交互限制",
+                        "Plan": "计划",
+                            "View a user's plan.": "查看用户的计划。",
                         "Private repository invitations": "私有仓库邀请",
                             "View a user's invitations to private repositories": "查看用户对私有仓库的邀请",
+                        "Profile": "个人信息",
+                            "Manage a user's profile settings.": "管理用户的个人信息设置。",
+                        "SSH signing keys": "SSH 签名密钥",
+                            "View and manage a user's SSH signing keys.": "查看和管理用户的 SSH 签名密钥。",
+                        "Starring": "星标",
+                            "List and manage repositories a user is starring.": "列出和管理用户已加星标的仓库。",
+                        "Watching": "关注",
+                            "List and change repositories a user is subscribed to.": "列出和更改用户订阅的仓库。",
 
                     // 概述
                         // [/(\d+) permissions for none of your repositories/, ""],
@@ -3180,12 +3337,20 @@ I18N.zh = {
                 "Manage enterprise runners and runner groups": "管理企业运行器和运行器组",
                 "Read and write enterprise billing data": "读写企业计费数据",
                 "Read enterprise profile data": "读取企业个人数据",
+                "Full control of audit log": "完全控制审核日志",
+                "Read access of audit log": "读取审核日志",
+                "Full control of codespaces": "完全控制代码空间",
+                "Ability to create, read, update, and delete codespace secrets": "创建、读取、更新和删除代码空间机密",
                 "Full control of projects": "完全控制项目",
                 "Read access of projects": "读取项目",
                 "Full control of public user GPG keys": "完全控制公共用户 GPG 密钥",
                 "(Developer Preview)": "（开发者预览版）",
                 "Write public user GPG keys": "写入公共用户 GPG 密钥",
                 "Read public user GPG keys": "读取公共用户 GPG 密钥",
+                "Full control of public user SSH signing keys": "完全控制公共用户 SSH 签名密钥",
+                "Write public user SSH signing keys": "写入公共用户 SSH 签名密钥",
+                "Read public user SSH signing keys": "读取公共用户 SSH 签名密钥",            "Generate token": "生成令牌",
+
                 "Generate token": "生成令牌",
                     // 顶部提醒
                     "Some of the scopes you’ve selected are included in other scopes. Only the minimum set of necessary scopes has been saved.": "您选择的一些作用域包含在其他作用域中。只保存了必要作用域的最小集合。",
@@ -3677,7 +3842,7 @@ I18N.zh = {
 
                 // 仓库主页 分支保护
                     // [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
-                    "Protect this branch from force pushing, deletion, or require status checks before merging.": "保护此分支免受强制推送、删除或在合并前要求状态检查。",
+                    "Protect this branch from force pushing or deletion, or require status checks before merging.": "保护此分支免受强制推送或删除，或在合并前要求状态检查。",
                     "Protect this branch": "保护该分支",
 
                 // 仓库主页 Dependabot 警告框
@@ -5163,9 +5328,10 @@ I18N.zh = {
                     "Select previous tag to compare": "选择上一个标签进行比较",
                         "Find previous tag": "筛选上一个标签",
                 "Generate release notes": "生成发行版说明",
-                    "Automatically add the markdown for all the merged pull requests from this diff and contributors of this release": "自动为来自此差异和此发行版贡献者的所有已合并拉取请求，添加说明。",
+                    "Automatically add the Markdown for all the merged pull requests from this diff and contributors of this release": "自动为来自此差异和此发行版贡献者的所有已合并拉取请求，添加 Markdown 说明。",
+                    "Clear existing notes to automatically add the Markdown for all the merged pull requests from this diff and contributors of this release": "清除现有的注释，以自动添加来自此差异和此版本贡献者的所有合并的拉动请求的标记。",
 
-                    "There were no pull requests associated with the commits included in this release. Automatically-generated notes were not generated.": "此版本中没有与提交相关的拉取请求。未自动生成注释。",
+                    "There were no pull requests associated with the commits included in this release.": "此版本中没有与提交相关的拉取请求。",
 
                 "Describe this release": "描述此发行版",
 
@@ -5188,10 +5354,12 @@ I18N.zh = {
                 "will be deleted": "将被删除",
                 "(undo)": "(撤销)",
 
-                "This is a pre-release": "这是一个预发布版",
-                    "We’ll point out that this release is identified as non-production ready.": "我们需要指出，该版本为非正式发布。", //我们需要指出的是，这个版本被认定为非生产准备。
+                "Set as a pre-release": "设置为预发布版本",
+                    "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
                 "Create a discussion for this release": "为此版本创建讨论",
                     "People will be able to leave comments and reactions on this release using Discussions.": "人们将能够使用“讨论”对此版本发表评论和反应。",
+                "Set as the latest release": "设置为最新版本", //edit
+                    "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
                 "Publish release": "发布发行版",
                     "Publishing…": "发布中…",
@@ -8018,6 +8186,8 @@ I18N.zh = {
         "static": { // 静态翻译
             // 登录页 https://github.com/login
                 "Sign in to GitHub": "登录 GitHub",
+                "Sign in to": "登录",
+                "to continue to": "继续登录",
                 "Username or email address": "用户名或电子邮箱",
                 "Password": "密码",
                 "Forgot password?": "忘记密码？",
@@ -8073,6 +8243,9 @@ I18N.zh = {
 
                 "If you are unable to access your mobile device, enter one of your recovery codes to verify your identity.": "如果您无法访问您的移动设备，请输入您的一个恢复码以验证您的身份。",
 
+                "Don't have a recovery code?": "没有恢复码？",
+                "Where to find recovery codes": "哪里可以找到恢复码",
+
                 "Locked out?": "被锁在外面了吗？",
                 "Try recovering your account": "请尝试恢复您的帐户",
 
@@ -8127,6 +8300,10 @@ I18N.zh = {
                 // 定时确认确认您的帐户恢复设置
                 "Confirm your account recovery settings": "确认您的帐户恢复设置",
                 "Are your account recovery settings up to date? If not, you risk getting locked out of your account.": "您的帐户恢复设置是否最新？如果没有，您就有被锁定帐户的风险。",
+                "Emails": "电子邮箱",
+                    "View and update your email addresses": "查看和更新您的电子邮件地址",
+                    "Verified emails": "经过验证的电子邮箱",
+                    "Verified emails give you access to more features on GitHub": "经过验证的电子邮箱让你可以使用 GitHub 上的更多功能",
                 "Two-factor methods": "双重身份验证方式",
                     "Primary two-factor method": "主要双重身份验证方式",
                         "Configured: Authenticator app": "已配置：身份验证器应用",
@@ -9483,6 +9660,8 @@ I18N.zh = {
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
+                "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
+                "15GB of Codespaces storage": "15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
