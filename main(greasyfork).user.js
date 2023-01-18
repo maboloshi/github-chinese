@@ -16,13 +16,13 @@
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @grant        GM_notification
-// @connect      www.githubs.cn
+// @connect      www.iflyrec.com
 // ==/UserScript==
 
 (function (window, document, undefined) {
     'use strict';
 
-    var RegExp = GM_getValue("RegExp", 1);
+    var enable_RegExp = GM_getValue("enable_RegExp", 1);
     var lang = 'zh'; // 中文
 
     // 要翻译的页面
@@ -30,7 +30,7 @@
 
     transTitle(); // 页面标题翻译
     transBySelector(); // Selector 翻译
-    traverseNode(document.body); // 立即翻译页面
+    page && traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
     // 翻译描述
@@ -68,15 +68,11 @@
                 transTitle(); // 标题翻译
                 transBySelector(); // Selector 翻译
             }
+
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
 
-                    // TURBO-FRAME TURBO 框架处理
-                    if (mutation.target.tagName === 'TURBO-FRAME' && mutation.target.src) {
-                        page = getPage(mutation.target.src); //获取 TURBO 框架 对应 page
-                    }
-
-                    traverseNode(mutation.target);
+                    page && traverseNode(mutation.target);
                 }
             }
         });
@@ -87,33 +83,6 @@
         }
         observer.observe(document.body, config);
 
-        // 监视最顶层，仅当新增 BODY 时，重新翻译 BODY，并再次监视 BODY 的更新
-        new m(function(mutations) {
-            for(let mutation of mutations) {
-                if (mutation.addedNodes.length > 0) { // 仅当节点增加
-                    for (const node of mutation.addedNodes){
-                        if (node.nodeName === 'BODY') { // 增加的节点为 BODY
-                            page = getPage();
-                            transTitle(); // 页面标题翻译
-                            transBySelector(); // Selector 翻译
-                            traverseNode(document.body); // 立即翻译页面
-
-                            observer.observe(document.body, config); // 再次监视 BODY
-                            return;
-                        }
-                    }
-                } else if(mutation.type === 'attributes') {
-                    if (mutation.target.className === 'translated-ltr') {
-                        observer.disconnect();
-                    } else {
-                        observer.observe(document.body, config);
-                    }
-                }
-            }
-        }).observe(document.documentElement, {
-            childList: true,
-            attributeFilter: ['class']
-        });
     }
 
     /**
@@ -134,8 +103,13 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME') {
-                transTimeElement(node);
+            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME' || node.tagName === 'LOCAL-TIME') {
+                if (node.shadowRoot) {
+                    transTimeElement(node.shadowRoot);
+                    watchTimeElement(node.shadowRoot);
+                 } else {
+                     transTimeElement(node);
+                 }
                 return;
             }
 
@@ -193,51 +167,26 @@
     /**
      * 获取翻译页面
      *
-     * @param {string} TURBO 框架 src 地址
      *
      * 2021-10-07 11:48:50
      * 参考 v2.0 中规则
      */
-    function getPage(src="") {
-        var Location = location;
-        var Document = document;
-
-        // 解析 TURBO 框架
-        if(src){
-            Location = new URL(src);
-            GM_xmlhttpRequest({
-                method: "GET",
-                headers: {"Accept": "text/html, application/xhtml+xml"},
-                url: src,
-                responseType: "document",
-                // synchronous: true,
-                onload: function(res) {
-                    if (res.status === 200) {
-                        Document = res.response;
-                    } else {
-                        Document = false;
-                    }
-                }
-            });
-            if (!Document) {
-                return false;
-            }
-        }
+    function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = Location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
-        const pathname = Location.pathname; // 当前路径
-        const isLogin = /logged-in/.test(Document.body.className); // 是否登录
+        const site = location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
+        const pathname = location.pathname; // 当前路径
+        const isLogin = /logged-in/.test(document.body.className); // 是否登录
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
-        const analyticsLocation = (Document.getElementsByName('analytics-location')[0] || 0).content || '';
+        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
         const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
         // 优先匹配 body 的 class
-        let page = Document.body.className.match(I18N.conf.rePageClass);
+        let page = document.body.className.match(I18N.conf.rePageClass);
         if (page) {
             return page[1];
         }
@@ -302,15 +251,33 @@
     function transTimeElement(el) {
         let str; // 翻译结果
         let key = el.textContent;
-        let res = I18N[lang].pubilc.regexp;
+        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
 
-        for (let i = 0; i < 3; i++) { // 公共正则中时间规则
-            str= key.replace(res[i][0], res[i][1]);
+        for (let [a, b] of res) {
+            str= key.replace(a, b);
             if (str !== key) {
                 el.textContent = str;
                 break;
             }
         }
+    }
+
+    /**
+     * 监听时间元素变化, 触发和调用时间元素翻译
+     *
+     * @param {Element} node 节点
+     */
+    function watchTimeElement(el) {
+        const m =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
+
+        new m(function(mutations) {
+            transTimeElement(mutations[0].addedNodes[0]);
+        }).observe(el, {
+            childList: true
+        });
     }
 
     /**
@@ -390,9 +357,9 @@
         }
 
         // 正则翻译
-        if (RegExp){
+        if (enable_RegExp){
             let res = I18N[lang][page].regexp; // 正则数组
-            res.push(...I18N[lang]['pubilc'].regexp); // 追加公共正则 es6
+            res= res.concat(I18N[lang]['pubilc'].regexp); // 追加公共正则
             if (res) {
                 for (let [a, b] of res) {
                     str = key.replace(a, b);
@@ -434,14 +401,20 @@
             }
 
             GM_xmlhttpRequest({
-                method: "GET",
-                url: `https://www.githubs.cn/translate?q=`+ encodeURIComponent(desc),
+                method: "POST",
+                url: "https://www.iflyrec.com/TranslationService/v1/textTranslation",
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'Origin': 'https://www.iflyrec.com',
+                },
+                data : JSON.stringify({"from":"2","to":"1","contents":[{"text":desc,"frontBlankLine":0}]}),
+                responseType: "json",
                 onload: function(res) {
                     if (res.status === 200) {
                         translate_me.style.display="none";
                         // render result
-                        const text = res.responseText;
-                        element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.githubs.cn'>GitHub中文社区</a> 翻译👇</span><br/>"+text);
+                        const text = res.response.biz[0].translateResult;
+                        element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>"+text);
                     } else {
                         alert("翻译失败");
                     }
@@ -473,12 +446,12 @@
     }
 
     GM_registerMenuCommand("正则切换", () => {
-        if (RegExp){
-            GM_setValue("RegExp", 0);
-            RegExp = 0;
+        if (enable_RegExp){
+            GM_setValue("enable_RegExp", 0);
+            enable_RegExp = 0;
             GM_notification("已关闭正则功能");
         } else {
-            GM_setValue("RegExp", 1);
+            GM_setValue("enable_RegExp", 1);
             GM_notification("已开启正则功能");
             location.reload();
         }
