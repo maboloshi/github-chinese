@@ -30,7 +30,7 @@
 
     transTitle(); // 页面标题翻译
     transBySelector(); // Selector 翻译
-    traverseNode(document.body); // 立即翻译页面
+    page && traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
     // 翻译描述
@@ -72,6 +72,7 @@
             for(let mutation of mutations) { // for速度比forEach快
                 if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
 
+                    page && traverseNode(mutation.target);
                 }
             }
         });
