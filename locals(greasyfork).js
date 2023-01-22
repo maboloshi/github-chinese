@@ -882,8 +882,8 @@ I18N.zh = {
                     return count + ' ' + unitKey[unit] + (prefix === 'in' ? '之内' : '之前');
                 }
             }],
-        [/(\d+)(h|d|m)/, function (all, count, suffix) {
-            var suffixKey = {h: '小时', d: '天', m: '个月'};
+        [/(\d+)(h|d|w|m)/, function (all, count, suffix) {
+            var suffixKey = {h: '小时', d: '天', w: '周', m: '个月'};
 
                 return count + ' ' + suffixKey[suffix] + '之前';
             }],
