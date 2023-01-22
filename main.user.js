@@ -4,12 +4,12 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.8.0
+// @version      1.8.1
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.8.0
+// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.8.1
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
