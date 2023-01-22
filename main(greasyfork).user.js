@@ -250,7 +250,7 @@
      */
     function transTimeElement(el) {
         let str; // 翻译结果
-        let key = el.textContent;
+        let key = el.lastChild.textContent;
         let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
