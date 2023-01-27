@@ -6066,6 +6066,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Automation": "自动化",
             "Browse all categories": "浏览所有类别",
                 "Code scanning": "代码扫描",
+            "View all": "查看全部",
 
             "Learn more about GitHub Actions": "了解更多关于 GitHub Actions 的信息",
             "Getting started and core concepts": "入门和核心概念",
@@ -6105,9 +6106,13 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // 左侧栏
             "Workflows": "工作流程",
             "New workflow": "新建工作流程",
-            // "Select workflow": "选择工作流程",
+            "Select workflow": "选择工作流程",
+            "Management": "管理",
+            "Caches": "缓存",
+            "Deployments": "部署",
 
             "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
+            "Give feedback": "提供反馈",
 
             "All workflows": "全部工作流程",
             "Showing runs from all workflows": "显示所有工作流程的运行情况",
@@ -6163,6 +6168,29 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Queued": "排队中",
                 "Pending": "待定中",
 
+            // 顶部提醒
+                "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
+
+        // /actions/caches
+            "Showing caches from all workflows.": "显示所有工作流程的缓存。",
+            "Learn more about managing caches.": "了解更多关于管理缓存的信息。",
+            "Filter caches": "筛选缓存",
+
+            // [/(\d+) caches?/, "$1 个缓存"],
+            "Sort": "排序",
+            "Sort by": "排序方式",
+                // 排序下拉菜单
+                "Recently used": "最近使用",
+                "Least recently used": "最近最少使用",
+                "Newest": "最新",
+                "Oldest": "最早",
+                "Largest size": "最大尺寸",
+                "Smallest size": "最小尺寸",
+            "No caches": "尚无缓存",
+            "Nothing has been cached by actions running in this repository.": "在此仓库中运行的操作未缓存任何内容。",
+            "Learn more about caching": "了解更多关于缓存的信息",
+            "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以缩短工作流执行时间。",
+
         // /<user-name>/<repo-name>/actions/workflows/<file>.yml
             "This workflow has a": "这个工作流程有一个",
             "event trigger.": "事件触发器。",
@@ -6190,7 +6218,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "This workflow was disabled manually.": "工作流程已被手动禁用。",
                 // 顶部提醒
                 "Workflow disabled successfully.": "工作流程已成功禁用。",
-            // "Re-run jobs": "重新运行作业",
+            "Re-run jobs": "重新运行作业",
 
             "This workflow has no runs yet.": "此工作流程尚未运行。",
 
@@ -6213,6 +6241,8 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // 左侧栏
             "Summary": "摘要",
             "Jobs": "作业",
+            "Run details": "运行详情",
+            "Usage": "运用",
 
             //状态条
             "Triggered via pull request": "通过拉取请求触发",
@@ -6229,12 +6259,21 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Cancelled": "取消",
             "Total duration": "总时长",
             "Billable time": "计费时间",
+
+            // 右侧中间栏
+                "This workflow graph cannot be shown": "无法显示此工作流图表",
+                "A graph will be generated the next time this workflow is run.": "下次运行此工作流时将生成一个图表。",
+
             "Artifacts": "附件",
                 "Produced during runtime": "在运行期间生成",
+                "Name": "名称",
                 "Size": "大小",
+                // [/Delete artifact ([^ ]+)/, "删除附件 $1"],
             "Annotations": "说明",
                 // [/1 error/, "$1 个错误"],
                 "Show more": "显示更多",
+
+        // /<user-name>/<repo-name>/actions/runs/<id>/jobs/<id2>
 
         // /<user-name>/<repo-name>/actions/runs/<id>/workflow
             "Workflow file": "工作流程文件",
@@ -6269,7 +6308,11 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         ...I18N.zh["repository-public"]["regexp"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
-        [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],    ],
+        [/(\d+) workflow runs results?/, "$1 个工作流程运行结果"],
+        [/Delete artifact ([^ ]+)/, "删除附件 $1"],
+        [/(\d+) errors?/, "$1 个错误"],
+        [/(\d+) caches?/, "$1 个缓存"],
+    ],
 };
 
 I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
