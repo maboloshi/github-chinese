@@ -17,6 +17,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_notification
 // @connect      www.iflyrec.com
+// @supportURL   https://github.com/maboloshi/github-chinese/issues
 // ==/UserScript==
 
 (function (window, document, undefined) {
