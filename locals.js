@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|installations|notifications)|settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|installations|notifications)|settings|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
@@ -6270,6 +6270,39 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],    ],
+};
+
+I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // /<user-name>/<repo-name>/deployments
+            // [/Deployed to ([^ ]+)/, "部署到 $1"],
+            "was": " ",
+            "deployed": "已部署",
+            "Deployment history": "部署历史",
+            "Show:": "显示：",
+                "All environments": "所有环境",
+            "Loading information…": "载入信息…",
+            "at": "在",
+            "Deployed": "部署",
+            "Deployed by": "部署者",
+            "Active": "激活",
+            "Inactive": "不活跃",
+            "Abandoned": "废弃",
+            "View deployment": "查看部署情况",
+
+            "View full deployment history": "查看完整的部署历史",
+
+        // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
+            "Deployments": "部署",
+            "/ History": "/ 历史",
+
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/Deployed to ([^ ]+)/, "部署到 $1"],
+    ],
 };
 
 I18N.zh["repository/watchers"] = { // 仓库 - 关注者页面
