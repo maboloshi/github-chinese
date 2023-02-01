@@ -268,6 +268,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Issues": "议题",
         "Marketplace": "应用商城",
         "Explore": "探索",
+            "Change email updates": "更改电子邮件更新",
+            "Trending": "趋势",
         "Codespaces": "代码空间",
         "Sponsors": "赞助",
 
@@ -9710,19 +9712,15 @@ I18N.zh["trending"] = { // 趋势页面
         "Repositories": "仓库",
         "Developers": "开发者",
 
-        "Trending:": "趋势：",
+
+        "Date range:": "日期范围：",
         "Adjust time span": "调整的时间跨度",
-        "today": "今天",
-        "this week": "本周",
-        "this month": "本月",
-
-        "All languages": "所有语言",
-        "Unknown languages": "未知语言",
-
-        "Other:": "其他：",
-        "Languages": "语言",
-        "Other Languages": "其他语言",
-        "Filter Languages": "筛选语言",
+        "Today": "今天",
+        "This week": "本周",
+        "This month": "本月",
+        "Language:": "语言:",
+        "Spoken Language:": "母语：",
+        "Chinese": "中文",
     },
     "regexp": [ // 正则翻译
         [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
@@ -10336,7 +10334,6 @@ I18N.zh["login/oauth"] = { // 应用授权
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
         // 右侧信息栏
-        "Change email updates": "更改电子邮件更新",
         "Trending repositories": "趋势仓库",
         "See more trending repositories": "查看更多热门仓库",
         "Trending developers": "开发者趋势",
