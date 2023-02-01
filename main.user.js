@@ -30,7 +30,7 @@
     var page = getPage();
 
     transTitle(); // 页面标题翻译
-    transBySelector(); // Selector 翻译
+    page && transBySelector(); // Selector 翻译
     page && traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
@@ -67,7 +67,7 @@
 
                 // 目前先跟随 url
                 transTitle(); // 标题翻译
-                transBySelector(); // Selector 翻译
+                page && transBySelector(); // Selector 翻译
             }
 
             for(let mutation of mutations) { // for速度比forEach快
@@ -432,15 +432,11 @@
      * 灵感参考自：k1995/github-i18n-plugin
      */
     function transBySelector() {
-        let res = I18N[lang].selector; // 数组
-        if (res) {
-            for (let [a, b] of res) {
-                let element = document.querySelector(a)
-                if (element) {
-                    element.textContent = b;
-                } else if (document.getElementsByClassName(a).length > 0) {
-                    document.getElementsByClassName(a)[0].textContent = b;
-                }
+        let res = I18N[lang][page].selector != undefined ? I18N[lang][page].selector.concat(I18N[lang]['pubilc'].selector) : I18N[lang]['pubilc'].selector; // 数组
+        for (let [a, b] of res) {
+            let element = document.querySelector(a)
+            if (element) {
+                element.textContent = b;
             }
         }
     }
