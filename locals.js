@@ -9705,9 +9705,12 @@ I18N.zh["trending"] = { // 趋势页面
         "See what the GitHub community is most excited about this month.": "看看 GitHub 社区本月最受关注的项目。",
 
         "Trending developers": "开发者趋势",
-        "These are the organizations and developers building the hot tools today.": "这是今天创建热门项目的组织和开发人员。",
-        "These are the organizations and developers building the hot tools this week.": "这是本周创建热门项目的组织和开发人员。",
-        "These are the organizations and developers building the hot tools this month.": "这是本月创建热门项目的组织和开发人员。",
+        "These are the developers building the hot tools today.": "这些是创建当今热门工具的开发人员。",
+        "These are the developers building the hot tools this week.": "这些是本周创建热门工具的开发人员。",
+        "These are the developers building the hot tools this month.": "这些是本月创建热门工具的开发人员。",
+        // "These are the organizations and developers building the hot tools today.": "这是今天创建热门项目的组织和开发人员。",
+        // "These are the organizations and developers building the hot tools this week.": "这是本周创建热门项目的组织和开发人员。",
+        // "These are the organizations and developers building the hot tools this month.": "这是本月创建热门项目的组织和开发人员。",
 
         "Repositories": "仓库",
         "Developers": "开发者",
@@ -9715,12 +9718,15 @@ I18N.zh["trending"] = { // 趋势页面
 
         "Date range:": "日期范围：",
         "Adjust time span": "调整的时间跨度",
+        "GitHub Sponsors participation": "GitHub 赞助商参与",
         "Today": "今天",
         "This week": "本周",
         "This month": "本月",
         "Language:": "语言:",
+        "Sponsorable:": "可赞助：",
+        "Sponsorable developers": "可赞助的开发者",
+        "All developers": "所有开发者",
         "Spoken Language:": "母语：",
-        "Chinese": "中文",
     },
     "regexp": [ // 正则翻译
         [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
