@@ -8853,6 +8853,10 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                     "No changes to custom domain.": "没有对自定义域进行修改。",
                     "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
 
+                    // 底部
+                    "DNS records should point to the": "DNS记录应该指向",
+                    "internationalized domain name": "国际化域名",
+
                 "Enforce HTTPS": "强制 HTTPS",
                     "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
 
@@ -8860,6 +8864,11 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                     "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
 
             //
+            "Visibility": "能见度",
+                "GitHub Enterprise": "GitHub 企业",
+                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. A privately published site can only be accessed by people with read access to the repository the site is published from. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用GitHub企业帐户，您可以通过私下发布来限制对GitHub Pages站点的访问。私有发布的网站只能由对发布该网站的存储库具有读取权限的人访问。您可以使用私人发布的网站与企业成员共享您的内部文档或知识库。",
+                "Try GitHub Enterprise risk-free for 30 days": "免费试用 GitHub 企业版 30 天无风险",
+                "Learn more about the visibility of your GitHub Pages site": "了解更多关于GitHub Pages站点可见性的信息",
             "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
             "Try risk-free for 30 days": "无风险试用 30 天",
             "using a GitHub Enterprise organization, or": "试用 GitHub 企业组织，或",
