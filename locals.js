@@ -4732,7 +4732,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
         [/(\d+) tasks?/, "$1 个任务"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
         // 具体某条议题 /<user-name>/<repo-name>/issues/<id>
-        [/• ([\d,]+) comments?/, "• $1 条评论"],
+        [/([\d,]+) comments?/, "$1 条评论"],
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/(\d+) similar comments?/, "$1 条类似评论"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
