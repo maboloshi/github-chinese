@@ -1046,6 +1046,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Explore Repositories": "探索仓库",
         "Explore more →": "探索更多 →",
 
+        //主页上仓库3个点
+        "You're seeing this because you follow aiirobyte": "你看到这个是因为你关注了 aiirobyte",
+        "Show less activity like this": "显示较少这样的活动",
+        "Unfollow this user": "取消关注此用户",
+
         // 用户 浮动信息卡
             "Member of": "隶属组织",
             // [/, and (\d+) more/, "，以及其他 $1 个组织"],
