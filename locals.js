@@ -1022,6 +1022,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "published a release": "发布发行版",
             "forked a repository": "复刻仓库",
             "starred a repository": "星标仓库",
+            "added a repository to": "已将存储库添加到",
             "sponsored": "赞助了",
             "followed": "关注了",
             "contributed to": "贡献给",
