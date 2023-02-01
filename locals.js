@@ -1044,7 +1044,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         // 右侧栏
         "Latest changes": "最新变化",
         "View changelog →": "查看更新日志 →",
-        "Explore Repositories": "探索仓库",
+        "Explore repositories": "探索仓库",
         "Explore more →": "探索更多 →",
 
         //主页上仓库3个点
