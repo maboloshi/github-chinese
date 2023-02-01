@@ -1030,6 +1030,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "Contributors": "贡献者",
             "Report": "举报",
             "Recommended for you": "为您推荐",
+            "Trending repositories": "趋势仓库",
                 "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
                 // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
             "Recommended based on people you follow": "根据您关注的人推荐",
