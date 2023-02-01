@@ -9729,9 +9729,12 @@ I18N.zh["trending"] = { // 趋势页面
         "Spoken Language:": "母语：",
     },
     "regexp": [ // 正则翻译
-        [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
-        [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
-        [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
+        // [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
+        // [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
+        // [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
+        [/([\d,]+) stars today?/, "今日 $1 星标"],
+        [/([\d,]+) stars this week?/, "本周 $1 星标"],
+        [/([\d,]+) stars this month?/, "本月 $1 星标"],
     ],
 };
 
