@@ -10332,8 +10332,27 @@ I18N.zh["login/oauth"] = { // 应用授权
 
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
+        // 右侧信息栏
+        "Change email updates": "更改电子邮件更新",
+        "Trending repositories": "趋势仓库",
+        "See more trending repositories": "查看更多热门仓库",
+        "Trending developers": "开发者趋势",
+        "See more trending developers": "查看更多热门开发者",
+
+        // 中间信息栏
+        "Here's what we found based on your interests...": "以下是我们根据您的兴趣发现的内容...",
+            "Based on repositories you’ve starred": "基于您加星标的存储库",
+            "Based on topics you've starred": "根据您加了标的主题",
+            "Based on people you follow": "基于您关注的人",
+            "Based on repositories you’ve viewed": "基于您查看过的存储库",
+            "App recommended by GitHub": "GitHub 推荐的应用",
+        "That's everything we found for you, for now.": "这就是我们目前为您找到的一切。",
+            "Come back soon to see what we find next,": "请尽快回来查看我们接下来会发现什么，",
+            "check how often you receive email updates.": "检查您收到电子邮件更新的频率。"
     },
     "regexp": [ // 正则翻译
+        [/([\d,]+) starred topics?/, "$1 个星标主题"],
+        [/([\d,]+) starred repositories/, "$1 个已加星标的存储库"]
     ],
 };
 
