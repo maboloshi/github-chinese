@@ -9383,21 +9383,13 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Sign in": "登录",
         "Sign up": "注册",
 
-        "Let's build from here,": "让我们从这里开始，",
-        "openly": "公开的",
-        "instantly": "即刻",
-        "automatically": "自动化的",
-        "securely": "安全的",
-        "magically": "神奇的",
-        "collaboratively": "协作",
-        "together.": "起来吧。",
-        "The complete developer platform to build, scale, and deliver secure software.": "构建、扩展和交付安全软件的完整开发平台。",
+        "Let’s build from here": "让我们从这里开始",
+        "Harnessed for productivity. Designed for collaboration. Celebrated for built-in security. Welcome to the platform developers love.": "驾驭生产力。专为协作而设计。以内置安全性着称。欢迎来到广大开发者喜爱的平台。",
+
         "Email address": "电子邮箱地址",
         "Sign up for GitHub": "注册 GitHub",
-        "million": "百万",
-        "Developers": "开发者",
-        "Organizations": "组织",
-        "Fortune 100": "财富 100 强",
+        "Start a free enterprise trial": "开始免费试用企业版",
+
     },
     "regexp": [ // 正则翻译
     ],
