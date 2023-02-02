@@ -84,7 +84,7 @@ I18N.conf = {
      * 忽略区域的 itemprop 属性正则
      * name 列表页 仓库名
      */
-    reIgnoreItemprop: /(name|description|text)/,
+    reIgnoreItemprop: /(name)/, // |description|text
 
     /**
      * 忽略区域的 特定元素id 正则
@@ -959,7 +959,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "set up Git": "设置 Git",
             ", simplify your dev workflow with": "，简化您的开发工作流程，使用",
             ", or": "，或",
-            "bring GitHub to the command line": "将GitHub 引入命令行",
+            "bring GitHub to the command line": "将 GitHub 引入命令行",
         "Get started on GitHub": "开始使用 GitHub",
             "You're seeing this because you haven't used GitHub's core features, yet.": "您看到这个是因为您有一段时间没有使用过 GitHub 的核心功能了。",
         "About version control and Git": "关于版本控制和 Git",
@@ -4789,6 +4789,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
         [/(\d+) similar comments?/, "$1 条类似评论"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
+        [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
     ],
 };
@@ -5352,6 +5353,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "branch can be safely deleted.": "分支可以被安全删除。",
             "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
             "Resolve conflicts": "解决冲突",
+                "Use the": "使用",
+                "web editor": "Web 编辑器",
+                "or the": "或",
+                "command line": "命令行",
+                "to resolve conflicts.": "来解决冲突。",
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
@@ -5488,6 +5494,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default.": "某些生成的文件默认不呈现。",
+
+        // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
+            "You are viewing a condensed version of this merge commit. You can view the": "你正在查看该合并提交的浓缩版本。您可以查看",
+            "full changes here": "完整的更改",
 
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
@@ -7795,7 +7805,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
             "We haven’t found any dependents for this repository yet.": "我们尚未找到这个仓库的任何依赖者。",
             "We’ll keep looking!": "我们会继续寻找！",
 
-            "Repositories that depend on": "依赖的存储库包括",
+            "Repositories that depend on": "依赖的仓库包括",
             "Package:": "软件包：",
 
             // [/(\d+) Repositor(y|ies)/, "$1 仓库"],
@@ -9246,10 +9256,6 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             "New repository secret": "新建仓库机密",
             "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            // ". Anyone with": "。任何对此仓库具有",
-            // "collaborator": "协作者",
-            // "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            // "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
             "and are used for sensitive data.": "并用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
             ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
@@ -9938,16 +9944,6 @@ I18N.zh["stars"] = { // 星标 https://github.com/stars/<用户名>
         "Jump to a friend": "去好基友那",
     },
     "regexp": [ // 正则翻译
-    ],
-};
-
-I18N.zh["showcases"] = { // 展示页面
-    "static": { // 静态翻译
-        "Open source showcases": "开源展示",
-        "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
-        "Search showcases": "搜索展示",
-    },
-     "regexp": [ // 正则翻译
     ],
 };
 
@@ -10646,6 +10642,16 @@ I18N.zh["trending"] = { // 热门页面
     ],
 };
 
+I18N.zh["showcases"] = { // 展示页面
+    "static": { // 静态翻译
+        "Open source showcases": "开源展示",
+        "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
+        "Search showcases": "搜索展示",
+    },
+     "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["account/organizations/new"] = { // 创建组织
     "static": { // 静态翻译
         // 创建免费的组织 https://github.com/account/organizations/new?coupon=&plan=team_free
@@ -10674,7 +10680,6 @@ I18N.zh["account/organizations/new"] = { // 创建组织
         "GitHub Privacy Statement": "GitHub 隐私声明",
         "GitHub Customer Agreement": "GitHub 客户协议",
         "on behalf of my organization and confirm that I have the authority to do so": "代表我的组织，并确认我有权力这样做",
-        "": "",
 
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
 
@@ -10921,6 +10926,7 @@ I18N.zh["orgs"] = { // 组织页面
 
                 "Top discussions this past month": "上个月的热门讨论",
                     "Nothing to see here yet!": "这里还没什么可看的!",
+                    "Discussions are for sharing announcements, creating conversation in your community, answering questions, and more.": "讨论是为了分享公告，在你的社区创建对话，回答问题，以及更多。",
                     "Start a new discussion": "开始新的讨论",
 
                 // "People": "成员",
@@ -12385,11 +12391,6 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
             "New organization secret": "新建组织机密",
             "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            // ". Anyone with": "。任何对此仓库具有",
-            // "collaborator": "协作者",
-            // // "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            // "access to the repositories with access to each secret can use it for Actions.": "访问权限的人都可以访问仓库的每个机密用于操作。",
-            // "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
             "and are used for sensitive data.": "并用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
             ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
