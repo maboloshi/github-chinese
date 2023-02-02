@@ -9,7 +9,6 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://buiawpkgew1.github.io/github-chinese/locals.js?v1.0.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
