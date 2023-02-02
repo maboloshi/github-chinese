@@ -1148,7 +1148,8 @@ I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
             "Display current local time": "显示当前当地时间",
             "same time": "相同时间",
             "Website": "网站",
-            "Twitter username": "Twitter 用户名",
+            "Social accounts": "社交账户",
+            "Link to social profile": "链接到社交账户",
 
             // 成就浮动界面
             "Arctic Code Vault Contributor": "北极代码库贡献者",
@@ -1655,7 +1656,8 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "@mention": "@用户名或组织名",
             "other users and organizations to link to them.": "链接到其他用户和组织。",
             "URL": "网站",
-            "Twitter username": "Twitter 用户名",
+            "Social accounts": "社交账户",
+            "Link to social profile": "链接到社交账户",
             "Company": "公司",
             "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
              //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
@@ -3367,6 +3369,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 
                 "Make sure to copy your personal access token now as you will not be able to see this again.": "请务必立即复制您的个人访问令牌，因为您将无法再次看到它。",
                 "Loading expiration ...": "载入有效期 ...",
+                "To set a new expiration date, you must regenerate the token.": "要设置新的有效期，你必须重新生成令牌",
+
             // 顶部提醒
                 "Deleted personal access token": "已删除个人访问令牌",
 
@@ -3643,10 +3647,61 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 
     },
     "regexp": [ // 正则翻译
-        [/The token will expire/, "该令牌有效期至"],
+        // [/The token will expire/, "该令牌有效期至"],
+        [/The token will expire on (Sun|Mon|Tue|Wed|Thu|Fri|Sat), (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}) (\d{4})/, function (all, week, month, date, year) {
+            var weekKey = {
+                "Sun"  : "周日",
+                "Mon"  : "周一",
+                "Tue"  : "周二",
+                "Wed"  : "周三",
+                "Thu"  : "周四",
+                "Fri"  : "周五",
+                "Sat"  : "周六",
+            };
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            return '该令牌有效期至 ' + year + '年' + monthKey[month] + date + '日' + ', ' + weekKey[week];
+        }],
+        [/on (Sun|Mon|Tue|Wed|Thu|Fri|Sat), (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}) (\d{4})/, function (all, week, month, date, year) {
+            var weekKey = {
+                "Sun"  : "周日",
+                "Mon"  : "周一",
+                "Tue"  : "周二",
+                "Wed"  : "周三",
+                "Thu"  : "周四",
+                "Fri"  : "周五",
+                "Sat"  : "周六",
+            };
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            return year + '年' + monthKey[month] + date + '日' + ', ' + weekKey[week];
+        }],
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
-
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
     ],
 };
@@ -3720,6 +3775,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
 
             // 复刻下拉
             // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
+            "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
             "Your existing forks": "您现有的复刻",
             "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
             "Create a new fork": "创建复刻",
@@ -3860,11 +3916,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                     "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                     "and click": "和点击",
 
-            // 复刻中 点击复刻按钮
-                // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
-                "It should only take a few seconds.": "应该只需要几秒钟的时间。",
-                "Refresh": "刷新",
-
             // 高频词
                 "Open": "打开",
                 "Closed": "已关闭",
@@ -3881,6 +3932,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻提示
+        [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
+        [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
     ],
 };
 
@@ -3904,9 +3957,9 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
                 // 用户名同名仓库
                 "You found a secret!": "您发现了一个秘密！",
-                "is a ✨": "是一个",
+                "is a ✨": "是一个 ✨",
                 "special": "特别的",
-                "✨ repository that you can use to add a": "仓库，您可以用它来添加一个",
+                "✨ repository that you can use to add a": "✨ 仓库，您可以用它来添加一个",
                 "to your GitHub profile. Make sure it’s public and initialize it with a": "到您的 GitHub 个人资料。确保它是公开的，并在初始化时加入一个",
                 "to get started.": "以便开始工作。",
                  // 组织 .github 仓库
@@ -4325,7 +4378,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
     },
     "regexp": [ // 正则翻译
-        [/Forking ([^ ]+)/, "复刻 $1 中"], // 仓库首页 复刻中...
+        ...I18N.zh["repository-public"]["regexp"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
         [/Create a codespace on (.+)/, "在 $1 上创建代码空间"], // 仓库主页 创建代码空间
         [/Create codespace on (.+)/, "在 $1 上创建代码空间"],
@@ -4893,6 +4946,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             ", consider opening a pull request for it.": "，可考虑为它打开一个拉取请求。",
             "You can read this repository’s": "您可以阅读该仓库的",
             "to learn how to open a good pull request.": "，去学习如何打开一个好的拉取请求。",
+            "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
 
             "Dismiss": "忽略",
                 // 忽略 下拉
@@ -5609,6 +5663,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和复刻的仓库。",
             "Example comparisons": "比较例子",
 
+        //  /<user-name>/<repo-name>/compare/<branch>?expand=1
+
         // 提出合并分支 /<user-name>/<repo-name>/compare/<branch>...<user-name>:<branch>
         // /<user-name>/<repo-name>/compare/<branch>...<user-name>:<repo-name>:<branch>
             // https://github.com/k1995/github-i18n-plugin/compare/master...maboloshi:master
@@ -5910,14 +5966,14 @@ I18N.zh["repository/blob"] = { // 仓库 - 新建议题页面
 
                 // 按钮提示
                 "Fork this repository and edit the file": "复刻此仓库并编辑文件",
-                // "Edit the file in your fork of this project": "在您的复刻中编辑该文件", // 他人库
-                // "Fork this project and edit the file": "复刻项目再编辑文件", // 他人库
+                "Edit the file in your fork of this project": "在您的复刻中编辑该文件", // 他人库
+                "Fork this project and edit the file": "复刻项目再编辑文件", // 他人库
                 "You must be able to fork a repository to propose changes": "您必须复刻仓库以提出更改", // 存档仓库
             // 文件删除图标
             "Delete this file":"删除本文件",
                 "Fork this repository and delete the file": "复刻此仓库并删除文件",
-                // "Delete the file in your fork of this project": "在您的复刻中删除该文件", // 他人库
-                // "Fork this project and delete the file": "复刻项目再删除文件", // 他人库
+                "Delete the file in your fork of this project": "在您的复刻中删除该文件", // 他人库
+                "Fork this project and delete the file": "复刻项目再删除文件", // 他人库
             "You must be on a branch to make or propose changes to this file": "您必须在分支上才能对此文件进行操作或提议更改", // 历史文件
 
             "Copy line": "复制行",
@@ -6157,6 +6213,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "code of conduct": "行为准则",
 
             // 右侧栏
+            // /([\d,]+) participants?/, "$1 位参与者"
+            "and others": "和其它",
+
             "Change category": "更改类别",
             "Converted from issue": "由议题转化而来",
 
@@ -6236,6 +6295,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
+        // /<user-name>/community/discussions
+            // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
+            "View organization discussions": "查看组织讨论",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -6252,6 +6314,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
+        [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
     ],
 };
 //'/<user-name>/<repo-name>/voltron/discussions_fragments/discussion_layout' /discussions/1186
@@ -7480,6 +7543,9 @@ I18N.zh["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
             // 他人私有库
             "Contact an administrator to upgrade to GitHub Team or make this repository public to enable this feature.": "请联系管理员升级到 GitHub 团队或将此设为仓库公开以启用此功能。",
 
+            "We want to know how these insights are helping you and where they could be improved.": "我们想知道这些洞察如何帮助你，以及在哪些方面可以改进。",
+            "Give us your feedback": "向我们提供反馈意见",
+
     },
     "regexp": [ // 正则翻译
     ],
@@ -7553,6 +7619,7 @@ I18N.zh["repository/pulse"] = { // 仓库 -> 洞察 - 统计
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) authors?/, "$1 位作者"],
         [/to ([^ ]+) and/, "到 $1 分支和"],
         [/to all branches. On ([^ ]+),/, "到全部分支。在 $1 分支，"],
@@ -7584,6 +7651,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1分支，不包括合并提交和机器人帐户"],
         [/([\d,]+) commits?/, "$1 次提交"],
     ],
@@ -7623,6 +7691,7 @@ I18N.zh["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) pull requests? created/, "$1 个拉取请求创建"],
         [/(\d+) issues? created/, "$1 个议题创建"],
     ],
@@ -7660,6 +7729,7 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 //community/code-of-conduct/new
@@ -7697,6 +7767,7 @@ I18N.zh["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7717,6 +7788,7 @@ I18N.zh["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提交
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7734,6 +7806,7 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7785,6 +7858,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -7813,6 +7887,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) Repositor(y|ies)/, "$1 仓库"],
         [/(\d+) Packages?/, "$1 软件包"],
     ],
@@ -7836,6 +7911,7 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7868,6 +7944,7 @@ I18N.zh["repository/network"] = { // 仓库 -> 洞察 - 网络图
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7887,6 +7964,8 @@ I18N.zh["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/Forks of ([^ ]+)/, "$1 的复刻"],
     ],
 };
 
@@ -10461,9 +10540,43 @@ I18N.zh["gist"] = { // 代码片段页面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
-        [/Joined/,"加入于"], //星标标签卡
+        // [/Joined/,"加入于"], //星标标签卡
+        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            return '加入于 ' + year + '年' + monthKey[month] + date + '日';
+        }],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/doesn’t have any public gists yet./, "尚无任何公开的代码片段。"],
+        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            return '加入于 ' + year + '年' + monthKey[month] + date + '日';
+        }],
     ],
 };
 
@@ -11217,7 +11330,8 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Email (will be public)": "公开电子邮箱",
                 "Description": "描述",
                 "URL": "网站",
-                "Twitter username": "Twitter 用户名",
+                "Social accounts": "社交账户",
+                "Link to social profile": "链接到社交账户",
                 "Location": "位置",
                     "Select a location": "选择位置",
                     "Find a location...": "搜索位置...",
@@ -12271,7 +12385,7 @@ I18N.zh["orgs/settings/projects"] = { // 组织设置 - 项目
 
         // 项目 /organizations/<org-login>/settings/projects
             "Projects on GitHub help you organize and prioritize your work. You can create projects for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目可以帮助您组织和安排工作的优先级。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目。",
-            "Enable projects for the organization": "启用项目，为组织",
+            "Enable Projects for the organization": "启用项目，为组织",
                 "This allows members to create projects for the": "允许成员创建项目，为",
                 "organization. Members can create projects to organize and track issues from any": "组织。成员可以创建项目来组织和跟踪来自任何",
                 "-owned repository.": "组织拥有的仓库。",
@@ -12993,7 +13107,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
 
             "Try the": "尝试",
             "new projects today.": "新版项目。",
-            "Repository access coming soon ✨": "仓库访问即将推出✨",
+            "Repository access coming soon ✨": "仓库访问即将推出 ✨",
 
             "Sort": "排序",
             "Sort by": "排序方式",
