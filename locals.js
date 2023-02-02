@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|installations|notifications)|settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
@@ -9013,15 +9013,21 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 操作机密 /<user-name>/<repo-name>/settings/secrets/actions
-            "Actions secrets": "操作机密",
+            "Actions secrets and variables": "操作机密和变量",
             "New repository secret": "新建仓库机密",
-            "Secrets are environment variables that are": "机密是环境变量",
+            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
+            "and are used for sensitive data.": "并用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
+            ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
+            "non-sensitive": "不敏感",
+            "data.": "数据。",
+            "Learn more about variables": "了解更多关于变量的信息",
+
+            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有协作者权限的人都可以使用这些机密和变量进行操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
+
+            "Secrets": "机密",
+            "Variables": "变量",
 
             "Updated": "更新于",
             "Remove": "移除",
@@ -9055,14 +9061,39 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
                 "Repository secret added.": "添加了仓库机密。",
                 "Repository secret deleted.": "删除了仓库机密。",
 
+        // /<user-name>/<repo-name>/settings/variables/actions
+            "New repository variable": "新建仓库变量",
+
+            "Environment variables": "环境变量",
+            "There are no variables for this repository’s environments.": "此仓库的环境暂无变量。",
+
+            "Repository variables": "仓库变量",
+            "There are no variables for this repository.": "此仓库暂无变量。",
+
         // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
+            "Actions secrets": "操作机密",
             "/ New secret": "/ 新建机密",
 
             "Name": "名称",
-            "Secret": "密钥",
+            "Secret": "机密",
 
             "Add secret": "添加机密",
                 "Adding…": "添加中…",
+
+        // 新建仓库变量 /<user-name>/<repo-name>/settings/variables/actions/new
+            "Actions variables": "操作变量",
+            "/ New variable": "/ 新建变量",
+            "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
+            "create a secret": "创建机密",
+            "instead.": "代替。",
+
+            "Alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_) only.": "字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
+            "Spaces are not allowed.": "不允许出现空格。",
+            "Cannot start with a number.": "不能以数字开头。",
+            "Cannot start with": "不能以",
+            "prefix.": "前缀开头。",
+
+            "Add variable": "添加变量",
 
         // 更新操作机密 /<user-name>/<repo-name>/settings/secrets/actions/<name>
             "/ Update secret": "/ 更新机密",
@@ -9071,6 +9102,13 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
 
             "Update secret": "更新机密",
                 "Updating…": "更新中…",
+
+        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
+            "Codespaces secrets": "代码空间机密",
+            "Secrets are environment variables that are": "机密是环境变量",
+            ". Anyone with": "。任何对此仓库具有",
+            "collaborator": "协作者",
+            "access to this repository can use these secrets for Codespaces.": "访问此仓库可以将这些秘密用于代码空间。",
 
         // Dependabot 机密 /<user-name>/<repo-name>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
@@ -9087,18 +9125,12 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             // 顶部提醒
             "Secret updated.": "机密已更新",
 
-        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
-            "Codespaces secrets": "代码空间机密",
-            "access to this repository can use these secrets for Codespaces.": "访问此仓库可以将这些秘密用于代码空间。",
-            "": "",
-            "": "",
-            "": "",
-
     },
     "regexp": [ // 正则翻译
         [/Organization secrets for ([^ ]+) can be managed within/, "$1  的组织机密可以管理，在"], // /secrets/dependabot
     ],
 };
+I18N.zh["repository/settings/variables"] = I18N.zh["repository/settings/secrets"];
 
 I18N.zh["repository/settings/installations"] = { // 仓库设置 - GitHub 应用 /<user-name>/<repo-name>/settings/installations
     "static": { // 静态翻译
