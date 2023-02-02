@@ -4005,7 +4005,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "how to file a counter notice": "如何提交反通知",
             ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
 
-        // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/
+        // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // 快捷键
                 "Commands": "命令",
                 "Clone repository: Copy HTTPS": "克隆仓库：复制 HTTPS",
@@ -4272,6 +4272,35 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "…or import code from another repository": "…或从另一个仓库导入代码",
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
             "Import code": "导入代码",
+
+        // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch…": "查找或创建分支…",
+                "Filter branches/tags": "搜索分支/标签",
+                "Branches": "分支",
+                "default": "默认",
+                "View all branches": "查看全部分支",
+                "Find a tag": "查找标签",
+                "Tags": "标签",
+                "Search for a tag": "搜索标签",
+                "Nothing to show": "暂无",
+                "View all tags": "查看全部标签",
+
+            "Go to file": "转到文件",
+            "Add file": "添加文件",
+                // 添加文件 下拉菜单
+                "Create new file": "新建文件",
+                "Upload files": "上传文件",
+            "Delete directory": "删除文件夹",
+            "History": "历史",
+
+            "Give feedback": "反馈",
+
+        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
+            "file.": "文件。",
+
 
     },
     "regexp": [ // 正则翻译
