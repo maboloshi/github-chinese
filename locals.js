@@ -5489,6 +5489,21 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default.": "某些生成的文件默认不呈现。",
 
+        // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
+            "Resolving conflicts": "解决冲突",
+            "between": "",
+            "and committing changes": "并提交更改",
+            // [/(\d+) conflicting files?/, "$1 个冲突文件"],
+            // [/(\d+) conflicts?/, "$1 处冲突"],
+            "Mark as resolved": "标记为已解决",
+                "Remove all conflict markers to resolve this file": "删除所有冲突标记以解决此文件冲突",
+            "Indent mode": "缩进模式",
+                "Spaces": "空格",
+                "Tabs": "制表符",
+            "Indent size": "缩进尺寸",
+            "Line wrap mode": "换行模式",
+                "No wrap": "不换行",
+                "Soft wrap": "软换行",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -5544,6 +5559,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
         [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
+        [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
+        [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
