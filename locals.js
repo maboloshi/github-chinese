@@ -5700,10 +5700,6 @@ I18N.zh["repository/blob"] = { // 仓库 - 新建议题页面
             "Display the rendered blob": "解析后视图", // md 文件
             "Raw": "源码",
             "Blame": "追溯",
-                "Newer": "新",
-                "Older": "旧",
-                "Normal view": "普通视图",
-                "History": "历史",
             // GitHub Desktop 图标
                 "Open this file in GitHub Desktop":"在 GitHub Desktop 中打开",
                 "You must be on a branch to open this file in GitHub Desktop": "您必须在分支上才能在 GitHub Desktop 中打开",
