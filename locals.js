@@ -9668,42 +9668,6 @@ I18N.zh["stars"] = { // 星标 https://github.com/stars/<用户名>
     ],
 };
 
-I18N.zh["trending"] = { // 趋势页面
-    "static": { // 静态翻译
-        "Trending in open source": "开源趋势",
-        "See what the GitHub community is most excited about today.": "看看 GitHub 社区今天最受关注的项目。",
-        "See what the GitHub community is most excited about this week.": "看看 GitHub 社区本周最受关注的项目。",
-        "See what the GitHub community is most excited about this month.": "看看 GitHub 社区本月最受关注的项目。",
-
-        "Trending developers": "开发者趋势",
-        "These are the organizations and developers building the hot tools today.": "这是今天创建热门项目的组织和开发人员。",
-        "These are the organizations and developers building the hot tools this week.": "这是本周创建热门项目的组织和开发人员。",
-        "These are the organizations and developers building the hot tools this month.": "这是本月创建热门项目的组织和开发人员。",
-
-        "Repositories": "仓库",
-        "Developers": "开发者",
-
-        "Trending:": "趋势：",
-        "Adjust time span": "调整的时间跨度",
-        "today": "今天",
-        "this week": "本周",
-        "this month": "本月",
-
-        "All languages": "所有语言",
-        "Unknown languages": "未知语言",
-
-        "Other:": "其他：",
-        "Languages": "语言",
-        "Other Languages": "其他语言",
-        "Filter Languages": "筛选语言",
-    },
-    "regexp": [ // 正则翻译
-        [/([\d,]+) stars today([^B]+)[\w ]+/, "今天 $1 赞$2创建者"],
-        [/([\d,]+) stars this week([^B]+)[\w ]+/, "本周 $1 赞$2创建者"],
-        [/([\d,]+) stars this month([^B]+)[\w ]+/, "本月 $1 赞$2创建者"],
-    ],
-};
-
 I18N.zh["showcases"] = { // 展示页面
     "static": { // 静态翻译
         "Open source showcases": "开源展示",
@@ -10351,6 +10315,60 @@ I18N.zh["explore"] = { // 探索页面
         [/([\d,]+) starred topics?/, "$1 个星标主题"],
         [/([\d,]+) starred repositories?/, "$1 个星标仓库"],
         [/There are ([\d,]+) public repositories? matching this topic/, "有 $1 个公共仓库与此主题相匹配"],
+    ],
+};
+
+I18N.zh["trending"] = { // 热门页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "收藏品",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+
+        "See what the GitHub community is most excited about today.": "看看 GitHub 社区今天最受关注的项目。",
+        "See what the GitHub community is most excited about this week.": "看看 GitHub 社区本周最受关注的项目。",
+        "See what the GitHub community is most excited about this month.": "看看 GitHub 社区本月最受关注的项目。",
+
+        "These are the developers building the hot tools today.": "这些是今天创建热门项目的开发人员。",
+        "These are the developers building the hot tools this week.": "这些是本周创建热门项目的开发人员。",
+        "These are the developers building the hot tools this month.": "这些是本月创建热门项目的开发人员。",
+
+        "Repositories": "仓库",
+        "Developers": "开发者",
+
+        "Sponsor": "赞助",
+        "Built by": "构建者",
+
+        "Spoken Language:": "母语：",
+            "Select a spoken language": "选择母语：",
+            "This setting can be saved in your": "此设置可以保存在您的",
+            "profile settings.": "个人资料设置",
+            "Filter spoken languages": "筛选母语",
+            "Any": "任何",
+        "Language:": "语言:",
+            "Select a language": "选择语言：",
+            "Filter languages": "筛选语言",
+            "Unknown languages": "未知语言",
+        "Date range:": "日期范围：",
+            "Adjust time span": "调整的时间跨度",
+                "Today": "今天",
+                "This week": "本周",
+                "This month": "本月",
+        "Sponsorable:": "可赞助：",
+            "GitHub Sponsors participation": "参与 GitHub 赞助",
+            "Sponsorable developers": "可赞助的开发者",
+            "All developers": "所有开发者",
+            "All": "所有",
+
+    },
+    "regexp": [ // 正则翻译
+        [/([\d,]+) stars today?/, "今日 $1 星标"],
+        [/([\d,]+) stars this week?/, "本周 $1 星标"],
+        [/([\d,]+) stars this month?/, "本月 $1 星标"],
     ],
 };
 
