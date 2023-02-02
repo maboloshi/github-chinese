@@ -6065,7 +6065,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) repl(y|ies)?/, "$1 条回复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
-            [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
         [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
@@ -8655,34 +8655,10 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
             // 顶部提醒
             "Environment deleted.": "环境已删除。",
 
-//     },
-//     "regexp": [ // 正则翻译
-//         [/(\d+) protection rules?/, "$1 个保护规则"],
-//     ],
-// };
-
-// // I18N.zh["repository/repository_environments/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/environments/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
-
         // 仓库 新建环境 /<user-name>/<repo-name>/settings/environments/new
             "/ Add": "/ 添加",
             "Name": "名称",
             "Configure environment": "设置环境",
-
-//     },
-//     "regexp": [ // 正则翻译
-//         [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
-//     ],
-// };
-
-// // I18N.zh["repository/repository_environments/edit"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/environments/<id>/edit"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 编辑环境 /<user-name>/<repo-name>/settings/environments/<id>/edit
             "/ Configure": "/ 设置",
@@ -8718,7 +8694,6 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
             // 顶部提醒
             // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
-
 
     },
     "regexp": [ // 正则翻译
