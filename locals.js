@@ -987,6 +987,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "started following you": "开始关注了您",
             "started following": "开始关注了",
             "Updated": "更新于",
+            "has a new repository": "创建了仓库",
             "created a repository": "创建了仓库",
             "created a branch in": "创建了一个分支在",
             "in": "分支在",
@@ -995,6 +996,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "made": "将",
             "public": "设为公共",
             "committed": "提交于",
+            //[/and (\d+) more/, "和另外 $1 个"],
 
             "Read more": "阅读更多内容",
 
@@ -1026,14 +1028,21 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "starred a repository": "星标仓库",
             "sponsored": "赞助了",
             "followed": "关注了",
+            "added a repository to": "已将仓库添加到",
             "contributed to": "贡献给",
-            // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+
+            //主页上仓库3个点
+                "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
+                "Show less activity like this": "显示较少这类活动",
+                // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+                // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
+                "Unstar this repository": "取消星标此仓库",
+                // [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+                "Unfollow this user": "取消关注此用户",
 
             "Contributors": "贡献者",
             "Report": "举报",
             "Recommended for you": "为您推荐",
-                "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
-                // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
             "Recommended based on people you follow": "根据您关注的人推荐",
             "has a new discussion in": "有一条新讨论，在",
             "Join discussion": "参与讨论",
@@ -1101,9 +1110,10 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
         [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"], // 组织
+        [/and (\d+) more/, "和另外 $1 个"],
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
-        [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您复刻了 $1"],
+        [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
     ],
 };
 
