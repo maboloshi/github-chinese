@@ -594,6 +594,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Learn more.": "了解更多。",
         ",": "，",
         ".": "。",
+        "Loading…": "载入中…",
 
         // 名词
         "Code": "代码",
@@ -3741,8 +3742,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Watch": "关注",
             "Unwatch": "取消关注",
 
-            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
-
             "Star": "星标",
             "Unstar": "已加星标",
             "Fork": "复刻",
@@ -3776,6 +3775,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             // 复刻下拉
             // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
             "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
+            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
             "Your existing forks": "您现有的复刻",
             "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
             "Create a new fork": "创建复刻",
@@ -3932,6 +3932,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻提示
+        [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"], 
+        [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"], 
         [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
     ],
@@ -4385,7 +4387,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
         [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
-        [/had recent pushes/, "分支有了最近的推送，"], // 仓库首页 最近有了新提交提醒
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
         [/\+ ([\d,]+) packages?/, "+ $1 个软件包"], // 仓库首页右侧栏 软件包
@@ -5415,6 +5416,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
+                "Branch protection rules": "分支保护规则",
+                "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
             "Add rule": "添加规则",
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
@@ -5545,9 +5548,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Viewed": "已查看",
 
             "Load diff": "载入差异",
+            "Loading…": "载入中…",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
-            "Some generated files are not rendered by default.": "某些生成的文件默认不呈现。",
+            "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
+            "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "你正在查看该合并提交的浓缩版本。您可以查看",
@@ -5592,7 +5597,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审阅者进行审查。"],
         [/(\d+) approvals?/, "$1 项批准"],
         // [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审阅者进行更改"],
-        [/(\d+) change requested/, "$1 项更改请求"],
+        [/(\d+) changes? requested/, "$1 项更改请求"],
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
         [/(\d+) successful and (\d+) failing checks?/, "$1 个成功, $2 个失败检查"],
@@ -5616,7 +5621,24 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Select all (\d+) file types?/, "选择所有 $1 种文件类型"],
         [/Unresolved conversations/, "未解决的讨论"],
         [/Reresolved conversations/, "已解决的讨论"],
-        [/Commits (.+)/, "提交于 $1"], // 提交标签卡
+        // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
+        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            return '提交于 ' + year + '年' + monthKey[month] + date + '日';
+        }],
         // 代码空间
         [/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
         [/Create codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
@@ -7450,6 +7472,12 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
 
             "Configure tools that integrate with Code Scanning to keep the quality of your code under control. Learn more about": "与代码扫描集成的配置工具，使您的代码质量得到控制。了解更多关于",
             "Configure scanning tool": "配置扫描工具",
+
+        // 机密扫描 /<user-name>/<repo-name>/security/secret-scanning
+            "Secret scanning alerts": "机密扫描警报",
+            "Secret scanning disabled": "机密扫描已停用",
+                "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
+                "this repository's settings": "此仓库设置",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
@@ -10560,23 +10588,6 @@ I18N.zh["gist"] = { // 代码片段页面
         }],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/doesn’t have any public gists yet./, "尚无任何公开的代码片段。"],
-        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
-            var monthKey = {
-                "Jan": "1月",
-                "Feb": "2月",
-                "Mar": "3月",
-                "Apr": "4月",
-                "May": "5月",
-                "Jun": "6月",
-                "Jul": "7月",
-                "Aug": "8月",
-                "Sep": "9月",
-                "Oct": "10月",
-                "Nov": "11月",
-                "Dec": "12月"
-            };
-            return '加入于 ' + year + '年' + monthKey[month] + date + '日';
-        }],
     ],
 };
 
