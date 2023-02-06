@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new)/,
 
     /**
      * 忽略区域的 class 正则
@@ -1120,6 +1120,9 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 
 I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
     "static": { // 静态翻译
+            "People": "成员",
+            "Teams": "团队",
+
         // 个人首页 公关部分
             // 左侧用户信息栏
             "Change your avatar": "修改头像",
@@ -1442,8 +1445,26 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
             "Containers": "容器",
             "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
 
+            "Type:": "类型:",
+                // 下拉菜单
+                "Select type": "选择类型",
+                "All": "全部",
+
+            "Search packages…": "搜索软件包…",
+
+            "Visibility:": "可见性:",
+                "Select visibility": "选择可见性",
+                "Internal": "内部",
+            "Sort by:": "排序方式:",
+                "Select sort view": "选择排序视图",
+                "Most downloads": "最多下载",
+                "Least downloads": "最少下载",
+
+            "Published": "发布于",
+
     },
     "regexp": [ // 正则翻译
+        [/(\d+) packages?/, "$1 软件包"],
     ],
 };
 
@@ -3777,8 +3798,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Never be notified.": "永不接收通知。",
             "Custom": "自定义",
             "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
-            "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
             "Releases": "发行版",
+                "Issues are not enabled for this repository": "此仓库未启用议题功能",
             "Discussions": "讨论",
                 "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
             "Security alerts": "安全警报",
@@ -5858,6 +5879,18 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
             "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
 
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch…": "查找或创建分支…",
+                "Filter branches/tags": "搜索分支/标签",
+                "Branches": "分支",
+                "default": "默认",
+                "View all branches": "查看全部分支",
+                "Find a tag": "查找标签",
+                "Tags": "标签",
+                "Search for a tag": "搜索标签",
+                "Nothing to show": "暂无",
+                "View all tags": "查看全部标签",
 
             // 验证标记浮动信息
             "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并签署使用 GitHub 的",
@@ -10984,6 +11017,9 @@ I18N.zh["orgs"] = { // 组织页面
         //>>>>>>>>>>>>>>>>>> 组织主页/概况页 <<<<<<<<<<<<<<<<<<<<<
             // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
 
+            "followers": "关注者",
+            "Sponsor": "赞助",
+
             "People": "成员",
             "Teams": "团队",
 
@@ -11083,6 +11119,7 @@ I18N.zh["orgs"] = { // 组织页面
                     "Nothing to see here yet!": "这里还没什么可看的!",
                     "Discussions are for sharing announcements, creating conversation in your community, answering questions, and more.": "讨论是为了分享公告，在你的社区创建对话，回答问题，以及更多。",
                     "Start a new discussion": "开始新的讨论",
+                    "View all discussions": "查看全部讨论", // 组织讨论
 
                 // "People": "成员",
                     "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
@@ -11160,19 +11197,23 @@ I18N.zh["orgs"] = { // 组织页面
     ],
 };
 
+I18N.zh["orgs/repositories"] = I18N.zh["page-profile/repositories"];
+
 I18N.zh["orgs/projects"] = I18N.zh["page-profile/projects"];
 
 I18N.zh["orgs/packages"] = I18N.zh["page-profile/packages"];
 
 I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
     "static": { // 静态翻译
+            "People": "成员",
+            "Teams": "团队",
 
         // 成员标签页 https://github.com/orgs/<orgs-name>/people
             "Organization permissions": "组织权限",
             "Members": "成员",
             "Outside collaborators": "外部协作者",
             "Pending collaborators": "待定协作者",
-            "Pending invitations": "待定邀请",
+            "Invitations": "邀请",
             "Failed invitations": "失败邀请",
 
             "Find a member…": "搜索成员…",
@@ -11203,18 +11244,32 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
             "This organization has no public members.": "该组织没有公开的成员。",
 
+        // 成员标签页 https://github.com/orgs/<orgs-name>/people/<user-name>
+
         // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
             "Find a collaborator…": "寻找协作者…",
             "Select all": "全选",
             "No one outside of the organization has access to its repositories.": "组织外部的任何人都无法访问其仓库。",
 
         // 待定协作者 https://github.com/orgs/<orgs-name>/pending_collaborators
-            "Find a pending collaborator…": "寻找待定协作者…",
+            "Find a pending collaborator…": "搜索待定协作者…",
             "There aren't any pending collaborators.": "暂无任何待定的协作者",
 
         // 待定邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
-            // [/(\d+) Pending invitations?/, "个待定邀请"],
-            "No pending invitations.": "暂无待定邀请。",
+            "Find an invitation…": "搜索邀请…",
+
+            "Source": "来源",
+            "Filter by invitation source": "按邀请来源筛选",
+            "All sources": "所有来源",
+
+            // [/(\d+) invitations?/, "邀请"],
+
+            "Sort": "排序",
+            "Sort Order": "排序方式",
+            "Newest": "最新的",
+            "Oldest": "最早的",
+
+            "No matching invitations.": "暂无匹配的邀请。",
 
         // 失败邀请 https://github.com/orgs/<orgs-name>/people/failed_invitations
             // [/(\d+) Failed invitations?/, "个失败邀请"],
@@ -11227,11 +11282,19 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) teams?/, "$1 团队"],
+        [/(\d+) invitations?/, "$1 邀请"],
+        [/(\d+) Failed invitations?/, "$1 失败邀请"],
    ],
 };
+I18N.zh["orgs/outside-collaborators"] = I18N.zh["orgs/people"];
+I18N.zh["orgs/pending_collaborators"] = I18N.zh["orgs/people"];
 
-I18N.zh["orgs/team"] = { // 组织 - 团队标签卡
+
+I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
     "static": { // 静态翻译
+            "People": "成员",
+            "Teams": "团队",
 
         // 团队标签卡 https://github.com/orgs/<orgs-name>/teams
             "Seamless communication with teams": "与团队的无缝沟通",
@@ -11267,6 +11330,7 @@ I18N.zh["orgs/team"] = { // 组织 - 团队标签卡
     "regexp": [ // 正则翻译
     ],
 };
+I18N.zh["orgs/new-team"]= I18N.zh["orgs/teams"]
 
 I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
     "static": { // 静态翻译
