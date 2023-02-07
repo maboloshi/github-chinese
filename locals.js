@@ -55,10 +55,10 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|installations|notifications)|settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
 
     /**
      * 忽略区域的 class 正则
@@ -309,6 +309,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             // 对话框
             "Enable": "启用",
             "Disable": "禁用",
+            "Command Palette": "命令面板",
+            "Colorblind themes": "色盲主题",
+            "Project Migration": "项目迁移",
         "Help": "帮助",
         "Settings": "设置",
         "Sign out": "退出",
@@ -984,6 +987,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "started following you": "开始关注了您",
             "started following": "开始关注了",
             "Updated": "更新于",
+            "has a new repository": "创建了仓库",
             "created a repository": "创建了仓库",
             "created a branch in": "创建了一个分支在",
             "in": "分支在",
@@ -992,6 +996,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "made": "将",
             "public": "设为公共",
             "committed": "提交于",
+            //[/and (\d+) more/, "和另外 $1 个"],
 
             "Read more": "阅读更多内容",
 
@@ -1023,14 +1028,21 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "starred a repository": "星标仓库",
             "sponsored": "赞助了",
             "followed": "关注了",
+            "added a repository to": "已将仓库添加到",
             "contributed to": "贡献给",
-            // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+
+            //主页上仓库3个点
+                "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
+                "Show less activity like this": "显示较少这类活动",
+                // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+                // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
+                "Unstar this repository": "取消星标此仓库",
+                // [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+                "Unfollow this user": "取消关注此用户",
 
             "Contributors": "贡献者",
             "Report": "举报",
             "Recommended for you": "为您推荐",
-                "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
-                // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
             "Recommended based on people you follow": "根据您关注的人推荐",
             "has a new discussion in": "有一条新讨论，在",
             "Join discussion": "参与讨论",
@@ -1098,9 +1110,10 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
         [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"], // 组织
+        [/and (\d+) more/, "和另外 $1 个"],
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
-        [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您复刻了 $1"],
+        [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
     ],
 };
 
@@ -3991,7 +4004,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "how to file a counter notice": "如何提交反通知",
             ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
 
-        // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/
+        // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // 快捷键
                 "Commands": "命令",
                 "Clone repository: Copy HTTPS": "克隆仓库：复制 HTTPS",
@@ -4258,6 +4271,35 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "…or import code from another repository": "…或从另一个仓库导入代码",
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
             "Import code": "导入代码",
+
+        // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch…": "查找或创建分支…",
+                "Filter branches/tags": "搜索分支/标签",
+                "Branches": "分支",
+                "default": "默认",
+                "View all branches": "查看全部分支",
+                "Find a tag": "查找标签",
+                "Tags": "标签",
+                "Search for a tag": "搜索标签",
+                "Nothing to show": "暂无",
+                "View all tags": "查看全部标签",
+
+            "Go to file": "转到文件",
+            "Add file": "添加文件",
+                // 添加文件 下拉菜单
+                "Create new file": "新建文件",
+                "Upload files": "上传文件",
+            "Delete directory": "删除文件夹",
+            "History": "历史",
+
+            "Give feedback": "反馈",
+
+        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
+            "file.": "文件。",
+
 
     },
     "regexp": [ // 正则翻译
@@ -5341,6 +5383,21 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default.": "某些生成的文件默认不呈现。",
 
+        // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
+            "Resolving conflicts": "解决冲突",
+            "between": "",
+            "and committing changes": "并提交更改",
+            // [/(\d+) conflicting files?/, "$1 个冲突文件"],
+            // [/(\d+) conflicts?/, "$1 处冲突"],
+            "Mark as resolved": "标记为已解决",
+                "Remove all conflict markers to resolve this file": "删除所有冲突标记以解决此文件冲突",
+            "Indent mode": "缩进模式",
+                "Spaces": "空格",
+                "Tabs": "制表符",
+            "Indent size": "缩进尺寸",
+            "Line wrap mode": "换行模式",
+                "No wrap": "不换行",
+                "Soft wrap": "软换行",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -5394,6 +5451,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
         [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
+        [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
+        [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
     ],
 };
 
@@ -6034,7 +6093,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) repl(y|ies)?/, "$1 条回复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
-            [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
         [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
@@ -8624,34 +8683,10 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
             // 顶部提醒
             "Environment deleted.": "环境已删除。",
 
-//     },
-//     "regexp": [ // 正则翻译
-//         [/(\d+) protection rules?/, "$1 个保护规则"],
-//     ],
-// };
-
-// // I18N.zh["repository/repository_environments/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/environments/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
-
         // 仓库 新建环境 /<user-name>/<repo-name>/settings/environments/new
             "/ Add": "/ 添加",
             "Name": "名称",
             "Configure environment": "设置环境",
-
-//     },
-//     "regexp": [ // 正则翻译
-//         [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
-//     ],
-// };
-
-// // I18N.zh["repository/repository_environments/edit"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/environments/<id>/edit"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 编辑环境 /<user-name>/<repo-name>/settings/environments/<id>/edit
             "/ Configure": "/ 设置",
@@ -8687,7 +8722,6 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
             // 顶部提醒
             // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
-
 
     },
     "regexp": [ // 正则翻译
@@ -8848,6 +8882,9 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                     // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
                     // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
 
+                    "DNS records should point to the": "DNS记录应该指向",
+                    "internationalized domain name": "国际化域名",
+
                     // 顶部提醒
                     "No changes to custom domain.": "没有对自定义域进行修改。",
                     "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
@@ -8861,16 +8898,11 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                     "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
                     "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
 
-            "Visibility": "能见度",
-                "Learn more about the visibility of your GitHub Pages site": "了解更多关于GitHub Pages站点可见性的信息",
-                "GitHub Enterprise": "GitHub企业",
-                "Try GitHub Enterprise risk-free for 30 days": "免费试用 GitHub 企业版 30 天无风险",
-                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. A privately published site can only be accessed by people with read access to the repository the site is published from. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用GitHub企业帐户，您可以通过私下发布来限制对GitHub Pages站点的访问。私有发布的网站只能由对发布该网站的存储库具有读取权限的人访问。您可以使用私人发布的网站与企业成员共享您的内部文档或知识库。",
-            //
-            "Publish privately to people with read access to this repository": "私下发布给对此仓库具有读取权限的人",
-            "Try risk-free for 30 days": "无风险试用 30 天",
-            "using a GitHub Enterprise organization, or": "试用 GitHub 企业组织，或",
-            "learn more about changing the visibility of your GitHub Pages site": "了解更多关于改变您的 GitHub Pages 站点的可见性的信息",
+            "Visibility": "可见性",
+                "GitHub Enterprise": "GitHub 企业版",
+                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. A privately published site can only be accessed by people with read access to the repository the site is published from. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版帐户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。私下发布的站点只能由对发布该站点的仓库具有读取权限的人访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
+                "Try GitHub Enterprise risk-free for 30 days": "免费无风险试用 GitHub 企业版 30 天",
+                "Learn more about the visibility of your GitHub Pages site": "了解更多关于GitHub Pages 站点可见性的信息",
 
     },
     "regexp": [ // 正则翻译
@@ -9012,15 +9044,21 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 操作机密 /<user-name>/<repo-name>/settings/secrets/actions
-            "Actions secrets": "操作机密",
+            "Actions secrets and variables": "操作机密和变量",
             "New repository secret": "新建仓库机密",
-            "Secrets are environment variables that are": "机密是环境变量",
+            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
+            "and are used for sensitive data.": "并用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
+            ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
+            "non-sensitive": "不敏感",
+            "data.": "数据。",
+            "Learn more about variables": "了解更多关于变量的信息",
+
+            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有协作者权限的人都可以使用这些机密和变量进行操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
+
+            "Secrets": "机密",
+            "Variables": "变量",
 
             "Updated": "更新于",
             "Remove": "移除",
@@ -9054,14 +9092,39 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
                 "Repository secret added.": "添加了仓库机密。",
                 "Repository secret deleted.": "删除了仓库机密。",
 
+        // /<user-name>/<repo-name>/settings/variables/actions
+            "New repository variable": "新建仓库变量",
+
+            "Environment variables": "环境变量",
+            "There are no variables for this repository’s environments.": "此仓库的环境暂无变量。",
+
+            "Repository variables": "仓库变量",
+            "There are no variables for this repository.": "此仓库暂无变量。",
+
         // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
+            "Actions secrets": "操作机密",
             "/ New secret": "/ 新建机密",
 
             "Name": "名称",
-            "Secret": "密钥",
+            "Secret": "机密",
 
             "Add secret": "添加机密",
                 "Adding…": "添加中…",
+
+        // 新建仓库变量 /<user-name>/<repo-name>/settings/variables/actions/new
+            "Actions variables": "操作变量",
+            "/ New variable": "/ 新建变量",
+            "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
+            "create a secret": "创建机密",
+            "instead.": "代替。",
+
+            "Alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_) only.": "字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
+            "Spaces are not allowed.": "不允许出现空格。",
+            "Cannot start with a number.": "不能以数字开头。",
+            "Cannot start with": "不能以",
+            "prefix.": "前缀开头。",
+
+            "Add variable": "添加变量",
 
         // 更新操作机密 /<user-name>/<repo-name>/settings/secrets/actions/<name>
             "/ Update secret": "/ 更新机密",
@@ -9070,6 +9133,13 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
 
             "Update secret": "更新机密",
                 "Updating…": "更新中…",
+
+        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
+            "Codespaces secrets": "代码空间机密",
+            "Secrets are environment variables that are": "机密是环境变量",
+            ". Anyone with": "。任何对此仓库具有",
+            "collaborator": "协作者",
+            "access to this repository can use these secrets for Codespaces.": "访问此仓库可以将这些秘密用于代码空间。",
 
         // Dependabot 机密 /<user-name>/<repo-name>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
@@ -9086,18 +9156,12 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             // 顶部提醒
             "Secret updated.": "机密已更新",
 
-        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
-            "Codespaces secrets": "代码空间机密",
-            "access to this repository can use these secrets for Codespaces.": "访问此仓库可以将这些秘密用于代码空间。",
-            "": "",
-            "": "",
-            "": "",
-
     },
     "regexp": [ // 正则翻译
         [/Organization secrets for ([^ ]+) can be managed within/, "$1  的组织机密可以管理，在"], // /secrets/dependabot
     ],
 };
+I18N.zh["repository/settings/variables"] = I18N.zh["repository/settings/secrets"];
 
 I18N.zh["repository/settings/installations"] = { // 仓库设置 - GitHub 应用 /<user-name>/<repo-name>/settings/installations
     "static": { // 静态翻译
@@ -10279,44 +10343,62 @@ I18N.zh["login/oauth"] = { // 应用授权
 
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
-        "Explore": "探索",
-        "Topics": "主题",
-        "Trending": "热门",
-        "Collections": "收藏品",
-        "Events": "活动",
-        "GitHub Sponsors": "GitHub 赞助",
-        "Get email updates": "获取电子邮件更新",
-        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
 
-        // 右侧信息栏
-        "Trending repositories": "热门仓库",
-        "See more trending repositories": "查看更多热门仓库",
-        "Trending developers": "热门开发者",
-        "See more trending developers": "查看更多热门开发者",
+        // github.com/explore
+            "Explore": "探索",
+            "Topics": "主题",
+            "Trending": "热门",
+            "Collections": "收藏品",
+            "Events": "活动",
+            "GitHub Sponsors": "GitHub 赞助",
+            "Get email updates": "获取电子邮件更新",
+            "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
 
-        // 中间信息栏
-        "Here's what we found based on your interests...": "以下是我们根据您的兴趣发现的内容...",
-            "This recommendation was generated by GitHub computers":"此推荐由 GitHub 计算机生成",
-            "Based on repositories you’ve starred": "基于您星标的仓库",
-            "Based on topics you've starred": "基于您星标的主题",
-            "Based on people you follow": "基于您关注的人",
-            "Based on repositories you’ve viewed": "基于您查看过的仓库",
-            "Based on your public repository contributions": "基于您对公共仓库的贡献",
-            "App recommended by GitHub": "GitHub 推荐的应用",
+            // 右侧信息栏
+            "Trending repositories": "热门仓库",
+            "See more trending repositories": "查看更多热门仓库",
+            "Trending developers": "热门开发者",
+            "See more trending developers": "查看更多热门开发者",
 
-        "Star topics that interest you": "为您感兴趣的主题加注星标",
-        "and we'll show you the latest from the octoverse.": "我们将向您展示来自八维空间的最新信息。",
-        "Explore more topics": "探索更多主题",
+            // 中间信息栏
+            "Here's what we found based on your interests...": "以下是我们根据您的兴趣发现的内容...",
+                "This recommendation was generated by GitHub computers":"此推荐由 GitHub 计算机生成",
+                "Based on repositories you’ve starred": "基于您星标的仓库",
+                "Based on topics you've starred": "基于您星标的主题",
+                "Based on people you follow": "基于您关注的人",
+                "Based on repositories you’ve viewed": "基于您查看过的仓库",
+                "Based on your public repository contributions": "基于您对公共仓库的贡献",
+                "App recommended by GitHub": "GitHub 推荐的应用",
 
-        "Collection recommended by GitHub": "GitHub 推荐的合集",
+            "Star topics that interest you": "为您感兴趣的主题加注星标",
+            "and we'll show you the latest from the octoverse.": "我们将向您展示来自八维空间的最新信息。",
+            "Explore more topics": "探索更多主题",
 
-        "That's everything we found for you, for now.": "这就是我们目前为您找到的一切。",
-            "Come back soon to see what we find next,": "请尽快回来查看我们接下来会发现什么，",
-            "get email updates.": "获取电子邮件更新。",
-            "check how often you receive email updates.": "检查您收到电子邮件更新的频率。", // 已设置邮件更新通知
+            "Collection recommended by GitHub": "GitHub 推荐的合集",
 
-        "Updated": "更新于",
-        "See more matching repositories": "查看更多匹配的仓库",
+            "That's everything we found for you, for now.": "这就是我们目前为您找到的一切。",
+                "Come back soon to see what we find next,": "请尽快回来查看我们接下来会发现什么，",
+                "get email updates.": "获取电子邮件更新。",
+                "check how often you receive email updates.": "检查您收到电子邮件更新的频率。", // 已设置邮件更新通知
+
+            "Updated": "更新于",
+            "See more matching repositories": "查看更多匹配的仓库",
+
+        // github.com/explore/email
+            "Explore email newsletter": "探索电子邮件通讯",
+                "Get email updates about what GitHub finds for you based on your interests": "根据你的兴趣，通过电子邮件获取 GitHub 为您找到的最新信息",
+
+            "None": "无",
+                "Email isn’t for everyone. Or maybe you’ve just made github.com/explore your homepage. We won’t send you any emails.": "电子邮件并不适合所有人。或者，您刚刚把 github.com/explore 作为您的主页。我们不会给您发送任何电子邮件。",
+            "Daily": "每天",
+                "Start your day with a delicious cup of coffee (or perhaps an artisan matcha latte) and interesting repositories every day.": "每天以一杯美味的咖啡（或可能是手工抹茶拿铁）和有趣的仓库开始你的一天。",
+            "Weekly": "每周",
+                "The perfect way to keep on top of everything GitHub. Every Tuesday, we’ll send you an email with everything we found for you in the past week based on your interests.": "掌握 GitHub 一切信息的完美方式。每周二，我们会根据您的兴趣向您发送一封电子邮件，内容是我们在过去一周为您找到的所有内容。",
+            "Monthly": "每月",
+                "The best option for lurkers who want to keep up with major happenings in the open source world.": "对于想了解开源世界重大事件的潜伏者来说，这是最佳选择。",
+            "Unsubscribed!": "已取消订阅！",
+            "Subscribed!": "已订阅！",
+
     },
     "regexp": [ // 正则翻译
         [/([\d,]+) starred topics?/, "$1 个星标主题"],
@@ -12072,20 +12154,26 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 操作机密 /organizations/<org-login>/settings/secrets/actions
-            "Actions secrets": "操作机密",
+            "Actions secrets and variables": "操作机密和变量",
             "New organization secret": "新建组织机密",
-            "Secrets are environment variables that are": "机密是环境变量",
+            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            // "access to this repository can use these secrets for Actions.": "访问权限的人都可以将这些机密用于操作。",
-            "access to the repositories with access to each secret can use it for Actions.": "访问权限的人都可以访问仓库的每个机密用于操作。",
-            "Secrets are not passed to workflows that are triggered by a pull request from a fork.": "机密不会传递给来自复刻的拉取请求触发的工作流程。",
+            "and are used for sensitive data.": "并用于敏感数据。",
+            "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
+            ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
+            "non-sensitive": "不敏感",
+            "data.": "数据。",
+            "Learn more about variables": "了解更多关于变量的信息",
 
-            "Organization secrets cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密。",
+            "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有协作者权限的人，只要能接触到机密或变量，都可以将其用于操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
+
+            "Organization secrets and variables cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密和变量。",
             "Please consider": "请考虑",
             "upgrading your plan": "升级您的计划",
             "if you require this functionality.": "如果您需要此功能。",
+
+            "Secrets": "机密",
+            "Variables": "变量",
 
             "There are no secrets for this organization.": "该组织尚无机密。",
             "Secrets created at the organization level can be shared with specified repositories.": "在组织层面创建的机密可以与指定的仓库共享。",
@@ -12104,6 +12192,28 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
                 "Are you sure you want to delete": "您确定要删除",
                 "Yes, remove this secret from the organization": "是的，从组织中删除该机密",
 
+        // 操作变量 /organizations/<org-login>/settings/variables/actions
+            "New organization variable": "新建组织变量",
+
+            "Organization variables": "组织变量",
+            "There are no variables for this organization.": "此组织暂无变量。",
+            "Variables created at the organization level can be shared with specified repositories.": "在组织层面创建的变量可以与指定的仓库共享。",
+
+        // 新建组织变量 /organizations/<org-login>/settings/variables/actions/new
+            "Actions variables": "操作变量",
+            "/ New variable": "/ 新建变量",
+            "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
+            "create a secret": "创建机密",
+            "instead.": "代替。",
+
+            "Alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_) only.": "字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
+            "Spaces are not allowed.": "不允许出现空格。",
+            "Cannot start with a number.": "不能以数字开头。",
+            "Cannot start with": "不能以",
+            "prefix.": "前缀开头。",
+
+            "Add variable": "添加变量",
+
         // 更新操作机密 /organizations/<org-login>/settings/secrets/actions/<name>
             "/ Update secret": "/ 更新机密",
             "Secret values are encrypted and cannot be displayed, but you can": "机密值已加密，无法显示，但您可以",
@@ -12112,6 +12222,7 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
                 "Updating…": "更新中…",
 
         // 新建组织机密 /organizations/<org-login>/settings/secrets/actions/new
+            "Actions secrets": "操作机密",
             "/ New secret": "/ 新建机密",
             "Add secret": "添加机密",
                 "Adding…": "添加中…",
@@ -12121,14 +12232,26 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
 
             "Repository access": "仓库权限",
             "Public repositories": "公共仓库",
-            "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "此机密可能会被组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
+                "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "此机密可能会被组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
             "Private repositories": "私有仓库",
+                "Organization secrets cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密。",
             "Selected repositories": "选定的仓库",
-            "This secret may only be used by specifically selected repositories.": "此机密只能由特定仓库使用。",
+                "This secret may only be used by specifically selected repositories.": "此机密只能由特定仓库使用。",
+                    // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
                 // 机密仓库访问 对话框
-                "Secret repository access": "机密仓库访问",
-                "Select the organization repositories that may use this secret.": "选择可以使用该机密的组织仓库。",
-                "Update selection": "更新选择",
+                    "Secret repository access": "机密仓库访问",
+                    "Select the organization repositories that may use this secret.": "选择可以使用该机密的组织仓库。",
+                        "Filter repositories": "筛选仓库",
+                        "selected repository": "个选定的仓库",
+                        "selected repositories": "个选定的仓库",
+                    "Update selection": "更新选择",
+
+        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
+            "Codespaces secrets": "代码空间机密",
+            "Secrets are environment variables that are": "机密是环境变量",
+            ". Anyone with": "。任何对此仓库具有",
+            "collaborator": "协作者",
+            "access to the repositories with access to each secret can use it for Codespaces.": "访问权限的仓库的每个机密都可以用于代码空间。",
 
         // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
@@ -12144,8 +12267,10 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
     ],
 };
+I18N.zh["orgs/settings/variables"] = I18N.zh["orgs/settings/secrets"];
 
 I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方访问
     "static": { // 静态翻译
@@ -12351,12 +12476,15 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
         // Audit log 审计日志 /organizations/<org-login>/settings/audit-log
             "Loading audit log entries…": "正在加载日志条目…",
             "Filters": "筛选",
-                "Yesterday’s activity": "昨日的活动",
+                "Filter audit logs": "筛选审计日志",
+                "Yesterday's activity": "昨日的活动",
                 "Organization membership": "组织成员",
                 "Team management": "团队管理",
                 "Repository management": "仓库管理",
                 "Billing updates": "帐单更新",
                 "Hook activity": "挂钩活动",
+                "Personal access token activity": "个人访问令牌活动",
+                "View advanced search syntax": "查看高级搜索语法",
             "Search audit logs": "搜索审计日志",
             "Export Git Events": "导出 Git 事件",
                 "Export Git events": "导出 Git 事件",
