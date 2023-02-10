@@ -691,7 +691,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(?:on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
+        [/(Updated |Commits on |Joined on |on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/, function (all, prefix, date1, week, month, year1, date2, year2) {
+            var prefixKey = {
+                "Updated "   : "更新于 ",
+                "Commits on ": "提交于 ",
+                "Joined on " : "加入于 ",
+            };
             var weekKey = {
                 "Sun"  : "周日",
                 "Mon"  : "周一",
@@ -717,7 +722,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             };
             var date = date1 ? date1 : date2;
             var year = year1 ? year1 : year2;
-            return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
+            return prefixKey[prefix] + (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
         }],
         /**
          * 相对时间格式处理
@@ -735,7 +740,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
          *  7 months
          */
-            [/^just now|^now|^last month|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year)s?( ago|)/, function (all, prefix, count, unit, suffix) {
+            [/^just now|^now|^last month|^yesterday|(?:^(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year)s?( ago|)/, function (all, prefix, count, unit, suffix) {
             if (all === 'now') {
                 return '现在';
             }
@@ -808,7 +813,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(?:on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
+        [/(?:on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/, function (all, date1, week, month, year1, date2, year2) {
             var weekKey = {
                 "Sun"  : "周日",
                 "Mon"  : "周一",
@@ -1107,7 +1112,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         [/(\d+) commits? to/, "$1 个提交到"],
         [/(\d+) more commits? »/, "$1 个更多提交到"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
-        [/Updated/, "更新于"],
+        // [/Updated/, "更新于"],
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
         [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"], // 组织
@@ -4261,8 +4266,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "No new commits to fetch. Enjoy your day!": "尚无新提交。祝您愉快！", //相同
                 "Compare": "对比",
                 "Update branch":"更新分支",
-                "Fetching and merging…":"正在获取和合并中…",
+                "Updating...":"正在更新中…",
 
+                "This branch has conflicts that must be resolved": "该分支有必须解决的冲突",
                 // [/Discard (\d+) commits? to make this branch match the upstream repository. (\d+)commits? will be removed from this branch./, "丢弃 $1 个提交，以使本分支与上游仓库一致。$2 个提交将从本分支中删除。"],
                 "You can resolve merge conflicts using the command line and a text editor.": "您可以使用命令行和文本编辑器解决合并冲突。",
                 // [/Discard (\d+) commits?/, "丢弃 $1 个提交"],
@@ -4363,6 +4369,11 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "contributor": "个贡献者",
             // "contributors": "个贡献者",
 
+        // 仓库复刻中...
+            // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+            "It should only take a few seconds.": "应该只需要几秒钟的时间。",
+            "Refresh": "刷新",
+
         // 初始化空仓库 /<user-name>/<repo-name>/
             // 组织仓库
             "Give access to the people you work with": "授予与您一起工作的同伴的访问权限",
@@ -4411,7 +4422,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
             "file.": "文件。",
 
-
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -4441,6 +4451,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits? ahead/, "领先 $1 个提交"],
         [/(\d+) commits? behind/, "落后 $1 个提交"],
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
+        [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
     ],
 };
 
@@ -5587,6 +5598,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
+            "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "你正在查看该合并提交的浓缩版本。您可以查看",
@@ -5656,7 +5668,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Unresolved conversations/, "未解决的讨论"],
         [/Reresolved conversations/, "已解决的讨论"],
         // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
-        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/, function (all, month, date, year) {
             var monthKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -5938,7 +5950,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
         [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
         [/Renamed from/, "重命名自"], // 提交中文件历史
         // 提交页面 /<user-name>/<repo-name>/commits/<branch
-        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/, function (all, month, date, year) {
             var monthKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -6702,7 +6714,7 @@ I18N.zh["repository/watchers"] = { // 仓库 - 关注者页面
             "about how watching works on GitHub.": "关于在 GitHub 上关注的工作原理。",
     },
     "regexp": [ // 正则翻译
-        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/, function (all, month, date, year) {
             var monthKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -6736,7 +6748,7 @@ I18N.zh["repository/stargazers"] = { // 仓库 - 追星者页面
             "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
     },
     "regexp": [ // 正则翻译
-        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/, function (all, month, date, year) {
             var monthKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -8767,8 +8779,8 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
                 "Read and write permissions": "读取和写入权限",
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
-                "Read repository contents permission": "只读权限",
-                    "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
+                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
 
@@ -10171,7 +10183,7 @@ I18N.zh["issues"] = { // 议题页面
         [/([\d,]+) linked pull requests?/, "$1 个关联拉取请求"],
         [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
         [/Assigned to ([^ ]+)/, "分配给 $1"],
-        [/Updated/, "更新于"],
+        // [/Updated/, "更新于"],
         [/#(\d+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
     ],
@@ -10615,7 +10627,7 @@ I18N.zh["gist"] = { // 代码片段页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
         // [/Joined/,"加入于"], //星标标签卡
-        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/g, function (all, month, date, year) {
+        [/Joined on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{1,2}), (\d{4})/, function (all, month, date, year) {
             var monthKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -12139,8 +12151,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
                     "Read and write permissions": "读取和写入权限",
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
-                    "Read repository contents permission": "只读权限",
-                        "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                    "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
+                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 是否可以创建拉取请求或提交批准的拉取请求审查。",
