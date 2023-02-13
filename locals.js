@@ -7912,7 +7912,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
             "Enable the dependency graph": "启用依赖关系图",
             "Track this repository’s dependencies and sub-dependencies": "追踪该仓库的依赖关系和子依赖关系",
             "The": " ",
-            'is not enabled for this repository. Click on "Enable the dependency graph" below to enable it.': "暂未启用。单击下面的 “启用依赖关系图” 以启用它。",
+            'is not enabled for this repository. Click on "Enable the dependency graph" below to enable it.': '暂未启用。单击下面的 “启用依赖关系图” 以启用它。',
             "If you’d like to enable the": "如果您想启用",
             "dependency graph": "依赖关系图",
             "vulnerability alerting": "漏洞警报",
