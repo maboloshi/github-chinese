@@ -9,5 +9,6 @@ Desktop.ini
 
 # webstorm
 .idea
+.vscode
 
 main(local).js
