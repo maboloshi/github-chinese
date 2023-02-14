@@ -9345,6 +9345,7 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
                 "Set up": "设置",
+                "Configure": "配置",
                 "Tools": "工具",
                 "CodeQL analysis": "CodeQL 分析",
                 "Identify vulnerabilities and errors in your code with": "通过使用目标工具识别代码中的漏洞和错误：",
