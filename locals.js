@@ -9340,6 +9340,7 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Dependabot version updates": "Dependabot 版本更新",
                 "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
                 "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
+                "― Create a config file": "― 创建一个配置文件",
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
