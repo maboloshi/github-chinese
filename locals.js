@@ -9341,11 +9341,15 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
                 "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
                 "Configure": "配置",
-            "― Create a config file": "― 创建一个配置文件",
+            //"Create a config file": "― 创建一个配置文件",
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
                 "Set up": "设置",
+                "Default": "默认",
+                "CodeQL will automatically find the best configuration for your repository.": "CodeQL 会自动给你的仓库找到最好的配置。",
+                "Advanced": "高级",
+                "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库里的 YAML 文件自定义你的 CodeQL 配置。",
                 "Tools": "工具",
                 "CodeQL analysis": "CodeQL 分析",
                 "Identify vulnerabilities and errors in your code with": "通过使用目标工具识别代码中的漏洞和错误：",
@@ -9372,7 +9376,7 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/(\d+) Create a config file/, " $1 创建一个配置文件"]
+        [/([^ ]+) Create a config file/, "$1 创建一个配置文件"]
     ],
 };
 
