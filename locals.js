@@ -9345,6 +9345,12 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
                 "Set up": "设置",
+                "Tools": "工具",
+                "CodeQL analysis": "CodeQL 分析",
+                "Identify vulnerabilities and errors in your code with": "通过使用目标工具识别代码中的漏洞和错误：",
+                "Other tools": "其他工具",
+                "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
+                "Explore workflows": "搜寻工作流",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
