@@ -2257,19 +2257,22 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Disable": "停用",
             "Add": "添加",
             "Added": "添加",
+            "Reconfigure": "重新设置",
+            "Preferred": "首选",
 
             "Two-factor methods": "双重身份验证方式",
                 "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
                 "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
 
-            "Primary two-factor method": "主要双重身份验证方式",
-                "Change": "更改",
-                "Configured: Authenticator app": "已配置：身份验证器应用",
+            "Authenticator app": "身份验证器应用",
+                "Use an application on your phone to get two-factor authentication codes when prompted.": "出现提示时，使用手机上的应用获取双重身份验证码。",
+                "Set as preferred method": "设置为首选",
             "Security keys": "安全密钥",
                 "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                 "No security keys": "没有安全密钥",
             "GitHub Mobile": "GitHub 移动应用",
                 "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录帐户，可以使用 GitHub 移动应用来进行双重身份验证。",
+                "Manage GitHub Mobile": "管理 GitHub 移动端",
             "No devices": "没有设备",
             // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
             "Recovery options": "恢复选项",
@@ -9406,6 +9409,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Use GitHub Mobile": "使用 GitHub 移动应用验证",
 
             "Use your password": "使用您的密码",
+            "Use your authenticator app": "使用您的身份验证器应用",
 
             "You are entering": "您正在进入",
             "sudo mode": "Sudo 模式",
