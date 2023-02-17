@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new)/,
@@ -8295,40 +8295,6 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
             "Transfer": "转让",
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将此仓库转让给另一位用户或您可以创建仓库的组织。",
 
-            // 仓库转让对话框
-            "Transfer repository": "转让仓库",
-            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转让后的管理员访问、团队、议题分配和重定向，请参阅",
-            "Transferring a repository": "转让仓库",
-            "in GitHub Help.": "在 GitHub 帮助中所示。",
-            "Transferring may be delayed until the new owner approves the transfer.": "在新所有者批准接受转让之前，转让可能会延迟。",
-            "New owner’s GitHub username or organization name": "新所有者的 GitHub 用户名或组织名称",
-            "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性操作。",
-            "If": "如果",
-            "username": "指定的用户",
-            "is using GitHub Free and accepts the transfer, they will lose access to private repository features:": "正在使用 GitHub Free 计划并接受转让，那么他们将无法访问私有仓库如下功能：",
-            "Code owners": "代码所有者",
-            "Any existing": "任何现有的",
-            "wikis": "Wiki",
-            "Pulse, Contributors, Community, Traffic, Commits, Code Frequency, Network,": "统计、贡献者、社区、流量、提交、代码频率、网络、",
-            "and": "和",
-            "Forks": "复刻",
-            "on the": "在",
-            "tab": "标签页中",
-            "Draft": "草案",
-            "PRs": "拉取请求",
-            "Multiple assignees": "多位受理人",
-            "for issues and PRs": "关于议题和拉取请求",
-            "Multiple reviewers": "多位审阅者",
-            "for PRs": "关于拉取请求",
-            // "Branch protection rules": "分支保护规则",
-            "can": "可",
-            "upgrade": "升级",
-            "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
-            "Username or organization name": "用户名或组织名称",
-            "Type": "请键入",
-            // "to confirm.": "进行确定。",
-            "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
-
             "Archive this repository": "存档仓库",
             "Mark this repository as archived and read-only.": "将此仓库标记为已存档和只读。",
 
@@ -8344,7 +8310,8 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
             "Updating any repository settings": "更新仓库设置",
             "Closing all open issues and pull requests": "关闭所有打开的议题和拉取请求",
             "Making a note in your README": "在您的 README 中做个说明",
-            // "Please type": "请键入",
+            "Please type": "请键入",
+            "to confirm.": "进行确定。",
             "I understand the consequences, archive this repository": "我明白后果，依然存档该仓库",
             // "This repository has been archived by the owner. It is now read-only.": "此仓库已由所有者存档。它现在是只读的。",
 
@@ -9592,6 +9559,39 @@ I18N.zh["repository/settings/notifications"] = { // 仓库设置 - 邮件通知 
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+    ],
+};
+
+I18N.zh["repository/transfer"] = { // 转让仓库
+    "static": { // 静态翻译
+
+        // 转让仓库 /<user-name>/<repo-name>/transfer
+            "Transfer repository:": "转让仓库:",
+            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转移后的管理员访问权限、团队、问题分配和重定向，请参阅",
+            "Transferring a repository": "转让仓库",
+            "in GitHub Help.": "在 GitHub 帮助中。",
+            "Transferring may be delayed until the new owner approves the transfer.": "转让可能会延迟，直到新所有者批准转让。",
+            "There": "有",
+            "is": " ",
+            "that may be affected by this transfer.": "可能受到这次转让的影响。",
+            "": "",
+            "New owner": "新所有者",
+            "Select one of my organizations": "选择一个我的组织",
+            "Choose an owner": "选择所有者",
+            "Specify an organization or username": "指定组织或用户名",
+            "Repository name": "仓库名",
+                "The repository": "仓库",
+                "Checking availability…": "检查可用性…",
+                "already exists on this account": "已经存在于此帐户",
+                "Your new repository will be created as": "您的新仓库将被创建为",
+
+            "to confirm.": "进行确认。",
+            "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
+
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) codespaces?/, "$1 个代码空间"],
+        [/is available./, "名称可用。"],
     ],
 };
 // 仓库相关==
