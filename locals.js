@@ -55,7 +55,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
@@ -2256,19 +2256,22 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Disable": "停用",
             "Add": "添加",
             "Added": "添加",
+            "Reconfigure": "重新设置",
+            "Preferred": "首选",
 
             "Two-factor methods": "双重身份验证方式",
                 "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
                 "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
 
-            "Primary two-factor method": "主要双重身份验证方式",
-                "Change": "更改",
-                "Configured: Authenticator app": "已配置：身份验证器应用",
+            "Authenticator app": "身份验证器应用",
+                "Use an application on your phone to get two-factor authentication codes when prompted.": "出现提示时，使用手机上的应用获取双重身份验证码。",
+                "Set as preferred method": "设置为首选",
             "Security keys": "安全密钥",
                 "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                 "No security keys": "没有安全密钥",
             "GitHub Mobile": "GitHub 移动应用",
                 "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录帐户，可以使用 GitHub 移动应用来进行双重身份验证。",
+                "Manage GitHub Mobile": "管理 GitHub 移动端",
             "No devices": "没有设备",
             // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
             "Recovery options": "恢复选项",
@@ -7881,84 +7884,34 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
             // 更改仓库可见性对话框
             "Change visibility": "更改可见性",
-            "Warning: this is a potentially destructive action.": "警告：这是一个潜在的破坏性操作。",
-            "Make public": "转为公开",
+                "Change to private": "更改为私有",
+                "Change to public": "更改为公开",
             "This repository is currently public.": "该仓库当前是公开的。",
-            "Make this repository visible to anyone.": "让任何人都能看到这个仓库。",
+            "This repository is currently private.": "该仓库当前是私有的。",
+            "I want to make this repository public": "我想将此仓库设为公开",
                 "The code will be visible to everyone who can visit https://github.com": "所有可以访问 https://github.com 的人都可以看到代码",
                 "Anyone can fork your repository.": "任何人都可以复刻您的仓库。",
                 "Your changes will be published as activity.": "您的更改将作为活动发布。",
-                "The README in this repository will be shown on your public profile.": "该仓库中的 README 将显示在您的公开个人资料中。", // 仅与用户名同名仓库
-            "Make private": "转为私有",
-            "This repository is currently private.": "该仓库当前是私有的。",
-            "Hide this repository from the public.": "向公众隐藏这个仓库。",
-                "You will": "您将会",
-                "permanently": "永久地",
-                "lose:": "丢失：",
-                "All": "所有",
-                    "stars and watchers": "追星者和关注者",
-                    "of this repository.": "对于这个仓库。",
-                    "pages": "GitHub Pages",
-                    "published from this repository.": "发布自这个仓库。",
-                "Dependency graph, Dependabot alerts, and Dependabot security updates will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图、Dependabot 警报和 Dependabot 安全更新将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
-                "Dependency graph and Dependabot alerts will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图和 Dependabot 警报将继续保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
-                "Dependency graph will remain enabled. Leaving them enabled grants us permission to perform read-only analysis on this repository.": "依赖关系图将保持启用状态。启用它们将授予我们对此仓库执行只读分析的权限。",
-                // 与用户名同名仓库
-                "The README in this repository will no longer be shown on your public profile once this repository is private.": "一旦此仓库设置为私有的，此仓库中的 README 将不再显示在您的公开个人资料中。",
-                "Code scanning will become unavailable.": "代码扫描将不可用。",
-                "Current forks will remain public and will be separated from this repository.": "当前的复刻将继续保持公开状态，并将与此仓库分离。",
-                // 组织仓库
-                "You can": "您可以",
-                "upgrade your plan": "升级您的计划",
-                "to also avoid losing access to:": "以避免失去对以下内容的访问权限：",
-                    "Codeowners": "代码所有者",
-                    "functionality.": "功能。",
-                    "wikis.": "Wiki。",
-                    "Pulse, Contributors, Community, Traffic, Commits, Code Frequency": "统计、贡献者、社区、流量、提交、代码频率",
-                    "Network": "网络",
-                    "Insights page.": "洞察标签卡",
-                    "Branch protection rules.": "分支保护规则。",
-            "Please type": "请键入",
-            "to confirm.": "进行确定。",
-            "I understand, change repository visibility.": "我明白了，依然更改该仓库的可见性。",
+                "Make this repository public": "我想将此仓库设为公开",
+            "I want to make this repository private": "我想将此仓库设为私有",
+                "Making this repository private could permanently erase these counts by removing stars and watchers associated to users that will no longer have access to this repository:": "该仓库私有化，将会通过解除星标者和关注者，删除这些计数。他们将无法访问该仓库：",
+                    "star": "星标者",
+                    "stars": "星标者",
+                    "watcher": "关注者",
+                    "watchers": "关注者",
+                "If you decide to make this repository public in the future, it will not be possible to restore these stars and watchers and this will affect its repository rankings.": "即使您决定将来公开此仓库，也无法恢复这些星标者和关注者，这将影响其仓库排名。",
+                "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository.": "依赖关系图和 Dependabot 警报将保持启用，并有权限对该仓库进行只读分析。",
+                "Code scanning will become unavailable.": "代码扫描将变得不可用。",
+                "Current forks will remain public and will be detached from this repository.": "当前的复刻将保持公开，并将从该仓库中分离出来。",
+                "Make this repository private": "将此仓库设为私有",
+                "I have read and understand these effects": "我已阅读并理解这些影响",
+
+                "Warning: this is a destructive action": "警告：这是一个破坏性的行为",
+                "To confirm, type the number of stars on this repository in the box below": "要确认，请在下面的框中输入此仓库的星标数",
 
             "Transfer ownership": "转让所有权",
             "Transfer": "转让",
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将此仓库转让给另一位用户或您可以创建仓库的组织。",
-
-            // 仓库转让对话框
-            "Transfer repository": "转让仓库",
-            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转让后的管理员访问、团队、议题分配和重定向，请参阅",
-            "Transferring a repository": "转让仓库",
-            "in GitHub Help.": "在 GitHub 帮助中所示。",
-            "Transferring may be delayed until the new owner approves the transfer.": "在新所有者批准接受转让之前，转让可能会延迟。",
-            "New owner’s GitHub username or organization name": "新所有者的 GitHub 用户名或组织名称",
-            "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性操作。",
-            "If": "如果",
-            "username": "指定的用户",
-            "is using GitHub Free and accepts the transfer, they will lose access to private repository features:": "正在使用 GitHub Free 计划并接受转让，那么他们将无法访问私有仓库如下功能：",
-            "Code owners": "代码所有者",
-            "Any existing": "任何现有的",
-            "wikis": "Wiki",
-            "Pulse, Contributors, Community, Traffic, Commits, Code Frequency, Network,": "统计、贡献者、社区、流量、提交、代码频率、网络、",
-            "and": "和",
-            "Forks": "复刻",
-            "on the": "在",
-            "tab": "标签页中",
-            "Draft": "草案",
-            "PRs": "拉取请求",
-            "Multiple assignees": "多位受理人",
-            "for issues and PRs": "关于议题和拉取请求",
-            "Multiple reviewers": "多位审阅者",
-            "for PRs": "关于拉取请求",
-            // "Branch protection rules": "分支保护规则",
-            "can": "可",
-            "upgrade": "升级",
-            "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
-            "Username or organization name": "用户名或组织名称",
-            "Type": "请键入",
-            // "to confirm.": "进行确定。",
-            "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
 
             "Archive this repository": "存档仓库",
             "Mark this repository as archived and read-only.": "将此仓库标记为已存档和只读。",
@@ -7975,7 +7928,8 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
             "Updating any repository settings": "更新仓库设置",
             "Closing all open issues and pull requests": "关闭所有打开的议题和拉取请求",
             "Making a note in your README": "在您的 README 中做个说明",
-            // "Please type": "请键入",
+            "Please type": "请键入",
+            "to confirm.": "进行确定。",
             "I understand the consequences, archive this repository": "我明白后果，依然存档该仓库",
             // "This repository has been archived by the owner. It is now read-only.": "此仓库已由所有者存档。它现在是只读的。",
 
@@ -8016,6 +7970,11 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
     },
     "regexp": [ // 正则翻译
         [/is available./, "名称可用。"],
+        [/Make ([^ ]+) private/, "将 $1 设为私有"],
+        [/Make ([^ ]+) public/, "将 $1 设为公开"],
+        [/(\d+) stars?/, "$1 位星标者"],
+        [/(\d+) watchers?/, "$1 位关注者"],
+        [/To confirm, type \"([^ ]+)\" in the box below/, "要确认，请在下面的方框中输入 \"$1\""],
         [/Your repository \"([^ ]+)\" was successfully archived./, "您的仓库 “$1” 已成功存档。"], //仓库存档
         [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
     ],
@@ -9201,6 +9160,39 @@ I18N.zh["repository/settings/notifications"] = { // 仓库设置 - 邮件通知 
     "regexp": [ // 正则翻译
     ],
 };
+
+I18N.zh["repository/transfer"] = { // 转让仓库
+    "static": { // 静态翻译
+
+        // 转让仓库 /<user-name>/<repo-name>/transfer
+            "Transfer repository:": "转让仓库:",
+            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转移后的管理员访问权限、团队、问题分配和重定向，请参阅",
+            "Transferring a repository": "转让仓库",
+            "in GitHub Help.": "在 GitHub 帮助中。",
+            "Transferring may be delayed until the new owner approves the transfer.": "转让可能会延迟，直到新所有者批准转让。",
+            "There": "有",
+            "is": " ",
+            "that may be affected by this transfer.": "可能受到这次转让的影响。",
+            "": "",
+            "New owner": "新所有者",
+            "Select one of my organizations": "选择一个我的组织",
+            "Choose an owner": "选择所有者",
+            "Specify an organization or username": "指定组织或用户名",
+            "Repository name": "仓库名",
+                "The repository": "仓库",
+                "Checking availability…": "检查可用性…",
+                "already exists on this account": "已经存在于此帐户",
+                "Your new repository will be created as": "您的新仓库将被创建为",
+
+            "to confirm.": "进行确认。",
+            "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
+
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) codespaces?/, "$1 个代码空间"],
+        [/is available./, "名称可用。"],
+    ],
+};
 // 仓库相关==
 
 I18N.zh["homepage"] = { // 未登录的首页
@@ -9408,6 +9400,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Use GitHub Mobile": "使用 GitHub 移动应用验证",
 
             "Use your password": "使用您的密码",
+            "Use your authenticator app": "使用您的身份验证器应用",
 
             "You are entering": "您正在进入",
             "sudo mode": "Sudo 模式",
