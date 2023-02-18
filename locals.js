@@ -3715,8 +3715,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Watch": "关注",
             "Unwatch": "取消关注",
 
-            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
-
             "Star": "星标",
             "Unstar": "已加星标",
             "Fork": "复刻",
@@ -3749,6 +3747,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
 
             // 复刻下拉
             // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
+            "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
+            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
             "Your existing forks": "您现有的复刻",
             "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
             "Create a new fork": "创建复刻",
@@ -3888,11 +3888,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                     "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                     "and click": "和点击",
 
-            // 复刻中 点击复刻按钮
-                // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
-                "It should only take a few seconds.": "应该只需要几秒钟的时间。",
-                "Refresh": "刷新",
-
             // 高频词
                 "Open": "打开",
                 "Closed": "已关闭",
@@ -3908,7 +3903,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
-        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻提示
+        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
     ],
 };
 
@@ -4296,6 +4291,11 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "contributor": "个贡献者",
             // "contributors": "个贡献者",
 
+        // 仓库复刻中...
+            // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+            "It should only take a few seconds.": "应该只需要几秒钟的时间。",
+            "Refresh": "刷新",
+
         // 初始化空仓库 /<user-name>/<repo-name>/
             // 组织仓库
             "Give access to the people you work with": "授予与您一起工作的同伴的访问权限",
@@ -4347,7 +4347,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
     },
     "regexp": [ // 正则翻译
-        [/Forking ([^ ]+)/, "复刻 $1 中"], // 仓库首页 复刻中...
         [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
         [/Create a codespace on (.+)/, "在 $1 上创建代码空间"], // 仓库主页 创建代码空间
         [/Create codespace on (.+)/, "在 $1 上创建代码空间"],
@@ -4375,6 +4374,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits? ahead/, "领先 $1 个提交"],
         [/(\d+) commits? behind/, "落后 $1 个提交"],
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
+        [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
     ],
 };
 
