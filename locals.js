@@ -8916,7 +8916,40 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
-                "Set up": "设置",
+
+                "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
+                    "GitHub Actions policy is limiting the use of some required actions. To use code scanning, allow actions from `actions/*` and `github/codeql-action/*` in": "GitHub Actions 策略限制了某些必需操作的使用。要使用代码扫描，请允许 `actions/*` 和 `github/codeql-action/*` 的操作，在",
+                "your policy": "您的策略",
+                ", or": "，或",
+                "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
+
+                "Tools": "工具",
+                    "CodeQL analysis": "CodeQL 分析",
+                        "Identify vulnerabilities and errors in your code with": "识别代码中的漏洞和错误，通过",
+                        "Set up": "设置",
+                        "Default": "默认",
+                            "CodeQL will automatically find the best configuration for your repository.": "CodeQL 将自动给您的仓库找到最佳配置。",
+                            "Languages detected in this repository are not compatible with this setup type at this time. Use the advanced setup instead.": "目前，该仓库中检测到的语言与该设置类型不兼容。请使用高级设置。",
+                        "Advanced": "高级",
+                            "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库中的 YAML 文件定制你的 CodeQL 配置。",
+                    "Other tools": "其他工具",
+                        "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
+                        "Explore workflows": "探索工作流程",
+
+                "Protection rules": "保护规则",
+                    "Pull request check failure": "拉取请求检查失败",
+                        "Define which code scanning alert severity should cause a pull request check to fail. This also applies to analysis results uploaded via the API.": "定义哪种代码扫描警报严重程度会导致拉取请求检查失败。这也适用于通过 API 上传的分析结果。",
+                    "None": "无",
+                    "Only critical": "仅关键风险",
+                    "High or higher": "高风险及以上",
+                    "Medium or higher": "中风险及及以上",
+                    "Any": "任何",
+                    "Other": "其他",
+                        "Only errors": "仅错误",
+                        "Errors and warnings": "错误和警告",
+
+                // 顶部提醒
+                "Code Scanning alert severity settings saved.": "代码扫描警报严重性设置已保存。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
