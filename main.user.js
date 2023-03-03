@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         GitHub 中文化插件
+// @name         GitHub 中文插件
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
-// @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
+// @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.8.1
-// @author       沙漠之子
+// @version      1.0.0
+// @author       buiawpkgew1
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
@@ -17,7 +17,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_notification
 // @connect      www.iflyrec.com
-// @supportURL   https://github.com/maboloshi/github-chinese/issues
+// @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
 
 (function (window, document, undefined) {
