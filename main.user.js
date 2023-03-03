@@ -9,7 +9,7 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://greasyfork.org/scripts/461072-github-%E4%B8%AD%E6%96%87/code/GitHub%20%E4%B8%AD%E6%96%87.js?version=1156451
+// @require      https://greasyfork.org/scripts/461072-github-%E4%B8%AD%E6%96%87/code/GitHub%20%E4%B8%AD%E6%96%87.js?version=1156462
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
