@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GitHub 中文插件
-// @namespace    https://github.com/maboloshi/github-chinese
+// @namespace    https://github.com/buiawpkgew1/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
