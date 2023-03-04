@@ -580,17 +580,24 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Starred": "已加星标",
         "Fork": "复刻",
         "Save": "保存",
+        "Saving…": "保存中…",
         "Updating": "更新中",
+        "Updating…": "更新中…",
         "Delete": "删除",
         "Cancel": "取消",
         "Edit": "编辑",
         "Added on": "添加于",
         "Loading...": "载入中...",
+        "Loading…": "载入中…",
         "Copied!": "复制成功!",
         "Copy to clipboard": "复制到剪切板",
+        "Give feedback": "反馈",
+        "Download": "下载",
 
         "and": "和",
+        ", and": "，和",
         "or": "或",
+        ", or": "，或",
         "to": "到",
         "by": "由",
         "on": "于",
@@ -602,6 +609,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         ".": "。",
 
         // 名词
+        "Public": "公共",
+        "Private": "私有",
+        "Public archive": "公共存档",
+        "Private archive": "私有存档",
         "Code": "代码",
         "Pull requests": "拉取请求",
         "Collaborators": "协作者",
@@ -612,6 +623,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "now": "当前",
         "yesterday": "昨天",
         "last month": "上个月",
+
+        "commit": "提交",
+        "commits": "提交",
 
         // 状态词
         "Verified": "已验证",
