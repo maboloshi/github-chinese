@@ -9959,16 +9959,6 @@ I18N.zh["stars"] = { // 星标 https://github.com/stars/<用户名>
     ],
 };
 
-I18N.zh["showcases"] = { // 展示页面
-    "static": { // 静态翻译
-        "Open source showcases": "开源展示",
-        "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
-        "Search showcases": "搜索展示",
-    },
-     "regexp": [ // 正则翻译
-    ],
-};
-
 I18N.zh["issues"] = { // 议题页面
     "static": { // 静态翻译
         "Public": "公共",
@@ -10678,6 +10668,16 @@ I18N.zh["trending"] = { // 热门页面
         [/([\d,]+) stars today?/, "今日 $1 星标"],
         [/([\d,]+) stars this week?/, "本周 $1 星标"],
         [/([\d,]+) stars this month?/, "本月 $1 星标"],
+    ],
+};
+
+I18N.zh["showcases"] = { // 展示页面
+    "static": { // 静态翻译
+        "Open source showcases": "开源展示",
+        "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
+        "Search showcases": "搜索展示",
+    },
+     "regexp": [ // 正则翻译
     ],
 };
 
