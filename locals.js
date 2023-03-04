@@ -6319,6 +6319,14 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
 
         // 操作 /<user-name>/<repo-name>/actions
+            // 快捷键
+                "Go to usage": "跳转到运用",
+                "Go to workflow file": "跳转到工作流程文件", // /actions/runs/<id>
+                "Toggle timestamps in logs": "切换日志中的时间戳",
+                "Toggle fullscreen logs": "切换全屏日志",
+                "Exit fullscreen logs": "退出全屏日志",
+                "Actions main view search bar": "操作主视图搜索栏",
+
             "Automate your workflow from idea to production": "从创意到产品，使您的工作流程自动化",
             "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.": "GitHub Actions 现在可以使用世界一流的 CI/CD 轻松自动化所有软件工作流程。直接从 GitHub 构建、测试和部署您的代码。",
             "Linux, macOS, Windows, ARM, and containers": "Linux、macOS、Windows、ARM 和容器",
@@ -6461,11 +6469,6 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "This workflow has no runs yet.": "此工作流程尚未运行。",
 
         // /<user-name>/<repo-name>/actions/runs/<id>
-            // 快捷键
-            "Go to workflow file": "跳转到工作流程文件",
-            "Toggle timestamps in logs": "切换日志中的时间戳",
-            "Toggle fullscreen logs": "切换全屏日志",
-            "Exit fullscreen logs": "退出全屏日志",
 
             // 标题
             "Re-run all jobs": "重新运行所有作业",
