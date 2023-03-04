@@ -7206,6 +7206,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Advisories": "咨询",
             "Vulnerability alerts": "漏洞警报",
                 "Code scanning": "代码扫描",
+                "Secret scanning": "机密扫描",
 
             "Disabled": "禁用",
             "Enabled": "启用",
@@ -7245,6 +7246,11 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Find out more": "了解更多",
                 "Code scanning for private repositories is part of GitHub Advanced Security": "私有仓库的代码扫描是 GitHub 高级安全的一部分", //组织仓库
                 "Contact sales": "联系销售", //组织仓库
+
+            "Secret scanning alerts •": "机密扫描警报 •",
+                "Get notified when a secret is pushed to this repository": "当机密被推送到仓库时得到通知",
+                "Enable in settings": "在设置中启用",
+                "View detected secrets": "查看检测到的机密",
 
             // "Vulnerability details": "漏洞详情",
             "High severity": "高风险",
@@ -7416,6 +7422,12 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
 
             "Configure tools that integrate with Code Scanning to keep the quality of your code under control. Learn more about": "与代码扫描集成的配置工具，使您的代码质量得到控制。了解更多关于",
             "Configure scanning tool": "配置扫描工具",
+
+        // 机密扫描警报 /<user-name>/<repo-name>/security/secret-scanning
+            "Secret scanning alerts": "机密扫描警报",
+            "Secret scanning disabled": "机密扫描已停用",
+                "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
+                "this repository's settings": "此仓库设置",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
@@ -12441,6 +12453,9 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
                 "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                 // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+
+            "Secret scanning": "机密扫描",
+                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
 
             "Security managers": "安全管理员",
             "Grant a team permission to manage security alerts and settings across your organization. This team will also be granted read access to all repositories.": "授予团队管理整个组织的安全警报和设置的权限。该团队还将被授予对所有仓库的读取权限。",
