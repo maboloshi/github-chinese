@@ -1458,8 +1458,26 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
             "Containers": "容器",
             "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
 
+            "Type:": "类型:",
+                // 下拉菜单
+                "Select type": "选择类型",
+                "All": "全部",
+
+            "Search packages…": "搜索软件包…",
+
+            "Visibility:": "可见性:",
+                "Select visibility": "选择可见性",
+                "Internal": "内部",
+            "Sort by:": "排序方式:",
+                "Select sort view": "选择排序视图",
+                "Most downloads": "最多下载",
+                "Least downloads": "最少下载",
+
+            "Published": "发布于",
+
     },
     "regexp": [ // 正则翻译
+        [/(\d+) packages?/, "$1 软件包"],
     ],
 };
 
