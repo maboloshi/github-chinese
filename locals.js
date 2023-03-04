@@ -2887,6 +2887,11 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
             "Disable all": "禁用全部",
             "Enable all": "启用全部",
 
+            "Private vulnerability reporting": "私下漏洞报告",
+                "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
+                "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
+                "Automatically enable for new public repositories": "为新公共仓库自动启用",
+
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Automatically enable for new private repositories": "为新私有仓库自动启用",
@@ -7045,6 +7050,11 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "View security advisories": "查看安全公告",
                 "View security advisories for this repository": "查看此仓库的安全公告",
 
+            "Private vulnerability reporting •": "私下漏洞报告 •",
+                "Allow users to privately report potential security vulnerabilities": "允许用户私下报告潜在的安全漏洞",
+                "Enable vulnerability reporting": "启用漏洞报告",
+                "See reported vulnerabilities": "查看报告的漏洞",
+
             "Dependabot alerts •": "Dependabot 警报 •",
                 "— Active": "— 激活",
                 "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
@@ -8918,9 +8928,9 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository. Unarchive your repository to access additional features.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。解除您仓库的存档以访问其他功能。", //存档仓库
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
-            "Private vulnerability reporting": "私有漏洞报告",
+            "Private vulnerability reporting": "私下漏洞报告",
             "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
-            "Learn more about private vulnerability reporting": "了解更多关于私人漏洞报告的信息",
+            "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
@@ -12147,6 +12157,11 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
             "Disable all": "禁用全部",
             "Enable all": "启用全部",
+
+            "Private vulnerability reporting": "私下漏洞报告",
+                "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
+                "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
+                "Automatically enable for new public repositories": "为新公共仓库自动启用",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
