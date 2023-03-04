@@ -11138,6 +11138,8 @@ I18N.zh["orgs"] = { // 组织页面
     ],
 };
 
+I18N.zh["orgs/repositories"] = I18N.zh["page-profile/repositories"];
+
 I18N.zh["orgs/projects"] = I18N.zh["page-profile/projects"];
 
 I18N.zh["orgs/packages"] = I18N.zh["page-profile/packages"];
