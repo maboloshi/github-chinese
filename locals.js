@@ -4423,6 +4423,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "View blame prior to this change": "查看此变化之前的追溯",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
         [/Create a codespace on (.+)/, "在 $1 上创建代码空间"], // 仓库主页 创建代码空间
         [/Create codespace on (.+)/, "在 $1 上创建代码空间"],
@@ -7548,6 +7549,7 @@ I18N.zh["repository/pulse"] = { // 仓库 -> 洞察 - 统计
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) authors?/, "$1 位作者"],
         [/to ([^ ]+) and/, "到 $1 分支和"],
         [/to all branches. On ([^ ]+),/, "到全部分支。在 $1 分支，"],
@@ -7579,6 +7581,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1分支，不包括合并提交和机器人帐户"],
         [/([\d,]+) commits?/, "$1 次提交"],
     ],
@@ -7618,6 +7621,7 @@ I18N.zh["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) pull requests? created/, "$1 个拉取请求创建"],
         [/(\d+) issues? created/, "$1 个议题创建"],
     ],
@@ -7655,6 +7659,7 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 //community/code-of-conduct/new
@@ -7692,6 +7697,7 @@ I18N.zh["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7712,6 +7718,7 @@ I18N.zh["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提交
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7729,6 +7736,7 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7780,6 +7788,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -7808,6 +7817,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) Repositor(y|ies)/, "$1 仓库"],
         [/(\d+) Packages?/, "$1 软件包"],
     ],
@@ -7831,6 +7841,7 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7863,6 +7874,7 @@ I18N.zh["repository/network"] = { // 仓库 -> 洞察 - 网络图
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -7882,6 +7894,7 @@ I18N.zh["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -8162,6 +8175,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/is available./, "名称可用。"],
         [/Make ([^ ]+) private/, "将 $1 设为私有"],
         [/Make ([^ ]+) public/, "将 $1 设为公开"],
@@ -8226,6 +8240,7 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) members?/, "$1 位成员"],
     ],
 };
@@ -8278,6 +8293,7 @@ I18N.zh["repository/settings/interaction_limits"] = { // 仓库设置 - 互动�
             "Repository interaction limit settings saved.": "仓库交互限制设置已保存。",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
             [/You can restrict repository interactions across the ([^ ]+) organization in your/, "您可以在您的 $1 组织中限制仓库交互"],
             [/to the ([^ ]+) branch of this repository will be unable to interact with the repository./, "到该仓库的 $1 分支的用户将无法与该仓库互动。"],
     ],
@@ -8299,6 +8315,7 @@ I18N.zh["repository/settings/code_review_limits"] = { // 仓库设置 - 代码�
                 "Code review limit settings saved.": "代码审查限制设置已保存。",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -8383,6 +8400,7 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/is already the branch name./, "已经是分支的名称了。"],
         [/Your branch name will be/, "您的分支的名称将重命名为"],
         [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
@@ -8467,6 +8485,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Applies to (\d+) branchs?/, "应用于 $1 个分支"], //仓库设置-->分支-->分支保护规则-->编辑
     ],
 };
@@ -8495,6 +8514,7 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -8616,6 +8636,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
@@ -8815,6 +8836,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                     "Delivering payload…": "交付有效载荷...",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Completed in (\d+(\.\d+)) seconds./, "在 $1 秒内完成。"],
     ],
 };
@@ -8879,6 +8901,7 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) protection rules?/, "$1 个保护规则"], // /environments
         [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
         [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
@@ -8958,6 +8981,7 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -9057,6 +9081,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
         [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
@@ -9161,6 +9186,7 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Save changes": "保存更改",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -9217,6 +9243,7 @@ I18N.zh["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<user-na
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], // /keys
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 个月之内"], // /keys
     ],
@@ -9342,6 +9369,7 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
         [/Organization secrets for ([^ ]+) can be managed within/, "$1  的组织机密可以管理，在"], // /secrets/dependabot
     ],
 };
@@ -9360,6 +9388,7 @@ I18N.zh["repository/settings/installations"] = { // 仓库设置 - GitHub 应用
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -9383,6 +9412,7 @@ I18N.zh["repository/settings/notifications"] = { // 仓库设置 - 邮件通知 
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
