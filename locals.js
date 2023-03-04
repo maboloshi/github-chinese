@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
 
     /**
      * 忽略区域的 class 正则
@@ -11208,7 +11208,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
    ],
 };
 
-I18N.zh["orgs/team"] = { // 组织 - 团队标签卡
+I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
     "static": { // 静态翻译
 
         // 团队标签卡 https://github.com/orgs/<orgs-name>/teams
@@ -11245,6 +11245,7 @@ I18N.zh["orgs/team"] = { // 组织 - 团队标签卡
     "regexp": [ // 正则翻译
     ],
 };
+I18N.zh["orgs/new-team"]= I18N.zh["orgs/teams"]
 
 I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
     "static": { // 静态翻译
