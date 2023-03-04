@@ -4059,6 +4059,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
     ],
 };
+I18N.zh["new/import"] = I18N.zh["page-new-repo"];
 
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
