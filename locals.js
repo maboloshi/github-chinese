@@ -10811,10 +10811,13 @@ I18N.zh["account/organizations/new"] = { // 创建组织
             "Name of business or institution this organization belongs to": "该组织所属的企业或机构的名称",
             "This business or institution — not": "该企业或机构 — 不是",
             "(your personal account) — will control this organization account.": "（您的个人帐户）— 将控制此组织帐户。",
-        "By creating an account, you agree to the": "创建帐户即表示您同意",
+        "I hereby accept the": "我特此接受",
         "Terms of Service": "服务条款",
         ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
         "GitHub Privacy Statement": "GitHub 隐私声明",
+        "GitHub Customer Agreement": "GitHub 客户协议",
+        "on behalf of my organization and confirm that I have the authority to do so": "代表我的组织，并确认我有权力这样做",
+
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
 
         // https://github.com/organizations/<org-name>/invite
