@@ -3718,9 +3718,6 @@ I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 I18N.zh["repository-public"] = { // 仓库-公共部分
     "static": { // 静态翻译
        // 仓库页面 /<user-name>/<repo-name>/
-            // 顶部提醒
-            "This repository has been archived by the owner. It is now read-only.": "此仓库已由所有者存档。它现在是只读的。",
-
             // 公共部分 - 头部条
             "Public": "公共",
             "Private": "私有",
@@ -3938,6 +3935,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
+        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1存档。它现在是只读的。"],
     ],
 };
 
