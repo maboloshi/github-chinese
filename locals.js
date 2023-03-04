@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps|publisher)|topics)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications|apps\/new|apps|publisher)|topics)/,
 
     /**
      * 忽略区域的 class 正则
@@ -3142,6 +3142,14 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
             "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用程序的更多信息",
             "developer documentation": "开发者文档",
 
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
+    "static": { // 静态翻译
+
         // 注册 GitHub 应用程序 https://github.com/settings/apps/new
             "Register new GitHub App": "注册新 GitHub 应用",
             "GitHub App name": "GitHub 应用名称",
@@ -3336,6 +3344,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
     "regexp": [ // 正则翻译
     ],
 };
+I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps/new"];
 
 I18N.zh["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用程序
     "static": { // 静态翻译
@@ -13238,7 +13247,6 @@ I18N.zh["redeem"] = { // 兑换页面
 
 // 重定向
 I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/apps"];
-I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps"];
 
 I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
