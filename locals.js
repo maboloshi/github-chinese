@@ -3995,15 +3995,21 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "You are creating a public repository in your personal account.": "您正在个人帐户中创建公共仓库",
             "You are creating a private repository in your personal account.": "您正在个人帐户中创建私有仓库",
 
+            "This will set": "这将设置",
+            "as the default branch.": "为默认分支。",
+            "Change the default name in": "变更默认名称在",
+            "your": "您的",
+            "settings": "设置",
+
             "Create repository": "创建仓库",
             "Creating repository…": "创建仓库中…",
 
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
             "Import all the files, including the revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
-            "Your old repository’s clone URL": "您旧仓库的克隆地址",
+            "Your old repository's clone URL": "您旧仓库的克隆地址",
             "Learn more about the types of": "了解更多关于",
-            "supported VCS.": "VCS 的支持。",
+            "supported VCS": "VCS 的支持",
             "Your new repository details": "新仓库详情",
             //"Owner": "所有者",
             "Repository Name": "仓库名称",
