@@ -78,7 +78,7 @@ I18N.conf = {
      * realease 页面 描述主体 markdown-body my-3
      * f4 my-3
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -4350,6 +4350,54 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "file.": "文件。",
 
 
+        // new code view
+            "Top": "顶部",
+            "Jump to file": "跳转到文件",
+
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch...": "查找或创建分支...",
+                "View all": "查看全部",
+                "branches": "分支",
+                "Find a tag...": "查找标签...",
+                "Nothing to show": "暂无",
+                "tags": "标签",
+
+        // 新版 New Code Search /<user-name>/<repo-name>/?search=1
+            "Name": "文件名",
+            "Last commit message": "最后提交消息",
+            "Last commit date": "最后提交时间",
+
+            // 大纲按钮
+            "Outline": "大纲", // md 文件
+                "Filter headings": "筛选标题", // md 文件
+
+        // 追溯 /<user-name>/<repo-name>/blame/<branch>/<file>
+            "Blame": "追溯",
+            "Newer": "新的",
+            "Older": "旧的",
+
+            // 新三个点
+                "Raw file content": "原始文件内容",
+                "Jump to line": "跳转到行",
+                "Find in file": "在文件中查找",
+                "Copy path": "复制路径",
+                "Copy permalink": "复制永久链接",
+                "View options": "查看选项",
+                    "Show code folding buttons": "显示代码折叠按钮",
+                    "Wrap lines": "换行",
+                    "Center content": "核心内容",
+                "Delete file": "删除文件",
+
+            "Raw": "源码",
+            "Copy raw file":"复制原始文件",
+            "Download raw file":"下载原始文件",
+            "Edit this file": "编辑本文件",
+                "Edit file":"编辑文件",
+                "Edit in place":"就地编辑",
+                "Open with...":"打开...",
+
+            "View blame prior to this change": "查看此变化之前的追溯",
     },
     "regexp": [ // 正则翻译
         [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
@@ -5848,6 +5896,59 @@ I18N.zh["repository/blob"] = { // 仓库 - 新建议题页面
             "Found": "发现",
             // [/(\d+) references?/, "$1 处引用"],
 
+            // new code view
+                "Top": "顶部",
+                "Jump to file": "跳转到文件",
+
+                // 切换分支/标签 下拉菜单
+                    "Switch branches/tags": "切换分支/标签",
+                    "Find or create a branch...": "查找或创建分支...",
+                    "default": "默认",
+                    "View all": "查看全部",
+                    "branches": "分支",
+                    "Find a tag...": "查找标签...",
+                    "Nothing to show": "暂无",
+                    "tags": "标签",
+
+                // 新三个点
+                    "Raw file content": "原始文件内容",
+                    // "Jump to line": "跳转到行",
+                    "Find in file": "在文件中查找",
+                    "View options": "查看选项",
+                        "Show code folding buttons": "显示代码折叠按钮",
+                        "Wrap lines": "换行",
+                        "Center content": "核心内容",
+                    "Delete file": "删除文件",
+
+                "Copy raw file":"复制原始文件",
+                "Download raw file":"下载原始文件",
+                "Edit this file": "编辑本文件",
+                    "Edit file":"编辑文件",
+                    "Edit in place":"就地编辑",
+                    "Open with...":"打开...",
+
+                // 大纲按钮
+                "Outline": "大纲", // md 文件
+                    "Filter headings": "筛选标题", // md 文件
+
+                //展开按钮
+                "Open symbols panel": "打开符号面板",
+                "Symbols": "符号",
+                    "Symbol outline not available for this file": "大纲不适用于此文件",
+                    "To inspect a symbol, try clicking on the symbol directly in the code view.": "要检查一个符号，可以尝试在代码视图中直接点击该符号。",
+                    "Code navigation supports a limited number of languages.": "代码导航支持有限数量的语言。",
+                    "See which languages are supported.": "查看支持哪些语言。",
+
+                    "Find definitions and references for functions and other symbols in this file by clicking a symbol below or in the code.": "通过点击下方或代码中的符号，查找此文件中函数和其他符号的定义和引用。",
+                    "Filter symbols": "筛选符号",
+
+                "All Symbols": "所有符号",
+                    "Search for this symbol in this repository": "在此仓库中搜索此符号",
+                    "all repositories.": "所有仓库。",
+                    "In this file": "在这个文件中",
+                    "References": "引用",
+                    "Reference": "引用",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -6508,6 +6609,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             "Loading preview…": "载入预览…",
             "Unable to load this preview, sorry.": "抱歉，无法加载此预览。",
             "There are no changes to show.": "没有要显示的更改。",
+            "But you can preview the whole file.": "但您可以预览整个文件。", // new code view
 
             // 代码编辑框
             "Indent mode": "缩进模式",
@@ -6566,6 +6668,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Want to use a": "想使用",
                 "template?": "模板吗？",
                 "Filter ignores…": "筛选忽略…",
+                "Filter ignores...": "筛选忽略...", // new code view
                 "Choose .gitignore:": "选择 .gitignore：",
                 "none": "无",
 
@@ -6600,8 +6703,10 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             "Edit file": "编辑文件",
             "Preview": "预览",
             "Show diff": "显示差异",
+            "Show Diff": "显示差异", // new code view
 
             "Commit changes": "提交更改", //  自有仓库
+            "Commit changes...": "提交更改...", //  自有仓库 // new code view
                 "Saving...": "保存中...",
             "Propose changes": "提议更改", //  他人仓库
             "Sign off and commit changes": "签署并提交更改",
@@ -6636,6 +6741,20 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             // 他人仓库
                 "Uploads are disabled.": "上传功能已禁用。",
                 "File uploads require push access to this repository.": "文件上传需要推送访问此仓库。",
+
+        // new code view
+            "Top": "顶部",
+            "Jump to file": "跳转到文件",
+
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch...": "查找或创建分支...",
+                "default": "默认",
+                "View all": "查看全部",
+                "branches": "分支",
+                "Find a tag...": "查找标签...",
+                "Nothing to show": "暂无",
+                "tags": "标签",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
