@@ -438,9 +438,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Site-wide shortcuts": "全站快捷键",
             "Open command palette": "打开命令面板",
             "Open command palette in command mode": "在命令模式下打开命令面板",
-            "Focus search bar": "聚焦搜索栏",
+            "Focus search bar": "聚焦搜索栏", // gist
+            "Open search bar": "打开搜索栏",
             "Go to notifications": "跳转到通知",
             "Go to dashboard": "跳转到仪表板",
+            "Go to your issues": "跳转到议题",
+            "Go to your pull requests": "跳转到拉取请求",
             "Bring up this help dialog": "弹出这个帮助对话框",
             "Move selection down": "向下移动选择",
             "Move selection up": "向上移动选择",
@@ -449,6 +452,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "View all keyboard shortcuts": "查看所有键盘快捷键",
 
         // 命令面板 - ctrl k 或 ctrl alt k 打开
+            "Clear Command Palette": "清除命令面板",
             "Tip:": "小贴士：",
                 "Go to your accessibility settings to change your keyboard shortcuts": "跳转到您的无障碍设置，以更改您的键盘快捷键",
                 "to search discussions": "搜索讨论", // 键入 #
@@ -507,12 +511,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             // > 命令模式
             "Run a command": "运行命令",
             "Run command": "运行命令",
-            // "Commands": "命令",
+            "Commands": "命令",
             "Global Commands": "全局命令",
             "Type > to filter": "键入 > 去筛选",
             "– New repository": "- 新建仓库",
             "– Import repository": "- 导入仓库",
             "– New project": "- 新建项目",
+            "– New discussion": "- 新建讨论",
             "– New organization": "- 新建组织",
             "– New gist": "- 新建代码片段",
             "– New issue": "- 新建议题",
