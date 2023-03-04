@@ -6288,6 +6288,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
+        // /<user-name>/community/discussions
+            // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
+            "View organization discussions": "查看组织讨论",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -6304,6 +6307,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
+        [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
     ],
 };
 //'/<user-name>/<repo-name>/voltron/discussions_fragments/discussion_layout' /discussions/1186
