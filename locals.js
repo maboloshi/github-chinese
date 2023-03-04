@@ -3953,6 +3953,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
+        [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
+        [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1存档。它现在是只读的。"],
     ],
 };
@@ -4459,7 +4461,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
         [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
-        [/had recent pushes/, "分支有了最近的推送，"], // 仓库首页 最近有了新提交提醒
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
         [/\+ ([\d,]+) packages?/, "+ $1 个软件包"], // 仓库首页右侧栏 软件包
