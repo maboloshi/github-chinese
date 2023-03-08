@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
@@ -2632,7 +2632,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
 
             "Transform account": "帐户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
-            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助商帐户，因此您无法将此帐户转换为组织。", // 存在赞助商帐户时
+            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助商帐户，因此您无法将此帐户转换为组织。", // 存在赞助商账户时
             "Account transformation warning": "帐户变更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
