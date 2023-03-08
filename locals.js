@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted_packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|deleted|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
@@ -2632,6 +2632,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
 
             "Transform account": "帐户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
+            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助商帐户，因此您无法将此帐户转换为组织。", // 存在赞助商帐户时
             "Account transformation warning": "帐户变更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
@@ -2872,8 +2873,7 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
             "Enable GitHub Copilot": "启用 GitHub Copilot",
             "Don't fly solo": "不要独自飞翔",
             "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
-            "You can receive suggestions from GitHub Copilot either by starting to write code you want to use,": "您可以通过开始编写您要使用的代码来从 GitHub Copilot 接收建议，",
-            "or by writing a natural language comment describing what you want the code to do.": "或者通过编写自然语言注释来描述您希望代码做什么。",
+            "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
             "Get Copilot": "获取 Copilot",
 
     },
