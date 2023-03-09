@@ -192,7 +192,12 @@
         let page, t = document.body.className.match(I18N.conf.rePageClass);
         if (t) {
             if (t[1] === 'page-profile') {
-                page = location.search.replace(/tab=(\w+)/, '$1') ? 'page-profile/' + RegExp.$1 : pathname.match(/^\/(starts)/) ? 'page-profile/starts' : t[1];
+                if (location.search.match(/tab=(\w+)/)) {
+                    location.search.replace(/tab=(\w+)/, '$1');
+                    page = 'page-profile/' + RegExp.$1;
+                } else {
+                    page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
+                }
             } else {
                 page = t[1];
             }
