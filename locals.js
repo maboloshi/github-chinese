@@ -2866,15 +2866,11 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
         ...I18N.zh["settings-menu"]["static"],
 
         // GitHub Copilot https://github.com/settings/copilot
-            "You have not enabled Copilot for your account.":" 您尚未为您的帐户启用 Copilot。",
-            "Get started with a 60-day free trial.": "开始 60 天免费试用吧。",
-            "Get code suggestions for whole lines or entire functions right inside your editor.": "在您的编辑器中获取整行或整个函数的代码建议。",
-
-            "Enable GitHub Copilot": "启用 GitHub Copilot",
             "Don't fly solo": "不要独自飞翔",
             "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
             "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
             "Get Copilot": "获取 Copilot",
+            "Try Copilot free for 60 days": "免费试用 Copilot 60 天",
 
     },
     "regexp": [ // 正则翻译
