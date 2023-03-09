@@ -2844,13 +2844,13 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 I18N.zh["settings/packages"] = { // 设置 - 软件包
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        // Packages 软件包 https://github.com/settings/packages
             "Packages permissions": "软件包权限",
             "Default Package Setting": "默认软件包设置",
             "This setting will be applied to new Container, npm, rubygems and NuGet packages.": "此设置将应用于新的容器、npm、rubygems 和 NuGet 软件包。",
             "Inherit access from source repository": "从源仓库继承访问权限",
             "Save": "保存",
 
-        // Packages 软件包 https://github.com/settings/deleted_packages
             "Deleted Packages": "删除的软件包",
             "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
             "Search deleted packages": "搜索已删除的软件包",
