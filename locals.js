@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
@@ -7950,6 +7950,39 @@ I18N.zh["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+    ],
+};
+
+I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-insights-menu"]["static"],
+
+        //复刻 /<user-name>/<repo-name>/forks
+            "Period:": "周期：",
+                "Filter by period": "筛选周期",
+            "Repository type:": "仓库类型：",
+                "Active": "活跃",
+                    "Repositories with push activity": "有推送活动的仓库",
+                "Inactive": "不活跃",
+                    "Repositories with no push activity": "无推送活动的仓库",
+                "Network": "网络",
+                    "Forks of other forks": "其他复刻的复刻",
+                "Archived": "存档",
+                    "Forks of other forks": "已存档的仓库",
+                "Starred": "星标",
+                    "Repositories with at least 1 star": "至少有 1 个星标的仓库",
+            "Sort:": "排序：",
+                "Sort by": "排序方式",
+                    "Most starred": "最多星标",
+                    "Recently updated": "最近更新",
+                    "Open issues": "打开的议题",
+                    "Open pull requests": "打开的拉取请求",
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/Created/, "创建于"],
+        [/Updated/, "更新于"],
     ],
 };
 
