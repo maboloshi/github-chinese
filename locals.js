@@ -5030,6 +5030,9 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
             "Show your support for": "通过赞助来表达您对",
             "by sponsoring them.": "的支持。",
 
+        // 议题标签管理 /<user-name>/<repo-name>/issues/labels
+            ...I18N.zh["repository/labels"]["static"],
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
