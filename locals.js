@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
@@ -4491,10 +4491,70 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     ],
 };
 
-I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
+I18N.zh["repository/labels"] = { // 仓库 - 标签页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
+        // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
+            "Labels": "标签",
+            "Milestones": "里程碑",
+            "Search all labels": "搜索所有标签",
+
+            "labels": "标签",
+
+            "New label": "新建标签",
+                "Label preview": "标签预览",
+                "Label name": "标签名",
+                "Description": "描述",
+                "Description (optional)": "描述（可选）",
+                "Color": "颜色",
+                    "Get a new color": "获得新颜色",
+                    "Choose from default colors:": "从默认颜色中选择：",
+                "Create label": "创建标签",
+                "Saving...": "保存中...",
+                "Save changes": "保存更改",
+
+            "Sort": "排序",
+                "Alphabetically": "按字母顺序",
+                "Reverse alphabetically": "按字母倒序",
+                "Most issues": "最多的议题",
+                "Fewest issues": "最少的议题",
+
+            // 标签
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+            // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+            // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
+
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+        [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
+    ],
+};
+
+I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
+    "static": { // 静态翻译
         // pull 与 request 公共词条
             "Filters": "筛选",
                 // 筛选下拉菜单
