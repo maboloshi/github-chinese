@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
@@ -4550,6 +4550,61 @@ I18N.zh["repository/labels"] = { // 仓库 - 标签页面
         ...I18N.zh["repository-public"]["regexp"],
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
         [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
+    ],
+};
+
+I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // 里程碑页面 /<user-name>/<repo-name>/milestones
+            "Labels": "标签",
+            "Milestones": "里程碑",
+
+            "You haven’t created any Milestones.": "您尚未创建任何里程碑。",
+            "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑为特定版本或项目创建议题和拉取请求的集合。",
+
+            // 组织 仓库 里程碑
+            "No Milestones found!": "没有发现里程碑!",
+            "If this project had milestones, we’d show you them here. Promise!": "如果该项目有里程碑，我们会在此处向您展示。",
+
+            "Create a Milestone": "创建里程碑",
+
+            "Sort": "排序",
+                "Recently updated": "最近更新",
+                "Furthest due date": "最迟到期日",
+                "Closest due date": "最近到期日",
+                "Least complete": "最不完整",
+                "Most complete": "最完整",
+                "Alphabetically": "按字母顺序",
+                "Reverse alphabetically": "按字母倒序",
+                "Most issues": "最多的议题",
+                "Least issues": "最少的议题",
+
+            "No due date": "没有截止日期",
+            // [/Due by (.*)/, "截止日期 $1"], // 里程碑截止日期
+            "Last updated": "最后更新",
+            "(more)": "（更多）",
+            "Show less": "显示更少",
+            // 完成进度条
+            "complete": "已完成",
+            "open": "打开",
+            "closed": "关闭",
+
+        // 新建里程碑页面 /<user-name>/<repo-name>/milestones/new
+            "New milestone": "新建里程牌",
+                "Create a new milestone to help organize your issues and pull requests. Learn more about": "创建一个新的里程碑来帮助组织您的议题和拉取请求。了解更多关于",
+                "milestones and issues": "里程碑和议题",
+            "Title": "标题",
+            "Due date (optional)": "截止日期（可选）",
+            "Description": "描述",
+            "Create milestone": "创建里程碑",
+
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/([\d,]+) Open/, "$1 打开"],
+        [/([\d,]+) Closed/, "$1 已关闭"],
     ],
 };
 
