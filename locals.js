@@ -3961,6 +3961,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
+        [/Compare & pull request/, "比较 & 拉取请求"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1存档。它现在是只读的。"],
     ],
 };
