@@ -183,7 +183,7 @@
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
-        const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
+        const isOrganization = /\/<org-login>/.test(analyticsLocation)||/^\/(?:orgs|organizations)/.test(pathname); // 组织页
         // 一级名称 orgs 或者 organizations
         // const isOrganization = /\/orgs/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
@@ -192,7 +192,12 @@
         let page, t = document.body.className.match(I18N.conf.rePageClass);
         if (t) {
             if (t[1] === 'page-profile') {
-                page = location.search.replace(/tab=(\w+)/, '$1') ? 'page-profile/' + RegExp.$1 : pathname.match(/^\/(starts)/) ? 'page-profile/starts' : t[1];
+                if (location.search.match(/tab=(\w+)/)) {
+                    location.search.replace(/tab=(\w+)/, '$1');
+                    page = 'page-profile/' + RegExp.$1;
+                } else {
+                    page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
+                }
             } else {
                 page = t[1];
             }
