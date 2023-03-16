@@ -3952,6 +3952,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 "Branches": "分支",
                 "Tags": "标签",
 
+            "Compare & pull request": "比较 & 拉取请求",
+
     },
     "regexp": [ // 正则翻译
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
