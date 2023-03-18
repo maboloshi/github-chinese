@@ -5106,6 +5106,31 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
             ...I18N.zh["repository/labels"]["static"],
 
+        // 添加/编辑议题模板 /<user-name>/<repo-name>/issues/templates/edit
+            "Propose changes": "提出更改",
+            "Add template:": "添加模板：",
+            "select": "选择",
+            "Bug report": "错误报告",
+                "Standard bug report template": "标准错误报告模板",
+                "Create a report to help us improve": "创建报告以帮助我们改进",
+            "Feature request": "功能要求",
+                "Standard feature request template": "标准功能请求模板",
+                "Suggest an idea for this project": "为这个项目提出想法",
+            "Custom template": "自定义模板",
+                "Blank template for other issue types": "其他议题类型的空白模板",
+                "Custom issue template": "自定义议题模板",
+                "Describe this issue template's purpose here.": "在此处描述此议题模板的用途。",
+
+            "Preview and edit": "预览和编辑",
+            "Close preview": "关闭预览",
+
+            "Template name": "模板名称",
+            "This file lives in": "该文件位于",
+            "Template content": "模板内容",
+            "Optional additional items": "可选附加项目",
+            "Issue default title": "议题默认标题",
+            "This will be suggested as the issue title": "建议作为议题标题",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
