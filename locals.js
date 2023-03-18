@@ -11326,10 +11326,10 @@ I18N.zh["orgs"] = { // 组织页面
                     "Member": "成员",
 
                 // 公共视角
-                    "You are viewing the README and repositories as a public user.": "您正在以公共用户的身份查看自述文件和仓库。",
+                    "You are viewing the README and pinned repositories as a public user.": "您正在以公共用户的身份查看自述文件和置顶仓库。",
 
                 // 组织成员视角
-                    // [/You are viewing the README and repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和仓库。"],
+                    // [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
 
                 "You can": "您可以",
                 "pin repositories": "置顶仓库",
@@ -11343,7 +11343,9 @@ I18N.zh["orgs"] = { // 组织页面
 
                 "Top discussions this past month": "上个月的热门讨论",
                     "Nothing to see here yet!": "这里还没什么可看的!",
+                    "Discussions are for sharing announcements, creating conversation in your community, answering questions, and more.": "讨论是为了分享公告，在你的社区创建对话，回答问题，以及更多。",
                     "Start a new discussion": "开始新的讨论",
+                    "View all discussions": "查看全部讨论", // 组织讨论
 
                 // "People": "成员",
                     "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
@@ -11413,10 +11415,12 @@ I18N.zh["orgs"] = { // 组织页面
                 "your dashboard feed": "您的仪表板的信息上",
                 "OK, got it!": "好的，知道了！",
 
+            "This organization has no public repositories.": "该组织没有公共仓库。",
+
     },
     "regexp": [ // 正则翻译
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
-        [/You are viewing the README and repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和仓库。"],
+        [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
     ],
 };
