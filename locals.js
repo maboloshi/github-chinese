@@ -9967,6 +9967,27 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
         // 设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
             ...I18N.zh["settings/two_factor_authentication/setup/intro"]["static"],
+
+        // 定期验证双重身份验证（2FA）设置
+            "Verify your two-factor authentication (2FA) settings": "验证您的双重身份验证（2FA）设置",
+            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双重身份验证凭据进行一次性验证。",
+            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双重身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双重身份验证。",
+            "Verify 2FA now": "现在验证双重身份验证",
+            "You can choose to": "您可以选择",
+            "skip 2FA verification": "跳过双重身份验证",
+            "at this moment, we'll remind you again tomorrow.": "此刻，我们会在明天再次提醒您。",
+
+        // https://github.com/settings/two_factor_checkup?
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
+            "Verify your 2FA setup tomorrow": "明天验证您的双重身份验证设置",
+            "Reconfigure 2FA on this account": "重新配置双重身份验证",
+
+        // https://github.com/settings/two_factor_checkup
+            "2FA verification successful!": "双重身份验证成功！",
+            "Keep your recovery codes safe and easy to access": "请将您的恢复码保管好以便于访问。",
+            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二个身份验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
+            "Not sure where you saved them?": "您不确定把它们保存在哪里了吗？",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) devices?/, "$1 设备"],
