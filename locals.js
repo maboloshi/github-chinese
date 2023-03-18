@@ -12255,6 +12255,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Selected repositories": "选定的仓库",
                     "Actions can only be run by specifically selected repositories": "操作只能由特定选择的仓库运行",
                     // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+                    "selected repository": "个选定的仓库",
+                    "selected repositories": "个选定的仓库",
                     // 对话框
                         "Select the organization repositories that may use Actions.": "选择可以使用操作的组织仓库。",
                         "Filter repositories": "筛选仓库",
@@ -12286,8 +12288,10 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Entire organisation or repository examples:": "整个组织或仓库的示例：",
 
             "Artifact and log retention": "工件和日志保留",
-                "This is the default duration that repositories will retain all artifacts and logs.": "这是仓库保留所有工件和日志的默认期限。",
+                "Choose the default repository settings for artifacts and logs.": "选择工件和日志的默认仓库设置。",
                 "days": "天",
+                "You can set a maximum limit of": "您最多可以设置为",
+                "days.": "天。",
 
             "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
                 "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
@@ -12316,11 +12320,17 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
                     "Read and write permissions": "读取和写入权限",
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
-                    "Read repository contents permission": "只读权限",
-                        "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                    "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
+                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 是否可以创建拉取请求或提交批准的拉取请求审查。",
+
+            "Required workflows": "所需的工作流程",
+                "Add workflow": "添加工作流",
+                "Set required workflows to run in your organization’s repositories. These workflows will run alongside the repository workflows and branch merging will be blocked until the required checks succeed.": "设置所需的工作流程，在您的组织的仓库中运行。这些工作流程将与仓库的工作流程一起运行，分支合并将被阻止，直到所需的检查成功。",
+                "Learn more about required workflows.": "了解更多关于所需工作流程的信息。",
+                "There are no required workflows in this organization.": "此组织中尚无所需的工作流程。",
 
         // 运行器页面 /organizations/<org-login>/settings/actions/runners
             "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows. Runners added to this organization can be used to process jobs in multiple repositories in your organization.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。添加到该组织的运行器可以用来处理您的组织中的多个仓库的工作。",
