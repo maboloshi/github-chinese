@@ -3469,6 +3469,9 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 
                 "Make sure to copy your personal access token now as you will not be able to see this again.": "请务必立即复制您的个人访问令牌，因为您将无法再次看到它。",
                 "Loading expiration ...": "载入有效期 ...",
+                "This token has expired.": "此令牌已过期。",
+                    "To set a new expiration date, you must regenerate the token.": "要设置新的有效期，您必须重新生成令牌。",
+
             // 顶部提醒
                 "Deleted personal access token": "已删除个人访问令牌",
 
@@ -3686,6 +3689,21 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                 "This token will expire": "此令牌将过期：",
                 "on an unselected custom date.": "未选择的自定义日期。",
                 "This token will be ready for use immediately.": "该令牌将即可可用。",
+
+        // https://github.com/settings/personal-access-tokens/<id>
+            "No description": "暂无描述",
+            "Created": "创建于",
+            "Access on": "访问:",
+            "Select the repositories this token can access. Personal access tokens can always read from all public repositories on GitHub.com": "选择此令牌可以访问的仓库。个人访问令牌始终可以读取 GitHub.com 上所有公共仓库中的内容。",
+            "This token does not have access to any repositories.": "此令牌无权访问任何仓库。",
+            "User permissions": "用户权限",
+            "This token does not have any repository permissions.": "此令牌没有任何仓库权限。",
+
+            // 顶部提醒
+                "Your personal access token has been updated": "您的个人访问令牌已更新",
+
+        // 重新生成精细化个人访问令牌 https://github.com/settings/personal-access-tokens/<id>/regenerate
+            "Regenerate fine-grained personal access token": "重新生成精细化个人访问令牌",
 
         // 创建新个人访问令牌 https://github.com/settings/tokens/new
             "New personal access token (classic)": "新建个人访问令牌（经典）",
