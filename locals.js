@@ -8890,21 +8890,6 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
 
-//     },
-//     "regexp": [ // 正则翻译
-//         [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
-//         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
-//         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
-//         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
-//     ],
-// };
-
-// // I18N.zh["repository/repository_actions_settings/runners"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/actions/runners"] = { // 仓库设置 - 操作/运行器 /<user-name>/<repo-name>/settings/actions/runners
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
-
         // 运行器页面 /<user-name>/<repo-name>/settings/actions/runners
             "New self-hosted runner": "新建自托管运行器",
             "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。",
@@ -8912,16 +8897,6 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
             "There are no runners configured": "暂无设置运行器",
             "Learn more about using runners": "了解更多关于使用运行器的信息",
             "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
-//     },
-//     "regexp": [ // 正则翻译
-//     ],
-// };
-
-// // I18N.zh["repository/repository_actions_settings/show"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/actions/runners/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
             "/ Create self-hosted runner": "/ 创建自托管运行器",
@@ -8965,17 +8940,6 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                 "Delete webhook?": "删除 Web 钩子？",
                 "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
                 "Yes, delete webhook": "是的，删除 Web 钩子",
-
-//     },
-//     "regexp": [ // 正则翻译
-//     ],
-// };
-
-// // I18N.zh["repository/repository_hooks/show"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/hooks"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
