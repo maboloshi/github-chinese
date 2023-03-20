@@ -2942,11 +2942,13 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
 I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置菜单
 
         // GitHub Pages https://github.com/settings/pages
             "Verified domains": "经验证的域名",
             "Add a domain": "添加域名",
             "There are no verified domains.": "暂无经验证的域名",
+            "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
             "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
 
         // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
@@ -2958,6 +2960,7 @@ I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
     "regexp": [ // 正则翻译
     ],
 };
+I18N.zh["orgs/settings/pages"] = I18N.zh["settings/pages"];
 
 I18N.zh["settings/replies"] = { // 设置 - 快捷回复
     "static": { // 静态翻译
@@ -12438,26 +12441,6 @@ I18N.zh["orgs/settings/packages"] = { // 组织设置 - 软件包
     },
     "regexp": [ // 正则翻译
         [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
-    ],
-};
-
-I18N.zh["orgs/settings/pages"] = { // 组织设置 - GitHub Pages
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // 组织 GitHub Pages /organizations/<org-login>/settings/pages 同个人设置 GitHub Pages https://github.com/settings/pages
-            "Verified domains": "经验证的域名",
-            "Add a domain": "添加域名",
-            "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
-            "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
-
-        // 组织 GitHub Pages - 添加域名 /organizations/<org-login>/settings/pages_verified_domains/new 同个人设置 GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
-            "Add a verified domain": "经验证的域名",
-            "What domain would you like to add?": "您想添加什么域名？",
-            "Add domain": "添加域名",
-
-    },
-    "regexp": [ // 正则翻译
     ],
 };
 
