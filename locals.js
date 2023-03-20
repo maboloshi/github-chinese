@@ -8945,7 +8945,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                 "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
                 "Yes, delete webhook": "是的，删除 Web 钩子",
 
-        // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
+        // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
             "Add webhook": "添加 Web 钩子",
             "We’ll send a": "我们将",
@@ -9005,7 +9005,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                     "Discussion comments": "讨论评论",
                         "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
                     // "Discussion": "讨论",
-                        "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
+                        "Discussion created, edited, closed, reopened, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、关闭、重新打开、置顶、取消置顶、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
                     "Forks": "复刻",
                         "Repository forked.": "仓库复刻。",
                     "Issue comments": "发表评论",
@@ -9016,6 +9016,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                         "Label created, edited or deleted.": "标签的创建、编辑或删除。",
                     "Memberships": "团队成员", // 组织设置
                         "Team membership added or removed.": "添加或删除团队成员。",
+                    "Merge groups": "合并组",
+                        "Merge Group checks requested.": "合并组检查已请求。",
                     "Meta": "元数据",
                         "This particular hook is deleted.": "这个特定的钩子被删除。",
                     "Milestones": "里程碑",
@@ -9032,11 +9034,13 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                         "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
                     "Project columns": "项目栏目",
                         "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
+                    "Projects v2 items": "项目项 v2", // 组织设置
+                        "Project item created, edited, deleted, archived, restored, converted, or reordered. Feedback is welcome in": "项目条目的创建、编辑、删除、归档、恢复、转换或重新排序。欢迎提供反馈意见在",
+                        "this discussion": "这个讨论",
                     // "": "项目",
                         "Project created, updated, or deleted.": "项目的创建、更新或删除。",
-                    "Projects v2 items": "项目项 v2",
-                        "Project item created, updated, or deleted. This is a projects Beta feature. Feedback is welcome in": "创建、更新或删除项目项。这是一个项目 Beta 功能。欢迎反馈",
-                        "this discussion": "这个讨论",
+                    "Project v2": "项目 v2", // 组织设置
+                        "Project created, updated, deleted, closed, or reopened. Feedback is welcome in": "项目的创建、更新、删除、关闭或重新打开。欢迎提供反馈意见在",
                     "Pull request review comments": "拉取请求的审查评论",
                         "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
                     "Pull request review threads": "拉取请求的审查线程",
@@ -9100,6 +9104,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
             "Recent Deliveries": "最近交付",
                 "redelivery": "再交付",
             "Loading deliveries…": "载入交付…",
+            "Detailed delivery information will be shown here once the hook has been triggered.": "一旦触发钩子，详细的交付信息将在此处显示。",
+
             "Request": "请求",
             "Response": "应答",
             "Redeliver": "重新交付",
