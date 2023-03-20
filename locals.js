@@ -1662,6 +1662,68 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
     ],
 };
 
+I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
+    "static": { // 静态翻译
+        // 公用部分
+            "Organization account": "组织帐户",
+            "Switch to another account": "切换到另一个帐户", // 存在组织时
+            "Go to your organization profile": "去我的组织主页",
+            // 左侧菜单
+            "General": "常规",
+            "Access": "访问",
+            "Billing and plans": "账单和计划",
+            "Repository roles": "仓库角色",
+            "Member privileges": "成员权限",
+            "Team discussions": "团队讨论",
+            "Import/Export": "导入/导出",
+            "Moderation": "节制",
+                "Blocked users": "黑名单",
+                "Interaction limits": "互动限制",
+                "Code review limits": "代码审查限制",
+                "Moderators": "版主",
+
+            "Code, planning, and automation": "代码、规划和自动化",
+            "Repository": "仓库",
+                "Repository defaults": "仓库默认值",
+                "Repository topics": "仓库主题",
+            "Actions": "操作",
+                "Runners": "运行器",
+                "Runner groups": "运行器组",
+            "Webhooks": "Web 钩子",
+            "Packages": "软件包",
+            "Projects": "项目",
+
+            "Security": "安全",
+            "Authentication security": "身份验证安全",
+            "Code security and analysis": "代码安全性与分析",
+            "Verified and approved domains": "经验证和批准的域名",
+            "Secrets and variables": "机密和变量",
+
+            "Third-party Access": "第三方访问",
+            "OAuth application policy": "OAuth 应用策略",
+            "GitHub Apps": "GitHub 应用",
+            "Personal access tokens": "个人访问令牌",
+                "Active tokens": "活跃的令牌",
+                "Pending requests": "待处理的请求",
+
+            "Integrations": "集成",
+            "Scheduled reminders": "定时提醒",
+
+            "Archive": "存档",
+            "Logs": "日志",
+                "Sponsorship log": "赞助日志",
+                "Audit log": "审计日志",
+            "Deleted repositories": "删除的仓库",
+
+            "Developer settings": "开发者设置",
+                "OAuth Apps": "OAuth 应用程序",
+                "Publisher Verification": "发布者验证",
+            "Account settings": "帐户设置",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["settings/profile"] = { // 设置 - 个人资料
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
@@ -11521,68 +11583,6 @@ I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
         "Add a domain": "添加域名",
         "What domain would you like to add?": "您想添加什么域名？",
         "Add domain": "添加域名",
-    },
-    "regexp": [ // 正则翻译
-    ],
-};
-
-I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
-    "static": { // 静态翻译
-        // 公用部分
-            "Organization account": "组织帐户",
-            "Switch to another account": "切换到另一个帐户", // 存在组织时
-            "Go to your organization profile": "去我的组织主页",
-            // 左侧菜单
-            "General": "常规",
-            "Access": "访问",
-            "Billing and plans": "账单和计划",
-            "Repository roles": "仓库角色",
-            "Member privileges": "成员权限",
-            "Team discussions": "团队讨论",
-            "Import/Export": "导入/导出",
-            "Moderation": "节制",
-                "Blocked users": "黑名单",
-                "Interaction limits": "互动限制",
-                "Code review limits": "代码审查限制",
-                "Moderators": "版主",
-
-            "Code, planning, and automation": "代码、规划和自动化",
-            "Repository": "仓库",
-                "Repository defaults": "仓库默认值",
-                "Repository topics": "仓库主题",
-            "Actions": "操作",
-                "Runners": "运行器",
-                "Runner groups": "运行器组",
-            "Webhooks": "Web 钩子",
-            "Packages": "软件包",
-            "Projects": "项目",
-
-            "Security": "安全",
-            "Authentication security": "身份验证安全",
-            "Code security and analysis": "代码安全性与分析",
-            "Verified and approved domains": "经验证和批准的域名",
-            "Secrets": "机密",
-
-            "Third-party Access": "第三方访问",
-            "OAuth application policy": "OAuth 应用策略",
-            "GitHub Apps": "GitHub 应用",
-            "Personal access tokens": "个人访问令牌",
-                "Active tokens": "活跃的令牌",
-                "Pending requests": "待处理的请求",
-
-            "Integrations": "集成",
-            "Scheduled reminders": "定时提醒",
-
-            "Archive": "存档",
-            "Logs": "日志",
-                "Sponsorship log": "赞助日志",
-                "Audit log": "审计日志",
-            "Deleted repositories": "删除的仓库",
-
-            "Developer settings": "开发者设置",
-                "OAuth Apps": "OAuth 应用程序",
-                "Publisher Verification": "发布者验证",
-            "Account settings": "帐户设置",
     },
     "regexp": [ // 正则翻译
     ],
