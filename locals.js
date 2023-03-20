@@ -2961,15 +2961,30 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 I18N.zh["settings/packages"] = { // 设置 - 软件包
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
+
         // Packages 软件包 https://github.com/settings/packages
             "Packages permissions": "软件包权限",
+
+            // 组织设置
+                "Package Creation": "包的创建",
+                "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
+                "Public": "公共",
+                    "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
+                "Private": "私有",
+                    "Members will be able to create private packages, visible to organization members with permission.": "成员将能够创建私有包，对具有权限的组织成员可见。",
+                "Internal": "内部",
+                    "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
+
             "Default Package Setting": "默认软件包设置",
+            "Default Package Settings": "默认软件包设置",// 组织设置
             "This setting will be applied to new Container, npm, rubygems and NuGet packages.": "此设置将应用于新的容器、npm、rubygems 和 NuGet 软件包。",
             "Inherit access from source repository": "从源仓库继承访问权限",
             "Save": "保存",
 
             "Deleted Packages": "删除的软件包",
             "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
+            "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。", // 组织设置
             "Search deleted packages": "搜索已删除的软件包",
 
     },
@@ -2977,6 +2992,7 @@ I18N.zh["settings/packages"] = { // 设置 - 软件包
         [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
     ],
 };
+I18N.zh["orgs/settings/packages"] = I18N.zh["settings/packages"];
 
 I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
     "static": { // 静态翻译
@@ -12286,31 +12302,6 @@ I18N.zh["orgs/settings/discussions"] = { // 组织设置 - 讨论
                 "View organization discussions": "查看组织讨论",
     },
     "regexp": [ // 正则翻译
-    ],
-};
-
-I18N.zh["orgs/settings/packages"] = { // 组织设置 - 软件包
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // Packages 软件包 /organizations/<org-login>/settings/packages
-            "Packages permissions": "软件包权限",
-            "Package Creation": "包的创建",
-            "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
-            "Public": "公共",
-                "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
-            "Private": "私有",
-                "Members will be able to create private packages, visible to organization members with permission.": "成员将能够创建私有包，对具有权限的组织成员可见。",
-            "Internal": "内部",
-                "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
-
-            "Deleted Packages": "删除软件包",
-            "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。",
-            "Search deleted packages": "搜索已删除的软件包",
-
-    },
-    "regexp": [ // 正则翻译
-        [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
     ],
 };
 
