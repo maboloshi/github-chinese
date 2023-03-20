@@ -2077,11 +2077,13 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 I18N.zh["settings/billing"] = { // 设置 - 账单和计划
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], //组织设置
 
         // 账单和计划 https://github.com/settings/billing
             "Personal billing": "个人账单",
             "Current monthly bill": "当前月度账单",
             "Switch to yearly billing": "切换到按年计费",
+            "Switch to yearly billing and save": "切换到按年计费并保存", // 组织设置
             "Next payment due": "下一次到期的支付",
             "View payment history": "查看支付记录",
             "Payment information": "支付信息",
@@ -2093,6 +2095,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
             //"GitHub Free": "GitHub 免费",
             "The basics for all developers": "基础计划（所有开发者）",
+            "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
             "Unlimited public/private repos": "无限的公共/私有仓库",
             "Unlimited collaborators": "无限协作者",
             "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
@@ -2116,6 +2119,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
+            // 组织设置
             // [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
             "Manage your organization accounts": "管理您的组织帐户",
                 "Create a new organization": "创建新组织",
@@ -2134,6 +2138,23 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Cancel plan": "取消计划",
             "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
+            // 组织设置
+            "Billing management": "账单管理",
+            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
+            "Billing managers": "账单管理员",
+                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
+                "Invite": "邀请",
+            "Email recipients": "邮件接收者",
+            "Add": "添加",
+            "Primary": "主帐户",
+
+            "Edit billing email address": "编辑账单电子邮箱",
+            "Billing primary email": "账单主帐户邮箱",
+            "Update": "更新",
+
+            "Add billing recipient": "添加账单接收者",
+            "Add billing recipient email": "添加账单接收者邮箱",
+
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing & plans": "账单和计划",
             "/ Payment information": "/ 支付信息",
@@ -2141,6 +2162,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
 
             "Billing information": "账单信息",
+            // 组织设置
+            "An organization owner's personal billing information must be linked with this organization account.": "组织所有者的个人账单信息必须与该组织账户关联。",
+            "Update your billing information": "更新您的账单信息",
+            "to be able to link it with this organization.": "以便将其与该组织关联。",
+
             "First name": "名字",
             "Last name": "姓氏",
             "Address (P.O. box, company name, c/o)": "地址（邮政信箱、公司名称、c/o）",
@@ -2226,14 +2252,43 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "/ Payment history": "/ 支付历史",
             "Amounts shown in USD": "以美元显示的金额",
 
+        // 组织设置 邀请账单管理员 '/organizations/<org-login>/billing_managers/new'
+            "Billing": "账单",
+            "/ Add a billing manager": "/ 添加账单管理员",
+            "A": " ",
+            "billing manager": "账单管理员",
+            "is a user who manages the billing settings of your organization.": "是管理您组织的账单设置的用户。",
+            "will": "会",
+            "will not": "不会",
+            "have the ability to:": "具备以下能力：",
+                "Change the billing plan": "更改账单计划",
+                "Add, update, or remove payment methods": "添加、更新或删除支付方式",
+                // "": "查看支付记录",
+                "Download, and receive receipts": "下载并接收收据",
+                "View a list of billing managers": "查看帐单管理员列表",
+                "Invite additional billing managers": "邀请其他账单管理员",
+                "Remove other existing billing managers": "移除其他现有的账单管理员",
+                "Start, modify, or cancel sponsorships": "开始、修改或取消赞助",
+            "be able to:": "能够：",
+                "Create or access repositories in your organization": "在您的组织中创建或访问仓库",
+                "See private members of your organization": "查看您组织的私人成员",
+                "Be seen in the list of organization members": "在组织成员列表中可见",
+                "Use the organization’s payment method": "使用组织的支付方式",
+                "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
+
+            "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
+            "Send invitation": "发送邀请",
 
     },
     "regexp": [ // 正则翻译
         [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
+        [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
     ],
 };
 I18N.zh["account/billing/history"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/billing_managers/new"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/billing/history"] = I18N.zh["settings/billing"];
 
 I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
     "static": { // 静态翻译
@@ -11673,191 +11728,6 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
     "regexp": [ // 正则翻译
     ],
 };
-
-I18N.zh["orgs/settings/billing"] = { // 组织设置 - 账单和计划
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // 账单和计划 /organizations/<org-login>/settings/billing
-            // "Personal billing": "个人账单",
-            "Current monthly bill": "当前月度账单",
-            "Switch to yearly billing and save": "切换到按年计费并保存",
-            "Next payment due": "下一次到期的支付",
-            "View payment history": "查看支付记录",
-            "Payment information": "支付信息",
-            "Update payment method": "更新支付方式",
-            "Manage spending limit": "管理支出限额",
-            "Redeem coupon": "兑换优惠券",
-            "Current plan": "当前计划",
-            "Compare all plans": "比较所有计划",
-            //"GitHub Free": "GitHub 免费",
-            "The basics for organizations and developers": "组织和开发者的基本计划",
-            "Unlimited public/private repos": "无限的公共/私有仓库",
-            "Unlimited collaborators": "无限协作者",
-            "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
-            "500MB of Packages storage": "500MB 的包存储空间",
-            "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
-            "15GB of Codespaces storage": "15GB 的代码空间存储",
-            "Community support": "社区支持",
-
-            "Not included:": "不包含：",
-            "Protected branches on all repos": "所有仓库上的受保护分支",
-            "Access to Codespaces": "访问代码空间",
-            "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
-            "Required status checks": "所需的状态检查",
-            "Code owners": "代码所有者",
-            "Required reviewers": "所需的审阅者",
-            "Pages for static website hosting": "静态网站页面托管",
-            "Web-based support": "基于网络的支持",
-            "See all features and compare plans": "查看所有功能并比较计划",
-
-            "Add-ons": "附加组件",
-            "Usage this month": "本月使用情况",
-            "Get usage report": "获取使用报告",
-
-            "GitHub Sponsors": "GitHub 赞助",
-            "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
-            "Start sponsoring": "开始赞助",
-            "You’re currently not sponsoring anyone.": "您目前没有赞助任何人。",
-            "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
-            // "Change plan": "更改计划",
-            // "Cancel plan": "取消计划",
-            // "Do you have any questions? Contact": "对话框您有任何问题吗？请联系",
-
-            "Billing management": "账单管理",
-            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
-            "Billing managers": "账单管理员",
-                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
-                "Invite": "邀请",
-            "Email recipients": "邮件接收者",
-            "Add": "添加",
-            "Primary": "主帐户",
-
-            "Edit billing email address": "编辑账单电子邮箱",
-            "Billing primary email": "账单主帐户邮箱",
-            "Update": "更新",
-
-            "Add billing recipient": "添加账单接收者",
-            "Add billing recipient email": "添加账单接收者邮箱",
-
-        // 支付信息 /organizations/<org-login>/settings/billing/payment_information
-            "Billing & plans": "账单和计划",
-            "/ Payment information": "/ 支付信息",
-
-            // "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
-
-            // "Billing Information": "账单信息",
-            // "First name": "名字",
-            // "Last name": "姓氏",
-            // "Address": "地址",
-            // "City": "城市",
-            // "Postal/Zip code": "邮政编码",
-            // "Country/Region": "国家/地区",
-            //     "Choose your country": "选择您所在的国家/地区",
-            // "State/Province": "州/省",
-
-            "Payment method": "支付方式",
-            "You have not added a payment method.": "您尚未添加支付方式。",
-            // "Add Information": "添加信息",
-
-            "Last payment": "最后一次支付",
-            "You have not made any payments.": "您尚未支付任何款项。",
-
-            "Coupon": "优惠劵",
-            "You don’t have an active coupon.": "您没有有效的优惠券。",
-            "Redeem a coupon": "兑换优惠券",
-
-            "Extra Information": "额外信息",
-                "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
-            "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
-            "Add information": "添加信息",
-
-            // 对话框
-            "Extra billing information": "额外的账单信息",
-            "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
-            "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
-            "Full business name or address of record": "企业全称或记录地址",
-            "Save contact information": "保存联系信息",
-
-        // 支付方式 /organizations/<org-login>/settings/billing/payment
-            "/ Payment method": "/ 支付方式",
-            "Loading payment information…": "正在加载支付信息…",
-            "Pay with": "支付方式：",
-                "Credit card": "信用卡",
-                    "Card Number": "卡号",
-                    "Expiration Date": "终止日期",
-                        "- Select One -": "- 选择一个 -",
-                    "Address 1": "地址 1",
-                    "Address 2": "地址 2",
-                    "Country": "国家/地区",
-                    "City": "城市",
-                    "State": "州/省",
-                    "Postal Code": "邮政编码",
-                    "Submit": "提交",
-                "PayPal account": "PayPal 帐户",
-                    "Sign in to": "登录到",
-                    "Connecting to PayPal…": "正在连接到 PayPal…",
-            "Back to billing settings": "返回账单设置",
-            "There are no upcoming charges to your account.": "您的帐户没有即将发生的费用。",
-
-        // 支出限额 /organizations/<org-login>/settings/billing/spending_limit
-            "/ Monthly spending limit": "/ 每月支付限额",
-            "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
-            "Actions spending limits": "操作支付限额",
-            "Packages spending limits": "软件包支付限额",
-
-            "Payment method is missing": "缺失支付方式",
-            "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
-            "Add payment method": "添加支付方式",
-
-            "Limit spending": "限制支出",
-                "Set up a spending limit on a monthly basis": "设置每月支出限额",
-                "Update limit": "更新限额",
-                // [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
-            "Unlimited spending": "不限制支出",
-                "Pay as much as needed to keep Actions & Packages running": "按需支付，以保持操作和软件包的运行",
-
-            "Email alerts": "电子邮件提醒",
-            "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "当使用率达到 75%、90% 和 100% 的阈值时，会收到电子邮件通知。",
-            "Included resources alerts": "包含资源提醒",
-            "Spending limit alerts": "支出限额提醒",
-
-        // 账单历史 /organizations/<org-login>/billing/history
-            "/ Payment history": "/ 支付历史",
-            "Amounts shown in USD": "以美元显示的金额",
-
-        // '/organizations/<org-login>/billing_managers/new'
-            "Billing": "账单",
-            "/ Add a billing manager": "/ 添加账单管理员",
-            "A": " ",
-            "billing manager": "账单管理员",
-            "is a user who manages the billing settings of your organization.": "是管理您组织的账单设置的用户。",
-            "have the ability to:": "具备以下能力：",
-                "Change the billing plan": "更改账单计划",
-                "Add, update, or remove payment methods": "添加、更新或删除支付方式",
-                // "": "查看支付记录",
-                "Download, and receive receipts": "下载并接收收据",
-                "View a list of billing managers": "查看帐单管理员列表",
-                "Invite additional billing managers": "邀请其他账单管理员",
-                "Remove other existing billing managers": "移除其他现有的账单管理员",
-                "Start, modify, or cancel sponsorships": "开始、修改或取消赞助",
-            "be able to:": "能够：",
-                "Create or access repositories in your organization": "在您的组织中创建或访问仓库",
-                "See private members of your organization": "查看您组织的私人成员",
-                "Be seen in the list of organization members": "在组织成员列表中可见",
-                "Use the organization’s payment method": "使用组织的支付方式",
-                "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
-            "Search people": "搜索成员",
-            "Send invitation": "发送邀请",
-
-
-    },
-    "regexp": [ // 正则翻译
-        [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"], // 支出限额
-    ],
-};
-I18N.zh["orgs/billing_managers/new"] = I18N.zh["orgs/settings/billing"];
-I18N.zh["orgs/billing/history"] = I18N.zh["orgs/settings/billing"];
 
 I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
     "static": { // 静态翻译
