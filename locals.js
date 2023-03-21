@@ -2378,6 +2378,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
 I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置双重身份验证
     "static": { // 静态翻译
         // 设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
+            // 顶部提醒
+                "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
+
             // 提示
             "You're about to change your two-factor authentication device. This will invalidate your current two-factor devices and recovery codes. This will not affect your fallback SMS configuration. It can be updated on the two-factor settings page.": "您即将更改双重身份验证设备。这将使您当前的双重身份验证设备和恢复码失效。这不会影响您的备用 SMS 配置。它可以在双重身份验证设置页面上更新。",
 
@@ -2386,14 +2389,16 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
 
             // 第1步
                 "Setup authenticator app": "设置身份验证器应用",
-                    "Use a phone app like": "使用手机应用类似",
-                    ", or": "，或",
-                    ", etc. to get 2FA codes when prompted during sign-in.": "等，在登录过程中收到提示获取 2FA 码",
+                    "Password managers like": "密码管理器像",
+                    ", etc. have apps and browser extensions that you can use to get 2FA codes when prompted during sign-in.": "等。都有应用和浏览器扩展，您可在登录时获取 2FA 码",
+
                     "Scan the QR code": "扫描二维码",
                     "Re-scan the QR code": "重新扫描二维码",
-                    "Use an authenticator app from your phone to scan. If you are unable to scan,": "使用手机中的身份验证器应用进行扫描。如果您无法扫描，",
-                    "enter this text code": "输入此文本代码",
-                    "instead.": "代替。",
+                    "Use an authenticator app or browser extension to scan. If you are unable to scan,": "请使用身份验证器应用或浏览器扩展进行扫描。如果您无法扫描，",
+                    "enter this secret": "输入此密码",
+                    "instead. Password managers can use it to generate 2FA codes.": "代替。密码管理器可以使用它来生成双重身份验证码。",
+                    "Learn more about enabling 2FA": "了解更多有关启用 2FA 的信息",
+
                     "Verify the code from the app": "验证来自身份验证器应用的验证码",
                     "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
 
@@ -2410,10 +2415,10 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                 "Continue": "继续",
 
                 "Alternative 2FA option:": "备选 2FA 选项:",
-                "SMS/Text message": "短信/文字信息",
+                "SMS authentication": "短信验证",
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app on your phone to generate one-time codes.": "使用手机上的身份验证应用生成一次性代码。",
+                    "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
                 "Select": "选择",
 
             // 第2步
@@ -2434,7 +2439,7 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                 "Don't get locked out, configure additional 2FA methods": "不要被锁定，配置额外的 2FA 方法",
                 "Adding a backup 2FA method will help you gain access to your account in case you lose your device and don't have your recovery codes.": "添加备用 2FA 方法将帮助您在丢失设备且没有恢复码的情况下访问您的帐户。",
                 "Security key": "安全密钥",
-                    "Use your device with a Touch ID, Windows Hello, etc. or a physical security key (e.g. YubiKey)": "使用带有 Touch ID、Windows Hello 等的设备或物理安全钥匙（如YubiKey）。",
+                    "Use your device with Touch ID, Windows Hello, etc. or a physical security key (e.g. YubiKey)": "使用您的设备配合 Touch ID、Windows Hello 等功能或物理安全密钥（例如YubiKey）。",
                     "Register": "注册",
                     "Enter a nickname for this security key": "输入安全密钥的昵称",
                         "Waiting for security key": "等待安全密钥",
@@ -2442,7 +2447,7 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                         "Security key registration failed": "安全密钥注册失败。",
                         "Try again": "请重试",
                 "GitHub Mobile": "GitHub 移动应用",
-                    "Enable": "启用",
+                    "Enabled": "启用",
                     "Your GitHub Mobile app can also be used for 2FA when signing into your GitHub account in a web browser—way to go for having that setup already!": "在网络浏览器中登录您的 GitHub 帐户时，您的 GitHub Mobile 应用也可用于 2FA 验证——已经有了这样的设置，真不错!",
                     "— registered on": "— 注册于",
                 "Done": "完成",
@@ -2486,6 +2491,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Enable": "启用",
             "Enabled": "启用",
+                "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
             "Disable": "停用",
             "Add": "添加",
             "Added": "添加",
@@ -2497,9 +2503,27 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
 
             "Authenticator app": "身份验证器应用",
-                "Use an application on your phone to get two-factor authentication codes when prompted.": "出现提示时，使用手机上的应用获取双重身份验证码。",
+                "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
                 "Set as preferred method": "设置为首选",
                 "Manage Authenticator app": "管理身份验证器应用",
+
+                // 授权访问 进入 sudo 模式二次验证
+                    "Confirm access": "授权访问",
+                    "When your phone is ready, click the button below.": "手机准备就绪后，单击下面的按钮。",
+                    "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+
+                    "Having problems?": "有问题吗？",
+                        "Use your password": "使用您的密码",
+                        "Use your authenticator app": "使用您的身份验证器应用",
+
+                    "Creating a verification request for your GitHub Mobile app.": "向您的 GitHub 移动应用创建验证请求。",
+                    "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们通过您的 GitHub Mobile 应用向您发送了验证请求。输入下面显示的数字以进入 sudo 模式。",
+
+                    "Verification request timed out.": "验证请求超时。",
+                    "We could not verify your identity": "我们无法验证您的身份",
+                    "Retry": "请重试",
+
+            "SMS/Text message": "短信/文字信息",
             "Security keys": "安全密钥",
                 "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                 "Hide": "隐藏",
