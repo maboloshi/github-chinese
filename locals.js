@@ -8175,9 +8175,13 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N.zh["repository-insights-menu"]["static"],
 
         //复刻 /<user-name>/<repo-name>/forks
+            "Switch to tree view": "切换到树形视图",
+
             "Period:": "周期：",
                 "Filter by period": "筛选周期",
+                "Any repository that has not been created or updated during this period will be excluded.": "在此期间未被创建或更新的任何仓库将被排除在外。",
             "Repository type:": "仓库类型：",
+                "Filter by repository type": "筛选仓库类型",
                 "Active": "活跃",
                     "Repositories with push activity": "有推送活动的仓库",
                 "Inactive": "不活跃",
@@ -8185,7 +8189,7 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
                 "Network": "网络",
                     "Forks of other forks": "其他复刻的复刻",
                 "Archived": "存档",
-                    "Forks of other forks": "已存档的仓库",
+                    "Archived repositories": "已存档的仓库",
                 "Starred": "星标",
                     "Repositories with at least 1 star": "至少有 1 个星标的仓库",
             "Sort:": "排序：",
