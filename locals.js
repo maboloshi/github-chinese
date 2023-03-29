@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|audit-log\/ip_disclosure)/,
 
     /**
      * 忽略区域的 class 正则
@@ -1662,6 +1662,68 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
     ],
 };
 
+I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
+    "static": { // 静态翻译
+        // 公用部分
+            "Organization account": "组织帐户",
+            "Switch to another account": "切换到另一个帐户", // 存在组织时
+            "Go to your organization profile": "去我的组织主页",
+            // 左侧菜单
+            "General": "常规",
+            "Access": "访问",
+            "Billing and plans": "账单和计划",
+            "Repository roles": "仓库角色",
+            "Member privileges": "成员权限",
+            "Team discussions": "团队讨论",
+            "Import/Export": "导入/导出",
+            "Moderation": "节制",
+                "Blocked users": "黑名单",
+                "Interaction limits": "互动限制",
+                "Code review limits": "代码审查限制",
+                "Moderators": "版主",
+
+            "Code, planning, and automation": "代码、规划和自动化",
+            "Repository": "仓库",
+                "Repository defaults": "仓库默认值",
+                "Repository topics": "仓库主题",
+            "Actions": "操作",
+                "Runners": "运行器",
+                "Runner groups": "运行器组",
+            "Webhooks": "Web 钩子",
+            "Packages": "软件包",
+            "Projects": "项目",
+
+            "Security": "安全",
+            "Authentication security": "身份验证安全",
+            "Code security and analysis": "代码安全性与分析",
+            "Verified and approved domains": "经验证和批准的域名",
+            "Secrets and variables": "机密和变量",
+
+            "Third-party Access": "第三方访问",
+            "OAuth application policy": "OAuth 应用策略",
+            "GitHub Apps": "GitHub 应用",
+            "Personal access tokens": "个人访问令牌",
+                "Active tokens": "活跃的令牌",
+                "Pending requests": "待处理的请求",
+
+            "Integrations": "集成",
+            "Scheduled reminders": "定时提醒",
+
+            "Archive": "存档",
+            "Logs": "日志",
+                "Sponsorship log": "赞助日志",
+                "Audit log": "审计日志",
+            "Deleted repositories": "删除的仓库",
+
+            "Developer settings": "开发者设置",
+                "OAuth Apps": "OAuth 应用程序",
+                "Publisher Verification": "发布者验证",
+            "Account settings": "帐户设置",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["settings/profile"] = { // 设置 - 个人资料
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
@@ -2015,11 +2077,13 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 I18N.zh["settings/billing"] = { // 设置 - 账单和计划
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], //组织设置
 
         // 账单和计划 https://github.com/settings/billing
             "Personal billing": "个人账单",
             "Current monthly bill": "当前月度账单",
             "Switch to yearly billing": "切换到按年计费",
+            "Switch to yearly billing and save": "切换到按年计费并保存", // 组织设置
             "Next payment due": "下一次到期的支付",
             "View payment history": "查看支付记录",
             "Payment information": "支付信息",
@@ -2031,6 +2095,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
             //"GitHub Free": "GitHub 免费",
             "The basics for all developers": "基础计划（所有开发者）",
+            "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
             "Unlimited public/private repos": "无限的公共/私有仓库",
             "Unlimited collaborators": "无限协作者",
             "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
@@ -2054,6 +2119,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
+            // 组织设置
             // [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
             "Manage your organization accounts": "管理您的组织帐户",
                 "Create a new organization": "创建新组织",
@@ -2072,6 +2138,23 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Cancel plan": "取消计划",
             "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
+            // 组织设置
+            "Billing management": "账单管理",
+            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
+            "Billing managers": "账单管理员",
+                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
+                "Invite": "邀请",
+            "Email recipients": "邮件接收者",
+            "Add": "添加",
+            "Primary": "主帐户",
+
+            "Edit billing email address": "编辑账单电子邮箱",
+            "Billing primary email": "账单主帐户邮箱",
+            "Update": "更新",
+
+            "Add billing recipient": "添加账单接收者",
+            "Add billing recipient email": "添加账单接收者邮箱",
+
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing & plans": "账单和计划",
             "/ Payment information": "/ 支付信息",
@@ -2079,6 +2162,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
 
             "Billing information": "账单信息",
+            // 组织设置
+            "An organization owner's personal billing information must be linked with this organization account.": "组织所有者的个人账单信息必须与该组织账户关联。",
+            "Update your billing information": "更新您的账单信息",
+            "to be able to link it with this organization.": "以便将其与该组织关联。",
+
             "First name": "名字",
             "Last name": "姓氏",
             "Address (P.O. box, company name, c/o)": "地址（邮政信箱、公司名称、c/o）",
@@ -2164,14 +2252,43 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "/ Payment history": "/ 支付历史",
             "Amounts shown in USD": "以美元显示的金额",
 
+        // 组织设置 邀请账单管理员 '/organizations/<org-login>/billing_managers/new'
+            "Billing": "账单",
+            "/ Add a billing manager": "/ 添加账单管理员",
+            "A": " ",
+            "billing manager": "账单管理员",
+            "is a user who manages the billing settings of your organization.": "是管理您组织的账单设置的用户。",
+            "will": "会",
+            "will not": "不会",
+            "have the ability to:": "具备以下能力：",
+                "Change the billing plan": "更改账单计划",
+                "Add, update, or remove payment methods": "添加、更新或删除支付方式",
+                // "": "查看支付记录",
+                "Download, and receive receipts": "下载并接收收据",
+                "View a list of billing managers": "查看帐单管理员列表",
+                "Invite additional billing managers": "邀请其他账单管理员",
+                "Remove other existing billing managers": "移除其他现有的账单管理员",
+                "Start, modify, or cancel sponsorships": "开始、修改或取消赞助",
+            "be able to:": "能够：",
+                "Create or access repositories in your organization": "在您的组织中创建或访问仓库",
+                "See private members of your organization": "查看您组织的私人成员",
+                "Be seen in the list of organization members": "在组织成员列表中可见",
+                "Use the organization’s payment method": "使用组织的支付方式",
+                "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
+
+            "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
+            "Send invitation": "发送邀请",
 
     },
     "regexp": [ // 正则翻译
         [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
+        [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
     ],
 };
 I18N.zh["account/billing/history"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/billing_managers/new"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/billing/history"] = I18N.zh["settings/billing"];
 
 I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
     "static": { // 静态翻译
@@ -2261,6 +2378,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
 I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置双重身份验证
     "static": { // 静态翻译
         // 设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
+            // 顶部提醒
+                "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
+
             // 提示
             "You're about to change your two-factor authentication device. This will invalidate your current two-factor devices and recovery codes. This will not affect your fallback SMS configuration. It can be updated on the two-factor settings page.": "您即将更改双重身份验证设备。这将使您当前的双重身份验证设备和恢复码失效。这不会影响您的备用 SMS 配置。它可以在双重身份验证设置页面上更新。",
 
@@ -2269,14 +2389,16 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
 
             // 第1步
                 "Setup authenticator app": "设置身份验证器应用",
-                    "Use a phone app like": "使用手机应用类似",
-                    ", or": "，或",
-                    ", etc. to get 2FA codes when prompted during sign-in.": "等，在登录过程中收到提示获取 2FA 码",
+                    "Password managers like": "密码管理器像",
+                    ", etc. have apps and browser extensions that you can use to get 2FA codes when prompted during sign-in.": "等。都有应用和浏览器扩展，您可在登录时获取 2FA 码",
+
                     "Scan the QR code": "扫描二维码",
                     "Re-scan the QR code": "重新扫描二维码",
-                    "Use an authenticator app from your phone to scan. If you are unable to scan,": "使用手机中的身份验证器应用进行扫描。如果您无法扫描，",
-                    "enter this text code": "输入此文本代码",
-                    "instead.": "代替。",
+                    "Use an authenticator app or browser extension to scan. If you are unable to scan,": "请使用身份验证器应用或浏览器扩展进行扫描。如果您无法扫描，",
+                    "enter this secret": "输入此密码",
+                    "instead. Password managers can use it to generate 2FA codes.": "代替。密码管理器可以使用它来生成双重身份验证码。",
+                    "Learn more about enabling 2FA": "了解更多有关启用 2FA 的信息",
+
                     "Verify the code from the app": "验证来自身份验证器应用的验证码",
                     "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
 
@@ -2293,10 +2415,10 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                 "Continue": "继续",
 
                 "Alternative 2FA option:": "备选 2FA 选项:",
-                "SMS/Text message": "短信/文字信息",
+                "SMS authentication": "短信验证",
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app on your phone to generate one-time codes.": "使用手机上的身份验证应用生成一次性代码。",
+                    "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
                 "Select": "选择",
 
             // 第2步
@@ -2317,7 +2439,7 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                 "Don't get locked out, configure additional 2FA methods": "不要被锁定，配置额外的 2FA 方法",
                 "Adding a backup 2FA method will help you gain access to your account in case you lose your device and don't have your recovery codes.": "添加备用 2FA 方法将帮助您在丢失设备且没有恢复码的情况下访问您的帐户。",
                 "Security key": "安全密钥",
-                    "Use your device with a Touch ID, Windows Hello, etc. or a physical security key (e.g. YubiKey)": "使用带有 Touch ID、Windows Hello 等的设备或物理安全钥匙（如YubiKey）。",
+                    "Use your device with Touch ID, Windows Hello, etc. or a physical security key (e.g. YubiKey)": "使用您的设备配合 Touch ID、Windows Hello 等功能或物理安全密钥（例如YubiKey）。",
                     "Register": "注册",
                     "Enter a nickname for this security key": "输入安全密钥的昵称",
                         "Waiting for security key": "等待安全密钥",
@@ -2325,7 +2447,7 @@ I18N.zh["settings/two_factor_authentication/setup/intro"] = { // 设置 - 设置
                         "Security key registration failed": "安全密钥注册失败。",
                         "Try again": "请重试",
                 "GitHub Mobile": "GitHub 移动应用",
-                    "Enable": "启用",
+                    "Enabled": "启用",
                     "Your GitHub Mobile app can also be used for 2FA when signing into your GitHub account in a web browser—way to go for having that setup already!": "在网络浏览器中登录您的 GitHub 帐户时，您的 GitHub Mobile 应用也可用于 2FA 验证——已经有了这样的设置，真不错!",
                     "— registered on": "— 注册于",
                 "Done": "完成",
@@ -2369,6 +2491,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Enable": "启用",
             "Enabled": "启用",
+                "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
             "Disable": "停用",
             "Add": "添加",
             "Added": "添加",
@@ -2380,9 +2503,27 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
 
             "Authenticator app": "身份验证器应用",
-                "Use an application on your phone to get two-factor authentication codes when prompted.": "出现提示时，使用手机上的应用获取双重身份验证码。",
+                "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
                 "Set as preferred method": "设置为首选",
                 "Manage Authenticator app": "管理身份验证器应用",
+
+                // 授权访问 进入 sudo 模式二次验证
+                    "Confirm access": "授权访问",
+                    "When your phone is ready, click the button below.": "手机准备就绪后，单击下面的按钮。",
+                    "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+
+                    "Having problems?": "有问题吗？",
+                        "Use your password": "使用您的密码",
+                        "Use your authenticator app": "使用您的身份验证器应用",
+
+                    "Creating a verification request for your GitHub Mobile app.": "向您的 GitHub 移动应用创建验证请求。",
+                    "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们通过您的 GitHub Mobile 应用向您发送了验证请求。输入下面显示的数字以进入 sudo 模式。",
+
+                    "Verification request timed out.": "验证请求超时。",
+                    "We could not verify your identity": "我们无法验证您的身份",
+                    "Retry": "请重试",
+
+            "SMS/Text message": "短信/文字信息",
             "Security keys": "安全密钥",
                 "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                 "Hide": "隐藏",
@@ -2844,15 +2985,30 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 I18N.zh["settings/packages"] = { // 设置 - 软件包
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
+
         // Packages 软件包 https://github.com/settings/packages
             "Packages permissions": "软件包权限",
+
+            // 组织设置
+                "Package Creation": "包的创建",
+                "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
+                "Public": "公共",
+                    "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
+                "Private": "私有",
+                    "Members will be able to create private packages, visible to organization members with permission.": "成员将能够创建私有包，对具有权限的组织成员可见。",
+                "Internal": "内部",
+                    "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
+
             "Default Package Setting": "默认软件包设置",
+            "Default Package Settings": "默认软件包设置",// 组织设置
             "This setting will be applied to new Container, npm, rubygems and NuGet packages.": "此设置将应用于新的容器、npm、rubygems 和 NuGet 软件包。",
             "Inherit access from source repository": "从源仓库继承访问权限",
             "Save": "保存",
 
             "Deleted Packages": "删除的软件包",
             "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
+            "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。", // 组织设置
             "Search deleted packages": "搜索已删除的软件包",
 
     },
@@ -2860,6 +3016,7 @@ I18N.zh["settings/packages"] = { // 设置 - 软件包
         [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
     ],
 };
+I18N.zh["orgs/settings/packages"] = I18N.zh["settings/packages"];
 
 I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
     "static": { // 静态翻译
@@ -2880,11 +3037,13 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
 I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置菜单
 
         // GitHub Pages https://github.com/settings/pages
             "Verified domains": "经验证的域名",
             "Add a domain": "添加域名",
             "There are no verified domains.": "暂无经验证的域名",
+            "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
             "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
 
         // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
@@ -2896,6 +3055,7 @@ I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
     "regexp": [ // 正则翻译
     ],
 };
+I18N.zh["orgs/settings/pages"] = I18N.zh["settings/pages"];
 
 I18N.zh["settings/replies"] = { // 设置 - 快捷回复
     "static": { // 静态翻译
@@ -8176,10 +8336,7 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N.zh["repository-insights-menu"]["static"],
 
         //复刻 /<user-name>/<repo-name>/forks
-            "Let us know how this feature can be improved. You can also": "请告诉我们如何改进此功能。您也可以",
-            "switch back to the tree view": "切换回树形视图",
-            "at any time.": "在任何时候。",
-            "Send feedback": "发送反馈",
+            "Switch to tree view": "切换到树形视图",
 
             "Period:": "周期：",
                 "Filter by period": "筛选周期",
@@ -8949,7 +9106,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                 "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
                 "Yes, delete webhook": "是的，删除 Web 钩子",
 
-        // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
+        // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
             "Add webhook": "添加 Web 钩子",
             "We’ll send a": "我们将",
@@ -9009,7 +9166,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                     "Discussion comments": "讨论评论",
                         "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
                     // "Discussion": "讨论",
-                        "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
+                        "Discussion created, edited, closed, reopened, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、关闭、重新打开、置顶、取消置顶、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
                     "Forks": "复刻",
                         "Repository forked.": "仓库复刻。",
                     "Issue comments": "发表评论",
@@ -9020,6 +9177,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                         "Label created, edited or deleted.": "标签的创建、编辑或删除。",
                     "Memberships": "团队成员", // 组织设置
                         "Team membership added or removed.": "添加或删除团队成员。",
+                    "Merge groups": "合并组",
+                        "Merge Group checks requested.": "合并组检查已请求。",
                     "Meta": "元数据",
                         "This particular hook is deleted.": "这个特定的钩子被删除。",
                     "Milestones": "里程碑",
@@ -9036,11 +9195,13 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                         "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
                     "Project columns": "项目栏目",
                         "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
+                    "Projects v2 items": "项目项 v2", // 组织设置
+                        "Project item created, edited, deleted, archived, restored, converted, or reordered. Feedback is welcome in": "项目条目的创建、编辑、删除、归档、恢复、转换或重新排序。欢迎提供反馈意见在",
+                        "this discussion": "这个讨论",
                     // "": "项目",
                         "Project created, updated, or deleted.": "项目的创建、更新或删除。",
-                    "Projects v2 items": "项目项 v2",
-                        "Project item created, updated, or deleted. This is a projects Beta feature. Feedback is welcome in": "创建、更新或删除项目项。这是一个项目 Beta 功能。欢迎反馈",
-                        "this discussion": "这个讨论",
+                    "Project v2": "项目 v2", // 组织设置
+                        "Project created, updated, deleted, closed, or reopened. Feedback is welcome in": "项目的创建、更新、删除、关闭或重新打开。欢迎提供反馈意见在",
                     "Pull request review comments": "拉取请求的审查评论",
                         "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
                     "Pull request review threads": "拉取请求的审查线程",
@@ -9104,6 +9265,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
             "Recent Deliveries": "最近交付",
                 "redelivery": "再交付",
             "Loading deliveries…": "载入交付…",
+            "Detailed delivery information will be shown here once the hook has been triggered.": "一旦触发钩子，详细的交付信息将在此处显示。",
+
             "Request": "请求",
             "Response": "应答",
             "Redeliver": "重新交付",
@@ -11524,68 +11687,6 @@ I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
     ],
 };
 
-I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
-    "static": { // 静态翻译
-        // 公用部分
-            "Organization account": "组织帐户",
-            "Switch to another account": "切换到另一个帐户", // 存在组织时
-            "Go to your organization profile": "去我的组织主页",
-            // 左侧菜单
-            "General": "常规",
-            "Access": "访问",
-            "Billing and plans": "账单和计划",
-            "Repository roles": "仓库角色",
-            "Member privileges": "成员权限",
-            "Team discussions": "团队讨论",
-            "Import/Export": "导入/导出",
-            "Moderation": "节制",
-                "Blocked users": "黑名单",
-                "Interaction limits": "互动限制",
-                "Code review limits": "代码审查限制",
-                "Moderators": "版主",
-
-            "Code, planning, and automation": "代码、规划和自动化",
-            "Repository": "仓库",
-                "Repository defaults": "仓库默认值",
-                "Repository topics": "仓库主题",
-            "Actions": "操作",
-                "Runners": "运行器",
-                "Runner groups": "运行器组",
-            "Webhooks": "Web 钩子",
-            "Packages": "软件包",
-            "Projects": "项目",
-
-            "Security": "安全",
-            "Authentication security": "身份验证安全",
-            "Code security and analysis": "代码安全性与分析",
-            "Verified and approved domains": "经验证和批准的域名",
-            "Secrets": "机密",
-
-            "Third-party Access": "第三方访问",
-            "OAuth application policy": "OAuth 应用策略",
-            "GitHub Apps": "GitHub 应用",
-            "Personal access tokens": "个人访问令牌",
-                "Active tokens": "活跃的令牌",
-                "Pending requests": "待处理的请求",
-
-            "Integrations": "集成",
-            "Scheduled reminders": "定时提醒",
-
-            "Archive": "存档",
-            "Logs": "日志",
-                "Sponsorship log": "赞助日志",
-                "Audit log": "审计日志",
-            "Deleted repositories": "删除的仓库",
-
-            "Developer settings": "开发者设置",
-                "OAuth Apps": "OAuth 应用程序",
-                "Publisher Verification": "发布者验证",
-            "Account settings": "帐户设置",
-    },
-    "regexp": [ // 正则翻译
-    ],
-};
-
 I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
@@ -11668,191 +11769,6 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
     "regexp": [ // 正则翻译
     ],
 };
-
-I18N.zh["orgs/settings/billing"] = { // 组织设置 - 账单和计划
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // 账单和计划 /organizations/<org-login>/settings/billing
-            // "Personal billing": "个人账单",
-            "Current monthly bill": "当前月度账单",
-            "Switch to yearly billing and save": "切换到按年计费并保存",
-            "Next payment due": "下一次到期的支付",
-            "View payment history": "查看支付记录",
-            "Payment information": "支付信息",
-            "Update payment method": "更新支付方式",
-            "Manage spending limit": "管理支出限额",
-            "Redeem coupon": "兑换优惠券",
-            "Current plan": "当前计划",
-            "Compare all plans": "比较所有计划",
-            //"GitHub Free": "GitHub 免费",
-            "The basics for organizations and developers": "组织和开发者的基本计划",
-            "Unlimited public/private repos": "无限的公共/私有仓库",
-            "Unlimited collaborators": "无限协作者",
-            "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
-            "500MB of Packages storage": "500MB 的包存储空间",
-            "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
-            "15GB of Codespaces storage": "15GB 的代码空间存储",
-            "Community support": "社区支持",
-
-            "Not included:": "不包含：",
-            "Protected branches on all repos": "所有仓库上的受保护分支",
-            "Access to Codespaces": "访问代码空间",
-            "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
-            "Required status checks": "所需的状态检查",
-            "Code owners": "代码所有者",
-            "Required reviewers": "所需的审阅者",
-            "Pages for static website hosting": "静态网站页面托管",
-            "Web-based support": "基于网络的支持",
-            "See all features and compare plans": "查看所有功能并比较计划",
-
-            "Add-ons": "附加组件",
-            "Usage this month": "本月使用情况",
-            "Get usage report": "获取使用报告",
-
-            "GitHub Sponsors": "GitHub 赞助",
-            "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
-            "Start sponsoring": "开始赞助",
-            "You’re currently not sponsoring anyone.": "您目前没有赞助任何人。",
-            "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
-            // "Change plan": "更改计划",
-            // "Cancel plan": "取消计划",
-            // "Do you have any questions? Contact": "对话框您有任何问题吗？请联系",
-
-            "Billing management": "账单管理",
-            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
-            "Billing managers": "账单管理员",
-                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
-                "Invite": "邀请",
-            "Email recipients": "邮件接收者",
-            "Add": "添加",
-            "Primary": "主帐户",
-
-            "Edit billing email address": "编辑账单电子邮箱",
-            "Billing primary email": "账单主帐户邮箱",
-            "Update": "更新",
-
-            "Add billing recipient": "添加账单接收者",
-            "Add billing recipient email": "添加账单接收者邮箱",
-
-        // 支付信息 /organizations/<org-login>/settings/billing/payment_information
-            "Billing & plans": "账单和计划",
-            "/ Payment information": "/ 支付信息",
-
-            // "Please update your billing information in order to add a payment method.": "请更新您的账单信息，以便添加支付方式。",
-
-            // "Billing Information": "账单信息",
-            // "First name": "名字",
-            // "Last name": "姓氏",
-            // "Address": "地址",
-            // "City": "城市",
-            // "Postal/Zip code": "邮政编码",
-            // "Country/Region": "国家/地区",
-            //     "Choose your country": "选择您所在的国家/地区",
-            // "State/Province": "州/省",
-
-            "Payment method": "支付方式",
-            "You have not added a payment method.": "您尚未添加支付方式。",
-            // "Add Information": "添加信息",
-
-            "Last payment": "最后一次支付",
-            "You have not made any payments.": "您尚未支付任何款项。",
-
-            "Coupon": "优惠劵",
-            "You don’t have an active coupon.": "您没有有效的优惠券。",
-            "Redeem a coupon": "兑换优惠券",
-
-            "Extra Information": "额外信息",
-                "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
-            "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
-            "Add information": "添加信息",
-
-            // 对话框
-            "Extra billing information": "额外的账单信息",
-            "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
-            "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
-            "Full business name or address of record": "企业全称或记录地址",
-            "Save contact information": "保存联系信息",
-
-        // 支付方式 /organizations/<org-login>/settings/billing/payment
-            "/ Payment method": "/ 支付方式",
-            "Loading payment information…": "正在加载支付信息…",
-            "Pay with": "支付方式：",
-                "Credit card": "信用卡",
-                    "Card Number": "卡号",
-                    "Expiration Date": "终止日期",
-                        "- Select One -": "- 选择一个 -",
-                    "Address 1": "地址 1",
-                    "Address 2": "地址 2",
-                    "Country": "国家/地区",
-                    "City": "城市",
-                    "State": "州/省",
-                    "Postal Code": "邮政编码",
-                    "Submit": "提交",
-                "PayPal account": "PayPal 帐户",
-                    "Sign in to": "登录到",
-                    "Connecting to PayPal…": "正在连接到 PayPal…",
-            "Back to billing settings": "返回账单设置",
-            "There are no upcoming charges to your account.": "您的帐户没有即将发生的费用。",
-
-        // 支出限额 /organizations/<org-login>/settings/billing/spending_limit
-            "/ Monthly spending limit": "/ 每月支付限额",
-            "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
-            "Actions spending limits": "操作支付限额",
-            "Packages spending limits": "软件包支付限额",
-
-            "Payment method is missing": "缺失支付方式",
-            "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
-            "Add payment method": "添加支付方式",
-
-            "Limit spending": "限制支出",
-                "Set up a spending limit on a monthly basis": "设置每月支出限额",
-                "Update limit": "更新限额",
-                // [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
-            "Unlimited spending": "不限制支出",
-                "Pay as much as needed to keep Actions & Packages running": "按需支付，以保持操作和软件包的运行",
-
-            "Email alerts": "电子邮件提醒",
-            "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "当使用率达到 75%、90% 和 100% 的阈值时，会收到电子邮件通知。",
-            "Included resources alerts": "包含资源提醒",
-            "Spending limit alerts": "支出限额提醒",
-
-        // 账单历史 /organizations/<org-login>/billing/history
-            "/ Payment history": "/ 支付历史",
-            "Amounts shown in USD": "以美元显示的金额",
-
-        // '/organizations/<org-login>/billing_managers/new'
-            "Billing": "账单",
-            "/ Add a billing manager": "/ 添加账单管理员",
-            "A": " ",
-            "billing manager": "账单管理员",
-            "is a user who manages the billing settings of your organization.": "是管理您组织的账单设置的用户。",
-            "have the ability to:": "具备以下能力：",
-                "Change the billing plan": "更改账单计划",
-                "Add, update, or remove payment methods": "添加、更新或删除支付方式",
-                // "": "查看支付记录",
-                "Download, and receive receipts": "下载并接收收据",
-                "View a list of billing managers": "查看帐单管理员列表",
-                "Invite additional billing managers": "邀请其他账单管理员",
-                "Remove other existing billing managers": "移除其他现有的账单管理员",
-                "Start, modify, or cancel sponsorships": "开始、修改或取消赞助",
-            "be able to:": "能够：",
-                "Create or access repositories in your organization": "在您的组织中创建或访问仓库",
-                "See private members of your organization": "查看您组织的私人成员",
-                "Be seen in the list of organization members": "在组织成员列表中可见",
-                "Use the organization’s payment method": "使用组织的支付方式",
-                "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
-            "Search people": "搜索成员",
-            "Send invitation": "发送邀请",
-
-
-    },
-    "regexp": [ // 正则翻译
-        [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"], // 支出限额
-    ],
-};
-I18N.zh["orgs/billing_managers/new"] = I18N.zh["orgs/settings/billing"];
-I18N.zh["orgs/billing/history"] = I18N.zh["orgs/settings/billing"];
 
 I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
     "static": { // 静态翻译
@@ -12380,177 +12296,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
 I18N.zh["orgs/settings/hooks"] = { // 组织设置 - Web 钩子
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // Web 钩子 /organizations/<org-login>/settings/hooks 同仓库 Web 钩子 页面 /<user-name>/<repo-name>/settings/hooks====================================
-            "Add webhook": "添加 Web 钩子",
-            "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
-            "Webhooks Guide": "Web 钩子指南",
-
-            // 删除对话框
-                "Delete webhook?": "删除 Web 钩子？",
-                "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
-                "Yes, delete webhook": "是的，删除 Web 钩子",
-
-        // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
-            "Webhooks /": "Web 钩子 /",
-            "We’ll send a": "我们将",
-            "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
-            "etc": "等",
-            "). More information can be found in": "）。更多信息可以在",
-            "our developer documentation": "开发人员文档",
-
-            "Payload URL": "有效负载 URL",
-            "Content type": "内容类型",
-            "Secret": "密钥",
-                "Leave blank to remove secret": "留空以删除密钥",
-
-            "SSL verification": "SSL 验证",
-            "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
-            "Enable SSL verification": "启用 SSL 验证",
-            "Disable": "禁用",
-            "(not recommended)": "（不推荐）",
-                "Are you sure?": "您确定吗？",
-                "Warning": "警告",
-                ": Disabling SSL verification has serious implications.": "：禁用 SSL 验证具有严重的影响。",
-                "SSL verification helps ensure that hook payloads are delivered to your URL endpoint securely, keeping your data away from prying eyes. Disabling this option is": "SSL 验证有助于确保钩子有效负载安全地传送到您的 URL 端点，使您的数据远离窥探。禁用此选项是",
-                "not recommended": "不推荐的",
-                "Disable, I understand my webhooks may not be secure": "禁用，我明白我的 web 钩子可能不安全",
-
-            "Which events would you like to trigger this webhook?": "您希望哪些事件触发此 Web 钩子？",
-                "Just the": "仅",
-                "push": "推送",
-                "event.": "事件。",
-                "Send me": "发送给我",
-                "everything": "所有",
-                "Let me select individual events.": "让我选择单个事件。",
-                    "Branch or tag creation": "分支或标签创建",
-                        "Branch or tag created.": "分支或标签的创建。",
-                    "Branch or tag deletion": "分支或标签删除",
-                        "Branch or tag deleted.": "分支或标签的删除。",
-                    "Branch protection rules": "分支保护规则",
-                        "Branch protection rule created, deleted or edited.": "分支保护规则的创建、删除或编辑。",
-                    "Check runs": "检查运行",
-                        "Check run is created, requested, rerequested, or completed.": "检查运行的创建、请求、重新请求或完成。",
-                    "Check suites": "检查套件",
-                        "Check suite is requested, rerequested, or completed.": "检查套件的请求、重新请求或已完成。",
-                    "Code scanning alerts": "代码扫描警报",
-                        "Code Scanning alert created, fixed in branch, or closed": "代码扫描警报的创建、在分支中的修复或关闭",
-                    "Collaborator add, remove, or changed": "协作者的添加、删除或更改",
-                        "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
-                    "Commit comments": "提交评论",
-                        "Commit or diff commented on.": "提交或差异评论。",
-                    "Deploy keys": "部署密钥",
-                        "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
-                    "Deployment statuses": "部署状态",
-                        "Deployment status updated from the API.": "从 API 更新的部署状态。",
-                    "Deployments": "部署",
-                        "Repository was deployed or a deployment was deleted.": "仓库的部署或删除部署。",
-                    "Discussion comments": "讨论评论",
-                        "Discussion comment created, edited, or deleted.": "讨论评论的创建、编辑或删除。",
-                    // "Discussion": "讨论",
-                        "Discussion created, edited, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "讨论的创建、编辑、固定、取消固定、锁定、解锁、转移、回答、未回答、标记、未标记、更改其类别或删除。",
-                    "Forks": "复刻",
-                        "Repository forked.": "仓库复刻。",
-                    "Issue comments": "发表评论",
-                        "Issue comment created, edited, or deleted.": "议题评论的创建、编辑或删除。",
-                    // "Issue": "议题",
-                        "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "议题的打开、编辑、删除、转移、钉住、取消钉住、关闭、重新打开、分配、未分配、标记、未标记、密闭、去密闭、锁定或解锁。",
-                    "Labels": "标签",
-                        "Label created, edited or deleted.": "标签的创建、编辑或删除。",
-                    "Memberships": "团队成员", // 组织设置
-                        "Team membership added or removed.": "添加或删除团队成员。",
-                    "Meta": "元数据",
-                        "This particular hook is deleted.": "这个特定的钩子被删除。",
-                    "Milestones": "里程碑",
-                    "Milestone created, closed, opened, edited, or deleted.": "里程碑的创建、关闭、打开、编辑或删除。",
-                    "Org blocks": "组织黑名单", // 组织设置
-                        "A user has been blocked or unblocked.": "用户拉黑或解除拉黑。",
-                    "Organizations": "组织", // 组织设置
-                        "Organization deleted, renamed, member invited, member added, or member removed.": "组织被删除、重命名、邀请成员、添加成员或删除成员。",
-                    // "Packages": "软件包",
-                        "GitHub Packages published or updated in a repository.": "在仓库中 GitHub 软件包的发布或更新 。",
-                    "Page builds": "页面构建",
-                        "Pages site built.": "页面站点建成。",
-                    "Project cards": "项目卡",
-                        "Project card created, updated, or deleted.": "项目卡的创建、更新或删除。",
-                    "Project columns": "项目栏目",
-                        "Project column created, updated, moved or deleted.": "项目列目的创建、更新、移动或删除。",
-                    // "": "项目",
-                        "Project created, updated, or deleted.": "项目的创建、更新或删除。",
-                    "Projects v2 items": "项目项 v2",
-                        "Project item created, updated, or deleted. This is a projects Beta feature. Feedback is welcome in": "创建、更新或删除项目项。这是一个项目 Beta 功能。欢迎反馈",
-                        "this discussion": "这个讨论",
-                    "Pull request review comments": "拉取请求的审查评论",
-                        "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
-                    "Pull request review threads": "拉取请求的审查线程",
-                        "A pull request review thread was resolved or unresolved.": "拉取请求审查线程的解决或未解决。",
-                    "Pull request reviews": "拉取请求审查",
-                        "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或忽略。",
-                    // "": "拉取请求",
-                        "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
-                    "Pushes": "推送",
-                        "Git push to a repository.": "Git 推送到仓库。",
-                    "Registry packages": "注册软件包",
-                        "Registry package published or updated in a repository.": "注册软件包的发布或更新。",
-                    "Releases": "发行版",
-                        "Release created, edited, published, unpublished, or deleted.": "发行版的创建、编辑、发布、取消发布或删除。",
-                    // "": "仓库",
-                        "Repository created, deleted, archived, unarchived, publicized, privatized, edited, renamed, or transferred.": "仓库的创建、删除、存档、取消存档、公开、私有化、编辑、重命名或转让。",
-                    "Repository imports": "仓库导入",
-                        "Repository import succeeded, failed, or cancelled.": "仓库导入的成功、失败或取消。",
-                    "Repository vulnerability alerts": "仓库漏洞警报",
-                        "Dependabot alert (aka dependency vulnerability alert) created, resolved, or dismissed on a repository.": "Dependabot 警报（又名依赖漏洞警报）在仓库上的创建、解决或解除。",
-                    "Secret scanning alert locations": "密钥扫描警报位置",
-                        "Secrets scanning alert location created": "密钥扫描警报位置的创建",
-                    "Secret scanning alerts": "密钥扫描警报",
-                        "Secrets scanning alert created, resolved, or reopened": "密钥扫描警报的创建、解决或重新打开",
-                    "Security and analyses": "安全和分析",
-                    "Code security and analysis features enabled or disabled for a repository.": "为仓库启用或禁用的代码安全和分析功能。",
-                    // "": "星标",
-                        "A star is created or deleted from a repository.": "从仓库中创建或删除星标。",
-                    "Statuses": "状态",
-                        "Commit status updated from the API.": "从 API 更新的提交状态。",
-                    "Team adds": "团队添加",
-                        "Team added or modified on a repository.": "在仓库上添加或修改的团队。",
-                    "Teams": "团队",  // 组织设置
-                        "Team is created, deleted, edited, or added to/removed from a repository.": "团队被创建、删除、编辑或添加到仓库/从仓库中删除。",
-                    "Visibility changes": "可见性变化",
-                        "Repository changes from private to public.": "仓库从私有更改为公共。",
-                    "Watches": "关注",
-                        "User stars a repository.": "用户给一个仓库加星标。",
-                    "Wiki": "",
-                        "Wiki page updated.": "Wiki 页面的更新。",
-                    "Workflow jobs": "工作流程的工作",
-                        "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
-                    "Workflow runs": "工作流程的运行",
-                        "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
-                "Active": "激活",
-                "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
-
-            // 顶部提醒
-            "Okay, that hook was successfully created. We sent a ping payload to test it out! Read more about it at https://docs.github.com/webhooks/#ping-event.": "好的，这个钩子已经成功创建。我们发送了一个 ping 负载来测试它! 阅读更多关于它的信息，请访问 https://docs.github.com/webhooks/#ping-event。",
-
-        // 管理 钩子 /<user-name>/<repo-name>/settings/hooks/<id>
-            "Manage webhook": "管理 Web 钩子",
-            "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此密钥，则可以更改它，但请注意，使用此密钥的任何集成都需要更新。 —",
-            "Change Secret": "更改密钥",
-            "Update webhook": "更新 Web 钩子",
-            // 顶部提醒
-                "Okay, the hook was successfully updated.": "好的，Web 钩子已经成功更新。",
-            "Delete webhook": "删除 Web 钩子",
-
-        //  /<user-name>/<repo-name>/settings/hooks/<id>/deliveries
-            "Recent Deliveries": "最近交付",
-                "redelivery": "再交付",
-            "Request": "请求",
-            "Response": "应答",
-            "Redeliver": "重新交付",
-                "Redeliver payload?": "重新交付有效负载？",
-                "The payload will be delivered to": "该有效负载将被发送到",
-                "using the current webhook configuration.": "使用当前的 Web 钩子 配置。",
-                "Yes, redeliver this payload": "是的，重新发送此有效负载",
-
-            // [/Completed in (\d+) seconds./, "在 (\d+) 秒内完成。"],
+        ...I18N.zh["repository/settings/hooks"]["static"],
 
     },
     "regexp": [ // 正则翻译
@@ -12579,51 +12325,6 @@ I18N.zh["orgs/settings/discussions"] = { // 组织设置 - 讨论
             // 提醒
                 "Organization discussions has been set up!": "组织讨论已经建立！",
                 "View organization discussions": "查看组织讨论",
-    },
-    "regexp": [ // 正则翻译
-    ],
-};
-
-I18N.zh["orgs/settings/packages"] = { // 组织设置 - 软件包
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // Packages 软件包 /organizations/<org-login>/settings/packages
-            "Packages permissions": "软件包权限",
-            "Package Creation": "包的创建",
-            "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
-            "Public": "公共",
-                "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
-            "Private": "私有",
-                "Members will be able to create private packages, visible to organization members with permission.": "成员将能够创建私有包，对具有权限的组织成员可见。",
-            "Internal": "内部",
-                "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
-
-            "Deleted Packages": "删除软件包",
-            "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。",
-            "Search deleted packages": "搜索已删除的软件包",
-
-    },
-    "regexp": [ // 正则翻译
-        [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
-    ],
-};
-
-I18N.zh["orgs/settings/pages"] = { // 组织设置 - GitHub Pages
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // 组织 GitHub Pages /organizations/<org-login>/settings/pages 同个人设置 GitHub Pages https://github.com/settings/pages
-            "Verified domains": "经验证的域名",
-            "Add a domain": "添加域名",
-            "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
-            "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
-
-        // 组织 GitHub Pages - 添加域名 /organizations/<org-login>/settings/pages_verified_domains/new 同个人设置 GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
-            "Add a verified domain": "经验证的域名",
-            "What domain would you like to add?": "您想添加什么域名？",
-            "Add domain": "添加域名",
-
     },
     "regexp": [ // 正则翻译
     ],
@@ -13098,6 +12799,8 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // Audit log 审计日志 /organizations/<org-login>/settings/audit-log
+            "Events": "活动",
+            "Source IP disclosure": "源 IP 泄露",
             "Loading audit log entries…": "正在加载日志条目…",
             "Filters": "筛选",
                 "Filter audit logs": "筛选审计日志",
@@ -13126,11 +12829,17 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
 
             "Newer": "新的",
             "Older": "旧的",
+
+        // 源IP泄露 /organizations/<org-login>/audit-log/ip_disclosure
+            "Disclose actor IP addresses in audit logs": "在审计日志中披露行为人 IP 地址",
+            "Enable source IP disclosure": "启用源 IP 泄露",
+            "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "启用此功能将允许您查看组织审计日志事件中当前成员的 IP 地址。由于此功能会自动公开用户的 IP 地址，因此您应该与法律团队一起审核此更改，以确定是否需要任何用户通知。当在企业级别启用时，它将自动为企业拥有的所有组织启用，反之则不然。",
     },
     "regexp": [ // 正则翻译
         [/Found (\d+) events?/, "找到 $1 个事件"],
     ],
 };
+I18N.zh["orgs/audit-log/ip_disclosure"] = I18N.zh["orgs/settings/audit-log"];
 
 I18N.zh["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓库
     "static": { // 静态翻译
