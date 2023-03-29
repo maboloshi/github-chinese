@@ -3217,9 +3217,12 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
             "Device Flow documentation": "设备流程文档",
             "Post installation": "安装完成后",
             "Setup URL (optional)": "设置网址 (可选)",
-            "Users will be redirected to this URL after installing your GitHub App to complete additional setup.": "用户在安装完 GitHub 应用后，会被重定向到这个网址，以完成额外的设置。",
+                "Users will be redirected to this URL after installing your GitHub App to complete additional setup.": "用户在安装完 GitHub 应用后，会被重定向到这个网址，以完成额外的设置。",
+                "Unavailable when requesting OAuth during installation.": "安装过程中请求 OAuth 时不可用。",
+                "Users will be redirected to the 'User authorization callback URL' to complete additional setup.": "用户将被重定向到 “用户授权回调网址” 以完成其他设置。",
             "Redirect on update": "更新时重定向",
-            "Redirect users to the 'Setup URL' after installations are updated (E.g. repositories added/removed).": "在安装后更新时将用户重定向到 “设置网址”（例如: 添加/删除仓库）。",
+                "Redirect users to the 'Setup URL' after installations are updated (E.g. repositories added/removed).": "在安装后更新时将用户重定向到 “设置网址”（例如: 添加/删除仓库）。",
+                "Redirect users to the 'User authorization callback URL' after installations are updated (E.g repositories added/removed).": "在安装后更新时将用户重定向到 “用户授权回调网址”（例如: 添加/删除仓库）。",
             "Webhook": "Web 钩子",
             "Active": "激活",
             "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
@@ -3293,12 +3296,16 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
                         "Manage classic projects within a repository.": "管理仓库中的经典项目。",
                     "Pull requests": "拉取请求",
                         "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
+                    "Repository announcement banners": "仓库公告横幅",
+                        "View and modify announcement banners for a repository.": "查看和修改仓库的公告横幅。",
                     "Secret scanning alerts": "隐私扫描警报",
                         "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
                     "Secrets": "隐私",
                         "Manage Actions repository secrets.": "管理操作仓库隐私。",
                     "Single file": "单个文件",
                         "Manage just a single file.": "只管理单个文件。",
+                    "Variables": "变量",
+                        "Manage Actions repository variables.": "管理操作仓库变量。",
                     "Webhooks": "Web 钩子",
                         "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
                     "Workflows": "工作流程",
@@ -3311,12 +3318,14 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
-                    "Custom roles": "自定义角色",
-                        "Create, edit, delete and list custom organization and repository roles.": "创建、编辑、删除和列出自定义组织和仓库角色。",
+                    "Custom repository roles": "自定义仓库角色",
+                        "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
                         "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
                     "Members": "成员",
                         "Organization members and teams.": "组织成员和团队。",
+                    "Organization announcement banners": "组织公告横幅",
+                        "View and modify announcement banners for an organization.": "查看并修改组织的公告横幅。",
                     "Organization codespaces": "组织代码空间",
                         "Manage Codespaces for an organization.": "管理组织的代码空间。",
                     "Organization codespaces secrets": "组织代码空间机密",
@@ -3335,6 +3344,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
                         "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
                     "Team discussions": "团队讨论",
                         "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
+                    // 变量
+                        "Manage Actions organization variables.": "管理操作组织变量。",
                     // Web 钩子
                         "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
 
@@ -3458,6 +3469,9 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 
                 "Make sure to copy your personal access token now as you will not be able to see this again.": "请务必立即复制您的个人访问令牌，因为您将无法再次看到它。",
                 "Loading expiration ...": "载入有效期 ...",
+                "This token has expired.": "此令牌已过期。",
+                    "To set a new expiration date, you must regenerate the token.": "要设置新的有效期，您必须重新生成令牌。",
+
             // 顶部提醒
                 "Deleted personal access token": "已删除个人访问令牌",
 
@@ -3494,11 +3508,12 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "New fine-grained personal access token": "新建精细化个人访问令牌",
             "Create a fine-grained, repository-scoped token suitable for personal API use and for using Git over HTTPS.": "创建精细化的、仓库域的令牌，适合个人 API 使用和通过 HTTPS 使用 Git。",
             "Token name": "令牌名称",
-                "A unique name for this token. May be visible to resource owners.": "此令牌的唯一名称。可能对资源所有者可见。",
+                "A unique name for this token. May be visible to resource owners or users with possession of the token.": "此令牌的唯一名称。可能对资源所有者或持有该令牌的用户可见。",
                 "Name can't be blank": "名称不能为空",
             "Description": "描述",
             "What is this token for?": "这个令牌是用来做什么的？",
             "Resource owner": "资源所有者",
+            "Authorizing...": "授权中...",
 
             "Custom expiration can't be blank. Please choose a date.": "自定义过期时间不能为空。请选择日期。",
 
@@ -3514,20 +3529,20 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                     "Search for a repository": "搜索仓库",
                     // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
 
-                // 权限
-                "Permissions": "权限",
-                    "Read our": "阅读我们的",
-                    "permissions documentation": "权限文档",
-                    "for information about specific permissions.": "以了解有关具体权限的信息。",
+            // 权限
+            "Permissions": "权限",
+                "Read our": "阅读我们的",
+                "permissions documentation": "权限文档",
+                "for information about specific permissions.": "以了解有关具体权限的信息。",
 
-                    "Access:": "访问权限：",
-                    "Select an access level": "选择访问级别",
-                    "No access": "禁止访问",
-                    "Read-only": "只读",
-                    "Read and write": "读写",
+                "Access:": "访问权限：",
+                "Select an access level": "选择访问级别",
+                "No access": "禁止访问",
+                "Read-only": "只读",
+                "Read and write": "读写",
 
-                    "Selected": "项被选中",
-                    "mandatory": "强制",
+                "Selected": "项被选中",
+                "mandatory": "强制",
 
                 "Repository permissions": "仓库权限",
                     "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
@@ -3576,12 +3591,16 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Manage classic projects within a repository.": "管理仓库中的经典项目。",
                     "Pull requests": "拉取请求",
                         "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
+                    "Repository announcement banners": "仓库公告横幅",
+                        "View and modify announcement banners for a repository.": "查看和修改仓库的公告横幅。",
                     "Secret scanning alerts": "隐私扫描警报",
                         "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
                     "Secrets": "隐私",
                         "Manage Actions repository secrets.": "管理操作仓库隐私。",
-                    "Single file": "单个文件",
-                        "Manage just a single file.": "只管理单个文件。",
+                    // "Single file": "单个文件",
+                    //     "Manage just a single file.": "只管理单个文件。",
+                    "Variables": "变量",
+                        "Manage Actions repository variables.": "管理操作仓库变量。",
                     "Webhooks": "Web 钩子",
                         "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
                     "Workflows": "工作流程",
@@ -3618,22 +3637,73 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                     "Watching": "关注",
                         "List and change repositories a user is subscribed to.": "列出和更改用户订阅的仓库。",
 
-                // 概述
-                    // [/(\d+) permissions for none of your repositories/, ""],
-                    // [/(\d+) Account permissions/, "$1 项帐户权限"],
-                    "permission": "项权限",
-                    "s": " ",
-                    "for": " ",
-                    "none": "无",
-                    "all": "所有",
-                    "of your repositories": "您的仓库",
-                    "Account permission": "项帐户权限",
-                    "Access: Read-only": "访问权限：只读",
-                    "Access: Read and write": "访问权限：读写",
+                "Organization permissions": "组织权限",
+                    "Organization permissions permit access to organization related resources.": "组织权限允许访问组织相关资源。",
+
+                    // 管理
+                        "Manage access to an organization.": "管理对组织的访问。",
+                    "Blocking users": "拉黑用户",
+                        "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom repository roles": "自定义仓库角色",
+                        "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
+                    "Events": "活动",
+                        "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
+                    "Members": "成员",
+                        "Organization members and teams.": "组织成员和团队。",
+                    "Organization announcement banners": "组织公告横幅",
+                        "View and modify announcement banners for an organization.": "查看并修改组织的公告横幅。",
+                    "Organization codespaces": "组织代码空间",
+                        "Manage Codespaces for an organization.": "管理组织的代码空间。",
+                    "Organization codespaces secrets": "组织代码空间机密",
+                        "Manage Codespaces Secrets for an organization.": "管理组织的代码空间机密。",
+                    "Organization codespaces settings": "组织代码空间设置",
+                        "Manage Codespaces settings for an organization.": "管理组织的代码空间设置。",
+                    "Organization dependabot secrets": "组织 Dependabot 机密",
+                        "Manage Dependabot organization secrets.": "管理 Dependabot 组织的机密。",
+                    "Plan": "计划",
+                        "View an organization's plan.": "查看组织的计划。",
+                    // 项目
+                        "Manage projects for an organization.": "管理组织的项目。",
+                    // 隐私
+                        "Manage Actions organization secrets.": "管理操作组织隐私",
+                    "Self-hosted runners": "自托管运行器",
+                        "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
+                    "Team discussions": "团队讨论",
+                        "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
+                    // 变量
+                        "Manage Actions organization variables.": "管理操作组织变量。",
+                    // Web 钩子
+                        "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
+
+            // 概述
+                // [/(\d+) permissions for none of your repositories/, ""],
+                "permission": "项权限",
+                "Organization permission": "项组织权限",
+                "s": " ",
+                "for": " ",
+                "none": "无",
+                "all": "所有",
+                "of your repositories": "您的仓库",
+                "Account permission": "项帐户权限",
 
                 "This token will expire": "此令牌将过期：",
                 "on an unselected custom date.": "未选择的自定义日期。",
                 "This token will be ready for use immediately.": "该令牌将即可可用。",
+
+        // https://github.com/settings/personal-access-tokens/<id>
+            "No description": "暂无描述",
+            "Created": "创建于",
+            "Access on": "访问:",
+            "Select the repositories this token can access. Personal access tokens can always read from all public repositories on GitHub.com": "选择此令牌可以访问的仓库。个人访问令牌始终可以读取 GitHub.com 上所有公共仓库中的内容。",
+            "This token does not have access to any repositories.": "此令牌无权访问任何仓库。",
+            "User permissions": "用户权限",
+            "This token does not have any repository permissions.": "此令牌没有任何仓库权限。",
+
+            // 顶部提醒
+                "Your personal access token has been updated": "您的个人访问令牌已更新",
+
+        // 重新生成精细化个人访问令牌 https://github.com/settings/personal-access-tokens/<id>/regenerate
+            "Regenerate fine-grained personal access token": "重新生成精细化个人访问令牌",
 
         // 创建新个人访问令牌 https://github.com/settings/tokens/new
             "New personal access token (classic)": "新建个人访问令牌（经典）",
@@ -3734,6 +3804,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
+        [/Access:/, "访问权限:"],
     ],
 };
 I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
@@ -3951,6 +4022,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 "Branch": "分支",
                 "Branches": "分支",
                 "Tags": "标签",
+
+            "Compare & pull request": "比较 & 拉取请求",
 
     },
     "regexp": [ // 正则翻译
@@ -5032,6 +5105,31 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
             ...I18N.zh["repository/labels"]["static"],
+
+        // 添加/编辑议题模板 /<user-name>/<repo-name>/issues/templates/edit
+            "Propose changes": "提出更改",
+            "Add template:": "添加模板：",
+            "select": "选择",
+            "Bug report": "错误报告",
+                "Standard bug report template": "标准错误报告模板",
+                "Create a report to help us improve": "创建报告以帮助我们改进",
+            "Feature request": "功能要求",
+                "Standard feature request template": "标准功能请求模板",
+                "Suggest an idea for this project": "为这个项目提出想法",
+            "Custom template": "自定义模板",
+                "Blank template for other issue types": "其他议题类型的空白模板",
+                "Custom issue template": "自定义议题模板",
+                "Describe this issue template's purpose here.": "在此处描述此议题模板的用途。",
+
+            "Preview and edit": "预览和编辑",
+            "Close preview": "关闭预览",
+
+            "Template name": "模板名称",
+            "This file lives in": "该文件位于",
+            "Template content": "模板内容",
+            "Optional additional items": "可选附加项目",
+            "Issue default title": "议题默认标题",
+            "This will be suggested as the issue title": "建议作为议题标题",
 
     },
     "regexp": [ // 正则翻译
@@ -8078,9 +8176,16 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N.zh["repository-insights-menu"]["static"],
 
         //复刻 /<user-name>/<repo-name>/forks
+            "Let us know how this feature can be improved. You can also": "请告诉我们如何改进此功能。您也可以",
+            "switch back to the tree view": "切换回树形视图",
+            "at any time.": "在任何时候。",
+            "Send feedback": "发送反馈",
+
             "Period:": "周期：",
                 "Filter by period": "筛选周期",
+                "Any repository that has not been created or updated during this period will be excluded.": "在此期间未被创建或更新的任何仓库将被排除在外。",
             "Repository type:": "仓库类型：",
+                "Filter by repository type": "筛选仓库类型",
                 "Active": "活跃",
                     "Repositories with push activity": "有推送活动的仓库",
                 "Inactive": "不活跃",
@@ -8088,7 +8193,7 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
                 "Network": "网络",
                     "Forks of other forks": "其他复刻的复刻",
                 "Archived": "存档",
-                    "Forks of other forks": "已存档的仓库",
+                    "Archived repositories": "已存档的仓库",
                 "Starred": "星标",
                     "Repositories with at least 1 star": "至少有 1 个星标的仓库",
             "Sort:": "排序：",
@@ -8788,25 +8893,10 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
                 "Read and write permissions": "读取和写入权限",
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
-                "Read repository contents permission": "只读权限",
-                    "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
+                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
-
-//     },
-//     "regexp": [ // 正则翻译
-//         [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
-//         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
-//         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
-//         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
-//     ],
-// };
-
-// // I18N.zh["repository/repository_actions_settings/runners"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/actions/runners"] = { // 仓库设置 - 操作/运行器 /<user-name>/<repo-name>/settings/actions/runners
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 运行器页面 /<user-name>/<repo-name>/settings/actions/runners
             "New self-hosted runner": "新建自托管运行器",
@@ -8815,16 +8905,6 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
             "There are no runners configured": "暂无设置运行器",
             "Learn more about using runners": "了解更多关于使用运行器的信息",
             "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
-//     },
-//     "regexp": [ // 正则翻译
-//     ],
-// };
-
-// // I18N.zh["repository/repository_actions_settings/show"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/actions/runners/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
             "/ Create self-hosted runner": "/ 创建自托管运行器",
@@ -8868,17 +8948,6 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                 "Delete webhook?": "删除 Web 钩子？",
                 "This action cannot be undone. Future events will no longer be delivered to this webhook": "此操作无法撤消。未来的事件将不再传递到此 Web 钩子",
                 "Yes, delete webhook": "是的，删除 Web 钩子",
-
-//     },
-//     "regexp": [ // 正则翻译
-//     ],
-// };
-
-// // I18N.zh["repository/repository_hooks/show"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/hooks"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 添加钩子 页面 /organizations/<org-login>/settings/hooks/new 同仓库添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
@@ -8929,6 +8998,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                         "Collaborator added to, removed from, or has changed permissions for a repository.": "协作者添加到仓库、从仓库中删除或更改了仓库的权限。",
                     "Commit comments": "提交评论",
                         "Commit or diff commented on.": "提交或差异评论。",
+                    "Dependabot alerts": "Dependabot 警报",
+                        "Dependabot alert created, dismissed, reopened, fixed, or reintroduced.": "Dependabot 警报创建、驳回、重开、修复或重新引入。",
                     "Deploy keys": "部署密钥",
                         "A deploy key is created or deleted from a repository.": "在仓库中部署密钥的创建或删除。",
                     "Deployment statuses": "部署状态",
@@ -8977,7 +9048,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                     "Pull request reviews": "拉取请求审查",
                         "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或忽略。",
                     // "": "拉取请求",
-                        "Pull request opened, closed, reopened, edited, assigned, unassigned, review requested, review request removed, labeled, unlabeled, synchronized, ready for review, converted to draft, locked, unlocked, auto merge enabled, auto merge disabled, milestoned, or demilestoned.": "拉取请求的打开、关闭、重新打开、编辑、分配、未分配、审查请求、审查请求的删除、标记、未标记、同步、准备审查、转换为草稿、锁定、解锁、启用自动合并、禁用自动合并、里程碑或取消里程碑。",
+                        "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "拉取请求的分配、自动合并禁用、自动合并启用、关闭、转换为草稿、删除、撤销排队、编辑、排队、标记、锁定、里程碑、打开、准备好审查、重新打开、删除审查请求、请求审查、同步、撤销分配、撤销标记或解锁。",
                     "Pushes": "推送",
                         "Git push to a repository.": "Git 推送到仓库。",
                     "Registry packages": "注册软件包",
@@ -9011,7 +9082,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
                     "Wiki": "",
                         "Wiki page updated.": "Wiki 页面的更新。",
                     "Workflow jobs": "工作流程的工作",
-                        "Workflow job queued, requested or completed on a repository.": "在仓库上工作流程的排队、请求或完成。",
+                        "Workflow job queued, waiting, in progress, or completed on a repository.": "在仓库上的工作流程的排队、等待、正在进行或完成。",
                     "Workflow runs": "工作流程的运行",
                         "Workflow run requested or completed on a repository.": "在仓库上的工作流程的请求或完成。",
                 "Active": "激活",
@@ -9335,8 +9406,11 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Dependabot security updates": "Dependabot 安全更新",
                 "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
             "Dependabot version updates": "Dependabot 版本更新",
+                "Enable Dependabot version updates": "启用 Dependabot 版本更新",
                 "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
                 "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
+                "Configure": "配置",
+                "― Create a config file": "― 创建配置文件",
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
@@ -9870,6 +9944,27 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
         // 设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
             ...I18N.zh["settings/two_factor_authentication/setup/intro"]["static"],
+
+        // 定期验证双重身份验证（2FA）设置
+            "Verify your two-factor authentication (2FA) settings": "验证您的双重身份验证（2FA）设置",
+            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双重身份验证凭据进行一次性验证。",
+            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双重身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双重身份验证。",
+            "Verify 2FA now": "现在验证双重身份验证",
+            "You can choose to": "您可以选择",
+            "skip 2FA verification": "跳过双重身份验证",
+            "at this moment, we'll remind you again tomorrow.": "此刻，我们会在明天再次提醒您。",
+
+        // https://github.com/settings/two_factor_checkup?
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
+            "Verify your 2FA setup tomorrow": "明天验证您的双重身份验证设置",
+            "Reconfigure 2FA on this account": "重新配置双重身份验证",
+
+        // https://github.com/settings/two_factor_checkup
+            "2FA verification successful!": "双重身份验证成功！",
+            "Keep your recovery codes safe and easy to access": "请将您的恢复码保管好以便于访问。",
+            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二个身份验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
+            "Not sure where you saved them?": "您不确定把它们保存在哪里了吗？",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) devices?/, "$1 设备"],
@@ -11208,10 +11303,10 @@ I18N.zh["orgs"] = { // 组织页面
                     "Member": "成员",
 
                 // 公共视角
-                    "You are viewing the README and repositories as a public user.": "您正在以公共用户的身份查看自述文件和仓库。",
+                    "You are viewing the README and pinned repositories as a public user.": "您正在以公共用户的身份查看自述文件和置顶仓库。",
 
                 // 组织成员视角
-                    // [/You are viewing the README and repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和仓库。"],
+                    // [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
 
                 "You can": "您可以",
                 "pin repositories": "置顶仓库",
@@ -11225,7 +11320,9 @@ I18N.zh["orgs"] = { // 组织页面
 
                 "Top discussions this past month": "上个月的热门讨论",
                     "Nothing to see here yet!": "这里还没什么可看的!",
+                    "Discussions are for sharing announcements, creating conversation in your community, answering questions, and more.": "讨论是为了分享公告，在你的社区创建对话，回答问题，以及更多。",
                     "Start a new discussion": "开始新的讨论",
+                    "View all discussions": "查看全部讨论", // 组织讨论
 
                 // "People": "成员",
                     "This organization has no public members. You must be a member to see who’s a part of this organization.": "该组织没有公共成员。您必须是成员才能查看谁是该组织的成员。",
@@ -11295,10 +11392,12 @@ I18N.zh["orgs"] = { // 组织页面
                 "your dashboard feed": "您的仪表板的信息上",
                 "OK, got it!": "好的，知道了！",
 
+            "This organization has no public repositories.": "该组织没有公共仓库。",
+
     },
     "regexp": [ // 正则翻译
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
-        [/You are viewing the README and repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和仓库。"],
+        [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
     ],
 };
@@ -12137,6 +12236,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Selected repositories": "选定的仓库",
                     "Actions can only be run by specifically selected repositories": "操作只能由特定选择的仓库运行",
                     // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+                    "selected repository": "个选定的仓库",
+                    "selected repositories": "个选定的仓库",
                     // 对话框
                         "Select the organization repositories that may use Actions.": "选择可以使用操作的组织仓库。",
                         "Filter repositories": "筛选仓库",
@@ -12168,8 +12269,10 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Entire organisation or repository examples:": "整个组织或仓库的示例：",
 
             "Artifact and log retention": "工件和日志保留",
-                "This is the default duration that repositories will retain all artifacts and logs.": "这是仓库保留所有工件和日志的默认期限。",
+                "Choose the default repository settings for artifacts and logs.": "选择工件和日志的默认仓库设置。",
                 "days": "天",
+                "You can set a maximum limit of": "您最多可以设置为",
+                "days.": "天。",
 
             "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
                 "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
@@ -12198,11 +12301,17 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
                     "Read and write permissions": "读取和写入权限",
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
-                    "Read repository contents permission": "只读权限",
-                        "Workflows have read permissions in the repository for the contents scope only.": "工作流程在仓库中对所有作用域具有只读的权限。",
+                    "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
+                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 是否可以创建拉取请求或提交批准的拉取请求审查。",
+
+            "Required workflows": "所需的工作流程",
+                "Add workflow": "添加工作流",
+                "Set required workflows to run in your organization’s repositories. These workflows will run alongside the repository workflows and branch merging will be blocked until the required checks succeed.": "设置所需的工作流程，在您的组织的仓库中运行。这些工作流程将与仓库的工作流程一起运行，分支合并将被阻止，直到所需的检查成功。",
+                "Learn more about required workflows.": "了解更多关于所需工作流程的信息。",
+                "There are no required workflows in this organization.": "此组织中尚无所需的工作流程。",
 
         // 运行器页面 /organizations/<org-login>/settings/actions/runners
             "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows. Runners added to this organization can be used to process jobs in multiple repositories in your organization.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。添加到该组织的运行器可以用来处理您的组织中的多个仓库的工作。",
@@ -12886,26 +12995,37 @@ I18N.zh["orgs/settings/personal-access-token"] = { // 组织设置 - 个人访�
 
             // "Repository": "仓库",
                 "Filter by repository": "按仓库筛选",
+                "Filter repositories": "筛选仓库",
 
             "Permissions": "权限",
                 "Filter by permission": "按权限筛选",
                 "Filter permissions": "筛选权限",
                     "read": "只读",
+                    "write": "可写",
                     "Administration": "管理员",
+                    "Code scanning alerts": "代码扫描警报",
                     "Codespaces lifecycle admin": "代码空间生命周期管理员",
                     "Codespaces metadata": "代码空间元数据",
                     "Codespaces secrets": "代码空间秘密",
                     "Commit statuses": "提交状态",
                     "Contents": "内容",
+                    "Dependabot alerts": "Dependabot 警报",
+                    "Dependabot secrets": "Dependabot 机密",
+                    "Deployments": "部署",
                     "Environments": "环境",
                     "Merge queues": "合并列队",
                     "Metadata": "元数据",
+                    "Repository announcement banners": "仓库公告横幅",
+                    "Secret scanning alerts": "机密扫描警报",
+                    "Secrets": "机密",
+                    "Variables": "变量",
                     "Workflows": "工作流程",
                     "Organization": "组织",
                         "Blocking users": "拉黑用户",
-                        "Custom roles": "自定义角色",
+                        "Custom repository roles": "自定义仓库角色",
                         "Events": "活动",
                         "Members": "成员",
+                        "Organization announcement banners": "组织公告横幅",
                         "Organization codespaces": "组织代码空间",
                         "Organization codespaces secrets": "组织代码空间机密",
                         "Organization codespaces settings": "组织代码空间设置",

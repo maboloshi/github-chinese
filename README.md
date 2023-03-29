@@ -19,16 +19,21 @@
 - 保留、完善正则功能
 - 除基础组件中文化外，还支持对 “项目描述” 进行人机翻译 (参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin))
 
-## 💽 安装
+## :globe_with_meridians: 浏览器与脚本管理器
 
-1. 请先安装用户脚本管理器如: [Tampermonkey][Tampermonkey], [violentmonkey][violentmonkey] 等，支持的浏览器：Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
+浏览器                              | 脚本管理器
+:---------------------------------: | :---------: 
+Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[violentmonkey][violentmonkey]
+Safari 浏览器                       | [Macaque][Macaque]
+Firefox 浏览器                      | 未测试
+
+## 💽 安装
+1. 请先安装用户脚本管理器。
 1. 然后再点击链接之一，安装脚本即可。
     - [GitHub 中文化插件 - github 托管【开发版】（相对及时更新）][main.user.js]
         > 注意: 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
     - [GitHub 中文化插件 - greasyfork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
-
-> 测试平台: Win10 + Chrome + Tampermonkey, violentmonkey
 
 ## 📝 更新说明
 
@@ -179,6 +184,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 [Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
 [violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
+[Macaque]: https://macaque.app/ "猕猴"
 
 [main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
