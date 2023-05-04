@@ -77,14 +77,19 @@ I18N.conf = {
      * 洞察-->流量-->热门内容列表 capped-list-label
      * realease 页面 描述主体 markdown-body my-3
      * f4 my-3
+     * 仓库页 用户名/仓库名 标题 AppHeader-globalBar-start 新版全局导航
+     * 提交的用户名 commit-author
+     * 搜索页 搜索结果 search-match
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|AppHeader-globalBar-start|commit-author|search-match)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
      * name 列表页 仓库名
+     * author 仓库页 作者名称
+     * additionalName 个人主页 附加名称
      */
-    reIgnoreItemprop: /(name|description|text)/,
+    reIgnoreItemprop: /(name|author|description|text|additionalName)/,
 
     /**
      * 忽略区域的 特定元素id 正则
