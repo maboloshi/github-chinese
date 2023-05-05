@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|two_factor_authentication|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
@@ -77,14 +77,19 @@ I18N.conf = {
      * 洞察-->流量-->热门内容列表 capped-list-label
      * realease 页面 描述主体 markdown-body my-3
      * f4 my-3
+     * 仓库页 用户名/仓库名 标题 AppHeader-globalBar-start 新版全局导航
+     * 提交的用户名 commit-author
+     * 搜索页 搜索结果 search-match
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|AppHeader-globalBar-start|commit-author|search-match)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
      * name 列表页 仓库名
+     * author 仓库页 作者名称
+     * additionalName 个人主页 附加名称
      */
-    reIgnoreItemprop: /(name|description|text)/,
+    reIgnoreItemprop: /(name|author|description|text|additionalName)/,
 
     /**
      * 忽略区域的 特定元素id 正则
@@ -11143,6 +11148,59 @@ I18N.zh["explore"] = { // 探索页面
         [/([\d,]+) starred topics?/, "$1 个星标主题"],
         [/([\d,]+) starred repositories?/, "$1 个星标仓库"],
         [/There are ([\d,]+) public repositories? matching this topic/, "有 $1 个公共仓库与此主题相匹配"],
+    ],
+};
+
+I18N.zh["topics"] = { // 探索-->主题页面
+    "static": { // 静态翻译
+
+        // github.com/topics
+            "Explore": "探索",
+            "Topics": "主题",
+            "Trending": "热门",
+            "Collections": "收藏品",
+            "Events": "活动",
+            "GitHub Sponsors": "GitHub 赞助",
+            "Get email updates": "获取电子邮件更新",
+            "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+
+            "Browse popular topics on GitHub.": "浏览 GitHub 上的热门主题。",
+            "All featured topics": "所有主题",
+            "Popular topics": "热门主题",
+            "Unstar": "已加星标",
+            "Load more…": "载入更多…",
+            "Loading more…": "载入中…",
+
+        // github.com/topics/<某主题>
+            "Related Topics": "相关主题",
+            "Updated": "更新于",
+            "Sponsor": "赞助",
+
+            "Language:": "语言:",
+                "Filter by language": "按语言筛选",
+                "All": "所有",
+            "Sort:": "排序:",
+                "Sort options": "排序选项",
+                "Most stars": "最多标星",
+                "Fewest stars": "最少星标",
+                "Most forks": "最多复刻",
+                "Fewest forks": "最少复刻",
+                "Recently updated": "最近更新",
+                "Least recently updated": "最早更新",
+
+            "Lists": "清单",
+            "Create list": "创建清单",
+                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                "⭐️ Name this list": "⭐️ 清单名称",
+                "Write a description": "简单描述",
+                "Lists are currently in beta.": "清单目前处于测试阶段。",
+                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                "Creating...": "创建中...",
+
+    },
+    "regexp": [ // 正则翻译
+        [/followers?/, "个关注者"],
+        [/Here are ([\d,]+) public repositories? matching this topic.../, "有 $1 个公共仓库与此主题相匹配"],
     ],
 };
 
