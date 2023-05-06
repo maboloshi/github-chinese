@@ -108,13 +108,6 @@ I18N.conf = {
 
 I18N.zh = {};
 
-I18N.zh["selector"] = [ // 元素筛选器规则
-    ["a[aria-label='Pull requests you created']", "拉取请求"], // 顶部条 拉取请求
-    ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
-    ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
-    ["a[data-target='branch-filter.allFilter']", "所有分支"], // /branches/all
-];
-
 I18N.zh["title"] = { // 标题翻译
     "static": { // 静态翻译
         "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
@@ -916,6 +909,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             return count + ' ' + suffixKey[suffix] + '之前';
         }],
     ],
+    "selector": [ // 元素筛选器规则
+        ["a[aria-label='Pull requests you created']", "拉取请求"], // 顶部条 拉取请求
+    ],
 };
 
 I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
@@ -1401,6 +1397,9 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
     },
     "regexp": [ // 正则翻译
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
+    ],
+    "selector": [ // 元素筛选器规则
+        ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
     ],
 };
 
@@ -5994,6 +5993,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
         [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
     ],
+    "selector": [ // 元素筛选器规则
+        ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
+    ],
 };
 
 I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
@@ -7387,6 +7389,9 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
         [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
         [/(\d+) commits? behind ([^ ]+)/, "落后 $1 个提交于 $2"],
         [/(\d+) commits? ahead ([^ ]+)/, "领先 $1 个提交于 $2"],
+    ],
+    "selector": [ // 元素筛选器规则
+        ["a[data-target='branch-filter.allFilter']", "所有分支"],
     ],
 };
 
