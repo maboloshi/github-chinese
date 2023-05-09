@@ -7260,7 +7260,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                 "Are you sure you want to delete this branch?": "您确定要删除此分支吗？",
 
                 // 顶部提醒
-                // [/Branch main will be renamed to ([^ ]+) shortly./,"主分支将很快重命名为 $1"], //默认主分支默认 重命名成功
+                // [/Branch ([^ ]+) will be renamed to ([^ ]+) shortly./,"分支 $1 将很快重命名为 $2。"], //分支重命名成功
 
             "Your branches": "您的分支",
             "You haven’t pushed any branches to this repository.": "您没有推送任何分支到该仓库。",
@@ -7280,7 +7280,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
         [/Rename default/, "重命名分支"],
         [/Delete/, "删除分支"],
         [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："],
-        [/Branch main will be renamed to ([^ ]+) shortly./,"主分支将很快重命名为 $1"],
+        [/Branch ([^ ]+) will be renamed to ([^ ]+) shortly./,"分支 $1 将很快重命名为 $2。"], //分支重命名成功
         [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
         [/(\d+) commits? behind ([^ ]+)/, "落后 $1 个提交于 $2"],
         [/(\d+) commits? ahead ([^ ]+)/, "领先 $1 个提交于 $2"],
@@ -8342,6 +8342,50 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "Developer Certificate of Origin (DCO)": "开发者原产地证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
 
+            "Default branch": "默认分支",
+            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是仓库中的 “基础” 分支，所有的拉取请求和代码提交都是针对该分支进行的，除非您指定一个不同的分支。",
+            "Rename branch": "重命名分支",
+                // 重命名分支对话框
+                "Rename this branch": "重命名分支",
+                "Rename": "重命名",
+                "to:": "为：",
+                // [/is already the branch name./, "已经是分支的名称了。"],
+                // [/Your branch name will be/, "您的分支的名称将重命名为"],
+                "Most projects name the default branch": "大多数项目将默认分支名为",
+                "Renaming this branch:": "重命名此分支：",
+                    // 该分支存在来自其他分支的拉取请求时
+                        "Will update": "将更新",
+                        "pull request targeting this branch.": "条针对该分支的拉取请求。",
+                        "pull requests targeting this branch.": "条针对该分支的拉取请求。",
+                        "branch protection rule that explicitly targets": "条分支保护规则明确针对",
+
+                    // 该分支存在用于其他分支的拉取请求时
+                        "Will close": "将关闭",
+                        "open pull request for this branch.": "个该分支的拉取请求。",
+
+                    // 重命名 GitHub Pages 所在分支
+                        "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
+                            "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
+
+                    "Will not update your members' local environments.": "不会更新您成员的本地环境。",
+                "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
+                    "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
+                "Saving…": "保存中…",
+
+            "Switch to another branch": "切换到另一分支",
+                // 分支切换对话框
+                "Switch default branch to another branch": "将默认分支切换到另一分支",
+                // [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
+                "Update": "更新",
+                "Switch default branch": "切换默认分支",
+                "Filter branches": "筛选分支",
+                "default": "默认",
+                // 更新默认分支对话框
+                "Update default branch": "更新默认分支",
+                "Changing your default branch": "更改您的默认分支",
+                "can have unintended consequences that can affect new pull requests and clones.": "可能会产生意想不到的后果，影响新的拉取请求和克隆。",
+                "I understand, update the default branch.": "我明白了，依然更新默认分支",
+
             "Social Preview": "社交预览",
             // 关于私有库提醒
             "You can upload a social image, but it will not be visible publicly while": "您可以上传社交图片，但当",
@@ -8558,6 +8602,9 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
         [/To confirm, type \"([^ ]+)\" in the box below/, "要确认，请在下面的方框中输入 \"$1\""],
         [/Your repository \"([^ ]+)\" was successfully archived./, "您的仓库 “$1” 已成功存档。"], //仓库存档
         [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
+        [/is already the branch name./, "已经是分支的名称了。"],
+        [/Your branch name will be/, "您的分支的名称将重命名为"],
+        [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
     ],
 };
 
@@ -8699,49 +8746,6 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 分支管理页面 /<user-name>/<repo-name>/settings/branches====================================
-            "Default branch": "默认分支",
-            "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是仓库中的 “基础” 分支，所有的拉取请求和代码提交都是针对该分支进行的，除非您指定一个不同的分支。",
-            "Rename branch": "重命名分支",
-                // 重命名分支对话框
-                "Rename this branch": "重命名分支",
-                "Rename": "重命名",
-                "to:": "为：",
-                // [/is already the branch name./, "已经是分支的名称了。"],
-                // [/Your branch name will be/, "您的分支的名称将重命名为"],
-                "Most projects name the default branch": "大多数项目将默认分支名为",
-                "Renaming this branch:": "重命名此分支：",
-                    // 该分支存在来自其他分支的拉取请求时
-                        "Will update": "将更新",
-                        "pull request targeting this branch.": "条针对该分支的拉取请求。",
-                        "pull requests targeting this branch.": "条针对该分支的拉取请求。",
-                        "branch protection rule that explicitly targets": "条分支保护规则明确针对",
-
-                    // 该分支存在用于其他分支的拉取请求时
-                        "Will close": "将关闭",
-                        "open pull request for this branch.": "个该分支的拉取请求。",
-
-                    // 重命名 GitHub Pages 所在分支
-                        "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
-                            "Your current GitHub Pages site will become unpublished. A new commit on the renamed branch will publish the GitHub Pages site again.": "您当前的 GitHub Pages 站点将被取消发布。重命名分支上的新提交将再次发布 GitHub Pages 站点。",
-
-                    "Will not update your members' local environments.": "不会更新您成员的本地环境。",
-                "Renaming this branch will not update your members' local environments.": "重命名此分支不会更新您成员的本地环境。",
-                    "Your members will have to manually update their local environments. We'll let them know when they visit the repository, or you can share the following commands.": "您的成员将不得不手动更新他们的本地环境。我们会在他们访问仓库时通知他们，或者您可以共享以下命令。",
-                "Saving…": "保存中…",
-
-            "Switch to another branch": "切换到另一分支",
-                // 分支切换对话框
-                "Switch default branch to another branch": "将默认分支切换到另一分支",
-                // [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
-                "Update": "更新",
-                "Switch default branch": "切换默认分支",
-                "Filter branches": "筛选分支",
-                // 更新默认分支对话框
-                "Update default branch": "更新默认分支",
-                "Changing your default branch": "更改您的默认分支",
-                "can have unintended consequences that can affect new pull requests and clones.": "可能会产生意想不到的后果，影响新的拉取请求和克隆。",
-                "I understand, update the default branch.": "我明白了，依然更新默认分支",
-
             "Branch protection rules": "分支保护规则",
             "Add rule": "添加规则",
 
@@ -8775,9 +8779,6 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/is already the branch name./, "已经是分支的名称了。"],
-        [/Your branch name will be/, "您的分支的名称将重命名为"],
-        [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
         [/Currently applies to (\d+) branchs?/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
     ],
 };
