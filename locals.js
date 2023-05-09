@@ -3041,6 +3041,17 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                 "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。",
 
+            "Secret scanning": "机密扫描",
+                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+
+                // 对话框
+                "Disable secret scanning?": "禁用机密扫描？",
+                "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
+                "Disable secret scanning": "禁用机密扫描",
+                "Enable secret scanning for eligible repositories?": "启用符合条件的仓库的机密扫描？",
+                "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
+                "Enable for eligible repositories": "启用符合条件的仓库",
+
     },
     "regexp": [ // 正则翻译
         [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
@@ -12505,6 +12516,14 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+
+                // 对话框
+                "Disable secret scanning?": "禁用机密扫描？",
+                "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
+                "Disable secret scanning": "禁用机密扫描",
+                "Enable secret scanning for eligible repositories?": "启用适用仓库的机密扫描？",
+                "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
+                "Enable for eligible repositories": "启用符合条件的仓库",
 
             "Security managers": "安全管理员",
             "Grant a team permission to manage security alerts and settings across your organization. This team will also be granted read access to all repositories.": "授予团队管理整个组织的安全警报和设置的权限。该团队还将被授予对所有仓库的读取权限。",
