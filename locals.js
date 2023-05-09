@@ -5683,6 +5683,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
+                "Branch protection rules": "分支保护规则",
+                "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
             "Add rule": "添加规则",
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
@@ -8752,10 +8754,11 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
             "Define branch protection rules to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging. New to branch protection rules?": "定义分支保护规则，以禁止强制推送，防止分支被删除，并可选择要求在合并前进行状态检查。初次接触分支保护规则？",
 
             "No branch protection rules defined yet.": "尚未定义分支保护规则。",
-            // "You haven't protected any of your branches": "您没有保护任何分支",
-            // "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
-            // "Learn more about protected branches": "了解更多关于受保护分支的信息",
-            // "Add branch protection rule": "添加分支保护规则",
+
+            "You haven't protected any of your branches": "您没有保护任何分支",
+            "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
+            "Learn more about protected branches": "了解更多关于受保护分支的信息",
+            "Add branch protection rule": "添加分支保护规则",
 
             // 私有库 分支保护 未执行 提醒
             "Your protected branch rules won't be enforced on this private repository until you move to a GitHub Team or Enterprise organization account.": "您的受保护分支规则不会在这个私有仓库上执行，直到您迁移至 GitHub 团队或企业组织账户。",
@@ -8792,6 +8795,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
             "Branch protection rule": "分支保护规则",
 
             "Protect your most important branches": "保护您最重要的分支",
+                "Branch protection rules": "分支保护规则",
                 "define whether collaborators can delete or force push to the branch and set requirements for any pushes to the branch, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送到分支，并对任何推送到分支的内容设置要求，如通过状态检查或线性提交历史。",
                 "Your GitHub Free plan": "您的 GitHub 免费计划",
                 "can only enforce rules on its public repositories, like this one.": "只能对其公共仓库执行规则，例如这个。",
@@ -8830,6 +8834,8 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
                         "No deployment environments found": "尚无部署环境",
                         "Sorry, we couldn’t find any deployments for this repository.": "抱歉，我们找不到此仓库的任何部署。",
                         "Deployment environments found in this repository": "在此仓库中找到的部署环境",
+            "Lock branch": "锁定分支",
+                "Branch is read-only. Users cannot push to the branch.": "分支为只读。用户无法推送到该分支。",
             "Do not allow bypassing the above settings": "不允许绕过上述设置",
                 "The above settings will apply to administrators and custom roles with the \"bypass branch protections\" permission.": "上述设置将应用于具有 “绕过分支保护” 权限的管理员和自定义角色。",
             "Restrict who can push to matching branches": "限制谁可以推送到匹配的分支",
