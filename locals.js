@@ -12514,6 +12514,12 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                 // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
 
+            "Code scanning": "代码扫描",
+                "Identify vulnerabilities and errors in your code with": "检测代码中的漏洞和错误，使用",
+                ". Default CodeQL analysis will be set up on": "。默认的 CodeQL 分析将被设置为",
+                "eligible": "符合条件的",
+                "public repositories.": "公共仓库。",
+
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
 
