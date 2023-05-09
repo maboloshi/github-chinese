@@ -2793,7 +2793,7 @@ I18N.zh["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除的仓�
 
         // 删除的仓库 https://github.com/settings/deleted_repositories
             "Deleted repositories": "删除的仓库",
-            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that have no forks or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复没有复刻或没有被复刻的仓库。",
+            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复不是复刻或没有被复刻的仓库。",
 
             "These repositories were deleted, but can't be restored by you. Contact support if you want to restore them.": "这些仓库已被删除，但您无法恢复。如果您想恢复它们，请联系 GitHub 支持人员。",
 
