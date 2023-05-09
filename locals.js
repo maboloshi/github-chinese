@@ -2995,6 +2995,14 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
                 "Automatically enable for new public repositories": "为新公共仓库自动启用",
 
+                // 对话框
+                "Disable private vulnerability reporting": "禁用私下漏洞报告",
+                // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
+                "Enable by default for new public repositories": "默认启用新公共仓库",
+
+                "Enable private vulnerability reporting": "启用私下漏洞报告",
+                // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
+
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Automatically enable for new private repositories": "为新私有仓库自动启用",
@@ -3035,6 +3043,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
     },
     "regexp": [ // 正则翻译
+        [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
+        [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
     ],
 };
 
@@ -12446,6 +12456,14 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
                 "Automatically enable for new public repositories": "为新公共仓库自动启用",
 
+                // 对话框
+                "Disable private vulnerability reporting": "禁用私下漏洞报告",
+                // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
+                "Enable by default for new public repositories": "默认启用新公共仓库",
+
+                "Enable private vulnerability reporting": "启用私下漏洞报告",
+                // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
+
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Automatically enable for new private repositories": "为新私有仓库自动启用",
@@ -12495,6 +12513,8 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
     },
     "regexp": [ // 正则翻译
+        [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
+        [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
         [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
         [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
         [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
