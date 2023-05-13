@@ -12810,6 +12810,12 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
 
+                "Push protection": "推送保护",
+                    "Block commits that contain": "阻止提交，包含",
+                    "supported secrets": "受支持的秘密",
+                    "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
+                    "Add a resource link in the CLI and web UI when a commit is blocked": "当提交被阻止时，在 CLI 和 Web UI 中添加资源链接。",
+
                 // 对话框
                 "Disable secret scanning?": "禁用机密扫描？",
                 "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
