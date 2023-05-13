@@ -9120,6 +9120,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Verify": "验证",
                 "Verify": "验证",
                 "Verifying…": "验证中…",
+                "Your authentication code has been sent.": "您的验证码已发送。",
 
                 "Having problems?": "有问题吗？",
                 "Use GitHub Mobile": "使用 GitHub 移动应用验证",
@@ -10195,7 +10196,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // https://github.com/sessions/two-factor/mobile
             "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
             "We could not verify your identity": "我们无法核实您的身份",
-            "Retry": "重试",
+            "Retry": "请重试",
 
             "Unable to verify with GitHub Mobile?": "无法使用 GitHub Mobile 进行验证？",
                 "Enter two-factor authentication code": "输入双重身份验证码",
@@ -10314,13 +10315,32 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
         // 授权访问 修改个人及组织部分设置时需要 二次验证
             "Confirm access": "授权访问",
-            //"Password": "密码",
-            //"Forgot password?": "忘记密码？",
-            "When your phone is ready, click the button below.": "手机准备就绪后，单击下面的按钮。",
-            "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+            "Authentication code": "验证码",
+                "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+            "Verify": "验证",
+            "Verify": "验证",
+            "Verifying…": "验证中…",
+            "Your authentication code has been sent.": "您的验证码已发送。",
 
-            "Use your password": "使用您的密码",
+            "Having problems?": "有问题吗？",
+            "Use GitHub Mobile": "使用 GitHub 移动应用验证",
             "Use your authenticator app": "使用您的身份验证器应用",
+            "Send a code via SMS": "通过短信发送验证码",
+            "Resend SMS": "重新发送短信",
+            "Use your password": "使用您的密码",
+
+            "GitHub Mobile": "GitHub 移动应用",
+            "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
+            "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+            "We could not verify your identity": "我们无法核实您的身份",
+            "Retry": "请重试",
+
+            "We just sent you a message via SMS with your authentication code. Enter the code in the form above to verify your identity.": "我们刚刚通过短信向您发送了一条消息，其中包含您的验证码。在上面的表格中输入验证码以验证您的身份。",
+
+            // "Password": "密码",
+            // "Forgot password?": "忘记密码？",
+            "Confirm": "确认",
 
             "You are entering": "您正在进入",
             "sudo mode": "Sudo 模式",
