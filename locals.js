@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/ip_disclosure)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
 
     /**
      * 忽略区域的 class 正则
@@ -13191,7 +13191,6 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
 
         // Audit log 审计日志 /organizations/<org-login>/settings/audit-log
             "Events": "活动",
-            "Source IP disclosure": "源 IP 泄露",
             "Loading audit log entries…": "正在加载日志条目…",
             "Filters": "筛选",
                 "Filter audit logs": "筛选审计日志",
@@ -13221,7 +13220,7 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
             "Newer": "新的",
             "Older": "旧的",
 
-        // 源IP泄露 /organizations/<org-login>/audit-log/ip_disclosure
+        // 源IP泄露 /organizations/<org-login>/audit-log/event_settings
             "Disclose actor IP addresses in audit logs": "在审计日志中披露行为人 IP 地址",
             "Enable source IP disclosure": "启用源 IP 泄露",
             "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "启用此功能将允许您查看组织审计日志事件中当前成员的 IP 地址。由于此功能会自动公开用户的 IP 地址，因此您应该与法律团队一起审核此更改，以确定是否需要任何用户通知。当在企业级别启用时，它将自动为企业拥有的所有组织启用，反之则不然。",
@@ -13230,7 +13229,7 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
         [/Found (\d+) events?/, "找到 $1 个事件"],
     ],
 };
-I18N.zh["orgs/audit-log/ip_disclosure"] = I18N.zh["orgs/settings/audit-log"];
+I18N.zh["orgs/audit-log/event_settings"] = I18N.zh["orgs/settings/audit-log"];
 
 I18N.zh["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓库
     "static": { // 静态翻译
