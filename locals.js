@@ -1695,6 +1695,7 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
             "Actions": "操作",
                 "Runners": "运行器",
                 "Runner groups": "运行器组",
+                "Caches": "缓存",
             "Webhooks": "Web 钩子",
             "Packages": "软件包",
             "Projects": "项目",
@@ -12663,6 +12664,23 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "This group cannot be deleted and new runners will be automatically assigned to this group if no other group is specified.": "该组不能被删除，如果没有指定其他组，新的运行器将被自动分配到该组。",
                 "All repositories, excluding public repositories": "所有仓库，不包括公共仓库",
 
+        // 缓存 /organizations/<org-login>/settings/actions/caches
+            "Caches": "缓存",
+            "You can use caches for dependencies and other commonly reused files to speed up your workflows. The data on this page have at least 5 minutes of latency.": "您可以对依赖项和其他经常重复使用的文件的缓存来加快您的工作流程。此页面上的数据至少有 5 分钟的延迟。",
+            "Learn more about caches": "了解有关缓存的更多信息",
+
+            "Search repositories": "搜索仓库",
+
+            "Sort": "排序",
+                "Sort by": "排序方式",
+                "Largest size": "最大尺寸",
+                "Smallest size": "最小尺寸",
+
+            "No repository uses caches": "尚无仓库使用缓存",
+            "Nothing has been cached by actions running in any repositories of this organization.": "在此组织的任何仓库中运行的操作都没有被缓存。",
+            "Learn more about caching": "了解更多关于缓存",
+            "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流程执行时间的信息。",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
@@ -12670,7 +12688,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
         [/Any action or reusable workflow defined in a repository within the ([^ ]+) organization can be used./, "可以使用在 $1 组织内的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the ([^ ]+) organization, can be used./, "可以使用符合指定条件的操作或可复用的工作流程，以及在 $1 组织内的仓库中定义的操作或可复用的工作流程。"], // 操作页面
-        [/(\d+) active jobs?/ ,"$1 个活跃的工作"] // settings/actions/runners
+        [/(\d+) active jobs?/ ,"$1 个活跃的工作"], // settings/actions/runners
+        [/(\d+) caches?/, "$1 项缓存"],
     ],
 };
 
