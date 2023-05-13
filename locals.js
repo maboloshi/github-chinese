@@ -56,10 +56,10 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|audit-log\/ip_disclosure)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|audit-log\/ip_disclosure)/,
 
     /**
      * 忽略区域的 class 正则
@@ -1691,6 +1691,7 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
             "Repository": "仓库",
                 "Repository defaults": "仓库默认值",
                 "Repository topics": "仓库主题",
+                "Repository rulesets": "仓库规则集",
             "Actions": "操作",
                 "Runners": "运行器",
                 "Runner groups": "运行器组",
@@ -8320,6 +8321,8 @@ I18N.zh["repository-settings-menu"] = { // 仓库设置公共部分
             "Code and automation": "代码与自动化",
                 "Branches": "分支",
                 "Tags": "标签",
+                "Rules": "规则",
+                    "Rulesets": "规则集",
                 // "Actions": "操作",
                     // "General": "通常",
                     "Runners": "运行器",
@@ -8919,6 +8922,290 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
+
+I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<repo-name>/settings/rules
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
+
+        // 规则 页面 /<user-name>/<repo-name>/settings/rules===============================
+            "Rulesets": "规则集",
+            "New branch ruleset": "新建分支规则集",
+                "New tag ruleset": "新建标签规则集",
+
+            "No rulesets will be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行任何规则集。", //组织设置
+
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find a branch...": "查找分支...",
+                "All": "所有",
+                "default": "默认",
+                "View all rules": "查看全部规则",
+                "Find a tag...": "查找标签...",
+                "Nothing to show": "暂无",
+            "No rulesets have been added yet": "尚未添加任何规则集",
+            "• targeting": "• 针对",
+
+        // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
+            "New": "新建",
+            "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
+            "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
+            "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
+            "This ruleset will not be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行此规则集。", //组织设置
+
+            "Name": "名称",
+                "Ruleset name cannot be empty": "规则集名称不能为空",
+            "Enforcement status": "执行状态",
+                "Active": "激活",
+                    "Rules will be enforced": "规则将被执行",
+                    "Enable Organization Ruleset": "启用组织规则集", //组织设置
+                        "I want rules enforced on targeted repositories in this ruleset.": "我希望此规则集中强制执行针对目标仓库的规则。",
+                "Evaluate": "评估", //组织设置
+                    "Evaluate Rulesets to trial rules and view insights": "评估规则集，以试用规则并查看洞察",
+                    "Evaluate mode is only available to Enterprise organizations.": "评估模式仅适用于企业组织。",
+                "Disabled": "禁用",
+                    "Do not evaluate or enforce rules": "不评估或执行规则",
+            "Bypass mode": "旁路模式",
+                "Not permitted": "不允许",
+                    "All users in the organization will be subject to these rules": "组织中的所有用户都将遵守这些规则",
+                "Repository bypass permitted": "允许仓库绕过",
+                    "Organization Administrators, Repository Administrators, and users with Repository bypass permissions can bypass these rules within their repository": "组织管理员、仓库管理员和具有仓库旁路权限的用户可以在他们的仓库中绕过这些规则",
+                "Organization bypass permitted": "允许组织绕过", //组织设置
+                    "Organization administrators and users with Organizational bypass permissions can bypass these rules": "组织管理员和具有组织旁路权限的用户可以绕过这些规则",
+                "Determines who can bypass this ruleset.": "确定谁可以绕过此规则集。",
+
+            "Bypass list": "旁路列表",
+                "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
+                "Add a team to the bypass list": "将团队添加到旁路列表", //组织设置
+
+                "Bypass list is empty": "旁路列表为空",
+                "Exempt teams or apps from this ruleset by adding them to the bypass list": "通过将团队或应用添加到旁路列表中，使其免于此规则集",
+                "Exempt teams": "豁免团队",
+                "or apps": "或应用",
+                "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
+
+            "Target repositories": "目标仓库", // 组织设置
+                    "Include all repositories": "包含所有仓库",
+                "No repository targets have been added yet": "尚未添加仓库目标",
+                    "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+
+                "Prevent renaming of target repositories": "防止重命名目标仓库",
+                    "When checked, target repositories can only be renamed by those with bypass permission.": "勾选后，目标仓库只能由具有旁路权限的人重命名。",
+
+                "All repositories": "所有仓库",
+                "Targets have changed and repository match list will update on save.": "目标已更改，仓库匹配列表将在保存时更新。",
+
+                "Repositories that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的仓库将成为此规则集的目标。",
+                "Repositories that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的仓库将成为此规则集的目标。",
+
+            "Target branches": "目标分支",
+                "Add a target": "添加分支",
+                    "Include default branch": "包含默认分支",
+                    "Include all branches": "包含所有分支",
+                    "Target by inclusion or exclusion pattern": "通过包含或排除规则确定目标",
+                    "Include by pattern": "包含规则",
+                    "Exclude by pattern": "排除规则",
+
+                "Branch targeting has not been configured": "尚未配置分支目标",
+                    "targeting determines which": "目标决定了",
+                    "branches": "分支",
+                    "will be protected by this ruleset. Use inclusion patterns to expand the list of": "将受此规则集保护。使用包含规则来扩展此规则集下的列表",
+                    "under this ruleset. Use exclusion patterns to exclude": "使用排除规则来排除",
+
+                "Default": "默认",
+                "All branches": "所有分支",
+                "Targets have changed and branch match list will update on save.": "目标已更改，分支匹配列表将在保存时更新。",
+
+                // 包含规则 对话框
+                    "Branches that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的分支将成为该规则集的目标。",
+                    "naming pattern": "命名规则",
+                        "Pattern cannot be empty": "规则不能为空",
+                    "Example patterns: \"": "示例：\"",
+                    "Learn more about fnmatch": "了解更多关于 fnmatch 的信息",
+                    "Add Inclusion pattern": "添加包含规则",
+
+                // 排除规则 对话框
+                    "Branches that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的分支将成为该规则集的目标。",
+                    "Add Exclusion pattern": "添加排除规则",
+
+            "Branch protections": "分支保护",
+                "Restrict creations": "限制创建",
+                    "Only allow users with bypass permission to create matching refs.": "只允许具有绕过权限的用户创建匹配的引用。",
+                "Restrict updates": "限制更新",
+                    "Only allow users with bypass permission to update matching refs.": "只允许具有绕过权限的用户更新匹配的引用。",
+                "Restrict deletions": "限制删除",
+                    "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
+                "Require linear history": "需要线性历史",
+                    "Prevent merge commits from being pushed to matching branches.": "防止合并后的提交被推送到匹配的分支。",
+                "Require deployments to succeed before merging": "要求部署成功后再合并",
+                    "Choose which environments must be successfully deployed to before branches can be merged into a branch that matches this rule.": "选择必须成功部署到哪些环境才能将分支合并到与此规则匹配的分支中。",
+                "Require signed commits": "要求带签名的提交",
+                    "Commits pushed to matching branches must have verified signatures.": "推送到匹配分支的提交必须带有经过验证的签名。",
+                "Require a pull request before merging": "要求在合并前提交拉取请求",
+                    "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
+                "Require status checks to pass before merging": "要求在合并前通过状态检查",
+                    "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed.": "选择必须通过哪些状态检查，才能将分支合并到符合此规则的分支。启用后，提交必须先推送到另一个分支，然后在状态检查通过后合并或直接推送到符合此规则的分支。",
+                "Block force pushes": "阻止强制推送",
+                    "Prevent users with push access from force pushing to branches.": "防止具有推送权限的用户强制推送到分支。",
+
+            "Metadata": "元数据", // 组织设置
+            "restrictions": "限制",
+                "No metadata restrictions have been added": "尚无元素限制",
+                "Learn more about": "了解更多关于",
+                "metadata": "元素",
+
+                // 添加元数据限制 对话框
+                    "Add a metadata restriction": "添加元数据限制",
+                        "Restrict commit author email addresses, committer email addresses, commit message content, and other metadata": "限制提交作者电子邮箱地址、提交者电子邮箱地址、提交消息内容和其他元数据",
+                        "Applies To": "适用于",
+                            "Commit message": "提交信息",
+                            "Author email": "作者电子邮箱地址",
+                            "Committer email": "提交者电子邮箱地址",
+                            "Branch name": "分支名称",
+                        "Requirement": "要求",
+                            "Must": "必须",
+                            "start with a matching pattern": "以匹配规则开头",
+                            "end with a matching pattern": "以匹配规则结束",
+                            "contain a matching pattern": "包含匹配规则",
+                            "match a given regex pattern": "匹配给定的正则表达式规则",
+                            "Must not": "不得",
+                        "Matching pattern": "匹配规则",
+                        "Description": "描述",
+                            // [/Commit message must start with a matching pattern/, "提交信息必须以匹配规则开头"],
+                            // [/Commit message must end with a matching pattern/, "提交信息必须以匹配规则结束"],
+                            // [/Commit message must contain with a matching pattern/, "提交信息必须包含匹配规则"],
+                            // [/Commit message must match a given regex pattern/, "提交信息必须匹配给定的正则表达式规则"],
+                            // [/Commit message must not start with a matching pattern/, "提交信息不得以匹配规则开头"],
+                            // [/Commit message must not end with a matching pattern/, "提交信息不得以匹配规则结束"],
+                            // [/Commit message must not contain a matching pattern/, "提交信息不得包含匹配规则"],
+                            // [/Commit message must not match a given regex pattern/, "提交信息不得匹配给定的正则表达式规则"],
+
+                            // [/Author email must start with a matching pattern/, "作者电子邮箱地址必须以匹配规则开头"],
+                            // [/Author email must end with a matching pattern/, "作者电子邮箱地址必须以匹配规则结束"],
+                            // [/Author email must contain a matching pattern/, "作者电子邮箱地址必须包含匹配规则"],
+                            // [/Author email must match a given regex pattern/, "作者电子邮箱地址必须匹配给定的正则表达式规则"],
+                            // [/Author email must not start with a matching pattern/, "作者电子邮箱地址不得以匹配规则开头"],
+                            // [/Author email must not end with a matching pattern/, "作者电子邮箱地址不得以匹配规则结束"],
+                            // [/Author email must not contain a matching pattern/, "作者电子邮箱地址不得包含匹配规则"],
+                            // [/Author email must not match a given regex pattern/, "作者电子邮箱地址不得匹配给定的正则表达式规则"],
+
+                            // [/Committer email must start with a matching pattern/, "提交者电子邮箱地址必须以匹配规则开头"],
+                            // [/Committer email must end with a matching pattern/, "提交者电子邮箱地址必须以匹配规则结束"],
+                            // [/Committer email must contain a matching pattern/, "提交者电子邮箱地址必须包含匹配规则"],
+                            // [/Committer email must match a given regex pattern/, "提交者电子邮箱地址必须匹配给定的正则表达式规则"],
+                            // [/Committer email must not start with a matching pattern/, "提交者电子邮箱地址不得以匹配规则开头"],
+                            // [/Committer email must not end with a matching pattern/, "提交者电子邮箱地址不得以匹配规则结束"],
+                            // [/Committer email must not contain a matching pattern/, "提交者电子邮箱地址不得包含匹配规则"],
+                            // [/Committer email must not match a given regex pattern/, "提交者电子邮箱地址不得匹配给定的正则表达式规则"],
+
+                            // [/Branch name must start with a matching pattern/, "分支名称必须以匹配规则开头"],
+                            // [/Branch name must end with a matching pattern/, "分支名称必须以匹配规则结束"],
+                            // [/Branch name must contain a matching pattern/, "分支名称必须包含匹配规则"],
+                            // [/Branch name must match a given regex pattern/, "分支名称必须匹配给定的正则表达式规则"],
+                            // [/Branch name must not start with a matching pattern/, "分支名称不得以匹配规则开头"],
+                            // [/Branch name must not end with a matching pattern/, "分支名称不得以匹配规则结束"],
+                            // [/Branch name must not contain a matching pattern/, "分支名称不得包含匹配规则"],
+                            // [/Branch name must not match a given regex pattern/, "分支名称不得匹配给定的正则表达式规则"],
+
+                        "How this rule will appear to your": "这个规则将如何在您的",
+                        "organization": "组织",
+                        "'s users throughout": "内的用户中显示",
+
+            // 授权访问 sudo 模式身份验证
+                "Confirm access": "授权访问",
+                "Authentication code": "验证码",
+                    "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+                "Verify": "验证",
+                "Verify": "验证",
+                "Verifying…": "验证中…",
+
+                "Having problems?": "有问题吗？",
+                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+                "Use your authenticator app": "使用您的身份验证器应用",
+                "Send a code via SMS": "通过短信发送验证码",
+                "Resend SMS": "重新发送短信",
+                "Use your password": "使用您的密码",
+
+                "GitHub Mobile": "GitHub 移动应用",
+                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
+                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+                "We could not verify your identity": "我们无法核实您的身份",
+                "Retry": "请重试",
+
+                "We just sent you a message via SMS with your authentication code. Enter the code in the form above to verify your identity.": "我们刚刚通过短信向您发送了一条消息，其中包含您的验证码。在上面的表格中输入验证码以验证您的身份。",
+
+                "Password": "密码",
+                "Forgot password?": "忘记密码？",
+                "Confirm": "确认",
+
+            "Unauthorized": "未经授权",
+            "Ruleset created": "规则集已创建",
+
+            "Revert": "撤销",
+            "changes": "更改",
+            "change": "更改",
+
+        // 新建标签规则 /<user-name>/<repo-name>/settings/rules/new?target=tag&enforcement=disabled
+            "Target tags": "目标标签",
+            "Tag targeting has not been configured": "尚未配置标签目标",
+            "Tag": "标签",
+            "Tags": "标签",
+            "Include all tags": "包含所有标签",
+            "All tags": "所有标签",
+            "Tags that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的标签将成为该规则集的目标。",
+            "Tags that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的标签将成为该规则集的目标。",
+            "Tag protections": "标签保护",
+
+        // 编辑规则 /<user-name>/<repo-name>/settings/rules/<id>
+            "Delete ruleset": "删除规则",
+
+            "Delete ruleset?": "删除规则？",
+            "Are you sure you want to delete this ruleset? This action cannot be undone.": "您确定要删除此规则集吗？此操作无法撤消。",
+
+            "Applies to": "应用到",
+            "target:": "个目标:",
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) rules?/, "$1 条规则"],
+        [/(\d+) branch(es)?/, "$1 个分支"],
+        [/Commit message must start with a matching pattern/, "提交信息必须以匹配规则开头"],
+        [/Commit message must end with a matching pattern/, "提交信息必须以匹配规则结束"],
+        [/Commit message must contain with a matching pattern/, "提交信息必须包含匹配规则"],
+        [/Commit message must match a given regex pattern/, "提交信息必须匹配给定的正则表达式规则"],
+        [/Commit message must not start with a matching pattern/, "提交信息不得以匹配规则开头"],
+        [/Commit message must not end with a matching pattern/, "提交信息不得以匹配规则结束"],
+        [/Commit message must not contain a matching pattern/, "提交信息不得包含匹配规则"],
+        [/Commit message must not match a given regex pattern/, "提交信息不得匹配给定的正则表达式规则"],
+        [/Author email must start with a matching pattern/, "作者电子邮箱地址必须以匹配规则开头"],
+        [/Author email must end with a matching pattern/, "作者电子邮箱地址必须以匹配规则结束"],
+        [/Author email must contain a matching pattern/, "作者电子邮箱地址必须包含匹配规则"],
+        [/Author email must match a given regex pattern/, "作者电子邮箱地址必须匹配给定的正则表达式规则"],
+        [/Author email must not start with a matching pattern/, "作者电子邮箱地址不得以匹配规则开头"],
+        [/Author email must not end with a matching pattern/, "作者电子邮箱地址不得以匹配规则结束"],
+        [/Author email must not contain a matching pattern/, "作者电子邮箱地址不得包含匹配规则"],
+        [/Author email must not match a given regex pattern/, "作者电子邮箱地址不得匹配给定的正则表达式规则"],
+        [/Committer email must start with a matching pattern/, "提交者电子邮箱地址必须以匹配规则开头"],
+        [/Committer email must end with a matching pattern/, "提交者电子邮箱地址必须以匹配规则结束"],
+        [/Committer email must contain a matching pattern/, "提交者电子邮箱地址必须包含匹配规则"],
+        [/Committer email must match a given regex pattern/, "提交者电子邮箱地址必须匹配给定的正则表达式规则"],
+        [/Committer email must not start with a matching pattern/, "提交者电子邮箱地址不得以匹配规则开头"],
+        [/Committer email must not end with a matching pattern/, "提交者电子邮箱地址不得以匹配规则结束"],
+        [/Committer email must not contain a matching pattern/, "提交者电子邮箱地址不得包含匹配规则"],
+        [/Committer email must not match a given regex pattern/, "提交者电子邮箱地址不得匹配给定的正则表达式规则"],
+        [/Branch name must start with a matching pattern/, "分支名称必须以匹配规则开头"],
+        [/Branch name must end with a matching pattern/, "分支名称必须以匹配规则结束"],
+        [/Branch name must contain a matching pattern/, "分支名称必须包含匹配规则"],
+        [/Branch name must match a given regex pattern/, "分支名称必须匹配给定的正则表达式规则"],
+        [/Branch name must not start with a matching pattern/, "分支名称不得以匹配规则开头"],
+        [/Branch name must not end with a matching pattern/, "分支名称不得以匹配规则结束"],
+        [/Branch name must not contain a matching pattern/, "分支名称不得包含匹配规则"],
+        [/Branch name must not match a given regex pattern/, "分支名称不得匹配给定的正则表达式规则"],
+    ],
+};
+I18N.zh["orgs/settings/rules"] = I18N.zh["repository/settings/rules"];
 
 I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
