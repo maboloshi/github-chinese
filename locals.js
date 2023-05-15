@@ -284,6 +284,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Packages": "软件包",
         "Sponsoring": "赞助",
 
+        // 新版全局导航 按钮菜单
+        "Home": "主页",
+        "Filter repositories": "筛选仓库",
+        "Show more": "显示更多",
 
         // 右上角通知按钮提示
         "You have no unread notifications": "您没有未读通知",
@@ -296,6 +300,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "New gist": "新建代码片段",
         "New organization": "新建组织",
         "New project": "新建项目",
+
+        // 新版全局导航
+        "Command palette": "命令面板",
+        "Create new...": "新建...",
 
         // 右上角个人图标下拉菜单
         "Signed in as": "登录身份为",
@@ -320,9 +328,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "New Code Search and Code View": "新版代码搜索和代码视图",
             "Colorblind themes": "色盲主题",
             "Command Palette": "命令面板",
+            "Global navigation update": "全局导航更新",
             "Project Migration": "项目迁移",
         "Help": "帮助",
         "Settings": "设置",
+        "GitHub Docs": "GitHub 文档", // 新版全局导航
+        "GitHub Support": "GitHub 支持", // 新版全局导航
         "Sign out": "退出",
 
         "Stars": "星标",
@@ -1745,6 +1756,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
 
+            "Settings": "设置", // 新版全局导航
         // Profile 个人资料 https://github.com/settings/profile
             "Public profile": "基本资料",
             "Profile picture": "我的头像",
