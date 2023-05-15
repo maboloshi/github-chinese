@@ -81,7 +81,7 @@ I18N.conf = {
      * 提交的用户名 commit-author
      * 搜索页 搜索结果 search-match
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|AppHeader-globalBar-start|commit-author|search-match)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|react-file-line|AppHeader-globalBar-start|commit-author|search-match)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -93,8 +93,9 @@ I18N.conf = {
 
     /**
      * 忽略区域的 特定元素id 正则
+     * offset /blob页面 符号-->引用
      */
-    reIgnoreId: /(readme)/,
+    reIgnoreId: /(readme|offset)/,
 
     /**
      * 忽略区域的 标签 正则
@@ -258,6 +259,14 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "In this organization": "当前组织",
         "In this user": "当前用户",
         "All GitHub": "整个 GitHub",
+        "All of GitHub": "整个 GitHub", // new code search
+        "Autocomplete": "自动完成", // new code search
+        "Search all of GitHub": "搜索整个 GitHub", // new code search
+        "Search in this repository": "搜索该仓库", // new code search
+        "Search in this owner": "搜索该所有者", // new code search
+        "Owners": "所有者", // new code search
+        "Languages": "语言", // new code search
+        "Search syntax tips": "搜索语法提示", // new code search
         "Jump to": "跳转到",
 
         // 顶部栏 & 小屏左上角下拉栏 (已登录)
@@ -308,8 +317,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             // 对话框
             "Enable": "启用",
             "Disable": "禁用",
-            "Command Palette": "命令面板",
+            "New Code Search and Code View": "新版代码搜索和代码视图",
             "Colorblind themes": "色盲主题",
+            "Command Palette": "命令面板",
             "Project Migration": "项目迁移",
         "Help": "帮助",
         "Settings": "设置",
@@ -4580,6 +4590,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "tags": "标签",
 
         // 新版 New Code Search /<user-name>/<repo-name>/?search=1
+            "Path copied!": "路径已复制！",
+
             "Name": "文件名",
             "Last commit message": "最后提交消息",
             "Last commit date": "最后提交时间",
@@ -4587,6 +4599,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 大纲按钮
             "Outline": "大纲", // md 文件
                 "Filter headings": "筛选标题", // md 文件
+            // 编辑按钮
+            "Edit README": "编辑 README", // md 文件
 
         // 追溯 /<user-name>/<repo-name>/blame/<branch>/<file>
             "Blame": "追溯",
@@ -4614,6 +4628,13 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Open with...":"打开...",
 
             "View blame prior to this change": "查看此变化之前的追溯",
+
+            // 浮动搜索框
+                "Find": "查找",
+                "Press": "按",
+                "again to open the browser's find menu": "打开浏览器的查找菜单",
+                "Search this file": "搜索此文件",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -6062,6 +6083,9 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
 
             "Display the source diff": "显示源差异",
             "Display the rich diff": "显示富差异",
+            "Comment on this file": "评论此文件", // new code view
+
+            "Filter changed files": "筛选已更改的文件", // new code view 侧栏
 
             "Submodule": "子模块",
             "updated": "已更新",
@@ -6164,7 +6188,27 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
         ...I18N.zh["repository-public"]["static"],
 
         // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<file> >>>>>>>>>>>>>>>>>>>>>>
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find a branch...": "查找分支...",
+                "Filter branches/tags": "搜索分支/标签",
+                "Branches": "分支",
+                "default": "默认",
+                "View all branches": "查看全部分支",
+                "Find a tag": "查找标签",
+                "Tags": "标签",
+                "Search for a tag": "搜索标签",
+                "Nothing to show": "暂无",
+                "View all tags": "查看全部标签",
+
+            // 左侧栏
+                "Add file": "添加文件",
+                "Documentation": "文档",
+
             "Go to file": "转到文件",
+
+            "Path copied!": "路径已复制！",
+
             // 快捷键
                 "Source code browsing": "源代码浏览",
                 "Activates the file finder": "激活文件查找器",
@@ -6175,11 +6219,16 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "Open blame": "打开追溯视图",
 
             "Download": "下载",
+            "Open with Desktop": "在 Desktop 中打开", //小屏
+            "Delete file": "删除文件", //小屏
+
             "View raw": "查看原始数据",
             "(Sorry about that, but we can’t show files that are this big right now.)": "（很抱歉，但我们现在无法显示这么大的文件。）",
             "Sorry, something went wrong.": "抱歉，出了一些问题。",
             "Reload?": "重新加载？",
             "Unable to render code block": "无法渲染代码块",
+
+            "More Pages": "更多页面",
 
             "View runs": "查看工作流程", // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
             // 地址栏 最右侧 下拉菜单
@@ -6243,23 +6292,6 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
             "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
             "Show hidden characters": "显示隐藏字符",
 
-            "Definition": "定义",
-            "Defined on": "定义在",
-            "Definitions": "定义",
-            "Present in": "出现在",
-
-            "Viewing": "查看",
-            "search-based": "基于搜索",
-            "results. Try a": "的结果。尝试",
-            "precise-preview": "精确预览",
-            "lookup.": "的查找",
-                "No definitions found using a precise-preview lookup.": "使用精确预览的查找，未找到定义。",
-                "Try again with a": "再试一次",
-                "No references found using a precise-preview lookup.": "使用精确预览的查找，未找到引用。",
-                "No definitions found using a search-based lookup.": "使用基于搜索的查找，未找到定义。",
-
-            "Found": "发现",
-            // [/(\d+) references?/, "$1 处引用"],
 
             // new code view
                 "Top": "顶部",
@@ -6298,6 +6330,7 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
 
                 //展开按钮
                 "Open symbols panel": "打开符号面板",
+                "Close symbols panel": "关闭符号面板",
                 "Symbols": "符号",
                     "Symbol outline not available for this file": "大纲不适用于此文件",
                     "To inspect a symbol, try clicking on the symbol directly in the code view.": "要检查一个符号，可以尝试在代码视图中直接点击该符号。",
@@ -6311,13 +6344,16 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                     "Search for this symbol in this repository": "在此仓库中搜索此符号",
                     "all repositories.": "所有仓库。",
                     "In this file": "在这个文件中",
+                    "Definition": "定义",
+                    "search-based": "基于搜索",
                     "References": "引用",
                     "Reference": "引用",
+                    "No definitions or references found": "未找到定义或引用",
+                    "Show more": "显示更多",
 
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/(\d+) references?/, "$1 处引用"],
     ],
 };
 
