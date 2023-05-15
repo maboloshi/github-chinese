@@ -4,12 +4,12 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.8.1
+// @version      1.8.2
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.8.1
+// @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.8.2
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -30,7 +30,7 @@
     var page = getPage();
 
     transTitle(); // 页面标题翻译
-    transBySelector(); // Selector 翻译
+    page && transBySelector(); // Selector 翻译
     page && traverseNode(document.body); // 立即翻译页面
     watchUpdate();
 
@@ -67,7 +67,7 @@
 
                 // 目前先跟随 url
                 transTitle(); // 标题翻译
-                transBySelector(); // Selector 翻译
+                page && transBySelector(); // Selector 翻译可能需要延迟运行
             }
 
             for(let mutation of mutations) { // for速度比forEach快
@@ -183,41 +183,45 @@
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
         //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
         // 如 maboloshi?tab=repositories 等
-        const isOrganization = /\/<org-login>/.test(analyticsLocation); // 组织页
+        const isOrganization = /\/<org-login>/.test(analyticsLocation)||/^\/(?:orgs|organizations)/.test(pathname); // 组织页
+        // 一级名称 orgs 或者 organizations
+        // const isOrganization = /\/orgs/.test(analyticsLocation); // 组织页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
 
         // 优先匹配 body 的 class
-        let page = document.body.className.match(I18N.conf.rePageClass);
-        if (page) {
-            return page[1];
+        let page, t = document.body.className.match(I18N.conf.rePageClass);
+        if (t) {
+            if (t[1] === 'page-profile') {
+                if (location.search.match(/tab=(\w+)/)) {
+                    location.search.replace(/tab=(\w+)/, '$1');
+                    page = 'page-profile/' + RegExp.$1;
+                } else {
+                    page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
+                }
+            } else {
+                page = t[1];
+            }
+        } else if (site === 'gist') { // Gist 站点
+            page = 'gist';
+        } else if (pathname === '/' && site === 'github') { // github.com 首页
+            page = isLogin ? 'page-dashboard' : 'homepage';
+        } else if  (isRepository) { // 仓库页
+            t = pathname.match(I18N.conf.rePagePathRepo);
+            page = t ? 'repository/'+ t[1] : 'repository';
+        } else if  (isOrganization) { // 组织页
+            t = pathname.match(I18N.conf.rePagePathOrg);
+            page = t ? 'orgs/'+ t[1] : 'orgs';
+        } else {
+            t = pathname.match(I18N.conf.rePagePath);
+            page = t ? t[1] : false; // 取页面 key
         }
 
-        if (site === 'gist') { // Gist 站点
-            return 'gist';
+        if (!page || I18N[lang][page] == undefined){
+            console.log("请注意对应 page %s 词库节点不存在", page);
+            // return false;
+            page = false;
         }
-
-        if (pathname === '/' && site === 'github') { // github.com 首页
-            return isLogin ? 'page-dashboard' : 'homepage';
-        } //登录 或 未登录
-
-        // 仅个人首页 其标签页识别不了 优先使用 Class 过滤(/page-profile/)
-        // if (isProfile) { // 个人首页
-        //     return 'page-profile';
-        // }
-
-        if (isRepository) { // 仓库页
-            let t = pathname.match(I18N.conf.rePagePathRepo);
-            return t ? 'repository/'+t[1] : 'repository';
-        }
-
-        if (isOrganization) { // 组织页
-            let t = pathname.match(I18N.conf.rePagePathOrg);
-            return t ? 'orgs/'+t[1] : 'orgs';
-        }
-
-        // 扩展 pathname 匹配
-        page = pathname.match(I18N.conf.rePagePath);
-        return page ? page[1] : false; // 取页面 key
+        return page;
     }
 
     /**
@@ -433,7 +437,7 @@
      * 灵感参考自：k1995/github-i18n-plugin
      */
     function transBySelector() {
-        let res = I18N[lang].selector; // 数组
+        let res = I18N[lang][page].selector != undefined ? I18N[lang]['pubilc'].selector.concat(I18N[lang][page].selector) : I18N[lang]['pubilc'].selector; // 数组
         if (res) {
             for (let [a, b] of res) {
                 let element = document.querySelector(a)
