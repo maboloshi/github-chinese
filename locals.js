@@ -8268,11 +8268,28 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         //复刻 /<user-name>/<repo-name>/forks
             "Switch to tree view": "切换到树形视图",
 
-            "Period:": "周期：",
+            "No one has forked this repository yet": "目前，暂无人复刻该仓库",
+            "Forks are a great way to contribute to a repository. After": "复刻是给该仓库做贡献的好方法。首先",
+            "forking a repository": "复刻仓库",
+            ", you can send the original author a": "，然后您可向原作者发送",
+            "pull request": "拉取请求",
+
+            "No forked repositories found": "尚无复刻仓库",
+            "Try changing your filters, or search for": "尝试更改筛选器，或搜索",
+            "active forked repositories": "活跃的复刻仓库",
+
+            "Period:": "周期:",
                 "Filter by period": "筛选周期",
+                "1 month": "1 个月",
+                "6 months": "6 个月",
+                "1 year": "1 年",
+                "2 years": "2 年",
+                "5 years": "5 年",
+
                 "Any repository that has not been created or updated during this period will be excluded.": "在此期间未被创建或更新的任何仓库将被排除在外。",
-            "Repository type:": "仓库类型：",
+            "Repository type:": "仓库类型:",
                 "Filter by repository type": "筛选仓库类型",
+                "None": "无",
                 "Active": "活跃",
                     "Repositories with push activity": "有推送活动的仓库",
                 "Inactive": "不活跃",
@@ -8283,12 +8300,16 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
                     "Archived repositories": "已存档的仓库",
                 "Starred": "星标",
                     "Repositories with at least 1 star": "至少有 1 个星标的仓库",
-            "Sort:": "排序：",
+            "Sort:": "排序:",
                 "Sort by": "排序方式",
                     "Most starred": "最多星标",
                     "Recently updated": "最近更新",
                     "Open issues": "打开的议题",
                     "Open pull requests": "打开的拉取请求",
+                "Defaults Saved": "默认值已保存",
+                "Save Defaults": "保存默认值",
+
+            "Never updated": "从未更新",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
