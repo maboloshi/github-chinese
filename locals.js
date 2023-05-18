@@ -8629,6 +8629,29 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "Warning: this is a destructive action": "警告：这是一个破坏性的行为",
                 "To confirm, type the number of stars on this repository in the box below": "要确认，请在下面的框中输入此仓库的星标数",
 
+            "Disable branch protection rules": "禁用分支保护规则",
+                "Disable branch protection rules enforcement and APIs": "禁用分支保护规则执行和 API",
+
+                // 顶部提醒
+                    "Branch protection settings saved.": "分支保护设置已保存。",
+
+            // 禁用分支保护对话框
+                "This will hide the branch protection settings and disable branch protection rules for this repository.": "这将隐藏分支保护设置，并禁用该仓库的分支保护规则。",
+                "Disabling branch protection rules allows you to enforce policies only with the `preview` of Repository Rulesets. You can re-enable branch protection rules at any time. This is currently not recommended for production repositories!": "禁用分支保护规则后，您只能通过仓库规则集的 “浏览” 来执行策略。您可以在任何时候重新启用分支保护规则。目前不建议在生产库中这样做!",
+
+                "This action will disable:": "此操作将禁用：",
+                    "Branch protection rule enforcement": "分支保护执行",
+                    "Branch protection rule APIs": "分支保护 API",
+                // [/(\d+) branch protection rules?/, "$1 项分支保护规则"],
+                "will be disabled as part of this action": "作为此操作的一部分将被禁用",
+
+            "Re-enable branch protection rules": "重新启用分支保护规则",
+                "Re-enable branch protection rules enforcement and APIs": "重新启用分支保护规则执行和 API",
+
+            // 重新启用分支保护对话框
+                "Re-enable branch protection": "重新启用分支保护",
+                "will be re-enabled as part of this action": "作为此操作的一部分将被重新启用",
+
             "Transfer ownership": "转让所有权",
             "Transfer": "转让",
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将此仓库转让给另一位用户或您可以创建仓库的组织。",
@@ -8701,6 +8724,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
         [/is already the branch name./, "已经是分支的名称了。"],
         [/Your branch name will be/, "您的分支的名称将重命名为"],
         [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
+        [/(\d+) branch protection rules?/, "$1 项分支保护规则"], // 禁用/重启启用分支保护
     ],
 };
 
