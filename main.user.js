@@ -4,12 +4,12 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.0.0
-// @author       buiawpkgew1
+// @version      1.8.2
+// @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://greasyfork.org/scripts/461072-github-%E4%B8%AD%E6%96%87/code/GitHub%20%E4%B8%AD%E6%96%87.js?version=1156462
+// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.8.2
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
