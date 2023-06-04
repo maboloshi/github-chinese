@@ -10198,7 +10198,7 @@ I18N.zh["repository/transfer"] = { // 转让仓库
     "static": { // 静态翻译
 
         // 转让仓库 /<user-name>/<repo-name>/transfer
-            "Transfer repository:": "转让仓库:",
+            "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将该仓库转让给另一位用户或一个您可以创建仓库的组织。",
             "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转移后的管理员访问权限、团队、问题分配和重定向，请参阅",
             "Transferring a repository": "转让仓库",
             "in GitHub Help.": "在 GitHub 帮助中。",
@@ -10212,16 +10212,45 @@ I18N.zh["repository/transfer"] = { // 转让仓库
             "Choose an owner": "选择所有者",
             "Specify an organization or username": "指定组织或用户名",
             "Repository name": "仓库名",
-                "The repository": "仓库",
                 "Checking availability…": "检查可用性…",
+                "The repository": "仓库",
                 "already exists on this account": "已经存在于此帐户",
                 "Your new repository will be created as": "您的新仓库将被创建为",
+                "New repository name must not be blank": "新仓库名称不能为空",
+
+            // 私有仓库转让
+                "If": "如果",
+                "username": "用户名",
+                "is using": "使用",
+                "and accepts the transfer, they will lose access to private repository features:": "并接受转移，他们将失去对私有仓库功能的访问：",
+                "Code owners": "代码所有者",
+                "Any existing": "任何已存在的",
+                "wikis": "WiKi",
+                "Pulse, Contributors, Community, Traffic, Commits, Code Frequency, Network,": "统计，贡献者，社区，流量，提交，代码频率，网络，",
+                "Forks": "复刻",
+                "on the": "在",
+                "Insights": "洞察",
+                "tab": "标签页",
+                "Draft": "草案",
+                "PRs": "拉取请求",
+                "Multiple assignees": "多个受让人",
+                "for issues and PRs": "的议题和拉取请求",
+                "Multiple reviewers": "多个审阅者",
+                "for PRs": "的拉去请求",
+                "Branch and tag protection rules": "分支和标签保护规则",
+
+                "can": "可",
+                "upgrade": "升级",
+                "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
+
+            "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性行为。",
 
             "to confirm.": "进行确认。",
             "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
 
     },
     "regexp": [ // 正则翻译
+        [/Transfer repository:/, "转让仓库:"],
         [/(\d+) codespaces?/, "$1 个代码空间"],
         [/is available./, "名称可用。"],
     ],
