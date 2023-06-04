@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
@@ -1349,6 +1349,9 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
         // 仓库标签卡 ?tab=repositories >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+            // 顶部提醒
+                // [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
+
             // "Search repositories…": "搜索这些查库…",
             // "Search starred repositories…": "搜索点赞的仓库…",
 
@@ -1418,6 +1421,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
     },
     "regexp": [ // 正则翻译
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
+        [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
     ],
     "selector": [ // 元素筛选器规则
         ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
@@ -4163,17 +4167,20 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
         // 新建仓库 https://github.com/new
             "Create a new repository": "创建新仓库",
-            "A repository contains all project files, including the revision history. Already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
+            "A repository contains all project files, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
+            "Already have a project repository elsewhere?": "在其他地方已有仓库？",
             "Import a repository.": "导入仓库",
             //"Cancel": "取消",
             //"Begin import": "开始导入",
             "Owner": "所有者",
             "Repository name": "仓库名称",
             "Great repository names are short and memorable. Need inspiration? How about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
+                "Checking availability…": "检查可用性…",
                 "is available.": "名称可用。",
                 "The repository": "仓库",
                 "already exists on this account.": "已经存在于此帐户。",
                 "Your new repository will be created as": "您的新仓库将被创建为",
+                "New repository name must not be blank": "新仓库名称不能为空",
 
                 // 用户名同名仓库
                 "You found a secret!": "您发现了一个秘密！",
@@ -4197,14 +4204,18 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                 "Skip this step if you’re importing an existing repository.": "如果您要导入现有仓库，请跳过此步骤。",
             "Add a README file": "添加 README 文件",
                 "This is where you can write a long description for your project.": "您可以在此处为您的项目编写详细描述。",
+                "Learn more about READMEs.": "了解更多关于 README 的信息。",
             "Add .gitignore": "添加 .gitignore 文件",
                 "Choose which files not to track from a list of templates.": "从模板列表中选择哪些文件不需要跟踪。",
+                "Learn more about ignoring files.": "了解更多关于忽略文件的信息。",
             ".gitignore template:": ".gitignore 模板：",
                 ".gitignore template": ".gitignore 模板",
-                "Filter...": "筛选...",
+                "Filter…": "筛选…",
                 "None": "无",
             "Choose a license": "选择许可证",
                 "A license tells others what they can and can't do with your code.": "许可证告诉其他人，他们可以使用您的代码做什么和不能做什么。",
+                "Learn more about licenses.": "了解更多关于许可证的信息。",
+
                 "License:": "许可证：",
                     "License": "许可证",
 
@@ -4222,7 +4233,11 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
-            "Import all the files, including the revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
+                "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
+
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on October 17, 2023. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2023 年 10 月 17 日结束。有关详细信息，请参阅",
+                "changelog": "更新日志",
+
             "Your old repository's clone URL": "您旧仓库的克隆地址",
             "Learn more about the types of": "了解更多关于",
             "supported VCS": "VCS 的支持",
@@ -4281,6 +4296,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
     ],
 };
+I18N.zh["new"] = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
 
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
@@ -4573,6 +4589,16 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
             "Import code": "导入代码",
 
+        // 导入仓库 第二页 /<user-name>/<repo-name>/import
+            "Preparing your new repository": "准备你的新仓库",
+                "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
+            "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
+            "Importing commits and revision history…": "导入提交和修订历史…",
+            // [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"],
+            "Optimizing repository and pushing commits to GitHub…": "优化仓库并将提交推送到 GitHub...",
+            "Importing complete! Your new repository": "导入完成！您的新仓库",
+            "is ready.": "已准备就绪。",
+
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -4691,6 +4717,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits? behind/, "落后 $1 个提交"],
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+        [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
     ],
 };
 
@@ -8716,14 +8743,13 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
 
             // 删除仓库对话框
-            "Are you absolutely sure?": "您完全确定吗？",
-            "This action": "该操作",
-            "cannot": "不能",
-            "be undone. This will permanently delete the": "被撤消。这将永久删除",
-            "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有协作者关联。",
-            "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有团队关联。", // 组织仓库
-            "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
-            "I understand the consequences, delete this repository": "我明白后果，依然删除该仓库",
+                // [/Delete/, "删除"],
+                "I want to delete this repository": "我想删除这个仓库",
+
+                "This will permanently delete the": "这将永久删除",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有协作者关联。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有团队关联。", // 组织仓库
+                "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
 
     },
     "regexp": [ // 正则翻译
@@ -8740,6 +8766,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
         [/Your branch name will be/, "您的分支的名称将重命名为"],
         [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
         [/(\d+) branch protection rules?/, "$1 项分支保护规则"], // 禁用/重启启用分支保护
+        [/Delete/, "删除"],
     ],
 };
 
@@ -10199,7 +10226,7 @@ I18N.zh["repository/transfer"] = { // 转让仓库
     "static": { // 静态翻译
 
         // 转让仓库 /<user-name>/<repo-name>/transfer
-            "Transfer repository:": "转让仓库:",
+            "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将该仓库转让给另一位用户或一个您可以创建仓库的组织。",
             "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转移后的管理员访问权限、团队、问题分配和重定向，请参阅",
             "Transferring a repository": "转让仓库",
             "in GitHub Help.": "在 GitHub 帮助中。",
@@ -10213,16 +10240,45 @@ I18N.zh["repository/transfer"] = { // 转让仓库
             "Choose an owner": "选择所有者",
             "Specify an organization or username": "指定组织或用户名",
             "Repository name": "仓库名",
-                "The repository": "仓库",
                 "Checking availability…": "检查可用性…",
+                "The repository": "仓库",
                 "already exists on this account": "已经存在于此帐户",
                 "Your new repository will be created as": "您的新仓库将被创建为",
+                "New repository name must not be blank": "新仓库名称不能为空",
+
+            // 私有仓库转让
+                "If": "如果",
+                "username": "用户名",
+                "is using": "使用",
+                "and accepts the transfer, they will lose access to private repository features:": "并接受转移，他们将失去对私有仓库功能的访问：",
+                "Code owners": "代码所有者",
+                "Any existing": "任何已存在的",
+                "wikis": "WiKi",
+                "Pulse, Contributors, Community, Traffic, Commits, Code Frequency, Network,": "统计，贡献者，社区，流量，提交，代码频率，网络，",
+                "Forks": "复刻",
+                "on the": "在",
+                "Insights": "洞察",
+                "tab": "标签页",
+                "Draft": "草案",
+                "PRs": "拉取请求",
+                "Multiple assignees": "多个受让人",
+                "for issues and PRs": "的议题和拉取请求",
+                "Multiple reviewers": "多个审阅者",
+                "for PRs": "的拉去请求",
+                "Branch and tag protection rules": "分支和标签保护规则",
+
+                "can": "可",
+                "upgrade": "升级",
+                "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
+
+            "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性行为。",
 
             "to confirm.": "进行确认。",
             "I understand, transfer this repository.": "我明白了，依然转让该仓库。",
 
     },
     "regexp": [ // 正则翻译
+        [/Transfer repository:/, "转让仓库:"],
         [/(\d+) codespaces?/, "$1 个代码空间"],
         [/is available./, "名称可用。"],
     ],
