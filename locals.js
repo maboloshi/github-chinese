@@ -10281,7 +10281,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
-        // 双重身份验证登录 https://github.com/sessions/two-factor
+        // 双重身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
             // "Learn more.": "了解更多。",
             "Confirm password to continue": "确认密码以继续",
@@ -10305,7 +10305,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "Having problems?": "有问题吗？",
                 "Authenticate with GitHub Mobile": "使用 GitHub 移动应用进行身份验证",
-                "Use a recovery code or request a reset": "使用恢复码或请求重置",
+                "Use a recovery code or begin account recovery": "使用恢复码或开始帐户恢复",
 
         // https://github.com/sessions/two-factor/mobile
             "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
@@ -10328,7 +10328,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Where to find recovery codes": "哪里可以找到恢复码",
 
             "Locked out?": "被锁在外面了吗？",
-            "Try recovering your account": "请尝试恢复您的帐户",
+            "Try recovering your account, or unlink your account email address(es)": "请尝试恢复您的帐户，或取消关联您的帐户电子邮件地址。",
 
             // 恢复帐户对话框
             "Recovering your account": "恢复您的帐户",
@@ -10378,19 +10378,26 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             // "Sign in to": "登录",
             // "To continue to": "继续登录",
 
-            // 定时确认确认您的帐户恢复设置
+            // 定时确认您的帐户恢复设置
             "Confirm your account recovery settings": "确认您的帐户恢复设置",
             "Are your account recovery settings up to date? If not, you risk getting locked out of your account.": "您的帐户恢复设置是否最新？如果没有，您就有被锁定帐户的风险。",
             "Emails": "电子邮箱",
-                "View and update your email addresses": "查看和更新您的电子邮件地址",
+                "View and update your email addresses": "查看和更新您的电子邮箱地址",
+
                 "Verified emails": "经过验证的电子邮箱",
-                "Verified emails give you access to more features on GitHub": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能",
+                    // [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
+                "Verified emails give you access to more features on GitHub.": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能。",
             "Two-factor methods": "双重身份验证方式",
-                "Primary two-factor method": "主要双重身份验证方式",
-                    "Configured: Authenticator app": "已配置：身份验证器应用",
+                "Preferred": "首选",
+                "Configured": "已配置",
+                "Not configured": "未配置",
+
+                "Authenticator app": "身份验证器应用",
+                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
+                "SMS/Text message": "短信/文字信息",
+                    // [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
                 "Security keys": "安全密钥",
                     "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
-                    "No security keys": "未配置安全密钥",
                 "GitHub Mobile": "GitHub 移动应用",
                     "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录帐户，可以使用 GitHub 移动应用来进行双重身份验证。",
                     "No devices": "没有设备",
@@ -10398,14 +10405,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Recovery options": "恢复选项",
                 "Recovery codes": "恢复码",
                     "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
-                    "Viewed": "查看于",
-                "Fallback SMS number": "备用手机号码",
-                    "Providing a fallback SMS number will allow GitHub to send your two-factor authentication codes to an alternate device if you lose your primary device.": "如果您丢失主要设备，提供备用手机号码将允许 GitHub 将您的双重身份验证码发送到备用设备。",
-                "No fallback SMS number": "未设置备用手机号码",
-            "Configured": "已配置",
-            "Not configured": "未配置",
-            // "No recovery tokens": "未设置恢复令牌",
-            "Update": "更新",
+                    "Viewed": "已查看",
+
+            "Make changes": "进行更改",
             "Confirm": "确认",
             "Remind me later": "稍后提醒我",
 
@@ -10572,7 +10574,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
         [/(\d+) devices?/, "$1 设备"],
+        [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
