@@ -4585,6 +4585,16 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
             "Import code": "导入代码",
 
+        // 导入仓库 第二页 /<user-name>/<repo-name>/import
+            "Preparing your new repository": "准备你的新仓库",
+                "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
+            "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
+            "Importing commits and revision history…": "导入提交和修订历史…",
+            // [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"],
+            "Optimizing repository and pushing commits to GitHub…": "优化仓库并将提交推送到 GitHub...",
+            "Importing complete! Your new repository": "导入完成！您的新仓库",
+            "is ready.": "已准备就绪。",
+
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -4703,6 +4713,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits? behind/, "落后 $1 个提交"],
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+        [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
     ],
 };
 
