@@ -10280,7 +10280,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
-        // 双重身份验证登录 https://github.com/sessions/two-factor
+        // 双重身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
             // "Learn more.": "了解更多。",
             "Confirm password to continue": "确认密码以继续",
@@ -10304,7 +10304,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "Having problems?": "有问题吗？",
                 "Authenticate with GitHub Mobile": "使用 GitHub 移动应用进行身份验证",
-                "Use a recovery code or request a reset": "使用恢复码或请求重置",
+                "Use a recovery code or begin account recovery": "使用恢复码或开始帐户恢复",
 
         // https://github.com/sessions/two-factor/mobile
             "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
@@ -10327,7 +10327,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Where to find recovery codes": "哪里可以找到恢复码",
 
             "Locked out?": "被锁在外面了吗？",
-            "Try recovering your account": "请尝试恢复您的帐户",
+            "Try recovering your account, or unlink your account email address(es)": "请尝试恢复您的帐户，或取消关联您的帐户电子邮件地址。",
 
             // 恢复帐户对话框
             "Recovering your account": "恢复您的帐户",
