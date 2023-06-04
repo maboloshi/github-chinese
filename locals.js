@@ -4163,17 +4163,20 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
         // 新建仓库 https://github.com/new
             "Create a new repository": "创建新仓库",
-            "A repository contains all project files, including the revision history. Already have a project repository elsewhere?": "仓库包含项目中的所有文件，包括修订历史记录。在其他地方已有仓库？",
+            "A repository contains all project files, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
+            "Already have a project repository elsewhere?": "在其他地方已有仓库？",
             "Import a repository.": "导入仓库",
             //"Cancel": "取消",
             //"Begin import": "开始导入",
             "Owner": "所有者",
             "Repository name": "仓库名称",
             "Great repository names are short and memorable. Need inspiration? How about": "好的仓库名称应该简单且容易记忆。需要灵感吗？这个怎么样：",
+                "Checking availability…": "检查可用性…",
                 "is available.": "名称可用。",
                 "The repository": "仓库",
                 "already exists on this account.": "已经存在于此帐户。",
                 "Your new repository will be created as": "您的新仓库将被创建为",
+                "New repository name must not be blank": "新仓库名称不能为空",
 
                 // 用户名同名仓库
                 "You found a secret!": "您发现了一个秘密！",
@@ -4197,14 +4200,18 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                 "Skip this step if you’re importing an existing repository.": "如果您要导入现有仓库，请跳过此步骤。",
             "Add a README file": "添加 README 文件",
                 "This is where you can write a long description for your project.": "您可以在此处为您的项目编写详细描述。",
+                "Learn more about READMEs.": "了解更多关于 README 的信息。",
             "Add .gitignore": "添加 .gitignore 文件",
                 "Choose which files not to track from a list of templates.": "从模板列表中选择哪些文件不需要跟踪。",
+                "Learn more about ignoring files.": "了解更多关于忽略文件的信息。",
             ".gitignore template:": ".gitignore 模板：",
                 ".gitignore template": ".gitignore 模板",
-                "Filter...": "筛选...",
+                "Filter…": "筛选…",
                 "None": "无",
             "Choose a license": "选择许可证",
                 "A license tells others what they can and can't do with your code.": "许可证告诉其他人，他们可以使用您的代码做什么和不能做什么。",
+                "Learn more about licenses.": "了解更多关于许可证的信息。",
+
                 "License:": "许可证：",
                     "License": "许可证",
 
