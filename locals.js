@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
@@ -4518,6 +4518,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Readme": "自述文件",
             "View license": "查看许可证",
             "Code of conduct": "行为准则",
+            "Activity": "活动",
             "star": "星标",
             "stars": "星标",
             "watching": "关注",
@@ -7332,6 +7333,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
             "Default branch": "默认分支",
             "Switch default branch": "切换默认分支",
+            "View branch activity": "查看分支活动",
             "Default": "默认",
 
             "Updated": "更新于",
@@ -7898,6 +7900,64 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
+    ],
+};
+
+I18N.zh["repository/activity"] = { // 仓库 - 活动页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // 活动页面 /<user-name>/<repo-name>/activity 
+            "Activity": "活动",
+
+            "All branches": "所有分支",
+                "Switch branches": "切换分支",
+                "Find a branch...": "查找分支...",
+                "Branches": "分支",
+                "default": "默认",
+                "View activity for all branches": "查看所有分支的活动",
+
+            "All activity": "所有活动",
+                "Direct pushes": "直接推送",
+                "Pull request merges": "拉取请求合并",
+                "Force pushes": "强制推送",
+                "Branch creations": "创建分支",
+                "Branch deletions": "删除分支",
+
+            "All users": "所有用户",
+                "Find a user...": "查找用户...",
+                "View activity for all users": "查看所有用户的活动",
+
+            "All time": "所有时间",
+                "Last 24 hours": "过去 24 小时",
+                "Last week": "上星期",
+                "Last month": "上个月",
+                "Last quarter": "上季度",
+                "Last year": "去年",
+
+
+            "Showing oldest first": "显示最早的",
+            "Showing most recent first": "显示最近的",
+
+            "Compare changes": "比较变更",
+
+            "Previous": "上一页",
+            "Next": "下一页",
+
+            "Direct push": "直接推送",
+            "Pull request merge": "拉取请求合并",
+            "Force push": "强制推送",
+            "Branch creation": "创建分支",
+            "Branch deletion": "删除分支",
+
+            "force pushed": "强制推送",
+
+            "Share feedback about this page": "分享关于此页面的反馈",
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/pushed (\d+) commits? to/, "推送 $1个提交到"],
+        [/pushed (\d+) commits?/, "推送 $1个提交"],
     ],
 };
 
