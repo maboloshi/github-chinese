@@ -2445,8 +2445,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
-                "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
-                ". Thank you for helping keep the ecosystem safe!": " 起，您的账户将需要启用双重身份验证。感谢您帮助维护生态系统的安全！",
+                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
                 "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
 
                 "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
@@ -2458,15 +2457,16 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
                 "Disable": "停用",
 
+            "Preferred 2FA method": "首选 2FA 方法",
+                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双重身份验证的首选方法。",
+
             "Two-factor methods": "双重身份验证方式",
-                "Preferred": "首选",
                 "Configured": "已配置",
 
                 "Authenticator app": "身份验证器应用",
                     "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
                     "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
 
-                    "Set as preferred method": "设置为首选",
                     "Manage Authenticator app": "管理身份验证器应用",
 
                     "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
@@ -2525,6 +2525,31 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
                     "View": "查看",
+
+            // 授权访问 sudo 模式身份验证
+                "Confirm access": "授权访问",
+                "Authentication code": "验证码",
+                    "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+                "Verify": "验证",
+                "Verify": "验证",
+                "Verifying…": "验证中…",
+                "Your authentication code has been sent.": "您的验证码已发送。",
+
+                "Having problems?": "有问题吗？",
+                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+                "Use your authenticator app": "使用您的身份验证器应用",
+                "Use your password": "使用您的密码",
+
+                "GitHub Mobile": "GitHub 移动应用",
+                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
+                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+                "We could not verify your identity": "我们无法核实您的身份",
+                "Retry": "请重试",
+
+                "Password": "密码",
+                "Forgot password?": "忘记密码？",
+                "Confirm": "确认",
 
     },
     "regexp": [ // 正则翻译
