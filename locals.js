@@ -262,8 +262,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "All of GitHub": "整个 GitHub", // new code search
         "Autocomplete": "自动完成", // new code search
         "Search all of GitHub": "搜索整个 GitHub", // new code search
-        "Search in this repository": "搜索该仓库", // new code search
-        "Search in this owner": "搜索该所有者", // new code search
+        "Search in this repository": "在该仓库中搜索", // new code search
+        "Search in this owner": "在该所有者中搜索", // new code search
+        "Search in this organization": "在该组织中搜索", // new code search
         "Owners": "所有者", // new code search
         "Languages": "语言", // new code search
         "Search syntax tips": "搜索语法提示", // new code search
