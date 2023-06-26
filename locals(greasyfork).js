@@ -30,7 +30,7 @@ I18N.conf = {
      * GitHub 网站更新 调整 Class 过滤规则
      * 且过滤 Class 并不是总是生效，增加 PathName 规则补充
      */
-    rePageClass: /\b(page-(profile|new-repo|create-org)|session-authentication)\b/,
+    rePageClass: /\b(page-(profile|new-repo|create-org)|session-authentication)\b/，
 
     /**
      * 匹配 pathname 页面的正则
@@ -53,10 +53,10 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/，
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/，
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
@@ -5634,189 +5634,189 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This pull request is still a work in progress": "此拉取请求仍在进行中",
             "This pull request can be automatically merged by project collaborators": "此拉取请求可以由项目协作者自动合并",
                 "Only those with": "只有对此仓库具有",
-                "write access": "写入访问权限",
-                "to this repository can merge pull requests.": "的才可合并拉取请求。",
-                "to this repository can mark a draft pull request as ready for review.": "的才可将拉取请求草案标记为可供审查。",
+                "write access": "写入访问权限"，
+                "to this repository can merge pull requests.": "的才可合并拉取请求。"，
+                "to this repository can mark a draft pull request as ready for review.": "的才可将拉取请求草案标记为可供审查。"，
 
             // "Review required": "需要审查", // 拉取请求 页面状态词
-                "Add your review": "添加您的评论",
+                "Add your review": "添加您的评论"，
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
-            "Changes approved": "变更已获批准",
+            "Changes approved": "变更已获批准"，
             // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审阅者进行审查。"],
             // [/(\d+) approvals?/, "$1 项批准"],
-            "Some checks haven’t completed yet": "有些检查还没有完成",
+            "Some checks haven’t completed yet": "有些检查还没有完成"，
             // [/1 in progress check/, "$1个正在进行的检查"],
-            "Some checks were not successful": "有些检查不成功",
+            "Some checks were not successful": "有些检查不成功"，
             // [/1 skipped, 4 successful, and 2 failing checks/, "$1 个跳过, $2 个成功, $3 失败"],
             // [/1 skipped, 4 successful, and 2 expected checks/, "$1 个跳过, $2 个成功, $3 个预先检查"],
-            "All checks have passed": "所有检查均已通过",
-            "All checks have failed": "所有检查均失败",
+            "All checks have passed": "所有检查均已通过"，
+            "All checks have failed": "所有检查均失败"，
             // [/5 successful checks/, ""],
             // [/6 checks passed/, ""],
-                "Show all checks": "显示所有检查",
-                "Hide all checks": "隐藏所有检查",
-                "Details": "细节",
-                "Required": "必须",
-            "Merging is blocked": "合并被阻止",
-            "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
+                "Show all checks": "显示所有检查"，
+                "Hide all checks": "隐藏所有检查"，
+                "Details": "细节"，
+                "Required": "必须"，
+            "Merging is blocked": "合并被阻止"，
+            "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。"，
 
-            "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
-            "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
+            "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。"，
+            "Learn more about protected branches.": "了解更多关于受保护分支的信息。"，
             // [/Merging can be performed automatically with 1 approving review./, ""],
 
 
             // [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
-            "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。",
-            "The base branch does not accept merge commits. Alternate merge methods are preferred.": "基础分支不接受合并提交。其他合并方法是首选。",
+            "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。"，
+            "The base branch does not accept merge commits. Alternate merge methods are preferred.": "基础分支不接受合并提交。其他合并方法是首选。"，
             // [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
-            "Learn more about required linear history.": "了解更多关于要求线性历史记录。",
+            "Learn more about required linear history.": "了解更多关于要求线性历史记录。"，
 
-            "Checking for ability to merge automatically…": "检测自动合并的能力…",
-            "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
+            "Checking for ability to merge automatically…": "检测自动合并的能力…"，
+            "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态"，
 
-            "Continuous integration has not been set up": "尚未设置持续集成",
-            "several other apps": "其他一些应用程序",
-            "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
+            "Continuous integration has not been set up": "尚未设置持续集成"，
+            "several other apps": "其他一些应用程序"，
+            "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。"，
 
-            "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
-                "Merging can be performed automatically.": "可以自动地执行合并。",
+            "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突"，
+                "Merging can be performed automatically.": "可以自动地执行合并。"，
 
-            "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。",
-                "Rebase and merge can be performed automatically.": "可以自动执行变基和合并。",
+            "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。"，
+                "Rebase and merge can be performed automatically.": "可以自动执行变基和合并。"，
 
-                "You’re not": "您无",
-                "authorized": "权限",
-                "to merge this pull request.": "合并此拉取请求。",
+                "You’re not": "您无"，
+                "authorized": "权限"，
+                "to merge this pull request.": "合并此拉取请求。"，
 
-            "Merge pull request": "合并拉取请求",
+            "Merge pull request": "合并拉取请求"，
             // 合并拉取请求 按钮下拉
-                "Create a merge commit": "创建合并提交",
-                    "All commits from this branch will be added to the base branch via a merge commit.": "该分支的所有提交都将通过合并提交加入到基础分支中。",
-                "Squash and merge": "压缩合并",
+                "Create a merge commit": "创建合并提交"，
+                    "All commits from this branch will be added to the base branch via a merge commit.": "该分支的所有提交都将通过合并提交加入到基础分支中。"，
+                "Squash and merge": "压缩合并"，
                     // [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
-                "Rebase and merge": "变基合并",
+                "Rebase and merge": "变基合并"，
                     // [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基合并到基础分支中。"],
 
             //确认合并 对话框
-            "Confirm merge": "确认合并",
-            "Confirm squash and merge": "确认压缩合并",
-            "Confirm rebase and merge": "确认变基合并",
-            "Merging…": "合并中…",
+            "Confirm merge": "确认合并"，
+            "Confirm squash and merge": "确认压缩合并"，
+            "Confirm rebase and merge": "确认变基合并"，
+            "Merging…": "合并中…"，
 
-            "You can also": "您也可以",
-            "open this in GitHub Desktop": "在 GitHub Desktop 中打开",
-            "or view": "，或查看",
-            "command line instructions": "命令行指令",
+            "You can also": "您也可以"，
+            "open this in GitHub Desktop": "在 GitHub Desktop 中打开"，
+            "or view": "，或查看"，
+            "command line instructions": "命令行指令"，
 
             // "Merged": "已合并",
-            "View details": "查看详情",
-            "Hide details": "隐藏详情",
-            "Revert": "还原",
-                "Create a new pull request to revert these changes": "创建一个新的拉取请求以恢复这些更改",
-            "Closed with unmerged commits": "已关闭的未合并的提交",
+            "View details": "查看详情"，
+            "Hide details": "隐藏详情"，
+            "Revert": "还原"，
+                "Create a new pull request to revert these changes": "创建一个新的拉取请求以恢复这些更改"，
+            "Closed with unmerged commits": "已关闭的未合并的提交"，
 
-            "Pull request successfully merged and closed": "拉取请求已成功合并并关闭",
-            "Delete branch": "删除分支",
-            "Restore branch": "恢复分支",
+            "Pull request successfully merged and closed": "拉取请求已成功合并并关闭"，
+            "Delete branch": "删除分支"，
+            "Restore branch": "恢复分支"，
 
-            "Pull request closed": "拉取请求已关闭",
-            "This pull request is closed, but the": "此拉取请求已关闭，但是",
-            "branch has unmerged commits.": "分支具有未合并的提交。",
-            "branch has unmerged commits. You can delete this branch if you wish.": "分支具有未合并的提交。您可以根据需要删除此分支。",
-            "If you wish, you can also delete this fork of": "如果需要，还可以删除此复刻",
-            "If you wish, you can delete this fork of": "如果需要，可以删除此复刻",
-            "in the":"在",
-            "settings": "设置",
+            "Pull request closed": "拉取请求已关闭"，
+            "This pull request is closed, but the": "此拉取请求已关闭，但是"，
+            "branch has unmerged commits.": "分支具有未合并的提交。"，
+            "branch has unmerged commits. You can delete this branch if you wish.": "分支具有未合并的提交。您可以根据需要删除此分支。"，
+            "If you wish, you can also delete this fork of": "如果需要，还可以删除此复刻"，
+            "If you wish, you can delete this fork of": "如果需要，可以删除此复刻"，
+            "in the":"在"，
+            "settings": "设置"，
 
             // "Only those with": "只有对此仓库具有",
             // "write access": "写入访问权限",
             // "to this repository can merge pull requests.": "的才可合并拉取请求。",
-            "You’re all set — the": "一切就绪 —",
-            "You’re all set—the": "一切就绪 —",
-            "branch can be safely deleted.": "分支可以被安全删除。",
-            "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
-            "Resolve conflicts": "解决冲突",
-            "Conflicting files": "冲突的文件:",
+            "You’re all set — the": "一切就绪 —"，
+            "You’re all set—the": "一切就绪 —"，
+            "branch can be safely deleted.": "分支可以被安全删除。"，
+            "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决"，
+            "Resolve conflicts": "解决冲突"，
+            "Conflicting files": "冲突的文件:"，
 
-            "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
-                "Branch protection rules": "分支保护规则",
-                "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
-            "Add rule": "添加规则",
+            "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准"，
+                "Branch protection rules": "分支保护规则"，
+                "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。"，
+            "Add rule": "添加规则"，
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
             // 状态词
-            "reviewed": "审查",
-            "requested a review from": "请求审查",
-            "Reply...": "回复...",
+            "reviewed": "审查"，
+            "requested a review from": "请求审查"，
+            "Reply...": "回复..."，
 
             // 代码审查回复
-            "Suggestions cannot be applied on outdated comments.": "建议不要应用于过时的评论。",
-            "Suggested change": "更改建议",
-            "This code change can be committed by users with write permissions.": "具有写入权限的用户可以提交此代码更改。",
+            "Suggestions cannot be applied on outdated comments.": "建议不要应用于过时的评论。"，
+            "Suggested change": "更改建议"，
+            "This code change can be committed by users with write permissions.": "具有写入权限的用户可以提交此代码更改。"，
 
         // 拉取请求 --> 提交 标签卡 /<user-name>/<repo-name>/pull/<id>/commits
-            "Commits": "提交",
+            "Commits": "提交"，
             // [/Commits (.+)/, "提交于 $1"]
-            "committed": "提交于",
+            "committed": "提交于"，
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并签署使用 GitHub 的",
-                "This commit was signed with the committer’s": "此提交已签署使用提交者的",
-                "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
-                "verified signature": "已验证签名",
-                "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
-                "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
+                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的,并使用Github的"，
+                "This commit was signed with the committer’s": "此提交已签署,使用提交者的"，
+                "This tag was signed with the committer’s": "此标签已签署,使用提交者的"， // /<user-name>/<repo-name>/releases
+                "verified signature": "已验证签名"，
+                "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。"，
+                "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。"，
 
-                "GPG key ID:": "GPG 密钥 ID：",
-                "SSH Key Fingerprint:": "SSH 密钥指纹：",
-                "Learn about vigilant mode": "了解警戒模式",
+                "GPG key ID:": "GPG 密钥 ID："，
+                "SSH Key Fingerprint:": "SSH 密钥指纹："，
+                "Learn about vigilant mode": "了解警戒模式"，
 
-            "Copy the full SHA": "复制完整的 SHA",
-            "View commit details": "查看提交详情",
-            "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
+            "Copy the full SHA": "复制完整的 SHA"，
+            "View commit details": "查看提交详情"，
+            "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容"，
 
         // 拉取请求--> 提交 --> 某提交详情/<user-name>/<repo-name>/pull/<id>/commits/<full SHA>
-            "commit": "提交",
+            "commit": "提交"，
 
             // 修改的文件 左侧 展开按钮
-            "Expand all": "展开全部",
-            "Collapse expanded lines": "折叠展开的线",
+            "Expand all": "展开全部"，
+            "Collapse expanded lines": "折叠展开的线"，
 
             // 修改的文件 右侧下拉
-            "Show comments": "显示评论",
-            "Show annotations": "显示注释",
-            "View file": "查看文件",
-            "Edit file": "编辑文件",
-            "Delete file": "删除文件",
-            "Open in desktop": "在 GitHub Desktop 中打开",
+            "Show comments": "显示评论"，
+            "Show annotations": "显示注释"，
+            "View file": "查看文件"，
+            "Edit file": "编辑文件"，
+            "Delete file": "删除文件"，
+            "Open in desktop": "在 GitHub Desktop 中打开"，
 
             // 上一页
-            "You are viewing the earliest commit": "您正在查看最早的提交",
+            "You are viewing the earliest commit": "您正在查看最早的提交"，
             // 下一页
-            "You are viewing the latest commit": "您正在查看最新的提交",
+            "You are viewing the latest commit": "您正在查看最新的提交"，
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
             // 工具条
-            "Show file tree": "显示文件树",
-            "Hide file tree": "隐藏文件树",
-            "Changes from": "更改自",
-                "all commits": "所有提交",
+            "Show file tree": "显示文件树"，
+            "Hide file tree": "隐藏文件树"，
+            "Changes from": "更改自"，
+                "all commits": "所有提交"，
                 // 下拉
-                "Show all changes": "显示所有更改",
+                "Show all changes": "显示所有更改"，
                 // [/(\d+) commits?/, "$1 条提交"],
-                "Show changes since your last review": "显示自您上次评论以来的更改",
+                "Show changes since your last review": "显示自您上次评论以来的更改"，
                 // "You haven‘t reviewed this pull requeste": "您尚未审查过此请求请求",
-                "You haven’t reviewed this pull request yet": "您尚未审查此请求请求",
-                "Select commit": "选择提交",
-                "Hold shift + click to select a range": "按住 shift + 单击以选择一个范围",
-            "File filter": "文件筛选",
-                "Filter by extension": "按文件后缀名筛选",
-                    "No extension": "无后缀名",
+                "You haven’t reviewed this pull request yet": "您尚未审查此请求请求"，
+                "Select commit": "选择提交"，
+                "Hold shift + click to select a range": "按住 shift + 单击以选择一个范围"，
+            "File filter": "文件筛选"，
+                "Filter by extension": "按文件后缀名筛选"，
+                    "No extension": "无后缀名"，
                     // [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"],
                     // [/Select all 1 file types?/, "选择所有 $1 种文件类型"],
-                    "Only manifest files": "仅清单文件",
-                "There are no files selected for viewing": "没有选择要查看的文件",
-                "Viewed files": "查看过的文件",
+                    "Only manifest files": "仅清单文件"，
+                "There are no files selected for viewing": "没有选择要查看的文件"，
+                "Viewed files": "查看过的文件"，
                 // "filter file types": "筛选文件类型",
                 // "filter viewed files": "筛选已查看文件",
                 // "hide viewed files": "隐藏已查看文件",
