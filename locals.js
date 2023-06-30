@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
@@ -262,8 +262,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "All of GitHub": "整个 GitHub", // new code search
         "Autocomplete": "自动完成", // new code search
         "Search all of GitHub": "搜索整个 GitHub", // new code search
-        "Search in this repository": "搜索该仓库", // new code search
-        "Search in this owner": "搜索该所有者", // new code search
+        "Search in this repository": "在该仓库中搜索", // new code search
+        "Search in this owner": "在该所有者中搜索", // new code search
+        "Search in this organization": "在该组织中搜索", // new code search
         "Owners": "所有者", // new code search
         "Languages": "语言", // new code search
         "Search syntax tips": "搜索语法提示", // new code search
@@ -2444,8 +2445,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
-                "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
-                ". Thank you for helping keep the ecosystem safe!": " 起，您的账户将需要启用双重身份验证。感谢您帮助维护生态系统的安全！",
+                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
                 "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
 
                 "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
@@ -2457,15 +2457,16 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
                 "Disable": "停用",
 
+            "Preferred 2FA method": "首选 2FA 方法",
+                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双重身份验证的首选方法。",
+
             "Two-factor methods": "双重身份验证方式",
-                "Preferred": "首选",
                 "Configured": "已配置",
 
                 "Authenticator app": "身份验证器应用",
                     "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
                     "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
 
-                    "Set as preferred method": "设置为首选",
                     "Manage Authenticator app": "管理身份验证器应用",
 
                     "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
@@ -2524,6 +2525,31 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
                     "View": "查看",
+
+            // 授权访问 sudo 模式身份验证
+                "Confirm access": "授权访问",
+                "Authentication code": "验证码",
+                    "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+                "Verify": "验证",
+                "Verify": "验证",
+                "Verifying…": "验证中…",
+                "Your authentication code has been sent.": "您的验证码已发送。",
+
+                "Having problems?": "有问题吗？",
+                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+                "Use your authenticator app": "使用您的身份验证器应用",
+                "Use your password": "使用您的密码",
+
+                "GitHub Mobile": "GitHub 移动应用",
+                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
+                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+                "We could not verify your identity": "我们无法核实您的身份",
+                "Retry": "请重试",
+
+                "Password": "密码",
+                "Forgot password?": "忘记密码？",
+                "Confirm": "确认",
 
     },
     "regexp": [ // 正则翻译
@@ -4517,6 +4543,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Readme": "自述文件",
             "View license": "查看许可证",
             "Code of conduct": "行为准则",
+            "Activity": "活动",
             "star": "星标",
             "stars": "星标",
             "watching": "关注",
@@ -5801,9 +5828,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "committed": "提交于",
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并签署使用 GitHub 的",
-                "This commit was signed with the committer’s": "此提交已签署使用提交者的",
-                "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
+                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+                "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
+                "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
@@ -6187,9 +6214,9 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
 
             // 验证标记浮动信息
-            "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并签署使用 GitHub 的",
-            "This commit was signed with the committer’s": "此提交已签署使用提交者的",
-            "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
+            "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+            "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
+            "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
@@ -7331,6 +7358,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
             "Default branch": "默认分支",
             "Switch default branch": "切换默认分支",
+            "View branch activity": "查看分支活动",
             "Default": "默认",
 
             "Updated": "更新于",
@@ -7409,9 +7437,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         ...I18N.zh["repository-public"]["static"],
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并签署使用 GitHub 的",
-                "This commit was signed with the committer’s": "此提交已签署使用提交者的",
-                "This tag was signed with the committer’s": "此标签已签署使用提交者的", // /<user-name>/<repo-name>/releases
+                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+                "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
+                "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
@@ -7897,6 +7925,64 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
+    ],
+};
+
+I18N.zh["repository/activity"] = { // 仓库 - 活动页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // 活动页面 /<user-name>/<repo-name>/activity 
+            "Activity": "活动",
+
+            "All branches": "所有分支",
+                "Switch branches": "切换分支",
+                "Find a branch...": "查找分支...",
+                "Branches": "分支",
+                "default": "默认",
+                "View activity for all branches": "查看所有分支的活动",
+
+            "All activity": "所有活动",
+                "Direct pushes": "直接推送",
+                "Pull request merges": "拉取请求合并",
+                "Force pushes": "强制推送",
+                "Branch creations": "创建分支",
+                "Branch deletions": "删除分支",
+
+            "All users": "所有用户",
+                "Find a user...": "查找用户...",
+                "View activity for all users": "查看所有用户的活动",
+
+            "All time": "所有时间",
+                "Last 24 hours": "过去 24 小时",
+                "Last week": "上星期",
+                "Last month": "上个月",
+                "Last quarter": "上季度",
+                "Last year": "去年",
+
+
+            "Showing oldest first": "显示最早的",
+            "Showing most recent first": "显示最近的",
+
+            "Compare changes": "比较变更",
+
+            "Previous": "上一页",
+            "Next": "下一页",
+
+            "Direct push": "直接推送",
+            "Pull request merge": "拉取请求合并",
+            "Force push": "强制推送",
+            "Branch creation": "创建分支",
+            "Branch deletion": "删除分支",
+
+            "force pushed": "强制推送",
+
+            "Share feedback about this page": "分享关于此页面的反馈",
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/pushed (\d+) commits? to/, "推送 $1个提交到"],
+        [/pushed (\d+) commits?/, "推送 $1个提交"],
     ],
 };
 
@@ -9261,8 +9347,6 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Having problems?": "有问题吗？",
                 "Use GitHub Mobile": "使用 GitHub 移动应用验证",
                 "Use your authenticator app": "使用您的身份验证器应用",
-                "Send a code via SMS": "通过短信发送验证码",
-                "Resend SMS": "重新发送短信",
                 "Use your password": "使用您的密码",
 
                 "GitHub Mobile": "GitHub 移动应用",
@@ -9270,8 +9354,6 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
                 "We could not verify your identity": "我们无法核实您的身份",
                 "Retry": "请重试",
-
-                "We just sent you a message via SMS with your authentication code. Enter the code in the form above to verify your identity.": "我们刚刚通过短信向您发送了一条消息，其中包含您的验证码。在上面的表格中输入验证码以验证您的身份。",
 
                 "Password": "密码",
                 "Forgot password?": "忘记密码？",
@@ -10485,7 +10567,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Check your email for a link to reset your password. If it doesn’t appear within a few minutes, check your spam folder.": "检查您的电子邮件以获取重置密码的链接。如果它在几分钟内没有出现，请检查您的垃圾邮件文件夹。",
             "Return to Sign in": "返回登录",
 
-        // 授权访问 修改个人及组织部分设置时需要 二次验证
+        // 授权访问 sudo 模式身份验证
             "Confirm access": "授权访问",
             "Authentication code": "验证码",
                 "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
@@ -10498,8 +10580,6 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Having problems?": "有问题吗？",
             "Use GitHub Mobile": "使用 GitHub 移动应用验证",
             "Use your authenticator app": "使用您的身份验证器应用",
-            "Send a code via SMS": "通过短信发送验证码",
-            "Resend SMS": "重新发送短信",
             "Use your password": "使用您的密码",
 
             "GitHub Mobile": "GitHub 移动应用",
@@ -10507,8 +10587,6 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
-
-            "We just sent you a message via SMS with your authentication code. Enter the code in the form above to verify your identity.": "我们刚刚通过短信向您发送了一条消息，其中包含您的验证码。在上面的表格中输入验证码以验证您的身份。",
 
             // "Password": "密码",
             // "Forgot password?": "忘记密码？",
