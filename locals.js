@@ -9214,7 +9214,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "New branch ruleset": "新建分支规则集",
                 "New tag ruleset": "新建标签规则集",
 
-            "No rulesets will be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行任何规则集。", //组织设置
+            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -9232,7 +9232,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
-            "This ruleset will not be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行此规则集。", //组织设置
+            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
 
             "Name": "名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
@@ -9256,19 +9256,49 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Determines who can bypass this ruleset.": "确定谁可以绕过此规则集。",
 
             "Bypass list": "旁路列表",
+                "Add bypass": "添加旁路",
+
+                 // 添加旁路对话框
+                    "Choose which roles": "选择哪些角色",
+                    ", teams, and apps": "、团队和应用",
+                    "can bypass this ruleset": "可绕过此规则集",
+
+                    "Suggestions": "建议",
+                        "Role": "角色",
+                        "App": "应用",
+                        "Organization admin": "组织管理员",
+                        "Repository admin": "仓库管理员",
+                        "triage": "分类",
+                        "maintain": "维持",
+                        "read": "读取",
+                        "write": "写入",
+                        "vulnerability_reporter": "漏洞报告员",
+                        "Add Selected": "添加所选",
+
                 "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
-                "Add a team to the bypass list": "将团队添加到旁路列表", //组织设置
+                "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
 
                 "Bypass list is empty": "旁路列表为空",
                 "Exempt teams or apps from this ruleset by adding them to the bypass list": "通过将团队或应用添加到旁路列表中，使其免于此规则集",
-                "Exempt teams": "豁免团队",
-                "or apps": "或应用",
+                "Exempt roles": "豁免角色",
+                ", teams, or apps": "团队或应用",
                 "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
             "Target repositories": "目标仓库", // 组织设置
-                    "Include all repositories": "包含所有仓库",
-                "No repository targets have been added yet": "尚未添加仓库目标",
-                    "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+                "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+
+                "Target:": "目标：",
+                    // 所有仓库
+                        "Target all repositories within the organization": "目标是针对组织内的所有仓库。",
+                    "Dynamic list of repositories": "动态仓库列表",
+                        "Target repositories based on name": "基于名称的目标仓库",
+                    "Select repositories": "选定的仓库",
+                        "Target a specific list of selected repositories": "以选定的仓库的特定列表为目标",
+
+                "Targeting criteria": "目标定位条件",
+                    "All Repositories": "所有仓库",
+                    "No repository targets have been added yet": "尚未添加仓库目标",
+                    "Repository targeting determines which repositories will be protected by this ruleset.": "仓库目标决定了哪些仓将受此规则集保护。",
 
                 "Prevent renaming of target repositories": "防止重命名目标仓库",
                     "When checked, target repositories can only be renamed by those with bypass permission.": "勾选后，目标仓库只能由具有旁路权限的人重命名。",
@@ -9428,7 +9458,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "Target tags": "目标标签",
             "Tag targeting has not been configured": "尚未配置标签目标",
             "Tag": "标签",
-            "Tags": "标签",
+            "tags": "标签",
             "Include all tags": "包含所有标签",
             "All tags": "所有标签",
             "Tags that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的标签将成为该规则集的目标。",
