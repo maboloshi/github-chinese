@@ -70,6 +70,7 @@ I18N.conf = {
      * 文件,目录位置栏 |js-path-segment|final-path
      * 文件列表 files js-navigation-container js-active-navigation-container
      * 评论内容等 js-comment-body
+     * 评论预览 js-preview-body
      * 评论编辑区域 comment-form-textarea
      * 文件搜索模式 js-tree-finder-virtual-filter
      * 仓库文件列表 js-navigation-open Link--primary
@@ -81,7 +82,7 @@ I18N.conf = {
      * 提交的用户名 commit-author
      * 搜索页 搜索结果 search-match
      */
-    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|react-file-line|AppHeader-globalBar-start|commit-author|search-match)/,
+    reIgnoreClass: /(CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|react-file-line|AppHeader-globalBar-start|commit-author|search-match)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
