@@ -2932,27 +2932,45 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
             "GPG verification": "GPG 验证",
-            "Codespaces created from the following repositories can have GPG capabilities and sign commits so that GitHub can verify that they come from a trusted source. Only enable this for repositories that you trust.": "从以下仓库库创建的代码空间可以具有 GPG 功能并签署提交，以便 GitHub 可以验证它们来自可信源。仅对您信任的仓库启用此功能。",
-            "Disabled": "禁用",
-                "GPG will not be available in Codespaces": "GPG 将无法在 代码空间中使用",
-            "All repositories": "所有仓库",
-                "GPG will be available for Codespaces for all repositories": "GPG 可用于所有仓库的代码空间",
-            "Selected repositories": "选定的仓库",
-                "GPG will be available for Codespaces from the selected repositories": "GPG 可用于选定仓库的代码空间",
-                "Select repositories": "选择仓库",
-                // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+                "Codespaces can have GPG commit signing capabilities so that GitHub can verify that commits made in the codespace come from a trusted source. When enabled, this setting will be applied to your list of trusted repositories.": "代码空间可以具有 GPG 提交签名功能，以便 GitHub 可以验证代码空间中的提交是来自受信任的来源。启用后，该设置将被应用到您的受信任仓库列表中。",
+                // "Enabled": "启用",
+                    "GPG signing will be available in Codespaces": "GPG 签名将在代码空间中可用",
+
+            "Settings Sync": "设置同步",
+                "By enabling, your codespaces will be able to pull from VS Code Settings Sync service and push only for the trusted repositories you specify. Only enable this for repositories that you trust.": "通过启用，您的代码空间将能够从 VS Code 设置同步服务中提取数据，并仅推送您指定的受信任仓库。请只对您信任的仓库启用此功能。",
+                // "Enabled": "启用",
+                    "VS Code Settings Sync will be available in Codespaces": "VS Code 设置同步将在代码空间中可用",
+
+            "Trusted repositories": "受信任仓库",
+                "The following repositories will be referenced by GPG verification and Settings Sync.": "以下仓库将被 GPG 验证和设置同步所引用。",
+
+                "All repositories": "所有仓库",
+                    "GPG signing and VS Code Settings Sync will be available for codespaces for all repositories": "GPG 签名和 VS Code 设置同步将适用于所有仓库的代码空间",
+                "Selected repositories": "选定的仓库",
+                    "GPG signing and VS Code Settings Sync will be available for codespaces from the selected repositories": "GPG 签名和 VS Code 设置同步将适用于选定仓库的代码空间",
+                    "Select repositories": "选择仓库",
+                    // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+                    "GPG and VS Code Settings Sync will be available for Codespaces from these repositories.": "GPG 和 VS Code 设置同步将可用于这些仓库的代码空间。",
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
 
             "Editor preference": "编辑器偏好",
-            "Connect to the cloud from your local desktop client. Requires": "从本地桌面客户端连接到云。要求",
-            "with the": "安装",
-            "extension.": "插件。",
-            "Edit and preview changes straight from the browser.": "直接从浏览器编辑和预览更改。",
-            "Connect to the cloud from your local desktop client. Requires the": "从本地桌面客户端连接到云。要求",
-            "plugin, and a JetBrains license.": "插件和 JetBrains 许可证。",
-            "Edit and run notebooks from the browser with JupyterLab.": "使用 JupyterLab 从浏览器编辑和运行笔记本。",
+                // VS code
+                    "Connect to the cloud from your local desktop client. Requires": "从本地桌面客户端连接到云。要求",
+                    "with the": "安装",
+                    "GitHub Codespaces": "Github 代码空间",
+                    "extension.": "插件。",
+
+                "Visual Studio Code for the Web": "网络版的 Visual Studio Code",
+                    "Edit and preview changes straight from the browser.": "直接从浏览器编辑和预览更改。",
+
+                // "JetBrains Gateway": "",
+                    "Connect to the cloud from your local desktop client. Requires the": "从本地桌面客户端连接到云。要求",
+                    "plugin, and a JetBrains license.": "插件和 JetBrains 许可证。",
+
+                // JupyterLab
+                    "Edit and run notebooks from the browser with JupyterLab.": "使用 JupyterLab 从浏览器编辑和运行笔记本。",
 
             "Default idle timeout": "默认空闲超时",
             "A codespace will suspend after a period of inactivity. You can specify a default idle timeout value, which will apply to all codespaces created after the default is changed. You will be charged for the entire time your codespace is running, even if it is idle. The maximum value is": "一段时间不活动后，代码空间将暂停。您可以指定一个默认的空闲超时值，该值将应用于更改默认值后创建的所有代码空间。您将在代码空间运行的整个过程中付费，即使它是空闲的。最大值是",
