@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -1659,6 +1659,9 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
 
         "Access": "访问",
         "Billing and plans": "账单和计划",
+            "Plans and usage": "计划和使用情况",
+            "Spending limits": "支出限额",
+            "Payment information": "支付信息",
         "Emails": "电子邮箱",
         "Password and authentication": "密码和身份验证",
         "Sessions": "会话",
@@ -2113,27 +2116,35 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 I18N.zh["settings/billing"] = { // 设置 - 账单和计划
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
-        ...I18N.zh["orgs-settings-menu"]["static"], //组织设置
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
         // 账单和计划 https://github.com/settings/billing
-            "Personal billing": "个人账单",
-            "Current monthly bill": "当前月度账单",
-            "Switch to yearly billing": "切换到按年计费",
-            "Switch to yearly billing and save": "切换到按年计费并保存", // 组织设置
-            "Next payment due": "下一次到期的支付",
-            "View payment history": "查看支付记录",
-            "Payment information": "支付信息",
-            "Update payment method": "更新支付方式",
-            "Manage spending limit": "管理支出限额",
-            "Redeem coupon": "兑换优惠券",
-            "Current plan": "当前计划",
-            "Compare all plans": "比较所有计划",
+            "Billing Summary": "账单摘要",
+            "Your next payment": "您的下一次应付款",
+            "This amount does not include the spend on usage of metered service. View your": "该金额不包括使用计量服务的支出。在下面查看您的",
+            "usage this month": "本月使用情况",
+            "below.": "。",
 
-            //"GitHub Free": "GitHub 免费",
-            "The basics for all developers": "基础计划（所有开发者）",
-            "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
-            "Unlimited public/private repos": "无限的公共/私有仓库",
-            "Unlimited collaborators": "无限协作者",
+            // 组织设置
+                "Current monthly bill": "当前月度账单",
+                "Switch to yearly billing and save": "切换到按年计费并保存",
+
+                "Next payment due": "下一次应付款",
+
+            "Payment information": "支付信息",
+            "Manage spending limit": "管理支出限额",
+            "View payment history": "查看支付记录",
+            "Switch to yearly billing": "切换到按年计费",
+
+            "Current plan": "当前计划",
+                "Compare all plans": "比较所有计划",
+
+                "GitHub Free": "GitHub 免费",
+                "The basics for all developers": "基础计划（所有开发者）",
+
+                "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
+                "Unlimited public/private repos": "无限的公共/私有仓库",
+                "Unlimited collaborators": "无限协作者",
             "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
             "500MB of Packages storage": "500MB 的包存储空间",
             "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
@@ -2155,41 +2166,66 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
-            // 组织设置
-            // [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
-            "Manage your organization accounts": "管理您的组织帐户",
-                "Create a new organization": "创建新组织",
 
             "Add-ons": "附加组件",
+                "GitHub Copilot": "GitHub 副驾驶",
+                    "Your AI powered pair programmer": "您的人工智能配对程序员",
+                    "Enable GitHub Copilot": "启用 GitHub 副驾驶",
+                    "Get code suggestions for whole lines or entire functions right inside your editor.": "在编辑器中获得整行或整个函数的代码建议。",
+
+                     // 组织设置
+                    "Buy Copilot for Business": "购买 GitHub 副驾驶商业版",
+                    "Copilot for Business": "GitHub 副驾驶商业版",
+                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub 副驾驶使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议。每月19美元/用户。",
+
+                // 组织设置
+                // [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
+                "Manage your organization accounts": "管理您的组织帐户",
+                    "Create a new organization": "创建新组织",
+
             "Usage this month": "本月使用情况",
-            "Get usage report": "获取使用报告",
+                "Get usage report": "获取使用报告",
+
+                "See billing documentation": "查看计费政策",
+                "monthly spending limit": "每月支出限额",
+                "monthly spending limit |": "每月支出限额 |",  // 组织设置
+                "Set up a spending limit": "设置支出限额",
 
             "GitHub Sponsors": "GitHub 赞助",
-            "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
-            "Start sponsoring": "开始赞助",
-            "You’re currently not sponsoring anyone.": "您目前没有赞助任何人。",
-            "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
+                "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
+                "Start sponsoring": "开始赞助",
+                "You're currently not sponsoring anyone.": "您目前没有赞助任何人。",
+                "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
 
-            "Change plan": "更改计划",
-            "Cancel plan": "取消计划",
-            "Do you have any questions? Contact": "您有任何问题吗？请联系",
+            "GitHub Marketplace": "GitHub 市场",
+                "Change plan": "更改计划",
+                "Cancel plan": "取消计划",
+                "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
             // 组织设置
-            "Billing management": "账单管理",
-            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
-            "Billing managers": "账单管理员",
-                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
-                "Invite": "邀请",
-            "Email recipients": "邮件接收者",
-            "Add": "添加",
-            "Primary": "主帐户",
+            "Billing Management": "账单管理",
+                "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
 
-            "Edit billing email address": "编辑账单电子邮箱",
-            "Billing primary email": "账单主帐户邮箱",
-            "Update": "更新",
+                "Billing managers": "账单管理员",
+                    "You have not invited any billing managers": "您尚未邀请任何账单管理员",
+                    "Invite": "邀请",
 
-            "Add billing recipient": "添加账单接收者",
-            "Add billing recipient email": "添加账单接收者邮箱",
+                "Email recipients": "邮件接收者",
+                    "Add": "添加",
+                    "Primary": "主帐户",
+
+                    // 编辑账单电子邮箱对话框
+                        "Edit billing email address": "编辑账单电子邮箱",
+                        "Billing primary email": "账单主帐户邮箱",
+                        "Update": "更新",
+
+                    // 添加账单接收者对话框
+                        "Add billing recipient": "添加账单接收者",
+                        "Add billing recipient email": "添加账单接收者邮箱",
+
+                "Metered billing via Azure": "通过 Azure 计量计费",
+                    "Add Azure Subscription": "添加 Azure 订阅",
+                    "To manage metered billing for this account through Microsoft Azure an Azure Subscription ID must be added to your account.": "通过 Microsoft Azure 管理此帐户的计量计费，必须将 Azure 订阅 ID 添加到您的帐户中。",
 
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing & plans": "账单和计划",
@@ -2261,8 +2297,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
         // 支出限额 https://github.com/settings/billing/spending_limit
             "/ Monthly spending limits": "/ 每月支付限额",
+            "/ Monthly spending limit": "/ 每月支付限额", // 组织设置
             "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
             "spending limits": "支付限额",
+            "Actions spending limits": "Github 操作支付限额", // 组织设置
+            "Packages spending limits": "软件包支付限额", // 组织设置
 
             "Payment method is missing": "缺失支付方式",
             "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
@@ -2317,12 +2356,13 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
+        [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
     ],
 };
 I18N.zh["account/billing/history"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/settings/billing"] = I18N.zh["settings/billing"];
 I18N.zh["orgs/billing_managers/new"] = I18N.zh["settings/billing"];
 I18N.zh["orgs/billing/history"] = I18N.zh["settings/billing"];
 
