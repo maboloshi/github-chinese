@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -1659,6 +1659,9 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
 
         "Access": "访问",
         "Billing and plans": "账单和计划",
+            "Plans and usage": "计划和使用情况",
+            "Spending limits": "支出限额",
+            "Payment information": "支付信息",
         "Emails": "电子邮箱",
         "Password and authentication": "密码和身份验证",
         "Sessions": "会话",
@@ -2113,27 +2116,35 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 I18N.zh["settings/billing"] = { // 设置 - 账单和计划
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
-        ...I18N.zh["orgs-settings-menu"]["static"], //组织设置
+        ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
         // 账单和计划 https://github.com/settings/billing
-            "Personal billing": "个人账单",
-            "Current monthly bill": "当前月度账单",
-            "Switch to yearly billing": "切换到按年计费",
-            "Switch to yearly billing and save": "切换到按年计费并保存", // 组织设置
-            "Next payment due": "下一次到期的支付",
-            "View payment history": "查看支付记录",
-            "Payment information": "支付信息",
-            "Update payment method": "更新支付方式",
-            "Manage spending limit": "管理支出限额",
-            "Redeem coupon": "兑换优惠券",
-            "Current plan": "当前计划",
-            "Compare all plans": "比较所有计划",
+            "Billing Summary": "账单摘要",
+            "Your next payment": "您的下一次应付款",
+            "This amount does not include the spend on usage of metered service. View your": "该金额不包括使用计量服务的支出。在下面查看您的",
+            "usage this month": "本月使用情况",
+            "below.": "。",
 
-            //"GitHub Free": "GitHub 免费",
-            "The basics for all developers": "基础计划（所有开发者）",
-            "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
-            "Unlimited public/private repos": "无限的公共/私有仓库",
-            "Unlimited collaborators": "无限协作者",
+            // 组织设置
+                "Current monthly bill": "当前月度账单",
+                "Switch to yearly billing and save": "切换到按年计费并保存",
+
+                "Next payment due": "下一次应付款",
+
+            "Payment information": "支付信息",
+            "Manage spending limit": "管理支出限额",
+            "View payment history": "查看支付记录",
+            "Switch to yearly billing": "切换到按年计费",
+
+            "Current plan": "当前计划",
+                "Compare all plans": "比较所有计划",
+
+                "GitHub Free": "GitHub 免费",
+                "The basics for all developers": "基础计划（所有开发者）",
+
+                "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
+                "Unlimited public/private repos": "无限的公共/私有仓库",
+                "Unlimited collaborators": "无限协作者",
             "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
             "500MB of Packages storage": "500MB 的包存储空间",
             "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
@@ -2155,41 +2166,66 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
-            // 组织设置
-            // [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
-            "Manage your organization accounts": "管理您的组织帐户",
-                "Create a new organization": "创建新组织",
 
             "Add-ons": "附加组件",
+                "GitHub Copilot": "GitHub 副驾驶",
+                    "Your AI powered pair programmer": "您的人工智能配对程序员",
+                    "Enable GitHub Copilot": "启用 GitHub 副驾驶",
+                    "Get code suggestions for whole lines or entire functions right inside your editor.": "在编辑器中获得整行或整个函数的代码建议。",
+
+                     // 组织设置
+                    "Buy Copilot for Business": "购买 GitHub 副驾驶商业版",
+                    "Copilot for Business": "GitHub 副驾驶商业版",
+                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub 副驾驶使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议。每月19美元/用户。",
+
+                // 组织设置
+                // [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
+                "Manage your organization accounts": "管理您的组织帐户",
+                    "Create a new organization": "创建新组织",
+
             "Usage this month": "本月使用情况",
-            "Get usage report": "获取使用报告",
+                "Get usage report": "获取使用报告",
+
+                "See billing documentation": "查看计费政策",
+                "monthly spending limit": "每月支出限额",
+                "monthly spending limit |": "每月支出限额 |",  // 组织设置
+                "Set up a spending limit": "设置支出限额",
 
             "GitHub Sponsors": "GitHub 赞助",
-            "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
-            "Start sponsoring": "开始赞助",
-            "You’re currently not sponsoring anyone.": "您目前没有赞助任何人。",
-            "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
+                "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
+                "Start sponsoring": "开始赞助",
+                "You're currently not sponsoring anyone.": "您目前没有赞助任何人。",
+                "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
 
-            "Change plan": "更改计划",
-            "Cancel plan": "取消计划",
-            "Do you have any questions? Contact": "您有任何问题吗？请联系",
+            "GitHub Marketplace": "GitHub 市场",
+                "Change plan": "更改计划",
+                "Cancel plan": "取消计划",
+                "Do you have any questions? Contact": "您有任何问题吗？请联系",
 
             // 组织设置
-            "Billing management": "账单管理",
-            "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
-            "Billing managers": "账单管理员",
-                "You have not invited any billing managers": "您尚未邀请任何账单管理员",
-                "Invite": "邀请",
-            "Email recipients": "邮件接收者",
-            "Add": "添加",
-            "Primary": "主帐户",
+            "Billing Management": "账单管理",
+                "Receipts are sent to billing managers and email recipients.": "收据会被发送给账单管理员和邮件接收者。",
 
-            "Edit billing email address": "编辑账单电子邮箱",
-            "Billing primary email": "账单主帐户邮箱",
-            "Update": "更新",
+                "Billing managers": "账单管理员",
+                    "You have not invited any billing managers": "您尚未邀请任何账单管理员",
+                    "Invite": "邀请",
 
-            "Add billing recipient": "添加账单接收者",
-            "Add billing recipient email": "添加账单接收者邮箱",
+                "Email recipients": "邮件接收者",
+                    "Add": "添加",
+                    "Primary": "主帐户",
+
+                    // 编辑账单电子邮箱对话框
+                        "Edit billing email address": "编辑账单电子邮箱",
+                        "Billing primary email": "账单主帐户邮箱",
+                        "Update": "更新",
+
+                    // 添加账单接收者对话框
+                        "Add billing recipient": "添加账单接收者",
+                        "Add billing recipient email": "添加账单接收者邮箱",
+
+                "Metered billing via Azure": "通过 Azure 计量计费",
+                    "Add Azure Subscription": "添加 Azure 订阅",
+                    "To manage metered billing for this account through Microsoft Azure an Azure Subscription ID must be added to your account.": "通过 Microsoft Azure 管理此帐户的计量计费，必须将 Azure 订阅 ID 添加到您的帐户中。",
 
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing & plans": "账单和计划",
@@ -2261,8 +2297,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
         // 支出限额 https://github.com/settings/billing/spending_limit
             "/ Monthly spending limits": "/ 每月支付限额",
+            "/ Monthly spending limit": "/ 每月支付限额", // 组织设置
             "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
             "spending limits": "支付限额",
+            "Actions spending limits": "Github 操作支付限额", // 组织设置
+            "Packages spending limits": "软件包支付限额", // 组织设置
 
             "Payment method is missing": "缺失支付方式",
             "You can’t increase the spending limits until you set up a valid payment method.": "在您设置有效的支付方式之前，您无法提高支出限额。",
@@ -2317,12 +2356,13 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        [/In addition to your personal account, you have (\d+) organizations? account/, "除了个人帐户外，您还有 $1 个组织帐户"],
+        [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
     ],
 };
 I18N.zh["account/billing/history"] = I18N.zh["settings/billing"];
+I18N.zh["orgs/settings/billing"] = I18N.zh["settings/billing"];
 I18N.zh["orgs/billing_managers/new"] = I18N.zh["settings/billing"];
 I18N.zh["orgs/billing/history"] = I18N.zh["settings/billing"];
 
@@ -2892,27 +2932,45 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
             "GPG verification": "GPG 验证",
-            "Codespaces created from the following repositories can have GPG capabilities and sign commits so that GitHub can verify that they come from a trusted source. Only enable this for repositories that you trust.": "从以下仓库库创建的代码空间可以具有 GPG 功能并签署提交，以便 GitHub 可以验证它们来自可信源。仅对您信任的仓库启用此功能。",
-            "Disabled": "禁用",
-                "GPG will not be available in Codespaces": "GPG 将无法在 代码空间中使用",
-            "All repositories": "所有仓库",
-                "GPG will be available for Codespaces for all repositories": "GPG 可用于所有仓库的代码空间",
-            "Selected repositories": "选定的仓库",
-                "GPG will be available for Codespaces from the selected repositories": "GPG 可用于选定仓库的代码空间",
-                "Select repositories": "选择仓库",
-                // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+                "Codespaces can have GPG commit signing capabilities so that GitHub can verify that commits made in the codespace come from a trusted source. When enabled, this setting will be applied to your list of trusted repositories.": "代码空间可以具有 GPG 提交签名功能，以便 GitHub 可以验证代码空间中的提交是来自受信任的来源。启用后，该设置将被应用到您的受信任仓库列表中。",
+                // "Enabled": "启用",
+                    "GPG signing will be available in Codespaces": "GPG 签名将在代码空间中可用",
+
+            "Settings Sync": "设置同步",
+                "By enabling, your codespaces will be able to pull from VS Code Settings Sync service and push only for the trusted repositories you specify. Only enable this for repositories that you trust.": "通过启用，您的代码空间将能够从 VS Code 设置同步服务中提取数据，并仅推送您指定的受信任仓库。请只对您信任的仓库启用此功能。",
+                // "Enabled": "启用",
+                    "VS Code Settings Sync will be available in Codespaces": "VS Code 设置同步将在代码空间中可用",
+
+            "Trusted repositories": "受信任仓库",
+                "The following repositories will be referenced by GPG verification and Settings Sync.": "以下仓库将被 GPG 验证和设置同步所引用。",
+
+                "All repositories": "所有仓库",
+                    "GPG signing and VS Code Settings Sync will be available for codespaces for all repositories": "GPG 签名和 VS Code 设置同步将适用于所有仓库的代码空间",
+                "Selected repositories": "选定的仓库",
+                    "GPG signing and VS Code Settings Sync will be available for codespaces from the selected repositories": "GPG 签名和 VS Code 设置同步将适用于选定仓库的代码空间",
+                    "Select repositories": "选择仓库",
+                    // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+                    "GPG and VS Code Settings Sync will be available for Codespaces from these repositories.": "GPG 和 VS Code 设置同步将可用于这些仓库的代码空间。",
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
 
             "Editor preference": "编辑器偏好",
-            "Connect to the cloud from your local desktop client. Requires": "从本地桌面客户端连接到云。要求",
-            "with the": "安装",
-            "extension.": "插件。",
-            "Edit and preview changes straight from the browser.": "直接从浏览器编辑和预览更改。",
-            "Connect to the cloud from your local desktop client. Requires the": "从本地桌面客户端连接到云。要求",
-            "plugin, and a JetBrains license.": "插件和 JetBrains 许可证。",
-            "Edit and run notebooks from the browser with JupyterLab.": "使用 JupyterLab 从浏览器编辑和运行笔记本。",
+                // VS code
+                    "Connect to the cloud from your local desktop client. Requires": "从本地桌面客户端连接到云。要求",
+                    "with the": "安装",
+                    "GitHub Codespaces": "Github 代码空间",
+                    "extension.": "插件。",
+
+                "Visual Studio Code for the Web": "网络版的 Visual Studio Code",
+                    "Edit and preview changes straight from the browser.": "直接从浏览器编辑和预览更改。",
+
+                // "JetBrains Gateway": "",
+                    "Connect to the cloud from your local desktop client. Requires the": "从本地桌面客户端连接到云。要求",
+                    "plugin, and a JetBrains license.": "插件和 JetBrains 许可证。",
+
+                // JupyterLab
+                    "Edit and run notebooks from the browser with JupyterLab.": "使用 JupyterLab 从浏览器编辑和运行笔记本。",
 
             "Default idle timeout": "默认空闲超时",
             "A codespace will suspend after a period of inactivity. You can specify a default idle timeout value, which will apply to all codespaces created after the default is changed. You will be charged for the entire time your codespace is running, even if it is idle. The maximum value is": "一段时间不活动后，代码空间将暂停。您可以指定一个默认的空闲超时值，该值将应用于更改默认值后创建的所有代码空间。您将在代码空间运行的整个过程中付费，即使它是空闲的。最大值是",
@@ -9157,7 +9215,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "New branch ruleset": "新建分支规则集",
                 "New tag ruleset": "新建标签规则集",
 
-            "No rulesets will be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行任何规则集。", //组织设置
+            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -9175,7 +9233,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
-            "This ruleset will not be enforced until this organization account is upgraded to GitHub Enterprise.": "在将此组织帐户升级到 GitHub 企业版之前，不会强制执行此规则集。", //组织设置
+            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
 
             "Name": "名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
@@ -9199,19 +9257,49 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Determines who can bypass this ruleset.": "确定谁可以绕过此规则集。",
 
             "Bypass list": "旁路列表",
+                "Add bypass": "添加旁路",
+
+                 // 添加旁路对话框
+                    "Choose which roles": "选择哪些角色",
+                    ", teams, and apps": "、团队和应用",
+                    "can bypass this ruleset": "可绕过此规则集",
+
+                    "Suggestions": "建议",
+                        "Role": "角色",
+                        "App": "应用",
+                        "Organization admin": "组织管理员",
+                        "Repository admin": "仓库管理员",
+                        "triage": "分类",
+                        "maintain": "维持",
+                        "read": "读取",
+                        "write": "写入",
+                        "vulnerability_reporter": "漏洞报告员",
+                        "Add Selected": "添加所选",
+
                 "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
-                "Add a team to the bypass list": "将团队添加到旁路列表", //组织设置
+                "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
 
                 "Bypass list is empty": "旁路列表为空",
                 "Exempt teams or apps from this ruleset by adding them to the bypass list": "通过将团队或应用添加到旁路列表中，使其免于此规则集",
-                "Exempt teams": "豁免团队",
-                "or apps": "或应用",
+                "Exempt roles": "豁免角色",
+                ", teams, or apps": "团队或应用",
                 "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
             "Target repositories": "目标仓库", // 组织设置
-                    "Include all repositories": "包含所有仓库",
-                "No repository targets have been added yet": "尚未添加仓库目标",
-                    "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+                "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+
+                "Target:": "目标：",
+                    // 所有仓库
+                        "Target all repositories within the organization": "目标是针对组织内的所有仓库。",
+                    "Dynamic list of repositories": "动态仓库列表",
+                        "Target repositories based on name": "基于名称的目标仓库",
+                    "Select repositories": "选定的仓库",
+                        "Target a specific list of selected repositories": "以选定的仓库的特定列表为目标",
+
+                "Targeting criteria": "目标定位条件",
+                    "All Repositories": "所有仓库",
+                    "No repository targets have been added yet": "尚未添加仓库目标",
+                    "Repository targeting determines which repositories will be protected by this ruleset.": "仓库目标决定了哪些仓将受此规则集保护。",
 
                 "Prevent renaming of target repositories": "防止重命名目标仓库",
                     "When checked, target repositories can only be renamed by those with bypass permission.": "勾选后，目标仓库只能由具有旁路权限的人重命名。",
@@ -9371,7 +9459,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "Target tags": "目标标签",
             "Tag targeting has not been configured": "尚未配置标签目标",
             "Tag": "标签",
-            "Tags": "标签",
+            "tags": "标签",
             "Include all tags": "包含所有标签",
             "All tags": "所有标签",
             "Tags that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的标签将成为该规则集的目标。",
