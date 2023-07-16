@@ -337,6 +337,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Global navigation update": "全局导航更新",
             "Rich Jupyter Notebook Diffs": "丰富的 Jupyter Notebook 差异",
             "Project Migration": "项目迁移",
+            "Passkeys": "通行密钥",
             "Slash Commands": "斜杠命令",
         "Help": "帮助",
         "Settings": "设置",
@@ -2527,6 +2528,26 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Update password": "更新密码",
             "I forgot my password": "我忘记了我的密码",
 
+            "Passkeys": "通行密钥",
+                "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
+                "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
+                "Add a passkey": "添加通行密钥",
+
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、密码或 PIN 验证您的身份。",
+                "Your passkeys": "您的通行密钥",
+                "Seen from this browser": "该浏览器中查看",
+                // | Last used less than 1 小时之前
+                "Edit passkey nickname": "编辑密钥昵称",
+                // [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
+
+                // 删除密钥对话框
+                    "Delete passkey?": "删除通行密钥？",
+                    // [Are you sure you want to delete your `([^ ]+)` passkey?/, "您确定要删除您的 “$1” 通行密钥吗？"],
+                    "You will no longer be able to use it to sign-in to your account.": "您将无法再使用它登录您的帐户。",
+                    "Note: You may continue to see this passkey as an option during sign-in until you also delete it from your browser, device or associated account's password management settings.": "注意：您可能会在登录过程中继续看到此通行密钥作为一个选项，直到您将其从浏览器、设备或关联帐户的密码管理设置中删除。",
+                    "Deleting…": "删除中…",
+
             // 双重身份验证
                 // 顶部提醒
                     "You can now manage your two-factor authentication methods from this page.": "您现在可以从此页面管理您的双重身份验证方法。",
@@ -2646,7 +2667,9 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
     },
     "regexp": [ // 正则翻译
         [/(\d+) devices?/, "$1 个设备"], // 设置--> 密码和身份验证页
-        [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
+        [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："],
+        [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
+        [/Are you sure you want to delete your `([^ ]+)` passkey?/, "您确定要删除您的 “$1” 通行密钥吗？"],
     ],
 };
 
@@ -10688,6 +10711,11 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Forgot password?": "忘记密码？",
             "Sign in": "登录",
             "Signing in…": "登录中…",
+
+            "Or": "或",
+            "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
+            "Sign-in with a passkey": "使用通行密钥登录",
+
             "New to GitHub?": "初次接触 GitHub？",
             "Create an account": "那就注册个帐户吧",
 
@@ -10728,6 +10756,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "by default.": "作为默认方式。",
 
             "Having problems?": "有问题吗？",
+                "Use your passkey": "使用您的通行密钥",
                 "Authenticate with GitHub Mobile": "使用 GitHub 移动应用进行身份验证",
                 "Use a recovery code or begin account recovery": "使用恢复码或开始帐户恢复",
 
@@ -10741,6 +10770,16 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             // 验证状态提醒
             "Sign-in request timed out.": "登录请求超时。",
+
+        // https://github.com/sessions/two-factor/webauthn
+            "Passkey": "通行密钥",
+            "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+            "Use passkey": "使用通行密钥",
+
+            "Authentication failed.": "认证失败。",
+            "Retry passkey": "重试通行密钥",
+
+            "Unable to verify with your passkey?": "无法验证您的通行密钥？",
 
         // 双重身份验证恢复 https://github.com/sessions/two-factor/recovery
             "Two-factor recovery": "双重身份验证恢复",
@@ -10843,6 +10882,23 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             // 验证提醒
             "Unable to verify personal access token": "无法验证个人访问令牌",
+
+        // 配置无密码身份验证 https://github.com/sessions/trusted-device?return_to=%2Fsettings%2Fsecurity
+            "Configure passwordless authentication": "配置无密码身份验证",
+            "Add a passkey": "添加通行密钥",
+            "Your device supports passkeys, a password replacement that validates your identity using touch, facial recognition, a password, or a PIN.": "您的设备支持密码替代方案，通过触摸、面部识别、密码或者 PIN 码来验证您的身份。",
+
+            "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双重身份验证。",
+            "Add passkey": "添加通行密钥",
+            "Passkey registration failed.": "密钥注册失败。",
+            "Ask me later": "稍后再问",
+            "Not interested?": "没兴趣？",
+            "Don't ask again for this browser": "不要再询问此浏览器",
+
+            "Successfully added a passkey": "已成功添加通行密钥",
+            "From now on, you can use this passkey to sign-in to GitHub.": "从现在起，您可以使用此通行密钥登录 GitHub。",
+            "Passkey nickname": "通行密钥昵称",
+            "Continue...": "继续中...",
 
         // 重置密码 https://github.com/password_reset
             "Reset your password": "重置您的密码",
