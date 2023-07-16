@@ -6140,6 +6140,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
+        // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
+            "You are viewing a condensed version of this merge commit. You can view the": "您正在查看该合并提交的浓缩版本。您可以查看",
+            "full changes here": "完整的更改",
+
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
             "between": "",
