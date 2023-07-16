@@ -154,6 +154,9 @@
                 if (node.hasAttribute('title')) {
                     transElement(node, 'title', true); // 翻译 浏览器 提示对话框
                 }
+                if (node.hasAttribute('data-hovercard-type')) {
+                    return; // 不翻译
+                }
             }
 
             if (node.childNodes.length >0) {
