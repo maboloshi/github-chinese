@@ -11052,6 +11052,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "left to enable 2FA. Take action now to avoid additional interruptions.": "时间启用双重身份验证。请立即采取行动以避免额外的干扰。",
             "Remind me tomorrow": "明天提醒我",
 
+        // 登出页面 https://github.com/logout
+            "Are you sure you want to sign out?": "您确定要退出吗？",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
