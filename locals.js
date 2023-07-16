@@ -5019,7 +5019,7 @@ I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
     ],
 };
 
-I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
+I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
         // pull 与 request 公共词条
             "Filters": "筛选",
@@ -5106,6 +5106,14 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
             "Draft": "草案",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
+
+    }
+};
+
+I18N.zh["repository/issues"] = { // 仓库 - 议题页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository/pull_issue_public"]["static"],
 
         // 仓库 --> 议题 标签卡/<user-name>/<repo-name>/issues
             // 欢迎信息
@@ -5498,92 +5506,10 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题和拉取请求页面
     ],
 };
 
-I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
+I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
-
-        // pull 与 request 公共词条
-            "Filters": "筛选",
-                // 筛选下拉菜单
-                "Filter Issues": "筛选议题",
-                "Open issues and pull requests": "打开的议题和拉取请求",
-                "Your issues": "您提出的议题",
-                "Your pull requests": "您的拉取请求",
-                "Everything assigned to you": "任何分配给您的",
-                "Everything mentioning you": "任何提及您的",
-                "View advanced search syntax": "查看高级搜索语法",
-
-            "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
-
-            "Labels": "标签",
-            "Milestones": "里程碑",
-            "New issue": "创建议题",
-
-            // 筛选工作条
-            // "Author": "作者",
-                "Filter by author": "按用户筛选",
-                "Filter users": "筛选用户名",
-
-            "Label": "标签",
-                "Filter by label": "按标签筛选",
-                "Filter labels": "筛选标签",
-                "Unlabeled": "无标签",
-
-            // "Projects": "项目",
-                "Filter by project": "按项目筛选",
-                "Filter projects": "筛选项目",
-                "Repository": "仓库",
-                "Organization": "组织",
-                "No projects found. Sorry about that.": "很抱歉，未找到任何项目。",
-
-            // "Milestones": "里程碑",
-                "Filter by milestone": "按里程碑筛选",
-                "Filter milestones": "筛选里程碑",
-                "Issues with no milestone": "无里程碑的议题",
-                "Pull requests with no milestone": "无里程碑的拉取请求", // pulls
-
-            "Assignee": "受理人",
-                "Filter by who’s assigned": "按受理人筛选",
-                "Assigned to nobody": "无受理人",
-                // [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
-                "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
-
-            "Sort": "排序",
-                "Sort by": "排序",
-                "Newest": "最新的",
-                "Oldest": "最早的",
-                "Most commented": "最多评论",
-                "Least commented": "最少评论",
-                "Recently updated": "最近更新",
-                "Least recently updated": "最早更新", //?
-                "Most reactions": "多数反应",
-                "Best match": "最佳匹配",
-
-            // 选中模式
-                "selected": "选中",
-                "Mark as": "标记为",
-                "Apply labels": "应用标签",
-                "Assign": "分配",
-                    "Assign someone": "分配给某人",
-                    "Assign to nobody": "分配给任何人",
-
-            // 筛选结果
-            "No results matched your search.": "没有与您的搜索匹配的结果。",
-            "You could search": "您可以搜索",
-            "all of GitHub": "所有 Github",
-            "or try an": "或者尝试",
-            "advanced search": "高级搜索",
-
-            // 状态词
-            "was merged": "合并于",
-            "was closed": "关闭于",
-            "Approved": "已批准",
-            "Review required": "需要审查", // 拉取请求 页面状态词
-                "Review required before merging": "合并前需要审查",
-            "outdated": "陈旧的",
-            "Draft": "草案",
-
-            // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
+        ...I18N.zh["repository/pull_issue_public"]["static"],
 
         // 仓库 --> 拉取请求 标签卡 /<user-name>/<repo-name>/pulls
             // 欢迎信息
