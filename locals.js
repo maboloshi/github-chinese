@@ -334,7 +334,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "New Code Search and Code View": "新版代码搜索和代码视图",
             "Colorblind themes": "色盲主题",
             "Command Palette": "命令面板",
-            "Global navigation update": "全局导航更新",
+            "Global Navigation Update": "全局导航更新",
             "Rich Jupyter Notebook Diffs": "丰富的 Jupyter Notebook 差异",
             "Project Migration": "项目迁移",
             "Passkeys": "通行密钥",
@@ -1692,6 +1692,8 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
 
 I18N.zh["settings-menu"] = { // 设置 - 公共部分
     "static": { // 静态翻译
+        "Settings": "设置", // 新版全局导航
+
         "Your personal account": "我的个人帐户",
         "Switch to another account": "切换到另一个帐户", // 存在组织时
         "Go to your personal profile": "去我的个人资料",
@@ -1817,7 +1819,6 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
 
-            "Settings": "设置", // 新版全局导航
         // Profile 个人资料 https://github.com/settings/profile
             "Public profile": "基本资料",
             "Profile picture": "我的头像",
@@ -6575,6 +6576,8 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
             "View git blame": "浏览 Git 追溯",
             "Reference in new issue": "引用到新议题",
             "Reference in new discussion": "引用到新讨论",
+            "View file in GitHub.dev": "在 GitHub.dev 中查看文件",
+            "View file in different branch/tag": "查看不同分支/标签中的文件",
 
             "Search this file…": "搜索这个文件...", // csv 文件
 
@@ -10393,6 +10396,9 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
                 "GitHub will always send alerts to partners for detected secrets in public repositories.": "GitHub 会始终向合作伙伴发送检测到公共仓库中机密的警报。",
                 "Learn more about partner patterns": "了解更多关于合作伙伴模式的信息",
+                    "Push protection": "推送保护",
+                    "Block commits that contain": "阻止推送包含",
+                    "supported secrets": "支持的机密",
 
             // 组织仓库
             "Access to alerts": "访问警报",
@@ -10645,6 +10651,7 @@ I18N.zh["repository/transfer"] = { // 转让仓库
 
         // 转让仓库 /<user-name>/<repo-name>/transfer
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将该仓库转让给另一位用户或一个您可以创建仓库的组织。",
+            "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
             "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解仓库转移后的管理员访问权限、团队、问题分配和重定向，请参阅",
             "Transferring a repository": "转让仓库",
             "in GitHub Help.": "在 GitHub 帮助中。",
@@ -10652,10 +10659,10 @@ I18N.zh["repository/transfer"] = { // 转让仓库
             "There": "有",
             "is": " ",
             "that may be affected by this transfer.": "可能受到这次转让的影响。",
-            "": "",
             "New owner": "新所有者",
             "Select one of my organizations": "选择一个我的组织",
             "Choose an owner": "选择所有者",
+            "Filter…": "筛选…",
             "Specify an organization or username": "指定组织或用户名",
             "Repository name": "仓库名",
                 "Checking availability…": "检查可用性…",
