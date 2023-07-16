@@ -7850,6 +7850,33 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "A newly published release will automatically be labeled as the latest release for this repository.": "新发布的版本将自动标记为该仓库的最新版本。",
             "If \'Set as the latest release\' is unchecked, the latest release will be determined by higher semantic version and creation date.": "如果未选中 “设置为最新版本”，则最新版本将由更高语义版本和创建日期确定。",
             "Learn more about release settings.": "了解更多关于发行版设置的信息。",
+
+       // 创建 Action 发行版到市场 /releases/new?marketplace 和 编辑 /releases/edit/... >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            "Release Action": "发布 Action",
+                "Publish this release to the GitHub Marketplace": "将此版本发布到 GitHub 市场",
+                "You must": "您必须",
+                "accept the GitHub Marketplace Developer Agreement": "接受 GitHub 市场开发者协议",
+                "before publishing an Action.": "在发布之前。",
+
+                "Publish this Action to the GitHub Marketplace": "将此 Action 发布到 GitHub  市场",
+                "Your Action will be discoverable in the Marketplace and available in GitHub search.": "您的 Action 将在市场中被发现，并可在 GitHub 搜索中找到。",
+
+                "Your action.yml needs changes before it can be published.": "您的 action.yml 需要更改才能发布。",
+                "Everything looks good! You have all the required information.": "一切看起来都不错！您拥有所有必需的信息。",
+
+                "Name": "名称",
+                    "- Name must be unique. Cannot match an existing action, user or organization name.": "- 名称必须唯一。不能与现有的操作、用户或组织名称相匹配。",
+                "Description": "描述",
+                "Icon": "图标",
+                "Color": "颜色",
+
+                "A README exists.": "已经存在 README 文件。",
+
+                "Primary Category": "主要类别",
+                    "Choose an option": "请选择",
+                "Another Category": "其他分类",
+                    "— optional": "— 可选",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
