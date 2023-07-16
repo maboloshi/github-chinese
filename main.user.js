@@ -150,6 +150,10 @@
                 transElement(node, 'label');
             } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
                 transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
+            } else if (node.tagName === 'A') {
+                if (node.hasAttribute('title')) {
+                    transElement(node, 'title', true); // 翻译 浏览器 提示对话框
+                }
             }
 
             if (node.childNodes.length >0) {
