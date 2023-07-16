@@ -1690,6 +1690,20 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
     ],
 };
 
+I18N.zh["orgs-public"] = { // 组织公共部分
+    "static": { // 静态翻译
+
+        "People": "成员",
+        "Teams": "团队",
+
+    },
+    "regexp": [ // 正则翻译
+        [/Invite someone to/, "邀请某人加入组织"],
+        [/New team in/, "新建团队在组织"],
+        [/New repository in /, "新建仓库在组织"],
+    ],
+};
+
 I18N.zh["settings-menu"] = { // 设置 - 公共部分
     "static": { // 静态翻译
         "Settings": "设置", // 新版全局导航
@@ -1746,6 +1760,8 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
 
 I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
     "static": { // 静态翻译
+        ...I18N.zh["orgs-public"]["static"],
+
         // 公用部分
             "Organization account": "组织帐户",
             "Switch to another account": "切换到另一个帐户", // 存在组织时
@@ -12413,9 +12429,6 @@ I18N.zh["orgs"] = { // 组织页面
 
             "followers": "关注者",
             "Sponsor": "赞助",
-
-            "People": "成员",
-            "Teams": "团队",
 
             "Send feedback": "发送反馈",
 
