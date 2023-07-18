@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|search|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -401,6 +401,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Nothing to preview": "没有什么可预览",
         "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
         "Add review comment": "添加审查意见", // 具体拉取请求 文件审查评论
+        "Start a review": "开始评论", // 具体拉取请求 文件审查评论
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
@@ -3248,6 +3249,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+                "GitHub will always send alerts to partners for detected secrets in public repositories.": "GitHub 会随时向合作伙伴发送公共仓库中检测到的机密警报。",
+                "Learn more about partner patterns": "了解更多关于合作伙伴模式的信息",
 
                 // 对话框
                 "Disable secret scanning?": "禁用机密扫描？",
@@ -3256,6 +3259,12 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Enable secret scanning for eligible repositories?": "启用符合条件的仓库的机密扫描？",
                 "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
                 "Enable for eligible repositories": "启用符合条件的仓库",
+
+                "Push protection": "推送保护",
+                    "Block commits that contain": "阻止提交，包含",
+                    "supported secrets": "受支持的秘密",
+                    "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
+
 
     },
     "regexp": [ // 正则翻译
@@ -6039,7 +6048,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
-            "Collapse expanded lines": "折叠展开的线",
+            "Expand All": "展开全部",
+            "Expand Up": "向上展开",
+            "Expand Down": "向下展开",
 
             // 修改的文件 右侧下拉
             "Show comments": "显示评论",
@@ -6132,6 +6143,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，并限制与协作者对话。",
 
             "Viewed": "已查看",
+            "Comment on this file": "评论此文件",
 
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
@@ -11557,19 +11569,13 @@ I18N.zh.pulls = I18N.zh.issues;
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
-            "Search more than": "这里有超过",
-            "repositories": "的仓库供您搜索",
-            "users": "用户在使用",
-            "issues": "议题被提出",
             "Search GitHub": "GitHub 一下，您就知道",
-
 
             // ProTip
             "For an": "要进行",
             "advanced search": "高级搜索",
-            ", use some of our": "，使用我们的这些",
-            "prefixes.": "前缀。",
-            // "You could try an": "您可以尝试",
+            ", use our": "，使用我们的",
+            "prefixes": "前缀",
 
             // 搜索技巧 对话框 (忽略 不翻译)
             "Search cheat sheet": "搜索小技巧",
@@ -11586,24 +11592,104 @@ I18N.zh["search"] = { // 搜索页面
 
         // 搜索结果页面 https://github.com/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
             // 左侧菜单
-            "Repositories": "仓库",
+            "Filter by": "筛选",
             "Code": "代码",
+            "Repositories": "仓库",
             "Commits": "提交",
             "Discussions": "讨论",
             "Topics": "主题",
             "Users": "用户",
+            "More": "更多",
 
             "States": "状态",
             "Closed": "已关闭",
             "Open": "打开",
 
             "Languages": "语言",
+            "More languages...": "更多语言...",
+
+            // &type=code
+            "More repositories...": "更多仓库...",
+            "Paths": "路径",
+            "More directories...": "更多路径...",
+
+            // &type=registrypackages
+            "Types": "类型",
+
+            // &type=issues
+            "State": "状态",
+
+            "Advanced": "高级搜索",
+                "Owner": "所有者",
+                "Size": "尺寸",
+                "Number of followers": "关注数",
+                "Number of forks": "复刻数",
+                "Number of stars": "星标数",
+                "Date created": "创建日期",
+                "Date pushed": "推送日期",
+                "Topic": "话题",
+                "License": "许可证",
+                "Archived": "存档",
+
+                // &type=code
+                "Symbol": "符号",
+                "Exclude archived": "排除存档",
+
+                // &type=issues
+                "Close reason": "关闭原因",
+                "Has linked pull request": "已关联的拉取请求",
+                "Author": "作者",
+                "Assignee": "受理",
+                "Mentioned user": "提及的用户",
+                "Mentioned team": "提及的团队",
+                "Commenter": "评论者",
+                "Involved user": "相关用户",
+                "Label": "标签",
+                "Milestone": "里程碑",
+                "Number of comments": "评论数",
+                "Number of interactions": "互动数",
+
+                // &type=pullrequests
+                "CI status": "CI 状态",
+                "Review status": "审查状态",
+                "Merged": "已合并",
+                "Not merged": "未合并",
+
+                // &type=discussions
+                "Organization": "组织",
+                "Involves user": "相关用户",
+
+                // &type=users
+                "Full name": "全称",
+                "Location": "地区",
+                "Language": "语言",
+                "Sponsorable": "可赞助",
+
+                // &type=commits
+                "Committer": "提交至",
+                "Author email": "作者电子邮箱",
+                "Committer email": "提交者电子邮箱",
+                "Merge commits": "合并提交",
+                "Hash": "哈希值",
+                "Parent hash": "父哈希值",
+                "Tree hash": "树哈希值",
 
             "Advanced search": "高级搜索",
+                // &type=wikis
+                "User": "用户",
+                "Repository": "仓库",
+                "Last updated date": "最后更新日期",
+                // &type=topics
+                "Curated topics": "策划主题",
+                "Featured topics": "精选主题",
+                "Number of repositories": "仓库数",
+                "Creation date": "创建日期",
+
             "Cheat sheet": "搜索技巧",
 
-            "Sort:": "排序：",
+            "Sort by:": "排序方式：",
                 // 筛选下拉
+                // &type=repositories
                 "Sort options": "排序选项",
                 "Best match": "最佳匹配",
                 "Most stars": "最多星标",
@@ -11612,9 +11698,6 @@ I18N.zh["search"] = { // 搜索页面
                 "Fewest forks": "最少复刻",
                 "Recently updated": "最近更新",
                 "Least recently updated": "最早更新",
-                // 代码
-                "Recently indexed": "最近索引",
-                "Least recently indexed": "最早索引",
                 // 提交
                 "Recently committed": "最近提交",
                 "Least recently committed": "最早提交",
@@ -11625,6 +11708,9 @@ I18N.zh["search"] = { // 搜索页面
                 "Least commented": "最少评论",
                 "Newest": "最新",
                 "Oldest": "最早",
+                // 讨论
+                "Highest score": "得分最高",
+                "Lowest score": "得分最低",
                 // 软件包
                 "Most downloads": "最多下载",
                 "Fewest downloads": "最少下载",
@@ -11637,23 +11723,28 @@ I18N.zh["search"] = { // 搜索页面
                 "Most repositories": "最多仓库",
                 "Fewest repositories": "最少仓库",
 
+            "More options": "更多选项",
+            "View search docs": "查看搜索文档",
+
             // 部分状态词
             "Updated": "更新于", // &type=repositories
-            "Last indexed": "最近索引于", // &type=code
             "committ": "提交",
             "committed": "提交于", // &type=commits
-            "opened": "打开于", // &type=issues
+            "Opened": "打开于", // &type=issues
             "Last updated": "最近更新于", // &type=wikis
             "posted": "发布于", // &type=discussions
 
-            "You could try an": "您可以尝试",
-            "You could": "您可以",
-            "search all of GitHub": "搜索整个 GitHub",
-            "or try an": "或尝试",
+            // 保存对话框
+            "Create saved search": "创建保存的搜索",
+                "Use saved searches to filter your results more quickly": "使用保存的搜索更快地筛选结果",
+                "Name": "名称",
+                "Query": "询问",
+                "To see all available qualifiers, see our": "要查看所有可用的限定符，请参阅我们的",
+                "documentation": "文档",
+
+                "Name has already been taken": "名称被占用",
 
             // &type=repositories
-                "See topic": "查看主题",
-
                 "Public": "公共",
                 "Private": "私有",
                 "Public archive": "公共存档",
@@ -11666,14 +11757,35 @@ I18N.zh["search"] = { // 搜索页面
                 "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
 
+                // 右侧栏
+                    "Sponsor open source projects you depend on": "赞助您依赖的开源项目",
+                    "Contributors are working behind the scenes to make open source better for everyone—give them the help and recognition they deserve.": "贡献者们正在幕后努力，为每个人创造更好的开源环境——给予他们应有的帮助和认可",
+                    "Explore sponsorable projects": "探索可赞助项目",
+
+                    "How can we improve search?": "我们如何改进搜索？",
+                    "Give feedback": "提供反馈意见",
+
             // &type=code
-                "Showing the top match"         : "显示前 1 个匹配",
-                "Showing the top two matches"   : "显示前 2 个匹配",
-                "Showing the top three matches" : "显示前 3 个匹配",
-                "Showing the top four matches"  : "显示前 4 个匹配",
-                "Showing the top five matches"  : "显示前 5 个匹配",
-                "Showing the top six matches"   : "显示前 6 个匹配",
-                "Showing the top seven matches" : "显示前 7 个匹配",
+                // [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
+                "Show less": "显示更少",
+                "This file contains": "该文件还包含",
+                "more": "处",
+                "match": "匹配",
+                "matches": "匹配",
+                "not shown.": "未显示。",
+                "See all": "查看完整文件中的所有",
+                "matche in the full file": "处匹配",
+                "matches in the full file": "处匹配",
+
+            // &type=issues
+                "Learn how you can use GitHub Issues to plan and track your work.": "了解如何使用 GitHub 议题计划和跟踪工作。",
+                "Save views for sprints, backlogs, teams, or releases. Rank, sort, and filter issues to suit the occasion. The possibilities are endless.": "保存冲刺、待办事项、团队或发布的视图。根据场合对议题进行排名、排序和筛选。可能性是无止境。",
+                "Learn more about GitHub Issues": "了解更多关于 GitHub 议题的信息",
+
+            // &type=registrypackages
+                "Learn GitHub Packages": "了解 Github 软件包",
+                "GitHub Packages is a platform for hosting and managing packages, including containers and other dependencies. Get started with publishing or installing packages yourself.": "GitHub 软件包是一个托管和管理包（包括容器和其他依赖项）的平台。开始自行发布或安装软件包吧",
+                "Learn more about GitHub Packages": "了解更多有关 GitHub 软件包的信息",
 
             // &type=topics
                 "Related:": "相关的：",
@@ -11681,16 +11793,68 @@ I18N.zh["search"] = { // 搜索页面
             // &type=registrypackages
                 "latest": "最新",
 
-        //  仓库 中 搜索结果页面 /<user-name>/<repo-name>/search >>>>>>>>>>>>>>>>>>>>>>>>
-            "Code Search could not process your request, please try different search criteria.": "代码搜索无法处理您的请求，请尝试不同的搜索标准。",
-            "We track these errors automatically, but if the problem persists feel free to":"我们自动跟踪这些错误，但如果问题持续存在，请随时",
-            "contact us":"与我们联系",
-            ". We will update any status on our":"。我们将更新任何状态，在我们",
-            "status site.":"状态网站。",
+            "Your search did not match any": "您的搜索没有匹配任何",
+            "code": "代码",
+            "issue": "议题",
+            "issues": "议题",
+            "pull request": "拉取请求",
+            "pull requests": "拉取请求",
+            "discussion": "讨论",
+            "discussions": "讨论",
+            "commit": "提交",
+            "commits": "提交",
+            "package": "软件包",
+            "packages": "软件包",
+            "wikis": "Wiki",
+            "Try one of the tips below to find more code": "请尝试使用以下提示查找更多代码",
 
-        //  仓库 中 搜索结果页面 /<user-name>/<repo-name>/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
-            "or view": "或查看",
-            "all results on GitHub": "GitHub 上的所有结果",
+            "However we found": "然而我们发现",
+            "and": "和",
+            "that matched your search query. Alternatively try one of the tips below.": "与您的搜索查询相匹配。或者尝试以下提示之一。",
+
+            "Search across repositories": "跨仓库搜索",
+                "Within a repository:": "在仓库内：",
+                "Across several:": "跨越几个：",
+                "Alternative way:": "替代方式：",
+
+                "Note that we don't currently support regular expressions in the repo or org qualifiers. For more information on search syntax, see our": "请注意，我们目前不支持 repo 或 org 限定符中的正则表达式。更多有关搜索语法的信息，请参阅我们的",
+                "syntax guide": "语法指南",
+
+            "Search across an organization": "跨组织搜索",
+                "Within an organization:": "在组织内：",
+                "User's code:": "用户代码：",
+
+            "Find a particular file extension": "查找特定的文件扩展名",
+                "With .txt extensions:": "带有 .txt 扩展名：",
+                "JavaScript and TypeScript files:": "JavaScript 和 TypeScript 文件：",
+
+                "The path qualifier can search the entire file path, not just the extension, and supports regular expressions. For more information, see our": "路径限定符可以搜索整个文件路径，而不仅仅是扩展名，并且支持正则表达式。更多信息，请参阅我们的",
+
+            "Why wasn't my code found?": "为什么找不到我的代码？",
+                "During the feature preview,": "在功能预览期间，",
+                "not all code is indexed.": "并非所有代码都被索引。",
+
+                "The index currently includes more than 7 million popular public repositories, plus all private repositories accessible to members of the technical preview.": "该索引目前包括超过 700 万个流行的公共仓库，以及技术预览版成员可以访问的所有私有仓库。",
+                "Beyond that, we also don't include all files in the search index:": "除此之外，我们也不会将所有文件都纳入搜索索引：",
+                    "Vendored and generated code is excluded": "排除供应和生成的代码",
+                    "Empty files and files over 350 kiB are excluded": "排除空文件和超过 350 kiB 的文件",
+                    "Only UTF-8 encoded files are indexed": "仅对 UTF-8 编码的文件进行索引",
+                    "Very large repositories may not be indexed": "非常大的仓库可能不会被索引",
+
+                "We intend to continue to increase the amount of code available in the index as much as possible. If we are missing files that are useful to you, feel free to": "我们打算继续尽可能增加索引中可用的代码量。如果我们缺少对您有用的文件，请随意在此处",
+                "provide feedback here": "提供反馈",
+
+            "Regular expressions": "正则表达式",
+                "Sparse followed by index:": "稀疏跟随索引：",
+                "Lines that end with return:": "以回车结束的行：",
+                "File paths matching:": "文件路径匹配：",
+
+                "Note that you'll have to escape any slashes in the regex. For more information, see our": "注意，您必须在 正则中转义任何斜线。更多信息，请参阅我们的",
+
+            "Saved searches": "保存搜索",
+                "Always searching within the same organization or set of repositories? Try constructing a query and click the save button in the top right corner.": "总是在同一个组织或一组仓库中搜索？请尝试创建一个查询，然后点击右上角的保存按钮。",
+
+            "You could try an": "您可以尝试",
 
         // 高级搜索 https://github.com/search/advanced >>>>>>>>>>>>>>>>>>>>>>>>
             // 高级搜索
@@ -11716,9 +11880,9 @@ I18N.zh["search"] = { // 搜索页面
                 "License families": "许可证系列",
             "Return repositories": "搜索结果",
             "not": "不",
-            "and": "要",
+            // "and": "要",
             "only": "仅",
-            "including forks.": "包括被复刻的仓库。",
+            "including forks.": "包含复刻仓库。",
 
             "Code options": "代码选项",
             "With this extension": "文件后缀",
@@ -11755,18 +11919,13 @@ I18N.zh["search"] = { // 搜索页面
 
     },
     "regexp": [ // 正则翻译
-        // 搜索结果页
-        [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?|discussions?|users?) in/, "$2 个相关结果在"],
-        [/(Showing |)([\d,]+) ((repository|code|commit|available commit|package|marketplace|topic|wiki) results?|issues?$|discussions?|users?)/, "$2 个相关结果"],
-        [/We couldn(’|')t find (any|anything) (repositor(?:y|ies)|codes?|commits?|issues?|discussions?|packages?|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)' in/, "我们没有找到任何与 '$4' 相关的结果在"],
-        [/We couldn(’|')t find (any|anything) (repositor(?:y|ies)|codes?|commits?|issues?|discussions?|packages?|in the GitHub Marketplace|topics|wiki pages|users) matching '(.+)'/, "我们没有找到任何与 '$4' 相关的结果"],
+        [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
-        [/(\d+) comments?/, "$1 条评论"], // &type=discussions
-        [/(\d+k?) downloads?/, "$1 次下载"], // &type=registrypackages
-        //[/(\d+)k downloads?/, "$1 千次下载"], // &type=registrypackages
-        [/(\d+k?) repositor(y|ies)/, "$1 个仓库"], // &type=topics
-        // [/(\d+)k repositor(y|ies)/, "$1 千个仓库"], // &type=topics
-        [/and (\d+) more/, "和其他 $1 个"], // &type=topics
+        [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+    ],
+    "selector": [ // 元素筛选器规则
+        ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(2) > label > select > option:nth-child(2)", "要"],
+        ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(3) > label > select > option:nth-child(2)", "要"],
     ],
 };
 
@@ -13521,7 +13680,7 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
 
             "Code scanning": "代码扫描",
-                "Identify vulnerabilities and errors in your code with": "检测代码中的漏洞和错误，使用",
+                "Identify vulnerabilities and errors with": "识别代码中的漏洞和错误，通过",
                 ". Default CodeQL analysis will be set up on": "。默认的 CodeQL 分析将被设置为",
                 "eligible": "符合条件的",
                 "public repositories.": "公共仓库。",
