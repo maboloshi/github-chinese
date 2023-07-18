@@ -3248,6 +3248,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+                "GitHub will always send alerts to partners for detected secrets in public repositories.": "GitHub 会随时向合作伙伴发送公共仓库中检测到的机密警报。",
+                "Learn more about partner patterns": "了解更多关于合作伙伴模式的信息",
 
                 // 对话框
                 "Disable secret scanning?": "禁用机密扫描？",
@@ -3256,6 +3258,12 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Enable secret scanning for eligible repositories?": "启用符合条件的仓库的机密扫描？",
                 "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
                 "Enable for eligible repositories": "启用符合条件的仓库",
+
+                "Push protection": "推送保护",
+                    "Block commits that contain": "阻止提交，包含",
+                    "supported secrets": "受支持的秘密",
+                    "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
+
 
     },
     "regexp": [ // 正则翻译
@@ -13667,7 +13675,7 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
 
             "Code scanning": "代码扫描",
-                "Identify vulnerabilities and errors in your code with": "检测代码中的漏洞和错误，使用",
+                "Identify vulnerabilities and errors with": "识别代码中的漏洞和错误，通过",
                 ". Default CodeQL analysis will be set up on": "。默认的 CodeQL 分析将被设置为",
                 "eligible": "符合条件的",
                 "public repositories.": "公共仓库。",
