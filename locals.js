@@ -401,6 +401,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Nothing to preview": "没有什么可预览",
         "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
         "Add review comment": "添加审查意见", // 具体拉取请求 文件审查评论
+        "Start a review": "开始评论", // 具体拉取请求 文件审查评论
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
@@ -6047,7 +6048,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
-            "Collapse expanded lines": "折叠展开的线",
+            "Expand All": "展开全部",
+            "Expand Up": "向上展开",
+            "Expand Down": "向下展开",
 
             // 修改的文件 右侧下拉
             "Show comments": "显示评论",
@@ -6140,6 +6143,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，并限制与协作者对话。",
 
             "Viewed": "已查看",
+            "Comment on this file": "评论此文件",
 
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
