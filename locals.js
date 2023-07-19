@@ -4791,6 +4791,14 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "contributor": "个贡献者",
             // "contributors": "个贡献者",
 
+        // Action 仓库 右侧栏
+            "Suggested Workflows": "建议的工作流程",
+            "Based on your tech stack": "基于您的技术堆栈",
+            "Set up": "设立",
+            "Configure": "设置",
+            "More workflows": "更多工作流程",
+            "Dismiss suggestions": "隐藏建议",
+
         // 仓库复刻中...
             // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
             "It should only take a few seconds.": "应该只需要几秒钟的时间。",
