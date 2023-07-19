@@ -10,8 +10,13 @@
 
 ## 💖星标历史
 
-<!-- [![Star History Chart](https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline)](https://star-history.com/#maboloshi/github-chinese&Timeline) -->
-<img src="https://camo.githubusercontent.com/8039feea33a30dd2eeea51c9e46365f9e35b60f84e6b424d5244e83a4707c530/68747470733a2f2f6170692e737461722d686973746f72792e636f6d2f7376673f7265706f733d6d61626f6c6f7368692f6769746875622d6368696e65736526747970653d54696d656c696e65" alt="Star History Chart" data-canonical-src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&amp;type=Timeline" width="75%">
+<a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
+  </picture>
+</a>
 
 ## 🚩功能
 
@@ -174,6 +179,13 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
   ![github-chinese][github-chinese]
 
+<details>
+  <summary><h2>🎁 打赏</h2></summary>
+
+  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="30%">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="30%">
+  
+</details>
+
 [project-url]: https://github.com/maboloshi/github-chinese "GitHub 中文化插件"
 
 [issues-url]: https://github.com/maboloshi/github-chinese/issues "议题"
@@ -199,8 +211,3 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
-
-## 🎁 打赏
-
-<img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="35%">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="35%">
-

@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -4461,8 +4461,10 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "A": " ",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
+            "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
 
             "Owners": "所有者",
+                "Choose an owner": "选择所有者",
             "Repository name": "仓库名称",
 
                 // [/is available./, "名称可用。"], // 复刻页面
@@ -4475,7 +4477,9 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
             "Copy the": "仅复制",
             "branch only": "分支",
-            // [/Contribute back to ([^ ]+) by adding your own branch./, "通过添加您自己的分支来回馈 $1。"],
+
+            "Contribute back to": "回馈给",
+            "by adding your own branch.": "通过添加您自己的分支。",
 
             "You are creating a fork in your personal account.": "您正在向您的个人帐户中创建一个复刻。",
             "Create fork": "创建复刻",
@@ -4489,7 +4493,6 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         [/\(repository already exists\)/, "（仓库已存在）"], // 复刻页面
         [/is available./, "名称可用。"], // 复刻页面
         [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 组织中创建一个复刻。"], // 复刻页面
-        [/Contribute back to ([^ ]+) by adding your own branch./, "通过添加您自己的分支来回馈 $1。"],
         ...I18N.zh["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -4498,6 +4501,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 };
 I18N.zh["new"] = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
+I18N.zh["repository/fork"] = I18N.zh["page-new-repo"];
 
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
@@ -4790,6 +4794,14 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "releases": "次发布",
             // "contributor": "个贡献者",
             // "contributors": "个贡献者",
+
+        // Action 仓库 右侧栏
+            "Suggested Workflows": "建议的工作流程",
+            "Based on your tech stack": "基于您的技术堆栈",
+            "Set up": "设立",
+            "Configure": "设置",
+            "More workflows": "更多工作流程",
+            "Dismiss suggestions": "隐藏建议",
 
         // 仓库复刻中...
             // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
@@ -7922,6 +7934,28 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
+
+I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // /<user-name>/<repo-name>/packages
+            "Get started with GitHub Packages": "开始使用 GitHub 软件包",
+            "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
+             "Choose a registry": "选择一个注册表",
+
+            "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用程序的软件平台——小型轻量级执行环境。",
+            "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
+            "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
+            "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.": "分发用于 Ruby 编程语言的 Ruby 程序和库的标准格式。",
+            "A package manager for JavaScript, included with Node.js. npm makes it easy for developers to share and reuse code.": "npm 是一个 JavaScript 的包管理器，包含在 Node.js 中。它使开发人员能够轻松地分享和重用代码。",
+            "Containers": "容器",
+            "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
+
+    },
+    "regexp": [
+    ],
+}
 
 I18N.zh["repository/security"] = { // 仓库 - 安全页面
     "static": { // 静态翻译
