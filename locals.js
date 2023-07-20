@@ -3024,6 +3024,10 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "There are no Codespaces secrets.": "尚无代码空间机密",
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
+            // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+            "Updated": "更新于",
+            // [/Are you sure you want to delete ([^ ]+)\?/, "您确定要删除 $1 吗？"],
+
             "GPG verification": "GPG 验证",
                 "Codespaces can have GPG commit signing capabilities so that GitHub can verify that commits made in the codespace come from a trusted source. When enabled, this setting will be applied to your list of trusted repositories.": "代码空间可以具有 GPG 提交签名功能，以便 GitHub 可以验证代码空间中的提交是来自受信任的来源。启用后，该设置将被应用到您的受信任仓库列表中。",
                 // "Enabled": "启用",
@@ -3073,6 +3077,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Default retention period": "默认保留期",
                 "Inactive codespaces are automatically deleted 30 days after the last time they were stopped. A shorter retention period can be set, and will apply to all codespaces created going forward. The default and maximum value is": "不活跃的代码空间在上次停止后 30 天自动删除。可以设置更短的保留期，并将应用于以后创建的所有代码空间。默认值和最大值是",
                 "days.": "天。",
+                "Learn about retention setting": "了解关于保留时间的设置",
                 "days": "天",
 
             "Region": "地区",
@@ -3081,10 +3086,40 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 "We will determine the closest available region based on your location (IP address) at codespace creation time.": "我们将在创建代码空间时根据您的位置（IP地址）确定最近的可用区域。",
                 "Set manually": "手动设置",
                 "Choose your default region": "选择您的默认区域",
+
+            // 顶部提醒
+                "Secret added.": "机密已添加。",
+                "Secret deleted.": "机密已删除。",
+                "Secret updated.": "机密已更新。",
+
+        // 代码空间 机密新建 https://github.com/settings/codespaces/secrets/new
+            "/ New secret": "/ 新建机密",
+            "Add secret": "添加机密",
+                "Adding…": "添加中…",
+
+            "Name": "名称",
+                "YOUR_SECRET_NAME": "您的机密名称",
+                "Secret name is required and must not start with GITHUB": "机密名称是必需的，并且不能以 GITHUB 开头",
+            "Value": "值",
+
+            "Repository access": "仓库权限",
+            "Available to": "适用于",
+            "repository": "仓库",
+            "This secret will not be active until at least 1 repository is selected.": "至少选择 1 个仓库，否则此密钥不会处于活动状态。",
+
+        // 编辑机密 https://github.com/settings/codespaces/secrets/<机密名称>/edit
+            "/ Update secret": "/ 更新机密",
+            "Secret values are encrypted and cannot be displayed, but you can": "机密值已加密，无法显示，但您可以",
+            "enter a new value.": "输入一个新值。",
+            "Update secret": "更新机密",
+                "Updating…": "更新中…",
+            "Save changes": "保存更改",
+
     },
     "regexp": [ // 正则翻译
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
-
+        [/Are you sure you want to delete ([^ ]+)\?/, "您确定要删除 $1 吗？"],
     ],
 };
 
