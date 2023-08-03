@@ -227,27 +227,21 @@
     }
 
     /**
-     * 翻译页面标题
+     * transTitle 函数：翻译页面标题
      */
     function transTitle() {
-        let str; // 翻译结果
-        let key = document.title;
-
-        // 静态翻译
-        str = I18N[lang]['title']['static'][key];
-        if (str) {
-            document.title =  str;
-            return;
-        }
-
-        let res = I18N[lang]['title'].regexp; // 正则标题
-        for (let [a, b] of res) {
-            str = key.replace(a, b);
-            if (str !== key) {
-                document.title =  str;
-                break;
+        let key = document.title; // 标题文本内容
+        let str = I18N[lang]['title']['static'][key] || '';
+        if (!str) {
+            let res = I18N[lang]['title'].regexp || [];
+            for (let [a, b] of res) {
+                str = key.replace(a, b);
+                if (str !== key) {
+                    break;
+                }
             }
         }
+        document.title = str;
     }
 
     /**
