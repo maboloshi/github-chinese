@@ -28,51 +28,63 @@
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
-     * 监听节点变化, 触发和调用翻译函数
-     *
-     * 2021-10-07 11:28:30
-     * 使用原生API 代替 jQuery 的 `ajaxComplete`函数
+     * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
      */
     function watchUpdate() {
-        const m =
+        // 检测浏览器是否支持 MutationObserver
+        const MutationObserver =
             window.MutationObserver ||
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
-        let currentURL = document.URL;
 
-        // 监视 BODY 变化
-        const observer = new m(function (mutations, observer) {
-            /**
-             * 仅翻译变更部分 不在全局匹配
-             *
-             * 且仅监听:
-             *    1. 节点增加
-             *    2. 节点属性的变化
-             *
-             **/
-            if(document.URL !== currentURL) {
-                currentURL = document.URL;
-                page = getPage(); // 仅当, 页面地址发生变化时运行 更新全局变量 page
+        // 获取当前页面的 URL
+        const getCurrentURL = () => document.URL;
+        getCurrentURL.previousURL = getCurrentURL();
 
-                // 目前先跟随 url
-                transTitle(); // 标题翻译
-                page && transBySelector(); // Selector 翻译可能需要延迟运行
-            }
+        // 创建 MutationObserver 实例，监听 DOM 变化
+        const observer = new MutationObserver((mutations, observer) => {
+            const currentURL = getCurrentURL();
 
-            for(let mutation of mutations) { // for速度比forEach快
-                if (mutation.addedNodes.length > 0 || mutation.type === 'attributes') { // 仅当节点增加 或者属性更改
+            // 如果页面的 URL 发生变化
+            if (currentURL !== getCurrentURL.previousURL) {
+                getCurrentURL.previousURL = currentURL;
+                page = getPage(); // 当页面地址发生变化时，更新全局变量 page
+                console.log(`链接变化 page= ${page}`);
 
-                    page && traverseNode(mutation.target);
+                transTitle(); // 翻译页面标题
+
+                if (page) {
+                    setTimeout(() => {
+                        // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+                        transBySelector();
+                        if (page === "repository") { //仓库简介翻译
+                            transDesc(".f4.my-3");
+                        } else if (page === "gist") { // Gist 简介翻译
+                            transDesc(".gist-content [itemprop='about']");
+                        }
+                    }, 100);
                 }
             }
+
+            if (page) {
+                // 使用 filter 方法对 mutations 数组进行筛选，
+                // 返回 `节点增加 或 属性更改的 mutation` 组成的新数组 filteredMutations。
+                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+
+                // 处理每个变化
+                filteredMutations.forEach(mutation => traverseNode(mutation.target));
+            }
         });
+
+        // 配置 MutationObserver
         const config = {
             subtree: true,
             childList: true,
-            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化(试验测试阶段，有问题再恢复) , 'datetime'
-        }
-        observer.observe(document.body, config);
+            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
+        };
 
+        // 开始观察 document.body 的变化
+        observer.observe(document.body, config);
     }
 
     /**
