@@ -323,32 +323,27 @@
     }
 
     /**
-     * 翻译页面内容
-     *
-     * @param {string} page 页面
-     * @param {string} key 待翻译内容
-     *
-     * @returns {string|boolean}
+     * fetchTranslatedText 函数：从特定页面的词库中获得翻译文本内容。
+     * @param {string} key - 需要翻译的文本内容。
+     * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function transPage(page, key) {
-        let str; // 翻译结果
+    function fetchTranslatedText(key) {
 
         // 静态翻译
-        str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+
         if (typeof str === 'string') {
             return str;
         }
 
         // 正则翻译
         if (enable_RegExp){
-            let res = I18N[lang][page].regexp; // 正则数组
-            res= res.concat(I18N[lang]['pubilc'].regexp); // 追加公共正则
-            if (res) {
-                for (let [a, b] of res) {
-                    str = key.replace(a, b);
-                    if (str !== key) {
-                        return str;
-                    }
+            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
+
+            for (let [a, b] of res) {
+                str = key.replace(a, b);
+                if (str !== key) {
+                    return str;
                 }
             }
         }
