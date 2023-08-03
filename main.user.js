@@ -262,17 +262,16 @@
     }
 
     /**
-     * 监听时间元素变化, 触发和调用时间元素翻译
-     *
-     * @param {Element} node 节点
+     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
+     * @param {Element} el - 需要监视的元素。
      */
     function watchTimeElement(el) {
-        const m =
+        const MutationObserver =
             window.MutationObserver ||
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
 
-        new m(function(mutations) {
+        new MutationObserver(mutations => {
             transTimeElement(mutations[0].addedNodes[0]);
         }).observe(el, {
             childList: true
