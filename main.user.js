@@ -279,32 +279,22 @@
     }
 
     /**
-     * 翻译节点对应属性内容
-     *
-     * @param {object} el 对象
-     * @param {string} field 属性字段
-     * @param {boolean} isAttr 是否是 attr 属性
-     *
-     * @returns {boolean}
+     * transElement 函数：翻译指定元素的文本内容或属性。
+     * @param {Element} el - 需要翻译的元素。
+     * @param {string} field - 需要翻译的文本内容或属性的名称。
+     * @param {boolean} isAttr - 是否需要翻译属性。
      */
     function transElement(el, field, isAttr=false) {
-        let str; // 翻译后的文本
-
-        if (!isAttr) { // 非属性翻译
-            str = translate(el[field], page);
-        } else {
-            str = translate(el.getAttribute(field), page);
-        }
-
-        if (!str) { // 无翻译则退出
-            return false;
-        }
+        let text = isAttr ? el.getAttribute(field) : el[field]; // 需要翻译的文本
+        let str = translateText(text); // 翻译后的文本
 
         // 替换翻译后的内容
-        if (!isAttr) {
-            el[field] = str;
-        } else {
-            el.setAttribute(field, str);
+        if (str) {
+            if (!isAttr) {
+                el[field] = str;
+            } else {
+                el.setAttribute(field, str);
+            }
         }
     }
 
