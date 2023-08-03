@@ -299,29 +299,24 @@
     }
 
     /**
-     * 翻译文本
-     *
-     * @param {string} text 待翻译字符串
-     * @param {string} page 页面字段
-     *
-     * @returns {string|boolean}
+     * translateText 函数：翻译文本内容。
+     * @param {string} text - 需要翻译的文本内容。
+     * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function translate(text, page) { // 翻译
+    function translateText(text) { // 翻译
 
         // 内容为空, 空白字符和或数字, 不存在英文字母和符号,. 跳过
         if (!isNaN(text) || !/[a-zA-Z,.]+/.test(text)) {
             return false;
         }
-        let str;
+
         let _key = text.trim(); // 去除首尾空格的 key
         let _key_neat = _key.replace(/\xa0|[\s]+/g, ' ') // 去除多余空白字符(&nbsp; 空格 换行符)
 
-        if (page) {
-            str = transPage(page, _key_neat); // 翻译已知页面 (局部优先)
-        } // 未知页面不翻译
+        let str = fetchTranslatedText(_key_neat); // 翻译已知页面 (局部优先)
 
         if (str && str !== _key_neat) { // 已知页面翻译完成
-            return text.replace(_key, str);  // 替换原字符，保留首尾空白部分
+            return text.replace(_key, str); // 替换原字符，保留首尾空白部分
         }
 
         return false;
