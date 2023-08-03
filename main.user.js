@@ -172,35 +172,32 @@
     }
 
     /**
-     * 获取翻译页面
-     *
-     *
-     * 2021-10-07 11:48:50
-     * 参考 v2.0 中规则
+     * getPage 函数：获取当前页面的类型。
+     * @returns {string|boolean} 当前页面的类型，如果无法确定类型，那么返回 false。
      */
     function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.host.replace(/\.?github\.com$/, '') || 'github'; // 站点
+        const site = location.hostname === "gist.github.com" ? "gist" : "github"; // 站点
         const pathname = location.pathname; // 当前路径
-        const isLogin = /logged-in/.test(document.body.className); // 是否登录
+
+         // 是否登录
+        const isLogin = document.body.classList.contains("logged-in");
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
-        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || 0).content || '';
-        //const isProfile = analyticsLocation === '/<user-name>'; // 仅个人首页 其标签页识别不了 优先使用Class 过滤
-        // 如 maboloshi?tab=repositories 等
-        const isOrganization = /\/<org-login>/.test(analyticsLocation)||/^\/(?:orgs|organizations)/.test(pathname); // 组织页
-        // 一级名称 orgs 或者 organizations
-        // const isOrganization = /\/orgs/.test(analyticsLocation); // 组织页
-        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation); // 仓库页
+        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';
+        // 组织页
+        const isOrganization = /\/<org-login>/.test(analyticsLocation)||/^\/(?:orgs|organizations)/.test(pathname);
+        // 仓库页
+        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
 
         // 优先匹配 body 的 class
         let page, t = document.body.className.match(I18N.conf.rePageClass);
         if (t) {
             if (t[1] === 'page-profile') {
-                if (location.search.match(/tab=(\w+)/)) {
-                    location.search.replace(/tab=(\w+)/, '$1');
-                    page = 'page-profile/' + RegExp.$1;
+                let matchResult = location.search.match(/tab=(\w+)/);
+                if (matchResult) {
+                    page = 'page-profile/' + matchResult[1];
                 } else {
                     page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
                 }
@@ -222,9 +219,8 @@
             page = t ? t[1] : false; // 取页面 key
         }
 
-        if (!page || I18N[lang][page] == undefined){
-            console.log("请注意对应 page %s 词库节点不存在", page);
-            // return false;
+        if (!page || !I18N[lang][page]){
+            console.log(`请注意对应 page ${page} 词库节点不存在`);
             page = false;
         }
         return page;
