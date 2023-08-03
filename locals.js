@@ -91,19 +91,20 @@ I18N.conf = {
      * author 仓库页 作者名称
      * additionalName 个人主页 附加名称
      */
-    reIgnoreItemprop: /(name|author|description|text|additionalName)/,
+    reIgnoreItemprop: ['name', 'author', 'additionalName'],
 
     /**
      * 忽略区域的 特定元素id 正则
      * offset /blob页面 符号-->引用
+     * fix repo详情页文件路径breadcrumb
      */
-    reIgnoreId: /(readme|offset)/,
+    reIgnoreId: ['readme', 'offset', 'breadcrumb', 'file-name-id'],
 
     /**
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(^CODE$|^SCRIPT$|^STYLE$|LINK|IMG|MARKED-TEXT|^PRE$|KBD)/,
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤

@@ -88,16 +88,15 @@
     }
 
     /**
-     * 遍历节点
-     *
-     * @param {Element} node 节点
+     * traverseNode 函数：遍历指定的节点，并对节点进行翻译。
+     * @param {Node} node - 需要遍历的节点。
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.reIgnoreId.test(node.id) ||
+        if (I18N.conf.reIgnoreId.includes(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
-            I18N.conf.reIgnoreTag.test(node.tagName) ||
-            (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
+            I18N.conf.reIgnoreTag.includes(node.tagName) ||
+            (node.getAttribute && I18N.conf.reIgnoreItemprop.includes(node.getAttribute("itemprop")))
            ) {
             return;
         }
@@ -105,19 +104,21 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME' || node.tagName === 'TIME-AGO'|| node.tagName === 'TIME' || node.tagName === 'LOCAL-TIME') {
+            if (
+                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
+            ) {
                 if (node.shadowRoot) {
                     transTimeElement(node.shadowRoot);
                     watchTimeElement(node.shadowRoot);
-                 } else {
-                     transTimeElement(node);
-                 }
+                } else {
+                    transTimeElement(node);
+                }
                 return;
             }
 
             // 元素节点属性翻译
-            if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') { // 输入框 按钮 文本域
-                if (node.type === 'button' || node.type === 'submit' || node.type === 'reset') {
+            if (["INPUT", "TEXTAREA"].includes(node.tagName)) { // 输入框 按钮 文本域
+                if (["button", "submit", "reset"].includes(node.type)) {
                     if (node.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
                         transElement(node, 'data-confirm', true);
                     }
@@ -126,7 +127,7 @@
                     transElement(node, 'placeholder');
                 }
             } else if (node.tagName === 'BUTTON'){
-                if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
+                if (node.hasAttribute('aria-label') && ["tooltipped"].includes(node.className)) {
                     transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
                 }
                 if (node.hasAttribute('title')) {
@@ -149,7 +150,7 @@
                 }
             } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                 transElement(node, 'label');
-            } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+            } else if (["tooltipped"].includes(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
                 transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
             } else if (node.tagName === 'A') {
                 if (node.hasAttribute('title')) {
@@ -160,11 +161,8 @@
                 }
             }
 
-            if (node.childNodes.length >0) {
-                for (const child of node.childNodes) {
-                    traverseNode(child); // 遍历子节点
-                }
-            }
+            let childNodes = node.childNodes;
+            childNodes.forEach(traverseNode); // 遍历子节点
 
         } else if (node.nodeType === Node.TEXT_NODE) { // 文本节点翻译
             if (node.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
