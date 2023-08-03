@@ -245,17 +245,15 @@
     }
 
     /**
-     * 时间元素翻译
-     *
-     * @param {Element} node 节点
+     * transTimeElement 函数：翻译时间元素文本内容。
+     * @param {Element} el - 需要翻译的元素。
      */
     function transTimeElement(el) {
-        let str; // 翻译结果
         let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
         let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
-            str= key.replace(a, b);
+            let str = key.replace(a, b);
             if (str !== key) {
                 el.textContent = str;
                 break;
