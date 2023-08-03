@@ -23,20 +23,9 @@
 (function (window, document, undefined) {
     'use strict';
 
-    var enable_RegExp = GM_getValue("enable_RegExp", 1);
-    var lang = 'zh'; // 中文
-
-    // 要翻译的页面
-    var page = getPage();
-
-    transTitle(); // 页面标题翻译
-    page && transBySelector(); // Selector 翻译
-    page && traverseNode(document.body); // 立即翻译页面
-    watchUpdate();
-
-    // 翻译描述
-    transDesc(".f4.my-3"); //仓库简介翻译
-    transDesc(".gist-content [itemprop='about']"); // Gist 简介翻译
+    const lang = 'zh'; // 设置默认语言
+    let page;
+    let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
      * 监听节点变化, 触发和调用翻译函数
@@ -469,4 +458,35 @@
         }
     })
 
+    /**
+     * init 函数：初始化翻译功能。
+     */
+    function init() {
+        // 获取当前页面的翻译规则
+        page = getPage();
+        console.log(`开始page= ${page}`);
+
+        // 翻译页面标题
+        transTitle();
+
+        if (page) {
+            // 立即翻译页面
+            traverseNode(document.body);
+
+            setTimeout(() => {
+                // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+                transBySelector();
+                if (page === "repository") { //仓库简介翻译
+                    transDesc(".f4.my-3");
+                } else if (page === "gist") { // Gist 简介翻译
+                    transDesc(".gist-content [itemprop='about']");
+                }
+            }, 100);
+        }
+        // 监视页面变化
+        watchUpdate();
+    }
+
+    // 执行初始化
+    init();
 })(window, document);
