@@ -449,16 +449,13 @@
     }
 
     GM_registerMenuCommand("正则切换", () => {
-        if (enable_RegExp){
-            GM_setValue("enable_RegExp", 0);
-            enable_RegExp = 0;
-            GM_notification("已关闭正则功能");
-        } else {
-            GM_setValue("enable_RegExp", 1);
-            GM_notification("已开启正则功能");
+        enable_RegExp = enable_RegExp ? 0 : 1;
+        GM_setValue("enable_RegExp", enable_RegExp);
+        GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
+        if (enable_RegExp) {
             location.reload();
         }
-    })
+    });
 
     /**
      * init 函数：初始化翻译功能。
