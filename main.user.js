@@ -352,53 +352,79 @@
     }
 
     /**
-     * 翻译描述
-     *
-     * @param {string} JS 选择器
-     *
-     * 2021-10-06 16:41:54
-     * 来自：k1995/github-i18n-plugin
-     * 改写为原生代码
+     * transDesc 函数：为指定的元素添加一个翻译按钮，并为该按钮添加点击事件。
+     * @param {string} el - CSS选择器，用于选择需要添加翻译按钮的元素。
      */
     function transDesc(el) {
+        // 使用 CSS 选择器选择元素
         let element = document.querySelector(el);
 
+        // 如果元素不存在，那么直接返回
         if (!element) {
             return false;
         }
 
-        element.insertAdjacentHTML('afterend', "<div id='translate-me' style='color: rgb(27, 149, 224); font-size: small; cursor: pointer'>翻译</div>");
-        let translate_me = document.getElementById('translate-me');
+        // 在元素后面插入一个翻译按钮
+        let button= document.createElement('div');
+        button.id = 'translate-me';
+        button.style.cssText = 'color: rgb(27, 149, 224); font-size: small; cursor: pointer';
+        button.textContent = '翻译';
 
-        translate_me.onclick = function() {
-            // get description text
+        element.insertAdjacentElement('afterend',button);
+
+        // 为翻译按钮添加点击事件
+       button.addEventListener('click', () => {
+            // 获取元素的文本内容
             const desc = element.textContent.trim();
 
+            // 如果文本内容为空，那么直接返回
             if(!desc) {
                 return false;
             }
 
-            GM_xmlhttpRequest({
-                method: "POST",
-                url: "https://www.iflyrec.com/TranslationService/v1/textTranslation",
-                headers: {
-                    'Content-Type' : 'application/json',
-                    'Origin': 'https://www.iflyrec.com',
-                },
-                data : JSON.stringify({"from":"2","to":"1","contents":[{"text":desc,"frontBlankLine":0}]}),
-                responseType: "json",
-                onload: function(res) {
-                    if (res.status === 200) {
-                        translate_me.style.display="none";
-                        // render result
-                        const text = res.response.biz[0].translateResult;
-                        element.insertAdjacentHTML('afterend', "<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>"+text);
-                    } else {
-                        alert("翻译失败");
-                    }
-                }
+            // 调用 translateDescText 函数进行翻译
+            translateDescText(desc, text => {
+                // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
+                button.style.display="none";
+                const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>${text}`;
+                element.insertAdjacentHTML('afterend', translationHTML);
             });
-        };
+        });
+    }
+
+    /**
+     * translateDescText 函数：将指定的文本发送到讯飞的翻译服务进行翻译。
+     * @param {string} text - 需要翻译的文本。
+     * @param {function} callback - 翻译完成后的回调函数，该函数接受一个参数，即翻译后的文本。
+     */
+    function translateDescText(text, callback) {
+        // 使用 GM_xmlhttpRequest 函数发送 HTTP 请求
+        GM_xmlhttpRequest({
+            method: "POST", // 请求方法为 POST
+            url: "https://www.iflyrec.com/TranslationService/v1/textTranslation", // 请求的 URL
+            headers: { // 请求头
+                'Content-Type' : 'application/json',
+                'Origin': 'https://www.iflyrec.com',
+            },
+            data: JSON.stringify({
+                "from": "2",
+                "to": "1",
+                "contents": [{
+                    "text": text,
+                    "frontBlankLine": 0
+                }]
+            }), // 请求的数据
+            responseType: "json", // 响应的数据类型为 JSON
+            onload: (res) => {
+                try {
+                    const { status, response } = res;
+                    const translatedText = (status === 200) ? response.biz[0].translateResult : "翻译失败";
+                    callback(translatedText);
+                } catch (error) {
+                    callback("翻译失败");
+                }
+            }
+        });
     }
 
     /**
