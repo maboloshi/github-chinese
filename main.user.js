@@ -428,22 +428,21 @@
     }
 
     /**
-     * js原生选择器 翻译元素
-     *
-     * @param {string} JS 选择器或 CSS 选择器
-     *
-     * 2022-02-04 19:46:44
-     * 灵感参考自：k1995/github-i18n-plugin
+     * transBySelector 函数：通过 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译。
      */
     function transBySelector() {
-        let res = I18N[lang][page].selector != undefined ? I18N[lang]['pubilc'].selector.concat(I18N[lang][page].selector) : I18N[lang]['pubilc'].selector; // 数组
-        if (res) {
-            for (let [a, b] of res) {
-                let element = document.querySelector(a)
+        // 获取当前页面的翻译规则，如果没有找到，那么使用公共的翻译规则
+        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
+
+        // 如果找到了翻译规则
+        if (res.length > 0) {
+            // 遍历每个翻译规则
+            for (let [selector, translation] of res) {
+                // 使用 CSS 选择器找到对应的元素
+                let element = document.querySelector(selector)
+                // 如果找到了元素，那么将其文本内容替换为翻译后的文本
                 if (element) {
-                    element.textContent = b;
-                } else if (document.getElementsByClassName(a).length > 0) {
-                    document.getElementsByClassName(a)[0].textContent = b;
+                    element.textContent = translation;
                 }
             }
         }
