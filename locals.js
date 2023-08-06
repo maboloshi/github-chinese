@@ -91,19 +91,20 @@ I18N.conf = {
      * author 仓库页 作者名称
      * additionalName 个人主页 附加名称
      */
-    reIgnoreItemprop: /(name|author|description|text|additionalName)/,
+    reIgnoreItemprop: ['name', 'author', 'additionalName'],
 
     /**
      * 忽略区域的 特定元素id 正则
      * offset /blob页面 符号-->引用
+     * fix repo详情页文件路径breadcrumb
      */
-    reIgnoreId: /(readme|offset)/,
+    reIgnoreId: ['readme', 'offset', 'breadcrumb', 'file-name-id'],
 
     /**
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: /(^CODE$|^SCRIPT$|^STYLE$|LINK|IMG|MARKED-TEXT|^PRE$|KBD)/,
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤
@@ -12969,6 +12970,8 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 组织资料 /organizations/<org-login>/settings/profile
+            "Most organization settings are hidden for an archived organization. This organization must be unarchived to change them.": "对于已存档的组织，组织大多数设置都是隐藏的。必须取消对该组织的归档才能更改它们。",
+
             "Organization profile": "基本资料",
                 "Profile picture": "我的头像",
                     "Upload new picture": "上传新头像",
@@ -13014,6 +13017,7 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Rename organization": "重命名组织",
                     "Renaming your organization can have": "重命名您的组织可能会有",
                     "unintended side effects": "意想不到的副作用",
+                    "This organization cannot be renamed because it is archived.": "该组织无法重命名，因为它已存档。",
                 "Really rename your organization?": "确定要重命名您的组织？",
                 "Unexpected bad things will happen if you don’t read this!": "请仔细阅读以下提示信息！！！",
                 "We": "我们",
@@ -13030,6 +13034,44 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                     "Organization name may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen": "组织名称只能包含字母数字字符或单连字符，不能以连字符开始或结束。",
                     "Organization name is not available": "组织名称不可用",
 
+                "Archive this organization": "存档组织",
+                    "Mark this organization and all its repositories as archived and read-only.": "将此组织及其所有仓库标记为已存档和只读。",
+                    "Please provide": "请提供",
+                    "feedback": "反馈",
+                    "on this feature.": "关于此功能。",
+
+                    "Archive organization": "存档组织",
+                        "This organization will be archived.": "该组织将被存档。",
+                        "Modifying settings will be limited and creating new repositories will be blocked.": "修改设置将受到限制，并且创建新仓库将被阻止。",
+
+                        "All repositories will be": "所有仓库都将被",
+                        "archived": "存档",
+                        "and be read-only.": "并设为只读。",
+                        "Before you archive, please consider:": "在存档之前，请考虑：",
+                            "Updating any organization settings": "更新任何组织设置",
+                            "Making a note in your": "请标记在您的",
+                            "organization README": "组织 README",
+                        "Please type": "请输入",
+                        "to confirm.": "进行确定。",
+                        "I understand the consequences, archive this organization": "我明白后果，依然存档该组织",
+
+                        // 顶部提醒
+                        // [/Your organization ([^ ]+) is being archived./, "您的组织 $1 已归档。"],
+
+                "Unarchive this organization": "解锁存档组织",
+                    "Mark this organization as unarchived and read-write.": "将此组织标记为未存档且可读写。",
+
+                    "Unarchive organization": "解除组织存档",
+                    "This organization will be unarchived.": "该组织将解除存档。",
+                    "Modifying settings will be possible and creating new repositories will be unblocked.": "可以修改设置，创建新仓库也将不再受限。",
+
+                    "Repositories will be remain": "仓库将保持",
+                    "and need to be unarchived separately.": "，并需要单独解除存档。",
+                    "I understand the consequences, unarchive this organization": "我明白后果，依然解除该组织存档",
+
+                        // 顶部提醒
+                        // [/Your organization ([^ ]+) has been unarchived./, "您的组织 $1 已解除归档。"],
+
                 "Delete this organization": "删除组织",
                     "Once deleted, it will be gone forever. Please be certain.": "您一旦删除，将再也无法恢复。请确认！",
 
@@ -13044,6 +13086,8 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
 
     },
     "regexp": [ // 正则翻译
+        [/Your organization ([^ ]+) is being archived./, "您的组织 $1 已归档。"],
+        [/Your organization ([^ ]+) has been unarchived./, "您的组织 $1 已解除归档。"],
     ],
 };
 
