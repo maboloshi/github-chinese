@@ -3422,7 +3422,9 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
         ...I18N.zh["settings-menu"]["static"],
 
         // 定时提醒 https://github.com/settings/reminders
-            "Edit reminder": "编辑提醒者",
+            "Reminders allow you to push certain events to authorized instances of Microsoft Teams or Slack.": "提醒功能允许您将特定事件推送到 Microsoft Teams 或 Slack 的授权实例。",
+            "Available organizations": "可用组织",
+            "Configure Reminder": "配置提醒",
 
         // 新的预定提醒 https://github.com/settings/reminders/<组织名>
             "New scheduled reminder": "新建预定提醒",
