@@ -517,6 +517,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Insights": "洞察",
             "Organizations": "组织",
             "Users": "用户",
+            "Saved queries": "已保存的搜索",
             "to jump to": "去跳转",
             "to search": "去搜索",
 
@@ -1702,7 +1703,7 @@ I18N.zh["orgs-public"] = { // 组织公共部分
     "regexp": [ // 正则翻译
         [/Invite someone to/, "邀请某人加入组织"],
         [/New team in/, "新建团队在组织"],
-        [/New repository in /, "新建仓库在组织"],
+        [/New repository in/, "新建仓库在组织"],
     ],
 };
 
@@ -2070,6 +2071,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
                     "Disabled": "禁用",
                 "Command mode": "命令模式",
                     "control + shift + k (default)": "control + shift + k (默认)",
+                "Save keyboard shortcut preferences": "保存键盘快捷键首选项",
 
             // 顶部提醒
             "Keyboard shortcut preference successfully saved.": "键盘快捷键首选项已成功保存。",
@@ -2094,6 +2096,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
                     "Pasting a URL while having text selected will format to a Markdown link": "在选择了文本的情况下，粘贴 URL 将格式化为 Markdown 链接",
                 "Plain text": "纯文本",
                     "Pasting a URL while having text selected will replace the text": "在选择了文本的情况下，粘贴 URL 将替换文本",
+                "Save editor settings": "保存编辑器设置",
                     // 顶部提醒
                     "Paste behavior preferences successfully saved.": "粘贴行为首选项已成功保存。",
 
@@ -2623,8 +2626,11 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
 
                     "Get authentication codes by SMS on your mobile phone when signing into GitHub. Make sure that": "登录 GitHub 时通过手机短信获取验证码。确保",
-                    "your country is supported": "支持您的国家/地区",
+                    "your country or region is supported": "支持您的国家/地区",
                     "for SMS delivery.": "用于短信发送。",
+
+                    "Verify account": "验证账户",
+                    "Before setting up SMS, please verify that you're a human.": "在设置短信之前，请验证您是人类。",
 
                     "Country code": "国家代码",
                     "Your phone number": "您的手机号码",
@@ -2856,7 +2862,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
         // Organizations 组织 https://github.com/settings/organizations
             "You are not a member of any organizations.": "您暂无任何组织。",
 
-            "owner": "所有者",
+            "Owner": "所有者",
             "Compare plans": "比较计划",
             "Leave": "离开",
 
@@ -2872,7 +2878,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
     },
     "regexp": [ // 正则翻译
         [/Turn ([^ ]+) into an organization/, "变更 $1 为一个组织"],
-        [/outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
+        [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您确定要离开 $1 吗？您将失去对所有仓库和团队的访问权。"], // 设置 - 组织 离开按钮 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您确定要离开 $1 吗？您将失去对所有仓库的访问权。"], // 设置 - 组织 离开按钮 提醒
     ],
@@ -2983,6 +2989,7 @@ I18N.zh["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除的仓�
         // 删除的仓库 https://github.com/settings/deleted_repositories
             "Deleted repositories": "删除的仓库",
             "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复不是复刻或没有被复刻的仓库。",
+            "Learn more about restoring deleted repositories": "了解更多有关恢复已删除仓库的信息",
 
             "These repositories were deleted, but can't be restored by you. Contact support if you want to restore them.": "这些仓库已被删除，但您无法恢复。如果您想恢复它们，请联系 GitHub 支持人员。",
 
@@ -3502,7 +3509,7 @@ I18N.zh["settings/sponsors-log"] = { // 设置 - 赞助日志
 
 I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -3525,7 +3532,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
     "static": { // 静态翻译
 
         // 注册 GitHub 应用程序 https://github.com/settings/apps/new
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
 
             "Register new GitHub App": "注册新 GitHub 应用",
             "GitHub App name": "GitHub 应用名称",
@@ -3751,7 +3758,7 @@ I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps/new"];
 
 I18N.zh["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用程序
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -3774,7 +3781,7 @@ I18N.zh["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应�
     "static": { // 静态翻译
 
         // 注册 OAuth 应用 https://github.com/settings/applications/new
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
 
             "Register a new OAuth application": "注册 OAuth 应用",
             "Application name": "应用名",
@@ -3802,7 +3809,7 @@ I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/applications/new"]
 
 I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -4393,7 +4400,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
-        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1存档。它现在是只读的。"],
+        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
     ],
 };
 
@@ -4794,6 +4801,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Description": "描述",
             "Short description of this repository": "简短的描述下您的仓库",
             "Website": "网址",
+            "Enter a valid URL": "请输入有效的 URL",
             "Use your GitHub Pages website": "使用您的 GitHub Pages 站点",
             "Topics": "主题",
             "(separate with spaces)": "（空格分隔）",
@@ -4821,8 +4829,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Used by": "使用者",
             "Contributors": "贡献者",
             "Environments": "环境",
+            "Deployments": "部署",
+                "+ more deployments": "+ 更多部署",
             "Languages": "语言",
-
 
             // "branch": "分支",
             // "branches": "分支",
@@ -4976,6 +4985,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
         [/\+ ([\d,]+) packages?/, "+ $1 个软件包"], // 仓库首页右侧栏 软件包
         [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
+        [/\+ ([\d,]+) environments?/, "+ $1 个环境"], // 仓库首页右侧栏 环境
+        [/\+ ([\d,]+) deployments?/, "+ $1 个部署"], // 仓库首页右侧栏 部署
         // 个人仓库 贡献和同步复刻操作后 信息提示条
         [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
@@ -7351,7 +7362,7 @@ I18N.zh["repository/watchers"] = { // 仓库 - 关注者页面
         // 关注者页面  /<user-name>/<repo-name>/watchers
             "Watchers": "关注者",
             "No one’s watching this repository yet. You could be the first.": "暂无关注者。您可以成为第一个",
-            "about how watching works on GitHub.": "关于在 GitHub 上关注的工作原理。",
+            "Learn more about how watching repositories works on GitHub": "了解更多关于如何在 GitHub 上关注仓库的工作方式",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -10370,6 +10381,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
             "Custom domain": "自定义域",
                 "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
+                "Learn more about configuring custom domains": "了解更多有关配置自定义域的信息",
                     "Remove": "移除",
                     "Check again": "再检查一次",
                     // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
@@ -10389,6 +10401,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
                     "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
                     "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
+                    "Learn more about securing your GitHub Pages site with HTTPS": "了解更多有关使用 HTTPS 保护 GitHub Pages 站点安全的信息",
 
             "Visibility": "可见性",
                 "GitHub Enterprise": "GitHub 企业版",
@@ -13884,8 +13897,8 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
 
             // 顶部提醒
                 "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
-                "Secret added.": "添加了机密。",
-                "Secret deleted.": "删除了机密。",
+                "Secret added.": "机密已添加。",
+                "Secret deleted.": "机密已删除。",
 
             // 删除机密对话框
             "Remove secret": "删除机密",
