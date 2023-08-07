@@ -4,12 +4,12 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.8.2
+// @version      1.8.3
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://maboloshi.github.io/github-chinese/locals.js?v1.8.2
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.8.3
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -38,7 +38,7 @@
             window.MozMutationObserver;
 
         // 获取当前页面的 URL
-        const getCurrentURL = () => document.URL;
+        const getCurrentURL = () => location.href;
         getCurrentURL.previousURL = getCurrentURL();
 
         // 创建 MutationObserver 实例，监听 DOM 变化
@@ -127,7 +127,7 @@
                     transElement(node, 'placeholder');
                 }
             } else if (node.tagName === 'BUTTON'){
-                if (node.hasAttribute('aria-label') && ["tooltipped"].includes(node.className)) {
+                if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
                     transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
                 }
                 if (node.hasAttribute('title')) {
@@ -150,7 +150,7 @@
                 }
             } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                 transElement(node, 'label');
-            } else if (["tooltipped"].includes(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+            } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
                 transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
             } else if (node.tagName === 'A') {
                 if (node.hasAttribute('title')) {

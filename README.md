@@ -42,6 +42,13 @@ Firefox 浏览器                      | 未测试
 
 ## 📝 更新说明
 
+### 2023-08-07 14:41:17
+
+更新至 1.8.3
+
+1. 梳理、优化脚本
+1. 更新: 忽略规则, 大量词条等
+
 ### 2023-05-15 18:02:04
 
 更新至 1.8.2
@@ -203,11 +210,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [greasyFork-url]: https://greasyfork.org/scripts/435208  "GreasyFork - GitHub 中文化插件"
 [greasyFork-image]: https://img.shields.io/badge/dynamic/json?style=flat-square&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
 
-[Tampermonkey]: http://tampermonkey.net/ "Tampermonkey"
+[Tampermonkey]: http://tampermonkey.net/ "篡改猴"
 [violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 [Macaque]: https://macaque.app/ "猕猴"
 
-[main.user.js]: https://maboloshi.github.io/github-chinese/main.user.js "GitHub 中文化插件 - GitHub 托管"
+[main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 [github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp

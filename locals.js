@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -78,12 +78,12 @@ I18N.conf = {
      * 快捷键 按键 js-modifier-key
      * 洞察-->流量-->热门内容列表 capped-list-label
      * realease 页面 描述主体 markdown-body my-3
-     * f4 my-3
-     * 仓库页 用户名/仓库名 标题 AppHeader-globalBar-start 新版全局导航
+     * 仓库页 仓库描述 f4 my-3
      * 提交的用户名 commit-author
      * 搜索页 搜索结果 search-match
+     * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
      */
-    reIgnoreClass: /(cm-line|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|react-code-text|react-file-line|AppHeader-globalBar-start|commit-author|search-match)/,
+    reIgnoreClass: /(cm-line|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -517,6 +517,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Insights": "洞察",
             "Organizations": "组织",
             "Users": "用户",
+            "Saved queries": "已保存的搜索",
             "to jump to": "去跳转",
             "to search": "去搜索",
 
@@ -1399,7 +1400,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
             // 搜索, 筛选 & 排序工具栏
             "Find a repository…": "搜索仓库…",
-            "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
+            // "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
                 // 下拉菜单
                 "Select type": "选择类型",
                 "All": "全部",
@@ -1702,7 +1703,8 @@ I18N.zh["orgs-public"] = { // 组织公共部分
     "regexp": [ // 正则翻译
         [/Invite someone to/, "邀请某人加入组织"],
         [/New team in/, "新建团队在组织"],
-        [/New repository in /, "新建仓库在组织"],
+        [/New repository in/, "新建仓库在组织"],
+        [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "此组织已由管理员于 $1 存档。不再维护。"],
     ],
 };
 
@@ -2070,6 +2072,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
                     "Disabled": "禁用",
                 "Command mode": "命令模式",
                     "control + shift + k (default)": "control + shift + k (默认)",
+                "Save keyboard shortcut preferences": "保存键盘快捷键首选项",
 
             // 顶部提醒
             "Keyboard shortcut preference successfully saved.": "键盘快捷键首选项已成功保存。",
@@ -2094,6 +2097,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
                     "Pasting a URL while having text selected will format to a Markdown link": "在选择了文本的情况下，粘贴 URL 将格式化为 Markdown 链接",
                 "Plain text": "纯文本",
                     "Pasting a URL while having text selected will replace the text": "在选择了文本的情况下，粘贴 URL 将替换文本",
+                "Save editor settings": "保存编辑器设置",
                     // 顶部提醒
                     "Paste behavior preferences successfully saved.": "粘贴行为首选项已成功保存。",
 
@@ -2623,8 +2627,11 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
 
                     "Get authentication codes by SMS on your mobile phone when signing into GitHub. Make sure that": "登录 GitHub 时通过手机短信获取验证码。确保",
-                    "your country is supported": "支持您的国家/地区",
+                    "your country or region is supported": "支持您的国家/地区",
                     "for SMS delivery.": "用于短信发送。",
+
+                    "Verify account": "验证账户",
+                    "Before setting up SMS, please verify that you're a human.": "在设置短信之前，请验证您是人类。",
 
                     "Country code": "国家代码",
                     "Your phone number": "您的手机号码",
@@ -2856,7 +2863,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
         // Organizations 组织 https://github.com/settings/organizations
             "You are not a member of any organizations.": "您暂无任何组织。",
 
-            "owner": "所有者",
+            "Owner": "所有者",
             "Compare plans": "比较计划",
             "Leave": "离开",
 
@@ -2872,9 +2879,25 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
     },
     "regexp": [ // 正则翻译
         [/Turn ([^ ]+) into an organization/, "变更 $1 为一个组织"],
-        [/outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
+        [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您确定要离开 $1 吗？您将失去对所有仓库和团队的访问权。"], // 设置 - 组织 离开按钮 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您确定要离开 $1 吗？您将失去对所有仓库的访问权。"], // 设置 - 组织 离开按钮 提醒
+    ],
+};
+
+I18N.zh["settings/enterprises"] = { // 设置 - 企业版
+    "static": { // 静态翻译
+        ...I18N.zh["settings-menu"]["static"],
+
+        // 企业版 https://github.com/settings/enterprises
+        "Enterprises": "企业版",
+        "You don't have any enterprises": "您还没有任何企业版",
+        "Designed for businesses or teams who collaborate on GitHub.com": "专为在 GitHub.com 上协作的企业或团队而设计",
+
+        "Start free trial": "开启免费体验",
+        "Learn more about enterprises": "了解更多关于企业版信息",
+    },
+    "regexp": [ // 正则翻译
     ],
 };
 
@@ -2983,6 +3006,7 @@ I18N.zh["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除的仓�
         // 删除的仓库 https://github.com/settings/deleted_repositories
             "Deleted repositories": "删除的仓库",
             "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复不是复刻或没有被复刻的仓库。",
+            "Learn more about restoring deleted repositories": "了解更多有关恢复已删除仓库的信息",
 
             "These repositories were deleted, but can't be restored by you. Contact support if you want to restore them.": "这些仓库已被删除，但您无法恢复。如果您想恢复它们，请联系 GitHub 支持人员。",
 
@@ -3415,7 +3439,9 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
         ...I18N.zh["settings-menu"]["static"],
 
         // 定时提醒 https://github.com/settings/reminders
-            "Edit reminder": "编辑提醒者",
+            "Reminders allow you to push certain events to authorized instances of Microsoft Teams or Slack.": "提醒功能允许您将特定事件推送到 Microsoft Teams 或 Slack 的授权实例。",
+            "Available organizations": "可用组织",
+            "Configure Reminder": "配置提醒",
 
         // 新的预定提醒 https://github.com/settings/reminders/<组织名>
             "New scheduled reminder": "新建预定提醒",
@@ -3502,7 +3528,7 @@ I18N.zh["settings/sponsors-log"] = { // 设置 - 赞助日志
 
 I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -3525,7 +3551,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
     "static": { // 静态翻译
 
         // 注册 GitHub 应用程序 https://github.com/settings/apps/new
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
 
             "Register new GitHub App": "注册新 GitHub 应用",
             "GitHub App name": "GitHub 应用名称",
@@ -3657,6 +3683,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
                         "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
+                    "GitHub Copilot for Business": "GitHub Copilot 商业版",
+                        "Manage Copilot for Business seats and settings": "管理 GitHub Copilot 商业版席位和设置",
                     "Members": "成员",
                         "Organization members and teams.": "组织成员和团队。",
                     "Organization announcement banners": "组织公告横幅",
@@ -3751,7 +3779,7 @@ I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps/new"];
 
 I18N.zh["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用程序
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -3774,7 +3802,7 @@ I18N.zh["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应�
     "static": { // 静态翻译
 
         // 注册 OAuth 应用 https://github.com/settings/applications/new
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
 
             "Register a new OAuth application": "注册 OAuth 应用",
             "Application name": "应用名",
@@ -3802,7 +3830,7 @@ I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/applications/new"]
 
 I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
     "static": { // 静态翻译
-            "Developer settings": "开发者设置",
+            "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用程序",
             "OAuth Apps": "OAuth 应用程序",
             "Personal access tokens": "个人访问令牌",
@@ -3997,6 +4025,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
                         "View events triggered by an activity in an organization.": "查看组织中某项活动所触发的事件。",
+                    "GitHub Copilot for Business": "GitHub Copilot 商业版",
+                        "Manage Copilot for Business seats and settings": "管理 GitHub Copilot 商业版席位和设置",
                     "Members": "成员",
                         "Organization members and teams.": "组织成员和团队。",
                     "Organization announcement banners": "组织公告横幅",
@@ -4115,6 +4145,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Read access of audit log": "读取审核日志",
             "Full control of codespaces": "完全控制代码空间",
             "Ability to create, read, update, and delete codespace secrets": "创建、读取、更新和删除代码空间机密",
+            "Full control of GitHub Copilot settings and seat assignments": "完全控制 GitHub Copilot 设置和席位分配",
+                "View and edit Copilot for Business seat assignments": "查看和编辑 GitHub Copilot 商业版席位分配",
             "Full control of projects": "完全控制项目",
             "Read access of projects": "读取项目",
             "Full control of public user GPG keys": "完全控制公共用户 GPG 密钥",
@@ -4393,7 +4425,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
-        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1存档。它现在是只读的。"],
+        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
     ],
 };
 
@@ -4583,6 +4615,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Publish this Action to Marketplace": "将此操作发布到市场",
                 "Make your Action discoverable on GitHub Marketplace and in GitHub search.": "让您的 Action 可在 GitHub 市场和 GitHub 搜索中被发现。",
                 "Draft a release": "起草发布",
+
+            // 访问已删除的分支
+            "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "这个提交不属于本仓库的任何分支，可能属于仓库以外的分支。",
 
             // 最近有了新提交提醒
             // [/had recent pushes less than/, "有了最近的推送，不到"], //最近有了新提交提醒
@@ -4794,6 +4829,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Description": "描述",
             "Short description of this repository": "简短的描述下您的仓库",
             "Website": "网址",
+            "Enter a valid URL": "请输入有效的 URL",
             "Use your GitHub Pages website": "使用您的 GitHub Pages 站点",
             "Topics": "主题",
             "(separate with spaces)": "（空格分隔）",
@@ -4821,8 +4857,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Used by": "使用者",
             "Contributors": "贡献者",
             "Environments": "环境",
+            "Deployments": "部署",
+                "+ more deployments": "+ 更多部署",
             "Languages": "语言",
-
 
             // "branch": "分支",
             // "branches": "分支",
@@ -4976,6 +5013,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/\+ ([\d,]+) releases?/, "+ $1 个发行版"], // 仓库首页右侧栏 发行版
         [/\+ ([\d,]+) packages?/, "+ $1 个软件包"], // 仓库首页右侧栏 软件包
         [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
+        [/\+ ([\d,]+) environments?/, "+ $1 个环境"], // 仓库首页右侧栏 环境
+        [/\+ ([\d,]+) deployments?/, "+ $1 个部署"], // 仓库首页右侧栏 部署
         // 个人仓库 贡献和同步复刻操作后 信息提示条
         [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
@@ -5983,6 +6022,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
             "Checking for ability to merge automatically…": "检测自动合并的能力…",
             "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
+
+            "Required statuses must pass before merging": "合并前必须通过所需的状态",
+            "All required": "所有必需",
+            "statuses": "状态",
+            "and check runs on this pull request must run successfully to enable automatic merging.": "和检查运行在该拉取请求上必须成功运行，才能启用自动合并。",
 
             "Continuous integration has not been set up": "尚未设置持续集成",
             "several other apps": "其他一些应用程序",
@@ -7351,7 +7395,7 @@ I18N.zh["repository/watchers"] = { // 仓库 - 关注者页面
         // 关注者页面  /<user-name>/<repo-name>/watchers
             "Watchers": "关注者",
             "No one’s watching this repository yet. You could be the first.": "暂无关注者。您可以成为第一个",
-            "about how watching works on GitHub.": "关于在 GitHub 上关注的工作原理。",
+            "Learn more about how watching repositories works on GitHub": "了解更多关于如何在 GitHub 上关注仓库的工作方式",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -8235,6 +8279,24 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Secret scanning disabled": "机密扫描已停用",
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
+
+            "Secret type": "机密类型",
+                "Filter by secret type": "按机密类型筛选",
+                "Filter secret type": "筛选机密类型",
+                "Nothing to show": "暂无",
+
+            "Provider": "提供者",
+                "Filter by provider": "按提供者筛选",
+                "Filter provider": "筛选提供者",
+
+            // 排序
+                "Recently updated": "最近更新",
+                "Least recently updated": "最早更新",
+
+            "Clear current search query, filters, and sorts": "清除当前搜索查询、过滤器和排序",
+
+            "No secrets found.": "没有发现任何机密",
+            "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的秘密。",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
@@ -10371,6 +10433,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
             "Custom domain": "自定义域",
                 "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
+                "Learn more about configuring custom domains": "了解更多有关配置自定义域的信息",
                     "Remove": "移除",
                     "Check again": "再检查一次",
                     // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
@@ -10390,6 +10453,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
                     "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
                     "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
+                    "Learn more about securing your GitHub Pages site with HTTPS": "了解更多有关使用 HTTPS 保护 GitHub Pages 站点安全的信息",
 
             "Visibility": "可见性",
                 "GitHub Enterprise": "GitHub 企业版",
@@ -11999,6 +12063,25 @@ I18N.zh["search"] = { // 搜索页面
     ],
 };
 
+I18N.zh["discussions"] = {
+    "static": { // 静态翻译
+        // https://github.com/discussions
+            "Discussions": "讨论",
+
+            "Created": "已创建",
+            "Commented": "已评论",
+
+            "Search all discussions": "搜索所有讨论",
+
+            "No discussions match the selected filters.": "没有符合所筛选条件的讨论。",
+            "Discussions are used to ask questions and have open-ended conversations.": "讨论用于提出问题并进行开放式对话。",
+
+        // https://github.com/discussions/commented
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["gist"] = { // 代码片段页面
     "static": { // 静态翻译
         // 快捷键
@@ -12672,7 +12755,7 @@ I18N.zh["orgs"] = { // 组织页面
             // 仓库
                 // 搜索, 筛选 & 排序工具栏
                 "Find a repository…": "搜索仓库…",
-                "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
+                // "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
                     // 下拉菜单
                     "Select type": "选择类型",
                     "All": "全部",
@@ -12840,6 +12923,9 @@ I18N.zh["orgs"] = { // 组织页面
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
+    ],
+    "selector": [ // 元素筛选器规则
+        ["#type-options > summary > span:nth-child(1)", "类型"], // 组织主页 --> 仓库标签页-->类型筛选器 Type
     ],
 };
 
@@ -13466,6 +13552,45 @@ I18N.zh["orgs/topics"] = { // 组织设置 - 仓库 /仓库主题
     ],
 };
 
+I18N.zh["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码空间
+    "static": { // 静态翻译
+        ...I18N.zh["orgs-settings-menu"]["static"],
+        "To start using Codespaces, please": "要开始使用代码空间，请",
+        "upgrade your plan": "升级您的计划",
+        "to enable your organization.": "以启用您的组织。",
+
+        "Codespaces access": "代码空间访问",
+            "Manage access to GitHub Codespaces for your organization's members on private and internal repositories. Codespaces are always available on public repositories.": "管理组织成员对私有和内部仓库中 GitHub 代码空间的访问权限。代码空间始终在公共仓库中可用。",
+
+            "By enabling Codespaces, you agree to GitHub’s": "启用代码空间即表示您同意 GitHub 的",
+            "additional products and features terms": "附加产品和功能条款",
+            "and approve of these terms on behalf of your organization.": "并代表您的组织批准这些条款。",
+
+            "Disabled": "禁用",
+                "Disable GitHub Codespaces for all organization owned private and internal repositories": "禁用所有组织拥有的私有和内部仓库的 GitHub 代码空间",
+
+            "Enable for specific members": "为特定成员启用",
+                "Enable GitHub Codespaces for specific organization members on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为特定组织成员启用 GitHub 代码空间",
+
+            "Enable for all members": "为所有成员启用",
+                "Enable GitHub Codespaces for all organization members on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为所有组织成员启用 GitHub 代码空间",
+
+            "Enable for all members and outside collaborators": "为所有成员和外部协作者启用",
+                "Enable GitHub Codespaces for all organization members and outside collaborators on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为所有组织成员和外部协作者启用 GitHub 代码空间",
+
+        "Codespace ownership": "代码空间所有权",
+            "Control who owns codespaces created by your organization’s members on organization owned repositories. Codespace ownership dictates who is billed for usage, whose policies apply, and where audit logs are sent.": "控制谁拥有组织成员在组织拥有的仓库上创建的代码空间。代码空间所有权决定了由谁来支付使用费、适用谁的策略以及审计日志发送到何处。",
+
+            "Organization ownership": "组织所有权",
+                "All codespaces created by your organization’s members on your organization’s repositories are owned by the organization": "组织成员在组织仓库上创建的所有代码空间都归组织所有",
+
+            "User ownership": "用户所有权",
+                "All codespaces created by your organization’s members on your organization’s repositories are owned by the creating member": "组织的成员在组织仓库上创建的所有代码空间都归创建成员所有",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
@@ -13798,6 +13923,9 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 "eligible": "符合条件的",
                 "public repositories.": "公共仓库。",
 
+                "Recommend the extended query suite for repositories enabling default setup": "建议为启用默认设置的仓库提供扩展查询套件",
+                    "The extended query includes the default suite, plus lower severity and precision queries.": "扩展查询包括默认套件，以及较低严重性和精度的查询。",
+
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
 
@@ -13882,8 +14010,8 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
 
             // 顶部提醒
                 "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
-                "Secret added.": "添加了机密。",
-                "Secret deleted.": "删除了机密。",
+                "Secret added.": "机密已添加。",
+                "Secret deleted.": "机密已删除。",
 
             // 删除机密对话框
             "Remove secret": "删除机密",
