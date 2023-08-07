@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
@@ -12010,6 +12010,25 @@ I18N.zh["search"] = { // 搜索页面
     "selector": [ // 元素筛选器规则
         ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(2) > label > select > option:nth-child(2)", "要"],
         ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(3) > label > select > option:nth-child(2)", "要"],
+    ],
+};
+
+I18N.zh["discussions"] = {
+    "static": { // 静态翻译
+        // https://github.com/discussions
+            "Discussions": "讨论",
+
+            "Created": "已创建",
+            "Commented": "已评论",
+
+            "Search all discussions": "搜索所有讨论",
+
+            "No discussions match the selected filters.": "没有符合所筛选条件的讨论。",
+            "Discussions are used to ask questions and have open-ended conversations.": "讨论用于提出问题并进行开放式对话。",
+
+        // https://github.com/discussions/commented
+    },
+    "regexp": [ // 正则翻译
     ],
 };
 
