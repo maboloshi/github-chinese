@@ -127,7 +127,7 @@
                     transElement(node, 'placeholder');
                 }
             } else if (node.tagName === 'BUTTON'){
-                if (node.hasAttribute('aria-label') && ["tooltipped"].includes(node.className)) {
+                if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
                     transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
                 }
                 if (node.hasAttribute('title')) {
@@ -150,7 +150,7 @@
                 }
             } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                 transElement(node, 'label');
-            } else if (["tooltipped"].includes(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+            } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
                 transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
             } else if (node.tagName === 'A') {
                 if (node.hasAttribute('title')) {
