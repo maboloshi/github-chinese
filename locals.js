@@ -1704,6 +1704,7 @@ I18N.zh["orgs-public"] = { // 组织公共部分
         [/Invite someone to/, "邀请某人加入组织"],
         [/New team in/, "新建团队在组织"],
         [/New repository in/, "新建仓库在组织"],
+        [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "此组织已由管理员于 $1 存档。不再维护。"],
     ],
 };
 
