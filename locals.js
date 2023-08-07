@@ -8280,6 +8280,24 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
 
+            "Secret type": "机密类型",
+                "Filter by secret type": "按机密类型筛选",
+                "Filter secret type": "筛选机密类型",
+                "Nothing to show": "暂无",
+
+            "Provider": "提供者",
+                "Filter by provider": "按提供者筛选",
+                "Filter provider": "筛选提供者",
+
+            // 排序
+                "Recently updated": "最近更新",
+                "Least recently updated": "最早更新",
+
+            "Clear current search query, filters, and sorts": "清除当前搜索查询、过滤器和排序",
+
+            "No secrets found.": "没有发现任何机密",
+            "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的秘密。",
+
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
             "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打开后，您可以与协作者私下讨论，并创建一个临时的私有复刻，在那里您们可以协作进行修复。如果您已经修复了该漏洞，只需填写安全公告草案，然后发布即可。",
