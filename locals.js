@@ -4615,6 +4615,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Make your Action discoverable on GitHub Marketplace and in GitHub search.": "让您的 Action 可在 GitHub 市场和 GitHub 搜索中被发现。",
                 "Draft a release": "起草发布",
 
+            // 访问已删除的分支
+            "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "这个提交不属于本仓库的任何分支，可能属于仓库以外的分支。",
+
             // 最近有了新提交提醒
             // [/had recent pushes less than/, "有了最近的推送，不到"], //最近有了新提交提醒
             // [/had recent pushes/, "有了最近的推送，"], //最近有了新提交提醒
