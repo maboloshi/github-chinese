@@ -1399,7 +1399,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
             // 搜索, 筛选 & 排序工具栏
             "Find a repository…": "搜索仓库…",
-            "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
+            // "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
                 // 下拉菜单
                 "Select type": "选择类型",
                 "All": "全部",
@@ -12671,7 +12671,7 @@ I18N.zh["orgs"] = { // 组织页面
             // 仓库
                 // 搜索, 筛选 & 排序工具栏
                 "Find a repository…": "搜索仓库…",
-                "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
+                // "Type": "类型", // 与全局冲突 使用 Selector 规则翻译
                     // 下拉菜单
                     "Select type": "选择类型",
                     "All": "全部",
@@ -12839,6 +12839,9 @@ I18N.zh["orgs"] = { // 组织页面
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
+    ],
+    "selector": [ // 元素筛选器规则
+        ["#type-options > summary > span:nth-child(1)", "类型"], // 组织主页 --> 仓库标签页-->类型筛选器 Type
     ],
 };
 
