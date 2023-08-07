@@ -38,7 +38,7 @@
             window.MozMutationObserver;
 
         // 获取当前页面的 URL
-        const getCurrentURL = () => document.URL;
+        const getCurrentURL = () => location.href;
         getCurrentURL.previousURL = getCurrentURL();
 
         // 创建 MutationObserver 实例，监听 DOM 变化
