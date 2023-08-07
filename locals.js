@@ -6022,6 +6022,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Checking for ability to merge automatically…": "检测自动合并的能力…",
             "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
 
+            "Required statuses must pass before merging": "合并前必须通过所需的状态",
+            "All required": "所有必需",
+            "statuses": "状态",
+            "and check runs on this pull request must run successfully to enable automatic merging.": "和检查运行在该拉取请求上必须成功运行，才能启用自动合并。",
+
             "Continuous integration has not been set up": "尚未设置持续集成",
             "several other apps": "其他一些应用程序",
             "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
