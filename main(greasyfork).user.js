@@ -96,7 +96,7 @@
         if (I18N.conf.reIgnoreId.includes(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
             I18N.conf.reIgnoreTag.includes(node.tagName) ||
-            (node.getAttribute && I18N.conf.reIgnoreItemprop.includes(node.getAttribute("itemprop")))
+            (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
            ) {
             return;
         }

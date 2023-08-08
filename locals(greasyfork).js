@@ -91,7 +91,7 @@ I18N.conf = {
      * author 仓库页 作者名称
      * additionalName 个人主页 附加名称
      */
-    reIgnoreItemprop: ['name', 'author', 'additionalName'],
+    reIgnoreItemprop: /(name|author|additionalName)/,
 
     /**
      * 忽略区域的 特定元素id 正则
