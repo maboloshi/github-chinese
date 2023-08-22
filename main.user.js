@@ -364,6 +364,11 @@
             return false;
         }
 
+        // 已存在 translate-me 元素，那么直接返回
+        if (document.getElementById('translate-me')) {
+            return false;
+        }
+
         // 在元素后面插入一个翻译按钮
         let button= document.createElement('div');
         button.id = 'translate-me';
@@ -421,8 +426,13 @@
                     const translatedText = (status === 200) ? response.biz[0].translateResult : "翻译失败";
                     callback(translatedText);
                 } catch (error) {
+                    console.error('翻译失败', error);
                     callback("翻译失败");
                 }
+            },
+            onerror: (error) => {
+                console.error('网络请求失败', error);
+                callback("网络请求失败");
             }
         });
     }
