@@ -426,8 +426,13 @@
                     const translatedText = (status === 200) ? response.biz[0].translateResult : "翻译失败";
                     callback(translatedText);
                 } catch (error) {
+                    console.error('翻译失败', error);
                     callback("翻译失败");
                 }
+            },
+            onerror: (error) => {
+                console.error('网络请求失败', error);
+                callback("网络请求失败");
             }
         });
     }
