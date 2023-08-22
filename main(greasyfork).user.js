@@ -364,6 +364,11 @@
             return false;
         }
 
+        // 已存在 translate-me 元素，那么直接返回
+        if (document.getElementById('translate-me')) {
+            return false;
+        }
+
         // 在元素后面插入一个翻译按钮
         let button= document.createElement('div');
         button.id = 'translate-me';
