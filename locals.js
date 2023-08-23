@@ -10334,35 +10334,80 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
         // 编辑环境 /<user-name>/<repo-name>/settings/environments/<id>/edit
             "/ Configure": "/ 设置",
-            "Environment protection rules": "环境保护规则",
-            "Can be used to configure manual approvals and timeouts.": "可用于配置人工审批和超时。",
 
-            "Required reviewers": "所需的审阅者",
-            "Specify people or teams that may approve workflow runs when they access this environment.": "指定访问此环境时可以批准工作流运行的人员或团队。",
-                "Add up to": "最多添加",
-                "more reviewers": "位审阅者",
-                "Search for people or teams...": "搜索人员或团队...",
-            "Wait timer": "等待计时器",
-            "Set an amount of time to wait before allowing deployments to proceed.": "设置一个允许部署前的等待时间。",
-                "minutes": "分钟",
-            "Save protection rules": "保存保护规则",
+            "Deployment protection rules": "部署保护规则",
+                "Configure reviewers, timers, and custom rules that must pass before deployments to this environment can proceed.": "配置审阅者、计时器和自定义规则，在继续部署到此环境之前必须通过这些规则。",
+
+                "Required reviewers": "所需的审阅者",
+                "Specify people or teams that may approve workflow runs when they access this environment.": "指定访问此环境时可以批准工作流运行的人员或团队。",
+                    "Add up to": "最多添加",
+                    "more reviewers": "位审阅者",
+                    "Search for people or teams...": "搜索人员或团队...",
+                "Wait timer": "等待计时器",
+                "Set an amount of time to wait before allowing deployments to proceed.": "设置一个允许部署前的等待时间。",
+                    "minutes": "分钟",
+                "Save protection rules": "保存保护规则",
+                "Enable custom rules with GitHub Apps": "使用 GitHub Apps 启用自定义规则",
+                    "Learn about existing apps": "了解现有应用",
+                    "create your own protection rules": "创建您自己的保护规则",
+                    "so you can deploy with confidence.": "以便您可以放心地进行部署。",
+                "Allow administrators to bypass configured protection rules": "允许管理员绕过配置的保护规则",
 
             "Deployment branches": "部署分支",
-                "Can be used to limit what branches can deploy to this environment using branch name patterns.": "可以使用分支名称模式来限制哪些分支可以部署到这个环境。",
+                "Limit which branches can deploy to this environment based on rules or naming patterns.": "根据规则或命名模式限制哪些分支可以部署到此环境。",
                 "All branches": "全部分支",
-                "Any branch from this repository can deploy.": "该仓库的任何分支都可以部署。",
+                    "Any branch from this repository can deploy.": "该仓库的任何分支都可以部署。",
                 "Protected branches": "受保护的分支",
-                "Deployment limited to branches with protection rules.": "部署仅限于具有保护规则的分支。",
+                    "Deployment limited to branches with protection rules.": "部署仅限于具有保护规则的分支。",
                 "Selected branches": "选中的分支",
-                "Specify a list of branches using branch name patterns.": "使用分支名称模式指定一个分支列表",
+                    "Specify a list of branches using branch name patterns.": "使用分支名称模式指定一个分支列表",
+
+                "Applies to": "适用于",
+                // [/(\d+) branchs?/, "$1 个分支"],
+                ". Based on the existing": "。基于已有的",
+                "repository branch protection rules": "仓库分支保护规则",
+                // [/Currently applies to (\d+) branch(es)/, "目前适用于 $1 个分支"],
+
+                "No branch rules applied yet:": "尚未应用分支规则：",
+                "all branches are still allowed to deploy.": "仍允许所有分支进行部署。",
+                "Add deployment branch rule": "添加部署分支规则",
+                    // 添加部署分支规则 对话框
+                    "Branch name pattern:": "分支名称模式：",
+                    "Add rule": "添加规则",
+                // [/(\d+) branch(es) allowed/, "允许 $1 个分支"],
+                "Remove": "删除",
+
+                // 顶部提醒
+                    "Environment changes successfully saved: all branches can deploy.": "环境更改已成功保存：所有分支都可以部署。",
+                    "Environment changes successfully saved: only protected branches can deploy.": "环境更改已成功保存：只有受保护的分支才能部署。",
+                    "Environment changes successfully saved: only selected branches can deploy.": "环境更改已成功保存：只有选定的分支才能部署。",
+                    // [/Deployment branch rule \"([^ ]+)\" saved successfully./ ,"部署分支规则 “$1” 已成功保存。"],
+                    // [/Deployment branch rule \"([^ ]+)\" removed./, "部署分支规则 “$1” 已删除。",]
+
             "Environment secrets": "环境机密",
-            "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment.": "机密是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问。",
-            "Add Secret": "添加机密",
-            "Add secret": "添加机密",
-                // 添加机密对话框
-                "Name": "名称",
-                "Value": "值",
-                "Secret value": "机密值",
+                "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment.": "机密是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问。",
+                "Add Secret": "添加机密",
+                "Add secret": "添加机密",
+                    // 添加机密对话框
+                    "Name": "名称",
+                    "Value": "值",
+                    "Secret value": "机密值",
+
+            "Environment variables": "环境变量",
+                "Variables are used for non-sensitive configuration data. They are accessible only by GitHub Actions in the context of this environment. They are accessible using the": "变量用于非敏感配置数据。它们只能通过此环境上下文中的 GitHub Actions 访问。它们可以使用",
+                "vars context": "变量内容",
+                "Add variable": "添加变量",
+                    "Variable value": "变量值",
+                    "Adding…": "添加中…",
+                "Update variable": "更新变量",
+                    "Save variable": "保存变量",
+                    "Saving...": "保存中...",
+                // 删除变量 对话框
+                    "Remove variable": "删除变量",
+                    "Are you sure you want to delete": "您确定要删除",
+                    "Yes, remove this variable": "是的，删除这个变量",
+                    // 顶部提醒
+                    "Variable deleted.": "变量已删除。",
 
             // 顶部提醒
             // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
@@ -10373,6 +10418,11 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
         [/(\d+) protection rules?/, "$1 个保护规则"], // /environments
         [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
         [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
+        [/Currently applies to (\d+) branch(es)/, "目前适用于 $1 个分支"],
+        [/(\d+) branch(es) allowed/, "允许 $1 个分支"],
+        [/(\d+) branch(es)/, "$1 个分支"],
+        [/Deployment branch rule \"([^ ]+)\" saved successfully./ ,"部署分支规则 “$1” 已成功保存。"],
+        [/Deployment branch rule \"([^ ]+)\" removed./, "部署分支规则 “$1” 已删除。",]
     ],
 };
 
