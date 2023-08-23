@@ -68,8 +68,8 @@
 
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
-                // 返回 `节点增加 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
+                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes' || mutation.type === 'characterData');
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
@@ -78,6 +78,7 @@
 
         // 配置 MutationObserver
         const config = {
+            characterData: true,
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
