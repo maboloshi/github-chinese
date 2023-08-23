@@ -340,6 +340,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Rich Jupyter Notebook Diffs": "丰富的 Jupyter Notebook 差异",
             "Project Migration": "项目迁移",
             "Passkeys": "通行密钥",
+            "New Repository Overview": "新版仓库概述",
             "Slash Commands": "斜杠命令",
         "Help": "帮助",
         "Settings": "设置",
@@ -4652,6 +4653,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "tags": "标签",
 
             "Go to file": "转到文件",
+                "No matches found": "未找到匹配项",
             "Add file": "添加文件",
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
@@ -4772,6 +4774,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
+            // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
 
@@ -4869,6 +4872,20 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "contributor": "个贡献者",
             // "contributors": "个贡献者",
 
+        // 新版仓库概述
+            // /<user-name>/<repo-name>#coc
+                "Add a code of conduct": "添加行为准则",
+                "Define community standards, signal a welcoming and inclusive project, and outline procedures for handling abuse by adding a code of conduct.": "通过添加行为准则，明确社区标准，体现项目的欢迎和包容性，并概述处理滥用行为的程序。",
+
+            // /<user-name>/<repo-name>#license
+                "License": "许可证",
+                "Add a license": "添加许可证",
+                "Add a license to your repository to make it clear how others can use, change, and contribute to your project.": "向仓库中添加许可证，以明确其他人可以如何使用、更改您的项目并为您的项目做出贡献。",
+
+            // /<user-name>/<repo-name>#security
+                "Add a security policy": "添加安全策略",
+                "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
+
         // Action 仓库 右侧栏
             "Suggested Workflows": "建议的工作流程",
             "Based on your tech stack": "基于您的技术堆栈",
@@ -4928,6 +4945,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "View all tags": "查看全部标签",
 
             "Go to file": "转到文件",
+                "No matches found": "未找到匹配项",
             "Add file": "添加文件",
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
@@ -5005,6 +5023,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
+        [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
         [/Create a codespace on (.+)/, "在 $1 上创建代码空间"], // 仓库主页 创建代码空间
         [/Create codespace on (.+)/, "在 $1 上创建代码空间"],
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
