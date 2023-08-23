@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -12939,11 +12939,12 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
     "static": { // 静态翻译
 
         // 成员标签页 https://github.com/orgs/<orgs-name>/people
+            // 左侧栏
             "Organization permissions": "组织权限",
             "Members": "成员",
             "Outside collaborators": "外部协作者",
             "Pending collaborators": "待定协作者",
-            "Pending invitations": "待定邀请",
+            "Invitations": "邀请",
             "Failed invitations": "失败邀请",
 
             "Find a member…": "搜索成员…",
@@ -12951,10 +12952,14 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "Export": "导出",
             "Invite member": "邀请成员",
 
+            "You are the only owner of this organization! We recommend a minimum of two people within each organization have the owner role.": "您是该组织的唯一所有者！我们建议每个组织内至少有两人担任所有者角色。",
+            "Dismiss": "忽略",
+
             "Filter by two-factor authentication": "按双重身份验证筛选",
             "Everyone": "所有人",
             "Enabled": "禁用",
             "Disabled": "启用",
+            "Required": "必须",
 
             "Role": "角色",
             "Filter by role": "按角色筛选",
@@ -12974,32 +12979,79 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
             "This organization has no public members.": "该组织没有公开的成员。",
 
+            // 邀请对话框
+                // [/Invite a member to/, "邀请成员加入"],
+                "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
+                "Invite": "邀请",
+                "Invite a billing manager": "邀请一位账单管理员",
+                "Authenticate members with": "对成员进行身份验证，使用",
+                "SAML single sign-on": "SAML 单点登录",
+                "Try it in a 30-day trial of GitHub Enterprise.": "尝试试用 30 天 GitHub 企业版",
+                "Start a free trial": "开始免费试用",
+
+            // 转换为外部合作者 对话框
+                // [/Convert ([^ ]+) to outside collaborator?/, "将 $1 转换为外部合作者？"],
+                "Converting members to outside collaborators will remove them from this organization and from all teams, and if they do not currently have access to any private repositories in the organization their seat will be reclaimed.": "将成员转换为外部协作者会将把他们从本组织和所有团队中移除，如果他们目前无法访问组织中的任何私有仓库，他们的席位将被收回。",
+                "Their repository access will be preserved by making them collaborators on all repositories that their teams gave them access to. They will retain access to repositories that they were previously collaborators on, but all other access to this organization’s repositories will be lost.": "通过使他们成为其团队授予他们访问权限的所有仓库的协作者，他们的仓库访问权限将得到保留。他们将保留对之前作为合作者的仓库的访问权限，但对该组织仓库的所有其他访问权限都将丢失。",
+                "Convert to outside collaborator": "转换为外部合作者",
+
+                //顶部提示
+                    "You can't remove yourself from the organization. Have another admin do this for you.": "您无法将自己从组织中删除。请让其他管理员代劳。",
+            // 移除成员 对话框
+                // [/Removing (\d+) members? from/, "移除 $1 名成员，从"],
+                "The following members will be removed:": "以下成员将被移除：",
+                "Remove members": "移除成员",
+
+                // 顶部提醒
+                    "You can't remove the last owner of this organization.": "您无法移除该组织的最后一位所有者。",
+            // 顶部提醒
+                "You publicized 1 membership.": "您公开了 1 名会员资格",
+                "You concealed 1 membership.": "您隐藏了 1 名会员资格",
+
+        // 成员管理 https://github.com/orgs/<orgs-name>/people/<user-name>
+
         // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
             "Find a collaborator…": "寻找协作者…",
             "Select all": "全选",
             "No one outside of the organization has access to its repositories.": "组织外部的任何人都无法访问其仓库。",
 
         // 待定协作者 https://github.com/orgs/<orgs-name>/pending_collaborators
-            "Find a pending collaborator…": "寻找待定协作者…",
+            "Find a pending collaborator…": "搜索待定协作者…",
             "There aren't any pending collaborators.": "暂无任何待定的协作者",
 
         // 待定邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
-            // [/(\d+) Pending invitations?/, "个待定邀请"],
-            "No pending invitations.": "暂无待定邀请。",
+            "Find an invitation…": "搜索邀请…",
+
+            "Source": "来源",
+            "Filter by invitation source": "按邀请来源筛选",
+            "All sources": "所有来源",
+
+            // [/(\d+) invitations?/, "邀请"],
+
+            "Sort": "排序",
+            "Sort Order": "排序方式",
+            "Newest": "最新的",
+            "Oldest": "最早的",
+
+            "No matching invitations.": "暂无匹配的邀请。",
 
         // 失败邀请 https://github.com/orgs/<orgs-name>/people/failed_invitations
             // [/(\d+) Failed invitations?/, "个失败邀请"],
             "No failed invitations.": "暂无失败邀请。",
 
-        // 项目标签页 https://github.com/orgs/<orgs-name>/projects
-            "There aren't any public projects yet": "尚无任何公共项目。",
-            "There aren't any projects yet": "尚无任何项目。",
-            "Try starting a new one.": "尝试开始一个新的项目。",
-
     },
     "regexp": [ // 正则翻译
+        [/(\d+) teams?/, "$1 团队"],
+        [/(\d+) invitations?/, "$1 邀请"],
+        [/(\d+) Failed invitations?/, "$1 失败邀请"],
+        [/Invite a member to/, "邀请成员加入"],
+        [/Convert ([^ ]+) to outside collaborator?/, "将 $1 转换为外部合作者？"],
+        [/Removing (\d+) members? from/, "移除 $1 名成员，从"],
    ],
 };
+I18N.zh["orgs/outside-collaborators"] = I18N.zh["orgs/people"];
+I18N.zh["orgs/pending_collaborators"] = I18N.zh["orgs/people"];
+
 
 I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
     "static": { // 静态翻译
