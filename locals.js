@@ -3255,6 +3255,33 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
             "Configure security and analysis features": "配置安全和分析功能",
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
+            "User": "用户",
+                "Security and analysis features help keep you secure and updated, wherever you are.": "无论您身在何处，安全和分析功能都可以帮助您保持安全并及时更新。",
+
+                "Keep your public pushes safe with push protection": "通过推送保护确保您的公共推送安全",
+                "GitHub will enable push protection for all GitHub Free individuals in January 2024. Enable below to try it now in beta.": "GitHub 将于 2024 年 1 月为所有 GitHub 免费用户启用推送保护。在下面启用以立即在测试版中尝试。",
+
+                "Push protection for yourself": "启用推送保护",
+                    "Block commits that contain": "阻止提交，包含",
+                    "supported secrets": "受支持的秘密",
+                    "across all public repositories on GitHub.": "跨 GitHub 上的所有公共仓库。",
+
+                    // 为自己启用推送保护对话框
+                        "Enable push protection for yourself": "为自己启用推送保护",
+                        "This will enable push protection wherever you push": "这样，无论您在哪里推送，都能实现推送保护",
+                        "Enable push protection": "启用推送保护",
+
+                    // 为自己禁用推送保护
+                        "Disable push protection for yourself": "为自己禁用推送保护",
+                        "This will disable push protection wherever you push": "这样，无论您在哪里推送，都会禁用推送保护",
+                        "Disable push protection": "禁用推送保护",
+
+                        // 顶部提醒
+                            // [/Security settings updated for ([^ ]+)\'s repositories./, "更新了 $1 的仓库的安全设置。"],
+
+            // 仓库
+                "Security and analysis features help keep your repositories secure and updated.": "安全和分析功能可帮助您确保仓库的安全和更新。",
+
             "Disable all": "禁用全部",
             "Enable all": "启用全部",
 
@@ -3323,8 +3350,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Enable for eligible repositories": "启用符合条件的仓库",
 
                 "Push protection": "推送保护",
-                    "Block commits that contain": "阻止提交，包含",
-                    "supported secrets": "受支持的秘密",
+                    // "Block commits that contain": "阻止提交，包含",
+                    // "supported secrets": "受支持的秘密",
                     "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
 
 
@@ -3332,6 +3359,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
     "regexp": [ // 正则翻译
         [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
         [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
+        [/Security settings updated for ([^ ]+)\'s repositories./, "更新了$1 的仓库的安全设置。"],
     ],
 };
 
