@@ -7253,6 +7253,21 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Nothing has been cached by actions running in this repository.": "在此仓库中运行的操作未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存的信息",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以缩短工作流执行时间。",
+            "Last used": "最近使用",
+
+            // [/(\d+) cache results?/, "$1 个缓存结果"],
+            "No caches matched your search": "没有与您的搜索相匹配的缓存",
+            // [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
+            "Remove the filters": "删除筛选器",
+            "or try a different search query.": "或尝试不同的搜索查询。",
+
+            "Remove cache": "删除缓存",
+                "Are you sure you want to delete this cache?": "您确定要删除此缓存吗？",
+                "Yes, permanently delete this cache": "是的，永久删除此缓存",
+
+                "Deleting Cache...": "删除缓存中...",
+                // 顶部提醒
+                "Cache deleted successfully.": "缓存已成功删除。",
 
         // /<user-name>/<repo-name>/actions/workflows/<file>.yml
             "This workflow has a": "这个工作流程有一个",
@@ -7372,7 +7387,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+) workflow runs results?/, "$1 个工作流程运行结果"],
         [/Delete artifact ([^ ]+)/, "删除附件 $1"],
         [/(\d+) errors?/, "$1 个错误"],
+        [/(\d+) cache results?/, "$1 个缓存结果"],
         [/(\d+) caches?/, "$1 个缓存"],
+        [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
     ],
 };
 
