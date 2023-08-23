@@ -68,8 +68,8 @@
 
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
-                // 返回 `节点增加 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
+                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes' || mutation.type === 'characterData');
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
@@ -78,6 +78,7 @@
 
         // 配置 MutationObserver
         const config = {
+            characterData: true,
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
@@ -359,23 +360,15 @@
         // 使用 CSS 选择器选择元素
         let element = document.querySelector(el);
 
-        // 如果元素不存在，那么直接返回
-        if (!element) {
-            return false;
-        }
-
-        // 已存在 translate-me 元素，那么直接返回
-        if (document.getElementById('translate-me')) {
+        // 如果元素不存在 或者 translate-me 元素已存在，那么直接返回
+        if (!element || document.getElementById('translate-me')) {
             return false;
         }
 
         // 在元素后面插入一个翻译按钮
-        let button= document.createElement('div');
-        button.id = 'translate-me';
-        button.style.cssText = 'color: rgb(27, 149, 224); font-size: small; cursor: pointer';
-        button.textContent = '翻译';
-
-        element.insertAdjacentElement('afterend',button);
+        const buttonHTML = `<div id='translate-me' style='color: rgb(27, 149, 224); font-size: small; cursor: pointer'>翻译</div>`;
+        element.insertAdjacentHTML('afterend', buttonHTML);
+        let button = element.nextSibling;
 
         // 为翻译按钮添加点击事件
        button.addEventListener('click', () => {
