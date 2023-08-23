@@ -7259,6 +7259,12 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // 日志 右侧按钮
             "Cancel run": "取消运行",
             "Delete workflow run": "删除工作流程运行",
+                // 删除工作流程运行 对话框
+                    "Are you sure you want to delete this workflow run?": "您确定要删除此工作流程运行吗？",
+                    "This action cannot be undone": "此操作无法撤消",
+                    "Yes, permanently delete this workflow run": "是，永久删除此工作流程运行",
+                // 顶部提醒
+                    "Workflow run deleted successfully.": "工作流程运行删除成功。",
 
             // 筛选结果
             "all workflow runs": "所有工作流程运行",
