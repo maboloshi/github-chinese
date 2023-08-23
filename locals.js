@@ -10587,6 +10587,9 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 //Dependabot 警报
                 "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
                 "Configure alert notifications": "配置警报通知",
+                    "Dismiss low impact alerts": "消除低影响警报",
+                        "Dependabot will auto-dismiss alerts that are unlikely to be exploitable or have limited impact.": "Dependabot 将自动消除不太可能被利用或影响有限的警报。",
+                        "Learn more about auto-dismissing alerts.": "了解更多关于自动消除警报的信息。",
 
                 // 对话框
                 "Disable Dependabot alerts": "禁用 Dependabot 警报",
