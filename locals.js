@@ -4632,8 +4632,11 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Copy file permalink": "复制文件永久链接",
 
             // 仓库主页 分支保护
-                // [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
+                // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
+                "Your": "您的",
+                "branch isn't protected": "分支不受保护", // 新版仓库概述
                 "Protect this branch from force pushing or deletion, or require status checks before merging.": "保护此分支免受强制推送或删除，或在合并前要求状态检查。",
+                "View documentation.": "查看文档",
                 "Protect this branch": "保护该分支",
 
             // 仓库主页 Dependabot 警告框
@@ -4767,6 +4770,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 个人仓库 当前分支状态
             "This branch is": "该分支",
+            "ahead of": "领先与", // 新版仓库概述
+            "behind": "落后", // 新版仓库概述
+            "This branch is up to date with": "该分支保持同步与", // 新版仓库概述
 
             "Contribute": "贡献",
                 // 贡献按钮下拉菜单
@@ -4787,6 +4793,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                 "This branch has conflicts that must be resolved": "该分支有必须解决的冲突",
                 // [/Discard (\d+) commits? to make this branch match the upstream repository. (\d+)commits? will be removed from this branch./, "丢弃 $1 个提交，以使本分支与上游仓库一致。$2 个提交将从本分支中删除。"],
+                "Discard": "丢弃", // 新版仓库概述
+                "to make this branch match the upstream repository.": "，以使本分支与上游仓库一致。", // 新版仓库概述
+                "will be removed from this branch.": "将从本分支中删除。", // 新版仓库概述
                 "You can resolve merge conflicts using the command line and a text editor.": "您可以使用命令行和文本编辑器解决合并冲突。",
                 // [/Discard (\d+) commits?/, "丢弃 $1 个提交"],
                 "Discarding changes...": "放弃更改...",
@@ -5059,7 +5068,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
-        [/Your ([^ ]+) branch isn't protected/, "您的 $1  分支不受保护"], // 仓库主页 分支保护
+        [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
         [/Create a codespace on (.+)/, "在 $1 上创建代码空间"], // 仓库主页 创建代码空间
         [/Create codespace on (.+)/, "在 $1 上创建代码空间"],
@@ -5088,6 +5097,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/This branch is up to date with ([^ ]+)\./, "该分支与上游 $1 保持同步。"],
         [/(\d+) commits? ahead/, "领先 $1 个提交"],
         [/(\d+) commits? behind/, "落后 $1 个提交"],
+        [/(\d+) commits?/, "$1 个提交"], // 新版仓库概述
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
