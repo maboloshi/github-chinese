@@ -3375,6 +3375,8 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         // Applications 应用 https://github.com/settings/installations
             // "Installed GitHub Apps": "安装的 GitHub 应用",
             "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
+            "No installed applications": "没有已安装的应用程序",
+            "You have no applications installed on this account.": "此帐户上没有安装任何应用程序。",
             "Configure": "配置",
 
         // https://github.com/settings/installations/<id>
