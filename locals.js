@@ -1872,6 +1872,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Company": "公司",
             "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
              //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
+            "Pronouns": "代词",
             "Location": "位置",
             "Display current local time": "显示当前当地时间",
                 "Other users will see the time difference from their local time.": "其他用户将看到与本地时间的时差。",
@@ -2085,13 +2086,15 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Select whether animated images should play automatically.": "选择是否需要自动播放动态图片。",
             "Sync with system": "与系统同步",
             "Adopts your system preference for reduced motion": "采用您的系统偏好以减少运动",
-            "Enabled": "禁用",
+            "Enabled": "启用",
             "Automatically plays animated images": "自动播放动态图片",
             "Prevents animated images from playing automatically": "防止自动播放动态图片",
+            "Save motion preferences": "保存动态首选项",
 
             // 顶部提醒
             "Motion preferences successfully saved.": "动态首选项已成功保存。",
 
+            "Content": "内容",
             "Editor settings": "编辑器设置",
                 "URL paste behavior": "URL 粘贴行为",
                 "Select if URLs should be formatted on paste. You can use": "选择是否应在粘贴时格式化 URL。您可以使用",
@@ -2581,7 +2584,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "SMS/Text message successfully configured.": "短信/文本信息配置成功。",
 
             "Two-factor authentication": "双重身份验证",
-                "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
+                "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
                 "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
