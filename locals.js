@@ -11865,7 +11865,7 @@ I18N.zh.pulls = I18N.zh.issues;
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
-            "Search GitHub": "GitHub 一下，您就知道",
+            "Search GitHub": "在 GitHub 上搜索",
 
             // ProTip
             "For an": "要进行",
