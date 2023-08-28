@@ -246,7 +246,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "GitHub Status": "GitHub 状态",
 
         // 顶部栏 (未登录)
-        "Why GitHub?": "为何选择 GitHub？",
+        "Why GitHub?": "为什么选择 GitHub？",
         "Team": "团队",
         "Enterprise": "企业",
         // "Pricing": "价格",
@@ -280,6 +280,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Issues": "议题",
         "Marketplace": "应用商城",
         "Explore": "探索",
+        "Give new navigation feedback": "提供新导航的反馈",
         "Codespaces": "代码空间",
         "Sponsors": "赞助",
 
@@ -1091,7 +1092,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 
         "For you": "为您推荐",
             "Filter": "筛选",
-            "Filter your feed": "筛选提要",
+            "For you feed filters": "为您提供筛选器",
             "Announcements": "公告",
             "Releases": "发行版",
             "Follows": "关注",
