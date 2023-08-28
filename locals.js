@@ -3480,6 +3480,7 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
             "Reminders allow you to push certain events to authorized instances of Microsoft Teams or Slack.": "提醒功能允许您将特定事件推送到 Microsoft Teams 或 Slack 的授权实例。",
             "Available organizations": "可用组织",
             "Configure Reminder": "配置提醒",
+            "No reminders": "没有提醒",
 
         // 新的预定提醒 https://github.com/settings/reminders/<组织名>
             "New scheduled reminder": "新建预定提醒",
@@ -11045,7 +11046,7 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Team": "团队",
         "Enterprise": "企业",
         // "Pricing": "价格",
-        "Search GitHub": "GitHub 一下，您就知道",
+        "Search GitHub": "在 GitHub 上搜索",
         "Sign in": "登录",
         "Sign up": "注册",
 
@@ -11087,7 +11088,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
         // 设备激活 https://github.com/login/device
             "Device Activation": "设备激活",
-            "Enter the code displayed on your device": "输入您设备上显示的代码",
+            "Enter the code displayed on your device": "输入您的设备上显示的代码",
             "Continue": "继续",
             "GitHub staff will never ask you to enter your code on this page.": "GitHub 工作人员绝不会要求您在此页面上输入您的代码。",
 
@@ -11110,7 +11111,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Verify": "验证",
                 "Verifying": "验证中",
                 "Verifying…": "验证中…",
-            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的两步 “身份验证器” 应用（TOTOP），以查看您的身份验证码。",
+            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的两步 “身份验证器” 应用（TOTP），以查看您的身份验证码。",
 
             "Use this method for future logins": "今后的登录中使用此方法",
                 "Future logins on this device will prompt you to use": "今后在该设备上的登录将提示您使用",
@@ -11441,7 +11442,7 @@ I18N.zh["signup"] = { // 注册页
         "Create a password": "创建密码",
             "Password is too short": "密码太短",
             "Password needs a number and lowercase letter": "密码需要有数字和小写字母",
-            "Password is strong": "密码很强壮",
+            "Password is strong": "密码很强",
             "Make sure it's": "请确保",
                 "at least 15 characters": "至少需要15个字符",
                 "OR": " 或者",
