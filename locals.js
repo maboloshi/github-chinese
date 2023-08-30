@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsers/\explore)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
@@ -12760,6 +12760,24 @@ I18N.zh["events"] = { // 活动页面
         "Connect with the GitHub community at conferences, meetups, and hackathons around the world.": "在世界各地的会议、聚会和编程马拉松上与 GitHub 社区建立联系。",
         "GitHub Events": "GitHub 活动",
         "Sponsored by GitHub": "由 GitHub 赞助",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["sponsers/explore"] = { // 赞助页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "集合",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+        "Explore GitHub Sponsors": "探索 GitHub 赞助",
+        "Fund the work of developers and projects you depend on.": "为您所依赖的开发人员和项目提供资金。",
+        
     },
     "regexp": [ // 正则翻译
     ],
