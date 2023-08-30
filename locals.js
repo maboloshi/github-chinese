@@ -12727,6 +12727,22 @@ I18N.zh["trending"] = { // 热门页面
     ],
 };
 
+I18N.zh["events"] = { // 活动页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "收藏品",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+        "Connect with the GitHub community at conferences, meetups, and hackathons around the world.": "在世界各地的会议、聚会和编程马拉松上与 GitHub 社区建立联系。",
+        "GitHub Events": "GitHub 活动",
+        "Sponsored by GitHub": "由 GitHub 赞助",
+    },
+};
+
 I18N.zh["showcases"] = { // 展示页面
     "static": { // 静态翻译
         "Open source showcases": "开源展示",
