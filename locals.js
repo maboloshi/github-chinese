@@ -12784,9 +12784,16 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
         "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的存储库。",
         "Explore people and projects": "探索人员和项目",
+        "Bulk Sponsor": "批量赞助商",
+        "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多个维护人员。",
+        "Don't see what you're looking for? Try": "没有看到你在找的东西？尝试",
+        "searching for people you can sponsor": "搜索可以赞助的人员",
+        "and filtering by language!": "并通过语言筛选！",
+        "Invest in open source software and we'll track your progress here!": "Invest in open source software and we'll track your progress here!",
 
     },
     "regexp": [ // 正则翻译
+        [/You don't directly depend on any repositories in the ([^ ]+) ecosystem whose maintainers can be sponsored./, "您不直接依赖 $1 生态系统中已开放赞助的仓库"]
     ],
 };
 
