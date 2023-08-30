@@ -3197,15 +3197,16 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
         ...I18N.zh["settings-menu"]["static"],
 
         // GitHub Copilot https://github.com/settings/copilot
-            "Trained on billions of lines of code,": "经过数十亿行代码的训练",
+            "Trained on billions of lines of code,": "经过数十亿行代码的训练，",
             "turns natural language prompts into coding suggestions across dozens of languages.": "将自然语言提示转换为多种语言的编码建议。",
             "Start free trial": "开始免费试用",
             "After that $10/month": "结束试用后 $10/月",
-            "Don't fly solo": "不要独自飞翔",
-            "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
-            "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
-            "Get Copilot": "获取 Copilot",
-            "Try Copilot free for 60 days": "免费试用 Copilot 60 天",
+            "Get Copilot from an organization": "从组织中获取 Copilot",
+            "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）及其团队提供使用 GitHub Copilot 的权限。",
+            "Organizations owned by enterprise accounts": "企业帐户拥有的组织",
+            "are not currently listed.": "目前未包含在此计划中。",
+            "You do not belong to any organizations.": "你不属于任何组织。",
+            "Create an organization": "创建一个组织",
 
     },
     "regexp": [ // 正则翻译
