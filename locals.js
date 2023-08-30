@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
@@ -246,7 +246,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "GitHub Status": "GitHub 状态",
 
         // 顶部栏 (未登录)
-        "Why GitHub?": "为何选择 GitHub？",
+        "Why GitHub?": "为什么选择 GitHub？",
         "Team": "团队",
         "Enterprise": "企业",
         // "Pricing": "价格",
@@ -280,6 +280,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Issues": "议题",
         "Marketplace": "应用商城",
         "Explore": "探索",
+        "Give new navigation feedback": "提供新导航的反馈",
         "Codespaces": "代码空间",
         "Sponsors": "赞助",
 
@@ -1091,7 +1092,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 
         "For you": "为您推荐",
             "Filter": "筛选",
-            "Filter your feed": "筛选提要",
+            "For you feed filters": "为您提供筛选器",
             "Announcements": "公告",
             "Releases": "发行版",
             "Follows": "关注",
@@ -1872,6 +1873,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Company": "公司",
             "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
              //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
+            "Pronouns": "代词",
             "Location": "位置",
             "Display current local time": "显示当前当地时间",
                 "Other users will see the time difference from their local time.": "其他用户将看到与本地时间的时差。",
@@ -2085,13 +2087,15 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Select whether animated images should play automatically.": "选择是否需要自动播放动态图片。",
             "Sync with system": "与系统同步",
             "Adopts your system preference for reduced motion": "采用您的系统偏好以减少运动",
-            "Enabled": "禁用",
+            "Enabled": "启用",
             "Automatically plays animated images": "自动播放动态图片",
             "Prevents animated images from playing automatically": "防止自动播放动态图片",
+            "Save motion preferences": "保存动态首选项",
 
             // 顶部提醒
             "Motion preferences successfully saved.": "动态首选项已成功保存。",
 
+            "Content": "内容",
             "Editor settings": "编辑器设置",
                 "URL paste behavior": "URL 粘贴行为",
                 "Select if URLs should be formatted on paste. You can use": "选择是否应在粘贴时格式化 URL。您可以使用",
@@ -2581,7 +2585,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "SMS/Text message successfully configured.": "短信/文本信息配置成功。",
 
             "Two-factor authentication": "双重身份验证",
-                "Two factor authentication is not enabled yet.": "尚未启用双重身份验证。",
+                "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
                 "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
@@ -2775,6 +2779,7 @@ I18N.zh["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
         // SSH and GPG keys SSH 与 GPG 公钥 https://github.com/settings/keys
             "SSH keys": "SSH 密钥",
             "New SSH key": "新建 SSH 密钥",
+            "Authentication Keys": "认证密钥",
             "There are no SSH keys associated with your account.": "没有与您的帐户关联的 SSH 密钥。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "这是与您的帐户相关的 SSH 密钥的列表。删除任何您无法识别的密钥。",
             "Check out our guide to": "请看我们的指南",
@@ -2804,15 +2809,15 @@ I18N.zh["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             // SSH 密钥删除 对话框
             "Are you sure you want to delete this SSH key?": "您确定要删除此 SSH 密钥吗？",
             "This action": "该操作",
-            "cannot": "不能",
+            "CANNOT": "不能",
             "be undone. This will permanently delete the SSH key and if you’d like to use it in the future, you will need to upload it again.": "被撤销。这将永久地删除 SSH 密钥，如果您想在未来使用它，您将需要再次上传它。",
-            "I understand, please delete this SSH key": "我明白了，依然删除该 SSH 密钥",
+            "I understand, delete this SSH key": "我明白了，删除此 SSH 密钥",
 
             // GPG 密钥删除 对话框
             "Are you sure you want to delete this GPG key?": "您确定要删除此 GPG 密钥吗？",
             "be undone. This will permanently delete the GPG key, and if you’d like to use it in the future, you will need to upload it again.": "被撤销。这将永久地删除 GPG 密钥，如果您想在未来使用它，您将需要再次上传它。",
             "Any commits you signed with this key will become unverified after removing it.": "删除后，您使用此密钥签名的任何提交都将变成未验证。",
-            "I understand, delete this GPG key": "我明白了，依然删除该 GPG 密钥",
+            "I understand, delete this GPG key": "我明白了，删除此 GPG 密钥",
             "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
 
             // 顶部提醒
@@ -3079,6 +3084,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
+            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为个人帐户创建的代码空间可以被限制访问为其打开的存储库，您也可以为它授予您拥有的其他存储库的读取访问权限。",
 
             "Editor preference": "编辑器偏好",
                 // VS code
@@ -3192,11 +3198,16 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
         ...I18N.zh["settings-menu"]["static"],
 
         // GitHub Copilot https://github.com/settings/copilot
-            "Don't fly solo": "不要独自飞翔",
-            "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
-            "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
-            "Get Copilot": "获取 Copilot",
-            "Try Copilot free for 60 days": "免费试用 Copilot 60 天",
+            "Trained on billions of lines of code,": "经过数十亿行代码的训练，",
+            "turns natural language prompts into coding suggestions across dozens of languages.": "将自然语言提示转换为多种语言的编码建议。",
+            "Start free trial": "开始免费试用",
+            "After that $10/month": "结束试用后 $10/月",
+            "Get Copilot from an organization": "从组织中获取 Copilot",
+            "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）及其团队提供使用 GitHub Copilot 的权限。",
+            "Organizations owned by enterprise accounts": "企业帐户拥有的组织",
+            "are not currently listed.": "目前未包含在此计划中。",
+            "You do not belong to any organizations.": "你不属于任何组织。",
+            "Create an organization": "创建一个组织",
 
     },
     "regexp": [ // 正则翻译
@@ -3375,6 +3386,8 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         // Applications 应用 https://github.com/settings/installations
             // "Installed GitHub Apps": "安装的 GitHub 应用",
             "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
+            "No installed applications": "没有已安装的应用程序",
+            "You have no applications installed on this account.": "此帐户上没有安装任何应用程序。",
             "Configure": "配置",
 
         // https://github.com/settings/installations/<id>
@@ -3473,6 +3486,7 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
             "Reminders allow you to push certain events to authorized instances of Microsoft Teams or Slack.": "提醒功能允许您将特定事件推送到 Microsoft Teams 或 Slack 的授权实例。",
             "Available organizations": "可用组织",
             "Configure Reminder": "配置提醒",
+            "No reminders": "没有提醒",
 
         // 新的预定提醒 https://github.com/settings/reminders/<组织名>
             "New scheduled reminder": "新建预定提醒",
@@ -3527,6 +3541,8 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             // [/Found (\d+) events?/, "发现 $1 个活动"],
             "Newer": "新的",
             "Older": "旧的",
+            "ProTip!": "专业提示！",
+                "View all events created yesterday": "查看昨天创建的所有事件"
 
 
     },
@@ -11038,7 +11054,7 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Team": "团队",
         "Enterprise": "企业",
         // "Pricing": "价格",
-        "Search GitHub": "GitHub 一下，您就知道",
+        "Search GitHub": "在 GitHub 上搜索",
         "Sign in": "登录",
         "Sign up": "注册",
 
@@ -11080,7 +11096,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
         // 设备激活 https://github.com/login/device
             "Device Activation": "设备激活",
-            "Enter the code displayed on your device": "输入您设备上显示的代码",
+            "Enter the code displayed on your device": "输入您的设备上显示的代码",
             "Continue": "继续",
             "GitHub staff will never ask you to enter your code on this page.": "GitHub 工作人员绝不会要求您在此页面上输入您的代码。",
 
@@ -11103,7 +11119,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Verify": "验证",
                 "Verifying": "验证中",
                 "Verifying…": "验证中…",
-            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的两步 “身份验证器” 应用（TOTOP），以查看您的身份验证码。",
+            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的两步 “身份验证器” 应用（TOTP），以查看您的身份验证码。",
 
             "Use this method for future logins": "今后的登录中使用此方法",
                 "Future logins on this device will prompt you to use": "今后在该设备上的登录将提示您使用",
@@ -11434,7 +11450,7 @@ I18N.zh["signup"] = { // 注册页
         "Create a password": "创建密码",
             "Password is too short": "密码太短",
             "Password needs a number and lowercase letter": "密码需要有数字和小写字母",
-            "Password is strong": "密码很强壮",
+            "Password is strong": "密码很强",
             "Make sure it's": "请确保",
                 "at least 15 characters": "至少需要15个字符",
                 "OR": " 或者",
@@ -11857,7 +11873,7 @@ I18N.zh.pulls = I18N.zh.issues;
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
-            "Search GitHub": "GitHub 一下，您就知道",
+            "Search GitHub": "在 GitHub 上搜索",
 
             // ProTip
             "For an": "要进行",
@@ -11927,7 +11943,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Close reason": "关闭原因",
                 "Has linked pull request": "已关联的拉取请求",
                 "Author": "作者",
-                "Assignee": "受理",
+                "Assignee": "受理人",
                 "Mentioned user": "提及的用户",
                 "Mentioned team": "提及的团队",
                 "Commenter": "评论者",
@@ -12544,7 +12560,7 @@ I18N.zh["explore"] = { // 探索页面
             "Explore": "探索",
             "Topics": "主题",
             "Trending": "热门",
-            "Collections": "收藏品",
+            "Collections": "集合",
             "Events": "活动",
             "GitHub Sponsors": "GitHub 赞助",
             "Get email updates": "获取电子邮件更新",
@@ -12611,7 +12627,7 @@ I18N.zh["topics"] = { // 探索-->主题页面
             "Explore": "探索",
             "Topics": "主题",
             "Trending": "热门",
-            "Collections": "收藏品",
+            "Collections": "集合",
             "Events": "活动",
             "GitHub Sponsors": "GitHub 赞助",
             "Get email updates": "获取电子邮件更新",
@@ -12662,7 +12678,7 @@ I18N.zh["trending"] = { // 热门页面
         "Explore": "探索",
         "Topics": "主题",
         "Trending": "热门",
-        "Collections": "收藏品",
+        "Collections": "集合",
         "Events": "活动",
         "GitHub Sponsors": "GitHub 赞助",
         "Get email updates": "获取电子邮件更新",
@@ -12711,13 +12727,83 @@ I18N.zh["trending"] = { // 热门页面
     ],
 };
 
+I18N.zh["collections"] = { // 集合页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "集合",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+        "Curated lists and insight into burgeoning industries, topics, and communities.": "精心策划的列表和对新兴行业、主题和社区的见解。",
+        "Create a collection": "创建一个集合",
+        "Load more…": "载入更多...",
+        "Loading more…": "载入中...",
+
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["events"] = { // 活动页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "集合",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+        "Connect with the GitHub community at conferences, meetups, and hackathons around the world.": "在世界各地的会议、聚会和编程马拉松上与 GitHub 社区建立联系。",
+        "GitHub Events": "GitHub 活动",
+        "Sponsored by GitHub": "由 GitHub 赞助",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["sponsors/explore"] = { // 赞助页面
+    "static": { // 静态翻译
+        "Explore": "探索",
+        "Topics": "主题",
+        "Trending": "热门",
+        "Collections": "集合",
+        "Events": "活动",
+        "GitHub Sponsors": "GitHub 赞助",
+        "Get email updates": "获取电子邮件更新",
+        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+        "Explore GitHub Sponsors": "探索 GitHub 赞助",
+        "Fund the work of developers and projects you depend on.": "为您所依赖的开发人员和项目提供资金。",
+        "Ecosystem": "生态系统",
+            "All ecosystems": "所有生态系统",
+        "Filters": "过滤器",
+            "Direct dependencies only": "仅直接依赖项",
+        "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
+        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的存储库。",
+        "Explore people and projects": "探索人员和项目",
+        "Bulk Sponsor": "批量赞助",
+            "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多个维护人员。",
+            "Get started": "开始",
+        "Don't see what you're looking for? Try": "没有看到你在找的东西？尝试",
+        "searching for people you can sponsor": "搜索可以赞助的人员",
+        "and filtering by language!": "并通过语言筛选！",
+        "Clear filter": "清除筛选器",
+
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["showcases"] = { // 展示页面
     "static": { // 静态翻译
         "Open source showcases": "开源展示",
         "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
         "Search showcases": "搜索展示",
     },
-     "regexp": [ // 正则翻译
+    "regexp": [ // 正则翻译
     ],
 };
 
