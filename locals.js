@@ -12789,11 +12789,11 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "Don't see what you're looking for? Try": "没有看到你在找的东西？尝试",
         "searching for people you can sponsor": "搜索可以赞助的人员",
         "and filtering by language!": "并通过语言筛选！",
-        "Invest in open source software and we'll track your progress here!": "Invest in open source software and we'll track your progress here!",
+        "Clear filter": "清除筛选器",
+        "Invest in open source software and we'll track your progress here!": "为开源软件投资，我们将在这里跟踪您的进度！",
 
     },
     "regexp": [ // 正则翻译
-        [/You don't directly depend on any repositories in the ([^ ]+) ecosystem whose maintainers can be sponsored./, "您不直接依赖 $1 生态系统中已开放赞助的仓库"]
     ],
 };
 
