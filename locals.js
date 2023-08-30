@@ -3197,7 +3197,8 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
         ...I18N.zh["settings-menu"]["static"],
 
         // GitHub Copilot https://github.com/settings/copilot
-            "Your AI Pair Programmer": "您的 AI 编程伙伴",
+            "Your AI Pa": "您的 AI 编程",
+            "ir Programmer": "伙伴",
             "Don't fly solo": "不要独自飞翔",
             "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
             "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
