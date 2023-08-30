@@ -12765,7 +12765,7 @@ I18N.zh["events"] = { // 活动页面
     ],
 };
 
-I18N.zh["sponsers/explore"] = { // 赞助页面
+I18N.zh["sponsors/explore"] = { // 赞助页面
     "static": { // 静态翻译
         "Explore": "探索",
         "Topics": "主题",
@@ -12784,7 +12784,7 @@ I18N.zh["sponsers/explore"] = { // 赞助页面
         "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
         "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的存储库。",
         "Explore people and projects": "探索人员和项目",
-        
+
     },
     "regexp": [ // 正则翻译
     ],
