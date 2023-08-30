@@ -3197,6 +3197,7 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
         ...I18N.zh["settings-menu"]["static"],
 
         // GitHub Copilot https://github.com/settings/copilot
+            "Your AI Pair Programmer": "您的 AI 编程伙伴",
             "Don't fly solo": "不要独自飞翔",
             "GitHub Copilot is an AI pair programmer that offers autocomplete-style suggestions as you code.": "GitHub Copilot 是一款 AI 配对程序员，当您编码时，它会提供自动完成样式的建议。",
             "You can receive suggestions from GitHub Copilot either by starting to write code you want to use, or by writing a natural language comment describing what you want the code to do.": "您可以从 GitHub Copilot 接收建议通过开始编写您要使用的代码，或者编写描述您希望代码执行的自然语言注释。",
@@ -3535,6 +3536,8 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             // [/Found (\d+) events?/, "发现 $1 个活动"],
             "Newer": "新的",
             "Older": "旧的",
+            "ProTip!": "专业提示！",
+                "View all events created yesterday": "查看昨天创建的所有事件"
 
 
     },
@@ -11935,7 +11938,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Close reason": "关闭原因",
                 "Has linked pull request": "已关联的拉取请求",
                 "Author": "作者",
-                "Assignee": "受理",
+                "Assignee": "受理人",
                 "Mentioned user": "提及的用户",
                 "Mentioned team": "提及的团队",
                 "Commenter": "评论者",
