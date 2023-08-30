@@ -12777,6 +12777,13 @@ I18N.zh["sponsers/explore"] = { // 赞助页面
         "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
         "Explore GitHub Sponsors": "探索 GitHub 赞助",
         "Fund the work of developers and projects you depend on.": "为您所依赖的开发人员和项目提供资金。",
+        "Ecosystem": "生态系统",
+            "All ecosystems": "所有生态系统",
+        "Filters": "过滤器",
+            "Direct dependencies only": "仅直接依赖项",
+        "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
+        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的存储库。",
+        "Explore people and projects": "探索人员和项目",
         
     },
     "regexp": [ // 正则翻译
