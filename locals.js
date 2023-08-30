@@ -12741,6 +12741,8 @@ I18N.zh["events"] = { // 活动页面
         "GitHub Events": "GitHub 活动",
         "Sponsored by GitHub": "由 GitHub 赞助",
     },
+    "regexp": [ // 正则翻译
+    ],
 };
 
 I18N.zh["showcases"] = { // 展示页面
@@ -12749,7 +12751,7 @@ I18N.zh["showcases"] = { // 展示页面
         "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
         "Search showcases": "搜索展示",
     },
-     "regexp": [ // 正则翻译
+    "regexp": [ // 正则翻译
     ],
 };
 
