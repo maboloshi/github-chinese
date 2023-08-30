@@ -3084,6 +3084,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
+            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为个人帐户创建的代码空间可以被限制访问为其打开的存储库，您也可以为它授予您拥有的其他存储库的读取访问权限。",
 
             "Editor preference": "编辑器偏好",
                 // VS code
