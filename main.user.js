@@ -62,7 +62,7 @@
                         } else if (page === "gist") { // Gist 简介翻译
                             transDesc(".gist-content [itemprop='about']");
                         }
-                    }, 100);
+                    }, 500);
                 }
             }
 
