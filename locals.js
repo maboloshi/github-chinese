@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -81,10 +81,11 @@ I18N.conf = {
      * 仓库页 仓库描述 f4 my-3
      * 提交的用户名 commit-author
      * 搜索页 搜索结果 search-match
-     * 追溯 视图 代码 react-code-text|react-file-line
+     * 追溯 视图 代码 react-code-text
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
+     * 代码差异页面 pl-c1
      */
-    reIgnoreClass: /(cm-line|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|react-file-line)/,
+    reIgnoreClass: /(cm-line|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|pl-token|Link--primary no-underline text-bold|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|pl-c1)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -3084,7 +3085,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
-            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为个人帐户创建的代码空间可以被限制访问为其打开的存储库，您也可以为它授予您拥有的其他存储库的读取访问权限。",
+            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为您个人帐户创建的代码空间可以限制访问已启用的仓库或您其他被赋予读取权限的仓库",
 
             "Editor preference": "编辑器偏好",
                 // VS code
@@ -4682,6 +4683,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
                 "Find or create a branch…": "查找或创建分支…",
+                "Find a branch...": "查找分支...",
                 "Filter branches/tags": "搜索分支/标签",
                 "Branches": "分支",
                 "default": "默认",
@@ -6037,6 +6039,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "approved these changes": "批准这些更改",
                 "See review": "查看审查",
             "started a review": "开始审查",
+                "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
@@ -6311,6 +6314,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Submit review": "提交审查",
                 "Cancel review": "取消审核",
                 "pending": "条待处理",
+                "comment": "评论",
                 "comments": "评论",
 
             "Review changes": "审查更改",
@@ -7425,11 +7429,19 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
         // /<user-name>/<repo-name>/actions/runs/<id>/jobs/<id2>
 
+        // /<user-name>/<repo-name>/actions/runs/<id>/usage
+            "Run and billable time": "运行和计费时间",
+            "Learn about OS pricing on GitHub Actions": "了解 GitHub Actions 上的操作系统定价",
+            "Job": "工作",
+            "Run time": "运行时间",
+            "Billable": "计费",
+            "time": "时间",
+
         // /<user-name>/<repo-name>/actions/runs/<id>/workflow
             "Workflow file": "工作流程文件",
             "Workflow file for this run": "本次运行的工作流程文件",
 
-        // /<user-name>/<repo-name>/runs/<id>?check_suite_focus=true
+        // /<user-name>/<repo-name>/runs/<id>
             "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
 
             "Search logs": "搜索日志",
@@ -7442,16 +7454,17 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
 
             // GitHub Pages
-            "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
-            "Page Build": "页面构建",
-            "succeeded": "成功于",
-            "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
-            "Your website is ready at": "您的网站已准备就绪，网址为",
-            "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
+                "Page Build": "页面构建",
+                "succeeded": "成功于",
+                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
+                "Your website is ready at": "您的网站已准备就绪，网址为",
+                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+
+                //顶部提醒
+                    "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
             "Re-run all checks": "重新运行所有检查",
-            //顶部提醒
-            "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
     },
     "regexp": [ // 正则翻译
@@ -7466,6 +7479,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
     ],
 };
+I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
 
 I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     "static": { // 静态翻译

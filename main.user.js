@@ -4,12 +4,12 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.8.4
+// @version      1.8.5
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.8.4
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.8.5
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -62,7 +62,7 @@
                         } else if (page === "gist") { // Gist 简介翻译
                             transDesc(".gist-content [itemprop='about']");
                         }
-                    }, 100);
+                    }, 500);
                 }
             }
 
