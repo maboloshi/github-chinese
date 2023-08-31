@@ -3084,7 +3084,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
-            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为个人帐户创建的代码空间可以被限制访问为其打开的存储库，您也可以为它授予您拥有的其他存储库的读取访问权限。",
+            "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为您个人帐户创建的代码空间可以限制访问已启用的仓库或您其他被赋予读取权限的仓库",
 
             "Editor preference": "编辑器偏好",
                 // VS code
@@ -4682,6 +4682,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
                 "Find or create a branch…": "查找或创建分支…",
+                "Find a branch...": "查找分支...",
                 "Filter branches/tags": "搜索分支/标签",
                 "Branches": "分支",
                 "default": "默认",
@@ -6037,6 +6038,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "approved these changes": "批准这些更改",
                 "See review": "查看审查",
             "started a review": "开始审查",
+                "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
@@ -6311,6 +6313,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Submit review": "提交审查",
                 "Cancel review": "取消审核",
                 "pending": "条待处理",
+                "comment": "评论",
                 "comments": "评论",
 
             "Review changes": "审查更改",
@@ -7442,16 +7445,17 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
 
             // GitHub Pages
-            "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
-            "Page Build": "页面构建",
-            "succeeded": "成功于",
-            "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
-            "Your website is ready at": "您的网站已准备就绪，网址为",
-            "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
+                "Page Build": "页面构建",
+                "succeeded": "成功于",
+                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
+                "Your website is ready at": "您的网站已准备就绪，网址为",
+                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
+
+                //顶部提醒
+                    "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
             "Re-run all checks": "重新运行所有检查",
-            //顶部提醒
-            "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
 
     },
     "regexp": [ // 正则翻译
