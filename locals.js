@@ -7977,6 +7977,11 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Downloads": "下载",
 
             "Delete tag": "删除标签",
+                // 删除标签 对话框
+                    "Delete this tag?": "删除此标签？",
+                    "This will delete the information for the tag": "这将删除标签信息",
+                    "and cannot be undone.": "而且无法撤销。",
+                    "Delete this tag": "删除此标签",
 
         // 某个发行版标签 /<user-name>/<repo-name>/releases/tag/<tag>
             // 不存在发行版时
