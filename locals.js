@@ -279,7 +279,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Dashboard": "仪表板",
         //"Pull requests": "拉取请求"  // 使用 Selector 规则翻译
         "Issues": "议题",
-        "Marketplace": "应用商城",
+        "Marketplace": "应用市场",
         "Explore": "探索",
         "Give new navigation feedback": "提供新导航的反馈",
         "Codespaces": "代码空间",
@@ -4664,7 +4664,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 已上架的 GitHub Action 项目
                 "Use this GitHub action with your project": "将此 GitHub Actions 用于您的项目",
                 "Add this Action to an existing workflow or create a new one": "将此操作添加到现有工作流程或创建新工作流程",
-                "View on Marketplace": "去商城查看",
+                "View on Marketplace": "去市场查看",
 
             // 未上架的 GitHub Action 项目
                 "You can publish this Action to the GitHub Marketplace": "您可以将此 Action 发布到 GitHub 市场",
@@ -12879,8 +12879,104 @@ I18N.zh["account/organizations/new"] = { // 创建组织
     ],
 };
 
-I18N.zh["marketplace"] = { // 应用商店
+I18N.zh["marketplace"] = { // GitHub 市场
     "static": { // 静态翻译
+        // GitHub 市场主页 https://github.com/marketplace
+            "Extend GitHub": "拓展 GitHub",
+                "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
+            "Explore apps": "探索应用",
+            "Contact Sales": "联系销售",
+
+            "Types": "类型",
+                "Build on your workflow with apps that integrate with GitHub.": "使用与 GitHub 集成的应用构建您的工作流程。",
+                "An entirely new way to automate your development workflow.": "自动化开发工作流程的全新方式。",
+
+            "Search for apps and actions": "搜索应用和操作",
+                "Narrow your search": "缩小搜索范围",
+
+            "Sort:": "排序：",
+                "Sort options": "排序选项",
+                "Best Match": "最佳匹配",
+                "Recently added": "最近添加",
+                "Most installed/starred": "安装次数最多/标星最多",
+
+            // 类别
+                "API management": "API 管理",
+                    "Structure your API infrastructure to enable various internet gateways to interact with your service.": "构建应用接口基础设施，使各种互联网网关能够与您的服务互动。",
+                "Chat": "聊天",
+                    "Bring GitHub into your conversations.": "将 GitHub 纳入您的对话中。",
+                "Code quality": "代码质量",
+                    "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，通过样式、质量、安全性和测试覆盖检查自动进行代码审查。",
+                "Code review": "代码审查",
+                    "Ensure your code meets quality standards and ship with confidence.": "确保您的代码符合质量标准，并能放心交付。",
+                "Continuous integration": "持续集成",
+                    "Automatically build and test your code as you push it to GitHub, preventing bugs from being deployed to production.": "当您将代码推送到 GitHub 时，自动构建和测试您的代码，从而防止将错误部署到生产中。",
+                    "Container CI": "容器持续集成",
+                        "Continuous integration for container applications.": "容器应用的持续集成。",
+                    "Game CI": "游戏 CI",
+                        "Tools for building a CI pipeline for game development": "用于构建游戏开发 CI 管道的工具",
+                    "Mobile CI": "移动 CI",
+                        "Continuous integration for Mobile applications": "移动应用的持续集成",
+                "Dependency management": "依赖管理",
+                    "Secure and manage your third-party dependencies.": "保护和管理第三方依赖关系。",
+                "Deployment": "部署",
+                    "Streamline your code deployment so you can focus on your product.": "简化代码部署，让您专注于产品。",
+                "IDEs": "集成开发环境",
+                    "Find the right interface to build, debug, and deploy your source code.": "找到合适的界面来构建、调试和部署源代码。",
+                "Learning": "学习",
+                    "Get the skills you need to level up.": "获得升级所需的技能。",
+                "Localization": "本地化",
+                    "Extend your software's reach. Localize and translate continuously from GitHub.": "扩展您的软件的覆盖范围。从 GitHub 持续本地化和翻译。",
+                "Mobile": "移动",
+                    "Improve your workflow for the small screen.": "针对小屏幕改进工作流程。",
+                "Monitoring": "监视",
+                    "Monitor the impact of your code changes. Measure performance, track errors, and analyze your application.": "监控代码更改的影响。衡量性能、跟踪错误并分析您的应用。",
+                "Project management": "项目管理",
+                    "Organize, manage, and track your project with tools that build on top of issues and pull requests.": "使用基于置顶议题和拉取请求的工具来组织、管理和跟踪您的项目。",
+                "Publishing": "发布",
+                    "Get your site ready for production so you can get the word out.": "让您的网站做好生产准备，以便您可以宣传。",
+                "Recently added": "最新添加",
+                    "The latest tools that help you and your team build software better, together.": "最新的工具可帮助您和您的团队更好地共同构建软件。",
+                "Testing": "测试",
+                    "Find, fix, and prevent security vulnerabilities before they can be exploited.": "发现、修复和预防安全漏洞，防患于未然。",
+                // 支持
+                    "Get your team and customers the help they need.": "为您的团队和客户提供所需的帮助。",
+                // 测试
+                    "Eliminate bugs and ship with more confidence by adding these tools to your workflow.": "通过将这些工具添加到您的工作流程中，消除错误并更有信心地交付。",
+                "Utilities": "实用工具",
+                    "Auxiliary tools to enhance your experience on GitHub": "辅助工具，提升您的 GitHub 使用体验",
+                    "Backup Utilities": "备份工具",
+                        "Utilities providing periodic backups of your GitHub data": "定期备份 GitHub 数据的实用工具",
+
+            "Filters": "筛选器",
+                "Free Trials": "免费试用",
+                "GitHub Enterprise": "GitHub 企业版",
+                "Paid": "付费",
+
+            "Verification": "验证",
+                "Verified Creator": "经验证的创建者",
+
+            "Your items": "您的项目",
+                "Pending orders": "待处理订单",
+                "Pending installations": "待安装",
+                "Purchases": "购买",
+
+            "Recommended": "推崇",
+            "View all": "查看全部",
+
+            "List your tool on GitHub Marketplace": "在 Github 市场上列出您的工具",
+            "Read the documentation": "阅读文档",
+                "Learn how you can build tools to extend and improve developers' workflows.": "了解如何构建工具来扩展和改进开发人员的工作流程",
+
+            "Submit your tool for review": "提交您的工具以供审核",
+                "Share your app or GitHub Action with millions of developers.": "与数百万开发者分享您的应用或 GitHub Action",
+
+        // https://github.com/marketplace?type=
+            "Search results": "搜索结果",
+            "filtered by": "已筛选",
+            "Publisher domain and email verified": "已验证发布者域名和电子邮件",
+            "Creator verified by GitHub": "创建者经 GitHub 验证",
+
         // 应用介绍页面 /marketplace/codacy 第一页
             "Apps": "应用",
             // 左侧信息栏
@@ -12995,6 +13091,9 @@ I18N.zh["marketplace"] = { // 应用商店
         [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
         [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
         [/Next: Authorize ([^ ]+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
+        [/(\d+) results?/, "$1 个结果"],
+        [/([0-9.k]+) stars?/, "$1 星标"],
+        [/([0-9.k]+) installs?/, "$1 次安装"],
     ],
 };
 
