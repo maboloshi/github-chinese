@@ -1532,7 +1532,7 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
             "Get started with GitHub Packages": "开始使用 GitHub 软件包",
             "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
             "Choose a registry": "选择一个注册表",
-            "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用程序的软件平台——小型轻量级执行环境。",
+            "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用的软件平台——小型轻量级执行环境。",
             "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
             "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
             "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.": "分发用于 Ruby 编程语言的 Ruby 程序和库的标准格式。",
@@ -1830,7 +1830,7 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
             "Deleted repositories": "删除的仓库",
 
             "Developer settings": "开发者设置",
-                "OAuth Apps": "OAuth 应用程序",
+                "OAuth Apps": "OAuth 应用",
                 "Publisher Verification": "发布者验证",
             "Account settings": "帐户设置",
 
@@ -1902,7 +1902,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-            "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用程序、服务或工具？",
+            "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用、服务或工具？",
             "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
             ", or read more about it at our": "，或阅读更多关于它的信息在我们的",
             "Developer site": "开发者网站",
@@ -3400,8 +3400,8 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         // Applications 应用 https://github.com/settings/installations
             // "Installed GitHub Apps": "安装的 GitHub 应用",
             "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
-            "No installed applications": "没有已安装的应用程序",
-            "You have no applications installed on this account.": "此帐户上没有安装任何应用程序。",
+            "No installed applications": "没有已安装的应用",
+            "You have no applications installed on this account.": "此帐户上没有安装任何应用。",
             "Configure": "配置",
 
         // https://github.com/settings/installations/<id>
@@ -3423,22 +3423,22 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "This will block the app access to your resources.": "这将阻止应用访问您的资源。",
             "Suspend": "暂停",
                 // 取消按钮 提醒信息
-                "Are you sure you want to suspend this GitHub App?": "您确定要暂停此 GitHub 应用程序吗？",
+                "Are you sure you want to suspend this GitHub App?": "您确定要暂停此 GitHub 应用吗？",
             "This will remove the app and revoke access to all resources.": "这将删除应用并撤销对所有资源的访问权限。",
             "Uninstall": "卸载",
                 // 取消按钮 提醒信息
-                // [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 1 个仓库中卸载此 GitHub 应用程序吗？"],
+                // [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 1 个仓库中卸载此 GitHub 应用吗？"],
 
 
             "Report abuse": "举报滥用",
             "Revoke": "撤销",
-            "Read more about connecting with third-party applications at": "了解更多关于与第三方应用程序连接的信息，请访问",
+            "Read more about connecting with third-party applications at": "了解更多关于与第三方应用连接的信息，请访问",
             "GitHub Help": "GitHub 帮助",
 
         // https://github.com/settings/apps/authorizations
             // "Authorized GitHub Apps": "授权的 GitHub 应用",
             "No authorized applications": "无授权申请",
-            "You have no applications authorized to access your account.": "您没有授权访问您的帐户的应用程序。",
+            "You have no applications authorized to access your account.": "您没有授权访问您的帐户的应用。",
 
         // https://github.com/settings/applications
             // "Authorized OAuth Apps": "授权的 OAuth 应用",
@@ -3461,11 +3461,11 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "I understand, revoke access": "我明白了，依然撤销访问",
 
             // 全部撤销对话框
-            "Are you sure you want to revoke access for all applications?": "您确定要撤销对所有应用程序的访问权限吗？",
+            "Are you sure you want to revoke access for all applications?": "您确定要撤销对所有应用的访问权限吗？",
             "This will revoke access for": "这将撤销访问",
             "all third-party": "所有第三方",
-            "OAuth applications. This action cannot be undone.": "OAuth 应用程序。此操作无法撤消。",
-            "Any SSH keys created on your behalf by applications will also be deleted.": "任何由应用程序代表您创建的 SSH 密钥也将被删除。",
+            "OAuth applications. This action cannot be undone.": "OAuth 应用。此操作无法撤消。",
+            "Any SSH keys created on your behalf by applications will also be deleted.": "任何由应用代表您创建的 SSH 密钥也将被删除。",
             "Type your username to confirm.": "输入您的用户名进行确认。",
             "I understand, revoke access for everything": "我明白了，依然撤销对一切的访问",
 
@@ -3476,7 +3476,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
 
     },
     "regexp": [ // 正则翻译
-        [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用程序吗？"],
+        [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用吗？"],
         [/Uninstall "([^ ]+)"/, "卸载 “$1”"],
 
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
@@ -3587,20 +3587,20 @@ I18N.zh["settings/sponsors-log"] = { // 设置 - 赞助日志
     ],
 };
 
-I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
+I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
     "static": { // 静态翻译
             "Developer Settings": "开发者设置",
-            "GitHub Apps": "GitHub 应用程序",
-            "OAuth Apps": "OAuth 应用程序",
+            "GitHub Apps": "GitHub 应用",
+            "OAuth Apps": "OAuth 应用",
             "Personal access tokens": "个人访问令牌",
                 "Fine-grained tokens": "精细化的令牌",
                 "Tokens (classic)": "令牌（经典）",
 
-        // GitHub 应用程序 https://github.com/settings/apps
-            "Register a new GitHub App": "注册新的 GitHub 应用程序",
+        // GitHub 应用 https://github.com/settings/apps
+            "Register a new GitHub App": "注册新的 GitHub 应用",
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
-            "New GitHub App": "新 GitHub 应用程序",
-            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用程序的更多信息",
+            "New GitHub App": "新 GitHub 应用",
+            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用的更多信息",
             "developer documentation": "开发者文档",
 
     },
@@ -3608,10 +3608,10 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用程序
     ],
 };
 
-I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
+I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
     "static": { // 静态翻译
 
-        // 注册 GitHub 应用程序 https://github.com/settings/apps/new
+        // 注册 GitHub 应用 https://github.com/settings/apps/new
             "Developer Settings": "开发者设置",
 
             "Register new GitHub App": "注册新 GitHub 应用",
@@ -3630,7 +3630,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
             "which can be used to request an updated access token when this access token expires.": "，用于在此访问令牌到期时，请求更新访问令牌。",
             "Request user authorization (OAuth) during installation": "在安装期间请求用户授权 (OAuth)",
             "Requests that the installing user grants access to their identity during installation of your App": "请求用户在安装应用期间授予其身份访问权限。",
-            "Identifying and authorizing users for GitHub Apps documentation": "关于 GitHub 应用程序识别并授权用户的文档",
+            "Identifying and authorizing users for GitHub Apps documentation": "关于 GitHub 应用识别并授权用户的文档",
             "Enable Device Flow": "启用设备流",
             "Allow this GitHub App to authorize users via the Device Flow.": "允许此 GitHub 应用通过设备流程授权用户。",
             "Read the": "阅读",
@@ -3725,7 +3725,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
                     "Single file": "单个文件",
                         "Manage just a single file.": "只管理单个文件。",
                         "Path": "路径",
-                        "The content paths to single files your app can access.": "应用程序可以访问的单个文件的内容路径。",
+                        "The content paths to single files your app can access.": "应用可以访问的单个文件的内容路径。",
                     "Variables": "变量",
                         "Manage Actions repository variables.": "管理操作仓库变量。",
                     "Webhooks": "Web 钩子",
@@ -3838,28 +3838,28 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用程序
 };
 I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps/new"];
 
-I18N.zh["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用程序
+I18N.zh["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用
     "static": { // 静态翻译
             "Developer Settings": "开发者设置",
-            "GitHub Apps": "GitHub 应用程序",
-            "OAuth Apps": "OAuth 应用程序",
+            "GitHub Apps": "GitHub 应用",
+            "OAuth Apps": "OAuth 应用",
             "Personal access tokens": "个人访问令牌",
                 "Fine-grained tokens": "精细化的令牌",
                 "Tokens (classic)": "令牌（经典）",
 
-        // OAuth 应用程序 https://github.com/settings/developers
-            "No OAuth applications": "没有 OAuth 应用程序",
-            "OAuth applications are used to access the GitHub API.": "OAuth 应用程序用于访问 GitHub API。",
+        // OAuth 应用 https://github.com/settings/developers
+            "No OAuth applications": "没有 OAuth 应用",
+            "OAuth applications are used to access the GitHub API.": "OAuth 应用用于访问 GitHub API。",
             "Read the docs": "阅读文档",
             "to find out more.": "以了解更多情况。",
-            "Register a new application": "注册新 OAuth 应用程序",
+            "Register a new application": "注册新 OAuth 应用",
 
     },
     "regexp": [ // 正则翻译
     ],
 };
 
-I18N.zh["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应用程序
+I18N.zh["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应用
     "static": { // 静态翻译
 
         // 注册 OAuth 应用 https://github.com/settings/applications/new
@@ -3892,8 +3892,8 @@ I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/applications/new"]
 I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
     "static": { // 静态翻译
             "Developer Settings": "开发者设置",
-            "GitHub Apps": "GitHub 应用程序",
-            "OAuth Apps": "OAuth 应用程序",
+            "GitHub Apps": "GitHub 应用",
+            "OAuth Apps": "OAuth 应用",
             "Personal access tokens": "个人访问令牌",
                 "Fine-grained tokens": "精细化的令牌",
                 "Tokens (classic)": "令牌（经典）",
@@ -3939,7 +3939,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Are you sure you want to revoke access for all personal access tokens?": "对话框您确定要撤销所有个人访问令牌的访问权限吗？",
             "This will revoke access for": "这将撤销访问",
             "all personal access tokens": "所有个人访问令牌",
-            ", but will not revoke access for any authorized third-party OAuth applications. This action cannot be undone.": "，但不会撤销任何授权第三方 OAuth 应用程序的访问权限。此操作无法撤消。",
+            ", but will not revoke access for any authorized third-party OAuth applications. This action cannot be undone.": "，但不会撤销任何授权第三方 OAuth 应用的访问权限。此操作无法撤消。",
             "Any SSH keys created on your behalf by personal access tokens will also be deleted.": "任何由个人访问令牌代表您创建的 SSH 密钥也将被删除",
             "Type your username to confirm": "输入您的用户名进行确认",
             "I understand, revoke access for everything": "我明白了，依然撤销对一切的访问",
@@ -4223,12 +4223,12 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Make sure to copy your personal access token now. You won’t be able to see it again!": "确保立即复制您的个人访问令牌。您将无法再看到它！",
 
             "Are you sure you want to delete this token?": "您确定要删除此令牌吗？",
-            "Any applications or scripts using this token will no longer be able to access the GitHub API. You cannot undo this action.": "任何使用此令牌的应用程序或脚本将无法再访问 GitHub API。您无法撤消此操作。",
+            "Any applications or scripts using this token will no longer be able to access the GitHub API. You cannot undo this action.": "任何使用此令牌的应用或脚本将无法再访问 GitHub API。您无法撤消此操作。",
             "I understand, delete this token": "我明白了，依然删除该令牌。",
 
         // 编辑个人访问令牌 https://github.com/settings/tokens/<id>
             "Edit personal access token (classic)": "编辑个人访问令牌（经典）",
-            "If you’ve lost or forgotten this token, you can regenerate it, but be aware that any scripts or applications using this token will need to be updated.": "如果您丢失或忘记了此令牌，则可以重新生成它，但请注意，需要更新使用此令牌的任何脚本或应用程序。",
+            "If you’ve lost or forgotten this token, you can regenerate it, but be aware that any scripts or applications using this token will need to be updated.": "如果您丢失或忘记了此令牌，则可以重新生成它，但请注意，需要更新使用此令牌的任何脚本或应用。",
             "This token has no expiration date. To set a new expiration date, you must": "此令牌未设置有效期。要设置新的有效期，您必须",
             "regenerate the token": "重新生成令牌",
             "Update token": "更新令牌",
@@ -4238,7 +4238,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 
         // 重新生成个人访问令牌 https://github.com/settings/tokens/<id>/regenerate
             "Regenerate personal access token (classic)": "重新生成个人访问令牌（经典）",
-            "Submitting this form will generate a new token. Be aware that any scripts or applications using this token will need to be updated.": "提交此表单将产生一个新的令牌。请注意，任何使用该令牌的脚本或应用程序将需要更新。",
+            "Submitting this form will generate a new token. Be aware that any scripts or applications using this token will need to be updated.": "提交此表单将产生一个新的令牌。请注意，任何使用该令牌的脚本或应用将需要更新。",
             "Regenerate token": "重新生成令牌",
 
     },
@@ -6128,7 +6128,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "and check runs on this pull request must run successfully to enable automatic merging.": "和检查运行在该拉取请求上必须成功运行，才能启用自动合并。",
 
             "Continuous integration has not been set up": "尚未设置持续集成",
-            "several other apps": "其他一些应用程序",
+            "several other apps": "其他一些应用",
             "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
 
             "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
@@ -7235,7 +7235,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Save time with matrix workflows that simultaneously test across multiple operating systems and versions of your runtime.": "使用矩阵工作流程可同时跨多个操作系统和版本运行，节省时间",
 
             "Any language": "任何语言",
-            "GitHub Actions supports Node.js, Python, Java, Ruby, PHP, Go, Rust, .NET, and more. Build, test, and deploy applications in your language of choice.": "GitHub Actions 支持 Node.js、Python、Java、Ruby、PHP、Go、Rust、.NET 等。以您选择的语言构建、测试和部署应用程序。",
+            "GitHub Actions supports Node.js, Python, Java, Ruby, PHP, Go, Rust, .NET, and more. Build, test, and deploy applications in your language of choice.": "GitHub Actions 支持 Node.js、Python、Java、Ruby、PHP、Go、Rust、.NET 等。以您选择的语言构建、测试和部署应用。",
 
             "Live logs": "实时日志",
             "See your workflow run in realtime with color and emoji. It’s one click to copy a link that highlights a specific line number to share a CI/CD failure.": "使用颜色和表情符号实时查看您的工作流程。只需单击即可复制突出显示特定行号的链接以共享 CI/CD 故障。",
@@ -8170,7 +8170,7 @@ I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
             "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
              "Choose a registry": "选择一个注册表",
 
-            "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用程序的软件平台——小型轻量级执行环境。",
+            "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用的软件平台——小型轻量级执行环境。",
             "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
             "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
             "A standard format for distributing Ruby programs and libraries used for the Ruby programming language.": "分发用于 Ruby 编程语言的 Ruby 程序和库的标准格式。",
@@ -8333,7 +8333,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             // 底部信息
             "surface known security vulnerabilities in some dependency manifest files.": "表面已知的安全漏洞在某些依赖性清单文件中。",
             "Dependabot security updates": "Dependabot 安全更新",
-            "automatically keep your application up-to-date by updating dependencies in response to these alerts.": "通过响应这些警报更新依赖项，自动保持您的应用程序是最新的。",
+            "automatically keep your application up-to-date by updating dependencies in response to these alerts.": "通过响应这些警报更新依赖项，自动保持您的应用是最新的。",
             "Dependabot version updates": "Dependabot 版本更新",
             "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
 
@@ -9686,7 +9686,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
             "Do not allow bypassing the above settings": "不允许绕过上述设置",
                 "The above settings will apply to administrators and custom roles with the \"bypass branch protections\" permission.": "上述设置将应用于具有 “绕过分支保护” 权限的管理员和自定义角色。",
             "Restrict who can push to matching branches": "限制谁可以推送到匹配的分支",
-                "Specify people, teams, or apps allowed to push to matching branches. Required status checks will still prevent these people, teams, and apps from merging if the checks fail.": "指定允许推送到匹配分支的人员、团队或应用程序。如果检查失败，所需的状态检查仍然会阻止这些人、团队和应用程序的合并。",
+                "Specify people, teams, or apps allowed to push to matching branches. Required status checks will still prevent these people, teams, and apps from merging if the checks fail.": "指定允许推送到匹配分支的人员、团队或应用。如果检查失败，所需的状态检查仍然会阻止这些人、团队和应用的合并。",
 
             "Include administrators": "包括管理员",
             "Enforce all configured restrictions above for administrators.": "对管理员执行上述所有配置进行限制。",
@@ -12535,7 +12535,7 @@ I18N.zh["login/oauth"] = { // 应用授权
             "account": "帐户",
             "Public and": "公共库和",
             "private": "私有库",
-            "This application will be able to": "该应用程序将能够",
+            "This application will be able to": "该应用将能够",
             "read and write all public and private repository data": "读写所有公共和私有仓库数据",
             ". This includes the following:": "。这包括以下内容：",
             "Wikis": "Wiki",
@@ -12545,10 +12545,10 @@ I18N.zh["login/oauth"] = { // 应用授权
 
             "Personal user data": "个人用户资料",
             "Email addresses (read-only)": "电子邮箱地址(只读)",
-            "This application will be able to read your private email addresses.": "此应用程序将能够读取您的私人电子邮箱地址。",
+            "This application will be able to read your private email addresses.": "此应用将能够读取您的私人电子邮箱地址。",
 
         // 第五页 即将跳转到 重定向页面
-            "You are being redirected to the authorized application.": "您将被重定向到授权的应用程序。",
+            "You are being redirected to the authorized application.": "您将被重定向到授权的应用。",
             "If your browser does not redirect you back, please": "如果您的浏览器没有将您重定向回来，请",
             "click here": "点击这里",
             "to continue.": "继续。",
@@ -13034,7 +13034,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Account:": "帐户：",
             "/ month": "/ 月",
             "To complete this installation, you must": "要完成此安装，您必须",
-            "grant this app access": "授予此应用程序的权限",
+            "grant this app access": "授予此应用的权限",
             "to your GitHub account.": "访问您的 GitHub 帐户。",
             "Cancel this plan": "取消计划",
             "Order summary": "订单摘要",
@@ -13059,7 +13059,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
         // /apps/codacy-production
             "GitHub App": "GitHub 应用",
-            "Read more about this app on the Marketplace": "了解更多关于商城中此应用程序的信息",
+            "Read more about this app on the Marketplace": "了解更多关于商城中此应用的信息",
 
             "Install": "安装",
             "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
@@ -13507,12 +13507,12 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Profile updated successfully": "资料更新成功。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-                "Building an application, service, or tool that integrates with GitHub?": "构建应用程序、服务或工具，集成到 GitHub 吗？",
+                "Building an application, service, or tool that integrates with GitHub?": "构建应用、服务或工具，集成到 GitHub 吗？",
                 "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
                 "Developer site": "开发者站点",
                 "Check out the Developer site": "查看开发者网站，",
-                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "了解指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用程序的资源。请确保您的联系信息是最新的。感谢您成为我们的会员！",
+                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "了解指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的会员！",
 
             "Terms of Service": "服务条款",
                 "Standard": "标准",
@@ -13689,7 +13689,7 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                         "Members will be able to create private sites, visible to anyone with permission.": "成员将能够创建私有站点，对任何有权限的人可见。",
                 "Integration access requests": "集成访问请求",
                     "Allow integration requests from outside collaborators": "允许来自外部协作者的集成请求",
-                    "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用程序申请访问该组织及其资源的权限。",
+                    "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用申请访问该组织及其资源的权限。",
 
                 "Admin repository permissions": "管理员仓库权限",
                     "Repository visibility change": "仓库可见性更改",
@@ -14530,28 +14530,28 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "Third-party application access policy": "第三方应用访问策略",
             "Policy:": "策略：",
                 "Access restricted": "访问受限",
-                    "Only approved applications can access data in this organization. Applications owned by": "只有获得批准的应用程序才能访问该组织中的数据。应用程序由",
+                    "Only approved applications can access data in this organization. Applications owned by": "只有获得批准的应用才能访问该组织中的数据。应用由",
                     "always have access.": "拥有的始终可以访问。",
                     "Remove restrictions": "解除限制",
                     // 解除限制对话框
                     "Are you sure?": "您确定吗？",
                     "You’re about to remove all third-party application restrictions. Please read this carefully.": "您即将删除所有第三方应用限制。请仔细阅读。",
-                    "Removing third-party application restrictions will immediately give member authorized applications access to private data in the": "取消第三方应用限制，将立即允许成员授权的应用程序访问私人数据，在",
+                    "Removing third-party application restrictions will immediately give member authorized applications access to private data in the": "取消第三方应用限制，将立即允许成员授权的应用访问私人数据，在",
                     "Please be sure you want to do this.": "请确定您想这么做。",
                     "Yes, remove application restrictions": "是的，取消应用限制",
                 "No restrictions": "未受限",
-                    "All applications authorized by organization members have access to": "所有由组织成员授权的应用程序都可以访问",
+                    "All applications authorized by organization members have access to": "所有由组织成员授权的应用都可以访问",
                     "’s data.": "的数据。",
-                    "Setup application access restrictions": "设置应用程序访问限制",
+                    "Setup application access restrictions": "设置应用访问限制",
 
             "No pending requests": "没有待处理的请求",
-            "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用程序时，这些请求将在此处列出以供您批准。您可以浏览",
-            "your own authorized applications": "您授权的应用程序",
+            "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用时，这些请求将在此处列出以供您批准。您可以浏览",
+            "your own authorized applications": "您授权的应用",
 
-            "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用程序可以代表组织成员进行操作。您的访问策略决定了哪些应用程序可以访问您组织中的数据。",
+            "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用可以代表组织成员进行操作。您的访问策略决定了哪些应用可以访问您组织中的数据。",
             "Read more about third-party access and organizations.": "阅读更多关于第三方访问和组织的信息。",
 
-        // 设置应用程序访问限制 /settings/oauth_application_policy/confirm
+        // 设置应用访问限制 /settings/oauth_application_policy/confirm
             "Third-party application restrictions": "第三方应用限制",
             "create an extra layer of security that allows owners to better control how applications access data in their organization.": "创建一个额外的安全层，使所有者能够更好地控制应用如何访问其组织中的数据。",
             "Organization owners maintain a whitelist of trusted applications.": "组织所有者维护受信任应用白名单。",
@@ -14569,8 +14569,8 @@ I18N.zh["orgs/settings/installations"] = { // 组织设置 - GitHub 应用
             "Installed GitHub Apps": "安装的 GitHub 应用",
             "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
 
-            "Pending GitHub Apps installation requests": "待处理的 GitHub 应用程序安装请求",
-            "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以申请安装 GitHub 应用程序。待处理的请求列在下面。",
+            "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求",
+            "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以申请安装 GitHub 应用。待处理的请求列在下面。",
 
             "No installed applications": "未安装任何应用",
             "You have no applications installed on this account.": "该账户未安装任何应用。",
@@ -14702,8 +14702,8 @@ I18N.zh["orgs/settings/reminders"] = { // 组织设置 - 定时提醒
             "Add Slack workspace": "添加 Slack 工作区",
             "We have rolled out a new version of the GitHub app in Slack. If you are currently on the old app, please consider switching over to the new app! More info about migration can be found": "我们已经在 Slack 中推出了新版本的 GitHub 应用。如果您目前使用的是旧版应用，请考虑切换到新版应用！更多关于迁移的信息可以点击",
             "here.": "这里。",
-            "1. Clicking on 'Add' will configure your Slack workspace with the new GitHub app.": "1. 点击 “添加” 将用新的 GitHub 应用程序配置您的 Slack 工作区。",
-            "2. If you already have the old app in Slack, it will uninstall the legacy app and install the new one.": "2. 如果您在 Slack 中已有旧应用程序，它将卸载旧应用程序并安装新应用程序。",
+            "1. Clicking on 'Add' will configure your Slack workspace with the new GitHub app.": "1. 点击 “添加” 将用新的 GitHub 应用配置您的 Slack 工作区。",
+            "2. If you already have the old app in Slack, it will uninstall the legacy app and install the new one.": "2. 如果您在 Slack 中已有旧应用，它将卸载旧应用并安装新应用。",
             "Add workspace": "添加工作区",
 
     },
@@ -14795,33 +14795,33 @@ I18N.zh["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓
     ],
 };
 
-I18N.zh["orgs/settings/applications"] = { // 组织设置 - OAuth 应用程序
+I18N.zh["orgs/settings/applications"] = { // 组织设置 - OAuth 应用
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
-        // OAuth 应用程序 /organizations/<org-login>/settings/applications
-            "No Organization Owned Applications": "没有组织拥有的应用程序",
-            "Do you want to develop an application that uses the": "您想开发一个应用程序，使用",
-            "? Register an application to generate OAuth tokens.": "？注册应用程序以生成 OAuth 令牌。",
-            "Register an application": "注册应用程序",
+        // OAuth 应用 /organizations/<org-login>/settings/applications
+            "No Organization Owned Applications": "没有组织拥有的应用",
+            "Do you want to develop an application that uses the": "您想开发一个应用，使用",
+            "? Register an application to generate OAuth tokens.": "？注册应用以生成 OAuth 令牌。",
+            "Register an application": "注册应用",
     },
     "regexp": [ // 正则翻译
     ],
 };
 
-I18N.zh["orgs/settings/apps"] = { // 组织设置 - GitHub 应用程序
+I18N.zh["orgs/settings/apps"] = { // 组织设置 - GitHub 应用
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
-        // GitHub 应用程序 /organizations/<org-login>/settings/apps
-            "New GitHub App": "新 GitHub 应用程序",
+        // GitHub 应用 /organizations/<org-login>/settings/apps
+            "New GitHub App": "新 GitHub 应用",
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
-            "Register a new GitHub App": "注册新的 GitHub 应用程序",
-            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用程序的更多信息",
+            "Register a new GitHub App": "注册新的 GitHub 应用",
+            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用的更多信息",
             "developer documentation": "开发者文档",
 
             "Management": "管理人员",
-            "Choose members that are allowed to manage all GitHub Apps belonging to this organization.": "选择允许管理属于该组织的所有 GitHub 应用程序的成员。",
+            "Choose members that are allowed to manage all GitHub Apps belonging to this organization.": "选择允许管理属于该组织的所有 GitHub 应用的成员。",
             "Organization owner": "组织所有者",
             "Search by username or full name": "按用户名或全名搜索",
             "Grant": "授予",
@@ -14836,9 +14836,9 @@ I18N.zh["orgs/settings/publisher"] = { // 组织设置 - GitHub 发布者验证
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 发布者验证 /organizations/<org-login>/settings/publisher
-            "There must be 1 or more GitHub/OAuth App registered by the organization to request publisher verification": "组织必须有 1 个或多个 GitHub/OAuth 应用程序才能请求发布者验证",
+            "There must be 1 or more GitHub/OAuth App registered by the organization to request publisher verification": "组织必须有 1 个或多个 GitHub/OAuth 应用才能请求发布者验证",
             "You can request publisher verification for your organization. A": "您可以为您的组织请求发布者验证。一个",
-            "badge will be added to your apps published in the marketplace, recognizing that apps and other published materials were created by you.": "徽章将添加到您在市场上发布的应用程序中，以识别应用程序和其他已发布材料是由您创建的。",
+            "badge will be added to your apps published in the marketplace, recognizing that apps and other published materials were created by you.": "徽章将添加到您在市场上发布的应用中，以识别应用和其他已发布材料是由您创建的。",
             "Learn more about publisher verification.": "了解更多关于发布者验证的信息。",
 
     },
