@@ -2621,7 +2621,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Scan the QR code": "扫描二维码",
                     "Re-scan the QR code": "重新扫描二维码",
                     "Use an authenticator app or browser extension to scan.": "请使用身份验证器应用或浏览器扩展进行扫描。",
-                    "Learn more about enabling 2FA": "了解更多有关启用 2FA 的信息",
+                    "Learn more about enabling 2FA": "了解更多关于启用 2FA 的信息",
 
                     "Unable to scan? You can use the": "无法扫描？您可以使用",
                     "setup key": "设置密钥",
@@ -3028,7 +3028,7 @@ I18N.zh["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除的仓�
         // 删除的仓库 https://github.com/settings/deleted_repositories
             "Deleted repositories": "删除的仓库",
             "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复不是复刻或没有被复刻的仓库。",
-            "Learn more about restoring deleted repositories": "了解更多有关恢复已删除仓库的信息",
+            "Learn more about restoring deleted repositories": "了解更多关于恢复已删除仓库的信息",
 
             "These repositories were deleted, but can't be restored by you. Contact support if you want to restore them.": "这些仓库已被删除，但您无法恢复。如果您想恢复它们，请联系 GitHub 支持人员。",
 
@@ -7427,7 +7427,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "A graph will be generated the next time this workflow is run.": "下次运行此工作流时将生成一个图表。",
 
                 "This run and associated checks have been archived and are scheduled for deletion.": "此运行和相关检查已存档并计划删除。",
-                "Learn more about checks retention": "了解更多有关检查保留的信息",
+                "Learn more about checks retention": "了解更多关于检查保留的信息",
 
             "Artifacts": "附件",
                 "Produced during runtime": "在运行期间生成",
@@ -7691,7 +7691,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
 
                 "branch": "分支",
                 "for this commit and start a pull request": "为此提交并创建拉取请求",
-                "Learn more about pull requests": "了解更多有关拉取请求的信息",
+                "Learn more about pull requests": "了解更多关于拉取请求的信息",
 
         // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 顶部提醒
@@ -10619,7 +10619,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                 "Your GitHub Pages site is currently being built from the": "您的 GitHub Pages 站点，目前正建立于",
                 "folder in the": "目录在",
                 "branch.": "分支。",
-                "Learn more about configuring the publishing source for your site": "了解更多有关配置网站发布源的信息",
+                "Learn more about configuring the publishing source for your site": "了解更多关于配置网站发布源的信息",
 
                 "Select branch": "选择分支",
                     "None": "无",
@@ -10632,7 +10632,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
             "Custom domain": "自定义域",
                 "Custom domains allow you to serve your site from a domain other than": "自定义域允许您从其他域为您的站点提供服务，而不是",
-                "Learn more about configuring custom domains": "了解更多有关配置自定义域的信息",
+                "Learn more about configuring custom domains": "了解更多关于配置自定义域的信息",
                     "Remove": "移除",
                     "Check again": "再检查一次",
                     // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
@@ -10652,7 +10652,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
                     "HTTPS provides a layer of encryption that prevents others from snooping on or tampering with traffic to your site.": "HTTPS 提供了一层加密，防止他人窥探或篡改您站点的流量。",
                     "When HTTPS is enforced, your site will only be served over HTTPS.": "当开启强制 HTTPS 时，您的站点将只通过 HTTPS 提供服务。",
-                    "Learn more about securing your GitHub Pages site with HTTPS": "了解更多有关使用 HTTPS 保护 GitHub Pages 站点安全的信息",
+                    "Learn more about securing your GitHub Pages site with HTTPS": "了解更多关于使用 HTTPS 保护 GitHub Pages 站点安全的信息",
 
             "Visibility": "可见性",
                 "GitHub Enterprise": "GitHub 企业版",
@@ -11359,7 +11359,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Scan the QR code": "扫描二维码",
                 "Re-scan the QR code": "重新扫描二维码",
                 "Use an authenticator app or browser extension to scan.": "请使用身份验证器应用或浏览器扩展进行扫描。",
-                "Learn more about enabling 2FA": "了解更多有关启用 2FA 的信息",
+                "Learn more about enabling 2FA": "了解更多关于启用 2FA 的信息",
 
                 "Unable to scan? You can use the": "无法扫描？您可以使用",
                 "setup key": "设置密钥",
@@ -12122,7 +12122,7 @@ I18N.zh["search"] = { // 搜索页面
             // &type=registrypackages
                 "Learn GitHub Packages": "了解 Github 软件包",
                 "GitHub Packages is a platform for hosting and managing packages, including containers and other dependencies. Get started with publishing or installing packages yourself.": "GitHub 软件包是一个托管和管理包（包括容器和其他依赖项）的平台。开始自行发布或安装软件包吧",
-                "Learn more about GitHub Packages": "了解更多有关 GitHub 软件包的信息",
+                "Learn more about GitHub Packages": "了解更多关于 GitHub 软件包的信息",
 
             // &type=topics
                 "Related:": "相关的：",
@@ -12154,7 +12154,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Across several:": "跨越几个：",
                 "Alternative way:": "替代方式：",
 
-                "Note that we don't currently support regular expressions in the repo or org qualifiers. For more information on search syntax, see our": "请注意，我们目前不支持 repo 或 org 限定符中的正则表达式。更多有关搜索语法的信息，请参阅我们的",
+                "Note that we don't currently support regular expressions in the repo or org qualifiers. For more information on search syntax, see our": "请注意，我们目前不支持 repo 或 org 限定符中的正则表达式。更多关于搜索语法的信息，请参阅我们的",
                 "syntax guide": "语法指南",
 
             "Search across an organization": "跨组织搜索",
@@ -13270,7 +13270,7 @@ I18N.zh["orgs"] = { // 组织页面
                 "Create a branch protection rule": "创建分支保护规则",
                     "Enforce certain workflows for one or more branches.": "为一个或多个分支强制执行某些工作流程。",
             "Automation and CI/CD": "自动化和 CI/CD",
-                "See more about automation and CI/CD": "查看更多有关自动化和 CI/CD 的信息",
+                "See more about automation and CI/CD": "查看更多关于自动化和 CI/CD 的信息",
                 "Auto-assign new issues": "自动分配新议题",
                     "Try automatically assigning work with GitHub Actions.": "尝试使用 GitHub Actions 自动分配工作。",
                 "Run a continuous integration test": "运行持续集成测试",
@@ -14788,7 +14788,7 @@ I18N.zh["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓
             "Deleted Repositories": "删除的仓库",
             // [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
             "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "仓库可能需要一个小时的时间才能显示在这里。您只能恢复没有复刻，或没有被复刻的仓库。",
-            "Learn more about restoring deleted repositories": "了解更多有关恢复已删除仓库的信息",
+            "Learn more about restoring deleted repositories": "了解更多关于恢复已删除仓库的信息",
     },
     "regexp": [ // 正则翻译
         [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
