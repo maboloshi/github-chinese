@@ -12898,7 +12898,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
         // GitHub 市场主页 https://github.com/marketplace
             "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
+                "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
             "Explore apps": "探索应用",
+            "Explore free apps": "探索免费应用", // 未登录
             "Contact Sales": "联系销售",
 
             "Types": "类型",
@@ -12963,9 +12965,14 @@ I18N.zh["marketplace"] = { // GitHub 市场
                         "Utilities providing periodic backups of your GitHub data": "定期备份 GitHub 数据的实用工具",
 
             "Filters": "筛选器",
+                // 免费
+                    "Tools that provide a free tier.": "提供免费套餐的工具。",
                 "Free Trials": "免费试用",
+                    "Tools that support free, time-limited, access to their service.": "支持免费、限时访问其服务的工具。",
                 "GitHub Enterprise": "GitHub 企业版",
+                    "Tools that have GitHub Enterprise supported offerings.": "支持 GitHub 企业版的工具。",
                 "Paid": "付费",
+                    "Tools that require a paid subscription.": "需要付费订阅的工具。",
 
             "Verification": "验证",
                 "Verified Creator": "经验证的创建者",
