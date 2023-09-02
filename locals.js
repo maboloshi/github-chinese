@@ -2565,9 +2565,11 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
                 "Add a passkey": "添加通行密钥",
 
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、密码或 PIN 验证您的身份。",
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
+                "This browser or device is not reporting full passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备不完全支持通行密钥，但您可以尝试使用附近设备的通行密钥。",
                 "Your passkeys": "您的通行密钥",
                 "Seen from this browser": "该浏览器中查看",
+                "| Last used": "| 最后使用",
                 // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑密钥昵称",
                 // [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
@@ -2685,6 +2687,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
                 "Having problems?": "有问题吗？",
                 "Use GitHub Mobile": "使用 GitHub Mobile",
+                "Use your passkey": "使用您的通行密钥",
                 "Use your authenticator app": "使用您的身份验证器应用",
                 "Use your password": "使用您的密码",
 
@@ -2697,6 +2700,16 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Password": "密码",
                 "Forgot password?": "忘记密码？",
                 "Confirm": "确认",
+
+                "Passkey": "通行密钥",
+                "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+                "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
+                "Use passkey": "使用通行密钥",
+
+                "Authentication failed.": "认证失败。",
+                "Retry passkey": "重试通行密钥",
+
+                "Unable to verify with your passkey?": "无法验证您的通行密钥？",
 
     },
     "regexp": [ // 正则翻译
@@ -11100,6 +11113,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Password": "密码",
             "Forgot password?": "忘记密码？",
             "Sign in": "登录",
+            "Sign in with a passkey": "使用通行密钥登录",
             "Signing in…": "登录中…",
 
             "Or": "或",
