@@ -2660,9 +2660,9 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Security key registration failed.": "安全密钥注册失败。",
                     "Try again": "请重试",
 
-                "GitHub Mobile": "GitHub 移动应用",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录帐户，可以使用 GitHub 移动应用来进行双重身份验证。",
-                    "Manage GitHub Mobile": "管理 GitHub 移动端",
+                "GitHub Mobile": "GitHub Mobile",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
+                    "Manage GitHub Mobile": "管理 GitHub Mobile",
 
                     // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
                     "Show": "显示",
@@ -2684,13 +2684,13 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Your authentication code has been sent.": "您的验证码已发送。",
 
                 "Having problems?": "有问题吗？",
-                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+                "Use GitHub Mobile": "使用 GitHub Mobile",
                 "Use your authenticator app": "使用您的身份验证器应用",
                 "Use your password": "使用您的密码",
 
-                "GitHub Mobile": "GitHub 移动应用",
-                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
-                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+                "GitHub Mobile": "GitHub Mobile",
+                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
+                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
                 "We could not verify your identity": "我们无法核实您的身份",
                 "Retry": "请重试",
 
@@ -2751,7 +2751,7 @@ I18N.zh["settings/sessions"] = {
             "Your current session": "您当前的会话",
             "Last accessed on": "最后访问日期：",
 
-            "GitHub Mobile sessions": "GitHub 移动会话",
+            "GitHub Mobile sessions": "GitHub Mobile 会话",
             "This is a list of devices that have logged into your account via the GitHub Mobile app. Revoke any session that you do not recognize or you can": "这是已通过 GitHub Mobile 应用登录到您帐户的设备列表。撤销任何您不认识的会话，或者您可以",
             "revoke": "撤消",
             "your GitHub Mobile app authorization to sign out of all your devices.": "您的 GitHub Mobile 应用授权以注销您的所有设备。",
@@ -9962,15 +9962,15 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Your authentication code has been sent.": "您的验证码已发送。",
 
                 "Having problems?": "有问题吗？",
-                "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+                "Use GitHub Mobile": "使用 GitHub Mobile",
                 "Use your authenticator app": "使用您的身份验证器应用",
                 "Send a code via SMS": "通过短信发送验证码",
                 "Resend SMS": "重新发送短信",
                 "Use your password": "使用您的密码",
 
-                "GitHub Mobile": "GitHub 移动应用",
-                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
-                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+                "GitHub Mobile": "GitHub Mobile",
+                "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
+                "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
                 "We could not verify your identity": "我们无法核实您的身份",
                 "Retry": "请重试",
 
@@ -11147,11 +11147,11 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "Having problems?": "有问题吗？",
                 "Use your passkey": "使用您的通行密钥",
-                "Authenticate with GitHub Mobile": "使用 GitHub 移动应用进行身份验证",
+                "Authenticate with GitHub Mobile": "使用 GitHub Mobile 进行身份验证",
                 "Use a recovery code or begin account recovery": "使用恢复码或开始帐户恢复",
 
         // https://github.com/sessions/two-factor/mobile
-            "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub 移动应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
+            "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub Mobile 应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
 
@@ -11203,8 +11203,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "The account recovery process can take 1-3 business days. We recommend one of the following if possible.": "帐户恢复过程可能需要 1-3 个工作日。如果可能，我们推荐以下其中一项。",
             "Enter a recovery code": "输入恢复码",
                 "The file containing your recovery codes may exist on your computer - check for a file named": "包含恢复码的文件可能存在于您的计算机上——请检查一个名为",
-            //使用 GitHub 移动应用进行身份验证
-            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub 移动应用会话，可以用来进行双重身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
+            //使用 GitHub Mobile 应用进行身份验证
+            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub Mobile 会话，可以用来进行双重身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
 
             "First we need to verify an email address": "首先，我们需要验证一个电子邮箱地址",
             "by sending a one-time password to all addresses associated with this account.": "用于通过向该帐户关联的所有地址发送一次性密码。",
@@ -11251,8 +11251,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                     // [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
                 "Security keys": "安全密钥",
                     "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
-                "GitHub Mobile": "GitHub 移动应用",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub 移动应用并登录帐户，可以使用 GitHub 移动应用来进行双重身份验证。",
+                "GitHub Mobile": "GitHub Mobile",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
                     "No devices": "没有设备",
                 "SMS number": "手机号码",
             "Recovery options": "恢复选项",
@@ -11310,15 +11310,15 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Your authentication code has been sent.": "您的验证码已发送。",
 
             "Having problems?": "有问题吗？",
-            "Use GitHub Mobile": "使用 GitHub 移动应用验证",
+            "Use GitHub Mobile": "使用 GitHub Mobile",
             "Use your authenticator app": "使用您的身份验证器应用",
             "Send a code via SMS": "通过短信发送验证码",
             "Resend SMS": "重新发送短信",
             "Use your password": "使用您的密码",
 
-            "GitHub Mobile": "GitHub 移动应用",
-            "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用程序创建验证请求。",
-            "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub 移动应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
+            "GitHub Mobile": "GitHub Mobile",
+            "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
+            "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
 
@@ -11400,9 +11400,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                     "Security key registration failed.": "安全密钥注册失败。",
                     "Try again": "请重试",
 
-                "GitHub Mobile": "GitHub 移动应用",
+                "GitHub Mobile": "GitHub Mobile",
                     "Install": "安装",
-                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub 移动应用可用作双重身份验证方法。通过安装 GitHub 移动应用（",
+                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双重身份验证方法。通过安装 GitHub Mobile 应用（",
                     "and signing in to your account.": "）并登录您的帐户来启用它。",
                 "Done": "完成",
 
