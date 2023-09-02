@@ -1000,7 +1000,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "You don’t have any repositories yet!": "您目前还没有任何仓库！",
         "Create your first repository": "创建您的第一个仓库",
         "or": "或者",
-        "Learn more about Git and GitHub": "学习更多关于 Git 和 GitHub 知识",
+        "Learn more about Git and GitHub": "了解更多关于 Git 和 GitHub 的信息",
 
         // 组织
         // [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"],
@@ -1009,7 +1009,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "See all owners": "查看全部所有者",
         // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
         "Return to your personal dashboard": "返回到您的个人仪表板",
-        // "Learn more about Git and GitHub": "了解更多关于 Git 和 GitHub 的信息",
 
         // 已有仓库的项目
         // 左侧栏
@@ -2759,7 +2758,7 @@ I18N.zh["settings/sessions"] = {
 
         // 会话详情 https://github.com/settings/sessions
             "Web sessions": "网络会话",
-            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双因素身份验证方法。",
+            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双重身份验证方法。",
             "Learn more about authentication with GitHub Mobile.": "了解更多关于 GitHub Mobile 身份验证的信息。",
             "To get started, install GitHub Mobile for": "首先，安装 GitHub Mobile 适用于",
             "and sign in to your account.": "并登录您的帐户。",
@@ -2772,7 +2771,7 @@ I18N.zh["settings/sessions"] = {
             "GitHub Mobile sessions": "GitHub Mobile 会话",
             "This is a list of devices that have logged into your account via the GitHub Mobile app. Revoke any session that you do not recognize or you can": "这是已通过 GitHub Mobile 应用登录到您帐户的设备列表。撤销任何您不认识的会话，或者您可以",
             "revoke": "撤消",
-            "your GitHub Mobile app authorization to sign out of all your devices.": "您的 GitHub Mobile 应用授权以注销您的所有设备。",
+            "your GitHub Mobile app authorization to sign out of all your devices.": "您的 GitHub Mobile 应用授权，以登出您的所有设备。",
             "Revoke": "撤消",
             "Registered -": "注册于 -",
             "Last accessed -": "最后访问 -",
@@ -2853,8 +2852,7 @@ I18N.zh["settings/ssh"] = { // 设置 - SSH 与 GPG 公钥 - 添加 SSH 公钥
         ...I18N.zh["settings-menu"]["static"],
 
         // 添加 SSH 公钥 https://github.com/settings/ssh/new
-            "SSH keys": "SSH 密钥",
-            "/ Add new": "/ 新添",
+            "Add new SSH Key": "添加新 SSH 密钥",
             "Title": "标题",
             "Key type": "密钥类型",
                 "Authentication Key": "认证密钥",
@@ -2872,8 +2870,7 @@ I18N.zh["settings/gpg"] = { // 设置 - SSH 与 GPG 公钥 - 添加 GPG 公钥
         ...I18N.zh["settings-menu"]["static"],
 
         // 添加 GPG 公钥 https://github.com/settings/gpg/new
-            "GPG keys": "GPG 密钥",
-            "/ Add new": "/ 新添",
+            "Add new GPG key": "添加新 GPG 密钥",
             "Title": "标题",
             "Key": "密钥",
             "Add GPG key": "添加 GPG 密钥",
@@ -3225,7 +3222,7 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
             "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）及其团队提供使用 GitHub Copilot 的权限。",
             "Organizations owned by enterprise accounts": "企业帐户拥有的组织",
             "are not currently listed.": "目前未包含在此计划中。",
-            "You do not belong to any organizations.": "你不属于任何组织。",
+            "You do not belong to any organizations.": "您不属于任何组织。",
             "Create an organization": "创建一个组织",
 
     },
@@ -5763,6 +5760,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "You can read this repository’s": "您可以阅读该仓库的",
             "to learn how to open a good pull request.": "，去学习如何打开一个好的拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
+            "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
 
             "Dismiss": "忽略",
                 // 忽略 下拉
@@ -8098,6 +8096,13 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
             "Create a discussion for this release": "为此版本创建讨论",
                 "People will be able to leave comments and reactions on this release using Discussions.": "人们将能够使用“讨论”对此版本发表评论和反应。",
+                        "Category:": "类别：",
+                            "Announcements": "公告",
+                            "General": "通常",
+                            "Ideas": "想法",
+                            "Polls": "投票",
+                            "Q&A": "问与答",
+                            "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
                 "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
@@ -10126,6 +10131,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
 
             "Workflow permissions": "工作流程权限",
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+                "Learn more about managing permissions.": "了解更多关于管理权限的信息。",
                 "Read and write permissions": "读取和写入权限",
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                 "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
@@ -10378,6 +10384,7 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
         // 仓库 环境 /<user-name>/<repo-name>/settings/environments
             "New environment": "新建环境",
             "You can configure environments with protection rules, variables and secrets.": "您可以使用保护规则，变量和机密配置环境。",
+            "Learn more about configuring environments.": "了解更多关于配置环境的信息。",
 
             "There are no environments for this repository": "此仓库尚无环境",
             "Environments are used by your workflows for deployments.": "您的工作流程使用环境进行部署。",
@@ -11128,6 +11135,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "New to GitHub?": "初次接触 GitHub？",
             "Create an account": "那就注册个帐户吧",
 
+            "Contact GitHub Support": "联系 GitHub 支持",
+
             // 验证状态提醒
             "Incorrect username or password.": "用户名或密码不正确。",
             "Recovery code authentication failed.": "恢复码身份验证失败。",
@@ -11157,7 +11166,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Verify": "验证",
                 "Verifying": "验证中",
                 "Verifying…": "验证中…",
-            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的两步 “身份验证器” 应用（TOTP），以查看您的身份验证码。",
+            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的 “双重身份验证器” 应用（TOTP），以查看您的身份验证码。",
 
             "Use this method for future logins": "今后的登录中使用此方法",
                 "Future logins on this device will prompt you to use": "今后在该设备上的登录将提示您使用",
@@ -12825,7 +12834,7 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "Bulk Sponsor": "批量赞助",
             "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多个维护人员。",
             "Get started": "开始",
-        "Don't see what you're looking for? Try": "没有看到你在找的东西？尝试",
+        "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
         "searching for people you can sponsor": "搜索可以赞助的人员",
         "and filtering by language!": "并通过语言筛选！",
         "Clear filter": "清除筛选器",
