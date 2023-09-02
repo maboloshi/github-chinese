@@ -692,6 +692,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "redownloading your recovery codes": "重新下载您的恢复码",
         ", just to be safe.": "，以确保安全。",
 
+        // 刷新会话提示条
+        "You signed in with another tab or window.": "您使用其他标签页或窗口登录。",
+        "Reload": "重新加载",
+        "to refresh your session.": "以刷新您的会话",
+
         // 日历
         "Jan": "1月",
         "Feb": "2月",
