@@ -341,6 +341,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Global Navigation Update": "全局导航更新",
             "Rich Jupyter Notebook Diffs": "丰富的 Jupyter Notebook 差异",
             "Project Migration": "项目迁移",
+            "Deployments Dashboard View": "部署仪表板视图",
             "Passkeys": "通行密钥",
             "New Repository Overview": "新版仓库概述",
             "Slash Commands": "斜杠命令",
@@ -7519,6 +7520,23 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
 
             "View full deployment history": "查看完整的部署历史",
 
+            // 测试版部署
+                "Environments": "环境",
+                "Give beta feedback": "提供测试反馈",
+                "Opt out of beta view": "选择退出测试版视图",
+                "Active deployments": "活跃的的部署",
+                "From select environments": "来自选择的环境",
+                "Last": "最后",
+                "deployed": "部署于",
+                "Latest deployments from": "最新部署来自",
+                "all environments": "所有环境",
+                "Latest": "最新",
+                "View logs": "查看日志",
+
+                "Status: Deployed (completed).": "状态：已部署（已完成）",
+                "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
+                "No status available for": "无可用状态",
+
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
             "/ History": "/ 历史",
@@ -7527,6 +7545,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/Deployed to ([^ ]+)/, "部署到 $1"],
+        [/(\d+) deployments?/, "$1 次部署"],
     ],
 };
 
