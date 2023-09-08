@@ -1098,7 +1098,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 
         "For you": "为您推荐",
             "Updates to your homepage feed": "主页订阅源的更新",
-            "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design.": "我们将 Following 提要的功能与 For you 提要相结合，因此在 GitHub 上有一个地方可以发现内容。它改进了过滤功能，因此您可以根据自己的喜好定制订阅源，它还有一个闪亮的新视觉设计。",
+            "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 Following 提要的功能与 For you 提要相结合，因此在 GitHub 上有一个地方可以发现内容。它改进了过滤功能，因此您可以根据自己的喜好定制订阅源，它还有一个闪亮的新视觉设计。 ✨",
             "Filter": "筛选",
             "For you feed filters": "为您提供筛选器",
             "Announcements": "公告",
