@@ -1111,8 +1111,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "pushed to": "推送到",
         "released": "发布了",
         "started sponsoring": "赞助给",
-        "started following you": "开始关注了您",
         "started following": "开始关注了",
+        "you": "您",
         "Updated": "更新于",
         "has a new repository": "创建了仓库",
         "created a repository": "创建了仓库",
@@ -1134,26 +1134,27 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Subscribe to the": "订阅", // 组织
         "organization news feed": "组织的新闻提要", // 组织
 
-            //主页上仓库3个点
-                "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
-                "Show less activity like this": "显示较少这类活动",
-                // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
-                // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
-                "Unstar this repository": "取消星标此仓库",
-                // [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-                "Unfollow this user": "取消关注此用户",
+        //主页上仓库3个点
+        "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
+        "Show less activity like this": "显示较少这类活动",
+        // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+        // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
+        "Unstar this repository": "取消星标此仓库",
+        // [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+        "Unfollow this user": "取消关注此用户",
 
-            "Contributors": "贡献者",
-            "Report": "举报",
-            "Recommended for you": "为您推荐",
-            "Trending repositories": "热门仓库",
-            "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
-            "Recommended based on people you follow": "根据您关注的人推荐",
-            "has a new discussion in": "有一条新讨论，在",
-            "Join discussion": "参与讨论",
-            "Popular among": "很受欢迎",
-            "people you follow": "在您关注的人中",
-            "Sponsor": "赞助",
+        "Contributors": "贡献者",
+        "Report": "举报",
+        "Recommended for you": "为您推荐",
+        "Trending repositories": "热门仓库",
+        "See more": "查看更多",
+        "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
+        "Recommended based on people you follow": "根据您关注的人推荐",
+        "has a new discussion in": "有一条新讨论，在",
+        "Join discussion": "参与讨论",
+        "Popular among": "很受欢迎",
+        "people you follow": "在您关注的人中",
+        "Sponsor": "赞助",
 
         // 右侧栏
         "Latest changes": "最新变化",
@@ -1164,14 +1165,13 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Member statuses": "成员状态", // 组织
 
         // 用户 浮动信息卡
-            "Member of": "隶属组织",
-            // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+        "Member of": "隶属组织",
+        // [/, and (\d+) more/, "，以及其他 $1 个组织"],
 
         // 组织  浮动信息卡
-            // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
-            // [/(\d+) members?/, "$1 个成员"],
+        // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        // [/(\d+) members?/, "$1 个成员"],
 
-       //
         "Add to list": "添加到清单",
         "Lists": "清单",
         "You don't have any lists yet.": "您尚无任何清单。",
