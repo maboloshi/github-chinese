@@ -5801,6 +5801,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
+                "ProTip!": "专业提示",
+                    "Find everything you created by searching": "查找您创建的所有内容，使用",
+                    "Exclude your own issues with": "查看您自己的问题，使用",
+                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                    "Exclude everything labeled": "如果要找到所有标有",
+                    "with": "标签的，请使用",
+                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
             // 编辑 -> 选择基础库
@@ -7030,7 +7038,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
-            "Select category": "选择分类",
+            "Select a discussion category": "选择讨论分类",
             "Category:": "分类：",
             "Contributing": "贡献",
             "It looks like this is your first time starting a discussion in this repository!": "看起来这是您第一次在此仓库中开始讨论！",
@@ -7091,6 +7099,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Marked as answer": "标记为答案",
             "Answer selected by": "被标记答案由",
 
+            "This comment was marked as off-topic.": "这条评论被标记为离题。",
+            "Show comment": "显示评论",
+            "Hide comment": "隐藏评论",
+
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "code of conduct": "行为准则",
@@ -7128,6 +7140,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "can still leave comments": "仍然可以留下评论",
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
+                "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
