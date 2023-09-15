@@ -5805,6 +5805,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Find everything you created by searching": "查找您创建的所有内容，使用",
                     "Exclude your own issues with": "查看您自己的问题，使用",
                     "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                    "Exclude everything labeled": "如果要找到所有标有",
+                    "with": "标签的，请使用",
+                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如："
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
