@@ -7030,7 +7030,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
-            "Select category": "选择分类",
+            "Select a discussion category": "选择讨论分类",
             "Category:": "分类：",
             "Contributing": "贡献",
             "It looks like this is your first time starting a discussion in this repository!": "看起来这是您第一次在此仓库中开始讨论！",
