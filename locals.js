@@ -7090,6 +7090,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Marked then unmarked an answer": "标记后，又取消标记",
             "Marked as answer": "标记为答案",
             "Answer selected by": "被标记答案由",
+            "This comment was marked as off-topic.": "这条评论被标记为离题。",
 
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
@@ -7128,6 +7129,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "can still leave comments": "仍然可以留下评论",
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
+                "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
