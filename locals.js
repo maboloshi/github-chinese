@@ -5801,6 +5801,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
+                "ProTip!": "专业提示",
+                    "Find everything you created by searching": "查找您创建的所有内容，使用",
+                    "Exclude your own issues with": "查看您自己的问题，使用",
+                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
             // 编辑 -> 选择基础库
