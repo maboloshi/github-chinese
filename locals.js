@@ -7090,7 +7090,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Marked then unmarked an answer": "标记后，又取消标记",
             "Marked as answer": "标记为答案",
             "Answer selected by": "被标记答案由",
+
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
+            "Show comment": "显示评论",
+            "Hide comment": "隐藏评论",
 
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
