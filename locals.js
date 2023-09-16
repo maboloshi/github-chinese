@@ -5406,6 +5406,14 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // 置顶议题
             "Pinned issues": "置顶议题",
 
+            "ProTip!": "专业提示",
+                    "Find everything you created by searching": "查找您创建的所有内容，使用",
+                    "Exclude your own issues with": "查看您自己的问题，使用",
+                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                    "Exclude everything labeled": "如果要找到所有标有",
+                    "with": "标签的，请使用",
+                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
             "Don’t see your issue here?": "在这里没有看到您的议题？",
