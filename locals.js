@@ -3570,6 +3570,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
                 "Yesterday's activity": "昨天的活动",
                 "Repository management": "仓库管理",
                 "Billing updates": "账单更新",
+                "Copilot activity": "Copilot 活动",
                 "Personal access token activity": "个人访问令牌活动",
                 "View advanced search syntax": "查看高级搜索语法",
             "Search audit logs": "搜索审计日志",
@@ -3581,7 +3582,8 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "Newer": "新的",
             "Older": "旧的",
             "ProTip!": "专业提示！",
-                "View all events created yesterday": "查看昨天创建的所有事件"
+                "View all events created yesterday": "查看昨天创建的所有事件",
+                "View all events where you created something": "查看您所有创建内容时产生的事件",
 
 
     },
