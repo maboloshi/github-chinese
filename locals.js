@@ -1313,6 +1313,8 @@ I18N.zh["page-profile"] = { // 个人首页
             "Select up to six public repositories or gists you'd like to show to anyone.": "最多选择 6 个您想向任何人展示的公共仓库或代码片段。",
             "Select up to six public repositories you'd like to show.": "最多选择 6 个要显示的公共仓库。", // 组织页
             "Filter repositories and gists": "筛选仓库和代码片段",
+            "Repositories": "仓库",
+            "Gists": "代码片段",
             "Filter repositories": "筛选仓库", // 组织页
             "Show:": "显示：",
             "Save pins": "保存置顶",
