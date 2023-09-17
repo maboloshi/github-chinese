@@ -363,6 +363,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
         "Edit status": "编辑状态",
         "What's happening?": "发生了什么？",
+
+        "Suggestions:": "建议：",
+            "On vacation": "在度假",
+            "Working from home": "在家工作",
+            "Out sick": "生病",
+            "Focusing": "专注中",
+        
         "Busy": "繁忙中",
         "I may be slow to respond.": "我的反应可能比较慢。",
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
