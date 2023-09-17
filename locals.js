@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
@@ -363,6 +363,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
         "Edit status": "编辑状态",
         "What's happening?": "发生了什么？",
+
+        "Suggestions:": "建议：",
+            "On vacation": "在度假",
+            "Working from home": "在家工作",
+            "Out sick": "生病",
+            "Focusing": "专注中",
+        
         "Busy": "繁忙中",
         "I may be slow to respond.": "我的反应可能比较慢。",
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
@@ -1306,6 +1313,8 @@ I18N.zh["page-profile"] = { // 个人首页
             "Select up to six public repositories or gists you'd like to show to anyone.": "最多选择 6 个您想向任何人展示的公共仓库或代码片段。",
             "Select up to six public repositories you'd like to show.": "最多选择 6 个要显示的公共仓库。", // 组织页
             "Filter repositories and gists": "筛选仓库和代码片段",
+            "Repositories": "仓库",
+            "Gists": "代码片段",
             "Filter repositories": "筛选仓库", // 组织页
             "Show:": "显示：",
             "Save pins": "保存置顶",
@@ -1716,6 +1725,8 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
         [/Language: /, "语言："],
     ],
 };
+
+I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"];
 
 I18N.zh["orgs-public"] = { // 组织公共部分
     "static": { // 静态翻译
@@ -3563,6 +3574,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
                 "Yesterday's activity": "昨天的活动",
                 "Repository management": "仓库管理",
                 "Billing updates": "账单更新",
+                "Copilot activity": "Copilot 活动",
                 "Personal access token activity": "个人访问令牌活动",
                 "View advanced search syntax": "查看高级搜索语法",
             "Search audit logs": "搜索审计日志",
@@ -3574,7 +3586,8 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "Newer": "新的",
             "Older": "旧的",
             "ProTip!": "专业提示！",
-                "View all events created yesterday": "查看昨天创建的所有事件"
+                "View all events created yesterday": "查看昨天创建的所有事件",
+                "View all events where you created something": "查看所有您创建内容时产生的事件",
 
 
     },
@@ -5406,6 +5419,14 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // 置顶议题
             "Pinned issues": "置顶议题",
 
+            "ProTip!": "专业提示！",
+                    "Find everything you created by searching": "查找您创建的所有内容，使用",
+                    "Exclude your own issues with": "查看您自己的问题，使用",
+                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                    "Exclude everything labeled": "如果要找到所有标有",
+                    "with": "标签的，请使用",
+                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
             "Don’t see your issue here?": "在这里没有看到您的议题？",
@@ -5801,7 +5822,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
-                "ProTip!": "专业提示",
+                "ProTip!": "专业提示！",
                     "Find everything you created by searching": "查找您创建的所有内容，使用",
                     "Exclude your own issues with": "查看您自己的问题，使用",
                     "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
@@ -11518,7 +11539,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Remind me tomorrow": "明天提醒我",
 
         // 登出页面 https://github.com/logout
-            "Are you sure you want to sign out?": "您确定要退出吗？",
+            "Are you sure you want to sign out?": "您确定要登出？",
+            "Sign out": "登出",
 
     },
     "regexp": [ // 正则翻译
@@ -11528,6 +11550,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
+I18N.zh.logout = I18N.zh["session-authentication"];
 I18N.zh.session = I18N.zh["session-authentication"];
 I18N.zh.sessions = I18N.zh["session-authentication"];
 I18N.zh.password_reset = I18N.zh["session-authentication"];
