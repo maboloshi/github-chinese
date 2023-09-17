@@ -3583,7 +3583,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "Older": "旧的",
             "ProTip!": "专业提示！",
                 "View all events created yesterday": "查看昨天创建的所有事件",
-                "View all events where you created something": "查看您所有创建内容时产生的事件",
+                "View all events where you created something": "查看所有您创建内容时产生的事件",
 
 
     },
