@@ -7780,6 +7780,24 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "for this commit and start a pull request": "为此提交并创建拉取请求",
                 "Learn more about pull requests": "了解更多关于拉取请求的信息",
 
+            // 查找工具栏
+                "Find": "查找",
+                "next": "下一处",
+                "previous": "上一处",
+                "all": "全部",
+                "match case": "区分大小写",
+                "regexp": "正则",
+                "by word": "全字匹配",
+                "Replace": "替换",
+                "replace": "替换",
+                "replace all": "全部替换",
+
+            // 底部栏
+                "to toggle the": "切换",
+                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                "then": "键，然后",
+                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
+
         // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 顶部提醒
             "File successfully deleted.": "文件已成功删除。",
