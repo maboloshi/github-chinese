@@ -1233,6 +1233,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
+I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
 I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
     "static": { // 静态翻译
@@ -4703,6 +4704,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 I18N.zh["new"] = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
 I18N.zh["repository/fork"] = I18N.zh["page-new-repo"];
+I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
 
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
@@ -12521,6 +12523,7 @@ I18N.zh["search"] = { // 搜索页面
         ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(3) > label > select > option:nth-child(2)", "要"],
     ],
 };
+I18N.zh["repository/search"] = I18N.zh["search"];
 
 I18N.zh["discussions"] = {
     "static": { // 静态翻译
@@ -12845,6 +12848,7 @@ I18N.zh["login/oauth"] = { // 应用授权
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
     ],
 };
+I18N.zh["installations/new"] = I18N.zh["login/oauth"];
 
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
@@ -13377,6 +13381,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/([0-9.k]+) installs?/, "$1 次安装"],
     ],
 };
+I18N.zh["apps"] = I18N.zh["marketplace"];
 
 I18N.zh["orgs"] = { // 组织页面
     "static": { // 静态翻译
@@ -15566,6 +15571,9 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
     ],
 };
 
+I18N.zh["new/project"] = I18N.zh["projects"];
+I18N.zh["repository/projects/new"] = I18N.zh["projects"];
+
 I18N.zh["redeem"] = { // 兑换页面
     "static": { // 静态翻译
         "Enter coupon code": "输入优惠券代码",
@@ -15574,16 +15582,3 @@ I18N.zh["redeem"] = { // 兑换页面
     "regexp": [ // 正则翻译
     ],
 };
-
-
-// 重定向
-I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
-I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
-
-I18N.zh["installations/new"] = I18N.zh["login/oauth"];
-
-I18N.zh.apps = I18N.zh.marketplace;
-
-I18N.zh["new/project"] = I18N.zh.projects;
-I18N.zh["repository/projects/new"] = I18N.zh.projects;
-I18N.zh["repository/search"] = I18N.zh.search;
