@@ -11373,8 +11373,11 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Verified emails": "经过验证的电子邮箱",
                     // [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
                 "Verified emails give you access to more features on GitHub.": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能。",
+            "Password Alternatives": "密码替代方案",
+                // 通行密钥
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
             "Two-factor methods": "双重身份验证方式",
-                "Preferred": "首选",
+                "Your preferred 2FA method is": "您首选的 2FA 方式是",
                 "Configured": "已配置",
                 "Not configured": "未配置",
 
