@@ -571,6 +571,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "– Switch theme": "- 切换主题",
 
             "New issue": "新建议题",
+            "New discussion": "新建讨论",
             "New file": "新建文件",
             "Change tab size rendering": "切换制表符尺寸",
             "Change tab size r...": "切换制表符尺寸",
@@ -639,7 +640,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Added on": "添加于",
         "Loading...": "载入中...",
         "Loading…": "载入中…",
-        "Copied!": "复制成功!",
+        "Copied!": "✅ 复制成功!",
         "Copy to clipboard": "复制到剪切板",
         "Give feedback": "反馈",
         "Give us your feedback": "向我们提供反馈意见",
@@ -1047,7 +1048,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
             "Write code in your web browser": "在您的网络浏览器中编写代码",
                 "Use": "使用",
-                "the github.dev web-based editor": "基于github.dev的网络编辑器",
+                "the github.dev web-based editor": "基于 github.dev 的网络编辑器",
                 "from your repository or pull request to create and commit changes.": "从您的仓库或拉取请求中创建和提交更改。",
         "Install a powerful code editor": "安装一个强大的代码编辑器",
             "is a multi-platform code editor optimized for building and debugging software.": "是针对构建和调试软件进行了优化的多平台代码编辑器。",
@@ -1067,7 +1068,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "One moment please...": "稍等一会儿...",
         "Loading activity...": "载入活动...",
         "All activity": "所有活动",
-            
 
         "Updates to your homepage feed": "主页订阅源的更新",
         "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 Following 提要的功能与 For you 提要相结合，因此在 GitHub 上有一个地方可以发现内容。它改进了过滤功能，因此您可以根据自己的喜好定制订阅源，它还有一个闪亮的新视觉设计。 ✨",
@@ -1324,6 +1324,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Order updated.": "置顶已更新。",
 
             "Pinned": "已置顶",
+            "Top repositories": "置顶的仓库",
             "Popular repositories": "流行的仓库",
 
             "Learn how we count contributions": "了解我们如何计算贡献",
@@ -1489,6 +1490,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
             "Clear filter": "清除筛选",
 
             // [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"],
+            "This organization doesn’t have any repositories that match.": "该组织没有任何匹配的仓库。", // 组织仓库
 
             "This organization has no public repositories.": "该组织没有公共仓库。", //组织仓库
 
@@ -2128,6 +2130,15 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Motion preferences successfully saved.": "动态首选项已成功保存。",
 
             "Content": "内容",
+            "Link underlines": "链接下划线",
+            "Show or hide underlines for links within text blocks. Something isn't working as expected?": "显示或隐藏文本块内链接的下划线。有什么东西没有按预期工作吗？",
+            "Let us know": "请告知我们",
+            "Hide link underlines": "隐藏链接下划线",
+            "Show link underlines": "显示链接下划线",
+
+            // 顶部提醒
+            "Link underline preferences successfully saved.": "链接下划线首选项已成功保存。",
+
             "Editor settings": "编辑器设置",
                 "URL paste behavior": "URL 粘贴行为",
                 "Select if URLs should be formatted on paste. You can use": "选择是否应在粘贴时格式化 URL。您可以使用",
@@ -4776,7 +4787,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
-                    // "Copied!": "复制成功!",
+                    // "Copied!": "✅ 复制成功!",
 
                 // 代码空间
                     "Your workspaces in the cloud": "您在云端的工作空间",
@@ -4847,6 +4858,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "This branch is out-of-date": "此分支已过时",
                 "Update branch to merge the latest changes from the upstream repository into this branch.": "更新分支，将上游仓库的最新修改合并到本分支。",
                 // [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通过从上游仓库同步 $1 个提交来更新分支，以使该分支保持最新。"], // 同步复刻
+                "Update branch to keep this branch up-to-date by syncing": "更新分支以保持该分支与最新状态同步，需要同步",
+                "from the upstream repository.": "来自上游仓库。",
+                "Learn more about syncing a fork": "了解更多关于复刻同步的信息",
                 // [/This branch is not behind the upstream ([^ ]+)/, "该分支不落后与上游 $1"], // 同步复刻
                 "No new commits to fetch. Enjoy your day!": "尚无新提交。祝您愉快！", //相同
                 "Compare": "对比",
@@ -5077,7 +5091,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "tags": "标签",
 
         // 新版 New Code Search /<user-name>/<repo-name>/?search=1
-            "Path copied!": "路径已复制！",
+            "Path copied!": "✅ 路径已复制！",
 
             "Name": "文件名",
             "Last commit message": "最后提交消息",
@@ -5111,6 +5125,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Copy raw file":"复制原始文件",
             "Download raw file":"下载原始文件",
             "Edit this file": "编辑本文件",
+            "Edit the file in your fork of this project": "在您的复刻中编辑文件",
                 "Edit file":"编辑文件",
                 "Edit in place":"就地编辑",
                 "Open with...":"打开...",
@@ -6134,6 +6149,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // "Review required": "需要审查", // 拉取请求 页面状态词
                 "Add your review": "添加您的评论",
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
             // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审阅者进行审查。"],
             // [/(\d+) approvals?/, "$1 项批准"],
@@ -6788,6 +6804,8 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "You can publish this Action to the GitHub Marketplace": "您可以将此 Action 发布到 GitHub 市场",
                 "Draft a release": "起草发布",
             "View runs": "查看工作流程", // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
+
+            "Path copied!": "✅ 路径已复制！",
 
             "Download": "下载",
             "Open with Desktop": "在 Desktop 中打开", //小屏
@@ -7754,6 +7772,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Saving...": "保存中...",
             "Propose changes": "提议更改", //  他人仓库
             "Sign off and commit changes": "签署并提交更改",
+            "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
 
             // 提交更改 对话框
                 "Commit message": "提交信息",
@@ -7763,6 +7782,24 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "branch": "分支",
                 "for this commit and start a pull request": "为此提交并创建拉取请求",
                 "Learn more about pull requests": "了解更多关于拉取请求的信息",
+
+            // 查找工具栏
+                "Find": "查找",
+                "next": "下一处",
+                "previous": "上一处",
+                "all": "全部",
+                "match case": "区分大小写",
+                "regexp": "正则",
+                "by word": "全字匹配",
+                "Replace": "替换",
+                "replace": "替换",
+                "replace all": "全部替换",
+
+            // 底部栏
+                "to toggle the": "切换",
+                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                "then": "键，然后",
+                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
         // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 顶部提醒
@@ -9442,7 +9479,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
             // 禁用分支保护对话框
                 "This will hide the branch protection settings and disable branch protection rules for this repository.": "这将隐藏分支保护设置，并禁用该仓库的分支保护规则。",
-                "Disabling branch protection rules allows you to enforce policies only with the `preview` of Repository Rulesets. You can re-enable branch protection rules at any time. This is currently not recommended for production repositories!": "禁用分支保护规则后，您只能通过仓库规则集的 “浏览” 来执行策略。您可以在任何时候重新启用分支保护规则。目前不建议在生产库中这样做!",
+                "Disabling branch protection rules allows you to enforce branch and tag protections exclusively with Repository Rules.": "禁用分支保护规则后，允许您仅使用仓库规则来执行分支和标记保护。",
 
                 "This action will disable:": "此操作将禁用：",
                     "Branch protection rule enforcement": "分支保护执行",
@@ -11337,8 +11374,11 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Verified emails": "经过验证的电子邮箱",
                     // [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
                 "Verified emails give you access to more features on GitHub.": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能。",
+            "Password Alternatives": "密码替代方案",
+                // 通行密钥
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
             "Two-factor methods": "双重身份验证方式",
-                "Preferred": "首选",
+                "Your preferred 2FA method is": "您首选的 2FA 方式是",
                 "Configured": "已配置",
                 "Not configured": "未配置",
 
@@ -12461,13 +12501,18 @@ I18N.zh["gist"] = { // 代码片段页面
 
         // View 代码 页面
         // 头部通用信息
+        "Only those with the link can see this gist.": "只有知道链接的人才能看到此 Gist。",
         "Edit": "编辑",
         "Delete": "删除",
-        "Are you positive you want to delete this Gist?": "您确定要删除此 Gist 吗？",
+            "Are you positive you want to delete this Gist?": "您确定要删除此 Gist 吗？",
+            // 顶部提醒
+                "Gist deleted successfully.": "代码片段已成功删除。",
         "Subscribe": "订阅",
         // "Unsubscribe": "退订",
         "Star": "星标",
+            "Star this gist": "星标该代码片段",
         "Unstar": "取消星标",
+            "Unstar this gist": "取消该代码片段星标",
         "User actions": "用户操作",
         "Report abuse": "举报滥用",
 
@@ -12491,12 +12536,9 @@ I18N.zh["gist"] = { // 代码片段页面
         "Learn more about clone URLs": "了解更多关于克隆地址的信息",
 
         "Copy to clipboard": "复制到剪切板",
-        "Copied!": "复制成功!",
+        "Copied!": "✅ 复制成功!",
         "Download ZIP": "下载 Zip 压缩包",
         "Permalink": "永久链接",
-
-        // 顶部提醒
-        "Gist deleted successfully.": "代码片段已成功删除。",
 
         // 代码标签卡
         "Raw": "源码",
@@ -12524,6 +12566,8 @@ I18N.zh["gist"] = { // 代码片段页面
 
         // 星标标签卡
         "Stargazers": "追星者",
+        "Be the first to star this gist.": "成为第一个该代码片段标星人。",
+        "Learn more about starring Gists": "了解更多关于标星代码片段的信息",
 
         // 复刻标签卡
         "Modified": "修改",
