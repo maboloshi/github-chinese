@@ -4858,6 +4858,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "This branch is out-of-date": "此分支已过时",
                 "Update branch to merge the latest changes from the upstream repository into this branch.": "更新分支，将上游仓库的最新修改合并到本分支。",
                 // [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通过从上游仓库同步 $1 个提交来更新分支，以使该分支保持最新。"], // 同步复刻
+                "Update branch to keep this branch up-to-date by syncing": "更新分支以保持该分支与最新状态同步，需要同步",
+                "from the upstream repository.": "来自上游仓库。",
+                "Learn more about syncing a fork": "了解更多关于复刻同步的信息",
                 // [/This branch is not behind the upstream ([^ ]+)/, "该分支不落后与上游 $1"], // 同步复刻
                 "No new commits to fetch. Enjoy your day!": "尚无新提交。祝您愉快！", //相同
                 "Compare": "对比",
