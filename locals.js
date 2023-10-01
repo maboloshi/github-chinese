@@ -2128,6 +2128,15 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Motion preferences successfully saved.": "动态首选项已成功保存。",
 
             "Content": "内容",
+            "Link underlines": "链接下划线",
+            "Show or hide underlines for links within text blocks. Something isn't working as expected?": "显示或隐藏文本块内链接的下划线。有什么东西没有按预期工作吗？",
+            "Let us know": "请告知我们",
+            "Hide link underlines": "隐藏链接下划线",
+            "Show link underlines": "显示链接下划线",
+
+            // 顶部提醒
+            "Link underline preferences successfully saved.": "链接下划线首选项已成功保存。",
+
             "Editor settings": "编辑器设置",
                 "URL paste behavior": "URL 粘贴行为",
                 "Select if URLs should be formatted on paste. You can use": "选择是否应在粘贴时格式化 URL。您可以使用",
