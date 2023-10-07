@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -10819,6 +10819,10 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 //Dependabot 警报
                 "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
                 "Configure alert notifications": "配置警报通知",
+                    "Dependabot rules": "Dependabot 规则",
+                    "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                    // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
+
                     "Dismiss low impact alerts": "消除低影响警报",
                         "Dependabot will auto-dismiss alerts that are unlikely to be exploitable or have limited impact.": "Dependabot 将自动消除不太可能被利用或影响有限的警报。",
                         "Learn more about auto-dismissing alerts.": "了解更多关于自动消除警报的信息。",
@@ -10901,6 +10905,82 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) rules? enabled/, "已启用 $1 条规则"],
+    ],
+};
+
+I18N.zh["repository/settings/dependabot_rules"] = { // 仓库设置 - 代码安全性与分析 - Dependabot 规则  /<user-name>/<repo-name>/settings/dependabot_rules
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-settings-menu"]["static"],
+
+        // 仓库设置 - 代码安全性与分析 - Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules
+            "Code Security & Analysis": "代码安全性与分析",
+            "/ Dependabot rules": "/ Dependabot 规则",
+            "New rule": "新建规则",
+            "Select one or more rules below that you would like Dependabot to evaluate on your behalf.": "在下面选择一条或多条您希望 Dependabot 代表您进行评估的规则。",
+            "Dismiss low impact issues for development-scoped dependencies": "忽略开发范围内依赖项的低影响问题",
+            "In a developer (non-production or runtime) environment, these alerts are unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报无法被利用或影响有限，如缓慢构建或长时间运行的测试。",
+            "Learn more about this methodology.": "了解更多有关此方法的信息。",
+            "Save rules": "保存规则",
+            "Edit custom rule": "编辑自定义规则",
+
+            // 顶部提醒
+                "Rule created.": "规则已创建。",
+                "Rule was successfully deleted.": "规则已成功删除。",
+
+        // 仓库设置 - 代码安全性与分析 - 新建 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/new
+            "Dependabot rules": "Dependabot 规则",
+            "/ New rule": "/ 新建规则",
+            "Name": "名称",
+                "Describe what this rule will do": "描述本规则的作用",
+            "Criteria": "规范",
+                "Add one or more rule attributes": "添加一个或多个规则属性",
+                "Suggested filters": "建议的筛选器",
+                "severity:": "严重性：",
+                    "critical, high, moderate, low": "严重、高、中、低",
+                    "Severities": "严重性",
+                    "critical": "严重",
+                    "high": "高",
+                    "moderate": "中",
+                    "low": "低",
+                "package:": "软件包：",
+                    "package-name": "软件包名称",
+                "ecosystem:": "生态系统：",
+                    "ecosystem-name": "生态系统名称",
+                "scope:": "范围：",
+                    "runtime, development": "运行时，开发",
+                    "Scopes": "范围",
+                    "runtime": "运行时",
+                    "development": "开发",
+                "manifest:": "清单：",
+                    "manifest-name": "清单名称",
+                "cwe:": "cwe：",
+                    "cwe-number": "cwe 编号",
+            "Dismiss this alert": "忽略此警报",
+                "Auto-dismiss the alert. Reopen if alert metadata changes, voiding the rule.": "自动关闭警报。如果警报元数据发生变化，则重新打开，从而使规则无效。",
+                "Until patch is available": "直到补丁可用",
+                "Indefinitely": "无限期",
+            "Create rule": "创建规则",
+
+        // 仓库设置 - 代码安全性与分析 - 编辑 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/edit/<id>
+            "/ Edit rule": "/ 编辑规则",
+            "Revert changes": "恢复更改",
+            "Save changes": "保存更改",
+
+            "Danger Zone": "危险区",
+                "Delete this rule": "删除规则",
+                "Deleting this rule can potentially reopen associated alerts.": "删除此规则可能会重新打开相关警报。",
+                "Delete rule": "删除规则",
+
+                // 删除对话框
+                "Are you sure you want to delete this rule?": "您确定要删除此规则吗？",
+                // [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
     ],
 };
 
