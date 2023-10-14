@@ -11307,6 +11307,13 @@ I18N.zh["repository/transfer"] = { // 转让仓库
                 "upgrade": "升级",
                 "their plan before accepting the transfer to avoid losing access.": "他们的计划在接受转让之前，以避免失去访问权。",
 
+            "Individual users, teams, and apps will be removed from the following options:": "个人用户、团队和应用将从以下选项中删除：",
+                "Repository ruleset bypassers": "仓库规则旁路设置",
+                "Protected branch pull request bypassers": "受保护分支拉取请求旁路设置",
+                "Protected branch authorized pull request review dismissers": "受保护分支授权拉取请求审核驳回者",
+                "Protected branch authorized pushers": "受保护分支授权的推送者",
+                "Protected branch allowed force pushers": "受保护分支允许强制推送者",
+
             "Warning: This is a potentially destructive action.": "警告：这是一个潜在的破坏性行为。",
 
             "to confirm.": "进行确认。",
