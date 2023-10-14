@@ -1090,7 +1090,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
             "Follows": "关注",
             "Who people are following": "人们在关注谁",
             "Recommendations": "推荐",
-            "Repositories and people you may like": "你可能喜欢的仓库和人",
+            "Repositories and people you may like": "您可能喜欢的仓库和人",
             "Reset to default": "重置",
             "Save": "保存",
 
@@ -1531,7 +1531,7 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
             "Learn more about projects": "了解更多关于项目", // ?tab=projects
 
-            "Create your first GitHub project": "创建你的第一个 GitHub 项目",
+            "Create your first GitHub project": "创建您的第一个 GitHub 项目",
             "Projects are a customizable, flexible tool for planning and tracking your work.": "项目是一个可定制的、灵活的工具，用于规划和跟踪您的工作。",
 
             "Sort": "排序",
@@ -1839,10 +1839,11 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
                 "Repository topics": "仓库主题",
                 "Repository rulesets": "仓库规则集",
                 "Repository rule insights": "仓库规则洞察",
+                "Custom properties": "自定义属性",
             "Codespaces": "代码空间",
-            "Copilot": "Github Copilot",
+            "Copilot": "GitHub Copilot",
                 "Access": "访问",
-                "Policies": "政策",
+                "Policies and features": "政策和功能",
             "Actions": "操作",
                 "Runners": "运行器",
                 "Runner groups": "运行器组",
@@ -2314,15 +2315,15 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
 
             "Add-ons": "附加组件",
-                "GitHub Copilot": "GitHub 副驾驶",
+                // "GitHub Copilot": "",
                     "Your AI powered pair programmer": "您的人工智能配对程序员",
-                    "Enable GitHub Copilot": "启用 GitHub 副驾驶",
+                    "Enable GitHub Copilot": "启用 GitHub Copilot",
                     "Get code suggestions for whole lines or entire functions right inside your editor.": "在编辑器中获得整行或整个函数的代码建议。",
 
                      // 组织设置
-                    "Buy Copilot for Business": "购买 GitHub 副驾驶商业版",
-                    "Copilot for Business": "GitHub 副驾驶商业版",
-                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub 副驾驶使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议。每月19美元/用户。",
+                    "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
+                    "Copilot for Business": "GitHub Copilot 商业版",
+                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议。每月 $19/用户。",
 
                 // 组织设置
                 // [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
@@ -2446,7 +2447,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "/ Monthly spending limit": "/ 每月支付限额", // 组织设置
             "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "设置每月支出限额。您可以随时调整它。阅读更多关于",
             "spending limits": "支付限额",
-            "Actions spending limits": "Github 操作支付限额", // 组织设置
+            "Actions spending limits": "GitHub 操作支付限额", // 组织设置
             "Packages spending limits": "软件包支付限额", // 组织设置
 
             "Payment method is missing": "缺失支付方式",
@@ -2713,7 +2714,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Sent. It may take a minute for the SMS to arrive.": "已发送。短信可能需要一分钟时间才能送达。",
                     "Verify the code sent to your phone": "验证发送到您手机的验证码",
 
-                    // [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："],
+                    // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
 
                 "Security keys": "安全密钥",
                     "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
@@ -2778,7 +2779,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
     },
     "regexp": [ // 正则翻译
         [/(\d+) devices?/, "$1 个设备"], // 设置--> 密码和身份验证页
-        [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："],
+        [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
         [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
         [/Are you sure you want to delete your `([^ ]+)` passkey?/, "您确定要删除您的 “$1” 通行密钥吗？"],
     ],
@@ -3166,7 +3167,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 // VS code
                     "Connect to the cloud from your local desktop client. Requires": "从本地桌面客户端连接到云。要求",
                     "with the": "安装",
-                    "GitHub Codespaces": "Github 代码空间",
+                    "GitHub Codespaces": "GitHub 代码空间",
                     "extension.": "插件。",
 
                 "Visual Studio Code for the Web": "网络版的 Visual Studio Code",
@@ -3227,8 +3228,8 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
     },
     "regexp": [ // 正则翻译
-        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/Are you sure you want to delete ([^ ]+)\?/, "您确定要删除 $1 吗？"],
     ],
 };
@@ -3278,15 +3279,20 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
             "turns natural language prompts into coding suggestions across dozens of languages.": "将自然语言提示转换为多种语言的编码建议。",
             "Start free trial": "开始免费试用",
             "After that $10/month": "结束试用后 $10/月",
-            "Get Copilot from an organization": "从组织中获取 Copilot",
+            "Get Copilot from an organization": "从组织中获取 GitHub Copilot",
             "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）及其团队提供使用 GitHub Copilot 的权限。",
             "Organizations owned by enterprise accounts": "企业帐户拥有的组织",
             "are not currently listed.": "目前未包含在此计划中。",
             "You do not belong to any organizations.": "您不属于任何组织。",
             "Create an organization": "创建一个组织",
 
+            "Ask admin for access": "向管理员请求访问权限",
+            "Buy Copilot for Business": "购买 GitHub Copilot 企业版",
+            "Owner": "所有者",
+
     },
     "regexp": [ // 正则翻译
+        [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
     ],
 };
 
@@ -3349,6 +3355,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                 "Keep your public pushes safe with push protection": "通过推送保护确保您的公共推送安全",
                 "GitHub will enable push protection for all GitHub Free individuals in January 2024. Enable below to try it now in beta.": "GitHub 将于 2024 年 1 月为所有 GitHub 免费用户启用推送保护。在下面启用以立即在测试版中尝试。",
+                    "Dismiss": "忽略",
 
                 "Push protection for yourself": "启用推送保护",
                     "Block commits that contain": "阻止提交，包含",
@@ -4802,7 +4809,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         ", or try cloning this repository via HTTPS.": "，或尝试通过 HTTPS 克隆此仓库。",
 
                         "Use a password-protected SSH key.": "使用受密码保护的 SSH 密钥。",
-                        // Github CLI
+                        // GitHub CLI
                         "Work fast with our official CLI.": "使用我们的官方 CLI 快速工作。",
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
@@ -5395,7 +5402,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // 筛选结果
             "No results matched your search.": "没有与您的搜索匹配的结果。",
             "You could search": "您可以搜索",
-            "all of GitHub": "所有 Github",
+            "all of GitHub": "所有 GitHub",
             "or try an": "或者尝试",
             "advanced search": "高级搜索",
 
@@ -6328,7 +6335,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "committed": "提交于",
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
                 "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
                 "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
@@ -6761,7 +6768,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
                 "View all tags": "查看全部标签",
 
             // 验证标记浮动信息
-            "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+            "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
             "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
@@ -7297,8 +7304,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
     ],
 };
-//'/<user-name>/<repo-name>/voltron/discussions_fragments/discussion_layout' /discussions/1186
-//'/<user-name>/<repo-name>/discussions/new' /discussions/new
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
 
 I18N.zh["repository/actions"] = { // 仓库 - 操作页面
@@ -7634,6 +7639,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
 
             // 测试版部署
                 "Environments": "环境",
+                "Manage environments": "管理环境",
                 "Give beta feedback": "提供测试反馈",
                 "Opt out of beta view": "选择退出测试版视图",
                 "Active deployments": "活跃的的部署",
@@ -7644,6 +7650,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                 "all environments": "所有环境",
                 "Latest": "最新",
                 "View logs": "查看日志",
+                "View workflow run": "查看工作流程运行",
 
                 "Status: Deployed (completed).": "状态：已部署（已完成）",
                 "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
@@ -7758,7 +7765,10 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             // 非本人仓库
                 "You need to fork this repository to propose changes.": "您需要复刻此仓库以提出更改。",
                 "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
-                "Learn more about forks": "了解更多关于复刻的信息",
+                "Fork this repository": "复刻此仓库",
+                "Learn more about forks": "了解更多于复刻的信息",
+                "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻",
+                ", so you can send a pull request.": " 中的新分支，这样您就可以发送拉取请求。",
 
             // 与用户名同名仓库 编辑 README.md 文件
                 "is a special repository: its": "是一个特殊的仓库：它的",
@@ -8091,7 +8101,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         ...I18N.zh["repository-public"]["static"],
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 Github 的",
+                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
                 "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
                 "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
@@ -8853,7 +8863,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
 
         //贡献者 /<user-name>/<repo-name>/graphs/contributors
             "Loading contributions…": "载入贡献者…",
-            // "Contributions to master, excluding merge commits and bot accounts": "对主分支的贡献，不包括合并提交和机器人帐户",
+            // [/Contributions to (.*), excluding merge commits/, "贡献到 $1分支，不包括合并提交"],
             "Contributions:": "贡献者：",
                 // 下拉菜单
                 "Filter contributions": "筛选贡献者",
@@ -8865,7 +8875,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1分支，不包括合并提交和机器人帐户"],
+        [/Contributions to (.*), excluding merge commits/, "贡献到 $1分支，不包括合并提交"],
         [/([\d,]+) commits?/, "$1 次提交"],
     ],
 };
@@ -10965,7 +10975,7 @@ I18N.zh["repository/settings/dependabot_rules"] = { // 仓库设置 - 代码安�
             "Select one or more rules below that you would like Dependabot to evaluate on your behalf.": "在下面选择一条或多条您希望 Dependabot 代表您进行评估的规则。",
             "Dismiss low impact issues for development-scoped dependencies": "忽略开发范围内依赖项的低影响问题",
             "In a developer (non-production or runtime) environment, these alerts are unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报无法被利用或影响有限，如缓慢构建或长时间运行的测试。",
-            "Learn more about this methodology.": "了解更多有关此方法的信息。",
+            "Learn more about this methodology.": "了解更多关于此方法的信息。",
             "Save rules": "保存规则",
             "Edit custom rule": "编辑自定义规则",
 
@@ -11053,19 +11063,6 @@ I18N.zh["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<user-na
             // 顶部提醒
             "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
             "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
-
-//     },
-//     "regexp": [ // 正则翻译
-//             [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"], //密钥使用时间
-//             [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 个月之内"], //密钥使用时间
-//     ],
-// };
-
-// // I18N.zh["repository/edit_repositories/new_key"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-// I18N.zh["repository/settings/keys/new"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
-//     "static": { // 静态翻译
-//         ...I18N.zh["repository-public"]["static"],
-//         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 部署密钥新建 页面 /<user-name>/<repo-name>/settings/keys/new====================================
             "/ Add new": "/ 新添",
@@ -11268,6 +11265,7 @@ I18N.zh["repository/transfer"] = { // 转让仓库
             "in GitHub Help.": "在 GitHub 帮助中。",
             "Transferring may be delayed until the new owner approves the transfer.": "转让可能会延迟，直到新所有者批准转让。",
             "There": "有",
+            "are": " ",
             "is": " ",
             "that may be affected by this transfer.": "可能受到这次转让的影响。",
             "New owner": "新所有者",
@@ -11413,7 +11411,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Having problems?": "有问题吗？",
                 "Use your passkey": "使用您的通行密钥",
                 "Authenticate with GitHub Mobile": "使用 GitHub Mobile 进行身份验证",
-                "Use a recovery code or begin account recovery": "使用恢复码或开始帐户恢复",
+                "Use a recovery code or begin 2FA account recovery": "使用恢复码或开始 2FA 帐户恢复",
 
         // https://github.com/sessions/two-factor/mobile
             "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub Mobile 应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
@@ -11544,7 +11542,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 配置无密码身份验证 https://github.com/sessions/trusted-device?return_to=%2Fsettings%2Fsecurity
             "Configure passwordless authentication": "配置无密码身份验证",
             "Add a passkey": "添加通行密钥",
-            "Your device supports passkeys, a password replacement that validates your identity using touch, facial recognition, a password, or a PIN.": "您的设备支持密码替代方案，通过触摸、面部识别、密码或者 PIN 码来验证您的身份。",
+            "Your device supports passkeys, a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "您的设备支持密码替代方案，通过触摸、面部识别、设备密码或者 PIN 码来验证您的身份。",
 
             "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双重身份验证。",
             "Add passkey": "添加通行密钥",
@@ -12096,7 +12094,7 @@ I18N.zh["issues"] = { // 议题页面
         // 筛选结果
         "No results matched your search.": "没有与您的搜索匹配的结果。",
         "You could search": "您可以搜索",
-        "all of GitHub": "所有 Github",
+        "all of GitHub": "所有 GitHub",
         "or try an": "或者尝试",
         "advanced search": "高级搜索",
 
@@ -12379,7 +12377,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Learn more about GitHub Issues": "了解更多关于 GitHub 议题的信息",
 
             // &type=registrypackages
-                "Learn GitHub Packages": "了解 Github 软件包",
+                "Learn GitHub Packages": "了解 GitHub 软件包",
                 "GitHub Packages is a platform for hosting and managing packages, including containers and other dependencies. Get started with publishing or installing packages yourself.": "GitHub 软件包是一个托管和管理包（包括容器和其他依赖项）的平台。开始自行发布或安装软件包吧",
                 "Learn more about GitHub Packages": "了解更多关于 GitHub 软件包的信息",
 
@@ -13250,7 +13248,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Recommended": "推崇",
             "View all": "查看全部",
 
-            "List your tool on GitHub Marketplace": "在 Github 市场上列出您的工具",
+            "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
             "Read the documentation": "阅读文档",
                 "Learn how you can build tools to extend and improve developers' workflows.": "了解如何构建工具来扩展和改进开发人员的工作流程",
 
@@ -14465,7 +14463,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Smallest size": "最小尺寸",
 
             "No repository uses caches": "尚无仓库使用缓存",
-            "Nothing has been cached by actions running in any repositories of this organization.": "在此组织的任何仓库中运行的操作都没有被缓存。",
+            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。。",
             "Learn more about caching": "了解更多关于缓存",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流程执行时间的信息。",
 
