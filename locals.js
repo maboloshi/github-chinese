@@ -1259,6 +1259,12 @@ I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
                 "You can": "您可",
                 "@mention": "@用户名或组织名",
                 "other users and organizations to link to them.": "链接到其他用户和组织。",
+            "Pronouns": "代词",
+                "Don't specify": "不说明",
+                "they/them": "他们",
+                "she/her": "她",
+                "he/him": "他",
+                "Custom": "自定义",
             "Company": "公司",
             "Location": "位置",
             "Display current local time": "显示当前当地时间",
@@ -1522,6 +1528,9 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
 
             "Learn more about projects": "了解更多关于项目", // ?tab=projects
+
+            "Create your first GitHub project": "创建你的第一个 GitHub 项目",
+            "Projects are a customizable, flexible tool for planning and tracking your work.": "项目是一个可定制的、灵活的工具，用于规划和跟踪您的工作。",
 
             "Sort": "排序",
                 // 排序下拉菜单
@@ -1908,6 +1917,11 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
              //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
             "Pronouns": "代词",
+                "Don't specify": "不说明",
+                "they/them": "他们",
+                "she/her": "她",
+                "he/him": "他",
+                "Custom": "自定义",
             "Location": "位置",
             "Display current local time": "显示当前当地时间",
                 "Other users will see the time difference from their local time.": "其他用户将看到与本地时间的时差。",
@@ -1989,6 +2003,11 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
             "Looking to manage account security settings? You can find them in the": "想管理帐户安全设置？您可以找到它们在",
             "Account security": "帐户安全",
             "page.": "页。",
+
+            "Link Patreon account": "与 Patreon 账户连接",
+            "Connect a Patreon account for": "为",
+            "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "连接 Patreon 账户来赞助维护人员。当被赞助人链接 Patreon 和 GitHub时，会在 GitHub 上获得 Patreon 上赞助的认可，并有一个公开的GitHub赞助商档案。",
+            "Connect with Patreon": "连接 Patreon",
 
             "Export account data": "导出帐户数据",
             "Export all repositories and profile metadata for": "导出所有仓库和配置元数据，自",
