@@ -1523,6 +1523,9 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
             "Learn more about projects": "了解更多关于项目", // ?tab=projects
 
+            "Create your first GitHub project": "创建你的第一个 GitHub 项目",
+            "Projects are a customizable, flexible tool for planning and tracking your work.": "项目是一个可定制的、灵活的工具，用于规划和跟踪您的工作。",
+
             "Sort": "排序",
                 // 排序下拉菜单
                 "Newest": "最新",
