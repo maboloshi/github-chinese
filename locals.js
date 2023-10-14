@@ -12075,6 +12075,9 @@ I18N.zh["issues"] = { // 议题页面
         // "Updated in the last three days": "更新了最后三天：",
         "ProTip!": "专业提示！",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
+            "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+            "Exclude everything labeled": "如果要找到所有标有",
+            "with": "标签的，请使用",
 
         // 键盘快捷键
             "Pull request list"  : "拉取请求列表",
