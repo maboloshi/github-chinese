@@ -2582,25 +2582,19 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "当您推送到 GitHub 时，我们会检查最近的提交。如果该提交的作者电子邮箱是您 GitHub 帐户上的私人电子邮箱，我们会阻止推送并警告您不要暴露您的私人电子邮箱。",
 
             "Email preferences": "邮件首选项",
-                "Receive all emails, except those I unsubscribe from.": "接收所有的邮件，除了那些我取消订阅的邮件。",
-                    "We’ll occasionally contact you with the latest news and happenings from the GitHub Universe.": "我们会不定期地联系您，告诉您来自 GitHub 宇宙的最新消息和发生的事情。",
-                "Only receive account related emails, and those I subscribe to.": "仅接收帐户相关的邮件，以及我订阅的邮件。",
-                    "We’ll only send you legal or administrative emails, and any emails you’re specifically subscribed to.": "我们仅向您发送法律或行政邮件，以及您特别订阅的任何邮件。",
+                "Subscriptions through our various marketing platforms. Each email address has its own subscriptions.": "通过我们的各种营销平台进行订阅。每个电子邮件地址都有自己的订阅。",
+                "Manage": "管理",
 
-                "You’re subscribed to:": "您已订阅：",
-                    "Vulnerability newsletter": "漏洞简讯",
-                "Unsubscribe": "取消订阅",
-            "Save email preferences": "保存邮件首选项",
-            // 顶部提醒
-                "Successfully updated your email preferences.": "成功更新了您的邮件首选项。",
-
-            "Looking for activity notification controls? Check the": "正在寻找活动通知控制？请检查",
-            "Notification center": "通知中心",
+        // 订阅偏好 https://github.com/settings/emails/subscriptions
+            "No subscriptions found": "未找到订阅信息",
+            "Save subscription preferences": "保存订阅首选项",
+            "Back to email settings": "返回电子邮件设置",
 
     },
     "regexp": [ // 正则翻译
         [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
+        [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
     ],
 };
 
