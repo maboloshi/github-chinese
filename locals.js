@@ -5997,6 +5997,27 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // "Labels": "标签",
                     "None yet": "暂无",
                     // 下拉
+                    "bug": "BUG",
+                        "Something isn't working": "有些东西不工作",
+                    "dependencies": "依赖性",
+                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                    "documentation": "文档",
+                        "Improvements or additions to documentation": "文档的改进或补充",
+                    "duplicate": "重复",
+                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                    "enhancement": "增强",
+                        "New feature or request": "新功能或请求",
+                    "good first issue": "好的首发议题",
+                        "Good for newcomers": "适合新人",
+                    "help wanted": "需要帮助",
+                        "Extra attention is needed": "需要特别关注",
+                    "invalid": "无效",
+                        "This doesn't seem right": "这似乎不对",
+                    "question": "问题",
+                        "Further information is requested": "要求提供更多信息",
+                    "wontfix": "不会修复",
+                        "This will not be worked on": "这将不会被处理",
+
                     "Apply labels to this issue": "应用标签", // 议题
                     "Apply labels to this pull request": "应用标签", // 拉取请求
                     "Edit labels": "编辑标签",
