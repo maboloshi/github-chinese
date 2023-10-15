@@ -207,8 +207,14 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 ## 🎨 预览
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wuyuncheng-26/github-chinese/gh-pages/preview/img3.png"/>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wuyuncheng-26/github-chinese/gh-pages/preview/img4.png"/>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png"/>
+    <img src="https://raw.githubusercontent.com/wuyuncheng-26/github-chinese/gh-pages/preview/img1.png" width="75%" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png"/>
+    <img src="https://raw.githubusercontent.com/wuyuncheng-26/github-chinese/gh-pages/preview/img2.png" width="75%" />
   </picture>
 
 <details>
