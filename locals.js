@@ -9678,6 +9678,9 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 协作者 / 协作者和团队 - 访问管理页面 /<user-name>/<repo-name>/settings/access ====================================
+            // 顶部提醒
+                "Repository invitation URLs work for invited users only. You may only share this URL with an invited user.": "仓库邀请 URL 仅适用于受邀请的用户。您只能与受邀请的用户共享此 URL。",
+
             "Who has access": "谁有权访问",
             "public repository": "公共仓库",
             "This repository is public and visible to anyone.": "该仓库是公开的，对任何人都可见。",
@@ -9687,6 +9690,7 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
 
             "Direct access": "直接访问",
             "collaborators have access to this repository. Only you can contribute to this repository.": "个协作者有权访问此仓库。 只有您可以对此仓库做出贡献。",
+            "has access to this repository.": "位有权访问此仓库。",
             // 组织仓库
             "teams or members have access to this repository. Only": "团队或成员有权访问此仓库。只有",
             "Owners": "所有者",
@@ -9702,13 +9706,26 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
             "You haven't invited any collaborators yet": "您尚未邀请任何协作者",
             // "invite a collaborator": "邀请协作者",
             "Add people": "添加他人",
+
+            "Select all": "全选",
+                // [/(\d+) members? selected…/, "已选择 $1 名成员..."],
+                "Remove Access": "删除访问权限",
+            "Type": "类型",
+                "Filter by member type": "按成员类型筛选",
+                    "Pending Invitations": "待处理邀请",
+            "Find a collaborator…": "寻找协作者...",
+
+            "Pending Invite": "待处理邀请",
+            // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
+            "Remove": "移除",
+
             // 邀请对话框
-            "Add a collaborator to": "添加协作者到",
-            "Search by username, full name, or email": "搜索用户名、全名、或电子邮箱",
-            "Select a collaborator above": "从上方选择协作者",
-            "Invite collaborator": "邀请协作者",
-            "Add": "添加",
-            "to this repository": "到这个仓库",
+                "Add a collaborator to": "添加协作者到",
+                "Search by username, full name, or email": "搜索用户名、全名、或电子邮箱",
+                "Select a collaborator above": "从上方选择协作者",
+                "Invite collaborator": "邀请协作者",
+                "Add": "添加",
+                "to this repository": "到这个仓库",
 
             // 组织仓库
             "Create team": "创建组织",
@@ -9725,8 +9742,12 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
 
     },
     "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) members? selected…/, "已选择 $1 名成员..."],
         [/(\d+) members?/, "$1 位成员"],
+        [/(\d+) collaborators?/, "$1 位合作者"],
+        [/(\d+) invitations?/, "$1 个邀请"],
+        [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
