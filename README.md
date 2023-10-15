@@ -8,7 +8,7 @@
   [![license GPL-3.0][license-image]][license-url]
   [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
-## 💖星标历史
+## 💖 星标历史
 
 <a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
   <picture>
@@ -18,13 +18,13 @@
   </picture>
 </a>
 
-## 🚩功能
+## 🚩 功能
 
 - 中文化 GitHub 菜单栏，标题，按钮等公共组件
 - 保留、完善正则功能
 - 除基础组件中文化外，还支持对 “项目描述” 进行人机翻译 (参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin))
 
-## :globe_with_meridians: 浏览器与脚本管理器
+## 🌐 浏览器与脚本管理器
 
 浏览器                              | 脚本管理器
 :---------------------------------: | :---------: 
@@ -98,6 +98,8 @@ Firefox 浏览器                      | 未测试
 
 预告, 下次将细化`page`匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
 
+<details>
+  <summary><h2>🎁 更多</h2></summary>
 ### 2022-07-17 14:04:44
 
 更新至 1.7.9
@@ -182,13 +184,15 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 本次维护基本恢复和保留大部分功能如：页面正则翻译（含日期的正则）。页面词条可能被我切得太碎不方便后期维护（先这样吧！）
 
-## ✔待办 (TODO)
+</details>
+
+## ✔ 待办 (TODO)
 
 1. 添加 GitHub 名词解释，新手可能不太理解部分名词具体表达的意思，比如 `pull request`。
 2. 整理部分 git & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
 3. **本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
 
-## ✨贡献
+## ✨ 贡献
 
 目前，已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
 
