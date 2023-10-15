@@ -28,7 +28,7 @@
 
 浏览器                              | 脚本管理器
 :---------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[Violentmonkey][violentmonkey]
+Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[Violentmonkey][Violentmonkey]
 Safari 浏览器                       | [Macaque][Macaque]
 Firefox 浏览器                      | 未测试
 
