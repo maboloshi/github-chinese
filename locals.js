@@ -375,6 +375,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
         "Clear status": "清除状态",
         "Never": "永不",
+        "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
         "Visible to": "可见",
             "Everyone": "所有人",
             "Your status will be visible to everyone": "所有人都可以看到您的状态",
@@ -2471,6 +2472,13 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "/ Payment history": "/ 支付历史",
             "Amounts shown in USD": "以美元显示的金额",
 
+        // 用户计划 https://github.com/account/billing/plans
+            "Compare plans": "比较计划",
+            "Free": "免费",
+                "All the basics": "所有基础",
+            "Pro": "专业",
+                "Advanced tools for private repos": "用于私人仓库的高级工具",
+
         // 组织设置 邀请账单管理员 '/organizations/<org-login>/billing_managers/new'
             "Billing": "账单",
             "/ Add a billing manager": "/ 添加账单管理员",
@@ -3316,6 +3324,7 @@ I18N.zh["settings/replies"] = { // 设置 - 快捷回复
 
         // Saved replies 快捷回复 https://github.com/settings/replies
             "Saved replies are re-usable text snippets that you can use throughout GitHub comment fields. Saved replies can save you time if you’re often typing similar responses.": "快捷回复是可重复使用的文本片段，您可以在整个 GitHub 评论区使用。如果您经常输入类似的回复，快捷回复可以节省您的时间。",
+            "Learn more about working with saved replies": "了解更多关于使用快捷回复的信息",
             "No saved replies yet.": "暂时没有快捷回复。",
             "Add a saved reply": "添加快捷回复",
             "Saved reply title": "快捷回复的标题",
@@ -5995,6 +6004,27 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // "Labels": "标签",
                     "None yet": "暂无",
                     // 下拉
+                    "bug": "BUG",
+                        "Something isn't working": "有些东西不工作",
+                    "dependencies": "依赖性",
+                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                    "documentation": "文档",
+                        "Improvements or additions to documentation": "文档的改进或补充",
+                    "duplicate": "重复",
+                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                    "enhancement": "增强",
+                        "New feature or request": "新功能或请求",
+                    "good first issue": "好的首发议题",
+                        "Good for newcomers": "适合新人",
+                    "help wanted": "需要帮助",
+                        "Extra attention is needed": "需要特别关注",
+                    "invalid": "无效",
+                        "This doesn't seem right": "这似乎不对",
+                    "question": "问题",
+                        "Further information is requested": "要求提供更多信息",
+                    "wontfix": "不会修复",
+                        "This will not be worked on": "这将不会被处理",
+
                     "Apply labels to this issue": "应用标签", // 议题
                     "Apply labels to this pull request": "应用标签", // 拉取请求
                     "Edit labels": "编辑标签",
@@ -12073,6 +12103,9 @@ I18N.zh["issues"] = { // 议题页面
         // "Updated in the last three days": "更新了最后三天：",
         "ProTip!": "专业提示！",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
+            "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+            "Exclude everything labeled": "如果要找到所有标有",
+            "with": "标签的，请使用",
 
         // 键盘快捷键
             "Pull request list"  : "拉取请求列表",
