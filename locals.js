@@ -375,7 +375,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
         "Clear status": "清除状态",
         "Never": "永不",
-        "Keep this status until you clear or edit your status.": "v在清除或编辑状态之前保持此状态。",
+        "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
         "Visible to": "可见",
             "Everyone": "所有人",
             "Your status will be visible to everyone": "所有人都可以看到您的状态",
@@ -3324,7 +3324,7 @@ I18N.zh["settings/replies"] = { // 设置 - 快捷回复
 
         // Saved replies 快捷回复 https://github.com/settings/replies
             "Saved replies are re-usable text snippets that you can use throughout GitHub comment fields. Saved replies can save you time if you’re often typing similar responses.": "快捷回复是可重复使用的文本片段，您可以在整个 GitHub 评论区使用。如果您经常输入类似的回复，快捷回复可以节省您的时间。",
-            "Learn more about working with saved replies": "了解有关快捷回复的详细信息",
+            "Learn more about working with saved replies": "了解更多关于使用快捷回复的信息",
             "No saved replies yet.": "暂时没有快捷回复。",
             "Add a saved reply": "添加快捷回复",
             "Saved reply title": "快捷回复的标题",
