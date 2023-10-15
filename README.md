@@ -100,6 +100,7 @@ Firefox 浏览器                      | 未测试
 
 <details>
   <summary><h2>🎁 更多</h2></summary>
+
 ### 2022-07-17 14:04:44
 
 更新至 1.7.9
@@ -205,7 +206,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## 🎨 预览
 
-  ![github-chinese][github-chinese]
+  ![img1][img1]
+
+  ![img2][img2]
 
 <details>
   <summary><h2>🎁 打赏</h2></summary>
@@ -238,4 +241,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
-[github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
+[img1]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png
+
+[img2]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png
