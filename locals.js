@@ -4747,6 +4747,12 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Only the owner of this repository can see this message.": "仅此仓库的所有者可以看到此消息。",
                 "See Dependabot alerts": "查看 Dependabot 警报",
 
+            // 空仓库
+                "This repository is empty.": "此仓库是空的。",
+                "Care to check out the": "是否愿意查看",
+                "GitHub Channel on YouTube": "YouTube 上的 GitHub 频道",
+                "while you wait?": "在您等待的时候？",
+
             // 已上架的 GitHub Action 项目
                 "Use this GitHub action with your project": "将此 GitHub Actions 用于您的项目",
                 "Add this Action to an existing workflow or create a new one": "将此操作添加到现有工作流程或创建新工作流程",
@@ -5564,6 +5570,9 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
                     "Still in progress?": "仍在进行中吗？",
                     "Convert to draft": "设置为草案",
+                        // 设置草案对话框
+                            "Convert this pull request to draft?": "将此拉取请求转换为草案？",
+                            "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
                     // 下拉
                     "Request up to 15 reviewers": "最多请求 15 个审阅者",
                     // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
@@ -5882,6 +5891,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 顶部提醒
+                "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
 
             // 编辑 -> 选择基础库
             "Choose a base branch": "选择基础分支",
@@ -6151,6 +6162,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "View Changes": "查看更改",
             "Outdated": "陈旧的",
             "Resolve conversation": "解决对话",
+                "Resolving conversation…": "解决对话中…",
             "Unresolve conversation": "未解决对话",
                 "marked this conversation as resolved.": "将此对话标记为已解决。",
             // "Changes requested": "更改请求",
@@ -6174,6 +6186,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "started a review": "开始审查",
                 "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
+            "self-assigned this": "已自我审查",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
             "Add more commits by pushing to the": "添加更多提交，通过推送到",
@@ -6827,6 +6840,9 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
         ...I18N.zh["repository-public"]["static"],
 
         // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<file> >>>>>>>>>>>>>>>>>>>>>>
+            // 顶部提醒
+                "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "此提交不属于该仓库上的任何分支，并且可能属于仓库的外部分支。",
+
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
                 "Find a branch...": "查找分支...",
@@ -7798,7 +7814,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "You need to fork this repository to propose changes.": "您需要复刻此仓库以提出更改。",
                 "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
                 "Fork this repository": "复刻此仓库",
-                "Learn more about forks": "了解更多于复刻的信息",
+                "Learn more about forks": "了解更多关于复刻的信息",
                 "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻",
                 ", so you can send a pull request.": " 中的新分支，这样您就可以发送拉取请求。",
 
