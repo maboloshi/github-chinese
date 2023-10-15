@@ -5845,6 +5845,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
 
+            "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
+            "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
+            "discover issues": "探索议题",
+            "labeled with": "标记为",
+
             "Dismiss": "忽略",
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
@@ -7053,6 +7058,28 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Filter by label": "按标签筛选",
                 "Filter labels": "筛选标签",
                 "Unlabeled": "无标签",
+
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
                 "Edit labels": "编辑标签",
             "Filter:": "筛选:",
                 "Answered": "已答复",
@@ -7130,6 +7157,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
             "Select a discussion category": "选择讨论分类",
+            "Get started": "开始",
             "Category:": "分类：",
             "Contributing": "贡献",
             "It looks like this is your first time starting a discussion in this repository!": "看起来这是您第一次在此仓库中开始讨论！",
@@ -7156,6 +7184,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
+            "If this doesn’t look right you can ": "如果这个看起来不对，你可以",
+            "choose a different category.": "选择不同的类别。",
+            "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
+            "Discussion title": "讨论标题",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=announcements&welcome_text=true
             "Since you're new here, we're helping you to get started by generating your first post to the community. Don't worry, you can edit this discussion after you post!": "由于您是新来的，我们正在帮助您开始向社区发布您的第一个帖子。不用担心，您可以在发布后编辑此讨论！",

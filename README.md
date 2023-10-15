@@ -28,16 +28,16 @@
 
 浏览器                              | 脚本管理器
 :---------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[violentmonkey][violentmonkey]
+Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[Violentmonkey][Violentmonkey]
 Safari 浏览器                       | [Macaque][Macaque]
 Firefox 浏览器                      | 未测试
 
 ## 💽 安装
 1. 请先安装用户脚本管理器。
 1. 然后再点击链接之一，安装脚本即可。
-    - [GitHub 中文化插件 - github 托管【开发版】（相对及时更新）][main.user.js]
+    - [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]
         > 注意: 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
-    - [GitHub 中文化插件 - greasyfork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
+    - [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
 
 ## 📝 更新说明
@@ -100,6 +100,7 @@ Firefox 浏览器                      | 未测试
 
 <details>
   <summary><h2>🎁 更多</h2></summary>
+
 ### 2022-07-17 14:04:44
 
 更新至 1.7.9
@@ -189,23 +190,32 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 ## ✔ 待办 (TODO)
 
 1. 添加 GitHub 名词解释，新手可能不太理解部分名词具体表达的意思，比如 `pull request`。
-2. 整理部分 git & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
-3. **本人英文渣渣，翻译非常困难，急需大家 pr 共同翻译**
+2. 整理部分 Git & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
+3. **本人英文渣渣，翻译非常困难，急需大家 PR 共同翻译**
 
 ## ✨ 贡献
 
-目前，已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
+目前已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
 
 相关概念及资料文档:
 
 1. [Pro Git 第二版 简体中文](https://www.gitbook.com/book/bingohuang/progit2/details)
 2. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
-3. [Git官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+3. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
 4. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
 
 ## 🎨 预览
 
-  ![github-chinese][github-chinese]
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png"/>
+    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png" width="75%" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png"/>
+    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png" width="75%" />
+  </picture>
 
 <details>
   <summary><h2>🎁 打赏</h2></summary>
@@ -232,10 +242,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [greasyFork-image]: https://img.shields.io/badge/dynamic/json?style=flat-square&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
 
 [Tampermonkey]: http://tampermonkey.net/ "篡改猴"
-[violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
+[Violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 [Macaque]: https://macaque.app/ "猕猴"
 
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
-
-[github-chinese]: https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/github-chinese.webp
