@@ -7157,6 +7157,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
             "Select a discussion category": "选择讨论分类",
+            "Get started": "开始",
             "Category:": "分类：",
             "Contributing": "贡献",
             "It looks like this is your first time starting a discussion in this repository!": "看起来这是您第一次在此仓库中开始讨论！",
@@ -7183,6 +7184,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
+            "if this doesn't look right you can": "如果这个看起来不对，你可以",
+            "choose a different category": "选择不同的类别",
+            ".": "。",
+            "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
+            "Discussion title": "讨论标题",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=announcements&welcome_text=true
             "Since you're new here, we're helping you to get started by generating your first post to the community. Don't worry, you can edit this discussion after you post!": "由于您是新来的，我们正在帮助您开始向社区发布您的第一个帖子。不用担心，您可以在发布后编辑此讨论！",
