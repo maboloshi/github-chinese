@@ -7184,9 +7184,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
-            "if this doesn't look right you can": "如果这个看起来不对，你可以",
-            "choose a different category": "选择不同的类别",
-            ".": "。",
+            "If this doesn’t look right you can ": "如果这个看起来不对，你可以",
+            "choose a different category.": "选择不同的类别。",
             "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
             "Discussion title": "讨论标题",
 
