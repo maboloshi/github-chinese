@@ -2472,6 +2472,13 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "/ Payment history": "/ 支付历史",
             "Amounts shown in USD": "以美元显示的金额",
 
+        // 用户计划 https://github.com/account/billing/plans
+            "Compare plans": "比较计划",
+            "Free": "免费",
+                "All the basics": "所有基础",
+            "Pro": "专业",
+                "Advanced tools for private repos": "用于私人仓库的高级工具",
+
         // 组织设置 邀请账单管理员 '/organizations/<org-login>/billing_managers/new'
             "Billing": "账单",
             "/ Add a billing manager": "/ 添加账单管理员",
