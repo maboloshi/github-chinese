@@ -5845,6 +5845,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
 
+            "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
+            "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
+            "discover issues": "探索议题",
+            "labeled with": "标记为",
+
             "Dismiss": "忽略",
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
