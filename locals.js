@@ -13501,7 +13501,6 @@ I18N.zh["orgs"] = { // 组织页面
 
             "Pinned": "已置顶",
             "Popular repositories": "流行的仓库",
-            "Forked from": "复刻自",
 
             // 仓库
                 // 搜索, 筛选 & 排序工具栏
