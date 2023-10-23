@@ -1043,10 +1043,19 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "The home for all developers — including you.": "所有开发者的家园--包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
+        "Start a new repository": "开始一个新的仓库",
+        "Create a new repository": "创建新仓库",
+        "A repository contains all of your project's files, revision history, and collaborator discussion.": "存储库包含项目的所有文件、修订历史记录和协作者讨论。",
+        "Anyone on the internet can see this repository": "互联网上的任何人都可以看到这个仓库",
+        "You choose who can see and commit to this repository": "您可以选择谁可以查看并提交到此仓库",
+        "Introduce yourself with a profile README": "用个人 README 文件介绍自己",
+        "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人 README 文件来分享您自己的信息，该自述文件显示在您的个人资料页面顶部。",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
+            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您之所以看到这种情况，是因为您最近没有使用仓库、问题和拉取请求。",
             "Remove from dashboard": "从仪表板中删除",
         "Tools of the trade": "贸易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
+            "Use tools of the trade": "使用行业工具",
             "Write code in your web browser": "在您的网络浏览器中编写代码",
                 "Use": "使用",
                 "the github.dev web-based editor": "基于 github.dev 的网络编辑器",
@@ -2200,6 +2209,9 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
+                    "on Github, Email, CLI": "在 GitHub 上、电子邮件、CLI",
+                    "on Github, CLI": "在 GitHub 上、CLI",
+                    "on Github, Email, CLI": "在 GitHub 上、电子邮件、CLI",
                     "on GitHub, Email": "在 GitHub 上、电子邮件",
                     "On GitHub": "在 GitHub 上",
 
@@ -2295,10 +2307,13 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
                 "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
+                "120 core-hours of Codespaces compute per developer": "每个开发人员 120 个核心小时的代码空间计算",
                 "15GB of Codespaces storage": "15GB 的代码空间存储",
+                "15GB of Codespaces storage per developer": "每个开发人员 15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
+                "Free Codespaces usage per organization": "每个组织免费的代码空间使用情况",
                 "Protected branches on all repos": "所有仓库上的受保护分支",
                 "Access to Codespaces": "访问代码空间",
                 "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
@@ -2317,8 +2332,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Add-ons": "附加组件",
                 // "GitHub Copilot": "",
                     "Your AI powered pair programmer": "您的人工智能配对程序员",
+                    "Your AI pair programmer": "您的 AI 结对程序员",
                     "Enable GitHub Copilot": "启用 GitHub Copilot",
                     "Get code suggestions for whole lines or entire functions right inside your editor.": "在编辑器中获得整行或整个函数的代码建议。",
+                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 可以使用 OpenAI Codex 从在编辑器中实时获取代码或整个函数的建议。",
 
                      // 组织设置
                     "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
@@ -2337,6 +2354,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
                 "Set up a spending limit": "设置支出限额",
+                "Included minutes quota resets": "分钟数配额重置时间：",
+                "Data transfer quota resets": "数据传输配额重置时间：",
+                "Usage minutes": "使用分钟数",
+                "Data transfer out": "数据转出",
 
             "GitHub Sponsors": "GitHub 赞助",
                 "Connect with the community that builds the tools you use": "与构建您使用的工具的社区联系",
@@ -2627,11 +2648,16 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Passkeys": "通行密钥",
                 "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
+                
+                // 我这边网页中显示的这句只是比上面一句只多了个device单词。
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 来验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方法。",
+                
                 "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
                 "Add a passkey": "添加通行密钥",
 
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
                 "This browser or device is not reporting full passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备不完全支持通行密钥，但您可以尝试使用附近设备的通行密钥。",
+                "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告部分密钥支持，但您可以尝试使用附近设备的通行密钥。",
                 "Your passkeys": "您的通行密钥",
                 "Seen from this browser": "该浏览器中查看",
                 "| Last used": "| 最后使用",
@@ -2795,6 +2821,7 @@ I18N.zh["settings/auth"] = {
             "Recovery codes": "恢复码",
                 "Keep your recovery codes as safe as your password. We recommend saving them with a password manager such as": "保持您的恢复码与您的密码一样安全。我们建议使用密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot.": "将您的恢复码保存在一个安全的地方。",
+                "These new codes have replaced your old codes. Save them in a safe spot.": "这些新恢复码已取代您的旧恢复码。将它们保存在安全的地方。",
                 "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二要素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
                 "will": "将",
                 "lose access to your account.": "无法访问您的帐户。",
@@ -2825,6 +2852,7 @@ I18N.zh["settings/sessions"] = {
             "and sign in to your account.": "并登录您的帐户。",
 
             "This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.": "这是已登录您帐户的设备列表。 撤销任何您不认识的会话。",
+            "Seen in": "出现在",
             "See more": "查看更多",
             "Your current session": "您当前的会话",
             "Last accessed on": "最后访问日期：",
@@ -3197,6 +3225,13 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 "We will determine the closest available region based on your location (IP address) at codespace creation time.": "我们将在创建代码空间时根据您的位置（IP地址）确定最近的可用区域。",
                 "Set manually": "手动设置",
                 "Choose your default region": "选择您的默认区域",
+                "United States": "美国",
+                "US West": "美国西部",
+                "US East": "美国东部",
+                "Europe": "欧洲",
+                "Europe West": "欧洲西部",
+                "Asia Pacific": "亚太地区",
+                "Southeast Asia": "东南亚",
 
             // 顶部提醒
                 "Secret added.": "机密已添加。",
@@ -3629,6 +3664,8 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "ProTip!": "专业提示！",
                 "View all events created yesterday": "查看昨天创建的所有事件",
                 "View all events where you created something": "查看所有您创建内容时产生的事件",
+                "created:": "创建于 ",
+                "Country changed from your previous session": "“国家/地区”与上会话有所不同",
 
 
     },
@@ -12172,6 +12209,7 @@ I18N.zh["issues"] = { // 议题页面
         // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。筛选菜单也是快速找到议题最相关的您超级有帮助的。",
         // "Updated in the last three days": "更新了最后三天：",
         "ProTip!": "专业提示！",
+            "Exclude your own issues with": "排除自己的问题",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
             "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
             "Exclude everything labeled": "如果要找到所有标有",
@@ -13463,6 +13501,7 @@ I18N.zh["orgs"] = { // 组织页面
 
             "Pinned": "已置顶",
             "Popular repositories": "流行的仓库",
+            "Forked from": "复刻自",
 
             // 仓库
                 // 搜索, 筛选 & 排序工具栏
@@ -14687,6 +14726,7 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
             "Dependabot security updates": "Dependabot 安全更新",
                 "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用此选项将导致 Dependabot 自动尝试打开拉取请求，以使用可用修补程序解决每个打开的 Dependabot 警报。",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
