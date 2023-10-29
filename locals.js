@@ -4371,13 +4371,14 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Notification settings": "通知设置", //小屏模式
             "Notifications": "通知类型",
             "Participating and @mentions": "参与和 @您",
-            "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
+                "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
             "All Activity": "所有活动",
-            "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+                "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
             "Ignore": "忽略",
-            "Never be notified.": "永不接收通知。",
+                "Never be notified.": "永不接收通知。",
             "Custom": "自定义",
-            "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+                "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+            "Get push notifications on": "要获取推送通知，使用",
             "Releases": "发行版",
                 "Issues are not enabled for this repository": "此仓库未启用议题功能",
             "Discussions": "讨论",
@@ -4820,7 +4821,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
-                    "Download ZIP": "下载 Zip 压缩包",
+                    "Open with Visual Studio": "在 Visual Studio 中打开",
+                    "Download ZIP": "下载 ZIP 压缩包",
 
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
@@ -7383,6 +7385,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Language and framework guides": "语言与框架指南",
             "Guides for projects written in many programming languages.": "项目指南由多种编程语言编写。",
 
+            "Didn't find what you're looking for?": "没有找到您需要的？",
+            "Fill out a 2-minute survey to request a new workflow template for GitHub Actions." :"填写一份 2 分钟的调查，为 GitHub Actions 申请一个新的工作流模板。",
+            "Request": "申请",
+
         // 新建操作 /<user-name>/<repo-name>/actions/new?category=xxxx
             // [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
 
@@ -8555,6 +8561,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Dependabot version updates": "Dependabot 版本更新",
             "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
 
+            "Protip!": "专业提示！",
+                "See auto-dismissed alerts with": "要查看自动解除的警报，请使用",
+                "to see alerts without an available fix.": "来查看没有可用修复程序的警报。",
+
          // 具体某条Dependabot 警报 /security/dependabot/<id>
             "Dismiss alert": "忽略警报",
 
@@ -8954,6 +8964,8 @@ I18N.zh["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
             "We tried our best, but the graph wouldn’t load. Try reloading the page.": "我们尽了最大努力，但图表无法加载。尝试重新加载页面。",
             "Discussions page views": "讨论页面浏览量",
                 "Total page views to Discussions segmented by logged in vs anonymous users.": "按登录用户与匿名用户划分的讨论的总页面浏览量。",
+                "logged in": "登录",
+                "anonymous": "匿名",
             "Discussions daily contributors": "每日讨论的贡献者",
                 "Count of unique users who have reacted, upvoted, marked an answer, commented, or posted in the selected period.": "在所选时间段内，作出反应、投票、标记答案、评论或发帖的唯一用户的数量。",
             "Discussions new contributors": "讨论的新贡献者",
@@ -15339,6 +15351,9 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
             "Create project": "创建项目",
 
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            "Welcome to the all-new projects": "欢迎访问全新的项目",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
+
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
 
