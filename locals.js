@@ -7383,6 +7383,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Language and framework guides": "语言与框架指南",
             "Guides for projects written in many programming languages.": "项目指南由多种编程语言编写。",
 
+            "Didn't find what you're looking for?": "没有找到您需要的？",
+            "Fill out a 2-minute survey to request a new workflow template for GitHub Actions." :"填写一份 2 分钟的调查，为 GitHub Actions 申请一个新的工作流模板。",
+            "Request": "申请",
+
         // 新建操作 /<user-name>/<repo-name>/actions/new?category=xxxx
             // [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
 
