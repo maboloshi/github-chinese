@@ -8555,6 +8555,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Dependabot version updates": "Dependabot 版本更新",
             "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
 
+            "Protip!": "专业提示！",
+                "See auto-dismissed alerts with": "要查看自动解除的警报，请使用",
+                "to see alerts without an available fix.": "来查看没有可用修复程序的警报。",
+
          // 具体某条Dependabot 警报 /security/dependabot/<id>
             "Dismiss alert": "忽略警报",
 
