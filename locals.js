@@ -335,6 +335,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             // 对话框
             "Enable": "启用",
             "Disable": "禁用",
+            "New Branches and Commits Pages": "新版分支和提交页面",
             "New Code Search and Code View": "新版代码搜索和代码视图",
             "Colorblind themes": "色盲主题",
             "Command Palette": "命令面板",
