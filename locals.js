@@ -8954,6 +8954,8 @@ I18N.zh["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
             "We tried our best, but the graph wouldn’t load. Try reloading the page.": "我们尽了最大努力，但图表无法加载。尝试重新加载页面。",
             "Discussions page views": "讨论页面浏览量",
                 "Total page views to Discussions segmented by logged in vs anonymous users.": "按登录用户与匿名用户划分的讨论的总页面浏览量。",
+                "logged in": "登录",
+                "anonymous": "匿名",
             "Discussions daily contributors": "每日讨论的贡献者",
                 "Count of unique users who have reacted, upvoted, marked an answer, commented, or posted in the selected period.": "在所选时间段内，作出反应、投票、标记答案、评论或发帖的唯一用户的数量。",
             "Discussions new contributors": "讨论的新贡献者",
