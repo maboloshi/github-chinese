@@ -4821,7 +4821,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
-                    "Download ZIP": "下载 Zip 压缩包",
+                    "Open with Visual Studio": "在 Visual Studio 中打开",
+                    "Download ZIP": "下载 ZIP 压缩包",
 
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
