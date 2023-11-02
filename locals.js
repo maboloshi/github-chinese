@@ -6681,7 +6681,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     ],
 };
 
-I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
+I18N.zh["repository/commit"] = { // 仓库 - 提交页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
