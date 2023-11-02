@@ -6781,12 +6781,13 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
                 "Filter branches/tags": "搜索分支/标签",
                 "Branches": "分支",
                 "default": "默认",
-                "View all branches": "查看全部分支",
+                "View all ": "查看全部",
+                "branch": "分支",
+                "tags": "标签",
                 "Find a tag": "查找标签",
                 "Tags": "标签",
                 "Search for a tag": "搜索标签",
                 "Nothing to show": "暂无",
-                "View all tags": "查看全部标签",
 
             // 验证标记浮动信息
             "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
@@ -6806,6 +6807,16 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
 
             "Newer": "新的",
             "Older": "旧的",
+
+        // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
+            // 用户筛选
+                "All users": "所有用户",
+                "Find a user...": "寻找一个用户……",
+                "View commits for all users": "查看所有用户的提交",
+            // 时间筛选
+                "All time": "所有时间",
+                "Today": "今天",
+            
 
         // 提交中文件历史 /<user-name>/<repo-name>/commits/<branch>/<file> 或 /<user-name>/<repo-name>/commits/<full SHA>/<file>
             "History for": "历史：",
