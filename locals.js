@@ -6777,7 +6777,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
-                "Find a branch...": "查找或创建分支……",
+                "Find a branch...": "查找分支……",
+                "Find a tag...": "查找标签……",
                 "Filter branches/tags": "搜索分支/标签",
                 "Branches": "分支",
                 "default": "默认",
@@ -6816,6 +6817,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 新建议题页面
             // 时间筛选
                 "All time": "所有时间",
                 "Today": "今天",
+            "Browse repository at this point": "查看此时间点的仓库",
             
 
         // 提交中文件历史 /<user-name>/<repo-name>/commits/<branch>/<file> 或 /<user-name>/<repo-name>/commits/<full SHA>/<file>
