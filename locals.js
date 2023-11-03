@@ -53,10 +53,10 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
+    rePagePath: /^\/(?:users\/[^\/]+\/)(packages)|($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -8452,6 +8452,62 @@ I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
     "regexp": [
     ],
 }
+
+I18N.zh["repository/pkgs"] = { // 仓库 - 软件包
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // /<user-name>/<repo-name>/pkgs/container/<pag name>
+            "Installation": "安装",
+            "Learn more about packages": "了解更多关于软件包的信息",
+            "Install from the command line": "从命令行安装",
+            "Use as base image in Dockerfile:": "在 Dockerfile 中用作基础镜像：",
+            "Recent tagged image versions": "最近被标记的映像版本",
+            "latest": "最新",
+            // [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+            "View all tagged versions": "查看所有被标记的版本",
+
+            "Details": "详细信息",
+            "Last published": "最新发布",
+            "Total downloads": "总下载量",
+            "Open an issue": "打开一个议题",
+
+        // 全部版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/versions
+            "All versions": "所有版本",
+            // [/Published (*)/, "发布于 $1"],
+            // [/(\d+) tagged/, "$1 个标记"],
+            // [/(\d+) untagged/, "$1 个未标记"],
+
+        // 某个版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/<version id>
+            "About this version": "关于这个版本",
+            "Manifest": "清单",
+            "No description provided": "未提供说明",
+            "This package version was published": "此版本软件包发布于",
+
+            "To provide a description, add the following line to your Dockerfile:": "要提供描述，请将以下行添加到您的 Dockerfile 中：",
+            "For multi-arch images, set a value for the": "对于多架构镜像，请设置",
+            "key in the": "值在",
+            "field of the manifest:": "字段：",
+            "Learn more about labelling container images": "了解更多关于标记容器镜像的信息",
+
+            "Download activity": "下载活动",
+                "Download activity of this version": "此版本的下载活动",
+            "Last 30 days": "最近 30 天",
+            "Last week": "最近一周",
+            "Today": "今天",
+
+            "Other tags on this version": "此版本的其他标签",
+            "View all versions": "查看全部版本",
+
+    },
+    "regexp": [ // 正则翻译
+        [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        [/Published (.*)/, "发布于 $1"],
+        [/(\d+) tagged/, "$1 个标记"],
+        [/(\d+) untagged/, "$1 个未标记"],
+    ],
+};
+I18N.zh["packages"] = I18N.zh["repository/pkgs"];
 
 I18N.zh["repository/security"] = { // 仓库 - 安全页面
     "static": { // 静态翻译
