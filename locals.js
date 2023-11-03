@@ -53,10 +53,10 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
+    rePagePath: /^\/(?:users\/[^\/]+\/)(packages)|($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
@@ -1303,6 +1303,16 @@ I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
             "Private archive": "私有存档",
             "Public template": "公共模板",
 
+            "Lists": "清单",
+            "You don't have any lists yet.": "您尚无任何清单。",
+            "Create list": "创建清单",
+                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                "⭐️ Name this list": "⭐️ 清单名称",
+                "Write a description": "简单描述",
+                "Lists are currently in beta.": "清单目前处于测试阶段。",
+                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                "Creating...": "创建中...",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
@@ -1327,6 +1337,9 @@ I18N.zh["page-profile"] = { // 个人首页
             "Filter repositories": "筛选仓库", // 组织页
             "Show:": "显示：",
             "Save pins": "保存置顶",
+
+            "Drag to reorder": "拖动重新排序",
+
             // 顶部提醒
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             // 拖拽排序提醒
@@ -1625,6 +1638,7 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
 
         // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Lists": "清单",
+            "Show all lists...": "显示所有列表...",
 
             "Sort by": "排序方式",
             // 排序补充
@@ -1762,7 +1776,7 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
         "Settings": "设置", // 新版全局导航
 
         "Your personal account": "我的个人帐户",
-        "Switch to another account": "切换到另一个帐户", // 存在组织时
+        "Switch settings context": "切换设置上下文", // 存在组织时
         "Go to your personal profile": "去我的个人资料",
         // 左侧菜单
         "Public profile": "基本资料",
@@ -1817,8 +1831,8 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
         ...I18N.zh["orgs-public"]["static"],
 
         // 公用部分
-            "Organization account": "组织帐户",
-            "Switch to another account": "切换到另一个帐户", // 存在组织时
+            "Organization": "组织",
+            "Switch settings context": "切换设置上下文", // 存在组织时
             "Go to your organization profile": "去我的组织主页",
             // 左侧菜单
             "General": "常规",
@@ -2266,7 +2280,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         ...I18N.zh["settings-menu"]["static"],
         ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
-        // 账单和计划 https://github.com/settings/billing
+        // 账单和计划 https://github.com/settings/billing/summary
             "Billing Summary": "账单摘要",
             "Your next payment": "您的下一次应付款",
             "This amount does not include the spend on usage of metered service. View your": "该金额不包括使用计量服务的支出。在下面查看您的",
@@ -2317,9 +2331,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
             "Add-ons": "附加组件",
                 // "GitHub Copilot": "",
-                    "Your AI powered pair programmer": "您的人工智能配对程序员",
+                    "Your AI pair programmer": "您的人工智能助理程序员",
+                    "Your AI powered pair programmer": "您的人工智能助理程序员",
                     "Enable GitHub Copilot": "启用 GitHub Copilot",
-                    "Get code suggestions for whole lines or entire functions right inside your editor.": "在编辑器中获得整行或整个函数的代码建议。",
+                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
                     "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
@@ -4676,6 +4691,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                 "The repository": "仓库",
                 "already exists on this account.": "已经存在于此帐户。",
                 "Your new repository will be created as": "您的新仓库将被创建为",
+                    "The repository name can only contain ASCII letters, digits, and the characters": "仓库名称只能包含 ASCII 字母、数字和字符",
 
             "By default, forks are named the same as their upstream repository. You can customize the name to distinguish it further.": "默认情况下，复刻的名称与他们的上游仓库相同。您可以自定义名称以进一步区分它。",
             "(optional)": "（可选）",
@@ -4880,6 +4896,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
 
             "Use this template": "使用此模板",
+                "Create a new repository": "创建新仓库",
+                "Open in a codespace": "在代码空间中打开",
 
             // 个人仓库 当前分支状态
             "This branch is": "该分支",
@@ -5053,6 +5071,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
         // 仓库复刻中...
             // [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+            "Generating your repository...": "正在创建您的仓库...",
             "It should only take a few seconds.": "应该只需要几秒钟的时间。",
             "Refresh": "刷新",
 
@@ -6340,6 +6359,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Add rule": "添加规则",
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
+            // [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
+            "This workflow requires approval from a maintainer.": "此工作流程需要维护者批准。",
+            "Learn more about approving workflows.": "了解更多关于批准工作流程的信息。",
+            "Approve and run": "批准并运行",
+
             // 状态词
             "reviewed": "审查",
             "requested a review from": "请求审查",
@@ -6561,6 +6585,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"], // 具体的拉取请求
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
+        [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -6995,6 +7020,7 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "Copy raw file":"复制原始文件",
                 "Download raw file":"下载原始文件",
                 "Edit this file": "编辑本文件",
+                "Edit the file in your fork of this project": "在您的复刻中编辑文件",
                     "Edit file":"编辑文件",
                     "Edit in place":"就地编辑",
                     "Open with...":"打开...",
@@ -7442,10 +7468,12 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Workflows": "工作流程",
             "New workflow": "新建工作流程",
             "Select workflow": "选择工作流程",
+            "Show more workflows...": "显示更多工作流程...",
             "Management": "管理",
             "Caches": "缓存",
             "Deployments": "部署",
 
+            "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
             "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
 
             "All workflows": "全部工作流程",
@@ -7462,6 +7490,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Find an event": "查找事件",
                 "push": "推送",
                 "pull_request": "拉取请求",
+                "pull_request_target": "拉取请求目标",
                 "schedule": "日程",
                 "watch": "关注",
                 "workflow_dispatch": "工作流程调度",
@@ -7492,7 +7521,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Cancel run": "取消运行",
             "Delete workflow run": "删除工作流程运行",
                 // 删除工作流程运行 对话框
-                    "Are you sure you want to delete this workflow run?": "您确定要删除此工作流程运行吗？",
+                    "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流程运行吗？",
                     "This action cannot be undone": "此操作无法撤消",
                     "Yes, permanently delete this workflow run": "是，永久删除此工作流程运行",
                 // 顶部提醒
@@ -7576,6 +7605,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Re-run jobs": "重新运行作业",
 
             "This workflow has no runs yet.": "此工作流程尚未运行。",
+
+            "No results matched your search.": "没有与您的搜索匹配的结果。",
+            "You could search": "您可以搜索",
 
         // /<user-name>/<repo-name>/actions/runs/<id>
 
@@ -7673,7 +7705,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         ...I18N.zh["repository-public"]["regexp"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
-        [/(\d+) workflow runs results?/, "$1 个工作流程运行结果"],
+        [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
         [/Delete artifact ([^ ]+)/, "删除附件 $1"],
         [/(\d+) errors?/, "$1 个错误"],
         [/(\d+) cache results?/, "$1 个缓存结果"],
@@ -8420,6 +8452,62 @@ I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
     "regexp": [
     ],
 }
+
+I18N.zh["repository/pkgs"] = { // 仓库 - 软件包
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // /<user-name>/<repo-name>/pkgs/container/<pag name>
+            "Installation": "安装",
+            "Learn more about packages": "了解更多关于软件包的信息",
+            "Install from the command line": "从命令行安装",
+            "Use as base image in Dockerfile:": "在 Dockerfile 中用作基础镜像：",
+            "Recent tagged image versions": "最近被标记的映像版本",
+            "latest": "最新",
+            // [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+            "View all tagged versions": "查看所有被标记的版本",
+
+            "Details": "详细信息",
+            "Last published": "最新发布",
+            "Total downloads": "总下载量",
+            "Open an issue": "打开一个议题",
+
+        // 全部版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/versions
+            "All versions": "所有版本",
+            // [/Published (*)/, "发布于 $1"],
+            // [/(\d+) tagged/, "$1 个标记"],
+            // [/(\d+) untagged/, "$1 个未标记"],
+
+        // 某个版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/<version id>
+            "About this version": "关于这个版本",
+            "Manifest": "清单",
+            "No description provided": "未提供说明",
+            "This package version was published": "此版本软件包发布于",
+
+            "To provide a description, add the following line to your Dockerfile:": "要提供描述，请将以下行添加到您的 Dockerfile 中：",
+            "For multi-arch images, set a value for the": "对于多架构镜像，请设置",
+            "key in the": "值在",
+            "field of the manifest:": "字段：",
+            "Learn more about labelling container images": "了解更多关于标记容器镜像的信息",
+
+            "Download activity": "下载活动",
+                "Download activity of this version": "此版本的下载活动",
+            "Last 30 days": "最近 30 天",
+            "Last week": "最近一周",
+            "Today": "今天",
+
+            "Other tags on this version": "此版本的其他标签",
+            "View all versions": "查看全部版本",
+
+    },
+    "regexp": [ // 正则翻译
+        [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        [/Published (.*)/, "发布于 $1"],
+        [/(\d+) tagged/, "$1 个标记"],
+        [/(\d+) untagged/, "$1 个未标记"],
+    ],
+};
+I18N.zh["packages"] = I18N.zh["repository/pkgs"];
 
 I18N.zh["repository/security"] = { // 仓库 - 安全页面
     "static": { // 静态翻译
@@ -9592,6 +9680,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                     "watchers": "关注者",
                 "If you decide to make this repository public in the future, it will not be possible to restore these stars and watchers and this will affect its repository rankings.": "即使您决定将来公开此仓库，也无法恢复这些星标者和关注者，这将影响其仓库排名。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository.": "依赖关系图和 Dependabot 警报将保持启用，并有权限对该仓库进行只读分析。",
+                "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository. Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "依赖关系图和 Dependabot 警报将继续启用，并允许对该仓库执行只读分析。除非为该仓库启用了 GitHub 高级安全功能，否则任何自定义的 Dependabot 警报规则都将被禁用。",
                 "Code scanning will become unavailable.": "代码扫描将变得不可用。",
                 "Current forks will remain public and will be detached from this repository.": "当前的复刻将保持公开，并将从该仓库中分离出来。",
                 "Make this repository private": "将此仓库设为私有",
@@ -9893,7 +9982,7 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Currently applies to (\d+) branch(es)/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
+        [/Currently applies to (\d+) branch(|es)/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
     ],
 };
 
@@ -9938,6 +10027,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
                 "Status checks that are required.": "需要进行的状态检查。",
             "Require conversation resolution before merging": "要求在合并前解决对话",
             "When enabled, all conversations on code must be resolved before a pull request can be merged into a branch that matches this rule.": "启用后，必须先解决所有有关代码的对话，然后才能将拉取请求合并到与此规则匹配的分支中。",
+            "Learn more about requiring conversation completion before merging": "了解更多关于合并前要求完成对话的信息",
             "Require signed commits": "要求带签名的提交",
             "Commits pushed to matching branches must have verified signatures.": "推送到匹配分支的提交必须带有经过验证的签名。",
             "Require linear history": "要求线性历史记录",
@@ -9981,7 +10071,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Applies to (\d+) branch(es)/, "应用于 $1 个分支"], //仓库设置-->分支-->分支保护规则-->编辑
+        [/Applies to (\d+) branch(|es)/, "应用于 $1 个分支"], //仓库设置-->分支-->分支保护规则-->编辑
     ],
 };
 
@@ -10021,8 +10111,10 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
 
         // 规则 页面 /<user-name>/<repo-name>/settings/rules===============================
             "Rulesets": "规则集",
-            "New branch ruleset": "新建分支规则集",
-                "New tag ruleset": "新建标签规则集",
+            "New ruleset": "新建规则集",
+                "New branch ruleset": "新建分支规则集",
+                    "New tag ruleset": "新建标签规则集",
+                    "Import a ruleset": "导入规则集",
 
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
 
@@ -10038,13 +10130,12 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "• targeting": "• 针对",
 
         // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
-            "New": "新建",
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
 
-            "Name": "名称",
+            "Ruleset Name": "规则集名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
             "Enforcement status": "执行状态",
                 "Active": "激活",
@@ -10076,12 +10167,13 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                         "App": "应用",
                         "Organization admin": "组织管理员",
                         "Repository admin": "仓库管理员",
+                        "Maintain": "维护",
                         "triage": "分类",
                         "maintain": "维持",
                         "read": "读取",
                         "write": "写入",
                         "vulnerability_reporter": "漏洞报告员",
-                        "Add Selected": "添加所选",
+                        "Add selected": "添加所选",
 
                 "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
                 "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
@@ -10092,7 +10184,8 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 ", teams, or apps": "团队或应用",
                 "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
-            "Target repositories": "目标仓库", // 组织设置
+            "Target repositories": "目标仓库",
+                "Add target": "添加目标",
                 "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
 
                 "Target:": "目标：",
@@ -10155,17 +10248,17 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Restrict deletions": "限制删除",
                     "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
                 "Require linear history": "需要线性历史",
-                    "Prevent merge commits from being pushed to matching branches.": "防止合并后的提交被推送到匹配的分支。",
-                "Require deployments to succeed before merging": "要求部署成功后再合并",
-                    "Choose which environments must be successfully deployed to before branches can be merged into a branch that matches this rule.": "选择必须成功部署到哪些环境才能将分支合并到与此规则匹配的分支中。",
+                    "Prevent merge commits from being pushed to matching refs.": "防止合并后的提交被推送到匹配的引用。",
+                "Require deployments to succeed": "要求部署成功",
+                    "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境,7，才能将引用推送到与此规则匹配的引用中。",
                 "Require signed commits": "要求带签名的提交",
-                    "Commits pushed to matching branches must have verified signatures.": "推送到匹配分支的提交必须带有经过验证的签名。",
+                    "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
                 "Require a pull request before merging": "要求在合并前提交拉取请求",
                     "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
-                "Require status checks to pass before merging": "要求在合并前通过状态检查",
-                    "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed.": "选择必须通过哪些状态检查，才能将分支合并到符合此规则的分支。启用后，提交必须先推送到另一个分支，然后在状态检查通过后合并或直接推送到符合此规则的分支。",
+                "Require status checks to pass": "要求通过状态检查",
+                    "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
                 "Block force pushes": "阻止强制推送",
-                    "Prevent users with push access from force pushing to branches.": "防止具有推送权限的用户强制推送到分支。",
+                    "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
 
             "Metadata": "元数据", // 组织设置
             "restrictions": "限制",
@@ -10982,7 +11075,8 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。",
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
                 "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
@@ -11460,7 +11554,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Signing in…": "登录中…",
 
             "Or": "或",
-            "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
+            // "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
+            "This browser or device is reporting partial passkey support.": "此浏览器或设备报告部分支持通行密钥。",
             "Sign-in with a passkey": "使用通行密钥登录",
 
             "New to GitHub?": "初次接触 GitHub？",
@@ -11890,6 +11985,8 @@ I18N.zh["notifications"] = { // 通知页面
             "filter by notification author": "按通知作者筛选",
             "filter by organization": "按组织筛选",
         "Group by:": "分组：",
+        "Group by: Date": "分组：日期",
+        "Group by: Repository": "分组：仓库",
         "Date": "日期",
         "Repository": "仓库",
         // [/(\d+) new notifications?/, "$1 条新通知"], // 通知管理页
@@ -11960,6 +12057,26 @@ I18N.zh["notifications"] = { // 通知页面
         "Notifications you save will appear here to read later.": "您保存的通知会出现在这里，以便以后阅读。",
         "Mark notifications as done so you can move on with your work.": "将通知标记为已完成，以便您可以继续工作。",
         "New activity appears in your inbox.": "新活动出现在您的收件箱中。",
+
+        // /notifications?query=repo 某个仓库
+        "We've noticed that you rarely interact with this repository, are you sure you need notifications?": "我们注意到您很少与此仓库交互，您确定需要通知吗？",
+        "Unwatch": "取消关注",
+        // "Notifications": "通知类型",
+            "Participating and @mentions": "参与和 @您",
+            "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
+            "All Activity": "所有活动",
+            "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+            "Ignore": "忽略",
+            "Never be notified.": "永不接收通知。",
+            "Custom": "自定义",
+            "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+            "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
+            "Releases": "发行版",
+            "Discussions": "讨论",
+                "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
+            "Security alerts": "安全警报",
+            //"Cancel": "取消",
+            "Apply": "应用",
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected/, "$1 条被选中"],
@@ -12521,10 +12638,10 @@ I18N.zh["search"] = { // 搜索页面
                 "The path qualifier can search the entire file path, not just the extension, and supports regular expressions. For more information, see our": "路径限定符可以搜索整个文件路径，而不仅仅是扩展名，并且支持正则表达式。更多信息，请参阅我们的",
 
             "Why wasn't my code found?": "为什么找不到我的代码？",
-                "During the feature preview,": "在功能预览期间，",
-                "not all code is indexed.": "并非所有代码都被索引。",
+                "When you search within a repository for the first time, please note that the repository undergoes reindexing.": "首次在仓库中搜索时，请注意仓库会进行重新索引。",
+                "This process may take a few minutes.": "这一过程可能需要几分钟。",
 
-                "The index currently includes more than 7 million popular public repositories, plus all private repositories accessible to members of the technical preview.": "该索引目前包括超过 700 万个流行的公共仓库，以及技术预览版成员可以访问的所有私有仓库。",
+                "The index currently includes more than 70 million popular public repositories, plus all private repositories that users search for.": "该索引目前包括超过 7000 万个流行的公共仓库，以及用户搜索的所有私有仓库。",
                 "Beyond that, we also don't include all files in the search index:": "除此之外，我们也不会将所有文件都纳入搜索索引：",
                     "Vendored and generated code is excluded": "排除供应和生成的代码",
                     "Empty files and files over 350 kiB are excluded": "排除空文件和超过 350 kiB 的文件",
@@ -13033,6 +13150,9 @@ I18N.zh["topics"] = { // 探索-->主题页面
             "Loading more…": "载入中…",
 
         // github.com/topics/<某主题>
+            "Created by": "创建者",
+            "Released": "发布于",
+
             "Related Topics": "相关主题",
             "Updated": "更新于",
             "Sponsor": "赞助",

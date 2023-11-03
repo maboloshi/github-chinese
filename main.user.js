@@ -147,7 +147,7 @@
                     transElement(node, 'cancel-confirm-text', true); // 取消按钮 提醒
                 }
                 if (node.hasAttribute('data-disable-with')) { // 按钮等待提示
-                    transElement(node.dataset, 'disableWith');
+                    transElement(node, 'data-disable-with', true);
                 }
             } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                 transElement(node, 'label');
@@ -452,7 +452,7 @@
     }
 
     GM_registerMenuCommand("正则切换", () => {
-        enable_RegExp = enable_RegExp ? 0 : 1;
+        enable_RegExp = !enable_RegExp;
         GM_setValue("enable_RegExp", enable_RegExp);
         GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
         if (enable_RegExp) {
