@@ -10110,8 +10110,10 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
 
         // 规则 页面 /<user-name>/<repo-name>/settings/rules===============================
             "Rulesets": "规则集",
-            "New branch ruleset": "新建分支规则集",
-                "New tag ruleset": "新建标签规则集",
+            "New ruleset": "新建规则集",
+                "New branch ruleset": "新建分支规则集",
+                    "New tag ruleset": "新建标签规则集",
+                    "Import a ruleset": "导入规则集",
 
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
 
@@ -10127,13 +10129,12 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
             "• targeting": "• 针对",
 
         // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
-            "New": "新建",
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
 
-            "Name": "名称",
+            "Ruleset Name": "规则集名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
             "Enforcement status": "执行状态",
                 "Active": "激活",
@@ -10165,12 +10166,13 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                         "App": "应用",
                         "Organization admin": "组织管理员",
                         "Repository admin": "仓库管理员",
+                        "Maintain": "维护",
                         "triage": "分类",
                         "maintain": "维持",
                         "read": "读取",
                         "write": "写入",
                         "vulnerability_reporter": "漏洞报告员",
-                        "Add Selected": "添加所选",
+                        "Add selected": "添加所选",
 
                 "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
                 "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
@@ -10181,7 +10183,8 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 ", teams, or apps": "团队或应用",
                 "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
-            "Target repositories": "目标仓库", // 组织设置
+            "Target repositories": "目标仓库",
+                "Add target": "添加目标",
                 "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
 
                 "Target:": "目标：",
@@ -10244,17 +10247,17 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Restrict deletions": "限制删除",
                     "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
                 "Require linear history": "需要线性历史",
-                    "Prevent merge commits from being pushed to matching branches.": "防止合并后的提交被推送到匹配的分支。",
-                "Require deployments to succeed before merging": "要求部署成功后再合并",
-                    "Choose which environments must be successfully deployed to before branches can be merged into a branch that matches this rule.": "选择必须成功部署到哪些环境才能将分支合并到与此规则匹配的分支中。",
+                    "Prevent merge commits from being pushed to matching refs.": "防止合并后的提交被推送到匹配的引用。",
+                "Require deployments to succeed": "要求部署成功",
+                    "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境,7，才能将引用推送到与此规则匹配的引用中。",
                 "Require signed commits": "要求带签名的提交",
-                    "Commits pushed to matching branches must have verified signatures.": "推送到匹配分支的提交必须带有经过验证的签名。",
+                    "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
                 "Require a pull request before merging": "要求在合并前提交拉取请求",
                     "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
-                "Require status checks to pass before merging": "要求在合并前通过状态检查",
-                    "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a branch that matches this rule after status checks have passed.": "选择必须通过哪些状态检查，才能将分支合并到符合此规则的分支。启用后，提交必须先推送到另一个分支，然后在状态检查通过后合并或直接推送到符合此规则的分支。",
+                "Require status checks to pass": "要求通过状态检查",
+                    "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
                 "Block force pushes": "阻止强制推送",
-                    "Prevent users with push access from force pushing to branches.": "防止具有推送权限的用户强制推送到分支。",
+                    "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
 
             "Metadata": "元数据", // 组织设置
             "restrictions": "限制",
