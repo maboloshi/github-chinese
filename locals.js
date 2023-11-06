@@ -499,6 +499,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
         "Close with comment": "评论并关闭议题", // issue页 评论框
         "Close pull request": "关闭拉取请求", // pull页 评论框
+        "Close discussion": "关闭讨论", // discussion页 评论框
+            "Close as resolved": "因解决而关闭",
+                "The discussion has been resolved": "讨论已解决",
+            "Close as outdated": "因过时而关闭",
+                "The discussion is no longer relevant": "讨论不再相关",
+            "Close as duplicate": "因重复而关闭",
+                "The discussion is a duplicate of another": "讨论与另一个讨论重复",
         "Comment": "评论",
         "Submit new issue": "提交新议题",
         "Comment on this commit": "评论",
@@ -7425,6 +7432,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
+            "Unlock conversation": "解锁对话",
+                "Are you sure you want to unlock conversation on this discussion?": "您确定要解锁此讨论的对话吗？",
+                "Everyone": "任何人",
+                "will be able to comment on this discussion once more.": "将能够再次对这个讨论发表评论。",
+                "You can always lock this discussion again in the future.": "您今后仍可以随时再次锁定此讨论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
@@ -7442,15 +7454,33 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Are you sure you want to unpin this discussion?": "您确定要取消置顶讨论吗？",
                 "The discussion itself won't be deleted, it just won't be shown prominently above the list of discussions.": "讨论本身不会被删除，只是不会突出显示在讨论列表上方。",
                 // 顶部提醒
-                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
+            "Pin discussion to Announcements": "将讨论置顶到 “公告”",
+                "Pin this discussion to this category": "将此讨论置顶到此类别",
+                    "This will pin this discussion to the top of the Announcements category.": "这将此讨论置顶到 “公告” 类别顶部。",
+                    "Pin to Announcements": "置顶到 “公告”",
+            "Pin discussion to General": "将讨论置顶到 “通常”",
+                    "This will pin this discussion to the top of the General category.": "这将此讨论置顶到 “通常” 类别顶部。",
+                    "Pin to General": "置顶到 “通常”",
+            "Pin discussion to Ideas": "将讨论置顶到 “想法”",
+                    "This will pin this discussion to the top of the Ideas category.": "这将此讨论置顶到 “想法” 类别顶部。",
+                    "Pin to Ideas": "置顶到 “想法”",
+            "Pin discussion to Polls": "将讨论置顶到 “投票”",
+                    "This will pin this discussion to the top of the Polls category.": "这将此讨论置顶到 “投票” 类别顶部。",
+                    "Pin to Polls": "置顶到 “投票”",
+            "Pin discussion to Q&A": "将讨论置顶到 “问与答”",
+                    "This will pin this discussion to the top of the Q&A category.": "这将此讨论置顶到 “问与答” 类别顶部。",
+                    "Pin to Q&A": "置顶到 “问与答”",
+            "Pin discussion to Show and tell": "将讨论置顶到 “展示与讲述”",
+                    "This will pin this discussion to the top of the Show and tell category.": "这将此讨论置顶到 “展示与讲述” 类别顶部。",
+                    "Pin to Show and tell": "置顶到 “展示与讲述”",
             "Create issue from discussion": "从讨论中创建议题",
             "Delete discussion": "删除讨论",
                 "Delete discussion?": "删除讨论？",
-                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
-                "Delete this discussion": "删除讨论",
+                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments.": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
+                "Delete this discussion": "删除讨论。",
                 // 顶部提醒
                 "The discussion was successfully deleted.": "该讨论已成功删除。",
-
 
             "The original post will be copied into a new issue, and the discussion will remain active.": "原帖将被复制到一个新的议题中，讨论将保持活跃。",
             "OK, got it!": "好的，我知道了！",
@@ -7487,7 +7517,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) repl(y|ies)?/, "$1 条回复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
-        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
         [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
