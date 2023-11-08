@@ -4728,7 +4728,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "View existing forks.": "查看现有复刻。",
             "No available destinations to fork this repository.": "您已复刻此仓库。",
             "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
-            "Creating fork…": "正在创建复刻……",
+            "Creating fork…": "正在创建复刻…",
 
             "Owners": "所有者",
                 "Choose an owner": "选择所有者",
