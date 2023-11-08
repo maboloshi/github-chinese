@@ -1582,8 +1582,8 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
         // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "There aren't any projects yet": "尚无任何项目",
-            "Provide quick access to relevant projects.":"提供快速访问相关项目的途径。",
-            "Add projects to view them here.":"将项目添加到此处查看。",
+            "Provide quick access to relevant projects.": "提供快速访问相关项目的途径。",
+            "Add projects to view them here.": "将项目添加到此处查看。",
 
             "Welcome to the all-new projects": "欢迎访问全新的项目",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
@@ -4726,9 +4726,9 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "A": " ",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
-            "No available destinations to fork this repository.":"您已复刻此仓库。",
+            "No available destinations to fork this repository.": "您已复刻此仓库。",
             "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
-            "Creating fork…":"正在创建复刻……",
+            "Creating fork…": "正在创建复刻……",
 
             "Owners": "所有者",
                 "Choose an owner": "选择所有者",
@@ -8756,9 +8756,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Opt out": "设置",
             "learn more about auto-dismissing alerts.": "了解更多关于自动撤消警报的信息。",
 
-            "Auto-triage your alerts":"自动分类您的警报",
-            "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through GitHub Advanced Security.":"控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面执行。免费供开源项目使用,通过 GitHub 高级安全功能可以用于私有仓库。",
-            "Learn more about auto-triage":"了解更多关于自动分类的信息",
+            "Auto-triage your alerts": "自动分类您的警报",
+            "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through GitHub Advanced Security.": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面执行。免费供开源项目使用,通过 GitHub 高级安全功能可以用于私有仓库。",
+            "Learn more about auto-triage": "了解更多关于自动分类的信息",
 
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
