@@ -1482,8 +1482,6 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
         // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "There aren't any projects yet": "尚无任何项目",
-            "Provide quick access to relevant projects.":"提供快速访问相关项目的途径。",
-            "Add projects to view them here.":"将项目添加到此处查看。",
 
             "Welcome to the all-new projects": "欢迎访问全新的项目",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
