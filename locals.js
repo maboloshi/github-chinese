@@ -7114,6 +7114,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "you can choose to feature it": "您可以选择将",
             "here by pinning it.": "其置顶在此处。",
 
+            "Personalize your categories": "自定义您的分类",
+            "Choose categories that fit your community. These could be announcements, Q&A with marked answers, open-ended conversations, or polls for community voting.": "选择适合您社区的类别。这些可以是公告、带有标记答案的问答、开放式对话或用于调查的社区投票。",
+
             "Welcome to discussions!": "欢迎参与讨论！",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more.": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more. To get started, you can create a": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。首先，您可以创建一个",
@@ -7203,10 +7206,14 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 状态词
             "asked a question in": "提出了一个问题在",
             "Unanswered Question": "未解答的问题",
+            "announced": "公布于",
+            "in": "在",
 
         // 讨论分类 /<user-name>/<repo-name>/discussions/categories
             "Manage discussion categories": "管理讨论分类",
+                "Sections are a dropdown of categories. Categories have types of discussions, and discussions within them.": "本栏目是类别的下拉菜单。类别中包含讨论类型和讨论内容。",
             // [/(\d+) categories?/, "$1 个分类"],
+            "Categories without section": "无栏目分类",
             "Announcements": "公告",
                 "Updates from maintainers": "维护者的更新信息",
             "General": "通常",
@@ -7221,13 +7228,39 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Show and tell": "展示与讲述",
                 "Show off something you've made": "炫耀您所做的事情",
 
+            "New section": "新建栏目",
             "New category": "新建分类",
-                "Create category": "创建分类",
-                "Title": "标题",
-                "Category name": "分类名称",
-                "Description": "描述",
-                "Add a description (optional)": "添加描述（可选）",
-                "Discussion Format": "讨论形式",
+
+            "Edit Announcements category": "编辑 “公告” 分类",
+            "Edit General category": "编辑 “通常” 分类",
+            "Edit Ideas category": "编辑 “想法” 分类",
+            "Edit Polls category": "编辑 “投票” 分类",
+            "Edit Q&A category": "编辑 “问与答” 分类",
+            "Edit Show and tell category": "编辑 “展示与讲述” 分类",
+
+            "Delete Announcements category": "删除 “公告” 分类",
+            "Delete General category": "删除 “通常” 分类",
+            "Delete Ideas category": "删除 “想法” 分类",
+            "Delete Polls category": "删除 “投票” 分类",
+            "Delete Q&A category": "删除 “问与答” 分类",
+            "Delete Show and tell category": "删除 “展示与讲述” 分类",
+
+            // 删除分类
+                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
+                "Delete and move": "删除并移动",
+
+            // 删除栏目
+                // [/Delete (.*) section/, "删除 “$1” 栏目"],
+                "Are you sure you want to delete this section? All categories in this section will no longer belong to a section.": "您确定要删除此栏目吗？此栏目中的所有分类将不再属于一个栏目。",
+
+        // 新建 & 编辑 分类 /<user-name>/<repo-name>/discussions/categories/new
+        // /<user-name>/<repo-name>/discussions/categories/<id>/edit
+            "Create category": "创建分类",
+            "Edit category": "编辑分类",
+            "Category name": "分类名称",
+            "Description": "描述",
+            "Add a description (optional)": "添加描述（可选）",
+            "Discussion Format": "讨论形式",
                 "Open-ended discussion": "开放式讨论",
                     "Enable your community to have conversations that don't require a definitive answer to a question. Great for sharing tips and tricks or just chatting.": "使您的社区能够进行对话，不需要对问题作出明确的回答。很适合分享技巧和窍门，或者只是聊天。",
                 "Question / Answer": "问 / 答",
@@ -7237,16 +7270,50 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Poll": "投票",
                     "Gauge interest, vote, and interact with other community members using polls.": "调查兴趣，投票，并使用投票与其他社区成员互动。",
                     "Cannot be changed to polls. Please create a new category for polls.": "不能更改为投票。请为投票创建一个新类别。",
-                "Create": "创建",
-            "Edit category": "编辑分类",
-                "Save changes": "保存更改",
-            // 删除
-                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
-                "Delete and move": "删除并移动",
+            "Add this category to a section (optional)": "将此分类添加到一个栏目（可选）",
+                "No section": "无栏目",
 
-            "Warning:": "警告：",
-            "Changing the Discussion format from Q&A will mean no previously marked answers will be retained.": "将 “讨论” 的形式从 “问答” 改为 “讨论”，意味着以前标记的答案将不会被保留。",
-            "All previous discussions in this category will be considered an announcement, even if not posted by a maintainer or admin.": "所有以前在这个类别的讨论都将被视为公告，即使不是由维护者或管理员发布。",
+            "Create": "创建",
+            "Save changes": "保存更改",
+            "Submitting": "提交中",
+
+            // 顶部提醒
+                "Category Announcements has been created.": "分类 “公告” 已创建",
+                "Category General has been created.": "分类 “通常” 已创建",
+                "Category Ideas has been created.": "分类 “想法” 已创建",
+                "Category Polls has been created.": "分类 “投票” 已创建",
+                "Category Q&A has been created.": "分类 “问与答” 已创建",
+                "Category Show and tell has been created.": "分类 “展示与讲述” 已创建",
+
+                "Category Announcements has been updated.": "分类 “公告” 已更新",
+                "Category General has been updated.": "分类 “通常” 已更新",
+                "Category Ideas has been updated.": "分类 “想法” 已更新",
+                "Category Polls has been updated.": "分类 “投票” 已更新",
+                "Category Q&A has been updated.": "分类 “问与答” 已更新",
+                "Category Show and tell has been updated.": "分类 “展示与讲述” 已更新",
+
+                "Category Announcements has been deleted.": "分类 “公告” 已删除",
+                "Category General has been deleted.": "分类 “通常” 已删除",
+                "Category Ideas has been deleted.": "分类 “想法” 已删除",
+                "Category Polls has been deleted.": "分类 “投票” 已删除",
+                "Category Q&A has been deleted.": "分类 “问与答” 已删除",
+                "Category Show and tell has been deleted.": "分类 “展示与讲述” 已删除",
+
+                // [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
+                // [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
+                // [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
+
+        // 新建 & 编辑栏目 /<user-name>/<repo-name>/discussions/sections/new
+            "Create section": "创建栏目",
+            "Section name": "栏目名称",
+            "Add categories to this section": "向栏目添加分类",
+            "A category can only belong to one section at a time.": "一个分类一次只能属于一个栏目。",
+
+            // 顶部提醒
+                // [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
+                // [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
+                // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
+
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
@@ -7404,7 +7471,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
             "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
 
-
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
@@ -7428,6 +7494,17 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
         [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
+        [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
+        [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
+        [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
+        [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
+        [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
+        [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
+        [/Delete (.*) category/, "删除分类 “$1”"],
+        [/Edit (.*) category/, "编辑 “$1” 分类"],
+        [/Edit section (.*)/, "编辑栏目 “$1”"],
+        [/Delete section (.*)/, "删除栏目 “$1”"],
+        [/Delete (.*) section/, "删除 “$1” 栏目"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
