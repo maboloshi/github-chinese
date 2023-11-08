@@ -4215,6 +4215,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom properties": "自定义属性",
+                        "View custom properties, write repository values, and administer definitions.": "查看自定义属性、写入仓库值并管理定义。",
                     "Custom repository roles": "自定义仓库角色",
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
