@@ -318,6 +318,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Signed in as": "登录身份为",
         "Set status": "状态设置",
         "Your profile": "我的个人资料",
+        "Add account": "添加账户",
+            "Switch account": "切换账户",
         "Your sponsorships": "我的捐助者",
         "Your repositories": "我的仓库",
         "Your codespaces": "我的代码空间",
@@ -11585,6 +11587,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Sign in": "登录",
             "Sign in with a passkey": "使用通行密钥登录",
             "Signing in…": "登录中…",
+
+            "Add an account": "添加账号", // 添加新账号
+            "Want to create an account?": "想要新建一个帐户吗？", // 添加新账号
 
             "Or": "或",
             // "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
