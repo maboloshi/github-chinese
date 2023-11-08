@@ -8757,7 +8757,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "learn more about auto-dismissing alerts.": "了解更多关于自动撤消警报的信息。",
 
             "Auto-triage your alerts": "自动分类您的警报",
-                "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面强制执行。免费供开源项目使用，私人软件仓库需要通过",
+                "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面强制执行。免费供开源项目使用，私有仓库需要通过",
                 "GitHub Advanced Security.": "GitHub 高级安全性。",
                 "Learn more about auto-triage": "了解更多关于自动分类的信息",
 
