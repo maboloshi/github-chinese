@@ -403,10 +403,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Blog": "博客",
         "About": "关于",
 
-        // 评论编辑器翻译
+        // 描述、评论编辑器翻译
+        "Add a comment": "添加评论",
+        "Add a body": "添加内容",
         "Write": "撰写",
+            "Add your comment here...": "在此添加您的评论...",
         "Preview": "预览",
-            "There is no content to preview.": "没有内容可供预览。",
+            "Nothing to preview": "没有可预览的内容。",
             "This file is empty.": "这是一个空文件。",
         "Leave a comment": "发表评论",
         "Write a reply": "发表回复", // 具体讨论页
@@ -420,31 +423,62 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
+        "Add a title": "添加标题",
+        "Add a description": "添加描述",
+            "Add your description here...": "在此添加您的描述...",
+        // 拉取请求 代码审查 回复对话框
+        "Heading": "标题",
+        "Bold": "粗体",
+        "Italic": "斜体",
+        "Quote": "摘引",
+        "Link": "链接",
+        "Numbered list": "有序列表",
+        "Unordered list": "无序列表",
+        "Task list": "任务列表",
+        "Attach files": "附件",
+        "Mention": "提及",
+        "Reference": "引用",
+        "Saved replies": "快速回复",
+            "Select a reply": "选择一个回复",
+            "Create a new saved reply": "创建新的快速回复",
+        "Slash commands": "斜杠命令",
+            "Code block": "代码块",
+                "Insert a code block formatted for a chosen syntax": "插入针对所选语法格式化的代码块",
+            "Details": "详细信息",
+                "Add a details tag to hide content behind a visible heading": "添加详情标签，将内容隐藏在可见标题后面",
+            // "快速回复": "",
+                "Insert one of your saved replies": "插入您快速回复",
+            "Table": "表格",
+                "Add markdown table": "添加 Markdown 表格",
+            "Templates": "模板",
+                "Insert one of your issue templates": "插入您的议题模板",
 
-        "Add a suggestion, <Ctrl+g>": "添加建议，<Ctrl+g>", // 拉取请求 代码审查 回复对话框
-        "Add heading text": "添加标题文本",
-        "Add bold text, <Ctrl+b>": "添加粗体文本 <Ctrl+b>",
-        "Add italic text, <Ctrl+i>": "添加斜体文本 <Ctrl+i>",
-        "Add a quote, <Ctrl+Shift+.>": "添加引用 <Ctrl+Shift+.>",
-        "Add code, <Ctrl+e>": "添加代码 <Ctrl+e>",
-        "Add a link, <Ctrl+k>": "添加链接 <Ctrl+k>",
-        "Add a bulleted list, <Ctrl+Shift+8>": "添加无序列表 <Ctrl+Shift+8>",
-        "Add a numbered list, <Ctrl+Shift+7>": "添加有序列表 <Ctrl+Shift+7>",
-        "Add a task list, <Ctrl+Shift+l>": "添加任务列表 <Ctrl+Shift+l>",
-        "Directly mention a user or team": "直接提及用户或团队",
-        "Attach an image or video": "附加图片或视频", // 小屏
-        "Reference an issue, pull request or discussion": "引用议题，拉取请求或讨论",
-        "Reference an issue, pull request, or discussion": "引用议题，拉取请求或讨论",
-        "Reference an issue or pull request": "引用议题或拉取请求",
-        "Add saved reply": "添加快捷回复",
-            "Select a reply": "选择回复",
-            "Filter replies…": "筛选回复",
-            "Default replies": "默认快捷回复",
-            "Duplicate issue": "重复议题",
-            // "Duplicate of #": "重复 #",
-            "Duplicate pull request": "重复拉取请求",
-            // "Duplicate of #": "重复 #",
-            "Create a new saved reply…": "创建新快捷回复…",
+            "Slash": "斜杠",
+            // 代码块
+            "No Syntax": "无语法",
+            // 快速回复
+            "No saved replies": "尚无快速回复",
+            "You can create one in your": "您可以创建一个在您的",
+            "settings": "设置",
+            // 表格
+            "Columns": "列",
+            "1 column": "1 列",
+            "2 columns": "2 列",
+            "3 columns": "3 列",
+            "4 columns": "4 列",
+            "5 columns": "5 列",
+
+            "Rows": "行",
+            "1 row": "1 行",
+            "2 rows": "2 行",
+            "3 rows": "3 行",
+            "4 rows": "4 行",
+            "5 rows": "5 行",
+
+            // 模板
+            "No issue templates": "尚无议题模板",
+            "Learn more about": "了解更多关于",
+            "issue templates": "议题模板",
 
         // 小屏 插入链接 对话框
             "Insert Link": "插入链接",
