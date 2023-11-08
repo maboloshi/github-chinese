@@ -59,7 +59,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -3408,7 +3408,6 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
         ...I18N.zh["settings-menu"]["static"],
 
         // 代码安全性与分析 https://github.com/settings/security_analysis
-            "Configure security and analysis features": "配置安全和分析功能",
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "User": "用户",
@@ -3485,7 +3484,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -3756,6 +3756,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
             "The full URL to your GitHub App’s website.": "GitHub 应用网站的主页地址",
             "Identifying and authorizing users": "识别并授权用户",
             "The full URL to redirect to after a user authorizes an installation.": "用户授权安装后重定向到的完整地址。",
+            "Callback URL documentation": "回调地址文档",
             "Add Callback URL": "添加回调地址",
             "Callback URL": "回调地址",
             "Expire user authorization tokens": "用户授权令牌",
@@ -3873,6 +3874,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom properties": "自定义属性",
+                        "View custom properties, write repository values, and administer definitions.": "查看自定义属性、写入仓库值并管理定义。",
                     "Custom repository roles": "自定义仓库角色",
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
@@ -3941,6 +3944,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
 
             "Subscribe to events": "订阅事件",
                 "Based on the permissions you’ve selected, what events would you like to subscribe to?": "根据您选择的权限，您想订阅哪些事件？",
+                "Installation target": "安装目标",
+                    "A GitHub App installation target is renamed.": "GitHub 应用程序安装目标已重命名。",
                 "Meta": "元",
                     "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的钩子被删除时。",
                 "Security advisory": "安全提示",
@@ -4215,6 +4220,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom properties": "自定义属性",
+                        "View custom properties, write repository values, and administer definitions.": "查看自定义属性、写入仓库值并管理定义。",
                     "Custom repository roles": "自定义仓库角色",
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
@@ -11193,42 +11200,47 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "Private vulnerability reporting": "私下漏洞报告",
-            "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
-            "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
+                "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
+                "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
 
-                //对话框
-                "Disable dependency graph": "禁用依赖关系图",
-                "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。",
-            "Dependabot alerts": "Dependabot 警报",
-                "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
-                "Enable Dependabot alerts": "启用 Dependabot 警报",
-                    "Dependabot alerts need the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。",
+                // 禁用对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                        "Disabling the dependency graph will also disable Dependabot alerts and Dependabot security updates.": "禁用依赖关系图也会禁用 Dependabot 警报和 Dependabot 安全更新。", // Dependabot 警报和 Dependabot 安全更新启用时
+                        "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。", // Dependabot 警报启用, Dependabot 安全更新未启用时
 
-                // "Dependabot": "",
+            // Dependabot
                 "Keep your dependencies secure and up-to-date.":"保持您的依赖关系的安全和最新",
                 "Learn more about Dependabot": "了解更多关于 Dependabot 的信息",
 
-                //Dependabot 警报
-                "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
-                "Configure alert notifications": "配置警报通知",
+                "Dependabot alerts": "Dependabot 警报",
+                    "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
+                    "Configure alert notifications": "配置警报通知",
+
+                    // 启用对话框
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                            "Dependabot alerts needs the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。", // 依赖关系图未启用时
+
+                    // 禁用对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                            "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。", // Dependabot 安全更新启用时
+
                     "Dependabot rules": "Dependabot 规则",
-                    "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
-                    // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
-
-                    "Dismiss low impact alerts": "消除低影响警报",
-                        "Dependabot will auto-dismiss alerts that are unlikely to be exploitable or have limited impact.": "Dependabot 将自动消除不太可能被利用或影响有限的警报。",
-                        "Learn more about auto-dismissing alerts.": "了解更多关于自动消除警报的信息。",
-
-                // 对话框
-                "Disable Dependabot alerts": "禁用 Dependabot 警报",
-                "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        "Review and manage alert presets.": "查看和管理警报预设。", //私有库
+                        // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。", // 私有库
+
+                // 启用对话框
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也会将它们打开。",
 
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
@@ -11303,81 +11315,6 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) rules? enabled/, "已启用 $1 条规则"],
-    ],
-};
-
-I18N.zh["repository/settings/dependabot_rules"] = { // 仓库设置 - 代码安全性与分析 - Dependabot 规则  /<user-name>/<repo-name>/settings/dependabot_rules
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-        ...I18N.zh["repository-settings-menu"]["static"],
-
-        // 仓库设置 - 代码安全性与分析 - Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules
-            "Code Security & Analysis": "代码安全性与分析",
-            "/ Dependabot rules": "/ Dependabot 规则",
-            "New rule": "新建规则",
-            "Select one or more rules below that you would like Dependabot to evaluate on your behalf.": "在下面选择一条或多条您希望 Dependabot 代表您进行评估的规则。",
-            "Dismiss low impact issues for development-scoped dependencies": "忽略开发范围内依赖项的低影响问题",
-            "In a developer (non-production or runtime) environment, these alerts are unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报无法被利用或影响有限，如缓慢构建或长时间运行的测试。",
-            "Learn more about this methodology.": "了解更多关于此方法的信息。",
-            "Save rules": "保存规则",
-            "Edit custom rule": "编辑自定义规则",
-
-            // 顶部提醒
-                "Rule created.": "规则已创建。",
-                "Rule was successfully deleted.": "规则已成功删除。",
-
-        // 仓库设置 - 代码安全性与分析 - 新建 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/new
-            "Dependabot rules": "Dependabot 规则",
-            "/ New rule": "/ 新建规则",
-            "Name": "名称",
-                "Describe what this rule will do": "描述本规则的作用",
-            "Criteria": "规范",
-                "Add one or more rule attributes": "添加一个或多个规则属性",
-                "Suggested filters": "建议的筛选器",
-                "severity:": "严重性：",
-                    "critical, high, moderate, low": "严重、高、中、低",
-                    "Severities": "严重性",
-                    "critical": "严重",
-                    "high": "高",
-                    "moderate": "中",
-                    "low": "低",
-                "package:": "软件包：",
-                    "package-name": "软件包名称",
-                "ecosystem:": "生态系统：",
-                    "ecosystem-name": "生态系统名称",
-                "scope:": "范围：",
-                    "runtime, development": "运行时，开发",
-                    "Scopes": "范围",
-                    "runtime": "运行时",
-                    "development": "开发",
-                "manifest:": "清单：",
-                    "manifest-name": "清单名称",
-                "cwe:": "cwe：",
-                    "cwe-number": "cwe 编号",
-            "Dismiss this alert": "忽略此警报",
-                "Auto-dismiss the alert. Reopen if alert metadata changes, voiding the rule.": "自动关闭警报。如果警报元数据发生变化，则重新打开，从而使规则无效。",
-                "Until patch is available": "直到补丁可用",
-                "Indefinitely": "无限期",
-            "Create rule": "创建规则",
-
-        // 仓库设置 - 代码安全性与分析 - 编辑 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/edit/<id>
-            "/ Edit rule": "/ 编辑规则",
-            "Revert changes": "恢复更改",
-            "Save changes": "保存更改",
-
-            "Danger Zone": "危险区",
-                "Delete this rule": "删除规则",
-                "Deleting this rule can potentially reopen associated alerts.": "删除此规则可能会重新打开相关警报。",
-                "Delete rule": "删除规则",
-
-                // 删除对话框
-                "Are you sure you want to delete this rule?": "您确定要删除此规则吗？",
-                // [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
     ],
 };
 
@@ -14988,8 +14925,13 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
                     // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
 
+                    "Dependabot rules": "Dependabot 规则",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        // [/(\d+) rules? enabled/, "$1 条规则启用"],
+
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -15039,8 +14981,107 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
         [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
         [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
         [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+        [/(\d+) rules? enabled/, "$1 条规则启用"],
     ],
 };
+
+I18N.zh["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot 规则
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"],
+
+        // Dependabot 规则 /organizations/<org-login>/settings/dependabot_rules
+            // 顶部提醒
+                "Rule created.": "规则已创建。", // 仓库规则
+                "Rule saved. It may take a moment for this rule to be applied to matching alerts": "规则已保存。此规则可能需要一段时间才能应用于匹配的警报",
+                "Rule saved.": "规则已保存。",
+                "Rule was successfully deleted.": "规则已成功删除。",
+
+            "/ Dependabot rules": "/ Dependabot 规则",
+            "New rule": "新建规则",
+            "GitHub presets": "GitHub 预设",
+                "Managed by GitHub": "由 GitHub 管理",
+                "Edit curated rule": "编辑策划规则",
+                "Edit rule": "编辑规则",  // 仓库规则
+                "Dismiss low-impact alerts for development-scoped dependencies": "解除开发范围下依赖关系的低影响警报",
+                    "In a developer (non-production or runtime) environment, these alerts are unlikely to be unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报不可能不被利用或效果有限，例如缓慢的构建或长时间运行的测试。",
+                    "Learn more about this methodology.": "了解更多关于此方式的信息。",
+            "Repository rules": "仓库规则", // 仓库规则
+            "Organization rules": "组织规则",
+                // [/Managed by ([^ ]+)/, "由 $1 管理"],
+                "Edit custom rule": "编辑自定义规则",
+
+        // 新建规则 /organizations/<org-login>/settings/dependabot_rules/new
+            // 顶部警告
+                "The following inputs have errors:": "以下输入有错误：",
+
+            "Dependabot rules": "Dependabot 规则",
+            "/ New rule": "/ 新建规则",
+            "Rule name": "规则名称",
+                "Add a rule name": "添加规则名称",
+            "State": "状态",
+                "Rules will target all public repositories in this organization.": "规则将针对该组织中的所有公共仓库。",
+                    "Enabled": "启用",
+                        "Rule is enabled by default for all public repositories.": "默认情况下，规则对所有公共仓库启用。",
+                    "Enforced": "强制",
+                        "Rule is enabled for all public repositories and can never be disabled by individual repositories.": "规则对所有公共仓库启用，单个仓库永远无法禁用。",
+                    "Disabled": "禁用",
+                        "Rule can never be enabled on any repositories.": "规则永远不能在任何仓库中启用。",
+            "Target alerts": "目标警告",
+                "Add rule metadata": "添加规则元数据",
+                    "Suggested filters": "建议的过滤器",
+                        "severity:": "严重度：",
+                            "critical, high, moderate, low": "严重、高、中、低",
+                                "Severities": "严重度",
+                                    "critical": "严重",
+                                    "high": "高",
+                                    "moderate": "中",
+                                    "low": "低",
+                        "package:": "软件包：",
+                            "package-name": "软件包名称",
+                        "ecosystem:": "生态系统：",
+                            "ecosystem-name": "生态系统名称",
+                        "scope:": "范围：",
+                            "runtime, development": "运行时、开发",
+                                "Scopes": "范围",
+                                    "runtime": "运行时",
+                                    "development": "开发",
+                        "cwe:": "CWE：",
+                            "cwe-number": "CWE 号码",
+                "Rules will be applied for alerts matching all included metadata.": "规则将应用于与所有包含的元数据匹配的警报。",
+            "Rules": "规则",
+                "Select one or more rules to apply to matching alerts.": "选择一个或多个规则以应用于匹配的警报。",
+                "Dismiss alerts": "忽略警报",
+                    "Dependabot will automatically close or reopen alerts based on selected criteria.": "Dependabot 将根据选定的条件自动关闭或重新打开警报。",
+                    "Until patch is available": "直到补丁可用为止",
+                    "Indefinitely": "无限期",
+                "Open a pull request to resolve alerts": "打开拉取请求以解决警报",
+                    "Dependabot will attempt to open security updates based on selected criteria.": "Dependabot 将尝试根据选定的标准打开安全更新。",
+            "Create rule": "创建规则",
+
+        // 编辑规则 /organizations/<org-login>/settings/dependabot_rules/edit/<id>
+            "/ Edit rule": "/ 编辑规则",
+            "Save rule": "保存规则",
+
+            "Danger Zone": "危险区",
+                "Delete this rule": "删除规则",
+                    "Deleting this rule can potentially reopen associated alerts.": "删除此规则可能会重新打开相关警报。",
+                    "Delete rule": "删除规则",
+
+                    "Are you sure you want to delete this rule?": "您确定要删除此规则吗？",
+                        // [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+
+        // 编辑默认规则 /organizations/<org-login>/settings/dependabot_rules/edit_default/1
+            "/ GitHub Preset rule": "/ GitHub 预设规则",
+
+    },
+    "regexp": [ // 正则翻译
+        [/Managed by ([^ ]+)/, "由 $1 管理"],
+        [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+    ],
+};
+I18N.zh["repository/settings/dependabot_rules"] = I18N.zh["orgs/settings/dependabot_rules"];
 
 I18N.zh["orgs/settings/domains"] = { // 组织设置 - 经验证和批准的域名
     "static": { // 静态翻译
