@@ -4726,7 +4726,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "A": " ",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
-            "No available destinations to fork this repository.": "您已复刻此仓库。",
+            "No available destinations to fork this repository.": "没有复刻此仓库的可用目标。",
             "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
             "Creating fork…": "正在创建复刻…",
 
