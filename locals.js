@@ -7352,7 +7352,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
-            "If this doesn’t look right you can ": "如果这个看起来不对，你可以",
+            "If this doesn’t look right you can": "如果这个看起来不对，你可以",
             "choose a different category.": "选择不同的类别。",
             "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
             "Discussion title": "讨论标题",
@@ -7367,6 +7367,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
             "Maintainer": "维护者",
+            "Discussion options": "讨论选项",
             "Category": "分类",
 
             // [/(\d+) answers?/, "$1 位答复者"],
@@ -7478,7 +7479,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Delete discussion": "删除讨论",
                 "Delete discussion?": "删除讨论？",
                 "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments.": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
-                "Delete this discussion": "删除讨论。",
+                "Deleting discussion…": "正在删除讨论...",
                 // 顶部提醒
                 "The discussion was successfully deleted.": "该讨论已成功删除。",
 
