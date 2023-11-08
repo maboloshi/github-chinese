@@ -3408,7 +3408,6 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
         ...I18N.zh["settings-menu"]["static"],
 
         // 代码安全性与分析 https://github.com/settings/security_analysis
-            "Configure security and analysis features": "配置安全和分析功能",
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "User": "用户",
@@ -3485,7 +3484,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -11199,42 +11199,47 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "Private vulnerability reporting": "私下漏洞报告",
-            "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
-            "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
+                "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
+                "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
 
-                //对话框
-                "Disable dependency graph": "禁用依赖关系图",
-                "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。",
-            "Dependabot alerts": "Dependabot 警报",
-                "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
-                "Enable Dependabot alerts": "启用 Dependabot 警报",
-                    "Dependabot alerts need the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。",
+                // 禁用对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                        "Disabling the dependency graph will also disable Dependabot alerts and Dependabot security updates.": "禁用依赖关系图也会禁用 Dependabot 警报和 Dependabot 安全更新。", // Dependabot 警报和 Dependabot 安全更新启用时
+                        "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。", // Dependabot 警报启用, Dependabot 安全更新未启用时
 
-                // "Dependabot": "",
+            // Dependabot
                 "Keep your dependencies secure and up-to-date.":"保持您的依赖关系的安全和最新",
                 "Learn more about Dependabot": "了解更多关于 Dependabot 的信息",
 
-                //Dependabot 警报
-                "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
-                "Configure alert notifications": "配置警报通知",
+                "Dependabot alerts": "Dependabot 警报",
+                    "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
+                    "Configure alert notifications": "配置警报通知",
+
+                    // 启用对话框
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                            "Dependabot alerts needs the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。", // 依赖关系图未启用时
+
+                    // 禁用对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                            "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。", // Dependabot 安全更新启用时
+
                     "Dependabot rules": "Dependabot 规则",
-                    "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
-                    // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
-
-                    "Dismiss low impact alerts": "消除低影响警报",
-                        "Dependabot will auto-dismiss alerts that are unlikely to be exploitable or have limited impact.": "Dependabot 将自动消除不太可能被利用或影响有限的警报。",
-                        "Learn more about auto-dismissing alerts.": "了解更多关于自动消除警报的信息。",
-
-                // 对话框
-                "Disable Dependabot alerts": "禁用 Dependabot 警报",
-                "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        "Review and manage alert presets.": "查看和管理警报预设。", //私有库
+                        // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。", // 私有库
+
+                // 启用对话框
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也会将它们打开。",
 
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
@@ -14994,8 +14999,13 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
                     // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
 
+                    "Dependabot rules": "Dependabot 规则",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        // [/(\d+) rules? enabled/, "$1 条规则启用"],
+
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -15045,6 +15055,7 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
         [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
         [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
         [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+        [/(\d+) rules? enabled/, "$1 条规则启用"],
     ],
 };
 
