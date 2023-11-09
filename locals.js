@@ -5976,6 +5976,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 顶部提醒
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
+                "Marked pull request as ready for review.": "标记拉取请求为可审核。",
 
             // 编辑 -> 选择基础库
             "Choose a base branch": "选择基础分支",
@@ -6270,6 +6271,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
             "self-assigned this": "已自我审查",
+            "marked this pull request as ready for review": "已将此拉取请求标记为可审核",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
             "Add more commits by pushing to the": "添加更多提交，通过推送到",
@@ -6279,6 +6281,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "deleted the": "删除",
             "branch": "分支",
             "added": "添加",
+            "requested changes": "要求更改",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -6289,6 +6292,16 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Review has been requested on this pull request. It is not required to merge.": "此拉取请求已请求进行审查。这不是合并的必要条件。",
             // [/(\d+) pending reviewers?/, "$1 名待审者"],
             "was requested for review": "被请求审查",
+
+            // 已请求更改
+                // [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审阅者进行更改。"], // 拉取请求
+
+            "All conversations are resolved": "所有对话均已解决",
+                // [/(\d+) resolved conversations?/, "2 条对话已解决"], // 拉取请求
+
+            "No unresolved conversations": "没有未解决的对话",
+                "There aren't yet any conversations on this pull request.": "此拉取请求尚无任何对话。",
+            "View": "查看",
 
             "This pull request is still a work in progress": "此拉取请求仍在进行中",
                 "Ready for review": "准备审核",
@@ -6362,6 +6375,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 合并拉取请求 按钮下拉
                 "Create a merge commit": "创建合并提交",
                     "All commits from this branch will be added to the base branch via a merge commit.": "该分支的所有提交都将通过合并提交加入到基础分支中。",
+                    "Not enabled for this repository": "未为此仓库启用",
                 "Squash and merge": "压缩合并",
                     // [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"],
                 "Rebase and merge": "变基合并",
@@ -6406,6 +6420,16 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "You’re all set—the": "一切就绪 —",
             "branch can be safely deleted.": "分支可以被安全删除。",
             "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
+                "Use the command line": "使用命令行",
+                "to resolve conflicts before continuing.": "解决冲突后再继续。",
+
+                "Checkout via command line": "通过命令行检出",
+                "If the conflicts on this branch are too complex to resolve in the web editor, you can check it out via command line to resolve the conflicts.": "如果该分支上的冲突过于复杂，无法在 Web 编辑器中解决，您可以通过命令行检出来解决冲突。",
+                "Step 1:": "第 1 步：",
+                    "From your project repository, check out a new branch and test the changes.": "从项目仓库中，检出新分支并测试更改。",
+                "Step 2:": "第 2 步：",
+                    "Merge the changes and update on GitHub.": "合并更改并在 GitHub 上更新。",
+
             "Resolve conflicts": "解决冲突",
                 "Use the": "使用",
                 "web editor": "Web 编辑器",
@@ -6546,6 +6570,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Submit feedback that must be addressed before merging.": "提交合并前必须解决的反馈意见",
                     "Pull request authors can’t request changes on their own pull request": "拉取请求作者不能在自己的拉取请求上请求更改",
                     "Only users with explicit access to this repository may request changes to pull requests": "只有对这个仓库有明确访问权限的用户才能请求更改拉取请求",
+                "Abandon review": "放弃审核",
                 "Submit review": "提交审查",
                 "Cancel review": "取消审核",
                 "pending": "条待处理",
@@ -6585,6 +6610,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Line wrap mode": "换行模式",
                 "No wrap": "不换行",
                 "Soft wrap": "软换行",
+
+            "Sign off and commit merge": "签署并提交合并",
+                "Heads up, this will commit to": "请注意，这将提交到",
+                // [/I understand, sign off and update/, "我明白了，依然签署并更新"],
+                "You are": "您将",
+                "signing off": "签署",
+                // [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
+                "Committing merge…": "正在提交合并...",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -6647,6 +6680,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
         [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
+        [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审阅者进行更改。"], // 拉取请求
+        [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
+        [/I understand, sign off and update/, "我明白了，依然签署并更新"],
+        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
