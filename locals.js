@@ -3546,7 +3546,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
                 "future repositories owned by the resource owner.": "未来仓库所有者拥有的仓库。",
                 "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Only select repositories": "仅选定的仓库",
-                "Select at least one repository": "至少选择一个仓库。",
+                "Select at least one repository.": "至少选择一个仓库。",
                 "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Select repositories": "选择仓库",
             "Search for a repository": "搜索仓库",
