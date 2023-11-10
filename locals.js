@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/(?:users\/[^\/]+\/)(packages)|($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
 
     // 组织路径
-    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
+    rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)/,
 
     /**
      * 忽略区域的 class 正则
@@ -320,7 +320,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Signed in as": "登录身份为",
         "Set status": "状态设置",
         "Your profile": "我的个人资料",
-        "Add account":"添加账户",
+        "Add account": "添加账户",
+            "Switch account": "切换账户",
         "Your sponsorships": "我的捐助者",
         "Your repositories": "我的仓库",
         "Your codespaces": "我的代码空间",
@@ -406,12 +407,15 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Blog": "博客",
         "About": "关于",
 
-        // 评论编辑器翻译
+        // 描述、评论编辑器翻译
+        "Add a comment": "添加评论",
+        "Add a body": "添加内容",
         "Write": "撰写",
+            "Add your comment here...": "在此添加您的评论...",
         "Preview": "预览",
-            "There is no content to preview.": "没有内容可供预览。",
+            "Nothing to preview": "没有可预览的内容。",
             "This file is empty.": "这是一个空文件。",
-        "Add a comment": "发表评论",
+        "Leave a comment": "发表评论",
         "Write a reply": "发表回复", // 具体讨论页
         "Write a comment": "发表回复", // 具体讨论页
         "Suggest an answer": "建议一个答案", // 具体讨论页
@@ -423,31 +427,62 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
+        "Add a title": "添加标题",
+        "Add a description": "添加描述",
+            "Add your description here...": "在此添加您的描述...",
+        // 拉取请求 代码审查 回复对话框
+        "Heading": "标题",
+        "Bold": "粗体",
+        "Italic": "斜体",
+        "Quote": "摘引",
+        "Link": "链接",
+        "Numbered list": "有序列表",
+        "Unordered list": "无序列表",
+        "Task list": "任务列表",
+        "Attach files": "附件",
+        "Mention": "提及",
+        "Reference": "引用",
+        "Saved replies": "快速回复",
+            "Select a reply": "选择一个回复",
+            "Create a new saved reply": "创建新的快速回复",
+        "Slash commands": "斜杠命令",
+            "Code block": "代码块",
+                "Insert a code block formatted for a chosen syntax": "插入针对所选语法格式化的代码块",
+            "Details": "详细信息",
+                "Add a details tag to hide content behind a visible heading": "添加详情标签，将内容隐藏在可见标题后面",
+            // "快速回复": "",
+                "Insert one of your saved replies": "插入您快速回复",
+            "Table": "表格",
+                "Add markdown table": "添加 Markdown 表格",
+            "Templates": "模板",
+                "Insert one of your issue templates": "插入您的议题模板",
 
-        "Add a suggestion, <Ctrl+g>": "添加建议，<Ctrl+g>", // 拉取请求 代码审查 回复对话框
-        "Add heading text": "添加标题文本",
-        "Add bold text, <Ctrl+b>": "添加粗体文本 <Ctrl+b>",
-        "Add italic text, <Ctrl+i>": "添加斜体文本 <Ctrl+i>",
-        "Add a quote, <Ctrl+Shift+.>": "添加引用 <Ctrl+Shift+.>",
-        "Add code, <Ctrl+e>": "添加代码 <Ctrl+e>",
-        "Add a link, <Ctrl+k>": "添加链接 <Ctrl+k>",
-        "Add a bulleted list, <Ctrl+Shift+8>": "添加无序列表 <Ctrl+Shift+8>",
-        "Add a numbered list, <Ctrl+Shift+7>": "添加有序列表 <Ctrl+Shift+7>",
-        "Add a task list, <Ctrl+Shift+l>": "添加任务列表 <Ctrl+Shift+l>",
-        "Directly mention a user or team": "直接提及用户或团队",
-        "Attach an image or video": "附加图片或视频", // 小屏
-        "Reference an issue, pull request or discussion": "引用议题，拉取请求或讨论",
-        "Reference an issue, pull request, or discussion": "引用议题，拉取请求或讨论",
-        "Reference an issue or pull request": "引用议题或拉取请求",
-        "Add saved reply": "添加快捷回复",
-            "Select a reply": "选择回复",
-            "Filter replies…": "筛选回复",
-            "Default replies": "默认快捷回复",
-            "Duplicate issue": "重复议题",
-            // "Duplicate of #": "重复 #",
-            "Duplicate pull request": "重复拉取请求",
-            // "Duplicate of #": "重复 #",
-            "Create a new saved reply…": "创建新快捷回复…",
+            "Slash": "斜杠",
+            // 代码块
+            "No Syntax": "无语法",
+            // 快速回复
+            "No saved replies": "尚无快速回复",
+            "You can create one in your": "您可以创建一个在您的",
+            "settings": "设置",
+            // 表格
+            "Columns": "列",
+            "1 column": "1 列",
+            "2 columns": "2 列",
+            "3 columns": "3 列",
+            "4 columns": "4 列",
+            "5 columns": "5 列",
+
+            "Rows": "行",
+            "1 row": "1 行",
+            "2 rows": "2 行",
+            "3 rows": "3 行",
+            "4 rows": "4 行",
+            "5 rows": "5 行",
+
+            // 模板
+            "No issue templates": "尚无议题模板",
+            "Learn more about": "了解更多关于",
+            "issue templates": "议题模板",
 
         // 小屏 插入链接 对话框
             "Insert Link": "插入链接",
@@ -466,6 +501,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
         "Close with comment": "评论并关闭议题", // issue页 评论框
         "Close pull request": "关闭拉取请求", // pull页 评论框
+        "Close discussion": "关闭讨论", // discussion页 评论框
+            "Close as resolved": "因解决而关闭",
+                "The discussion has been resolved": "讨论已解决",
+            "Close as outdated": "因过时而关闭",
+                "The discussion is no longer relevant": "讨论不再相关",
+            "Close as duplicate": "因重复而关闭",
+                "The discussion is a duplicate of another": "讨论与另一个讨论重复",
         "Comment": "评论",
         "Submit new issue": "提交新议题",
         "Comment on this commit": "评论",
@@ -1416,7 +1458,7 @@ I18N.zh["page-profile"] = { // 个人首页
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
         [/(\d+) contributions? in private repositories?/, "私有仓库 $1 个贡献"],
         [/(\d+|No) contributions?/, function (all, number) {
-            return number === 'No' ? "无贡献" : number+" 次贡献";
+            return number === 'No' ? "无贡献" : number + " 次贡献";
         }],// 贡献日历
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
         // 贡献信息
@@ -1542,8 +1584,8 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
         // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "There aren't any projects yet": "尚无任何项目",
-            "Provide quick access to relevant projects.":"提供快速访问相关项目的途径。",
-            "Add projects to view them here.":"将项目添加到此处查看。",
+            "Provide quick access to relevant projects.": "提供快速访问相关项目的途径。",
+            "Add projects to view them here.": "将项目添加到此处查看。",
 
             "Welcome to the all-new projects": "欢迎访问全新的项目",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
@@ -2314,8 +2356,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
-                "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
-                "15GB of Codespaces storage": "15GB 的代码空间存储",
+                "120 core-hours of Codespaces compute per developer": "每个开发者 120 个核心小时的代码空间计算",
+                "15GB of Codespaces storage per developer": "每个开发者 15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
@@ -2339,7 +2381,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "Your AI pair programmer": "您的人工智能助理程序员",
                     "Your AI powered pair programmer": "您的人工智能助理程序员",
                     "Enable GitHub Copilot": "启用 GitHub Copilot",
-                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议",
+                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
                     "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
@@ -3368,7 +3410,6 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
         ...I18N.zh["settings-menu"]["static"],
 
         // 代码安全性与分析 https://github.com/settings/security_analysis
-            "Configure security and analysis features": "配置安全和分析功能",
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "User": "用户",
@@ -3445,7 +3486,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -3501,11 +3543,13 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Permissions": "权限",
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
-            "This applies to all current": "这适用于所有当前",
-            "and": "和",
-            "future repositories.": "未来的仓库。",
+                "This applies to all current": "这适用于所有当前",
+                "and": "和",
+                "future repositories owned by the resource owner.": "未来仓库所有者拥有的仓库。",
+                "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Only select repositories": "仅选定的仓库",
-                "Select at least one repository. Max 100 repositories.": "至少选择一个仓库。最多 100 个仓库。",
+                "Select at least one repository.": "至少选择一个仓库。",
+                "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Select repositories": "选择仓库",
             "Search for a repository": "搜索仓库",
 
@@ -3716,6 +3760,7 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
             "The full URL to your GitHub App’s website.": "GitHub 应用网站的主页地址",
             "Identifying and authorizing users": "识别并授权用户",
             "The full URL to redirect to after a user authorizes an installation.": "用户授权安装后重定向到的完整地址。",
+            "Callback URL documentation": "回调地址文档",
             "Add Callback URL": "添加回调地址",
             "Callback URL": "回调地址",
             "Expire user authorization tokens": "用户授权令牌",
@@ -3833,6 +3878,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom properties": "自定义属性",
+                        "View custom properties, write repository values, and administer definitions.": "查看自定义属性、写入仓库值并管理定义。",
                     "Custom repository roles": "自定义仓库角色",
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
@@ -3901,6 +3948,8 @@ I18N.zh["settings/apps/new"] = { // 新建 GitHub 应用
 
             "Subscribe to events": "订阅事件",
                 "Based on the permissions you’ve selected, what events would you like to subscribe to?": "根据您选择的权限，您想订阅哪些事件？",
+                "Installation target": "安装目标",
+                    "A GitHub App installation target is renamed.": "GitHub 应用程序安装目标已重命名。",
                 "Meta": "元",
                     "When this App is deleted and the associated hook is removed.": "当该应用被删除和相关的钩子被删除时。",
                 "Security advisory": "安全提示",
@@ -4175,6 +4224,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Manage access to an organization.": "管理对组织的访问。",
                     "Blocking users": "拉黑用户",
                         "View and manage users blocked by the organization.": "查看和管理被组织拉黑的用户。",
+                    "Custom properties": "自定义属性",
+                        "View custom properties, write repository values, and administer definitions.": "查看自定义属性、写入仓库值并管理定义。",
                     "Custom repository roles": "自定义仓库角色",
                         "Create, edit, delete and list custom repository roles.": "创建、编辑、删除和列出自定义仓库角色。",
                     "Events": "活动",
@@ -4660,8 +4711,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
 
-                //"Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on October 17, 2023. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2023 年 10 月 17 日结束。有关详细信息，请参阅",
-                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12,2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",//日期变更修改
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on October 17, 2023. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2023 年 10 月 17 日结束。有关详细信息，请参阅",
                 "changelog": "更新日志",
 
             "Your old repository's clone URL": "您旧仓库的克隆地址",
@@ -4687,9 +4737,9 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "A": " ",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
-            "No available destinations to fork this repository.":"您已复刻此仓库。",
+            "No available destinations to fork this repository.": "没有复刻此仓库的可用目标。",
             "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
-            "Creating fork…":"复刻中……",
+            "Creating fork…": "复刻中…",
 
             "Owners": "所有者",
                 "Choose an owner": "选择所有者",
@@ -4849,6 +4899,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
 
+                    "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
+                        "Start my free trial": "开始我的免费试用",
+                        "Don't show again": "不再显示",
+
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
                     // "Copied!": "✅ 复制成功!",
@@ -4917,6 +4971,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 贡献按钮下拉菜单
                 "No new commits yet. Enjoy your day!": "尚无新提交。祝您愉快！",
                 "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
+                "This branch is not behind the upstream": "这个分支不落后于上游",
                 "Open pull request": "打开拉取请求",
 
             "Sync fork": "同步复刻",
@@ -5368,8 +5423,6 @@ I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
 
 I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
-        "resluts":"结果",
-        "View topic":"查看主题",
         // pull 与 request 公共词条
             "Filters": "筛选",
                 // 筛选下拉菜单
@@ -7088,6 +7141,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "you can choose to feature it": "您可以选择将",
             "here by pinning it.": "其置顶在此处。",
 
+            "Personalize your categories": "自定义您的分类",
+            "Choose categories that fit your community. These could be announcements, Q&A with marked answers, open-ended conversations, or polls for community voting.": "选择适合您社区的类别。这些可以是公告、带有标记答案的问答、开放式对话或用于调查的社区投票。",
+
             "Welcome to discussions!": "欢迎参与讨论！",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more.": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more. To get started, you can create a": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。首先，您可以创建一个",
@@ -7177,10 +7233,14 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 状态词
             "asked a question in": "提出了一个问题在",
             "Unanswered Question": "未解答的问题",
+            "announced": "公布于",
+            "in": "在",
 
         // 讨论分类 /<user-name>/<repo-name>/discussions/categories
             "Manage discussion categories": "管理讨论分类",
+                "Sections are a dropdown of categories. Categories have types of discussions, and discussions within them.": "本栏目是类别的下拉菜单。类别中包含讨论类型和讨论内容。",
             // [/(\d+) categories?/, "$1 个分类"],
+            "Categories without section": "无栏目分类",
             "Announcements": "公告",
                 "Updates from maintainers": "维护者的更新信息",
             "General": "通常",
@@ -7195,13 +7255,39 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Show and tell": "展示与讲述",
                 "Show off something you've made": "炫耀您所做的事情",
 
+            "New section": "新建栏目",
             "New category": "新建分类",
-                "Create category": "创建分类",
-                "Title": "标题",
-                "Category name": "分类名称",
-                "Description": "描述",
-                "Add a description (optional)": "添加描述（可选）",
-                "Discussion Format": "讨论形式",
+
+            "Edit Announcements category": "编辑 “公告” 分类",
+            "Edit General category": "编辑 “通常” 分类",
+            "Edit Ideas category": "编辑 “想法” 分类",
+            "Edit Polls category": "编辑 “投票” 分类",
+            "Edit Q&A category": "编辑 “问与答” 分类",
+            "Edit Show and tell category": "编辑 “展示与讲述” 分类",
+
+            "Delete Announcements category": "删除 “公告” 分类",
+            "Delete General category": "删除 “通常” 分类",
+            "Delete Ideas category": "删除 “想法” 分类",
+            "Delete Polls category": "删除 “投票” 分类",
+            "Delete Q&A category": "删除 “问与答” 分类",
+            "Delete Show and tell category": "删除 “展示与讲述” 分类",
+
+            // 删除分类
+                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
+                "Delete and move": "删除并移动",
+
+            // 删除栏目
+                // [/Delete (.*) section/, "删除 “$1” 栏目"],
+                "Are you sure you want to delete this section? All categories in this section will no longer belong to a section.": "您确定要删除此栏目吗？此栏目中的所有分类将不再属于一个栏目。",
+
+        // 新建 & 编辑 分类 /<user-name>/<repo-name>/discussions/categories/new
+        // /<user-name>/<repo-name>/discussions/categories/<id>/edit
+            "Create category": "创建分类",
+            "Edit category": "编辑分类",
+            "Category name": "分类名称",
+            "Description": "描述",
+            "Add a description (optional)": "添加描述（可选）",
+            "Discussion Format": "讨论形式",
                 "Open-ended discussion": "开放式讨论",
                     "Enable your community to have conversations that don't require a definitive answer to a question. Great for sharing tips and tricks or just chatting.": "使您的社区能够进行对话，不需要对问题作出明确的回答。很适合分享技巧和窍门，或者只是聊天。",
                 "Question / Answer": "问 / 答",
@@ -7211,16 +7297,54 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Poll": "投票",
                     "Gauge interest, vote, and interact with other community members using polls.": "调查兴趣，投票，并使用投票与其他社区成员互动。",
                     "Cannot be changed to polls. Please create a new category for polls.": "不能更改为投票。请为投票创建一个新类别。",
+            "Add this category to a section (optional)": "将此分类添加到一个栏目（可选）",
+                "No section": "无栏目",
+
+                "Create": "创建",
                 "Create": "创建",
             "Edit category": "编辑分类",
-                "Save changes": "保存更改",
-            // 删除
-                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
-                "Delete and move": "删除并移动",
+            "Create": "创建",
+            "Edit category": "编辑分类",
+            "Save changes": "保存更改",
+            "Submitting": "提交中",
 
-            "Warning:": "警告：",
-            "Changing the Discussion format from Q&A will mean no previously marked answers will be retained.": "将 “讨论” 的形式从 “问答” 改为 “讨论”，意味着以前标记的答案将不会被保留。",
-            "All previous discussions in this category will be considered an announcement, even if not posted by a maintainer or admin.": "所有以前在这个类别的讨论都将被视为公告，即使不是由维护者或管理员发布。",
+            // 顶部提醒
+                "Category Announcements has been created.": "分类 “公告” 已创建",
+                "Category General has been created.": "分类 “通常” 已创建",
+                "Category Ideas has been created.": "分类 “想法” 已创建",
+                "Category Polls has been created.": "分类 “投票” 已创建",
+                "Category Q&A has been created.": "分类 “问与答” 已创建",
+                "Category Show and tell has been created.": "分类 “展示与讲述” 已创建",
+
+                "Category Announcements has been updated.": "分类 “公告” 已更新",
+                "Category General has been updated.": "分类 “通常” 已更新",
+                "Category Ideas has been updated.": "分类 “想法” 已更新",
+                "Category Polls has been updated.": "分类 “投票” 已更新",
+                "Category Q&A has been updated.": "分类 “问与答” 已更新",
+                "Category Show and tell has been updated.": "分类 “展示与讲述” 已更新",
+
+                "Category Announcements has been deleted.": "分类 “公告” 已删除",
+                "Category General has been deleted.": "分类 “通常” 已删除",
+                "Category Ideas has been deleted.": "分类 “想法” 已删除",
+                "Category Polls has been deleted.": "分类 “投票” 已删除",
+                "Category Q&A has been deleted.": "分类 “问与答” 已删除",
+                "Category Show and tell has been deleted.": "分类 “展示与讲述” 已删除",
+
+                // [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
+                // [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
+                // [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
+
+        // 新建 & 编辑栏目 /<user-name>/<repo-name>/discussions/sections/new
+            "Create section": "创建栏目",
+            "Section name": "栏目名称",
+            "Add categories to this section": "向栏目添加分类",
+            "A category can only belong to one section at a time.": "一个分类一次只能属于一个栏目。",
+
+            // 顶部提醒
+                // [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
+                // [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
+                // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
+
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
@@ -7252,7 +7376,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
-            "If this doesn’t look right you can ": "如果这个看起来不对，你可以",
+            "If this doesn’t look right you can": "如果这个看起来不对，你可以",
             "choose a different category.": "选择不同的类别。",
             "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
             "Discussion title": "讨论标题",
@@ -7267,6 +7391,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
             "Maintainer": "维护者",
+            "Discussion options": "讨论选项",
             "Category": "分类",
 
             // [/(\d+) answers?/, "$1 位答复者"],
@@ -7332,6 +7457,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
+            "Unlock conversation": "解锁对话",
+                "Are you sure you want to unlock conversation on this discussion?": "您确定要解锁此讨论的对话吗？",
+                "Everyone": "任何人",
+                "will be able to comment on this discussion once more.": "将能够再次对这个讨论发表评论。",
+                "You can always lock this discussion again in the future.": "您今后仍可以随时再次锁定此讨论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
@@ -7349,15 +7479,33 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Are you sure you want to unpin this discussion?": "您确定要取消置顶讨论吗？",
                 "The discussion itself won't be deleted, it just won't be shown prominently above the list of discussions.": "讨论本身不会被删除，只是不会突出显示在讨论列表上方。",
                 // 顶部提醒
-                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
+            "Pin discussion to Announcements": "将讨论置顶到 “公告”",
+                "Pin this discussion to this category": "将此讨论置顶到此类别",
+                    "This will pin this discussion to the top of the Announcements category.": "这将此讨论置顶到 “公告” 类别顶部。",
+                    "Pin to Announcements": "置顶到 “公告”",
+            "Pin discussion to General": "将讨论置顶到 “通常”",
+                    "This will pin this discussion to the top of the General category.": "这将此讨论置顶到 “通常” 类别顶部。",
+                    "Pin to General": "置顶到 “通常”",
+            "Pin discussion to Ideas": "将讨论置顶到 “想法”",
+                    "This will pin this discussion to the top of the Ideas category.": "这将此讨论置顶到 “想法” 类别顶部。",
+                    "Pin to Ideas": "置顶到 “想法”",
+            "Pin discussion to Polls": "将讨论置顶到 “投票”",
+                    "This will pin this discussion to the top of the Polls category.": "这将此讨论置顶到 “投票” 类别顶部。",
+                    "Pin to Polls": "置顶到 “投票”",
+            "Pin discussion to Q&A": "将讨论置顶到 “问与答”",
+                    "This will pin this discussion to the top of the Q&A category.": "这将此讨论置顶到 “问与答” 类别顶部。",
+                    "Pin to Q&A": "置顶到 “问与答”",
+            "Pin discussion to Show and tell": "将讨论置顶到 “展示与讲述”",
+                    "This will pin this discussion to the top of the Show and tell category.": "这将此讨论置顶到 “展示与讲述” 类别顶部。",
+                    "Pin to Show and tell": "置顶到 “展示与讲述”",
             "Create issue from discussion": "从讨论中创建议题",
             "Delete discussion": "删除讨论",
                 "Delete discussion?": "删除讨论？",
-                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
-                "Delete this discussion": "删除讨论",
+                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments.": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
+                "Deleting discussion…": "正在删除讨论...",
                 // 顶部提醒
                 "The discussion was successfully deleted.": "该讨论已成功删除。",
-
 
             "The original post will be copied into a new issue, and the discussion will remain active.": "原帖将被复制到一个新的议题中，讨论将保持活跃。",
             "OK, got it!": "好的，我知道了！",
@@ -7378,7 +7526,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
             "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
 
-
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
@@ -7395,13 +7542,24 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) repl(y|ies)?/, "$1 条回复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
-        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
+        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
         [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
         [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
+        [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
+        [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
+        [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
+        [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
+        [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
+        [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
+        [/Delete (.*) category/, "删除分类 “$1”"],
+        [/Edit (.*) category/, "编辑 “$1” 分类"],
+        [/Edit section (.*)/, "编辑栏目 “$1”"],
+        [/Delete section (.*)/, "删除栏目 “$1”"],
+        [/Delete (.*) section/, "删除 “$1” 栏目"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -8618,9 +8776,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Opt out": "设置",
             "learn more about auto-dismissing alerts.": "了解更多关于自动撤消警报的信息。",
 
-            "Auto-triage your alerts":"自动分类您的警报",
-            "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through GitHub Advanced Security.":"控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面执行。免费供开源项目使用,通过 GitHub 高级安全功能可以用于私有仓库。",
-            "Learn more about auto-triage":"了解更多关于自动分类的信息",
+            "Auto-triage your alerts": "自动分类您的警报",
+                "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面强制执行。免费供开源项目使用，私有仓库需要通过",
+                "GitHub Advanced Security.": "GitHub 高级安全性。",
+                "Learn more about auto-triage": "了解更多关于自动分类的信息",
 
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
@@ -11053,42 +11212,47 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "Private vulnerability reporting": "私下漏洞报告",
-            "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
-            "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
+                "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
+                "Learn more about private vulnerability reporting": "了解更多关于私下漏洞报告的信息",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Dependency graph is always enabled for public repos.": "公共仓库始终启用依赖关系图。",
 
-                //对话框
-                "Disable dependency graph": "禁用依赖关系图",
-                "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。",
-            "Dependabot alerts": "Dependabot 警报",
-                "Receive alerts of new vulnerabilities that affect your dependencies.": "接收有关影响您的依赖项的新漏洞的警报。",
-                "Enable Dependabot alerts": "启用 Dependabot 警报",
-                    "Dependabot alerts need the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。",
+                // 禁用对话框
+                    "Disable dependency graph": "禁用依赖关系图",
+                        "Disabling the dependency graph will also disable Dependabot alerts and Dependabot security updates.": "禁用依赖关系图也会禁用 Dependabot 警报和 Dependabot 安全更新。", // Dependabot 警报和 Dependabot 安全更新启用时
+                        "Disabling the dependency graph will also disable Dependabot alerts.": "禁用依赖关系图也会禁用 Dependabot 警报。", // Dependabot 警报启用, Dependabot 安全更新未启用时
 
-                // "Dependabot": "",
+            // Dependabot
                 "Keep your dependencies secure and up-to-date.":"保持您的依赖关系的安全和最新",
                 "Learn more about Dependabot": "了解更多关于 Dependabot 的信息",
 
-                //Dependabot 警报
-                "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
-                "Configure alert notifications": "配置警报通知",
+                "Dependabot alerts": "Dependabot 警报",
+                    "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
+                    "Configure alert notifications": "配置警报通知",
+
+                    // 启用对话框
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                            "Dependabot alerts needs the dependency graph to be enabled, so we'll turn that on too.": "Dependabot 警报需要启用依赖关系图，因此我们也将启用它。", // 依赖关系图未启用时
+
+                    // 禁用对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                            "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。", // Dependabot 安全更新启用时
+
                     "Dependabot rules": "Dependabot 规则",
-                    "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
-                    // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
-
-                    "Dismiss low impact alerts": "消除低影响警报",
-                        "Dependabot will auto-dismiss alerts that are unlikely to be exploitable or have limited impact.": "Dependabot 将自动消除不太可能被利用或影响有限的警报。",
-                        "Learn more about auto-dismissing alerts.": "了解更多关于自动消除警报的信息。",
-
-                // 对话框
-                "Disable Dependabot alerts": "禁用 Dependabot 警报",
-                "Disabling Dependabot alerts will also disable Dependabot security updates.": "禁用 Dependabot 警报也将禁用 Dependabot 安全更新。",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        "Review and manage alert presets.": "查看和管理警报预设。", //私有库
+                        // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
             "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。", // 私有库
+
+                // 启用对话框
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也会将它们打开。",
 
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
@@ -11163,81 +11327,6 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) rules? enabled/, "已启用 $1 条规则"],
-    ],
-};
-
-I18N.zh["repository/settings/dependabot_rules"] = { // 仓库设置 - 代码安全性与分析 - Dependabot 规则  /<user-name>/<repo-name>/settings/dependabot_rules
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-        ...I18N.zh["repository-settings-menu"]["static"],
-
-        // 仓库设置 - 代码安全性与分析 - Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules
-            "Code Security & Analysis": "代码安全性与分析",
-            "/ Dependabot rules": "/ Dependabot 规则",
-            "New rule": "新建规则",
-            "Select one or more rules below that you would like Dependabot to evaluate on your behalf.": "在下面选择一条或多条您希望 Dependabot 代表您进行评估的规则。",
-            "Dismiss low impact issues for development-scoped dependencies": "忽略开发范围内依赖项的低影响问题",
-            "In a developer (non-production or runtime) environment, these alerts are unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报无法被利用或影响有限，如缓慢构建或长时间运行的测试。",
-            "Learn more about this methodology.": "了解更多关于此方法的信息。",
-            "Save rules": "保存规则",
-            "Edit custom rule": "编辑自定义规则",
-
-            // 顶部提醒
-                "Rule created.": "规则已创建。",
-                "Rule was successfully deleted.": "规则已成功删除。",
-
-        // 仓库设置 - 代码安全性与分析 - 新建 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/new
-            "Dependabot rules": "Dependabot 规则",
-            "/ New rule": "/ 新建规则",
-            "Name": "名称",
-                "Describe what this rule will do": "描述本规则的作用",
-            "Criteria": "规范",
-                "Add one or more rule attributes": "添加一个或多个规则属性",
-                "Suggested filters": "建议的筛选器",
-                "severity:": "严重性：",
-                    "critical, high, moderate, low": "严重、高、中、低",
-                    "Severities": "严重性",
-                    "critical": "严重",
-                    "high": "高",
-                    "moderate": "中",
-                    "low": "低",
-                "package:": "软件包：",
-                    "package-name": "软件包名称",
-                "ecosystem:": "生态系统：",
-                    "ecosystem-name": "生态系统名称",
-                "scope:": "范围：",
-                    "runtime, development": "运行时，开发",
-                    "Scopes": "范围",
-                    "runtime": "运行时",
-                    "development": "开发",
-                "manifest:": "清单：",
-                    "manifest-name": "清单名称",
-                "cwe:": "cwe：",
-                    "cwe-number": "cwe 编号",
-            "Dismiss this alert": "忽略此警报",
-                "Auto-dismiss the alert. Reopen if alert metadata changes, voiding the rule.": "自动关闭警报。如果警报元数据发生变化，则重新打开，从而使规则无效。",
-                "Until patch is available": "直到补丁可用",
-                "Indefinitely": "无限期",
-            "Create rule": "创建规则",
-
-        // 仓库设置 - 代码安全性与分析 - 编辑 Dependabot 规则 /<user-name>/<repo-name>/settings/dependabot_rules/edit/<id>
-            "/ Edit rule": "/ 编辑规则",
-            "Revert changes": "恢复更改",
-            "Save changes": "保存更改",
-
-            "Danger Zone": "危险区",
-                "Delete this rule": "删除规则",
-                "Deleting this rule can potentially reopen associated alerts.": "删除此规则可能会重新打开相关警报。",
-                "Delete rule": "删除规则",
-
-                // 删除对话框
-                "Are you sure you want to delete this rule?": "您确定要删除此规则吗？",
-                // [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/This will permanently delete the rule \"(.+)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
     ],
 };
 
@@ -11558,7 +11647,6 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 登录页 https://github.com/login
             "Sign in to GitHub": "登录 GitHub",
             "Sign in to": "登录",
-            "Add an account":"添加账户",
             "to continue to": "继续登录",
             "Username or email address": "用户名或电子邮箱",
             "Password": "密码",
@@ -11566,6 +11654,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Sign in": "登录",
             "Sign in with a passkey": "使用通行密钥登录",
             "Signing in…": "登录中…",
+
+            "Add an account": "添加账号", // 添加新账号
+            "Want to create an account?": "想要新建一个帐户吗？", // 添加新账号
 
             "Or": "或",
             // "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
@@ -13226,11 +13317,12 @@ I18N.zh["trending"] = { // 热门页面
 
         "Spoken Language:": "母语：",
             "Select a spoken language": "选择母语：",
-            "This setting can be saved in your": "此设置可以保存在您的",
-            "profile settings.": "个人资料设置",
+            "This setting can be updated in your": "此设置可以在您的",
+            "profile settings.": "个人资料设置更新。",
             "Filter spoken languages": "筛选母语",
+            "Clear spoken language": "清除母语",
             "Any": "任何",
-        "Language:": "语言:",
+        "Language:": "语言：",
             "Select a language": "选择语言：",
             "Filter languages": "筛选语言",
             "Unknown languages": "未知语言",
@@ -14846,8 +14938,13 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
                     // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
 
+                    "Dependabot rules": "Dependabot 规则",
+                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                        // [/(\d+) rules? enabled/, "$1 条规则启用"],
+
             "Dependabot security updates": "Dependabot 安全更新",
-                "Allow Dependabot to open pull requests automatically to resolve Dependabot alerts.": "允许 Dependabot 自动打开拉取请求，以解决 Dependabot 警报。",
+                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                    // "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
                 "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
@@ -14897,8 +14994,107 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
         [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。"],
         [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
         [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。"],
+        [/(\d+) rules? enabled/, "$1 条规则启用"],
     ],
 };
+
+I18N.zh["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot 规则
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"],
+
+        // Dependabot 规则 /organizations/<org-login>/settings/dependabot_rules
+            // 顶部提醒
+                "Rule created.": "规则已创建。", // 仓库规则
+                "Rule saved. It may take a moment for this rule to be applied to matching alerts": "规则已保存。此规则可能需要一段时间才能应用于匹配的警报",
+                "Rule saved.": "规则已保存。",
+                "Rule was successfully deleted.": "规则已成功删除。",
+
+            "/ Dependabot rules": "/ Dependabot 规则",
+            "New rule": "新建规则",
+            "GitHub presets": "GitHub 预设",
+                "Managed by GitHub": "由 GitHub 管理",
+                "Edit curated rule": "编辑策划规则",
+                "Edit rule": "编辑规则",  // 仓库规则
+                "Dismiss low-impact alerts for development-scoped dependencies": "解除开发范围下依赖关系的低影响警报",
+                    "In a developer (non-production or runtime) environment, these alerts are unlikely to be unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报不可能不被利用或效果有限，例如缓慢的构建或长时间运行的测试。",
+                    "Learn more about this methodology.": "了解更多关于此方式的信息。",
+            "Repository rules": "仓库规则", // 仓库规则
+            "Organization rules": "组织规则",
+                // [/Managed by ([^ ]+)/, "由 $1 管理"],
+                "Edit custom rule": "编辑自定义规则",
+
+        // 新建规则 /organizations/<org-login>/settings/dependabot_rules/new
+            // 顶部警告
+                "The following inputs have errors:": "以下输入有错误：",
+
+            "Dependabot rules": "Dependabot 规则",
+            "/ New rule": "/ 新建规则",
+            "Rule name": "规则名称",
+                "Add a rule name": "添加规则名称",
+            "State": "状态",
+                "Rules will target all public repositories in this organization.": "规则将针对该组织中的所有公共仓库。",
+                    "Enabled": "启用",
+                        "Rule is enabled by default for all public repositories.": "默认情况下，规则对所有公共仓库启用。",
+                    "Enforced": "强制",
+                        "Rule is enabled for all public repositories and can never be disabled by individual repositories.": "规则对所有公共仓库启用，单个仓库永远无法禁用。",
+                    "Disabled": "禁用",
+                        "Rule can never be enabled on any repositories.": "规则永远不能在任何仓库中启用。",
+            "Target alerts": "目标警告",
+                "Add rule metadata": "添加规则元数据",
+                    "Suggested filters": "建议的过滤器",
+                        "severity:": "严重度：",
+                            "critical, high, moderate, low": "严重、高、中、低",
+                                "Severities": "严重度",
+                                    "critical": "严重",
+                                    "high": "高",
+                                    "moderate": "中",
+                                    "low": "低",
+                        "package:": "软件包：",
+                            "package-name": "软件包名称",
+                        "ecosystem:": "生态系统：",
+                            "ecosystem-name": "生态系统名称",
+                        "scope:": "范围：",
+                            "runtime, development": "运行时、开发",
+                                "Scopes": "范围",
+                                    "runtime": "运行时",
+                                    "development": "开发",
+                        "cwe:": "CWE：",
+                            "cwe-number": "CWE 号码",
+                "Rules will be applied for alerts matching all included metadata.": "规则将应用于与所有包含的元数据匹配的警报。",
+            "Rules": "规则",
+                "Select one or more rules to apply to matching alerts.": "选择一个或多个规则以应用于匹配的警报。",
+                "Dismiss alerts": "忽略警报",
+                    "Dependabot will automatically close or reopen alerts based on selected criteria.": "Dependabot 将根据选定的条件自动关闭或重新打开警报。",
+                    "Until patch is available": "直到补丁可用为止",
+                    "Indefinitely": "无限期",
+                "Open a pull request to resolve alerts": "打开拉取请求以解决警报",
+                    "Dependabot will attempt to open security updates based on selected criteria.": "Dependabot 将尝试根据选定的标准打开安全更新。",
+            "Create rule": "创建规则",
+
+        // 编辑规则 /organizations/<org-login>/settings/dependabot_rules/edit/<id>
+            "/ Edit rule": "/ 编辑规则",
+            "Save rule": "保存规则",
+
+            "Danger Zone": "危险区",
+                "Delete this rule": "删除规则",
+                    "Deleting this rule can potentially reopen associated alerts.": "删除此规则可能会重新打开相关警报。",
+                    "Delete rule": "删除规则",
+
+                    "Are you sure you want to delete this rule?": "您确定要删除此规则吗？",
+                        // [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+
+        // 编辑默认规则 /organizations/<org-login>/settings/dependabot_rules/edit_default/1
+            "/ GitHub Preset rule": "/ GitHub 预设规则",
+
+    },
+    "regexp": [ // 正则翻译
+        [/Managed by ([^ ]+)/, "由 $1 管理"],
+        [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+    ],
+};
+I18N.zh["repository/settings/dependabot_rules"] = I18N.zh["orgs/settings/dependabot_rules"];
 
 I18N.zh["orgs/settings/domains"] = { // 组织设置 - 经验证和批准的域名
     "static": { // 静态翻译
@@ -15834,10 +16030,10 @@ I18N.zh["github-copilot/signup"] = { //COPILOT页面
        "Your AI pair programmer":"您的AI编程助手",
        "GitHub Copilot uses the GPT-3.5 Turbo model to offer coding suggestions.":"GitHub Copilot使用GPT-3.5 Turbo模型提供编程建议。",
        "Get code suggestions in more than a dozen coding languages including Python, JavaScript, TypeScript, Go, and Ruby":"支持Python、JavaScript、TypeScript、Go和Ruby等十几种编程语言",
-       "Plugs into IDEs including VS Code, Visual Studio, Neovim, and JetBrains":"可在VS Code,Visual Studio，Neovim和JetBrains等IDE中调用",
+       "Plugs into IDEs including VS Code, Visual Studio, Neovim, and JetBrains":"可在VS Code,Visual Studio，Neovim和JetBrains等IDE中调用",//机翻很怪，适当修改
        "Sign up for an annual subscription and get two months free!":"注册年费会员，即享受两个月免费试用！",
        "Cancel anytime before the trial ends to avoid getting billed":"试用结束前可随时取消",
-       "Pay frequency after trial":"试用期结束后",
+       "Pay frequency after trial":"试用结束后",
        "Monthly plan":"月度套餐",
        "Yearly plan":"年度套餐",
        "Save":"节省",
