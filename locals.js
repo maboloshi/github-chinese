@@ -1456,7 +1456,7 @@ I18N.zh["page-profile"] = { // 个人首页
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
         [/(\d+) contributions? in private repositories?/, "私有仓库 $1 个贡献"],
         [/(\d+|No) contributions?/, function (all, number) {
-            return number === 'No' ? "无贡献" : number+" 次贡献";
+            return number === 'No' ? "无贡献" : number + " 次贡献";
         }],// 贡献日历
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
         // 贡献信息
@@ -2354,8 +2354,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
-                "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
-                "15GB of Codespaces storage": "15GB 的代码空间存储",
+                "120 core-hours of Codespaces compute per developer": "每个开发者 120 个核心小时的代码空间计算",
+                "15GB of Codespaces storage per developer": "每个开发者 15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
@@ -2379,7 +2379,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "Your AI pair programmer": "您的人工智能助理程序员",
                     "Your AI powered pair programmer": "您的人工智能助理程序员",
                     "Enable GitHub Copilot": "启用 GitHub Copilot",
-                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议",
+                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
                     "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
@@ -3541,11 +3541,13 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Permissions": "权限",
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
-            "This applies to all current": "这适用于所有当前",
-            "and": "和",
-            "future repositories.": "未来的仓库。",
+                "This applies to all current": "这适用于所有当前",
+                "and": "和",
+                "future repositories owned by the resource owner.": "资源所有者未来拥有的仓库。",
+                "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Only select repositories": "仅选定的仓库",
-                "Select at least one repository. Max 100 repositories.": "至少选择一个仓库。最多 100 个仓库。",
+                "Select at least one repository.": "至少选择一个仓库。",
+                "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
             "Select repositories": "选择仓库",
             "Search for a repository": "搜索仓库",
 
@@ -4895,6 +4897,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
 
+                    "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
+                        "Start my free trial": "开始我的免费试用",
+                        "Don't show again": "不再显示",
+
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
                     // "Copied!": "✅ 复制成功!",
@@ -4963,6 +4969,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 贡献按钮下拉菜单
                 "No new commits yet. Enjoy your day!": "尚无新提交。祝您愉快！",
                 "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
+                "This branch is not behind the upstream": "这个分支不落后于上游",
                 "Open pull request": "打开拉取请求",
 
             "Sync fork": "同步复刻",
@@ -13306,10 +13313,12 @@ I18N.zh["trending"] = { // 热门页面
         "Spoken Language:": "母语：",
             "Select a spoken language": "选择母语：",
             "This setting can be saved in your": "此设置可以保存在您的",
-            "profile settings.": "个人资料设置",
+            "This setting can be updated in your": "此设置可以更新于您的",
+            "profile settings.": "个人资料。",
             "Filter spoken languages": "筛选母语",
+            "Clear spoken language": "清除母语",
             "Any": "任何",
-        "Language:": "语言:",
+        "Language:": "语言：",
             "Select a language": "选择语言：",
             "Filter languages": "筛选语言",
             "Unknown languages": "未知语言",
