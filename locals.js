@@ -120,6 +120,7 @@ I18N.zh["title"] = { // 标题翻译
         "Join GitHub · GitHub": "加入 GitHub · GitHub",
         "Forgot your password? · GitHub": "忘记您的密码了吗？· GitHub",
         "Forgot your password?": "忘记您的密码了吗？",
+        "Add an account":"添加账户",
         "GitHub · Where software is built": "GitHub - 软件构建的地方",
         "Create a New Repository": "创建新仓库",
         "Import a Repository": "导入仓库",
@@ -193,6 +194,7 @@ I18N.zh["title"] = { // 标题翻译
         "Your starred repositories": "我的星标仓库",
         "Your starred topics": "我的星标主题",
         "Pull Requests": "拉取请求",
+        "Signup to Github Copilot":"登录Github Copilot",
     },
     "regexp": [ // 正则翻译
         [/Repositories/, "仓库"],
@@ -318,8 +320,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Signed in as": "登录身份为",
         "Set status": "状态设置",
         "Your profile": "我的个人资料",
-        "Add account": "添加账户",
-            "Switch account": "切换账户",
+        "Add account":"添加账户",
         "Your sponsorships": "我的捐助者",
         "Your repositories": "我的仓库",
         "Your codespaces": "我的代码空间",
@@ -405,15 +406,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Blog": "博客",
         "About": "关于",
 
-        // 描述、评论编辑器翻译
-        "Add a comment": "添加评论",
-        "Add a body": "添加内容",
+        // 评论编辑器翻译
         "Write": "撰写",
-            "Add your comment here...": "在此添加您的评论...",
         "Preview": "预览",
-            "Nothing to preview": "没有可预览的内容。",
+            "There is no content to preview.": "没有内容可供预览。",
             "This file is empty.": "这是一个空文件。",
-        "Leave a comment": "发表评论",
+        "Add a comment": "发表评论",
         "Write a reply": "发表回复", // 具体讨论页
         "Write a comment": "发表回复", // 具体讨论页
         "Suggest an answer": "建议一个答案", // 具体讨论页
@@ -425,62 +423,31 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
-        "Add a title": "添加标题",
-        "Add a description": "添加描述",
-            "Add your description here...": "在此添加您的描述...",
-        // 拉取请求 代码审查 回复对话框
-        "Heading": "标题",
-        "Bold": "粗体",
-        "Italic": "斜体",
-        "Quote": "摘引",
-        "Link": "链接",
-        "Numbered list": "有序列表",
-        "Unordered list": "无序列表",
-        "Task list": "任务列表",
-        "Attach files": "附件",
-        "Mention": "提及",
-        "Reference": "引用",
-        "Saved replies": "快速回复",
-            "Select a reply": "选择一个回复",
-            "Create a new saved reply": "创建新的快速回复",
-        "Slash commands": "斜杠命令",
-            "Code block": "代码块",
-                "Insert a code block formatted for a chosen syntax": "插入针对所选语法格式化的代码块",
-            "Details": "详细信息",
-                "Add a details tag to hide content behind a visible heading": "添加详情标签，将内容隐藏在可见标题后面",
-            // "快速回复": "",
-                "Insert one of your saved replies": "插入您快速回复",
-            "Table": "表格",
-                "Add markdown table": "添加 Markdown 表格",
-            "Templates": "模板",
-                "Insert one of your issue templates": "插入您的议题模板",
 
-            "Slash": "斜杠",
-            // 代码块
-            "No Syntax": "无语法",
-            // 快速回复
-            "No saved replies": "尚无快速回复",
-            "You can create one in your": "您可以创建一个在您的",
-            "settings": "设置",
-            // 表格
-            "Columns": "列",
-            "1 column": "1 列",
-            "2 columns": "2 列",
-            "3 columns": "3 列",
-            "4 columns": "4 列",
-            "5 columns": "5 列",
-
-            "Rows": "行",
-            "1 row": "1 行",
-            "2 rows": "2 行",
-            "3 rows": "3 行",
-            "4 rows": "4 行",
-            "5 rows": "5 行",
-
-            // 模板
-            "No issue templates": "尚无议题模板",
-            "Learn more about": "了解更多关于",
-            "issue templates": "议题模板",
+        "Add a suggestion, <Ctrl+g>": "添加建议，<Ctrl+g>", // 拉取请求 代码审查 回复对话框
+        "Add heading text": "添加标题文本",
+        "Add bold text, <Ctrl+b>": "添加粗体文本 <Ctrl+b>",
+        "Add italic text, <Ctrl+i>": "添加斜体文本 <Ctrl+i>",
+        "Add a quote, <Ctrl+Shift+.>": "添加引用 <Ctrl+Shift+.>",
+        "Add code, <Ctrl+e>": "添加代码 <Ctrl+e>",
+        "Add a link, <Ctrl+k>": "添加链接 <Ctrl+k>",
+        "Add a bulleted list, <Ctrl+Shift+8>": "添加无序列表 <Ctrl+Shift+8>",
+        "Add a numbered list, <Ctrl+Shift+7>": "添加有序列表 <Ctrl+Shift+7>",
+        "Add a task list, <Ctrl+Shift+l>": "添加任务列表 <Ctrl+Shift+l>",
+        "Directly mention a user or team": "直接提及用户或团队",
+        "Attach an image or video": "附加图片或视频", // 小屏
+        "Reference an issue, pull request or discussion": "引用议题，拉取请求或讨论",
+        "Reference an issue, pull request, or discussion": "引用议题，拉取请求或讨论",
+        "Reference an issue or pull request": "引用议题或拉取请求",
+        "Add saved reply": "添加快捷回复",
+            "Select a reply": "选择回复",
+            "Filter replies…": "筛选回复",
+            "Default replies": "默认快捷回复",
+            "Duplicate issue": "重复议题",
+            // "Duplicate of #": "重复 #",
+            "Duplicate pull request": "重复拉取请求",
+            // "Duplicate of #": "重复 #",
+            "Create a new saved reply…": "创建新快捷回复…",
 
         // 小屏 插入链接 对话框
             "Insert Link": "插入链接",
@@ -499,13 +466,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
         "Close with comment": "评论并关闭议题", // issue页 评论框
         "Close pull request": "关闭拉取请求", // pull页 评论框
-        "Close discussion": "关闭讨论", // discussion页 评论框
-            "Close as resolved": "因解决而关闭",
-                "The discussion has been resolved": "讨论已解决",
-            "Close as outdated": "因过时而关闭",
-                "The discussion is no longer relevant": "讨论不再相关",
-            "Close as duplicate": "因重复而关闭",
-                "The discussion is a duplicate of another": "讨论与另一个讨论重复",
         "Comment": "评论",
         "Submit new issue": "提交新议题",
         "Comment on this commit": "评论",
@@ -1582,8 +1542,8 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 
         // 项目标签卡 ?tab=projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "There aren't any projects yet": "尚无任何项目",
-            "Provide quick access to relevant projects.": "提供快速访问相关项目的途径。",
-            "Add projects to view them here.": "将项目添加到此处查看。",
+            "Provide quick access to relevant projects.":"提供快速访问相关项目的途径。",
+            "Add projects to view them here.":"将项目添加到此处查看。",
 
             "Welcome to the all-new projects": "欢迎访问全新的项目",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
@@ -4700,7 +4660,8 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
 
-                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on October 17, 2023. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2023 年 10 月 17 日结束。有关详细信息，请参阅",
+                //"Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on October 17, 2023. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2023 年 10 月 17 日结束。有关详细信息，请参阅",
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12,2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",//日期变更修改
                 "changelog": "更新日志",
 
             "Your old repository's clone URL": "您旧仓库的克隆地址",
@@ -4726,9 +4687,9 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "A": " ",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
-            "No available destinations to fork this repository.": "没有复刻此仓库的可用目标。",
+            "No available destinations to fork this repository.":"您已复刻此仓库。",
             "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
-            "Creating fork…": "正在创建复刻…",
+            "Creating fork…":"复刻中……",
 
             "Owners": "所有者",
                 "Choose an owner": "选择所有者",
@@ -5407,6 +5368,8 @@ I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
 
 I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
+        "resluts":"结果",
+        "View topic":"查看主题",
         // pull 与 request 公共词条
             "Filters": "筛选",
                 // 筛选下拉菜单
@@ -7125,9 +7088,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "you can choose to feature it": "您可以选择将",
             "here by pinning it.": "其置顶在此处。",
 
-            "Personalize your categories": "自定义您的分类",
-            "Choose categories that fit your community. These could be announcements, Q&A with marked answers, open-ended conversations, or polls for community voting.": "选择适合您社区的类别。这些可以是公告、带有标记答案的问答、开放式对话或用于调查的社区投票。",
-
             "Welcome to discussions!": "欢迎参与讨论！",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more.": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。",
             "Discussions are to share announcements, create conversation in your community, answer questions, and more. To get started, you can create a": "讨论是为了分享公告，在您的社区创造对话，回答问题，以及更多。首先，您可以创建一个",
@@ -7217,14 +7177,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 状态词
             "asked a question in": "提出了一个问题在",
             "Unanswered Question": "未解答的问题",
-            "announced": "公布于",
-            "in": "在",
 
         // 讨论分类 /<user-name>/<repo-name>/discussions/categories
             "Manage discussion categories": "管理讨论分类",
-                "Sections are a dropdown of categories. Categories have types of discussions, and discussions within them.": "本栏目是类别的下拉菜单。类别中包含讨论类型和讨论内容。",
             // [/(\d+) categories?/, "$1 个分类"],
-            "Categories without section": "无栏目分类",
             "Announcements": "公告",
                 "Updates from maintainers": "维护者的更新信息",
             "General": "通常",
@@ -7239,39 +7195,13 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Show and tell": "展示与讲述",
                 "Show off something you've made": "炫耀您所做的事情",
 
-            "New section": "新建栏目",
             "New category": "新建分类",
-
-            "Edit Announcements category": "编辑 “公告” 分类",
-            "Edit General category": "编辑 “通常” 分类",
-            "Edit Ideas category": "编辑 “想法” 分类",
-            "Edit Polls category": "编辑 “投票” 分类",
-            "Edit Q&A category": "编辑 “问与答” 分类",
-            "Edit Show and tell category": "编辑 “展示与讲述” 分类",
-
-            "Delete Announcements category": "删除 “公告” 分类",
-            "Delete General category": "删除 “通常” 分类",
-            "Delete Ideas category": "删除 “想法” 分类",
-            "Delete Polls category": "删除 “投票” 分类",
-            "Delete Q&A category": "删除 “问与答” 分类",
-            "Delete Show and tell category": "删除 “展示与讲述” 分类",
-
-            // 删除分类
-                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
-                "Delete and move": "删除并移动",
-
-            // 删除栏目
-                // [/Delete (.*) section/, "删除 “$1” 栏目"],
-                "Are you sure you want to delete this section? All categories in this section will no longer belong to a section.": "您确定要删除此栏目吗？此栏目中的所有分类将不再属于一个栏目。",
-
-        // 新建 & 编辑 分类 /<user-name>/<repo-name>/discussions/categories/new
-        // /<user-name>/<repo-name>/discussions/categories/<id>/edit
-            "Create category": "创建分类",
-            "Edit category": "编辑分类",
-            "Category name": "分类名称",
-            "Description": "描述",
-            "Add a description (optional)": "添加描述（可选）",
-            "Discussion Format": "讨论形式",
+                "Create category": "创建分类",
+                "Title": "标题",
+                "Category name": "分类名称",
+                "Description": "描述",
+                "Add a description (optional)": "添加描述（可选）",
+                "Discussion Format": "讨论形式",
                 "Open-ended discussion": "开放式讨论",
                     "Enable your community to have conversations that don't require a definitive answer to a question. Great for sharing tips and tricks or just chatting.": "使您的社区能够进行对话，不需要对问题作出明确的回答。很适合分享技巧和窍门，或者只是聊天。",
                 "Question / Answer": "问 / 答",
@@ -7281,50 +7211,16 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Poll": "投票",
                     "Gauge interest, vote, and interact with other community members using polls.": "调查兴趣，投票，并使用投票与其他社区成员互动。",
                     "Cannot be changed to polls. Please create a new category for polls.": "不能更改为投票。请为投票创建一个新类别。",
-            "Add this category to a section (optional)": "将此分类添加到一个栏目（可选）",
-                "No section": "无栏目",
+                "Create": "创建",
+            "Edit category": "编辑分类",
+                "Save changes": "保存更改",
+            // 删除
+                "If this category has discussions associated, where would you like to reassign them?": "如果此类别有相关的讨论，您希望将它们重新分配到何处？",
+                "Delete and move": "删除并移动",
 
-            "Create": "创建",
-            "Save changes": "保存更改",
-            "Submitting": "提交中",
-
-            // 顶部提醒
-                "Category Announcements has been created.": "分类 “公告” 已创建",
-                "Category General has been created.": "分类 “通常” 已创建",
-                "Category Ideas has been created.": "分类 “想法” 已创建",
-                "Category Polls has been created.": "分类 “投票” 已创建",
-                "Category Q&A has been created.": "分类 “问与答” 已创建",
-                "Category Show and tell has been created.": "分类 “展示与讲述” 已创建",
-
-                "Category Announcements has been updated.": "分类 “公告” 已更新",
-                "Category General has been updated.": "分类 “通常” 已更新",
-                "Category Ideas has been updated.": "分类 “想法” 已更新",
-                "Category Polls has been updated.": "分类 “投票” 已更新",
-                "Category Q&A has been updated.": "分类 “问与答” 已更新",
-                "Category Show and tell has been updated.": "分类 “展示与讲述” 已更新",
-
-                "Category Announcements has been deleted.": "分类 “公告” 已删除",
-                "Category General has been deleted.": "分类 “通常” 已删除",
-                "Category Ideas has been deleted.": "分类 “想法” 已删除",
-                "Category Polls has been deleted.": "分类 “投票” 已删除",
-                "Category Q&A has been deleted.": "分类 “问与答” 已删除",
-                "Category Show and tell has been deleted.": "分类 “展示与讲述” 已删除",
-
-                // [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
-                // [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
-                // [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
-
-        // 新建 & 编辑栏目 /<user-name>/<repo-name>/discussions/sections/new
-            "Create section": "创建栏目",
-            "Section name": "栏目名称",
-            "Add categories to this section": "向栏目添加分类",
-            "A category can only belong to one section at a time.": "一个分类一次只能属于一个栏目。",
-
-            // 顶部提醒
-                // [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
-                // [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
-                // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
-
+            "Warning:": "警告：",
+            "Changing the Discussion format from Q&A will mean no previously marked answers will be retained.": "将 “讨论” 的形式从 “问答” 改为 “讨论”，意味着以前标记的答案将不会被保留。",
+            "All previous discussions in this category will be considered an announcement, even if not posted by a maintainer or admin.": "所有以前在这个类别的讨论都将被视为公告，即使不是由维护者或管理员发布。",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
@@ -7356,7 +7252,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
-            "If this doesn’t look right you can": "如果这个看起来不对，你可以",
+            "If this doesn’t look right you can ": "如果这个看起来不对，你可以",
             "choose a different category.": "选择不同的类别。",
             "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
             "Discussion title": "讨论标题",
@@ -7371,7 +7267,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
             "Maintainer": "维护者",
-            "Discussion options": "讨论选项",
             "Category": "分类",
 
             // [/(\d+) answers?/, "$1 位答复者"],
@@ -7437,11 +7332,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
-            "Unlock conversation": "解锁对话",
-                "Are you sure you want to unlock conversation on this discussion?": "您确定要解锁此讨论的对话吗？",
-                "Everyone": "任何人",
-                "will be able to comment on this discussion once more.": "将能够再次对这个讨论发表评论。",
-                "You can always lock this discussion again in the future.": "您今后仍可以随时再次锁定此讨论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
@@ -7459,33 +7349,15 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Are you sure you want to unpin this discussion?": "您确定要取消置顶讨论吗？",
                 "The discussion itself won't be deleted, it just won't be shown prominently above the list of discussions.": "讨论本身不会被删除，只是不会突出显示在讨论列表上方。",
                 // 顶部提醒
-                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
-            "Pin discussion to Announcements": "将讨论置顶到 “公告”",
-                "Pin this discussion to this category": "将此讨论置顶到此类别",
-                    "This will pin this discussion to the top of the Announcements category.": "这将此讨论置顶到 “公告” 类别顶部。",
-                    "Pin to Announcements": "置顶到 “公告”",
-            "Pin discussion to General": "将讨论置顶到 “通常”",
-                    "This will pin this discussion to the top of the General category.": "这将此讨论置顶到 “通常” 类别顶部。",
-                    "Pin to General": "置顶到 “通常”",
-            "Pin discussion to Ideas": "将讨论置顶到 “想法”",
-                    "This will pin this discussion to the top of the Ideas category.": "这将此讨论置顶到 “想法” 类别顶部。",
-                    "Pin to Ideas": "置顶到 “想法”",
-            "Pin discussion to Polls": "将讨论置顶到 “投票”",
-                    "This will pin this discussion to the top of the Polls category.": "这将此讨论置顶到 “投票” 类别顶部。",
-                    "Pin to Polls": "置顶到 “投票”",
-            "Pin discussion to Q&A": "将讨论置顶到 “问与答”",
-                    "This will pin this discussion to the top of the Q&A category.": "这将此讨论置顶到 “问与答” 类别顶部。",
-                    "Pin to Q&A": "置顶到 “问与答”",
-            "Pin discussion to Show and tell": "将讨论置顶到 “展示与讲述”",
-                    "This will pin this discussion to the top of the Show and tell category.": "这将此讨论置顶到 “展示与讲述” 类别顶部。",
-                    "Pin to Show and tell": "置顶到 “展示与讲述”",
+                // [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
             "Create issue from discussion": "从讨论中创建议题",
             "Delete discussion": "删除讨论",
                 "Delete discussion?": "删除讨论？",
-                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments.": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
-                "Deleting discussion…": "正在删除讨论...",
+                "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments": "该讨论将被永久删除。您将无法恢复该讨论或其评论。",
+                "Delete this discussion": "删除讨论",
                 // 顶部提醒
                 "The discussion was successfully deleted.": "该讨论已成功删除。",
+
 
             "The original post will be copied into a new issue, and the discussion will remain active.": "原帖将被复制到一个新的议题中，讨论将保持活跃。",
             "OK, got it!": "好的，我知道了！",
@@ -7506,6 +7378,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题并不会自动转化为讨论。",
             "I understand, convert these issues to discussions.": "我明白了，依然把这些议题转化为讨论。",
 
+
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
@@ -7522,24 +7395,13 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) repl(y|ies)?/, "$1 条回复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
-        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
+        [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消固定。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
         [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
         [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
-        [/Category \"(.*)\" has been created./, "分类 “$1” 已创建。"],
-        [/Category \"(.*)\" has been updated./, "分类 “$1” 已更新。"],
-        [/Category \"(.*)\" has been deleted./, "分类 “$1” 已删除。"],
-        [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
-        [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
-        [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
-        [/Delete (.*) category/, "删除分类 “$1”"],
-        [/Edit (.*) category/, "编辑 “$1” 分类"],
-        [/Edit section (.*)/, "编辑栏目 “$1”"],
-        [/Delete section (.*)/, "删除栏目 “$1”"],
-        [/Delete (.*) section/, "删除 “$1” 栏目"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -8756,10 +8618,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Opt out": "设置",
             "learn more about auto-dismissing alerts.": "了解更多关于自动撤消警报的信息。",
 
-            "Auto-triage your alerts": "自动分类您的警报",
-                "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面强制执行。免费供开源项目使用，私有仓库需要通过",
-                "GitHub Advanced Security.": "GitHub 高级安全性。",
-                "Learn more about auto-triage": "了解更多关于自动分类的信息",
+            "Auto-triage your alerts":"自动分类您的警报",
+            "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through GitHub Advanced Security.":"控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面执行。免费供开源项目使用,通过 GitHub 高级安全功能可以用于私有仓库。",
+            "Learn more about auto-triage":"了解更多关于自动分类的信息",
 
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
@@ -11697,6 +11558,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 登录页 https://github.com/login
             "Sign in to GitHub": "登录 GitHub",
             "Sign in to": "登录",
+            "Add an account":"添加账户",
             "to continue to": "继续登录",
             "Username or email address": "用户名或电子邮箱",
             "Password": "密码",
@@ -11704,9 +11566,6 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Sign in": "登录",
             "Sign in with a passkey": "使用通行密钥登录",
             "Signing in…": "登录中…",
-
-            "Add an account": "添加账号", // 添加新账号
-            "Want to create an account?": "想要新建一个帐户吗？", // 添加新账号
 
             "Or": "或",
             // "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
@@ -15968,4 +15827,24 @@ I18N.zh["redeem"] = { // 兑换页面
     },
     "regexp": [ // 正则翻译
     ],
+};
+
+I18N.zh["github-copilot/signup"] = { //COPILOT页面
+    "static":{ // 静态翻译
+       "Your AI pair programmer":"您的AI编程助手",
+       "GitHub Copilot uses the GPT-3.5 Turbo model to offer coding suggestions.":"GitHub Copilot使用GPT-3.5 Turbo模型提供编程建议。",
+       "Get code suggestions in more than a dozen coding languages including Python, JavaScript, TypeScript, Go, and Ruby":"支持Python、JavaScript、TypeScript、Go和Ruby等十几种编程语言",
+       "Plugs into IDEs including VS Code, Visual Studio, Neovim, and JetBrains":"可在VS Code,Visual Studio，Neovim和JetBrains等IDE中调用",
+       "Sign up for an annual subscription and get two months free!":"注册年费会员，即享受两个月免费试用！",
+       "Cancel anytime before the trial ends to avoid getting billed":"试用结束前可随时取消",
+       "Pay frequency after trial":"试用期结束后",
+       "Monthly plan":"月度套餐",
+       "Yearly plan":"年度套餐",
+       "Save":"节省",
+       "Get access to GitHub Copilot":"获取GitHub Copilot访问权限",
+       "Next: Confirm your payment details":"下一步：确认您的付款详细信息",
+       "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the":"GitHub Copilot 对 GitHub 上流行开源软件的维护者和经过验证的学生免费。查看",
+       "free use FAQ":"免费使用常见问题解答",
+       "for more details.":"以了解更多详细信息。",
+    },
 };
