@@ -1456,7 +1456,7 @@ I18N.zh["page-profile"] = { // 个人首页
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
         [/(\d+) contributions? in private repositories?/, "私有仓库 $1 个贡献"],
         [/(\d+|No) contributions?/, function (all, number) {
-            return number === 'No' ? "无贡献" : number+" 次贡献";
+            return number === 'No' ? "无贡献" : number + " 次贡献";
         }],// 贡献日历
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
         // 贡献信息
@@ -13309,9 +13309,10 @@ I18N.zh["trending"] = { // 热门页面
 
         "Spoken Language:": "母语：",
             "Select a spoken language": "选择母语：",
-            "This setting can be saved in your": "此设置可以保存在您的",
-            "profile settings.": "个人资料设置",
+            "This setting can be updated in your": "此设置可以更新在您的",
+            "profile settings.": "个人资料设置。",
             "Filter spoken languages": "筛选母语",
+            "Clear spoken language": "清除母语",
             "Any": "任何",
         "Language:": "语言:",
             "Select a language": "选择语言：",
