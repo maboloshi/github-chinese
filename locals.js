@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
@@ -16052,6 +16052,42 @@ I18N.zh["redeem"] = { // 兑换页面
     "static": { // 静态翻译
         "Enter coupon code": "输入优惠券代码",
         "Redeem": "兑换",
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
+    "static": { // 静态翻译
+
+        // https://github.com/github-copilot/signup
+           "Your AI pair programmer": "您的人工智能助理程序员",
+           "Start your 30-day free trial": "开始 30 天免费试用",
+               "GitHub Copilot uses the GPT-3.5 Turbo model to offer coding suggestions.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型提供编码建议。",
+               "Get code suggestions in more than a dozen coding languages including Python, JavaScript, TypeScript, Go, and Ruby":"支持超过十种编程语言的代码建议，包括 Python、JavaScript、TypeScript、Go 和 Ruby。",
+               "Plugs into IDEs including VS Code, Visual Studio, Neovim, and JetBrains": "可以与包括 VS Code、Visual Studio、Neovim 和 JetBrains 在内的集成开发环境（IDE）配合使用",
+               "Sign up for an annual subscription and get two months free!":"注册年度订阅，可享受两个月免费福利。",
+               "Cancel anytime before the trial ends to avoid getting billed":"在试用期结束前随时取消，以避免收费。",
+
+           "Pay frequency after trial":"试用结束后付费频率",
+               "Monthly plan":"月度计划",
+               "/month": "/月",
+               "Yearly plan":"年度计划",
+               "Save $20!":"节省 $20 ！",
+               "/year": "/年",
+
+            "Or get GitHub Copilot from an organization": "您可以通过组织获取 GitHub Copilot",
+                "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot的权限。",
+                "Access Copilot from an organization": "从组织中访问 GitHub Copilot。",
+
+           "Get access to GitHub Copilot":"获取 GitHub Copilot 访问权限",
+
+           "Next: Confirm your payment details":"下一步：确认您的付款详细信息",
+
+           "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the":"GitHub Copilot 对于在 GitHub 上维护流行开源软件的人员和经过验证的学生是免费的。您可以查看",
+           "free use FAQ":"免费使用常见问题解答（FAQ）",
+           "for more details.":"以获取更多详细信息。",
+
     },
     "regexp": [ // 正则翻译
     ],
