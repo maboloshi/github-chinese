@@ -4967,6 +4967,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 贡献按钮下拉菜单
                 "No new commits yet. Enjoy your day!": "尚无新提交。祝您愉快！",
                 "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
+                "This branch is not behind the upstream": "这个分支不落后于上游",
                 "Open pull request": "打开拉取请求",
 
             "Sync fork": "同步复刻",
