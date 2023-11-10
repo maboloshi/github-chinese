@@ -2354,8 +2354,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
                 "500MB of Packages storage": "500MB 的包存储空间",
-                "120 core-hours of Codespaces compute": "120 个核心小时的代码空间计算",
-                "15GB of Codespaces storage": "15GB 的代码空间存储",
+                "120 core-hours of Codespaces compute per developer": "每个开发者 120 个核心小时的代码空间计算",
+                "15GB of Codespaces storage per developer": "每个开发者 15GB 的代码空间存储",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
@@ -2379,7 +2379,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "Your AI pair programmer": "您的人工智能助理程序员",
                     "Your AI powered pair programmer": "您的人工智能助理程序员",
                     "Enable GitHub Copilot": "启用 GitHub Copilot",
-                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议",
+                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
                     "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
