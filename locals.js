@@ -4895,6 +4895,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
 
+                    "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
+                        "Start my free trial": "开始我的免费试用",
+                        "Don't show again": "不再显示",
+
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
                     // "Copy to clipboard": "复制到剪切板",
                     // "Copied!": "✅ 复制成功!",
