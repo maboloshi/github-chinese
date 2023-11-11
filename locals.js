@@ -1626,6 +1626,15 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
     ],
 };
 
+I18N.zh["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
+    "static": { // 静态翻译
+        ...I18N.zh["page-profile-public"]["static"],
+
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
 I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
     "static": { // 静态翻译
         ...I18N.zh["page-profile-public"]["static"],
