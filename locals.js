@@ -6728,6 +6728,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             // https://github.com/maboloshi/github-i18n-plugin/compare/master...k1995:master
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
+            "learn more about diff comparisons": "了解更多关于差异比较的信息",
             "base fork:": "基复刻：",
 
             "There isn’t anything to compare.": "没有任何东西可比较。",
@@ -6759,13 +6760,12 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "View pull request": "查看拉取请求", //存在拉取请求时
 
-            // "commit comment": "次提交",
-            // "commit comments": "次提交",
-            // "file changed": "个文件变更",
-            // "files changed": "个文件变更",
-            // "comments": "个评论",
-            // "contributor": "位贡献者",
-            // "contributors": "位贡献者",
+            "commit": "次提交",
+            "commits": "次提交",
+            "file changed": "个文件变更",
+            "files changed": "个文件变更",
+            "contributor": "位贡献者",
+            "contributors": "位贡献者",
             // "No commit comments for this range": "该范围变更没有提交注释",
 
             "Allow edits by maintainers": "允许维护者进行编辑",
