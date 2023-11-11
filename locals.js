@@ -6768,23 +6768,87 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "contributors": "位贡献者",
             // "No commit comments for this range": "该范围变更没有提交注释",
 
-            "Allow edits by maintainers": "允许维护者进行编辑",
-            // 创建拉取请求 按钮下拉
-                "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
-                "Create draft pull request": "创建拉取请求草案",
-                "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
-                "Draft pull request": "拉取请求草案",
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
+            "Reviewers": "审阅者",
+                "Loading suggestions…": "载入推荐…",
+                // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+                "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
+                "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
+                "Re-request review": "重新请求审核",
+                "Still in progress?": "仍在进行中吗？",
+                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                "Learn about draft PRs": "了解拉取请求草案",
+                "Convert to draft": "设置为草案",
+                "Request up to 15 reviewers": "最多请求 15 个审阅者",
+                // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
+                "Request": "请求",
+                // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+                "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
 
-            // 右侧栏补充
-            // 关联议题
-            "Use": "使用",
-            "Closing keywords": "关闭关键词",
-            "in the description to automatically close issues": "在描述中，以自动关闭议题",
-            "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
+            "Assignees": "受理人",
+                "No one assigned": "无人受理",
+                "No one—": "无人 - ",
+                "assign yourself": " 受理自己",
+                "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
+                "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
+                "Clear assignees": "清除受理人",
+                "Type or choose a user": "输入或选择用户",
+                "Suggestions": "建议",
 
-            "Helpful resources":"帮助性资源",
+            // "Labels": "标签",
+                "None yet": "暂无",
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+                "Apply labels to this issue": "应用标签", // 议题
+                "Apply labels to this pull request": "应用标签", // 拉取请求
+                "Edit labels": "编辑标签",
+
+                "dependencies": "依赖关系",
+                    "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
+                "Recent": "最近",
+                "User": "用户",
+                "No projects": "无项目",
+
+            "Milestone": "里程碑",
+                "No milestone": "无里程碑",
+                "Set milestone": "设置里程碑",
+                    "Nothing to show": "暂无",
+
+        "Allow edits and access to secrets by maintainers": "允许维护人员编辑和访问机密",
+        // 创建拉取请求 按钮下拉
+            "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
+            "Create draft pull request": "创建拉取请求草案",
+            "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
+            "Draft pull request": "拉取请求草案",
+        "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+        "GitHub Community Guidelines": "GitHub 社区准则",
+
+        // 右侧栏补充
+        // 关联议题
+        "Use": "使用",
+        "Closing keywords": "关闭关键词",
+        "in the description to automatically close issues": "在描述中，以自动关闭议题",
+        "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
+
+        "Helpful resources":"帮助性资源",
             // "GitHub Community Guidelines": "GitHub 社区准则",
 
 
