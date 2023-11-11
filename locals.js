@@ -6728,6 +6728,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             // https://github.com/maboloshi/github-i18n-plugin/compare/master...k1995:master
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
+            "learn more about diff comparisons": "了解更多关于差异比较的信息",
             "base fork:": "基复刻：",
 
             "There isn’t anything to compare.": "没有任何东西可比较。",
@@ -6759,32 +6760,95 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "View pull request": "查看拉取请求", //存在拉取请求时
 
-            // "commit comment": "次提交",
-            // "commit comments": "次提交",
-            // "file changed": "个文件变更",
-            // "files changed": "个文件变更",
-            // "comments": "个评论",
-            // "contributor": "位贡献者",
-            // "contributors": "位贡献者",
+            "commit": "次提交",
+            "commits": "次提交",
+            "file changed": "个文件变更",
+            "files changed": "个文件变更",
+            "contributor": "位贡献者",
+            "contributors": "位贡献者",
             // "No commit comments for this range": "该范围变更没有提交注释",
 
-            "Allow edits by maintainers": "允许维护者进行编辑",
-            // 创建拉取请求 按钮下拉
-                "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
-                "Create draft pull request": "创建拉取请求草案",
-                "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
-                "Draft pull request": "拉取请求草案",
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
+            "Reviewers": "审阅者",
+                "Loading suggestions…": "载入推荐…",
+                // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+                "At least 0 approving review is required to merge this pull request.": "至少需要 0 次批准审查才能合并此拉取请求。",
+                "No reviews—at least 0 approving review is required.": "未经审查—至少需要 0 次批准审查。",
+                "Re-request review": "重新请求审核",
+                "Still in progress?": "仍在进行中吗？",
+                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                "Learn about draft PRs": "了解拉取请求草案",
+                "Convert to draft": "设置为草案",
+                "Request up to 15 reviewers": "最多请求 15 个审阅者",
+                // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
+                "Request": "请求",
+                // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+                "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
 
-            // 右侧栏补充
-            // 关联议题
-            "Use": "使用",
-            "Closing keywords": "关闭关键词",
-            "in the description to automatically close issues": "在描述中，以自动关闭议题",
-            "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
+            "Assignees": "受理人",
+                "No one assigned": "无人受理",
+                "No one—": "无人 - ",
+                "assign yourself": " 受理自己",
+                "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
+                "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
+                "Clear assignees": "清除受理人",
+                "Type or choose a user": "输入或选择用户",
+                "Suggestions": "建议",
 
-            "Helpful resources":"帮助性资源",
+            "Labels": "标签",
+                "None yet": "暂无",
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+                "Apply labels to this issue": "应用标签", // 议题
+                "Apply labels to this pull request": "应用标签", // 拉取请求
+                "Edit labels": "编辑标签",
+
+                "dependencies": "依赖关系",
+                    "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
+                "Recent": "最近",
+                "User": "用户",
+                "No projects": "无项目",
+
+            "Milestone": "里程碑",
+                "No milestone": "无里程碑",
+                "Set milestone": "设置里程碑",
+                    "Nothing to show": "暂无",
+
+        "Allow edits and access to secrets by maintainers": "允许维护人员编辑和访问机密",
+        // 创建拉取请求 按钮下拉
+            "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
+            "Create draft pull request": "创建拉取请求草案",
+            "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
+            "Draft pull request": "拉取请求草案",
+        "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+        "GitHub Community Guidelines": "GitHub 社区准则",
+
+        // 右侧栏补充
+        // 关联议题
+        "Use": "使用",
+        "Closing keywords": "关闭关键词",
+        "in the description to automatically close issues": "在描述中，以自动关闭议题",
+        "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
+
+        "Helpful resources":"帮助性资源",
             // "GitHub Community Guidelines": "GitHub 社区准则",
 
 
@@ -13441,7 +13505,8 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "searching for people you can sponsor": "搜索可以赞助的人员",
         "and filtering by language!": "并通过语言筛选！",
         "Clear filter": "清除筛选器",
-
+        "Sponser": "赞助",
+        "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！"
     },
     "regexp": [ // 正则翻译
     ],
@@ -16077,10 +16142,10 @@ I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
                "/year": "/年",
 
             "Or get GitHub Copilot from an organization": "您可以通过组织获取 GitHub Copilot",
-                "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot的权限。",
+                "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot 的权限。",
                 "Access Copilot from an organization": "从组织中访问 GitHub Copilot。",
 
-           "Get access to GitHub Copilot":"获取 GitHub Copilot 访问权限",
+           "Get access to GitHub Copilot":"获取 GitHub Copilot 使用权限",
 
            "Next: Confirm your payment details":"下一步：确认您的付款详细信息",
 
