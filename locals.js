@@ -4629,6 +4629,12 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
 
             "Compare & pull request": "比较 & 拉取请求",
 
+        // 仓库 404 页面（非删库状态）
+            "404 - page not found": "404 - 找不到页面",
+            "The": "该",
+            "branch of": "分支",
+            "does not contain the path": "仓库，不包含路径",
+            "Return to the repository overview": "返回仓库概述",
     },
     "regexp": [ // 正则翻译
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
