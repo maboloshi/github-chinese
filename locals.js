@@ -6771,8 +6771,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Reviewers": "审阅者",
                 "Loading suggestions…": "载入推荐…",
                 // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
-                "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
-                "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
+                "At least 0 approving review is required to merge this pull request.": "至少需要 0 次批准审查才能合并此拉取请求。",
+                "No reviews—at least 0 approving review is required.": "未经审查—至少需要 0 次批准审查。",
                 "Re-request review": "重新请求审核",
                 "Still in progress?": "仍在进行中吗？",
                 // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
