@@ -16077,10 +16077,10 @@ I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
                "/year": "/年",
 
             "Or get GitHub Copilot from an organization": "您可以通过组织获取 GitHub Copilot",
-                "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot的权限。",
+                "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot 的权限。",
                 "Access Copilot from an organization": "从组织中访问 GitHub Copilot。",
 
-           "Get access to GitHub Copilot":"获取 GitHub Copilot 访问权限",
+           "Get access to GitHub Copilot":"获取 GitHub Copilot 使用权限",
 
            "Next: Confirm your payment details":"下一步：确认您的付款详细信息",
 
