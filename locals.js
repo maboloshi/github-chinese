@@ -13441,7 +13441,8 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "searching for people you can sponsor": "搜索可以赞助的人员",
         "and filtering by language!": "并通过语言筛选！",
         "Clear filter": "清除筛选器",
-
+        "Sponser": "赞助",
+        "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！"
     },
     "regexp": [ // 正则翻译
     ],
