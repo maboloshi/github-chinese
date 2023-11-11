@@ -6794,7 +6794,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "Type or choose a user": "输入或选择用户",
                 "Suggestions": "建议",
 
-            // "Labels": "标签",
+            "Labels": "标签",
                 "None yet": "暂无",
                 "bug": "BUG",
                     "Something isn't working": "有些东西不工作",
