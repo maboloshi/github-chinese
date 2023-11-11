@@ -195,6 +195,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## ✨ 贡献
 
+查看我们的[贡献小技巧](https://github.com/maboloshi/github-chinese/issues/52)
+
 目前已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
 
 相关概念及资料文档:
@@ -247,3 +249,13 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
+
+## 💝 鸣谢
+
+[maboloshi](https://github.com/maboloshi) - 项目作者
+
+[wuyuncheng-26](https://github.com/wuyuncheng-26) - 项目协作者
+
+[52cik](https://github.com/52cik) - 项目原作者
+
+其他贡献者：pylover7、cat-kun、TC999、CN-traveler、pangshitong、swsoyee、heickswang4yu6peng13、daydaygo、xuexb，感谢你们❤️！

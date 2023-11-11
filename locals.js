@@ -824,11 +824,15 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          *  Commits on Jul 4, 2023   // 提交页面、仓库拉取请求页->提交卡
          *  Joined on Jul 4, 2023    // 追星者，关注者页面
          *
+         * 更像于 2023-11-11 16:48:02
+         * 个人资料页->贡献卡
+         * 日期带后缀
+         *
          * Tip:
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(^Updated |^Commits on |^Joined on |on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, prefix, date1, week, month, year1, date2, year2) {
+        [/(^Updated |^Commits on |^Joined on |on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(?:(\d{1,2})(?:st.|nd.|rd.|th.)?|)(?:,? (\d{4})|)/g, function (all, prefix, date1, week, month, year1, date2, year2) {
             var prefixKey = {
                 "Updated "   : "更新于 ",
                 "Commits on ": "提交于 ",
@@ -1623,6 +1627,15 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
     "regexp": [ // 正则翻译
         [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
         [/([\d,]+) Closed/, "$1 已关闭"],
+    ],
+};
+
+I18N.zh["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
+    "static": { // 静态翻译
+        ...I18N.zh["page-profile-public"]["static"],
+
+    },
+    "regexp": [ // 正则翻译
     ],
 };
 
@@ -4620,6 +4633,12 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
 
             "Compare & pull request": "比较 & 拉取请求",
 
+        // 仓库 404 页面（非删库状态）
+            "404 - page not found": "404 - 找不到页面",
+            "The": "该",
+            "branch of": "分支",
+            "does not contain the path": "仓库，不包含路径",
+            "Return to the repository overview": "返回仓库概述",
     },
     "regexp": [ // 正则翻译
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
@@ -4968,6 +4987,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             "Contribute": "贡献",
                 // 贡献按钮下拉菜单
+                "This branch is not ahead of the upstream": "这个分支不领先于上游",
                 "No new commits yet. Enjoy your day!": "尚无新提交。祝您愉快！",
                 "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
                 "This branch is not behind the upstream": "这个分支不落后于上游",
@@ -7673,6 +7693,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Search workflows": "搜索工作流",
 
             "Suggested for this repository": "建议该仓库采用",
+            "Categories": "类别",
             "Configure": "设置",
             "Deployment": "部署",
             "Continuous integration": "持续集成",
