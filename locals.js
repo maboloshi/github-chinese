@@ -16110,5 +16110,7 @@ I18N.zh["orgs/enterprise_plan"] = { // 企业版订阅页面
         "Why teams":"为何团队",
         "it：Get started in minutes, and leave the infrastructure to us.": "它：只需几分钟即可开始使用，基础设施则交给我们来处理。",
         "Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
-    }
+    },
+    "regexp": [ // 正则翻译
+    ],
 };
