@@ -4987,6 +4987,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             "Contribute": "贡献",
                 // 贡献按钮下拉菜单
+                "This branch is not ahead of the upstream": "这个分支不领先于上游",
                 "No new commits yet. Enjoy your day!": "尚无新提交。祝您愉快！",
                 "Open a pull request to contribute your changes upstream.": "打开拉取请求以向上游贡献您的更改。",
                 "This branch is not behind the upstream": "这个分支不落后于上游",
@@ -7692,6 +7693,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Search workflows": "搜索工作流",
 
             "Suggested for this repository": "建议该仓库采用",
+            "Categories": "类别",
             "Configure": "设置",
             "Deployment": "部署",
             "Continuous integration": "持续集成",
