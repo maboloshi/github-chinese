@@ -16229,6 +16229,18 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Choose a template": "选择一个模版",
             "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板开始创建代码空间，然后利用云中虚拟机的能力进行开发。",
             "Use this template": "使用此模版",
+
+        // https://github.com/codespaces/new
+            "Create a new codespace": "创建一个新的代码空间",
+            "Repository": "仓库",
+                "To be cloned into your codespace": "要被克隆到您的代码空间",
+                "Selent a repository": "选择仓库",
+                "Search for a repository": "查找仓库",
+            "Branch": "分支",
+                "This branch will be checked out on creation": "创建时将显示此分支",
+                "Default branch": "默认分支",
+                "Select branch": "选择分支",
+                "Find a branch": "查找分支",
     },
     "regexp": [
     ],
