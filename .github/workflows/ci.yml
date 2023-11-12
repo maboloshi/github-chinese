@@ -1,0 +1,24 @@
+name: CI
+on:
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@v1.3.5
+        id: contributors
+        with:
+          filter-author: (renovate\[bot\]|renovate-bot|@github-actions-bot|dependabot\[bot\])
+          avatarSize: 42
+
+      - name: Modify README.md
+        uses: jaywcjlove/github-action-modify-file-content@v1.4.4
+        with:
+          path: README.md
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
+          body: |
+            ${{steps.contributors.outputs.htmlList}}
