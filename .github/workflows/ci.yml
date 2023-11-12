@@ -17,6 +17,7 @@ jobs:
       - name: Modify README.md
         uses: jaywcjlove/github-action-modify-file-content@v1.4.4
         with:
+          token: ${{ secrets.CI_GITHUB_TOKEN }}
           path: README.md
           openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
           closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
