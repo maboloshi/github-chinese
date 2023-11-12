@@ -16200,3 +16200,14 @@ I18N.zh["orgs/enterprise_plan"] = { // 企业版订阅页面
     "regexp": [ // 正则翻译
     ],
 };
+
+I18N.zh["codespaces"] = { // 代码空间页面
+    "static": {
+        "All": "所有",
+        "Templates": "模版",
+        "Your instant dev environment": "您的即时开发环境",
+        "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。"
+    },
+    "regexp": [
+    ],
+}
