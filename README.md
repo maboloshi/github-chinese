@@ -262,6 +262,47 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 一如既往，感谢我们出色的贡献者❤️！
 
-<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->will be replaced here<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/maboloshi" title="沙漠之子">
+  <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
+</a>
+<a href="https://github.com/52cik" title="楼教主">
+  <img src="https://avatars.githubusercontent.com/u/5033310?v=4" width="42;" alt="楼教主"/>
+</a>
+<a href="https://github.com/wuyuncheng-26" title="wuyuncheng-26">
+  <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="wuyuncheng-26"/>
+</a>
+<a href="https://github.com/pylover7" title="大叶子">
+  <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
+</a>
+<a href="https://github.com/cat-kun" title="cat-kun">
+  <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
+</a>
+<a href="https://github.com/TC999" title="TC999">
+  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
+</a>
+<a href="https://github.com/CN-traveler" title="CN-traveler">
+  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
+</a>
+<a href="https://github.com/ImgBotApp" title="Imgbot">
+  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
+</a>
+<a href="https://github.com/swsoyee" title="InfinityLoop">
+  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
+</a>
+<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
+  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/daydaygo" title="dayday">
+  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
+</a>
+<a href="https://github.com/pangshitong" title="pangshitong">
+  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
+</a>
+<a href="https://github.com/wang4yu6peng13" title="wang4yu6peng13">
+  <img src="https://avatars.githubusercontent.com/u/10207042?v=4" width="42;" alt="wang4yu6peng13"/>
+</a>
+<a href="https://github.com/xuexb" title="前端小武">
+  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
+</a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
