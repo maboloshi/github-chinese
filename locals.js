@@ -16232,6 +16232,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
 
         // https://github.com/codespaces/new
             "Create a new codespace": "创建一个新的代码空间",
+            "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
             "Repository": "仓库",
                 "To be cloned into your codespace": "要被克隆到您的代码空间",
                 "Select a repository": "选择仓库",
@@ -16247,7 +16248,13 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "US West": "美国西部",
                 "Europe West": "欧洲西部",
                 "Southeast Asia": "东南亚",
-            
+            "Machine type": "机器类型",
+                "Resources for your codespace": "代码空间的资源",
+                "2-core": "双核",
+                "8GB RAM • 32GB": "8GB 内存 • 32GB硬盘",
+                "4-core": "四核",
+                "16GB RAM • 32GB": "16GB 内存 • 32GB硬盘",
+            "Create codespace": "创建代码空间",
     },
     "regexp": [
     ],
