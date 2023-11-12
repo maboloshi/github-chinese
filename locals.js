@@ -16206,7 +16206,16 @@ I18N.zh["codespaces"] = { // 代码空间页面
         "All": "所有",
         "Templates": "模版",
         "Your instant dev environment": "您的即时开发环境",
-        "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。"
+        "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。",
+        "Go to docs": "转到文档",
+        "New codespace": "创建代码空间",
+        "Explore quick start templates": "浏览快速入门模板",
+        "See all": "查看所有",
+        "Use this template": "使用此模版",
+        "Getting started with GitHub Codespaces": "GitHub代码空间入门",
+        "Learn core concepts": "学习核心概念",
+        "Configure and manage": "配置和管理",
+        "Develop locally": "在本地开发",
     },
     "regexp": [
     ],
