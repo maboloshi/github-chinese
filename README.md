@@ -258,4 +258,10 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 [52cik](https://github.com/52cik) - 项目原作者
 
-其他贡献者：pylover7、cat-kun、TC999、CN-traveler、pangshitong、swsoyee、heickswang4yu6peng13、daydaygo、xuexb，感谢你们❤️！
+### 感谢所有贡献者
+
+一如既往，感谢我们出色的贡献者❤️！
+
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->will be replaced here<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+
+贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
