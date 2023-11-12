@@ -16251,9 +16251,9 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Machine type": "机器类型",
                 "Resources for your codespace": "代码空间的资源",
                 "2-core": "双核",
-                "8GB RAM • 32GB": "8GB 内存 • 32GB硬盘",
+                "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
-                "16GB RAM • 32GB": "16GB 内存 • 32GB硬盘",
+                "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
             "Create codespace": "创建代码空间",
     },
     "regexp": [
