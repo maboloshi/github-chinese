@@ -199,9 +199,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 目前已翻译大部分常用页面，欢迎补充完善，中文词条在`locals.js`中。大家在补充完善的过程，请遵循以下文档对相关术语进行翻译：
 
-相关概念及资料文档:
+### 相关概念及资料文档:
 
-1. [Pro Git 第二版 简体中文](https://www.gitbook.com/book/bingohuang/progit2/details)
+1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh/v2)
 2. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
 3. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
 4. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
