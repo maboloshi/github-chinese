@@ -16216,6 +16216,13 @@ I18N.zh["codespaces"] = { // 代码空间页面
         "Learn core concepts": "学习核心概念",
         "Configure and manage": "配置和管理",
         "Develop locally": "在本地开发",
+        "New to Codespaces?": "刚接触代码空间？",
+        "Start here": "从这里开始",
+        ". Learn the core concepts and how to get started.": "。学习核心概念以及如何开始。",
+        "Learn more about features like": "了解有关功能的更多信息，如",
+        "secret management": "机密管理",
+        "port forwarding": "端口转发",
+        
     },
     "regexp": [
     ],
