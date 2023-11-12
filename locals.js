@@ -16206,6 +16206,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
         // https://github.com/codespaces
             "All": "所有",
             "Templates": "模版",
+            "By repository": "按仓库",
             "Your instant dev environment": "您的即时开发环境",
             "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。",
             "Go to docs": "转到文档",
@@ -16229,8 +16230,20 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Retrieving…": "正在检索…",
             "Active": "运行中",
             "Last used": "上次使用",
-            "Rename": "重命名",
-            "Export changes to a branch": "将更改导出到分支",
+            "Codespace configuration": "代码空间配置",
+                "Open in ...": "在...中打开",
+                "Open in browser": "在浏览器中打开",
+                "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
+                "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
+                "Open in JupyterLab": "在 JupyterLab 中打开",
+                "Rename": "重命名",
+                "Export changes to a branch": "将更改导出到分支",
+                "Change machine type": "修改机器类型",
+                "Change codespace machine type": "修改代码空间机器类型",
+                "Update codespace": "更新代码空间",
+                "Keep codespace": "保留代码空间",
+                "Stop codespace": "停止代码空间",
+
 
         // https://github.com/codespaces/templates
             "Choose a template": "选择一个模版",
