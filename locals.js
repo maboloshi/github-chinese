@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup|codespaces)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
@@ -16198,5 +16198,86 @@ I18N.zh["orgs/enterprise_plan"] = { // 企业版订阅页面
         "Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
     },
     "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["codespaces"] = { // 代码空间页面
+    "static": {
+        // https://github.com/codespaces
+            "All": "所有",
+            "Templates": "模版",
+            "By repository": "按仓库",
+            "Your instant dev environment": "您的即时开发环境",
+            "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。",
+            "Go to docs": "转到文档",
+            "New codespace": "创建代码空间",
+            "Explore quick start templates": "浏览快速入门模板",
+            "See all": "查看所有",
+            "Use this template": "使用此模版",
+            "Getting started with GitHub Codespaces": "GitHub代码空间入门",
+            "Learn core concepts": "学习核心概念",
+            "Configure and manage": "配置和管理",
+            "Develop locally": "在本地开发",
+            "New to Codespaces?": "刚接触代码空间？",
+            "Start here": "从这里开始",
+            ". Learn the core concepts and how to get started.": "。学习核心概念以及如何开始。",
+            "Learn more about features like": "了解有关功能的更多信息，如",
+            "secret management": "机密管理",
+            "port forwarding": "端口转发",
+            "Access codespaces from within": "从内部访问代码空间，使用",
+
+            "Owned by": "拥有者为",
+            "Retrieving…": "正在检索…",
+            "Active": "运行中",
+            "Last used": "上次使用",
+            "Codespace configuration": "代码空间配置",
+                "Open in ...": "在...中打开",
+                "Open in browser": "在浏览器中打开",
+                "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
+                "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
+                "Open in JupyterLab": "在 JupyterLab 中打开",
+                "Rename": "重命名",
+                "Export changes to a branch": "将更改导出到分支",
+                "Change machine type": "修改机器类型",
+                "Change codespace machine type": "修改代码空间机器类型",
+                "Update codespace": "更新代码空间",
+                "Keep codespace": "保留代码空间",
+                "Stop codespace": "停止代码空间",
+
+
+        // https://github.com/codespaces/templates
+            "Choose a template": "选择一个模版",
+            "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板开始创建代码空间，然后利用云中虚拟机的能力进行开发。",
+            "Use this template": "使用此模版",
+
+        // https://github.com/codespaces/new
+            "Create a new codespace": "创建一个新的代码空间",
+            "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
+            "Repository": "仓库",
+                "To be cloned into your codespace": "要被克隆到您的代码空间",
+                "Select a repository": "选择仓库",
+                "Search for a repository": "查找仓库",
+            "Branch": "分支",
+                "This branch will be checked out on creation": "创建时将显示此分支",
+                "Default branch": "默认分支",
+                "Select branch": "选择分支",
+                "Find a branch": "查找分支",
+            "Region": "区域",
+                "Your codespace will run in the selected region": "您的代码空间将在所选区域运行",
+                "US East": "美国东部",
+                "US West": "美国西部",
+                "Europe West": "欧洲西部",
+                "Southeast Asia": "东南亚",
+            "Machine type": "机器类型",
+                "Resources for your codespace": "代码空间的资源",
+                "None": "无",
+                "2-core": "双核",
+                "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
+                "4-core": "四核",
+                "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
+            "Create codespace": "创建代码空间",
+            "Creating codespace": "创建代码空间中"
+    },
+    "regexp": [
     ],
 };
