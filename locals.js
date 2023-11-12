@@ -16225,6 +16225,13 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "port forwarding": "端口转发",
             "Access codespaces from within": "从内部访问代码空间，使用",
 
+            "Owned by": "拥有者为",
+            "Retrieving…": "正在检索…",
+            "Active": "运行中",
+            "Last used": "上次使用",
+            "Rename": "重命名",
+            "Export changes to a branch": "将更改导出到分支",
+
         // https://github.com/codespaces/templates
             "Choose a template": "选择一个模版",
             "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板开始创建代码空间，然后利用云中虚拟机的能力进行开发。",
@@ -16250,11 +16257,13 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "Southeast Asia": "东南亚",
             "Machine type": "机器类型",
                 "Resources for your codespace": "代码空间的资源",
+                "None": "无",
                 "2-core": "双核",
                 "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
             "Create codespace": "创建代码空间",
+            "Creating codespace": "创建代码空间中"
     },
     "regexp": [
     ],
