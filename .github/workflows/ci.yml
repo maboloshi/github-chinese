@@ -20,5 +20,6 @@ jobs:
           path: README.md
           openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
           closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
+          message: '修改文档: 更新`贡献者列表`'
           body: |
             ${{steps.contributors.outputs.htmlList}}
