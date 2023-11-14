@@ -193,6 +193,7 @@ I18N.zh["title"] = { // 标题翻译
         "Your starred repositories": "我的星标仓库",
         "Your starred topics": "我的星标主题",
         "Pull Requests": "拉取请求",
+        "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
     },
     "regexp": [ // 正则翻译
         [/Repositories/, "仓库"],
@@ -16281,3 +16282,36 @@ I18N.zh["codespaces"] = { // 代码空间页面
     "regexp": [
     ],
 };
+
+I18N.zh["developer/register"] = { // 开发者注册
+    "static": {
+        // 标题
+            "Register for the": "注册",
+            "GitHub Developer Program": "Github开发者",
+            "The best way to integrate with GitHub.": "与GitHub集成最佳方法。",
+        // 注册表单
+            "Select an account": "选择账户",
+                "Select an account to register": "选择一个账户进行注册",
+                "You don’t belong to any organizations.": "您不属于任何组织。",
+                "Create organization": "创建组织",
+                "Support email address": "支持邮箱",
+                "An email address where GitHub users can contact you for support.": "GitHub用户可以为您提供支持的电子邮件地址。",
+            "Product or company website": "产品或公司网站",
+                "The URL for the product, company, or service that integrates with GitHub.": "与GitHub集成的产品、公司或服务的网址。",
+        // 免责声明
+            "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击“注册Github开发者”，表示您已阅读并同意",
+            "developer terms of service": "开发者服务条款",
+            "and the": "和",
+            "privacy statement": "隐私声明",
+            " We’ll occasionally send you account related emails.": "我们会偶尔向您发送与帐户相关的电子邮件。",
+        "Program Benefits": "开发者权益", 
+            "Notification of API changes": "API更改通知",
+            "Early access eligibility on select features": "获得提前访问选定功能的资格",
+            "Eligibility for development licenses for GitHub products": "GitHub产品的开发许可",
+            "GitHub profile membership badge": "GitHub个人资料成员徽章",
+            "Learn more about the program": "了解更多",//根据上下文修改
+        "Register for the GitHub Developer Program": "注册Github开发者",
+    },
+    "regexp": [ // 正则匹配
+    ],
+},
