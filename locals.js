@@ -16289,7 +16289,7 @@ I18N.zh["developer/register"] = { // 开发者注册
     "static": {
         // 标题
             "Register for the": "注册",
-            "GitHub Developer Program": "Github开发者",
+            "GitHub Developer Program": "Github开发者计划",
             "The best way to integrate with GitHub.": "与GitHub集成最佳方法。",
         // 注册表单
             "Select an account": "选择账户",
@@ -16301,7 +16301,7 @@ I18N.zh["developer/register"] = { // 开发者注册
             "Product or company website": "产品或公司网站",
                 "The URL for the product, company, or service that integrates with GitHub.": "与GitHub集成的产品、公司或服务的网址。",
         // 免责声明
-            "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击“注册Github开发者”，表示您已阅读并同意",
+            "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击“注册Github开发者计划”，表示您已阅读并同意",
             "developer terms of service": "开发者服务条款",
             "and the": "和",
             "privacy statement": "隐私声明",
@@ -16312,7 +16312,7 @@ I18N.zh["developer/register"] = { // 开发者注册
             "Eligibility for development licenses for GitHub products": "GitHub产品的开发许可",
             "GitHub profile membership badge": "GitHub个人资料成员徽章",
             "Learn more about the program": "了解更多",//根据上下文修改
-        "Register for the GitHub Developer Program": "注册Github开发者",
+        "Register for the GitHub Developer Program": "注册Github开发者计划",
     },
     "regexp": [ // 正则匹配
     ],
