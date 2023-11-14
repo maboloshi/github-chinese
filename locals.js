@@ -6355,6 +6355,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Details": "细节",
                 "Required": "必须",
             "Merging is blocked": "合并被阻止",
+            "The base branch requires all commits to be signed.":"基础分支要求所有提交都需签名。",
+            "Learn more about signing commits.":"了解有关签名提交的更多信息。",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
 
