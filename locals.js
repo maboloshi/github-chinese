@@ -16319,8 +16319,4 @@ I18N.zh["developer/register"] = { // 开发者注册
     },
     "regexp": [ // 正则匹配
     ],
-<<<<<<< Updated upstream
 };
-=======
-};
->>>>>>> Stashed changes
