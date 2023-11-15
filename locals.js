@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup|codespaces)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
@@ -193,6 +193,7 @@ I18N.zh["title"] = { // 标题翻译
         "Your starred repositories": "我的星标仓库",
         "Your starred topics": "我的星标主题",
         "Pull Requests": "拉取请求",
+        "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
     },
     "regexp": [ // 正则翻译
         [/Repositories/, "仓库"],
@@ -6354,6 +6355,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Details": "细节",
                 "Required": "必须",
             "Merging is blocked": "合并被阻止",
+                "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
+                "Learn more about signing commits.": "了解更多关于签名提交的信息。",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
 
@@ -16280,5 +16283,41 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Creating codespace": "创建代码空间中"
     },
     "regexp": [
+    ],
+};
+
+I18N.zh["developer/register"] = { // 开发者注册
+    "static": {
+        // https://github.com/developer/register
+            // 标题
+                "Register for the": "注册",
+                "GitHub Developer Program": "GitHub 开发者计划",
+                "The best way to integrate with GitHub.": "与 GitHub 集成最佳方法。",
+            // 注册表单
+                "Select an account": "选择账户",
+                    "Select an account to register": "选择一个账户进行注册",
+                    "You don’t belong to any organizations.": "您不属于任何组织。",
+                    "Create organization": "创建组织",
+                    "Support email address": "技术支持电子邮件地址",
+                    "An email address where GitHub users can contact you for support.": "供 GitHub 用户联系您寻求支持的电子邮件地址。",
+                "Product or company website": "产品或公司网站",
+                    "The URL for the product, company, or service that integrates with GitHub.": "与 GitHub 集成的产品、公司或服务的网址。",
+            // 免责声明
+                "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击 “注册 GitHub 开发者计划”，表示您已阅读并同意",
+                "developer terms of service": "开发者服务条款",
+                "and the": "和",
+                "privacy statement": "隐私声明",
+                ". We’ll occasionally send you account related emails.": "。我们会偶尔向您发送与帐户相关的电子邮件。",
+
+            "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
+
+            "Program Benefits": "开发者权益",
+                "Notification of API changes": "API 更改通知",
+                "Early access eligibility on select features": "获得部分功能的抢先体验资格",
+                "Eligibility for development licenses for GitHub products": "获得 GitHub 产品的开发许可资格",
+                "GitHub profile membership badge": "GitHub 个人资料成员徽章",
+                "Learn more about the program": "了解更多关于 GitHub 开发者计划的信息",
+    },
+    "regexp": [ // 正则匹配
     ],
 };
