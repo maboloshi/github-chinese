@@ -13407,6 +13407,14 @@ I18N.zh["topics"] = { // 探索-->主题页面
                 "Lists are currently in beta.": "清单目前处于测试阶段。",
                 "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                 "Creating...": "创建中...",
+            "Improve this page": "改善此页面",
+                "Add a description, image, and links to the": "为",
+                "topic page so that developers can more easily learn about it.": "主题页面添加描述、图片和链接，以便开发人员可以更轻松地了解它。",
+                "Curate this topic": "整理此主题",
+            "Add this topic to your repo": "将此主题添加到您的仓库",
+                "To associate your repository with the": "将您的仓库与",
+                "topic, visit your repo's landing page and select ": "主题时，访问仓库的首页并选择",
+                "manage topics": "管理主题",
 
     },
     "regexp": [ // 正则翻译
