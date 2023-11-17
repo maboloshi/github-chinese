@@ -5617,6 +5617,9 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Last updated": "最后更新",
 
         // 某条具体的议题 /<user-name>/<repo-name>/issues/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 快捷键
+                "Convert issue to discussion…": "将议题转化为讨论...",
+
             "This issue was moved to a discussion.": "这个议题被转移到讨论中。",
             "You can continue the conversation there.": "您可以在那里继续讨论。",
             "Go to discussion →": "转到讨论→",
@@ -6013,6 +6016,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 顶部提醒
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
                 "Marked pull request as ready for review.": "标记拉取请求为可审核。",
+
+            // 快捷键
+                "Edit pull request title": "编辑拉取请求标题",
+                "Edit pull request body": "编辑拉取请求主体",
 
             // 编辑 -> 选择基础库
             "Choose a base branch": "选择基础分支",
