@@ -12181,6 +12181,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Are you sure you want to sign out?": "您确定要登出？",
             "Sign out": "登出",
 
+            "Select account to sign out": "选择要登出的帐户",
+            "Sign out from all accounts": "登出所有账户",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
