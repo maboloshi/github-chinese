@@ -723,10 +723,13 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Private": "私有",
         "Public archive": "公共存档",
         "Private archive": "私有存档",
+        "Public template": "公共模板",
         "Code": "代码",
         "Pull requests": "拉取请求",
         "Collaborators": "协作者",
         "collaborators": "协作者",
+        "commit": "提交",
+        "commits": "提交",
 
         "People": "成员",
         "Teams": "团队",
@@ -736,9 +739,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "now": "当前",
         "yesterday": "昨天",
         "last month": "上个月",
-
-        "commit": "提交",
-        "commits": "提交",
 
         // 状态词
         "Verified": "已验证",
@@ -1094,11 +1094,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
 
-        "Public": "公共",
-        "Private": "私有",
-        "Public archive": "公共存档",
-        "Private archive": "私有存档",
-
         // 中间栏
         "The home for all developers — including you.": "所有开发者的家园--包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
@@ -1345,13 +1340,6 @@ I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
             "reporting abuse": "举报滥用",
 
             "Send feedback": "发送反馈",
-
-        // 公共词
-            "Public": "公共",
-            "Private": "私有",
-            "Public archive": "公共存档",
-            "Private archive": "私有存档",
-            "Public template": "公共模板",
 
     },
     "regexp": [ // 正则翻译
@@ -4412,12 +4400,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
             // 公共部分 - 头部条
-            "Public": "公共",
-            "Private": "私有",
-            "Public archive": "公共存档",
-            "Private archive": "私有存档",
-            "Public template": "公共模板",
-
             "forked from": "复刻自",
             "generated from": "创建自",
 
@@ -12545,11 +12527,6 @@ I18N.zh["issues"] = { // 议题页面
     "static": { // 静态翻译
         "Pull Requests": "拉取请求", // pulls
 
-        "Public": "公共",
-        "Private": "私有",
-        "Public archive": "公共存档",
-        "Private archive": "私有存档",
-
         "Created": "已创建",
         "Assigned": "已分配",
         "Mentioned": "提到的",
@@ -12845,11 +12822,6 @@ I18N.zh["search"] = { // 搜索页面
                 "Name has already been taken": "名称被占用",
 
             // &type=repositories
-                "Public": "公共",
-                "Private": "私有",
-                "Public archive": "公共存档",
-                "Private archive": "私有存档",
-
                 "Sponsor": "赞助",
                 // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
                 // 赞助对话框
@@ -15755,11 +15727,6 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
     "static": { // 静态翻译
         // >>>>>>>>>>>>>>>>>>仓库 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 头部条
-            "Public": "公共",
-            "Private": "私有",
-            "Public archive": "公共存档",
-            "Private archive": "私有存档",
-
             "forked from": "复刻自",
 
             "Unpin": "取消置顶",
@@ -15864,7 +15831,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
                 "Bug triage": "BUG 分类",
                     "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待办事项、高优先级、低优先级和已关闭的栏目对错误进行分类和优先级排序。",
             "Visibility": "可见性",
-                "Public": "公共",
+                // "Public": "公共",
                     "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
                 "Private": "私有",
                     "You choose who can see and make changes to this project.": "您可以选择谁可以查看此项目并对其进行更改。",
