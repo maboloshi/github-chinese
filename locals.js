@@ -7067,7 +7067,19 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
                 "All time": "所有时间",
                 "Today": "今天",
             "Browse repository at this point": "查看此时间点的仓库",
-            
+
+            // 日历
+                "Su": "一",
+                "Mo": "二",
+                "Tu": "三",
+                "We": "四",
+                "Th": "五",
+                "Fr": "六",
+                "Sa": "日",
+
+            // [/Copy full SHA for ([a-f0-9]{7})/, "复制提交 $1 的完整 SHA"],
+            // [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
+            // [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
 
         // 提交中文件历史 /<user-name>/<repo-name>/commits/<branch>/<file> 或 /<user-name>/<repo-name>/commits/<full SHA>/<file>
             "History for": "历史：",
@@ -7097,6 +7109,9 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
         // [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
         [/Renamed from/, "重命名自"], // 提交中文件历史
+        [/Copy full SHA for ([a-f0-9]{7})/, "复制提交 $1 的完整 SHA"],
+        [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
+        [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
     ],
 };
 
