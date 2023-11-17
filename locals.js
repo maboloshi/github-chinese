@@ -4732,6 +4732,14 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Create repository": "创建仓库",
             "Creating repository…": "创建仓库中…",
 
+        // 依据模板新建仓库 https://github.com/new?template_owner=<模板作者>&template_name=<模板名称>
+            "Repository template": "仓库模板",
+                "No template": "不设置模板",
+                "Start your repository with a template repository's contents.": "使用模板仓库的内容新建仓库。",
+            "Include all branches": "包括所有分支",
+                "Copy all branches from": "复制所有",
+                "and not just the default branch.": "仓库分支，而不仅仅是默认分支。",
+
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
