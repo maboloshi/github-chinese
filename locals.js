@@ -2709,7 +2709,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Add a passkey": "添加通行密钥",
 
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
-                "This browser or device is not reporting full passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备不完全支持通行密钥，但您可以尝试使用附近设备的通行密钥。",
+                    "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
                 "Your passkeys": "您的通行密钥",
                 "Seen from this browser": "该浏览器中查看",
                 "| Last used": "| 最后使用",
@@ -11929,6 +11929,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Password Alternatives": "密码替代方案",
                 // 通行密钥
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
+                    "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
             "Two-factor methods": "双重身份验证方式",
                 "Your preferred 2FA method is": "您首选的 2FA 方式是",
                 "Configured": "已配置",
