@@ -2867,12 +2867,16 @@ I18N.zh["settings/auth"] = {
     "static": { // 静态翻译
 
         // 查看恢复码 https://github.com/settings/auth/recovery-codes
+            // 顶部提醒
+                "New two-factor recovery codes successfully generated. Save them in a safe, durable location and discard your previous codes.": "已成功生成新的双重身份验证恢复码。将它们保存在安全、耐用的位置，并丢弃以前的恢复码。", // 生成新恢复码
+
             "Two-factor recovery codes": "双重身份验证恢复码",
                 "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
 
             "Recovery codes": "恢复码",
                 "Keep your recovery codes as safe as your password. We recommend saving them with a password manager such as": "保持您的恢复码与您的密码一样安全。我们建议使用密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot.": "将您的恢复码保存在一个安全的地方。",
+                "These new codes have replaced your old codes. Save them in a safe spot.": "这些新恢复码已取代您的旧恢复。请将它们保存在安全的地方。", // 生成新恢复码
                 "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二要素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
                 "will": "将",
                 "lose access to your account.": "无法访问您的帐户。",
