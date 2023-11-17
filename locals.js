@@ -523,6 +523,17 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "discussion": "讨论", // 新建讨论
         "discussions": "讨论", // 新建讨论
 
+        "Add to list": "添加到清单",
+            "You don't have any lists yet.": "您尚无任何清单。",
+            "Lists": "清单",
+            "Create list": "创建清单",
+                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                "⭐️ Name this list": "⭐️ 清单名称",
+                "Write a description": "简单描述",
+                "Lists are currently in beta.": "清单目前处于测试阶段。",
+                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                "Creating...": "创建中...",
+
         // 全局快捷键对话框 - 快捷键 ? 打开
         "Keyboard shortcuts": "键盘快捷键",
         "Site-wide shortcuts": "全站快捷键",
@@ -1232,17 +1243,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         // [/(\d+) members?/, "$1 个成员"],
 
-        "Add to list": "添加到清单",
-        "Lists": "清单",
-        "You don't have any lists yet.": "您尚无任何清单。",
-        "Create list": "创建清单",
-            "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-            "⭐️ Name this list": "⭐️ 清单名称",
-            "Write a description": "简单描述",
-            "Lists are currently in beta.": "清单目前处于测试阶段。",
-            "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-            "Creating...": "创建中...",
-
         "Switch dashboard context": "切换默认身份", // 组织
         "Manage organizations": "管理组织", // 组织
         "Create organization": "创建组织", // 组织
@@ -1352,16 +1352,6 @@ I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
             "Public archive": "公共存档",
             "Private archive": "私有存档",
             "Public template": "公共模板",
-
-            "Lists": "清单",
-            "You don't have any lists yet.": "您尚无任何清单。",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Creating...": "创建中...",
 
     },
     "regexp": [ // 正则翻译
@@ -1698,7 +1688,6 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
         ...I18N.zh["page-profile-public"]["static"],
 
         // 星标标签卡 ?tab=stars >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            "Lists": "清单",
             "Show all lists...": "显示所有列表...",
 
             "Sort by": "排序方式",
@@ -1708,14 +1697,6 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
                 "Newest": "最新",
                 "Oldest": "最早",
                 "Last updated": "最后更新",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Create": "创建",
-                "Creating...": "创建中...",
 
             "Create your first list": "创建您的第一个清单",
             "Lists make it easier to organize and curate repositories that you have starred.": "列表可使您更容易组织和策划您的星标仓库。",
@@ -4500,16 +4481,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
 
             //
             "Star this repository": "星标仓库", //小屏模式
-            "Add to list": "添加到清单",
-            "Lists": "清单",
-            "You don't have any lists yet.": "您尚无任何清单。",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Creating...": "创建中...",
 
              // 用户 浮动信息卡
                 "Recently edited these files": "最近编辑过这些文件",
@@ -13491,15 +13462,6 @@ I18N.zh["topics"] = { // 探索-->主题页面
                 "Recently updated": "最近更新",
                 "Least recently updated": "最早更新",
 
-            "Lists": "清单",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Creating...": "创建中...",
-
             "Improve this page": "改善此页面",
                 "Add a description, image, and links to the": "为",
                 "topic page so that developers can more easily learn about it.": "主题页面添加描述、图片和链接，以便开发人员可以更轻松地了解它。",
@@ -15837,18 +15799,6 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
             "Existing forks": "现有的复刻",
             "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
             "Create a new fork": "创建复刻",
-
-           //
-            "Add to list": "添加到清单",
-            "Lists": "清单",
-            "You don't have any lists yet.": "您尚无任何清单。",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Creating...": "创建中...",
 
             // 标签栏
             "Code": "代码",
