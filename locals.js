@@ -2276,8 +2276,12 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
-                    "on GitHub, Email": "在 GitHub 上、电子邮件",
+                    "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
+                    "on GitHub, CLI": "在 GitHub、CLI 上",
+                    "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
+                    "on GitHub, Email": "在 GitHub、电子邮件 上",
                     "On GitHub": "在 GitHub 上",
+                    "on GitHub": "在 GitHub 上",
 
                 "Participating, @mentions and custom": "参与、@提及和自定义",
                     "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "您正在参与的对话的通知，或者如果有人 @您。也适用于订阅特定事件时的所有活动。",
