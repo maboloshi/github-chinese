@@ -6772,18 +6772,22 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "base fork:": "基复刻：",
 
             "There isn’t anything to compare.": "没有任何东西可比较。",
-            "is up to date with all commits from": "已是最新，提交于",
-            ". Try": "。尝试",
-            "switching the base": "切换基础库",
-            "for your comparison.": "来进行比较。",
+                "We couldn’t figure out how to compare these references, do they point to valid commits?": "我们不知道如何比较这些引用，它们是否指向有效的提交？",
 
+                "You’ll need to use two different branch names to get a valid comparison.": "您需要使用两个不同的分支名称来进行有效的比较。",
+                "Check out some of these sample comparisons.": "看看这些比较的例子吧。",
+
+                "is up to date with all commits from": "已是最新，提交于",
+                ". Try": "。尝试",
+                "switching the base": "切换基础库",
+                "for your comparison.": "来进行比较。",
 
             "Discuss and review the changes in this comparison with others.": "与他人讨论并回顾此次对比中的变化。",
 
             "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的 250 个提交。",
 
             "You’ll need to use two different branch names to get a valid comparison.": "您需要使用两个不同的分支名称来进行有效的比较。",
-            "Check out some of these sample comparisons.": "看看这些比较的例子吧。",
+
             "are identical.": "是相同的。",
 
             "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
