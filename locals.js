@@ -3283,6 +3283,13 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 "We will determine the closest available region based on your location (IP address) at codespace creation time.": "我们将在创建代码空间时根据您的位置（IP地址）确定最近的可用区域。",
                 "Set manually": "手动设置",
                 "Choose your default region": "选择您的默认区域",
+                    "United States": "美国",
+                        "US West": "美国西部",
+                        "US East": "美国东部",
+                    "Europe": "欧洲",
+                        "Europe West": "欧洲西部",
+                    "Asia Pacific": "亚太地区",
+                        "Southeast Asia": "东南亚",
 
             // 顶部提醒
                 "Secret added.": "机密已添加。",
