@@ -1093,6 +1093,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
+            "You're seeing this because you haven't used repositories， issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
             "Remove from dashboard": "从仪表板中删除",
         "Tools of the trade": "贸易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
@@ -2043,7 +2044,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Preferred spoken language": "首选语言",
             "No Preference": "未设置",
             "We'll use this language preference to filter the trending repository lists on": "我们将使用此语言偏好来过滤趋势仓库列表在",
-            "and our": "和我们的",
+            "our": "我们的",
             "Trending Repositories": "趋势仓库",
             "page.": "页面。",
             "Save Trending settings": "保存趋势设置",
@@ -2326,6 +2327,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "No custom routes yet.": "尚无自定义路由",
                     "Add new route": "添加新路由",
                         "Pick organization": "挑选组织",
+                            "Select an item": "选择一项",
                         "Search organizations": "搜索组织",
                         "Select email": "选择邮箱",
                         "Saved": "已保存",
@@ -2879,8 +2881,8 @@ I18N.zh["settings/auth"] = {
                 "Print": "打印",
                 "Copy": "复制",
 
-            "Generate new recovery codes": "生成新的恢复码",
-                "When you generate new recovery codes, you must download or print the new codes.": "当您生成新的恢复码时，您必须下载或打印新恢复码。",
+            "Generate new recovery codes": "生成新恢复码",
+                "When you generate new recovery codes, you must download or print the new codes.": "当您生成新恢复码时，您必须下载或打印新恢复码。",
                 "Your old codes won't work anymore.": "您的旧恢复码将失效。",
 
             "Back to settings": "返回设置",
@@ -3363,7 +3365,7 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
             "Create an organization": "创建一个组织",
 
             "Ask admin for access": "向管理员请求访问权限",
-            "Buy Copilot for Business": "购买 GitHub Copilot 企业版",
+            "Buy Copilot Business": "购买 GitHub Copilot 企业版",
             "Owner": "所有者",
 
     },
@@ -3707,7 +3709,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "ProTip!": "专业提示！",
                 "View all events created yesterday": "查看昨天创建的所有事件",
                 "View all events where you created something": "查看所有您创建内容时产生的事件",
-
+                "Country changed from your previous session": "“国家/地区” 与上一次会话有所不同",
 
     },
     "regexp": [ // 正则翻译
@@ -4412,7 +4414,7 @@ I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 // 仓库相关==
 I18N.zh["repository-public"] = { // 仓库-公共部分
     "static": { // 静态翻译
-       // 仓库页面 /<user-name>/<repo-name>/
+        // 仓库页面 /<user-name>/<repo-name>/
             // 公共部分 - 头部条
             "Public": "公共",
             "Private": "私有",
@@ -4729,8 +4731,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
-
-                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12,2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12, 2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",
                 "changelog": "更新日志",
 
             "Your old repository's clone URL": "您旧仓库的克隆地址",
@@ -5217,6 +5218,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
             "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
             "file.": "文件。",
+            "Learn more about configuring a template chooser.": "了解更多关于配置模板选择器的信息。",
 
 
         // new code view
@@ -6312,6 +6314,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 拉取请求状态
             "Review requested": "请求审查",
             "Review has been requested on this pull request. It is not required to merge.": "此拉取请求已请求进行审查。这不是合并的必要条件。",
+            "Learn more about requesting a pull request review.": "了解更多关于申请拉取请求审核的信息。",
             // [/(\d+) pending reviewers?/, "$1 名待审者"],
             "was requested for review": "被请求审查",
 
@@ -6489,14 +6492,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "committed": "提交于",
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
-                "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
+                "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
+                "This commit was signed with the committer's": "此提交已签署，使用提交者的",
                 "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
-                "GPG key ID:": "GPG 密钥 ID：",
+                "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
                 "Learn about vigilant mode": "了解警戒模式",
 
@@ -7003,14 +7006,14 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
                 "Nothing to show": "暂无",
 
             // 验证标记浮动信息
-            "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
-            "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
+            "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
+            "This commit was signed with the committer's": "此提交已签署，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
-            "GPG key ID:": "GPG 密钥 ID：",
+            "GPG Key ID:": "GPG 密钥 ID：",
             "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
 
@@ -7352,6 +7355,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "· Answered": " · 已答复",
 
             // 下拉补充
+            "Use": "使用",
+            "click/return": "点击/回车",
             "to exclude labels.": "去排除标签。",
 
             // 状态词
@@ -7496,7 +7501,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始对话或发布公告",
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new?category=general
-            "If this doesn’t look right you can": "如果这个看起来不对，你可以",
+            "If this doesn’t look right you can": "如果这个看起来不对，您可以",
             "choose a different category.": "选择不同的类别。",
             "Fields marked with an asterisk (*) are required.": "标有星号（*）的字段是必填字段。",
             "Discussion title": "讨论标题",
@@ -8490,14 +8495,14 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         ...I18N.zh["repository-public"]["static"],
 
             // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub’s": "此提交是在 GitHub.com 上创建的，并使用 GitHub 的",
-                "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
-                "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
+                "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
+                "This commit was signed with the committer's": "此提交已签署，使用提交者的",
+                "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
-                "GPG key ID:": "GPG 密钥 ID：",
+                "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
                 "Learn about vigilant mode": "了解警戒模式",
 
@@ -8759,6 +8764,7 @@ I18N.zh["repository/pkgs"] = { // 仓库 - 软件包
             "Details": "详细信息",
             "Last published": "最新发布",
             "Total downloads": "总下载量",
+            "Start a discussion": "开始讨论",
             "Open an issue": "打开一个议题",
 
         // 全部版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/versions
@@ -12542,6 +12548,7 @@ I18N.zh["issues"] = { // 议题页面
         // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。筛选菜单也是快速找到议题最相关的您超级有帮助的。",
         // "Updated in the last three days": "更新了最后三天：",
         "ProTip!": "专业提示！",
+            "Exclude your own issues with": "排除自己的问题",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
             "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
             "Exclude everything labeled": "如果要找到所有标有",
@@ -14063,8 +14070,8 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "Disabled": "启用",
             "Required": "必须",
 
-            "Role": "角色",
-            "Filter by role": "按角色筛选",
+            "Membership": "成员",
+            "Filter by membership": "按成员筛选",
             "Owners": "所有者",
 
             "Organization visibility": "组织可见性",
@@ -14075,6 +14082,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "Owners have full access to teams, settings, and repositories.": "所有者拥有对团队、设置和仓库的完全访问权限。",
             // [/0 teams/, ""],
 
+            "Member settings": "成员设置",
             "Manage": "管理",
             "Convert to outside collaborator…": "转为外部协作者…",
             "Remove from organization…": "从组织移除…",
@@ -14123,6 +14131,8 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
         // 待定邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
             "Find an invitation…": "搜索邀请…",
+
+            "Role": "角色",
 
             "Source": "来源",
             "Filter by invitation source": "按邀请来源筛选",
@@ -14337,6 +14347,7 @@ I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
 
         // 仓库角色 /organizations/<org-login>/settings/roles
             "Roles are used to grant access and permissions for teams and members. In addition to the available pre-defined roles, you can create up to 0 custom roles to fit your needs.": "角色是用来为团队和成员授予访问和权限的。除了可用的预定义角色外，您可以创建多达 0 个自定义角色以满足您的需求。",
+                "Learn more about custom repository roles": "了解更多关于自定义仓库角色的信息",
             "Pre-defined roles": "预定义角色",
                 "You can": "您可",
                 "set the base role": "设置基础角色",
@@ -16207,8 +16218,8 @@ I18N.zh["orgs/enterprise_plan"] = { // 企业版订阅页面
             "Enterprise Server": "企业服务器",
                 "Manage and deploy GitHub Enterprise on your own servers, including AWS, Azure, or GC": "在您自己的服务器（包括 AWS、Azure 或 GC）上管理和部署 GitHub 企业版",
         "Why teams": "为何团队",
-        "it：Get started in minutes, and leave the infrastructure to us.": "它：只需几分钟即可开始使用，基础设施则交给我们来处理。",
-        "Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
+        "it: Get started in minutes, and leave the infrastructure to us.": "它：只需几分钟即可开始使用，基础设施则交给我们来处理。",
+        "it: Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
     },
     "regexp": [ // 正则翻译
     ],
