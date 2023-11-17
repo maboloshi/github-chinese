@@ -7694,6 +7694,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 顶部提醒
             // [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
 
+        // 转移议题到讨论 /<user-name>/<repo-name>discussions/<id>?converting=<讨论id>
+            "This discussion is being migrated": "此讨论正在迁移",
+                "The issue and any comments are still being copied to this discussion thread, please check back later.": "该议题和所有评论仍在复制到此讨论话题中，请稍后查看",
+                "Refresh": "刷新",
+
         // /<user-name>/community/discussions
             // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
             "View organization discussions": "查看组织讨论",
