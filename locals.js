@@ -2376,8 +2376,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
+                "Free Codespaces usage per organization": "每个组织的免费代码空间使用量",
                 "Protected branches on all repos": "所有仓库上的受保护分支",
-                "Access to Codespaces": "访问代码空间",
+                "Increase Codespaces": "提高代码空间",
+                "spend limits": "消费限额",
                 "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
                 "Required status checks": "所需的状态检查",
                 "Code owners": "代码所有者",
@@ -2390,6 +2392,9 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
+            // [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人帐户之外，您还管理 $1 个组织。"],
+            "Manage your organizations": "管理您的组织",
+                "Create a new organization": "创建新组织",
 
             "Add-ons": "附加组件",
                 // "GitHub Copilot": "",
@@ -2399,14 +2404,9 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
-                    "Buy Copilot for Business": "购买 GitHub Copilot 商业版",
-                    "Copilot for Business": "GitHub Copilot 商业版",
-                    "GitHub Copilot uses the OpenAI Codex to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 OpenAI Codex 实时在您的编辑器中提供代码和整个函数建议。每月 $19/用户。",
-
-                // 组织设置
-                // [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
-                "Manage your organization accounts": "管理您的组织帐户",
-                    "Create a new organization": "创建新组织",
+                    "Buy Copilot Business": "购买 GitHub Copilot 商业版",
+                    "Copilot Business": "GitHub Copilot 商业版",
+                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型 实时在您的编辑器中提供代码和整个函数建议。每月 $19/用户。",
 
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
@@ -2588,7 +2588,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        [/In addition to your personal account, you have (\d+) organizations? account./, "除了个人帐户外，您还有 $1 个组织帐户。"],
+        [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人帐户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
     ],
