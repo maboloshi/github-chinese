@@ -7906,6 +7906,27 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 // 顶部提醒
                 "Cache deleted successfully.": "缓存已成功删除。",
 
+        // 运行器 /<user-name>/<repo-name>/actions/runners
+            "Runners available to this repository": "此仓库可用的运行器",
+            "New runner": "新建运行器",
+            "GitHub-hosted runners": "GitHub 托管的运行器",
+                // [/(\d+) available runners?/, "$1 个可用运行器"],
+                "Larger GitHub-hosted runners": "大型 GitHub 托管运行程序",
+                "New": "新",
+                "Team & Enterprise": "团队与企业",
+                "Sizes up to:": "尺寸可达：",
+                "Standard GitHub-hosted runners": "标准 GitHub 托管的运行器",
+                "Ready-to-use runners managed by GitHub.": "由 GitHub 管理的即用型运行器。",
+                "Learn more about GitHub-hosted runners.": "了解更多有关 GitHub 托管运行器的信息。",
+
+                "View larger runner docs": "查看大型运行器文档",
+                "See pricing": "查看定价",
+            "Self-hosted runners": "自托管运行器",
+                "You don't have any": "此仓库尚无任何",
+                "self-hosted": "自托管",
+                "runners for this repository": "运行器",
+                    "Self-hosted runners are virtual machines for GitHub Actions workflows that you manage and maintain outside of GitHub.": "自托管运行器是您在 GitHub 外部管理和维护的 GitHub Actions 工作流程的虚拟机。",
+
         // /<user-name>/<repo-name>/actions/workflows/<file>.yml
             "This workflow has a": "这个工作流程有一个",
             "event trigger.": "事件触发器。",
