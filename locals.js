@@ -13739,7 +13739,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Pending installations": "待安装",
                 "Purchases": "购买",
 
-            "Recommended": "推崇",
+            "Recommended": "推荐",
             "View all": "查看全部",
 
             "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
