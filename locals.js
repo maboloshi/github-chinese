@@ -129,10 +129,13 @@ I18N.zh["title"] = { // 标题翻译
         "Your Packages": "我的软件包",
         "Your Stars": "我的星标页面",
         "Your Profile": "个人资料",
+        "Your Achievements": "我的成就",
+        "Your Followers": "我的关注者",
+        "Who You’re Following": "我关注的人",
         "Account settings": "帐户设置",
         "Appearance": "外观",
         "Accessibility": "无障碍",
-        "Notification settingss": "通知设置",
+        "Notification settings": "通知设置",
         "Billing": "账单",
         "Email settings": "邮箱设置",
         "Account security": "帐户安全",
@@ -194,6 +197,9 @@ I18N.zh["title"] = { // 标题翻译
         "Your starred topics": "我的星标主题",
         "Pull Requests": "拉取请求",
         "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
+        "Codespaces": "代码空间",
+        "Codespace Templates": "代码空间模版",
+        "Create new codespace": "创建代码空间",
     },
     "regexp": [ // 正则翻译
         [/Repositories/, "仓库"],
@@ -13729,7 +13735,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Pending installations": "待安装",
                 "Purchases": "购买",
 
-            "Recommended": "推崇",
+            "Recommended": "推荐",
             "View all": "查看全部",
 
             "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
