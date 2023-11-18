@@ -1784,7 +1784,11 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
     ],
 };
 
-I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"];
+I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
+
+I18N.zh["page-profile/followers"] = I18N.zh["page-profile-public"]; // ?tab=follower
+
+I18N.zh["page-profile/following"] = I18N.zh["page-profile-public"]; // ?tab=following
 
 I18N.zh["orgs-public"] = { // 组织公共部分
     "static": { // 静态翻译
