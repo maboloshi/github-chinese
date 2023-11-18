@@ -129,6 +129,9 @@ I18N.zh["title"] = { // 标题翻译
         "Your Packages": "我的软件包",
         "Your Stars": "我的星标页面",
         "Your Profile": "个人资料",
+        "Your Achievements": "我的成就",
+        "Your Followers": "我的关注者",
+        "Who You’re Following": "我关注的人",
         "Account settings": "帐户设置",
         "Appearance": "外观",
         "Accessibility": "无障碍",
@@ -195,7 +198,7 @@ I18N.zh["title"] = { // 标题翻译
         "Pull Requests": "拉取请求",
         "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
         "Codespaces": "代码空间",
-        "Codespaces Templates": "代码空间模版",
+        "Codespace Templates": "代码空间模版",
         "Create new codespace": "创建代码空间",
     },
     "regexp": [ // 正则翻译
