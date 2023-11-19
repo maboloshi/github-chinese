@@ -3571,10 +3571,13 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
                 // 取消按钮 提醒信息
                 "Are you sure you want to suspend this GitHub App?": "您确定要暂停此 GitHub 应用吗？",
             "This will remove the app and revoke access to all resources.": "这将删除应用并撤销对所有资源的访问权限。",
+            // [/Uninstall "(.*)"/, "卸载 “$1”"],
             "Uninstall": "卸载",
                 // 取消按钮 提醒信息
                 // [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 1 个仓库中卸载此 GitHub 应用吗？"],
-
+            "Unsuspend your installation": "取消暂停",
+                "This grant the app access to your resources.": "这将授予应用访问您的资源。",
+                "Unsuspend": "取消暂停",
 
             "Report abuse": "举报滥用",
             "Revoke": "撤销",
@@ -3623,10 +3626,8 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
     },
     "regexp": [ // 正则翻译
         [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用吗？"],
-        [/Uninstall "([^ ]+)"/, "卸载 “$1”"],
-
+        [/Uninstall "(.*)"/, "卸载 “$1”"],
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
-
         [/(\d+) applications?/, "$1 个应用"],
         [/([^ ]+) will no longer be able to access your GitHub account. You cannot undo this action./, "$1 将无法再访问您的 GitHub 帐户。您无法撤消此操作。"],
         [/([^ ]+) has been revoked from your account./, "$1 已经从您的帐户中被撤销了。"],
