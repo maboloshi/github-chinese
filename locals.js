@@ -1287,11 +1287,14 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
-I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
+I18N.zh["page-profile-public"] = { // 个人首页（含组织）
     "static": { // 静态翻译
         // 个人首页 公关部分
             // 左侧用户信息栏
             "Change your avatar": "修改头像",
+            "they/them": "他们",
+            "she/her": "她",
+            "he/him": "他",
             "You have blocked this user": "您已拉黑此用户",
             "Follow": "关注",
             "Sponsor": "赞助",
@@ -1423,6 +1426,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Created their first repository": "创建了他们的第一个仓库",
             "Created an issue in": "创建一个议题在",
             "Created a pull request in": "创建一个拉取请求在",
+                "lines changed": "行被改变",
             "First repository": "第一个仓库",
             "First pull request": "第一次拉取请求",
             "First issue": "第一次议题",
