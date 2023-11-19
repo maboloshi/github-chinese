@@ -16335,6 +16335,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "US West": "美国西部",
                 "Europe West": "欧洲西部",
                 "Southeast Asia": "东南亚",
+                "Australia": "澳大利亚",
             "Machine type": "机器类型",
                 "Resources for your codespace": "代码空间的资源",
                 "None": "无",
