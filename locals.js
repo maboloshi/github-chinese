@@ -3194,9 +3194,9 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Codespaces secrets": "代码空间机密",
             "New secret": "新建机密",
-            "Secrets are environment variables that are": "机密是环境变量",
-            "encrypted": "被加密",
-            "and only exposed to Codespaces you create.": "并且只暴露给您创建的代码空间。",
+            "Development environment secrets are environment variables that are": "开发环境机密是",
+            "encrypted": "被加密的环境变量",
+            ". They are available to any codespace you create using repositories with access to that secret.": "。它们可用于您使用访问该机密的仓库创建的任何代码空间。",
             "There are no Codespaces secrets.": "尚无代码空间机密",
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
@@ -3270,6 +3270,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                         "Europe West": "欧洲西部",
                     "Asia Pacific": "亚太地区",
                         "Southeast Asia": "东南亚",
+                    "Australia": "澳大利亚",
 
             // 顶部提醒
                 "Secret added.": "机密已添加。",
