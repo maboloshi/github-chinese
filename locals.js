@@ -4622,6 +4622,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "branch of": "分支",
             "does not contain the path": "仓库，不包含路径",
             "Return to the repository overview": "返回仓库概述",
+            "Cannot find a valid ref in": "未找到有效的引用",
+            "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
