@@ -1287,11 +1287,14 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
-I18N.zh["page-profile-public"] = { // 个人首页 (含组织)
+I18N.zh["page-profile-public"] = { // 个人首页（含组织）
     "static": { // 静态翻译
         // 个人首页 公关部分
             // 左侧用户信息栏
             "Change your avatar": "修改头像",
+            "they/them": "他们",
+            "she/her": "她",
+            "he/him": "他",
             "You have blocked this user": "您已拉黑此用户",
             "Follow": "关注",
             "Sponsor": "赞助",
@@ -1423,6 +1426,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Created their first repository": "创建了他们的第一个仓库",
             "Created an issue in": "创建一个议题在",
             "Created a pull request in": "创建一个拉取请求在",
+                "lines changed": "行被改变",
             "First repository": "第一个仓库",
             "First pull request": "第一次拉取请求",
             "First issue": "第一次议题",
@@ -3190,9 +3194,9 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
 
             "Codespaces secrets": "代码空间机密",
             "New secret": "新建机密",
-            "Secrets are environment variables that are": "机密是环境变量",
-            "encrypted": "被加密",
-            "and only exposed to Codespaces you create.": "并且只暴露给您创建的代码空间。",
+            "Development environment secrets are environment variables that are": "开发环境机密是",
+            "encrypted": "被加密的环境变量",
+            ". They are available to any codespace you create using repositories with access to that secret.": "。它们可用于您使用访问该机密的仓库创建的任何代码空间。",
             "There are no Codespaces secrets.": "尚无代码空间机密",
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
@@ -3266,6 +3270,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                         "Europe West": "欧洲西部",
                     "Asia Pacific": "亚太地区",
                         "Southeast Asia": "东南亚",
+                    "Australia": "澳大利亚",
 
             // 顶部提醒
                 "Secret added.": "机密已添加。",
@@ -3566,10 +3571,13 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
                 // 取消按钮 提醒信息
                 "Are you sure you want to suspend this GitHub App?": "您确定要暂停此 GitHub 应用吗？",
             "This will remove the app and revoke access to all resources.": "这将删除应用并撤销对所有资源的访问权限。",
+            // [/Uninstall "(.*)"/, "卸载 “$1”"],
             "Uninstall": "卸载",
                 // 取消按钮 提醒信息
                 // [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 1 个仓库中卸载此 GitHub 应用吗？"],
-
+            "Unsuspend your installation": "取消暂停",
+                "This grant the app access to your resources.": "这将授予应用访问您的资源。",
+                "Unsuspend": "取消暂停",
 
             "Report abuse": "举报滥用",
             "Revoke": "撤销",
@@ -3618,10 +3626,8 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
     },
     "regexp": [ // 正则翻译
         [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用吗？"],
-        [/Uninstall "([^ ]+)"/, "卸载 “$1”"],
-
+        [/Uninstall "(.*)"/, "卸载 “$1”"],
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
-
         [/(\d+) applications?/, "$1 个应用"],
         [/([^ ]+) will no longer be able to access your GitHub account. You cannot undo this action./, "$1 将无法再访问您的 GitHub 帐户。您无法撤消此操作。"],
         [/([^ ]+) has been revoked from your account./, "$1 已经从您的帐户中被撤销了。"],
@@ -4617,6 +4623,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "branch of": "分支",
             "does not contain the path": "仓库，不包含路径",
             "Return to the repository overview": "返回仓库概述",
+            "Cannot find a valid ref in": "未找到有效的引用",
+            "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
@@ -5558,6 +5566,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // "opened": "打开",
             // "closed": "已关闭",
 
+            "You commented on and opened this issue": "您打开了此议题并发表了评论",
+            "You were mentioned on and commented on this issue": "您被提及并对此议题发表了评论",
+            "You commented on this issue": "你对此议题发表了评论",
+            "You opened this issue": "您打开了此议题",
+
             // 置顶议题
             "Pinned issues": "置顶议题",
 
@@ -5982,6 +5995,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Exclude everything labeled": "如果要找到所有标有",
                     "with": "标签的，请使用",
                     "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+
+                "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
+                "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
+                "You commented on this pull request": "你对此拉取请求发表了评论",
+                "You opened this pull request": "您打开了此拉取请求",
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 顶部提醒
@@ -16264,7 +16282,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Your instant dev environment": "您的即时开发环境",
             "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。",
             "Go to docs": "转到文档",
-            "New codespace": "创建代码空间",
+            "New codespace": "新建代码空间",
             "Explore quick start templates": "浏览快速入门模板",
             "See all": "查看所有",
             "Use this template": "使用此模版",
@@ -16305,7 +16323,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Use this template": "使用此模版",
 
         // https://github.com/codespaces/new
-            "Create a new codespace": "创建一个新的代码空间",
+            "Create a new codespace": "新建一个代码空间",
             "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
             "Repository": "仓库",
                 "To be cloned into your codespace": "要被克隆到您的代码空间",
@@ -16322,6 +16340,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "US West": "美国西部",
                 "Europe West": "欧洲西部",
                 "Southeast Asia": "东南亚",
+                "Australia": "澳大利亚",
             "Machine type": "机器类型",
                 "Resources for your codespace": "代码空间的资源",
                 "None": "无",
@@ -16329,8 +16348,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
-            "Create codespace": "创建代码空间",
-            "Creating codespace": "创建代码空间中"
+            "Create codespace": "新建代码空间",
+            "Creating codespace": "新建代码空间中"
     },
     "regexp": [
     ],
