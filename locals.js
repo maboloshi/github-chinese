@@ -5558,6 +5558,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // "opened": "打开",
             // "closed": "已关闭",
 
+            "You commented on and opened this issue": "您打开了此议题并发表了评论",
+            "You were mentioned on and commented on this issue": "您被提及并对此议题发表了评论",
+            "You commented on this issue": "你对此议题发表了评论",
+            "You opened this issue": "您打开了此议题",
+
             // 置顶议题
             "Pinned issues": "置顶议题",
 
@@ -5982,6 +5987,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Exclude everything labeled": "如果要找到所有标有",
                     "with": "标签的，请使用",
                     "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+
+                "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
+                "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
+                "You commented on this pull request": "你对此拉取请求发表了评论",
+                "You opened this pull request": "您打开了此拉取请求",
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 顶部提醒
