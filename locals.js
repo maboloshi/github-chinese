@@ -16277,7 +16277,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Your instant dev environment": "您的即时开发环境",
             "Go from code to commit faster on any project.": "在任何项目中，从代码到提交速度更快。",
             "Go to docs": "转到文档",
-            "New codespace": "创建代码空间",
+            "New codespace": "新建代码空间",
             "Explore quick start templates": "浏览快速入门模板",
             "See all": "查看所有",
             "Use this template": "使用此模版",
@@ -16318,7 +16318,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Use this template": "使用此模版",
 
         // https://github.com/codespaces/new
-            "Create a new codespace": "创建一个新的代码空间",
+            "Create a new codespace": "新建一个代码空间",
             "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
             "Repository": "仓库",
                 "To be cloned into your codespace": "要被克隆到您的代码空间",
@@ -16342,8 +16342,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
-            "Create codespace": "创建代码空间",
-            "Creating codespace": "创建代码空间中"
+            "Create codespace": "新建代码空间",
+            "Creating codespace": "新建代码空间中"
     },
     "regexp": [
     ],
