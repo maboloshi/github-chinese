@@ -190,7 +190,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 ## ✔ 待办 (TODO)
 
 1. 添加 GitHub 名词解释，新手可能不太理解部分名词具体表达的意思，比如 `pull request`。
-2. 整理部分 Git & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
+2. 整理部分 [Git](https://git-scm.com/) & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
 3. **本人英文渣渣，翻译非常困难，急需大家 PR 共同翻译**
 
 ## ✨ 贡献
