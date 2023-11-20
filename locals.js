@@ -16309,10 +16309,15 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Rename": "重命名",
                 "Export changes to a branch": "将更改导出到分支",
+                "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
+                "Checking branch status": "检查分支情况",
+                "Create branch": "创建分支",
                 "Change machine type": "修改机器类型",
                 "Change codespace machine type": "修改代码空间机器类型",
                 "Update codespace": "更新代码空间",
+                "Close dialog": "关闭对话框",
                 "Keep codespace": "保留代码空间",
+                "Unkeep codespace": "不再保留代码空间",
                 "Stop codespace": "停止代码空间",
 
 
