@@ -4418,71 +4418,6 @@ I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 I18N.zh["repository-public"] = { // 仓库-公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
-            // 公共部分 - 头部条
-            "forked from": "复刻自",
-            "generated from": "创建自",
-
-            "Pin": "置顶", // 组织仓库
-            "Edit Pins": "编辑置顶", // 组织仓库
-                "Pin to…": "置顶到…",
-                "Profile": "个人资料页",
-                    "Pin this to your personal profile, visible to everyone": "将此置顶到您的个人资料，对所有人可见",
-                    "Limit reached": "已达上限",
-                "Public pins in this organization": "该组织的公共置顶",
-                    "Visible to anyone": "对任何人可见",
-                "Private pins in this organization": "该组织的私有置顶",
-                    "Visible to members only": "仅对成员可见",
-            "Unpin": "取消置顶",
-
-            "Ignoring": "忽略",
-            "Stop ignoring": "取消忽略",
-            "Watch": "关注",
-            "Unwatch": "取消关注",
-
-            "Star": "星标",
-            "Unstar": "已加星标",
-            "Fork": "复刻",
-            "Unfork": "取消复刻",
-
-            "Sponsor": "赞助",
-            // 赞助对话框
-            // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
-            "External links": "外部链接",
-            "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
-            "Report abuse": "举报滥用",
-
-            // 关注 & 订阅通知设置 下拉菜单
-            "Notification settings": "通知设置", //小屏模式
-            "Notifications": "通知类型",
-            "Participating and @mentions": "参与和 @您",
-                "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
-            "All Activity": "所有活动",
-                "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
-            "Ignore": "忽略",
-                "Never be notified.": "永不接收通知。",
-            "Custom": "自定义",
-                "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
-            "Get push notifications on": "要获取推送通知，使用",
-            "Releases": "发行版",
-                "Issues are not enabled for this repository": "此仓库未启用议题功能",
-            "Discussions": "讨论",
-                "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
-                "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
-            "Security alerts": "安全警报",
-            //"Cancel": "取消",
-            "Apply": "应用",
-
-            // 复刻下拉
-            // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
-            "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
-            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
-            "Existing forks": "现有的复刻",
-            "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
-            "Create a new fork": "创建复刻",
-
-            //
-            "Star this repository": "星标仓库", //小屏模式
-
              // 用户 浮动信息卡
                 "Recently edited these files": "最近编辑过这些文件",
                 "Owns this repository": "拥有这个仓库",
@@ -4636,8 +4571,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
-        [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
-        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/had recent pushes about/, "分支有了最新的推送，大约"],
@@ -4826,6 +4759,72 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Clone repository: Copy SSH": "克隆仓库：复制 SSH",
                 "Clone repository: Copy GitHub CLI": "克隆仓库：复制 GitHub CLI",
                 "Copy file permalink": "复制文件永久链接",
+
+            // 操作条
+                "forked from": "复刻自",
+                "generated from": "创建自",
+
+                "Pin": "置顶", // 组织仓库
+                "Edit Pins": "编辑置顶", // 组织仓库
+                    "Pin to…": "置顶到…",
+                    "Profile": "个人资料页",
+                        "Pin this to your personal profile, visible to everyone": "将此置顶到您的个人资料，对所有人可见",
+                        "Limit reached": "已达上限",
+                    "Public pins in this organization": "该组织的公共置顶",
+                        "Visible to anyone": "对任何人可见",
+                    "Private pins in this organization": "该组织的私有置顶",
+                        "Visible to members only": "仅对成员可见",
+                "Unpin": "取消置顶",
+
+                "Ignoring": "忽略",
+                "Stop ignoring": "取消忽略",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
+
+                "Star": "星标",
+                "Unstar": "已加星标",
+                "Fork": "复刻",
+                "Unfork": "取消复刻",
+
+                "Sponsor": "赞助",
+                // 赞助对话框
+                // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+                "External links": "外部链接",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
+                "Report abuse": "举报滥用",
+
+                // 关注 & 订阅通知设置 下拉菜单
+                "Notification settings": "通知设置", //小屏模式
+                "Notifications": "通知类型",
+                "Participating and @mentions": "参与和 @您",
+                    "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
+                "All Activity": "所有活动",
+                    "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+                "Ignore": "忽略",
+                    "Never be notified.": "永不接收通知。",
+                "Custom": "自定义",
+                    "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+                "Get push notifications on": "要获取推送通知，使用",
+                "Releases": "发行版",
+                    "Issues are not enabled for this repository": "此仓库未启用议题功能",
+                "Discussions": "讨论",
+                    "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
+                    "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
+                "Security alerts": "安全警报",
+                //"Cancel": "取消",
+                "Apply": "应用",
+
+                // 复刻下拉
+                // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
+                "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
+                "Existing forks": "现有的复刻",
+                "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
+                "Create a new fork": "创建复刻",
+
+                //
+                "Star this repository": "星标仓库", //小屏模式
+                "Unstar this repository": "取消仓库星标", //小屏模式
 
             // 仓库主页 分支保护
                 // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
@@ -5318,6 +5317,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits?/, "$1 个提交"], // 新版仓库概述
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
         [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
     ],
