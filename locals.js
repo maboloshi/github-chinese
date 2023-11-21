@@ -9554,6 +9554,50 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
             "What is": "什么是",
             "the community profile": "社区简介",
 
+        // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=main
+            "Add a license to your project": "为您的项目添加许可证",
+            "Choose a license to add to your project": "选择要添加到项目的许可证",
+            "Select a template on the left to get started.": "在左侧选择一个模板开始。",
+            "Learn more about": "了解更多关于",
+            "which license best fits your project": "哪种许可证最适合您的项目",
+
+        // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=<branch name>&template=<template name>
+            // 右侧栏
+                "You’ll have a chance to review before committing a": "您将有机会在提交之前进行审查",
+                "file to a new branch or the root of your project.": "文件到新分支或项目的根目录。",
+
+                "To adopt": "采用",
+                ", enter your details. You’ll have a chance to review before committing a": "，输入您的详细信息。您将有机会在提交之前进行审查",
+                "Year": "年份",
+                    "The current year": "当前年份",
+                "Full name": "全名",
+                    "The full name or username of the repository owner": "仓库所有者的全名或用户名",
+                "Review and submit": "审查并提交",
+
+            // 中间栏 顶部 权限信息
+                "Permissions": "许可事项",
+                "Limitations": "限制条件",
+                    "Commercial use": "商业用途",
+                    "Modification": "修改",
+                    "Distribution": "分布",
+                    "Patent use": "专利使用",
+                    "Private use": "私人使用",
+                    "Trademark use": "商标使用",
+                    "Liability": "责任",
+                    "Warranty": "担保",
+                    "Disclose source": "开源",
+                    "Same license": "相同的许可证",
+                "Conditions": "条件",
+                    "License and copyright notice": "许可和版权声明",
+                    "State changes": "状态变化",
+                    "License and copyright notice for source": "来源许可和版权声明",
+                    "Network use is distribution": "网络使用即分发",
+                    "Same license (library)": "相同的许可证（库）",
+                    "Same license (file)": "相同的许可证（文件）",
+
+                "This is not legal advice.": "这并不是法律建议。",
+                "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
