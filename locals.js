@@ -2063,10 +2063,10 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
             "Account security": "帐户安全",
             "page.": "页。",
 
-            "Link Patreon account": "与 Patreon 账户连接",
-            "Connect a Patreon account for": "为",
-            "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "连接 Patreon 账户来赞助维护人员。当被赞助人链接 Patreon 和 GitHub时，会在 GitHub 上获得 Patreon 上赞助的认可，并有一个公开的GitHub赞助商档案。",
-            "Connect with Patreon": "连接 Patreon",
+            "Link Patreon account": "关联 Patreon 帐户",
+                "Connect a Patreon account for": "关联",
+                "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 帐户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 帐户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
+                "Connect with Patreon": "关联 Patreon 帐户",
 
             "Export account data": "导出帐户数据",
             "Export all repositories and profile metadata for": "导出所有仓库和配置元数据，自",
@@ -14309,6 +14309,11 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                     "The developers and organizations that your organization sponsors can send you updates to this email.": "您的组织赞助的开发人员和组织可以向您发送此电子邮箱的更新。",
                 "Update profile": "更新资料",
                 "Profile updated successfully": "资料更新成功。",
+
+            "Link Patreon account": "关联 Patreon 帐户",
+                "Connect a Patreon account for": "关联",
+                "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 帐户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 帐户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
+                "Connect with Patreon": "关联 Patreon 帐户",
 
             "GitHub Developer Program": "GitHub 开发者计划",
                 "Building an application, service, or tool that integrates with GitHub?": "构建应用、服务或工具，集成到 GitHub 吗？",
