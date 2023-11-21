@@ -379,7 +379,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Working from home": "在家工作",
             "Out sick": "生病",
             "Focusing": "专注中",
-        
+
         "Busy": "繁忙中",
         "I may be slow to respond.": "我的反应可能比较慢。",
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
@@ -387,8 +387,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Never": "永不",
         "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
         "Visible to": "可见",
-            "Everyone": "所有人",
-            "Your status will be visible to everyone": "所有人都可以看到您的状态",
+            "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
             // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
         "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
         "in 30 minutes": "30 分钟",
@@ -417,13 +416,14 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Add a body": "添加内容",
         "Write": "撰写",
             "Add your comment here...": "在此添加您的评论...",
+            "Add your answer here...": "在此添加您的答复...", // 具体讨论页
         "Preview": "预览",
             "Nothing to preview": "没有可预览的内容。",
             "This file is empty.": "这是一个空文件。",
         "Leave a comment": "发表评论",
         "Write a reply": "发表回复", // 具体讨论页
-        "Write a comment": "发表回复", // 具体讨论页
-        "Suggest an answer": "建议一个答案", // 具体讨论页
+        "Write a comment": "发表评论", // 具体讨论页
+        "Suggest an answer": "提出答复", // 具体讨论页
         "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
         "Nothing to preview": "没有什么可预览",
         "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
@@ -532,6 +532,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Add to list": "添加到清单",
             "You don't have any lists yet.": "您尚无任何清单。",
             "Lists": "清单",
+                "Search lists": "搜索清单",
             "Create list": "创建清单",
                 "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                 "⭐️ Name this list": "⭐️ 清单名称",
@@ -1105,7 +1106,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
-            "You're seeing this because you haven't used repositories， issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
+            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
             "Remove from dashboard": "从仪表板中删除",
         "Tools of the trade": "贸易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
@@ -1652,9 +1653,7 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
                 // 下拉菜单
                 "Select type": "选择类型",
                 "All": "全部",
-
             "Search packages…": "搜索软件包…",
-
             "Visibility:": "可见性:",
                 "Select visibility": "选择可见性",
                 "Internal": "内部",
@@ -1662,6 +1661,13 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
                 "Select sort view": "选择排序视图",
                 "Most downloads": "最多下载",
                 "Least downloads": "最少下载",
+
+            "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
+            // 筛选结果
+            "No results matched your search.": "没有与您的搜索匹配的结果。",
+            "Try": "尝试",
+            "browsing all packages": "浏览所有软件包",
+            "to find what you're looking for.": "，以找寻您想要的内容。",
 
             "Published": "发布于",
 
@@ -3020,7 +3026,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
 
             "Transform account": "帐户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
-            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助商帐户，因此您无法将此帐户转换为组织。", // 存在赞助商账户时
+            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助者帐户，因此您无法将此帐户转换为组织。", // 存在赞助者账户时
             "Account transformation warning": "帐户变更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
@@ -6271,6 +6277,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "code of conduct": "行为准则",
 
             // 讨论标签卡 主页
+            "Refresh": "刷新",
+
             "marked this pull request as draft": "将此拉取请求标记为草稿",
             "First-time contributor": "首次贡献者",
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
@@ -7497,7 +7505,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 // [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
                 // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
 
-
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
             "Select a discussion category": "选择讨论分类",
@@ -7555,6 +7562,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Discussion unpinned from Q&A": "取消在 “问与答” 上置顶讨论",
                 "Discussion unpinned from Show and tell": "取消在 “展示与讲述” 上置顶讨论",
 
+            "Pinned": "已置顶",
+
             "announced in": "宣布于",
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
@@ -7565,7 +7574,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // [/(\d+) answers?/, "$1 位答复者"],
             "Return to top": "返回顶部",
             // [/(\d+) comments?/, "$1 条评论"],
-            // [/(\d+) replies?/, "$1 条回复"],
+            // [/(\d+) replies?/, "$1 条答复"],
             // [/(\d+) suggested answer/, "$1 个建议答案"],
 
             "Answered by": "答复者：",
@@ -7586,6 +7595,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
+            // [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
+            // [/(\d+) hidden items?/, "$1 条隐藏项目"],
+            "Load more…": "载入更多…",
+            "New": "新",
 
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
@@ -7688,7 +7701,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             "Convert issues": "转换为议题",
             // [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
-            // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+            // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
             // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
             "Issue will be locked": "议题将被锁定",
             // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
@@ -7720,12 +7733,14 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
         [/(\d+) comments?/, "$1 条评论"],
-        [/(\d+) repl(y|ies)?/, "$1 条回复"],
+        [/(\d+) repl(y|ies)/, "$1 条答复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
+        [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
+        [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
-        [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+        [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
@@ -7736,8 +7751,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
         [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
         [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
-        [/Delete (.*) category/, "删除分类 “$1”"],
         [/Edit (.*) category/, "编辑 “$1” 分类"],
+        [/Delete (.*) category/, "删除分类 “$1”"],
         [/Edit section (.*)/, "编辑栏目 “$1”"],
         [/Delete section (.*)/, "删除栏目 “$1”"],
         [/Delete (.*) section/, "删除 “$1” 栏目"],
@@ -7822,6 +7837,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Management": "管理",
             "Caches": "缓存",
             "Deployments": "部署",
+            "Runners": "运行器",
 
             "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
             "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
@@ -7890,7 +7906,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // 顶部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
 
-        // /actions/caches
+        // 缓存 /<user-name>/<repo-name>/actions/caches
             "Showing caches from all workflows.": "显示所有工作流程的缓存。",
             "Learn more about managing caches.": "了解更多关于管理缓存的信息。",
             "Filter caches": "筛选缓存",
@@ -7906,7 +7922,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Largest size": "最大尺寸",
                 "Smallest size": "最小尺寸",
             "No caches": "尚无缓存",
-            "Nothing has been cached by actions running in this repository.": "在此仓库中运行的操作未缓存任何内容。",
+            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流程未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存的信息",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以缩短工作流执行时间。",
             "Last used": "最近使用",
@@ -8082,6 +8098,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+) cache results?/, "$1 个缓存结果"],
         [/(\d+) caches?/, "$1 个缓存"],
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
+        [/(\d+) available runners?/, "$1 个可用运行器"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
@@ -8119,6 +8136,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                 "deployed": "部署于",
                 "Latest deployments from": "最新部署来自",
                 "all environments": "所有环境",
+                "Deployed to": "部署到",
                 "Latest": "最新",
                 "View logs": "查看日志",
                 "View workflow run": "查看工作流程运行",
@@ -8221,6 +8239,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "branch.": "分支。",
 
                 "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
+                "Bypass rules and commit changes": "绕过规则并提交更改",
 
                 "Create a": "创建",
                 "new branch": "新分支",
@@ -8298,6 +8317,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Saving...": "保存中...",
             "Propose changes": "提议更改", //  他人仓库
             "Sign off and commit changes": "签署并提交更改",
+            "Sign off and propose changes": "签署并提出变更建议",
             "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
 
             // 提交更改 对话框
@@ -8721,7 +8741,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
             "Delete and try uploading this file again.": "删除并重新上传。",
             "will be deleted": "将被删除",
-            "(undo)": "(撤销)",
+            "Remove": "删除",
+            "Undo": "撤销",
 
             "Set as a pre-release": "设置为预发布版本",
                 "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
@@ -8735,7 +8756,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                             "Q&A": "问与答",
                             "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
-                "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
+                "This release is labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
             "Publish release": "发布发行版",
                 "Publishing…": "发布中…",
@@ -8798,6 +8819,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/(\d+) commits?/, "$1 个提交"],
         [/to ([^ ]+) since this release/, "至 $1 分支，该发行版"],
         [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
+        [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
@@ -9220,7 +9242,7 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
-        // 活动页面 /<user-name>/<repo-name>/activity 
+        // 活动页面 /<user-name>/<repo-name>/activity
             "Activity": "活动",
 
             "All branches": "所有分支",
@@ -10878,7 +10900,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
             "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
 
         // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
-            "/ Create self-hosted runner": "/ 创建自托管运行器",
+            // [/\/ Add new self-hosted runner ·/, "/ 创建自托管运行器 ·"],
             "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。下载并配置 GitHub Actions 运行器 后，您同意",
                 "GitHub Terms of Service": "GitHub 服务条款",
                 "GitHub Corporate Terms of Service": "GitHub 企业服务条款",
@@ -10895,6 +10917,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/\/ Add new self-hosted runner ·/, "/ 创建自托管运行器 ·"],
         [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
