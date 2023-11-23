@@ -356,7 +356,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "To open the command palette:": "打开命令面板：",
             "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                 "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
-                "Note: commenting on rich diff views of notebooks is not yet supported.": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论。",
+                "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
             "Project Migration": "项目迁移",
                 "We've made it easy for you to migrate your project (classic) boards to the all new Projects experience! Enable this feature so that you can try out tables, multiple views, new automation options, and powerful field types using your existing projects.": "我们已经为您简化了将您的项目（经典版）面板迁移到全新项目的体验！启用此功能，您可以在现有项目中尝试表格、多视图、新的自动化选项和强大的字段类型。",
                 "How it works:": "如何工作：",
@@ -2397,10 +2397,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
                 "Unlimited public/private repos": "无限的公共/私有仓库",
                 "Unlimited collaborators": "无限协作者",
-                "2,000 Actions minutes/month": "2,000 次操作 分钟/月",
+                "2,000 Actions minutes/month": "每月 2,000 分钟 GitHub Actions",
                 "500MB of Packages storage": "500MB 的包存储空间",
-                "120 core-hours of Codespaces compute per developer": "每个开发者 120 个核心小时的代码空间计算",
-                "15GB of Codespaces storage per developer": "每个开发者 15GB 的代码空间存储",
+                "120 core-hours of Codespaces compute per developer": "每位开发者拥有 120 个核心小时的代码空间计算能力",
+                "15GB of Codespaces storage per developer": "每位开发者拥有 15GB 的代码空间存储空间",
                 "Community support": "社区支持",
 
                 "Not included:": "不包含：",
@@ -2434,7 +2434,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                      // 组织设置
                     "Buy Copilot Business": "购买 GitHub Copilot 商业版",
                     "Copilot Business": "GitHub Copilot 商业版",
-                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型 实时在您的编辑器中提供代码和整个函数建议。每月 $19/用户。",
+                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型 实时在您的编辑器中提供代码和整个函数建议。每月 $19 / 用户。",
 
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
@@ -2609,6 +2609,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "See private members of your organization": "查看您组织的私人成员",
                 "Be seen in the list of organization members": "在组织成员列表中可见",
                 "Use the organization’s payment method": "使用组织的支付方式",
+                "Enable or manage Copilot": "启用或管理 GitHub Copilot",
                 "Purchase, edit, or cancel Marketplace subscriptions": "购买、编辑或取消市场订阅",
 
             "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
@@ -3599,6 +3600,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "No installed applications": "没有已安装的应用",
             "You have no applications installed on this account.": "此帐户上没有安装任何应用。",
             "Configure": "配置",
+            "Suspended": "已暂停",
 
         // https://github.com/settings/installations/<id>
             "Installed": "安装于",
@@ -4702,6 +4704,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
         // 依据模板新建仓库 https://github.com/new?template_owner=<模板作者>&template_name=<模板名称>
             "Repository template": "仓库模板",
+                "Fetching templates…": "正在获取模板…",
                 "No template": "不设置模板",
                 "Start your repository with a template repository's contents.": "使用模板仓库的内容新建仓库。",
             "Include all branches": "包括所有分支",
@@ -4865,7 +4868,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Apply": "应用",
 
                 // 复刻下拉
-                // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
                 "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
                 "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
                 "Existing forks": "现有的复刻",
@@ -5293,7 +5295,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
-        // 追溯 /<user-name>/<repo-name>/blame/<branch>/<file>
+        // 代码追溯页面 /<user-name>/<repo-name>/blame/<branch>/<file>
             "Blame": "追溯",
             "Newer": "新的",
             "Older": "旧的",
@@ -7344,7 +7346,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
-        // 讨论页面 /<user-name>/<repo-name>/discussions 组织讨论页 /orgs/<orgs-name>/discussions
+        // 讨论页面 /<user-name>/<repo-name>/discussions
+        // 组织讨论页 /orgs/<orgs-name>/discussions
             "Teams": "团队", //组织仓库
             "People": "成员", //组织仓库
 
@@ -7371,6 +7374,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "create a new discussion.": "创建新的讨论。",
 
             // 左侧栏
+            "Submit search": "提交搜索",
             "Search all discussions": "搜索所有讨论",
             "Suggested filters": "推荐的筛选器",
             "filter by discussion author": "按讨论作者筛选",
@@ -7383,6 +7387,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             "Most helpful": "最有帮助",
                 "Be sure to mark someone’s comment as an answer if it helps you resolve your question — they deserve the credit!": "如果某人的评论有助于您解决问题，请务必将其标记为答案——他们值得称赞！",
+            "Last 30 days": "最近 30 天",
             "Community guidelines": "社区指南",
             "Community insights": "社区见解",
 
@@ -7659,6 +7664,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "code of conduct": "行为准则",
 
+            // [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
+
             // 右侧栏
             // /([\d,]+) participants?/, "$1 位参与者"
             "and others": "和其它",
@@ -7811,6 +7818,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Edit section (.*)/, "编辑栏目 “$1”"],
         [/Delete section (.*)/, "删除栏目 “$1”"],
         [/Delete (.*) section/, "删除 “$1” 栏目"],
+        [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -7944,7 +7952,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 // 删除工作流程运行 对话框
                     "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流程运行吗？",
                     "This action cannot be undone": "此操作无法撤消",
-                    "Yes, permanently delete this workflow run": "是，永久删除此工作流程运行",
+                    "Yes, permanently delete this workflow run": "是的，永久删除此工作流程运行",
                 // 顶部提醒
                     "Workflow run deleted successfully.": "工作流程运行删除成功。",
 
@@ -7977,7 +7985,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Largest size": "最大尺寸",
                 "Smallest size": "最小尺寸",
             "No caches": "尚无缓存",
-            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流程未缓存任何内容。",
+            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流程尚未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存的信息",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以缩短工作流执行时间。",
             "Last used": "最近使用",
@@ -8007,7 +8015,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Sizes up to:": "尺寸可达：",
                 "Standard GitHub-hosted runners": "标准 GitHub 托管的运行器",
                 "Ready-to-use runners managed by GitHub.": "由 GitHub 管理的即用型运行器。",
-                "Learn more about GitHub-hosted runners.": "了解更多有关 GitHub 托管运行器的信息。",
+                "Learn more about GitHub-hosted runners.": "了解更多关于 GitHub 托管运行器的信息。",
 
                 "View larger runner docs": "查看大型运行器文档",
                 "See pricing": "查看定价",
@@ -9606,7 +9614,7 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //社区准则 /<user-name>/<repo-name>/community
+        // 社区准则 /<user-name>/<repo-name>/community
             "Here’s how this project compares to": "以下是该项目内容，不同于",
             "recommended community standards": "推荐的社区标准",
             "Checklist": "检查清单",
@@ -10017,6 +10025,7 @@ I18N.zh["repository-settings-menu"] = { // 仓库设置公共部分
                 "Webhooks": "Web 钩子",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
+                "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
                 "Code security and analysis": "代码安全性与分析",
@@ -10024,8 +10033,8 @@ I18N.zh["repository-settings-menu"] = { // 仓库设置公共部分
                 "Secrets and variables": "机密和变量",
 
             "Integrations": "集成",
-            "GitHub Apps": "GitHub 应用",
-            "Email notifications": "邮件通知",
+                "GitHub Apps": "GitHub 应用",
+                "Email notifications": "邮件通知",
 
     },
     "regexp": [ // 正则翻译
@@ -12063,6 +12072,7 @@ I18N.zh["repository/settings/installations"] = { // 仓库设置 - GitHub 应用
             "Configure": "配置",
 
             "There aren't any GitHub Apps installed on this repository.": "此仓库上未安装任何 GitHub 应用。",
+            "Suspended": "已暂停",
             "Developed by": "开发者:",
 
     },
@@ -14530,6 +14540,8 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
         // 成员管理 https://github.com/orgs/<orgs-name>/people/<user-name>
 
+        // 成员权限详情 /orgs/<组织名>/people/<用户名>/repositories/<组织名>/<repo-name>
+
         // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
             "Find a collaborator…": "寻找协作者…",
             "Select all": "全选",
@@ -15627,7 +15639,7 @@ I18N.zh["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot 规�
                 "Edit curated rule": "编辑策划规则",
                 "Edit rule": "编辑规则",  // 仓库规则
                 "Dismiss low-impact alerts for development-scoped dependencies": "解除开发范围下依赖关系的低影响警报",
-                    "In a developer (non-production or runtime) environment, these alerts are unlikely to be unexploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报不可能不被利用或效果有限，例如缓慢的构建或长时间运行的测试。",
+                    "In a developer (non-production or runtime) environment, these alerts are unlikely to be exploitable or have limited effect like slow builds or long-running tests.": "在开发人员（非生产或运行时）环境中，这些警报不太可能被利用，或者影响有限，例如缓慢的构建或长时间运行的测试。",
                     "Learn more about this methodology.": "了解更多关于此方式的信息。",
             "Repository rules": "仓库规则", // 仓库规则
             "Organization rules": "组织规则",
@@ -15766,7 +15778,7 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
             "New organization variable": "新建组织变量",
 
             "Organization variables": "组织变量",
-            "There are no variables for this organization.": "此组织暂无变量。",
+            "There are no variables for this organization.": "此组织尚无变量。",
             "Variables created at the organization level can be shared with specified repositories.": "在组织层面创建的变量可以与指定的仓库共享。",
 
         // 新建组织变量 /organizations/<org-login>/settings/variables/actions/new
@@ -15968,9 +15980,10 @@ I18N.zh["orgs/settings/personal-access-token"] = { // 组织设置 - 个人访�
                     "Workflows": "工作流程",
                     "Organization": "组织",
                         "Blocking users": "拉黑用户",
+                        "Custom organization roles": "自定义组织角色",
                         "Custom repository roles": "自定义仓库角色",
                         "Events": "活动",
-                        "GitHub Copilot for Business": "GitHub Copilot 商业版",
+                        "GitHub Copilot Business": "GitHub Copilot 商业版",
                         "Members": "成员",
                         "Organization announcement banners": "组织公告横幅",
                         "Organization codespaces": "组织代码空间",
@@ -16054,6 +16067,7 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
                 "Team management": "团队管理",
                 "Repository management": "仓库管理",
                 "Billing updates": "帐单更新",
+                "Copilot activity": "Copilot 活动",
                 "Hook activity": "挂钩活动",
                 "Personal access token activity": "个人访问令牌活动",
                 "View advanced search syntax": "查看高级搜索语法",
@@ -16617,10 +16631,10 @@ I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
 
            "Pay frequency after trial": "试用结束后付费频率",
                "Monthly plan": "月度计划",
-               "/month": "/月",
+               "/month": "/ 月",
                "Yearly plan": "年度计划",
                "Save $20!": "节省 $20 ！",
-               "/year": "/年",
+               "/year": "/ 年",
 
             "Or get GitHub Copilot from an organization": "您可以通过组织获取 GitHub Copilot",
                 "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "组织可以为其成员（包括您）和团队提供访问 GitHub Copilot 的权限。",
@@ -16668,14 +16682,14 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Explore quick start templates": "浏览快速入门模板",
             "See all": "查看所有",
             "Use this template": "使用此模版",
-            "Getting started with GitHub Codespaces": "GitHub代码空间入门",
+            "Getting started with GitHub Codespaces": "GitHub 代码空间入门",
             "Learn core concepts": "学习核心概念",
             "Configure and manage": "配置和管理",
             "Develop locally": "在本地开发",
             "New to Codespaces?": "刚接触代码空间？",
             "Start here": "从这里开始",
             ". Learn the core concepts and how to get started.": "。学习核心概念以及如何开始。",
-            "Learn more about features like": "了解有关功能的更多信息，如",
+            "Learn more about features like": "了解更多关于功能的信息，例如",
             "secret management": "机密管理",
             "port forwarding": "端口转发",
             "Access codespaces from within": "从内部访问代码空间，使用",
@@ -16685,11 +16699,11 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Active": "运行中",
             "Last used": "上次使用",
             "Codespace configuration": "代码空间配置",
-                "Open in ...": "在...中打开",
-                "Open in browser": "在浏览器中打开",
-                "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
-                "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
-                "Open in JupyterLab": "在 JupyterLab 中打开",
+                "Open in ...": "打开 ...",
+                    "Open in browser": "在浏览器中打开",
+                    "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
+                    "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
+                    "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Rename": "重命名",
                 "Export changes to a branch": "将更改导出到分支",
                 "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
@@ -16711,7 +16725,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
 
         // https://github.com/codespaces/new
             "Create a new codespace": "新建代码空间",
-            "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
+            "Codespace usage for this repository is paid for by": "此仓库的代码空间使用费将由",
             "Repository": "仓库",
                 "To be cloned into your codespace": "要被克隆到您的代码空间",
                 "Select a repository": "选择仓库",
@@ -16753,11 +16767,12 @@ I18N.zh["developer/register"] = { // 开发者注册
                 "Select an account": "选择账户",
                     "Select an account to register": "选择一个账户进行注册",
                     "You don’t belong to any organizations.": "您不属于任何组织。",
-                    "Create organization": "创建组织",
+                    "Create Organization": "创建组织",
                     "Support email address": "技术支持电子邮件地址",
                     "An email address where GitHub users can contact you for support.": "供 GitHub 用户联系您寻求支持的电子邮件地址。",
                 "Product or company website": "产品或公司网站",
                     "The URL for the product, company, or service that integrates with GitHub.": "与 GitHub 集成的产品、公司或服务的网址。",
+                    "Website can't be blank": "网站不能为空",
             // 免责声明
                 "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击 “注册 GitHub 开发者计划”，表示您已阅读并同意",
                 "developer terms of service": "开发者服务条款",
