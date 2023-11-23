@@ -14594,33 +14594,35 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
 
         // 成员权限 /organizations/<org-login>/settings/member_privileges
             "Member repository permissions": "成员仓库权限",
-            "Base permissions": "基本权限",
-            "Base permissions to the organization’s repositories apply to all members and excludes outside collaborators. Since organization members can have permissions from multiple sources, members and collaborators who have been granted a higher level of access than the base permissions will retain their higher permission privileges.": "组织仓库的基本权限适用于所有成员，不包括外部协作者。由于组织成员可以拥有多个来源的权限，已经被授予比基本权限更高的访问级别的成员和协作者将保留他们更高的权限。",
+                "Base permissions": "基本权限",
+                    "Base permissions to the organization’s repositories apply to all members and excludes outside collaborators. Since organization members can have permissions from multiple sources, members and collaborators who have been granted a higher level of access than the base permissions will retain their higher permission privileges.": "组织仓库的基本权限适用于所有成员，不包括外部协作者。由于组织成员可以拥有多个来源的权限，已经被授予比基本权限更高的访问级别的成员和协作者将保留他们更高的权限。",
 
-            "Organization member permissions": "组织成员的权限",
-                "No permission": "无权限",
-                    "Members will only be able to clone and pull public repositories. To give a member additional access, you’ll need to add them to teams or make them collaborators on individual repositories.": "成员只能克隆和拉取公共仓库。要为成员提供额外的访问权限，您需要将他们添加到团队中，或者让他们成为单个仓库的协作者。",
-                    // 对话框
-                        "Change base permission to \"No permission\"": "将基本权限更改为 “无权限”",
-                        "You are about to change the base repository permission for this organization.": "您即将更改此组织仓库的基本权限。",
-                        // [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"],
-                "Read": "只读",
-                    "Members will be able to clone and pull all repositories.": "成员将能够克隆和拉取所有仓库。",
-                    // 对话框
-                        "Change base permission to \"Read\"": "将基本权限更改为 “只读”",
-                "Write": "可写",
-                    "Members will be able to clone, pull, and push all repositories.": "成员将能够克隆、拉取和推送所有仓库。",
-                    // 对话框
-                        "Change base permission to \"Write\"": "将基本权限更改为 “可写”",
-                "Admin": "管理员",
-                    "Members will be able to clone, pull, push, and add new collaborators to all repositories.": "成员将能够克隆、拉取、推送和向所有仓库添加新的协作者。",
-                    // 对话框
-                        "Change base permission to \"Admin\"": "将基本权限更改为 “管理员”",
-                // 顶部提醒
-                    "Base repository permission removed.": "基本仓库权限已被删除。",
-                    "Base repository permission updated to \"Read\".": "基本仓库权限已更新为 “只读” 。",
-                    "Base repository permission updated to \"Write\".": "基本仓库权限已更新为 “可写” 。",
-                    "Base repository permission updated to \"Admin\".": "基本仓库权限已更新为 “管理员” 。",
+                    "Organization member permissions": "组织成员的权限",
+                        "No permission": "无权限",
+                            "Members will only be able to clone and pull public repositories. To give a member additional access, you’ll need to add them to teams or make them collaborators on individual repositories.": "成员只能克隆和拉取公共仓库。要为成员提供额外的访问权限，您需要将他们添加到团队中，或者让他们成为单个仓库的协作者。",
+                            // 对话框
+                                "Change base permission to \"No permission\"": "将基本权限更改为 “无权限”",
+                                "You are about to change the base repository permission for this organization.": "您即将更改此组织仓库的基本权限。",
+                                // [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"],
+                        "Read": "只读",
+                            "Members will be able to clone and pull all repositories.": "成员将能够克隆和拉取所有仓库。",
+                            // 对话框
+                                "Change base permission to \"Read\"": "将基本权限更改为 “只读”",
+                        "Write": "可写",
+                            "Members will be able to clone, pull, and push all repositories.": "成员将能够克隆、拉取和推送所有仓库。",
+                            // 对话框
+                                "Change base permission to \"Write\"": "将基本权限更改为 “可写”",
+                        "Admin": "管理员",
+                            "Members will be able to clone, pull, push, and add new collaborators to all repositories.": "成员将能够克隆、拉取、推送和向所有仓库添加新的协作者。",
+                            // 对话框
+                                "Change base permission to \"Admin\"": "将基本权限更改为 “管理员”",
+                        // 顶部提醒
+                            "Base repository permission removed.": "基本仓库权限已被删除。",
+                            "Base repository permission updated to \"Read\".": "基本仓库权限已更新为 “只读” 。",
+                            "Base repository permission updated to \"Write\".": "基本仓库权限已更新为 “可写” 。",
+                            "Base repository permission updated to \"Admin\".": "基本仓库权限已更新为 “管理员” 。",
+                        "Update in progress": "正在更新中",
+                        ". Refresh to see if it’s done.": "。刷新看看是否完成。",
 
                 "Repository creation": "仓库创建",
                     "Members will be able to create only selected repository types. Outside collaborators can never create repositories.": "成员将只能创建选定类型的仓库。外部协作者永远不能创建仓库。",
@@ -14629,17 +14631,52 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                         "Why is this option disabled?": "为什么该选项被禁用？",
                     "Private": "私有",
                         "Members will be able to create private repositories, visible to organization members with permission.": "成员将能够创建私有仓库，对有权限的组织成员可见。",
-                // 顶部提醒
-                    "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+                    // 顶部提醒
+                        "Members can no longer create public or private repositories.": "成员不能再创建公共或私有仓库。",
+                        "Members can now create public repositories.": "成员现在可以创建公共仓库。",
+                        "Members can now create public and private repositories.": "成员现在可以创建公共和私有仓库。",
 
-                    "Repository forking": "仓库复刻",
-                        "Allow forking of private repositories": "允许复刻私有仓库",
+                "Repository forking": "仓库复刻",
+                    "Allow forking of private repositories": "允许复刻私有仓库",
                         "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果启用，则私有和公共仓库都允许复刻。如果禁用，则只允许复刻公共仓库。此设置也可以在每个仓库中进行配置。",
-                // 顶部提醒
-                    "Repository forking setting updated!": "仓库复刻设置已经更新!",
+                    // 顶部提醒
+                        "Repository forking setting updated!": "仓库复刻设置已经更新！",
+                        "Repository forking setting not updated. Please try again.": "仓库复刻设置不能更新。请重试。",
+
+                "Repository discussions": "仓库讨论",
+                    "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
+                        // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
+                        "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
+                    // 顶部提醒
+                        "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
+                        "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
 
                 "Projects base permissions": "项目基本权限",
                     "Projects created by members will default to the elected role below.": "成员创建的项目将默认为下面选定的角色。",
+
+                    "No access": "无法访问",
+                        "Members will only be able to see projects that are made public. To give an organization member additional access, they can be added as part of a team or as a collaborator.": "成员只能看到公开项目。要赋予组织成员更多访问权限，可以将其添加为团队成员或协作者。",
+                        // 对话框
+                            "Change base permissions to \"No access\"": "将基本权限改为 “无法访问”",
+                                "You are about to change the base projects permission for this organization.": "您将更改该组织的基本项目权限",
+                                "This won't affect any existing projects.": "这不会影响任何现有项目",
+                    // 只读
+                        "Members can see projects.": "成员可以查看项目",
+                        // 对话框
+                            "Change base permissions to \"Read\"": "将基本权限改为 “只读”",
+                    // 可写
+                        "Members can see and make changes to projects.": "成员可以查看和修改项目",
+                        // 对话框
+                            "Change base permissions to \"Write\"": "将基本权限改为 “可写”",
+                    // 管理员
+                        "Members can see, make changes to, and add new collaborators to projects.": "成员可以查看和修改项目，并可为项目添加新的协助者。",
+                        // 对话框
+                            "You are about to change the base projects permission for this organization.": "您将更改该组织的基本项目权限",
+                    // 顶部提醒
+                        "Base permission updated to \"None\" for projects.": "项目的基本权限已更新为 “无”。",
+                        "Base permission updated to \"Read\" for projects.": "项目的基本权限已更新为 “只读”。",
+                        "Base permission updated to \"Write\" for projects.": "项目的基本权限已更新为 “可写”。",
+                        "Base permission updated to \"Admin\" for projects.": "项目的基本权限已更新为 “管理员”。",
 
                 "Pages creation": "页面创建",
                     "Members will be able to publish sites with only the selected access controls.": "成员将能够发布仅只有选定的访问控制的站点。",
@@ -14647,47 +14684,45 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                         "Members will be able to create public sites, visible to anyone.": "成员将能够创建任何人都可见的公共站点。",
                     // "Private": "私有",
                         "Members will be able to create private sites, visible to anyone with permission.": "成员将能够创建私有站点，对任何有权限的人可见。",
+                    // 顶部提醒
+                        "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+
                 "Integration access requests": "集成访问请求",
                     "Allow integration requests from outside collaborators": "允许来自外部协作者的集成请求",
-                    "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用申请访问该组织及其资源的权限。",
+                        "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用申请访问该组织及其资源的权限。",
+                        // 顶部提醒
+                            "Outside collaborators can no longer request third party access.": "外部协作者无法再请求第三方访问。",
+                            "Outside collaborators can now request third party access.": "外部协作者现在可以请求第三方访问。",
 
                 "Admin repository permissions": "管理员仓库权限",
                     "Repository visibility change": "仓库可见性更改",
                         "Allow members to change repository visibilities for this organization": "允许成员更改此组织的仓库可见性",
-                        "If enabled, members with admin permissions for the repository will be able to change its visibility. If disabled, only organization owners can change repository visibilities.": "如果启用，对仓库有管理权限的成员将能够更改其可见性。如果禁用，只有组织所有者可以更改仓库的可见性。",
-                    // 顶部提醒
-                        "Members can now change repository visibility.": "成员现在可以更改仓库可见性。",
-                        "Members can no longer change repository visibility.": "成员不能再更改仓库可见性。",
+                            "If enabled, members with admin permissions for the repository will be able to change its visibility. If disabled, only organization owners can change repository visibilities.": "如果启用，对仓库有管理权限的成员将能够更改其可见性。如果禁用，只有组织所有者可以更改仓库的可见性。",
+                        // 顶部提醒
+                            "Members can now change repository visibility.": "成员现在可以更改仓库可见性。",
+                            "Members can no longer change repository visibility.": "成员不能再更改仓库可见性。",
 
                     "Repository deletion and transfer": "仓库的删除和转让",
                         "Allow members to delete or transfer repositories for this organization": "允许成员删除或转让此组织的仓库",
-                        "If enabled, members with admin permissions for the repository will be able to delete or transfer": "如果启用，对仓库有管理权限的成员将能够删除或转让",
-                        "public": "公共",
-                        "private": "私有",
-                        "repositories. If disabled, only organization owners can delete or transfer repositories.": "仓库。如果禁用，只有组织所有者可以删除或转让仓库。",
-                    // 顶部提醒
-                        "Members can now delete or transfer repositories.": "成员现在可以删除或转让仓库。",
-                        "Members can no longer delete or transfer repositories.": "成员不能再删除或转让仓库。",
+                            "If enabled, members with admin permissions for the repository will be able to delete or transfer": "如果启用，对仓库有管理权限的成员将能够删除或转让",
+                            "public": "公共",
+                            "private": "私有",
+                            "repositories. If disabled, only organization owners can delete or transfer repositories.": "仓库。如果禁用，只有组织所有者可以删除或转让仓库。",
+                        // 顶部提醒
+                            "Members can now delete or transfer repositories.": "成员现在可以删除或转让仓库。",
+                            "Members can no longer delete or transfer repositories.": "成员不能再删除或转让仓库。",
 
                     "Issue deletion": "议题删除",
                         "Allow repository administrators to delete issues for this organization": "允许仓库管理员删除此组织的议题",
-                        "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
-                    // 顶部提醒
-                        "Members can now delete issues.": "成员现在可以删除议题。",
-                        "Members can no longer delete issues.": "成员不能再删除议题。",
-
-                "Repository discussions": "仓库讨论",
-                    "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
-                    // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
-                    "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
-                // 顶部提醒
-                    "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
-                    "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
+                            "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
+                        // 顶部提醒
+                            "Members can now delete issues.": "成员现在可以删除议题。",
+                            "Members can no longer delete issues.": "成员不能再删除议题。",
 
                 "Member team permissions": "成员团队权限",
                     "Team creation rules": "团队创建规则",
                         "Allow members to create teams": "允许成员创建团队",
-                        "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
+                            "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
                     // 顶部提醒
                         "Members can now create teams.": "成员现在可以创建团队。",
                         "Members can no longer create teams.": "成员不能再创建团队。",
