@@ -14577,6 +14577,12 @@ I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
                         "Full access to repositories including sensitive and destructive actions.": "对仓库的完全访问权限，包括敏感和破坏性操作。",
                         "Modify Admin Role": "修改管理角色",
 
+            "Custom roles": "自定义角色",
+                "Create a role": "创建角色",
+                "Create custom roles with GitHub Enterprise": "使用 GitHub 企业版创建自定义角色",
+                    "Enterprise accounts offer organizations more granular control over permissions by allowing you to configure up to three custom repository roles. This enables greater control over who and how your users access code and data in your organization.": "企业账户允许配置最多三个自定义仓库角色，从而为企业提供更细粒度的权限控制。这样就能更好地控制组织内用户访问代码和数据。",
+                "Try GitHub Enterprise": "试用 GitHub 企业版",
+
     },
     "regexp": [ // 正则翻译
     ],
