@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|enterprise_plan)/,
@@ -379,7 +379,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Working from home": "在家工作",
             "Out sick": "生病",
             "Focusing": "专注中",
-        
+
         "Busy": "繁忙中",
         "I may be slow to respond.": "我的反应可能比较慢。",
         "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
@@ -387,8 +387,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Never": "永不",
         "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
         "Visible to": "可见",
-            "Everyone": "所有人",
-            "Your status will be visible to everyone": "所有人都可以看到您的状态",
+            "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
             // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
         "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
         "in 30 minutes": "30 分钟",
@@ -417,13 +416,14 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Add a body": "添加内容",
         "Write": "撰写",
             "Add your comment here...": "在此添加您的评论...",
+            "Add your answer here...": "在此添加您的答复...", // 具体讨论页
         "Preview": "预览",
             "Nothing to preview": "没有可预览的内容。",
             "This file is empty.": "这是一个空文件。",
         "Leave a comment": "发表评论",
         "Write a reply": "发表回复", // 具体讨论页
-        "Write a comment": "发表回复", // 具体讨论页
-        "Suggest an answer": "建议一个答案", // 具体讨论页
+        "Write a comment": "发表评论", // 具体讨论页
+        "Suggest an answer": "提出答复", // 具体讨论页
         "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
         "Nothing to preview": "没有什么可预览",
         "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
@@ -532,6 +532,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Add to list": "添加到清单",
             "You don't have any lists yet.": "您尚无任何清单。",
             "Lists": "清单",
+                "Search lists": "搜索清单",
             "Create list": "创建清单",
                 "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                 "⭐️ Name this list": "⭐️ 清单名称",
@@ -1105,7 +1106,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
-            "You're seeing this because you haven't used repositories， issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
+            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
             "Remove from dashboard": "从仪表板中删除",
         "Tools of the trade": "贸易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
@@ -1652,9 +1653,7 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
                 // 下拉菜单
                 "Select type": "选择类型",
                 "All": "全部",
-
             "Search packages…": "搜索软件包…",
-
             "Visibility:": "可见性:",
                 "Select visibility": "选择可见性",
                 "Internal": "内部",
@@ -1662,6 +1661,13 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
                 "Select sort view": "选择排序视图",
                 "Most downloads": "最多下载",
                 "Least downloads": "最少下载",
+
+            "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
+            // 筛选结果
+            "No results matched your search.": "没有与您的搜索匹配的结果。",
+            "Try": "尝试",
+            "browsing all packages": "浏览所有软件包",
+            "to find what you're looking for.": "，以找寻您想要的内容。",
 
             "Published": "发布于",
 
@@ -2008,6 +2014,14 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
+            "Check out the Developer site": "查看开发者网站",
+            "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考资料以及用于构建与 GitHub 集成的应用程序的其他资源。请确保您的联系信息是最新的。感谢您成为会员！",
+            "Support email address": "支持电子邮件地址",
+            "An email address where GitHub users can contact you for support.": "GitHub 用户可以联系您寻求支持的电子邮件地址。",
+            "Product or company website": "产品或公司网站",
+            "The URL for the product, company, or service that integrates with GitHub.": "与 GitHub 集成的产品、公司或服务的URL。",
+            "Update contact information": "更新联系信息",
+            "Leave the program": "退出计划",
             "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用、服务或工具？",
             "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
             ", or read more about it at our": "，或阅读更多关于它的信息在我们的",
@@ -2063,10 +2077,10 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
             "Account security": "帐户安全",
             "page.": "页。",
 
-            "Link Patreon account": "与 Patreon 账户连接",
-            "Connect a Patreon account for": "为",
-            "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "连接 Patreon 账户来赞助维护人员。当被赞助人链接 Patreon 和 GitHub时，会在 GitHub 上获得 Patreon 上赞助的认可，并有一个公开的GitHub赞助商档案。",
-            "Connect with Patreon": "连接 Patreon",
+            "Link Patreon account": "关联 Patreon 帐户",
+                "Connect a Patreon account for": "关联",
+                "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 帐户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 帐户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
+                "Connect with Patreon": "关联 Patreon 帐户",
 
             "Export account data": "导出帐户数据",
             "Export all repositories and profile metadata for": "导出所有仓库和配置元数据，自",
@@ -3020,7 +3034,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
 
             "Transform account": "帐户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此帐户转换为组织。", // 存在所属组织时
-            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助商帐户，因此您无法将此帐户转换为组织。", // 存在赞助商账户时
+            "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助者帐户，因此您无法将此帐户转换为组织。", // 存在赞助者账户时
             "Account transformation warning": "帐户变更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
@@ -4412,71 +4426,6 @@ I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 I18N.zh["repository-public"] = { // 仓库-公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
-            // 公共部分 - 头部条
-            "forked from": "复刻自",
-            "generated from": "创建自",
-
-            "Pin": "置顶", // 组织仓库
-            "Edit Pins": "编辑置顶", // 组织仓库
-                "Pin to…": "置顶到…",
-                "Profile": "个人资料页",
-                    "Pin this to your personal profile, visible to everyone": "将此置顶到您的个人资料，对所有人可见",
-                    "Limit reached": "已达上限",
-                "Public pins in this organization": "该组织的公共置顶",
-                    "Visible to anyone": "对任何人可见",
-                "Private pins in this organization": "该组织的私有置顶",
-                    "Visible to members only": "仅对成员可见",
-            "Unpin": "取消置顶",
-
-            "Ignoring": "忽略",
-            "Stop ignoring": "取消忽略",
-            "Watch": "关注",
-            "Unwatch": "取消关注",
-
-            "Star": "星标",
-            "Unstar": "已加星标",
-            "Fork": "复刻",
-            "Unfork": "取消复刻",
-
-            "Sponsor": "赞助",
-            // 赞助对话框
-            // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
-            "External links": "外部链接",
-            "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
-            "Report abuse": "举报滥用",
-
-            // 关注 & 订阅通知设置 下拉菜单
-            "Notification settings": "通知设置", //小屏模式
-            "Notifications": "通知类型",
-            "Participating and @mentions": "参与和 @您",
-                "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
-            "All Activity": "所有活动",
-                "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
-            "Ignore": "忽略",
-                "Never be notified.": "永不接收通知。",
-            "Custom": "自定义",
-                "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
-            "Get push notifications on": "要获取推送通知，使用",
-            "Releases": "发行版",
-                "Issues are not enabled for this repository": "此仓库未启用议题功能",
-            "Discussions": "讨论",
-                "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
-                "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
-            "Security alerts": "安全警报",
-            //"Cancel": "取消",
-            "Apply": "应用",
-
-            // 复刻下拉
-            // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
-            "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
-            "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
-            "Existing forks": "现有的复刻",
-            "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
-            "Create a new fork": "创建复刻",
-
-            //
-            "Star this repository": "星标仓库", //小屏模式
-
              // 用户 浮动信息卡
                 "Recently edited these files": "最近编辑过这些文件",
                 "Owns this repository": "拥有这个仓库",
@@ -4630,8 +4579,6 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
-        [/Sponsor ([^ ]+)/, "赞助 $1"], // 赞助对话框 标题
-        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/had recent pushes about/, "分支有了最新的推送，大约"],
@@ -4820,6 +4767,72 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Clone repository: Copy SSH": "克隆仓库：复制 SSH",
                 "Clone repository: Copy GitHub CLI": "克隆仓库：复制 GitHub CLI",
                 "Copy file permalink": "复制文件永久链接",
+
+            // 操作条
+                "forked from": "复刻自",
+                "generated from": "创建自",
+
+                "Pin": "置顶", // 组织仓库
+                "Edit Pins": "编辑置顶", // 组织仓库
+                    "Pin to…": "置顶到…",
+                    "Profile": "个人资料页",
+                        "Pin this to your personal profile, visible to everyone": "将此置顶到您的个人资料，对所有人可见",
+                        "Limit reached": "已达上限",
+                    "Public pins in this organization": "该组织的公共置顶",
+                        "Visible to anyone": "对任何人可见",
+                    "Private pins in this organization": "该组织的私有置顶",
+                        "Visible to members only": "仅对成员可见",
+                "Unpin": "取消置顶",
+
+                "Ignoring": "忽略",
+                "Stop ignoring": "取消忽略",
+                "Watch": "关注",
+                "Unwatch": "取消关注",
+
+                "Star": "星标",
+                "Unstar": "已加星标",
+                "Fork": "复刻",
+                "Unfork": "取消复刻",
+
+                "Sponsor": "赞助",
+                // 赞助对话框
+                // [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+                "External links": "外部链接",
+                "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
+                "Report abuse": "举报滥用",
+
+                // 关注 & 订阅通知设置 下拉菜单
+                "Notification settings": "通知设置", //小屏模式
+                "Notifications": "通知类型",
+                "Participating and @mentions": "参与和 @您",
+                    "Only receive notifications from this repository when participating or @mentioned.": "仅在参与或 @您 时接收来自此仓库的通知。",
+                "All Activity": "所有活动",
+                    "Notified of all notifications on this repository.": "接收来自此仓库所有通知。",
+                "Ignore": "忽略",
+                    "Never be notified.": "永不接收通知。",
+                "Custom": "自定义",
+                    "Select events you want to be notified of in addition to participating and @mentions.": "选择除参与和 @您 之外还要接收通知的事件。",
+                "Get push notifications on": "要获取推送通知，使用",
+                "Releases": "发行版",
+                    "Issues are not enabled for this repository": "此仓库未启用议题功能",
+                "Discussions": "讨论",
+                    "Discussions are not enabled for this repository": "该仓库未启用讨论功能",
+                    "Discussions are not enabled for this repo": "此仓库未启用讨论功能",
+                "Security alerts": "安全警报",
+                //"Cancel": "取消",
+                "Apply": "应用",
+
+                // 复刻下拉
+                // [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"],
+                "Cannot fork because repository is empty.": "无法复刻，因为仓库是空的。",
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能复刻，因为您拥有该仓库，而且不是任何组织的成员。",
+                "Existing forks": "现有的复刻",
+                "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
+                "Create a new fork": "创建复刻",
+
+                //
+                "Star this repository": "星标仓库", //小屏模式
+                "Unstar this repository": "取消仓库星标", //小屏模式
 
             // 仓库主页 分支保护
                 // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
@@ -5312,6 +5325,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/(\d+) commits?/, "$1 个提交"], // 新版仓库概述
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的电脑。"],
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
+        [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
         [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
     ],
@@ -6271,6 +6285,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "code of conduct": "行为准则",
 
             // 讨论标签卡 主页
+            "Refresh": "刷新",
+
             "marked this pull request as draft": "将此拉取请求标记为草稿",
             "First-time contributor": "首次贡献者",
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
@@ -7497,7 +7513,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 // [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
                 // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
 
-
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
             "Start a new discussion": "开始新的讨论",
             "Select a discussion category": "选择讨论分类",
@@ -7555,6 +7570,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Discussion unpinned from Q&A": "取消在 “问与答” 上置顶讨论",
                 "Discussion unpinned from Show and tell": "取消在 “展示与讲述” 上置顶讨论",
 
+            "Pinned": "已置顶",
+
             "announced in": "宣布于",
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
@@ -7565,7 +7582,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // [/(\d+) answers?/, "$1 位答复者"],
             "Return to top": "返回顶部",
             // [/(\d+) comments?/, "$1 条评论"],
-            // [/(\d+) replies?/, "$1 条回复"],
+            // [/(\d+) replies?/, "$1 条答复"],
             // [/(\d+) suggested answer/, "$1 个建议答案"],
 
             "Answered by": "答复者：",
@@ -7586,6 +7603,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
+            // [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
+            // [/(\d+) hidden items?/, "$1 条隐藏项目"],
+            "Load more…": "载入更多…",
+            "New": "新",
 
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
@@ -7688,7 +7709,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             "Convert issues": "转换为议题",
             // [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
-            // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+            // [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
             // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
             "Issue will be locked": "议题将被锁定",
             // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
@@ -7720,12 +7741,14 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
         [/(\d+) comments?/, "$1 条评论"],
-        [/(\d+) repl(y|ies)?/, "$1 条回复"],
+        [/(\d+) repl(y|ies)/, "$1 条答复"],
         [/(\d+) suggested answers?/, "$1 个建议答案"],
         [/(\d+) participants?/, "$1 位参与者"],
+        [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
+        [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/Discussion \"([^ ]+)\" has been unpinned./, "讨论 “$1” 已取消置顶。"],
         [/Convert (\d+) issues? to discussions?/, "将 $1 个议题转换为讨论"], // 标签页面
-        [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 2 个议题转换为讨论吗？"], // 标签页面
+        [/Are you sure you want to convert (\d+) issues? with the following label to discussions?/, "您确定要将带有以下标签的 $1 个议题转换为讨论吗？"], // 标签页面
         [/Open issues with label \'([^ ]+)\' are being converted to discussions./, "带有 “$1” 标签的打开议题正在被转换为讨论。"], // 标签页面
         [/Edited (\d+) times?/,"编辑 $1 次"], //评论框编辑次数
         [/edited by ([^ ]+)/,"被 $1 编辑"], //评论框 被他人编辑
@@ -7736,8 +7759,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Section \"(.*)\" has been created./, "栏目 “$1” 已创建。"],
         [/Section \"(.*)\" has been updated./, "栏目 “$1” 已更新。"],
         [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
-        [/Delete (.*) category/, "删除分类 “$1”"],
         [/Edit (.*) category/, "编辑 “$1” 分类"],
+        [/Delete (.*) category/, "删除分类 “$1”"],
         [/Edit section (.*)/, "编辑栏目 “$1”"],
         [/Delete section (.*)/, "删除栏目 “$1”"],
         [/Delete (.*) section/, "删除 “$1” 栏目"],
@@ -7822,6 +7845,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Management": "管理",
             "Caches": "缓存",
             "Deployments": "部署",
+            "Runners": "运行器",
 
             "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
             "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
@@ -7890,7 +7914,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // 顶部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
 
-        // /actions/caches
+        // 缓存 /<user-name>/<repo-name>/actions/caches
             "Showing caches from all workflows.": "显示所有工作流程的缓存。",
             "Learn more about managing caches.": "了解更多关于管理缓存的信息。",
             "Filter caches": "筛选缓存",
@@ -7906,7 +7930,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Largest size": "最大尺寸",
                 "Smallest size": "最小尺寸",
             "No caches": "尚无缓存",
-            "Nothing has been cached by actions running in this repository.": "在此仓库中运行的操作未缓存任何内容。",
+            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流程未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存的信息",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以缩短工作流执行时间。",
             "Last used": "最近使用",
@@ -8082,6 +8106,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+) cache results?/, "$1 个缓存结果"],
         [/(\d+) caches?/, "$1 个缓存"],
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
+        [/(\d+) available runners?/, "$1 个可用运行器"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
@@ -8119,6 +8144,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                 "deployed": "部署于",
                 "Latest deployments from": "最新部署来自",
                 "all environments": "所有环境",
+                "Deployed to": "部署到",
                 "Latest": "最新",
                 "View logs": "查看日志",
                 "View workflow run": "查看工作流程运行",
@@ -8221,6 +8247,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "branch.": "分支。",
 
                 "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
+                "Bypass rules and commit changes": "绕过规则并提交更改",
 
                 "Create a": "创建",
                 "new branch": "新分支",
@@ -8298,6 +8325,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Saving...": "保存中...",
             "Propose changes": "提议更改", //  他人仓库
             "Sign off and commit changes": "签署并提交更改",
+            "Sign off and propose changes": "签署并提出变更建议",
             "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
 
             // 提交更改 对话框
@@ -8721,7 +8749,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
             "Delete and try uploading this file again.": "删除并重新上传。",
             "will be deleted": "将被删除",
-            "(undo)": "(撤销)",
+            "Remove": "删除",
+            "Undo": "撤销",
 
             "Set as a pre-release": "设置为预发布版本",
                 "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
@@ -8735,7 +8764,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                             "Q&A": "问与答",
                             "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
-                "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
+                "This release is labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
             "Publish release": "发布发行版",
                 "Publishing…": "发布中…",
@@ -8798,6 +8827,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/(\d+) commits?/, "$1 个提交"],
         [/to ([^ ]+) since this release/, "至 $1 分支，该发行版"],
         [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
+        [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
@@ -9220,7 +9250,7 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
-        // 活动页面 /<user-name>/<repo-name>/activity 
+        // 活动页面 /<user-name>/<repo-name>/activity
             "Activity": "活动",
 
             "All branches": "所有分支",
@@ -9273,6 +9303,71 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
         ...I18N.zh["repository-public"]["regexp"],
         [/pushed (\d+) commits? to/, "推送 $1个提交到"],
         [/pushed (\d+) commits?/, "推送 $1个提交"],
+    ],
+};
+
+I18N.zh["repository/contribute"] = { // 仓库 - 贡献页面
+    "static": { // 静态翻译
+
+        // 贡献页面 /<user-name>/<repo-name>/contribute
+            "Contribute to": "贡献于",
+            "Make your first contribution to this repository by tackling one of the issues listed below.": "通过解决下面列出的一个议题，为这个仓库做出您的第一个贡献。",
+            "Each issue displayed here is a \"good first issue,\" selected for its relative approachability for first-time contributors.": "此处显示的每个议题都是 “好的首发议题”，因其对首次贡献者来说相对容易。",
+
+            "Read the contributing guidelines": "阅读贡献指南",
+
+            "Good first issues": "好的首发议题",
+            "See all issues": "查看所有议题",
+
+            "This repo doesn't have any good first issues, yet": "该仓库暂无任何好的首发议题",
+            "Once its maintainers label issues and pull requests for new contributors, they will begin to appear here.": "一旦它的维护者为新的贡献者标记了议题和拉取请求，它们就会开始出现在这里。",
+            "All issues in this repository": "此仓库中的所有议题",
+
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["repository/subscription"] = { // 仓库 - 通知状态页面
+    "static": { // 静态翻译
+
+        // 仓库通知状态管理 /<user-name>/<repo-name>/subscription
+            "Your": "您的",
+            "notifications status": "通知状态",
+            "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在版本库内讨论什么，比如拉取请求、议题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
+            "Not watching": "不关注",
+                "You will only receive notifications when you participate or are @mentioned.": "只有当您参与或被 @您 时，您才会收到通知。",
+            "Releases only": "仅发行版",
+                "You will only receive notifications for new releases, or when you participate or are @mentioned.": "您只会收到新版本的通知，或者当您参与或被 @您 时。",
+            "Watching": "关注",
+                "You will receive all notifications for this repository.": "您将收到此仓库的所有通知。",
+            "Ignored": "忽略",
+                "You will not receive any notifications for this repository.": "您将不会收到有关此仓库的任何通知。",
+
+    },
+    "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["repository/invitations"] = { // 仓库 - 接受邀请页面
+    "static": { // 静态翻译
+
+        // 接受邀请 /<user-name>/<repo-name>/invitations
+            "invited you to collaborate": "邀请您进行协作",
+            "Accept invitation": "接受邀请",
+            "Decline": "拒绝",
+            "Owners": "所有者",
+            "Your public profile information": "您的公开个人资料信息",
+            "Certain activity": "某些活动",
+            "within this repository": "在这个仓库中",
+            "Country of request origin": "请求的来源国",
+            "Your access level for this repository": "您对该仓库的访问等级",
+            "Your IP address": "您的 IP 地址",
+            "Is this user sending spam or malicious content?": "此用户是否发送垃圾邮件或恶意内容？",
+
+    },
+    "regexp": [ // 正则翻译
+        [/of ([^ ]+) will be able to see:/, "$1 将能够看到："], // 邀请页
     ],
 };
 
@@ -9488,6 +9583,50 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
             "Repository admins accept content reports": "仓库管理员接受内容报告", // 组织仓库?
             "What is": "什么是",
             "the community profile": "社区简介",
+
+        // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=main
+            "Add a license to your project": "为您的项目添加许可证",
+            "Choose a license to add to your project": "选择要添加到项目的许可证",
+            "Select a template on the left to get started.": "在左侧选择一个模板开始。",
+            "Learn more about": "了解更多关于",
+            "which license best fits your project": "哪种许可证最适合您的项目",
+
+        // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=<branch name>&template=<template name>
+            // 右侧栏
+                "You’ll have a chance to review before committing a": "您将有机会在提交之前进行审查",
+                "file to a new branch or the root of your project.": "文件到新分支或项目的根目录。",
+
+                "To adopt": "采用",
+                ", enter your details. You’ll have a chance to review before committing a": "，输入您的详细信息。您将有机会在提交之前进行审查",
+                "Year": "年份",
+                    "The current year": "当前年份",
+                "Full name": "全名",
+                    "The full name or username of the repository owner": "仓库所有者的全名或用户名",
+                "Review and submit": "审查并提交",
+
+            // 中间栏 顶部 权限信息
+                "Permissions": "许可事项",
+                "Limitations": "限制条件",
+                    "Commercial use": "商业用途",
+                    "Modification": "修改",
+                    "Distribution": "分布",
+                    "Patent use": "专利使用",
+                    "Private use": "私人使用",
+                    "Trademark use": "商标使用",
+                    "Liability": "责任",
+                    "Warranty": "担保",
+                    "Disclose source": "开源",
+                    "Same license": "相同的许可证",
+                "Conditions": "条件",
+                    "License and copyright notice": "许可和版权声明",
+                    "State changes": "状态变化",
+                    "License and copyright notice for source": "来源许可和版权声明",
+                    "Network use is distribution": "网络使用即分发",
+                    "Same license (library)": "相同的许可证（库）",
+                    "Same license (file)": "相同的许可证（文件）",
+
+                "This is not legal advice.": "这并不是法律建议。",
+                "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
 
     },
     "regexp": [ // 正则翻译
@@ -10879,7 +11018,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
             "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
 
         // 创建运行器页面 /<user-name>/<repo-name>/settings/actions/runners/new
-            "/ Create self-hosted runner": "/ 创建自托管运行器",
+            // [/\/ Add new self-hosted runner ·/, "/ 创建自托管运行器 ·"],
             "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. By downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。下载并配置 GitHub Actions 运行器 后，您同意",
                 "GitHub Terms of Service": "GitHub 服务条款",
                 "GitHub Corporate Terms of Service": "GitHub 企业服务条款",
@@ -10896,6 +11035,7 @@ I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/\/ Add new self-hosted runner ·/, "/ 创建自托管运行器 ·"],
         [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
@@ -12219,6 +12359,10 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Select account to sign out": "选择要登出的帐户",
             "Sign out from all accounts": "登出所有账户",
 
+        // 接受邀请 /<user-name>/<repo-name>/invitations
+        // 跳转至 协作者 / 协作者和团队 - 访问管理页面 /<user-name>/<repo-name>/settings/access 验证
+            // 顶部提醒
+                "Repository invitation URLs work for invited users only. You may only share this URL with an invited user.": "仓库邀请 URL 仅适用于受邀请的用户。您只能与受邀请的用户共享此 URL。",
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
@@ -14311,6 +14455,11 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Update profile": "更新资料",
                 "Profile updated successfully": "资料更新成功。",
 
+            "Link Patreon account": "关联 Patreon 帐户",
+                "Connect a Patreon account for": "关联",
+                "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 帐户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 帐户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
+                "Connect with Patreon": "关联 Patreon 帐户",
+
             "GitHub Developer Program": "GitHub 开发者计划",
                 "Building an application, service, or tool that integrates with GitHub?": "构建应用、服务或工具，集成到 GitHub 吗？",
                 "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
@@ -14429,6 +14578,12 @@ I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
                         "Full access to repositories including sensitive and destructive actions.": "对仓库的完全访问权限，包括敏感和破坏性操作。",
                         "Modify Admin Role": "修改管理角色",
 
+            "Custom roles": "自定义角色",
+                "Create a role": "创建角色",
+                "Create custom roles with GitHub Enterprise": "使用 GitHub 企业版创建自定义角色",
+                    "Enterprise accounts offer organizations more granular control over permissions by allowing you to configure up to three custom repository roles. This enables greater control over who and how your users access code and data in your organization.": "企业账户允许配置最多三个自定义仓库角色，从而为企业提供更细粒度的权限控制。这样就能更好地控制组织内用户访问代码和数据。",
+                "Try GitHub Enterprise": "试用 GitHub 企业版",
+
     },
     "regexp": [ // 正则翻译
     ],
@@ -14440,33 +14595,35 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
 
         // 成员权限 /organizations/<org-login>/settings/member_privileges
             "Member repository permissions": "成员仓库权限",
-            "Base permissions": "基本权限",
-            "Base permissions to the organization’s repositories apply to all members and excludes outside collaborators. Since organization members can have permissions from multiple sources, members and collaborators who have been granted a higher level of access than the base permissions will retain their higher permission privileges.": "组织仓库的基本权限适用于所有成员，不包括外部协作者。由于组织成员可以拥有多个来源的权限，已经被授予比基本权限更高的访问级别的成员和协作者将保留他们更高的权限。",
+                "Base permissions": "基本权限",
+                    "Base permissions to the organization’s repositories apply to all members and excludes outside collaborators. Since organization members can have permissions from multiple sources, members and collaborators who have been granted a higher level of access than the base permissions will retain their higher permission privileges.": "组织仓库的基本权限适用于所有成员，不包括外部协作者。由于组织成员可以拥有多个来源的权限，已经被授予比基本权限更高的访问级别的成员和协作者将保留他们更高的权限。",
 
-            "Organization member permissions": "组织成员的权限",
-                "No permission": "无权限",
-                    "Members will only be able to clone and pull public repositories. To give a member additional access, you’ll need to add them to teams or make them collaborators on individual repositories.": "成员只能克隆和拉取公共仓库。要为成员提供额外的访问权限，您需要将他们添加到团队中，或者让他们成为单个仓库的协作者。",
-                    // 对话框
-                        "Change base permission to \"No permission\"": "将基本权限更改为 “无权限”",
-                        "You are about to change the base repository permission for this organization.": "您即将更改此组织仓库的基本权限。",
-                        // [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"],
-                "Read": "只读",
-                    "Members will be able to clone and pull all repositories.": "成员将能够克隆和拉取所有仓库。",
-                    // 对话框
-                        "Change base permission to \"Read\"": "将基本权限更改为 “只读”",
-                "Write": "可写",
-                    "Members will be able to clone, pull, and push all repositories.": "成员将能够克隆、拉取和推送所有仓库。",
-                    // 对话框
-                        "Change base permission to \"Write\"": "将基本权限更改为 “可写”",
-                "Admin": "管理员",
-                    "Members will be able to clone, pull, push, and add new collaborators to all repositories.": "成员将能够克隆、拉取、推送和向所有仓库添加新的协作者。",
-                    // 对话框
-                        "Change base permission to \"Admin\"": "将基本权限更改为 “管理员”",
-                // 顶部提醒
-                    "Base repository permission removed.": "基本仓库权限已被删除。",
-                    "Base repository permission updated to \"Read\".": "基本仓库权限已更新为 “只读” 。",
-                    "Base repository permission updated to \"Write\".": "基本仓库权限已更新为 “可写” 。",
-                    "Base repository permission updated to \"Admin\".": "基本仓库权限已更新为 “管理员” 。",
+                    "Organization member permissions": "组织成员的权限",
+                        "No permission": "无权限",
+                            "Members will only be able to clone and pull public repositories. To give a member additional access, you’ll need to add them to teams or make them collaborators on individual repositories.": "成员只能克隆和拉取公共仓库。要为成员提供额外的访问权限，您需要将他们添加到团队中，或者让他们成为单个仓库的协作者。",
+                            // 对话框
+                                "Change base permission to \"No permission\"": "将基本权限更改为 “无权限”",
+                                "You are about to change the base repository permission for this organization.": "您即将更改此组织仓库的基本权限。",
+                                // [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"],
+                        "Read": "只读",
+                            "Members will be able to clone and pull all repositories.": "成员将能够克隆和拉取所有仓库。",
+                            // 对话框
+                                "Change base permission to \"Read\"": "将基本权限更改为 “只读”",
+                        "Write": "可写",
+                            "Members will be able to clone, pull, and push all repositories.": "成员将能够克隆、拉取和推送所有仓库。",
+                            // 对话框
+                                "Change base permission to \"Write\"": "将基本权限更改为 “可写”",
+                        "Admin": "管理员",
+                            "Members will be able to clone, pull, push, and add new collaborators to all repositories.": "成员将能够克隆、拉取、推送和向所有仓库添加新的协作者。",
+                            // 对话框
+                                "Change base permission to \"Admin\"": "将基本权限更改为 “管理员”",
+                        // 顶部提醒
+                            "Base repository permission removed.": "基本仓库权限已被删除。",
+                            "Base repository permission updated to \"Read\".": "基本仓库权限已更新为 “只读” 。",
+                            "Base repository permission updated to \"Write\".": "基本仓库权限已更新为 “可写” 。",
+                            "Base repository permission updated to \"Admin\".": "基本仓库权限已更新为 “管理员” 。",
+                        "Update in progress": "正在更新中",
+                        ". Refresh to see if it’s done.": "。刷新看看是否完成。",
 
                 "Repository creation": "仓库创建",
                     "Members will be able to create only selected repository types. Outside collaborators can never create repositories.": "成员将只能创建选定类型的仓库。外部协作者永远不能创建仓库。",
@@ -14475,17 +14632,52 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                         "Why is this option disabled?": "为什么该选项被禁用？",
                     "Private": "私有",
                         "Members will be able to create private repositories, visible to organization members with permission.": "成员将能够创建私有仓库，对有权限的组织成员可见。",
-                // 顶部提醒
-                    "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+                    // 顶部提醒
+                        "Members can no longer create public or private repositories.": "成员不能再创建公共或私有仓库。",
+                        "Members can now create public repositories.": "成员现在可以创建公共仓库。",
+                        "Members can now create public and private repositories.": "成员现在可以创建公共和私有仓库。",
 
-                    "Repository forking": "仓库复刻",
-                        "Allow forking of private repositories": "允许复刻私有仓库",
+                "Repository forking": "仓库复刻",
+                    "Allow forking of private repositories": "允许复刻私有仓库",
                         "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果启用，则私有和公共仓库都允许复刻。如果禁用，则只允许复刻公共仓库。此设置也可以在每个仓库中进行配置。",
-                // 顶部提醒
-                    "Repository forking setting updated!": "仓库复刻设置已经更新!",
+                    // 顶部提醒
+                        "Repository forking setting updated!": "仓库复刻设置已经更新！",
+                        "Repository forking setting not updated. Please try again.": "仓库复刻设置不能更新。请重试。",
+
+                "Repository discussions": "仓库讨论",
+                    "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
+                        // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
+                        "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
+                    // 顶部提醒
+                        "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
+                        "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
 
                 "Projects base permissions": "项目基本权限",
                     "Projects created by members will default to the elected role below.": "成员创建的项目将默认为下面选定的角色。",
+
+                    "No access": "无法访问",
+                        "Members will only be able to see projects that are made public. To give an organization member additional access, they can be added as part of a team or as a collaborator.": "成员只能看到公开项目。要赋予组织成员更多访问权限，可以将其添加为团队成员或协作者。",
+                        // 对话框
+                            "Change base permissions to \"No access\"": "将基本权限改为 “无法访问”",
+                                "You are about to change the base projects permission for this organization.": "您将更改该组织的基本项目权限",
+                                "This won't affect any existing projects.": "这不会影响任何现有项目",
+                    // 只读
+                        "Members can see projects.": "成员可以查看项目",
+                        // 对话框
+                            "Change base permissions to \"Read\"": "将基本权限改为 “只读”",
+                    // 可写
+                        "Members can see and make changes to projects.": "成员可以查看和修改项目",
+                        // 对话框
+                            "Change base permissions to \"Write\"": "将基本权限改为 “可写”",
+                    // 管理员
+                        "Members can see, make changes to, and add new collaborators to projects.": "成员可以查看和修改项目，并可为项目添加新的协助者。",
+                        // 对话框
+                            "You are about to change the base projects permission for this organization.": "您将更改该组织的基本项目权限",
+                    // 顶部提醒
+                        "Base permission updated to \"None\" for projects.": "项目的基本权限已更新为 “无”。",
+                        "Base permission updated to \"Read\" for projects.": "项目的基本权限已更新为 “只读”。",
+                        "Base permission updated to \"Write\" for projects.": "项目的基本权限已更新为 “可写”。",
+                        "Base permission updated to \"Admin\" for projects.": "项目的基本权限已更新为 “管理员”。",
 
                 "Pages creation": "页面创建",
                     "Members will be able to publish sites with only the selected access controls.": "成员将能够发布仅只有选定的访问控制的站点。",
@@ -14493,47 +14685,45 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                         "Members will be able to create public sites, visible to anyone.": "成员将能够创建任何人都可见的公共站点。",
                     // "Private": "私有",
                         "Members will be able to create private sites, visible to anyone with permission.": "成员将能够创建私有站点，对任何有权限的人可见。",
+                    // 顶部提醒
+                        "Projects settings updated for this organization.": "该组织的项目设置已经更新。",
+
                 "Integration access requests": "集成访问请求",
                     "Allow integration requests from outside collaborators": "允许来自外部协作者的集成请求",
-                    "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用申请访问该组织及其资源的权限。",
+                        "Outside collaborators will be able to request access for GitHub or OAuth apps to access this organization and its resources.": "外部协作者将能够为 GitHub 或 OAuth 应用申请访问该组织及其资源的权限。",
+                        // 顶部提醒
+                            "Outside collaborators can no longer request third party access.": "外部协作者无法再请求第三方访问。",
+                            "Outside collaborators can now request third party access.": "外部协作者现在可以请求第三方访问。",
 
                 "Admin repository permissions": "管理员仓库权限",
                     "Repository visibility change": "仓库可见性更改",
                         "Allow members to change repository visibilities for this organization": "允许成员更改此组织的仓库可见性",
-                        "If enabled, members with admin permissions for the repository will be able to change its visibility. If disabled, only organization owners can change repository visibilities.": "如果启用，对仓库有管理权限的成员将能够更改其可见性。如果禁用，只有组织所有者可以更改仓库的可见性。",
-                    // 顶部提醒
-                        "Members can now change repository visibility.": "成员现在可以更改仓库可见性。",
-                        "Members can no longer change repository visibility.": "成员不能再更改仓库可见性。",
+                            "If enabled, members with admin permissions for the repository will be able to change its visibility. If disabled, only organization owners can change repository visibilities.": "如果启用，对仓库有管理权限的成员将能够更改其可见性。如果禁用，只有组织所有者可以更改仓库的可见性。",
+                        // 顶部提醒
+                            "Members can now change repository visibility.": "成员现在可以更改仓库可见性。",
+                            "Members can no longer change repository visibility.": "成员不能再更改仓库可见性。",
 
                     "Repository deletion and transfer": "仓库的删除和转让",
                         "Allow members to delete or transfer repositories for this organization": "允许成员删除或转让此组织的仓库",
-                        "If enabled, members with admin permissions for the repository will be able to delete or transfer": "如果启用，对仓库有管理权限的成员将能够删除或转让",
-                        "public": "公共",
-                        "private": "私有",
-                        "repositories. If disabled, only organization owners can delete or transfer repositories.": "仓库。如果禁用，只有组织所有者可以删除或转让仓库。",
-                    // 顶部提醒
-                        "Members can now delete or transfer repositories.": "成员现在可以删除或转让仓库。",
-                        "Members can no longer delete or transfer repositories.": "成员不能再删除或转让仓库。",
+                            "If enabled, members with admin permissions for the repository will be able to delete or transfer": "如果启用，对仓库有管理权限的成员将能够删除或转让",
+                            "public": "公共",
+                            "private": "私有",
+                            "repositories. If disabled, only organization owners can delete or transfer repositories.": "仓库。如果禁用，只有组织所有者可以删除或转让仓库。",
+                        // 顶部提醒
+                            "Members can now delete or transfer repositories.": "成员现在可以删除或转让仓库。",
+                            "Members can no longer delete or transfer repositories.": "成员不能再删除或转让仓库。",
 
                     "Issue deletion": "议题删除",
                         "Allow repository administrators to delete issues for this organization": "允许仓库管理员删除此组织的议题",
-                        "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
-                    // 顶部提醒
-                        "Members can now delete issues.": "成员现在可以删除议题。",
-                        "Members can no longer delete issues.": "成员不能再删除议题。",
-
-                "Repository discussions": "仓库讨论",
-                    "Allow users with read access to create discussions": "允许具有读取权限的用户创建讨论",
-                    // [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
-                    "If disabled, discussion creation is limited to users with at least triage permission. Users with read access can still comment on discussions.": "如果禁用，讨论的创建仅限于至少具有分级权限的用户。具有读取权限的用户仍然可以对讨论发表评论。",
-                // 顶部提醒
-                    "Users with read access to repositories can create new discussions.": "对仓库具有读取权限的用户可以创建新的讨论。",
-                    "Only users with at least triage access to repositories can create new discussions.": "只有至少对仓库有分级权限的用户才能创建新的讨论。",
+                            "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
+                        // 顶部提醒
+                            "Members can now delete issues.": "成员现在可以删除议题。",
+                            "Members can no longer delete issues.": "成员不能再删除议题。",
 
                 "Member team permissions": "成员团队权限",
                     "Team creation rules": "团队创建规则",
                         "Allow members to create teams": "允许成员创建团队",
-                        "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
+                            "If enabled, any member of the organization will be able to create new teams. If disabled, only organization owners can create new teams.": "如果启用，组织的任何成员将能够创建新的团队。如果禁用，只有组织所有者可以创建新的团队。",
                     // 顶部提醒
                         "Members can now create teams.": "成员现在可以创建团队。",
                         "Members can no longer create teams.": "成员不能再创建团队。",
