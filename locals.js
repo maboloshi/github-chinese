@@ -467,7 +467,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Mention": "提及",
         "Reference": "引用",
         "Saved replies": "快速回复",
-            "Select a reply": "选择一个回复",
+            "Select a reply": "选择回复",
             "Create a new saved reply": "创建新的快速回复",
         "Slash commands": "斜杠命令",
             "Code block": "代码块",
@@ -1668,7 +1668,7 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
         // 软件包标签卡 ?tab=packages >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Get started with GitHub Packages": "开始使用 GitHub 软件包",
             "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
-            "Choose a registry": "选择一个注册表",
+            "Choose a registry": "选择注册表",
             "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用的软件平台——小型轻量级执行环境。",
             "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
             "A free and open source package manager used for the Microsoft development platforms including .NET.": "一个自由和开源的开源包管理器，用于包括 .NET 在内的 Microsoft 开发平台。",
@@ -2095,8 +2095,8 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
                 "Renaming may take a few minutes to complete.": "重命名可能需要几分钟的时间来完成。",
                 "I understand, let’s change my username": "我明白了，依然更改我的用户名",
 
-                "Enter a new username": "输入一个新用户名",
-                "Choose a new username": "选择一个新用户名",
+                "Enter a new username": "输入新用户名",
+                "Choose a new username": "选择新用户名",
                 "Change my username": "更改我的用户名",
                 "Trademark Policy": "商标政策",
                 "are available.": "都可以使用。",
@@ -2161,7 +2161,7 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
     },
     "regexp": [ // 正则翻译
         [/is available\./, "可用。"],
-        [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择一个。要提交商标索赔，请看我们的"],
+        [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择。要提交商标索赔，请看我们的"],
         [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我承认我是 $1 帐户的所有者，并授权 GitHub 将该帐户内的内容转让给我的 GitHub 继任者。"],
         [/immediately delete all of your repositories \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
     ],
@@ -6895,7 +6895,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "bug": "BUG",
                     "Something isn't working": "有些东西不工作",
                 "dependencies": "依赖性",
-                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                    "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
                 "documentation": "文档",
                     "Improvements or additions to documentation": "文档的改进或补充",
                 "duplicate": "重复",
@@ -7814,7 +7814,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "开始使用 GitHub Actions",
-            "Choose a workflow": "选择一个工作流程",
+            "Choose a workflow": "选择工作流程",
             "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式进行代码审查、分支管理和议题分类。选择一个工作流以开始使用。",
             "Skip this and": "跳过并",
             "set up a workflow yourself": "建立工作流程",
@@ -8348,7 +8348,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Documentation": "文档",
 
             // 编辑 LICENSE 许可证文件
-                "Choose a license template": "选择一个许可证模板",
+                "Choose a license template": "选择许可证模板",
 
             // 快捷键
             "Code editor": "代码编辑器",
@@ -8547,7 +8547,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                 // 创建分支对话框
                 "Branch source": "源分支",
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
-                    "Choose a source branch": "选择一个源分支",
+                    "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
 
 
@@ -8671,7 +8671,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Draft": "草案",
 
             "Compare": "对比",
-                "Choose a tag to compare": "选择一个标签进行比较",
+                "Choose a tag to compare": "选择标签进行比较",
                 "Find a tag": "搜索标签",
                 "View all tags": "查看全部标签",
 
@@ -8738,12 +8738,12 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Choose a tag": "选择标签",
                 "Find or create a new tag": "查找或创建新标签",
             "Target:": "目标：",
-                "Pick a branch or recent commit": "选择一个分支或最近的提交",
+                "Pick a branch or recent commit": "选择分支或最近的提交",
                 "Filter branches…": "筛选分支…",
                 "Filter recent commits…": "筛选最近提交…",
                 "Recent Commits": "最近提交…",
-            "Choose an existing tag, or create a new tag on publish": "选择一个现有的标签，或在发布时创建一个新标签",
-            "Choose an existing tag, or create a new tag when you publish this release.": "选择一个现有的标签，或在您发布这个版本时，创建一个新标签。",
+            "Choose an existing tag, or create a new tag on publish": "选择现有的标签，或在发布时创建新标签",
+            "Choose an existing tag, or create a new tag when you publish this release.": "选择现有的标签，或在您发布这个版本时，创建新标签。",
 
             "Loading tag information…": "载入标签信息…",
             // 在筛选标签框输入 标签时
@@ -8879,7 +8879,7 @@ I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
         // /<user-name>/<repo-name>/packages
             "Get started with GitHub Packages": "开始使用 GitHub 软件包",
             "Safely publish packages, store your packages alongside your code, and share your packages privately with your team.": "安全地发布包，将您的包与您的代码一起存储，并与您的团队私下共享您的包。",
-             "Choose a registry": "选择一个注册表",
+             "Choose a registry": "选择注册表",
 
             "A software platform used for building applications based on containers — small and lightweight execution environments.": "用于构建基于容器的应用的软件平台——小型轻量级执行环境。",
             "A default package manager used for the Java programming language and the Java runtime environment.": "用于 Java 编程语言和 Java 运行环境的一个默认包管理器。",
@@ -15262,7 +15262,7 @@ I18N.zh["orgs/settings/discussions"] = { // 组织设置 - 讨论
             "Setting up Discussions for your organization will allow you to broadcast updates, answer questions, and hold conversations for the entire organization.": "为您的组织设置 “讨论”，将您能够为整个组织广播更新、回答问题和举行对话。",
             "Enable discussions for this organization": "启用组织的讨论功能",
 
-            "Choose a source repository that will host the discussions.": "选择一个承载讨论的源码库。",
+            "Choose a source repository that will host the discussions.": "选择承载讨论的源码库。",
                 "All discussions on the source repository will be surfaced to the organization Discussions tab.": "源码库上的所有讨论都将显示在组织讨论选项卡中。",
                 "Permissions from the repository will be applied to the organization Discussions. By default, all members of the organization will be able to create and comment on discussions.": "来自仓库的权限将应用于组织讨论。默认情况下，组织的所有成员都可以创建讨论并发表评论。",
                 "Members can now share updates or ask questions to the entire organization.": "成员现在可以向整个组织共享更新或提问。",
@@ -16254,7 +16254,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
                 "Column name": "栏目名称",
                 "Enter a column name (To Do, In Progress, Done)": "输入栏目名称（待办、进行中、已完成）",
                 "Automation": "自动化",
-                "Choose a preset to enable progress tracking, automation, and better context sharing across your project.": "选择一个预设，以便在您的项目中实现进度跟踪、自动化和更好的内容共享。",
+                "Choose a preset to enable progress tracking, automation, and better context sharing across your project.": "选择预设值，以便在您的项目中实现进度跟踪、自动化和更好的内容共享。",
                 "Loading…": "载入中…",
                 "Preset:": "预设：",
                     "Select type": "选择类型",
@@ -16532,12 +16532,12 @@ I18N.zh["codespaces"] = { // 代码空间页面
 
 
         // https://github.com/codespaces/templates
-            "Choose a template": "选择一个模版",
+            "Choose a template": "选择模版",
             "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板开始创建代码空间，然后利用云中虚拟机的能力进行开发。",
             "Use this template": "使用此模版",
 
         // https://github.com/codespaces/new
-            "Create a new codespace": "新建一个代码空间",
+            "Create a new codespace": "新建代码空间",
             "Codespace usage for this repository is paid for by": "此仓库的代码空间使用支付将由",
             "Repository": "仓库",
                 "To be cloned into your codespace": "要被克隆到您的代码空间",
