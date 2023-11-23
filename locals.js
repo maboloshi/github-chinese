@@ -2406,10 +2406,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Protected branches on all repos": "所有仓库上的受保护分支",
                 "Increase Codespaces": "提高代码空间",
                 "spend limits": "消费限额",
-                "Multiple reviewers in pull requests": "拉取请求中多个审阅者",
+                "Multiple reviewers in pull requests": "拉取请求中多个审查者",
                 "Required status checks": "所需的状态检查",
                 "Code owners": "代码所有者",
-                "Required reviewers": "所需的审阅者",
+                "Required reviewers": "所需的审查者",
                 "Pages for static website hosting": "静态网站页面托管",
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
@@ -4581,7 +4581,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                     "Open pull request"  : "打开拉取请求",
                 "Pull request - Conversation tab": "拉取请求 - 对话标签卡",
                     "Submit comment and close or open pull request": "提交评论和关闭或打开拉取请求",
-                    "Request reviewers": "请求审阅者",
+                    "Request reviewers": "请求审查者",
                     "Link an issue or pull request from the same repository": "链接同一仓库的议题或拉取请求",
                     "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查评论的可见性，而不仅仅是当前的审查评论",
                 "Pull request - Files changed tab": "拉取请求 - 文件更改标签卡",
@@ -5724,7 +5724,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
 
             // 同 /<user-name>/<repo-name>/pull/<id>
             // 右侧栏
-                "Reviewers": "审阅者",
+                "Reviewers": "审查者",
                     "Loading suggestions…": "载入推荐…",
                     // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
@@ -5734,10 +5734,10 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                             "Convert this pull request to draft?": "将此拉取请求转换为草案？",
                             "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
                     // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审阅者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
+                    "Request up to 15 reviewers": "最多请求 15 个审查者",
+                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
                     "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
                     "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
 
                 "Assignees": "受理人",
@@ -6162,7 +6162,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Files changed": "更改的文件",
 
             // 右侧栏
-                "Reviewers": "审阅者",
+                "Reviewers": "审查者",
                     "Loading suggestions…": "载入推荐…",
                     // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
@@ -6173,10 +6173,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Learn about draft PRs": "了解拉取请求草案",
                     "Convert to draft": "设置为草案",
                     // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审阅者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
+                    "Request up to 15 reviewers": "最多请求 15 个审查者",
+                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
                     "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
                     "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
 
                 "Assignees": "受理人",
@@ -6341,8 +6341,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Change requested": "更改请求",
             "Show resolved": "显示已解决",
             "Hide resolved": "隐藏已解决",
-            "Show all reviewers": "显示所有审阅者",
-            "Hide all reviewers": "隐藏所有审阅者",
+            "Show all reviewers": "显示所有审查者",
+            "Hide all reviewers": "隐藏所有审查者",
             "New changes since you last viewed": "自您上次查看以来的新变化",
             "mentioned this pull request": "提及这个拉取请求",
             "dismissed": "忽略",
@@ -6383,7 +6383,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "was requested for review": "被请求审查",
 
             // 已请求更改
-                // [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审阅者进行更改。"], // 拉取请求
+                // [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审查者进行更改。"], // 拉取请求
 
             "All conversations are resolved": "所有对话均已解决",
                 // [/(\d+) resolved conversations?/, "2 条对话已解决"], // 拉取请求
@@ -6406,7 +6406,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
-            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审阅者进行审查。"],
+            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
             // [/(\d+) approvals?/, "$1 项批准"],
             "Some checks haven’t completed yet": "有些检查还没有完成",
             // [/1 in progress check/, "$1个正在进行的检查"],
@@ -6529,7 +6529,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "to resolve conflicts.": "来解决冲突。",
             "Conflicting files": "冲突的文件:",
 
-            "Require approval from specific reviewers before merging": "合并前需要特定审阅者的批准",
+            "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
                 "Branch protection rules": "分支保护规则",
                 "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
             "Add rule": "添加规则",
@@ -6723,16 +6723,16 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         // 具体某条拉取请求
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
         [/([^ ]+) left review comments?/, "$1 发表了审查评论"],
-        [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
-        [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+        [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
+        [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
         [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
         [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"],
         [/(\d+) pending reviewers?/, "$1 名待审者"],
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
-        [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审阅者进行审查。"],
+        [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
         [/(\d+) approvals?/, "$1 项批准"],
-        // [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审阅者进行更改"],
+        // [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"],
         [/(\d+) changes? requested/, "$1 项更改请求"],
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
@@ -6771,7 +6771,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
         [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
-        [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审阅者进行更改。"], // 拉取请求
+        [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审查者进行更改。"], // 拉取请求
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
@@ -6864,7 +6864,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "contributors": "位贡献者",
             // "No commit comments for this range": "该范围变更没有提交注释",
 
-            "Reviewers": "审阅者",
+            "Reviewers": "审查者",
                 "Loading suggestions…": "载入推荐…",
                 // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
                 "At least 0 approving review is required to merge this pull request.": "至少需要 0 次批准审查才能合并此拉取请求。",
@@ -6874,10 +6874,10 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
                 "Learn about draft PRs": "了解拉取请求草案",
                 "Convert to draft": "设置为草案",
-                "Request up to 15 reviewers": "最多请求 15 个审阅者",
-                // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审阅者
+                "Request up to 15 reviewers": "最多请求 15 个审查者",
+                // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
                 "Request": "请求",
-                // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审阅者
+                // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
                 "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
 
             "Assignees": "受理人",
@@ -11313,9 +11313,9 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
             "/ Configure": "/ 设置",
 
             "Deployment protection rules": "部署保护规则",
-                "Configure reviewers, timers, and custom rules that must pass before deployments to this environment can proceed.": "配置审阅者、计时器和自定义规则，在继续部署到此环境之前必须通过这些规则。",
+                "Configure reviewers, timers, and custom rules that must pass before deployments to this environment can proceed.": "配置审查者、计时器和自定义规则，在继续部署到此环境之前必须通过这些规则。",
 
-                "Required reviewers": "所需的审阅者",
+                "Required reviewers": "所需的审查者",
                 "Specify people or teams that may approve workflow runs when they access this environment.": "指定访问此环境时可以批准工作流运行的人员或团队。",
                     "Add up to": "最多添加",
                     "more reviewers": "位审阅者",
@@ -11975,7 +11975,7 @@ I18N.zh["repository/transfer"] = { // 转让仓库
                 "PRs": "拉取请求",
                 "Multiple assignees": "多个受让人",
                 "for issues and PRs": "的议题和拉取请求",
-                "Multiple reviewers": "多个审阅者",
+                "Multiple reviewers": "多个审查者",
                 "for PRs": "的拉去请求",
                 "Branch and tag protection rules": "分支和标签保护规则",
 
@@ -12827,7 +12827,7 @@ I18N.zh["issues"] = { // 议题页面
                 "Submit comment and close issue": "提交评论并关闭??议题", // 议题
                 "Preview comment": "预览评论",
                 "Create issue": "创建议题", //议题
-                "Request reviewers": "请求审阅者",
+                "Request reviewers": "请求审查者",
                 "Filter by author"             : "按作者筛选",
                 "Filter by or edit assignees"  : "按受理人筛选或编辑受理人",
                 "Filter by or edit labels"     : "按标签筛选或编辑标签",
@@ -16272,11 +16272,11 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
                             "If a closed pull request in this project reopens, it will automatically move here.": "如果此项目中已关闭的拉取请求重新打开，它将自动移至此处。",
                     "In progress": "进行中",
                         "Actively being worked on": "正在积极开展工作",
-                        "Approved by reviewer": "由审阅者批准",
+                        "Approved by reviewer": "由审查者批准",
                         "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉取请求达到所需的最低批准审查数量时，将自动移至此处。当另一栏启用了 “",
                         "automation enabled.": "” 的自动化功能时推荐使用。",
-                        "Pending approval by reviewer": "由审阅者待批准",
-                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审阅者请求更改或不再满足所需的最小批准审查数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
+                        "Pending approval by reviewer": "由审查者待批准",
+                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小批准审查数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
                     "Done": "已完成",
                         "Items are complete": "项目已完成",
                         "Closed": "已关闭",
