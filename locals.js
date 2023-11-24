@@ -13670,7 +13670,7 @@ I18N.zh["topics"] = { // 探索-->主题页面
                 "Curate this topic": "整理此主题",
             "Add this topic to your repo": "将此主题添加到您的仓库",
                 "To associate your repository with the": "将您的仓库与",
-                "topic, visit your repo's landing page and select ": "主题时，访问仓库的首页并选择",
+                "topic, visit your repo's landing page and select": "主题时，访问仓库的首页并选择",
                 "manage topics": "管理主题",
 
     },
