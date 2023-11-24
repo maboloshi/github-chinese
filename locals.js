@@ -372,7 +372,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "A new dashboard to view and track your deployments across all your environments, see the full history of your deployments, and filter by environment.": "一个全新的仪表板，用于查看和跟踪您在所有环境中的部署，查看您的部署完整历史记录，并按环境进行筛选。",
             "Passkeys": "通行密钥",
             "New Repository Overview": "新版仓库概述",
-                "An updated repository landing page experience that integrates features from the new code view like the find file input.": "一个更新的仓库着陆页体验，集成了新的代码视图（如查找文件输入）的功能。",
+                "An updated repository landing page experience that integrates features from the new code view like the find file input.": "一个新的仓库首页体验，集成了新的代码视图（如查找文件输入）的功能。",
             "Slash Commands": "斜杠命令",
                 "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜杠命令使得输入更复杂的Markdown（如表格、任务列表和代码块）更加容易。",
                 "Simply type": "只需在议题、拉取请求和讨论中键入",
