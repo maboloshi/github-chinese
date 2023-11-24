@@ -5534,6 +5534,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Pending": "待定",
             "Draft": "草案",
 
+            "Markdown is supported": "支持 Markdown",
+            "Paste, drop, or click to add files": "粘贴、放置或单击以添加文件",
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
     }
