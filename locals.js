@@ -7320,6 +7320,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             // 组织讨论
             "Welcome to Organization Discussions!": "欢迎参与组织讨论！",
+            "There are no discussions here yet": "这里还没有讨论",
             "Organization discussions are to broadcast news, create conversation in your community, answer questions, and share ideas. To get started, you can": "组织讨论是为了广播新闻，在您的社区创造对话，回答问题，并分享想法。要开始，您可以",
             "create a new discussion.": "创建新的讨论。",
 
