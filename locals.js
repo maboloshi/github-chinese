@@ -1630,7 +1630,7 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Clear current search query and sorts": "清除当前的搜索查询和分类",
 
             "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
-            "Kanban-style project board": "看板式项目板",
+            "Kanban-style project board": "看板式项目面板",
 
             "You don't have any projects yet.": "您还没有任何项目。",
             "There are no projects matching your search.": "没有符合您搜索条件的项目。",
@@ -16069,15 +16069,15 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
           //同 仓库 新建项目页面  /<user-name>/<repo-name>/projects/new
             "Create a new classic project": "创建经典项目",
             "Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.": "在这里协调、跟踪和更新您的工作，使项目保持透明，并按计划进行。",
-            "Project board name": "项目板名称",
+            "Project board name": "项目面板名称",
             "Description": "描述",
             "(optional)": "(可选)",
             "Project template": "项目模板",
-            "Save yourself time with a pre-configured project board template.": "使用预先配置的项目板模板可为您节省时间。",
+            "Save yourself time with a pre-configured project board template.": "使用预先配置的项目面板模板可为您节省时间。",
             "Template:": "模板：",
                 "Templates": "模板",
                 "None": "无",
-                    "Start from scratch with a completely blank project board. You can add columns and configure automation settings yourself.": "从一个完全空白的项目板开始。您可以自己添加栏目并配置自动化设置。",
+                    "Start from scratch with a completely blank project board. You can add columns and configure automation settings yourself.": "从一个完全空白的项目面板开始。您可以自己添加栏目并配置自动化设置。",
                 "Basic kanban": "基础看板",
                     "Basic kanban-style board with columns for To do, In progress and Done.": "基础风格看板，带有待办、进行中和已完成等栏目。",
                 "Automated kanban": "自动化看板",
@@ -16107,8 +16107,8 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
 
-            "Organize your issues with project boards": "使用项目板组织您的议题",
-            "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存代码的同一个地方管理项目吗？在 GitHub 上设置项目板以简化和自动化您的工作流程。",
+            "Organize your issues with project boards": "使用项目面板组织您的议题",
+            "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存代码的同一个地方管理项目吗？在 GitHub 上设置项目面板以简化和自动化您的工作流程。",
 
             "Sort tasks": "排序任务",
             "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "将议题和拉取请求添加到您的看板中，并将它们与包含想法或任务清单的笔记卡一起进行优先排序。",
@@ -16121,7 +16121,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
             "Share status": "共享状态",
             "Each card has a unique URL, making it easy to share and discuss individual tasks with your team.": "每张卡片都有一个唯一的 URL，可以轻松地与您的团队共享和讨论个人任务。",
             "Wrap up": "结束工作",
-            "After you wrap up your work, close your project board to remove it from your active projects list. On to the next project!": "结束工作后，关闭项目板，并从活动项目列表中删除。进入下一个项目！",
+            "After you wrap up your work, close your project board to remove it from your active projects list. On to the next project!": "结束工作后，关闭项目面板，并从活动项目列表中删除。进入下一个项目！",
 
             "Try the": "尝试",
             "new projects today.": "新版项目。",
@@ -16226,14 +16226,14 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
                 "Delete project": "删除项目",
 
             // 复制项目
-                "Copy project board": "复制项目板",
+                "Copy project board": "复制项目面板",
                 "Your copy of this project includes column names and positions. Cards will not be copied.": "此项目的副本包括栏目名称和位置。卡片不会被复制。",
                 "Owner": "所有者",
                     "Choose an owner": "选择所有者",
                     "Search organizations and repositories": "搜索组织和仓库",
                     "Suggested": "建议",
                     "Everything else": "其他一切",
-                "Project board name": "项目板名称",
+                "Project board name": "项目面板名称",
                 "Copy project": "复制项目",
 
             // 存档的卡片
@@ -16348,7 +16348,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
             "The": " ",
             "column is already using this rule.": "栏目已在使用此规则。",
 
-            // 复制项目板 补充
+            // 复制项目面板 补充
             "Your copy of this project includes column names, positions, and automation settings. Cards will not be copied.": "此项目的副本包括栏目名称、位置和自动化设置。卡片不会被复制。",
             "Automation settings": "自动化设置",
             "Copy automation settings.": "复制自动化设置。",
