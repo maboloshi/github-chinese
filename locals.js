@@ -1194,6 +1194,10 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "added a repository to": "已将仓库添加到",
         "contributed to": "贡献给",
 
+        "Uh oh!": "哎呀!",
+        "There was an error in loading the activity feed.": "载入仓库时发生错误。",
+        "Reload this page.": "重载此页面",
+
         // 动态 状态词
         "starred": "星标了",
         "created": "创建了",
