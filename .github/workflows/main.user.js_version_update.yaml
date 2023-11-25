@@ -1,14 +1,13 @@
 name: main.user.js version update
 on:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 16 * * 0"
   workflow_dispatch:
 
 jobs:
   update_version:
-    if: ${{ !startsWith(github.event.client_payload.head_commit.message, 'main.user.js: Update to version') }}
+    if: ${{ !startsWith(github.event.client_payload.head_commit.message, 'main.user.js Update to version') }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -45,5 +44,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add main.user.js
-          git commit -m "main.user.js: Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          git commit -m "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
           git push origin HEAD:${{ github.ref }}
