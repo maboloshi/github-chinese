@@ -4847,6 +4847,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
 
+                // 提交栏 GitHub Action
+                "All checks have passed": "已通过所有检查",
+
+
                 // 关注 & 订阅通知设置 下拉菜单
                 "Notification settings": "通知设置", //小屏模式
                 "Notifications": "通知类型",
@@ -5337,6 +5341,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) successful checks/, "$1 个成功的检查"],
+        [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
