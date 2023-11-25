@@ -12013,14 +12013,17 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
 
         // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
             "Codespaces secrets": "代码空间机密",
-            "Secrets are environment variables that are": "机密是环境变量",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            "access to this repository can use these secrets for Codespaces.": "访问此仓库可以将这些秘密用于代码空间。",
+            "Development environment secrets are environment variables that are": "开发环境机密是环境变量",
+            ". Secrets are not passed to forks.": "。机密不会传递给复刻。",
+
+            "Repository development environment secrets": "仓库开发环境机密", // 组织仓库
+            "Organization development environment secrets": "组织开发环境机密", // 组织仓库
 
         // Dependabot 机密 /<user-name>/<repo-name>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
             "Secrets are credentials that are": "机密是凭证",
+            ". Anyone with": "。任何对此仓库具有",
+            "collaborator": "协作者",
             "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
             "Secrets are not passed to forks.": "机密不会传递给复刻。",
             "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的机密允许您存储私有访问令牌，以便 Dependabot 可以从私有注册表更新依赖项。",
