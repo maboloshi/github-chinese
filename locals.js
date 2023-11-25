@@ -15809,17 +15809,22 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
                         "selected repositories": "个选定的仓库",
                     "Update selection": "更新选择",
 
-        // 代码空间机密 /<user-name>/<repo-name>/settings/secrets/codespaces
+        // 代码空间机密 /organizations/<org-login>/settings/secrets/codespaces
             "Codespaces secrets": "代码空间机密",
-            "Secrets are environment variables that are": "机密是环境变量",
-            ". Anyone with": "。任何对此仓库具有",
-            "collaborator": "协作者",
-            "access to the repositories with access to each secret can use it for Codespaces.": "访问权限的仓库的每个机密都可以用于代码空间。",
+            "Development environment secrets": "开发环境机密",
+                "Development environment secrets are environment variables that are": "开发环境机密是环境变量",
+                "encrypted": "被加密",
+                ". They are available to any codespace user with": "。任何代码空间用户具有",
+                "collaborator": "协作者",
+                "access to the repositories with access to that secret.": "权限访问该机密的仓库。",
+
+                "New secret": "新建机密",
+                "There are no development environment secrets for this organization.": "该组织尚无开发环境机密。",
 
         // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
             "Secrets are credentials that are": "机密是凭证",
-            // "access to this repository can use these secrets for Dependabot.": "访问权限的人可以将这些机密用于 Dependabot。",
+            ". Anyone with": "。任何对此仓库具有",
             "access to the repositories with access to each secret can use it for Dependabot.": "访问权限的人都可以访问仓库的每个机密用于 Dependabot。",
             "Secrets are not passed to forks.": "机密不会传递给复刻。",
 
