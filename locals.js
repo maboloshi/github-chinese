@@ -10687,12 +10687,37 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 标签 页面 /<user-name>/<repo-name>/settings/tag_protection===============================
+            // 顶部提醒
+                "Tag protection rule created.": "标签保护规则已创建。",
+                "Tag protection rule deleted.": "标签保护规则已删除。",
+
             "Protected tags": "受保护的标签",
             "Protected tags are available to Pro, Team, and Enterprise users": "专业版、团队版和企业版用户均可使用受保护的标签", //私有库
             "Protected tags can only be created or deleted by users with enhanced permissions defined by your organization owners.": "受保护的标签只能由具有由组织所有者定义的增强权限的用户创建或删除。",
             "Learn more about protected tags": "了解更多关于受保护标签的信息",
             "No protected tag rules exist yet": "尚无受保护的标签规则存在",
             "New rule": "新建规则",
+            "Import to rulesets": "导入规则集",
+                "Import your tag protection rules into repository rules": "将您的标签保护规则导入仓库规则集",
+                    "Migrate your protected tags to one or more repository rulesets. This will implement the same tag protections you currently have today. Once created, the tag rulesets can take advantage of new ruleset features:": "将受保护的标签迁移到一个或多个仓库规则集。这将实现与当前相同的标签保护。创建后，标签规则集可利用规则集的新功能：",
+                        "Requiring status checks to pass": "要求通过状态检查",
+                        "Signed commits": "要求签名提交",
+                        "Requiring linear history": "需要线性历史",
+                        "and more": "和更多",
+                    "Create separate rulesets for creating and deleting protected tags": "为创建和删除受保护的标签创建单独的规则集",
+                        "Users and Teams with at least Maintainer role will be able to create new protected tags. Administrators will be able to delete protected tags. This is the same behavior as existing tag protections.": "至少具有维护者角色的用户和团队可以创建新的受保护标签。管理员可以删除受保护标签。这与现有标签保护的行为相同。",
+                    "Create one ruleset for all protected tag operations": "为所有受保护的标签操作创建规则集",
+                        "Administrators will be able to create and delete protected tags.": "管理员可以创建和删除受保护的标签。",
+
+                    "Learn more about tag rulesets": "了解更多关于标签规则集的信息",
+                    "Import": "导入",
+
+            "Delete tag protection rule": "删除标签保护规则",
+                "Delete tag protection rule?": "删除标签保护规则？",
+                    "Are you sure you want to delete this tag protection rule? Anyone who can write to this repository will be able to create tags with this pattern.": "您确定要删除此标签保护规则吗？任何可以写入此仓库的人都能够使用此模式创建标签。",
+                    "Yes, remove this tag protection rule": "是的，删除此标签保护规则",
+
+            // [/(\d+) rules?/, "$1 条规则"],
 
         // 新建标签规则 页面 /<user-name>/<repo-name>/settings/tag_protection/new===============================
             "/ New rule": "/ 新建规则",
@@ -10705,6 +10730,7 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) rules?/, "$1 条规则"],
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
