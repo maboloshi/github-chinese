@@ -10735,13 +10735,16 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
     ],
 };
 
-I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<repo-name>/settings/rules
+I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<user-name>/<repo-name>/settings/rules
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-settings-menu"]["static"],
         ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
-        // 规则 页面 /<user-name>/<repo-name>/settings/rules===============================
+        // 规则集 页面 /<user-name>/<repo-name>/settings/rules===============================
+            // 顶部提醒
+                "Two rulesets matching current tag protects has been created. You may now delete your protected tags.": "已创建与当前标签保护相匹配的两个规则集。您现在可以删除受保护的标签。",
+
             "Rulesets": "规则集",
             "New ruleset": "新建规则集",
                 "New branch ruleset": "新建分支规则集",
@@ -10760,11 +10763,16 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Nothing to show": "暂无",
             "No rulesets have been added yet": "尚未添加任何规则集",
             "• targeting": "• 针对",
+            ", targeting": ", 针对",
+            // [/(\d+) rules?, targeting (\d+) tags?/, "$1 条规则，针对 $1 个标签"],
+
+            "Export ruleset": "导出规则集",
 
         // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
+            "This ruleset is in evaluation mode. The rules below will not be enforced.": "该规则集处于评估模式。以下规则将不被执行。", // 组织仓库
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
 
             "Ruleset Name": "规则集名称",
@@ -10777,6 +10785,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Evaluate": "评估", // 组织设置
                     "Evaluate Rulesets to trial rules and view insights": "评估规则集，以试用规则并查看洞察",
                     "Evaluate mode is only available to Enterprise organizations.": "评估模式仅适用于企业组织。",
+                        "Upgrade to Enterprise to use this mode.": "升级到企业版即可使用此模式。",
                 "Disabled": "禁用",
                     "Do not evaluate or enforce rules": "不评估或执行规则",
             "Bypass mode": "旁路模式",
@@ -10813,6 +10822,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Bypass list is empty": "旁路列表为空",
                 "Exempt teams or apps from this ruleset by adding them to the bypass list": "通过将团队或应用添加到旁路列表中，使其免于此规则集",
                 "Exempt roles": "豁免角色",
+                "or teams": "或团队",
                 ", teams, or apps": "团队或应用",
                 "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
@@ -10823,12 +10833,15 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Target:": "目标：",
                     // 所有仓库
                         "Target all repositories within the organization": "目标是针对组织内的所有仓库。",
-                    "Dynamic list of repositories": "动态仓库列表",
+                    "Dynamic list by name": "按名称的动态列表",
                         "Target repositories based on name": "基于名称的目标仓库",
+                    "Dynamic list by property": "按属性的动态列表",
+                        "Target repositories based on properties": "基于属性的目标仓库",
                     "Select repositories": "选定的仓库",
                         "Target a specific list of selected repositories": "以选定的仓库的特定列表为目标",
 
                 "Targeting criteria": "目标定位条件",
+                "Target by repository properties": "目标由仓库属性决定",
                     "All Repositories": "所有仓库",
                     "No repository targets have been added yet": "尚未添加仓库目标",
                     "Repository targeting determines which repositories will be protected by this ruleset.": "仓库目标决定了哪些仓将受此规则集保护。",
@@ -10882,15 +10895,55 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Require linear history": "需要线性历史",
                     "Prevent merge commits from being pushed to matching refs.": "防止合并后的提交被推送到匹配的引用。",
                 "Require deployments to succeed": "要求部署成功",
-                    "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境,7，才能将引用推送到与此规则匹配的引用中。",
+                    "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境，后才能将引用推送到与此规则匹配的引用中。",
+                    "Additional settings": "附加设置",
+                        "Search for deployment environments": "搜索部署环境",
+                        "No deployment environments found": "未找到部署环境",
+                        "Learn more about deployment environments": "了解更多关于部署环境的信息",
                 "Require signed commits": "要求带签名的提交",
                     "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
                 "Require a pull request before merging": "要求在合并前提交拉取请求",
                     "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
+                    // "Additional settings": "附加设置",
+                        "Required approvals": "要求审批",
+                            "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的审批次数。",
+                        "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求审批",
+                            "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将撤销之前的拉取请求的审批。",
+                        "Require review from Code Owners": "要求代码所有者进行审查",
+                            "Require an approving review in pull requests that modify files that have a designated code owner.": "要求对具有指定代码所有者的文件修改的拉取请求中进行审批。",
+                        "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
+                            "Whether the most recent reviewable push must be approved by someone other than the person who pushed it.": "最新的可审核推送是否必须得到推送者以外的其他人批准。",
+                        "Require conversation resolution before merging": "要求在合并前解决对话",
+                            "All conversations on code must be resolved before a pull request can be merged.": "在合并拉取请求之前，必须解决有关代码的所有对话。",
                 "Require status checks to pass": "要求通过状态检查",
                     "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
+                    // "Additional settings": "附加设置",
+                        "Require branches to be up to date before merging": "要求分支在合并前必须是最新的",
+                            "Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.": "针对匹配分支的拉取请求，使用最新代码进行测试。至少启用一项状态检查，否则此设置不会生效。",
+                            "Enter the name of a status check": "输入状态检查的名称",
+                                // [/Add '(.*)'/, "添加 $1"],
+                            "No status checks found": "未找到状态检查",
+                            "Learn more about status checks": "了解更多关于状态检查的信息",
                 "Block force pushes": "阻止强制推送",
                     "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
+                "Require workflows to pass before merging": "要求工作流程在合并之前通过", // 组织设置
+                    "Require all changes made to a targeted branch to pass the specified workflows before they can be merged.": "要求对目标分支所做的所有更改都通过指定的工作流程，然后才能合并",
+                    "Workflow configurations": "工作流程配置",
+                        "Add workflow": "新建工作流程",
+                            "Add required workflow": "添加所需的工作流程",
+                                // 仓库
+                                    "Select a repository": "选择仓库",
+                                    "Select an item": "选择项目",
+                                    "Repos": "仓库",
+                                "Select branch or tag": "筛选分支或标签",
+                                    "Branch or tag": "分支或标签",
+                                "Pin to commit": "固定到提交",
+                                    "Always reference the current commit": "始终引用当前提交",
+                                "Pick a workflow file": "选择工作流程文件",
+                                "Enter a SHA": "输入 SHA",
+                                    "Enter a valid SHA": "输入有效的 SHA",
+                                    "Enter the SHA for the commit you want to reference": "输入您要引用的提交的 SHA",
+                        "No workflow configurations found": "尚无工作流程配置",
 
             "Metadata": "元数据", // 组织设置
             "restrictions": "限制",
@@ -10898,6 +10951,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
                 "Learn more about": "了解更多关于",
                 "metadata": "元素",
 
+                "Add restriction": "添加限制",
                 // 添加元数据限制 对话框
                     "Add a metadata restriction": "添加元数据限制",
                         "Restrict commit author email addresses, committer email addresses, commit message content, and other metadata": "限制提交作者电子邮箱地址、提交者电子邮箱地址、提交消息内容和其他元数据",
@@ -11013,8 +11067,11 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 /<user-name>/<
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) branch rules?/, "$1 条分支规则"],
         [/(\d+) rules?/, "$1 条规则"],
-        [/(\d+) branch(es)?/, "$1 个分支"],
+        [/(\d+) branch(?:es|)?/, "$1 个分支"],
+        [/(\d+) tags?/, " $1 个标签"],
+        [/Add '(.*)'/, "添加 $1"],
         [/Commit message must start with a matching pattern/, "提交信息必须以匹配规则开头"],
         [/Commit message must end with a matching pattern/, "提交信息必须以匹配规则结束"],
         [/Commit message must contain with a matching pattern/, "提交信息必须包含匹配规则"],
