@@ -36,7 +36,7 @@ jobs:
       - name: Commit and push main.user.js
         if: ${{ env.AHEAD == 'true' }}
         run: |
-          bash script/ci.sh \
+          bash script/ci_commit_with_signature.sh \
           ${{ secrets.CI_GITHUB_TOKEN }} \
           "maboloshi/github-chinese" \
           "main.user.js" \
