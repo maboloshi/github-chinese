@@ -391,7 +391,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
         "Edit status": "编辑状态",
-        "What's happening?": "发生了什么？",
+        "What's your current status?": "你目前的状况如何？",
 
         "Suggestions:": "建议：",
             "On vacation": "在度假",
@@ -5341,6 +5341,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/commits by (.+)/, "由 $1 提交"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
