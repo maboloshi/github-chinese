@@ -33,16 +33,12 @@ jobs:
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
 
-      - name: Commit file main.user.js
+      - name: Commit and push main.user.js
         if: ${{ env.AHEAD == 'true' }}
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add main.user.js
-          git commit -m "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.CI_GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          bash script/ci.sh \
+          ${{ secrets.CI_GITHUB_TOKEN }} \
+          "maboloshi/github-chinese" \
+          "main.user.js" \
+          "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
