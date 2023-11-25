@@ -6,7 +6,7 @@ on:
 
 jobs:
   update_version:
-    if: not startsWith(github.event.client_payload.head_commit.message, 'main.user.js: Update to version')
+    if: ${{ !startsWith(github.event.client_payload.head_commit.message, 'main.user.js: Update to version') }}
     runs-on: ubuntu-latest
 
     steps:
