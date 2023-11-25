@@ -11,38 +11,38 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CI_GITHUB_TOKEN }} # 要绕过分支保护规则此处不可少
 
       - name: Get latest tag commit SHA
-        id: latest_tag_commit_sha
-        run: echo "::set-output name=sha::$(git rev-list --tags --max-count=1)"
+        run: echo "LATEST_TAG_COMMIT_SHA=$(git rev-list --tags --max-count=1)" >> $GITHUB_ENV
 
       - name: Get current commit SHA
-        id: current_commit_sha
-        run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+        run: echo "CURRENT_COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
 
       - name: Check if commit is ahead of latest tag
-        id: check_commit_ahead
         run: |
-          latest_tag_commit_sha=${{ steps.latest_tag_commit_sha.outputs.sha }}
-          current_commit_sha=${{ steps.current_commit_sha.outputs.sha }}
-          if [ "$current_commit_sha" != "$latest_tag_commit_sha" ]; then
-            echo "::set-output name=ahead::true"
+          if [ "$CURRENT_COMMIT_SHA" != "$LATEST_TAG_COMMIT_SHA" ]; then
+            echo "AHEAD=true" >> $GITHUB_ENV
           else
-            echo "::set-output name=ahead::false"
+            echo "AHEAD=false" >> $GITHUB_ENV
           fi
 
       - name: Update version in main.user.js
-        if: steps.check_commit_ahead.outputs.ahead == 'true'
+        if: ${{ env.AHEAD == 'true' }}
         run: |
-          sed -i "s/@version\s*[^\\s]*/@version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
+          sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
 
-      - name: Commit and push changes
-        if: steps.check_commit_ahead.outputs.ahead == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+      - name: Commit file: main.user.js
+        if: ${{ env.AHEAD == 'true' }}
         run: |
           git config --local user.name "github-actions[bot]"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add main.user.js
           git commit -m "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
-          git push origin HEAD:${{ github.ref }}
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.CI_GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
