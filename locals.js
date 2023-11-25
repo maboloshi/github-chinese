@@ -4621,6 +4621,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
+        [/(\d+) successful checks/, "$1 个成功的检查"],
+        [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -5342,8 +5344,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/commits by (.+)/, "由 $1 提交"],
-        [/(\d+) successful checks/, "$1 个成功的检查"],
-        [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
