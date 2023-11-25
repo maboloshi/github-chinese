@@ -32,9 +32,10 @@ jobs:
         if: ${{ env.AHEAD == 'true' }}
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
+          git diff --exit-code main.user.js > /dev/null || echo "Changes detected" >> $GITHUB_ENV
 
       - name: Commit and push main.user.js
-        if: ${{ env.AHEAD == 'true' }}
+        if: ${{ env.AHEAD == 'true' && env.CHANGES_DETECTED == 'true' }}
         run: |
           bash script/ci_commit_with_signature.sh \
           ${{ secrets.CI_GITHUB_TOKEN }} \
