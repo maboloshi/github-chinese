@@ -4489,6 +4489,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
                 // [/(\d+) members?/, "$1 个成员"],
 
+            "Some checks haven't completed yet": "部分检查还未完成",
+
 
             "Jump to bottom": "跳到底部", //小屏模式
 
@@ -4623,6 +4625,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
     "regexp": [ // 正则翻译
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
+        [/(\d+) in progress check/, "$1 个正在运行的检查"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
