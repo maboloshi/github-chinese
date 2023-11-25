@@ -33,7 +33,7 @@ jobs:
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
 
-      - name: Commit file: main.user.js
+      - name: Commit file main.user.js
         if: ${{ env.AHEAD == 'true' }}
         run: |
           git config --local user.name "github-actions[bot]"
