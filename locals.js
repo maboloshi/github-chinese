@@ -3578,14 +3578,22 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+        ...I18N.zh["orgs-settings-menu"]["static"],
 
         "Installed GitHub Apps": "安装的 GitHub 应用",
         "Authorized GitHub Apps": "授权的 GitHub 应用",
         "Authorized OAuth Apps": "授权的 OAuth 应用",
 
         // Applications 应用 https://github.com/settings/installations
+            // 顶部提醒
+                // [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
+
             // "Installed GitHub Apps": "安装的 GitHub 应用",
-            "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
+                "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
+
+            "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求", // 组织设置
+                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以请求安装 GitHub 应用。下面列出了待处理的请求。",
+
             "No installed applications": "没有已安装的应用",
             "You have no applications installed on this account.": "此帐户上没有安装任何应用。",
             "Configure": "配置",
@@ -3603,6 +3611,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Only select repositories": "仅选定的仓库",
                 "Select at least one repository.": "至少选择一个仓库。",
                 "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
+                // [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
             "Select repositories": "选择仓库",
             "Search for a repository": "搜索仓库",
 
@@ -3675,10 +3684,13 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         [/([^ ]+) has been revoked from your account./, "$1 已经从您的帐户中被撤销了。"],
         [/Last used within the last (\d+) weeks? · Owned by/, "最后一次使用是最近 $1 周之内 · 作者"],
         [/Last used within the last (\d+) months? · Owned by/, "最后一次使用是最近 $1 月之内 · 作者"],
+        [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
+        [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
     ],
 };
 I18N.zh["settings/apps/authorizations"] = I18N.zh["settings/installations"];
 I18N.zh["settings/applications"] = I18N.zh["settings/installations"];
+I18N.zh["orgs/settings/installations"] = I18N.zh["settings/installations"];
 ///settings/connections/applications/
 
 I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
@@ -15695,25 +15707,6 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "Third-party application restrictions": "第三方应用限制",
             "create an extra layer of security that allows owners to better control how applications access data in their organization.": "创建一个额外的安全层，使所有者能够更好地控制应用如何访问其组织中的数据。",
             "Organization owners maintain a whitelist of trusted applications.": "组织所有者维护受信任应用白名单。",
-
-    },
-    "regexp": [ // 正则翻译
-    ],
-};
-
-I18N.zh["orgs/settings/installations"] = { // 组织设置 - GitHub 应用
-    "static": { // 静态翻译
-        ...I18N.zh["orgs-settings-menu"]["static"],
-
-        // GitHub 应用 /organizations/<org-login>/settings/installations
-            "Installed GitHub Apps": "安装的 GitHub 应用",
-            "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
-
-            "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求",
-            "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以申请安装 GitHub 应用。待处理的请求列在下面。",
-
-            "No installed applications": "未安装任何应用",
-            "You have no applications installed on this account.": "该账户未安装任何应用。",
 
     },
     "regexp": [ // 正则翻译
