@@ -14599,6 +14599,11 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
                     "by every member of this organization.": "本组织的每一位成员。",
                 "Secret": "私密",
                     "A secret team can only be seen by its members and may not be nested.": "私密团队只能被其成员看到，而且不能被嵌套。",
+                "Team notifications": "团队通知",
+                    "Enabled": "启用",
+                        "Everyone will be notified when the team is @mentioned.": "当团队被 @提及 时，每个人都会收到通知。",
+                    "Disabled": "禁用",
+                        "No one will receive notifications.": "没有人会收到通知。",
             "Create team": "创建团队",
 
     },
