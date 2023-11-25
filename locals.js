@@ -7094,6 +7094,11 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Newer": "新的",
             "Older": "旧的",
 
+        // /commits?since=<开始日期 XXXX-XX-XX>&until=<结束日期 XXXX-XX-XX>&author=<协作者名称>
+            "No commits history": "尚无提交历史记录",
+            "There isn't any commit history to show here": "此处没有可显示",
+            "for the selected date range": "所选日期范围内的任何提交历史记录",
+
         // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
             // 用户筛选
                 "All users": "所有用户",
