@@ -513,9 +513,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Link Text": "链接文本",
             "Add": "添加",
 
-        "Attach files by dragging & dropping, selecting or pasting them.": "通过拖放，选择或粘贴来附加文件。",
-        "Attach files by selecting or pasting them.": "通过选择或粘贴来附加文件。",
-        "Styling with Markdown is supported": "支持 Markdown 功能哦。",
+        "Attach files by": "通过",
+        "dragging & dropping,": "拖放，",
+        "selecting or pasting them.": "选择或粘贴来附加文件。",
+        "Markdown is supported": "支持 Markdown 语法",
+        "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
         "Uploading your files…": "正在上传您的文件…",
 
         "Close issue": "关闭议题", // issue页 评论框
