@@ -391,7 +391,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
         "Edit status": "编辑状态",
-        "What's happening?": "发生了什么？",
+        "What's your current status?": "你目前的状况如何？",
 
         "Suggestions:": "建议：",
             "On vacation": "在度假",
@@ -1336,6 +1336,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Organizations": "组织",
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
+            "- same time": "- 时间相同",
 
             // 编辑个人资料
             "Edit profile": "编辑个人资料",
@@ -4488,6 +4489,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
                 // [/(\d+) members?/, "$1 个成员"],
 
+            "Some checks haven't completed yet": "部分检查还未完成",
+
 
             "Jump to bottom": "跳到底部", //小屏模式
 
@@ -4620,6 +4623,9 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
+        [/(\d+) successful checks/, "$1 个成功的检查"],
+        [/Successful in (\d+)s/, "在 $1 秒内成功"],
+        [/(\d+) in progress check/, "$1 个正在运行的检查"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -4845,6 +4851,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "External links": "外部链接",
                 "Learn more about funding links in repositories": "了解更多关于仓库中的赞助链接的信息",
                 "Report abuse": "举报滥用",
+
+                // 提交栏 GitHub Action
+                "All checks have passed": "已通过所有检查",
+
 
                 // 关注 & 订阅通知设置 下拉菜单
                 "Notification settings": "通知设置", //小屏模式
@@ -5336,6 +5346,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/commits by (.+)/, "由 $1 提交"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
@@ -5578,6 +5589,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Pending": "待定",
             "Draft": "草案",
 
+            "Markdown is supported": "支持 Markdown",
+            "Paste, drop, or click to add files": "粘贴、放置或单击以添加文件",
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
     }
@@ -7370,6 +7383,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             // 组织讨论
             "Welcome to Organization Discussions!": "欢迎参与组织讨论！",
+            "There are no discussions here yet": "这里还没有讨论",
             "Organization discussions are to broadcast news, create conversation in your community, answer questions, and share ideas. To get started, you can": "组织讨论是为了广播新闻，在您的社区创造对话，回答问题，并分享想法。要开始，您可以",
             "create a new discussion.": "创建新的讨论。",
 
