@@ -1,4 +1,4 @@
-name: CI
+name: Update contributors images in README.md
 on:
   workflow_dispatch:
 
@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CI_GITHUB_TOKEN }} # 要绕过分支保护规则此处不可少
+
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@v1.3.5
         id: contributors
