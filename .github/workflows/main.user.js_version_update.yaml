@@ -1,0 +1,49 @@
+name: main.user.js version update
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+jobs:
+  update_version:
+    if: not startsWith(github.event.client_payload.head_commit.message, 'main.user.js: Update to version')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get latest tag commit SHA
+        id: latest_tag_commit_sha
+        run: echo "::set-output name=sha::$(git rev-list --tags --max-count=1)"
+
+      - name: Get current commit SHA
+        id: current_commit_sha
+        run: echo "::set-output name=sha::$(git rev-parse HEAD)"
+
+      - name: Check if commit is ahead of latest tag
+        id: check_commit_ahead
+        run: |
+          latest_tag_commit_sha=${{ steps.latest_tag_commit_sha.outputs.sha }}
+          current_commit_sha=${{ steps.current_commit_sha.outputs.sha }}
+          if [ "$current_commit_sha" != "$latest_tag_commit_sha" ]; then
+            echo "::set-output name=ahead::true"
+          else
+            echo "::set-output name=ahead::false"
+          fi
+
+      - name: Update version in main.user.js
+        if: steps.check_commit_ahead.outputs.ahead == 'true'
+        run: |
+          sed -i "s/@version\s*[^\\s]*/@version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
+
+      - name: Commit and push changes
+        if: steps.check_commit_ahead.outputs.ahead == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add main.user.js
+          git commit -m "main.user.js: Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          git push origin HEAD:${{ github.ref }}
