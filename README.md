@@ -36,7 +36,9 @@ Firefox 浏览器                      | 未测试
 1. 请先安装用户脚本管理器。
 1. 然后再点击链接之一，安装脚本即可。
     - [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]
-        > 注意: 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
+        > 注意: 
+        > 1. 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
+        > 2. 目前, 已实现每周一凌晨自动更新开发版版本号
     - [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
 
@@ -307,4 +309,4 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
-贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
+贡献者列表，由 [GitHub Action](https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml) 自动生成
