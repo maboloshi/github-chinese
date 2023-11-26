@@ -262,7 +262,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 一如既往，感谢我们出色的贡献者❤️！
 
-<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/maboloshi" title="沙漠之子">
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->
+<a href="https://github.com/maboloshi" title="沙漠之子">
   <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
 </a>
 <a href="https://github.com/52cik" title="楼教主">
@@ -303,6 +304,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/xuexb" title="前端小武">
   <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
-</a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+</a>
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
