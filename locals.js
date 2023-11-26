@@ -12212,19 +12212,19 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Sign up": "注册",
 
         "Let’s build from here": "让我们从这里开始",
-        "Harnessed for productivity. Designed for collaboration. Celebrated for built-in security. Welcome to the platform developers love.": "驾驭生产力。专为协作而设计。以内置安全性着称。欢迎来到广大开发者喜爱的平台。",
+        "The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
 
         "Email address": "电子邮箱地址",
         "Sign up for GitHub": "注册 GitHub",
         "Start a free enterprise trial": "开始免费试用企业版",
 
-        "Trusted by the world’s leading organizations": "全球领先机构所信赖的合作伙伴。",
+        "Trusted by the world’s leading organizations ↘︎": "全球领先机构所信赖的合作伙伴 ↘︎",
 
         "Productivity": "生产力",
         "Accelerate innovation": "加快创新",
         "Our AI-powered platform increases the pace of software development.": "我们的人工智能平台加快了软件开发的步伐。",
 
-        "GitHub Copilot empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "GitHub Copilot 能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
+        "empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
         "Explore GitHub Copilot": "探索 GitHub Copilot",
 
         "Did you know?": "您知道吗?",
@@ -12233,49 +12233,57 @@ I18N.zh["homepage"] = { // 未登录的首页
         "in developer productivity after three years with GitHub": "使用 GitHub 三年后，开发人员的工作效率",
         "Read the report": "阅读报告",
 
-        "GitHub Actions automates your build, test, and deployment workflow with simple and secure CI/CD.": "GitHub Actions 可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
+        "automates your build, test, and deployment workflow with simple and secure CI/CD.": "可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
         "Discover GitHub Actions": "探索 GitHub Actions",
 
-        "GitHub Codespaces offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "GitHub 代码空间可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
+        "GitHub Codespaces": "GitHub 代码空间",
+        "offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
         "Check out GitHub Codespaces": "查看 GitHub 代码空间",
 
-        "GitHub Mobile fits your projects in your pocket, so you never miss a beat while on the go.": "GitHub Mobile 让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
+        "fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
         "Download GitHub Mobile": "下载 GitHub Mobile",
 
         "Application security": "应用安全",
+        "Empower developers": "为开发者赋能",
         "With GitHub, you can secure code in minutes.": "通过 GitHub，您可以在几分钟内保护代码安全",
 
-        "GitHub Advanced Security enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "GitHub 高级安全功能可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
+        "GitHub Advanced Security": "GitHub 高级安全功能",
+        "enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
         "Dive into GitHub Advanced Security": "深入了解 GitHub 高级安全功能",
 
         "7x faster": "快 7 倍",
         "vulnerability fixes with GitHub": "GitHub 漏洞修复速度",
 
-        "Code scanning is our code analysis tool that helps you remediate issues in your code.": "代码扫描是我们的代码分析工具，可以帮助您修复代码中的问题。",
+        "Code scanning": "代码扫描",
+        "is our code analysis tool that helps you remediate issues in your code.": "是我们的代码分析工具，可以帮助您修复代码中的问题。",
         "Download the latest SAST ebook": "下载最新 SAST 电子书",
 
-        "Dependabot makes it easy to find and fix vulnerable dependencies in your supply chain.": "Dependabot 易于发现和修复供应链中的脆弱依赖项。",
+        "makes it easy to find and fix vulnerable dependencies in your supply chain.": "易于发现和修复供应链中的脆弱依赖项。",
         "Explore Dependabot": "探索 Dependabot",
 
-        "Secret scanning automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "机密扫描可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
+        "Secret scanning": "机密扫描",
+        "automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
         "Read about secret scanning": "了解机密扫描",
 
         "Collaboration": "协作",
-        "Supercharge collaboration": "超越协作",
+        "Supercharge collaboration": "加强协作",
         "GitHub helps your teams work more efficiently together.": "GitHub 帮助您的团队更高效地协作。",
 
-        "GitHub Issues and GitHub Projects supply project management tools that adapt to your team alongside your code.": "GitHub 议题和 GitHub 项目提供了适合您的团队和代码的项目管理工具。",
+        "GitHub Issues and GitHub Projects": "GitHub 议题和 GitHub 项目",
+        "supply project management tools that adapt to your team alongside your code.": "提供了适合您的团队和代码的项目管理工具。",
         "Get started with GitHub Issues": "开始使用 GitHub 议题",
 
         "reduction in onboarding time with GitHub": "使用 GitHub 缩短入职时间",
 
-        "GitHub Discussions creates space to ask questions and have open-ended conversations.": "GitHub 讨论营造了提问和开放式对话的空间。",
+        "GitHub Discussions": "GitHub 讨论",
+        "creates space to ask questions and have open-ended conversations.": "营造了提问和开放式对话的空间。",
         "Jump into GitHub Discussions": "跳转到 GitHub 讨论",
 
-        "Pull requests allow real-time communication and collaboration about code changes.": "拉取请求允许就代码更改进行实时交流和协作。",
+        "allow real-time communication and collaboration about code changes.": "允许就代码更改进行实时交流和协作。",
         "Check out pull requests": "查看拉取请求",
 
-        "GitHub Sponsors lets you support your favorite open source maintainers and projects.": "GitHub 赞助者让您能够支持您喜欢的开源维护者和项目。",
+        "GitHub Sponsors": "GitHub 赞助者",
+        "lets you support your favorite open source maintainers and projects.": "让您能够支持您喜欢的开源维护者和项目。",
         "Invest with GitHub Sponsors": "通过 GitHub 赞助者进行投资",
 
         "Over 100 million developers call GitHub home": "超过 1 亿开发者把 GitHub 视为自己的家",
@@ -12284,6 +12292,7 @@ I18N.zh["homepage"] = { // 未登录的首页
         "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
         "The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
         "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
+        "Read the blog post": "阅读博客文章",
 
     },
     "regexp": [ // 正则翻译
