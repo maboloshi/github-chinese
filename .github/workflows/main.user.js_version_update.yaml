@@ -32,7 +32,7 @@ jobs:
         if: ${{ env.AHEAD == 'true' }}
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
-          git diff --exit-code main.user.js > /dev/null || echo "Changes detected" >> $GITHUB_ENV
+          git diff --quiet --exit-code README.md || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
 
       - name: Commit and push main.user.js
         if: ${{ env.AHEAD == 'true' && env.CHANGES_DETECTED == 'true' }}
@@ -41,5 +41,5 @@ jobs:
           ${{ secrets.CI_GITHUB_TOKEN }} \
           "maboloshi/github-chinese" \
           "main.user.js" \
-          "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
           "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
