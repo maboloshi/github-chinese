@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/explore|github-copilot\/signup|codespaces|developer\/register)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps\/new|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/(accounts|explore)|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations)/,
@@ -6372,6 +6372,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "and others": "和其他成员",
             "approved these changes": "批准这些更改",
                 "See review": "查看审查",
+                "Dismiss review": "驳回审查",
             "started a review": "开始审查",
                 "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
@@ -6423,6 +6424,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
+            "Approval not required": "不需要批准",
+            "This pull request may be merged without approvals.": "可以在没有批准的情况下合并此拉取请求。",
             // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
             // [/(\d+) approvals?/, "$1 项批准"],
             "Some checks haven’t completed yet": "有些检查还没有完成",
@@ -12209,6 +12212,72 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Sign up for GitHub": "注册 GitHub",
         "Start a free enterprise trial": "开始免费试用企业版",
 
+        "Trusted by the world’s leading organizations": "全球领先机构所信赖的合作伙伴。",
+
+        "Productivity": "生产力",
+        "Accelerate innovation": "加快创新",
+        "Our AI-powered platform increases the pace of software development.": "我们的人工智能平台加快了软件开发的步伐。",
+
+        "GitHub Copilot empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "GitHub Copilot 能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
+        "Explore GitHub Copilot": "探索 GitHub Copilot",
+
+        "Did you know?": "你知道吗?",
+
+        "22% increase": "22% 效率提升",
+        "in developer productivity after three years with GitHub": "使用GitHub三年后，开发人员的工作效率",
+        "Read the report": "阅读报告",
+
+        "GitHub Actions automates your build, test, and deployment workflow with simple and secure CI/CD.": "GitHub Actions 可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
+        "Discover GitHub Actions": "探索 GitHub Actions",
+
+        "GitHub Codespaces offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "GitHub 代码空间可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
+        "Check out GitHub Codespaces": "查看 Github 代码空间",
+
+        "GitHub Mobile fits your projects in your pocket, so you never miss a beat while on the go.": "GitHub Mobile 让你的项目尽在掌握，让你在旅途中永不遗漏任何信息。",
+        "Download GitHub Mobile": "下载 GitHub Mobile",
+
+        "Application security": "应用安全",
+        "With GitHub, you can secure code in minutes.": "通过GitHub，您可以在几分钟内保护代码安全", 
+
+        "GitHub Advanced Security enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "GitHub高级安全功能可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
+        "Dive into GitHub Advanced Security": "深入了解 GitHub 高级安全功能",
+
+        "7x faster": "快 7 倍",
+        "vulnerability fixes with GitHub": "GitHub 漏洞修复速度",
+
+        "Code scanning is our code analysis tool that helps you remediate issues in your code.": "代码扫描是我们的代码分析工具，可以帮助您修复代码中的问题。",
+        "Download the latest SAST ebook": "下载最新 SAST 电子书",
+
+        "Dependabot makes it easy to find and fix vulnerable dependencies in your supply chain.": "Dependabot 易于发现和修复供应链中的脆弱依赖项。",
+        "Explore Dependabot": "探索 Dependabot",
+
+        "Secret scanning automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "机密扫描可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
+        "Read about secret scanning": "了解机密扫描",
+
+        "Collaboration": "协作",
+        "Supercharge collaboration": "超越协作",
+        "GitHub helps your teams work more efficiently together.": "GitHub 帮助您的团队更高效地协作。",
+
+        "GitHub Issues and GitHub Projects supply project management tools that adapt to your team alongside your code.": "GitHub 议题 和 GitHub 项目 提供了项目管理工具，可与您的代码一起适应您的团队。",
+        "Get started with GitHub Issues": "开始使用 GitHub 议题",
+
+        "reduction in onboarding time with GitHub": "使用 GitHub 缩短入职时间",
+
+        "GitHub Discussions creates space to ask questions and have open-ended conversations.": "GitHub 讨论创建了一个空间，用户可以在此提出问题并进行开放式的对话。",
+        "Jump into GitHub Discussions": "跳转到 GitHub 讨论",
+
+        "Pull requests allow real-time communication and collaboration about code changes.": "拉取请求允许实时通信和协作修改代码。",
+        "Check out pull requests": "查看拉取请求",
+
+        "GitHub Sponsors lets you support your favorite open source maintainers and projects.": "GitHub 赞助者让你能够支持你喜欢的开源维护者和项目。",
+        "Invest with GitHub Sponsors": "投资 GitHub 赞助者",
+
+        "Over 100 million developers call GitHub home": "超过一亿开发者把 GitHub 视为自己的家",
+        "Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.": "无论你是正在扩大创业规模，还是刚刚开始学习编程，GitHub 都是你的家。加入全球最大的开发者平台，构建赋予人类力量的创新。让我们从这里开始。",
+
+        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速度是基于软件安全领域最长时间的分析数据—— Veracode《2023年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
+        "The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
+        "There are now 100 million developers around the world using GitHub.": "现在全球有一亿开发者使用 GitHub。",
     },
     "regexp": [ // 正则翻译
     ],
@@ -13957,6 +14026,26 @@ I18N.zh["events"] = { // 活动页面
         "Sponsored by GitHub": "由 GitHub 赞助",
     },
     "regexp": [ // 正则翻译
+    ],
+};
+
+I18N.zh["sponsors/accounts"] = { // 赞助者账户
+    "static": {
+        // https://github.com/sponsors/accounts
+        // 标题
+        "GitHub Sponsors accounts": "Github 赞助账户",
+
+        // 管理
+        "Manage who you sponsor": "管理您所赞助的人员",
+            "You haven't sponsored anyone yet.": "您还没有给任何人赞助。",
+            "Find someone to sponsor": "寻找赞助人",
+
+        // 名单
+        "GitHub Sponsors eligible accounts": "符合 GitHub 赞助者资格的账户",
+            "This account has not applied to join GitHub Sponsors.": "此帐户未申请加入 GitHub 赞助者。",
+            "Join the waitlist": "加入等候名单",
+    },
+    "regexp": [ // 正则匹配
     ],
 };
 
