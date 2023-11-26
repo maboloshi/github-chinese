@@ -391,7 +391,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
         "Edit status": "编辑状态",
-        "What's your current status?": "你目前的状况如何？",
+        "What's your current status?": "您目前的状况如何？",
 
         "Suggestions:": "建议：",
             "On vacation": "在度假",
@@ -4163,6 +4163,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Token name": "令牌名称",
                 "A unique name for this token. May be visible to resource owners or users with possession of the token.": "此令牌的唯一名称。可能对资源所有者或持有该令牌的用户可见。",
                 "Name can't be blank": "名称不能为空",
+                "is a vaild name.": "是一个有效的名称。",
+                "is an invalid name. The token name has already been taken.": "是一个无效的名称。令牌名称已被占用。",
             "Description": "描述",
             "What is this token for?": "这个令牌是用来做什么的？",
             "Resource owner": "资源所有者",
@@ -4181,6 +4183,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                     "Select repositories": "选择仓库",
                     "Search for a repository": "搜索仓库",
                     // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
+                        "No repositories found.": "未找到仓库。",
 
             // 权限
             "Permissions": "权限",
@@ -4352,6 +4355,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Select the repositories this token can access. Personal access tokens can always read from all public repositories on GitHub.com": "选择此令牌可以访问的仓库。个人访问令牌始终可以读取 GitHub.com 上所有公共仓库中的内容。",
             "This token does not have access to any repositories.": "此令牌无权访问任何仓库。",
             "User permissions": "用户权限",
+            "This token does not have any user permissions.": "此令牌没有任何用户权限。",
             "This token does not have any repository permissions.": "此令牌没有任何仓库权限。",
 
             // 顶部提醒
@@ -5589,8 +5593,6 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Pending": "待定",
             "Draft": "草案",
 
-            "Markdown is supported": "支持 Markdown",
-            "Paste, drop, or click to add files": "粘贴、放置或单击以添加文件",
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
     }
@@ -5639,7 +5641,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
 
             "You commented on and opened this issue": "您打开了此议题并发表了评论",
             "You were mentioned on and commented on this issue": "您被提及并对此议题发表了评论",
-            "You commented on this issue": "你对此议题发表了评论",
+            "You commented on this issue": "您对此议题发表了评论",
             "You opened this issue": "您打开了此议题",
 
             // 置顶议题
@@ -6069,7 +6071,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
-                "You commented on this pull request": "你对此拉取请求发表了评论",
+                "You commented on this pull request": "您对此拉取请求发表了评论",
                 "You opened this pull request": "您打开了此拉取请求",
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -7682,6 +7684,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "code of conduct": "行为准则",
 
             // [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
+            "Answer selected": "已选择答案",
 
             // 右侧栏
             // /([\d,]+) participants?/, "$1 位参与者"
@@ -8077,6 +8080,8 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "You could search": "您可以搜索",
 
         // /<user-name>/<repo-name>/actions/runs/<id>
+            // 顶部提醒
+                "Logs deleted successfully.": "日志已成功删除。",
 
             // 标题
             "Re-run all jobs": "重新运行所有作业",
@@ -8127,6 +8132,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Annotations": "说明",
                 // [/1 error/, "$1 个错误"],
                 "Show more": "显示更多",
+                "Show less": "显示更少",
 
         // /<user-name>/<repo-name>/actions/runs/<id>/jobs/<id2>
 
@@ -10617,7 +10623,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
                     "Allow specified actors to bypass required pull requests": "允许指定的参与者绕过所需的拉取请求", //组织仓库
                         "Specify people, teams, or apps who are allowed to bypass required pull requests.": "指定允许绕过所需拉取请求的人员、团队或应用。",
                         "People, teams, or apps who can bypass required pull requests": "允许绕过所需拉取请求的人员、团队或应用",
-                            // "Organization and repository administrators": "组织和存储库管理员",
+                            // "Organization and repository administrators": "组织和仓库管理员",
                                 "These members can always bypass required pull requests.": "这些成员始终允许绕过所需的拉取请求。",
                                 "These members cannot bypass.": "这些成员不允许绕过。",
                     "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
@@ -11564,7 +11570,7 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                 // 删除变量 对话框
                     "Remove variable": "删除变量",
                     "Are you sure you want to delete": "您确定要删除",
-                    "Yes, remove this variable": "是的，删除这个变量",
+                    "Yes, remove this variable": "是的，删除该变量",
                     // 顶部提醒
                     "Variable deleted.": "变量已删除。",
 
@@ -12207,78 +12213,88 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Sign up": "注册",
 
         "Let’s build from here": "让我们从这里开始",
-        "Harnessed for productivity. Designed for collaboration. Celebrated for built-in security. Welcome to the platform developers love.": "驾驭生产力。专为协作而设计。以内置安全性着称。欢迎来到广大开发者喜爱的平台。",
+        "The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
 
         "Email address": "电子邮箱地址",
         "Sign up for GitHub": "注册 GitHub",
         "Start a free enterprise trial": "开始免费试用企业版",
 
-        "Trusted by the world’s leading organizations": "全球领先机构所信赖的合作伙伴。",
+        "Trusted by the world’s leading organizations ↘︎": "全球领先机构所信赖的合作伙伴 ↘︎",
 
         "Productivity": "生产力",
         "Accelerate innovation": "加快创新",
         "Our AI-powered platform increases the pace of software development.": "我们的人工智能平台加快了软件开发的步伐。",
 
-        "GitHub Copilot empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "GitHub Copilot 能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
+        "empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
         "Explore GitHub Copilot": "探索 GitHub Copilot",
 
-        "Did you know?": "你知道吗?",
+        "Did you know?": "您知道吗?",
 
         "22% increase": "22% 效率提升",
-        "in developer productivity after three years with GitHub": "使用GitHub三年后，开发人员的工作效率",
+        "in developer productivity after three years with GitHub": "使用 GitHub 三年后，开发人员的工作效率",
         "Read the report": "阅读报告",
 
-        "GitHub Actions automates your build, test, and deployment workflow with simple and secure CI/CD.": "GitHub Actions 可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
+        "automates your build, test, and deployment workflow with simple and secure CI/CD.": "可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
         "Discover GitHub Actions": "探索 GitHub Actions",
 
-        "GitHub Codespaces offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "GitHub 代码空间可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
-        "Check out GitHub Codespaces": "查看 Github 代码空间",
+        "GitHub Codespaces": "GitHub 代码空间",
+        "offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
+        "Check out GitHub Codespaces": "查看 GitHub 代码空间",
 
-        "GitHub Mobile fits your projects in your pocket, so you never miss a beat while on the go.": "GitHub Mobile 让你的项目尽在掌握，让你在旅途中永不遗漏任何信息。",
+        "fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
         "Download GitHub Mobile": "下载 GitHub Mobile",
 
         "Application security": "应用安全",
-        "With GitHub, you can secure code in minutes.": "通过GitHub，您可以在几分钟内保护代码安全", 
+        "Empower developers": "为开发者赋能",
+        "With GitHub, you can secure code in minutes.": "通过 GitHub，您可以在几分钟内保护代码安全",
 
-        "GitHub Advanced Security enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "GitHub高级安全功能可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
+        "GitHub Advanced Security": "GitHub 高级安全功能",
+        "enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
         "Dive into GitHub Advanced Security": "深入了解 GitHub 高级安全功能",
 
         "7x faster": "快 7 倍",
         "vulnerability fixes with GitHub": "GitHub 漏洞修复速度",
 
-        "Code scanning is our code analysis tool that helps you remediate issues in your code.": "代码扫描是我们的代码分析工具，可以帮助您修复代码中的问题。",
+        "Code scanning": "代码扫描",
+        "is our code analysis tool that helps you remediate issues in your code.": "是我们的代码分析工具，可以帮助您修复代码中的问题。",
         "Download the latest SAST ebook": "下载最新 SAST 电子书",
 
-        "Dependabot makes it easy to find and fix vulnerable dependencies in your supply chain.": "Dependabot 易于发现和修复供应链中的脆弱依赖项。",
+        "makes it easy to find and fix vulnerable dependencies in your supply chain.": "易于发现和修复供应链中的脆弱依赖项。",
         "Explore Dependabot": "探索 Dependabot",
 
-        "Secret scanning automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "机密扫描可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
+        "Secret scanning": "机密扫描",
+        "automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
         "Read about secret scanning": "了解机密扫描",
 
         "Collaboration": "协作",
-        "Supercharge collaboration": "超越协作",
+        "Supercharge collaboration": "加强协作",
         "GitHub helps your teams work more efficiently together.": "GitHub 帮助您的团队更高效地协作。",
 
-        "GitHub Issues and GitHub Projects supply project management tools that adapt to your team alongside your code.": "GitHub 议题 和 GitHub 项目 提供了项目管理工具，可与您的代码一起适应您的团队。",
+        "GitHub Issues and GitHub Projects": "GitHub 议题和 GitHub 项目",
+        "supply project management tools that adapt to your team alongside your code.": "提供了适合您的团队和代码的项目管理工具。",
         "Get started with GitHub Issues": "开始使用 GitHub 议题",
 
         "reduction in onboarding time with GitHub": "使用 GitHub 缩短入职时间",
 
-        "GitHub Discussions creates space to ask questions and have open-ended conversations.": "GitHub 讨论创建了一个空间，用户可以在此提出问题并进行开放式的对话。",
+        "GitHub Discussions": "GitHub 讨论",
+        "creates space to ask questions and have open-ended conversations.": "营造了提问和开放式对话的空间。",
         "Jump into GitHub Discussions": "跳转到 GitHub 讨论",
 
-        "Pull requests allow real-time communication and collaboration about code changes.": "拉取请求允许实时通信和协作修改代码。",
+        "allow real-time communication and collaboration about code changes.": "允许就代码更改进行实时交流和协作。",
         "Check out pull requests": "查看拉取请求",
 
-        "GitHub Sponsors lets you support your favorite open source maintainers and projects.": "GitHub 赞助者让你能够支持你喜欢的开源维护者和项目。",
-        "Invest with GitHub Sponsors": "投资 GitHub 赞助者",
+        "GitHub Sponsors": "GitHub 赞助者",
+        "lets you support your favorite open source maintainers and projects.": "让您能够支持您喜欢的开源维护者和项目。",
+        "Invest with GitHub Sponsors": "通过 GitHub 赞助者进行投资",
 
-        "Over 100 million developers call GitHub home": "超过一亿开发者把 GitHub 视为自己的家",
-        "Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.": "无论你是正在扩大创业规模，还是刚刚开始学习编程，GitHub 都是你的家。加入全球最大的开发者平台，构建赋予人类力量的创新。让我们从这里开始。",
+        "Over 100 million developers call GitHub home": "超过 1 亿开发者把 GitHub 视为自己的家",
+        "Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.": "无论您是正在扩大创业规模，还是刚刚开始学习编程，GitHub 都是您的家。加入全球最大的开发者平台，构建赋予人类力量的创新。让我们从这里开始。",
 
-        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速度是基于软件安全领域最长时间的分析数据—— Veracode《2023年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
+        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
         "The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
-        "There are now 100 million developers around the world using GitHub.": "现在全球有一亿开发者使用 GitHub。",
+        "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
+        "Read the blog post": "阅读博客文章",
+
     },
     "regexp": [ // 正则翻译
     ],
@@ -14032,19 +14048,18 @@ I18N.zh["events"] = { // 活动页面
 
 I18N.zh["sponsors/accounts"] = { // 赞助者账户
     "static": {
-        // https://github.com/sponsors/accounts
-        // 标题
-        "GitHub Sponsors accounts": "Github 赞助账户",
+        // 赞助者账户页面 https://github.com/sponsors/accounts
+            // 标题
+                "GitHub Sponsors accounts": "GitHub 赞助者账户",
+            // 管理
+                "Manage who you sponsor": "管理您赞助的对象",
+                    "You haven't sponsored anyone yet.": "您还没有赞助任何人。",
+                    "Find someone to sponsor": "寻找赞助对象",
+            // 名单
+                "GitHub Sponsors eligible accounts": "符合 GitHub 赞助者资格的账户",
+                    "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
+                    "Join the waitlist": "加入等候名单",
 
-        // 管理
-        "Manage who you sponsor": "管理您所赞助的人员",
-            "You haven't sponsored anyone yet.": "您还没有给任何人赞助。",
-            "Find someone to sponsor": "寻找赞助人",
-
-        // 名单
-        "GitHub Sponsors eligible accounts": "符合 GitHub 赞助者资格的账户",
-            "This account has not applied to join GitHub Sponsors.": "此帐户未申请加入 GitHub 赞助者。",
-            "Join the waitlist": "加入等候名单",
     },
     "regexp": [ // 正则匹配
     ],
@@ -14057,23 +14072,23 @@ I18N.zh["sponsors/explore"] = { // 赞助页面
         "Trending": "热门",
         "Collections": "集合",
         "Events": "活动",
-        "GitHub Sponsors": "GitHub 赞助",
+        "GitHub Sponsors": "GitHub 赞助者",
         "Get email updates": "获取电子邮件更新",
         "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
-        "Explore GitHub Sponsors": "探索 GitHub 赞助",
-        "Fund the work of developers and projects you depend on.": "为您所依赖的开发人员和项目提供资金。",
+        "Explore GitHub Sponsors": "探索 GitHub 赞助者",
+        "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
         "Ecosystem": "生态系统",
             "All ecosystems": "所有生态系统",
         "Filters": "过滤器",
             "Direct dependencies only": "仅直接依赖项",
         "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
-        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的存储库。",
+        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
         "Explore people and projects": "探索人员和项目",
         "Bulk Sponsor": "批量赞助",
-            "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多个维护人员。",
+            "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
             "Get started": "开始",
         "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
-        "searching for people you can sponsor": "搜索可以赞助的人员",
+        "searching for people you can sponsor": "寻找可以接受您赞助的人",
         "and filtering by language!": "并通过语言筛选！",
         "Clear filter": "清除筛选器",
         "Sponser": "赞助",
