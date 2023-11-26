@@ -271,14 +271,14 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/wuyuncheng-26" title="wuyuncheng-26">
   <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="wuyuncheng-26"/>
 </a>
+<a href="https://github.com/TC999" title="TC999">
+  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
+</a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
 </a>
 <a href="https://github.com/cat-kun" title="cat-kun">
   <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
-</a>
-<a href="https://github.com/TC999" title="TC999">
-  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
 </a>
 <a href="https://github.com/CN-traveler" title="CN-traveler">
   <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
