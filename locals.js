@@ -12255,7 +12255,7 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Supercharge collaboration": "超越协作",
         "GitHub helps your teams work more efficiently together.": "GitHub 帮助您的团队更高效地协作。",
 
-        "GitHub Issues and GitHub Projects supply project management tools that adapt to your team alongside your code.": "GitHub 议题 和 GitHub 项目 提供了项目管理工具，可与您的代码一起适应您的团队。"
+        "GitHub Issues and GitHub Projects supply project management tools that adapt to your team alongside your code.": "GitHub 议题 和 GitHub 项目 提供了项目管理工具，可与您的代码一起适应您的团队。",
         "Get started with GitHub Issues": "开始使用GitHub议题",
 
         "reduction in onboarding time with GitHub": "使用GitHub缩短入职时间",
