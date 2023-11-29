@@ -6,38 +6,42 @@ on:
 
 jobs:
   update_version:
-    if: ${{ !startsWith(github.event.client_payload.head_commit.message, 'main.user.js Update to version') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get latest tag commit SHA
-        run: echo "LATEST_TAG_COMMIT_SHA=$(git rev-list --tags --max-count=1)" >> $GITHUB_ENV
-
-      - name: Get current commit SHA
-        run: echo "CURRENT_COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
-
       - name: Check if commit is ahead of latest tag
         run: |
-          if [ "$CURRENT_COMMIT_SHA" != "$LATEST_TAG_COMMIT_SHA" ]; then
+          LATEST_TAG_COMMIT_SHA=$(git rev-list --tags --max-count=1)
+          LAST_COMMIT_SHA=${{ github.sha }}
+          if [ "$LAST_COMMIT_SHA" != "$LATEST_TAG_COMMIT_SHA" ]; then
             echo "AHEAD=true" >> $GITHUB_ENV
           else
             echo "AHEAD=false" >> $GITHUB_ENV
           fi
 
+      - name: Get last commit message
+        run: |
+          LAST_COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
+          echo "LAST_COMMIT_MESSAGE=$LAST_COMMIT_MESSAGE" >> $GITHUB_ENV
+
       - name: Update version in main.user.js
-        if: ${{ env.AHEAD == 'true' }}
+        if: |
+          ${{ env.AHEAD == 'true' }} &&
+          ${{ !startsWith(env.LAST_COMMIT_MESSAGE, 'main.user.js Update to version') }}
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
-          git diff --quiet --exit-code README.md || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
+          git diff --quiet --exit-code main.user.js || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
 
       - name: Commit and push main.user.js
         if: ${{ env.AHEAD == 'true' && env.CHANGES_DETECTED == 'true' }}
         run: |
           bash script/ci_commit_with_signature.sh \
           ${{ secrets.CI_GITHUB_TOKEN }} \
-          "maboloshi/github-chinese" \
+          ${{ github.repository }} \
+          ${{ github.ref_name }} \
+          ${{ github.sha }} \
           "main.user.js" \
           "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
           "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
