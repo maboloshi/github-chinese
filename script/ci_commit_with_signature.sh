@@ -2,14 +2,15 @@
 
 TOKEN=$1
 repoNwo=$2
-branch=$(git rev-parse --abbrev-ref HEAD) # 或 git rev-parse HEAD
-file_path=$3
+branch=$3 # $(git rev-parse --abbrev-ref HEAD) 或 git rev-parse HEAD
+# 远端目标分支最后一个提交的 SHA
+expectedHeadOid=$4 # $(git rev-parse HEAD)
+file_path=$5
 encoded_file_content=$(base64 < "$file_path")
-message_headline=$4
-message_body=$5
-expectedHeadOid=$(git rev-parse HEAD)
+message_headline=$6
+message_body=$7
 
-curl $GITHUB_GRAPHQL_URL --silent \
+curl "$GITHUB_GRAPHQL_URL" --silent \
      --write-out '%{stderr}HTTP status: %{response_code}\n\n' \
      -H "Authorization: bearer $TOKEN" \
      --data @- <<GRAPHQL | jq
