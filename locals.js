@@ -9706,12 +9706,17 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
                 "This is not legal advice.": "这并不是法律建议。",
                 "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
 
+        // 添加行为准则 /<user-name>/<repo-name>/community/code-of-conduct/new
+            "Add a code of conduct to your project": "为您的项目添加行为准则",
+            "Choose a code of conduct to add to your project": "选择要添加到项目中的行为准则",
+            "what a code of conduct is": "什么是行为准则",
+            "and how to enforce it.": "以及如何执行。",
+        
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
-//community/code-of-conduct/new
 
 I18N.zh["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
     "static": { // 静态翻译
