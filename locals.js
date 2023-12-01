@@ -5225,9 +5225,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 组织仓库
             "Set up GitHub Copilot": "设置 GitHub Copilot",
                 "Use GitHub's AI pair programmer to autocomplete suggestions as you code.": "使用 GitHub 的 AI 配对程序员在您编码时自动完成建议。",
-            "Invite collaborators": "邀请合作者",
-                "Find people using their GitHub username or email address.": "使用 GitHub 用户名或电子邮件地址查找人员。",
-
+                "Get started with GitHub Copilot": "开始使用 GitHub Copilot",
+            "Add collaborators to this repository": "将合作者添加到此仓库",
+                "Search for people using their GitHub username or email address.": "使用 GitHub 用户名或电子邮件地址搜索人员。",
             "Quick setup": "快速安装",
             "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
             "Set up in Desktop": "安装到 GitHub Desktop",
