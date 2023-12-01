@@ -9711,7 +9711,15 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
             "Choose a code of conduct to add to your project": "选择要添加到项目中的行为准则",
             "what a code of conduct is": "什么是行为准则",
             "and how to enforce it.": "以及如何执行。",
-        
+            "Contributor Covenant": "贡献者协议",
+                "Contact method": "联系方式",
+            "Citizen Code Of Conduct": "公民行为准则",
+                "Link to reporting guidelines": "报告指南链接",
+                "Link to policy": "政策链接",
+                "Note": "注释",
+                "Contact info": "联系信息",
+                "Community name": "团队名称",
+                "Governing body": "管理机构",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
