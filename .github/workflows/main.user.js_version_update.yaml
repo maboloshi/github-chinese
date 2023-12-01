@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-tags: true
 
       - name: Check if commit is ahead of latest tag
         run: |
@@ -28,8 +30,8 @@ jobs:
 
       - name: Update version in main.user.js
         if: |
-          ${{ env.AHEAD == 'true' }} &&
-          ${{ !startsWith(env.LAST_COMMIT_MESSAGE, 'main.user.js Update to version') }}
+          ${{ env.AHEAD == 'true' &&
+              !startsWith(env.LAST_COMMIT_MESSAGE, 'main.user.js Update to version') }}
         run: |
           sed -i "s/@version\s*[^\\s]*/@version      $(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
           git diff --quiet --exit-code main.user.js || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
