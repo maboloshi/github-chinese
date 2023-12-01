@@ -8663,6 +8663,75 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
     ],
 };
 
+I18N.zh["repository/activity"] = { // 仓库 - 活动页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // 活动页面 /<user-name>/<repo-name>/activity
+            "Activity": "活动",
+
+            "All branches": "所有分支",
+                "Switch branches": "切换分支",
+                "Find a branch...": "查找分支...",
+                "Branches": "分支",
+                "default": "默认",
+                "View activity for all branches": "查看所有分支的活动",
+
+            "All activity": "所有活动",
+                "Direct pushes": "直接推送",
+                "Pull request merges": "拉取请求合并",
+                "Merge queue merges": "合并队列合并",
+                "Force pushes": "强制推送",
+                "Branch creations": "创建分支",
+                "Branch deletions": "删除分支",
+
+            "All users": "所有用户",
+                "Find a user...": "查找用户...",
+                "View activity for all users": "查看所有用户的活动",
+
+            "All time": "所有时间",
+                "Last 24 hours": "过去 24 小时",
+                "Last week": "上星期",
+                "Last month": "上个月",
+                "Last quarter": "上季度",
+                "Last year": "去年",
+
+
+            "Showing oldest first": "显示最早的",
+            "Showing most recent first": "显示最近的",
+
+            "Compare changes": "比较变更",
+
+            "Previous": "上一页",
+            "Next": "下一页",
+
+            "Direct push": "直接推送",
+            "Pull request merge": "拉取请求合并",
+            "Force push": "强制推送",
+            "Branch creation": "创建分支",
+            "Branch deletion": "删除分支",
+
+            "force pushed to": "强制推送到",
+            "deleted": "删除",
+
+            "Share feedback about this page": "分享关于此页面的反馈",
+
+        // 活动页面 - 指定分支 /<user-name>/<repo-name>/activity?ref=<branch-name>
+            "created this branch": "创建此分支",
+            "deleted this branch": "删除此分支",
+            "force pushed": "强制推送",
+
+            "No activity matched your search.": "没有与您搜索相匹配的活动。",
+            "Try expanding your search by selecting a different branch, activity type, user, or timeframe.": "尝试通过选择不同的分支、活动类型、用户或时间范围来扩大搜索范围。",
+
+    },
+    "regexp": [ // 正则翻译
+        ...I18N.zh["repository-public"]["regexp"],
+        [/pushed (\d+) commits? to/, "推送 $1 个提交到"],
+        [/pushed (\d+) commits?/, "推送 $1 个提交"],
+    ],
+};
+
 I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
@@ -9311,66 +9380,6 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
-    ],
-};
-
-I18N.zh["repository/activity"] = { // 仓库 - 活动页面
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-
-        // 活动页面 /<user-name>/<repo-name>/activity
-            "Activity": "活动",
-
-            "All branches": "所有分支",
-                "Switch branches": "切换分支",
-                "Find a branch...": "查找分支...",
-                "Branches": "分支",
-                "default": "默认",
-                "View activity for all branches": "查看所有分支的活动",
-
-            "All activity": "所有活动",
-                "Direct pushes": "直接推送",
-                "Pull request merges": "拉取请求合并",
-                "Merge queue merges": "合并队列合并",
-                "Force pushes": "强制推送",
-                "Branch creations": "创建分支",
-                "Branch deletions": "删除分支",
-
-            "All users": "所有用户",
-                "Find a user...": "查找用户...",
-                "View activity for all users": "查看所有用户的活动",
-
-            "All time": "所有时间",
-                "Last 24 hours": "过去 24 小时",
-                "Last week": "上星期",
-                "Last month": "上个月",
-                "Last quarter": "上季度",
-                "Last year": "去年",
-
-
-            "Showing oldest first": "显示最早的",
-            "Showing most recent first": "显示最近的",
-
-            "Compare changes": "比较变更",
-
-            "Previous": "上一页",
-            "Next": "下一页",
-
-            "Direct push": "直接推送",
-            "Pull request merge": "拉取请求合并",
-            "Force push": "强制推送",
-            "Branch creation": "创建分支",
-            "Branch deletion": "删除分支",
-
-            "force pushed to": "强制推送到",
-            "deleted": "删除",
-
-            "Share feedback about this page": "分享关于此页面的反馈",
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/pushed (\d+) commits? to/, "推送 $1个提交到"],
-        [/pushed (\d+) commits?/, "推送 $1个提交"],
     ],
 };
 
