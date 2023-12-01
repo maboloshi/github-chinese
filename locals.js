@@ -8572,11 +8572,17 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     // 该分支存在来自其他分支的拉取请求时
                         "Will update": "将更新",
                         "pull request targeting this branch.": "条针对该分支的拉取请求。",
+                        "pull": "条拉取请求",
+                        "request": " ",
+                        "targeting this": "针对",
+                        "branch.": "该分支。",
                         "branch protection rule that explicitly targets": "条分支保护规则明确针对",
 
                     // 该分支存在用于其他分支的拉取请求时
                         "Will close": "将关闭",
                         "open pull request for this branch.": "个该分支的拉取请求。",
+                        "open pull": "个打开的拉取请求",
+                        "for this branch.": "针对该分支。",
 
                     // 重命名 GitHub Pages 所在分支
                         "Will unpublish current GitHub Pages site.": "将取消当前发布的 GitHub Pages 站点。",
@@ -8613,6 +8619,31 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
             // [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
 
+            // 新版分支视图
+                // 创建分支对话框
+                "Create a branch": "创建分支",
+                    "New branch name": "新分支名称",
+                    "Source": "源分支",
+                        "Switch branches": "切换分支",
+                        "Find a branch...": "查找分支...",
+                        "default": "默认",
+                    "Create new branch": "创建新分支",
+
+                "Search branches...": "搜索分支...",
+
+                "Check status": "检查状态",
+                "Behind": "落后",
+                "Ahead": "领先",
+                "Pull request": "拉取请求",
+
+                "Copy branch name to clipboard": "将分支名称复制到剪贴板",
+
+                "Activity": "活动",
+                "View rules": "查看规则",
+
+                // 底部提醒
+                    "You can't delete this protected branch.": "您无法删除此受保护分支。",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -8625,6 +8656,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
         [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
         [/(\d+) commits? behind ([^ ]+)/, "落后 $1 个提交于 $2"],
         [/(\d+) commits? ahead ([^ ]+)/, "领先 $1 个提交于 $2"],
+        [/Ahead behind count: (\d+)/, "领先落后数：$1"],
     ],
     "selector": [ // 元素筛选器规则
         ["a[data-target='branch-filter.allFilter']", "所有分支"],
