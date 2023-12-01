@@ -4574,6 +4574,29 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
 
+            // 切换分支/标签 下拉菜单
+                "Switch branches/tags": "切换分支/标签",
+                "Find or create a branch…": "查找或创建分支…",
+                "Find a branch...": "查找分支...",
+                "Filter branches/tags": "搜索分支/标签",
+                "Branches": "分支",
+                "default": "默认",
+                "View all branches": "查看全部分支",
+                "Find a tag": "查找标签",
+                "Tags": "标签",
+                "Search for a tag": "搜索标签",
+                "Nothing to show": "暂无",
+                "View all tags": "查看全部标签",
+
+                "Find or create a branch...": "查找或创建分支...",
+                "View all": "查看全部",
+                "branches": "分支",
+                "Find a tag...": "查找标签...",
+                "Nothing to show": "暂无",
+                "tags": "标签",
+
+                "View all rules": "查看全部规则",
+
             // 键盘快捷键
                 "Open in codespace"  : "在代码空间中打开",
                 "Open in github.dev editor"  : "在 github.dev 编辑器中打开",
@@ -4944,19 +4967,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Navigate back to": "导航回", // 小屏模式
 
             // 左侧正文
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find or create a branch…": "查找或创建分支…",
-                "Find a branch...": "查找分支...",
-                "Filter branches/tags": "搜索分支/标签",
-                "Branches": "分支",
-                "default": "默认",
-                "View all branches": "查看全部分支",
-                "Find a tag": "查找标签",
-                "Tags": "标签",
-                "Search for a tag": "搜索标签",
-                "Nothing to show": "暂无",
-                "View all tags": "查看全部标签",
 
             // 默认分支被重命名提醒框
                 "The default branch has been renamed!": "默认分支已被重新命名!",
@@ -5270,19 +5280,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "is ready.": "已准备就绪。",
 
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find or create a branch…": "查找或创建分支…",
-                "Filter branches/tags": "搜索分支/标签",
-                "Branches": "分支",
-                "default": "默认",
-                "View all branches": "查看全部分支",
-                "Find a tag": "查找标签",
-                "Tags": "标签",
-                "Search for a tag": "搜索标签",
-                "Nothing to show": "暂无",
-                "View all tags": "查看全部标签",
-
             "Go to file": "转到文件",
                 "No matches found": "未找到匹配项",
             "Add file": "添加文件",
@@ -5303,15 +5300,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // new code view
             "Top": "顶部",
             "Jump to file": "跳转到文件",
-
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find or create a branch...": "查找或创建分支...",
-                "View all": "查看全部",
-                "branches": "分支",
-                "Find a tag...": "查找标签...",
-                "Nothing to show": "暂无",
-                "tags": "标签",
 
         // 新版 New Code Search /<user-name>/<repo-name>/?search=1
             "Path copied!": "✅ 路径已复制！",
@@ -7097,21 +7085,6 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find a branch...": "查找分支……",
-                "Find a tag...": "查找标签……",
-                "Filter branches/tags": "搜索分支/标签",
-                "Branches": "分支",
-                "default": "默认",
-                "View all": "查看全部",
-                "branches": "分支",
-                "tags": "标签",
-                "Find a tag": "查找标签",
-                "Tags": "标签",
-                "Search for a tag": "搜索标签",
-                "Nothing to show": "暂无",
-
             // 验证标记浮动信息
             "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
             "This commit was signed with the committer's": "此提交已签署，使用提交者的",
@@ -7200,19 +7173,6 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
         // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<file> >>>>>>>>>>>>>>>>>>>>>>
             // 顶部提醒
                 "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "此提交不属于该仓库上的任何分支，并且可能属于仓库的外部分支。",
-
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find a branch...": "查找分支...",
-                "Filter branches/tags": "搜索分支/标签",
-                "Branches": "分支",
-                "default": "默认",
-                "View all branches": "查看全部分支",
-                "Find a tag": "查找标签",
-                "Tags": "标签",
-                "Search for a tag": "搜索标签",
-                "Nothing to show": "暂无",
-                "View all tags": "查看全部标签",
 
             // 左侧栏
                 "Add file": "添加文件",
@@ -7312,16 +7272,6 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
             // new code view
                 "Top": "顶部",
                 "Jump to file": "跳转到文件",
-
-                // 切换分支/标签 下拉菜单
-                    "Switch branches/tags": "切换分支/标签",
-                    "Find or create a branch...": "查找或创建分支...",
-                    "default": "默认",
-                    "View all": "查看全部",
-                    "branches": "分支",
-                    "Find a tag...": "查找标签...",
-                    "Nothing to show": "暂无",
-                    "tags": "标签",
 
                 // 新三个点
                     "Raw file content": "原始文件内容",
@@ -8485,15 +8435,6 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             "Top": "顶部",
             "Jump to file": "跳转到文件",
 
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find or create a branch...": "查找或创建分支...",
-                "default": "默认",
-                "View all": "查看全部",
-                "branches": "分支",
-                "Find a tag...": "查找标签...",
-                "Nothing to show": "暂无",
-                "tags": "标签",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -10824,14 +10765,6 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
 
             "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
 
-            // 切换分支/标签 下拉菜单
-                "Switch branches/tags": "切换分支/标签",
-                "Find a branch...": "查找分支...",
-                "All": "所有",
-                "default": "默认",
-                "View all rules": "查看全部规则",
-                "Find a tag...": "查找标签...",
-                "Nothing to show": "暂无",
             "No rulesets have been added yet": "尚未添加任何规则集",
             "• targeting": "• 针对",
             ", targeting": ", 针对",
