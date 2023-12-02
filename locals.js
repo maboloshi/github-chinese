@@ -5665,12 +5665,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Pinned issues": "置顶议题",
 
             "ProTip!": "专业提示！",
-                    "Find everything you created by searching": "查找您创建的所有内容，使用",
-                    "Exclude your own issues with": "查看您自己的问题，使用",
-                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                    "Exclude everything labeled": "如果要找到所有标有",
-                    "with": "标签的，请使用",
-                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "查看您自己的问题，使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "如果要找到所有标有",
+                "with": "标签的，请使用",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -6027,6 +6026,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
 };
 
@@ -6078,13 +6078,12 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
-                "ProTip!": "专业提示！",
-                    "Find everything you created by searching": "查找您创建的所有内容，使用",
-                    "Exclude your own issues with": "查看您自己的问题，使用",
-                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                    "Exclude everything labeled": "如果要找到所有标有",
-                    "with": "标签的，请使用",
-                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+            "ProTip!": "专业提示！",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "查看您自己的问题，使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "如果要找到所有标有",
+                "with": "标签的，请使用",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -6814,6 +6813,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -13118,7 +13118,6 @@ I18N.zh["issues"] = { // 议题页面
         "ProTip!": "专业提示！",
             "Exclude your own issues with": "排除自己的问题",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
-            "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
             "Exclude everything labeled": "如果要找到所有标有",
             "with": "标签的，请使用",
 
@@ -13170,6 +13169,7 @@ I18N.zh["issues"] = { // 议题页面
         // [/Updated/, "更新于"],
         [/#(\d+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
 };
 I18N.zh.pulls = I18N.zh.issues;
