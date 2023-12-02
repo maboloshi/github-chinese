@@ -424,6 +424,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Docs": "文档",
 
         "Contact GitHub": "联系 GitHub",
+        "Contact": "联系",
         "Pricing": "价格",
         "Training": "培训",
         "Shop": "商店",
@@ -12312,6 +12313,8 @@ I18N.zh["homepage"] = { // 未登录的首页
         "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
         "Read the blog post": "阅读博客文章",
 
+        "Sitemap": "网站地图",
+        "What is Git?": "什么是 Git？",
     },
     "regexp": [ // 正则翻译
     ],
