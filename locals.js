@@ -5225,9 +5225,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 组织仓库
             "Set up GitHub Copilot": "设置 GitHub Copilot",
                 "Use GitHub's AI pair programmer to autocomplete suggestions as you code.": "使用 GitHub 的 AI 配对程序员在您编码时自动完成建议。",
-            "Invite collaborators": "邀请合作者",
-                "Find people using their GitHub username or email address.": "使用 GitHub 用户名或电子邮件地址查找人员。",
-
+                "Get started with GitHub Copilot": "开始使用 GitHub Copilot",
+            "Add collaborators to this repository": "将合作者添加到此仓库",
+                "Search for people using their GitHub username or email address.": "使用 GitHub 用户名或电子邮件地址搜索人员。",
+                "Invite collaborators": "邀请合作者",
             "Quick setup": "快速安装",
             "— if you’ve done this kind of thing before": "- 如果您以前做过这样的事",
             "Set up in Desktop": "安装到 GitHub Desktop",
@@ -5241,6 +5242,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "…or import code from another repository": "…或从另一个仓库导入代码",
             "You can initialize this repository with code from a Subversion, Mercurial, or TFS project.": "您可以初始化此仓库从一个 Subversion，Mercurial 或 TFS 项目导入。",
             "Import code": "导入代码",
+            "ProTip!": "专业提示！",
+                "Use the URL for this page when adding GitHub as a remote.": "将 GitHub 添加为远程时，请使用此页面上的 URL。",
 
         // 导入仓库 第二页 /<user-name>/<repo-name>/import
             "Preparing your new repository": "准备您的新仓库",
@@ -9706,12 +9709,27 @@ I18N.zh["repository/community"] = { // 仓库 -> 洞察 - 社区准则
                 "This is not legal advice.": "这并不是法律建议。",
                 "Learn more about repository licenses": "了解更多关于仓库许可证的信息",
 
+        // 添加行为准则 /<user-name>/<repo-name>/community/code-of-conduct/new
+            "Add a code of conduct to your project": "为您的项目添加行为准则",
+            "Choose a code of conduct to add to your project": "选择要添加到项目中的行为准则",
+            "what a code of conduct is": "什么是行为准则",
+            "and how to enforce it.": "以及如何执行。",
+            "Contributor Covenant": "贡献者协议",
+                "Recommended for projects of all sizes": "建议用于各种规模的项目",
+                "Contact method": "联系方式",
+            "Citizen Code Of Conduct": "公民行为准则",
+                "Suitable for large communities and events": "适合大型社区和活动",
+                "Link to reporting guidelines": "报告指南链接",
+                "Link to policy": "政策链接",
+                "Note": "注释",
+                "Contact info": "联系信息",
+                "Community name": "团队名称",
+                "Governing body": "管理机构",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
-//community/code-of-conduct/new
 
 I18N.zh["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
     "static": { // 静态翻译
