@@ -1081,7 +1081,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
     ],
 };
 
-I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
+I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 新手帮助
         "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
@@ -1312,8 +1312,15 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+        [/(\d+) people reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) people reacted with laugh/, "$1 个人的反应为大笑"],
+        [/(\d+) people reacted with horray/, "$1 个人的反应为欢呼"],
+        [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
+        [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
+        [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
     ],
 };
+
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
