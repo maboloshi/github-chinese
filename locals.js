@@ -4458,6 +4458,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                 "No access": "禁止访问",
                 "Read-only": "只读",
                 "Read and write": "读写",
+                "Admin": "管理员",
 
                 "Selected": "项被选中",
                 "mandatory": "强制",
@@ -4511,10 +4512,10 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "Pull requests and related comments, assignees, labels, milestones, and merges.": "拉取请求及相关评论、受让人、标签、里程碑和合并。",
                     "Repository security advisories": "仓库安全公告",
                         "View and manage repository security advisories.": "查看和管理安全公告",
-                    "Secret scanning alerts": "隐私扫描警报",
-                        "View and manage secret scanning alerts.": "查看和管理隐私扫描警报。",
-                    "Secrets": "隐私",
-                        "Manage Actions repository secrets.": "管理操作仓库隐私。",
+                    "Secret scanning alerts": "机密扫描警报",
+                        "View and manage secret scanning alerts.": "查看和管理机密扫描警报。",
+                    "Secrets": "机密",
+                        "Manage Actions repository secrets.": "管理操作仓库机密。",
                     "Variables": "变量",
                         "Manage Actions repository variables.": "管理操作仓库变量。",
                     "Webhooks": "Web 钩子",
@@ -4584,10 +4585,10 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
                         "View an organization's plan.": "查看组织的计划。",
                     // 项目
                         "Manage projects for an organization.": "管理组织的项目。",
-                    // 隐私
-                        "Manage Actions organization secrets.": "管理操作组织隐私",
+                    // 机密
+                        "Manage Actions organization secrets.": "管理操作组织机密",
                     "Self-hosted runners": "自托管运行器",
-                        "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的'操作自托管运行器'。",
+                        "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的 “操作自托管运行器”。",
                     "Team discussions": "团队讨论",
                         "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
                     // 变量
