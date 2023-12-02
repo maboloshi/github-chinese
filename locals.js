@@ -447,8 +447,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
         "Nothing to preview": "没有什么可预览",
         "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
-        "Add review comment": "添加审查意见", // 具体拉取请求 文件审查评论
-        "Start a review": "开始评论", // 具体拉取请求 文件审查评论
+        "Add review comment": "添加审查意见", // 具体拉取请求 文件审查意见
+        "Start a review": "开始评论", // 具体拉取请求 文件审查意见
         // 取消按钮 提醒信息
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
@@ -4879,7 +4879,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                     "Submit comment and close or open pull request": "提交评论和关闭或打开拉取请求",
                     "Request reviewers": "请求审查者",
                     "Link an issue or pull request from the same repository": "链接同一仓库的议题或拉取请求",
-                    "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查评论的可见性，而不仅仅是当前的审查评论",
+                    "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查意见的可见性，而不仅仅是当前的审查意见",
                 "Pull request - Files changed tab": "拉取请求 - 文件更改标签卡",
                     "Open commits list": "打开提交列表",
                     "Open files list": "打开文件列表",
@@ -5997,7 +5997,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // 右侧栏
                 "Reviewers": "审查者",
                     "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
                     "Still in progress?": "仍在进行中吗？",
                     "Convert to draft": "设置为草案",
@@ -6339,7 +6339,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Choose a base branch": "选择基础分支",
                 // 更改基础分支对话框
                 "Are you sure you want to change the base?": "您确定要更改基础分支吗？",
-                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查评论可能会变得过时。",
+                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
 
             // 代码 下拉菜单
@@ -6435,7 +6435,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 右侧栏
                 "Reviewers": "审查者",
                     "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                     "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
                     "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
                     "Re-request review": "重新请求审核",
@@ -6996,7 +6996,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
         // 具体某条拉取请求
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
-        [/([^ ]+) left review comments?/, "$1 发表了审查评论"],
+        [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
         [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
@@ -7141,7 +7141,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "Reviewers": "审查者",
                 "Loading suggestions…": "载入推荐…",
-                // [/([^ ]+) left review comments/, "$1 发表了审查评论"],
+                // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                 "At least 0 approving review is required to merge this pull request.": "至少需要 0 次批准审查才能合并此拉取请求。",
                 "No reviews—at least 0 approving review is required.": "未经审查—至少需要 0 次批准审查。",
                 "Re-request review": "重新请求审核",
@@ -13391,7 +13391,7 @@ I18N.zh["issues"] = { // 议题页面
                 "Reply (quoting selected text)": "答复（引用所选文本）",
                 "Open saved replies": "打开快捷回复（引用所选文本）",
                 "Insert saved reply (with open saved replies)": "插入快捷回复（打开快捷回复）",
-                "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查评论的可见性，而不仅仅是当前的审查评论",
+                "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查意见的可见性，而不仅仅是当前的审查意见",
             "Pull request - Files changed tab": "拉取请求 - 文件更改标签卡",
                 "Open commits list": "打开提交列表",
                 "Open files list": "打开文件列表",
