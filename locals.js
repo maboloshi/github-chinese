@@ -424,6 +424,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Docs": "文档",
 
         "Contact GitHub": "联系 GitHub",
+        "Contact": "联系",
         "Pricing": "价格",
         "Training": "培训",
         "Shop": "商店",
@@ -1080,7 +1081,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
     ],
 };
 
-I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
+I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 新手帮助
         "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
@@ -1157,24 +1158,30 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         "Updates to your homepage feed": "主页订阅源的更新",
         "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 Following 提要的功能与 For you 提要相结合，因此在 GitHub 上有一个地方可以发现内容。它改进了过滤功能，因此您可以根据自己的喜好定制订阅源，它还有一个闪亮的新视觉设计。 ✨",
         "Learn more": "了解更多",
+
+        // 筛选
         "Filter": "筛选器",
             "Feed filters": "提要筛选器",
+            "Events": "事件",
+                "Activity you want to see on your feed": "你想在提要上看到的活动",
             "Announcements": "公告",
-            "Special discussion posts from repositories": "仓库的特别讨论消息",
+                "Special discussion posts from repositories": "仓库的特别讨论消息",
             "Releases": "发行版",
-            "Update posts from repositories": "仓库更新消息",
+                "Update posts from repositories": "仓库更新消息",
             "Follows": "关注",
-            "Relevant projects or people that are being sponsored": "被赞助的相关项目或人员",
+                "Relevant projects or people that are being sponsored": "被赞助的相关项目或人员",
             "Stars": "星标",
-            "Repositories being starred by people": "被人们星标的仓库",
+                "Repositories being starred by people": "被人们星标的仓库",
             "Repositories": "仓库",
-            "Repositories that are created or forked by people": "被人创建或复刻的仓库",
+                "Repositories that are created or forked by people": "被人创建或复刻的仓库",
             "Repository activity": "仓库活动",
-            "Issues and pull requests from repositories": "从仓库发出的问题和拉取请求",
+                "Issues and pull requests from repositories": "从仓库发出的问题和拉取请求",
             "Follows": "关注",
-            "Who people are following": "人们在关注谁",
+                "Who people are following": "人们在关注谁",
             "Recommendations": "推荐",
-            "Repositories and people you may like": "您可能喜欢的仓库和人",
+                "Repositories and people you may like": "您可能喜欢的仓库和人",
+            "Include events from starred repositories": "包括星标存储库中的事件",
+            "By default, the feed shows events from repositories you sponsor or watch, and people you follow.": "默认情况下，提要将显示您赞助或关注的仓库中的事件以及您关注的人。",
             "Reset to default": "重置",
             "Save": "保存",
 
@@ -1311,8 +1318,15 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板(含组织)
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+        [/(\d+) people reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) people reacted with laugh/, "$1 个人的反应为大笑"],
+        [/(\d+) people reacted with hooray/, "$1 个人的反应为欢呼"],
+        [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
+        [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
+        [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
     ],
 };
+
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
@@ -5651,12 +5665,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Pinned issues": "置顶议题",
 
             "ProTip!": "专业提示！",
-                    "Find everything you created by searching": "查找您创建的所有内容，使用",
-                    "Exclude your own issues with": "查看您自己的问题，使用",
-                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                    "Exclude everything labeled": "如果要找到所有标有",
-                    "with": "标签的，请使用",
-                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "查看您自己的问题，使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "如果要找到所有标有",
+                "with": "标签的，请使用",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -6013,6 +6026,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
 };
 
@@ -6064,13 +6078,12 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
-                "ProTip!": "专业提示！",
-                    "Find everything you created by searching": "查找您创建的所有内容，使用",
-                    "Exclude your own issues with": "查看您自己的问题，使用",
-                    "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                    "Exclude everything labeled": "如果要找到所有标有",
-                    "with": "标签的，请使用",
-                    "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
+            "ProTip!": "专业提示！",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "查看您自己的问题，使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "如果要找到所有标有",
+                "with": "标签的，请使用",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -6800,6 +6813,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -12312,6 +12326,8 @@ I18N.zh["homepage"] = { // 未登录的首页
         "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
         "Read the blog post": "阅读博客文章",
 
+        "Sitemap": "网站地图",
+        "What is Git?": "什么是 Git？",
     },
     "regexp": [ // 正则翻译
     ],
@@ -13102,7 +13118,6 @@ I18N.zh["issues"] = { // 议题页面
         "ProTip!": "专业提示！",
             "Exclude your own issues with": "排除自己的问题",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
-            "Notify someone on an issue with a mention, like:": "在某个问题上通知并提及某人，例如：",
             "Exclude everything labeled": "如果要找到所有标有",
             "with": "标签的，请使用",
 
@@ -13154,6 +13169,7 @@ I18N.zh["issues"] = { // 议题页面
         // [/Updated/, "更新于"],
         [/#(\d+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
     ],
 };
 I18N.zh.pulls = I18N.zh.issues;
