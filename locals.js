@@ -11860,6 +11860,16 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                     "Name": "名称",
                     "Value": "值",
                     "Secret value": "机密值",
+                    "Adding…": "添加中…",
+                    // 顶部提醒
+                        "Environment secret added.": "环境机密已添加。",
+                        "Environment secret updated.": "环境机密已更新。",
+                "Update secret": "更新机密",
+                    "Save secret": "保存机密",
+                "Remove secret": "删除机密",
+                    "Yes, remove this secret": "是的，删除该机密",
+                    // 顶部提醒
+                    "Secret deleted.": "机密已删除。",
 
             // 顶部提醒
                 "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
@@ -11869,6 +11879,8 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                 "vars context": "变量内容",
                 "Add variable": "添加变量",
                     "Variable name can only start with a letter or underscore.": "变量名只能以字母或下划线开头。",
+                    "Variable name can only contain alphanumeric characters. Special characters and spaces are not allowed.": "变量名称只能包含字母数字字符。不允许特殊字符和空格。",
+
                     "Variable value": "变量值",
                     "Adding...": "添加中...",
                 "Update variable": "更新变量",
@@ -11884,11 +11896,14 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
             // 顶部提醒
             // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
+            // [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
 
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) protection rules?/, "$1 个保护规则"], // /environments
+        [/(\d+) secrets?/, "$1 个机密"], // /environments
+        [/(\d+) variables?/, "$1 个变量"], // /environments
         [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
         [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
         [/Currently applies to (\d+) branch(?:es|)/, "目前适用于 $1 个分支"],
@@ -12292,14 +12307,12 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
 
             "Environment secrets": "环境机密",
-            "Manage environments": "管理环境",
-            "There are no secrets for this repository’s environments.": "此仓库的环境暂无机密。",
-            // "Encrypted environment secrets allow you to store sensitive information, such as access tokens, in your repository environments.": "加密的环境机密允许您在仓库环境中存储敏感信息，例如访问令牌。",
-            // "Manage your environments and add environment secrets": "管理您的环境并添加环境机密",
+                "This repository has no environment secrets.": "此仓库尚无环境机密。",
+                "Manage environment secrets": "管理环境机密",
 
             "Repository secrets": "仓库机密",
-            "There are no secrets for this repository.": "此仓库暂无机密。",
-            // "Encrypted secrets allow you to store sensitive information, such as access tokens, in your repository.": "加密的机密允许您在仓库中存储敏感信息，例如访问令牌。",
+                "This repository has no secrets.": "此仓库尚无机密。",
+                "Last updated": "最近更新时间",
 
             //组织仓库
             "Secrets can also be created at the organization level and authorized for use in this repository.": "机密也可以在组织层面上创建，并授权在这个仓库中使用。",
@@ -12309,22 +12322,30 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             "If you would like to use organization secrets in a private repository, you will need to upgrade your plan.": "如果您想在私有仓库中使用组织机密，则需要升级您的计划。",
 
             // 删除机密对话框
-            "Remove secret": "删除机密",
+            "Delete secret": "删除机密",
                 "Are you sure you want to delete": "您确定要删除",
-                "Yes, remove this secret": "是的，删除该机密",
+                "Yes, delete this secret": "是的，删除该机密",
+                "Yes, delete this": "是的，删除该",
+                "secret": "机密",
 
             // 顶部提醒
                 "Repository secret added.": "添加了仓库机密。",
-                "Repository secret deleted.": "删除了仓库机密。",
 
-        // /<user-name>/<repo-name>/settings/variables/actions
-            "New repository variable": "新建仓库变量",
-
+        // 操作变量 /<user-name>/<repo-name>/settings/variables/actions
             "Environment variables": "环境变量",
-            "There are no variables for this repository’s environments.": "此仓库的环境暂无变量。",
+                "This repository has no environment variables.": "此仓库尚无环境变量。",
+                "Manage environment variables": "管理环境变量",
+
+                "Environment": "环境",
 
             "Repository variables": "仓库变量",
-            "There are no variables for this repository.": "此仓库暂无变量。",
+                "New repository variable": "新建仓库变量",
+                "This repository has no variables.": "此仓库尚无变量。",
+
+            // 删除变量对话框
+            "Delete variable": "删除变量",
+                "Yes, delete this variable": "是的，删除该变量",
+                "variable": "变量",
 
         // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
             "Actions secrets": "操作机密",
@@ -12350,6 +12371,7 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             "prefix.": "前缀开头。",
 
             "Add variable": "添加变量",
+                "Adding…": "添加中…",
 
         // 更新操作机密 /<user-name>/<repo-name>/settings/secrets/actions/<name>
             "/ Update secret": "/ 更新机密",
