@@ -15895,7 +15895,7 @@ I18N.zh["orgs/settings/projects"] = { // 组织设置 - 项目
     ],
 };
 
-I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全主
+I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
@@ -15916,9 +15916,9 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全主
             ", or": "，或",
             "dismiss this message.": "忽略此消息。",
 
-            "IP allow list": "IP 白名单",
-            "An IP allow list lets your organization limit access based on the IP address a person is accessing from.": "IP  白名单可让您的组织根据成员访问的 IP 地址来限制访问。",
-            "Restrict access to your organization's assets by configuring a list of IP addresses that are allowed to connect": "通过配置 IP 白名单来限制对组织资产的访问",
+            "IP allow list": "IP 允许列表",
+            "An IP allow list lets your organization limit access based on the IP address a person is accessing from.": "IP 允许列表可让您的组织根据成员访问的 IP 地址来限制访问。",
+            "Restrict access to your organization's assets by configuring a list of IP addresses that are allowed to connect": "通过配置 IP 允许列表来限制对组织资产的访问",
     },
     "regexp": [ // 正则翻译
         [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
