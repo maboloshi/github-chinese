@@ -9054,6 +9054,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
             "Join discussion": "加入讨论",
 
+            // [/Edit: (.*)/, "编辑：$1"],
+            // [/Delete: (.*)/, "删除：$1"],
+
         // 发行版 标签卡 /<user-name>/<repo-name>/tags
             "Create release": "创建发行版",
             "Edit release": "编辑发行版",
@@ -9143,6 +9146,24 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "There were no pull requests associated with the commits included in this release.": "此版本中没有与提交相关的拉取请求。",
 
             "Describe this release": "描述此发行版",
+
+            // 编辑器按钮(老版)
+                "Add heading text": "添加标题文本",
+                "Add bold text, <Ctrl+b>": "添加粗体文本 <Ctrl+b>",
+                "Add italic text, <Ctrl+i>": "添加斜体文本 <Ctrl+i>",
+                "Add a quote, <Ctrl+Shift+.>": "添加引用 <Ctrl+Shift+.>",
+                "Add code, <Ctrl+e>": "添加代码 <Ctrl+e>",
+                "Add a link, <Ctrl+k>": "添加链接 <Ctrl+k>",
+                "Add a bulleted list, <Ctrl+Shift+8>": "添加无序列表 <Ctrl+Shift+8>",
+                "Add a numbered list, <Ctrl+Shift+7>": "添加有序列表 <Ctrl+Shift+7>",
+                "Add a task list, <Ctrl+Shift+l>": "添加任务列表 <Ctrl+Shift+l>",
+                "Directly mention a user or team": "直接提及用户或团队",
+                "Reference an issue, pull request or discussion": "引用议题，拉取请求或讨论",
+                "Add saved reply": "添加快捷回复",
+                    "Select a reply": "选择回复",
+                        "Filter saved replies": "筛选快捷回复",
+                        "Create a new saved reply": "创建新快捷回复",
+                "Attach files by dragging & dropping, selecting or pasting them.": "通过拖拽、选择或粘贴来附加文件。",
 
             // 附加文件
             "Attach binaries by dropping them here or selecting them.": "拖拽文件到这来或选择它们来附加文件。",
@@ -9240,6 +9261,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/to ([^ ]+) since this release/, "至 $1 分支，该发行版"],
         [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
+        [/Edit: (.*)/, "编辑：$1"],
+        [/Delete: (.*)/, "删除：$1"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
