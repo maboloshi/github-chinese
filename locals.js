@@ -422,9 +422,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Security": "安全",
         "Status": "状态",
         "Docs": "文档",
+        "Contact": "联系我们",
 
         "Contact GitHub": "联系 GitHub",
-        "Contact": "联系",
         "Pricing": "价格",
         "Training": "培训",
         "Shop": "商店",
@@ -1155,53 +1155,46 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Loading activity...": "载入活动...",
         "All activity": "所有活动",
 
-        "Updates to your homepage feed": "主页订阅源的更新",
-        "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 Following 提要的功能与 For you 提要相结合，因此在 GitHub 上有一个地方可以发现内容。它改进了过滤功能，因此您可以根据自己的喜好定制订阅源，它还有一个闪亮的新视觉设计。 ✨",
+        "Welcome to the new feed!": "欢迎来到新的动态提要!",
+        "We’re updating the cards and ranking all the time, so check back regularly. At first, you might need to follow some people or star some repositories to get started": "我们一直在更新卡片和排名，所以请定期查看。一开始，您可能需要关注一些人或标星一些仓库才能开始",
+        "Send feedback": "发送反馈",
+
+        "Updates to your homepage feed": "主页动态摘要的更新",
+        "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 “关注动态提要” 与 “您的动态提要” 的强大功能结合在一起，让您在一个地方就能发现 GitHub 上的内容。此外，我们还改进了筛选功能，让您可以完全按照自己的喜好定制动态提要，并采用全新的视觉设计。 ✨",
         "Learn more": "了解更多",
 
-        // 筛选
+        // 提要筛选
         "Filter": "筛选器",
             "Feed filters": "提要筛选器",
             "Events": "事件",
-                "Activity you want to see on your feed": "你想在提要上看到的活动",
+                "Activity you want to see on your feed": "您想在提要上看到的活动",
             "Announcements": "公告",
-                "Special discussion posts from repositories": "仓库的特别讨论消息",
+                "Special discussion posts from repositories": "来自仓库的特别讨论帖",
             "Releases": "发行版",
-                "Update posts from repositories": "仓库更新消息",
-            "Follows": "关注",
-                "Relevant projects or people that are being sponsored": "被赞助的相关项目或人员",
+                "Update posts from repositories": "来自仓库的更新帖",
+            // 赞助
+                "Relevant projects or people that are being sponsored": "获得赞助的相关项目或人员",
             "Stars": "星标",
-                "Repositories being starred by people": "被人们星标的仓库",
+                "Repositories being starred by people": "被人们标星的仓库",
             "Repositories": "仓库",
-                "Repositories that are created or forked by people": "被人创建或复刻的仓库",
+                "Repositories that are created or forked by people": "由人们创建或复刻的仓库",
             "Repository activity": "仓库活动",
-                "Issues and pull requests from repositories": "从仓库发出的问题和拉取请求",
+                "Issues and pull requests from repositories": "来自仓库的议题和拉取请求",
             "Follows": "关注",
                 "Who people are following": "人们在关注谁",
             "Recommendations": "推荐",
                 "Repositories and people you may like": "您可能喜欢的仓库和人",
-            "Include events from starred repositories": "包括星标存储库中的事件",
-            "By default, the feed shows events from repositories you sponsor or watch, and people you follow.": "默认情况下，提要将显示您赞助或关注的仓库中的事件以及您关注的人。",
+
+            "Include events from starred repositories": "包括来自星标仓库中的事件",
+                "By default, the feed shows events from repositories you sponsor or watch, and people you follow.": "默认情况下，动态提要显示的事件来自您赞助或关注的仓库，以及您关注的人。",
             "Reset to default": "重置",
             "Save": "保存",
-
-        "Welcome to the new feed!": "欢迎来到新的提要!",
-        "We’re updating the cards and ranking all the time, so check back regularly. At first, you might need to follow some people or star some repositories to get started": "我们一直在更新卡片和排名，所以请定期查看。一开始，您可能需要关注一些人或标星一些仓库才能开始",
-        "Send feedback": "发送反馈",
 
         "Show all": "显示所有",
         "Show less": "显示更少",
 
-        "published a release": "发布发行版",
-        "forked a repository": "复刻仓库",
-        "starred a repository": "星标仓库",
-        "sponsored": "赞助了",
-        "followed": "关注了",
-        "added a repository to": "已将仓库添加到",
-        "contributed to": "贡献给",
-
         "Uh oh!": "哎呀!",
-        "There was an error in loading the activity feed.": "载入活动提要时发生错误。",
+        "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
         "Reload this page.": "重载此页面",
 
         // 动态 状态词
@@ -1232,6 +1225,16 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "made this repository public": "将此仓库公开",
         "labeled a pull request": "将标签添加到拉取请求中",
         //[/and (\d+) more/, "和另外 $1 个"],
+
+        "published a release": "发布发行版",
+        "forked a repository": "复刻仓库",
+        "starred a repository": "星标仓库",
+        "sponsored": "赞助了",
+        "followed": "关注了",
+        "added a repository to": "已将仓库添加到",
+        "contributed to": "贡献给",
+
+        "your repository": "您的仓库",
 
         "Read more": "阅读更多内容",
 
@@ -1326,7 +1329,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
     ],
 };
-
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
