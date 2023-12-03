@@ -453,6 +453,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
         "Add a title": "添加标题",
+            "Title": "标题",
         "Add a description": "添加描述",
             "Add your description here...": "在此添加您的描述...",
         // 拉取请求 代码审查 回复对话框
@@ -759,7 +760,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "collaborators": "协作者",
         "commit": "提交",
         "commits": "提交",
-
+        "Organization": "组织",
         "People": "成员",
         "Teams": "团队",
 
@@ -3729,7 +3730,7 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
             "Configure Reminder": "配置提醒",
             "No reminders": "没有提醒",
 
-        // 新的预定提醒 https://github.com/settings/reminders/<组织名>
+        // 新的预定提醒 https://github.com/settings/reminders/<orgs-name>
             "New scheduled reminder": "新建预定提醒",
             "Slack workspace": "Slack 工作区",
             "Authorize Slack workspace": "授权 Slack 工作区",
@@ -4923,6 +4924,7 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+        [/had recent pushes (\d+) seconds? ago/, "分支有了最新的推送，$1 秒之前"],
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/had recent pushes about/, "分支有了最新的推送，大约"],
@@ -5002,7 +5004,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Create repository": "创建仓库",
             "Creating repository…": "创建仓库中…",
 
-        // 依据模板新建仓库 https://github.com/new?template_owner=<模板作者>&template_name=<模板名称>
+        // 依据模板新建仓库 https://github.com/new?template_owner=<template-owner>&template_name=<template-name>
             "Repository template": "仓库模板",
                 "Fetching templates…": "正在获取模板…",
                 "No template": "不设置模板",
@@ -6207,6 +6209,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "contributing guidelines": "贡献指南",
             "and": "和",
+            "security policy": "安全政策",
             "code of conduct": "行为准则",
 
             "This issue has been deleted.": "该议题已被删除。",
@@ -7045,7 +7048,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
         [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
         [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
-        // [/This commit will be authored by (.+)/, "此提交将由 $1 撰写"],// 具体的拉取请求
         [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"], // 具体的拉取请求
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
@@ -7357,7 +7359,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Newer": "新的",
             "Older": "旧的",
 
-        // /commits?since=<开始日期 XXXX-XX-XX>&until=<结束日期 XXXX-XX-XX>&author=<协作者名称>
+        // /commits?since=<start-date XXXX-XX-XX>&until=<end-date XXXX-XX-XX>&author=<author-name>
             "No commits history": "尚无提交历史记录",
             "There isn't any commit history to show here": "此处没有可显示",
             "for the selected date range": "所选日期范围内的任何提交历史记录",
@@ -8629,7 +8631,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
             // 提交更改 对话框
                 "Commit message": "提交信息",
                 "Extended description": "扩展描述",
-                "Add an optional extended description..": "添加可选的扩展描述..",
+                "Add an optional extended description…": "添加可选的扩展描述…",
 
                 "branch": "分支",
                 "for this commit and start a pull request": "为此提交并创建拉取请求",
@@ -9786,7 +9788,7 @@ I18N.zh["repository/pulse"] = { // 仓库 -> 洞察 - 统计
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //统计 /<user-name>/<repo-name>/pulse
+        // 统计 /<user-name>/<repo-name>/pulse
             "Period:": "周期：",
                 "Filter activity": "筛选活动",
                 "24 hours": "24 小时",
@@ -9868,7 +9870,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //贡献者 /<user-name>/<repo-name>/graphs/contributors
+        // 贡献者 /<user-name>/<repo-name>/graphs/contributors
             "Loading contributions…": "载入贡献者…",
             // [/Contributions to (.*), excluding merge commits/, "贡献到 $1分支，不包括合并提交"],
             "Contributions:": "贡献者：",
@@ -9892,7 +9894,7 @@ I18N.zh["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //社区 /<user-name>/<repo-name>/graphs/community
+        // 社区 /<user-name>/<repo-name>/graphs/community
             "Enable Discussions to unlock Community Insights!": "启用讨论，以解锁社区见解！",
             "Discussions is the central space for your community to share announcements, ask questions, and host conversations.": "讨论是您的社区共享公告、提出问题和主持对话的中心空间。",
             "Set up discussions": "建立讨论",
@@ -10030,7 +10032,7 @@ I18N.zh["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //流量 /<user-name>/<repo-name>/graphs/traffic
+        // 流量 /<user-name>/<repo-name>/graphs/traffic
             "Git clones": "Git 克隆",
             "Clones": "克隆",
             "Unique cloners": "唯一克隆者",
@@ -10067,7 +10069,7 @@ I18N.zh["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提交
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //提交 /<user-name>/<repo-name>/graphs/commit-activity
+        // 提交 /<user-name>/<repo-name>/graphs/commit-activity
             "Sunday"    : "周日",
             "Monday"    : "周一",
             "Tuesday"   : "周二",
@@ -10088,7 +10090,7 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //代码频率 /<user-name>/<repo-name>/graphs/code-frequency
+        // 代码频率 /<user-name>/<repo-name>/graphs/code-frequency
             "Code frequency over the history of": "历史上的代码频率",
             "Additions": "添加数量",
             "Deletions": "删除数量",
@@ -10108,7 +10110,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
 
         "Dependencies": "依赖关系",
         "Dependents": "依赖者",
-        //依赖关系图 - 依赖关系 /network/dependencies
+        // 依赖关系图 - 依赖关系 /network/dependencies
             "Tell us how to make the Dependency Graph work better for you with a few quick questions.": "请通过几个简单的问题告诉我们，如何使 “依赖关系图” 更好地为您工作。",
 
             "The dependency graph is not enabled": "依赖关系图未启用",
@@ -10169,7 +10171,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
 
         "Dependencies": "依赖关系",
         "Dependents": "依赖者",
-        //依赖关系图 - 依赖者 /network/dependents
+        // 依赖关系图 - 依赖者 /network/dependents
             "GitHub does not currently determine the dependents of private repositories": "GitHub 目前无法确定私有仓库的依赖者",
 
             "Export SBOM": "导出 SBOM",
@@ -10200,7 +10202,7 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
         "Dependents": "依赖者",
 
         "Export SBOM": "导出 SBOM",
-        //依赖关系图 - 依赖机器人 /network/updates
+        // 依赖关系图 - 依赖机器人 /network/updates
             "Enable Dependabot": "启用 Dependabot",
             "Dependabot isn't enabled": "未启用 Dependabot",
             "Dependabot isn't enabled on forks by default": "默认情况下，Dependabot 不会在复刻上启用。",
@@ -10220,7 +10222,7 @@ I18N.zh["repository/network"] = { // 仓库 -> 洞察 - 网络图
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //网络图 /<user-name>/<repo-name>/network
+        // 网络图 /<user-name>/<repo-name>/network
             // 键盘快捷键
                 "Scroll left": "向左滑动",
                 "Scroll right": "向右滑动",
@@ -10251,7 +10253,7 @@ I18N.zh["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //复刻 /<user-name>/<repo-name>/network/members
+        // 复刻 - 树形视图 /<user-name>/<repo-name>/network/members
             "switch to list view": "切换到列表视图",
 
             "No one has forked this repository yet.": "目前，暂无人复刻该仓库。",
@@ -10273,7 +10275,7 @@ I18N.zh["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
 
-        //复刻 /<user-name>/<repo-name>/forks
+        // 复刻 - 列表视图 /<user-name>/<repo-name>/forks
             "Switch to tree view": "切换到树形视图",
 
             "No one has forked this repository yet": "目前，暂无人复刻该仓库",
@@ -11107,7 +11109,6 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
             "No rulesets have been added yet": "尚未添加任何规则集",
             "• targeting": "• 针对",
             ", targeting": ", 针对",
-            // [/(\d+) rules?, targeting (\d+) tags?/, "$1 条规则，针对 $1 个标签"],
 
             "Export ruleset": "导出规则集",
 
@@ -13310,7 +13311,7 @@ I18N.zh["notifications/subscriptions"] = { //订阅的仓库页面
     ],
 };
 
-I18N.zh["stars"] = { // 星标 https://github.com/stars/<用户名>
+I18N.zh["stars"] = { // 星标 https://github.com/stars/<user-name>
     "static": { // 静态翻译
         "Your Stars": "我的星标",
         "Browse your starred repositories and topics": "浏览我的星标仓库和主题",
@@ -14986,12 +14987,12 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
                 // 顶部提醒
                     "You can't remove the last owner of this organization.": "您无法移除该组织的最后一位所有者。",
             // 顶部提醒
-                "You publicized 1 membership.": "您公开了 1 名会员资格",
-                "You concealed 1 membership.": "您隐藏了 1 名会员资格",
+                "You publicized 1 membership.": "您公开了 1 名成员资格",
+                "You concealed 1 membership.": "您隐藏了 1 名成员资格",
 
         // 成员管理 https://github.com/orgs/<orgs-name>/people/<user-name>
 
-        // 成员权限详情 /orgs/<组织名>/people/<用户名>/repositories/<组织名>/<repo-name>
+        // 成员权限详情 /orgs/<user-name>/people/<user-name>/repositories/<user-name>/<repo-name>
 
         // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
             "Find a collaborator…": "寻找协作者…",
