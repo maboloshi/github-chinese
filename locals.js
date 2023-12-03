@@ -15089,8 +15089,8 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
                 "Developer site": "开发者站点",
-                "Check out the Developer site": "查看开发者网站，",
-                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "了解指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的会员！",
+                "Check out the Developer site": "查看开发者站点，",
+                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的成员！",
 
             "Terms of Service": "服务条款",
                 "Standard": "标准",
