@@ -17135,7 +17135,6 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "port forwarding": "端口转发",
             "Access codespaces from within": "从内部访问代码空间，使用",
 
-            "Owned by": "拥有者为",
             "Retrieving…": "正在检索…",
             "Active": "运行中",
             "Last used": "上次使用",
@@ -17145,18 +17144,18 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
                 "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Rename": "重命名",
+                "Auto-delete codespace": "自动删除代码空间",
                 "Export changes to a branch": "将更改导出到分支",
-                "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
-                "Checking branch status": "检查分支情况",
-                "Create branch": "创建分支",
-                "Export changes to a fork": "更改导出到复刻",
-                "You do not have write access to this codespace's repository. This will create a new fork of the repository at ": "您没有对此代码空间的存储库的写访问权限。这将创建一个新的存储库分支在 ",
+                    "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
+                    "Checking branch status": "检查分支情况",
+                    "Create branch": "创建分支",
+                "Export changes to a fork": "将更改导出到复刻",
+                    "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的存储库的写访问权限。这将创建一个新的存储库分支在",
+                    ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
+                    "Create fork": "创建复刻",
                 "Change machine type": "修改机器类型",
-                "Change codespace machine type": "修改代码空间机器类型",
-                "Update codespace": "更新代码空间",
-                "Close dialog": "关闭对话框",
-                "Keep codespace": "保留代码空间",
-                "Unkeep codespace": "不再保留代码空间",
+                    "Change codespace machine type": "修改代码空间机器类型",
+                    "Update codespace": "更新代码空间",
                 "Stop codespace": "停止代码空间",
 
 
@@ -17195,6 +17194,10 @@ I18N.zh["codespaces"] = { // 代码空间页面
             "Creating codespace": "新建代码空间中"
     },
     "regexp": [
+        [/Owned by ([^ ]+)/,  "拥有者为 $1"],
+        [/Last used ([^ ]+)/,  "上次使用 $1"],
+        [/Codespace "([^ ]+)" stopped./,  "代码空间“$1”停止。"],
+        [/Your codespace "([^ ]+)" will no longer be auto-deleted./,  "您的代码空间“$1”将不再自动删除。"],
     ],
 };
 
