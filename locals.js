@@ -17144,6 +17144,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
                 "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Rename": "重命名",
+                    "Rename codespace": "重命名代码空间",
+                    "Name": "名称",
                 "Auto-delete codespace": "自动删除代码空间",
                 "Export changes to a branch": "将更改导出到分支",
                     "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
