@@ -17193,13 +17193,14 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
             "Create codespace": "新建代码空间",
-            "Creating codespace": "新建代码空间中"
+            "Creating codespace": "新建代码空间中",
     },
     "regexp": [
-        [/Owned by ([^ ]+)/,  "拥有者为 $1"],
-        [/Last used ([^ ]+)/,  "上次使用 $1"],
-        [/Codespace "([^ ]+)" stopped./,  "代码空间“$1”停止。"],
-        [/Your codespace "([^ ]+)" will no longer be auto-deleted./,  "您的代码空间“$1”将不再自动删除。"],
+        [/By ([^ ]+)/, "$1 发布"],
+        [/Owned by ([^ ]+)/, "拥有者为 $1"],
+        [/Last used ([^ ]+)/, "上次使用 $1"],
+        [/Codespace "([^ ]+)" stopped./, "代码空间“$1”停止。"],
+        [/Your codespace "([^ ]+)" will no longer be auto-deleted./, "您的代码空间“$1”将不再自动删除。"],
     ],
 };
 
