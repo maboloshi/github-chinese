@@ -8511,6 +8511,10 @@ I18N.zh["repository/stargazers"] = { // 仓库 - 追星者页面
             "Be the first to star this repository.": "成为第一个为这个仓库加星标的人。",
             "about how starring works on GitHub.": "关于如何在 GitHub 上加注星标。",
             "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
+
+        // /<user-name>/<repo-name>/stargazers/you_know
+            "No one you follow has starred this repository yet.": "您关注的任何人都未星标此仓库。",
+            "Learn more about how starring works on GitHub.": "了解在 GitHub 上星标的工作原理。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
