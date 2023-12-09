@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/(accounts|explore)|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|enterprise_plan)/,
@@ -423,6 +423,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Status": "状态",
         "Docs": "文档",
         "Contact": "联系我们",
+        "Manage cookies": "管理 Cookies",
+        "Do not share my personal information": "不要分享我的个人信息",
 
         "Contact GitHub": "联系 GitHub",
         "Pricing": "价格",
@@ -4740,7 +4742,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 
 // 仓库相关==
-I18N.zh["repository-public"] = { // 仓库-公共部分
+I18N.zh["repository-public"] = { // 仓库 - 公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
              // 用户 浮动信息卡
@@ -4748,8 +4750,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 "Owns this repository": "拥有这个仓库",
                 "Left a review": "留下了一个评论",
                 "Committed to this repository": "已提交过这个仓库",
-                "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
-                "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+                "Committed to this repository in the past day": "最近一天里已提交过这个仓库",
+                "Committed to this repository in the past week": "最近一周里已提交过这个仓库",
                 "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
                 "Member of": "隶属组织",
                 // [/, and (\d+) more/, "，以及其他 $1 个组织"],
@@ -4918,6 +4920,9 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
+        [/(\d+):(\d+) - same time/, "%1:%2 - 时间相同"],
+        [/Started (\d+) discussion(s) in this repository in the past week/, "过去一周内在此仓库中开始了 %1 个讨论"],
+        [/Started (\d+) discussion(s) in this repository in the past month/, "过去一个月内在此仓库中开始了 %1 个讨论"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
@@ -8273,11 +8278,15 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 // [/(\d+) available runners?/, "$1 个可用运行器"],
                 "Larger GitHub-hosted runners": "大型 GitHub 托管运行程序",
                 "New": "新",
+                "Unprovisioned": "未配置",
                 "Team & Enterprise": "团队与企业",
                 "Sizes up to:": "尺寸可达：",
                 "Standard GitHub-hosted runners": "标准 GitHub 托管的运行器",
                 "Ready-to-use runners managed by GitHub.": "由 GitHub 管理的即用型运行器。",
                 "Learn more about GitHub-hosted runners.": "了解更多关于 GitHub 托管运行器的信息。",
+                "Copy ubuntu-latest": "复制 ubuntu-latest",
+                "Copy windows-latest": "复制 windows-latest",
+                "Copy macos-latest": "复制 macos-latest",
 
                 "View larger runner docs": "查看大型运行器文档",
                 "See pricing": "查看定价",
@@ -8511,6 +8520,10 @@ I18N.zh["repository/stargazers"] = { // 仓库 - 追星者页面
             "Be the first to star this repository.": "成为第一个为这个仓库加星标的人。",
             "about how starring works on GitHub.": "关于如何在 GitHub 上加注星标。",
             "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
+
+        // /<user-name>/<repo-name>/stargazers/you_know
+            "No one you follow has starred this repository yet.": "您关注的任何人都未星标此仓库。",
+            "Learn more about how starring works on GitHub.": "了解在 GitHub 上星标的工作原理。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -12551,6 +12564,36 @@ I18N.zh["repository/transfer"] = { // 转让仓库
         [/is available./, "名称可用。"],
     ],
 };
+
+I18N.zh["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>/<repo-name>/codespaces
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        "Codespace usage for this repository is paid for by": "此仓库的代码空间使用费将由",
+        "Getting started with GitHub Codespaces": "GitHub 代码空间入门",
+            "Learn core concepts": "学习核心概念",
+            "Configure and manage": "配置和管理",
+            "Develop locally": "在本地开发",
+            "New to Codespaces?": "刚接触代码空间？",
+            "Start here": "从这里开始",
+            ". Learn the core concepts and how to get started.": "。学习核心概念以及如何开始。",
+            "Learn more about features like": "了解更多关于功能的信息，例如",
+            "secret management": "机密管理",
+            "port forwarding": "端口转发",
+            "Access codespaces from within": "从内部访问代码空间，使用",
+        "Go to docs": "转到文档",
+        "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
+        "Configure and create codespace": "配置并创建代码空间",
+        "Show advanced options before launching codespace": "启动代码空间前显示高级选项",
+        "Retrieving…": "正在检索…",
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) codespace/, "%1 个代码空间"],
+        [/(\d+) codespaces/, "%1 个代码空间"],
+        [/Last used ([^ ]+)/, "上次使用 $1"],
+    ],
+};
+
 // 仓库相关==
 
 I18N.zh["homepage"] = { // 未登录的首页
