@@ -40,10 +40,10 @@ jobs:
         if: ${{ env.AHEAD == 'true' && env.CHANGES_DETECTED == 'true' }}
         run: |
           bash script/ci_commit_with_signature.sh \
-          ${{ secrets.CI_GITHUB_TOKEN }} \
-          ${{ github.repository }} \
-          ${{ github.ref_name }} \
-          ${{ github.sha }} \
-          "main.user.js" \
-          "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
-          "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
+          -T ${{ secrets.CI_GITHUB_TOKEN }} \
+          -R ${{ github.repository }} \
+          -B ${{ github.ref_name }} \
+          -P ${{ github.sha }} \
+          -F "main.user.js" \
+          -h "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
+          -b "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
