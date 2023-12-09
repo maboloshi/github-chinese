@@ -4742,7 +4742,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
 I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 
 // 仓库相关==
-I18N.zh["repository-public"] = { // 仓库-公共部分
+I18N.zh["repository-public"] = { // 仓库 - 公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
              // 用户 浮动信息卡
@@ -4750,8 +4750,8 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
                 "Owns this repository": "拥有这个仓库",
                 "Left a review": "留下了一个评论",
                 "Committed to this repository": "已提交过这个仓库",
-                "Committed to this repository in the past day": "最近一个天里已提交过这个仓库",
-                "Committed to this repository in the past week": "最近一个周里已提交过这个仓库",
+                "Committed to this repository in the past day": "最近一天里已提交过这个仓库",
+                "Committed to this repository in the past week": "最近一周里已提交过这个仓库",
                 "Committed to this repository in the past month": "最近一个月里已提交过这个仓库",
                 "Member of": "隶属组织",
                 // [/, and (\d+) more/, "，以及其他 $1 个组织"],
@@ -4920,6 +4920,9 @@ I18N.zh["repository-public"] = { // 仓库-公共部分
             "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
+        [/(\d+):(\d+) - same time/, "%1:%2 - 时间相同"],
+        [/Started (\d+) discussion in this repository in the past week/, "过去一周内在此仓库中开始了 %1 个讨论"],
+        [/Started (\d+) discussion in this repository in the past month/, "过去一个月内在此仓库中开始了 %1 个讨论"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
