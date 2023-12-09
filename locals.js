@@ -4921,8 +4921,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
     },
     "regexp": [ // 正则翻译
         [/(\d+):(\d+) - same time/, "%1:%2 - 时间相同"],
-        [/Started (\d+) discussion in this repository in the past week/, "过去一周内在此仓库中开始了 %1 个讨论"],
-        [/Started (\d+) discussion in this repository in the past month/, "过去一个月内在此仓库中开始了 %1 个讨论"],
+        [/Started (\d+) discussion(s) in this repository in the past week/, "过去一周内在此仓库中开始了 %1 个讨论"],
+        [/Started (\d+) discussion(s) in this repository in the past month/, "过去一个月内在此仓库中开始了 %1 个讨论"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
