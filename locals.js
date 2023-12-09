@@ -12561,6 +12561,17 @@ I18N.zh["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
+        "Getting started with GitHub Codespaces": "GitHub 代码空间入门",
+            "Learn core concepts": "学习核心概念",
+            "Configure and manage": "配置和管理",
+            "Develop locally": "在本地开发",
+            "New to Codespaces?": "刚接触代码空间？",
+            "Start here": "从这里开始",
+            ". Learn the core concepts and how to get started.": "。学习核心概念以及如何开始。",
+            "Learn more about features like": "了解更多关于功能的信息，例如",
+            "secret management": "机密管理",
+            "port forwarding": "端口转发",
+            "Access codespaces from within": "从内部访问代码空间，使用",
         "Go to docs": "转到文档",
         "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
         "Configure and create codespace": "配置并创建代码空间",
@@ -12568,6 +12579,7 @@ I18N.zh["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>
         "Retrieving…": "正在检索…",
     },
     "regexp": [ // 正则翻译
+        [/Create codespace on ([^ ]+)/, "在 $1 上创建代码空间"]
         [/(\d+) codespace/, "%1 个代码空间"],
         [/(\d+) codespaces/, "%1 个代码空间"],
         [/Last used ([^ ]+)/, "上次使用 $1"],
