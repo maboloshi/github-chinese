@@ -423,6 +423,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Status": "状态",
         "Docs": "文档",
         "Contact": "联系我们",
+        "Manage cookies": "管理 Cookies",
+        "Do not share my personal information": "不要分享我的个人信息",
 
         "Contact GitHub": "联系 GitHub",
         "Pricing": "价格",
