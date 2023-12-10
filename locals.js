@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/(accounts|explore)|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
     rePagePathOrg: /^\/(?:orgs|organizations)\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|enterprise_plan)/,
@@ -5050,6 +5050,23 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Begin import": "开始导入",
             "Preparing import…": "准备导入…",
 
+        // 导入仓库 第一页 /<user-name>/<repo-name>/import
+            "Import all the files, including the revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
+            "Your old repository’s clone URL": "您旧仓库的克隆地址",
+            "supported VCS.": "VCS 的支持。",
+            "Your existing repository": "您已存在的仓库",
+            "Change repository": "选择仓库",
+
+        // 导入仓库 第二页 /<user-name>/<repo-name>/import
+            "Preparing your new repository": "准备您的新仓库",
+                "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
+            "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
+            "Importing commits and revision history…": "导入提交和修订历史…",
+            // [/Updating branches and (\d) commit authors?…/, "更新分支和 $1 个提交者…"],
+            "Optimizing repository and pushing commits to GitHub…": "优化仓库并将提交推送到 GitHub...",
+            "Importing complete! Your new repository": "导入完成！您的新仓库",
+            "is ready.": "已准备就绪。",
+
         // 复刻仓库 /<user-name>/<repo-name>/fork
             "Create a new fork": "创建新复刻",
             "A": " ",
@@ -5090,6 +5107,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         [/\(repository already exists\)/, "（仓库已存在）"], // 复刻页面
         [/is available./, "名称可用。"], // 复刻页面
         [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 组织中创建一个复刻。"], // 复刻页面
+        [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
         ...I18N.zh["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -5098,6 +5116,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 };
 I18N.zh["new"] = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
+I18N.zh["repository/import"] = I18N.zh["page-new-repo"];
 I18N.zh["repository/fork"] = I18N.zh["page-new-repo"];
 I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
 
@@ -5557,16 +5576,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "ProTip!": "专业提示！",
                 "Use the URL for this page when adding GitHub as a remote.": "将 GitHub 添加为远程时，请使用此页面上的 URL。",
 
-        // 导入仓库 第二页 /<user-name>/<repo-name>/import
-            "Preparing your new repository": "准备您的新仓库",
-                "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
-            "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
-            "Importing commits and revision history…": "导入提交和修订历史…",
-            // [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"],
-            "Optimizing repository and pushing commits to GitHub…": "优化仓库并将提交推送到 GitHub...",
-            "Importing complete! Your new repository": "导入完成！您的新仓库",
-            "is ready.": "已准备就绪。",
-
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
             "Go to file": "转到文件",
                 "No matches found": "未找到匹配项",
@@ -5679,7 +5688,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
-        [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 个提交者…"], // 仓库导入第二页
     ],
 };
 
