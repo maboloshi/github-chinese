@@ -7404,6 +7404,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Showing": "显示",
             "with": "包含",
             "always": "总是",
+            "Whitespace": "显示空白字符差异",
+            "Ignore whitespace": "忽略空白字符差异",
             "Unified": "同屏",
             "Split": "分屏",
 
@@ -7463,6 +7465,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Subscribe": "订阅",
             "Unsubscribe": "取消订阅",
             "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
+            "You’re receiving notifications because you authored the thread.": "您收到通知是因为您编写了提交。",
             "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
             "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您关注了该仓库。",
 
@@ -7473,7 +7476,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
 
             // 验证标记浮动信息
             "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
-            "This commit was signed with the committer's": "此提交已签署，使用提交者的",
+            "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
@@ -13404,6 +13407,13 @@ I18N.zh["notifications"] = { // 通知页面
             "Security alerts": "安全警报",
             //"Cancel": "取消",
             "Apply": "应用",
+
+        "ProTip!": "专业提示！",
+            "Triage notifications on the go with GitHub Mobile for": "使用 GitHub Mobile 随时随地查看分类通知",
+            "When viewing a notification, press": "在查看一条通知时，按下",
+            "to mark it as Done.": "将其标记为 “已完成”。",
+            "to mark it as Unread.": "将其标记为 “未读”。",
+            "Create custom filters to quickly access your most important notifications.": "创建自定义筛选器以快速访问最重要的通知。",
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected/, "$1 条被选中"],
