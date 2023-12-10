@@ -424,7 +424,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Docs": "文档",
         "Contact": "联系我们",
         "Manage cookies": "管理 Cookies",
-        "Do not share my personal information": "不要分享我的个人信息",
+        "Do not share my personal information": "请勿分享我的个人信息",
 
         "Contact GitHub": "联系 GitHub",
         "Pricing": "价格",
@@ -6026,6 +6026,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // "into": "到",
             "deleted the": "删除了",
             "locked and limited conversation to collaborators": "锁定并限制与协作者对话",
+            "converted this issue into discussion": "此议题已转化为讨论",
             "removed their assignment": "取消了他们的任务",
             "assigned": "分配给了",
             "and unassigned": "和取消了分配给",
@@ -7005,6 +7006,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
+            "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
+                "There are no new changes to show.": "没有任何新的变化。",
+
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "您正在查看该合并提交的浓缩版本。您可以查看",
             "full changes here": "完整的更改",
@@ -7025,6 +7029,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "No wrap": "不换行",
                 "Soft wrap": "软换行",
 
+            "Commit merge": "提交合并",
             "Sign off and commit merge": "签署并提交合并",
                 "Heads up, this will commit to": "请注意，这将提交到",
                 // [/I understand, sign off and update/, "我明白了，依然签署并更新"],
@@ -7032,6 +7037,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "signing off": "签署",
                 // [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
                 "Committing merge…": "正在提交合并...",
+
+                "conflict": "冲突",
+                "conflicts": "冲突",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -7144,7 +7153,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
             "learn more about diff comparisons": "了解更多关于差异比较的信息",
-            "base fork:": "基复刻：",
+            // "base fork:": "基复刻：",
 
             "There isn’t anything to compare.": "没有任何东西可比较。",
                 "We couldn’t figure out how to compare these references, do they point to valid commits?": "我们不知道如何比较这些引用，它们是否指向有效的提交？",
@@ -7955,6 +7964,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
             "Change category": "更改类别",
             "Converted from issue": "由议题转化而来",
+                // [/This discussion was converted from issue/, "本讨论由以下议题转换而来"],
 
             "Notifications": "通知类型",
                 "Subscribe": "订阅",
@@ -7990,6 +8000,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "You can always lock this discussion again in the future.": "您今后仍可以随时再次锁定此讨论。",
             "Transfer this discussion": "转移讨论",
                 // 转移议题 对话框
+                "Results are limited to top repositories, search to find more.": "结果仅限于置顶仓库，请搜索以查找更多信息。",
                 "Move this discussion to another repository you own.": "将此讨论移至您拥有的另一个仓库。",
                 "Search repositories": "搜索仓库",
                 "There aren't any eligible repositories that match your query.": "没有任何符合条件的仓库与您的查询匹配。",
@@ -8102,6 +8113,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Delete section (.*)/, "删除栏目 “$1”"],
         [/Delete (.*) section/, "删除 “$1” 栏目"],
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
+        [/This discussion was converted from issue/, "本讨论由以下议题转换而来"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -8859,6 +8871,8 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
             "Default": "默认",
 
             // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"],
+            "Your": "您的",
+            "branch isn't protected": "分支不受保护",
             "Protect this branch from force pushing or deletion, or require status checks before merging.": "保护此分支不被强制推送或删除，或在合并之前要求状态检查。",
             "Dismiss": "驳回",
             "Protect this branch": "保护该分支",
@@ -8899,6 +8913,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                 "Rename branch": "重命名分支",
                 "Saving…": "保存中…",
 
+                "Deleted": "已删除",
                 // 删除分支后
                 "Restore": "还原",
                 "Deleted just now by": "刚刚被删除",
@@ -8906,6 +8921,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                 // 删除对话框 仅当该分支存在拉取请求
                 "The branch": "分支",
                 // [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："], // 分支页面
+                "is associated with an open pull request:": "与 1 个拉取请求相关联：", // 分支页面
                 "If you delete this branch, the pull request will be closed.": "如果您删除此分支，则拉取请求将被关闭。",
                 "Are you sure you want to delete this branch?": "您确定要删除此分支吗？",
 
@@ -8941,9 +8957,12 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                 "Pull request": "拉取请求",
 
                 "Copy branch name to clipboard": "将分支名称复制到剪贴板",
+                "This branch is protected by branch protections": "该分支受分支保护的保护",
 
                 "Activity": "活动",
                 "View rules": "查看规则",
+
+                "View more branches": "查看更多分支",
 
                 // 底部提醒
                     "You can't delete this protected branch.": "您无法删除此受保护分支。",
@@ -8955,7 +8974,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
         [/Rename default branch/, "重命名默认分支"],
         [/Rename branch/, "重命名分支"],
         [/Delete/, "删除分支"],
-        [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："],
+        // [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："],
         [/Branch ([^ ]+) will be renamed to ([^ ]+) shortly./,"分支 $1 将很快重命名为 $2。"], //分支重命名成功
         [/(\d+) commits? ahead, (\d+) commits? behind ([^ ]+)/, "领先 $1 个提交，落后 $2 个提交于 $3"],
         [/(\d+) commits? behind ([^ ]+)/, "落后 $1 个提交于 $2"],
@@ -9005,6 +9024,7 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
             "Showing most recent first": "显示最近的",
 
             "Compare changes": "比较变更",
+            "Restore Branch": "恢复分支",
 
             "Previous": "上一页",
             "Next": "下一页",
@@ -10495,8 +10515,10 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "Changing your default branch": "更改您的默认分支",
                 "can have unintended consequences that can affect new pull requests and clones.": "可能会产生意想不到的后果，影响新的拉取请求和克隆。",
                 "I understand, update the default branch.": "我明白了，依然更新默认分支",
+                // 顶部提醒
+                    // [/Default branch changed to ([^ ])/, "默认分支更改为 $1"]
 
-            "Social Preview": "社交预览",
+            "Social preview": "社交预览",
             // 关于私有库提醒
             "You can upload a social image, but it will not be visible publicly while": "您可以上传社交图片，但当",
             "is private.": "是私密时，它不会公开显示。",
@@ -10561,15 +10583,16 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "You must select at least one option": "您必须至少选择一个选项",
                 "Allow merge commits": "允许合并提交",
                     "Add all commits from the head branch to the base branch with a merge commit.": "使用合并提交将所有从头部分支的提交添加到基础分支。",
+                        "Default commit message": "默认提交信息",
+                            "Presented when merging a pull request with merge.": "当合并拉取请求时时出现。",
                         "Default message": "默认信息",
-                            "Default commit message presented when merging a pull request with merge.": "当合并拉取请求时显示的默认提交信息。",
-                        "Default to pull request title": "默认为拉取请求标题",
-                        "Default to pull request title and description": "默认为拉取请求标题和描述",
+                        "Pull request title": "拉取请求标题",
+                        "Pull request title and description": "拉取请求标题和描述",
 
                 "Allow squash merging": "允许压缩合并",
                     "Combine all commits from the head branch into a single commit in the base branch.": "将来自头部分支的所有提交合并到基础分支中的单个提交中。",
-                        // "Default message": "默认信息",
-                            "Default commit message presented when merging a pull request with squash.": "当用压缩合并拉取请求时显示的默认提交信息。",
+                        // ""Default commit message": "默认提交信息",
+                            "Presented when merging a pull request with squash.": "当使用压缩合并拉取请求时显示。",
                         "Default to pull request title and commit details": "默认为拉取请求标题和提交详细信息",
 
                     "Default to PR title for squash merge commits": "默认将拉取请求的标题作为压缩合并提交的信息",
@@ -10744,6 +10767,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
         [/Choose another branch to use as the default branch of ([^ ]+) instead of/,"选择另一分支作为 $1 的默认分支而不是"], // 分支切换 对话框
         [/(\d+) branch protection rules?/, "$1 项分支保护规则"], // 禁用/重启启用分支保护
         [/Delete/, "删除"],
+        [/Default branch changed to ([^ ])/, "默认分支更改为 $1"],
     ],
 };
 
@@ -10941,7 +10965,7 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Currently applies to (\d+) branch(|es)/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
+        [/Currently applies to (\d+) branch(?:es|)/, "目前适用于 $1 个分支"], // 仓库设置-->分支-->分支保护规则
     ],
 };
 
@@ -11079,7 +11103,7 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Applies to (\d+) branch(|es)/, "应用于 $1 个分支"], //仓库设置-->分支-->分支保护规则-->编辑
+        [/Applies to (\d+) branch(?:es|)/, "应用于 $1 个分支"], //仓库设置-->分支-->分支保护规则-->编辑
     ],
 };
 
@@ -15109,7 +15133,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
         // 成员管理 https://github.com/orgs/<orgs-name>/people/<user-name>
 
-        // 成员权限详情 /orgs/<user-name>/people/<user-name>/repositories/<user-name>/<repo-name>
+        // 成员权限详情 /orgs/<orgs-name>/people/<user-name>/repositories/<orgs-name>/<repo-name>
 
         // 外部协作者 https://github.com/orgs/<orgs-name>/outside-collaborators
             "Find a collaborator…": "寻找协作者…",
