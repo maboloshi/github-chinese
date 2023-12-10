@@ -4746,8 +4746,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
              // 用户 浮动信息卡
+                "- same time": "- 时间相同",
                 "Recently edited these files": "最近编辑过这些文件",
-                "Owns this repository": "拥有这个仓库",
+                "Owns this repository": "拥有该仓库",
                 "Left a review": "留下了一个评论",
                 "Committed to this repository": "已提交过这个仓库",
                 "Committed to this repository in the past day": "最近一天里已提交过这个仓库",
@@ -4758,6 +4759,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Opened this issue": "打开了该议题",
                 "Opened this pull request": "打开了该拉取请求",
                 "Opened this pull request (their first ever)": "打开了该拉取请求（他们有史以来的第一个请求）",
+                "Started this discussion": "开启了该讨论",
 
             // 组织  浮动信息卡
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
@@ -4920,9 +4922,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Go to default branch": "跳转到默认分支",
     },
     "regexp": [ // 正则翻译
-        [/(\d+):(\d+) - same time/, "%1:%2 - 时间相同"],
-        [/Started (\d+) discussion(s) in this repository in the past week/, "过去一周内在此仓库中开始了 %1 个讨论"],
-        [/Started (\d+) discussion(s) in this repository in the past month/, "过去一个月内在此仓库中开始了 %1 个讨论"],
+        [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
+        [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
