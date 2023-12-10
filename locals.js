@@ -12907,7 +12907,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                     // [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
                 "Verified emails give you access to more features on GitHub.": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能。",
             "Password Alternatives": "密码替代方案",
-                // 通行密钥
+                "Passkeys": "通行密钥",
+                // [/(\d+) keys?/, "$1 个通行密钥"],
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
                     "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
             "Two-factor methods": "双重身份验证方式",
@@ -12918,7 +12919,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Authenticator app": "身份验证器应用",
                     "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
                 "SMS/Text message": "短信/文字信息",
-                    // [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
+                    // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
                 "Security keys": "安全密钥",
                     "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                 "GitHub Mobile": "GitHub Mobile",
@@ -13126,8 +13127,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
+        [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
-        [/You will receive authentication code to this phone number:/, "您将收到此手机号码的验证码："]
+        [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
