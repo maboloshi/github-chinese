@@ -17447,6 +17447,18 @@ I18N.zh["codespaces"] = { // 代码空间页面
         // https://github.com/codespaces/new?hide_repo_select=true&ref=<branch-name>&repo=<repo-id>
             "Create codespace for": "创建代码空间",
 
+        // 在拉取请求上创建代码空间 https://github.com/codespaces/new/<user-name>/<repo-name>/pull/<pull-id>?resume=1
+            "Get started with development in the cloud from an existing repository or a template.": "从现有仓库或模板开始云开发。",
+            "Find out more about codespaces.": "了解更多关于代码空间的信息。",
+
+            // 警示
+                "You cannot create a codespace on a closed pull request. Please reopen it if you wish to create a new codespace.": "您无法在已关闭的拉取请求上创建代码空间。如果您想创建新的代码空间，请重新打开它。",
+
+            "No codespace to resume": "没有可恢复的代码空间",
+                "You don't have a codespace matching these settings. You can continue to create a new one or customize your settings.": "您没有符合这些设置的代码空间。您可以继续创建一个新空间或自定义设置。",
+
+            "Change options": "更改选项",
+            "new codespace": "新代码空间",
     },
     "regexp": [
         [/By ([^ ]+)/, "$1 发布"],
