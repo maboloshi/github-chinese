@@ -4920,6 +4920,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Return to the repository overview": "返回仓库概述",
             "Cannot find a valid ref in": "未找到有效的引用",
             "Go to default branch": "跳转到默认分支",
+
+        // 邀请继任者提醒
+            "Ensure the future of your work!": "确保您工作的未来！",
+            "Consider inviting another GitHub user to be your successor.": "考虑邀请另一位 GitHub 用户作为您的继任者。",
+            "Inviting a successor helps ensure the continuity of your work in case you are unable to access your account.": "邀请继任者有助于在您无法访问账户时确保工作的连续性。",
+            "Invite a successor": "邀请继任者",
+
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
