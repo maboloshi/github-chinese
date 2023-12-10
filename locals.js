@@ -7476,7 +7476,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
 
             // 验证标记浮动信息
             "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签署，使用 GitHub 的",
-            "This commit was signed with the committer's": "此提交已签署，使用提交者的",
+            "This commit was signed with the committer’s": "此提交已签署，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
