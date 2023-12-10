@@ -7404,6 +7404,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Showing": "显示",
             "with": "包含",
             "always": "总是",
+            "Whitespace": "空格",
+            "Ignore whitespace": "忽略空格",
             "Unified": "同屏",
             "Split": "分屏",
 
@@ -7463,6 +7465,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Subscribe": "订阅",
             "Unsubscribe": "取消订阅",
             "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
+            "You’re receiving notifications because you authored the thread.": "您收到通知是因为您编写了提交。",
             "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
             "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您关注了该仓库。",
 
