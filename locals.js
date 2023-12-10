@@ -7404,8 +7404,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Showing": "显示",
             "with": "包含",
             "always": "总是",
-            "Whitespace": "空格",
-            "Ignore whitespace": "忽略空格",
+            "Whitespace": "显示空白字符差异",
+            "Ignore whitespace": "忽略空白字符差异",
             "Unified": "同屏",
             "Split": "分屏",
 
