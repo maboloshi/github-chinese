@@ -13407,6 +13407,13 @@ I18N.zh["notifications"] = { // 通知页面
             "Security alerts": "安全警报",
             //"Cancel": "取消",
             "Apply": "应用",
+
+        "ProTip!": "专业提示！",
+            "Triage notifications on the go with GitHub Mobile for": "使用 GitHub Mobile 随时随地查看分类通知",
+            "When viewing a notification, press": "在查看一条通知时，按下",
+            "to mark it as Done.": "将其标记为 “已完成”。",
+            "to mark it as Unread.": "将其标记为 “未读”。",
+            "Create custom filters to quickly access your most important notifications.": "创建自定义筛选器以快速访问最重要的通知。",
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected/, "$1 条被选中"],
