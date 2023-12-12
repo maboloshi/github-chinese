@@ -2132,7 +2132,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                 "Profile updated successfully —": "资料更新成功 —",
                 "view your profile.": "查看您的个人资料。",
 
-            "Contributions & Activity": "贡献与活动",
+            "Contributions & activity": "贡献与活动",
                 "Make profile private and hide activity": "将个人资料设置为私密，并隐藏活动",
                     "Enabling this will hide your contributions and activity from your GitHub profile and from social features like followers, stars, feeds, leaderboards and releases.": "启用此功能后，您的贡献和活动将会从您的 GitHub 个人资料中隐藏起来，也不会被关注者、观星者、动态提要、排行榜和发布等社交功能所发现。",
                 "Include private contributions on my profile": "在我的个人资料显示私人贡献",
@@ -3636,6 +3636,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Configure alert notifications": "配置警报通知",
                     "Automatically enable for new repositories": "为新仓库自动启用",
 
+            "Grouped security updates": "分组安全更新",
+                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
                 // 对话框
                     "Disable Dependabot alerts": "禁用 Dependabot 警报",
                     "You're about to disable Dependabot alerts on all your repositories. This will also disable Dependabot security updates on those repositories.": "您即将禁用您所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。",
