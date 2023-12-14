@@ -2704,7 +2704,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
                 "Code workflow": "代码工作流",
                     "GitHub Codespaces": "Github 代码空间",
-                        "Spin up fully configured dev environments in the cloud with the power of your favorite editor. A \"core hou\" denotes compute usage. On a 2-core machine, you would get 60 hours free. On a 4-core machine, you would get 30 hours free, etc. Free hours are assigned to personal accounts, rather than free organizations.": "利用您喜爱的编辑器的强大功能，在云中快速配置完整的开发环境。一个“核心小时”表示计算使用量。在一个2核机器上，您将获得60小时免费。在一个4核机器上，您将获得30小时免费，以此类推。免费小时分配给个人账户，而不是免费组织。",
+                        "Spin up fully configured dev environments in the cloud with the power of your favorite editor. A \"core hour\" denotes compute usage. On a 2-core machine, you would get 60 hours free. On a 4-core machine, you would get 30 hours free, etc. Free hours are assigned to personal accounts, rather than free organizations.": "利用您喜爱的编辑器的强大功能，在云中快速配置完整的开发环境。一个“核心小时”表示计算使用量。在一个2核机器上，您将获得60小时免费。在一个4核机器上，您将获得30小时免费，以此类推。免费小时分配给个人账户，而不是免费组织。",
                     "Github Actions": "Github 操作",
                         "Use execution minutes with GitHub Actions to automate your software development workflows. Write tasks and combine them to build, test, and deploy any code project on GitHub. Minutes are free for public repositories.": "利用GitHub Actions的执行分钟来自动化您的软件开发工作流程。编写任务并组合它们以构建、测试和部署GitHub上的任何代码项目。对于公共仓库是免费的。",
                     "GitHub Packages": "Github 软件包",
