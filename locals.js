@@ -417,6 +417,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "today": "今天",
         "this week": "本周",
         "Filter emoji": "过滤表情符号",
+        "Search results": "搜索结果",
 
         // 底部条
         "Terms": "服务条款",
@@ -1354,6 +1355,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Joined": "加入于",
             "Achievements": "成就",
             "Highlights": "高光时刻",
+            "Developer Program Member": "开发者计划成员",
             "Organizations": "组织",
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
@@ -3072,9 +3074,10 @@ I18N.zh["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
         // SSH and GPG keys SSH 与 GPG 公钥 https://github.com/settings/keys
             "SSH keys": "SSH 密钥",
             "New SSH key": "新建 SSH 密钥",
-            "Authentication Keys": "认证密钥",
+            "Authentication keys": "认证密钥",
             "There are no SSH keys associated with your account.": "没有与您的帐户关联的 SSH 密钥。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "这是与您的帐户相关的 SSH 密钥的列表。删除任何您无法识别的密钥。",
+            "Last used within the last week": "上周内最后一次使用",
             "Check out our guide to": "请看我们的指南",
             "generating SSH keys": "生成 SSH 密钥",
             "or troubleshoot": "或解决",
@@ -7486,7 +7489,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
-            "GPG Key ID:": "GPG 密钥 ID：",
+            "GPG key ID:": "GPG 密钥 ID：",
             "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
 
@@ -12317,6 +12320,12 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 // 启用对话框
                     "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                         "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也会将它们打开。",
+                        "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，所以我们也会打开它。",
+
+            "Grouped security updates": "分组安全更新",
+                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                // 对话框
+                    "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，所以我们也会打开它。",
 
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
