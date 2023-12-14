@@ -2698,7 +2698,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             // 具体内容
                 "Code management": "代码管理",
                     "Public repositories": "公共仓库",
-                        "Host open source projects in public GitHub repositories, accessible via web or command line. Public repositories are accessible to anyone at GitHub.com.": "在 GitHub 公共仓库中托管开源项目，可通过网络或命令行访问。任何人都可以访问 GitHub.com 上的公共仓库。"，
+                        "Host open source projects in public GitHub repositories, accessible via web or command line. Public repositories are accessible to anyone at GitHub.com.": "在 GitHub 公共仓库中托管开源项目，可通过网络或命令行访问。任何人都可以访问 GitHub.com 上的公共仓库。",
                     "Private repositories": "私有仓库",
                         "Host code in private GitHub repositories, accessible via appliance, web, and command line. Private repositories are only accessible to you and people you share them with.": "在私有 GitHub 仓库中托管代码，可通过设备、网络和命令行访问。只有您和与您共享的人才能访问私有仓库。",
 
@@ -2779,7 +2779,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                         "Privately discuss, fix, and publish information about security vulnerabilities found in your repository.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
                     "Role-based access control": "基于角色的访问控制",
                         "Define users' level of access to your code, data and settings.": "定义用户访问代码、数据和设置的级别。",
-                    "Required 2FA": "要求开启 2FA",
+                    "Required 2FA": "双重身份验证（2FA）",
                         "Use an extra layer of security with two factor authentication (2FA) when logging into GitHub.": "登录 GitHub 时，使用双重身份验证（2FA）作为额外的安全层。",
                     // 审计日志
                         "Quickly review the actions performed by members of your organization.": "快速审查组织成员执行的操作。",
