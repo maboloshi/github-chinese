@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Sync update locals(greasyfork).js
         run: |
@@ -29,7 +31,7 @@ jobs:
           git diff --quiet --exit-code "main(greasyfork).user.js" || \
           echo "MAIN_USER_JS_IS_CHANGED=true" >> $GITHUB_ENV
 
-      - name: Commit and push locals(greasyfork).js
+      - name: Commit and push locals(greasyfork).js and main(greasyfork).user.js
         if: ${{ env.LOCALS_JS_IS_CHANGED == 'true' &&
                 env.MAIN_USER_JS_IS_CHANGED == 'true' }}
         run: |

@@ -417,6 +417,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "today": "今天",
         "this week": "本周",
         "Filter emoji": "过滤表情符号",
+        "Search results": "搜索结果",
 
         // 底部条
         "Terms": "服务条款",
@@ -1360,6 +1361,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Joined": "加入于",
             "Achievements": "成就",
             "Highlights": "高光时刻",
+            "Developer Program Member": "开发者计划成员",
             "Organizations": "组织",
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
@@ -2138,7 +2140,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                 "Profile updated successfully —": "资料更新成功 —",
                 "view your profile.": "查看您的个人资料。",
 
-            "Contributions & Activity": "贡献与活动",
+            "Contributions & activity": "贡献与活动",
                 "Make profile private and hide activity": "将个人资料设置为私密，并隐藏活动",
                     "Enabling this will hide your contributions and activity from your GitHub profile and from social features like followers, stars, feeds, leaderboards and releases.": "启用此功能后，您的贡献和活动将会从您的 GitHub 个人资料中隐藏起来，也不会被关注者、观星者、动态提要、排行榜和发布等社交功能所发现。",
                 "Include private contributions on my profile": "在我的个人资料显示私人贡献",
@@ -3196,9 +3198,10 @@ I18N.zh["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
         // SSH and GPG keys SSH 与 GPG 公钥 https://github.com/settings/keys
             "SSH keys": "SSH 密钥",
             "New SSH key": "新建 SSH 密钥",
-            "Authentication Keys": "认证密钥",
+            "Authentication keys": "认证密钥",
             "There are no SSH keys associated with your account.": "没有与您的帐户关联的 SSH 密钥。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "这是与您的帐户相关的 SSH 密钥的列表。删除任何您无法识别的密钥。",
+            "Last used within the last week": "上周内最后一次使用",
             "Check out our guide to": "请看我们的指南",
             "generating SSH keys": "生成 SSH 密钥",
             "or troubleshoot": "或解决",
@@ -3759,24 +3762,28 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     "Receive alerts for vulnerabilities that affect your dependencies and manually generate Dependabot pull requests to resolve these vulnerabilities.": "接收影响您的依赖关系的漏洞警报，并手动生成 Dependabot 拉取请求以解决这些漏洞。",
                         "Configure alert notifications": "配置警报通知",
                     "Automatically enable for new repositories": "为新仓库自动启用",
+                    // 对话框
+                        "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                        "You're about to disable Dependabot alerts on all your repositories. This will also disable Dependabot security updates on those repositories.": "您即将禁用您所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。",
+                        "Enable by default for new repositories": "默认为新仓库启用",
 
-                // 对话框
-                    "Disable Dependabot alerts": "禁用 Dependabot 警报",
-                    "You're about to disable Dependabot alerts on all your repositories. This will also disable Dependabot security updates on those repositories.": "您即将禁用您所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。",
-                    "Enable by default for new repositories": "默认为新仓库启用",
+                        "Enable Dependabot alerts": "启用 Dependabot 警报",
+                        "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
 
-                    "Enable Dependabot alerts": "启用 Dependabot 警报",
-                    "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库打开它。",
+                "Grouped security updates": "分组安全更新",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                    // 对话框
+                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
-            "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
-                    "Dependabot rules": "Dependabot 规则",
-
-                // 对话框
-                "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
-                "You're about to disable Dependabot security updates on all your repositories.": "您即将禁用您所有仓库上的 Dependabot 安全更新。",
-                "Enable Dependabot security updates": "启用 Dependabot 安全更新",
-                "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。",
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                        "Dependabot rules": "Dependabot 规则",
+                    // 对话框
+                        "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
+                        "You're about to disable Dependabot security updates on all your repositories.": "您即将禁用您所有仓库上的 Dependabot 安全更新。",
+                        "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库打开它。",
+                        "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
@@ -3784,12 +3791,12 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Learn more about partner patterns": "了解更多关于合作伙伴模式的信息",
 
                 // 对话框
-                "Disable secret scanning?": "禁用机密扫描？",
-                "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
-                "Disable secret scanning": "禁用机密扫描",
-                "Enable secret scanning for eligible repositories?": "启用符合条件的仓库的机密扫描？",
-                "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
-                "Enable for eligible repositories": "启用符合条件的仓库",
+                    "Disable secret scanning?": "禁用机密扫描？",
+                    "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
+                    "Disable secret scanning": "禁用机密扫描",
+                    "Enable secret scanning for eligible repositories?": "启用符合条件的仓库的机密扫描？",
+                    "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
+                    "Enable for eligible repositories": "启用符合条件的仓库",
 
                 "Push protection": "推送保护",
                     // "Block commits that contain": "阻止提交，包含",
@@ -7606,7 +7613,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
-            "GPG Key ID:": "GPG 密钥 ID：",
+            "GPG key ID:": "GPG 密钥 ID：",
             "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
 
@@ -12437,6 +12444,12 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 // 启用对话框
                     "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                         "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也会将它们打开。",
+                        "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+
+            "Grouped security updates": "分组安全更新",
+                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                // 对话框
+                    "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
             "Dependabot version updates": "Dependabot 版本更新",
                 "Enable Dependabot version updates": "启用 Dependabot 版本更新",
