@@ -2482,7 +2482,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
         // 账单和计划 https://github.com/settings/billing/summary
-            "Billing Summary": "账单摘要",
+            "Billing summary": "账单摘要",
             "Your next payment": "您的下一次应付款",
             "This amount does not include the spend on usage of metered service. View your": "该金额不包括使用计量服务的支出。在下面查看您的",
             "usage this month": "本月使用情况",
@@ -2527,7 +2527,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
 
-            "Start your first organization account": "开设您的第一个组织帐户",
+            "Start your first organization": "开设您的第一个组织帐户",
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
