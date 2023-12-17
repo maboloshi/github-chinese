@@ -2551,14 +2551,18 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Get usage report": "获取使用报告",
                 "Included": "包含",
                 "Paid": "支出",
-                "Price / minute": "单价 / 分钟",
                 "Total": "总价",
                 // 操作
                     "Usage minutes": "使用分钟数",
                     "Included minutes quota only applies to Ubuntu 2-core, Windows 2-core and macOS 3-core runners. Windows 2-core and macOS 3-core runners consume included minutes at higher rates.": "包含的分钟配额仅适用于 双核 Ubuntu、双核 Windows 和三核 macOS 运行器。双核 Windows 和三核 macOS 运行器以更高的速度消耗包括的分钟数。",
+                    "Price / minute": "单价 / 分钟",
                     "Ubuntu 2-core": "双核 Ubuntu",
                     "Windows 2-core": "双核 Windows",
                     "macOS 3-core": "三核 macOS",
+                // 软件包
+                    "Data transfer out": "数据转出",
+                    "Data transfer out (rounded)": "数据转出（四舍五入）",
+                    "Price estimate / GB": "估算单价 / GB",
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
