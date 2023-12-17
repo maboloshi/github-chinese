@@ -2550,6 +2550,12 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
 
+                "Usage minutes": "使用分钟数",
+                "Included": "包含",
+                "Paid": "支出",
+                "Price / minute": "单价 / 分钟",
+                "Total": "总价",
+
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
