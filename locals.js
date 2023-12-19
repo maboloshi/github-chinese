@@ -2563,6 +2563,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "Data transfer out": "数据转出",
                     "Data transfer out (rounded)": "数据转出（四舍五入）",
                     "Price estimate / GB": "估算单价 / GB",
+                // 软件包与操作的存储空间
+                    "Storage for Actions and Packages": "软件包与操作的存储空间",
+                    "Shared storage consists of Actions artifacts and Packages usage. This graph shows the account's storage usage in GB-months. Removing stored artifacts will not reduce this number, but it will lower its rate of growth. To see your account's current storage, download a usage report.": "共享存储由操作产生的文件和软件包使用组成。此图以每月 GB 数为单位显示帐户的存储使用情况。删除存储的文件不会减少这个数字，但会降低其增长率。若要查看您帐户的当前存储空间，请下载使用情况报告。",
+                    "Storage": "存储空间",
+                    "Shared Storage": "共享存储空间",
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
