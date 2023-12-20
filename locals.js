@@ -4986,6 +4986,19 @@ I18N.zh["settings/personal-access-tokens"] = I18N.zh["settings/tokens"];
 I18N.zh["repository-public"] = { // 仓库 - 公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
+            // 被 GitHub 官方禁用
+            "This repository has been disabled.": "此仓库已被禁用。",
+            "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
+
+            // 仓库违反 DMCA
+            "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
+            "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
+            "publicly posted": "公开发布",
+            "If you are the repository owner, and you believe that your repository was disabled as a result of mistake or misidentification, you have the right to file a counter notice and have the repository reinstated. Our help articles provide more details on our": "如果您是仓库所有者，并且您认为您的仓库由于错误或误认而被禁用，您有权提交反通知并恢复仓库。我们的帮助文章提供了关于我们的更多详细信息",
+            "DMCA takedown policy": "DMCA 删除政策",
+            "how to file a counter notice": "如何提交反通知",
+            ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
+
              // 用户 浮动信息卡
                 "- same time": "- 时间相同",
                 "Recently edited these files": "最近编辑过这些文件",
@@ -5364,19 +5377,6 @@ I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
             ...I18N.zh["repository-public"]["static"],
-
-            // 被 GitHub 官方禁用
-            "This repository has been disabled.": "此仓库已被禁用。",
-            "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
-
-            // 仓库违反 DMCA
-            "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
-            "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
-            "publicly posted": "公开发布",
-            "If you are the repository owner, and you believe that your repository was disabled as a result of mistake or misidentification, you have the right to file a counter notice and have the repository reinstated. Our help articles provide more details on our": "如果您是仓库所有者，并且您认为您的仓库由于错误或误认而被禁用，您有权提交反通知并恢复仓库。我们的帮助文章提供了关于我们的更多详细信息",
-            "DMCA takedown policy": "DMCA 删除政策",
-            "how to file a counter notice": "如何提交反通知",
-            ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
