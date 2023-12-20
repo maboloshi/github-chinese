@@ -2568,6 +2568,15 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "Shared storage consists of Actions artifacts and Packages usage. This graph shows the account's storage usage in GB-months. Removing stored artifacts will not reduce this number, but it will lower its rate of growth. To see your account's current storage, download a usage report.": "共享存储由操作产生的文件和软件包使用组成。此图以每月 GB 数为单位显示帐户的存储使用情况。删除存储的文件不会减少这个数字，但会降低其增长率。若要查看您帐户的当前存储空间，请下载使用情况报告。",
                     "Storage": "存储空间",
                     "Shared Storage": "共享存储空间",
+                // 代码空间
+                    "Usage hours": "使用小时数",
+                    "Core hours are calculated by multiplying the compute types by their per-hour rates, which can vary": "核心小时数是通过将计算类型乘以其每小时费率来计算的，该费率可能会有所不同",
+                    "Price / hour": "单价 / 小时",
+                    "2-core": "双核",
+                    "4-core": "四核",
+                    "8-core": "八核",
+                    "16-core": "十六核",
+                    "32-core": "三十二核",
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
@@ -2864,6 +2873,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
+        [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
+        [/Data transfer quota resets (\d+) 天之内./, "数据传输配额配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人帐户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
