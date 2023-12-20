@@ -2577,6 +2577,12 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "8-core": "八核",
                     "16-core": "十六核",
                     "32-core": "三十二核",
+                    "Storage usage is updated daily and billed monthly": "存储使用情况每天更新，每月计费",
+                    "Price / GB": "单价 / GB",
+                    "Prebuild Storage": "预构建存储",
+                // Git LFS 数据
+                    "Git LFS Data": "Git LFS 数据",
+                    "Bandwidth": "带宽",
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
@@ -2875,6 +2881,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
     "regexp": [ // 正则翻译
         [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
         [/Data transfer quota resets (\d+) 天之内./, "数据传输配额配额将在 $1 天之内重置"],
+        [/Included quota resets (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人帐户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
