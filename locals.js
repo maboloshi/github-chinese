@@ -2482,7 +2482,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
         // 账单和计划 https://github.com/settings/billing/summary
-            "Billing Summary": "账单摘要",
+            "Billing summary": "账单摘要",
             "Your next payment": "您的下一次应付款",
             "This amount does not include the spend on usage of metered service. View your": "该金额不包括使用计量服务的支出。在下面查看您的",
             "usage this month": "本月使用情况",
@@ -2527,7 +2527,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
 
-            "Start your first organization account": "开设您的第一个组织帐户",
+            "Start your first organization": "开设您的第一个组织帐户",
             "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "借助 CI/CD、Dependabot 和世界上最大的开发者社区，GitHub为您的团队提供了他们所需的一切，以更快地发布更好的软件。",
             "Create an organization": "创建组织",
 
@@ -2549,7 +2549,41 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
-
+                "Included": "包含",
+                "Paid": "支出",
+                "Total": "总价",
+                // 操作
+                    "Usage minutes": "使用分钟数",
+                    "Included minutes quota only applies to Ubuntu 2-core, Windows 2-core and macOS 3-core runners. Windows 2-core and macOS 3-core runners consume included minutes at higher rates.": "包含的分钟配额仅适用于 双核 Ubuntu、双核 Windows 和三核 macOS 运行器。双核 Windows 和三核 macOS 运行器以更高的速度消耗包括的分钟数。",
+                    "Price / minute": "单价 / 分钟",
+                    "Ubuntu 2-core": "双核 Ubuntu",
+                    "Windows 2-core": "双核 Windows",
+                    "macOS 3-core": "三核 macOS",
+                // 软件包
+                    "Data transfer out": "数据转出",
+                    "Data transfer out (rounded)": "数据转出（四舍五入）",
+                    "Price estimate / GB": "估算单价 / GB",
+                // 软件包与操作的存储空间
+                    "Storage for Actions and Packages": "软件包与操作的存储空间",
+                    "Shared storage consists of Actions artifacts and Packages usage. This graph shows the account's storage usage in GB-months. Removing stored artifacts will not reduce this number, but it will lower its rate of growth. To see your account's current storage, download a usage report.": "共享存储由操作产生的文件和软件包使用组成。此图以每月 GB 数为单位显示帐户的存储使用情况。删除存储的文件不会减少这个数字，但会降低其增长率。若要查看您帐户的当前存储空间，请下载使用情况报告。",
+                    "Storage": "存储空间",
+                    "Shared Storage": "共享存储空间",
+                // 代码空间
+                    "Usage hours": "使用小时数",
+                    "Core hours are calculated by multiplying the compute types by their per-hour rates, which can vary": "核心小时数是通过将计算类型乘以其每小时费率来计算的，该费率可能会有所不同",
+                    "Price / hour": "单价 / 小时",
+                    "2-core": "双核",
+                    "4-core": "四核",
+                    "8-core": "八核",
+                    "16-core": "十六核",
+                    "32-core": "三十二核",
+                    "Storage usage is updated daily and billed monthly": "存储使用情况每天更新，每月计费",
+                    "Price / GB": "单价 / GB",
+                    "Prebuild Storage": "预构建存储",
+                // Git LFS 数据
+                    "Git LFS Data": "Git LFS 数据",
+                    "Add more data": "添加更多数据",
+                    "Bandwidth": "带宽",
                 "See billing documentation": "查看计费政策",
                 "monthly spending limit": "每月支出限额",
                 "monthly spending limit |": "每月支出限额 |",  // 组织设置
@@ -2846,6 +2880,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
+        [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
+        [/Data transfer quota resets (\d+) 天之内./, "数据传输配额将在 $1 天之内重置"],
+        [/Included quotas resets (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
+        [/Bandwidth quota resets resets (\d+) 天之内./, "带宽使用配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人帐户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
