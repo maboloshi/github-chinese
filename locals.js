@@ -303,6 +303,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Filter repositories": "筛选仓库",
         "Show more": "显示更多",
 
+        //顶部提示横幅
+        "Don't get locked out of your account.": "不要被锁定在您的帐户之外。",
+        "Download your recovery codes": "下载您的恢复码",
+        "Add a passkey": "添加通行密钥",
+        "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+
         // 右上角通知按钮提示
         "You have no unread notifications": "您没有未读通知",
         "You have unread notifications": "您有未读通知",
@@ -777,8 +783,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
         // 状态词
         "Verified": "已验证",
+        "This commit was created on GitHub.com and signed with GitHub’s verified signature": "这个提交是在GitHub.com上创建的，并使用了GitHub的验证签名",
+            "Learn about vigilant mode": "了解警戒模式",
         "Partially verified": "部分验证",
         "Unverified": "未验证",
+            "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
+            "to verify your signature.": "以验证您的签名。",
 
         // 邮箱验证提示
         "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮箱地址以便开启所有 GitHub 功能。",
@@ -11659,6 +11669,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                 "Use your password": "使用您的密码",
 
                 "GitHub Mobile": "GitHub Mobile",
+                "When your phone is ready, click the button below.": "当您的手机准备就绪时，请单击下面的按钮。",
                 "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
                 "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
                 "We could not verify your identity": "我们无法核实您的身份",
