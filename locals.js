@@ -303,6 +303,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Filter repositories": "筛选仓库",
         "Show more": "显示更多",
 
+        //顶部提示横幅
+        "Don't get locked out of your account.": "不要被锁定在您的帐户之外。",
+        "Download your recovery codes": "下载您的恢复码",
+        "Add a passkey": "添加通行密钥",
+        "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+
         // 右上角通知按钮提示
         "You have no unread notifications": "您没有未读通知",
         "You have unread notifications": "您有未读通知",
@@ -777,8 +783,12 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
         // 状态词
         "Verified": "已验证",
+        "This commit was created on GitHub.com and signed with GitHub’s verified signature": "这个提交是在GitHub.com上创建的，并使用了GitHub的验证签名",
+            "Learn about vigilant mode": "了解警戒模式",
         "Partially verified": "部分验证",
         "Unverified": "未验证",
+            "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
+            "to verify your signature.": "以验证您的签名。",
 
         // 邮箱验证提示
         "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮箱地址以便开启所有 GitHub 功能。",
@@ -7000,6 +7010,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
+            "Merge the latest changes from": "将",
+            "into this branch.": "的最新更改合并到此分支中。",
+                "Update branch": "更新分支",
+                    "Update with merge commit": "使用合并提交更新",
+                        "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
+                    "Update with rebase": "使用变基更新",
+                        "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
+                    
 
             "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
@@ -11697,6 +11715,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                 "Use your password": "使用您的密码",
 
                 "GitHub Mobile": "GitHub Mobile",
+                "When your phone is ready, click the button below.": "当您的手机准备就绪时，请单击下面的按钮。",
                 "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
                 "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
                 "We could not verify your identity": "我们无法核实您的身份",
@@ -14598,6 +14617,9 @@ I18N.zh["explore"] = { // 探索页面
                 "Based on repositories you’ve viewed": "基于您查看过的仓库",
                 "Based on your public repository contributions": "基于您对公共仓库的贡献",
                 "App recommended by GitHub": "GitHub 推荐的应用",
+                "Staff pick": "员工精选",
+                "This recommendation was created by GitHub staff": "此推荐由 GitHub 工作人员创建",
+                "Upcoming event recommended by GitHub": "GitHub 推荐的即将举行的活动",
 
             "Star topics that interest you": "为您感兴趣的主题加注星标",
             "and we'll show you the latest from the octoverse.": "我们将向您展示来自八维空间的最新信息。",
