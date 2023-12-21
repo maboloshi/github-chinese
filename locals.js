@@ -6972,6 +6972,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
+            "Merge the latest changes from": "将",
+            "into this branch.": "的最新更改合并到此分支中。",
+                "Update branch": "更新分支",
+                    "Update with merge commit": "使用合并提交更新",
+                        "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
+                    "Update with rebase": "使用变基更新",
+                        "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
+                    
 
             "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
