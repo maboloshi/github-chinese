@@ -14560,6 +14560,9 @@ I18N.zh["explore"] = { // 探索页面
                 "Based on repositories you’ve viewed": "基于您查看过的仓库",
                 "Based on your public repository contributions": "基于您对公共仓库的贡献",
                 "App recommended by GitHub": "GitHub 推荐的应用",
+                "Staff pick": "员工精选",
+                "This recommendation was created by GitHub staff": "此推荐由 GitHub 工作人员创建",
+                "Upcoming event recommended by GitHub": "GitHub 推荐的即将举行的活动",
 
             "Star topics that interest you": "为您感兴趣的主题加注星标",
             "and we'll show you the latest from the octoverse.": "我们将向您展示来自八维空间的最新信息。",
