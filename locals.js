@@ -14851,7 +14851,13 @@ I18N.zh["sponsors"] = { // 赞助界面
                     "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
 
-        // 探索赞助界面 https://github.com/sponsors/explore
+        // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
+            "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已推出 103 个地区的测试版！",
+                "If you have a bank account in": "如果你有银行账户在",
+                "a country or region where GitHub Sponsors is generally available": "可普遍使用 GitHub 赞助者的国家或地区",
+                ", you will get an email from us when your application has been reviewed.": "，您将在您的申请通过审核后收到我们的电子邮件。",
+
+        // 探索 GitHub 赞助者界面 https://github.com/sponsors/explore
             "Explore": "探索",
             "Topics": "主题",
             "Trending": "热门",
