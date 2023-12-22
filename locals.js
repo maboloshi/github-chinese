@@ -14875,6 +14875,14 @@ I18N.zh["sponsors"] = { // 赞助界面
                     "or may be in": "或者可能在",
                     "beta": "Beta 版内",
                     "Use another bank account where GitHub Sponsors is available or complete signup to receive a notification if your region becomes available.": "使用另一个 GitHub 赞助者可用的银行账户，或者在您所在的地区可用时完成注册以收到通知。",
+                "Use a fiscal host": "使用财务网站",
+                    "You can use a fiscal host to join GitHub Sponsors instead of using your own bank account.": "您可以使用财务网站代替自己的银行账户来加入 GitHub 赞助者。",
+                    "Choose a fiscal host:": "选择一个财务网站：",
+                    "Select a fiscal host": "选择一个财务网站",
+                    "Fiscal host project profile URL:": "财务网站项目档案 URL：",
+                    "Please include a link to your profile on your fiscal host's site, if available.": "如果可用，请提供您在的财务网站上的个人资料链接。",
+                    "e.g.,": "例如，",
+            "Join waitlist": "加入等候名单",
 
         // 探索 GitHub 赞助者界面 https://github.com/sponsors/explore
             "Explore": "探索",
