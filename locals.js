@@ -14856,6 +14856,12 @@ I18N.zh["sponsors"] = { // 赞助界面
                 "If you have a bank account in": "如果你有银行账户在",
                 "a country or region where GitHub Sponsors is generally available": "可普遍使用 GitHub 赞助者的国家或地区",
                 ", you will get an email from us when your application has been reviewed.": "，您将在您的申请通过审核后收到我们的电子邮件。",
+                "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果你没有符合条件的银行账户，别担心！我们正在努力让更多的国家尽快加入测试版。加入候补名单，成为第一个知道的人。",
+            "Contact email": "联系电子邮箱",
+                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly. You can manage verified email addresses in your": "请选择一个经过验证的电子邮件地址，以便我们就您的 GitHub 赞助者档案与您联系。这将不会公开分享。您可以管理已验证的电子邮件地址在您的",
+                "email settings": "电子邮箱设置",
+            "Country or region of residence": "居住的国家或地区",
+                "Select a country or region": "选择一个国家或地区",
 
         // 探索 GitHub 赞助者界面 https://github.com/sponsors/explore
             "Explore": "探索",
