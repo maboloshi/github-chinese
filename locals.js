@@ -17626,6 +17626,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                             "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
                         "Update codespace": "更新代码空间",
                 "Stop codespace": "停止代码空间",
+                "Delete": "删除",
+                    "Are you sure?": "你确定吗？",
                 "Auto-delete codespace": "自动删除代码空间",
                 "Open in Browser": "在浏览器中打开",
                 "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
@@ -17667,6 +17669,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
+            "Dev container configuration": "开发容器配置",
+                "Your codespace will use this configuration": "您的代码空间将使用此配置",
             "Create codespace": "新建代码空间",
             "Creating codespace": "新建代码空间中",
 
@@ -17689,7 +17693,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
     "regexp": [
         [/By ([^ ]+)/, "$1 发布"],
         [/Owned by ([^ ]+)/, "拥有者为 $1"],
-        [/Last used ([^ ]+)/, "上次使用 $1"],
+        [/Last used (\d+) days ago/, "上次使用 $1 天前"],
         [/Codespace "([^ ]+)" stopped./, "代码空间 “$1” 停止。"],
         [/Your codespace "([^ ]+)" will no longer be auto-deleted./, "您的代码空间 “$1” 将不再自动删除。"],
     ],
