@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/(accounts|explore)|github-copilot\/signup|codespaces|developer\/register)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -14837,7 +14837,7 @@ I18N.zh["events"] = { // 活动页面
     ],
 };
 
-I18N.zh["sponsors/accounts"] = { // 赞助者账户
+I18N.zh["sponsors"] = { // 赞助界面
     "static": {
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
@@ -14851,41 +14851,35 @@ I18N.zh["sponsors/accounts"] = { // 赞助者账户
                     "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
 
+        // 探索赞助界面 https://github.com/sponsors/explore
+            "Explore": "探索",
+            "Topics": "主题",
+            "Trending": "热门",
+            "Collections": "集合",
+            "Events": "活动",
+            "GitHub Sponsors": "GitHub 赞助者",
+            "Get email updates": "获取电子邮件更新",
+            "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+            "Explore GitHub Sponsors": "探索 GitHub 赞助者",
+            "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
+            "Ecosystem": "生态系统",
+                "All ecosystems": "所有生态系统",
+            "Filters": "过滤器",
+                "Direct dependencies only": "仅直接依赖项",
+            "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
+            "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
+            "Explore people and projects": "探索人员和项目",
+            "Bulk Sponsor": "批量赞助",
+                "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
+                "Get started": "开始",
+            "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
+            "searching for people you can sponsor": "寻找可以接受您赞助的人",
+            "and filtering by language!": "并通过语言筛选！",
+            "Clear filter": "清除筛选器",
+            "Sponser": "赞助",
+            "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！",
     },
     "regexp": [ // 正则匹配
-    ],
-};
-
-I18N.zh["sponsors/explore"] = { // 赞助页面
-    "static": { // 静态翻译
-        "Explore": "探索",
-        "Topics": "主题",
-        "Trending": "热门",
-        "Collections": "集合",
-        "Events": "活动",
-        "GitHub Sponsors": "GitHub 赞助者",
-        "Get email updates": "获取电子邮件更新",
-        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
-        "Explore GitHub Sponsors": "探索 GitHub 赞助者",
-        "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
-        "Ecosystem": "生态系统",
-            "All ecosystems": "所有生态系统",
-        "Filters": "过滤器",
-            "Direct dependencies only": "仅直接依赖项",
-        "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
-        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
-        "Explore people and projects": "探索人员和项目",
-        "Bulk Sponsor": "批量赞助",
-            "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
-            "Get started": "开始",
-        "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
-        "searching for people you can sponsor": "寻找可以接受您赞助的人",
-        "and filtering by language!": "并通过语言筛选！",
-        "Clear filter": "清除筛选器",
-        "Sponser": "赞助",
-        "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！"
-    },
-    "regexp": [ // 正则翻译
     ],
 };
 
