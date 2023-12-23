@@ -14843,6 +14843,8 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Invest in the software that powers your world": "赞助为您的项目提供帮助的软件",
             "See your top dependencies": "查看您的主要依赖项",
             "Get sponsored": "获得赞助",
+            "New": "新",
+            "GitHub Sponsors available in 35 new regions": "GitHub 赞助者可用于 35 个新地区",
 
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
