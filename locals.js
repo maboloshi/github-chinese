@@ -14843,8 +14843,10 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Invest in the software that powers your world": "赞助为您的项目提供帮助的软件",
             "See your top dependencies": "查看您的主要依赖项",
             "Get sponsored": "获得赞助",
-            "New": "新",
-            "GitHub Sponsors available in 35 new regions": "GitHub 赞助者可用于 35 个新地区",
+            "A new way to contribute": "一种贡献到开源的",
+            "to open source": "新方式",
+            "Invest in your": "赞助您的",
+            "supply chain": "供应链",
 
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
@@ -14916,7 +14918,7 @@ I18N.zh["sponsors"] = { // 赞助界面
             "searching for people you can sponsor": "寻找可以接受您赞助的人",
             "and filtering by language!": "并通过语言筛选！",
             "Clear filter": "清除筛选器",
-            "Sponser": "赞助",
+            "Sponsor": "赞助",
             "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！",
     },
     "regexp": [ // 正则匹配
