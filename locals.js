@@ -14845,8 +14845,13 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Get sponsored": "获得赞助",
             "A new way to contribute": "一种贡献到开源的",
             "to open source": "新方式",
-            "Invest in your": "赞助您的",
-            "supply chain": "供应链",
+            "Invest in your supply chain": "赞助您的供应链",
+            "You depend on open source every day": "您每天都依赖于开源",
+            "Make open source careers possible": "使开源生涯成为可能",
+            "Thanks to our partners": "感谢我们的合作伙伴",
+            "Available in 103 regions": "可用于 103 个地区",
+            "Frequently asked questions": "常见问题",
+            "Invest in the projects you depend on": "赞助您所依赖于的项目",
 
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
