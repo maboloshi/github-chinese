@@ -14839,6 +14839,11 @@ I18N.zh["events"] = { // 活动页面
 
 I18N.zh["sponsors"] = { // 赞助界面
     "static": {
+        // 赞助者首页 https://github.com/sponsors
+            "Invest in the software that powers your world": "赞助为您的项目提供帮助的软件",
+            "See your top dependencies": "查看您的主要依赖项",
+            "Get sponsored": "获得赞助",
+
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
                 "GitHub Sponsors accounts": "GitHub 赞助者账户",
