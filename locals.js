@@ -8415,6 +8415,15 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
+        // 复刻仓库操作页面提示
+            "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
+            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
+            "I understand my workflows, go ahead and enable them": "我已理解我的工作流程，可以放心启用它们。",
+            "View the workflows directory": "查看工作流程目录",
+
+        //无工作流程
+            "There are no workflow runs yet.": "无工作流程运行。",
+            
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "开始使用 GitHub Actions",
             "Choose a workflow": "选择工作流程",
