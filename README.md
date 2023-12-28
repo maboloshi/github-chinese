@@ -8,6 +8,14 @@
   [![license GPL-3.0][license-image]][license-url]
   [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
+<a href="https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset=https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=neutral" />
+    <img alt="Featured｜HelloGitHub" src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=neutral" style="width: 250px; height: 54px;" width="250" height="54" />
+  </picture>
+</a>
+
 ## 💖 星标历史
 
 <a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
