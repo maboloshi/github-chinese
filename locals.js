@@ -15115,10 +15115,11 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             "requirements": "要求",
             "Categories": "类别",
+            "App Type": "应用程序类型",
             "Supported languages": "支持的语言",
             "and": "和",
             "Customers": "客户",
-            "Verified domains": "经验证的域名",
+            "Verified Domains": "经验证的域名",
             "Developer links": "开发者链接",
             "Support": "支持",
             "Documentation": "文档",
@@ -15185,7 +15186,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Developer": "开发者",
             "Website": "网站",
             "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
-            "Report abuse": "举报滥用",
+            "Report Abuse": "举报滥用",
 
         // /marketplace/actions/merge-upstream
             "Latest version": "最新发行版",
