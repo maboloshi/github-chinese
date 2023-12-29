@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors\/(accounts|explore)|github-copilot\/signup|codespaces|developer\/register)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -14837,8 +14837,22 @@ I18N.zh["events"] = { // 活动页面
     ],
 };
 
-I18N.zh["sponsors/accounts"] = { // 赞助者账户
+I18N.zh["sponsors"] = { // 赞助界面
     "static": {
+        // 赞助者首页 https://github.com/sponsors
+            "Invest in the software that powers your world": "赞助为您的项目提供帮助的软件",
+            "See your top dependencies": "查看您的主要依赖项",
+            "Get sponsored": "获得赞助",
+            "A new way to contribute": "一种贡献到开源的",
+            "to open source": "新方式",
+            "Invest in your supply chain": "赞助您的供应链",
+            "You depend on open source every day": "您每天都依赖于开源",
+            "Make open source careers possible": "使开源生涯成为可能",
+            "Thanks to our partners": "感谢我们的合作伙伴",
+            "Available in 103 regions": "可用于 103 个地区",
+            "Frequently asked questions": "常见问题",
+            "Invest in the projects you depend on": "赞助您所依赖于的项目",
+
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
                 "GitHub Sponsors accounts": "GitHub 赞助者账户",
@@ -14851,41 +14865,68 @@ I18N.zh["sponsors/accounts"] = { // 赞助者账户
                     "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
 
+        // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
+            "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已推出 103 个地区的测试版！",
+                "If you have a bank account in": "如果你有银行账户在",
+                "a country or region where GitHub Sponsors is generally available": "可普遍使用 GitHub 赞助者的国家或地区",
+                ", you will get an email from us when your application has been reviewed.": "，您将在您的申请通过审核后收到我们的电子邮件。",
+                "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果你没有符合条件的银行账户，别担心！我们正在努力让更多的国家尽快加入测试版。加入候补名单，成为第一个知道的人。",
+            "Contact email": "联系电子邮箱",
+                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly.": "请选择一个经过验证的电子邮件地址，以便我们就您的 GitHub 赞助者档案与您联系。这将不会公开分享。",
+                "You can manage verified email addresses in your": "您可以管理已验证的电子邮件地址在您的",
+                "email settings": "电子邮箱设置",
+            "Country or region of residence": "居住的国家或地区",
+                "Select a country or region": "选择一个国家或地区",
+                "The country or region where you reside. This is required for tax purposes.": "您居住的国家或地区。这是出于税务目的所必需的。",
+            "How you receive payments": "您如何收到付款",
+                "Use a bank account": "使用银行账户",
+                    "You can use your bank account to join GitHub Sponsors.": "您可以使用您的银行帐户加入 GitHub 赞助者。",
+                    "Note that you are responsible for all applicable taxes on payouts you receive. If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "请注意，您要对收到的支出承担所有适用的税款。如果您使用个人银行账户，您所在的国家可能会将您的 GitHub 赞助者支出作为个人收入征税。",
+                    "Learn more about setting up a Stripe account": "了解有关设置 Stripe 帐户的更多信息",
+                    "Country or region where your bank account is located:": "您的银行账户所在的国家或地区：",
+                    "Your region is": "您所在的地区",
+                    "not supported": "不受支持",
+                    "or may be in": "或者可能在",
+                    "beta": "Beta 版内",
+                    "Use another bank account where GitHub Sponsors is available or complete signup to receive a notification if your region becomes available.": "使用另一个 GitHub 赞助者可用的银行账户，或者在您所在的地区可用时完成注册以收到通知。",
+                "Use a fiscal host": "使用财务网站",
+                    "You can use a fiscal host to join GitHub Sponsors instead of using your own bank account.": "您可以使用财务网站代替自己的银行账户来加入 GitHub 赞助者。",
+                    "Choose a fiscal host:": "选择一个财务网站：",
+                    "Select a fiscal host": "选择一个财务网站",
+                    "Fiscal host project profile URL:": "财务网站项目档案 URL：",
+                    "Please include a link to your profile on your fiscal host's site, if available.": "如果可用，请提供您在的财务网站上的个人资料链接。",
+                    "e.g.,": "例如，",
+            "Join waitlist": "加入等候名单",
+
+        // 探索 GitHub 赞助者界面 https://github.com/sponsors/explore
+            "Explore": "探索",
+            "Topics": "主题",
+            "Trending": "热门",
+            "Collections": "集合",
+            "Events": "活动",
+            "GitHub Sponsors": "GitHub 赞助者",
+            "Get email updates": "获取电子邮件更新",
+            "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+            "Explore GitHub Sponsors": "探索 GitHub 赞助者",
+            "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
+            "Ecosystem": "生态系统",
+                "All ecosystems": "所有生态系统",
+            "Filters": "过滤器",
+                "Direct dependencies only": "仅直接依赖项",
+            "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
+            "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
+            "Explore people and projects": "探索人员和项目",
+            "Bulk Sponsor": "批量赞助",
+                "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
+                "Get started": "开始",
+            "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
+            "searching for people you can sponsor": "寻找可以接受您赞助的人",
+            "and filtering by language!": "并通过语言筛选！",
+            "Clear filter": "清除筛选器",
+            "Sponsor": "赞助",
+            "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！",
     },
     "regexp": [ // 正则匹配
-    ],
-};
-
-I18N.zh["sponsors/explore"] = { // 赞助页面
-    "static": { // 静态翻译
-        "Explore": "探索",
-        "Topics": "主题",
-        "Trending": "热门",
-        "Collections": "集合",
-        "Events": "活动",
-        "GitHub Sponsors": "GitHub 赞助者",
-        "Get email updates": "获取电子邮件更新",
-        "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
-        "Explore GitHub Sponsors": "探索 GitHub 赞助者",
-        "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
-        "Ecosystem": "生态系统",
-            "All ecosystems": "所有生态系统",
-        "Filters": "过滤器",
-            "Direct dependencies only": "仅直接依赖项",
-        "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
-        "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
-        "Explore people and projects": "探索人员和项目",
-        "Bulk Sponsor": "批量赞助",
-            "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
-            "Get started": "开始",
-        "Don't see what you're looking for? Try": "没有看到您在找的东西？尝试",
-        "searching for people you can sponsor": "寻找可以接受您赞助的人",
-        "and filtering by language!": "并通过语言筛选！",
-        "Clear filter": "清除筛选器",
-        "Sponser": "赞助",
-        "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！"
-    },
-    "regexp": [ // 正则翻译
     ],
 };
 
@@ -17626,6 +17667,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                             "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
                         "Update codespace": "更新代码空间",
                 "Stop codespace": "停止代码空间",
+                "Delete": "删除",
+                    "Are you sure?": "你确定吗？",
                 "Auto-delete codespace": "自动删除代码空间",
                 "Open in Browser": "在浏览器中打开",
                 "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
@@ -17667,6 +17710,8 @@ I18N.zh["codespaces"] = { // 代码空间页面
                 "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
                 "4-core": "四核",
                 "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
+            "Dev container configuration": "开发容器配置",
+                "Your codespace will use this configuration": "您的代码空间将使用此配置",
             "Create codespace": "新建代码空间",
             "Creating codespace": "新建代码空间中",
 
@@ -17689,7 +17734,10 @@ I18N.zh["codespaces"] = { // 代码空间页面
     "regexp": [
         [/By ([^ ]+)/, "$1 发布"],
         [/Owned by ([^ ]+)/, "拥有者为 $1"],
-        [/Last used ([^ ]+)/, "上次使用 $1"],
+        [/Last used (\d+) days ago/, "上次使用 $1 天前"],
+        [/Last used 大约 (\d+) 小时之前/, "上次使用大约 $1 小时以前"],
+        [/Last used less than (\d+) 分钟之前/, "上次使用小于 $1 分钟以前"],
+        [/Last used (\d+) 分钟之前/, "上次使用 $1 分钟以前"],
         [/Codespace "([^ ]+)" stopped./, "代码空间 “$1” 停止。"],
         [/Your codespace "([^ ]+)" will no longer be auto-deleted./, "您的代码空间 “$1” 将不再自动删除。"],
     ],
