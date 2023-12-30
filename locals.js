@@ -1449,11 +1449,15 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                     "this repository was included": "该仓库已收录",
 
                 // ?tab=achievements
-                "Hide from profile": "从个人资料中隐藏",
-                "Hidden from your profile.": "已从您的个人资料中隐藏",
-                "Show on profile": "在个人资料中显示",
-                "Copy share link": "复制共享链接",
-                "Preview on Twitter": "在 Twitter 上预览",
+                    "Hide from profile": "从个人资料中隐藏",
+                    "Hidden from your profile.": "已从您的个人资料中隐藏",
+                    "Show on profile": "在个人资料中显示",
+                    "Copy share link": "复制共享链接",
+                    "Preview on Twitter": "在 Twitter 上预览",
+
+                    // 顶部提醒
+                        // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
+                        // [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
 
             // 拉黑 & 举报用户对话框
             // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
@@ -1480,10 +1484,10 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
         [/answered discussions./, "回答了讨论。"], // Galaxy Brain
-        [/is sponsoring (\d+) organizations? or users?./, "赞助了 0 个组织或用户。"], // Public Sponsor
+        [/is sponsoring (\d+) organizations? or users?./, "赞助了 $1 个组织或用户。"], // Public Sponsor
         [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
-        [/The (.+) achievement will now be hidden from your profile./, "现在， “$1” 成就将从您的个人资料中隐藏。"],
-        [/The (.+) achievement will now be shown in your profile./, "现在，您的个人资料中将显示 “$1” 成就。"],
+        [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
+        [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
