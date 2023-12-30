@@ -1404,6 +1404,19 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Arctic Code Vault Contributor": "北极代码库贡献者",
             "contributed code to several repositories in the": "为多个仓库贡献了代码，在",
             ", and more!": "，更多！",
+            "Bronze unlocked": "解锁铜",
+            "Bronze and Silver unlocked": "解锁铜银",
+            "100% unlocked": "100% 解锁",
+            "· Unlocked": "· 解锁于",
+            "· First unlocked": "· 首次解锁于",
+            // YOLO
+                "You want it? You merge it.": "你想要它？你合并它。",
+                "Merged without a review": "未经审查就合并",
+            // Pull Shark
+                "2nd pull request merged": "第 2 个拉取请求被合并",
+                "16th pull request merged": "第 16 个拉取请求被合并",
+                "128th pull request merged": "第 128 个拉取请求被合并",
+                "1024th pull request merged": "第 1024 个拉取请求被合并",
 
             // 拉黑 & 举报用户对话框
             // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
@@ -1963,8 +1976,8 @@ I18N.zh["page-profile/achievements"] = { // 个人首页 - 成就选项卡
         "Bronze unlocked": "解锁铜",
         "Bronze and Silver unlocked": "解锁铜银",
         "100% unlocked": "100% 解锁",
-        "· Unlocked": "解锁于",
-        "· First unlocked": "首次解锁于",
+        "· Unlocked": "· 解锁于",
+        "· First unlocked": "· 首次解锁于",
         // YOLO
             "You want it? You merge it.": "你想要它？你合并它。",
             "Merged without a review": "未经审查就合并",
