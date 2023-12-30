@@ -1417,6 +1417,13 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                 "16th pull request merged": "第 16 个拉取请求被合并",
                 "128th pull request merged": "第 128 个拉取请求被合并",
                 "1024th pull request merged": "第 1024 个拉取请求被合并",
+            // Starstruck
+                "⭐️ 16 stars": "⭐️ 16 个星标",
+                "⭐️ 128 stars": "⭐️ 128 个星标",
+                "⭐️ 512 stars": "⭐️ 512 个星标",
+                "⭐️ 4096 stars": "⭐️ 4096 个星标",
+            // Pair Extraordinaire
+                "Coauthored with": "合作提交与",
 
             // 拉黑 & 举报用户对话框
             // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
@@ -1438,6 +1445,9 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
         [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
         [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
+        [/@([^ ]+) opened pull requests that have been merged./, "@$1 打开了被合并的拉取请求。"], // Pull Shark
+        [/@([^ ]+) created a repository that has many stars./, "@$1 创建了一个拥有很多星标的仓库。"], // Starstruck
+        [/@([^ ]+) coauthored commits on merged pull requests./, "@$1 在已合并的拉取请求中合作提交。"], // Pair Extraordinaire
     ],
 };
 I18N.zh["page-profile/followers"] = I18N.zh["page-profile-public"]; // ?tab=followers
@@ -1991,10 +2001,13 @@ I18N.zh["page-profile/achievements"] = { // 个人首页 - 成就选项卡
             "⭐️ 128 stars": "⭐️ 128 个星标",
             "⭐️ 512 stars": "⭐️ 512 个星标",
             "⭐️ 4096 stars": "⭐️ 4096 个星标",
+        // Pair Extraordinaire
+            "Coauthored with": "合作提交与",
     },
     "regexp": [ // 正则翻译
         [/@([^ ]+) opened pull requests that have been merged./, "@$1 打开了被合并的拉取请求。"], // Pull Shark
-        [/@([^ ]+) created a repository that has many stars./, "@$1 创建了一个拥有很多星标的仓库。"], // Pull Shark
+        [/@([^ ]+) created a repository that has many stars./, "@$1 创建了一个拥有很多星标的仓库。"], // Starstruck
+        [/@([^ ]+) coauthored commits on merged pull requests./, "@$1 在已合并的拉取请求中合作提交。"], // Pair Extraordinaire
     ],
 };
 
