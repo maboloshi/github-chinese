@@ -1955,11 +1955,29 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
 I18N.zh["page-profile/achievements"] = { // 个人首页 - 成就选项卡
     "static": { // 静态翻译
         ...I18N.zh["page-profile-public"],
+        "History": "历史",
+        "Hide from profile": "在个人资料中隐藏",
+        "Hide on profile": "在个人资料中显示",
+        "Copy share link": "复制共享链接",
+        "Preview on Twitter": "在 Twitter 上预览",
+        "Bronze unlocked": "解锁铜",
+        "Bronze and Silver unlocked": "解锁铜银",
+        "100% unlocked": "100% 解锁",
+
         // YOLO
             "You want it? You merge it.": "你想要它？你合并它。",
-            "· Merged without a review": "· 未经审查就合并",
+            "Merged without a review": "未经审查就合并",
+        // Pull Shark
+            "2nd pull request merged": "第 2 个拉取请求被合并",
+            "16th pull request merged": "第 16 个拉取请求被合并",
+            "128th pull request merged": "第 128 个拉取请求被合并",
+
     },
     "regexp": [ // 正则翻译
+        [/Unlocked (\d+)年(\d+)月(\d+)日/, "解锁于 $1年$2月$3日"],
+        [/First unlocked (\d+)年(\d+)月(\d+)日/, "首次解锁于 $1年$2月$3日"],
+        [/Unlocked (\d+)月(\d+)日/, "解锁于 $1月$2日"],
+        [/First unlocked (\d+)月(\d+)日/, "首次解锁于 $1月$2日"],
     ],
 };
 
