@@ -1427,7 +1427,6 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
     ],
 };
-I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
 I18N.zh["page-profile/followers"] = I18N.zh["page-profile-public"]; // ?tab=followers
 I18N.zh["page-profile/following"] = I18N.zh["page-profile-public"]; // ?tab=following
 
@@ -1950,6 +1949,17 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
         [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/Language: /, "语言："],
+    ],
+};
+
+I18N.zh["page-profile/achievements"] = { // 个人首页 - 成就选项卡
+    "static": { // 静态翻译
+        ...I18N.zh["page-profile-public"],
+        // YOLO
+            "You want it? You merge it.": "你想要它？你合并它。",
+            "· Merged without a review": "· 未经审查就合并",
+    },
+    "regexp": [ // 正则翻译
     ],
 };
 
