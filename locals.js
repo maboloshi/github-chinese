@@ -1986,8 +1986,15 @@ I18N.zh["page-profile/achievements"] = { // 个人首页 - 成就选项卡
             "16th pull request merged": "第 16 个拉取请求被合并",
             "128th pull request merged": "第 128 个拉取请求被合并",
             "1024th pull request merged": "第 1024 个拉取请求被合并",
+        // Starstruck
+            "⭐️ 16 stars": "⭐️ 16 个星标",
+            "⭐️ 128 stars": "⭐️ 128 个星标",
+            "⭐️ 512 stars": "⭐️ 512 个星标",
+            "⭐️ 4096 stars": "⭐️ 4096 个星标",
     },
     "regexp": [ // 正则翻译
+        [/@([^ ]+) opened pull requests that have been merged./, "@$1 打开了被合并的拉取请求。"], // Pull Shark
+        [/@([^ ]+) created a repository that has many stars./, "@$1 创建了一个拥有很多星标的仓库。"], // Pull Shark
     ],
 };
 
