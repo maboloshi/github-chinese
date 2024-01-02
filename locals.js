@@ -5551,6 +5551,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
+                        "Launching Github Desktop": "Github Desktop 启动中",
+                            "If nothing happens,": "如果没有响应",
+                            "download Github Desktop": "下载 Github Desktop",
+                            "and try again.": "并重试",
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
 
@@ -7455,6 +7459,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "The change you just made was written to a new branch named": "您刚刚所做的更改已写入新分支",
             ". Create a pull request below to propose these changes.": ". 请在下方创建拉取请求，提出这些更改。",
             "Create a new pull request by comparing changes across two branches. If you need to, you can also": "通过比较两个分支的更改来创建一个新的拉请求。如果需要，还可以",
+            
+            // 提示框（第一次提交拉取请求时）
+            "It looks like this is your first time opening a pull request in this project!": "看起来这是你在这个项目中首次发起的拉取请求呢！",
+            "Be sure to review the": "请务必查阅",
+            "contributing guidelines": "贡献指南",
 
             "Checking mergeability…": "检查可合并性…",
             "Don’t worry, you can still create the pull request.": "别担心，您仍然可以创建拉取请求。",
