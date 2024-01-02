@@ -7461,7 +7461,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Create a new pull request by comparing changes across two branches. If you need to, you can also": "通过比较两个分支的更改来创建一个新的拉请求。如果需要，还可以",
             
             // 提示框（第一次提交拉取请求时）
-            "It looks like this is your first time opening a pull request in this project!": "看起来这是你在这个项目中首次发起的拉取请求呢！",
+            "It looks like this is your first time opening a pull request in this project!": "看起来这是您在这个项目中首次发起的拉取请求呢！",
             "Be sure to review the": "请务必查阅",
             "contributing guidelines": "贡献指南",
 
