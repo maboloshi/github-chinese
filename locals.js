@@ -6862,6 +6862,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                         "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
+                    "Allowing edits by maintainers": "允许维护者进行编辑",
+                    "If checked, users with write access to": "若勾选此项，拥有对",
+                    "can add new commits to": "具有写入权限的用户可以在您的",
+                    "branch.": "分支上添加新的提交。",
+                    "You can always change this setting later.": "您可以随时修改此设置。",
+                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑你仓库的工作流程以揭示秘密值，并获取对其他分支的访问权限。",
+                    "Got it": "知道了",
                     "If checked,": "如果选中，",
                     // [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
                     "to your": "到您的",
