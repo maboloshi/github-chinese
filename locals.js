@@ -5614,6 +5614,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
+                        "Launching Github Desktop": "Github Desktop 启动中",
+                            "If nothing happens,": "如果没有响应",
+                            "download Github Desktop": "下载 Github Desktop",
+                            "and try again.": "并重试",
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
 
@@ -6921,6 +6925,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                         "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
+                    "Allowing edits by maintainers": "允许维护者进行编辑",
+                    "If checked, users with write access to": "若勾选此项，拥有对",
+                    "can add new commits to": "具有写入权限的用户可以在您的",
+                    "branch.": "分支上添加新的提交。",
+                    "You can always change this setting later.": "您可以随时修改此设置。",
+                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑你仓库的工作流程以揭示秘密值，并获取对其他分支的访问权限。",
+                    "Got it": "知道了",
                     "If checked,": "如果选中，",
                     // [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
                     "to your": "到您的",
@@ -7518,6 +7529,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "The change you just made was written to a new branch named": "您刚刚所做的更改已写入新分支",
             ". Create a pull request below to propose these changes.": ". 请在下方创建拉取请求，提出这些更改。",
             "Create a new pull request by comparing changes across two branches. If you need to, you can also": "通过比较两个分支的更改来创建一个新的拉请求。如果需要，还可以",
+            
+            // 提示框（第一次提交拉取请求时）
+            "It looks like this is your first time opening a pull request in this project!": "看起来这是您在这个项目中首次发起的拉取请求呢！",
+            "Be sure to review the": "请务必查阅",
+            "contributing guidelines": "贡献指南",
 
             "Checking mergeability…": "检查可合并性…",
             "Don’t worry, you can still create the pull request.": "别担心，您仍然可以创建拉取请求。",
@@ -15179,10 +15195,11 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             "requirements": "要求",
             "Categories": "类别",
+            "App Type": "应用程序类型",
             "Supported languages": "支持的语言",
             "and": "和",
             "Customers": "客户",
-            "Verified domains": "经验证的域名",
+            "Verified Domains": "经验证的域名",
             "Developer links": "开发者链接",
             "Support": "支持",
             "Documentation": "文档",
@@ -15249,7 +15266,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Developer": "开发者",
             "Website": "网站",
             "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
-            "Report abuse": "举报滥用",
+            "Report Abuse": "举报滥用",
 
         // /marketplace/actions/merge-upstream
             "Latest version": "最新发行版",
