@@ -1401,9 +1401,63 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Link to social profile": "链接到社交账户",
 
             // 成就浮动界面
-            "Arctic Code Vault Contributor": "北极代码库贡献者",
-            "contributed code to several repositories in the": "为多个仓库贡献了代码，在",
-            ", and more!": "，更多！",
+                // 北极代码库贡献者
+                    "Arctic Code Vault Contributor": "北极代码库贡献者",
+                        "History": "历史",
+                        "100% unlocked": "100% 解锁",
+                        "· Unlocked": "· 解锁于",
+                        "these repositories, and more, were archived": "这些仓库以及更多仓库已存档",
+                // YOLO
+                    "You want it? You merge it.": "您想要它？您合并它。",
+                    "Merged without a review": "未经审查就合并",
+                // Pull Shark
+                    "Pull Shark": "鲨鱼拉",
+                    "Bronze unlocked": "青铜已解锁",
+                    "Bronze and Silver unlocked": "青铜和白银已解锁",
+                    "· First unlocked": "· 首次解锁于",
+                    "2nd pull request merged": "2 个拉取请求被合并",
+                    "16th pull request merged": "16 个拉取请求被合并",
+                    "128th pull request merged": "128 个拉取请求被合并",
+                    "1024th pull request merged": "1024 个拉取请求被合并",
+                // Starstruck
+                    "Starstruck": "追星族",
+                    "⭐️ 16 stars": "⭐️ 16 个星标",
+                    "⭐️ 128 stars": "⭐️ 128 个星标",
+                    "⭐️ 512 stars": "⭐️ 512 个星标",
+                    "⭐️ 4096 stars": "⭐️ 4096 个星标",
+                // Pair Extraordinaire
+                    "Pair Extraordinaire": "非凡搭档",
+                    "Unlocked": "解锁于",
+                    "Coauthored with": "与下列用户共同合作",
+                    "Coauthored with an unknown user": "与未知用户共同合作",
+                // Quickdraw
+                    "Quickdraw": "快速关闭",
+                    "Gitty up!": "赶快开始！",
+                    "Closed within 5 minutes of opening": "在打开的 5 分钟内关闭",
+                // Galaxy Brain
+                    "Galaxy Brain": "银河大脑",
+                    "2nd accepted answer": "2 个答案被接受",
+                    "8th accepted answer": "8 个答案被接受",
+                    "16th accepted answer": "16 个答案被接受",
+                    "32nd accepted answer": "32 个答案被接受",
+                // Public Sponsor
+                    "Public Sponsor": "公共赞助者",
+                    "1st sponsorship": "1 次赞助",
+                // Mars 2020 Contributor
+                    "Mars 2020 Contributor": "火星 2020 贡献者",
+                    "Mars 2020 Helicopter Mission": "2020 火星无人直升机首飞计划",
+                    "this repository was included": "该仓库已收录",
+
+                // ?tab=achievements
+                    "Hide from profile": "从个人资料中隐藏",
+                    "Hidden from your profile.": "已从您的个人资料中隐藏",
+                    "Show on profile": "在个人资料中显示",
+                    "Copy share link": "复制共享链接",
+                    "Preview on Twitter": "在 Twitter 上预览",
+
+                    // 顶部提醒
+                        // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
+                        // [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
 
             // 拉黑 & 举报用户对话框
             // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
@@ -1424,7 +1478,16 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
     "regexp": [ // 正则翻译
         [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
         [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
+        [/contributed code to several repositories in the/, "为多个仓库贡献了代码，在"],
         [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
+        [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
+        [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
+        [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
+        [/answered discussions./, "回答了讨论。"], // Galaxy Brain
+        [/is sponsoring (\d+) organizations? or users?./, "赞助了 $1 个组织或用户。"], // Public Sponsor
+        [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
+        [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
+        [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -7019,7 +7082,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                         "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
                     "Update with rebase": "使用变基更新",
                         "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
-                    
+
 
             "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
@@ -8414,6 +8477,15 @@ I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
 I18N.zh["repository/actions"] = { // 仓库 - 操作页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
+
+        // 复刻仓库操作页面提示
+            "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
+            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
+            "I understand my workflows, go ahead and enable them": "我已理解我的工作流程，可以放心启用它们。",
+            "View the workflows directory": "查看工作流程目录",
+
+        //无工作流程
+            "There are no workflow runs yet.": "无工作流程运行。",
 
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "开始使用 GitHub Actions",
