@@ -214,10 +214,10 @@
             page = t ? 'repository/'+ t[1] : 'repository';
         } else if  (isOrganization) { // 组织页
             t = pathname.match(I18N.conf.rePagePathOrg);
-            page = t ? 'orgs/'+ t[1] : 'orgs';
+            page = t ? 'orgs/'+ (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
             t = pathname.match(I18N.conf.rePagePath);
-            page = t ? t[1] : false; // 取页面 key
+            page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
         }
 
         if (!page || !I18N[lang][page]){
