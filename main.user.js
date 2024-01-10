@@ -193,41 +193,31 @@
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
 
         // 优先匹配 body 的 class
-        let page, t;
-
-        if (site === 'gist') { // Gist 站点
+        let page, t = document.body.className.match(I18N.conf.rePageClass);
+        if (t) {
+            if (t[1] === 'page-profile') {
+                let matchResult = location.search.match(/tab=(\w+)/);
+                if (matchResult) {
+                    page = 'page-profile/' + matchResult[1];
+                } else {
+                    page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
+                }
+            } else {
+                page = t[1];
+            }
+        } else if (site === 'gist') { // Gist 站点
             page = 'gist';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if (isRepository) { // 仓库页
+        } else if  (isRepository) { // 仓库页
             t = pathname.match(I18N.conf.rePagePathRepo);
             page = t ? 'repository/'+ t[1] : 'repository';
-        } else if (isOrganization) { // 组织页
+        } else if  (isOrganization) { // 组织页
             t = pathname.match(I18N.conf.rePagePathOrg);
             page = t ? 'orgs/'+ (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
             t = pathname.match(I18N.conf.rePagePath);
-            page = t ? (t[1] || t.slice(-1)[0]) : false;
-
-            if (!page) {
-                t = document.body.className.match(I18N.conf.rePageClass);
-
-                if (t) {
-                    if (t[1] === 'page-profile') {
-                        let matchResult = location.search.match(/tab=(\w+)/);
-
-                        if (matchResult) {
-                            page = 'page-profile/' + matchResult[1];
-                        } else {
-                            page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
-                        }
-                    } else {
-                        page = t[1];
-                    }
-                } else {
-                    page = false;
-                }
-            }
+            page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
         }
 
         if (!page || !I18N[lang][page]){
