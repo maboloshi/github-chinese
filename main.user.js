@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.0-2024-01-08
+// @version      1.9.0-2024-01-15
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
