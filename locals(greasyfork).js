@@ -85,7 +85,7 @@ I18N.conf = {
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
      * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
      */
-    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text)/,
+    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -2110,11 +2110,11 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
 
             "Code, planning, and automation": "代码、规划和自动化",
             "Repository": "仓库",
-                "Repository defaults": "仓库默认值",
-                "Repository topics": "仓库主题",
-                "Repository rulesets": "仓库规则集",
-                "Repository rule insights": "仓库规则洞察",
+                "Topics": "主题",
+                "Rulesets": "规则集",
+                "Rule insights": "规则洞察",
                 "Custom properties": "自定义属性",
+            "Planning": "计划",
             "Codespaces": "代码空间",
             "Copilot": "GitHub Copilot",
                 "Access": "访问",
@@ -2617,9 +2617,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                     "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型实时在您的编辑器中提供代码和整个函数建议",
 
                      // 组织设置
-                    "Buy Copilot Business": "购买 GitHub Copilot 商业版",
+                    "Learn more about Copilot Business": "了解更多关于 GitHub Copilot 商业版的信息",
                     "Copilot Business": "GitHub Copilot 商业版",
-                    "GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor. $19/month/user.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型 实时在您的编辑器中提供代码和整个函数建议。每月 $19 / 用户。",
+                    "GitHub Copilot uses the OpenAI large language models to suggest code and entire functions in real-time, right from your editor. You can set up a GitHub Copilot Business subscription for your organization.": "GitHub Copilot 使用 OpenAI 大型语言模型，可在编辑器中实时建议代码和整个函数。您可以为您的组织设置 GitHub Copilot 商业版订阅。",
+                    "Sign up for Copilot Business": "注册 GitHub Copilot 商业版",
 
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
@@ -2668,6 +2669,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                 "Start sponsoring": "开始赞助",
                 "You're currently not sponsoring anyone.": "您目前没有赞助任何人。",
                 "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助",
+                "Switch to invoiced billing": "切换到发票账单", // 组织
 
             "GitHub Marketplace": "GitHub 市场",
                 "Change plan": "更改计划",
@@ -3705,7 +3707,7 @@ I18N.zh["settings/packages"] = { // 设置 - 软件包
             "Packages permissions": "软件包权限",
 
             // 组织设置
-                "Package Creation": "包的创建",
+                "Package creation": "包的创建",
                 "Members will be able to publish only the selected visibility types for packages and containers. Outside collaborators can never publish packages or containers.": "成员只能发布选定可见性类型的软件包和容器。外部协作者永远不能发布软件包或容器。",
                 "Public": "公共",
                     "Members will be able to create public packages, visible to anyone.": "成员将能够创建公共包，对任何人都可见。",
@@ -3714,13 +3716,12 @@ I18N.zh["settings/packages"] = { // 设置 - 软件包
                 "Internal": "内部",
                     "Members will be able to create internal packages, visible to all organization/enterprise members.": "成员将能够创建内部包，对所有组织/企业成员可见。",
 
-            "Default Package Setting": "默认软件包设置",
-            "Default Package Settings": "默认软件包设置",// 组织设置
+            "Default package settings": "默认软件包设置",
             "This setting will be applied to new Container, npm, rubygems and NuGet packages.": "此设置将应用于新的容器、npm、rubygems 和 NuGet 软件包。",
             "Inherit access from source repository": "从源仓库继承访问权限",
             "Save": "保存",
 
-            "Deleted Packages": "删除的软件包",
+            "Deleted packages": "删除的软件包",
             "These are packages that have been previously deleted belonging to you. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您的软件包。您可以恢复在过去 30 天内删除的包。",
             "These are packages that have been previously deleted belonging to this organization. You can restore a package deleted within the last 30 days.": "这些是先前已删除的属于您组织的软件包。您可以恢复在过去 30 天内删除的包。", // 组织设置
             "Search deleted packages": "搜索已删除的软件包",
@@ -5604,7 +5605,8 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         // HTTPS
                         "Use Git or checkout with SVN using the web URL.": "使用 Git 或 SVN 通过该网址检出。",
                         // SSH
-                        "You don't have any public SSH keys in your GitHub account. You can": "您的 GitHub 帐户中没有任何公共 SSH 密钥。您可以",
+                        "You don't have any public SSH keys in your GitHub account.": "您的 GitHub 帐户中没有任何公共 SSH 密钥。",
+                        "You can": "您可以",
                         "add a new public key": "添加新的公共密钥",
                         ", or try cloning this repository via HTTPS.": "，或尝试通过 HTTPS 克隆此仓库。",
 
@@ -7086,14 +7088,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
-            "Merge the latest changes from": "将",
-            "into this branch.": "的最新更改合并到此分支中。",
-                "Update branch": "更新分支",
-                    "Update with merge commit": "使用合并提交更新",
-                        "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
-                    "Update with rebase": "使用变基更新",
-                        "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
-
+                "Merge the latest changes from": "将",
+                "into this branch.": "的最新更改合并到此分支中。",
+                    "Update branch": "更新分支",
+                        "Update with merge commit": "使用合并提交更新",
+                            "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
+                        "Update with rebase": "使用变基更新",
+                            "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取请求将会在最新的更改之上进行变基，并且会使用强制推送的方式提交。",
+                            "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
 
             "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
@@ -7502,6 +7504,10 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
             "learn more about diff comparisons": "了解更多关于差异比较的信息",
             // "base fork:": "基复刻：",
+            "Documentation has changed since you last contributed": "文件已发生变化，自您上次提交文件于",
+            ". Take a look before submitting a pull request:": "。在提交拉取请求前，请先看一下：",
+            "Contributing guidelines": "贡献指南",
+            "Last updated": "最近更新于",
 
             "There isn’t anything to compare.": "没有任何东西可比较。",
                 "We couldn’t figure out how to compare these references, do they point to valid commits?": "我们不知道如何比较这些引用，它们是否指向有效的提交？",
@@ -11559,6 +11565,12 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
             // 顶部提醒
                 "Two rulesets matching current tag protects has been created. You may now delete your protected tags.": "已创建与当前标签保护相匹配的两个规则集。您现在可以删除受保护的标签。",
 
+            "Organization rulesets won't be enforced": "在您将该组织账户升级到 GitHub 企业版之前，", // 组织
+            "until you upgrade this organization account to GitHub Enterprise.": "组织规则集将不会强制执行。", // 组织
+            "You haven't created any rulesets": "您尚未创建任何规则集",
+                "Define whether collaborators can delete or force push and set requirements for any pushes, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送，并为任何推送设置要求，如通过状态检查或线性提交历史。",
+                "Learn more about rulesets.": "了解更多关于规则集的信息。",
+
             "Rulesets": "规则集",
             "New ruleset": "新建规则集",
                 "New branch ruleset": "新建分支规则集",
@@ -11574,6 +11586,10 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
             "Export ruleset": "导出规则集",
 
         // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
+            "Protect your most important branches": "保护您最重要的分支",
+                "define whether collaborators can delete or force push and set requirements for any pushes, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送，并为任何推送设置要求，如通过状态检查或线性提交历史。",
+
+
             "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
             "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
             "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
@@ -11608,6 +11624,8 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                  // 添加旁路对话框
                     "Choose which roles, teams, and apps can bypass this ruleset": "选择哪些角色、团队和应用可绕过此规则集",
 
+                    "No suggestions": "暂无建议",
+
                     "Suggestions": "建议",
                         "Role": "角色",
                         "App": "应用",
@@ -11620,6 +11638,11 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                         "write": "写入",
                         "vulnerability_reporter": "漏洞报告员",
                         "Add selected": "添加所选",
+
+                "Always": "总是",
+                    "Always allow rules to be bypassed": "始终允许绕过规则",
+                "For pull requests only": "仅适用于拉取请求",
+                    "Only allow rules to be bypassed on pull requests": "只允许在拉取请求中绕过规则",
 
                 "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
                 "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
@@ -14928,18 +14951,21 @@ I18N.zh["events"] = { // 活动页面
 I18N.zh["sponsors"] = { // 赞助界面
     "static": {
         // 赞助者首页 https://github.com/sponsors
-            "Invest in the software that powers your world": "赞助为您的项目提供帮助的软件",
-            "See your top dependencies": "查看您的主要依赖项",
+            "Invest in the software that powers your world": "投资驱动您世界的项目",
+            "See your top dependencies": "查看您的首要依赖项",
             "Get sponsored": "获得赞助",
-            "A new way to contribute": "一种贡献到开源的",
+            "A new way to contribute": "为开源做出贡献的",
             "to open source": "新方式",
-            "Invest in your supply chain": "赞助您的供应链",
-            "You depend on open source every day": "您每天都依赖于开源",
+            "Invest in your supply chain": "投资您的供应链",
+            "You depend on open source every day": "您每天都依赖于开源项目",
             "Make open source careers possible": "使开源生涯成为可能",
             "Thanks to our partners": "感谢我们的合作伙伴",
             "Available in 103 regions": "可用于 103 个地区",
+            "to receive updates when we expand.": "以便在我们扩展时接收更新。",
+            "View country and region list": "查看国家和地区支持列表",
+            "Anyone can sponsor, but you must reside in a supported region to receive funds.": "任何人都可以赞助，但您必须居住在受支持的地区才能获得资金。",
             "Frequently asked questions": "常见问题",
-            "Invest in the projects you depend on": "赞助您所依赖于的项目",
+            "Invest in the projects you depend on": "投资您所依赖的项目",
 
         // 赞助者账户页面 https://github.com/sponsors/accounts
             // 标题
@@ -14954,35 +14980,37 @@ I18N.zh["sponsors"] = { // 赞助界面
                     "Join the waitlist": "加入等候名单",
 
         // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
-            "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已推出 103 个地区的测试版！",
-                "If you have a bank account in": "如果你有银行账户在",
-                "a country or region where GitHub Sponsors is generally available": "可普遍使用 GitHub 赞助者的国家或地区",
-                ", you will get an email from us when your application has been reviewed.": "，您将在您的申请通过审核后收到我们的电子邮件。",
-                "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果你没有符合条件的银行账户，别担心！我们正在努力让更多的国家尽快加入测试版。加入候补名单，成为第一个知道的人。",
+            "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已在 103 个地区推出测试版！",
+                "If you have a bank account in": "如果您的银行账户所在",
+                "a country or region where GitHub Sponsors is generally available": "国家或地区普遍支持 GitHub 赞助者",
+                ", you will get an email from us when your application has been reviewed.": "，您将在申请通过审核后收到我们的电子邮件。",
+                "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果您没有符合条件的银行账户，也不用担心！我们正在努力让更多的国家或地区通过测试。加入等候名单，第一时间获知消息。",
             "Contact email": "联系电子邮箱",
-                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly.": "请选择一个经过验证的电子邮件地址，以便我们就您的 GitHub 赞助者档案与您联系。这将不会公开分享。",
-                "You can manage verified email addresses in your": "您可以管理已验证的电子邮件地址在您的",
+                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly.": "请选择一个经过验证的电子邮箱地址，以便我们就您的 GitHub 赞助者个人资料与您联系。该邮箱地址不会公开。",
+                "You can manage verified email addresses in your": "您可以管理已验证的电子邮箱地址在您的",
                 "email settings": "电子邮箱设置",
             "Country or region of residence": "居住的国家或地区",
                 "Select a country or region": "选择一个国家或地区",
                 "The country or region where you reside. This is required for tax purposes.": "您居住的国家或地区。这是出于税务目的所必需的。",
-            "How you receive payments": "您如何收到付款",
+            "How you receive payments": "收款方式",
                 "Use a bank account": "使用银行账户",
                     "You can use your bank account to join GitHub Sponsors.": "您可以使用您的银行帐户加入 GitHub 赞助者。",
-                    "Note that you are responsible for all applicable taxes on payouts you receive. If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "请注意，您要对收到的支出承担所有适用的税款。如果您使用个人银行账户，您所在的国家可能会将您的 GitHub 赞助者支出作为个人收入征税。",
-                    "Learn more about setting up a Stripe account": "了解有关设置 Stripe 帐户的更多信息",
+                    "Note that you are responsible for all applicable taxes on payouts you receive. If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "请注意，您需承担您收到的付款的所有适用税款。如果您使用个人银行账户，您所在国家或地区可能会将您的 GitHub 赞助者收款作为个人收入征税。",
+                    "Learn more about setting up a Stripe account": "了解更多关于设置 Stripe 帐户的信息",
+
                     "Country or region where your bank account is located:": "您的银行账户所在的国家或地区：",
-                    "Your region is": "您所在的地区",
-                    "not supported": "不受支持",
-                    "or may be in": "或者可能在",
-                    "beta": "Beta 版内",
+                        "Your region is": "您所在的地区",
+                        "not supported": "不受支持",
+                        "or may be in": "或者可能处于",
+                        "beta": "测试阶段",
                     "Use another bank account where GitHub Sponsors is available or complete signup to receive a notification if your region becomes available.": "使用另一个 GitHub 赞助者可用的银行账户，或者在您所在的地区可用时完成注册以收到通知。",
-                "Use a fiscal host": "使用财务网站",
-                    "You can use a fiscal host to join GitHub Sponsors instead of using your own bank account.": "您可以使用财务网站代替自己的银行账户来加入 GitHub 赞助者。",
-                    "Choose a fiscal host:": "选择一个财务网站：",
-                    "Select a fiscal host": "选择一个财务网站",
-                    "Fiscal host project profile URL:": "财务网站项目档案 URL：",
-                    "Please include a link to your profile on your fiscal host's site, if available.": "如果可用，请提供您在的财务网站上的个人资料链接。",
+                "Use a fiscal host": "使用财务托管",
+                    "You can use a fiscal host to join GitHub Sponsors instead of using your own bank account.": "您可以使用财务托管机构代替自己的银行账户来加入 GitHub 赞助者。",
+                    "Choose a fiscal host:": "选择一个财务托管机构：",
+                    "Select a fiscal host": "选择一个财务托管机构",
+
+                    "Fiscal host project profile URL:": "财务托管机构项目资料链接：",
+                        "Please include a link to your profile on your fiscal host's site, if available.": "如果有的话，请提供您在的财务托管机构上的个人资料链接。",
                     "e.g.,": "例如，",
             "Join waitlist": "加入等候名单",
 
@@ -14995,14 +15023,37 @@ I18N.zh["sponsors"] = { // 赞助界面
             "GitHub Sponsors": "GitHub 赞助者",
             "Get email updates": "获取电子邮件更新",
             "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
+
             "Explore GitHub Sponsors": "探索 GitHub 赞助者",
-            "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
-            "Ecosystem": "生态系统",
-                "All ecosystems": "所有生态系统",
-            "Filters": "过滤器",
-                "Direct dependencies only": "仅直接依赖项",
+                "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
+
+            // 左侧栏
+                "Explore as": "使用以下身份进行探索",
+                "Ecosystem": "生态系统",
+                    "All ecosystems": "所有生态系统",
+                "Filters": "过滤器",
+                    "Direct dependencies only": "仅直接依赖项",
+
             "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
-            "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖于任何可以赞助其维护人员的仓库。",
+                // [/([^ ]+) does not directly depend on any repositories whose maintainers can be sponsored./, "$1 不直接依赖于任何可以赞助其维护人员的仓库。"],
+            "developers who maintain your dependencies": "位开发人员维护您的依赖项",
+            "Download your": "下载",
+            "results as CSV": "结果（CSV格式）",
+
+            "Most used": "较常使用",
+            "Least used": "较少使用",
+            "Most sponsors": "较多赞助者",
+            "Fewest sponsors": "较少赞助者",
+            "Newest Sponsors profile": "最新赞助者资料",
+            "Oldest Sponsors profile": "最早赞助者资料",
+
+            "You depend on": "您依赖于",
+            // [/(\d+) repositor(y|ies) they own or maintain/, "他们拥有或维护 $1 个仓库"],
+            // [/others? sponsor, including (\d+) organizations?/, "位其他赞助者，包括 $1 个组织"],
+            "sponsors": "赞助者",
+            "others sponsor": "位其他赞助者",
+            // [/(\d+)% towards goal/, "实现目标的 $1%"],
+
             "Explore people and projects": "探索人员和项目",
             "Bulk Sponsor": "批量赞助",
                 "Sponsor multiple maintainers in one easy transaction.": "在一笔简单的交易中赞助多位维护人员。",
@@ -15012,9 +15063,18 @@ I18N.zh["sponsors"] = { // 赞助界面
             "and filtering by language!": "并通过语言筛选！",
             "Clear filter": "清除筛选器",
             "Sponsor": "赞助",
-            "Invest in open source software and we'll track your progress here!": "赞助开源软件，我们将在这里跟踪您的进度！",
+
+            // [/Want to sponsor on behalf of ([^ ]+)?/, "想代表 $1 赞助吗？"],
+            "Talk to your organization about GitHub Sponsors": "与您的组织讨论 GitHub 赞助者事宜",
+            "Share this discovery page with your team to start a conversation about investing in the people and projects you rely on.": "与您的团队分享本发现页面，并就投资于您所依赖的人员和项目展开讨论。",
+            "Invest in open source software and we'll track your progress here!": "投资开源软件，我们将在这里跟踪您的进度！",
     },
     "regexp": [ // 正则匹配
+        [/([^ ]+) does not directly depend on any repositories whose maintainers can be sponsored./, "$1 不直接依赖于任何可以赞助其维护人员的仓库。"],
+        [/(\d+) repositor(y|ies) they own or maintain/, "他们拥有或维护 $1 个仓库"],
+        [/others? sponsor, including (\d+) organizations?/, "位其他赞助者，包括 $1 个组织"],
+        [/(\d+)% towards goal/, "实现目标的 $1%"],
+        [/Want to sponsor on behalf of ([^ ]+)?/, "想代表 $1 赞助吗？"]
     ],
 };
 
@@ -16233,7 +16293,7 @@ I18N.zh["orgs/topics"] = { // 组织设置 - 仓库 /仓库主题
 I18N.zh["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码空间
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
-        "To start using Codespaces, please": "要开始使用代码空间，请",
+        "To manage Codespace ownership settings, please": "要管理代码空间所有权设置，请",
         "upgrade your plan": "升级您的计划",
         "to enable your organization.": "以启用您的组织。",
 
@@ -16247,8 +16307,8 @@ I18N.zh["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码空间
             "Disabled": "禁用",
                 "Disable GitHub Codespaces for all organization owned private and internal repositories": "禁用所有组织拥有的私有和内部仓库的 GitHub 代码空间",
 
-            "Enable for specific members": "为特定成员启用",
-                "Enable GitHub Codespaces for specific organization members on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为特定组织成员启用 GitHub 代码空间",
+            "Enable for specific members or teams": "为特定成员或团队启用",
+                "Enable GitHub Codespaces for specific organization members or teams on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为特定组织成员或团队启用 GitHub 代码空间",
 
             "Enable for all members": "为所有成员启用",
                 "Enable GitHub Codespaces for all organization members on all organization owned private and internal repositories": "在所有组织拥有的私有和内部仓库上为所有组织成员启用 GitHub 代码空间",
@@ -16329,6 +16389,19 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Reusable workflow examples:": "可复用的工作流程示例：",
                 "Entire organisation or repository examples:": "整个组织或仓库的示例：",
 
+            // 运行器
+                "Choose which repositories are allowed to create repository-level self-hosted runners.": "选择哪些仓库允许创建仓库级自托管运行器。",
+                // 私有仓库
+                    "Repo-level self-hosted runners can be used by any repository in the organization": "组织内的任何仓库都可以使用仓库级自托管运行器",
+                // 选定的仓库
+                    "Repo-level self-hosted runners can be used by specifically selected repositories": "选定的仓库允许使用仓库级自托管运行器",
+                    "Select the organization repositories that may use repository-level self-hosted runners.": "选择组织中允许使用仓库级自托管运行器的仓库。",
+                // 禁用
+                    "Repo-level self-hosted runners are disabled for all repositories in the organization": "组织中的所有仓库都禁用仓库级别的自托管运行器",
+
+                // 顶部提醒
+                    "Repo-level self-hosted runners settings changed.": "仓库级别的自托管运行器设置已更改。",
+
             "Artifact and log retention": "工件和日志保留",
                 "Choose the default repository settings for artifacts and logs.": "选择工件和日志的默认仓库设置。",
                 "days": "天",
@@ -16359,6 +16432,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
 
             "Workflow permissions": "工作流程权限",
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this organization. You can specify more granular permissions in the workflow using YAML.": "在组织中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+                "Learn more about managing permissions.": "了解更多关于管理权限的信息。",
+
                 "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
                     "Read and write permissions": "读取和写入权限",
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
@@ -16382,17 +16457,23 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
 
             "Search runners": "搜索运行器",
             "New runner": "创建运行器",
+                "New self-hosted runner": "新建自托管运行器",
+                    "Bring your own infrastructure": "自备基础设施",
+                "New GitHub-hosted runner": "新建 GitHub 托管运行器",
+                    "Pay-as-you-go, customizable, secure, scaled &": "即用即付、可定制、安全、可扩展并",
+                    "managed by GitHub": "由 GitHub 管理",
+                "Only available on paid Team or Enterprise plans": "仅适用于付费团队或企业计划",
 
             "There are no runners configured": "暂无设置运行器",
             "Learn more about using runners": "了解更多关于使用运行器的信息",
             "to run actions on your own servers.": "在您自己的服务器上运行操作的信息。",
 
-            "GitHub-hosted runners": "由 GitHub 托管的运行器",
-            "Ready-to-use runners managed by GitHub": "由 GitHub 管理的即用型运行器",
+            "Standard GitHub-hosted runners": "标准 GitHub 托管运行器",
+            "Ready-to-use runners managed by GitHub.": "由 GitHub 管理的即用型运行器。",
             // [/(\d+) active jobs?/ ,"$1 个活跃的工作"]
 
         // 由 GitHub 托管的运行器 /organizations/<org-login>/settings/actions/hosted-runners
-            "/ GitHub-hosted runners": "/ 由 GitHub 托管的运行器",
+            "/ GitHub-hosted runners": "/ GitHub 托管运行器",
             "All jobs usage": "所有工作的使用情况",
             "To increase your concurrency limit, upgrade your": "要增加您的并发限制，请升级您的",
             "GitHub plan.": "GitHub 计划。",
@@ -16423,7 +16504,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
             "product docs": "产品文档",
 
         // 运行器组 /organizations/<org-login>/settings/actions/runner-groups
-            "Control access to your runners by specifying the repositories that are able to use your shared organization runners. Upgrade to an Enterprise plan to create groups.": "通过指定能够使用您的共享组织运行器的仓库来控制对运行器的访问。升级到企业计划以创建组。",
+            "Control access to your runners by specifying the repositories that are able to use your shared organization runners. New runners will be automatically assigned to the default group if no other group is specified. Upgrade to an Enterprise plan to create groups.": "通过指定能够使用您的共享组织运行器的仓库来控制对运行器的访问。如果没有指定其他组，新运行器将自动分配到默认组。升级到企业计划以创建组。",
 
             "Search runner groups": "搜索运行器组",
             "New runner group": "创建运行器组",
@@ -16440,8 +16521,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
 
             "Search repositories": "搜索仓库",
 
-            "Sort": "排序",
-                "Sort by": "排序方式",
+            "Sort:": "排序：",
                 "Largest size": "最大尺寸",
                 "Smallest size": "最小尺寸",
 
@@ -16488,7 +16568,7 @@ I18N.zh["orgs/settings/discussions"] = { // 组织设置 - 讨论
     ],
 };
 
-I18N.zh["orgs/settings/projects"] = { // 组织设置 - 项目
+I18N.zh["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
@@ -16501,6 +16581,12 @@ I18N.zh["orgs/settings/projects"] = { // 组织设置 - 项目
             "Allow members to change project visibilities for this organization": "允许成员更改此组织的项目可见性",
                 "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果启用，在项目上有管理权限的成员可以将项目设为公开或私有。如果禁用，则只有组织所有者可以将项目设为公开或私有。默认情况下，所有项目都是私有的。",
 
+            "Recommended templates": "推荐模板",
+                "Customize a selection of recommended project templates for this organization. These templates will be surfaced first when a member of the organization creates a new project.": "为此组织定制一系列推荐的项目模板。当组织成员创建新项目时，这些模板将首先出现。",
+
+                "Create your first GitHub project template": "创建第一个 GitHub 项目模板",
+                    "Templates can be used to quickly get started with a new project.": "模板可用于快速开始新项目。",
+                "New template": "新建模板",
     },
     "regexp": [ // 正则翻译
     ],
@@ -16602,6 +16688,9 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
                 "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                 // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启它。"],
+
+            "Grouped security updates": "分组安全更新",
+                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将能解决 Dependabot 警报的所有可用更新集中到一个拉取请求中（每个软件包管理器和需求清单目录）。",
 
             "Code scanning": "代码扫描",
                 "Identify vulnerabilities and errors with": "识别代码中的漏洞和错误，通过",
@@ -17741,7 +17830,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
                     ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
                     "Create fork": "创建复刻",
                 "Publish to a new repository": "发布到新仓库", // 从模板创建
-                    "This will create a new repository and push up your work.": "这将创建一新仓库，并推送你的工作。",
+                    "This will create a new repository and push up your work.": "这将创建一新仓库，并推送您的工作。",
                     // 公共
                         "Anyone on the internet can see this repository. You choose who can commit.": "互联网上的任何人都可以看到该仓库。您可以选择谁可以提交。",
                     // 私有
@@ -17757,7 +17846,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
                         "Update codespace": "更新代码空间",
                 "Stop codespace": "停止代码空间",
                 "Delete": "删除",
-                    "Are you sure?": "你确定吗？",
+                    "Are you sure?": "您确定吗？",
                 "Auto-delete codespace": "自动删除代码空间",
                 "Open in Browser": "在浏览器中打开",
                 "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
