@@ -13566,12 +13566,17 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 跳转至 协作者 / 协作者和团队 - 访问管理页面 /<user-name>/<repo-name>/settings/access 验证
             // 顶部提醒
                 "Repository invitation URLs work for invited users only. You may only share this URL with an invited user.": "仓库邀请 URL 仅适用于受邀请的用户。您只能与受邀请的用户共享此 URL。",
+
+        // 切换账户 https://github.com/switch_account
+            "Signed out": "已注销",
+            "Add a different account": "添加其他帐户",
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
+        [/Continue as (.*)/, "以 $1 身份继续使用"]
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
