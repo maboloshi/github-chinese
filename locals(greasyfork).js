@@ -3041,7 +3041,10 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
-
+            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then select Save subscription preferences": "要停止接收以下主题的电子邮件，请取消选中任何不想接收的主题，然后选择“保存订阅首选项”",
+            "General info and offers from GitHub": "GitHub 的一般信息和优惠",
+            "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
+            "Unsubscribe from all topics": "取消订阅所有主题",
     },
     "regexp": [ // 正则翻译
         [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
@@ -13566,12 +13569,17 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 跳转至 协作者 / 协作者和团队 - 访问管理页面 /<user-name>/<repo-name>/settings/access 验证
             // 顶部提醒
                 "Repository invitation URLs work for invited users only. You may only share this URL with an invited user.": "仓库邀请 URL 仅适用于受邀请的用户。您只能与受邀请的用户共享此 URL。",
+
+        // 切换账户 https://github.com/switch_account
+            "Signed out": "已注销",
+            "Add a different account": "添加其他帐户",
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
+        [/Continue as (.*)/, "以 $1 身份继续使用"]
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
