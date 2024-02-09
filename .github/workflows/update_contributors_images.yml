@@ -5,7 +5,15 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    environment: github-pages
     steps:
+      - name: Generate a token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,10 +36,10 @@ jobs:
         if: ${{ env.CHANGES_DETECTED == 'true' }}
         run: |
           bash script/ci_commit_with_signature.sh \
-          -T "${{ secrets.CI_GITHUB_TOKEN }}" \
+          -T "${{ steps.generate_token.outputs.token }}" \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "README.md" \
           -h "修改文档: 更新\`贡献者列表\`" \
-          -b "Signed-off-by: 沙漠之子 <7850715+maboloshi@users.noreply.github.com>"
+          -b "Signed-off-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
