@@ -263,7 +263,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <details>
   <summary><h2>🎁 打赏</h2></summary>
 
-  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/weixin.jpg" alt="微信赞赏" width="30%">  <img src="https://cdn.staticaly.com/gh/maboloshi/maboloshi/main/img/alipay.jpg" alt="支付宝赞赏" width="30%">
+  <img src="https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/weixin.jpg" alt="微信赞赏" width="30%">  <img src="https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/alipay.jpg" alt="支付宝赞赏" width="30%">
   
 </details>
 
