@@ -336,6 +336,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Your sponsorships": "我的捐助者",
         "Your repositories": "我的仓库",
         "Your codespaces": "我的代码空间",
+        "Your Copilot": "我的 Copilot",
         "Your organizations": "我的组织",
         "Your enterprises": "我的企业",
         "Your projects": "我的项目",
@@ -351,6 +352,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Enable": "启用",
             "Disable": "禁用",
             "Documentation": "文档",
+            "Codespaces Connectivity v2": "代码空间连接 v2",
+                "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间 正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
+                "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用 代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间 现在需要访问 *.visualstudio.com 以便于您连接到 代码空间。",
             "New Branches and Commits Pages": "新版分支和提交页面",
                 "Preview updates to the branch and commit pages focusing on improved navigation and performance as well as making these experiences more accessible.": "预览分支和提交页面的更新，重点关注改进导航和性能，以及使这些体验更容易访问。",
             "Colorblind themes": "色盲主题",
@@ -1293,10 +1297,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
 
         "Member statuses": "成员状态", // 组织
 
-        // Learning Pathways看板
-        "Learn from the best": "向最优秀的人学习",
-        "Unlock the full power of GitHub! Gain expertise and insights from top organizations through guided tutorials, boosting productivity, enhancing security, and enabling seamless collaboration.": "释放 GitHub 的全部力量！通过指导教程获得顶级组织的专业知识和见解，提高生产力、增强安全性并实现无缝协作。",
-        "Start learning": "开始学习",
+        // 仪表板右上方看板
+        //"Learn from the best": "向最优秀的人学习",
+        //"Unlock the full power of GitHub! Gain expertise and insights from top organizations through guided tutorials, boosting productivity, enhancing security, and enabling seamless collaboration.": "释放 GitHub 的全部力量！通过指导教程获得顶级组织的专业知识和见解，提高生产力、增强安全性并实现无缝协作。",
+        //"Start learning": "开始学习",
+        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨AI如何在各个层面上转变着开发者的工作体验。",
 
         // 用户 浮动信息卡
         "Member of": "隶属组织",
@@ -17748,11 +17753,14 @@ I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
     "static": { // 静态翻译
 
         // https://github.com/github-copilot/signup
-           "Your AI pair programmer": "您的人工智能助理程序员",
+           //"Your AI pair programmer": "您的人工智能助理程序员",
+           "The world's most widely adopted AI developer tool.": "世界上采用最广泛的人工智能开发工具。",
+           "GitHub Copilot is powered by generative AI to help you code faster and happier!": "GitHub Copilot 是由生成式 AI 驱动的，旨在帮助你更快乐、更高效地编码！",
            "Start your 30-day free trial": "开始 30 天免费试用",
-               "GitHub Copilot uses the GPT-3.5 Turbo model to offer coding suggestions.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型提供编码建议。",
-               "Get code suggestions in more than a dozen coding languages including Python, JavaScript, TypeScript, Go, and Ruby": "支持超过十种编程语言的代码建议，包括 Python、JavaScript、TypeScript、Go 和 Ruby。",
-               "Plugs into IDEs including VS Code, Visual Studio, Neovim, and JetBrains": "可以与包括 VS Code、Visual Studio、Neovim 和 JetBrains 在内的集成开发环境（IDE）配合使用",
+               //"GitHub Copilot uses the GPT-3.5 Turbo model to offer coding suggestions.": "GitHub Copilot 使用 GPT-3.5 Turbo 模型提供编码建议。",
+               "Chat with Copilot for assistance on a wide variety of scenarios, such as project-specific code explanations or help with debugging": "与 Copilot 聊天以获取有关各种场景的帮助，例如特定于项目的代码解释或调试帮助",
+               "Get code suggestions as you type in more than a dozen coding languages, including Python, JavaScript, TypeScript, Go, and Ruby": "支持超过十种编程语言的代码建议，包括 Python、JavaScript、TypeScript、Go 和 Ruby。",
+               "Plugs into IDEs, including VS Code, Visual Studio, JetBrains IDEs, and Neovim": "可以与包括 VS Code、Visual Studio、Neovim 和 JetBrains 在内的集成开发环境（IDE）配合使用",
                "Sign up for an annual subscription and get two months free!": "注册年度订阅，可享受两个月免费福利。",
                "Cancel anytime before the trial ends to avoid getting billed": "在试用期结束前随时取消，以避免收费。",
 

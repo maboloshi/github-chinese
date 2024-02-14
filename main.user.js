@@ -451,14 +451,21 @@
         }
     }
 
-    GM_registerMenuCommand("正则切换", () => {
-        enable_RegExp = !enable_RegExp;
-        GM_setValue("enable_RegExp", enable_RegExp);
-        GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
-        if (enable_RegExp) {
-            location.reload();
-        }
-    });
+    function registerMenuCommand() {
+        const toggleRegExp = () => {
+            enable_RegExp = !enable_RegExp;
+            GM_setValue("enable_RegExp", enable_RegExp);
+            GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
+            if (enable_RegExp) {
+                location.reload();
+            } else {
+                GM_unregisterMenuCommand(id);
+                registerMenuCommand();
+            }
+        };
+
+        let id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
+    }
 
     /**
      * init 函数：初始化翻译功能。
@@ -490,5 +497,7 @@
     }
 
     // 执行初始化
+    registerMenuCommand();
     init();
+
 })(window, document);
