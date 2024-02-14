@@ -16862,7 +16862,7 @@ I18N.zh["orgs/settings/domains"] = { // 组织设置 - 经验证和批准的域�
     ],
 };
 
-I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
+I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
@@ -16871,16 +16871,16 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
             "New organization secret": "新建组织机密",
             "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
-            "and are used for sensitive data.": "并用于敏感数据。",
+            "and are used for sensitive data.": "，用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
-            ". Variables are shown as plain text and are used for": "。变量显示为纯文本，用于",
+            ". Variables are shown as plain text and are used for": "。变量是明文显示，用于",
             "non-sensitive": "不敏感",
             "data.": "数据。",
             "Learn more about variables": "了解更多关于变量的信息",
 
             "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有协作者权限的人，只要能接触到机密或变量，都可以将其用于操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
 
-            "Organization secrets and variables cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密和变量。",
+            "Organization secrets and variables cannot be used by private repositories with your plan.": "在您的计划中私有仓库不能使用组织机密和变量。",
             "Please consider": "请考虑",
             "upgrading your plan": "升级您的计划",
             "if you require this functionality.": "如果您需要此功能。",
@@ -16888,51 +16888,24 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
             "Secrets": "机密",
             "Variables": "变量",
 
-            "There are no secrets for this organization.": "该组织尚无机密。",
-            "Secrets created at the organization level can be shared with specified repositories.": "在组织层面创建的机密可以与指定的仓库共享。",
+            "Organization secrets": "组织机密",
+            "This organization has no secrets.": "该组织尚无机密。",
 
-            "Available to": "适用于",
-            "Updated": "更新于",
-            "Remove": "移除",
+            "Visibility": "可见性",
+            "Last updated": "最后更新",
 
             // 顶部提醒
                 "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
                 "Secret added.": "机密已添加。",
+                "Secret updated.": "机密已更新。",
                 "Secret deleted.": "机密已删除。",
 
             // 删除机密对话框
-            "Remove secret": "删除机密",
+            "Delete secret": "删除机密",
                 "Are you sure you want to delete": "您确定要删除",
-                "Yes, remove this secret from the organization": "是的，从组织中删除该机密",
-
-        // 操作变量 /organizations/<org-login>/settings/variables/actions
-            "New organization variable": "新建组织变量",
-
-            "Organization variables": "组织变量",
-            "There are no variables for this organization.": "此组织尚无变量。",
-            "Variables created at the organization level can be shared with specified repositories.": "在组织层面创建的变量可以与指定的仓库共享。",
-
-        // 新建组织变量 /organizations/<org-login>/settings/variables/actions/new
-            "Actions variables": "操作变量",
-            "/ New variable": "/ 新建变量",
-            "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
-            "create a secret": "创建机密",
-            "instead.": "代替。",
-
-            "Alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_) only.": "字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
-            "Spaces are not allowed.": "不允许出现空格。",
-            "Cannot start with a number.": "不能以数字开头。",
-            "Cannot start with": "不能以",
-            "prefix.": "前缀开头。",
-
-            "Add variable": "添加变量",
-
-        // 更新操作机密 /organizations/<org-login>/settings/secrets/actions/<name>
-            "/ Update secret": "/ 更新机密",
-            "Secret values are encrypted and cannot be displayed, but you can": "机密值已加密，无法显示，但您可以",
-            "enter a new value.": "输入一个新值。",
-            "Update secret": "更新机密",
-                "Updating…": "更新中…",
+                    "Deleting": "删除",
+                "Yes, delete this": "是的，删除该",
+                "secret": "机密",
 
         // 新建组织机密 /organizations/<org-login>/settings/secrets/actions/new
             "Actions secrets": "操作机密",
@@ -16945,11 +16918,11 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
 
             "Repository access": "仓库权限",
             "Public repositories": "公共仓库",
-                "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "此机密可能会被组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
+                "This secret may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "该机密可由组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
             "Private repositories": "私有仓库",
-                "Organization secrets cannot be used by private repositories with your plan.": "私有仓库不能在您的计划中使用组织机密。",
+                "Organization secrets cannot be used by private repositories with your plan.": "在您的计划中私有仓库不能使用组织机密。",
             "Selected repositories": "选定的仓库",
-                "This secret may only be used by specifically selected repositories.": "此机密只能由特定仓库使用。",
+                "This secret may only be used by specifically selected repositories.": "该机密只能由特定仓库使用。",
                     // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
                 // 机密仓库访问 对话框
                     "Secret repository access": "机密仓库访问",
@@ -16958,6 +16931,59 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
                         "selected repository": "个选定的仓库",
                         "selected repositories": "个选定的仓库",
                     "Update selection": "更新选择",
+
+        // 更新操作机密 /organizations/<org-login>/settings/secrets/actions/<name>
+            "/ Update secret": "/ 更新机密",
+            "Secret values are encrypted and cannot be displayed, but you can": "机密值已加密，无法显示，但您可以",
+            "enter a new value.": "输入一个新值。",
+            "Save changes": "保存更改",
+                "Updating…": "更新中…",
+
+        // 操作变量 /organizations/<org-login>/settings/variables/actions
+            "Create new organization variable": "新建组织变量",
+
+            "Organization variables": "组织变量",
+            "This organization has no variables.": "此组织尚无变量。",
+
+            // 删除变量对话框
+            "Delete variable": "删除变量",
+                "variable": "变量",
+
+        // 新建组织变量 /organizations/<org-login>/settings/variables/actions/new
+            "Actions variables": "操作变量",
+            "/ New variable": "/ 新建变量",
+            "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
+            "create a secret": "创建机密",
+            "instead.": "代替。",
+
+            "Variable names may only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_).": "变量名称只能包含字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
+            "Variable names cannot start with a number.": "变量名称不能以数字开头。",
+            "Variable names cannot start with": "变量名称不能以",
+            "prefix.": "前缀开头。",
+
+            // 变量名称警示
+                "Variable name can only contain alphanumeric characters. Special characters and spaces are not allowed.": "变量名称只能包含字母数字字符。不允许特殊字符和空格。",
+                "Variable name can only start with a letter or underscore.": "变量名称只能以字母或下划线开头。",
+                "Variable name cannot start with \"GITHUB_\" prefix.": "变量名称不能以 “GITHUB_” 前缀开头。",
+
+            // "Public repositories": "公共仓库",
+                "This variable may be used by public repositories in the organization. Paid GitHub plans include private repositories.": "改变量可由组织中的公共仓库使用。付费的 GitHub 计划包括私有仓库。",
+            // "Private repositories": "私有仓库",
+                "Organization variables cannot be used by private repositories with your plan.": "在您的计划中私有仓库不能使用组织变量。",
+            // "Selected repositories": "选定的仓库",
+                "This variable may only be used by specifically selected repositories.": "该变量只能由特定仓库使用。",
+                    // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+                // 变量仓库访问 对话框
+                    "Variable repository access": "变量仓库访问",
+                    "Select the organization repositories that may use this variable.": "选择可以使用该变量的组织仓库。",
+
+            "Add variable": "添加变量",
+
+        // 更新组织变量 /organizations/<org-login>/settings/variables/actions/<name>
+            "/ Update variable": "/ 更新变量",
+            "Update variable": "更新变量",
+                "Saving…": "保存中…",
+                "Save variable": "保存变量",
 
         // 代码空间机密 /organizations/<org-login>/settings/secrets/codespaces
             "Codespaces secrets": "代码空间机密",
@@ -16968,8 +16994,8 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密
                 "collaborator": "协作者",
                 "access to the repositories with access to that secret.": "权限访问该机密的仓库。",
 
-                "New secret": "新建机密",
-                "There are no development environment secrets for this organization.": "该组织尚无开发环境机密。",
+                "This organization has no development environment secrets.": "该组织尚无开发环境机密。",
+                "New codespace secret": "新建代码空间机密",
 
         // Dependabot 机密 /organizations/<org-login>/settings/secrets/dependabot
             "Dependabot secrets": "Dependabot 机密",
