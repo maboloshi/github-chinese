@@ -50,4 +50,4 @@ jobs:
           -P "${{ github.sha }}" \
           -F "locals(greasyfork).js, main(greasyfork).user.js" \
           -h "main(greasyfork).user.js Update on $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
-          -b "Signed-off-by: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          -b "Signed-off-by: action-assistant[bot] <152410706+action-assistant[bot]@users.noreply.github.com>"
