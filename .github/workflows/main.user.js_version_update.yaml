@@ -63,5 +63,4 @@ jobs:
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "main.user.js" \
-          -h "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
-          -b "Signed-off-by: action-assistant[bot] <152410706+action-assistant[bot]@users.noreply.github.com>"
+          -h "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"

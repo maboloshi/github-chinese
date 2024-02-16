@@ -41,5 +41,4 @@ jobs:
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "README.md" \
-          -h "修改文档: 更新\`贡献者列表\`" \
-          -b "Signed-off-by: action-assistant[bot] <152410706+action-assistant[bot]@users.noreply.github.com>"
+          -h "修改文档: 更新\`贡献者列表\`"
