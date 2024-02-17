@@ -126,7 +126,7 @@ fi
 response=$(curl "$GITHUB_GRAPHQL_URL" --silent \
   --write-out '%{stderr}HTTP status: %{response_code}\n\n' \
   -H "Authorization: bearer $TOKEN" \
-  --data @request.json | jq)
+  --data @request.json)
 
 # Print the results
 url=$(echo "$response" | jq -r '.data.createCommitOnBranch.commit.url')
