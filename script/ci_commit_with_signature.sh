@@ -53,20 +53,6 @@ while getopts ":T:R:B:P:F:D:h:b:" opt; do
     esac
 done
 
-if [[ -z $GITHUB_URL ]]; then
-  GITHUB_URL="https://api.github.com"
-fi
-
-username=$(curl "$GITHUB_URL/user" --silent \
-  --write-out '%{stderr}HTTP status: %{response_code}\n\n' \
-  -H "Authorization: bearer $TOKEN" | jq -r '.login')
-
-email=$(curl "$GITHUB_URL/user/public_emails" --silent \
-  --write-out '%{stderr}HTTP status: %{response_code}\n\n' \
-  -H "Authorization: bearer $TOKEN" | grep -oE '[^"]+@users\.noreply\.github\.com')
-
-message_body="$message_body\nSigned-off-by: $username <$email>"
-
 # 处理文件修改并构建 fileChanges 部分中 additions 的 JSON 字符串
 # Process the file changes and build the JSON string of `additions` in the `fileChanges` section
 changed_files_json=""
