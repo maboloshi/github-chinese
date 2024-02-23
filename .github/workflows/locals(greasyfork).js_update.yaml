@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Generate a token
         id: generate_token
-        uses: actions/create-github-app-token@v1
+        uses: maboloshi/create-github-app-token@main
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
@@ -42,12 +42,13 @@ jobs:
       - name: Commit and push locals(greasyfork).js and main(greasyfork).user.js
         if: ${{ env.LOCALS_JS_IS_CHANGED == 'true' &&
                 env.MAIN_USER_JS_IS_CHANGED == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
           bash script/ci_commit_with_signature.sh \
-          -T "${{ steps.generate_token.outputs.token }}" \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "locals(greasyfork).js, main(greasyfork).user.js" \
-          -h "main(greasyfork).user.js Update on $(TZ='Asia/Shanghai' date +'%Y-%m-%d')" \
-          -b "Signed-off-by: action-assistant[bot] <152410706+action-assistant[bot]@users.noreply.github.com>"
+          -h "main(greasyfork).user.js Update on $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"

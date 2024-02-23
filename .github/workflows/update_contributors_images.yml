@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Generate a token
         id: generate_token
-        uses: actions/create-github-app-token@v1
+        uses: maboloshi/create-github-app-token@main
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
@@ -34,12 +34,13 @@ jobs:
 
       - name: Commit and push README.md
         if: ${{ env.CHANGES_DETECTED == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
+          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
           bash script/ci_commit_with_signature.sh \
-          -T "${{ steps.generate_token.outputs.token }}" \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "README.md" \
-          -h "修改文档: 更新\`贡献者列表\`" \
-          -b "Signed-off-by: action-assistant[bot] <152410706+action-assistant[bot]@users.noreply.github.com>"
+          -h "修改文档: 更新\`贡献者列表\`"
