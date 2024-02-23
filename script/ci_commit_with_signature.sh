@@ -53,6 +53,10 @@ while getopts ":T:R:B:P:F:D:h:b:" opt; do
     esac
 done
 
+if [[ -z $TOKEN ]]; then
+  TOKEN=$GITHUB_TOKEN
+fi
+
 if [[ -z $GITHUB_URL ]]; then
   GITHUB_URL="https://api.github.com"
 fi

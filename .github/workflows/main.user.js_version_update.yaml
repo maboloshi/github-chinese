@@ -57,10 +57,10 @@ jobs:
         if: ${{ env.LOCALS_JS_IS_CHANGED == 'true' &&
                 env.MAIN_USER_JS_IS_CHANGED == 'true' }}
         env:
+          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
           bash script/ci_commit_with_signature.sh \
-          -T "${{ steps.generate_token.outputs.token }}" \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
