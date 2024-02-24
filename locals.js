@@ -791,6 +791,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Verified": "已验证",
         "This commit was created on GitHub.com and signed with GitHub’s verified signature": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
             "Learn about vigilant mode": "了解警戒模式",
+        "Expired": "已过期",
         "Partially verified": "部分验证",
         "Unverified": "未验证",
             "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
@@ -2233,8 +2234,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                     "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-                "Check out the Developer site": "查看开发者站点",
-                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的成员！",
+                "has guides, API and webhook references, information about creating GitHub Apps and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "包含指南、API 和 Webhook 参考、有关创建 GitHub 应用的信息以及用于构建与 GitHub 集成的应用的其他资源。确保您的联系信息是最新的。感谢您的加入！",
 
                 "Support email address": "技术支持电子邮件地址",
                     "An email address where GitHub users can contact you for support.": "供 GitHub 用户联系您寻求支持的电子邮件地址。",
@@ -5618,7 +5618,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Local": "本地",
                     "Clone": "克隆",
                         // HTTPS
-                        "Use Git or checkout with SVN using the web URL.": "使用 Git 或 SVN 通过该网址检出。",
+                        "Clone using the web URL.": "使用 Web URL 克隆。",
                         // SSH
                         "You don't have any public SSH keys in your GitHub account.": "您的 GitHub 帐户中没有任何公共 SSH 密钥。",
                         "You can": "您可以",
@@ -5885,7 +5885,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
 
         // Action 仓库 右侧栏
-            "Suggested Workflows": "建议的工作流程",
+            "Suggested workflows": "建议的工作流程",
             "Based on your tech stack": "基于您的技术堆栈",
             "Set up": "设立",
             "Configure": "设置",
@@ -7045,6 +7045,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "branch": "分支",
             "added": "添加",
             "requested changes": "要求更改",
+            "changed the title": "修改了标题",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -7079,6 +7080,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // "Review required": "需要审查", // 拉取请求 页面状态词
                 "Add your review": "添加您的评论",
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            "Code owner review required": "需要代码所有者审核",
+                "was requested for review as a code owner": "要求以代码所有者身份进行审查",
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
             "Approval not required": "不需要批准",
@@ -7101,6 +7104,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Merging is blocked": "合并被阻止",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
+                "View rules": "查看规则",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
                 "Merge the latest changes from": "将",
@@ -7245,11 +7249,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "This commit was signed with the committer's": "此提交已签名，使用提交者的",
                 "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
+                "The key has expired": "密钥已过期",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
                 "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
+                "Expired": "已过期",
                 "Learn about vigilant mode": "了解警戒模式",
 
             "Copy the full SHA": "复制完整的 SHA",
@@ -7466,6 +7472,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
         [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
         [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"], // 具体的拉取请求
+        [/([^ ]+) is a code owner/, "$1 是代码所有者"], // 具体的拉取请求
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
         [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
@@ -7488,7 +7495,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Compare changes": "比较变更",
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
             "compare across forks": "比较复刻库和源仓库",
-            "Learn more about diff comparisons here": "在这里了解更多关于差异比较的信息",
+            "Learn more about diff comparisons here": "点击此处了解更多关于差异比较的信息",
 
             // 分支选择栏
             "base repository:": "基础仓库：",
@@ -7638,11 +7645,13 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         "Allow edits and access to secrets by maintainers": "允许维护人员编辑和访问机密",
         // 创建拉取请求 按钮下拉
-            "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
+            "Automatically requests reviews from code owners": "自动请求代码所有者进行审查",
             "Create draft pull request": "创建拉取请求草案",
-            "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
+            "Doesn't request code owners review and cannot be merged": "不请求代码所有者审核并且无法合并",
             "Draft pull request": "拉取请求草案",
-        "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+        "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
+        "security policy": "安全政策",
+        "code of conduct": "行为准则",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
@@ -7709,6 +7718,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Comment on this file": "评论此文件", // new code view
 
             "Filter changed files": "筛选已更改的文件", // new code view 侧栏
+            "Show file tree": "显示文件树", // new code view 侧栏
+            "Hide file tree": "隐藏文件树", // new code view 侧栏
 
             "Submodule": "子模块",
             "updated": "已更新",
@@ -7727,7 +7738,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
-            "Expand Up": "展开",
+            "Expand Up": "向上展开",
+            "Expand Down": "向下展开",
             "Collapse expanded lines": "折叠展开的线",
 
             // 修改的文件 右侧下拉
@@ -7781,11 +7793,13 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "This commit was signed with the committer's": "此提交已签名，使用提交者的",
             "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
+            "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
             "SSH Key Fingerprint:": "SSH 密钥指纹：",
+            "Expired": "已过期",
             "Learn about vigilant mode": "了解警戒模式",
 
             "Copy the full SHA": "复制完整的 SHA",
@@ -9491,11 +9505,13 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "This commit was signed with the committer's": "此提交已签名，使用提交者的",
                 "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
+                "The key has expired": "密钥已过期",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
                 "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
+                "Expired": "已过期",
                 "Learn about vigilant mode": "了解警戒模式",
 
         // 发行版 页面 /<user-name>/<repo-name>/releases
@@ -9936,6 +9952,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
 
             "Configure": "设置",
                 "Manage repository vulnerability settings": "管理仓库漏洞设置",
+                "Manage Dependabot rules": "管理 Dependabot 规则",
                 "Manage account notification settings": "管理帐户通知设置",
 
             "Closed as": "关闭",
@@ -10073,7 +10090,14 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
 
+            "Bypassed": "绕行",
+            "Validity": "有效性",
+                "Active": "活跃",
+                "Inactive": "不活跃",
+                "Unknown": "未知",
             "Secret type": "机密类型",
+                "Service Providers": "服务提供商",
+                "Custom Patterns": "自定义模式",
                 "Filter by secret type": "按机密类型筛选",
                 "Filter secret type": "筛选机密类型",
                 "Nothing to show": "暂无",
@@ -10879,7 +10903,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
                 "Require contributors to sign off on web-based commits": "要求贡献者在基于 Web 的提交上签署",
                 "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者原产地证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
 
             "Default branch": "默认分支",
@@ -12518,6 +12542,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                 "Last": "最近",
                 "deployed": "部署",
             "Visit site": "访问网站",
+            "Addtional site options": "站点附加选项",
             "Unpublish site": "取消站点发布",
                 // 顶部提醒
                     "GitHub Pages unpublished.": "GitHub  Pages 未发布。",
@@ -12704,14 +12729,20 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Protection rules": "保护规则",
                     "Pull request check failure": "拉取请求检查失败",
                         "Define which code scanning alert severity should cause a pull request check to fail. This also applies to analysis results uploaded via the API.": "定义哪种代码扫描警报严重程度会导致拉取请求检查失败。这也适用于通过 API 上传的分析结果。",
-                    "None": "无",
-                    "Only critical": "仅关键风险",
-                    "High or higher": "高风险及以上",
-                    "Medium or higher": "中风险及以上",
-                    "Any": "任何",
-                    "Other": "其他",
-                        "Only errors": "仅错误",
-                        "Errors and warnings": "错误和警告",
+
+                        "None": "无",
+                        "Only critical": "仅关键风险",
+                        "High or higher": "高风险及以上",
+                        "Medium or higher": "中风险及以上",
+                        "Any": "任何",
+                        "Other": "其他",
+                            "Only errors": "仅错误",
+                            "Errors and warnings": "错误和警告",
+
+                    "Check runs failure threshold": "检查运行失败阀值",
+                        "Select the alert severity level for code scanning check runs to fail.": "选择代码扫描检查运行失败的警报严重性级别。",
+                        "Create a branch ruleset": "创建分支规则集",
+                        "to prevent a branch from merging when these checks fail.": "以防止分支在这些检查失败时被合并。",
 
                 // 顶部提醒
                 "Code Scanning alert severity settings saved.": "代码扫描警报严重性设置已保存。",
@@ -13588,13 +13619,14 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 切换账户 https://github.com/switch_account
             "Signed out": "已注销",
             "Add a different account": "添加其他帐户",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
-        [/Continue as (.*)/, "以 $1 身份继续使用"]
+        [/Continue as (.*)/, "以 $1 身份继续使用"],
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
@@ -14304,8 +14336,11 @@ I18N.zh["search"] = { // 搜索页面
             "packages": "软件包",
             "wikis": "Wiki",
             "Try one of the tips below to find more code": "请尝试使用以下提示查找更多代码",
+            "Try one of the tips below to find more repositories": "请尝试使用以下提示查找更多仓库",
 
             "However we found": "然而我们发现",
+            "code results": "代码结果",
+            "code result": "代码结果",
             "and": "和",
             "that matched your search query. Alternatively try one of the tips below.": "与您的搜索查询相匹配。或者尝试以下提示之一。",
 
@@ -15235,13 +15270,15 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "Backup Utilities": "备份工具",
                         "Utilities providing periodic backups of your GitHub data": "定期备份 GitHub 数据的实用工具",
 
-            "Filters": "筛选器",
+            "Filter": "筛选器",
                 // 免费
                     "Tools that provide a free tier.": "提供免费套餐的工具。",
                 "Free Trials": "免费试用",
                     "Tools that support free, time-limited, access to their service.": "支持免费、限时访问其服务的工具。",
                 "GitHub Enterprise": "GitHub 企业版",
                     "Tools that have GitHub Enterprise supported offerings.": "支持 GitHub 企业版的工具。",
+                "GitHub Partners": "GitHub 合作伙伴",
+                    "This category is used for tagging listings/actions for TPE team to use as a filter": "此类别用于标记列表/操作，以供 TPE 团队用作筛选器",
                 "Paid": "付费",
                     "Tools that require a paid subscription.": "需要付费订阅的工具。",
 
@@ -16242,7 +16279,7 @@ I18N.zh["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 / 默�
 
             "Commit signoff": "提交签署",
                 "Choose whether repositories will require contributors to sign off on commits they make through GitHub's web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "选择仓库是否要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者原产地证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
                 "All repositories": "所有仓库",
                     "Require signoff on web-based commits for all repositories in this organization": "要求对该组织中所有仓库的基于 Web 的提交进行签署",
