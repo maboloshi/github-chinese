@@ -9474,28 +9474,6 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
     ],
 };
 
-I18N.zh["repository/rules"] = { // 仓库 - 规则集页面
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-
-        // 仓库规则集页面 /<user-name>/<repo-name>/rules
-            "Rulesets": "规则集",
-            "All": "全部",
-            "• targeting": "• 针对",
-            ", targeting": ", 针对",
-
-            "No rulesets matched your search": "没有与您搜索相匹配的规则集",
-            "Try expanding your search or creating a new ruleset": "尝试扩大搜索范围或创建新的规则集",
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/(\d+) rules?/, "$1 条规则"],
-        [/(\d+) branch(?:es|)?/, "$1 个分支"],
-        [/(\d+) tags?/, " $1 个标签"],
-    ],
-};
-
 I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
@@ -11934,6 +11912,18 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
 
             "Applies to": "应用到",
             "target:": "个目标:",
+
+       // 仓库规则集页面 /<user-name>/<repo-name>/rules
+            "Rulesets": "规则集",
+            "All": "全部",
+            "• targeting": "• 针对",
+            ", targeting": ", 针对",
+
+            "No rulesets matched your search": "没有与您搜索相匹配的规则集",
+            "Try expanding your search or creating a new ruleset": "尝试扩大搜索范围或创建新的规则集",
+
+        "Name": "名称",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -11977,6 +11967,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
     ],
 };
 I18N.zh["orgs/settings/rules"] = I18N.zh["repository/settings/rules"];
+I18N.zh["repository/rules"] = I18N.zh["repository/settings/rules"];
 
 I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
