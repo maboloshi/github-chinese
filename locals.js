@@ -4603,6 +4603,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Registration successful. You must": "注册成功。您必须",
                 "generate a private key": "生成私钥",
                 "in order to install your GitHub App.": "才能安装 GitHub 应用。",
+                // GitHub App 已更新
+                "Got it. Your GitHub App has been updated.": "GitHub 应用已更新。",
 
             "Developer settings": "开发者设置",
             // 左侧栏
@@ -4641,7 +4643,18 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Display information": "显示信息",
                 "Drag & drop": "拖放",
                 "Upload a logo...": "上传 Logo ...",
+                    "Uploading...": "上传中...",
                 "You can also drag and drop a picture from your computer.": "您也可以从电脑中拖放图片。",
+
+                "Delete this image": "删除图片",
+                "Badge background color": "徽章背景颜色",
+                "The hex value of the badge background color. Hex colors should only contain numbers and letters from a-f.": "徽章背景颜色的十六进制值。十六进制颜色只能包含 a-f 之间的数字和字母。",
+                // 剪裁对话框
+                    "Crop your new avatar": "裁剪您的新头像",
+                    "Set new avatar": "设置新头像",
+                // 顶部提醒
+                    "Your avatar has been updated. It may take a few minutes to update across the site.": "您的头像已更新。整个网站的更新可能需要几分钟的时间。",
+                    "This avatar has been deleted.": "该头像已被删除。",
 
             "Private keys": "私钥",
                 "Generate a private key": "生成私钥",
@@ -4677,8 +4690,10 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
         // 某个 GitHub 应用 - 安装 https://github.com/settings/apps/<app-name>/installations
             // [/Install (.*)/, "安装 $1"],
             // [/Choose an account to install (.*) on:/, "选择要安装 $1 的帐户："],
-            // [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
+            "Install": "安装",
+            // [/Install (.*) on this account./, "安装 $1 到此账户上。"],
             "Installed": "已安装",
+            // [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
 
         // 某个 GitHub 应用 - 高级 https://github.com/settings/apps/<app-name>/advanced
             "Danger zone": "危险区",
@@ -4723,8 +4738,9 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 
     },
     "regexp": [ // 正则翻译
-        [/Install (.*)/, "安装 $1"],
         [/Choose an account to install (.*) on:/, "选择要安装 $1 的帐户："],
+        [/Install (.*) on this account./, "安装 $1 到此账户上。"],
+        [/Install (.*)/, "安装 $1"],
         [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
         [/Where should we transfer (.*)\?/, "将 $1 转让给谁？"],
         [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
@@ -14834,21 +14850,6 @@ I18N.zh["login/oauth"] = { // 应用授权
             "would like permission to:": "希望获得以下许可：",
             "Know which resources you can access": "了解您可以访问哪些资源",
 
-        // // /apps/codacy-production/installations/new/permissions?target_id=7850715
-        //     "All repositories": "所有仓库",
-        //     "This applies to all current": "这适用于所有当前",
-        //     "and": "和",
-        //     "future repositories.": "未来的仓库。",
-        //     "Only select repositories": "仅选定的仓库",
-        //     "Select repositories": "选择仓库",
-        //     "Search for a repository": "搜索仓库",
-        //     "with these permissions:": "授权以下权限：",
-        //     "User permissions": "用户权限",
-        //     "Install & Authorize": "安装 & 授权",
-        //     "Next: you'll be redirected to": "下一步：您将被重定向到",
-
-        // // >>>>>具体的权限不打算汉化<<<<<<<
-        // // >>>>>具体的权限不打算汉化<<<<<<<
     },
     "regexp": [ // 正则翻译
         // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
@@ -15385,7 +15386,24 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Publisher domain and email verified": "已验证发布者域名和电子邮件",
             "Creator verified by GitHub": "创建者经 GitHub 验证",
 
-        // 应用介绍页面 /marketplace/codacy 第一页
+        // 待处理订单页面 https://github.com/marketplace/orders/pending
+            "Review and complete your orders": "查看并完成您的订单",
+            "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我们注意到您开始制定一些新计划，但尚未完成。您可以完成下面的待处理订单或查看任何有效的订阅在",
+            "billing overview page": "账单概览页面",
+
+            "Remove from pending orders": "从待处理订单中删除",
+            "This will not affect your existing subscriptions.": "这不会影响您现有的订阅。",
+
+            // 顶部提醒
+                // [/plan has been deleted./, "计划已被删除。"],
+
+        // 待安装页面 https://github.com/marketplace/installations/pending
+            "We noticed you’ve purchased some apps but didn't finish installing them. You can review and install them below.": "我们注意到您购买了一些应用，但尚未完成安装。您可以在下面查看并安装它们。",
+            "View or cancel any active subscriptions on the": "查看或取消任何有效的订阅",
+            "Grant this app access to your GitHub account to complete installation.": "授予此应用访问 GitHub 账户的权限，以完成安装。",
+
+        // 应用介绍页面 https://github.com/marketplace/<app-name>
+        // 示例: https://github.com/marketplace/codacy 第一页
             "Apps": "应用",
             // 左侧信息栏
             "GitHub has verified that the application meets the": "GitHub 已验证了该应用符合",
@@ -15393,7 +15411,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             "requirements": "要求",
             "Categories": "类别",
-            "App Type": "应用程序类型",
+            "App Type": "应用类型",
+                "GitHub Application": "GitHub 应用",
+                "Oauth Application": "Oauth 应用",
             "Supported languages": "支持的语言",
             "and": "和",
             "Customers": "客户",
@@ -15401,108 +15421,235 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Developer links": "开发者链接",
             "Support": "支持",
             "Documentation": "文档",
+            "Privacy Policy": "隐私条款",
+            "Terms of Service": "服务条款",
+            "Report Abuse": "举报滥用",
+
             // 右侧正文
             "Application": "应用",
+            "Set up a free trial": "免费试用",
             "Set up a plan": "制定一个计划",
-            "Read more…": "了解更多…",
+            "Set up a new plan": "制定一个新计划",
+
+            "You have already purchased this app on GitHub Marketplace.": "您已经在 GitHub 市场上购买了此应用。",
+            "You’ve already granted this app access to GitHub outside of GitHub Marketplace.": "您已授予此应用在 GitHub 市场之外访问 GitHub 的权限。",
+            "grant this app access to your GitHub account": "授予此应用访问您的 GitHub 帐户的权限",
+            "Configure access": "设置权限",
+            "Edit your plan": "编辑您的计划",
+                "Choose an account’s plan to edit": "选择要编辑的帐户计划",
+            "Read more...": "了解更多...",
+
             // 下半部分
             "Pricing and setup": "定价与设置",
-            "Free for open source projects": "免费的开源项目",
+
+            "Open source": "开源",
+            "Free for open source projects": "对开源项目免费",
+            "Free for both open source and private projects": "对开源和私人项目免费",
             "Unlimited private repositories": "无限制私有项目",
-            "per user": "每人",
-            "User(s) in this plan": "个用户在计划中",
+            "Free Trial": "免费试用",
+
+            "per seat": "每席位",
+            "Seat(s) in this plan": "个席位在计划中",
+
+            "Search by name": "按名称搜索",
             "Install it for free": "免费安装",
+            "Try free for 14 days": "免费试用 14 天",
             "Buy with GitHub": "通过 GitHub 购买",
+            "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
             "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
+            // [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
             "terms of service": "服务条款",
             "privacy policy": "隐私政策",
             ", and": "，和",
             "support documentation": "支持文档",
             "support contact": "支持联络",
 
-        // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
+        // 应用的审查、编辑订单 第二页 https://github.com/marketplace/<app-name>/order/<order-id>?account=<account-name>
+        // 收费应用示例: https://github.com/marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
             "Edit your plan": "编辑您的计划",
+            "Account:": "帐户：",
+            "Order summary": "订单摘要",
             "Open Source": "开源",
             "(current plan)": "(当前计划)",
-            "plans": "计划",
-            // "(current plan)": "(当前计划)",
-            "Account:": "帐户：",
-            "/ month": "/ 月",
+            "Plans": "计划",
+                "/ month": "/ 月",
+
             "To complete this installation, you must": "要完成此安装，您必须",
             "grant this app access": "授予此应用的权限",
             "to your GitHub account.": "访问您的 GitHub 帐户。",
-            "Cancel this plan": "取消计划",
-            "Order summary": "订单摘要",
-            "Current plan": "当前计划",
-            "Billing information": "账单信息",
-            "Personal account": "个人帐户",
-            "Terms of Service": "服务条款",
-            "and the": "和",
-            "Privacy Policy": "隐私政策",
-            ". You previously agreed to the": "。您已同意过",
-            "Marketplace Terms of Service.": "商城服务条款。",
-            "Issue plan changes": "议题计划更改",
 
-        // 应用的审查订单 第二页  /marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
+            "Cancel this plan": "取消计划",
+
+            // 右侧栏
+            "Current plan": "当前计划",
+            "New plan": "新计划",
+                "Due today": "截止到今天",
+                // [/Prorated for/, "按比例计算"],
+
+            "Billing information": "账单信息",
+            "Please confirm your billing details to continue. You only need to do this once.": "请确认您的账单详情以继续。您只需确认一次。",
+            "Personal account": "个人帐户",
+            // "Terms of Service": "服务条款",
+            // "and the": "和",
+            // "Privacy Policy": "隐私政策",
+            // ". You previously agreed to the": "。您已同意过",
+            // "Marketplace Terms of Service.": "市场服务条款。",
+            // "Issue plan changes": "议题计划更改",
+
+            "First name": "名字",
+                "First name can't be blank.": "名字不能为空。",
+                "First name can't be blank": "名字不能为空",
+            "Last name": "姓氏",
+                "Last name can't be blank.": "姓氏不能为空。",
+                "Last name can't be blank": "姓氏不能为空",
+            "Address (P.O. box, company name, c/o)": "地址（邮政信箱、公司名称、c/o）",
+                "Address can't be blank.": "地址不能为空。",
+                "Address can't be blank": "地址不能为空",
+            "Address line 2 (Apartment, suite, unit)": "地址第 2 行（公寓、套房、单元）",
+            "City": "城市",
+                "City can't be blank.": "城市不能为空。",
+                "City can't be blank": "城市不能为空",
+            "Country/Region": "国家/地区",
+                "Country code can't be blank.": "国家/地区不能为空。",
+                "Country code can't be blank": "国家/地区不能为空",
+                "Choose your country": "选择您所在的国家/地区",
+            "State/Province": "州/省",
+                "Required for certain countries": "某些国家/地区需要",
+            "Postal/Zip code": "邮政编码",
+
+            "Save and continue": "保存并继续",
+
+            // 顶部提醒
+                "An error occurred while saving payment information.": "保存支付信息时发生错误。",
+
+        // 免费应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
             "Review your order": "审查您的订单",
             "Free": "免费",
             "For individuals, teams, and communities, public and private projects": "对于个人、团队和社区，公共和私人项目",
             "Total amount": "总金额",
-            "Due today": "截止到今天",
-            "Complete order and begin installation": "完成订购并开始安装",
-            // "Prorated for": "",
 
-        // /apps/codacy-production
+            "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "组织所有者或账单管理者必须将其个人账单信息与该组织账户关联。您可以切换到企业账户，以使用企业的账单信息通过",
+            "signing": "签署",
+            "the": " ",
+            "GitHub Customer Agreement": "GitHub 客户协议",
+
+        // GitHub 应用页面 https://github.com/apps/<app-name>
+        // 示例: https://github.com/apps/codacy-production
             "GitHub App": "GitHub 应用",
-            "Read more about this app on the Marketplace": "了解更多关于商城中此应用的信息",
 
-            "Install": "安装",
-            "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
-            "Configure": "设置",
-            "Manage your installation settings.": "管理安装设置。",
+            "No description": "尚无描述",
+            "Read more about this app on the Marketplace": "了解更多关于市场中此应用的信息",
+
+            // 未安装
+                "Install": "安装",
+                // "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
+
+            // 已安装
+                "Configure": "设置",
+                "Manage your installation settings.": "管理安装设置。",
 
             "Developer": "开发者",
-            "Website": "网站",
-            "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
-            "Report Abuse": "举报滥用",
+                "App settings": "应用设置", // 已安装
+                "Website": "网站",
 
-        // /marketplace/actions/merge-upstream
+            "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
+
+            "Report abuse": "举报滥用",
+
+        // GitHub 应用 安装、授权页面 https://github.com/apps/<app-name>/installations/new/permissions?target_id=<id>
+        // 示例 https://github.com/apps/codacy-production/installations/new/permissions?target_id=7850715
+            "Install & Authorize": "安装与授权",
+            "Authorize & Request": "授权与请求", // 他人的组织
+            "Request": "请求",
+            // [/Install & Authorize on your personal account (.*)/, "在您的个人帐户 $1 上安装与授权"],
+            // [/Install on your personal account (.*)/, "在您的个人帐户 $1 上安装"],
+            // [/Install & Authorize on your organization (.*)/, "在您的组织 $1 上安装与授权"], // 组织
+            // [/Install on your organization (.*)/, "在您的组织 $1 上安装"], // 组织
+            // [/Request on your organization (.*)/, "对于您的组织 $1 的请求"], // 组织
+            // [/Authorize & Request on your organization (.*)/, "对于您的组织 $1 的授权与请求"], // 组织
+
+            "for these repositories:": "对于这些仓库：",
+                "All repositories": "所有仓库",
+                    "This applies to all current": "这适用于资源所有者拥有的所有当前",
+                    "and": "和",
+                    "future repositories owned by the resource owner.": "未来的仓库。",
+                    "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
+                "Only select repositories": "仅选定的仓库",
+                    "Select at least one repository.": "至少选择一个仓库。",
+                    "Select repositories": "选择仓库",
+                        "Search for a repository": "搜索仓库",
+                        // [/Selected (\d+) repositor(y|ies)./, "已选择 $1 仓库。"],
+                        "request": "请求",
+
+            "with these permissions:": "授权以下权限：",
+
+            // >>>>>具体的权限不打算汉化<<<<<<<
+            // >>>>>具体的权限不打算汉化<<<<<<<
+
+            "User permissions": "用户权限",
+            // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装 & 授权 $1 会立即在您的帐户上授予以下权限："],
+            // [/can also request users' permission to the following resources. These permissions will be requested and authorized on an individual-user basis./, "还可以请求用户对以下资源的许可。这些权限将在个人用户的基础上请求和授权。"],
+            "These permissions will also be requested and authorized as needed on an individual-user basis.": "这些权限也将根据个人用户的需要进行申请和授权。", // 组织
+
+            "Installing & Authorizing": "安装与授权中",
+            "Installing": "安装中",
+            "Requesting": "请求中",
+
+            "Next: you'll be redirected to": "下一步：您将被重定向到",
+            "Next: you’ll be directed to the GitHub App’s site to complete setup.": "下一步：您将被引导到GitHub 应用网站完成设置。", // 组织
+
+        // 应用设置 - 选择目标 https://github.com/apps/<app-name>/installations/select_target
+            // [/Install (.*)/, "安装 $1"],
+            // [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
+            // [/(.*) is installed. Click to configure.\?/, "$1 已安装。点击进行配置。"],
+
+        // 操作介绍页面 https://github.com/marketplace/actions/<action-name>
+        // 示例: https://github.com/marketplace/actions/merge-upstream
+            // 顶部提醒
+                "Sorry, we couldn’t find that version of this Action. Here’s the latest version.": "对不起，我们找不到此 GitHub Action 的这个版本。 下面是最新的版本。",
+                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。你想查看",
+                "latest version": "最新版本",
+                "instead?": "吗？",
+
             "Latest version": "最新发行版",
             "Use latest version": "使用最新发行版",
             "Choose a version": "选择发行版",
+
+            "Verified creator": "经验证的创建者",
+            "GitHub has verified that this action was created by": "GitHub 已经验证该操作，创建由",
+            "Learn more about verified Actions": "了解更多关于经验证操作的信息",
 
             "Contributors": "贡献者",
             "Links": "链接",
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
 
-        // /apps/codacy-production/installations/new/permissions?target_id=7850715
-            "All repositories": "所有仓库",
-            "This applies to all current": "这适用于所有当前",
-            "and": "和",
-            "future repositories.": "未来的仓库。",
-            "Only select repositories": "仅选定的仓库",
-            "Select repositories": "选择仓库",
-            "Search for a repository": "搜索仓库",
-            "with these permissions:": "授权以下权限：",
-            "User permissions": "用户权限",
-            "Install & Authorize": "安装 & 授权",
-            "Next: you'll be redirected to": "下一步：您将被重定向到",
-
-        // >>>>>具体的权限不打算汉化<<<<<<<
-        // >>>>>具体的权限不打算汉化<<<<<<<
     },
     "regexp": [ // 正则翻译
+        [/plan has been deleted./, "计划已被删除。"],
         // /marketplace/codacy
         [/(\d+) other languages? supported/, "$1 种其他语言支持"],
         [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
         // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
-        [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
-        [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
+        [/Prorated for/, "按比例计算"],
+        // [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
+        // [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
         [/Next: Authorize ([^ ]+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
         [/(\d+) results?/, "$1 个结果"],
         [/([0-9.k]+) stars?/, "$1 星标"],
         [/([0-9.k]+) installs?/, "$1 次安装"],
+        [/Install & Authorize on your personal account (.*)/, "在您的个人帐户 $1 上安装与授权"],
+        [/Install & Authorize on your organization (.*)/, "在您的组织 $1 上安装与授权"], // 组织
+        [/Install on your personal account (.*)/, "在您的个人帐户 $1 上安装"],
+        [/Install on your organization (.*)/, "在您的组织帐户 $1 上安装"],
+        [/Selected (\d+) repositor(y|ies)./, "已选择 $1 仓库。"],
+        [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装与授权 $1 会立即在您的帐户上授予以下权限："],
+        [/can also request users' permission to the following resources. These permissions will be requested and authorized on an individual-user basis./, "还可以请求用户对以下资源的许可。这些权限将在个人用户的基础上请求和授权。"],
+        [/Authorize & Request on your organization (.*)/, "对于您的组织 $1 的授权与请求"], // 组织
+        [/Request on your organization (.*)/, "对于您的组织 $1 的请求"], // 组织
+        [/Install (.*)/, "安装 $1"],
+        [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
+        [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
