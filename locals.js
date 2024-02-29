@@ -3656,6 +3656,14 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 "Learn about retention setting": "了解关于保留时间的设置",
                 "days": "天",
 
+            "Host image version preference": "主机镜像版本偏好",
+                "The host image defines the operating system in which development containers run. These images receive periodic upgrades for security, functionality, and performance. GitHub Codespaces offers early access to beta images to ensure compatibility with existing development container configurations. Any codespace created or resumed after changing this setting will use the specified image configuration.": "主机镜像定义了开发容器运行的操作系统。这些镜像会定期进行安全、功能和性能升级。GitHub 代码空间提供对测试版镜像的早期访问，以确保与现有开发容器配置的兼容性。更改此设置后创建或恢复的代码空间都将使用指定的镜像配置。",
+                "Learn more about host images": "了解更多关于主机镜像的信息",
+                "Stable": "稳定版",
+                    "Always use the latest stable configuration.": "始终使用最新的稳定版。",
+                "Beta": "测试版",
+                    "Use a beta image configuration when available. Otherwise, use the latest stable configuration.": "如果可用，请使用测试版映像配置。否则，请使用最新的稳定配置。",
+
             "Region": "地区",
                 "Your default region will be used to designate compute resources to your codespaces. GitHub can set your region automatically based on your location, or you can set it yourself. Codespaces are deployed to a subset of Azure regions.": "您的默认区域将被用来为您的代码空间指定计算资源。 GitHub 可以根据您的位置自动设置您的区域，您也可以自己设置。代码空间部署到 Azure 区域的子集。",
                 "Set automatically": "自动设置",
