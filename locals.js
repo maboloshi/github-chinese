@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)|^\/[^\/]+\/(enterprise_plan)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan)/,
 
     /**
      * 忽略区域的 class 正则
@@ -3946,10 +3946,11 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         "Authorized GitHub Apps": "授权的 GitHub 应用",
         "Authorized OAuth Apps": "授权的 OAuth 应用",
 
-        // Applications 应用 https://github.com/settings/installations
+        // 安装的 GitHub 应用 https://github.com/settings/installations
             // 顶部提醒
                 // [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
                 // [/Okay, (.*) was installed on the (@[^ ]+) account./, "好的，$1 已安装在 $2 账户上。"],
+                // [/Okay, (.*) was updated for the (@[^ ]+) account./, "好的，$1 帐户的 $1 已更新。"],
 
             // "Installed GitHub Apps": "安装的 GitHub 应用",
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
@@ -3962,11 +3963,18 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Configure": "配置",
             "Suspended": "已暂停",
 
-        // https://github.com/settings/installations/<id>
+        // 安装的 GitHub 应用设置 https://github.com/settings/installations/<id>
+            // 顶部提醒
+                // [/Your installation was suspended by you on/, "您的安装已暂停于"],
+                "Your app has been unsuspended": "您的应用已被取消暂停",
+
             "Installed": "安装于",
             "Developed by": "开发者",
             "App settings": "应用设置",
             "Permissions": "权限",
+                // [/is requesting an update to its permissions./, "正在请求更新其权限。"],
+                "Review request": "审核请求",
+
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
                 "This applies to all current": "这适用于所有当前",
@@ -4000,12 +4008,26 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Read more about connecting with third-party applications at": "了解更多关于与第三方应用连接的信息，请访问",
             "GitHub Help": "GitHub 帮助",
 
-        // https://github.com/settings/apps/authorizations
+        // 安装的 GitHub 应用授权更新 https://github.com/settings/installations/<id>/permissions/update
+            // [/The (.*) app by/, "$1 应用（由"],
+            "is requesting updated permissions": "创建）正在请求更新权限",
+
+            "Read and write": "读写权限",
+            "Read-only": "只读权限",
+            "Admin": "管理员权限",
+            "access to": "针对",
+            "New request": "新请求",
+            "Show unchanged permissions": "显示未更改的权限",
+            "Hide unchanged permissions": "隐藏未更改的权限",
+            "Accept new permissions": "接受新权限",
+            // [/The (.*) app will retain its current permissions if you choose not to accept the new permissions./, "如果您选择不接受新权限，“$1” 应用将保留其当前权限。"],
+
+        // 授权的 GitHub 应用 https://github.com/settings/apps/authorizations
             // "Authorized GitHub Apps": "授权的 GitHub 应用",
             "No authorized applications": "无授权申请",
             "You have no applications authorized to access your account.": "您没有授权访问您的帐户的应用。",
 
-        // https://github.com/settings/applications
+        // 授权的 OAuth 应用 https://github.com/settings/applications
             // "Authorized OAuth Apps": "授权的 OAuth 应用",
             "You have granted": "您已经授权",
             "access to your account.": "访问您的帐户。",
@@ -4016,6 +4038,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Recently used": "最近使用的",
             "Least recently used": "最近使用最少的",
 
+            "Never used · Owned by": "从未使用 · 作者",
             "Last used within the last week · Owned by": "最后一次使用是最近 1 周之内 · 作者",
 
             "Report abuse": "举报滥用",
@@ -4039,8 +4062,51 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "More options": "更多选项",
             "Revoking will deny future access to your account": "撤销授权，将拒绝今后访问您的帐户",
 
+        // 授权的 GitHub 应用授权设置 https://github.com/settings/connections/applications/<client-id>
+        // 授权的 OAuth 应用授权设置 https://github.com/settings/connections/applications/<id>
+            "Never used": "从未使用",
+            "Last used within the last week": "最后一次使用是最近一周之内",
+
+            "Developed by": "开发者:",
+            "Permissions": "权限",
+            "Revoke access": "撤销授权",
+                "Are you sure you want to revoke authorization?": "您确定要撤销授权吗？",
+                    // [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 将无法再访问 GitHub API。您无法撤销此操作。"],
+                "I understand, revoke access": "我明白了，依然撤销授权",
+                    "Revoking…": "撤消中…",
+
+            "Applications act on your behalf to access your data based on the permissions you grant them. Organizations control which applications are allowed to access their private data. Applications you authorize will always have access to public data in your organizations.": "应用根据您授予的权限代表您访问数据。组织可控制允许哪些应用访问其私人数据。您授权的应用始终可以访问您组织中的公共数据。",
+            "Read about third-party access.": "了解关于第三方访问的信息。",
+
+            "Organization access": "组织权限",
+                "Grant": "批准",
+                "This organization allows the application to access organization data as described in the permissions above.": "该组织允许应用访问上述权限中所述的组织数据。",
+                "Request": "请求",
+                    "Until access is granted by an owner, the application cannot access the organization’s private data or modify its public data.": "在所有者授予访问权限之前，应用无法访问组织的私有数据或修改其公共数据。",
+
+        // 组织 OAuth 应用策略设置 /orgs/<orgs-name>/policies/applications/<id>
+            "approval requested by": "请求批准:",
+            "Currently:": "当前",
+                "No private access": "无法访问私有",
+                "Approved": "已批准",
+            "Review third-party application access request": "审查第三方应用访问请求",
+                "Grant access": "批准访问",
+                "Granting access will give this application the ability to request access to private data in the": "授权该应用访问私有数据在",
+                "organization.": "组织。",
+
+                "Deny access": "拒绝访问",
+                "Denying access will remove this application’s ability to request access to private data in the": "拒绝该应用访问数据在",
+
+            // 顶部提醒
+                // [/(.*) is authorized to access this organization’s resources/, "$1 已获授权访问该组织的资源"],
+                // [/(.*) is denied access this organization’s resources/, "$1 被拒绝访问该组织的资源"],
+
+            "Applications act on your behalf to access your data based on the permissions you grant them. Organizations control which applications are allowed to access their private data. Applications authorized by members will always have access to public data in your organization.": "应用根据您授予的权限代表您访问数据。组织可控制允许哪些应用访问其私有数据。成员授权的应用始终可以访问组织中的公共数据。",
+            "Read about organization OAuth app access restrictions.": "了解有关组织 OAuth 应用访问限制的信息。",
+
     },
     "regexp": [ // 正则翻译
+        [/Your installation was suspended by you on/, "您的安装已暂停于"],
         [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用吗？"],
         [/Uninstall "(.*)"/, "卸载 “$1”"],
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
@@ -4052,12 +4118,22 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
         [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
         [/Okay, (.*) was installed on the (@[^ ]+) account./, "好的，$1 已安装在 $2 账户上。"],
+        [/Okay, (.*) was updated for the (@[^ ]+) account./, "好的，$2 帐户的 $1 已更新。"],
+        [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
+        [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
+        [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 将无法再访问 GitHub API。您无法撤销此操作。"],
+        [/is requesting an update to its permissions./, "正在请求更新其权限。"],
+        [/The (.*) app by/, "$1 应用（由"],
+        [/The (.*) app will retain its current permissions if you choose not to accept the new permissions./, "如果您选择不接受新权限，“$1” 应用将保留其当前权限。"],
+        [/(.*) is authorized to access this organization’s resources/, "$1 已获授权访问该组织的资源"],
+        [/(.*) is denied access this organization’s resources/, "$1 被拒绝访问该组织的资源"],
     ],
 };
 I18N.zh["settings/apps/authorizations"] = I18N.zh["settings/installations"];
 I18N.zh["settings/applications"] = I18N.zh["settings/installations"];
+I18N.zh["settings/connections/applications"] = I18N.zh["settings/installations"];
 I18N.zh["orgs/settings/installations"] = I18N.zh["settings/installations"];
-///settings/connections/applications/
+I18N.zh["orgs/policies/applications"] = I18N.zh["settings/installations"];
 
 I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
     "static": { // 静态翻译
@@ -14709,7 +14785,8 @@ I18N.zh["login/oauth"] = { // 应用授权
         // 第三页 安装中
 
         // 第四页 安装后 授权
-        // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
+        // GitHub 应用安装授权 /login/oauth/authorize?client_id=<client-id>&state=<state>
+        // 示例 /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
             "Resources on your account": "您帐户中的资源",
             "Act on your behalf": "代表您行事",
             "Email addresses": "电子邮箱地址",
@@ -14721,7 +14798,8 @@ I18N.zh["login/oauth"] = { // 应用授权
             "Created": "创建于",
             "GitHub users": "GitHub 用户",
 
-        // /login/oauth/authorize?client_id=78a2ba87f071c28e65bb&redirect_uri=https%3A%2F%2Fcircleci.com%2Fauth%2Fgithub%3Freturn-to%3D%252Fdashboard%253Futm_medium%253Dpartner%2526utm_campaign%253Dghmarketplace%2526utm_source%253Dgithub&scope=repo%2Cuser%3Aemail&state=uZ9BTIkhQ3_98icRI09o1L1HJmfvIO8gK3FDGwytNAzbBRzXwTge440cKS7NaGtvS0tqCR_HzGMH2z3p
+        // OAuth 应用安装授权 /login/oauth/authorize?client_id=<client-id>&redirect_uri=<redirect-uri>&scope=<scope>&state=<>
+        // 示例 /login/oauth/authorize?client_id=78a2ba87f071c28e65bb&redirect_uri=https%3A%2F%2Fcircleci.com%2Fauth%2Fgithub%3Freturn-to%3D%252Fdashboard%253Futm_medium%253Dpartner%2526utm_campaign%253Dghmarketplace%2526utm_source%253Dgithub&scope=repo%2Cuser%3Aemail&state=uZ9BTIkhQ3_98icRI09o1L1HJmfvIO8gK3FDGwytNAzbBRzXwTge440cKS7NaGtvS0tqCR_HzGMH2z3p
             "wants to access your": "想访问您的",
             "account": "帐户",
             "Public and": "公共库和",
@@ -14737,6 +14815,16 @@ I18N.zh["login/oauth"] = { // 应用授权
             "Personal user data": "个人用户资料",
             "Email addresses (read-only)": "电子邮箱地址(只读)",
             "This application will be able to read your private email addresses.": "此应用将能够读取您的私人电子邮箱地址。",
+
+            "Organization access": "组织访问",
+                "Request": "请求",
+                "This organization allows the application to access organization data as described in the permissions above.": "该组织允许应用访问上述权限中所述的组织数据。",
+                "Until access is granted by an owner, the application cannot access the organization’s private data or modify its public data.": "在所有者授予访问权限之前，应用无法访问组织的私有数据或修改其公共数据。",
+                "The application cannot access this organization’s private data or modify its public data.": "应用无法访问该组织的私有数据或修改其公共数据。",
+
+            // >>>>>具体的权限不打算汉化<<<<<<<
+
+            "Owned & operated by GitHub": "由 GitHub 拥有和运营",
 
         // 第五页 即将跳转到 重定向页面
             "You are being redirected to the authorized application.": "您将被重定向到授权的应用。",
@@ -14769,14 +14857,14 @@ I18N.zh["login/oauth"] = { // 应用授权
         [/Learn more about/, "了解更多关于"],
         [/More than ([^ ]+)/, "超过 $1"],
         // /apps/codacy-production/installations/new/permissions?target_id=7850715
-        [/Install & Authorize on your personal account/, "安装和授权到您的个人帐户"],
-        [/Install & Authorize/, "安装和授权"],
+        // [/Install & Authorize on your personal account/, "安装和授权到您的个人帐户"],
+        // [/Install & Authorize/, "安装和授权"],
         [/Authorize ([^ ]+)/, "授权 $1"], // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login 调整位置避免覆盖
-        [/Installing and authorizing ([^ ]+) immediately grants these permissions on your account:/, "安装和授权 $1则会立即授予您帐户的以下权限："],
+        // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装和授权 $1 则会立即授予您帐户的以下权限："],
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
     ],
 };
-I18N.zh["installations/new"] = I18N.zh["login/oauth"];
+// I18N.zh["installations/new"] = I18N.zh["login/oauth"];
 
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
@@ -17071,11 +17159,11 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
 };
 I18N.zh["orgs/settings/variables"] = I18N.zh["orgs/settings/secrets"];
 
-I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方访问
+I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方应用访问策略
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
-        // 第三方访问 /organizations/<org-login>/settings/oauth_application_policy
+        // 第三方应用访问策略 /organizations/<org-login>/settings/oauth_application_policy
             "Third-party application access policy": "第三方应用访问策略",
             "Policy:": "策略：",
                 "Access restricted": "访问受限",
@@ -17093,6 +17181,9 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
                     "’s data.": "的数据。",
                     "Setup application access restrictions": "设置应用访问限制",
 
+            "Denied": "拒绝",
+            "Approved": "已批准",
+
             "No pending requests": "没有待处理的请求",
             "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用时，这些请求将在此处列出以供您批准。您可以浏览",
             "your own authorized applications": "您授权的应用",
@@ -17100,10 +17191,23 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用可以代表组织成员进行操作。您的访问策略决定了哪些应用可以访问您组织中的数据。",
             "Read more about third-party access and organizations.": "阅读更多关于第三方访问和组织的信息。",
 
-        // 设置应用访问限制 /settings/oauth_application_policy/confirm
+        // 设置第三方应用访问限制 /settings/oauth_application_policy/confirm
             "Third-party application restrictions": "第三方应用限制",
             "create an extra layer of security that allows owners to better control how applications access data in their organization.": "创建一个额外的安全层，使所有者能够更好地控制应用如何访问其组织中的数据。",
-            "Organization owners maintain a whitelist of trusted applications.": "组织所有者维护受信任应用白名单。",
+
+            "Organization owners maintain an allowlist of trusted applications.": "组织所有者维护受信任应用的允许列表。",
+            "Applications owned by": "应用拥有者",
+                "are always trusted.": "的应用始终受信任。",
+            "Members can request organization approval for an application.": "成员可请求组织批准应用。",
+            "Approval requests notify organization owners, allowing them to deny or approve application access.": "批准请求会通知组织所有者，允许他们拒绝或批准应用的访问。",
+            "Only trusted applications can:": "只有受信任的应用才能：",
+                "Access private organization data via the API or SSH.": "通过 API 或 SSH 访问私有组织数据。",
+                "Change public organization data.": "更改公共组织数据。",
+                "Receive webhooks for private events.": "接收私人事件的网络钩子。",
+
+            "Restrict third-party application access": "限制第三方应用访问",
+            "Restricting access will immediately block all unapproved applications and will disable SSH keys created before February 2014.": "限制访问将立即阻止所有未经批准的应用，并禁用 2014 年 2 月前创建的 SSH 密钥。",
+            "Read more at GitHub Help.": "请访问 GitHub 帮助了解更多信息。",
 
     },
     "regexp": [ // 正则翻译
