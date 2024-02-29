@@ -405,27 +405,28 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Edit status": "编辑状态",
         "What's your current status?": "您目前的状况如何？",
 
-        "Suggestions:": "建议：",
+        "Suggestions": "建议",
             "On vacation": "在度假",
             "Working from home": "在家工作",
             "Out sick": "生病",
             "Focusing": "专注中",
 
         "Busy": "繁忙中",
-        "I may be slow to respond.": "我的反应可能比较慢。",
-        "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
+            "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
+            "I may be slow to respond.": "我的反应可能比较慢。",
+
         "Clear status": "清除状态",
-        "Never": "永不",
-        "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
+            "Never": "永不",
+            "in 30 minutes": "30 分钟",
+            "in 1 hour": "1 小时",
+            "in 4 hours": "4 小时",
+            "today": "今天",
+            "this week": "本周",
+            "How long until this status will automatically clear.": "多久后状态自动清除。",
         "Visible to": "可见",
+            "Everyone": "任何人",
+                "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
             "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
-            // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
-        "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
-        "in 30 minutes": "30 分钟",
-        "in 1 hour": "1 小时",
-        "in 4 hours": "4 小时",
-        "today": "今天",
-        "this week": "本周",
         "Filter emoji": "筛选表情符号",
             "Search results": "筛选结果",
 
@@ -979,7 +980,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之内' : all);
         }],
-        [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
         /**
