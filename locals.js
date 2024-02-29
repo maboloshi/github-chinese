@@ -10776,7 +10776,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
     ],
 };
 
-I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 - 依赖机器人
+I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 - Dependabot
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
@@ -10785,7 +10785,7 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
         "Dependents": "依赖者",
 
         "Export SBOM": "导出 SBOM",
-        // 依赖关系图 - 依赖机器人 /network/updates
+        // 依赖关系图 - Dependabot /network/updates
             "Enable Dependabot": "启用 Dependabot",
             "Dependabot isn't enabled": "未启用 Dependabot",
             "Dependabot isn't enabled on forks by default": "默认情况下，Dependabot 不会在复刻上启用。",
@@ -10793,6 +10793,18 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
             "Dependabot version updates aren't configured yet": "尚未配置 Dependabot 版本更新",
             "Dependabot creates pull requests to keep your dependencies up-to-date.": "Dependabot 创建拉取请求以保持您的依赖项是最新的。",
             "Create config file": "创建配置文件",
+
+            "Recent update jobs": "最近更新的工作",
+
+            "Dependabot version updates": "Dependabot 版本更新",
+            "automatically keep your application up-to-date by periodically updating dependencies to their latest versions.": "通过定期将依赖项更新到最新版本，自动保持应用的最新状态。",
+            "Dependabot security updates": "Dependabot 版本更新",
+            "can also help keep dependencies updated.": "还可以帮助保持依赖项更新。",
+
+            "Monitored dependency files": "受监控的依赖文件",
+            "Check for updates": "检查更新",
+            "Recent jobs": "近期工作",
+            "view logs": "查看日志",
 
     },
     "regexp": [ // 正则翻译
