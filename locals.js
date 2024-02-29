@@ -3895,20 +3895,22 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Enable Dependabot alerts": "启用 Dependabot 警报",
                         "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。",
 
-                "Grouped security updates": "分组安全更新",
-                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
-                    // 对话框
-                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
-
                 "Dependabot security updates": "Dependabot 安全更新",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
                     "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
                         "Dependabot rules": "Dependabot 规则",
+
                     // 对话框
                         "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
                         "You're about to disable Dependabot security updates on all your repositories.": "您即将禁用您所有仓库上的 Dependabot 安全更新。",
                         "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                         "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启它。",
                         "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+
+                "Grouped security updates": "分组安全更新",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                    // 对话框
+                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
