@@ -53,13 +53,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history)|^\/[^\/]+\/(enterprise_plan)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan)/,
 
     /**
      * 忽略区域的 class 正则
@@ -405,27 +405,28 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Edit status": "编辑状态",
         "What's your current status?": "您目前的状况如何？",
 
-        "Suggestions:": "建议：",
+        "Suggestions": "建议",
             "On vacation": "在度假",
             "Working from home": "在家工作",
             "Out sick": "生病",
             "Focusing": "专注中",
 
         "Busy": "繁忙中",
-        "I may be slow to respond.": "我的反应可能比较慢。",
-        "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
+            "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
+            "I may be slow to respond.": "我的反应可能比较慢。",
+
         "Clear status": "清除状态",
-        "Never": "永不",
-        "Keep this status until you clear or edit your status.": "在清除或编辑状态之前，请保留此状态。",
+            "Never": "永不",
+            "in 30 minutes": "30 分钟",
+            "in 1 hour": "1 小时",
+            "in 4 hours": "4 小时",
+            "today": "今天",
+            "this week": "本周",
+            "How long until this status will automatically clear.": "多久后状态自动清除。",
         "Visible to": "可见",
+            "Everyone": "任何人",
+                "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
             "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
-            // [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
-        "Keep this status until you clear your status or edit your status.": "保持此状态直到您清除或编辑您的状态。",
-        "in 30 minutes": "30 分钟",
-        "in 1 hour": "1 小时",
-        "in 4 hours": "4 小时",
-        "today": "今天",
-        "this week": "本周",
         "Filter emoji": "筛选表情符号",
             "Search results": "筛选结果",
 
@@ -791,6 +792,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Verified": "已验证",
         "This commit was created on GitHub.com and signed with GitHub’s verified signature": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
             "Learn about vigilant mode": "了解警戒模式",
+        "Expired": "已过期",
         "Partially verified": "部分验证",
         "Unverified": "未验证",
             "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
@@ -978,7 +980,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之内' : all);
         }],
-        [/Only members of ([^ ]+) will be able to see your status./, "只有 $1 的成员才能看到您的状态。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
         /**
@@ -2233,8 +2234,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                     "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-                "Check out the Developer site": "查看开发者站点",
-                "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的成员！",
+                "has guides, API and webhook references, information about creating GitHub Apps and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "包含指南、API 和 Webhook 参考、有关创建 GitHub 应用的信息以及用于构建与 GitHub 集成的应用的其他资源。确保您的联系信息是最新的。感谢您的加入！",
 
                 "Support email address": "技术支持电子邮件地址",
                     "An email address where GitHub users can contact you for support.": "供 GitHub 用户联系您寻求支持的电子邮件地址。",
@@ -3656,6 +3656,14 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
                 "Learn about retention setting": "了解关于保留时间的设置",
                 "days": "天",
 
+            "Host image version preference": "主机镜像版本偏好",
+                "The host image defines the operating system in which development containers run. These images receive periodic upgrades for security, functionality, and performance. GitHub Codespaces offers early access to beta images to ensure compatibility with existing development container configurations. Any codespace created or resumed after changing this setting will use the specified image configuration.": "主机镜像定义了开发容器运行的操作系统。这些镜像会定期进行安全、功能和性能升级。GitHub 代码空间提供对测试版镜像的早期访问，以确保与现有开发容器配置的兼容性。更改此设置后创建或恢复的代码空间都将使用指定的镜像配置。",
+                "Learn more about host images": "了解更多关于主机镜像的信息",
+                "Stable": "稳定版",
+                    "Always use the latest stable configuration.": "始终使用最新的稳定版。",
+                "Beta": "测试版",
+                    "Use a beta image configuration when available. Otherwise, use the latest stable configuration.": "如果可用，请使用测试版映像配置。否则，请使用最新的稳定配置。",
+
             "Region": "地区",
                 "Your default region will be used to designate compute resources to your codespaces. GitHub can set your region automatically based on your location, or you can set it yourself. Codespaces are deployed to a subset of Azure regions.": "您的默认区域将被用来为您的代码空间指定计算资源。 GitHub 可以根据您的位置自动设置您的区域，您也可以自己设置。代码空间部署到 Azure 区域的子集。",
                 "Set automatically": "自动设置",
@@ -3895,20 +3903,22 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Enable Dependabot alerts": "启用 Dependabot 警报",
                         "You're about to enable Dependabot alerts on all your repositories. Alerts require the dependency graph, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。",
 
-                "Grouped security updates": "分组安全更新",
-                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
-                    // 对话框
-                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
-
                 "Dependabot security updates": "Dependabot 安全更新",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
                     "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
                         "Dependabot rules": "Dependabot 规则",
+
                     // 对话框
                         "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
                         "You're about to disable Dependabot security updates on all your repositories.": "您即将禁用您所有仓库上的 Dependabot 安全更新。",
                         "Enable Dependabot security updates": "启用 Dependabot 安全更新",
                         "You're about to enable Dependabot security updates on all your repositories. Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories.": "您即将启用您所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启它。",
                         "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+
+                "Grouped security updates": "分组安全更新",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                    // 对话框
+                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
@@ -3946,10 +3956,11 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         "Authorized GitHub Apps": "授权的 GitHub 应用",
         "Authorized OAuth Apps": "授权的 OAuth 应用",
 
-        // Applications 应用 https://github.com/settings/installations
+        // 安装的 GitHub 应用 https://github.com/settings/installations
             // 顶部提醒
                 // [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
                 // [/Okay, (.*) was installed on the (@[^ ]+) account./, "好的，$1 已安装在 $2 账户上。"],
+                // [/Okay, (.*) was updated for the (@[^ ]+) account./, "好的，$1 帐户的 $1 已更新。"],
 
             // "Installed GitHub Apps": "安装的 GitHub 应用",
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
@@ -3962,11 +3973,18 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Configure": "配置",
             "Suspended": "已暂停",
 
-        // https://github.com/settings/installations/<id>
+        // 安装的 GitHub 应用设置 https://github.com/settings/installations/<id>
+            // 顶部提醒
+                // [/Your installation was suspended by you on/, "您的安装已暂停于"],
+                "Your app has been unsuspended": "您的应用已被取消暂停",
+
             "Installed": "安装于",
             "Developed by": "开发者",
             "App settings": "应用设置",
             "Permissions": "权限",
+                // [/is requesting an update to its permissions./, "正在请求更新其权限。"],
+                "Review request": "审核请求",
+
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
                 "This applies to all current": "这适用于所有当前",
@@ -4000,12 +4018,26 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Read more about connecting with third-party applications at": "了解更多关于与第三方应用连接的信息，请访问",
             "GitHub Help": "GitHub 帮助",
 
-        // https://github.com/settings/apps/authorizations
+        // 安装的 GitHub 应用授权更新 https://github.com/settings/installations/<id>/permissions/update
+            // [/The (.*) app by/, "$1 应用（由"],
+            "is requesting updated permissions": "创建）正在请求更新权限",
+
+            "Read and write": "读写权限",
+            "Read-only": "只读权限",
+            "Admin": "管理员权限",
+            "access to": "针对",
+            "New request": "新请求",
+            "Show unchanged permissions": "显示未更改的权限",
+            "Hide unchanged permissions": "隐藏未更改的权限",
+            "Accept new permissions": "接受新权限",
+            // [/The (.*) app will retain its current permissions if you choose not to accept the new permissions./, "如果您选择不接受新权限，“$1” 应用将保留其当前权限。"],
+
+        // 授权的 GitHub 应用 https://github.com/settings/apps/authorizations
             // "Authorized GitHub Apps": "授权的 GitHub 应用",
             "No authorized applications": "无授权申请",
             "You have no applications authorized to access your account.": "您没有授权访问您的帐户的应用。",
 
-        // https://github.com/settings/applications
+        // 授权的 OAuth 应用 https://github.com/settings/applications
             // "Authorized OAuth Apps": "授权的 OAuth 应用",
             "You have granted": "您已经授权",
             "access to your account.": "访问您的帐户。",
@@ -4016,6 +4048,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Recently used": "最近使用的",
             "Least recently used": "最近使用最少的",
 
+            "Never used · Owned by": "从未使用 · 作者",
             "Last used within the last week · Owned by": "最后一次使用是最近 1 周之内 · 作者",
 
             "Report abuse": "举报滥用",
@@ -4039,8 +4072,51 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "More options": "更多选项",
             "Revoking will deny future access to your account": "撤销授权，将拒绝今后访问您的帐户",
 
+        // 授权的 GitHub 应用授权设置 https://github.com/settings/connections/applications/<client-id>
+        // 授权的 OAuth 应用授权设置 https://github.com/settings/connections/applications/<id>
+            "Never used": "从未使用",
+            "Last used within the last week": "最后一次使用是最近一周之内",
+
+            "Developed by": "开发者:",
+            "Permissions": "权限",
+            "Revoke access": "撤销授权",
+                "Are you sure you want to revoke authorization?": "您确定要撤销授权吗？",
+                    // [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 将无法再访问 GitHub API。您无法撤销此操作。"],
+                "I understand, revoke access": "我明白了，依然撤销授权",
+                    "Revoking…": "撤消中…",
+
+            "Applications act on your behalf to access your data based on the permissions you grant them. Organizations control which applications are allowed to access their private data. Applications you authorize will always have access to public data in your organizations.": "应用根据您授予的权限代表您访问数据。组织可控制允许哪些应用访问其私人数据。您授权的应用始终可以访问您组织中的公共数据。",
+            "Read about third-party access.": "了解关于第三方访问的信息。",
+
+            "Organization access": "组织权限",
+                "Grant": "批准",
+                "This organization allows the application to access organization data as described in the permissions above.": "该组织允许应用访问上述权限中所述的组织数据。",
+                "Request": "请求",
+                    "Until access is granted by an owner, the application cannot access the organization’s private data or modify its public data.": "在所有者授予访问权限之前，应用无法访问组织的私有数据或修改其公共数据。",
+
+        // 组织 OAuth 应用策略设置 /orgs/<orgs-name>/policies/applications/<id>
+            "approval requested by": "请求批准:",
+            "Currently:": "当前",
+                "No private access": "无法访问私有",
+                "Approved": "已批准",
+            "Review third-party application access request": "审查第三方应用访问请求",
+                "Grant access": "批准访问",
+                "Granting access will give this application the ability to request access to private data in the": "授权该应用访问私有数据在",
+                "organization.": "组织。",
+
+                "Deny access": "拒绝访问",
+                "Denying access will remove this application’s ability to request access to private data in the": "拒绝该应用访问数据在",
+
+            // 顶部提醒
+                // [/(.*) is authorized to access this organization’s resources/, "$1 已获授权访问该组织的资源"],
+                // [/(.*) is denied access this organization’s resources/, "$1 被拒绝访问该组织的资源"],
+
+            "Applications act on your behalf to access your data based on the permissions you grant them. Organizations control which applications are allowed to access their private data. Applications authorized by members will always have access to public data in your organization.": "应用根据您授予的权限代表您访问数据。组织可控制允许哪些应用访问其私有数据。成员授权的应用始终可以访问组织中的公共数据。",
+            "Read about organization OAuth app access restrictions.": "了解有关组织 OAuth 应用访问限制的信息。",
+
     },
     "regexp": [ // 正则翻译
+        [/Your installation was suspended by you on/, "您的安装已暂停于"],
         [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作无法撤消。您确定要从 $1 个仓库中卸载此 GitHub 应用吗？"],
         [/Uninstall "(.*)"/, "卸载 “$1”"],
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您将无法再登录 $1（所有管理权限都将授予您选择的所有者）"],
@@ -4052,12 +4128,22 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
         [/You're all set! (.*) has been uninstalled./, "一切就绪！$1 已被卸载。"],
         [/Okay, (.*) was installed on the (@[^ ]+) account./, "好的，$1 已安装在 $2 账户上。"],
+        [/Okay, (.*) was updated for the (@[^ ]+) account./, "好的，$2 帐户的 $1 已更新。"],
+        [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
+        [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
+        [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 将无法再访问 GitHub API。您无法撤销此操作。"],
+        [/is requesting an update to its permissions./, "正在请求更新其权限。"],
+        [/The (.*) app by/, "$1 应用（由"],
+        [/The (.*) app will retain its current permissions if you choose not to accept the new permissions./, "如果您选择不接受新权限，“$1” 应用将保留其当前权限。"],
+        [/(.*) is authorized to access this organization’s resources/, "$1 已获授权访问该组织的资源"],
+        [/(.*) is denied access this organization’s resources/, "$1 被拒绝访问该组织的资源"],
     ],
 };
 I18N.zh["settings/apps/authorizations"] = I18N.zh["settings/installations"];
 I18N.zh["settings/applications"] = I18N.zh["settings/installations"];
+I18N.zh["settings/connections/applications"] = I18N.zh["settings/installations"];
 I18N.zh["orgs/settings/installations"] = I18N.zh["settings/installations"];
-///settings/connections/applications/
+I18N.zh["orgs/policies/applications"] = I18N.zh["settings/installations"];
 
 I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
     "static": { // 静态翻译
@@ -4527,6 +4613,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Registration successful. You must": "注册成功。您必须",
                 "generate a private key": "生成私钥",
                 "in order to install your GitHub App.": "才能安装 GitHub 应用。",
+                // GitHub App 已更新
+                "Got it. Your GitHub App has been updated.": "GitHub 应用已更新。",
 
             "Developer settings": "开发者设置",
             // 左侧栏
@@ -4565,7 +4653,18 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Display information": "显示信息",
                 "Drag & drop": "拖放",
                 "Upload a logo...": "上传 Logo ...",
+                    "Uploading...": "上传中...",
                 "You can also drag and drop a picture from your computer.": "您也可以从电脑中拖放图片。",
+
+                "Delete this image": "删除图片",
+                "Badge background color": "徽章背景颜色",
+                "The hex value of the badge background color. Hex colors should only contain numbers and letters from a-f.": "徽章背景颜色的十六进制值。十六进制颜色只能包含 a-f 之间的数字和字母。",
+                // 剪裁对话框
+                    "Crop your new avatar": "裁剪您的新头像",
+                    "Set new avatar": "设置新头像",
+                // 顶部提醒
+                    "Your avatar has been updated. It may take a few minutes to update across the site.": "您的头像已更新。整个网站的更新可能需要几分钟的时间。",
+                    "This avatar has been deleted.": "该头像已被删除。",
 
             "Private keys": "私钥",
                 "Generate a private key": "生成私钥",
@@ -4601,8 +4700,10 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
         // 某个 GitHub 应用 - 安装 https://github.com/settings/apps/<app-name>/installations
             // [/Install (.*)/, "安装 $1"],
             // [/Choose an account to install (.*) on:/, "选择要安装 $1 的帐户："],
-            // [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
+            "Install": "安装",
+            // [/Install (.*) on this account./, "安装 $1 到此账户上。"],
             "Installed": "已安装",
+            // [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
 
         // 某个 GitHub 应用 - 高级 https://github.com/settings/apps/<app-name>/advanced
             "Danger zone": "危险区",
@@ -4647,8 +4748,9 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 
     },
     "regexp": [ // 正则翻译
-        [/Install (.*)/, "安装 $1"],
         [/Choose an account to install (.*) on:/, "选择要安装 $1 的帐户："],
+        [/Install (.*) on this account./, "安装 $1 到此账户上。"],
+        [/Install (.*)/, "安装 $1"],
         [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
         [/Where should we transfer (.*)\?/, "将 $1 转让给谁？"],
         [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
@@ -5618,7 +5720,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Local": "本地",
                     "Clone": "克隆",
                         // HTTPS
-                        "Use Git or checkout with SVN using the web URL.": "使用 Git 或 SVN 通过该网址检出。",
+                        "Clone using the web URL.": "使用 Web URL 克隆。",
                         // SSH
                         "You don't have any public SSH keys in your GitHub account.": "您的 GitHub 帐户中没有任何公共 SSH 密钥。",
                         "You can": "您可以",
@@ -5885,7 +5987,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
 
         // Action 仓库 右侧栏
-            "Suggested Workflows": "建议的工作流程",
+            "Suggested workflows": "建议的工作流程",
             "Based on your tech stack": "基于您的技术堆栈",
             "Set up": "设立",
             "Configure": "设置",
@@ -7045,6 +7147,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "branch": "分支",
             "added": "添加",
             "requested changes": "要求更改",
+            "changed the title": "修改了标题",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -7079,6 +7182,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // "Review required": "需要审查", // 拉取请求 页面状态词
                 "Add your review": "添加您的评论",
             // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            "Code owner review required": "需要代码所有者审核",
+                "was requested for review as a code owner": "要求以代码所有者身份进行审查",
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
             "Approval not required": "不需要批准",
@@ -7101,6 +7206,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Merging is blocked": "合并被阻止",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
+                "View rules": "查看规则",
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
                 "Merge the latest changes from": "将",
@@ -7245,11 +7351,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "This commit was signed with the committer's": "此提交已签名，使用提交者的",
                 "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
+                "The key has expired": "密钥已过期",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
                 "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
+                "Expired": "已过期",
                 "Learn about vigilant mode": "了解警戒模式",
 
             "Copy the full SHA": "复制完整的 SHA",
@@ -7466,6 +7574,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
         [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
         [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"], // 具体的拉取请求
+        [/([^ ]+) is a code owner/, "$1 是代码所有者"], // 具体的拉取请求
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
         [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
@@ -7488,7 +7597,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Compare changes": "比较变更",
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
             "compare across forks": "比较复刻库和源仓库",
-            "Learn more about diff comparisons here": "在这里了解更多关于差异比较的信息",
+            "Learn more about diff comparisons here": "点击此处了解更多关于差异比较的信息",
 
             // 分支选择栏
             "base repository:": "基础仓库：",
@@ -7638,11 +7747,13 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         "Allow edits and access to secrets by maintainers": "允许维护人员编辑和访问机密",
         // 创建拉取请求 按钮下拉
-            "Open a pull request that is ready for review": "打开一个拉取请求，以供审查",
+            "Automatically requests reviews from code owners": "自动请求代码所有者进行审查",
             "Create draft pull request": "创建拉取请求草案",
-            "Cannot be merged until marked ready for review": "在标记为可供审查之前，不能合并",
+            "Doesn't request code owners review and cannot be merged": "不请求代码所有者审核并且无法合并",
             "Draft pull request": "拉取请求草案",
-        "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+        "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
+        "security policy": "安全政策",
+        "code of conduct": "行为准则",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
@@ -7709,6 +7820,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "Comment on this file": "评论此文件", // new code view
 
             "Filter changed files": "筛选已更改的文件", // new code view 侧栏
+            "Show file tree": "显示文件树", // new code view 侧栏
+            "Hide file tree": "隐藏文件树", // new code view 侧栏
 
             "Submodule": "子模块",
             "updated": "已更新",
@@ -7727,7 +7840,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
-            "Expand Up": "展开",
+            "Expand Up": "向上展开",
+            "Expand Down": "向下展开",
             "Collapse expanded lines": "折叠展开的线",
 
             // 修改的文件 右侧下拉
@@ -7781,11 +7895,13 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "This commit was signed with the committer's": "此提交已签名，使用提交者的",
             "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "verified signature": "已验证签名",
+            "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
             "SSH Key Fingerprint:": "SSH 密钥指纹：",
+            "Expired": "已过期",
             "Learn about vigilant mode": "了解警戒模式",
 
             "Copy the full SHA": "复制完整的 SHA",
@@ -9460,28 +9576,6 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
     ],
 };
 
-I18N.zh["repository/rules"] = { // 仓库 - 规则集页面
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-
-        // 仓库规则集页面 /<user-name>/<repo-name>/rules
-            "Rulesets": "规则集",
-            "All": "全部",
-            "• targeting": "• 针对",
-            ", targeting": ", 针对",
-
-            "No rulesets matched your search": "没有与您搜索相匹配的规则集",
-            "Try expanding your search or creating a new ruleset": "尝试扩大搜索范围或创建新的规则集",
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/(\d+) rules?/, "$1 条规则"],
-        [/(\d+) branch(?:es|)?/, "$1 个分支"],
-        [/(\d+) tags?/, " $1 个标签"],
-    ],
-};
-
 I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
@@ -9491,11 +9585,13 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "This commit was signed with the committer's": "此提交已签名，使用提交者的",
                 "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
                 "verified signature": "已验证签名",
+                "The key has expired": "密钥已过期",
                 "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
                 "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
                 "GPG Key ID:": "GPG 密钥 ID：",
                 "SSH Key Fingerprint:": "SSH 密钥指纹：",
+                "Expired": "已过期",
                 "Learn about vigilant mode": "了解警戒模式",
 
         // 发行版 页面 /<user-name>/<repo-name>/releases
@@ -9936,6 +10032,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
 
             "Configure": "设置",
                 "Manage repository vulnerability settings": "管理仓库漏洞设置",
+                "Manage Dependabot rules": "管理 Dependabot 规则",
                 "Manage account notification settings": "管理帐户通知设置",
 
             "Closed as": "关闭",
@@ -10073,7 +10170,14 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
 
+            "Bypassed": "绕行",
+            "Validity": "有效性",
+                "Active": "活跃",
+                "Inactive": "不活跃",
+                "Unknown": "未知",
             "Secret type": "机密类型",
+                "Service Providers": "服务提供商",
+                "Custom Patterns": "自定义模式",
                 "Filter by secret type": "按机密类型筛选",
                 "Filter secret type": "筛选机密类型",
                 "Nothing to show": "暂无",
@@ -10672,7 +10776,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
     ],
 };
 
-I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 - 依赖机器人
+I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 - Dependabot
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
         ...I18N.zh["repository-insights-menu"]["static"],
@@ -10681,7 +10785,7 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
         "Dependents": "依赖者",
 
         "Export SBOM": "导出 SBOM",
-        // 依赖关系图 - 依赖机器人 /network/updates
+        // 依赖关系图 - Dependabot /network/updates
             "Enable Dependabot": "启用 Dependabot",
             "Dependabot isn't enabled": "未启用 Dependabot",
             "Dependabot isn't enabled on forks by default": "默认情况下，Dependabot 不会在复刻上启用。",
@@ -10689,6 +10793,18 @@ I18N.zh["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖关系图 
             "Dependabot version updates aren't configured yet": "尚未配置 Dependabot 版本更新",
             "Dependabot creates pull requests to keep your dependencies up-to-date.": "Dependabot 创建拉取请求以保持您的依赖项是最新的。",
             "Create config file": "创建配置文件",
+
+            "Recent update jobs": "最近更新的工作",
+
+            "Dependabot version updates": "Dependabot 版本更新",
+            "automatically keep your application up-to-date by periodically updating dependencies to their latest versions.": "通过定期将依赖项更新到最新版本，自动保持应用的最新状态。",
+            "Dependabot security updates": "Dependabot 版本更新",
+            "can also help keep dependencies updated.": "还可以帮助保持依赖项更新。",
+
+            "Monitored dependency files": "受监控的依赖文件",
+            "Check for updates": "检查更新",
+            "Recent jobs": "近期工作",
+            "view logs": "查看日志",
 
     },
     "regexp": [ // 正则翻译
@@ -10880,7 +10996,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
                 "Require contributors to sign off on web-based commits": "要求贡献者在基于 Web 的提交上签署",
                 "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者原产地证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
 
             "Default branch": "默认分支",
@@ -11911,6 +12027,18 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
 
             "Applies to": "应用到",
             "target:": "个目标:",
+
+       // 仓库规则集页面 /<user-name>/<repo-name>/rules
+            "Rulesets": "规则集",
+            "All": "全部",
+            "• targeting": "• 针对",
+            ", targeting": ", 针对",
+
+            "No rulesets matched your search": "没有与您搜索相匹配的规则集",
+            "Try expanding your search or creating a new ruleset": "尝试扩大搜索范围或创建新的规则集",
+
+        "Name": "名称",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -11954,6 +12082,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
     ],
 };
 I18N.zh["orgs/settings/rules"] = I18N.zh["repository/settings/rules"];
+I18N.zh["repository/rules"] = I18N.zh["repository/settings/rules"];
 
 I18N.zh["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
@@ -12519,6 +12648,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                 "Last": "最近",
                 "deployed": "部署",
             "Visit site": "访问网站",
+            "Addtional site options": "站点附加选项",
             "Unpublish site": "取消站点发布",
                 // 顶部提醒
                     "GitHub Pages unpublished.": "GitHub  Pages 未发布。",
@@ -12705,14 +12835,20 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Protection rules": "保护规则",
                     "Pull request check failure": "拉取请求检查失败",
                         "Define which code scanning alert severity should cause a pull request check to fail. This also applies to analysis results uploaded via the API.": "定义哪种代码扫描警报严重程度会导致拉取请求检查失败。这也适用于通过 API 上传的分析结果。",
-                    "None": "无",
-                    "Only critical": "仅关键风险",
-                    "High or higher": "高风险及以上",
-                    "Medium or higher": "中风险及以上",
-                    "Any": "任何",
-                    "Other": "其他",
-                        "Only errors": "仅错误",
-                        "Errors and warnings": "错误和警告",
+
+                        "None": "无",
+                        "Only critical": "仅关键风险",
+                        "High or higher": "高风险及以上",
+                        "Medium or higher": "中风险及以上",
+                        "Any": "任何",
+                        "Other": "其他",
+                            "Only errors": "仅错误",
+                            "Errors and warnings": "错误和警告",
+
+                    "Check runs failure threshold": "检查运行失败阀值",
+                        "Select the alert severity level for code scanning check runs to fail.": "选择代码扫描检查运行失败的警报严重性级别。",
+                        "Create a branch ruleset": "创建分支规则集",
+                        "to prevent a branch from merging when these checks fail.": "以防止分支在这些检查失败时被合并。",
 
                 // 顶部提醒
                 "Code Scanning alert severity settings saved.": "代码扫描警报严重性设置已保存。",
@@ -13589,13 +13725,14 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 切换账户 https://github.com/switch_account
             "Signed out": "已注销",
             "Add a different account": "添加其他帐户",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
-        [/Continue as (.*)/, "以 $1 身份继续使用"]
+        [/Continue as (.*)/, "以 $1 身份继续使用"],
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
@@ -14305,8 +14442,11 @@ I18N.zh["search"] = { // 搜索页面
             "packages": "软件包",
             "wikis": "Wiki",
             "Try one of the tips below to find more code": "请尝试使用以下提示查找更多代码",
+            "Try one of the tips below to find more repositories": "请尝试使用以下提示查找更多仓库",
 
             "However we found": "然而我们发现",
+            "code results": "代码结果",
+            "code result": "代码结果",
             "and": "和",
             "that matched your search query. Alternatively try one of the tips below.": "与您的搜索查询相匹配。或者尝试以下提示之一。",
 
@@ -14684,7 +14824,8 @@ I18N.zh["login/oauth"] = { // 应用授权
         // 第三页 安装中
 
         // 第四页 安装后 授权
-        // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
+        // GitHub 应用安装授权 /login/oauth/authorize?client_id=<client-id>&state=<state>
+        // 示例 /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
             "Resources on your account": "您帐户中的资源",
             "Act on your behalf": "代表您行事",
             "Email addresses": "电子邮箱地址",
@@ -14696,7 +14837,8 @@ I18N.zh["login/oauth"] = { // 应用授权
             "Created": "创建于",
             "GitHub users": "GitHub 用户",
 
-        // /login/oauth/authorize?client_id=78a2ba87f071c28e65bb&redirect_uri=https%3A%2F%2Fcircleci.com%2Fauth%2Fgithub%3Freturn-to%3D%252Fdashboard%253Futm_medium%253Dpartner%2526utm_campaign%253Dghmarketplace%2526utm_source%253Dgithub&scope=repo%2Cuser%3Aemail&state=uZ9BTIkhQ3_98icRI09o1L1HJmfvIO8gK3FDGwytNAzbBRzXwTge440cKS7NaGtvS0tqCR_HzGMH2z3p
+        // OAuth 应用安装授权 /login/oauth/authorize?client_id=<client-id>&redirect_uri=<redirect-uri>&scope=<scope>&state=<>
+        // 示例 /login/oauth/authorize?client_id=78a2ba87f071c28e65bb&redirect_uri=https%3A%2F%2Fcircleci.com%2Fauth%2Fgithub%3Freturn-to%3D%252Fdashboard%253Futm_medium%253Dpartner%2526utm_campaign%253Dghmarketplace%2526utm_source%253Dgithub&scope=repo%2Cuser%3Aemail&state=uZ9BTIkhQ3_98icRI09o1L1HJmfvIO8gK3FDGwytNAzbBRzXwTge440cKS7NaGtvS0tqCR_HzGMH2z3p
             "wants to access your": "想访问您的",
             "account": "帐户",
             "Public and": "公共库和",
@@ -14713,6 +14855,16 @@ I18N.zh["login/oauth"] = { // 应用授权
             "Email addresses (read-only)": "电子邮箱地址(只读)",
             "This application will be able to read your private email addresses.": "此应用将能够读取您的私人电子邮箱地址。",
 
+            "Organization access": "组织访问",
+                "Request": "请求",
+                "This organization allows the application to access organization data as described in the permissions above.": "该组织允许应用访问上述权限中所述的组织数据。",
+                "Until access is granted by an owner, the application cannot access the organization’s private data or modify its public data.": "在所有者授予访问权限之前，应用无法访问组织的私有数据或修改其公共数据。",
+                "The application cannot access this organization’s private data or modify its public data.": "应用无法访问该组织的私有数据或修改其公共数据。",
+
+            // >>>>>具体的权限不打算汉化<<<<<<<
+
+            "Owned & operated by GitHub": "由 GitHub 拥有和运营",
+
         // 第五页 即将跳转到 重定向页面
             "You are being redirected to the authorized application.": "您将被重定向到授权的应用。",
             "If your browser does not redirect you back, please": "如果您的浏览器没有将您重定向回来，请",
@@ -14721,21 +14873,6 @@ I18N.zh["login/oauth"] = { // 应用授权
             "would like permission to:": "希望获得以下许可：",
             "Know which resources you can access": "了解您可以访问哪些资源",
 
-        // // /apps/codacy-production/installations/new/permissions?target_id=7850715
-        //     "All repositories": "所有仓库",
-        //     "This applies to all current": "这适用于所有当前",
-        //     "and": "和",
-        //     "future repositories.": "未来的仓库。",
-        //     "Only select repositories": "仅选定的仓库",
-        //     "Select repositories": "选择仓库",
-        //     "Search for a repository": "搜索仓库",
-        //     "with these permissions:": "授权以下权限：",
-        //     "User permissions": "用户权限",
-        //     "Install & Authorize": "安装 & 授权",
-        //     "Next: you'll be redirected to": "下一步：您将被重定向到",
-
-        // // >>>>>具体的权限不打算汉化<<<<<<<
-        // // >>>>>具体的权限不打算汉化<<<<<<<
     },
     "regexp": [ // 正则翻译
         // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
@@ -14744,14 +14881,14 @@ I18N.zh["login/oauth"] = { // 应用授权
         [/Learn more about/, "了解更多关于"],
         [/More than ([^ ]+)/, "超过 $1"],
         // /apps/codacy-production/installations/new/permissions?target_id=7850715
-        [/Install & Authorize on your personal account/, "安装和授权到您的个人帐户"],
-        [/Install & Authorize/, "安装和授权"],
+        // [/Install & Authorize on your personal account/, "安装和授权到您的个人帐户"],
+        // [/Install & Authorize/, "安装和授权"],
         [/Authorize ([^ ]+)/, "授权 $1"], // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login 调整位置避免覆盖
-        [/Installing and authorizing ([^ ]+) immediately grants these permissions on your account:/, "安装和授权 $1则会立即授予您帐户的以下权限："],
+        // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装和授权 $1 则会立即授予您帐户的以下权限："],
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
     ],
 };
-I18N.zh["installations/new"] = I18N.zh["login/oauth"];
+// I18N.zh["installations/new"] = I18N.zh["login/oauth"];
 
 I18N.zh["explore"] = { // 探索页面
     "static": { // 静态翻译
@@ -15236,13 +15373,15 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "Backup Utilities": "备份工具",
                         "Utilities providing periodic backups of your GitHub data": "定期备份 GitHub 数据的实用工具",
 
-            "Filters": "筛选器",
+            "Filter": "筛选器",
                 // 免费
                     "Tools that provide a free tier.": "提供免费套餐的工具。",
                 "Free Trials": "免费试用",
                     "Tools that support free, time-limited, access to their service.": "支持免费、限时访问其服务的工具。",
                 "GitHub Enterprise": "GitHub 企业版",
                     "Tools that have GitHub Enterprise supported offerings.": "支持 GitHub 企业版的工具。",
+                "GitHub Partners": "GitHub 合作伙伴",
+                    "This category is used for tagging listings/actions for TPE team to use as a filter": "此类别用于标记列表/操作，以供 TPE 团队用作筛选器",
                 "Paid": "付费",
                     "Tools that require a paid subscription.": "需要付费订阅的工具。",
 
@@ -15270,7 +15409,24 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Publisher domain and email verified": "已验证发布者域名和电子邮件",
             "Creator verified by GitHub": "创建者经 GitHub 验证",
 
-        // 应用介绍页面 /marketplace/codacy 第一页
+        // 待处理订单页面 https://github.com/marketplace/orders/pending
+            "Review and complete your orders": "查看并完成您的订单",
+            "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我们注意到您开始制定一些新计划，但尚未完成。您可以完成下面的待处理订单或查看任何有效的订阅在",
+            "billing overview page": "账单概览页面",
+
+            "Remove from pending orders": "从待处理订单中删除",
+            "This will not affect your existing subscriptions.": "这不会影响您现有的订阅。",
+
+            // 顶部提醒
+                // [/plan has been deleted./, "计划已被删除。"],
+
+        // 待安装页面 https://github.com/marketplace/installations/pending
+            "We noticed you’ve purchased some apps but didn't finish installing them. You can review and install them below.": "我们注意到您购买了一些应用，但尚未完成安装。您可以在下面查看并安装它们。",
+            "View or cancel any active subscriptions on the": "查看或取消任何有效的订阅",
+            "Grant this app access to your GitHub account to complete installation.": "授予此应用访问 GitHub 账户的权限，以完成安装。",
+
+        // 应用介绍页面 https://github.com/marketplace/<app-name>
+        // 示例: https://github.com/marketplace/codacy 第一页
             "Apps": "应用",
             // 左侧信息栏
             "GitHub has verified that the application meets the": "GitHub 已验证了该应用符合",
@@ -15278,7 +15434,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             "requirements": "要求",
             "Categories": "类别",
-            "App Type": "应用程序类型",
+            "App Type": "应用类型",
+                "GitHub Application": "GitHub 应用",
+                "Oauth Application": "Oauth 应用",
             "Supported languages": "支持的语言",
             "and": "和",
             "Customers": "客户",
@@ -15286,108 +15444,235 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Developer links": "开发者链接",
             "Support": "支持",
             "Documentation": "文档",
+            "Privacy Policy": "隐私条款",
+            "Terms of Service": "服务条款",
+            "Report Abuse": "举报滥用",
+
             // 右侧正文
             "Application": "应用",
+            "Set up a free trial": "免费试用",
             "Set up a plan": "制定一个计划",
-            "Read more…": "了解更多…",
+            "Set up a new plan": "制定一个新计划",
+
+            "You have already purchased this app on GitHub Marketplace.": "您已经在 GitHub 市场上购买了此应用。",
+            "You’ve already granted this app access to GitHub outside of GitHub Marketplace.": "您已授予此应用在 GitHub 市场之外访问 GitHub 的权限。",
+            "grant this app access to your GitHub account": "授予此应用访问您的 GitHub 帐户的权限",
+            "Configure access": "设置权限",
+            "Edit your plan": "编辑您的计划",
+                "Choose an account’s plan to edit": "选择要编辑的帐户计划",
+            "Read more...": "了解更多...",
+
             // 下半部分
             "Pricing and setup": "定价与设置",
-            "Free for open source projects": "免费的开源项目",
+
+            "Open source": "开源",
+            "Free for open source projects": "对开源项目免费",
+            "Free for both open source and private projects": "对开源和私人项目免费",
             "Unlimited private repositories": "无限制私有项目",
-            "per user": "每人",
-            "User(s) in this plan": "个用户在计划中",
+            "Free Trial": "免费试用",
+
+            "per seat": "每席位",
+            "Seat(s) in this plan": "个席位在计划中",
+
+            "Search by name": "按名称搜索",
             "Install it for free": "免费安装",
+            "Try free for 14 days": "免费试用 14 天",
             "Buy with GitHub": "通过 GitHub 购买",
+            "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
             "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
+            // [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
             "terms of service": "服务条款",
             "privacy policy": "隐私政策",
             ", and": "，和",
             "support documentation": "支持文档",
             "support contact": "支持联络",
 
-        // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
+        // 应用的审查、编辑订单 第二页 https://github.com/marketplace/<app-name>/order/<order-id>?account=<account-name>
+        // 收费应用示例: https://github.com/marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
             "Edit your plan": "编辑您的计划",
+            "Account:": "帐户：",
+            "Order summary": "订单摘要",
             "Open Source": "开源",
             "(current plan)": "(当前计划)",
-            "plans": "计划",
-            // "(current plan)": "(当前计划)",
-            "Account:": "帐户：",
-            "/ month": "/ 月",
+            "Plans": "计划",
+                "/ month": "/ 月",
+
             "To complete this installation, you must": "要完成此安装，您必须",
             "grant this app access": "授予此应用的权限",
             "to your GitHub account.": "访问您的 GitHub 帐户。",
-            "Cancel this plan": "取消计划",
-            "Order summary": "订单摘要",
-            "Current plan": "当前计划",
-            "Billing information": "账单信息",
-            "Personal account": "个人帐户",
-            "Terms of Service": "服务条款",
-            "and the": "和",
-            "Privacy Policy": "隐私政策",
-            ". You previously agreed to the": "。您已同意过",
-            "Marketplace Terms of Service.": "商城服务条款。",
-            "Issue plan changes": "议题计划更改",
 
-        // 应用的审查订单 第二页  /marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
+            "Cancel this plan": "取消计划",
+
+            // 右侧栏
+            "Current plan": "当前计划",
+            "New plan": "新计划",
+                "Due today": "截止到今天",
+                // [/Prorated for/, "按比例计算"],
+
+            "Billing information": "账单信息",
+            "Please confirm your billing details to continue. You only need to do this once.": "请确认您的账单详情以继续。您只需确认一次。",
+            "Personal account": "个人帐户",
+            // "Terms of Service": "服务条款",
+            // "and the": "和",
+            // "Privacy Policy": "隐私政策",
+            // ". You previously agreed to the": "。您已同意过",
+            // "Marketplace Terms of Service.": "市场服务条款。",
+            // "Issue plan changes": "议题计划更改",
+
+            "First name": "名字",
+                "First name can't be blank.": "名字不能为空。",
+                "First name can't be blank": "名字不能为空",
+            "Last name": "姓氏",
+                "Last name can't be blank.": "姓氏不能为空。",
+                "Last name can't be blank": "姓氏不能为空",
+            "Address (P.O. box, company name, c/o)": "地址（邮政信箱、公司名称、c/o）",
+                "Address can't be blank.": "地址不能为空。",
+                "Address can't be blank": "地址不能为空",
+            "Address line 2 (Apartment, suite, unit)": "地址第 2 行（公寓、套房、单元）",
+            "City": "城市",
+                "City can't be blank.": "城市不能为空。",
+                "City can't be blank": "城市不能为空",
+            "Country/Region": "国家/地区",
+                "Country code can't be blank.": "国家/地区不能为空。",
+                "Country code can't be blank": "国家/地区不能为空",
+                "Choose your country": "选择您所在的国家/地区",
+            "State/Province": "州/省",
+                "Required for certain countries": "某些国家/地区需要",
+            "Postal/Zip code": "邮政编码",
+
+            "Save and continue": "保存并继续",
+
+            // 顶部提醒
+                "An error occurred while saving payment information.": "保存支付信息时发生错误。",
+
+        // 免费应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
             "Review your order": "审查您的订单",
             "Free": "免费",
             "For individuals, teams, and communities, public and private projects": "对于个人、团队和社区，公共和私人项目",
             "Total amount": "总金额",
-            "Due today": "截止到今天",
-            "Complete order and begin installation": "完成订购并开始安装",
-            // "Prorated for": "",
 
-        // /apps/codacy-production
+            "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "组织所有者或账单管理者必须将其个人账单信息与该组织账户关联。您可以切换到企业账户，以使用企业的账单信息通过",
+            "signing": "签署",
+            "the": " ",
+            "GitHub Customer Agreement": "GitHub 客户协议",
+
+        // GitHub 应用页面 https://github.com/apps/<app-name>
+        // 示例: https://github.com/apps/codacy-production
             "GitHub App": "GitHub 应用",
-            "Read more about this app on the Marketplace": "了解更多关于商城中此应用的信息",
 
-            "Install": "安装",
-            "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
-            "Configure": "设置",
-            "Manage your installation settings.": "管理安装设置。",
+            "No description": "尚无描述",
+            "Read more about this app on the Marketplace": "了解更多关于市场中此应用的信息",
+
+            // 未安装
+                "Install": "安装",
+                // "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
+
+            // 已安装
+                "Configure": "设置",
+                "Manage your installation settings.": "管理安装设置。",
 
             "Developer": "开发者",
-            "Website": "网站",
-            "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
-            "Report Abuse": "举报滥用",
+                "App settings": "应用设置", // 已安装
+                "Website": "网站",
 
-        // /marketplace/actions/merge-upstream
+            "is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "是由第三方提供的，并受单独的服务条款、隐私政策和支持文档的约束。",
+
+            "Report abuse": "举报滥用",
+
+        // GitHub 应用 安装、授权页面 https://github.com/apps/<app-name>/installations/new/permissions?target_id=<id>
+        // 示例 https://github.com/apps/codacy-production/installations/new/permissions?target_id=7850715
+            "Install & Authorize": "安装与授权",
+            "Authorize & Request": "授权与请求", // 他人的组织
+            "Request": "请求",
+            // [/Install & Authorize on your personal account (.*)/, "在您的个人帐户 $1 上安装与授权"],
+            // [/Install on your personal account (.*)/, "在您的个人帐户 $1 上安装"],
+            // [/Install & Authorize on your organization (.*)/, "在您的组织 $1 上安装与授权"], // 组织
+            // [/Install on your organization (.*)/, "在您的组织 $1 上安装"], // 组织
+            // [/Request on your organization (.*)/, "对于您的组织 $1 的请求"], // 组织
+            // [/Authorize & Request on your organization (.*)/, "对于您的组织 $1 的授权与请求"], // 组织
+
+            "for these repositories:": "对于这些仓库：",
+                "All repositories": "所有仓库",
+                    "This applies to all current": "这适用于资源所有者拥有的所有当前",
+                    "and": "和",
+                    "future repositories owned by the resource owner.": "未来的仓库。",
+                    "Also includes public repositories (read-only).": "还包括公共仓库（只读）。",
+                "Only select repositories": "仅选定的仓库",
+                    "Select at least one repository.": "至少选择一个仓库。",
+                    "Select repositories": "选择仓库",
+                        "Search for a repository": "搜索仓库",
+                        // [/Selected (\d+) repositor(y|ies)./, "已选择 $1 仓库。"],
+                        "request": "请求",
+
+            "with these permissions:": "授权以下权限：",
+
+            // >>>>>具体的权限不打算汉化<<<<<<<
+            // >>>>>具体的权限不打算汉化<<<<<<<
+
+            "User permissions": "用户权限",
+            // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装 & 授权 $1 会立即在您的帐户上授予以下权限："],
+            // [/can also request users' permission to the following resources. These permissions will be requested and authorized on an individual-user basis./, "还可以请求用户对以下资源的许可。这些权限将在个人用户的基础上请求和授权。"],
+            "These permissions will also be requested and authorized as needed on an individual-user basis.": "这些权限也将根据个人用户的需要进行申请和授权。", // 组织
+
+            "Installing & Authorizing": "安装与授权中",
+            "Installing": "安装中",
+            "Requesting": "请求中",
+
+            "Next: you'll be redirected to": "下一步：您将被重定向到",
+            "Next: you’ll be directed to the GitHub App’s site to complete setup.": "下一步：您将被引导到GitHub 应用网站完成设置。", // 组织
+
+        // 应用设置 - 选择目标 https://github.com/apps/<app-name>/installations/select_target
+            // [/Install (.*)/, "安装 $1"],
+            // [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
+            // [/(.*) is installed. Click to configure.\?/, "$1 已安装。点击进行配置。"],
+
+        // 操作介绍页面 https://github.com/marketplace/actions/<action-name>
+        // 示例: https://github.com/marketplace/actions/merge-upstream
+            // 顶部提醒
+                "Sorry, we couldn’t find that version of this Action. Here’s the latest version.": "对不起，我们找不到此 GitHub Action 的这个版本。 下面是最新的版本。",
+                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。你想查看",
+                "latest version": "最新版本",
+                "instead?": "吗？",
+
             "Latest version": "最新发行版",
             "Use latest version": "使用最新发行版",
             "Choose a version": "选择发行版",
+
+            "Verified creator": "经验证的创建者",
+            "GitHub has verified that this action was created by": "GitHub 已经验证该操作，创建由",
+            "Learn more about verified Actions": "了解更多关于经验证操作的信息",
 
             "Contributors": "贡献者",
             "Links": "链接",
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
 
-        // /apps/codacy-production/installations/new/permissions?target_id=7850715
-            "All repositories": "所有仓库",
-            "This applies to all current": "这适用于所有当前",
-            "and": "和",
-            "future repositories.": "未来的仓库。",
-            "Only select repositories": "仅选定的仓库",
-            "Select repositories": "选择仓库",
-            "Search for a repository": "搜索仓库",
-            "with these permissions:": "授权以下权限：",
-            "User permissions": "用户权限",
-            "Install & Authorize": "安装 & 授权",
-            "Next: you'll be redirected to": "下一步：您将被重定向到",
-
-        // >>>>>具体的权限不打算汉化<<<<<<<
-        // >>>>>具体的权限不打算汉化<<<<<<<
     },
     "regexp": [ // 正则翻译
+        [/plan has been deleted./, "计划已被删除。"],
         // /marketplace/codacy
         [/(\d+) other languages? supported/, "$1 种其他语言支持"],
         [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
         // /marketplace/travis-ci/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW43MA==?account=maboloshi
-        [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
-        [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
+        [/Prorated for/, "按比例计算"],
+        // [/By clicking "Issue plan changes", you are agreeing to ([^ ]+)’s/, "点击 “议题计划更改”，您同意 $1 的"],
+        // [/By clicking "Complete order and begin installation", you are agreeing to ([^ ]+)’s/, "点击 “完成订购并开始安装”，表示您同意 $1 的"],
         [/Next: Authorize ([^ ]+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
         [/(\d+) results?/, "$1 个结果"],
         [/([0-9.k]+) stars?/, "$1 星标"],
         [/([0-9.k]+) installs?/, "$1 次安装"],
+        [/Install & Authorize on your personal account (.*)/, "在您的个人帐户 $1 上安装与授权"],
+        [/Install & Authorize on your organization (.*)/, "在您的组织 $1 上安装与授权"], // 组织
+        [/Install on your personal account (.*)/, "在您的个人帐户 $1 上安装"],
+        [/Install on your organization (.*)/, "在您的组织帐户 $1 上安装"],
+        [/Selected (\d+) repositor(y|ies)./, "已选择 $1 仓库。"],
+        [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装与授权 $1 会立即在您的帐户上授予以下权限："],
+        [/can also request users' permission to the following resources. These permissions will be requested and authorized on an individual-user basis./, "还可以请求用户对以下资源的许可。这些权限将在个人用户的基础上请求和授权。"],
+        [/Authorize & Request on your organization (.*)/, "对于您的组织 $1 的授权与请求"], // 组织
+        [/Request on your organization (.*)/, "对于您的组织 $1 的请求"], // 组织
+        [/Install (.*)/, "安装 $1"],
+        [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
+        [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
@@ -16243,7 +16528,7 @@ I18N.zh["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 / 默�
 
             "Commit signoff": "提交签署",
                 "Choose whether repositories will require contributors to sign off on commits they make through GitHub's web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "选择仓库是否要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者原产地证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
                 "All repositories": "所有仓库",
                     "Require signoff on web-based commits for all repositories in this organization": "要求对该组织中所有仓库的基于 Web 的提交进行签署",
@@ -17044,11 +17329,11 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
 };
 I18N.zh["orgs/settings/variables"] = I18N.zh["orgs/settings/secrets"];
 
-I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方访问
+I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方应用访问策略
     "static": { // 静态翻译
         ...I18N.zh["orgs-settings-menu"]["static"],
 
-        // 第三方访问 /organizations/<org-login>/settings/oauth_application_policy
+        // 第三方应用访问策略 /organizations/<org-login>/settings/oauth_application_policy
             "Third-party application access policy": "第三方应用访问策略",
             "Policy:": "策略：",
                 "Access restricted": "访问受限",
@@ -17066,6 +17351,9 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
                     "’s data.": "的数据。",
                     "Setup application access restrictions": "设置应用访问限制",
 
+            "Denied": "拒绝",
+            "Approved": "已批准",
+
             "No pending requests": "没有待处理的请求",
             "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用时，这些请求将在此处列出以供您批准。您可以浏览",
             "your own authorized applications": "您授权的应用",
@@ -17073,10 +17361,23 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "When authorized, applications can act on behalf of organization members. Your access policy determines which applications can access data in your organization.": "获得授权后，应用可以代表组织成员进行操作。您的访问策略决定了哪些应用可以访问您组织中的数据。",
             "Read more about third-party access and organizations.": "阅读更多关于第三方访问和组织的信息。",
 
-        // 设置应用访问限制 /settings/oauth_application_policy/confirm
+        // 设置第三方应用访问限制 /settings/oauth_application_policy/confirm
             "Third-party application restrictions": "第三方应用限制",
             "create an extra layer of security that allows owners to better control how applications access data in their organization.": "创建一个额外的安全层，使所有者能够更好地控制应用如何访问其组织中的数据。",
-            "Organization owners maintain a whitelist of trusted applications.": "组织所有者维护受信任应用白名单。",
+
+            "Organization owners maintain an allowlist of trusted applications.": "组织所有者维护受信任应用的允许列表。",
+            "Applications owned by": "应用拥有者",
+                "are always trusted.": "的应用始终受信任。",
+            "Members can request organization approval for an application.": "成员可请求组织批准应用。",
+            "Approval requests notify organization owners, allowing them to deny or approve application access.": "批准请求会通知组织所有者，允许他们拒绝或批准应用的访问。",
+            "Only trusted applications can:": "只有受信任的应用才能：",
+                "Access private organization data via the API or SSH.": "通过 API 或 SSH 访问私有组织数据。",
+                "Change public organization data.": "更改公共组织数据。",
+                "Receive webhooks for private events.": "接收私人事件的网络钩子。",
+
+            "Restrict third-party application access": "限制第三方应用访问",
+            "Restricting access will immediately block all unapproved applications and will disable SSH keys created before February 2014.": "限制访问将立即阻止所有未经批准的应用，并禁用 2014 年 2 月前创建的 SSH 密钥。",
+            "Read more at GitHub Help.": "请访问 GitHub 帮助了解更多信息。",
 
     },
     "regexp": [ // 正则翻译
