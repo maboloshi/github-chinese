@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Generate a token
         id: generate_token
-        uses: maboloshi/create-github-app-token@main
+        uses: actions/create-github-app-token@v1
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
