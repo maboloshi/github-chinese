@@ -1358,7 +1358,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
         [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
         [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
-        [/Support ([^ ]+)'s open source work/，"支持 $1 的开源工作"],
+        [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
