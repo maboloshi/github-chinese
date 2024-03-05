@@ -56,7 +56,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan)/,
@@ -1248,6 +1248,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "posted a discussion in": "发表讨论于",
         "made this repository public": "将此仓库公开",
         "labeled a pull request": "将标签添加到拉取请求中",
+        "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
 
         "published a release": "发布发行版",
@@ -1357,6 +1358,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
         [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
         [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
+        [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
@@ -5383,6 +5385,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Inviting a successor helps ensure the continuity of your work in case you are unable to access your account.": "邀请继任者有助于在您无法访问账户时确保工作的连续性。",
             "Invite a successor": "邀请继任者",
 
+        // 仓库赞助
+            "Couldn't load subscription status.": "无法加载赞助状态。",
+            "Retry": "重试",
+
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -6059,43 +6065,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
-        // 代码追溯页面 /<user-name>/<repo-name>/blame/<branch>/<file>
-            "Blame": "追溯",
-            "Newer": "新的",
-            "Older": "旧的",
-
-            // 新三个点
-                "Raw file content": "原始文件内容",
-                "Jump to line": "跳转到行",
-                "Find in file": "在文件中查找",
-                "Copy path": "复制路径",
-                "Copy permalink": "复制永久链接",
-                "View options": "查看选项",
-                    "Show code folding buttons": "显示代码折叠按钮",
-                    "Wrap lines": "换行",
-                    "Center content": "核心内容",
-                    "Open symbols on click": "单击打开符号",
-                "Delete file": "删除文件",
-
-            "Raw": "源码",
-            "Copy raw file": "复制原始文件",
-            "Download raw file": "下载原始文件",
-            "Edit this file": "编辑本文件",
-            "Edit the file in your fork of this project": "在您的复刻中编辑文件",
-                "Edit file": "编辑文件",
-                "Edit in place": "就地编辑",
-                "Open with...": "打开...",
-
-            "View blame prior to this change": "查看此变化之前的追溯",
-
-            // 浮动搜索框
-                "Find": "查找",
-                "Press": "按",
-                "again to open the browser's find menu": "打开浏览器的查找菜单",
-                "Search this file": "搜索此文件",
-
-        // *.yml /<user-name>/<repo-name>/blame/<branch>/.github/workflows/*.yml
-            "View Runs": "查看运行情况",
 
     },
     "regexp": [ // 正则翻译
@@ -7985,113 +7954,51 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
 
-        // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<file> >>>>>>>>>>>>>>>>>>>>>>
+        // 文件代码页面 /<user-name>/<repo-name>/blob/<brach>/<file>
             // 顶部提醒
                 "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "此提交不属于该仓库上的任何分支，并且可能属于仓库的外部分支。",
 
-            // 左侧栏
-                "Add file": "添加文件",
-                "Documentation": "文档",
-
-            "View Runs": "查看运行情况", // 工作流程文件
-            "Go to file": "转到文件",
-                "No matches found": "未找到匹配项",
-
             // 快捷键
                 "Source code browsing": "源代码浏览",
-                "Activates the file finder": "激活文件查找器",
-                "Jump to line": "跳转到行",
-                "Switch branch/tag": "切换分支/标签",
-                "Expand URL to its canonical form": "将 URL 扩展为其规范形式",
-                "Show/hide all inline notes": "显示/隐藏所有内嵌注释",
-                "Open blame": "打开追溯视图",
+                    "Jump to line": "跳转到行",
+                    "Switch branch/tag": "切换分支/标签",
+                    "Expand URL to its canonical form": "将 URL 扩展为其规范形式",
+                    "Show/hide all inline notes": "显示/隐藏所有内嵌注释",
+                    "Open blame": "打开追溯视图",
+                    "Copy file path": "复制文件路径",
+                    "Toggle symbols panel": "切换符号面板",
+                    "Toggle file tree": "切换文件树",
+                    "Open code view": "打开代码视图",
+                    "Open preview": "打开预览",
+                    "Open raw file": "打开源文件",
+                "File tree": "文件树",
+                    "Move focus to row starting with string": "将焦点移至字符串",
+                    "Focus previous row": "聚焦上一行",
+                    "Focus next row": "聚焦下一行",
+                    "Collapse row, or focus parent row": "折叠行或聚焦父行",
+                    "Expand row, or focus child row": "展开行或聚焦子行",
+
+            // 文件树侧边栏
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                // 搜索框
+                    "Go to file": "转到文件",
+                        "No matches found": "未找到匹配项",
 
             // Action的 action.yml 文件
                 "You can publish this Action to the GitHub Marketplace": "您可以将此 Action 发布到 GitHub 市场",
                 "Draft a release": "起草发布",
-            "View runs": "查看工作流程", // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
-
-            "Path copied!": "✅ 路径已复制！",
-
-            "Download": "下载",
-            "Open with Desktop": "在 Desktop 中打开", //小屏
-            "Delete file": "删除文件", //小屏
-
-            "View raw": "查看原始数据",
-            "(Sorry about that, but we can’t show files that are this big right now.)": "（很抱歉，但我们现在无法显示这么大的文件。）",
-            "Sorry, something went wrong.": "抱歉，出了一些问题。",
-            "Reload?": "重新加载？",
-            "Unable to render code block": "无法渲染代码块",
-
-            "More Pages": "更多页面",
-
-            // 地址栏 最右侧 下拉菜单
-            "Go to line": "跳转到行",
-                "Jump to line…": "跳转到行",
-                // "Go": "确定",
-            "Go to definition": "跳转到定义",
-                // 代码定义筛选对话框
-                "Code definitions": "代码定义",
-                "Filter definitions": "筛选定义",
-                "Function": "函数",
-                "Method": "方法",
-                "Code navigation index up-to-date": "代码导航索引最新",
-                "No definitions found in this file.": "本文件中没有发现任何定义。",
-                "Code navigation not available for this commit": "该提交的代码导航不可用",
-            "Copy path": "复制路径",
-            "Copy permalink": "复制永久链接",
-
-            "Latest commit": "最新提交",
-            "History": "历史",
-
-            "contributor": "贡献者",
-            "contributors": "贡献者",
-
-            "Display the source blob": "源代码视图", // md 文件
-            "Display the rendered blob": "解析后视图", // md 文件
-            "Raw": "源码",
-            "Blame": "追溯",
-            // GitHub Desktop 图标
-                "Open this file in GitHub Desktop": "在 GitHub Desktop 中打开",
-                "You must be on a branch to open this file in GitHub Desktop": "您必须在分支上才能在 GitHub Desktop 中打开",
-            "Copy raw contents": "复制源码内容",
-            // 文件编辑图标
-            "Edit this file": "编辑本文件",
-                "Open in github.dev": "在 github.dev 中打开",
-                "Open in GitHub Desktop": "在 GitHub Desktop 中打开",
-
-                // 按钮提示
-                "Fork this repository and edit the file": "复刻此仓库并编辑文件",
-            // 文件删除图标
-            "Delete this file": "删除本文件",
-                "Fork this repository and delete the file": "复刻此仓库并删除文件",
-            "You must be on a branch to make or propose changes to this file": "您必须在分支上才能对此文件进行操作或提议更改", // 历史文件
-
-            "Copy line": "复制行",
-            "Copy lines": "复制行",
-            "Copy permalink": "复制永久链接",
-            "View git blame": "浏览 Git 追溯",
-            "Reference in new issue": "引用到新议题",
-            "Reference in new discussion": "引用到新讨论",
-            "View file in GitHub.dev": "在 GitHub.dev 中查看文件",
-            "View file in different branch/tag": "查看不同分支/标签中的文件",
-
-            "Search this file…": "搜索这个文件...", // csv 文件
-
-            //
-            "This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.": "此文件包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在一个能显示隐藏的 Unicode 字符的编辑器中打开文件。",
-            "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
-            "Show hidden characters": "显示隐藏字符",
-
-
-            // new code view
-                "Top": "顶部",
-                "Jump to file": "跳转到文件",
-
-                // 新三个点
-                    "Raw file content": "原始文件内容",
+            // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
+                "View Runs": "查看运行情况",
+            // 添加文件按钮, 文件夹模式下
+                "Add file": "添加文件",
+            // 三个点
+                "Raw file content": "原始文件内容",
+                    "Download": "下载",
                     // "Jump to line": "跳转到行",
-                    "Find in file": "在文件中查找",
+                    "Find in file": "在文件中查找", // 激活 “换行” 时显示
+                    "Copy path": "复制路径",
+                    "Copy permalink": "复制永久链接",
                     "View options": "查看选项",
                         "Show code folding buttons": "显示代码折叠按钮",
                         "Wrap lines": "换行",
@@ -8099,21 +8006,78 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                         "Open symbols on click": "单击打开符号",
                     "Delete file": "删除文件",
 
-                "Copy raw file": "复制原始文件",
-                "Download raw file": "下载原始文件",
-                "Edit this file": "编辑本文件",
-                "Edit the file in your fork of this project": "在您的复刻中编辑文件",
-                    "Edit file": "编辑文件",
-                    "Edit in place": "就地编辑",
-                    "Open with...": "打开...",
+            "Copied path!": "✅ 路径已复制！",
 
-                // 大纲按钮
+            "History": "历史",
+
+            "Top": "顶部",
+            "Jump to file": "跳转到文件",
+
+            // 代码操作栏
+                "Blame": "追溯",
+                // [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
+                // Copilot 广告
+                    "Code 55% faster with GitHub Copilot": "使用 GitHub Copilot 编码速度提高 55%",
+                        "Spend less time creating boilerplate and repetitive code patterns, and more time building great software. Try it in Codespaces or your favorite file editor.": "花更少的时间创建模板和重复的代码模式，花更多的时间构建优秀的软件。在 GitHub 代码空间或您最喜欢的文件编辑器中尝试一下哈。",
+                        "Get GitHub Copilot": "获取 GitHub Copilot",
+                        "Don't show again": "不再显示",
+
+                "Raw": "源码",
+                // 文件复制图标
+                    "Copy raw file": "复制原始文件",
+                // 文件下载图标
+                    "Download raw file": "下载原始文件",
+                // 文件编辑图标
+                    "Edit this file": "编辑本文件",
+                    "Edit the file in your fork of this project": "在您的复刻中编辑文件",
+                        "Edit file": "编辑文件",
+                            "Edit in place": "就地编辑",
+                        "Open with...": "打开...",
+
+                    // 按钮提示
+                    "Fork this repository and edit the file": "复刻此仓库并编辑文件",
+                // 符号面板图标
+                    "Open symbols panel": "打开符号面板",
+                    "Close symbols panel": "关闭符号面板",
+
+            // 代码视图 行号栏 菜单
+                "Copy line": "复制行",
+                "Copy lines": "复制行",
+                "Copy permalink": "复制永久链接",
+                "View git blame": "浏览 Git 追溯",
+                "Reference in new issue": "引用到新议题",
+                "Reference in new discussion": "引用到新讨论",
+                "View file in GitHub.dev": "在 GitHub.dev 中查看文件",
+                "View file in different branch/tag": "查看不同分支/标签中的文件",
+
+            // 提醒
+                "This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.": "此文件包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在一个能显示隐藏的 Unicode 字符的编辑器中打开文件。",
+                "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
+                "Show hidden characters": "显示隐藏字符",
+
+            // 正文部分
+                // csv 文件
+                    "Search this file": "搜索这个文件", // csv 文件
+                    // 提醒
+                        "We can make this file": "如果纠正此错误，我们可以使该文件",
+                        "beautiful and searchable": "美观且可搜索",
+                        "if this error is corrected: No commas found in this CSV file in line 0.": "：在此 CSV 文件中的第 0 行中找不到逗号。",
+
+                // 大文件
+                    "View raw": "查看原始数据",
+                    "(Sorry about that, but we can’t show files that are this big right now.)": "（很抱歉，但我们现在无法显示这么大的文件。）",
+                // 无法渲染
+                    "Sorry, something went wrong.": "抱歉，出了一些问题。",
+                    "Reload?": "重新加载？",
+                    "Unable to render code block": "无法渲染代码块",
+
+            "More Pages": "更多页面",
+
+            // 右侧大纲面板
                 "Outline": "大纲", // md 文件
                     "Filter headings": "筛选标题", // md 文件
 
-                //展开按钮
-                "Open symbols panel": "打开符号面板",
-                "Close symbols panel": "关闭符号面板",
+            // 右侧符号面板
                 "Symbols": "符号",
                     "Symbol outline not available for this file": "大纲不适用于此文件",
                     "To inspect a symbol, try clicking on the symbol directly in the code view.": "要检查一个符号，可以尝试在代码视图中直接点击该符号。",
@@ -8136,12 +8100,28 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                     "Show less": "显示更少",
                     "Search for this symbol": "搜索此符号",
 
+        // 代码追溯页面 /<user-name>/<repo-name>/blame/<branch>/<file>
+            "Newer": "新的",
+            "Older": "旧的",
+
+            "Contributor": "贡献者",
+            "Contributors": "贡献者",
+
+            // 浮动搜索框
+                "Find": "查找",
+                "Press": "按",
+                "again to open the browser's find menu": "打开浏览器的查找菜单",
+                "Search this file": "搜索此文件",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
         [/(\d+) References?/, "$1 次引用"],
+        [/Blame prior to change ([a-z0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
     ],
 };
+I18N.zh["repository/blame"] = I18N.zh["repository/blob"];
 
 I18N.zh["repository/discussions"] = { // 讨论页面
     "static": { // 静态翻译
