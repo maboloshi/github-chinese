@@ -1248,6 +1248,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "posted a discussion in": "发表讨论于",
         "made this repository public": "将此仓库公开",
         "labeled a pull request": "将标签添加到拉取请求中",
+        "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
 
         "published a release": "发布发行版",
@@ -1357,7 +1358,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
         [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
         [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
-    ],
+        [/Support ([^ ]+)'s open source work/,"支持 $1 的开源工作"]]
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
 I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
@@ -5382,6 +5383,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Consider inviting another GitHub user to be your successor.": "考虑邀请另一位 GitHub 用户作为您的继任者。",
             "Inviting a successor helps ensure the continuity of your work in case you are unable to access your account.": "邀请继任者有助于在您无法访问账户时确保工作的连续性。",
             "Invite a successor": "邀请继任者",
+
+        // 仓库赞助
+            "Couldn't load subscription status.": "无法加载赞助状态。",
+            "Retry": "重试",
 
     },
     "regexp": [ // 正则翻译
