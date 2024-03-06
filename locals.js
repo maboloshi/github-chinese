@@ -251,7 +251,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
-        "Contact Support": "联系 GitHub Support",
+        "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
 
         // 顶部栏 (未登录)
@@ -888,7 +888,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          *
          * 更新于 2023-07-04 13:19:21
          * 新增前缀词, 减少二次组织翻译
-         *  Updated Jul 4            // 仪表盘页面 仓库标签卡
+         *  Updated Jul 4            // 仪表板页面 仓库标签卡
          *  Commits on Jul 4, 2023   // 提交页面、仓库拉取请求页->提交卡
          *  Joined on Jul 4, 2023    // 追星者，关注者页面
          *
@@ -1150,8 +1150,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
 
         // 中间栏
-        "The home for all developers — including you.": "所有开发者的家园--包括您。",
-        "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
+        "The home for all developers — including you.": "所有开发者的家园——包括您。",
+        "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
             "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
@@ -1175,7 +1175,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
         "The GitHub Flow": "GitHub 流程",
         "Adopt GitHub's lightweight, branch-based workflow to collaborate on projects.": "采用 GitHub 的轻量级、基于分支的工作流程来协作处理项目。",
-
 
         "One moment please...": "稍等一会儿...",
         "Loading activity...": "载入活动...",
@@ -1219,7 +1218,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Show all": "显示所有",
         "Show less": "显示更少",
 
-        "Uh oh!": "哎呀!",
+        "Uh oh!": "哎呀！",
         "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
         "Reload this page.": "重载此页面",
 
@@ -1308,7 +1307,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         //"Learn from the best": "向最优秀的人学习",
         //"Unlock the full power of GitHub! Gain expertise and insights from top organizations through guided tutorials, boosting productivity, enhancing security, and enabling seamless collaboration.": "释放 GitHub 的全部力量！通过指导教程获得顶级组织的专业知识和见解，提高生产力、增强安全性并实现无缝协作。",
         //"Start learning": "开始学习",
-        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨AI如何在各个层面上转变着开发者的工作体验。",
+        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨 AI 如何在各个层面上转变着开发者的工作体验。",
 
         // 用户 浮动信息卡
         "Member of": "隶属组织",
@@ -1326,8 +1325,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "You’ve been added to the": "您已经被添加到",
         "organization!": "组织！",
         "Here are some quick tips for a first-time organization member.": "以下是首次加入组织的一些提示。",
-        "Use the switch context button in the upper left corner of this page to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在(",
-        ") and organizations you are a member of.": ")和组织身份之间进行切换。",
+        "Use the switch context button in the upper left corner of this page to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在（",
+        ") and organizations you are a member of.": "）和组织身份之间进行切换。",
         "After you switch contexts you’ll see an organization-focused dashboard that lists out organization repositories and activities.": "当您切换身份，您会看到一个组织为中心的页面，其中列出了组织库和活动。",
 
         // 快捷键
@@ -1527,7 +1526,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions! ": "您通过私人贡献解锁了新成就！",
+            "You unlocked new Achievements with private contributions!": "您通过私人贡献解锁了新成就！",
             "Show them off by including private contributions in your Profile in": "通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             // 拖拽排序提醒
@@ -2037,7 +2036,7 @@ I18N.zh["orgs-public"] = { // 组织公共部分
 
     },
     "regexp": [ // 正则翻译
-        [/Invite someone to/, "邀请某人加入组织"],
+        [/Invite someone to/, "邀请加入到组织"],
         [/New team in/, "新建团队在组织"],
         [/New repository in/, "新建仓库在组织"],
         [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "该组织已由管理员于 $1 存档。不再维护。"],
@@ -2497,6 +2496,8 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
+                    "Select notification channels": "选择通知通道",
+                    "Close": "关闭",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, CLI": "在 GitHub、CLI 上",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
@@ -2509,6 +2510,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
                 "Customize email updates": "自定义电子邮件更新",
                     "Choose which additional events you'll receive emails for when participating or watching.": "选择参与或关注时，您将收到哪些额外活动的电子邮件。",
+                    "Select events": "选择事件",
                     "Reviews": "审查",
                     "Reviews, Pushes": "审查、推送",
                     "Reviews, Pushes, Comments": "审查、推送、评论",
@@ -5229,7 +5231,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
             "Some checks haven't completed yet": "部分检查还未完成",
 
-
             "Jump to bottom": "跳到底部", //小屏模式
 
             // 标签栏
@@ -5241,6 +5242,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Security": "安全",
             "Insights": "洞察",
             "Settings": "设置",
+
+            "Additional navigation options": "更多导航选项", // 小屏
 
             // "Pulse": "统计",
             // "Graphs": "图表",
@@ -8159,7 +8162,7 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
         [/(\d+) References?/, "$1 次引用"],
-        [/Blame prior to change ([a-z0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
+        [/Blame prior to change ([a-f0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
     ],
 };
 I18N.zh["repository/blame"] = I18N.zh["repository/blob"];
@@ -8523,7 +8526,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "to this repository": "该仓库",
                 "can still leave comments": "仍然可以留下评论",
                 "that others can see.": "，其他人可以看到。",
-                "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
+                "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。",
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
             "Unlock conversation": "解锁对话",
                 "Are you sure you want to unlock conversation on this discussion?": "您确定要解锁此讨论的对话吗？",
@@ -8707,6 +8710,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             "Automate your workflow from idea to production": "从创意到产品，使您的工作流程自动化",
             "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.": "GitHub Actions 现在可以使用世界一流的 CI/CD 轻松自动化所有软件工作流程。直接从 GitHub 构建、测试和部署您的代码。",
+            "Learn more about getting started with Actions.": "了解更多关于开始使用 Actions 的信息。",
             "Linux, macOS, Windows, ARM, and containers": "Linux、macOS、Windows、ARM 和容器",
             "Hosted runners for every major OS make it easy to build and test all your projects. Run directly on a VM or inside a container. Use your own VMs, in the cloud or on-prem, with self-hosted runners.": "为每一个主要的操作系统提供的托管运行程序，使您能够轻松地构建和测试您的所有项目。直接在虚拟机上或容器内运行。在云端或本地使用您自己的虚拟机，以及自托管的运行器。",
 
@@ -8909,6 +8913,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             //右侧按钮
             "View workflow file": "查看工作流程文件",
             "View workflow runs": "查看工作流程运行",
+            "Workflow run options": "工作流程运行选项",
             "Create status badge": "创建状态徽章",
                 "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
             "Delete all logs": "删除所有日志",
@@ -8972,6 +8977,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
 
             "Search logs": "搜索日志",
+            "Re-run this job": "重新运行此作业",
             // 设置按钮
                 "Show timestamps": "显示时间戳",
                 "Show full screen (Shift+F)": "全屏显示（Shift+F）",
@@ -9402,7 +9408,6 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                     "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
-
 
             "Search branches…": "搜索分支…",
 
@@ -13618,7 +13623,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Step 2": "第二步",
             "Verify a device, SSH key or personal access token.": "验证一个设备、SSH 密钥或个人访问令牌。",
             "Step 3": "第三步",
-            "GitHub support will review your request": "GitHub Support 将审查您的请求",
+            "GitHub support will review your request": "GitHub 支持将审查您的请求",
             "within 1-3 days": "在 1-3 天内",
             "I understand, get started": "我知道了，开始吧",
 
@@ -14666,7 +14671,7 @@ I18N.zh["search"] = { // 搜索页面
             "In these repositories": "指定仓库",
             "Created on the dates": "创建日期",
             "Written in this language": "使用语言",
-            "Any Language": "任何语言",
+            "Any language": "任何语言",
                 "Popular": "流行的",
                 "Everything else": "其他语言",
 
@@ -15793,7 +15798,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         // 示例: https://github.com/marketplace/actions/merge-upstream
             // 顶部提醒
                 "Sorry, we couldn’t find that version of this Action. Here’s the latest version.": "对不起，我们找不到此 GitHub Action 的这个版本。 下面是最新的版本。",
-                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。你想查看",
+                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。您想查看",
                 "latest version": "最新版本",
                 "instead?": "吗？",
 
@@ -17187,11 +17192,11 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "The extended query includes the default suite, plus lower severity and precision queries.": "扩展查询包括默认套件，以及较低严重性和精度的查询。",
 
             "Secret scanning": "机密扫描",
-                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的机密、密钥或其他令牌的警报。",
 
                 "Push protection": "推送保护",
                     "Block commits that contain": "阻止提交，包含",
-                    "supported secrets": "受支持的秘密",
+                    "supported secrets": "受支持的机密",
                     "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
                     "Add a resource link in the CLI and web UI when a commit is blocked": "当提交被阻止时，在 CLI 和 Web UI 中添加资源链接。",
                         "Link will show in addition to": "显示链接和",
@@ -17536,7 +17541,7 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "Only trusted applications can:": "只有受信任的应用才能：",
                 "Access private organization data via the API or SSH.": "通过 API 或 SSH 访问私有组织数据。",
                 "Change public organization data.": "更改公共组织数据。",
-                "Receive webhooks for private events.": "接收私人事件的网络钩子。",
+                "Receive webhooks for private events.": "接收私人事件的 Web 钩子。",
 
             "Restrict third-party application access": "限制第三方应用访问",
             "Restricting access will immediately block all unapproved applications and will disable SSH keys created before February 2014.": "限制访问将立即阻止所有未经批准的应用，并禁用 2014 年 2 月前创建的 SSH 密钥。",
@@ -18267,11 +18272,11 @@ I18N.zh["redeem"] = { // 兑换页面
     ],
 };
 
-I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
+I18N.zh["github-copilot/signup"] = { // GitHub Copilot 个人版获取页面
     "static": { // 静态翻译
 
         // https://github.com/github-copilot/signup
-           //"Your AI pair programmer": "您的人工智能助理程序员",
+           "GitHub Copilot Individual": "GitHub Copilot 个人版",
            "The world's most widely adopted AI developer tool.": "世界上采用最广泛的人工智能开发工具。",
            "GitHub Copilot is powered by generative AI to help you code faster and happier!": "GitHub Copilot 是由生成式 AI 驱动的，旨在帮助您更快乐、更高效地编码！",
            "Start your 30-day free trial": "开始 30 天免费试用",
