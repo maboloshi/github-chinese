@@ -9105,58 +9105,79 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
         ...I18N.zh["repository-public"]["static"],
 
         // 新建文件页面 /<user-name>/<repo-name>/new/<branch>
-            // 组织仓库 编辑文件页面
-            "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
-            "created a fork of this project": "为该项目创建复刻",
-            "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建议的更改。提交更改会将其写入复刻中的新分支，这样您就可以发送拉取请求。",
+            // 文件树侧边栏
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                // 搜索框
+                    "Go to file": "转到文件",
+                        "No matches found": "未找到匹配项",
 
             "Name your file...": "文件名...",
             "in": "在",
-            "Cancel changes": "取消更改",
 
-            "Edit new file": "编辑新文件",
-            "Preview changes": "预览更改",
-            "loading preview…": "载入预览…",
-            "Loading preview…": "载入预览…",
-            "Unable to load this preview, sorry.": "抱歉，无法加载此预览。",
-            "There are no changes to show.": "没有要显示的更改。",
-            "But you can preview the whole file.": "但您可以预览整个文件。", // new code view
+            "Cancel changes": "取消更改",
+                "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
+            "Commit changes...": "提交更改...",
+
+            "Preview": "预览",
+                "Loading preview…": "载入预览…",
+                    "There is no content to preview.": "没有可预览的内容。",
+                    "There has been an error generating the preview.": "生成预览时发生错误。",
+                    "Unable to load this preview, sorry.": "抱歉，无法加载此预览。",
+                    "There are no changes to show.": "没有要显示的更改。",
+                    "But you can preview the whole file.": "但您可以预览整个文件。", // new code view
 
             // 代码编辑框
-            "Indent mode": "缩进模式",
-            "Spaces": "空格",
-            "Tabs": "Tab",
-            "Indent size": "缩进大小",
-            "Line wrap mode": "换行模式",
-            "No wrap": "不换行",
-            "Soft wrap": "软换行",
+                // Copilot 广告
+                    "Code 55% faster with GitHub Copilot": "使用 GitHub Copilot 编码速度提高 55%",
+                        "Spend less time creating boilerplate and repetitive code patterns, and more time building great software. Try it in Codespaces or your favorite file editor.": "花更少的时间创建模板和重复的代码模式，花更多的时间构建优秀的软件。在 GitHub 代码空间或您最喜欢的文件编辑器中尝试一下哈。",
+                        "Get GitHub Copilot": "获取 GitHub Copilot",
+                        "Don't show again": "不再显示",
 
-            "Commit new file": "提交新文件", //  自有仓库
-            "Propose new file": "提议新文件", //  他人仓库
-            "Sign off and commit new file": "签署并提交新文件",
-            // 提交框
-                "Add an optional extended description…": "添加描述... (可选)",
+                "Indent mode": "缩进模式",
+                    "Spaces": "空格",
+                    "Tabs": "Tab",
+                "Indent size": "缩进大小",
+                "Line wrap mode": "换行模式",
+                    "No wrap": "不换行",
+                    "Soft wrap": "软换行",
 
-                "You are": "您将",
-                "signing off": "签署",
-                // [/on this commit as/,"该提交以"],
+            "Show Diff": "显示差异",
 
-                "You can’t commit to": "您不能提交到",
-                "because its is a": "，因为它是一个",
-                "protected branch": "受保护分支",
+            // 提交对话框
+                "Sign off and propose changes": "签署并提出变更建议",
+                "Sign off and commit changes": "签署并提交更改", // 编辑模式
+                    "Commit message": "提交信息",
+                    "Extended description": "扩展描述",
+                        "Add an optional extended description..": "添加描述.. (可选)",
 
-                "Commit directly to the": "提交到",
-                "branch.": "分支。",
+                    "You are": "您将",
+                    "signing off": "签署",
+                    // [/on this commit as/,"该提交以"],
 
-                "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
-                "Bypass rules and commit changes": "绕过规则并提交更改",
+                    "You can’t commit to": "您不能提交到",
+                    "because its is a": "，因为它是一个",
+                    "protected branch": "受保护分支",
 
-                "Create a": "创建",
-                "new branch": "新分支",
-                "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。",
-                "Learn more about pull requests.": "了解更多关于拉取请求的信息。",
+                    "Commit directly to the": "提交到",
+                    "branch": "分支",
 
-            "Something went wrong. Please fork the project, then try from your fork.": "出错了。请复刻该项目，然后从您的复刻处尝试。",
+                    "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
+                    "Bypass rules and commit changes": "绕过规则并提交更改",
+
+                    "Create a": "创建",
+                    "new branch": "新分支",
+                    "for this commit and start a pull request": "为这个提交，并且发起一个拉取请求",
+                    "Learn more about pull requests": "了解更多关于拉取请求的信息",
+
+                "Something went wrong. Please fork the project, then try from your fork.": "出错了。请复刻该项目，然后从您的复刻处尝试。",
+
+            // 底部栏
+                "Use": "使用",
+                "to toggle the": "切换",
+                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                "then": "键，然后",
+                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
             // 顶部提醒
             // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
@@ -9164,11 +9185,21 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
         // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
             // 非本人仓库
                 "You need to fork this repository to propose changes.": "您需要复刻此仓库以提出更改。",
-                "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
+                    "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
                 "Fork this repository": "复刻此仓库",
-                "Learn more about forks": "了解更多关于复刻的信息",
+                    "Learn more about forks": "了解更多关于复刻的信息",
+
                 "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻",
                 ", so you can send a pull request.": " 中的新分支，这样您就可以发送拉取请求。",
+
+            // 组织仓库 编辑文件页面
+                "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
+                "created a fork of this project": "为该项目创建复刻",
+                "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建议的更改。提交更改会将其写入复刻中的新分支，这样您就可以发送拉取请求。",
+
+            // 混合换行符
+                "We’ve detected the file has mixed line endings. When you commit changes we will normalize them to": "我们检测到该文件具有混合行结尾。当您提交更改时，我们会将它们标准化为",
+                "Windows-style": "Windows 样式",
 
             // 与用户名同名仓库 编辑 README.md 文件
                 "is a special repository: its": "是一个特殊的仓库：它的",
@@ -9182,62 +9213,34 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "will appear on your organization's profile!": "将出现在您的组织资料中!",
 
             // 编辑 .gitignore 文件
-                "Want to use a": "想使用",
-                "template?": "模板吗？",
-                "Filter ignores…": "筛选忽略…",
-                "Filter ignores...": "筛选忽略...", // new code view
-                "Choose .gitignore:": "选择 .gitignore：",
-                "none": "无",
+                "Choose .gitignore template": "选择 .gitignore 模板",
+                    ".gitignore template": ".gitignore 模板",
+                    "Filter…": "筛选…",
+                    "None": "无",
 
             // 编辑 工作流程文件 .github/workflows/xxxx.yml
-                "Start commit": "开始提交",
+                "Collapse help panel": "折叠帮助面板",
 
-                "Search Marketplace for Actions": "搜索 Actions 市场",
-                "Featured Actions": "特色 Actions",
-                "Featured categories": "特色分类",
-                    "Code quality": "代码质量",
-                    "Monitoring": "监控",
-                    "Continuous integration": "持续集成",
-                    "Project management": "项目管理",
-                    "Deployment": "部署",
-                    "Project management": "项目管理",
-                    "Testing": "测试",
-                "Browse all actions on the GitHub Marketplace": "浏览 GitHub 市场 上的所有 Actions",
+                // 帮助面板侧边栏
+                    "Search Marketplace for Actions": "搜索 Actions 市场",
+                    "Featured Actions": "特色 Actions",
+                    "Featured categories": "特色分类",
+                        "Code quality": "代码质量",
+                        "Monitoring": "监控",
+                        "Continuous integration": "持续集成",
+                        "Project management": "项目管理",
+                        "Deployment": "部署",
+                        "Project management": "项目管理",
+                        "Testing": "测试",
+                    "Browse all actions on the GitHub Marketplace": "浏览 GitHub 市场 上的所有 Actions",
 
-                "Use": "使用",
-                "Space": "空格",
-                "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
-                "Documentation": "文档",
+                // 底部栏补充
+                    "Space": "空格",
+                    "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
+                    "Documentation": "文档",
 
             // 编辑 LICENSE 许可证文件
                 "Choose a license template": "选择许可证模板",
-
-            // 快捷键
-            "Code editor": "代码编辑器",
-            // "Preview changes": "预览更改",
-            "Toggle line comment": "切换行评论",
-
-            "Edit file": "编辑文件",
-            "Preview": "预览",
-            "Show diff": "显示差异",
-            "Show Diff": "显示差异", // new code view
-
-            "Commit changes": "提交更改", //  自有仓库
-            "Commit changes...": "提交更改...", //  自有仓库 // new code view
-                "Saving...": "保存中...",
-            "Propose changes": "提议更改", //  他人仓库
-            "Sign off and commit changes": "签署并提交更改",
-            "Sign off and propose changes": "签署并提出变更建议",
-            "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
-
-            // 提交更改 对话框
-                "Commit message": "提交信息",
-                "Extended description": "扩展描述",
-                "Add an optional extended description…": "添加可选的扩展描述…",
-
-                "branch": "分支",
-                "for this commit and start a pull request": "为此提交并创建拉取请求",
-                "Learn more about pull requests": "了解更多关于拉取请求的信息",
 
             // 查找工具栏
                 "Find": "查找",
@@ -9250,12 +9253,6 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Replace": "替换",
                 "replace": "替换",
                 "replace all": "全部替换",
-
-            // 底部栏
-                "to toggle the": "切换",
-                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
-                "then": "键，然后",
-                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
         // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 顶部提醒
@@ -9277,12 +9274,15 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
 
                 // 文件上传进度条
                 "Uploading": "文件上传中",
-                // [/1 of 1 files/, ""],
+                "of": "/",
 
-                // "Commit changes": "提交更改",
                 // 提交框 补充
                     "Add files via upload": "通过上传添加文件",
                     "Add an optional extended description…": "添加可选的扩展描述...",
+
+                    "branch.": "分支。", // 上传页面
+                    "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。", // 上传页面
+                    "Learn more about pull requests.": "了解更多关于拉取请求的信息。", // 上传页面
 
             // 他人仓库
                 "Uploads are disabled.": "上传功能已禁用。",
