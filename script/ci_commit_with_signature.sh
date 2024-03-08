@@ -61,10 +61,28 @@ if [[ -z $GITHUB_URL ]]; then
   GITHUB_URL="https://api.github.com"
 fi
 
-username="${APP_SLUG}[bot]"
-id=$(curl "$GITHUB_URL/users/$username" --silent | jq -r '.id')
+function set_dco_signature {
+    if [[ $TOKEN == ghp_* ]]; then
+        # https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats/
+        # 'ghp_'开头的是 GitHub 个人访问令牌
 
-message_body="$message_body\nSigned-off-by: $username <$id+$username@users.noreply.github.com>"
+        response=$(curl -s -H "Authorization: token $TOKEN" $GITHUB_URL/user)
+    elif [[ $APP_SLUG ]]; then
+        CommitBot=$APP_SLUG
+    else
+        CommitBot="github-actions"
+    fi
+
+    if [[ $CommitBot ]]; then
+        response=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_URL/users/$CommitBot\[bot\]")
+    fi
+
+    CommitBot=$(echo $response | jq -r '.login')
+    id=$(echo $response | jq -r '.id')
+    echo "Signed-off-by: $CommitBot <$id+$CommitBot@users.noreply.github.com>"
+}
+
+message_body="$message_body\nSigned-off-by: $(set_dco_signature)"
 
 # 处理文件修改并构建 fileChanges 部分中 additions 的 JSON 字符串
 # Process the file changes and build the JSON string of `additions` in the `fileChanges` section
