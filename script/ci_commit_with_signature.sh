@@ -82,7 +82,7 @@ function set_dco_signature {
     echo "Signed-off-by: $CommitBot <$id+$CommitBot@users.noreply.github.com>"
 }
 
-message_body="$message_body\nSigned-off-by: $(set_dco_signature)"
+message_body="$message_body\n$(set_dco_signature)"
 
 # 处理文件修改并构建 fileChanges 部分中 additions 的 JSON 字符串
 # Process the file changes and build the JSON string of `additions` in the `fileChanges` section
