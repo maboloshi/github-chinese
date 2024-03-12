@@ -18451,3 +18451,24 @@ I18N.zh["developer/register"] = { // 开发者注册
     "regexp": [ // 正则匹配
     ],
 };
+
+I18N.zh["features"] = {
+    "static":{
+        "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
+        // 看板
+        "Experience AI": "体验AI",
+            "with Copilot Chat": "通过 Copilot",
+            "The latest GitHub": "最新 Github",
+            "previews": "预览",
+        // 流水图
+        "Collaborative": "协作",
+            "Coding": "编程",
+        "Contribute to projects quickly with automatic environment setup.": "通过自动环境设置快速为项目做出贡献。",
+        "Make sure you see the changes you care about.": "确保您看到您关注的变化。",
+        "Build community around your code.": "围绕您的代码建立社区。",
+        
+    },
+    "regexp": [
+    ],
+};
+
