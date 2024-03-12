@@ -760,6 +760,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "to": "到",
         "by": "由",
         "on": "于",
+        "Use": "使用",
 
         "Learn more": "了解更多",
         "Learn More": "了解更多",
@@ -773,6 +774,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Public archive": "公共存档",
         "Private archive": "私有存档",
         "Public template": "公共模板",
+        "Public mirror": "公共镜像",
         "Code": "代码",
         "Pull requests": "拉取请求",
         "Collaborators": "协作者",
@@ -1226,6 +1228,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "created": "创建了",
         "forked from": "复刻自",
         "generated from": "创建自",
+        "mirrored from": "镜像自",
         "forked": "复刻了",
         "from": "来自",
         "for": "",
@@ -5390,6 +5393,21 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Couldn't load subscription status.": "无法加载赞助状态。",
             "Retry": "重试",
 
+        // 提交检查对话框
+            "Some checks haven’t completed yet": "部分检查尚未完成",
+            "Some checks were not successful": "部分检查未成功",
+            "All checks have passed": "所有检查通过",
+            "All checks have failed": "所有检查失败",
+            "Waiting to run this check...": "正在等待运行此检查...",
+            "Queued": "队列中",
+            "Skipped": "已跳过",
+            "Deployed": "已部署",
+            "Pending": "待处理",
+            "Build Failed": "构建失败",
+            "Build Passed": "构建通过",
+            "Build Errored": "构建错误",
+            "Build Canceled": "构建取消",
+            "Waiting for build": "等待构建",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -5406,6 +5424,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/had recent pushes about/, "分支有了最新的推送，大约"],
         [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
+        [/You are the owner of the (.*) repository./, "您是 $1 仓库的所有者。"],
+        [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
+        [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
+        [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
     ],
 };
@@ -5600,6 +5622,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 操作条
                 "forked from": "复刻自",
                 "generated from": "创建自",
+                "mirrored from": "镜像自",
 
                 "Pin": "置顶", // 组织仓库
                 "Edit Pins": "编辑置顶", // 组织仓库
@@ -5752,6 +5775,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Don't show again": "不再显示",
 
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
+                    "Copy url to clipboard": "复制链接到剪贴板",
                     // "Copy to clipboard": "复制到剪切板",
                     // "Copied!": "✅ 复制成功!",
 
@@ -5881,6 +5905,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
+            "failure": "失败",
+            "success": "成功",
+            "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
@@ -5925,6 +5952,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
             "Activity": "活动",
+            "Custom properties": "自定义属性",
             "star": "星标",
             "stars": "星标",
             "watching": "关注",
@@ -6255,6 +6283,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "Filter by label": "按标签筛选",
                 "Filter labels": "筛选标签",
                 "Unlabeled": "无标签",
+                "to exclude labels": "排除标签",
+                "for logical OR": "表示逻辑“或”",
 
             // "Projects": "项目",
                 "Filter by project": "按项目筛选",
@@ -6314,7 +6344,11 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
-    }
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) linked issues?/, "链接 $1 个议题"],
+        [/Assigned to (.*)/, "分配给 $1"]
+    ]
 };
 
 I18N.zh["repository/issues"] = { // 仓库 - 议题页面
@@ -6710,6 +6744,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        ...I18N.zh["repository/pull_issue_public"]["regexp"],
+
         [/Want to contribute to ([^ ]+)/, "想为 $1 做贡献吗？"],
         [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
         [/([\d,]+) Open/, "$1 打开"],
@@ -6731,6 +6767,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Edited (\d+) time/, "已编辑 $1 次"],
     ],
 };
 
@@ -7489,6 +7526,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        ...I18N.zh["repository/pull_issue_public"]["regexp"],
+
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/#(\d+) opened/, "#$1 打开于"],
@@ -7948,6 +7987,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Copy full SHA for ([a-f0-9]{7})/, "复制提交 $1 的完整 SHA"],
         [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
+        [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
     ],
 };
 
@@ -17780,6 +17820,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
         // >>>>>>>>>>>>>>>>>>仓库 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 头部条
             "forked from": "复刻自",
+            "mirrored from": "镜像自",
 
             "Unpin": "取消置顶",
             "Ignoring": "忽略",
