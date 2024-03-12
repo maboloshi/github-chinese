@@ -184,6 +184,7 @@ I18N.zh["title"] = { // 标题翻译
         "Runners": "运行器",
         "Runner Groups": "运行器组",
         "Packages": "软件包",
+        "Package": "软件包",
         "Security": "安全",
         "Verified & approved domains": "经验证和批准的域名",
         "Third-party application access policy": "第三方应用访问策略",
@@ -213,7 +214,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Pull requests/, "拉取请求"],
         [/Actions/, "操作"],
         [/Projects/, "项目"],
-        [/Packages/, "软件包"],
+        [/Packages?/, "软件包"],
         [/Security Overview/, "安全概述"],
         [/Security Policy/, "安全政策"],
         [/Security Advisories/, "安全公告"],
@@ -759,6 +760,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "to": "到",
         "by": "由",
         "on": "于",
+        "Use": "使用",
 
         "Learn more": "了解更多",
         "Learn More": "了解更多",
@@ -772,6 +774,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Public archive": "公共存档",
         "Private archive": "私有存档",
         "Public template": "公共模板",
+        "Public mirror": "公共镜像",
         "Code": "代码",
         "Pull requests": "拉取请求",
         "Collaborators": "协作者",
@@ -1225,6 +1228,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "created": "创建了",
         "forked from": "复刻自",
         "generated from": "创建自",
+        "mirrored from": "镜像自",
         "forked": "复刻了",
         "from": "来自",
         "for": "",
@@ -5389,6 +5393,21 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Couldn't load subscription status.": "无法加载赞助状态。",
             "Retry": "重试",
 
+        // 提交检查对话框
+            "Some checks haven’t completed yet": "部分检查尚未完成",
+            "Some checks were not successful": "部分检查未成功",
+            "All checks have passed": "所有检查通过",
+            "All checks have failed": "所有检查失败",
+            "Waiting to run this check...": "正在等待运行此检查...",
+            "Queued": "队列中",
+            "Skipped": "已跳过",
+            "Deployed": "已部署",
+            "Pending": "待处理",
+            "Build Failed": "构建失败",
+            "Build Passed": "构建通过",
+            "Build Errored": "构建错误",
+            "Build Canceled": "构建取消",
+            "Waiting for build": "等待构建",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -5405,6 +5424,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/had recent pushes about/, "分支有了最新的推送，大约"],
         [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
+        [/You are the owner of the (.*) repository./, "您是 $1 仓库的所有者。"],
+        [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
+        [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
+        [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
     ],
 };
@@ -5599,6 +5622,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 操作条
                 "forked from": "复刻自",
                 "generated from": "创建自",
+                "mirrored from": "镜像自",
 
                 "Pin": "置顶", // 组织仓库
                 "Edit Pins": "编辑置顶", // 组织仓库
@@ -5751,6 +5775,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Don't show again": "不再显示",
 
                     "Which remote URL should I use?": "我应该使用哪个远程 URL ?",
+                    "Copy url to clipboard": "复制链接到剪贴板",
                     // "Copy to clipboard": "复制到剪切板",
                     // "Copied!": "✅ 复制成功!",
 
@@ -5880,6 +5905,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
+            "failure": "失败",
+            "success": "成功",
+            "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
@@ -5924,6 +5952,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
             "Activity": "活动",
+            "Custom properties": "自定义属性",
             "star": "星标",
             "stars": "星标",
             "watching": "关注",
@@ -6254,6 +6283,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "Filter by label": "按标签筛选",
                 "Filter labels": "筛选标签",
                 "Unlabeled": "无标签",
+                "to exclude labels": "排除标签",
+                "for logical OR": "表示逻辑“或”",
 
             // "Projects": "项目",
                 "Filter by project": "按项目筛选",
@@ -6313,7 +6344,11 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
-    }
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) linked issues?/, "链接 $1 个议题"],
+        [/Assigned to (.*)/, "分配给 $1"]
+    ]
 };
 
 I18N.zh["repository/issues"] = { // 仓库 - 议题页面
@@ -6709,6 +6744,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        ...I18N.zh["repository/pull_issue_public"]["regexp"],
+
         [/Want to contribute to ([^ ]+)/, "想为 $1 做贡献吗？"],
         [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
         [/([\d,]+) Open/, "$1 打开"],
@@ -6730,6 +6767,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Edited (\d+) time/, "已编辑 $1 次"],
     ],
 };
 
@@ -7488,6 +7526,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        ...I18N.zh["repository/pull_issue_public"]["regexp"],
+
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/#(\d+) opened/, "#$1 打开于"],
@@ -7947,6 +7987,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Copy full SHA for ([a-f0-9]{7})/, "复制提交 $1 的完整 SHA"],
         [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
+        [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
     ],
 };
 
@@ -9835,30 +9876,147 @@ I18N.zh["repository/packages"] = { // 仓库 - 软件包页面
             "Containers": "容器",
             "A single place for your team to manage Docker images and decide who can see and access your images.": "为您的团队提供一个管理 Docker 镜像的单一场所，并决定谁可以看到和访问您的镜像。",
 
+            "Package settings": "软件包设置",
+            "Repository source": "仓库来源",
+            "This is the repository where the package's source code is stored. This is defined in the repository's package.json file using the": "这是软件包源代码的仓库。这是在仓库中的 package.json 文件使用字段",
+            "field.": "定义的。",
+            "A GitHub repository has been identified as the source for this package. This package will be displayed in this repositories package list.": "GitHub 仓库已被确定为该软件包的来源，该软件包将显示在此仓库的软件包列表中。",
+            "You have referenced a non-GitHub source for this package that cannot be verified.": "您引用了一个无法验证的非 GitHub 来源的软件包。",
+            "Manage Actions access": "操作访问权限管理",
+            "Add Repository": "添加仓库",
+            "Pick the repositories that can access this package using": "选择可以访问此软件包的仓库，用于",
+            "Role:": "角色:",
+            "Choose role": "选择角色",
+            "Change role": "更改角色",
+            "Read": "只读",
+            "Write": "编辑",
+            "Admin": "管理",
+            "Remove": "删除",
+            "Actions repository access": "操作仓库访问",
+            "Pick the repositories that can access this package using GitHub Actions.": "选择可以使用 GitHub Actions 访问此软件包的仓库。",
+            "Permissions added for selected repositories.": "为选定的仓库添加了权限。",
+            "Permissions updated for selected repositories.": "更新了选定仓库的权限。",
+            "Can upload and download this package. Can read and write package metadata.": "可以上传和下载此软件包，并且可以读取和写入元数据。",
+            "Can download this package and read package metadata.": "可以下载此软件包并读取元数据。",
+            "Can upload, download, and manage this package. Can read and write package metadata. Can delete and restore packages.": "可以上传、下载和管理此软件包，可以读取和写入元数据，可以删除和恢复此软件包。",
+            "Can upload, download, and manage this package. Can read and write package metadata. Can grant package permissions.": "可以上传、下载和管理此软件包，可以读取和写入元数据，可以授予软件包权限。",
+            "Manage Codespaces access": "代码空间访问管理",
+            "Codespaces repository access": "代码空间仓库访问",
+            "Pick the repositories that can read this package using GitHub Codespaces.": "选择可以使用 GitHub 代码空间 读取此软件包的仓库。",
+            "Pick the repositories that can read this package using": "选择可以读取此软件包的仓库，用于",
+            "Inherited access": "继承访问",
+            "Inherit access from source repository (recommended)": "从源仓库继承访问权限 (推荐)",
+            "Go to": "转到",
+            "to change access, or remove inherited access to manage it separately. Inherited access is recommended.": "的访问设置以更改访问权限，或删除继承的访问权限以单独管理它，建议使用继承访问权限。",
+            "Danger Zone": "危险操作",
+            "Change package visibility": "更改软件包可见性",
+            "This package is currently public.": "该软件包当前是公开的",
+            "This package is currently private.": "该软件包当前是私有的",
+            "Change visibility": "更改可见性",
+            "Delete this package": "删除软件包",
+            "Once you delete a package, there is no going back. Please be certain.": "您一旦删除了软件包，将再也无法恢复，请确认！",
+            "Manage access": "访问管理",
+            "Invite teams or people": "邀请团队或人员",
+
+        // 仓库链接对话框
+            "Confirm you want to unlink this repository": "确认您要取消与此仓库的链接",
+            "Yes, unlink this repository": "是的，取消链接此仓库",
+
+        // 添加仓库对话框
+            "Select repository that can access this package using GitHub actions": "选择可以使用 GitHub 操作访问此软件包的仓库",
+            "Add repositories": "添加仓库",
+
+        // 删除仓库对话框
+            "Confirm you want to remove this repository": "确认要删除此仓库",
+            "Once removed,": "删除后，",
+            "will no longer have access to the": "将无法再访问",
+            "package.": "软件包。",
+
+        // 代码空间添加仓库对话框
+            "Select repository that can access this package using GitHub codespaces": "选择可以使用 GitHub 代码空间访问此软件包的仓库",
+
+        // 更改软件包可见性对话框
+            "Make this package visible to anyone.": "使这个软件包对所有人都可见。",
+            "Make this package visible privately, to organization members that have access.": "仅这个软件包有权访问的组织成员可见。",
+            "Please type": "请输入",
+            "to confirm:": "进行确认：",
+            "I understand the consequences, change package visibility.": "我明白后果，依然更改软件包可见性",
+
+        // 删除软件包对话框
+            "Are you absolutely sure?": "您真的确定吗？",
+            "Once this package is deleted, it will no longer be accessible.": "一旦删除了这个软件包，您将无法再访问它。",
+            "This action will delete package": "此操作将删除软件包",
+            ". Versions of this package will no longer be accessible, and it will not appear in searches or package listings.": "。此软件包的版本将不再可访问，并且不会出现在搜索结果或软件包列表中。",
+            "I understand the consequences, delete this package": "我明白后果，依然删除这个软件包",
+
+        // 更改仓库角色对话框
+            "Select a new role": "选择新角色",
+            "Recommended for non-code contributors who want to view or discuss your package.": "推荐给想要查看或讨论您的软件包的非代码贡献者。",
+            "Recommended for contributors who actively push to your package.": "推荐给积极推送代码到您的软件包的贡献者。",
+
+        // 更改成员角色对话框
+            "Recommended for people who need full access to the package, including sensitive and destructive actions like managing security and package visibility.": "建议需要完全访问软件包的人员使用，包括管理安全性和软件包可见性等敏感和破坏性操作。",
+
+        // 访问管理删除对话框
+            "Confirm you want to remove this user": "确认删除该用户",
+
+        // 邀请团队或人员对话框
+            "Invite teams or people to": "邀请团队或人员参与",
+            "Search by username, full name, or email": "搜索用户名、全名或电子邮件"
     },
     "regexp": [
+        [/Are you sure you want to unlink (.*) from (.*)\?/, "您确定要取消 $1 与 $2 的链接吗？"],
+        [/(\d+) repositor(y|ies) selected…/, "选中 $1 个仓库"],
+        [/Change the role of (\d+) repositor(y|ies)\?/, "更改 $1 个仓库的角色？"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members? selected…/, "选中 $1 个成员"],
+        [/Change the role of (\d+) members?\?/, "更改 $1 个成员的角色？"],
+        [/(\d+) members?/, "$1 个成员"],
+        [/(.*)'s access settings/, "$1 访问设置"],
+        [/Removed access from repository (.*)\./, "删除了仓库 $1 的访问权限。"],
+        [/Removed (.*) as a package collaborator\./, "删除了 $1 作为软件包的协作者。"],
+
+        // 删除仓库对话框
+        [/Remove (.*) from (.*)/, "从 $2 中删除 $1"],
+
+        // 更改仓库角色对话框
+        [/Change (\d+) Roles?/, "更改 $1 个角色"],
     ],
 }
 
 I18N.zh["repository/pkgs"] = { // 仓库 - 软件包
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository/packages"]["static"],
 
         // /<user-name>/<repo-name>/pkgs/container/<pag name>
             "Installation": "安装",
             "Learn more about packages": "了解更多关于软件包的信息",
+            "Learn more about npm packages": "了解更多关于 npm 软件包的信息",
             "Install from the command line": "从命令行安装",
+            "Install from the command line:": "从命令行安装：",
+            "Install via package.json:": "通过 package.json 安装：",
             "Use as base image in Dockerfile:": "在 Dockerfile 中用作基础镜像：",
             "Recent tagged image versions": "最近被标记的映像版本",
             "latest": "最新",
+            "Latest": "最新",
             // [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
             "View all tagged versions": "查看所有被标记的版本",
 
             "Details": "详细信息",
+            "Readme": "自述文件",
             "Last published": "最新发布",
             "Total downloads": "总下载量",
             "Start a discussion": "开始讨论",
+            "Contributors": "贡献者",
             "Open an issue": "打开一个议题",
+            "Package settings": "软件包设置",
+
+            "Recent Versions": "最近版本",
+            "View and manage all versions": "查看和管理所有版本",
+
+            "Add a Readme to the linked repository": "添加一个 README 自述文件到链接的仓库",
+            "The linked repository's Readme will be shown here.": "链接仓库中的 README 自述文件将在此处显示。",
 
         // 全部版本 /<user-name>/<repo-name>/pkgs/container/<pag name>/versions
             "All versions": "所有版本",
@@ -9887,15 +10045,41 @@ I18N.zh["repository/pkgs"] = { // 仓库 - 软件包
             "Other tags on this version": "此版本的其他标签",
             "View all versions": "查看全部版本",
 
+        // 版本删除对话框
+            "Are you absolutely sure?": "您真的确定吗？",
+            "This cannot be undone. This will permanently delete the version": "这个操作不能撤销，这将永久删除版本",
+            "so users and processes won’t be able to download this version.": "，用户和程序将无法再下载该版本。",
+            "Please type": "请输入",
+            "to confirm:": "进行确认：",
+            "I understand the consequences, delete this version": "我明白后果，依然删除此版本"
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["repository/packages"]["regexp"],
+
         [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
         [/Published (.*)/, "发布于 $1"],
         [/(\d+) tagged/, "$1 个标记"],
         [/(\d+) untagged/, "$1 个未标记"],
+        [/(\d+) dependencies/, "$1 个依赖包"],
+        [/(\d+) active/, "$1 个可用"],
+        [/(\d+) deleted/, "$1 个已删除"]
     ],
 };
-I18N.zh["packages"] = I18N.zh["repository/pkgs"];
+I18N.zh["packages"] = { // 软件包 - 未链接仓库的软件包
+    "static": { // 静态翻译
+        ...I18N.zh["repository/pkgs"]["static"],
+
+        "Link this package to a repository": "将此软件包链接到仓库",
+        "By linking to a repository, you can automatically add a Readme, link discussions, and show contributors on this page.": "通过链接到仓库，您可以自动添加 README 自述文件、链接讨论、在此页面上显示贡献者。",
+        "Connect Repository": "关联仓库",
+
+        // 关联仓库对话框
+        "Select a repository to link to this package.": "选择一个仓库以链接到此软件包。"
+    },
+    "regexp": [  // 正则翻译
+        ...I18N.zh["repository/pkgs"]["regexp"],
+    ],
+};
 
 I18N.zh["repository/security"] = { // 仓库 - 安全页面
     "static": { // 静态翻译
@@ -17637,6 +17821,7 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
         // >>>>>>>>>>>>>>>>>>仓库 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 头部条
             "forked from": "复刻自",
+            "mirrored from": "镜像自",
 
             "Unpin": "取消置顶",
             "Ignoring": "忽略",
