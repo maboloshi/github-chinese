@@ -4617,6 +4617,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "in order to install your GitHub App.": "才能安装 GitHub 应用。",
                 // GitHub App 已更新
                 "Got it. Your GitHub App has been updated.": "GitHub 应用已更新。",
+                "The GitHub App is now public. Anyone is free to install it.": "GitHub 应用已公开化。任何人都可以自由安装。",
+                "The GitHub App is now private. It can only be installed on this account.": "GitHub 应用已私有化。只能安装在此账户上。",
 
             "Developer settings": "开发者设置",
             // 左侧栏
@@ -4632,6 +4634,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Revoke all user tokens": "撤销所有用户令牌",
                 "GitHub Apps can use OAuth credentials to identify users. Learn more about identifying users by reading our": "GitHub 应用可以使用 OAuth 凭据来识别用户。阅读我们的",
                 "integration developer documentation": "集成开发者文档",
+
+                "Public link": "公共链接",
 
                 // 撤销所有用户令牌对话框
                 "Revoke all user tokens?": "撤销所有用户令牌？",
@@ -4667,6 +4671,15 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 // 顶部提醒
                     "Your avatar has been updated. It may take a few minutes to update across the site.": "您的头像已更新。整个网站的更新可能需要几分钟的时间。",
                     "This avatar has been deleted.": "该头像已被删除。",
+
+            // 市场
+                "List your GitHub App in the": "上架您的 GitHub 应用到",
+                "GitHub Marketplace": "GitHub 市场",
+                "so that other users can discover it.": "以便其他用户可以发现它。",
+                "List in Marketplace": "上架应用",
+
+                "Edit how your GitHub App is presented in the Marketplace directory, including screenshots and links.": "编辑 GitHub 应用在市场索引中的展示方式，包括截图和链接。",
+                "Edit Marketplace listing": "编辑市场上架信息",
 
             "Private keys": "私钥",
                 "Generate a private key": "生成私钥",
@@ -4732,11 +4745,18 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 
                             "Please type in the name of the GitHub App to confirm.": "请键入 GitHub 应用的名称进行确认。",
                             "I understand the consequences, delete this GitHub App": "我明白后果，依然删除该 GitHub 应用",
-                "Make this GitHub App public": "公开此 GitHub 应用",
+                "Make this GitHub App public": "公开 GitHub 应用",
                     "Allow this GitHub App to be installed on other accounts.": "允许在其他账户中安装此 GitHub 应用。",
 
                     "Make public": "转为公开",
                         // [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
+                "Make this GitHub App private": "私有化 GitHub 应用",
+                    "Private GitHub Apps cannot be installed on other accounts.": "私有 GitHub 应用不能安装在其他账户上。",
+                    "Make private": "转为私有",
+                        "This integration cannot be made private since it is already installed on other accounts.": "此应用无法转为私有，因为它已安装在其他帐户上。",
+                "Make this application private": "私有化应用",
+                    "Private applications cannot be installed on other accounts.": "私有应用不能安装在其他账户上。",
+                        // [/This GitHub app will only be installable on the ([^ ]+) account. Are you sure you want to make (.*) private\?/, "此 GitHub 应用只能安装在 $1 帐户上。您确定要将 $2 设为私有吗？"],
 
         // 某个 GitHub 应用 - 可选功能 https://github.com/settings/apps/<app-name>/beta
             // [/Activate optional features for (.*)/, "激活 $1 的可选功能"],
@@ -4756,6 +4776,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
         [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
         [/Where should we transfer (.*)\?/, "将 $1 转让给谁？"],
         [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
+        [/This GitHub app will only be installable on the ([^ ]+) account. Are you sure you want to make (.*) private\?/, "此 GitHub 应用只能安装在 $1 帐户上。您确定要将 $2 设为私有吗？"],
         [/(\d+) accounts?/, "$1 个账户"],
         [/Activate optional features for (.*)/, "激活 $1 的可选功能"],
         [/Choose a feature to activate for (.*):/, "选择要为 $1 激活的功能："],
