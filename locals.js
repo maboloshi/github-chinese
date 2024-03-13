@@ -18456,9 +18456,9 @@ I18N.zh["features"] = {
     "static":{
         "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
         // 看板
-        "Experience AI": "体验AI",
+        "Experience AI": "体验 AI",
             "with Copilot Chat": "通过 Copilot",
-            "The latest GitHub": "最新 Github",
+            "The latest GitHub": "最新 GitHub"，
             "previews": "预览",
         // 流水图
         "Collaborative": "协作",
