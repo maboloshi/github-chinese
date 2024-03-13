@@ -1359,8 +1359,7 @@ I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
 I18N.zh["page-profile-public"] = { // 个人首页（含组织）
     "static": { // 静态翻译
-        // 个人首页 公关部分
-            // 左侧用户信息栏
+        // 左侧用户信息栏
             "Change your avatar": "修改头像",
             "they/them": "他们",
             "she/her": "她",
@@ -1381,26 +1380,26 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "- same time": "- 时间相同",
 
             // 编辑个人资料
-            "Edit profile": "编辑个人资料",
-            "Name": "名称",
-            "Bio": "个人简介",
-            "Add a bio": "添加个人简介",
-                "You can": "您可",
-                "@mention": "@用户名或组织名",
-                "other users and organizations to link to them.": "链接到其他用户和组织。",
-            "Pronouns": "代词",
-                "Don't specify": "不说明",
-                "they/them": "他们",
-                "she/her": "她",
-                "he/him": "他",
-                "Custom": "自定义",
-            "Company": "公司",
-            "Location": "位置",
-            "Display current local time": "显示当前当地时间",
-            "same time": "相同时间",
-            "Website": "网站",
-            "Social accounts": "社交账户",
-            "Link to social profile": "链接到社交账户",
+                "Edit profile": "编辑个人资料",
+                "Name": "名称",
+                "Bio": "个人简介",
+                "Add a bio": "添加个人简介",
+                    "You can": "您可",
+                    "@mention": "@用户名或组织名",
+                    "other users and organizations to link to them.": "链接到其他用户和组织。",
+                "Pronouns": "代词",
+                    "Don't specify": "不说明",
+                    "they/them": "他们",
+                    "she/her": "她",
+                    "he/him": "他",
+                    "Custom": "自定义",
+                "Company": "公司",
+                "Location": "位置",
+                "Display current local time": "显示当前当地时间",
+                "same time": "相同时间",
+                "Website": "网站",
+                "Social accounts": "社交账户",
+                "Link to social profile": "链接到社交账户",
 
             // 成就浮动界面
                 // 北极代码库贡献者
@@ -1461,21 +1460,26 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                         // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
                         // [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
 
+                "Send feedback": "发送反馈",
+
             // 拉黑 & 举报用户对话框
-            // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
-            "Block user": "拉黑用户",
-            "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
-            "blocking users": "拉黑用户",
+                // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
+                "Block user": "拉黑用户",
+                "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "blocking users": "拉黑用户",
 
-            "Unblock user": "取消拉黑",
-            "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "Add an optional note:": "添加可选备注：",
+                    "Please don't include any personal information such as legal names or email addresses. Maximum 100 characters, markdown supported. This note will be visible to only you.": "请勿包含任何个人信息，如法定姓名或电子邮件地址。最多 100 个字符，支持标记符。此备注只有您本人可见。",
 
-            "Report abuse": "举报滥用",
-            "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
-            "reporting abuse": "举报滥用",
+                "Unblock user": "取消拉黑",
+                "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
 
-            "Send feedback": "发送反馈",
+                "Report abuse": "举报滥用",
+                    "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
+                    "reporting abuse": "举报滥用",
 
+        // 标签栏
+            "Sponsoring": "赞助",
     },
     "regexp": [ // 正则翻译
         [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
