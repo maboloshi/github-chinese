@@ -5349,6 +5349,11 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Go to Wiki"                 : "跳转到 Wiki",
                 "Go to Discussions"          : "跳转到讨论",
 
+                "Copilot chat": "Copilot 聊天",
+                "Open Copilot chat": "打开 Copilot 聊天",
+                "Close Copilot chat": "关闭 Copilot 聊天",
+                "Expand/collapse Copilot chat": "展开/折叠 Copilot 聊天",
+
             // 议题
                 "Submit comment": "提交评论",
                 "Submit comment and close issue": "提交评论并关闭议题",
@@ -5400,6 +5405,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Return to the repository overview": "返回仓库概述",
             "Cannot find a valid ref in": "未找到有效的引用",
             "Go to default branch": "跳转到默认分支",
+
+        // 页面加载异常(仓库)
+            "Error loading page": "加载页面出错",
+            "It looks like your internet connection is down. Please check it.": "您的网络连接似乎出现故障。请检查一下。",
 
         // 邀请继任者提醒
             "Ensure the future of your work!": "确保您工作的未来！",
@@ -6078,40 +6087,45 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Use the URL for this page when adding GitHub as a remote.": "将 GitHub 添加为远程时，请使用此页面上的 URL。",
 
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
-            "Go to file": "转到文件",
-                "No matches found": "未找到匹配项",
+          // /<user-name>/<repo-name>/?search=1
+          // /<user-name>/<repo-name>/tree/?search=1
+            // 文件树侧边栏
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                // 搜索框
+                    "Go to file": "转到文件",
+                        "No matches found": "未找到匹配项",
+
             "Add file": "添加文件",
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
                 "Upload files": "上传文件",
-            "Delete directory": "删除文件夹",
+
+            // 新三个点
+                "Copy path": "复制路径",
+                "Copy permalink": "复制永久链接",
+                "Delete directory": "删除文件夹",
+                "View options": "查看选项",
+                    "Center content": "核心内容",
+
+            "Copied path!": "✅ 路径已复制！",
+
             "History": "历史",
 
-            "Give feedback": "反馈",
-
-        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
-            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
-            "file.": "文件。",
-            "Learn more about configuring a template chooser.": "了解更多关于配置模板选择器的信息。",
-
-
-        // new code view
             "Top": "顶部",
             "Jump to file": "跳转到文件",
-
-        // 新版 New Code Search /<user-name>/<repo-name>/?search=1
-            "Path copied!": "✅ 路径已复制！",
 
             "Name": "文件名",
             "Last commit message": "最后提交消息",
             "Last commit date": "最后提交时间",
 
-            // 大纲按钮
-            "Outline": "大纲", // md 文件
-                "Filter headings": "筛选标题", // md 文件
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
+        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
+            "file.": "文件。",
+            "Learn more about configuring a template chooser.": "了解更多关于配置模板选择器的信息。",
 
     },
     "regexp": [ // 正则翻译
