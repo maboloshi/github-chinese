@@ -6376,6 +6376,173 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
+        // 某个拉取请求和某个议题 公共词条
+            // 右侧栏
+                "Reviewers": "审查者",
+                    "Loading suggestions…": "载入推荐…",
+                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
+                    // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
+                    "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
+                    "Re-request review": "重新请求审核",
+                    "Still in progress?": "仍在进行中吗？",
+                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                    "Learn about draft PRs": "了解拉取请求草案",
+                    "Convert to draft": "设置为草案",
+                        // 设置草案对话框
+                            "Convert this pull request to draft?": "将此拉取请求转换为草案？", // 拉取请求
+                            "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
+                    // 下拉
+                    "Request up to 15 reviewers": "最多请求 15 个审查者",
+                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
+                    "Request": "请求",
+                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
+                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+
+                "Assignees": "受理人",
+                    "No one assigned": "无人受理",
+                    "No one—": "无人 - ",
+                    "assign yourself": " 受理自己",
+                    // 下拉框
+                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
+                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
+                    "Clear assignees": "清除受理人",
+                    "Type or choose a user": "输入或选择用户",
+                    "Suggestions": "建议",
+
+                // "Labels": "标签",
+                    "None yet": "暂无",
+                    // 下拉
+                    "bug": "BUG",
+                        "Something isn't working": "有些东西不工作",
+                    "dependencies": "依赖性",
+                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                    "documentation": "文档",
+                        "Improvements or additions to documentation": "文档的改进或补充",
+                    "duplicate": "重复",
+                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                    "enhancement": "增强",
+                        "New feature or request": "新功能或请求",
+                    "good first issue": "好的首发议题",
+                        "Good for newcomers": "适合新人",
+                    "help wanted": "需要帮助",
+                        "Extra attention is needed": "需要特别关注",
+                    "invalid": "无效",
+                        "This doesn't seem right": "这似乎不对",
+                    "question": "问题",
+                        "Further information is requested": "要求提供更多信息",
+                    "wontfix": "不会修复",
+                        "This will not be worked on": "这将不会被处理",
+
+                    "Apply labels to this issue": "应用标签", // 议题
+                    "Apply labels to this pull request": "应用标签", // 拉取请求
+                    "Edit labels": "编辑标签",
+
+                    // 拉取请求
+                    "dependencies": "依赖关系",
+                        "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
+
+                // 项目
+                    "Recent": "最近",
+                    "User": "用户",
+                    "No projects": "无项目",
+
+                "Milestone": "里程碑",
+                    "No milestone": "无里程碑",
+                    //下拉
+                    "Set milestone": "设置里程碑",
+                        "Nothing to show": "暂无",
+
+                "Development": "进展",
+                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
+                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
+                    // 下拉
+                    "Link an issue from this repository": "关联来自此仓库的议题",
+                    "Filter": "筛选",
+                    "No results": "无结果",
+
+                // "Notifications": "通知类型",
+                "Customize": "自定义",
+                "Subscribe": "订阅",
+                // "Unsubscribe": "取消订阅",
+                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
+                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
+                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
+                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
+                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
+                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
+                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
+                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
+                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
+                "You’re ignoring this repository.": "您忽略了这个仓库。",
+
+                    // 通知设置对话框
+                    "Notification settings": "通知设置",
+                    "Not subscribed": "未订阅",
+                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
+                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
+                    "Subscribed": "订阅",
+                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
+                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
+                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
+                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
+                    // 议题
+                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
+                        "Reopened": "重新打开",
+                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
+                    // 拉取请求
+                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
+                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
+                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
+
+                "Lock conversation": "锁定对话",
+                    "Lock conversation on this issue": "锁定此议题的对话",
+                    "Lock conversation on this pull request": "锁定此拉取请求的对话",
+                    "Other users": "其他用户",
+                    "can’t add new comments": "无法添加新评论",
+                    "to this issue.": "到该议题。",
+                    "to this pull request.": "到该拉取请求。",
+                    "You and other collaborators": "您和其他协作者",
+                    "with access": "有权限访问",
+                    "to this repository": "该仓库",
+                    "can still leave comments": "仍然可以发表评论",
+                    "that others can see.": "其他人可以看到。",
+                    "You can always unlock this issue again in the future.": "您今后仍可以随时再次解锁此议题。",
+                    "You can always unlock this pull request again in the future.": "您今后仍可以随时再次解锁此拉取请求。",
+                    "Reason for locking": "锁定原因",
+                    "Choose a reason": "选择原因",
+                        "Off-topic": "离题",
+                        "Too heated": "过热",
+                        "Resolved": "已解决",
+                        "Spam": "垃圾信息",
+                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
+                    "lock conversations": "锁定对话",
+                    // "Lock conversation on this issue": "锁定对话",
+                "Unlock conversation": "解锁对话",
+                    "Unlock conversation on this issue": "解锁此议题的对话",
+                    "Unlock conversation on this pull request": "解锁此拉取请求的对话",
+                    "Everyone": "任何人",
+                    "will be able to comment on this issue once more.": "将能够再次对这个议题发表评论。",
+                    "will be able to comment on this pull request once more.": "将能够再次对这个拉取请求发表评论。",
+                    "You can always lock this pull request again in the future.": "您今后仍可以随时再次锁定此拉取请求。",
+                    "You can always lock this issue again in the future.": "您今后仍可以随时再次锁定此议题。",
+
+            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+            "GitHub Community Guidelines": "GitHub 社区准则",
+            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
+            "contributing guidelines": "贡献指南",
+            "security policy": "安全政策",
+            "code of conduct": "行为准则",
+
+            // 底部赞助
+                "Show your support for": "通过赞助来表达您对",
+                "by sponsoring them.": "的支持。",
+
+            // 底部提示栏 (未登录)
+                "Sign up for free": "免费注册",
+                "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
+                ". Already have an account?": "。已经有帐户？",
+                "Sign in to comment": "登录后发表评论",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) linked issues?/, "链接 $1 个议题"],
@@ -6526,97 +6693,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
 
-            // 同 /<user-name>/<repo-name>/pull/<id>
-            // 右侧栏
-                "Reviewers": "审查者",
-                    "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
-                    "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
-                    "Still in progress?": "仍在进行中吗？",
-                    "Convert to draft": "设置为草案",
-                        // 设置草案对话框
-                            "Convert this pull request to draft?": "将此拉取请求转换为草案？",
-                            "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
-                    // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审查者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
-                    "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
-
-                "Assignees": "受理人",
-                    "No one assigned": "无人受理",
-                    "No one—": "无人 - ",
-                    "assign yourself": " 受理自己",
-                    // 下拉框
-                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
-                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
-                    "Clear assignees": "清除受理人",
-                    "Type or choose a user": "输入或选择用户",
-                    "Suggestions": "建议",
-
-                // "Labels": "标签",
-                    "None yet": "暂无",
-                    // 下拉
-                    "Apply labels to this issue": "应用标签", // 议题
-                    "Apply labels to this pull request": "应用标签", // 拉取请求
-                    "Edit labels": "编辑标签",
-
-                // 项目
-                    "Recent": "最近",
-                    "User": "用户",
-                    "No projects": "无项目",
-
-                "Milestone": "里程碑",
-                    "No milestone": "无里程碑",
-                    //下拉
-                    "Set milestone": "设置里程碑",
-
-                "Development": "进展",
-                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
-                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
-                    // 下拉
-                    "Link an issue from this repository": "关联来自此仓库的议题",
-                    "Filter": "筛选",
-                    "No results": "无结果",
-
-                // "Notifications": "通知类型",
-                "Customize": "自定义",
-                "Subscribe": "订阅",
-                // "Unsubscribe": "取消订阅",
-                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
-                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
-                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
-                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
-                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
-                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
-                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
-                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
-                "You’re ignoring this repository.": "您忽略了这个仓库。",
-
-                    // 通知设置对话框
-                    "Notification settings": "通知设置",
-                    "Not subscribed": "未订阅",
-                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
-                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
-                    "Subscribed": "订阅",
-                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
-                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
-                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
-                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
-                    // 议题
-                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
-                        "Reopened": "重新打开",
-                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
-                    // 拉取请求
-                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
-                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
-                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
-
-                // /([\d,]+) participants?/, "$1 位参与者"
-                "and others": "和其它",
-
             // 右侧栏 补充
                 // "Development": "进展",
                     "No branches or pull requests": "没有分支或拉取请求",
@@ -6655,31 +6731,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                         "Link a branch, pull request, or": "关联分支、拉取请求或",
                         "Search for branches or pull requests": "搜索分支或拉取请求",
 
-                "Lock conversation": "锁定对话",
-                    "Lock conversation on this issue": "锁定此议题的对话",
-                    "Other users": "其他用户",
-                    "can’t add new comments": "无法添加新评论",
-                    "to this issue.": "到该议题。",
-                    "You and other collaborators": "您和其他协作者",
-                    "with access": "有权限访问",
-                    "to this repository": "该仓库",
-                    "can still leave comments": "仍然可以发表评论",
-                    "that others can see.": "其他人可以看到。",
-                    "You can always unlock this issue again in the future.": "您今后仍可以随时再次解锁此议题。",
-                    "Reason for locking": "锁定原因",
-                    "Choose a reason": "选择原因",
-                        "Off-topic": "离题",
-                        "Too heated": "过热",
-                        "Resolved": "已解决",
-                        "Spam": "垃圾信息",
-                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
-                    "lock conversations": "锁定对话",
-                    // "Lock conversation on this issue": "锁定对话",
-                "Unlock conversation": "解锁对话",
-                    "Unlock conversation on this issue": "解锁此议题的对话",
-                    "Everyone": "任何人",
-                    "will be able to comment on this issue once more.": "将能够再次对这个议题发表评论。",
-                    "You can always lock this issue again in the future.": "您今后仍可以随时再次锁定此议题。",
                 "Pin issue": "置顶议题",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置顶 3 个议题，它们将公开显示在议题页面的顶部",
                     // 顶部提醒
@@ -6723,27 +6774,13 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                     // 顶部提醒
                     "The issue was successfully deleted.": "该议题已成功删除。",
 
-
             "Load more…": "载入更多…",
-            "Loading…": "载入中…",
 
             "This conversation has been locked as": "此对话已锁定为",
             "and limited to collaborators.": "，并限制与协作者对话。",
 
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
-            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
-            "contributing guidelines": "贡献指南",
-            "and": "和",
-            "security policy": "安全政策",
-            "code of conduct": "行为准则",
-
             "This issue has been deleted.": "该议题已被删除。",
             "deleted this from": "删除了这个，从",
-
-            // 底部赞助
-            "Show your support for": "通过赞助来表达您对",
-            "by sponsoring them.": "的支持。",
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
             ...I18N.zh["repository/labels"]["static"],
@@ -6943,7 +6980,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "opt out": "选择退出",
             // 顶部提醒
                 "Opted out of Dependabot security updates.": "选择退出 Dependabot 安全更新。",
-            "or": "或",
 
             // Dependabot 警报 拉取请求 提示
                 "Merging this pull request will resolve a": "合并此拉取请求将解决",
@@ -6969,118 +7005,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Checks": "检查",
             "Files changed": "更改的文件",
 
-            // 右侧栏
-                "Reviewers": "审查者",
-                    "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
-                    "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
-                    "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
-                    "Re-request review": "重新请求审核",
-                    "Still in progress?": "仍在进行中吗？",
-                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
-                    "Learn about draft PRs": "了解拉取请求草案",
-                    "Convert to draft": "设置为草案",
-                    // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审查者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
-                    "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
-
-                "Assignees": "受理人",
-                    "No one assigned": "无人受理",
-                    "No one—": "无人 - ",
-                    "assign yourself": " 受理自己",
-                    // 下拉框
-                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
-                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
-                    "Clear assignees": "清除受理人",
-                    "Type or choose a user": "输入或选择用户",
-                    "Suggestions": "建议",
-
-                // "Labels": "标签",
-                    "None yet": "暂无",
-                    // 下拉
-                    "bug": "BUG",
-                        "Something isn't working": "有些东西不工作",
-                    "dependencies": "依赖性",
-                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
-                    "documentation": "文档",
-                        "Improvements or additions to documentation": "文档的改进或补充",
-                    "duplicate": "重复",
-                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
-                    "enhancement": "增强",
-                        "New feature or request": "新功能或请求",
-                    "good first issue": "好的首发议题",
-                        "Good for newcomers": "适合新人",
-                    "help wanted": "需要帮助",
-                        "Extra attention is needed": "需要特别关注",
-                    "invalid": "无效",
-                        "This doesn't seem right": "这似乎不对",
-                    "question": "问题",
-                        "Further information is requested": "要求提供更多信息",
-                    "wontfix": "不会修复",
-                        "This will not be worked on": "这将不会被处理",
-
-                    "Apply labels to this issue": "应用标签", // 议题
-                    "Apply labels to this pull request": "应用标签", // 拉取请求
-                    "Edit labels": "编辑标签",
-
-                    "dependencies": "依赖关系",
-                        "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
-
-                // 项目
-                    "Recent": "最近",
-                    "User": "用户",
-                    "No projects": "无项目",
-
-                "Milestone": "里程碑",
-                    "No milestone": "无里程碑",
-                    //下拉
-                    "Set milestone": "设置里程碑",
-                        "Nothing to show": "暂无",
-
-                "Development": "进展",
-                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
-                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
-                    // 下拉
-                    "Link an issue from this repository": "关联来自此仓库的议题",
-                    "Filter": "筛选",
-                    "No results": "无结果",
-
-                // "Notifications": "通知类型",
-                "Customize": "自定义",
-                "Subscribe": "订阅",
-                // "Unsubscribe": "取消订阅",
-                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
-                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
-                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
-                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
-                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
-                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
-                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
-                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
-                "You’re ignoring this repository.": "您忽略了这个仓库。",
-
-                    // 通知设置对话框
-                    "Notification settings": "通知设置",
-                    "Not subscribed": "未订阅",
-                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
-                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
-                    "Subscribed": "订阅",
-                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
-                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
-                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
-                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
-                    // 议题
-                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
-                        "Reopened": "重新打开",
-                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
-                    // 拉取请求
-                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
-                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
-                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
+            // 右侧栏 补充
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "Allowing edits by maintainers": "允许维护者进行编辑",
@@ -7097,47 +7022,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问密钥",
                     "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取密钥值，并获得对其他分支的访问。",
 
-                // /([\d,]+) participants?/, "$1 位参与者"
-                "and others": "和其它",
-
                 "Maintainers are allowed to edit this pull request.": "允许维护者编辑此拉取请求。",
-
-                "Lock conversation": "锁定对话",
-                    "Lock conversation on this pull request": "锁定此拉取请求的对话",
-                    "Other users": "其他用户",
-                    "can’t add new comments": "无法添加新评论",
-                    "to this pull request.": "到该拉取请求。",
-                    "You and other collaborators": "您和其他协作者",
-                    "with access": "有权限访问",
-                    "to this repository": "该仓库",
-                    "can still leave comments": "仍然可以发表评论",
-                    "that others can see.": "其他人可以看到。",
-                    "You can always unlock this pull request again in the future.": "您今后仍可以随时再次解锁此拉取请求。",
-                    "Reason for locking": "锁定原因",
-                    "Choose a reason": "选择原因",
-                        "Off-topic": "离题",
-                        "Too heated": "过热",
-                        "Resolved": "已解决",
-                        "Spam": "垃圾信息",
-                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
-                    "lock conversations": "锁定对话",
-                    // "Lock conversation on this issue": "锁定对话",
-                "Unlock conversation": "解锁对话",
-                    "Unlock conversation on this pull request": "解锁此拉取请求的对话",
-                    "Everyone": "任何人",
-                    "will be able to comment on this pull request once more.": "将能够再次对这个拉取请求发表评论。",
-                    "You can always lock this pull request again in the future.": "您今后仍可以随时再次锁定此拉取请求。",
-
-            // 底部赞助
-            "Show your support for": "通过赞助来表达您对",
-            "by sponsoring them.": "的支持。",
-
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
-            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
-            "contributing guidelines": "贡献指南",
-            "security policy": "安全政策",
-            "code of conduct": "行为准则",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
