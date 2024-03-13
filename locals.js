@@ -251,355 +251,334 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
-        "Contact Support": "联系 GitHub Support",
+        "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
 
         // 顶部栏 (未登录)
-        "Why GitHub?": "为什么选择 GitHub？",
-        "Team": "团队",
-        "Enterprise": "企业",
-        // "Pricing": "价格",
-        "Product": "产品",
-        "Solutions": "解决方案",
-        "Open Source": "开源",
-        "Search": "搜索",
-        "Sign in": "登录",
-        "Sign up": "注册",
+            "Product": "产品",
+            "Solutions": "解决方案",
+            "Open Source": "开源",
+            // "Pricing": "价格",
+            "Search": "搜索",
+            "Sign in": "登录",
+            "Sign up": "注册",
+
+            "Team": "团队",
+            "Enterprise": "企业",
 
         // 搜索栏
-        "Search or jump to…": "搜索或跳转到…",
-        "In this repository": "当前仓库",
-        "In this organization": "当前组织",
-        "In this user": "当前用户",
-        "All GitHub": "整个 GitHub",
-        "All of GitHub": "整个 GitHub", // new code search
-        "Autocomplete": "自动完成", // new code search
-        "Search all of GitHub": "搜索整个 GitHub", // new code search
-        "Search in this repository": "在该仓库中搜索", // new code search
-        "Search in this owner": "在该所有者中搜索", // new code search
-        "Search in this organization": "在该组织中搜索", // new code search
-        "Owners": "所有者", // new code search
-        "Languages": "语言", // new code search
-        "Search syntax tips": "搜索语法提示", // new code search
-        "Jump to": "跳转到",
+            "Search or jump to...": "搜索或跳转到…",
+            "Type": "请键入",
+            "to search": "去搜索",
+            "Command palette": "命令面板",
+            "Saved queries": "已保存的搜索",
+            "All of GitHub": "整个 GitHub",
+            "Autocomplete": "自动完成",
+            "Search all of GitHub": "搜索整个 GitHub",
+            "Search in this directory": "在文件夹中搜索",
+            "Search in this repository": "在该仓库中搜索",
+            "Search in this owner": "在该所有者中搜索",
+            "Search in this organization": "在该组织中搜索",
+            "Owners": "所有者",
+            "Languages": "语言",
+            "Search syntax tips": "搜索语法提示",
+            "Jump to": "跳转到",
 
-        // 顶部栏 & 小屏左上角下拉栏 (已登录)
-        "Dashboard": "仪表板",
-        //"Pull requests": "拉取请求"  // 使用 Selector 规则翻译
-        "Issues": "议题",
-        "Marketplace": "应用市场",
-        "Explore": "探索",
-        "Give new navigation feedback": "提供新导航的反馈",
-        "Codespaces": "代码空间",
-        "Sponsors": "赞助",
+        // 左上角下拉栏 (已登录)
+            "Home": "主页",
+            "Issues": "议题",
+            "Pull Requests": "拉取请求",
+            "Projects": "项目",
+            "Codespaces": "代码空间",
+            "Explore": "探索",
+            "Marketplace": "市场",
 
-        "Overview": "概况",
-        "Repositories": "仓库",
-        "Projects": "项目",
-        "Packages": "软件包",
-        "Sponsoring": "赞助",
+            "Filter repositories": "筛选仓库",
+            "Close filter": "关闭筛选器",
+            "Show more": "显示更多",
 
-        // 新版全局导航 按钮菜单
-        "Home": "主页",
-        "Filter repositories": "筛选仓库",
-        "Show more": "显示更多",
-
-        //顶部提示横幅
-        "Don't get locked out of your account.": "不要被锁定在您的帐户之外。",
-        "Download your recovery codes": "下载您的恢复码",
-        "add a passkey": "添加通行密钥",
-        "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+        // 顶部提示横幅
+            "Don't get locked out of your account.": "不要被锁定在您的帐户之外。",
+            "Download your recovery codes": "下载您的恢复码",
+            "add a passkey": "添加通行密钥",
+            "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
 
         // 右上角通知按钮提示
-        "You have no unread notifications": "您没有未读通知",
-        "You have unread notifications": "您有未读通知",
+            "You have no unread notifications": "您没有未读通知",
+            "You have unread notifications": "您有未读通知",
 
         // 右上角新建按钮下拉菜单
-        "New repository": "新建仓库",
-        "Import repository": "导入仓库",
-        "New codespace": "新建代码空间",
-        "New gist": "新建代码片段",
-        "New organization": "新建组织",
-        "New project": "新建项目",
-        "This organization": "本组织", // 组织
-        "New team": "新建团队", // 组织
-
-        // 新版全局导航
-        "Command palette": "命令面板",
-        "Create new...": "新建...",
+            "Create new...": "新建...",
+                "New repository": "新建仓库",
+                "Import repository": "导入仓库",
+                "New codespace": "新建代码空间",
+                "New gist": "新建代码片段",
+                "New organization": "新建组织",
+                "New project": "新建项目",
+                "This organization": "本组织", // 组织
+                "New team": "新建团队", // 组织
 
         // 右上角个人图标下拉菜单
-        "Signed in as": "登录身份为",
-        "Set status": "状态设置",
-        "Your profile": "我的资料",
-        "Add account": "添加账户",
-            "Switch account": "切换账户",
-        "Your sponsorships": "我的捐助者",
-        "Your repositories": "我的仓库",
-        "Your codespaces": "我的代码空间",
-        "Your Copilot": "我的 Copilot",
-        "Your organizations": "我的组织",
-        "Your enterprises": "我的企业",
-        "Your projects": "我的项目",
-        "Your discussions": "我的讨论",
-        "Your stars": "我的星标",
-        "Your gists": "我的代码片段",
-        "Your sponsors": "我的赞助者",
-        "Upgrade": "升级",
-        "Try Enterprise": "试用企业版",
-        "Try Copilot": "试用 Copilot",
-        "Feature preview": "功能预览",
-            // 对话框
-            "Enable": "启用",
-            "Disable": "禁用",
-            "Documentation": "文档",
-            "Codespaces Connectivity v2": "代码空间连接 v2",
-                "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间 正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
-                "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用 代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间 现在需要访问 *.visualstudio.com 以便于您连接到 代码空间。",
-            "New Branches and Commits Pages": "新版分支和提交页面",
-                "Preview updates to the branch and commit pages focusing on improved navigation and performance as well as making these experiences more accessible.": "预览分支和提交页面的更新，重点关注改进导航和性能，以及使这些体验更容易访问。",
-            "Colorblind themes": "色盲主题",
-                "Varying by gender and geography, color blindness can affect on average 5-6% of men and up to 0.4% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 5-6% 的男性和高达 0.4% 的女性。我们之前的色盲主题被分为两个新主题：",
-                "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
-                "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 蓝色盲主题适用于蓝黄色盲。",
-            "Command Palette": "命令面板",
-                "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
-                "To open the command palette:": "打开命令面板：",
-            "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
-                "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
-                "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
-            "Project Migration": "项目迁移",
-                "We've made it easy for you to migrate your project (classic) boards to the all new Projects experience! Enable this feature so that you can try out tables, multiple views, new automation options, and powerful field types using your existing projects.": "我们已经为您简化了将您的项目（经典版）面板迁移到全新项目的体验！启用此功能，您可以在现有项目中尝试表格、多视图、新的自动化选项和强大的字段类型。",
-                "How it works:": "如何工作：",
-                    "We'll create a copy of your existing classic project board in Projects.": "我们将在 “项目” 中创建现有经典项目看板的副本。",
-                    "You'll be prompted to close your classic project as future changes won't be synchronized.": "系统将提示您关闭经典项目，因为未来的更改将不会同步。",
-                    "You can reopen your old project in a pinch if necessary!": "如果有必要，您可以紧急重新打开您的旧项目！",
-                "Notes:": "注意：",
-                    "Migrated projects will be made private by default.": "默认情况下，迁移的项目将设为私有。",
-                    "Projects does not support repository level projects. When you migrate a repository project board, it will migrate to either the organization or personal account that owns the repository project, and the migrated project will be pinned to the original repository. We will migrate permissions to the best of our ability but some folks may lose read or writes access.": "项目不支持仓库级别的项目。当您迁移仓库项目面板时，它将被迁移到拥有该仓库项目的组织或个人帐户，并且迁移后的项目将被固定到原始仓库。我们将尽最大努力迁移权限，但有些人可能会失去读取或写入权限。",
-            "Deployments Dashboard View": "部署仪表板视图",
-                "A new dashboard to view and track your deployments across all your environments, see the full history of your deployments, and filter by environment.": "一个全新的仪表板，用于查看和跟踪您在所有环境中的部署情况，查看您部署的完整历史记录，并按环境进行筛选。",
-            "New organization repositories view": "新版组织仓库视图",
-                "An updated experience for listing repositories in your organization. Supports filtering by properties, and advanced queries.": "更新了组织中列出存储库的体验。支持按属性过滤和高级查询。",
-            "New Repository Overview": "新版仓库概述",
-                "An updated repository landing page experience that integrates features from the new code view like the find file input.": "一个全新的仓库首页体验，集成了来自新代码视图的功能，如查找文件输入框。",
-            "Slash Commands": "斜杠命令",
-                "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
-                "Simply type": "只需在议题、拉取请求和讨论中键入",
-                "on Issues, PRs and Discussions to check out a list of available commands!": "，即可查看可用命令的列表！",
-        "Help": "帮助",
-        "Settings": "设置",
-        "GitHub Docs": "GitHub 文档", // 新版全局导航
-        "GitHub Support": "GitHub 支持", // 新版全局导航
-        "Sign out": "退出",
-
-        "Stars": "星标",
-
-
-        "Prev": "上一页",
-        "Previous": "上一页",
-        "Next": "下一页",
-
+            "Signed in as": "登录身份为",
+            "Set status": "状态设置",
+            "Your profile": "我的资料",
+            "Add account": "添加账户",
+                "Switch account": "切换账户",
+            "Your sponsorships": "我的捐助者",
+            "Your repositories": "我的仓库",
+            "Your codespaces": "我的代码空间",
+            "Your Copilot": "我的 Copilot",
+            "Your organizations": "我的组织",
+            "Your enterprises": "我的企业",
+            "Your projects": "我的项目",
+            "Your discussions": "我的讨论",
+            "Your stars": "我的星标",
+            "Your gists": "我的代码片段",
+            "Your sponsors": "我的赞助者",
+            "Upgrade": "升级",
+            "Try Enterprise": "试用企业版",
+            "Try Copilot": "试用 Copilot",
+            "Feature preview": "功能预览",
+                // 对话框
+                "Enable": "启用",
+                "Disable": "禁用",
+                "Documentation": "文档",
+                "Codespaces Connectivity v2": "代码空间连接 v2",
+                    "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间 正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
+                    "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用 代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间 现在需要访问 *.visualstudio.com 以便于您连接到 代码空间。",
+                "Colorblind themes": "色盲主题",
+                    "Varying by gender and geography, color blindness can affect on average 5-6% of men and up to 0.4% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 5-6% 的男性和高达 0.4% 的女性。我们之前的色盲主题被分为两个新主题：",
+                    "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
+                    "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 蓝色盲主题适用于蓝黄色盲。",
+                "Command Palette": "命令面板",
+                    "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
+                    "To open the command palette:": "打开命令面板：",
+                "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
+                    "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
+                    "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "Project Migration": "项目迁移",
+                    "We've made it easy for you to migrate your project (classic) boards to the all new Projects experience! Enable this feature so that you can try out tables, multiple views, new automation options, and powerful field types using your existing projects.": "我们已经为您简化了将您的项目（经典版）面板迁移到全新项目的体验！启用此功能，您可以在现有项目中尝试表格、多视图、新的自动化选项和强大的字段类型。",
+                    "How it works:": "如何工作：",
+                        "We'll create a copy of your existing classic project board in Projects.": "我们将在 “项目” 中创建现有经典项目看板的副本。",
+                        "You'll be prompted to close your classic project as future changes won't be synchronized.": "系统将提示您关闭经典项目，因为未来的更改将不会同步。",
+                        "You can reopen your old project in a pinch if necessary!": "如果有必要，您可以紧急重新打开您的旧项目！",
+                    "Notes:": "注意：",
+                        "Migrated projects will be made private by default.": "默认情况下，迁移的项目将设为私有。",
+                        "Projects does not support repository level projects. When you migrate a repository project board, it will migrate to either the organization or personal account that owns the repository project, and the migrated project will be pinned to the original repository. We will migrate permissions to the best of our ability but some folks may lose read or writes access.": "项目不支持仓库级别的项目。当您迁移仓库项目面板时，它将被迁移到拥有该仓库项目的组织或个人帐户，并且迁移后的项目将被固定到原始仓库。我们将尽最大努力迁移权限，但有些人可能会失去读取或写入权限。",
+                "Deployments Dashboard View": "部署仪表板视图",
+                    "A new dashboard to view and track your deployments across all your environments, see the full history of your deployments, and filter by environment.": "一个全新的仪表板，用于查看和跟踪您在所有环境中的部署情况，查看您部署的完整历史记录，并按环境进行筛选。",
+                "Slash Commands": "斜杠命令",
+                    "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
+                    "Simply type": "只需在议题、拉取请求和讨论中键入",
+                    "on Issues, PRs and Discussions to check out a list of available commands!": "，即可查看可用命令的列表！",
+            "Help": "帮助",
+            "Settings": "设置",
+            "GitHub Docs": "GitHub 文档",
+            "GitHub Support": "GitHub 支持",
+            "Sign out": "退出",
 
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
-        "Edit status": "编辑状态",
-        "What's your current status?": "您目前的状况如何？",
+            "Edit status": "编辑状态",
+            "What's your current status?": "您目前的状况如何？",
 
-        "Suggestions": "建议",
-            "On vacation": "在度假",
-            "Working from home": "在家工作",
-            "Out sick": "生病",
-            "Focusing": "专注中",
+            "Suggestions": "建议",
+                "On vacation": "在度假",
+                "Working from home": "在家工作",
+                "Out sick": "生病",
+                "Focusing": "专注中",
 
-        "Busy": "繁忙中",
-            "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
-            "I may be slow to respond.": "我的反应可能比较慢。",
+            "Busy": "繁忙中",
+                "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您的很忙。",
+                "I may be slow to respond.": "我的反应可能比较慢。",
 
-        "Clear status": "清除状态",
-            "Never": "永不",
-            "in 30 minutes": "30 分钟",
-            "in 1 hour": "1 小时",
-            "in 4 hours": "4 小时",
-            "today": "今天",
-            "this week": "本周",
-            "How long until this status will automatically clear.": "多久后状态自动清除。",
-        "Visible to": "可见",
-            "Everyone": "任何人",
-                "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
-            "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
-        "Filter emoji": "筛选表情符号",
-            "Search results": "筛选结果",
+            "Clear status": "清除状态",
+                "Never": "永不",
+                "in 30 minutes": "30 分钟",
+                "in 1 hour": "1 小时",
+                "in 4 hours": "4 小时",
+                "today": "今天",
+                "this week": "本周",
+                "How long until this status will automatically clear.": "多久后状态自动清除。",
+            "Visible to": "可见",
+                "Everyone": "任何人",
+                    "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
+                "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
+            "Filter emoji": "筛选表情符号",
+                "Search results": "筛选结果",
 
         // 底部条
-        "Terms": "服务条款",
-        "Privacy": "隐私",
-        "Security": "安全",
-        "Status": "状态",
-        "Docs": "文档",
-        "Contact": "联系我们",
-        "Manage cookies": "管理 Cookies",
-        "Manage Cookies": "管理 Cookies",
-        "Do not share my personal information": "请勿分享我的个人信息",
+            "Terms": "服务条款",
+            "Privacy": "隐私",
+            "Security": "安全",
+            "Status": "状态",
+            "Docs": "文档",
+            "Contact": "联系我们",
+            "Manage cookies": "管理 Cookies",
+            "Manage Cookies": "管理 Cookies",
+            "Do not share my personal information": "请勿分享我的个人信息",
 
-        "Contact GitHub": "联系 GitHub",
-        "Pricing": "价格",
-        "Training": "培训",
-        "Shop": "商店",
-        "Blog": "博客",
-        "About": "关于",
+            "Contact GitHub": "联系 GitHub",
+            "Pricing": "价格",
+            "Training": "培训",
+            "Shop": "商店",
+            "Blog": "博客",
+            "About": "关于",
 
         // 描述、评论编辑器翻译
-        "Add a comment": "添加评论",
-        "Add a body": "添加内容",
-        "Write": "撰写",
-            "Add your comment here...": "在此添加您的评论...",
-            "Add your answer here...": "在此添加您的答复...", // 具体讨论页
-        "Preview": "预览",
-            "Nothing to preview": "没有可预览的内容。",
-            "This file is empty.": "这是一个空文件。",
-        "Leave a comment": "发表评论",
-        "Write a reply": "发表回复", // 具体讨论页
-        "Write a comment": "发表评论", // 具体讨论页
-        "Suggest an answer": "提出答复", // 具体讨论页
-        "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
-        "Nothing to preview": "没有什么可预览",
-        "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
-        "Add review comment": "添加审查意见", // 具体拉取请求 文件审查意见
-        "Start a review": "开始评论", // 具体拉取请求 文件审查意见
-        // 取消按钮 提醒信息
-        "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
+            "Add a comment": "添加评论",
+            "Add a body": "添加内容",
+            "Write": "撰写",
+                "Add your comment here...": "在此添加您的评论...",
+                "Add your answer here...": "在此添加您的答复...", // 具体讨论页
+            "Preview": "预览",
+                "Nothing to preview": "没有可预览的内容。",
+                "This file is empty.": "这是一个空文件。",
+            "Leave a comment": "发表评论",
+            "Write a reply": "发表回复", // 具体讨论页
+            "Write a comment": "发表评论", // 具体讨论页
+            "Suggest an answer": "提出答复", // 具体讨论页
+            "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
+            "Nothing to preview": "没有什么可预览",
+            "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
+            "Add review comment": "添加审查意见", // 具体拉取请求 文件审查意见
+            "Start a review": "开始评论", // 具体拉取请求 文件审查意见
+            // 取消按钮 提醒信息
+            "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
-        "Add a title": "添加标题",
-            "Title": "标题",
-        "Add a description": "添加描述",
-            "Add your description here...": "在此添加您的描述...",
-        // 拉取请求 代码审查 回复对话框
-        "Heading": "标题",
-        "Bold": "粗体",
-        "Italic": "斜体",
-        "Quote": "摘引",
-        "Link": "链接",
-        "Numbered list": "有序列表",
-        "Unordered list": "无序列表",
-        "Task list": "任务列表",
-        "Attach files": "附件",
-        "Mention": "提及",
-        "Reference": "引用",
-        "Saved replies": "快速回复",
-            "Select a reply": "选择回复",
-            "Create a new saved reply": "创建新的快速回复",
-        "Slash commands": "斜杠命令",
-            "Code block": "代码块",
-                "Insert a code block formatted for a chosen syntax": "插入针对所选语法格式化的代码块",
-            "Details": "详细信息",
-                "Add a details tag to hide content behind a visible heading": "添加详情标签，将内容隐藏在可见标题后面",
-            // "快速回复": "",
-                "Insert one of your saved replies": "插入您快速回复",
-            "Table": "表格",
-                "Add markdown table": "添加 Markdown 表格",
-            "Templates": "模板",
-                "Insert one of your issue templates": "插入您的议题模板",
+            "Add a title": "添加标题",
+                "Title": "标题",
+            "Add a description": "添加描述",
+                "Add your description here...": "在此添加您的描述...",
 
-            "Slash": "斜杠",
-            // 代码块
-            "No Syntax": "无语法",
-            // 快速回复
-            "No saved replies": "尚无快速回复",
-            "You can create one in your": "您可以创建一个在您的",
-            "settings": "设置",
-            // 表格
-            "Columns": "列",
-            "1 column": "1 列",
-            "2 columns": "2 列",
-            "3 columns": "3 列",
-            "4 columns": "4 列",
-            "5 columns": "5 列",
+            // 拉取请求 代码审查 回复对话框
+            "Heading": "标题",
+            "Bold": "粗体",
+            "Italic": "斜体",
+            "Quote": "摘引",
+            "Link": "链接",
+            "Numbered list": "有序列表",
+            "Unordered list": "无序列表",
+            "Task list": "任务列表",
+            "Attach files": "附件",
+            "Mention": "提及",
+            "Reference": "引用",
+            "Saved replies": "快速回复",
+                "Select a reply": "选择回复",
+                "Create a new saved reply": "创建新的快速回复",
+            "Slash commands": "斜杠命令",
+                "Code block": "代码块",
+                    "Insert a code block formatted for a chosen syntax": "插入针对所选语法格式化的代码块",
+                "Details": "详细信息",
+                    "Add a details tag to hide content behind a visible heading": "添加详情标签，将内容隐藏在可见标题后面",
+                // "快速回复": "",
+                    "Insert one of your saved replies": "插入您快速回复",
+                "Table": "表格",
+                    "Add markdown table": "添加 Markdown 表格",
+                "Templates": "模板",
+                    "Insert one of your issue templates": "插入您的议题模板",
 
-            "Rows": "行",
-            "1 row": "1 行",
-            "2 rows": "2 行",
-            "3 rows": "3 行",
-            "4 rows": "4 行",
-            "5 rows": "5 行",
+                "Slash": "斜杠",
+                // 代码块
+                "No Syntax": "无语法",
+                // 快速回复
+                "No saved replies": "尚无快速回复",
+                "You can create one in your": "您可以创建一个在您的",
+                "settings": "设置",
+                // 表格
+                "Columns": "列",
+                "1 column": "1 列",
+                "2 columns": "2 列",
+                "3 columns": "3 列",
+                "4 columns": "4 列",
+                "5 columns": "5 列",
 
-            // 模板
-            "No issue templates": "尚无议题模板",
-            "Learn more about": "了解更多关于",
-            "issue templates": "议题模板",
+                "Rows": "行",
+                "1 row": "1 行",
+                "2 rows": "2 行",
+                "3 rows": "3 行",
+                "4 rows": "4 行",
+                "5 rows": "5 行",
 
-        // 小屏 插入链接 对话框
-            "Insert Link": "插入链接",
-            "Link Text": "链接文本",
-            "Add": "添加",
+                // 模板
+                "No issue templates": "尚无议题模板",
+                "Learn more about": "了解更多关于",
+                "issue templates": "议题模板",
 
-        "Attach files by": "通过",
-        "dragging & dropping,": "拖放，",
-        "selecting or pasting them.": "选择或粘贴来附加文件。",
-        "Markdown is supported": "支持 Markdown 语法",
-        "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
-        "Uploading your files…": "正在上传您的文件…",
+            // 小屏 插入链接 对话框
+                "Insert Link": "插入链接",
+                "Link Text": "链接文本",
+                "Add": "添加",
 
-        "Close issue": "关闭议题", // issue页 评论框
-            "Close as completed": "完成后关闭",
-                "Done, closed, fixed, resolved": "已完成、已关闭、已修复、已解决",
-            "Close as not planned": "非计划中关闭",
-                "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
-        "Close with comment": "评论并关闭议题", // issue页 评论框
-        "Close pull request": "关闭拉取请求", // pull页 评论框
-        "Reopen discussion": "重新打开讨论", // discussion页 评论框
-        "Close discussion": "关闭讨论", // discussion页 评论框
-            "Close as resolved": "因解决而关闭",
-                "The discussion has been resolved": "讨论已解决",
-            "Close as outdated": "因过时而关闭",
-                "The discussion is no longer relevant": "讨论不再相关",
-            "Close as duplicate": "因重复而关闭",
-                "The discussion is a duplicate of another": "讨论与另一个讨论重复",
-        "Comment": "评论",
-        "Submit new issue": "提交新议题",
-        "Comment on this commit": "评论",
-        "Close and comment": "提交并关闭",
-        "Reopen and comment": "提交并重新打开",
-        "Reopen issue": "重新打开议题", // 具体议题
-        "Reopen with comment": "重新打开评论", // 具体议题
-        "Reopen pull request": "重新打开拉取请求", //具体拉取请求
-        "Add single comment": "评论", // 具体提交页 进行某条代码评论
-        "Reply": "回复", // 具体讨论页
-        "Answer": "答复", // 具体讨论页
-        "Start discussion": "开始讨论", // 新建讨论
-        "Update": "更新", // 新建讨论
-        "discussion": "讨论", // 新建讨论
-        "discussions": "讨论", // 新建讨论
+            "Attach files by": "通过",
+            "dragging & dropping,": "拖放，",
+            "selecting or pasting them.": "选择或粘贴来附加文件。",
+            "Markdown is supported": "支持 Markdown 语法",
+            "Styling with Markdown is supported.": "支持 Markdown 语法。",
+            "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
+            "Uploading your files…": "正在上传您的文件…",
 
-        "Add to list": "添加到清单",
-            "You don't have any lists yet.": "您尚无任何清单。",
-            "Lists": "清单",
-                "Search lists": "搜索清单",
-            "Create list": "创建清单",
-                "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
-                "⭐️ Name this list": "⭐️ 清单名称",
-                "Write a description": "简单描述",
-                "Lists are currently in beta.": "清单目前处于测试阶段。",
-                "Share feedback and report bugs.": "分享反馈意见和报告错误。",
-                "Creating...": "创建中...",
+            "Close issue": "关闭议题", // issue页 评论框
+                "Close as completed": "完成后关闭",
+                    "Done, closed, fixed, resolved": "已完成、已关闭、已修复、已解决",
+                "Close as not planned": "非计划中关闭",
+                    "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
+            "Close with comment": "评论并关闭议题", // issue页 评论框
+            "Close pull request": "关闭拉取请求", // pull页 评论框
+            "Reopen discussion": "重新打开讨论", // discussion页 评论框
+            "Close discussion": "关闭讨论", // discussion页 评论框
+                "Close as resolved": "因解决而关闭",
+                    "The discussion has been resolved": "讨论已解决",
+                "Close as outdated": "因过时而关闭",
+                    "The discussion is no longer relevant": "讨论不再相关",
+                "Close as duplicate": "因重复而关闭",
+                    "The discussion is a duplicate of another": "讨论与另一个讨论重复",
+            "Comment": "评论",
+            "Submit new issue": "提交新议题",
+            "Comment on this commit": "评论",
+            "Close and comment": "提交并关闭",
+            "Reopen and comment": "提交并重新打开",
+            "Reopen issue": "重新打开议题", // 具体议题
+            "Reopen with comment": "重新打开评论", // 具体议题
+            "Reopen pull request": "重新打开拉取请求", //具体拉取请求
+            "Add single comment": "评论", // 具体提交页 进行某条代码评论
+            "Reply": "回复", // 具体讨论页
+            "Answer": "答复", // 具体讨论页
+            "Start discussion": "开始讨论", // 新建讨论
+            "Update": "更新", // 新建讨论
+            "discussion": "讨论", // 新建讨论
+            "discussions": "讨论", // 新建讨论
+
+        // 添加到清单
+            "Add to list": "添加到清单",
+                "You don't have any lists yet.": "您尚无任何清单。",
+                "Lists": "清单",
+                    "Search lists": "搜索清单",
+                "Create list": "创建清单",
+                    "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
+                    "⭐️ Name this list": "⭐️ 清单名称",
+                    "Write a description": "简单描述",
+                    "Lists are currently in beta.": "清单目前处于测试阶段。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Creating...": "创建中...",
 
         // 全局快捷键对话框 - 快捷键 ? 打开
-        "Keyboard shortcuts": "键盘快捷键",
-        "Site-wide shortcuts": "全站快捷键",
-            "Open command palette": "打开命令面板",
-            "Open command palette in command mode": "在命令模式下打开命令面板",
-            "Focus search bar": "聚焦搜索栏", // gist
-            "Open search bar": "打开搜索栏",
-            "Go to notifications": "跳转到通知",
-            "Go to dashboard": "跳转到仪表板",
-            "Go to your issues": "跳转到议题",
-            "Go to your pull requests": "跳转到拉取请求",
-            "Bring up this help dialog": "弹出这个帮助对话框",
-            "Move selection down": "向下移动选择",
-            "Move selection up": "向上移动选择",
-            "Toggle selection": "切换选择",
-            "Open selection": "打开选择",
-        "View all keyboard shortcuts": "查看所有键盘快捷键",
+            "Keyboard shortcuts": "键盘快捷键",
+            "Site-wide shortcuts": "全站快捷键",
+                "Open command palette": "打开命令面板",
+                "Open command palette in command mode": "在命令模式下打开命令面板",
+                "Focus search bar": "聚焦搜索栏", // gist
+                "Open search bar": "打开搜索栏",
+                "Go to notifications": "跳转到通知",
+                "Go to dashboard": "跳转到仪表板",
+                "Go to your issues": "跳转到议题",
+                "Go to your pull requests": "跳转到拉取请求",
+                "Bring up this help dialog": "弹出这个帮助对话框",
+                "Move selection down": "向下移动选择",
+                "Move selection up": "向上移动选择",
+                "Toggle selection": "切换选择",
+                "Open selection": "打开选择",
+            "View all keyboard shortcuts": "查看所有键盘快捷键",
 
         // 命令面板 - ctrl k 或 ctrl alt k 打开
             "Clear Command Palette": "清除命令面板",
@@ -616,28 +595,19 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Type is:pr to filter to pull requests": "键入 is:pr 以筛选拉取请求",
                 "Type is:open to filter to open content": "键入 is:open 以筛选打开的内容",
                 "Type author:@me to search your content": "键入 author:@me 以筛选您的内容",
-                "Type": "请键入",
                 "for help and tips": "寻求帮助和提示", // 键入 ?
 
-            "Search or jump to...": "搜索或跳转到…",
-            "Clear": "清除",
-            // "for issues and pull requests,": "议题和拉取请求，",
-            // "for issues, pull requests, and projects,": "议题、拉取请求和项目，",
-            // "for files, and": "文件，",
-            // "for commands, and": "命令，",
-            // "for commands": "命令，",
-            // "for help": "帮助",
-
             "Pages": "GitHub Pages",
+            "Dashboard": "仪表板",
             "Notifications": "通知",
             "Discussions": "讨论",
             "Actions": "操作",
             "Insights": "洞察",
             "Organizations": "组织",
+            "Repositories": "仓库",
+            "Packages": "软件包",
             "Users": "用户",
-            "Saved queries": "已保存的搜索",
             "to jump to": "去跳转",
-            "to search": "去搜索",
 
             "Top result": "最佳结果",
             "No results matched your search": "没有与您的搜索相符的结果",
@@ -701,7 +671,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             // ? 模式
             "Modes": "模式",
             "Search for": "搜索",
-            "across all of GitHub": "在整个 GitHub中",
+            "across all of GitHub": "在整个 GitHub 中",
             "issues, pull requests, discussions,": "议题、拉取请求、讨论",
             "organizations, repositories,": "组织、仓库",
             "projects": "项目",
@@ -729,129 +699,152 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Delete issue…": "删除议题…",
 
         // 公共词 高频词
-        "Followers": "关注者",
-        "Follow": "关注",
-        "Unfollow": "取消关注",
-        "Star": "星标",
-        // "Unstar": "已加星标",
-        "Starred": "已加星标",
-        "Fork": "复刻",
-        "Save": "保存",
-        "Saving…": "保存中…",
-        "Updating": "更新中",
-        "Updating…": "更新中…",
-        "Delete": "删除",
-        "Cancel": "取消",
-        "Edit": "编辑",
-        "Added on": "添加于",
-        "Loading...": "载入中...",
-        "Loading…": "载入中…",
-        "Copied!": "✅ 复制成功!",
-        "Copy to clipboard": "复制到剪切板",
-        "Give feedback": "反馈",
-        "Give us your feedback": "向我们提供反馈意见",
-        "Download": "下载",
-        "Create": "创建",
+            "Follow": "关注",
+            "Unfollow": "取消关注",
+            "Star": "星标",
+            "Stars": "星标",
+            // "Unstar": "已加星标",
+            "Starred": "已加星标",
+            "Fork": "复刻",
+            "Save": "保存",
+            "Saving…": "保存中…",
+            "Updating": "更新中",
+            "Updating…": "更新中…",
+            "Delete": "删除",
+            "Cancel": "取消",
+            "Edit": "编辑",
+            "Added on": "添加于",
+            "Loading...": "载入中...",
+            "Loading…": "载入中…",
+            "Copied!": "✅ 复制成功!",
+            "Copy to clipboard": "复制到剪切板",
+            "Give feedback": "反馈",
+            "Give us your feedback": "向我们提供反馈意见",
+            "Download": "下载",
+            "Create": "创建",
 
-        "and": "和",
-        ", and": "，和",
-        "or": "或",
-        ", or": "，或",
-        "to": "到",
-        "by": "由",
-        "on": "于",
-        "Use": "使用",
+            "and": "和",
+            ", and": "，和",
+            "or": "或",
+            ", or": "，或",
+            "to": "到",
+            "by": "由",
+            "on": "于",
+            "Use": "使用",
 
-        "Learn more": "了解更多",
-        "Learn More": "了解更多",
-        "Learn more.": "了解更多。",
-        ",": "，",
-        ".": "。",
+            "Learn more": "了解更多",
+            "Learn More": "了解更多",
+            "Learn more.": "了解更多。",
+            ",": "，",
+            ".": "。",
 
-        // 名词
-        "Public": "公共",
-        "Private": "私有",
-        "Public archive": "公共存档",
-        "Private archive": "私有存档",
-        "Public template": "公共模板",
-        "Public mirror": "公共镜像",
-        "Code": "代码",
-        "Pull requests": "拉取请求",
-        "Collaborators": "协作者",
-        "collaborators": "协作者",
-        "commit": "提交",
-        "commits": "提交",
-        "Organization": "组织",
-        "People": "成员",
-        "Teams": "团队",
+            "Prev": "上一页",
+            "Previous": "上一页",
+            "Next": "下一页",
 
-        // 相对时间
-        "just now": "刚刚",
-        "now": "当前",
-        "yesterday": "昨天",
-        "last month": "上个月",
+            // 名词
+            "Public": "公共",
+            "Private": "私有",
+            "Public archive": "公共存档",
+            "Private archive": "私有存档",
+            "Public template": "公共模板",
+            "Public mirror": "公共镜像",
+            "Code": "代码",
+            "Overview": "概况",
+            "Followers": "关注者",
+            "Collaborators": "协作者",
+            "collaborators": "协作者",
+            "Sponsors": "赞助者",
+            "commit": "提交",
+            "commits": "提交",
+            "Organization": "组织",
+            "People": "成员",
+            "Teams": "团队",
 
-        // 状态词
-        "Verified": "已验证",
-        "This commit was created on GitHub.com and signed with GitHub’s verified signature": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
+            // 相对时间
+            "just now": "刚刚",
+            "now": "当前",
+            "yesterday": "昨天",
+            "last month": "上个月",
+
+        // 验证标记浮动信息
+            "This commit was created on GitHub.com and signed with GitHub’s": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
+            "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
+            "This commit was created on GitHub.com and signed with GitHub’s verified signature": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
+            "This commit was signed with the committer's": "此提交已签名，使用提交者的",
+            "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
+            "This commit was signed with the committer’s": "此提交已签名，使用提交者的",
+            "This tag was signed with the committer’s": "此标签已签署，使用提交者的", //
+            "verified signature": "已验证签名",
+            "The key has expired": "密钥已过期",
+            "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
+            "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
+
+            "GPG Key ID:": "GPG 密钥 ID：",
+            "GPG key ID:": "GPG 密钥 ID：",
+            "SSH Key Fingerprint:": "SSH 密钥指纹：",
+            "SSH key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
-        "Expired": "已过期",
-        "Partially verified": "部分验证",
-        "Unverified": "未验证",
-            "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
-            "to verify your signature.": "以验证您的签名。",
+
+            "Verified": "已验证",
+            "Expired": "已过期",
+            "Partially verified": "部分验证",
+            "Unverified": "未验证",
+                "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
+                "to verify your signature.": "以验证您的签名。",
 
         // 邮箱验证提示
-        "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮箱地址以便开启所有 GitHub 功能。",
-        "Configure email settings": "修改电子邮箱设置",
-        "Your email was verified.": "您的电子邮箱地址验证成功！",
+            "Please verify your email address to access all of GitHub's features.": "请验证您的电子邮箱地址以便开启所有 GitHub 功能。",
+            "Configure email settings": "修改电子邮箱设置",
+            "Your email was verified.": "您的电子邮箱地址验证成功！",
 
         // 标签提示
-        "New feature or request": "新功能或要求",
+            "New feature or request": "新功能或要求",
 
         // 更换新手机, 要求重新下载恢复码的全局提醒
-        "Don't get locked out - if you get a new phone this season, be sure to transfer your authenticator app data to the new phone. Enable cloud back up if your authenticator app supports it and consider": "不要被锁在门外——如果您在这个季节买了一部新手机，请务必将您的身份验证器应用数据传输到新手机。如果您的身份验证器应用支持云备份，请启用它并考虑",
-        "redownloading your recovery codes": "重新下载您的恢复码",
-        ", just to be safe.": "，以确保安全。",
+            "Don't get locked out - if you get a new phone this season, be sure to transfer your authenticator app data to the new phone. Enable cloud back up if your authenticator app supports it and consider": "不要被锁在门外——如果您在这个季节买了一部新手机，请务必将您的身份验证器应用数据传输到新手机。如果您的身份验证器应用支持云备份，请启用它并考虑",
+            "redownloading your recovery codes": "重新下载您的恢复码",
+            ", just to be safe.": "，以确保安全。",
 
         // 刷新会话提示条
-        "You signed in with another tab or window.": "您使用其他标签页或窗口登录。",
-        "Reload": "重新加载",
-        "to refresh your session.": "以刷新您的会话",
+            "You signed in with another tab or window.": "您使用其他标签页或窗口登录。",
+            "Reload": "重新加载",
+            "to refresh your session.": "以刷新您的会话",
 
         // 日历
-        "Jan": "1月",
-        "Feb": "2月",
-        "Mar": "3月",
-        "Apr": "4月",
-        "May": "5月",
-        "Jun": "6月",
-        "Jul": "7月",
-        "Aug": "8月",
-        "Sep": "9月",
-        "Oct": "10月",
-        "Nov": "11月",
-        "Dec": "12月",
+            "Jan": "1月",
+            "Feb": "2月",
+            "Mar": "3月",
+            "Apr": "4月",
+            "May": "5月",
+            "Jun": "6月",
+            "Jul": "7月",
+            "Aug": "8月",
+            "Sep": "9月",
+            "Oct": "10月",
+            "Nov": "11月",
+            "Dec": "12月",
 
-        "January"   : "1月",
-        "February"  : "2月",
-        "March"     : "3月",
-        "April"     : "4月",
-        "June"      : "6月",
-        "July"      : "7月",
-        "August"    : "8月",
-        "September" : "9月",
-        "October"   : "10月",
-        "November"  : "11月",
-        "December"  : "12月",
+            "January"   : "1月",
+            "February"  : "2月",
+            "March"     : "3月",
+            "April"     : "4月",
+            "June"      : "6月",
+            "July"      : "7月",
+            "August"    : "8月",
+            "September" : "9月",
+            "October"   : "10月",
+            "November"  : "11月",
+            "December"  : "12月",
 
-        "Sun"  : "周日",
-        "Mon"  : "周一",
-        "Tue"  : "周二",
-        "Wed"  : "周三",
-        "Thu"  : "周四",
-        "Fri"  : "周五",
-        "Sat"  : "周六",
+            "Sun"  : "周日",
+            "Mon"  : "周一",
+            "Tue"  : "周二",
+            "Wed"  : "周三",
+            "Thu"  : "周四",
+            "Fri"  : "周五",
+            "Sat"  : "周六",
+
     },
     "regexp": [ // 正则翻译
         /**
@@ -888,7 +881,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
          *
          * 更新于 2023-07-04 13:19:21
          * 新增前缀词, 减少二次组织翻译
-         *  Updated Jul 4            // 仪表盘页面 仓库标签卡
+         *  Updated Jul 4            // 仪表板页面 仓库标签卡
          *  Commits on Jul 4, 2023   // 提交页面、仓库拉取请求页->提交卡
          *  Joined on Jul 4, 2023    // 追星者，关注者页面
          *
@@ -1102,9 +1095,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             return count + ' ' + suffixKey[suffix] + '之前';
         }],
     ],
-    "selector": [ // 元素筛选器规则
-        ["a[aria-label='Pull requests you created']", "拉取请求"], // 顶部条 拉取请求
-    ],
 };
 
 I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
@@ -1150,8 +1140,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
 
         // 中间栏
-        "The home for all developers — including you.": "所有开发者的家园--包括您。",
-        "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于GitHub工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
+        "The home for all developers — including you.": "所有开发者的家园——包括您。",
+        "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
             "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
@@ -1175,7 +1165,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
         "The GitHub Flow": "GitHub 流程",
         "Adopt GitHub's lightweight, branch-based workflow to collaborate on projects.": "采用 GitHub 的轻量级、基于分支的工作流程来协作处理项目。",
-
 
         "One moment please...": "稍等一会儿...",
         "Loading activity...": "载入活动...",
@@ -1219,7 +1208,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Show all": "显示所有",
         "Show less": "显示更少",
 
-        "Uh oh!": "哎呀!",
+        "Uh oh!": "哎呀！",
         "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
         "Reload this page.": "重载此页面",
 
@@ -1308,7 +1297,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         //"Learn from the best": "向最优秀的人学习",
         //"Unlock the full power of GitHub! Gain expertise and insights from top organizations through guided tutorials, boosting productivity, enhancing security, and enabling seamless collaboration.": "释放 GitHub 的全部力量！通过指导教程获得顶级组织的专业知识和见解，提高生产力、增强安全性并实现无缝协作。",
         //"Start learning": "开始学习",
-        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨AI如何在各个层面上转变着开发者的工作体验。",
+        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨 AI 如何在各个层面上转变着开发者的工作体验。",
 
         // 用户 浮动信息卡
         "Member of": "隶属组织",
@@ -1326,8 +1315,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "You’ve been added to the": "您已经被添加到",
         "organization!": "组织！",
         "Here are some quick tips for a first-time organization member.": "以下是首次加入组织的一些提示。",
-        "Use the switch context button in the upper left corner of this page to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在(",
-        ") and organizations you are a member of.": ")和组织身份之间进行切换。",
+        "Use the switch context button in the upper left corner of this page to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在（",
+        ") and organizations you are a member of.": "）和组织身份之间进行切换。",
         "After you switch contexts you’ll see an organization-focused dashboard that lists out organization repositories and activities.": "当您切换身份，您会看到一个组织为中心的页面，其中列出了组织库和活动。",
 
         // 快捷键
@@ -1370,8 +1359,7 @@ I18N.zh["orgs/dashboard"] = I18N.zh["page-dashboard"];
 
 I18N.zh["page-profile-public"] = { // 个人首页（含组织）
     "static": { // 静态翻译
-        // 个人首页 公关部分
-            // 左侧用户信息栏
+        // 左侧用户信息栏
             "Change your avatar": "修改头像",
             "they/them": "他们",
             "she/her": "她",
@@ -1392,26 +1380,26 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "- same time": "- 时间相同",
 
             // 编辑个人资料
-            "Edit profile": "编辑个人资料",
-            "Name": "名称",
-            "Bio": "个人简介",
-            "Add a bio": "添加个人简介",
-                "You can": "您可",
-                "@mention": "@用户名或组织名",
-                "other users and organizations to link to them.": "链接到其他用户和组织。",
-            "Pronouns": "代词",
-                "Don't specify": "不说明",
-                "they/them": "他们",
-                "she/her": "她",
-                "he/him": "他",
-                "Custom": "自定义",
-            "Company": "公司",
-            "Location": "位置",
-            "Display current local time": "显示当前当地时间",
-            "same time": "相同时间",
-            "Website": "网站",
-            "Social accounts": "社交账户",
-            "Link to social profile": "链接到社交账户",
+                "Edit profile": "编辑个人资料",
+                "Name": "名称",
+                "Bio": "个人简介",
+                "Add a bio": "添加个人简介",
+                    "You can": "您可",
+                    "@mention": "@用户名或组织名",
+                    "other users and organizations to link to them.": "链接到其他用户和组织。",
+                "Pronouns": "代词",
+                    "Don't specify": "不说明",
+                    "they/them": "他们",
+                    "she/her": "她",
+                    "he/him": "他",
+                    "Custom": "自定义",
+                "Company": "公司",
+                "Location": "位置",
+                "Display current local time": "显示当前当地时间",
+                "same time": "相同时间",
+                "Website": "网站",
+                "Social accounts": "社交账户",
+                "Link to social profile": "链接到社交账户",
 
             // 成就浮动界面
                 // 北极代码库贡献者
@@ -1472,21 +1460,26 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                         // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
                         // [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
 
+                "Send feedback": "发送反馈",
+
             // 拉黑 & 举报用户对话框
-            // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
-            "Block user": "拉黑用户",
-            "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
-            "blocking users": "拉黑用户",
+                // [/Block or report ([^ ]+)/, "拉黑或举报 $1"],
+                "Block user": "拉黑用户",
+                "Prevent this user from interacting with your repositories and sending you notifications. Learn more about": "防止该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "blocking users": "拉黑用户",
 
-            "Unblock user": "取消拉黑",
-            "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
+                "Add an optional note:": "添加可选备注：",
+                    "Please don't include any personal information such as legal names or email addresses. Maximum 100 characters, markdown supported. This note will be visible to only you.": "请勿包含任何个人信息，如法定姓名或电子邮件地址。最多 100 个字符，支持标记符。此备注只有您本人可见。",
 
-            "Report abuse": "举报滥用",
-            "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
-            "reporting abuse": "举报滥用",
+                "Unblock user": "取消拉黑",
+                "Allow this user to interact with your repositories and send you notifications. Learn more about": "允许该用户与您的仓库互动并向您发送通知。了解更多关于",
 
-            "Send feedback": "发送反馈",
+                "Report abuse": "举报滥用",
+                    "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
+                    "reporting abuse": "举报滥用",
 
+        // 标签栏
+            "Sponsoring": "赞助",
     },
     "regexp": [ // 正则翻译
         [/(\d+) discussions? answered/, "$1 个讨论已回答"], // 高光时刻
@@ -1527,7 +1520,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions! ": "您通过私人贡献解锁了新成就！",
+            "You unlocked new Achievements with private contributions!": "您通过私人贡献解锁了新成就！",
             "Show them off by including private contributions in your Profile in": "通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             // 拖拽排序提醒
@@ -2037,7 +2030,7 @@ I18N.zh["orgs-public"] = { // 组织公共部分
 
     },
     "regexp": [ // 正则翻译
-        [/Invite someone to/, "邀请某人加入组织"],
+        [/Invite someone to/, "邀请加入到组织"],
         [/New team in/, "新建团队在组织"],
         [/New repository in/, "新建仓库在组织"],
         [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "该组织已由管理员于 $1 存档。不再维护。"],
@@ -2497,6 +2490,8 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
+                    "Select notification channels": "选择通知通道",
+                    "Close": "关闭",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, CLI": "在 GitHub、CLI 上",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
@@ -2509,6 +2504,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
                 "Customize email updates": "自定义电子邮件更新",
                     "Choose which additional events you'll receive emails for when participating or watching.": "选择参与或关注时，您将收到哪些额外活动的电子邮件。",
+                    "Select events": "选择事件",
                     "Reviews": "审查",
                     "Reviews, Pushes": "审查、推送",
                     "Reviews, Pushes, Comments": "审查、推送、评论",
@@ -4621,6 +4617,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "in order to install your GitHub App.": "才能安装 GitHub 应用。",
                 // GitHub App 已更新
                 "Got it. Your GitHub App has been updated.": "GitHub 应用已更新。",
+                "The GitHub App is now public. Anyone is free to install it.": "GitHub 应用已公开化。任何人都可以自由安装。",
+                "The GitHub App is now private. It can only be installed on this account.": "GitHub 应用已私有化。只能安装在此账户上。",
 
             "Developer settings": "开发者设置",
             // 左侧栏
@@ -4636,6 +4634,8 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Revoke all user tokens": "撤销所有用户令牌",
                 "GitHub Apps can use OAuth credentials to identify users. Learn more about identifying users by reading our": "GitHub 应用可以使用 OAuth 凭据来识别用户。阅读我们的",
                 "integration developer documentation": "集成开发者文档",
+
+                "Public link": "公共链接",
 
                 // 撤销所有用户令牌对话框
                 "Revoke all user tokens?": "撤销所有用户令牌？",
@@ -4671,6 +4671,15 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 // 顶部提醒
                     "Your avatar has been updated. It may take a few minutes to update across the site.": "您的头像已更新。整个网站的更新可能需要几分钟的时间。",
                     "This avatar has been deleted.": "该头像已被删除。",
+
+            // 市场
+                "List your GitHub App in the": "上架您的 GitHub 应用到",
+                "GitHub Marketplace": "GitHub 市场",
+                "so that other users can discover it.": "以便其他用户可以发现它。",
+                "List in Marketplace": "上架应用",
+
+                "Edit how your GitHub App is presented in the Marketplace directory, including screenshots and links.": "编辑 GitHub 应用在市场索引中的展示方式，包括截图和链接。",
+                "Edit Marketplace listing": "编辑市场上架信息",
 
             "Private keys": "私钥",
                 "Generate a private key": "生成私钥",
@@ -4736,11 +4745,18 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 
                             "Please type in the name of the GitHub App to confirm.": "请键入 GitHub 应用的名称进行确认。",
                             "I understand the consequences, delete this GitHub App": "我明白后果，依然删除该 GitHub 应用",
-                "Make this GitHub App public": "公开此 GitHub 应用",
+                "Make this GitHub App public": "公开 GitHub 应用",
                     "Allow this GitHub App to be installed on other accounts.": "允许在其他账户中安装此 GitHub 应用。",
 
                     "Make public": "转为公开",
                         // [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
+                "Make this GitHub App private": "私有化 GitHub 应用",
+                    "Private GitHub Apps cannot be installed on other accounts.": "私有 GitHub 应用不能安装在其他账户上。",
+                    "Make private": "转为私有",
+                        "This integration cannot be made private since it is already installed on other accounts.": "此应用无法转为私有，因为它已安装在其他帐户上。",
+                "Make this application private": "私有化应用",
+                    "Private applications cannot be installed on other accounts.": "私有应用不能安装在其他账户上。",
+                        // [/This GitHub app will only be installable on the ([^ ]+) account. Are you sure you want to make (.*) private\?/, "此 GitHub 应用只能安装在 $1 帐户上。您确定要将 $2 设为私有吗？"],
 
         // 某个 GitHub 应用 - 可选功能 https://github.com/settings/apps/<app-name>/beta
             // [/Activate optional features for (.*)/, "激活 $1 的可选功能"],
@@ -4760,6 +4776,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
         [/(.*) is installed on this account./, "$1 已安装在此帐户上。"],
         [/Where should we transfer (.*)\?/, "将 $1 转让给谁？"],
         [/Any user or organization will be able to install this GitHub App. Are you sure you want to make (.*) public\?/, "任何用户或组织都可以安装此 GitHub 应用。您确定要公开 $1 吗？"],
+        [/This GitHub app will only be installable on the ([^ ]+) account. Are you sure you want to make (.*) private\?/, "此 GitHub 应用只能安装在 $1 帐户上。您确定要将 $2 设为私有吗？"],
         [/(\d+) accounts?/, "$1 个账户"],
         [/Activate optional features for (.*)/, "激活 $1 的可选功能"],
         [/Choose a feature to activate for (.*):/, "选择要为 $1 激活的功能："],
@@ -5229,7 +5246,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
             "Some checks haven't completed yet": "部分检查还未完成",
 
-
             "Jump to bottom": "跳到底部", //小屏模式
 
             // 标签栏
@@ -5241,6 +5257,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Security": "安全",
             "Insights": "洞察",
             "Settings": "设置",
+
+            "Additional navigation options": "更多导航选项", // 小屏
 
             // "Pulse": "统计",
             // "Graphs": "图表",
@@ -5331,6 +5349,11 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Go to Wiki"                 : "跳转到 Wiki",
                 "Go to Discussions"          : "跳转到讨论",
 
+                "Copilot chat": "Copilot 聊天",
+                "Open Copilot chat": "打开 Copilot 聊天",
+                "Close Copilot chat": "关闭 Copilot 聊天",
+                "Expand/collapse Copilot chat": "展开/折叠 Copilot 聊天",
+
             // 议题
                 "Submit comment": "提交评论",
                 "Submit comment and close issue": "提交评论并关闭议题",
@@ -5382,6 +5405,10 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Return to the repository overview": "返回仓库概述",
             "Cannot find a valid ref in": "未找到有效的引用",
             "Go to default branch": "跳转到默认分支",
+
+        // 页面加载异常(仓库)
+            "Error loading page": "加载页面出错",
+            "It looks like your internet connection is down. Please check it.": "您的网络连接似乎出现故障。请检查一下。",
 
         // 邀请继任者提醒
             "Ensure the future of your work!": "确保您工作的未来！",
@@ -6060,40 +6087,45 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Use the URL for this page when adding GitHub as a remote.": "将 GitHub 添加为远程时，请使用此页面上的 URL。",
 
         // 文件管理器 /<user-name>/<repo-name>/tree/<branch>/<文件夹路径>/
-            "Go to file": "转到文件",
-                "No matches found": "未找到匹配项",
+          // /<user-name>/<repo-name>/?search=1
+          // /<user-name>/<repo-name>/tree/?search=1
+            // 文件树侧边栏
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                // 搜索框
+                    "Go to file": "转到文件",
+                        "No matches found": "未找到匹配项",
+
             "Add file": "添加文件",
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
                 "Upload files": "上传文件",
-            "Delete directory": "删除文件夹",
+
+            // 新三个点
+                "Copy path": "复制路径",
+                "Copy permalink": "复制永久链接",
+                "Delete directory": "删除文件夹",
+                "View options": "查看选项",
+                    "Center content": "核心内容",
+
+            "Copied path!": "✅ 路径已复制！",
+
             "History": "历史",
 
-            "Give feedback": "反馈",
-
-        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
-            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
-            "file.": "文件。",
-            "Learn more about configuring a template chooser.": "了解更多关于配置模板选择器的信息。",
-
-
-        // new code view
             "Top": "顶部",
             "Jump to file": "跳转到文件",
-
-        // 新版 New Code Search /<user-name>/<repo-name>/?search=1
-            "Path copied!": "✅ 路径已复制！",
 
             "Name": "文件名",
             "Last commit message": "最后提交消息",
             "Last commit date": "最后提交时间",
 
-            // 大纲按钮
-            "Outline": "大纲", // md 文件
-                "Filter headings": "筛选标题", // md 文件
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
+        // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+            "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
+            "file.": "文件。",
+            "Learn more about configuring a template chooser.": "了解更多关于配置模板选择器的信息。",
 
     },
     "regexp": [ // 正则翻译
@@ -6344,6 +6376,173 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
+        // 某个拉取请求和某个议题 公共词条
+            // 右侧栏
+                "Reviewers": "审查者",
+                    "Loading suggestions…": "载入推荐…",
+                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
+                    // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
+                    "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
+                    "Re-request review": "重新请求审核",
+                    "Still in progress?": "仍在进行中吗？",
+                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                    "Learn about draft PRs": "了解拉取请求草案",
+                    "Convert to draft": "设置为草案",
+                        // 设置草案对话框
+                            "Convert this pull request to draft?": "将此拉取请求转换为草案？", // 拉取请求
+                            "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
+                    // 下拉
+                    "Request up to 15 reviewers": "最多请求 15 个审查者",
+                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
+                    "Request": "请求",
+                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
+                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+
+                "Assignees": "受理人",
+                    "No one assigned": "无人受理",
+                    "No one—": "无人 - ",
+                    "assign yourself": " 受理自己",
+                    // 下拉框
+                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
+                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
+                    "Clear assignees": "清除受理人",
+                    "Type or choose a user": "输入或选择用户",
+                    "Suggestions": "建议",
+
+                // "Labels": "标签",
+                    "None yet": "暂无",
+                    // 下拉
+                    "bug": "BUG",
+                        "Something isn't working": "有些东西不工作",
+                    "dependencies": "依赖性",
+                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                    "documentation": "文档",
+                        "Improvements or additions to documentation": "文档的改进或补充",
+                    "duplicate": "重复",
+                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                    "enhancement": "增强",
+                        "New feature or request": "新功能或请求",
+                    "good first issue": "好的首发议题",
+                        "Good for newcomers": "适合新人",
+                    "help wanted": "需要帮助",
+                        "Extra attention is needed": "需要特别关注",
+                    "invalid": "无效",
+                        "This doesn't seem right": "这似乎不对",
+                    "question": "问题",
+                        "Further information is requested": "要求提供更多信息",
+                    "wontfix": "不会修复",
+                        "This will not be worked on": "这将不会被处理",
+
+                    "Apply labels to this issue": "应用标签", // 议题
+                    "Apply labels to this pull request": "应用标签", // 拉取请求
+                    "Edit labels": "编辑标签",
+
+                    // 拉取请求
+                    "dependencies": "依赖关系",
+                        "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
+
+                // 项目
+                    "Recent": "最近",
+                    "User": "用户",
+                    "No projects": "无项目",
+
+                "Milestone": "里程碑",
+                    "No milestone": "无里程碑",
+                    //下拉
+                    "Set milestone": "设置里程碑",
+                        "Nothing to show": "暂无",
+
+                "Development": "进展",
+                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
+                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
+                    // 下拉
+                    "Link an issue from this repository": "关联来自此仓库的议题",
+                    "Filter": "筛选",
+                    "No results": "无结果",
+
+                // "Notifications": "通知类型",
+                "Customize": "自定义",
+                "Subscribe": "订阅",
+                // "Unsubscribe": "取消订阅",
+                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
+                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
+                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
+                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
+                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
+                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
+                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
+                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
+                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
+                "You’re ignoring this repository.": "您忽略了这个仓库。",
+
+                    // 通知设置对话框
+                    "Notification settings": "通知设置",
+                    "Not subscribed": "未订阅",
+                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
+                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
+                    "Subscribed": "订阅",
+                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
+                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
+                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
+                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
+                    // 议题
+                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
+                        "Reopened": "重新打开",
+                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
+                    // 拉取请求
+                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
+                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
+                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
+
+                "Lock conversation": "锁定对话",
+                    "Lock conversation on this issue": "锁定此议题的对话",
+                    "Lock conversation on this pull request": "锁定此拉取请求的对话",
+                    "Other users": "其他用户",
+                    "can’t add new comments": "无法添加新评论",
+                    "to this issue.": "到该议题。",
+                    "to this pull request.": "到该拉取请求。",
+                    "You and other collaborators": "您和其他协作者",
+                    "with access": "有权限访问",
+                    "to this repository": "该仓库",
+                    "can still leave comments": "仍然可以发表评论",
+                    "that others can see.": "其他人可以看到。",
+                    "You can always unlock this issue again in the future.": "您今后仍可以随时再次解锁此议题。",
+                    "You can always unlock this pull request again in the future.": "您今后仍可以随时再次解锁此拉取请求。",
+                    "Reason for locking": "锁定原因",
+                    "Choose a reason": "选择原因",
+                        "Off-topic": "离题",
+                        "Too heated": "过热",
+                        "Resolved": "已解决",
+                        "Spam": "垃圾信息",
+                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
+                    "lock conversations": "锁定对话",
+                    // "Lock conversation on this issue": "锁定对话",
+                "Unlock conversation": "解锁对话",
+                    "Unlock conversation on this issue": "解锁此议题的对话",
+                    "Unlock conversation on this pull request": "解锁此拉取请求的对话",
+                    "Everyone": "任何人",
+                    "will be able to comment on this issue once more.": "将能够再次对这个议题发表评论。",
+                    "will be able to comment on this pull request once more.": "将能够再次对这个拉取请求发表评论。",
+                    "You can always lock this pull request again in the future.": "您今后仍可以随时再次锁定此拉取请求。",
+                    "You can always lock this issue again in the future.": "您今后仍可以随时再次锁定此议题。",
+
+            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
+            "GitHub Community Guidelines": "GitHub 社区准则",
+            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
+            "contributing guidelines": "贡献指南",
+            "security policy": "安全政策",
+            "code of conduct": "行为准则",
+
+            // 底部赞助
+                "Show your support for": "通过赞助来表达您对",
+                "by sponsoring them.": "的支持。",
+
+            // 底部提示栏 (未登录)
+                "Sign up for free": "免费注册",
+                "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
+                ". Already have an account?": "。已经有帐户？",
+                "Sign in to comment": "登录后发表评论",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) linked issues?/, "链接 $1 个议题"],
@@ -6494,97 +6693,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
 
-            // 同 /<user-name>/<repo-name>/pull/<id>
-            // 右侧栏
-                "Reviewers": "审查者",
-                    "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
-                    "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
-                    "Still in progress?": "仍在进行中吗？",
-                    "Convert to draft": "设置为草案",
-                        // 设置草案对话框
-                            "Convert this pull request to draft?": "将此拉取请求转换为草案？",
-                            "People who are already subscribed will not be unsubscribed.": "已订阅的用户将不会被取消订阅。",
-                    // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审查者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
-                    "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
-
-                "Assignees": "受理人",
-                    "No one assigned": "无人受理",
-                    "No one—": "无人 - ",
-                    "assign yourself": " 受理自己",
-                    // 下拉框
-                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
-                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
-                    "Clear assignees": "清除受理人",
-                    "Type or choose a user": "输入或选择用户",
-                    "Suggestions": "建议",
-
-                // "Labels": "标签",
-                    "None yet": "暂无",
-                    // 下拉
-                    "Apply labels to this issue": "应用标签", // 议题
-                    "Apply labels to this pull request": "应用标签", // 拉取请求
-                    "Edit labels": "编辑标签",
-
-                // 项目
-                    "Recent": "最近",
-                    "User": "用户",
-                    "No projects": "无项目",
-
-                "Milestone": "里程碑",
-                    "No milestone": "无里程碑",
-                    //下拉
-                    "Set milestone": "设置里程碑",
-
-                "Development": "进展",
-                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
-                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
-                    // 下拉
-                    "Link an issue from this repository": "关联来自此仓库的议题",
-                    "Filter": "筛选",
-                    "No results": "无结果",
-
-                // "Notifications": "通知类型",
-                "Customize": "自定义",
-                "Subscribe": "订阅",
-                // "Unsubscribe": "取消订阅",
-                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
-                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
-                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
-                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
-                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
-                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
-                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
-                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
-                "You’re ignoring this repository.": "您忽略了这个仓库。",
-
-                    // 通知设置对话框
-                    "Notification settings": "通知设置",
-                    "Not subscribed": "未订阅",
-                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
-                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
-                    "Subscribed": "订阅",
-                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
-                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
-                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
-                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
-                    // 议题
-                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
-                        "Reopened": "重新打开",
-                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
-                    // 拉取请求
-                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
-                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
-                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
-
-                // /([\d,]+) participants?/, "$1 位参与者"
-                "and others": "和其它",
-
             // 右侧栏 补充
                 // "Development": "进展",
                     "No branches or pull requests": "没有分支或拉取请求",
@@ -6623,31 +6731,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                         "Link a branch, pull request, or": "关联分支、拉取请求或",
                         "Search for branches or pull requests": "搜索分支或拉取请求",
 
-                "Lock conversation": "锁定对话",
-                    "Lock conversation on this issue": "锁定此议题的对话",
-                    "Other users": "其他用户",
-                    "can’t add new comments": "无法添加新评论",
-                    "to this issue.": "到该议题。",
-                    "You and other collaborators": "您和其他协作者",
-                    "with access": "有权限访问",
-                    "to this repository": "该仓库",
-                    "can still leave comments": "仍然可以发表评论",
-                    "that others can see.": "其他人可以看到。",
-                    "You can always unlock this issue again in the future.": "您今后仍可以随时再次解锁此议题。",
-                    "Reason for locking": "锁定原因",
-                    "Choose a reason": "选择原因",
-                        "Off-topic": "离题",
-                        "Too heated": "过热",
-                        "Resolved": "已解决",
-                        "Spam": "垃圾信息",
-                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
-                    "lock conversations": "锁定对话",
-                    // "Lock conversation on this issue": "锁定对话",
-                "Unlock conversation": "解锁对话",
-                    "Unlock conversation on this issue": "解锁此议题的对话",
-                    "Everyone": "任何人",
-                    "will be able to comment on this issue once more.": "将能够再次对这个议题发表评论。",
-                    "You can always lock this issue again in the future.": "您今后仍可以随时再次锁定此议题。",
                 "Pin issue": "置顶议题",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置顶 3 个议题，它们将公开显示在议题页面的顶部",
                     // 顶部提醒
@@ -6691,27 +6774,13 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                     // 顶部提醒
                     "The issue was successfully deleted.": "该议题已成功删除。",
 
-
             "Load more…": "载入更多…",
-            "Loading…": "载入中…",
 
             "This conversation has been locked as": "此对话已锁定为",
             "and limited to collaborators.": "，并限制与协作者对话。",
 
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
-            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
-            "contributing guidelines": "贡献指南",
-            "and": "和",
-            "security policy": "安全政策",
-            "code of conduct": "行为准则",
-
             "This issue has been deleted.": "该议题已被删除。",
             "deleted this from": "删除了这个，从",
-
-            // 底部赞助
-            "Show your support for": "通过赞助来表达您对",
-            "by sponsoring them.": "的支持。",
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
             ...I18N.zh["repository/labels"]["static"],
@@ -6835,6 +6904,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 顶部提醒
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
                 "Marked pull request as ready for review.": "标记拉取请求为可审核。",
+                "Your review was submitted successfully.": "您的审查已成功提交。",
 
             // 快捷键
                 "Edit pull request title": "编辑拉取请求标题",
@@ -6854,6 +6924,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Checkout with GitHub Desktop": "使用 GitHub Desktop 检出",
 
                 // 代码空间
+                    "This pull request must be reopened to create new codespaces on it.": "必须重新打开此拉取请求才能在其上创建新的代码空间。",
                     "Your workspaces in the cloud": "您在云端的工作空间",
                     //[/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
                     "Codespace repository configuration": "代码空间仓库配置",
@@ -6904,14 +6975,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
 
             // 自动修复漏洞 提示
-            "This automated pull request fixes a": "这个自动拉取请求将修复了一个",
-            "security vulnerability": "安全漏洞",
-            "Only users with access to Dependabot alerts can see this message.": "只有有权访问 Dependabot 警报的用户才能看到此消息。",
-            "Learn more about Dependabot security updates": "了解更多关于 Dependabot 安全更新的信息",
-            "opt out": "选择退出",
+                "This automated pull request fixes a": "这个自动拉取请求将修复了一个",
+                "security vulnerability": "安全漏洞",
+                "Only users with access to Dependabot alerts can see this message.": "只有有权访问 Dependabot 警报的用户才能看到此消息。",
+                "Learn more about Dependabot security updates": "了解更多关于 Dependabot 安全更新的信息",
+                "opt out": "选择退出",
             // 顶部提醒
                 "Opted out of Dependabot security updates.": "选择退出 Dependabot 安全更新。",
-            "or": "或",
 
             // Dependabot 警报 拉取请求 提示
                 "Merging this pull request will resolve a": "合并此拉取请求将解决",
@@ -6937,118 +7007,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Checks": "检查",
             "Files changed": "更改的文件",
 
-            // 右侧栏
-                "Reviewers": "审查者",
-                    "Loading suggestions…": "载入推荐…",
-                    // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
-                    "At least 1 approving review is required to merge this pull request.": "至少需要 1 次批准审查才能合并此拉取请求。",
-                    "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
-                    "Re-request review": "重新请求审核",
-                    "Still in progress?": "仍在进行中吗？",
-                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
-                    "Learn about draft PRs": "了解拉取请求草案",
-                    "Convert to draft": "设置为草案",
-                    // 下拉
-                    "Request up to 15 reviewers": "最多请求 15 个审查者",
-                    // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
-                    "Request": "请求",
-                    // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
-
-                "Assignees": "受理人",
-                    "No one assigned": "无人受理",
-                    "No one—": "无人 - ",
-                    "assign yourself": " 受理自己",
-                    // 下拉框
-                    "Assign up to 10 people to this issue": "最多指定 10 人", // 议题
-                    "Assign up to 10 people to this pull request": "最多指定 10 人", // 拉取请求
-                    "Clear assignees": "清除受理人",
-                    "Type or choose a user": "输入或选择用户",
-                    "Suggestions": "建议",
-
-                // "Labels": "标签",
-                    "None yet": "暂无",
-                    // 下拉
-                    "bug": "BUG",
-                        "Something isn't working": "有些东西不工作",
-                    "dependencies": "依赖性",
-                        "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
-                    "documentation": "文档",
-                        "Improvements or additions to documentation": "文档的改进或补充",
-                    "duplicate": "重复",
-                        "This issue or pull request already exists": "这个议题或拉取请求已经存在",
-                    "enhancement": "增强",
-                        "New feature or request": "新功能或请求",
-                    "good first issue": "好的首发议题",
-                        "Good for newcomers": "适合新人",
-                    "help wanted": "需要帮助",
-                        "Extra attention is needed": "需要特别关注",
-                    "invalid": "无效",
-                        "This doesn't seem right": "这似乎不对",
-                    "question": "问题",
-                        "Further information is requested": "要求提供更多信息",
-                    "wontfix": "不会修复",
-                        "This will not be worked on": "这将不会被处理",
-
-                    "Apply labels to this issue": "应用标签", // 议题
-                    "Apply labels to this pull request": "应用标签", // 拉取请求
-                    "Edit labels": "编辑标签",
-
-                    "dependencies": "依赖关系",
-                        "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
-
-                // 项目
-                    "Recent": "最近",
-                    "User": "用户",
-                    "No projects": "无项目",
-
-                "Milestone": "里程碑",
-                    "No milestone": "无里程碑",
-                    //下拉
-                    "Set milestone": "设置里程碑",
-                        "Nothing to show": "暂无",
-
-                "Development": "进展",
-                    "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
-                    "Successfully merging a pull request may close this issue.": "成功合并一个拉取请求可能会关闭此议题。",
-                    // 下拉
-                    "Link an issue from this repository": "关联来自此仓库的议题",
-                    "Filter": "筛选",
-                    "No results": "无结果",
-
-                // "Notifications": "通知类型",
-                "Customize": "自定义",
-                "Subscribe": "订阅",
-                // "Unsubscribe": "取消订阅",
-                "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
-                "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您正在关注此仓库。",
-                "You’re receiving notifications because you authored the thread.": "您收到通知是因为您提出了该话题。",
-                "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
-                "You’re receiving notifications because you were mentioned.": "您收到通知是因为有人 @您。",
-                "You’re receiving notifications because you commented.": "您收到通知是因为您发表了评论。",
-                "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
-                "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
-                "You’re ignoring this repository.": "您忽略了这个仓库。",
-
-                    // 通知设置对话框
-                    "Notification settings": "通知设置",
-                    "Not subscribed": "未订阅",
-                        "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此拉取请求的通知。",
-                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您参与或被 @您时才会收到来自此议题的通知。", // 议题页面
-                    "Subscribed": "订阅",
-                        "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
-                        "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
-                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
-                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
-                    // 议题
-                        "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
-                        "Reopened": "重新打开",
-                            "Receive a notification when this issue has been reopened.": "当议题被重新打开时，收到通知。",
-                    // 拉取请求
-                        "Receive a notification when this pull request has been merged.": "当拉取请求被合并时，收到通知。",
-                        "Receive a notification when this pull request has been closed.": "当拉取请求被关闭时，收到通知。",
-                        "Receive a notification when this pull request has been reopened.": "当拉取请求被重新打开时，收到通知。",
+            // 右侧栏 补充
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "Allowing edits by maintainers": "允许维护者进行编辑",
@@ -7065,47 +7024,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问密钥",
                     "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取密钥值，并获得对其他分支的访问。",
 
-                // /([\d,]+) participants?/, "$1 位参与者"
-                "and others": "和其它",
-
                 "Maintainers are allowed to edit this pull request.": "允许维护者编辑此拉取请求。",
-
-                "Lock conversation": "锁定对话",
-                    "Lock conversation on this pull request": "锁定此拉取请求的对话",
-                    "Other users": "其他用户",
-                    "can’t add new comments": "无法添加新评论",
-                    "to this pull request.": "到该拉取请求。",
-                    "You and other collaborators": "您和其他协作者",
-                    "with access": "有权限访问",
-                    "to this repository": "该仓库",
-                    "can still leave comments": "仍然可以发表评论",
-                    "that others can see.": "其他人可以看到。",
-                    "You can always unlock this pull request again in the future.": "您今后仍可以随时再次解锁此拉取请求。",
-                    "Reason for locking": "锁定原因",
-                    "Choose a reason": "选择原因",
-                        "Off-topic": "离题",
-                        "Too heated": "过热",
-                        "Resolved": "已解决",
-                        "Spam": "垃圾信息",
-                    "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
-                    "lock conversations": "锁定对话",
-                    // "Lock conversation on this issue": "锁定对话",
-                "Unlock conversation": "解锁对话",
-                    "Unlock conversation on this pull request": "解锁此拉取请求的对话",
-                    "Everyone": "任何人",
-                    "will be able to comment on this pull request once more.": "将能够再次对这个拉取请求发表评论。",
-                    "You can always lock this pull request again in the future.": "您今后仍可以随时再次锁定此拉取请求。",
-
-            // 底部赞助
-            "Show your support for": "通过赞助来表达您对",
-            "by sponsoring them.": "的支持。",
-
-            "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
-            "GitHub Community Guidelines": "GitHub 社区准则",
-            "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
-            "contributing guidelines": "贡献指南",
-            "security policy": "安全政策",
-            "code of conduct": "行为准则",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
@@ -7119,6 +7038,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Resolve conversation": "解决对话",
                 "Resolving conversation…": "解决对话中…",
             "Unresolve conversation": "未解决对话",
+                "Unresolving conversation…": "未解决对话…",
                 "marked this conversation as resolved.": "将此对话标记为已解决。",
             // "Changes requested": "更改请求",
             "Change requested": "更改请求",
@@ -7155,6 +7075,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "added": "添加",
             "requested changes": "要求更改",
             "changed the title": "修改了标题",
+            "added the": "添加",
+            "label": "标签",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -7188,9 +7110,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
             // "Review required": "需要审查", // 拉取请求 页面状态词
                 "Add your review": "添加您的评论",
-            // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            // [/At least (\d+) approving reviews? are required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             "Code owner review required": "需要代码所有者审核",
                 "was requested for review as a code owner": "要求以代码所有者身份进行审查",
+            "Conversation resolution required": "需要解决对话",
+                "A conversation must be resolved before this pull request can be merged.": "在合并此拉取请求前，必须先解决对话。",
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
             "Approval not required": "不需要批准",
@@ -7210,7 +7134,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Hide all checks": "隐藏所有检查",
                 "Details": "细节",
                 "Required": "必须",
+            // 未解决的评论
+                // [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
             "Merging is blocked": "合并被阻止",
+                "The base branch requires all conversations on code to be resolved.": "基础分支要求解决所有关于代码的对话。",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
                 "View rules": "查看规则",
@@ -7353,20 +7280,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // [/Commits (.+)/, "提交于 $1"]
             "committed": "提交于",
 
-            // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
-                "This commit was signed with the committer's": "此提交已签名，使用提交者的",
-                "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
-                "verified signature": "已验证签名",
-                "The key has expired": "密钥已过期",
-                "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
-                "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
-
-                "GPG Key ID:": "GPG 密钥 ID：",
-                "SSH Key Fingerprint:": "SSH 密钥指纹：",
-                "Expired": "已过期",
-                "Learn about vigilant mode": "了解警戒模式",
-
             "Copy the full SHA": "复制完整的 SHA",
             "View commit details": "查看提交详情",
             "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
@@ -7430,7 +7343,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // [/Unresolved conversations/, "未解决的讨论"],
                 "Nice work!": "干得好！",
                 "All of your conversations have been resolved.": "您的所有讨论都已解决。",
-                // [/Reresolved conversations/, "已解决的讨论"],
+                // [/Resolved conversations/, "已解决的讨论"],
                 "No conversations yet": "尚无讨论",
                 "Review conversations will show up here.": "审查讨论将显示在这里。",
             // "Jump to": "跳转到",
@@ -7491,6 +7404,27 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
 
+            // 建议更改
+                "Suggested change": "建议更改",
+                "Sign off and commit suggestion": "签署并提交建议",
+                    "Suggestions cannot be applied from pending reviews.": "无法应用待审核中的更改",
+                "Add suggestion to batch": "批量添加建议",
+                    "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
+                    "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
+
+                "Pending in batch": "待批量处理",
+                "Remove from batch": "从批量处理中移除",
+                    "Remove this suggestion from those to be applied in batch": "从批量应用的建议中删除此建议",
+                "Sign off and commit suggestions": "签署并提交建议",
+                    "Apply all batched suggestions as a single commit": "将所有批量建议作为单个提交应用",
+                "Sign off and commit changes": "签署并提交更改",
+                    "Applying commit...": "正在应用提交...",
+
+                "This diff has recently been updated.": "该差异最近已更新。",
+                "Refresh and try again.": "刷新并重试。",
+
+                "Multiple suggested changes can be batched together in a single commit. Each suggestion author will be attributed in the commit as a co-author.": "多个建议更改可以在一次提交中批量处理。每个建议作者都将在提交中被归为共同作者。",
+
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "您正在查看该合并提交的浓缩版本。您可以查看",
             "full changes here": "完整的更改",
@@ -7542,10 +7476,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
         [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
         [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"],
         [/(\d+) pending reviewers?/, "$1 名待审者"],
         [/([\d,]+) participants?/, "$1 位参与者"],
-        [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+        [/At least (\d+) approving reviews? are required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
         [/(\d+) approvals?/, "$1 项批准"],
         // [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"],
@@ -7572,7 +7507,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"], // 文件筛选
         [/Select all (\d+) file types?/, "选择所有 $1 种文件类型"],
         [/Unresolved conversations/, "未解决的讨论"],
-        [/Reresolved conversations/, "已解决的讨论"],
+        [/Resolved conversations/, "已解决的讨论"],
         // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
         // 代码空间
         [/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
@@ -7592,6 +7527,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -7887,31 +7823,10 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             "You’re receiving notifications because you’re subscribed to this thread.": "您收到通知是因为您订阅了该话题。",
             "You’re receiving notifications because you’re watching this repository.": "您收到通知是因为您关注了该仓库。",
 
-            // 验证标记浮动信息
-            "This commit was created on GitHub.com and signed with GitHub’s": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
-            "This commit was signed with the committer’s": "此提交已签名，使用提交者的",
-            "This tag was signed with the committer’s": "此标签已签署，使用提交者的", //
-            "GPG key ID:": "GPG 密钥 ID：",
-            "SSH key Fingerprint:": "SSH 密钥指纹：",
-
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
             "Commits": "提交",
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
-
-            // 验证标记浮动信息
-            "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
-            "This commit was signed with the committer's": "此提交已签名，使用提交者的",
-            "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
-            "verified signature": "已验证签名",
-            "The key has expired": "密钥已过期",
-            "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
-            "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
-
-            "GPG Key ID:": "GPG 密钥 ID：",
-            "SSH Key Fingerprint:": "SSH 密钥指纹：",
-            "Expired": "已过期",
-            "Learn about vigilant mode": "了解警戒模式",
 
             "Copy the full SHA": "复制完整的 SHA",
             "View commit details": "查看提交详情",
@@ -8159,7 +8074,7 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
         [/(\d+) References?/, "$1 次引用"],
-        [/Blame prior to change ([a-z0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
+        [/Blame prior to change ([a-f0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
     ],
 };
 I18N.zh["repository/blame"] = I18N.zh["repository/blob"];
@@ -8523,7 +8438,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "to this repository": "该仓库",
                 "can still leave comments": "仍然可以留下评论",
                 "that others can see.": "，其他人可以看到。",
-                "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。 ",
+                "You can always unlock this discussion again in the future.": "您今后仍可以随时再次解锁此讨论。",
                 "This conversation has been locked and limited to collaborators.": "此对话已锁定，仅合作者可评论。",
             "Unlock conversation": "解锁对话",
                 "Are you sure you want to unlock conversation on this discussion?": "您确定要解锁此讨论的对话吗？",
@@ -8707,6 +8622,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             "Automate your workflow from idea to production": "从创意到产品，使您的工作流程自动化",
             "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.": "GitHub Actions 现在可以使用世界一流的 CI/CD 轻松自动化所有软件工作流程。直接从 GitHub 构建、测试和部署您的代码。",
+            "Learn more about getting started with Actions.": "了解更多关于开始使用 Actions 的信息。",
             "Linux, macOS, Windows, ARM, and containers": "Linux、macOS、Windows、ARM 和容器",
             "Hosted runners for every major OS make it easy to build and test all your projects. Run directly on a VM or inside a container. Use your own VMs, in the cloud or on-prem, with self-hosted runners.": "为每一个主要的操作系统提供的托管运行程序，使您能够轻松地构建和测试您的所有项目。直接在虚拟机上或容器内运行。在云端或本地使用您自己的虚拟机，以及自托管的运行器。",
 
@@ -8909,6 +8825,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             //右侧按钮
             "View workflow file": "查看工作流程文件",
             "View workflow runs": "查看工作流程运行",
+            "Workflow run options": "工作流程运行选项",
             "Create status badge": "创建状态徽章",
                 "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
             "Delete all logs": "删除所有日志",
@@ -8972,6 +8889,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
 
             "Search logs": "搜索日志",
+            "Re-run this job": "重新运行此作业",
             // 设置按钮
                 "Show timestamps": "显示时间戳",
                 "Show full screen (Shift+F)": "全屏显示（Shift+F）",
@@ -9105,58 +9023,79 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
         ...I18N.zh["repository-public"]["static"],
 
         // 新建文件页面 /<user-name>/<repo-name>/new/<branch>
-            // 组织仓库 编辑文件页面
-            "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
-            "created a fork of this project": "为该项目创建复刻",
-            "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建议的更改。提交更改会将其写入复刻中的新分支，这样您就可以发送拉取请求。",
+            // 文件树侧边栏
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                // 搜索框
+                    "Go to file": "转到文件",
+                        "No matches found": "未找到匹配项",
 
             "Name your file...": "文件名...",
             "in": "在",
-            "Cancel changes": "取消更改",
 
-            "Edit new file": "编辑新文件",
-            "Preview changes": "预览更改",
-            "loading preview…": "载入预览…",
-            "Loading preview…": "载入预览…",
-            "Unable to load this preview, sorry.": "抱歉，无法加载此预览。",
-            "There are no changes to show.": "没有要显示的更改。",
-            "But you can preview the whole file.": "但您可以预览整个文件。", // new code view
+            "Cancel changes": "取消更改",
+                "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
+            "Commit changes...": "提交更改...",
+
+            "Preview": "预览",
+                "Loading preview…": "载入预览…",
+                    "There is no content to preview.": "没有可预览的内容。",
+                    "There has been an error generating the preview.": "生成预览时发生错误。",
+                    "Unable to load this preview, sorry.": "抱歉，无法加载此预览。",
+                    "There are no changes to show.": "没有要显示的更改。",
+                    "But you can preview the whole file.": "但您可以预览整个文件。", // new code view
 
             // 代码编辑框
-            "Indent mode": "缩进模式",
-            "Spaces": "空格",
-            "Tabs": "Tab",
-            "Indent size": "缩进大小",
-            "Line wrap mode": "换行模式",
-            "No wrap": "不换行",
-            "Soft wrap": "软换行",
+                // Copilot 广告
+                    "Code 55% faster with GitHub Copilot": "使用 GitHub Copilot 编码速度提高 55%",
+                        "Spend less time creating boilerplate and repetitive code patterns, and more time building great software. Try it in Codespaces or your favorite file editor.": "花更少的时间创建模板和重复的代码模式，花更多的时间构建优秀的软件。在 GitHub 代码空间或您最喜欢的文件编辑器中尝试一下哈。",
+                        "Get GitHub Copilot": "获取 GitHub Copilot",
+                        "Don't show again": "不再显示",
 
-            "Commit new file": "提交新文件", //  自有仓库
-            "Propose new file": "提议新文件", //  他人仓库
-            "Sign off and commit new file": "签署并提交新文件",
-            // 提交框
-                "Add an optional extended description…": "添加描述... (可选)",
+                "Indent mode": "缩进模式",
+                    "Spaces": "空格",
+                    "Tabs": "Tab",
+                "Indent size": "缩进大小",
+                "Line wrap mode": "换行模式",
+                    "No wrap": "不换行",
+                    "Soft wrap": "软换行",
 
-                "You are": "您将",
-                "signing off": "签署",
-                // [/on this commit as/,"该提交以"],
+            "Show Diff": "显示差异",
 
-                "You can’t commit to": "您不能提交到",
-                "because its is a": "，因为它是一个",
-                "protected branch": "受保护分支",
+            // 提交对话框
+                "Sign off and propose changes": "签署并提出变更建议",
+                "Sign off and commit changes": "签署并提交更改", // 编辑模式
+                    "Commit message": "提交信息",
+                    "Extended description": "扩展描述",
+                        "Add an optional extended description..": "添加描述.. (可选)",
 
-                "Commit directly to the": "提交到",
-                "branch.": "分支。",
+                    "You are": "您将",
+                    "signing off": "签署",
+                    // [/on this commit as/,"该提交以"],
 
-                "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
-                "Bypass rules and commit changes": "绕过规则并提交更改",
+                    "You can’t commit to": "您不能提交到",
+                    "because its is a": "，因为它是一个",
+                    "protected branch": "受保护分支",
 
-                "Create a": "创建",
-                "new branch": "新分支",
-                "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。",
-                "Learn more about pull requests.": "了解更多关于拉取请求的信息。",
+                    "Commit directly to the": "提交到",
+                    "branch": "分支",
 
-            "Something went wrong. Please fork the project, then try from your fork.": "出错了。请复刻该项目，然后从您的复刻处尝试。",
+                    "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
+                    "Bypass rules and commit changes": "绕过规则并提交更改",
+
+                    "Create a": "创建",
+                    "new branch": "新分支",
+                    "for this commit and start a pull request": "为这个提交，并且发起一个拉取请求",
+                    "Learn more about pull requests": "了解更多关于拉取请求的信息",
+
+                "Something went wrong. Please fork the project, then try from your fork.": "出错了。请复刻该项目，然后从您的复刻处尝试。",
+
+            // 底部栏
+                "Use": "使用",
+                "to toggle the": "切换",
+                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                "then": "键，然后",
+                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
             // 顶部提醒
             // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
@@ -9164,11 +9103,21 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
         // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
             // 非本人仓库
                 "You need to fork this repository to propose changes.": "您需要复刻此仓库以提出更改。",
-                "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
+                    "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您无法直接编辑此仓库——您需要将其复刻并从那里提出您的更改。",
                 "Fork this repository": "复刻此仓库",
-                "Learn more about forks": "了解更多关于复刻的信息",
+                    "Learn more about forks": "了解更多关于复刻的信息",
+
                 "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻",
                 ", so you can send a pull request.": " 中的新分支，这样您就可以发送拉取请求。",
+
+            // 组织仓库 编辑文件页面
+                "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
+                "created a fork of this project": "为该项目创建复刻",
+                "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建议的更改。提交更改会将其写入复刻中的新分支，这样您就可以发送拉取请求。",
+
+            // 混合换行符
+                "We’ve detected the file has mixed line endings. When you commit changes we will normalize them to": "我们检测到该文件具有混合行结尾。当您提交更改时，我们会将它们标准化为",
+                "Windows-style": "Windows 样式",
 
             // 与用户名同名仓库 编辑 README.md 文件
                 "is a special repository: its": "是一个特殊的仓库：它的",
@@ -9182,62 +9131,34 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "will appear on your organization's profile!": "将出现在您的组织资料中!",
 
             // 编辑 .gitignore 文件
-                "Want to use a": "想使用",
-                "template?": "模板吗？",
-                "Filter ignores…": "筛选忽略…",
-                "Filter ignores...": "筛选忽略...", // new code view
-                "Choose .gitignore:": "选择 .gitignore：",
-                "none": "无",
+                "Choose .gitignore template": "选择 .gitignore 模板",
+                    ".gitignore template": ".gitignore 模板",
+                    "Filter…": "筛选…",
+                    "None": "无",
 
             // 编辑 工作流程文件 .github/workflows/xxxx.yml
-                "Start commit": "开始提交",
+                "Collapse help panel": "折叠帮助面板",
 
-                "Search Marketplace for Actions": "搜索 Actions 市场",
-                "Featured Actions": "特色 Actions",
-                "Featured categories": "特色分类",
-                    "Code quality": "代码质量",
-                    "Monitoring": "监控",
-                    "Continuous integration": "持续集成",
-                    "Project management": "项目管理",
-                    "Deployment": "部署",
-                    "Project management": "项目管理",
-                    "Testing": "测试",
-                "Browse all actions on the GitHub Marketplace": "浏览 GitHub 市场 上的所有 Actions",
+                // 帮助面板侧边栏
+                    "Search Marketplace for Actions": "搜索 Actions 市场",
+                    "Featured Actions": "特色 Actions",
+                    "Featured categories": "特色分类",
+                        "Code quality": "代码质量",
+                        "Monitoring": "监控",
+                        "Continuous integration": "持续集成",
+                        "Project management": "项目管理",
+                        "Deployment": "部署",
+                        "Project management": "项目管理",
+                        "Testing": "测试",
+                    "Browse all actions on the GitHub Marketplace": "浏览 GitHub 市场 上的所有 Actions",
 
-                "Use": "使用",
-                "Space": "空格",
-                "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
-                "Documentation": "文档",
+                // 底部栏补充
+                    "Space": "空格",
+                    "to trigger autocomplete in most situations.": "在大多数情况下将触发自动完成。",
+                    "Documentation": "文档",
 
             // 编辑 LICENSE 许可证文件
                 "Choose a license template": "选择许可证模板",
-
-            // 快捷键
-            "Code editor": "代码编辑器",
-            // "Preview changes": "预览更改",
-            "Toggle line comment": "切换行评论",
-
-            "Edit file": "编辑文件",
-            "Preview": "预览",
-            "Show diff": "显示差异",
-            "Show Diff": "显示差异", // new code view
-
-            "Commit changes": "提交更改", //  自有仓库
-            "Commit changes...": "提交更改...", //  自有仓库 // new code view
-                "Saving...": "保存中...",
-            "Propose changes": "提议更改", //  他人仓库
-            "Sign off and commit changes": "签署并提交更改",
-            "Sign off and propose changes": "签署并提出变更建议",
-            "You have unsaved changes. Do you want to discard them?": "您有未保存的更改。您想丢弃它们吗？",
-
-            // 提交更改 对话框
-                "Commit message": "提交信息",
-                "Extended description": "扩展描述",
-                "Add an optional extended description…": "添加可选的扩展描述…",
-
-                "branch": "分支",
-                "for this commit and start a pull request": "为此提交并创建拉取请求",
-                "Learn more about pull requests": "了解更多关于拉取请求的信息",
 
             // 查找工具栏
                 "Find": "查找",
@@ -9250,12 +9171,6 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
                 "Replace": "替换",
                 "replace": "替换",
                 "replace all": "全部替换",
-
-            // 底部栏
-                "to toggle the": "切换",
-                "key moving focus. Alternatively, use": "键移动对焦。或者使用",
-                "then": "键，然后",
-                "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
         // 删除文件页面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 顶部提醒
@@ -9277,12 +9192,15 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
 
                 // 文件上传进度条
                 "Uploading": "文件上传中",
-                // [/1 of 1 files/, ""],
+                "of": "/",
 
-                // "Commit changes": "提交更改",
                 // 提交框 补充
                     "Add files via upload": "通过上传添加文件",
                     "Add an optional extended description…": "添加可选的扩展描述...",
+
+                    "branch.": "分支。", // 上传页面
+                    "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。", // 上传页面
+                    "Learn more about pull requests.": "了解更多关于拉取请求的信息。", // 上传页面
 
             // 他人仓库
                 "Uploads are disabled.": "上传功能已禁用。",
@@ -9402,7 +9320,6 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                     "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
-
 
             "Search branches…": "搜索分支…",
 
@@ -9600,20 +9517,6 @@ I18N.zh["repository/activity"] = { // 仓库 - 活动页面
 I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
-
-            // 验证标记浮动信息
-                "This commit was created on GitHub.com and signed with GitHub's": "此提交在 GitHub.com 上创建并签名，使用 GitHub 的",
-                "This commit was signed with the committer's": "此提交已签名，使用提交者的",
-                "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
-                "verified signature": "已验证签名",
-                "The key has expired": "密钥已过期",
-                "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
-                "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
-
-                "GPG Key ID:": "GPG 密钥 ID：",
-                "SSH Key Fingerprint:": "SSH 密钥指纹：",
-                "Expired": "已过期",
-                "Learn about vigilant mode": "了解警戒模式",
 
         // 发行版 页面 /<user-name>/<repo-name>/releases
             "Releases": "发行版",
@@ -13619,7 +13522,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Step 2": "第二步",
             "Verify a device, SSH key or personal access token.": "验证一个设备、SSH 密钥或个人访问令牌。",
             "Step 3": "第三步",
-            "GitHub support will review your request": "GitHub Support 将审查您的请求",
+            "GitHub support will review your request": "GitHub 支持将审查您的请求",
             "within 1-3 days": "在 1-3 天内",
             "I understand, get started": "我知道了，开始吧",
 
@@ -14667,7 +14570,7 @@ I18N.zh["search"] = { // 搜索页面
             "In these repositories": "指定仓库",
             "Created on the dates": "创建日期",
             "Written in this language": "使用语言",
-            "Any Language": "任何语言",
+            "Any language": "任何语言",
                 "Popular": "流行的",
                 "Everything else": "其他语言",
 
@@ -15794,7 +15697,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         // 示例: https://github.com/marketplace/actions/merge-upstream
             // 顶部提醒
                 "Sorry, we couldn’t find that version of this Action. Here’s the latest version.": "对不起，我们找不到此 GitHub Action 的这个版本。 下面是最新的版本。",
-                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。你想查看",
+                "You're viewing an older version of this GitHub Action. Do you want to see the": "您正在查看此 GitHub Action 的旧版本。您想查看",
                 "latest version": "最新版本",
                 "instead?": "吗？",
 
@@ -17188,11 +17091,11 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "The extended query includes the default suite, plus lower severity and precision queries.": "扩展查询包括默认套件，以及较低严重性和精度的查询。",
 
             "Secret scanning": "机密扫描",
-                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的秘密、密钥或其他令牌的警报。",
+                "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的机密、密钥或其他令牌的警报。",
 
                 "Push protection": "推送保护",
                     "Block commits that contain": "阻止提交，包含",
-                    "supported secrets": "受支持的秘密",
+                    "supported secrets": "受支持的机密",
                     "Automatically enable for repositories added to secret scanning": "自动启用对添加到机密扫描的仓库进行扫描",
                     "Add a resource link in the CLI and web UI when a commit is blocked": "当提交被阻止时，在 CLI 和 Web UI 中添加资源链接。",
                         "Link will show in addition to": "显示链接和",
@@ -17537,7 +17440,7 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
             "Only trusted applications can:": "只有受信任的应用才能：",
                 "Access private organization data via the API or SSH.": "通过 API 或 SSH 访问私有组织数据。",
                 "Change public organization data.": "更改公共组织数据。",
-                "Receive webhooks for private events.": "接收私人事件的网络钩子。",
+                "Receive webhooks for private events.": "接收私人事件的 Web 钩子。",
 
             "Restrict third-party application access": "限制第三方应用访问",
             "Restricting access will immediately block all unapproved applications and will disable SSH keys created before February 2014.": "限制访问将立即阻止所有未经批准的应用，并禁用 2014 年 2 月前创建的 SSH 密钥。",
@@ -18268,11 +18171,11 @@ I18N.zh["redeem"] = { // 兑换页面
     ],
 };
 
-I18N.zh["github-copilot/signup"] = { // GitHub Copilot 获取页面
+I18N.zh["github-copilot/signup"] = { // GitHub Copilot 个人版获取页面
     "static": { // 静态翻译
 
         // https://github.com/github-copilot/signup
-           //"Your AI pair programmer": "您的人工智能助理程序员",
+           "GitHub Copilot Individual": "GitHub Copilot 个人版",
            "The world's most widely adopted AI developer tool.": "世界上采用最广泛的人工智能开发工具。",
            "GitHub Copilot is powered by generative AI to help you code faster and happier!": "GitHub Copilot 是由生成式 AI 驱动的，旨在帮助您更快乐、更高效地编码！",
            "Start your 30-day free trial": "开始 30 天免费试用",
