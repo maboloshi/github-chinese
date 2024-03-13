@@ -6904,6 +6904,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             // 顶部提醒
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
                 "Marked pull request as ready for review.": "标记拉取请求为可审核。",
+                "Your review was submitted successfully.": "您的审查已成功提交。",
 
             // 快捷键
                 "Edit pull request title": "编辑拉取请求标题",
@@ -6923,6 +6924,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "Checkout with GitHub Desktop": "使用 GitHub Desktop 检出",
 
                 // 代码空间
+                    "This pull request must be reopened to create new codespaces on it.": "必须重新打开此拉取请求才能在其上创建新的代码空间。",
                     "Your workspaces in the cloud": "您在云端的工作空间",
                     //[/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
                     "Codespace repository configuration": "代码空间仓库配置",
@@ -6973,11 +6975,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
 
             // 自动修复漏洞 提示
-            "This automated pull request fixes a": "这个自动拉取请求将修复了一个",
-            "security vulnerability": "安全漏洞",
-            "Only users with access to Dependabot alerts can see this message.": "只有有权访问 Dependabot 警报的用户才能看到此消息。",
-            "Learn more about Dependabot security updates": "了解更多关于 Dependabot 安全更新的信息",
-            "opt out": "选择退出",
+                "This automated pull request fixes a": "这个自动拉取请求将修复了一个",
+                "security vulnerability": "安全漏洞",
+                "Only users with access to Dependabot alerts can see this message.": "只有有权访问 Dependabot 警报的用户才能看到此消息。",
+                "Learn more about Dependabot security updates": "了解更多关于 Dependabot 安全更新的信息",
+                "opt out": "选择退出",
             // 顶部提醒
                 "Opted out of Dependabot security updates.": "选择退出 Dependabot 安全更新。",
 
@@ -7036,6 +7038,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "Resolve conversation": "解决对话",
                 "Resolving conversation…": "解决对话中…",
             "Unresolve conversation": "未解决对话",
+                "Unresolving conversation…": "未解决对话…",
                 "marked this conversation as resolved.": "将此对话标记为已解决。",
             // "Changes requested": "更改请求",
             "Change requested": "更改请求",
@@ -7072,6 +7075,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "added": "添加",
             "requested changes": "要求更改",
             "changed the title": "修改了标题",
+            "added the": "添加",
+            "label": "标签",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -7105,9 +7110,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
 
             // "Review required": "需要审查", // 拉取请求 页面状态词
                 "Add your review": "添加您的评论",
-            // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+            // [/At least (\d+) approving reviews? are required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
             "Code owner review required": "需要代码所有者审核",
                 "was requested for review as a code owner": "要求以代码所有者身份进行审查",
+            "Conversation resolution required": "需要解决对话",
+                "A conversation must be resolved before this pull request can be merged.": "在合并此拉取请求前，必须先解决对话。",
             "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
             "Changes approved": "变更已获批准",
             "Approval not required": "不需要批准",
@@ -7127,7 +7134,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Hide all checks": "隐藏所有检查",
                 "Details": "细节",
                 "Required": "必须",
+            // 未解决的评论
+                // [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
             "Merging is blocked": "合并被阻止",
+                "The base branch requires all conversations on code to be resolved.": "基础分支要求解决所有关于代码的对话。",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
                 "View rules": "查看规则",
@@ -7333,7 +7343,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 // [/Unresolved conversations/, "未解决的讨论"],
                 "Nice work!": "干得好！",
                 "All of your conversations have been resolved.": "您的所有讨论都已解决。",
-                // [/Reresolved conversations/, "已解决的讨论"],
+                // [/Resolved conversations/, "已解决的讨论"],
                 "No conversations yet": "尚无讨论",
                 "Review conversations will show up here.": "审查讨论将显示在这里。",
             // "Jump to": "跳转到",
@@ -7394,6 +7404,27 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
 
+            // 建议更改
+                "Suggested change": "建议更改",
+                "Sign off and commit suggestion": "签署并提交建议",
+                    "Suggestions cannot be applied from pending reviews.": "无法应用待审核中的更改",
+                "Add suggestion to batch": "批量添加建议",
+                    "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
+                    "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
+
+                "Pending in batch": "待批量处理",
+                "Remove from batch": "从批量处理中移除",
+                    "Remove this suggestion from those to be applied in batch": "从批量应用的建议中删除此建议",
+                "Sign off and commit suggestions": "签署并提交建议",
+                    "Apply all batched suggestions as a single commit": "将所有批量建议作为单个提交应用",
+                "Sign off and commit changes": "签署并提交更改",
+                    "Applying commit...": "正在应用提交...",
+
+                "This diff has recently been updated.": "该差异最近已更新。",
+                "Refresh and try again.": "刷新并重试。",
+
+                "Multiple suggested changes can be batched together in a single commit. Each suggestion author will be attributed in the commit as a co-author.": "多个建议更改可以在一次提交中批量处理。每个建议作者都将在提交中被归为共同作者。",
+
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "您正在查看该合并提交的浓缩版本。您可以查看",
             "full changes here": "完整的更改",
@@ -7445,10 +7476,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
         [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
         [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"],
         [/(\d+) pending reviewers?/, "$1 名待审者"],
         [/([\d,]+) participants?/, "$1 位参与者"],
-        [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+        [/At least (\d+) approving reviews? are required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
         [/(\d+) approvals?/, "$1 项批准"],
         // [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"],
@@ -7475,7 +7507,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"], // 文件筛选
         [/Select all (\d+) file types?/, "选择所有 $1 种文件类型"],
         [/Unresolved conversations/, "未解决的讨论"],
-        [/Reresolved conversations/, "已解决的讨论"],
+        [/Resolved conversations/, "已解决的讨论"],
         // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
         // 代码空间
         [/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
@@ -7495,6 +7527,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
