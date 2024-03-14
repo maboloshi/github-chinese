@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/organizations\/new|projects|account\/billing\/history|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -15319,33 +15319,40 @@ I18N.zh["showcases"] = { // 展示页面
 I18N.zh["account/organizations/new"] = { // 创建组织
     "static": { // 静态翻译
         // 创建免费的组织 https://github.com/account/organizations/new?coupon=&plan=team_free
+        // https://github.com/account/organizations/new?coupon=&plan=free
         // 第 1 页
         "Tell us about your organization": "告诉我们您的组织",
         "Set up your organization": "设置您的组织",
-        "Organization account name": "组织帐户名称",
-        // [/The name \'(\d+)\' is already taken./, "名称 '$1' 已被采用。"],
-        // [/The name \'(\d+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
-        // [/Organization name \'([^ ]+)\' is unavailable./, "组织名称 '$1' 不可用。"], //
-        "This will be the name of your account on GitHub.": "这将是您在 GitHub 上的帐户名称。",
-        "Your URL will be: https://github.com/": "您的网址将是：https://github.com/",
+        "Organization name": "组织名称",
+            // [/The name \'(\d+)\' is already taken./, "名称 '$1' 已被采用。"],
+            // [/The name \'(\d+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
+            // [/Organization name \'([^ ]+)\' is unavailable./, "组织名称 '$1' 不可用。"], //
+            "This will be the name of your account on GitHub.": "这将是您在 GitHub 上的帐户名称。",
+            "Your URL will be: https://github.com/": "您的网址将是：https://github.com/",
         "Contact email": "联系电子邮箱",
             "Email is invalid": "电子邮箱无效",
         "This organization belongs to:": "该组织属于：",
-        "My personal account": "我的个人帐户",
-            // [/I.e.,/, "即："],
-        "A business or institution": "企业或机构",
-            "For example: GitHub, Inc., Example Institute, American Red Cross": "比如说：GitHub, Inc., Example Institute, American Red Cross",
-            "Name of business or institution this organization belongs to": "该组织所属的企业或机构的名称",
-            "This business or institution — not": "该企业或机构 — 不是",
-            "(your personal account) — will control this organization account.": "（您的个人帐户）— 将控制此组织帐户。",
+            "My personal account": "我的个人帐户",
+                // [/I.e.,/, "即："],
+            "A business or institution": "企业或机构",
+                "For example: GitHub, Inc., Example Institute, American Red Cross": "比如说：GitHub, Inc., Example Institute, American Red Cross",
+                "Name of business or institution this organization belongs to": "该组织所属的企业或机构的名称",
+                "This business or institution — not": "该企业或机构 — 不是",
+                "(your personal account) — will control this organization.": "（您的个人帐户）— 将控制此组织。",
+        "Add-ons": "附加组件",
+            "Get GitHub Copilot Business in this organization": "在组织中获取 GitHub Copilot 商业版",
+                "Boost developer productivity for $19/user/month. Pay only for assigned seats after setup.": "以 $19 /用户/月的价格提高开发人员的工作效率。仅需在设置后为分配的席位付费。",
+                "See Copilot Business docs.": "请参阅 GitHub Copilot 商业版文档。",
         "I hereby accept the": "我特此接受",
-        "Terms of Service": "服务条款",
-        ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
-        "GitHub Privacy Statement": "GitHub 隐私声明",
-        "GitHub Customer Agreement": "GitHub 客户协议",
-        "on behalf of my organization and confirm that I have the authority to do so": "代表我的组织，并确认我有权力这样做",
+            // 个人账户
+            "Terms of Service": "服务条款",
+            ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
+            "GitHub Privacy Statement": "GitHub 隐私声明",
+            // 企业或机构
+            "GitHub Customer Agreement": "GitHub 客户协议",
+            "on behalf of my organization and confirm that I have the authority to do so": "代表我的组织，并确认我有权力这样做",
 
-        ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
+        // ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
 
         // https://github.com/organizations/<org-name>/invite
         // 第 2 页 邀请成员
@@ -15366,6 +15373,19 @@ I18N.zh["account/organizations/new"] = { // 创建组织
         [/The name \'([^ ]+)\' may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen./, "名称 '$1' 只能包含字母数字字符或单个连字符，并且不能以连字符开头或结尾。"],
         [/Organization name \'([^ ]+)\' is unavailable./, "组织名称 '$1' 不可用。"],
         [/I.e.,/, "即："],
+    ],
+};
+
+I18N.zh["account/choose"] = { // 账户升级选择
+    "static": { // 静态翻译
+        // https://github.com/account/choose?action=upgrade
+            "Which do you want to upgrade?": "您想升级哪个？",
+            "Your personal account": "您的个人账户",
+            "Organization": "组织",
+            "Create a new organization": "创建新组织",
+            "Try GitHub Enterprise": "试用 GitHub 企业版",
+    },
+    "regexp": [ // 正则翻译
     ],
 };
 
