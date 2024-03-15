@@ -6238,68 +6238,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     ],
 };
 
-I18N.zh["repository/labels"] = { // 仓库 - 标签页面
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-
-        // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
-            "Labels": "标签",
-            "Milestones": "里程碑",
-            "Search all labels": "搜索所有标签",
-
-            "labels": "标签",
-
-            "New label": "新建标签",
-                "Label preview": "标签预览",
-                "Label name": "标签名",
-                "Description": "描述",
-                "Description (optional)": "描述（可选）",
-                "Color": "颜色",
-                    "Get a new color": "获得新颜色",
-                    "Choose from default colors:": "从默认颜色中选择：",
-                "Create label": "创建标签",
-                "Saving...": "保存中...",
-                "Save changes": "保存更改",
-
-            "Sort": "排序",
-                "Alphabetically": "按字母顺序",
-                "Reverse alphabetically": "按字母倒序",
-                "Most issues": "最多的议题",
-                "Fewest issues": "最少的议题",
-
-            // 标签
-                "bug": "BUG",
-                    "Something isn't working": "有些东西不工作",
-                "dependencies": "依赖性",
-                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
-                "documentation": "文档",
-                    "Improvements or additions to documentation": "文档的改进或补充",
-                "duplicate": "重复",
-                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
-                "enhancement": "增强",
-                    "New feature or request": "新功能或请求",
-                "good first issue": "好的首发议题",
-                    "Good for newcomers": "适合新人",
-                "help wanted": "需要帮助",
-                    "Extra attention is needed": "需要特别关注",
-                "invalid": "无效",
-                    "This doesn't seem right": "这似乎不对",
-                "question": "问题",
-                    "Further information is requested": "要求提供更多信息",
-                "wontfix": "不会修复",
-                    "This will not be worked on": "这将不会被处理",
-
-            // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
-            // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
-        [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
-    ],
-};
-
 I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
@@ -6625,6 +6563,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         ...I18N.zh["repository/pull_issue_public"]["static"],
 
         // 仓库 --> 议题 标签卡/<user-name>/<repo-name>/issues
+        // /<user-name>/<repo-name>/labels/<label-name>
             // 欢迎信息
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
@@ -6852,7 +6791,79 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "deleted this from": "删除了这个，从",
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
-            ...I18N.zh["repository/labels"]["static"],
+        // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
+            "Labels": "标签",
+            "Milestones": "里程碑",
+            "Search all labels": "搜索所有标签",
+
+            "labels": "标签",
+
+            "New label": "新建标签",
+                "Label preview": "标签预览",
+                "Label name": "标签名",
+                "Description": "描述",
+                "Description (optional)": "描述（可选）",
+                "Color": "颜色",
+                    "Get a new color": "获得新颜色",
+                    "Choose from default colors:": "从默认颜色中选择：",
+                "Create label": "创建标签",
+                "Saving...": "保存中...",
+                "Save changes": "保存更改",
+
+            "Sort": "排序",
+                "Alphabetically": "按字母顺序",
+                "Reverse alphabetically": "按字母倒序",
+                "Most issues": "最多的议题",
+                "Fewest issues": "最少的议题",
+
+            // 标签
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+            // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+            // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
+
+            // "Convert to discussions": "转为讨论",
+                // 转换议题为讨论 对话框
+                "Convert issue to discussion": "转换议题为讨论",
+                    // [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
+                    // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
+                    "Issue will be locked": "议题将被锁定",
+                    // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
+                    "Existing links will redirect to the new discussion": "现有链接将重定向至新讨论",
+                    // "All comments and reactions will be the same as the issue": "所有评论和反应将与议题相同",
+                    "Discussions do not have tasklists": "讨论没有任务列表",
+                    "Discussions do not have assignees": "讨论没有受理人",
+                    "Discussions cannot be added to projects": "讨论无法添加到项目",
+                    "Discussions do not have milestones": "讨论没有里程碑",
+                    "You must choose a category for the discussion to belong to. You will be able to change this after the conversion is complete.": "您必须为讨论选择一个所属类别。转换完成后，您可以更改类别。",
+                    "Choose a category": "选择类别",
+                        "Announcements": "公告",
+                        "General": "通常",
+                        "Ideas": "想法",
+                        "Polls": "投票",
+                        "Q&A": "问与答",
+                        "Show and tell": "展示与讲述",
+                    "I understand, convert issue to discussion": "我明白了，依然将议题转换未讨论",
+                    "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题不会自动转换为讨论。",
 
         // 添加/编辑议题模板 /<user-name>/<repo-name>/issues/templates/edit
             "Propose changes": "提出更改",
@@ -6896,6 +6907,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
+
         // 具体某条议题 /<user-name>/<repo-name>/issues/<id>
         [/· ([\d,]+) comments?/, "• $1 条评论"],
         [/([\d,]+) participants?/, "$1 位参与者"],
@@ -6906,8 +6918,14 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
+
+        // 标签页面
+        [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
+        [/open issues? or pull requests?/, "个打开的议题或拉取请求"],
+        [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
     ],
 };
+I18N.zh["repository/labels"] = I18N.zh["repository/issues"];
 
 I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
     "static": { // 静态翻译
