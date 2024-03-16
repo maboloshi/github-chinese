@@ -53,7 +53,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -187,6 +187,7 @@ I18N.zh["title"] = { // 标题翻译
         "Package": "软件包",
         "Security": "安全",
         "Verified & approved domains": "经验证和批准的域名",
+        "Add a Pages verified domain": "添加一个经验证的 GitHub Pages 域名",
         "Third-party application access policy": "第三方应用访问策略",
         "Audit log": "审计日志",
         "Deleted Repositories": "已删除的仓库",
@@ -1846,9 +1847,15 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 I18N.zh["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
     "static": { // 静态翻译
         ...I18N.zh["page-profile-public"]["static"],
+            "organization or maintainer": "个组织或维护者",
+            "Bulk Sponsor": "批量赞助",
+            "Sponsor multiple maintainers in one easy transaction.": "一次交易即可赞助多个维护者。",
+            "Get started": "前去赞助",
 
     },
     "regexp": [ // 正则翻译
+        [/is sponsoring/, "正在赞助"],
+        [/Sponsoring since/, "赞助自"],
     ],
 };
 
@@ -2175,6 +2182,10 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Profile picture": "我的头像",
                 "Edit": "编辑",
                 "Upload a photo…": "上传图片…",
+                "Remove photo": "删除图片",
+                "Are you sure you want to reset your current avatar?": "您确定要重置当前的头像吗？",
+                "Your profile picture has been reset. It may take a few minutes to update across the site.": "您的个人头像已重置，整个网站的更新可能需要几分钟的时间。",
+                "Your profile picture has been updated. It may take a few minutes to update across the site.": "您的个人头像已更新，整个网站的更新可能需要几分钟的时间。",
                 // 裁剪个人头像对话框
                 "Crop your new profile picture": "裁剪个人头像",
                 "Set new profile picture": "设置新的个人头像",
@@ -2182,10 +2193,12 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Name": "昵称",
             "Your name may appear around GitHub where you contribute or are mentioned. You can remove it at any time.": "您的昵称可能会出现在 GitHub 上，您的贡献或被提及的地方。您可以随时删除它。",
             "Public email": "公开电子邮箱",
+            "Remove": "移除",
             "Select a verified email to display": "选择显示一个已验证的电子邮箱",
             "You have set your email address to private. To toggle email privacy, go to": "您已将电子邮箱地址设置为私密。需要切换电子邮箱地址的私密性，请转到",
             "email settings": "邮箱设置",
             "and uncheck \"Keep my email address private.\"": "并取消 “保持我的电子邮箱地址的私密性”。",
+            "You can manage verified email addresses in your": "您可以管理已验证的电子邮箱地址在您的",
             //"Don’t show my email address": "不显示我的邮箱",
             //"You can add or remove verified email addresses in your": "您可以添加或删除邮件地址在您的",
             //"personal email settings": "邮箱设置",
@@ -2262,6 +2275,16 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
             "Trending Repositories": "趋势仓库",
             "page.": "页面。",
             "Save Trending settings": "保存趋势设置",
+
+            "ORCID provides a persistent identifier - an ORCID iD - that distinguishes you from other researchers. Learn more at": "ORCID 提供持久标识符 - ORCID iD - 将您与其他开发人员区分，了解更多信息请访问",
+            "Connect your ORCID iD": "关联您的 ORCID iD",
+            "Successfully connected your GitHub account with ORCID.": "已成功将您的 GitHub 帐户与 ORCID 关联。",
+            "You have a connected ORCID iD": "您的 ORCID iD",
+            "for the account": "已关联账户",
+            "Display your ORCID iD on your GitHub profile": "在您的 GitHub 个人资料上显示 ORCID iD",
+            "Disconnecting your ORCID iD may affect areas of your profile where your ORCID iD is displayed.": "解除关联 ORCID iD 可能会影响您个人资料中显示 ORCID iD 的区域。",
+            "Disconnect your ORCID iD": "解除关联您的 ORCID iD",
+            "Successfully disconnected ORCID from your GitHub Account.": "已成功解除 ORCID 与您的 GitHub 帐户的连接。",
     },
     "regexp": [ // 正则翻译
     ],
@@ -2301,6 +2324,13 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
                 "Connect a Patreon account for": "关联",
                 "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 帐户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 帐户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
                 "Connect with Patreon": "关联 Patreon 帐户",
+                "Successfully connected your GitHub account with Patreon.": "已成功将您的 GitHub 帐户与 Patreon 关联。",
+
+            "Unlink Patreon account": "取消关联 Patreon 帐户",
+                "Disconnect the Patreon account": "取消 Patreon 账户",
+                "for": "和",
+                "to sponsor maintainers with. Any sponsorships made on Patreon will no longer receive recognition on GitHub.": "的关联，在 Patreon 上进行的任何赞助将不会在 GitHub 显示。",
+                "Successfully disconnected your GitHub account from Patreon.": "已成功解除您的 GitHub 帐户与 Patreon 的关联。",
 
             "Export account data": "导出帐户数据",
             "Export all repositories and profile metadata for": "导出所有仓库和配置元数据，自",
@@ -2986,6 +3016,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         // Emails 电子邮箱 https://github.com/settings/emails
             "Email settings": "电子邮箱设置",
             "Primary": "主帐户",
+            "Unverified email addresses cannot receive notifications or be used to reset your password.": "未经验证的电子邮件地址无法接收通知或用于重置您的密码。",
             "This email will be used for account-related notifications and can also be used for password resets.": "该电子邮箱将用于与帐户有关的通知，也可用于密码重置。",
             "Not visible in emails": "在电子邮件中不可见",
             "Visible in emails": "在电子邮件中可见",
@@ -3088,7 +3119,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Passkeys": "通行密钥",
                 "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
+                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
                 "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
                 "Add a passkey": "添加通行密钥",
 
@@ -3118,7 +3149,9 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
-                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
+                //" Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
+                "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
+                ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双重身份验证，感谢您帮助维护生态系统的安全！",
                 "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
 
                 "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
@@ -3314,6 +3347,7 @@ I18N.zh["settings/sessions"] = {
             "View all sessions": "查看所有会话",
     },
     "regexp": [ // 正则翻译
+        [/Seen in/, "登录于"],
     ],
 };
 
@@ -3432,6 +3466,7 @@ I18N.zh["settings/organizations"] = { // 设置 - 组织
     "regexp": [ // 正则翻译
         [/Turn ([^ ]+) into an organization/, "变更 $1 为组织"],
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"], // 设置 - 组织
+        [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您确定要离开 $1 吗？您将失去对所有仓库和团队的访问权。"], // 设置 - 组织 离开按钮 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您确定要离开 $1 吗？您将失去对所有仓库的访问权。"], // 设置 - 组织 离开按钮 提醒
     ],
@@ -3629,6 +3664,10 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
             "Codespaces you create for your personal account can either be restricted to accessing the repository it was opened for, or granted read access to other repositories you own.": "您为您个人帐户创建的代码空间可以限制访问已启用的仓库或您其他被赋予读取权限的仓库",
+            "Disabled": "禁用",
+            "Limit access of personal Codespaces to the repository they were opened for": "限制个人代码空间只能访问对其打开的仓库",
+            "All Codespaces can access other repositories I own": "所有代码空间都可以访问我拥有的其它仓库",
+            "Personal Codespaces created for specific repositories can access other repositories I own": "为特定仓库创建的个人代码空间可以访问我拥有的其它仓库",
 
             "Editor preference": "编辑器偏好",
                 // VS code
@@ -3771,12 +3810,16 @@ I18N.zh["settings/copilot"] = { // 设置 - GitHub Copilot
             "Create an organization": "创建一个组织",
 
             "Ask admin for access": "向管理员请求访问权限",
+            "Requesting...": "请求中...",
+            "Remove request": "撤销请求",
+            "Cancelling...": "撤销中...",
             "Buy Copilot Business": "购买 GitHub Copilot 企业版",
             "Owner": "所有者",
 
     },
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
+        [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
     ],
 };
 
@@ -3791,14 +3834,36 @@ I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
             "There are no verified domains.": "暂无经验证的域名",
             "There are no verified domains for this organization.": "此组织暂无经验证的域名", // 组织设置
             "Verify domains to restrict who can publish GitHub Pages on them.": "验证域名以限制谁可以在上面发布 GitHub Pages。",
+            "One of your domains is unverified. Please verify it to prevent others from claiming it for their Pages sites.": "您添加的域名之一未经验证，请对其进行验证，以防止其他人在其主页网站上声明该信息。",
+            "Please verify your domain": "请验证您的域名",
+            "Continue verifying": "继续验证",
+            "Review verification steps": "查看验证步骤",
+
+            // 域名删除对话框
+            "Delete verified domain": "删除已验证的域名",
+            "This is a destructive action. Your GitHub Pages sites may lose their custom domains.": "这是一个破坏性的操作，您的 GitHub Pages 网站可能会失去自定义域名。",
+            "Your GitHub Pages sites may be unpublished from their custom domains if another organization claims ownership of this domain.": "如果其他组织声称拥有此域名的所有权，您的 GitHub Pages 网站可能会被从此自定义域名中取消发布。",
+            "Please type": "请输入",
+            "to confirm.": "进行确认",
+            "I understand, delete verified domain": "我明白了，依然删除已验证的域名",
 
         // GitHub Pages - 添加域名 https://github.com/settings/pages_verified_domains/new
             "Add a verified domain": "经验证的域名",
             "What domain would you like to add?": "您想添加什么域名？",
             "Add domain": "添加域名",
-
+            "Domain name has already been added": "域名已添加",
+            "Add a DNS TXT record": "添加 DNS TXT 记录",
+            "Before we can verify": "在我们验证",
+            ", you'll need to complete these steps:": " 之前，您需要完成以下步骤：",
+            "Create a TXT record in your DNS configuration for the following hostname:": "在 DNS 配置中为以下主机创建 TXT 记录：",
+            "Use this code for the value of the TXT record:": "使用以下代码作为 TXT 记录的值：",
+            "Wait until your DNS configuration changes. This could take up to 24 hours to propagate.": "等待您的 DNS 变更解析生效，最长可能需要 24 小时。",
+            "Verify": "验证",
+            "Copy verification steps": "复制验证步骤",
+            "Your domain is verified. No further action is needed.": "您的域名已验证，无需其它操作。",
     },
     "regexp": [ // 正则翻译
+        [/Successfully verified/, "已成功验证"],
     ],
 };
 I18N.zh["orgs/settings/pages"] = I18N.zh["settings/pages"];
@@ -3918,7 +3983,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
                 "Grouped security updates": "分组安全更新",
-                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。此选项可能会被 dependentabot.yml 中指定的分组规则覆盖 -",
+                    "learn more here": "了解更多",
                     // 对话框
                         "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
@@ -4153,9 +4219,12 @@ I18N.zh["settings/reminders"] = { // 设置 - 定时提醒
 
         // 定时提醒 https://github.com/settings/reminders
             "Reminders allow you to push certain events to authorized instances of Microsoft Teams or Slack.": "提醒功能允许您将特定事件推送到 Microsoft Teams 或 Slack 的授权实例。",
-            "Available organizations": "可用组织",
+            "To use scheduled reminders, make sure that the Slack or Microsoft Teams integration is installed and up-to-date. If you need help with this, please contact your organization's owner.": "要使用定时提醒，请确保已安装 Slack 或 Microsoft Teams 集成并且是最新版本，如果您需要这方面的帮助，请联系您组织的所有者。",
+            "Available organizations": "可用的组织",
+            "Unavailable organizations": "不可用的组织",
             "Configure Reminder": "配置提醒",
             "No reminders": "没有提醒",
+            "Needs installing": "需要安装",
 
         // 新的预定提醒 https://github.com/settings/reminders/<orgs-name>
             "New scheduled reminder": "新建预定提醒",
@@ -6169,68 +6238,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     ],
 };
 
-I18N.zh["repository/labels"] = { // 仓库 - 标签页面
-    "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-
-        // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
-            "Labels": "标签",
-            "Milestones": "里程碑",
-            "Search all labels": "搜索所有标签",
-
-            "labels": "标签",
-
-            "New label": "新建标签",
-                "Label preview": "标签预览",
-                "Label name": "标签名",
-                "Description": "描述",
-                "Description (optional)": "描述（可选）",
-                "Color": "颜色",
-                    "Get a new color": "获得新颜色",
-                    "Choose from default colors:": "从默认颜色中选择：",
-                "Create label": "创建标签",
-                "Saving...": "保存中...",
-                "Save changes": "保存更改",
-
-            "Sort": "排序",
-                "Alphabetically": "按字母顺序",
-                "Reverse alphabetically": "按字母倒序",
-                "Most issues": "最多的议题",
-                "Fewest issues": "最少的议题",
-
-            // 标签
-                "bug": "BUG",
-                    "Something isn't working": "有些东西不工作",
-                "dependencies": "依赖性",
-                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
-                "documentation": "文档",
-                    "Improvements or additions to documentation": "文档的改进或补充",
-                "duplicate": "重复",
-                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
-                "enhancement": "增强",
-                    "New feature or request": "新功能或请求",
-                "good first issue": "好的首发议题",
-                    "Good for newcomers": "适合新人",
-                "help wanted": "需要帮助",
-                    "Extra attention is needed": "需要特别关注",
-                "invalid": "无效",
-                    "This doesn't seem right": "这似乎不对",
-                "question": "问题",
-                    "Further information is requested": "要求提供更多信息",
-                "wontfix": "不会修复",
-                    "This will not be worked on": "这将不会被处理",
-
-            // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
-            // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
-
-    },
-    "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
-        [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
-        [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
-    ],
-};
-
 I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
@@ -6556,6 +6563,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         ...I18N.zh["repository/pull_issue_public"]["static"],
 
         // 仓库 --> 议题 标签卡/<user-name>/<repo-name>/issues
+        // /<user-name>/<repo-name>/labels/<label-name>
             // 欢迎信息
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
@@ -6783,7 +6791,79 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "deleted this from": "删除了这个，从",
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
-            ...I18N.zh["repository/labels"]["static"],
+        // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
+            "Labels": "标签",
+            "Milestones": "里程碑",
+            "Search all labels": "搜索所有标签",
+
+            "labels": "标签",
+
+            "New label": "新建标签",
+                "Label preview": "标签预览",
+                "Label name": "标签名",
+                "Description": "描述",
+                "Description (optional)": "描述（可选）",
+                "Color": "颜色",
+                    "Get a new color": "获得新颜色",
+                    "Choose from default colors:": "从默认颜色中选择：",
+                "Create label": "创建标签",
+                "Saving...": "保存中...",
+                "Save changes": "保存更改",
+
+            "Sort": "排序",
+                "Alphabetically": "按字母顺序",
+                "Reverse alphabetically": "按字母倒序",
+                "Most issues": "最多的议题",
+                "Fewest issues": "最少的议题",
+
+            // 标签
+                "bug": "BUG",
+                    "Something isn't working": "有些东西不工作",
+                "dependencies": "依赖性",
+                    "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
+                "documentation": "文档",
+                    "Improvements or additions to documentation": "文档的改进或补充",
+                "duplicate": "重复",
+                    "This issue or pull request already exists": "这个议题或拉取请求已经存在",
+                "enhancement": "增强",
+                    "New feature or request": "新功能或请求",
+                "good first issue": "好的首发议题",
+                    "Good for newcomers": "适合新人",
+                "help wanted": "需要帮助",
+                    "Extra attention is needed": "需要特别关注",
+                "invalid": "无效",
+                    "This doesn't seem right": "这似乎不对",
+                "question": "问题",
+                    "Further information is requested": "要求提供更多信息",
+                "wontfix": "不会修复",
+                    "This will not be worked on": "这将不会被处理",
+
+            // [/open issues? and pull requests?/, "个打开的议题和拉取请求"], // 标签页面
+            // [/open issues? or pull requests?/, "个打开的议题或拉取请求"], // 标签页面
+
+            // "Convert to discussions": "转为讨论",
+                // 转换议题为讨论 对话框
+                "Convert issue to discussion": "转换议题为讨论",
+                    // [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
+                    // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
+                    "Issue will be locked": "议题将被锁定",
+                    // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
+                    "Existing links will redirect to the new discussion": "现有链接将重定向至新讨论",
+                    // "All comments and reactions will be the same as the issue": "所有评论和反应将与议题相同",
+                    "Discussions do not have tasklists": "讨论没有任务列表",
+                    "Discussions do not have assignees": "讨论没有受理人",
+                    "Discussions cannot be added to projects": "讨论无法添加到项目",
+                    "Discussions do not have milestones": "讨论没有里程碑",
+                    "You must choose a category for the discussion to belong to. You will be able to change this after the conversion is complete.": "您必须为讨论选择一个所属类别。转换完成后，您可以更改类别。",
+                    "Choose a category": "选择类别",
+                        "Announcements": "公告",
+                        "General": "通常",
+                        "Ideas": "想法",
+                        "Polls": "投票",
+                        "Q&A": "问与答",
+                        "Show and tell": "展示与讲述",
+                    "I understand, convert issue to discussion": "我明白了，依然将议题转换未讨论",
+                    "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题不会自动转换为讨论。",
 
         // 添加/编辑议题模板 /<user-name>/<repo-name>/issues/templates/edit
             "Propose changes": "提出更改",
@@ -6827,6 +6907,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
+
         // 具体某条议题 /<user-name>/<repo-name>/issues/<id>
         [/· ([\d,]+) comments?/, "• $1 条评论"],
         [/([\d,]+) participants?/, "$1 位参与者"],
@@ -6837,8 +6918,14 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
+
+        // 标签页面
+        [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
+        [/open issues? or pull requests?/, "个打开的议题或拉取请求"],
+        [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
     ],
 };
+I18N.zh["repository/labels"] = I18N.zh["repository/issues"];
 
 I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
     "static": { // 静态翻译
@@ -16133,6 +16220,7 @@ I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
         "Add a domain": "添加域名",
         "What domain would you like to add?": "您想添加什么域名？",
         "Add domain": "添加域名",
+        "Domain name has already been added": "域名已添加",
     },
     "regexp": [ // 正则翻译
     ],
