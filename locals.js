@@ -11848,12 +11848,10 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
         ...I18N.zh["repository-settings-menu"]["static"],
         ...I18N.zh["orgs-settings-menu"]["static"], // 组织设置
 
-        // 规则集 页面 /<user-name>/<repo-name>/settings/rules===============================
-            // 顶部提醒
-                "Two rulesets matching current tag protects has been created. You may now delete your protected tags.": "已创建与当前标签保护相匹配的两个规则集。您现在可以删除受保护的标签。",
+        // 仓库规则集页面 /<user-name>/<repo-name>/rules
+        // 规则集 页面 /<user-name>/<repo-name>/settings/rules
+            "Your rulesets won't be enforced on this private repository until you upgrade this organization account to GitHub Team.": "在您将此组织帐户升级到 GitHub Team 之前，您的规则集不会在此私有仓库上强制执行。", // 组织 私有仓库
 
-            "Organization rulesets won't be enforced": "在您将该组织账户升级到 GitHub 企业版之前，", // 组织
-            "until you upgrade this organization account to GitHub Enterprise.": "组织规则集将不会强制执行。", // 组织
             "You haven't created any rulesets": "您尚未创建任何规则集",
                 "Define whether collaborators can delete or force push and set requirements for any pushes, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送，并为任何推送设置要求，如通过状态检查或线性提交历史。",
                 "Learn more about rulesets.": "了解更多关于规则集的信息。",
@@ -11864,24 +11862,28 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                     "New tag ruleset": "新建标签规则集",
                     "Import a ruleset": "导入规则集",
 
-            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate these rulesets.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活这些规则集。", // 组织设置
-
             "No rulesets have been added yet": "尚未添加任何规则集",
+
+            "All": "全部",
             "• targeting": "• 针对",
             ", targeting": ", 针对",
 
             "Export ruleset": "导出规则集",
+            "Delete ruleset": "删除规则",
+
+            // 删除规则对话框
+                "Delete ruleset?": "删除规则？",
+                "Are you sure you want to delete this ruleset? This action cannot be undone.": "您确定要删除此规则集吗？此操作无法撤消。",
 
         // 新建分支规则 /<user-name>/<repo-name>/settings/rules/new?target=branch&enforcement=disabled
+        // 新建标签规则 /<user-name>/<repo-name>/settings/rules/new?target=tag&enforcement=disabled
+        // 编辑规则 /<user-name>/<repo-name>/settings/rules/<id>
+
             "Protect your most important branches": "保护您最重要的分支",
                 "define whether collaborators can delete or force push and set requirements for any pushes, such as passing status checks or a linear commit history.": "定义协作者是否可以删除或强制推送，并为任何推送设置要求，如通过状态检查或线性提交历史。",
 
-
-            "This ruleset does not target any resources and will not be applied.": "此规则集不针对任何资源，因此不会应用。",
-            "This ruleset is disabled. The rules below will not be enforced.": "此规则集已禁用。以下规则将不会被强制执行。",
-            "This ruleset will not be enforced until this organization account is upgraded to GitHub Team or Enterprise.": "在将此组织帐户升级到 GitHub 团队版或企业版之前，不会强制执行此规则集。", //组织仓库设置
-            "This ruleset is in evaluation mode. The rules below will not be enforced.": "该规则集处于评估模式。以下规则将不被执行。", // 组织仓库
-            "Organization Rulesets are only available with GitHub Enterprise. Upgrade your account to activate this ruleset.": "组织规则集仅适用于 GitHub 企业版。升级您的账户以激活此规则集。", // 组织设置
+            "Tag": "标签",
+            "tags": "标签",
 
             "Ruleset Name": "规则集名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
@@ -11896,16 +11898,9 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                         "Upgrade to Enterprise to use this mode.": "升级到企业版即可使用此模式。",
                 "Disabled": "禁用",
                     "Do not evaluate or enforce rules": "不评估或执行规则",
-            "Bypass mode": "旁路模式",
-                "Not permitted": "不允许",
-                    "All users in the organization will be subject to these rules": "组织中的所有用户都将遵守这些规则",
-                "Repository bypass permitted": "允许仓库绕过",
-                    "Organization Administrators, Repository Administrators, and users with Repository bypass permissions can bypass these rules within their repository": "组织管理员、仓库管理员和具有仓库旁路权限的用户可以在他们的仓库中绕过这些规则",
-                "Organization bypass permitted": "允许组织绕过", // 组织设置
-                    "Organization administrators and users with Organizational bypass permissions can bypass these rules": "组织管理员和具有组织旁路权限的用户可以绕过这些规则",
-                "Determines who can bypass this ruleset.": "确定谁可以绕过此规则集。",
 
             "Bypass list": "旁路列表",
+                "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束",
                 "Add bypass": "添加旁路",
 
                  // 添加旁路对话框
@@ -11926,153 +11921,139 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                         "vulnerability_reporter": "漏洞报告员",
                         "Add selected": "添加所选",
 
-                "Always": "总是",
-                    "Always allow rules to be bypassed": "始终允许绕过规则",
-                "For pull requests only": "仅适用于拉取请求",
-                    "Only allow rules to be bypassed on pull requests": "只允许在拉取请求中绕过规则",
-
-                "Add a team or app to the bypass list": "将团队或应用添加到旁路列表",
-                "Add a team to the bypass list": "将团队添加到旁路列表", // 组织设置
+                "Always allow": "总是允许",
+                "Allow for pull requests only": "仅允许拉取请求",
+                    "Allow": "允许",
+                        "Always": "总是",
+                        "For pull requests only": "仅适用于拉取请求",
+                    "Delete bypass": "删除旁路",
 
                 "Bypass list is empty": "旁路列表为空",
-                "Exempt teams or apps from this ruleset by adding them to the bypass list": "通过将团队或应用添加到旁路列表中，使其免于此规则集",
-                "Exempt roles": "豁免角色",
-                "or teams": "或团队",
-                ", teams, or apps": "团队或应用",
-                "from this ruleset by adding them to the bypass list": "在用于规则，通过将它们添加到旁路列表",
 
-            "Target repositories": "目标仓库",
-                "Add target": "添加目标",
-                "Repository targeting determines which repositories will be protected by this ruleset. Use inclusion patterns to expand the list of repositories under this ruleset. Use exclusion patterns to exclude repositories.": "仓库目标决定了哪些仓库将受此规则集保护。使用包含规则来扩展此规则集下的仓库列表。使用排除规则来排除仓库。",
+            "Targets": "目标",
+                "Which branches do you want to make a ruleset for?": "您想为哪些分支制定规则集？",
+                "Which tags do you want to make a ruleset for?": "您想为哪些标签制定规则集？", // 标签
 
-                "Target:": "目标：",
-                    // 所有仓库
-                        "Target all repositories within the organization": "目标是针对组织内的所有仓库。",
-                    "Dynamic list by name": "按名称的动态列表",
-                        "Target repositories based on name": "基于名称的目标仓库",
-                    "Dynamic list by property": "按属性的动态列表",
-                        "Target repositories based on properties": "基于属性的目标仓库",
-                    "Select repositories": "选定的仓库",
-                        "Target a specific list of selected repositories": "以选定的仓库的特定列表为目标",
+                "Target": "目标",
+                    "Branch targeting determines which branches will be protected by this ruleset. Use inclusion patterns to expand the list of branches under this ruleset. Use exclusion patterns to exclude branches.": "分支目标确定哪些分支将受此规则集保护。使用包含模式来扩展该规则集下的分支列表。使用排除模式来排除分支。",
+                    "Tag targeting determines which tags will be protected by this ruleset. Use inclusion patterns to expand the list of tags under this ruleset. Use exclusion patterns to exclude tags.": "标签目标确定哪些标签将受此规则集保护。使用包含模式来扩展该规则集下的标签列表。使用排除模式来排除标签。", // 标签
 
-                "Targeting criteria": "目标定位条件",
-                "Target by repository properties": "目标由仓库属性决定",
-                    "All Repositories": "所有仓库",
-                    "No repository targets have been added yet": "尚未添加仓库目标",
-                    "Repository targeting determines which repositories will be protected by this ruleset.": "仓库目标决定了哪些仓将受此规则集保护。",
+                    "Branch targeting criteria": "目标分支规则",
+                    "Tag targeting criteria": "目标标签规则", // 标签
+                        "Add target": "添加目标",
+                            "Include default branch": "包含默认分支",
+                            "Include all branches": "包含所有分支",
+                            "Include all tags": "包含所有标签", // 标签
+                            "Target by inclusion or exclusion pattern": "通过包含或排除规则确定目标",
+                            "Include by pattern": "包含规则",
+                            "Exclude by pattern": "排除规则",
 
-                "Prevent renaming of target repositories": "防止重命名目标仓库",
-                    "When checked, target repositories can only be renamed by those with bypass permission.": "勾选后，目标仓库只能由具有旁路权限的人重命名。",
+                        "Branch targeting has not been configured": "尚未配置分支目标",
+                        "Tag targeting has not been configured": "尚未配置标签目标", // 标签
 
-                "All repositories": "所有仓库",
-                "Targets have changed and repository match list will update on save.": "目标已更改，仓库匹配列表将在保存时更新。",
+                        "Default": "默认",
+                        "All branches": "所有分支",
+                        "All tags": "所有标签", // 标签
 
-                "Repositories that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的仓库将成为此规则集的目标。",
-                "Repositories that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的仓库将成为此规则集的目标。",
+                        // 包含规则 对话框
+                            "Branches that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的分支将成为该规则集的目标。",
+                            "Tags that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的标签将成为该规则集的目标。", // 标签
+                            "naming pattern": "命名规则",
+                                "Pattern cannot be empty": "规则不能为空",
+                            "Example patterns: \"": "示例：\"",
+                            "Learn more about fnmatch": "了解更多关于 fnmatch 的信息",
+                            "Add Inclusion pattern": "添加包含规则",
 
-            "Target branches": "目标分支",
-                "Add a target": "添加分支",
-                    "Include default branch": "包含默认分支",
-                    "Include all branches": "包含所有分支",
-                    "Target by inclusion or exclusion pattern": "通过包含或排除规则确定目标",
-                    "Include by pattern": "包含规则",
-                    "Exclude by pattern": "排除规则",
+                        // 排除规则 对话框
+                            "Branches that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的分支将成为该规则集的目标。",
+                            "Tags that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的标签将成为该规则集的目标。", // 标签
+                            "Add Exclusion pattern": "添加排除规则",
 
-                "Branch targeting has not been configured": "尚未配置分支目标",
-                    "targeting determines which": "目标决定了",
-                    "branches": "分支",
-                    "will be protected by this ruleset. Use inclusion patterns to expand the list of": "将受此规则集保护。使用包含规则来扩展此规则集下的列表",
-                    "under this ruleset. Use exclusion patterns to exclude": "使用排除规则来排除",
+            // 规则
+                "Which rules should be applied to the targets that you have selected?": "哪些规则应适用于您选择的目标？",
 
-                "Default": "默认",
-                "All branches": "所有分支",
-                "Targets have changed and branch match list will update on save.": "目标已更改，分支匹配列表将在保存时更新。",
+                "protections": "保护",
+                    "Restrict creations": "限制创建",
+                        "Only allow users with bypass permission to create matching refs.": "只允许具有绕过权限的用户创建匹配的引用。",
+                    "Restrict updates": "限制更新",
+                        "Only allow users with bypass permission to update matching refs.": "只允许具有绕过权限的用户更新匹配的引用。",
+                    "Restrict deletions": "限制删除",
+                        "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
+                    "Require linear history": "需要线性历史",
+                        "Prevent merge commits from being pushed to matching refs.": "防止合并后的提交被推送到匹配的引用。",
+                    "Require merge queue": "要求合并队列", // 组织仓库
+                        "Merges must be performed via a merge queue.": "合并必须通过合并队列进行。",
+                        "Merge method": "合并模式",
+                            "Method to use when merging changes from queued pull requests.": "合并来自列队拉取请求的更改时使用的模式。",
 
-                // 包含规则 对话框
-                    "Branches that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的分支将成为该规则集的目标。",
-                    "naming pattern": "命名规则",
-                        "Pattern cannot be empty": "规则不能为空",
-                    "Example patterns: \"": "示例：\"",
-                    "Learn more about fnmatch": "了解更多关于 fnmatch 的信息",
-                    "Add Inclusion pattern": "添加包含规则",
-
-                // 排除规则 对话框
-                    "Branches that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的分支将成为该规则集的目标。",
-                    "Add Exclusion pattern": "添加排除规则",
-
-            "Branch protections": "分支保护",
-                "Restrict creations": "限制创建",
-                    "Only allow users with bypass permission to create matching refs.": "只允许具有绕过权限的用户创建匹配的引用。",
-                "Restrict updates": "限制更新",
-                    "Only allow users with bypass permission to update matching refs.": "只允许具有绕过权限的用户更新匹配的引用。",
-                "Restrict deletions": "限制删除",
-                    "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
-                "Require linear history": "需要线性历史",
-                    "Prevent merge commits from being pushed to matching refs.": "防止合并后的提交被推送到匹配的引用。",
-                "Require deployments to succeed": "要求部署成功",
-                    "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境，后才能将引用推送到与此规则匹配的引用中。",
-                    "Additional settings": "附加设置",
-                        "Search for deployment environments": "搜索部署环境",
-                        "No deployment environments found": "未找到部署环境",
-                        "Learn more about deployment environments": "了解更多关于部署环境的信息",
-                "Require signed commits": "要求带签名的提交",
-                    "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
-                "Require a pull request before merging": "要求在合并前提交拉取请求",
-                    "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
-                    // "Additional settings": "附加设置",
-                        "Required approvals": "要求批准审查",
-                            "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的批准审查次数。",
-                        "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
+                                "Merge commit": "合并提交",
+                                "Squash and merge": "压缩合并",
+                                "Rebase and merge": "变基合并",
+                        "Build concurrency": "构建并发",
+                            "Limit the number of queued pull requests requesting checks and workflow runs at the same time.": "限制同时请求检查和工作流运行的队列拉取请求数量。",
+                        "Minimum group size": "最小分组数",
+                            "The minimum number of PRs that will be merged together in a group.": "将合并为一组的拉取请求的最小数量。",
+                        "Maximum group size": "最大分组数",
+                            "The maximum number of PRs that will be merged together in a group.": "将合并为一组的拉取请求的最大数量。",
+                        "Wait time to meet minimum group size (minutes)": "达到最小分组数的等待时间（分钟）",
+                            "The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged.": "第一个拉取请求添加到队列后，合并队列为达到最小分组规模所需的等待时间。超过这一时间后，将忽略最小分组大小，合并一个较小的分组",
+                        "Require all queue entries to pass required checks": "要求所有队列条目通过必要的检查",
+                            "When this setting is disabled, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.": "禁用此设置后，只有位于合并组头部的提交（即包含组内所有拉取请求 变更的提交）必须通过合并所需的检查。",
+                        "Status check timeout (minutes)": "状态检查超时（分钟）",
+                            "Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed": "报告结论所需的状态检查的最长时间。超过此时间后，未报告结论的检查将被视为失败",
+                    "Require deployments to succeed": "要求部署成功",
+                        "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.": "选择必须成功部署到哪些环境，后才能将引用推送到与此规则匹配的引用中。",
+                        "Hide additional settings": "隐藏附加设置",
+                        "Show additional settings": "显示附加设置",
+                            "Search for deployment environments": "搜索部署环境",
+                            "No deployment environments found": "未找到部署环境",
+                            "Learn more about deployment environments": "了解更多关于部署环境的信息",
+                    "Require signed commits": "要求带签名的提交",
+                        "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
+                    "Require a pull request before merging": "要求在合并前提交拉取请求",
+                        "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
+                            "Required approvals": "要求批准审查",
+                                "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的批准审查次数。",
+                            "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
                             "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将撤销之前的拉取请求的批准审查。",
                         "Require review from Code Owners": "要求代码所有者进行审查",
                             "Require an approving review in pull requests that modify files that have a designated code owner.": "要求对具有指定代码所有者的文件修改的拉取请求中进行批准审查。",
                         "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
                             "Whether the most recent reviewable push must be approved by someone other than the person who pushed it.": "最新的可审核推送是否必须得到推送者以外的其他人批准。",
                         "Require conversation resolution before merging": "要求在合并前解决对话",
-                            "All conversations on code must be resolved before a pull request can be merged.": "在合并拉取请求之前，必须解决有关代码的所有对话。",
-                "Require status checks to pass": "要求通过状态检查",
-                    "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
-                    // "Additional settings": "附加设置",
-                        "Require branches to be up to date before merging": "要求分支在合并前必须是最新的",
-                            "Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.": "针对匹配分支的拉取请求，使用最新代码进行测试。至少启用一项状态检查，否则此设置不会生效。",
-                            "Enter the name of a status check": "输入状态检查的名称",
-                                // [/Add '(.*)'/, "添加 $1"],
-                            "No status checks found": "未找到状态检查",
-                            "Learn more about status checks": "了解更多关于状态检查的信息",
-                "Block force pushes": "阻止强制推送",
-                    "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
-                "Require workflows to pass before merging": "要求工作流程在合并之前通过", // 组织设置
-                    "Require all changes made to a targeted branch to pass the specified workflows before they can be merged.": "要求对目标分支所做的所有更改都通过指定的工作流程，然后才能合并",
-                    "Workflow configurations": "工作流程配置",
-                        "Add workflow": "新建工作流程",
-                            "Add required workflow": "添加所需的工作流程",
-                                // 仓库
-                                    "Select a repository": "选择仓库",
-                                    "Select an item": "选择项目",
-                                    "Repos": "仓库",
-                                "Select branch or tag": "筛选分支或标签",
-                                    "Branch or tag": "分支或标签",
-                                "Pin to commit": "固定到提交",
-                                    "Always reference the current commit": "始终引用当前提交",
-                                "Pick a workflow file": "选择工作流程文件",
-                                "Enter a SHA": "输入 SHA",
-                                    "Enter a valid SHA": "输入有效的 SHA",
-                                    "Enter the SHA for the commit you want to reference": "输入您要引用的提交的 SHA",
-                        "No workflow configurations found": "尚无工作流程配置",
+                                "All conversations on code must be resolved before a pull request can be merged.": "在合并拉取请求之前，必须解决有关代码的所有对话。",
+                    "Require status checks to pass": "要求通过状态检查",
+                        "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
+                            "Require branches to be up to date before merging": "要求分支在合并前必须是最新的",
+                                "Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.": "针对匹配分支的拉取请求，使用最新代码进行测试。至少启用一项状态检查，否则此设置不会生效。",
+                                // "Enter the name of a status check": "输入状态检查的名称",
+                                    // [/Add '(.*)'/, "添加 $1"],
+                                "No required checks": "无需进行必要的检查",
+                                    "Add checks": "添加检查",
+                                        "Add Checks": "添加检查",
+                                            "Search for checks": "搜索检查",
+                                            "No results": "无结果",
+                                "No checks have been added": "未添加任何检查",
+                                "Learn more about status checks": "了解更多关于状态检查的信息",
+                    "Block force pushes": "阻止强制推送",
+                        "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
 
-            "Metadata": "元数据", // 组织设置
-            "restrictions": "限制",
-                "No metadata restrictions have been added": "尚无元素限制",
-                "Learn more about": "了解更多关于",
-                "metadata": "元素",
+            "Restrictions": "限制", // 组织设置
+                "Restrict commit metadata": "限制提交元数据",
+                    "Restrict commit author email addresses, committer email addresses, commit message content, and other metadata": "限制提交作者电子邮箱地址、提交者电子邮箱地址、提交消息内容和其他元数据",
 
-                "Add restriction": "添加限制",
-                // 添加元数据限制 对话框
-                    "Add a metadata restriction": "添加元数据限制",
-                        "Restrict commit author email addresses, committer email addresses, commit message content, and other metadata": "限制提交作者电子邮箱地址、提交者电子邮箱地址、提交消息内容和其他元数据",
-                        "Applies To": "适用于",
-                            "Commit message": "提交信息",
-                            "Author email": "作者电子邮箱地址",
+                    "Metadata restrictions": "元数据限制",
+                        "No metadata restrictions have been added": "尚无元素限制",
+                        "Learn more about": "了解更多关于",
+                        "metadata": "元素",
+                        "restrictions": "限制",
+
+                        "Add restriction": "添加限制",
+                            // 添加元数据限制 对话框
+                                "Add a metadata restriction": "添加元数据限制",
+                                    "Applies To": "适用于",
+                                        "Commit message": "提交信息",
+                                        "Author email": "作者电子邮箱地址",
                             "Committer email": "提交者电子邮箱地址",
                             "Branch name": "分支名称",
                         "Requirement": "要求",
@@ -12120,9 +12101,22 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                             // [/Branch name must not contain a matching pattern/, "分支名称不得包含匹配规则"],
                             // [/Branch name must not match a given regex pattern/, "分支名称不得匹配给定的正则表达式规则"],
 
-                        "How this rule will appear to your": "这个规则将如何在您的",
-                        "organization": "组织",
-                        "'s users throughout": "内的用户中显示",
+                                    "How this rule will appear to your": "这个规则将如何在您的",
+                                    "organization": "组织",
+                                    "'s users throughout": "内的用户中显示",
+                "Restrict branch names": "限制分支名",
+
+            "Revert": "撤销",
+            "Reverting...": "撤销...",
+            "changes": "更改",
+            "change": "更改",
+
+            // 右下角提示
+                "Unauthorized": "未经授权",
+                "Ruleset created": "规则集已创建",
+                "Changes reverted": "更改已恢复",
+                "No changes have been made": "未作任何更改",
+                "Invalid rules: 'Required status checks'": "无效规则：“必需的状态检查”",
 
             // 授权访问 sudo 模式身份验证
                 "Confirm access": "授权访问",
@@ -12135,6 +12129,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                 "Your authentication code has been sent.": "您的验证码已发送。",
 
                 "Having problems?": "有问题吗？",
+                "Use your passkey": "使用您的通行密钥",
                 "Use GitHub Mobile": "使用 GitHub Mobile",
                 "Use your authenticator app": "使用您的身份验证器应用",
                 "Send a code via SMS": "通过短信发送验证码",
@@ -12154,43 +12149,16 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                 "Forgot password?": "忘记密码？",
                 "Confirm": "确认",
 
-            "Unauthorized": "未经授权",
-            "Ruleset created": "规则集已创建",
+                "Incorrect password.": "密码不正确。",
 
-            "Revert": "撤销",
-            "changes": "更改",
-            "change": "更改",
+                "Passkey": "通行密钥",
+                "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+                "Use passkey": "使用通行密钥",
 
-        // 新建标签规则 /<user-name>/<repo-name>/settings/rules/new?target=tag&enforcement=disabled
-            "Target tags": "目标标签",
-            "Tag targeting has not been configured": "尚未配置标签目标",
-            "Tag": "标签",
-            "tags": "标签",
-            "Include all tags": "包含所有标签",
-            "All tags": "所有标签",
-            "Tags that match the matching pattern will be targeted by this ruleset.": "与匹配规则相匹配的标签将成为该规则集的目标。",
-            "Tags that do not match the matching pattern will be targeted by this ruleset.": "与匹配规则不匹配的标签将成为该规则集的目标。",
-            "Tag protections": "标签保护",
+                "Authentication failed.": "认证失败。",
+                "Retry passkey": "重试通行密钥",
 
-        // 编辑规则 /<user-name>/<repo-name>/settings/rules/<id>
-            "Delete ruleset": "删除规则",
-
-            "Delete ruleset?": "删除规则？",
-            "Are you sure you want to delete this ruleset? This action cannot be undone.": "您确定要删除此规则集吗？此操作无法撤消。",
-
-            "Applies to": "应用到",
-            "target:": "个目标:",
-
-       // 仓库规则集页面 /<user-name>/<repo-name>/rules
-            "Rulesets": "规则集",
-            "All": "全部",
-            "• targeting": "• 针对",
-            ", targeting": ", 针对",
-
-            "No rulesets matched your search": "没有与您搜索相匹配的规则集",
-            "Try expanding your search or creating a new ruleset": "尝试扩大搜索范围或创建新的规则集",
-
-        "Name": "名称",
+                "Unable to verify with your passkey?": "无法验证您的通行密钥？",
 
     },
     "regexp": [ // 正则翻译
