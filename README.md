@@ -322,29 +322,32 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/cat-kun" title="cat-kun">
   <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
 </a>
-<a href="https://github.com/CN-traveler" title="CN-traveler">
-  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
+<a href="https://github.com/pecasha" title="Pecasha">
+  <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
 </a>
-<a href="https://github.com/ImgBotApp" title="Imgbot">
-  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
-</a>
-<a href="https://github.com/swsoyee" title="InfinityLoop">
-  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
-</a>
-<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
-  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
-</a>
-<a href="https://github.com/daydaygo" title="dayday">
-  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
-</a>
-<a href="https://github.com/pangshitong" title="pangshitong">
-  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
+<a href="https://github.com/xuexb" title="前端小武">
+  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
 </a>
 <a href="https://github.com/wang4yu6peng13" title="wang4yu6peng13">
   <img src="https://avatars.githubusercontent.com/u/10207042?v=4" width="42;" alt="wang4yu6peng13"/>
 </a>
-<a href="https://github.com/xuexb" title="前端小武">
-  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
+<a href="https://github.com/pangshitong" title="pangshitong">
+  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
+</a>
+<a href="https://github.com/daydaygo" title="dayday">
+  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
+</a>
+<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
+  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/swsoyee" title="InfinityLoop">
+  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
+</a>
+<a href="https://github.com/ImgBotApp" title="Imgbot">
+  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
+</a>
+<a href="https://github.com/CN-traveler" title="CN-traveler">
+  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
 </a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
