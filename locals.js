@@ -17107,6 +17107,10 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 代码安全性与分析 /organizations/<org-login>/settings/security_analysis
+            "Try our new settings": "尝试我们的新设置",
+            // 顶部提醒
+                "Something went wrong. Please try again.": "出了些问题。请再试一次。",
+
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your organization's repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您组织的仓库执行只读分析的权限。",
 
             "Disable all": "禁用全部",
@@ -17118,24 +17122,24 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                 "Automatically enable for new public repositories": "为新公共仓库自动启用",
 
                 // 对话框
-                "Disable private vulnerability reporting": "禁用私下漏洞报告",
-                // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
-                "Enable by default for new public repositories": "默认启用新公共仓库",
+                    "Enable private vulnerability reporting": "启用私下漏洞报告",
+                        // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的私下漏洞报告。"],
 
-                "Enable private vulnerability reporting": "启用私下漏洞报告",
-                // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
+                    "Disable private vulnerability reporting": "禁用私下漏洞报告",
+                        // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将禁用 $1 组织中所有私有仓库上的私下漏洞报告。"],
+                        "Enable by default for new public repositories": "默认启用新公共仓库",
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
                 "Automatically enable for new private repositories": "为新私有仓库自动启用",
 
                 // 对话框
-                "Disable dependency graph": "禁用依赖关系图",
-                // [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
-                "Enable by default for new private repositories": "默认为新私有仓库启用",
+                    "Enable dependency graph": "启用依赖关系图",
+                        // [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
 
-                "Enable dependency graph": "启用依赖关系图",
-                // [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
+                    "Disable dependency graph": "禁用依赖关系图",
+                        // [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
+                        "Enable by default for new private repositories": "默认为新私有仓库启用",
 
             // Dependabot
                 "Keep your dependencies secure and up-to-date.": "保持您的依赖关系的安全和最新",
@@ -17147,30 +17151,38 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                     "Automatically enable for new repositories": "为新仓库自动启用",
 
                 // 对话框
-                    "Disable Dependabot alerts": "禁用 Dependabot 警报",
-                    // [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
-                    "Enable by default for new repositories": "默认为新仓库启用",
-
                     "Enable Dependabot alerts": "启用 Dependabot 警报",
-                    // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。"],
+                        // [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories. No notifications will be sent while Dependabot alerts are being enabled./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。启用 Dependabot 警报时不会发送任何通知。"],
 
-                    "Dependabot rules": "Dependabot 规则",
-                        "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
-                        // [/(\d+) rules? enabled/, "$1 条规则启用"],
+                    "Disable Dependabot alerts": "禁用 Dependabot 警报",
+                        // [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
+                        "Enable by default for new repositories": "默认为新仓库启用",
+
+                "Dependabot rules": "Dependabot 规则",
+                    "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
+                    // [/(\d+) rules? enabled/, "$1 条规则启用"],
 
             "Dependabot security updates": "Dependabot 安全更新",
                 "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
                     // "Dependabot rules": "Dependabot 规则",
 
                 // 对话框
-                "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
-                // [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
+                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                        // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启他们。"],
 
-                "Enable Dependabot security updates": "启用 Dependabot 安全更新",
-                // [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启它。"],
+                    "Disable Dependabot security updates": "禁用 Dependabot 安全更新",
+                        // [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
 
             "Grouped security updates": "分组安全更新",
-                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests).": "将能解决 Dependabot 警报的所有可用更新集中到一个拉取请求中（每个软件包管理器和需求清单目录）。",
+                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。该选项可被 dependabot.yml 中指定的组规则覆盖 -",
+                "learn more here": "在此了解更多",
+
+                // 对话框
+                    "Enable grouped security updates": "启用分组安全更新",
+                        // [/You're about to enable grouped security updates on all repositories in ([^ ]+). Grouped security updates require the dependency graph, Dependabot alerts, Dependabot security updates and Dependabot security updates, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的分组安全更新。分组安全更新需要依赖关系图、Dependabot警报、Dependabot安全更新和 Dependabot安全更新，因此我们还将为所有仓库开启他们。"],
+
+                    "Disable grouped security updates": "禁用分组安全更新",
+                        // [/You're about to disable grouped security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的分组安全更新。"],
 
             "Code scanning": "代码扫描",
                 "Identify vulnerabilities and errors with": "识别代码中的漏洞和错误，通过",
@@ -17180,6 +17192,25 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
 
                 "Recommend the extended query suite for repositories enabling default setup": "建议为启用默认设置的仓库提供扩展查询套件",
                     "The extended query includes the default suite, plus lower severity and precision queries.": "扩展查询包括默认套件，以及较低严重性和精度的查询。",
+
+                // 对话框
+                    "Enable code scanning default setup": "启用代码扫描默认设置",
+                        "This will turn on CodeQL default setup for all eligible public repositories and repositories with GitHub Advanced Security enabled.": "这将为所有符合条件的公共仓库和已启用 GitHub 高级安全功能的仓库开启 CodeQL 默认设置。",
+                        "What makes a repository eligible for default setup?": "怎样的仓库符合默认设置？",
+                        "Query suites": "查询套件",
+                            "Group of queries": "查询套件",
+                            "to run against your code.": "针对您的代码运行。",
+
+                            "Default": "默认",
+                                "Recommended": "推荐",
+                                "CodeQL high-precision queries.": "CodeQL 高精度查询。",
+                            "Extended": "扩展",
+                                "Queries from the default suite, plus lower severity and precision queries.": "来自默认套件的查询，以及较低严重性和精度查询。",
+                                "Recommended by your organization. Queries from the default suite, plus lower severity and precision queries.": "由您的组织推荐。来自默认套件的查询，以及较低严重性和精度的查询。",
+                        "Code scanning uses GitHub Actions. Also, repositories where code scanning is already enabled will not be re-enabled.": "代码扫描使用 GitHub Actions。此外，已启用代码扫描的仓库将不会重新启用。",
+
+                    "Disable code scanning default setup": "禁用代码扫描默认设置",
+                        "This will disable CodeQL default setup on all repositories where it is enabled.": "这将禁用所有仓库的 CodeQL 默认设置。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的机密、密钥或其他令牌的警报。",
@@ -17194,29 +17225,52 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
                         "Save link": "保存链接",
 
                 // 对话框
-                "Disable secret scanning?": "禁用机密扫描？",
-                "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有启用了机密扫描的仓库上的机密扫描。",
-                "Disable secret scanning": "禁用机密扫描",
-                "Enable secret scanning for eligible repositories?": "启用适用仓库的机密扫描？",
-                "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
-                "Enable for eligible repositories": "启用符合条件的仓库",
+                    "Enable secret scanning for eligible repositories?": "启用适用仓库的机密扫描？",
+                        "This will turn on secret scanning for all public repositories.": "这将为所有公共仓库启用机密扫描。",
+                        "Enable for eligible repositories": "启用符合条件的仓库",
+
+                    "Disable secret scanning?": "禁用机密扫描？",
+                        "This will disable secret scanning on all repositories where it is enabled.": "这将禁用所有仓库的机密扫描。",
+                        "Disable secret scanning": "禁用机密扫描",
+
+                    "Enable push protection for eligible repositories?": "为符合条件的仓库启用推送保护？",
+                        "This will turn on push protection for all repositories that have secret scanning enabled.": "这将为所有已启用秘密扫描的仓库启用推送保护。",
+                        "Push protection coverage": "推送保护覆盖范围",
+                        "Already enabled": "已启用",
+                        "Will be enabled": "将启用",
+                        "Not eligible": "不符合条件",
+
+                    "Disable push protection?": "禁用推送保护？",
+                        // [/This will disable push protection on (\d+) repositori(y|es) where it is enabled./, "这将在已启用推送保护的 $1 个仓库中禁用推送保护。"],
+                        "You can still enable push protection at the repository level.": "您仍然可以在仓库级别启用推送保护。",
+                        "Disable push protection": "禁用推送保护",
+
+            "Grant Dependabot access to private repositories": "授予 Dependabot 访问私有库权限",
+                "In order to update dependencies in your organization, Dependabot accesses dependencies in all public repositories and the selected private repositories. The contents of these repositories will be accessible to all users in your organization through Dependabot updates. Be sure that you want to share these repositories with everyone in your organization or consider using private registries instead.": "为了更新组织中的依赖项，Dependabot 会访问所有公共仓库和选定的私有库中的依赖项。您组织中的所有用户都可以通过 Dependabot 更新访问这些仓库内容。请确保您想与组织中的每个人共享这些仓库，或考虑使用私有注册表。",
+                "Add private repositories": "添加私有库",
+                    "Add a private repository": "添加私有库",
+                    // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
 
             "Security managers": "安全管理员",
-            "Grant a team permission to manage security alerts and settings across your organization. This team will also be granted read access to all repositories.": "授予团队管理整个组织的安全警报和设置的权限。该团队还将被授予对所有仓库的读取权限。",
-            "Learn more about these security privileges": "了解更多关于这些安全特权的信息",
-            "Search for teams": "搜索团队",
+                "Grant a team permission to manage security alerts and settings across your organization. This team will also be granted read access to all repositories.": "授予团队管理整个组织的安全警报和设置的权限。该团队还将被授予对所有仓库的读取权限。",
+                "Learn more about these security privileges": "了解更多关于这些安全特权的信息",
+                "Search for teams": "搜索团队",
 
     },
     "regexp": [ // 正则翻译
-        [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
-        [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
-        [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
+        [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的私下漏洞报告。"],
+        [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有私有仓库上的私下漏洞报告。"],
         [/You're about to enable dependency graph on all private repositories in ([^ ]+)./, "您即将启用 $1 组织中的所有私有仓库上的依赖关系图。"],
+        [/You're about to disable dependency graph on all private repositories in ([^ ]+). This will also disable Dependabot alerts and Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。"],
+        [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories. No notifications will be sent while Dependabot alerts are being enabled./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。启用 Dependabot 警报时不会发送任何通知。"],
         [/You're about to disable Dependabot alerts on all repositories in ([^ ]+). This will also disable Dependabot security updates on those repositories./, "您即将禁用 $1 组织中所有仓库上的 Dependabot 警报。这也将禁用这些仓库的 Dependabot 安全更新。"],
-        [/You're about to enable Dependabot alerts on all repositories in ([^ ]+). Alerts require the dependency graph, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中所有仓库上的 Dependabot 警报。Dependabot 警报需要依赖关系图，因此我们还将为所有仓库开启它。"],
+        [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启他们。"],
         [/You're about to disable Dependabot security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的 Dependabot 安全更新。"],
-        [/You're about to enable Dependabot security updates on all repositories in ([^ ]+). Dependabot security updates require the dependency graph and Dependabot alerts, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的 Dependabot 安全更新。Dependabot 安全更新需要依赖关系图和 Dependabot 警报，因此我们还将为所有仓库开启它。"],
+        [/You're about to enable grouped security updates on all repositories in ([^ ]+). Grouped security updates require the dependency graph, Dependabot alerts, Dependabot security updates and Dependabot security updates, so we'll also turn that on for all repositories./, "您即将启用 $1 组织中的所有仓库上的分组安全更新。分组安全更新需要依赖关系图、Dependabot警报、Dependabot安全更新和 Dependabot安全更新，因此我们还将为所有仓库开启他们。"],
+        [/You're about to disable grouped security updates on all repositories in ([^ ]+)./, "您即将禁用 $1 组织中的所有仓库上的分组安全更新。"],
+        [/This will disable push protection on (\d+) repositori(y|es) where it is enabled./, "这将在已启用推送保护的 $1 个仓库中禁用推送保护。"],
         [/(\d+) rules? enabled/, "$1 条规则启用"],
+        [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
     ],
 };
 
