@@ -7903,7 +7903,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
         "security policy": "安全政策",
         "code of conduct": "行为准则",
-        "Remember, contributions to this repository should follow our": "请记住，对此仓库的贡献应遵循我们的",
+        "Remember, contributions to this repository should follow our ": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
