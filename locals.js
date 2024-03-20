@@ -7773,6 +7773,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         // 提出合并分支 /<user-name>/<repo-name>/compare/<branch>...<user-name-1>:<branch-1>
         // /<user-name>/<repo-name>/compare/<branch>...<branch-1>
+        // <user-name>/<repo-name>/compare/<branch>...<user-name-1>:<repo-name-1>:<branch-1>
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
             "learn more about diff comparisons": "了解更多关于差异比较的信息",
@@ -7802,6 +7803,9 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "are identical.": "是相同的。",
 
             "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
+
+            "Unified": "同屏",
+            "Split": "分屏",
 
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
@@ -7930,6 +7934,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/committed/, "提交于"],
     ],
 };
 
