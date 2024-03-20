@@ -425,8 +425,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的资料",
+            "See all accounts": "查看所有账户",
             "Add account": "添加账户",
-                "Switch account": "切换账户",
             "Your sponsorships": "我的捐助者",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
@@ -7096,6 +7096,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
                 "Exclude everything labeled": "如果要找到所有标有",
                 "with": "标签的，请使用",
+                "Follow long discussions with": "要跟随长讨论，请使用",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
