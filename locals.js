@@ -425,8 +425,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的资料",
+            "See all accounts": "查看所有账户",
             "Add account": "添加账户",
-                "Switch account": "切换账户",
             "Your sponsorships": "我的捐助者",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
@@ -7096,6 +7096,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
                 "Exclude everything labeled": "如果要找到所有标有",
                 "with": "标签的，请使用",
+                "Follow long discussions with": "要跟随长讨论，请使用",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -7771,6 +7773,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         // 提出合并分支 /<user-name>/<repo-name>/compare/<branch>...<user-name-1>:<branch-1>
         // /<user-name>/<repo-name>/compare/<branch>...<branch-1>
+        // <user-name>/<repo-name>/compare/<branch>...<user-name-1>:<repo-name-1>:<branch-1>
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
             "learn more about diff comparisons": "了解更多关于差异比较的信息",
@@ -7800,6 +7803,9 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "are identical.": "是相同的。",
 
             "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
+
+            "Unified": "同屏",
+            "Split": "分屏",
 
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
@@ -7901,6 +7907,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
         "security policy": "安全政策",
         "code of conduct": "行为准则",
+        "Remember, contributions to this repository should follow our ": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
@@ -7927,6 +7934,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/committed/, "提交于"],
     ],
 };
 
@@ -8734,6 +8742,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Fillter: /, "筛选："],
         [/(\d+) categories?/, "$1 个分类"],
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
@@ -11010,6 +11019,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Detected automatically/, "自动检测于"]
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
