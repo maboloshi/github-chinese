@@ -18473,7 +18473,41 @@ I18N.zh["features"] = {
         "Contribute to projects quickly with automatic environment setup.": "通过自动环境设置快速为项目做出贡献。",
         "Make sure you see the changes you care about.": "确保您看到您关注的变化。",
         "Build community around your code.": "围绕您的代码建立社区。",
-        
+        // 列表
+            // 代码空间
+                "Spin up fully configured dev environments in the cloud with the full power of your favorite editor.": "在云端启动完全配置的开发环境，并利用您最喜爱的编辑器的全部功能。",
+            // GitHub Copilot
+                "With GitHub Copilot, get suggestions for whole lines or entire functions right inside your editor.": "使用GitHub Copilot，在您的编辑器内部即可获得整行代码或整个函数的建议。",
+            // 拉取请求
+                "Allow contributors to easily notify you of changes they've pushed to a repository – with access limited to the contributors you specify. Easily merge changes you accept.": "允许贡献者轻松地通知您他们已经推送到仓库的变更——访问权限限制在您指定的贡献者。轻松合并您接受的更改。",
+            // 讨论
+                "Dedicated space for your community to come together, ask and answer questions, and have open-ended conversations.": "为您的社区提供一个专门的空间，以便聚集在一起，提问和回答问题，以及进行开放式的交流。",
+            "Code search & code view": "代码搜索 & 代码审查",
+                "Our powerful new code search and code view enable developers to rapidly search, navigate, and understand code right from GitHub.com.": "我们强大的新代码搜索和代码查看功能，使开发者能够从GitHub.com上快速搜索、导航并理解代码。",
+            // 通知
+                "Get updates on the GitHub activity you've subscribed to. Use the notifications inbox to customize, triage, and manage your updates.": "获取您订阅的 GitHub 活动更新。使用通知收件箱来自定义、分类和管理您的更新。",
+            "Code reviews": "代码审查",
+                "Review new code, see visual code changes, and confidently merge code changes with automated status checks.": "审查新代码，查看视觉代码更改，并通过自动化状态检查自信地合并代码更改。",
+            "Code review assignments": "代码审查分配",
+                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该为拉取请求提交他们的审查。",
+            "Code owners": "代码所有者",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当对他们拥有的代码部分进行更改时，自动请求选定贡献者的审查，或者要求他们的批准。",
+            "Draft pull requests": "起草拉取请求",
+                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "使用拉取请求作为一种讨论和协作的方式，无需提交正式审查或冒不必要合并的风险。",
+            "Protected branches": "保护分支",
+                "Enforce restrictions on how code branches are merged, including requiring reviews, or allowing only specific contributors to work on a particular branch.": "强制限制代码分支的合并方式，包括要求审查，或者只允许特定贡献者在某个特定分支上工作。",
+            "Team reviewers": "团队审查人员",
+                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在GitHub上请求一个团队审查你的拉取请求。团队成员将收到通知，表明你已经要求他们进行审查。",
+            "Multiple assignees": "多人分配",
+                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达10人处理特定问题或拉取请求，让你更容易追踪谁在处理什么。",
+            "Multiple reviewers": "多人审查",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知你已请求他们进行审查。",
+            "Multi-line comments": "多行评论",
+                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次引用或评论多行代码，来澄清代码审查。",
+            "Public repositories": "公共仓库",
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "与任何GitHub成员合作在你控制的公共仓库中的代码。进行更改，打开一个拉取请求，创建一个问题等等。",
+            "Dark mode": "深色模式",
+                "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择你使用GitHub的方式。切换到深色主题或默认使用你的系统偏好设置。",
     },
     "regexp": [
     ],
