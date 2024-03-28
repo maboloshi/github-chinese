@@ -22,6 +22,108 @@
 */
 var I18N = {};
 
+let projects = {    // 项目页面 补全
+    "New view": "新建视图",
+    "Layout": "布局",
+    "Board": "面板",
+    "Roadmap": "时间线",
+    "Duplicate view": "复制视图",
+    "Configuration": "配置",
+    "Group by": "分组",
+    "Markers": "标记",
+    "Sort by": "排序",
+    "Zoom level": "缩放级别",
+    "Field sum": "字段总和",
+    "Slice by": "切片",
+    "Fields": "字段",
+    "Generate chart": "生成图表",
+    "Rename view": "重命名视图",
+    "Delete view": "删除视图",
+    "Export view data": "导出视图数据",
+    "Assignees": "负责人",
+    "Project templates": "项目模板",
+    "Featured": "特色",
+    "Iteration": "迭代",
+    "Dates": "日期",
+    "User settings": "用户设置",
+    "Truncate titles": "截断标题",
+    "Show date fields": "显示日期字段",
+    "Add status update": "添加状态更新",
+    "Project details": "项目详情",
+    "View more options": "查看更多选项",
+    "Date fields": "日期字段",
+    "Month": "月",
+    "Quarter": "季度",
+    "Year": "年",
+    "Today": "今天",
+    "Add item": "添加项目",
+    "Start typing to create a draft, or type # to select a repository": "开始输入以创建草稿，或输入 # 选择一个仓库",
+    "Scroll to previous date range": "滚动到上一个日期范围",
+    "Scroll to next date range": "滚动到下一个日期范围",
+    "Filter by keyword or by field": "按关键字或字段筛选",
+    "Discard": "放弃",
+    "Save changes to new view": "保存更改到新视图",
+    "Visible fields": "可见字段",
+    "Hidden fields": "隐藏字段",
+    "New field": "新建字段",
+    "Column by": "栏目",
+    "Workflows": "工作流",
+    "Archived items": "已存档项目",
+    "Make a copy": "复制",
+    "GitHub Projects": "GitHub 项目",
+    "What’s new": "新功能",
+    "Project settings": "项目设置",
+    "Project name": "项目名称",
+    "Short description": "简短描述",
+    "More options": "更多选项",
+    "Make a copy of this project.": "复制此项目",
+    "Danger zone": "危险区",
+    "This project is currently private.": "此项目当前为私有.",
+    "Closing a project will disable its workflows & remove it from the list of open projects.": "关闭项目将禁用其工作流程，并将其从打开项目列表中删除.",
+    "Close this project": "关闭此项目",
+    "Manage access": "管理访问权限",
+    "Who has access": "谁有访问权限",
+    "Private project": "私有项目",
+    "Only those with access to this project can view it.": "只有有权访问此项目的人才能查看它.",
+    "Invite collaborators": "邀请协作者",
+    "Manage access": "管理访问权限",
+    "Custom fields": "自定义字段",
+    "Field name": "字段名称",
+    "Field type": "字段类型",
+    "Text": "文本",
+    "Number": "数字",
+    "Date": "日期",
+    "Single select": "单选",
+    "Starts on": "开始于",
+    "Duration": "持续时间",
+    "days": "天",
+    "weeks": "周",
+    "Save and create": "保存并创建",
+    "You don't have any collaborators yet.": "您还没有任何协作者.",
+    "Add a collaborator to see them here.": "添加协作者以在此处查看他们.",
+    "Make template": "制作模板",
+    "Copy as template": "复制为模板",
+    "Visibility": "可见性",
+    "Close project": "关闭项目",
+    "Delete project": "删除项目",
+    "Delete this project": "删除此项目",
+    "Status chart": "状态图表",
+    "This chart shows the current status for the total number of items in your project.": "此图表显示了项目中所有项目的当前状态.",
+    "Default charts": "默认图表",
+    "Custom charts": "自定义图表",
+    "Configure": "配置",
+    "Configure chart": "配置图表",
+    "Group by (optional)": "分组 (可选)",
+    "X-axis": "X 轴",
+    "Y-axis": "Y 轴",
+    "Save to new chart": "保存到新图表",
+    "Add a project status update": "添加项目状态更新",
+    "Add update": "添加更新",
+    "Status updates are brief reports tracking your project's health and progress. Begin by adding an update.": "状态更新是跟踪项目健康和进度的简要报告. 从添加更新开始.",
+    "Let everyone know what this project is about, how to use it and link to important resources.": "让每个人都知道这个项目是关于什么的，如何使用它，并链接到重要资源.",
+    "A short description about this project.": "关于此项目的简短描述.",
+}
+
 I18N.conf = {
     /**
      * 要翻译的页面正则(不含仓库页)
@@ -323,8 +425,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的资料",
+            "See all accounts": "查看所有账户",
             "Add account": "添加账户",
-                "Switch account": "切换账户",
             "Your sponsorships": "我的捐助者",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
@@ -1837,6 +1939,7 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Project closed.": "项目已关闭。",
             "Project reopened.": "项目已重新打开。",
 
+        ...projects,
     },
     "regexp": [ // 正则翻译
         [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
@@ -6993,6 +7096,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
                 "Exclude everything labeled": "如果要找到所有标有",
                 "with": "标签的，请使用",
+                "Follow long discussions with": "要跟随长讨论，请使用",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -7668,6 +7773,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         // 提出合并分支 /<user-name>/<repo-name>/compare/<branch>...<user-name-1>:<branch-1>
         // /<user-name>/<repo-name>/compare/<branch>...<branch-1>
+        // <user-name>/<repo-name>/compare/<branch>...<user-name-1>:<repo-name-1>:<branch-1>
             "Comparing changes": "比较变更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "选择两个分支，看看发生了什么改变，或发起一个新的拉请求。如果您需要，您也可以",
             "learn more about diff comparisons": "了解更多关于差异比较的信息",
@@ -7697,6 +7803,9 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "are identical.": "是相同的。",
 
             "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
+
+            "Unified": "同屏",
+            "Split": "分屏",
 
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
@@ -7798,6 +7907,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
         "security policy": "安全政策",
         "code of conduct": "行为准则",
+        "Remember, contributions to this repository should follow our ": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
@@ -7824,6 +7934,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/committed/, "提交于"],
     ],
 };
 
@@ -8631,6 +8742,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Fillter: /, "筛选："],
         [/(\d+) categories?/, "$1 个分类"],
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
@@ -10907,6 +11019,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Detected automatically/, "自动检测于"]
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -18291,6 +18404,8 @@ I18N.zh["projects"] = { // 项目页面(含仓库项目)
         // https://github.com/users/<user-name>/projects/<id>/edit
             "(optional)": "(可选)",
             "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
+
+        ...projects,
     },
     "regexp": [ // 正则翻译
         [/Delete/, "删除"],
