@@ -6313,7 +6313,9 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Draft": "草案",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
-
+    "regexp": [ // 正则翻译
+        [/At least (\d+) approving review is required by reviewers with write access./, "至少需要 $1 个审查者批准。"],
+    ],
     }
 };
 
@@ -13961,6 +13963,11 @@ I18N.zh["notifications"] = { // 通知页面
         "Get the most out of your new inbox by quickly and easily marking all of your previously read notifications as done.": "快速轻松地将所有已阅读的通知标记为已完成，以充分利用新的收件箱。",
         "Overwhelmed by notifications? We've found some repositories that may be causing notifications you don't need.": "通知不知所措？我们发现了一些仓库，这些仓库可能会导致您不需要的通知。",
         "Update watching settings": "更新关注设置",
+        "Get started": "开始",
+            "Clean up your inbox": "清理收件箱",
+            "Marking your notifications as \"done\" helps to create a more focused inbox. Don't worry - if there is new activity, you'll still be notified.": "将您的通知标记为“已完成”有助于创建一个更加集中的收件箱。不用担心 - 如果有新的活动，您仍然会收到通知。",
+            "Mark all read notifications as done": "将所有已读通知标记为已完成",
+            "This process could take a few moments depending on the quantity.": "这个过程可能会根据数量的多少而耗费一些时间。",
 
         "Manage notifications": "管理通知",
         "Notification settings": "通知设置",
@@ -18458,7 +18465,7 @@ I18N.zh["features"] = {
         // 看板
         "Experience AI": "体验 AI",
             "with Copilot Chat": "通过 Copilot",
-            "The latest GitHub": "最新 GitHub"，
+            "The latest GitHub": "最新 GitHub",
             "previews": "预览",
         // 流水图
         "Collaborative": "协作",
