@@ -9684,6 +9684,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "edit them?": "编辑它们？",
                 "Existing tag": "已存在的标签",
             "Invalid tag name": "无效的标签名",
+                "We weren’t able to create the release for you. Make sure you have a valid tag.": "我们无法为您创建发行版。请确保您有一个有效的标签。",
+                "There was an error creating your Release: tag name can't be blank, tag name is not well-formed, published releases must have a valid tag.": "创建发行版时出错：标签名称不能为空，标签名称格式不正确，已发布的发行版必须有一个有效的标签。",
                 "We can’t create a tag with this name. Take a look at the suggestions in the sidebar for example tag names.": "我们不能用这个名字创建标签。看看侧边栏的建议，看看标签名称的例子。",
             "Excellent! This tag will be created from the target when you publish this release.": "优秀! 当您发布这个版本时，这个标签将从目标创建。",
 
