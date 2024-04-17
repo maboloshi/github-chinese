@@ -361,7 +361,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Product": "产品",
             "Solutions": "解决方案",
             "Open Source": "开源",
-            // "Pricing": "价格",
+            "Pricing": "价格",
             "Search": "搜索",
             "Sign in": "登录",
             "Sign up": "注册",
@@ -390,7 +390,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 左上角下拉栏 (已登录)
             "Home": "主页",
             "Issues": "议题",
-            "Pull Requests": "拉取请求",
+            "Pull requests": "拉取请求",
             "Projects": "项目",
             "Codespaces": "代码空间",
             "Explore": "探索",
@@ -478,6 +478,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Settings": "设置",
             "GitHub Docs": "GitHub 文档",
             "GitHub Support": "GitHub 支持",
+            "GitHub Community": "GitHub 社区",
             "Sign out": "退出",
 
         // 状态设置对话框
@@ -518,15 +519,16 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Docs": "文档",
             "Contact": "联系我们",
             "Manage cookies": "管理 Cookies",
-            "Manage Cookies": "管理 Cookies",
             "Do not share my personal information": "请勿分享我的个人信息",
 
-            "Contact GitHub": "联系 GitHub",
-            "Pricing": "价格",
-            "Training": "培训",
-            "Shop": "商店",
-            "Blog": "博客",
+        // 左侧栏底部条
             "About": "关于",
+            "Blog": "博客",
+            "Manage Cookies": "管理 Cookies",
+
+        // 其他
+            "Contact GitHub": "联系 GitHub",
+            "Training": "培训",
 
         // 描述、评论编辑器翻译
             "Add a comment": "添加评论",
@@ -555,6 +557,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Add your description here...": "在此添加您的描述...",
 
             // 拉取请求 代码审查 回复对话框
+            "Add a suggestion, <Ctrl+g>": "添加建议, <Ctrl+g>",
             "Heading": "标题",
             "Bold": "粗体",
             "Italic": "斜体",
@@ -811,6 +814,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Fork": "复刻",
             "Save": "保存",
             "Saving…": "保存中…",
+            "Saving...": "保存中...",
             "Updating": "更新中",
             "Updating…": "更新中…",
             "Delete": "删除",
@@ -2134,10 +2138,6 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
 
 I18N.zh["orgs-public"] = { // 组织公共部分
     "static": { // 静态翻译
-
-        "People": "成员",
-        "Teams": "团队",
-
     },
     "regexp": [ // 正则翻译
         [/Invite someone to/, "邀请加入到组织"],
@@ -2270,7 +2270,7 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
                 "Publisher Verification": "发布者验证",
             "Account settings": "帐户设置",
 
-            "Developer settings": "开发者设置"
+            "Developer Settings": "开发者设置"
     },
     "regexp": [ // 正则翻译
     ],
@@ -2349,7 +2349,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                     "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
             "GitHub Developer Program": "GitHub 开发者计划",
-                "has guides, API and webhook references, information about creating GitHub Apps and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "包含指南、API 和 Webhook 参考、有关创建 GitHub 应用的信息以及用于构建与 GitHub 集成的应用的其他资源。确保您的联系信息是最新的。感谢您的加入！",
+                "has guides, API and webhook references, information about creating GitHub Apps and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "包含指南、API 和 Web 钩子、有关创建 GitHub 应用的信息以及用于构建与 GitHub 集成的应用的其他资源。确保您的联系信息是最新的。感谢您的加入！",
 
                 "Support email address": "技术支持电子邮件地址",
                     "An email address where GitHub users can contact you for support.": "供 GitHub 用户联系您寻求支持的电子邮件地址。",
@@ -2408,7 +2408,7 @@ I18N.zh["settings/admin"] = { // 设置 - 帐户
                 "will not": "不会",
                 "will": "会",
                 "set up redirects for your old profile page.": "为您的旧资料页设置重定向",
-                "set up redirects for Pages sites.": "为 Pages 站点设置重定向。",
+                "set up redirects for Pages sites.": "为 GitHub Pages 站点设置重定向。",
                 "create redirects for your repositories (web and git access).": "为您的仓库设置重定向（ web 和 git 访问）。",
                 "Renaming may take a few minutes to complete.": "重命名可能需要几分钟的时间来完成。",
                 "I understand, let’s change my username": "我明白了，依然更改我的用户名",
@@ -3232,7 +3232,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Seen from this browser": "该浏览器中查看",
                 "| Last used": "| 最后使用",
                 // | Last used less than 1 小时之前
-                "Edit passkey nickname": "编辑密钥昵称",
+                "Edit passkey nickname": "编辑通行密钥昵称",
                 // [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
 
                 // 删除密钥对话框
@@ -3252,7 +3252,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
                 "Enable two-factor authentication": "启用双重身份验证",
 
-                //" Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
+                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
                 "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
                 ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双重身份验证，感谢您帮助维护生态系统的安全！",
                 "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
@@ -3841,7 +3841,7 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Repository access": "仓库权限",
             "Available to": "适用于",
             "repository": "仓库",
-            "This secret will not be active until at least 1 repository is selected.": "至少选择 1 个仓库，否则此密钥不会处于活动状态。",
+            "This secret will not be active until at least 1 repository is selected.": "至少选择 1 个仓库，否则此机密不会处于活动状态。",
 
         // 编辑机密 https://github.com/settings/codespaces/secrets/<机密名称>/edit
             "/ Update secret": "/ 更新机密",
@@ -4037,12 +4037,12 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                 "Automatically enable for new public repositories": "为新公共仓库自动启用",
 
                 // 对话框
-                "Disable private vulnerability reporting": "禁用私下漏洞报告",
-                // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
-                "Enable by default for new public repositories": "默认启用新公共仓库",
+                    "Disable private vulnerability reporting": "禁用私下漏洞报告",
+                        // [/You're about to disable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中禁用私下漏洞报告。"],
+                        "Enable by default for new public repositories": "默认启用新公共仓库",
 
-                "Enable private vulnerability reporting": "启用私下漏洞报告",
-                // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
+                    "Enable private vulnerability reporting": "启用私下漏洞报告",
+                        // [/You're about to enable private vulnerability reporting on all public repositories in ([^ ]+)./, "您即将在 $1 的所有公共仓库中启用私下漏洞报告。"],
 
             "Dependency graph": "依赖关系图",
                 "Understand your dependencies.": "了解您的依赖项。",
@@ -5355,7 +5355,8 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Read public user GPG keys": "读取公共用户 GPG 密钥",
             "Full control of public user SSH signing keys": "完全控制公共用户 SSH 签名密钥",
             "Write public user SSH signing keys": "写入公共用户 SSH 签名密钥",
-            "Read public user SSH signing keys": "读取公共用户 SSH 签名密钥",            "Generate token": "生成令牌",
+            "Read public user SSH signing keys": "读取公共用户 SSH 签名密钥",
+            "Generate token": "生成令牌",
                 // 顶部提醒
                 "Some of the scopes you’ve selected are included in other scopes. Only the minimum set of necessary scopes has been saved.": "您选择的一些作用域包含在其他作用域中。只保存了必要作用域的最小集合。",
 
@@ -7219,14 +7220,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                     "can add new commits to": "具有写入权限的用户可以在您的",
                     "branch.": "分支上添加新的提交。",
                     "You can always change this setting later.": "您可以随时修改此设置。",
-                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流程以揭示秘密值，并获取对其他分支的访问权限。",
+                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流程以揭示机密值，并获取对其他分支的访问权限。",
                     "Got it": "知道了",
                     "If checked,": "如果选中，",
                     // [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
                     "to your": "到您的",
                     "branch. You can always change this setting later.": "分支。您以后可以随时更改此设置。",
-                "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问密钥",
-                    "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取密钥值，并获得对其他分支的访问。",
+                "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问机密",
+                    "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取机密值，并获得对其他分支的访问。",
 
                 "Maintainers are allowed to edit this pull request.": "允许维护者编辑此拉取请求。",
 
@@ -7253,7 +7254,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "New changes since you last viewed": "自您上次查看以来的新变化",
             "mentioned this pull request": "提及这个拉取请求",
             "dismissed": "忽略",
-            "\’s": "的",
+            "\’s": " 的",
             "stale review": "陈旧审查",
             "via": "通过",
             "force-pushed": "强制推送",
@@ -8295,9 +8296,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
         // 讨论页面 /<user-name>/<repo-name>/discussions
         // 组织讨论页 /orgs/<orgs-name>/discussions
-            "Teams": "团队", //组织仓库
-            "People": "成员", //组织仓库
-
             "Start a new discussion": "开始新的讨论",
             "Get started by creating the first": "开始吧，为您的社区创建",
             "discussion for your community.": "第一个讨论。",
@@ -8846,7 +8844,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Live logs": "实时日志",
             "See your workflow run in realtime with color and emoji. It’s one click to copy a link that highlights a specific line number to share a CI/CD failure.": "使用颜色和表情符号实时查看您的工作流程。只需单击即可复制突出显示特定行号的链接以共享 CI/CD 故障。",
 
-            "Built-in secret store": "内置的秘密存储",
+            "Built-in secret store": "内置的机密存储",
             "Automate your software development practices with workflow files embracing the Git flow by codifying it in your repository.": "通过将工作流程文件编码到您的仓库，您的软件开发实践，包括 Git 流程自动化。",
 
             "Multi-container testing": "多容器测试",
@@ -10471,7 +10469,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Clear current search query, filters, and sorts": "清除当前搜索查询、过滤器和排序",
 
             "No secrets found.": "没有发现任何机密",
-            "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的秘密。",
+            "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的机密。",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
@@ -10566,7 +10564,7 @@ I18N.zh["repository/subscription"] = { // 仓库 - 通知状态页面
         // 仓库通知状态管理 /<user-name>/<repo-name>/subscription
             "Your": "您的",
             "notifications status": "通知状态",
-            "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在版本库内讨论什么，比如拉取请求、议题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
+            "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每当有人在仓库内讨论什么，比如拉取请求、议题、评论和提交讨论，都会产生一个通知。无论您是关注仓库、不关注还是忽略它，都决定了您会收到哪些通知。",
             "Not watching": "不关注",
                 "You will only receive notifications when you participate or are @mentioned.": "只有当您参与或被 @您 时，您才会收到通知。",
             "Releases only": "仅发行版",
@@ -11554,8 +11552,8 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "I want to delete this repository": "我想删除这个仓库",
 
                 "This will permanently delete the": "这将永久删除",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有协作者关联。",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、密钥、工作流程，并删除所有团队关联。", // 组织仓库
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有团队关联。", // 组织仓库
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
 
     },
@@ -12524,7 +12522,7 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
 
         // Web 钩子 页面 /<user-name>/<repo-name>/settings/hooks====================================
             "Add webhook": "添加 Web 钩子",
-            "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we’ll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
+            "Webhooks allow external services to be notified when certain events happen. When the specified events happen, we'll send a POST request to each of the URLs you provide. Learn more in our": "Web 钩子允许在发生某些事件时通知外部服务。当指定的事件发生时，我们将向您提供的每个 URL 发送 POST 请求。了解更多信息，在我们的",
             "Webhooks Guide": "Web 钩子指南",
 
             "We will also send events from this repository to your": "我们还将把这个仓库的事件发送到您的", // 组织仓库
@@ -12538,16 +12536,16 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
         // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
             "Add webhook": "添加 Web 钩子",
-            "We’ll send a": "我们将",
-            "request to the URL below with details of any subscribed events. You can also specify which data format you’d like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
+            "We'll send a": "我们将",
+            "request to the URL below with details of any subscribed events. You can also specify which data format you'd like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
             "etc": "等",
             "). More information can be found in": "）。更多信息可以在",
             "our developer documentation": "开发人员文档",
 
             "Payload URL": "有效负载 URL",
             "Content type": "内容类型",
-            "Secret": "密钥",
-                "Leave blank to remove secret": "留空以删除密钥",
+            "Secret": "机密",
+                "Leave blank to remove secret": "留空以删除机密",
 
             "SSL verification": "SSL 验证",
             "By default, we verify SSL certificates when delivering payloads.": "默认情况下，我们在交付有效负载时验证 SSL 证书。",
@@ -12693,8 +12691,8 @@ I18N.zh["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-nam
 
         // 管理 钩子 /<user-name>/<repo-name>/settings/hooks/<id>
             "Manage webhook": "管理 Web 钩子",
-            "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此密钥，则可以更改它，但请注意，使用此密钥的任何集成都需要更新。 —",
-            "Change Secret": "更改密钥",
+            "If you've lost or forgotten this secret, you can change it, but be aware that any integrations using this secret will need to be updated. —": "如果您丢失或忘记了此机密，则可以更改它，但请注意，使用此机密的任何集成都需要更新。 —",
+            "Change Secret": "更改机密",
             "Update webhook": "更新 Web 钩子",
             // 顶部提醒
                 "Okay, the hook was successfully updated.": "好的，Web 钩子已经成功更新。",
@@ -13262,7 +13260,7 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
         // 操作机密 /<user-name>/<repo-name>/settings/secrets/actions
             "Actions secrets and variables": "操作机密和变量",
             "New repository secret": "新建仓库机密",
-            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
+            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "机密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
             "and are used for sensitive data.": "并用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
@@ -13575,15 +13573,6 @@ I18N.zh["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>
 
 I18N.zh["homepage"] = { // 未登录的首页
     "static": { // 静态翻译
-        // 顶部栏
-        "Product": "产品",
-        "Team": "团队",
-        "Enterprise": "企业",
-        // "Pricing": "价格",
-        "Search GitHub": "在 GitHub 上搜索",
-        "Sign in": "登录",
-        "Sign up": "注册",
-
         "Let’s build from here": "让我们从这里开始",
         "The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
 
@@ -15659,7 +15648,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
             "Explore apps": "探索应用",
             "Explore free apps": "探索免费应用", // 未登录
-            "Contact Sales": "联系销售",
+            "Contact sales": "联系销售",
 
             "Types": "类型",
                 "Build on your workflow with apps that integrate with GitHub.": "使用与 GitHub 集成的应用构建您的工作流程。",
@@ -17586,7 +17575,7 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
         // 操作机密 /organizations/<org-login>/settings/secrets/actions
             "Actions secrets and variables": "操作机密和变量",
             "New organization secret": "新建组织机密",
-            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "秘密和变量允许您管理可重复使用的配置数据。机密是",
+            "Secrets and variables allow you to manage reusable configuration data. Secrets are": "机密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
             "and are used for sensitive data.": "，用于敏感数据。",
             "Learn more about encrypted secrets": "了解更多关于加密机密的信息",
@@ -17853,7 +17842,7 @@ I18N.zh["orgs/settings/personal-access-token"] = { // 组织设置 - 个人访�
                     "Code scanning alerts": "代码扫描警报",
                     "Codespaces lifecycle admin": "代码空间生命周期管理员",
                     "Codespaces metadata": "代码空间元数据",
-                    "Codespaces secrets": "代码空间秘密",
+                    "Codespaces secrets": "代码空间机密",
                     "Commit statuses": "提交状态",
                     "Contents": "内容",
                     "Dependabot alerts": "Dependabot 警报",
