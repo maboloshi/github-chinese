@@ -1603,6 +1603,8 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
         [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
+        [/(\d+) repositories/, "$1 仓库"],
+        [/(\d+) members/, "$1 成员"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -16351,7 +16353,7 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
                 "for the entire team) in any comment, issue, or pull request.": "对于整个团队）在任何评论、议题或拉取请求中。",
                 "New team": "新建团队",
 
-            "Find a team...": "搜索团队……",
+            "Find a team…": "搜索团队……",
             "Visibility": "可见性",
                 "All": "所有",
             "Members": "成员",
@@ -16383,8 +16385,11 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) members?/, "$1 成员"],
+        [/(\d+) teams?/, "$1 团队"],
     ],
 };
+
 I18N.zh["orgs/new-team"]= I18N.zh["orgs/teams"]
 
 I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
