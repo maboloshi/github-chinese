@@ -1229,6 +1229,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
         "View and create teams": "查看并创建团队",
         "See all owners": "查看全部所有者",
+        "You've been added to the": "你被添加至",
+        "organization.": "组织",
         // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
         "Return to your personal dashboard": "返回到您的个人仪表板",
 
@@ -16239,6 +16241,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "Membership": "成员",
             "Filter by membership": "按成员筛选",
             "Owners": "所有者",
+            "Member": "成员",
 
             "Organization visibility": "组织可见性",
             "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
@@ -16347,6 +16350,13 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
                 "Use team @mentions (ex.": "使用团队 @提及（例如",
                 "for the entire team) in any comment, issue, or pull request.": "对于整个团队）在任何评论、议题或拉取请求中。",
                 "New team": "新建团队",
+
+            "Find a team...": "搜索团队……",
+            "Visibility": "可见性",
+                "All": "所有",
+            "Members": "成员",
+                "My teams": "我的团队",
+                "No members": "没有成员",
 
         // 创建团队 /orgs/<org-login>/new-team
             "Create new team": "新建团队",
