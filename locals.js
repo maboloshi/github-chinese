@@ -1947,6 +1947,8 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Project closed.": "项目已关闭。",
             "Project reopened.": "项目已重新打开。",
 
+            "Created by me": "由我创建", // 组织
+
         ...projects,
     },
     "regexp": [ // 正则翻译
