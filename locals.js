@@ -1951,6 +1951,7 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Created by me": "由我创建",
             "Create your first GitHub project template": "创建您的第一个 GitHub 项目模板",
             "Templates can be used to quickly get started with a new project.": "模板可以用于快速新建项目。",
+            "New template": "新建模版",
 
         ...projects,
     },
