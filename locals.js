@@ -1229,7 +1229,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
         "View and create teams": "查看并创建团队",
         "See all owners": "查看全部所有者",
-        "You've been added to the": "你被添加至",
+        "You've been added to the": "您已被添加至",
         "organization.": "组织",
         // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
         "Return to your personal dashboard": "返回到您的个人仪表板",
