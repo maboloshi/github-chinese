@@ -1229,7 +1229,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
         "View and create teams": "查看并创建团队",
         "See all owners": "查看全部所有者",
-        "You've been added to the": "你被添加至",
+        "You've been added to the": "您已被添加至",
         "organization.": "组织",
         // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
         "Return to your personal dashboard": "返回到您的个人仪表板",
@@ -1946,6 +1946,12 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             // 顶部提醒
             "Project closed.": "项目已关闭。",
             "Project reopened.": "项目已重新打开。",
+
+            // 组织
+            "Created by me": "由我创建",
+            "Create your first GitHub project template": "创建您的第一个 GitHub 项目模板",
+            "Templates can be used to quickly get started with a new project.": "模板可以用于快速新建项目。",
+            "New template": "新建模版",
 
         ...projects,
     },
