@@ -1229,6 +1229,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
         "View and create teams": "查看并创建团队",
         "See all owners": "查看全部所有者",
+        "You've been added to the": "您已被添加至",
+        "organization.": "组织",
         // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
         "Return to your personal dashboard": "返回到您的个人仪表板",
 
@@ -1601,6 +1603,8 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
         [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
+        [/(\d+) repositories/, "$1 仓库"],
+        [/(\d+) members/, "$1 成员"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -1942,6 +1946,12 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
             // 顶部提醒
             "Project closed.": "项目已关闭。",
             "Project reopened.": "项目已重新打开。",
+
+            // 组织
+            "Created by me": "由我创建",
+            "Create your first GitHub project template": "创建您的第一个 GitHub 项目模板",
+            "Templates can be used to quickly get started with a new project.": "模板可以用于快速新建项目。",
+            "New template": "新建模版",
 
         ...projects,
     },
@@ -16239,6 +16249,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "Membership": "成员",
             "Filter by membership": "按成员筛选",
             "Owners": "所有者",
+            "Member": "成员",
 
             "Organization visibility": "组织可见性",
             "Your membership is visible to everyone and is displayed on your public profile.": "您的成员资格对所有人都是可见的，并显示在您的个人资料上。",
@@ -16348,6 +16359,13 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
                 "for the entire team) in any comment, issue, or pull request.": "对于整个团队）在任何评论、议题或拉取请求中。",
                 "New team": "新建团队",
 
+            "Find a team…": "搜索团队……",
+            "Visibility": "可见性",
+                "All": "所有",
+            "Members": "成员",
+                "My teams": "我的团队",
+                "No members": "没有成员",
+
         // 创建团队 /orgs/<org-login>/new-team
             "Create new team": "新建团队",
             "Team name": "团队名称",
@@ -16373,8 +16391,11 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) members?/, "$1 成员"],
+        [/(\d+) teams?/, "$1 团队"],
     ],
 };
+
 I18N.zh["orgs/new-team"]= I18N.zh["orgs/teams"]
 
 I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
