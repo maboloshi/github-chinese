@@ -155,7 +155,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -6678,6 +6678,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
 
     },
     "regexp": [ // 正则翻译
+        [/At least (\d+) approving review is required by reviewers with write access./, "至少需要 $1 个审查者批准。"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"]
     ]
@@ -9844,6 +9845,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "edit them?": "编辑它们？",
                 "Existing tag": "已存在的标签",
             "Invalid tag name": "无效的标签名",
+                "We weren’t able to create the release for you. Make sure you have a valid tag.": "我们无法为您创建发行版。请确保您有一个有效的标签。",
+                "There was an error creating your Release: tag name can't be blank, tag name is not well-formed, published releases must have a valid tag.": "创建发行版时出错：标签名称不能为空，标签名称格式不正确，已发布的发行版必须有一个有效的标签。",
                 "We can’t create a tag with this name. Take a look at the suggestions in the sidebar for example tag names.": "我们不能用这个名字创建标签。看看侧边栏的建议，看看标签名称的例子。",
             "Excellent! This tag will be created from the target when you publish this release.": "优秀! 当您发布这个版本时，这个标签将从目标创建。",
 
@@ -14166,6 +14169,11 @@ I18N.zh["notifications"] = { // 通知页面
         "Get the most out of your new inbox by quickly and easily marking all of your previously read notifications as done.": "快速轻松地将所有已阅读的通知标记为已完成，以充分利用新的收件箱。",
         "Overwhelmed by notifications? We've found some repositories that may be causing notifications you don't need.": "通知不知所措？我们发现了一些仓库，这些仓库可能会导致您不需要的通知。",
         "Update watching settings": "更新关注设置",
+        "Get started": "开始",
+            "Clean up your inbox": "清理收件箱",
+            "Marking your notifications as \"done\" helps to create a more focused inbox. Don't worry - if there is new activity, you'll still be notified.": "将您的通知标记为“已完成”有助于创建一个更加集中的收件箱。不用担心 - 如果有新的活动，您仍然会收到通知。",
+            "Mark all read notifications as done": "将所有已读通知标记为已完成",
+            "This process could take a few moments depending on the quantity.": "这个过程可能会根据数量的多少而耗费一些时间。",
 
         "Manage notifications": "管理通知",
         "Notification settings": "通知设置",
@@ -18745,3 +18753,58 @@ I18N.zh["developer/register"] = { // 开发者注册
     "regexp": [ // 正则匹配
     ],
 };
+
+I18N.zh["features"] = {
+    "static":{
+        "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
+        // 看板
+        "Experience AI": "体验 AI",
+            "with Copilot Chat": "通过 Copilot",
+            "The latest GitHub": "最新 GitHub",
+            "previews": "预览",
+        // 流水图
+        "Collaborative": "协作",
+            "Coding": "编程",
+        "Contribute to projects quickly with automatic environment setup.": "通过自动环境设置快速为项目做出贡献。",
+        "Make sure you see the changes you care about.": "确保您看到您关注的变化。",
+        "Build community around your code.": "围绕您的代码建立社区。",
+        // 列表
+            // 代码空间
+                "Spin up fully configured dev environments in the cloud with the full power of your favorite editor.": "在云端启动完全配置的开发环境，并利用您最喜爱的编辑器的全部功能。",
+            // GitHub Copilot
+                "With GitHub Copilot, get suggestions for whole lines or entire functions right inside your editor.": "使用GitHub Copilot，在您的编辑器内部即可获得整行代码或整个函数的建议。",
+            // 拉取请求
+                "Allow contributors to easily notify you of changes they've pushed to a repository – with access limited to the contributors you specify. Easily merge changes you accept.": "允许贡献者轻松地通知您他们已经推送到仓库的变更——访问权限限制在您指定的贡献者。轻松合并您接受的更改。",
+            // 讨论
+                "Dedicated space for your community to come together, ask and answer questions, and have open-ended conversations.": "为您的社区提供一个专门的空间，以便聚集在一起，提问和回答问题，以及进行开放式的交流。",
+            "Code search & code view": "代码搜索 & 代码审查",
+                "Our powerful new code search and code view enable developers to rapidly search, navigate, and understand code right from GitHub.com.": "我们强大的新代码搜索和代码查看功能，使开发者能够从GitHub.com上快速搜索、导航并理解代码。",
+            // 通知
+                "Get updates on the GitHub activity you've subscribed to. Use the notifications inbox to customize, triage, and manage your updates.": "获取您订阅的 GitHub 活动更新。使用通知收件箱来自定义、分类和管理您的更新。",
+            "Code reviews": "代码审查",
+                "Review new code, see visual code changes, and confidently merge code changes with automated status checks.": "审查新代码，查看视觉代码更改，并通过自动化状态检查自信地合并代码更改。",
+            "Code review assignments": "代码审查分配",
+                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该为拉取请求提交他们的审查。",
+            "Code owners": "代码所有者",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当对他们拥有的代码部分进行更改时，自动请求选定贡献者的审查，或者要求他们的批准。",
+            "Draft pull requests": "起草拉取请求",
+                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "使用拉取请求作为一种讨论和协作的方式，无需提交正式审查或冒不必要合并的风险。",
+            "Protected branches": "保护分支",
+                "Enforce restrictions on how code branches are merged, including requiring reviews, or allowing only specific contributors to work on a particular branch.": "强制限制代码分支的合并方式，包括要求审查，或者只允许特定贡献者在某个特定分支上工作。",
+            "Team reviewers": "团队审查人员",
+                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在GitHub上请求一个团队审查你的拉取请求。团队成员将收到通知，表明你已经要求他们进行审查。",
+            "Multiple assignees": "多人分配",
+                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达10人处理特定问题或拉取请求，让你更容易追踪谁在处理什么。",
+            "Multiple reviewers": "多人审查",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知你已请求他们进行审查。",
+            "Multi-line comments": "多行评论",
+                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次引用或评论多行代码，来澄清代码审查。",
+            "Public repositories": "公共仓库",
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "与任何GitHub成员合作在你控制的公共仓库中的代码。进行更改，打开一个拉取请求，创建一个问题等等。",
+            "Dark mode": "深色模式",
+                "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择你使用GitHub的方式。切换到深色主题或默认使用你的系统偏好设置。",
+    },
+    "regexp": [
+    ],
+};
+
