@@ -14061,7 +14061,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
-        [/(\d+)unverified emails?/, "$1 个未经验证的邮箱"],
+        [/(\d+) unverified emails?/, "$1 个未经验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
