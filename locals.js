@@ -13630,6 +13630,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Verified emails": "经过验证的电子邮箱",
                     // [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
                 "Verified emails give you access to more features on GitHub.": "经过验证的电子邮箱让您可以使用 GitHub 上的更多功能。",
+                "Unverified emails": "未经验证的电子邮箱",
+                "Unverified emails cannot receive notifications or be used to reset your password.": "未经验证的电子邮箱不能接收通知或用于重置您的密码。",
             "Password Alternatives": "密码替代方案",
                 "Passkeys": "通行密钥",
                 // [/(\d+) keys?/, "$1 个通行密钥"],
@@ -13856,6 +13858,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
     },
     "regexp": [ // 正则翻译
         [/(\d+) verified emails?/, "$1 个经过验证的邮箱"],
+        [/(\d+) unverified email/, "$1 个未经验证的邮箱"],
         [/(\d+) keys?/, "$1 个通行密钥"],
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
