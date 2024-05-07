@@ -36,7 +36,7 @@
 
 浏览器                              | 脚本管理器
 :---------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey],[Violentmonkey][Violentmonkey]
+Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Safari 浏览器                       | [Macaque][Macaque]
 Firefox 浏览器                      | 未测试
 
@@ -51,8 +51,8 @@ Firefox 浏览器                      | 未测试
 1. 刷新下页面，即可发现网站已中文化。
 
 ## 词库本地调试方法
-1. 需要安装插件管理器[Tampermonkey][Tampermonkey]，其他可能不支持。
-1. 在浏览器插件管理中，开启[Tampermonkey][Tampermonkey]的 “允许访问文件网址” 如图：
+1. 需要安装插件管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
+1. 在浏览器插件管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址” 如图：
 
     <picture>
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/允许访问文件网址-light.png"/>
@@ -61,9 +61,9 @@ Firefox 浏览器                      | 未测试
     </picture>
 
 1. 将修改的词库文件放到方便访问的本地位置。
-1. 安装[GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]，实际[GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]也可。
-1. 回到插件管理器，修改词库文件路径，即类似`// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
-   中网址改成本地路径格式如`file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
+1. 安装 [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]，实际 [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js] 也可。
+1. 回到插件管理器，修改词库文件路径，即类似 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
+   中网址改成本地路径格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
 
   > [!TIP]
   > 直接将词库文件拖到浏览器的地址栏，再复制地址栏的中地址即可。
@@ -322,29 +322,32 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/cat-kun" title="cat-kun">
   <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
 </a>
-<a href="https://github.com/CN-traveler" title="CN-traveler">
-  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
+<a href="https://github.com/pecasha" title="Pecasha">
+  <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
 </a>
-<a href="https://github.com/ImgBotApp" title="Imgbot">
-  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
-</a>
-<a href="https://github.com/swsoyee" title="InfinityLoop">
-  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
-</a>
-<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
-  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
-</a>
-<a href="https://github.com/daydaygo" title="dayday">
-  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
-</a>
-<a href="https://github.com/pangshitong" title="pangshitong">
-  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
+<a href="https://github.com/xuexb" title="前端小武">
+  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
 </a>
 <a href="https://github.com/wang4yu6peng13" title="wang4yu6peng13">
   <img src="https://avatars.githubusercontent.com/u/10207042?v=4" width="42;" alt="wang4yu6peng13"/>
 </a>
-<a href="https://github.com/xuexb" title="前端小武">
-  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
+<a href="https://github.com/pangshitong" title="pangshitong">
+  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
+</a>
+<a href="https://github.com/daydaygo" title="dayday">
+  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
+</a>
+<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
+  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/swsoyee" title="InfinityLoop">
+  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
+</a>
+<a href="https://github.com/ImgBotApp" title="Imgbot">
+  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
+</a>
+<a href="https://github.com/CN-traveler" title="CN-traveler">
+  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="CN-traveler"/>
 </a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
