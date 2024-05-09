@@ -1403,10 +1403,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Member statuses": "成员状态", // 组织
 
         // 仪表板右上方看板
-        //"Learn from the best": "向最优秀的人学习",
-        //"Unlock the full power of GitHub! Gain expertise and insights from top organizations through guided tutorials, boosting productivity, enhancing security, and enabling seamless collaboration.": "释放 GitHub 的全部力量！通过指导教程获得顶级组织的专业知识和见解，提高生产力、增强安全性并实现无缝协作。",
-        //"Start learning": "开始学习",
-        "What does it mean for a technology to go mainstream? Discover how AI is changing the developer experience.": "了解一项技术成为主流所承载的含义是什么？深入探讨 AI 如何在各个层面上转变着开发者的工作体验。",
+        "The world’s fair of software is here.": "世界软件博览会就在这里。",
+        "The GitHub Universe call for sessions is now open! Apply to share your expertise by submitting a session proposal today. Plus, get 35% off your tickets to GitHub Universe only for a limited time.": "GitHub Universe 的会议征集现已开启！立即提交您的会议提案，分享您的专业知识。此外，现在限时可享 35% 的 GitHub Universe 会议门票折扣。",
 
         // 用户 浮动信息卡
         "Member of": "隶属组织",
