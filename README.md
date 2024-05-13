@@ -49,6 +49,7 @@ Firefox 浏览器                      | 未测试
         > 2. 目前, 已实现每周一凌晨自动更新开发版版本号
     - [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
+> 需要视频教程的可以去看看[这里](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
 
 ## 词库本地调试方法
 1. 需要安装插件管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
