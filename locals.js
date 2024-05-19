@@ -5736,12 +5736,18 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
-                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12, 2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories ended on April 12, 2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持已结束于 2024 年 4 月 12 日。有关详细信息，请参阅",
                 "changelog": "更新日志",
 
-            "Your old repository's clone URL": "您旧仓库的克隆地址",
-            "Learn more about the types of": "了解更多关于",
-            "supported VCS": "VCS 的支持",
+            "Your source repository details": "您源仓库的详情",
+            "The URL for your source repository": "您源仓库的 URL",
+                "Learn more about the types of": "了解更多关于",
+                "importing git repositories": "导入 Git 仓库",
+
+            "Please enter your credentials if required for cloning your remote repository.": "如果需要克隆远程仓库，请输入您的凭据。",
+            "Your username for your source repository": "源仓库用户名",
+            "Your access token or password for your source repository": "源仓库的访问令牌或密码",
+
             "Your new repository details": "新仓库详情",
             //"Owner": "所有者",
             "Repository Name": "仓库名称",
