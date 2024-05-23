@@ -35,9 +35,10 @@
 ## 🌐 浏览器与脚本管理器
 
 浏览器                              | 脚本管理器
-:---------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器| [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Safari 浏览器                       | [Macaque][Macaque]
+:--------------------------------: | :---------: 
+Chrome 或 基于 Chromium 内核的浏览器  | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
+Safari 浏览器（MacOS）               | [Macaque][Macaque]
+Safari 浏览器（iOS 或 iPadOS）         | [Stay][Stay]
 Firefox 浏览器                      | 未测试
 
 ## 💽 安装
@@ -70,6 +71,12 @@ Firefox 浏览器                      | 未测试
   > 直接将词库文件拖到浏览器的地址栏，再复制地址栏的中地址即可。
 
 ## 📝 更新说明
+
+### 2024-05-23 16:42:55
+
+更新至 1.9.1
+
+1. 更新`切换正则功能按钮`
 
 ### 2023-12-09 20:46:16
 
@@ -288,6 +295,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [Tampermonkey]: http://tampermonkey.net/ "篡改猴"
 [Violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 [Macaque]: https://macaque.app/ "猕猴"
+[Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 "Stay"
 
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 托管"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
@@ -311,8 +319,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/52cik" title="楼教主">
   <img src="https://avatars.githubusercontent.com/u/5033310?v=4" width="42;" alt="楼教主"/>
 </a>
-<a href="https://github.com/wuyuncheng-26" title="wuyuncheng-26">
-  <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="wuyuncheng-26"/>
+<a href="https://github.com/wuyuncheng-26" title="是小胖呀26">
+  <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="是小胖呀26"/>
 </a>
 <a href="https://github.com/TC999" title="TC999">
   <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
@@ -325,6 +333,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
+</a>
+<a href="https://github.com/3DMXM" title="小莫">
+  <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
 </a>
 <a href="https://github.com/xuexb" title="前端小武">
   <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
