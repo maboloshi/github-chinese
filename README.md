@@ -317,8 +317,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/52cik" title="楼教主">
   <img src="https://avatars.githubusercontent.com/u/5033310?v=4" width="42;" alt="楼教主"/>
 </a>
-<a href="https://github.com/wuyuncheng-26" title="wuyuncheng-26">
-  <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="wuyuncheng-26"/>
+<a href="https://github.com/wuyuncheng-26" title="是小胖呀26">
+  <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="是小胖呀26"/>
 </a>
 <a href="https://github.com/TC999" title="TC999">
   <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
@@ -331,6 +331,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
+</a>
+<a href="https://github.com/3DMXM" title="小莫">
+  <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
 </a>
 <a href="https://github.com/xuexb" title="前端小武">
   <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
