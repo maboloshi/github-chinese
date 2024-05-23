@@ -459,10 +459,9 @@
             GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
             if (enable_RegExp) {
                 location.reload();
-            } else {
-                GM_unregisterMenuCommand(id);
-                registerMenuCommand();
             }
+            GM_unregisterMenuCommand(id);
+            id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
         };
 
         let id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
