@@ -918,6 +918,23 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Reload": "重新加载",
             "to refresh your session.": "以刷新您的会话",
 
+        // Cookie 设置
+            "Manage cookie preferences": "管理 Cookie 偏好设置",
+            "Most GitHub websites use cookies. Cookies are small text files placed on your device to store data so web servers can use it later. GitHub and our third-party partners use cookies to remember your preferences and settings, help you sign in, show you personalized ads, and analyze how well our websites are working. For more info, see the Cookies and similar technologies section of the": "大多数 GitHub 网站都使用 Cookie。Cookie 是保存在您的设备上的小型文本文件，用于存储数据，以便 Web 服务器稍后使用。GitHub 和我们的第三方合作伙伴使用 Cookie 来记住您的偏好和设置、帮助您登录、向您显示个性化广告以及分析我们网站的运行情况。有关更多信息，请参阅隐私声明中的",
+            "Privacy Statement": "Cookie 和类似技术部分",
+            "Accept": "接受",
+            "Reject": "拒绝",
+            "Reset all": "重置全部",
+            "Save changes": "保存更改",
+            "Required": "必要的",
+            "GitHub uses required cookies to perform essential website functions and to provide the services. For example, cookies are used to log you in, save your language preferences, provide a shopping cart experience, improve performance, route traffic between web servers, detect the size of your screen, determine page load times, improve user experience, and for audience measurement. These cookies are necessary for our websites to work.": "GitHub 使用必需的 Cookie 来执行基本网站功能并提供服务。例如，Cookie 用于登录、保存您的语言偏好、提供购物车体验、提高性能、在 Web 服务器之间路由流量、检测屏幕大小、确定页面加载时间、改善用户体验以及用于受众测量。这些 Cookie 是我们网站正常运行所必需的。",
+            "Analytics": "分析",
+            "We allow third parties to use analytics cookies to understand how you use our websites so we can make them better. For example, cookies are used to gather information about the pages you visit and how many clicks you need to accomplish a task. We also use some analytics cookies to provide personalized advertising.": "我们允许第三方使用分析性 Cookie 来了解您如何使用我们的网站，以便我们改进网站。例如，Cookie 用于收集有关您访问的页面以及完成任务所需的点击次数的信息。我们还使用一些分析性 Cookie 来提供个性化广告。",
+            "Social Media": "社交媒体",
+            "GitHub and third parties use social media cookies to show you ads and content based on your social media profiles and activity on GitHub's websites. This ensures that the ads and content you see on our websites and on social media will better reflect your interests. This also enables third parties to develop and improve their products, which they may use on websites that are not owned or operated by GitHub.": "GitHub 和第三方使用社交媒体 Cookie 根据您的社交媒体个人资料和 GitHub 网站上的活动向您显示广告和内容。这可以确保您在我们的网站和社交媒体上看到的广告和内容将更好地反映您的兴趣。还使第三方能够开发和改进它们的产品，它们可能会在不由 GitHub 拥有或运营的网站上使用这些产品。",
+            "Advertising": "广告",
+            "In addition, GitHub and third parties use advertising cookies to show you new ads based on ads you've already seen. Cookies also track which ads you click or purchases you make after clicking an ad. This is done to show you ads that are more relevant to you and for business purposes with our advertising partners. For example, cookies are used to detect when you click an ad and to show you ads based on your social media interests and website browsing history.": "此外，GitHub 和第三方使用广告 Cookie 根据您已经看过的广告向您显示新广告。Cookie 还会跟踪您点击的广告或点击广告后进行的购买。这样做是为了向您显示与您更相关的广告，并用于与我们的广告合作伙伴开展业务。例如，Cookie 用于检测您何时点击广告，并根据您的社交媒体兴趣和网站浏览历史记录向您显示广告。",
+
         // 日历
             "Jan": "1月",
             "Feb": "2月",
@@ -5736,12 +5753,18 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 导入仓库 第一页 https://github.com/new/import
             "Import your project to GitHub": "将您的项目导入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
-                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories will end on April 12, 2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持将于 2024 年 4 月 12 日结束。有关详细信息，请参阅",
+                "Support for importing Mercurial, Subversion and Team Foundation Version Control (TFVC) repositories ended on April 12, 2024. For more details, see the": "对导入 Mercurial、Subversion 和 Team Foundation 版本控制 (TFVC) 仓库的支持已结束于 2024 年 4 月 12 日。有关详细信息，请参阅",
                 "changelog": "更新日志",
 
-            "Your old repository's clone URL": "您旧仓库的克隆地址",
-            "Learn more about the types of": "了解更多关于",
-            "supported VCS": "VCS 的支持",
+            "Your source repository details": "您源仓库的详情",
+            "The URL for your source repository": "您源仓库的 URL",
+                "Learn more about the types of": "了解更多关于",
+                "importing git repositories": "导入 Git 仓库",
+
+            "Please enter your credentials if required for cloning your remote repository.": "如果需要克隆远程仓库，请输入您的凭据。",
+            "Your username for your source repository": "源仓库用户名",
+            "Your access token or password for your source repository": "源仓库的访问令牌或密码",
+
             "Your new repository details": "新仓库详情",
             //"Owner": "所有者",
             "Repository Name": "仓库名称",
