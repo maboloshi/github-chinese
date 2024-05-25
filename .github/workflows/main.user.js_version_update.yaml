@@ -1,7 +1,7 @@
 name: main.user.js version update
 on:
   schedule:
-     # 每周一的UTC时间16点（北京时间凌晨0点）
+     # 每周日的UTC时间16点（北京时间周一凌晨0点）
     - cron: "0 16 * * 0"
   workflow_dispatch:
 
