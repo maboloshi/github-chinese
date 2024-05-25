@@ -1,7 +1,7 @@
 name: main(greasyfork).user.js and locals(greasyfork).js update
 on:
   schedule:
-    # 每周五的UTC时间16点（北京时间凌晨0点）
+    # 每周四的UTC时间16点（北京时间周五凌晨0点）
     - cron: "0 16 * * 4"
   workflow_dispatch:
 
