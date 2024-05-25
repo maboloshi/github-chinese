@@ -3,6 +3,7 @@ on:
   schedule:
     # 每周五的UTC时间16点（北京时间凌晨0点）
     - cron: "0 16 * * 4"
+  workflow_dispatch:
 
 jobs:
   update_version:
