@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.0-2024-04-29
+// @version      1.9.1-2024-05-25
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -459,10 +459,9 @@
             GM_notification(`已${enable_RegExp ? '开启' : '关闭'}正则功能`);
             if (enable_RegExp) {
                 location.reload();
-            } else {
-                GM_unregisterMenuCommand(id);
-                registerMenuCommand();
             }
+            GM_unregisterMenuCommand(id);
+            id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
         };
 
         let id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
