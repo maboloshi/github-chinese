@@ -40,7 +40,7 @@ Chrome 或 基于 Chromium 内核的浏览器  | [Tampermonkey][Tampermonkey] �
 Safari 浏览器（MacOS）               | [Macaque][Macaque]
 Safari 浏览器（iOS 或 iPadOS）       | [Stay][Stay]
 Firefox 或 基于 Gecko 内核的浏览器    | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
-Via 浏览器(Android)                 | 浏览器内自带
+Via 浏览器（Android）                | 浏览器内自带
 
 ## 💽 安装
 1. 请先安装用户脚本管理器。
