@@ -1507,7 +1507,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
             "- same time": "- 时间相同",
-        
+
             // 编辑个人资料
                 "Edit profile": "编辑个人资料",
                 "Name": "名称",
