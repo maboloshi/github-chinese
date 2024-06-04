@@ -15873,7 +15873,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
             "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
             // [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
-            " is provided by a third-party and is governed by": "是由第三方提供的，并受单独的",
+            "is provided by a third-party and is governed by": "是由第三方提供的，并受单独的",
             "terms of service": "服务条款",
             "privacy policy": "隐私政策",
             ", and": "，和",
