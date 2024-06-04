@@ -5474,7 +5474,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Settings": "设置",
 
             "Additional navigation options": "更多导航选项", // 小屏
-            "View all files": "查看所有文件", //Android UA下出现
+            "View all files": "查看所有文件", //Android UA 下出现
 
             // "Pulse": "统计",
             // "Graphs": "图表",
