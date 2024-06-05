@@ -15700,12 +15700,19 @@ I18N.zh["account/choose"] = { // 账户升级选择
 I18N.zh["marketplace"] = { // GitHub 市场
     "static": { // 静态翻译
         // GitHub 市场主页 https://github.com/marketplace
-            "Extend GitHub": "拓展 GitHub",
+           "Enhance your workflow with extensions": "增强您的工作流程",
+               "Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
+               "Search for Copilot extensions, apps, and actions": "搜索 Copilot 扩展、应用和操作",
+            "Featured": "精选",
+                "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
+                "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
+           "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
             "Explore apps": "探索应用",
             "Explore free apps": "探索免费应用", // 未登录
             "Contact sales": "联系销售",
+            "Create a new extension": "创建新扩展",
 
             "Types": "类型",
                 "Build on your workflow with apps that integrate with GitHub.": "使用与 GitHub 集成的应用构建您的工作流程。",
@@ -15721,6 +15728,8 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Most installed/starred": "安装次数最多/标星最多",
 
             // 类别
+                "All apps": "所有应用",
+                "All actions": "所有操作",
                 "API management": "API 管理",
                     "Structure your API infrastructure to enable various internet gateways to interact with your service.": "构建应用接口基础设施，使各种互联网网关能够与您的服务互动。",
                 "Chat": "聊天",
@@ -15741,6 +15750,14 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "Secure and manage your third-party dependencies.": "保护和管理第三方依赖关系。",
                 "Deployment": "部署",
                     "Streamline your code deployment so you can focus on your product.": "简化代码部署，让您专注于产品。",
+                "Deployment Protection Rules": "部署保护规则",
+                    // 应用
+                    "Deployment Protection Rules apps": "部署保护规则应用",
+                    "Deployment Protection Rules actions": "部署保护规则操作",
+                    "Enables custom protection rules to gate deployments with third-party services": "启用自定义保护规则，以使用第三方服务进行部署",
+                "GitHub Sponsors": "GitHub 赞助",
+                    "GitHub Sponsors actions": "GitHub 赞助操作",
+                    
                 "IDEs": "集成开发环境",
                     "Find the right interface to build, debug, and deploy your source code.": "找到合适的界面来构建、调试和部署源代码。",
                 "Learning": "学习",
