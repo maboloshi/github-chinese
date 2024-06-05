@@ -3252,8 +3252,13 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Strengthen your account by ensuring your password is strong.": "确保密码的安全性，以保护您的账户。",
             "Learn more about creating a strong password": "了解如何创建强密码",
 
-            "Passkeys": "通行密钥",
-                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "密码匙是一种网络凭据，可通过触摸、面部识别、设备密码或 PIN 码验证身份。它们可用作密码替代品或 2FA 方法。",
+            "Passkeys": "通行密钥"，
+                "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。通行密钥可以作为一种简单且安全的替代方式用于登录，替代您的密码和双因素身份验证凭证。",
+                "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
+                "Add a passkey": "添加通行密钥",
+
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。",
                 "Learn more about passkeys": "了解更多关于通行密钥的信息",
 
                 "Your passkeys": "您的通行密钥",
