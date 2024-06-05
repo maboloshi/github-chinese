@@ -4127,8 +4127,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
                 
-                "Dependabot on Actions runners": "Dependabot 在操作运行器上",
-                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全性和版本更新。",
+                "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
+                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
                         "Enable dependabot on actions": "在操作中启用 Dependabot",
@@ -4137,7 +4137,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                         "Disable dependabot on actions": "在操作中禁用 Dependabot",
                             "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
 
-                "Dependabot on self-hosted runners": "Dependabot 在自托管运行器上",
+                "Dependabot on self-hosted runners": "Dependabot 应用于自托管运行器",
                     "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
@@ -13170,40 +13170,46 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "Review and manage alert presets.": "查看和管理警报预设。", //私有库
                         // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
-            "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
-                    // "Dependabot rules": "Dependabot 规则",
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                        // "Dependabot rules": "Dependabot 规则",
 
-                // 启用对话框
-                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
-                        "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也将启用他们。",
-                        "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+                    // 启用对话框
+                        "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                            "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也将启用他们。",
+                            "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
-            "Grouped security updates": "分组安全更新",
-                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。该选项可被 dependabot.yml 中指定的组规则覆盖 -",
-                "learn more here": "在此了解更多",
+                "Grouped security updates": "分组安全更新",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。该选项可被 dependabot.yml 中指定的组规则覆盖 -",
+                    "learn more here": "在此了解更多",
 
-                // 对话框
-                    "Grouped security updates needs the dependency graph, Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too": "分组安全更新需要启用依赖关系图、Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
-                    "Grouped security updates needs Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too.": "分组安全更新需要启用 Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
-                    "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 安全更新，因此我们也将启用它。",
+                    // 对话框
+                        "Grouped security updates needs the dependency graph, Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too": "分组安全更新需要启用依赖关系图、Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
+                        "Grouped security updates needs Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too.": "分组安全更新需要启用 Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
+                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 安全更新，因此我们也将启用它。",
 
-            "Dependabot version updates": "Dependabot 版本更新",
-                "Enable Dependabot version updates": "启用 Dependabot 版本更新",
-                "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
-                "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
-                "Configure": "配置",
-                "― Create a config file": "― 创建配置文件",
+                "Dependabot version updates": "Dependabot 版本更新",
+                    "Enable Dependabot version updates": "启用 Dependabot 版本更新",
+                    "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
+                    "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
+                    "Configure": "配置",
+                    "― Create a config file": "― 创建配置文件",
+
+                "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
+                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
+
+                "Dependabot on self-hosted runners": "Dependabot 应用于自托管运行器",
+                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
 
-                "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
-
                 // 组织仓库
-                "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企业或组织策略在此仓库上禁用了 GitHub Actions。要使用代码扫描，请要求您的组织管理员启用 GitHub Actions，或者",
-                "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
+                    "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
+
+                    "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企业或组织策略在此仓库上禁用了 GitHub Actions。要使用代码扫描，请要求您的组织管理员启用 GitHub Actions，或者",
+                    "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
 
                 "Tools": "工具",
                     "CodeQL analysis": "CodeQL 分析",
@@ -13211,15 +13217,56 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "for": "为",
                         "eligible": "符合条件的",
                         "repositories.": "仓库。",
+                        "Last scan": "最后一次扫描",
+
                         "Set up": "设置",
-                        "Default": "默认",
-                            "CodeQL will automatically find the best configuration for your repository.": "CodeQL 将自动给您的仓库找到最佳配置。",
-                            "Languages detected in this repository are not compatible with this setup type at this time. Use the advanced setup instead.": "目前，该仓库中检测到的语言与该设置类型不兼容。请使用高级设置。",
-                        "Advanced": "高级",
-                            "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库中的 YAML 文件定制您的 CodeQL 配置。",
-                        "Not supported": "不支持",
-                        "Languages on this repository are not compatible with this feature. Learn more about": "该仓库上的语言与此功能不兼容。了解更多关于",
-                        "supported languages and frameworks": "所支持的语言和框架",
+                            "Default": "默认",
+                                "CodeQL will automatically find the best configuration for your repository.": "CodeQL 将自动给您的仓库找到最佳配置。",
+                                // "Languages detected in this repository are not compatible with this setup type at this time. Use the advanced setup instead.": "目前，该仓库中检测到的语言与该设置类型不兼容。请使用高级设置。",
+                            "Advanced": "高级",
+                                "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库中的 YAML 文件定制您的 CodeQL 配置。",
+                            // "Not supported": "不支持",
+                            // "Languages on this repository are not compatible with this feature. Learn more about": "该仓库上的语言与此功能不兼容。了解更多关于",
+                            // "supported languages and frameworks": "所支持的语言和框架",
+
+                            // CodeQL 默认设置
+                                "CodeQL default configuration": "CodeQL 默认设置",
+                                "These languages were detected on the default branch of this repository.": "这些语言是在该仓库的默认分支上检测到的。",
+                                "Query suites": "查询套件",
+                                    "Group of queries": "查询套件",
+                                    "to run against your code.": "针对您的代码运行。",
+
+                                    "Default": "默认",
+                                        "Recommended": "推荐",
+                                        "CodeQL high-precision queries.": "CodeQL 高精度查询。",
+                                "Scan events": "扫描事件",
+                                    "These events will trigger a new scan.": "这些事件将触发新的扫描。",
+                                    "On push and pull requests to": "推送和拉取请求到",
+                                        "protected branches": "受保护的分支",
+                                    "On a weekly schedule": "每周计划",
+                                        "Next scan of": "下次扫描",
+                                "Enable CodeQL": "启用 CodeQL",
+                                "Close": "关闭",
+
+                                "Setting up": "设置中",
+                                "View setup log": "查看设置日志",
+
+                                // 顶部提醒
+                                    "Repository settings saved. This initial setup might take a while because CodeQL will perform a full scan of the repository.": "仓库设置已保存。此初始设置可能需要一段时间，因为 CodeQL 将对仓库执行完整扫描。",
+                            // 开启后三个点菜单
+                                "View last scan log": "查看最近一次扫描日志",
+                                "View Code Scanning alerts": "查看代码扫描警报",
+                                "View CodeQL configuration": "查看 CodeQL 设置",
+                                "Switch to advanced": "切换到高级",
+                                // 切换到 CodeQL 工作流程对话框
+                                    "Switch to a CodeQL workflow?": "切换到 CodeQL 工作流程？",
+                                        "To switch to a workflow-based configuration, we must disable CodeQL first. CodeQL will stop analyzing code and resume once a valid workflow file is committed to the repository.": "要切换到基于工作流的配置，我们必须先禁用 CodeQL。CodeQL 将停止分析代码，并在有效的工作流文件提交到仓库后恢复分析。",
+                                "Disable CodeQL": "禁用 CodeQL",
+                                // 禁用对话框
+                                    "Disable CodeQL?": "禁用 CodeQL？",
+                                    "CodeQL will stop analyzing code from this repository. Existing alerts will remain open; you can dismiss them but not close them as fixed, as CodeQL needs to be enabled for that to happen. Existing CodeQL Actions workflows on this repository must be": "CodeQL 将停止分析该仓库中的代码。现有的警报将保持打开；您可以忽略它们，但不能关闭它们，因为 CodeQL 需要启用才能关闭。要",
+                                    "manually re-enabled to resume previous analyses": "恢复先前的分析，必须手动重新启用",
+                                    "": "",
                     "Other tools": "其他工具",
                         "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
                         "Explore workflows": "探索工作流程",
