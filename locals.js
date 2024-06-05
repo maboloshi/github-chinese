@@ -3262,7 +3262,6 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Learn more about passkeys": "了解更多关于通行密钥的信息",
 
                 "Your passkeys": "您的通行密钥",
-                "Add a passkey": "添加通行密钥",
                 "| Last used": "| 最后使用",
                 // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑通行密钥昵称",
