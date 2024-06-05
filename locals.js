@@ -262,8 +262,8 @@ I18N.zh["title"] = { // 标题翻译
         "New OAuth Application": "新 OAuth 应用",
         "Create a new Gist": "创建新代码片段",
         "Discover gists": "探索代码片段",
-        "Enable two-factor authentication": "启用双重身份验证",
-        "Manage two-factor authentication": "管理双重身份验证",
+        "Enable two-factor authentication": "启用双因素身份验证",
+        "Manage two-factor authentication": "管理双因素身份验证",
         "Options": "仓库 · 选项",
         "Confirm access": "授权访问",
         "General": "通常",
@@ -3064,8 +3064,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                         "Privately discuss, fix, and publish information about security vulnerabilities found in your repository.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
                     "Role-based access control": "基于角色的访问控制",
                         "Define users' level of access to your code, data and settings.": "定义用户访问代码、数据和设置的级别。",
-                    "Required 2FA": "双重身份验证（2FA）",
-                        "Use an extra layer of security with two factor authentication (2FA) when logging into GitHub.": "登录 GitHub 时，使用双重身份验证（2FA）作为额外的安全层。",
+                    "Required 2FA": "双因素身份验证（2FA）",
+                        "Use an extra layer of security with two factor authentication (2FA) when logging into GitHub.": "登录 GitHub 时，使用双因素身份验证（2FA）作为额外的安全层。",
                     // 审计日志
                         "Quickly review the actions performed by members of your organization.": "快速审查组织成员执行的操作。",
                     "Enterprises can connect to advanced systems like LDAP and SAML single sign-on (SSO).": "企业可以连接到如 LDAP 和 SAML 单一登录 (SSO) 等高级系统。",
@@ -3276,44 +3276,44 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Note: You may continue to see this passkey as an option during sign-in until you also delete it from your browser, device or associated account's password management settings.": "注意：您可能会在登录过程中继续看到此通行密钥作为一个选项，直到您将其从浏览器、设备或关联帐户的密码管理设置中删除。",
                     "Deleting…": "删除中…",
 
-            // 双重身份验证
+            // 双因素身份验证
                 // 顶部提醒
-                    "You can now manage your two-factor authentication methods from this page.": "您现在可以从此页面管理您的双重身份验证方法。",
-                    "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
+                    "You can now manage your two-factor authentication methods from this page.": "您现在可以从此页面管理您的双因素身份验证方法。",
+                    "Two-factor authentication successfully disabled.": "成功禁用双因素身份验证。",
                     "SMS/Text message successfully configured.": "短信/文本信息配置成功。",
 
-            "Two-factor authentication": "双重身份验证",
-                "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
-                "Enable two-factor authentication": "启用双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
+                "Two-factor authentication is not enabled yet.": "尚未启用双因素身份验证。",
+                "Enable two-factor authentication": "启用双因素身份验证",
 
-                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
+                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双因素身份验证。感谢您帮助维护生态系统安全！",
                 "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
-                ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双重身份验证，感谢您帮助维护生态系统的安全！",
-                "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
+                ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双因素身份验证，感谢您帮助维护生态系统的安全！",
+                "Learn more about our two-factor authentication initiative": "了解更多关于我们的双因素身份验证的倡议",
 
-                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
-                "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
+                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双因素身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
+                "Learn more about two-factor authentication": "了解更多关于双因素身份验证的信息",
 
 
                 "Enable": "启用",
                 "Enabled": "启用",
-                    "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
+                    "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双因素身份验证。",
                 "Disable": "停用",
 
             "Preferred 2FA method": "首选 2FA 方法",
-                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双重身份验证的首选方法。",
+                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双因素身份验证的首选方法。",
 
-            "Two-factor methods": "双重身份验证方式",
+            "Two-factor methods": "双因素身份验证方式",
                 "Configured": "已配置",
 
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
+                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双因素身份验证码。",
                     "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
 
                     "Manage Authenticator app": "管理身份验证器应用",
 
                     "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
-                    ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二个因素来验证您的身份。",
+                    ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二验证因素来验证您的身份。",
 
                     "Scan the QR code": "扫描二维码",
                     "Re-scan the QR code": "重新扫描二维码",
@@ -3326,7 +3326,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                         "Your two-factor secret": "您的双因素密钥",
 
                     "Verify the code from the app": "验证来自身份验证器应用的验证码",
-                    "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
+                    "Two-factor code verification failed. Please try again.": "双因素身份验证码验证失败。请重试。",
 
                 "SMS/Text message": "短信/文字信息",
                     "Manage SMS/Text message": "管理短信/文字信息",
@@ -3360,7 +3360,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Try again": "请重试",
 
                 "GitHub Mobile": "GitHub Mobile",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双因素身份验证。",
                     "Manage GitHub Mobile": "管理 GitHub Mobile",
 
                     // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
@@ -3368,7 +3368,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Recovery options": "恢复选项",
                 "Recovery codes": "恢复码",
-                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
                     "View": "查看",
 
@@ -3376,7 +3376,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Confirm access": "授权访问",
                 "Authentication code": "验证码",
                     "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
-                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
                 "Verify": "验证",
                 "Verify": "验证",
                 "Verifying…": "验证中…",
@@ -3422,16 +3422,16 @@ I18N.zh["settings/auth"] = {
 
         // 查看恢复码 https://github.com/settings/auth/recovery-codes
             // 顶部提醒
-                "New two-factor recovery codes successfully generated. Save them in a safe, durable location and discard your previous codes.": "已成功生成新的双重身份验证恢复码。将它们保存在安全、耐用的位置，并丢弃以前的恢复码。", // 生成新恢复码
+                "New two-factor recovery codes successfully generated. Save them in a safe, durable location and discard your previous codes.": "已成功生成新的双因素身份验证恢复码。将它们保存在安全、耐用的位置，并丢弃以前的恢复码。", // 生成新恢复码
 
-            "Two-factor recovery codes": "双重身份验证恢复码",
-                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+            "Two-factor recovery codes": "双因素身份验证恢复码",
+                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
 
             "Recovery codes": "恢复码",
                 "Keep your recovery codes as safe as your password. We recommend saving them with a password manager such as": "保持您的恢复码与您的密码一样安全。我们建议使用密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot.": "将您的恢复码保存在一个安全的地方。",
                 "These new codes have replaced your old codes. Save them in a safe spot.": "这些新恢复码已取代您的旧恢复。请将它们保存在安全的地方。", // 生成新恢复码
-                "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二要素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
+                "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二验证因素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
                 "will": "将",
                 "lose access to your account.": "无法访问您的帐户。",
 
@@ -3455,7 +3455,7 @@ I18N.zh["settings/sessions"] = {
 
         // 会话详情 https://github.com/settings/sessions
             "Web sessions": "网络会话",
-            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双重身份验证方法。",
+            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双因素身份验证方法。",
             "Learn more about authentication with GitHub Mobile.": "了解更多关于 GitHub Mobile 身份验证的信息。",
             "To get started, install GitHub Mobile for": "首先，安装 GitHub Mobile 适用于",
             "and sign in to your account.": "并登录您的帐户。",
@@ -13772,14 +13772,14 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
-        // 双重身份验证登录 https://github.com/sessions/two-factor/app
+        // 双因素身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
             // "Learn more.": "了解更多。",
             "Confirm password to continue": "确认密码以继续",
             "Confirm password": "确认密码",
             "Tip:": "提示：",
 
-            "Two-factor authentication": "双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
             "Authentication code": "验证码",
                 "More information about Authentication Codes": "更多关于验证码的信息",
             //"Signing in…": "登录中…",
@@ -13787,7 +13787,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Verify": "验证",
                 "Verifying": "验证中",
                 "Verifying…": "验证中…",
-            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的 “双重身份验证器” 应用（TOTP），以查看您的身份验证码。",
+            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的 “双因素身份验证器” 应用（TOTP），以查看您的身份验证码。",
 
             "Use this method for future logins": "今后的登录中使用此方法",
                 "Future logins on this device will prompt you to use": "今后在该设备上的登录将提示您使用",
@@ -13806,7 +13806,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Retry": "请重试",
 
             "Unable to verify with GitHub Mobile?": "无法使用 GitHub Mobile 进行验证？",
-                "Enter two-factor authentication code": "输入双重身份验证码",
+                "Enter two-factor authentication code": "输入双因素身份验证码",
 
             // 验证状态提醒
             "Sign-in request timed out.": "登录请求超时。",
@@ -13821,8 +13821,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "Unable to verify with your passkey?": "无法验证您的通行密钥？",
 
-        // 双重身份验证恢复 https://github.com/sessions/two-factor/recovery
-            "Two-factor recovery": "双重身份验证恢复",
+        // 双因素身份验证恢复 https://github.com/sessions/two-factor/recovery
+            "Two-factor recovery": "双因素身份验证恢复",
             "Recovery code": "恢复码",
 
             "If you are unable to access your mobile device, enter one of your recovery codes to verify your identity.": "如果您无法访问您的移动设备，请输入您的一个恢复码以验证您的身份。",
@@ -13846,7 +13846,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "within 1-3 days": "在 1-3 天内",
             "I understand, get started": "我知道了，开始吧",
 
-            "Two-factor authentication failed.": "双重身份验证失败。",
+            "Two-factor authentication failed.": "双因素身份验证失败。",
 
         // 帐户恢复 https://github.com/sessions/recovery
             "Account recovery": "帐户恢复",
@@ -13854,7 +13854,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Enter a recovery code": "输入恢复码",
                 "The file containing your recovery codes may exist on your computer - check for a file named": "包含恢复码的文件可能存在于您的计算机上——请检查一个名为",
             //使用 GitHub Mobile 应用进行身份验证
-            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub Mobile 会话，可以用来进行双重身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
+            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub Mobile 会话，可以用来进行双因素身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
 
             "First we need to verify an email address": "首先，我们需要验证一个电子邮箱地址",
             "by sending a one-time password to all addresses associated with this account.": "用于通过向该帐户关联的所有地址发送一次性密码。",
@@ -13897,24 +13897,24 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 // [/(\d+) keys?/, "$1 个通行密钥"],
                 "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
                     "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
-            "Two-factor methods": "双重身份验证方式",
+            "Two-factor methods": "双因素身份验证方式",
                 "Your preferred 2FA method is": "您首选的 2FA 方式是",
                 "Configured": "已配置",
                 "Not configured": "未配置",
 
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
+                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双因素身份验证码。",
                 "SMS/Text message": "短信/文字信息",
                     // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
                 "Security keys": "安全密钥",
-                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二验证因素。",
                 "GitHub Mobile": "GitHub Mobile",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双因素身份验证。",
                     "No devices": "没有设备",
                 "SMS number": "手机号码",
             "Recovery options": "恢复选项",
                 "Recovery codes": "恢复码",
-                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
 
             "Make changes": "进行更改",
@@ -13935,7 +13935,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Add a passkey": "添加通行密钥",
             "Your device supports passkeys, a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "您的设备支持密码替代方案，通过触摸、面部识别、设备密码或者 PIN 码来验证您的身份。",
 
-            "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双重身份验证。",
+            "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双因素身份验证。",
             "Add passkey": "添加通行密钥",
             "Passkey registration failed.": "密钥注册失败。",
             "Ask me later": "稍后再问",
@@ -13960,8 +13960,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Confirm access": "授权访问",
             "Authentication code": "验证码",
                 "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
-            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
-            "When your phone is ready, click the button below.": "当您的手机准备就绪时，请点击下面的按钮。",
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
             "Verify": "验证",
             "Verify": "验证",
             "Verifying…": "验证中…",
@@ -13990,15 +13989,15 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "sudo mode": "Sudo 模式",
             ". After you've performed a sudo-protected action, you'll only be asked to re-authenticate again after a few hours of inactivity.": "。在您执行了受 sudo 保护的操作后，在几个小时不活动后才会要求您重新进行身份验证。",
 
-        // 首次设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
+        // 首次设置双因素身份验证 https://github.com/settings/two_factor_authentication/setup/intro
 
-            "Enable two-factor authentication (2FA)": "启用双重身份验证 (2FA)",
+            "Enable two-factor authentication (2FA)": "启用双因素身份验证 (2FA)",
             "Loading…": "载入中…",
 
             // 第1步
                 "Setup authenticator app": "设置身份验证器应用",
                 "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
-                ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二个因素来验证您的身份。",
+                ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二验证因素来验证您的身份。",
 
                 "Scan the QR code": "扫描二维码",
                 "Re-scan the QR code": "重新扫描二维码",
@@ -14011,7 +14010,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                     "Your two-factor secret": "您的双因素密钥",
 
                 "Verify the code from the app": "验证来自身份验证器应用的验证码",
-                "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
+                "Two-factor code verification failed. Please try again.": "双因素身份验证码验证失败。请重试。",
 
                 "Setup SMS authentication": "设置短信验证",
                     "Get authentication codes by SMS on your mobile phone when signing into GitHub. Make sure that": "登录 GitHub 时通过手机短信获取验证码。确保",
@@ -14034,7 +14033,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             // 第2步
                 "Download your recovery codes": "下载您的恢复码",
-                "You can use recovery codes as a second factor to authenticate in case you lose access to your device. We recommend saving them with a secure password manager such as": "您可以使用恢复码作为第二个因素来进行身份验证，以防您无法访问您的设备。我们建议使用安全的密码管理器保存它们，例如",
+                "You can use recovery codes as a second factor to authenticate in case you lose access to your device. We recommend saving them with a secure password manager such as": "您可以使用恢复码作为第二验证因素来进行身份验证，以防您无法访问您的设备。我们建议使用安全的密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot": "将您的恢复码保存在安全的地方",
                 "If you lose your device and don't have the recovery codes, you will lose access to your account.": "如果您丢失了您的设备，并且没有恢复码，您将无法访问您的帐户。",
 
@@ -14042,9 +14041,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "I have saved my recovery codes": "我已经保存了我的恢复码",
 
             // 第3步
-                "Two-factor authentication (2FA) is now enabled for your GitHub account": "现已为您的 GitHub 帐户启用双重身份验证 (2FA)",
-                "You have enabled two-factor authentication using SMS.": "您已使用 SMS 启用双重身份验证",
-                "You have enabled two-factor authentication using your authenticator app.": "您已使用身份验证应用启用双重身份验证",
+                "Two-factor authentication (2FA) is now enabled for your GitHub account": "现已为您的 GitHub 帐户启用双因素身份验证 (2FA)",
+                "You have enabled two-factor authentication using SMS.": "您已使用 SMS 启用双因素身份验证",
+                "You have enabled two-factor authentication using your authenticator app.": "您已使用身份验证应用启用双因素身份验证",
 
                 "Don't get locked out, configure additional authentication methods": "别被锁在外面，配置额外的身份验证方法",
                 "Configuring additional authentication methods will help you gain access to your account in case you lose your device and don't have your recovery codes.": "配置额外的认证方法将帮助您在丢失设备和没有恢复码的情况下获得对账户的访问。",
@@ -14060,44 +14059,44 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
                 "GitHub Mobile": "GitHub Mobile",
                     "Install": "安装",
-                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双重身份验证方法。通过安装 GitHub Mobile 应用（",
+                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双因素身份验证方法。通过安装 GitHub Mobile 应用（",
                     "and signing in to your account.": "）并登录您的帐户来启用它。",
                 "Done": "完成",
 
-        // 定期验证双重身份验证（2FA）设置
-            "Verify your two-factor authentication (2FA) settings": "验证您的双重身份验证（2FA）设置",
-            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双重身份验证凭据进行一次性验证。",
-            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双重身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双重身份验证。",
-            "Verify 2FA now": "现在验证双重身份验证",
+        // 定期验证双因素身份验证（2FA）设置
+            "Verify your two-factor authentication (2FA) settings": "验证您的双因素身份验证（2FA）设置",
+            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双因素身份验证凭据进行一次性验证。",
+            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双因素身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双因素身份验证。",
+            "Verify 2FA now": "现在验证双因素身份验证",
             "You can choose to": "您可以选择",
-            "skip 2FA verification": "跳过双重身份验证",
+            "skip 2FA verification": "跳过双因素身份验证",
             "at this moment, we'll remind you again tomorrow.": "此刻，我们会在明天再次提醒您。",
 
         // https://github.com/settings/two_factor_checkup?
-            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
-            "Verify your 2FA setup tomorrow": "明天验证您的双重身份验证设置",
-            "Reconfigure 2FA on this account": "重新配置双重身份验证",
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
+            "Verify your 2FA setup tomorrow": "明天验证您的双因素身份验证设置",
+            "Reconfigure 2FA on this account": "重新配置双因素身份验证",
 
         // https://github.com/settings/two_factor_checkup
-            "2FA verification successful!": "双重身份验证成功！",
+            "2FA verification successful!": "双因素身份验证成功！",
             "Keep your recovery codes safe and easy to access": "请将您的恢复码保管好以便于访问。",
-            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二个身份验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
+            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
             "Not sure where you saved them?": "您不确定把它们保存在哪里了吗？",
 
         // https://github.com/settings/security
-            "Two-factor authentication (2FA)": "双重身份验证 (2FA)",
+            "Two-factor authentication (2FA)": "双因素身份验证 (2FA)",
             "is required for your GitHub account": "您的 GitHub 帐户需要",
 
             "This will only take a minute.": "只需一分钟时间。",
-            "Enable 2FA now. You'll be able to continue on with your work right after.": "立即启用双重身份验证。之后您将能够继续您的工作。",
+            "Enable 2FA now. You'll be able to continue on with your work right after.": "立即启用双因素身份验证。之后您将能够继续您的工作。",
 
-            "Two-factor authentication adds an": "双重身份验证增加了一个",
+            "Two-factor authentication adds an": "双因素身份验证增加了一个",
             "additional layer of account security": "额外的账户安全保护",
             ". It is a proven method of keeping you safe from hackers and account takeover, even if your password is stolen or compromised.": "。这是一种行之有效的方法，即使您的密码被盗或泄露，也能保证您不被黑客和账户接管。",
-            "Enable 2FA now": "立即启用双重身份验证",
+            "Enable 2FA now": "立即启用双因素身份验证",
 
             "You have": "您还有",
-            "left to enable 2FA. Take action now to avoid additional interruptions.": "时间启用双重身份验证。请立即采取行动以避免额外的干扰。",
+            "left to enable 2FA. Take action now to avoid additional interruptions.": "时间启用双因素身份验证。请立即采取行动以避免额外的干扰。",
             "Remind me tomorrow": "明天提醒我",
 
         // 登出页面 https://github.com/logout
@@ -16405,7 +16404,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "You are the only owner of this organization! We recommend a minimum of two people within each organization have the owner role.": "您是该组织的唯一所有者！我们建议每个组织内至少有两人担任所有者角色。",
             "Dismiss": "忽略",
 
-            "Filter by two-factor authentication": "按双重身份验证筛选",
+            "Filter by two-factor authentication": "按双因素身份验证筛选",
             "Everyone": "所有人",
             "Enabled": "禁用",
             "Disabled": "启用",
@@ -17443,14 +17442,14 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 身份验证安全  /organizations/<org-login>/settings/security
-            "Two-factor authentication": "双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
             "Requiring an additional authentication method adds another level of security for your organization.": "要求额外的身份验证方法为您的组织增加了另一个级别的安全性。",
-            // [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
-            "Members, billing managers, and outside collaborators who do not have two-factor authentication enabled for their personal account will be removed from the organization and will receive an email notifying them about the change.": "未为其个人帐户启用双重身份验证的成员、账单管理员和外部协作者将从组织中删除，并会收到一封电子邮件，通知他们有关更改。",
+            // [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
+            "Members, billing managers, and outside collaborators who do not have two-factor authentication enabled for their personal account will be removed from the organization and will receive an email notifying them about the change.": "未为其个人帐户启用双因素身份验证的成员、账单管理员和外部协作者将从组织中删除，并会收到一封电子邮件，通知他们有关更改。",
 
             // 顶部提醒
-                "Enabling two-factor authentication requirement.": "启用双重身份验证。",
-                "Disabled two-factor authentication requirement.": "禁用双重身份验证。",
+                "Enabling two-factor authentication requirement.": "启用双因素身份验证。",
+                "Disabled two-factor authentication requirement.": "禁用双因素身份验证。",
 
             "SSH Certificate Authorities": "SSH 证书颁发机构",
             "Provide SSH certificates that members can use to access your resources with Git": "提供 SSH 证书，成员可以用 Git 来访问您的资源",
@@ -17464,7 +17463,7 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
             "Restrict access to your organization's assets by configuring a list of IP addresses that are allowed to connect": "通过配置 IP 允许列表来限制对组织资产的访问",
     },
     "regexp": [ // 正则翻译
-        [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
+        [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
     ],
 };
 
