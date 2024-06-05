@@ -3343,7 +3343,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
 
                 "Security keys": "安全密钥",
-                    "Security keys are webauthn credentials that can only be used as a second factor of authentication.": "安全密钥是仅可用于双重身份验证的网络凭据。",
+                    "Security keys are webauthn credentials that can only be used as a second factor of authentication.": "安全密钥是 WebAuthn 凭证，只能用作第二验证因素。",
                     "Hide": "隐藏",
                     "No security keys": "没有安全密钥",
 
