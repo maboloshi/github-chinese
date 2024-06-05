@@ -2607,8 +2607,6 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Content": "内容",
             "Link underlines": "链接下划线",
             "Toggle the visibility of underlines on links that are adjacent to text.": "切换文本相邻链接上下划线的可见性。",
-            "Show or hide underlines for links within text blocks. Something isn't working as expected?": "显示或隐藏文本块内链接的下划线。有什么东西没有按预期工作吗？",
-            "Let us know": "请告知我们",
             "Hide link underlines": "隐藏链接下划线",
             "Show link underlines": "显示链接下划线",
 
