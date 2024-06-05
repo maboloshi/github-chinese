@@ -3350,7 +3350,6 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
                 "Security keys": "安全密钥",
                     "Security keys are webauthn credentials that can only be used as a second factor of authentication.": "安全密钥是仅可用于双重身份验证的网络凭据。",
-                    //"Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                     "Hide": "隐藏",
                     "No security keys": "没有安全密钥",
 
