@@ -15514,6 +15514,22 @@ I18N.zh["sponsors"] = { // 赞助界面
                 "GitHub Sponsors eligible accounts": "符合 GitHub 赞助者资格的账户",
                     "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
+        
+        // 赞助者登录页 https://github.com/sponsors/<user-name>/signup
+            // 标题
+                "GitHub Sponsors · Get sponsored": "GitHub 赞助者 · 获得赞助",
+                "Get Sponsored": "获得赞助",
+                "Launch a": "启动一个",
+                "GitHub Sponsors profile": "GitHub 赞助者资料",
+                "and start receiving funding.": "并开始获得资金。",
+            // 联系电子邮箱
+                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly. You can manage verified email addresses in your": "选择一个经过验证的电子邮件地址，以便我们就您的 GitHub 赞助者资料与您联系。该地址不会公开共享。您可以在您的",
+            // 收款方式
+                "Bank account": "银行帐户",
+                    "Use a bank account to receive your sponsorships. Note: If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "使用银行账户接收您的赞助。注意：如果您使用个人银行账户，您所在的国家/地区可能会将您的 GitHub 赞助者 付款作为个人收入征税。",
+                "Fiscal Host": "财政主办方",
+                    "Members of supported fiscal hosts can use their fiscal host to join GitHub Sponsors instead of using a bank account.": "受支持财务主办方的成员可使用其财务主机加入 GitHub 赞助者，而无需使用银行账户。",
+            "Submit": "提交",
 
         // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已在 103 个地区推出测试版！",
