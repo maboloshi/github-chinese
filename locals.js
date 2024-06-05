@@ -282,6 +282,9 @@ I18N.zh["title"] = { // 标题翻译
         "General Organization Settings": "常规组织设置",
         "Member privileges": "成员权限",
         "Teams": "团队",
+        "Trending  repositories on GitHub today": "今日热门仓库",
+        "Trending  repositories on GitHub this week": "本周热门仓库",
+        "Trending  repositories on GitHub this month": "本月热门仓库",
         "Repository defaults": "仓库默认值",
         "Runners": "运行器",
         "Runner Groups": "运行器组",
@@ -334,6 +337,8 @@ I18N.zh["title"] = { // 标题翻译
         [/Revisions/,"修订"],
         [/Stargazers/, "追星者"],
         [/Forks/, "复刻"],
+        [/Tags?/, "标签"],
+        [/Release/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
         [/Code scanning alerts/, "代码扫描警报"],
         [/Repository topics/, "仓库主题"],
@@ -5469,6 +5474,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Settings": "设置",
 
             "Additional navigation options": "更多导航选项", // 小屏
+            "View all files": "查看所有文件", //Android UA 下出现
 
             // "Pulse": "统计",
             // "Graphs": "图表",
@@ -13636,7 +13642,8 @@ I18N.zh["homepage"] = { // 未登录的首页
         "offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
         "Check out GitHub Codespaces": "查看 GitHub 代码空间",
 
-        "fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
+        //"fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
+        "now let you manage projects and converse with your AI pair programmer on the go.": "让您可以管理项目，并与您的 AI 结对程序员在旅途中交流。",
         "Download GitHub Mobile": "下载 GitHub Mobile",
 
         "Application security": "应用安全",
@@ -13766,6 +13773,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "Use a recovery code or begin 2FA account recovery": "使用恢复码或开始 2FA 帐户恢复",
 
         // https://github.com/sessions/two-factor/mobile
+            "We sent you a sign-in request on your GitHub Mobile app. Approve the request to verify your identity.": "我们向您的 GitHub Mobile 应用发送了一个登录请求。批准验证您的身份的请求。",
             "We sent you a sign-in request on your GitHub Mobile app. Enter the digits shown below to verify your identity.": "我们向您的 GitHub Mobile 应用发送了一个登录请求。输入下面显示的数字以验证您的身份。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
@@ -15423,6 +15431,9 @@ I18N.zh["trending"] = { // 热门页面
             "All developers": "所有开发者",
             "All": "所有",
 
+        // 开发者页
+        "Popular repo": "热门仓库",
+
     },
     "regexp": [ // 正则翻译
         [/([\d,]+) stars today?/, "今日 $1 星标"],
@@ -15811,8 +15822,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
             // 左侧信息栏
             "GitHub has verified that the application meets the": "GitHub 已验证了该应用符合",
             "requirements for listing": "上架要求",
-            "GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
-            "requirements": "要求",
+            "GitHub has verified that the publisher controls the domain and meets other requirements.": "GitHub 已经验证了发布者对该域名的控制权和满足其他要求",
+            //"GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
+            //"requirements": "要求",
             "Categories": "类别",
             "App Type": "应用类型",
                 "GitHub Application": "GitHub 应用",
@@ -15822,6 +15834,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Customers": "客户",
             "Verified Domains": "经验证的域名",
             "Developer links": "开发者链接",
+            "From the developer": "来自开发者",
             "Support": "支持",
             "Documentation": "文档",
             "Privacy Policy": "隐私条款",
@@ -15861,6 +15874,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
             "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
             // [/([^ ]+) is provided by a third-party and is governed by separate/, "$1 是由第三方提供的，并受单独的"],
+            "is provided by a third-party and is governed by": "是由第三方提供的，并受单独的",
             "terms of service": "服务条款",
             "privacy policy": "隐私政策",
             ", and": "，和",
@@ -16040,7 +16054,8 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/Next: Authorize ([^ ]+) to access your account./, "下一步：授权 $1 访问您的帐户。"],
         [/(\d+) results?/, "$1 个结果"],
         [/([0-9.k]+) stars?/, "$1 星标"],
-        [/([0-9.k]+) installs?/, "$1 次安装"],
+        //[/([0-9.k]+) installs?/, "$1 次安装"],
+        [/(\d+) installs?/, "$1 次安装"],
         [/Install & Authorize on your personal account (.*)/, "在您的个人帐户 $1 上安装与授权"],
         [/Install & Authorize on your organization (.*)/, "在您的组织 $1 上安装与授权"], // 组织
         [/Install on your personal account (.*)/, "在您的个人帐户 $1 上安装"],
