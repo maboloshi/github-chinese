@@ -1507,7 +1507,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
             "- same time": "- 时间相同",
-        
+
             // 编辑个人资料
                 "Edit profile": "编辑个人资料",
                 "Name": "名称",
@@ -5474,7 +5474,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Settings": "设置",
 
             "Additional navigation options": "更多导航选项", // 小屏
-            "View all files": "查看所有文件", //Android UA下出现
+            "View all files": "查看所有文件", //Android UA 下出现
 
             // "Pulse": "统计",
             // "Graphs": "图表",
