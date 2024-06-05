@@ -3253,15 +3253,11 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Learn more about creating a strong password": "了解如何创建强密码",
 
             "Passkeys": "通行密钥",
-                "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
-                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种网络凭证，可以使用触控、面部识别、设备密码或 PIN 码验证您的身份。它们可以用作密码替代方案或双重验证方法。密钥可以用于登录，作为密码和双重验证凭证的简单安全的替代方案。",
-                "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
-                "Add a passkey": "添加通行密钥",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "密码匙是一种网络凭据，可通过触摸、面部识别、设备密码或 PIN 码验证身份。它们可用作密码替代品或 2FA 方法。",
+                "Learn more about passkeys": "了解更多关于通行密钥的信息",
 
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
-                    "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
                 "Your passkeys": "您的通行密钥",
-                "Seen from this browser": "该浏览器中查看",
+                "Add a passkey": "添加通行密钥",
                 "| Last used": "| 最后使用",
                 // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑通行密钥昵称",
