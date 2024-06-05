@@ -2528,7 +2528,7 @@ I18N.zh["settings/appearance"] = { // 设置 - 外观
 
         // Appearance 外观 https://github.com/settings/appearance
             "Theme preferences": "主题首选项",
-            "Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.": "选择 GitHub 在您眼中的样子。选择单一主题，或与您的系统同步并自动在白天和夜晚的主题之间切换。",
+            "Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes. Selections are applied immediately and saved automatically.": "选择 GitHub 在您眼中的样子。选择单一主题，或与您的系统同步并自动在白天和夜晚的主题之间切换。选择将立即生效并自动保存。",
             "Theme mode": "主题模式",
                 "Single theme": "单一主题",
                 "Sync with system": "与系统同步",
@@ -2606,6 +2606,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
 
             "Content": "内容",
             "Link underlines": "链接下划线",
+            "Toggle the visibility of underlines on links that are adjacent to text.": "切换文本相邻链接上下划线的可见性。",
             "Show or hide underlines for links within text blocks. Something isn't working as expected?": "显示或隐藏文本块内链接的下划线。有什么东西没有按预期工作吗？",
             "Let us know": "请告知我们",
             "Hide link underlines": "隐藏链接下划线",
@@ -3250,9 +3251,13 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Update password": "更新密码",
             "I forgot my password": "我忘记了我的密码",
 
+            "Strengthen your account by ensuring your password is strong.": "确保密码的安全性，以保护您的账户。",
+            "Learn more about creating a strong password": "了解如何创建强密码",
+
             "Passkeys": "通行密钥",
                 "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种网络凭证，可以使用触控、面部识别、设备密码或 PIN 码验证您的身份。它们可以用作密码替代方案或双重验证方法。密钥可以用于登录，作为密码和双重验证凭证的简单安全的替代方案。",
+                //"Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
                 "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
                 "Add a passkey": "添加通行密钥",
 
@@ -3345,7 +3350,8 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
 
                 "Security keys": "安全密钥",
-                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                    "Security keys are webauthn credentials that can only be used as a second factor of authentication.": "安全密钥是仅可用于双重身份验证的网络凭据。",
+                    //"Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
                     "Hide": "隐藏",
                     "No security keys": "没有安全密钥",
 
@@ -4124,6 +4130,26 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
+                
+                "Dependabot on Actions runners": "Dependabot 在操作运行器上",
+                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全性和版本更新。",
+
+                    // 对话框
+                        "Enable dependabot on actions": "在操作中启用 Dependabot",
+                            "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
+                        
+                        "Disable dependabot on actions": "在操作中禁用 Dependabot",
+                            "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
+
+                "Dependabot on self-hosted runners": "Dependabot 在自托管运行器上",
+                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
+
+                    // 对话框
+                        "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
+                            "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
+                        
+                        "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
+                            "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的机密、密钥或其他令牌的警报。",
