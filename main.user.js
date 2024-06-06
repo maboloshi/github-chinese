@@ -4,13 +4,13 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.1-2024-06-03
+// @version      1.9.1-Beta-2024-06-03
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
-// @run-at       document-end
+// @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -37,6 +37,15 @@
             window.MutationObserver ||
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
+
+        // 监测 HTML Lang 值, 设置中文环境
+        new MutationObserver(mutations => {
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = 'zh-CN';
+            }
+        }).observe(document.documentElement, {
+            attributeFilter: ['lang']
+        })
 
         // 获取当前页面的 URL
         const getCurrentURL = () => location.href;
@@ -105,6 +114,7 @@
 
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
+/* 关于时间元素翻译与监视
             // 翻译时间元素
             if (
                 ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
@@ -117,6 +127,7 @@
                 }
                 return;
             }
+*/
 
             // 元素节点属性翻译
             if (["INPUT", "TEXTAREA"].includes(node.tagName)) { // 输入框 按钮 文本域
@@ -471,6 +482,9 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
+        // 设置中文环境
+        document.documentElement.lang = 'zh-CN';
+
         // 获取当前页面的翻译规则
         page = getPage();
         console.log(`开始page= ${page}`);
