@@ -13949,7 +13949,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Password Alternatives": "密码替代方案",
                 "Passkeys": "通行密钥",
                 // [/(\d+) keys?/, "$1 个通行密钥"],
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。",
                     "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
             "Two-factor methods": "双因素身份验证方式",
                 "Your preferred 2FA method is": "您首选的 2FA 方式是",
