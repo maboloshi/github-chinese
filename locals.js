@@ -5549,6 +5549,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "The most recent revision cannot be deleted. Need to delete sensitive information? Go to the specific edit where the information was added.": "最近的修订版不能被删除。需要删除敏感信息？请到信息的具体编辑处修改。",
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
+                // 评论状态
+                "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
+                "This comment was marked as off-topic.": "该评论已被标记为离题。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -6854,6 +6857,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
             "Repository owner locked as": "仓库所有者锁定为",
+            "Repository owner deleted a comment": "仓库所有者删除了评论",
+            "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
             "locked as": "锁定为",
                 "off-topic": "离题",
                 "too heated": "过热",
@@ -7098,6 +7103,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
+        [/edited by ([^ ]+)/, "由 $1 编辑"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7929,6 +7935,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "None yet": "暂无",
                 "bug": "BUG",
                     "Something isn't working": "有些东西不工作",
+                "confirmed": "已确认",
+                    "Issue confirmed to exist and the reason is known": "问题已确认存在，原因已知",
                 "dependencies": "依赖性",
                     "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
                 "documentation": "文档",
@@ -7946,6 +7954,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "question": "问题",
                     "Further information is requested": "要求提供更多信息",
                 "wontfix": "不会修复",
+                    "Not going to fix it": "不打算修复",
                     "This will not be worked on": "这将不会被处理",
 
                 "Apply labels to this issue": "应用标签", // 议题
