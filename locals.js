@@ -5649,6 +5649,13 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                 "License:": "许可证：",
                     "License": "许可证",
 
+            // 市场应用列表
+            "Grant your Marketplace apps access to this repository": "授予市场应用程序访问该仓库的权限",
+            "You are": "您",
+            "subscribed to": "订阅了",
+            "Marketplace app": "个市场应用",
+            "s": " ",
+
             "You are creating a public repository in your personal account.": "您正在个人帐户中创建公共仓库",
             "You are creating a private repository in your personal account.": "您正在个人帐户中创建私有仓库",
 
