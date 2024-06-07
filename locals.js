@@ -15995,6 +15995,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other requirements.": "GitHub 已经验证了发布者对该域名的控制权和满足其他要求",
             //"GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             //"requirements": "要求",
+            "Category": "类别",
             "Categories": "类别",
             "App Type": "应用类型",
                 "GitHub Application": "GitHub 应用",
@@ -16108,6 +16109,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
             // 顶部提醒
                 "An error occurred while saving payment information.": "保存支付信息时发生错误。",
+                "Successfully updated billing information.": "保存账单信息成功。",
 
         // 免费应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
             "Review your order": "审查您的订单",
@@ -16116,9 +16118,12 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Total amount": "总金额",
 
             "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "组织所有者或账单管理者必须将其个人账单信息与该组织账户关联。您可以切换到企业账户，以使用企业的账单信息通过",
+            "By clicking \"Complete order and begin installation\", you agree to the": "通过单击“完成订单并开始安装”，您同意",
+            "Marketplace Terms of Service": "市场服务条款",
             "signing": "签署",
             "the": " ",
             "GitHub Customer Agreement": "GitHub 客户协议",
+            "Complete order and begin installation": "完成订单并开始安装",
 
         // GitHub 应用页面 https://github.com/apps/<app-name>
         // 示例: https://github.com/apps/codacy-production
@@ -16213,6 +16218,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
     },
     "regexp": [ // 正则翻译
+        [/and ([^ ]+)’s/, "和 $1 的"],
         [/plan has been deleted./, "计划已被删除。"],
         // /marketplace/codacy
         [/(\d+) other languages? supported/, "$1 种其他语言支持"],
