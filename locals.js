@@ -5907,6 +5907,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
                 "Upload files": "上传文件",
+                "Upload file": "上传文件",
 
             // 代码 下拉菜单
                 "Local": "本地",
