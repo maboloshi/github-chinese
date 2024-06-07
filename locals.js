@@ -445,6 +445,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Your sponsors": "我的赞助者",
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
+                "Free": "免费",
             "Try Copilot": "试用 Copilot",
             "Feature preview": "功能预览",
                 // 对话框
@@ -15842,10 +15843,19 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Recommended": "推荐",
             "View all": "查看全部",
 
+            "List your tool": "列出您的工具",
             "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
+            "You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上列出的工具",
+            "Learn more about the requirements": "了解",
+            "to list a tool on GitHub Marketplace.": "在 GitHub 市场上列出工具需要满足的条件。",
             "Read the documentation": "阅读文档",
                 "Learn how you can build tools to extend and improve developers' workflows.": "了解如何构建工具来扩展和改进开发人员的工作流程",
 
+            "More about tools and GitHub Marketplace": "关于工具和 Gtihub 市场",
+                "About GitHub Marketplace": "关于 GitHub 市场",
+                "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub Marketplace 上创建和列出工具，包括列出内容、插图和屏幕截图的指南。",
+            "Adding webhooks for a GitHub Marketplace listing": "添加 GitHub 市场列表的网络钩子",
+                "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加网络钩子，以便在触发指定事件时通知您。",
             "Submit your tool for review": "提交您的工具以供审核",
                 "Share your app or GitHub Action with millions of developers.": "与数百万开发者分享您的应用或 GitHub Action",
 
