@@ -114,20 +114,11 @@
 
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
-/* 关于时间元素翻译与监视
             // 翻译时间元素
-            if (
-                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
-            ) {
-                if (node.shadowRoot) {
-                    transTimeElement(node.shadowRoot);
-                    watchTimeElement(node.shadowRoot);
-                } else {
-                    transTimeElement(node);
-                }
+            if (node.tagName === 'RELATIVE-TIME') {
+                transTimeElement(node.shadowRoot);
                 return;
             }
-*/
 
             // 元素节点属性翻译
             if (["INPUT", "TEXTAREA"].includes(node.tagName)) { // 输入框 按钮 文本域
@@ -221,10 +212,10 @@
             page = 'gist';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if  (isRepository) { // 仓库页
+        } else if (isRepository) { // 仓库页
             t = pathname.match(I18N.conf.rePagePathRepo);
             page = t ? 'repository/'+ t[1] : 'repository';
-        } else if  (isOrganization) { // 组织页
+        } else if (isOrganization) { // 组织页
             t = pathname.match(I18N.conf.rePagePathOrg);
             page = t ? 'orgs/'+ (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
@@ -274,22 +265,6 @@
         }
     }
 
-    /**
-     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
-     * @param {Element} el - 需要监视的元素。
-     */
-    function watchTimeElement(el) {
-        const MutationObserver =
-            window.MutationObserver ||
-            window.WebKitMutationObserver ||
-            window.MozMutationObserver;
-
-        new MutationObserver(mutations => {
-            transTimeElement(mutations[0].addedNodes[0]);
-        }).observe(el, {
-            childList: true
-        });
-    }
 
     /**
      * transElement 函数：翻译指定元素的文本内容或属性。
