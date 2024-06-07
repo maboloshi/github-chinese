@@ -15861,9 +15861,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
             "More about tools and GitHub Marketplace": "关于工具和 Gtihub 市场",
                 "About GitHub Marketplace": "关于 GitHub 市场",
-                "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub Marketplace 上创建和列出工具，包括列出内容、插图和屏幕截图的指南。",
-            "Adding webhooks for a GitHub Marketplace listing": "添加 GitHub 市场列表的网络钩子",
-                "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加网络钩子，以便在触发指定事件时通知您。",
+                "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和列出工具，包括列出内容、插图和屏幕截图的指南。",
+            "Adding webhooks for a GitHub Marketplace listing": "添加 GitHub 市场列表的 Web 钩子",
+                "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加 Web 钩子，以便在触发指定事件时通知您。",
             "Submit your tool for review": "提交您的工具以供审核",
                 "Share your app or GitHub Action with millions of developers.": "与数百万开发者分享您的应用或 GitHub Action",
 
