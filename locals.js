@@ -5340,6 +5340,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "This repository has been disabled.": "此仓库已被禁用。",
             "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
 
+            // 仓库地址-浮动信息窗口(仅 Android UA)
+            "Navigate back to": "返回到",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -8123,6 +8126,8 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "Add file": "添加文件",
             // 三个点
                 "Raw file content": "原始文件内容",
+                    "Copy": "复制", // Android UA 下出现
+                    "View": "查看", // Android UA 下出现
                     "Download": "下载",
                     // "Jump to line": "跳转到行",
                     "Find in file": "在文件中查找", // 激活 “换行” 时显示
