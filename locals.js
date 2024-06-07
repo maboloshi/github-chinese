@@ -252,6 +252,7 @@ I18N.zh["title"] = { // 标题翻译
         "Saved replies": "快捷回复",
         "Security & analysis": "安全与分析",
         "Installed GitHub Apps": "已安装的 GitHub 应用",
+        "Issue search results": "议题搜索结果",
         "Scheduled reminders": "定时提醒",
         "Security log": "安全日志",
         "Sponsorship Log": "赞助日志",
@@ -286,6 +287,7 @@ I18N.zh["title"] = { // 标题翻译
         "Trending  repositories on GitHub this week": "本周热门仓库",
         "Trending  repositories on GitHub this month": "本月热门仓库",
         "Repository defaults": "仓库默认值",
+        "Repository search results": "仓库搜索结果",
         "Runners": "运行器",
         "Runner Groups": "运行器组",
         "Packages": "软件包",
@@ -316,8 +318,8 @@ I18N.zh["title"] = { // 标题翻译
         [/starred/, "星标"],
         [/Commits/, "提交"],
         [/New Issue/, "新建议题"],
-        [/Issues/, "议题"],
-        [/Pull requests/, "拉取请求"],
+        [/Issues?/, "议题"],
+        [/Pull requests?/, "拉取请求"],
         [/Actions/, "操作"],
         [/Projects/, "项目"],
         [/Packages?/, "软件包"],
@@ -445,6 +447,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Your sponsors": "我的赞助者",
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
+                "Free": "免费",
             "Try Copilot": "试用 Copilot",
             "Feature preview": "功能预览",
                 // 对话框
@@ -5337,6 +5340,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "This repository has been disabled.": "此仓库已被禁用。",
             "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
 
+            // 仓库地址-浮动信息窗口(仅 Android UA)
+            "Navigate back to": "返回到",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -5904,6 +5910,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
                 "Upload files": "上传文件",
+                "Upload file": "上传文件", // Android UA
 
             // 代码 下拉菜单
                 "Local": "本地",
@@ -8119,6 +8126,8 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "Add file": "添加文件",
             // 三个点
                 "Raw file content": "原始文件内容",
+                    "Copy": "复制", // Android UA 下出现
+                    "View": "查看", // Android UA 下出现
                     "Download": "下载",
                     // "Jump to line": "跳转到行",
                     "Find in file": "在文件中查找", // 激活 “换行” 时显示
@@ -15842,10 +15851,19 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Recommended": "推荐",
             "View all": "查看全部",
 
+            "List your tool": "列出您的工具",
             "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
+            "You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上列出的工具",
+            "Learn more about the requirements": "了解",
+            "to list a tool on GitHub Marketplace.": "在 GitHub 市场上列出工具需要满足的条件。",
             "Read the documentation": "阅读文档",
                 "Learn how you can build tools to extend and improve developers' workflows.": "了解如何构建工具来扩展和改进开发人员的工作流程",
 
+            "More about tools and GitHub Marketplace": "关于工具和 Gtihub 市场",
+                "About GitHub Marketplace": "关于 GitHub 市场",
+                "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和列出工具，包括列出内容、插图和屏幕截图的指南。",
+            "Adding webhooks for a GitHub Marketplace listing": "添加 GitHub 市场列表的 Web 钩子",
+                "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加 Web 钩子，以便在触发指定事件时通知您。",
             "Submit your tool for review": "提交您的工具以供审核",
                 "Share your app or GitHub Action with millions of developers.": "与数百万开发者分享您的应用或 GitHub Action",
 
@@ -15880,6 +15898,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other requirements.": "GitHub 已经验证了发布者对该域名的控制权和满足其他要求",
             //"GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             //"requirements": "要求",
+            "Category": "类别",
             "Categories": "类别",
             "App Type": "应用类型",
                 "GitHub Application": "GitHub 应用",
@@ -15993,6 +16012,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
             // 顶部提醒
                 "An error occurred while saving payment information.": "保存支付信息时发生错误。",
+                "Successfully updated billing information.": "保存账单信息成功。",
 
         // 免费应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
             "Review your order": "审查您的订单",
@@ -16001,9 +16021,12 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Total amount": "总金额",
 
             "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "组织所有者或账单管理者必须将其个人账单信息与该组织账户关联。您可以切换到企业账户，以使用企业的账单信息通过",
+            "By clicking \"Complete order and begin installation\", you agree to the": "通过单击“完成订单并开始安装”，您同意",
+            "Marketplace Terms of Service": "市场服务条款",
             "signing": "签署",
             "the": " ",
             "GitHub Customer Agreement": "GitHub 客户协议",
+            "Complete order and begin installation": "完成订单并开始安装",
 
         // GitHub 应用页面 https://github.com/apps/<app-name>
         // 示例: https://github.com/apps/codacy-production
@@ -16098,6 +16121,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
     },
     "regexp": [ // 正则翻译
+        [/and ([^ ]+)’s/, "和 $1 的"],
         [/plan has been deleted./, "计划已被删除。"],
         // /marketplace/codacy
         [/(\d+) other languages? supported/, "$1 种其他语言支持"],
