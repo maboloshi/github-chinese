@@ -19044,7 +19044,7 @@ I18N.zh["features"] = {
 I18N.zh["status"] = {
     "static": {
         "Community": "社区",
-        "Subscribe to updates": "订阅更新",
+        "Subscribe To Updates": "订阅更新",
         "All Systems Operational": "所有系统运行正常",
         "Current status": "当前状态",
         "Normal": "正常",
@@ -19057,7 +19057,16 @@ I18N.zh["status"] = {
         "Incident with Packages": "软件包事故",
         "Incident with Issues": "议题事故",
         "Incident with Codespaces": "代码空间事故",
-        "Incident with Copilot": "Copilot 事故"
+        "Incident with Copilot": "Copilot 事故",
+        "Incident with Pull Requests": "拉取请求事故",
+        "Incident with Git Operations": "Git 操作事故",
+        "Incident with API Requests": "API 请求事故",
+        "Incident with Actions": "操作事故",
+        "We are investigating reports of degraded performance.": "我们正在调查性能下降的报告。",
+        "This incident has been resolved.": "此事故已解决。",
+        "+ Show All": "+ 展开全部",
+        "Incidents": "个事故",
+        "- Collapse Incidents": "收起事故",
     },
     "regexp": [
     ],
