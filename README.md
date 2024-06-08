@@ -34,12 +34,11 @@
 
 ## 🌐 浏览器与脚本管理器
 
-浏览器                              | 脚本管理器
-:--------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器  | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
-Safari 浏览器（MacOS）               | [Macaque][Macaque]
-Safari 浏览器（iOS 或 iPadOS）       | [Stay][Stay]
-Firefox 或 基于 Gecko 内核的浏览器    | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
+浏览器                               | 脚本管理器
+:----------------------------------: | :---------:
+Chrome 或 基于 Chromium 内核的浏览器 | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
+Safari 浏览器（macOS, iOS, iPadOS）  | [Macaque][Macaque] 或 [Stay][Stay]
+Firefox 或 基于 Gecko 内核的浏览器   | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
 Via 浏览器（Android）                | 浏览器内自带
 
 ## 💽 安装
