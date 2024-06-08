@@ -11,7 +11,6 @@
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @match        https://skills.github.com
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
