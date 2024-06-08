@@ -4,13 +4,13 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.1-2024-06-03
+// @version      1.9.2-beta-2024-06-03
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
-// @run-at       document-end
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -38,6 +38,27 @@
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
 
+        // 监测 HTML Lang 值, 设置中文环境
+        new MutationObserver(mutations => {
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = 'zh-CN';
+            }
+        }).observe(document.documentElement, {
+            attributeFilter: ['lang']
+        })
+
+        // 监听 Turbo 完成事件
+        document.addEventListener('turbo:load', () => {
+            if (page) {
+                transBySelector();
+                if (page === "repository") { //仓库简介翻译
+                    transDesc(".f4.my-3");
+                } else if (page === "gist") { // Gist 简介翻译
+                    transDesc(".gist-content [itemprop='about']");
+                }
+            }
+        });
+
         // 获取当前页面的 URL
         const getCurrentURL = () => location.href;
         getCurrentURL.previousURL = getCurrentURL();
@@ -53,24 +74,16 @@
                 console.log(`链接变化 page= ${page}`);
 
                 transTitle(); // 翻译页面标题
-
-                if (page) {
-                    setTimeout(() => {
-                        // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
-                        transBySelector();
-                        if (page === "repository") { //仓库简介翻译
-                            transDesc(".f4.my-3");
-                        } else if (page === "gist") { // Gist 简介翻译
-                            transDesc(".gist-content [itemprop='about']");
-                        }
-                    }, 500);
-                }
             }
 
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes' || mutation.type === 'characterData');
+                const filteredMutations = mutations.filter(mutation =>
+                    mutation.addedNodes.length > 0 ||
+                    mutation.type === 'attributes' ||
+                    mutation.type === 'characterData'
+                );
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
@@ -98,7 +111,7 @@
         if (I18N.conf.reIgnoreId.includes(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
             I18N.conf.reIgnoreTag.includes(node.tagName) ||
-            (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
+            (node.nodeType === Node.ELEMENT_NODE && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
         ) {
             return;
         }
@@ -106,15 +119,8 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (
-                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
-            ) {
-                if (node.shadowRoot) {
-                    transTimeElement(node.shadowRoot);
-                    watchTimeElement(node.shadowRoot);
-                } else {
-                    transTimeElement(node);
-                }
+            if (node.tagName === 'RELATIVE-TIME') {
+                transTimeElement(node.shadowRoot);
                 return;
             }
 
@@ -261,23 +267,6 @@
                 break;
             }
         }
-    }
-
-    /**
-     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
-     * @param {Element} el - 需要监视的元素。
-     */
-    function watchTimeElement(el) {
-        const MutationObserver =
-            window.MutationObserver ||
-            window.WebKitMutationObserver ||
-            window.MozMutationObserver;
-
-        new MutationObserver(mutations => {
-            transTimeElement(mutations[0].addedNodes[0]);
-        }).observe(el, {
-            childList: true
-        });
     }
 
     /**
@@ -482,22 +471,26 @@
             // 立即翻译页面
             traverseNode(document.body);
 
-            setTimeout(() => {
-                // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
-                transBySelector();
-                if (page === "repository") { //仓库简介翻译
-                    transDesc(".f4.my-3");
-                } else if (page === "gist") { // Gist 简介翻译
-                    transDesc(".gist-content [itemprop='about']");
-                }
-            }, 100);
+            // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+            transBySelector();
+            if (page === "repository") { //仓库简介翻译
+                transDesc(".f4.my-3");
+            } else if (page === "gist") { // Gist 简介翻译
+                transDesc(".gist-content [itemprop='about']");
+            }
         }
+
         // 监视页面变化
         watchUpdate();
     }
 
     // 执行初始化
     registerMenuCommand();
-    init();
+
+    // 设置中文环境
+    document.documentElement.lang = 'zh-CN';
+
+    // 在页面初始加载完成时执行
+    window.addEventListener('DOMContentLoaded', init);
 
 })(window, document);
