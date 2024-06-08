@@ -155,7 +155,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
@@ -311,6 +311,10 @@ I18N.zh["title"] = { // 标题翻译
         "Create new codespace": "创建代码空间",
     },
     "regexp": [ // 正则翻译
+        [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
+        [/Authorized GitHub Apps/, "授权的 GitHub 应用"],
+        [/Installed GitHub Apps/, "已安装的 GitHub 应用"],
+        [/Accessibility/, "无障碍"],
         [/Repositories/, "仓库"],
         [/Starred/, "星标页面"],
         [/starred repositories/, "星标仓库"],
@@ -329,16 +333,20 @@ I18N.zh["title"] = { // 标题翻译
         [/Dependabot alerts/, "Dependabot 警报"],
         [/Pulse/, "统计"],
         [/Contributors to/, "贡献者 ·"],
+        [/Dashboard/, "仪表板"],
         [/Community/, "社区"],
         [/Traffic/, "流量"],
         [/Commit Activity/, "提交活动"],
         [/Code frequency/, "代码频率"],
+        [/Created/, "已创建"],
         [/Dependencies/, "依赖关系"],
         [/Network Dependents/, "网络依赖者"],
         [/Network Graph/, "网络图"],
         [/Revisions/,"修订"],
+        [/Skills/, "技能"],
+        [/Sponsoring/, "捐助"],
         [/Stargazers/, "追星者"],
-        [/Forks/, "复刻"],
+        [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
         [/Release/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
@@ -351,6 +359,8 @@ I18N.zh["title"] = { // 标题翻译
         [/People/, "成员"],
         [/Outside collaborators/, "外部协作者"],
         [/Discussions/, "讨论"],
+        [/Workflow runs/, "工作流运行"],
+        [/Add a code of conduct to/, "添加代码行为准则到"],
         ["_regexp_end", "end"]
     ],
 };
@@ -458,7 +468,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间 正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
                     "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用 代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间 现在需要访问 *.visualstudio.com 以便于您连接到 代码空间。",
                 "Colorblind themes": "色盲主题",
-                    "Varying by gender and geography, color blindness can affect on average 5-6% of men and up to 0.4% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 5-6% 的男性和高达 0.4% 的女性。我们之前的色盲主题被分为两个新主题：",
+                    "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 8%的男性和高达 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
                     "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 蓝色盲主题适用于蓝黄色盲。",
                 "Command Palette": "命令面板",
@@ -8950,6 +8960,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Management": "管理",
             "Caches": "缓存",
             "Deployments": "部署",
+            "Attestations": "证书",
             "Runners": "运行器",
 
             "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
@@ -8975,6 +8986,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "workflow_dispatch": "工作流程调度",
                 "dynamic": "动态",
             // 状态
+                "Disabled": "禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
                 "queued": "排队",
@@ -11109,6 +11121,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/Detected automatically/, "自动检测于"],
+        [/(\d+) Total/, "$1 总计"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -19087,5 +19100,25 @@ I18N.zh["status"] = {
             "Posted": "更新",
     },
     "regexp": [
+    ],
+};
+
+I18N.zh["skills"] = { // https://skills.github.com/
+    "static": { // 静态翻译
+        "GitHub Skills": "Github 技能",
+            "Learn how to use GitHub with interactive courses designed for beginners and experts.": "通过专为初学者和专家设计的互动课程，学习如何使用 GitHub。",
+            "Start with Introduction to GitHub": "从 GitHub 简介开始",
+        "Our courses": "我们的课程",
+    },
+    "regexp": [
+    ],
+};
+
+I18N.zh["sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
+    "static": {
+        //"hasn’t sponsored any users yet.": "尚未赞助任何人。",
+    },
+    "regexp": [
+        [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
     ],
 };
