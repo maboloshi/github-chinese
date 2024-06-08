@@ -9,6 +9,7 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
+// @match        https://www.githubstatus.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
@@ -180,7 +181,11 @@
     function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.hostname === "gist.github.com" ? "gist" : "github"; // 站点
+        const siteMapping = {
+            'gist.github.com': 'gist',
+            'www.githubstatus.com': 'status'
+        };
+        const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
 
         // 是否登录
@@ -208,6 +213,8 @@
             }
         } else if (site === 'gist') { // Gist 站点
             page = 'gist';
+        } else if (site === 'status') {  // GitHub Status 页面
+            page = 'status';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
