@@ -11,6 +11,7 @@
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
+// @match        https://skills.github.com
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
@@ -184,7 +185,8 @@
         // 站点，如 gist, developer, help 等，默认主站是 github
         const siteMapping = {
             'gist.github.com': 'gist',
-            'www.githubstatus.com': 'status'
+            'www.githubstatus.com': 'status',
+            'skills.github.com': 'skills'
         };
         const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
@@ -216,6 +218,8 @@
             page = 'gist';
         } else if (site === 'status') {  // GitHub Status 页面
             page = 'status';
+        } else if (site === 'skills') {  // GitHub Skills 页面
+            page = 'skills';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
