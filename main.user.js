@@ -106,8 +106,15 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME') {
-                transTimeElement(node.shadowRoot);
+            if (
+                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
+            ) {
+                if (node.shadowRoot) {
+                    transTimeElement(node.shadowRoot);
+                    watchTimeElement(node.shadowRoot);
+                } else {
+                    transTimeElement(node);
+                }
                 return;
             }
 
@@ -256,6 +263,22 @@
         }
     }
 
+    /**
+     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
+     * @param {Element} el - 需要监视的元素。
+     */
+    function watchTimeElement(el) {
+        const MutationObserver =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
+
+        new MutationObserver(mutations => {
+            transTimeElement(mutations[0].addedNodes[0]);
+        }).observe(el, {
+            childList: true
+        });
+    }
 
     /**
      * transElement 函数：翻译指定元素的文本内容或属性。
