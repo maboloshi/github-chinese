@@ -9,8 +9,9 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://gist.github.com/*
+// @match        https://www.githubstatus.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
-// @run-at       document-start
+// @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
 // @grant        GM_setValue
@@ -37,15 +38,6 @@
             window.MutationObserver ||
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
-
-        // 监测 HTML Lang 值, 设置中文环境
-        new MutationObserver(mutations => {
-            if (document.documentElement.lang === "en") {
-                document.documentElement.lang = 'zh-CN';
-            }
-        }).observe(document.documentElement, {
-            attributeFilter: ['lang']
-        })
 
         // 获取当前页面的 URL
         const getCurrentURL = () => location.href;
@@ -115,8 +107,15 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME') {
-                transTimeElement(node.shadowRoot);
+            if (
+                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
+            ) {
+                if (node.shadowRoot) {
+                    transTimeElement(node.shadowRoot);
+                    watchTimeElement(node.shadowRoot);
+                } else {
+                    transTimeElement(node);
+                }
                 return;
             }
 
@@ -182,7 +181,11 @@
     function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.hostname === "gist.github.com" ? "gist" : "github"; // 站点
+        const siteMapping = {
+            'gist.github.com': 'gist',
+            'www.githubstatus.com': 'status'
+        };
+        const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
 
         // 是否登录
@@ -210,6 +213,8 @@
             }
         } else if (site === 'gist') { // Gist 站点
             page = 'gist';
+        } else if (site === 'status') {  // GitHub Status 页面
+            page = 'status';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
@@ -265,6 +270,22 @@
         }
     }
 
+    /**
+     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
+     * @param {Element} el - 需要监视的元素。
+     */
+    function watchTimeElement(el) {
+        const MutationObserver =
+            window.MutationObserver ||
+            window.WebKitMutationObserver ||
+            window.MozMutationObserver;
+
+        new MutationObserver(mutations => {
+            transTimeElement(mutations[0].addedNodes[0]);
+        }).observe(el, {
+            childList: true
+        });
+    }
 
     /**
      * transElement 函数：翻译指定元素的文本内容或属性。
@@ -457,9 +478,6 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
-        // 设置中文环境
-        document.documentElement.lang = 'zh-CN';
-
         // 获取当前页面的翻译规则
         page = getPage();
         console.log(`开始page= ${page}`);

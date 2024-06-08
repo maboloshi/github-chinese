@@ -8,7 +8,13 @@
   [![license GPL-3.0][license-image]][license-url]
   [![GreasyFork installs][greasyFork-image]][greasyFork-url]
 
-<a href="https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&claim_uid=zepvSg6Vwl4EqMr&theme=dark&theme=neutral&theme=dark" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://hellogithub.com/repository/738d0abae49543f18d887a7e29ec9e90" target="_blank">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset=https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=neutral" />
+    <img alt="Featured｜HelloGitHub" src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=738d0abae49543f18d887a7e29ec9e90&theme=neutral" style="width: 250px; height: 54px;" width="250" height="54" />
+  </picture>
+</a>
 
 ## 💖 星标历史
 
@@ -28,12 +34,11 @@
 
 ## 🌐 浏览器与脚本管理器
 
-浏览器                              | 脚本管理器
-:--------------------------------: | :---------: 
-Chrome 或 基于 Chromium 内核的浏览器  | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
-Safari 浏览器（MacOS）               | [Macaque][Macaque]
-Safari 浏览器（iOS 或 iPadOS）       | [Stay][Stay]
-Firefox 或 基于 Gecko 内核的浏览器    | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
+浏览器                               | 脚本管理器
+:----------------------------------: | :---------:
+Chrome 或 基于 Chromium 内核的浏览器 | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
+Safari 浏览器（macOS, iOS, iPadOS）  | [Macaque][Macaque] 或 [Stay][Stay]
+Firefox 或 基于 Gecko 内核的浏览器   | [Tampermonkey][Tampermonkey] 或 [Violentmonkey][Violentmonkey]
 Via 浏览器（Android）                | 浏览器内自带
 
 ## 💽 安装

@@ -1110,7 +1110,122 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         }],
     ],
     "time-regexp": [ // 时间正则翻译专项
-        [/on/, ""],
+        /**
+         * 匹配时间格式
+         *
+         * 月 日 或 月 日, 年
+         * Mar 19, 2015 – Mar 19, 2016
+         * January 26 – March 19
+         * March 26
+         *
+         * 不知道是否稳定, 暂时先试用着. 2016-03-19 20:46:45
+         *
+         * 更新于 2021-10-04 15:19:18
+         * 增加 带介词 on 的格式，on 翻译不体现
+         * on Mar 19, 2015
+         * on March 26
+         *
+         * 更新于 2021-10-10 13:44:36
+         * on 星期(简写), 月 日 年  // 个人访问令牌 有效期
+         * on Tue, Nov 9 2021
+         *
+         * 2021-10-19 12:04:19 融合更多规则
+         *
+         * 4 Sep
+         * 30 Dec 2020
+         *
+         * on 4 Sep
+         * on 30 Dec 2020
+         *
+         * 2021-11-22 12:51:57 新增 格式
+         *
+         * 星期(全称), 月 日, 年 // 仓库-->洞察-->流量 图示标识
+         * Sunday, November 14, 2021
+         *
+         * Tip:
+         * 正则中的 ?? 前面的字符 重复0次或1次
+         * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
+         */
+        [/(?:on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(\d{1,2}|)(?:,? (\d{4})|)/g, function (all, date1, week, month, year1, date2, year2) {
+            var weekKey = {
+                "Sun"  : "周日",
+                "Mon"  : "周一",
+                "Tue"  : "周二",
+                "Wed"  : "周三",
+                "Thu"  : "周四",
+                "Fri"  : "周五",
+                "Sat"  : "周六",
+            };
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+            var date = date1 ? date1 : date2;
+            var year = year1 ? year1 : year2;
+            return (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
+        }],
+        /**
+         * 相对时间格式处理
+         *
+         * 更新于 2021-11-21 16:47:14
+         * 1. 添加 前缀词
+         *    over xxx ago // 里程碑页面 最后更新时间
+         *    about xxx ago // 里程碑页面 最后更新时间
+         *    almost xxx ago // 里程碑页面 最后更新时间
+         *    less than xxx ago // 导出帐户数据
+         * 2. xxx之内的相对时间格式
+         *  in 6 minutes // 拉取请求页面
+         *
+         * 更新于 2021-11-22 11:54:30
+         * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
+         *  7 months
+         */
+        [/^just now|^now|^last year|^last month|^last week|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year|week)s?( ago|)/, function (all, prefix, count, unit, suffix) {
+            if (all === 'now') {
+                return '现在';
+            }
+            if (all === 'just now') {
+                return '刚刚';
+            }
+            if (all === 'last year') {
+                return '最近 1 年';
+            }
+            if (all === 'last month') {
+                return '上个月';
+            }
+            if (all === 'last week') {
+                return '上周';
+            }
+            if (all === 'yesterday') {
+                return '昨天';
+            }
+            if (count[0] === 'a') {
+                count = '1';
+            } // a, an 修改为 1
+
+            var unitKey = {second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年', week: '周'};
+
+            if (suffix) {
+                return (prefix === 'about' || prefix === 'almost' ? '大约 ' : prefix === 'less than' ? '不到 ' : '') + count + ' ' + unitKey[unit] + (prefix === 'over' ? '多之前' : '之前');
+            } else {
+                return count + ' ' + unitKey[unit] + (prefix === 'in' ? '之内' : '之前');
+            }
+        }],
+        [/(\d+)(h|d|w|m)/, function (all, count, suffix) {
+            var suffixKey = {h: '小时', d: '天', w: '周', m: '个月'};
+
+            return count + ' ' + suffixKey[suffix] + '之前';
+        }],
     ],
 };
 
@@ -10993,7 +11108,7 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Detected automatically/, "自动检测于"]
+        [/Detected automatically/, "自动检测于"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -18933,3 +19048,44 @@ I18N.zh["features"] = {
     ],
 };
 
+I18N.zh["status"] = {
+    "static": {
+        // https://www.githubstatus.com/
+            "Community": "社区",
+            "Subscribe To Updates": "订阅更新",
+            "All Systems Operational": "所有系统运行正常",
+            "Normal": "正常",
+            "Git Operations": "Git 操作",
+            "API Requests": "API 请求",
+            "Webhooks": "Web 钩子",
+            "Pull Requests": "拉取请求",
+            "Current Status": "当前状态",
+            "Incident History": "历史事故",
+
+        // https://www.githubstatus.com/history
+            "Incident with Packages": "软件包事故",
+            "Incident with Issues": "议题事故",
+            "Incident with Codespaces": "代码空间事故",
+            "Incident with Copilot": "Copilot 事故",
+            "Incident with Pull Requests": "拉取请求事故",
+            "Incident with Git Operations": "Git 操作事故",
+            "Incident with API Requests": "API 请求事故",
+            "Incident with Actions": "操作事故",
+            "Incident with Pages": "Pages 事故",
+            "Incident with Webhooks": "Web 钩子事故",
+            "We are investigating reports of degraded performance.": "我们正在调查性能下降的报告。",
+            "This incident has been resolved.": "此事故已解决。",
+            "+ Show All": "+ 展开全部",
+            "Incidents": "个事故",
+            "- Collapse Incidents": "- 收起事故",
+            "Current status": "当前状态",
+
+        // https://www.githubstatus.com/incidents/xxxxxxxxxxxx
+            "Incident Report for GitHub": "GitHub 事故报告",
+            "Resolved": "解决",
+            "Investigating": "调查",
+            "Posted": "更新",
+    },
+    "regexp": [
+    ],
+};
