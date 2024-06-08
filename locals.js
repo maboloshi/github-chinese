@@ -19043,7 +19043,21 @@ I18N.zh["features"] = {
 
 I18N.zh["status"] = {
     "static": {
+        "Community": "社区",
+        "Subscribe to updates": "订阅更新",
         "All Systems Operational": "所有系统运行正常",
+        "Current status": "当前状态",
+        "Normal": "正常",
+        "Git Operations": "Git 操作",
+        "API Requests": "API 请求",
+        "Webhooks": "Web 钩子",
+        "Pull Requests": "拉取请求",
+        "Current Status": "当前状态",
+        "Incident History": "历史事故",
+        "Incident with Packages": "软件包事故",
+        "Incident with Issues": "议题事故",
+        "Incident with Codespaces": "代码空间事故",
+        "Incident with Copilot": "Copilot 事故"
     },
     "regexp": [
     ],
