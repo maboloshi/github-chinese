@@ -7552,6 +7552,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "or the": "或",
                 "command line": "命令行",
                 "to resolve conflicts.": "来解决冲突。",
+                "These conflicts are too complex to resolve in the web editor": "这些冲突过于复杂，无法在网页编辑器中解决",
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
@@ -19290,7 +19291,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "of the Actions workflow. This is the heart of the file, where you can customize your course the most.": "。这是文件的核心部分，在这里您可以对课程进行最大程度的自定义。",
                 "You may include the": "您可以在课程中包含",
                 "update step action": "更新步骤操作",
-                "in your course,however it is not fully required. You may also customize this script to meet the needs of your course.": "，但并非完全必需。您也可以自定义此脚本，以满足课程的需要。",
+                "in your course, however it is not fully required. You may also customize this script to meet the needs of your course.": "，但并非完全必需。您也可以自定义此脚本，以满足课程的需要。",
                 "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流程文件中包含详尽的注释，以描述每个部分。其他作者和未来的自己都会感谢您。",
         "Testing and monitoring your course": "测试和监控课程",
             "Click on “Use this template” and run through your course on a your personal account. Does everything work? Do any actions go red?": "点击 “使用此模板”，然后在个人账户上运行课程。一切正常吗？是否有任何操作变红？",
