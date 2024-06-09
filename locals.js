@@ -19114,7 +19114,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
             "First day on GitHub": "第一天",
                 // Github介绍
                     "Get started using GitHub in less than an hour.": "在不到一个小时的时间内开始使用 GitHub。",
-                "Communicate using Markdown": "使用Markdown交流",
+                "Communicate using Markdown": "使用 Markdown 交流",
                     "Organize ideas and collaborate using Markdown, a lightweight language for text formatting.": "使用 Markdown（一种用于文本格式的轻量级语言）组织想法和协作。",
                 // Github Pages
                     "Create a site or blog from your GitHub repositories with GitHub Pages.": "使用 GitHub Pages 从 GitHub 仓库创建站点或博客。",
@@ -19209,7 +19209,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "setting.": "。",
             "Add a LICENSE file to your repository": "在仓库中添加 LICENSE 文件。",
                 ". GitHub uses Creative Commons Attribution 4.0 International.": "GitHub 采用知识共享署名 4.0 国际协议。",
-            "Add a ": "添加一个",
+            "Add a": "添加一个",
                 "file": "文件。",
                 ". You can see an": "您可以查看",
                 "example": "示例",
