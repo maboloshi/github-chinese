@@ -4,11 +4,13 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta-2024-06-03
+// @version      1.9.2-beta-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
+// @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
+// @match        https://www.githubstatus.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
@@ -186,7 +188,12 @@
     function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.hostname === "gist.github.com" ? "gist" : "github"; // 站点
+        const siteMapping = {
+            'gist.github.com': 'gist',
+            'www.githubstatus.com': 'status',
+            'skills.github.com': 'skills'
+        };
+        const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
 
         // 是否登录
@@ -214,6 +221,10 @@
             }
         } else if (site === 'gist') { // Gist 站点
             page = 'gist';
+        } else if (site === 'status') {  // GitHub Status 页面
+            page = 'status';
+        } else if (site === 'skills') {  // GitHub Skills 页面
+            page = 'skills';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
