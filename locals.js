@@ -161,7 +161,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     /**
      * 忽略区域的 class 正则
@@ -19062,7 +19062,7 @@ I18N.zh["features"] = {
     ],
 };
 
-I18N.zh["status"] = {
+I18N.zh["status"] = { // GitHub Status
     "static": {
         // https://www.githubstatus.com/
             "Community": "社区",
@@ -19114,7 +19114,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
             "First day on GitHub": "第一天",
                 // Github介绍
                     "Get started using GitHub in less than an hour.": "在不到一个小时的时间内开始使用 GitHub。",
-                "Communicate using Markdown": "使用Markdown交流",
+                "Communicate using Markdown": "使用 Markdown 交流",
                     "Organize ideas and collaborate using Markdown, a lightweight language for text formatting.": "使用 Markdown（一种用于文本格式的轻量级语言）组织想法和协作。",
                 // Github Pages
                     "Create a site or blog from your GitHub repositories with GitHub Pages.": "使用 GitHub Pages 从 GitHub 仓库创建站点或博客。",
@@ -19197,11 +19197,11 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "Does each step relate to the main learning goal?": "每个步骤都与主要学习目标相关吗？",
                     "You can use GitHub Actions and GitHub CLI to automate any needed steps that don’t build towards the learning goal.": "您可以使用 GitHub 操作和 GitHub CLI 自动执行任何不需要的步骤，以实现学习目标。",
         "Set up your repository": "设置仓库",
-            "Start by clicking “Use this template” on our": "点击 “使用此模板 ”开始。",
+            "Start by clicking “Use this template” on our": "点击 “使用此模板” 开始。",
                 "course template": "课程模板",
             "Check the box for “Template repository” either when setting up your repository, or": "在创建仓库时或在",
                 "in the repository settings": "仓库设置",
-                "afterwards. Actions": "中勾选 “模板版本库 ”复选框。复刻仓库中操作",
+                "afterwards. Actions": "中勾选 “模板版本库” 复选框。复刻仓库中操作",
                 "are not enabled by default": "默认不启用",
                 "in forks.": "。",
             "Add a 1280×640 social image. Learners will share your course on different websites that will pull in the social image.": "添加一张 1280×640 的社交图片。学员将在不同网站上分享您的课程，而这些网站将调入社交图片。",
@@ -19209,18 +19209,18 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "setting.": "。",
             "Add a LICENSE file to your repository": "在仓库中添加 LICENSE 文件。",
                 ". GitHub uses Creative Commons Attribution 4.0 International.": "GitHub 采用知识共享署名 4.0 国际协议。",
-            "Add a ": "添加一个",
+            "Add a": "添加一个",
                 "file": "文件。",
                 ". You can see an": "您可以查看",
                 "example": "示例",
-                ". We recommend at minimum ignoring operating system generated files.": "文件。我们建议至少忽略操作系统生成的文件。",
-            "Include": "包含",
-                "in the": "于",
-                "repository topics": "仓库主题",
+                ". We recommend at minimum ignoring operating system generated files.": " 文件。我们建议至少忽略操作系统生成的文件。",
+            "Include": "将",
+                "in the": "包含于",
+                "repository topics": "仓库主题内",
         "Writing your README": "编写自述文件",
             "Your README file will have a few sections: a header, a start step, three to five workflow steps, a finish step, and a footer.": "README 文件将包含几个部分：页眉、开始步骤、三到五个工作流程步骤、结束步骤和页脚。",
             "The raw source of the README in": " ",
-                "includes many comments you can use to guide the development of your course’s README file.": "中的 README 原始源包含许多注释，您可以用来指导课程 README 文件的开发。",
+                "includes many comments you can use to guide the development of your course’s README file.": "中的 README 源码包含了许多注释，您可以用来指导课程 README 文件的开发。",
             "Writing your README: Header": "编写自述文件：页眉",
                 "Start with a short paragraph describing what you’ll teach. Be sure to include information on how the course is relevant to the learner. This paragraph should answer the question, “Why should I take this course?”": "首先用一小段文字描述您的教学内容。请务必说明课程与学员的相关性。这一段应该回答“我为什么要学习这门课程？”",
                 "Include the course title in sentence case, and a concise description in emphasis.": "用句子大小写写上课程名称，并用着重号简明扼要地描述。",
@@ -19235,9 +19235,22 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "Include clear directions on how to start the course.": "包括有关如何开始课程的明确说明。",
             "Writing your README: Steps": "编写自述文件：步骤",
                 "Each step should:": "每个步骤都应该",
+                "Acknowledge the learner completed the previous step, using emphasis (italics).": "使用强调（斜体）来确认学习者已完成上一步。",
+                "Concisely describe the concept behind the next step. Link to GitHub docs for more in-depth explanation.": "简明描述下一步背后的概念。链接到 GitHub 文档以获取更深入的解释。",
+                "Describe what the learner is about to do": "描述学习者将要做什么",
+                "Mark the activity with": "标记活动使用",
+                "Use an ordered list to briefly describe what the learner needs to do": "使用有序列表简要描述学习者需要做什么",
+                "Let the learner know it will need about 20 seconds and refresh to move on to the next step": "让学习者知道大约需要 20 秒，然后刷新即可进入下一步",
+                "Include warning and troubleshooting information if the learner gets stuck": "如果学习者遇到困难，请提供警告和故障排除信息",
                 "Try to keep your formatting consistent so the learner can more easily find what they are looking for.": "尽量保持格式一致，以便学员可以更轻松地找到他们要查找的内容。",
                 "The first step is the hardest, so pick something easy! On the first step, encourage users to open new tabs for steps.": "第一步是最难的，所以要选择简单的步骤！在第一步，鼓励用户打开新的标签页进行操作。",
             "Writing your README: Finish": "编写自述文件：结束",
+                "In the finish section,": "在结束部分，",
+                "Celebrate that the learner finished the course": "庆祝学习者完成课程",
+                "Include an celebratory image": "附上一张庆祝图片",
+                "Review what the learner just did": "回顾学习者刚刚做的事情",
+                "Provide next steps for learners who want to know more": "为想要了解更多信息的学习者提供后续步骤",
+                "Invite feedback about the course": "邀请学习者对课程提出反馈",
             "Writing your README: Footer": "编写自述文件：页脚",
                 "Include a link for how learners should get help if they get stuck or have further questions": "如果学习者遇到困难或有进一步的问题，可通过链接了解如何获得帮助",
                 "Include a link to the GitHub status page. If GitHub Actions is down, the course won’t work.": "包含指向 GitHub 状态页面的链接。如果 GitHub 操作崩溃，课程将无法运行。",
@@ -19252,12 +19265,19 @@ I18N.zh["skills"] = { // https://skills.github.com/
             "Check in our your course regularly for any reported issues or out-of-date information.": "定期检查您的课程，查看是否有任何报告的问题或过时的信息。",
         "Best practices for building courses": "构建课程的最佳做法",
             "Not everyone reads docs! Many potential course authors will use your course as an example. Make sure to include lots of comments in your README and Actions workflow files.": "不是每个人都会阅读文档！许多潜在的课程作者会将您的课程作为范例。请确保在您的 README 和操作工作流程文件中包含大量注释。",
+            "Keep everything you need in the one course repository.": "将您需要的一切都保存在一个课程仓库内。",
+            "If you need your courses to have limited access, create an organization for your courses, make your courses private, and invite the specific users that need these courses to your organization.": "如果您需要限制课程的访问权限，请为您的课程创建一个组织，将您的课程设为私人课程，并邀请需要这些课程的特定用户加入您的组织。",
+            "Consider adding a Code of Conduct, contributing guide, and issue templates.": "考虑添加行为准则、贡献指南和议题模板。",
+            "Keep the number of files and folders in the root directory short. More items in the root level means the README is further down the page.": "尽量减少根目录中文件和文件夹的数量。根目录中的项目越多，README 就越靠近页面底部。",
+            "Content": "内容",
+            "Actions workflows": "操作工作流程",
+            "Sharing your course": "分享您的课程",
     },
     "regexp": [
     ],
 };
 
-I18N.zh["sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
+I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
     "static": {
         //"hasn’t sponsored any users yet.": "尚未赞助任何人。",
     },
