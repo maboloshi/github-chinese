@@ -315,6 +315,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Authorized GitHub Apps/, "授权的 GitHub 应用"],
         [/Installed GitHub Apps/, "已安装的 GitHub 应用"],
         [/Accessibility/, "无障碍"],
+        [/Environments/, "环境"],
         [/Repositories/, "仓库"],
         [/Starred/, "星标页面"],
         [/starred repositories/, "星标仓库"],
@@ -327,6 +328,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Actions/, "操作"],
         [/Projects/, "项目"],
         [/Packages?/, "软件包"],
+        [/Settings · Rulesets/, "设置 · 规则集"],
         [/Security Overview/, "安全概述"],
         [/Security Policy/, "安全政策"],
         [/Security Advisories/, "安全公告"],
@@ -334,6 +336,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Pulse/, "统计"],
         [/Contributors to/, "贡献者 ·"],
         [/Dashboard/, "仪表板"],
+        [/Deployments/, "部署"],
         [/Community/, "社区"],
         [/Traffic/, "流量"],
         [/Commit Activity/, "提交活动"],
@@ -361,6 +364,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Outside collaborators/, "外部协作者"],
         [/Discussions/, "讨论"],
         [/Workflow runs/, "工作流运行"],
+        [/Webhooks · Settings/, "Web 钩子 · 设置"],
         [/Add a code of conduct to/, "添加代码行为准则到"],
         ["_regexp_end", "end"]
     ],
@@ -6697,8 +6701,9 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Subscribed": "订阅",
                         "Receive all notifications from this pull request.": "接收来自此拉取请求的所有通知。",
                         "Receive all notifications from this issue.": "接收来自此议题的所有通知。",  // 议题页面
-                    "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
-                    "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
+                    "Custom": "自定义",
+                        "You will only be notified for the events selected from the list below.": "您只会收到从以下列表中选择的事件的通知。",
+                        "If you participate or are @mentioned you will be subscribed.": "如果您参与或 @您时，将自动订阅。",
                     // 议题
                         "Receive a notification when this issue has been closed.": "当议题被关闭时，收到通知。",
                         "Reopened": "重新打开",
@@ -9253,6 +9258,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
             "Loading information…": "载入信息…",
             "at": "在",
             "Deployed": "部署",
+                "All deployments": "所有部署",
             "Deployed by": "部署者",
             "Active": "活跃",
             "Inactive": "不活跃",
@@ -9280,6 +9286,43 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                 "Status: Deployed (completed).": "状态：已部署（已完成）",
                 "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
                 "No status available for": "无可用状态",
+            
+            // 面板
+                // 所有部署
+                    "Latest deployments from pinned environments": "来自固定环境的最新部署",
+
+                "Filter": "过滤",
+                    "Filter deployments": "过滤部署",
+                    // 搜索框菜单
+                    "State": "状态",
+                    "Creator": "创建者",
+                    "Environment": "环境",
+                    "Ref": "分支",
+                    "Text": "文本",
+                    // 过滤器窗口
+                    "Advanced filters": "高级过滤",
+                    "Build complex filter queries": "建立复杂的过滤器查询",
+                    "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个过滤器。",
+
+                    "Qualifier": "限定",
+                    "Operator": "操作",
+                        "is one of": "之中的",
+                        "is": "是",
+                    "Value": "值",
+                        "Make a selection": "请选择",
+                        "Select items": "请选择项目",
+                        "Filter values": "过滤值",
+                        "Enter search text": "键入任意文本",
+                            "Me": "我",
+                            "Signed-in user": "已登录用户",
+                    // 关闭弹窗
+                        "Discard changes?": "是否放弃更改？",
+                        "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                        "Keep editing": "继续编辑",
+                        "Close and discard": "关闭并放弃",
+
+                    "Add a filter": "添加过滤器",
+                    "Apply": "应用",
 
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
@@ -12832,7 +12875,7 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
 
         // 仓库 环境 /<user-name>/<repo-name>/settings/environments
             "New environment": "新建环境",
-            "You can configure environments with protection rules, variables and secrets.": "您可以使用保护规则，变量和机密配置环境。",
+            "You can configure environments with protection rules, variables, and secrets.": "您可以使用保护规则，变量和机密配置环境。",
             "Learn more about configuring environments.": "了解更多关于配置环境的信息。",
 
             "There are no environments for this repository": "此仓库尚无环境",
