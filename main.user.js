@@ -4,11 +4,13 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。
 // @copyright    2021, buiawpkgew1
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.1-2024-06-03
+// @version      1.9.1-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
+// @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
+// @match        https://www.githubstatus.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
@@ -99,7 +101,7 @@
             I18N.conf.reIgnoreClass.test(node.className) ||
             I18N.conf.reIgnoreTag.includes(node.tagName) ||
             (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
-           ) {
+        ) {
             return;
         }
 
@@ -128,7 +130,7 @@
                 } else {
                     transElement(node, 'placeholder');
                 }
-            } else if (node.tagName === 'BUTTON'){
+            } else if (node.tagName === 'BUTTON') {
                 if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
                     transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
                 }
@@ -167,7 +169,7 @@
             childNodes.forEach(traverseNode); // 遍历子节点
 
         } else if (node.nodeType === Node.TEXT_NODE) { // 文本节点翻译
-            if (node.length <= 500){ // 修复 许可证编辑框初始化载入内容被翻译
+            if (node.length <= 500) { // 修复 许可证编辑框初始化载入内容被翻译
                 transElement(node, 'data');
             }
         }
@@ -180,16 +182,21 @@
     function getPage() {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
-        const site = location.hostname === "gist.github.com" ? "gist" : "github"; // 站点
+        const siteMapping = {
+            'gist.github.com': 'gist',
+            'www.githubstatus.com': 'status',
+            'skills.github.com': 'skills'
+        };
+        const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
 
-         // 是否登录
+        // 是否登录
         const isLogin = document.body.classList.contains("logged-in");
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';
         // 组织页
-        const isOrganization = /\/<org-login>/.test(analyticsLocation)||/^\/(?:orgs|organizations)/.test(pathname);
+        const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
         // 仓库页
         const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
 
@@ -208,20 +215,24 @@
             }
         } else if (site === 'gist') { // Gist 站点
             page = 'gist';
+        } else if (site === 'status') {  // GitHub Status 页面
+            page = 'status';
+        } else if (site === 'skills') {  // GitHub Skills 页面
+            page = 'skills';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if  (isRepository) { // 仓库页
+        } else if (isRepository) { // 仓库页
             t = pathname.match(I18N.conf.rePagePathRepo);
-            page = t ? 'repository/'+ t[1] : 'repository';
-        } else if  (isOrganization) { // 组织页
+            page = t ? 'repository/' + t[1] : 'repository';
+        } else if (isOrganization) { // 组织页
             t = pathname.match(I18N.conf.rePagePathOrg);
-            page = t ? 'orgs/'+ (t[1] || t.slice(-1)[0]) : 'orgs';
+            page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
             t = pathname.match(I18N.conf.rePagePath);
             page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
         }
 
-        if (!page || !I18N[lang][page]){
+        if (!page || !I18N[lang][page]) {
             console.log(`请注意对应 page ${page} 词库节点不存在`);
             page = false;
         }
@@ -286,7 +297,7 @@
      * @param {string} field - 需要翻译的文本内容或属性的名称。
      * @param {boolean} isAttr - 是否需要翻译属性。
      */
-    function transElement(el, field, isAttr=false) {
+    function transElement(el, field, isAttr = false) {
         let text = isAttr ? el.getAttribute(field) : el[field]; // 需要翻译的文本
         let str = translateText(text); // 翻译后的文本
 
@@ -339,7 +350,7 @@
         }
 
         // 正则翻译
-        if (enable_RegExp){
+        if (enable_RegExp) {
             let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
 
             for (let [a, b] of res) {
@@ -372,19 +383,19 @@
         let button = element.nextSibling;
 
         // 为翻译按钮添加点击事件
-       button.addEventListener('click', () => {
+        button.addEventListener('click', () => {
             // 获取元素的文本内容
             const desc = element.textContent.trim();
 
             // 如果文本内容为空，那么直接返回
-            if(!desc) {
+            if (!desc) {
                 return false;
             }
 
             // 调用 translateDescText 函数进行翻译
             translateDescText(desc, text => {
                 // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
-                button.style.display="none";
+                button.style.display = "none";
                 const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>${text}`;
                 element.insertAdjacentHTML('afterend', translationHTML);
             });
@@ -402,7 +413,7 @@
             method: "POST", // 请求方法为 POST
             url: "https://www.iflyrec.com/TranslationService/v1/textTranslation", // 请求的 URL
             headers: { // 请求头
-                'Content-Type' : 'application/json',
+                'Content-Type': 'application/json',
                 'Origin': 'https://www.iflyrec.com',
             },
             data: JSON.stringify({

@@ -155,13 +155,13 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
 
     // 组织路径
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     /**
      * 忽略区域的 class 正则
@@ -252,6 +252,7 @@ I18N.zh["title"] = { // 标题翻译
         "Saved replies": "快捷回复",
         "Security & analysis": "安全与分析",
         "Installed GitHub Apps": "已安装的 GitHub 应用",
+        "Issue search results": "议题搜索结果",
         "Scheduled reminders": "定时提醒",
         "Security log": "安全日志",
         "Sponsorship Log": "赞助日志",
@@ -262,8 +263,8 @@ I18N.zh["title"] = { // 标题翻译
         "New OAuth Application": "新 OAuth 应用",
         "Create a new Gist": "创建新代码片段",
         "Discover gists": "探索代码片段",
-        "Enable two-factor authentication": "启用双重身份验证",
-        "Manage two-factor authentication": "管理双重身份验证",
+        "Enable two-factor authentication": "启用双因素身份验证",
+        "Manage two-factor authentication": "管理双因素身份验证",
         "Options": "仓库 · 选项",
         "Confirm access": "授权访问",
         "General": "通常",
@@ -286,6 +287,7 @@ I18N.zh["title"] = { // 标题翻译
         "Trending  repositories on GitHub this week": "本周热门仓库",
         "Trending  repositories on GitHub this month": "本月热门仓库",
         "Repository defaults": "仓库默认值",
+        "Repository search results": "仓库搜索结果",
         "Runners": "运行器",
         "Runner Groups": "运行器组",
         "Packages": "软件包",
@@ -309,6 +311,10 @@ I18N.zh["title"] = { // 标题翻译
         "Create new codespace": "创建代码空间",
     },
     "regexp": [ // 正则翻译
+        [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
+        [/Authorized GitHub Apps/, "授权的 GitHub 应用"],
+        [/Installed GitHub Apps/, "已安装的 GitHub 应用"],
+        [/Accessibility/, "无障碍"],
         [/Repositories/, "仓库"],
         [/Starred/, "星标页面"],
         [/starred repositories/, "星标仓库"],
@@ -316,8 +322,8 @@ I18N.zh["title"] = { // 标题翻译
         [/starred/, "星标"],
         [/Commits/, "提交"],
         [/New Issue/, "新建议题"],
-        [/Issues/, "议题"],
-        [/Pull requests/, "拉取请求"],
+        [/Issues?/, "议题"],
+        [/Pull requests?/, "拉取请求"],
         [/Actions/, "操作"],
         [/Projects/, "项目"],
         [/Packages?/, "软件包"],
@@ -327,16 +333,21 @@ I18N.zh["title"] = { // 标题翻译
         [/Dependabot alerts/, "Dependabot 警报"],
         [/Pulse/, "统计"],
         [/Contributors to/, "贡献者 ·"],
+        [/Dashboard/, "仪表板"],
         [/Community/, "社区"],
         [/Traffic/, "流量"],
         [/Commit Activity/, "提交活动"],
         [/Code frequency/, "代码频率"],
+        [/Created/, "已创建"],
         [/Dependencies/, "依赖关系"],
         [/Network Dependents/, "网络依赖者"],
         [/Network Graph/, "网络图"],
         [/Revisions/,"修订"],
+        [/GitHub Skills Quickstart Guide/, "GitHub 技能快速入门指南"],
+        [/Skills/, "技能"],
+        [/Sponsoring/, "捐助"],
         [/Stargazers/, "追星者"],
-        [/Forks/, "复刻"],
+        [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
         [/Release/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
@@ -349,6 +360,8 @@ I18N.zh["title"] = { // 标题翻译
         [/People/, "成员"],
         [/Outside collaborators/, "外部协作者"],
         [/Discussions/, "讨论"],
+        [/Workflow runs/, "工作流运行"],
+        [/Add a code of conduct to/, "添加代码行为准则到"],
         ["_regexp_end", "end"]
     ],
 };
@@ -445,6 +458,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Your sponsors": "我的赞助者",
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
+                "Free": "免费",
             "Try Copilot": "试用 Copilot",
             "Feature preview": "功能预览",
                 // 对话框
@@ -452,10 +466,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Disable": "禁用",
                 "Documentation": "文档",
                 "Codespaces Connectivity v2": "代码空间连接 v2",
-                    "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间 正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
-                    "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用 代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间 现在需要访问 *.visualstudio.com 以便于您连接到 代码空间。",
+                    "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
+                    "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间现在需要访问 *.visualstudio.com 以便于您连接到代码空间。",
                 "Colorblind themes": "色盲主题",
-                    "Varying by gender and geography, color blindness can affect on average 5-6% of men and up to 0.4% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 5-6% 的男性和高达 0.4% 的女性。我们之前的色盲主题被分为两个新主题：",
+                    "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 8% 的男性和高达 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
                     "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 蓝色盲主题适用于蓝黄色盲。",
                 "Command Palette": "命令面板",
@@ -2528,7 +2542,7 @@ I18N.zh["settings/appearance"] = { // 设置 - 外观
 
         // Appearance 外观 https://github.com/settings/appearance
             "Theme preferences": "主题首选项",
-            "Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes.": "选择 GitHub 在您眼中的样子。选择单一主题，或与您的系统同步并自动在白天和夜晚的主题之间切换。",
+            "Choose how GitHub looks to you. Select a single theme, or sync with your system and automatically switch between day and night themes. Selections are applied immediately and saved automatically.": "选择 GitHub 在您眼中的样子。选择单一主题，或与您的系统同步并自动在白天和夜晚的主题之间切换。选择将立即生效并自动保存。",
             "Theme mode": "主题模式",
                 "Single theme": "单一主题",
                 "Sync with system": "与系统同步",
@@ -2606,8 +2620,7 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
 
             "Content": "内容",
             "Link underlines": "链接下划线",
-            "Show or hide underlines for links within text blocks. Something isn't working as expected?": "显示或隐藏文本块内链接的下划线。有什么东西没有按预期工作吗？",
-            "Let us know": "请告知我们",
+            "Toggle the visibility of underlines on links that are adjacent to text.": "切换文本相邻链接上下划线的可见性。",
             "Hide link underlines": "隐藏链接下划线",
             "Show link underlines": "显示链接下划线",
 
@@ -3063,8 +3076,8 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
                         "Privately discuss, fix, and publish information about security vulnerabilities found in your repository.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
                     "Role-based access control": "基于角色的访问控制",
                         "Define users' level of access to your code, data and settings.": "定义用户访问代码、数据和设置的级别。",
-                    "Required 2FA": "双重身份验证（2FA）",
-                        "Use an extra layer of security with two factor authentication (2FA) when logging into GitHub.": "登录 GitHub 时，使用双重身份验证（2FA）作为额外的安全层。",
+                    "Required 2FA": "双因素身份验证（2FA）",
+                        "Use an extra layer of security with two factor authentication (2FA) when logging into GitHub.": "登录 GitHub 时，使用双因素身份验证（2FA）作为额外的安全层。",
                     // 审计日志
                         "Quickly review the actions performed by members of your organization.": "快速审查组织成员执行的操作。",
                     "Enterprises can connect to advanced systems like LDAP and SAML single sign-on (SSO).": "企业可以连接到如 LDAP 和 SAML 单一登录 (SSO) 等高级系统。",
@@ -3250,16 +3263,19 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
             "Update password": "更新密码",
             "I forgot my password": "我忘记了我的密码",
 
+            "Strengthen your account by ensuring your password is strong.": "确保密码的安全性，以保护您的账户。",
+            "Learn more about creating a strong password": "了解如何创建强密码",
+
             "Passkeys": "通行密钥",
                 "Passwordless sign-in with passkeys": "使用通行密钥进行无密码登录",
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。通行密钥可用于登录，作为密码和双重身份验证的一种简单而安全的替代方式。",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method. Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。通行密钥可以作为一种简单且安全的替代方式用于登录，替代您的密码和双因素身份验证凭证。",
                 "This browser or device does not fully support passkeys - you may be able to use a passkey from another device.": "此浏览器或设备不完全支持通行密钥 - 您可以尝试使用来自其他设备的通行密钥。",
                 "Add a passkey": "添加通行密钥",
 
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
-                    "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。",
+                "Learn more about passkeys": "了解更多关于通行密钥的信息",
+
                 "Your passkeys": "您的通行密钥",
-                "Seen from this browser": "该浏览器中查看",
                 "| Last used": "| 最后使用",
                 // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑通行密钥昵称",
@@ -3272,44 +3288,44 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Note: You may continue to see this passkey as an option during sign-in until you also delete it from your browser, device or associated account's password management settings.": "注意：您可能会在登录过程中继续看到此通行密钥作为一个选项，直到您将其从浏览器、设备或关联帐户的密码管理设置中删除。",
                     "Deleting…": "删除中…",
 
-            // 双重身份验证
+            // 双因素身份验证
                 // 顶部提醒
-                    "You can now manage your two-factor authentication methods from this page.": "您现在可以从此页面管理您的双重身份验证方法。",
-                    "Two-factor authentication successfully disabled.": "成功禁用双重身份验证。",
+                    "You can now manage your two-factor authentication methods from this page.": "您现在可以从此页面管理您的双因素身份验证方法。",
+                    "Two-factor authentication successfully disabled.": "成功禁用双因素身份验证。",
                     "SMS/Text message successfully configured.": "短信/文本信息配置成功。",
 
-            "Two-factor authentication": "双重身份验证",
-                "Two-factor authentication is not enabled yet.": "尚未启用双重身份验证。",
-                "Enable two-factor authentication": "启用双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
+                "Two-factor authentication is not enabled yet.": "尚未启用双因素身份验证。",
+                "Enable two-factor authentication": "启用双因素身份验证",
 
-                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双重身份验证。感谢您帮助维护生态系统安全！",
+                "Because of your contributions on GitHub, two-factor authentication is required for your account. Thank you for helping keep the ecosystem safe!": "基于您在 GitHub 上的贡献，您的帐户需要双因素身份验证。感谢您帮助维护生态系统安全！",
                 "Because of your contributions on GitHub, two-factor authentication will be required for your account starting": "基于您在 GitHub 上的贡献，从",
-                ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双重身份验证，感谢您帮助维护生态系统的安全！",
-                "Learn more about our two-factor authentication initiative": "了解更多关于我们的双重身份验证的倡议",
+                ". Thank you for helping keep the ecosystem safe!": " 开始，您的帐户将需要双因素身份验证，感谢您帮助维护生态系统的安全！",
+                "Learn more about our two-factor authentication initiative": "了解更多关于我们的双因素身份验证的倡议",
 
-                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双重身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
-                "Learn more about two-factor authentication": "了解更多关于双重身份验证的信息",
+                "Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to sign in.": "双因素身份验证不仅仅要求密码登录，还为您的帐户增加了一层额外的安全性。",
+                "Learn more about two-factor authentication": "了解更多关于双因素身份验证的信息",
 
 
                 "Enable": "启用",
                 "Enabled": "启用",
-                    "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双重身份验证。",
+                    "Two-factor authentication is required for at least one organization or enterprise account you're affiliated with.": "至少有一个您所属的组织或企业账户需要进行双因素身份验证。",
                 "Disable": "停用",
 
             "Preferred 2FA method": "首选 2FA 方法",
-                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双重身份验证的首选方法。",
+                "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双因素身份验证的首选方法。",
 
-            "Two-factor methods": "双重身份验证方式",
+            "Two-factor methods": "双因素身份验证方式",
                 "Configured": "已配置",
 
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
+                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双因素身份验证码。",
                     "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
 
                     "Manage Authenticator app": "管理身份验证器应用",
 
                     "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
-                    ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二个因素来验证您的身份。",
+                    ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二验证因素来验证您的身份。",
 
                     "Scan the QR code": "扫描二维码",
                     "Re-scan the QR code": "重新扫描二维码",
@@ -3322,7 +3338,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                         "Your two-factor secret": "您的双因素密钥",
 
                     "Verify the code from the app": "验证来自身份验证器应用的验证码",
-                    "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
+                    "Two-factor code verification failed. Please try again.": "双因素身份验证码验证失败。请重试。",
 
                 "SMS/Text message": "短信/文字信息",
                     "Manage SMS/Text message": "管理短信/文字信息",
@@ -3345,7 +3361,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
 
                 "Security keys": "安全密钥",
-                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                    "Security keys are webauthn credentials that can only be used as a second factor of authentication.": "安全密钥是 WebAuthn 凭证，只能用作第二验证因素。",
                     "Hide": "隐藏",
                     "No security keys": "没有安全密钥",
 
@@ -3356,7 +3372,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                     "Try again": "请重试",
 
                 "GitHub Mobile": "GitHub Mobile",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双因素身份验证。",
                     "Manage GitHub Mobile": "管理 GitHub Mobile",
 
                     // [/(\d+) devices?/, "$1 设备"], // 设置--> 密码和身份验证页
@@ -3364,7 +3380,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Recovery options": "恢复选项",
                 "Recovery codes": "恢复码",
-                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
                     "View": "查看",
 
@@ -3372,7 +3388,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Confirm access": "授权访问",
                 "Authentication code": "验证码",
                     "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
-                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+                "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
                 "Verify": "验证",
                 "Verify": "验证",
                 "Verifying…": "验证中…",
@@ -3418,16 +3434,16 @@ I18N.zh["settings/auth"] = {
 
         // 查看恢复码 https://github.com/settings/auth/recovery-codes
             // 顶部提醒
-                "New two-factor recovery codes successfully generated. Save them in a safe, durable location and discard your previous codes.": "已成功生成新的双重身份验证恢复码。将它们保存在安全、耐用的位置，并丢弃以前的恢复码。", // 生成新恢复码
+                "New two-factor recovery codes successfully generated. Save them in a safe, durable location and discard your previous codes.": "已成功生成新的双因素身份验证恢复码。将它们保存在安全、耐用的位置，并丢弃以前的恢复码。", // 生成新恢复码
 
-            "Two-factor recovery codes": "双重身份验证恢复码",
-                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+            "Two-factor recovery codes": "双因素身份验证恢复码",
+                "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
 
             "Recovery codes": "恢复码",
                 "Keep your recovery codes as safe as your password. We recommend saving them with a password manager such as": "保持您的恢复码与您的密码一样安全。我们建议使用密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot.": "将您的恢复码保存在一个安全的地方。",
                 "These new codes have replaced your old codes. Save them in a safe spot.": "这些新恢复码已取代您的旧恢复。请将它们保存在安全的地方。", // 生成新恢复码
-                "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二要素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
+                "These codes are the last resort for accessing your account in case you lose your password and second factors. If you cannot find these codes, you": "这些恢复码是在您丢失密码和第二验证因素的情况下访问您账户的最后手段。如果您找不到这些恢复码，您",
                 "will": "将",
                 "lose access to your account.": "无法访问您的帐户。",
 
@@ -3451,7 +3467,7 @@ I18N.zh["settings/sessions"] = {
 
         // 会话详情 https://github.com/settings/sessions
             "Web sessions": "网络会话",
-            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双重身份验证方法。",
+            "GitHub Mobile can be used to verify your identity when signing in from a new device and as a two-factor authentication method.": "GitHub Mobile 可用于从新设备登录时验证您的身份，并作为一种双因素身份验证方法。",
             "Learn more about authentication with GitHub Mobile.": "了解更多关于 GitHub Mobile 身份验证的信息。",
             "To get started, install GitHub Mobile for": "首先，安装 GitHub Mobile 适用于",
             "and sign in to your account.": "并登录您的帐户。",
@@ -4124,6 +4140,26 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
+                
+                "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
+                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
+
+                    // 对话框
+                        "Enable dependabot on actions": "在操作中启用 Dependabot",
+                            "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
+                        
+                        "Disable dependabot on actions": "在操作中禁用 Dependabot",
+                            "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
+
+                "Dependabot on self-hosted runners": "Dependabot 应用于自托管运行器",
+                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
+
+                    // 对话框
+                        "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
+                            "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
+                        
+                        "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
+                            "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
 
             "Secret scanning": "机密扫描",
                 "Receive alerts on GitHub for detected secrets, keys, or other tokens.": "在 GitHub 上接收有关检测到的机密、密钥或其他令牌的警报。",
@@ -5430,6 +5466,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "This repository has been disabled.": "此仓库已被禁用。",
             "Access to this repository has been disabled by GitHub Staff due to a violation of GitHub's terms of service. If you are the owner of the repository, you may reach out to GitHub Support for more information.": "由于违反了 GitHub 的服务条款，GitHub 已禁止访问此仓库。如果您是仓库的所有者，您可以联系 GitHub 支持以获取更多信息。",
 
+            // 仓库地址-浮动信息窗口(仅 Android UA)
+            "Navigate back to": "返回到",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -5527,6 +5566,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "The most recent revision cannot be deleted. Need to delete sensitive information? Go to the specific edit where the information was added.": "最近的修订版不能被删除。需要删除敏感信息？请到信息的具体编辑处修改。",
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
+                // 评论状态
+                "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
+                "This comment was marked as off-topic.": "该评论已被标记为离题。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5732,6 +5774,13 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
                 "License:": "许可证：",
                     "License": "许可证",
+
+            // 市场应用列表
+            "Grant your Marketplace apps access to this repository": "授予市场应用程序访问该仓库的权限",
+            "You are": "您",
+            "subscribed to": "订阅了",
+            "Marketplace app": "个市场应用",
+            "s": " ",
 
             "You are creating a public repository in your personal account.": "您正在个人帐户中创建公共仓库",
             "You are creating a private repository in your personal account.": "您正在个人帐户中创建私有仓库",
@@ -5994,6 +6043,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 添加文件 下拉菜单
                 "Create new file": "新建文件",
                 "Upload files": "上传文件",
+                "Upload file": "上传文件", // Android UA
 
             // 代码 下拉菜单
                 "Local": "本地",
@@ -6200,6 +6250,10 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "View license": "查看许可证",
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
+            "Cite this repository": "引用此仓库",
+                "If you use this software in your work, please cite it using the following metadata.": "如果您使用此软件，请使用以下元数据进行引用。",
+                "Learn more about CITATION files.": "了解更多关于引用文件的信息。",
+                "View citation file": "查看引用文件",
             "Activity": "活动",
             "Custom properties": "自定义属性",
             "star": "星标",
@@ -6828,6 +6882,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
             "Repository owner locked as": "仓库所有者锁定为",
+            "Repository owner deleted a comment": "仓库所有者删除了评论",
+            "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
             "locked as": "锁定为",
                 "off-topic": "离题",
                 "too heated": "过热",
@@ -7072,6 +7128,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
+        [/edited by ([^ ]+)/, "由 $1 编辑"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7495,6 +7552,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
                 "or the": "或",
                 "command line": "命令行",
                 "to resolve conflicts.": "来解决冲突。",
+                "These conflicts are too complex to resolve in the web editor": "这些冲突过于复杂，无法在网页编辑器中解决",
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
@@ -7903,6 +7961,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "None yet": "暂无",
                 "bug": "BUG",
                     "Something isn't working": "有些东西不工作",
+                "confirmed": "已确认",
+                    "Issue confirmed to exist and the reason is known": "问题已确认存在，原因已知",
                 "dependencies": "依赖性",
                     "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
                 "documentation": "文档",
@@ -7920,6 +7980,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "question": "问题",
                     "Further information is requested": "要求提供更多信息",
                 "wontfix": "不会修复",
+                    "Not going to fix it": "不打算修复",
                     "This will not be worked on": "这将不会被处理",
 
                 "Apply labels to this issue": "应用标签", // 议题
@@ -8199,6 +8260,8 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
                 "Add file": "添加文件",
             // 三个点
                 "Raw file content": "原始文件内容",
+                    "Copy": "复制", // Android UA 下出现
+                    "View": "查看", // Android UA 下出现
                     "Download": "下载",
                     // "Jump to line": "跳转到行",
                     "Find in file": "在文件中查找", // 激活 “换行” 时显示
@@ -8899,6 +8962,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Management": "管理",
             "Caches": "缓存",
             "Deployments": "部署",
+            "Attestations": "证书",
             "Runners": "运行器",
 
             "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
@@ -8924,6 +8988,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "workflow_dispatch": "工作流程调度",
                 "dynamic": "动态",
             // 状态
+                "Disabled": "禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
                 "queued": "排队",
@@ -11057,7 +11122,8 @@ I18N.zh["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖关�
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Detected automatically/, "自动检测于"]
+        [/Detected automatically/, "自动检测于"],
+        [/(\d+) Total/, "$1 总计"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
         [/Load (\d+) more…/, "加载更多 $1个…"],
@@ -13145,40 +13211,46 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "Review and manage alert presets.": "查看和管理警报预设。", //私有库
                         // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
-            "Dependabot security updates": "Dependabot 安全更新",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
-                "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
-                    // "Dependabot rules": "Dependabot 规则",
+                "Dependabot security updates": "Dependabot 安全更新",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch.": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。",
+                    "Enabling this option will result in Dependabot automatically attempting to open pull requests to resolve every open Dependabot alert with an available patch. If you would like more specific configuration options, leave this disabled and use": "启用后，Dependabot 会自动尝试打开拉取请求，以使用可用补丁解决每个打开的 Dependabot 警报。如果您想要更具体的配置选项，请将其禁用并使用",
+                        // "Dependabot rules": "Dependabot 规则",
 
-                // 启用对话框
-                    "Enable Dependabot security updates": "启用 Dependabot 安全更新",
-                        "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也将启用他们。",
-                        "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
+                    // 启用对话框
+                        "Enable Dependabot security updates": "启用 Dependabot 安全更新",
+                            "Dependabot security updates needs the dependency graph and Dependabot alerts to be enabled, so we'll turn them on too.": "Dependabot 安全更新需要启用依赖关系图和 Dependabot 警报，因此我们也将启用他们。",
+                            "Dependabot security updates needs Dependabot alerts to be enabled, so we'll turn that on too.": "Dependabot 安全更新需要启用 Dependabot 警报，因此我们也将启用它。",
 
-            "Grouped security updates": "分组安全更新",
-                "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。该选项可被 dependabot.yml 中指定的组规则覆盖 -",
-                "learn more here": "在此了解更多",
+                "Grouped security updates": "分组安全更新",
+                    "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。该选项可被 dependabot.yml 中指定的组规则覆盖 -",
+                    "learn more here": "在此了解更多",
 
-                // 对话框
-                    "Grouped security updates needs the dependency graph, Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too": "分组安全更新需要启用依赖关系图、Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
-                    "Grouped security updates needs Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too.": "分组安全更新需要启用 Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
-                    "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 安全更新，因此我们也将启用它。",
+                    // 对话框
+                        "Grouped security updates needs the dependency graph, Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too": "分组安全更新需要启用依赖关系图、Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
+                        "Grouped security updates needs Dependabot alerts and Dependabot security updates to be enabled, so we'll turn them on too.": "分组安全更新需要启用 Dependabot 警报和 Dependabot 安全更新，因此我们也将启用他们。",
+                        "Grouped security updates needs Dependabot security updates to be enabled, so we'll turn that on too.": "分组安全更新需要启用 Dependabot 安全更新，因此我们也将启用它。",
 
-            "Dependabot version updates": "Dependabot 版本更新",
-                "Enable Dependabot version updates": "启用 Dependabot 版本更新",
-                "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
-                "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
-                "Configure": "配置",
-                "― Create a config file": "― 创建配置文件",
+                "Dependabot version updates": "Dependabot 版本更新",
+                    "Enable Dependabot version updates": "启用 Dependabot 版本更新",
+                    "Allow Dependabot to open pull requests automatically to keep your dependencies up-to-date when new versions are available.": "允许 Dependabot 自动打开拉取请求，以便在有新版本时保持您的依赖关系是最新的。",
+                    "Learn more about configuring a dependabot.yml file": "了解更多关于配置 dependabot.yml 文件的信息",
+                    "Configure": "配置",
+                    "― Create a config file": "― 创建配置文件",
+
+                "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
+                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
+
+                "Dependabot on self-hosted runners": "Dependabot 应用于自托管运行器",
+                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
 
             "Code scanning": "代码扫描",
                 "Automatically detect common vulnerabilities and coding errors.": "自动检测常见漏洞和编码错误。",
 
-                "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
-
                 // 组织仓库
-                "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企业或组织策略在此仓库上禁用了 GitHub Actions。要使用代码扫描，请要求您的组织管理员启用 GitHub Actions，或者",
-                "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
+                    "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
+
+                    "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企业或组织策略在此仓库上禁用了 GitHub Actions。要使用代码扫描，请要求您的组织管理员启用 GitHub Actions，或者",
+                    "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
 
                 "Tools": "工具",
                     "CodeQL analysis": "CodeQL 分析",
@@ -13186,15 +13258,56 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "for": "为",
                         "eligible": "符合条件的",
                         "repositories.": "仓库。",
+                        "Last scan": "最后一次扫描",
+
                         "Set up": "设置",
-                        "Default": "默认",
-                            "CodeQL will automatically find the best configuration for your repository.": "CodeQL 将自动给您的仓库找到最佳配置。",
-                            "Languages detected in this repository are not compatible with this setup type at this time. Use the advanced setup instead.": "目前，该仓库中检测到的语言与该设置类型不兼容。请使用高级设置。",
-                        "Advanced": "高级",
-                            "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库中的 YAML 文件定制您的 CodeQL 配置。",
-                        "Not supported": "不支持",
-                        "Languages on this repository are not compatible with this feature. Learn more about": "该仓库上的语言与此功能不兼容。了解更多关于",
-                        "supported languages and frameworks": "所支持的语言和框架",
+                            "Default": "默认",
+                                "CodeQL will automatically find the best configuration for your repository.": "CodeQL 将自动给您的仓库找到最佳配置。",
+                                // "Languages detected in this repository are not compatible with this setup type at this time. Use the advanced setup instead.": "目前，该仓库中检测到的语言与该设置类型不兼容。请使用高级设置。",
+                            "Advanced": "高级",
+                                "Customize your CodeQL configuration via a YAML file checked into the repository.": "通过仓库中的 YAML 文件定制您的 CodeQL 配置。",
+                            // "Not supported": "不支持",
+                            // "Languages on this repository are not compatible with this feature. Learn more about": "该仓库上的语言与此功能不兼容。了解更多关于",
+                            // "supported languages and frameworks": "所支持的语言和框架",
+
+                            // CodeQL 默认设置
+                                "CodeQL default configuration": "CodeQL 默认设置",
+                                "These languages were detected on the default branch of this repository.": "这些语言是在该仓库的默认分支上检测到的。",
+                                "Query suites": "查询套件",
+                                    "Group of queries": "查询套件",
+                                    "to run against your code.": "针对您的代码运行。",
+
+                                    "Default": "默认",
+                                        "Recommended": "推荐",
+                                        "CodeQL high-precision queries.": "CodeQL 高精度查询。",
+                                "Scan events": "扫描事件",
+                                    "These events will trigger a new scan.": "这些事件将触发新的扫描。",
+                                    "On push and pull requests to": "推送和拉取请求到",
+                                        "protected branches": "受保护的分支",
+                                    "On a weekly schedule": "每周计划",
+                                        "Next scan of": "下次扫描",
+                                "Enable CodeQL": "启用 CodeQL",
+                                "Close": "关闭",
+
+                                "Setting up": "设置中",
+                                "View setup log": "查看设置日志",
+
+                                // 顶部提醒
+                                    "Repository settings saved. This initial setup might take a while because CodeQL will perform a full scan of the repository.": "仓库设置已保存。此初始设置可能需要一段时间，因为 CodeQL 将对仓库执行完整扫描。",
+                            // 开启后三个点菜单
+                                "View last scan log": "查看最近一次扫描日志",
+                                "View Code Scanning alerts": "查看代码扫描警报",
+                                "View CodeQL configuration": "查看 CodeQL 设置",
+                                "Switch to advanced": "切换到高级",
+                                // 切换到 CodeQL 工作流程对话框
+                                    "Switch to a CodeQL workflow?": "切换到 CodeQL 工作流程？",
+                                        "To switch to a workflow-based configuration, we must disable CodeQL first. CodeQL will stop analyzing code and resume once a valid workflow file is committed to the repository.": "要切换到基于工作流的配置，我们必须先禁用 CodeQL。CodeQL 将停止分析代码，并在有效的工作流文件提交到仓库后恢复分析。",
+                                "Disable CodeQL": "禁用 CodeQL",
+                                // 禁用对话框
+                                    "Disable CodeQL?": "禁用 CodeQL？",
+                                    "CodeQL will stop analyzing code from this repository. Existing alerts will remain open; you can dismiss them but not close them as fixed, as CodeQL needs to be enabled for that to happen. Existing CodeQL Actions workflows on this repository must be": "CodeQL 将停止分析该仓库中的代码。现有的警报将保持打开；您可以忽略它们，但不能关闭它们，因为 CodeQL 需要启用才能关闭。要",
+                                    "manually re-enabled to resume previous analyses": "恢复先前的分析，必须手动重新启用",
+                                    "": "",
                     "Other tools": "其他工具",
                         "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
                         "Explore workflows": "探索工作流程",
@@ -13745,14 +13858,14 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
-        // 双重身份验证登录 https://github.com/sessions/two-factor/app
+        // 双因素身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
             // "Learn more.": "了解更多。",
             "Confirm password to continue": "确认密码以继续",
             "Confirm password": "确认密码",
             "Tip:": "提示：",
 
-            "Two-factor authentication": "双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
             "Authentication code": "验证码",
                 "More information about Authentication Codes": "更多关于验证码的信息",
             //"Signing in…": "登录中…",
@@ -13760,7 +13873,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Verify": "验证",
                 "Verifying": "验证中",
                 "Verifying…": "验证中…",
-            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的 “双重身份验证器” 应用（TOTP），以查看您的身份验证码。",
+            "Open the two-factor authenticator (TOTP) app on your mobile device to view your authentication code.": "打开您的移动设备上的 “双因素身份验证器” 应用（TOTP），以查看您的身份验证码。",
 
             "Use this method for future logins": "今后的登录中使用此方法",
                 "Future logins on this device will prompt you to use": "今后在该设备上的登录将提示您使用",
@@ -13779,7 +13892,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Retry": "请重试",
 
             "Unable to verify with GitHub Mobile?": "无法使用 GitHub Mobile 进行验证？",
-                "Enter two-factor authentication code": "输入双重身份验证码",
+                "Enter two-factor authentication code": "输入双因素身份验证码",
 
             // 验证状态提醒
             "Sign-in request timed out.": "登录请求超时。",
@@ -13794,8 +13907,8 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "Unable to verify with your passkey?": "无法验证您的通行密钥？",
 
-        // 双重身份验证恢复 https://github.com/sessions/two-factor/recovery
-            "Two-factor recovery": "双重身份验证恢复",
+        // 双因素身份验证恢复 https://github.com/sessions/two-factor/recovery
+            "Two-factor recovery": "双因素身份验证恢复",
             "Recovery code": "恢复码",
 
             "If you are unable to access your mobile device, enter one of your recovery codes to verify your identity.": "如果您无法访问您的移动设备，请输入您的一个恢复码以验证您的身份。",
@@ -13819,7 +13932,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "within 1-3 days": "在 1-3 天内",
             "I understand, get started": "我知道了，开始吧",
 
-            "Two-factor authentication failed.": "双重身份验证失败。",
+            "Two-factor authentication failed.": "双因素身份验证失败。",
 
         // 帐户恢复 https://github.com/sessions/recovery
             "Account recovery": "帐户恢复",
@@ -13827,7 +13940,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Enter a recovery code": "输入恢复码",
                 "The file containing your recovery codes may exist on your computer - check for a file named": "包含恢复码的文件可能存在于您的计算机上——请检查一个名为",
             //使用 GitHub Mobile 应用进行身份验证
-            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub Mobile 会话，可以用来进行双重身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
+            "It looks like you have a GitHub Mobile session that could be used for two-factor authentication. If you have access to your mobile device, you may be able to use it to login.": "看起来您有一个 GitHub Mobile 会话，可以用来进行双因素身份验证。如果您能访问您的移动设备，您也许能用它来登录。",
 
             "First we need to verify an email address": "首先，我们需要验证一个电子邮箱地址",
             "by sending a one-time password to all addresses associated with this account.": "用于通过向该帐户关联的所有地址发送一次性密码。",
@@ -13868,26 +13981,26 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Password Alternatives": "密码替代方案",
                 "Passkeys": "通行密钥",
                 // [/(\d+) keys?/, "$1 个通行密钥"],
-                "Passkeys are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "通行密钥是一种密码替代品，可通过触摸、面部识别、设备密码或 PIN 验证您的身份。",
+                "Passkeys are webauthn credentials that validate your identity using touch, facial recognition, a device password, or a PIN. They can be used as a password replacement or as a 2FA method.": "通行密钥是一种 WebAuthn 凭证，可以使用触摸、面部识别、设备密码或 PIN 码验证您的身份。它们可以作为密码替代品或作为双因素身份验证（2FA）方法使用。",
                     "This browser or device is reporting partial passkey support, but you may be able to use a passkey from a nearby device.": "此浏览器或设备报告支持部分通行密钥，但您也许可以尝试使用附近设备的通行密钥。",
-            "Two-factor methods": "双重身份验证方式",
+            "Two-factor methods": "双因素身份验证方式",
                 "Your preferred 2FA method is": "您首选的 2FA 方式是",
                 "Configured": "已配置",
                 "Not configured": "未配置",
 
                 "Authenticator app": "身份验证器应用",
-                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双重身份验证码。",
+                    "Use an authentication app or browser extension to get two-factor authentication codes when prompted.": "在出现提示时，使用身份验证应用或浏览器扩展获取双因素身份验证码。",
                 "SMS/Text message": "短信/文字信息",
                     // [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
                 "Security keys": "安全密钥",
-                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二个验证步骤。",
+                    "Security keys are hardware devices that can be used as your second factor of authentication.": "安全密钥是一种硬件设备，可以作为您的第二验证因素。",
                 "GitHub Mobile": "GitHub Mobile",
-                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双重身份验证。",
+                    "GitHub Mobile can be used for two-factor authentication by installing the GitHub Mobile app and signing in to your account.": "通过安装 GitHub Mobile 应用并登录帐户，可以使用 GitHub Mobile 来进行双因素身份验证。",
                     "No devices": "没有设备",
                 "SMS number": "手机号码",
             "Recovery options": "恢复选项",
                 "Recovery codes": "恢复码",
-                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双重身份验证码的情况下访问您的帐户。",
+                    "Recovery codes can be used to access your account in the event you lose access to your device and cannot receive two-factor authentication codes.": "恢复码可用于在您无法访问设备且无法接收双因素身份验证码的情况下访问您的帐户。",
                     "Viewed": "已查看",
 
             "Make changes": "进行更改",
@@ -13908,7 +14021,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Add a passkey": "添加通行密钥",
             "Your device supports passkeys, a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN.": "您的设备支持密码替代方案，通过触摸、面部识别、设备密码或者 PIN 码来验证您的身份。",
 
-            "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双重身份验证。",
+            "Passkeys can be used for sign-in as a simple and secure alternative to your password and two-factor credentials.": "通行密钥可以作为一种简单且安全的替代方式，用于登录而不需要密码和双因素身份验证。",
             "Add passkey": "添加通行密钥",
             "Passkey registration failed.": "密钥注册失败。",
             "Ask me later": "稍后再问",
@@ -13933,7 +14046,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Confirm access": "授权访问",
             "Authentication code": "验证码",
                 "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
-            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
             "Verify": "验证",
             "Verify": "验证",
             "Verifying…": "验证中…",
@@ -13962,15 +14075,15 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "sudo mode": "Sudo 模式",
             ". After you've performed a sudo-protected action, you'll only be asked to re-authenticate again after a few hours of inactivity.": "。在您执行了受 sudo 保护的操作后，在几个小时不活动后才会要求您重新进行身份验证。",
 
-        // 首次设置双重身份验证 https://github.com/settings/two_factor_authentication/setup/intro
+        // 首次设置双因素身份验证 https://github.com/settings/two_factor_authentication/setup/intro
 
-            "Enable two-factor authentication (2FA)": "启用双重身份验证 (2FA)",
+            "Enable two-factor authentication (2FA)": "启用双因素身份验证 (2FA)",
             "Loading…": "载入中…",
 
             // 第1步
                 "Setup authenticator app": "设置身份验证器应用",
                 "Authenticator apps and browser extensions like": "身份验证器应用和浏览器扩展，例如",
-                ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二个因素来验证您的身份。",
+                ", etc. generate one-time passwords that are used as a second factor to verify your identity when prompted during sign-in.": "等生成一次性密码，在登录过程中出现提示时用作第二验证因素来验证您的身份。",
 
                 "Scan the QR code": "扫描二维码",
                 "Re-scan the QR code": "重新扫描二维码",
@@ -13983,7 +14096,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                     "Your two-factor secret": "您的双因素密钥",
 
                 "Verify the code from the app": "验证来自身份验证器应用的验证码",
-                "Two-factor code verification failed. Please try again.": "双重身份验证码验证失败。请重试。",
+                "Two-factor code verification failed. Please try again.": "双因素身份验证码验证失败。请重试。",
 
                 "Setup SMS authentication": "设置短信验证",
                     "Get authentication codes by SMS on your mobile phone when signing into GitHub. Make sure that": "登录 GitHub 时通过手机短信获取验证码。确保",
@@ -14006,7 +14119,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             // 第2步
                 "Download your recovery codes": "下载您的恢复码",
-                "You can use recovery codes as a second factor to authenticate in case you lose access to your device. We recommend saving them with a secure password manager such as": "您可以使用恢复码作为第二个因素来进行身份验证，以防您无法访问您的设备。我们建议使用安全的密码管理器保存它们，例如",
+                "You can use recovery codes as a second factor to authenticate in case you lose access to your device. We recommend saving them with a secure password manager such as": "您可以使用恢复码作为第二验证因素来进行身份验证，以防您无法访问您的设备。我们建议使用安全的密码管理器保存它们，例如",
                 "Keep your recovery codes in a safe spot": "将您的恢复码保存在安全的地方",
                 "If you lose your device and don't have the recovery codes, you will lose access to your account.": "如果您丢失了您的设备，并且没有恢复码，您将无法访问您的帐户。",
 
@@ -14014,9 +14127,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
                 "I have saved my recovery codes": "我已经保存了我的恢复码",
 
             // 第3步
-                "Two-factor authentication (2FA) is now enabled for your GitHub account": "现已为您的 GitHub 帐户启用双重身份验证 (2FA)",
-                "You have enabled two-factor authentication using SMS.": "您已使用 SMS 启用双重身份验证",
-                "You have enabled two-factor authentication using your authenticator app.": "您已使用身份验证应用启用双重身份验证",
+                "Two-factor authentication (2FA) is now enabled for your GitHub account": "现已为您的 GitHub 帐户启用双因素身份验证 (2FA)",
+                "You have enabled two-factor authentication using SMS.": "您已使用 SMS 启用双因素身份验证",
+                "You have enabled two-factor authentication using your authenticator app.": "您已使用身份验证应用启用双因素身份验证",
 
                 "Don't get locked out, configure additional authentication methods": "别被锁在外面，配置额外的身份验证方法",
                 "Configuring additional authentication methods will help you gain access to your account in case you lose your device and don't have your recovery codes.": "配置额外的认证方法将帮助您在丢失设备和没有恢复码的情况下获得对账户的访问。",
@@ -14032,44 +14145,44 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
                 "GitHub Mobile": "GitHub Mobile",
                     "Install": "安装",
-                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双重身份验证方法。通过安装 GitHub Mobile 应用（",
+                    "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双因素身份验证方法。通过安装 GitHub Mobile 应用（",
                     "and signing in to your account.": "）并登录您的帐户来启用它。",
                 "Done": "完成",
 
-        // 定期验证双重身份验证（2FA）设置
-            "Verify your two-factor authentication (2FA) settings": "验证您的双重身份验证（2FA）设置",
-            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双重身份验证凭据进行一次性验证。",
-            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双重身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双重身份验证。",
-            "Verify 2FA now": "现在验证双重身份验证",
+        // 定期验证双因素身份验证（2FA）设置
+            "Verify your two-factor authentication (2FA) settings": "验证您的双因素身份验证（2FA）设置",
+            "This is a one-time verification of your recent configured 2FA credentials.": "这是对您最近配置的双因素身份验证凭据进行一次性验证。",
+            "Make sure that 2FA is correctly configured, and avoid a potential account lockout disaster. If you're having trouble verifying, you'll be able to reconfigure 2FA for your account.": "确保正确配置双因素身份验证，避免可能的账户锁定灾难。如果您在验证时遇到问题，可以重新为您的账户配置双因素身份验证。",
+            "Verify 2FA now": "现在验证双因素身份验证",
             "You can choose to": "您可以选择",
-            "skip 2FA verification": "跳过双重身份验证",
+            "skip 2FA verification": "跳过双因素身份验证",
             "at this moment, we'll remind you again tomorrow.": "此刻，我们会在明天再次提醒您。",
 
         // https://github.com/settings/two_factor_checkup?
-            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双重身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
-            "Verify your 2FA setup tomorrow": "明天验证您的双重身份验证设置",
-            "Reconfigure 2FA on this account": "重新配置双重身份验证",
+            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
+            "Verify your 2FA setup tomorrow": "明天验证您的双因素身份验证设置",
+            "Reconfigure 2FA on this account": "重新配置双因素身份验证",
 
         // https://github.com/settings/two_factor_checkup
-            "2FA verification successful!": "双重身份验证成功！",
+            "2FA verification successful!": "双因素身份验证成功！",
             "Keep your recovery codes safe and easy to access": "请将您的恢复码保管好以便于访问。",
-            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二个身份验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
+            "As a reminder, recovery codes can be used as a second factor to authenticate in case you lose your device. If you don't have your recovery codes, you may lose access to your account.": "作为提醒，恢复码可用作第二验证因素，以防您丢失设备。如果您没有恢复码，则可能无法访问您的帐户。",
             "Not sure where you saved them?": "您不确定把它们保存在哪里了吗？",
 
         // https://github.com/settings/security
-            "Two-factor authentication (2FA)": "双重身份验证 (2FA)",
+            "Two-factor authentication (2FA)": "双因素身份验证 (2FA)",
             "is required for your GitHub account": "您的 GitHub 帐户需要",
 
             "This will only take a minute.": "只需一分钟时间。",
-            "Enable 2FA now. You'll be able to continue on with your work right after.": "立即启用双重身份验证。之后您将能够继续您的工作。",
+            "Enable 2FA now. You'll be able to continue on with your work right after.": "立即启用双因素身份验证。之后您将能够继续您的工作。",
 
-            "Two-factor authentication adds an": "双重身份验证增加了一个",
+            "Two-factor authentication adds an": "双因素身份验证增加了一个",
             "additional layer of account security": "额外的账户安全保护",
             ". It is a proven method of keeping you safe from hackers and account takeover, even if your password is stolen or compromised.": "。这是一种行之有效的方法，即使您的密码被盗或泄露，也能保证您不被黑客和账户接管。",
-            "Enable 2FA now": "立即启用双重身份验证",
+            "Enable 2FA now": "立即启用双因素身份验证",
 
             "You have": "您还有",
-            "left to enable 2FA. Take action now to avoid additional interruptions.": "时间启用双重身份验证。请立即采取行动以避免额外的干扰。",
+            "left to enable 2FA. Take action now to avoid additional interruptions.": "时间启用双因素身份验证。请立即采取行动以避免额外的干扰。",
             "Remind me tomorrow": "明天提醒我",
 
         // 登出页面 https://github.com/logout
@@ -15510,6 +15623,22 @@ I18N.zh["sponsors"] = { // 赞助界面
                 "GitHub Sponsors eligible accounts": "符合 GitHub 赞助者资格的账户",
                     "This account has not applied to join GitHub Sponsors.": "此帐户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
+        
+        // 赞助者登录页 https://github.com/sponsors/<user-name>/signup
+            // 标题
+                "GitHub Sponsors · Get sponsored": "GitHub 赞助者 · 获得赞助",
+                "Get Sponsored": "获得赞助",
+                "Launch a": "启动一个",
+                "GitHub Sponsors profile": "GitHub 赞助者资料",
+                "and start receiving funding.": "并开始获得资金。",
+            // 联系电子邮箱
+                "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly. You can manage verified email addresses in your": "选择一个经过验证的电子邮件地址，以便我们就您的 GitHub 赞助者资料与您联系。该地址不会公开共享。您可以在您的",
+            // 收款方式
+                "Bank account": "银行帐户",
+                    "Use a bank account to receive your sponsorships. Note: If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "使用银行账户接收您的赞助。注意：如果您使用个人银行账户，您所在的国家/地区可能会将您的 GitHub 赞助者 付款作为个人收入征税。",
+                "Fiscal Host": "财政主办方",
+                    "Members of supported fiscal hosts can use their fiscal host to join GitHub Sponsors instead of using a bank account.": "受支持财务主办方的成员可使用其财务主机加入 GitHub 赞助者，而无需使用银行账户。",
+            "Submit": "提交",
 
         // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已在 103 个地区推出测试版！",
@@ -15696,12 +15825,23 @@ I18N.zh["account/choose"] = { // 账户升级选择
 I18N.zh["marketplace"] = { // GitHub 市场
     "static": { // 静态翻译
         // GitHub 市场主页 https://github.com/marketplace
-            "Extend GitHub": "拓展 GitHub",
+           "Enhance your workflow with extensions": "增强您的工作流程",
+               "Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
+               "Search for Copilot extensions, apps, and actions": "搜索 Copilot 扩展、应用和操作",
+            "Featured": "精选",
+                "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
+                "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
+            // Copilot
+                "Beta": "测试",
+                "Copilot Extensions": "Copilot 扩展",
+                "Extend Copilot capabilities using third party tools, services, and data": "使用第三方工具、服务或数据扩展 Copilot 的功能",
+           "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
             "Explore apps": "探索应用",
             "Explore free apps": "探索免费应用", // 未登录
             "Contact sales": "联系销售",
+            "Create a new extension": "创建新扩展",
 
             "Types": "类型",
                 "Build on your workflow with apps that integrate with GitHub.": "使用与 GitHub 集成的应用构建您的工作流程。",
@@ -15717,51 +15857,113 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Most installed/starred": "安装次数最多/标星最多",
 
             // 类别
+                "All apps": "所有应用",
+                    "Build on your workflow with apps that integrate with GitHub": "使用与 GitHub 集成的应用构建您的工作流程。",
+                "All actions": "所有操作",
+                    "Automate your workflow from idea to production": "实现从构思到生产的工作流程自动化",
                 "API management": "API 管理",
+                    "API management apps": "API 管理应用",
+                    "API management actions": "API 管理操作",
                     "Structure your API infrastructure to enable various internet gateways to interact with your service.": "构建应用接口基础设施，使各种互联网网关能够与您的服务互动。",
                 "Chat": "聊天",
+                    "Chat apps": "聊天应用",
+                    "Chat actions": "聊天操作",
                     "Bring GitHub into your conversations.": "将 GitHub 纳入您的对话中。",
                 "Code quality": "代码质量",
+                    "Code quality apps": "代码质量应用",
+                    "Code quality actions": "代码质量操作",
                     "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，通过样式、质量、安全性和测试覆盖检查自动进行代码审查。",
                 "Code review": "代码审查",
+                    "Code review apps": "代码审查应用",
+                    "Code review actions": "代码审查操作",
                     "Ensure your code meets quality standards and ship with confidence.": "确保您的代码符合质量标准，并能放心交付。",
                 "Continuous integration": "持续集成",
+                    "Continuous integration apps": "持续集成应用",
+                    "Continuous integration actions": "持续集成操作",
                     "Automatically build and test your code as you push it to GitHub, preventing bugs from being deployed to production.": "当您将代码推送到 GitHub 时，自动构建和测试您的代码，从而防止将错误部署到生产中。",
                     "Container CI": "容器持续集成",
+                        "Container CI apps": "容器 CI 应用",
+                        "Container CI actions": "容器 CI 操作",
                         "Continuous integration for container applications.": "容器应用的持续集成。",
                     "Game CI": "游戏 CI",
+                        "Game CI apps": "游戏 CI 应用",
+                        "Game CI actions": "游戏 CI 操作",
                         "Tools for building a CI pipeline for game development": "用于构建游戏开发 CI 管道的工具",
                     "Mobile CI": "移动 CI",
                         "Continuous integration for Mobile applications": "移动应用的持续集成",
                 "Dependency management": "依赖管理",
+                    "Dependency management apps": "依赖管理应用",
+                    "Dependency management actions": "依赖管理操作",
                     "Secure and manage your third-party dependencies.": "保护和管理第三方依赖关系。",
                 "Deployment": "部署",
+                    "Deployment apps": "部署应用",
+                    "Deployment actions": "部署操作",
                     "Streamline your code deployment so you can focus on your product.": "简化代码部署，让您专注于产品。",
+                "Deployment Protection Rules": "部署保护规则",
+                    // 应用
+                    "Deployment Protection Rules apps": "部署保护规则应用",
+                    "Deployment Protection Rules actions": "部署保护规则操作",
+                    "Enables custom protection rules to gate deployments with third-party services": "启用自定义保护规则，以使用第三方服务进行部署",
+                "GitHub Sponsors": "GitHub 赞助",
+                    "GitHub Sponsors actions": "GitHub 赞助操作",
+                    "Tools to manage your": "管理您的",
+                    "community": "社区",
+                    
                 "IDEs": "集成开发环境",
+                    "IDEs apps": "IDE 应用",
+                    "IDEs actions": "IDE 操作",
                     "Find the right interface to build, debug, and deploy your source code.": "找到合适的界面来构建、调试和部署源代码。",
                 "Learning": "学习",
+                    "Learning apps": "学习应用",
+                    "Learning actions": "学习操作",
                     "Get the skills you need to level up.": "获得升级所需的技能。",
                 "Localization": "本地化",
+                    "Localization apps": "本地化应用",
+                    "Localization actions": "本地化操作",
                     "Extend your software's reach. Localize and translate continuously from GitHub.": "扩展您的软件的覆盖范围。从 GitHub 持续本地化和翻译。",
                 "Mobile": "移动",
+                    "Mobile apps": "移动应用",
+                    "Mobile actions": "移动操作",
                     "Improve your workflow for the small screen.": "针对小屏幕改进工作流程。",
-                "Monitoring": "监视",
+                // 移动CI
+                    "Mobile CI apps": "移动 CI 应用",
+                    "Mobile CI actions": "移动 CI 操作",
+                "Monitoring": "监控",
+                    "Monitoring apps": "监控应用",
+                    "Monitoring actions": "监控操作",
                     "Monitor the impact of your code changes. Measure performance, track errors, and analyze your application.": "监控代码更改的影响。衡量性能、跟踪错误并分析您的应用。",
                 "Project management": "项目管理",
+                    "Project management apps": "项目管理应用",
+                    "Project management actions": "项目管理操作",
                     "Organize, manage, and track your project with tools that build on top of issues and pull requests.": "使用基于置顶议题和拉取请求的工具来组织、管理和跟踪您的项目。",
                 "Publishing": "发布",
+                    "Publishing apps": "发布应用",
+                    "Publishing actions": "发布操作",
                     "Get your site ready for production so you can get the word out.": "让您的网站做好生产准备，以便您可以宣传。",
-                "Recently added": "最新添加",
+                "Recently added": "最近添加",
+                    "Recently added apps": "最近添加应用",
+                    "Recently added actions": "最近添加操作",
                     "The latest tools that help you and your team build software better, together.": "最新的工具可帮助您和您的团队更好地共同构建软件。",
+                // 安全
+                    "Security apps": "安全应用",
+                    "Security actions": "安全操作",
                 "Testing": "测试",
                     "Find, fix, and prevent security vulnerabilities before they can be exploited.": "发现、修复和预防安全漏洞，防患于未然。",
                 // 支持
+                    "Support apps": "支持应用",
+                    "Support actions": "支持操作",
                     "Get your team and customers the help they need.": "为您的团队和客户提供所需的帮助。",
                 // 测试
+                    "Testing apps": "测试应用",
+                    "Testing actions": "测试操作",
                     "Eliminate bugs and ship with more confidence by adding these tools to your workflow.": "通过将这些工具添加到您的工作流程中，消除错误并更有信心地交付。",
                 "Utilities": "实用工具",
+                    "Utilities apps": "实用工具应用",
+                    "Utilities actions": "实用工具操作",
                     "Auxiliary tools to enhance your experience on GitHub": "辅助工具，提升您的 GitHub 使用体验",
                     "Backup Utilities": "备份工具",
+                        "Backup Utilities apps": "备份工具应用",
+                        "Backup Utilities actions": "备份工具操作",
                         "Utilities providing periodic backups of your GitHub data": "定期备份 GitHub 数据的实用工具",
 
             "Filter": "筛选器",
@@ -15787,10 +15989,19 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Recommended": "推荐",
             "View all": "查看全部",
 
+            "List your tool": "列出您的工具",
             "List your tool on GitHub Marketplace": "在 GitHub 市场上列出您的工具",
+            "You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上列出的工具",
+            "Learn more about the requirements": "了解",
+            "to list a tool on GitHub Marketplace.": "在 GitHub 市场上列出工具需要满足的条件。",
             "Read the documentation": "阅读文档",
                 "Learn how you can build tools to extend and improve developers' workflows.": "了解如何构建工具来扩展和改进开发人员的工作流程",
 
+            "More about tools and GitHub Marketplace": "关于工具和 Gtihub 市场",
+                "About GitHub Marketplace": "关于 GitHub 市场",
+                "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和列出工具，包括列出内容、插图和屏幕截图的指南。",
+            "Adding webhooks for a GitHub Marketplace listing": "添加 GitHub 市场列表的 Web 钩子",
+                "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加 Web 钩子，以便在触发指定事件时通知您。",
             "Submit your tool for review": "提交您的工具以供审核",
                 "Share your app or GitHub Action with millions of developers.": "与数百万开发者分享您的应用或 GitHub Action",
 
@@ -15825,6 +16036,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "GitHub has verified that the publisher controls the domain and meets other requirements.": "GitHub 已经验证了发布者对该域名的控制权和满足其他要求",
             //"GitHub has verified that the publisher controls the domain and meets other": "GitHub 已经验证了发布者对该域名的控制权和满足其他",
             //"requirements": "要求",
+            "Category": "类别",
             "Categories": "类别",
             "App Type": "应用类型",
                 "GitHub Application": "GitHub 应用",
@@ -15938,6 +16150,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
             // 顶部提醒
                 "An error occurred while saving payment information.": "保存支付信息时发生错误。",
+                "Successfully updated billing information.": "保存账单信息成功。",
 
         // 免费应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
             "Review your order": "审查您的订单",
@@ -15946,9 +16159,12 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Total amount": "总金额",
 
             "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "组织所有者或账单管理者必须将其个人账单信息与该组织账户关联。您可以切换到企业账户，以使用企业的账单信息通过",
+            "By clicking \"Complete order and begin installation\", you agree to the": "通过单击“完成订单并开始安装”，您同意",
+            "Marketplace Terms of Service": "市场服务条款",
             "signing": "签署",
             "the": " ",
             "GitHub Customer Agreement": "GitHub 客户协议",
+            "Complete order and begin installation": "完成订单并开始安装",
 
         // GitHub 应用页面 https://github.com/apps/<app-name>
         // 示例: https://github.com/apps/codacy-production
@@ -16043,6 +16259,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
 
     },
     "regexp": [ // 正则翻译
+        [/and ([^ ]+)’s/, "和 $1 的"],
         [/plan has been deleted./, "计划已被删除。"],
         // /marketplace/codacy
         [/(\d+) other languages? supported/, "$1 种其他语言支持"],
@@ -16288,7 +16505,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
             "You are the only owner of this organization! We recommend a minimum of two people within each organization have the owner role.": "您是该组织的唯一所有者！我们建议每个组织内至少有两人担任所有者角色。",
             "Dismiss": "忽略",
 
-            "Filter by two-factor authentication": "按双重身份验证筛选",
+            "Filter by two-factor authentication": "按双因素身份验证筛选",
             "Everyone": "所有人",
             "Enabled": "禁用",
             "Disabled": "启用",
@@ -16498,7 +16715,7 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "Building an application, service, or tool that integrates with GitHub?": "构建应用、服务或工具，集成到 GitHub 吗？",
                 "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
-                "Developer site": "开发者站点",
+                "GitHub developer program": "GitHub 开发者计划",
                 "Check out the Developer site": "查看开发者站点，",
                 "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的成员！",
 
@@ -17326,14 +17543,14 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
         ...I18N.zh["orgs-settings-menu"]["static"],
 
         // 身份验证安全  /organizations/<org-login>/settings/security
-            "Two-factor authentication": "双重身份验证",
+            "Two-factor authentication": "双因素身份验证",
             "Requiring an additional authentication method adds another level of security for your organization.": "要求额外的身份验证方法为您的组织增加了另一个级别的安全性。",
-            // [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
-            "Members, billing managers, and outside collaborators who do not have two-factor authentication enabled for their personal account will be removed from the organization and will receive an email notifying them about the change.": "未为其个人帐户启用双重身份验证的成员、账单管理员和外部协作者将从组织中删除，并会收到一封电子邮件，通知他们有关更改。",
+            // [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
+            "Members, billing managers, and outside collaborators who do not have two-factor authentication enabled for their personal account will be removed from the organization and will receive an email notifying them about the change.": "未为其个人帐户启用双因素身份验证的成员、账单管理员和外部协作者将从组织中删除，并会收到一封电子邮件，通知他们有关更改。",
 
             // 顶部提醒
-                "Enabling two-factor authentication requirement.": "启用双重身份验证。",
-                "Disabled two-factor authentication requirement.": "禁用双重身份验证。",
+                "Enabling two-factor authentication requirement.": "启用双因素身份验证。",
+                "Disabled two-factor authentication requirement.": "禁用双因素身份验证。",
 
             "SSH Certificate Authorities": "SSH 证书颁发机构",
             "Provide SSH certificates that members can use to access your resources with Git": "提供 SSH 证书，成员可以用 Git 来访问您的资源",
@@ -17347,7 +17564,7 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
             "Restrict access to your organization's assets by configuring a list of IP addresses that are allowed to connect": "通过配置 IP 允许列表来限制对组织资产的访问",
     },
     "regexp": [ // 正则翻译
-        [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双重身份验证。"],
+        [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
     ],
 };
 
@@ -18847,3 +19064,279 @@ I18N.zh["features"] = {
     ],
 };
 
+I18N.zh["status"] = { // GitHub Status
+    "static": {
+        // https://www.githubstatus.com/
+            "Community": "社区",
+            "Subscribe To Updates": "订阅更新",
+            "All Systems Operational": "所有系统运行正常",
+            "Normal": "正常",
+            "Git Operations": "Git 操作",
+            "API Requests": "API 请求",
+            "Webhooks": "Web 钩子",
+            "Pull Requests": "拉取请求",
+            "Current Status": "当前状态",
+            "Incident History": "历史事故",
+
+        // https://www.githubstatus.com/history
+            "Incident with Packages": "软件包事故",
+            "Incident with Issues": "议题事故",
+            "Incident with Codespaces": "代码空间事故",
+            "Incident with Copilot": "Copilot 事故",
+            "Incident with Pull Requests": "拉取请求事故",
+            "Incident with Git Operations": "Git 操作事故",
+            "Incident with API Requests": "API 请求事故",
+            "Incident with Actions": "操作事故",
+            "Incident with Pages": "Pages 事故",
+            "Incident with Webhooks": "Web 钩子事故",
+            "We are investigating reports of degraded performance.": "我们正在调查性能下降的报告。",
+            "This incident has been resolved.": "此事故已解决。",
+            "+ Show All": "+ 展开全部",
+            "Incidents": "个事故",
+            "- Collapse Incidents": "- 收起事故",
+            "Current status": "当前状态",
+
+        // https://www.githubstatus.com/incidents/xxxxxxxxxxxx
+            "Incident Report for GitHub": "GitHub 事故报告",
+            "Resolved": "解决",
+            "Investigating": "调查",
+            "Posted": "更新",
+    },
+    "regexp": [
+    ],
+};
+
+I18N.zh["skills"] = { // https://skills.github.com/
+    "static": { // 静态翻译
+        "GitHub Skills": "Github 技能",
+            "Learn how to use GitHub with interactive courses designed for beginners and experts.": "通过专为初学者和专家设计的互动课程，学习如何使用 GitHub。",
+            "Start with": "开始于",
+                "Introduction to GitHub": "GitHub 介绍",
+        "Our courses": "我们的课程",
+            "First day on GitHub": "第一天",
+                // Github介绍
+                    "Get started using GitHub in less than an hour.": "在不到一个小时的时间内开始使用 GitHub。",
+                "Communicate using Markdown": "使用 Markdown 交流",
+                    "Organize ideas and collaborate using Markdown, a lightweight language for text formatting.": "使用 Markdown（一种用于文本格式的轻量级语言）组织想法和协作。",
+                // Github Pages
+                    "Create a site or blog from your GitHub repositories with GitHub Pages.": "使用 GitHub Pages 从 GitHub 仓库创建站点或博客。",
+            "First week on GitHub": "第一周",
+                "Review pull requests": "审查拉取请求",
+                    "Collaborate and work together on GitHub.": "在 GitHub 上协作。",
+                "Resolve merge conflicts": "解决合并冲突",
+                    "Learn why conflicts happen and how to resolve them.": "了解冲突发生的原因以及如何解决冲突。",
+                "Release-based workflow": "基于发行版的工作流",
+                    "Practice a release-based workflow and explore branching strategies.": "练习基于发布的工作流程，探索分支策略。",
+                "Connect the dots": "连接信息",
+                    "Find relevant conversations, commits, and projects in a repository.": "查找仓库中的相关对话、提交和项目。",
+                "Code with Codespaces": "使用代码空间编程",
+                    "Develop code using GitHub Codespaces and Visual Studio Code.": "使用 GitHub 代码空间和 Visual Studio Code 开发代码。",
+                "Code with Copilot": "使用 Copilot 编程",
+                    "Develop with AI-powered code suggestions using GitHub Copilot, Codespaces, and VS Code.": "使用 GitHub Copilot、代码空间和 VS Code，利用人工智能驱动的代码建议进行开发。",
+            "Automate workflows with GitHub Actions": "使用 GitHub 操作自动执行工作流程",
+                "Hello GitHub Actions": "你好 GitHub 操作",
+                    "Create a GitHub Action and use it in a workflow.": "创建 GitHub 操作并在工作流程中使用。",
+                "Test with Actions": "使用操作测试",
+                    "Create workflows that enable you to use Continuous Integration (CI) for your projects.": "创建工作流程，使您能够在项目中使用持续集成 (CI)。",
+                "Publish packages": "发布软件包",
+                    "Use GitHub Actions to publish your project to a Docker image.": "使用 GitHub 操作将项目发布为 Docker 镜像。",
+                "Deploy to Azure": "部署到 Azure",
+                    "Create a deployment workflow using GitHub Actions and Microsoft Azure.": "使用 GitHub 操作和 Microsoft Azure 创建部署工作流程。",
+                "Write JavaScript actions": "编写 JavaScript 操作",
+                   "Write your own GitHub JavaScript Action.": "编写自己的 GitHub JavaScript 操作。",
+                "Reusable workflows": "可重复使用的工作流程",
+                    "Make a workflow reusable in other workflows.": "让一个工作流程可在其他工作流程中重复使用。",
+            "Code security and analysis": "代码安全和分析",
+                "Secure your repository supply chain": "确保您的仓库供应链安全",
+                    "Secure your supply chain, patch dependency vulnerabilities.": "确保供应链安全，修补依赖性漏洞。",
+                "Secure code game": "安全代码游戏",
+                    "Learn about software security in a fun, educational environment.": "在寓教于乐的环境中学习软件安全知识。",
+                "Introduction to CodeQL": "CodeQL 简介",
+                    "Learn how to enable CodeQL to secure your code.": "了解如何启用 CodeQL 以确保代码安全。",
+                "Change commit history": "更改提交历史",
+                    "A skills course on changing the commit history with Git.": "使用 Git 更改提交历史的技能课程。",
+                "Introduction to secret scanning": "安全扫描介绍",
+                    "Enable secret scanning and take a feature tour.": "启用安全扫描并进行功能导览。",
+            // 底部提示框
+            "Have an idea for a course? Build your own with our quickstart guide.": "有课程想法？使用我们的快速入门指南，创建您自己的课程。",
+                "View quickstart guide": "查看快速入门指南",
+
+            //底部栏
+            "Expert Services": "专家服务",
+        
+        // 快速入门指南 https://skills.github.com/quickstart
+        "GitHub Skills Quickstart Guide": "GitHub 技能快速入门指南",
+            "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub 操作驱动的课程。",
+            "This guide covers planning your course, building your course, and best practices for GitHub Actions-powered courses.": "本指南包括规划课程、构建课程以及由 GitHub 操作驱动的课程的最佳实践。",
+            "Take a look at our": "查看我们的",
+            "courses for examples and templates.": "课程，了解示例和模板。",
+        "Table of contents": "目录",
+        "Author prerequisites": "作者必备条件",
+            "Course authors should be familiar with": "课程作者在开始制作自己的课程之前，应熟悉",
+            "GitHub Actions": "GitHub 操作",
+            "before starting to make their own courses.": "。",
+            "Some courses will require knowledge of": "部分课程需要了解",
+            "command line": "命令行",
+        "Planning your course": "规划课程",
+            "Write down your learning goals": "写下学习目标",
+                "Does your course give the learner something practical to work on?": "您的课程是否为学员提供了实用的学习内容？",
+                    "Learners prefer working on real projects over examples.": "相比示例，学员更喜欢实际项目。",
+                    "How can the learner use this project after they finish the course?": "完成课程后，学员如何使用该项目？",
+                "What specific skill does the learner leave your course with?": "学员在结束课程后能掌握哪些具体技能？",
+                    "Focus on what the learner will be able to do after they complete the course.": "重点是学员在完成课程后能够做什么。",
+                "Is an Actions-based course right for your goal?": "基于操作的课程适合您的目标吗？",
+                    "Does the learning experience benefit from step-by-step, in-repository learning?": "学习体验是否得益于循序渐进的库内学习？",
+            "Outline your steps": "概述步骤",
+                "Does this workflow match what the learner will do in the “real world”?": "这一工作流程是否与学员在“真实世界”中要做的事情相匹配？",
+                    "If you were teaching your friend, how would you interact with them in the repository?": "如果您在教你的朋友，您会如何在仓库中与他们互动？",
+                    "Does each step build towards the skills you’ve identified?": "每一步是否都是为了培养您所确定的技能？",
+                "Can you teach the skill in three to five small steps?": "您能分三到五个小步骤教授技能吗？",
+                    "Most learners tend to drop off after 30-45 minutes.": "大多数学员往往在 30-45 分钟后就会放弃学习。",
+                    "We’ve found that it takes learners about four times the length of an expert to complete a course.": "我们发现，学员完成一门课程所需的时间大约是专家的四倍。",
+                    "If your course needs more steps, consider splitting your learning objective into multiple courses.": "如果您的课程需要更多的步骤，可以考虑将学习目标分成多个课程。",
+                "Does the order of the steps build the learner’s knowledge in each step?": "步骤的顺序是否有助于学员掌握每个步骤的知识？",
+                    "Each step should reference and build on the knowledge in the previous steps.": "每个步骤都应参考和借鉴前几个步骤的知识。",
+                "Does each step relate to the main learning goal?": "每个步骤都与主要学习目标相关吗？",
+                    "You can use GitHub Actions and GitHub CLI to automate any needed steps that don’t build towards the learning goal.": "您可以使用 GitHub 操作和 GitHub CLI 自动执行任何不需要的步骤，以实现学习目标。",
+        "Set up your repository": "设置仓库",
+            "Start by clicking “Use this template” on our": "点击 “使用此模板” 开始。",
+                "course template": "课程模板",
+            "Check the box for “Template repository” either when setting up your repository, or": "在创建仓库时或在",
+                "in the repository settings": "仓库设置",
+                "afterwards. Actions": "中勾选 “模板版本库” 复选框。复刻仓库中操作",
+                "are not enabled by default": "默认不启用",
+                "in forks.": "。",
+            "Add a 1280×640 social image. Learners will share your course on different websites that will pull in the social image.": "添加一张 1280×640 的社交图片。学员将在不同网站上分享您的课程，而这些网站将调入社交图片。",
+            "Enable the automatically delete head branches": "启用自动删除头部分支设置",
+                "setting.": "。",
+            "Add a LICENSE file to your repository": "在仓库中添加 LICENSE 文件。",
+                ". GitHub uses Creative Commons Attribution 4.0 International.": "GitHub 采用知识共享署名 4.0 国际协议。",
+            "Add a": "添加一个",
+                "file": "文件。",
+                ". You can see an": "您可以查看",
+                "example": "示例",
+                ". We recommend at minimum ignoring operating system generated files.": " 文件。我们建议至少忽略操作系统生成的文件。",
+            "Include": "将",
+                "in the": "包含于",
+                "repository topics": "仓库主题内",
+        "Writing your README": "编写自述文件",
+            "Your README file will have a few sections: a header, a start step, three to five workflow steps, a finish step, and a footer.": "README 文件将包含几个部分：页眉、开始步骤、三到五个工作流程步骤、结束步骤和页脚。",
+            "The raw source of the README in": " ",
+                "includes many comments you can use to guide the development of your course’s README file.": "中的 README 源码包含了许多注释，您可以用来指导课程 README 文件的开发。",
+            "Writing your README: Header": "编写自述文件：页眉",
+                "Start with a short paragraph describing what you’ll teach. Be sure to include information on how the course is relevant to the learner. This paragraph should answer the question, “Why should I take this course?”": "首先用一小段文字描述您的教学内容。请务必说明课程与学员的相关性。这一段应该回答“我为什么要学习这门课程？”",
+                "Include the course title in sentence case, and a concise description in emphasis.": "用句子大小写写上课程名称，并用着重号简明扼要地描述。",
+            "Writing your README: Start": "编写自述文件：开始",
+                "A brief paragraph should describe the goal of the course, what the learner will learn, and why they should take the course.": "请用简短的一段文字说明课程的目标、学员将学到什么以及为什么要学习该课程。",
+                "A brief list of the following items can help the learner decide if the course is right for them:": "以下项目的简要列表可以帮助学习者确定该课程是否适合他们：",
+                    "Who is this for": "这是给谁学的",
+                    "What you’ll learn": "学习内容",
+                    "What you’ll build": "构建内容",
+                    "Prerequisites": "先决条件",
+                    "How long the course is (time and steps)": "课程有多长（时间和步骤）",
+                "Include clear directions on how to start the course.": "包括有关如何开始课程的明确说明。",
+            "Writing your README: Steps": "编写自述文件：步骤",
+                "Each step should:": "每个步骤都应该",
+                "Acknowledge the learner completed the previous step, using emphasis (italics).": "使用强调（斜体）来确认学习者已完成上一步。",
+                "Concisely describe the concept behind the next step. Link to GitHub docs for more in-depth explanation.": "简明描述下一步背后的概念。链接到 GitHub 文档以获取更深入的解释。",
+                "Describe what the learner is about to do": "描述学习者将要做什么",
+                "Mark the activity with": "标记活动使用",
+                "Use an ordered list to briefly describe what the learner needs to do": "使用有序列表简要描述学习者需要做什么",
+                "Let the learner know it will need about 20 seconds and refresh to move on to the next step": "让学习者知道大约需要 20 秒，然后刷新即可进入下一步",
+                "Include warning and troubleshooting information if the learner gets stuck": "如果学习者遇到困难，请提供警告和故障排除信息",
+                "Try to keep your formatting consistent so the learner can more easily find what they are looking for.": "尽量保持格式一致，以便学员可以更轻松地找到他们要查找的内容。",
+                "The first step is the hardest, so pick something easy! On the first step, encourage users to open new tabs for steps.": "第一步是最难的，所以要选择简单的步骤！在第一步，鼓励用户打开新的标签页进行操作。",
+            "Writing your README: Finish": "编写自述文件：结束",
+                "In the finish section,": "在结束部分，",
+                "Celebrate that the learner finished the course": "庆祝学习者完成课程",
+                "Include an celebratory image": "附上一张庆祝图片",
+                "Review what the learner just did": "回顾学习者刚刚做的事情",
+                "Provide next steps for learners who want to know more": "为想要了解更多信息的学习者提供后续步骤",
+                "Invite feedback about the course": "邀请学习者对课程提出反馈",
+            "Writing your README: Footer": "编写自述文件：页脚",
+                "Include a link for how learners should get help if they get stuck or have further questions": "如果学习者遇到困难或有进一步的问题，可通过链接了解如何获得帮助",
+                "Include a link to the GitHub status page. If GitHub Actions is down, the course won’t work.": "包含指向 GitHub 状态页面的链接。如果 GitHub 操作崩溃，课程将无法运行。",
+                "Include copyright information and a link to the license": "包含版权信息和许可证链接",
+                "Include Code of Conduct and other contributing information": "包含行为准则和其他有效信息",
+                "The footer should not be included in the finish section. The footer should appear regardless of which step the learner is currently on.": "结束部分不应包含页脚。无论学员当前处于哪个步骤，都应显示页脚。",
+        "Writing your Actions workflow files": "编写操作工作流程文件",
+            "Writing your Actions workflow files: Connect your steps to GitHub Actions events": "编写操作工作流程文件：将步骤连接到 GitHub 操作事件",
+               "Every step will have an Actions workflow file that triggers on": "每个步骤都会有一个根据",
+               "GitHub Actions events": "GitHub 操作事件",
+               ". Start by reviewing which event corresponds with each of your steps.": "触发的操作工作流文件。首先查看每个步骤对应的事件。",
+            "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "编写操作工作流程文件：确定 GitHub 操作在每个步骤中需要做的事情",
+                "You can use": "您可以在操作工作流中使用",
+                "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "来执行你能想到的几乎所有 GitHub 交互操作。写下完成每个步骤需要做的所有事情。存储链接，以便在学习课程时参考。",
+            "Writing your Actions workflow files: Sections of the workflow file": "编写操作工作流程文件： 工作流程文件的各部分",
+                "Take a look at": "查看",
+                "for example workflow files.": "中的工作流程示例文件。",
+                "Each workflow file has the name format:": "每个工作流程文件的名称格式为",
+                ", where": "其中",
+                "is the step number and": "是步骤编号，",
+                "describes the step. We recommend this format to make it easy to see the order the steps will run in.": "描述步骤。我们推荐使用这种格式，以便于查看各步骤的运行顺序。",
+                "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流程文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
+                "The first section is the": "第一部分为",
+                "name": "名称", 
+                "Next, add": "接下来，添加",
+                "comments describing": "注释",
+                "what the Actions workflow will do:": "，说明操作工作流要做什么：",
+                "Followed by the": "随后是",
+                "event trigger": "事件触发器",
+                "Next is the": "接下来是",
+                "job header": "任务标题",
+                ". You can add": "。您可以在这里添加",
+                "tags to limit the scope of the event trigger here. You’ll also need to specify": "标签来限制事件触发的范围。您还需要指定",
+                "to get your Actions workflow running.": "，以运行操作工作流。",
+                "Last, we are finally in the": "最后，我们终于进入了操作工作流的",
+                "steps": "步骤",
+                "of the Actions workflow. This is the heart of the file, where you can customize your course the most.": "。这是文件的核心部分，在这里您可以对课程进行最大程度的自定义。",
+                "You may include the": "您可以在课程中包含",
+                "update step action": "更新步骤操作",
+                "in your course, however it is not fully required. You may also customize this script to meet the needs of your course.": "，但并非完全必需。您也可以自定义此脚本，以满足课程的需要。",
+                "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流程文件中包含详尽的注释，以描述每个部分。其他作者和未来的自己都会感谢您。",
+        "Testing and monitoring your course": "测试和监控课程",
+            "Click on “Use this template” and run through your course on a your personal account. Does everything work? Do any actions go red?": "点击 “使用此模板”，然后在个人账户上运行课程。一切正常吗？是否有任何操作变红？",
+            "Consider asking for both technical and content review.": "考虑要求进行技术和内容审查。",
+            "Test your course with a potential learner.": "与潜在学员一起测试课程。",
+            "Check in our your course regularly for any reported issues or out-of-date information.": "定期检查您的课程，查看是否有任何报告的问题或过时的信息。",
+        "Best practices for building courses": "构建课程的最佳做法",
+            "Not everyone reads docs! Many potential course authors will use your course as an example. Make sure to include lots of comments in your README and Actions workflow files.": "不是每个人都会阅读文档！许多潜在的课程作者会将您的课程作为范例。请确保在您的 README 和操作工作流程文件中包含大量注释。",
+            "Keep everything you need in the one course repository.": "将您需要的一切都保存在一个课程仓库内。",
+            "If you need your courses to have limited access, create an organization for your courses, make your courses private, and invite the specific users that need these courses to your organization.": "如果您需要限制课程的访问权限，请为您的课程创建一个组织，将您的课程设为私人课程，并邀请需要这些课程的特定用户加入您的组织。",
+            "Consider adding a Code of Conduct, contributing guide, and issue templates.": "考虑添加行为准则、贡献指南和议题模板。",
+            "Keep the number of files and folders in the root directory short. More items in the root level means the README is further down the page.": "尽量减少根目录中文件和文件夹的数量。根目录中的项目越多，README 就越靠近页面底部。",
+            "Content": "内容",
+                "The more content you have, the more content you will have to update later. Be concise. Link to the GitHub Docs whenever you can.": "内容越多，以后需要更新的内容就越多。简明扼要。尽可能链接到 GitHub 文档。",
+                "Where does the learner go to get help? Add links to your README to let the learner know where to ask for help.": "学习者从哪里获得帮助？在 README 中添加链接，让学习者知道到哪里寻求帮助。",
+                "Make it as easy as possible for the learner to get started. Learners will give up if they don’t make some progress within a few minutes.": "尽可能让学员容易上手。如果学习者不能在几分钟内取得一些进展，他们就会放弃。",
+                "Write in casual, polite, active, and inspiring language. We’ve found courses perform better when they are more friendly.": "用随意、礼貌、活跃和鼓舞人心的语言写作。我们发现，当课程更具亲和力时，效果会更好。",
+                "Use emoji to convey a positive tone. Emoji can add to content, but use words to convey meaning.": "使用表情符号传达积极的语气。表情符号可以为内容锦上添花，但要用文字表达意思。",
+                "Check spelling and grammar.": "检查拼写和语法。",
+                "Limit use of acronyms, write out the full text instead.": "限制使用缩略语，而应写出全文。",
+                "Images can be helpful, but only when they are up-to-date.": "图片可以起到辅助作用，但必须是最新的。",
+                "Provide examples and templates to reduce how much work the learner needs to do to complete the step.": "提供示例和模板，以减少学员完成该步骤所需的工作量。",
+                "Follow the": "遵循",
+                "GitHub docs content style guide": "GitHub 文档内容风格指南",
+            "Actions workflows": "操作工作流程",
+                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在课程中做任何 GitHub 操作能做的事。查看",
+                "GitHub Actions docs": "GitHub 操作文档",
+                "and some": "和一些",
+                "examples of GitHub Actions": "GitHub 操作示例",
+                "to get a feel for what all actions can do.": "，了解所有操作的功能。",
+                "If you are building a course for your own organization, you can add your own analytics or learning management system integration as part of the Actions workflows.": "如果您正在为自己的组织构建课程，您可以添加自己的分析或学习管理系统集成，作为操作工作流的一部分。",
+            "Sharing your course": "分享您的课程",
+                "Your course only matters if potential learners know about it. Where can you link to your course? If public, is social media an option?": "只有当潜在学员知道您的课程时，您的课程才有意义。在哪里可以链接到您的课程？如果是公开的，是否可以选择社交媒体？",
+                "Make sure your course includes keywords and text that someone would search for in Google and other search engines.": "确保您的课程中包含有人会在 Google 和其他搜索引擎中搜索的关键字和文本。",
+    },
+    "regexp": [
+    ],
+};
+
+I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
+    "static": {
+        //"hasn’t sponsored any users yet.": "尚未赞助任何人。",
+    },
+    "regexp": [
+        [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
+    ],
+};
