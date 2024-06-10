@@ -9296,6 +9296,14 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                     "Filter deployments": "过滤部署",
                     // 搜索框菜单
                     "State": "状态",
+                        "success": "成功",
+                        "failure": "失败",
+                        "error": "错误",
+                        "inactive": "不活跃",
+                        "pending": "待定",
+                        "queued": "排队",
+                        "in progress": "进行中",
+                        "waiting": "等待中",
                     "Creator": "创建者",
                     "Environment": "环境",
                     "Ref": "分支",
@@ -9325,6 +9333,10 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                     "Add a filter": "添加过滤器",
                     "Apply": "应用",
 
+                //过滤器报错窗口
+                "Empty value for": "空值：",
+                "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
             "/ History": "/ 历史",
@@ -9334,6 +9346,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
         ...I18N.zh["repository-public"]["regexp"],
         [/Deployed to ([^ ]+)/, "部署到 $1"],
         [/(\d+) deployments?/, "$1 次部署"],
+        [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
     ],
 };
 
