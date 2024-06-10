@@ -6756,6 +6756,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // 底部赞助
                 "Show your support for": "通过赞助来表达您对",
                 "by sponsoring them.": "的支持。",
+                "Sponsor": "赞助",
 
             // 底部提示栏 (未登录)
                 "Sign up for free": "免费注册",
@@ -9297,6 +9298,11 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
             // 面板
                 // 所有部署
                     "Latest deployments from pinned environments": "来自固定环境的最新部署",
+                //具体某一项
+                    "Latest deployments": "最新部署",
+                // 中间面板
+                    "Your search did not match any deployments": "您的搜索未匹配任何部署",
+                    "Try a different search query": "尝试不同的搜索查询",
 
                 "Filter": "过滤",
                     "Filter deployments": "过滤部署",
@@ -9350,6 +9356,7 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/deployments?/, "部署"],
         [/Deployed to ([^ ]+)/, "部署到 $1"],
         [/(\d+) deployments?/, "$1 次部署"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
