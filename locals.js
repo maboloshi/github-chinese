@@ -6887,6 +6887,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "· May be fixed by": " · 可通过该方案修复",
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
+            "Repository owner locked and limited conversation to collaborators": "仓库所有者锁定并限制与协作者对话",
             "Repository owner locked as": "仓库所有者锁定为",
             "Repository owner deleted a comment": "仓库所有者删除了评论",
             "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
@@ -6900,7 +6901,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "merged commit": "已合并提交",
             // "into": "到",
             "deleted the": "删除了",
-            "locked and limited conversation to collaborators": "锁定并限制与协作者对话",
             "converted this issue into discussion": "此议题已转化为讨论",
             "removed their assignment": "取消了他们的任务",
             "assigned": "分配给了",
@@ -7002,7 +7002,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
 
             "This conversation has been locked as": "此对话已锁定为",
             "and limited to collaborators.": "，并限制与协作者对话。",
-
+            "This conversation has been locked and limited to collaborators.": "此对话已锁定并限制与协作者对话。",
             "This issue has been deleted.": "该议题已被删除。",
             "deleted this from": "删除了这个，从",
 
