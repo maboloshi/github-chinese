@@ -6863,6 +6863,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "· Fixed by": "· 修复了",
             "mentioned this issue": "提及了该议题",
             "opened this": "打开了这个",
+            "linked a pull request": "关联了一个拉取请求",
+            "that will": "这将会",
+            "close": "关闭",
+            "this issue": "这个议题",
+            // "that will close this issue": "这将会关闭这个议题",
             // "Issue": "议题",
             "added a commit that closed this issue": "在提交时关闭了这个议题",
             "closed this in": "关闭于",
@@ -7135,6 +7140,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
+        [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
