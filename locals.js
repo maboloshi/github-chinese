@@ -1484,6 +1484,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) commits? to/, "$1 个提交到"],
         [/(\d+) more commits? »/, "$1 个更多提交到"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
+        [/Join discussion/, "加入讨论"],
         // [/Updated/, "更新于"],
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
@@ -1492,12 +1493,12 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/(\d+) people reacted with thumbs up/, "$1 个人的的反应为点赞"],
-        [/(\d+) people reacted with laugh/, "$1 个人的反应为大笑"],
-        [/(\d+) people reacted with hooray/, "$1 个人的反应为欢呼"],
-        [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
-        [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
-        [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
+        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
+        [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
+        [/(\d+) (people|person) reacted with heart/, "$1 个人的反应为爱心"],
+        [/(\d+) (people|person) reacted with rocket/, "$1 个人的反应为火箭"],
+        [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
     ],
 };
