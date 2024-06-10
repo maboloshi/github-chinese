@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta-2024-06-09
+// @version      1.9.2-beta.1-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -65,19 +65,24 @@
         const getCurrentURL = () => location.href;
         getCurrentURL.previousURL = getCurrentURL();
 
-        // 创建 MutationObserver 实例，监听 DOM 变化
-        const observer = new MutationObserver((mutations, observer) => {
+        // 监测 document.body 的 class变化, 来驱动重新获取 page
+        new MutationObserver(mutations => {
             const currentURL = getCurrentURL();
 
             // 如果页面的 URL 发生变化
             if (currentURL !== getCurrentURL.previousURL) {
                 getCurrentURL.previousURL = currentURL;
                 page = getPage(); // 当页面地址发生变化时，更新全局变量 page
-                console.log(`链接变化 page= ${page}`);
+                console.log(`class 链接变化 page= ${page}`);
 
                 transTitle(); // 翻译页面标题
             }
+        }).observe(document.body, {
+            attributeFilter: ['class']
+        })
 
+        // 监听 document.body 下 DOM 变化
+        new MutationObserver(mutations => {
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
@@ -90,18 +95,13 @@
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
             }
-        });
-
-        // 配置 MutationObserver
-        const config = {
+        }).observe(document.body, {
             characterData: true,
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
-        };
+        });
 
-        // 开始观察 document.body 的变化
-        observer.observe(document.body, config);
     }
 
     /**
