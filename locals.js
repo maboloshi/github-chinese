@@ -366,6 +366,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Workflow runs/, "工作流运行"],
         [/Webhooks · Settings/, "Web 钩子 · 设置"],
         [/Add a code of conduct to/, "添加代码行为准则到"],
+        [/Caches?/, "缓存"],
         ["_regexp_end", "end"]
     ],
 };
@@ -19408,4 +19409,10 @@ I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
     ],
+};
+
+I18N.zh["attestations"] = { // https://github.com/<user-name>/repo-name>/attestations 证书
+    "static": {
+        "Attestations": "证书",
+    },
 };
