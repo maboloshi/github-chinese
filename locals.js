@@ -9248,6 +9248,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+) caches?/, "$1 个缓存"],
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
         [/(\d+) available runners?/, "$1 个可用运行器"],
+        [/cached/, "被缓存"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
