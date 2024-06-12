@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.1-2024-06-09
+// @version      1.9.2-beta.2-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -40,6 +40,9 @@
             window.WebKitMutationObserver ||
             window.MozMutationObserver;
 
+        // 缓存当前页面的 URL
+        let previousURL = location.href;
+
         // 监测 HTML Lang 值, 设置中文环境
         new MutationObserver(mutations => {
             if (document.documentElement.lang === "en") {
@@ -47,11 +50,52 @@
             }
         }).observe(document.documentElement, {
             attributeFilter: ['lang']
-        })
+        });
+
+        // 监听 turbo:before-fetch-request 事件，用于检测 URL 变化
+        document.addEventListener('turbo:before-fetch-request', event => {
+            const newURL = new URL(event.detail.url);
+            page = getPage(newURL);
+            console.log(`before-fetch-request 链接变化 page= ${page}`);
+            previousURL = newURL.href;
+        });
+
+        // 监测 document.body 的 class 变化，用于检测 URL 变化
+        new MutationObserver(mutations => {
+            const currentURL = location.href;
+
+            // 如果页面的 URL 发生变化
+            if (currentURL !== previousURL) {
+                previousURL = currentURL;
+                page = getPage();
+                console.log(`class 链接变化 page= ${page}`);
+            }
+        }).observe(document.body, {
+            attributeFilter: ['class']
+        });
+
+        // 监听 document.body 下 DOM 变化，用于处理节点变化
+        new MutationObserver(mutations => {
+            if (page) {
+                // 使用 filter 方法对 mutations 数组进行筛选，
+                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
+                const filteredMutations = mutations.filter(mutation =>
+                    mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+
+                // 处理每个变化
+                filteredMutations.forEach(mutation => traverseNode(mutation.target));
+            }
+        }).observe(document.body, {
+            subtree: true,
+            childList: true,
+            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
+        });
+
 
         // 监听 Turbo 完成事件
         document.addEventListener('turbo:load', () => {
             if (page) {
+                transTitle(); // 翻译页面标题
                 transBySelector();
                 if (page === "repository") { //仓库简介翻译
                     transDesc(".f4.my-3");
@@ -60,48 +104,6 @@
                 }
             }
         });
-
-        // 获取当前页面的 URL
-        const getCurrentURL = () => location.href;
-        getCurrentURL.previousURL = getCurrentURL();
-
-        // 监测 document.body 的 class变化, 来驱动重新获取 page
-        new MutationObserver(mutations => {
-            const currentURL = getCurrentURL();
-
-            // 如果页面的 URL 发生变化
-            if (currentURL !== getCurrentURL.previousURL) {
-                getCurrentURL.previousURL = currentURL;
-                page = getPage(); // 当页面地址发生变化时，更新全局变量 page
-                console.log(`class 链接变化 page= ${page}`);
-
-                transTitle(); // 翻译页面标题
-            }
-        }).observe(document.body, {
-            attributeFilter: ['class']
-        })
-
-        // 监听 document.body 下 DOM 变化
-        new MutationObserver(mutations => {
-            if (page) {
-                // 使用 filter 方法对 mutations 数组进行筛选，
-                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation =>
-                    mutation.addedNodes.length > 0 ||
-                    mutation.type === 'attributes' ||
-                    mutation.type === 'characterData'
-                );
-
-                // 处理每个变化
-                filteredMutations.forEach(mutation => traverseNode(mutation.target));
-            }
-        }).observe(document.body, {
-            characterData: true,
-            subtree: true,
-            childList: true,
-            attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
-        });
-
     }
 
     /**
@@ -182,10 +184,11 @@
     }
 
     /**
-     * getPage 函数：获取当前页面的类型。
-     * @returns {string|boolean} 当前页面的类型，如果无法确定类型，那么返回 false。
+     * getPage 函数：获取页面的类型。
+     * @param {URL object} URL - 需要分析的 URL。
+     * @returns {string|boolean} 页面的类型，如果无法确定类型，那么返回 false。
      */
-    function getPage() {
+    function getPage(url = window.location) {
 
         // 站点，如 gist, developer, help 等，默认主站是 github
         const siteMapping = {
@@ -193,12 +196,11 @@
             'www.githubstatus.com': 'status',
             'skills.github.com': 'skills'
         };
-        const site = siteMapping[location.hostname] || 'github'; // 站点
-        const pathname = location.pathname; // 当前路径
+        const site = siteMapping[url.hostname] || 'github'; // 站点
+        const pathname = url.pathname; // 当前路径
 
         // 是否登录
         const isLogin = document.body.classList.contains("logged-in");
-
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';
         // 组织页
@@ -210,7 +212,7 @@
         let page, t = document.body.className.match(I18N.conf.rePageClass);
         if (t) {
             if (t[1] === 'page-profile') {
-                let matchResult = location.search.match(/tab=(\w+)/);
+                let matchResult = url.search.match(/tab=(\w+)/);
                 if (matchResult) {
                     page = 'page-profile/' + matchResult[1];
                 } else {
