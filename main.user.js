@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.2-2024-06-09
+// @version      1.9.2-beta.3-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -52,15 +52,7 @@
             attributeFilter: ['lang']
         });
 
-        // 监听 turbo:before-fetch-request 事件，用于检测 URL 变化
-        document.addEventListener('turbo:before-fetch-request', event => {
-            const newURL = new URL(event.detail.url);
-            page = getPage(newURL);
-            console.log(`before-fetch-request 链接变化 page= ${page}`);
-            previousURL = newURL.href;
-        });
-
-        // 监测 document.body 的 class 变化，用于检测 URL 变化
+        // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
 
@@ -68,14 +60,9 @@
             if (currentURL !== previousURL) {
                 previousURL = currentURL;
                 page = getPage();
-                console.log(`class 链接变化 page= ${page}`);
+                console.log(`DOM变化触发: 链接变化 page= ${page}`);
             }
-        }).observe(document.body, {
-            attributeFilter: ['class']
-        });
-
-        // 监听 document.body 下 DOM 变化，用于处理节点变化
-        new MutationObserver(mutations => {
+            
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
