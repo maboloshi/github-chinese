@@ -366,6 +366,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Workflow runs/, "工作流运行"],
         [/Webhooks · Settings/, "Web 钩子 · 设置"],
         [/Add a code of conduct to/, "添加代码行为准则到"],
+        [/Caches?/, "缓存"],
         ["_regexp_end", "end"]
     ],
 };
@@ -1484,6 +1485,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) commits? to/, "$1 个提交到"],
         [/(\d+) more commits? »/, "$1 个更多提交到"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
+        [/Join discussion/, "加入讨论"],
         // [/Updated/, "更新于"],
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
@@ -1492,12 +1494,12 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/(\d+) people reacted with thumbs up/, "$1 个人的的反应为点赞"],
-        [/(\d+) people reacted with laugh/, "$1 个人的反应为大笑"],
-        [/(\d+) people reacted with hooray/, "$1 个人的反应为欢呼"],
-        [/(\d+) people reacted with heart/, "$1 个人的反应为爱心"],
-        [/(\d+) people reacted with rocket/, "$1 个人的反应为火箭"],
-        [/(\d+) people reacted with eyes/, "$1 个人的反应为眼睛"],
+        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
+        [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
+        [/(\d+) (people|person) reacted with heart/, "$1 个人的反应为爱心"],
+        [/(\d+) (people|person) reacted with rocket/, "$1 个人的反应为火箭"],
+        [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
     ],
 };
@@ -6755,6 +6757,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // 底部赞助
                 "Show your support for": "通过赞助来表达您对",
                 "by sponsoring them.": "的支持。",
+                "Sponsor": "赞助",
 
             // 底部提示栏 (未登录)
                 "Sign up for free": "免费注册",
@@ -6862,6 +6865,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "· Fixed by": "· 修复了",
             "mentioned this issue": "提及了该议题",
             "opened this": "打开了这个",
+            "linked a pull request": "关联了一个拉取请求",
+            "that will": "这将会",
+            "close": "关闭",
+            "this issue": "这个议题",
+            // "that will close this issue": "这将会关闭这个议题",
             // "Issue": "议题",
             "added a commit that closed this issue": "在提交时关闭了这个议题",
             "closed this in": "关闭于",
@@ -6886,6 +6894,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "· May be fixed by": " · 可通过该方案修复",
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
+            "Repository owner locked and limited conversation to collaborators": "仓库所有者锁定并限制与协作者对话",
             "Repository owner locked as": "仓库所有者锁定为",
             "Repository owner deleted a comment": "仓库所有者删除了评论",
             "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
@@ -6899,7 +6908,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "merged commit": "已合并提交",
             // "into": "到",
             "deleted the": "删除了",
-            "locked and limited conversation to collaborators": "锁定并限制与协作者对话",
             "converted this issue into discussion": "此议题已转化为讨论",
             "removed their assignment": "取消了他们的任务",
             "assigned": "分配给了",
@@ -7001,7 +7009,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
 
             "This conversation has been locked as": "此对话已锁定为",
             "and limited to collaborators.": "，并限制与协作者对话。",
-
+            "This conversation has been locked and limited to collaborators.": "此对话已锁定并限制与协作者对话。",
             "This issue has been deleted.": "该议题已被删除。",
             "deleted this from": "删除了这个，从",
 
@@ -7134,6 +7142,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) time/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
+        [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -9240,6 +9249,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+) caches?/, "$1 个缓存"],
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
         [/(\d+) available runners?/, "$1 个可用运行器"],
+        [/cached/, "被缓存"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
@@ -9290,11 +9300,24 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
             // 面板
                 // 所有部署
                     "Latest deployments from pinned environments": "来自固定环境的最新部署",
+                //具体某一项
+                    "Latest deployments": "最新部署",
+                // 中间面板
+                    "Your search did not match any deployments": "您的搜索未匹配任何部署",
+                    "Try a different search query": "尝试不同的搜索查询",
 
                 "Filter": "过滤",
                     "Filter deployments": "过滤部署",
                     // 搜索框菜单
                     "State": "状态",
+                        "success": "成功",
+                        "failure": "失败",
+                        "error": "错误",
+                        "inactive": "不活跃",
+                        "pending": "待定",
+                        "queued": "排队",
+                        "in progress": "进行中",
+                        "waiting": "等待中",
                     "Creator": "创建者",
                     "Environment": "环境",
                     "Ref": "分支",
@@ -9324,6 +9347,10 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
                     "Add a filter": "添加过滤器",
                     "Apply": "应用",
 
+                //过滤器报错窗口
+                "Empty value for": "空值：",
+                "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
             "/ History": "/ 历史",
@@ -9331,8 +9358,10 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/deployments?/, "部署"],
         [/Deployed to ([^ ]+)/, "部署到 $1"],
         [/(\d+) deployments?/, "$1 次部署"],
+        [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
     ],
 };
 
@@ -19381,4 +19410,10 @@ I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
     ],
+};
+
+I18N.zh["attestations"] = { // https://github.com/<user-name>/repo-name>/attestations 证书
+    "static": {
+        "Attestations": "证书",
+    },
 };
