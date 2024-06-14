@@ -7140,7 +7140,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
-        [/Edited (\d+) time/, "已编辑 $1 次"],
+        [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
 
@@ -7171,6 +7171,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "to learn how to open a good pull request.": "，去学习如何打开一个好的拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
+
+            "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
 
             "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
             "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
