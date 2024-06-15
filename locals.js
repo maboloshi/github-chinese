@@ -8962,40 +8962,50 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "to your workflow file.": "到您的工作流程文件。",
 
             // 左侧栏
-            "Workflows": "工作流程",
-            "New workflow": "新建工作流程",
-            "Select workflow": "选择工作流程",
-            "Show more workflows...": "显示更多工作流程...",
-            "Management": "管理",
-            "Caches": "缓存",
-            "Deployments": "部署",
-            "Attestations": "证书",
-            "Runners": "运行器",
+                "New workflow": "新建工作流程",
+                "Management": "管理",
+                    "Caches": "缓存",
+                    "Deployments": "部署",
+                    "Attestations": "证书",
+                    "Runners": "运行器",
+                "Disabled": "已禁用",
 
-            "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
-            "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
+                // 顶部提醒
+                    // [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
+                    // [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
+
+                // 取消置顶对话框
+                    "Unpin this workflow?": "取消工作流程置顶？",
+                        "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流程。",
+                    "Yes, unpin": "是的，取消固定",
 
             "All workflows": "全部工作流程",
-            "Showing runs from all workflows": "显示所有工作流程的运行情况",
+                "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
-            //筛选条
-            "Filter workflow runs": "筛选工作流程",
-                "Narrow your search": "缩小搜索范围",
+            // 筛选条
+                "Filter workflow runs": "筛选工作流程",
+                    "Narrow your search": "缩小搜索范围",
+
+            // 反馈提醒
+                "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
+                    "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
+
 
             // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
+
             "Event": "事件",
                 "Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
-                    "push": "推送",
+                    "issue_comment": "议题评论",
                     "pull_request": "拉取请求",
                     "pull_request_target": "拉取请求目标",
+                    "push": "推送",
                     "schedule": "日程",
                     "watch": "关注",
                     "workflow_dispatch": "工作流程调度",
                     "dynamic": "动态",
             // 状态
-                "Disabled": "已禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
                     "queued": "排队",
@@ -9019,17 +9029,18 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             // 日志 右侧按钮
             "Cancel run": "取消运行",
+            "View workflow file": "查看工作流程文件",
             "Delete workflow run": "删除工作流程运行",
                 // 删除工作流程运行 对话框
                     "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流程运行吗？",
-                    "This action cannot be undone": "此操作无法撤消",
-                    "Yes, permanently delete this workflow run": "是的，永久删除此工作流程运行",
+                    "This action cannot be undone.": "此操作无法撤消。",
+                    "Yes, delete this workflow run": "是的，删除此工作流程",
                 // 顶部提醒
                     "Workflow run deleted successfully.": "工作流程运行删除成功。",
 
-            // 筛选结果
-            "all workflow runs": "所有工作流程运行",
-            "or try different filters.": "或尝试不同的筛选器。",
+            // // 筛选结果
+            // "all workflow runs": "所有工作流程运行",
+            // "or try different filters.": "或尝试不同的筛选器。",
 
             // 列表区域
                 // 工作流程运行状态
@@ -9039,6 +9050,48 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             // 顶部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
+
+        // /<user-name>/<repo-name>/actions/workflows/<file>.yml
+            //右侧三个点
+                "Show workflow options": "显示工作流程选项",
+                    "Create status badge": "创建状态徽章",
+                        // 对话框
+                            "Default branch": "默认分支",
+                                "Filter branches": "筛选分支",
+                            "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
+                    "Pin workflow": "固定工作流程",
+                    "Disable workflow": "禁用工作流程",
+                        // 顶部提醒
+                        "Workflow disabled successfully.": "工作流程已成功禁用。",
+
+            "This workflow has a": "这个工作流程有一个",
+            "event trigger.": "事件触发器。",
+
+            "Run workflow": "运行工作流程",
+                "Use workflow from": "使用工作流程来自：",
+                "Branch:": "分支：",
+                "Select branch": "选择分支",
+                "Select ref": "选择引用",
+                "Select a tag": "选择标签",
+                    "Nothing to show": "暂无",
+
+                    "Workflow does not exist or does not have a": "工作流程不存在或没有",
+                    "trigger in this branch.": "触发在此分支。",
+                    "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
+                // 顶部提醒
+                    "Workflow run was successfully requested.": "工作流程已成功请求运行。",
+
+            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
+            "This workflow was disabled manually.": "工作流程已被手动禁用。",
+            "Enable workflow": "启用工作流程",
+                // 顶部提醒
+                    "Workflow enabled successfully.": "工作流程已成功启用。",
+            "Re-run jobs": "重新运行作业",
+
+            "This workflow has no runs yet.": "此工作流程尚未运行。",
+
+            "No results matched your search.": "没有与您的搜索匹配的结果。",
+            "You could search": "您可以搜索",
 
         // 缓存 /<user-name>/<repo-name>/actions/caches
             "Showing caches from all workflows.": "显示所有工作流程的缓存。",
@@ -9067,8 +9120,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Remove the filters": "删除筛选器",
             "or try a different search query.": "或尝试不同的搜索查询。",
 
-            "Remove cache": "删除缓存",
+            "Delete cache": "删除缓存",
+                "Remove cache": "删除缓存",
                 "Are you sure you want to delete this cache?": "您确定要删除此缓存吗？",
+                "This action cannot be undone": "此操作无法撤消",
                 "Yes, permanently delete this cache": "是的，永久删除此缓存",
 
                 "Deleting Cache...": "删除缓存中...",
@@ -9100,40 +9155,6 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "runners for this repository": "运行器",
                     "Self-hosted runners are virtual machines for GitHub Actions workflows that you manage and maintain outside of GitHub.": "自托管运行器是您在 GitHub 外部管理和维护的 GitHub Actions 工作流程的虚拟机。",
 
-        // /<user-name>/<repo-name>/actions/workflows/<file>.yml
-            "This workflow has a": "这个工作流程有一个",
-            "event trigger.": "事件触发器。",
-
-            "Run workflow": "运行工作流程",
-                "Use workflow from": "使用工作流程来自：",
-                "Branch:": "分支：",
-                "Select branch": "选择分支",
-                "Select ref": "选择引用",
-                "Select a tag": "选择标签",
-                    "Nothing to show": "暂无",
-
-                    "Workflow does not exist or does not have a": "工作流程不存在或没有",
-                    "trigger in this branch.": "触发在此分支。",
-                    "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
-                // 顶部提醒
-                "Workflow run was successfully requested.": "工作流程已成功请求运行。",
-
-            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
-            "Enable workflow": "启用工作流程",
-                // 顶部提醒
-                "Workflow enabled successfully.": "工作流程已成功启用。",
-            "Disable workflow": "禁用工作流程",
-                // 提醒
-                "This workflow was disabled manually.": "工作流程已被手动禁用。",
-                // 顶部提醒
-                "Workflow disabled successfully.": "工作流程已成功禁用。",
-            "Re-run jobs": "重新运行作业",
-
-            "This workflow has no runs yet.": "此工作流程尚未运行。",
-
-            "No results matched your search.": "没有与您的搜索匹配的结果。",
-            "You could search": "您可以搜索",
-
         // /<user-name>/<repo-name>/actions/runs/<id>
             // 顶部提醒
                 "Logs deleted successfully.": "日志已成功删除。",
@@ -9142,11 +9163,8 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Re-run all jobs": "重新运行所有作业",
             "Cancel workflow": "取消工作流程",
             //右侧按钮
-            "View workflow file": "查看工作流程文件",
             "View workflow runs": "查看工作流程运行",
             "Workflow run options": "工作流程运行选项",
-            "Create status badge": "创建状态徽章",
-                "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
             "Delete all logs": "删除所有日志",
 
             // 左侧栏
@@ -9190,7 +9208,23 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Show more": "显示更多",
                 "Show less": "显示更少",
 
-        // /<user-name>/<repo-name>/actions/runs/<id>/jobs/<id2>
+        // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
+            "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
+
+            "Started": "开始于",
+            "ago": "之前",
+
+            "Search logs": "搜索日志",
+            "Re-run this job": "重新运行此作业",
+            // 设置按钮
+                "Show timestamps": "显示时间戳",
+                "Show full screen (Shift+F)": "全屏显示（Shift+F）",
+                "Download log archive": "下载日志存档",
+                "View raw logs": "查看原始日志",
+
+            "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
+
+            "Re-run all checks": "重新运行所有检查",
 
         // /<user-name>/<repo-name>/actions/runs/<id>/usage
             "Run and billable time": "运行和计费时间",
@@ -9204,35 +9238,11 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Workflow file": "工作流程文件",
             "Workflow file for this run": "本次运行的工作流程文件",
 
-        // /<user-name>/<repo-name>/runs/<id>
-            "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
-
-            "Search logs": "搜索日志",
-            "Re-run this job": "重新运行此作业",
-            // 设置按钮
-                "Show timestamps": "显示时间戳",
-                "Show full screen (Shift+F)": "全屏显示（Shift+F）",
-                "Download log archive": "下载日志存档",
-                "View raw logs": "查看原始日志",
-
-            "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
-
-            // GitHub Pages
-                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
-                "Page Build": "页面构建",
-                "succeeded": "成功于",
-                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
-                "Your website is ready at": "您的网站已准备就绪，网址为",
-                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
-
-                //顶部提醒
-                    "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
-
-            "Re-run all checks": "重新运行所有检查",
-
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
+        [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
