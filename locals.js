@@ -470,9 +470,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Enable": "启用",
                 "Disable": "禁用",
                 "Documentation": "文档",
-                "Codespaces Connectivity v2": "代码空间连接 v2",
-                    "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
-                    "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间现在需要访问 *.visualstudio.com 以便于您连接到代码空间。",
                 "Colorblind themes": "色盲主题",
                     "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 8% 的男性和高达 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
@@ -483,17 +480,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
-                "Project Migration": "项目迁移",
-                    "We've made it easy for you to migrate your project (classic) boards to the all new Projects experience! Enable this feature so that you can try out tables, multiple views, new automation options, and powerful field types using your existing projects.": "我们已经为您简化了将您的项目（经典版）面板迁移到全新项目的体验！启用此功能，您可以在现有项目中尝试表格、多视图、新的自动化选项和强大的字段类型。",
-                    "How it works:": "如何工作：",
-                        "We'll create a copy of your existing classic project board in Projects.": "我们将在 “项目” 中创建现有经典项目看板的副本。",
-                        "You'll be prompted to close your classic project as future changes won't be synchronized.": "系统将提示您关闭经典项目，因为未来的更改将不会同步。",
-                        "You can reopen your old project in a pinch if necessary!": "如果有必要，您可以紧急重新打开您的旧项目！",
-                    "Notes:": "注意：",
-                        "Migrated projects will be made private by default.": "默认情况下，迁移的项目将设为私有。",
-                        "Projects does not support repository level projects. When you migrate a repository project board, it will migrate to either the organization or personal account that owns the repository project, and the migrated project will be pinned to the original repository. We will migrate permissions to the best of our ability but some folks may lose read or writes access.": "项目不支持仓库级别的项目。当您迁移仓库项目面板时，它将被迁移到拥有该仓库项目的组织或个人帐户，并且迁移后的项目将被固定到原始仓库。我们将尽最大努力迁移权限，但有些人可能会失去读取或写入权限。",
-                "Deployments Dashboard View": "部署仪表板视图",
-                    "A new dashboard to view and track your deployments across all your environments, see the full history of your deployments, and filter by environment.": "一个全新的仪表板，用于查看和跟踪您在所有环境中的部署情况，查看您部署的完整历史记录，并按环境进行筛选。",
                 "Slash Commands": "斜杠命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
@@ -525,8 +511,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "in 30 minutes": "30 分钟",
                 "in 1 hour": "1 小时",
                 "in 4 hours": "4 小时",
-                "today": "今天",
-                "this week": "本周",
+                "after today": "今日之后",
+                "after this week": "本周之后",
+                "after a month": "本月之后",
                 "How long until this status will automatically clear.": "多久后状态自动清除。",
             "Visible to": "可见",
                 "Everyone": "任何人",
@@ -4150,14 +4137,14 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
-                
+
                 "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
                     "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
                         "Enable dependabot on actions": "在操作中启用 Dependabot",
                             "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot on actions": "在操作中禁用 Dependabot",
                             "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
 
@@ -4167,7 +4154,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     // 对话框
                         "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
                             "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
                             "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
 
@@ -4520,7 +4507,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Register a new GitHub App": "注册新的 GitHub 应用",
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
             "New GitHub App": "注册新 GitHub 应用",
-            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用的更多信息",
+            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
             "developer documentation": "开发者文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
 
@@ -8973,7 +8960,6 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "docker-compose": "docker-组合",
             "to your workflow file.": "到您的工作流程文件。",
 
-
             // 左侧栏
             "Workflows": "工作流程",
             "New workflow": "新建工作流程",
@@ -9000,29 +8986,29 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Event": "事件",
                 "Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
-                "push": "推送",
-                "pull_request": "拉取请求",
-                "pull_request_target": "拉取请求目标",
-                "schedule": "日程",
-                "watch": "关注",
-                "workflow_dispatch": "工作流程调度",
-                "dynamic": "动态",
+                    "push": "推送",
+                    "pull_request": "拉取请求",
+                    "pull_request_target": "拉取请求目标",
+                    "schedule": "日程",
+                    "watch": "关注",
+                    "workflow_dispatch": "工作流程调度",
+                    "dynamic": "动态",
             // 状态
-                "Disabled": "禁用",
+                "Disabled": "已禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
-                "queued": "排队",
-                "in progress": "正在进行中",
-                "waiting": "等待中",
-                "completed": "已完成",
-                "neutral": "中立",
-                "success": "成功",
-                "failure": "失败",
-                "cancelled": "已取消",
-                "action required": "需要采取行动",
-                "timed out": "已超时",
-                "skipped": "跳过",
-                "stale": "陈旧",
+                    "queued": "排队",
+                    "in progress": "正在进行中",
+                    "waiting": "等待中",
+                    "completed": "已完成",
+                    "neutral": "中立",
+                    "success": "成功",
+                    "failure": "失败",
+                    "cancelled": "已取消",
+                    "action required": "需要采取行动",
+                    "timed out": "已超时",
+                    "skipped": "跳过",
+                    "stale": "陈旧",
             "Branch": "分支",
                 "Filter by branch": "按分支筛选",
                 "Find a branch": "查找分支",
@@ -9265,97 +9251,79 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
         ...I18N.zh["repository-public"]["static"],
 
         // /<user-name>/<repo-name>/deployments
-            // [/Deployed to ([^ ]+)/, "部署到 $1"],
-            "was deployed by": "部署者",
-            "Deployment history": "部署历史",
-            "Try the new deployments view": "尝试新的部署视图",
-            "Show:": "显示：",
-                "All environments": "所有环境",
-            "Loading information…": "载入信息…",
-            "at": "在",
-            "Deployed": "部署",
-                "All deployments": "所有部署",
-            "Deployed by": "部署者",
-            "Active": "活跃",
-            "Inactive": "不活跃",
-            "Abandoned": "废弃",
-            "View deployment": "查看部署情况",
+            // 左侧栏
+                "Deployed": "部署",
+                    "All deployments": "所有部署",
+                    "Environments": "环境",
+                    "Manage environments": "管理环境",
 
-            "View full deployment history": "查看完整的部署历史",
-
-            // 测试版部署
-                "Environments": "环境",
-                "Manage environments": "管理环境",
-                "Give beta feedback": "提供测试反馈",
-                "Opt out of beta view": "选择退出测试版视图",
-                "Active deployments": "活跃的的部署",
-                "From select environments": "来自选择的环境",
-                "Last": "最后",
-                "deployed": "部署于",
-                "Latest deployments from": "最新部署来自",
-                "all environments": "所有环境",
-                "Deployed to": "部署到",
-                "Latest": "最新",
-                "View logs": "查看日志",
-                "View workflow run": "查看工作流程运行",
-
-                "Status: Deployed (completed).": "状态：已部署（已完成）",
-                "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
-                "No status available for": "无可用状态",
-            
             // 面板
                 // 所有部署
                     "Latest deployments from pinned environments": "来自固定环境的最新部署",
                 //具体某一项
                     "Latest deployments": "最新部署",
+                    "Last": "最后",
+                    "deployed": "部署于",
                 // 中间面板
                     "Your search did not match any deployments": "您的搜索未匹配任何部署",
                     "Try a different search query": "尝试不同的搜索查询",
 
-                "Filter": "过滤",
-                    "Filter deployments": "过滤部署",
-                    // 搜索框菜单
-                    "State": "状态",
-                        "success": "成功",
-                        "failure": "失败",
-                        "error": "错误",
-                        "inactive": "不活跃",
-                        "pending": "待定",
-                        "queued": "排队",
-                        "in progress": "进行中",
-                        "waiting": "等待中",
-                    "Creator": "创建者",
-                    "Environment": "环境",
-                    "Ref": "分支",
-                    "Text": "文本",
-                    // 过滤器窗口
-                    "Advanced filters": "高级过滤",
-                    "Build complex filter queries": "建立复杂的过滤器查询",
-                    "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个过滤器。",
+                // 筛选条
+                    "Filter": "筛选",
+                        "Filter deployments": "筛选部署",
+                        // 搜索框菜单
+                            "State": "状态",
+                                "success": "成功",
+                                "failure": "失败",
+                                "error": "错误",
+                                "inactive": "不活跃",
+                                "pending": "待定",
+                                "queued": "排队",
+                                "in progress": "进行中",
+                                "waiting": "等待中",
+                            "Creator": "创建者",
+                            "Environment": "环境",
+                            "Ref": "引用",
+                            "Text": "文本",
 
-                    "Qualifier": "限定",
-                    "Operator": "操作",
-                        "is one of": "之中的",
-                        "is": "是",
-                    "Value": "值",
-                        "Make a selection": "请选择",
-                        "Select items": "请选择项目",
-                        "Filter values": "过滤值",
-                        "Enter search text": "键入任意文本",
-                            "Me": "我",
-                            "Signed-in user": "已登录用户",
+                    // 筛选器窗口
+                        "Advanced filters": "高级筛选",
+                        "Build complex filter queries": "建立复杂的筛选器查询",
+                        "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个筛选器。",
+
+                        "Qualifier": "限定",
+                        "Operator": "操作",
+                            "is one of": "之中的",
+                            "is": "是",
+                        "Value": "值",
+                            "Make a selection": "请选择",
+                            "Select items": "请选择项目",
+                            "Filter values": "筛选值",
+                            "Enter search text": "键入任意文本",
+                                "Me": "我",
+                                "Signed-in user": "已登录用户",
+                        "Add a filter": "添加筛选器",
+                        "Apply": "应用",
+
                     // 关闭弹窗
                         "Discard changes?": "是否放弃更改？",
-                        "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
-                        "Keep editing": "继续编辑",
-                        "Close and discard": "关闭并放弃",
+                            "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                            "Keep editing": "继续编辑",
+                            "Close and discard": "关闭并放弃",
 
-                    "Add a filter": "添加过滤器",
-                    "Apply": "应用",
+                    //筛选器报错窗口
+                        "Empty value for": "空值：",
+                        "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
 
-                //过滤器报错窗口
-                "Empty value for": "空值：",
-                "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+                // 列表
+                    "Active": "活跃",
+                    "Inactive": "不活跃",
+                    "Abandoned": "废弃",
+                    "Deployed to": "部署到",
+                    "Failed to deploy to": "无法部署到",
+
+                    "View logs": "查看日志",
+                    "View workflow run": "查看工作流程运行",
 
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
@@ -9365,9 +9333,8 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/deployments?/, "部署"],
-        [/Deployed to ([^ ]+)/, "部署到 $1"],
-        [/(\d+) deployments?/, "$1 次部署"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
+        [/via/, "通过"],
     ],
 };
 
@@ -14323,7 +14290,7 @@ I18N.zh["signup"] = { // 注册页
         "Create account": "创建帐户",
         "By creating an account, you agree to the": "创建帐户即表示您同意",
         "Terms of Service": "服务条款",
-        ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
+        ". For more information about GitHub's privacy practices, see the": "。更多关于 GitHub 隐私条款的信息，请参见",
         "GitHub Privacy Statement": "GitHub 隐私声明",
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
     },
@@ -14778,7 +14745,7 @@ I18N.zh["search"] = { // 搜索页面
             // 搜索技巧 对话框 (忽略 不翻译)
             "Search cheat sheet": "搜索小技巧",
             "GitHub’s search supports a variety of different operations. Here’s a quick cheat sheet for some of the common searches.": "GitHub 的搜索支持各种不同的操作。下面是一些常见搜索的快速小抄。",
-            "For more information, visit our": "有关更多信息，请访问我们的",
+            "For more information, visit our": "更多有关信息，请访问我们的",
             "search help section": "搜索帮助章节",
             "Basic search": "基本搜索",
             "This search": "关键规则",
@@ -15985,7 +15952,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "GitHub Sponsors actions": "GitHub 赞助操作",
                     "Tools to manage your": "管理您的",
                     "community": "社区",
-                    
+
                 "IDEs": "集成开发环境",
                     "IDEs apps": "IDE 应用",
                     "IDEs actions": "IDE 操作",
@@ -19088,7 +19055,7 @@ I18N.zh["developer/register"] = { // 开发者注册
 };
 
 I18N.zh["features"] = {
-    "static":{
+    "static": {
         "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
         // 看板
         "Experience AI": "体验 AI",
@@ -19240,7 +19207,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
 
             //底部栏
             "Expert Services": "专家服务",
-        
+
         // 快速入门指南 https://skills.github.com/quickstart
         "GitHub Skills Quickstart Guide": "GitHub 技能快速入门指南",
             "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub 操作驱动的课程。",
@@ -19353,7 +19320,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "describes the step. We recommend this format to make it easy to see the order the steps will run in.": "描述步骤。我们推荐使用这种格式，以便于查看各步骤的运行顺序。",
                 "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流程文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
                 "The first section is the": "第一部分为",
-                "name": "名称", 
+                "name": "名称",
                 "Next, add": "接下来，添加",
                 "comments describing": "注释",
                 "what the Actions workflow will do:": "，说明操作工作流要做什么：",
