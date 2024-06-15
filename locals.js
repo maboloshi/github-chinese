@@ -1463,6 +1463,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
+        [/(\d+) of your repositor(y|ies)/, "您的 $1 个仓库"],
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
@@ -1663,6 +1664,8 @@ I18N.zh["page-profile"] = { // 个人首页
             // 顶部提醒
             "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
+            "Your popular repositories will now be shown instead of your pins.": "现在将显示您的热门仓库，而不是您的置顶。",
+            "Your pins have been updated.": "您的置顶已更新。",
             // 拖拽排序提醒
             "Order updated.": "置顶已更新。",
 
