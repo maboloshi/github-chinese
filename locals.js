@@ -1362,7 +1362,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "released": "发布了",
         "published": "发布了",
         "started sponsoring": "赞助给",
-        "started following": "开始关注了",
+        "started following": "已关注",
         "you": "您",
         "Updated": "更新于",
         "a repository": "1 个仓库",
@@ -1468,6 +1468,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
         [/(\d+) followers?/, "$1 个关注者"],
+        [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
         [/(\d+) more commits? »/, "$1 个更多提交到"],
@@ -1506,6 +1507,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "follower": "关注者",
             "followers": "关注者",
             "following": "关注",
+            "Followed by": "共同关注者：",
             "Joined": "加入于",
             "Achievements": "成就",
             "Highlights": "高光时刻",
@@ -1591,6 +1593,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                     "Show on profile": "在个人资料中显示",
                     "Copy share link": "复制共享链接",
                     "Preview on Twitter": "在 Twitter 上预览",
+                    "New": "新",
 
                     // 顶部提醒
                         // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
@@ -1658,8 +1661,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions!": "您通过私人贡献解锁了新成就！",
-            "Show them off by including private contributions in your Profile in": "通过在您的个人资料中包含私人贡献来展示它们。",
+            "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             // 拖拽排序提醒
             "Order updated.": "置顶已更新。",
@@ -1672,6 +1674,9 @@ I18N.zh["page-profile"] = { // 个人首页
             "Less": "更少",
             "More": "更多",
             "Contribution settings": "贡献设置",
+
+            // 复刻仓库特有
+            "Forked from": "复刻自",
             // 贡献设置下拉菜单
             "Private contributions": "私人贡献",
             "Turning on private contributions will show anonymized private activity on your profile.": "开启私人贡献则将在您的个人资料上显示匿名的私人活动。",
