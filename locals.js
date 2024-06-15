@@ -4132,14 +4132,14 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
-                
+
                 "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
                     "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
                         "Enable dependabot on actions": "在操作中启用 Dependabot",
                             "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot on actions": "在操作中禁用 Dependabot",
                             "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
 
@@ -4149,7 +4149,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     // 对话框
                         "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
                             "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
                             "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
 
@@ -4502,7 +4502,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Register a new GitHub App": "注册新的 GitHub 应用",
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
             "New GitHub App": "注册新 GitHub 应用",
-            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用的更多信息",
+            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
             "developer documentation": "开发者文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
 
@@ -8955,7 +8955,6 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "docker-compose": "docker-组合",
             "to your workflow file.": "到您的工作流程文件。",
 
-
             // 左侧栏
             "Workflows": "工作流程",
             "New workflow": "新建工作流程",
@@ -8982,29 +8981,29 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Event": "事件",
                 "Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
-                "push": "推送",
-                "pull_request": "拉取请求",
-                "pull_request_target": "拉取请求目标",
-                "schedule": "日程",
-                "watch": "关注",
-                "workflow_dispatch": "工作流程调度",
-                "dynamic": "动态",
+                    "push": "推送",
+                    "pull_request": "拉取请求",
+                    "pull_request_target": "拉取请求目标",
+                    "schedule": "日程",
+                    "watch": "关注",
+                    "workflow_dispatch": "工作流程调度",
+                    "dynamic": "动态",
             // 状态
-                "Disabled": "禁用",
+                "Disabled": "已禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
-                "queued": "排队",
-                "in progress": "正在进行中",
-                "waiting": "等待中",
-                "completed": "已完成",
-                "neutral": "中立",
-                "success": "成功",
-                "failure": "失败",
-                "cancelled": "已取消",
-                "action required": "需要采取行动",
-                "timed out": "已超时",
-                "skipped": "跳过",
-                "stale": "陈旧",
+                    "queued": "排队",
+                    "in progress": "正在进行中",
+                    "waiting": "等待中",
+                    "completed": "已完成",
+                    "neutral": "中立",
+                    "success": "成功",
+                    "failure": "失败",
+                    "cancelled": "已取消",
+                    "action required": "需要采取行动",
+                    "timed out": "已超时",
+                    "skipped": "跳过",
+                    "stale": "陈旧",
             "Branch": "分支",
                 "Filter by branch": "按分支筛选",
                 "Find a branch": "查找分支",
@@ -14305,7 +14304,7 @@ I18N.zh["signup"] = { // 注册页
         "Create account": "创建帐户",
         "By creating an account, you agree to the": "创建帐户即表示您同意",
         "Terms of Service": "服务条款",
-        ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
+        ". For more information about GitHub's privacy practices, see the": "。更多关于 GitHub 隐私条款的信息，请参见",
         "GitHub Privacy Statement": "GitHub 隐私声明",
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
     },
@@ -14760,7 +14759,7 @@ I18N.zh["search"] = { // 搜索页面
             // 搜索技巧 对话框 (忽略 不翻译)
             "Search cheat sheet": "搜索小技巧",
             "GitHub’s search supports a variety of different operations. Here’s a quick cheat sheet for some of the common searches.": "GitHub 的搜索支持各种不同的操作。下面是一些常见搜索的快速小抄。",
-            "For more information, visit our": "有关更多信息，请访问我们的",
+            "For more information, visit our": "更多有关信息，请访问我们的",
             "search help section": "搜索帮助章节",
             "Basic search": "基本搜索",
             "This search": "关键规则",
@@ -15967,7 +15966,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "GitHub Sponsors actions": "GitHub 赞助操作",
                     "Tools to manage your": "管理您的",
                     "community": "社区",
-                    
+
                 "IDEs": "集成开发环境",
                     "IDEs apps": "IDE 应用",
                     "IDEs actions": "IDE 操作",
@@ -19070,7 +19069,7 @@ I18N.zh["developer/register"] = { // 开发者注册
 };
 
 I18N.zh["features"] = {
-    "static":{
+    "static": {
         "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
         // 看板
         "Experience AI": "体验 AI",
@@ -19222,7 +19221,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
 
             //底部栏
             "Expert Services": "专家服务",
-        
+
         // 快速入门指南 https://skills.github.com/quickstart
         "GitHub Skills Quickstart Guide": "GitHub 技能快速入门指南",
             "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub 操作驱动的课程。",
@@ -19335,7 +19334,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "describes the step. We recommend this format to make it easy to see the order the steps will run in.": "描述步骤。我们推荐使用这种格式，以便于查看各步骤的运行顺序。",
                 "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流程文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
                 "The first section is the": "第一部分为",
-                "name": "名称", 
+                "name": "名称",
                 "Next, add": "接下来，添加",
                 "comments describing": "注释",
                 "what the Actions workflow will do:": "，说明操作工作流要做什么：",
