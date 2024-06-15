@@ -9247,97 +9247,79 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
         ...I18N.zh["repository-public"]["static"],
 
         // /<user-name>/<repo-name>/deployments
-            // [/Deployed to ([^ ]+)/, "部署到 $1"],
-            "was deployed by": "部署者",
-            "Deployment history": "部署历史",
-            "Try the new deployments view": "尝试新的部署视图",
-            "Show:": "显示：",
-                "All environments": "所有环境",
-            "Loading information…": "载入信息…",
-            "at": "在",
-            "Deployed": "部署",
-                "All deployments": "所有部署",
-            "Deployed by": "部署者",
-            "Active": "活跃",
-            "Inactive": "不活跃",
-            "Abandoned": "废弃",
-            "View deployment": "查看部署情况",
+            // 左侧栏
+                "Deployed": "部署",
+                    "All deployments": "所有部署",
+                    "Environments": "环境",
+                    "Manage environments": "管理环境",
 
-            "View full deployment history": "查看完整的部署历史",
-
-            // 测试版部署
-                "Environments": "环境",
-                "Manage environments": "管理环境",
-                "Give beta feedback": "提供测试反馈",
-                "Opt out of beta view": "选择退出测试版视图",
-                "Active deployments": "活跃的的部署",
-                "From select environments": "来自选择的环境",
-                "Last": "最后",
-                "deployed": "部署于",
-                "Latest deployments from": "最新部署来自",
-                "all environments": "所有环境",
-                "Deployed to": "部署到",
-                "Latest": "最新",
-                "View logs": "查看日志",
-                "View workflow run": "查看工作流程运行",
-
-                "Status: Deployed (completed).": "状态：已部署（已完成）",
-                "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
-                "No status available for": "无可用状态",
-            
             // 面板
                 // 所有部署
                     "Latest deployments from pinned environments": "来自固定环境的最新部署",
                 //具体某一项
                     "Latest deployments": "最新部署",
+                    "Last": "最后",
+                    "deployed": "部署于",
                 // 中间面板
                     "Your search did not match any deployments": "您的搜索未匹配任何部署",
                     "Try a different search query": "尝试不同的搜索查询",
 
-                "Filter": "过滤",
-                    "Filter deployments": "过滤部署",
-                    // 搜索框菜单
-                    "State": "状态",
-                        "success": "成功",
-                        "failure": "失败",
-                        "error": "错误",
-                        "inactive": "不活跃",
-                        "pending": "待定",
-                        "queued": "排队",
-                        "in progress": "进行中",
-                        "waiting": "等待中",
-                    "Creator": "创建者",
-                    "Environment": "环境",
-                    "Ref": "分支",
-                    "Text": "文本",
-                    // 过滤器窗口
-                    "Advanced filters": "高级过滤",
-                    "Build complex filter queries": "建立复杂的过滤器查询",
-                    "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个过滤器。",
+                // 筛选条
+                    "Filter": "筛选",
+                        "Filter deployments": "筛选部署",
+                        // 搜索框菜单
+                            "State": "状态",
+                                "success": "成功",
+                                "failure": "失败",
+                                "error": "错误",
+                                "inactive": "不活跃",
+                                "pending": "待定",
+                                "queued": "排队",
+                                "in progress": "进行中",
+                                "waiting": "等待中",
+                            "Creator": "创建者",
+                            "Environment": "环境",
+                            "Ref": "引用",
+                            "Text": "文本",
 
-                    "Qualifier": "限定",
-                    "Operator": "操作",
-                        "is one of": "之中的",
-                        "is": "是",
-                    "Value": "值",
-                        "Make a selection": "请选择",
-                        "Select items": "请选择项目",
-                        "Filter values": "过滤值",
-                        "Enter search text": "键入任意文本",
-                            "Me": "我",
-                            "Signed-in user": "已登录用户",
+                    // 筛选器窗口
+                        "Advanced filters": "高级筛选",
+                        "Build complex filter queries": "建立复杂的筛选器查询",
+                        "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个筛选器。",
+
+                        "Qualifier": "限定",
+                        "Operator": "操作",
+                            "is one of": "之中的",
+                            "is": "是",
+                        "Value": "值",
+                            "Make a selection": "请选择",
+                            "Select items": "请选择项目",
+                            "Filter values": "筛选值",
+                            "Enter search text": "键入任意文本",
+                                "Me": "我",
+                                "Signed-in user": "已登录用户",
+                        "Add a filter": "添加筛选器",
+                        "Apply": "应用",
+
                     // 关闭弹窗
                         "Discard changes?": "是否放弃更改？",
-                        "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
-                        "Keep editing": "继续编辑",
-                        "Close and discard": "关闭并放弃",
+                            "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                            "Keep editing": "继续编辑",
+                            "Close and discard": "关闭并放弃",
 
-                    "Add a filter": "添加过滤器",
-                    "Apply": "应用",
+                    //筛选器报错窗口
+                        "Empty value for": "空值：",
+                        "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
 
-                //过滤器报错窗口
-                "Empty value for": "空值：",
-                "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+                // 列表
+                    "Active": "活跃",
+                    "Inactive": "不活跃",
+                    "Abandoned": "废弃",
+                    "Deployed to": "部署到",
+                    "Failed to deploy to": "无法部署到",
+
+                    "View logs": "查看日志",
+                    "View workflow run": "查看工作流程运行",
 
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
@@ -9347,9 +9329,8 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/deployments?/, "部署"],
-        [/Deployed to ([^ ]+)/, "部署到 $1"],
-        [/(\d+) deployments?/, "$1 次部署"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
+        [/via/, "通过"],
     ],
 };
 
