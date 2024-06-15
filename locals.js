@@ -1520,6 +1520,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "follower": "关注者",
             "followers": "关注者",
             "following": "关注",
+            "Followed by": "共同关注者：",
             "Joined": "加入于",
             "Achievements": "成就",
             "Highlights": "高光时刻",
