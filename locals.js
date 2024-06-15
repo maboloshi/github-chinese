@@ -158,7 +158,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/history|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -470,9 +470,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Enable": "启用",
                 "Disable": "禁用",
                 "Documentation": "文档",
-                "Codespaces Connectivity v2": "代码空间连接 v2",
-                    "Codespaces is rolling out improved infrastructure for both the main connection, and forwarded ports, resulting in better performance and increased reliability.": "代码空间正在推出针对主连接和端口转发的改进基础设施，从而实现更佳的性能和更高的稳定性。",
-                    "If you primarily use Codespaces behind a firewall, you may have to update your firewall settings to enable this new approach. Codespaces will now require access to *.visualstudio.com to facilitate your connection to the codespace.": "如果您通常在防火墙后使用代码空间，为了适应这一新的接入方式，您可能需要对您的防火墙设置进行更新。代码空间现在需要访问 *.visualstudio.com 以便于您连接到代码空间。",
                 "Colorblind themes": "色盲主题",
                     "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 8% 的男性和高达 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
@@ -483,17 +480,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
-                "Project Migration": "项目迁移",
-                    "We've made it easy for you to migrate your project (classic) boards to the all new Projects experience! Enable this feature so that you can try out tables, multiple views, new automation options, and powerful field types using your existing projects.": "我们已经为您简化了将您的项目（经典版）面板迁移到全新项目的体验！启用此功能，您可以在现有项目中尝试表格、多视图、新的自动化选项和强大的字段类型。",
-                    "How it works:": "如何工作：",
-                        "We'll create a copy of your existing classic project board in Projects.": "我们将在 “项目” 中创建现有经典项目看板的副本。",
-                        "You'll be prompted to close your classic project as future changes won't be synchronized.": "系统将提示您关闭经典项目，因为未来的更改将不会同步。",
-                        "You can reopen your old project in a pinch if necessary!": "如果有必要，您可以紧急重新打开您的旧项目！",
-                    "Notes:": "注意：",
-                        "Migrated projects will be made private by default.": "默认情况下，迁移的项目将设为私有。",
-                        "Projects does not support repository level projects. When you migrate a repository project board, it will migrate to either the organization or personal account that owns the repository project, and the migrated project will be pinned to the original repository. We will migrate permissions to the best of our ability but some folks may lose read or writes access.": "项目不支持仓库级别的项目。当您迁移仓库项目面板时，它将被迁移到拥有该仓库项目的组织或个人帐户，并且迁移后的项目将被固定到原始仓库。我们将尽最大努力迁移权限，但有些人可能会失去读取或写入权限。",
-                "Deployments Dashboard View": "部署仪表板视图",
-                    "A new dashboard to view and track your deployments across all your environments, see the full history of your deployments, and filter by environment.": "一个全新的仪表板，用于查看和跟踪您在所有环境中的部署情况，查看您部署的完整历史记录，并按环境进行筛选。",
                 "Slash Commands": "斜杠命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
@@ -525,8 +511,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "in 30 minutes": "30 分钟",
                 "in 1 hour": "1 小时",
                 "in 4 hours": "4 小时",
-                "today": "今天",
-                "this week": "本周",
+                "after today": "今日之后",
+                "after this week": "本周之后",
+                "after a month": "本月之后",
                 "How long until this status will automatically clear.": "多久后状态自动清除。",
             "Visible to": "可见",
                 "Everyone": "任何人",
@@ -1375,7 +1362,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "released": "发布了",
         "published": "发布了",
         "started sponsoring": "赞助给",
-        "started following": "开始关注了",
+        "started following": "已关注",
         "you": "您",
         "Updated": "更新于",
         "a repository": "1 个仓库",
@@ -1481,6 +1468,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
         [/(\d+) followers?/, "$1 个关注者"],
+        [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
         [/(\d+) more commits? »/, "$1 个更多提交到"],
@@ -1519,6 +1507,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
             "follower": "关注者",
             "followers": "关注者",
             "following": "关注",
+            "Followed by": "共同关注者：",
             "Joined": "加入于",
             "Achievements": "成就",
             "Highlights": "高光时刻",
@@ -1604,6 +1593,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                     "Show on profile": "在个人资料中显示",
                     "Copy share link": "复制共享链接",
                     "Preview on Twitter": "在 Twitter 上预览",
+                    "New": "新",
 
                     // 顶部提醒
                         // [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
@@ -1671,8 +1661,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions!": "您通过私人贡献解锁了新成就！",
-            "Show them off by including private contributions in your Profile in": "通过在您的个人资料中包含私人贡献来展示它们。",
+            "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             // 拖拽排序提醒
             "Order updated.": "置顶已更新。",
@@ -1685,6 +1674,9 @@ I18N.zh["page-profile"] = { // 个人首页
             "Less": "更少",
             "More": "更多",
             "Contribution settings": "贡献设置",
+
+            // 复刻仓库特有
+            "Forked from": "复刻自",
             // 贡献设置下拉菜单
             "Private contributions": "私人贡献",
             "Turning on private contributions will show anonymized private activity on your profile.": "开启私人贡献则将在您的个人资料上显示匿名的私人活动。",
@@ -4146,14 +4138,14 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
-                
+
                 "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
                     "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
                         "Enable dependabot on actions": "在操作中启用 Dependabot",
                             "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot on actions": "在操作中禁用 Dependabot",
                             "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
 
@@ -4163,7 +4155,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
                     // 对话框
                         "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
                             "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
-                        
+
                         "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
                             "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
 
@@ -4516,7 +4508,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Register a new GitHub App": "注册新的 GitHub 应用",
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
             "New GitHub App": "注册新 GitHub 应用",
-            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读有关构建 GitHub 应用的更多信息",
+            "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
             "developer documentation": "开发者文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
 
@@ -7140,7 +7132,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
-        [/Edited (\d+) time/, "已编辑 $1 次"],
+        [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
 
@@ -7171,6 +7163,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 拉取请求页面
             "to learn how to open a good pull request.": "，去学习如何打开一个好的拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
+
+            "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
 
             "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
             "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
@@ -8967,56 +8961,65 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "docker-compose": "docker-组合",
             "to your workflow file.": "到您的工作流程文件。",
 
-
             // 左侧栏
-            "Workflows": "工作流程",
-            "New workflow": "新建工作流程",
-            "Select workflow": "选择工作流程",
-            "Show more workflows...": "显示更多工作流程...",
-            "Management": "管理",
-            "Caches": "缓存",
-            "Deployments": "部署",
-            "Attestations": "证书",
-            "Runners": "运行器",
+                "New workflow": "新建工作流程",
+                "Management": "管理",
+                    "Caches": "缓存",
+                    "Deployments": "部署",
+                    "Attestations": "证书",
+                    "Runners": "运行器",
+                "Disabled": "已禁用",
 
-            "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
-            "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
+                // 顶部提醒
+                    // [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
+                    // [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
+
+                // 取消置顶对话框
+                    "Unpin this workflow?": "取消工作流程置顶？",
+                        "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流程。",
+                    "Yes, unpin": "是的，取消固定",
 
             "All workflows": "全部工作流程",
-            "Showing runs from all workflows": "显示所有工作流程的运行情况",
+                "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
-            //筛选条
-            "Filter workflow runs": "筛选工作流程",
-                "Narrow your search": "缩小搜索范围",
+            // 筛选条
+                "Filter workflow runs": "筛选工作流程",
+                    "Narrow your search": "缩小搜索范围",
+
+            // 反馈提醒
+                "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
+                    "Tell us how to make GitHub Actions work better for you with three quick questions.": "通过三个快速问题告诉我们如何让 GitHub Actions 更好地为您服务。",
+
 
             // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
+
             "Event": "事件",
                 "Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
-                "push": "推送",
-                "pull_request": "拉取请求",
-                "pull_request_target": "拉取请求目标",
-                "schedule": "日程",
-                "watch": "关注",
-                "workflow_dispatch": "工作流程调度",
-                "dynamic": "动态",
+                    "issue_comment": "议题评论",
+                    "pull_request": "拉取请求",
+                    "pull_request_target": "拉取请求目标",
+                    "push": "推送",
+                    "schedule": "日程",
+                    "watch": "关注",
+                    "workflow_dispatch": "工作流程调度",
+                    "dynamic": "动态",
             // 状态
-                "Disabled": "禁用",
                 "Filter by status": "按状态筛选",
                 "Find a status": "查找状态",
-                "queued": "排队",
-                "in progress": "正在进行中",
-                "waiting": "等待中",
-                "completed": "已完成",
-                "neutral": "中立",
-                "success": "成功",
-                "failure": "失败",
-                "cancelled": "已取消",
-                "action required": "需要采取行动",
-                "timed out": "已超时",
-                "skipped": "跳过",
-                "stale": "陈旧",
+                    "queued": "排队",
+                    "in progress": "正在进行中",
+                    "waiting": "等待中",
+                    "completed": "已完成",
+                    "neutral": "中立",
+                    "success": "成功",
+                    "failure": "失败",
+                    "cancelled": "已取消",
+                    "action required": "需要采取行动",
+                    "timed out": "已超时",
+                    "skipped": "跳过",
+                    "stale": "陈旧",
             "Branch": "分支",
                 "Filter by branch": "按分支筛选",
                 "Find a branch": "查找分支",
@@ -9026,17 +9029,18 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             // 日志 右侧按钮
             "Cancel run": "取消运行",
+            "View workflow file": "查看工作流程文件",
             "Delete workflow run": "删除工作流程运行",
                 // 删除工作流程运行 对话框
                     "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流程运行吗？",
-                    "This action cannot be undone": "此操作无法撤消",
-                    "Yes, permanently delete this workflow run": "是的，永久删除此工作流程运行",
+                    "This action cannot be undone.": "此操作无法撤消。",
+                    "Yes, delete this workflow run": "是的，删除此工作流程",
                 // 顶部提醒
                     "Workflow run deleted successfully.": "工作流程运行删除成功。",
 
-            // 筛选结果
-            "all workflow runs": "所有工作流程运行",
-            "or try different filters.": "或尝试不同的筛选器。",
+            // // 筛选结果
+            // "all workflow runs": "所有工作流程运行",
+            // "or try different filters.": "或尝试不同的筛选器。",
 
             // 列表区域
                 // 工作流程运行状态
@@ -9046,6 +9050,48 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             // 顶部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
+
+        // /<user-name>/<repo-name>/actions/workflows/<file>.yml
+            //右侧三个点
+                "Show workflow options": "显示工作流程选项",
+                    "Create status badge": "创建状态徽章",
+                        // 对话框
+                            "Default branch": "默认分支",
+                                "Filter branches": "筛选分支",
+                            "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
+                    "Pin workflow": "固定工作流程",
+                    "Disable workflow": "禁用工作流程",
+                        // 顶部提醒
+                        "Workflow disabled successfully.": "工作流程已成功禁用。",
+
+            "This workflow has a": "这个工作流程有一个",
+            "event trigger.": "事件触发器。",
+
+            "Run workflow": "运行工作流程",
+                "Use workflow from": "使用工作流程来自：",
+                "Branch:": "分支：",
+                "Select branch": "选择分支",
+                "Select ref": "选择引用",
+                "Select a tag": "选择标签",
+                    "Nothing to show": "暂无",
+
+                    "Workflow does not exist or does not have a": "工作流程不存在或没有",
+                    "trigger in this branch.": "触发在此分支。",
+                    "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
+                // 顶部提醒
+                    "Workflow run was successfully requested.": "工作流程已成功请求运行。",
+
+            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
+            "This workflow was disabled manually.": "工作流程已被手动禁用。",
+            "Enable workflow": "启用工作流程",
+                // 顶部提醒
+                    "Workflow enabled successfully.": "工作流程已成功启用。",
+            "Re-run jobs": "重新运行作业",
+
+            "This workflow has no runs yet.": "此工作流程尚未运行。",
+
+            "No results matched your search.": "没有与您的搜索匹配的结果。",
+            "You could search": "您可以搜索",
 
         // 缓存 /<user-name>/<repo-name>/actions/caches
             "Showing caches from all workflows.": "显示所有工作流程的缓存。",
@@ -9074,8 +9120,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Remove the filters": "删除筛选器",
             "or try a different search query.": "或尝试不同的搜索查询。",
 
-            "Remove cache": "删除缓存",
+            "Delete cache": "删除缓存",
+                "Remove cache": "删除缓存",
                 "Are you sure you want to delete this cache?": "您确定要删除此缓存吗？",
+                "This action cannot be undone": "此操作无法撤消",
                 "Yes, permanently delete this cache": "是的，永久删除此缓存",
 
                 "Deleting Cache...": "删除缓存中...",
@@ -9107,40 +9155,6 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "runners for this repository": "运行器",
                     "Self-hosted runners are virtual machines for GitHub Actions workflows that you manage and maintain outside of GitHub.": "自托管运行器是您在 GitHub 外部管理和维护的 GitHub Actions 工作流程的虚拟机。",
 
-        // /<user-name>/<repo-name>/actions/workflows/<file>.yml
-            "This workflow has a": "这个工作流程有一个",
-            "event trigger.": "事件触发器。",
-
-            "Run workflow": "运行工作流程",
-                "Use workflow from": "使用工作流程来自：",
-                "Branch:": "分支：",
-                "Select branch": "选择分支",
-                "Select ref": "选择引用",
-                "Select a tag": "选择标签",
-                    "Nothing to show": "暂无",
-
-                    "Workflow does not exist or does not have a": "工作流程不存在或没有",
-                    "trigger in this branch.": "触发在此分支。",
-                    "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
-                // 顶部提醒
-                "Workflow run was successfully requested.": "工作流程已成功请求运行。",
-
-            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
-            "Enable workflow": "启用工作流程",
-                // 顶部提醒
-                "Workflow enabled successfully.": "工作流程已成功启用。",
-            "Disable workflow": "禁用工作流程",
-                // 提醒
-                "This workflow was disabled manually.": "工作流程已被手动禁用。",
-                // 顶部提醒
-                "Workflow disabled successfully.": "工作流程已成功禁用。",
-            "Re-run jobs": "重新运行作业",
-
-            "This workflow has no runs yet.": "此工作流程尚未运行。",
-
-            "No results matched your search.": "没有与您的搜索匹配的结果。",
-            "You could search": "您可以搜索",
-
         // /<user-name>/<repo-name>/actions/runs/<id>
             // 顶部提醒
                 "Logs deleted successfully.": "日志已成功删除。",
@@ -9149,11 +9163,8 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Re-run all jobs": "重新运行所有作业",
             "Cancel workflow": "取消工作流程",
             //右侧按钮
-            "View workflow file": "查看工作流程文件",
             "View workflow runs": "查看工作流程运行",
             "Workflow run options": "工作流程运行选项",
-            "Create status badge": "创建状态徽章",
-                "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
             "Delete all logs": "删除所有日志",
 
             // 左侧栏
@@ -9197,7 +9208,23 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "Show more": "显示更多",
                 "Show less": "显示更少",
 
-        // /<user-name>/<repo-name>/actions/runs/<id>/jobs/<id2>
+        // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
+            "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
+
+            "Started": "开始于",
+            "ago": "之前",
+
+            "Search logs": "搜索日志",
+            "Re-run this job": "重新运行此作业",
+            // 设置按钮
+                "Show timestamps": "显示时间戳",
+                "Show full screen (Shift+F)": "全屏显示（Shift+F）",
+                "Download log archive": "下载日志存档",
+                "View raw logs": "查看原始日志",
+
+            "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
+
+            "Re-run all checks": "重新运行所有检查",
 
         // /<user-name>/<repo-name>/actions/runs/<id>/usage
             "Run and billable time": "运行和计费时间",
@@ -9211,35 +9238,11 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Workflow file": "工作流程文件",
             "Workflow file for this run": "本次运行的工作流程文件",
 
-        // /<user-name>/<repo-name>/runs/<id>
-            "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
-
-            "Search logs": "搜索日志",
-            "Re-run this job": "重新运行此作业",
-            // 设置按钮
-                "Show timestamps": "显示时间戳",
-                "Show full screen (Shift+F)": "全屏显示（Shift+F）",
-                "Download log archive": "下载日志存档",
-                "View raw logs": "查看原始日志",
-
-            "Try broadening your search filters.": "尝试扩大您的搜索筛选器。",
-
-            // GitHub Pages
-                "GitHub Pages / Page Build": "GitHub Pages / 页面构建",
-                "Page Build": "页面构建",
-                "succeeded": "成功于",
-                "GitHub Pages successfully built your site.": "GitHub Pages 成功构建了您的站点。",
-                "Your website is ready at": "您的网站已准备就绪，网址为",
-                "View more details on GitHub Pages": "在 GitHub Pages 查看更多细节",
-
-                //顶部提醒
-                    "You have successfully requested checks from GitHub Pages.": "您已成功请求来自 GitHub Pages 的检查。",
-
-            "Re-run all checks": "重新运行所有检查",
-
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
+        [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
@@ -9259,97 +9262,79 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
         ...I18N.zh["repository-public"]["static"],
 
         // /<user-name>/<repo-name>/deployments
-            // [/Deployed to ([^ ]+)/, "部署到 $1"],
-            "was deployed by": "部署者",
-            "Deployment history": "部署历史",
-            "Try the new deployments view": "尝试新的部署视图",
-            "Show:": "显示：",
-                "All environments": "所有环境",
-            "Loading information…": "载入信息…",
-            "at": "在",
-            "Deployed": "部署",
-                "All deployments": "所有部署",
-            "Deployed by": "部署者",
-            "Active": "活跃",
-            "Inactive": "不活跃",
-            "Abandoned": "废弃",
-            "View deployment": "查看部署情况",
+            // 左侧栏
+                "Deployed": "部署",
+                    "All deployments": "所有部署",
+                    "Environments": "环境",
+                    "Manage environments": "管理环境",
 
-            "View full deployment history": "查看完整的部署历史",
-
-            // 测试版部署
-                "Environments": "环境",
-                "Manage environments": "管理环境",
-                "Give beta feedback": "提供测试反馈",
-                "Opt out of beta view": "选择退出测试版视图",
-                "Active deployments": "活跃的的部署",
-                "From select environments": "来自选择的环境",
-                "Last": "最后",
-                "deployed": "部署于",
-                "Latest deployments from": "最新部署来自",
-                "all environments": "所有环境",
-                "Deployed to": "部署到",
-                "Latest": "最新",
-                "View logs": "查看日志",
-                "View workflow run": "查看工作流程运行",
-
-                "Status: Deployed (completed).": "状态：已部署（已完成）",
-                "Status: Failed to deploy (completed).": "状态：部署失败（已完成）",
-                "No status available for": "无可用状态",
-            
             // 面板
                 // 所有部署
                     "Latest deployments from pinned environments": "来自固定环境的最新部署",
                 //具体某一项
                     "Latest deployments": "最新部署",
+                    "Last": "最后",
+                    "deployed": "部署于",
                 // 中间面板
                     "Your search did not match any deployments": "您的搜索未匹配任何部署",
                     "Try a different search query": "尝试不同的搜索查询",
 
-                "Filter": "过滤",
-                    "Filter deployments": "过滤部署",
-                    // 搜索框菜单
-                    "State": "状态",
-                        "success": "成功",
-                        "failure": "失败",
-                        "error": "错误",
-                        "inactive": "不活跃",
-                        "pending": "待定",
-                        "queued": "排队",
-                        "in progress": "进行中",
-                        "waiting": "等待中",
-                    "Creator": "创建者",
-                    "Environment": "环境",
-                    "Ref": "分支",
-                    "Text": "文本",
-                    // 过滤器窗口
-                    "Advanced filters": "高级过滤",
-                    "Build complex filter queries": "建立复杂的过滤器查询",
-                    "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个过滤器。",
+                // 筛选条
+                    "Filter": "筛选",
+                        "Filter deployments": "筛选部署",
+                        // 搜索框菜单
+                            "State": "状态",
+                                "success": "成功",
+                                "failure": "失败",
+                                "error": "错误",
+                                "inactive": "不活跃",
+                                "pending": "待定",
+                                "queued": "排队",
+                                "in progress": "进行中",
+                                "waiting": "等待中",
+                            "Creator": "创建者",
+                            "Environment": "环境",
+                            "Ref": "引用",
+                            "Text": "文本",
 
-                    "Qualifier": "限定",
-                    "Operator": "操作",
-                        "is one of": "之中的",
-                        "is": "是",
-                    "Value": "值",
-                        "Make a selection": "请选择",
-                        "Select items": "请选择项目",
-                        "Filter values": "过滤值",
-                        "Enter search text": "键入任意文本",
-                            "Me": "我",
-                            "Signed-in user": "已登录用户",
+                    // 筛选器窗口
+                        "Advanced filters": "高级筛选",
+                        "Build complex filter queries": "建立复杂的筛选器查询",
+                        "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个筛选器。",
+
+                        "Qualifier": "限定",
+                        "Operator": "操作",
+                            "is one of": "之中的",
+                            "is": "是",
+                        "Value": "值",
+                            "Make a selection": "请选择",
+                            "Select items": "请选择项目",
+                            "Filter values": "筛选值",
+                            "Enter search text": "键入任意文本",
+                                "Me": "我",
+                                "Signed-in user": "已登录用户",
+                        "Add a filter": "添加筛选器",
+                        "Apply": "应用",
+
                     // 关闭弹窗
                         "Discard changes?": "是否放弃更改？",
-                        "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
-                        "Keep editing": "继续编辑",
-                        "Close and discard": "关闭并放弃",
+                            "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                            "Keep editing": "继续编辑",
+                            "Close and discard": "关闭并放弃",
 
-                    "Add a filter": "添加过滤器",
-                    "Apply": "应用",
+                    //筛选器报错窗口
+                        "Empty value for": "空值：",
+                        "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
 
-                //过滤器报错窗口
-                "Empty value for": "空值：",
-                "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+                // 列表
+                    "Active": "活跃",
+                    "Inactive": "不活跃",
+                    "Abandoned": "废弃",
+                    "Deployed to": "部署到",
+                    "Failed to deploy to": "无法部署到",
+
+                    "View logs": "查看日志",
+                    "View workflow run": "查看工作流程运行",
 
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
@@ -9359,10 +9344,22 @@ I18N.zh["repository/deployments"] = { // 仓库 - 部署页面
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/deployments?/, "部署"],
-        [/Deployed to ([^ ]+)/, "部署到 $1"],
-        [/(\d+) deployments?/, "$1 次部署"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："], // 过滤器报错窗口
+        [/via/, "通过"],
     ],
+};
+
+I18N.zh["repository/attestations"] = { // 仓库 - 证书页面
+    "static": { // 静态翻译
+        ...I18N.zh["repository-public"]["static"],
+
+        // <user-name>/repo-name>/attestations 证书
+            "Attestations": "证书",
+
+            "No attestations": "尚无证书",
+                "Create attestations using the": "创建证书，请使用",
+                "action": "操作工作流",
+    },
 };
 
 I18N.zh["repository/watchers"] = { // 仓库 - 关注者页面
@@ -14318,7 +14315,7 @@ I18N.zh["signup"] = { // 注册页
         "Create account": "创建帐户",
         "By creating an account, you agree to the": "创建帐户即表示您同意",
         "Terms of Service": "服务条款",
-        ". For more information about GitHub's privacy practices, see the": "。关于 GitHub 隐私条款的更多信息，请参见",
+        ". For more information about GitHub's privacy practices, see the": "。更多关于 GitHub 隐私条款的信息，请参见",
         "GitHub Privacy Statement": "GitHub 隐私声明",
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与帐户相关的电子邮件。",
     },
@@ -14773,7 +14770,7 @@ I18N.zh["search"] = { // 搜索页面
             // 搜索技巧 对话框 (忽略 不翻译)
             "Search cheat sheet": "搜索小技巧",
             "GitHub’s search supports a variety of different operations. Here’s a quick cheat sheet for some of the common searches.": "GitHub 的搜索支持各种不同的操作。下面是一些常见搜索的快速小抄。",
-            "For more information, visit our": "有关更多信息，请访问我们的",
+            "For more information, visit our": "更多有关信息，请访问我们的",
             "search help section": "搜索帮助章节",
             "Basic search": "基本搜索",
             "This search": "关键规则",
@@ -15980,7 +15977,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
                     "GitHub Sponsors actions": "GitHub 赞助操作",
                     "Tools to manage your": "管理您的",
                     "community": "社区",
-                    
+
                 "IDEs": "集成开发环境",
                     "IDEs apps": "IDE 应用",
                     "IDEs actions": "IDE 操作",
@@ -19083,7 +19080,7 @@ I18N.zh["developer/register"] = { // 开发者注册
 };
 
 I18N.zh["features"] = {
-    "static":{
+    "static": {
         "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
         // 看板
         "Experience AI": "体验 AI",
@@ -19235,7 +19232,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
 
             //底部栏
             "Expert Services": "专家服务",
-        
+
         // 快速入门指南 https://skills.github.com/quickstart
         "GitHub Skills Quickstart Guide": "GitHub 技能快速入门指南",
             "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub 操作驱动的课程。",
@@ -19348,7 +19345,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "describes the step. We recommend this format to make it easy to see the order the steps will run in.": "描述步骤。我们推荐使用这种格式，以便于查看各步骤的运行顺序。",
                 "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流程文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
                 "The first section is the": "第一部分为",
-                "name": "名称", 
+                "name": "名称",
                 "Next, add": "接下来，添加",
                 "comments describing": "注释",
                 "what the Actions workflow will do:": "，说明操作工作流要做什么：",
@@ -19411,10 +19408,4 @@ I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
     ],
-};
-
-I18N.zh["attestations"] = { // https://github.com/<user-name>/repo-name>/attestations 证书
-    "static": {
-        "Attestations": "证书",
-    },
 };
