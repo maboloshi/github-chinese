@@ -1755,6 +1755,7 @@ I18N.zh["page-profile"] = { // 个人首页
         [/Answered (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中答复了 $1 个讨论"],
         [/Started (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
         [/(\d+) commits?/, "$1 次提交"],
+        [/(\d+) issues? need help/, "$1 个议题需要帮助"],
         [/(\d+) pull requests?/, "$1 次拉取请求"],
         [/that received (\d+) comments?/  , "收到 $1 条评论"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
