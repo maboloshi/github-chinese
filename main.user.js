@@ -26,7 +26,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = 'zh'; // 设置默认语言
+    const lang = 'zh-CN'; // 设置默认语言
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
@@ -46,7 +46,7 @@
         // 监测 HTML Lang 值, 设置中文环境
         new MutationObserver(mutations => {
             if (document.documentElement.lang === "en") {
-                document.documentElement.lang = 'zh-CN';
+                document.documentElement.lang = lang;
             }
         }).observe(document.documentElement, {
             attributeFilter: ['lang']
