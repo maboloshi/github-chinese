@@ -62,7 +62,7 @@
                 page = getPage();
                 console.log(`DOM变化触发: 链接变化 page= ${page}`);
             }
-            
+
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
@@ -99,9 +99,9 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.reIgnoreId.includes(node.id) ||
+        if (I18N.conf.IgnoreId.includes(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
-            I18N.conf.reIgnoreTag.includes(node.tagName) ||
+            I18N.conf.IgnoreTag.includes(node.tagName) ||
             (node.nodeType === Node.ELEMENT_NODE && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
         ) {
             return;
