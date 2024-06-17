@@ -1755,7 +1755,6 @@ I18N.zh["page-profile"] = { // 个人首页
         [/Answered (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中答复了 $1 个讨论"],
         [/Started (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 个仓库中发起了 $1 个讨论"],
         [/(\d+) commits?/, "$1 次提交"],
-        [/(\d+) issues? need help/, "$1 个议题需要帮助"],
         [/(\d+) pull requests?/, "$1 次拉取请求"],
         [/that received (\d+) comments?/  , "收到 $1 条评论"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
@@ -16545,6 +16544,7 @@ I18N.zh["orgs"] = { // 组织页面
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
+        [/\((\d+) issues? need help\)/, "($1 个议题需要帮助)"],
     ],
     "selector": [ // 元素筛选器规则
         ["#type-options > summary > span:nth-child(1)", "类型"], // 组织主页 --> 仓库标签页-->类型筛选器 Type
