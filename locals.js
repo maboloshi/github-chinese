@@ -352,7 +352,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Stargazers/, "追星者"],
         [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
-        [/Release/, "发行版"],
+        [/Releases?/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
         [/Code scanning alerts/, "代码扫描警报"],
         [/Repository topics/, "仓库主题"],
