@@ -5568,6 +5568,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
+                "Suggested change": "建议更改",
                 "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
                 "This comment was marked as off-topic.": "该评论已被标记为离题。",
 
@@ -7362,7 +7363,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "First-time contributor": "首次贡献者",
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
             "View changes": "查看更改",
-            "View Changes": "查看更改",
             "Outdated": "陈旧的",
             "Resolve conversation": "解决对话",
                 "Resolving conversation…": "解决对话中…",
