@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.3-2024-06-09
+// @version      1.9.2-beta.4-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -19,7 +19,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
 // @grant        GM_notification
-// @connect      www.iflyrec.com
+// @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/maboloshi/github-chinese/issues
 // ==/UserScript==
 
@@ -374,7 +374,7 @@
             translateDescText(desc, text => {
                 // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
                 button.style.display = "none";
-                const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>${text}`;
+                const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>讯飞听见</a> 翻译👇</span><br/>${text}`;
                 element.insertAdjacentHTML('afterend', translationHTML);
             });
         });
@@ -389,24 +389,24 @@
         // 使用 GM_xmlhttpRequest 函数发送 HTTP 请求
         GM_xmlhttpRequest({
             method: "POST", // 请求方法为 POST
-            url: "https://www.iflyrec.com/TranslationService/v1/textTranslation", // 请求的 URL
+            url: "https://fanyi.iflyrec.com/TJHZTranslationService/v2/textAutoTranslation", // 请求的 URL
             headers: { // 请求头
                 'Content-Type': 'application/json',
-                'Origin': 'https://www.iflyrec.com',
+                'Origin': 'https://fanyi.iflyrec.com',
             },
             data: JSON.stringify({
-                "from": "2",
-                "to": "1",
+                "from": 2,
+                "to": 1,
+                "type": 1,
                 "contents": [{
-                    "text": text,
-                    "frontBlankLine": 0
+                    "text": text
                 }]
             }), // 请求的数据
             responseType: "json", // 响应的数据类型为 JSON
             onload: (res) => {
                 try {
                     const { status, response } = res;
-                    const translatedText = (status === 200) ? response.biz[0].translateResult : "翻译失败";
+                    const translatedText = (status === 200) ? response.biz[0].sectionResult[0].dst : "翻译失败";
                     callback(translatedText);
                 } catch (error) {
                     console.error('翻译失败', error);
