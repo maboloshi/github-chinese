@@ -8727,6 +8727,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Load more…": "载入更多…",
             "New": "新",
 
+            "Loading more replies...": "载入更多回复中...",
+
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "code of conduct": "行为准则",
@@ -8858,6 +8860,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // /<user-name>/community/discussions
             // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
             "View organization discussions": "查看组织讨论",
+
+        // 标签浮动文本
+            "This user is a collaborator on this repository.": "该用户是此仓库的协作者。",
+            "This user is a maintainer on this repository.": "该用户是此仓库的维护者。",
+            "This user is the author of this discussion.": "该用户是此讨论的作者。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -8891,6 +8898,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Delete (.*) section/, "删除 “$1” 栏目"],
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
         [/This discussion was converted from issue/, "本讨论由以下议题转换而来"],
+        [/(\d+) new comments?/, "$1 条新评论"],
+        [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
+        [/(\d+) new/, "$1 新"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
