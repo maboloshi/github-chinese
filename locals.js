@@ -10098,6 +10098,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                             "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
                 "This release is labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
+                "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
             "Publish release": "发布发行版",
                 "Publishing…": "发布中…",
