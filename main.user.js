@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.4-2024-06-09
+// @version      1.9.2-beta.5-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -176,55 +176,46 @@
      * @returns {string|boolean} 页面的类型，如果无法确定类型，那么返回 false。
      */
     function getPage(url = window.location) {
-
-        // 站点，如 gist, developer, help 等，默认主站是 github
+        // 站点映射
         const siteMapping = {
             'gist.github.com': 'gist',
             'www.githubstatus.com': 'status',
             'skills.github.com': 'skills'
         };
-        const site = siteMapping[url.hostname] || 'github'; // 站点
-        const pathname = url.pathname; // 当前路径
+        const site = siteMapping[url.hostname] || 'github';
+        const pathname = url.pathname;
 
         // 是否登录
         const isLogin = document.body.classList.contains("logged-in");
-        // 用于确定 个人首页，组织首页，仓库页 然后做判断
-        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';
-        // 组织页
-        const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
-        // 仓库页
-        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
+        // 获取 analytics-location
+        const analyticsLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
 
-        // 优先匹配 body 的 class
-        let page, t = document.body.className.match(I18N.conf.rePageClass);
-        if (t) {
-            if (t[1] === 'page-profile') {
-                let matchResult = url.search.match(/tab=(\w+)/);
-                if (matchResult) {
-                    page = 'page-profile/' + matchResult[1];
-                } else {
-                    page = pathname.match(/\/(stars)/) ? 'page-profile/stars' : 'page-profile';
-                }
-            } else {
-                page = t[1];
-            }
-        } else if (site === 'gist') { // Gist 站点
-            page = 'gist';
-        } else if (site === 'status') {  // GitHub Status 页面
-            page = 'status';
-        } else if (site === 'skills') {  // GitHub Skills 页面
-            page = 'skills';
-        } else if (pathname === '/' && site === 'github') { // github.com 首页
+        // 判断页面类型
+        const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
+        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
+        const isProfile = document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>';
+        const isSession = document.body.classList.contains("session-authentication");
+
+        let t, page = false;
+
+        if (isSession) {
+            page = 'session-authentication';
+        } else if (isProfile) {
+            t = url.search.match(/tab=([^&]+)/);
+            page = t ? 'page-profile/' + t[1] : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
+        } else if (site === 'gist' || site === 'status' || site === 'skills') {
+            page = site;
+        } else if (pathname === '/' && site === 'github') {
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if (isRepository) { // 仓库页
+        } else if (isRepository) {
             t = pathname.match(I18N.conf.rePagePathRepo);
             page = t ? 'repository/' + t[1] : 'repository';
-        } else if (isOrganization) { // 组织页
+        } else if (isOrganization) {
             t = pathname.match(I18N.conf.rePagePathOrg);
             page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
             t = pathname.match(I18N.conf.rePagePath);
-            page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
+            page = t ? (t[1] || t.slice(-1)[0]) : false;
         }
 
         if (!page || !I18N[lang][page]) {
