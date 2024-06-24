@@ -10080,7 +10080,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Something went really wrong, and we can’t process that file.": "确实出了点问题，我们无法处理该文件。",
             "Try again.": "请重试。",
 
-            "Delete and try uploading this file again.": "删除并重新上传。",
+            // "Delete and try uploading this file again.": "删除并重新上传。",
+            "Upload failed. Delete and try uploading this file again.": "上传失败。请删除并重新上传。",
             "will be deleted": "将被删除",
             "Remove": "删除",
             "Undo": "撤销",
