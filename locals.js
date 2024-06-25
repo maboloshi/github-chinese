@@ -448,9 +448,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的资料",
-            "See all accounts": "查看所有账户",
-            "Add account": "添加账户",
-            "Your sponsorships": "我的捐助者",
+            "Account switcher": "切换账户",
+            "Switch account": "切换帐户",
+            "Sign out...": "登出……",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
             "Your Copilot": "我的 Copilot",
@@ -465,7 +465,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
             "Try Copilot": "试用 Copilot",
-            "Feature preview": "功能预览",
+            "Feature preview dialog": "功能预览对话框",
                 // 对话框
                 "Enable": "启用",
                 "Disable": "禁用",
@@ -494,7 +494,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
             "Edit status": "编辑状态",
-            "What's your current status?": "您目前的状况如何？",
+            "What's happening?": "发生了什么？",
 
             "Suggestions": "建议",
                 "On vacation": "在度假",
@@ -1275,6 +1275,9 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Find a team…": "搜索团队…",
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
+        "Create your first project": "创建你的第一个项目",
+            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
+            "Create repository": "创建仓库",
 
         // 中间栏
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
@@ -1295,7 +1298,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
                 "Install GitHub Desktop": "安装 GitHub Desktop",
                 "to visualize, commit, and push changes without ever touching the command line.": "来可视化、提交和推送更改，而无需使用命令行。",
             "Get AI-based coding suggestions": "获取基于 AI 的编码建议",
-                "Try GitHub Copilot free for 30 天之前,": "免费试用 GitHub Copilot 30 天，",
+                "Try GitHub Copilot free for 30 days,": "免费试用 GitHub Copilot 30 天，",
                 "which suggests entire functions in real time, right from your editor.": "它可以直接从您的编辑器实时建议所有函数。",
             "Write code in your web browser": "在您的网络浏览器中编写代码",
                 "Use": "使用",
@@ -1312,6 +1315,9 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You're seeing this because you haven't used GitHub's core features, yet.": "您看到这个是因为您有一段时间没有使用过 GitHub 的核心功能了。",
         "Introduce yourself with a profile README": "使用 README 介绍自己",
             "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人资料自述文件（README）来分享有关您自己的信息，该信息将显示在您的个人资料页面顶部。",
+        "Follow this exercise to try the GitHub flow": "按照此练习尝试 GitHub 流程",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 用于创建和审查代码的拉取请求工作流程。",
+            "Try the GitHub flow": "尝试 GitHub 流程",
         "About version control and Git": "关于版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
         "The GitHub Flow": "GitHub 流程",
