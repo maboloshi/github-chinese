@@ -352,7 +352,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Stargazers/, "追星者"],
         [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
-        [/Release/, "发行版"],
+        [/Releases?/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
         [/Code scanning alerts/, "代码扫描警报"],
         [/Repository topics/, "仓库主题"],
@@ -448,9 +448,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Signed in as": "登录身份为",
             "Set status": "状态设置",
             "Your profile": "我的资料",
-            "See all accounts": "查看所有账户",
-            "Add account": "添加账户",
-            "Your sponsorships": "我的捐助者",
+            "Account switcher": "切换账户",
+            "Switch account": "切换帐户",
+            "Add account": "创建账户",
+            "Sign out...": "登出……",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
             "Your Copilot": "我的 Copilot",
@@ -467,6 +468,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Try Copilot": "试用 Copilot",
             "Feature preview": "功能预览",
                 // 对话框
+                "Feature preview dialog": "功能预览对话框",
                 "Enable": "启用",
                 "Disable": "禁用",
                 "Documentation": "文档",
@@ -494,7 +496,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
             "Edit status": "编辑状态",
-            "What's your current status?": "您目前的状况如何？",
+            "What's happening?": "发生了什么？",
 
             "Suggestions": "建议",
                 "On vacation": "在度假",
@@ -1275,16 +1277,31 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Find a team…": "搜索团队…",
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
+        "Create your first project": "创建你的第一个项目",
+            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
+            "Create repository": "创建仓库",
 
         // 中间栏
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Start writing code": "开始编写代码",
+            "A repository contains all of your project's files, revision history, and collaborator discussion.": "仓库包含项目的所有文件、修订历史记录和协作者讨论。",
+            "Repository name": "仓库名称",
+            "name your new repository...": "命名您的新仓库……",
+            "Anyone on the internet can see this repository": "任何人都可以看到这个仓库，您可以选择谁能提交。",
+            "You choose who can see and commit to this repository": "您可以选择谁可以看和提交到该仓库。",
+            "Create a new repository": "创建新的仓库",
             "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
             "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
             "Remove from dashboard": "从仪表板中删除",
-        "Tools of the trade": "贸易工具",
+        "Use tools of the trade": "使用贸易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
+                "Simplify your development workflow with a GUI": "使用 GUI 简化开发工作流程",
+                "Install GitHub Desktop": "安装 GitHub Desktop",
+                "to visualize, commit, and push changes without ever touching the command line.": "来可视化、提交和推送更改，而无需使用命令行。",
+            "Get AI-based coding suggestions": "获取基于 AI 的编码建议",
+                "Try GitHub Copilot free for 30 days,": "免费试用 GitHub Copilot 30 天，",
+                "which suggests entire functions in real time, right from your editor.": "它可以直接从您的编辑器实时建议所有函数。",
             "Write code in your web browser": "在您的网络浏览器中编写代码",
                 "Use": "使用",
                 "the github.dev web-based editor": "基于 github.dev 的网络编辑器",
@@ -1298,6 +1315,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "bring GitHub to the command line": "将 GitHub 引入命令行",
         "Get started on GitHub": "开始使用 GitHub",
             "You're seeing this because you haven't used GitHub's core features, yet.": "您看到这个是因为您有一段时间没有使用过 GitHub 的核心功能了。",
+        "Introduce yourself with a profile README": "使用 README 介绍自己",
+            "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人资料自述文件（README）来分享有关您自己的信息，该信息将显示在您的个人资料页面顶部。",
+        "Follow this exercise to try the GitHub flow": "按照此练习尝试 GitHub 流程",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 用于创建和审查代码的拉取请求工作流程。",
+            "Try the GitHub flow": "尝试 GitHub 流程",
         "About version control and Git": "关于版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
         "The GitHub Flow": "GitHub 流程",
@@ -1490,6 +1512,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) (people|person) reacted with rocket/, "$1 个人的反应为火箭"],
         [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
+        [/Start a new repository for/, "创建一个仓库为"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
@@ -7362,7 +7385,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "First-time contributor": "首次贡献者",
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
             "View changes": "查看更改",
-            "View Changes": "查看更改",
             "Outdated": "陈旧的",
             "Resolve conversation": "解决对话",
                 "Resolving conversation…": "解决对话中…",
@@ -8728,6 +8750,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Load more…": "载入更多…",
             "New": "新",
 
+            "Loading more replies...": "载入更多回复中...",
+
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "code of conduct": "行为准则",
@@ -8859,6 +8883,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // /<user-name>/community/discussions
             // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
             "View organization discussions": "查看组织讨论",
+
+        // 标签浮动文本
+            "This user is a collaborator on this repository.": "该用户是此仓库的协作者。",
+            "This user is a maintainer on this repository.": "该用户是此仓库的维护者。",
+            "This user is the author of this discussion.": "该用户是此讨论的作者。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -8892,6 +8921,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Delete (.*) section/, "删除 “$1” 栏目"],
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
         [/This discussion was converted from issue/, "本讨论由以下议题转换而来"],
+        [/(\d+) new comments?/, "$1 条新评论"],
+        [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
+        [/(\d+) new/, "$1 新"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -10071,7 +10103,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Something went really wrong, and we can’t process that file.": "确实出了点问题，我们无法处理该文件。",
             "Try again.": "请重试。",
 
-            "Delete and try uploading this file again.": "删除并重新上传。",
+            // "Delete and try uploading this file again.": "删除并重新上传。",
+            "Upload failed. Delete and try uploading this file again.": "上传失败。请删除并重新上传。",
             "will be deleted": "将被删除",
             "Remove": "删除",
             "Undo": "撤销",
@@ -10089,6 +10122,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                             "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
                 "This release is labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
+                "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
             "Publish release": "发布发行版",
                 "Publishing…": "发布中…",
