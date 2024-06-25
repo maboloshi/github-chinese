@@ -352,7 +352,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Stargazers/, "追星者"],
         [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
-        [/Release/, "发行版"],
+        [/Releases?/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
         [/Code scanning alerts/, "代码扫描警报"],
         [/Repository topics/, "仓库主题"],
@@ -7362,7 +7362,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "First-time contributor": "首次贡献者",
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
             "View changes": "查看更改",
-            "View Changes": "查看更改",
             "Outdated": "陈旧的",
             "Resolve conversation": "解决对话",
                 "Resolving conversation…": "解决对话中…",
@@ -8728,6 +8727,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Load more…": "载入更多…",
             "New": "新",
 
+            "Loading more replies...": "载入更多回复中...",
+
             "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循",
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "code of conduct": "行为准则",
@@ -8859,6 +8860,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // /<user-name>/community/discussions
             // [/This is a ✨special✨ repository containing the organization level discussions for ([^ ]+). Everything posted here will also be visible at the organization level./, "这是一个 ✨ 特别的 ✨ 仓库，包含 $1 的组织层面的讨论。这里发布的所有内容在组织层面上也是可见的。"],
             "View organization discussions": "查看组织讨论",
+
+        // 标签浮动文本
+            "This user is a collaborator on this repository.": "该用户是此仓库的协作者。",
+            "This user is a maintainer on this repository.": "该用户是此仓库的维护者。",
+            "This user is the author of this discussion.": "该用户是此讨论的作者。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -8892,6 +8898,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/Delete (.*) section/, "删除 “$1” 栏目"],
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
         [/This discussion was converted from issue/, "本讨论由以下议题转换而来"],
+        [/(\d+) new comments?/, "$1 条新评论"],
+        [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
+        [/(\d+) new/, "$1 新"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -10071,7 +10080,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Something went really wrong, and we can’t process that file.": "确实出了点问题，我们无法处理该文件。",
             "Try again.": "请重试。",
 
-            "Delete and try uploading this file again.": "删除并重新上传。",
+            // "Delete and try uploading this file again.": "删除并重新上传。",
+            "Upload failed. Delete and try uploading this file again.": "上传失败。请删除并重新上传。",
             "will be deleted": "将被删除",
             "Remove": "删除",
             "Undo": "撤销",
@@ -10089,6 +10099,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                             "Show and tell": "展示与讲述",
             "Set as the latest release": "设置为最新版本", //edit
                 "This release is labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
+                "This release will be labeled as the latest for this repository.": "此版本将被标记为此仓库的最新版本。",
 
             "Publish release": "发布发行版",
                 "Publishing…": "发布中…",
