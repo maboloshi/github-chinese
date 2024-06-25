@@ -450,6 +450,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Your profile": "我的资料",
             "Account switcher": "切换账户",
             "Switch account": "切换帐户",
+            "Add account": "创建账户",
             "Sign out...": "登出……",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
@@ -465,8 +466,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
             "Try Copilot": "试用 Copilot",
-            "Feature preview dialog": "功能预览对话框",
+            "Feature preview": "功能预览",
                 // 对话框
+                "Feature preview dialog": "功能预览对话框",
                 "Enable": "启用",
                 "Disable": "禁用",
                 "Documentation": "文档",
