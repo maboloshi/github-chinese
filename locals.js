@@ -6058,6 +6058,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 自述文件(README.md)
             "Filter headings": "筛选标题",
+            "Edit file": "编辑文件",
 
             // 默认分支被重命名提醒框
                 "The default branch has been renamed!": "默认分支已被重新命名!",
@@ -6797,7 +6798,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         [/At least (\d+) approving review is required by reviewers with write access./, "至少需要 $1 个审查者批准。"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
-        [/Edited (\d+) times?/, "编辑 $1 次"]
+        [/Edited (\d+) times?/, "编辑 $1 次"],
     ]
 };
 
@@ -8109,8 +8110,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         [/Allow(ing)? edits by maintainers/, "允许维护人员编辑"],
         [/users with write access to ([^ ]+) can add new commits/, "则拥有 $1 写访问权限的用户可以向您的"],
         [/(\d+) changed files?/, "更改的文件"],
-        [/(\d+) additions?/,"$1 处增加"],
-        [/(\d+) deletions?/,"$1 处删除"],
+        [/(\d+) additions?/, "$1 处增加"],
+        [/(\d+) deletions?/, "$1 处删除"],
     ],
 };
 
