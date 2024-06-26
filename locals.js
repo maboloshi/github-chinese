@@ -7136,7 +7136,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         ...I18N.zh["repository-public"]["regexp"],
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
-        [/Want to contribute to ([^ ]+)\?/， "想为 $1 做贡献？"],
+        [/Want to contribute to ([^ ]+)\?/, "想为 $1 做贡献？"],
         [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
@@ -7147,7 +7147,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
-        [/First time contributing to ([^ ]+)\?/， "首次为 $1 做贡献？"],
+        [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
 
         // 具体某条议题 /<user-name>/<repo-name>/issues/<id>
         [/· ([\d,]+) comments?/, "• $1 条评论"],
