@@ -16011,6 +16011,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
            "Enhance your workflow with extensions": "增强您的工作流程",
                "Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
                "Search for Copilot extensions, apps, and actions": "搜索 Copilot 扩展、应用和操作",
+               "Menu": "菜单", // Android UA 下出现
             "Featured": "精选",
                 "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
                 "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
