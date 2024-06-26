@@ -5773,6 +5773,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         // [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
     ],
+    characterData: true,
 };
 I18N["zh-CN"]["new"] = I18N["zh-CN"]["page-new-repo"];
 I18N["zh-CN"]["new/import"] = I18N["zh-CN"]["page-new-repo"];

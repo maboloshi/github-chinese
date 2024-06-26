@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.6-2024-06-09
+// @version      1.9.2-beta.7-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -64,15 +64,19 @@
             }
 
             if (page) {
+                const characterData = I18N[lang][page]?.characterData || false;
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation =>
-                    mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+                // 新增`characterData`识别符，仅在需要页面，筛选出
+                const filteredMutations = mutations.filter(({ addedNodes, type }) =>
+                    addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')
+                );
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
             }
         }).observe(document.body, {
+            characterData: true,
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
