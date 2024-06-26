@@ -7818,6 +7818,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
         // 具体某条拉取请求
+        [/Commits?/, "提交"],
+        [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
@@ -9848,6 +9850,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
                 "Activity": "活动",
                 "View rules": "查看规则",
+                    "There are no rulesets associated with this branch.": "该分支没有相关的规则集。",
 
                 "View more branches": "查看更多分支",
 
