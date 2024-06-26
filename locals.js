@@ -6797,7 +6797,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         [/At least (\d+) approving review is required by reviewers with write access./, "至少需要 $1 个审查者批准。"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
-        [/Edited (\d+) times?/, "编辑 $1 次"]
+        [/Edited (\d+) times?/, "编辑 $1 次"],
     ]
 };
 
