@@ -7201,8 +7201,6 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向这个仓库提交代码，请考虑打开一个拉取请求。您可以阅读该仓库的",
 
-            "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
-
             "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
             "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
             "discover issues": "探索议题",
@@ -7268,6 +7266,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 顶部提醒
+                "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
                 "Marked pull request as ready for review.": "标记拉取请求为可审核。",
                 "Your review was submitted successfully.": "您的审查已成功提交。",
