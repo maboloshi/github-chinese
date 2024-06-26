@@ -65,6 +65,7 @@ function set_dco_signature {
     if [[ $TOKEN == ghp_* ]]; then
         # https://github.blog/2021-04-05-behind-githubs-new-authentication-token-formats/
         # 'ghp_'开头的是 GitHub 个人访问令牌
+        # What starts with 'ghp_' is the GitHub personal access token
 
         response=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_URL/user")
     elif [[ $APP_SLUG ]]; then
