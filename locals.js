@@ -462,6 +462,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Your stars": "我的星标",
             "Your gists": "我的代码片段",
             "Your sponsors": "我的赞助者",
+            "Create new": "新建", // Android UA 下出现
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
@@ -1402,6 +1403,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "labeled a pull request": "将标签添加到拉取请求中",
         "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
+        "All reactions": "所有反应",
 
         "published a release": "发布发行版",
         "forked a repository": "复刻仓库",
@@ -5943,6 +5945,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 操作条
                 "forked from": "复刻自",
+                "Public repository · Forked from": "公共仓库 · 复刻自", // Android UA 下出现
                 "generated from": "创建自",
                 "mirrored from": "镜像自",
 
@@ -19455,4 +19458,56 @@ I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
     ],
+};
+
+I18N.zh["support"] = { // https://support.github.com/ 支持页
+    "static":{
+        "Product Area": "产品区域", // 左上角下拉菜单及中间页面
+            "Get Started": "入门",
+                "Welcome to GitHub! Get started with learning the basics.": "欢迎访问 GitHub！从学习基础知识开始。",
+            "CI/CD and DevOps": "CI/CD 和 DevOps",
+                "CI/CD automates your builds, testing, and deployment.": "CI/CD 可自动完成构建、测试和部署。",
+            "Community": "社区",
+                "Learn best practices for moderating and setting up communities.": "学习管理和建立社区的最佳实践。",
+            // 安全
+                "Ship secure applications within the GitHub flow.": "在 GitHub 流程中发送安全应用程序。",
+            "Collaborative Coding": "协作编码",
+                "Contribute to projects quickly with automatic environment setup.": "通过自动环境设置，快速为项目作出贡献。",
+            "Developers": "开发者",
+                "Learn about using the GitHub API.": "了解如何使用 GitHub API。",
+            "Enterprise and Teams": "企业和团队",
+            "Enterprise & Teams": "企业 & 团队",
+                "Simplify access and permissions management across your projects and teams.": "简化项目和团队的访问和权限管理。",
+            "Feedback": "反馈",
+                "Feel free to share feedback, discuss topics, or ask questions.": "欢迎分享反馈、讨论主题或提出问题。",
+            "Project Management": "项目管理",
+                "Keep feature requests, bugs, and more organized with GitHub Issues.": "使用 GitHub 议题整理功能请求、错误和更多信息。",
+        "Menu": "菜单", // Android UA 下出现
+
+        // 有什么需要帮忙？下面的搜索框
+            "How do I secure my SSH key with a passphrase?": "如何使用口令保护 SSH 密钥？",
+            "Why was my account suspended?": "为什么我的账户被冻结？",
+
+        "Search GitHub Support": "搜索 GitHub 支持", // 右上角搜索框
+
+        "Popular Links:": "热门链接：",
+            "Actions,": "操作，",
+            "Security,": "安全，",
+            "Notifications,": "通知，",
+            "Enterprise Server,": "企业服务器，",
+            "SAML SSO": "SAML 单点登录",
+
+        // 仍然需要帮助？（这句话本身就是中文）
+            "Help Docs": "帮助文档",
+                "Explore our Official GitHub documentation.": "浏览我们的官方 GitHub 文档。",
+            // 社区
+                "Ask questions, swap stories, share ideas.": "提出问题，交流故事，分享想法。",
+            // 联系
+                "Get in touch with us for assistance.": "如需帮助，请与我们联系。",
+            "Contact Sales": "联系销售",
+                "Get in touch with our sales team.": "请联系我们的销售团队。",
+        // https://support.github.com/request
+        "open a support ticket": "打开支持工单",
+    },
+        
 };
