@@ -6058,6 +6058,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 自述文件(README.md)
             "Filter headings": "筛选标题",
+            "Edit file": "编辑文件",
 
             // 默认分支被重命名提醒框
                 "The default branch has been renamed!": "默认分支已被重新命名!",
@@ -11692,7 +11693,6 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
             "Pushes": "推送",
             "Limit how many branches and tags can be updated in a single push": "限制一次推送中可以更新多少个分支和标签",
-                "Beta": "测试",
                 "Pushes will be rejected if they attempt to update more than this.": "如果推送尝试更新超过该值，则推送将被拒绝。",
                 "Learn more about this setting": "了解更多关于此设置的信息",
                 ", and send us your": "，并向我们发送您的",
