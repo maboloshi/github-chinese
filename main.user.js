@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.5-2024-06-09
+// @version      1.9.2-beta.6-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -99,76 +99,66 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.IgnoreId.includes(node.id) ||
-            I18N.conf.reIgnoreClass.test(node.className) ||
-            I18N.conf.IgnoreTag.includes(node.tagName) ||
-            (node.nodeType === Node.ELEMENT_NODE && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
-        ) {
-            return;
-        }
+        const { IgnoreId, IgnoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
+        const skipNode = node => IgnoreId.includes(node.id) ||
+                                 IgnoreTag.includes(node.tagName) ||
+                                 reIgnoreClass.test(node.className) ||
+                                 (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
+
+        if (skipNode(node)) return;
 
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
-            // 翻译时间元素
-            if (node.tagName === 'RELATIVE-TIME') {
-                transTimeElement(node.shadowRoot);
-                return;
-            }
+            // 处理不同标签的元素属性翻译
+            switch (node.tagName) {
+                case "RELATIVE-TIME": // 翻译时间元素
+                    transTimeElement(node.shadowRoot || node);
+                    return;
 
-            // 元素节点属性翻译
-            if (["INPUT", "TEXTAREA"].includes(node.tagName)) { // 输入框 按钮 文本域
-                if (["button", "submit", "reset"].includes(node.type)) {
-                    if (node.hasAttribute('data-confirm')) { // 翻译 浏览器 提示对话框
-                        transElement(node, 'data-confirm', true);
+                case "INPUT":
+                case "TEXTAREA": // 输入框 按钮 文本域
+                    if (['button', 'submit', 'reset'].includes(node.type)) {
+                        transElement(node.dataset, 'confirm'); // 翻译 浏览器 提示对话框
+                        transElement(node, 'value');
+                    } else {
+                        transElement(node, 'placeholder');
                     }
-                    transElement(node, 'value');
-                } else {
-                    transElement(node, 'placeholder');
-                }
-            } else if (node.tagName === 'BUTTON') {
-                if (node.hasAttribute('aria-label') && /tooltipped/.test(node.className)) {
-                    transElement(node, 'aria-label', true); // 翻译 浏览器 提示对话框
-                }
-                if (node.hasAttribute('title')) {
-                    transElement(node, 'title', true); // 翻译 浏览器 提示对话框
-                }
-                if (node.hasAttribute('data-confirm')) {
-                    transElement(node, 'data-confirm', true); // 翻译 浏览器 提示对话框 ok
-                }
-                if (node.hasAttribute('data-confirm-text')) {
-                    transElement(node, 'data-confirm-text', true); // 翻译 浏览器 提示对话框 ok
-                }
-                if (node.hasAttribute('data-confirm-cancel-text')) {
-                    transElement(node, 'data-confirm-cancel-text', true); // 取消按钮 提醒
-                }
-                if (node.hasAttribute('cancel-confirm-text')) {
-                    transElement(node, 'cancel-confirm-text', true); // 取消按钮 提醒
-                }
-                if (node.hasAttribute('data-disable-with')) { // 按钮等待提示
-                    transElement(node, 'data-disable-with', true);
-                }
-            } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
-                transElement(node, 'label');
-            } else if (/tooltipped/.test(node.className)) { // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
-                transElement(node, 'aria-label', true); // 带提示的元素，类似 tooltip 效果的
-            } else if (node.tagName === 'A') {
-                if (node.hasAttribute('title')) {
-                    transElement(node, 'title', true); // 翻译 浏览器 提示对话框
-                }
-                if (node.hasAttribute('data-hovercard-type')) {
-                    return; // 不翻译
-                }
+                    break;
+
+                case "BUTTON":
+                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 翻译 浏览器 提示对话框
+                    transElement(node, 'title'); // 翻译 浏览器 提示对话框
+                    transElement(node.dataset, 'confirm'); // 翻译 浏览器 提示对话框 ok
+                    transElement(node.dataset, 'confirmText'); // 翻译 浏览器 提示对话框 ok
+                    transElement(node.dataset, 'confirmCancelText'); // 取消按钮 提醒
+                    transElement(node, 'cancelConfirmText'); // 取消按钮 提醒
+                    transElement(node.dataset, 'disableWith'); // 按钮等待提示
+                    break;
+
+                case "OPTGROUP":
+                    transElement(node, 'label'); // 翻译 <optgroup> 的 label 属性
+                    break;
+
+                case "A":
+                    transElement(node, 'title'); // title 属性
+                    if (node.hasAttribute('data-hovercard-type')) return;
+                    break;
+
+                default:
+                    // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
+                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 带提示的元素，类似 tooltip 效果的
             }
 
-            let childNodes = node.childNodes;
-            childNodes.forEach(traverseNode); // 遍历子节点
-
-        } else if (node.nodeType === Node.TEXT_NODE) { // 文本节点翻译
-            if (node.length <= 500) { // 修复 许可证编辑框初始化载入内容被翻译
-                transElement(node, 'data');
+            const childNodes = node.childNodes;
+            for (let i = 0; i < childNodes.length; i++) { // 遍历子节点
+                traverseNode(childNodes[i]);
             }
+
+        } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点翻译
+            transElement(node, 'data');
         }
     }
+
 
     /**
      * getPage 函数：获取页面的类型。
@@ -264,28 +254,29 @@
      * transElement 函数：翻译指定元素的文本内容或属性。
      * @param {Element} el - 需要翻译的元素。
      * @param {string} field - 需要翻译的文本内容或属性的名称。
-     * @param {boolean} isAttr - 是否需要翻译属性。
+     * @param {boolean} isAttr - 是否需要翻译属性（不可直接访问的属性值）。
      */
     function transElement(el, field, isAttr = false) {
         let text = isAttr ? el.getAttribute(field) : el[field]; // 需要翻译的文本
-        let str = translateText(text); // 翻译后的文本
+        if (!text) return; // 当 text 为空时，退出函数
+        let str = transText(text); // 翻译后的文本
 
         // 替换翻译后的内容
         if (str) {
-            if (!isAttr) {
-                el[field] = str;
-            } else {
+            if (isAttr) {
                 el.setAttribute(field, str);
+            } else {
+                el[field] = str;
             }
         }
     }
 
     /**
-     * translateText 函数：翻译文本内容。
+     * transText 函数：翻译文本内容。
      * @param {string} text - 需要翻译的文本内容。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function translateText(text) { // 翻译
+    function transText(text) { // 翻译
 
         // 内容为空, 空白字符和或数字, 不存在英文字母和符号,. 跳过
         if (!isNaN(text) || !/[a-zA-Z,.]+/.test(text)) {
