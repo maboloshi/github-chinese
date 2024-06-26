@@ -14444,6 +14444,7 @@ I18N.zh["notifications"] = { // 通知页面
         "All": "所有",
         "Unread": "未读",
 
+        "Switch inbox": "切换收件箱", // Android UA 下出现
         "Inbox": "收件箱",
         "Saved": "已保存",
         "Save": "保存",
