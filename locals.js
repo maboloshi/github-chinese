@@ -11693,7 +11693,6 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
             "Pushes": "推送",
             "Limit how many branches and tags can be updated in a single push": "限制一次推送中可以更新多少个分支和标签",
-                "Beta": "测试",
                 "Pushes will be rejected if they attempt to update more than this.": "如果推送尝试更新超过该值，则推送将被拒绝。",
                 "Learn more about this setting": "了解更多关于此设置的信息",
                 ", and send us your": "，并向我们发送您的",
@@ -13316,7 +13315,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                 "GitHub Enterprise": "GitHub 企业版",
                 "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版帐户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
                 "Try GitHub Enterprise risk-free for 30 days": "免费无风险试用 GitHub 企业版 30 天",
-                "Learn more about the visibility of your GitHub Pages site.": "了解更多关于GitHub Pages 站点可见性的信息。",
+                "Learn more about the visibility of your GitHub Pages site.": "了解更多关于 GitHub Pages 站点可见性的信息。",
 
     },
     "regexp": [ // 正则翻译
