@@ -447,28 +447,26 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "New team": "新建团队", // 组织
 
         // 右上角个人图标下拉菜单
-            "Signed in as": "登录身份为",
+            "Account switcher": "账户切换",
+                "Add account": "添加账户",
+                "Switch account": "切换账户",
+                "Sign out...": "登出...",
             "Set status": "状态设置",
             "Your profile": "我的资料",
-            "Account switcher": "切换账户",
-            "Switch account": "切换账户",
-            "Add account": "创建账户",
-            "Sign out...": "登出……",
             "Your repositories": "我的仓库",
             "Your codespaces": "我的代码空间",
             "Your Copilot": "我的 Copilot",
-            "Your organizations": "我的组织",
-            "Your enterprises": "我的企业",
             "Your projects": "我的项目",
             "Your discussions": "我的讨论",
             "Your stars": "我的星标",
             "Your gists": "我的代码片段",
+            "Your organizations": "我的组织",
+            "Your enterprises": "我的企业",
             "Your sponsors": "我的赞助者",
-            "Create new": "新建", // Android UA 下出现
+            "Create new": "创建...", // Android UA 下出现
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
-            "Try Copilot": "试用 Copilot",
             "Feature preview": "功能预览",
                 // 对话框
                 "Feature preview dialog": "功能预览对话框",
@@ -489,7 +487,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
                     "on Issues, PRs and Discussions to check out a list of available commands!": "，即可查看可用命令的列表！",
-            "Help": "帮助",
             "Settings": "设置",
             "GitHub Docs": "GitHub 文档",
             "GitHub Support": "GitHub 支持",
@@ -503,8 +500,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
             "Suggestions": "建议",
                 "On vacation": "在度假",
-                "Working from home": "在家工作",
                 "Out sick": "生病",
+                "Working from home": "在家工作",
                 "Focusing": "专注中",
 
             "Busy": "繁忙中",
@@ -523,7 +520,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Visible to": "可见",
                 "Everyone": "任何人",
                     "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
-                "Everyone - Your status will be visible to everyone.": "所有人 - 所有人都可以看到您的状态。",
             "Filter emoji": "筛选表情符号",
                 "Search results": "筛选结果",
 
@@ -2188,7 +2184,7 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
 
             // [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
 
-        // https://github.com/stars/<repo-name>/lists/<清单>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // https://github.com/stars/<user-name>/lists/<清单>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Edit list": "编辑清单",
                 "Delete list": "删除清单",
                     "Are you sure you want to delete this list?": "您确定要删除此清单吗？",
@@ -6625,8 +6621,12 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
         // 某个拉取请求和某个议题 公共词条
+            // 顶部提醒
+                "You’ve been unsubscribed from this thread.": "您已退订该主题。",
+
             // 右侧栏
                 "Reviewers": "审查者",
+                    "No reviews": "无审查者",
                     "Loading suggestions…": "载入推荐…",
                     // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                     // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
@@ -7405,7 +7405,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Unresolve conversation": "未解决对话",
                 "Unresolving conversation…": "未解决对话…",
                 "marked this conversation as resolved.": "将此对话标记为已解决。",
-            // "Changes requested": "更改请求",
+            "Changes requested": "更改请求",
             "Change requested": "更改请求",
             "Show resolved": "显示已解决",
             "Hide resolved": "隐藏已解决",
@@ -7521,8 +7521,12 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
             // [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
             "Merge without waiting for requirements to be met (bypass branch protections)": "合并而无需等待需求满足（绕过分支保护）。",
+                "Add an optional extended description…": "添加可选的扩展描述...",
                 // [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"],
 
+            // 合并失败提示
+                "Merge attempt failed": "合并尝试失败",
+                "We couldn’t merge this pull request. Reload the page before trying again.": "我们无法合并此请求。重新加载页面后再试。",
 
             // [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
             "First-time contributors need a maintainer to approve running workflows.": "首次贡献者需要维护者来批准正在运行的工作流。",
@@ -15990,7 +15994,6 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
                 "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
             // Copilot
-                "Beta": "测试",
                 "Copilot Extensions": "Copilot 扩展",
                 "Extend Copilot capabilities using third party tools, services, and data": "使用第三方工具、服务或数据扩展 Copilot 的功能",
            "Extend GitHub": "拓展 GitHub",
