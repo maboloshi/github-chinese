@@ -6918,7 +6918,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "closed this": "关闭了",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
-            "reopened this": "重新打开了",
+            "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
             "· May be fixed by": " · 可通过该方案修复",
@@ -7367,7 +7367,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "commits into": "个提交到",
             "from": "来自",
             "closed this": "关闭了这个",
-            "reopened this": "重新激活了这个",
+            "reopened this": "重新打开了这个",
 
             // 标签栏
             "Conversation": "讨论",
