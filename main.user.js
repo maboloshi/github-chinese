@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GitHub 中文化插件
+// @name         GitHub 中文化插件（测试版）
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
