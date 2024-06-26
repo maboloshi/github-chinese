@@ -367,6 +367,8 @@ I18N.zh["title"] = { // 标题翻译
         [/Webhooks · Settings/, "Web 钩子 · 设置"],
         [/Add a code of conduct to/, "添加代码行为准则到"],
         [/Caches?/, "缓存"],
+        [/Runners?/, "运行器"],
+        [/Attestations?/, "证书"],
         ["_regexp_end", "end"]
     ],
 };
@@ -1661,6 +1663,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
         [/(\d+) repositories/, "$1 仓库"],
         [/(\d+) members/, "$1 成员"],
+        [/and (\d+) more/, "和 $1 个更多"]
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -6053,6 +6056,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 左侧正文
 
+            // 自述文件(README.md)
+            "Filter headings": "筛选标题",
+
             // 默认分支被重命名提醒框
                 "The default branch has been renamed!": "默认分支已被重新命名!",
                 "is now named": "已被重新命名为",
@@ -6790,7 +6796,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
     "regexp": [ // 正则翻译
         [/At least (\d+) approving review is required by reviewers with write access./, "至少需要 $1 个审查者批准。"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
-        [/Assigned to (.*)/, "分配给 $1"]
+        [/Assigned to (.*)/, "分配给 $1"],
+        [/Edited (\d+) times?/, "编辑 $1 次"]
     ]
 };
 
@@ -7236,6 +7243,8 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
                 "You commented on this pull request": "您对此拉取请求发表了评论",
                 "You opened this pull request": "您打开了此拉取请求",
+            
+                //"Suggested change": "建议更改",
 
     },
     "regexp": [
@@ -7247,6 +7256,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
+        [/Suggested change/, "建议更改"],
     ],
 };
 
@@ -8047,6 +8057,13 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                     "Nothing to show": "暂无",
 
         "Allow edits and access to secrets by maintainers": "允许维护人员编辑和访问机密",
+            "If checked,": "如果勾选，",
+            "users with write access to": "则拥有",
+            "can add new commits": "写访问权限的用户可以向您的",
+            "to your": "向您的",
+            "branch.": "分支添加新提交。",
+            "You can always change this setting later.": "您可以随时更改这一设置。",
+            "Got it": "知道了",
         // 创建拉取请求 按钮下拉
             "Automatically requests reviews from code owners": "自动请求代码所有者进行审查",
             "Create draft pull request": "创建拉取请求草案",
@@ -8055,7 +8072,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
         "security policy": "安全政策",
         "code of conduct": "行为准则",
-        "Remember, contributions to this repository should follow our ": "请记住，对此仓库的贡献应遵循我们的",
+        "Remember, contributions to this repository should follow our": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
@@ -8078,11 +8095,22 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         // /<user-name>/<repo-name>/compare/<tag>...<branch>
             "Commit comments": "提交评论",
+        
+        "Showing": "显示",
+        "with": "包含",
 
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Commits?/, "提交"],
+        [/Files? changed/, "更改的文件"],
         [/committed/, "提交于"],
+        [/(\d+) contributors?/, "$1 贡献者"],
+        [/Allow(ing)? edits by maintainers/, "允许维护人员编辑"],
+        [/users with write access to ([^ ]+) can add new commits/, "则拥有 $1 写访问权限的用户可以向您的"],
+        [/(\d+) changed files?/, "更改的文件"],
+        [/(\d+) additions?/,"$1 处增加"],
+        [/(\d+) deletions?/,"$1 处删除"],
     ],
 };
 
@@ -10668,6 +10696,12 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Configure scanning tool": "配置扫描工具",
 
         // 机密扫描警报 /<user-name>/<repo-name>/security/secret-scanning
+            // 顶端窗口
+            "Can you give us some feedback?": "您能给我们一些反馈意见吗？",
+            "We want to better understand our users' needs and experiences.": "我们希望更好地了解用户的需求和体验。",
+            "Book some time with us": "与我们预约时间，",
+            "to discuss the GitHub secret scanning experience.": "讨论 GitHub 机密扫描体验。",
+
             "Secret scanning alerts": "机密扫描警报",
             "Secret scanning disabled": "机密扫描已停用",
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
@@ -11503,6 +11537,8 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
                 "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
 
+            "This setting is enabled on the upstream repository. Disabling this setting may block commits from being merged upstream.": "此设置在上游仓库中启用。禁用此设置可能会阻止提交向上游合并。",
+
             "Default branch": "默认分支",
             "The default branch is considered the “base” branch in your repository, against which all pull requests and code commits are automatically made, unless you specify a different branch.": "默认分支被认为是仓库中的 “基础” 分支，所有的拉取请求和代码提交都是针对该分支进行的，除非您指定一个不同的分支。",
             "Rename branch": "重命名分支",
@@ -11656,6 +11692,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
 
             "Pushes": "推送",
             "Limit how many branches and tags can be updated in a single push": "限制一次推送中可以更新多少个分支和标签",
+                "Beta": "测试",
                 "Pushes will be rejected if they attempt to update more than this.": "如果推送尝试更新超过该值，则推送将被拒绝。",
                 "Learn more about this setting": "了解更多关于此设置的信息",
                 ", and send us your": "，并向我们发送您的",
@@ -13276,9 +13313,9 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
             "Visibility": "可见性",
                 "GitHub Enterprise": "GitHub 企业版",
-                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. A privately published site can only be accessed by people with read access to the repository the site is published from. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版帐户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。私下发布的站点只能由对发布该站点的仓库具有读取权限的人访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
+                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版帐户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
                 "Try GitHub Enterprise risk-free for 30 days": "免费无风险试用 GitHub 企业版 30 天",
-                "Learn more about the visibility of your GitHub Pages site": "了解更多关于GitHub Pages 站点可见性的信息",
+                "Learn more about the visibility of your GitHub Pages site.": "了解更多关于GitHub Pages 站点可见性的信息。",
 
     },
     "regexp": [ // 正则翻译
