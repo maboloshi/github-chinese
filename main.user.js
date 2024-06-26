@@ -9,7 +9,6 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
-// @match        https://support.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
 // @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.2
@@ -186,9 +185,7 @@
         const siteMapping = {
             'gist.github.com': 'gist',
             'www.githubstatus.com': 'status',
-            'skills.github.com': 'skills',
-            'support.github.com': 'support'
-            
+            'skills.github.com': 'skills'
         };
         const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
@@ -222,8 +219,6 @@
             page = 'status';
         } else if (site === 'skills') {  // GitHub Skills 页面
             page = 'skills';
-        } else if (site === 'support') {  // GitHub 支持页面
-            page = 'support';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
