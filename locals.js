@@ -369,6 +369,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Caches?/, "缓存"],
         [/Runners?/, "运行器"],
         [/Attestations?/, "证书"],
+        [/Activit(y|ies)/, "活动"],
         ["_regexp_end", "end"]
     ],
 };
@@ -6627,6 +6628,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         // 某个拉取请求和某个议题 公共词条
             // 右侧栏
                 "Reviewers": "审查者",
+                    "No reviews": "无人审查",
                     "Loading suggestions…": "载入推荐…",
                     // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                     // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
@@ -7365,6 +7367,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "commit into": "个提交到",
             "commits into": "个提交到",
             "from": "来自",
+            "closed this": "关闭了这个",
+            "reopened this": "重新激活了这个",
 
             // 标签栏
             "Conversation": "讨论",
@@ -8551,6 +8555,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
 
                 "Edit labels": "编辑标签",
             "Filter:": "筛选:",
+                "Closed": "已关闭",
                 "Answered": "已答复",
                 "Unanswered": "未答复",
                 "Locked": "锁定",
@@ -12006,9 +12011,14 @@ I18N.zh["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name
             "No branch protection rules defined yet.": "尚未定义分支保护规则。",
 
             "You haven't protected any of your branches": "您没有保护任何分支",
-            "Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
-            "Learn more about protected branches": "了解更多关于受保护分支的信息",
-            "Add branch protection rule": "添加分支保护规则",
+            "Define branch rules to disable force pushing, prevent branches from being deleted, or require pull requests before merging. Learn more about": "定义分支规则，以禁止强制推送、防止分支被删除或在合并前要求提交拉取请求。了解更多：",
+            //"Define a protected branch rule to disable force pushing, prevent branches from being deleted, and optionally require status checks before merging.": "定义分支保护规则，以禁用强制推送，防止分支被删除，并可选择在合并前进行状态检查。",
+            "repository rules": "仓库规则",
+            "protected branches": "受保护分支",
+            "Add branch ruleset": "添加分支规则集",
+            "Add classic branch protection rule": "添加经典分支保护规则",
+            //"Learn more about protected branches": "了解更多关于受保护分支的信息",
+            //"Add branch protection rule": "添加分支保护规则",
 
             // 私有库 分支保护 未执行 提醒
             "Your protected branch rules won't be enforced on this private repository until you move to a GitHub Team or Enterprise organization account.": "您的受保护分支规则不会在这个私有仓库上执行，直到您迁移至 GitHub 团队或企业组织账户。",
@@ -12185,11 +12195,18 @@ I18N.zh["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<use
                 "Tag protection rule created.": "标签保护规则已创建。",
                 "Tag protection rule deleted.": "标签保护规则已删除。",
 
+            // 顶部窗口
+            "Level up your tag protections with Repository Rules": "利用仓库规则提升标签保护级别",
+            "Protected tags are being deprecated. To continue protecting tags, please migrate to a tag ruleset by August 30th. You can learn more about the sunset in our": "受保护的标签将被废弃。要继续保护标签，请在 8 月 30 日前迁移到标签规则集。您可以在我们的",
+            "changelog": "更改日志",
+            "and can get started now by migrating to rulesets.": "且现在就可以开始迁移到规则集。",
+
             "Protected tags": "受保护的标签",
             "Protected tags are available to Pro, Team, and Enterprise users": "专业版、团队版和企业版用户均可使用受保护的标签", //私有库
             "Protected tags can only be created or deleted by users with enhanced permissions defined by your organization owners.": "受保护的标签只能由具有由组织所有者定义的增强权限的用户创建或删除。",
             "Learn more about protected tags": "了解更多关于受保护标签的信息",
             "No protected tag rules exist yet": "尚无受保护的标签规则存在",
+            "Go to rulesets to create new tag rules": "转到规则集创建新标签规则",
             "New rule": "新建规则",
             "Import to rulesets": "导入规则集",
                 "Import your tag protection rules into repository rules": "将您的标签保护规则导入仓库规则集",
@@ -13406,6 +13423,8 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 // 组织仓库
                     "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
 
+                    "GitHub Actions is disabled on this repository because it is a fork. To use code scanning please": "GitHub 操作已在此仓库禁用，因为它是一个复刻。要使用代码扫描，请",
+                    "enable it": "启用它",
                     "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企业或组织策略在此仓库上禁用了 GitHub Actions。要使用代码扫描，请要求您的组织管理员启用 GitHub Actions，或者",
                     "submit code scanning results externally using the API": "使用 API 在代码扫描外部结果",
 
@@ -13486,6 +13505,9 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "Select the alert severity level for code scanning check runs to fail.": "选择代码扫描检查运行失败的警报严重性级别。",
                         "Create a branch ruleset": "创建分支规则集",
                         "to prevent a branch from merging when these checks fail.": "以防止分支在这些检查失败时被合并。",
+
+                        "Security:": "风险：",
+                        "Other:": "其他：",
 
                 // 顶部提醒
                 "Code Scanning alert severity settings saved.": "代码扫描警报严重性设置已保存。",
@@ -13591,7 +13613,7 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
             "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
 
             "Environment secrets": "环境机密",
-                "This repository has no environment secrets.": "此仓库尚无环境机密。",
+                "This environment has no secrets.": "此环境尚无机密。",
                 "Manage environment secrets": "管理环境机密",
 
             "Repository secrets": "仓库机密",
