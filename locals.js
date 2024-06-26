@@ -8109,8 +8109,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         [/Allow(ing)? edits by maintainers/, "允许维护人员编辑"],
         [/users with write access to ([^ ]+) can add new commits/, "则拥有 $1 写访问权限的用户可以向您的"],
         [/(\d+) changed files?/, "更改的文件"],
-        [/(\d+) additions?/,"$1 处增加"],
-        [/(\d+) deletions?/,"$1 处删除"],
+        [/(\d+) additions?/, "$1 处增加"],
+        [/(\d+) deletions?/, "$1 处删除"],
     ],
 };
 
