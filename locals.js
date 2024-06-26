@@ -7244,7 +7244,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "You commented on this pull request": "您对此拉取请求发表了评论",
                 "You opened this pull request": "您打开了此拉取请求",
             
-                //"Suggested change": "建议更改",
+                "Suggested change": "建议更改",
 
     },
     "regexp": [
