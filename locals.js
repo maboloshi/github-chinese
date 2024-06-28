@@ -6612,6 +6612,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // 状态词
             "was merged": "合并于",
             "was closed": "关闭于",
+            "closed this": "关闭了这个",
+            "reopened this": "重新打开了这个",
             "Approved": "已批准",
             "Review required": "需要审查", // 拉取请求 页面状态词
                 "Review required before merging": "合并前需要审查",
@@ -6915,10 +6917,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "added this to the": "添加到",
             "added this to": "添加到",
             "milestone": "里程碑",
-            "closed this": "关闭了",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
-            "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
             "· May be fixed by": " · 可通过该方案修复",
@@ -7366,8 +7366,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "commit into": "个提交到",
             "commits into": "个提交到",
             "from": "来自",
-            "closed this": "关闭了这个",
-            "reopened this": "重新打开了这个",
 
             // 标签栏
             "Conversation": "讨论",
