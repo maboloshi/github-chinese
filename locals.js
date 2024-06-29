@@ -7173,6 +7173,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（$1 的第一个议题）"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -10220,6 +10221,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "Another Category": "其他分类",
                     "— optional": "— 可选",
 
+        // 发行版评论
+            "No significant changes": "无重大变化", // GitHub Action 生成的发行版
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -10230,6 +10234,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/and/, "和"],
+        [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
