@@ -1282,6 +1282,10 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Find a team…": "搜索团队…",
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
+            // 浮动信息卡片
+            "You opened this pull request": "您打开了这个拉取请求",
+            "You commented on this issue": "您对此议题发表了评论",
+            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -1496,7 +1500,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
-        [/([\d,]+) followers?/, "$1 个关注者"],
+        [/([^ ]+) followers?/, "$1 个关注者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
@@ -7379,6 +7383,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "closed this": "关闭了这个",
             "reopened this": "重新打开了这个",
 
+            // 隐藏
+            "Load more…": "加载更多…",
+
             // 标签栏
             "Conversation": "讨论",
             // "Commits": "提交",
@@ -7904,6 +7911,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
+        [/(\d+) hidden items?/, "$1 条隐藏项目"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -15640,6 +15648,7 @@ I18N.zh["explore"] = { // 探索页面
 
     },
     "regexp": [ // 正则翻译
+        [/([\d,]+) more/, "其他 $1 项"],
         [/([\d,]+) starred topics?/, "$1 个星标主题"],
         [/([\d,]+) starred repositories?/, "$1 个星标仓库"],
         [/There are ([\d,]+) public repositories? matching this topic/, "有 $1 个公共仓库与此主题相匹配"],
@@ -15896,7 +15905,7 @@ I18N.zh["sponsors"] = { // 赞助界面
 
             // 左侧栏
                 "Explore as": "使用以下身份进行探索",
-                "Ecosystem": "生态系统",
+                "Ecosystems": "生态系统",
                     "All ecosystems": "所有生态系统",
                 "Filters": "过滤器",
                     "Direct dependencies only": "仅直接依赖项",
@@ -15907,12 +15916,15 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Download your": "下载",
             "results as CSV": "结果（CSV格式）",
 
-            "Most used": "较常使用",
-            "Least used": "较少使用",
-            "Most sponsors": "较多赞助者",
-            "Fewest sponsors": "较少赞助者",
-            "Newest Sponsors profile": "最新赞助者资料",
-            "Oldest Sponsors profile": "最早赞助者资料",
+            "Order by": "排序依据",
+                "Most used": "较常使用",
+                "Least used": "较少使用",
+                "Most sponsors": "较多赞助者",
+                "Fewest sponsors": "较少赞助者",
+                "Newest Sponsors profile": "最新赞助者资料",
+                "Oldest Sponsors profile": "最早赞助者资料",
+
+            "Apply": "应用",
 
             "You depend on": "您依赖于",
             // [/(\d+) repositor(y|ies) they own or maintain/, "他们拥有或维护 $1 个仓库"],
