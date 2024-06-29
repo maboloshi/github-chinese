@@ -1496,7 +1496,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
-        [/([^ ]+) followers?/, "$1 个关注者"],
+        [/([\d,]+) followers?/, "$1 个关注者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
