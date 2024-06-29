@@ -3192,7 +3192,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
 
         // Emails 电子邮箱 https://github.com/settings/emails
             // 黄框警告
-            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个已验证的电子邮箱。添加另一个已验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
+            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个已验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
 
             "Email settings": "电子邮箱设置",
             "Primary": "主账户",
