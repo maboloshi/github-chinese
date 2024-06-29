@@ -10223,7 +10223,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
-        [/to ([^ ]+) since this release/, "至 $1 分支，该发行版"],
+        [/to ([^ ]+) since this release/, "在此发行版之后进入 $1 分支"],  // $1 分支在此发行版之后有 xxx 个提交
         [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
