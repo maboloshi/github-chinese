@@ -1496,7 +1496,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
-        [/(\d+) followers?/, "$1 个关注者"],
+        [/([\d,]+) followers?/, "$1 个关注者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
@@ -2591,8 +2591,8 @@ I18N.zh["settings/appearance"] = { // 设置 - 外观
             "Day theme": "日间主题",
             "Night theme": "夜间主题",
             "Active": "激活",
-            "This theme will be active when your system is set to “light mode”": "当您的系统设置为 “灯光模式” 时，该主题将被激活。",
-            "This theme will be active when your system is set to “dark mode”": "当您的系统设置为 “暗夜模式” 时，该主题将被激活。",
+            "This theme will be active when your system is set to “light mode”": "当您的系统设置为 “浅色模式” 时，该主题将被激活。",
+            "This theme will be active when your system is set to “dark mode”": "当您的系统设置为 “深色模式” 时，该主题将被激活。",
 
             "Emoji skin tone preference": "表情符号肤色首选项",
             "Preferred default emoji skin tone": "默认的表情符号肤色",
@@ -6927,6 +6927,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "milestone": "里程碑",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
+            "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
             "· May be fixed by": " · 可通过该方案修复",
@@ -7181,6 +7182,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（$1 的第一个议题）"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7374,6 +7376,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "commit into": "个提交到",
             "commits into": "个提交到",
             "from": "来自",
+            "closed this": "关闭了这个",
+            "reopened this": "重新打开了这个",
 
             // 标签栏
             "Conversation": "讨论",
@@ -10226,6 +10230,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "Another Category": "其他分类",
                     "— optional": "— 可选",
 
+        // 发行版评论
+            "No significant changes": "无重大变化", // GitHub Action 生成的发行版
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -10236,6 +10243,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/and/, "和"],
+        [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
@@ -15543,10 +15553,17 @@ I18N.zh["login/oauth"] = { // 应用授权
             "would like permission to:": "希望获得以下许可：",
             "Know which resources you can access": "了解您可以访问哪些资源",
 
+        // 选择账户授权 https://github.com/login/oauth/select_account?*
+            //"Select user to authorize": "选择用户进行授权",
+            //"Signed in as": "登录身份为",
+            "Use a different account": "使用其他账户",
+
     },
     "regexp": [ // 正则翻译
         // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
         [/Verify your GitHub identity/, "验证您的 GitHub 身份"],
+        [/Select user to authorize ([^ ]+)/, "选择用户进行授权 $1"],
+        [/Signed in as ([^ ]+)/, "登录身份为 $1"],
         [/has not been installed on any accounts you have access to./, "尚未安装在您有权访问的任何账户上。"],
         [/Learn more about/, "了解更多关于"],
         [/More than ([^ ]+)/, "超过 $1"],
