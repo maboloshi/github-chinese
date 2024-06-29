@@ -304,7 +304,6 @@ I18N.zh["title"] = { // 标题翻译
         "Your stars": "我的星标",
         "Your starred repositories": "我的星标仓库",
         "Your starred topics": "我的星标主题",
-        "Pull Requests": "拉取请求",
         "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
         "Codespaces": "代码空间",
         "Codespace Templates": "代码空间模版",
@@ -324,7 +323,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Commits/, "提交"],
         [/New Issue/, "新建议题"],
         [/Issues?/, "议题"],
-        [/Pull requests?/, "拉取请求"],
+        [/Pull (R|r)equests?/, "拉取请求"],
         [/Actions/, "操作"],
         [/Projects/, "项目"],
         [/Packages?/, "软件包"],
@@ -431,6 +430,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Download your recovery codes": "下载您的恢复码",
             "add a passkey": "添加通行密钥",
             "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+            "GitHub users are": "GitHub 用户",  //下半句正则
+            "now required": "现在被要求",  //下半句正则
+            "Enable 2FA": "启用 2FA",
 
         // 右上角通知按钮提示
             "You have no unread notifications": "您没有未读通知",
@@ -1113,6 +1115,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之内' : all);
         }],
+
+        // 其他翻译
+        [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
         /**
@@ -3186,6 +3191,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         ...I18N.zh["settings-menu"]["static"],
 
         // Emails 电子邮箱 https://github.com/settings/emails
+            // 黄框警告
+            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
+
             "Email settings": "电子邮箱设置",
             "Primary": "主账户",
             "Unverified email addresses cannot receive notifications or be used to reset your password.": "未经验证的电子邮件地址无法接收通知或用于重置您的密码。",
@@ -6612,6 +6620,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             // 状态词
             "was merged": "合并于",
             "was closed": "关闭于",
+            "closed this": "关闭了这个",
+            "reopened this": "重新打开了这个",
             "Approved": "已批准",
             "Review required": "需要审查", // 拉取请求 页面状态词
                 "Review required before merging": "合并前需要审查",
@@ -6915,7 +6925,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "added this to the": "添加到",
             "added this to": "添加到",
             "milestone": "里程碑",
-            "closed this": "关闭了",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
             "reopened this": "重新打开了这个",
@@ -7918,11 +7927,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "head repository:": "头部仓库：",
                 "Choose a Head Repository": "选择头部仓库",
 
-            "base:": "基础库：",
+            "base:": "基础分支：",
                 "Choose a base ref": "选择基础引用",
                 "Find a branch": "搜索分支",
                 "Find a tag": "搜索标签",
-            "compare:": "比较库：",
+            "compare:": "比较分支：",
                 "Choose a head ref": "选择头部引用",
 
             "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或复刻来讨论和查看变化。",
@@ -10229,7 +10238,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
-        [/to ([^ ]+) since this release/, "至 $1 分支，该发行版"],
+        [/to ([^ ]+) since this release/, "在此发行版之后进入 $1 分支"],  // $1 分支在此发行版之后有 xxx 个提交
         [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
@@ -16378,6 +16387,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Configure": "设置",
                 "Manage your installation settings.": "管理安装设置。",
 
+            // 私有 App
+                "Learn more about GitHub Apps": "了解更多关于 GitHub 应用的信息",
+
             "Developer": "开发者",
                 "App settings": "应用设置", // 已安装
                 "Website": "网站",
@@ -16482,6 +16494,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/Install (.*)/, "安装 $1"],
         [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
         [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
+        [/(.*) is a private GitHub App./, "$1 是一款私有的 GitHub 应用。"],  // 无法安装私有应用
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
