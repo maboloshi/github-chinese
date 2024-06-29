@@ -430,6 +430,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Download your recovery codes": "下载您的恢复码",
             "add a passkey": "添加通行密钥",
             "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+            "GitHub users are": "GitHub 用户",  //下半句正则
+            "now required": "现在被要求",  //下半句正则
+            "Enable 2FA": "启用 2FA",
 
         // 右上角通知按钮提示
             "You have no unread notifications": "您没有未读通知",
@@ -1112,6 +1115,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之内' : all);
         }],
+
+        // 其他翻译
+        [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
         /**
@@ -3185,6 +3191,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         ...I18N.zh["settings-menu"]["static"],
 
         // Emails 电子邮箱 https://github.com/settings/emails
+            // 黄框警告
+            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
+
             "Email settings": "电子邮箱设置",
             "Primary": "主账户",
             "Unverified email addresses cannot receive notifications or be used to reset your password.": "未经验证的电子邮件地址无法接收通知或用于重置您的密码。",
