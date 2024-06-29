@@ -7915,11 +7915,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "head repository:": "头部仓库：",
                 "Choose a Head Repository": "选择头部仓库",
 
-            "base:": "基础库：",
+            "base:": "基础分支：",
                 "Choose a base ref": "选择基础引用",
                 "Find a branch": "搜索分支",
                 "Find a tag": "搜索标签",
-            "compare:": "比较库：",
+            "compare:": "比较分支：",
                 "Choose a head ref": "选择头部引用",
 
             "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或复刻来讨论和查看变化。",
