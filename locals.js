@@ -16370,6 +16370,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Configure": "设置",
                 "Manage your installation settings.": "管理安装设置。",
 
+            // 私有 App
+                "Learn more about GitHub Apps": "了解更多关于 GitHub 应用的信息",
+
             "Developer": "开发者",
                 "App settings": "应用设置", // 已安装
                 "Website": "网站",
@@ -16474,6 +16477,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/Install (.*)/, "安装 $1"],
         [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
         [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
+        [/(.*) is a private GitHub App./, "$1 是一款私有的 GitHub 应用。"],  // 无法安装私有应用
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
