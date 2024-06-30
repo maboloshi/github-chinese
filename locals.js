@@ -5616,6 +5616,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 // 评论状态
                 "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
                 "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment has been hidden.": "该评论已被隐藏。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5756,6 +5757,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
+        [/Successful in (\d+)m/, "在 $1 分内成功"],
+        [/(\d+) failing checks?/, "$1 个失败的检查"],
+        [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -8825,6 +8829,19 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
+ 
+            // 隐藏评论对话框
+                "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
+                "Learn more about hiding a comment": "学习如何隐藏评论",
+                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Choose a reason": "选择原因",
+                    "Abuse": "滥用",
+                    "Spam": "垃圾信息",
+                    "Off Topic": "离题",
+                    "Outdated": "过时",
+                    "Duplicate": "重复",
+                    "Resolved": "已解决",
+
             // [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
             // [/(\d+) hidden items?/, "$1 条隐藏项目"],
             "Load more…": "载入更多…",
@@ -8842,6 +8859,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 右侧栏
             // /([\d,]+) participants?/, "$1 位参与者"
             "and others": "和其它",
+            "Reopened": "重新打开",
+            "Closed as resolved": "关闭为已解决",
 
             "Change category": "更改类别",
             "Converted from issue": "由议题转化而来",
