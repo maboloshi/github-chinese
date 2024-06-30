@@ -369,6 +369,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Runners?/, "运行器"],
         [/Attestations?/, "证书"],
         [/Activit(y|ies)/, "活动"],
+        [/Rate limit/, "速率限制"],
         ["_regexp_end", "end"]
     ],
 };
@@ -382,7 +383,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
         // 短时间频繁访问
-        "Whoa there!": "冷静一下！",
+        "Whoa there!": "请停一下！",
         "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
         "Please wait a few minutes before you try again;": "请稍等几分钟再重试；",
         "in some cases this may take up to an hour.": "在某些情况下，这可能最多需要一个小时。",
