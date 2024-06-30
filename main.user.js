@@ -52,6 +52,14 @@
             attributeFilter: ['lang']
         });
 
+        const { characterDataPage, ignoreSelector } = I18N.conf;
+
+        const getConfig = page => {
+            const characterData = characterDataPage.includes(page),
+                  ignoreSelectors = ignoreSelector[page] || [];
+            return { characterData, ignoreSelectors };
+        };
+
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
@@ -64,12 +72,17 @@
             }
 
             if (page) {
-                const characterData = I18N[lang][page]?.characterData || false;
-                // 使用 filter 方法对 mutations 数组进行筛选，
-                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                // 新增`characterData`识别符，仅在需要页面，筛选出
-                const filteredMutations = mutations.filter(({ addedNodes, type }) =>
-                    addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')
+                const { characterData, ignoreSelectors } = getConfig(page);
+
+                // 使用 mutations.filter 进行筛选:
+                //  1. 保留`节点增加突变`、`属性突变`
+                //  2. 保留特定页面`文本节点突变`
+                //  3. 丢弃特定页面，`特定忽略元素`内的突变
+                const filteredMutations = mutations.filter(({ target, addedNodes, type }) =>
+                    // 优先处理突变类型判断
+                    (addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')) &&
+                    // 随后检查忽略元素
+                    !ignoreSelectors.some(selector => target.parentElement?.closest(selector))
                 );
 
                 // 处理每个变化
@@ -81,7 +94,6 @@
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
         });
-
 
         // 监听 Turbo 完成事件
         document.addEventListener('turbo:load', () => {

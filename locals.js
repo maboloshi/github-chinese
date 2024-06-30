@@ -204,6 +204,19 @@ I18N.conf = {
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤
+
+    // 特定页面，启用`字符数据`监测
+    characterDataPage: ['repository/new', 'repository/edit', 'page-new-repo'],
+
+    // 特定页面，筛选掉特定元素
+    ignoreSelector: {
+        'repository/new': ["file-attachment"],
+        'repository/edit': ["file-attachment", "table"],
+        'repository/blob': ["section"],
+        'repository/blame': ["section"],
+        'repository': ["article.markdown-body"],
+        'dashboard': ["section.markdown-body"],
+    },
 };
 
 I18N["zh-CN"] = {};
@@ -5773,7 +5786,6 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         // [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
     ],
-    characterData: true,
 };
 I18N["zh-CN"]["new"] = I18N["zh-CN"]["page-new-repo"];
 I18N["zh-CN"]["new/import"] = I18N["zh-CN"]["page-new-repo"];
