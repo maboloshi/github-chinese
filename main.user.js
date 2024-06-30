@@ -281,20 +281,24 @@
      * @param {string} text - 需要翻译的文本内容。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function transText(text) { // 翻译
+    function transText(text) {
+        // 判断是否需要跳过翻译
+        //  1. 检查内容是否为空或者仅包含空白字符或数字。
+        //  2. 检查内容是否仅包含中文字符。
+        //  3. 检查内容是否不包含英文字母和符号。
+        const shouldSkip = text => /^[\s0-9]*$/.test(text) || /^[\u4e00-\u9fa5]+$/.test(text) || !/[a-zA-Z,.]/.test(text);
+        if (shouldSkip(text)) return false;
 
-        // 内容为空, 空白字符和或数字, 不存在英文字母和符号,. 跳过
-        if (!isNaN(text) || !/[a-zA-Z,.]+/.test(text)) {
-            return false;
-        }
+        // 清理文本内容
+        let trimmedText = text.trim(); // 去除首尾空格
+        let cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
 
-        let _key = text.trim(); // 去除首尾空格的 key
-        let _key_neat = _key.replace(/\xa0|[\s]+/g, ' ') // 去除多余空白字符(&nbsp; 空格 换行符)
+        // 尝试获取翻译结果
+        let translatedText = fetchTranslatedText(cleanedText);
 
-        let str = fetchTranslatedText(_key_neat); // 翻译已知页面 (局部优先)
-
-        if (str && str !== _key_neat) { // 已知页面翻译完成
-            return text.replace(_key, str); // 替换原字符，保留首尾空白部分
+        // 如果找到翻译并且不与清理后的文本相同，则返回替换后的结果
+        if (translatedText && translatedText !== cleanedText) {
+            return text.replace(trimmedText, translatedText); // 替换原字符，保留首尾空白部分
         }
 
         return false;
