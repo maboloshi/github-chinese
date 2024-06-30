@@ -194,13 +194,13 @@ I18N.conf = {
      * offset /blob页面 符号-->引用
      * fix repo详情页文件路径breadcrumb
      */
-    IgnoreId: ['readme', 'offset', 'breadcrumb', 'file-name-id'],
+    ignoreId: ['readme', 'offset', 'breadcrumb', 'file-name-id'],
 
     /**
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    IgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
+    ignoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤

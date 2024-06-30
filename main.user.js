@@ -103,9 +103,9 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        const { IgnoreId, IgnoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
-        const skipNode = node => IgnoreId.includes(node.id) ||
-                                 IgnoreTag.includes(node.tagName) ||
+        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
+        const skipNode = node => ignoreId.includes(node.id) ||
+                                 ignoreTag.includes(node.tagName) ||
                                  reIgnoreClass.test(node.className) ||
                                  (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
 
