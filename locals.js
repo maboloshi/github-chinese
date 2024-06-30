@@ -22,18 +22,18 @@
 */
 var I18N = {};
 
-let projects = {    // 项目页面 补全
-    "New view": "新建视图",
-    "Layout": "布局",
-    "Board": "面板",
-    "Roadmap": "时间线",
-    "Duplicate view": "复制视图",
-    "Configuration": "配置",
-    "Group by": "分组",
-    "Markers": "标记",
-    "Sort by": "排序",
-    "Zoom level": "缩放级别",
-    "Field sum": "字段总和",
+let 项目 = {    // 项目页面 补全
+    "New view": "新建视图"，
+    "Layout": "布局"，
+    "Board": "面板"，
+    "Roadmap": "时间线"，
+    "Duplicate view": "复制视图"，
+    "Configuration": "配置"，
+    "Group by": "分组"，
+    "Markers": "标记"，
+    "Sort by": "排序"，
+    "Zoom level": "缩放级别"，
+    "Field sum": "字段总和"，
     "Slice by": "切片",
     "Fields": "字段",
     "Generate chart": "生成图表",
@@ -8836,6 +8836,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
                 "Choose a reason": "选择原因",
                     "Abuse": "滥用",
+                    "Spam": "垃圾信息",
                     "Off Topic": "离题",
                     "Outdated": "过时",
                     "Duplicate": "重复",
