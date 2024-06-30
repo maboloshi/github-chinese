@@ -190,6 +190,7 @@
         const isProfile = document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>';
         const isSession = document.body.classList.contains("session-authentication");
 
+        const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
         let t, page = false;
 
         if (isSession) {
@@ -202,13 +203,13 @@
         } else if (pathname === '/' && site === 'github') {
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) {
-            t = pathname.match(I18N.conf.rePagePathRepo);
+            t = pathname.match(rePagePathRepo);
             page = t ? 'repository/' + t[1] : 'repository';
         } else if (isOrganization) {
-            t = pathname.match(I18N.conf.rePagePathOrg);
+            t = pathname.match(rePagePathOrg);
             page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
-            t = pathname.match(I18N.conf.rePagePath);
+            t = pathname.match(rePagePath);
             page = t ? (t[1] || t.slice(-1)[0]) : false;
         }
 
