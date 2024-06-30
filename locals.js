@@ -386,7 +386,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Whoa there!": "请停一下！",
         "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
         "Please wait a few minutes before you try again;": "请稍等几分钟再重试；",
-        "in some cases this may take up to an hour.": "在某些情况下，这可能最多一个小时。",
+        "in some cases this may take up to an hour.": "在某些情况下，这可能最多需要一个小时。",
 
         // 顶部栏 (未登录)
             "Product": "产品",
