@@ -5616,6 +5616,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 // 评论状态
                 "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
                 "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment has been hidden.": "该评论已被隐藏。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5756,6 +5757,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
+        [/Successful in (\d+)m/, "在 $1 分内成功"],
+        [/(\d+) failing checks?/, "$1 个失败的检查"],
+        [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -8842,6 +8846,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 右侧栏
             // /([\d,]+) participants?/, "$1 位参与者"
             "and others": "和其它",
+            "Reopened": "重新打开",
+            "Closed as resolved": "关闭为已解决",
 
             "Change category": "更改类别",
             "Converted from issue": "由议题转化而来",
