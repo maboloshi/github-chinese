@@ -1289,9 +1289,12 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
             // 浮动信息卡片
+            "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -5737,10 +5740,20 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Build Errored": "构建错误",
             "Build Canceled": "构建取消",
             "Waiting for build": "等待构建",
+        
+        // 议题、拉取请求浮动信息
+            "You opened this issue": "您打开了这个议题",
+            "You opened this pull request": "您打开了这个拉取请求",
+            "You commented on this issue": "您对此议题发表了评论",
+            "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
+        [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
+        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
@@ -6638,6 +6651,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "outdated": "陈旧的",
             "Pending": "待定",
             "Draft": "草案",
+            "This was referenced": "被引用于",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
@@ -7192,7 +7206,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
-        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（$1 的第一个议题）"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7388,6 +7402,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "from": "来自",
             "closed this": "关闭了这个",
             "reopened this": "重新打开了这个",
+            "added a commit that referenced this pull request": "添加了引用此拉取请求的提交",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -14564,7 +14579,10 @@ I18N.zh["notifications"] = { // 通知页面
         "✋ Mentioned": "✋ 提及",
         "🙌 Team mentioned": "🙌 提到的团队",
         "👀 Review requested": "👀 审查请求",
+        "Add new filter": "添加过滤器",
         "Name": "名称",
+        "Filter by…": "过滤…", // Android UA 下才有
+        "New filter": "新建", // Android UA 下才有
         "Filter inbox by…": "筛选收件箱…",
         "Create new filter": "创建新规则",
         "Create": "创建",
