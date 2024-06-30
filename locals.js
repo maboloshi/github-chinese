@@ -8829,10 +8829,18 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
+ 
+            // 隐藏评论对话框
                 "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
                 "Learn more about hiding a comment": "学习如何隐藏评论",
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
                 "Choose a reason": "选择原因",
+                    "Abuse": "滥用",
+                    "Off Topic": "离题",
+                    "Outdated": "过时",
+                    "Duplicate": "重复",
+                    "Resolved": "已解决",
+
             // [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
             // [/(\d+) hidden items?/, "$1 条隐藏项目"],
             "Load more…": "载入更多…",
