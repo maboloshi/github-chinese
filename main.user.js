@@ -116,7 +116,7 @@
             // 处理不同标签的元素属性翻译
             switch (node.tagName) {
                 case "RELATIVE-TIME": // 翻译时间元素
-                    transTimeElement(node.shadowRoot || node);
+                    transTimeElement(node.shadowRoot);
                     return;
 
                 case "INPUT":
