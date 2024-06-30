@@ -430,6 +430,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Download your recovery codes": "下载您的恢复码",
             "add a passkey": "添加通行密钥",
             "so you don't lose access when you get a new device.": "这样您在登录新设备时就不会失去访问权限。",
+            "GitHub users are": "GitHub 用户",  //下半句正则
+            "now required": "现在被要求",  //下半句正则
+            "Enable 2FA": "启用 2FA",
 
         // 右上角通知按钮提示
             "You have no unread notifications": "您没有未读通知",
@@ -1112,6 +1115,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之内' : all);
         }],
+
+        // 其他翻译
+        [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
         /**
@@ -1276,6 +1282,10 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Find a team…": "搜索团队…",
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
+            // 浮动信息卡片
+            "You opened this pull request": "您打开了这个拉取请求",
+            "You commented on this issue": "您对此议题发表了评论",
+            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -1490,7 +1500,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
-        [/(\d+) followers?/, "$1 个关注者"],
+        [/([^ ]+) followers?/, "$1 个关注者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
@@ -2585,8 +2595,8 @@ I18N.zh["settings/appearance"] = { // 设置 - 外观
             "Day theme": "日间主题",
             "Night theme": "夜间主题",
             "Active": "激活",
-            "This theme will be active when your system is set to “light mode”": "当您的系统设置为 “灯光模式” 时，该主题将被激活。",
-            "This theme will be active when your system is set to “dark mode”": "当您的系统设置为 “暗夜模式” 时，该主题将被激活。",
+            "This theme will be active when your system is set to “light mode”": "当您的系统设置为 “浅色模式” 时，该主题将被激活。",
+            "This theme will be active when your system is set to “dark mode”": "当您的系统设置为 “深色模式” 时，该主题将被激活。",
 
             "Emoji skin tone preference": "表情符号肤色首选项",
             "Preferred default emoji skin tone": "默认的表情符号肤色",
@@ -3185,6 +3195,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         ...I18N.zh["settings-menu"]["static"],
 
         // Emails 电子邮箱 https://github.com/settings/emails
+            // 黄框警告
+            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
+
             "Email settings": "电子邮箱设置",
             "Primary": "主账户",
             "Unverified email addresses cannot receive notifications or be used to reset your password.": "未经验证的电子邮件地址无法接收通知或用于重置您的密码。",
@@ -6918,6 +6931,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "milestone": "里程碑",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
+            "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
             "· May be fixed by": " · 可通过该方案修复",
@@ -7172,6 +7186,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（$1 的第一个议题）"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7365,6 +7380,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "commit into": "个提交到",
             "commits into": "个提交到",
             "from": "来自",
+            "closed this": "关闭了这个",
+            "reopened this": "重新打开了这个",
+
+            // 隐藏
+            "Load more…": "加载更多…",
 
             // 标签栏
             "Conversation": "讨论",
@@ -7891,6 +7911,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
+        [/(\d+) hidden items?/, "$1 条隐藏项目"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -10217,6 +10238,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
                 "Another Category": "其他分类",
                     "— optional": "— 可选",
 
+        // 发行版评论
+            "No significant changes": "无重大变化", // GitHub Action 生成的发行版
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -10227,6 +10251,9 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/and/, "和"],
+        [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
@@ -15535,10 +15562,17 @@ I18N.zh["login/oauth"] = { // 应用授权
             "would like permission to:": "希望获得以下许可：",
             "Know which resources you can access": "了解您可以访问哪些资源",
 
+        // 选择账户授权 https://github.com/login/oauth/select_account?*
+            //"Select user to authorize": "选择用户进行授权",
+            //"Signed in as": "登录身份为",
+            "Use a different account": "使用其他账户",
+
     },
     "regexp": [ // 正则翻译
         // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
         [/Verify your GitHub identity/, "验证您的 GitHub 身份"],
+        [/Select user to authorize ([^ ]+)/, "选择用户进行授权 $1"],
+        [/Signed in as ([^ ]+)/, "登录身份为 $1"],
         [/has not been installed on any accounts you have access to./, "尚未安装在您有权访问的任何账户上。"],
         [/Learn more about/, "了解更多关于"],
         [/More than ([^ ]+)/, "超过 $1"],
@@ -15615,6 +15649,7 @@ I18N.zh["explore"] = { // 探索页面
 
     },
     "regexp": [ // 正则翻译
+        [/([\d,]+) more/, "其他 $1 项"],
         [/([\d,]+) starred topics?/, "$1 个星标主题"],
         [/([\d,]+) starred repositories?/, "$1 个星标仓库"],
         [/There are ([\d,]+) public repositories? matching this topic/, "有 $1 个公共仓库与此主题相匹配"],
@@ -15871,7 +15906,7 @@ I18N.zh["sponsors"] = { // 赞助界面
 
             // 左侧栏
                 "Explore as": "使用以下身份进行探索",
-                "Ecosystem": "生态系统",
+                "Ecosystems": "生态系统",
                     "All ecosystems": "所有生态系统",
                 "Filters": "过滤器",
                     "Direct dependencies only": "仅直接依赖项",
@@ -15882,12 +15917,15 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Download your": "下载",
             "results as CSV": "结果（CSV格式）",
 
-            "Most used": "较常使用",
-            "Least used": "较少使用",
-            "Most sponsors": "较多赞助者",
-            "Fewest sponsors": "较少赞助者",
-            "Newest Sponsors profile": "最新赞助者资料",
-            "Oldest Sponsors profile": "最早赞助者资料",
+            "Order by": "排序依据",
+                "Most used": "较常使用",
+                "Least used": "较少使用",
+                "Most sponsors": "较多赞助者",
+                "Fewest sponsors": "较少赞助者",
+                "Newest Sponsors profile": "最新赞助者资料",
+                "Oldest Sponsors profile": "最早赞助者资料",
+
+            "Apply": "应用",
 
             "You depend on": "您依赖于",
             // [/(\d+) repositor(y|ies) they own or maintain/, "他们拥有或维护 $1 个仓库"],
@@ -16362,6 +16400,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
                 "Configure": "设置",
                 "Manage your installation settings.": "管理安装设置。",
 
+            // 私有 App
+                "Learn more about GitHub Apps": "了解更多关于 GitHub 应用的信息",
+
             "Developer": "开发者",
                 "App settings": "应用设置", // 已安装
                 "Website": "网站",
@@ -16466,6 +16507,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/Install (.*)/, "安装 $1"],
         [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
         [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
+        [/(.*) is a private GitHub App./, "$1 是一款私有的 GitHub 应用。"],  // 无法安装私有应用
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
