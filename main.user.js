@@ -344,26 +344,26 @@
         let translation = I18N[lang] && I18N[lang][page] && I18N[lang][page]['static'] && I18N[lang][page]['static'][key] ||
                         I18N[lang] && I18N[lang]['public'] && I18N[lang]['public']['static'] && I18N[lang]['public']['static'][key];
         
-        if (typeof translation === 'string' && translation) {
+        if (typeof translation === 'string') {
             return translation;
         }
 
         // 未找到直接翻译时，检查是否启用正则表达式翻译
         if (enable_RegExp) {
-            let regexList = (I18N[lang] && I18N[lang][page] && I18N[lang][page].regexp) || [];;
+            let regexList = (I18N[lang] && I18N[lang][page] && I18N[lang][page].regexp) || [];
             let publicRegexList = (I18N[lang] && I18N[lang]['public'] && I18N[lang]['public'].regexp) || [];
 
             // 合并正则表达式列表并预编译
-            let compiledRegexes = regexList.concat(publicRegexList).map(regex => {
+            let compiledRegexes = regexList.concat(publicRegexList).map(item => {
                 return {
-                    regex: new RegExp(regex),
-                    replacement: regex.replacement // 假设原始数据结构为[{regex: /example/, replacement: 'Example'}]
+                    regex: new RegExp(item.pattern), // 假设原始数据结构为[{pattern: /example/, replacement: 'Example'}]
+                    replacement: item.replacement
                 };
             });
 
             // 使用预编译的正则表达式进行匹配和替换
             for (let compiledRegex of compiledRegexes) {
-                let replacedKey = compiledRegex.regex.replace(key, compiledRegex.replacement);
+                let replacedKey = key.replace(compiledRegex.regex, compiledRegex.replacement);
                 if (replacedKey !== key) {
                     return replacedKey;
                 }
