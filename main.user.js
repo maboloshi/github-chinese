@@ -328,30 +328,50 @@
     /**
      * fetchTranslatedText 函数：从特定页面的词库中获得翻译文本内容。
      * @param {string} key - 需要翻译的文本内容。
+     * @param {boolean} enable_RegExp - 是否启用正则表达式翻译。
+     * @param {string} lang - 语言代码。
+     * @param {string} page - 页面代码。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function fetchTranslatedText(key) {
-
-        // 静态翻译
-        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
-
-        if (typeof str === 'string') {
-            return str;
+    function fetchTranslatedText(key, enable_RegExp, lang, page) {
+        // 参数验证（可按需调整）
+        if (typeof key !== 'string' || typeof lang !== 'string' || typeof page !== 'string') {
+            console.error('Invalid input types.');
+            return false;
         }
 
-        // 正则翻译
-        if (enable_RegExp) {
-            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
+        // 静态翻译
+        let translation = I18N[lang] && I18N[lang][page] && I18N[lang][page]['static'] && I18N[lang][page]['static'][key] ||
+                        I18N[lang] && I18N[lang]['public'] && I18N[lang]['public']['static'] && I18N[lang]['public']['static'][key];
+        
+        if (typeof translation === 'string' && translation) {
+            return translation;
+        }
 
-            for (let [a, b] of res) {
-                str = key.replace(a, b);
-                if (str !== key) {
-                    return str;
+        // 未找到直接翻译时，检查是否启用正则表达式翻译
+        if (enable_RegExp) {
+            let regexList = (I18N[lang] && I18N[lang][page] && I18N[lang][page].regexp) || [];;
+            let publicRegexList = (I18N[lang] && I18N[lang]['public'] && I18N[lang]['public'].regexp) || [];
+
+            // 合并正则表达式列表并预编译
+            let compiledRegexes = regexList.concat(publicRegexList).map(regex => {
+                return {
+                    regex: new RegExp(regex),
+                    replacement: regex.replacement // 假设原始数据结构为[{regex: /example/, replacement: 'Example'}]
+                };
+            });
+
+            // 使用预编译的正则表达式进行匹配和替换
+            for (let compiledRegex of compiledRegexes) {
+                let replacedKey = compiledRegex.regex.replace(key, compiledRegex.replacement);
+                if (replacedKey !== key) {
+                    return replacedKey;
                 }
             }
         }
 
-        return false; // 没有翻译条目
+        // 没有找到翻译条目
+        return false;
     }
 
     /**
@@ -472,43 +492,28 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
-        let page; // 使用局部变量，并且给变量一个更具描述性的名称
-
         // 获取当前页面的翻译规则
         page = getPage();
         console.log(`开始page= ${page}`);
 
-        if (page) {
-            // 在页面标题上应用翻译
-            transTitle();
+        // 翻译页面标题
+        transTitle();
 
-            // 立即翻译页面内容
+        if (page) {
+            // 立即翻译页面
             traverseNode(document.body);
 
-            // 使用CSS选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+            // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
             transBySelector();
-
-            // 根据页面类型，进行特定的翻译
-            switch (page) { 
-                case "repository": //仓库简介翻译
-                    transDesc(".f4.my-3");
-                    break;
-                case "gist":  // Gist 简介翻译
-                    transDesc(".gist-content [itemprop='about']");
-                    break;
-                // 可以添加更多页面类型的处理
-                default:
-                    // 对于未知的页面类型，可以添加一些默认行为或日志
-                    console.log(`未处理的页面类型: ${currentPage}`);
-                    break;
+            if (page === "repository") { //仓库简介翻译
+                transDesc(".f4.my-3");
+            } else if (page === "gist") { // Gist 简介翻译
+                transDesc(".gist-content [itemprop='about']");
             }
-
-            // 使用MutationObserver等现代API来监听DOM变化，而不是轮询
-            watchUpdate();
-        } else {
-            console.warn("未获取到页面信息或页面信息为空");
         }
-        
+
+        // 监视页面变化
+        watchUpdate();
     }
 
     // 执行初始化
