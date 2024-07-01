@@ -474,45 +474,41 @@
     function init() {
         let page; // 使用局部变量，并且给变量一个更具描述性的名称
 
-        try {
-            // 获取当前页面的翻译规则
-            page = getPage();
-            console.log(`开始page= ${page}`);
+        // 获取当前页面的翻译规则
+        page = getPage();
+        console.log(`开始page= ${page}`);
 
-            if (page) {
-                // 在页面标题上应用翻译
-                transTitle();
+        if (page) {
+            // 在页面标题上应用翻译
+            transTitle();
 
-                // 立即翻译页面内容
-                traverseNode(document.body);
+            // 立即翻译页面内容
+            traverseNode(document.body);
 
-                // 使用CSS选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
-                transBySelector();
+            // 使用CSS选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+            transBySelector();
 
-                // 根据页面类型，进行特定的翻译
-                switch (page) { 
-                    case "repository": //仓库简介翻译
-                        transDesc(".f4.my-3");
-                        break;
-                    case "gist":  // Gist 简介翻译
-                        transDesc(".gist-content [itemprop='about']");
-                        break;
-                    // 可以添加更多页面类型的处理
-                    default:
-                        // 对于未知的页面类型，可以添加一些默认行为或日志
-                        console.log(`未处理的页面类型: ${currentPage}`);
-                        break;
-                }
-
-                // 使用MutationObserver等现代API来监听DOM变化，而不是轮询
-                watchUpdate();
-            } else {
-                console.warn("未获取到页面信息或页面信息为空");
+            // 根据页面类型，进行特定的翻译
+            switch (page) { 
+                case "repository": //仓库简介翻译
+                    transDesc(".f4.my-3");
+                    break;
+                case "gist":  // Gist 简介翻译
+                    transDesc(".gist-content [itemprop='about']");
+                    break;
+                // 可以添加更多页面类型的处理
+                default:
+                    // 对于未知的页面类型，可以添加一些默认行为或日志
+                    console.log(`未处理的页面类型: ${currentPage}`);
+                    break;
             }
-        } catch (error) {
-            console.error(`初始化翻译功能时发生错误: ${error}`);
-            // 错误处理逻辑，例如回退到备用翻译机制、显示错误提示等
+
+            // 使用MutationObserver等现代API来监听DOM变化，而不是轮询
+            watchUpdate();
+        } else {
+            console.warn("未获取到页面信息或页面信息为空");
         }
+        
     }
 
     // 执行初始化
