@@ -328,44 +328,30 @@
     /**
      * fetchTranslatedText 函数：从特定页面的词库中获得翻译文本内容。
      * @param {string} key - 需要翻译的文本内容。
-     * @param {boolean} enable_RegExp - 是否启用正则表达式翻译。
-     * @param {string} lang - 语言代码。
-     * @param {string} page - 页面代码。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function fetchTranslatedText(key, enable_RegExp, lang, page) {
+    function fetchTranslatedText(key) {
+
         // 静态翻译
-        let translation = I18N[lang] && I18N[lang][page] && I18N[lang][page]['static'] && I18N[lang][page]['static'][key] ||
-                        I18N[lang] && I18N[lang]['public'] && I18N[lang]['public']['static'] && I18N[lang]['public']['static'][key];
-        
-        if (typeof translation === 'string') {
-            return translation;
+        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+
+        if (typeof str === 'string') {
+            return str;
         }
 
-        // 未找到直接翻译时，检查是否启用正则表达式翻译
+        // 正则翻译
         if (enable_RegExp) {
-            let regexList = (I18N[lang] && I18N[lang][page] && I18N[lang][page].regexp) || [];
-            let publicRegexList = (I18N[lang] && I18N[lang]['public'] && I18N[lang]['public'].regexp) || [];
+            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
 
-            // 合并正则表达式列表并预编译
-            let compiledRegexes = regexList.concat(publicRegexList).map(item => {
-                return {
-                    regex: new RegExp(item.pattern), // 假设原始数据结构为[{pattern: /example/, replacement: 'Example'}]
-                    replacement: item.replacement
-                };
-            });
-
-            // 使用预编译的正则表达式进行匹配和替换
-            for (let compiledRegex of compiledRegexes) {
-                let replacedKey = key.replace(compiledRegex.regex, compiledRegex.replacement);
-                if (replacedKey !== key) {
-                    return replacedKey;
+            for (let [a, b] of res) {
+                str = key.replace(a, b);
+                if (str !== key) {
+                    return str;
                 }
             }
         }
 
-        // 没有找到翻译条目
-        return false;
+        return false; // 没有翻译条目
     }
 
     /**
