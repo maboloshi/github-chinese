@@ -6508,6 +6508,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
+        [/were installed on this repository/, "已安装到此仓库"],
     ],
 };
 
@@ -9739,6 +9740,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/on this commit as/,"该提交以"],
+        [/Commit changes?/, "提交更改"],
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
     ],
 };
