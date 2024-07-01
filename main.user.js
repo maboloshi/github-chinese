@@ -182,7 +182,6 @@
      * @returns {string|boolean} 页面的类型，如果无法确定类型，那么返回 false。
      */
     function getPage(url = window.location) {
-        // 站点映射
         const siteMapping = {
             'gist.github.com': 'gist',
             'www.githubstatus.com': 'status',
@@ -196,39 +195,48 @@
         // 获取 analytics-location
         const analyticsLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
 
-        // 判断页面类型
-        const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
-        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
-        const isProfile = document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>';
-        const isSession = document.body.classList.contains("session-authentication");
+        // 辅助函数：简化布尔检查
+        const checkAndReturn = (condition, valueIfTrue) => condition ? valueIfTrue : false;
 
-        const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
-        let t, page = false;
+        // 页面类型判断逻辑
+        const isOrganization = checkAndReturn(/\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname), 'orgs');
+        const isRepository = checkAndReturn(/\/<user-name>\/<repo-name>/.test(analyticsLocation), 'repository');
+        const isProfile = checkAndReturn(document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>', 'page-profile');
+        const isSession = checkAndReturn(document.body.classList.contains("session-authentication"), 'session-authentication');
 
+        // 主逻辑
+        let page = false;
         if (isSession) {
-            page = 'session-authentication';
+            page = isSession;
         } else if (isProfile) {
-            t = url.search.match(/tab=([^&]+)/);
-            page = t ? 'page-profile/' + t[1] : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
-        } else if (site === 'gist' || site === 'status' || site === 'skills') {
+            const tabMatch = url.search.match(/tab=([^&]+)/);
+            page = tabMatch ? `page-profile/${tabMatch[1]}` : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
+        } else if (site !== 'github') {
             page = site;
-        } else if (pathname === '/' && site === 'github') {
+        } else if (pathname === '/') {
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if (isRepository) {
-            t = pathname.match(rePagePathRepo);
-            page = t ? 'repository/' + t[1] : 'repository';
-        } else if (isOrganization) {
-            t = pathname.match(rePagePathOrg);
-            page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
+        } else if (isRepository || isOrganization) {
+            // 使用已定义的正则表达式进行匹配
+            const { rePagePathRepo, rePagePathOrg } = I18N.conf;
+            let match;
+            if (isRepository) {
+                match = pathname.match(rePagePathRepo);
+                page = match ? `repository/${match[1]}` : 'repository';
+            } else if (isOrganization) {
+                match = pathname.match(rePagePathOrg);
+                page = match ? `orgs/${match[1] || match[match.length - 1]}` : 'orgs';
+            }
         } else {
-            t = pathname.match(rePagePath);
-            page = t ? (t[1] || t.slice(-1)[0]) : false;
+            match = pathname.match(I18N.conf.rePagePath);
+            page = match ? (match[1] || match[match.length - 1]) : false;
         }
 
+        // 检查并报告缺失的翻译
         if (!page || !I18N[lang][page]) {
-            console.log(`请注意对应 page ${page} 词库节点不存在`);
-            page = false;
+            console.error(`页面类型“${page}”的翻译未定义，请检查词库。`);
+            return false;
         }
+
         return page;
     }
 
