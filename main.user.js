@@ -334,11 +334,6 @@
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
     function fetchTranslatedText(key, enable_RegExp, lang, page) {
-        // 参数验证（可按需调整）
-        if (typeof key !== 'string' || typeof lang !== 'string' || typeof page !== 'string') {
-            console.error('Invalid input types.');
-            return false;
-        }
 
         // 静态翻译
         let translation = I18N[lang] && I18N[lang][page] && I18N[lang][page]['static'] && I18N[lang][page]['static'][key] ||
