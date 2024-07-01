@@ -158,8 +158,7 @@ I18N.conf = {
     /**
      * 忽略区域的 class 正则
      *
-     * 代码编辑器 内容 代码高亮 CodeMirror
-     * 代码编辑器 最小单元 cm-line ͼ.*
+     * 仓库文件新建、修改页->代码编辑器 cm-scroller 有效
      * 代码高亮 blob-code
      * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
      * 文件,目录位置栏 |js-path-segment|final-path
@@ -177,9 +176,8 @@ I18N.conf = {
      * 搜索页 搜索结果 search-match
      * 追溯 视图 代码 react-code-text
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
-     * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
      */
-    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+    reIgnoreClass: /(blob-code|highlight-.*|cm-scroller|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -210,8 +208,8 @@ I18N.conf = {
 
     // 特定页面，筛选掉特定元素
     ignoreSelector: {
-        'repository/new': ["file-attachment"],
-        'repository/edit': ["file-attachment", "table"],
+        'repository/new': [".cm-scroller"],
+        'repository/edit': [".cm-scroller", "table"],
         'repository/blob': ["section"],
         'repository/blame': ["section"],
         'repository': ["article.markdown-body"],
