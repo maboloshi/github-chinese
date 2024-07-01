@@ -2,16 +2,16 @@
 // @name         GitHub 中文化插件（测试版）
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
-// @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
+// @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog), 菾凴
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.8-2024-06-09
-// @author       沙漠之子
+// @version      1.9.2-beta.8-2024-07-01
+// @author       菾凴
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -112,14 +112,15 @@
     /**
      * traverseNode 函数：遍历指定的节点，并对节点进行翻译。
      * @param {Node} node - 需要遍历的节点。
+     * @param {Object} config - 配置对象，包含忽略的ID、标签名、类名正则和itemprop正则。
      */
-    function traverseNode(node) {
+    function traverseNode(node, config) {
         // 跳过忽略
-        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
+        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = config;
         const skipNode = node => ignoreId.includes(node.id) ||
-                                 ignoreTag.includes(node.tagName) ||
-                                 reIgnoreClass.test(node.className) ||
-                                 (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
+                                ignoreTag.includes(node.tagName) ||
+                                reIgnoreClass.test(node.className) ||
+                                (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
 
         if (skipNode(node)) return;
 
@@ -128,9 +129,8 @@
             // 处理不同标签的元素属性翻译
             switch (node.tagName) {
                 case "RELATIVE-TIME": // 翻译时间元素
-                    transTimeElement(node.shadowRoot);
+                    if (node.shadowRoot) transTimeElement(node.shadowRoot); // 增加了 shadowRoot 存在性检查
                     return;
-
                 case "INPUT":
                 case "TEXTAREA": // 输入框 按钮 文本域
                     if (['button', 'submit', 'reset'].includes(node.type)) {
@@ -159,20 +159,20 @@
                     transElement(node, 'title'); // title 属性
                     if (node.hasAttribute('data-hovercard-type')) return;
                     break;
-
                 default:
                     // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
-                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 带提示的元素，类似 tooltip 效果的
+                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel');
             }
 
-            const childNodes = node.childNodes;
-            for (let i = 0; i < childNodes.length; i++) { // 遍历子节点
-                traverseNode(childNodes[i]);
+            // 使用更现代的 for...of 循环遍历子节点
+            for (const childNode of node.childNodes) {
+                traverseNode(childNode, config);
             }
 
         } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点翻译
             transElement(node, 'data');
         }
+        // 假设 transTimeElement 和 transElement 函数已经定义。
     }
 
 
