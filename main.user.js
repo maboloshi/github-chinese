@@ -114,9 +114,9 @@
      * @param {Node} node - 需要遍历的节点。
      * @param {Object} config - 配置对象，包含忽略的ID、标签名、类名正则和itemprop正则。
      */
-    function traverseNode(node, config) {
+    function traverseNode(node) {
         // 跳过忽略
-        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = config;
+        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
         const skipNode = node => ignoreId.includes(node.id) ||
                                 ignoreTag.includes(node.tagName) ||
                                 reIgnoreClass.test(node.className) ||
