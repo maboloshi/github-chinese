@@ -369,6 +369,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Runners?/, "运行器"],
         [/Attestations?/, "证书"],
         [/Activit(y|ies)/, "活动"],
+        [/Rate limit/, "速率限制"],
         ["_regexp_end", "end"]
     ],
 };
@@ -381,6 +382,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
+        // 速率限制 - 短时间频繁访问网页，至少包括 https://github.com/issues
+        "Whoa there!": "请停一下！",
+        "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
+        "Please wait a few minutes before you try again;": "请稍等几分钟再重试；",
+        "in some cases this may take up to an hour.": "在某些情况下，这可能最多需要一个小时。",
 
         // 顶部栏 (未登录)
             "Product": "产品",
@@ -1283,9 +1289,12 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
             // 浮动信息卡片
+            "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -5607,6 +5616,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 // 评论状态
                 "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
                 "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment has been hidden.": "该评论已被隐藏。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5731,12 +5741,25 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Build Errored": "构建错误",
             "Build Canceled": "构建取消",
             "Waiting for build": "等待构建",
+        
+        // 议题、拉取请求浮动信息
+            "You opened this issue": "您打开了这个议题",
+            "You opened this pull request": "您打开了这个拉取请求",
+            "You commented on this issue": "您对此议题发表了评论",
+            "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
+        [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
+        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
         [/(\d+) successful checks/, "$1 个成功的检查"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
+        [/Successful in (\d+)m/, "在 $1 分内成功"],
+        [/(\d+) failing checks?/, "$1 个失败的检查"],
+        [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -6632,6 +6655,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "outdated": "陈旧的",
             "Pending": "待定",
             "Draft": "草案",
+            "This was referenced": "被引用于",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
@@ -7186,7 +7210,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
-        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（$1 的第一个议题）"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -7382,6 +7406,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "from": "来自",
             "closed this": "关闭了这个",
             "reopened this": "重新打开了这个",
+            "added a commit that referenced this pull request": "添加了引用此拉取请求的提交",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -8804,6 +8829,19 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
+ 
+            // 隐藏评论对话框
+                "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
+                "Learn more about hiding a comment": "学习如何隐藏评论",
+                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Choose a reason": "选择原因",
+                    "Abuse": "滥用",
+                    "Spam": "垃圾信息",
+                    "Off Topic": "离题",
+                    "Outdated": "过时",
+                    "Duplicate": "重复",
+                    "Resolved": "已解决",
+
             // [/Show (\d+) previous repl(y|ies)/, "显示 $1 条之前的答复"],
             // [/(\d+) hidden items?/, "$1 条隐藏项目"],
             "Load more…": "载入更多…",
@@ -8821,6 +8859,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             // 右侧栏
             // /([\d,]+) participants?/, "$1 位参与者"
             "and others": "和其它",
+            "Reopened": "重新打开",
+            "Closed as resolved": "关闭为已解决",
 
             "Change category": "更改类别",
             "Converted from issue": "由议题转化而来",
@@ -14559,7 +14599,10 @@ I18N.zh["notifications"] = { // 通知页面
         "✋ Mentioned": "✋ 提及",
         "🙌 Team mentioned": "🙌 提到的团队",
         "👀 Review requested": "👀 审查请求",
+        "Add new filter": "添加过滤器",
         "Name": "名称",
+        "Filter by…": "过滤…", // Android UA 下才有
+        "New filter": "新建", // Android UA 下才有
         "Filter inbox by…": "筛选收件箱…",
         "Create new filter": "创建新规则",
         "Create": "创建",
