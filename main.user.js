@@ -182,6 +182,7 @@
      * @returns {string|boolean} 页面的类型，如果无法确定类型，那么返回 false。
      */
     function getPage(url = window.location) {
+        // 站点映射
         const siteMapping = {
             'gist.github.com': 'gist',
             'www.githubstatus.com': 'status',
