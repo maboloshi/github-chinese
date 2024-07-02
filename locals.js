@@ -204,7 +204,7 @@ I18N.conf = {
     // ^pre$ --> 避免勿过滤
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'page-new-repo'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'],
 
     // 特定页面，筛选掉特定元素
     ignoreSelector: {
