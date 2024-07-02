@@ -210,6 +210,8 @@ I18N.conf = {
     ignoreSelector: {
         'repository/new': [".cm-scroller"],
         'repository/edit': [".cm-scroller", "table"],
+        'repository/pull': ["tbody"],
+        'repository/compare': ["tbody"],
         'repository/blob': ["section"],
         'repository/blame': ["section"],
         'repository': ["article.markdown-body"],
