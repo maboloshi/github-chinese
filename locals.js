@@ -2579,7 +2579,6 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
             // 等待回应
             "Pending": "待处理",
             "Copy invite link": "复制邀请链接",
-            "Revoke": "撤销",
             // 已指定
             "Learn more about account successors": "了解更多关于账户继任者的信息",
             "Revoke": "撤销",
