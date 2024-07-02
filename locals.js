@@ -8167,7 +8167,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         ...I18N.zh["repository-public"]["regexp"],
         [/Commits?/, "提交"],
         [/Files? changed/, "更改的文件"],
-        [/Show comments?/, "显示评论"],
+        [/Show comments?/, "显示评论"], // 编辑器右上角三点
         [/committed/, "提交于"],
         [/(\d+) contributors?/, "$1 贡献者"],
         [/Allow(ing)? edits by maintainers/, "允许维护人员编辑"],
