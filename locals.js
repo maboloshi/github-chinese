@@ -370,6 +370,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Attestations?/, "证书"],
         [/Activit(y|ies)/, "活动"],
         [/Rate limit/, "速率限制"],
+        [/Comparing/, "比较"],
         ["_regexp_end", "end"]
     ],
 };
@@ -5755,12 +5756,14 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
-        [/(\d+) successful checks/, "$1 个成功的检查"],
+        [/(\d+) successful checks?/, "$1 个成功的检查"],
+        [/(\d+) successful/, "$1 成功"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Successful in (\d+)m/, "在 $1 分内成功"],
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
+        [/and/, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -5914,6 +5917,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 复刻仓库 /<user-name>/<repo-name>/fork
             "Create a new fork": "创建新复刻",
             "A": " ",
+            "fork": "复刻",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
             "No available destinations to fork this repository.": "没有复刻此仓库的可用目标。",
@@ -6087,6 +6091,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Navigate back to": "导航回", // 小屏模式
 
             // 左侧正文
+
+            // 文档栏目(仅 Andoid UA)
+            "More": "更多",
 
             // 自述文件(README.md)
             "Filter headings": "筛选标题",
@@ -6270,6 +6277,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
+            "committed": "提交于", // 提交浮窗
             "failure": "失败",
             "success": "成功",
             "Approved": "已批准",
@@ -6508,6 +6516,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
+        [/and ([^ ]+) were installed on this repository/, "和 $1 已安装到此仓库"], // 顶部提示：市场应用（如果有）
     ],
 };
 
@@ -7316,7 +7325,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // 编辑 -> 选择基础库
             "Choose a base branch": "选择基础分支",
+            "base:": "基础：",
                 // 更改基础分支对话框
+                "Find a branch": "搜索分支",
                 "Are you sure you want to change the base?": "您确定要更改基础分支吗？",
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
@@ -8149,11 +8160,17 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Showing": "显示",
         "with": "包含",
 
+        // 编辑器右上角三点，“显示评论”走正则
+        "View file": "查看文件",
+        "Edit file": "编辑文件",
+        "Delete file": "删除文件",
+
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/Commits?/, "提交"],
         [/Files? changed/, "更改的文件"],
+        [/Show comments?/, "显示评论"], // 编辑器右上角三点
         [/committed/, "提交于"],
         [/(\d+) contributors?/, "$1 贡献者"],
         [/Allow(ing)? edits by maintainers/, "允许维护人员编辑"],
@@ -9739,6 +9756,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/on this commit as/,"该提交以"],
+        [/Commit changes?/, "提交更改"], // 提交对话框
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
     ],
 };
@@ -14934,7 +14952,7 @@ I18N.zh.pulls = I18N.zh.issues;
 
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
-        "resluts": "结果",
+        "ms": "毫秒", // 时间，前面"结果"走正则匹配
         "View topic": "查看主题", //搜索结果中的主题
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
             "Search GitHub": "在 GitHub 上搜索",
@@ -15059,6 +15077,7 @@ I18N.zh["search"] = { // 搜索页面
             "Cheat sheet": "搜索技巧",
 
             "Sort by:": "排序方式：",
+            "Sort by": "排序方式", // Android UA
                 // 筛选下拉
                 // &type=repositories
                 "Sort options": "排序选项",
@@ -15095,6 +15114,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Fewest repositories": "最少仓库",
 
             "More options": "更多选项",
+            "your search": "您的搜索", // Android UA
             "View search docs": "查看搜索文档",
 
             // 部分状态词
@@ -15288,6 +15308,9 @@ I18N.zh["search"] = { // 搜索页面
 
     },
     "regexp": [ // 正则翻译
+        [/Filters?/, "过滤"], // Android UA
+        [/([^ ]+) results?/, "$1 个结果"], // 顶部，这里用 ([^ ]+) 是因为数字带字母
+        [/([^ ]+) files?/, "$1 个文件"], // 同上 https://github.com/search?q=<keyword>&type=code
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
