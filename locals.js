@@ -5915,6 +5915,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 复刻仓库 /<user-name>/<repo-name>/fork
             "Create a new fork": "创建新复刻",
             "A": " ",
+            "fork": "复刻",
             "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一个仓库的副本。复刻仓库可以让您在不影响原项目的情况下自由地进行修改实验。",
             "View existing forks.": "查看现有复刻。",
             "No available destinations to fork this repository.": "没有复刻此仓库的可用目标。",
@@ -7318,7 +7319,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // 编辑 -> 选择基础库
             "Choose a base branch": "选择基础分支",
+            "base:": "基础：",
                 // 更改基础分支对话框
+                "Find a branch": "搜索分支",
                 "Are you sure you want to change the base?": "您确定要更改基础分支吗？",
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
