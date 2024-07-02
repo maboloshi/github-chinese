@@ -14936,7 +14936,7 @@ I18N.zh.pulls = I18N.zh.issues;
 
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
-        "resluts": "结果",
+        "ms": "毫秒", // 前面"结果"走正则匹配
         "View topic": "查看主题", //搜索结果中的主题
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
             "Search GitHub": "在 GitHub 上搜索",
@@ -15061,6 +15061,7 @@ I18N.zh["search"] = { // 搜索页面
             "Cheat sheet": "搜索技巧",
 
             "Sort by:": "排序方式：",
+            "Sort by": "排序方式", // Android UA
                 // 筛选下拉
                 // &type=repositories
                 "Sort options": "排序选项",
@@ -15097,6 +15098,7 @@ I18N.zh["search"] = { // 搜索页面
                 "Fewest repositories": "最少仓库",
 
             "More options": "更多选项",
+            "your search": "您的搜索", // Android UA
             "View search docs": "查看搜索文档",
 
             // 部分状态词
@@ -15290,6 +15292,8 @@ I18N.zh["search"] = { // 搜索页面
 
     },
     "regexp": [ // 正则翻译
+        [/Filters?/, "过滤"], // Android UA
+        [/([^ ]+) results?/, "$1 个结果"], // 这里用 ([^ ]+) 是因为数字带字母
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
