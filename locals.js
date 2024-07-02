@@ -7893,6 +7893,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Commits?/, "提交"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
+        [/Copy full SHA for ([^ ]+)/, "复制 $1 完整的 SHA"], // Android UA
+        [/View checks?/, "查看检查"], // Android UA
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
@@ -8283,7 +8285,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
-            "Copy the full SHA": "复制完整的 SHA",
+            "Copy full SHA for": "复制该提交的完整 SHA", // Android UA
             "View commit details": "查看提交详情",
             "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
 
@@ -8358,6 +8360,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
+        [/View checks?/, "查看检查"], // Android UA
     ],
 };
 
