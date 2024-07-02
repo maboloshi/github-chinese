@@ -9012,8 +9012,8 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This user is the author of this discussion.": "该用户是此讨论的作者。",
 
         // 开始讨论按钮上方小字
-            "I have done a": "我已",
-            "Reminder to": "记得",
+            "I have done a": "我已", // 二选一展示
+            "Reminder to": "记得", // 同上
             "search for similar discussions": "搜索相似话题先",
     },
     "regexp": [ // 正则翻译
