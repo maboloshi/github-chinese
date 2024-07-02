@@ -6092,6 +6092,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 左侧正文
 
+            // 文档栏目(仅 Andoid UA)
+            "More": "更多",
+
             // 自述文件(README.md)
             "Filter headings": "筛选标题",
             "Edit file": "编辑文件",
@@ -8420,9 +8423,6 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
 
             "Top": "顶部",
             "Jump to file": "跳转到文件",
-
-            // 文档栏目(仅 Andoid UA)
-            "More": "更多",
 
             // 代码操作栏
                 "Blame": "追溯",
