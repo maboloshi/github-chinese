@@ -361,6 +361,7 @@ I18N.zh["title"] = { // 标题翻译
         [/People · Pending Collaborators/, "成员 · 待定协作者"],
         [/People/, "成员"],
         [/Outside collaborators/, "外部协作者"],
+        [/New Discussion/, "新讨论"],
         [/Discussions/, "讨论"],
         [/Workflow runs/, "工作流运行"],
         [/Webhooks · Settings/, "Web 钩子 · 设置"],
@@ -377,9 +378,10 @@ I18N.zh["title"] = { // 标题翻译
 
 I18N.zh["pubilc"] = { // 公共区域翻译
     "static": { // 静态翻译
-        //
+        // 错误页面
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
+        "We had issues producing the response to your request.": "我们在响应您的请求时遇到了问题。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
@@ -1388,7 +1390,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
 
         "Uh oh!": "哎呀！",
         "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
-        "Reload this page.": "重载此页面",
+        "Reload this page": "重载此页面",
 
         // 动态 状态词
         "starred": "星标了",
@@ -7891,6 +7893,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Commits?/, "提交"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
+        [/Copy full SHA for ([^ ]+)/, "复制 $1 完整的 SHA"], // Android UA
+        [/View checks?/, "查看检查"], // Android UA
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
@@ -8281,7 +8285,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
-            "Copy the full SHA": "复制完整的 SHA",
+            "Copy full SHA for": "复制该提交的完整 SHA", // Android UA
             "View commit details": "查看提交详情",
             "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
 
@@ -8309,6 +8313,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             // 时间筛选
                 "All time": "所有时间",
                 "Today": "今天",
+            "Clear": "清除",
             "Browse repository at this point": "查看此时间点的仓库",
 
             // 日历
@@ -8356,6 +8361,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
+        [/View checks?/, "查看检查"], // Android UA
     ],
 };
 
@@ -9004,6 +9010,11 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This user is a collaborator on this repository.": "该用户是此仓库的协作者。",
             "This user is a maintainer on this repository.": "该用户是此仓库的维护者。",
             "This user is the author of this discussion.": "该用户是此讨论的作者。",
+
+        // 开始讨论按钮上方小字
+            "I have done a": "我已", // 与下条二选一展示
+            "Reminder to": "记得", // 同上
+            "search for similar discussions": "搜索相似话题先",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -14537,7 +14548,9 @@ I18N.zh["notifications"] = { // 通知页面
         "Subscribe": "订阅",
         "Unsubscribe": "退订",
 
+        "Search notifications": "搜索通知",
         "Filter notifications": "筛选通知",
+            "Suggested filters": "建议筛选",
             "Sorry, we don't support the": "抱歉，我们不支持",
             "filter yet.": "筛选器。",
             "Learn more about filters.": "了解更多关于筛选器的信息。",
