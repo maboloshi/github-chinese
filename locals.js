@@ -361,6 +361,7 @@ I18N.zh["title"] = { // 标题翻译
         [/People · Pending Collaborators/, "成员 · 待定协作者"],
         [/People/, "成员"],
         [/Outside collaborators/, "外部协作者"],
+        [/New Discussion/, "新讨论"],
         [/Discussions/, "讨论"],
         [/Workflow runs/, "工作流运行"],
         [/Webhooks · Settings/, "Web 钩子 · 设置"],
@@ -9004,6 +9005,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This user is a collaborator on this repository.": "该用户是此仓库的协作者。",
             "This user is a maintainer on this repository.": "该用户是此仓库的维护者。",
             "This user is the author of this discussion.": "该用户是此讨论的作者。",
+
+        // 开始讨论按钮上方小字
+            "Reminder to": "记得",
+            "search for similar discussions": "搜索相似话题先",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
