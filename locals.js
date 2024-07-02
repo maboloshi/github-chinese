@@ -370,6 +370,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Attestations?/, "证书"],
         [/Activit(y|ies)/, "活动"],
         [/Rate limit/, "速率限制"],
+        [/Comparing/, "比较"],
         ["_regexp_end", "end"]
     ],
 };
