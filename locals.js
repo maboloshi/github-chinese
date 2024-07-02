@@ -378,9 +378,10 @@ I18N.zh["title"] = { // 标题翻译
 
 I18N.zh["pubilc"] = { // 公共区域翻译
     "static": { // 静态翻译
-        //
+        // 错误页面
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
+        "We had issues producing the response to your request.": "我们在响应您的请求时遇到了问题。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
@@ -1389,7 +1390,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
 
         "Uh oh!": "哎呀！",
         "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
-        "Reload this page.": "重载此页面",
+        "Reload this page": "重载此页面",
 
         // 动态 状态词
         "starred": "星标了",
@@ -14542,7 +14543,9 @@ I18N.zh["notifications"] = { // 通知页面
         "Subscribe": "订阅",
         "Unsubscribe": "退订",
 
+        "Search notifications": "搜索通知",
         "Filter notifications": "筛选通知",
+            "Suggested filters": "建议筛选",
             "Sorry, we don't support the": "抱歉，我们不支持",
             "filter yet.": "筛选器。",
             "Learn more about filters.": "了解更多关于筛选器的信息。",
