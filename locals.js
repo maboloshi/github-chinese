@@ -8313,6 +8313,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             // 时间筛选
                 "All time": "所有时间",
                 "Today": "今天",
+            "Clear": "清除",
             "Browse repository at this point": "查看此时间点的仓库",
 
             // 日历
