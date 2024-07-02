@@ -155,7 +155,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations)/,
@@ -2490,7 +2490,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
 };
 I18N.zh["settings"] = I18N.zh["settings/profile"];
 
-I18N.zh["114514"] = { // 用户邀请翻译  users/<邀请者的 user-name>/succession/invitation
+I18N.zh["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
     "static": { // 静态翻译
         // 受邀者
         "invited you to be their account successor": "邀请您成为其账户继任者",
