@@ -5962,7 +5962,7 @@ I18N.zh["new"] = I18N.zh["page-new-repo"];
 I18N.zh["new/import"] = I18N.zh["page-new-repo"];
 I18N.zh["repository/import"] = I18N.zh["page-new-repo"];
 I18N.zh["repository/fork"] = I18N.zh["page-new-repo"];
-I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];
+// I18N.zh["orgs/repositories/new"] = I18N.zh["page-new-repo"];  // 无用
 
 I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
@@ -16745,7 +16745,17 @@ I18N.zh["orgs"] = { // 组织页面
     ],
 };
 
-I18N.zh["orgs/repositories"] = I18N.zh["page-profile/repositories"];
+// I18N.zh["orgs/repositories"] = I18N.zh["page-profile/repositories"];  // 覆盖创建新仓库一系列页面
+I18N.zh["orgs/repositories"] = {  // 我全都要.jpg
+    "static": { // 静态翻译
+        ...I18N.zh["page-profile/repositories"]["static"],
+        ...I18N.zh["page-new-repo"]["static"],
+    },
+    "regexp": [
+        ...I18N.zh["page-profile/repositories"]["regexp"],
+        ...I18N.zh["page-new-repo"]["regexp"],
+    ],
+};
 
 I18N.zh["orgs/projects"] = I18N.zh["page-profile/projects"];
 
