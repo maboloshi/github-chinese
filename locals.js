@@ -8157,6 +8157,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Showing": "显示",
         "with": "包含",
 
+        // 编辑器右上角三点，“显示评论”走正则
         "View file": "查看文件",
         "Edit file": "编辑文件",
         "Delete file": "删除文件",
