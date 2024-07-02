@@ -1535,6 +1535,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
+        
+        // 蓝色横幅
+        // 继任者相关
+        [/You are now the designated successor for ([^ ]+)'s account./, "您现在是 $1 的指定继任者了。"],
+        [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请。"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
@@ -2510,9 +2515,9 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
                 "Trademark Policy": "商标政策",
                 "are available.": "都可以使用。",
                 "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，不能以连字符开始或结束。",
-            "Looking to manage account security settings? You can find them in the": "想管理账户安全设置？您可以找到它们在",
-            "Account security": "账户安全",
-            "page.": "页。",
+            "Looking to manage account security settings? You can find them in the": "想管理账户安全设置？您可以在",
+            //"Account security": "账户安全",  // 疑似失效
+            "page.": "页面找到它们。",
 
             "Link Patreon account": "关联 Patreon 账户",
                 "Connect a Patreon account for": "关联",
@@ -2539,12 +2544,22 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
             "Job queued to delete file.": "正在排队删除文件的作业。",
 
             "Successor settings": "设置继任者",
-            "designated below": "下面指定的",
-            ", in the event of my death. I understand that this appointment of a successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will.": "，在我死亡的情况下。我明白，这种指定继任者的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱。",
+            // 未指定
+            "designated below": "（下面指定的）",
+            ", in the event of my death. I understand that this appointment of a successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will.": "。我明白，这种指定继任者的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱。",
             "Learn more about account successors.": "了解更多关于账户继任者的信息。",
             "Add Successor": "添加继任者",
             "Search by username, full name, or email address": "搜索用户名、全名、或电子邮箱",
             "You have not designated a successor.": "您还没有指定继任者。",
+            // 等待回应
+            "Pending": "待处理",
+            "Copy invite link": "复制邀请链接",
+            "Revoke": "撤销",
+            // 已指定
+            "Learn more about account successors": "了解更多关于账户继任者的信息",
+            "Revoke": "撤销",
+            // 被谢绝
+            "Declined": "被谢绝",
 
             "Delete account": "删除账户",
             "Once you delete your account, there is no going back. Please be certain.": "您一旦删除了您的账户，将再也无法恢复。请确认！",
@@ -2578,8 +2593,16 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
     "regexp": [ // 正则翻译
         [/is available\./, "可用。"],
         [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择。要提交商标索赔，请看我们的"],
-        [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我承认我是 $1 账户的所有者，并授权 GitHub 将该账户内的内容转让给我的 GitHub 继任者。"],
         [/immediately delete all of your repositor(y|ies) \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
+
+        // 设置继任者
+        [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我确认我是 $1 账户的所有者，并授权 GitHub 在我死亡的情况下将此账户内的内容转让给我的 GitHub 继任者"],
+        [/This link will only work for ([^ ]+)./, "此链接仅对 $1 有效。"],
+
+        // 蓝色横幅
+        [/You have successfully sent the successor invitation to ([^ ]+)./, "您已经成功向 $1 发送了继任者邀请。"],
+        [/You have revoked the successor invitation to ([^ ]+)./, "您已经撤销了对 $1 的继任者邀请。"],
+        [/You have canceled the invitation to ([^ ]+) to be your designated successor./, "您已经取消了让 $1 成为您的指定继任者的邀请。"],
     ],
 };
 
