@@ -15295,6 +15295,7 @@ I18N.zh["search"] = { // 搜索页面
     "regexp": [ // 正则翻译
         [/Filters?/, "过滤"], // Android UA
         [/([^ ]+) results?/, "$1 个结果"], // 这里用 ([^ ]+) 是因为数字带字母
+        [/([^ ]+) files?/, "$1 个文件"], // 同上 https://github.com/search?q=<keyword>&type=code
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
