@@ -6509,7 +6509,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Forking ([^ ]+)/, "复刻 $1 中"], // 复刻中...
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
-        [/and ([^ ]+) were installed on this repository/, "和 $1 已安装到此仓库"],
+        [/and ([^ ]+) were installed on this repository/, "和 $1 已安装到此仓库"], // 市场应用
     ],
 };
 
