@@ -9755,7 +9755,7 @@ I18N.zh["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页�
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
         [/on this commit as/,"该提交以"],
-        [/Commit changes?/, "提交更改"],// 提交对话框
+        [/Commit changes?/, "提交更改"], // 提交对话框
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
     ],
 };
