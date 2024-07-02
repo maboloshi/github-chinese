@@ -5756,12 +5756,14 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
-        [/(\d+) successful checks/, "$1 个成功的检查"],
+        [/(\d+) successful checks?/, "$1 个成功的检查"],
+        [/(\d+) successful/, "$1 成功"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Successful in (\d+)m/, "在 $1 分内成功"],
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
+        [/and/, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -6272,6 +6274,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
+            "committed": "提交于", // 提交浮窗
             "failure": "失败",
             "success": "成功",
             "Approved": "已批准",
@@ -14948,7 +14951,7 @@ I18N.zh.pulls = I18N.zh.issues;
 
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
-        "ms": "毫秒", // 前面"结果"走正则匹配
+        "ms": "毫秒", // 时间，前面"结果"走正则匹配
         "View topic": "查看主题", //搜索结果中的主题
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
             "Search GitHub": "在 GitHub 上搜索",
@@ -15305,7 +15308,7 @@ I18N.zh["search"] = { // 搜索页面
     },
     "regexp": [ // 正则翻译
         [/Filters?/, "过滤"], // Android UA
-        [/([^ ]+) results?/, "$1 个结果"], // 这里用 ([^ ]+) 是因为数字带字母
+        [/([^ ]+) results?/, "$1 个结果"], // 顶部，这里用 ([^ ]+) 是因为数字带字母
         [/([^ ]+) files?/, "$1 个文件"], // 同上 https://github.com/search?q=<keyword>&type=code
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
