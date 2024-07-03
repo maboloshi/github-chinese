@@ -395,18 +395,49 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         // 顶部栏 (未登录)
             "Product": "产品",
                 // 操作
-                "Automate any workflow": "自动化任何工作流程",
+                    "Automate any workflow": "自动化任何工作流程",
                 // 软件包
-                "Host and manage packages": "托管和管理包",
+                    "Host and manage packages": "托管和管理包",
                 // 安全
-                "Find and fix vulnerabilities": "查找并修复漏洞",
+                    "Find and fix vulnerabilities": "查找并修复漏洞",
+                // 代码空间
+                    "Instant dev environments": "即时开发环境",
+                "Code review": "代码审查",
+                    "Manage code changes": "管理代码更改",
+                // Copilot
+                    "Write better code with AI": "借助 AI 写出更好的代码",
+                // 议题
+                    "Plan and track work": "计划和追踪工作",
+                // 讨论
+                    "Collaborate outside of code": "代码之外的协作",
 
                 // 右侧
                 "All features": "所有功能",
                 "GitHub Skills": "GitHub 技能",
             "Solutions": "解决方案",
+                "By size": "规模",
+                    "Startups": "创业",
+                "By industry": "工业",
+                    "Healthcare": "健康护理",
+                    "Financial services": "金融服务",
+                    "Manufacturing": "制造业",
+                "By use case": "使用案例",
+                    "CI/CD & Automation": "CI/CD & 自动化",
+                    "DevOps": "开发运维",
+                    "DevSecOps": "开发安全运维",
             "Resources": "资源",
+                "Learning Pathways": "学习路径",
+                "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
+                "Customer Stories": "客户案例",
             "Open Source": "开源",
+                // 赞助者
+                    "Fund open source developers": "资助开源开发人员",
+                // 自述文件项目
+                    "GitHub community articles": "GitHub 社区文章",
+                // 仓库
+                    "Topics": "主题",
+                    "Trending": "趋势",
+                    "Collections": "集合",
             "Pricing": "价格",
             "Search": "搜索",
             "Sign in": "登录",
@@ -414,7 +445,15 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
             "Team": "团队",
             "Enterprise": "企业",
-
+                "Enterprise platform": "企业平台",
+                    "AI-powered developer platform": "AI 驱动的开发者平台",
+                "Available add-ons": "可用扩展",
+                    "Advanced Security": "高级安全",
+                        "Enterprise-grade security features": "企业级安全功能",
+                    // Copilot
+                        "Enterprise-grade AI features": "企业级 AI 功能",
+                    // 高级支持
+                        "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
             // 广告
             "Join us for the 10th anniversary of GitHub Universe.": "与我们一起庆祝 GitHub Universe 十周年。",
             "Get tickets now for 35% off, only until July 8.": "现在购买门票可享受 35% 折扣，截至 7 月 8 日。",
