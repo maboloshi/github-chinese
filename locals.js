@@ -7023,6 +7023,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "milestone": "里程碑",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
+                "completed": "已完成",
             "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
