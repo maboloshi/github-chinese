@@ -1354,6 +1354,8 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
+            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
+            "You left a review": "您已评论",
             "Changes requested": "要求更改",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
@@ -5810,14 +5812,17 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You commented on this issue": "您对此议题发表了评论",
             "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
             "Changes requested": "要求更改",
+            "You left a review": "您已评论",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
-        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
+        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"], // 用户 浮动信息卡
+        [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
         [/(\d+) successful checks?/, "$1 个成功的检查"],
         [/(\d+) successful/, "$1 成功"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
@@ -5840,7 +5845,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
-        [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
     ],
 };
 
@@ -7366,6 +7370,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
+        [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
     ],
@@ -7482,6 +7487,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "closed this": "关闭了这个",
             "reopened this": "重新打开了这个",
             "added a commit that referenced this pull request": "添加了引用此拉取请求的提交",
+            "removed the request for review from": "取消请求审查",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -8021,6 +8027,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
+        [/([^ ]+) requested changes/, "$1 要求更改"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
