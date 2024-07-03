@@ -10371,7 +10371,6 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
     },
     "regexp": [ // 正则翻译
-        [/android/, "Android"], // 文件名占位
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
