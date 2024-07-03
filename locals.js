@@ -1536,7 +1536,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
         
-        // 蓝色横幅
+        // 顶部提醒
         // 继任者相关
         [/You are now the designated successor for ([^ ]+)'s account./, "您现在是 $1 的指定继任者了。"],
         [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请。"],
@@ -2598,7 +2598,7 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
         [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我确认我是 $1 账户的所有者，并授权 GitHub 在我死亡的情况下将此账户内的内容转让给我的 GitHub 继任者"],
         [/This link will only work for ([^ ]+)./, "此链接仅对 $1 有效。"],
 
-        // 蓝色横幅
+        // 顶部提醒
         [/You have successfully sent the successor invitation to ([^ ]+)./, "您已经成功向 $1 发送了继任者邀请。"],
         [/You have revoked the successor invitation to ([^ ]+)./, "您已经撤销了对 $1 的继任者邀请。"],
         [/You have canceled the invitation to ([^ ]+) to be your designated successor./, "您已经取消了让 $1 成为您的指定继任者的邀请。"],
