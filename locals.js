@@ -1283,7 +1283,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // 左侧栏
         "View organization": "查看组织", // 组织
         "Browse organization's repositories": "浏览组织的仓库", // 组织
-        "Top Repositories": "置顶仓库",
+        "Top repositories": "置顶仓库",
         "New": "新建",
         "Find a repository…": "搜索仓库…",
         "Show more": "显示更多",
