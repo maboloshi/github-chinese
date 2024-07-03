@@ -216,6 +216,7 @@ I18N.conf = {
         'repository/blame': ["section"],
         'repository': ["article.markdown-body"],
         'dashboard': ["section.markdown-body"],
+        'repository/releases': [".Box-footer"],
     },
 };
 
