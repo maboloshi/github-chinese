@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.6-2024-06-09
+// @version      1.9.2-beta.9-2024-06-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -52,6 +52,14 @@
             attributeFilter: ['lang']
         });
 
+        const { characterDataPage, ignoreSelector } = I18N.conf;
+
+        const getConfig = page => {
+            const characterData = characterDataPage.includes(page),
+                  ignoreSelectors = ignoreSelector[page] || [];
+            return { characterData, ignoreSelectors };
+        };
+
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
@@ -64,20 +72,28 @@
             }
 
             if (page) {
-                // 使用 filter 方法对 mutations 数组进行筛选，
-                // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation =>
-                    mutation.addedNodes.length > 0 || mutation.type === 'attributes');
+                const { characterData, ignoreSelectors } = getConfig(page);
+
+                // 使用 mutations.filter 进行筛选:
+                //  1. 保留`节点增加突变`、`属性突变`
+                //  2. 保留特定页面`文本节点突变`
+                //  3. 丢弃特定页面，`特定忽略元素`内的突变
+                const filteredMutations = mutations.filter(({ target, addedNodes, type }) =>
+                    // 优先处理突变类型判断
+                    (addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')) &&
+                    // 随后检查忽略元素
+                    !ignoreSelectors.some(selector => target.parentElement?.closest(selector))
+                );
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
             }
         }).observe(document.body, {
+            characterData: true,
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
         });
-
 
         // 监听 Turbo 完成事件
         document.addEventListener('turbo:load', () => {
@@ -99,9 +115,9 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        const { IgnoreId, IgnoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
-        const skipNode = node => IgnoreId.includes(node.id) ||
-                                 IgnoreTag.includes(node.tagName) ||
+        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
+        const skipNode = node => ignoreId.includes(node.id) ||
+                                 ignoreTag.includes(node.tagName) ||
                                  reIgnoreClass.test(node.className) ||
                                  (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
 
@@ -112,7 +128,7 @@
             // 处理不同标签的元素属性翻译
             switch (node.tagName) {
                 case "RELATIVE-TIME": // 翻译时间元素
-                    transTimeElement(node.shadowRoot || node);
+                    transTimeElement(node.shadowRoot);
                     return;
 
                 case "INPUT":
@@ -186,6 +202,7 @@
         const isProfile = document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>';
         const isSession = document.body.classList.contains("session-authentication");
 
+        const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
         let t, page = false;
 
         if (isSession) {
@@ -198,13 +215,13 @@
         } else if (pathname === '/' && site === 'github') {
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) {
-            t = pathname.match(I18N.conf.rePagePathRepo);
+            t = pathname.match(rePagePathRepo);
             page = t ? 'repository/' + t[1] : 'repository';
         } else if (isOrganization) {
-            t = pathname.match(I18N.conf.rePagePathOrg);
+            t = pathname.match(rePagePathOrg);
             page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
-            t = pathname.match(I18N.conf.rePagePath);
+            t = pathname.match(rePagePath);
             page = t ? (t[1] || t.slice(-1)[0]) : false;
         }
 
@@ -276,20 +293,24 @@
      * @param {string} text - 需要翻译的文本内容。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function transText(text) { // 翻译
+    function transText(text) {
+        // 判断是否需要跳过翻译
+        //  1. 检查内容是否为空或者仅包含空白字符或数字。
+        //  2. 检查内容是否仅包含中文字符。
+        //  3. 检查内容是否不包含英文字母和符号。
+        const shouldSkip = text => /^[\s0-9]*$/.test(text) || /^[\u4e00-\u9fa5]+$/.test(text) || !/[a-zA-Z,.]/.test(text);
+        if (shouldSkip(text)) return false;
 
-        // 内容为空, 空白字符和或数字, 不存在英文字母和符号,. 跳过
-        if (!isNaN(text) || !/[a-zA-Z,.]+/.test(text)) {
-            return false;
-        }
+        // 清理文本内容
+        let trimmedText = text.trim(); // 去除首尾空格
+        let cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
 
-        let _key = text.trim(); // 去除首尾空格的 key
-        let _key_neat = _key.replace(/\xa0|[\s]+/g, ' ') // 去除多余空白字符(&nbsp; 空格 换行符)
+        // 尝试获取翻译结果
+        let translatedText = fetchTranslatedText(cleanedText);
 
-        let str = fetchTranslatedText(_key_neat); // 翻译已知页面 (局部优先)
-
-        if (str && str !== _key_neat) { // 已知页面翻译完成
-            return text.replace(_key, str); // 替换原字符，保留首尾空白部分
+        // 如果找到翻译并且不与清理后的文本相同，则返回替换后的结果
+        if (translatedText && translatedText !== cleanedText) {
+            return text.replace(trimmedText, translatedText); // 替换原字符，保留首尾空白部分
         }
 
         return false;
