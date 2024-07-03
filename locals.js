@@ -2490,31 +2490,6 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
 };
 I18N.zh["settings"] = I18N.zh["settings/profile"];
 
-I18N.zh["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
-    "static": { // 静态翻译
-        // 受邀者
-        "invited you to be their account successor": "邀请您成为其账户继任者",
-        "Learn more about account successors": "了解更多关于账户继任者的信息",
-        //[/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
-        "Terms of Service": "服务条款",
-        "and the user's written requests, if any, in my use and maintaining of their account's content.": "和用户的书面请求（如果有）。",
-        "I understand that accepting this appointment as successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will, and I agree to comply or assist with a valid request by an individual with legal authority over the user's property (such as next-of-kin, an estate's executor, and/or a beneficiary of their will).": "我明白，接受此继任者任命的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱，并且我同意遵守或协助对用户财产拥有合法权力的个人（例如近亲、遗产执行人和/或其遗嘱受益人）的有效请求。",
-        "Accept invitation": "接受邀请",
-        "Decline": "谢绝",
-        // 已接受
-        "This invitation has already been accepted.": "此邀请已被接受。",
-        // 已谢绝
-        "This invitation has already been declined.": "此邀请已被谢绝。",
-        // 不存在
-        "Invitation not found": "此邀请已被谢绝。",
-        "Your invitation could not be found, or is not valid.": "找不到您的邀请，或是其已不再有效。",
-    },
-    "regexp": [ // 正则翻译
-        [/As an account successor, you would be able to manage ([^ ]+)'s repositories if they're not able to./, "作为账户继任者，在 $1 再也无法管理其仓库时，您将能够管理其仓库。"],
-        [/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
-    ]
-};
-
 I18N.zh["settings/admin"] = { // 设置 - 账户
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
@@ -2628,6 +2603,31 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
         [/You have revoked the successor invitation to ([^ ]+)./, "您已经撤销了对 $1 的继任者邀请。"],
         [/You have canceled the invitation to ([^ ]+) to be your designated successor./, "您已经取消了让 $1 成为您的指定继任者的邀请。"],
     ],
+};
+
+I18N.zh["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
+    "static": { // 静态翻译
+        // 受邀者
+        "invited you to be their account successor": "邀请您成为其账户继任者",
+        "Learn more about account successors": "了解更多关于账户继任者的信息",
+        //[/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
+        "Terms of Service": "服务条款",
+        "and the user's written requests, if any, in my use and maintaining of their account's content.": "和用户的书面请求（如果有）。",
+        "I understand that accepting this appointment as successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will, and I agree to comply or assist with a valid request by an individual with legal authority over the user's property (such as next-of-kin, an estate's executor, and/or a beneficiary of their will).": "我明白，接受此继任者任命的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱，并且我同意遵守或协助对用户财产拥有合法权力的个人（例如近亲、遗产执行人和/或其遗嘱受益人）的有效请求。",
+        "Accept invitation": "接受邀请",
+        "Decline": "谢绝",
+        // 已接受
+        "This invitation has already been accepted.": "此邀请已被接受。",
+        // 已谢绝
+        "This invitation has already been declined.": "此邀请已被谢绝。",
+        // 不存在
+        "Invitation not found": "此邀请已被谢绝。",
+        "Your invitation could not be found, or is not valid.": "找不到您的邀请，或是其已不再有效。",
+    },
+    "regexp": [ // 正则翻译
+        [/As an account successor, you would be able to manage ([^ ]+)'s repositories if they're not able to./, "作为账户继任者，在 $1 再也无法管理其仓库时，您将能够管理其仓库。"],
+        [/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
+    ]
 };
 
 I18N.zh["settings/appearance"] = { // 设置 - 外观
