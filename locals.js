@@ -393,8 +393,50 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
         // 顶部栏 (未登录)
             "Product": "产品",
+                // 操作
+                    "Automate any workflow": "自动化任何工作流程",
+                // 软件包
+                    "Host and manage packages": "托管和管理包",
+                // 安全
+                    "Find and fix vulnerabilities": "查找并修复漏洞",
+                // 代码空间
+                    "Instant dev environments": "即时开发环境",
+                "Code review": "代码审查",
+                    "Manage code changes": "管理代码更改",
+                // Copilot
+                    "Write better code with AI": "借助 AI 写出更好的代码",
+                // 议题
+                    "Plan and track work": "计划和追踪工作",
+                // 讨论
+                    "Collaborate outside of code": "代码之外的协作",
+
+                // 右侧
+                "All features": "所有功能",
+                "GitHub Skills": "GitHub 技能",
             "Solutions": "解决方案",
+                "By size": "规模",
+                    "Startups": "创业",
+                "By industry": "工业",
+                    "Healthcare": "健康护理",
+                    "Financial services": "金融服务",
+                    "Manufacturing": "制造业",
+                "By use case": "使用案例",
+                    "CI/CD & Automation": "CI/CD & 自动化",
+                    "DevOps": "开发运维",
+                    "DevSecOps": "开发安全运维",
+            "Resources": "资源",
+                "Learning Pathways": "学习路径",
+                "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
+                "Customer Stories": "客户案例",
             "Open Source": "开源",
+                // 赞助者
+                    "Fund open source developers": "资助开源开发人员",
+                // 自述文件项目
+                    "GitHub community articles": "GitHub 社区文章",
+                // 仓库
+                    "Topics": "主题",
+                    "Trending": "趋势",
+                    "Collections": "集合",
             "Pricing": "价格",
             "Search": "搜索",
             "Sign in": "登录",
@@ -402,6 +444,18 @@ I18N.zh["pubilc"] = { // 公共区域翻译
 
             "Team": "团队",
             "Enterprise": "企业",
+                "Enterprise platform": "企业平台",
+                    "AI-powered developer platform": "AI 驱动的开发者平台",
+                "Available add-ons": "可用扩展",
+                    "Advanced Security": "高级安全",
+                        "Enterprise-grade security features": "企业级安全功能",
+                    // Copilot
+                        "Enterprise-grade AI features": "企业级 AI 功能",
+                    // 高级支持
+                        "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
+            // 广告
+            "Join us for the 10th anniversary of GitHub Universe.": "与我们一起庆祝 GitHub Universe 十周年。",
+            "Get tickets now for 35% off, only until July 8.": "现在购买门票可享受 35% 折扣，截至 7 月 8 日。",
 
         // 搜索栏
             "Search or jump to...": "搜索或跳转到…",
@@ -1298,6 +1352,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
+            "Changes requested": "要求更改",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -5752,6 +5807,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You commented on this pull request": "您对此拉取请求发表了评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
+            "Changes requested": "要求更改",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -6966,6 +7022,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "milestone": "里程碑",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
+                "completed": "已完成",
             "reopened this": "重新打开了这个",
             "This was referenced": "这是引用",
             "deleted a comment from": "删除了评论，来自",
@@ -10309,6 +10366,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
         // 发行版评论
             "No significant changes": "无重大变化", // GitHub Action 生成的发行版
+        
 
     },
     "regexp": [ // 正则翻译
@@ -14080,13 +14138,47 @@ I18N.zh["homepage"] = { // 未登录的首页
         "Over 100 million developers call GitHub home": "超过 1 亿开发者把 GitHub 视为自己的家",
         "Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.": "无论您是正在扩大创业规模，还是刚刚开始学习编程，GitHub 都是您的家。加入全球最大的开发者平台，构建赋予人类力量的创新。让我们从这里开始。",
 
+        // 动画下方按钮
+        "Pause": "停止",
+        "Play": "播放",
+
         "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
         "The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
         "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
         "Read the blog post": "阅读博客文章",
 
+        // 底部栏
+        "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
+        "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
+        "Subscribe": "订阅",
+
+        "Features": "功能",
+        "Roadmap": "路线图",
+        "Compare GitHub": "比较 GitHub",
+
+        "Platform": "平台",
+        "Developer API": "开发者 API",
+        "Partners": "合作",
+        "Education": "教育",
+
+        "Support": "支持",
+        "Community Forum": "社区论坛",
+        "Professional Services": "专业服务",
+        "Premium Support": "高级支持",
+        "Skills": "技能",
+
+        "Company": "公司",
+        "Customer stories": "客户案例",
+        "The ReadME Project": "自述文件项目",
+        "Careers": "职业",
+        "Press": "新闻",
+        "Inclusion": "包容性",
+        "Social Impact": "社会影响",
+        "Shop": "商店",
+
         "Sitemap": "网站地图",
         "What is Git?": "什么是 Git？",
+
     },
     "regexp": [ // 正则翻译
     ],
