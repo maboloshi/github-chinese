@@ -14297,13 +14297,32 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Incorrect username or password.": "用户名或密码不正确。",
             "Recovery code authentication failed.": "恢复码身份验证失败。",
 
-        // 设备激活 https://github.com/login/device
+        // 设备授权激活 https://github.com/login/device
             "Device Activation": "设备激活",
             "Enter the code displayed on your device": "输入您的设备上显示的代码",
             "Continue": "继续",
             "GitHub staff will never ask you to enter your code on this page.": "GitHub 工作人员绝不会要求您在此页面上输入您的代码。",
 
-        // https://github.com/login/device/failure?reason=not_found
+        // 设备授权第2页面 https://github.com/login/device/confirmation
+            // [/Authorize/, "授权"],
+            "This authorization was requested from": "此授权请求来自",
+            "Make sure you trust this device as it will get access to your account.": "请确保您信任该设备，因为它可以访问您的账户。",
+            "wants to access your": "希望访问您的",
+            "account": "账户",
+            "Organization access": "组织访问",
+            "Requested from": "请求自",
+
+            "Owned & operated by GitHub": "由 GitHub 拥有和运营",
+            "Created": "创建于",
+            "More than 1K": "超过1K",
+            "GitHub users": "GitHub 用户",
+            "Learn more about OAuth": "了解更多有关 OAuth 的信息",
+
+        // 设备授权成功 https://github.com/login/device/success
+            "Congratulations, you're all set!": "恭喜，一切就绪！",
+            "Your device is now connected.": "您的设备现已连接。",
+
+        // 设备授权失败 https://github.com/login/device/failure?reason=not_found
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
@@ -14671,6 +14690,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
         [/Continue as (.*)/, "以 $1 身份继续使用"],
+        [/Authorize/, "授权"],
 
         // 设备验证 https://github.com/sessions/verified-device
         [/We just sent your authentication code via email to (.*)\. The code will expire at (.*)\./, "我们刚刚通过电子邮件将您的验证码发送给 $1。验证码将于 $2 过期。"],
