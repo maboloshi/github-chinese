@@ -1352,7 +1352,9 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on and opened this issue": "您打开了这个议题并发表评论",
             "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
@@ -5811,7 +5813,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on and opened this issue": "您打开了这个议题并发表评论",
             "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
@@ -7496,9 +7500,14 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // 标签栏
             "Conversation": "讨论",
-            // "Commits": "提交",
+            // 提交
+                "No new commits": "无新提交", // 下方句子走正则
+                "was force-pushed and no longer has any new commits. Pushing new commits will allow the pull request to be re-opened.": "分支已强制推送，并且不再包含任何新的提交。推送新的提交将允许重新打开拉取请求。",
             "Checks": "检查",
+                "Pushing new commits will allow the pull request to be re-opened.": "推送新的提交将允许重新打开拉取请求。", // 上面的句子走正则
             "Files changed": "更改的文件",
+                "No changes to show.": "无更改显示。", // 删除复刻仓库的提交时出现
+                "This commit has no content.": "该提交无内容。", // 同上
 
             // 右侧栏 补充
 
@@ -7850,6 +7859,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // "Jump to": "跳转到",
                 "Jump to file": "跳转到文件",
                 "Filter changed files": "筛选已更改文件",
+                    "No files found.": "未找到文件。",
             // 差异视图
                 "Diff view": "差异视图",
                 // "Always": "总是",
@@ -7959,9 +7969,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+        
+        "ProTip!": "专业提示！",
+            "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
 
     },
     "regexp": [ // 正则翻译
+        [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
         ...I18N.zh["repository-public"]["regexp"],
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
