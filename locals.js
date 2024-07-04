@@ -7626,6 +7626,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "added": "添加",
             "requested changes": "要求更改",
             "changed the title": "修改了标题",
+            "changed the base branch from": "更改基础分支从",
             "added the": "添加",
             "label": "标签",
 
