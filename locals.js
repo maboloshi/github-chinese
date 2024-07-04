@@ -14591,7 +14591,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         [/Continue as (.*)/, "以 $1 身份继续使用"],
 
         // 设备验证 https://github.com/sessions/verified-device
-        [/We just sent your authentication code via email to (.*)\. The code will expire at (.*)\./, "我们刚刚通过电子邮件将您的验证码发送给 $1。代码将于 $2 过期。"],
+        [/We just sent your authentication code via email to (.*)\. The code will expire at (.*)\./, "我们刚刚通过电子邮件将您的验证码发送给 $1。验证码将于 $2 过期。"],
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
