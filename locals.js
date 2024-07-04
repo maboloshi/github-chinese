@@ -15287,6 +15287,9 @@ I18N.zh["search"] = { // 搜索页面
                 "See all": "查看完整文件中的所有",
                 "matche in the full file": "处匹配",
                 "matches in the full file": "处匹配",
+                // 未登录
+                "Sign in to search code on GitHub": "登录以在 GitHub 上搜索代码",
+                "Before you can access our code search functionality please sign in or create a free account.": "在使用代码搜索功能之前，请先登录或创建一个免费帐户。",
 
             // &type=issues
                 "Learn how you can use GitHub Issues to plan and track your work.": "了解如何使用 GitHub 议题计划和跟踪工作。",
