@@ -1601,7 +1601,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         // 顶部提醒
         // 继任者相关
         [/You are now the designated successor for ([^ ]+)'s account./, "您现在是 $1 的指定继任者了。"],
-        [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请."],
+        [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请。"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
