@@ -710,8 +710,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "Done, closed, fixed, resolved": "已完成、已关闭、已修复、已解决",
                 "Close as not planned": "非计划中关闭",
                     "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
-            "Close with comment": "评论并关闭议题", // issue页 评论框
-            "Close pull request": "关闭拉取请求", // pull页 评论框
+            "Close with comment": "评论并关闭", // 议题/拉取请求 评论框
+            "Close pull request": "关闭拉取请求", // 拉取请求页 评论框
             "Reopen discussion": "重新打开讨论", // discussion页 评论框
             "Close discussion": "关闭讨论", // discussion页 评论框
                 "Close as resolved": "因解决而关闭",
