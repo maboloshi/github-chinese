@@ -7504,6 +7504,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "No new commits": "无新提交", // 下方句子走正则
                 "was force-pushed and no longer has any new commits. Pushing new commits will allow the pull request to be re-opened.": "分支已强制推送，并且不再包含任何新的提交。推送新的提交将允许重新打开拉取请求。",
             "Checks": "检查",
+                "Search logs": "搜索日志",
                 "Pushing new commits will allow the pull request to be re-opened.": "推送新的提交将允许重新打开拉取请求。", // 上面的句子走正则
             "Files changed": "更改的文件",
                 "No changes to show.": "无更改显示。", // 删除复刻仓库的提交时出现
