@@ -619,6 +619,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Preview": "预览",
                 "Nothing to preview": "没有可预览的内容。",
                 "This file is empty.": "这是一个空文件。",
+                "Try again with a file that’s not empty.": "使用非空文件重试。",
             "Leave a comment": "发表评论",
             "Write a reply": "发表回复", // 具体讨论页
             "Write a comment": "发表评论", // 具体讨论页
@@ -6979,6 +6980,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Don’t see your issue here?": "在这里没有看到您的议题？",
             "Open a blank issue.": "打开一个空白议题。",
             "Edit templates": "编辑模板",
+            "Report abuse": "举报滥用",
 
             "View organization templates": "查看组织模板", // 组织仓库
 
