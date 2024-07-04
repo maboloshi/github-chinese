@@ -2571,7 +2571,6 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
                 "are available.": "都可以使用。",
                 "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，不能以连字符开始或结束。",
             "Looking to manage account security settings? You can find them in the": "想管理账户安全设置？您可以在",
-            //"Account security": "账户安全",  // 疑似失效
             "page.": "页面找到它们。",
 
             "Link Patreon account": "关联 Patreon 账户",
