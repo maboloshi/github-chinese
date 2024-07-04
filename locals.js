@@ -315,6 +315,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Installed GitHub Apps/, "已安装的 GitHub 应用"],
         [/Accessibility/, "无障碍"],
         [/Environments/, "环境"],
+        [/New repository/, "新仓库"],
         [/Repositories/, "仓库"],
         [/Starred/, "星标页面"],
         [/starred repositories/, "星标仓库"],
@@ -372,6 +373,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Activit(y|ies)/, "活动"],
         [/Rate limit/, "速率限制"],
         [/Comparing/, "比较"],
+        [/History for ([^ ]+)/, "$1 的历史"],
         ["_regexp_end", "end"]
     ],
 };
@@ -617,6 +619,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "Preview": "预览",
                 "Nothing to preview": "没有可预览的内容。",
                 "This file is empty.": "这是一个空文件。",
+                "Try again with a file that’s not empty.": "使用非空文件重试。",
             "Leave a comment": "发表评论",
             "Write a reply": "发表回复", // 具体讨论页
             "Write a comment": "发表评论", // 具体讨论页
@@ -708,7 +711,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Close as not planned": "非计划中关闭",
                     "Won't fix, can't repro, duplicate, stale": "不会修复，无法重现，重复，陈旧",
             "Close with comment": "评论并关闭", // 议题/拉取请求 评论框
-            "Close pull request": "关闭拉取请求", // pull页 评论框
+            "Close pull request": "关闭拉取请求", // 拉取请求页 评论框
             "Reopen discussion": "重新打开讨论", // discussion页 评论框
             "Close discussion": "关闭讨论", // discussion页 评论框
                 "Close as resolved": "因解决而关闭",
@@ -1349,9 +1352,13 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on and opened this issue": "您打开了这个议题并发表评论",
             "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
+            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
+            "You left a review": "您已评论",
             "Changes requested": "要求更改",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
@@ -1590,7 +1597,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
-        
+        [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
         // 顶部提醒
         // 继任者相关
         [/You are now the designated successor for ([^ ]+)'s account./, "您现在是 $1 的指定继任者了。"],
@@ -1741,7 +1748,8 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
         [/(\d+) repositories/, "$1 仓库"],
         [/(\d+) members/, "$1 成员"],
-        [/and (\d+) more/, "和 $1 个更多"]
+        [/and (\d+) more/, "和 $1 个更多"],
+        [/@([^ ]+)'s activity is private/, "$1 的活动不可见"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -5850,16 +5858,21 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
             "You commented on this issue": "您对此议题发表了评论",
+            "You commented on and opened this issue": "您打开了这个议题并发表评论",
             "You commented on this pull request": "您对此拉取请求发表了评论",
+            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
             "Changes requested": "要求更改",
+            "You left a review": "您已评论",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
-        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"],
+        [/Opened this pull request \(their first in ([^ ]+)\)/, "打开了这个拉取请求（首次在 $1 发表）"], // 用户 浮动信息卡
+        [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
         [/(\d+) successful checks?/, "$1 个成功的检查"],
         [/(\d+) successful/, "$1 成功"],
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
@@ -6583,6 +6596,9 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
     },
     "regexp": [ // 正则翻译
+        // 个人仓库 贡献和同步复刻操作后 信息提示条
+        [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
+        [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         ...I18N.zh["repository-public"]["regexp"],
         [/commits by (.+)/, "由 $1 提交"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -6599,9 +6615,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/\+ ([\d,]+) contributors?/, "+ $1 位贡献者"], // 仓库首页右侧栏 贡献者
         [/\+ ([\d,]+) environments?/, "+ $1 个环境"], // 仓库首页右侧栏 环境
         [/\+ ([\d,]+) deployments?/, "+ $1 个部署"], // 仓库首页右侧栏 部署
-        // 个人仓库 贡献和同步复刻操作后 信息提示条
-        [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
-        [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         // 同步复刻
         [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通过从上游仓库同步 $1 个提交来更新分支，以使该分支保持最新。"],
         [/This branch is not behind the upstream ([^ ]+)/, "该分支不落后与上游 $1"],
@@ -7016,6 +7029,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Don’t see your issue here?": "在这里没有看到您的议题？",
             "Open a blank issue.": "打开一个空白议题。",
             "Edit templates": "编辑模板",
+            "Report abuse": "举报滥用",
 
             "View organization templates": "查看组织模板", // 组织仓库
 
@@ -7407,6 +7421,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
+        [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
     ],
@@ -7523,15 +7538,22 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "closed this": "关闭了这个",
             "reopened this": "重新打开了这个",
             "added a commit that referenced this pull request": "添加了引用此拉取请求的提交",
+            "removed the request for review from": "取消请求审查",
 
             // 隐藏
             "Load more…": "加载更多…",
 
             // 标签栏
             "Conversation": "讨论",
-            // "Commits": "提交",
+            // 提交
+                "No new commits": "无新提交", // 下方句子走正则
+                "was force-pushed and no longer has any new commits. Pushing new commits will allow the pull request to be re-opened.": "分支已强制推送，并且不再包含任何新的提交。推送新的提交将允许重新打开拉取请求。",
             "Checks": "检查",
+                "Search logs": "搜索日志",
+                "Pushing new commits will allow the pull request to be re-opened.": "推送新的提交将允许重新打开拉取请求。", // 上面的句子走正则
             "Files changed": "更改的文件",
+                "No changes to show.": "无更改显示。", // 删除复刻仓库的提交时出现
+                "This commit has no content.": "该提交无内容。", // 同上
 
             // 右侧栏 补充
 
@@ -7573,6 +7595,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Hide all reviewers": "隐藏所有审查者",
             "New changes since you last viewed": "自您上次查看以来的新变化",
             "mentioned this pull request": "提及这个拉取请求",
+            "linked an issue": "链接议题",
+            "that may be": "将在该拉取请求合并时",
+            "closed": "关闭",  // 浮动小字走正则
+            "by this pull request": " ",
             "dismissed": "忽略",
             "\’s": " 的",
             "stale review": "陈旧审查",
@@ -7600,6 +7626,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "added": "添加",
             "requested changes": "要求更改",
             "changed the title": "修改了标题",
+            "changed the base branch from": "更改基础分支从",
             "added the": "添加",
             "label": "标签",
 
@@ -7879,6 +7906,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // "Jump to": "跳转到",
                 "Jump to file": "跳转到文件",
                 "Filter changed files": "筛选已更改文件",
+                    "No files found.": "未找到文件。",
             // 差异视图
                 "Diff view": "差异视图",
                 // "Always": "总是",
@@ -7938,6 +7966,8 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Suggested change": "建议更改",
                 "Sign off and commit suggestion": "签署并提交建议",
                     "Suggestions cannot be applied from pending reviews.": "无法应用待审核中的更改",
+                    "This suggestion has been applied or marked resolved.": "该建议已被应用或标记为已解决。",
+                    "Outdated suggestions cannot be applied.": "过时建议不能应用。",
                 "Add suggestion to batch": "批量添加建议",
                     "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
                     "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
@@ -7986,9 +8016,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+        
+        "ProTip!": "专业提示！",
+            "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
 
     },
     "regexp": [ // 正则翻译
+        [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
         ...I18N.zh["repository-public"]["regexp"],
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
@@ -8035,6 +8069,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Unresolved conversations/, "未解决的讨论"],
         [/Resolved conversations/, "已解决的讨论"],
         // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
+        [/#(\d+) will be closed when this pull request is merged/, "#$1 将在该拉取请求合并时关闭"],
         // 代码空间
         [/Create a codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
         [/Create codespace on ([^ ]+)/, "在 $1 上创建代码空间"],
@@ -8055,6 +8090,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
+        [/([^ ]+) requested changes/, "$1 要求更改"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -14710,6 +14746,7 @@ I18N.zh["notifications"] = { // 通知页面
             "Learn more about filters.": "了解更多关于筛选器的信息。",
 
             "- submit": "- 提交",
+            "Submit search": "提交搜索",
 
             "Available filters": "可用筛选器",
             "filter by repository": "按仓库筛选",
@@ -15329,6 +15366,9 @@ I18N.zh["search"] = { // 搜索页面
                 "See all": "查看完整文件中的所有",
                 "matche in the full file": "处匹配",
                 "matches in the full file": "处匹配",
+                // 未登录
+                "Sign in to search code on GitHub": "登录以在 GitHub 上搜索代码",
+                "Before you can access our code search functionality please sign in or create a free account.": "在使用代码搜索功能之前，请先登录或创建一个免费帐户。",
 
             // &type=issues
                 "Learn how you can use GitHub Issues to plan and track your work.": "了解如何使用 GitHub 议题计划和跟踪工作。",
