@@ -155,7 +155,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages)/,
+    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations)/,
@@ -1590,6 +1590,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
+        
+        // 顶部提醒
+        // 继任者相关
+        [/You are now the designated successor for ([^ ]+)'s account./, "您现在是 $1 的指定继任者了。"],
+        [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请。"],
     ],
 };
 I18N.zh["dashboard"] = I18N.zh["page-dashboard"];
@@ -2565,9 +2570,8 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
                 "Trademark Policy": "商标政策",
                 "are available.": "都可以使用。",
                 "Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.": "用户名只能包含字母数字字符或单个连字符，不能以连字符开始或结束。",
-            "Looking to manage account security settings? You can find them in the": "想管理账户安全设置？您可以找到它们在",
-            "Account security": "账户安全",
-            "page.": "页。",
+            "Looking to manage account security settings? You can find them in the": "想管理账户安全设置？您可以在",
+            "page.": "页面找到它们。",
 
             "Link Patreon account": "关联 Patreon 账户",
                 "Connect a Patreon account for": "关联",
@@ -2594,12 +2598,21 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
             "Job queued to delete file.": "正在排队删除文件的作业。",
 
             "Successor settings": "设置继任者",
-            "designated below": "下面指定的",
-            ", in the event of my death. I understand that this appointment of a successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will.": "，在我死亡的情况下。我明白，这种指定继任者的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱。",
+            // 未指定
+            "designated below": "（下面指定的）",
+            ", in the event of my death. I understand that this appointment of a successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will.": "。我明白，这种指定继任者的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱。",
             "Learn more about account successors.": "了解更多关于账户继任者的信息。",
             "Add Successor": "添加继任者",
             "Search by username, full name, or email address": "搜索用户名、全名、或电子邮箱",
             "You have not designated a successor.": "您还没有指定继任者。",
+            // 等待回应
+            "Pending": "待处理",
+            "Copy invite link": "复制邀请链接",
+            // 已指定
+            "Learn more about account successors": "了解更多关于账户继任者的信息",
+            "Revoke": "撤销",
+            // 被谢绝
+            "Declined": "被谢绝",
 
             "Delete account": "删除账户",
             "Once you delete your account, there is no going back. Please be certain.": "您一旦删除了您的账户，将再也无法恢复。请确认！",
@@ -2633,9 +2646,42 @@ I18N.zh["settings/admin"] = { // 设置 - 账户
     "regexp": [ // 正则翻译
         [/is available\./, "可用。"],
         [/Username ([^ ]+) is not available\. Please choose another\. To submit a trademark claim, please see our/, "用户名 $1 不可用。请重新选择。要提交商标索赔，请看我们的"],
-        [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我承认我是 $1 账户的所有者，并授权 GitHub 将该账户内的内容转让给我的 GitHub 继任者。"],
         [/immediately delete all of your repositor(y|ies) \((\d+)\)/, "立即删除您所有的仓库（$1个）"],
+
+        // 设置继任者
+        [/By clicking \"Add Successor\" below, I acknowledge that I am the owner of the([^@]+@[^\n]+) account, and am authorizing GitHub to transfer content within that account to my GitHub Successor,/, "通过点击下面的 “添加继任者”，我确认我是 $1 账户的所有者，并授权 GitHub 在我死亡的情况下将此账户内的内容转让给我的 GitHub 继任者"],
+        [/This link will only work for ([^ ]+)./, "此链接仅对 $1 有效。"],
+
+        // 顶部提醒
+        [/You have successfully sent the successor invitation to ([^ ]+)./, "您已经成功向 $1 发送了继任者邀请。"],
+        [/You have revoked the successor invitation to ([^ ]+)./, "您已经撤销了对 $1 的继任者邀请。"],
+        [/You have canceled the invitation to ([^ ]+) to be your designated successor./, "您已经取消了让 $1 成为您的指定继任者的邀请。"],
     ],
+};
+
+I18N.zh["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
+    "static": { // 静态翻译
+        // 受邀者
+        "invited you to be their account successor": "邀请您成为其账户继任者",
+        "Learn more about account successors": "了解更多关于账户继任者的信息",
+        //[/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
+        "Terms of Service": "服务条款",
+        "and the user's written requests, if any, in my use and maintaining of their account's content.": "和用户的书面请求（如果有）。",
+        "I understand that accepting this appointment as successor does not override legally binding next-of-kin rules or estate laws of any relevant jurisdiction, and does not create a binding will, and I agree to comply or assist with a valid request by an individual with legal authority over the user's property (such as next-of-kin, an estate's executor, and/or a beneficiary of their will).": "我明白，接受此继任者任命的做法并不凌驾于具有法律约束力的近亲规则或任何相关司法管辖区的遗产法，也不产生具有约束力的遗嘱，并且我同意遵守或协助对用户财产拥有合法权力的个人（例如近亲、遗产执行人和/或其遗嘱受益人）的有效请求。",
+        "Accept invitation": "接受邀请",
+        "Decline": "谢绝",
+        // 已接受
+        "This invitation has already been accepted.": "此邀请已被接受。",
+        // 已谢绝
+        "This invitation has already been declined.": "此邀请已被谢绝。",
+        // 不存在
+        "Invitation not found": "此邀请已被谢绝。",
+        "Your invitation could not be found, or is not valid.": "找不到您的邀请，或是其已不再有效。",
+    },
+    "regexp": [ // 正则翻译
+        [/As an account successor, you would be able to manage ([^ ]+)'s repositories if they're not able to./, "作为账户继任者，在 $1 再也无法管理其仓库时，您将能够管理其仓库。"],
+        [/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其帐户内容时遵守 GitHub 的"],
+    ]
 };
 
 I18N.zh["settings/appearance"] = { // 设置 - 外观
