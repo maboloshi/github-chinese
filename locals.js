@@ -14225,6 +14225,19 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
+        // 设备验证 https://github.com/sessions/verified-device
+            "Device verification": "设备验证",
+            "Email": "电子邮件",
+            "Device Verification Code": "设备验证码",
+            "Having trouble verifying via email?": "通过电子邮件验证时遇到问题？",
+                "Re-send the authentication code": "重新发送验证码",
+                "Try GitHub Mobile for simplified device verification": "尝试 GitHub Mobile 的简化设备验证",
+            "If you'd like to require verification on every sign in, consider enabling": "如果您想在每次登录时都要求进行验证，请考虑在您的账户上启用",
+                "two-factor authentication": "双因素身份验证",
+                "on your account.": "。",
+            // 黄色横幅
+            "Incorrect verification code provided.": "提供的验证码错误。",
+
         // 双因素身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
             // "Learn more.": "了解更多。",
@@ -14576,6 +14589,9 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
         [/Continue as (.*)/, "以 $1 身份继续使用"],
+
+        // 设备验证 https://github.com/sessions/verified-device
+        [/We just sent your authentication code via email to (.*)\. The code will expire at (.*)\./, "我们刚刚通过电子邮件将您的验证码发送给 $1。代码将于 $2 过期。"],
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
