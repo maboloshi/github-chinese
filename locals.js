@@ -7030,8 +7030,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
             "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
 
-            "Search all issues": "搜索所有议题",
-
             "Dismiss": "忽略",
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
