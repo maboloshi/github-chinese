@@ -7049,7 +7049,6 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         [/(\d+) hidden items?/, "$1 个隐藏项"],  // 自议题页面移动至此公共部分  // TODO: item 的翻译：项/项目/条目？
         [/(\d+) hidden conversations?/, "$1 个隐藏对话"],
 
-        [/Assigned to (.*)/, "分配给 $1"],  // TODO: 这些在哪里
         [/Edited (\d+) times?/, "编辑 $1 次"],  // TODO: 这些在哪里
     ]
 };
@@ -7400,7 +7399,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题（某个或列表）页面
         [/· ([\d,]+) comments?/, "• $1 条评论"],
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/(\d+) similar comments?/, "$1 条类似评论"],
-        [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/added a commit to ([^ ]+) that referenced this issue/, "向 $1 添加了一个引用这个议题的提交"],
         [/pushed a commit to ([^ ]+) that referenced this issue/, "向 $1 推送了一个引用此议题的提交"],
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],  // TODO: 研究怎么看到这句，再研究 reference 的翻译
@@ -15160,8 +15158,6 @@ I18N.zh["issues"] = { // 议题页面
             "Pull Requests mentioning you": "提及您的议题和/或拉取请求",
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
-
-        "Search all issues": "搜索所有议题",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
