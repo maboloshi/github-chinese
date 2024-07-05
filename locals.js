@@ -7036,6 +7036,11 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // "opened": "打开",
             // "closed": "已关闭",
 
+            // 图标浮窗
+                "Open issue": "已打开",
+                "Closed issue": "已完成",
+                "Closed as not planned issue": "已关闭因未计划",
+
             "You commented on and opened this issue": "您打开了此议题并发表了评论",
             "You were mentioned on and commented on this issue": "您被提及并对此议题发表了评论",
             "You commented on this issue": "您对此议题发表了评论",
@@ -7422,6 +7427,12 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
+            
+            // 图标浮窗
+                "Open Pull Request": "已打开",
+                "Draft Pull Request": "草案",
+                "Merged Pull Request": "已合并",
+                "Closed Pull Request": "已关闭",
 
             "ProTip!": "专业提示！",
                 "Find everything you created by searching": "查找您创建的所有内容，使用",
@@ -8796,6 +8807,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                     "This will not be worked on": "这将不会被处理",
 
                 "Edit labels": "编辑标签",
+            "Filter": "筛选",
             "Filter:": "筛选:",
                 "Closed": "已关闭",
                 "Answered": "已答复",
@@ -9192,7 +9204,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Fillter: /, "筛选："],
+        [/Fillter:/, "筛选："],
         [/(\d+) categories?/, "$1 个分类"],
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
@@ -9225,6 +9237,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) new comments?/, "$1 条新评论"],
         [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
+        [/Answered (\d+) discussions? in this repository/, "在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
