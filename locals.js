@@ -6711,6 +6711,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "Everything mentioning you": "任何提及您的",
                 "View advanced search syntax": "查看高级搜索语法",
 
+            "Search all issues": "搜索所有议题",
+
             "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
             "Labels": "标签",
@@ -6788,6 +6790,15 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Pending": "待定",
             "Draft": "草案",
             "This was referenced": "被引用于",
+
+            // 图标浮窗
+            "Open issue": "议题已打开",
+            "Closed issue": "议题已完成",
+            "Closed as not planned issue": "议题已关闭因未计划",
+            "Open Pull Request": "拉取请求已打开",
+            "Draft Pull Request": "拉取请求草案",
+            "Merged Pull Request": "拉取请求已合并",
+            "Closed Pull Request": "拉取请求已关闭",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
@@ -7019,6 +7030,8 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
             "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
 
+            "Search all issues": "搜索所有议题",
+
             "Dismiss": "忽略",
                 // 忽略 下拉
                 "Dismiss for this repository only": "仅对该仓库不在提示",
@@ -7035,11 +7048,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             // "Opened": "打开",
             // "opened": "打开",
             // "closed": "已关闭",
-
-            // 图标浮窗
-                "Open issue": "已打开",
-                "Closed issue": "已完成",
-                "Closed as not planned issue": "已关闭因未计划",
 
             "You commented on and opened this issue": "您打开了此议题并发表了评论",
             "You were mentioned on and commented on this issue": "您被提及并对此议题发表了评论",
@@ -7427,12 +7435,6 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
-            
-            // 图标浮窗
-                "Open Pull Request": "已打开",
-                "Draft Pull Request": "草案",
-                "Merged Pull Request": "已合并",
-                "Closed Pull Request": "已关闭",
 
             "ProTip!": "专业提示！",
                 "Find everything you created by searching": "查找您创建的所有内容，使用",
@@ -15118,8 +15120,6 @@ I18N.zh["issues"] = { // 议题页面
             "Pull Requests mentioning you": "提及您的拉取请求", // pulls
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
-
-        "Search all issues": "搜索所有议题",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
