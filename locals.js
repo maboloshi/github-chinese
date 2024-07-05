@@ -1306,6 +1306,17 @@ I18N.zh["pubilc"] = { // 公共区域翻译
     ],
 };
 
+I18N.zh["orgs-public"] = { // 组织公共部分
+    "static": { // 静态翻译
+    },
+    "regexp": [ // 正则翻译
+        [/Invite someone to/, "邀请加入到组织"],
+        [/New team in/, "新建团队在组织"],
+        [/New repository in/, "新建仓库在组织"],
+        [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "该组织已由管理员于 $1 存档。不再维护。"],
+    ],
+};
+
 I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 新手帮助
@@ -2053,6 +2064,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
     "selector": [ // 元素筛选器规则
         ["#type-options > summary > span:nth-child(1)", "类型"], // 个人主页 --> 仓库标签页-->类型筛选器 Type
@@ -2112,6 +2124,7 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
     "regexp": [ // 正则翻译
         [/([\d,]+) Open/, "$1 打开"], // 项目标签卡
         [/([\d,]+) Closed/, "$1 已关闭"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -2171,6 +2184,7 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) packages?/, "$1 软件包"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -2300,17 +2314,6 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
     ],
 };
 
-I18N.zh["orgs-public"] = { // 组织公共部分
-    "static": { // 静态翻译
-    },
-    "regexp": [ // 正则翻译
-        [/Invite someone to/, "邀请加入到组织"],
-        [/New team in/, "新建团队在组织"],
-        [/New repository in/, "新建仓库在组织"],
-        [/This organization was marked as archived by an administrator (on .+). It is no longer maintained./, "该组织已由管理员于 $1 存档。不再维护。"],
-    ],
-};
-
 I18N.zh["settings-menu"] = { // 设置 - 公共部分
     "static": { // 静态翻译
         "Settings": "设置", // 新版全局导航
@@ -2363,6 +2366,7 @@ I18N.zh["settings-menu"] = { // 设置 - 公共部分
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -2437,6 +2441,7 @@ I18N.zh["orgs-settings-menu"] = { // 组织设置 公共部分
             "Developer Settings": "开发者设置"
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -3309,6 +3314,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人账户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["account/billing/history"] = I18N.zh["settings/billing"];
@@ -4102,6 +4108,7 @@ I18N.zh["settings/packages"] = { // 设置 - 软件包
     },
     "regexp": [ // 正则翻译
         [/No recoverable packages were found for ([^ ]+)./, "没有找到 $1 的可恢复包。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/packages"] = I18N.zh["settings/packages"];
@@ -4177,6 +4184,7 @@ I18N.zh["settings/pages"] = { // 设置 - GitHub Pages
     },
     "regexp": [ // 正则翻译
         [/Successfully verified/, "已成功验证"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/pages"] = I18N.zh["settings/pages"];
@@ -4550,6 +4558,7 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
         [/The (.*) app will retain its current permissions if you choose not to accept the new permissions./, "如果您选择不接受新权限，“$1” 应用将保留其当前权限。"],
         [/(.*) is authorized to access this organization’s resources/, "$1 已获授权访问该组织的资源"],
         [/(.*) is denied access this organization’s resources/, "$1 被拒绝访问该组织的资源"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["settings/apps/authorizations"] = I18N.zh["settings/installations"];
@@ -5194,6 +5203,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
         [/(\d+) accounts?/, "$1 个账户"],
         [/Activate optional features for (.*)/, "激活 $1 的可选功能"],
         [/Choose a feature to activate for (.*):/, "选择要为 $1 激活的功能："],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/apps/new"] = I18N.zh["settings/apps"];
@@ -5245,6 +5255,7 @@ I18N.zh["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/applications/new"] = I18N.zh["settings/applications/new"];
@@ -5901,6 +5912,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -6083,6 +6095,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         // [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["new"] = I18N.zh["page-new-repo"];
@@ -12953,6 +12966,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
         [/Branch name must not end with a matching pattern/, "分支名称不得以匹配规则结束"],
         [/Branch name must not contain a matching pattern/, "分支名称不得包含匹配规则"],
         [/Branch name must not match a given regex pattern/, "分支名称不得匹配给定的正则表达式规则"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/rules"] = I18N.zh["repository/settings/rules"];
@@ -17028,6 +17042,7 @@ I18N.zh["orgs"] = { // 组织页面
         [/Invite a member to/, "邀请成员加入"],
         [/\((\d+) issues? need help\)/, "($1 个议题需要帮助)"],
         [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
     "selector": [ // 元素筛选器规则
         ["#type-options > summary > span:nth-child(1)", "类型"], // 组织主页 --> 仓库标签页-->类型筛选器 Type
@@ -17158,6 +17173,7 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
         [/Invite a member to/, "邀请成员加入"],
         [/Convert ([^ ]+) to outside collaborator?/, "将 $1 转换为外部合作者？"],
         [/Removing (\d+) members? from/, "移除 $1 名成员，从"],
+        ...I18N.zh["orgs-public"]["regexp"],
    ],
 };
 I18N.zh["orgs/outside-collaborators"] = I18N.zh["orgs/people"];
@@ -17166,6 +17182,7 @@ I18N.zh["orgs/pending_collaborators"] = I18N.zh["orgs/people"];
 
 I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
     "static": { // 静态翻译
+        ...I18N.zh["orgs-public"]["static"],
 
         // 团队标签卡 https://github.com/orgs/<orgs-name>/teams
             "Seamless communication with teams": "与团队的无缝沟通",
@@ -17213,6 +17230,7 @@ I18N.zh["orgs/teams"] = { // 组织 - 团队标签卡
     "regexp": [ // 正则翻译
         [/(\d+) members?/, "$1 成员"],
         [/(\d+) teams?/, "$1 团队"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17227,6 +17245,7 @@ I18N.zh["orgs/domain/new"] = { // 组织 - 添加域名
         "Domain name has already been added": "域名已添加",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17358,6 +17377,7 @@ I18N.zh["orgs/settings/profile"] = { // 组织设置 - 组织资料
     "regexp": [ // 正则翻译
         [/Your organization ([^ ]+) is being archived./, "您的组织 $1 已归档。"],
         [/Your organization ([^ ]+) has been unarchived./, "您的组织 $1 已解除归档。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17392,6 +17412,7 @@ I18N.zh["orgs/settings/roles"] = { // 组织设置 - 仓库角色
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17539,6 +17560,7 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
     "regexp": [ // 正则翻译
         [/This may change the permission that the organization’s (\d+) members? has on its (\d+) repositories?./, "这可能会更改组织的 $1 个成员对其 $2 个仓库的权限。"], // 组织 基本权限更改
         [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17563,6 +17585,7 @@ I18N.zh["orgs/settings/teams"] = { // 组织设置 - 团队讨论
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17583,6 +17606,7 @@ I18N.zh["orgs/settings/import-export"] = { // 组织设置 - 导入/导出
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17611,6 +17635,7 @@ I18N.zh["orgs/settings/blocked_users"] = { // 组织设置 - 黑名单
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17649,6 +17674,7 @@ I18N.zh["orgs/settings/interaction_limits"] = { // 组织设置 - 互动限制
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17666,6 +17692,7 @@ I18N.zh["orgs/settings/code_review_limits"] = { // 组织设置 - 代码审查�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17688,8 +17715,9 @@ I18N.zh["orgs/settings/moderators"] = { // 组织设置 - 版主
 
     },
     "regexp": [ // 正则翻译
-            [/Successfully added (@[^\n]+) as a moderator/, "已成功将 $1 添加为版主"],
-            [/Successfully removed (@[^\n]+) as a moderator/, "已成功将 $1 的版主身份移除"],
+        [/Successfully added (@[^\n]+) as a moderator/, "已成功将 $1 添加为版主"],
+        [/Successfully removed (@[^\n]+) as a moderator/, "已成功将 $1 的版主身份移除"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17762,6 +17790,7 @@ I18N.zh["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 / 默�
     "regexp": [ // 正则翻译
         [/New repositories created in ([^ ]+) will use main as their default branch./, "在 $1 中创建的新仓库将使用 main 作为其默认分支。"],
         [/Your default branch name will be ([^ ]+)/, "您的默认分支名称将是 $1"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17777,6 +17806,7 @@ I18N.zh["orgs/topics"] = { // 组织设置 - 仓库 /仓库主题
     "regexp": [ // 正则翻译
         [/([^ ]+) repositories you contribute to/, "您贡献的 $1 仓库"],
         [/There are no repositories in ([^ ]+) that you’ve contributed to and that you can set topics on./, "$1  中没有您贡献过的并且可以设置主题的仓库。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17816,6 +17846,7 @@ I18N.zh["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码空间
                 "All codespaces created by your organization’s members on your organization’s repositories are owned by the creating member": "组织的成员在组织仓库上创建的所有代码空间都归创建成员所有",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -17830,6 +17861,7 @@ I18N.zh["orgs/settings/copilot"] = {  // 组织设置 - GitHub Copilot
             "Enable GitHub Copilot": "启用 GitHub Copilot",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18041,6 +18073,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the ([^ ]+) organization, can be used./, "可以使用符合指定条件的操作或可复用的工作流程，以及在 $1 组织内的仓库中定义的操作或可复用的工作流程。"], // 操作页面
         [/(\d+) active jobs?/ ,"$1 个活跃的工作"], // settings/actions/runners
         [/(\d+) caches?/, "$1 项缓存"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18067,6 +18100,7 @@ I18N.zh["orgs/settings/discussions"] = { // 组织设置 - 讨论
                 "View organization discussions": "查看组织讨论",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18091,6 +18125,7 @@ I18N.zh["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
                 "New template": "新建模板",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18121,6 +18156,7 @@ I18N.zh["orgs/settings/security"] = { // 组织设置 - 身份验证安全
     },
     "regexp": [ // 正则翻译
         [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18293,6 +18329,7 @@ I18N.zh["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
         [/This will disable push protection on (\d+) repositori(y|es) where it is enabled./, "这将在已启用推送保护的 $1 个仓库中禁用推送保护。"],
         [/(\d+) rules? enabled/, "$1 条规则启用"],
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18390,6 +18427,7 @@ I18N.zh["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot 规�
     "regexp": [ // 正则翻译
         [/Managed by ([^ ]+)/, "由 $1 管理"],
         [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["repository/settings/dependabot_rules"] = I18N.zh["orgs/settings/dependabot_rules"];
@@ -18406,6 +18444,7 @@ I18N.zh["orgs/settings/domains"] = { // 组织设置 - 经验证和批准的域�
             "Learn more about verifying or approving a domain for your enterprise.": "了解更多有关验证或批准企业域名的信息。",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18559,6 +18598,7 @@ I18N.zh["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/settings/variables"] = I18N.zh["orgs/settings/secrets"];
@@ -18615,6 +18655,7 @@ I18N.zh["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18725,6 +18766,7 @@ I18N.zh["orgs/settings/personal-access-token"] = { // 组织设置 - 个人访�
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18747,6 +18789,7 @@ I18N.zh["orgs/settings/reminders"] = { // 组织设置 - 定时提醒
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18770,6 +18813,7 @@ I18N.zh["orgs/settings/sponsors-log"] = { // 组织设置 - 赞助日志
     },
     "regexp": [ // 正则翻译
         [/This is where you can review activity from ([^ ]+)'s sponsorships./,  "在这里您可以查看 $1 赞助的活动。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18816,6 +18860,7 @@ I18N.zh["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
     },
     "regexp": [ // 正则翻译
         [/Found (\d+) events?/, "找到 $1 个事件"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 I18N.zh["orgs/audit-log/event_settings"] = I18N.zh["orgs/settings/audit-log"];
@@ -18832,6 +18877,7 @@ I18N.zh["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓
     },
     "regexp": [ // 正则翻译
         [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18846,6 +18892,7 @@ I18N.zh["orgs/settings/applications"] = { // 组织设置 - OAuth 应用
             "Register an application": "注册应用",
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18868,6 +18915,7 @@ I18N.zh["orgs/settings/apps"] = { // 组织设置 - GitHub 应用
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -18883,6 +18931,7 @@ I18N.zh["orgs/settings/publisher"] = { // 组织设置 - GitHub 发布者验证
 
     },
     "regexp": [ // 正则翻译
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
 
@@ -19895,5 +19944,6 @@ I18N.zh["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 
     },
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
+        ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
