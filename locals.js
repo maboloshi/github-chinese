@@ -7421,6 +7421,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
                 "to see everything that’s not assigned.": "查看所有未分配的内容。",
                 "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
+                "Add comments to specific lines under": "为以下特定行添加注释于",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
