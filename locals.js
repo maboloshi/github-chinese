@@ -1808,6 +1808,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Others will now see 'Activity overview' when they view your profile.": "其他人在查看您的资料时，现在会看到 “活动概况”。",
 
             "Contribution activity": "贡献活动",
+                "Year:": "年份：", // 小屏模式
 
             "Search by name": "搜索组织名",
             "Contributed to": "贡献给了",
@@ -1959,6 +1960,8 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
             "This organization has no public repositories.": "该组织没有公共仓库。", //组织仓库
 
+            "No repositories matched your search.": "没有与您的搜索匹配的仓库。", // 无匹配仓库
+
             // 项目 状态词
             "Updated": "更新于",
             "Forked from": "复刻自",
@@ -2046,6 +2049,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
     },
     "regexp": [ // 正则翻译
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
@@ -5713,6 +5717,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "— with": "— 通过",
                 "Update comment": "更新评论",
                 "Hide": "隐藏",
+                    "via email": "通过邮件",
 
                 "created": "创建",
                 "edited": "编辑",
@@ -6940,6 +6945,20 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "will be able to comment on this pull request once more.": "将能够再次对这个拉取请求发表评论。",
                     "You can always lock this pull request again in the future.": "您今后仍可以随时再次锁定此拉取请求。",
                     "You can always lock this issue again in the future.": "您今后仍可以随时再次锁定此议题。",
+                
+                // 隐藏评论对话框
+                "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
+                "Learn more about hiding comments": "学习如何隐藏评论",
+                "comment": "评论",
+                "Unhide": "取消隐藏",
+                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Choose a reason": "选择原因",
+                    "Abuse": "滥用",
+                    "Spam": "垃圾信息",
+                    "Off Topic": "离题",
+                    "Outdated": "过时",
+                    "Duplicate": "重复",
+                    "Resolved": "已解决",
 
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "GitHub Community Guidelines": "GitHub 社区准则",
@@ -6958,6 +6977,13 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
                 ". Already have an account?": "。已经有账户？",
                 "Sign in to comment": "登录后发表评论",
+
+            // 专业提示
+                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
+                "Updated in the last three days:": "显示最近3天更新：",
+                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
+                "Adding": "添加",
+                "will show everything without a label.": "将显示所有无标签内容。",
 
     },
     "regexp": [ // 正则翻译
@@ -7405,6 +7431,11 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "with": "标签的，请使用",
                 "Follow long discussions with": "要跟随长讨论，请使用",
                 "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
+                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
+                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
+                "to see everything that’s not assigned.": "查看所有未分配的内容。",
+                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
+                "Add comments to specific lines under": "为以下特定行添加注释于",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -7423,8 +7454,10 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
         [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
-        [/First time contributing to ([^ ]+)?/, "首次为 $1 做贡献？"],
+        [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
+        [/Ears burning\? Get\@([^ ]+) mentions with/, "烧脑吗？使用 @$1 提及"], // 专业提示
+        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "通知某人在议题上使用提及，例如：@$1"],
     ],
 };
 
@@ -8020,7 +8053,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
-
+            
     },
     "regexp": [ // 正则翻译
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
@@ -8997,6 +9030,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
                 "Learn more about hiding a comment": "学习如何隐藏评论",
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Unhide": "取消隐藏",
                 "Choose a reason": "选择原因",
                     "Abuse": "滥用",
                     "Spam": "垃圾信息",
@@ -16087,6 +16121,8 @@ I18N.zh["collections"] = { // 集合页面
 
 I18N.zh["events"] = { // 活动页面
     "static": { // 静态翻译
+        "Signed in as": "登录身份为",
+        "Help": "帮助",
         "Explore": "探索",
         "Topics": "主题",
         "Trending": "热门",
@@ -16991,6 +17027,7 @@ I18N.zh["orgs"] = { // 组织页面
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
         [/\((\d+) issues? need help\)/, "($1 个议题需要帮助)"],
+        [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
     ],
     "selector": [ // 元素筛选器规则
         ["#type-options > summary > span:nth-child(1)", "类型"], // 组织主页 --> 仓库标签页-->类型筛选器 Type
