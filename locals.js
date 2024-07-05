@@ -6950,6 +6950,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
                 "Learn more about hiding comments": "学习如何隐藏评论",
                 "comment": "评论",
+                "Unhide": "取消隐藏",
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
                 "Choose a reason": "选择原因",
                     "Abuse": "滥用",
