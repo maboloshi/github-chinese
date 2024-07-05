@@ -9028,6 +9028,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                 "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
                 "Learn more about hiding a comment": "学习如何隐藏评论",
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Unhide": "取消隐藏",
                 "Choose a reason": "选择原因",
                     "Abuse": "滥用",
                     "Spam": "垃圾信息",
