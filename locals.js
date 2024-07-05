@@ -8038,10 +8038,6 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
-
-        "ProTip!": "专业提示！",
-            "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
-
     },
     "regexp": [ // 正则翻译
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
@@ -16108,9 +16104,6 @@ I18N.zh["collections"] = { // 集合页面
 
 I18N.zh["events"] = { // 活动页面
     "static": { // 静态翻译
-        "Pull": "拉取", // 源码拆成3份只能这样写
-        "request": "请求",
-        "s": " ",
         "Signed in as": "登录身份为",
         "Help": "帮助",
         "Explore": "探索",
