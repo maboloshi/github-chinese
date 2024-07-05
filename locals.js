@@ -8050,8 +8050,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
+            
     },
     "regexp": [ // 正则翻译
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
