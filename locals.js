@@ -6727,6 +6727,7 @@ I18N.zh["repository/milestones"] = { // 仓库 - 里程碑页面
 I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
         ...I18N.zh["issues_pulls_public"]["static"],
+
         // pull 与 request 公共词条
             "Filters": "筛选",
                 // 筛选下拉菜单
