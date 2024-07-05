@@ -186,8 +186,9 @@ I18N.conf = {
      * 追溯 视图 代码 react-code-text
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
      * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
+     * 星标选项卡仓库列表 用户名/仓库名 d-inline-block mb-1
      */
-    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi|d-inline-block mb-1)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -5853,7 +5854,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Build Errored": "构建错误",
             "Build Canceled": "构建取消",
             "Waiting for build": "等待构建",
-        
+
         // 议题、拉取请求浮动信息
             "You opened this issue": "您打开了这个议题",
             "You opened this pull request": "您打开了这个拉取请求",
@@ -5957,7 +5958,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "License": "许可证",
 
             // 市场应用列表
-            "Grant your Marketplace apps access to this repository": "授予市场应用程序访问该仓库的权限",
+            "Grant your Marketplace apps access to this repository": "授予市场应用访问该仓库的权限",
             "You are": "您",
             "subscribed to": "订阅了",
             "Marketplace app": "个市场应用",
@@ -7409,7 +7410,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
                 "You commented on this pull request": "您对此拉取请求发表了评论",
                 "You opened this pull request": "您打开了此拉取请求",
-            
+
                 "Suggested change": "建议更改",
 
     },
@@ -8020,6 +8021,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
 
+        "ProTip!": "专业提示！",
+            "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
+
     },
     "regexp": [ // 正则翻译
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
@@ -8299,7 +8303,7 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
         // /<user-name>/<repo-name>/compare/<tag>...<branch>
             "Commit comments": "提交评论",
-        
+
         "Showing": "显示",
         "with": "包含",
 
@@ -8991,7 +8995,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "This comment was marked as off-topic.": "这条评论被标记为离题。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
- 
+
             // 隐藏评论对话框
                 "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
                 "Learn more about hiding a comment": "学习如何隐藏评论",
@@ -13565,7 +13569,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
 
             "Visibility": "可见性",
                 "GitHub Enterprise": "GitHub 企业版",
-                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版帐户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
+                "With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企业版账户，您可以通过私下发布来限制对 GitHub Pages 站点的访问。您可以使用私下发布的站点与企业成员共享您的内部文档或知识库。",
                 "Try GitHub Enterprise risk-free for 30 days": "免费无风险试用 GitHub 企业版 30 天",
                 "Learn more about the visibility of your GitHub Pages site.": "了解更多关于 GitHub Pages 站点可见性的信息。",
 
@@ -14297,15 +14301,47 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
             "Incorrect username or password.": "用户名或密码不正确。",
             "Recovery code authentication failed.": "恢复码身份验证失败。",
 
-        // 设备激活 https://github.com/login/device
+        // 设备授权激活 https://github.com/login/device
             "Device Activation": "设备激活",
             "Enter the code displayed on your device": "输入您的设备上显示的代码",
             "Continue": "继续",
             "GitHub staff will never ask you to enter your code on this page.": "GitHub 工作人员绝不会要求您在此页面上输入您的代码。",
 
-        // https://github.com/login/device/failure?reason=not_found
+        // 设备授权第2页面 https://github.com/login/device/confirmation
+            // [/Authorize/, "授权"],
+            "This authorization was requested from": "此授权请求来自",
+            "Make sure you trust this device as it will get access to your account.": "请确保您信任该设备，因为它可以访问您的账户。",
+            "wants to access your": "希望访问您的",
+            "account": "账户",
+            "Organization access": "组织访问",
+            "Requested from": "请求自",
+
+            "Owned & operated by GitHub": "由 GitHub 拥有和运营",
+            "Created": "创建于",
+            "More than 1K": "超过1K",
+            "GitHub users": "GitHub 用户",
+            "Learn more about OAuth": "了解更多有关 OAuth 的信息",
+
+        // 设备授权成功 https://github.com/login/device/success
+            "Congratulations, you're all set!": "恭喜，一切就绪！",
+            "Your device is now connected.": "您的设备现已连接。",
+
+        // 设备授权失败 https://github.com/login/device/failure?reason=not_found
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
+
+        // 设备验证 https://github.com/sessions/verified-device
+            "Device verification": "设备验证",
+            "Email": "电子邮件",
+            "Device Verification Code": "设备验证码",
+            "Having trouble verifying via email?": "通过电子邮件验证时遇到问题？",
+                "Re-send the authentication code": "重新发送验证码",
+                "Try GitHub Mobile for simplified device verification": "尝试 GitHub Mobile 的简化设备验证",
+            "If you'd like to require verification on every sign in, consider enabling": "如果您想在每次登录时都要求进行验证，请考虑在您的账户上启用",
+                "two-factor authentication": "双因素身份验证",
+                "on your account.": "。",
+            // 黄色横幅
+            "Incorrect verification code provided.": "提供的验证码错误。",
 
         // 双因素身份验证登录 https://github.com/sessions/two-factor/app
             // "Learn more": "了解更多",
@@ -14658,6 +14694,10 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         [/(\d+) devices?/, "$1 设备"],
         [/You will receive one-time codes at this phone number:/, "您将通过以下电话号码收到一次性验证码："], // 已设置短信/文字信息
         [/Continue as (.*)/, "以 $1 身份继续使用"],
+        [/Authorize/, "授权"],
+
+        // 设备验证 https://github.com/sessions/verified-device
+        [/We just sent your authentication code via email to (.*)\. The code will expire at (.*)\./, "我们刚刚通过电子邮件将您的验证码发送给 $1。验证码将于 $2 过期。"],
     ],
 };
 I18N.zh.login = I18N.zh["session-authentication"];
@@ -14769,7 +14809,7 @@ I18N.zh["notifications"] = { // 通知页面
         "Update watching settings": "更新关注设置",
         "Get started": "开始",
             "Clean up your inbox": "清理收件箱",
-            "Marking your notifications as \"done\" helps to create a more focused inbox. Don't worry - if there is new activity, you'll still be notified.": "将您的通知标记为“已完成”有助于创建一个更加集中的收件箱。不用担心 - 如果有新的活动，您仍然会收到通知。",
+            "Marking your notifications as \"done\" helps to create a more focused inbox. Don't worry - if there is new activity, you'll still be notified.": "将您的通知标记为 “已完成” 有助于创建一个更加集中的收件箱。不用担心 - 如果有新的活动，您仍然会收到通知。",
             "Mark all read notifications as done": "将所有已读通知标记为已完成",
             "This process could take a few moments depending on the quantity.": "这个过程可能会根据数量的多少而耗费一些时间。",
 
@@ -14804,9 +14844,9 @@ I18N.zh["notifications"] = { // 通知页面
         "✋ Mentioned": "✋ 提及",
         "🙌 Team mentioned": "🙌 提到的团队",
         "👀 Review requested": "👀 审查请求",
-        "Add new filter": "添加过滤器",
+        "Add new filter": "添加新筛选器",
         "Name": "名称",
-        "Filter by…": "过滤…", // Android UA 下才有
+        "Filter by…": "筛选…", // Android UA 下才有
         "New filter": "新建", // Android UA 下才有
         "Filter inbox by…": "筛选收件箱…",
         "Create new filter": "创建新规则",
@@ -15857,6 +15897,7 @@ I18N.zh["explore"] = { // 探索页面
 
             // 右侧信息栏
             "Trending repositories": "热门仓库",
+                "today": "今日",
             "See more trending repositories": "查看更多热门仓库",
             "Trending developers": "热门开发者",
             "See more trending developers": "查看更多热门开发者",
@@ -16822,11 +16863,11 @@ I18N.zh["orgs"] = { // 组织页面
                     "sponsorable": "可赞助",
                     "mirror": "镜像",
                     "template": "模板",
-                // "repositories matching": "仓库中匹配了",
+                "repositories matching": "仓库中匹配了",
                 // "result for repositories matching": "个结果在仓库中匹配了",
                 // "results for repositories matching": "个结果在仓库中匹配了",
                 // "repositories sorted by": "仓库，排序按",
-                // "written in": "，使用语言",
+                "written in": "，使用语言",
                 // "results for repositories written in": "个结果在仓库中使用语言",
                 // "star matching": "个星标匹配", //?tab=stars
                 // "stars matching": "个星标匹配", //?tab=stars
@@ -17447,7 +17488,8 @@ I18N.zh["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
                     "Issue deletion": "议题删除",
                         "Allow repository administrators to delete issues for this organization": "允许仓库管理员删除此组织的议题",
                             "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果启用，对仓库有管理权限的成员将能够删除议题。如果禁用，只有组织所有者可以删除议题。",
-                            "Learn more about allowing people to delete issues in your organisation": "了解更多关于允许成员删除组织内议题的信息",
+                            "Learn more about allowing people to delete issues in your organization": "了解更多关于允许成员删除组织内议题的信息",
+
                         // 顶部提醒
                             "Members can now delete issues.": "成员现在可以删除议题。",
                             "Members can no longer delete issues.": "成员不能再删除议题。",
@@ -19305,15 +19347,16 @@ I18N.zh["github-copilot/signup"] = { // GitHub Copilot 个人版获取页面
 
 I18N.zh["orgs/enterprise_plan"] = { // 企业版订阅页面
     "static": {
-        "Pick your trial plan": "选择您的试用计划",
-        "Recommended": "推荐",
-            "Enterprise Cloud": "企业云",
-                "Build and deploy to GitHub-hosted cloud environments, directly from your repositories.": "直接从您的仓库构建并部署到 GitHub 托管的云环境。",
-            "Enterprise Server": "企业服务器",
-                "Manage and deploy GitHub Enterprise on your own servers, including AWS, Azure, or GC": "在您自己的服务器（包括 AWS、Azure 或 GC）上管理和部署 GitHub 企业版",
-        "Why teams": "为何团队",
-        "it: Get started in minutes, and leave the infrastructure to us.": "它：只需几分钟即可开始使用，基础设施则交给我们来处理。",
-        "it: Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
+        // https://github.com/organizations/O0maboloshi0O/repositories/new
+            "Pick your trial plan": "选择您的试用计划",
+            "Recommended": "推荐",
+                "Enterprise Cloud": "企业云",
+                    "Build and deploy to GitHub-hosted cloud environments, directly from your repositories.": "直接从您的仓库构建并部署到 GitHub 托管的云环境。",
+                "Enterprise Server": "企业服务器",
+                    "Manage and deploy GitHub Enterprise on your own servers, including AWS, Azure, or GC": "在您自己的服务器（包括 AWS、Azure 或 GC）上管理和部署 GitHub 企业版",
+            "Why teams": "为何团队",
+            "it: Get started in minutes, and leave the infrastructure to us.": "它：只需几分钟即可开始使用，基础设施则交给我们来处理。",
+            "it: Control where your code and data live in a private cloud.": "它：控制您的代码和数据在私有云中的存放位置。",
     },
     "regexp": [ // 正则翻译
     ],
@@ -19528,17 +19571,17 @@ I18N.zh["features"] = {
             "Protected branches": "保护分支",
                 "Enforce restrictions on how code branches are merged, including requiring reviews, or allowing only specific contributors to work on a particular branch.": "强制限制代码分支的合并方式，包括要求审查，或者只允许特定贡献者在某个特定分支上工作。",
             "Team reviewers": "团队审查人员",
-                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在GitHub上请求一个团队审查你的拉取请求。团队成员将收到通知，表明你已经要求他们进行审查。",
+                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在 GitHub 上请求一个团队审查您的拉取请求。团队成员将收到通知，表明您已经要求他们进行审查。",
             "Multiple assignees": "多人分配",
-                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达10人处理特定问题或拉取请求，让你更容易追踪谁在处理什么。",
+                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达 10 人处理特定问题或拉取请求，让您更容易追踪谁在处理什么。",
             "Multiple reviewers": "多人审查",
-                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知你已请求他们进行审查。",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知您已请求他们进行审查。",
             "Multi-line comments": "多行评论",
                 "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次引用或评论多行代码，来澄清代码审查。",
             "Public repositories": "公共仓库",
-                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "与任何GitHub成员合作在你控制的公共仓库中的代码。进行更改，打开一个拉取请求，创建一个问题等等。",
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "与任何 GitHub 成员合作在您控制的公共仓库中的代码。进行更改，打开一个拉取请求，创建一个问题等等。",
             "Dark mode": "深色模式",
-                "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择你使用GitHub的方式。切换到深色主题或默认使用你的系统偏好设置。",
+                "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择您使用 GitHub 的方式。切换到深色主题或默认使用您的系统偏好设置。",
     },
     "regexp": [
     ],
@@ -19614,7 +19657,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                 "Code with Copilot": "使用 Copilot 编程",
                     "Develop with AI-powered code suggestions using GitHub Copilot, Codespaces, and VS Code.": "使用 GitHub Copilot、代码空间和 VS Code，利用人工智能驱动的代码建议进行开发。",
             "Automate workflows with GitHub Actions": "使用 GitHub 操作自动执行工作流程",
-                "Hello GitHub Actions": "你好 GitHub 操作",
+                "Hello GitHub Actions": "您好 GitHub 操作",
                     "Create a GitHub Action and use it in a workflow.": "创建 GitHub 操作并在工作流程中使用。",
                 "Test with Actions": "使用操作测试",
                     "Create workflows that enable you to use Continuous Integration (CI) for your projects.": "创建工作流程，使您能够在项目中使用持续集成 (CI)。",
@@ -19668,7 +19711,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                     "Does the learning experience benefit from step-by-step, in-repository learning?": "学习体验是否得益于循序渐进的库内学习？",
             "Outline your steps": "概述步骤",
                 "Does this workflow match what the learner will do in the “real world”?": "这一工作流程是否与学员在“真实世界”中要做的事情相匹配？",
-                    "If you were teaching your friend, how would you interact with them in the repository?": "如果您在教你的朋友，您会如何在仓库中与他们互动？",
+                    "If you were teaching your friend, how would you interact with them in the repository?": "如果您在教您的朋友，您会如何在仓库中与他们互动？",
                     "Does each step build towards the skills you’ve identified?": "每一步是否都是为了培养您所确定的技能？",
                 "Can you teach the skill in three to five small steps?": "您能分三到五个小步骤教授技能吗？",
                     "Most learners tend to drop off after 30-45 minutes.": "大多数学员往往在 30-45 分钟后就会放弃学习。",
@@ -19746,7 +19789,7 @@ I18N.zh["skills"] = { // https://skills.github.com/
                ". Start by reviewing which event corresponds with each of your steps.": "触发的操作工作流文件。首先查看每个步骤对应的事件。",
             "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "编写操作工作流程文件：确定 GitHub 操作在每个步骤中需要做的事情",
                 "You can use": "您可以在操作工作流中使用",
-                "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "来执行你能想到的几乎所有 GitHub 交互操作。写下完成每个步骤需要做的所有事情。存储链接，以便在学习课程时参考。",
+                "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "来执行您能想到的几乎所有 GitHub 交互操作。写下完成每个步骤需要做的所有事情。存储链接，以便在学习课程时参考。",
             "Writing your Actions workflow files: Sections of the workflow file": "编写操作工作流程文件： 工作流程文件的各部分",
                 "Take a look at": "查看",
                 "for example workflow files.": "中的工作流程示例文件。",
