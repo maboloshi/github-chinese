@@ -7452,6 +7452,9 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
 
     },
     "regexp": [
+        ...I18N.zh["repository-public"]["regexp"],
+        ...I18N.zh["issues_pulls_public"]["regexp"],
+
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/#(\d+) opened/, "#$1 打开于"],
