@@ -11,7 +11,7 @@
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/buiawpkgew1/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
