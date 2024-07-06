@@ -1742,6 +1742,9 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
                 "Report abuse": "举报滥用",
                     "Contact GitHub support about this user’s behavior. Learn more about": "就该用户的行为联系 GitHub 支持部门。了解更多关于",
                     "reporting abuse": "举报滥用",
+        
+        // 仓库
+            "Forked from": "复刻自",
 
         // 标签栏
             "Sponsoring": "赞助",
@@ -5678,6 +5681,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
             "Jump to bottom": "跳到底部", //小屏模式
 
+            "people": "人", // 提交
             "committed": "提交于", // 提交浮窗
 
             // 标签栏
@@ -8480,6 +8484,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
                 "Unlocking the conversation means:": "解锁对话意味着：",
                 "will be able to comment on this commit once more.": "将能够再次对此提交发表评论。",
                 "You can always lock this commit again in the future.": "您可以随时再次锁定此提交。",
+            
+                "Reply…": "回复…",
 
             "Subscribe": "订阅",
             "Unsubscribe": "取消订阅",
