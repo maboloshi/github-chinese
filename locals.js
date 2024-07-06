@@ -8029,7 +8029,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "There are no new changes to show.": "没有任何新的变化。",
 
             // 代码评论
-                "Comment on lines": "发表评论从",
+                "Comment on lines": "评论行",
 
             // 建议更改
                 "Suggested change": "建议更改",
