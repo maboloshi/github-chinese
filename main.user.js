@@ -255,40 +255,13 @@
      * @param {Element} el - 需要翻译的元素。
      */
     function transTimeElement(el) {
-        // 确保传入的元素是有效的
-        if (!el || !(el instanceof Element)) {
-            console.error('Invalid element provided to transTimeElement.');
-            return;
-        }
-
-        // 获取需要翻译的文本内容，确保内容有效
         let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        if (!key) {
-            console.log('No text content to translate in the element.');
-            return;
-        }
-
-        // 安全性优化：对key进行简单的验证或清理，避免潜在的ReDoS风险
-        // 这里可以根据实际情况添加更具体的验证或清理逻辑
-        key = key.trim();
-
-        // 异常处理：确保I18N对象和所需属性存在
-        if (!I18N || !I18N[lang] || !I18N[lang]['public'] || !I18N[lang]['public']['time-regexp']) {
-            console.error('Required translation rules are missing.');
-            return;
-        }
-
-        let translationRules = I18N[lang]['public']['time-regexp'];
-        
-        // 使用描述性更强的变量名
-        for (let [pattern, replacement] of translationRules) {
-            // 使用precompiled regex以提高性能
-            let regex = new RegExp(pattern);
-            let str = key.replace(regex, replacement);
-            // 如果文本被替换，更新key并更新元素的textContent
+        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
+        for (let [a, b] of res) {
+            let str = key.replace(a, b);
             if (str !== key) {
-                key = str;
-                el.textContent = key;
+                el.textContent = str;
+                break;
             }
         }
     }
