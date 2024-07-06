@@ -5746,9 +5746,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
-                "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
-                "This comment was marked as off-topic.": "该评论已被标记为离题。",
                 "This comment has been hidden.": "该评论已被隐藏。",
+                "This comment was marked as abuse.": "该评论已被标记为滥用。",
+                "This comment was marked as spam.": "该评论已被标记为垃圾信息。",
+                "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment was marked as outdated.": "该评论已被标记为已过时。",
+                "This comment was marked as duplicate.": "该评论已被标记为重复。",
+                "This comment was marked as resolved.": "该评论已被标记为已解决。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -6987,6 +6991,10 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Outdated": "过时",
                     "Duplicate": "重复",
                     "Resolved": "已解决",
+                
+                "This comment has been minimized.": "此评论已最小化。",
+                    "Show comment": "显示评论",
+                    "Hide comment": "隐藏评论",
 
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "GitHub Community Guidelines": "GitHub 社区准则",
@@ -7169,10 +7177,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "added a commit that referenced this issue": "添加了一个引用此问题的提交",
             "referenced this issue": "提及这个议题",
             "closed this as completed": "已完成，关闭",
-
-            "This comment has been minimized.": "此评论已最小化。",
-            "Show comment": "显示评论",
-            "Hide comment": "隐藏评论",
 
             // 右侧栏 补充
                 // "Development": "进展",
@@ -7392,7 +7396,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
-        [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
+        [/This issue will close when (#\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
 
         // 标签页面
@@ -8023,6 +8027,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
+
+            // 代码评论
+                "Comment on lines": "评论行",
 
             // 建议更改
                 "Suggested change": "建议更改",
