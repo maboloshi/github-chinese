@@ -9,7 +9,6 @@
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
-// @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
 // @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.9.0
@@ -18,7 +17,6 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
-// @grant        GM_unregisterMenuCommand
 // @grant        GM_unregisterMenuCommand
 // @grant        GM_notification
 // @connect      www.iflyrec.com
@@ -153,7 +151,6 @@
                 }
                 if (node.hasAttribute('data-disable-with')) { // 按钮等待提示
                     transElement(node, 'data-disable-with', true);
-                    transElement(node, 'data-disable-with', true);
                 }
             } else if (node.tagName === 'OPTGROUP') { // 翻译 <optgroup> 的 label 属性
                 transElement(node, 'label');
@@ -191,12 +188,6 @@
             'skills.github.com': 'skills'
         };
         const site = siteMapping[location.hostname] || 'github'; // 站点
-        const siteMapping = {
-            'gist.github.com': 'gist',
-            'www.githubstatus.com': 'status',
-            'skills.github.com': 'skills'
-        };
-        const site = siteMapping[location.hostname] || 'github'; // 站点
         const pathname = location.pathname; // 当前路径
 
         // 是否登录
@@ -228,10 +219,6 @@
             page = 'status';
         } else if (site === 'skills') {  // GitHub Skills 页面
             page = 'skills';
-        } else if (site === 'status') {  // GitHub Status 页面
-            page = 'status';
-        } else if (site === 'skills') {  // GitHub Skills 页面
-            page = 'skills';
         } else if (pathname === '/' && site === 'github') { // github.com 首页
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) { // 仓库页
@@ -240,10 +227,8 @@
         } else if (isOrganization) { // 组织页
             t = pathname.match(I18N.conf.rePagePathOrg);
             page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
-            page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
             t = pathname.match(I18N.conf.rePagePath);
-            page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
             page = t ? (t[1] || t.slice(-1)[0]) : false; // 取页面 key
         }
 

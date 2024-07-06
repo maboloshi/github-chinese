@@ -1,17 +1,17 @@
 // ==UserScript==
-// @name         GitHub 中文插件（测试版）
+// @name         GitHub 中文化插件（测试版）
 // @namespace    https://github.com/buiawpkgew1/github-chinese
-// @description  中文化 GitHub 界面的部分菜单及内容。
+// @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, buiawpkgew1, 菾凴
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.8-2024-07-01
+// @version      1.9.2-beta.9-2024-06-09
 // @author       菾凴
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.2
+// @require      https://raw.githubusercontent.com/buiawpkgew1/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -112,15 +112,14 @@
     /**
      * traverseNode 函数：遍历指定的节点，并对节点进行翻译。
      * @param {Node} node - 需要遍历的节点。
-     * @param {Object} config - 配置对象，包含忽略的ID、标签名、类名正则和itemprop正则。
      */
     function traverseNode(node) {
         // 跳过忽略
         const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
         const skipNode = node => ignoreId.includes(node.id) ||
-                                ignoreTag.includes(node.tagName) ||
-                                reIgnoreClass.test(node.className) ||
-                                (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
+                                 ignoreTag.includes(node.tagName) ||
+                                 reIgnoreClass.test(node.className) ||
+                                 (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
 
         if (skipNode(node)) return;
 
@@ -129,8 +128,9 @@
             // 处理不同标签的元素属性翻译
             switch (node.tagName) {
                 case "RELATIVE-TIME": // 翻译时间元素
-                    if (node.shadowRoot) transTimeElement(node.shadowRoot); // 增加了 shadowRoot 存在性检查
+                    transTimeElement(node.shadowRoot);
                     return;
+
                 case "INPUT":
                 case "TEXTAREA": // 输入框 按钮 文本域
                     if (['button', 'submit', 'reset'].includes(node.type)) {
@@ -159,20 +159,20 @@
                     transElement(node, 'title'); // title 属性
                     if (node.hasAttribute('data-hovercard-type')) return;
                     break;
+
                 default:
                     // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
-                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel');
+                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 带提示的元素，类似 tooltip 效果的
             }
 
-            // 使用更现代的 for...of 循环遍历子节点
-            for (const childNode of node.childNodes) {
-                traverseNode(childNode);
+            const childNodes = node.childNodes;
+            for (let i = 0; i < childNodes.length; i++) { // 遍历子节点
+                traverseNode(childNodes[i]);
             }
 
         } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点翻译
             transElement(node, 'data');
         }
-        // 假设 transTimeElement 和 transElement 函数已经定义。
     }
 
 
@@ -196,48 +196,39 @@
         // 获取 analytics-location
         const analyticsLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
 
-        // 辅助函数：简化布尔检查
-        const checkAndReturn = (condition, valueIfTrue) => condition ? valueIfTrue : false;
+        // 判断页面类型
+        const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
+        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
+        const isProfile = document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>';
+        const isSession = document.body.classList.contains("session-authentication");
 
-        // 页面类型判断逻辑
-        const isOrganization = checkAndReturn(/\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname), 'orgs');
-        const isRepository = checkAndReturn(/\/<user-name>\/<repo-name>/.test(analyticsLocation), 'repository');
-        const isProfile = checkAndReturn(document.body.classList.contains("page-profile") || analyticsLocation === '/<user-name>', 'page-profile');
-        const isSession = checkAndReturn(document.body.classList.contains("session-authentication"), 'session-authentication');
+        const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
+        let t, page = false;
 
-        // 主逻辑
-        let page = false;
         if (isSession) {
-            page = isSession;
+            page = 'session-authentication';
         } else if (isProfile) {
-            const tabMatch = url.search.match(/tab=([^&]+)/);
-            page = tabMatch ? `page-profile/${tabMatch[1]}` : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
-        } else if (site !== 'github') {
+            t = url.search.match(/tab=([^&]+)/);
+            page = t ? 'page-profile/' + t[1] : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
+        } else if (site === 'gist' || site === 'status' || site === 'skills') {
             page = site;
-        } else if (pathname === '/') {
+        } else if (pathname === '/' && site === 'github') {
             page = isLogin ? 'page-dashboard' : 'homepage';
-        } else if (isRepository || isOrganization) {
-            // 使用已定义的正则表达式进行匹配
-            const { rePagePathRepo, rePagePathOrg } = I18N.conf;
-            let match;
-            if (isRepository) {
-                match = pathname.match(rePagePathRepo);
-                page = match ? `repository/${match[1]}` : 'repository';
-            } else if (isOrganization) {
-                match = pathname.match(rePagePathOrg);
-                page = match ? `orgs/${match[1] || match[match.length - 1]}` : 'orgs';
-            }
+        } else if (isRepository) {
+            t = pathname.match(rePagePathRepo);
+            page = t ? 'repository/' + t[1] : 'repository';
+        } else if (isOrganization) {
+            t = pathname.match(rePagePathOrg);
+            page = t ? 'orgs/' + (t[1] || t.slice(-1)[0]) : 'orgs';
         } else {
-            match = pathname.match(I18N.conf.rePagePath);
-            page = match ? (match[1] || match[match.length - 1]) : false;
+            t = pathname.match(rePagePath);
+            page = t ? (t[1] || t.slice(-1)[0]) : false;
         }
 
-        // 检查并报告缺失的翻译
         if (!page || !I18N[lang][page]) {
-            console.error(`页面类型“${page}”的翻译未定义，请检查词库。`);
-            return false;
+            console.log(`请注意对应 page ${page} 词库节点不存在`);
+            page = false;
         }
-
         return page;
     }
 
