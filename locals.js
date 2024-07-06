@@ -1372,6 +1372,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You left a review": "您已评论",
             "Changes requested": "要求更改",
+            "Approved": "已批准",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -5677,6 +5678,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
             "Jump to bottom": "跳到底部", //小屏模式
 
+            "committed": "提交于", // 提交浮窗
+
             // 标签栏
             "Code": "代码",
             "Pull requests": "拉取请求",
@@ -5743,9 +5746,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
-                "This comment was marked as spam.": "该评论已被标记为垃圾邮件。",
-                "This comment was marked as off-topic.": "该评论已被标记为离题。",
                 "This comment has been hidden.": "该评论已被隐藏。",
+                "This comment was marked as abuse.": "该评论已被标记为滥用。",
+                "This comment was marked as spam.": "该评论已被标记为垃圾信息。",
+                "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment was marked as outdated.": "该评论已被标记为已过时。",
+                "This comment was marked as duplicate.": "该评论已被标记为重复。",
+                "This comment was marked as resolved.": "该评论已被标记为已解决。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5883,6 +5890,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
             "Changes requested": "要求更改",
             "You left a review": "您已评论",
+            "Approved": "已批准",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -5901,11 +5909,12 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+        [/Answered (\d+) discussions? in this repository/, "在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
         [/had recent pushes (\d+) seconds? ago/, "分支有了最新的推送，$1 秒之前"],
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/had recent pushes about/, "分支有了最新的推送，大约"],
-        [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
+        [/This user is a member of the ([^ ]+) organization./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
         [/You are the owner of the (.*) repository./, "您是 $1 仓库的所有者。"],
         [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
@@ -6413,7 +6422,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
-            "committed": "提交于", // 提交浮窗
             "failure": "失败",
             "success": "成功",
             "Approved": "已批准",
@@ -6724,6 +6732,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "Everything mentioning you": "任何提及您的",
                 "View advanced search syntax": "查看高级搜索语法",
 
+            "Search all issues": "搜索所有议题",
+
             "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
             "Labels": "标签",
@@ -6801,6 +6811,15 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "Pending": "待定",
             "Draft": "草案",
             "This was referenced": "被引用于",
+
+            // 图标浮窗
+            "Open issue": "议题已打开",
+            "Closed issue": "议题已完成",
+            "Closed as not planned issue": "议题已关闭因未计划",
+            "Open Pull Request": "拉取请求已打开",
+            "Draft Pull Request": "拉取请求草案",
+            "Merged Pull Request": "拉取请求已合并",
+            "Closed Pull Request": "拉取请求已关闭",
 
             // [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
 
@@ -6972,6 +6991,10 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Outdated": "过时",
                     "Duplicate": "重复",
                     "Resolved": "已解决",
+                
+                "This comment has been minimized.": "此评论已最小化。",
+                    "Show comment": "显示评论",
+                    "Hide comment": "隐藏评论",
 
             "Remember, contributions to this repository should follow our": "请记住，对该仓库的贡献应遵循我们的",
             "GitHub Community Guidelines": "GitHub 社区准则",
@@ -7154,10 +7177,6 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "added a commit that referenced this issue": "添加了一个引用此问题的提交",
             "referenced this issue": "提及这个议题",
             "closed this as completed": "已完成，关闭",
-
-            "This comment has been minimized.": "此评论已最小化。",
-            "Show comment": "显示评论",
-            "Hide comment": "隐藏评论",
 
             // 右侧栏 补充
                 // "Development": "进展",
@@ -7377,7 +7396,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
-        [/This issue will close when #(\d+) is merged/, "此议题将在 #$1 合并时关闭"],
+        [/This issue will close when (#\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
 
         // 标签页面
@@ -8009,6 +8028,9 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
 
+            // 代码评论
+                "Comment on lines": "评论行",
+
             // 建议更改
                 "Suggested change": "建议更改",
                 "Sign off and commit suggestion": "签署并提交建议",
@@ -8537,7 +8559,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/(\d+) additions?$/, "$1 处增加"],
         [/(\d+) deletions?$/, "$1 处删除"],
         [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
-        [/This commit closes issue (#\d+)./, "此提交关闭了提议 $1。"], //具体提交页面
+        [/This commit closes issue (#\d+)./, "此提交关闭了议题 $1。"], //具体提交页面
         [/from ([^ ]+) to ([^ ]+)/, "从 $1 到 $2。"], //具体提交页面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
         [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
@@ -8809,6 +8831,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
                     "This will not be worked on": "这将不会被处理",
 
                 "Edit labels": "编辑标签",
+            "Filter": "筛选",
             "Filter:": "筛选:",
                 "Closed": "已关闭",
                 "Answered": "已答复",
@@ -9205,7 +9228,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Fillter: /, "筛选："],
+        [/Fillter:/, "筛选："],
         [/(\d+) categories?/, "$1 个分类"],
         [/Congratulations, you've created the first discussion in ([^ ]+)!/, "恭喜您，您已经在 $1 中创建了第一个讨论!"],
         [/(\d+) answers?/, "$1 位答复者"],
@@ -15120,8 +15143,6 @@ I18N.zh["issues"] = { // 议题页面
             "Pull Requests mentioning you": "提及您的拉取请求", // pulls
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
-
-        "Search all issues": "搜索所有议题",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
