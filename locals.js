@@ -1361,6 +1361,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You left a review": "您已评论",
             "Changes requested": "要求更改",
+            "Approved": "已批准",
         "Create your first project": "创建你的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -5666,6 +5667,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
             "Jump to bottom": "跳到底部", //小屏模式
 
+            "committed": "提交于", // 提交浮窗
+
             // 标签栏
             "Code": "代码",
             "Pull requests": "拉取请求",
@@ -5872,6 +5875,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
             "Changes requested": "要求更改",
             "You left a review": "您已评论",
+            "Approved": "已批准",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -5890,11 +5894,12 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+        [/Answered (\d+) discussions? in this repository/, "在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
         [/had recent pushes (\d+) seconds? ago/, "分支有了最新的推送，$1 秒之前"],
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
         [/had recent pushes less than (\d+) minutes? ago/, "分支有了最新的推送，不到 $1 分钟"],
         [/had recent pushes about/, "分支有了最新的推送，大约"],
-        [/This user is a member of the ([^ ]+)./, "该用户是 $1 组织的成员。"],
+        [/This user is a member of the ([^ ]+) organization./, "该用户是 $1 组织的成员。"],
         [/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
         [/You are the owner of the (.*) repository./, "您是 $1 仓库的所有者。"],
         [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
@@ -6400,7 +6405,6 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 正文
             "commit": "次提交",
             "commits": "次提交",
-            "committed": "提交于", // 提交浮窗
             "failure": "失败",
             "success": "成功",
             "Approved": "已批准",
@@ -9237,7 +9241,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) new comments?/, "$1 条新评论"],
         [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
-        [/Answered (\d+) discussions? in this repository/, "在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
