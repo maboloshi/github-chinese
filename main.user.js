@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         GitHub 中文化插件（测试版）
-// @namespace    https://github.com/maboloshi/github-chinese
-// @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
-// @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog), 菾凴
+// @name         GitHub 中文插件（测试版）
+// @namespace    https://github.com/buiawpkgew1/github-chinese
+// @description  中文化 GitHub 界面的部分菜单及内容。
+// @copyright    2021, buiawpkgew1, 菾凴
 // @icon         https://github.githubassets.com/pinned-octocat.svg
 // @version      1.9.2-beta.8-2024-07-01
 // @author       菾凴
@@ -11,7 +11,7 @@
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.2
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -20,7 +20,7 @@
 // @grant        GM_unregisterMenuCommand
 // @grant        GM_notification
 // @connect      fanyi.iflyrec.com
-// @supportURL   https://github.com/maboloshi/github-chinese/issues
+// @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
 
 (function (window, document, undefined) {

@@ -72,6 +72,13 @@ Via 浏览器（Android）                | 浏览器内自带
 
 ## 📝 更新说明
 
+### 2024-06-14 19:27:20
+
+更新至 1.9.2
+
+1. 适配`www.githubstatus.com`
+2. 适配`skills.github.com`
+
 ### 2024-05-23 16:42:55
 
 更新至 1.9.1
@@ -322,8 +329,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/wuyuncheng-26" title="是小胖呀26">
   <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="是小胖呀26"/>
 </a>
-<a href="https://github.com/TC999" title="TC999">
-  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
+<a href="https://github.com/TC999" title="陈生杂物房">
+  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/>
 </a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
@@ -336,6 +343,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/3DMXM" title="小莫">
   <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
+</a>
+<a href="https://github.com/qznfbnj" title="其智乃反不能及">
+  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/>
 </a>
 <a href="https://github.com/xuexb" title="前端小武">
   <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>

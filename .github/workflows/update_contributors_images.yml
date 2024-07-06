@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate Contributors Images
-        uses: jaywcjlove/github-action-contributors@v1.3.5
+        uses: jaywcjlove/github-action-contributors@v1.3.6
         id: contributors
         with:
           filter-author: (action-assistant\[bot\]|renovate\[bot\]|renovate-bot|@github-actions-bot|dependabot\[bot\]|ImgBotApp|imgbot\[bot\])

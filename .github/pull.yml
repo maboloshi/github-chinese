@@ -1,0 +1,9 @@
+version: "1"
+rules:
+  - base: gh-pages
+    upstream: maboloshi:gh-pages
+    mergeMethod: merge
+    assignees:
+      - buiawpkgew1
+    conflictReviewers:
+      - buiawpkgew1
