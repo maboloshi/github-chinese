@@ -8747,9 +8747,13 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
+        [/(\d+) lines? \((\d+) loc\) ·/, "$1 行（$2 非空行）·"],  // loc = 代码行（line of code）= 行数 - 空行数（lines - blank lines）
         [/(\d+) References?/, "$1 次引用"],
-        [/Blame prior to change ([a-f0-9]{7}), made on/, "追溯更改之前 $1 ，修改于"],
+        [/Blame prior to change ([a-f0-9]{7}), made on ([^ ]+)/, "追溯 $1（$2）之前的更改"],
+
+        // 代码追溯页面
+        [/(\d+) contributors?/, "$1 位贡献者"],
+        [/(\d+) commits?/, "$1 个提交"],
     ],
 };
 I18N.zh["repository/blame"] = I18N.zh["repository/blob"];
