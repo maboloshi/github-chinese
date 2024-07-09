@@ -207,11 +207,11 @@
 
         if (isSession) {
             page = 'session-authentication';
+        } else if (site === 'gist' || site === 'status' || site === 'skills') {
+            page = site;
         } else if (isProfile) {
             t = url.search.match(/tab=([^&]+)/);
             page = t ? 'page-profile/' + t[1] : pathname.includes('/stars') ? 'page-profile/stars' : 'page-profile';
-        } else if (site === 'gist' || site === 'status' || site === 'skills') {
-            page = site;
         } else if (pathname === '/' && site === 'github') {
             page = isLogin ? 'page-dashboard' : 'homepage';
         } else if (isRepository) {
