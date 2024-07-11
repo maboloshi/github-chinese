@@ -5761,13 +5761,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
-                "This comment has been hidden.": "该评论已被隐藏。",
-                "This comment was marked as abuse.": "该评论已被标记为滥用。",
-                "This comment was marked as spam.": "该评论已被标记为垃圾信息。",
-                "This comment was marked as off-topic.": "该评论已被标记为离题。",
-                "This comment was marked as outdated.": "该评论已被标记为已过时。",
-                "This comment was marked as duplicate.": "该评论已被标记为重复。",
-                "This comment was marked as resolved.": "该评论已被标记为已解决。",
+                "This comment has been hidden.": "该评论被隐藏。",
+                "This comment was marked as abuse.": "该评论被标记为滥用。",
+                "This comment was marked as spam.": "该评论被标记为垃圾信息。",
+                "This comment was marked as off-topic.": "该评论被标记为离题。",
+                "This comment was marked as outdated.": "该评论被标记为已过时。",
+                "This comment was marked as duplicate.": "该评论被标记为重复。",
+                "This comment was marked as resolved.": "该评论被标记为已解决。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
