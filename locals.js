@@ -10553,7 +10553,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
     },
     "regexp": [ // 正则翻译
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/You and (\d+) others? reacted/, "您以及另外 $1 人表达了看法"],
+        [/You and (\d+) others? reacted/, "您以及另外 $1 人表达看法"],
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
@@ -10562,7 +10562,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
-        [/(\d+) (people|person) reacted/, "$1 位伙伴表达了看法"],
+        [/(\d+) (people|person) reacted/, "$1 位伙伴表达看法"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
