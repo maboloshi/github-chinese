@@ -5935,15 +5935,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
-        [/ and /, " 和 "],
-        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
-        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
-        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
-        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
-        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
-        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
-        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
-        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -7051,6 +7042,15 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
         [/Edited (\d+) times?/, "编辑 $1 次"],
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
+        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
+        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
+        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
     ]
 };
 
@@ -8595,6 +8595,15 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
+        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
+        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
+        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
     ],
 };
 
@@ -9290,6 +9299,15 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) new comments?/, "$1 条新评论"],
         [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
+        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
+        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
+        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -10552,8 +10570,6 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
     },
     "regexp": [ // 正则翻译
-        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/You and (\d+) others? reacted/, "您以及另外 $1 人表达看法"],
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
@@ -10563,6 +10579,17 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/(\d+) (people|person) reacted/, "$1 位伙伴表达看法"],
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/You and (\d+) others? reacted/, "您以及另外 $1 人表达看法"],
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
+        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
+        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
+        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
