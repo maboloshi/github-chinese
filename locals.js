@@ -5909,7 +5909,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/and/, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -10542,7 +10541,20 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/and/, "和"],
+        [/and ([^ ]+) reacted with thumbs up emoji/, "和 $1 反应为点赞"],
+        [/and ([^ ]+) reacted with laugh emoji/, "和 $1 反应为大笑"],
+        [/and ([^ ]+) reacted with hooray emoji/, "和 $1 反应为欢呼"],
+        [/and ([^ ]+) reacted with heart emoji/, "和 $1 反应为爱心"],
+        [/and ([^ ]+) reacted with rocket emoji/, "和 $1 反应为火箭"],
+        [/and ([^ ]+) reacted with eyes emoji/, "和 $1 反应为眼睛"],
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 反应为点赞"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 反应为大笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 反应为欢呼"],
+        [/([^ ]+) reacted with heart emoji/, "$1 反应为爱心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 反应为火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 反应为眼睛"],
         [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
