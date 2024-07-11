@@ -1474,6 +1474,14 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Dashboards": "仪表板",
         "Go to your issues": "跳转到您的议题",
         "Go to your pull requests": "跳转到您的拉取请求",
+
+        // 发行版反应浮窗
+        "You reacted with thumbs up": "您的反应为点赞",
+        "You reacted with laugh": "您的反应为大笑",
+        "You reacted with hooray": "您的反应为欢呼",
+        "You reacted with heart": "您的反应为爱心",
+        "You reacted with rocket": "您的反应为火箭",
+        "You reacted with eyes": "您的反应为眼睛",
     },
     "regexp": [ // 正则翻译
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
@@ -1500,7 +1508,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
         [/You and/, "您以及另外"],
-        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的反应为点赞"],
         [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
         [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
         [/(\d+) (people|person) reacted with heart/, "$1 个人的反应为爱心"],
