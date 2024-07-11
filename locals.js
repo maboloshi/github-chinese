@@ -7023,6 +7023,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
                 "Adding": "添加",
                 "will show everything without a label.": "将显示所有无标签内容。",
+                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
 
     },
     "regexp": [ // 正则翻译
@@ -7467,7 +7468,6 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
                 "Follow long discussions with": "要跟随长讨论，请使用",
                 "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
                 "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
-                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
                 "to see everything that’s not assigned.": "查看所有未分配的内容。",
                 "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
                 "Add comments to specific lines under": "为以下特定行添加注释于",
