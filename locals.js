@@ -1507,7 +1507,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/You and/, "您以及另外"], // 只能正则，静态反应没有反应
+        [/You and/, "您以及另外"], // 只能正则，静态翻译没有反应
         [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的反应为点赞"],
         [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
         [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
