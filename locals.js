@@ -285,6 +285,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
+        // 底部红条
+        "You can’t perform that action at this time.": "此时无法执行该操作。",
         // 速率限制 - 短时间频繁访问网页，至少包括 https://github.com/issues
         "Whoa there!": "请停一下！",
         "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
@@ -5934,6 +5936,15 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        [/ and /, " 和 "],
+        [/([^ ]+) reacted with thumbs up emoji/, "$1 点赞"],
+        [/([^ ]+) reacted with thumbs down emoji/, "$1 点踩"],
+        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
+        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
+        [/([^ ]+) reacted with confused emoji/, "$1 表示拒绝"],
+        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
+        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
+        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -10542,6 +10553,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
 
     },
     "regexp": [ // 正则翻译
+        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/You and (\d+) others? reacted/, "您以及另外 $1 人表达了看法"],
         ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
@@ -10550,15 +10563,6 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
-        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/You and (\d+) others? reacted/, "您以及另外 $1 人反应"],
-        [/ and /, " 和 "],
-        [/([^ ]+) reacted with thumbs up emoji/, "$1 点了个赞"],
-        [/([^ ]+) reacted with laugh emoji/, "$1 表示微笑"],
-        [/([^ ]+) reacted with hooray emoji/, "$1 欢呼了"],
-        [/([^ ]+) reacted with heart emoji/, "$1 比了个心"],
-        [/([^ ]+) reacted with rocket emoji/, "$1 发送了小火箭"],
-        [/([^ ]+) reacted with eyes emoji/, "$1 表示关注"],
         [/(\d+) (people|person) reacted/, "$1 位伙伴表达了看法"],
     ],
 };
