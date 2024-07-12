@@ -8506,6 +8506,8 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             
                 "Reply…": "回复…",
 
+            "commented on": "评论于",
+
             // 隐藏评论
             "Choose a reason for hiding this comment": "选择隐藏此评论原因",
             "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
@@ -8602,6 +8604,7 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/from ([^ ]+) to ([^ ]+)/, "从 $1 到 $2。"], //具体提交页面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
         [/(\d+) comments? on commit/, "该提交有 $1 条评论"],
+        [/Edited (\d+) times?/, "编辑 $1 次"],
         // [/Commits (.+)/, "提交于 $1"], // 提交页面 /<user-name>/<repo-name>/commits/<branch
         [/Renamed from/, "重命名自"], // 提交中文件历史
         [/Copy full SHA for ([a-f0-9]{7})/, "复制提交 $1 的完整 SHA"],
