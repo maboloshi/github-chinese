@@ -320,7 +320,6 @@
      * @param {string} key - 需要翻译的文本内容。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    const translationCache = new Map(); // 创建一个Map来缓存翻译结果
     function fetchTranslatedText(key) {
 
         // 静态翻译
@@ -334,18 +333,14 @@
         if (enable_RegExp) {
             let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
 
-            for (let [pattern, replacement] of res) {
-                const regex = new RegExp(pattern, 'g'); // 使用g标志进行全局匹配
-                str = key.replace(regex, replacement);
+            for (let [a, b] of res) {
+                str = key.replace(a, b);
                 if (str !== key) {
-                    translationCache.set(key, str); // 将结果存入缓存
                     return str;
                 }
             }
         }
 
-        // 如果没有找到翻译，则返回false，并将其存入缓存以避免未来的重复检查
-        translationCache.set(key, false);
         return false; // 没有翻译条目
     }
 
