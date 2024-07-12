@@ -27,8 +27,8 @@
     'use strict';
 
     const lang = 'zh-CN'; // 设置默认语言
-    let page;
-    let enable_RegExp = GM_getValue("enable_RegExp", 1);
+    let page = false,
+        enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
@@ -42,15 +42,6 @@
 
         // 缓存当前页面的 URL
         let previousURL = location.href;
-
-        // 监测 HTML Lang 值, 设置中文环境
-        new MutationObserver(mutations => {
-            if (document.documentElement.lang === "en") {
-                document.documentElement.lang = lang;
-            }
-        }).observe(document.documentElement, {
-            attributeFilter: ['lang']
-        });
 
         const { characterDataPage, ignoreSelector } = I18N.conf;
 
@@ -93,19 +84,6 @@
             subtree: true,
             childList: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm'], // 仅观察特定属性变化
-        });
-
-        // 监听 Turbo 完成事件
-        document.addEventListener('turbo:load', () => {
-            if (page) {
-                transTitle(); // 翻译页面标题
-                transBySelector();
-                if (page === "repository") { //仓库简介翻译
-                    transDesc(".f4.my-3");
-                } else if (page === "gist") { // Gist 简介翻译
-                    transDesc(".gist-content [itemprop='about']");
-                }
-            }
         });
     }
 
@@ -467,14 +445,28 @@
         page = getPage();
         console.log(`开始page= ${page}`);
 
-        // 翻译页面标题
-        transTitle();
+        if (page) traverseNode(document.body);
 
+        // 监视页面变化
+        watchUpdate();
+    }
+
+    // 设置中文环境
+    document.documentElement.lang = lang;
+
+    // 监测 HTML Lang 值, 设置中文环境
+    new MutationObserver(mutations => {
+        if (document.documentElement.lang === "en") {
+            document.documentElement.lang = lang;
+        }
+    }).observe(document.documentElement, {
+        attributeFilter: ['lang']
+    });
+
+    // 监听 Turbo 完成事件
+    document.addEventListener('turbo:load', () => {
         if (page) {
-            // 立即翻译页面
-            traverseNode(document.body);
-
-            // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
+            transTitle(); // 翻译页面标题
             transBySelector();
             if (page === "repository") { //仓库简介翻译
                 transDesc(".f4.my-3");
@@ -482,16 +474,10 @@
                 transDesc(".gist-content [itemprop='about']");
             }
         }
+    });
 
-        // 监视页面变化
-        watchUpdate();
-    }
-
-    // 执行初始化
+    // 初始化菜单
     registerMenuCommand();
-
-    // 设置中文环境
-    document.documentElement.lang = 'zh-CN';
 
     // 在页面初始加载完成时执行
     window.addEventListener('DOMContentLoaded', init);
