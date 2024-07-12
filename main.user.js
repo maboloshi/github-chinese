@@ -51,6 +51,8 @@
             return { characterData, ignoreSelectors };
         };
 
+        let lastFilteredMutations = [];
+
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
@@ -66,18 +68,21 @@
                 const { characterData, ignoreSelectors } = getConfig(page);
 
                 // 使用 mutations.filter 进行筛选:
-                //  1. 保留`节点增加突变`、`属性突变`
-                //  2. 保留特定页面`文本节点突变`
-                //  3. 丢弃特定页面，`特定忽略元素`内的突变
+                // 优化筛选顺序：
+                //  1. 检查突变类型（保留`节点增加`、`属性`和特定页面`文本节点`突变）
+                //  2. 检查并忽略上一次的突变记录(由`traverseNode`函数引发)
+                //  3. 检查忽略选择器（丢弃特定页面，`特定忽略元素`内的突变）
                 const filteredMutations = mutations.filter(({ target, addedNodes, type }) =>
-                    // 优先处理突变类型判断
                     (addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')) &&
-                    // 随后检查忽略元素
+                    !lastFilteredMutations.some(lastMutation => lastMutation.target === target && lastMutation.type === type) &&
                     !ignoreSelectors.some(selector => target.parentElement?.closest(selector))
                 );
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));
+
+                // 更新上一次的突变记录
+                lastFilteredMutations = filteredMutations;
             }
         }).observe(document.body, {
             characterData: true,
