@@ -8506,6 +8506,20 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
             
                 "Reply…": "回复…",
 
+            // 隐藏评论
+            "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+            "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
+                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
+                "Unhide": "取消隐藏",
+                "comment": "评论",
+                "Choose a reason": "选择原因",
+                    "Abuse": "滥用",
+                    "Spam": "垃圾信息",
+                    "Off Topic": "离题",
+                    "Outdated": "过时",
+                    "Duplicate": "重复",
+                    "Resolved": "已解决",
+
             "Subscribe": "订阅",
             "Unsubscribe": "取消订阅",
             "You’re not receiving notifications from this thread.": "您没有收到来自该话题的通知。",
