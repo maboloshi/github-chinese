@@ -97,10 +97,11 @@ I18N.conf = {
 
     /**
      * 忽略区域的 特定元素id 正则
-     * offset /blob页面 符号-->引用
+     * /blob页面 offset  符号-->引用
+     * /blob页面 右侧 符号筛选 filter-results
      * fix repo详情页文件路径breadcrumb
      */
-    reIgnoreId: ['readme', 'offset', 'breadcrumb', 'file-name-id'],
+    reIgnoreId: /(readme|^offset|breadcrumb|file-name-id|filter-results)/,
 
     /**
      * 忽略区域的 标签 正则
