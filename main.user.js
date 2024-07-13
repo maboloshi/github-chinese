@@ -51,8 +51,6 @@
             return { characterData, ignoreSelectors };
         };
 
-        let lastFilteredMutations = [];
-
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
@@ -67,22 +65,26 @@
             if (page) {
                 const { characterData, ignoreSelectors } = getConfig(page);
 
-                // 使用 mutations.filter 进行筛选:
-                // 优化筛选顺序：
-                //  1. 检查突变类型（保留`节点增加`、`属性`和特定页面`文本节点`突变）
-                //  2. 检查并忽略上一次的突变记录(由`traverseNode`函数引发)
-                //  3. 检查忽略选择器（丢弃特定页面，`特定忽略元素`内的突变）
-                const filteredMutations = mutations.filter(({ target, addedNodes, type }) =>
-                    (addedNodes.length || type === 'attributes' || (characterData && type === 'characterData')) &&
-                    !lastFilteredMutations.some(lastMutation => lastMutation.target === target && lastMutation.type === type) &&
-                    !ignoreSelectors.some(selector => target.parentElement?.closest(selector))
-                );
+                // 使用 mutations.flatMap 进行筛选突变:
+                //   1. 针对`节点增加`突变，后期迭代翻译的对象调整为`addedNodes`中记录的新增节点，而不是`target`，此举大幅减少迭代翻译量
+                //   2. 对于其它`属性`和特定页面`文本节点`突变，仍旧直接处理`target`
+                //   3. 使用`nodes.filter().map`将丢弃特定页面`特定忽略元素`内的突变后的节点转换为包含目标节点的对象
+                const filteredMutations = mutations.flatMap(({ target, addedNodes, type }) => {
+                    let nodes = [];
+                    if (type === 'childList' && addedNodes.length > 0) {
+                        nodes = Array.from(addedNodes); // `节点增加`，将其转换为数组
+                    } else if (type === 'attributes' || (characterData && type === 'characterData')) {
+                        nodes = [target]; // 否则，仅处理目标节点
+                    }
+
+                    // 对每个节点进行筛选，忽略特定选择器
+                    return nodes.filter(node =>
+                        !ignoreSelectors.some(selector => node.parentNode?.closest(selector))
+                    ).map(node => ({ target: node })); // 转换为包含目标节点的对象
+                });
 
                 // 处理每个变化
-                filteredMutations.forEach(mutation => traverseNode(mutation.target));
-
-                // 更新上一次的突变记录
-                lastFilteredMutations = filteredMutations;
+                filteredMutations.forEach(({ target }) => traverseNode(target));
             }
         }).observe(document.body, {
             characterData: true,
