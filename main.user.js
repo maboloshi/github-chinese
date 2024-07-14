@@ -27,8 +27,7 @@
     'use strict';
 
     const lang = 'zh-CN'; // 设置默认语言
-    let page = false,
-        enable_RegExp = GM_getValue("enable_RegExp", 1);
+    let page = false, enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
@@ -160,7 +159,6 @@
         }
     }
 
-
     /**
      * getPage 函数：获取页面的类型。
      * @param {URL object} URL - 需要分析的 URL。
@@ -221,18 +219,18 @@
      * transTitle 函数：翻译页面标题
      */
     function transTitle() {
-        let key = document.title; // 标题文本内容
-        let str = I18N[lang]['title']['static'][key] || '';
-        if (!str) {
-            let res = I18N[lang]['title'].regexp || [];
+        const text = document.title; // 标题文本内容
+        let translatedText = I18N[lang]['title']['static'][text] || '';
+        if (!translatedText) {
+            const res = I18N[lang]['title'].regexp || [];
             for (let [a, b] of res) {
-                str = key.replace(a, b);
-                if (str !== key) {
+                translatedText = text.replace(a, b);
+                if (translatedText !== text) {
                     break;
                 }
             }
         }
-        document.title = str;
+        document.title = translatedText;
     }
 
     /**
@@ -240,13 +238,13 @@
      * @param {Element} el - 需要翻译的元素。
      */
     function transTimeElement(el) {
-        let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
+        const text = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
+        const res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
-            let str = key.replace(a, b);
-            if (str !== key) {
-                el.textContent = str;
+            const translatedText = text.replace(a, b);
+            if (translatedText !== text) {
+                el.textContent = translatedText;
                 break;
             }
         }
@@ -259,7 +257,7 @@
      */
     function transElement(el, field) {
         const text = el[field]; // 获取需要翻译的文本
-        if (!text) return; // 当 text 为空时，退出函数
+        if (!text) return false; // 当 text 为空时，退出函数
 
         const translatedText = transText(text); // 翻译后的文本
         if (translatedText) {
@@ -281,11 +279,11 @@
         if (shouldSkip(text)) return false;
 
         // 清理文本内容
-        let trimmedText = text.trim(); // 去除首尾空格
-        let cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
+        const trimmedText = text.trim(); // 去除首尾空格
+        const cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
 
         // 尝试获取翻译结果
-        let translatedText = fetchTranslatedText(cleanedText);
+        const translatedText = fetchTranslatedText(cleanedText);
 
         // 如果找到翻译并且不与清理后的文本相同，则返回替换后的结果
         if (translatedText && translatedText !== cleanedText) {
@@ -297,26 +295,26 @@
 
     /**
      * fetchTranslatedText 函数：从特定页面的词库中获得翻译文本内容。
-     * @param {string} key - 需要翻译的文本内容。
+     * @param {string} text - 需要翻译的文本内容。
      * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
      */
-    function fetchTranslatedText(key) {
+    function fetchTranslatedText(text) {
 
         // 静态翻译
-        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+        let translatedText = I18N[lang][page]['static'][text] || I18N[lang]['pubilc']['static'][text]; // 默认翻译 公共部分
 
-        if (typeof str === 'string') {
-            return str;
+        if (typeof translatedText === 'string') {
+            return translatedText;
         }
 
         // 正则翻译
         if (enable_RegExp) {
-            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
+            const res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
 
             for (let [a, b] of res) {
-                str = key.replace(a, b);
-                if (str !== key) {
-                    return str;
+                translatedText = text.replace(a, b);
+                if (translatedText !== text) {
+                    return translatedText;
                 }
             }
         }
@@ -326,48 +324,44 @@
 
     /**
      * transDesc 函数：为指定的元素添加一个翻译按钮，并为该按钮添加点击事件。
-     * @param {string} el - CSS选择器，用于选择需要添加翻译按钮的元素。
+     * @param {string} selector - CSS选择器，用于选择需要添加翻译按钮的元素。
      */
-    function transDesc(el) {
+    function transDesc(selector) {
         // 使用 CSS 选择器选择元素
-        let element = document.querySelector(el);
+        const element = document.querySelector(selector);
 
         // 如果元素不存在 或者 translate-me 元素已存在，那么直接返回
-        if (!element || document.getElementById('translate-me')) {
-            return false;
-        }
+        if (!element || document.getElementById('translate-me')) return false;
 
         // 在元素后面插入一个翻译按钮
         const buttonHTML = `<div id='translate-me' style='color: rgb(27, 149, 224); font-size: small; cursor: pointer'>翻译</div>`;
         element.insertAdjacentHTML('afterend', buttonHTML);
-        let button = element.nextSibling;
+        const button = element.nextSibling;
 
         // 为翻译按钮添加点击事件
         button.addEventListener('click', () => {
             // 获取元素的文本内容
-            const desc = element.textContent.trim();
+            const descText = element.textContent.trim();
 
             // 如果文本内容为空，那么直接返回
-            if (!desc) {
-                return false;
-            }
+            if (!descText) return false;
 
-            // 调用 translateDescText 函数进行翻译
-            translateDescText(desc, text => {
+            // 调用 transDescText 函数进行翻译
+            transDescText(descText, translatedText => {
                 // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
                 button.style.display = "none";
-                const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>讯飞听见</a> 翻译👇</span><br/>${text}`;
-                element.insertAdjacentHTML('afterend', translationHTML);
+                const translatedHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>讯飞听见</a> 翻译👇</span><br/>${translatedText}`;
+                element.insertAdjacentHTML('afterend', translatedHTML);
             });
         });
     }
 
     /**
-     * translateDescText 函数：将指定的文本发送到讯飞的翻译服务进行翻译。
+     * transDescText 函数：将指定的文本发送到讯飞的翻译服务进行翻译。
      * @param {string} text - 需要翻译的文本。
      * @param {function} callback - 翻译完成后的回调函数，该函数接受一个参数，即翻译后的文本。
      */
-    function translateDescText(text, callback) {
+    function transDescText(text, callback) {
         // 使用 GM_xmlhttpRequest 函数发送 HTTP 请求
         GM_xmlhttpRequest({
             method: "POST", // 请求方法为 POST
@@ -407,17 +401,17 @@
      */
     function transBySelector() {
         // 获取当前页面的翻译规则，如果没有找到，那么使用公共的翻译规则
-        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
+        const res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
 
         // 如果找到了翻译规则
         if (res.length > 0) {
             // 遍历每个翻译规则
-            for (let [selector, translation] of res) {
+            for (let [selector, translatedText] of res) {
                 // 使用 CSS 选择器找到对应的元素
-                let element = document.querySelector(selector)
+                const element = document.querySelector(selector);
                 // 如果找到了元素，那么将其文本内容替换为翻译后的文本
                 if (element) {
-                    element.textContent = translation;
+                    element.textContent = translatedText;
                 }
             }
         }
