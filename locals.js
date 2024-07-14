@@ -1495,7 +1495,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/is being deleted./, "正在被删除。"], // 仓库 组织被删除
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"], // 仓库删除
         [/(\d+) releases?/, "$1 个发行版"],
-        [/([^ ]+) followers?/, "$1 个关注者"],
+        [/(\d+k?) followers?/, "$1 个关注者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) comments?/, "$1 条评论"],
         [/(\d+) commits? to/, "$1 个提交到"],
@@ -1654,6 +1654,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         
         // 仓库
             "Forked from": "复刻自",
+            "Updated": "更新于",
 
         // 标签栏
             "Sponsoring": "赞助",
@@ -1674,7 +1675,7 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/(\d+) repositories/, "$1 仓库"],
         [/(\d+) members/, "$1 成员"],
         [/and (\d+) more/, "和 $1 个更多"],
-        [/@([^ ]+)'s activity is private/, "$1 的活动不可见"],
+        [/A graph representing ([^ ]+)'s contributions from ([^ ]+) to ([^ ]+). The contributions are (\d+\%) commits, (\d+\%) pull requests, (\d+\%) code review, (\d+\%) issues./, "$1 从 $2 到 $3 的贡献图。其中，提交占 $4，拉取请求占 $5，代码审查占 $6，议题占 $7。"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -1752,6 +1753,7 @@ I18N.zh["page-profile"] = { // 个人首页
 
             "Created their first repository": "创建了他们的第一个仓库",
             "Created an issue in": "创建一个议题在",
+            "a private repository": "私有仓库",
             "Created a pull request in": "创建一个拉取请求在",
                 "lines changed": "行被改变",
             "First repository": "第一个仓库",
@@ -1759,6 +1761,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "First issue": "第一次议题",
             "Opened their first issue on GitHub in": "打开了他们第一个议题",
             "Opened their first pull request on GitHub in": "打开了他们第一个拉取请求",
+            "Opened their first pull request on GitHub in a private repository": "在私有仓库中打开了他们第一个拉取请求",
             "Joined GitHub": "刚加入 GitHub",
             "Joined the": "加入",
             "organization": "组织",
@@ -1806,6 +1809,8 @@ I18N.zh["page-profile"] = { // 个人首页
         [/Contribution activity in ([^ ]+)/, "在 $1 中的贡献活动"],
         [/([^ ]+) had no activity in ([^ ]+) during this period./, "在此期间，$1 在 $2 中没有活动。"],
         [/([^ ]+) has no activity in ([^ ]+) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
+        [/@([^ ]+)'s activity is private/, "$1 的活动不可见"],
+        [/Created (\d+\+?) repositor(y|ies)/, "创建了 $1 个仓库"],
     ],
 };
 I18N.zh["page-profile/overview"] = I18N.zh["page-profile"];
@@ -7217,6 +7222,15 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                     // "linked a pull request that will": "关联一个拉取请求, 将会",
                     // "close": "关闭",
                     // "this issue": "这个议题",
+
+                    // 第一次打开议题
+                    "It looks like this is your first time opening an issue in this project!": "看起来这是您第一次在此项目中打开议题！",
+                    "Be sure to review the": "请务必查阅",
+
+                    // 议题表单
+                    "You're using an": "您正在使用",
+                    "issue form": "议题表单",
+                    ", a new type of issue template.": "，一种新型议题模板。",
 
                     // 创建分支 对话框
                         "Create a branch for this issue": "为该议题创建一个分支",
@@ -15319,6 +15333,7 @@ I18N.zh.pulls = I18N.zh.issues;
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
         "ms": "毫秒", // 时间，前面"结果"走正则匹配
+        "s": "秒", // 时间单位
         "View topic": "查看主题", //搜索结果中的主题
         // 搜索 https://github.com/search >>>>>>>>>>>>>>>>>>>>>>>>
             "Search GitHub": "在 GitHub 上搜索",
@@ -15678,8 +15693,8 @@ I18N.zh["search"] = { // 搜索页面
     },
     "regexp": [ // 正则翻译
         [/Filters?/, "过滤"], // Android UA
-        [/([^ ]+) results?/, "$1 个结果"], // 顶部，这里用 ([^ ]+) 是因为数字带字母
-        [/([^ ]+) files?/, "$1 个文件"], // 同上 https://github.com/search?q=<keyword>&type=code
+        [/(\d+(k|M|B)?) results?/, "$1 个结果"], // 顶部，数字后可能带 K、M、B 三种字母其中一个
+        [/(\d+(k|M|B)?) files?/, "$1 个文件"], // 同上 https://github.com/search?q=<keyword>&type=code
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
