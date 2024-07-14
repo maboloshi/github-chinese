@@ -15332,6 +15332,7 @@ I18N.zh.pulls = I18N.zh.issues;
 
 I18N.zh["search"] = { // 搜索页面
     "static": { // 静态翻译
+        "More than": "多余",
         "ms": "毫秒", // 时间，前面"结果"走正则匹配
         "s": "秒", // 同上
         "View topic": "查看主题", //搜索结果中的主题
