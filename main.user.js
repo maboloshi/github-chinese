@@ -254,22 +254,16 @@
 
     /**
      * transElement 函数：翻译指定元素的文本内容或属性。
-     * @param {Element} el - 需要翻译的元素。
-     * @param {string} field - 需要翻译的文本内容或属性的名称。
-     * @param {boolean} isAttr - 是否需要翻译属性（不可直接访问的属性值）。
+     * @param {Element|DOMStringMap} el - 需要翻译的元素或元素的数据集 (node.dataset)。
+     * @param {string} field - 需要翻译的属性名称或文本内容字段。
      */
-    function transElement(el, field, isAttr = false) {
-        let text = isAttr ? el.getAttribute(field) : el[field]; // 需要翻译的文本
+    function transElement(el, field) {
+        const text = el[field]; // 获取需要翻译的文本
         if (!text) return; // 当 text 为空时，退出函数
-        let str = transText(text); // 翻译后的文本
 
-        // 替换翻译后的内容
-        if (str) {
-            if (isAttr) {
-                el.setAttribute(field, str);
-            } else {
-                el[field] = str;
-            }
+        const translatedText = transText(text); // 翻译后的文本
+        if (translatedText) {
+            el[field] = translatedText; // 替换翻译后的内容
         }
     }
 
