@@ -1477,14 +1477,6 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Dashboards": "仪表板",
         "Go to your issues": "跳转到您的议题",
         "Go to your pull requests": "跳转到您的拉取请求",
-
-        // 发行版反应浮窗
-        "You reacted with thumbs up": "您点了个赞",
-        "You reacted with laugh": "您表示微笑",
-        "You reacted with hooray": "您欢呼了",
-        "You reacted with heart": "您比了个心",
-        "You reacted with rocket": "您发送了小火箭",
-        "You reacted with eyes": "您表示关注",
     },
     "regexp": [ // 正则翻译
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
@@ -1510,14 +1502,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/You and/, "您以及另外"], // 只能正则，静态翻译没有反应
-        [/(\d+) (people|person) reacted with thumbs up/, "$1 人点赞"],
-        [/(\d+) (people|person) reacted with laugh/, "$1 人表示微笑"],
-        [/(\d+) (people|person) reacted with hooray/, "$1 人欢呼了"],
-        [/(\d+) (people|person) reacted with heart/, "$1 人比了个心"],
-        [/(\d+) (people|person) reacted with rocket/, "$1 人发送了小火箭"],
-        [/(\d+) (people|person) reacted with eyes/, "$1 人表示关注"],
-        [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
+        [/You 和/, "您以及另外"], // 只能正则，静态翻译没有反应
         [/Start a new repository for/, "创建一个仓库为"],
         [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
         // 顶部提醒
@@ -5767,13 +5752,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
-                "This comment has been hidden.": "该评论被隐藏。",
-                "This comment was marked as abuse.": "该评论被标记为滥用。",
-                "This comment was marked as spam.": "该评论被标记为垃圾信息。",
-                "This comment was marked as off-topic.": "该评论被标记为离题。",
-                "This comment was marked as outdated.": "该评论被标记为已过时。",
-                "This comment was marked as duplicate.": "该评论被标记为重复。",
-                "This comment was marked as resolved.": "该评论被标记为已解决。",
+                "This comment has been hidden.": "此评论被隐藏。",
+                "This comment was marked as abuse.": "此评论被标记为滥用。",
+                "This comment was marked as spam.": "此评论被标记为垃圾信息。",
+                "This comment was marked as off-topic.": "此评论被标记为偏离主题。",
+                "This comment was marked as outdated.": "此评论被标记为已过时。",
+                "This comment was marked as duplicate.": "此评论被标记为重复。",
+                "This comment was marked as resolved.": "此评论被标记为已解决。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -5926,6 +5911,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
+        [/and/, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
