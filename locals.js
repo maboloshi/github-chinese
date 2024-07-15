@@ -140,7 +140,7 @@ I18N.zh["title"] = { // 标题翻译
         "Billing": "账单",
         "Email settings": "邮箱设置",
         "Account security": "账户安全",
-        "SSH and GPG keys": "SSH 和 GPG 公钥",
+        "SSH and GPG keys": "SSH 与 GPG 公钥",
         "Organizations": "组织",
         "Blocked users": "拉黑用户",
         "Temporary interaction limits": "临时互动限制",
@@ -6310,6 +6310,13 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Set up prebuilds": "设置预构建",
                         "Manage codespaces": "管理代码空间",
                         "Share a deep link": "分享深度链接",
+                            "Share codespace configuration": "共享代码空间配置",
+                            "Choose which settings from this configuration to include when sharing": "选择共享时要包含此配置中的哪些设置",
+                            "Quick start": "快速开始",
+                            "Automatically create or reuse the most recent matching codespace.": "自动创建或使用最新匹配的代码空间。",
+                            "Read more about creating a link.": "阅读有关创建链接的更多信息。",
+                            "Snippets": "片段",
+                            "Use the following snippets to embed an “Open in Codespaces” button for this configuration in your own page or README.": "使用以下代码片段在您自己的页面或 README 中嵌入此配置的“在 Codespaces 中打开”按钮。",
                         "What are codespaces?": "什么是代码空间？",
                     "No codespaces": "尚无代码空间",
                     "You don't have any codespaces with this repository checked out": "您没有检出此仓库的任何代码空间",
@@ -6843,6 +6850,9 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Still in progress?": "仍在进行中吗？",
                     // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
                     "Learn about draft PRs": "了解拉取请求草案",
+                        "Try draft pull requests": "尝试草稿拉取请求",
+                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开正在进行的拉取请求，无需请求正式审核，也不必冒不必要的合并风险。当您准备好进行代码审核时，您可以将拉取请求草案标记为已准备好审核，这将请求任何代码所有者进行审核。",
+                        "Ask admin for access": "向管理员请求权限",
                     "Convert to draft": "设置为草案",
                         // 设置草案对话框
                             "Convert this pull request to draft?": "将此拉取请求转换为草案？", // 拉取请求
@@ -7539,6 +7549,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                         "Set up prebuilds": "设置预构建",
                         "Manage codespaces": "管理代码空间",
                         "Share a deep link": "分享深度链接",
+                            "Share codespace configuration": "共享代码空间配置",
+                            "Choose which settings from this configuration to include when sharing": "选择共享时要包含此配置中的哪些设置",
+                            "Quick start": "快速开始",
+                            "Automatically create or reuse the most recent matching codespace.": "自动创建或使用最新匹配的代码空间。",
+                            "Read more about creating a link.": "阅读有关创建链接的更多信息。",
+                            "Snippets": "片段",
+                            "Use the following snippets to embed an “Open in Codespaces” button for this configuration in your own page or README.": "使用以下代码片段在您自己的页面或 README 中嵌入此配置的“在 Codespaces 中打开”按钮。",
                         "What are codespaces?": "什么是代码空间？",
                     "No codespaces": "尚无代码空间",
                     "You don't have any codespaces with this repository checked out": "您没有检出此仓库的任何代码空间",
@@ -8276,6 +8293,9 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "Still in progress?": "仍在进行中吗？",
                 // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
                 "Learn about draft PRs": "了解拉取请求草案",
+                    "Try draft pull requests": "尝试草稿拉取请求",
+                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开正在进行的拉取请求，无需请求正式审核，也不必冒不必要的合并风险。当您准备好进行代码审核时，您可以将拉取请求草案标记为已准备好审核，这将请求任何代码所有者进行审核。",
+                    "Ask admin for access": "向管理员请求权限",
                 "Convert to draft": "设置为草案",
                 "Request up to 15 reviewers": "最多请求 15 个审查者",
                 // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
@@ -15073,7 +15093,7 @@ I18N.zh["notifications/subscriptions"] = { //订阅的仓库页面
             "Filter repository": "筛选仓库",
             "All repositories": "所有仓库",
             "Loading repositories…": "载入仓库中…",
-        "Sort:": "排序：",
+        "Sort": "排序",
             "Sort by": "排序方式",
             "Most recently subscribed": "最近订阅最多的",
             "Least recently subscribed": "最近订阅最少的",
@@ -19703,6 +19723,15 @@ I18N.zh["codespaces"] = { // 代码空间页面
 
             "Change options": "更改选项",
             "new codespace": "新代码空间",
+
+        // https://github.com/codespaces/<codespace-name>?editor=vscode
+            "Launching Visual Studio Code": "正在启动 Visual Studio Code",
+            "You should have received a prompt to open Visual Studio Code. If not, ensure it is": "您应该已经收到打开 Visual Studio Code 的提示。如果没有，请确保它已",
+            "installed": "被安装",
+
+        // https://github.com/codespaces/<codespace-name>?editor=jetbrains
+            "Launching JetBrains Gateway": "正在启动 JetBrains Gateway",
+            "You should have received a prompt to open the JetBrains Gateway. If not, ensure it is": "您应该已经收到打开 JetBrains Gateway 的提示。如果没有，请确保它已",
     },
     "regexp": [
         [/By ([^ ]+)/, "$1 发布"],
@@ -19713,6 +19742,7 @@ I18N.zh["codespaces"] = { // 代码空间页面
         [/Last used (\d+) 分钟之前/, "上次使用 $1 分钟以前"],
         [/Codespace "([^ ]+)" stopped./, "代码空间 “$1” 停止。"],
         [/Your codespace "([^ ]+)" will no longer be auto-deleted./, "您的代码空间 “$1” 将不再自动删除。"],
+        [/Are you sure you want to delete/, "您确定要删除"],
     ],
 };
 
