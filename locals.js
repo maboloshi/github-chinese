@@ -1502,7 +1502,13 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/You 和/, "您以及另外"], // 只能正则，静态翻译没有反应
+        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的的反应为点赞"],
+        [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
+        [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
+        [/(\d+) (people|person) reacted with heart/, "$1 个人的反应为爱心"],
+        [/(\d+) (people|person) reacted with rocket/, "$1 个人的反应为火箭"],
+        [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
+        [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
         [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
         // 顶部提醒
@@ -9321,7 +9327,6 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         [/(\d+) new comments?/, "$1 条新评论"],
         [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
-        [/ 和 /, " 和 "],
     ],
 };
 I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
@@ -10593,6 +10598,8 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/and/, "和"],
+        [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
