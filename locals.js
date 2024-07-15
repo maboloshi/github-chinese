@@ -5760,13 +5760,13 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                 "Delete revision from history": "从历史记录中删除修订",
                 "This edit’s content will no longer be visible": "此修改的内容将不再可见",
                 // 评论状态
-                "This comment has been hidden.": "该评论被隐藏。",
-                "This comment was marked as abuse.": "该评论被标记为滥用。",
-                "This comment was marked as spam.": "该评论被标记为垃圾信息。",
-                "This comment was marked as off-topic.": "该评论被标记为离题。",
-                "This comment was marked as outdated.": "该评论被标记为已过时。",
-                "This comment was marked as duplicate.": "该评论被标记为重复。",
-                "This comment was marked as resolved.": "该评论被标记为已解决。",
+                "This comment has been hidden.": "该评论已被隐藏。",
+                "This comment was marked as abuse.": "该评论已被标记为滥用。",
+                "This comment was marked as spam.": "该评论已被标记为垃圾信息。",
+                "This comment was marked as off-topic.": "该评论已被标记为离题。",
+                "This comment was marked as outdated.": "该评论已被标记为已过时。",
+                "This comment was marked as duplicate.": "该评论已被标记为重复。",
+                "This comment was marked as resolved.": "该评论已被标记为已解决。",
 
             // 切换分支/标签 下拉菜单
                 "Switch branches/tags": "切换分支/标签",
@@ -8504,20 +8504,6 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
                 "You can always lock this commit again in the future.": "您可以随时再次锁定此提交。",
             
                 "Reply…": "回复…",
-
-            // 隐藏评论
-            "Choose a reason for hiding this comment": "选择隐藏此评论原因",
-            "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
-                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
-                "Unhide": "取消隐藏",
-                "comment": "评论",
-                "Choose a reason": "选择原因",
-                    "Abuse": "滥用",
-                    "Spam": "垃圾信息",
-                    "Off Topic": "离题",
-                    "Outdated": "过时",
-                    "Duplicate": "重复",
-                    "Resolved": "已解决",
 
             "Subscribe": "订阅",
             "Unsubscribe": "取消订阅",
