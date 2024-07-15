@@ -8631,7 +8631,6 @@ I18N.zh["repository/commit"] = { // 仓库 - 提交页面
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
-        [/ and /, " 和 "],
     ],
 };
 
