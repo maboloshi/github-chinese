@@ -7805,7 +7805,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                         "Update with merge commit": "使用合并提交更新",
                             "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
                         "Update with rebase": "使用变基更新",
-                            "This branch cannot be rebased due to conflicts.": "由于冲突，此分支不能重定向。",
+                            "This branch cannot be rebased due to conflicts.": "由于冲突，此分支不能变基。",
                             "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取请求将会在最新的更改之上进行变基，并且会使用强制推送的方式提交。",
                             "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
 
