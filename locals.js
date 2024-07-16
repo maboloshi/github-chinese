@@ -7697,6 +7697,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Change requested": "更改请求",
             "Show resolved": "显示已解决",
             "Hide resolved": "隐藏已解决",
+            "Reviews": "审查",
             "Show all reviewers": "显示所有审查者",
             "Hide all reviewers": "隐藏所有审查者",
             "New changes since you last viewed": "自您上次查看以来的新变化",
