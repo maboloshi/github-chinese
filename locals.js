@@ -1272,6 +1272,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You left a review": "您已评论",
             "Changes requested": "要求更改",
+            "Review required": "需要审查",
             "Approved": "已批准",
         "Create your first project": "创建您的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
@@ -5900,8 +5901,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
-            "Changes requested": "要求更改",
             "You left a review": "您已评论",
+            "Changes requested": "要求更改",
+            "Review required": "需要审查",
             "Approved": "已批准",
     },
     "regexp": [ // 正则翻译
