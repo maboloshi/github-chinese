@@ -13,6 +13,7 @@
 // @match        https://www.githubstatus.com/*
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/zh_TW.json
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/ja.json
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
