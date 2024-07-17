@@ -1808,6 +1808,7 @@ I18N.zh["page-profile"] = { // 个人首页
         [/Created (\d+\+?) repositor(y|ies)/, "创建了 $1 个仓库"],
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
+        [/(\d+) tasks?/, "$1 任务"], // 带任务议题
     ],
 };
 I18N.zh["page-profile/overview"] = I18N.zh["page-profile"];
