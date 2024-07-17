@@ -1,12 +1,102 @@
 
 {
-    "title": {
-        "static": {
-            "Welcome": "测试"
-        },
-        "regexp": [
-            ["\\bWelcome\\b", "Welcome"]
-        ]
+    "dict": {
+        "__comments-css": [
+          "css selector"
+        ],
+      "__comments-1": "date",
+      "jan": "1月",
+      "january": "1月",
+      "feb": "2月",
+      "february": "2月",
+      "mar": "3月",
+      "march": "3月",
+      "apr": "4月",
+      "april": "4月",
+      "may": "5月",
+      "jun": "6月",
+      "june": "6月",
+      "jul": "7月",
+      "july": "7月",
+      "aug": "8月",
+      "august": "8月",
+      "sep": "9月",
+      "september": "9月",
+      "oct": "10月",
+      "october": "10月",
+      "nov": "11月",
+      "november": "11月",
+      "dec": "12月",
+      "december": "12月",
+      
+      "__comments-2": "HomePage",
+      "sign in": "サインイン",
+      "sign up": "サインアップ",
+      "team": "チーム",
+      "enterprise": "企業",
+      "pricing": "価格",
+      "search github": "検索 GitHub",
+      "built for developers": "開発者のためのプラットフォーム",
+  
+      "__comments-3": "explore",
+  
+      "__comments-4": "Bottom",  
+  
+      "__comments-5": "Login & Register",  
+      "username": "ユーザー名",
+      "email": "メール",
+      "email address": "電子メールアドレス",
+      "password": "パスワード",
+      "sign up for github": "アカウント登録",
+      "sign in to gitHub": "ログイン",
+      "username or email address": "メールまたはユーザー名",
+      "forgot password?": "パスワードをお忘れですか？",
+      "create an account": "アカウント作成",
+      "create account": "アカウント作成",
+  
+      "__comments-6": "User home", 
+      "pull requests": "プルリクエスト",
+      "explore": "エクスプローラー",
+      "issues": "問題",
+      "overview": "概要",
+      "repositories": "リポジトリ",
+      "projects": "プロジェクト",
+  
+      "__comments-7": "Search", 
+      "language:": " 言語:",
+  
+      "__comments-8": "User & Organization",
+      "pinned": "ピンされた",
+      "follower": "フォロワー",
+      "followers": "フォロワー",
+      "following": "フォロー中",
+      "follow": "フォロー",
+      "unfollow": "フォロー解除",
+  
+      "__comments-9": "Repository",
+      "new": "新規",
+      "languages": "言語",
+      "about": "説明",
+      "code": "コード",
+      "owner": "オーナー",
+      "repository name": "リポジトリ名",
+      "description": "説明",
+      "(optional)": "(オプション)",
+      "public": "パブリック",
+      "private": "プライベート",
+      "commits": "コミット",
+  
+      "__comments-10": "Repository settings",
+  
+      "__comments-11": "Repository settings",
+      "branch": "ブランチ",
+      "branches": "ブランチ",
+      "tags": "タグ",
+  
+      "__comments-12": "Create a Repository",
+      "create a new repository": "リポジトリを作成する",
+      "create repository": "リポジトリを作成する",
+      "great repository names are short and memorable. need inspiration? how about": "リポジトリに、短くて覚えやすい名前を入力します。 たとえば、"
     },
     "pubilc": {
         "static": {
