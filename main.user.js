@@ -20,6 +20,7 @@
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
+// @grant        GM_getResourceText
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
 // @grant        GM_unregisterMenuCommand
