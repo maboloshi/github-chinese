@@ -2,7 +2,7 @@
 {
     "title": {
         "static": {
-            "Welcome": "Welcome"
+            "Welcome": "测试"
         },
         "regexp": [
             ["\\bWelcome\\b", "Welcome"]
