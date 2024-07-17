@@ -12,7 +12,6 @@
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
-// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/config.js
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -23,7 +22,6 @@
 // @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
-import { IGNORE_SELECTORS, PAGE_PATH_REGEXPS} from './config'
 import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 
 (function (window, document, undefined) {
