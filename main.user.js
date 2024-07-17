@@ -28,7 +28,7 @@ import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = 'zh-CN'; // 设置默认语言
+    const lang = DEFAULT_LANGUAGE; // 设置默认语言
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
