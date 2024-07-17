@@ -1806,6 +1806,8 @@ I18N.zh["page-profile"] = { // 个人首页
         [/([^ ]+) has no activity in ([^ ]+) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
         [/@([^ ]+)'s activity is private/, "$1 的活动不可见"],
         [/Created (\d+\+?) repositor(y|ies)/, "创建了 $1 个仓库"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
 };
 I18N.zh["page-profile/overview"] = I18N.zh["page-profile"];
@@ -1974,6 +1976,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
@@ -2147,15 +2150,22 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 I18N.zh["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
     "static": { // 静态翻译
         ...I18N.zh["page-profile-public"]["static"],
+            "has sponsored": "曾赞助",
+            "organization or maintainer in the past": "个组织或维护者",
             "organization or maintainer": "个组织或维护者",
             "Bulk Sponsor": "批量赞助",
             "Sponsor multiple maintainers in one easy transaction.": "一次交易即可赞助多个维护者。",
             "Get started": "前去赞助",
+            "Past sponsorship": "曾经赞助",
+            "Sponsored": "赞助于",
 
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
         [/Sponsoring since/, "赞助自"],
+        [/Sponsored/, "赞助于"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
 };
 
@@ -2200,6 +2210,8 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) packages?/, "$1 软件包"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -2214,6 +2226,8 @@ I18N.zh["page-profile/sponsors"] = { // 个人首页 - 赞助标签卡
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
 };
 
@@ -2326,6 +2340,7 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
         [/doesn’t have any starred repositories yet./, "尚无任何星标仓库。"],
         [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/Language: /, "语言："],
     ],
 };
