@@ -207,6 +207,7 @@ I18N.zh["title"] = { // 标题翻译
         "Codespaces": "代码空间",
         "Codespace Templates": "代码空间模版",
         "Create new codespace": "创建代码空间",
+        "Error": "错误",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -284,6 +285,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "This page is taking too long to load.": "此页面加载时间过长。",
         "We had issues producing the response to your request.": "我们在响应您的请求时遇到了问题。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
+        "Error": "错误",
+        "Looks like network is down!": "看起来网络未连接！",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
         // 底部红条
@@ -7511,6 +7514,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
 
     },
     "regexp": [
+        [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/#(\d+) opened/, "#$1 打开于"],
@@ -9447,7 +9451,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
 
             "Event": "事件",
-                "Filter by event": "按事件筛选",
+                "Filter by Event": "按事件筛选",
+                "No matching events.": "无匹配事件。",
+                //"Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
                     "issue_comment": "议题评论",
                     "pull_request": "拉取请求",
@@ -9458,7 +9464,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "workflow_dispatch": "工作流程调度",
                     "dynamic": "动态",
             // 状态
-                "Filter by status": "按状态筛选",
+                "Filter by Status": "按状态筛选",
                 "Find a status": "查找状态",
                     "queued": "排队",
                     "in progress": "正在进行中",
@@ -9473,10 +9479,11 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "skipped": "跳过",
                     "stale": "陈旧",
             "Branch": "分支",
-                "Filter by branch": "按分支筛选",
+                "Filter by Branch": "按分支筛选",
                 "Find a branch": "查找分支",
+                "Default": "默认",
             "Actor": "角色",
-                "Filter by actor": "按角色筛选",
+                "Filter by Actor": "按角色筛选",
                 "Find a user": "查找用户",
 
             // 日志 右侧按钮
