@@ -22,7 +22,9 @@
 // @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
-export const DEFAULT_LANGUAGE = 'zh-CN';
+module.exports = {
+    DEFAULT_LANGUAGE : 'zh-CN'
+};
 import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 
 (function (window, document, undefined) {
