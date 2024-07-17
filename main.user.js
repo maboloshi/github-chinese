@@ -27,10 +27,6 @@
 // @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
-module.exports = {
-    DEFAULT_LANGUAGE : 'zh-CN'
-};
-
 (function (window, document, undefined) {
     'use strict';
 
