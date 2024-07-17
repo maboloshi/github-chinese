@@ -12,6 +12,8 @@
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/zh_CN.json
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/zh_TW.json
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -25,7 +27,6 @@
 module.exports = {
     DEFAULT_LANGUAGE : 'zh-CN'
 };
-import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 
 (function (window, document, undefined) {
     'use strict';
