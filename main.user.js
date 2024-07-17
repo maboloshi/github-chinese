@@ -12,6 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/config.js
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -22,12 +23,16 @@
 // @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
+import { IGNORE_SELECTORS, PAGE_PATH_REGEXPS} from './config'
+import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = 'zh-CN'; // 设置默认语言
+    // const lang = 'zh-CN'; // 设置默认语言
+    const lang = 'zh-CN'
     let page;
+    let enableRegExp = GM_getValue("enable_RegExp", ENABLE_REGEXP);
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
@@ -304,8 +309,16 @@
         let trimmedText = text.trim(); // 去除首尾空格
         let cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
 
+        // 尝试从国际化文件中获取翻译
+        let translatedText = messages[text];
+
+        if (typeof translatedText === 'string') {
+            return translatedText;
+        }
+
+
         // 尝试获取翻译结果
-        let translatedText = fetchTranslatedText(cleanedText);
+        // let translatedText = fetchTranslatedText(cleanedText);
 
         // 如果找到翻译并且不与清理后的文本相同，则返回替换后的结果
         if (translatedText && translatedText !== cleanedText) {
@@ -484,6 +497,27 @@
 
         // 监视页面变化
         watchUpdate();
+        // 设置和获取当前语言
+        function setLanguage(languageCode) {
+            localStorage.setItem('selectedLanguage', languageCode);
+            loadMessages(languageCode);
+        }
+
+        function getLanguage() {
+            return localStorage.getItem('selectedLanguage') || 'zh-CN';
+        }
+
+        // 加载语言包
+        function loadMessages(languageCode) {
+            import(`./i18n/${languageCode}.json`).then(messages => {
+                // 更新全局的messages对象
+                window.messages = messages;
+            });
+        }
+
+        // 初始化语言
+        const selectedLanguage = getLanguage();
+        loadMessages(selectedLanguage);
     }
 
     // 执行初始化

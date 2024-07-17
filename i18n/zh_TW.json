@@ -1,0 +1,24 @@
+
+{
+    "title": {
+        "static": {
+            "Welcome": "Welcome"
+        },
+        "regexp": [
+            ["\\bWelcome\\b", "Welcome"]
+        ]
+    },
+    "pubilc": {
+        "static": {
+            "Public": "Public",
+            "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
+            "This page is taking too long to load.": "此页面加载时间过长。",
+            "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
+            "Contact Support": "联系 GitHub 支持",
+            "GitHub Status": "GitHub 状态"
+        },
+        "regexp": [
+            ["\\bPublic\\b", "Public"]
+        ]
+    }
+}
