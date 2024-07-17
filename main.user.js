@@ -22,15 +22,14 @@
 // @connect      fanyi.iflyrec.com
 // @supportURL   https://github.com/buiawpkgew1/github-chinese/issues
 // ==/UserScript==
+export const DEFAULT_LANGUAGE = 'zh-CN';
 import messages from `./i18n/${DEFAULT_LANGUAGE}.json`;
 
 (function (window, document, undefined) {
     'use strict';
 
-    // const lang = 'zh-CN'; // 设置默认语言
-    const lang = 'zh-CN'
+    const lang = 'zh-CN'; // 设置默认语言
     let page;
-    let enableRegExp = GM_getValue("enable_RegExp", ENABLE_REGEXP);
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
     /**
