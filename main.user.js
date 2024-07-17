@@ -13,6 +13,8 @@
 // @match        https://www.githubstatus.com/*
 // @require      https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
 // @resource     ja https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/ja.json
+// @resource     zh-CN https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/zh-CN.json
+// @resource     zh-TW https://gitee.com/awnioow/github-chinese/raw/Test_zh-CN_LangEnvSet/i18n/zh-TW.json
 // @require      https://cdn.staticfile.org/timeago.js/4.0.2/timeago.min.js
 // @require      https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // @run-at       document-start
