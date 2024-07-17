@@ -34,9 +34,24 @@ module.exports = {
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = DEFAULT_LANGUAGE; // 设置默认语言
+    const SUPPORT_LANG = ["zh-CN", "ja"];
+    const lang = (navigator.language || navigator.userLanguage).toLowerCase();
+    let locales = getLocales(lang);
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
+
+    function getLocales(lang) {
+        if (lang.startsWith("zh")) { // zh zh-TW --> zh-CN
+            lang = "zh-CN";
+        }
+        if (SUPPORT_LANG.includes(lang)) {
+            return JSON.parse(GM_getResourceText(lang));
+        }
+        return {
+            css: [],
+            dict: {}
+        };
+    }
 
     /**
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
