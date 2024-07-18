@@ -331,9 +331,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "DevOps": "开发运维",
                     "DevSecOps": "开发安全运维",
             "Resources": "资源",
+                "Innersource": "内部源",
                 "Learning Pathways": "学习路径",
                 "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
                 "Customer Stories": "客户案例",
+                "Software Development": "软件开发",
             "Open Source": "开源",
                 // 赞助者
                     "Fund open source developers": "资助开源开发人员",
@@ -360,8 +362,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     // 高级支持
                         "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
             // 广告
-            "Join us for the 10th anniversary of GitHub Universe.": "与我们一起庆祝 GitHub Universe 十周年。",
-            "Get tickets now for 35% off, only until July 8.": "现在购买门票可享受 35% 折扣，截至 7 月 8 日。",
+            "Explore the latest in AI, DevEx, security:": "探索人工智能、DevEx 和安全领域的最新动态：",
+            "Get 20% off your tickets to GitHub Universe, only until September 3.": "GitHub Universe 门票八折优惠，截至 9 月 3 日。",
 
         // 搜索栏
             "Search or jump to...": "搜索或跳转到…",
@@ -5708,6 +5710,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Some checks haven't completed yet": "部分检查还未完成",
 
             "Jump to bottom": "跳到底部", //小屏模式
+            "forked from": "复刻自", // 同上（发行版未登录页面）
 
             "people": "人", // 提交
             "committed": "提交于", // 提交浮窗
