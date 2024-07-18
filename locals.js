@@ -207,6 +207,7 @@ I18N.zh["title"] = { // 标题翻译
         "Codespaces": "代码空间",
         "Codespace Templates": "代码空间模版",
         "Create new codespace": "创建代码空间",
+        "Error": "错误",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -284,6 +285,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "This page is taking too long to load.": "此页面加载时间过长。",
         "We had issues producing the response to your request.": "我们在响应您的请求时遇到了问题。",
         "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
+        "Error": "错误",
+        "Looks like network is down!": "看起来网络未连接！",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
         // 底部红条
@@ -1812,6 +1815,9 @@ I18N.zh["page-profile"] = { // 个人首页
         [/([^ ]+) has no activity in ([^ ]+) yet for this period./, "在此期间，$1 在 $2 中没有活动。"],
         [/@([^ ]+)'s activity is private/, "$1 的活动不可见"],
         [/Created (\d+\+?) repositor(y|ies)/, "创建了 $1 个仓库"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
+        [/(\d+) tasks?/, "$1 任务"], // 带任务议题
     ],
 };
 I18N.zh["page-profile/overview"] = I18N.zh["page-profile"];
@@ -1980,6 +1986,7 @@ I18N.zh["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
@@ -2153,15 +2160,22 @@ I18N.zh["page-profile/projects"] = { // 个人首页- 项目标签卡
 I18N.zh["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
     "static": { // 静态翻译
         ...I18N.zh["page-profile-public"]["static"],
+            "has sponsored": "曾赞助",
+            "organization or maintainer in the past": "个组织或维护者",
             "organization or maintainer": "个组织或维护者",
             "Bulk Sponsor": "批量赞助",
             "Sponsor multiple maintainers in one easy transaction.": "一次交易即可赞助多个维护者。",
             "Get started": "前去赞助",
+            "Past sponsorship": "曾经赞助",
+            "Sponsored": "赞助于",
 
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
         [/Sponsoring since/, "赞助自"],
+        [/Sponsored/, "赞助于"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
 };
 
@@ -2206,6 +2220,8 @@ I18N.zh["page-profile/packages"] = { // 个人首页 - 软件包标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) packages?/, "$1 软件包"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -2220,6 +2236,8 @@ I18N.zh["page-profile/sponsors"] = { // 个人首页 - 赞助标签卡
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
+        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
 };
 
@@ -2332,6 +2350,7 @@ I18N.zh["page-profile/stars"] = { // 个人首页 - 星标标签卡
         [/doesn’t have any starred repositories yet./, "尚无任何星标仓库。"],
         [/That’s it. You’ve reached the end of ([^ ]+)’s stars./, "而已。您已经到了$1 星海的尽头。"], // 他人星标页 搜索结果
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/Language: /, "语言："],
     ],
 };
@@ -7528,6 +7547,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
 
     },
     "regexp": [
+        [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/#(\d+) opened/, "#$1 打开于"],
@@ -7732,6 +7752,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "branch from": "分支从",
             "and others": "和其他成员",
             "approved these changes": "批准这些更改",
+            "previously approved these changes": "先前批准这些更改",
                 "See review": "查看审查",
                 "Dismiss review": "驳回审查",
             "started a review": "开始审查",
@@ -7743,6 +7764,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "left a comment": "发表评论",
             "Add more commits by pushing to the": "添加更多提交，通过推送到",
             "branch on": "分支在",
+            "requested review from": "请求审查",
             "This pull request was": "此拉取请求已",
             "Compare": "比较",
             "deleted the": "删除",
@@ -9480,7 +9502,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
 
             "Event": "事件",
-                "Filter by event": "按事件筛选",
+                "Filter by Event": "按事件筛选",
+                "No matching events.": "无匹配事件。",
+                //"Filter by event": "按事件筛选",
                 "Find an event": "查找事件",
                     "issue_comment": "议题评论",
                     "pull_request": "拉取请求",
@@ -9491,7 +9515,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "workflow_dispatch": "工作流程调度",
                     "dynamic": "动态",
             // 状态
-                "Filter by status": "按状态筛选",
+                "Filter by Status": "按状态筛选",
                 "Find a status": "查找状态",
                     "queued": "排队",
                     "in progress": "正在进行中",
@@ -9506,10 +9530,11 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "skipped": "跳过",
                     "stale": "陈旧",
             "Branch": "分支",
-                "Filter by branch": "按分支筛选",
+                "Filter by Branch": "按分支筛选",
                 "Find a branch": "查找分支",
+                "Default": "默认",
             "Actor": "角色",
-                "Filter by actor": "按角色筛选",
+                "Filter by Actor": "按角色筛选",
                 "Find a user": "查找用户",
 
             // 日志 右侧按钮
@@ -10552,6 +10577,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Undo": "撤销",
 
             "Set as a pre-release": "设置为预发布版本",
+                "This release is labeled as non-production ready.": "此版本标记为非正式版本。",
                 "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
             "Create a discussion for this release": "为此版本创建讨论",
                 "People will be able to leave comments and reactions on this release using Discussions.": "人们将能够使用“讨论”对此版本发表评论和反应。",
