@@ -5927,6 +5927,12 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Changes requested": "请求更改",
             "Review required": "请求审查",
             "Approved": "已批准",
+        
+        // 未登录浮窗
+            "You must be signed in to change notification settings": "您必须登录后才能更改通知设置",
+            "You must be signed in to star a repository": "您必须登录后才能星标仓库",
+            "You must be signed in to add this repository to a list": "您必须登录后才能将此仓库添加到列表中",
+
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
