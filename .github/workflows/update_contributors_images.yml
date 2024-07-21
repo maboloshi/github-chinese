@@ -15,7 +15,7 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.7
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@v1.3.5
