@@ -362,9 +362,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                         "Enterprise-grade AI features": "企业级 AI 功能",
                     // 高级支持
                         "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
-            // 广告
-            "Explore the latest in AI, DevEx, security:": "探索人工智能、DevEx 和安全领域的最新动态：",
-            "Get 20% off your tickets to GitHub Universe, only until September 3.": "GitHub Universe 门票八折优惠，截至 9 月 3 日。",
 
         // 搜索栏
             "Search or jump to...": "搜索或跳转到…",
@@ -10529,7 +10526,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Duplicate tag name": "重复的标签名",
                 "This tag already has release notes. Would you like to": "这个标签已经有发行说明。您是否愿意",
                 "edit them?": "编辑它们？",
-                "edit the existing notes": "编辑现有注记",
+                "edit the existing notes": "编辑现有注释",
                 "Existing tag": "已存在的标签",
             "Invalid tag name": "无效的标签名",
                 "We weren’t able to create the release for you. Make sure you have a valid tag.": "我们无法为您创建发行版。请确保您有一个有效的标签。",
