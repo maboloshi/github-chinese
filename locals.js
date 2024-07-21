@@ -252,6 +252,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Stargazers/, "追星者"],
         [/Forks?/, "复刻"],
         [/Tags?/, "标签"],
+        [/Edit release/, "编辑发行版"],
         [/Releases?/, "发行版"],
         [/Draft Advisory/, "安全公告草案"],
         [/Code scanning alerts/, "代码扫描警报"],
@@ -331,9 +332,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "DevOps": "开发运维",
                     "DevSecOps": "开发安全运维",
             "Resources": "资源",
+                "Innersource": "内部源",
                 "Learning Pathways": "学习路径",
                 "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
                 "Customer Stories": "客户案例",
+                "Software Development": "软件开发",
             "Open Source": "开源",
                 // 赞助者
                     "Fund open source developers": "资助开源开发人员",
@@ -359,9 +362,6 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                         "Enterprise-grade AI features": "企业级 AI 功能",
                     // 高级支持
                         "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
-            // 广告
-            "Join us for the 10th anniversary of GitHub Universe.": "与我们一起庆祝 GitHub Universe 十周年。",
-            "Get tickets now for 35% off, only until July 8.": "现在购买门票可享受 35% 折扣，截至 7 月 8 日。",
 
         // 搜索栏
             "Search or jump to...": "搜索或跳转到…",
@@ -5720,6 +5720,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Some checks haven't completed yet": "部分检查还未完成",
 
             "Jump to bottom": "跳到底部", //小屏模式
+            "forked from": "复刻自", // 同上（发行版未登录页面）
 
             "people": "人", // 提交
             "committed": "提交于", // 提交浮窗
@@ -5942,6 +5943,12 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Changes requested": "请求更改",
             "Review required": "请求审查",
             "Approved": "已批准",
+        
+        // 未登录浮窗
+            "You must be signed in to change notification settings": "您必须登录后才能更改通知设置",
+            "You must be signed in to star a repository": "您必须登录后才能星标仓库",
+            "You must be signed in to add this repository to a list": "您必须登录后才能将此仓库添加到列表中",
+
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -5960,6 +5967,8 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
+        [/Answered (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
+        [/Answered (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
         [/Answered (\d+) discussions? in this repository/, "在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
         [/had recent pushes (\d+) seconds? ago/, "分支有了最新的推送，$1 秒之前"],
         [/had recent pushes (\d+) minutes? ago/, "分支有了最新的推送，$1 分钟之前"],
@@ -10517,6 +10526,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             "Duplicate tag name": "重复的标签名",
                 "This tag already has release notes. Would you like to": "这个标签已经有发行说明。您是否愿意",
                 "edit them?": "编辑它们？",
+                "edit the existing notes": "编辑现有注释",
                 "Existing tag": "已存在的标签",
             "Invalid tag name": "无效的标签名",
                 "We weren’t able to create the release for you. Make sure you have a valid tag.": "我们无法为您创建发行版。请确保您有一个有效的标签。",
