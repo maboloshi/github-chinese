@@ -6190,6 +6190,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 操作条
                 "forked from": "复刻自",
                 "Public repository · Forked from": "公共仓库 · 复刻自", // Android UA 下出现
+                "Public repository · Generated from": "公共仓库 · 创建自", // 同上
                 "generated from": "创建自",
                 "mirrored from": "镜像自",
 
