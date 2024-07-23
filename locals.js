@@ -10343,6 +10343,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
                 // 底部提醒
                     "You can't delete this protected branch.": "您无法删除此受保护分支。",
+                    "You can't delete the default branch.": "您不能删除默认分支。",
 
     },
     "regexp": [ // 正则翻译
