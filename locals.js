@@ -5948,6 +5948,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You must be signed in to change notification settings": "您必须登录后才能更改通知设置",
             "You must be signed in to star a repository": "您必须登录后才能星标仓库",
             "You must be signed in to add this repository to a list": "您必须登录后才能将此仓库添加到列表中",
+            "You must be logged in to vote": "您必须登录后才能投票",
 
     },
     "regexp": [ // 正则翻译
