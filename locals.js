@@ -877,10 +877,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
-            "GPG key ID:": "GPG 密钥 ID：",
-            "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
+            "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不匹配。",
 
             "Verified": "已验证",
             "Expired": "已过期",
