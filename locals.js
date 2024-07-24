@@ -879,7 +879,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "GPG Key ID:": "GPG 密钥 ID：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
-            "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不匹配。",
+            "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不匹配",
+            "No user is associated with the committer email.": "此签名中的电子邮箱在账号设置中不存在",
 
             "Verified": "已验证",
             "Expired": "已过期",
