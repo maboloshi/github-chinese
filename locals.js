@@ -7271,6 +7271,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
                     "Create a branch": "创建分支",
                     "for this issue or link a pull request.": "为这个议题或关联一个拉取请求",
                     "When branches are created from issues, their pull requests are automatically linked.": "当从议题中创建分支时，它们的拉取请求会自动关联。",
+                    "You’re receiving notifications because you were assigned.": "因您是该议题的受理人，为此你将接收该议题的最新通知",
 
                     // 下拉
                     "Link a pull request from this repository": "关联来自此仓库的拉取请求",
