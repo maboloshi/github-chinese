@@ -172,7 +172,7 @@ I18N.zh["title"] = { // 标题翻译
         "Tags": "标签",
         "Webhooks": "Web 钩子",
         "Environments": "环境",
-        "Code security & analysis": "代码安全性与分析",
+        "Security &amp; analysis": "代码安全性与分析",
         "Deploy keys": "部署密钥",
         "Add deploy key": "添加部署密钥",
         "Actions secrets": "操作机密",
@@ -1701,9 +1701,14 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
+            "You unlocked new Achievements! Show them off by including achievements and private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             "Your popular repositories will now be shown instead of your pins.": "现在将显示您的热门仓库，而不是您的置顶。",
+            "Only you can see your full profile.": "以下内容仅你个人可见",
+            "You have marked your profile as private, which limits what activity other people can see. ": "您已将您的个人资料标记为私密，为此系统已限制其他人的查看。",
+            "View what others see": "预览他人视角下的主页",
+            "View full profile": "查看完整主页",
+            "Update profile settings ": "更新个人资料设置",
             "Your pins have been updated.": "您的置顶已更新。",
             // 拖拽排序提醒
             "Order updated.": "置顶已更新。",
@@ -3380,6 +3385,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "At least one email is required.": "至少需要一个电子邮箱。",
             // 删除按钮 提醒信息
                 "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
+                "At least one non-backup email is required.": "至少需要一个非备份电子邮箱",
+            "Backup": "备用电子邮箱",
+            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮件将用作与账户安全相关通知的额外接收地址，也可用于密码重置。",
 
             "Add email address": "添加电子邮箱",
             "Email address": "电子邮箱",
@@ -3431,10 +3439,12 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 "Manage": "管理",
 
         // 订阅偏好 https://github.com/settings/emails/subscriptions
+            "Subscription preferences": "订阅首选项",
+            "⏳Please wait while we find your subscriptions...⌛": "⏳请稍候，我们正在查找您的订阅...⌛",
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
-            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then select Save subscription preferences": "要停止接收以下主题的电子邮件，请取消选中任何不想接收的主题，然后选择“保存订阅首选项”",
+            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主题的电子邮件，请取消选中您不想接收的主题，然后操作保存",
             "General info and offers from GitHub": "GitHub 的一般信息和优惠",
             "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
             "Unsubscribe from all topics": "取消订阅所有主题",
@@ -3983,14 +3993,15 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Automatically install dotfiles": "自动安装点文件",
             "Codespaces can automatically install your dotfiles into every codespace you create.": "代码空间可以自动将您点文件安装到您创建的每个代码空间。",
             "Learn how to set up your dotfiles for Codespaces.": "了解如何为代码空间设置点文件。",
+            "Select repository": "选择仓库",
             "Search for a repository": "搜索仓库",
+            "Changes saved": "更改已保存",
 
-            "Codespaces secrets": "代码空间机密",
+            "Secrets": "机密",
+            "Codespace user secrets": "代码空间用户机密",
             "New secret": "新建机密",
-            "Development environment secrets are environment variables that are": "开发环境机密是",
-            "encrypted": "被加密的环境变量",
-            ". They are available to any codespace you create using repositories with access to that secret.": "。它们可用于您使用访问该机密的仓库创建的任何代码空间。",
-            "There are no Codespaces secrets.": "尚无代码空间机密",
+            "Development environment secrets are environment variables that are encrypted. They are available to any codespace you create using repositories with access to that secret.": "代码空间机密是被加密的环境变量。您可通过在账号设置下配置全局统一的代码空间加密以快捷的将其应用在您名下的任一代码仓库的代码空间中。",
+            "There are no Codespace secrets.": "尚无代码空间机密",
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
             // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
@@ -9494,6 +9505,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             "All workflows": "全部工作流程",
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
+                "Showing all prebuild configuration runs for Codespaces. Learn about": "已展示当前代码空间下的所有预构建的运行情况 ",
+                "prebuilding your codespaces.": "了解更多预构建Wiki",
+                "Codespaces Prebuilds": "预构建代码空间",
 
             // 筛选条
                 "Filter workflow runs": "筛选工作流程",
@@ -13606,17 +13620,26 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 代码空间 /<user-name>/<repo-name>/settings/codespaces
-            "Prebuild configuration": "预构建配置",
+            "Prebuild configuration": "预构建设置",
             "Set up prebuild": "设置预构建",
             "There are no prebuilds configured for this repository": "尚无预构建设置",
-            "Prebuild configurations speed up Codespace creations significantly by pre-executing all the tasks required to build your development environment.": "预构建配置通过预先执行构建开发环境所需的所有任务，大大加快了代码空间的创建。",
+            "Prebuild configurations speed up Codespace creations significantly by pre-executing all the tasks required to build your development environment.": "预构建设置通过预先执行构建开发环境所需的所有任务，大大加快了代码空间的创建。",
             "Learn more about setting up prebuilds": "了解更多关于预构建设置的信息",
+            "See output": "查看结果",
+            "Manually trigger": "手动触发",
+            "View runs": "查看运行日志",
+            "Disable runs":"暂停运行",
+            "Enable runs":"恢复运行",
+            "Disabled": "禁用",
 
         // 代码空间 /<user-name>/<repo-name>/settings/codespaces
             "/ New prebuild configuration": "/ 新建预构建设置",
+            "/ Edit configuration": "编辑预构建设置",
+            "Prebuilds consume storage space that will incur a billable charge. Learn more about": "预构建操作会占用存储空间，这将产生计费费用",
+            "prebuild configurations": "了解代码空间预构建的计费",
             "Configuration": "设置",
             "Your prebuild will be built from the branch and configuration file selected below. Learn more about": "您的预构建将从下面选择的分支和配置文件中构建。了解更多关于",
-            "prebuild configuration.": "预构建设置。",
+            "prebuild configuration.": "预构建的设置",
             "Select branch": "选择分支",
             "Find a branch": "查找分支",
             "Configuration File:": "设置文件：",
@@ -13647,8 +13670,8 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
                 "Filter": "筛选",
 
             "Region availability": "区域可用性",
-            "Reduce prebuild available to only specific regions": "减少仅适用于特定区域的预构建",
-                "By default, your prebuilt image will be available to all regions where codespaces are available and storage costs will apply for each region. You can adjust this to manage your storage usage.": "默认情况下，您的预构建映像将适用于所有代码空间可用的区域，并且每个地区都有存储费用。。您可以调整此项以管理您的存储使用情况。",
+            "Reduce prebuild availability to only specific regions": "限制预构建在特定区域",
+                "By default, your prebuilt image will be available to all regions where codespaces are available and storage costs will apply for each region. You can adjust this to manage your storage usage.": "默认情况下，您的预构建操作将适用于所有代码空间服务的可用区域，但每个地区都将产生存储费用。您可限制代码空间服务的可用区域来控制存储费用",
                 "Learn about region availability": "了解区域可用性",
                     "US East": "美国东部",
                     "US West": "美国西部",
@@ -17240,8 +17263,8 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
             "Filter by two-factor authentication": "按双因素身份验证筛选",
             "Everyone": "所有人",
-            "Enabled": "禁用",
-            "Disabled": "启用",
+            "Enabled": "启用",
+            "Disabled": "禁用",
             "Required": "必须",
 
             "Membership": "成员",
@@ -18223,7 +18246,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Smallest size": "最小尺寸",
 
             "No repository uses caches": "尚无仓库使用缓存",
-            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。。",
+            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流程执行时间的信息。",
 
