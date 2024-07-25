@@ -649,9 +649,9 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "You don't have any lists yet.": "您尚无任何清单。",
                 "Lists": "清单",
                     "Search lists": "搜索清单",
-                    "🔮 Future ideas": "超前想法",
-                    "🚀 My stack": "技术栈",
-                    "✨ Inspiration": "灵感",
+                    "🔮 Future ideas": "🔮 超前想法",
+                    "🚀 My stack": "🚀 技术栈",
+                    "✨ Inspiration": "✨ 灵感",
                 "Create list": "创建清单",
                     "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                     "⭐️ Name this list": "⭐️ 清单名称",
@@ -2862,7 +2862,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
         // Notification center 通知 https://github.com/settings/notifications
             "Default notifications email": "默认邮件通知设置",
-                "Choose where you'd like emails to be sent. You can add more email addresses. Use custom routes to specify different email addresses to be used for individual organizations.": "选择您希望将邮件发送到的邮箱。您可以添加更多电子邮件地址。使用自定义路由来指定用于各个组织的不同电子邮件地址。",
+                "Choose where you'd like emails to be sent. You can add more email addresses. Use custom routes to specify different email addresses to be used for individual organizations.": "请选择您默认接收通知邮件的邮箱。您可以添加多个邮箱地址，并借助自定义路由来配置不同组织的通知邮件所对应的接收邮箱。",
                 "Custom routing": "自定义路由",
 
             "Automatically watch repositories": "自动关注仓库",
@@ -2875,7 +2875,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
             "Subscriptions": "订阅",
                 "Watching": "关注仓库",
-                    "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
+                    "Notifications for all repositories, teams, or conversations you're watching.": "当您关注的仓库、团队或对话有新的变化时您将收到通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
                     "Select notification channels": "选择通知通道",
@@ -2886,9 +2886,10 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "on GitHub, Email": "在 GitHub、电子邮件 上",
                     "On GitHub": "在 GitHub 上",
                     "on GitHub": "在 GitHub 上",
+                "Don't notify": "取消通知",
 
                 "Participating, @mentions and custom": "参与、@提及和自定义",
-                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "您正在参与的对话的通知，或者如果有人 @您。也适用于订阅特定事件时的所有活动。",
+                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "当您参与的对话有新的通知、或有人 @您时、以及您的订阅特定事件有新的变化时您将收到通知。",
 
                 "Customize email updates": "自定义电子邮件更新",
                     "Choose which additional events you'll receive emails for when participating or watching.": "选择参与或关注时，您将收到哪些额外活动的电子邮件。",
@@ -2928,10 +2929,11 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
         // 通知 自定义路由 https://github.com/settings/notifications/custom_routing
                 "/ Custom Routing": "/ 自定义路由",
-                    "You can send notifications to different": "您可以将通知发送到不同的",
-                    "verified": "经确认",
-                    "email addresses depending on the organization that owns the repository.": "电子邮件地址，根据拥有仓库的组织。",
-                    "is your current default email for notifications.": "是您目前默认的通知邮箱。",
+                // 若继续按照原文翻译，将存在主谓宾乱序不宜理解，且该段也无法使用正则，为此直接将段落内容/意思翻译在第一个句子中，后续句子翻译直接空格反显
+                    "You can send notifications to different": "您可以自定义各组织的通知邮件发送到不同的电子邮箱地址中",
+                    "verified": "（仅限通过验证的邮箱）",
+                    "email addresses depending on the organization that owns the repository.": " ",
+                    "is your current default email for notifications.": "是您目前默认的通知邮箱",
 
                     "No custom routes yet.": "尚无自定义路由",
                     "Add new route": "添加新路由",
@@ -3398,6 +3400,10 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 // 顶部提醒
                 "Resend verification email": "重新发送验证邮件",
                 "Your email was verified.": "您的电子邮箱地址验证成功！",
+            },
+            "regexp": [ // 正则翻译
+                [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"]
+            ],
 
             "Primary email address": "主电子邮箱",
             // 未电子邮箱隐私
