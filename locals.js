@@ -7066,7 +7066,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Reason for locking": "锁定原因",
                     "Choose a reason": "选择原因",
                         "Off-topic": "偏离主题",
-                        "Too heated": "过热",
+                        "Too heated": "争论不休",
                         "Resolved": "已解决",
                         "Spam": "垃圾信息",
                     "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
