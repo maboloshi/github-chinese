@@ -3393,7 +3393,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
                 "At least one non-backup email is required.": "至少需要一个非备份电子邮箱",
             "Backup": "备用电子邮箱",
-            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮件将用作与账户安全相关通知的额外接收地址，也可用于密码重置。",
+            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮箱将用作与账户安全相关通知的额外接收地址，也可用于密码重置。",
 
             "Add email address": "添加电子邮箱",
             "Email address": "电子邮箱",
@@ -3454,7 +3454,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
-            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主题的电子邮件，请取消选中您不想接收的主题，然后操作保存",
+            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主题的电子邮件，请取消选中您不想接收的主题，然后点击 “保存订阅首选项”",
             "General info and offers from GitHub": "GitHub 的一般信息和优惠",
             "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
             "Unsubscribe from all topics": "取消订阅所有主题",
