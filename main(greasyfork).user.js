@@ -97,7 +97,7 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.reIgnoreId.includes(node.id) ||
+        if (I18N.conf.reIgnoreId.test(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
             I18N.conf.reIgnoreTag.includes(node.tagName) ||
             (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
