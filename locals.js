@@ -5969,6 +5969,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "You must be signed in to change notification settings": "您必须登录后才能更改通知设置",
             "You must be signed in to star a repository": "您必须登录后才能星标仓库",
             "You must be signed in to add this repository to a list": "您必须登录后才能将此仓库添加到列表中",
+            "You must be logged in to vote": "您必须登录后才能投票",
 
     },
     "regexp": [ // 正则翻译
@@ -5984,7 +5985,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/and/, "和"],
+        [/ and /, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -6211,6 +6212,7 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 操作条
                 "forked from": "复刻自",
                 "Public repository · Forked from": "公共仓库 · 复刻自", // Android UA 下出现
+                "Public repository · Generated from": "公共仓库 · 创建自", // 同上
                 "generated from": "创建自",
                 "mirrored from": "镜像自",
 
@@ -8202,10 +8204,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
-            "between": "",
+            "between": " ",
             "and committing changes": "并提交更改",
             // [/(\d+) conflicting files?/, "$1 个冲突文件"],
             // [/(\d+) conflicts?/, "$1 处冲突"],
+
             "Mark as resolved": "标记为已解决",
                 "Remove all conflict markers to resolve this file": "删除所有冲突标记以解决此文件冲突",
             "Indent mode": "缩进模式",
@@ -8219,6 +8222,11 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Commit merge": "提交合并",
             "Sign off and commit merge": "签署并提交合并",
                 "Heads up, this will commit to": "请注意，这将提交到",
+                "Commit updates to the": "提交更改到",
+                "branch.": "分支。",
+                "Create a": "创建",
+                "new branch": "新分支",
+                "and commit updates. Your pull request will be updated automatically.": "并提交更改。您的拉取请求将自动更新。",
                 // [/I understand, sign off and update/, "我明白了，依然签署并更新"],
                 "You are": "您将",
                 "signing off": "签署",
@@ -8298,6 +8306,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
         [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
+        [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
@@ -8305,6 +8314,10 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/([^ ]+) requested changes/, "$1 要求更改"],
         [/(\d+) active deployments?/, "$1 个活动的部署"],
+
+        // 解决冲突编辑器（似乎又是 F12 才会翻译）
+        [/Search:/, "搜索："],
+        [/\(Use \/re\/ syntax for regexp search\)/, "(使用 /re/ 进行正则搜索)"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -8379,6 +8392,10 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "Unified": "同屏",
             "Split": "分屏",
+
+            "Load diff": "载入差异",
+            "This file was deleted.": "该文件已被删除",
+            "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
 
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
@@ -10363,6 +10380,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
 
                 // 底部提醒
                     "You can't delete this protected branch.": "您无法删除此受保护分支。",
+                    "You can't delete the default branch.": "您不能删除默认分支。",
 
     },
     "regexp": [ // 正则翻译
@@ -10370,6 +10388,7 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"],
         [/Rename default branch/, "重命名默认分支"],
         [/Rename branch/, "重命名分支"],
+        [/Your branch name will be ([^ ]+)/, "分支将重命名为 $1"],
         [/Delete/, "删除分支"],
         // [/is associated with (\d+) open pull requests?:/, "与 $1 个拉取请求相关联："],
         [/Branch ([^ ]+) will be renamed to ([^ ]+) shortly./,"分支 $1 将很快重命名为 $2。"], //分支重命名成功
@@ -10708,7 +10727,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/and/, "和"],
+        [/ and /, "和"],
         [/(\d+) (people|person) reacted/, "$1 人反应"],
     ],
 };
