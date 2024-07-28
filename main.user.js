@@ -467,7 +467,6 @@
 
     // 设置中文环境
     document.documentElement.lang = lang;
-
     // 监测 HTML Lang 值, 设置中文环境
     new MutationObserver(mutations => {
         if (document.documentElement.lang === "en") {
