@@ -457,7 +457,7 @@
             });
         });
 
-        // if (page) traverseNode(document.body);
+        if (page) traverseNode(document.body);
 
         // 监视页面变化
         watchUpdate();
