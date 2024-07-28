@@ -442,7 +442,13 @@
         console.log(`开始page= ${page}`);
         // 获取需要翻译的元素
         const elements = document.querySelectorAll('.to-be-translated');
-
+        // 在页面加载完成后，延迟设置焦点
+        setTimeout(() => {
+            const element = document.querySelector('.focus-element');
+            if (element) {
+                element.focus();
+            }
+        }, 0);
         // 使用 requestAnimationFrame 进行批量重排
         requestAnimationFrame(() => {
             elements.forEach(element => {
@@ -450,8 +456,8 @@
                 transElement(element, 'textContent');
             });
         });
-        
-        if (page) traverseNode(document.body);
+
+        // if (page) traverseNode(document.body);
 
         // 监视页面变化
         watchUpdate();
