@@ -279,7 +279,7 @@
         const shouldSkip = text => /^[\s0-9]*$/.test(text) || /^[\u4e00-\u9fa5]+$/.test(text) || !/[a-zA-Z,.]/.test(text);
         if (shouldSkip(text)) return false;
 
-        // 清理文本内容
+        // 清理文本内容。
         const trimmedText = text.trim(); // 去除首尾空格
         const cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' '); // 去除多余空白字符（包括 &nbsp; 空格 换行符）
 
