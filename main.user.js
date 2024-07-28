@@ -267,15 +267,15 @@
     }
 
     /**
-     * transText 函数：翻译文本内容。
-     * @param {string} text - 需要翻译的文本内容。
-     * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false。
+     * transText 函数：翻译文本内容
+     * @param {string} text - 需要翻译的文本内容
+     * @returns {string|boolean} 翻译后的文本内容，如果没有找到对应的翻译，那么返回 false
      */
     function transText(text) {
         // 判断是否需要跳过翻译
-        //  1. 检查内容是否为空或者仅包含空白字符或数字。
-        //  2. 检查内容是否仅包含中文字符。
-        //  3. 检查内容是否不包含英文字母和符号。
+        //  1. 检查内容是否为空或者仅包含空白字符或数字
+        //  2. 检查内容是否仅包含中文字符
+        //  3. 检查内容是否不包含英文字母和符号
         const shouldSkip = text => /^[\s0-9]*$/.test(text) || /^[\u4e00-\u9fa5]+$/.test(text) || !/[a-zA-Z,.]/.test(text);
         if (shouldSkip(text)) return false;
 
