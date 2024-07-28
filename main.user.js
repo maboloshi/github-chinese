@@ -25,7 +25,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    // 设置默认语言
+    // 设置默认语言.
     const lang = 'zh-CN';
     // 获取或设置是否启用正则表达式翻译
     let page = false, enable_RegExp = GM_getValue("enable_RegExp", 1);
