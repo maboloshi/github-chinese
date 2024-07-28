@@ -5,7 +5,7 @@
 // @copyright    2021, buiawpkgew1, 沙漠之子, 菾凴
 // @icon         https://github.githubassets.com/pinned-octocat.svg
 // @version      1.9.2-beta.10-2024-06-09
-// @author       沙漠之子
+// @author       菾凴
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
