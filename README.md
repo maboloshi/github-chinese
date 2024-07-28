@@ -52,9 +52,16 @@ Via 浏览器（Android）                | 浏览器内自带
 1. 刷新下页面，即可发现网站已中文化。
 > 需要视频教程的可以去看看[这里](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
 
+> [!Note]
+> ### 关于 “Chrome 127 及更高版本无法使用” 的问题
+> 原因是 Chrome 127 及更高版本，陆续切换到 Manifest V3，目前已知 [Tampermonkey][Tampermonkey] 5.2.1 以上版本支持，详见 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论
+> #### 解放方案：
+> 1. 必须安装 [Tampermonkey][Tampermonkey] 5.2.1 以上版本，其他脚本管理器暂不支持
+> 2. 必须在浏览器的 “扩展程序” 管理中开启 “开发者模式”
+
 ## 词库本地调试方法
-1. 需要安装插件管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
-1. 在浏览器插件管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址” 如图：
+1. 需要安装用户脚本管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
+1. 在浏览器扩展管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址” 如图：
 
     <picture>
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/允许访问文件网址-light.png"/>
@@ -64,7 +71,7 @@ Via 浏览器（Android）                | 浏览器内自带
 
 1. 将修改的词库文件放到方便访问的本地位置。
 1. 安装 [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]，实际 [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js] 也可。
-1. 回到插件管理器，修改词库文件路径，即类似 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
+1. 回到脚本管理器，修改词库文件路径，即类似 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
    中网址改成本地路径格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
 
   > [!TIP]
