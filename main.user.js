@@ -456,6 +456,8 @@
                 transElement(element, 'textContent');
             });
         });
+        
+        transTitle(); // 翻译页面标题
 
         if (page) traverseNode(document.body);
 
@@ -478,7 +480,6 @@
     // 监听 Turbo 完成事件
     document.addEventListener('turbo:load', () => {
         if (page) {
-            transTitle(); // 翻译页面标题
             transBySelector();
             if (page === "repository") { //仓库简介翻译
                 transDesc(".f4.my-3");
