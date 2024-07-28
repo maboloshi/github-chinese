@@ -440,7 +440,17 @@
         // 获取当前页面的翻译规则
         page = getPage();
         console.log(`开始page= ${page}`);
+        // 获取需要翻译的元素
+        const elements = document.querySelectorAll('.to-be-translated');
 
+        // 使用 requestAnimationFrame 进行批量重排
+        requestAnimationFrame(() => {
+            elements.forEach(element => {
+                // 执行翻译操作
+                transElement(element, 'textContent');
+            });
+        });
+        
         if (page) traverseNode(document.body);
 
         // 监视页面变化
