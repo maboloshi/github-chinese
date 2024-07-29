@@ -7983,6 +7983,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
                 "Branch protection rules": "分支保护规则",
+                "Rulesets": "规则集",
                 "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
             "Add rule": "添加规则",
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
