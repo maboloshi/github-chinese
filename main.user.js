@@ -27,7 +27,98 @@
     'use strict';
 
     const lang = 'zh-CN'; // 设置默认语言
-    let page = false, enable_RegExp = GM_getValue("enable_RegExp", 1);
+    let enable_RegExp = GM_getValue("enable_RegExp", 1),
+        page = false,
+        cachedPage = null,
+        characterData = null,
+        ignoreMutationSelectors = [],
+        ignoreSelectors = [],
+        tranSelectors = [],
+        regexpRules = [];
+
+    // const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
+
+    // 临时固化规则 便于调试
+    const characterDataPage = ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'];
+    const ignoreMutationSelectorPage = {
+        'repository/new': [".cm-scroller"],
+        'repository/edit': [".cm-scroller", "table"],
+        'repository/pull': ["td.blob-code"],
+        'repository/compare': ["tbody"],
+        'repository/commit': ["tr.show-top-border"],
+        'repository/blob': ["section"],
+        'repository/blame': ["section"],
+        'repository': [".AppHeader-context", "article.markdown-body", "table"],
+        'repository/releases': [".Box-footer"],
+    };
+    const ignoreSelectorPage = {
+        'repository': [
+            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            '.content[itemprop="name"]', // 仓库名称 无效
+            // 'ul.list-style-none', // 右侧 部署列表 无效
+            '.d-block.overflow-x-hidden.color-fg-default', // 仓库名称
+            '[data-testid="latest-commit"]', // 最新的提交
+            'tr.react-directory-row', // 仓库列表
+            '.f4.my-3', // 仓库简介正文
+            '#translate-me',
+            '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
+            // '.markdown-body',
+            'li.mt-2',
+        ],
+        'repository/tree': [
+            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            'tbody', // 文件列表
+            '#repos-header-breadcrumb',
+            '#file-name-id', // 文件路径中文件部分
+        ],
+        'repository/blob': [
+            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            '.react-tree-show-tree-items', // 左侧文件树项目
+            '[id^="offset"]', //符号-->引用
+            'section', // 代码视图
+            '#filter-results', // 右侧 符号筛选
+            '#repos-header-breadcrumb', // 文件路径中文件夹路径
+            '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
+            '#sticky-breadcrumb',
+            '#file-name-id', // 文件路径中文件部分
+        ],
+        'repository/edit': [
+            '.cm-scroller',
+        ],
+        'repository/new': [
+            '.cm-scroller',
+        ],
+        'dashboard': [
+            '.js-notice-dismiss',
+            '.TimelineItem',
+        ],
+        '*': [
+            '.markdown-body',
+            '.markdown-title'
+        ],
+    };
+
+    function updateConfig(page) {
+        if (cachedPage !== page && page) {
+            cachedPage = page;
+
+            characterData = characterDataPage.includes(page);
+            // 忽略突变的选择器
+            ignoreMutationSelectors = ignoreMutationSelectorPage[page] || [];
+            // 忽略选择器
+            ignoreSelectors = ignoreSelectorPage['*'].concat(ignoreSelectorPage[page] || []);
+            // 通过 CSS 选择器翻译的规则
+            tranSelectors = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []);
+            // 正则词条
+            regexpRules = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []);
+        }
+    }
+
+    function initPage() {
+        const page = getPage();
+        updateConfig(page);
+        return page;
+    }
 
     /**
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
@@ -42,14 +133,6 @@
         // 缓存当前页面的 URL
         let previousURL = location.href;
 
-        const { characterDataPage, ignoreSelector } = I18N.conf;
-
-        const getConfig = page => {
-            const characterData = characterDataPage.includes(page),
-                  ignoreSelectors = ignoreSelector[page] || [];
-            return { characterData, ignoreSelectors };
-        };
-
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
             const currentURL = location.href;
@@ -57,12 +140,11 @@
             // 如果页面的 URL 发生变化
             if (currentURL !== previousURL) {
                 previousURL = currentURL;
-                page = getPage();
+                page = initPage();
                 console.log(`DOM变化触发: 链接变化 page= ${page}`);
             }
 
             if (page) {
-                const { characterData, ignoreSelectors } = getConfig(page);
 
                 // 使用 mutations.flatMap 进行筛选突变:
                 //   1. 针对`节点增加`突变，后期迭代翻译的对象调整为`addedNodes`中记录的新增节点，而不是`target`，此举大幅减少重复迭代翻译
@@ -78,7 +160,7 @@
 
                     // 对每个节点进行筛选，忽略特定选择器
                     return nodes.filter(node =>
-                        !ignoreSelectors.some(selector => node.parentElement?.closest(selector))
+                        !ignoreMutationSelectors.some(selector => node.parentElement?.closest(selector))
                     );
                 });
 
@@ -99,11 +181,7 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        const { ignoreId, ignoreTag, reIgnoreClass, reIgnoreItemprop } = I18N.conf;
-        const skipNode = node => ignoreId.includes(node.id) ||
-                                 ignoreTag.includes(node.tagName) ||
-                                 reIgnoreClass.test(node.className) ||
-                                 (node.nodeType === Node.ELEMENT_NODE && reIgnoreItemprop.test(node.getAttribute("itemprop")));
+        const skipNode = node => ignoreSelectors.some(selector => node.matches?.(selector));
 
         if (skipNode(node)) return;
 
@@ -309,9 +387,7 @@
 
         // 正则翻译
         if (enable_RegExp) {
-            const res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
-
-            for (let [a, b] of res) {
+            for (let [a, b] of regexpRules) {
                 translatedText = text.replace(a, b);
                 if (translatedText !== text) {
                     return translatedText;
@@ -400,13 +476,9 @@
      * transBySelector 函数：通过 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译。
      */
     function transBySelector() {
-        // 获取当前页面的翻译规则，如果没有找到，那么使用公共的翻译规则
-        const res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
-
-        // 如果找到了翻译规则
-        if (res.length > 0) {
+        if (tranSelectors.length > 0) {
             // 遍历每个翻译规则
-            for (let [selector, translatedText] of res) {
+            for (let [selector, translatedText] of tranSelectors) {
                 // 使用 CSS 选择器找到对应的元素
                 const element = document.querySelector(selector);
                 // 如果找到了元素，那么将其文本内容替换为翻译后的文本
@@ -437,7 +509,7 @@
      */
     function init() {
         // 获取当前页面的翻译规则
-        page = getPage();
+        page = initPage();
         console.log(`开始page= ${page}`);
 
         if (page) traverseNode(document.body);
