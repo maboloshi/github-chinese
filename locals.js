@@ -657,7 +657,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "⭐️ Name this list": "⭐️ 清单名称",
                     "Write a description": "简单描述",
                     // 小贴士
-                        "type : to add emoji to the name or description.": "输入: 在名称或描述中添加表情符号", 
+                        "type : to add emoji to the name or description.": "输入: 在名称或描述中添加表情符号",
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
@@ -3393,7 +3393,8 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "At least one email is required.": "至少需要一个电子邮箱。",
             // 删除按钮 提醒信息
                 "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
-                "At least one non-backup email is required.": "至少需要一个非备用电子邮箱",
+
+            "At least one non-backup email is required.": "至少需要一个非备用电子邮箱",
             "Backup": "备用电子邮箱",
             "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
             "Add email address": "添加电子邮箱",
@@ -3401,10 +3402,6 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 // 顶部提醒
                 "Resend verification email": "重新发送验证邮件",
                 "Your email was verified.": "您的电子邮箱地址验证成功！",
-            },
-            "regexp": [ // 正则翻译
-                [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"]
-            ],
 
             "Primary email address": "主电子邮箱",
             // 未电子邮箱隐私
@@ -3464,6 +3461,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
+        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
     ],
 };
 
@@ -13677,13 +13675,13 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
                 "Currently Running": "正在运行中",
                 "Disabled": "禁用",
             "See output": "查看输出结果",
-        
+
             "Configuration menu": "设置菜单",
                 "Manually trigger": "手动触发",
                 "View runs": "查看运行日志",
                 "Disable runs":"暂停运行",
                 "Enable runs":"恢复运行",
-                
+
             // 删除对话框
                 "Are you sure?": "您确定吗？",
                 "Are you sure you want to delete this prebuild configuration? Running workflow may fail and templates associated with this configuration will be deleted.": "您确定要删除这个预构建设置吗？运行中的工作流可能会失败，与此设置相关的模板将被删除。",
@@ -13691,7 +13689,7 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
         // 代码空间-新建预构建设置 /<user-name>/<repo-name>/settings/codespaces/prebuild_configurations/new
             "/ New prebuild configuration": "/ 新建预构建设置",
             // 黄色警告
-                "Prebuilds consume storage space that will incur a billable charge. Learn more about": 预构建会占用存储空间，可能会产生费用。了解更多关于",
+                "Prebuilds consume storage space that will incur a billable charge. Learn more about": "预构建会占用存储空间，可能会产生费用。了解更多关于",
                 "prebuild configurations": "预构建设置",
 
             "Configuration": "设置",
