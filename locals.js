@@ -656,7 +656,8 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                     "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                     "⭐️ Name this list": "⭐️ 清单名称",
                     "Write a description": "简单描述",
-                    "to add emoji to the name or description.": "可在名称或描述中添加表情符号", 
+                    // 小贴士
+                        "type : to add emoji to the name or description.": "输入: 在名称或描述中添加表情符号", 
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
@@ -2877,10 +2878,10 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
             "Subscriptions": "订阅",
                 "Watching": "关注仓库",
-                    "Notifications for all repositories, teams, or conversations you're watching.": "当您关注的仓库、团队或对话有新的变化时您将收到通知。",
+                    "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话所发出的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
-                    "Select notification channels": "选择通知通道",
+                    "Select notification channels": "选择通知渠道",
                     "Close": "关闭",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, CLI": "在 GitHub、CLI 上",
@@ -2891,7 +2892,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                 "Don't notify": "取消通知",
 
                 "Participating, @mentions and custom": "参与、@提及和自定义",
-                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "当您参与的对话有新的通知、或有人 @您时、以及您的订阅特定事件有新的变化时您将收到通知。",
+                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "您参与的对话、或有人 @您、以及您订阅的特定事件所发出的通知。",
 
                 "Customize email updates": "自定义电子邮件更新",
                     "Choose which additional events you'll receive emails for when participating or watching.": "选择参与或关注时，您将收到哪些额外活动的电子邮件。",
@@ -7266,7 +7267,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
             "locked as": "锁定为",
                 "off-topic": "偏离主题",
-                "too heated": "过热",
+                "too heated": "争论不休",
                 "resolved": "已解决",
                 "spam": "垃圾信息",
             "and limited conversation to collaborators": "并限制与协作者对话",
