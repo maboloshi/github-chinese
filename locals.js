@@ -172,7 +172,7 @@ I18N.zh["title"] = { // 标题翻译
         "Tags": "标签",
         "Webhooks": "Web 钩子",
         "Environments": "环境",
-        "Code security & analysis": "代码安全性与分析",
+        "Security & analysis": "安全性与分析",
         "Deploy keys": "部署密钥",
         "Add deploy key": "添加部署密钥",
         "Actions secrets": "操作机密",
@@ -649,10 +649,15 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "You don't have any lists yet.": "您尚无任何清单。",
                 "Lists": "清单",
                     "Search lists": "搜索清单",
+                    "🔮 Future ideas": "🔮 超前想法",
+                    "🚀 My stack": "🚀 技术栈",
+                    "✨ Inspiration": "✨ 灵感",
                 "Create list": "创建清单",
                     "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                     "⭐️ Name this list": "⭐️ 清单名称",
                     "Write a description": "简单描述",
+                    // 小贴士
+                        "type : to add emoji to the name or description.": "输入: 在名称或描述中添加表情符号",
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
@@ -877,10 +882,10 @@ I18N.zh["pubilc"] = { // 公共区域翻译
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
-            "GPG key ID:": "GPG 密钥 ID：",
-            "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
+            "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不相符。",
+            "No user is associated with the committer email.": "提交者的电子邮箱未与用户相关联。",
 
             "Verified": "已验证",
             "Expired": "已过期",
@@ -1701,9 +1706,16 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
-            "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
+            "You unlocked new Achievements! Show them off by including achievements and private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             "Your popular repositories will now be shown instead of your pins.": "现在将显示您的热门仓库，而不是您的置顶。",
+
+            "Only you can see your full profile.": "只有您可以查看完整的个人资料。",
+                "You have marked your profile as private, which limits what activity other people can see.": "您已将个人资料设为私密，这会限制其他人查看您的活动。",
+                "Update profile settings": "更新个人资料设置",
+            "View what others see": "以他人视角查看",
+            "View full profile": "查看完整个人资料",
+
             "Your pins have been updated.": "您的置顶已更新。",
             // 拖拽排序提醒
             "Order updated.": "置顶已更新。",
@@ -2853,7 +2865,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
         // Notification center 通知 https://github.com/settings/notifications
             "Default notifications email": "默认邮件通知设置",
-                "Choose where you'd like emails to be sent. You can add more email addresses. Use custom routes to specify different email addresses to be used for individual organizations.": "选择您希望将邮件发送到的邮箱。您可以添加更多电子邮件地址。使用自定义路由来指定用于各个组织的不同电子邮件地址。",
+                "Choose where you'd like emails to be sent. You can add more email addresses. Use custom routes to specify different email addresses to be used for individual organizations.": "请选择希望接收通知邮件的邮箱。您可以添加多个邮箱地址。可借助自定义路由为不同的组织指定不同的邮箱地址。",
                 "Custom routing": "自定义路由",
 
             "Automatically watch repositories": "自动关注仓库",
@@ -2866,10 +2878,10 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
             "Subscriptions": "订阅",
                 "Watching": "关注仓库",
-                    "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话的通知。",
+                    "Notifications for all repositories, teams, or conversations you're watching.": "所有您正在关注的仓库、团队或对话所发出的通知。",
                     "View watched repositories": "查看正在关注的仓库",
                     "Notify me:": "提醒我：",
-                    "Select notification channels": "选择通知通道",
+                    "Select notification channels": "选择通知渠道",
                     "Close": "关闭",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, CLI": "在 GitHub、CLI 上",
@@ -2877,9 +2889,10 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                     "on GitHub, Email": "在 GitHub、电子邮件 上",
                     "On GitHub": "在 GitHub 上",
                     "on GitHub": "在 GitHub 上",
+                "Don't notify": "取消通知",
 
                 "Participating, @mentions and custom": "参与、@提及和自定义",
-                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "您正在参与的对话的通知，或者如果有人 @您。也适用于订阅特定事件时的所有活动。",
+                    "Notifications for the conversations you are participating in, or if someone cites you with an @mention. Also for all activity when subscribed to specific events.": "您参与的对话、或有人 @您、以及您订阅的特定事件所发出的通知。",
 
                 "Customize email updates": "自定义电子邮件更新",
                     "Choose which additional events you'll receive emails for when participating or watching.": "选择参与或关注时，您将收到哪些额外活动的电子邮件。",
@@ -2919,9 +2932,9 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
 
         // 通知 自定义路由 https://github.com/settings/notifications/custom_routing
                 "/ Custom Routing": "/ 自定义路由",
-                    "You can send notifications to different": "您可以将通知发送到不同的",
-                    "verified": "经确认",
-                    "email addresses depending on the organization that owns the repository.": "电子邮件地址，根据拥有仓库的组织。",
+                    "You can send notifications to different": "您可借助自定义路由为不同的组织指定不同的邮箱地址",
+                    "verified": "（经验证的邮箱）",
+                    "email addresses depending on the organization that owns the repository.": "。",
                     "is your current default email for notifications.": "是您目前默认的通知邮箱。",
 
                     "No custom routes yet.": "尚无自定义路由",
@@ -3381,6 +3394,9 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             // 删除按钮 提醒信息
                 "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
 
+            "At least one non-backup email is required.": "至少需要一个非备用电子邮箱",
+            "Backup": "备用电子邮箱",
+            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
             "Add email address": "添加电子邮箱",
             "Email address": "电子邮箱",
                 // 顶部提醒
@@ -3401,7 +3417,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "Yes， update my notification email": "是的，更新我的通知电子邮箱",
 
             "Backup email address": "备用电子邮箱",
-            "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的备用 GitHub 电子邮箱将额外的用作安全相关账户通知，也可以用于密码重置。",
+            "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的备用 GitHub 电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
             "Allow all verified emails": "允许所有已验证的电子邮箱",
                 // 顶部提醒
                 "All verified emails can now be used for password resets.": "所有已验证的电子邮箱现在均可用于密码重置。",
@@ -3431,10 +3447,12 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 "Manage": "管理",
 
         // 订阅偏好 https://github.com/settings/emails/subscriptions
+            "Subscription preferences": "订阅首选项",
+            "⏳Please wait while we find your subscriptions...⌛": "⏳请稍候，我们正在查找您的订阅...⌛",
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
-            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then select Save subscription preferences": "要停止接收以下主题的电子邮件，请取消选中任何不想接收的主题，然后选择“保存订阅首选项”",
+            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主题的电子邮件，请取消选中您不想接收的主题，然后点击 “保存订阅首选项”",
             "General info and offers from GitHub": "GitHub 的一般信息和优惠",
             "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
             "Unsubscribe from all topics": "取消订阅所有主题",
@@ -3443,6 +3461,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
+        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
     ],
 };
 
@@ -3983,14 +4002,15 @@ I18N.zh["settings/codespaces"] = { // 设置 - 代码空间
             "Automatically install dotfiles": "自动安装点文件",
             "Codespaces can automatically install your dotfiles into every codespace you create.": "代码空间可以自动将您点文件安装到您创建的每个代码空间。",
             "Learn how to set up your dotfiles for Codespaces.": "了解如何为代码空间设置点文件。",
+            "Select repository": "选择仓库",
             "Search for a repository": "搜索仓库",
+            "Changes saved": "更改已保存",
 
-            "Codespaces secrets": "代码空间机密",
+            "Secrets": "机密",
+            "Codespace user secrets": "代码空间用户机密",
             "New secret": "新建机密",
-            "Development environment secrets are environment variables that are": "开发环境机密是",
-            "encrypted": "被加密的环境变量",
-            ". They are available to any codespace you create using repositories with access to that secret.": "。它们可用于您使用访问该机密的仓库创建的任何代码空间。",
-            "There are no Codespaces secrets.": "尚无代码空间机密",
+            "Development environment secrets are environment variables that are encrypted. They are available to any codespace you create using repositories with access to that secret.": "开发环境机密是加密的环境变量。它们可用于您可访问该机密的仓库创建的任何代码空间。",
+            "There are no Codespace secrets.": "尚无代码空间机密",
             "Secrets created at the user level can be shared with specified repositories.": "在用户级别创建的机密可以与指定的仓库共享。",
 
             // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
@@ -6536,7 +6556,18 @@ I18N.zh["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "About": "关于"，
             "No description, website, or topics provided.": "未提供描述、网站或主题。",
             "Readme": "自述文件",
+            "README": "自述文件",
             "View license": "查看许可证",
+                "GPL-3.0 license": "GPL-3.0 许可证",
+                "AGPL-3.0 license": "AGPL-3.0 许可证",
+                "LGPL-3.0 license": "LGPL-3.0 许可证",
+                "MIT license": "MIT 许可证",
+                "Apache-2.0 license": "Apache-2.0 许可证",
+                "OFL-1.1 license": "OFL-1.1 许可证",
+                "0BSD license": "0BSD 许可证",
+                "BSD-3-Clause license": "BSD-3-Clause 许可证",
+                "CC0-1.0 license": "CC0-1.0 许可证",
+                "WTFPL license": "WTFPL 许可证",
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
             "Cite this repository": "引用此仓库",
@@ -6997,6 +7028,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                 "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因为您正在关注此仓库上的拉取请求。",
                 "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因为您正在关注此仓库上的议题。",
                 "You’re receiving notifications because you modified the open/close state.": "您收到通知是因为您修改了打开/关闭状态。",
+                "You’re receiving notifications because you were assigned.": "您收到通知是因为您受理了它。",
                 "You’re ignoring this repository.": "您忽略了这个仓库。",
 
                     // 通知设置对话框
@@ -7036,7 +7068,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
                     "Reason for locking": "锁定原因",
                     "Choose a reason": "选择原因",
                         "Off-topic": "偏离主题",
-                        "Too heated": "过热",
+                        "Too heated": "争论不休",
                         "Resolved": "已解决",
                         "Spam": "垃圾信息",
                     "Optionally, choose a reason for locking that others can see. Learn more about when it’s appropriate to": "或者，选择其他人可以看到的锁定原因。详细了解何时适合",
@@ -7233,7 +7265,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
             "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
             "locked as": "锁定为",
                 "off-topic": "偏离主题",
-                "too heated": "过热",
+                "too heated": "争论不休",
                 "resolved": "已解决",
                 "spam": "垃圾信息",
             "and limited conversation to collaborators": "并限制与协作者对话",
@@ -9515,6 +9547,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             "All workflows": "全部工作流程",
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
+
+            "Codespaces Prebuilds": "代码空间预构建",
+                "Showing all prebuild configuration runs for Codespaces. Learn about": "显示代码空间所有预构建设置的运行情况。了解",
+                "prebuilding your codespaces.": "代码空间预构建。",
 
             // 筛选条
                 "Filter workflow runs": "筛选工作流程",
@@ -13629,17 +13665,40 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
         ...I18N.zh["repository-settings-menu"]["static"],
 
         // 代码空间 /<user-name>/<repo-name>/settings/codespaces
-            "Prebuild configuration": "预构建配置",
+            // 顶部提醒
+                "Prebuild configuration created": "预构建设置已创建",
+                "Prebuild configuration deleted": "预构建设置已删除",
+            "Prebuild configuration": "预构建设置",
+
             "Set up prebuild": "设置预构建",
             "There are no prebuilds configured for this repository": "尚无预构建设置",
-            "Prebuild configurations speed up Codespace creations significantly by pre-executing all the tasks required to build your development environment.": "预构建配置通过预先执行构建开发环境所需的所有任务，大大加快了代码空间的创建。",
+            "Prebuild configurations speed up Codespace creations significantly by pre-executing all the tasks required to build your development environment.": "预构建设置通过预先执行构建开发环境所需的所有任务，大大加快了代码空间的创建。",
             "Learn more about setting up prebuilds": "了解更多关于预构建设置的信息",
 
-        // 代码空间 /<user-name>/<repo-name>/settings/codespaces
+            // 状态
+                "Currently Running": "正在运行中",
+                "Disabled": "禁用",
+            "See output": "查看输出结果",
+
+            "Configuration menu": "设置菜单",
+                "Manually trigger": "手动触发",
+                "View runs": "查看运行日志",
+                "Disable runs":"暂停运行",
+                "Enable runs":"恢复运行",
+
+            // 删除对话框
+                "Are you sure?": "您确定吗？",
+                "Are you sure you want to delete this prebuild configuration? Running workflow may fail and templates associated with this configuration will be deleted.": "您确定要删除这个预构建设置吗？运行中的工作流可能会失败，与此设置相关的模板将被删除。",
+
+        // 代码空间-新建预构建设置 /<user-name>/<repo-name>/settings/codespaces/prebuild_configurations/new
             "/ New prebuild configuration": "/ 新建预构建设置",
+            // 黄色警告
+                "Prebuilds consume storage space that will incur a billable charge. Learn more about": "预构建会占用存储空间，可能会产生费用。了解更多关于",
+                "prebuild configurations": "预构建设置",
+
             "Configuration": "设置",
             "Your prebuild will be built from the branch and configuration file selected below. Learn more about": "您的预构建将从下面选择的分支和配置文件中构建。了解更多关于",
-            "prebuild configuration.": "预构建设置。",
+            "prebuild configuration.": "预构建的设置。",
             "Select branch": "选择分支",
             "Find a branch": "查找分支",
             "Configuration File:": "设置文件：",
@@ -13670,8 +13729,8 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
                 "Filter": "筛选",
 
             "Region availability": "区域可用性",
-            "Reduce prebuild available to only specific regions": "减少仅适用于特定区域的预构建",
-                "By default, your prebuilt image will be available to all regions where codespaces are available and storage costs will apply for each region. You can adjust this to manage your storage usage.": "默认情况下，您的预构建映像将适用于所有代码空间可用的区域，并且每个地区都有存储费用。。您可以调整此项以管理您的存储使用情况。",
+            "Reduce prebuild availability to only specific regions": "仅在特定区域提供预构建",
+                "By default, your prebuilt image will be available to all regions where codespaces are available and storage costs will apply for each region. You can adjust this to manage your storage usage.": "默认情况下，您的预构建镜像将在所有提供代码空间的区域可用，并且每个区域都会产生存储费用。您可以对此进行调整，以管理存储空间的使用。",
                 "Learn about region availability": "了解区域可用性",
                     "US East": "美国东部",
                     "US West": "美国西部",
@@ -13697,6 +13756,9 @@ I18N.zh["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<u
                 "This prevents codespaces from attempting to use an older image to speed up boot time. This could adversely affect performance.": "这可以防止代码空间尝试使用旧的映像来加快启动时间。这可能会对性能产生不利影响。",
             "Hide advanced options": "隐藏高级选项",
             "Create": "创建",
+
+        // 代码空间-编辑预构建设置 /<user-name>/<repo-name>/settings/settings/codespaces/prebuild_configurations/<id>/edit
+            "/ Edit configuration": "编辑预构建设置",
 
     },
     "regexp": [ // 正则翻译
@@ -17263,8 +17325,8 @@ I18N.zh["orgs/people"] = { // 组织 - 成员标签卡
 
             "Filter by two-factor authentication": "按双因素身份验证筛选",
             "Everyone": "所有人",
-            "Enabled": "禁用",
-            "Disabled": "启用",
+            "Enabled": "启用",
+            "Disabled": "禁用",
             "Required": "必须",
 
             "Membership": "成员",
@@ -18246,7 +18308,7 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Smallest size": "最小尺寸",
 
             "No repository uses caches": "尚无仓库使用缓存",
-            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。。",
+            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存",
             "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流程执行时间的信息。",
 
