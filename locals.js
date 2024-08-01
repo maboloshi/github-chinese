@@ -297,6 +297,21 @@ I18N.zh["pubilc"] = { // 公共区域翻译
         "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
         "Please wait a few minutes before you try again;": "请稍等几分钟再重试；",
         "in some cases this may take up to an hour.": "在某些情况下，这可能最多需要一个小时。",
+        // 议题、拉取请求、讨论浮动信息卡（在任一引用这些链接的页面都会出现
+        "You opened this issue": "您打开了这个议题",
+        "You opened this pull request": "您打开了这个拉取请求",
+        "You commented on this issue": "您对此议题发表了评论",
+        "You commented on and opened this issue": "您打开了这个议题并发表评论",
+        "You commented on this pull request": "您对此拉取请求发表了评论",
+        "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
+        "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
+        "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
+        "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
+        "You left a review": "您已评论",
+        "Changes requested": "请求更改", // 拉取请求
+        "Review required": "请求审查", // 拉取请求
+        "Approved": "已批准", // 拉取请求
+        "replied": "已回复", // 讨论
 
         // 顶部栏 (未登录)
             "Product": "产品",
@@ -1272,20 +1287,7 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         "Find a team…": "搜索团队…",
         "Recent activity": "近期活动",
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
-            // 浮动信息卡片
-            "You opened this issue": "您打开了这个议题",
-            "You opened this pull request": "您打开了这个拉取请求",
-            "You commented on this issue": "您对此议题发表了评论",
-            "You commented on and opened this issue": "您打开了这个议题并发表评论",
-            "You commented on this pull request": "您对此拉取请求发表了评论",
-            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
-            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
-            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
-            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
-            "You left a review": "您已评论",
-            "Changes requested": "请求更改",
-            "Review required": "请求审查",
-            "Approved": "已批准",
+
         "Create your first project": "创建您的第一个项目",
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
@@ -1679,7 +1681,6 @@ I18N.zh["page-profile-public"] = { // 个人首页（含组织）
         [/(\d+) repositories/, "$1 仓库"],
         [/(\d+) members/, "$1 成员"],
         [/and (\d+) more/, "和 $1 个更多"],
-        [/A graph representing ([^ ]+)'s contributions from ([^ ]+) to ([^ ]+). The contributions are (\d+\%) commits, (\d+\%) pull requests, (\d+\%) code review, (\d+\%) issues./, "$1 从 $2 到 $3 的贡献图。其中，提交占 $4，拉取请求占 $5，代码审查占 $6，议题占 $7。"],
     ],
 };
 I18N.zh["page-profile/achievements"] = I18N.zh["page-profile-public"]; // ?tab=achievements
@@ -1797,10 +1798,11 @@ I18N.zh["page-profile"] = { // 个人首页
         [/(\d+|No) contributions?/, function (all, number) {
             return number === 'No' ? "无贡献" : number + " 次贡献";
         }],// 贡献日历
+        [/A graph representing ([^ ]+)'s contributions from ( .+) to ( .+)./, "$1 从 $2 到 $3 的贡献图。"],
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
         // 贡献信息
         [/Created ([\d,]+) commits? in (\d+) repositor(y|ies)/, "在 $2 个仓库中创建了 $1 次提交"],
-        [/Created (\d+) repositor(y|ies)/, "创建了 $1 个仓库"],
+        [/Created (\d+) (other)? repositor(y|ies)/, "创建了 $1 个仓库"],
         [/Opened (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个拉取请求"],
         [/Opened (\d+) other pull requests? in (\d+) repositor(y|ies)/, "在 $2 个其他仓库中打开了 $1 个拉取请求"],
         [/Opened (\d+) issues? in (\d+) repositor(y|ies)/, "在 $2 个仓库中打开了 $1 个议题"],
@@ -5949,21 +5951,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             "Build Canceled": "构建取消",
             "Waiting for build": "等待构建",
 
-        // 议题、拉取请求浮动信息
-            "You opened this issue": "您打开了这个议题",
-            "You opened this pull request": "您打开了这个拉取请求",
-            "You commented on this issue": "您对此议题发表了评论",
-            "You commented on and opened this issue": "您打开了这个议题并发表评论",
-            "You commented on this pull request": "您对此拉取请求发表了评论",
-            "You commented on and opened this pull request": "您打开了这个拉取请求并发表评论",
-            "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
-            "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
-            "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
-            "You left a review": "您已评论",
-            "Changes requested": "请求更改",
-            "Review required": "请求审查",
-            "Approved": "已批准",
-        
         // 未登录浮窗
             "You must be signed in to change notification settings": "您必须登录后才能更改通知设置",
             "You must be signed in to star a repository": "您必须登录后才能星标仓库",
@@ -5984,7 +5971,6 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/ and /, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -8015,6 +8001,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
                 "Branch protection rules": "分支保护规则",
+                "Rulesets": "规则集",
                 "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
             "Add rule": "添加规则",
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
@@ -8275,6 +8262,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
         [/(\d+) neutral checks?/, "$1 次中立检查"],
         [/(\d+) successful checks?/, "$1 次成功检查"],
+        [/(\d+) of (\d+) checks? passed/, "$1/$2 次检查通过"],
         [/(\d+) checks? passed/, "$1 次检查通过"],
 
         [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
@@ -8406,6 +8394,8 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "It looks like this is your first time opening a pull request in this project!": "看起来这是您在这个项目中首次发起的拉取请求呢！",
             "Be sure to review the": "请务必查阅",
             "contributing guidelines": "贡献指南",
+            "Reporting a security vulnerability?": "报告安全漏洞？",
+            "Check out the project's": "查看本项目的",
 
             "Checking mergeability…": "检查可合并性…",
             "Don’t worry, you can still create the pull request.": "别担心，您仍然可以创建拉取请求。",
@@ -11260,6 +11250,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Patched versions": "补丁版本",
             "Add another affected product": "添加另一个受影响的产品",
 
+            // 严重等级
+            "Pending selection": "待选择",
+
             "Select severity": "选择严重程度",
                 "Low": "低风险",
                 "Moderate": "中风险",
@@ -11267,14 +11260,25 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Critical": "关键风险",
                 "Assess severity using CVSS": "使用 CVSS 评估严重程度",
 
+            "Vector string": "矢量字符串",
+
+            "Calculator": "计算器",
+                "Learn more about CVSS scoring": "了解更多 CVSS 计分的信息",
+
+                "Adjacent": "邻近",
+                "Physical": "物理",
+
             "Common weakness enumerator (CWE)": "常见弱点枚举器 (CWE)",
                 "Search by CWE": "按 CWE 搜索",
+
+            "Credits": "用户",
+                "Add a user by username, full name, or email": "通过用户名、全名或电子邮件添加用户",
 
             "Create draft security advisory": "创建安全公告草案",
 
             // 右侧栏
             "Access and visibility": "访问和可见性",
-                "Until it is published, this draft security advisory will only be visible to the owner of": "在发布之前，此安全公告草案仅对以下的所有者可见",
+                "Until it is published, this draft security advisory will only be visible to the maintainers of": "在发布之前，此安全公告草案仅对以下的所有者可见",
                 ". Other users and teams may be added once the advisory is created.": "。 其他用户和团队可以在咨询创建后加入。",
             "Once published, security advisories on public repositories are visible to everyone.": "一旦发布，公共仓库上的安全公告对所有人都是可见的。",
             "Once reviewed by GitHub, security advisories may be broadcast on the": "一旦通过 GitHub 的审查，安全公告就可以出现在",
@@ -12131,6 +12135,7 @@ I18N.zh["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-n
             "Display a \"Sponsor\" button": "显示 “赞助” 按钮",
             "Add links to GitHub Sponsors or third-party methods your repository accepts for financial contributions to your project.": "添加指向 GitHub 赞助者或您的仓库接受的第三方收款链接，以便为您的项目提供资金捐助。",
             "Set up sponsor button": "设置赞助按钮",
+            "Edit funding links": "编辑赞助链接",
 
             // 项目
             "Projects on GitHub help you organize and prioritize your work. You can create projects for specific feature work, comprehensive roadmaps, or even release checklists.": "GitHub 上的项目可以帮助您组织工作并确定其优先次序。您可以为特定的功能工作、全面的路线图、甚至是发布清单创建项目",
@@ -12601,6 +12606,9 @@ I18N.zh["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分
 
                     "Require branches to be up to date before merging": "要求分支在合并前必须是最新的",
                         "This ensures pull requests targeting a matching branch have been tested with the latest code. This setting will not take effect unless at least one status check is enabled (see below).": "这可确保针对匹配分支的拉取请求已使用最新的代码进行了测试。除非启用了至少一个状态检查，否则这个设置不会生效（见下文）。",
+                    
+                    "Do not require status checks on creation": "不要求在创建时进行状态检查",
+                        "Allow repositories and branches to be created if a check would otherwise prohibit it.": "允许创建仓库和分支，否则检查将禁止创建。",
 
                     "Search for status checks in the last week for this repository": "搜索此仓库最近一周的状态检查",
                     "Status checks that are required.": "需要进行的状态检查。",
@@ -12816,6 +12824,8 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                  // 添加旁路对话框
                     "Choose which roles, teams, and apps can bypass this ruleset": "选择哪些角色、团队和应用可绕过此规则集",
 
+                    "Filter items": "筛选",
+
                     "No suggestions": "暂无建议",
 
                     "Suggestions": "建议",
@@ -12935,12 +12945,15 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
 
             // 规则
                 "Which rules should be applied to the targets that you have selected?": "哪些规则应适用于您选择的目标？",
+                "Which rules should be applied?": "应适用哪些规则？",
 
                 "protections": "保护",
                     "Restrict creations": "限制创建",
                         "Only allow users with bypass permission to create matching refs.": "只允许具有绕过权限的用户创建匹配的引用。",
                     "Restrict updates": "限制更新",
                         "Only allow users with bypass permission to update matching refs.": "只允许具有绕过权限的用户更新匹配的引用。",
+                            "Allow fork syncing": "允许复刻仓库同步",
+                                 "Branch can pull changes from its upstream repository": "分支可从上游仓库中拉取更改",
                     "Restrict deletions": "限制删除",
                         "Only allow users with bypass permissions to delete matching refs.": "只允许具有绕过权限的用户删除匹配的引用。",
                     "Require linear history": "需要线性历史",
@@ -12990,6 +13003,8 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                         "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.": "更新引用之前必须选择通过哪些状态检查。启用后，提交必须首先推送到检查通过的另一个引用。",
                             "Require branches to be up to date before merging": "要求分支在合并前必须是最新的",
                                 "Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.": "针对匹配分支的拉取请求，使用最新代码进行测试。至少启用一项状态检查，否则此设置不会生效。",
+                                "Do not require status checks on creation": "不要求在创建时进行状态检查",
+                                    "Allow repositories and branches to be created if a check would otherwise prohibit it.": "允许创建仓库和分支，否则检查将禁止创建。",
                                 // "Enter the name of a status check": "输入状态检查的名称",
                                     // [/Add '(.*)'/, "添加 $1"],
                                 "No required checks": "无需进行必要的检查",
@@ -13001,6 +13016,23 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
                                 "Learn more about status checks": "了解更多关于状态检查的信息",
                     "Block force pushes": "阻止强制推送",
                         "Prevent users with push access from force pushing to refs.": "防止具有推送权限的用户强制推送到引用。",
+                    "Require code scanning results": "需要代码扫描结果",
+                        "Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.": "选择哪些工具必须在更新引用之前提供代码扫描结果。配置后，代码扫描必须启用，并为提交和正在更新的引用提供结果。",
+                        "Required tools and alert thresholds": "所需工具和警报阈值",
+                            "Add tool": "添加工具",
+                                "Tool name": "工具名称",
+                                "Enter the name of a code scanning tool": "输入代码扫描工具名称",
+                        "Security alerts": "安全警报",
+                            "None": "无",
+                            "Critical": "关键",
+                            "High or higher": "高风险及以上",
+                            "Medium or higher": "中风险及以上",
+                        "Alerts": "警报",
+                            "Errors": "仅错误",
+                            "Errors and Warnings": "错误和警告",
+                        "Tools that must provide code scanning results for this rule to pass.": "必须提供代码扫描结果才能通过此规则的工具。",
+                        "Learn more about enabling code scanning.": "了解如何启用代码扫描。",
+
                     // 组织设置
                     "Require workflows to pass before merging": "要求合并前，工作流通过状态检查",
                         "Require all changes made to a targeted branch to pass the specified workflows before they can be merged.": "要求目标分支上的所有更改在合并前通过指定的工作流",
@@ -13146,6 +13178,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
 
     },
     "regexp": [ // 正则翻译
+        [/Applies to (\d+) target/, "适用于 $1 个目标"],
         ...I18N.zh["repository-public"]["regexp"],
         [/(\d+) branch rules?/, "$1 条分支规则"],
         [/(\d+) rules?/, "$1 条规则"],
@@ -14034,6 +14067,9 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                         "Select the alert severity level for code scanning check runs to fail.": "选择代码扫描检查运行失败的警报严重性级别。",
                         "Create a branch ruleset": "创建分支规则集",
                         "to prevent a branch from merging when these checks fail.": "以防止分支在这些检查失败时被合并。",
+
+                        "Security alert severity level:": "安全警报级别：",
+                        "Standard alert severity level:": "标准警报级别：",
 
                         "Security:": "风险：",
                         "Other:": "其他：",
@@ -18177,6 +18213,8 @@ I18N.zh["orgs/settings/actions"] = { // 组织设置 - 操作
                 "You can set a maximum limit of": "您最多可以设置为",
                 "days.": "天。",
                 "Learn more about the artifact and log retention policy.": "了解更多关于工件和日志保留政策的信息。",
+                "Duration must be 90 or less": "必须为 1-90",
+                "Duration must be 1 or more.": "必须为 1-90",
 
             "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
                 "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
