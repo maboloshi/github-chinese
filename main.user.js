@@ -24,8 +24,10 @@
 (function (window, document, undefined) {
     'use strict';
 
+    // const SUPPORT_LANG = ["zh-CN", "zh-TW", "en-US", "en-GB", "ja", "ko", "zh-HK", "zh-SG", "zh-MY", "zh-MO", "zh-Hant", "zh-Hant-TW", "zh-Hant-HK", "zh-Hant-MO", "zh-Hant-SG", "zh-Hant-MY", "zh-Hant"];
+    // let lang = (navigator.language || navigator.userLanguage);
     // 设置默认语言.
-    let lang = 'zh-CN';
+    let lang = 'zh-TW';
     // 获取或设置是否启用正则表达式翻译
     let page = false, enable_RegExp = GM_getValue("enable_RegExp", 1);
 
