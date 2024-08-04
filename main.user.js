@@ -465,15 +465,23 @@
         watchUpdate();
     }
 
-    // 设置中文环境
-    document.documentElement.lang = lang;
-    // 监测 HTML Lang 值, 设置中文环境
-    new MutationObserver(mutations => {
-        if (document.documentElement.lang === "en") {
-            document.documentElement.lang = lang;
-        }
-    }).observe(document.documentElement, {
-        attributeFilter: ['lang']
+    // 在 DOMContentLoaded 事件中设置语言
+    document.addEventListener('DOMContentLoaded', () => {
+        lang = document.documentElement.lang;
+        // 监测 HTML Lang 值, 设置中文环境
+        new MutationObserver(mutations => {
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = lang;
+            }
+        }).observe(document.documentElement, {
+            attributeFilter: ['lang']
+        });
+        
+        // 初始化菜单
+        registerMenuCommand();
+
+        // 在页面初始加载完成时执行
+        window.addEventListener('DOMContentLoaded', init);
     });
 
     // 监听 Turbo 完成事件
@@ -488,11 +496,6 @@
         }
     });
 
-    // 初始化菜单
-    registerMenuCommand();
-
-    // 在页面初始加载完成时执行
-    window.addEventListener('DOMContentLoaded', init);
 
 })(window, document);
 
