@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name         GitHub 中文化插件Gitee json i18n（测试版）
+// @name         GitHub 中文化插件{Gitee} json i18n（测试版）
 // @namespace    https://github.com/buiawpkgew1/github-chinese
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
-// @copyright    2021, buiawpkgew1, 沙漠之子, 菾凴
+// @copyright    2024, buiawpkgew1, 沙漠之子, 菾凴
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-beta.10-2024-06-09
-// @author       菾凴
+// @version      1.9.4-beta.1-2024-08-04
+// @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
