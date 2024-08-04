@@ -6018,7 +6018,7 @@ I18N.zh["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                 "Checking availability…": "检查可用性…",
                 "is available.": "名称可用。",
                 "The repository": "仓库",
-                "already exists on this account.": "已经存在于此账户。",
+                "already exists on this account": "已经存在于此账户",
                 "Your new repository will be created as": "您的新仓库将被创建为",
                 "New repository name must not be blank": "新仓库名称不能为空",
 
@@ -8386,6 +8386,12 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
 
+            // 修改的文件 左侧 展开按钮
+            "Expand all": "展开全部",
+            "Expand All": "展开全部",
+            "Expand Up": "向上展开",
+            "Expand Down": "向下展开",
+
             "Unified": "同屏",
             "Split": "分屏",
 
@@ -9447,6 +9453,9 @@ I18N.zh["repository/orgs/discussions"] = I18N.zh["repository/discussions"] ;
 I18N.zh["repository/actions"] = { // 仓库 - 操作页面
     "static": { // 静态翻译
         ...I18N.zh["repository-public"]["static"],
+
+        // 顶部提示
+            "Actions Enabled.": "操作已启用。",
 
         // 复刻仓库操作页面提示
             "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
@@ -20079,14 +20088,80 @@ I18N.zh["features"] = {
 I18N.zh["status"] = { // GitHub Status
     "static": {
         // https://www.githubstatus.com/
+            "Help": "帮助",
             "Community": "社区",
             "Subscribe To Updates": "订阅更新",
+                "Subscribe to status updates": "订阅状态更新",
+                    // 邮件
+                    "Get email notifications whenever GitHub": "您会收到电子邮件通知每当 GitHub",
+                        "creates": "创建",
+                        "updates": "更新",
+                        "resolves": "解决",
+                        "an incident.": "某个事件时。",
+                    "Email address:": "邮件地址",
+                        "Subscribe via Email": "通过邮件订阅",
+                        "Subscribing...": "订阅中...",
+                    "By subscribing you agree to our": "订阅即表示您同意我们的",
+                        "Privacy Policy": "隐私政策",
+                        "This site is protected by reCAPTCHA and the Google": "本网站受 reCAPTCHA 保护，适用 Google",
+                        "Terms of Service": "服务条款",
+                        "apply.": "。",
+                    // 电话
+                        "Get text message notifications whenever GitHub": "您会收到短信通知每当 GitHub",
+                        "Country code:": "国家代码：",
+                        "Phone number:": "电话号码：",
+                        "Subscribe via Text Message": "通过短信订阅",
+                        "Message and data rates may apply. By subscribing you agree to our": "信息和数据费率可能适用。订阅即表示您同意我们的",
+                            "the": " ",
+                            ", and the": "和",
+                            ". This site is protected by reCAPTCHA and the Google": "。本网站受 reCAPTCHA 保护，适用 Google",
+                    // Slack
+                        "Get incident updates and maintenance status messages in Slack.": "在 Slack 中获取事件更新和维护状态信息。",
+                        "Subscribe via Slack": "通过 Slack 订阅",
+                        "By subscribing you acknowledge our": "通过订阅，您承认我们的",
+                        ". In addition, you agree to the Atlassian": "。此外，您同意 Atlassian",
+                        "Cloud Terms of Service": "云服务条款",
+                        "and acknowledge Atlassian's": "并承认 Atlassian 的",
+                    // Web 钩子
+                        "Get webhook notifications whenever GitHub": "您会收到 Web 钩子每当 GitHub",
+                            "an incident,": "一个事件，",
+                            "an incident or": "一个事件或",
+                            "changes": "更改",
+                            "a component status.": "组件状态时。",
+                        "Webhook URL:": "Web 钩子 URL",
+                            "The URL we should send the webhooks to": "我们应将 Web 钩子发送到的 URL",
+                        "We'll send you email if your endpoint fails": "如果您的终端出现故障，我们将向您发送电子邮件",
+                        "Subscribe": "订阅",
+                    // X
+                        "Follow @githubstatus": "关注 @githubstatus",
+                        "view our profile": "查看我们的简介",
+                    // 支持网站
+                        "Visit our": "访问",
+                        "support site": "支持站点",
+                    // 播客
+                        "Get the": "获取",
+                        "Atom Feed": "Atom 反馈",
+                        "RSS Feed": "RSS 反馈",
             "All Systems Operational": "所有系统运行正常",
             "Normal": "正常",
             "Git Operations": "Git 操作",
+                "Performance of git clones, pulls, pushes, and associated operations": "git 克隆、拉取、推送和相关操作的性能",
             "API Requests": "API 请求",
+                "Requests for GitHub APIs": "GitHub API 请求",
             "Webhooks": "Web 钩子",
+                "Real time HTTP callbacks of user-generated and system events": "实时 HTTP 回调用户生成的事件和系统事件",
+            // 议题
+                "Requests for Issues on GitHub.com": "GitHub.com 上的议题请求",
             "Pull Requests": "拉取请求",
+                "Requests for Pull Requests on GitHub.com": "GitHub.com 上的拉取请求",
+            // 操作
+                "Workflows, Compute and Orchestration for GitHub Actions": "GitHub 操作的工作流、计算和协调",
+            // 软件包
+                "API requests and webhook delivery for GitHub Packages": "GitHub 软件包的 API 请求和 Web 钩子发送",
+            // Github Pages
+                "Frontend application and API servers for Pages builds": "用于页面构建的前端应用程序和应用程序接口服务器",
+            // 代码空间
+                "Orchestration and Compute for GitHub Codespaces": "GitHub 代码空间的协调与计算",
             "Current Status": "当前状态",
             "Incident History": "历史事故",
 
@@ -20103,10 +20178,12 @@ I18N.zh["status"] = { // GitHub Status
             "Incident with Webhooks": "Web 钩子事故",
             "We are investigating reports of degraded performance.": "我们正在调查性能下降的报告。",
             "This incident has been resolved.": "此事故已解决。",
+            "Disruption with some GitHub services": "某些 GitHub 服务中断",
             "+ Show All": "+ 展开全部",
             "Incidents": "个事故",
             "- Collapse Incidents": "- 收起事故",
             "Current status": "当前状态",
+            "No incidents reported for this month.": "本月无事故报告。",
 
         // https://www.githubstatus.com/incidents/xxxxxxxxxxxx
             "Incident Report for GitHub": "GitHub 事故报告",
