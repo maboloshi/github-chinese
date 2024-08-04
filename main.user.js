@@ -26,7 +26,7 @@
     'use strict';
 
     // 设置默认语言.
-    const lang = 'zh-CN';
+    let lang = 'zh-CN';
     // 获取或设置是否启用正则表达式翻译
     let page = false, enable_RegExp = GM_getValue("enable_RegExp", 1);
 
@@ -465,23 +465,15 @@
         watchUpdate();
     }
 
-    // 在 DOMContentLoaded 事件中设置语言
-    document.addEventListener('DOMContentLoaded', () => {
-        lang = document.documentElement.lang;
-        // 监测 HTML Lang 值, 设置中文环境
-        new MutationObserver(mutations => {
-            if (document.documentElement.lang === "en") {
-                document.documentElement.lang = lang;
-            }
-        }).observe(document.documentElement, {
-            attributeFilter: ['lang']
-        });
-        
-        // 初始化菜单
-        registerMenuCommand();
-
-        // 在页面初始加载完成时执行
-        window.addEventListener('DOMContentLoaded', init);
+    // 设置中文环境
+    document.documentElement.lang = lang;
+    // 监测 HTML Lang 值, 设置中文环境
+    new MutationObserver(mutations => {
+        if (document.documentElement.lang === "en") {
+            document.documentElement.lang = lang;
+        }
+    }).observe(document.documentElement, {
+        attributeFilter: ['lang']
     });
 
     // 监听 Turbo 完成事件
@@ -496,6 +488,11 @@
         }
     });
 
+    // 初始化菜单
+    registerMenuCommand();
+
+    // 在页面初始加载完成时执行
+    window.addEventListener('DOMContentLoaded', init);
 
 })(window, document);
 
