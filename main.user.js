@@ -819,12 +819,107 @@
                     },
                     'regexp': [],
                     'selector': [
-                        ['.selector1', '翻译后的文本1'],
-                        ['.selector2', '翻译后的文本2']
+                        ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
                     ]
                 },
                 'page-profile': {
-                    'static': {},
+                    'static': {
+                        // 左侧用户信息栏
+                        "Change your avatar": "修改头像",
+                        "they/them": "他们",
+                        "she/her": "她",
+                        "he/him": "他",
+                        "You have blocked this user": "您已拉黑此用户",
+                        "Follow": "关注",
+                        "Sponsor": "赞助",
+                        "follower": "关注者",
+                        "followers": "关注者",
+                        "following": "关注",
+                        "Joined": "加入于",
+                        "Achievements": "成就",
+                        "Highlights": "高光时刻",
+                        "Developer Program Member": "开发者计划成员",
+                        "Organizations": "组织",
+                        "Block or Report": "拉黑或举报",
+                        "Unblock or report user": "取消拉黑或举报",
+                        "- same time": "- 时间相同",
+
+                        // 编辑个人资料
+                        "Edit profile": "编辑个人资料",
+                        "Name": "名称",
+                        "Bio": "个人简介",
+                        "Add a bio": "添加个人简介",
+                        "You can": "您可",
+                        "@mention": "@用户名或组织名",
+                        "other users and organizations to link to them.": "链接到其他用户和组织。",
+                        "Pronouns": "代词",
+                        "Don't specify": "不说明",
+                        "they/them": "他们",
+                        "she/her": "她",
+                        "he/him": "他",
+                        "Custom": "自定义",
+                        "Company": "公司",
+                        "Location": "位置",
+                        "Display current local time": "显示当前当地时间",
+                        "same time": "相同时间",
+                        "Website": "网站",
+                        "Social accounts": "社交账户",
+                        "Link to social profile": "链接到社交账户",
+
+                        // 成就浮动界面
+                        // 北极代码库贡献者
+                        "Arctic Code Vault Contributor": "北极代码库贡献者",
+                        "History": "历史",
+                        "100% unlocked": "100% 解锁",
+                        "· Unlocked": "· 解锁于",
+                        "these repositories, and more, were archived": "这些仓库以及更多仓库已存档",
+                        // YOLO
+                        "You want it? You merge it.": "您想要它？您合并它。",
+                        "Merged without a review": "未经审查就合并",
+                        // Pull Shark
+                        "Pull Shark": "鲨鱼拉",
+                        "Bronze unlocked": "青铜已解锁",
+                        "Bronze and Silver unlocked": "青铜和白银已解锁",
+                        "· First unlocked": "· 首次解锁于",
+                        "2nd pull request merged": "2 个拉取请求被合并",
+                        "16th pull request merged": "16 个拉取请求被合并",
+                        "128th pull request merged": "128 个拉取请求被合并",
+                        "1024th pull request merged": "1024 个拉取请求被合并",
+                        // Starstruck
+                        "Starstruck": "追星族",
+                        "⭐️ 16 stars": "⭐️ 16 个星标",
+                        "⭐️ 128 stars": "⭐️ 128 个星标",
+                        "⭐️ 512 stars": "⭐️ 512 个星标",
+                        "⭐️ 4096 stars": "⭐️ 4096 个星标",
+                        // Pair Extraordinaire
+                        "Pair Extraordinaire": "非凡搭档",
+                        "Unlocked": "解锁于",
+                        "Coauthored with": "与下列用户共同合作",
+                        "Coauthored with an unknown user": "与未知用户共同合作",
+                        // Quickdraw
+                        "Quickdraw": "快速关闭",
+                        "Gitty up!": "赶快开始！",
+                        "Closed within 5 minutes of opening": "在打开的 5 分钟内关闭",
+                        // Galaxy Brain
+                        "Galaxy Brain": "银河大脑",
+                        "2nd accepted answer": "2 个答案被接受",
+                        "8th accepted answer": "8 个答案被接受",
+                        "16th accepted answer": "16 个答案被接受",
+                        "32nd accepted answer": "32 个答案被接受",
+                        // Public Sponsor
+                        "Public Sponsor": "公共赞助者",
+                        "1st sponsorship": "1 次赞助",
+                        // Mars 2020 Contributor
+                        "Mars 2020 Contributor": "火星 2020 贡献者",
+                        "Mars 2020 Helicopter Mission": "2020 火星无人直升机首飞计划",
+                        "this repository was included": "该仓库已收录",
+
+                        // ?tab=achievements
+                        "Hide from profile": "从个人资料中隐藏",
+                        "Hidden from your profile.": "已从您的个人资料中隐藏",
+                        "Show on profile": "在个人资料中显示",
+                        "Copy share link": "复制共享链接",
+                    },
                     'regexp': [],
                     'selector': [
                         ['.selector3', '翻译后的文本3']
