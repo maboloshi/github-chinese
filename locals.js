@@ -4364,7 +4364,7 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                 "Grouped security updates": "分组安全更新",
                     "Groups all available updates that resolve a Dependabot alert into one pull request (per package manager and directory of requirement manifests). This option may be overridden by group rules specified in dependabot.yml -": "将解决可靠警报的所有可用更新分组为一个拉取请求（每个包管理器和需求清单目录）。此选项可能会被 dependentabot.yml 中指定的分组规则覆盖 -",
-                    "learn more here": "了解更多",
+                    "Learn how to group updates.": "了解如何配置分组更新",
 
                     // 对话框
                         "Enable grouped security updates": "启用分组安全更新",
@@ -4465,6 +4465,15 @@ I18N.zh["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
             "Permissions": "权限",
                 // [/is requesting an update to its permissions./, "正在请求更新其权限。"],
                 "Review request": "审核请求",
+                "Access public information (read-only)": "访问公开信息（只读）",
+                "Access user email addresses (read-only)": "访问用户电子邮件地址（只读）",
+                "Read all user profile data": "读取所有用户个人资料数据",
+                "Create gists": "创建代码片段",
+                "Full control of private repositories": "完全控制私有仓库",
+                "Update github action workflows": "更新 GitHub Action 工作流",
+                "Update all user data": "更新所有用户数据",
+                "Full control of codespaces": "完全控制 Codespaces",
+                "Read all user profile data": "读取所有用户个人资料数据",
 
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
@@ -4875,7 +4884,7 @@ I18N.zh["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                     "Webhooks": "Web 钩子",
                         "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
                     "Workflows": "工作流程",
-                        "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
+                        "Update GitHub Action workflow files.": "更新 GitHub Action 工作流程文件。",
 
                 "Organization permissions": "组织权限",
                     "Organization permissions permit access to organization related resources.": "组织权限允许访问组织相关资源。",
@@ -5635,7 +5644,7 @@ I18N.zh["settings/tokens"] = { // 设置 - 开发者设置/个人访问令牌
             "Write repository hooks": "写入仓库钩子",
             "Read repository hooks": "读取仓库钩子",
             "Full control of organization hooks": "完全控制组织钩子",
-            "Create gists": "创建 Gist",
+            "Create gists": "创建代码片段",
             "Access notifications": "访问通知",
             "Update ALL user data": " 更新所有用户数据",
             "Read ALL user profile data": "读取所有用户个人资料数据",
@@ -16202,7 +16211,7 @@ I18N.zh["login/oauth"] = { // 应用授权
         // /login/oauth/authorize?client_id=Iv1.1a4d20f84a40d790&state=login
         [/Verify your GitHub identity/, "验证您的 GitHub 身份"],
         [/Select user to authorize ([^ ]+)/, "选择用户进行授权 $1"],
-        [/Signed in as ([^ ]+)/, "登录身份为 $1"],
+        [/Signed in as/, "登录身份为 "],
         [/has not been installed on any accounts you have access to./, "尚未安装在您有权访问的任何账户上。"],
         [/Learn more about/, "了解更多关于"],
         [/More than ([^ ]+)/, "超过 $1"],
