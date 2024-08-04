@@ -55,7 +55,7 @@ Via 浏览器（Android）                | 浏览器内自带
 > [!Note]
 > ### 关于 “Chrome 127 及更高版本无法使用” 的问题
 > 原因是 Chrome 127 及更高版本，陆续切换到 Manifest V3，目前已知 [Tampermonkey][Tampermonkey] 5.2.1 以上版本支持，详见 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论
-> #### 解放方案：
+> #### 解决方案：
 > 1. 必须安装 [Tampermonkey][Tampermonkey] 5.2.1 以上版本，其他脚本管理器暂不支持
 > 2. 必须在浏览器的 “扩展程序” 管理中开启 “开发者模式”
 
