@@ -2495,16 +2495,16 @@
             return text.replace(trimmedText, translatedText);
         }
 
-        if (enable_RegExp) {
-            // const res = (I18N.lang[lang][page].regexp || []).concat(I18N.lang[lang]['pubilc'].regexp || []);
+        // if (enable_RegExp) {
+        //     const res = (I18N.lang[lang][page].regexp || []).concat(I18N.lang[lang]['pubilc'].regexp || []);
 
-            for (let [a, b] of res) {
-                translatedText = text.replace(a, b);
-                if (translatedText !== text) {
-                    return text.replace(trimmedText, translatedText);
-                }
-            }
-        }
+        //     for (let [a, b] of res) {
+        //         translatedText = text.replace(a, b);
+        //         if (translatedText !== text) {
+        //             return text.replace(trimmedText, translatedText);
+        //         }
+        //     }
+        // }
 
         return false;
     }
