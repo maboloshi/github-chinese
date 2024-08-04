@@ -53,7 +53,6 @@
             'zh-CN': {
                 'title': {
                     'static': {
-                        'GitHub': 'GitHub 中文',
                         "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
                         "Join GitHub · GitHub": "加入 GitHub · GitHub",
                         "Forgot your password? · GitHub": "忘记您的密码了吗？· GitHub",
