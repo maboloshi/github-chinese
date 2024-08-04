@@ -2496,7 +2496,7 @@
         }
 
         if (enable_RegExp) {
-            const res = (I18N.lang[lang][page].regexp || []).concat(I18N.lang[lang]['pubilc'].regexp || []);
+            // const res = (I18N.lang[lang][page].regexp || []).concat(I18N.lang[lang]['pubilc'].regexp || []);
 
             for (let [a, b] of res) {
                 translatedText = text.replace(a, b);
