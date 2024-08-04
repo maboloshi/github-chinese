@@ -51,6 +51,236 @@
         },
         lang: {
             'zh-CN': {
+                'page-dashboard':{
+                    'static': {
+                        // 新手帮助
+                        "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
+                        "Using the Hello World guide, you’ll create a repository, start a branch,": "使用 Hello World 指南，您将创建一个仓库，开始一个分支，",
+                        "write comments, and open a pull request.": "写评论，并创建一个拉取请求。(教程内容就不翻译了...)",
+                        "Let's get started!": "让我们开始吧！",
+                        "Hide this notice forever": "永久的隐藏该信息",
+
+                        "Welcome to GitHub! What’s next?": "欢迎来到 GitHub！下一步干什么？",
+                        "Create a repository": "创建一个仓库",
+                        "Tell us about yourself": "介绍一下您自己",
+                        "Browse interesting repositories": "浏览有趣的仓库",
+                        "on Twitter": "在 Twitter 上",
+
+                        "You don’t have any repositories yet!": "您目前还没有任何仓库！",
+                        "Create your first repository": "创建您的第一个仓库",
+                        "or": "或者",
+                        "Learn more about Git and GitHub": "了解更多关于 Git 和 GitHub 的信息",
+
+                        // 组织
+                        // [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"],
+                        // [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"],
+                        "View and create teams": "查看并创建团队",
+                        "See all owners": "查看全部所有者",
+                        "You've been added to the": "您已被添加至",
+                        "organization.": "组织",
+                        // [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"],
+                        "Return to your personal dashboard": "返回到您的个人仪表板",
+
+                        // 已有仓库的项目
+                        // 左侧栏
+                        "View organization": "查看组织", // 组织
+                        "Browse organization's repositories": "浏览组织的仓库", // 组织
+                        "Top Repositories": "置顶仓库",
+                        "New": "新建",
+                        "Find a repository…": "搜索仓库…",
+                        "Show more": "显示更多",
+                        "Your teams": "您的团队",
+                            "You don’t belong to any teams yet!": "您还不属于任何团队！",
+                        "Find a team…": "搜索团队…",
+                        "Recent activity": "近期活动",
+                            "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
+
+                        // 中间栏
+                        "The home for all developers — including you.": "所有开发者的家园——包括您。",
+                        "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
+                        "Start writing code": "开始编写代码",
+                            "You're seeing this because you haven't created a repository in a while.": "您看到这个是因为您有一段时间没有创建仓库了。",
+                            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到这个是因为您最近没有使用仓库、议题和拉取请求。",
+                            "Remove from dashboard": "从仪表板中删除",
+                        "Tools of the trade": "贸易工具",
+                            "You're seeing this because you haven't opened a pull request in a while.": "您看到这个是因为您有一段时间没有打开拉取请求了。",
+                            "Write code in your web browser": "在您的网络浏览器中编写代码",
+                                "Use": "使用",
+                                "the github.dev web-based editor": "基于 github.dev 的网络编辑器",
+                                "from your repository or pull request to create and commit changes.": "从您的仓库或拉取请求中创建和提交更改。",
+                        "Install a powerful code editor": "安装一个强大的代码编辑器",
+                            "is a multi-platform code editor optimized for building and debugging software.": "是针对构建和调试软件进行了优化的多平台代码编辑器。",
+                        "Set up your local dev environment": "设置本地开发环境",
+                            "set up Git": "设置 Git",
+                            ", simplify your dev workflow with": "，简化您的开发工作流程，使用",
+                            ", or": "，或",
+                            "bring GitHub to the command line": "将 GitHub 引入命令行",
+                        "Get started on GitHub": "开始使用 GitHub",
+                            "You're seeing this because you haven't used GitHub's core features, yet.": "您看到这个是因为您有一段时间没有使用过 GitHub 的核心功能了。",
+                        "About version control and Git": "关于版本控制和 Git",
+                        "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
+                        "The GitHub Flow": "GitHub 流程",
+                        "Adopt GitHub's lightweight, branch-based workflow to collaborate on projects.": "采用 GitHub 的轻量级、基于分支的工作流程来协作处理项目。",
+
+                        "One moment please...": "稍等一会儿...",
+                        "Loading activity...": "载入活动...",
+                        "All activity": "所有活动",
+
+                        "Welcome to the new feed!": "欢迎来到新的动态提要!",
+                        "We’re updating the cards and ranking all the time, so check back regularly. At first, you might need to follow some people or star some repositories to get started": "我们一直在更新卡片和排名，所以请定期查看。一开始，您可能需要关注一些人或标星一些仓库才能开始",
+                        "Send feedback": "发送反馈",
+
+                        "Updates to your homepage feed": "主页动态摘要的更新",
+                        "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 “关注动态提要” 与 “您的动态提要” 的强大功能结合在一起，让您在一个地方就能发现 GitHub 上的内容。此外，我们还改进了筛选功能，让您可以完全按照自己的喜好定制动态提要，并采用全新的视觉设计。 ✨",
+                        "Learn more": "了解更多",
+
+                        // 提要筛选
+                        "Filter": "筛选器",
+                            "Feed filters": "提要筛选器",
+                            "Events": "事件",
+                                "Activity you want to see on your feed": "您想在提要上看到的活动",
+                            "Announcements": "公告",
+                                "Special discussion posts from repositories": "来自仓库的特别讨论帖",
+                            "Releases": "发行版",
+                                "Update posts from repositories": "来自仓库的更新帖",
+                            // 赞助
+                                "Relevant projects or people that are being sponsored": "获得赞助的相关项目或人员",
+                            "Stars": "星标",
+                                "Repositories being starred by people": "被人们标星的仓库",
+                            "Repositories": "仓库",
+                                "Repositories that are created or forked by people": "由人们创建或复刻的仓库",
+                            "Repository activity": "仓库活动",
+                                "Issues and pull requests from repositories": "来自仓库的议题和拉取请求",
+                            "Follows": "关注",
+                                "Who people are following": "人们在关注谁",
+                            "Recommendations": "推荐",
+                                "Repositories and people you may like": "您可能喜欢的仓库和人",
+
+                            "Include events from starred repositories": "包括来自星标仓库中的事件",
+                                "By default, the feed shows events from repositories you sponsor or watch, and people you follow.": "默认情况下，动态提要显示的事件来自您赞助或关注的仓库，以及您关注的人。",
+                            "Reset to default": "重置",
+                            "Save": "保存",
+
+                        "Show all": "显示所有",
+                        "Show less": "显示更少",
+
+                        "Uh oh!": "哎呀！",
+                        "There was an error in loading the activity feed.": "载入动态提要时发生错误。",
+                        "Reload this page.": "重载此页面",
+
+                        // 动态 状态词
+                        "starred": "星标了",
+                        "created": "创建了",
+                        "forked from": "复刻自",
+                        "generated from": "创建自",
+                        "mirrored from": "镜像自",
+                        "forked": "复刻了",
+                        "from": "来自",
+                        "for": "",
+                        "pushed to": "推送到",
+                        "released": "发布了",
+                        "published": "发布了",
+                        "started sponsoring": "赞助给",
+                        "started following": "开始关注了",
+                        "you": "您",
+                        "Updated": "更新于",
+                        "a repository": "1 个仓库",
+                        "has a new repository": "创建了仓库",
+                        "created a repository": "创建了仓库",
+                        "created a branch in": "创建了一个分支在",
+                        "in": "分支在",
+                        "Forked to": "复刻为",
+                        "of": "",
+                        "made": "将",
+                        "public": "设为公共",
+                        "committed": "提交于",
+                        "posted a discussion in": "发表讨论于",
+                        "made this repository public": "将此仓库公开",
+                        "labeled a pull request": "将标签添加到拉取请求中",
+                        "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
+                        //[/and (\d+) more/, "和另外 $1 个"],
+
+                        "published a release": "发布发行版",
+                        "forked a repository": "复刻仓库",
+                        "starred a repository": "星标仓库",
+                        "sponsored": "赞助了",
+                        "followed": "关注了",
+                        "added a repository to": "已将仓库添加到",
+                        "contributed to": "贡献给",
+
+                        "your repository": "您的仓库",
+
+                        "Read more": "阅读更多内容",
+
+                        "More": "更多",
+                        "Loading more…": "载入更多…",
+
+                        "Subscribe to your news feed": "订阅您的新闻提要",
+                        "Subscribe to the": "订阅", // 组织
+                        "organization news feed": "组织的新闻提要", // 组织
+
+                        //主页上仓库3个点
+                        "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
+                        "Show less activity like this": "显示较少这类活动",
+                        // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
+                        // [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
+                        "Unstar this repository": "取消星标此仓库",
+                        // [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
+                        "Unfollow this user": "取消关注此用户",
+
+                        "Contributors": "贡献者",
+                        "Report": "举报",
+                        "Recommended for you": "为您推荐",
+                        "Trending repositories": "热门仓库",
+                        "See more": "查看更多",
+                        "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
+                        "Recommended based on people you follow": "根据您关注的人推荐",
+                        "has a new discussion in": "有一条新讨论，在",
+                        "Join discussion": "参与讨论",
+                        "Popular among": "很受欢迎",
+                        "people you follow": "在您关注的人中",
+                        "Sponsor": "赞助",
+
+                        // 右侧栏
+                        "Latest changes": "最新变化",
+                        "View changelog →": "查看更新日志 →",
+                        "Explore repositories": "探索仓库",
+                        "Explore more →": "探索更多 →",
+
+                        "Member statuses": "成员状态", // 组织
+
+                        // 仪表板右上方看板
+                        "The world’s fair of software is here.": "世界软件博览会就在这里。",
+                        "The GitHub Universe call for sessions is now open! Apply to share your expertise by submitting a session proposal today. Plus, get 35% off your tickets to GitHub Universe only for a limited time.": "GitHub Universe 的会议征集现已开启！立即提交您的会议提案，分享您的专业知识。此外，现在限时可享 35% 的 GitHub Universe 会议门票折扣。",
+
+                        // 用户 浮动信息卡
+                        "Member of": "隶属组织",
+                        // [/, and (\d+) more/, "，以及其他 $1 个组织"],
+
+                        // 组织  浮动信息卡
+                        // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+                        // [/(\d+) members?/, "$1 个成员"],
+
+                        "Switch dashboard context": "切换默认身份", // 组织
+                        "Manage organizations": "管理组织", // 组织
+                        "Create organization": "创建组织", // 组织
+
+                        // 首次加入组织通知
+                        "You’ve been added to the": "您已经被添加到",
+                        "organization!": "组织！",
+                        "Here are some quick tips for a first-time organization member.": "以下是首次加入组织的一些提示。",
+                        "Use the switch context button in the upper left corner of this page to switch between your personal context (": "使用页面左上角的切换身份按钮，您可以在（",
+                        ") and organizations you are a member of.": "）和组织身份之间进行切换。",
+                        "After you switch contexts you’ll see an organization-focused dashboard that lists out organization repositories and activities.": "当您切换身份，您会看到一个组织为中心的页面，其中列出了组织库和活动。",
+
+                        // 快捷键
+                        "Dashboards": "仪表板",
+                        "Go to your issues": "跳转到您的议题",
+                        "Go to your pull requests": "跳转到您的拉取请求",
+                    },
+                    'regexp': {},
+
+                },
                 'title': {
                     'static': {
                         "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
