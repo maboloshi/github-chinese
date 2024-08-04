@@ -22,7 +22,7 @@
 */
 var I18N = {};
 
-let projects = {    // 项目页面 补全
+let projects = {    // 项目页面 补全a
     "New view": "新建视图",
     "Layout": "布局",
     "Board": "面板",
