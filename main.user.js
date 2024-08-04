@@ -1184,23 +1184,12 @@
                         nodes = [target];
                     }
 
-                    return nodes.filter(node =>
-                        !isIgnored.some(node, safeIgnoreSelectors)
-                    );
+                    // return nodes.filter(node =>
+                    //     !ignoreSelectors.some(selector => node.parentElement?.closest(selector))
+                    // );
                 });
 
                 filteredMutations.forEach(node => traverseNode(node));
-            }
-            // 辅助函数: 校验并清洗选择器
-            function sanitizeSelector(selector) {
-                // 实现选择器的校验和清洗逻辑
-                // 这里返回原选择器，仅作为示例
-                return selector;
-            }
-            // 辅助函数: 判断节点是否被忽略选择器所匹配
-            function isIgnored(node, selectors) {
-                const parentElement = node.parentElement;
-                return parentElement && selectors.some(selector => parentElement.closest(selector));
             }
         }).observe(document.body, {
             characterData: true,
