@@ -26,7 +26,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = 'zh-CN'; // 设置默认语言
+    const lang = 'zh'; // 设置默认语言
     let enable_RegExp = GM_getValue("enable_RegExp", 1),
         page = false,
         cachedPage = null,
@@ -528,12 +528,12 @@
     }
 
     // 设置中文环境
-    document.documentElement.lang = lang;
+    document.documentElement.lang = 'zh-CN';
 
     // 监测 HTML Lang 值, 设置中文环境
     new MutationObserver(mutations => {
         if (document.documentElement.lang === "en") {
-            document.documentElement.lang = lang;
+            document.documentElement.lang = 'zh-CN';
         }
     }).observe(document.documentElement, {
         attributeFilter: ['lang']
