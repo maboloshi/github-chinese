@@ -232,7 +232,6 @@
 
                 case "A":
                     transElement(node, 'title'); // title 属性
-                    if (node.hasAttribute('data-hovercard-type')) return;
                     break;
 
                 default:
