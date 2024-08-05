@@ -37,6 +37,108 @@
         tranSelectors = [],
         regexpRules = [];
 
+    I18N.zh["pubilc"].regexp =  [ // 正则翻译
+        /**
+         * 匹配时间格式
+         *
+         * 月 日 或 月 日, 年
+         * Mar 19, 2015 – Mar 19, 2016
+         * January 26 – March 19
+         * March 26
+         *
+         * 不知道是否稳定, 暂时先试用着. 2016-03-19 20:46:45
+         *
+         * 更新于 2021-10-04 15:19:18
+         * 增加 带介词 on 的格式，on 翻译不体现
+         * on Mar 19, 2015
+         * on March 26
+         *
+         * 更新于 2021-10-10 13:44:36
+         * on 星期(简写), 月 日 年  // 个人访问令牌 有效期
+         * on Tue, Nov 9 2021
+         *
+         * 2021-10-19 12:04:19 融合更多规则
+         *
+         * 4 Sep
+         * 30 Dec 2020
+         *
+         * on 4 Sep
+         * on 30 Dec 2020
+         *
+         * 2021-11-22 12:51:57 新增 格式
+         *
+         * 星期(全称), 月 日, 年 // 仓库-->洞察-->流量 图示标识
+         * Sunday, November 14, 2021
+         *
+         * 更新于 2023-07-04 13:19:21
+         * 新增前缀词, 减少二次组织翻译
+         *  Updated Jul 4            // 仪表板页面 仓库标签卡
+         *  Commits on Jul 4, 2023   // 提交页面、仓库拉取请求页->提交卡
+         *  Joined on Jul 4, 2023    // 追星者，关注者页面
+         *
+         * 更像于 2023-11-11 16:48:02
+         * 个人资料页->贡献卡
+         * 日期带后缀
+         *
+         * Tip:
+         * 正则中的 ?? 前面的字符 重复0次或1次
+         * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
+         */
+        [/(^Updated |^Commits on |^Joined on |on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(?:(\d{1,2})(?:st.|nd.|rd.|th.)?|)(?:,? (\d{4})|)/g,
+            function (all, prefix, date1, week, month, year1, date2, year2) {
+                const prefixKey = { "Updated ": "更新于 ", "Commits on ": "提交于 ", "Joined on ": "加入于 ", };
+                const weekKey = { "Sun": "周日", "Mon": "周一", "Tue": "周二", "Wed": "周三", "Thu": "周四", "Fri": "周五", "Sat": "周六" };
+                const monthKey = { "Jan": "1月", "Feb": "2月", "Mar": "3月", "Apr": "4月", "May": "5月", "Jun": "6月", "Jul": "7月", "Aug": "8月", "Sep": "9月", "Oct": "10月", "Nov": "11月", "Dec": "12月" };
+                let date = date1 ? date1 : date2;
+                let year = year1 ? year1 : year2;
+                return (prefixKey[prefix] ? prefixKey[prefix] : '') + (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
+            }
+        ],
+        /**
+         * 相对时间格式处理
+         *
+         * 更新于 2021-11-21 16:47:14
+         * 1. 添加 前缀词
+         *    over xxx ago // 里程碑页面 最后更新时间
+         *    about xxx ago // 里程碑页面 最后更新时间
+         *    almost xxx ago // 里程碑页面 最后更新时间
+         *    less than xxx ago // 导出账户数据
+         * 2. xxx之内的相对时间格式
+         *  in 6 minutes // 拉取请求页面
+         *
+         * 更新于 2021-11-22 11:54:30
+         * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
+         *  7 months
+         */
+        [/^just now|^now|^last month|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year)s?( ago|)/,
+            function (all, prefix, count, unit, suffix) {
+                const timeKey = { 'now': '现在', 'just now': '刚刚', 'last month': '上个月', 'yesterday': '昨天' };
+                const unitKey = { second: '秒', minute: '分钟', hour: '小时', day: '天', month: '个月', year: '年' };
+                if (timeKey[all]) return timeKey[all];
+                if (count[0] === 'a') count = '1';// a, an 修改为 1
+                if (suffix) {
+                    return (prefix === 'about' || prefix === 'almost' ? '大约 ' : prefix === 'less than' ? '不到 ' : '') + count + ' ' + unitKey[unit] + (prefix === 'over' ? '多之前' : '之前');
+                } else {
+                    return count + ' ' + unitKey[unit] + (prefix === 'in' ? '之内' : '之前');
+                }
+            }
+        ],
+        /**
+         * 匹配时间格式 2
+         *
+         * in 5m 20s
+         */
+        [/^(?:(in) |)(?:(\d+)m |)(\d+)s/,
+            function (all, prefix, minute, second) {
+                all = minute ? minute + '分' + second + '秒' : second + '秒';
+                return (prefix ? all + '之内' : all);
+            }
+        ],
+
+        // 其他翻译
+        [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
+    ];
+
     function updateConfig(page) {
         const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
         if (cachedPage !== page && page) {
