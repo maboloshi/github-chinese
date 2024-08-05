@@ -67,6 +67,7 @@
         ],
         'repository/tree': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            '.react-tree-show-tree-items', // 左侧文件树项目
             'tbody', // 文件列表
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
@@ -82,15 +83,27 @@
             '#sticky-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
         ],
+        'repository/commit': [
+            'tr.show-top-border', // 代码差异 同屏
+            'td.blob-code', // 代码差异 分屏
+        ],
+        'repository/pull': [
+            'tr.show-top-border', // 代码差异 同屏
+            'td.blob-code', // 代码差异 分屏
+        ],
+        'repository/compare': [
+            'tr.show-top-border', // 代码差异 同屏
+            'td.blob-code', // 代码差异 分屏
+        ],
         'repository/edit': [
-            '.cm-scroller',
+            '.cm-scroller', // 代码编辑器
         ],
         'repository/new': [
-            '.cm-scroller',
+            '.cm-scroller', // 代码编辑器
         ],
         'dashboard': [
-            '.js-notice-dismiss',
-            '.TimelineItem',
+            '.js-notice-dismiss', // 右侧栏 广告
+            '.TimelineItem', // 右侧栏 最新变化
         ],
         '*': [
             '.markdown-body',
