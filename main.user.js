@@ -239,10 +239,7 @@
                     if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 带提示的元素，类似 tooltip 效果的
             }
 
-            const childNodes = node.childNodes;
-            for (let i = 0; i < childNodes.length; i++) { // 遍历子节点
-                traverseNode(childNodes[i]);
-            }
+            node.childNodes.forEach(child => traverseNode(child)); // 遍历子节点
 
         } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点翻译
             transElement(node, 'data');
