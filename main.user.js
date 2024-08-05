@@ -11,7 +11,8 @@
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/Test_zh-CN_LangEnvSet/locals.js?v1.9.0
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/new_json/conf.js?v1.9.2
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/new_json/locals-zh-CN.js?v1.9.2
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -36,82 +37,8 @@
         tranSelectors = [],
         regexpRules = [];
 
-    // const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
-
-    // 临时固化规则 便于调试
-    const characterDataPage = ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'];
-    const ignoreMutationSelectorPage = {
-        'repository/new': [".cm-scroller"],
-        'repository/edit': [".cm-scroller", "table"],
-        'repository/pull': ["td.blob-code"],
-        'repository/compare': ["tbody"],
-        'repository/commit': ["tr.show-top-border"],
-        'repository/blob': ["section"],
-        'repository/blame': ["section"],
-        'repository': [".AppHeader-context", "article.markdown-body", "table"],
-        'repository/releases': [".Box-footer"],
-    };
-    const ignoreSelectorPage = {
-        'repository': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.content[itemprop="name"]', // 仓库名称 无效
-            // 'ul.list-style-none', // 右侧 部署列表 无效
-            '.d-block.overflow-x-hidden.color-fg-default', // 仓库名称
-            '[data-testid="latest-commit"]', // 最新的提交
-            'tr.react-directory-row', // 仓库列表
-            '.f4.my-3', // 仓库简介正文
-            '#translate-me',
-            '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
-            // '.markdown-body',
-            'li.mt-2',
-        ],
-        'repository/tree': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
-            'tbody', // 文件列表
-            '#repos-header-breadcrumb',
-            '#file-name-id', // 文件路径中文件部分
-        ],
-        'repository/blob': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
-            '[id^="offset"]', //符号-->引用
-            'section', // 代码视图
-            '#filter-results', // 右侧 符号筛选
-            '#repos-header-breadcrumb', // 文件路径中文件夹路径
-            '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
-            '#sticky-breadcrumb',
-            '#file-name-id', // 文件路径中文件部分
-        ],
-        'repository/commit': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/pull': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/compare': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/edit': [
-            '.cm-scroller', // 代码编辑器
-        ],
-        'repository/new': [
-            '.cm-scroller', // 代码编辑器
-        ],
-        'dashboard': [
-            '.js-notice-dismiss', // 右侧栏 广告
-            '.TimelineItem', // 右侧栏 最新变化
-        ],
-        '*': [
-            '.markdown-body',
-            '.markdown-title'
-        ],
-    };
-
     function updateConfig(page) {
+        const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
         if (cachedPage !== page && page) {
             cachedPage = page;
 
