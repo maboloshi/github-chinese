@@ -2842,6 +2842,10 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Show link underlines": "显示链接下划线",
             "Save content preferences": "保存内容首选项",
 
+            "Hovercards": "悬浮卡",
+                "Enable previewing link content via mouse hover or keyboard focus before navigation. Move focus to hovercard content using": "在导航之前，可通过鼠标悬停或键盘聚焦预览链接内容。使用以下方法将焦点移至悬停卡片内容",
+                "Save hovercard preferences": "保存悬浮卡偏好设置",
+
             // 顶部提醒
             "Link underline preferences successfully saved.": "链接下划线首选项已成功保存。",
 
@@ -2945,7 +2949,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                         "Pick organization": "挑选组织",
                             "Select an item": "选择一项",
                         "Search organizations": "搜索组织",
-                        "Select email": "选择邮箱",
+                        "Select Email": "选择邮箱",
                         "Saved": "已保存",
 
     },
@@ -3450,7 +3454,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 "Manage": "管理",
 
         // 订阅偏好 https://github.com/settings/emails/subscriptions
-            "Subscription preferences": "订阅首选项",
+            "Subscription preferences for": "订阅首选项",
             "⏳Please wait while we find your subscriptions...⌛": "⏳请稍候，我们正在查找您的订阅...⌛",
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
@@ -4699,6 +4703,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "Search audit logs": "搜索审计日志",
             "Search your security log": "搜索您的安全日志",
             "Clear current search query": "清除当前的搜索查询",
+            "Events matching search query": "搜索查询匹配结果",
             "Export": "导出",
             "Recent events": "最近的事件",
             // [/Found (\d+) events?/, "发现 $1 个活动"],
