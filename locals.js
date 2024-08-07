@@ -9550,6 +9550,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                         "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流程。",
                     "Yes, unpin": "是的，取消固定",
 
+            // 工作流文件不存在
+            "Not found": "未找到",
+                "This workflow does not exist.": "此工作流不存在。",
+
             "All workflows": "全部工作流程",
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
