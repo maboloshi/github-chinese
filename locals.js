@@ -3135,6 +3135,9 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Payment method": "支付方式",
             "Add Information": "添加信息",
             "You have not added a payment method.": "您尚未添加支付方式。",
+            "Credit or debit card": "信用卡或借记卡",
+                "504 Gateway Time-out": "504 网关超时",
+                "You may see an authorization hold on your provided payment method after accruing significant usage of metered services. Authorization holds are temporary and are released as quickly as possible.": "在您大量使用计量服务后，您可能会看到您提供的付款方式被授权暂停。授权暂停是暂时的，会尽快解除。",
 
             "Last payment": "最后一次支付",
             "You have not made any payments.": "您尚未支付任何款项。",
@@ -3143,7 +3146,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Redeem a coupon": "兑换优惠券",
             "You don't have an active coupon.": "您没有有效的优惠券。",
 
-            "Additional information": "附加信息",
+            "Additional Information": "附加信息",
                 "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
             "Add information": "添加信息",
             "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
@@ -3362,15 +3365,24 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
             "Send invitation": "发送邀请",
 
+            // 加载
+            "Loading Actions data...": "加载操作数据...",
+            "Loading Packages data...": "加载软件包数据...",
+            "Loading Shared Storage data...": "加载共享存储数据...",
+            "Loading Codespaces data...": "加载代码空间数据...",
+            "Loading usage breakdown…": "正在加载使用明细…",
+
     },
     "regexp": [ // 正则翻译
         [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
         [/Data transfer quota resets (\d+) 天之内./, "数据传输配额将在 $1 天之内重置"],
-        [/Included quotas resets (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
-        [/Bandwidth quota resets resets (\d+) 天之内./, "带宽使用配额将在 $1 天之内重置"],
+        [/Included quotas resets? (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
+        [/Bandwidth quota resets? (\d+) 天之内./, "带宽使用配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人账户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
+        [/of ([\d,]+) min included/, "/$1 分钟包含"],
+        [/GB of (\d+) GB included/, "/$1 GB 包含"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -3475,6 +3487,8 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
 I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+
+        "Signed in as": "登录身份为",
 
         // 密码和身份身份验证 - 账户安全 https://github.com/settings/security
             "Change password": "更改密码",
@@ -3622,6 +3636,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Confirm access": "授权访问",
                 "Authentication code": "验证码",
                     "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+                "When your phone is ready, click the button below.": "当您的手机准备就绪时，请单击下面的按钮。",
                 "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
                 "Verify": "验证",
                 "Verify": "验证",
@@ -14673,6 +14688,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 登录页 https://github.com/login
             "Sign in to GitHub": "登录 GitHub",
             "Sign in to": "登录",
+            "Signed in as": "登录身份为",
             "to continue to": "继续登录",
             "Username or email address": "用户名或电子邮箱",
             "Password": "密码",
@@ -14943,6 +14959,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
+            "When your phone is ready, click the button below.": "当您的手机准备就绪时，请单击下面的按钮。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
