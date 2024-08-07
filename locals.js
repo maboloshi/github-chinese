@@ -8421,6 +8421,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
 
+            // 提交相关
+            "Copy the full SHA": "复制完整 SHA",
+            "View commit details": "查看提交详情",
+            "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
+
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
             "The change you just made was written to a new branch named": "您刚刚所做的更改已写入新分支",
