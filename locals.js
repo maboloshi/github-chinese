@@ -3381,8 +3381,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人账户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
-        [/of ([\d,]+) min included/, "/$1 分钟包含"],
-        [/GB of (\d+) GB included/, "/$1 GB 包含"],
+        [/of ([\d,]+\.\d{2}) min included/, "/ $1 分钟"],
+        [/GB of ([^ ]+) GB included/, "/ $1 GB "],
+        [/of ([^ ]+) GB included/, "/ $1 GB"],
+        [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
+        [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
