@@ -3374,10 +3374,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
-        [/Data transfer quota resets (\d+) 天之内./, "数据传输配额将在 $1 天之内重置"],
-        [/Included quotas resets? (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
-        [/Bandwidth quota resets? (\d+) 天之内./, "带宽使用配额将在 $1 天之内重置"],
+        [/Included minutes quota resets? in (\d+) days./, "包含的分钟配额将在 $1 天之内重置"],
+        [/Data transfer quota resets? in (\d+) days./, "数据传输配额将在 $1 天之内重置"],
+        [/Included quotas resets? in (\d+) days./, "包含的配额将在 $1 天之内重置"],
+        [/Bandwidth quota resets? in (\d+) days./, "带宽使用配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人账户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
