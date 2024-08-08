@@ -3031,6 +3031,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
             "Usage this month": "本月使用情况",
                 "Get usage report": "获取使用报告",
+                    "A full detailed report will be generated including usage for all eligible": "我们将生成一份完整详细的报告，其中包括所有符合条件的",
+                    "products.": "产品使用情况。",
+                    "You’ll receive an email at": "一旦准备就绪，您将收到",
+                    "as soon as it’s ready (it may take up to a couple of hours).": "的电子邮件（可能需要几个小时）。",
+                    "Send report to email": "发送报告到邮箱",
                 "Included": "包含",
                 "Paid": "支出",
                 "Total": "总价",
@@ -3374,6 +3379,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
+        [/We're preparing your report! We’ll send an email to ([A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
         [/Included minutes quota resets? in (\d+) days./, "包含的分钟配额将在 $1 天之内重置"],
         [/Data transfer quota resets? in (\d+) days./, "数据传输配额将在 $1 天之内重置"],
         [/Included quotas resets? in (\d+) days./, "包含的配额将在 $1 天之内重置"],
@@ -3383,9 +3389,10 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
         [/of ([\d,]+\.\d{2}) min included/, "/ $1 分钟"],
         [/GB of ([^ ]+) GB included/, "/ $1 GB "],
-        [/of ([^ ]+) GB included/, "/ $1 GB"],
+        [/of ([^ ]+) GB( included)?/, "/ $1 GB"],
         [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
         [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
+        [/Last (\d+) days/, "最近 $1 天"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -9783,6 +9790,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Re-run all jobs": "重新运行所有作业",
             "Re-run failed jobs": "重新运行失败作业",
             "Cancel workflow": "取消工作流程",
+
+            //"Latest attempt": "最后运行",
+            //"Attempt": "运行",
             //右侧按钮
             "View workflow runs": "查看工作流程运行",
             "Workflow run options": "工作流程运行选项",
@@ -9895,6 +9905,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+)\/(\d+) jobs? completed/, "$1/$2 个工作完成"],
         [/(\d+) jobs? completed/, "$1 个工作完成"],
         [/(\d+) warnings?/, "$1 个警告"],
+        [/Latest attempt (#\d+)/, "最后运行 $1"],
+        [/Latest (#\d+)/, "最新 $1"],
+        [/Attempt (#\d+)/, "运行 $1"],
         [/cached/, "被缓存"],
     ],
 };
