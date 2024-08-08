@@ -693,6 +693,7 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "Move selection up": "向上移动选择",
                 "Toggle selection": "切换选择",
                 "Open selection": "打开选择",
+                "Expand and move focus into focused link's hovercard": "展开并将焦点移至聚焦链接的悬浮卡",
             "View all keyboard shortcuts": "查看所有键盘快捷键",
 
         // 命令面板 - ctrl k 或 ctrl alt k 打开
@@ -2841,6 +2842,10 @@ I18N.zh["settings/accessibility"] = { // 设置 - 无障碍
             "Show link underlines": "显示链接下划线",
             "Save content preferences": "保存内容首选项",
 
+            "Hovercards": "悬浮卡",
+                "Enable previewing link content via mouse hover or keyboard focus before navigation. Move focus to hovercard content using": "在导航之前，可通过鼠标悬停或键盘聚焦预览链接内容。使用以下方法将焦点移至悬停卡片内容",
+                "Save hovercard preferences": "保存悬浮卡偏好设置",
+
             // 顶部提醒
             "Link underline preferences successfully saved.": "链接下划线首选项已成功保存。",
 
@@ -2944,7 +2949,7 @@ I18N.zh["settings/notifications"] = { // 设置 - 通知
                         "Pick organization": "挑选组织",
                             "Select an item": "选择一项",
                         "Search organizations": "搜索组织",
-                        "Select email": "选择邮箱",
+                        "Select Email": "选择邮箱",
                         "Saved": "已保存",
 
     },
@@ -3130,6 +3135,9 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Payment method": "支付方式",
             "Add Information": "添加信息",
             "You have not added a payment method.": "您尚未添加支付方式。",
+            "Credit or debit card": "信用卡或借记卡",
+                "504 Gateway Time-out": "504 网关超时",
+                "You may see an authorization hold on your provided payment method after accruing significant usage of metered services. Authorization holds are temporary and are released as quickly as possible.": "在您大量使用计量服务后，您可能会看到您提供的付款方式被授权暂停。授权暂停是暂时的，会尽快解除。",
 
             "Last payment": "最后一次支付",
             "You have not made any payments.": "您尚未支付任何款项。",
@@ -3138,7 +3146,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Redeem a coupon": "兑换优惠券",
             "You don't have an active coupon.": "您没有有效的优惠券。",
 
-            "Additional information": "附加信息",
+            "Additional Information": "附加信息",
                 "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
             "Add information": "添加信息",
             "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
@@ -3357,15 +3365,27 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
             "Send invitation": "发送邀请",
 
+            // 加载
+            "Loading Actions data...": "加载操作数据……",
+            "Loading Packages data...": "加载软件包数据……",
+            "Loading Shared Storage data...": "加载共享存储数据……",
+            "Loading Codespaces data...": "加载代码空间数据……",
+            "Loading usage breakdown…": "正在加载使用明细……",
+
     },
     "regexp": [ // 正则翻译
-        [/Included minutes quota resets (\d+) 天之内./, "包含的分钟配额将在 $1 天之内重置"],
-        [/Data transfer quota resets (\d+) 天之内./, "数据传输配额将在 $1 天之内重置"],
-        [/Included quotas resets (\d+) 天之内./, "包含的配额将在 $1 天之内重置"],
-        [/Bandwidth quota resets resets (\d+) 天之内./, "带宽使用配额将在 $1 天之内重置"],
+        [/Included minutes quota resets? in (\d+) days./, "包含的分钟配额将在 $1 天之内重置"],
+        [/Data transfer quota resets? in (\d+) days./, "数据传输配额将在 $1 天之内重置"],
+        [/Included quotas resets? in (\d+) days./, "包含的配额将在 $1 天之内重置"],
+        [/Bandwidth quota resets? in (\d+) days./, "带宽使用配额将在 $1 天之内重置"],
         [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的个人账户之外，您还管理 $1 个组织。"],
         [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "将其限制在 $1 美元将避免任何额外的费用。"],
         [/isn’t a GitHub member/, "不是 GitHub 成员"], // 组织设置
+        [/of ([\d,]+\.\d{2}) min included/, "/ $1 分钟"],
+        [/GB of ([^ ]+) GB included/, "/ $1 GB "],
+        [/of ([^ ]+) GB included/, "/ $1 GB"],
+        [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
+        [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -3449,7 +3469,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
                 "Manage": "管理",
 
         // 订阅偏好 https://github.com/settings/emails/subscriptions
-            "Subscription preferences": "订阅首选项",
+            "Subscription preferences for": "订阅首选项",
             "⏳Please wait while we find your subscriptions...⌛": "⏳请稍候，我们正在查找您的订阅...⌛",
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
@@ -3470,6 +3490,8 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
 I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
     "static": { // 静态翻译
         ...I18N.zh["settings-menu"]["static"],
+
+        "Signed in as": "登录身份为",
 
         // 密码和身份身份验证 - 账户安全 https://github.com/settings/security
             "Change password": "更改密码",
@@ -3617,6 +3639,7 @@ I18N.zh["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Confirm access": "授权访问",
                 "Authentication code": "验证码",
                     "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
+                "When your phone is ready, click the button below.": "当您的手机准备就绪时，请点击下面的按钮。",
                 "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
                 "Verify": "验证",
                 "Verify": "验证",
@@ -4698,6 +4721,7 @@ I18N.zh["settings/security-log"] = { // 设置 - 安全日志
             "Search audit logs": "搜索审计日志",
             "Search your security log": "搜索您的安全日志",
             "Clear current search query": "清除当前的搜索查询",
+            "Events matching search query": "搜索查询匹配结果",
             "Export": "导出",
             "Recent events": "最近的事件",
             // [/Found (\d+) events?/, "发现 $1 个活动"],
@@ -8400,6 +8424,11 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
 
+            // 提交相关
+            "Copy the full SHA": "复制完整 SHA",
+            "View commit details": "查看提交详情",
+            "Browse the repository at this point in the history": "浏览该阶段的历史仓库内容",
+
         // 直接提交拉取请求 /<user-name>/<repo-name>/compare/<branch>...<branch-1>?quick_pull=1
             "Open a pull request": "新建一个拉取请求",
             "The change you just made was written to a new branch named": "您刚刚所做的更改已写入新分支",
@@ -9550,6 +9579,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                         "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流程。",
                     "Yes, unpin": "是的，取消固定",
 
+            // 工作流文件不存在
+            "Not found": "未找到",
+                "This workflow does not exist.": "此工作流不存在。",
+
             "All workflows": "全部工作流程",
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
@@ -9660,11 +9693,20 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "Workflow run was successfully requested.": "工作流程已成功请求运行。",
 
             "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
+            "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此计划工作流程已被禁用，因为计划工作流程在复刻仓库中默认被禁用。",
             "This workflow was disabled manually.": "工作流程已被手动禁用。",
             "Enable workflow": "启用工作流程",
                 // 顶部提醒
                     "Workflow enabled successfully.": "工作流程已成功启用。",
             "Re-run jobs": "重新运行作业",
+                "Re-running...": "重新运行中...",
+
+            // 重新运行对话框
+                "A new attempt of this workflow will be started, including": "将开始此工作流程的新尝试，包括",
+                "all the jobs": "所有作业",
+                "all failed jobs": "所有失败作业",
+                "and dependents:": "和依赖：",
+                "debug logging": "调试日志",
 
             "This workflow has no runs yet.": "此工作流程尚未运行。",
 
@@ -9739,6 +9781,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
 
             // 标题
             "Re-run all jobs": "重新运行所有作业",
+            "Re-run failed jobs": "重新运行失败作业",
             "Cancel workflow": "取消工作流程",
             //右侧按钮
             "View workflow runs": "查看工作流程运行",
@@ -9758,7 +9801,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via schedule": "通过计划表触发",
             "Triggered via dynamic": "通过动态触发",
             "Triggered via GitHub Pages": "通过 GitHub 页面触发",
+            "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
+
+            "pushed": "推送",
 
             // 状态
                 "Success": "成功",
@@ -9817,6 +9863,20 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Workflow file": "工作流程文件",
             "Workflow file for this run": "本次运行的工作流程文件",
 
+        // 操作面板
+            "Show all jobs": "显示所有工作",
+            "Scheduled": "计划运行",
+            "Commit": "提交",
+                "pushed by": "推送者",
+            "Manually run by": "手动运行由",
+            "The run was canceled by": "取消由", // 原文过于啰嗦
+            "The operation was canceled.": "已取消。",
+            "Process completed with exit code 1.": "进程完成，退出代码为 1。",
+            "This job was skipped": "此作业被跳过",
+            "Input required and not supplied: token": "需要输入但未提供：令牌",
+            "Fit to window": "适合",
+            "Zoom out": "缩小",
+            "Zoom in": "放大",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -9825,12 +9885,16 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
-        [/Delete artifact ([^ ]+)/, "删除附件 $1"],
+        [/Download ([^ ]+)/, "下载 $1"],
+        [/Delete ([^ ]+)/, "删除 $1"],
         [/(\d+) errors?/, "$1 个错误"],
         [/(\d+) cache results?/, "$1 个缓存结果"],
         [/(\d+) caches?/, "$1 个缓存"],
         [/No caches matched your search branch:([^ ]+)/, "没有与您搜索的分支: $1 相匹配的缓存"],
         [/(\d+) available runners?/, "$1 个可用运行器"],
+        [/(\d+)\/(\d+) jobs? completed/, "$1/$2 个工作完成"],
+        [/(\d+) jobs? completed/, "$1 个工作完成"],
+        [/(\d+) warnings?/, "$1 个警告"],
         [/cached/, "被缓存"],
     ],
 };
@@ -11223,7 +11287,15 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
 
+            // 关闭
+                "Revoked": "已撤销",
+                "False positive": "假阳性",
+                "Used in tests": "仅测试",
+                "Won't fix": "不会修复",
+                "Ignored by configuration": "配置忽略",
+
             "Bypassed": "绕行",
+                "True": "是",
             "Validity": "有效性",
                 "Active": "活跃",
                 "Inactive": "不活跃",
@@ -11246,6 +11318,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Clear current search query, filters, and sorts": "清除当前搜索查询、过滤器和排序",
 
             "No secrets found.": "没有发现任何机密",
+            "Try": "尝试",
+            "clearing filters": "清除过滤器",
+            "to view all of this repository's secret alerts.": "以查看此仓库的所有机密警报。",
             "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的机密。",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
@@ -11732,6 +11807,7 @@ I18N.zh["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提交
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/commits? the week of (.+)/, "提交本周 $1"],
     ],
 };
 
@@ -14620,6 +14696,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
         // 登录页 https://github.com/login
             "Sign in to GitHub": "登录 GitHub",
             "Sign in to": "登录",
+            "Signed in as": "登录身份为",
             "to continue to": "继续登录",
             "Username or email address": "用户名或电子邮箱",
             "Password": "密码",
@@ -14890,6 +14967,7 @@ I18N.zh["session-authentication"] = { // 登录页 包含(/login, /session, /ses
 
             "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
+            "When your phone is ready, click the button below.": "当您的手机准备就绪时，请点击下面的按钮。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
