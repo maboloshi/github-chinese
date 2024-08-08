@@ -3366,11 +3366,11 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
             "Send invitation": "发送邀请",
 
             // 加载
-            "Loading Actions data...": "加载操作数据...",
-            "Loading Packages data...": "加载软件包数据...",
-            "Loading Shared Storage data...": "加载共享存储数据...",
-            "Loading Codespaces data...": "加载代码空间数据...",
-            "Loading usage breakdown…": "正在加载使用明细…",
+            "Loading Actions data...": "加载操作数据……",
+            "Loading Packages data...": "加载软件包数据……",
+            "Loading Shared Storage data...": "加载共享存储数据……",
+            "Loading Codespaces data...": "加载代码空间数据……",
+            "Loading usage breakdown…": "正在加载使用明细……",
 
     },
     "regexp": [ // 正则翻译
