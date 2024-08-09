@@ -3395,6 +3395,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
         [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
         [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
         [/Last (\d+) days/, "最近 $1 天"],
+        [/([^ ]+) support/, "$1 支持"],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
