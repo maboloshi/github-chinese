@@ -16055,7 +16055,8 @@ I18N.zh["gist"] = { // 代码片段页面
         "Go to Revisions": "跳转到修订",
 
         "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
-        "Search…": "搜索代码片段…",
+        "Search...": "搜索…",
+        "Search Gists": "搜索代码片段",
             "No results.": "没有结果。",
             "Yours": "您的",
         "All gists": "所有片段",
@@ -16071,10 +16072,12 @@ I18N.zh["gist"] = { // 代码片段页面
         "Joined": "加入于",
         "View GitHub Profile": "查看 GitHub 个人资料",
 
-        //"New gist": "新建片段",
+        "Create new gist": "新建片段",
         // 右上角个人图标下拉菜单
+        "Signed in as": "登录身份为",
         "Your gists": "我的代码片段",
         "Starred gists": "我的标星代码片段",
+        "Help": "帮助",
         "Your GitHub profile": "我的 GitHub 个人资料",
 
         "View profile and more": "查看更多信息",
@@ -16255,6 +16258,10 @@ I18N.zh["gist"] = { // 代码片段页面
 
         // 探索页面
         "Discover gists": "探索代码片段",
+        
+        // 代码编辑底部提示
+        "to toggle the": "切换",
+        "key moving focus.": "键移动对焦。",
 
     },
     "regexp": [ // 正则翻译
