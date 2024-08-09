@@ -16062,7 +16062,8 @@ I18N.zh["gist"] = { // 代码片段页面
         "Go to Revisions": "跳转到修订",
 
         "Instantly share code, notes, and snippets.": "即时分享您的代码，笔记，片段，以及灵感。",
-        "Search...": "搜索…",
+        "Search…": "搜索…", // 未登录
+        "Search...": "搜索...", // 已登录
         "Search Gists": "搜索代码片段",
             "No results.": "没有结果。",
             "Yours": "您的",
@@ -16081,21 +16082,21 @@ I18N.zh["gist"] = { // 代码片段页面
 
         "Create new gist": "新建片段",
         // 右上角个人图标下拉菜单
-        "Signed in as": "登录身份为",
-        "Your gists": "我的代码片段",
-        "Starred gists": "我的标星代码片段",
-        "Help": "帮助",
+            "Signed in as": "登录身份为",
+            "Your gists": "我的代码片段",
+            "Starred gists": "我的标星代码片段",
+            "Help": "帮助",
         "Your GitHub profile": "我的 GitHub 个人资料",
 
         "View profile and more": "查看更多信息",
         "See all of your gists": "查看您的所有片段",
 
         // 返回通知页状态条
-        "Back to notifications": "回到通知",
-        "Done": "已完成",
-        "Unsubscribe": "退订",
-        "Mark as unread": "标记为未读",
-        "Save": "保存",
+            "Back to notifications": "回到通知",
+            "Done": "已完成",
+            "Unsubscribe": "退订",
+            "Mark as unread": "标记为未读",
+            "Save": "保存",
 
         // 用户 浮动信息卡
         "Member of": "隶属组织",
@@ -16157,30 +16158,31 @@ I18N.zh["gist"] = { // 代码片段页面
         // "Unsubscribe": "退订",
         "Star": "星标",
             "Star this gist": "星标该代码片段",
+            "You must be signed in to star a gist": "您必须登录才能星标代码片段",
         "Unstar": "取消星标",
             "Unstar this gist": "取消该代码片段星标",
+        "Forks": "复刻",
+            "Fork this gist": "复刻代码片段",
+            "You must be signed in to fork a gist": "您必须登录才能复刻代码片段",
         "User actions": "用户操作",
         "Report abuse": "举报滥用",
 
         "Code": "代码",
         "Revisions": "修订",
         "Stars": "星标",
-        "Forks": "复刻",
-            "Fork this gist": "复刻该代码片段",
 
         "Drop one or more files here to prefill your gist!": "在此处拖放一个或多个文件以填充您的 Gist！",
 
         // 分享工具条
         "What would you like to do?": "您想做什么？",
         "Embed": "嵌入",
-        "Embed this gist in your website.": "嵌入到您的网页中。",
+            "Embed this gist in your website.": "嵌入到您的网页中。",
         "Share": "分享",
-        "Copy sharable link for this gist.": "复制片段共享链接。",
+            "Copy sharable link for this gist.": "复制片段共享链接。",
         "Clone via HTTPS": "通过 HTTPS 方式克隆",
-        "Clone using the web URL.": "使用 URL 克隆。",
-        "Clone with Git or checkout with SVN using the repository’s web address.": "通过仓库 web 地址进行 Git 克隆或 SVN 检出。",
+            "Clone using the web URL.": "使用 Web URL 克隆。",
         "Clone via SSH": "通过 SSH 方式克隆",
-        "Clone with an SSH key and passphrase from your GitHub settings.": "通过 GitHub 设置中的 SSH 密钥和密码进行克隆。",
+            "Clone with an SSH key and passphrase from your GitHub settings.": "通过 GitHub 设置中的 SSH 密钥和密码进行克隆。",
         "Learn more about clone URLs": "了解更多关于克隆地址的信息",
 
         // 外部编辑器
@@ -16230,6 +16232,14 @@ I18N.zh["gist"] = { // 代码片段页面
         "Edit new file": "编辑新文件",
         "Preview changes": "预览更改",
         "Loading preview…": "载入预览…",
+        // 搜索框
+            "Search:": "搜索：",
+            "(Use /re/ syntax for regexp search)": "（使用 /re/ 语法进行正则搜索）",
+        "Attach files by selecting or pasting them.": "通过选择或粘贴来附加文件。",
+        // 底部栏
+            "Use": "使用",
+            "to toggle the": "切换",
+            "key moving focus.": "键移动对焦。",
         "Make secret": "转为私密",
         "Make public": "转为公开",
         "Cancel": "取消",
@@ -16270,11 +16280,13 @@ I18N.zh["gist"] = { // 代码片段页面
 
         // 探索页面
         "Discover gists": "探索代码片段",
-        
-        // 代码编辑底部提示
-        "to toggle the": "切换",
-        "key moving focus.": "键移动对焦。",
 
+        // 底部提示栏 (未登录)
+        "Sign up for free": "免费注册",
+        "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
+        ". Already have an account?": "。已经有账户？",
+        "Sign in to comment": "登录后发表评论",
+        
     },
     "regexp": [ // 正则翻译
         [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
