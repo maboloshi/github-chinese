@@ -8377,6 +8377,9 @@ I18N.zh["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
             "compare across forks": "比较复刻库和源仓库",
             "Learn more about diff comparisons here": "点击此处了解更多关于差异比较的信息",
+            "This is a direct comparison between two commits made in this repository or its related repositories.": "这是本仓库或其相关仓库中两次提交的直接比较。",
+            "View the default comparison": "查看此范围的默认比较",
+            "for this range or": "或",
 
             // 分支选择栏
             "base repository:": "基础仓库：",
@@ -9658,6 +9661,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                     "timed out": "已超时",
                     "skipped": "跳过",
                     "stale": "陈旧",
+                    "required action": "需要操作",
             "Branch": "分支",
                 "Filter by Branch": "按分支筛选",
                 "Find a branch": "查找分支",
@@ -9903,6 +9907,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "The run was canceled by": "取消由", // 原文过于啰嗦
             "The operation was canceled.": "已取消。",
             "Process completed with exit code 1.": "进程完成，退出代码为 1。",
+            "Starting job": "作业启动中",
             "This job failed": "此作业失败",
             "This job was skipped": "此作业被跳过",
             "Input required and not supplied: token": "需要输入但未提供：令牌",
@@ -9912,6 +9917,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/Back to pull request (#\d+)/, "返回至拉取请求 $1"],
         [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
         [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
