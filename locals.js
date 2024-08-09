@@ -7777,6 +7777,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "reopened this": "重新打开了这个",
             "added a commit that referenced this pull request": "添加了引用此拉取请求的提交",
             "removed the request for review from": "取消请求审查",
+            "pushed a commit that referenced this pull request": "推送了一个引用此拉取请求的提交",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -16159,6 +16160,7 @@ I18N.zh["gist"] = { // 代码片段页面
         "Revisions": "修订",
         "Stars": "星标",
         "Forks": "复刻",
+            "Fork this gist": "复刻该代码片段",
 
         "Drop one or more files here to prefill your gist!": "在此处拖放一个或多个文件以填充您的 Gist！",
 
@@ -16169,10 +16171,14 @@ I18N.zh["gist"] = { // 代码片段页面
         "Share": "分享",
         "Copy sharable link for this gist.": "复制片段共享链接。",
         "Clone via HTTPS": "通过 HTTPS 方式克隆",
+        "Clone using the web URL.": "使用 URL 克隆。",
         "Clone with Git or checkout with SVN using the repository’s web address.": "通过仓库 web 地址进行 Git 克隆或 SVN 检出。",
         "Clone via SSH": "通过 SSH 方式克隆",
         "Clone with an SSH key and passphrase from your GitHub settings.": "通过 GitHub 设置中的 SSH 密钥和密码进行克隆。",
         "Learn more about clone URLs": "了解更多关于克隆地址的信息",
+
+        // 外部编辑器
+        "Open repository with": "打开于",
 
         "Copy to clipboard": "复制到剪切板",
         "Copied!": "✅ 复制成功!",
