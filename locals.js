@@ -3381,7 +3381,7 @@ I18N.zh["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        [/We're preparing your report! We’ll send an email to ([A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
+        [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
         [/Included minutes quota resets? in (\d+) days./, "包含的分钟配额将在 $1 天之内重置"],
         [/Data transfer quota resets? in (\d+) days./, "数据传输配额将在 $1 天之内重置"],
         [/Included quotas resets? in (\d+) days./, "包含的配额将在 $1 天之内重置"],
@@ -3424,6 +3424,8 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
             "This email address is the default used for GitHub notifications, i.e., replies to issues, pull requests, etc.": "该电子邮箱默认用于 GitHub 的通知，即对议题和拉取请求的回复，等等。",
             "At least one email is required.": "至少需要一个电子邮箱。",
             // 删除按钮 提醒信息
+                "At least one verified email is required.": "至少需要1个经过验证的电子邮箱",
+                "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。",
                 "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
 
             "At least one non-backup email is required.": "至少需要一个非备用电子邮箱",
@@ -3494,6 +3496,7 @@ I18N.zh["settings/emails"] = { // 设置 - 电子邮箱
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
         [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
+        [/Delete ([^@]+@[^\n]+)/, "删除 $1"],
     ],
 };
 
