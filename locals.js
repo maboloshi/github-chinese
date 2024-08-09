@@ -353,10 +353,11 @@ I18N.zh["pubilc"] = { // 公共区域翻译
                 "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
                 "Customer Stories": "客户案例",
                 "Software Development": "软件开发",
+                "Partners": "合作",
             "Open Source": "开源",
-                // 赞助者
+                "GitHub Sponsors": "GitHub 赞助者",
                     "Fund open source developers": "资助开源开发人员",
-                // 自述文件项目
+                "The ReadME Project": "自述文件项目",
                     "GitHub community articles": "GitHub 社区文章",
                 // 仓库
                     "Topics": "主题",
@@ -9452,6 +9453,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "I have done a": "我已", // 与下条二选一展示
             "Reminder to": "记得", // 同上
             "search for similar discussions": "搜索相似话题先",
+        
+        // 评论框编辑
+            "Edited": "编辑于",
+            "'s edit": " 编辑",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -14629,6 +14634,7 @@ I18N.zh["homepage"] = { // 未登录的首页
         "offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
         "Check out GitHub Codespaces": "查看 GitHub 代码空间",
 
+        "GitHub Mobile and Copilot": "GitHub Mobile 和 Copilot",
         //"fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
         "now let you manage projects and converse with your AI pair programmer on the go.": "让您可以管理项目，并与您的 AI 结对程序员在旅途中交流。",
         "Download GitHub Mobile": "下载 GitHub Mobile",
@@ -14699,7 +14705,6 @@ I18N.zh["homepage"] = { // 未登录的首页
 
         "Platform": "平台",
         "Developer API": "开发者 API",
-        "Partners": "合作",
         "Education": "教育",
 
         "Support": "支持",
