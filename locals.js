@@ -276,6 +276,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Comparing/, "比较"],
         [/History for ([^ ]+)/, "$1 的历史"],
         [/Compare plans for ([^ ]+)/, "为 $1 比较计划"],
+        [/([^ ]+)’s gists/, "$1 的代码片段"],
         ["_regexp_end", "end"]
     ],
 };
@@ -1521,6 +1522,11 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
         [/You and/, "您和另外"],
+        [/You reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes)/,function (all, reacted) {
+            var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
+
+            return '您' + reactedKey[reacted]; 
+        }],
         [/(\d+) (?:people|person) reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes)/, function (all, number, reacted) {
             var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
 
@@ -15328,6 +15334,7 @@ I18N.zh["notifications"] = { // 通知页面
         "author": "作者",
         "manual": "手动",
         "state change": "状态更改",
+        "ci activity": "CI 活动",
 
         "View all gist notifications": "查看全部 Gist 通知", // 仓库分组模式
 
