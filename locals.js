@@ -208,6 +208,7 @@ I18N.zh["title"] = { // 标题翻译
         "Codespace Templates": "代码空间模版",
         "Create new codespace": "创建代码空间",
         "Error": "错误",
+        "Discover gists · GitHub": "探索代码片段 · GitHub",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
