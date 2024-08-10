@@ -1520,12 +1520,12 @@ I18N.zh["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
         [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
         [/You're seeing this because you starred ([^ ]+)/, "您看到这个，是因为您星标了 $1"],
         [/You're seeing this because you follow ([^ ]+)/, "您看到这个，是因为您关注了 $1"],
-        [/(\d+) (people|person) reacted with thumbs up/, "$1 个人的的反应为点赞"],
-        [/(\d+) (people|person) reacted with laugh/, "$1 个人的反应为大笑"],
-        [/(\d+) (people|person) reacted with hooray/, "$1 个人的反应为欢呼"],
-        [/(\d+) (people|person) reacted with heart/, "$1 个人的反应为爱心"],
-        [/(\d+) (people|person) reacted with rocket/, "$1 个人的反应为火箭"],
-        [/(\d+) (people|person) reacted with eyes/, "$1 个人的反应为眼睛"],
+        [/You and/, "您和另外"],
+        [/(\d+) (?:people|person) reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes)/, function (all, number, reacted) {
+            var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
+
+            return number + '人' + reactedKey[reacted];
+        }],
         [/Support ([^ ]+)'s open source work/, "支持 $1 的开源工作"],
         [/Start a new repository for/, "创建一个仓库为"],
         [/([^ ]+) requested changes, you commented/, "$1 要求更改，您发表评论"], // 拉取请求 浮动信息卡
@@ -6037,6 +6037,12 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
         [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        [/, and ([^ ]+)/, ", 和 $1"],
+        [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
+            var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
+
+            return reactedKey[reacted];
+        }],
         ...I18N.zh["orgs-public"]["regexp"],
     ],
 };
@@ -10842,10 +10848,11 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         // 发行版评论
             "No significant changes": "无重大变化", // GitHub Action 生成的发行版
 
+        // 反应相关
+            "You reacted": "您表达看法",
 
     },
     "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
         [/Show all (\d+) assets?/, "显示所有 $1 个资产"],
         [/(\d+) commits?/, "$1 个提交"],
         [/to ([^ ]+) since this release/, "在此发行版之后进入 $1 分支"],  // $1 分支在此发行版之后有 xxx 个提交
@@ -10854,8 +10861,10 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
-        [/ and /, "和"],
-        [/(\d+) (people|person) reacted/, "$1 人反应"],
+        [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
+        [/ and /, " 和 "],
+        [/(\d+) (people|person) reacted/, "$1 人表达看法"],
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 I18N.zh["repository/tags"] = I18N.zh["repository/releases"];
