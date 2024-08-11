@@ -8327,6 +8327,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
+        [/(\d+) review requesting changes/, "$1 个请求审查更改"],
         [/(\d+) approvals?/, "$1 项批准"],
         [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"], // 拉取请求
         [/(\d+) changes? requested/, "$1 项更改请求"],
@@ -11675,7 +11676,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits/, "贡献到 $1 分支，不包括合并提交"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
-        [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略了行数。"],
+        [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略行数。"],
         [/([\d,]+) commits?/, "$1 次提交"],
     ],
 };
@@ -11893,6 +11894,11 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
             "Deletions": "删除数量",
             "per week": "每周",
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
+
+            // 过多
+            "There are too many commits to generate this graph.": "提交次数过多，无法生成图表。",
+            "More information about this data can be found in the": "有关这些数据的更多信息，请参阅",
+            "activity documentation": "活动文档",
 
     },
     "regexp": [ // 正则翻译
@@ -12968,7 +12974,7 @@ I18N.zh["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<
             "Tag": "标签",
             "tags": "标签",
 
-            "Ruleset Name": "规则集名称",
+            "Name": "名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
             "Enforcement status": "执行状态",
                 "Active": "激活",
