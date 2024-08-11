@@ -14045,7 +14045,7 @@ I18N.zh["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) 
                     "Check again": "再检查一次",
                     "DNS Check in Progress": "DNS 检查中",
                     "DNS check successful": "DNS 检查成功",
-                    "DNS check unsuccessful": "DNS 检查不成功",
+                    "DNS check unsuccessful": "DNS 检查失败",
                     "Please wait for the DNS check to complete.": "请等待 DNS 检查结束。",
                     // [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
                     // [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
