@@ -9943,7 +9943,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/Back to pull request (#\d+)/, "返回至拉取请求 $1"],
+        [/Back to pull request (#\d+)/, "返回拉取请求 $1"],
         [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
         [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
@@ -11675,6 +11675,7 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits/, "贡献到 $1 分支，不包括合并提交"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
+        [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略了行数。"],
         [/([\d,]+) commits?/, "$1 次提交"],
     ],
 };
