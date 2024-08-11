@@ -263,7 +263,7 @@
      */
     function transTimeElement(el) {
         let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
+        let res = I18N[lang]['public']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
             let str = key.replace(a, b);
@@ -343,7 +343,7 @@
     function fetchTranslatedText(key) {
 
         // 静态翻译
-        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+        let str = I18N[lang][page]['static'][key] || I18N[lang]['public']['static'][key]; // 默认翻译 公共部分
 
         if (typeof str === 'string') {
             return str;
@@ -351,7 +351,7 @@
 
         // 正则翻译
         if (enable_RegExp) {
-            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
+            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['public'].regexp || []); // 正则数组
 
             for (let [a, b] of res) {
                 str = key.replace(a, b);
@@ -447,7 +447,7 @@
      */
     function transBySelector() {
         // 获取当前页面的翻译规则，如果没有找到，那么使用公共的翻译规则
-        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
+        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['public'].selector || []); // 数组
 
         // 如果找到了翻译规则
         if (res.length > 0) {

@@ -279,7 +279,7 @@ I18N.zh["title"] = { // 标题翻译
     ],
 };
 
-I18N.zh["pubilc"] = { // 公共区域翻译
+I18N.zh["public"] = { // 公共区域翻译
     "static": { // 静态翻译
         // 错误页面
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
