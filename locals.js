@@ -1230,8 +1230,8 @@ I18N.zh["public"] = { // 公共区域翻译
                 return count + ' ' + unitKey[unit] + (prefix === 'in' ? '之内' : '之前');
             }
         }],
-        [/(\d+)(h|d|w|m)/, function (all, count, suffix) {
-            var suffixKey = {h: '小时', d: '天', w: '周', m: '个月'};
+        [/(\d+)(y|h|d|w|m)/, function (all, count, suffix) {
+            var suffixKey = {y: '年', h: '小时', d: '天', w: '周', m: '个月'};
 
             return count + ' ' + suffixKey[suffix] + '之前';
         }],
