@@ -13728,7 +13728,7 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                 "Deleting an environment will delete all associated secrets, variables, and protection rules.": "删除环境将删除所有关联的机密、变量和保护规则。",
                 "I understand, delete this environment": "我明白了，依然删除这个环境",
             // 顶部提醒
-            "Environment deleted.": "环境已删除。",
+                "Environment deleted.": "环境已删除。",
 
         // 仓库 新建环境 /<user-name>/<repo-name>/settings/environments/new
             "/ Add": "/ 添加",
@@ -13736,6 +13736,10 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
             "Configure environment": "设置环境",
 
         // 编辑环境 /<user-name>/<repo-name>/settings/environments/<id>/edit
+            // 顶部提醒
+                // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
+                // [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
+
             "/ Configure": "/ 设置",
 
             "Deployment protection rules": "部署保护规则",
@@ -13798,58 +13802,45 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                     // [/Deployment branch rule \"([^ ]+)\" removed./, "部署分支规则 “$1” 已删除。",]
 
             "Environment secrets": "环境机密",
-                "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment by using the": "机密是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问。",
-                    "secret context": "机密内容",
-                "This environment has no secrets.": "该环境无机密。",
-                "Add environment secret": "添加环境机密",
-                "Add secret": "添加机密",
-                    // 添加机密对话框
-                    "Name": "名称",
-                    "Value": "值",
-                    "Secret value": "机密值",
-                    "Adding…": "添加中…",
-                    "Failed to add secret: Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败：机密名称只能包含字母数字字符 ([a-z], [A-Z], [0-9]) 或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
-                    "Name and value are required": "需要名称和值",
-                    // 顶部提醒
-                        "Environment secret added.": "环境机密已添加。",
-                        "Environment secret updated.": "环境机密已更新。",
-                "Update secret": "更新机密",
-                    "Save secret": "保存机密",
-                "Remove secret": "删除机密",
-                    "Yes, remove this secret": "是的，删除该机密",
-                    // 顶部提醒
-                    "Secret deleted.": "机密已删除。",
+                "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment by using the": "机密是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问",
+                    "secret context": "机密上下文",
 
-            // 顶部提醒
-                "Failed to add secret. Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败。机密名称只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许有空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
+                "Name": "名称",
+                "Value": "值",
+                "Last updated": "最后更新",
+
+                "This environment has no secrets.": "该环境尚无机密。",
+                "Add environment secret": "添加环境机密",
+                    // 添加机密对话框
+                    "Add secret": "添加机密",
+                    "Secret value": "机密值",
+                    // 提醒
+                        "Failed to add secret: Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加机密失败：机密名称只能包含字母、数字字符 ([a-z], [A-Z], [0-9]) 或下划线 (_)。不允许使用空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
+                        "Name and value are required": "名称和值是必填项。",
+
+                "Update secret": "更新机密",
+                // 删除机密 对话框
+                    "Delete secret": "删除机密",
+                        "Are you sure you want to delete": "您确定要删除",
+                        "Yes, delete this": "是的，删除该",
+                        "secret": "机密",
 
             "Environment variables": "环境变量",
-                "Variables are used for non-sensitive configuration data. They are accessible only by GitHub Actions in the context of this environment by using the": "变量用于非敏感配置数据。它们只能由 GitHub Actions 在这个环境中访问。",
-                    "variable context": "变量内容",
-                "This environment has no variables.": "该环境无变量。",
-                "vars context": "变量内容",
+                "Variables are used for non-sensitive configuration data. They are accessible only by GitHub Actions in the context of this environment by using the": "变量用于非敏感配置数据。它们只能由 GitHub Actions 在此环境中访问",
+                    "variable context": "变量上下文",
+
+                "This environment has no variables.": "该环境尚无变量。",
                 "Add environment variable": "添加环境变量",
-                "Add variable": "添加变量",
-                    "Failed to add variable: Variable names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加变量失败： 变量名只能包含字母数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许使用空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
-                    "Variable name can only start with a letter or underscore.": "变量名只能以字母或下划线开头。",
-                    "Variable name can only contain alphanumeric characters. Special characters and spaces are not allowed.": "变量名称只能包含字母数字字符。不允许特殊字符和空格。",
-
+                    // 添加变量对话框
+                    "Add variable": "添加变量",
                     "Variable value": "变量值",
-                    "Adding...": "添加中...",
-                "Update variable": "更新变量",
-                    "Save variable": "保存变量",
-                    "Saving...": "保存中...",
-                "Updated": "更新于",
-                // 删除变量 对话框
-                    "Remove variable": "删除变量",
-                    "Are you sure you want to delete": "您确定要删除",
-                    "Yes, remove this variable": "是的，删除该变量",
-                    // 顶部提醒
-                    "Variable deleted.": "变量已删除。",
+                    // 提醒
+                        "Failed to add variable: Variable names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "添加变量失败： 变量名只能包含字母、数字字符（[a-z]、[A-Z]、[0-9]）或下划线 (_)。不允许使用空格。必须以字母 ([a-z], [A-Z]) 或下划线 (_) 开头。",
 
-            // 顶部提醒
-            // [/Environment \"([^ ]+)\" created./, "环境 “$1” 已创建。"],
-            // [/Environment \"([^ ]+)\" updated./, "环境 “$1” 已更新。"],
+                "Update variable": "更新变量",
+                // 删除变量 对话框
+                    "Delete variable": "删除变量",
+                    "variable": "变量",
 
     },
     "regexp": [ // 正则翻译
