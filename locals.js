@@ -4408,8 +4408,8 @@ I18N.zh["settings/security_analysis"] = { // 设置 - 代码安全性与分析
 
                     "Disable dependency graph": "禁用依赖关系图",
                         "You're about to disable dependency graph on all your private repositories. This will also disable Dependabot alerts and Dependabot security updates on those repositories.": "您即将禁用您所有私有仓库上的依赖关系图。这也将禁用这些仓库的 Dependabot 警报和 Dependabot 安全更新。",
-            
-             // Dependabot
+
+            // Dependabot
                 "Keep your dependencies secure and up-to-date.": "保持您的依赖关系的安全和最新",
                 "Learn more about Dependabot": "了解更多关于 Dependabot 的信息",
 
