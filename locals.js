@@ -285,7 +285,7 @@ I18N.zh["title"] = { // 标题翻译
 };
 
 I18N.zh["public"] = { // 公共区域翻译
-    "static": { // 静态翻译
+    "static": { // 静态翻
         // 错误页面
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
@@ -5881,6 +5881,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
                     "Are you sure you want to delete this?": "您定要删除这个吗？",
 
                 "commented": "评论于",
+                "commented on behalf of": "评论，代表",
                 "— with": "— 通过",
                 "Update comment": "更新评论",
                 "Hide": "隐藏",
@@ -7818,6 +7819,13 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "high": "高",
                 "severity": "严重性",
                 "Dependabot alert": "Dependabot 警报",
+                "on braces.": "。",
+                // 首次弹窗
+                    "Your first automated security update": "您的第一个自动安全更新",
+                        "Dependabot security updates keep your projects secure and up-to-date.": "Dependabot 安全更新使您的项目安全且最新。",
+                        "You can opt out at any time in": "你可以在任何时候选择退出在",
+                        "this repository’s settings": "仓库设置",
+                        "Got it!": "我知道了",
 
                 // 合并后顶部提醒
                     // [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
