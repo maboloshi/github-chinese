@@ -10914,6 +10914,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
         [/Toggle (.*)'s commit message/, "切换 $1 的提交消息"],
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
+        [/Remove attached binary ([^ ]+)/, "删除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
         [/ and /, " 和 "],
