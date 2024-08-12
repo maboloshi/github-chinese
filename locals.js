@@ -4007,11 +4007,11 @@ I18N.zh["settings/code_review_limits"] = { // 设置 - 代码审查限制
             "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制允许批准或请求更改公共仓库中拉取请求的用户。",
             "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
             "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
-            "Code review limits are currently": "目前,所有仓库都",
+            "Code review limits are currently": "目前，所有仓库都",
             "enabled": "启用",
             "disabled": "禁用",
             "for all repositories. Only users explicitly granted access to these repositories may submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews continue to be able to do so.": "代码审查限制。只有被明确授予访问这些仓库权限的用户才能提交 “批准” 或 “请求更改” 的拉取请求审查。所有能够提交评论拉取请求审查的用户仍可继续提交。",
-            "for all repositories. All users are able to submit pull request reviews, including those that \"approve\" or \"request changes\". Limit reviews to only permit users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\".": "代码审查限制。所有用户都能提交拉取请求审查，包括那些 “批准” 或 “请求更改” 的用户。限制审查，只允许明确授权访问每个版本库的用户提交 “批准” 或 “请求更改” 的审查。",
+            "for all repositories. All users are able to submit pull request reviews, including those that \"approve\" or \"request changes\". Limit reviews to only permit users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\".": "代码审查限制。所有用户都可以提交拉取请求审查，包括那些 “批准” 或 “请求更改” 的审查。限制审查，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。",
             "Unset": "撤销",
             "Limit reviews on all repositories": "限制对所有仓库的审查",
             "Remove review limits from all repositories": "取消对所有仓库的审查限制",
@@ -7230,6 +7230,7 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
         [/issues opened by ([^ ]+)/, "$1 打开议题"],
         [/Open pull requests created by ([^ ]+)/, "$1 创建拉取请求"],
         [/pull requests opened by ([^ ]+)/, "$1 打开拉取请求"],
+        [/(\d+) hidden conversations/, "$1 条隐藏对话"],
     ]
 };
 
@@ -9683,7 +9684,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
                 "This workflow does not exist.": "此工作流不存在。",
 
             "All workflows": "全部工作流程",
-                "Show more workflows...": "显示更多…",
+                "Show more workflows...": "显示更多...",
                 "Showing runs from all workflows": "显示所有工作流程的运行情况",
 
             "Codespaces Prebuilds": "代码空间预构建",
@@ -10009,7 +10010,7 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/Latest (#\d+)/, "最新 $1"],
         [/Attempt (#\d+)/, "运行 $1"],
         [/cached/, "被缓存"],
-        [/(\d+)-cores · (\d+) GB RAM · (\d+) GB SSD Storage/, "$1 核 · $2 GB内存 · $3 GB SSD 存储"],
+        [/(\d+)-cores · (\d+) GB RAM · (\d+) GB SSD Storage/, "$1 核心 · $2 GB内存 · $3 GB SSD 存储"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
@@ -11296,6 +11297,8 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Dismiss alerts": "忽略警报",
                 "Select a reason to dismiss": "选择忽略理由",
 
+            "opened": "打开于",
+            
             "There aren’t any open alerts.": "尚无任何打开的警报。",
             "As alerts are created, they’ll appear here.": "创建警报后，它们将出现在此处。",
 
@@ -11306,7 +11309,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Dependabot version updates": "Dependabot 版本更新",
             "can also help keep dependencies updated.": "也可以帮助保持依赖项的更新。",
 
-            "Protip!": "专业提示！",
+            "ProTip!": "专业提示！",
                 "See auto-dismissed alerts with": "要查看自动解除的警报，请使用",
                 "to see alerts without an available fix.": "来查看没有可用修复程序的警报。",
 
@@ -11326,6 +11329,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Try again": "再试一次",
             "View logs": "查看日志",
             "Learn more about troubleshooting Dependabot errors": "了解更多关于排除 Dependabot 错误的信息",
+            "about troubleshooting Dependabot errors": "关于排除 Dependabot 错误的信息",
 
             "Patched version": "补丁版本",
 
@@ -11340,7 +11344,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "Merging this pull request would fix": "合并此拉取请求将修复",
             "Review security update": "审查安全更新",
 
+            "opened this": "打开了这个",
+
             // 右侧栏
+                "This score calculates overall vulnerability severity from 0 to 10 and is based on the Common Vulnerability Scoring System (CVSS).": "该分数以通用漏洞评分系统 (CVSS) 为基础，从 0 到 10 计算总体漏洞严重性。",
                 "CVSS base metrics": "CVSS 基本指标",
                     "Attack vector": "攻击载体",
                         "More severe the more the remote (logically and physically) an attacker can be in order to exploit the vulnerability": "攻击者为了利用该漏洞，可以在远程（逻辑上和物理上）攻击时更严重",
@@ -11365,6 +11372,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                     "Availability": "可利用性",
                         "More severe when the loss of impacted component availability is highest": "当受影响的组件可用性损失最高时更为严重",
                 "Weaknesses": "缺陷",
+                "Related alerts": "相关警报",
                 "See advisory in GitHub Advisory Database": "请参阅 GitHub 咨询数据库中的咨询",
                 "See all of your affected repositories": "查看您所有受影响的仓库",
                 "See something to contribute?": "看到有什么可贡献的吗？",
@@ -11441,19 +11449,22 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "to view all of this repository's secret alerts.": "以查看此仓库的所有机密警报。",
             "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的机密。",
 
-            // 具体某个信息
+            // 具体某条信息
                 "detected a": "检测到",
                     "secret": "机密",
                 "Give us feedback": "提交反馈",
 
                 "Close as": "关闭为",
                     "Select a close reason": "选择关闭原因",
-                    "This secret has been revoked": "该机密被撤销",
-                    "This secret is not in production code": "该机密不在生产代码中",
-                    "This alert is not valid": "该警报无效",
-                    "This alert is not relevant": "该警报无关",
+                    "This secret has been revoked": "机密被撤销",
+                    "This secret is not in production code": "机密不在生产代码中",
+                    "This alert is not valid": "警报无效",
+                    "This alert is not relevant": "警报无关",
+
+                "Reopen alert": "重新打开",
 
                 "Possibly active secret": "可能活跃",
+                "Secret detected": "检测到",
                     "Copy token": "复制令牌",
                 
                 "Remediation steps": "补救措施",
@@ -11477,7 +11488,19 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                     "View git blame": "浏览 git 追溯",
 
                 // 状态词
+                    "Loading": "加载中",
                     "opened this alert": "打开此警报",
+                    "reopened this": "重新打开",
+                    "closed this as": "将其关闭为",
+                    //"closed as": "关闭为",
+                        "used in tests": "仅测试",
+                        "won't fix": "不会修复",
+                        "revoked": "忽略",
+                        "false positive": "假阳性",
+
+                "hidden item": "条隐藏项目",
+                "s": " ",
+                "Load all...": "加载全部...",
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打开一个安全公告草案",
@@ -11546,8 +11569,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/([\d,]+) Open/, "$1 打开"],
         [/(#\d+) opened/, "$1 打开于"],
         [/([\d,]+) Closed/, "$1 关闭"],
+        [/(#\d+) closed as/, "$1 关闭为"],
         [/(\d+) selected/, "$1 条被选中"],
         [/Detected in (\d+) locations?/, "在 $1 个位置检测到"],
+        [/Detected in ([^ ]+)/, "在 $1 中检测到"],
         [/Upgrade ([^ ]+) to fix/, "升级 $1 去修复"], // 某个 Dependabot 警报
         [/Upgrade ([^ ]+) to version/, "升级 $1 到版本"], // 某个 Dependabot 警报
         [/Dependabot cannot update ([^ ]+) to a non-vulnerable version/, "Dependabot 无法将 $1 更新为无漏洞的版本"],
@@ -11557,6 +11582,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
+        [/on (.+)/, "$1"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
     ],
 };
@@ -12075,7 +12101,7 @@ I18N.zh["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖关系�
             "Repositories that depend on": "依赖的仓库包括",
             "Package:": "软件包：",
 
-            "These counts are approximate and may not exactly match the dependents shown below.": "这些人数是近似值，可能与下面显示的人数不完全一致。",
+            "These counts are approximate and may not exactly match the dependents shown below.": "这些计数是近似值，可能与下方显示的依赖项不完全匹配。",
 
             // [/(\d+) Repositor(y|ies)/, "$1 仓库"],
             // [/(\d+) Packages?/, "$1 软件包"],
@@ -12666,7 +12692,6 @@ I18N.zh["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓
                 "Find people": "查找",
                 "Invite collaborator": "邀请协作者",
                 "Select a collaborator above": "从上方选择协作者",
-                "Invite collaborator": "邀请协作者",
                 "Add": "添加",
                 "to this repository": "到这个仓库",
 
@@ -13829,8 +13854,8 @@ I18N.zh["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-
                 "Deleting an environment will delete all associated secrets, variables, and protection rules.": "删除环境将删除所有关联的机密、变量和保护规则。",
                 "I understand, delete this environment": "我明白了，依然删除这个环境",
             // 顶部提醒
-            "Environment deleted.": "环境已删除。",
-            "There was an error saving your new environment.": "保存新环境时出错。",
+                "Environment deleted.": "环境已删除。",
+                "There was an error saving your new environment.": "保存新环境时出错。",
 
         // 仓库 新建环境 /<user-name>/<repo-name>/settings/environments/new
             "/ Add": "/ 添加",
@@ -14214,8 +14239,8 @@ I18N.zh["repository/settings/security_analysis"] = { // 仓库设置 - 代码安
                 "Automatically detect and report build-time dependencies for select ecosystems.": "自动检测和报告所选生态系统的构建时间依赖性。",
                 "Use standard GitHub runners": "使用标准 GitHub 运行器",
                 "Enabled for labeled runners": "为有标签的运行器启用",
-                    "Use runners labeled with 'dependency-submission'": "使用带 '依赖提交' 标签的运行程序",
-                    "No runners with this label assigned to repository": "没有为仓库分配带有此标签的运行程序",
+                    "Use runners labeled with 'dependency-submission'": "使用带 “dependency-submission” 标签的运行器",
+                    "No runners with this label assigned to repository": "没有为仓库分配带有此标签的运行器",
 
             // Dependabot
                 "Keep your dependencies secure and up-to-date.": "保持您的依赖关系的安全和最新",
@@ -14762,12 +14787,12 @@ I18N.zh["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>
 I18N.zh["repository/custom-properties"] = { // 仓库 - 自定义属性 https://github.com/<uesr-name>/<repo-name>/custom-properties
     "static": {
         "Custom properties": "自定义属性",
-        "Custom properties allow you to decorate your repository with information such as compliance frameworks, data sensitivity, or project details.": "自定义属性允许您使用合规框架、数据敏感性或项目细节等信息来装饰您的仓库。",
+        "Custom properties allow you to decorate your repository with information such as compliance frameworks, data sensitivity, or project details.": "自定义属性允许您为仓库添加信息，例如合规框架、数据敏感性或项目详情。",
 
         // 面板
-        "No custom properties set for this repository.": "该仓库未设置自定义属性。",
-        "Learn more about custom properties": "进一步了解自定义属性",
-        "and how to set them at the organization level.": "以及如何在组织级别设置这些属性。",
+        "No custom properties set for this repository.": "该仓库尚未设置自定义属性。",
+        "Learn more about custom properties": "了解更多关于自定义属性的信息",
+        "and how to set them at the organization level.": "以及如何在组织级别进行设置。",
     },
     "regexp": [],
 };
