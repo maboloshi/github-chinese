@@ -97,13 +97,19 @@
         ],
         'repository/edit': [
             '.cm-scroller', // 代码编辑器
+            'table', // 代码差异预览
         ],
         'repository/new': [
             '.cm-scroller', // 代码编辑器
+            'table', // 代码差异预览
         ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
             '.TimelineItem', // 右侧栏 最新变化
+        ],
+        'gist': [
+            'div.js-blob-code-container', // 代码框
+            'table.js-diff-table', // 代码差异
         ],
         '*': [
             '.markdown-body',
