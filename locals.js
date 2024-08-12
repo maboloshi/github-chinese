@@ -129,7 +129,7 @@ I18N.zh["title"] = { // 标题翻译
         "Your Projects": "我的项目",
         "Your Packages": "我的软件包",
         "Your Stars": "我的星标页面",
-        "Your Profile": "个人资料",
+        "Your profile": "个人资料",
         "Your Achievements": "我的成就",
         "Your Followers": "我的关注者",
         "Who You’re Following": "我关注的人",
@@ -280,6 +280,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Compare plans for ([^ ]+)/, "为 $1 比较计划"],
         [/([^ ]+)’s gists/, "$1 的代码片段"],
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
+        [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
         ["_regexp_end", "end"]
     ],
 };
@@ -312,6 +313,7 @@ I18N.zh["public"] = { // 公共区域翻译
         "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
         "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
         "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
+        "You are assigned to this pull request": "您被分配到这个拉取请求",
         "You left a review": "您已评论",
         "Changes requested": "请求更改", // 拉取请求
         "Review required": "请求审查", // 拉取请求
@@ -1726,6 +1728,7 @@ I18N.zh["page-profile"] = { // 个人首页
             "Drag to reorder": "拖动重新排序",
 
             // 顶部提醒
+            "You unlocked new Achievements with private contributions! Show them off by including private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "You unlocked new Achievements! Show them off by including achievements and private contributions in your Profile in": "您通过私人贡献解锁了新成就！通过在您的个人资料中包含私人贡献来展示它们。",
             "Your pins have been updated. Drag and drop to reorder them.": "您的置顶已更新。拖放来重新排列它们。",
             "Your popular repositories will now be shown instead of your pins.": "现在将显示您的热门仓库，而不是您的置顶。",
@@ -2605,6 +2608,7 @@ I18N.zh["settings/profile"] = { // 设置 - 个人资料
                 "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用、服务或工具？",
                 "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
+                "GitHub developer program": "GitHub 开发者计划",
                 "Developer site": "开发者站点",
 
             "Jobs profile": "就业状态",
@@ -7819,7 +7823,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "high": "高",
                 "severity": "严重性",
                 "Dependabot alert": "Dependabot 警报",
-                "on braces.": "。",
+                "on": "：",
                 // 首次弹窗
                     "Your first automated security update": "您的第一个自动安全更新",
                         "Dependabot security updates keep your projects secure and up-to-date.": "Dependabot 安全更新使您的项目安全且最新。",
@@ -8952,6 +8956,7 @@ I18N.zh["repository/blob"] = { // 仓库 - 浏览代码
 
             // 代码操作栏
                 "Blame": "追溯",
+                "Your blame took too long to compute.": "追溯花了太长时间来计算。",
                 // [/(\d+) lines? \((\d+) loc\) ·/, "$1 行 ($1 个位置) ·"],
                 // Copilot 广告
                     "Code 55% faster with GitHub Copilot": "使用 GitHub Copilot 编码速度提高 55%",
@@ -11239,6 +11244,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             // [/(\d+) Published/, "$1 项已发布"],
             // [/(\d+) Closed/, "$1 项已关闭"],
 
+            "There aren’t any triage security advisories": "没有任何安全建议通知",
             "There aren’t any draft security advisories": "没有任何安全建议草案",
             "There aren’t any published security advisories": "没有任何已发布的安全公告",
             "There aren’t any closed security advisories": "没有任何已关闭的安全公告",
@@ -11258,6 +11264,8 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Control how Dependabot opens pull requests, ignores false positives and snoozes alerts. Rules can be enforced at the organization level. Free for open source and available for private repos through": "控制 Dependabot 如何打开拉取请求、忽略误报和推迟警报。规则可以在组织层面强制执行。免费供开源项目使用，私有仓库需要通过",
                 "GitHub Advanced Security.": "GitHub 高级安全性。",
                 "Learn more about auto-triage": "了解更多关于自动分类的信息",
+
+            "opened": "打开于",
 
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
@@ -11281,6 +11289,8 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "This alert is inaccurate or incorrect": "此警报不准确或不正确",
                 "Vulnerable code is not actually used": "漏洞代码实际未使用",
                 "Fixed": "已修复",
+                "fixed": "已修复",
+                "Auto-dismissed": "自动忽略",
             "Package": "软件包",
                 "Filter by package": "按软件包筛选",
                 "Filter package": "筛选软件包",
@@ -11308,7 +11318,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "opened": "打开于",
             
             "There aren’t any open alerts.": "尚无任何打开的警报。",
+            "There aren’t any closed alerts.": "尚无任何关闭的警报。",
             "As alerts are created, they’ll appear here.": "创建警报后，它们将出现在此处。",
+            "As alerts are closed, they’ll appear here.": "关闭警报后，它们将出现在此处。",
 
             // 底部信息
             "surface known security vulnerabilities in some dependency manifest files.": "表面已知的安全漏洞在某些依赖性清单文件中。",
@@ -11320,8 +11332,10 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "ProTip!": "专业提示！",
                 "See auto-dismissed alerts with": "要查看自动解除的警报，请使用",
                 "to see alerts without an available fix.": "来查看没有可用修复程序的警报。",
+                "Find alerts on your dev dependencies using": "使用以下命令查找开发依赖项的警报：",
+                "to see alerts with calls to vulnerable functions.": "查看调用易受攻击函数的警报。",
 
-         // 具体某条Dependabot 警报 /security/dependabot/<id>
+         // 具体某条 Dependabot 警报 /security/dependabot/<id>
             "Dismiss alert": "忽略警报",
 
             "Opened": "打开",
@@ -11427,6 +11441,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Used in tests": "仅测试",
                 "Won't fix": "不会修复",
                 "Ignored by configuration": "配置忽略",
+                "Clear closure reasons": "清除原因",
 
             "Bypassed": "绕行",
                 "True": "是",
@@ -11471,6 +11486,11 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
 
                 "Reopen alert": "重新打开",
 
+                    "Close alert": "关闭警报",
+                
+                "Reopen alert": "重新打开",
+
+                "Secret detected": "检测到",
                 "Possibly active secret": "可能活跃",
                 "Secret detected": "检测到",
                     "Copy token": "复制令牌",
@@ -11500,11 +11520,12 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                     "opened this alert": "打开此警报",
                     "reopened this": "重新打开",
                     "closed this as": "将其关闭为",
-                    //"closed as": "关闭为",
+                    "closed as": "关闭为",
                         "used in tests": "仅测试",
                         "won't fix": "不会修复",
                         "revoked": "忽略",
                         "false positive": "假阳性",
+                    "closed this as completed in": "将其关闭为已完成",
 
                 "hidden item": "条隐藏项目",
                 "s": " ",
@@ -11572,6 +11593,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
+        [/([\d,]+) Triages?/, "$1 通知"],
         [/([\d,]+) Draft/, "$1 草案"],
         [/([\d,]+) Published/, "$1 发布"],
         [/([\d,]+) Open/, "$1 打开"],
@@ -11592,6 +11614,8 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
         [/on (.+)/, "$1"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
+        [/Prototype Pollution in ([^ ]+)/, "$1 上游污染"],
+        [/on (.+)/, "$1"],
     ],
 };
 
