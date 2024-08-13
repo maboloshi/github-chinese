@@ -11475,7 +11475,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
             "to view all of this repository's secret alerts.": "以查看此仓库的所有机密警报。",
             "Your repository doesn't have any unresolved secrets.": "您的仓库没有任何未解决的机密。",
 
-            // 具体某条信息
+            // 具体某条信息 https://github.com/<user-name>/<repo-name>/security/secret-scanning/<id>
                 "detected a": "检测到",
                     "secret": "机密",
                 "Give us feedback": "提交反馈",
@@ -11513,7 +11513,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                         "to clipboard": "到剪切板",
 
                     "View file": "浏览文件",
-                    "View git blame": "浏览 git 追溯",
+                    "View git blame": "浏览 Git 追溯",
 
                 // 状态词
                     "Loading": "加载中",
@@ -16853,7 +16853,14 @@ I18N.zh["sponsors"] = { // 赞助界面
                     "This account has not applied to join GitHub Sponsors.": "此账户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
 
-        // 赞助者资料页 https://github.com/sponsors/<user-name>
+        // GitHub 赞助者个人资料 https://github.com/sponsors/<user-name>
+        // GitHub 赞助者组织资料 https://github.com/sponsors/<org-name>
+        // ...?preview=true
+        "You are previewing your GitHub Sponsors profile.": "您正在预览您的 GitHub 赞助者个人资料。",
+        "Edit your profile.": "编辑您的个人资料。",
+        // 组织
+        // [/You are previewing ([^ ]+)’s GitHub Sponsors profile./, "您正在预览 $1 组织的 GitHub 赞助者个人资料。"],
+        // [/Edit ([^ ]+)’s profile./, "编辑 $1 组织的个人资料。"],
             // 标题
             "Become a sponsor to": "成为赞助者",
 
@@ -16876,14 +16883,14 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Hover over your avatar to review the badge you'll get that shows": "当鼠标悬停在您的头像时，将显示",
             "you're a sponsor.": "的赞助者徽章。",
 
-            "Select a tier": "选择档位",
+            "Select a tier": "选择",
             "Monthly": "每月",
                 "a month": "/月",
                 "Select": "选择",
                 "Choose a custom amount.": "填入自定义金额。",
             "One-time": "一次性",
                 "one time": "/次",
-                "A Public Sponsor achievement will be added to your profile.": "您的个人档案中将添加公共赞助商成就。",
+                "A Public Sponsor achievement will be added to your profile.": "一个 “公开赞助者” 成就将添加到您的个人资料中。",
         
         // 赞助者登录页 https://github.com/sponsors/<user-name>/signup
             // 标题
@@ -16995,6 +17002,8 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Invest in open source software and we'll track your progress here!": "投资开源软件，我们将在这里跟踪您的进度！",
     },
     "regexp": [ // 正则匹配
+        [/You are previewing ([^ ]+)’s GitHub Sponsors profile./, "您正在预览 $1 组织的 GitHub 赞助者个人资料。"], // sponsors/<org-name>?preview=true
+        [/Edit ([^ ]+)’s profile./, "编辑 $1 组织的个人资料。"], // sponsors/<org-name>?preview=true
         [/([^ ]+) does not directly depend on any repositories whose maintainers can be sponsored./, "$1 不直接依赖于任何可以赞助其维护人员的仓库。"],
         [/(\d+) repositor(y|ies) they own or maintain/, "他们拥有或维护 $1 个仓库"],
         [/others? sponsor, including (\d+) organizations?/, "位其他赞助者，包括 $1 个组织"],
