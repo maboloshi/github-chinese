@@ -286,7 +286,7 @@ I18N.zh["title"] = { // 标题翻译
 };
 
 I18N.zh["public"] = { // 公共区域翻译
-    "static": { // 静态翻
+    "static": { // 静态翻译
         // 错误页面
         "No server is currently available to service your request.": "当前服务器无法为您的请求提供服务。",
         "This page is taking too long to load.": "此页面加载时间过长。",
@@ -296,6 +296,9 @@ I18N.zh["public"] = { // 公共区域翻译
         "Looks like network is down!": "看起来网络未连接！",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
+        // 顶部提示
+        "You only have a single verified email address. We recommend verifying at least one more email address to ensure you can recover your account if you lose access to your primary email.": "您只有一个经过验证的电子邮件地址。我们建议您至少再验证一个电子邮件地址，以确保在失去主邮箱访问权限时可以恢复账户。",
+        "Email settings": "电子邮件设置",
         // 底部红条
         "You can’t perform that action at this time.": "此时无法执行该操作。",
         // 速率限制 - 短时间频繁访问网页，至少包括 https://github.com/issues
@@ -313,7 +316,7 @@ I18N.zh["public"] = { // 公共区域翻译
         "You were mentioned on and commented on this issue": "您在此议题上被提及并发表评论",
         "You were mentioned on and commented on this pull request": "您在此拉取请求上被提及并发表评论",
         "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
-        "You are assigned to this pull request": "您被分配到这个拉取请求",
+        "You are assigned to this pull request": "您被指派处理此拉取请求",
         "You left a review": "您已评论",
         "Changes requested": "请求更改", // 拉取请求
         "Review required": "请求审查", // 拉取请求
@@ -11441,7 +11444,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Used in tests": "仅测试",
                 "Won't fix": "不会修复",
                 "Ignored by configuration": "配置忽略",
-                "Clear closure reasons": "清除原因",
+                "Clear closure reasons": "全部",
 
             "Bypassed": "绕行",
                 "True": "是",
@@ -11487,12 +11490,9 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
                 "Reopen alert": "重新打开",
 
                     "Close alert": "关闭警报",
-                
-                "Reopen alert": "重新打开",
 
                 "Secret detected": "检测到",
                 "Possibly active secret": "可能活跃",
-                "Secret detected": "检测到",
                     "Copy token": "复制令牌",
                 
                 "Remediation steps": "补救措施",
@@ -11593,7 +11593,7 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
-        [/([\d,]+) Triages?/, "$1 通知"],
+        [/([\d,]+) Triages?/, "$1 分类"],
         [/([\d,]+) Draft/, "$1 草案"],
         [/([\d,]+) Published/, "$1 发布"],
         [/([\d,]+) Open/, "$1 打开"],
@@ -11615,7 +11615,6 @@ I18N.zh["repository/security"] = { // 仓库 - 安全页面
         [/on (.+)/, "$1"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
         [/Prototype Pollution in ([^ ]+)/, "$1 上游污染"],
-        [/on (.+)/, "$1"],
     ],
 };
 
