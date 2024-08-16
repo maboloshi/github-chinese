@@ -11881,6 +11881,8 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         [/Last (\d+) months?/, "最后 $1 个月"],
         [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
         [/([^ ]+)'s Commits/, "$1 的提交"],
+        [/([^ ]+)'s Additions/, "$1 的添加数量"],
+        [/([^ ]+)'s Deletions/, "$1 的删除数量"],
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
