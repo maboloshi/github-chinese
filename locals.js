@@ -16187,6 +16187,7 @@ I18N.zh["search"] = { // 搜索页面
             "wikis": "Wiki",
             "Try one of the tips below to find more code": "请尝试使用以下提示查找更多代码",
             "Try one of the tips below to find more repositories": "请尝试使用以下提示查找更多仓库",
+            "You could try one of the tips below.": "请尝试使用以下提示",
 
             "However we found": "然而我们发现",
             "code results": "代码结果",
