@@ -12097,9 +12097,20 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
             "There are too many commits to generate this graph.": "提交次数过多，无法生成图表。",
             "More information about this data can be found in the": "有关这些数据的更多信息，请参阅",
             "activity documentation": "活动文档",
+        
+        // 新版
+        "Additions and deletions per week": "添加数量和删除数量/每周",
+        "Chart options": "图表选项",
+            "View as table": "以表格形式查看",
+            "Download CSV": "下载 CSV",
+            "Download PNG": "下载 PNG",
+            // 图表本体
+                "Date": "日期",
+                "Frequency": "频率",
 
     },
     "regexp": [ // 正则翻译
+        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
