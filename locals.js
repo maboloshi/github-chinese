@@ -7715,6 +7715,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         ...I18N.zh["repository-public"]["regexp"],
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
+        [/(\d+) reviews? requesting changes?/, "$1 个请求审查更改"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
