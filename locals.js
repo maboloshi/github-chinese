@@ -10499,6 +10499,8 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                     "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
+                // 重复
+                "Sorry, that branch already exists.": "抱歉，该分支已存在。",
 
             "Search branches…": "搜索分支…",
 
