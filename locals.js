@@ -9403,6 +9403,7 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "Mark as answer": "标记为答案",
             "Answer selected by": "被标记答案由",
             "Unmark as answer": "取消标记为答案",
+            "Answer": "答案",
 
             "This comment was marked as off-topic.": "此评论被标记为偏离主题。",
             "Show comment": "显示评论",
