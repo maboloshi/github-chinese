@@ -16121,7 +16121,7 @@ I18N.zh["search"] = { // 搜索页面
                         // 对话框
                         "Provide feedback": "提供反馈",
                             "We read every piece of feedback, and take your input very seriously.": "我们认真阅读每一份反馈意见，并非常重视您的建议。",
-                            "Include my email address so I can be contacted": "附上我的电子邮件便于联系",
+                            "Include my email address so I can be contacted": "附上我的电子邮件地址以便于联系",
                             "Submit feedback": "提交",
 
             // &type=code
