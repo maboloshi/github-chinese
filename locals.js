@@ -236,7 +236,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Security Advisories/, "安全公告"],
         [/Dependabot alerts/, "Dependabot 警报"],
         [/Pulse/, "统计"],
-        [/Contributors to/, "贡献者 ·"],
+        //[/Contributors to/, "贡献者 ·"],
         [/Dashboard/, "仪表板"],
         [/Deployments/, "部署"],
         [/Community/, "社区"],
@@ -282,6 +282,7 @@ I18N.zh["title"] = { // 标题翻译
         [/([^ ]+)’s gists/, "$1 的代码片段"],
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
+        //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
         ["_regexp_end", "end"]
     ],
 };
@@ -11814,8 +11815,6 @@ I18N.zh["repository/pulse"] = { // 仓库 -> 洞察 - 统计
 
 I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
     "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-        ...I18N.zh["repository-insights-menu"]["static"],
 
         // 贡献者 /<user-name>/<repo-name>/graphs/contributors
             "Loading contributions…": "载入贡献者…",
@@ -11828,13 +11827,41 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
                 // [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
 
+        // 新版
+            // 标题
+                "Contributions per week to": "每周贡献到",
+                ", excluding merge commits": " 分支，不包括合并提交",
+            // 筛选栏
+                "Period": "时间",
+                    "All": "全部",
+                    "Last month": "上月",
+            // 日期
+                "From": "从",
+            // 提交图表
+                "over time": "总览",
+                "commit": "次提交",
+                    "s": " ",
+                "Contributions": "贡献", // 图表旁竖写
+                "Chart options": "图表选项",
+                    "View as table": "以表格形式查看",
+                    "Download CSV": "下载 CSV",
+                    "Download PNG": "下载 PNG",
+                    // 表格窗口
+                        "Commits over time": "提交总览",
+                        "DateTime": "日期时间",
+        
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-insights-menu"]["static"],
     },
     "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits/, "贡献到 $1 分支，不包括合并提交"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
         [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略行数。"],
-        [/([\d,]+) commits?/, "$1 次提交"],
+        //[/Contributions per week to (.*), excluding merge commits/, "每周贡献到 $1 分支，不包括合并提交"],
+        //[/([\d,]+|\d+) commits?/, "$1 次提交"],
+        [/Last (\d+) months?/, "最后 $1 个月"],
+        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
