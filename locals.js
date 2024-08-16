@@ -11880,9 +11880,15 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         // 新版
         [/Last (\d+) months?/, "最后 $1 个月"],
         [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
-        [/([^ ]+)'s Commits/, "$1 的提交"],
-        [/([^ ]+)'s Additions/, "$1 的添加数量"],
-        [/([^ ]+)'s Deletions/, "$1 的删除数量"],
+        //[/([^ ]+)'s Commits/, "$1 的提交"],
+        //[/([^ ]+)'s Additions/, "$1 的添加数量"],
+        //[/([^ ]+)'s Deletions/, "$1 的删除数量"],
+        [/([^ ]+)'s (Commits|Additions|Deletions)/, function(all, user, cont){
+
+            var contKey = {Commits: '提交', Additions: '添加数量', Deletions: '删除数量'};
+
+            return user + ' 的' + contKey[cont];
+        }],
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
