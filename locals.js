@@ -11871,8 +11871,10 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
         [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略行数。"],
         //[/Contributions per week to (.*), excluding merge commits/, "每周贡献到 $1 分支，不包括合并提交"],
         [/([\d,]+) commits?/, "$1 次提交"],
+        // 新版
         [/Last (\d+) months?/, "最后 $1 个月"],
         [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
+        [/([^ ]+)'s Commits/, "$1 的提交"],
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
