@@ -9569,6 +9569,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // 评论框编辑
             "Edited": "编辑于",
             "'s edit": " 编辑",
+        // 反应相关
+            "You can't vote on a locked discussion": "您不能在锁定讨论投票",
+            "Uh oh! You can't vote right now.": "哎呀！您现在不能投票。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
