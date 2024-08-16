@@ -5810,6 +5810,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             // 仓库地址-浮动信息窗口(仅 Android UA)
             "Navigate back to": "返回到",
 
+            // 顶部提示
+            "Sorry, that branch already exists.": "抱歉，该分支已存在。",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -10499,9 +10502,6 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                     "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
-                // 重复
-                "Sorry, that branch already exists.": "抱歉，该分支已存在。",
-
             "Search branches…": "搜索分支…",
 
             "Default branch": "默认分支",
