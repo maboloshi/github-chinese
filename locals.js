@@ -8048,8 +8048,19 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "If the conflicts on this branch are too complex to resolve in the web editor, you can check it out via command line to resolve the conflicts.": "如果该分支上的冲突过于复杂，无法在 Web 编辑器中解决，您可以通过命令行检出来解决冲突。",
                 "Step 1:": "第 1 步：",
                     "From your project repository, check out a new branch and test the changes.": "从项目仓库中，检出新分支并测试更改。",
+                    "Clone the repository or update your local repository with the latest changes.": "克隆仓库或使用最新更改更新本地仓库。",
                 "Step 2:": "第 2 步：",
                     "Merge the changes and update on GitHub.": "合并更改并在 GitHub 上更新。",
+                    "Switch to the head branch of the pull request.": "切换到拉取请求的头部分支。",
+                "Step 3:": "第 3 步：",
+                    "Merge the base branch into the head branch.": "将基础分支合并至头部分支。",
+                "Step 4:": "第 4 步：",
+                    "Fix the conflicts and commit the result.": "修复冲突并提交。",
+                    "See": "查阅",
+                        "Resolving a merge conflict using the command line": "使用命令行解决合并冲突",
+                        "for step-by-step instructions on resolving merge conflicts.": "的分步说明。",
+                "Step 5:": "第 5 步：",
+                    "Push the changes.": "推送更改。",
 
             "Resolve conflicts": "解决冲突",
                 "Use the": "使用",
@@ -12031,6 +12042,16 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             "There are too many commits to generate this graph.": "提交次数过多，无法生成图表。",
             "More information about this data can be found in the": "有关这些数据的更多信息，请参阅",
             "activity documentation": "活动文档",
+        
+        // 新版
+        "Additions and deletions per week": "添加数量和删除数量/每周",
+        "Chart options": "图表选项",
+            "View as table": "以表格形式查看",
+            "Download CSV": "下载 CSV",
+            "Download PNG": "下载 PNG",
+            // 图表本体
+                "Date": "日期",
+                "Frequency": "频率",
 
         // 新版
         "Additions and deletions per week": "添加数量和删除数量/每周",
@@ -17577,7 +17598,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
 
-
+        
         // GitHub 模型页面 https://github.com/marketplace/models/<user-name>/<model-name>
             "You're already on the waitlist! We'll send you an email once your access is granted.": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件。",
             "You're already on the waitlist! We'll send you an email once your access is granted": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件",
