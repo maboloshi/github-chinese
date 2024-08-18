@@ -209,6 +209,7 @@ I18N.zh["title"] = { // 标题翻译
         "Create new codespace": "创建代码空间",
         "Error": "错误",
         "Discover gists · GitHub": "探索代码片段 · GitHub",
+        "Explore GitHub Sponsors": "探索 GitHub 赞助者",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -235,7 +236,7 @@ I18N.zh["title"] = { // 标题翻译
         [/Security Advisories/, "安全公告"],
         [/Dependabot alerts/, "Dependabot 警报"],
         [/Pulse/, "统计"],
-        [/Contributors to/, "贡献者 ·"],
+        //[/Contributors to/, "贡献者 ·"],
         [/Dashboard/, "仪表板"],
         [/Deployments/, "部署"],
         [/Community/, "社区"],
@@ -281,6 +282,7 @@ I18N.zh["title"] = { // 标题翻译
         [/([^ ]+)’s gists/, "$1 的代码片段"],
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
+        //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
         ["_regexp_end", "end"]
     ],
 };
@@ -483,10 +485,16 @@ I18N.zh["public"] = { // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "Enhanced Repos Insights Views": "仓库洞察增强视图",
+                    "We’re thrilled to introduce our new graphics library! With this update, you’ll find significant enhancements to two of our repository insights views—Contributors and Code Frequency. Both now utilize an SVG-based solution, offering improved focus navigation for precise, point-by-point interaction. You can also hide a series by interacting with the chart legend and view or download the data in both table format and as PNGs.": "我们非常高兴地介绍我们的新图形库！通过此次更新，您将发现我们的两个仓库洞察视图-- “贡献者” 和 “代码频率” 都有了显著增强。这两个视图现在都采用了基于 SVG 的解决方案，为精确的逐点交互提供了改进的焦点导航。您还可以通过与图表图例交互来隐藏系列，并以表格格式和 PNG 格式查看或下载数据。",
                 "Slash Commands": "斜杠命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
                     "on Issues, PRs and Discussions to check out a list of available commands!": "，即可查看可用命令的列表！",
+                "Feature disabled.": "功能已禁用。",
+                    "Please": "请",
+                    "give feedback": "提交反馈",
+                    "so we can improve it!": "以便我们加以改进！",
             "Settings": "设置",
             "GitHub Docs": "GitHub 文档",
             "GitHub Support": "GitHub 支持",
@@ -5802,6 +5810,9 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
             // 仓库地址-浮动信息窗口(仅 Android UA)
             "Navigate back to": "返回到",
 
+            // 顶部提示
+            "Sorry, that branch already exists.": "抱歉，该分支已存在。",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -6054,6 +6065,7 @@ I18N.zh["repository-public"] = { // 仓库 - 公共部分
 
     },
     "regexp": [ // 正则翻译
+        [/Started (\d+) discussions? in this repository in the past day/, "过去一天内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
         [/Started (\d+) discussions? in this repository/, "在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -7003,6 +7015,8 @@ I18N.zh["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页
             "outdated": "陈旧的",
             "Pending": "待定",
             "Draft": "草案",
+            "deployed": "部署",
+                "View deployment": "查看部署",
             "This was referenced": "被引用于",
             "locked as": "锁定为",
                 "spam": "垃圾信息",
@@ -7618,7 +7632,7 @@ I18N.zh["repository/issues"] = { // 仓库 - 议题页面
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
-        [/This issue will close when (#\d+) is merged/, "此议题将在 $1 合并时关闭"],
+        [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
 
         // 标签页面
@@ -7702,6 +7716,7 @@ I18N.zh["repository/pulls"] = { // 仓库 - 拉取请求页面
         ...I18N.zh["repository-public"]["regexp"],
         ...I18N.zh["repository/pull_issue_public"]["regexp"],
 
+        [/(\d+) reviews? requesting changes?/, "$1 个请求审查更改"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
@@ -8383,6 +8398,7 @@ I18N.zh["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) approvals?/, "$1 项批准"],
         [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"], // 拉取请求
         [/(\d+) changes? requested/, "$1 项更改请求"],
+        [/This pull request closes issue (#\d+)./, "该拉取请求将关闭议题 $1。"], // 死活不翻译
 
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
@@ -9384,7 +9400,10 @@ I18N.zh["repository/discussions"] = { // 讨论页面
             "an": "一个",
             "Marked then unmarked an answer": "标记后，又取消标记",
             "Marked as answer": "标记为答案",
+            "Mark as answer": "标记为答案",
             "Answer selected by": "被标记答案由",
+            "Unmark as answer": "取消标记为答案",
+            "Answer": "答案",
 
             "This comment was marked as off-topic.": "此评论被标记为偏离主题。",
             "Show comment": "显示评论",
@@ -9555,6 +9574,9 @@ I18N.zh["repository/discussions"] = { // 讨论页面
         // 评论框编辑
             "Edited": "编辑于",
             "'s edit": " 编辑",
+        // 反应相关
+            "You can't vote on a locked discussion": "您不能在锁定讨论投票",
+            "Uh oh! You can't vote right now.": "哎呀！您现在不能投票。",
     },
     "regexp": [ // 正则翻译
         ...I18N.zh["repository-public"]["regexp"],
@@ -9814,6 +9836,9 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
             "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此计划工作流程已被禁用，因为计划工作流程在复刻仓库中默认被禁用。",
             "This workflow was disabled manually.": "工作流程已被手动禁用。",
+            "This workflow is": "此工作流程正在等待维护者",
+                "awaiting approval": "批准",
+                "from a maintainer in": "在",
             "Enable workflow": "启用工作流程",
                 // 顶部提醒
                     "Workflow enabled successfully.": "工作流程已成功启用。",
@@ -9927,11 +9952,13 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "Manually triggered": "手动触发",
 
             "pushed": "推送",
+            "opened": "打开",
 
             // 状态
                 "Success": "成功",
                 "Failure": "失败",
                 "Cancelled": "取消",
+                "Action required": "请求操作",
             "Total duration": "总时长",
             "Billable time": "计费时间",
 
@@ -9994,8 +10021,10 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
             "The run was canceled by": "取消由", // 原文过于啰嗦
             "Pull request": "拉取请求",
                 "synchronize by": "同步者",
+                "opened by": "打开者",
             "The operation was canceled.": "已取消。",
-            "Process completed with exit code 1.": "进程完成，退出代码为 1。",
+            //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
+            "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
             "This job failed": "此作业失败",
             "This job was skipped": "此作业被跳过",
@@ -10027,6 +10056,8 @@ I18N.zh["repository/actions"] = { // 仓库 - 操作页面
         [/Attempt (#\d+)/, "运行 $1"],
         [/cached/, "被缓存"],
         [/(\d+)-cores · (\d+) GB RAM · (\d+) GB SSD Storage/, "$1 核心 · $2 GB内存 · $3 GB SSD 存储"],
+        [/Process completed with exit code (\d+)/, "进程已结束，退出代码为 $1"],
+        [/([^ ]+) value is not set/, "$1 值未设置"],
     ],
 };
 I18N.zh["repository/runs"] = I18N.zh["repository/actions"];
@@ -10479,7 +10510,6 @@ I18N.zh["repository/branches"] = { // 仓库 - 分支页面
                     "Choose from this fork or its upstream repository.": "从此复刻或其上游仓库中进行选择。",
                     "Choose a source branch": "选择源分支",
                 "Share feedback": "分享反馈",
-
             "Search branches…": "搜索分支…",
 
             "Default branch": "默认分支",
@@ -10755,7 +10785,7 @@ I18N.zh["repository/releases"] = { // 仓库 - 发行版页面
             // 删除发行版对话框
             "Delete this release?": "删除该发行版？",
             // "This will delete the information for this release.": "这将会删除该发行版的信息。",
-            // [/This will delete the information for the release ([^ ]+)./, "这将删除发行版 $1 的信息。"],
+                "This will delete the information for the release": "这将删除该发行版信息：",
             "Delete this release": "删除发行版",
 
             // 顶部提醒框
@@ -11802,8 +11832,6 @@ I18N.zh["repository/pulse"] = { // 仓库 -> 洞察 - 统计
 
 I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
     "static": { // 静态翻译
-        ...I18N.zh["repository-public"]["static"],
-        ...I18N.zh["repository-insights-menu"]["static"],
 
         // 贡献者 /<user-name>/<repo-name>/graphs/contributors
             "Loading contributions…": "载入贡献者…",
@@ -11816,13 +11844,52 @@ I18N.zh["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
                 // [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
 
+        // 新版
+            // 标题
+                "Contributions per week to": "每周贡献到",
+                ", excluding merge commits": " 分支，不包括合并提交",
+                ", line counts have been omitted because commit count exceeds 10,000.": " 分支，由于提交次数超过 10,000 次，因此省略行数。",
+            // 筛选栏
+                "Period": "时间",
+                    "All": "全部",
+                    "Last month": "上月",
+            // 日期
+                "From": "从",
+            // 提交图表
+                "over time": "总览",
+                "commit": "次提交",
+                    "s": " ",
+                "Contributions": "贡献", // 图表旁竖写
+                "Chart options": "图表选项",
+                    "View as table": "以表格形式查看",
+                    "Download CSV": "下载 CSV",
+                    "Download PNG": "下载 PNG",
+                    // 表格窗口
+                        "Commits over time": "提交总览",
+                        "DateTime": "日期时间",
+        
+        ...I18N.zh["repository-public"]["static"],
+        ...I18N.zh["repository-insights-menu"]["static"],
     },
     "regexp": [ // 正则翻译
-        ...I18N.zh["repository-public"]["regexp"],
         [/Contributions to (.*), excluding merge commits/, "贡献到 $1 分支，不包括合并提交"],
         [/Contributions to (.*), excluding merge commits and bot accounts/, "贡献到 $1 分支，不包括合并提交和机器人账户"],
         [/Contributions to (.*), line counts have been omitted because commit count exceeds 10,000./, "贡献到 $1 分支，由于提交次数超过 10,000 次，因此省略行数。"],
+        //[/Contributions per week to (.*), excluding merge commits/, "每周贡献到 $1 分支，不包括合并提交"],
         [/([\d,]+) commits?/, "$1 次提交"],
+        // 新版
+        [/Last (\d+) months?/, "最后 $1 个月"],
+        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
+        //[/([^ ]+)'s Commits/, "$1 的提交"],
+        //[/([^ ]+)'s Additions/, "$1 的添加数量"],
+        //[/([^ ]+)'s Deletions/, "$1 的删除数量"],
+        [/([^ ]+)'s (Commits|Additions|Deletions)/, function(all, user, cont){
+
+            var contKey = {Commits: '提交', Additions: '添加数量', Deletions: '删除数量'};
+
+            return user + ' 的' + contKey[cont];
+        }],
+        ...I18N.zh["repository-public"]["regexp"],
     ],
 };
 
@@ -12044,9 +12111,20 @@ I18N.zh["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频�
             "There are too many commits to generate this graph.": "提交次数过多，无法生成图表。",
             "More information about this data can be found in the": "有关这些数据的更多信息，请参阅",
             "activity documentation": "活动文档",
+        
+        // 新版
+        "Additions and deletions per week": "添加数量和删除数量/每周",
+        "Chart options": "图表选项",
+            "View as table": "以表格形式查看",
+            "Download CSV": "下载 CSV",
+            "Download PNG": "下载 PNG",
+            // 图表本体
+                "Date": "日期",
+                "Frequency": "频率",
 
     },
     "regexp": [ // 正则翻译
+        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
         ...I18N.zh["repository-public"]["regexp"],
     ],
 };
@@ -14550,6 +14628,7 @@ I18N.zh["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>
 
             // 顶部提醒
                 "Repository secret added.": "添加了仓库机密。",
+                "Secret names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed. Must start with a letter ([a-z], [A-Z]) or underscores (_).": "机密名称只能包含字母数字字符([a-z]、[A-Z]、[0-9])或下划线 (_)。不允许使用空格。必须以字母（[a-z]、[A-Z]）或下划线 (_) 开头。",
 
         // 操作变量 /<user-name>/<repo-name>/settings/variables/actions
             "Environment variables": "环境变量",
@@ -15583,6 +15662,7 @@ I18N.zh["notifications"] = { // 通知页面
         [/View all (\d+) notifications?/, "查看全部 $1 条通知"], // 仓库分组模式
         [/(\d+) new notifications?/, "$1 条新通知"],
         [/of (\d+)/, " 共 $1 条"],
+        [/workflow run failed for ([^ ]+) branch/, "工作流程运行失败，$1 分支"], // F12 才翻译
     ],
 };
 
@@ -16068,6 +16148,11 @@ I18N.zh["search"] = { // 搜索页面
 
                     "How can we improve search?": "我们如何改进搜索？",
                     "Give feedback": "提供反馈意见",
+                        // 对话框
+                        "Provide feedback": "提供反馈",
+                            "We read every piece of feedback, and take your input very seriously.": "我们认真阅读每一份反馈意见，并非常重视您的建议。",
+                            "Include my email address so I can be contacted": "附上我的电子邮件地址以便于联系",
+                            "Submit feedback": "提交",
 
             // &type=code
                 // [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
@@ -16115,6 +16200,7 @@ I18N.zh["search"] = { // 搜索页面
             "wikis": "Wiki",
             "Try one of the tips below to find more code": "请尝试使用以下提示查找更多代码",
             "Try one of the tips below to find more repositories": "请尝试使用以下提示查找更多仓库",
+            "You could try one of the tips below.": "请尝试使用以下提示",
 
             "However we found": "然而我们发现",
             "code results": "代码结果",
@@ -16235,6 +16321,7 @@ I18N.zh["search"] = { // 搜索页面
         [/Show ([\d,]+) more matches?/, "显示更多 $1 处匹配"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
+        [/on (.+)/, "$1"], // 日期去除 on
     ],
     "selector": [ // 元素筛选器规则
         ["#search_form > div.container-lg.p-responsive.advanced-search-form > fieldset:nth-child(2) > label > select > option:nth-child(2)", "要"],
@@ -16996,6 +17083,14 @@ I18N.zh["sponsors"] = { // 赞助界面
             "Clear filter": "清除筛选器",
             "Sponsor": "赞助",
 
+            // 仓库列表
+            "Repository list": "仓库列表",
+                "You": "您",
+                "owns or maintains.": "拥有或维护",
+                "We check their maintainer status by seeing if they're listed in a repository's": "我们会确认他们是否被列在一个仓库中来检查他们的维护者状态，查看：",
+                "funding file": "资助文件",
+                "Load more...": "加载更多...",
+
             // [/Want to sponsor on behalf of ([^ ]+)?/, "想代表 $1 赞助吗？"],
             "Talk to your organization about GitHub Sponsors": "与您的组织讨论 GitHub 赞助者事宜",
             "Share this discovery page with your team to start a conversation about investing in the people and projects you rely on.": "与您的团队分享本发现页面，并就投资于您所依赖的人员和项目展开讨论。",
@@ -17009,6 +17104,7 @@ I18N.zh["sponsors"] = { // 赞助界面
         [/others? sponsor, including (\d+) organizations?/, "位其他赞助者，包括 $1 个组织"],
         [/(\d+)% towards goal/, "实现目标的 $1%"],
         [/Want to sponsor on behalf of ([^ ]+)?/, "想代表 $1 赞助吗？"],
+        [/depend on (\d+) repositor(y|ies)/, "依赖于他的 $1 个仓库："],
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members/, "$1 位成员"],
         [/(\$\d+) a month/, "$1/月"],
@@ -17017,6 +17113,7 @@ I18N.zh["sponsors"] = { // 赞助界面
         [/Amount exceeds maximum tier amount of (\$[\d,]+)/, "至多填入 $1"],
         [/You'll receive any rewards listed in the (\$\d+) monthly tier. Additionally, a Public Sponsor achievement will be added to your profile./, "您将获得 $1 月度奖励中列出的所有奖励。此外，您的个人档案中还将添加公共赞助商成就。"],
         [/and (\d+) others sponsor this goal/, "和另外 $1 人赞助此目标"],
+        [/(\d+) of your repositories depends? on this/, "您有 $1 个仓库依赖此"],
     ],
 };
 
@@ -17108,14 +17205,30 @@ I18N.zh["marketplace"] = { // GitHub 市场
         // GitHub 市场主页 https://github.com/marketplace
            "Enhance your workflow with extensions": "增强您的工作流程",
                "Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
-               "Search for Copilot extensions, apps, and actions": "搜索 Copilot 扩展、应用和操作",
+               "Search for Copilot extensions, apps, actions, and models": "搜索 Copilot 扩展、应用、操作和模型",
                "Menu": "菜单", // Android UA 下出现
             "Featured": "精选",
+                "Models for your every use case": "适用于各种方案的模型",
                 "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
                 "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
             // Copilot
                 "Copilot Extensions": "Copilot 扩展",
                 "Extend Copilot capabilities using third party tools, services, and data": "使用第三方工具、服务或数据扩展 Copilot 的功能",
+
+                "Filter:": "筛选：",
+                    "All": "全部",
+                    "Free trial": "免费试用",
+                "By:": "分类：",
+                    "All creators": "所有创作者",
+                    "Verified creators": "已验证创作者",
+                // 排序
+                    "Popularity": "热门",
+                    "Best match": "最佳匹配",
+            "Models": "模型",
+                "Try, test, and deploy from a wide range of model types, sizes, and specializations.": "尝试、测试和部署各种型号、尺寸和专业化产品。",
+                "Model": "模型",
+                "Get early access to our playground for models": "抢先体验我们的模型市场",
+                    "Join our limited beta waiting list today and be among the first to try out an easy way to test models.": "立即加入我们的限量测试版候补名单，率先体验轻松测试模型的新方式。",
            "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
@@ -17311,6 +17424,9 @@ I18N.zh["marketplace"] = { // GitHub 市场
         // 应用介绍页面 https://github.com/marketplace/<app-name>
         // 示例: https://github.com/marketplace/codacy 第一页
             "Apps": "应用",
+
+            "install": "安装",
+            "s": " ",
             // 左侧信息栏
             "GitHub has verified that the application meets the": "GitHub 已验证了该应用符合",
             "requirements for listing": "上架要求",
@@ -17541,6 +17657,71 @@ I18N.zh["marketplace"] = { // GitHub 市场
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
 
+        
+        // GitHub 模型页面 https://github.com/marketplace/models/<user-name>/<model-name>
+            "You're already on the waitlist! We'll send you an email once your access is granted.": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件。",
+            "You're already on the waitlist! We'll send you an email once your access is granted": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件",
+
+            // 顶部
+            "Playground": "运行",
+            "Get started": "开始",
+                "Language:": "语言：",
+                "Chapters": "步骤",
+
+            // 中间横条
+            "README": "自述文件",
+            "Evaluation": "评估",
+            "Transparency": "透明度",
+            "License": "许可证",
+
+            // 右侧
+            "Context": "文本",
+                "input": "输入",
+                "output": "输出",
+            "Training date": "训练日期",
+            "Rate limit tier": "速率限制",
+                "Low": "低",
+                "High": "高",
+                "Undisclosed": "未公布",
+            "Provider support": "供应商支持",
+            "Tags": "标签",
+
+        // 加入模型内测页 https://github.com/marketplace/models/waitlist/join
+            "GitHub Models waitlist": "GitHub 模型等待名单",
+
+            // 左侧
+                "Limited Public Beta": "有限公开测试",
+                "Join the GitHub Models waitlist": "加入 GitHub 模型等待名单",
+                    "Join the limited public beta for early access to GitHub Models.": "加入有限公开测试，提前访问 GitHub 模型。",
+
+            // 问卷
+                "What level of experience do you have in building GenAI solutions that use large language models (LLMs)?": "您在构建使用大型语言模型 (LLM) 的 GenAI 解决方案方面有哪些经验？",
+                    "Exploration/proof-of-concept": "探索/概念验证",
+                    "In development": "开发",
+                    "I have built 1 solution that is in production": "我已构建了 1 个解决方案，并已投入生产",
+                    "I have built 2 or more solutions that are in production": "我已构建了 2 个或更多解决方案，并已投入生产",
+                "What is your main business use case for GenAI applications? Please select all that apply.": "GenAI 应用程序的主要业务用例是什么？请选择所有适用情况。",
+                    "RAG-based chat applications (\"chat with my own data\")": "基于 RAG 的聊天应用程序（“与我自己的数据聊天”）",
+                    "Sentiment analysis": "情绪分析",
+                    "Summarization": "归纳总结",
+                    "Content generation": "内容生成",
+                    "Entity extraction": "实体提取",
+                    "Text classification": "文本分类",
+                    "Image classification": "图片分类",
+                    "Translation": "翻译",
+                    "Other (please specify):": "其他（请说明）：",
+
+                "Join GitHub Models waitlist": "加入 GitHub 模型等待名单",
+
+                "By signing up for the waitlist you agree to": "注册等待名单即代表您同意",
+                "GitHub's preview terms": "GitHub 预览条款",
+                ". Signing up does not guarantee access.": "。注册并不保证可以访问。",
+
+                // 成功，标题走正则
+                "Admission to the limited public beta for GitHub Models will be limited. You will receive an email if you are granted access.": "GitHub 模型的限量公开测试有名额限制。如果您获准访问，您将收到一封电子邮件。",
+                "Return to continue exploring": "继续探索",
+                "GitHub Models": "GitHub 模型",
+
     },
     "regexp": [ // 正则翻译
         [/and ([^ ]+)’s/, "和 $1 的"],
@@ -17570,6 +17751,7 @@ I18N.zh["marketplace"] = { // GitHub 市场
         [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
         [/(.*) is installed\. Click to configure.\?/, "$1 已安装。点击进行配置。"],
         [/(.*) is a private GitHub App./, "$1 是一款私有的 GitHub 应用。"],  // 无法安装私有应用
+        [/Thank you! ([^ ]+) is now on the waitlist for GitHub Models./, "谢谢！$1 现已进入 GitHub 模型等待名单。"],
     ],
 };
 I18N.zh["apps"] = I18N.zh["marketplace"];
