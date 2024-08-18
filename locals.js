@@ -8411,6 +8411,11 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，标签，提交范围和时间范围。在同一仓库和复刻的仓库。",
             "Example comparisons": "比较例子",
 
+            "Commit": "提交",
+            "Commits": "提交",
+            "File changed": "更改的文件",
+            "Files changed": "更改的文件",
+
         // 提出合并分支 /<user-name>/<repo-name>/compare/<branch>...<user-name-1>:<branch-1>
         // /<user-name>/<repo-name>/compare/<branch>...<branch-1>
         // <user-name>/<repo-name>/compare/<branch>...<user-name-1>:<repo-name-1>:<branch-1>
@@ -8581,11 +8586,11 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "GitHub Community Guidelines": "GitHub 社区准则",
 
         // 右侧栏补充
-        // 关联议题
-        "Use": "使用",
-        "Closing keywords": "关闭关键词",
-        "in the description to automatically close issues": "在描述中，以自动关闭议题",
-        "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
+        "Development": "进展",
+            "Use": "使用",
+            "Closing keywords": "关闭关键词",
+            "in the description to automatically close issues": "在描述中，以自动关闭议题",
+            "Use Closing keywords to add a closing reference": "使用关闭关键词添加一个关闭引用",
 
         "Helpful resources": "帮助性资源",
             // "GitHub Community Guidelines": "GitHub 社区准则",
@@ -8612,8 +8617,6 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
-        [/Commits?/, "提交"],
-        [/Files? changed/, "更改的文件"],
         [/Show comments?/, "显示评论"], // 编辑器右上角三点
         [/committed/, "提交于"],
         [/(\d+) contributors?/, "$1 贡献者"],
@@ -8622,6 +8625,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         [/(\d+) changed files?/, "更改的文件"],
         [/(\d+) additions?/, "$1 处增加"],
         [/(\d+) deletions?/, "$1 处删除"],
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 创建拉取请求
     ],
 };
 
