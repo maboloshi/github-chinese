@@ -339,8 +339,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/TC999" title="陈生杂物房">
   <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/>
 </a>
-<a href="https://github.com/qznfbnj" title="[qzn to fb’s nj12]">
-  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="[qzn to fb’s nj12]"/>
+<a href="https://github.com/qznfbnj" title="其智乃反不能及">
+  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/>
 </a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
@@ -350,6 +350,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
+</a>
+<a href="https://github.com/buiawpkgew1" title="菾凴">
+  <img src="https://avatars.githubusercontent.com/u/71136405?v=4" width="42;" alt="菾凴"/>
 </a>
 <a href="https://github.com/3DMXM" title="小莫">
   <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
@@ -368,6 +371,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
   <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/KS-OTO" title="KS-OTO">
+  <img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/>
 </a>
 <a href="https://github.com/swsoyee" title="InfinityLoop">
   <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
