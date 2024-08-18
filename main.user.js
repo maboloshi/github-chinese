@@ -41,15 +41,15 @@
     // 临时固化规则 便于调试
     const characterDataPage = ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'];
     const ignoreMutationSelectorPage = {
-        'repository/new': [".cm-scroller"],
-        'repository/edit': [".cm-scroller", "table"],
-        'repository/pull': ["td.blob-code"],
-        'repository/compare': ["tbody"],
-        'repository/commit': ["tr.show-top-border"],
-        'repository/blob': ["section"],
-        'repository/blame': ["section"],
+        'repository/new': [".cm-scroller"], // 代码编辑器
+        'repository/edit': [".cm-scroller", "table"], // 代码编辑器
+        'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
+        'repository/compare': ["tbody"], // 代码差异
+        'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
+        'repository/blob': ["section"], // 代码视图
+        'repository/blame': ["section"], // 代码视图
         'repository': [".AppHeader-context", "article.markdown-body", "table"],
-        'repository/releases': [".Box-footer"],
+        'repository/releases': [".Box-footer"], // 附件清单
     };
     const ignoreSelectorPage = {
         'repository': [
