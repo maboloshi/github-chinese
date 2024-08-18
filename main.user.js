@@ -36,100 +36,21 @@
         tranSelectors = [],
         regexpRules = [];
 
-    // const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
-
-    // 临时固化规则 便于调试
-    const characterDataPage = ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'];
-    const ignoreMutationSelectorPage = {
-        'repository/new': [".cm-scroller"], // 代码编辑器
-        'repository/edit': [".cm-scroller", "table"], // 代码编辑器
-        'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/compare': ["tbody"], // 代码差异
-        'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["section"], // 代码视图
-        'repository/blame': ["section"], // 代码视图
-        'repository': [".AppHeader-context", "article.markdown-body", "table"],
-        'repository/releases': [".Box-footer"], // 附件清单
-    };
-    const ignoreSelectorPage = {
-        'repository': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.content[itemprop="name"]', // 仓库名称 无效
-            // 'ul.list-style-none', // 右侧 部署列表 无效
-            '.d-block.overflow-x-hidden.color-fg-default', // 仓库名称
-            '[data-testid="latest-commit"]', // 最新的提交
-            'tr.react-directory-row', // 仓库列表
-            '.f4.my-3', // 仓库简介正文
-            '#translate-me',
-            '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
-            // '.markdown-body',
-            'li.mt-2',
-        ],
-        'repository/tree': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
-            'tbody', // 文件列表
-            '#repos-header-breadcrumb',
-            '#file-name-id', // 文件路径中文件部分
-        ],
-        'repository/blob': [
-            '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
-            '[id^="offset"]', //符号-->引用
-            'section', // 代码视图
-            '#filter-results', // 右侧 符号筛选
-            '#repos-header-breadcrumb', // 文件路径中文件夹路径
-            '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
-            '#sticky-breadcrumb',
-            '#file-name-id', // 文件路径中文件部分
-        ],
-        'repository/commit': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/pull': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/compare': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
-        ],
-        'repository/edit': [
-            '.cm-scroller', // 代码编辑器
-            'table', // 代码差异预览
-        ],
-        'repository/new': [
-            '.cm-scroller', // 代码编辑器
-            'table', // 代码差异预览
-        ],
-        'dashboard': [
-            '.js-notice-dismiss', // 右侧栏 广告
-            '.TimelineItem', // 右侧栏 最新变化
-        ],
-        'gist': [
-            'div.js-blob-code-container', // 代码框
-            'table.js-diff-table', // 代码差异
-        ],
-        '*': [
-            '.markdown-body',
-            '.markdown-title'
-        ],
-    };
-
     function updateConfig(page) {
+        const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
+
         if (cachedPage !== page && page) {
             cachedPage = page;
 
             characterData = characterDataPage.includes(page);
-            // 忽略突变的选择器
+            // 忽略突变元素选择器
             ignoreMutationSelectors = ignoreMutationSelectorPage[page] || [];
-            // 忽略选择器
+            // 忽略元素选择器
             ignoreSelectors = ignoreSelectorPage['*'].concat(ignoreSelectorPage[page] || []);
             // 通过 CSS 选择器翻译的规则
-            tranSelectors = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []);
+            tranSelectors = (I18N[lang][page]?.selector || []).concat(I18N[lang]['public'].selector || []);
             // 正则词条
-            regexpRules = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []);
+            regexpRules = (I18N[lang][page].regexp || []).concat(I18N[lang]['public'].regexp || []);
         }
     }
 
@@ -332,7 +253,7 @@
      */
     function transTimeElement(el) {
         const text = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        const res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
+        const res = I18N[lang]['public']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
             const translatedText = text.replace(a, b);
@@ -394,7 +315,7 @@
     function fetchTranslatedText(text) {
 
         // 静态翻译
-        let translatedText = I18N[lang][page]['static'][text] || I18N[lang]['pubilc']['static'][text]; // 默认翻译 公共部分
+        let translatedText = I18N[lang][page]['static'][text] || I18N[lang]['public']['static'][text]; // 默认翻译 公共部分
 
         if (typeof translatedText === 'string') {
             return translatedText;
