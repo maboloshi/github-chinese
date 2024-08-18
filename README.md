@@ -79,6 +79,20 @@ Via 浏览器（Android）                | 浏览器内自带
 
 ## 📝 更新说明
 
+### 2024-08-18 16:44:24
+
+更新至 1.9.3
+
+1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
+1. 新增功能：优化突变翻译处理：
+   - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
+   - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
+1. 新增功能：合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
+1. 新增功能：引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
+1. 调整：更新讯飞听见翻译引擎v2.0
+1. 优化：梳理、优化脚本
+1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
+
 ### 2024-06-14 19:27:20
 
 更新至 1.9.2
@@ -339,8 +353,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/TC999" title="陈生杂物房">
   <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/>
 </a>
-<a href="https://github.com/qznfbnj" title="[qzn to fb’s nj12]">
-  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="[qzn to fb’s nj12]"/>
+<a href="https://github.com/qznfbnj" title="其智乃反不能及">
+  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/>
 </a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
@@ -350,6 +364,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
+</a>
+<a href="https://github.com/buiawpkgew1" title="菾凴">
+  <img src="https://avatars.githubusercontent.com/u/71136405?v=4" width="42;" alt="菾凴"/>
 </a>
 <a href="https://github.com/3DMXM" title="小莫">
   <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
@@ -368,6 +385,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
   <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/KS-OTO" title="KS-OTO">
+  <img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/>
 </a>
 <a href="https://github.com/swsoyee" title="InfinityLoop">
   <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
