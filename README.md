@@ -52,9 +52,16 @@ Via 浏览器（Android）                | 浏览器内自带
 1. 刷新下页面，即可发现网站已中文化。
 > 需要视频教程的可以去看看[这里](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
 
+> [!Note]
+> ### 关于 “Chrome 127 及更高版本无法使用” 的问题
+> 原因是 Chrome 127 及更高版本，陆续切换到 Manifest V3，目前已知 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本支持，详见 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论
+> #### 解决方案：
+> 1. 必须安装 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本，其他脚本管理器暂不支持
+> 2. 必须在浏览器的 “扩展程序” 管理中开启 “开发者模式”
+
 ## 词库本地调试方法
-1. 需要安装插件管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
-1. 在浏览器插件管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址” 如图：
+1. 需要安装用户脚本管理器 [Tampermonkey][Tampermonkey]，其他可能不支持。
+1. 在浏览器扩展管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址” 如图：
 
     <picture>
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/允许访问文件网址-light.png"/>
@@ -64,13 +71,34 @@ Via 浏览器（Android）                | 浏览器内自带
 
 1. 将修改的词库文件放到方便访问的本地位置。
 1. 安装 [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]，实际 [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js] 也可。
-1. 回到插件管理器，修改词库文件路径，即类似 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
+1. 回到脚本管理器，修改词库文件路径，即类似 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0`
    中网址改成本地路径格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
 
   > [!TIP]
   > 直接将词库文件拖到浏览器的地址栏，再复制地址栏的中地址即可。
 
 ## 📝 更新说明
+
+### 2024-08-18 16:44:24
+
+更新至 1.9.3
+
+1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
+1. 新增功能：优化突变翻译处理：
+   - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
+   - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
+1. 新增功能：合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
+1. 新增功能：引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
+1. 调整：更新讯飞听见翻译引擎v2.0
+1. 优化：梳理、优化脚本
+1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
+
+### 2024-06-14 19:27:20
+
+更新至 1.9.2
+
+1. 适配`www.githubstatus.com`
+2. 适配`skills.github.com`
 
 ### 2024-05-23 16:42:55
 
@@ -322,8 +350,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/wuyuncheng-26" title="是小胖呀26">
   <img src="https://avatars.githubusercontent.com/u/122529705?v=4" width="42;" alt="是小胖呀26"/>
 </a>
-<a href="https://github.com/TC999" title="TC999">
-  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="TC999"/>
+<a href="https://github.com/TC999" title="陈生杂物房">
+  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/>
+</a>
+<a href="https://github.com/qznfbnj" title="其智乃反不能及">
+  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/>
 </a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
@@ -333,6 +364,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
+</a>
+<a href="https://github.com/buiawpkgew1" title="菾凴">
+  <img src="https://avatars.githubusercontent.com/u/71136405?v=4" width="42;" alt="菾凴"/>
 </a>
 <a href="https://github.com/3DMXM" title="小莫">
   <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
@@ -351,6 +385,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
   <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
+</a>
+<a href="https://github.com/KS-OTO" title="KS-OTO">
+  <img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/>
 </a>
 <a href="https://github.com/swsoyee" title="InfinityLoop">
   <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
