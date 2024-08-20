@@ -12091,16 +12091,6 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
                 "Date": "日期",
                 "Frequency": "频率",
 
-        // 新版
-        "Additions and deletions per week": "添加数量和删除数量/每周",
-        "Chart options": "图表选项",
-            "View as table": "以表格形式查看",
-            "Download CSV": "下载 CSV",
-            "Download PNG": "下载 PNG",
-            // 图表本体
-                "Date": "日期",
-                "Frequency": "频率",
-
     },
     "regexp": [ // 正则翻译
         [/Sunday, (\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, day, month, year){
