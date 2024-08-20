@@ -6348,10 +6348,16 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Edit file": "编辑文件",
 
             // 默认分支被重命名提醒框
-                "The default branch has been renamed!": "默认分支已被重新命名!",
-                "is now named": "已被重新命名为",
+                "The default branch has been renamed!": "默认分支已重命名!",
+                "is now named": "已重命名为",
                 "If you have a local clone, you can update it by running the following commands.": "如果您有一个本地克隆，您可以通过运行以下命令来更新它。",
                 "OK, got it": "好的，我知道了！",
+
+                // 上游仓库分支重命名
+                    "The default branch on the parent repository has been renamed!": "上游仓库默认分支已被重新命名!",
+                    "renamed its default branch": "默认分支重命名为",
+                    "You can rename this fork's default branch to match in": "您可以重命名此复刻默认分支以匹配，在",
+                    "branch settings": "分支设置",
 
             "branch": "分支",
             "branches": "分支",
@@ -7314,6 +7320,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "converted this issue into a discussion": "此议题已转化为讨论",
             "removed their assignment": "取消了他们的任务",
             "assigned": "分配给了",
+            "unassigned": "取消分配给",
             "and unassigned": "和取消了分配给",
             "marked this pull request as draft": "将此拉取请求标记为草案",
             "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
@@ -8048,8 +8055,19 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "If the conflicts on this branch are too complex to resolve in the web editor, you can check it out via command line to resolve the conflicts.": "如果该分支上的冲突过于复杂，无法在 Web 编辑器中解决，您可以通过命令行检出来解决冲突。",
                 "Step 1:": "第 1 步：",
                     "From your project repository, check out a new branch and test the changes.": "从项目仓库中，检出新分支并测试更改。",
+                    "Clone the repository or update your local repository with the latest changes.": "克隆仓库或使用最新更改更新本地仓库。",
                 "Step 2:": "第 2 步：",
                     "Merge the changes and update on GitHub.": "合并更改并在 GitHub 上更新。",
+                    "Switch to the head branch of the pull request.": "切换到拉取请求的头部分支。",
+                "Step 3:": "第 3 步：",
+                    "Merge the base branch into the head branch.": "将基础分支合并至头部分支。",
+                "Step 4:": "第 4 步：",
+                    "Fix the conflicts and commit the result.": "修复冲突并提交。",
+                    "See": "查阅",
+                        "Resolving a merge conflict using the command line": "使用命令行解决合并冲突",
+                        "for step-by-step instructions on resolving merge conflicts.": "的分步说明。",
+                "Step 5:": "第 5 步：",
+                    "Push the changes.": "推送更改。",
 
             "Resolve conflicts": "解决冲突",
                 "Use the": "使用",
@@ -8315,6 +8333,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"], // 拉取请求
         [/(\d+) changes? requested/, "$1 项更改请求"],
         [/This pull request closes issue (#\d+)./, "该拉取请求将关闭议题 $1。"], // 死活不翻译
+
+        // 状态
+        [/branch (\d+) times, most recently from/, "分支 $1 次，最近一次从"],
 
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
@@ -11799,10 +11820,6 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
         [/([\d,]+) commits?/, "$1 次提交"],
         // 新版
         [/Last (\d+) months?/, "最后 $1 个月"],
-        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
-        //[/([^ ]+)'s Commits/, "$1 的提交"],
-        //[/([^ ]+)'s Additions/, "$1 的添加数量"],
-        //[/([^ ]+)'s Deletions/, "$1 的删除数量"],
         [/([^ ]+)'s (Commits|Additions|Deletions)/, function(all, user, cont){
 
             var contKey = {Commits: '提交', Additions: '添加数量', Deletions: '删除数量'};
@@ -12011,7 +12028,24 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
-        [/commits? the week of (.+)/, "提交本周 $1"],
+        [/commits? the week of (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, month, day){
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+
+            return '次提交本周，' + monthKey[month] + day + '日';
+        }],
     ],
 };
 
@@ -12044,7 +12078,6 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
 
     },
     "regexp": [ // 正则翻译
-        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
@@ -17576,7 +17609,6 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Links": "链接",
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
-
 
         // GitHub 模型页面 https://github.com/marketplace/models/<user-name>/<model-name>
             "You're already on the waitlist! We'll send you an email once your access is granted.": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件。",
