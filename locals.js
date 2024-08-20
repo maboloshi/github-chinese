@@ -17643,7 +17643,6 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Open issues": "打开议题",
             "is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.": "未经 GitHub 认证。它由第三方提供，并受单独的服务条款、隐私政策和支持文档的约束。",
 
-        
         // GitHub 模型页面 https://github.com/marketplace/models/<user-name>/<model-name>
             "You're already on the waitlist! We'll send you an email once your access is granted.": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件。",
             "You're already on the waitlist! We'll send you an email once your access is granted": "GitHub 模型限量公开测试将有名额限制。如果您获准访问，您将收到一封电子邮件",
