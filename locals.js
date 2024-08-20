@@ -12080,7 +12080,7 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             "There are too many commits to generate this graph.": "提交次数过多，无法生成图表。",
             "More information about this data can be found in the": "有关这些数据的更多信息，请参阅",
             "activity documentation": "活动文档",
-        
+
         // 新版
         "Additions and deletions per week": "添加数量和删除数量/每周",
         "Chart options": "图表选项",
