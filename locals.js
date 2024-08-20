@@ -6348,10 +6348,16 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Edit file": "编辑文件",
 
             // 默认分支被重命名提醒框
-                "The default branch has been renamed!": "默认分支已被重新命名!",
-                "is now named": "已被重新命名为",
+                "The default branch has been renamed!": "默认分支已重命名!",
+                "is now named": "已重命名为",
                 "If you have a local clone, you can update it by running the following commands.": "如果您有一个本地克隆，您可以通过运行以下命令来更新它。",
                 "OK, got it": "好的，我知道了！",
+
+                // 上游仓库分支重命名
+                    "The default branch on the parent repository has been renamed!": "上游仓库默认分支已被重新命名!",
+                    "renamed its default branch": "默认分支重命名为",
+                    "You can rename this fork's default branch to match in": "您可以重命名此复刻默认分支以匹配，在",
+                    "branch settings": "分支设置",
 
             "branch": "分支",
             "branches": "分支",
@@ -7314,6 +7320,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "converted this issue into a discussion": "此议题已转化为讨论",
             "removed their assignment": "取消了他们的任务",
             "assigned": "分配给了",
+            "unassigned": "取消分配给",
             "and unassigned": "和取消了分配给",
             "marked this pull request as draft": "将此拉取请求标记为草案",
             "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
@@ -11810,10 +11817,24 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
         [/([\d,]+) commits?/, "$1 次提交"],
         // 新版
         [/Last (\d+) months?/, "最后 $1 个月"],
-        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
-        //[/([^ ]+)'s Commits/, "$1 的提交"],
-        //[/([^ ]+)'s Additions/, "$1 的添加数量"],
-        //[/([^ ]+)'s Deletions/, "$1 的删除数量"],
+        [/Sunday, (\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, day, month, year){
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+
+            return '星期日，'+ year + '年' + monthKey[month] + day + '日';
+        }],  // 无论怎样都是星期日
         [/([^ ]+)'s (Commits|Additions|Deletions)/, function(all, user, cont){
 
             var contKey = {Commits: '提交', Additions: '添加数量', Deletions: '删除数量'};
@@ -12022,7 +12043,24 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
-        [/commits? the week of (.+)/, "提交本周 $1"],
+        [/commits? the week of (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, month, day){
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+
+            return '次提交本周，' + monthKey[month] + day + '日';
+        }],
     ],
 };
 
@@ -12065,7 +12103,24 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
 
     },
     "regexp": [ // 正则翻译
-        [/Sunday, (.+)/, "星期日，$1"],  // 无论怎样都是星期日
+        [/Sunday, (\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, day, month, year){
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+
+            return '星期日，'+ year + '年' + monthKey[month] + day + '日';
+        }],  // 无论怎样都是星期日
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
