@@ -1065,6 +1065,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 星期(全称), 月 日, 年 // 仓库-->洞察-->流量 图示标识
          * Sunday, November 14, 2021
          *
+         * 星期(全称), 日 月 年// 仓库-->洞察-->贡献者 和 仓库-->洞察-->代码频率
+         * Sunday, 4 Jul 2023
+         *
          * 更新于 2023-07-04 13:19:21
          * 新增前缀词, 减少二次组织翻译
          *  Updated Jul 4            // 仪表板页面 仓库标签卡
@@ -1079,7 +1082,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(^Updated |^Commits on |^Joined on |on |)(?:(\d{1,2}) |)(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?), |)(?:(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May(?:)??|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:,? |$))(\d{4}|)(?:(\d{1,2})(?:st.|nd.|rd.|th.)?|)(?:,? (\d{4})|)/g, function (all, prefix, date1, week, month, year1, date2, year2) {
+        [/(^Updated |^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
             var prefixKey = {
                 "Updated "   : "更新于 ",
                 "Commits on ": "提交于 ",
@@ -1092,7 +1095,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Wed"  : "周三",
                 "Thu"  : "周四",
                 "Fri"  : "周五",
-                "Sat"  : "周六",
+                "Sat"  : "周六"
             };
             var monthKey = {
                 "Jan": "1月",
@@ -1108,9 +1111,17 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Nov": "11月",
                 "Dec": "12月"
             };
+
+            // 处理日期
             var date = date1 ? date1 : date2;
             var year = year1 ? year1 : year2;
-            return (prefixKey[prefix] ? prefixKey[prefix] : '') + (year ? year + '年' : '') + monthKey[month.substring(0, 3)] + (date ? date + '日' : '') + (week ? ', ' + weekKey[week.substring(0, 3)] : '');
+            var formattedDate = (year ? year + '年' : '') + monthKey[month ? month.substring(0, 3) : month2.substring(0, 3)] + (date ? date + '日' : '');
+
+            // 处理星期
+            var formattedWeek = week ? '，' + weekKey[week.substring(0, 3)] : '';
+
+            // 返回翻译结果
+            return (prefixKey[prefix] ? prefixKey[prefix] : '') + formattedDate + formattedWeek;
         }],
         /**
          * 相对时间格式处理
