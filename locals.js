@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -82,7 +82,7 @@ I18N.conf = {
             'strong[itemprop="name"]', // 仓库名称
             // 'ul.list-style-none', // 右侧 部署列表 无效
             'div[data-testid="latest-commit"]', // 最新的提交
-            'tr.react-directory-row', // 仓库列表
+            'tr.react-directory-row', // 文件列表中文件夹和文件条目
             'p.f4.my-3', // 仓库简介正文
             '#translate-me',
             '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
@@ -91,14 +91,14 @@ I18N.conf = {
         ],
         'repository/tree': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
-            'tbody', // 文件列表
+            'div.react-tree-show-tree-items', // 左侧文件树项目
+            'tr.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
         ],
         'repository/blob': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
-            '.react-tree-show-tree-items', // 左侧文件树项目
+            'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
             'section', // 代码视图
             '#filter-results', // 右侧 符号筛选
@@ -108,16 +108,13 @@ I18N.conf = {
             '#file-name-id', // 文件路径中文件部分
         ],
         'repository/commit': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
+            'td.blob-code', // 代码差异 分屏/同屏
         ],
         'repository/pull': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
+            'td.blob-code', // 代码差异 分屏/同屏
         ],
         'repository/compare': [
-            'tr.show-top-border', // 代码差异 同屏
-            'td.blob-code', // 代码差异 分屏
+            'td.blob-code', // 代码差异 分屏/同屏
         ],
         'repository/edit': [
             '.cm-scroller', // 代码编辑器
@@ -126,6 +123,9 @@ I18N.conf = {
         'repository/new': [
             '.cm-scroller', // 代码编辑器
             'table', // 代码差异预览
+        ],
+        'repository/actions': [
+            'table.highlight', // 工作流程文件 源码视图
         ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
