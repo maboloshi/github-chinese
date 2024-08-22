@@ -67,9 +67,10 @@ jobs:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
+          version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main.user.js)
           bash script/ci_commit_with_signature.sh \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "main.user.js" \
-          -h "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          -h "main.user.js Update to $version"
