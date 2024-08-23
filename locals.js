@@ -7491,7 +7491,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Convert to discussions": "转为讨论",
                 // 转换议题为讨论 对话框
                 "Convert issue to discussion": "转换议题为讨论",
-                    // [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
+                "Convert issues to discussions": "转换议题为讨论",
+                    // [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
                     // "What happens when an issue is converted into a discussion:": "将议题转化为讨论时，会发生什么：",
                     "Issue will be locked": "议题将被锁定",
                     // "Title, description, and author will be the same as the issue": "标题、描述和作者将与议题相同",
@@ -7510,6 +7511,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Q&A": "问与答",
                         "Show and tell": "展示与讲述",
                     "I understand, convert issue to discussion": "我明白了，依然将议题转换未讨论",
+                    "I understand, convert issues to discussions": "我明白了，依然将议题转换未讨论",
                     "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题不会自动转换为讨论。",
 
         // 添加/编辑议题模板 /<user-name>/<repo-name>/issues/templates/edit
@@ -7572,7 +7574,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
         [/open issues? or pull requests?/, "个打开的议题或拉取请求"],
-        [/Are you sure you want to convert (\d+) issues? with the following label to a discussion\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
+        [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
     ],
 };
 I18N["zh-CN"]["repository/labels"] = I18N["zh-CN"]["repository/issues"];
