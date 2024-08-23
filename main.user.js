@@ -44,7 +44,7 @@
 
             characterData = characterDataPage.includes(page);
             // 忽略突变元素选择器
-            ignoreMutationSelectors = ignoreMutationSelectorPage[page] || [];
+            ignoreMutationSelectors = ignoreMutationSelectorPage['*'].concat(ignoreMutationSelectorPage[page] || []);
             // 忽略元素选择器
             ignoreSelectors = ignoreSelectorPage['*'].concat(ignoreSelectorPage[page] || []);
             // 通过 CSS 选择器翻译的规则
