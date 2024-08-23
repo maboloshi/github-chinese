@@ -44,10 +44,14 @@ Via 浏览器（Android）                | 浏览器内自带
 ## 💽 安装
 
 1. 安装用户脚本管理器。
-2. 点击以下链接之一安装脚本：
-    - [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js]
-    - [GitHub 中文化插件 - GreasyFork 托管【发布版】][main(greasyfork).user.js]
-3. 刷新页面，即可发现网站已中文化。
+1. 然后再点击链接之一，安装脚本即可。
+    - [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]
+        > 注意: 
+        > 1. 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
+        > 1. 目前, 已实现每周一凌晨自动更新开发版版本号
+    - [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
+1. 刷新下页面，即可发现网站已中文化。
+
 
 > 需要视频教程的可以去看看[这里](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
 
@@ -56,15 +60,16 @@ Via 浏览器（Android）                | 浏览器内自带
 > 原因是 Chrome 127 及更高版本，陆续切换到 Manifest V3，目前已知 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本支持，详见 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论
 > #### 解决方案：
 > 1. 安装 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本。
-> 2. 在浏览器的 “扩展程序” 管理中开启 “开发者模式”。
-
+> 1. 在浏览器的 “扩展程序” 管理中开启 “开发者模式”。
+> ### 其他脚本管理器暂不支持
+> 由于 Manifest V3 的限制，目前该脚本仅支持 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本。其他脚本管理器（如 Greasemonkey、Violentmonkey 等）可能无法正常使用该脚本。如果您使用的是其他脚本管理器，建议您考虑升级到 Tampermonkey 或其他支持 Manifest V3 的脚本管理器。
 ## 词库本地调试方法
 
 1. 安装用户脚本管理器 [Tampermonkey][Tampermonkey]。
-2. 在浏览器扩展管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址”。
-3. 将修改的词库文件放到方便访问的本地位置。
-4. 安装 [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js] 或 [GitHub 中文化插件 - GreasyFork 托管【发布版】][main(greasyfork).user.js]。
-5. 回到脚本管理器，修改词库文件路径，如将 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0` 改为本地路径格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
+1. 在浏览器扩展管理中，开启 [Tampermonkey][Tampermonkey] 的 “允许访问文件网址”。
+1. 将修改的词库文件放到方便访问的本地位置。
+1. 安装 [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js] 或 [GitHub 中文化插件 - GreasyFork 托管【发布版】][main(greasyfork).user.js]。
+1. 回到脚本管理器，修改词库文件路径，如将 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0` 改为本地路径格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
 
 > [!TIP]
 > 直接将词库文件拖到浏览器的地址栏，再复制地址栏的中地址即可。
@@ -76,21 +81,21 @@ Via 浏览器（Android）                | 浏览器内自带
 更新至 1.9.3
 
 1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
-2. 优化突变翻译处理：
+1. 优化突变翻译处理：
    - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
    - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
-3. 合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
-4. 引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
-5. 调整：更新讯飞听见翻译引擎v2.0
-6. 优化：梳理、优化脚本
-7. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
+1. 合并`reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag`为`ignoreSelectorPage`规则，处理全局及特定页面，忽略特定元素
+1. 引入全局缓存模式，减少重复构建包括不限于基于`page`变化的忽略规则、正则规则数组等
+1. 调整：更新讯飞听见翻译引擎v2.0
+1. 优化：梳理、优化脚本
+1. 调整：调整词库语言代码为`zh-CN`, 与环境语言设置一致
 
 ### 2024-06-14 19:27:20
 
 更新至 1.9.2
 
 1. 适配`www.githubstatus.com`
-2. 适配`skills.github.com`
+1. 适配`skills.github.com`
 
 ### 2024-05-23 16:42:55
 
@@ -100,67 +105,70 @@ Via 浏览器（Android）                | 浏览器内自带
 
 ### 2023-12-09 20:46:16
 
+ 
 更新至 1.9.0
 
+> 其中, `1.9.0`: 主版本号(由项目所有者更新)
+
 1. 重新定义版本号规则, 如`1.9.0-2023-12-09`
-2. 加强: [GitHub 托管【开发版】][main.user.js]每周一凌晨自动更新`词库`发布版本号
-3. 加强: [GreasyFork 托管【发布版】][main(greasyfork).user.js]每周五凌晨自动更新`词库`发布版本号, 词库内容同上一次[GitHub 托管【开发版】][main.user.js]
-4. 加强：在 `README.md` 中自动更新贡献者头像
-5. 更新: 忽略规则, 词条等
+1. 加强: [GitHub 托管【开发版】][main.user.js]每周一凌晨自动更新`词库`发布版本号
+1. 加强: [GreasyFork 托管【发布版】][main(greasyfork).user.js]每周五凌晨自动更新`词库`发布版本号, 词库内容同上一次[GitHub 托管【开发版】][main.user.js]
+1. 加强：在 `README.md` 中自动更新贡献者头像
+1. 更新: 忽略规则, 词条等
 
 ### 2023-08-31 13:39:36
 
 更新至 1.8.5
 
 1. 优化: `transDesc 函数`代码
-2. 修复: 重复添加`translate-me`翻译按钮
-3. 加强：`watchUpdate 函数`新增节点文本更新的情况
-4. 调整: `transBySelector和transDesc函数`延迟执行时间
-5. 更新: 忽略规则, 词条等
+1. 修复: 重复添加`translate-me`翻译按钮
+1. 加强：`watchUpdate 函数`新增节点文本更新的情况
+1. 调整: `transBySelector和transDesc函数`延迟执行时间
+1. 更新: 忽略规则, 词条等
 
 ### 2023-08-08 11:53:03
 
 更新至 1.8.4
 
 1. 修复: `Itemprop`过滤规则, 依然使用正则方式
-2. 修复: `tooltipped`样式提示, 依然使用正则方式
+1. 修复: `tooltipped`样式提示, 依然使用正则方式
 
 ### 2023-08-07 14:41:17
 
 更新至 1.8.3
 
 1. 梳理、优化脚本
-2. 更新: 忽略规则, 大量词条等
+1. 更新: 忽略规则, 大量词条等
 
 ### 2023-05-15 18:02:04
 
 更新至 1.8.2
 
 1. `greasyfork 托管`源切换到`按页面精细化词条模式`
-2. 调整词库格式
-3. 功能加强: 优化`元素筛选器`翻译逻辑
-4. 更新: 忽略规则, 大量词条等
+1. 调整词库格式
+1. 功能加强: 优化`元素筛选器`翻译逻辑
+1. 更新: 忽略规则, 大量词条等
 
 ### 2023-01-22 22:01:39
 
 更新至 1.8.1
 
 1. 修复: #8 与 dark reader 扩展发生冲突，导致时间显示出现问题
-2. `GitHub`源开始切换到`按页面精细化词条模式(开发版)`, 词库未完全迁移适配
-3. 停止`greasyfork`源词库文件的同步更新
+1. `GitHub`源开始切换到`按页面精细化词条模式(开发版)`, 词库未完全迁移适配
+1. 停止`greasyfork`源词库文件的同步更新
 
 ### 2023-01-18 12:56:24
 
 更新至 1.8.0
 
 1. 删除: `TURBO-FRAME`框架处理代码. Github 已调整新动态加载模式, 直接检测`url`的变化就能获取对应的`page`信息
-2. 新增: 支持时间元素的`Shadow DOM`翻译, 并监听变化
-3. 新增: 启用并更新`时间元素翻译`专项正则词条
-4. 新增: 仅当`page`有效才翻译页面
-5. 修复: 原`简介翻译`引擎`GitHub中文社区`失效, 改为`讯飞`引擎(测试)
-6. 修复: 追加公共正则重复迭代的问题
-7. 修复: 正则标记变量`RegExp`与构造函数`new RegExp`冲突
-8. 更新: 忽略规则, 词条等
+1. 新增: 支持时间元素的`Shadow DOM`翻译, 并监听变化
+1. 新增: 启用并更新`时间元素翻译`专项正则词条
+1. 新增: 仅当`page`有效才翻译页面
+1. 修复: 原`简介翻译`引擎`GitHub中文社区`失效, 改为`讯飞`引擎(测试)
+1. 修复: 追加公共正则重复迭代的问题
+1. 修复: 正则标记变量`RegExp`与构造函数`new RegExp`冲突
+1. 更新: 忽略规则, 词条等
 
 预告, 下次将细化`page`匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
 
@@ -176,46 +184,44 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 目前, 通过以下修复:
 
 1. 新增 `BODY` 元素新增监视
-2. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
-3. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
-4. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
+1. 解析 `TURBO-FRAME` 框架, 获取对应的 `page`
+1. 修复 github 新动态加载模式, 导致`翻译描述`返回值无法插入
+1. 修复 github 新动态加载模式, 导致`chrome`浏览器自带翻译功能卡死页面
 
 其他更新:
 
 1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
-2. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
-3. 修复`关闭正则`无法生效, 需要刷新页面才生效
-4. 日常更新词库和忽略规则
-5. 更新`JS 筛选器`规则
+1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
+1. 修复`关闭正则`无法生效, 需要刷新页面才生效
+1. 日常更新词库和忽略规则
+1. 更新`JS 筛选器`规则
 
 ### 2022-06-29 13:27:12
 
 更新至 1.7.8
 
 1. 紧急修复: GitHub 变更了`document.body`和`title`更新机制, 导致原有的`监测更新`规则部分失效, 目前使用`document.documentElement`监视整个页面 DOM 的变更
-2. 跳过`<HEAD>`标签
-3. `标题翻译`和`JS 筛选器`翻译, 依据 URL变化更新
+1. 跳过`<HEAD>`标签
+1. `标题翻译`和`JS 筛选器`翻译, 依据 URL变化更新
 
 ### 2022-06-26 16:41:58
 
 更新至 1.7.7
 
 1. 新增`时间元素翻译`功能
-2. 重写`页面标题翻译`函数
-3. 梳理`遍历节点`函数逻辑
-4. 优化`transPage`函数，默认翻译公共部分
-5. 调整`getPage`函数, 使`ClassName匹配规则`优先
-6. 优化`translate`函数, 跳过`不存在英文字母和符号,.`, 保留首尾空白部分等
-7. 部分函数重命名，使用`es6`新语法
-8. 日常更新词库和忽略规则，修复一个`JS 选择器规则`
+1. 重写`页面标题翻译`函数
+1. 梳理`遍历节点`函数逻辑
+1. 优化`transPage`函数，默认翻译公共部分
+1. 调整`getPage`函数, 使`ClassName匹配规则`优先
+1. 优化`translate`函数, 跳过`不存在英文字母和符号,.`, 保留首尾空白部分等
+1. 部分函数重命名，使用`es6`新语法
+1. 日常更新词库和忽略规则，修复一个`JS 选择器规则`
 
 ### 2022-05-12 13:53:46
 
 更新至 1.7.6
 
-1. 日常更新词库和忽略规则
-2. 添加手动开启/禁用正则翻译，添加切换菜单
-3. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
+1. 日常更新词库和忽略规则添加手动开启/禁用正则翻译，添加切换菜单1优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
 
 ### 2022-02-26 12:36:14
 
@@ -256,8 +262,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 ## ✔ 待办 (TODO)
 
 1. 添加 GitHub 名词解释，新手可能不太理解部分名词具体表达的意思，比如 `pull request`。
-2. 整理部分 [Git](https://git-scm.com/) & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
-3. **本人英文渣渣，翻译非常困难，急需大家 PR 共同翻译**
+1. 整理部分 [Git](https://git-scm.com/) & [GitHub](https://github.com/) 学习资料, 帮助新手**更快**上手。
+1. **本人英文渣渣，翻译非常困难，急需大家 PR 共同翻译**
 
 ## ✨ 贡献
 
@@ -268,9 +274,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 ### 相关概念及资料文档:
 
 1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh/v2)
-2. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
-3. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
-4. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
+1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
+1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+1. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
 
 ## 🎨 预览
 
