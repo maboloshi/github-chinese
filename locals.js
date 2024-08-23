@@ -67,6 +67,9 @@ I18N.conf = {
         'repository/blame': ["section"], // 代码视图
         'repository': [".AppHeader-context", "article.markdown-body", "table"],
         'repository/releases': [".Box-footer"], // 附件清单
+        '*': [
+            'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
+        ],
     },
 
     // 特定页面，忽略元素规则
@@ -139,6 +142,7 @@ I18N.conf = {
         '*': [
             '.markdown-body',
             '.markdown-title',
+            'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', // 特定元素标签
         ],
     }
