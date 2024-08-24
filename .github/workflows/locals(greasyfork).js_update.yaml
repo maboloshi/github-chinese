@@ -56,9 +56,10 @@ jobs:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
+          version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' "main(greasyfork).user.js")
           bash script/ci_commit_with_signature.sh \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "locals(greasyfork).js, main(greasyfork).user.js" \
-          -h "main(greasyfork).user.js Update on $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          -h "main(greasyfork).user.js Update to $version"
