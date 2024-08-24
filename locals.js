@@ -6025,7 +6025,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
-        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        [/This repository has been archived by the owner on (.+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
             var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
@@ -8246,6 +8246,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -8499,6 +8500,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
 
             // 提交相关
             "Copy the full SHA": "复制完整 SHA",
@@ -8721,6 +8723,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
@@ -9911,6 +9914,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             "pushed": "推送",
             "opened": "打开",
+            "reopened": "重新打开",
 
             // 状态
                 "Success": "成功",
@@ -9980,12 +9984,14 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Pull request": "拉取请求",
                 "synchronize by": "同步者",
                 "opened by": "打开者",
+                "reopened by": "重新打开者",
             "The operation was canceled.": "已取消。",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
             "This job failed": "此作业失败",
             "This job was skipped": "此作业被跳过",
+            "Waiting for pending jobs": "等待中",
             "Input required and not supplied: token": "需要输入但未提供：令牌",
             "Fit to window": "适合",
             "Zoom out": "缩小",
