@@ -45,24 +45,26 @@ Via 浏览器（Android）                | 浏览器内自带
 
 1. 安装用户脚本管理器。
 1. 然后再点击链接之一，安装脚本即可。
-    - [GitHub 中文化插件 - GitHub 托管【开发版】（相对及时更新）][main.user.js]
-        > 注意: 
-        > 1. 当版本号未更新的情况下, 即使内容已更新, 用户脚本管理器依然会忽略, 需要手动安装获取更新
-        > 1. 目前, 已实现每周一凌晨自动更新开发版版本号
-    - [GitHub 中文化插件 - GreasyFork 托管【发布版】（仅大版本更新）][main(greasyfork).user.js]
+    - [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js]
+    - [GitHub 中文化插件 - GreasyFork 托管【发布版】][main(greasyfork).user.js]
 1. 刷新下页面，即可发现网站已中文化。
 
+> [!NOTE]
+> 1. **开发版**：通常比**发布版**更早进入开发和测试阶段（重大版本更新前，还会专门创建新分支进行测试）。日常维护词库内容，并且词库版本号会在每周五凌晨自动更新。
+>    > 注意: 
+>    > - 如果版本号未更新，即使内容已更新，用户脚本管理器仍会忽略这些更新，需要手动安装以获取最新内容。
+> 1. **发布版**: 日常功能被冻结（除非由项目所有者进行更新）。通常在**开发版**词库版本号更新后的下周一凌晨，自动同步上一**开发版**的词库文件。通常情况下，**发布版**与**开发版**之间会存在一周的时间差。
 
-> 需要视频教程的可以去看看[这里](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
+> [!TIP]
+> 1. 需要视频教程的可以去看看[【这里】](https://github.com/maboloshi/github-chinese/discussions/133)收录的一些视频
 
-> [!Note]
+> [!IMPORTANT]
 > ### 关于 “Chrome 127 及更高版本无法使用” 的问题
-> 原因是 Chrome 127 及更高版本，陆续切换到 Manifest V3，目前已知 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本支持，详见 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论
+> 这是由于 Chrome 127 及更高版本逐步切换到 Manifest V3。目前已知脚本管理器 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本能够完美支持，而其他脚本管理器（如 Violentmonkey 等）可能无法正常运行此脚本。如果您使用的是其他脚本管理器，建议您改用支持 Manifest V3 的脚本管理器，或者将浏览器版本退回，等待相关脚本管理器开发者更新，或改用 Firefox 浏览器。详情请参阅 [#234](https://github.com/maboloshi/github-chinese/issues/234) 讨论。
 > #### 解决方案：
-> 1. 安装 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本。
+> 1. 安装 [Tampermonkey][Tampermonkey] 5.2.0 或更高版本。
 > 1. 在浏览器的 “扩展程序” 管理中开启 “开发者模式”。
-> ### 其他脚本管理器暂不支持
-> 由于 Manifest V3 的限制，目前该脚本仅支持 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本。其他脚本管理器（如 Greasemonkey、Violentmonkey 等）可能无法正常使用该脚本。如果您使用的是其他脚本管理器，建议您考虑升级到 Tampermonkey 或其他支持 Manifest V3 的脚本管理器。
+
 ## 词库本地调试方法
 
 1. 安装用户脚本管理器 [Tampermonkey][Tampermonkey]。
