@@ -4741,6 +4741,13 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "Created GitHub Pages site in": "创建了 GitHub Pages 在",
             "Modified GitHub Pages source in": "修改了 GitHub Pages 源代码在",
             "Created environment": "创造环境",
+            "Added": "添加",
+            "to the": "至",
+            "repository": "仓库",
+            "Added the following repositories to the": "添加以下仓库到",
+            "integration:": "集成：",
+            "Enabled GitHub Actions for": "启用仓库操作：",
+            "Created a secret for": "创建机密：",
 
     },
     "regexp": [ // 正则翻译
