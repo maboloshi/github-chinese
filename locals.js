@@ -10173,7 +10173,7 @@ I18N["zh-CN"]["repository/stargazers"] = { // 仓库 - 追星者页面
             "Stargazers": "追星者",
             "All": "全部",
             "You know": "您关注的",
-            "Be the first to star this repository.": "成为第一个为这个仓库加星标的人。",
+            "Be the first to star this repository": "成为第一个为这个仓库加星标的人",
             "about how starring works on GitHub.": "关于如何在 GitHub 上加注星标。",
             "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
 
