@@ -4724,6 +4724,8 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "Events matching search query": "搜索查询匹配结果",
             "Export": "导出",
             "Recent events": "最近的事件",
+            "Unknown IP address": "未知 IP 地址",
+            "Unknown location": "未知位置",
             // [/Found (\d+) events?/, "发现 $1 个活动"],
             "Newer": "新的",
             "Older": "旧的",
@@ -4736,6 +4738,9 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "User signed in from an unrecognized device and location.": "用户从无法识别的设备与位置登录。",
             "New Device Used": "使用新设备",
             "Created the repository": "创建了仓库",
+            "Created GitHub Pages site in": "创建了 GitHub Pages 在",
+            "Modified GitHub Pages source in": "修改了 GitHub Pages 源代码在",
+            "Created environment": "创造环境",
 
     },
     "regexp": [ // 正则翻译
