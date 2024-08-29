@@ -4716,6 +4716,8 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
                 "Copilot activity": "Copilot 活动",
                 "Personal access token activity": "个人访问令牌活动",
                 "View advanced search syntax": "查看高级搜索语法",
+            "Filter by Member": "按用户筛选",
+            "Filter by Action": "按事件筛选",
             "Search audit logs": "搜索审计日志",
             "Search your security log": "搜索您的安全日志",
             "Clear current search query": "清除当前的搜索查询",
@@ -4728,7 +4730,12 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "ProTip!": "专业提示！",
                 "View all events created yesterday": "查看昨天创建的所有事件",
                 "View all events where you created something": "查看所有您创建内容时产生的事件",
-                "Country changed from your previous session": "“国家/地区” 与上一次会话有所不同",
+            "Country changed from your previous session": "国家或地区与上一次会话有所不同",
+            "Logged in": "登录",
+            "User signed in from an unrecognized device.": "用户从无法识别的设备登录。",
+            "User signed in from an unrecognized device and location.": "用户从无法识别的设备与位置登录。",
+            "New Device Used": "使用新设备",
+            "Created the repository": "创建了仓库",
 
     },
     "regexp": [ // 正则翻译
