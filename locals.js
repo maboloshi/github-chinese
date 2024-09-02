@@ -17205,7 +17205,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Featured": "精选",
                 "Models for your every use case": "适用于各种方案的模型",
                 "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
-                "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
+                "Your favorite tools now work with GitHub Copilot.": "您最喜欢的工具现在可与 GitHub Copilot 配合使用。",
             // Copilot
                 "Copilot Extensions": "Copilot 扩展",
                 "Extend Copilot capabilities using third party tools, services, and data": "使用第三方工具、服务或数据扩展 Copilot 的功能",
@@ -17222,8 +17222,28 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Models": "模型",
                 "Try, test, and deploy from a wide range of model types, sizes, and specializations.": "尝试、测试和部署各种型号、尺寸和专业化产品。",
                 "Model": "模型",
-                "Get early access to our playground for models": "抢先体验我们的模型市场",
-                    "Join our limited beta waiting list today and be among the first to try out an easy way to test models.": "立即加入我们的限量测试版候补名单，率先体验轻松测试模型的新方式。",
+                    "Get early access to our playground for models": "抢先体验我们的模型市场",
+                        "Join our limited beta waiting list today and be among the first to try out an easy way to test models.": "立即加入我们的限量测试版候补名单，率先体验轻松测试模型的新方式。",
+                    
+                    // 分类
+                        "All providers": "所有提供商",
+                    "Capability:": "能力：",
+                        "Chat/completion": "聊天/完成",
+                        "Embeddings": "嵌入",
+                    "Tag:": "标签",
+                        "agents": "代理",
+                        "chat": "聊天",
+                        "conversation": "对话",
+                        "large context": "长文本",
+                        "low latency": "低延迟",
+                        "multilingual": "多语言",
+                        "multimodal": "多模态",
+                        "multipurpose": "多功能",
+                        "rag": "抹布", // 疑问，翻译软件给出的结果全是抹布
+                        "reasoning": "推理",
+                        "search": "搜索",
+                        "understanding": "理解",
+                
            "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
