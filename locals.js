@@ -875,7 +875,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Unfollow": "取消关注",
             "Star": "星标",
             "Stars": "星标",
-            // "Unstar": "已加星标",
+            "Unstar": "已加星标",
             "Starred": "已加星标",
             "Fork": "复刻",
             "Save": "保存",
@@ -1366,7 +1366,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "labeled a pull request": "将标签添加到拉取请求中",
         "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
-        "All reactions": "所有反应",
+        "All reactions": "所有看法",
 
         "published a release": "发布发行版",
         "forked a repository": "复刻仓库",
@@ -6044,7 +6044,22 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
-        [/This repository has been archived by the owner on (.+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        [/This repository has been archived by the owner on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+), (\d+). It is now read-only./, function(all, m , d ,y){
+            var mKey = {"Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"};
+
+            return '此仓库已由所有者于' + y + '年' + mKey[m] + d + '日'+ '存档。它现在是只读的。';
+        }],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
             var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
@@ -6627,6 +6642,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "BSD-3-Clause license": "BSD-3-Clause 许可证",
                 "CC0-1.0 license": "CC0-1.0 许可证",
                 "WTFPL license": "WTFPL 许可证",
+                "Unknown": "未知",
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
             "Cite this repository": "引用此仓库",
@@ -6822,6 +6838,10 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
         [/and ([^ ]+) were installed on this repository/, "和 $1 已安装到此仓库"], // 顶部提示：市场应用（如果有）
+        [/([^ ]+) and (\d+) other licenses found/, function(all, lic, num){
+            var licKey = {'Unknown': '未知'};
+            return licKey[lic] + '和另外' + num + '个许可证';
+        }],
     ],
 };
 I18N["zh-CN"]["repository/tree"] = I18N["zh-CN"]["repository"];
@@ -8266,6 +8286,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -8520,6 +8541,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             // 提交相关
             "Copy the full SHA": "复制完整 SHA",
@@ -8743,6 +8765,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
@@ -10934,6 +10957,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
 
         // 反应相关
             "You reacted": "您表达看法",
+            "All reactions": "所有看法", // Android UA
 
     },
     "regexp": [ // 正则翻译
