@@ -318,6 +318,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
         //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
+        [/([^ ]+) repositories/, "$1 的仓库"],
         ["_regexp_end", "end"]
     ],
 };
@@ -1964,7 +1965,7 @@ I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
     },
     "regexp": [ // 正则翻译
-        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+(k|M|B)?) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
@@ -7254,6 +7255,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "before opening an issue.": "，在打开议题之前。",
             "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
             "Open Source Guide": "开源指南",
+                "Learn about Open Source and how to contribute": "了解开源和如何贡献",
             "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
             "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
 
