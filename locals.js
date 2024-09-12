@@ -10040,6 +10040,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Fit to window": "适合",
             "Zoom out": "缩小",
             "Zoom in": "放大",
+
+        // 摘要窗口
+            "Unable to load summary": "无法加载摘要",
+                // 右侧三个点
+                "View job logs": "查看日志",
+                "View raw markdown": "查看原始 Markdown",
+                "Copy permalink": "复制永久链接",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -10066,6 +10073,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+)-cores · (\d+) GB RAM · (\d+) GB SSD Storage/, "$1 核心 · $2 GB内存 · $3 GB SSD 存储"],
         [/Process completed with exit code (\d+)/, "进程已结束，退出代码为 $1"],
         [/([^ ]+) value is not set/, "$1 值未设置"],
+        [/([^ ]+) summary/, "$1 摘要"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
