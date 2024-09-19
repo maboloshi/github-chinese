@@ -2374,7 +2374,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Saved replies": "快捷回复",
 
         // "Security": "安全",
-        "Code security and analysis": "代码安全性与分析",
+        "Code security": "代码安全性",
 
         "Integrations": "集成",
         "Applications": "应用",
@@ -2435,7 +2435,7 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
 
             "Security": "安全",
             "Authentication security": "身份验证安全",
-            "Code security and analysis": "代码安全性与分析",
+            "Code security": "代码安全性",
             "Verified and approved domains": "经验证和批准的域名",
             "Secrets and variables": "机密和变量",
 
@@ -4295,11 +4295,11 @@ I18N["zh-CN"]["settings/replies"] = { // 设置 - 快捷回复
     ],
 };
 
-I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性与分析
+I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
-        // 代码安全性与分析 https://github.com/settings/security_analysis
+        // 代码安全性 https://github.com/settings/security_analysis
             "Security and analysis features help keep your repositories secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repositories.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
             "User": "用户",
@@ -12398,7 +12398,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
-                "Code security and analysis": "代码安全性与分析",
+                "Code security": "代码安全性",
                 "Deploy keys": "部署密钥",
                 "Secrets and variables": "机密和变量",
 
@@ -14313,12 +14313,12 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
     ],
 };
 
-I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代码安全性与分析 /<user-name>/<repo-name>/settings/security_analysis
+I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代码安全性 /<user-name>/<repo-name>/settings/security_analysis
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
 
-        // 代码安全性与分析 /<user-name>/<repo-name>/settings/security_analysis
+        // 代码安全性 /<user-name>/<repo-name>/settings/security_analysis
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository. Unarchive your repository to access additional features.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。解除您仓库的存档以访问其他功能。", //存档仓库
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
 
@@ -19052,11 +19052,11 @@ I18N["zh-CN"]["orgs/settings/security"] = { // 组织设置 - 身份验证安全
     ],
 };
 
-I18N["zh-CN"]["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性与分析
+I18N["zh-CN"]["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
-        // 代码安全性与分析 /organizations/<org-login>/settings/security_analysis
+        // 代码安全性 /organizations/<org-login>/settings/security_analysis
             "Try our new settings": "尝试我们的新设置",
             // 顶部提醒
                 "Something went wrong. Please try again.": "出了些问题。请再试一次。",
