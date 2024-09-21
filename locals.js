@@ -1003,6 +1003,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Advertising": "广告",
             "In addition, GitHub and third parties use advertising cookies to show you new ads based on ads you've already seen. Cookies also track which ads you click or purchases you make after clicking an ad. This is done to show you ads that are more relevant to you and for business purposes with our advertising partners. For example, cookies are used to detect when you click an ad and to show you ads based on your social media interests and website browsing history.": "此外，GitHub 和第三方使用广告 Cookie 根据您已经看过的广告向您显示新广告。Cookie 还会跟踪您点击的广告或点击广告后进行的购买。这样做是为了向您显示与您更相关的广告，并用于与我们的广告合作伙伴开展业务。例如，Cookie 用于检测您何时点击广告，并根据您的社交媒体兴趣和网站浏览历史记录向您显示广告。",
 
+        // 左下角提示
+            "Your default options were saved successfully": "您的默认选项已成功保存",
+            "Bulk action processing complete.": "批量操作处理完成。",
+
         // 日历
             "Jan": "1月",
             "Feb": "2月",
@@ -2868,6 +2872,7 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                     "on GitHub, Email": "在 GitHub、电子邮件 上",
                     "On GitHub": "在 GitHub 上",
                     "on GitHub": "在 GitHub 上",
+                    "Email": "电子邮件",
                 "Don't notify": "取消通知",
 
                 "Participating, @mentions and custom": "参与、@提及和自定义",
@@ -6688,8 +6693,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // "branches": "分支",
             // "release": "次发布",
             // "releases": "次发布",
-            // "contributor": "个贡献者",
-            // "contributors": "个贡献者",
+            // "contributor": "位贡献者",
+            // "contributors": "位贡献者",
 
         // 新版仓库概述
             // /<user-name>/<repo-name>#coc
@@ -10941,7 +10946,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/Edit: (.*)/, "编辑：$1"],
         [/Delete: (.*)/, "删除：$1"],
         [/Remove attached binary ([^ ]+)/, "删除 $1"],
-        [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
+        [/and (\d+) other contributors/, "和另外 $1 位贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
         [/ and /, " 和 "],
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
@@ -11912,6 +11917,10 @@ I18N["zh-CN"]["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/(\d+) pull requests? created/, "$1 个拉取请求创建"],
         [/(\d+) issues? created/, "$1 个议题创建"],
+        [/(\d+) discussions? created/, "$1 个讨论创建"],
+        [/(\d+) contributors?/, "$1 位贡献者"],
+        [/(\d+) anonymous visits?/, "$1 次匿名访问"],
+        [/(\d+) logged in visits?/, "$1 次登录访问"],
     ],
 };
 
@@ -20665,7 +20674,7 @@ I18N["zh-CN"]["features"] = {
             "Multiple assignees": "多人分配",
                 "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达 10 人处理特定问题或拉取请求，让您更容易追踪谁在处理什么。",
             "Multiple reviewers": "多人审查",
-                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知您已请求他们进行审查。",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多位贡献者进行审查。被请求的审核者将收到通知，告知您已请求他们进行审查。",
             "Multi-line comments": "多行评论",
                 "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次引用或评论多行代码，来澄清代码审查。",
             "Public repositories": "公共仓库",
