@@ -44,7 +44,7 @@ Via 瀏覽器（Android）                | 瀏覽器內自帶
 ## 💽 安裝
 
 1. 安裝用戶腳本管理器。
-1. 然後再點擊[此處](main.user.js)，安裝腳本即可。
+1. 然後再點擊 [這裏](main.user.js)，安裝腳本即可。
 1. 刷新下頁面，即可發現網站已中文化。
 
 > [!NOTE]
@@ -55,6 +55,7 @@ Via 瀏覽器（Android）                | 瀏覽器內自帶
 
 > [!TIP]
 > 1. 需要視頻教程的可以去看看[【這裏】](https://github.com/maboloshi/github-chinese/discussions/133)收錄的一些視頻
+> 2. 简体中文翻译脚本请见 [主分支](https://github.com/maboloshi/github-chinese)
 
 > [!IMPORTANT]
 > ### 關於 「Chrome 127 及更高版本無法使用」 的問題
