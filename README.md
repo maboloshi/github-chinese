@@ -324,6 +324,7 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 [Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 "Stay"
 
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/zh-TW/main.user.js "GitHub 中文化插件 - GitHub 托管"
+[main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 托管"
 
 ## 💝 鳴謝
 
