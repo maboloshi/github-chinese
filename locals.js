@@ -518,9 +518,12 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Command Palette": "命令面板",
                     "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
                     "To open the command palette:": "打开命令面板：",
+                "New Commit Details Page": "新提交详情页",
+                    "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交详细信息页面可让您快速了解和浏览提交中的更改。改进了过滤、注释（文件树中新增了浮动注释和注释计数）、键盘导航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "New Pull Request Commits Experience": "新拉取请求提交体验",
                 "Enhanced Repos Insights Views": "仓库洞察增强视图",
                     "We’re thrilled to introduce our new graphics library! With this update, you’ll find significant enhancements to two of our repository insights views—Contributors and Code Frequency. Both now utilize an SVG-based solution, offering improved focus navigation for precise, point-by-point interaction. You can also hide a series by interacting with the chart legend and view or download the data in both table format and as PNGs.": "我们非常高兴地介绍我们的新图形库！通过此次更新，您将发现我们的两个仓库洞察视图-- “贡献者” 和 “代码频率” 都有了显著增强。这两个视图现在都采用了基于 SVG 的解决方案，为精确的逐点交互提供了改进的焦点导航。您还可以通过与图表图例交互来隐藏系列，并以表格格式和 PNG 格式查看或下载数据。",
                 "Slash Commands": "斜杠命令",
@@ -2373,6 +2376,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Saved replies": "快捷回复",
 
         // "Security": "安全",
+        "Code security": "代码安全性",
         "Code security and analysis": "代码安全性与分析",
 
         "Integrations": "集成",
@@ -8360,6 +8364,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+        
+        // 新版拉取请求提交页面
+            "authored and": "撰写和",
+            "Browse repository at this point": "查看此时间点的仓库",
 
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
@@ -8369,6 +8377,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
+        
+        // 新版 PR 提交页
+        [/wants to merge (\d+) commits? into/, "希望合并 $1 条提交到"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
@@ -8761,10 +8772,12 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
             "Load diff": "载入差异",
+            "Load Diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
+            "customizing how changed files appear on GitHub.": "自定义更改文件在 GitHub 上显示方式。",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
             "Binary file not shown.": "不显示二进制文件。",
@@ -8829,6 +8842,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
             "Commits": "提交",
+            "commit": "提交",
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
@@ -8890,10 +8904,46 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Seeing something unexpected? Take a look at the": "看到了一些意想不到的东西？请看一下",
             "GitHub commits guide": "GitHub 提交指南",
 
+        // 新版提交页
+            "More actions": "更多操作",
+            // 具体某条提交
+            "authored and": "撰写和",
+
+            // 左侧文件管理器
+            "Filter files…": "筛选文件...",
+                "File extensions": "文件扩展名",
+                "No extension": "无扩展名",
+            
+            // 中间信息
+            "file": "个文件",
+                "s": " ",
+                "changed": "更改",
+            
+            // 右侧
+            "Top": "顶部",
+            "Layout": "布局",
+                "Hide whitespace": "隐藏空白",
+
+                "Copy": "复制",
+                "Select all": "全选",
+                "Expand above": "向上展开",
+                "Expand below": "向下展开",
+                "Go to previous hunk": "上一块",
+                "Go to next hunk": "下一块",
+
+            // 底部评论
+            "Comments": "评论",
+            "Lock": "锁定",
+                "conversation": "对话",
+            "Add files": "添加文件",
+            "You're not receiving notifications from this thread.": "您没有收到来自此主题的通知。",
+            "You're receiving notifications because you're subscribed to this thread.": "您收到通知是因为您订阅了此主题。",
+
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/(\d+) parents?/, "$1 个父"],
+        [/lines? changed/, "行更改"],//新版提交页面
         [/(\d+) changed files?/, "$1 个更改的文件"],
         [/(\d+) additions?$/, "$1 处增加"],
         [/(\d+) deletions?$/, "$1 处删除"],
@@ -8910,6 +8960,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
+        [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
+        [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
     ],
 };
 
@@ -15903,6 +15955,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Changes requested": "已请求更改",
         "outdated": "陈旧的",
         "Draft": "草案",
+
+        "This issue was": "此议题已",
+            "closed": "关闭",
 
         // "No results matched your search.": "没有符合您的搜索结果。",
         // 筛选结果
