@@ -70,7 +70,7 @@ Via 瀏覽器（Android）                | 瀏覽器內自帶
 1. 在瀏覽器擴展管理中，開啟 [Tampermonkey][Tampermonkey] 的 「允許訪問文件網址」。
 1. 將修改的詞庫文件放到方便訪問的本地位置。
 1. 安裝 [GitHub 中文化插件 - GitHub 托管【開發版】][main.user.js] 或 [GitHub 中文化插件 - GreasyFork 托管【發布版】][main(greasyfork).user.js]。
-1. 回到腳本管理器，修改詞庫文件路徑，如將 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.0` 改為本地路徑格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
+1. 回到腳本管理器，修改詞庫文件路徑，如將 `// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/locals.js?v1.9.0` 改為本地路徑格式如 `file:///D:/APP/github%E9%A1%B9%E7%9B%AE/github-chinese/locals.js`。
 
 > [!TIP]
 > 直接將詞庫文件拖到瀏覽器的地址欄，再復製地址欄的中地址即可。
@@ -284,14 +284,14 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 ## 🎨 預覽
 
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png"/>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png"/>
-    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png" width="75%" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img1.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img3.png"/>
+    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img1.png" width="75%" />
   </picture>
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png"/>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png"/>
-    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png" width="75%" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img2.png"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img4.png"/>
+    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/zh-TW/preview/img2.png" width="75%" />
   </picture>
 
 <details>
@@ -398,4 +398,4 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
-貢獻者列表，由 [GitHub Action](https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml) 自動生成
+貢獻者列表，由 [GitHub Action](https://github.com/maboloshi/github-chinese/blob/zh-TW/.github/workflows/update_contributors_images.yml) 自動生成
