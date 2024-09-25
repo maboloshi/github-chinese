@@ -63,8 +63,8 @@ I18N.conf = {
         'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["section"], // 代码视图
-        'repository/blame': ["section"], // 代码视图
+        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
+        'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "article.markdown-body", "table"],
         'repository/releases': [".Box-footer"], // 附件清单
         '*': [
@@ -79,6 +79,9 @@ I18N.conf = {
         ],
         'page-profile/repositories': [
             'a[itemprop="name codeRepository"]', // 仓库名称
+        ],
+        'page-profile/stars': [
+            '.mb-1.d-inline-block > h3', // 仓库名称
         ],
         'repository': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
@@ -103,7 +106,7 @@ I18N.conf = {
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
-            'section', // 代码视图
+            '#highlighted-line-menu-positioner', // 代码视图
             '#filter-results', // 右侧 符号筛选
             '#repos-header-breadcrumb', // 文件路径中文件夹路径
             '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
@@ -318,6 +321,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
         //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
+        [/([^ ]+) repositories/, "$1 的仓库"],
         ["_regexp_end", "end"]
     ],
 };
@@ -517,9 +521,12 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Command Palette": "命令面板",
                     "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
                     "To open the command palette:": "打开命令面板：",
+                "New Commit Details Page": "新提交详情页",
+                    "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交详细信息页面可让您快速了解和浏览提交中的更改。改进了过滤、注释（文件树中新增了浮动注释和注释计数）、键盘导航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "New Pull Request Commits Experience": "新拉取请求提交体验",
                 "Enhanced Repos Insights Views": "仓库洞察增强视图",
                     "We’re thrilled to introduce our new graphics library! With this update, you’ll find significant enhancements to two of our repository insights views—Contributors and Code Frequency. Both now utilize an SVG-based solution, offering improved focus navigation for precise, point-by-point interaction. You can also hide a series by interacting with the chart legend and view or download the data in both table format and as PNGs.": "我们非常高兴地介绍我们的新图形库！通过此次更新，您将发现我们的两个仓库洞察视图-- “贡献者” 和 “代码频率” 都有了显著增强。这两个视图现在都采用了基于 SVG 的解决方案，为精确的逐点交互提供了改进的焦点导航。您还可以通过与图表图例交互来隐藏系列，并以表格格式和 PNG 格式查看或下载数据。",
                 "Slash Commands": "斜杠命令",
@@ -875,7 +882,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Unfollow": "取消关注",
             "Star": "星标",
             "Stars": "星标",
-            // "Unstar": "已加星标",
+            "Unstar": "已加星标",
             "Starred": "已加星标",
             "Fork": "复刻",
             "Save": "保存",
@@ -1086,7 +1093,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(^Updated |^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
+        [/(^Updated |^Commits on |^Joined on |^on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
             var prefixKey = {
                 "Updated "   : "更新于 ",
                 "Commits on ": "提交于 ",
@@ -1366,7 +1373,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "labeled a pull request": "将标签添加到拉取请求中",
         "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
-        "All reactions": "所有反应",
+        "All reactions": "所有看法",
 
         "published a release": "发布发行版",
         "forked a repository": "复刻仓库",
@@ -1964,7 +1971,7 @@ I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
 
     },
     "regexp": [ // 正则翻译
-        [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/(\d+(k|M|B)?) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
@@ -2372,6 +2379,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Saved replies": "快捷回复",
 
         // "Security": "安全",
+        "Code security": "代码安全性",
         "Code security and analysis": "代码安全性与分析",
 
         "Integrations": "集成",
@@ -6044,7 +6052,22 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/This user is the owner of the (.*) repository./, "该用户是 $1 仓库的所有者。"],
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
-        [/This repository has been archived by the owner (on .+). It is now read-only./, "此仓库已由所有者于 $1 存档。它现在是只读的。"],
+        [/This repository has been archived by the owner on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+), (\d+). It is now read-only./, function(all, m , d ,y){
+            var mKey = {"Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"};
+
+            return '此仓库已由所有者于' + y + '年' + mKey[m] + d + '日'+ '存档。它现在是只读的。';
+        }],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
             var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
@@ -6627,6 +6650,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "BSD-3-Clause license": "BSD-3-Clause 许可证",
                 "CC0-1.0 license": "CC0-1.0 许可证",
                 "WTFPL license": "WTFPL 许可证",
+                "Unknown": "未知",
             "Code of conduct": "行为准则",
             "Security policy": "安全政策",
             "Cite this repository": "引用此仓库",
@@ -6822,6 +6846,10 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Fork your own copy of ([^ ]+)/, "复刻成您自己的 $1 副本"], // 复刻按钮提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "将出现在 $1 的成员资料中，仅对组织成员可见。"],
         [/and ([^ ]+) were installed on this repository/, "和 $1 已安装到此仓库"], // 顶部提示：市场应用（如果有）
+        [/([^ ]+) and (\d+) other licenses found/, function(all, lic, num){
+            var licKey = {'Unknown': '未知'};
+            return licKey[lic] + '和另外' + num + '个许可证';
+        }],
     ],
 };
 I18N["zh-CN"]["repository/tree"] = I18N["zh-CN"]["repository"];
@@ -7234,6 +7262,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "before opening an issue.": "，在打开议题之前。",
             "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
             "Open Source Guide": "开源指南",
+                "Learn about Open Source and how to contribute": "了解开源和如何贡献",
             "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
             "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
 
@@ -8265,6 +8294,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -8336,6 +8367,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+        
+        // 新版拉取请求提交页面
+            "authored and": "撰写和",
+            "Browse repository at this point": "查看此时间点的仓库",
 
         "ProTip!": "专业提示！",
             "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
@@ -8345,6 +8380,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
+        
+        // 新版 PR 提交页
+        [/wants to merge (\d+) commits? into/, "希望合并 $1 条提交到"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
@@ -8518,6 +8556,8 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             // 提交相关
             "Copy the full SHA": "复制完整 SHA",
@@ -8735,11 +8775,15 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
 
             "Load diff": "载入差异",
+            "Load Diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
+            "customizing how changed files appear on GitHub.": "自定义更改文件在 GitHub 上显示方式。",
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
+            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "Binary file not shown.": "不显示二进制文件。",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
@@ -8801,6 +8845,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
             "Commits": "提交",
+            "commit": "提交",
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
@@ -8862,10 +8907,46 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Seeing something unexpected? Take a look at the": "看到了一些意想不到的东西？请看一下",
             "GitHub commits guide": "GitHub 提交指南",
 
+        // 新版提交页
+            "More actions": "更多操作",
+            // 具体某条提交
+            "authored and": "撰写和",
+
+            // 左侧文件管理器
+            "Filter files…": "筛选文件...",
+                "File extensions": "文件扩展名",
+                "No extension": "无扩展名",
+            
+            // 中间信息
+            "file": "个文件",
+                "s": " ",
+                "changed": "更改",
+            
+            // 右侧
+            "Top": "顶部",
+            "Layout": "布局",
+                "Hide whitespace": "隐藏空白",
+
+                "Copy": "复制",
+                "Select all": "全选",
+                "Expand above": "向上展开",
+                "Expand below": "向下展开",
+                "Go to previous hunk": "上一块",
+                "Go to next hunk": "下一块",
+
+            // 底部评论
+            "Comments": "评论",
+            "Lock": "锁定",
+                "conversation": "对话",
+            "Add files": "添加文件",
+            "You're not receiving notifications from this thread.": "您没有收到来自此主题的通知。",
+            "You're receiving notifications because you're subscribed to this thread.": "您收到通知是因为您订阅了此主题。",
+
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/(\d+) parents?/, "$1 个父"],
+        [/lines? changed/, "行更改"],//新版提交页面
         [/(\d+) changed files?/, "$1 个更改的文件"],
         [/(\d+) additions?$/, "$1 处增加"],
         [/(\d+) deletions?$/, "$1 处删除"],
@@ -8882,6 +8963,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
+        [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
+        [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
     ],
 };
 
@@ -9930,6 +10013,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             "pushed": "推送",
             "opened": "打开",
+            "reopened": "重新打开",
 
             // 状态
                 "Success": "成功",
@@ -9999,16 +10083,25 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Pull request": "拉取请求",
                 "synchronize by": "同步者",
                 "opened by": "打开者",
+                "reopened by": "重新打开者",
             "The operation was canceled.": "已取消。",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
             "This job failed": "此作业失败",
             "This job was skipped": "此作业被跳过",
+            "Waiting for pending jobs": "等待中",
             "Input required and not supplied: token": "需要输入但未提供：令牌",
             "Fit to window": "适合",
             "Zoom out": "缩小",
             "Zoom in": "放大",
+
+        // 摘要窗口
+            "Unable to load summary": "无法加载摘要",
+                // 右侧三个点
+                "View job logs": "查看日志",
+                "View raw markdown": "查看原始 Markdown",
+                "Copy permalink": "复制永久链接",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -10035,6 +10128,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/(\d+)-cores · (\d+) GB RAM · (\d+) GB SSD Storage/, "$1 核心 · $2 GB内存 · $3 GB SSD 存储"],
         [/Process completed with exit code (\d+)/, "进程已结束，退出代码为 $1"],
         [/([^ ]+) value is not set/, "$1 值未设置"],
+        [/([^ ]+) summary/, "$1 摘要"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
@@ -10167,7 +10261,7 @@ I18N["zh-CN"]["repository/stargazers"] = { // 仓库 - 追星者页面
             "Stargazers": "追星者",
             "All": "全部",
             "You know": "您关注的",
-            "Be the first to star this repository.": "成为第一个为这个仓库加星标的人。",
+            "Be the first to star this repository": "成为第一个为这个仓库加星标的人",
             "about how starring works on GitHub.": "关于如何在 GitHub 上加注星标。",
             "Be the first of your friends to star this repository.": "成为第一个为这个仓库加星标的朋友。",
 
@@ -10928,6 +11022,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
 
         // 反应相关
             "You reacted": "您表达看法",
+            "All reactions": "所有看法", // Android UA
 
     },
     "regexp": [ // 正则翻译
@@ -15864,6 +15959,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "outdated": "陈旧的",
         "Draft": "草案",
 
+        "This issue was": "此议题已",
+            "closed": "关闭",
+
         // "No results matched your search.": "没有符合您的搜索结果。",
         // 筛选结果
         "No results matched your search.": "没有与您的搜索匹配的结果。",
@@ -17199,7 +17297,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Featured": "精选",
                 "Models for your every use case": "适用于各种方案的模型",
                 "Discover apps with Copilot extensions": "使用 Copilot 扩展程序探索应用",
-                "Your favorite tools now work with GitHub Copilot": "您最喜欢的工具现在可与 GitHub Copilot 配合使用",
+                "Your favorite tools now work with GitHub Copilot.": "您最喜欢的工具现在可与 GitHub Copilot 配合使用。",
             // Copilot
                 "Copilot Extensions": "Copilot 扩展",
                 "Extend Copilot capabilities using third party tools, services, and data": "使用第三方工具、服务或数据扩展 Copilot 的功能",
@@ -17216,8 +17314,28 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Models": "模型",
                 "Try, test, and deploy from a wide range of model types, sizes, and specializations.": "尝试、测试和部署各种型号、尺寸和专业化产品。",
                 "Model": "模型",
-                "Get early access to our playground for models": "抢先体验我们的模型市场",
-                    "Join our limited beta waiting list today and be among the first to try out an easy way to test models.": "立即加入我们的限量测试版候补名单，率先体验轻松测试模型的新方式。",
+                    "Get early access to our playground for models": "抢先体验我们的模型市场",
+                        "Join our limited beta waiting list today and be among the first to try out an easy way to test models.": "立即加入我们的限量测试版候补名单，率先体验轻松测试模型的新方式。",
+                    
+                    // 分类
+                        "All providers": "所有提供商",
+                    "Capability:": "能力：",
+                        "Chat/completion": "聊天/完成",
+                        "Embeddings": "嵌入",
+                    "Tag:": "标签",
+                        "agents": "代理",
+                        "chat": "聊天",
+                        "conversation": "对话",
+                        "large context": "长文本",
+                        "low latency": "低延迟",
+                        "multilingual": "多语言",
+                        "multimodal": "多模态",
+                        "multipurpose": "多功能",
+                        "rag": "抹布", // 疑问，翻译软件给出的结果全是抹布
+                        "reasoning": "推理",
+                        "search": "搜索",
+                        "understanding": "理解",
+                
            "Extend GitHub": "拓展 GitHub",
                 "Add tools to help you build and grow": "添加工具来帮助您构建和成长",
                 "Find tools to improve your workflow": "寻找改进工作流程的工具", // 未登录
