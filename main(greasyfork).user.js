@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2-2024-06-26
+// @version      1.9.2-2024-08-11
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -97,7 +97,7 @@
      */
     function traverseNode(node) {
         // 跳过忽略
-        if (I18N.conf.reIgnoreId.includes(node.id) ||
+        if (I18N.conf.reIgnoreId.test(node.id) ||
             I18N.conf.reIgnoreClass.test(node.className) ||
             I18N.conf.reIgnoreTag.includes(node.tagName) ||
             (node.getAttribute && I18N.conf.reIgnoreItemprop.test(node.getAttribute("itemprop")))
@@ -263,7 +263,7 @@
      */
     function transTimeElement(el) {
         let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        let res = I18N[lang]['pubilc']['time-regexp']; // 时间正则规则
+        let res = I18N[lang]['public']['time-regexp']; // 时间正则规则
 
         for (let [a, b] of res) {
             let str = key.replace(a, b);
@@ -343,7 +343,7 @@
     function fetchTranslatedText(key) {
 
         // 静态翻译
-        let str = I18N[lang][page]['static'][key] || I18N[lang]['pubilc']['static'][key]; // 默认翻译 公共部分
+        let str = I18N[lang][page]['static'][key] || I18N[lang]['public']['static'][key]; // 默认翻译 公共部分
 
         if (typeof str === 'string') {
             return str;
@@ -351,7 +351,7 @@
 
         // 正则翻译
         if (enable_RegExp) {
-            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['pubilc'].regexp || []); // 正则数组
+            let res = (I18N[lang][page].regexp || []).concat(I18N[lang]['public'].regexp || []); // 正则数组
 
             for (let [a, b] of res) {
                 str = key.replace(a, b);
@@ -447,7 +447,7 @@
      */
     function transBySelector() {
         // 获取当前页面的翻译规则，如果没有找到，那么使用公共的翻译规则
-        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['pubilc'].selector || []); // 数组
+        let res = (I18N[lang][page]?.selector || []).concat(I18N[lang]['public'].selector || []); // 数组
 
         // 如果找到了翻译规则
         if (res.length > 0) {

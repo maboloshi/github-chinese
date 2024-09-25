@@ -48,8 +48,15 @@ jobs:
         if: |
           ${{ env.LOCALS_JS_IS_CHANGED == 'true' }}
         run: |
+          # 获取最后一次提交中`locals.js`的文件时间
+          locals_js_time=$(git log -1 --format=%at -- locals.js)
+
+          # 使用`locals.js`的文件日期为词库版本号
+          locals_js_date=$(TZ='Asia/Shanghai' date -d "@$locals_js_time" +'%Y-%m-%d')
+
           sed -i -E "s/(@version\s*[0-9]+\.[0-9]+\.[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\
-          \1-$(TZ='Asia/Shanghai' date +'%Y-%m-%d')/" main.user.js
+          \1-$locals_js_date/" main.user.js
+          sed -i -E "s/(@require.+locals.js\?v[0-9]+\.[0-9]+\.[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/" main.user.js
           git diff --quiet --exit-code main.user.js || \
           echo "MAIN_USER_JS_IS_CHANGED=true" >> $GITHUB_ENV
 
@@ -60,9 +67,10 @@ jobs:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
           APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
         run: |
+          version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main.user.js)
           bash script/ci_commit_with_signature.sh \
           -R "${{ github.repository }}" \
           -B "${{ github.ref_name }}" \
           -P "${{ github.sha }}" \
           -F "main.user.js" \
-          -h "main.user.js Update to version $(TZ='Asia/Shanghai' date +'%Y-%m-%d')"
+          -h "main.user.js Update to $version"
