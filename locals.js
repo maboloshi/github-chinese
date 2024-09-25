@@ -63,8 +63,8 @@ I18N.conf = {
         'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["section"], // 代码视图
-        'repository/blame': ["section"], // 代码视图
+        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
+        'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "article.markdown-body", "table"],
         'repository/releases': [".Box-footer"], // 附件清单
         '*': [
@@ -79,6 +79,9 @@ I18N.conf = {
         ],
         'page-profile/repositories': [
             'a[itemprop="name codeRepository"]', // 仓库名称
+        ],
+        'page-profile/stars': [
+            '.mb-1.d-inline-block > h3', // 仓库名称
         ],
         'repository': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
@@ -103,7 +106,7 @@ I18N.conf = {
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
-            'section', // 代码视图
+            '#highlighted-line-menu-positioner', // 代码视图
             '#filter-results', // 右侧 符号筛选
             '#repos-header-breadcrumb', // 文件路径中文件夹路径
             '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
