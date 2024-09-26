@@ -8176,6 +8176,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // [/(\d+) active deployments?/, "$1 个活动的部署"],
 
         // 拉取请求 --> 提交 标签卡 /<user-name>/<repo-name>/pull/<id>/commits
+            // 顶部提示
+                "This pull request is big! We're only showing the most recent 250 commits": "该拉取请求过大！仅显示最近 250 次提交",
             "Commits": "提交",
             // [/Commits (.+)/, "提交于 $1"]
             "committed": "提交于",
@@ -8389,6 +8391,23 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         
         // 新版 PR 提交页
         [/wants to merge (\d+) commits? into/, "希望合并 $1 条提交到"],
+        [/Commits on (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+), (\d+)/, function (all, mon, day, year){
+            var monKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"};
+            
+            return '提交于' + year + '年' + monKey[mon] + day + '日'; 
+        }],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
