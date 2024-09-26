@@ -10525,6 +10525,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
 
             // 右侧栏
             "Pages": "页面",
+                "Toggle table of contents": "折叠/展开目录",
                 "Find a page…": "搜索页面…",
             "Add a custom sidebar": "添加自定义侧边栏",
             "Clone this wiki locally": "在本地克隆这个 Wiki",
@@ -10556,8 +10557,11 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
                 "The wiki page was successfully deleted.": "Wiki 页面已成功删除。",
 
         // wiki页面历史 /<user-name>/<repo-name>/wiki/<page name>/_history
+            "History": "历史",
             "Edit page": "编辑页面",
             "Revisions": "修订",
+            "Compare revisions": "比较修订",
+                "Invalid or empty diff.": "无效或无差异。",
 
         // wiki 编辑器（补全未翻译部分
             // 工具栏
