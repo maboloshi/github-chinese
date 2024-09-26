@@ -6041,7 +6041,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/ and /, "和"],
+        [/ and /, " 和 "],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -10587,16 +10587,61 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
                             "will be progressively smaller headers. You may end your headers with any number of hashes.": "的标题将逐渐变小。您可以用任意数量的#号结束标题。",
                         "Blockquotes": "整段引用",
                             // Markdown 通过在每行前加上 > 来创建电子邮件风格的 “楷体引号”。如果您决定硬包文本并在每行前加上 > 字符，这种方法看起来效果最好，但 Markdown 也支持在段落前加上 >。
+                                "Markdown creates blockquotes email-style by prefixing each line with the": "Markdown 通过在每行前加上",
+                                ". This looks best if you decide to hard-wrap text and prefix each line with a": "来创建电子邮件风格的 “楷体引号”。如果您决定硬包文本并在每行前加上",
+                                "character, but Markdown supports just putting": "字符，这种方法看起来效果最好，但 Markdown 也支持在段落前加上",
+                                "before your paragraph.": "。",
+                        // 清单
+                            // Markdown 支持有序和无序列表。要创建有序列表，只需在每行前加上一个数字（任何数字都可以，这就是编辑器只使用一个数字的原因）。要创建无序列表，可以在每行前加上 *、+ 或 -。
+                                "Markdown supports both ordered and unordered lists. To create an ordered list, simply prefix each line with a number (any number will do — this is why the editor only uses one number.) To create an unordered list, you can prefix each line with": "Markdown 支持有序和无序列表。要创建有序列表，只需在每行前加上一个数字（任何数字都可以，这就是编辑器只使用一个数字的原因）。要创建无序列表，可以在每行前加上",
+                                "or": "或",
+                            // 列表项可以包含多个段落，但每个段落必须缩进至少 4 个空格或一个制表符。
+                                "List items can contain multiple paragraphs, however each paragraph must be indented by at least 4 spaces or a tab.": "列表项可以包含多个段落，但每个段落必须缩进至少 4 个空格或一个制表符。",
                         "Code Blocks": "代码块",
                             "Markdown wraps code blocks in pre-formatted tags to preserve indentation in your code blocks. To create a code block, indent the entire block by at least 4 spaces or one tab. Markdown will strip the extra indentation you’ve added to the code block.": "Markdown 将代码块封装在预设格式的标签中，以保留代码块的缩进。要创建代码块，请将整个代码块缩进至少 4 个空格或一个制表符。Markdown 会去掉您添加到代码块中的额外缩进。",
                         "Horizontal Rules": "水平规则",
                             "Horizontal rules are created by placing three or more hyphens, asterisks or underscores on a line by themselves. Spaces are allowed between the hyphens, asterisks or underscores.": "横线规则是将三个或三个以上的连字符、星号或下划线单独放在一行中。连字符、星号或下划线之间允许有空格。",
                     "Span Elements": "引用元素",
                         "Links": "链接",
+                            // Markdown 有两种链接类型：内联和引用。对于这两种类型的链接，您希望向用户显示的文本都放在方括号中。例如，如果您想让链接显示文本 “GitHub”，您可以写成 [GitHub]。
+                                "Markdown has two types of links:": "Markdown 有两种链接类型：",
+                                "inline": "内联",
+                                "reference": "引用",
+                                ". For both types of links, the text you want to display to the user is placed in square brackets. For example, if you want your link to display the text “GitHub”, you write": "。对于这两种类型的链接，您希望向用户显示的文本都放在方括号中。例如，如果您想让链接显示文本 “GitHub”，您可以写成",
+                            // 要创建内嵌链接，请在括号后创建一组括号，并在括号内写入 URL。(例如，[GitHub](https://github.com/)）。内联链接允许使用相对路径。
+                                "To create an inline link, create a set of parentheses immediately after the brackets and write your URL within the parentheses. (e.g.,": "要创建内嵌链接，请在括号后创建一组括号，并在括号内写入 URL。(例如，",
+                                "). Relative paths are allowed in inline links.": "）。内联链接允许使用相对路径。",
+                            // 要创建引用链接，请使用两组方括号。[[我的内部链接|内部引用]]将链接到内部引用。
+                                "To create a reference link, use two sets of square brackets.": "要创建引用链接，请使用两组方括号。",
+                                "will link to the internal reference": "将链接到",
                         "Emphasis": "强调",
+                            // 星号（*）和下划线（_）被视为强调，并用 `<em>` 标签包裹，这在大多数浏览器中通常显示为斜体。双星号（**）或双下划线（__）被视为使用 `<strong>` 标签的粗体。要创建斜体或粗体文本，只需用单个/双个星号/下划线包裹你的单词。例如，**我的双重强调文本** 变成我的双重强调文本，*我的单一强调文本* 变成我的单一强调文本。
+                                "Asterisks (": "星号（",
+                                ") and underscores (": "）和下划线（",
+                                ") are treated as emphasis and are wrapped with an": "）被视为强调，并用",
+                                "tag, which usually displays as italics in most browsers. Double asterisks (": "标签包裹，这在大多数浏览器中通常显示为斜体。双星号（",
+                                ") or double underscores (": "）或双下划线（",
+                                ") are treated as bold using the": "）被视为使用",
+                                "tag. To create italic or bold text, simply wrap your words in single/double asterisks/underscores. For example,": "标签的粗体。要创建斜体或粗体文本，只需用单个/双个星号/下划线包裹你的单词。例如，",
+                                "becomes": "变成",
+                                ", and": "，",
+                        // 代码
+                            // 要创建内联代码，只需用反标 (`) 将代码包起来即可。Markdown 会将 `myFunction` 变成 myFunction。
+                                "To create inline spans of code, simply wrap the code in backticks (": "要创建内联代码，只需用反标",
+                                "). Markdown will turn": ") 将代码包起来即可。Markdown 会将",
+                                "into": "变成",
                         "Images": "图片",
+                            // Markdown 的图像语法与链接语法很相似；基本上是相同的语法，前面加上一个感叹号（!）。例如，如果您想链接到 https://github.com/unicorn.png 网站上的图片，并使用另一文本 “我的独角兽”，您可以写成 ![My Unicorn](https://github.com/unicorn.png)。
+                            "Markdown image syntax looks a lot like the syntax for links; it is essentially the same syntax preceded by an exclamation point (": "Markdown 的图像语法与链接语法很相似；基本上是相同的语法，前面加上一个感叹号（",
+                            "). For example, if you want to link to an image at": "）。例如，如果您想链接到",
+                            "with the alternate text": "网站上的图片，并使用另一文本",
+                            ", you would write": "，您可以写成",
                     "Miscellaneous": "杂项",
                         "Automatic Links": "自动链接",
+                            // 如果您想创建一个能显示实际 URL 的链接，markdown 允许您用 < 和 > 来快速封装 URL。例如，只要写入 <https://github.com/>，就能轻松创建 https://github.com/ 链接。
+                            "If you want to create a link that displays the actual URL, markdown allows you to quickly wrap the URL in": "如果您想创建一个能显示实际 URL 的链接，markdown 允许您用",
+                            "to do so. For example, the link": "来快速封装 URL。例如，创建链接",
+                            "is easily produced by writing": "只需写入",
                         "Escaping": "忽略",
                             "If you want to use a special Markdown character in your document (such as displaying literal asterisks), you can escape the character with the backslash (": "如果您想在文档中使用特殊的 Markdown 字符（例如显示星号），可以用反斜杠 (",
                             "). Markdown will ignore the character directly after a backslash.": ") 来转义该字符。Markdown 将忽略反斜线后的字符。",
