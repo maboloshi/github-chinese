@@ -319,6 +319,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
         //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
         [/([^ ]+) repositories/, "$1 的仓库"],
+        [/Create new page · ([^ ]+) Wiki/, "新建页面 · $1 的 Wiki"],
         ["_regexp_end", "end"]
     ],
 };
@@ -719,6 +720,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "discussion": "讨论", // 新建讨论
             "discussions": "讨论", // 新建讨论
 
+            "Spammy": "仅自己可见",
+                "This user is marked as spammy. Their comments will onlyshow in staff mode.": "该用户已被封号，评论仅自己可见。",
+
         // 添加到清单
             "Add to list": "添加到清单",
                 "You don't have any lists yet.": "您尚无任何清单。",
@@ -1090,7 +1094,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(^Updated |^Commits on |^Joined on |^on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
+        [/(^Updated |^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
             var prefixKey = {
                 "Updated "   : "更新于 ",
                 "Commits on ": "提交于 ",
@@ -5721,6 +5725,7 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
             "Generate token": "生成令牌",
                 // 顶部提醒
                 "Some of the scopes you’ve selected are included in other scopes. Only the minimum set of necessary scopes has been saved.": "您选择的一些作用域包含在其他作用域中。只保存了必要作用域的最小集合。",
+                "Note has already been taken": "备注已存在",
 
             "Make sure to copy your personal access token now. You won’t be able to see it again!": "确保立即复制您的个人访问令牌。您将无法再看到它！",
 
@@ -10547,6 +10552,44 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
         // wiki页面历史 /<user-name>/<repo-name>/wiki/<page name>/_history
             "Edit page": "编辑页面",
             "Revisions": "修订",
+
+        // wiki 编辑器（补全未翻译部分
+            // 工具栏
+                "Header 1": "1 级标题",
+                "Header 2": "2 级标题",
+                "Header 3": "3 级标题",
+
+                "Image": "图片",
+                    "Insert Image": "插入图片",
+                        "Image URL": "图片 URL",
+                        "Alt Text": "文本",
+
+                "Unordered List": "无序列表",
+                "Ordered List": "有序列表",
+                "Blockquote": "整段引用",
+                "Horizontal Rule": "水平规则",
+
+                "Help": "帮助",
+                    "Block Elements": "段落元素",
+                        "Paragraphs & Breaks": "图表 & 段落",
+                            "To create a paragraph, simply create a block of text that is not separated by one or more blank lines. Blocks of text separated by one or more blank lines will be parsed as paragraphs.": "要创建一个段落，只需创建一个没有一个或多个空行分隔的文本块即可。被一个或多个空行分隔的文本块将被解析为段落。",
+                            "If you want to create a line break, end a line with two or more spaces, then hit Return/Enter.": "如果要创建换行符，请在行尾空两格或更多格，然后按 Return/Enter 键。",
+                        "Headers": "标题",
+                        "Blockquotes": "整段引用",
+                        "Code Blocks": "代码块",
+                        "Horizontal Rules": "水平规则",
+                    "Span Elements": "引用元素",
+                        "Links": "链接",
+                        "Emphasis": "强调",
+                        "Images": "图片",
+                    "Miscellaneous": "杂项",
+                        "Automatic Links": "自动链接",
+                        "Escaping": "忽略",
+                            "If you want to use a special Markdown character in your document (such as displaying literal asterisks), you can escape the character with the backslash (\). Markdown will ignore the character directly after a backslash.": "如果您想在文档中使用特殊的 Markdown 字符（例如显示星号），可以用反斜杠 (\) 来转义该字符。Markdown 将忽略反斜线后的字符。",
+
+            // 底部
+                "Attach files by dragging & dropping, selecting or pasting them.": "通过拖放、选择或粘贴来添加文件。",
+                "Styling with Markdown is supported": "支持使用 Markdown 创建样式",
 
     },
     "regexp": [ // 正则翻译
