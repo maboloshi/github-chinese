@@ -63,8 +63,8 @@ I18N.conf = {
         'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["section"], // 代码视图
-        'repository/blame': ["section"], // 代码视图
+        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
+        'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "article.markdown-body", "table"],
         'repository/releases': [".Box-footer"], // 附件清单
         '*': [
@@ -79,6 +79,9 @@ I18N.conf = {
         ],
         'page-profile/repositories': [
             'a[itemprop="name codeRepository"]', // 仓库名称
+        ],
+        'page-profile/stars': [
+            '.mb-1.d-inline-block > h3', // 仓库名称
         ],
         'repository': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
@@ -103,7 +106,7 @@ I18N.conf = {
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
-            'section', // 代码视图
+            '#highlighted-line-menu-positioner', // 代码视图
             '#filter-results', // 右侧 符号筛选
             '#repos-header-breadcrumb', // 文件路径中文件夹路径
             '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
@@ -1094,7 +1097,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 正则中的 ?? 前面的字符 重复0次或1次
          * 正则中的 ?: 非捕获符号(即关闭圆括号的捕获能力) 使用方法 (?: 匹配规则) -->该匹配不会被捕获 为 $数字
          */
-        [/(^Updated |^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
+        [/(^Updated |^Commits on |^Joined on |^on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2}) )?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?: \d{1,2}(?:st|nd|rd|th)?)?,? (\d{4})?|(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4})(?:\s*(?:–|-|to)\s*(\d{1,2}) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d{4}))?/g, function (all, prefix, week, date1, month, year1, date2, month2, year2) {
             var prefixKey = {
                 "Updated "   : "更新于 ",
                 "Commits on ": "提交于 ",
@@ -6038,6 +6041,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
+        [/ and /, "和"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -7899,11 +7903,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"]
             "View changes": "查看更改",
             "Outdated": "陈旧的",
-            "Resolve conversation": "解决对话",
-                "Resolving conversation…": "解决对话中…",
-            "Unresolve conversation": "未解决对话",
-                "Unresolving conversation…": "未解决对话…",
-                "marked this conversation as resolved.": "将此对话标记为已解决。",
+            "Resolve conversation": "转为已解决对话",
+                "Resolving conversation…": "正在转为已解决对话……",
+            "Unresolve conversation": "转为未解决对话",
+                "Unresolving conversation…": "正在转为未解决对话……",
+                "marked this conversation as resolved.": "已将此对话标记为已解决。",
             "Changes requested": "更改请求",
             "Change requested": "更改请求",
             "Show resolved": "显示已解决",
