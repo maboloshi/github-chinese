@@ -7881,7 +7881,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Unresolving conversation…": "未解决对话…",
                 "marked this conversation as resolved.": "将此对话标记为已解决。",
             "Spammy": "仅自己可见",
-                "This user is marked as spammy. Their comments will only show in staff mode.": "该用户已被封禁，评论仅自己与员工可见。",
+                "This user is marked as spammy. Their comments will only show in staff mode.": "该用户已被封禁，评论仅自己与 GitHub 员工可见。",
             "Changes requested": "更改请求",
             "Change requested": "更改请求",
             "Show resolved": "显示已解决",
