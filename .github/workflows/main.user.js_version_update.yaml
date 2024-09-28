@@ -26,8 +26,8 @@ jobs:
         run: |
           # 最近提交是否存在tag
           if [ ! "$(git tag --contains ${{ github.sha }})" ]; then
-            # 获得最近以`main.user.js Update to version`开头的提交的sha和时间戳
-            release_commit_sha=$(git log --grep="^main.user.js Update to version" -n 1 --pretty=format:"%H")
+            # 获得最近以`main.user.js Update to`开头的提交的sha和时间戳
+            release_commit_sha=$(git log --grep="^main.user.js Update to" -n 1 --pretty=format:"%H")
             release_commit_timestamp=$(git show -s --format=%ct $release_commit_sha)
 
             # 最近的tag对应提交的sha和时间戳
