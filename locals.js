@@ -161,6 +161,15 @@ I18N.conf = {
 
     // 以下兼容 1.9.2 版本，且冻结 等待 1.9.3 明显 Bug 修复
     /**
+     * 要翻译的页面正则(不含仓库页)
+     *
+     * 2021-10-07 11:53:34
+     * GitHub 网站更新 调整 Class 过滤规则
+     * 且过滤 Class 并不是总是生效，增加 PathName 规则补充
+     */
+    rePageClass: /\b(page-(profile|new-repo|create-org)|session-authentication)\b/,
+
+    /**
      * 忽略区域的 class 正则
      *
      * 代码编辑器 内容 代码高亮 CodeMirror
