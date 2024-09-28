@@ -4829,6 +4829,12 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
             "developer documentation": "开发者文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
+            
+            // 无应用提示
+                "No GitHub Apps": "无 GitHub 应用",
+                    "Want to build something that integrates with and extends GitHub? Register a new GitHub App to get started developing on the GitHub API.": "想创建与 GitHub 集成并扩展 GitHub 的应用程序吗？注册一个新的 GitHub 应用程序，开始使用 GitHub API 进行开发。",
+                
+                "View documentation": "查看文档",
 
         // 注册 GitHub 应用 https://github.com/settings/apps/new
             "Register new GitHub App": "注册新 GitHub 应用",
@@ -5370,6 +5376,12 @@ I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应�
             "Read the docs": "阅读文档",
             "to find out more.": "以了解更多情况。",
             "Register a new application": "注册新 OAuth 应用",
+
+            "No OAuth apps": "无 OAuth 应用",
+            "OAuth apps are used to access the GitHub API. Read the docs to find out more.": "OAuth 应用程序用于访问 GitHub API。阅读文档了解详情。",
+            "New OAuth app": "注册新 OAuth 应用",
+
+            "View documentation": "查看文档",
 
     },
     "regexp": [ // 正则翻译
