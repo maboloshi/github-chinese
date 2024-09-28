@@ -538,6 +538,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Please": "请",
                     "give feedback": "提交反馈",
                     "so we can improve it!": "以便我们加以改进！",
+                // 出错提示
+                    "Sorry, something went wrong and we were not able to fetch the feature previews": "对不起，出了点问题，我们无法获取功能预览",
             "Settings": "设置",
             "GitHub Docs": "GitHub 文档",
             "GitHub Support": "GitHub 支持",
@@ -690,6 +692,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
             "Uploading your files…": "正在上传您的文件…",
+            // 文件过大
+                "This video is too big.": "该影片过大。",
+                "Try again": "请上传",
+                "with a file size less than 10MB.": "体积小于10MB的文件",
 
             "Close issue": "关闭议题", // issue页 评论框
                 "Close as completed": "完成后关闭",
@@ -9108,6 +9114,8 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.": "此文件包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在一个能显示隐藏的 Unicode 字符的编辑器中打开文件。",
                 "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
                 "Show hidden characters": "显示隐藏字符",
+                "Code view is read-only.": "代码视图只读。",
+                    "Switch to the editor.": "切换到编辑器。",
 
             // 正文部分
                 // csv 文件
@@ -10490,6 +10498,9 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                     "branch.": "分支。", // 上传页面
                     "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。", // 上传页面
                     "Learn more about pull requests.": "了解更多关于拉取请求的信息。", // 上传页面
+                
+                // 提交后处理页面
+                    "Processing your files…": "正在处理您的文件...",
 
             // 他人仓库
                 "Uploads are disabled.": "上传功能已禁用。",
