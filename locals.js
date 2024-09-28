@@ -8950,15 +8950,18 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "File extensions": "文件扩展名",
                 "No extension": "无扩展名",
             
-            // 中间信息
+            // 中间
             "file": "个文件",
                 "s": " ",
                 "changed": "更改",
+            
+            "Copy file name to clipboard": "复制文件名到剪切板",
             
             // 右侧
             "Top": "顶部",
             "Layout": "布局",
                 "Hide whitespace": "隐藏空白",
+                "Compact line height": "自定义行高",
 
                 "Copy": "复制",
                 "Select all": "全选",
@@ -8966,6 +8969,11 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "Expand below": "向下展开",
                 "Go to previous hunk": "上一块",
                 "Go to next hunk": "下一块",
+            
+            "Customizable line height": "自定义行高",
+                "The default line height has been increased for improved accessibility. You can choose to enable a more compact line height from the view settings menu.": "默认行高已增加，以提高可访问性。您可以从视图设置菜单中选择启用更紧凑的行高。",
+                "Enable compact line height": "启用自定义行高",
+                "Dismiss": "禁用",
 
             // 底部评论
             "Comments": "评论",
@@ -8983,9 +8991,9 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/(\d+) parents?/, "$1 个父"],
         [/lines? changed/, "行更改"],//新版提交页面
         [/(\d+) changed files?/, "$1 个更改的文件"],
+        [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
         [/(\d+) additions?$/, "$1 处增加"],
         [/(\d+) deletions?$/, "$1 处删除"],
-        [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
         [/This commit closes issue (#\d+)./, "此提交关闭了议题 $1。"], //具体提交页面
         [/from ([^ ]+) to ([^ ]+)/, "从 $1 到 $2。"], //具体提交页面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
