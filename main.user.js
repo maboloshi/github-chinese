@@ -37,11 +37,10 @@
         regexpRules = [];
 
     function updateConfig(page) {
-        const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
-
         if (cachedPage !== page && page) {
             cachedPage = page;
 
+            const { characterDataPage, ignoreMutationSelectorPage, ignoreSelectorPage } = I18N.conf;
             characterData = characterDataPage.includes(page);
             // 忽略突变元素选择器
             ignoreMutationSelectors = ignoreMutationSelectorPage['*'].concat(ignoreMutationSelectorPage[page] || []);
@@ -93,7 +92,7 @@
                 const filteredMutations = mutations.flatMap(({ target, addedNodes, type }) => {
                     let nodes = [];
                     if (type === 'childList' && addedNodes.length > 0) {
-                        nodes = Array.from(addedNodes); // `节点增加`，将`addedNodes`转换为数组
+                        nodes = Array.from(addedNodes); // 将新增节点转换为数组
                     } else if (type === 'attributes' || (characterData && type === 'characterData')) {
                         nodes = [target]; // 否则，仅处理目标节点
                     }
@@ -120,9 +119,8 @@
      * @param {Node} node - 需要遍历的节点。
      */
     function traverseNode(node) {
-        // 跳过忽略
+        // 跳过忽略的节点
         const skipNode = node => ignoreSelectors.some(selector => node.matches?.(selector));
-
         if (skipNode(node)) return;
 
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
@@ -168,7 +166,7 @@
 
             node.childNodes.forEach(child => traverseNode(child)); // 遍历子节点
 
-        } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点翻译
+        } else if (node.nodeType === Node.TEXT_NODE && node.length <= 500) { // 文本节点且长度小于等于 500
             transElement(node, 'data');
         }
     }
@@ -233,15 +231,13 @@
      * transTitle 函数：翻译页面标题
      */
     function transTitle() {
-        const text = document.title; // 标题文本内容
+        const text = document.title; // 获取标题文本内容
         let translatedText = I18N[lang]['title']['static'][text] || '';
         if (!translatedText) {
             const res = I18N[lang]['title'].regexp || [];
             for (let [a, b] of res) {
                 translatedText = text.replace(a, b);
-                if (translatedText !== text) {
-                    break;
-                }
+                if (translatedText !== text) break;
             }
         }
         document.title = translatedText;
@@ -425,6 +421,9 @@
         }
     }
 
+    /**
+     * registerMenuCommand 函数：注册菜单。
+     */
     function registerMenuCommand() {
         const toggleRegExp = () => {
             enable_RegExp = !enable_RegExp;
