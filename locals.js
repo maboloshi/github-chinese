@@ -157,7 +157,68 @@ I18N.conf = {
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', // 特定元素标签
         ],
-    }
+    },
+
+    // 以下兼容 1.9.2 版本，且冻结 等待 1.9.3 明显 Bug 修复
+    /**
+     * 要翻译的页面正则(不含仓库页)
+     *
+     * 2021-10-07 11:53:34
+     * GitHub 网站更新 调整 Class 过滤规则
+     * 且过滤 Class 并不是总是生效，增加 PathName 规则补充
+     */
+    rePageClass: /\b(page-(profile|new-repo|create-org)|session-authentication)\b/,
+
+    /**
+     * 忽略区域的 class 正则
+     *
+     * 代码编辑器 内容 代码高亮 CodeMirror
+     * 代码编辑器 最小单元 cm-line ͼ.*
+     * 代码高亮 blob-code
+     * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
+     * 文件,目录位置栏 |js-path-segment|final-path
+     * 文件列表 files js-navigation-container js-active-navigation-container
+     * 评论内容等 js-comment-body
+     * 评论预览 js-preview-body
+     * 评论编辑区域 comment-form-textarea
+     * 文件搜索模式 js-tree-finder-virtual-filter
+     * 仓库文件列表 js-navigation-open Link--primary
+     * 快捷键 按键 js-modifier-key
+     * 洞察-->流量-->热门内容列表 capped-list-label
+     * realease 页面 描述主体 markdown-body my-3
+     * 仓库页 仓库描述 f4 my-3
+     * 提交的用户名 commit-author$
+     * 搜索页 搜索结果 search-match
+     * 追溯 视图 代码 react-code-text
+     * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
+     * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
+     */
+    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+
+    /**
+     * 忽略区域的 itemprop 属性正则
+     * name 列表页 仓库名
+     * author 仓库页 作者名称
+     * additionalName 个人主页 附加名称
+     */
+    reIgnoreItemprop: /(name|author|additionalName)/,
+
+    /**
+     * 忽略区域的 特定元素id 正则
+     * /blob页面 offset  符号-->引用
+     * /blob页面 右侧 符号筛选 filter-results
+     * fix repo详情页文件路径breadcrumb
+     */
+    reIgnoreId: /(readme|^offset|breadcrumb|file-name-id|filter-results)/,
+
+    /**
+     * 忽略区域的 标签 正则
+     * /i 规则不区分大小写
+     */
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
+    // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
+    // ^script$ --> 避免勿过滤 notifications-list-subscription-form
+    // ^pre$ --> 避免勿过滤
 };
 
 I18N["zh-CN"] = {};
