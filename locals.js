@@ -65,7 +65,7 @@ I18N.conf = {
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
-        'repository': [".AppHeader-context", "article.markdown-body", "table"],
+        'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         '*': [
             'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
@@ -92,7 +92,7 @@ I18N.conf = {
             'p.f4.my-3', // 仓库简介正文
             '#translate-me',
             '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
-            // '.markdown-body',
+            'article.markdown-body', // 自述文件正文
             'li.mt-2',
         ],
         'repository/tree': [
@@ -101,9 +101,11 @@ I18N.conf = {
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
+            'article.markdown-body', // Markdown 正文
         ],
         'repository/blob': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            'article.markdown-body', // Markdown 正文
             'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
             '#highlighted-line-menu-positioner', // 代码视图
@@ -133,9 +135,16 @@ I18N.conf = {
         'repository/actions': [
             'table.highlight', // 工作流程文件 源码视图
         ],
+        'repository/releases': [
+            'div.markdown-body', // 发布版正文
+        ],
+        'repository/wiki': [
+            '#wiki-body', // wiki 正文
+        ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
             '.TimelineItem', // 右侧栏 最新变化
+            'section.comment-body', // 发布版正文
         ],
         'gist': [
             '.gist-content[itemprop="about"]', // Gist 简介
@@ -143,7 +152,7 @@ I18N.conf = {
             'table.js-diff-table', // 代码差异
         ],
         '*': [
-            '.markdown-body',
+            '.js-comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', // 特定元素标签
