@@ -26,7 +26,7 @@
 (function (window, document, undefined) {
     'use strict';
 
-    const lang = 'zh'; // 设置默认语言
+    const lang = I18N.zh ? 'zh' : 'zh-CN'; // 设置默认语言
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
