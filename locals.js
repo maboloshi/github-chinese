@@ -1277,7 +1277,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
-        [/on /, ""],
+        [/on /, " "],
     ],
 };
 
@@ -1483,6 +1483,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "organization news feed": "组织的新闻提要", // 组织
 
         //主页上仓库3个点
+        "Feed item options": "推送选项",
         "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
         "Show less activity like this": "显示较少这类活动",
         // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
@@ -9059,6 +9060,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "s": " ",
                 "changed": "更改",
             
+            "Collapse file tree": "收起文件树",
+            "Expand file tree": "展开文件树",
             "Copy file name to clipboard": "复制文件名到剪切板",
             
             // 右侧
@@ -9081,9 +9084,14 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
             // 底部评论
             "Comments": "评论",
+            "edited by": "编辑者",
+            "Edits": "编辑",
+                "Most recent": "最近",
+                "Deleted": "已删除",
             "Lock": "锁定",
                 "conversation": "对话",
                 "Off-topic": "偏离主题",
+            "Load more comments": "加载更多评论",
             "Reference in a new issue": "在新议题中提及",
             "Add files": "添加文件",
             "You're not receiving notifications from this thread.": "您没有收到来自此主题的通知。",
