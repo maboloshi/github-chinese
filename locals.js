@@ -151,6 +151,9 @@ I18N.conf = {
             'div.js-blob-code-container', // 代码框
             'table.js-diff-table', // 代码差异
         ],
+        'search': [
+            'span.search-match', // 仓库名称
+        ],
         '*': [
             '.js-comment-body', '.js-preview-body',
             '.markdown-title',
@@ -319,6 +322,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Discover gists · GitHub": "探索代码片段 · GitHub",
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
         "Actions Usage Metrics": "操作使用情况",
+        "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -5513,6 +5517,9 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
                 "Loading expiration ...": "载入有效期 ...",
                 "This token has expired.": "此令牌已过期。",
                     "To set a new expiration date, you must regenerate the token.": "要设置新的有效期，您必须重新生成令牌。",
+                
+                "No fine-grained tokens created": "没有创建精细化的个人访问令牌",
+                    "Need an API token for scripts or testing? Generate a personal access token for quick access to the GitHub API.": "需要用于脚本或测试的 API 令牌？生成个人访问令牌，快速访问 GitHub API。",
 
             // 顶部提醒
                 "Deleted personal access token": "已删除个人访问令牌",
@@ -9105,6 +9112,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/View checks?/, "查看检查"], // Android UA
         [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
         [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
+        [/expand all lines: ([^ ]+)/, "展开全部： $1"],
     ],
 };
 
@@ -10271,6 +10279,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/Process completed with exit code (\d+)/, "进程已结束，退出代码为 $1"],
         [/([^ ]+) value is not set/, "$1 值未设置"],
         [/([^ ]+) summary/, "$1 摘要"],
+        [/By ([^ ]+)/, "创建：$1"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
@@ -12733,6 +12742,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
+            "Code security": "代码安全性",
                 "Code security and analysis": "代码安全性与分析",
                 "Deploy keys": "部署密钥",
                 "Secrets and variables": "机密和变量",
@@ -14803,6 +14813,12 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代
                         "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
                         "Explore workflows": "探索工作流程",
 
+                    "Copilot Autofix": "Copilot 自动修复",
+                        "Suggest fixes for CodeQL alerts using AI. CodeQL default or advanced setup must be enabled for this feature to work. Learn more about the": "使用 AI 为 CodeQL 警报提出修复建议。必须启用 CodeQL 默认设置或高级设置才能使用此功能。了解更多关于",
+                        "limitations of autofix code suggestions": "自动修复代码建议限制的信息",
+                        "On": "开",
+                        "Off": "关",
+
                 "Protection rules": "保护规则",
                     "Pull request check failure": "拉取请求检查失败",
                         "Define which code scanning alert severity should cause a pull request check to fail. This also applies to analysis results uploaded via the API.": "定义哪种代码扫描警报严重程度会导致拉取请求检查失败。这也适用于通过 API 上传的分析结果。",
@@ -14958,7 +14974,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
 
         // 操作变量 /<user-name>/<repo-name>/settings/variables/actions
             "Environment variables": "环境变量",
-                "This repository has no environment variables.": "此仓库尚无环境变量。",
+                "This environment has no variables.": "此环境尚无变量。",
                 "Manage environment variables": "管理环境变量",
 
                 "Environment": "环境",
@@ -21458,6 +21474,9 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
                 "You don't have workflows on any of your organization repositories.": "您的任何组织仓库中都没有工作流程。",
             "Get started with GitHub Actions": "快速开始",
 
+            "No results matched your search.": "无匹配搜索结果。",
+                "You could clear your search or try a different time period.": "尝试清除搜索词或不同时间段。",
+
         "Workflow": "工作流",
         "Workflow runs": "工作流运行",
 
@@ -21477,7 +21496,7 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
                 "last 90 days": "最近90天",
                 "last year": "最近一年",};
             
-            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
+            return periodKey[period] + '该仓库所有工作流程的' + typeKey[type];
         }],
     ],
 };
