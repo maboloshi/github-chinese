@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/usage)?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -65,7 +65,7 @@ I18N.conf = {
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
-        'repository': [".AppHeader-context", "article.markdown-body", "table"],
+        'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         '*': [
             'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
@@ -92,7 +92,7 @@ I18N.conf = {
             'p.f4.my-3', // 仓库简介正文
             '#translate-me',
             '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
-            // '.markdown-body',
+            'article.markdown-body', // 自述文件正文
             'li.mt-2',
         ],
         'repository/tree': [
@@ -101,9 +101,11 @@ I18N.conf = {
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
+            'article.markdown-body', // Markdown 正文
         ],
         'repository/blob': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
+            'article.markdown-body', // Markdown 正文
             'div.react-tree-show-tree-items', // 左侧文件树项目
             '[id^="offset"]', // 符号-->引用
             '#highlighted-line-menu-positioner', // 代码视图
@@ -133,9 +135,16 @@ I18N.conf = {
         'repository/actions': [
             'table.highlight', // 工作流程文件 源码视图
         ],
+        'repository/releases': [
+            'div.markdown-body', // 发布版正文
+        ],
+        'repository/wiki': [
+            '#wiki-body', // wiki 正文
+        ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
             '.TimelineItem', // 右侧栏 最新变化
+            'section.comment-body', // 发布版正文
         ],
         'gist': [
             '.gist-content[itemprop="about"]', // Gist 简介
@@ -143,12 +152,73 @@ I18N.conf = {
             'table.js-diff-table', // 代码差异
         ],
         '*': [
-            '.markdown-body',
+            '.js-comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', // 特定元素标签
         ],
-    }
+    },
+
+    // 以下兼容 1.9.2 版本，且冻结 等待 1.9.3 明显 Bug 修复
+    /**
+     * 要翻译的页面正则(不含仓库页)
+     *
+     * 2021-10-07 11:53:34
+     * GitHub 网站更新 调整 Class 过滤规则
+     * 且过滤 Class 并不是总是生效，增加 PathName 规则补充
+     */
+    rePageClass: /\b(page-(profile|new-repo|create-org)|session-authentication)\b/,
+
+    /**
+     * 忽略区域的 class 正则
+     *
+     * 代码编辑器 内容 代码高亮 CodeMirror
+     * 代码编辑器 最小单元 cm-line ͼ.*
+     * 代码高亮 blob-code
+     * 仓库名和用户名 repo-and-owner (已知出现在：应用安装授权页和设置页 选定仓库)
+     * 文件,目录位置栏 |js-path-segment|final-path
+     * 文件列表 files js-navigation-container js-active-navigation-container
+     * 评论内容等 js-comment-body
+     * 评论预览 js-preview-body
+     * 评论编辑区域 comment-form-textarea
+     * 文件搜索模式 js-tree-finder-virtual-filter
+     * 仓库文件列表 js-navigation-open Link--primary
+     * 快捷键 按键 js-modifier-key
+     * 洞察-->流量-->热门内容列表 capped-list-label
+     * realease 页面 描述主体 markdown-body my-3
+     * 仓库页 仓库描述 f4 my-3
+     * 提交的用户名 commit-author$
+     * 搜索页 搜索结果 search-match
+     * 追溯 视图 代码 react-code-text
+     * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
+     * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
+     */
+    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+
+    /**
+     * 忽略区域的 itemprop 属性正则
+     * name 列表页 仓库名
+     * author 仓库页 作者名称
+     * additionalName 个人主页 附加名称
+     */
+    reIgnoreItemprop: /(name|author|additionalName)/,
+
+    /**
+     * 忽略区域的 特定元素id 正则
+     * /blob页面 offset  符号-->引用
+     * /blob页面 右侧 符号筛选 filter-results
+     * fix repo详情页文件路径breadcrumb
+     */
+    reIgnoreId: /(readme|^offset|breadcrumb|file-name-id|filter-results)/,
+
+    /**
+     * 忽略区域的 标签 正则
+     * /i 规则不区分大小写
+     */
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
+    // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
+    // ^script$ --> 避免勿过滤 notifications-list-subscription-form
+    // ^pre$ --> 避免勿过滤
 };
 
 I18N["zh-CN"] = {};
@@ -248,6 +318,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Error": "错误",
         "Discover gists · GitHub": "探索代码片段 · GitHub",
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
+        "Actions Usage Metrics": "操作使用情况",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -528,6 +599,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
                 "New Pull Request Commits Experience": "新拉取请求提交体验",
+                    "The pull request commits page has been refreshed to improve performance, improve consistency with other pages, and to make the page more accessible!": "拉取请求提交页面已被刷新，以提高性能，改善与其他页面的一致性，并使页面更易于访问！",
                 "Enhanced Repos Insights Views": "仓库洞察增强视图",
                     "We’re thrilled to introduce our new graphics library! With this update, you’ll find significant enhancements to two of our repository insights views—Contributors and Code Frequency. Both now utilize an SVG-based solution, offering improved focus navigation for precise, point-by-point interaction. You can also hide a series by interacting with the chart legend and view or download the data in both table format and as PNGs.": "我们非常高兴地介绍我们的新图形库！通过此次更新，您将发现我们的两个仓库洞察视图-- “贡献者” 和 “代码频率” 都有了显著增强。这两个视图现在都采用了基于 SVG 的解决方案，为精确的逐点交互提供了改进的焦点导航。您还可以通过与图表图例交互来隐藏系列，并以表格格式和 PNG 格式查看或下载数据。",
                 "Slash Commands": "斜杠命令",
@@ -538,6 +610,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Please": "请",
                     "give feedback": "提交反馈",
                     "so we can improve it!": "以便我们加以改进！",
+                // 出错提示
+                    "Sorry, something went wrong and we were not able to fetch the feature previews": "对不起，出了点问题，我们无法获取功能预览",
             "Settings": "设置",
             "GitHub Docs": "GitHub 文档",
             "GitHub Support": "GitHub 支持",
@@ -690,6 +764,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
             "Uploading your files…": "正在上传您的文件…",
+            // 文件过大
+                "This video is too big.": "该影片过大。",
+                "Try again": "请上传",
+                "with a file size less than 10MB.": "体积小于10MB的文件",
 
             "Close issue": "关闭议题", // issue页 评论框
                 "Close as completed": "完成后关闭",
@@ -1772,8 +1850,21 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
         [/(\d+) contributions? in private repositor(y|ies)/, "私有仓库 $1 个贡献"],
-        [/(\d+|No) contributions?/, function (all, number) {
-            return number === 'No' ? "无贡献" : number + " 次贡献";
+        [/(\d+|No) contribution(?:s)? on (January|February|March|April|May|June|July|August|September|October|November|December) (\d+)(?:st|nd|rd|th)./, function (all, number, month , day) {
+            var monthKey = {
+                "January"   : "1月",
+                "February"  : "2月",
+                "March"     : "3月",
+                "April"     : "4月",
+                "June"      : "6月",
+                "July"      : "7月",
+                "August"    : "8月",
+                "September" : "9月",
+                "October"   : "10月",
+                "November"  : "11月",
+                "December"  : "12月",
+            };
+            return number === 'No' ? monthKey[month] + day + "日，"+ "无贡献"  : monthKey[month] + day + "日，" + number + " 次贡献";
         }],// 贡献日历
         [/A graph representing ([^ ]+)'s contributions from ( .+) to ( .+)./, "$1 从 $2 到 $3 的贡献图。"],
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
@@ -4810,6 +4901,12 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
             "developer documentation": "开发者文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
+            
+            // 无应用提示
+                "No GitHub Apps": "无 GitHub 应用",
+                    "Want to build something that integrates with and extends GitHub? Register a new GitHub App to get started developing on the GitHub API.": "想创建与 GitHub 集成并扩展 GitHub 的应用程序吗？注册一个新的 GitHub 应用程序，开始使用 GitHub API 进行开发。",
+                
+                "View documentation": "查看文档",
 
         // 注册 GitHub 应用 https://github.com/settings/apps/new
             "Register new GitHub App": "注册新 GitHub 应用",
@@ -5351,6 +5448,12 @@ I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应�
             "Read the docs": "阅读文档",
             "to find out more.": "以了解更多情况。",
             "Register a new application": "注册新 OAuth 应用",
+
+            "No OAuth apps": "无 OAuth 应用",
+            "OAuth apps are used to access the GitHub API. Read the docs to find out more.": "OAuth 应用程序用于访问 GitHub API。阅读文档了解详情。",
+            "New OAuth app": "注册新 OAuth 应用",
+
+            "View documentation": "查看文档",
 
     },
     "regexp": [ // 正则翻译
@@ -8944,15 +9047,18 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "File extensions": "文件扩展名",
                 "No extension": "无扩展名",
             
-            // 中间信息
+            // 中间
             "file": "个文件",
                 "s": " ",
                 "changed": "更改",
+            
+            "Copy file name to clipboard": "复制文件名到剪切板",
             
             // 右侧
             "Top": "顶部",
             "Layout": "布局",
                 "Hide whitespace": "隐藏空白",
+                "Compact line height": "自定义行高",
 
                 "Copy": "复制",
                 "Select all": "全选",
@@ -8960,6 +9066,11 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "Expand below": "向下展开",
                 "Go to previous hunk": "上一块",
                 "Go to next hunk": "下一块",
+            
+            "Customizable line height": "自定义行高",
+                "The default line height has been increased for improved accessibility. You can choose to enable a more compact line height from the view settings menu.": "默认行高已增加，以提高可访问性。您可以从视图设置菜单中选择启用更紧凑的行高。",
+                "Enable compact line height": "启用自定义行高",
+                "Dismiss": "禁用",
 
             // 底部评论
             "Comments": "评论",
@@ -8977,9 +9088,9 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/(\d+) parents?/, "$1 个父"],
         [/lines? changed/, "行更改"],//新版提交页面
         [/(\d+) changed files?/, "$1 个更改的文件"],
+        [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
         [/(\d+) additions?$/, "$1 处增加"],
         [/(\d+) deletions?$/, "$1 处删除"],
-        [/(\d+) changes: (\d+) additions? & (\d+) deletions?$/, "$1 处更改：$2 处增加和 $3 处删除"],
         [/This commit closes issue (#\d+)./, "此提交关闭了议题 $1。"], //具体提交页面
         [/from ([^ ]+) to ([^ ]+)/, "从 $1 到 $2。"], //具体提交页面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 处增加，$2 处删除未显示，因为差异太大。请使用本地 Git 客户端查看这些更改。"],
@@ -9108,6 +9219,8 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "This file contains bidirectional Unicode text that may be interpreted or compiled differently than what appears below. To review, open the file in an editor that reveals hidden Unicode characters.": "此文件包含双向 Unicode 文本，其解释或编译方式可能与下面的显示不同。要查看，请在一个能显示隐藏的 Unicode 字符的编辑器中打开文件。",
                 "Learn more about bidirectional Unicode characters": "了解更多关于双向 Unicode 字符的信息",
                 "Show hidden characters": "显示隐藏字符",
+                "Code view is read-only.": "代码视图只读。",
+                    "Switch to the editor.": "切换到编辑器。",
 
             // 正文部分
                 // csv 文件
@@ -10490,6 +10603,9 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                     "branch.": "分支。", // 上传页面
                     "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。", // 上传页面
                     "Learn more about pull requests.": "了解更多关于拉取请求的信息。", // 上传页面
+                
+                // 提交后处理页面
+                    "Processing your files…": "正在处理您的文件...",
 
             // 他人仓库
                 "Uploads are disabled.": "上传功能已禁用。",
@@ -11929,6 +12045,7 @@ I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
             "Network": "网络",
             // "Members": "成员",
             "Forks": "复刻",
+            "Actions Usage Metrics": "操作使用情况",
 
             "People": "成员", //组织仓库
 
@@ -21262,5 +21379,105 @@ I18N["zh-CN"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/spons
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
+    ],
+};
+
+I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操作使用情况
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-insights-menu"]["static"],
+
+        "Period": "周期",
+            "Current week (Mon-Sun)": "本周（周一-周日）",
+            "Current month": "本月",
+            "Last month": "上个月",
+            "Last 30 days": "最近30天",
+            "Last 90 days": "最近90天",
+            "Last year": "最近一年",
+
+        "Total minutes": "总分钟数",
+            //"Total minutes across all workflows in this organization for current month": "当月该组织所有工作流程的总时长",
+        "Total job runs": "总工作运行",
+            //"Total job runs across all workflows in this organization for current month": "当月该组织所有工作流程的工作运行总数",
+        
+        "Filter": "筛选",
+            "Search or filter": "搜索或筛选",
+            "Exclude": "排除",
+        "Download report": "下载报告",
+
+        // 高级帅选窗口
+            "Advanced filters": "高级筛选",
+                        "Build complex filter queries": "建立复杂的筛选器查询",
+                        "To start building your query add your first filter using the button below.": "要开始建立查询，请使用下面的按钮添加第一个筛选器。",
+
+                        "Qualifier": "限定",
+                        "Operator": "操作",
+                            "is not one of": "不包含",
+                            "is one of": "包含",
+                            "is": "是",
+                            "greater than": "大于",
+                            "less than": "小于",
+                            "greater than or equal to": "大于或等于",
+                            "less than or equal to": "小于或等于",
+                            "equal to": "等于",
+                            "between": "之间",
+                        "Value": "值",
+                            "Make a selection": "请选择",
+                            "Select items": "请选择项目",
+                            "Filter values": "筛选值",
+                            "Enter a number": "键入数字",
+                            "Enter search text": "键入任意文本",
+                                "Me": "我",
+                                "Signed-in user": "已登录用户",
+                        "Add a filter": "添加",
+                            "Text": "文本",
+                        "Apply": "应用",
+            
+            // 关闭弹窗
+            "Discard changes?": "是否放弃更改？",
+            "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+            "Keep editing": "继续编辑",
+            "Close and discard": "关闭并放弃",
+
+            //筛选器报错窗口
+            "Empty value for": "空值：",
+            "Text will be ignored since log searching is not yet available:": "由于尚未提供日志搜索功能，文本将被忽略：",
+        
+        "Workflows": "工作流",
+        "Jobs": "作业",
+            "Job": "作业",
+            "Job runs": "作业运行",
+        "Runtime OS": "操作系统",
+        "Runner type": "运行器类型",
+            "hosted": "托管",
+            "hosted-larger": "大型托管",
+            "self-hosted": "自托管",
+        
+        // 无数据
+            "No table data available yet.": "还没有数据。",
+                "You don't have workflows on any of your organization repositories.": "您的任何组织仓库中都没有工作流程。",
+            "Get started with GitHub Actions": "快速开始",
+
+        "Workflow": "工作流",
+        "Workflow runs": "工作流运行",
+
+        "of": "/",
+
+    },
+    "regexp": [
+        [/Showing data from (\d+)\/(\d+)\/(\d+) to/, "显示数据：从$1年$2月$3日至"],
+        [/Total (minutes|job runs) across all workflows in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year)/, function(all, type, period){
+            var typeKey = {'minutes': '总分钟数', 'job runs': '总工作运行数'};
+
+            var periodKey = {
+                "current week (mon-sun)": "本周（周一-周日）",
+                "current month": "本月",
+                "last month": "上个月",
+                "last 30 days": "最近30天",
+                "last 90 days": "最近90天",
+                "last year": "最近一年",};
+            
+            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
+        }],
     ],
 };
