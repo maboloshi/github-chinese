@@ -21508,9 +21508,6 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
                 "You don't have workflows on any of your organization repositories.": "您的任何组织仓库中都没有工作流程。",
             "Get started with GitHub Actions": "快速开始",
 
-            "No results matched your search.": "无匹配搜索结果。",
-                "You could clear your search or try a different time period.": "尝试清除搜索词或不同时间段。",
-
         "Workflow": "工作流",
         "Workflow runs": "工作流运行",
 
@@ -21530,7 +21527,7 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
                 "last 90 days": "最近90天",
                 "last year": "最近一年",};
             
-            return periodKey[period] + '该仓库所有工作流程的' + typeKey[type];
+            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
         }],
     ],
 };
