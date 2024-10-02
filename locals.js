@@ -248,7 +248,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Billing": "账单",
         "Email settings": "邮箱设置",
         "Account security": "账户安全",
-        "SSH and GPG keys": "SSH 与 GPG 公钥",
+        "SSH and GPG keys": "SSH 与 GPG 密钥",
         "Organizations": "组织",
         "Blocked users": "拉黑用户",
         "Temporary interaction limits": "临时互动限制",
@@ -2464,7 +2464,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Emails": "电子邮箱",
         "Password and authentication": "密码和身份验证",
         "Sessions": "会话",
-        "SSH and GPG keys": "SSH 与 GPG 公钥",
+        "SSH and GPG keys": "SSH 与 GPG 密钥",
         "Organizations": "组织",
         "Enterprises": "企业版",
         "Moderation": "节制",
@@ -3844,11 +3844,11 @@ I18N["zh-CN"]["settings/sessions"] = {
     ],
 };
 
-I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
+I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 密钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
-        // SSH and GPG keys SSH 与 GPG 公钥 https://github.com/settings/keys
+        // SSH and GPG keys SSH 与 GPG 密钥 https://github.com/settings/keys
             "SSH keys": "SSH 密钥",
             "New SSH key": "新建 SSH 密钥",
             "Authentication keys": "认证密钥",
@@ -3902,11 +3902,11 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
     ],
 };
 
-I18N["zh-CN"]["settings/ssh"] = { // 设置 - SSH 与 GPG 公钥 - 添加 SSH 公钥
+I18N["zh-CN"]["settings/ssh"] = { // 设置 - SSH 与 GPG 密钥 - 添加 SSH 密钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
-        // 添加 SSH 公钥 https://github.com/settings/ssh/new
+        // 添加 SSH 密钥 https://github.com/settings/ssh/new
             "Add new SSH Key": "添加新 SSH 密钥",
             "Title": "标题",
             "Key type": "密钥类型",
@@ -3920,11 +3920,11 @@ I18N["zh-CN"]["settings/ssh"] = { // 设置 - SSH 与 GPG 公钥 - 添加 SSH �
     ],
 };
 
-I18N["zh-CN"]["settings/gpg"] = { // 设置 - SSH 与 GPG 公钥 - 添加 GPG 公钥
+I18N["zh-CN"]["settings/gpg"] = { // 设置 - SSH 与 GPG 密钥 - 添加 GPG 密钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
-        // 添加 GPG 公钥 https://github.com/settings/gpg/new
+        // 添加 GPG 密钥 https://github.com/settings/gpg/new
             "Add new GPG key": "添加新 GPG 密钥",
             "Title": "标题",
             "Key": "密钥",
