@@ -139,7 +139,7 @@ I18N.conf = {
             'div.markdown-body', // 发布版正文
         ],
         'repository/wiki': [
-            '#wiki-body', // wiki 正文
+            '#wiki-body', // Wiki 正文
         ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
@@ -10650,11 +10650,11 @@ I18N["zh-CN"]["repository/find"] = { //  仓库 - 查找文件页面
     ],
 };
 
-I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
+I18N["zh-CN"]["repository/wiki"] = { // 仓库 - Wiki 页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
-        // wiki 页面  /<user-name>/<repo-name>/wiki
+        // Wiki 页面  /<user-name>/<repo-name>/wiki
             // [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 Wiki"], // wiki页面
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "Wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
@@ -10673,7 +10673,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
 
             "Last updated": "最后更新",
 
-        // 新建 wiki 页面 /<user-name>/<repo-name>/wiki/_new
+        // 新建 Wiki 页面 /<user-name>/<repo-name>/wiki/_new
             "Create new page": "创建新页面",
             "Title": "标题",
             "Write": "编辑",
@@ -10686,7 +10686,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             // 顶部提醒
                 "Your Wiki was created.": "您的 Wiki 已创建。",
 
-        // 编辑 wiki 页面 /<user-name>/<repo-name>/wiki/<page name>/_edit
+        // 编辑 Wiki 页面 /<user-name>/<repo-name>/wiki/<page name>/_edit
             // [/Editing/, "编辑"], //编辑 wiki
             "Page history": "页面历史",
             "Delete page": "删除页面",
@@ -10704,7 +10704,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Compare revisions": "比较修订",
                 "Invalid or empty diff.": "无效或无差异。",
 
-        // wiki 编辑器（补全未翻译部分
+        // Wiki 编辑器（补全未翻译部分）
             // 工具栏
                 "Header 1": "1 级标题",
                 "Header 2": "2 级标题",
