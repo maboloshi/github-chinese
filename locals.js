@@ -323,6 +323,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
         "Actions Usage Metrics": "操作使用情况",
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
+        "Import repository": "导入仓库",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -6353,6 +6354,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 导入仓库 第二页 /<user-name>/<repo-name>/import
             "Preparing your new repository": "准备您的新仓库",
                 "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
+                "There is no need to keep this window open. We'll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
             "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
             "Importing commits and revision history…": "导入提交和修订历史…",
             // [/Updating branches and (\d) commit authors?…/, "更新分支和 $1 个提交者…"],
@@ -9079,6 +9081,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "More actions": "更多操作",
             // 具体某条提交
             "authored and": "撰写和",
+            "authored": "撰写",
 
             // 左侧文件管理器
             "Filter files…": "筛选文件...",
@@ -9093,6 +9096,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Collapse file tree": "收起文件树",
             "Expand file tree": "展开文件树",
             "Copy file name to clipboard": "复制文件名到剪切板",
+
+            "There are no files selected for viewing": "没有更改",
             
             // 右侧
             "Top": "顶部",
