@@ -151,6 +151,9 @@ I18N.conf = {
             'div.js-blob-code-container', // 代码框
             'table.js-diff-table', // 代码差异
         ],
+        'search': [
+            'span.search-match', // 仓库名称
+        ],
         '*': [
             '.js-comment-body', '.js-preview-body',
             '.markdown-title',
@@ -319,6 +322,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Discover gists · GitHub": "探索代码片段 · GitHub",
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
         "Actions Usage Metrics": "操作使用情况",
+        "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -593,6 +597,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Command Palette": "命令面板",
                     "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
                     "To open the command palette:": "打开命令面板：",
+                "Copilot Immersive Enhancements": "Copilot 沉浸式增强",
+                    // 在 GitHub Copilot 上的 Copilot Chat 沉浸式模式中探索增强的体验。该测试版在专用聊天界面中引入了改进的互动和更智能的建议，专为专注、深入的对话而设计。
+                    "Discover an enhanced experience in the immersive mode of Copilot Chat, available at": "在",
+                    ". This beta introduces improved interaction and smarter suggestions within a dedicated chat interface designed for focused, in-depth conversations.": "上的 Copilot 沉浸聊天模式中探索增强的体验。该测试版在专用聊天界面中引入了改进的互动和更智能的建议，专为专注、深入的对话而设计。",
                 "New Commit Details Page": "新提交详情页",
                     "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交详细信息页面可让您快速了解和浏览提交中的更改。改进了过滤、注释（文件树中新增了浮动注释和注释计数）、键盘导航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
@@ -1277,7 +1285,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "启用双因素身份验证（2FA）作为额外安全措施。您在 GitHub 上的活动让您接收到此要求。您将需要在 $1 前启用双因素身份验证，否则会被限制账户操作。"],
     ],
     "time-regexp": [ // 时间正则翻译专项
-        [/on /, ""],
+        [/on /, " "],
     ],
 };
 
@@ -1483,6 +1491,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "organization news feed": "组织的新闻提要", // 组织
 
         //主页上仓库3个点
+        "Feed item options": "推送选项",
         "You're seeing this because of your activity.": "您看到这个是因为您的活动。",
         "Show less activity like this": "显示较少这类活动",
         // [/You're seeing this because you collaborated with ([^ ]+)/, "您看到这个是因为您与 $1 有过合作"],
@@ -5517,6 +5526,9 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
                 "Loading expiration ...": "载入有效期 ……",
                 "This token has expired.": "此令牌已过期。",
                     "To set a new expiration date, you must regenerate the token.": "要设置新的有效期，您必须重新生成令牌。",
+                
+                "No fine-grained tokens created": "没有创建精细化的个人访问令牌",
+                    "Need an API token for scripts or testing? Generate a personal access token for quick access to the GitHub API.": "需要用于脚本或测试的 API 令牌？生成个人访问令牌，快速访问 GitHub API。",
 
             // 顶部提醒
                 "Deleted personal access token": "已删除个人访问令牌",
@@ -5862,7 +5874,33 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
 
     },
     "regexp": [ // 正则翻译
-        [/The token will expire/, "该令牌有效期至"],
+        [/The token will expire on ([^ ]+), ([^ ]+) (\d+) (\d+)/, function(all, week, month, day, year){
+            var weekKey = {
+                "Sun"  : "周日",
+                "Mon"  : "周一",
+                "Tue"  : "周二",
+                "Wed"  : "周三",
+                "Thu"  : "周四",
+                "Fri"  : "周五",
+                "Sat"  : "周六"
+            };
+            var monthKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月"
+            };
+
+            return '该令牌有效期至' + year + '年' + monthKey[month] + day + '日，' + weekKey[week];
+        }],
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
@@ -9056,6 +9094,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "s": " ",
                 "changed": "更改",
             
+            "Collapse file tree": "收起文件树",
+            "Expand file tree": "展开文件树",
             "Copy file name to clipboard": "复制文件名到剪切板",
             
             // 右侧
@@ -9078,9 +9118,14 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
             // 底部评论
             "Comments": "评论",
+            "edited by": "编辑者",
+            "Edits": "编辑",
+                "Most recent": "最近",
+                "Deleted": "已删除",
             "Lock": "锁定",
                 "conversation": "对话",
                 "Off-topic": "偏离主题",
+            "Load more comments": "加载更多评论",
             "Reference in a new issue": "在新议题中提及",
             "Add files": "添加文件",
             "You're not receiving notifications from this thread.": "您没有收到来自此主题的通知。",
@@ -9109,6 +9154,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/View checks?/, "查看检查"], // Android UA
         [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
         [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
+        [/expand all lines: ([^ ]+)/, "展开全部： $1"],
     ],
 };
 
@@ -10275,6 +10321,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/Process completed with exit code (\d+)/, "进程已结束，退出代码为 $1"],
         [/([^ ]+) value is not set/, "$1 值未设置"],
         [/([^ ]+) summary/, "$1 摘要"],
+        [/By ([^ ]+)/, "创建：$1"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
@@ -12741,7 +12788,8 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
-                "Code security": "代码安全性",
+            "Code security": "代码安全性",
+                "Code security and analysis": "代码安全性与分析",
                 "Deploy keys": "部署密钥",
                 "Secrets and variables": "机密和变量",
 
@@ -14811,6 +14859,12 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代
                         "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
                         "Explore workflows": "探索工作流程",
 
+                    "Copilot Autofix": "Copilot 自动修复",
+                        "Suggest fixes for CodeQL alerts using AI. CodeQL default or advanced setup must be enabled for this feature to work. Learn more about the": "使用 AI 为 CodeQL 警报提出修复建议。必须启用 CodeQL 默认设置或高级设置才能使用此功能。了解更多关于",
+                        "limitations of autofix code suggestions": "自动修复代码建议限制的信息",
+                        "On": "开",
+                        "Off": "关",
+
                 "Protection rules": "保护规则",
                     "Pull request check failure": "拉取请求检查失败",
                         "Define which code scanning alert severity should cause a pull request check to fail. This also applies to analysis results uploaded via the API.": "定义哪种代码扫描警报严重程度会导致拉取请求检查失败。这也适用于通过 API 上传的分析结果。",
@@ -14966,7 +15020,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
 
         // 操作变量 /<user-name>/<repo-name>/settings/variables/actions
             "Environment variables": "环境变量",
-                "This repository has no environment variables.": "此仓库尚无环境变量。",
+                "This environment has no variables.": "此环境尚无变量。",
                 "Manage environment variables": "管理环境变量",
 
                 "Environment": "环境",
