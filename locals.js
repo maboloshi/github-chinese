@@ -5905,7 +5905,7 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
 };
 I18N["zh-CN"]["settings/personal-access-tokens"] = I18N["zh-CN"]["settings/tokens"];
 
-I18N.zh["issues_pulls_public"] = { // [整体/仓库]的[议题和/或拉取请求 列表]页面的公共部分
+I18N["zh-CN"]["issues_pulls_public"] = { // [整体/仓库]的[议题和/或拉取请求 列表]页面的公共部分
     "static": { // 静态翻译
         // 排序按钮
         "Sort": "排序",
@@ -7149,7 +7149,7 @@ I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
 
 I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
-        ...I18N.zh["issues_pulls_public"]["static"],
+        ...I18N["zh-CN"]["issues_pulls_public"]["static"],
 
         // pull 与 request 公共词条
             "Filters": "筛选",
@@ -16219,7 +16219,7 @@ I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
 
 I18N["zh-CN"]["issues"] = { // 议题页面
     "static": { // 静态翻译
-        ...I18N.zh["issues_pulls_public"]["static"],
+        ...I18N["zh-CN"]["issues_pulls_public"]["static"],
 
         "Pull Requests": "拉取请求", // pulls
 
@@ -16282,7 +16282,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                     "and click": "和点击",
     },
     "regexp": [ // 正则翻译
-        ...I18N.zh["issues_pulls_public"]["regexp"],
+        ...I18N["zh-CN"]["issues_pulls_public"]["regexp"],
     ],
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
