@@ -293,9 +293,9 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "General Organization Settings": "常规组织设置",
         "Member privileges": "成员权限",
         "Teams": "团队",
-        "Trending  repositories on GitHub today": "今日热门仓库",
-        "Trending  repositories on GitHub this week": "本周热门仓库",
-        "Trending  repositories on GitHub this month": "本月热门仓库",
+        "Trending repositories on GitHub today": "今日热门仓库",
+        "Trending repositories on GitHub this week": "本周热门仓库",
+        "Trending repositories on GitHub this month": "本月热门仓库",
         "Repository defaults": "仓库默认值",
         "Repository search results": "仓库搜索结果",
         "Runners": "运行器",
@@ -397,7 +397,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
         //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
-        [/([^ ]+) repositories/, "$1 的仓库"],
+        [/([^ ]+) repositories^/, "$1 的仓库"],
         [/Create new page · ([^ ]+) Wiki/, "新建页面 · $1 的 Wiki"],
         ["_regexp_end", "end"]
     ],
@@ -10704,6 +10704,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
 
         // wiki 页面  /<user-name>/<repo-name>/wiki
             // [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 Wiki"], // wiki页面
+            "You do not have permission to update this wiki.": "您无权更新此 wiki。",
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "Wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
 
@@ -17251,9 +17252,9 @@ I18N["zh-CN"]["trending"] = { // 热门页面
 
     },
     "regexp": [ // 正则翻译
-        [/([\d,]+) stars today?/, "今日 $1 星标"],
-        [/([\d,]+) stars this week?/, "本周 $1 星标"],
-        [/([\d,]+) stars this month?/, "本月 $1 星标"],
+        [/([\d,]+) stars? today/, "今日 $1 星标"],
+        [/([\d,]+) stars? this week/, "本周 $1 星标"],
+        [/([\d,]+) stars? this month/, "本月 $1 星标"],
     ],
 };
 
