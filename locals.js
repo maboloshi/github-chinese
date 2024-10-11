@@ -396,7 +396,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/([^ ]+)’s gists/, "$1 的代码片段"],
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
-        //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
+        [/Contributors to ([^ ]+)/, "贡献者 · $1"],
         [/([^ ]+) repositories^/, "$1 的仓库"],
         [/Create new page · ([^ ]+) Wiki/, "新建页面 · $1 的 Wiki"],
         ["_regexp_end", "end"]
