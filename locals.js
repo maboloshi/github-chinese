@@ -5905,6 +5905,95 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
 };
 I18N["zh-CN"]["settings/personal-access-tokens"] = I18N["zh-CN"]["settings/tokens"];
 
+I18N["zh-CN"]["issues_pulls_public"] = { // [整体/仓库]的[议题和/或拉取请求 列表]页面的公共部分
+    "static": { // 静态翻译
+        // 排序按钮
+        "Sort": "排序",
+            "Sort by": "排序方式",
+            "Newest": "最新",
+            "Oldest": "最早",
+            "Most commented": "最多评论",
+            "Least commented": "最少评论",
+            "Recently updated": "最近更新",
+            "Least recently updated": "最早更新",
+            "Best match": "最佳匹配",
+            "Most reactions": "反应最多",
+
+        // 筛选
+        "Search all issues": "搜索所有议题和/或拉取请求",
+        "No results matched your search.": "没有与您的搜索匹配的结果。",
+        "You could search": "您可以搜索",
+        "all of GitHub": "整个 GitHub",
+        "or try an": "或者尝试",
+        "advanced search": "高级搜索",
+
+        // 悬停提示
+        "Open issue": "打开的议题",
+        "Closed issue": "已关闭的议题",
+        "Closed as not planned issue": "已（因计划外）关闭的议题",
+        "Open Pull Request": "打开的拉取请求",
+        "Draft Pull Request": "拉取请求草案",
+        "Merged Pull Request": "已合并的拉取请求",
+        "Closed Pull Request": "已关闭的拉取请求",
+
+        // 条目的状态词
+        "was closed": "关闭于",
+        "updated": "更新于",  // 排序方式：更新
+        // 拉取请求列表特有
+        "was merged": "合并于",
+        "Approved": "已被批准",
+        "Review required": "需要审查",  // 审查状态，同时在拉取请求列表和某个条目中出现
+            "Review required before merging": "合并前需要审查",
+        "Changes requested": "请求更改",  // 审查状态，同时在拉取请求列表和某个条目中出现
+        "Draft": "草案",
+
+        // 专业提示！
+        "ProTip!": "专业提示！",
+            "Adding": "加上",
+                "will show everything without a label.": "会显示所有不带标签的议题和/或拉取请求。",
+            "Exclude everything labeled": "要排除所有带",
+                "with": "标签的议题和/或拉取请求，请使用",
+            "Follow long discussions with": "要跟进长讨论，请使用",
+            "Exclude your own issues with": "要排除您自己的议题和/或拉取请求，请使用",
+            "Updated in the last three days:": "在最近三天内更新的议题和/或拉取请求：",
+            "to see everything that’s not assigned.": "可以查看所有无人受理的议题和/或拉取请求。",
+            "Find everything you created by searching": "要查找您创建的所有议题和/或拉取请求，请使用",
+            "will show everything without a milestone.": "会显示所有不带里程碑的议题和/或拉取请求。",
+            "Filter pull requests by the default branch with": "要筛选默认分支的拉取请求，请使用",
+            "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的内容。",
+            "Click a checkbox on the left to edit multiple issues at once.": "单击左边复选框，可以一次编辑多个议题和/或拉取请求。",
+            "Find all open issues with in progress development work with": "要找到链接了未完成进展的所有打开的议题，请使用",
+            "Find all pull requests that aren't related to any open issues with": "要找到未链接打开的议题的所有拉取请求，请使用",
+            "on any issue or pull request to go back to the issue listing page.": "来返回议题列表页面，任意议题或拉取请求页面皆可。",
+            "on any issue or pull request to go back to the pull request listing page.": "来返回拉取请求列表页面，任意议题或拉取请求页面皆可。",
+
+    },
+    "regexp": [ // 正则翻译
+        [/(\d+) Open/, "$1 打开"],
+        [/(\d+) Closed/, "$1 已关闭"],
+        [/(\d+) tasks? done/, "$1 个任务完成"],
+        [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
+        [/(\d+) tasks?/, "$1 个任务"],
+        [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
+        [/#(\d+) opened/, "#$1 打开于"],
+        [/#(\d+) by/, "#$1 打开者"],
+
+        // 悬停提示
+        [/Open pull requests created by ([^ ]+)/, "由 $1 创建的打开的拉取请求"],  // 打开的拉取请求条目的用户名
+        [/pull requests opened by ([^ ]+)/, "由 $1 打开的拉取请求"],  // 关闭的拉取请求条目的用户名
+        [/(\d+) linked issues?/, "$1 个关联的议题"],  // 拉取请求条目的受理人头像左边
+        [/([\d,]+) linked pull requests?/, "$1 个关联的拉取请求"],  // 拉取请求条目的受理人头像左边
+        [/Assigned to ([^ ]+)/, "分配给 $1"],  // 拉取请求条目的受理人头像
+        [/(\d+) review approvals?/, "$1 个审查批准"],  // “已批准”
+        [/(\d+) reviews? requesting changes?/, "$1 个请求更改的审查"],  // “请求更改”
+
+        // 专业提示
+        [/What’s not been updated (\d+) ([^ ]+):/, "要找到未在最近 $1 $2 更新的议题和/或拉取请求，请使用"],
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个议题和/或拉取请求上提及某人来通知他，像这样：@$1。"],
+        [/Ears burning\? Get ([^ ]+) mentions with/, "耳朵发烫（俚语，感到有人在背后议论自己）？要找到哪些议题和/或拉取请求里有人提及 $1，请使用"],
+    ],
+};
+
 // 仓库相关==
 I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
     "static": { // 静态翻译
@@ -7060,6 +7149,8 @@ I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
 
 I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
+        ...I18N["zh-CN"]["issues_pulls_public"]["static"],
+
         // pull 与 request 公共词条
             "Filters": "筛选",
                 // 筛选下拉菜单
@@ -7111,17 +7202,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 // [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
                 "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
 
-            "Sort": "排序",
-                "Sort by": "排序",
-                "Newest": "最新的",
-                "Oldest": "最早的",
-                "Most commented": "最多评论",
-                "Least commented": "最少评论",
-                "Recently updated": "最近更新",
-                "Least recently updated": "最早更新", //?
-                "Most reactions": "多数反应",
-                "Best match": "最佳匹配",
-
             // 选中模式
                 "selected": "选中",
                 "Mark as": "标记为",
@@ -7130,21 +7210,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     "Assign someone": "分配给某人",
                     "Assign to nobody": "分配给任何人",
 
-            // 筛选结果
-            "No results matched your search.": "没有与您的搜索匹配的结果。",
-            "You could search": "您可以搜索",
-            "all of GitHub": "所有 GitHub",
-            "or try an": "或者尝试",
-            "advanced search": "高级搜索",
-
-            // 状态词
-            "was merged": "合并于",
-            "was closed": "关闭于",
-            "closed this": "关闭了这个",
-            "reopened this": "重新打开了这个",
-            "Approved": "已批准",
-            "Review required": "需要审查", // 拉取请求 页面状态词
-                "Review required before merging": "合并前需要审查",
+            // 状态词  // TODO: 这些是列表的还是某个的？
             "outdated": "陈旧的",
             "Pending": "待定",
             "Draft": "草案",
@@ -7366,26 +7432,12 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 ". Already have an account?": "。已经有账户？",
                 "Sign in to comment": "登录后发表评论",
 
-            // 专业提示
-                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
-                "Updated in the last three days:": "显示最近3天更新：",
-                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
-                "Adding": "添加",
-                "will show everything without a label.": "将显示所有无标签内容。",
-                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
-                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
-
     },
     "regexp": [ // 正则翻译
-        // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
-        [/(\d+) linked issues?/, "链接 $1 个议题"],
-        [/Assigned to (.*)/, "分配给 $1"],
-        [/Edited (\d+) times?/, "编辑 $1 次"],
-        [/Open issues created by ([^ ]+)/, "$1 创建议题"],
-        [/issues opened by ([^ ]+)/, "$1 打开议题"],
-        [/Open pull requests created by ([^ ]+)/, "$1 创建拉取请求"],
-        [/pull requests opened by ([^ ]+)/, "$1 打开拉取请求"],
-        [/(\d+) hidden conversations/, "$1 条隐藏对话"],
+        ...I18N["zh-CN"]["issues_pulls_public"]["regexp"],
+        [/(\d+) hidden items?/, "$1 个隐藏项"],  // 自议题页面移动至此公共部分  // TODO: item 的翻译：项/项目/条目？
+        [/(\d+) hidden conversations?/, "$1 个隐藏对话"],
+        [/Edited (\d+) times?/, "编辑 $1 次"],  // TODO: 这些在哪里
     ]
 };
 
@@ -7439,13 +7491,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             // 置顶议题
             "Pinned issues": "置顶议题",
-
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -7746,27 +7791,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
 
         [/Want to contribute to ([^ ]+)\?/, "想为 $1 做贡献？"],
-        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
-        [/([\d,]+) Open/, "$1 打开"],
-        [/([\d,]+) Closed/, "$1 已关闭"],
-        [/(#\d+) opened/, "$1 打开于"],
-        [/(#\d+) by/, "$1 打开者"],
-        [/(\d+) linked pull requests?/, "链接 $1 个拉取请求"],
-        [/([\d,]+) linked issues?/, "$1 个关联议题"],
-        [/(\d+) tasks? done/, "$1 个任务完成"],
-        [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
-        [/(\d+) tasks?/, "$1 个任务"],
-        [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
+        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 完成被请求的审查"],  // 或者直接 “正在等待 $1 [完成]审查”
 
         // 具体某条议题 /<user-name>/<repo-name>/issues/<id>
         [/· ([\d,]+) comments?/, "• $1 条评论"],
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/(\d+) similar comments?/, "$1 条类似评论"],
-        [/(\d+) hidden items?/, "$1 条隐藏项目"],
-        [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
-        [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
+        [/added a commit to ([^ ]+) that referenced this issue/, "向 $1 添加了一个引用这个议题的提交"],
+        [/pushed a commit to ([^ ]+) that referenced this issue/, "向 $1 推送了一个引用此议题的提交"],
+        [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],  // TODO: 研究怎么看到这句，再研究 reference 的翻译
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
@@ -7828,19 +7862,6 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
 
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
-                "Follow long discussions with": "要跟随长讨论，请使用",
-                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
-                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
-                "to see everything that’s not assigned.": "查看所有未分配的内容。",
-                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
-                "Add comments to specific lines under": "为以下特定行添加注释于",
-
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
                 "You commented on this pull request": "您对此拉取请求发表了评论",
@@ -7862,11 +7883,8 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
-        [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
-        [/Ears burning\? Get\@([^ ]+) mentions with/, "烧脑吗？使用 @$1 提及"], // 专业提示
-        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "通知某人在议题上使用提及，例如：@$1"],
     ],
 };
 
@@ -7876,6 +7894,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 专业提示！
+                "Add comments to specific lines under": "要给特定的行发表评论，请进入",
+                "to the end of URLs for Git’s plaintext views.": "到 URL 的末尾，可以查看 Git 的纯文本视图。",
+
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
@@ -8518,14 +8540,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
-        
-        // 新版拉取请求提交页面
-            "authored and": "撰写和",
-            "Browse repository at this point": "查看此时间点的仓库",
-
-        "ProTip!": "专业提示！",
-            "to the end of URLs for Git’s plaintext views": "到 Git 纯文本视图的 URL 结尾。",
-
+            
     },
     "regexp": [ // 正则翻译
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
@@ -8561,10 +8576,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Copy full SHA for ([^ ]+)/, "复制 $1 完整的 SHA"], // Android UA ? 提交卡
         [/View checks?/, "查看检查"], // Android UA ?
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
-        [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
-        [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-        [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
-        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
+        [/([^ ]+) approved these changes?/, "$1 批准了这些更改"],
+        [/Request review from ([^ ]+)/, "请求 $1 审查"],
+        [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写入权限的用户可以将新提交添加到"],
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 个批准审查才能合并此拉取请求。"],
         [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"],
         [/(\d+) pending reviewers?/, "$1 名待审者"],
         [/([\d,]+) participants?/, "$1 位参与者"],
@@ -8587,23 +8602,32 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) skipped, (\d+) successful, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个预先检查"],
         [/(\d+) skipped, (\d+) successful, (\d+) queue, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个排队, $4 个预先检查"],
         [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
-        [/(\d+) neutral checks?/, "$1 次中立检查"],
-        [/(\d+) successful checks?/, "$1 次成功检查"],
+        [/(\d+) neutral checks?/, "$1 个中立检查"],
+        [/(\d+) successful checks?/, "$1 个成功检查"],
         [/(\d+) of (\d+) checks? passed/, "$1/$2 次检查通过"],
-        [/(\d+) checks? passed/, "$1 次检查通过"],
+        [/(\d+) checks? passed/, "$1 个检查通过"],
 
-        [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
-        [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
-        [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
-        [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将合并到基本分支中。"], // 合并拉取请求 按钮下拉
-        [/The (\d+) commits? from this branch will be combined into one commit in the base branch./, "该分支的 $1 个提交将合并到基础分支中。"], // 合并拉取请求 按钮下拉
-        [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将变基合并到基础分支中。"], // 合并拉取请求 按钮下拉
-        [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
-        [/(\d+) commits?/, "$1 条提交"],
-        [/All (\d+) file types? selected/, "所有 $1 种文件类型被选中"], // 文件筛选
+        // 合并按钮
+        [/The (\d+) commits? from this branch will be added to the base branch./, "该分支的 $1 个提交将被添加到基础分支中。"],
+        [/The (\d+) commits? from this branch will be combined into one commit in the base branch./, "该分支的 $1 个提交将被结合为基础分支中的单一提交。"],
+        [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 个提交将被变基并添加到基础分支中。"],
+
+        // 对话 标签卡 - 右侧栏
+        [/([\d,]+) participants?/, "$1 位参与者"],
+        [/Awaiting requested review from ([^ ]+)/, "等待 $1 给出所请求的审查"],
+
+        // 提交 标签卡
+        // [/Commits (.+)/, "提交于 $1"],
+
+        // 更改的文件 标签卡
+        [/(\d+) commits?/, "$1 个提交"],
+        // 文件筛选
+        [/All (\d+) file types? selected/, "已选中所有 $1 种文件类型"],
         [/Select all (\d+) file types?/, "选择所有 $1 种文件类型"],
-        [/Unresolved conversations/, "未解决的讨论"],
-        [/Resolved conversations/, "已解决的讨论"],
+        // 对话
+        [/Unresolved conversations/, "未解决的对话"],
+        [/Resolved conversations/, "已解决的对话"],
+
         // [/Commits (.+)/, "提交于 $1"], // 提交标签卡
         [/(#\d+) will be closed when this pull request is merged/, "$1 将在该拉取请求合并时关闭"],
         // 代码空间
@@ -8612,26 +8636,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
         [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
         [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
-        [/(\d+) conflicting files?/, "$1 个冲突文件"], //conflicts
-        [/(\d+) conflicts?/, "$1 处冲突"],  //conflicts
-        [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"], // 具体的拉取请求
-        [/([^ ]+) is a code owner/, "$1 是代码所有者"], // 具体的拉取请求
-        [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
-        [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
-        [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
-        [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
-        [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
-        [/I understand, sign off and update/, "我明白了，依然签署并更新"],
-        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
-        [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
-        [/(\d+) hidden items?/, "$1 条隐藏项目"],
-        [/([^ ]+) requested changes/, "$1 要求更改"],
-        [/(\d+) active deployments?/, "$1 个活动的部署"],
-
-        // 解决冲突编辑器（似乎又是 F12 才会翻译）
-        [/Search:/, "搜索："],
-        [/\(Use \/re\/ syntax for regexp search\)/, "(使用 /re/ 进行正则搜索)"],
     ],
     "selector": [ // 元素筛选器规则
         ["span[data-message='Review changes']", "审查更改"], // 拉取请求 --> 更改的文件
@@ -16215,13 +16219,15 @@ I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
 
 I18N["zh-CN"]["issues"] = { // 议题页面
     "static": { // 静态翻译
+        ...I18N["zh-CN"]["issues_pulls_public"]["static"],
+
         "Pull Requests": "拉取请求", // pulls
 
         "Created": "已创建",
         "Assigned": "已分配",
         "Mentioned": "提到的",
-            "Issues mentioning you": "提及您的议题",
-            "Pull Requests mentioning you": "提及您的拉取请求", // pulls
+            "Issues mentioning you": "提及您的议题和/或拉取请求",
+            "Pull Requests mentioning you": "提及您的议题和/或拉取请求",
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
 
@@ -16234,47 +16240,13 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Filter by organization or owner": "按组织或所有者筛选",
         "Filter organizations": "筛选组织",
 
-        "Sort": "排序",
-        "Sort by": "排序方式",
-        "Newest": "最新的",
-        "Oldest": "最早的",
-        "Most commented": "最多评论",
-        "Least commented": "最少评论",
-        "Recently updated": "最近更新",
-        "Least recently updated": "最早更新",
-        "Best match": "最佳匹配",
-        "Most reactions": "最多回应",
-
-        // 状态词
-        "was merged": "已合并",
-        "was closed": "已关闭",
-        "Approved": "已批准",
-        "Review required": "需要审查", // 拉取请求 页面状态词
-            "Review required before merging": "合并前需要审查",
-        "Changes requested": "已请求更改",
+        // 状态词  // TODO: 这个在哪里啊
         "outdated": "陈旧的",
-        "Draft": "草案",
-
-        "This issue was": "此议题已",
-            "closed": "关闭",
-
-        // "No results matched your search.": "没有符合您的搜索结果。",
-        // 筛选结果
-        "No results matched your search.": "没有与您的搜索匹配的结果。",
-        "You could search": "您可以搜索",
-        "all of GitHub": "所有 GitHub",
-        "or try an": "或者尝试",
-        "advanced search": "高级搜索",
 
         // "Use the links above to find what you’re looking for, or try": "使用上面的链接找到您要找的内容，或尝试",
         // "a new search query": "新的搜索查询",
         // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。筛选菜单也是快速找到议题最相关的您超级有帮助的。",
         // "Updated in the last three days": "更新了最后三天：",
-        "ProTip!": "专业提示！",
-            "Exclude your own issues with": "排除自己的问题",
-            "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
-            "Exclude everything labeled": "如果要找到所有标有",
-            "with": "标签的，请使用",
 
         // 键盘快捷键
             "Pull request list"  : "拉取请求列表",
@@ -16310,21 +16282,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                     "and click": "和点击",
     },
     "regexp": [ // 正则翻译
-        [/(\d+) Open/, "$1 打开"],
-        [/(\d+) Closed/, "$1 已关闭"],
-        [/(\d+) tasks? done/, "$1 个任务完成"],
-        [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
-        [/(\d+) tasks?/, "$1 个任务"],
-        [/(\d+) review approvals?/, "$1 次审查批准"],// 拉取请求页 "已批准' 浮动提示
-        [/(\d+) review requesting changes?/, "$1 条请求更改评论"],
-        [/([\d,]+) linked issues?/, "$1 个关联议题"],
-        [/([\d,]+) linked pull requests?/, "$1 个关联拉取请求"],
-        [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 检查 OK"], // 对勾 的提醒 /pulls
-        [/Assigned to ([^ ]+)/, "分配给 $1"],
-        // [/Updated/, "更新于"],
-        [/#(\d+) opened/, "#$1 打开于"],
-        [/#(\d+) by/, "#$1 打开者"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        ...I18N["zh-CN"]["issues_pulls_public"]["regexp"],
     ],
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
