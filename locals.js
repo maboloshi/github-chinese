@@ -8452,6 +8452,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
+            
+            // 未更改文件检查注释(GA 检查)
+                "Unchanged files with check annotations": "带检查注释的未更改文件",
+                    "View workflow job for this annotation": "查看此注释的工作流程作业",
 
             // 代码评论
                 "Comment on lines": "评论行",
@@ -8630,6 +8634,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/([^ ]+) requested changes/, "$1 要求更改"],
         [/(\d+) active deployments?/, "$1 个活动的部署"],
+        [/Check failure on line (\d+)/, "第 $1 行检查失败："],
 
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
