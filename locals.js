@@ -9086,7 +9086,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "More actions": "更多操作",
             // 具体某条提交
             "authored and": "撰写和",
-            "authored": "撰写",
+            "authored": "撰写于",
 
             // 左侧文件管理器
             "Filter files…": "筛选文件...",
