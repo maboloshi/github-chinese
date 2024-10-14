@@ -324,6 +324,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Actions Usage Metrics": "操作使用情况",
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
         "Import repository": "导入仓库",
+        "Explore GitHub": "探索 GitHub",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -1911,6 +1912,10 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
 
             return '- ' + compareKey[compare] + num + '小时';
         }],
+        // 成就
+        [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
+        [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
+        [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
     ],
 };
 I18N["zh-CN"]["page-profile/overview"] = I18N["zh-CN"]["page-profile"];
