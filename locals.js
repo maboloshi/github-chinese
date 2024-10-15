@@ -3586,6 +3586,7 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
         [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
         [/Delete ([^@]+@[^\n]+)/, "删除 $1"],
+        [/Error adding ([^@]+@[^:]+): email is already in use/, "$1 的邮箱已经在使用中"],
     ],
 };
 
@@ -3907,6 +3908,7 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             // 顶部提醒
             "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
             "We got an error doing that.": "我们在这样做时出错了。",
+            "We got an error adding your GPG key. Please verify the input is a valid GPG key.": "添加您的 GPG 密钥时出错。请确认输入的是有效的 GPG 密钥。",
 
     },
     "regexp": [ // 正则翻译
@@ -8025,6 +8027,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Files changed": "更改的文件",
                 "No changes to show.": "无更改显示。", // 删除复刻仓库的提交时出现
                 "This commit has no content.": "该提交无内容。", // 同上
+              "authored": "撰写于",
 
             // 右侧栏 补充
 
@@ -8542,6 +8545,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
+
+        // 提交时展开收缩的描述
+        [/Show description for ([a-f0-9]{7})/, "显示提交 $1 的描述"],
+        [/Hide description for ([a-f0-9]{7})/, "隐藏提交 $1 的描述"],
         
         // 新版 PR 提交页
         [/wants to merge (\d+) commits? into/, "希望合并 $1 条提交到"],
