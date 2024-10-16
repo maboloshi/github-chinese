@@ -324,6 +324,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Actions Usage Metrics": "操作使用情况",
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
         "Import repository": "导入仓库",
+        "Explore GitHub": "探索 GitHub",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -337,7 +338,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/starred repositories/, "星标仓库"],
         [/starred topics/, "星标主题"],
         [/starred/, "星标"],
-        [/Commits/, "提交"],
+        [/Commits · ([^ ]+)/, "提交 · $1"],
         [/New Issue/, "新建议题"],
         [/Issues?/, "议题"],
         [/Pull (R|r)equests?/, "拉取请求"],
@@ -399,6 +400,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Contributors to ([^ ]+)/, "贡献者 · $1"],
         [/([^ ]+) repositories^/, "$1 的仓库"],
         [/Create new page · ([^ ]+) Wiki/, "新建页面 · $1 的 Wiki"],
+        [/Branches · ([^ ]+)/, "分支 · $1"],
         ["_regexp_end", "end"]
     ],
 };
@@ -1911,6 +1913,10 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
 
             return '- ' + compareKey[compare] + num + '小时';
         }],
+        // 成就
+        [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
+        [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
+        [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
     ],
 };
 I18N["zh-CN"]["page-profile/overview"] = I18N["zh-CN"]["page-profile"];
@@ -8103,6 +8109,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "label": "标签",
             "closed this": "已关闭",
             "reopened this": "已重新打开",
+            "closed this by deleting the head repository": "已关闭因仓库已删除",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -10576,6 +10583,11 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                 "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在对没有写入权限的项目进行更改。提交更改会将其写入您的复刻",
                 ", so you can send a pull request.": " 中的新分支，这样您就可以发送拉取请求。",
 
+            // 复刻仓库过旧
+                "Sorry, it looks like your fork is outdated!": "抱歉，您的复刻好像过时了！",
+                "You’ll have to bring it up to date before you can propose changes.": "在提出修改意见之前，您必须对其进行更新。",
+                "Update your fork": "更新您的复刻",
+
             // 组织仓库 编辑文件页面
                 "You’re making changes in a project you don’t have write access to. We’ve": "您正在对没有写入权限的项目进行更改。我们已经",
                 "created a fork of this project": "为该项目创建复刻",
@@ -12575,7 +12587,7 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
-        [/Detected automatically/, "自动检测于"],
+        [/Detected automatically on (.+)/, "自动检测于$1"],
         [/(\d+) Total/, "$1 总计"],
         [/(\d+) vulnerabilities? found/, "发现 $1 个漏洞"],
         [/(\d+) more dependencies/, "更多 $1 个依赖项"],
