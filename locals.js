@@ -338,7 +338,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/starred repositories/, "星标仓库"],
         [/starred topics/, "星标主题"],
         [/starred/, "星标"],
-        [/Commits/, "提交"],
+        [/Commits · ([^ ]+)/, "提交 · $1"],
         [/New Issue/, "新建议题"],
         [/Issues?/, "议题"],
         [/Pull (R|r)equests?/, "拉取请求"],
