@@ -10686,10 +10686,10 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
 
     },
     "regexp": [ // 正则翻译
-        ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/on this commit as/,"该提交以"],
         [/Commit changes?/, "提交更改"], // 提交对话框
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
+        ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
 I18N["zh-CN"]["repository/edit"] = I18N["zh-CN"]["repository/new"];
@@ -10979,6 +10979,10 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
                     "Create new branch": "创建新分支",
 
                 "Search branches...": "搜索分支...",
+
+                // 无匹配结果
+                    "No branches": "没有分支",
+                    "No branches match the search": "没有符合搜索条件的分支",
 
                 "Check status": "检查状态",
                 "Behind": "落后",
