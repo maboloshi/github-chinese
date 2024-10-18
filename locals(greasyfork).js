@@ -45,7 +45,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|dashboard|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/signup|codespaces|developer\/register|features|security)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/usage)?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties)/,
@@ -293,9 +293,9 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "General Organization Settings": "常规组织设置",
         "Member privileges": "成员权限",
         "Teams": "团队",
-        "Trending  repositories on GitHub today": "今日热门仓库",
-        "Trending  repositories on GitHub this week": "本周热门仓库",
-        "Trending  repositories on GitHub this month": "本月热门仓库",
+        "Trending repositories on GitHub today": "今日热门仓库",
+        "Trending repositories on GitHub this week": "本周热门仓库",
+        "Trending repositories on GitHub this month": "本月热门仓库",
         "Repository defaults": "仓库默认值",
         "Repository search results": "仓库搜索结果",
         "Runners": "运行器",
@@ -323,6 +323,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
         "Actions Usage Metrics": "操作使用情况",
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
+        "Import repository": "导入仓库",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -395,8 +396,8 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/([^ ]+)’s gists/, "$1 的代码片段"],
         [/Secret scanning · ([^ ]+)/, "机密扫描 · $1"],
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 机密 · $1"],
-        //[/Contributors to ([^ ]+)\/([^ ]+)/, "贡献者 · $1/$2"],
-        [/([^ ]+) repositories/, "$1 的仓库"],
+        [/Contributors to ([^ ]+)/, "贡献者 · $1"],
+        [/([^ ]+) repositories^/, "$1 的仓库"],
         [/Create new page · ([^ ]+) Wiki/, "新建页面 · $1 的 Wiki"],
         ["_regexp_end", "end"]
     ],
@@ -6353,6 +6354,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 导入仓库 第二页 /<user-name>/<repo-name>/import
             "Preparing your new repository": "准备您的新仓库",
                 "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
+                "There is no need to keep this window open. We'll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
             "Detecting your project’s version control system…": "正在检测项目的版本控制系统…",
             "Importing commits and revision history…": "导入提交和修订历史…",
             // [/Updating branches and (\d) commit authors?…/, "更新分支和 $1 个提交者…"],
@@ -6595,9 +6597,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
 
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
-                        "Launching Github Desktop": "Github Desktop 启动中",
+                        "Launching GitHub Desktop": "GitHub Desktop 启动中",
                             "If nothing happens,": "如果没有响应",
-                            "download Github Desktop": "下载 Github Desktop",
+                            "download GitHub Desktop": "下载 GitHub Desktop",
                             "and try again.": "并重试",
                     "Open with Visual Studio": "在 Visual Studio 中打开",
                     "Download ZIP": "下载 ZIP 压缩包",
@@ -6674,7 +6676,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                             "Checking branch status": "检查分支情况",
                             "Create branch": "创建分支",
                         "Export changes to a fork": "将更改导出到复刻",
-                            "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的存储库的写访问权限。这将创建一个新的存储库分支在",
+                            "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的仓库的写访问权限。这将创建一个新的仓库分支在",
                             ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
                             "Create fork": "创建复刻",
                         "Change machine type": "修改机器类型",
@@ -8450,6 +8452,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
+            
+            // 未更改文件检查注释(GA 检查)
+                "Unchanged files with check annotations": "带检查注释的未更改文件",
+                    "View workflow job for this annotation": "查看此注释的工作流程作业",
 
             // 代码评论
                 "Comment on lines": "评论行",
@@ -8628,6 +8634,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/([^ ]+) requested changes/, "$1 要求更改"],
         [/(\d+) active deployments?/, "$1 个活动的部署"],
+        [/Check failure on line (\d+)/, "第 $1 行检查失败："],
 
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
@@ -9079,6 +9086,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "More actions": "更多操作",
             // 具体某条提交
             "authored and": "撰写和",
+            "authored": "撰写于",
 
             // 左侧文件管理器
             "Filter files…": "筛选文件...",
@@ -9093,6 +9101,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Collapse file tree": "收起文件树",
             "Expand file tree": "展开文件树",
             "Copy file name to clipboard": "复制文件名到剪切板",
+
+            "There are no files selected for viewing": "没有更改",
             
             // 右侧
             "Top": "顶部",
@@ -10699,6 +10709,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
 
         // wiki 页面  /<user-name>/<repo-name>/wiki
             // [/Welcome to the ([^ ]+) wiki!/, "欢迎访问 $1 的 Wiki"], // wiki页面
+            "You do not have permission to update this wiki.": "您无权更新此 wiki。",
             "Wikis provide a place in your repository to lay out the roadmap of your project, show the current status, and document software better, together.": "Wiki 为您的仓库提供了一个更好的文档资料。",
             "Create the first page": "创建第一个页面",
 
@@ -15248,7 +15259,7 @@ I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user
                     "Checking branch status": "检查分支情况",
                     "Create branch": "创建分支",
                 "Export changes to a fork": "将更改导出到复刻",
-                    "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的存储库的写访问权限。这将创建一个新的存储库分支在",
+                    "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的仓库的写访问权限。这将创建一个新的仓库分支在",
                     ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
                     "Create fork": "创建复刻",
                 "Change machine type": "修改机器类型",
@@ -17246,9 +17257,9 @@ I18N["zh-CN"]["trending"] = { // 热门页面
 
     },
     "regexp": [ // 正则翻译
-        [/([\d,]+) stars today?/, "今日 $1 星标"],
-        [/([\d,]+) stars this week?/, "本周 $1 星标"],
-        [/([\d,]+) stars this month?/, "本月 $1 星标"],
+        [/([\d,]+) stars? today/, "今日 $1 星标"],
+        [/([\d,]+) stars? this week/, "本周 $1 星标"],
+        [/([\d,]+) stars? this month/, "本月 $1 星标"],
     ],
 };
 
@@ -20893,7 +20904,7 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                     "Checking branch status": "检查分支情况",
                     "Create branch": "创建分支",
                 "Export changes to a fork": "将更改导出到复刻",
-                    "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的存储库的写访问权限。这将创建一个新的存储库分支在",
+                    "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的仓库的写访问权限。这将创建一个新的仓库分支在",
                     ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
                     "Create fork": "创建复刻",
                 "Publish to a new repository": "发布到新仓库", // 从模板创建
@@ -21534,4 +21545,16 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
             return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
         }],
     ],
+};
+
+I18N["zh-CN"]["copilot"] = {
+    "static": {
+        "Accelerate your development speed with Copilot": "使用 Copilot 加快开发速度",
+
+        // 了解世界领先的人工智能开发工具的所有优势。
+        "Discover all the": "了解世界领先的人工智能开发工具的所有",
+            "benefits": "优势",
+            "of the world’s leading AI developer tool.": "。",
+    },
+    "regexp":[],
 };
