@@ -1144,6 +1144,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Italian": "意大利文",
             "Japanese": "日文",
             "Korean": "韩文",
+            "Latin": "拉丁文",
             "Russian": "俄文",
             "Thai": "泰文",
             "Tibetan": "藏文",
