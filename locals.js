@@ -1135,6 +1135,20 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Fri"  : "周五",
             "Sat"  : "周六",
 
+        // 语言名称（仅适配热门语言
+            "Chinese": "中文",
+            "English": "英文",
+            "French": "法文",
+            "German": "德文",
+            "Greek, Modern": "希腊文",
+            "Italian": "意大利文",
+            "Japanese": "日文",
+            "Korean": "韩文",
+            "Russian": "俄文",
+            "Thai": "泰文",
+            "Tibetan": "藏文",
+            "Vietnamese": "越南文",
+
     },
     "regexp": [ // 正则翻译
         /**
