@@ -77,6 +77,10 @@ I18N.conf = {
         'page-profile': [
             'span.p-nickname', // 用户昵称
         ],
+        'page-profile/followers': [
+            'span.f4.Link--primary',
+            "span.Link--secondary.pl-1",
+        ],
         'page-profile/repositories': [
             'a[itemprop="name codeRepository"]', // 仓库名称
         ],
@@ -1136,6 +1140,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Sat"  : "周六",
 
         // 语言名称（仅适配热门语言
+            "Arabic": "阿拉伯文",
             "Chinese": "中文",
             "English": "英文",
             "French": "法文",
@@ -1145,10 +1150,14 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Japanese": "日文",
             "Korean": "韩文",
             "Latin": "拉丁文",
+            "Portuguese": "葡萄牙文",
             "Russian": "俄文",
+            "Sichuan Yi, Nuosu": "彝文", // 存疑
+            "Spanish, Castilian": "西班牙文",
             "Thai": "泰文",
             "Tibetan": "藏文",
             "Vietnamese": "越南文",
+            "Zhuang, Chuang": "壮文", // 存疑
 
     },
     "regexp": [ // 正则翻译
@@ -1849,7 +1858,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
             "Created an issue in": "创建一个议题在",
             "a private repository": "私有仓库",
             "Created a pull request in": "创建一个拉取请求在",
-                "lines changed": "行被改变",
+                "lines changed": "行更改",
             "First repository": "第一个仓库",
             "First pull request": "第一次拉取请求",
             "First issue": "第一次议题",
@@ -1929,6 +1938,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
             return '- ' + compareKey[compare] + num + '小时';
         }],
         // 成就
+        [/answered discussions./, "回答了讨论。"], // Galaxy Brain
         [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
         [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
