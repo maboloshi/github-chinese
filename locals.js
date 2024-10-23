@@ -329,6 +329,9 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
         "Import repository": "导入仓库",
         "Explore GitHub": "探索 GitHub",
+        "Rate limit &middot; GitHub": "速率限制 · GitHub",
+        "GitHub: Let’s build from here · GitHub": "GitHub: 让我们从这里开始",
+        "Topics on GitHub · GitHub": "GitHub 上的主题",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -457,7 +460,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Find and fix vulnerabilities": "查找并修复漏洞",
                 // 代码空间
                     "Instant dev environments": "即时开发环境",
-                "Code review": "代码审查",
+                "Code Review": "代码审查",
                     "Manage code changes": "管理代码更改",
                 // Copilot
                     "Write better code with AI": "借助 AI 写出更好的代码",
@@ -465,21 +468,30 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Plan and track work": "计划和追踪工作",
                 // 讨论
                     "Collaborate outside of code": "代码之外的协作",
+                "Code Search": "代码搜索",
+                    "Find more, search less": "查找更多，搜索更少",
 
                 // 右侧
                 "All features": "所有功能",
                 "GitHub Skills": "GitHub 技能",
             "Solutions": "解决方案",
+                "By company size": "企业规模",
                 "By size": "规模",
+                    "Enterprises": "企业",
+                    "Small and medium teams": "中小团队",
                     "Startups": "创业",
                 "By industry": "工业",
                     "Healthcare": "健康护理",
                     "Financial services": "金融服务",
                     "Manufacturing": "制造业",
+                    "Government": "政府",
+                    "View all industries": "查看所有工业",
                 "By use case": "使用案例",
                     "CI/CD & Automation": "CI/CD & 自动化",
                     "DevOps": "开发运维",
                     "DevSecOps": "开发安全运维",
+                    "View all use cases": "查看所有使用案例",
+                "View all solutions": "查看所有解决方案",
             "Resources": "资源",
                 "Innersource": "内部源",
                 "Learning Pathways": "学习路径",
@@ -487,6 +499,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Customer Stories": "客户案例",
                 "Software Development": "软件开发",
                 "Partners": "合作",
+                "View all": "查看全部",
             "Open Source": "开源",
                 "GitHub Sponsors": "GitHub 赞助者",
                     "Fund open source developers": "资助开源开发人员",
@@ -530,6 +543,11 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Languages": "语言",
             "Search syntax tips": "搜索语法提示",
             "Jump to": "跳转到",
+
+            // 未登录时
+                "Enterprise": "企业",
+                "Security": "安全",
+                "Pricing": "价格",
 
         // 左上角下拉栏 (已登录)
             "Home": "主页",
@@ -686,6 +704,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Add a comment": "添加评论",
             "Add a body": "添加内容",
             "Write": "撰写",
+                "Use Markdown to format your comment": "使用 Markdown 格式编写评论",
                 "Add your comment here...": "在此添加您的评论...",
                 "Add your answer here...": "在此添加您的答复...", // 具体讨论页
             "Preview": "预览",
@@ -1902,7 +1921,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
             };
             return number === 'No' ? monthKey[month] + day + "日，"+ "无贡献"  : monthKey[month] + day + "日，" + number + " 次贡献";
         }],// 贡献日历
-        [/A graph representing ([^ ]+)'s contributions from ( .+) to ( .+)./, "$1 从 $2 到 $3 的贡献图。"],
+        //[/A graph representing ([^ ]+)'s contributions from ( .+) to ( .+)./, "$1 从 $2 到 $3 的贡献图。"],
         [/and (\d+) other repositor(y|ies)/, "和 $1 个其他仓库"], // 活动概览
         // 贡献信息
         [/Created ([\d,]+) commits? in (\d+) repositor(y|ies)/, "在 $2 个仓库中创建了 $1 次提交"],
@@ -1937,6 +1956,15 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
 
             return '- ' + compareKey[compare] + num + '小时';
         }],
+        //[/A graph representing ([^ ]+)'s contributions from (.+) to (.+). The contributions are (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review)./, function(all, user, date1, date2, cd1, c1, cd2, c2, cd3, c3, cd4, c4){
+        //    var c1Key, c2Key ,c3Key, c4Key = {
+        //        'commits': '提交',
+        //        'pull requests': '拉取请求',
+        //        'code review': '代码审查',
+        //        'issues': '议题',
+        //    };
+        //    return user + '从' + date1 + '到' + date2 + '的贡献图。其中' + cd1 + c1Key[c1] + '，' + cd2 + c2Key[c2] + '，' +cd3 + c3Key[c3] + '，' + cd4 + c4Key[c4]+ '。';
+        //}],
         // 成就
         [/answered discussions./, "回答了讨论。"], // Galaxy Brain
         [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
@@ -7145,6 +7173,8 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Assigned to nobody": "无受理人",
                 // [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
                 "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
+            
+            "Relationships": "关系",
 
             "Sort": "排序",
                 "Sort by": "排序",
@@ -7464,7 +7494,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Merged": "已合并",
             // "open": "打开",
             // "Opened": "打开",
-            // "opened": "打开",
+            "opened": "打开于",
             // "closed": "已关闭",
 
             "You commented on and opened this issue": "您打开了此议题并发表了评论",
@@ -7517,6 +7547,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "opened this issue": "打开了该议题",
             "· Fixed by": "· 修复了",
             "mentioned this issue": "提及了该议题",
+            "mentioned this": "提及此",
             "opened this": "打开了这个",
             "linked a pull request": "关联了一个拉取请求",
             "that will": "这将会",
@@ -7552,6 +7583,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Repository owner locked as": "仓库所有者锁定为",
             "Repository owner deleted a comment": "仓库所有者删除了评论",
             "Repository owner deleted a comment from": "仓库所有者删除了评论来自",
+            "locked": "锁定",
             "locked as": "锁定为",
                 "off-topic": "偏离主题",
                 "too heated": "争论不休",
@@ -7666,12 +7698,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Deleting issue…": "议题删除中…",
                     // 顶部提醒
                     "The issue was successfully deleted.": "该议题已成功删除。",
+                
+                "Participants": "参与者",
 
             "Load more…": "载入更多…",
 
             "This conversation has been locked and limited to collaborators.": "此对话已锁定并限制与协作者对话。",
             "This issue has been deleted.": "该议题已被删除。",
             "deleted this from": "删除了这个，从",
+
+            "Reference in a new issue": "在新议题中提及",
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
         // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
@@ -8623,6 +8659,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 状态
         [/branch (\d+) times, most recently from/, "分支 $1 次，最近一次从"],
+        [/pushed a commit to ([^ ]+) that referenced this pull request/, " 向 $1 推送一次提交，其中引用了此拉取请求"],
 
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
@@ -15434,7 +15471,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Pause": "停止",
         "Play": "播放",
 
-        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 天之前 vs. GitHub’s fix rates of 72% of flaws with 28 天之内 which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
+        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 days vs. GitHub’s fix rates of 72% of flaws with in 28 days which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
         "The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
         "There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
         "Read the blog post": "阅读博客文章",
@@ -15464,6 +15501,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Careers": "职业",
         "Press": "新闻",
         "Inclusion": "包容性",
+        "Newsroom": "编辑部",
         "Social Impact": "社会影响",
         "Shop": "商店",
 
