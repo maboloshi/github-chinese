@@ -145,6 +145,10 @@ I18N.conf = {
         'repository/wiki': [
             '#wiki-body', // wiki 正文
         ],
+        'search': [
+            'span.search-match', // 搜索匹配信息
+            'div.code-list', // 代码片段预览
+        ],
         'dashboard': [
             '.js-notice-dismiss', // 右侧栏 广告
             '.TimelineItem', // 右侧栏 最新变化
