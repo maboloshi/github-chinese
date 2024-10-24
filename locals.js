@@ -329,7 +329,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
         "Import repository": "导入仓库",
         "Explore GitHub": "探索 GitHub",
-        "Rate limit &middot; GitHub": "速率限制 · GitHub",
+        //"Rate limit · GitHub": "速率限制 · GitHub",
         "GitHub: Let’s build from here · GitHub": "GitHub: 让我们从这里开始",
         "Topics on GitHub · GitHub": "GitHub 上的主题",
     },
