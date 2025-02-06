@@ -22569,6 +22569,10 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
             "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
             "4-core • 16GB RAM • 32GB": "四核 • 16GB 内存 • 32GB 硬盘",
 
+            // 警告
+                "You're at 100% of your included usage for this billing period. For more information, view your": "您已使用了本计费周期的 100% 额度。有关更多信息，请查看您的",
+                "billing settings": "账单设置",
+
             // 状态
                 "No changes": "没有更改",
                 "This codespace has uncommitted changes": "此代码空间有未提交的更改",
