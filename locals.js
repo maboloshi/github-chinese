@@ -17241,6 +17241,7 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
         "state change": "状态更改",
         "review requested": "请求审查",
         "ci activity": "CI 活动",
+        "security alert": "安全警报",
 
         "View all gist notifications": "查看全部 Gist 通知", // 仓库分组模式
 
