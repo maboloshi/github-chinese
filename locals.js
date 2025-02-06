@@ -22564,6 +22564,7 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                 "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
                 "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
                 "Open in JupyterLab": "在 JupyterLab 中打开",
+                "Start is temporarily disabled": "启动暂时被禁用",
 
             "Created from": "创建自",
             "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
