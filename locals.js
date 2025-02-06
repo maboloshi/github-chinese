@@ -23470,6 +23470,14 @@ I18N["zh-CN"]["copilot"] = {
                         "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
                         "Privacy Policy": "隐私政策",
                         "Send": "发送",
+
+            "Open panel": "打开面板",
+            "Close panel": "关闭面板",
+                "View files directly within Copilot": "直接在 Copilot 中查看文件",
+                    "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
+                "I’m feeling lucky": "我手气不错",
+
+                "lines": "行",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
