@@ -11532,12 +11532,14 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                     "There was an error committing your changes:": "在提交您的更改时出现错误：",
                     "A file with the same name already exists. Please choose a different name and try again.": "已存在同名文件。请选择其他名称并重试。",
                     "File could not be edited": "文件不能编辑",
+                    "See what changed": "查看更改",
                 "Sign off and commit changes": "提交更改并签署",
                 "Propose changes": "提出更改建议", // 向他人仓库提交
                 "Sign off and propose changes": "提出更改建议并签署", // 向他人仓库提交
                     "Commit message": "提交信息",
                     "Extended description": "扩展描述",
-                        "Add an optional extended description..": "添加描述.. (可选)",
+                        //"Add an optional extended description..": "添加描述.. (可选)",
+                        "Add an optional extended description...": "添加描述.. (可选)",
 
                     "You are": "您将",
                     "signing off": "签署",
@@ -11766,6 +11768,7 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
         [/Your search has returned (\d+) results?./, "您的搜索返回了 $1 条结果。"],
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
+        [/([^ ]+) has committed since you started editing./, "$1 自您开始编辑以来已提交。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
