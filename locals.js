@@ -9197,6 +9197,14 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Expand Up": "向上展开",
             "Expand Down": "向下展开",
 
+            // 修改的 yaml 文件，预览窗口
+            "Loading Dependency Review...": "正在加载依赖审查...",
+            "No dependencies changed.": "未更改依赖。",
+                "The changes to this file likely do not affect the dependencies": "对此文件的更改可能不会影响依赖",
+
+            "Give feedback on": "提交反馈，在",
+                "dependency review": "依赖项审查",
+
             // 修改的文件 右侧下拉
             "Show comments": "显示评论",
             "Show annotations": "显示注释",
@@ -9887,6 +9895,14 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Expand Down": "向下展开",
             "Collapse expanded lines": "折叠展开的线",
 
+            // 修改的 yaml 文件，预览窗口
+            "Loading Dependency Review...": "正在加载依赖审查...",
+            "No dependencies changed.": "未更改依赖。",
+                "The changes to this file likely do not affect the dependencies": "对此文件的更改可能不会影响依赖",
+
+            "Give feedback on": "提交反馈，在",
+                "dependency review": "依赖项审查",
+
             // 修改的文件 右侧下拉
             "Show comments": "显示评论",
             "Show annotations": "显示注释",
@@ -9894,6 +9910,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Edit file": "编辑文件",
             "Delete file": "删除文件",
             "Open in desktop": "在 GitHub Desktop 中打开",
+            "Copilot is loading...": "Copilot 加载中...",
+            "Ask about this diff": "询问此差异",
 
             //底部评论框上部
             "Lock conversation": "锁定对话",
