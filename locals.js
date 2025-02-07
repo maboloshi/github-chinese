@@ -4499,6 +4499,7 @@ I18N["zh-CN"]["settings/enterprises"] = { // 设置 - 企业版
         "You don't have any enterprises": "您还没有任何企业版",
         "Designed for businesses or teams who collaborate on GitHub.com": "专为在 GitHub.com 上协作的企业或团队而设计",
 
+        "Start free for 30 days": "免费试用 30 天",
         "Start a free trial": "开启免费体验",
         "Learn more about enterprises": "了解更多关于企业版信息",
     },
