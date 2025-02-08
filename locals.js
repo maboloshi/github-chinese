@@ -1292,10 +1292,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Ask about the repository:": "询问关于此仓库的信息：",
             "Attach files or symbols": "附加文件或符号",
             "Add an extension": "添加扩展",
-                "Files and symbols…": "文件和符号…",
+                //"Files and symbols…": "文件和符号…",
+                "Files, folders, and symbols…": "文件、文件夹和符号…",
                     "First attach a repository": "请先附加仓库",
-                    "Attach files and symbols": "附加文件和符号",
-                        "Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
+                    "Attach files, folders, and symbols": "附加文件、文件夹和符号",
+                    //"Attach files and symbols": "附加文件和符号",
+                        //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
+                        "Choose what you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的内容。使用较少的参考资料即可获得更准确的回复。",
                         "Search files and symbols": "搜索文件和符号",
                         "Current attachments": "当前附件",
                         "Symbols": "符号",
@@ -1358,6 +1361,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
     "regexp": [ // 正则翻译
         // Copilot 窗口
         [/Chatting about ([^ ]+)/, "关于 $1 的对话"],
+        [/Chatting with (\d+) attachments?/, "附加 $1 个附件"],
         //[/Public code references from 4 repositories/, ""],
         [/Public code references from (\d+) repositor(y|ies)/, "公共代码，引用自 $1 个仓库"],
         [/(\d+) references?/, "$1 条引用"],
@@ -8544,6 +8548,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Optional additional items": "可选附加项目",
             "Issue default title": "议题默认标题",
             "This will be suggested as the issue title": "建议作为议题标题",
+
+        // Copilot 浮窗 独有词条
+            "Ask about the issue:": "讨论此议题：",
 
     },
     "regexp": [ // 正则翻译
