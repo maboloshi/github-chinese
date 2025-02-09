@@ -53,6 +53,7 @@ Via 浏览器（Android）                | 浏览器内自带
 1. 然后再点击链接之一，安装脚本即可。
     - [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js]
     - [GitHub 中文化插件 - GreasyFork 托管【发布版】][main(greasyfork).user.js]
+    - [Greasyfork 中国大陆镜像](https://cn-greasyfork.org/zh-CN/scripts/435208-github-中文化插件)
 1. 刷新下页面，即可发现网站已中文化。
 
 > [!NOTE]
