@@ -81,17 +81,17 @@
                 ...I18N[CONFIG.LANG].public.regexp,
                 ...(I18N[CONFIG.LANG][pageType]?.regexp || [])
             ],
-            // 忽略突变元素选择器
+            // 忽略突变元素选择器（字符串）
             ignoreMutationSelectors: [
                 ...I18N.conf.ignoreMutationSelectorPage['*'],
                 ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
-            ],
-            // 忽略元素选择器规则
+            ].join(', '),
+            // 忽略元素选择器规则（字符串）
             ignoreSelectors: [
                 ...I18N.conf.ignoreSelectorPage['*'],
                 ...(I18N.conf.ignoreSelectorPage[pageType] || [])
-            ],
-            // 字符数据监视开启规则
+            ].join(', '),
+            // 字符数据监视开启规则（布尔值）
             characterData: I18N.conf.characterDataPage.includes(pageType),
             // CSS 选择器规则
             tranSelectors: [
@@ -136,10 +136,8 @@
             })
             // 过滤需要忽略的突变节点
             .filter(node =>
-                !pageConfig.ignoreMutationSelectors.some(selector =>
-                    // 检查节点是否在忽略选择器的父元素内
-                    node.parentElement?.closest(selector)
-                )
+                // 剔除节点在忽略选择器的父元素内
+                !node.parentElement?.closest(pageConfig.ignoreMutationSelectors)
             )
             // 处理每个变化
             .forEach(node =>
@@ -174,7 +172,7 @@
             return; // 文本节点没有子节点，直接返回
         }
 
-        const skipNode = node => pageConfig.ignoreSelectors.some(selector => node.matches?.(selector));
+        const skipNode = node => node.matches?.(pageConfig.ignoreSelectors);
         const treeWalker = document.createTreeWalker(
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,

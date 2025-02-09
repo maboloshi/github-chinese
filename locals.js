@@ -14227,6 +14227,10 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "Transfer ownership": "转让所有权",
             "Transfer": "转让",
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "将此仓库转让给另一位用户或您可以创建仓库的组织。",
+            "Organization members cannot transfer repositories": "组织成员没有转让所有权的权限",
+
+            "Leave fork network": "离开复刻网络",
+            "Can't leave the fork network because this fork has child forks.": "无法离开复刻网络，因为此复刻有子复刻。",
 
             "Archive this repository": "存档仓库",
             "Mark this repository as archived and read-only.": "将此仓库标记为已存档和只读。",
@@ -14268,6 +14272,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             "Delete this repository": "删除仓库",
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦删除仓库，将再也无法恢复。请确认。",
+            "Organization members cannot delete repositories.": "组织成员没有删除仓库的权限",
 
             // 顶部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
@@ -14322,6 +14327,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "Direct access": "直接访问",
             "collaborators have access to this repository. Only you can contribute to this repository.": "个协作者有权访问此仓库。 只有您可以对此仓库做出贡献。",
             "has access to this repository.": "位有权访问此仓库。",
+            "have access to this repository.": "有权访问此仓库。",
             // 组织仓库
             "teams or members have access to this repository. Only": "团队或成员有权访问此仓库。只有",
             "Owners": "所有者",
@@ -14340,11 +14346,15 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
 
             "Select all": "全选",
                 // [/(\d+) members? selected…/, "已选择 $1 名成员..."],
+                "Change role": "切换角色",
                 "Remove Access": "删除访问权限",
             "Type": "类型",
                 "Filter by member type": "按成员类型筛选",
+                    "Organization Members": "组织成员",
+                    "Outside Collaborators": "外部协作者",
                     "Pending Invitations": "待处理邀请",
-            "Find a collaborator…": "寻找协作者...",
+            "Find a collaborator…": "寻找协作者……",
+            "Find people or a team…": "寻找用户或一个团队……",
 
             "Pending Invite": "待处理邀请",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
@@ -14380,6 +14390,8 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
         [/(\d+) invitations?/, "$1 个邀请"],
         [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
         [/([^ ]+) • Invite collaborator/, "$1 • 邀请协作者"],
+        [/(\d+) users?/, "$1 个用户"],
+        [/(\d+) teams?/, "$1 个团队"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
