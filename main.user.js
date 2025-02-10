@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.3-2025-01-26
+// @version      1.9.3-2025-02-09
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.3-2025-01-26
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.3-2025-02-09
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -106,10 +106,10 @@
      */
     function watchUpdate() {
         // 缓存当前页面的 URL
-        let previousURL = location.href;
+        let previousURL = window.location.href;
 
         const handleUrlChange = () => {
-            const currentURL = location.href;
+            const currentURL = window.location.href;
             // 如果页面的 URL 发生变化
             if (currentURL !== previousURL) {
                 previousURL = currentURL;
@@ -127,10 +127,10 @@
             mutations.flatMap(({ target, addedNodes, type }) => {
                 // 处理子节点添加的情况
                 if (type === 'childList' && addedNodes.length > 0) {
-                    return Array.from(addedNodes); // 将新增节点转换为数组
+                    return [...addedNodes]; // 将新增节点转换为数组
                 }
                 // 处理属性和文本内容变更的情况
-                return (type === 'attributes' || (pageConfig.characterData && type === 'characterData'))
+                return (type === 'attributes' || (type === 'characterData' && pageConfig.characterData))
                     ? [target] // 否则，仅处理目标节点
                     : [];
             })
@@ -172,16 +172,13 @@
             return; // 文本节点没有子节点，直接返回
         }
 
-        const skipNode = node => node.matches?.(pageConfig.ignoreSelectors);
         const treeWalker = document.createTreeWalker(
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
             {
-                acceptNode: node => {
-                    // 跳过忽略的节点
-                    if (skipNode(node)) return NodeFilter.FILTER_REJECT;
-                    return NodeFilter.FILTER_ACCEPT;
-                }
+                acceptNode: node =>
+                // 跳过忽略的节点
+                node.matches?.(pageConfig.ignoreSelectors) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
             }
         );
 
@@ -203,30 +200,21 @@
                     }
                     break;
 
+                case "OPTGROUP":
+                    transElement(node, 'label'); // 翻译 <optgroup> 的 label 属性
+                    break;
+
                 case "BUTTON":
-                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel'); // 翻译 浏览器 提示对话框
                     transElement(node, 'title'); // 翻译 浏览器 提示对话框
                     transElement(node.dataset, 'confirm'); // 翻译 浏览器 提示对话框 ok
                     transElement(node.dataset, 'confirmText'); // 翻译 浏览器 提示对话框 ok
                     transElement(node.dataset, 'confirmCancelText'); // 取消按钮 提醒
                     transElement(node, 'cancelConfirmText'); // 取消按钮 提醒
                     transElement(node.dataset, 'disableWith'); // 按钮等待提示
-                    break;
-
-                case "OPTGROUP":
-                    transElement(node, 'label'); // 翻译 <optgroup> 的 label 属性
-                    break;
 
                 case "A":
-                    transElement(node, 'title'); // title 属性
-                    transElement(node, 'ariaLabel'); // aria-label 属性
-                    break;
-
                 case "SPAN":
                     transElement(node, 'title'); // title 属性
-                    if (/tooltipped/.test(node.className)) transElement(node, 'ariaLabel');
-                    transElement(node.dataset, 'visibleText'); // 按钮提示
-                    break;
 
                 default:
                     // 仅当 元素存在'tooltipped'样式 aria-label 才起效果
@@ -248,7 +236,7 @@
         const duration = performance.now() - start;
         if (duration > 10) {
             // console.warn(`【Debug】节点遍历耗时: ${duration.toFixed(2)}ms`, rootNode);
-            console.warn(`节点遍历耗时: ${duration.toFixed(2)}ms`);
+            console.log(`节点遍历耗时: ${duration.toFixed(2)}ms`);
         }
     }
 

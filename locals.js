@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage', 'repository/issues', 'repository/commit'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -63,10 +63,13 @@ I18N.conf = {
         'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["#highlighted-line-menu-positioner", ".Text__StyledText-sc-17v1xeu-0"], // 代码视图 存在
+        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
+        'repository/issues': [
+            '.styled-input-container', // 筛选条
+        ],
         '*': [
             'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
         ],
@@ -115,10 +118,14 @@ I18N.conf = {
             '[id^="offset"]', // 符号-->引用
             '#highlighted-line-menu-positioner', // 代码视图
             '#filter-results', // 右侧 符号筛选
+            '.Text__StyledText-sc-17v1xeu-0', // 右侧 符号筛选
             '#repos-header-breadcrumb', // 文件路径中文件夹路径
             '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
             '#sticky-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
+        ],
+        'repository/issues': [
+            '.styled-input-container', // 筛选条
         ],
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏

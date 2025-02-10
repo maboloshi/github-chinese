@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定頁面，啟用`字符數據`監測
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage', 'repository/issues', 'repository/commit'],
 
     // 特定頁面，忽略突變元素規則
     ignoreMutationSelectorPage: {
@@ -455,6 +455,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         [/Dependabot secrets · ([^ ]+)/, "Dependabot 機密 · $1"],
         [/Invitation to join ([^ ]+)/, "加入 $1 邀請"],
         [/Security Managers for · ([^ ]+)/, "安全管理員 · $1"],
+        [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
         ["_regexp_end", "end"]
     ],
 };
@@ -462,6 +463,10 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
 I18N["zh-TW"]["public"] = { // 公共區域翻譯
     "static": { // 靜態翻譯
         // 錯誤頁面
+        "Access has been restricted": "訪問被限制",
+            "You have triggered a rate limit.": "您已觸發速率限制。",
+            "Please wait a few minutes before you try again;": "請稍等幾分鐘再重試；",
+            "in some cases this may take up to an hour.": "在某些情況下，這可能最多需要一個小時。",
         "No server is currently available to service your request.": "當前服務器無法為您的請求提供服務。",
         "This page is taking too long to load.": "此頁面加載時間過長。",
         "We had issues producing the response to your request.": "我們在響應您的請求時遇到了問題。",
@@ -1287,10 +1292,13 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Ask about the repository:": "詢問關於此倉庫的信息：",
             "Attach files or symbols": "附加文件或符號",
             "Add an extension": "添加擴展",
-                "Files and symbols…": "文件和符號…",
+                //"Files and symbols…": "文件和符號…",
+                "Files, folders, and symbols…": "文件、文件夾和符號…",
                     "First attach a repository": "請先附加倉庫",
-                    "Attach files and symbols": "附加文件和符號",
-                        "Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的文件和符號。使用較少的參考資料即可獲得更準確的回覆。",
+                    "Attach files, folders, and symbols": "附加文件、文件夾和符號",
+                    //"Attach files and symbols": "附加文件和符號",
+                        //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的文件和符號。使用較少的參考資料即可獲得更準確的回覆。",
+                        "Choose what you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的內容。使用較少的參考資料即可獲得更準確的回覆。",
                         "Search files and symbols": "搜索文件和符號",
                         "Current attachments": "當前附件",
                         "Symbols": "符號",
@@ -1353,6 +1361,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
     "regexp": [ // 正則翻譯
         // Copilot 窗口
         [/Chatting about ([^ ]+)/, "關於 $1 的對話"],
+        [/Chatting with (\d+) attachments?/, "附加 $1 個附件"],
         //[/Public code references from 4 repositories/, ""],
         [/Public code references from (\d+) repositor(y|ies)/, "公共代碼，引用自 $1 個倉庫"],
         [/(\d+) references?/, "$1 條引用"],
@@ -3494,6 +3503,18 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
         // 頂部提示
             "Successfully updated billing information.": "成功更新支付信息。",
 
+        // 代碼空間超限
+        "You've used 90% of included services for GitHub Codespaces storage.": "您已使用 90% 代碼空間存儲。",
+        "You've used 100% of included services for GitHub Codespaces storage.": "您已使用 100% 代碼空間存儲。",
+            "When your allotment is exhausted, you won't be able to use Codespaces until you set up a spending limit or your free Codespaces allotment is reset next month. If you want to access your in progress work from a codespace, you can": "當您的額度耗盡後，您將無法使用代碼空間，直到您設置支出上限或下月重置您的免費額度。如果您想訪問代碼空間中正在進行的工作，您可以",
+            "export your unpushed work to a branch.": "將未推送的工作導出到分支。",
+            "To see a full list of your usage, obtain a copy of your": "要查看所有使用情況，請獲取您的",
+            "usage report": "使用報告",
+            "to see the codespaces and prebuilds created by your account. The usage report is the only place where prebuild usage is visible. If you see charges you'd like to stop going forward, you can delete a": "，以查看您的賬戶創建的代碼空間和預構建。使用報告是唯一能顯示預構建使用情況的地方。如果您看到希望以後停止的費用，您可以刪除一個",
+            "codespace": "代碼空間",
+            "delete prebuilds for a repository.": "刪除某個倉庫的預構建。",
+        "Update spending limit": "更新支出限額",
+
         // 賬單和計劃 https://github.com/settings/billing/summary
             "Billing summary": "賬單摘要",
             "Your next payment": "您的下一次應付款",
@@ -4482,6 +4503,7 @@ I18N["zh-TW"]["settings/enterprises"] = { // 設置 - 企業版
         "You don't have any enterprises": "您還沒有任何企業版",
         "Designed for businesses or teams who collaborate on GitHub.com": "專為在 GitHub.com 上協作的企業或團隊而設計",
 
+        "Start free for 30 days": "免費試用 30 天",
         "Start a free trial": "開啟免費體驗",
         "Learn more about enterprises": "瞭解更多關於企業版信息",
     },
@@ -4841,9 +4863,13 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Start a free trial": "免費試用",
 
             "Copilot policies": "Copilot 規則",
-                "Copilot in github.com": "在 github.com 中使用 Copilot",
-                    "You can use Copilot Chat in github.com, but not preview features.": "您可以在 github.com 中使用 Copilot Chat，但無預覽功能。",
-                    "Learn more about Copilot in github.com": "瞭解更多關於在 github.com 中使用 Copilot 的信息",
+                //"Copilot in github.com": "在 github.com 中使用 Copilot",
+                "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
+                    "You can use Copilot Chat in Github.com, but not preview features.": "您可以在 Github.com 中使用 Copilot Chat，但無預覽功能。",
+                    //"Learn more about Copilot in Github.com": "瞭解更多關於在 Github.com 中使用 Copilot 的信息",
+                    "Learn more about Copilot in GitHub.com": "瞭解更多關於在 GitHub.com 中使用 Copilot 的信息",
+                "Editor preview features": "編輯器預覽功能",
+                    "You can use preview features in your editor.": "您可以在編輯器中使用預覽功能。",
                 "Suggestions matching public code (duplication detection filter)": "公共代碼匹配的建議（重複檢測過濾器）",
                     "Copilot can allow or block suggestions matching public code. Learn more about": "Copilot 可允許或阻止與公共代碼匹配的建議。瞭解更多關於",
                     "code suggestions": "代碼建議",
@@ -4870,6 +4896,9 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "Select an option": "選擇",
                         "You will have access to the feature": "您將能夠訪問此功能",
                         "You won’t have access to the feature": "您將不能訪問此功能",
+                "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
+                    "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
+                    "Learn more about the public preview of Gemini 2.0 Flash.": "瞭解更多關於 GitHub Copilot 如何為 Gemini 2.0 Flash 提供服務。",
                 "Dashboard entry point": "儀表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允許登陸 GitHub.com 時即時聊天",
 
@@ -4893,7 +4922,8 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
 
             // "Copilot policies": "Copilot 規則",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
-                    "You can use Copilot Chat in github.com, Copilot for pull requests, and all of the preview features.": "您可以在 github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取請求和所有預覽功能。",
+                    //"You can use Copilot Chat in Github.com, Copilot for pull requests, and all of the preview features.": "您可以在 Github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取請求和所有預覽功能。",
+                    "You can use Copilot Chat in GitHub.com, Copilot for pull requests, and all of the preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，Copilot 拉取請求和所有預覽功能。",
                 // "Copilot in the CLI": "在終端中使用",
                     "You can use": "您可以",
                     "GitHub Copilot for assistance in terminal": "GitHub Copilot 終端輔助工具",
@@ -7045,6 +7075,10 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
     "static": { // 靜態翻譯
             ...I18N["zh-TW"]["repository-public"]["static"],
 
+        // 頂部
+            "Help us improve GitHub Codespaces": "幫助我們改進 GitHub 代碼空間",
+                "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通過三個簡單的問題告訴我們如何讓 GitHub 代碼空間更適合您。",
+
         // 代碼標籤卡 & 倉庫首頁 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名為 $2。"],
 
@@ -8149,6 +8183,13 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                 "Collapse Sub-issues": "摺疊子議題",
                 "Expand Sub-issues": "展開子議題",
 
+                "More list item action bar": "更多操作",
+                    "Remove sub-issue": "移除子議題",
+
+            "Invalid value": "無效值",
+            "for": "，",
+            //"parent-issue": "父議題",
+
             "You commented on and opened this issue": "您打開了此議題並發表了評論",
             "You were mentioned on and commented on this issue": "您被提及並對此議題發表了評論",
             "You commented on this issue": "您對此議題發表了評論",
@@ -8402,6 +8443,9 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                 "Most recent": "最近",
             "Reopen Issue": "重新打開議題",
                 "You do not have permissions to reopen this issue": "您沒有權限重新打開此議題",
+            // 關閉議題
+                "You do not have permissions to close this issue": "您沒有權限關閉此議題",
+            "Comment can not be empty": "評論不能為空",
 
         // 議題標籤管理 /<user-name>/<repo-name>/issues/labels
         // 倉庫 --> 標籤頁面 /<user-name>/<repo-name>/labels
@@ -8505,6 +8549,9 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "Issue default title": "議題默認標題",
             "This will be suggested as the issue title": "建議作為議題標題",
 
+        // Copilot 浮窗 獨有詞條
+            "Ask about the issue:": "討論此議題：",
+
     },
     "regexp": [ // 正則翻譯
         [/Want to contribute to ([^ ]+)\?/, "想為 $1 做貢獻？"],
@@ -8542,6 +8589,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
         // 子議題
         [/Create new sub-issue in ([^ ]+)/, "在 $1 中新建子議題"],
         [/(\d+) of (\d+)/, "$1 / $2"],
+        [/Filter contains (\d+) issues?\:/, "篩選包含 $1 個議題："],
 
         // 新版議題
         [/(.+) will be between (.+) and (.+)./, "“$1” 將在 “$2” 和 “$3” 之間。"],
@@ -8549,6 +8597,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
         [/(.+) will be first item in the list./, "“$1” 將移至最前。"],
         [/(.+) will be last item in the list./, "“$1” 將移至最後。"],
         [/of (\d+) selected/, "/ $1 選中"],
+        [/(\d+\%) completed/, "$1 完成"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["regexp"],
     ],
@@ -9161,6 +9210,14 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "Expand Up": "向上展開",
             "Expand Down": "向下展開",
 
+            // 修改的 yaml 文件，預覽窗口
+            "Loading Dependency Review...": "正在加載依賴審查...",
+            "No dependencies changed.": "未更改依賴。",
+                "The changes to this file likely do not affect the dependencies": "對此文件的更改可能不會影響依賴",
+
+            "Give feedback on": "提交反饋，在",
+                "dependency review": "依賴項審查",
+
             // 修改的文件 右側下拉
             "Show comments": "顯示評論",
             "Show annotations": "顯示註釋",
@@ -9712,8 +9769,10 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
             "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通過授予寫入權限，維護者可能會編輯您倉庫的工作流程以揭示機密值，並獲取對其他分支的訪問權限。",
             "Got it": "知道了",
         // 創建拉取請求 按鈕下拉
+            "Open a pull request that is ready for review": "打開一個準備好進行審核的拉取請求",
             "Automatically requests reviews from code owners": "自動請求代碼所有者進行審查",
             "Create draft pull request": "創建拉取請求草案",
+            "Cannot be merged until marked ready for review": "在標記為準備好進行審核之前無法合併",
             "Doesn't request code owners review and cannot be merged": "不請求代碼所有者審核並且無法合併",
             "Draft pull request": "拉取請求草案",
         "Remember, contributions to this repository should follow its": "請記住，對該倉庫的貢獻應遵循其",
@@ -9851,6 +9910,14 @@ I18N["zh-TW"]["repository/commit"] = { // 倉庫 - 提交頁面
             "Expand Down": "向下展開",
             "Collapse expanded lines": "摺疊展開的線",
 
+            // 修改的 yaml 文件，預覽窗口
+            "Loading Dependency Review...": "正在加載依賴審查...",
+            "No dependencies changed.": "未更改依賴。",
+                "The changes to this file likely do not affect the dependencies": "對此文件的更改可能不會影響依賴",
+
+            "Give feedback on": "提交反饋，在",
+                "dependency review": "依賴項審查",
+
             // 修改的文件 右側下拉
             "Show comments": "顯示評論",
             "Show annotations": "顯示註釋",
@@ -9858,6 +9925,8 @@ I18N["zh-TW"]["repository/commit"] = { // 倉庫 - 提交頁面
             "Edit file": "編輯文件",
             "Delete file": "刪除文件",
             "Open in desktop": "在 GitHub Desktop 中打開",
+            "Copilot is loading...": "Copilot 加載中...",
+            "Ask about this diff": "詢問此差異",
 
             //底部評論框上部
             "Lock conversation": "鎖定對話",
@@ -11157,6 +11226,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "View workflow runs": "查看工作流程運行",
             "Workflow run options": "工作流程運行選項",
             "Delete all logs": "刪除所有日誌",
+            "Sign in to view logs": "登錄後查看日誌",
 
             // 左側欄
             "Summary": "摘要",
@@ -11495,12 +11565,14 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
                     "There was an error committing your changes:": "在提交您的更改時出現錯誤：",
                     "A file with the same name already exists. Please choose a different name and try again.": "已存在同名文件。請選擇其他名稱並重試。",
                     "File could not be edited": "文件不能編輯",
+                    "See what changed": "查看更改",
                 "Sign off and commit changes": "提交更改並簽署",
                 "Propose changes": "提出更改建議", // 向他人倉庫提交
                 "Sign off and propose changes": "提出更改建議並簽署", // 向他人倉庫提交
                     "Commit message": "提交信息",
                     "Extended description": "擴展描述",
-                        "Add an optional extended description..": "添加描述.. (可選)",
+                        //"Add an optional extended description..": "添加描述.. (可選)",
+                        "Add an optional extended description...": "添加描述.. (可選)",
 
                     "You are": "您將",
                     "signing off": "簽署",
@@ -11729,6 +11801,7 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
         [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的許可證已準備就緒。請在下面審查它並將其提交到 $1 分支或新分支。"],
         [/Your search has returned (\d+) results?./, "您的搜索返回了 $1 條結果。"],
         [/First (\d+) files? shown./, "顯示前 $1 個文件。"],
+        [/([^ ]+) has committed since you started editing./, "$1 自您開始編輯以來已提交。"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -13653,7 +13726,12 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 倉庫 -> 洞察 - 依�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         [/View Dependabot alerts?/, "查看 Dependabot 警報"],
-        [/Detected automatically on (.+)/, "自動檢測於$1"],
+        //[/Detected automatically on (.+)/, "自動檢測於$1"],
+        [/· Detected automatically on (.+)/, (match, p1) => {
+            const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `· 自動檢測於 ${translatedDate}`;
+        }],
         [/(\d+) Total/, "$1 總計"],
         [/(\d+) vulnerabilities? found/, "發現 $1 個漏洞"],
         [/(\d+) more dependencies/, "更多 $1 個依賴項"],
@@ -14149,6 +14227,10 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Transfer ownership": "轉讓所有權",
             "Transfer": "轉讓",
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "將此倉庫轉讓給另一位用戶或您可以創建倉庫的組織。",
+            "Organization members cannot transfer repositories": "組織成員沒有轉讓所有權的權限",
+
+            "Leave fork network": "離開復刻網絡",
+            "Can't leave the fork network because this fork has child forks.": "無法離開復刻網絡，因為此復刻有子復刻。",
 
             "Archive this repository": "存檔倉庫",
             "Mark this repository as archived and read-only.": "將此倉庫標記為已存檔和只讀。",
@@ -14190,6 +14272,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
 
             "Delete this repository": "刪除倉庫",
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦刪除倉庫，將再也無法恢復。請確認。",
+            "Organization members cannot delete repositories.": "組織成員沒有刪除倉庫的權限",
 
             // 頂部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的倉庫 “$1” 已成功解除存檔。"], //倉庫解除存檔
@@ -14244,6 +14327,7 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
             "Direct access": "直接訪問",
             "collaborators have access to this repository. Only you can contribute to this repository.": "個協作者有權訪問此倉庫。 只有您可以對此倉庫做出貢獻。",
             "has access to this repository.": "位有權訪問此倉庫。",
+            "have access to this repository.": "有權訪問此倉庫。",
             // 組織倉庫
             "teams or members have access to this repository. Only": "團隊或成員有權訪問此倉庫。只有",
             "Owners": "所有者",
@@ -14262,11 +14346,15 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
 
             "Select all": "全選",
                 // [/(\d+) members? selected…/, "已選擇 $1 名成員..."],
+                "Change role": "切換角色",
                 "Remove Access": "刪除訪問權限",
             "Type": "類型",
                 "Filter by member type": "按成員類型篩選",
+                    "Organization Members": "組織成員",
+                    "Outside Collaborators": "外部協作者",
                     "Pending Invitations": "待處理邀請",
-            "Find a collaborator…": "尋找協作者...",
+            "Find a collaborator…": "尋找協作者……",
+            "Find people or a team…": "尋找用戶或一個團隊……",
 
             "Pending Invite": "待處理邀請",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回覆"],
@@ -14302,6 +14390,8 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
         [/(\d+) invitations?/, "$1 個邀請"],
         [/Awaiting ([^ ]+)’s response/, "等待 $1 的回覆"],
         [/([^ ]+) • Invite collaborator/, "$1 • 邀請協作者"],
+        [/(\d+) users?/, "$1 個用戶"],
+        [/(\d+) teams?/, "$1 個團隊"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -15767,6 +15857,7 @@ I18N["zh-TW"]["repository/settings/pages"] = { // 倉庫設置頁面(含組織�
                 //"With a GitHub Enterprise account, you can restrict access to your GitHub Pages site by publishing it privately. You can use privately published sites to share your internal documentation or knowledge base with members of your enterprise.": "使用 GitHub 企業版賬戶，您可以通過私下發布來限制對 GitHub Pages 站點的訪問。您可以使用私下發布的站點與企業成員共享您的內部文檔或知識庫。",
                 "Try GitHub Enterprise": "試用 GitHub 企業版",
                 "Try GitHub Enterprise risk-free for 30 days": "免費無風險試用 GitHub 企業版 30 天",
+                "Start free for 30 days": "免費試用 30 天",
                 "Learn more about the visibility of your GitHub Pages site.": "瞭解更多關於 GitHub Pages 站點可見性的信息。",
 
     },
@@ -17195,6 +17286,7 @@ I18N["zh-TW"]["notifications"] = { // 通知頁面
         "state change": "狀態更改",
         "review requested": "請求審查",
         "ci activity": "CI 活動",
+        "security alert": "安全警報",
 
         "View all gist notifications": "查看全部 Gist 通知", // 倉庫分組模式
 
@@ -22449,6 +22541,9 @@ I18N["zh-TW"]["orgs/enterprise_plan"] = { // 企業版訂閱頁面
 
 I18N["zh-TW"]["codespaces"] = { // 代碼空間頁面
     "static": {
+        // 頂部
+            "Help us improve GitHub Codespaces": "幫助我們改進 GitHub 代碼空間",
+                "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通過三個簡單的問題告訴我們如何讓 GitHub 代碼空間更適合您。",
         // https://github.com/codespaces
             "All": "所有",
             "Templates": "模版",
@@ -22514,10 +22609,15 @@ I18N["zh-TW"]["codespaces"] = { // 代碼空間頁面
                 "Open in Visual Studio Code": "在 Visual Studio Code 中打開",
                 "Open in JetBrains Gateway": "在 JetBrains Gateway 中打開",
                 "Open in JupyterLab": "在 JupyterLab 中打開",
+                "Start is temporarily disabled": "啟動暫時被禁用",
 
             "Created from": "創建自",
             "2-core • 8GB RAM • 32GB": "雙核 • 8GB 內存 • 32GB 硬盤",
             "4-core • 16GB RAM • 32GB": "四核 • 16GB 內存 • 32GB 硬盤",
+
+            // 警告
+                "You're at 100% of your included usage for this billing period. For more information, view your": "您已使用了本計費週期的 100% 額度。有關更多信息，請查看您的",
+                "billing settings": "賬單設置",
 
             // 狀態
                 "No changes": "沒有更改",
@@ -23415,6 +23515,14 @@ I18N["zh-TW"]["copilot"] = {
                         "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "請不要包含敏感、機密或個人數據。您的匿名反饋有助於我們改進服務，根據",
                         "Privacy Policy": "隱私政策",
                         "Send": "發送",
+
+            "Open panel": "打開面板",
+            "Close panel": "關閉面板",
+                "View files directly within Copilot": "直接在 Copilot 中查看文件",
+                    "Ask to generate a file or app, or use the button below to try it yourself.": "詢問生成文件或應用程序，或使用下面的按鈕自行嘗試。",
+                "I’m feeling lucky": "我手氣不錯",
+
+                "lines": "行",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安裝 Copilot 到您的代碼編輯器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用於多種編輯器，以滿足您的需求",
