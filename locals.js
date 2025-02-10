@@ -8838,6 +8838,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "removed the request for review from": "取消请求审查",
             "pushed a commit that referenced this pull request": "推送了一个引用此拉取请求的提交",
             "suggested changes": "建议更改",
+            "deleted the branch": "删除了分支",
 
             // 隐藏
             "Load more…": "加载更多…",
