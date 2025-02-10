@@ -309,13 +309,14 @@
                 pageType = pathMatch ? (pathMatch[1] || pathMatch.slice(-1)[0]) : false;
         }
 
+        console.log(`【Debug】pathname = ${pathname}, site = ${site}, isLogin = ${isLogin}, analyticsLocation = ${metaLocation}, isOrganization = ${isOrganization}, isRepository = ${isRepository}, isProfile = ${isProfile}, isSession = ${isSession}`)
+
         // 词库校验 ================================================
         if (pageType === false || !I18N[CONFIG.LANG]?.[pageType]) {
             console.warn(`[i18n] 页面类型未匹配或词库缺失: ${pageType}`);
             return false; // 明确返回 false 表示异常
         }
 
-        console.log(`【Debug】pathname = ${pathname}, site = ${site}, isLogin = ${isLogin}, analyticsLocation = ${metaLocation}, isOrganization = ${isOrganization}, isRepository = ${isRepository}, isProfile = ${isProfile}, isSession = ${isSession}`)
         return pageType;
     }
 
@@ -594,7 +595,7 @@
     document.documentElement.lang = CONFIG.LANG;
 
     // 监测 HTML Lang 值, 设置中文环境
-    new MutationObserver(mutations => {
+    new MutationObserver(() => {
         if (document.documentElement.lang === "en") {
             document.documentElement.lang = CONFIG.LANG;
         }
@@ -607,7 +608,7 @@
         firstChangeURL = true;  // 页面开始切换前设置为 true
     });
 
-    // 监听 Turbo 完成事件
+    // 监听 Turbo 完成事件（延迟翻译）
     document.addEventListener('turbo:load', () => {
         if (!pageConfig.currentPageType) return;
 
