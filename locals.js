@@ -1353,6 +1353,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "contributors": "贡献者",
                         "updated": "更新于",
 
+            // 报错
+                "Copilot was interrupted before it could finish this message.": "Copilot 在完成此消息之前被中断。",
+
             "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
             "Privacy Policy": "隐私政策",
             "Send": "发送",
