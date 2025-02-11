@@ -54,10 +54,33 @@
             characterData: true,
             attributeFilter: ['value', 'placeholder', 'aria-label', 'data-confirm']
         },
+        // 当前使用引擎（开发者可切换）
+        transEngine: 'iflyrec',
+        // 翻译引擎配置
+        TRANS_ENGINES: {
+            iflyrec: {
+                name: '讯飞听见',
+                url: 'https://fanyi.iflyrec.com/text-translate',
+                url_api: 'https://fanyi.iflyrec.com/TJHZTranslationService/v2/textAutoTranslation',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Origin': 'https://fanyi.iflyrec.com'
+                },
+                // 请求体数据结构
+                getRequestData: (text) => ({
+                    from: 2,
+                    to: 1,
+                    type: 1,
+                    contents: [{ text: text }]
+                }),
+                // 响应标识
+                responseIdentifier: 'biz[0]?.sectionResult[0]?.dst',
+            },
+        }
     };
 
     let pageConfig = {};
-    let firstChangeURL = false;
 
     // 更新页面设置
     function updatePageConfig() {
@@ -115,8 +138,8 @@
             if (currentURL !== previousURL) {
                 previousURL = currentURL;
                 updatePageConfig();
+                pageConfig.firstChangeURL = false; // 重置 firstChangeURL
                 console.log(`【Debug】页面切换 pageType= ${pageConfig.currentPageType}`);
-                firstChangeURL = false; // 重置 firstChangeURL
             }
         }
 
@@ -150,7 +173,7 @@
 
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
-            if (firstChangeURL) handleUrlChange();
+            if (pageConfig.firstChangeURL) handleUrlChange();
             if (pageConfig.currentPageType) processMutations(mutations);
         }).observe(document.body, CONFIG.OBSERVER_CONFIG);
     }
@@ -445,60 +468,88 @@
         element.after(button);
 
         // 为翻译按钮添加点击事件
-        button.addEventListener('click', () => {
-            // 获取元素的文本内容
-            const descText = element.textContent.trim();
+        button.addEventListener('click', async() => {
+            if (button.disabled) return;
+            button.disabled = true;
+            try {
+                const descText = element.textContent.trim();
+                if (!descText) return;
 
-            // 如果文本内容为空，那么直接返回
-            if (!descText) return false;
+                // 执行翻译
+                const translatedText = await requestRemoteTranslation(descText);
 
-            // 调用 transDescText 函数进行翻译
-            transDescText(descText, translatedText => {
-                // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
-                button.style.display = "none";
-                const translatedHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>讯飞听见</a> 翻译👇</span><br/>${translatedText}`;
-                element.insertAdjacentHTML('afterend', translatedHTML);
-            });
+                // 安全创建结果元素
+                const { name, url } = CONFIG.TRANS_ENGINES[CONFIG.transEngine]
+                const resultContainer = document.createElement('div');
+                resultContainer.innerHTML = `
+                    <span style='font-size: small'>
+                        由 <a target='_blank' style='color:#1b95e0;' href=${url}>${name}</a> 翻译👇
+                    </span>
+                    <br/>
+                `;
+                // 安全插入文本内容
+                const textNode = document.createTextNode(translatedText);
+                resultContainer.appendChild(textNode);
+
+                button.remove();
+                element.after(resultContainer);
+            } finally {
+                button.disabled = false;
+            }
         });
     }
 
     /**
-     * transDescText 函数：将指定的文本发送到讯飞的翻译服务进行翻译。
-     * @param {string} text - 需要翻译的文本。
-     * @param {function} callback - 翻译完成后的回调函数，该函数接受一个参数，即翻译后的文本。
+     * getNestedProperty 函数：获取嵌套属性的安全函数
+     * @param {Object} obj - 需要查询的对象
+     * @param {string} path - 属性路径，例如 'biz[0].sectionResult[0].dst'
+     * @returns {*} - 返回嵌套属性的值
      */
-    function transDescText(text, callback) {
-        // 使用 GM_xmlhttpRequest 函数发送 HTTP 请求
-        GM_xmlhttpRequest({
-            method: "POST", // 请求方法为 POST
-            url: "https://fanyi.iflyrec.com/TJHZTranslationService/v2/textAutoTranslation", // 请求的 URL
-            headers: { // 请求头
-                'Content-Type': 'application/json',
-                'Origin': 'https://fanyi.iflyrec.com',
-            },
-            data: JSON.stringify({
-                "from": 2,
-                "to": 1,
-                "type": 1,
-                "contents": [{
-                    "text": text
-                }]
-            }), // 请求的数据
-            responseType: "json", // 响应的数据类型为 JSON
-            onload: (res) => {
-                try {
-                    const { status, response } = res;
-                    const translatedText = (status === 200) ? response.biz[0].sectionResult[0].dst : "翻译失败";
-                    callback(translatedText);
-                } catch (error) {
-                    console.error('翻译失败', error);
-                    callback("翻译失败");
-                }
-            },
-            onerror: (error) => {
-                console.error('网络请求失败', error);
-                callback("网络请求失败");
+    function getNestedProperty(obj, path) {
+        return path.split('.').reduce((acc, part) => {
+            const match = part.match(/(\w+)(?:\[(\d+)\])?/);
+            if (!match) return undefined;
+            const key = match[1];
+            const index = match[2];
+            if (acc && acc[key] !== undefined) {
+                return index !== undefined ? acc[key][index] : acc[key];
             }
+            return undefined;
+        }, obj);
+    }
+
+    /**
+     * requestRemoteTranslation 函数：将指定的文本发送到设定的翻译引擎进行翻译。
+     * @param {string} text - 需要翻译的文本。
+     */
+    async function requestRemoteTranslation(text) {
+        return new Promise((resolve) => {
+            const { url_api, method, headers, getRequestData, responseIdentifier } = CONFIG.TRANS_ENGINES[CONFIG.transEngine];
+            // 构建请求数据
+            const requestData = getRequestData(text);
+
+            // 使用 GM_xmlhttpRequest 函数发送 HTTP 请求
+            GM_xmlhttpRequest({
+                method: method,
+                url: url_api, // 请求的 URL
+                headers: headers,
+                data: method === 'POST' ? JSON.stringify(requestData) : null,
+                params: method === 'GET' ? requestData : null, // For GET requests
+                onload: (res) => {
+                    try {
+                        const result = JSON.parse(res.responseText);
+                        console.log(result);
+                        const translatedText = getNestedProperty(result, responseIdentifier) || '翻译失败';
+                        resolve(translatedText);
+                    } catch {
+                        resolve('翻译失败');
+                    }
+                },
+                onerror: (err) => {
+                    console.error('翻译请求失败:', err);
+                    resolve(`翻译失败（${err.type}）`);
+                }
+            });
         });
     }
 
@@ -605,7 +656,7 @@
 
     // 监听 Turbo 获取响应之前事件
     document.addEventListener('turbo:before-fetch-response', () => {
-        firstChangeURL = true;  // 页面开始切换前设置为 true
+        pageConfig.firstChangeURL = true;  // 页面开始切换前设置为 true
     });
 
     // 监听 Turbo 完成事件（延迟翻译）
