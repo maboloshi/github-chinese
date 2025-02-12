@@ -635,6 +635,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "now required": "现在被要求",  //下半句正则
             "Enable 2FA": "启用 2FA",
 
+        "Your issues": "您的议题",
+        "Your pull requests": "您的拉取请求",
+
         // 右上角通知按钮提示
             "You have no unread notifications": "您没有未读通知",
             "You have unread notifications": "您有未读通知",
