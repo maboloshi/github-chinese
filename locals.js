@@ -6850,7 +6850,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/ and /, " 和 "],
+        // [/ and /, " 和 "],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -12477,7 +12477,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/Remove attached binary ([^ ]+)/, "删除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
-        [/ and /, " 和 "],
+        // [/ and /, " 和 "],
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
