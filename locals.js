@@ -18296,6 +18296,14 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
         // 探索页面
         "Discover gists": "探索代码片段",
 
+        // 搜索页面
+        //"Sort:": "排序:",
+            "Best match": "最佳匹配",
+            "Most stars": "最多星标",
+            "Fewest stars": "最少星标",
+            "Most forks": "最多复刻",
+            "Fewest forks": "最少复刻",
+
         // 底部提示栏 (未登录)
         "Sign up for free": "免费注册",
         "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
@@ -18321,6 +18329,8 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
         // [/Joined/,"加入于"], //星标标签卡
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/doesn’t have any public gists yet./, "尚无任何公开的代码片段。"],
+        [/([\d,]+) gist results?/, "$1 个片段结果"],
+        [/Sort:/, "排序："],
     ],
 };
 
