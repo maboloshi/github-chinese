@@ -8294,6 +8294,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "· May be fixed by": " · 可通过该方案修复",
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
+            "Repository owner": "仓库所有者",
             "Repository owner locked and limited conversation to collaborators": "仓库所有者锁定并限制与协作者对话",
             "Repository owner locked as": "仓库所有者锁定为",
             "Repository owner deleted a comment": "仓库所有者删除了评论",
