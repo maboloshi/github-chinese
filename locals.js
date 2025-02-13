@@ -9184,6 +9184,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This workflow requires approval from a maintainer.": "此工作流程需要维护者批准。",
             "Learn more about approving workflows.": "了解更多关于批准工作流程的信息。",
             "Approve and run": "批准并运行",
+            "Approve and run workflows": "批准并运行工作流程",
 
             // 状态词
             "reviewed": "审查",
