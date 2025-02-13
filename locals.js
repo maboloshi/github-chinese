@@ -155,6 +155,7 @@ I18N.conf = {
         ],
         'repository/wiki': [
             '#wiki-body', // wiki 正文
+            'ul.list-style-none.mx-4.px-1', // 右侧目录
         ],
         'orgs': [
             'a[itemprop="name codeRepository"]', // 仓库名称
