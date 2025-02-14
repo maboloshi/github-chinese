@@ -9375,9 +9375,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Copilot menu": "Copilot 菜单",
                     "Explain": "解释",
                     "Attach to current thread": "附加到当前主题",
+                    "Reference added to thread": "已附加至主题", // 左下角浮窗
 
                 "Select files to discuss": "选择文件讨论",
                     "Copilot is not available for this file": "Copilot 不支持此文件",
+                    "Start chat": "开始聊天",
 
             // 建议更改
                 "Suggested change": "建议更改",
