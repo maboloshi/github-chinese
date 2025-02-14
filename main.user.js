@@ -82,6 +82,9 @@
 
     let pageConfig = {};
 
+    // 初始化
+    init();
+
     // 更新页面设置
     function updatePageConfig() {
         const newType = detectPageType();
@@ -199,11 +202,11 @@
         const treeWalker = document.createTreeWalker(
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
-            {
-                acceptNode: node =>
+            node =>
                 // 跳过忽略的节点
-                node.matches?.(pageConfig.ignoreSelectors) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
-            }
+                node.matches?.(pageConfig.ignoreSelectors)
+                ? NodeFilter.FILTER_REJECT
+                : NodeFilter.FILTER_ACCEPT,
         );
 
         const handleElement = node => {
@@ -211,7 +214,6 @@
             switch (node.tagName) {
                 case "RELATIVE-TIME": // 翻译时间元素
                     transTimeElement(node.shadowRoot);
-                    watchTimeElement(node.shadowRoot);
                     return;
 
                 case "INPUT":
@@ -372,18 +374,6 @@
     }
 
     /**
-     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
-     * @param {Element} el - 需要监视的元素。
-     */
-    function watchTimeElement(el) {
-        new MutationObserver(mutations => {
-            transTimeElement(mutations[0].addedNodes[0]);
-        }).observe(el, {
-            childList: true
-        });
-    }
-
-    /**
      * transElement 函数：翻译指定元素的文本内容或属性。
      * @param {Element|DOMStringMap} el - 需要翻译的元素或元素的数据集 (node.dataset)。
      * @param {string} field - 需要翻译的属性名称或文本内容字段。
@@ -479,7 +469,7 @@
                 const translatedText = await requestRemoteTranslation(descText);
 
                 // 安全创建结果元素
-                const { name, url } = CONFIG.TRANS_ENGINES[CONFIG.transEngine]
+                const { name, url } = CONFIG.TRANS_ENGINES[CONFIG.transEngine];
                 const resultContainer = document.createElement('div');
                 resultContainer.innerHTML = `
                     <span style='font-size: small'>
@@ -541,8 +531,9 @@
                         console.log(result);
                         const translatedText = getNestedProperty(result, responseIdentifier) || '翻译失败';
                         resolve(translatedText);
-                    } catch {
-                        resolve('翻译失败');
+                    } catch (err) {
+                        console.error('翻译失败:', err);
+                        resolve(`翻译失败（${err.type}）`);
                     }
                 },
                 onerror: (err) => {
@@ -632,30 +623,18 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
-        // 获取当前页面的翻译规则
-        updatePageConfig();
-        console.log(`【Debug】开始 pageType= ${pageConfig.currentPageType}`);
+        // 设置中文环境
+        document.documentElement.lang = CONFIG.LANG;
 
-        if (pageConfig.currentPageType) traverseNode(document.body);
-
-        // 监视页面变化
-        watchUpdate();
-    }
-
-    // 设置中文环境
-    document.documentElement.lang = CONFIG.LANG;
-
-    // 监测 HTML Lang 值, 设置中文环境
-    new MutationObserver(() => {
-        if (document.documentElement.lang === "en") {
-            document.documentElement.lang = CONFIG.LANG;
+        // 监测 HTML Lang 值, 设置中文环境
+        new MutationObserver(() => {
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = CONFIG.LANG;
         }
-    }).observe(document.documentElement, {
-        attributeFilter: ['lang']
-    });
+        }).observe(document.documentElement, { attributeFilter: ['lang'] });
 
-    // 监听 Turbo 获取响应之前事件
-    document.addEventListener('turbo:before-fetch-response', () => {
+        // 监听 Turbo 获取响应之前事件
+        document.addEventListener('turbo:before-fetch-response', () => {
         pageConfig.firstChangeURL = true;  // 页面开始切换前设置为 true
     });
 
@@ -671,10 +650,19 @@
         }
     });
 
-    // 初始化菜单
-    registerMenuCommand();
+        // 初始化菜单
+        registerMenuCommand();
 
-    // 在页面初始加载完成时执行
-    window.addEventListener('DOMContentLoaded', init);
+        // 监视页面变化
+        watchUpdate();
+
+        // 首次页面翻译
+        document.addEventListener('DOMContentLoaded', () => {
+            // 获取当前页面的翻译规则
+            updatePageConfig();
+            console.log(`【Debug】开始 pageType= ${pageConfig.currentPageType}`);
+            if (pageConfig.currentPageType) traverseNode(document.body);
+        });
+    }
 
 })(window, document);
