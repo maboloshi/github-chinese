@@ -94,7 +94,7 @@ Via 浏览器（Android）                | 浏览器内自带
 
 更新至 1.9.3
 
-1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
+1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`于`开头的时间正则，并停用时间元素监视
 1. 优化突变翻译处理：
    - 引入`characterDataPage`规则，对特定页面启用`筛选字符数据`的变更
    - 引入`ignoreMutationSelectorPage`规则，忽略特定突变元素
@@ -204,7 +204,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 其他更新:
 
-1. 修复`rePagePath`,`rePagePathRepo`,`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
+1. 修复`rePagePath`，`rePagePathRepo`，`rePagePathOrg`匹配规则，限制路径匹配层次，排除干扰
 1. 直接使用网页URL`document.URL`变化触发`标题翻译`和`JS 筛选器`翻译
 1. 修复`关闭正则`无法生效, 需要刷新页面才生效
 1. 日常更新词库和忽略规则
