@@ -63,10 +63,13 @@ I18N.conf = {
         'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["#highlighted-line-menu-positioner", ".Text__StyledText-sc-17v1xeu-0"], // 代码视图 存在
+        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
+        'repository/issues': [
+            '.styled-input-container', // 筛选条
+        ],
         '*': [
             'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
         ],
@@ -115,10 +118,14 @@ I18N.conf = {
             '[id^="offset"]', // 符号-->引用
             '#highlighted-line-menu-positioner', // 代码视图
             '#filter-results', // 右侧 符号筛选
+            '.Text__StyledText-sc-17v1xeu-0', // 右侧 符号筛选
             '#repos-header-breadcrumb', // 文件路径中文件夹路径
             '#repos-header-breadcrumb--wide', // 文件路径中文件夹路径 左侧文件树展开情况
             '#sticky-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
+        ],
+        'repository/issues': [
+            '.styled-input-container', // 筛选条
         ],
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏
@@ -148,6 +155,7 @@ I18N.conf = {
         ],
         'repository/wiki': [
             '#wiki-body', // wiki 正文
+            'ul.list-style-none.mx-4.px-1', // 右侧目录
         ],
         'orgs': [
             'a[itemprop="name codeRepository"]', // 仓库名称
@@ -176,7 +184,7 @@ I18N.conf = {
             '.js-comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
-            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', // 特定元素标签
+            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG' // 特定元素标签
         ],
     },
 
@@ -627,6 +635,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "GitHub users are": "GitHub 用户",  //下半句正则
             "now required": "现在被要求",  //下半句正则
             "Enable 2FA": "启用 2FA",
+
+        "Your issues": "您的议题",
+        "Your pull requests": "您的拉取请求",
 
         // 右上角通知按钮提示
             "You have no unread notifications": "您没有未读通知",
@@ -1345,6 +1356,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "contributor": "贡献者",
                         "contributors": "贡献者",
                         "updated": "更新于",
+
+            // 报错
+                "Copilot was interrupted before it could finish this message.": "Copilot 在完成此消息之前被中断。",
 
             "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
             "Privacy Policy": "隐私政策",
@@ -6843,7 +6857,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) failing checks?/, "$1 个失败的检查"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
-        [/ and /, " 和 "],
+        // [/ and /, " 和 "],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
@@ -8284,6 +8298,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "· May be fixed by": " · 可通过该方案修复",
             "pinned this issue": "置顶议题",
             "unpinned this issue": "取消置顶",
+            "Repository owner": "仓库所有者",
             "Repository owner locked and limited conversation to collaborators": "仓库所有者锁定并限制与协作者对话",
             "Repository owner locked as": "仓库所有者锁定为",
             "Repository owner deleted a comment": "仓库所有者删除了评论",
@@ -8831,6 +8846,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "removed the request for review from": "取消请求审查",
             "pushed a commit that referenced this pull request": "推送了一个引用此拉取请求的提交",
             "suggested changes": "建议更改",
+            "deleted the branch": "删除了分支",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -9168,6 +9184,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This workflow requires approval from a maintainer.": "此工作流程需要维护者批准。",
             "Learn more about approving workflows.": "了解更多关于批准工作流程的信息。",
             "Approve and run": "批准并运行",
+            "Approve and run workflows": "批准并运行工作流程",
 
             // 状态词
             "reviewed": "审查",
@@ -9358,9 +9375,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Copilot menu": "Copilot 菜单",
                     "Explain": "解释",
                     "Attach to current thread": "附加到当前主题",
+                    "Reference added to thread": "已附加至主题", // 左下角浮窗
 
                 "Select files to discuss": "选择文件讨论",
                     "Copilot is not available for this file": "Copilot 不支持此文件",
+                    "Start chat": "开始聊天",
 
             // 建议更改
                 "Suggested change": "建议更改",
@@ -12470,7 +12489,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/Remove attached binary ([^ ]+)/, "删除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
-        [/ and /, " 和 "],
+        // [/ and /, " 和 "],
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -18284,6 +18303,14 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
         // 探索页面
         "Discover gists": "探索代码片段",
 
+        // 搜索页面
+        //"Sort:": "排序:",
+            "Best match": "最佳匹配",
+            "Most stars": "最多星标",
+            "Fewest stars": "最少星标",
+            "Most forks": "最多复刻",
+            "Fewest forks": "最少复刻",
+
         // 底部提示栏 (未登录)
         "Sign up for free": "免费注册",
         "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
@@ -18309,6 +18336,8 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
         // [/Joined/,"加入于"], //星标标签卡
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/doesn’t have any public gists yet./, "尚无任何公开的代码片段。"],
+        [/([\d,]+) gist results?/, "$1 个片段结果"],
+        [/Sort:/, "排序："],
     ],
 };
 
