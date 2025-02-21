@@ -9036,8 +9036,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
             // [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
             "Merge without waiting for requirements to be met (bypass branch protections)": "合并而无需等待需求满足（绕过分支保护）。",
+                "Extended description": "扩展描述",
                 "Add an optional extended description…": "添加可选的扩展描述...",
                 // [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"],
+            "Checks awaiting conflict resolution": "等待冲突解决",
 
             // 合并失败提示
                 "Merge attempt failed": "合并尝试失败",
