@@ -13690,6 +13690,11 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/Week (?:of|from) (?:Monday,)?(.+)/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}当周`; // 无论如何都是星期一
+        }],
     ],
 };
 
