@@ -1287,6 +1287,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "All repositories": "所有仓库",
             "Back": "返回",
             "Conversation options": "选项",
+                "Personal instructions": "个人指导",
+                    "Set up Copilot to align with your workflows and preferences. These instructions will only impact your personal conversation.": "设置 Copilot 以符合您的工作流程和偏好。这些指导仅影响您的个人对话。",
+                    "Your instructions": "您的指导",
+                        "Role": "角色",
+                        "Communication": "通信",
+                        "Code preferences": "代码偏好",
+                    "characters": "字符",
                 "Delete conversation": "删除对话",
                 "View all conversations": "查看全部对话",
                     "Active conversations": "最近对话",
@@ -23547,6 +23554,7 @@ I18N["zh-CN"]["copilot"] = {
 
         // 右侧
             "Open menu": "菜单",
+            "Feedback and settings": "反馈和设置",
                 // 反馈
                     "Rate your experience": "反馈",
                         // 四个表情
