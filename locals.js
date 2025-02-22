@@ -8826,9 +8826,15 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                         "Repository access limited": "仓库访问受限",
                             "You do not have access to push to this repository and its owner has disabled forking.": "您无权推送到此仓库，其所有者已禁用了复刻。",
 
+                    "Codespaces will be undergoing maintenance in Europe and Southeast Asia from 17:00 UTC Friday 2/28 to 02:00 UTC Saturday 3/1. Users may experience connection issues during this time.": "代码空间将于 UTC 时间 2/28 星期五下午 5:00 至 3/1 星期六凌晨 2:00 在欧洲和东南亚进行维护。用户在此期间可能会遇到连接问题。",
+
                     // [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
+
+                // Copilot
+                    "Describe a change you'd like to make to this pull request, such as adding tests or documentation...": "描述您想对此拉取请求进行的更改，例如添加测试或文档…",
+                    "Start task": "开始任务",
 
             // 自动修复漏洞 提示
                 "This automated pull request fixes a": "这个自动拉取请求将修复了一个",
