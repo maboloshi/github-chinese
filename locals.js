@@ -8822,6 +8822,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                     "Codespace usage for this repository is paid for by": "该仓库的代码空间使用费由以下人员支付",
 
+                    // 被拉黑
+                        "Repository access limited": "仓库访问受限",
+                            "You do not have access to push to this repository and its owner has disabled forking.": "您无权推送到此仓库，其所有者已禁用了复刻。",
+
                     // [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
