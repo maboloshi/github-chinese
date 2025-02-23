@@ -14845,7 +14845,6 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                     "This ruleset will not be enforced": "规则将不被执行",
 
             "Bypass list": "旁路列表",
-                //"Exempt roles, teams, or apps from this ruleset by adding them to the bypass list": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束",
                 "Exempt roles or teams from this ruleset by adding them to the bypass list": "通过将角色或团队添加到旁路列表，使其免受此规则集的约束", // 组织设置
                 "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list.": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束。",
                 "Add bypass": "添加旁路",
