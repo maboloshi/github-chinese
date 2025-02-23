@@ -14803,6 +14803,8 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                     "New tag ruleset": "新建标签规则集",
                     "Import a ruleset": "导入规则集",
 
+            "Ruleset": "规则集",
+
             "No rulesets have been added yet": "尚未添加任何规则集",
 
             "All": "全部",
@@ -14830,6 +14832,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                 "Ruleset name cannot be empty": "规则集名称不能为空",
             "Enforcement status": "执行状态",
                 "Active": "激活",
+                    "This ruleset will be enforced": "规则将被执行",
                     "Rules will be enforced": "规则将被执行",
                     "Enable Organization Ruleset": "启用组织规则集", // 组织设置
                         "I want rules enforced on targeted repositories in this ruleset.": "我希望此规则集中强制执行针对目标仓库的规则。",
@@ -14839,16 +14842,19 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                         "Upgrade to Enterprise to use this mode.": "升级到企业版即可使用此模式。",
                 "Disabled": "禁用",
                     "Do not evaluate or enforce rules": "不评估或执行规则",
+                    "This ruleset will not be enforced": "规则将不被执行",
 
             "Bypass list": "旁路列表",
-                "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束",
+                //"Exempt roles, teams, or apps from this ruleset by adding them to the bypass list": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束",
                 "Exempt roles or teams from this ruleset by adding them to the bypass list": "通过将角色或团队添加到旁路列表，使其免受此规则集的约束", // 组织设置
+                "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list.": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束。",
                 "Add bypass": "添加旁路",
 
                  // 添加旁路对话框
                     "Choose which roles, teams, and apps can bypass this ruleset": "选择哪些角色、团队和应用可绕过此规则集",
 
                     "Filter items": "筛选",
+                    "Filter bypass actors": "筛选旁路参与者",
 
                     "No suggestions": "暂无建议",
 
@@ -14968,6 +14974,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Add Exclusion pattern": "添加排除规则",
 
             // 规则
+            "rules": "规则",
                 "Which rules should be applied to the targets that you have selected?": "哪些规则应适用于您选择的目标？",
                 "Which rules should be applied?": "应适用哪些规则？",
 
@@ -18721,6 +18728,11 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
                     "This account has not applied to join GitHub Sponsors.": "此账户尚未申请加入 GitHub 赞助者。",
                     "Join the waitlist": "加入等候名单",
 
+            "GitHub Sponsors applications": "GitHub 赞助者申请",
+                "Pending": "排队",
+                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 赞助者个人资料正在等待 GitHub 审核。",
+                "Manage": "管理",
+
         // GitHub 赞助者个人资料 https://github.com/sponsors/<user-name>
         // GitHub 赞助者组织资料 https://github.com/sponsors/<org-name>
         // ...?preview=true
@@ -18775,6 +18787,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
                 "Fiscal Host": "财政主办方",
                     "Members of supported fiscal hosts can use their fiscal host to join GitHub Sponsors instead of using a bank account.": "受支持财务主办方的成员可使用其财务主机加入 GitHub 赞助者，而无需使用银行账户。",
             "Submit": "提交",
+            "Your information has been saved.": "您的信息已保存。",
 
         // 加入等候名单界面 https://github.com/sponsors/<user-name>/waitlist
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已在 103 个地区推出测试版！",
@@ -18789,6 +18802,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "Country or region of residence": "居住的国家或地区",
                 "Select a country or region": "选择一个国家或地区",
                 "The country or region where you reside. This is required for tax purposes.": "您居住的国家或地区。这是出于税务目的所必需的。",
+            "Bank account country or region": "银行账户所在的国家或地区",
             "How you receive payments": "收款方式",
                 "Use a bank account": "使用银行账户",
                     "You can use your bank account to join GitHub Sponsors.": "您可以使用您的银行账户加入 GitHub 赞助者。",
