@@ -15901,6 +15901,9 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
                     "documentation": "文档",
                     "(NotServedByPagesError).": "（Pages 服务错误）。",
 
+                    "Domain's DNS record could not be retrieved. For more information, see": "无法检索域的 DNS 记录。更多信息，请参阅",
+                    "(InvalidDNSError).": "（DNS 错误）。",
+
                     // 顶部提醒
                     "No changes to custom domain.": "没有对自定义域进行修改。",
                     "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定义域已删除。如果您不打算继续使用 GitHub Pages，请记得删除此域的任何 GitHub Pages 的 DNS 记录。",
