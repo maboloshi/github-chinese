@@ -45,7 +45,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties)/,
@@ -23649,6 +23649,25 @@ I18N["zh-CN"]["copilot"] = {
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
         [/(\d+) vulnerability detected/, "检测到 $1 个漏洞"],
+    ],
+};
+
+I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
+    "static": {
+        "Copilot-powered code reviews waitlist": "Copilot 驱动的代码审查候补名单",
+
+        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驱动代码审查候补名单",
+            "Get fast AI-powered code feedback in pull requests on GitHub.com and in Visual Studio Code. Jump from your pull request to Copilot Workspace to refine, validate and land suggestions.": "在 GitHub.com 和 Visual Studio Code 的拉取请求中获取由 AI 驱动的快速代码反馈。您可以直接从拉取请求跳转至 Copilot 工作区，对建议进行优化、验证并最终落实。",
+
+        "Join the waitlist": "加入等候名单",
+            "By signing up for the waitlist you agree to": "注册加入候补名单即表示您同意",
+            "the pre-release terms": "预发行条款",
+            ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。注册并不保证您一定能获得访问权限。如果您被纳入预览计划，我们将通过电子邮件通知您。",
+
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "预览使用Copilot驱动的代码审查的名额有限。如果您获得访问权限，您将收到一封电子邮件通知。",
+    },
+    "regexp":[
+        [/Thank you! ([^ ]+) is now on the waitlist/, "感谢！$1 已加入候补名单"],
     ],
 };
 
