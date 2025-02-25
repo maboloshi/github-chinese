@@ -23581,6 +23581,14 @@ I18N["zh-CN"]["copilot"] = {
             "Scroll to bottom": "滚动至底部",
 
         // 右侧
+            "Share conversation": "分享对话",
+                "This conversation may contain private content. Viewers must have access to all referenced content.": "这段对话可能包含私人内容。查看者必须拥有对所有引用内容的访问权限。",
+                "Create link": "创建链接",
+                "Copy link": "复制链接",
+                "Delete shared link": "删除分享链接",
+                "New messages after creating a link stay private.": "新消息在创建链接后仍保持私密。",
+                "Messages up to this point are included in shared link": "以上内容都包含在共享链接中",
+                "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此对话旧版本已被共享。若要更新，请删除并创建新链接。",
             "Open menu": "菜单",
             "Feedback and settings": "反馈和设置",
                 // 反馈
