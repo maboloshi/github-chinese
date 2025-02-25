@@ -1174,6 +1174,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
+            "We were unable to verify this signature.": "我们无法验证此签名。",
             "This user has not yet uploaded their public signing key.": "此用户尚未上传其公共签名密钥。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
