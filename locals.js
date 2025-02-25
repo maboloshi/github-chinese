@@ -184,7 +184,7 @@ I18N.conf = {
             '.js-comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
-            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG' // 特定元素标签
+            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
         ],
     },
 
@@ -709,10 +709,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "I have lots of experience with React but not with Vue. Please give answers with both React and Vue examples side-by-side. It is useful to see a comparison between React and Vue.": "我对 React 有很多经验，但对 Vue 没有。请给出 React 和 Vue 示例并排的答案。看到 React 和 Vue 之间的比较很有用。",
                         "Each message should communicate a singular idea. That idea should be limited to ONE codeblock or paragraph. At the end of each message, prompt me whether to continue on. Let me know what is coming next.": "每条消息应传达一个单一的想法。该想法应限于一个代码块或段落。在每条消息的末尾，提示我是否继续。让我知道接下来会发生什么。",
                         "Please give overly excited explanations! I need TONS of enthusiasm! Use ALL CAPS and lots of EMOJIS wherever possible!": "请给出过于兴奋的解释！我需要大量的热情！尽可能使用大写字母和大量的表情符号！",
-                "Copilot Immersive Enhancements": "Copilot 沉浸式增强",
-                    // 在 GitHub Copilot 上的 Copilot Chat 沉浸式模式中探索增强的体验。该测试版在专用聊天界面中引入了改进的互动和更智能的建议，专为专注、深入的对话而设计。
-                    "Discover an enhanced experience in the immersive mode of Copilot Chat, available at": "在",
-                    ". This beta introduces improved interaction and smarter suggestions within a dedicated chat interface designed for focused, in-depth conversations.": "上的 Copilot 沉浸聊天模式中探索增强的体验。该测试版在专用聊天界面中引入了改进的互动和更智能的建议，专为专注、深入的对话而设计。",
                 "New Commit Details Page": "新版提交详情页",
                     "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交详细信息页面可让您快速了解和浏览提交中的更改。改进了过滤、注释（文件树中新增了浮动注释和注释计数）、键盘导航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
@@ -9047,6 +9043,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Pull request cannot be merged because it has a merge conflict.": "由于存在合并冲突，无法合并拉取请求。",
                 "User does not have push access to the repository.": "用户无权推送到此仓库。",
                 "You're not authorized to push to this branch. Visit https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches for more information.": "您无权推送到该分支。请访问 https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches 了解更多信息。",
+
+                // 绕过规则合并
+                "Merge without waiting for requirements to be met (bypass rules)": "无需等待满足要求即可合并（绕过规则）",
+                "Bypass rules and merge": "绕过规则进行合并",
+                "Confirm bypass rules and merge": "确认绕过规则进行合并",
+
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
                 "Merge the latest changes from": "将",
