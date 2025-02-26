@@ -15911,6 +15911,7 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
 
                 "Enforce HTTPS": "强制 HTTPS",
                     "— Unavailable for your site because your domain is not properly configured to support HTTPS (": "— 您的网站不可用，因为您的域未正确配置为支持 HTTPS (",
+                    "— Unavailable for your site because a certificate has not yet been issued for your domain (": "— 您的网站不可用，因为您的域尚未颁发证书 (",
                     "Troubleshooting custom domains": "自定义域故障排除",
                     "— Required for your site because you are using the default domain (": "— 必须先设置自定义域，目前您正在使用默认域 (",
 
@@ -15935,6 +15936,7 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 检查正在进行。"],
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正确"],
         [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
+        [/Something went wrong issuing a certificate for ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?). Please contact the Pages team./, "为 $1 颁发证书时出现问题。请联系 Pages 团队。"],
     ],
 };
 
