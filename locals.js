@@ -8187,6 +8187,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             // "closed": "已关闭",
             // 新版
                 "Closed as not planned": "关闭因未计划",
+                "Closed as duplicate": "关闭因重复",
+                "of": "于",
+                "Not planned": "未计划",
 
             // 父级议题
             "Parent:": "父级：",
@@ -23374,6 +23377,7 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = { // 仓库 - 洞察 - 操�
 
     },
     "regexp": [
+        ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/Showing data from (\d+)\/(\d+)\/(\d+) to/, "显示数据：从$1年$2月$3日至"],
         [/Total (minutes|job runs) across all workflows in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
             var typeKey = {'minutes': '总分钟数', 'job runs': '总工作运行数'};
@@ -23540,6 +23544,8 @@ I18N["zh-CN"]["copilot"] = {
             "Open sidebar": "打开侧边栏",
             "Close sidebar": "关闭侧边栏",
             "New conversation": "新聊天",
+            "Close conversations": "关闭侧边栏",
+            "Open conversations": "打开侧边栏",
 
             // 时间
                 "Today": "今天",
@@ -23614,11 +23620,15 @@ I18N["zh-CN"]["copilot"] = {
 
             "Open panel": "打开面板",
             "Close panel": "关闭面板",
+            "Close file browser": "关闭文件浏览器",
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
                 "I’m feeling lucky": "我手气不错",
 
+                "Download code": "下载代码",
+
                 "lines": "行",
+                "line": "行",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
