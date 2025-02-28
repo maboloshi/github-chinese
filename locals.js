@@ -7969,6 +7969,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     "Link an issue from this repository": "关联来自此仓库的议题",
                     "Filter": "筛选",
                     "No results": "无结果",
+                    "Open in Workspace": "在工作区打开",
 
                 // "Notifications": "通知类型",
                 "Customize": "自定义",
@@ -8362,7 +8363,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Create a branch": "创建分支",
                     "for this issue or link a pull request.": "为这个议题或关联一个拉取请求",
                     "When branches are created from issues, their pull requests are automatically linked.": "当从议题中创建分支时，它们的拉取请求会自动关联。",
-                    "Open in Workspace": "在工作区打开",
 
                     // 关系
                         "Add parent": "添加父议题",
