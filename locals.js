@@ -11427,6 +11427,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/([^ ]+) summary/, "$1 摘要"],
         [/By ([^ ]+)/, "创建：$1"],
         [/Branch "([^ ]+)" is not allowed to deploy to ([^ ]+) due to environment protection rules./, "由于环境保护规则，“$1”分支不允许部署到 $2 上。"],
+        // 时间
+        [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2时$3分$4秒"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
