@@ -702,6 +702,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Copilot Workspace is a Copilot-native coding environment that helps you land high-quality pull requests faster by allowing you to edit and run code from your pull request without leaving GitHub.com.": "Copilot 工作区是 Copilot 的原生编码环境，允许您在不离开 GitHub.com 的情况下编辑和运行拉取请求中的代码，从而帮助您更快提交高质量的拉取请求。",
                     "Copilot Workspace is available to customers with access to the Copilot code review public preview.": "访问 Copilot 代码审查公开预览版的客户可使用 Copilot 工作区。",
                     "Sign up for the Copilot code review public preview": "注册参与 Copilot 代码审查公开预览",
+                "Personal Instructions": "个人指导",
+                    "Personal Instructions allow you to provide Copilot with important details about your preferences, such as your preferred language, response style, or even code standards.": "个人指导允许您向 Copilot 提供有关您的偏好的重要细节，例如您的首选语言、响应风格，甚至代码标准。",
+                    "Examples:": "示例：",
+                        "Always respond in Portuguese.": "始终用葡萄牙语回复。",
+                        "I have lots of experience with React but not with Vue. Please give answers with both React and Vue examples side-by-side. It is useful to see a comparison between React and Vue.": "我对 React 有很多经验，但对 Vue 没有。请给出 React 和 Vue 示例并排的答案。看到 React 和 Vue 之间的比较很有用。",
+                        "Each message should communicate a singular idea. That idea should be limited to ONE codeblock or paragraph. At the end of each message, prompt me whether to continue on. Let me know what is coming next.": "每条消息应传达一个单一的想法。该想法应限于一个代码块或段落。在每条消息的末尾，提示我是否继续。让我知道接下来会发生什么。",
+                        "Please give overly excited explanations! I need TONS of enthusiasm! Use ALL CAPS and lots of EMOJIS wherever possible!": "请给出过于兴奋的解释！我需要大量的热情！尽可能使用大写字母和大量的表情符号！",
                 "Copilot Immersive Enhancements": "Copilot 沉浸式增强",
                     // 在 GitHub Copilot 上的 Copilot Chat 沉浸式模式中探索增强的体验。该测试版在专用聊天界面中引入了改进的互动和更智能的建议，专为专注、深入的对话而设计。
                     "Discover an enhanced experience in the immersive mode of Copilot Chat, available at": "在",
@@ -1171,6 +1178,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
             "We had a problem verifying this signature. Please try again later.": "我们在验证此签名时遇到问题。请稍后再试。",
+            "This user has not yet uploaded their public signing key.": "此用户尚未上传其公共签名密钥。",
 
             "GPG Key ID:": "GPG 密钥 ID：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
@@ -1279,6 +1287,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "All repositories": "所有仓库",
             "Back": "返回",
             "Conversation options": "选项",
+                "Personal instructions": "个人指导",
+                    "Set up Copilot to align with your workflows and preferences. These instructions will only impact your personal conversation.": "设置 Copilot 以符合您的工作流程和偏好。这些指导仅影响您的个人对话。",
+                    "Your instructions": "您的指导",
+                        "Role": "角色",
+                        "Communication": "通信",
+                        "Code preferences": "代码偏好",
+                    "characters": "字符",
                 "Delete conversation": "删除对话",
                 "View all conversations": "查看全部对话",
                     "Active conversations": "最近对话",
@@ -4898,6 +4913,9 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "About GitHub Copilot privacy.": "关于 GitHub Copilot 隐私的信息。",
                 "Allow GitHub to use my data for AI model training": "允许 GitHub 将数据用于训练 AI 模型",
                     "Allow GitHub, its affiliates and third parties to use my data, including Prompts, Suggestions, and Code Snippets, for AI model training. More information in the": "允许GitHub、其关联公司和第三方使用我的数据，包括提示、建议和代码片段，以训练 AI 模型。更多信息请查看",
+                "Copilot can search the web": "网络搜索",
+                    "Copilot can answer questions about new trends and give improved answers, via Bing. See": "Copilot 可以回答有关新趋势的问题并给出改进的答案，通过必应。请参阅",
+                    "Microsoft Privacy Statement": "微软隐私声明",
                 "Copilot access to Bing": "访问必应",
                     "Copilot can answer questions about new trends and give improved answers.": "Copilot 可以回答有关新趋势的问题，并给出改进的答案。",
                     "See Microsoft Privacy Statement": "请参阅微软隐私声明",
@@ -7107,6 +7125,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "forked from": "复刻自",
                 "Public repository · Forked from": "公共仓库 · 复刻自", // Android UA 下出现
                 "Public repository · Generated from": "公共仓库 · 创建自", // 同上
+                "Public archive repository": "公共存档仓库",
                 "generated from": "创建自",
                 "mirrored from": "镜像自",
 
@@ -8803,6 +8822,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                     "Codespace usage for this repository is paid for by": "该仓库的代码空间使用费由以下人员支付",
 
+                    // 被拉黑
+                        "Repository access limited": "仓库访问受限",
+                            "You do not have access to push to this repository and its owner has disabled forking.": "您无权推送到此仓库，其所有者已禁用了复刻。",
+
                     // [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
@@ -9034,8 +9057,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
             // [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
             "Merge without waiting for requirements to be met (bypass branch protections)": "合并而无需等待需求满足（绕过分支保护）。",
+                "Extended description": "扩展描述",
                 "Add an optional extended description…": "添加可选的扩展描述...",
                 // [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"],
+            "Checks awaiting conflict resolution": "等待冲突解决",
 
             // 合并失败提示
                 "Merge attempt failed": "合并尝试失败",
@@ -13421,10 +13446,10 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
 
             return user + ' 的' + contKey[cont];
         }],
-        [/Week of (.+)/, (match, p1) => { // p1为(.+)
+        [/Week (?:of|from) (?:Monday,)?(.+)/, (match, p1) => { // p1为(.+)
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `${translatedDate}当周`;
+            return `${translatedDate}当周`; // 无论如何都是星期一
         }],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
@@ -13686,6 +13711,11 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/Week (?:of|from) (?:Monday,)?(.+)/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}当周`; // 无论如何都是星期一
+        }],
     ],
 };
 
@@ -23531,6 +23561,7 @@ I18N["zh-CN"]["copilot"] = {
 
         // 右侧
             "Open menu": "菜单",
+            "Feedback and settings": "反馈和设置",
                 // 反馈
                     "Rate your experience": "反馈",
                         // 四个表情
