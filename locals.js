@@ -6664,6 +6664,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Unsubscribe": "退订",
             "Mark as read": "标记为已读",
             "Mark as unread": "标记为未读",
+            "Move to inbox": "移动到收件箱",
             "Save": "保存",
             "Unsave": "未保存",
 
