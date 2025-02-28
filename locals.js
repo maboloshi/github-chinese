@@ -3767,7 +3767,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "You don't have an active coupon.": "您没有有效的优惠券。",
             "* Discount only applies for GitHub Pro": "* 优惠仅限 GitHub Pro。",
 
-            "Additional Information": "附加信息",
+            //"Additional Information": "附加信息",
+            "Additional information": "附加信息",
                 "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收据上添加具体的联系方式或税务信息，例如您的企业全称、VAT/GST 识别号码或记录地址。我们将确保它显示在每张收据上。",
             "Add information": "添加信息",
             "No additional information added to your receipts.": "您的收据上没有添加任何额外的信息。",
@@ -3776,6 +3777,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Extra billing information": "额外的账单信息",
             "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
             "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
+            "To update the information that appears on invoices (if enabled), visit the": "要更新显示在发票上的信息（如果已启用），请访问",
             "Full business name or address of record": "企业全称或记录地址",
             "Save contact information": "保存联系信息",
 
