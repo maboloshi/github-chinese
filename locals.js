@@ -6877,7 +6877,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
         // [/ and /, " 和 "],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
-        [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
+        [/^(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
         [/(\d+) members?/, "$1 个成员"], // 组织  浮动信息卡
         [/Answered (\d+) discussions? in this repository in the past month/, "过去一个月内在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
         [/Answered (\d+) discussions? in this repository in the past week/, "过去一周内在此仓库中回答了 $1 个讨论"], // 用户 浮动信息卡
@@ -11428,8 +11428,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/By ([^ ]+)/, "创建：$1"],
         [/Branch "([^ ]+)" is not allowed to deploy to ([^ ]+) due to environment protection rules./, "由于环境保护规则，“$1”分支不允许部署到 $2 上。"],
         // 时间
-        [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
         [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2时$3分$4秒"],
+        [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
