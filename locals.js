@@ -4927,6 +4927,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Select an option": "选择",
                         "You will have access to the feature": "您将能够访问此功能",
                         "You won’t have access to the feature": "您将不能访问此功能",
+                "Anthropic Claude 3.7 Sonnet in Copilot": "Claude 3.7 模型",
+                    "You can use the latest Claude 3.7 Sonnet model.": "您可以使用最新 Claude 3.7 Sonnet 模型。",
                 "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
                     "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
                     "Learn more about the public preview of Gemini 2.0 Flash.": "了解更多关于 GitHub Copilot 如何为 Gemini 2.0 Flash 提供服务。",
