@@ -7042,6 +7042,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Change repository": "选择仓库",
 
         // 导入仓库 第二页 /<user-name>/<repo-name>/import
+            "Your import will begin shortly...": "导入即将开始...",
             "Preparing your new repository": "准备您的新仓库",
                 "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
                 "There is no need to keep this window open. We'll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
