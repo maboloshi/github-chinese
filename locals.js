@@ -13472,7 +13472,7 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}当周`; // 无论如何都是星期一
         }],
-        [/([^ ]+)-([^ ]+) (\d+)/, (match, p1, p2 ,p3) => { 
+        [/([^ ]+)-([^ ]+) (\d+)/, (match, p1, p2 ,p3) => { // 出现位置：具体某贡献者 - 贡献数柱形图日期，原文格式为 月-月 年
             const translatedP1 = I18N["zh-CN"]["public"]["static"][p1] || p1;
             const translatedP2 = I18N["zh-CN"]["public"]["static"][p2] || p2;
             return `${p3}年 ${translatedP1}-${translatedP2}`;
