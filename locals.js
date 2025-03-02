@@ -13730,7 +13730,7 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             "Download CSV": "下载 CSV",
             "Download PNG": "下载 PNG",
             // 图表本体
-                "Date": "日期",
+                "DateTime": "日期时间",
                 "Frequency": "频率",
                 "Values": "值",
 
