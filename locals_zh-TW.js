@@ -45,10 +45,10 @@ I18N.conf = {
      * 導入倉庫 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 倉庫路徑
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 組織路徑
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -184,7 +184,7 @@ I18N.conf = {
             '.js-comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 頂部搜索欄 關鍵詞被翻譯
-            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG' // 特定元素標籤
+            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素標籤
         ],
     },
 
@@ -709,10 +709,6 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "I have lots of experience with React but not with Vue. Please give answers with both React and Vue examples side-by-side. It is useful to see a comparison between React and Vue.": "我對 React 有很多經驗，但對 Vue 沒有。請給出 React 和 Vue 示例並排的答案。看到 React 和 Vue 之間的比較很有用。",
                         "Each message should communicate a singular idea. That idea should be limited to ONE codeblock or paragraph. At the end of each message, prompt me whether to continue on. Let me know what is coming next.": "每條消息應傳達一個單一的想法。該想法應限於一個代碼塊或段落。在每條消息的末尾，提示我是否繼續。讓我知道接下來會發生什麼。",
                         "Please give overly excited explanations! I need TONS of enthusiasm! Use ALL CAPS and lots of EMOJIS wherever possible!": "請給出過於興奮的解釋！我需要大量的熱情！儘可能使用大寫字母和大量的表情符號！",
-                "Copilot Immersive Enhancements": "Copilot 沉浸式增強",
-                    // 在 GitHub Copilot 上的 Copilot Chat 沉浸式模式中探索增強的體驗。該測試版在專用聊天界面中引入了改進的互動和更智能的建議，專為專注、深入的對話而設計。
-                    "Discover an enhanced experience in the immersive mode of Copilot Chat, available at": "在",
-                    ". This beta introduces improved interaction and smarter suggestions within a dedicated chat interface designed for focused, in-depth conversations.": "上的 Copilot 沉浸聊天模式中探索增強的體驗。該測試版在專用聊天界面中引入了改進的互動和更智能的建議，專為專注、深入的對話而設計。",
                 "New Commit Details Page": "新版提交詳情頁",
                     "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交詳細信息頁面可讓您快速瞭解和瀏覽提交中的更改。改進了過濾、註釋（文件樹中新增了浮動註釋和註釋計數）、鍵盤導航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的豐富差異視圖",
@@ -1178,6 +1174,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "The key has expired": "密鑰已過期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未簽名，但一位或多位作者要求對歸屬於他們的任何提交進行簽名。",
             "We had a problem verifying this signature. Please try again later.": "我們在驗證此簽名時遇到問題。請稍後再試。",
+            "We were unable to verify this signature.": "我們無法驗證此簽名。",
             "This user has not yet uploaded their public signing key.": "此用戶尚未上傳其公共簽名密鑰。",
 
             "GPG Key ID:": "GPG 密鑰 ID：",
@@ -1449,7 +1446,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
          * 正則中的 ?? 前面的字符 重複0次或1次
          * 正則中的 ?: 非捕獲符號(即關閉圓括號的捕獲能力) 使用方法 (?: 匹配規則) -->該匹配不會被捕獲 為 $數字
          */
-        [/(^Updated |^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2})(?:st.|nd.|rd.|th.)?)? ?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) ?(\d{1,2})?,? (\d{4})?/g, function (all, prefix, week, date1, month, date2, year) {
+        [/(^Updated (?:on )?|^Commits on |^Joined on |on )?(?:(Sun(?:day)?|Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?)?,? )?(?:(\d{1,2})(?:st.|nd.|rd.|th.)?)? ?(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) ?(\d{1,2})?,? (\d{4})?/g, function (all, prefix, week, date1, month, date2, year) {
             var prefixKey = {
                 "Updated "   : "更新於 ",
                 "Commits on ": "提交於 ",
@@ -3770,7 +3767,8 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "You don't have an active coupon.": "您沒有有效的優惠券。",
             "* Discount only applies for GitHub Pro": "* 優惠僅限 GitHub Pro。",
 
-            "Additional Information": "附加信息",
+            //"Additional Information": "附加信息",
+            "Additional information": "附加信息",
                 "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收據上添加具體的聯繫方式或稅務信息，例如您的企業全稱、VAT/GST 識別號碼或記錄地址。我們將確保它顯示在每張收據上。",
             "Add information": "添加信息",
             "No additional information added to your receipts.": "您的收據上沒有添加任何額外的信息。",
@@ -3779,6 +3777,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Extra billing information": "額外的賬單信息",
             "This information will appear on all your receipts.": "此信息將出現在您的所有收據上。",
             "For your security, do not include any confidential or financial information (like credit card numbers).": "為了您的安全，請勿包含任何機密或財務信息（如信用卡號）。",
+            "To update the information that appears on invoices (if enabled), visit the": "要更新顯示在發票上的信息（如果已啟用），請訪問",
             "Full business name or address of record": "企業全稱或記錄地址",
             "Save contact information": "保存聯繫信息",
 
@@ -6667,6 +6666,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
             "Unsubscribe": "退訂",
             "Mark as read": "標記為已讀",
             "Mark as unread": "標記為未讀",
+            "Move to inbox": "移動到收件箱",
             "Save": "保存",
             "Unsave": "未保存",
 
@@ -6877,7 +6877,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
         [/(\d+) in progress check/, "$1 個正在運行的檢查"],
         // [/ and /, " 和 "],
         [/, and (\d+) more/, "，以及其他 $1 個組織"], // 用戶 浮動信息卡
-        [/(\d+) repositor(y|ies)/, "$1 個倉庫"], // 組織  浮動信息卡
+        [/^(\d+) repositor(y|ies)/, "$1 個倉庫"], // 組織  浮動信息卡
         [/(\d+) members?/, "$1 個成員"], // 組織  浮動信息卡
         [/Answered (\d+) discussions? in this repository in the past month/, "過去一個月內在此倉庫中回答了 $1 個討論"], // 用戶 浮動信息卡
         [/Answered (\d+) discussions? in this repository in the past week/, "過去一週內在此倉庫中回答了 $1 個討論"], // 用戶 浮動信息卡
@@ -7971,6 +7971,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 倉庫 - 議題和拉取請
                     "Link an issue from this repository": "關聯來自此倉庫的議題",
                     "Filter": "篩選",
                     "No results": "無結果",
+                    "Open in Workspace": "在工作區打開",
 
                 // "Notifications": "通知類型",
                 "Customize": "自定義",
@@ -8190,6 +8191,9 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             // "closed": "已關閉",
             // 新版
                 "Closed as not planned": "關閉因未計劃",
+                "Closed as duplicate": "關閉因重複",
+                "of": "於",
+                "Not planned": "未計劃",
 
             // 父級議題
             "Parent:": "父級：",
@@ -8361,7 +8365,6 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                     "Create a branch": "創建分支",
                     "for this issue or link a pull request.": "為這個議題或關聯一個拉取請求",
                     "When branches are created from issues, their pull requests are automatically linked.": "當從議題中創建分支時，它們的拉取請求會自動關聯。",
-                    "Open in Workspace": "在工作區打開",
 
                     // 關係
                         "Add parent": "添加父議題",
@@ -8826,9 +8829,15 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                         "Repository access limited": "倉庫訪問受限",
                             "You do not have access to push to this repository and its owner has disabled forking.": "您無權推送到此倉庫，其所有者已禁用了復刻。",
 
+                    "Codespaces will be undergoing maintenance in Europe and Southeast Asia from 17:00 UTC Friday 2/28 to 02:00 UTC Saturday 3/1. Users may experience connection issues during this time.": "代碼空間將於 UTC 時間 2/28 星期五下午 5:00 至 3/1 星期六凌晨 2:00 在歐洲和東南亞進行維護。用戶在此期間可能會遇到連接問題。",
+
                     // [/Codespace \"(.+)\" stopped./, "代碼空間 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代碼空間 “$1” 已刪除。"],
                     // [/Are you sure you want to delete (.+)\?/, "您確定要刪除 $1 嗎？"],
+
+                // Copilot
+                    "Describe a change you'd like to make to this pull request, such as adding tests or documentation...": "描述您想對此拉取請求進行的更改，例如添加測試或文檔…",
+                    "Start task": "開始任務",
 
             // 自動修復漏洞 提示
                 "This automated pull request fixes a": "這個自動拉取請求將修復了一個",
@@ -9041,6 +9050,12 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                 "Pull request cannot be merged because it has a merge conflict.": "由於存在合併衝突，無法合併拉取請求。",
                 "User does not have push access to the repository.": "用戶無權推送到此倉庫。",
                 "You're not authorized to push to this branch. Visit https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches for more information.": "您無權推送到該分支。請訪問 https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches 瞭解更多信息。",
+
+                // 繞過規則合併
+                "Merge without waiting for requirements to be met (bypass rules)": "無需等待滿足要求即可合併（繞過規則）",
+                "Bypass rules and merge": "繞過規則進行合併",
+                "Confirm bypass rules and merge": "確認繞過規則進行合併",
+
             "Merging can be performed automatically once the requested changes are addressed.": "一旦請求的更改得到解決，合併就可以自動執行。",
             "This branch is out-of-date with the base branch": "此分支相比基礎分支已過時",
                 "Merge the latest changes from": "將",
@@ -9156,6 +9171,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "branch can be safely deleted.": "分支可以被安全刪除。",
             "This branch has conflicts that must be resolved": "該分支存在衝突，必須解決",
                 "Resolve conflicts then push again. These conflicts are too complex to resolve in the web editor. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "解決衝突後再次推送。這些衝突過於複雜，無法在 Web 編輯器中解決。當該拉取請求存在合併衝突時，操作工作流將不會觸發該拉取請求的活動。",
+                "These conflicts are too complex to resolve in the web editor.": "這些衝突過於複雜，無法在網頁編輯器中解決。",
                 "Use the command line": "使用命令行",
                 "to resolve conflicts before continuing.": "解決衝突後再繼續。",
                 "or the command line to resolve conflicts before continuing. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "或通過命令行解決衝突。在此拉取請求仍存在合併衝突的情況下，操作工作流不會因該拉取請求的活動而觸發。",
@@ -11411,6 +11427,9 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
         [/([^ ]+) summary/, "$1 摘要"],
         [/By ([^ ]+)/, "創建：$1"],
         [/Branch "([^ ]+)" is not allowed to deploy to ([^ ]+) due to environment protection rules./, "由於環境保護規則，“$1”分支不允許部署到 $2 上。"],
+        // 時間
+        [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2時$3分$4秒"],
+        [/(\d+)h (\d+)m (\d+)s/, "$1時$2分$3秒"],
     ],
 };
 I18N["zh-TW"]["repository/runs"] = I18N["zh-TW"]["repository/actions"];
@@ -14797,6 +14816,8 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                     "New tag ruleset": "新建標籤規則集",
                     "Import a ruleset": "導入規則集",
 
+            "Ruleset": "規則集",
+
             "No rulesets have been added yet": "尚未添加任何規則集",
 
             "All": "全部",
@@ -14824,6 +14845,7 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                 "Ruleset name cannot be empty": "規則集名稱不能為空",
             "Enforcement status": "執行狀態",
                 "Active": "激活",
+                    "This ruleset will be enforced": "規則將被執行",
                     "Rules will be enforced": "規則將被執行",
                     "Enable Organization Ruleset": "啟用組織規則集", // 組織設置
                         "I want rules enforced on targeted repositories in this ruleset.": "我希望此規則集中強制執行針對目標倉庫的規則。",
@@ -14833,9 +14855,10 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                         "Upgrade to Enterprise to use this mode.": "升級到企業版即可使用此模式。",
                 "Disabled": "禁用",
                     "Do not evaluate or enforce rules": "不評估或執行規則",
+                    "This ruleset will not be enforced": "規則將不被執行",
 
             "Bypass list": "旁路列表",
-                "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list": "通過將角色、團隊或應用程序添加到旁路列表，使其免受此規則集的約束",
+                "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list.": "通過將角色、團隊或應用程序添加到旁路列表，使其免受此規則集的約束。",
                 "Exempt roles or teams from this ruleset by adding them to the bypass list": "通過將角色或團隊添加到旁路列表，使其免受此規則集的約束", // 組織設置
                 "Add bypass": "添加旁路",
 
@@ -14843,6 +14866,7 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                     "Choose which roles, teams, and apps can bypass this ruleset": "選擇哪些角色、團隊和應用可繞過此規則集",
 
                     "Filter items": "篩選",
+                    "Filter bypass actors": "篩選旁路參與者",
 
                     "No suggestions": "暫無建議",
 
@@ -14962,6 +14986,7 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                             "Add Exclusion pattern": "添加排除規則",
 
             // 規則
+            "rules": "規則",
                 "Which rules should be applied to the targets that you have selected?": "哪些規則應適用於您選擇的目標？",
                 "Which rules should be applied?": "應適用哪些規則？",
 
@@ -15887,12 +15912,16 @@ I18N["zh-TW"]["repository/settings/pages"] = { // 倉庫設置頁面(含組織�
                     "documentation": "文檔",
                     "(NotServedByPagesError).": "（Pages 服務錯誤）。",
 
+                    "Domain's DNS record could not be retrieved. For more information, see": "無法檢索域的 DNS 記錄。更多信息，請參閱",
+                    "(InvalidDNSError).": "（DNS 錯誤）。",
+
                     // 頂部提醒
                     "No changes to custom domain.": "沒有對自定義域進行修改。",
                     "Custom domain removed. Please remember to remove any GitHub Pages DNS records for this domain if you do not plan to continue using it with GitHub Pages.": "自定義域已刪除。如果您不打算繼續使用 GitHub Pages，請記得刪除此域的任何 GitHub Pages 的 DNS 記錄。",
 
                 "Enforce HTTPS": "強制 HTTPS",
                     "— Unavailable for your site because your domain is not properly configured to support HTTPS (": "— 您的網站不可用，因為您的域未正確配置為支持 HTTPS (",
+                    "— Unavailable for your site because a certificate has not yet been issued for your domain (": "— 您的網站不可用，因為您的域尚未頒發證書 (",
                     "Troubleshooting custom domains": "自定義域故障排除",
                     "— Required for your site because you are using the default domain (": "— 必須先設置自定義域，目前您正在使用默認域 (",
 
@@ -15917,6 +15946,7 @@ I18N["zh-TW"]["repository/settings/pages"] = { // 倉庫設置頁面(含組織�
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) DNS check is in progress./, "$1 的 DNS 檢查正在進行。"],
         [/([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?) is improperly configured/, "$1 配置不正確"],
         [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您網站的 DNS 設置使用的是自定義子域 $1，該子域未設置正確的 CNAME 記錄。我們建議您將此 CNAME 記錄設置為指向 [YOUR USERNAME].github.io。有關詳細信息，請參閱"],
+        [/Something went wrong issuing a certificate for ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?). Please contact the Pages team./, "為 $1 頒發證書時出現問題。請聯繫 Pages 團隊。"],
     ],
 };
 
@@ -16545,6 +16575,32 @@ I18N["zh-TW"]["repository/custom-properties"] = { // 倉庫 - 自定義屬性 ht
         "and how to set them at the organization level.": "以及如何在組織級別進行設置。",
     },
     "regexp": [],
+};
+
+I18N["zh-TW"]["repository/codespaces"] = { // 倉庫 - 內容舉報 /<user-name>/<repo-name>/reported_content
+    "static": { // 靜態翻譯
+        ...I18N["zh-TW"]["repository-public"]["static"],
+
+        "Reported content": "內容舉報",
+        "Users can report abusive or distruptive content for review and moderation.": "用戶可以舉報辱罵性或破壞性內容，以供審查和審核。",
+        "Learn more about reported content": "瞭解更多關於舉報內容的信息。",
+        "Report content setting": "舉報內容設置",
+        "All users": "所有用戶",
+        "Any user on GitHub is able to report content": "GitHub 上的任何用戶都可以舉報內容",
+        "Prior contributors and collaborators": "先前的貢獻者和協作者",
+        "Only users who have previously contributed to the repository and collaborators will be able to report content": "只有之前曾為倉庫做出貢獻的用戶和協作者才能夠舉報內容",
+        "Disable content reporting": "禁用內容舉報",
+        "Disable content reporting for all users": "為所有用戶禁用內容舉報",
+        "Abuse reports": "濫用報告",
+        "The following content has been reported by users:": "以下內容已被用戶舉報：",
+        "Reported Content": "未解決",
+        "Resolved": "已解決",
+        "There aren't any unresolved content reports for this repository.": "此倉庫沒有任何未解決的內容舉報。",
+        "There aren't any resolved content reports for this repository.": "此倉庫沒有任何已解決的內容舉報。",
+    },
+    "regexp": [ // 正則翻譯
+
+    ],
 };
 
 // 倉庫相關==
@@ -18715,6 +18771,11 @@ I18N["zh-TW"]["sponsors"] = { // 贊助界面
                     "This account has not applied to join GitHub Sponsors.": "此賬戶尚未申請加入 GitHub 贊助者。",
                     "Join the waitlist": "加入等候名單",
 
+            "GitHub Sponsors applications": "GitHub 贊助者申請",
+                "Pending": "排隊",
+                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 贊助者個人資料正在等待 GitHub 審核。",
+                "Manage": "管理",
+
         // GitHub 贊助者個人資料 https://github.com/sponsors/<user-name>
         // GitHub 贊助者組織資料 https://github.com/sponsors/<org-name>
         // ...?preview=true
@@ -18769,6 +18830,7 @@ I18N["zh-TW"]["sponsors"] = { // 贊助界面
                 "Fiscal Host": "財政主辦方",
                     "Members of supported fiscal hosts can use their fiscal host to join GitHub Sponsors instead of using a bank account.": "受支持財務主辦方的成員可使用其財務主機加入 GitHub 贊助者，而無需使用銀行賬戶。",
             "Submit": "提交",
+            "Your information has been saved.": "您的信息已保存。",
 
         // 加入等候名單界面 https://github.com/sponsors/<user-name>/waitlist
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 贊助者現已在 103 個地區推出測試版！",
@@ -18783,6 +18845,7 @@ I18N["zh-TW"]["sponsors"] = { // 贊助界面
             "Country or region of residence": "居住的國家或地區",
                 "Select a country or region": "選擇一個國家或地區",
                 "The country or region where you reside. This is required for tax purposes.": "您居住的國家或地區。這是出於稅務目的所必需的。",
+            "Bank account country or region": "銀行賬戶所在的國家或地區",
             "How you receive payments": "收款方式",
                 "Use a bank account": "使用銀行賬戶",
                     "You can use your bank account to join GitHub Sponsors.": "您可以使用您的銀行賬戶加入 GitHub 贊助者。",
@@ -23346,6 +23409,7 @@ I18N["zh-TW"]["repository/actions/metrics/usage"] = { // 倉庫 - 洞察 - 操�
 
     },
     "regexp": [
+        ...I18N["zh-TW"]["repository-public"]["regexp"],
         [/Showing data from (\d+)\/(\d+)\/(\d+) to/, "顯示數據：從$1年$2月$3日至"],
         [/Total (minutes|job runs) across all workflows in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
             var typeKey = {'minutes': '總分鐘數', 'job runs': '總工作運行數'};
@@ -23512,6 +23576,8 @@ I18N["zh-TW"]["copilot"] = {
             "Open sidebar": "打開側邊欄",
             "Close sidebar": "關閉側邊欄",
             "New conversation": "新聊天",
+            "Close conversations": "關閉側邊欄",
+            "Open conversations": "打開側邊欄",
 
             // 時間
                 "Today": "今天",
@@ -23560,6 +23626,14 @@ I18N["zh-TW"]["copilot"] = {
             "Scroll to bottom": "滾動至底部",
 
         // 右側
+            "Share conversation": "分享對話",
+                "This conversation may contain private content. Viewers must have access to all referenced content.": "這段對話可能包含私人內容。查看者必須擁有對所有引用內容的訪問權限。",
+                "Create link": "創建鏈接",
+                "Copy link": "複製鏈接",
+                "Delete shared link": "刪除分享鏈接",
+                "New messages after creating a link stay private.": "新消息在創建鏈接後仍保持私密。",
+                "Messages up to this point are included in shared link": "以上內容都包含在共享鏈接中",
+                "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此對話舊版本已被共享。若要更新，請刪除並創建新鏈接。",
             "Open menu": "菜單",
             "Feedback and settings": "反饋和設置",
                 // 反饋
@@ -23578,11 +23652,15 @@ I18N["zh-TW"]["copilot"] = {
 
             "Open panel": "打開面板",
             "Close panel": "關閉面板",
+            "Close file browser": "關閉文件瀏覽器",
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "詢問生成文件或應用程序，或使用下面的按鈕自行嘗試。",
                 "I’m feeling lucky": "我手氣不錯",
 
+                "Download code": "下載代碼",
+
                 "lines": "行",
+                "line": "行",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安裝 Copilot 到您的代碼編輯器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用於多種編輯器，以滿足您的需求",
@@ -23628,6 +23706,25 @@ I18N["zh-TW"]["copilot"] = {
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的結果"],
         [/(\d+) vulnerability detected/, "檢測到 $1 個漏洞"],
+    ],
+};
+
+I18N["zh-TW"]["github-copilot/code-review-waitlist"] = {
+    "static": {
+        "Copilot-powered code reviews waitlist": "Copilot 驅動的代碼審查候補名單",
+
+        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驅動代碼審查候補名單",
+            "Get fast AI-powered code feedback in pull requests on GitHub.com and in Visual Studio Code. Jump from your pull request to Copilot Workspace to refine, validate and land suggestions.": "在 GitHub.com 和 Visual Studio Code 的拉取請求中獲取由 AI 驅動的快速代碼反饋。您可以直接從拉取請求跳轉至 Copilot 工作區，對建議進行優化、驗證並最終落實。",
+
+        "Join the waitlist": "加入等候名單",
+            "By signing up for the waitlist you agree to": "註冊加入候補名單即表示您同意",
+            "the pre-release terms": "預發行條款",
+            ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。註冊並不保證您一定能獲得訪問權限。如果您被納入預覽計劃，我們將通過電子郵件通知您。",
+
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "預覽使用Copilot驅動的代碼審查的名額有限。如果您獲得訪問權限，您將收到一封電子郵件通知。",
+    },
+    "regexp":[
+        [/Thank you! ([^ ]+) is now on the waitlist/, "感謝！$1 已加入候補名單"],
     ],
 };
 
