@@ -279,7 +279,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Account security": "账户安全",
         "SSH and GPG keys": "SSH 与 GPG 公钥",
         "Organizations": "组织",
-        "Blocked users": "拉黑用户",
+        //"Blocked users": "拉黑用户",
         "Temporary interaction limits": "临时互动限制",
         "Code review limits": "代码审查限制",
         "Repositorys": "仓库",
