@@ -9775,6 +9775,10 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "Request": "请求",
                 // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
                 "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+                // Copilot
+                    "Copilot can review pull requests": "Copilot 可以审查拉取请求",
+                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 请求代码审查，即可获得快速且可操作的反馈，让您能在收到人工审查前就开始迭代优化。",
+                    "OK, dismiss": "关闭",
 
             "Assignees": "受理人",
                 "No one assigned": "无人受理",
