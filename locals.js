@@ -11351,6 +11351,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
             "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
+            "This job was cancelled": "作业已取消",
 
             "Started": "开始于",
             "succeeded": "成功于",
