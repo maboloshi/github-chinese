@@ -9852,6 +9852,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "code of conduct": "行为准则",
         "Remember, contributions to this repository should follow our": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
+        "Support": "支持",
 
         // 右侧栏补充
         "Development": "进展",
