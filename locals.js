@@ -464,6 +464,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Invitation to join ([^ ]+)/, "加入 $1 邀请"],
         [/Security Managers for · ([^ ]+)/, "安全管理员 · $1"],
         [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
+        [/Blaming ([^ ]+) at ([^ ]+) · ([^ ]+)/, "追溯 $1（$2） · $3"],
         ["_regexp_end", "end"]
     ],
 };
