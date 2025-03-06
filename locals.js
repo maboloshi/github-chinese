@@ -22745,6 +22745,8 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                 "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Start is temporarily disabled": "启动暂时被禁用",
 
+                "Expiring in": "最后使用", // GitHub 的烂活，原为过期，但居然还能重新打开
+
             "Created from": "创建自",
             "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
             "4-core • 16GB RAM • 32GB": "四核 • 16GB 内存 • 32GB 硬盘",
