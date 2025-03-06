@@ -9498,6 +9498,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         "Switch back to the classic merge experience": "切换回经典的合并界面",
         "Try the new merge experience": "尝试新的合并界面",
 
+        "Repository owner locked as": "仓库所有者锁定为",
+            "resolved": "已解决",
+
     },
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
