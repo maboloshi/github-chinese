@@ -23922,7 +23922,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                             "You are unlikely to be verified until you have completed your": "在完成",
                                 "GitHub user profile": "GitHub 用户资料",
                                 "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新个人档案信息后，请退出并重新登录 GitHub，然后再重新申请。",
-                            "The image you captured appears to be a screen display. Please take a clear, live photo of physical documentation confirming your academic enrollment.": "您提供的图片似乎是屏幕显示内容。请拍摄一张清晰、实时的实体文件照片以确认您的在学状态，例如学生证、录取通知书或官方在学证明等纸质文件的原件照片。",
+                            "The image you captured appears to be a screen display. Please take a clear, live photo of physical documentation confirming your academic enrollment.": "您提供的图片似乎是屏幕显示内容。请直接拍摄纸质材料以确认您的在学状态，例如学生证、录取通知书或官方在学证明等纸质文件的原件照片。",
             // https://education.github.com/discount_requests/数字/completed 成功
                 "Get benefits": "获取福利",
 
