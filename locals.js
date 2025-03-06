@@ -9993,6 +9993,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Open in desktop": "在 GitHub Desktop 中打开",
             "Copilot is loading...": "Copilot 加载中...",
             "Ask about this diff": "询问此差异",
+                "Explain": "解释",
+                "Attach to current thread": "附加至当前话题",
 
             //底部评论框上部
             "Lock conversation": "锁定对话",
@@ -10377,6 +10379,11 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "Press": "按",
                 "again to open the browser's find menu": "打开浏览器的查找菜单",
                 "Search this file": "搜索此文件",
+
+            "Ask Copilot about this snippet": "向 Copilot 询问此片段",
+                "Explain": "解释",
+                "Suggest improvements": "提出优化建议",
+                "Attach to current thread": "附加至当前话题",
 
         // 中间栏 顶部 权限信息
         "the": "为：", // 上半句走正则
