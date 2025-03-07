@@ -14434,6 +14434,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "You haven't invited any collaborators yet": "您尚未邀请任何协作者",
             // "invite a collaborator": "邀请协作者",
             "Add people": "添加他人",
+                "Add to repository": "添加到仓库",
 
             "Select all": "全选",
                 // [/(\d+) members? selected…/, "已选择 $1 名成员..."],
@@ -14483,6 +14484,8 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
         [/([^ ]+) • Invite collaborator/, "$1 • 邀请协作者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) teams?/, "$1 个团队"],
+        [/Add people to ([^ ]+)/, "添加人员到 $1"],
+        [/([^ ]+) has been added as a collaborator  on the repository./, "已将 $1 添加为仓库协作者。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
