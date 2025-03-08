@@ -23632,6 +23632,11 @@ I18N["zh-CN"]["copilot"] = {
                     "Enable Claude 3.5 Sonnet": "启用 Claude 3.5 Sonnet",
                         "Enable access to the latest Claude 3.5 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.5 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.5 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.5 Sonnet 提供服务。",
+                // Claude 3.7
+                    "Enable Claude 3.7 Sonnet": "启用 Claude 3.7 Sonnet",
+                        "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
+                        "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
+                    "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
                 // o1
                     "Model capabilities": "模型限制",
                     "Limited capabilities (o1-mini)": "功能限制（o1-mini）",
