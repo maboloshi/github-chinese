@@ -19582,6 +19582,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Close": "关闭",
                 "Switch model": "切换模型",
                 "View all models": "查看所有模型",
+            "Prompt editor": "提示词编辑器",
             "Preset:": "预设：",
                 "Default": "默认",
                 "Edit preset": "编辑预设",
@@ -19661,6 +19662,26 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 ". Subject to": "。受",
                 "Product Terms": "产品条款",
                 ". Not intended for production/sensitive data.": "约束。不适用于生产/敏感数据。",
+
+        // 提示词编辑器 https://github.com/marketplace/models/<user-name>/<model-name>/prompt
+            
+            // 左侧
+                "Edit variables": "编辑变量",
+                    "System": "系统",
+                        "Define the model's behavior or role. Example: 'You are a spaceship captain telling intergalactic tales.'": "定义模型的行为模式或角色设定。例如：\"你是一位正在讲述星际传奇故事的宇宙飞船舰长\"",
+                    // 用户
+                        "Enter the task or question for the model. Example: 'Write me a song about GitHub.' Use {{variable}} for placeholders.": "输入模型需处理的任务或问题。示例：\"创作一首关于 GitHub 的歌曲\"。使用 {{variable}} 作为占位符",
+
+            // 中间
+                "Run": "运行",
+
+                "We want to make this new experience amazing for you! Got feedback? Book a call or": "我们致力于为您打造非凡的全新体验！有任何反馈？立即预约通话或",
+                    "share your thoughts": "分享您的想法",
+                    "Book a call": "预约通话",
+
+                "Iterate on your prompt": "持续优化提示词",
+                    "Use the prompt editor to run a single prompt repeatedly, refining it and adjusting": "通过提示词编辑器反复执行单个提示词，持续优化内容并动态调整",
+                    "to achieve the perfect response.": "，最终生成理想响应结果",
 
         // 加入模型内测页 https://github.com/marketplace/models/waitlist/join
             "GitHub Models waitlist": "GitHub 模型等待名单",
