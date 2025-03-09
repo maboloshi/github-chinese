@@ -19617,7 +19617,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                     "Positive": "点赞",
                     "Negative": "点踩",
                     "Regenerate": "重新生成",
-                    "Edit message": "编辑信息",
+                    "Edit prompt": "编辑提示词",
 
                 "Attach an image": "附加图像",
                     "Remove": "移除",
