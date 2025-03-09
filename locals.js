@@ -19548,6 +19548,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 
             // 顶部
             "Playground": "运行",
+            "Use this model": "使用此模型",
             "Get started": "开始",
                 "Language:": "语言：",
                 "Chapters": "步骤",
@@ -19570,6 +19571,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Rate limit tier": "速率限制",
                 "Low": "低",
                 "High": "高",
+                "Custom": "自定义",
                 "Undisclosed": "未公布",
             "Provider support": "供应商支持",
             "Tags": "标签",
