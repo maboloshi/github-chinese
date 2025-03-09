@@ -19656,6 +19656,9 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             // 详细信息
                 "Model details page": "详细信息",
 
+                "Got feedback?": "提交反馈？",
+                    "share feedback via discussion": "前往讨论",
+
             // 底部
                 "Azure hosted. AI powered, can make mistakes.": " Azure 托管。人工智能驱动，可能犯错。",
                 "Share feedback": "分享反馈",
