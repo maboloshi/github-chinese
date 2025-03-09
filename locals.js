@@ -10972,7 +10972,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
         [/This discussion was converted from issue (#\d+) on (.+)/, "本讨论由以下议题转换而来：$1 ，$2"],
         [/(\d+) new comments?/, "$1 条新评论"],
-        [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
+        [/Show (\d+) more repl(y|ies)/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
         [/Filter:\s*(Open|Closed|Locked|Unlocked|Answered|Unanswered)(?:,\s*(Open|Closed|Locked|Unlocked|Answered|Unanswered))*\s*/, function (all, stat) {
             var statKey = {Open: '打开', Closed: '关闭', Locked: '锁定', Unlocked: '未锁定', Answered: '已答复', Unanswered: '未答复', " ,": "，"};
