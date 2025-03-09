@@ -19576,6 +19576,22 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Provider support": "供应商支持",
             "Tags": "标签",
 
+            // 获取 API 密钥窗口（从“使用此模型”进入
+               
+                "1. Create a personal access token": "1. 创建个人访问令牌（PAT）",
+                "2. Install dependencies": "2. 安装依赖",
+                "3. Run a basic code sample": "3. 运行基本代码示例",
+                "4. Explore more samples": "运行更多示例",
+                "5. Going beyond rate limits": "5. 超出速率限制",
+                // REST
+                    "2. Run a basic code sample": "3. 运行基本代码示例",
+                    "3. Explore more samples": "运行更多示例",
+                    "4. Going beyond rate limits": "5. 超出速率限制",
+
+                "Run with codespaces": "在代码空间运行",
+                    "Seriously, you'll be up and running in seconds. It will be great.": "请放心，您只需数秒即可完成配置并开始使用，效果超乎预期",
+                    "Run codespace": "运行代码空间",
+
         // GitHub 模型聊天页面 https://github.com/marketplace/models/<user-name>/<model-name>/playground
             // 顶部栏
             "Model:": "模型：",
