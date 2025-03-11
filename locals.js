@@ -1310,12 +1310,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Chatting about code and programming": "讨论关于代码和编程",
             // 对话框
             "Ask about the repository:": "询问关于此仓库的信息：",
+            "Ask about the tree comparison:": "询问关于比较的信息：",
             "Attach files or symbols": "附加文件或符号",
             "Add an extension": "添加扩展",
                 //"Files and symbols…": "文件和符号…",
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
                     "First attach a repository": "请先附加仓库",
-                    "Attach files, folders, and symbols": "附加文件、文件夹和符号",
+                    "Select files, folders, and symbols": "选择文件、文件夹和符号",
                     //"Attach files and symbols": "附加文件和符号",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的内容。使用较少的参考资料即可获得更准确的回复。",
@@ -1396,6 +1397,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行（$2 非空行）·"],  // loc = 代码行（line of code）= 行数 - 空行数（lines - blank lines）
         [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜索分配给用户 $1 的议题"],
         [/Chatting with (\d+) attachments?/, "附件 $1 个"],
+        [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "从 $1 中选择项目来进行交流。使用较少的引用以获得更准确的回答。"],
         /**
          * 匹配时间格式
          *
