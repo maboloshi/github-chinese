@@ -23757,7 +23757,6 @@ I18N["zh-CN"]["copilot"] = {
                     "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
                 // o1
                     "Model capabilities": "模型限制",
-                    "Limited capabilities (o1-mini)": "功能限制（o1-mini）",
                     "Limited capabilities (o1)": "功能限制（o1）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
                         "Not supported": "不支持",
