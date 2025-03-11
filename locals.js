@@ -23785,6 +23785,8 @@ I18N["zh-CN"]["copilot"] = {
                 "Messages up to this point are included in shared link": "以上内容都包含在共享链接中",
                 "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此对话旧版本已被共享。若要更新，请删除并创建新链接。",
             "Open menu": "菜单",
+                "Conversation": "对话",
+                "Prompt": "提示词",
             "Feedback and settings": "反馈和设置",
                 // 反馈
                     "Rate your experience": "反馈",
@@ -23806,6 +23808,9 @@ I18N["zh-CN"]["copilot"] = {
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
                 "I’m feeling lucky": "我手气不错",
+
+                "More options": "更多",
+                    "Download all files": "下载全部",
 
                 "Download code": "下载代码",
 
