@@ -9869,7 +9869,8 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Helpful resources": "帮助性资源",
             // "GitHub Community Guidelines": "GitHub 社区准则",
             "Contributing": "贡献准则",
-
+            "Code of conduct": "行为准则",
+            "Security policy": "安全政策",
 
         // 标签对应版本比较 /<user-name>/<repo-name>/compare/<tag-id1>...<tag-id2>
             // 仅限 MD文件
