@@ -14398,6 +14398,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             "Leave fork network": "离开复刻网络",
             "Can't leave the fork network because this fork has child forks.": "无法离开复刻网络，因为此复刻有子复刻。",
+            "Unlink this repository from the fork network and make it standalone.": "将该仓库从复刻网络中解除关联，使其成为独立仓库。",
 
             "Archive this repository": "存档仓库",
             "Mark this repository as archived and read-only.": "将此仓库标记为已存档和只读。",
@@ -14441,6 +14442,11 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦删除仓库，将再也无法恢复。请确认。",
             "Organization members cannot delete repositories.": "组织成员没有删除仓库的权限",
 
+            // 离开复刻网络对话框
+                "This will permanently remove the fork relationship to the upstream repository": "这将永久移除与上游仓库的复刻关系：",
+                "will become a standalone repository and will no longer be able to fetch upstream updates or propose changes to the upstream repository": "将成为独立仓库，无法再获取上游更新，也无法向原仓库提交更改：",
+                "cannot rejoin the fork network.": "不能重新加入复刻网络。",
+
             // 顶部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
 
@@ -14449,6 +14455,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "I want to delete this repository": "我想删除这个仓库",
 
                 "This will permanently delete the": "这将永久删除",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有团队关联。", // 组织仓库
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
@@ -14470,6 +14477,8 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
         [/(\d+) branch protection rules?/, "$1 项分支保护规则"], // 禁用/重启启用分支保护
         [/Delete/, "删除"],
         [/Default branch changed to ([^ ])/, "默认分支更改为 $1"],
+        // 离开复刻网络
+        [/Forked from ([^ ])/, "复刻自 $1"],
     ],
 };
 
