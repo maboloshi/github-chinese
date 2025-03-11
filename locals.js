@@ -1291,6 +1291,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Delete conversation": "删除对话",
                 "View all conversations": "查看全部对话",
                     "Active conversations": "最近对话",
+                    "All conversations": "所有对话",
                     // 删除
                         "Are you sure? This can’t be undone.": "您确定吗？此操作无法撤销。",
             "Take conversation to immersive": "全屏对话",
@@ -1398,6 +1399,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜索分配给用户 $1 的议题"],
         [/Chatting with (\d+) attachments?/, "附件 $1 个"],
         [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "从 $1 中选择项目来进行交流。使用较少的引用以获得更准确的回答。"],
+        [/Delete conversation: \"(.+)\"/, "删除对话：“$1”"],
         /**
          * 匹配时间格式
          *
