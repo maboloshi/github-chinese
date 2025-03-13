@@ -8781,6 +8781,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Checkout with GitHub CLI": "使用 GitHub CLI 检出",
                     "Work fast with our official CLI.": "使用我们的官方 CLI 快速工作。",
                     "Checkout with GitHub Desktop": "使用 GitHub Desktop 检出",
+                        "Launching GitHub Desktop": "GitHub Desktop 启动中",
+                        "If nothing happens,": "如果没有响应",
+                            "download GitHub Desktop": "下载 GitHub Desktop",
+                            "and try again.": "并重试",
 
                 // 代码空间
                     "This pull request must be reopened to create new codespaces on it.": "必须重新打开此拉取请求才能在其上创建新的代码空间。",
@@ -9072,6 +9076,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Update branch": "更新分支",
                         "Update with merge commit": "使用合并提交更新",
                             "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
+                            "The merge commit will be associated with your account.": "合并提交将与您的账户相关联。",
                         "Update with rebase": "使用变基更新",
                             "This branch cannot be rebased due to conflicts.": "由于冲突，此分支不能变基。",
                             "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取请求将会在最新的更改之上进行变基，并且会使用强制推送的方式提交。",
