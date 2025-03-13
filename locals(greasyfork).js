@@ -279,7 +279,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Account security": "账户安全",
         "SSH and GPG keys": "SSH 与 GPG 公钥",
         "Organizations": "组织",
-        "Blocked users": "拉黑用户",
+        //"Blocked users": "拉黑用户",
         "Temporary interaction limits": "临时互动限制",
         "Code review limits": "代码审查限制",
         "Repositorys": "仓库",
@@ -464,6 +464,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Invitation to join ([^ ]+)/, "加入 $1 邀请"],
         [/Security Managers for · ([^ ]+)/, "安全管理员 · $1"],
         [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
+        [/Blaming ([^ ]+) at ([^ ]+) · ([^ ]+)/, "追溯 $1（$2） · $3"],
         ["_regexp_end", "end"]
     ],
 };
@@ -698,17 +699,11 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Command Palette": "命令面板",
                     "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
                     "To open the command palette:": "打开命令面板：",
+                        "other:": "其他：",
                 "Copilot Workspace for Pull Requests": "适用于拉取请求的 Copilot 工作区",
                     "Copilot Workspace is a Copilot-native coding environment that helps you land high-quality pull requests faster by allowing you to edit and run code from your pull request without leaving GitHub.com.": "Copilot 工作区是 Copilot 的原生编码环境，允许您在不离开 GitHub.com 的情况下编辑和运行拉取请求中的代码，从而帮助您更快提交高质量的拉取请求。",
                     "Copilot Workspace is available to customers with access to the Copilot code review public preview.": "访问 Copilot 代码审查公开预览版的客户可使用 Copilot 工作区。",
                     "Sign up for the Copilot code review public preview": "注册参与 Copilot 代码审查公开预览",
-                "Personal Instructions": "个人指导",
-                    "Personal Instructions allow you to provide Copilot with important details about your preferences, such as your preferred language, response style, or even code standards.": "个人指导允许您向 Copilot 提供有关您的偏好的重要细节，例如您的首选语言、响应风格，甚至代码标准。",
-                    "Examples:": "示例：",
-                        "Always respond in Portuguese.": "始终用葡萄牙语回复。",
-                        "I have lots of experience with React but not with Vue. Please give answers with both React and Vue examples side-by-side. It is useful to see a comparison between React and Vue.": "我对 React 有很多经验，但对 Vue 没有。请给出 React 和 Vue 示例并排的答案。看到 React 和 Vue 之间的比较很有用。",
-                        "Each message should communicate a singular idea. That idea should be limited to ONE codeblock or paragraph. At the end of each message, prompt me whether to continue on. Let me know what is coming next.": "每条消息应传达一个单一的想法。该想法应限于一个代码块或段落。在每条消息的末尾，提示我是否继续。让我知道接下来会发生什么。",
-                        "Please give overly excited explanations! I need TONS of enthusiasm! Use ALL CAPS and lots of EMOJIS wherever possible!": "请给出过于兴奋的解释！我需要大量的热情！尽可能使用大写字母和大量的表情符号！",
                 "New Commit Details Page": "新版提交详情页",
                     "New version of the commit details page that lets you quickly understand and navigate the changes in a commit. Improves filtering, commenting (with new floating comments and comment counts on the file tree), keyboard navigation, and more.": "新版提交详细信息页面可让您快速了解和浏览提交中的更改。改进了过滤、注释（文件树中新增了浮动注释和注释计数）、键盘导航等功能。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
@@ -1284,6 +1279,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "All repositories": "所有仓库",
             "Back": "返回",
             "Conversation options": "选项",
+                "Enable custom instructions": "启用个人指导",
+                "Disable custom instructions": "禁用个人指导",
                 "Personal instructions": "个人指导",
                     "Set up Copilot to align with your workflows and preferences. These instructions will only impact your personal conversation.": "设置 Copilot 以符合您的工作流程和偏好。这些指导仅影响您的个人对话。",
                     "Your instructions": "您的指导",
@@ -3091,7 +3088,10 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
             "other users and organizations to link to them.": "链接到其他用户和组织。",
             "URL": "网站",
             "Social accounts": "社交账户",
-            "Link to social profile": "链接到社交账户",
+                "Link to social profile 1": "链接到社交账户",
+                "Link to social profile 2": "链接到社交账户",
+                "Link to social profile 3": "链接到社交账户",
+                "Link to social profile 4": "链接到社交账户",
             "Company": "公司",
             "your company’s GitHub organization to link it.": "链接到您所在公司的 GitHub 组织。",
              //"your company's GitHub organization to link it.": "贵公司和GitHub的组织联系起来。",
@@ -4927,6 +4927,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Select an option": "选择",
                         "You will have access to the feature": "您将能够访问此功能",
                         "You won’t have access to the feature": "您将不能访问此功能",
+                "Anthropic Claude 3.7 Sonnet in Copilot": "Claude 3.7 模型",
+                    "You can use the latest Claude 3.7 Sonnet model.": "您可以使用最新 Claude 3.7 Sonnet 模型。",
                 "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
                     "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
                     "Learn more about the public preview of Gemini 2.0 Flash.": "了解更多关于 GitHub Copilot 如何为 Gemini 2.0 Flash 提供服务。",
@@ -7040,6 +7042,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Change repository": "选择仓库",
 
         // 导入仓库 第二页 /<user-name>/<repo-name>/import
+            "Your import will begin shortly...": "导入即将开始...",
             "Preparing your new repository": "准备您的新仓库",
                 "There is no need to keep this window open, we’ll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
                 "There is no need to keep this window open. We'll email you when the import is done.": "无需保持此窗口，导入完成后我们会通过电子邮件通知您。",
@@ -8829,8 +8832,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                         "Repository access limited": "仓库访问受限",
                             "You do not have access to push to this repository and its owner has disabled forking.": "您无权推送到此仓库，其所有者已禁用了复刻。",
 
-                    "Codespaces will be undergoing maintenance in Europe and Southeast Asia from 17:00 UTC Friday 2/28 to 02:00 UTC Saturday 3/1. Users may experience connection issues during this time.": "代码空间将于 UTC 时间 2/28 星期五下午 5:00 至 3/1 星期六凌晨 2:00 在欧洲和东南亚进行维护。用户在此期间可能会遇到连接问题。",
-
                     // [/Codespace \"(.+)\" stopped./, "代码空间 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代码空间 “$1” 已删除。"],
                     // [/Are you sure you want to delete (.+)\?/, "您确定要删除 $1 吗？"],
@@ -9497,6 +9498,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         "Switch back to the classic merge experience": "切换回经典的合并界面",
         "Try the new merge experience": "尝试新的合并界面",
 
+        "Repository owner locked as": "仓库所有者锁定为",
+            "resolved": "已解决",
+
     },
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
@@ -9549,6 +9553,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         // 状态
         [/branch (\d+) times, most recently from/, "分支 $1 次，最近一次从"],
         [/pushed a commit to ([^ ]+) that referenced this pull request/, " 向 $1 推送一次提交，其中引用了此拉取请求"],
+        [/added a commit to ([^ ]+) that referenced this pull request/, "向 $1 添加一个提交，其中引用了此拉取请求"],
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合并页面
 
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
@@ -9767,6 +9772,10 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "Request": "请求",
                 // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
                 "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+                // Copilot
+                    "Copilot can review pull requests": "Copilot 可以审查拉取请求",
+                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 请求代码审查，即可获得快速且可操作的反馈，让您能在收到人工审查前就开始迭代优化。",
+                    "OK, dismiss": "关闭",
 
             "Assignees": "受理人",
                 "No one assigned": "无人受理",
@@ -9840,6 +9849,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "code of conduct": "行为准则",
         "Remember, contributions to this repository should follow our": "请记住，对此仓库的贡献应遵循我们的",
         "GitHub Community Guidelines": "GitHub 社区准则",
+        "Support": "支持",
 
         // 右侧栏补充
         "Development": "进展",
@@ -9987,6 +9997,8 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Open in desktop": "在 GitHub Desktop 中打开",
             "Copilot is loading...": "Copilot 加载中...",
             "Ask about this diff": "询问此差异",
+                "Explain": "解释",
+                "Attach to current thread": "附加至当前话题",
 
             //底部评论框上部
             "Lock conversation": "锁定对话",
@@ -10371,6 +10383,11 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "Press": "按",
                 "again to open the browser's find menu": "打开浏览器的查找菜单",
                 "Search this file": "搜索此文件",
+
+            "Ask Copilot about this snippet": "向 Copilot 询问此片段",
+                "Explain": "解释",
+                "Suggest improvements": "提出优化建议",
+                "Attach to current thread": "附加至当前话题",
 
         // 中间栏 顶部 权限信息
         "the": "为：", // 上半句走正则
@@ -10955,7 +10972,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
         [/(\d+) new suggested answers?/, "$1 个新的建议答案"],
         [/This discussion was converted from issue (#\d+) on (.+)/, "本讨论由以下议题转换而来：$1 ，$2"],
         [/(\d+) new comments?/, "$1 条新评论"],
-        [/Show (\d+) more replies/, "显示剩余 $1 条答复"],
+        [/Show (\d+) more repl(y|ies)/, "显示剩余 $1 条答复"],
         [/(\d+) new/, "$1 新"],
         [/Filter:\s*(Open|Closed|Locked|Unlocked|Answered|Unanswered)(?:,\s*(Open|Closed|Locked|Unlocked|Answered|Unanswered))*\s*/, function (all, stat) {
             var statKey = {Open: '打开', Closed: '关闭', Locked: '锁定', Unlocked: '未锁定', Answered: '已答复', Unanswered: '未答复', " ,": "，"};
@@ -11339,6 +11356,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
             "The logs for this run have expired and are no longer available.": "此运行日志已过期，不再可用。",
+            "This job was cancelled": "作业已取消",
 
             "Started": "开始于",
             "succeeded": "成功于",
@@ -13470,6 +13488,11 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}当周`; // 无论如何都是星期一
         }],
+        [/([^ ]+)-([^ ]+) (\d+)/, (match, p1, p2 ,p3) => { // 出现位置：具体某贡献者 - 贡献数柱形图日期，原文格式为 月-月 年
+            const translatedP1 = I18N["zh-CN"]["public"]["static"][p1] || p1;
+            const translatedP2 = I18N["zh-CN"]["public"]["static"][p2] || p2;
+            return `${p3}年 ${translatedP1}-${translatedP2}`; // 此处修改格式为 年 月-月
+        }],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
@@ -13723,7 +13746,7 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             "Download CSV": "下载 CSV",
             "Download PNG": "下载 PNG",
             // 图表本体
-                "Date": "日期",
+                "DateTime": "日期时间",
                 "Frequency": "频率",
                 "Values": "值",
 
@@ -14411,6 +14434,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "You haven't invited any collaborators yet": "您尚未邀请任何协作者",
             // "invite a collaborator": "邀请协作者",
             "Add people": "添加他人",
+                "Add to repository": "添加到仓库",
 
             "Select all": "全选",
                 // [/(\d+) members? selected…/, "已选择 $1 名成员..."],
@@ -14460,6 +14484,8 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
         [/([^ ]+) • Invite collaborator/, "$1 • 邀请协作者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) teams?/, "$1 个团队"],
+        [/Add people to ([^ ]+)/, "添加人员到 $1"],
+        [/([^ ]+) has been added as a collaborator  on the repository./, "已将 $1 添加为仓库协作者。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
@@ -19522,6 +19548,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 
             // 顶部
             "Playground": "运行",
+            "Use this model": "使用此模型",
             "Get started": "开始",
                 "Language:": "语言：",
                 "Chapters": "步骤",
@@ -19544,9 +19571,26 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Rate limit tier": "速率限制",
                 "Low": "低",
                 "High": "高",
+                "Custom": "自定义",
                 "Undisclosed": "未公布",
             "Provider support": "供应商支持",
             "Tags": "标签",
+
+            // 获取 API 密钥窗口（从“使用此模型”进入
+               
+                "1. Create a personal access token": "1. 创建个人访问令牌（PAT）",
+                "2. Install dependencies": "2. 安装依赖",
+                "3. Run a basic code sample": "3. 运行基本代码示例",
+                "4. Explore more samples": "运行更多示例",
+                "5. Going beyond rate limits": "5. 超出速率限制",
+                // REST
+                    "2. Run a basic code sample": "3. 运行基本代码示例",
+                    "3. Explore more samples": "运行更多示例",
+                    "4. Going beyond rate limits": "5. 超出速率限制",
+
+                "Run with codespaces": "在代码空间运行",
+                    "Seriously, you'll be up and running in seconds. It will be great.": "请放心，您只需数秒即可完成配置并开始使用，效果超乎预期",
+                    "Run codespace": "运行代码空间",
 
         // GitHub 模型聊天页面 https://github.com/marketplace/models/<user-name>/<model-name>/playground
             // 顶部栏
@@ -19554,6 +19598,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Close": "关闭",
                 "Switch model": "切换模型",
                 "View all models": "查看所有模型",
+            "Prompt editor": "提示词编辑器",
             "Preset:": "预设：",
                 "Default": "默认",
                 "Edit preset": "编辑预设",
@@ -19588,7 +19633,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                     "Positive": "点赞",
                     "Negative": "点踩",
                     "Regenerate": "重新生成",
-                    "Edit message": "编辑信息",
+                    "Edit prompt": "编辑提示词",
 
                 "Attach an image": "附加图像",
                     "Remove": "移除",
@@ -19627,12 +19672,35 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             // 详细信息
                 "Model details page": "详细信息",
 
+                "Got feedback?": "提交反馈？",
+                    "share feedback via discussion": "前往讨论",
+
             // 底部
                 "Azure hosted. AI powered, can make mistakes.": " Azure 托管。人工智能驱动，可能犯错。",
                 "Share feedback": "分享反馈",
                 ". Subject to": "。受",
                 "Product Terms": "产品条款",
                 ". Not intended for production/sensitive data.": "约束。不适用于生产/敏感数据。",
+
+        // 提示词编辑器 https://github.com/marketplace/models/<user-name>/<model-name>/prompt
+            
+            // 左侧
+                "Edit variables": "编辑变量",
+                    "System": "系统",
+                        "Define the model's behavior or role. Example: 'You are a spaceship captain telling intergalactic tales.'": "定义模型的行为模式或角色设定。例如：\"你是一位正在讲述星际传奇故事的宇宙飞船舰长\"",
+                    // 用户
+                        "Enter the task or question for the model. Example: 'Write me a song about GitHub.' Use {{variable}} for placeholders.": "输入模型需处理的任务或问题。示例：\"创作一首关于 GitHub 的歌曲\"。使用 {{variable}} 作为占位符",
+
+            // 中间
+                "Run": "运行",
+
+                "We want to make this new experience amazing for you! Got feedback? Book a call or": "我们致力于为您打造非凡的全新体验！有任何反馈？立即预约通话或",
+                    "share your thoughts": "分享您的想法",
+                    "Book a call": "预约通话",
+
+                "Iterate on your prompt": "持续优化提示词",
+                    "Use the prompt editor to run a single prompt repeatedly, refining it and adjusting": "通过提示词编辑器反复执行单个提示词，持续优化内容并动态调整",
+                    "to achieve the perfect response.": "，最终生成理想响应结果",
 
         // 加入模型内测页 https://github.com/marketplace/models/waitlist/join
             "GitHub Models waitlist": "GitHub 模型等待名单",
@@ -22733,6 +22801,8 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                 "Open in JupyterLab": "在 JupyterLab 中打开",
                 "Start is temporarily disabled": "启动暂时被禁用",
 
+                "Expiring in": "最后使用", // GitHub 的烂活，原为过期，但居然还能重新打开
+
             "Created from": "创建自",
             "2-core • 8GB RAM • 32GB": "双核 • 8GB 内存 • 32GB 硬盘",
             "4-core • 16GB RAM • 32GB": "四核 • 16GB 内存 • 32GB 硬盘",
@@ -23604,6 +23674,11 @@ I18N["zh-CN"]["copilot"] = {
                     "Enable Claude 3.5 Sonnet": "启用 Claude 3.5 Sonnet",
                         "Enable access to the latest Claude 3.5 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.5 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.5 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.5 Sonnet 提供服务。",
+                // Claude 3.7
+                    "Enable Claude 3.7 Sonnet": "启用 Claude 3.7 Sonnet",
+                        "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
+                        "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
+                    "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
                 // o1
                     "Model capabilities": "模型限制",
                     "Limited capabilities (o1-mini)": "功能限制（o1-mini）",
@@ -23908,6 +23983,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                             "You are unlikely to be verified until you have completed your": "在完成",
                                 "GitHub user profile": "GitHub 用户资料",
                                 "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新个人档案信息后，请退出并重新登录 GitHub，然后再重新申请。",
+                            "The image you captured appears to be a screen display. Please take a clear, live photo of physical documentation confirming your academic enrollment.": "您提供的图片似乎是屏幕显示内容。请直接拍摄纸质材料以确认您的在学状态，例如学生证、录取通知书或官方在学证明等纸质文件的原件照片。",
             // https://education.github.com/discount_requests/数字/completed 成功
                 "Get benefits": "获取福利",
 
