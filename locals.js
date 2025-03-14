@@ -13879,6 +13879,7 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
 
             // "Dependencies": "依赖关系",
             "Search all dependencies": "搜索所有依赖项",
+                "Suggested filters": "建议筛选",
 
             "These dependencies are defined in": "这些依赖关系被定义在",
             "’s manifest files, such as": "的清单文件，例如",
@@ -13894,6 +13895,11 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
 
             // [/(\d+) more dependencies/, "更多 $1 个依赖项"],
             // [/Load (\d+) more…/, "加载更多 $1个…"],
+            "Ecosystem": "生态系统",
+                "Filter by ecosystem": "按生态系统筛选",
+
+            "ProTip!": "专业提示！",
+                "Supported ecosystems will have transitivity labels on their packages.": "受支持的生态系统将在其包上有传递性标签。",
 
     },
     "regexp": [ // 正则翻译
