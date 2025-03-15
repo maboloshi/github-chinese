@@ -23763,6 +23763,8 @@ I18N["zh-CN"]["copilot"] = {
                 "Manage conversation": "管理",
                     "Rename": "重命名",
                         "Rename conversation": "重命名对话",
+                    "Share": "分享",
+                        "create link to share the current version of this conversation.": "创建链接以分享此对话的当前版本。",
                     // 删除
                         "Delete conversation": "删除对话",
                         "Are you sure you want to delete this conversation? This action cannot be undone.": "您确定要删除这段对话吗？此操作无法撤销。",
