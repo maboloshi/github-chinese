@@ -23731,6 +23731,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
             return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
         }],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)m (\d+)s/, "$1分$2秒"],
         [/(\d+)m/, "$1分钟"],
     ],
 };
