@@ -75,11 +75,11 @@
                     contents: [{ text: text }]
                 }),
                 // 响应标识
-                responseIdentifier: 'biz[0]?.sectionResult[0]?.dst',
-            },
+                responseIdentifier: 'biz[0]?.sectionResult[0]?.dst'
+            }
         }
-    };
-
+    }; 
+    
     let pageConfig = {};
 
     // 初始化
@@ -658,11 +658,45 @@
         watchUpdate();
 
         // 首次页面翻译
-        document.addEventListener('DOMContentLoaded', () => {
-            // 获取当前页面的翻译规则
+        const initTranslation = () => {
             updatePageConfig('首次载入');
-            if (pageConfig.currentPageType) traverseNode(document.body);
+            if (pageConfig.currentPageType) {
+                requestAnimationFrame(() => { 
+                    traverseNode(document.body);
+                    transTitle();
+                    transBySelector();
+                });
+            }
+        };
+
+        const debouncedInit = debounce(initTranslation, 300);
+        
+        const handleLoad = () => {
+            debouncedInit();
+            document.removeEventListener('turbo:load', handleLoad); //单次执行
+        };
+        
+        document.addEventListener('DOMContentLoaded', debouncedInit);
+        window.addEventListener('pageshow', (e) => {
+            if (e.persisted) debouncedInit();  //处理bfcache恢复
+        });
+        document.addEventListener('turbo:load', handleLoad); //Turbo框架保障
+        
+        new MutationObserver(mutations => {
+            if (pageConfig.pageChangeTrigger) updatePageConfig();
+            if (pageConfig.currentPageType) processMutations(mutations);
+        }).observe(document.documentElement, {  //改为监听根元素
+            childList: true,
+            subtree: true,
+            attributes: true
         });
     }
 
-})(window, document);
+    function debounce(fn, delay) {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => fn.apply(this, args), delay);
+        };
+    }
+})
