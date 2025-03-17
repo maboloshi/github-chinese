@@ -1313,6 +1313,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Ask about the repository:": "询问关于此仓库的信息：",
             "Ask about the tree comparison:": "询问关于比较的信息：",
             "Attach files or symbols": "附加文件或符号",
+                "Fetching files, folders, and symbols…": "正在获取文件（夹）和符号…",
             "Add an extension": "添加扩展",
                 //"Files and symbols…": "文件和符号…",
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
