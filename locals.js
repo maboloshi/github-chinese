@@ -23785,9 +23785,10 @@ I18N["zh-CN"]["copilot"] = {
                         "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
                     "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
-                // o1
-                    "Model capabilities": "模型限制",
+
+                "Model capabilities": "模型限制",
                     "Limited capabilities (o1)": "功能限制（o1）",
+                    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
                         "Not supported": "不支持",
                             "Using knowledge bases": "使用知识库",
