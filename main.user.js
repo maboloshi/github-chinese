@@ -86,13 +86,10 @@
     init();
 
     // 更新页面设置
-    function updatePageConfig(currentPageChangeTrigger = pageConfig.pageChangeTrigger) {
-        const newType = detectPageType(pageConfig.triggerTarget ? pageConfig.triggerTarget : window.location.href);
+    function updatePageConfig(currentPageChangeTrigger) {
+        const newType = detectPageType();
         if (newType && newType !== pageConfig.currentPageType) {
             pageConfig = buildPageConfig(newType);
-        } else {
-            pageConfig.pageChangeTrigger = false; // 重置 pageChangeTrigger
-            pageConfig.triggerTarget = false; // 重置 triggerTarget
         }
         console.log(`【Debug】${currentPageChangeTrigger}触发, 页面类型为 ${pageConfig.currentPageType}`);
     }
@@ -102,10 +99,6 @@
         return {
             // 当前页面类型
             currentPageType: pageType,
-            // 重置 pageChangeTrigger
-            pageChangeTrigger: false,
-            // 重置 triggerTarget
-            triggerTarget: false,
             // 静态词库
             staticDict: {
                 ...I18N[CONFIG.LANG].public.static,
@@ -140,6 +133,17 @@
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
      */
     function watchUpdate() {
+        // 缓存当前页面的 URL
+        let previousURL = window.location.href;
+
+        const handleUrlChange = () => {
+            const currentURL = window.location.href;
+            // 如果页面的 URL 发生变化
+            if (currentURL !== previousURL) {
+                previousURL = currentURL;
+                updatePageConfig("DOM变化");
+            }
+        }
 
         const processMutations = mutations => {
             // 平铺突变记录并过滤需要处理的节点（链式操作）
@@ -171,7 +175,7 @@
 
         // 监听 document.body 下 DOM 变化，用于处理节点变化
         new MutationObserver(mutations => {
-            if (pageConfig.pageChangeTrigger) updatePageConfig();
+            handleUrlChange();
             if (pageConfig.currentPageType) processMutations(mutations);
         }).observe(document.body, CONFIG.OBSERVER_CONFIG);
     }
@@ -265,8 +269,8 @@
      * detectPageType 函数：检测当前页面类型，基于URL、元素类名和meta信息。
      * @returns {string|boolean} 页面的类型，如'repository'、'dashboard'等，如果无法确定类型，那么返回 false。
      */
-    function detectPageType(url) {
-        url = new URL(url);
+    function detectPageType() {
+        const url = new URL(window.location.href);
         const { PAGE_MAP, SPECIAL_SITES } = CONFIG;
         const { hostname, pathname } = url;
 
@@ -625,19 +629,8 @@
         new MutationObserver(() => {
             if (document.documentElement.lang === "en") {
                 document.documentElement.lang = CONFIG.LANG;
-        }
+            }
         }).observe(document.documentElement, { attributeFilter: ['lang'] });
-
-        // 监听 Turbo 获取响应之前事件
-        document.addEventListener('turbo:before-fetch-response', (event) => {
-            pageConfig.pageChangeTrigger = event.type;
-            pageConfig.triggerTarget = event.detail.fetchResponse.response.url;
-        });
-
-        // 监听浏览器 history 切换
-        window.addEventListener('popstate', () => {
-            pageConfig.pageChangeTrigger = '浏览器导航';
-        });
 
         // 监听 Turbo 完成事件（延迟翻译）
         document.addEventListener('turbo:load', () => {
