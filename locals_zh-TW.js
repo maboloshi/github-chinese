@@ -1291,6 +1291,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Delete conversation": "刪除對話",
                 "View all conversations": "查看全部對話",
                     "Active conversations": "最近對話",
+                    "All conversations": "所有對話",
                     // 刪除
                         "Are you sure? This can’t be undone.": "您確定嗎？此操作無法撤銷。",
             "Take conversation to immersive": "全屏對話",
@@ -1310,12 +1311,13 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Chatting about code and programming": "討論關於代碼和編程",
             // 對話框
             "Ask about the repository:": "詢問關於此倉庫的信息：",
+            "Ask about the tree comparison:": "詢問關於比較的信息：",
             "Attach files or symbols": "附加文件或符號",
             "Add an extension": "添加擴展",
                 //"Files and symbols…": "文件和符號…",
                 "Files, folders, and symbols…": "文件、文件夾和符號…",
                     "First attach a repository": "請先附加倉庫",
-                    "Attach files, folders, and symbols": "附加文件、文件夾和符號",
+                    "Select files, folders, and symbols": "選擇文件、文件夾和符號",
                     //"Attach files and symbols": "附加文件和符號",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的文件和符號。使用較少的參考資料即可獲得更準確的回覆。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的內容。使用較少的參考資料即可獲得更準確的回覆。",
@@ -1327,12 +1329,17 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "Search repositories": "搜索倉庫",
                         "Fetching repositories…": "正在獲取倉庫",
                     "Close": "關閉",
+                "Repository": "倉庫",
+                    "Select a repository": "選擇倉庫",
+                        "Choose a repository to chat about.": "選擇以聊天",
+                "Remove topic": "移除主題",
                 "Extension…": "擴展…",
                 "Extension": "擴展",
                     "Extensions": "擴展",
                         "Chat with your favorite tools and services": "使用您最喜歡的工具和服務聊天",
                         "Browse the marketplace to find extensions for the tools and services you rely on": "瀏覽市場以查找您所依賴的工具和服務的擴展",
                         "Browse marketplace": "前往市場",
+            "Add attachment": "添加附件",
             "Send now": "發送",
             // 反饋
             "Rate your experience": "反饋",
@@ -1391,6 +1398,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行（$2 非空行）·"],  // loc = 代碼行（line of code）= 行數 - 空行數（lines - blank lines）
         [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜索分配給用戶 $1 的議題"],
         [/Chatting with (\d+) attachments?/, "附件 $1 個"],
+        [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "從 $1 中選擇項目來進行交流。使用較少的引用以獲得更準確的回答。"],
+        [/Delete conversation: \"(.+)\"/, "刪除對話：“$1”"],
         /**
          * 匹配時間格式
          *
@@ -6895,11 +6904,10 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
         [/You have been invited to collaborate on the (.*) repository./, "您已受邀參與 $1 倉庫的協作。"],
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 倉庫。"],
         [/This user has previously committed to the (.*) repository./, "該用戶之前有提交到 $1 倉庫。"],
-        [/This repository has been archived by the owner on (.+). It is now read-only./, (match, p1) => {
+        [/This repository was archived by the owner on (.+). It is now read-only./, (match, p1) => {
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `此倉庫已由所有者於${translatedDate}存檔。它現在是隻讀的。`;
-            //return '此倉庫已由所有者於' + y + '年' + mKey[m] + d + '日'+ '存檔。它現在是隻讀的。';
         }],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
@@ -8773,6 +8781,10 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                     "Checkout with GitHub CLI": "使用 GitHub CLI 檢出",
                     "Work fast with our official CLI.": "使用我們的官方 CLI 快速工作。",
                     "Checkout with GitHub Desktop": "使用 GitHub Desktop 檢出",
+                        "Launching GitHub Desktop": "GitHub Desktop 啟動中",
+                        "If nothing happens,": "如果沒有響應",
+                            "download GitHub Desktop": "下載 GitHub Desktop",
+                            "and try again.": "並重試",
 
                 // 代碼空間
                     "This pull request must be reopened to create new codespaces on it.": "必須重新打開此拉取請求才能在其上創建新的代碼空間。",
@@ -9064,6 +9076,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                     "Update branch": "更新分支",
                         "Update with merge commit": "使用合併提交更新",
                             "The latest changes will be merged into this branch with a merge commit.": "最新的更改將通過合併提交合併到此分支中。",
+                            "The merge commit will be associated with your account.": "合併提交將與您的賬戶相關聯。",
                         "Update with rebase": "使用變基更新",
                             "This branch cannot be rebased due to conflicts.": "由於衝突，此分支不能變基。",
                             "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取請求將會在最新的更改之上進行變基，並且會使用強制推送的方式提交。",
@@ -9861,7 +9874,8 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
         "Helpful resources": "幫助性資源",
             // "GitHub Community Guidelines": "GitHub 社區準則",
             "Contributing": "貢獻準則",
-
+            "Code of conduct": "行為準則",
+            "Security policy": "安全政策",
 
         // 標籤對應版本比較 /<user-name>/<repo-name>/compare/<tag-id1>...<tag-id2>
             // 僅限 MD文件
@@ -13493,6 +13507,40 @@ I18N["zh-TW"]["repository/graphs/contributors"] = { // 倉庫 -> 洞察 - 貢獻
             const translatedP2 = I18N["zh-TW"]["public"]["static"][p2] || p2;
             return `${p3}年 ${translatedP1}-${translatedP2}`; // 此處修改格式為 年 月-月
         }],
+        [/(\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/, function(all, d, m){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) '(\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -13758,6 +13806,40 @@ I18N["zh-TW"]["repository/graphs/code-frequency"] = { // 倉庫 -> 洞察 - 代�
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}當週`; // 無論如何都是星期一
         }],
+        [/(\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/, function(all, d, m){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) '(\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
     ],
 };
 
@@ -13797,6 +13879,7 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 倉庫 -> 洞察 - 依�
 
             // "Dependencies": "依賴關係",
             "Search all dependencies": "搜索所有依賴項",
+                "Suggested filters": "建議篩選",
 
             "These dependencies are defined in": "這些依賴關係被定義在",
             "’s manifest files, such as": "的清單文件，例如",
@@ -13812,6 +13895,11 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 倉庫 -> 洞察 - 依�
 
             // [/(\d+) more dependencies/, "更多 $1 個依賴項"],
             // [/Load (\d+) more…/, "加載更多 $1個…"],
+            "Ecosystem": "生態系統",
+                "Filter by ecosystem": "按生態系統篩選",
+
+            "ProTip!": "專業提示！",
+                "Supported ecosystems will have transitivity labels on their packages.": "受支持的生態系統將在其包上有傳遞性標籤。",
 
     },
     "regexp": [ // 正則翻譯
@@ -14322,6 +14410,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
 
             "Leave fork network": "離開復刻網絡",
             "Can't leave the fork network because this fork has child forks.": "無法離開復刻網絡，因為此復刻有子復刻。",
+            "Unlink this repository from the fork network and make it standalone.": "將該倉庫從復刻網絡中解除關聯，使其成為獨立倉庫。",
 
             "Archive this repository": "存檔倉庫",
             "Mark this repository as archived and read-only.": "將此倉庫標記為已存檔和只讀。",
@@ -14365,6 +14454,11 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦刪除倉庫，將再也無法恢復。請確認。",
             "Organization members cannot delete repositories.": "組織成員沒有刪除倉庫的權限",
 
+            // 離開復刻網絡對話框
+                "This will permanently remove the fork relationship to the upstream repository": "這將永久移除與上游倉庫的復刻關係：",
+                "will become a standalone repository and will no longer be able to fetch upstream updates or propose changes to the upstream repository": "將成為獨立倉庫，無法再獲取上游更新，也無法向原倉庫提交更改：",
+                "cannot rejoin the fork network.": "不能重新加入復刻網絡。",
+
             // 頂部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的倉庫 “$1” 已成功解除存檔。"], //倉庫解除存檔
 
@@ -14373,6 +14467,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
                 "I want to delete this repository": "我想刪除這個倉庫",
 
                 "This will permanently delete the": "這將永久刪除",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "倉庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "倉庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "倉庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有團隊關聯。", // 組織倉庫
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "這並不會更改您的結算方案。 如果您想降級，可以在結算設置中進行降級。",
@@ -14394,6 +14489,8 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
         [/(\d+) branch protection rules?/, "$1 項分支保護規則"], // 禁用/重啟啟用分支保護
         [/Delete/, "刪除"],
         [/Default branch changed to ([^ ])/, "默認分支更改為 $1"],
+        // 離開復刻網絡
+        [/Forked from ([^ ])/, "復刻自 $1"],
     ],
 };
 
@@ -23681,7 +23778,6 @@ I18N["zh-TW"]["copilot"] = {
                     "Enable Claude 3.7 Sonnet Thinking": "啟用 Claude 3.7 Sonnet Thinking",
                 // o1
                     "Model capabilities": "模型限制",
-                    "Limited capabilities (o1-mini)": "功能限制（o1-mini）",
                     "Limited capabilities (o1)": "功能限制（o1）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "雖然這種模型的推理能力更強，但在執行日常任務時通常速度較慢，而且檢索外部數據的能力有限。以下是一些不支持的常見操作：",
                         "Not supported": "不支持",
@@ -23710,6 +23806,8 @@ I18N["zh-TW"]["copilot"] = {
                 "Messages up to this point are included in shared link": "以上內容都包含在共享鏈接中",
                 "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此對話舊版本已被共享。若要更新，請刪除並創建新鏈接。",
             "Open menu": "菜單",
+                "Conversation": "對話",
+                "Prompt": "提示詞",
             "Feedback and settings": "反饋和設置",
                 // 反饋
                     "Rate your experience": "反饋",
@@ -23731,6 +23829,9 @@ I18N["zh-TW"]["copilot"] = {
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "詢問生成文件或應用程序，或使用下面的按鈕自行嘗試。",
                 "I’m feeling lucky": "我手氣不錯",
+
+                "More options": "更多",
+                    "Download all files": "下載全部",
 
                 "Download code": "下載代碼",
 
