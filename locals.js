@@ -1313,6 +1313,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Ask about the repository:": "询问关于此仓库的信息：",
             "Ask about the tree comparison:": "询问关于比较的信息：",
             "Attach files or symbols": "附加文件或符号",
+                "Fetching files, folders, and symbols…": "正在获取文件（夹）和符号…",
             "Add an extension": "添加扩展",
                 //"Files and symbols…": "文件和符号…",
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
@@ -8292,7 +8293,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Go to discussion →": "转到讨论→",
 
             "Edit": "编辑",
-
+            "Issue body actions": "菜单", // 原文过于啰嗦，直接省略
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
@@ -9307,6 +9308,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This merge commit was added into this branch cleanly.": "该合并提交被干净利落地添加到该分支中。",
                 "There are no new changes to show, but you can still": "没有新的更改可显示，但您仍然可以",
                 "view the diff.": "查看差异。",
+
+            // 中间
+            "Loading branch information": "正在加载分支信息",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
             // 工具条
@@ -23730,6 +23734,9 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
 
             return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
         }],
+        [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)m (\d+)s/, "$1分$2秒"],
+        [/(\d+)m/, "$1分钟"],
     ],
 };
 
@@ -23760,6 +23767,7 @@ I18N["zh-CN"]["copilot"] = {
                 "Manage conversation": "管理",
                     "Rename": "重命名",
                         "Rename conversation": "重命名对话",
+                    "Share": "分享",
                     // 删除
                         "Delete conversation": "删除对话",
                         "Are you sure you want to delete this conversation? This action cannot be undone.": "您确定要删除这段对话吗？此操作无法撤销。",
@@ -23804,7 +23812,17 @@ I18N["zh-CN"]["copilot"] = {
                 "Delete shared link": "删除分享链接",
                 "New messages after creating a link stay private.": "新消息在创建链接后仍保持私密。",
                 "Messages up to this point are included in shared link": "以上内容都包含在共享链接中",
-                "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此对话旧版本已被共享。若要更新，请删除并创建新链接。",
+                "a previous version of this conversation has been shared": "此对话旧版本已被共享",
+                "create link to share the current version of this conversation.": "创建链接以分享此对话的当前版本。",
+                "this shared link is up to date": "分享链接是最新的",
+
+                "Manage link": "管理链接",
+                    "Update link": "更新",
+                        "Update shared conversation to include most recent messages": "更新分享链接以包含最新信息",
+                        "This shared link is up to date": "分享链接是最新的",
+                    "Delete link": "删除",
+                        "Delete shared link and remove access for all users": "删除分享链接并移除所有用户的访问权限",
+                "Copy link": "复制链接",
             "Open menu": "菜单",
                 "Conversation": "对话",
                 "Prompt": "提示词",
