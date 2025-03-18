@@ -8293,7 +8293,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Go to discussion →": "转到讨论→",
 
             "Edit": "编辑",
-
+            "Issue body actions": "菜单", // 原文过于啰嗦，直接省略
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
