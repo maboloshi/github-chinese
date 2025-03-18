@@ -23829,6 +23829,7 @@ I18N["zh-CN"]["copilot"] = {
                 "Conversation": "对话",
                 "Prompt": "提示词",
                     "System prompt": "系统提示词",
+                        // 完整句子：GitHub Copilot 的系统提示是一系列指令，用于指导大语言模型（LLM）根据用户输入提供增强的功能并优化输出质量。
                         "The system prompt for": " ",
                         "is a set of instructions that guides the LLM to provide enhanced functionality and output quality based on user input.": "的系统提示词是一系列指令，用于指导大语言模型（LLM）根据用户输入提供增强的功能并优化输出质量。",
             "Feedback and settings": "反馈和设置",
