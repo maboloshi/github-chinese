@@ -9309,6 +9309,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "There are no new changes to show, but you can still": "没有新的更改可显示，但您仍然可以",
                 "view the diff.": "查看差异。",
 
+            // 中间
+            "Loading branch information": "正在加载分支信息",
+
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
             // 工具条
             "Show file tree": "显示文件树",
