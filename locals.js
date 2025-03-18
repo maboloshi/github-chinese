@@ -11364,6 +11364,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Produced during runtime": "在运行期间生成",
                 "Name": "名称",
                 "Size": "大小",
+                "Digest": "校验值",
                 // [/Delete artifact ([^ ]+)/, "删除附件 $1"],
                 "Expired": "已过期",
                     "This artifact has expired and you can no longer download it": "此附件已过期，您无法再下载",
