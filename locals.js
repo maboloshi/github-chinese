@@ -1342,6 +1342,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Browse marketplace": "前往市场",
             "Add attachment": "添加附件",
             "Send now": "发送",
+            "Stop response": "停止响应",
             // 反馈
             "Rate your experience": "反馈",
             // 四个表情
