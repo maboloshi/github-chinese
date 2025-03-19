@@ -1333,6 +1333,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Repository": "仓库",
                     "Select a repository": "选择仓库",
                         "Choose a repository to chat about.": "选择以聊天",
+                        "Choose a repository to browse for files and symbols.": "选择一个仓库来浏览文件和符号。",
                 "Remove topic": "移除主题",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
@@ -1388,6 +1389,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Good response": "点赞",
             "Bad response": "点踩",
+            "Retry": "重试",
 
     },
     "regexp": [ // 正则翻译
