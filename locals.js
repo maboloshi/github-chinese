@@ -12570,7 +12570,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/Remove attached binary ([^ ]+)/, "删除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
-        // [/ and /, " 和 "],
+        [/^([^ ]+) and ([^ ]+)/, "$1 和 $2"], // 发行版 - 贡献者（2位
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
