@@ -14435,6 +14435,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             "Leave fork network": "离开复刻网络",
             "Can't leave the fork network because this fork has child forks.": "无法离开复刻网络，因为此复刻有子复刻。",
+            "Can't detach forks larger than 1 GB.": "无法解除大于 1 GB 的复刻关联。",
             "Unlink this repository from the fork network and make it standalone.": "将该仓库从复刻网络中解除关联，使其成为独立仓库。",
 
             "Archive this repository": "存档仓库",
