@@ -651,7 +651,7 @@
         watchUpdate();
 
         // 首次页面翻译
-        document.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             // 获取当前页面的翻译规则
             updatePageConfig('首次载入');
             if (pageConfig.currentPageType) traverseNode(document.body);
