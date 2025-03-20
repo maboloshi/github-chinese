@@ -651,7 +651,8 @@
         watchUpdate();
 
         // 首次页面翻译
-        const initTranslation = () => {
+        window.addEventListener('DOMContentLoaded', () => {
+            // 获取当前页面的翻译规则
             updatePageConfig('首次载入');
             if (pageConfig.currentPageType) {
                 requestAnimationFrame(() => { 
@@ -660,7 +661,7 @@
                     transBySelector();
                 });
             }
-        };
+        });
 
         const debouncedInit = debounce(initTranslation, 300);
         
