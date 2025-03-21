@@ -1319,6 +1319,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
                     "First attach a repository": "请先附加仓库",
                     "Select files, folders, and symbols": "选择文件、文件夹和符号",
+                    "Choose a repository to browse for files and symbols.": "选择仓库以浏览文件和符号。",
                     //"Attach files and symbols": "附加文件和符号",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的内容。使用较少的参考资料即可获得更准确的回复。",
@@ -23881,6 +23882,8 @@ I18N["zh-CN"]["copilot"] = {
 
             "Open panel": "打开面板",
             "Close panel": "关闭面板",
+            "Open workbench": "打开工作台",
+            "Close workbench": "关闭工作台",
             "Close file browser": "关闭文件浏览器",
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
