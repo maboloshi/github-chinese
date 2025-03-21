@@ -59,9 +59,6 @@ Via 瀏覽器（Android）                | 瀏覽器內自帶
 >    > - 如果版本號未更新，即使內容已更新，用戶腳本管理器仍會忽略這些更新，需要手動安裝以獲取最新內容。
 > 1. **發布版**: 日常功能被凍結（除非由項目所有者進行更新）。通常在**開發版**詞庫版本號更新後的下周一淩晨，自動同步上一**開發版**的詞庫文件。通常情況下，**發布版**與**開發版**之間會存在一周的時間差。
 
-> [!TIP]
-> 1. 需要視頻教程的可以去看看[【這裏】](https://github.com/maboloshi/github-chinese/discussions/133)收錄的一些視頻
-
 > [!IMPORTANT]
 > ### 關於 「Chrome 127 及更高版本無法使用」 的問題
 > 這是由於 Chrome 127 及更高版本逐步切換到 Manifest V3。目前已知腳本管理器 [Tampermonkey][Tampermonkey] 5.2.0 及以上版本能夠完美支持，而其他腳本管理器（如 Violentmonkey 等）可能無法正常運行此腳本。如果您使用的是其他腳本管理器，建議您改用支持 Manifest V3 的腳本管理器，或者將瀏覽器版本退回，等待相關腳本管理器開發者更新，或改用 Firefox 瀏覽器。詳情請參閱 [#234](https://github.com/maboloshi/github-chinese/issues/234) 討論。
