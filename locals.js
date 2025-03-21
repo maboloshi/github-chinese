@@ -23938,6 +23938,10 @@ I18N["zh-CN"]["copilot"] = {
             "Path Injection": "路径注入",
                 "Unvalidated input in path value creation risks unintended file/directory access": "创建路径值时输入的无效信息可能会导致意外文件/目录访问",
 
+        "You’ve edited": "您已编辑",
+            "Undo": "撤销",
+            "Revert": "回退",
+
         // 了解世界领先的人工智能开发工具的所有优势。
         "Accelerate your development speed with Copilot": "使用 Copilot 加快开发速度",
         "Discover all the": "了解世界领先的人工智能开发工具的所有",
