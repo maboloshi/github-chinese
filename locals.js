@@ -1922,6 +1922,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "has a new discussion in": "有一条新讨论，在",
         "Join discussion": "参与讨论",
         "Popular among": "很受欢迎",
+        "Popular projects among": "热门项目",
         "people you follow": "在您关注的人中",
         "Sponsor": "赞助",
 
