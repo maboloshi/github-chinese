@@ -1343,6 +1343,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
                         "Browse marketplace": "前往市场",
             "Add attachment": "添加附件",
+            "Remove topic": "移除主题",
+            "Remove": "移除",
+            "Attachments options": "附件选项",
+                "Remove attachments": "移除附件",
             "Send now": "发送",
             "Stop response": "停止响应",
             // 反馈
