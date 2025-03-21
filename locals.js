@@ -12810,13 +12810,19 @@ I18N["zh-CN"]["repository/pkgs"] = { // 仓库 - 软件包
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository/packages"]["regexp"],
 
-        [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        //[/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        [/Published (.*) · Digest/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `发布于 ${translatedDate} · 摘要`;
+        }],
         [/Published (.*)/, "发布于 $1"],
         [/(\d+) tagged/, "$1 个标记"],
         [/(\d+) untagged/, "$1 个未标记"],
         [/(\d+) dependencies/, "$1 个依赖包"],
         [/(\d+) active/, "$1 个可用"],
-        [/(\d+) deleted/, "$1 个已删除"]
+        [/(\d+) deleted/, "$1 个已删除"],
+        [/(\d+) contributors?/, "$1 位贡献者"],
     ],
 };
 I18N["zh-CN"]["packages"] = { // 软件包 - 未链接仓库的软件包
