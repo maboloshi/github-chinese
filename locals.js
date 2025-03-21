@@ -7142,6 +7142,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // 顶部
             "Help us improve GitHub Codespaces": "帮助我们改进 GitHub 代码空间",
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
+            
+            "Sorry, couldn’t delete that branch.": "抱歉，无法删除此分支。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -12239,6 +12241,7 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
                 // 底部提醒
                     "You can't delete this protected branch.": "您无法删除此受保护分支。",
                     "You can't delete the default branch.": "您不能删除默认分支。",
+                    "Branch could not be deleted.": "不能删除分支。",
 
     },
     "regexp": [ // 正则翻译
