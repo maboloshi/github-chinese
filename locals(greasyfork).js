@@ -1291,6 +1291,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Delete conversation": "删除对话",
                 "View all conversations": "查看全部对话",
                     "Active conversations": "最近对话",
+                    "All conversations": "所有对话",
                     // 删除
                         "Are you sure? This can’t be undone.": "您确定吗？此操作无法撤销。",
             "Take conversation to immersive": "全屏对话",
@@ -1310,12 +1311,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Chatting about code and programming": "讨论关于代码和编程",
             // 对话框
             "Ask about the repository:": "询问关于此仓库的信息：",
+            "Ask about the tree comparison:": "询问关于比较的信息：",
             "Attach files or symbols": "附加文件或符号",
             "Add an extension": "添加扩展",
                 //"Files and symbols…": "文件和符号…",
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
                     "First attach a repository": "请先附加仓库",
-                    "Attach files, folders, and symbols": "附加文件、文件夹和符号",
+                    "Select files, folders, and symbols": "选择文件、文件夹和符号",
                     //"Attach files and symbols": "附加文件和符号",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的内容。使用较少的参考资料即可获得更准确的回复。",
@@ -1327,12 +1329,17 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Search repositories": "搜索仓库",
                         "Fetching repositories…": "正在获取仓库",
                     "Close": "关闭",
+                "Repository": "仓库",
+                    "Select a repository": "选择仓库",
+                        "Choose a repository to chat about.": "选择以聊天",
+                "Remove topic": "移除主题",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
                     "Extensions": "扩展",
                         "Chat with your favorite tools and services": "使用您最喜欢的工具和服务聊天",
                         "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
                         "Browse marketplace": "前往市场",
+            "Add attachment": "添加附件",
             "Send now": "发送",
             // 反馈
             "Rate your experience": "反馈",
@@ -1391,6 +1398,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行（$2 非空行）·"],  // loc = 代码行（line of code）= 行数 - 空行数（lines - blank lines）
         [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜索分配给用户 $1 的议题"],
         [/Chatting with (\d+) attachments?/, "附件 $1 个"],
+        [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "从 $1 中选择项目来进行交流。使用较少的引用以获得更准确的回答。"],
+        [/Delete conversation: \"(.+)\"/, "删除对话：“$1”"],
         /**
          * 匹配时间格式
          *
@@ -6895,11 +6904,10 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/You have been invited to collaborate on the (.*) repository./, "您已受邀参与 $1 仓库的协作。"],
         [/You have previously committed to the (.*) repository./, "您之前有提交到 $1 仓库。"],
         [/This user has previously committed to the (.*) repository./, "该用户之前有提交到 $1 仓库。"],
-        [/This repository has been archived by the owner on (.+). It is now read-only./, (match, p1) => {
+        [/This repository was archived by the owner on (.+). It is now read-only./, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `此仓库已由所有者于${translatedDate}存档。它现在是只读的。`;
-            //return '此仓库已由所有者于' + y + '年' + mKey[m] + d + '日'+ '存档。它现在是只读的。';
         }],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
@@ -8773,6 +8781,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Checkout with GitHub CLI": "使用 GitHub CLI 检出",
                     "Work fast with our official CLI.": "使用我们的官方 CLI 快速工作。",
                     "Checkout with GitHub Desktop": "使用 GitHub Desktop 检出",
+                        "Launching GitHub Desktop": "GitHub Desktop 启动中",
+                        "If nothing happens,": "如果没有响应",
+                            "download GitHub Desktop": "下载 GitHub Desktop",
+                            "and try again.": "并重试",
 
                 // 代码空间
                     "This pull request must be reopened to create new codespaces on it.": "必须重新打开此拉取请求才能在其上创建新的代码空间。",
@@ -9064,6 +9076,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Update branch": "更新分支",
                         "Update with merge commit": "使用合并提交更新",
                             "The latest changes will be merged into this branch with a merge commit.": "最新的更改将通过合并提交合并到此分支中。",
+                            "The merge commit will be associated with your account.": "合并提交将与您的账户相关联。",
                         "Update with rebase": "使用变基更新",
                             "This branch cannot be rebased due to conflicts.": "由于冲突，此分支不能变基。",
                             "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取请求将会在最新的更改之上进行变基，并且会使用强制推送的方式提交。",
@@ -9861,7 +9874,8 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         "Helpful resources": "帮助性资源",
             // "GitHub Community Guidelines": "GitHub 社区准则",
             "Contributing": "贡献准则",
-
+            "Code of conduct": "行为准则",
+            "Security policy": "安全政策",
 
         // 标签对应版本比较 /<user-name>/<repo-name>/compare/<tag-id1>...<tag-id2>
             // 仅限 MD文件
@@ -13493,6 +13507,40 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
             const translatedP2 = I18N["zh-CN"]["public"]["static"][p2] || p2;
             return `${p3}年 ${translatedP1}-${translatedP2}`; // 此处修改格式为 年 月-月
         }],
+        [/(\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/, function(all, d, m){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) '(\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
@@ -13758,6 +13806,40 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}当周`; // 无论如何都是星期一
         }],
+        [/(\d+) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/, function(all, d, m){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) '(\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
     ],
 };
 
@@ -13797,6 +13879,7 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
 
             // "Dependencies": "依赖关系",
             "Search all dependencies": "搜索所有依赖项",
+                "Suggested filters": "建议筛选",
 
             "These dependencies are defined in": "这些依赖关系被定义在",
             "’s manifest files, such as": "的清单文件，例如",
@@ -13812,6 +13895,11 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
 
             // [/(\d+) more dependencies/, "更多 $1 个依赖项"],
             // [/Load (\d+) more…/, "加载更多 $1个…"],
+            "Ecosystem": "生态系统",
+                "Filter by ecosystem": "按生态系统筛选",
+
+            "ProTip!": "专业提示！",
+                "Supported ecosystems will have transitivity labels on their packages.": "受支持的生态系统将在其包上有传递性标签。",
 
     },
     "regexp": [ // 正则翻译
@@ -14322,6 +14410,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             "Leave fork network": "离开复刻网络",
             "Can't leave the fork network because this fork has child forks.": "无法离开复刻网络，因为此复刻有子复刻。",
+            "Unlink this repository from the fork network and make it standalone.": "将该仓库从复刻网络中解除关联，使其成为独立仓库。",
 
             "Archive this repository": "存档仓库",
             "Mark this repository as archived and read-only.": "将此仓库标记为已存档和只读。",
@@ -14365,6 +14454,11 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦删除仓库，将再也无法恢复。请确认。",
             "Organization members cannot delete repositories.": "组织成员没有删除仓库的权限",
 
+            // 离开复刻网络对话框
+                "This will permanently remove the fork relationship to the upstream repository": "这将永久移除与上游仓库的复刻关系：",
+                "will become a standalone repository and will no longer be able to fetch upstream updates or propose changes to the upstream repository": "将成为独立仓库，无法再获取上游更新，也无法向原仓库提交更改：",
+                "cannot rejoin the fork network.": "不能重新加入复刻网络。",
+
             // 顶部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的仓库 “$1” 已成功解除存档。"], //仓库解除存档
 
@@ -14373,6 +14467,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "I want to delete this repository": "我想删除这个仓库",
 
                 "This will permanently delete the": "这将永久删除",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
                 "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有团队关联。", // 组织仓库
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
@@ -14394,6 +14489,8 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
         [/(\d+) branch protection rules?/, "$1 项分支保护规则"], // 禁用/重启启用分支保护
         [/Delete/, "删除"],
         [/Default branch changed to ([^ ])/, "默认分支更改为 $1"],
+        // 离开复刻网络
+        [/Forked from ([^ ])/, "复刻自 $1"],
     ],
 };
 
@@ -23681,7 +23778,6 @@ I18N["zh-CN"]["copilot"] = {
                     "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
                 // o1
                     "Model capabilities": "模型限制",
-                    "Limited capabilities (o1-mini)": "功能限制（o1-mini）",
                     "Limited capabilities (o1)": "功能限制（o1）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
                         "Not supported": "不支持",
@@ -23710,6 +23806,8 @@ I18N["zh-CN"]["copilot"] = {
                 "Messages up to this point are included in shared link": "以上内容都包含在共享链接中",
                 "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此对话旧版本已被共享。若要更新，请删除并创建新链接。",
             "Open menu": "菜单",
+                "Conversation": "对话",
+                "Prompt": "提示词",
             "Feedback and settings": "反馈和设置",
                 // 反馈
                     "Rate your experience": "反馈",
@@ -23731,6 +23829,9 @@ I18N["zh-CN"]["copilot"] = {
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
                 "I’m feeling lucky": "我手气不错",
+
+                "More options": "更多",
+                    "Download all files": "下载全部",
 
                 "Download code": "下载代码",
 
