@@ -11357,6 +11357,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via dynamic": "通过动态触发",
             "Triggered via GitHub Pages": "通过 GitHub 页面触发",
             "Triggered via repository dispatch": "通过仓库调度触发",
+            "Triggered via release": "通过发行版触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
 
@@ -11437,6 +11438,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "opened by": "打开者",
                 "reopened by": "重新打开者",
             "The operation was canceled.": "已取消。",
+            "Release": "发行版",
+                "published by": "发布者",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
