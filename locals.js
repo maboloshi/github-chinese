@@ -8764,6 +8764,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
+        [/(\d+) Total/, "$1 总计"],
         [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
