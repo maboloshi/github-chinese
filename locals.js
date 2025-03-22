@@ -11368,12 +11368,14 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via GitHub Pages": "通过 GitHub 页面触发",
             "Triggered via repository dispatch": "通过仓库调度触发",
             "Triggered via release": "通过发行版触发",
+            "Triggered via issue": "通过议题触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
 
             "pushed": "推送",
             "opened": "打开",
             "reopened": "重新打开",
+            "commented on": "评论于",
 
             // 状态
                 "Success": "成功",
