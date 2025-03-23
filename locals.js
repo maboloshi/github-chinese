@@ -20087,6 +20087,8 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
                 "View as:": "浏览：",
                     "Switch profile context": "切换视角",
                     "Member": "成员",
+                        "Member of": "隶属于", // 成员 - 浮动信息卡
+                        "- same time": "- 时间相同", // 成员 - 浮动信息卡
 
                 // 公共视角
                     "You are viewing the README and pinned repositories as a public user.": "您正在以公共用户的身份查看自述文件和置顶仓库。",
