@@ -20192,6 +20192,13 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
         [/Invite a member to/, "邀请成员加入"],
         [/\((\d+) issues? need help\)/, "($1 个议题需要帮助)"],
         [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
+        // 用户 - 浮动信息卡
+        [/- (\d+)h (ahead|behind)/, function(all, num, compare){
+            var compareKey = {ahead: '早', behind: '晚'};
+
+            return '- ' + compareKey[compare] + num + '小时';
+        }],
+        [/, and (\d+) more/, " 等 $1 个组织"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
     "selector": [ // 元素筛选器规则
