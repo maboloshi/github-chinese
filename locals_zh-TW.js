@@ -1313,11 +1313,13 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Ask about the repository:": "詢問關於此倉庫的信息：",
             "Ask about the tree comparison:": "詢問關於比較的信息：",
             "Attach files or symbols": "附加文件或符號",
+                "Fetching files, folders, and symbols…": "正在獲取文件（夾）和符號…",
             "Add an extension": "添加擴展",
                 //"Files and symbols…": "文件和符號…",
                 "Files, folders, and symbols…": "文件、文件夾和符號…",
                     "First attach a repository": "請先附加倉庫",
                     "Select files, folders, and symbols": "選擇文件、文件夾和符號",
+                    "Choose a repository to browse for files and symbols.": "選擇倉庫以瀏覽文件和符號。",
                     //"Attach files and symbols": "附加文件和符號",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的文件和符號。使用較少的參考資料即可獲得更準確的回覆。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "選擇您想要討論的內容。使用較少的參考資料即可獲得更準確的回覆。",
@@ -1331,6 +1333,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Close": "關閉",
                 "Repository": "倉庫",
                     "Select a repository": "選擇倉庫",
+                    "Select repositories": "選擇倉庫",
+                        "Choose repositories to chat about.": "選擇以聊天",
                         "Choose a repository to chat about.": "選擇以聊天",
                 "Remove topic": "移除主題",
                 "Extension…": "擴展…",
@@ -1340,7 +1344,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "Browse the marketplace to find extensions for the tools and services you rely on": "瀏覽市場以查找您所依賴的工具和服務的擴展",
                         "Browse marketplace": "前往市場",
             "Add attachment": "添加附件",
+            "Remove topic": "移除主題",
+            "Remove": "移除",
+            "Attachments options": "附件選項",
+                "Remove attachments": "移除附件",
             "Send now": "發送",
+            "Stop response": "停止響應",
             // 反饋
             "Rate your experience": "反饋",
             // 四個表情
@@ -1386,6 +1395,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
             "Good response": "點贊",
             "Bad response": "點踩",
+            "Retry": "重試",
 
     },
     "regexp": [ // 正則翻譯
@@ -1912,6 +1922,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         "has a new discussion in": "有一條新討論，在",
         "Join discussion": "參與討論",
         "Popular among": "很受歡迎",
+        "Popular projects among": "熱門項目",
         "people you follow": "在您關注的人中",
         "Sponsor": "贊助",
 
@@ -2333,6 +2344,23 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
 
             return '- ' + compareKey[compare] + num + '小時';
         }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
         //[/A graph representing ([^ ]+)'s contributions from (.+) to (.+). The contributions are (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review)./, function(all, user, date1, date2, cd1, c1, cd2, c2, cd3, c3, cd4, c4){
         //    var c1Key, c2Key ,c3Key, c4Key = {
         //        'commits': '提交',
@@ -2517,6 +2545,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
         [/(\d+(k|M|B)?) repositor(y|ies)/, "$1 個倉庫"],
         [/(\d+) members?/, "$1 成員"], // 組織 浮動信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 沒有任何匹配的倉庫"], // 倉庫標籤卡
+        [/([^ ]+) doesn’t have any public repositories yet./, "$1 沒有任何公共倉庫。"],
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的倉庫 “$1” 已成功刪除。"],
         [/(\d+) issues? needs? help/, "$1 個議題需要幫助"],
         [/and (\d+) more/, "等 $1 人"],
@@ -4962,7 +4991,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
                 "More features": "更多功能",
 
-            // "Copilot policies": "Copilot 規則",
+            "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
                     //"You can use Copilot Chat in Github.com, Copilot for pull requests, and all of the preview features.": "您可以在 Github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取請求和所有預覽功能。",
                     "You can use Copilot Chat in GitHub.com, Copilot for pull requests, and all of the preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，Copilot 拉取請求和所有預覽功能。",
@@ -7121,6 +7150,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
         // 頂部
             "Help us improve GitHub Codespaces": "幫助我們改進 GitHub 代碼空間",
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通過三個簡單的問題告訴我們如何讓 GitHub 代碼空間更適合您。",
+            
+            "Sorry, couldn’t delete that branch.": "抱歉，無法刪除此分支。",
 
         // 代碼標籤卡 & 倉庫首頁 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名為 $2。"],
@@ -8292,7 +8323,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "Go to discussion →": "轉到討論→",
 
             "Edit": "編輯",
-
+            "Issue body actions": "菜單", // 原文過於囉嗦，直接省略
 
             // 狀態詞 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了標題",
@@ -8734,6 +8765,7 @@ I18N["zh-TW"]["repository/pulls"] = { // 倉庫 - 拉取請求頁面
         [/(\d+) tasks? done/, "$1 個任務完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 個任務"],
         [/(\d+) tasks?/, "$1 個任務"],
+        [/(\d+) Total/, "$1 總計"],
         [/(\d+) review requesting changes/, "$1 個要求修改的審查"],
         [/First time contributing to ([^ ]+)\?/, "首次為 $1 做貢獻？"],
         [/Suggested change/, "建議更改"],
@@ -9307,6 +9339,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "This merge commit was added into this branch cleanly.": "該合併提交被幹淨利落地添加到該分支中。",
                 "There are no new changes to show, but you can still": "沒有新的更改可顯示，但您仍然可以",
                 "view the diff.": "查看差異。",
+
+            // 中間
+            "Loading branch information": "正在加載分支信息",
 
         // 拉取請求 --> 更改的文件 標籤卡 /<user-name>/<repo-name>/pull/<id>/files
             // 工具條
@@ -11333,12 +11368,15 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "Triggered via dynamic": "通過動態觸發",
             "Triggered via GitHub Pages": "通過 GitHub 頁面觸發",
             "Triggered via repository dispatch": "通過倉庫調度觸發",
+            "Triggered via release": "通過發行版觸發",
+            "Triggered via issue": "通過議題觸發",
             "Re-run triggered": "重新觸發",
             "Manually triggered": "手動觸發",
 
             "pushed": "推送",
             "opened": "打開",
             "reopened": "重新打開",
+            "commented on": "評論於",
 
             // 狀態
                 "Success": "成功",
@@ -11360,6 +11398,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
                 "Produced during runtime": "在運行期間生成",
                 "Name": "名稱",
                 "Size": "大小",
+                "Digest": "校驗值",
                 // [/Delete artifact ([^ ]+)/, "刪除附件 $1"],
                 "Expired": "已過期",
                     "This artifact has expired and you can no longer download it": "此附件已過期，您無法再下載",
@@ -11412,6 +11451,8 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
                 "opened by": "打開者",
                 "reopened by": "重新打開者",
             "The operation was canceled.": "已取消。",
+            "Release": "發行版",
+                "published by": "發佈者",
             //"Process completed with exit code 1.": "進程完成，退出代碼為 1。",
             "Cache not found": "找不到緩存",
             "Starting job": "作業啟動中",
@@ -12211,6 +12252,7 @@ I18N["zh-TW"]["repository/branches"] = { // 倉庫 - 分支頁面
                 // 底部提醒
                     "You can't delete this protected branch.": "您無法刪除此受保護分支。",
                     "You can't delete the default branch.": "您不能刪除默認分支。",
+                    "Branch could not be deleted.": "不能刪除分支。",
 
     },
     "regexp": [ // 正則翻譯
@@ -12565,7 +12607,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
         [/Remove attached binary ([^ ]+)/, "刪除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 個貢獻者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表達看法"],
-        // [/ and /, " 和 "],
+        [/^([^ ]+) and ([^ ]+)/, "$1 和 $2"], // 發行版 - 貢獻者（2位
         [/(\d+) (people|person) reacted/, "$1 人表達看法"],
         [/There are no releases containing \"([^ ]+)\"./, "沒有發行版包含“$1”。"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
@@ -12773,13 +12815,19 @@ I18N["zh-TW"]["repository/pkgs"] = { // 倉庫 - 軟件包
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository/packages"]["regexp"],
 
-        [/Published (.*) · Digest/, "發佈於 $1 · 摘要"],
+        //[/Published (.*) · Digest/, "發佈於 $1 · 摘要"],
+        [/Published (.*) · Digest/, (match, p1) => { // p1為(.+)
+            const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `發佈於 ${translatedDate} · 摘要`;
+        }],
         [/Published (.*)/, "發佈於 $1"],
         [/(\d+) tagged/, "$1 個標記"],
         [/(\d+) untagged/, "$1 個未標記"],
         [/(\d+) dependencies/, "$1 個依賴包"],
         [/(\d+) active/, "$1 個可用"],
-        [/(\d+) deleted/, "$1 個已刪除"]
+        [/(\d+) deleted/, "$1 個已刪除"],
+        [/(\d+) contributors?/, "$1 位貢獻者"],
     ],
 };
 I18N["zh-TW"]["packages"] = { // 軟件包 - 未鏈接倉庫的軟件包
@@ -14410,6 +14458,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
 
             "Leave fork network": "離開復刻網絡",
             "Can't leave the fork network because this fork has child forks.": "無法離開復刻網絡，因為此復刻有子復刻。",
+            "Can't detach forks larger than 1 GB.": "無法解除大於 1 GB 的復刻關聯。",
             "Unlink this repository from the fork network and make it standalone.": "將該倉庫從復刻網絡中解除關聯，使其成為獨立倉庫。",
 
             "Archive this repository": "存檔倉庫",
@@ -23730,6 +23779,9 @@ I18N["zh-TW"]["repository/actions/metrics/performance"] = {
 
             return periodKey[period] + '該組織所有工作流程的' + typeKey[type];
         }],
+        [/(\d+)h (\d+)m (\d+)s/, "$1時$2分$3秒"],
+        [/(\d+)m (\d+)s/, "$1分$2秒"],
+        [/(\d+)m/, "$1分鐘"],
     ],
 };
 
@@ -23760,6 +23812,7 @@ I18N["zh-TW"]["copilot"] = {
                 "Manage conversation": "管理",
                     "Rename": "重命名",
                         "Rename conversation": "重命名對話",
+                    "Share": "分享",
                     // 刪除
                         "Delete conversation": "刪除對話",
                         "Are you sure you want to delete this conversation? This action cannot be undone.": "您確定要刪除這段對話嗎？此操作無法撤銷。",
@@ -23776,9 +23829,10 @@ I18N["zh-TW"]["copilot"] = {
                         "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允許訪問 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "瞭解更多關於 GitHub Copilot 如何為 Claude 3.7 Sonnet 提供服務。",
                     "Enable Claude 3.7 Sonnet Thinking": "啟用 Claude 3.7 Sonnet Thinking",
-                // o1
-                    "Model capabilities": "模型限制",
+
+                "Model capabilities": "模型限制",
                     "Limited capabilities (o1)": "功能限制（o1）",
+                    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "雖然這種模型的推理能力更強，但在執行日常任務時通常速度較慢，而且檢索外部數據的能力有限。以下是一些不支持的常見操作：",
                         "Not supported": "不支持",
                             "Using knowledge bases": "使用知識庫",
@@ -23804,10 +23858,24 @@ I18N["zh-TW"]["copilot"] = {
                 "Delete shared link": "刪除分享鏈接",
                 "New messages after creating a link stay private.": "新消息在創建鏈接後仍保持私密。",
                 "Messages up to this point are included in shared link": "以上內容都包含在共享鏈接中",
-                "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此對話舊版本已被共享。若要更新，請刪除並創建新鏈接。",
+                "a previous version of this conversation has been shared": "此對話舊版本已被共享",
+                "create link to share the current version of this conversation.": "創建鏈接以分享此對話的當前版本。",
+                "this shared link is up to date": "分享鏈接是最新的",
+
+                "Manage link": "管理鏈接",
+                    "Update link": "更新",
+                        "Update shared conversation to include most recent messages": "更新分享鏈接以包含最新信息",
+                        "This shared link is up to date": "分享鏈接是最新的",
+                    "Delete link": "刪除",
+                        "Delete shared link and remove access for all users": "刪除分享鏈接並移除所有用戶的訪問權限",
+                "Copy link": "複製鏈接",
             "Open menu": "菜單",
                 "Conversation": "對話",
                 "Prompt": "提示詞",
+                    "System prompt": "系統提示詞",
+                        // 完整句子：GitHub Copilot 的系統提示是一系列指令，用於指導大語言模型（LLM）根據用戶輸入提供增強的功能並優化輸出質量。
+                        "The system prompt for": " ",
+                        "is a set of instructions that guides the LLM to provide enhanced functionality and output quality based on user input.": "的系統提示詞是一系列指令，用於指導大語言模型（LLM）根據用戶輸入提供增強的功能並優化輸出質量。",
             "Feedback and settings": "反饋和設置",
                 // 反饋
                     "Rate your experience": "反饋",
@@ -23825,6 +23893,8 @@ I18N["zh-TW"]["copilot"] = {
 
             "Open panel": "打開面板",
             "Close panel": "關閉面板",
+            "Open workbench": "打開工作臺",
+            "Close workbench": "關閉工作臺",
             "Close file browser": "關閉文件瀏覽器",
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "詢問生成文件或應用程序，或使用下面的按鈕自行嘗試。",
@@ -23872,6 +23942,10 @@ I18N["zh-TW"]["copilot"] = {
         // 漏洞相關
             "Path Injection": "路徑注入",
                 "Unvalidated input in path value creation risks unintended file/directory access": "創建路徑值時輸入的無效信息可能會導致意外文件/目錄訪問",
+
+        "You’ve edited": "您已編輯",
+            "Undo": "撤銷",
+            "Revert": "回退",
 
         // 瞭解世界領先的人工智能開發工具的所有優勢。
         "Accelerate your development speed with Copilot": "使用 Copilot 加快開發速度",
