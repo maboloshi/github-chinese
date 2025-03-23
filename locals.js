@@ -2345,7 +2345,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
 
             return '- ' + compareKey[compare] + num + '小时';
         }],
-        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
+        [/(?:on )?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
             var mKey = {
                 "Jan": "1月",
                 "Feb": "2月",
