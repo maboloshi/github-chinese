@@ -10310,6 +10310,7 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                         "Wrap lines": "换行",
                         "Center content": "核心内容",
                         "Open symbols on click": "单击打开符号",
+                    "Ask about this file": "讨论此文件",
                     "Delete file": "删除文件",
 
             "Copied path!": "✅ 路径已复制！",
