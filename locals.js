@@ -11894,6 +11894,11 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
             // 顶部提醒
             "File successfully deleted.": "文件已成功删除。",
 
+            "Copy path to clipboard": "复制路径到剪切板",
+
+            "Load diff": "加载差异",
+            "This file was deleted.": "此文件已删除。",
+
         // 上传文件页面 /<user-name>/<repo-name>/upload/<branch>
             // 自有仓库
                 "Drag files here to add them to your repository": "拖拽文件添加到当前仓库",
