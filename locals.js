@@ -9793,6 +9793,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "These branches can be automatically merged.": "该分支可被自动合并。",
 
             "View pull request": "查看拉取请求", //存在拉取请求时
+                "No description available": "无说明", // 拉取请求无评论时
 
             "commit": "次提交",
             "commits": "次提交",
