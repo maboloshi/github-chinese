@@ -23858,6 +23858,11 @@ I18N["zh-CN"]["copilot"] = {
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Get file": "获取文件",
 
+            // 拉取请求列表
+            "opened": "打开于",
+            "closed": "关闭于",
+            "ago": "之前",
+
             "Copy code": "复制代码",
             "Copied!": "复制成功！",
 
