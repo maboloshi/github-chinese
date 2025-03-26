@@ -4750,6 +4750,10 @@ I18N["zh-CN"]["settings/codespaces"] = { // 设置 - 代码空间
                 // "Enabled": "启用",
                     "VS Code Settings Sync will be available in Codespaces": "VS Code 设置同步将在代码空间中可用",
 
+            // 通知
+            "When enabled, you will receive emails when your codespaces are nearing deletion due to inactivity.": "启用后，当您的代码空间因长时间未使用而即将被删除时，您将收到电子邮件通知。",
+            "Warning notifications for codespace deletions will be enabled": "代码空间删除警告通知将启用",
+
             "Trusted repositories": "受信任仓库",
                 "The following repositories will be referenced by GPG verification and Settings Sync.": "以下仓库将被 GPG 验证和设置同步所引用。",
 
@@ -4760,6 +4764,8 @@ I18N["zh-CN"]["settings/codespaces"] = { // 设置 - 代码空间
                     "Select repositories": "选择仓库",
                     // [/Selected (\d+) repositor(y|ies)./, "选定 #1 个仓库"],
                     "GPG and VS Code Settings Sync will be available for Codespaces from these repositories.": "GPG 和 VS Code 设置同步将可用于这些仓库的代码空间。",
+
+                "Submit": "确定",
 
             "Access and security": "访问和安全",
             "Deprecated": "弃用",
@@ -4853,6 +4859,7 @@ I18N["zh-CN"]["settings/codespaces"] = { // 设置 - 代码空间
         [/Selected (\d+) repositor(y|ies)./, "选定 $1 个仓库"],
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/Are you sure you want to delete ([^ ]+)\?/, "您确定要删除 $1 吗？"],
+        [/Remove ([^ ]+)/, "移除 $1"],
     ],
 };
 
