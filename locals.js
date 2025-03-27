@@ -8453,14 +8453,19 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     // 在本地仓库检出对话框
                         "Checkout in your local repository": "在本地仓库检出",
                         "Run the following commands in your local clone.": "在您的本地克隆中运行以下指令。",
+                    
+                    // 项目
+                        "Select projects": "选择项目",
 
-                    //
+                    // 进展
                         "Link a branch or pull request": "关联分支或拉取请求",
                         "Select a repository to search for branches and pull requests or": "选择一个仓库来搜索分支和拉取请求或",
                         "create a branch": "创建一分支",
+                        "Search pull requests": "搜索拉取请求",
                         "Search for repositories": "搜索仓库",
                         "Link a branch, pull request, or": "关联分支、拉取请求或",
                         "Search for branches or pull requests": "搜索分支或拉取请求",
+                        "no pull request": "无拉取请求",
 
                 "Pin issue": "置顶议题",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置顶 3 个议题，它们将公开显示在议题页面的顶部",
