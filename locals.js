@@ -8285,6 +8285,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             // 置顶议题
             "Pinned issues": "置顶议题",
             "Drag to reorder": "拖拽排序",
+            "Pinned issue options": "置顶选项",
 
             "Unpin": "取消置顶",
             "Advanced move...": "高级移动…",
