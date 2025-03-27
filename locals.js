@@ -19331,13 +19331,16 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 
             "Models": "模型",
                 "Model": "模型",
+                "Catalog": "目录",
 
                     // 分类
                         "All providers": "所有提供商",
+                    "Publisher:": "发布者：",
                     "Capability:": "能力：",
                         "Chat/completion": "聊天/完成",
                         "Embeddings": "嵌入",
                     "Tag:": "标签",
+                    "Category:": "类型：",
                         "Agents": "代理",
                         "Conversation": "对话",
                         "Large context": "大模型",
@@ -19348,6 +19351,10 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                         "Rag": "检索增强生成",
                         "Reasoning": "推理",
                         "Understanding": "理解",
+                    // 排序
+                        "Alphabetical": "A-Z",
+                        "Output token limit": "输出令牌限制",
+                        "Input token limit": "输入令牌顺序",
 
             "All apps": "所有应用",
                 "Apps": "应用",
@@ -19781,6 +19788,9 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Input:": "输入：",
             "• Output:": "• 输出：",
             "ms": "毫秒",
+
+            "Welcome to GitHub Models!": "欢迎使用 GitHub 模型！",
+                "We want to make Models Playground amazing for you. Got feedback? Book a call or": "我们致力于让模型游乐场为您带来卓越体验。如有反馈，请预约通话或",
             // 聊天窗口
                 // 顶部横条
                     "Restore last session": "恢复上次聊天",
