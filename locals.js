@@ -19833,6 +19833,10 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                     "Controls randomness in the response, use lower to be more deterministic.": "控制响应的随机性，使用较低值则更具确定性。",
                 "Top P": "最大概率",
                     "Controls text diversity by selecting the most probable words until a set probability is reached.": "通过选择最有可能出现的词语来控制文本多样性，直到达到设定的概率。",
+                "Presence Penalty": "重复惩罚",
+                    "Discourages the model from repeating the same words or phrases too frequently by applying a penalty (between -2.0 and 2.0) based on their presence in the text.": "通过根据文本中已存在的词语或短语施加惩罚（范围在-2.0到2.0之间），抑制模型过于频繁地重复使用相同词语或短语的倾向。",
+                "Frequency Penalty": "频率惩罚",
+                    "Discourages the model from generating the same words or phrases too frequently by applying a penalty (between -2.0 and 2.0) based on their existing frequency in the text.": "通过根据文本中已存在词语或短语的出现频率施加惩罚（范围在-2.0到2.0之间），抑制模型过于频繁地生成相同词语或短语的倾向。",
                 "Stop": "停止",
                     "Force cutting the output when this string occurs.": " 当出现该字符串时，强制切断输出。",
             // 模型比较
