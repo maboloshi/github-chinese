@@ -661,8 +661,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Open Copilot…": "打开 Copilot…",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
-                    "Immersive": "沉浸式",
-                "Open with": "打开于",
+                    "Assistive": "小窗",
+                    "Immersive": "全屏",
+                "Download for": "下载插件",
 
         // 右上角个人图标下拉菜单
             "Account switcher": "账户切换",
