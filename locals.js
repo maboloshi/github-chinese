@@ -14581,6 +14581,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "private repository": "私有仓库",
             "Only those with access to this repository can view it.": "只有拥有该仓库访问权的用户才能查看。",
             "Manage": "管理",
+            "Manage visibility": "管理", // 内容重复，直接省略
 
             "Direct access": "直接访问",
             "collaborators have access to this repository. Only you can contribute to this repository.": "个协作者有权访问此仓库。 只有您可以对此仓库做出贡献。",
@@ -14616,6 +14617,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "Find people or a team…": "寻找用户或一个团队……",
 
             "Pending Invite": "待处理邀请",
+            "Invite expired": "已过期",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
             "Remove": "移除",
 
