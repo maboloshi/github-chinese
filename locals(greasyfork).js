@@ -1313,11 +1313,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Ask about the repository:": "询问关于此仓库的信息：",
             "Ask about the tree comparison:": "询问关于比较的信息：",
             "Attach files or symbols": "附加文件或符号",
+                "Fetching files, folders, and symbols…": "正在获取文件（夹）和符号…",
             "Add an extension": "添加扩展",
                 //"Files and symbols…": "文件和符号…",
                 "Files, folders, and symbols…": "文件、文件夹和符号…",
                     "First attach a repository": "请先附加仓库",
                     "Select files, folders, and symbols": "选择文件、文件夹和符号",
+                    "Choose a repository to browse for files and symbols.": "选择仓库以浏览文件和符号。",
                     //"Attach files and symbols": "附加文件和符号",
                         //"Choose which files and symbols you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的文件和符号。使用较少的参考资料即可获得更准确的回复。",
                         "Choose what you want to chat about. Use fewer references for more accurate responses.": "选择您想要讨论的内容。使用较少的参考资料即可获得更准确的回复。",
@@ -1331,6 +1333,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Close": "关闭",
                 "Repository": "仓库",
                     "Select a repository": "选择仓库",
+                    "Select repositories": "选择仓库",
+                        "Choose repositories to chat about.": "选择以聊天",
                         "Choose a repository to chat about.": "选择以聊天",
                 "Remove topic": "移除主题",
                 "Extension…": "扩展…",
@@ -1340,7 +1344,12 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
                         "Browse marketplace": "前往市场",
             "Add attachment": "添加附件",
+            "Remove topic": "移除主题",
+            "Remove": "移除",
+            "Attachments options": "附件选项",
+                "Remove attachments": "移除附件",
             "Send now": "发送",
+            "Stop response": "停止响应",
             // 反馈
             "Rate your experience": "反馈",
             // 四个表情
@@ -1386,6 +1395,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Good response": "点赞",
             "Bad response": "点踩",
+            "Retry": "重试",
 
     },
     "regexp": [ // 正则翻译
@@ -1912,6 +1922,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "has a new discussion in": "有一条新讨论，在",
         "Join discussion": "参与讨论",
         "Popular among": "很受欢迎",
+        "Popular projects among": "热门项目",
         "people you follow": "在您关注的人中",
         "Sponsor": "赞助",
 
@@ -2333,6 +2344,23 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
 
             return '- ' + compareKey[compare] + num + '小时';
         }],
+        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
+            var mKey = {
+                "Jan": "1月",
+                "Feb": "2月",
+                "Mar": "3月",
+                "Apr": "4月",
+                "May": "5月",
+                "Jun": "6月",
+                "Jul": "7月",
+                "Aug": "8月",
+                "Sep": "9月",
+                "Oct": "10月",
+                "Nov": "11月",
+                "Dec": "12月",};
+            
+            return mKey[m] + d + "日";
+        }],
         //[/A graph representing ([^ ]+)'s contributions from (.+) to (.+). The contributions are (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review), (\d+\%) (commits|pull requests|issues|code review)./, function(all, user, date1, date2, cd1, c1, cd2, c2, cd3, c3, cd4, c4){
         //    var c1Key, c2Key ,c3Key, c4Key = {
         //        'commits': '提交',
@@ -2517,6 +2545,7 @@ I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
         [/(\d+(k|M|B)?) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
         [/([^ ]+) doesn’t have any repositories that match./, "$1 没有任何匹配的仓库"], // 仓库标签卡
+        [/([^ ]+) doesn’t have any public repositories yet./, "$1 没有任何公共仓库。"],
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的仓库 “$1” 已成功删除。"],
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/and (\d+) more/, "等 $1 人"],
@@ -4962,7 +4991,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
                 "More features": "更多功能",
 
-            // "Copilot policies": "Copilot 规则",
+            "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
                     //"You can use Copilot Chat in Github.com, Copilot for pull requests, and all of the preview features.": "您可以在 Github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取请求和所有预览功能。",
                     "You can use Copilot Chat in GitHub.com, Copilot for pull requests, and all of the preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，Copilot 拉取请求和所有预览功能。",
@@ -7121,6 +7150,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // 顶部
             "Help us improve GitHub Codespaces": "帮助我们改进 GitHub 代码空间",
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
+            
+            "Sorry, couldn’t delete that branch.": "抱歉，无法删除此分支。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -8292,7 +8323,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Go to discussion →": "转到讨论→",
 
             "Edit": "编辑",
-
+            "Issue body actions": "菜单", // 原文过于啰嗦，直接省略
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
@@ -8734,6 +8765,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) tasks? done/, "$1 个任务完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
+        [/(\d+) Total/, "$1 总计"],
         [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
@@ -9307,6 +9339,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This merge commit was added into this branch cleanly.": "该合并提交被干净利落地添加到该分支中。",
                 "There are no new changes to show, but you can still": "没有新的更改可显示，但您仍然可以",
                 "view the diff.": "查看差异。",
+
+            // 中间
+            "Loading branch information": "正在加载分支信息",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
             // 工具条
@@ -11333,12 +11368,15 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via dynamic": "通过动态触发",
             "Triggered via GitHub Pages": "通过 GitHub 页面触发",
             "Triggered via repository dispatch": "通过仓库调度触发",
+            "Triggered via release": "通过发行版触发",
+            "Triggered via issue": "通过议题触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
 
             "pushed": "推送",
             "opened": "打开",
             "reopened": "重新打开",
+            "commented on": "评论于",
 
             // 状态
                 "Success": "成功",
@@ -11360,6 +11398,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Produced during runtime": "在运行期间生成",
                 "Name": "名称",
                 "Size": "大小",
+                "Digest": "校验值",
                 // [/Delete artifact ([^ ]+)/, "删除附件 $1"],
                 "Expired": "已过期",
                     "This artifact has expired and you can no longer download it": "此附件已过期，您无法再下载",
@@ -11412,6 +11451,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "opened by": "打开者",
                 "reopened by": "重新打开者",
             "The operation was canceled.": "已取消。",
+            "Release": "发行版",
+                "published by": "发布者",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
@@ -12211,6 +12252,7 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
                 // 底部提醒
                     "You can't delete this protected branch.": "您无法删除此受保护分支。",
                     "You can't delete the default branch.": "您不能删除默认分支。",
+                    "Branch could not be deleted.": "不能删除分支。",
 
     },
     "regexp": [ // 正则翻译
@@ -12565,7 +12607,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/Remove attached binary ([^ ]+)/, "删除 $1"],
         [/and (\d+) other contributors/, "和另外 $1 个贡献者"],
         [/You and (\d+) others? reacted/, "您和另外 $1 人表达看法"],
-        // [/ and /, " 和 "],
+        [/^([^ ]+) and ([^ ]+)/, "$1 和 $2"], // 发行版 - 贡献者（2位
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -12773,13 +12815,19 @@ I18N["zh-CN"]["repository/pkgs"] = { // 仓库 - 软件包
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository/packages"]["regexp"],
 
-        [/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        //[/Published (.*) · Digest/, "发布于 $1 · 摘要"],
+        [/Published (.*) · Digest/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `发布于 ${translatedDate} · 摘要`;
+        }],
         [/Published (.*)/, "发布于 $1"],
         [/(\d+) tagged/, "$1 个标记"],
         [/(\d+) untagged/, "$1 个未标记"],
         [/(\d+) dependencies/, "$1 个依赖包"],
         [/(\d+) active/, "$1 个可用"],
-        [/(\d+) deleted/, "$1 个已删除"]
+        [/(\d+) deleted/, "$1 个已删除"],
+        [/(\d+) contributors?/, "$1 位贡献者"],
     ],
 };
 I18N["zh-CN"]["packages"] = { // 软件包 - 未链接仓库的软件包
@@ -14410,6 +14458,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             "Leave fork network": "离开复刻网络",
             "Can't leave the fork network because this fork has child forks.": "无法离开复刻网络，因为此复刻有子复刻。",
+            "Can't detach forks larger than 1 GB.": "无法解除大于 1 GB 的复刻关联。",
             "Unlink this repository from the fork network and make it standalone.": "将该仓库从复刻网络中解除关联，使其成为独立仓库。",
 
             "Archive this repository": "存档仓库",
@@ -23730,6 +23779,9 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
 
             return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
         }],
+        [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)m (\d+)s/, "$1分$2秒"],
+        [/(\d+)m/, "$1分钟"],
     ],
 };
 
@@ -23760,6 +23812,7 @@ I18N["zh-CN"]["copilot"] = {
                 "Manage conversation": "管理",
                     "Rename": "重命名",
                         "Rename conversation": "重命名对话",
+                    "Share": "分享",
                     // 删除
                         "Delete conversation": "删除对话",
                         "Are you sure you want to delete this conversation? This action cannot be undone.": "您确定要删除这段对话吗？此操作无法撤销。",
@@ -23776,9 +23829,10 @@ I18N["zh-CN"]["copilot"] = {
                         "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
                     "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
-                // o1
-                    "Model capabilities": "模型限制",
+
+                "Model capabilities": "模型限制",
                     "Limited capabilities (o1)": "功能限制（o1）",
+                    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
                         "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
                         "Not supported": "不支持",
                             "Using knowledge bases": "使用知识库",
@@ -23804,10 +23858,24 @@ I18N["zh-CN"]["copilot"] = {
                 "Delete shared link": "删除分享链接",
                 "New messages after creating a link stay private.": "新消息在创建链接后仍保持私密。",
                 "Messages up to this point are included in shared link": "以上内容都包含在共享链接中",
-                "A previous version of this conversation has been shared. To update, delete link and create a new link.": "此对话旧版本已被共享。若要更新，请删除并创建新链接。",
+                "a previous version of this conversation has been shared": "此对话旧版本已被共享",
+                "create link to share the current version of this conversation.": "创建链接以分享此对话的当前版本。",
+                "this shared link is up to date": "分享链接是最新的",
+
+                "Manage link": "管理链接",
+                    "Update link": "更新",
+                        "Update shared conversation to include most recent messages": "更新分享链接以包含最新信息",
+                        "This shared link is up to date": "分享链接是最新的",
+                    "Delete link": "删除",
+                        "Delete shared link and remove access for all users": "删除分享链接并移除所有用户的访问权限",
+                "Copy link": "复制链接",
             "Open menu": "菜单",
                 "Conversation": "对话",
                 "Prompt": "提示词",
+                    "System prompt": "系统提示词",
+                        // 完整句子：GitHub Copilot 的系统提示是一系列指令，用于指导大语言模型（LLM）根据用户输入提供增强的功能并优化输出质量。
+                        "The system prompt for": " ",
+                        "is a set of instructions that guides the LLM to provide enhanced functionality and output quality based on user input.": "的系统提示词是一系列指令，用于指导大语言模型（LLM）根据用户输入提供增强的功能并优化输出质量。",
             "Feedback and settings": "反馈和设置",
                 // 反馈
                     "Rate your experience": "反馈",
@@ -23825,6 +23893,8 @@ I18N["zh-CN"]["copilot"] = {
 
             "Open panel": "打开面板",
             "Close panel": "关闭面板",
+            "Open workbench": "打开工作台",
+            "Close workbench": "关闭工作台",
             "Close file browser": "关闭文件浏览器",
                 "View files directly within Copilot": "直接在 Copilot 中查看文件",
                     "Ask to generate a file or app, or use the button below to try it yourself.": "询问生成文件或应用程序，或使用下面的按钮自行尝试。",
@@ -23872,6 +23942,10 @@ I18N["zh-CN"]["copilot"] = {
         // 漏洞相关
             "Path Injection": "路径注入",
                 "Unvalidated input in path value creation risks unintended file/directory access": "创建路径值时输入的无效信息可能会导致意外文件/目录访问",
+
+        "You’ve edited": "您已编辑",
+            "Undo": "撤销",
+            "Revert": "回退",
 
         // 了解世界领先的人工智能开发工具的所有优势。
         "Accelerate your development speed with Copilot": "使用 Copilot 加快开发速度",
