@@ -1296,7 +1296,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "All conversations": "所有对话",
                     // 删除
                         "Are you sure? This can’t be undone.": "您确定吗？此操作无法撤销。",
-            "Take conversation to immersive": "全屏对话",
+            "Continue in immersive": "全屏对话",
             "Close chat": "关闭",
 
             "public": "公共",
