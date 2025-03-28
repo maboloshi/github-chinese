@@ -3192,6 +3192,7 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
                 "Profile updated successfully —": "个人资料更新成功 —",
                 "view your profile.": "查看您的个人资料。",
                 "Visitors will now see your public and anonymized private contributions.": "现在访客可以看到您的公开和匿名私人贡献。",
+                "Visitors will now see only your public contributions.": "现在访客只能看到您的公开贡献",
 
             "Trending settings": "趋势设置",
             "Preferred spoken language": "首选语言",
