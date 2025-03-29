@@ -8181,6 +8181,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "discover issues": "探索议题",
             "labeled with": "标记为",
                 "Completed": "已完成",
+            "Project": "项目",
 
             "Clear filter": "清除筛选",
             "Filter authors": "筛选作者",
