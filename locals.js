@@ -14636,6 +14636,11 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
                 "Add": "添加",
                 "to this repository": "到这个仓库",
 
+            "Confirm you want to remove this invitation": "确认移除邀请",
+                "Once canceled,": "取消后，",
+                "will no longer be invited to access the": "将不再被邀请访问",
+                "repository.": "仓库。",
+
             // 组织仓库
             "Create team": "创建组织",
             "You haven't added any teams or people yet": "您尚未添加团队或成员",
@@ -14661,6 +14666,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
         [/(\d+) teams?/, "$1 个团队"],
         [/Add people to ([^ ]+)/, "添加人员到 $1"],
         [/([^ ]+) has been added as a collaborator  on the repository./, "已将 $1 添加为仓库协作者。"],
+        [/Cancel ([^ ]+)'s invitation/, "取消邀请 $1"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
