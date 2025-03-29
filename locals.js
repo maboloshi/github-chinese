@@ -8413,6 +8413,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "as off topic": "因偏离主题",
             "as too heated": "因争论不休",
             "added a sub-issue": "添加了一个子议题",
+            "removed a parent issue": "移除了一个父议题",
+            "removed a sub-issue": "移除了一个子议题",
 
             // 右侧栏 补充
                 // "Development": "进展",
@@ -8425,6 +8427,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     // 关系
                         "Add parent": "添加父议题",
                         "Select a repository": "选择一个仓库",
+                        "Change or remove parent": "更改或移除父议题",
+                            "Selected": "当前",
 
                     // 参与者数大于2
                         "and others": "等",
