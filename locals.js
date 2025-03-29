@@ -6763,7 +6763,8 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "More options": "更多选项",
                 "The most recent revision cannot be deleted. Need to delete sensitive information? Go to the specific edit where the information was added.": "最近的修订版不能被删除。需要删除敏感信息？请到信息的具体编辑处修改。",
                 "Delete revision from history": "从历史记录中删除修订",
-                "This edit’s content will no longer be visible": "此修改的内容将不再可见",
+                "This edit’s content will no longer be visible.": "此修改的内容将不再可见。",
+                    "Delete revision": "删除修订",
                 // 评论状态
                 "This comment has been hidden.": "此评论被隐藏。",
                 "This comment was marked as abuse.": "此评论被标记为滥用。",
