@@ -8537,6 +8537,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "hide comment": "隐藏评论",
             "Edits": "编辑",
                 "Most recent": "最近",
+                "Viewing edit": "查看编辑",
+                "Delete revision": "删除记录",
             "Reopen Issue": "重新打开议题",
                 "You do not have permissions to reopen this issue": "您没有权限重新打开此议题",
             // 关闭议题
