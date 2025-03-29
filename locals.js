@@ -8490,6 +8490,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Transfer issue": "转移议题",
                     // 转移议题 对话框
                         "Transfer this issue": "转移议题",
+                            "This does not scrub any issue content. Content such as text references to other issues, pull requests, projects and teams will still appear in the description or comments. Labels will be transferred.": "该操作不会清除任何议题内容。对其它议题、拉取请求、项目和团队的文本引用仍会保留在描述或评论中。标签将会被转移。",
                             "Repository projects assigned to this issue will not transfer to the new location": "分配给此议题的仓库项目不会转移到新位置",
                         "Choose a repository": "选择仓库",
                         "Find a repository": "搜索仓库",
