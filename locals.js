@@ -8272,10 +8272,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Search issues": "搜索议题",
                         "Group selected": "分组选择",
 
+
                 "Blank issue": "空白议题",
                     "in": "在",
                 "Type your description here…": "在此键入介绍…",
                 "Create more sub-issues": "创建更多子议题",
+
+                // 警告
+                    "Are you sure?": "您确定吗？",
+                        "Sub-issues are limited to one parent. Confirm you want to proceed with this change.": "子议题仅允许关联一个父议题。请确认是否要继续进行此更改？",
+                        "Change parent issue": "更改父议题",
 
             "Sub-issues": "子议题",
                 "Collapse Sub-issues": "折叠子议题",
