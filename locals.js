@@ -8491,6 +8491,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "The issue has been pinned.": "该议题已置顶。",
                 "Unpin issue": "取消置顶",
                     "Up to 3 issues can be pinned and they will appear at the top of the issues page": "最多可以置顶 3 个议题，它们将显示在议题页面的顶部",
+                    "3/3 issues already pinned. Unpin an issue to pin this one.": "已有3/3个议题被置顶。请先取消置顶其中一个议题，才能置顶当前议题。",
                     // 顶部提醒
                     "The issue has been unpinned.": "该议题已取消置顶。",
                 "Transfer issue": "转移议题",
