@@ -2377,6 +2377,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
         [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
+        [/(\@[^ ]+) contributed code to several repositories in the/, "$1 为多个仓库贡献了代码，在"], // 北极代码库贡献者
     ],
 };
 I18N["zh-CN"]["page-profile/overview"] = I18N["zh-CN"]["page-profile"];
