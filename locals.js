@@ -2077,6 +2077,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                         "these repositories, and more, were archived": "这些仓库以及更多仓库已存档",
                 // YOLO
                     "You want it? You merge it.": "您想要它？您合并它。",
+                    "inaccessible": "已删库",
                     "Merged without a review": "未经审查就合并",
                 // Pull Shark
                     "Pull Shark": "鲨鱼拉",
