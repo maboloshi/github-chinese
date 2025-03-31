@@ -8333,6 +8333,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         // 新建空白议题  /<user-name>/<repo-name>/issues/new
             "Title": "标题",
             "Helpful resources": "帮助性资源",
+            "Create more": "创建多个",
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
@@ -8717,6 +8718,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/(.+) will be last item in the list./, "“$1” 将移至最后。"],
         [/of (\d+) selected/, "/ $1 选中"],
         [/(\d+\%) completed/, "$1 完成"],
+        [/Issue (#\d+) created/, "议题 $1 已创建"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
     ],
