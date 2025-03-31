@@ -14198,6 +14198,10 @@ I18N["zh-CN"]["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/Created/, "创建于"],
         [/Updated/, "更新于"],
+        [/(Active|Inactive|Network|Archived|Starred) (\+\d+)/, function(all, type, num){
+            var typeKey = {"Active": "活跃","Inactive": "不活跃","Network": "网络","Archived": "存档","Starred": "星标"};
+            return typeKey[type] + ' ' + num;
+        }],
     ],
 };
 
