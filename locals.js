@@ -70,6 +70,9 @@ I18N.conf = {
         'repository/issues': [
             '.styled-input-container', // 筛选条
         ],
+        'copilot':[
+            '.cm-line',
+        ],
         '*': [
             'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
         ],
@@ -180,6 +183,9 @@ I18N.conf = {
         ],
         'marketplace': [
             '.markdown-body',
+        ],
+        'copilot':[
+            '.cm-line',
         ],
         '*': [
             '.js-comment-body', '.js-preview-body',
