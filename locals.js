@@ -106,6 +106,7 @@ I18N.conf = {
         'repository/tree': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
+            'span.PRIVATE_TreeView-item-content-text',
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
