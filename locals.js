@@ -1181,7 +1181,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "We were unable to verify this signature.": "我们无法验证此签名。",
             "This user has not yet uploaded their public signing key.": "此用户尚未上传其公共签名密钥。",
 
-            "GPG Key ID:": "GPG 密钥 ID：",
+            "GPG key ID:": "GPG 密钥 ID：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
             "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不相符。",
