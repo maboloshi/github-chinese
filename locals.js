@@ -18430,12 +18430,16 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
             "Yours": "您的",
         "All gists": "所有片段",
         "Back to GitHub": "返回到 GitHub",
+        "You don’t have any gists yet.": "您还没有任何代码片段。",
+        "Your public gists will show up here on your profile.": "您的公开代码片段将显示在这里。",
+        "Create a gist": "新建一个代码片段",
 
         "Forked": "复刻",
         "Starred": "星标",
 
         // 左侧用户信息栏
         "Change your avatar": "修改头像",
+        "follower": "关注者",
         "followers": "关注者",
         "following": "关注",
         "Joined": "加入于",
