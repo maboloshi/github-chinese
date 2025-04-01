@@ -465,6 +465,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         [/Security Managers for · ([^ ]+)/, "安全管理員 · $1"],
         [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
         [/Blaming ([^ ]+) at ([^ ]+) · ([^ ]+)/, "追溯 $1（$2） · $3"],
+        [/Deleting ([^ ]+)\/([^ ]+) at ([^ ]+) · ([^ ]+)/, "刪除 $3/$2 · $4"], // 簡化部分內容
         ["_regexp_end", "end"]
     ],
 };
@@ -660,8 +661,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Open Copilot…": "打開 Copilot…",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
-                    "Immersive": "沉浸式",
-                "Open with": "打開於",
+                    "Assistive": "小窗",
+                    "Immersive": "全屏",
+                "Download for": "下載插件",
 
         // 右上角個人圖標下拉菜單
             "Account switcher": "賬戶切換",
@@ -1294,7 +1296,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "All conversations": "所有對話",
                     // 刪除
                         "Are you sure? This can’t be undone.": "您確定嗎？此操作無法撤銷。",
-            "Take conversation to immersive": "全屏對話",
+            "Continue in immersive": "全屏對話",
             "Close chat": "關閉",
 
             "public": "公共",
@@ -2344,7 +2346,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
 
             return '- ' + compareKey[compare] + num + '小時';
         }],
-        [/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
+        [/(?:on )?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d+)/, function(all, m, d){
             var mKey = {
                 "Jan": "1月",
                 "Feb": "2月",
@@ -3190,6 +3192,8 @@ I18N["zh-TW"]["settings/profile"] = { // 設置 - 個人資料
                 // 頂部提醒
                 "Profile updated successfully —": "個人資料更新成功 —",
                 "view your profile.": "查看您的個人資料。",
+                "Visitors will now see your public and anonymized private contributions.": "現在訪客可以看到您的公開和匿名私人貢獻。",
+                "Visitors will now see only your public contributions.": "現在訪客只能看到您的公開貢獻",
 
             "Trending settings": "趨勢設置",
             "Preferred spoken language": "首選語言",
@@ -4749,6 +4753,10 @@ I18N["zh-TW"]["settings/codespaces"] = { // 設置 - 代碼空間
                 // "Enabled": "啟用",
                     "VS Code Settings Sync will be available in Codespaces": "VS Code 設置同步將在代碼空間中可用",
 
+            // 通知
+            "When enabled, you will receive emails when your codespaces are nearing deletion due to inactivity.": "啟用後，當您的代碼空間因長時間未使用而即將被刪除時，您將收到電子郵件通知。",
+            "Warning notifications for codespace deletions will be enabled": "代碼空間刪除警告通知將啟用",
+
             "Trusted repositories": "受信任倉庫",
                 "The following repositories will be referenced by GPG verification and Settings Sync.": "以下倉庫將被 GPG 驗證和設置同步所引用。",
 
@@ -4759,6 +4767,8 @@ I18N["zh-TW"]["settings/codespaces"] = { // 設置 - 代碼空間
                     "Select repositories": "選擇倉庫",
                     // [/Selected (\d+) repositor(y|ies)./, "選定 #1 個倉庫"],
                     "GPG and VS Code Settings Sync will be available for Codespaces from these repositories.": "GPG 和 VS Code 設置同步將可用於這些倉庫的代碼空間。",
+
+                "Submit": "確定",
 
             "Access and security": "訪問和安全",
             "Deprecated": "棄用",
@@ -4852,6 +4862,7 @@ I18N["zh-TW"]["settings/codespaces"] = { // 設置 - 代碼空間
         [/Selected (\d+) repositor(y|ies)./, "選定 $1 個倉庫"],
         [/(\d+) repositor(y|ies)/, "$1 個倉庫"],
         [/Are you sure you want to delete ([^ ]+)\?/, "您確定要刪除 $1 嗎？"],
+        [/Remove ([^ ]+)/, "移除 $1"],
     ],
 };
 
@@ -8169,6 +8180,8 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "Now, GitHub will help potential first-time contributors": "現在，GitHub 將幫助潛在的首次貢獻者",
             "discover issues": "探索議題",
             "labeled with": "標記為",
+                "Completed": "已完成",
+            "Project": "項目",
 
             "Clear filter": "清除篩選",
             "Filter authors": "篩選作者",
@@ -8277,6 +8290,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             // 置頂議題
             "Pinned issues": "置頂議題",
             "Drag to reorder": "拖拽排序",
+            "Pinned issue options": "置頂選項",
 
             "Unpin": "取消置頂",
             "Advanced move...": "高級移動…",
@@ -8399,6 +8413,8 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "as off topic": "因偏離主題",
             "as too heated": "因爭論不休",
             "added a sub-issue": "添加了一個子議題",
+            "removed a parent issue": "移除了一個父議題",
+            "removed a sub-issue": "移除了一個子議題",
 
             // 右側欄 補充
                 // "Development": "進展",
@@ -8411,6 +8427,8 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                     // 關係
                         "Add parent": "添加父議題",
                         "Select a repository": "選擇一個倉庫",
+                        "Change or remove parent": "更改或移除父議題",
+                            "Selected": "當前",
 
                     // 參與者數大於2
                         "and others": "等",
@@ -8445,14 +8463,19 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                     // 在本地倉庫檢出對話框
                         "Checkout in your local repository": "在本地倉庫檢出",
                         "Run the following commands in your local clone.": "在您的本地克隆中運行以下指令。",
+                    
+                    // 項目
+                        "Select projects": "選擇項目",
 
-                    //
+                    // 進展
                         "Link a branch or pull request": "關聯分支或拉取請求",
                         "Select a repository to search for branches and pull requests or": "選擇一個倉庫來搜索分支和拉取請求或",
                         "create a branch": "創建一分支",
+                        "Search pull requests": "搜索拉取請求",
                         "Search for repositories": "搜索倉庫",
                         "Link a branch, pull request, or": "關聯分支、拉取請求或",
                         "Search for branches or pull requests": "搜索分支或拉取請求",
+                        "no pull request": "無拉取請求",
 
                 "Pin issue": "置頂議題",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置頂 3 個議題，它們將公開顯示在議題頁面的頂部",
@@ -8520,6 +8543,8 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                 "hide comment": "隱藏評論",
             "Edits": "編輯",
                 "Most recent": "最近",
+                "Viewing edit": "查看編輯",
+                "Delete revision": "刪除記錄",
             "Reopen Issue": "重新打開議題",
                 "You do not have permissions to reopen this issue": "您沒有權限重新打開此議題",
             // 關閉議題
@@ -9661,6 +9686,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
         // 文件差異過大 參考 https://github.com/maboloshi/github-chinese/pull/306/files
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "差異過大，不會顯示 $1 行添加以及 $1 行刪除。請使用本地 Git 客戶端查看更改。"],
 
+        // 任務
+        [/(\d+) tasks?/, "$1 個任務"],
+        
         // 解決衝突編輯器（似乎又是 F12 才會翻譯）
         [/Search:/, "搜索："],
         [/\(Use \/re\/ syntax for regexp search\)/, "(使用 /re/ 進行正則搜索)"],
@@ -9792,6 +9820,7 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
             "These branches can be automatically merged.": "該分支可被自動合併。",
 
             "View pull request": "查看拉取請求", //存在拉取請求時
+                "No description available": "無說明", // 拉取請求無評論時
 
             "commit": "次提交",
             "commits": "次提交",
@@ -10310,6 +10339,7 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽代碼
                         "Wrap lines": "換行",
                         "Center content": "核心內容",
                         "Open symbols on click": "單擊打開符號",
+                    "Ask about this file": "討論此文件",
                     "Delete file": "刪除文件",
 
             "Copied path!": "✅ 路徑已複製！",
@@ -11892,6 +11922,11 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
         // 刪除文件頁面 /<user-name>/<repo-name>/delete/<branch>/<file>
             // 頂部提醒
             "File successfully deleted.": "文件已成功刪除。",
+
+            "Copy path to clipboard": "複製路徑到剪切板",
+
+            "Load diff": "加載差異",
+            "This file was deleted.": "此文件已刪除。",
 
         // 上傳文件頁面 /<user-name>/<repo-name>/upload/<branch>
             // 自有倉庫
@@ -14560,6 +14595,7 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
             "private repository": "私有倉庫",
             "Only those with access to this repository can view it.": "只有擁有該倉庫訪問權的用戶才能查看。",
             "Manage": "管理",
+            "Manage visibility": "管理", // 內容重複，直接省略
 
             "Direct access": "直接訪問",
             "collaborators have access to this repository. Only you can contribute to this repository.": "個協作者有權訪問此倉庫。 只有您可以對此倉庫做出貢獻。",
@@ -14595,6 +14631,7 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
             "Find people or a team…": "尋找用戶或一個團隊……",
 
             "Pending Invite": "待處理邀請",
+            "Invite expired": "已過期",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回覆"],
             "Remove": "移除",
 
@@ -14606,6 +14643,11 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
                 "Select a collaborator above": "從上方選擇協作者",
                 "Add": "添加",
                 "to this repository": "到這個倉庫",
+
+            "Confirm you want to remove this invitation": "確認移除邀請",
+                "Once canceled,": "取消後，",
+                "will no longer be invited to access the": "將不再被邀請訪問",
+                "repository.": "倉庫。",
 
             // 組織倉庫
             "Create team": "創建組織",
@@ -14632,6 +14674,7 @@ I18N["zh-TW"]["repository/settings/access"] = { // 倉庫設置 - 協作者/(組
         [/(\d+) teams?/, "$1 個團隊"],
         [/Add people to ([^ ]+)/, "添加人員到 $1"],
         [/([^ ]+) has been added as a collaborator  on the repository./, "已將 $1 添加為倉庫協作者。"],
+        [/Cancel ([^ ]+)'s invitation/, "取消邀請 $1"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -19316,13 +19359,16 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
 
             "Models": "模型",
                 "Model": "模型",
+                "Catalog": "目錄",
 
                     // 分類
                         "All providers": "所有提供商",
+                    "Publisher:": "發佈者：",
                     "Capability:": "能力：",
                         "Chat/completion": "聊天/完成",
                         "Embeddings": "嵌入",
                     "Tag:": "標籤",
+                    "Category:": "類型：",
                         "Agents": "代理",
                         "Conversation": "對話",
                         "Large context": "大模型",
@@ -19333,6 +19379,10 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
                         "Rag": "檢索增強生成",
                         "Reasoning": "推理",
                         "Understanding": "理解",
+                    // 排序
+                        "Alphabetical": "A-Z",
+                        "Output token limit": "輸出令牌限制",
+                        "Input token limit": "輸入令牌順序",
 
             "All apps": "所有應用",
                 "Apps": "應用",
@@ -19766,6 +19816,9 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             "Input:": "輸入：",
             "• Output:": "• 輸出：",
             "ms": "毫秒",
+
+            "Welcome to GitHub Models!": "歡迎使用 GitHub 模型！",
+                "We want to make Models Playground amazing for you. Got feedback? Book a call or": "我們致力於讓模型遊樂場為您帶來卓越體驗。如有反饋，請預約通話或",
             // 聊天窗口
                 // 頂部橫條
                     "Restore last session": "恢復上次聊天",
@@ -19803,11 +19856,21 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
                     "Text": "文本",
                     "Set the format for the model response.": "設置模型響應的格式。",
                 "Max Tokens": "最大令牌",
+                "Max Completion Tokens": "最大輸出標記",
                     "Limit the maximum output tokens for the model response.": "限制模型響應的最大輸出標記。",
+                "Reasoning Effort": "推理強度調節",
+                    "Adjust the model's cognitive load with options for low, medium, and high reasoning levels.": "通過低、中、高三級可選項調整模型的計算資源分配，控制輸出結果的邏輯複雜度和思考深度。",
+                    "high": "高",
+                    "medium": "中",
+                    "low": "低",
                 "Temperature": "隨機度",
                     "Controls randomness in the response, use lower to be more deterministic.": "控制響應的隨機性，使用較低值則更具確定性。",
                 "Top P": "最大概率",
                     "Controls text diversity by selecting the most probable words until a set probability is reached.": "通過選擇最有可能出現的詞語來控制文本多樣性，直到達到設定的概率。",
+                "Presence Penalty": "重複懲罰",
+                    "Discourages the model from repeating the same words or phrases too frequently by applying a penalty (between -2.0 and 2.0) based on their presence in the text.": "通過根據文本中已存在的詞語或短語施加懲罰（範圍在-2.0到2.0之間），抑制模型過於頻繁地重複使用相同詞語或短語的傾向。",
+                "Frequency Penalty": "頻率懲罰",
+                    "Discourages the model from generating the same words or phrases too frequently by applying a penalty (between -2.0 and 2.0) based on their existing frequency in the text.": "通過根據文本中已存在詞語或短語的出現頻率施加懲罰（範圍在-2.0到2.0之間），抑制模型過於頻繁地生成相同詞語或短語的傾向。",
                 "Stop": "停止",
                     "Force cutting the output when this string occurs.": " 當出現該字符串時，強制切斷輸出。",
             // 模型比較
@@ -20080,6 +20143,8 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
                 "View as:": "瀏覽：",
                     "Switch profile context": "切換視角",
                     "Member": "成員",
+                        "Member of": "隸屬於", // 成員 - 浮動信息卡
+                        "- same time": "- 時間相同", // 成員 - 浮動信息卡
 
                 // 公共視角
                     "You are viewing the README and pinned repositories as a public user.": "您正在以公共用戶的身份查看自述文件和置頂倉庫。",
@@ -20183,6 +20248,13 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
         [/Invite a member to/, "邀請成員加入"],
         [/\((\d+) issues? need help\)/, "($1 個議題需要幫助)"],
         [/([^ ]+)’s past year of commit activity/, "近幾年 $1 的提交活動"],
+        // 用戶 - 浮動信息卡
+        [/- (\d+)h (ahead|behind)/, function(all, num, compare){
+            var compareKey = {ahead: '早', behind: '晚'};
+
+            return '- ' + compareKey[compare] + num + '小時';
+        }],
+        [/, and (\d+) more/, " 等 $1 個組織"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
     "selector": [ // 元素篩選器規則
@@ -23841,6 +23913,11 @@ I18N["zh-TW"]["copilot"] = {
                             "Retrieving discussions": "檢索討論",
             "uses AI. Check for mistakes.": "使用 AI。請檢查錯誤。",
             "Get file": "獲取文件",
+
+            // 拉取請求列表
+            "opened": "打開於",
+            "closed": "關閉於",
+            "ago": "之前",
 
             "Copy code": "複製代碼",
             "Copied!": "複製成功！",

@@ -106,6 +106,7 @@ I18N.conf = {
         'repository/tree': [
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
+            'span.PRIVATE_TreeView-item-content-text', // 左侧文件树项目 - 子文件夹
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
@@ -2086,6 +2087,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                         "these repositories, and more, were archived": "这些仓库以及更多仓库已存档",
                 // YOLO
                     "You want it? You merge it.": "您想要它？您合并它。",
+                    "inaccessible": "已删库",
                     "Merged without a review": "未经审查就合并",
                 // Pull Shark
                     "Pull Shark": "鲨鱼拉",
@@ -2386,6 +2388,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/opened pull requests that have been merged./, "打开的拉取请求已被合并。"], // Pull Shark
         [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
+        [/(\@[^ ]+) contributed code to several repositories in the/, "$1 为多个仓库贡献了代码，在"], // 北极代码库贡献者
     ],
 };
 I18N["zh-CN"]["page-profile/overview"] = I18N["zh-CN"]["page-profile"];
@@ -6776,7 +6779,8 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "More options": "更多选项",
                 "The most recent revision cannot be deleted. Need to delete sensitive information? Go to the specific edit where the information was added.": "最近的修订版不能被删除。需要删除敏感信息？请到信息的具体编辑处修改。",
                 "Delete revision from history": "从历史记录中删除修订",
-                "This edit’s content will no longer be visible": "此修改的内容将不再可见",
+                "This edit’s content will no longer be visible.": "此修改的内容将不再可见。",
+                    "Delete revision": "删除修订",
                 // 评论状态
                 "This comment has been hidden.": "此评论被隐藏。",
                 "This comment was marked as abuse.": "此评论被标记为滥用。",
@@ -8093,8 +8097,13 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     "that others can see.": "其他人可以看到。",
                     "You can always unlock this issue again in the future.": "您今后仍可以随时再次解锁此议题。",
                     "You can always unlock this pull request again in the future.": "您今后仍可以随时再次解锁此拉取请求。",
+                    "Other users can't add new comments to this issue. You and other members of teams with": "其他用户无法在此议题下添加新评论。您及",
+                    "write access": "有权访问",
+                    "to this repository can still leave comments that others can see. You can always unlock this issue again in the future.": "该仓库的团队成员仍可发表其他用户可见的评论。您随时可以在未来重新解锁此议题。",
                     "Reason for locking": "锁定原因",
                     "Choose a reason": "选择原因",
+                    "Reason": "原因",
+                        "No reason": "无",
                         "Off-topic": "偏离主题",
                         "Too heated": "争论不休",
                         "Resolved": "已解决",
@@ -8279,10 +8288,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Search issues": "搜索议题",
                         "Group selected": "分组选择",
 
+
                 "Blank issue": "空白议题",
                     "in": "在",
                 "Type your description here…": "在此键入介绍…",
                 "Create more sub-issues": "创建更多子议题",
+
+                // 警告
+                    "Are you sure?": "您确定吗？",
+                        "Sub-issues are limited to one parent. Confirm you want to proceed with this change.": "子议题仅允许关联一个父议题。请确认是否要继续进行此更改？",
+                        "Change parent issue": "更改父议题",
 
             "Sub-issues": "子议题",
                 "Collapse Sub-issues": "折叠子议题",
@@ -8334,6 +8349,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         // 新建空白议题  /<user-name>/<repo-name>/issues/new
             "Title": "标题",
             "Helpful resources": "帮助性资源",
+            "Create more": "创建多个",
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
@@ -8498,11 +8514,13 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "The issue has been pinned.": "该议题已置顶。",
                 "Unpin issue": "取消置顶",
                     "Up to 3 issues can be pinned and they will appear at the top of the issues page": "最多可以置顶 3 个议题，它们将显示在议题页面的顶部",
+                    "3/3 issues already pinned. Unpin an issue to pin this one.": "已有3/3个议题被置顶。请先取消置顶其中一个议题，才能置顶当前议题。",
                     // 顶部提醒
                     "The issue has been unpinned.": "该议题已取消置顶。",
                 "Transfer issue": "转移议题",
                     // 转移议题 对话框
                         "Transfer this issue": "转移议题",
+                            "This does not scrub any issue content. Content such as text references to other issues, pull requests, projects and teams will still appear in the description or comments. Labels will be transferred.": "该操作不会清除任何议题内容。对其它议题、拉取请求、项目和团队的文本引用仍会保留在描述或评论中。标签将会被转移。",
                             "Repository projects assigned to this issue will not transfer to the new location": "分配给此议题的仓库项目不会转移到新位置",
                         "Choose a repository": "选择仓库",
                         "Find a repository": "搜索仓库",
@@ -8524,11 +8542,12 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                             "Polls": "投票",
                             "Q&A": "问与答",
                             "Show and tell": "展示与讲述",
-                        "I understand, convert this issue.": "我明白了，依然转化该议题。",
+                        "I understand, convert this issue": "我明白了，依然转化该议题",
                 "Delete issue": "删除议题",
+                    "Delete issue?": "删除议题？",
                     "Are you sure you want to delete this issue?": "您确定要删除此议题吗？",
                     "This cannot be undone": "这不能被撤消",
-                    "Only administrators can delete issues": "只有管理员可以删除议题",
+                    "Only adminstrators can delete issues": "只有管理员可以删除议题",
                     "Deletion will remove the issue from search and previous references will point to a placeholder": "删除将会从搜索中删除议题，以前的引用将指向一个占位符",
                     "Delete this issue": "删除议题",
                     "Deleting issue…": "议题删除中…",
@@ -8715,6 +8734,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/(.+) will be last item in the list./, "“$1” 将移至最后。"],
         [/of (\d+) selected/, "/ $1 选中"],
         [/(\d+\%) completed/, "$1 完成"],
+        [/Issue (#\d+) created/, "议题 $1 已创建"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
     ],
@@ -9224,6 +9244,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "View command line instructions.": "查看命令行指令。",
 
             // "Merged": "已合并",
+            "More actions": "更多操作",
             "View details": "查看详情",
             "Hide details": "隐藏详情",
             "Revert": "还原",
@@ -14194,6 +14215,10 @@ I18N["zh-CN"]["repository/forks"] = { // 仓库 -> 洞察 - 复刻
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/Created/, "创建于"],
         [/Updated/, "更新于"],
+        [/(Active|Inactive|Network|Archived|Starred) (\+\d+)/, function(all, type, num){
+            var typeKey = {"Active": "活跃","Inactive": "不活跃","Network": "网络","Archived": "存档","Starred": "星标"};
+            return typeKey[type] + ' ' + num;
+        }],
     ],
 };
 
@@ -23997,11 +24022,18 @@ I18N["zh-CN"]["copilot"] = {
 
                 "More options": "更多",
                     "Download all files": "下载全部",
+                    "Close all tabs": "关闭所有标签",
 
                 "Download code": "下载代码",
 
                 "lines": "行",
                 "line": "行",
+
+                // 代码窗 - 底部栏
+                  "to toggle the": "切换",
+                  "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                  "then": "键，然后",
+                  "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
