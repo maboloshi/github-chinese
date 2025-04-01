@@ -1764,6 +1764,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
 
+        "Forked from": "复刻自", // 复刻仓库
+
         // 中间栏
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
