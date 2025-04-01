@@ -24003,11 +24003,18 @@ I18N["zh-CN"]["copilot"] = {
 
                 "More options": "更多",
                     "Download all files": "下载全部",
+                    "Close all tabs": "关闭所有标签",
 
                 "Download code": "下载代码",
 
                 "lines": "行",
                 "line": "行",
+
+                // 代码窗 - 底部栏
+                  "to toggle the": "切换",
+                  "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                  "then": "键，然后",
+                  "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
