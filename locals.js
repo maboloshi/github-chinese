@@ -22413,6 +22413,13 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                 "Go to Wiki"                 : "跳转到 Wiki",
                 "Go to Discussions"          : "跳转到讨论",
 
+        // https://github.com/projects
+            "Recently viewed": "最近浏览",
+                "Remove from recently viewed": "从最近浏览中删除",
+            "Created by me": "由我创建",
+                "Create your first GitHub project": "创建您的第一个 GitHub 项目",
+                "Projects are a customizable, flexible tool for planning and tracking your work.": "项目是用于规划和跟踪您工作的可定制、灵活的工具。",
+
         // 公共词 简版 议题&拉取请求信息
             "opened by": "打开者",
             "Opened in": "打开在",
@@ -22879,6 +22886,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
     },
     "regexp": [ // 正则翻译
+        [/updated/, "更新于"],
         [/View (\d+)/, "视图 $1"],
         [/Delete/, "删除"],
         [/Edit/, "编辑"],
