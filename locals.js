@@ -9231,6 +9231,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "View command line instructions.": "查看命令行指令。",
 
             // "Merged": "已合并",
+            "More actions": "更多操作",
             "View details": "查看详情",
             "Hide details": "隐藏详情",
             "Revert": "还原",
