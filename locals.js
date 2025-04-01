@@ -389,6 +389,8 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Accessibility/, "无障碍"],
         [/Environments/, "环境"],
         [/New repository/, "新仓库"],
+        [/([^ ]+) \((.+)\) \/ Repositories/, "$1 / 仓库"], // github 账户名/ 成就
+        [/([^ ]+) \((.+)\) \/ Starred/, "$1($2) / 星标"], // github 账户名（昵称）/ 星标
         [/Repositories/, "仓库"],
         [/Starred/, "星标页面"],
         [/starred repositories/, "星标仓库"],
@@ -473,6 +475,8 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
         [/Blaming ([^ ]+) at ([^ ]+) · ([^ ]+)/, "追溯 $1（$2） · $3"],
         [/Deleting ([^ ]+)\/([^ ]+) at ([^ ]+) · ([^ ]+)/, "删除 $3/$2 · $4"], // 简化部分内容
+        [/([^ ]+)'s list \/ (.+)/, "$1 的列表 / $2"],
+        [/([^ ]+) \((.+)\) \/ Achievements/, "$1($2) / 成就"], // github 账户名（昵称）/ 成就
         ["_regexp_end", "end"]
     ],
 };
