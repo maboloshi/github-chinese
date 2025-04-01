@@ -2579,7 +2579,7 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Provide quick access to relevant projects.": "提供快速访问相关项目的途径。",
             "Add projects to view them here.": "将项目添加到此处查看。",
 
-            "Welcome to the all-new projects": "欢迎访问全新的项目",
+            "Welcome to projects": "欢迎访问项目页面",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
 
             "Learn more about projects": "了解更多关于项目的信息", // ?tab=projects
@@ -4955,10 +4955,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Start a free trial": "免费试用",
 
             "Copilot policies": "Copilot 规则",
-                //"Copilot in github.com": "在 github.com 中使用 Copilot",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
-                    "You can use Copilot Chat in Github.com, but not preview features.": "您可以在 Github.com 中使用 Copilot Chat，但无预览功能。",
-                    //"Learn more about Copilot in Github.com": "了解更多关于在 Github.com 中使用 Copilot 的信息",
+                    "You can use Copilot Chat in GitHub.com, but not preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，但无预览功能。",
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
@@ -5002,6 +5000,11 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需了解贵机构在使用 GitHub Copilot 时会收到哪些数据，请查看",
                 "GitHub's Privacy Statement": "GitHub 的《隐私声明》",
             "It can take up to 30 minutes for the changes to take effect. Restart your code editor for the changes to take effect immediately.": "更改可能需要 30 分钟才能生效。重新启动代码编辑器，更改会立即生效。",
+
+            "Visibility": "可见度",
+                "Show Copilot": "显示 Copilot",
+                "Enable Copilot for all GitHub features, including navigation bar, search, and dashboard.": "为所有 GitHub 功能启用 Copilot，包括导航栏、搜索和仪表板。",
+                "When disabled, Copilot will be hidden and unavailable.": "禁用后，Copilot 将隐藏且不可用。",
 
         // 专业版
             // 顶部提醒
@@ -5553,6 +5556,7 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "User signed in from an unrecognized device and location.": "用户从无法识别的设备与位置登录。",
             "New Device Used": "使用新设备",
             "Created the repository": "创建了仓库",
+            "Deleted the repository": "删除了仓库",
             "Created GitHub Pages site in": "创建了 GitHub Pages 在",
             "Modified GitHub Pages source in": "修改了 GitHub Pages 源代码在",
             "Created environment": "创造环境",
@@ -5563,6 +5567,7 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
                 "read": "读取",
                 "permission": "权限",
             "Added the following repositories to the": "添加以下仓库到",
+            "Removed the following repositories from the": "删除以下仓库到",
             "integration:": "集成：",
             "Enabled GitHub Actions for": "启用仓库操作：",
             "Created a secret for": "创建机密：",
@@ -19089,7 +19094,9 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             // 收款方式
                 "Bank account": "银行账户",
                     "Use a bank account to receive your sponsorships. Note: If you use a personal bank account, your country may tax your GitHub Sponsors payouts as personal income.": "使用银行账户接收您的赞助。注意：如果您使用个人银行账户，您所在的国家/地区可能会将您的 GitHub 赞助者 付款作为个人收入征税。",
+                    "Country or region where your bank account is located": "请选择您的银行账户所在的国家或地区",
                 "Fiscal Host": "财政主办方",
+                    "Choose a fiscal host": "请选择一个财政主办方",
                     "Members of supported fiscal hosts can use their fiscal host to join GitHub Sponsors instead of using a bank account.": "受支持财务主办方的成员可使用其财务主机加入 GitHub 赞助者，而无需使用银行账户。",
             "Submit": "提交",
             "Your information has been saved.": "您的信息已保存。",
@@ -19152,6 +19159,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
 
             "None of your dependencies can be sponsored": "您的任何依赖项都尚未开放赞助",
                 // [/([^ ]+) does not directly depend on any repositories whose maintainers can be sponsored./, "$1 不直接依赖于任何可以赞助其维护人员的仓库。"],
+            "You don't directly depend on any repositories whose maintainers can be sponsored.": "您不直接依赖任何可赞助维护者的仓库。",
             "developers who maintain your dependencies": "位开发人员维护您的依赖项",
             "Download your": "下载",
             "results as CSV": "结果（CSV格式）",
