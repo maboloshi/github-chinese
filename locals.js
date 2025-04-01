@@ -6721,7 +6721,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Some checks haven't completed yet": "部分检查还未完成",
 
             "Jump to bottom": "跳到底部", //小屏模式
-            "forked from": "复刻自", // 同上（发行版未登录页面）
+            "Forked from": "复刻自", // 同上（发行版未登录页面）
 
             "people": "人", // 提交
             "committed": "提交于", // 提交浮窗
