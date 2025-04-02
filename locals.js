@@ -8461,9 +8461,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "as too heated": "为争论不休",
             "as spam": "为垃圾信息",
             "as resolved": "为已解决",
-            "added a sub-issue": "添加了一个子议题",
-            "removed a parent issue": "移除了一个父议题",
-            "removed a sub-issue": "移除了一个子议题",
+            "added a sub-issue": "添加子议题",
+            "added sub-issues": "添加子议题",
+            "removed a parent issue": "移除父议题",
+            "removed a sub-issue": "移除子议题",
 
             // 右侧栏 补充
                 // "Development": "进展",
