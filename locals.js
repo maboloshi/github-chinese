@@ -23036,6 +23036,8 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
         // 顶部
             "Help us improve GitHub Codespaces": "帮助我们改进 GitHub 代码空间",
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
+            "Codespaces will be undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间即将进行维护。在此期间用户可能会遇到连接问题，详情请访问",
+                "this announcement": "此公告",
         // https://github.com/codespaces
             "All": "所有",
             "Templates": "模版",
