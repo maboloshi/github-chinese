@@ -3601,6 +3601,31 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 顶部提示
             "Successfully updated billing information.": "成功更新支付信息。",
+            "For more information on using these billing pages": "有关使用这些账单页面的更多信息，",
+                "please refer to the docs content here": "请参阅此处的文档内容。",
+        
+        // 概况
+            "Current metered usage": "当前计费用量",
+                "Showing gross metered usage for your account.": "显示您账户的总计费用量。",
+            "Current included usage": "当前包含用量",
+                "More details": "详情",
+                "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
+            "": "",
+
+        "Subscriptions": "订阅",
+            "Manage subscriptions": "管理订阅",
+            "per": "/",
+            "month": "月",
+
+        "Metered usage": "计费用量",
+            "All usage": "全部",
+                // 某单位
+                "Gross:": "总计：",
+                "Billed:": "已支付：",
+                "Discount:": "优惠：",
+            "Usage by repository": "按仓库统计",
+                "usage": "用量",
+                "All other repositories": "其他",
 
         // 代码空间超限
         "You've used 90% of included services for GitHub Codespaces storage.": "您已使用 90% 代码空间存储。",
@@ -4129,6 +4154,21 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `直到 ${translatedDate}。`; // 这里写翻译结果
+        }],
+        [/(.+) \(All times in UTC\)/, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}（UTC时间）`;
+        }],
+        [/Usage ([^ ]+)(?:, (.+))?/, (match, p1, p2) => {
+            const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+            const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+            return `${translatedP2}用量`;// 星期几暂时省略
+        }],
+        [/Top five repositories (.+)/, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}用量最高的 5 个仓库`;
         }],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
