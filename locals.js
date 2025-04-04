@@ -3625,6 +3625,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Discount:": "优惠：",
             "Usage by repository": "按仓库统计",
                 "usage": "用量",
+                "Gross amount": "总计",
                 "All other repositories": "其他",
 
         // 代码空间超限
