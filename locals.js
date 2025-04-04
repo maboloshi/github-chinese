@@ -4135,42 +4135,32 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/(\$\d+\.\d{2}) off \/ month/, "-$1/月"],
         [/(\$\d+\.\d{2})\/year/, "$1/年"],
         [/(\$\d+\.\d{2}) off \/ year/, "-$1/年"],
-        //[/(Due by|until|On|Expires) (Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?) (\d+), (\d+)/, function(all, opt, month, day, yesr){
-        //    var monthKey = {
-        //        "Jan": "1月", "Feb": "2月", "Mar": "3月", "Apr": "4月", "May": "5月", "Jun": "6月", "Jul": "7月", "Aug": "8月", "Sep": "9月", "Oct": "10月", "Nov": "11月", "Dec": "12月"
-        //    };
-        //    var optKey = {
-        //        "Due by": "截止", "until": "直到", "On": "开始", "Expires": "到期"
-        //    };
-        //    return year + '年' + monthKey[month] + day + '日 ' + optKey[opt];
-        //}],
-        //[/Due by (.+)/, "$1 截止"],
         [/(Due by|On|Expires) (.+)/, (match, opt, p1) => {
             var optKey = {"Due by": "结算", "On": "开始", "Expires": "到期"};
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}` + optKey[opt];
         }],
-        [/until (.+)./, (match, p1) => { // p1为(.+)
+        [/until (.+)./, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `直到 ${translatedDate}。`; // 这里写翻译结果
+            return `直到 ${translatedDate}。`;
         }],
         [/(.+) \(All times in UTC\)/, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}（UTC时间）`;
         }],
-        [/Usage ([^ ]+)(?:, (.+))?/, (match, p1, p2) => {
-            const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
-            const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-            return `${translatedP2}用量`;// 星期几暂时省略
-        }],
+        //[/Usage ([^ ]+)(?:, (.+))?/, (match, p1, p2) => {
+        //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+        //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+        //    return `${translatedP2}用量`;// 星期几暂时省略
+        //}],
         [/Top five repositories (.+)/, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}用量最高的 5 个仓库`;
-        }],
+        }], // 按仓库统计 - 下方
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
