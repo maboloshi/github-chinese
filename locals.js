@@ -3666,6 +3666,16 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "delete prebuilds for a repository.": "删除某个仓库的预构建。",
         "Update spending limit": "更新支出限额",
 
+        // 使用情况 https://github.com/settings/billing/usage
+            "Search or filter usage": "搜索或筛选",
+
+            //"Group: None": "分组：无",
+            //"Group: Product": "分组：产品",
+            //"Group: SKU": "分组：库存单位",
+            //"Group: Repository": "分组：仓库",
+                "None": "无",
+                "SKU": "库存单位",
+
         // 账单和计划 https://github.com/settings/billing/summary
             "Billing summary": "账单摘要",
             "Your next payment": "您的下一次应付款",
@@ -4208,7 +4218,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 'last month':'上个月',
                 'this year': '今年',
                 'last year': '去年'};
-            return time[timeKey] + "用量最高的 5 个仓库";
+            return timeKey[time] + "用量最高的 5 个仓库";
         }], // 按仓库统计 - 下方
         // 概况 - 底部，因词条打架放到这里
         [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
@@ -4223,6 +4233,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/Discount for usage in public repositories \((\d+%) off\)/, "公共仓库使用折扣（$1 减免）"],
         [/(\d+) GB included Codespaces storage/, "$1 GB 代码空间存储"],
         [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
+
+        // 使用情况
+        [/Group: (None|Product|SKU|Repository)/, function(all, group){
+            var groupKey = {'None': '无','Product': '产品','SKU': '库存单位','Repository': '仓库'};
+            return '分组：' + groupKey[group];
+        }],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
