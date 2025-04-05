@@ -3610,7 +3610,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Current included usage": "当前包含用量",
                 "More details": "详情",
                 "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
-            "": "",
+                "* As per current pricing": "* 根据当前定价方案",
 
         "Subscriptions": "订阅",
             "Manage subscriptions": "管理订阅",
@@ -3618,15 +3618,41 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "month": "月",
 
         "Metered usage": "计费用量",
+            // 时间段，这部分走正则
+                "Today": "今天",
+                "Current month": "这个月",
+                "Last month": "上个月",
+                // 后 2 项正则
+            "Chart options": "图表选项",
+                "View as table": "以表格形式查看",
+                    "DateTime": "日期时间",
+                "Download CSV": "下载 CSV",
+                "Download PNG": "下载 PNG",
             "All usage": "全部",
                 // 某单位
                 "Gross:": "总计：",
-                "Billed:": "已支付：",
+                "Billed:": "买单：",
                 "Discount:": "优惠：",
             "Usage by repository": "按仓库统计",
                 "usage": "用量",
                 "Gross amount": "总计",
                 "All other repositories": "其他",
+
+            "No usage found": "无数据",
+            
+            // 底下计算部分
+                "View details": "详情",
+                "consumed usage -": "计费 -",
+                "in discounts =": "折扣 =",
+                "in billable usage": "买单",
+                "Usage for Actions and Actions Runners.": "操作（运行器）用量。", // 后半句走正则
+                "Copilot usage": "Copilot 用量",
+                    "Total spend on Copilot for the selected timeframe, excluding applicable discounts.": "所选时间段内 Copilot 的总支出，不含适用折扣。",
+                "Billable licenses": "计费许可数",
+                    "About billable licenses": "关于计费许可",
+                        "If a user stops consuming a license within the month, the adjustment will be reflected in your next month's bill.": "如果用户在当月停止使用许可，相关调整将体现在您下个月的账单中。",
+                        "Billable licenses are only available for the 'Current month' timeframe.": "计费许可仅适用于“当前月”时间段。",
+                    "Showing total unique licenses billed for your enterprise. Actual billed amount for each license is prorated based on when it is added during the billing cycle.": "显示您企业所计费的唯一许可证总数。每个许可证的实际计费金额将根据其在计费周期内添加的时间按比例分摊。",
 
         // 代码空间超限
         "You've used 90% of included services for GitHub Codespaces storage.": "您已使用 90% 代码空间存储。",
@@ -4156,11 +4182,47 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
         //    return `${translatedP2}用量`;// 星期几暂时省略
         //}],
-        [/Top five repositories (.+)/, (match, p1) => {
-            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `${translatedDate}用量最高的 5 个仓库`;
+        // 计费用量 - 右上角时间选项
+        [/^Time Frame: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
+            switch (p1) {
+              case 'Today':
+                return '时间段：今天';
+              case 'Current month':
+                return '时间段：本月';
+              case 'Last month':
+                return '时间段：上个月';
+              case `This year (${p2})`:
+                return `时间段：今年（${p2}）`;
+              case `Last year (${p3})`:
+                return `时间段：去年（${p3}）`;
+              default:
+                return match;
+            }
+        }],
+        [/This year \((\d+)\)/, "今年（$1）"],
+        [/Last year \((\d+)\)/, "去年（$1）"],
+        [/Top five repositories (today|this month|last month|this year|last year)/, function(all, time) {
+            var timeKey = {
+                'today': '今天',
+                'this month': '这个月',
+                'last month':'上个月',
+                'this year': '今年',
+                'last year': '去年'};
+            return time[timeKey] + "用量最高的 5 个仓库";
         }], // 按仓库统计 - 下方
+        // 概况 - 底部，因词条打架放到这里
+        [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
+        [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
+        // 当前包含用量
+        [/([\d,+]) included Actions minutes/, "$1 操作分钟数"],
+        [/(\d+) GB included Actions storage/, "$1 GB 操作存储"],
+        [/(\d+) GB included Git LFS bandwidth/, "$1 GB Git LFS 带宽"],
+        [/(\d+) GB included Git LFS storage/, "$1 GB Git LFS 存储"],
+        [/(\d+) GB included Packages data transfer/, "$1 GB 软件包数据传输"],
+        [/(\d+) GB included Packages storage/, "$1 GB 软件包存储"],
+        [/Discount for usage in public repositories \((\d+%) off\)/, "公共仓库使用折扣（$1 减免）"],
+        [/(\d+) GB included Codespaces storage/, "$1 GB 代码空间存储"],
+        [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
