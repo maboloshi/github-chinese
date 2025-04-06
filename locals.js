@@ -3686,6 +3686,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Metered usage grouped by SKU": "分组：库存单位",
                 "Actions storage": "操作存储",
                 "Codespaces storage": "代码空间存储",
+                "Actions Windows": "操作 Windows",
+                "Actions Linux": "操作 Linux",
+                "Actions macOS 3-core": "操作 macOS 三核",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
                 
@@ -3699,11 +3702,42 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 账户预算 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
-               "New budget": "新建",
-               "On": "开",
-               "Off": "关",
-               "spent": "支出",
-               "budget": "预算",
+                "New budget": "新建",
+                "On": "开",
+                "Off": "关",
+                "spent": "支出",
+                "budget": "预算",
+
+            // https://github.com/settings/billing/budgets/new
+            "New monthly budget": "新建月度预算",
+                "Create a budget to track spending for a selected product and scope.": "创建预算以跟踪选定产品和范围的支出。",
+            // 缺失支付方式
+                "You can’t increase the budget until you set up a valid payment method.": "在您设置有效的支付方式之前，无法增加预算。",
+            // 产品
+                "Select the product to include in this budget.": "选择要包含在这个预算中的产品。",
+
+            "Budget scope": "预算范围",
+                "Select the scope of spending for this budget.": "选择此预算的支出范围。",
+                // 账户
+                    "Spending for all repositories owned by your account": "账户拥有的所有仓库的支出",
+                // 仓库
+                    "Spending for a single repository": "单个仓库支出",
+            
+            "Budget": "预算",
+                "Set a budget amount to track your spending on a monthly basis.": "设置预算金额以按月跟踪您的支出。",
+                "Usage before budget creation isn't counted in the current billing cycle.": "预算创建前的使用情况不会计入当前计费周期。",
+                "Budget amount": "预算金额",
+                    "Stop usage when budget limit is reached": "达到预算上限时停止使用",
+                        "This will limit your spending to the budget amount set by you": "这将把您的支出限制在您设定的预算额度内",
+
+            // 警示
+                "Get emails and GitHub notifications when your spending has reached 75%, 90%, and 100% of the budget threshold.": "当您的支出达到预算阈值的75%、90%和100%时，接收电子邮件和 GitHub 通知。",
+
+                "Receive budget threshold alerts": "接收预算阈值警报",
+            
+            "Create budget": "创建",
+
+        // 许可 https://github.com/settings/billing/licensing
 
         // 其他 https://github.com/settings/billing/subscriptions
             "Marketplace apps": "市场应用",
@@ -4220,11 +4254,14 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}（UTC时间）`;
         }],
-        //[/Usage ([^ ]+)(?:, (.+))?/, (match, p1, p2) => {
-        //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
-        //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-        //    return `${translatedP2}用量`;// 星期几暂时省略
-        //}],
+        [/(Usage|codespaces|actions) (?:[^ ]+), (.+)/, (match, s1, p1) => {
+            //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+            //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间'};
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}` + s1Key[s1];// 星期几暂时省略
+        }],
         // 计费用量 - 右上角时间选项
         [/^Time Frame: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
             switch (p1) {
