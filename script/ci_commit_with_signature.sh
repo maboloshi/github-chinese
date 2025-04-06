@@ -57,8 +57,8 @@ if [[ -z $TOKEN ]]; then
   TOKEN=$GITHUB_TOKEN
 fi
 
-if [[ -z $GITHUB_URL ]]; then
-  GITHUB_URL="https://api.github.com"
+if [[ -z $GITHUB_API_URL ]]; then
+  GITHUB_API_URL="https://api.github.com"
 fi
 
 function set_dco_signature {
@@ -67,20 +67,15 @@ function set_dco_signature {
         # 'ghp_'开头的是 GitHub 个人访问令牌
         # What starts with 'ghp_' is the GitHub personal access token
 
-        response=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_URL/user")
-    elif [[ $APP_SLUG ]]; then
-        CommitBot=$APP_SLUG
+        res=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_API_URL/user" 2>/dev/null || echo '{"login":"gh-actions","id":0}')
     else
-        CommitBot="github-actions"
+        bot="${APP_SLUG:-github-actions}[bot]"
+        res=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_API_URL/users/${bot}" 2>/dev/null || echo '{"login":"gh-actions","id":0}')
     fi
 
-    if [[ $CommitBot ]]; then
-        response=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_URL/users/$CommitBot\[bot\]")
-    fi
-
-    CommitBot=$(echo "$response" | jq -r '.login')
-    id=$(echo "$response" | jq -r '.id')
-    echo "Signed-off-by: $CommitBot <$id+$CommitBot@users.noreply.github.com>"
+    login=$(jq -r .login <<< "$res")
+    id=$(jq -r .id <<< "$res")
+    echo "Signed-off-by: $login <$id+$login@users.noreply.github.com>"
 }
 
 message_body="${message_body:+$message_body\n}$(set_dco_signature)"
@@ -118,6 +113,7 @@ graphql_request='{
   "query": "mutation ($input: CreateCommitOnBranchInput!) {
     createCommitOnBranch(input: $input) {
       commit {
+        oid,
         url
       }
     }
@@ -161,12 +157,13 @@ response=$(curl "$GITHUB_GRAPHQL_URL" --silent \
   --data @request.json)
 
 # Print the results
-url=$(echo "$response" | jq -r '.data.createCommitOnBranch.commit.url')
-if [ "$url" != "null" ]; then
-  echo "请求成功，URL为: $url"
-  exit 0
-else
-  error=$(echo "$response" | jq -r '.errors[0].message')
-  echo "请求失败，错误信息为: $error"
-  exit 1
-fi
+jq -r '
+    if .data?.createCommitOnBranch?.commit?.url then
+        "✅ 请求成功，SHA: \(.data.createCommitOnBranch.commit.oid)\nURL: \(.data.createCommitOnBranch.commit.url)"
+    else
+        if .errors then
+            "❌ 错误列表:\n" + ([.errors[].message] | join("\n- "))
+        else
+            "⚠️ 未知响应格式: \(.)"
+        end
+    end' <<< "$response"
