@@ -3675,6 +3675,16 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             //"Group: Repository": "分组：仓库",
                 "None": "无",
                 "SKU": "库存单位",
+            "Metered usage grouped by Product": "分组：产品",
+                "actions": "操作",
+                "codespaces": "代码空间",
+
+                "Products": "产品",
+            "Metered usage grouped by SKU": "分组：库存单位",
+                "Actions storage": "操作存储",
+                "Codespaces storage": "代码空间存储",
+            "Metered usage grouped by Repository": "分组：仓库",
+                "All other": "其他",
 
         // 账单和计划 https://github.com/settings/billing/summary
             "Billing summary": "账单摘要",
@@ -4235,7 +4245,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
 
         // 使用情况
-        [/Group: (None|Product|SKU|Repository)/, function(all, group){
+        [/^Group: (None|Product|SKU|Repository)$/, function(all, group) {
             var groupKey = {'None': '无','Product': '产品','SKU': '库存单位','Repository': '仓库'};
             return '分组：' + groupKey[group];
         }],
