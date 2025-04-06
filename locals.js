@@ -4281,6 +4281,15 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         }],
         [/This year \((\d+)\)/, "今年（$1）"],
         [/Last year \((\d+)\)/, "去年（$1）"],
+        [/(\d+)(AM|PM)/, (match, p1, p2) => {
+            let hour = parseInt(p1, 10);
+            if (p2 === "PM" && hour !== 12) {
+                hour += 12;
+            } else if (p2 === "AM" && hour === 12) {
+                hour = 0;
+            }
+            return `${hour}:00`;
+        }], // 计费用量 - 今天图表下方时间
         [/Top five repositories (today|this month|last month|this year|last year)/, function(all, time) {
             var timeKey = {
                 'today': '今天',
