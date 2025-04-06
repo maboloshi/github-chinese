@@ -24296,6 +24296,7 @@ I18N["zh-CN"]["copilot"] = {
                         "Search repositories": "搜索仓库",
                         "Fetching repositories…": "正在获取仓库",
                     "Close": "关闭",
+                "Image…": "图片…",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
                     "Extensions": "扩展",
