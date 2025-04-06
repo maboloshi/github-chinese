@@ -4282,6 +4282,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/This year \((\d+)\)/, "今年（$1）"],
         [/Last year \((\d+)\)/, "去年（$1）"],
         [/(\d+)(AM|PM)/, (match, p1, p2) => {
+            // 运行规则：非12AM照搬，PM数字加12，12AM=0
             let hour = parseInt(p1, 10);
             if (p2 === "PM" && hour !== 12) {
                 hour += 12;
