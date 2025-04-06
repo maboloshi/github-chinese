@@ -2999,6 +2999,9 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Notifications": "通知",
 
         "Access": "访问",
+        "Billing and plans": "账单和计划", // 旧版，暂时加回
+            "Plans and usage": "计划和使用情况",
+            "Spending limits": "支出限额",
         "Billing & Licensing": "账单 & 许可",
             "New": "新",
             "Usage": "使用情况",
