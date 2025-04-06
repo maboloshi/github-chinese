@@ -381,6 +381,9 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Spending Limit": "支付限额",
         "Autolink references": "自动链接引用",
         "Add autolink reference": "添加自动链接引用",
+        "Billing Overview": "账单概览",
+        "Billing Usage": "计费用量",
+        "Budgets": "预算",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -3631,7 +3634,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "All usage": "全部",
                 // 某单位
                 "Gross:": "总计：",
-                "Billed:": "买单：",
+                "Billed:": "计费：",
                 "Discount:": "优惠：",
             "Usage by repository": "按仓库统计",
                 "usage": "用量",
@@ -3644,7 +3647,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "View details": "详情",
                 "consumed usage -": "计费 -",
                 "in discounts =": "折扣 =",
-                "in billable usage": "买单",
+                "in billable usage": "计费",
                 "Usage for Actions and Actions Runners.": "操作（运行器）用量。", // 后半句走正则
                 "Copilot usage": "Copilot 用量",
                     "Total spend on Copilot for the selected timeframe, excluding applicable discounts.": "所选时间段内 Copilot 的总支出，不含适用折扣。",
@@ -3685,6 +3688,26 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Codespaces storage": "代码空间存储",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
+                
+            "Date": "日期",
+            "SKUs": "库存单位",
+            "Products": "产品",
+            "Repositories": "仓库",
+            "Units": "单位",
+            "Price/unit": "单价",
+            "Billed amount": "计费",
+
+        // 账户预算 https://github.com/settings/billing/budgets
+           "Account budgets": "账户预算",
+               "New budget": "新建",
+               "On": "开",
+               "Off": "关",
+               "spent": "支出",
+               "budget": "预算",
+
+        // 其他 https://github.com/settings/billing/subscriptions
+            "Marketplace apps": "市场应用",
+            "Sponsorships": "赞助",
 
         // 账单和计划 https://github.com/settings/billing/summary
             "Billing summary": "账单摘要",
@@ -4249,6 +4272,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             var groupKey = {'None': '无','Product': '产品','SKU': '库存单位','Repository': '仓库'};
             return '分组：' + groupKey[group];
         }],
+        [/(\d+) min/, "$1 分"],
+        [/([\d,+]\.\d+) GB-hr/, "$1 GB/时"],
+        // 账户预算
+        [/(\d+) budgets?/, "$1 预算"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
