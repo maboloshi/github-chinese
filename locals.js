@@ -3697,8 +3697,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "All other": "其他",
 
             // 有上下文，后面重复部分直接省略
-            "A usage": "用量",
-            "A usage grouped by SKU": "用量 - 详细",
             "Actions usage": "操作",
             "Actions usage grouped by SKU": "操作 - 详细",
             "Copilot usage": "Copilot",
