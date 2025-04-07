@@ -74,8 +74,9 @@ function set_dco_signature {
     fi
 
     login=$(jq -r .login <<< "$res")
+    name=$(jq -r .name <<< "$res")
     id=$(jq -r .id <<< "$res")
-    echo "Signed-off-by: $login <$id+$login@users.noreply.github.com>"
+    echo "Signed-off-by: ${name:-$login} <$id+$login@users.noreply.github.com>"
 }
 
 message_body="${message_body:+$message_body\n}$(set_dco_signature)"
