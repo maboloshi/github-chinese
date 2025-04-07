@@ -4258,10 +4258,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}（UTC时间）`;
         }],
-        [/(Usage|codespaces|actions) (?:[^ ]+), (.+)/, (match, s1, p1) => {
+        [/(Usage|codespaces|actions|Codespaces storage|Actions Windows|Actions macOS 3-core|Actions Linux|Actions storage) (?:[^ ]+), (.+)/, (match, s1, p1) => {
             //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间'};
+            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Actions Windows': '操作 Windows', 'Actions Linux': '操作 Linux','Actions macOS 3-core': '操作 macOS 三核','Actions storage': "操作存储"};
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}` + s1Key[s1];// 星期几暂时省略
