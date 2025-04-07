@@ -3608,7 +3608,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         // 顶部提示
             "Successfully updated billing information.": "成功更新支付信息。",
             "For more information on using these billing pages": "有关使用这些账单页面的更多信息，",
-                "please refer to the docs content here": "请参阅此处的文档内容。",
+                "please refer to the docs content here": "请参阅此处的文档内容",
         
         // 概况
             "Current metered usage": "当前计费用量",
