@@ -3695,6 +3695,20 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Actions macOS 3-core": "操作 macOS 三核",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
+
+            // 有上下文，后面重复部分直接省略
+            "A usage": "用量",
+            "A usage grouped by SKU": "用量 - 详细",
+            "Actions usage": "操作",
+            "Actions usage grouped by SKU": "操作 - 详细",
+            "Copilot usage": "Copilot",
+            "Copilot usage grouped by SKU": "Copilot - 详细",
+            "Codespaces usage": "代码空间",
+            "Codespaces usage grouped by SKU": "代码空间 - 详细",
+            "Git_lfs usage": "Git LFS",
+            "Git_lfs usage grouped by SKU": "Git LFS - 详细",
+            "Packages usage": "软件包",
+            "Packages usage grouped by SKU": "软件包 - 详细",
                 
             "Date": "日期",
             "SKUs": "库存单位",
