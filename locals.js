@@ -5240,6 +5240,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "You currently have an active": "您当前拥有有效的",
                 "Copilot Pro subscription": "GitHub Copilot Pro 订阅",
                 "Get started by installing the extension in your preferred IDE.": "首先在您首选的 IDE 中安装扩展。",
+                "Get started by installing the extension in your preferred environment.": "首先在您首选环境中安装扩展。",
                 "Copilot in your IDE": "集成在 IDE",
                 "Copilot in the CLI": "在终端中使用",
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
