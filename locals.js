@@ -3647,6 +3647,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "No usage found": "无数据",
             
             // 底下计算部分
+                "More": "更多", // 小屏模式
                 "View details": "详情",
                 "consumed usage -": "计费 -",
                 "in discounts =": "折扣 =",
