@@ -10550,6 +10550,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/expand all lines: ([^ ]+)/, "展开全部：$1"],
         [/collapse file: ([^ ]+)/, "折叠文件：$1"],
         [/collapse non diff lines: ([^ ]+)/, "折叠无差异行：$1"],
+        [/(\d+) tags?/, "$1 标签"], // 出现位置：某提交所跨标签数
     ],
 };
 
