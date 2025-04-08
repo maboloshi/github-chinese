@@ -24246,6 +24246,19 @@ I18N["zh-CN"]["copilot"] = {
                     "Delete link": "删除",
                         "Delete shared link and remove access for all users": "删除分享链接并移除所有用户的访问权限",
                 "Copy link": "复制链接",
+
+            // 分享
+            "Shared": "已分享",
+            "Conversation shared": "对话已分享",
+                "Only users with access to referenced private content can view this conversation.": "只有有权访问相关私人内容的用户才能查看此对话。",
+                "This conversation is private and only visible to you. Share it to make it accessible to others with the link.": "此对话为私密对话，仅您自己可见。通过分享链接，其他人才能访问此对话。",
+                "This conversation is now shared. Anyone with the link can view it. Keep in mind that it is live and publicly accessible.": "此对话已共享。任何拥有该链接的人均可查看此对话。请注意，该对话为实时且公开可访问的内容。",
+                "Conversation link will appear here after sharing": "对话链接将在分享后出现",
+                "Only visible to you": "私密",
+                "Visible to anyone with the link": "拥有链接者可见",
+
+                "Unshare": "取消",
+
             "Open menu": "菜单",
                 "Conversation": "对话",
                 "Prompt": "提示词",
