@@ -3694,6 +3694,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Actions Windows": "操作 Windows",
                 "Actions Linux": "操作 Linux",
                 "Actions macOS 3-core": "操作 macOS 三核",
+                "Codespaces compute 2-core": "代码空间 - 双核",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
 
@@ -3708,14 +3709,15 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Git_lfs usage grouped by SKU": "Git LFS - 详细",
             "Packages usage": "软件包",
             "Packages usage grouped by SKU": "软件包 - 详细",
-                
-            "Date": "日期",
-            "SKUs": "库存单位",
-            "Products": "产品",
-            "Repositories": "仓库",
-            "Units": "单位",
-            "Price/unit": "单价",
-            "Billed amount": "计费",
+
+            "Usage breakdown": "用量分析",               
+                "Date": "日期",
+                "SKUs": "库存单位",
+                "Products": "产品",
+                "Repositories": "仓库",
+                "Units": "单位",
+                "Price/unit": "单价",
+                "Billed amount": "计费",
 
         // 账户预算 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
@@ -4271,10 +4273,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}（UTC时间）`;
         }],
-        [/(Usage|codespaces|actions|Codespaces storage|Actions Windows|Actions macOS 3-core|Actions Linux|Actions storage) (?:[^ ]+), (.+)/, (match, s1, p1) => {
+        [/(Usage|codespaces|actions|Codespaces storage|Codespaces compute 2-core|Actions Windows|Actions macOS 3-core|Actions Linux|Actions storage|All other) (?:[^ ]+), (.+)/, (match, s1, p1) => {
             //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Actions Windows': '操作 Windows', 'Actions Linux': '操作 Linux','Actions macOS 3-core': '操作 macOS 三核','Actions storage': "操作存储"};
+            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Codespaces compute 2-core': '代码空间 - 双核','Actions Windows': '操作 Windows', 'Actions Linux': '操作 Linux','Actions macOS 3-core': '操作 macOS 三核','Actions storage': "操作存储",'All other': '其他'};
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}` + s1Key[s1];// 星期几暂时省略
@@ -4338,6 +4340,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         }],
         [/(\d+) min/, "$1 分"],
         [/([\d,+]\.\d+) GB-hr/, "$1 GB/时"],
+        [/(\d+\.\d+) hr/, "$1 小时"],
         // 账户预算
         [/(\d+) budgets?/, "$1 预算"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
