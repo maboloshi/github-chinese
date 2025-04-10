@@ -70,11 +70,11 @@ function set_dco_signature {
         res=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_API_URL/user" 2>/dev/null || echo '{"login":"gh-actions","id":0}')
     else
         bot="${APP_SLUG:-github-actions}[bot]"
-        res=$(curl -s -H "Authorization: token $TOKEN" "$GITHUB_API_URL/users/${bot}" 2>/dev/null || echo '{"login":"gh-actions","id":0}')
+        res=$(curl -sg -H "Authorization: token $TOKEN" "$GITHUB_API_URL/users/${bot}" 2>/dev/null || echo '{"login":"gh-actions","id":0}')
     fi
 
     login=$(jq -r .login <<< "$res")
-    name=$(jq -r .name <<< "$res")
+    name=$(jq -r '.name // empty' <<< "$res")
     id=$(jq -r .id <<< "$res")
     echo "Signed-off-by: ${name:-$login} <$id+$login@users.noreply.github.com>"
 }
