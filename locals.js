@@ -8685,6 +8685,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "removed a sub-issue": "移除子议题",
 
             // 右侧栏 补充
+            "Metadata": "元数据", // 小屏模式
                 // "Development": "进展",
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
@@ -8815,12 +8816,13 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Edits": "编辑",
                 "Most recent": "最近",
                 "Viewing edit": "查看编辑",
-                "Delete revision": "删除记录",
+                "Delete revision": "删除修订",
             "Reopen Issue": "重新打开议题",
                 "You do not have permissions to reopen this issue": "您没有权限重新打开此议题",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
             "Comment can not be empty": "评论不能为空",
+            "Add files": "添加文件", // 小屏模式
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
         // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
