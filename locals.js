@@ -4338,6 +4338,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             var groupKey = {'None': '无','Product': '产品','SKU': '库存单位','Repository': '仓库'};
             return '分组：' + groupKey[group];
         }],
+        [/Usage for (.+)./, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}`;       
+        }],
         [/(\d+) min/, "$1 分"],
         [/([\d,+]\.\d+) GB-hr/, "$1 GB/时"],
         [/(\d+\.\d+) hr/, "$1 小时"],
