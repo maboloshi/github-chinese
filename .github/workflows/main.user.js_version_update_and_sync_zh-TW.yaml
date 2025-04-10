@@ -114,9 +114,12 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Cache apt packages
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
-          path: /var/cache/apt/archives
+          path: |
+            /var/cache/apt/archives/*.deb
+            !/var/cache/apt/archives/partial
+            !/var/cache/apt/archives/lock
           key: apt-${{ runner.os }}-${{ hashFiles('**/apt-packages.txt') }}
           restore-keys: |
             apt-${{ runner.os }}-
