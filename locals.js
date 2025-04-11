@@ -4341,7 +4341,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/Usage for (.+)./, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `${translatedDate}`;
+            return `${translatedDate}`; // 有标题作为上下文，直接省略，只剩日期
         }],
         [/(\d+) min/, "$1 分"],
         [/([\d,+]\.\d+) GB-hr/, "$1 GB/时"],
