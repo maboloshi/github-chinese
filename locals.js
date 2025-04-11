@@ -11701,8 +11701,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Startup failure": "失败",
                 "Cancelled": "取消",
                 "Action required": "请求操作",
+                "Waiting": "等待",
             "Total duration": "总时长",
             "Billable time": "计费时间",
+
+            "This workflow is waiting for": "该工作流程正在等待",
+                "to complete before running.": "完成后再运行。",
+                "Learn more about concurrency": "了解有关并发执行的更多信息",
 
             // 右侧中间栏
                 "This workflow graph cannot be shown": "无法显示此工作流图表",
