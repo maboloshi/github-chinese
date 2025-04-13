@@ -85,6 +85,13 @@
     // 初始化
     init();
 
+    // 403页面：检测 <meta> referrer 属性是否为 origin（4月13日更新
+    function isReferrerOrigin() {
+        const metaReferrer = document.querySelector('meta[name="referrer"]');
+        return metaReferrer?.content === 'origin';
+        console.log(`页面：403`);
+    }
+
     // 更新页面设置
     function updatePageConfig(currentPageChangeTrigger) {
         const newType = detectPageType();
@@ -285,6 +292,7 @@
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation);
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
+        const isForbidden = isReferrerOrigin(); // 403 页面，4月13日更新
 
         // 正则配置 ================================================
         const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
@@ -333,7 +341,7 @@
                 pageType = pathMatch ? (pathMatch[1] || pathMatch.slice(-1)[0]) : false;
         }
 
-        console.log(`【Debug】pathname = ${pathname}, site = ${site}, isLogin = ${isLogin}, analyticsLocation = ${metaLocation}, isOrganization = ${isOrganization}, isRepository = ${isRepository}, isProfile = ${isProfile}, isSession = ${isSession}`)
+        console.log(`【Debug】pathname = ${pathname}, site = ${site}, isLogin = ${isLogin}, analyticsLocation = ${metaLocation}, isOrganization = ${isOrganization}, isRepository = ${isRepository}, isProfile = ${isProfile}, isSession = ${isSession}, isForbidden = ${isForbidden}`);
 
         // 词库校验 ================================================
         if (pageType === false || !I18N[CONFIG.LANG]?.[pageType]) {
