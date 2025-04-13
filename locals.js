@@ -9872,7 +9872,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "too heated": "争论不休",
             "off-topic": "偏离主题",
 
-        "Merge status cannot be loaded": "合并状态加载出错", // 测试
+        "Merge status cannot be loaded": "合并状态加载出错",
             "Try reloading the page, or if the problem persists contact support.": "尝试重载页面，或联系支持",
             "GitHub status": "GitHub 状态",
         
