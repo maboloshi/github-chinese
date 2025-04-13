@@ -9872,6 +9872,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "too heated": "争论不休",
             "off-topic": "偏离主题",
 
+        "Merge status cannot be loaded": "合并状态加载出错",
+            "Try reloading the page, or if the problem persists contact support.": "尝试重载页面，或联系支持",
+            "GitHub status": "GitHub 状态",
+        
+
     },
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
