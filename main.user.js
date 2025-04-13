@@ -85,13 +85,6 @@
     // 初始化
     init();
 
-    // 403页面：检测 <meta> referrer 属性是否为 origin（4月13日更新
-    function isReferrerOrigin() {
-        const metaReferrer = document.querySelector('meta[name="referrer"]');
-        return metaReferrer?.content === 'origin';
-        console.log(`页面：403`);
-    }
-
     // 更新页面设置
     function updatePageConfig(currentPageChangeTrigger) {
         const newType = detectPageType();
