@@ -501,6 +501,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         "Looks like network is down!": "看起来网络未连接！",
         "Contact Support": "联系 GitHub 支持",
         "GitHub Status": "GitHub 状态",
+
+        "Access to this site has been restricted.": "访问被阻止",
+            "If you believe this is an error, please contact": "如您认为这是错误，请联系",
+            "Support": "支持",
         // 右上角切换账户提示
         "Signed in as": "登录为",
         "Switch to another account": "切换到另一个帐户",
