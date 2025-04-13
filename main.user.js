@@ -292,7 +292,7 @@
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation);
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
-        const isForbidden = isReferrerOrigin(); // 403 页面，4月13日更新
+        const isForbidden = document.head.querySelector('meta[name="referrer"]')?.content === 'origin'; // 403 页面，4月13日更新
 
         // 正则配置 ================================================
         const { rePagePathRepo, rePagePathOrg, rePagePath } = I18N.conf;
