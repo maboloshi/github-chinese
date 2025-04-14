@@ -8708,6 +8708,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             // 右侧栏 补充
             "Metadata": "元数据", // 小屏模式
                 // "Development": "进展",
+                    "Code with Copilot Agent Mode": "使用 Copilot 代理模式编写代码",
+                        "Select code repository": "选择仓库",
+                        "Start a Codespace with Copilot Agent Mode for this issue in another repository.": "为另一个仓库中的此议题启动使用 Copilot 代理模式的代码空间",
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
                     "Create a branch": "创建分支",
