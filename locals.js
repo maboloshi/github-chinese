@@ -5240,6 +5240,9 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
                     "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
                     "Learn more about the public preview of Gemini 2.0 Flash.": "了解更多关于 GitHub Copilot 如何为 Gemini 2.0 Flash 提供服务。",
+                "Google Gemini 2.5 Pro in Copilot": "Gemini 2.5 Pro 模型",
+                    "You can use the latest Google Gemini 2.5 Pro model.": "您可以使用 Gemini 2.5 Pro 模型。",
+                    "Learn more about how GitHub Copilot serves Google Gemini 2.5 Pro.": "了解更多关于 GitHub Copilot 如何为 Gemini 2.5 Pro 提供服务。",
                 "Dashboard entry point": "仪表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允许登陆 GitHub.com 时即时聊天",
 
@@ -24237,6 +24240,11 @@ I18N["zh-CN"]["copilot"] = {
                         "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
                         "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
                     "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
+
+                // gemini 2.5 pro
+                    "Enable Gemini 2.5 Pro": "启用 Gemini 2.5 Pro",
+                        "Enable access to the latest Gemini 2.5 Pro model from Google.": "允许访问 Google 最新的 Gemini 2.5 Pro 模型。",
+                        "Learn more about how GitHub Copilot serves Gemini 2.5 Pro": "了解更多关于 GitHub Copilot 如何为 Gemini 2.5 Pro 提供服务",
 
                 "Model capabilities": "模型限制",
                     "Limited capabilities (o1)": "功能限制（o1）",
