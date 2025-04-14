@@ -277,7 +277,6 @@
         // 基础配置 ===============================================
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
         const isLogin = document.body.classList.contains("logged-in");
-        const isForbidden = document.head.querySelector('meta[name="referrer"]')?.content === 'origin';
         const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
 
         // 页面特征检测 ============================================
@@ -293,22 +292,17 @@
         // 核心判断逻辑 ============================================
         let pageType;
         switch (true) { // 使用 switch(true) 模式处理多条件分支
-            // 1. 全站受限，2025-4-13 更新
-            case isForbidden:
-                pageType = '403';
-                break;
-
-            // 2. 登录相关页面
+            // 1. 登录相关页面
             case isSession:
                 pageType = 'session-authentication';
                 break;
 
-            // 3. 特殊站点类型（gist/status/skills/education）
+            // 2. 特殊站点类型（gist/status/skills/education）
             case SPECIAL_SITES.includes(site):
                 pageType = site;
                 break;
 
-            // 4. 个人资料页
+            // 3. 个人资料页
             case isProfile:
                 const tabParam = new URLSearchParams(url.search).get('tab');
                 pageType = pathname.includes('/stars') ? 'page-profile/stars'
@@ -316,24 +310,24 @@
                          : 'page-profile';
                 break;
 
-            // 5. 首页/仪表盘
+            // 4. 首页/仪表盘
             case isHomepage:
                 pageType = isLogin ? 'dashboard' : 'homepage';
                 break;
 
-            // 6. 代码仓库页
+            // 5. 代码仓库页
             case isRepository:
                 const repoMatch = pathname.match(rePagePathRepo);
                 pageType = repoMatch ? `repository/${repoMatch[1]}` : 'repository';
                 break;
 
-            // 7. 组织页面
+            // 6. 组织页面
             case isOrganization:
                 const orgMatch = pathname.match(rePagePathOrg);
                 pageType = orgMatch ? `orgs/${orgMatch[1] || orgMatch.slice(-1)[0]}` : 'orgs';
                 break;
 
-            // 8. 默认处理逻辑
+            // 7. 默认处理逻辑
             default:
                 const pathMatch = pathname.match(rePagePath);
                 pageType = pathMatch ? (pathMatch[1] || pathMatch.slice(-1)[0]) : false;

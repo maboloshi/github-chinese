@@ -485,15 +485,6 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
     ],
 };
 
-I18N["zh-TW"]["403"] = {
-    "static": { // 靜態翻譯
-        // 全站受限
-        "Access to this site has been restricted.": "訪問受限",
-            "If you believe this is an error, please contact": "如您認為這是一個錯誤，請聯繫",
-            "Support": "支持",
-    }
-};
-
 I18N["zh-TW"]["public"] = { // 公共區域翻譯
     "static": { // 靜態翻譯
         // 錯誤頁面
