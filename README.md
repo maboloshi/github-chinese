@@ -22,6 +22,10 @@
 
 </div>
 
+> [!warning]
+>
+> 本项目从未发布至 GitCode，如您发现请截图并保留证据
+
 ## 💖 星标历史
 
 <a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
