@@ -24277,6 +24277,7 @@ I18N["zh-CN"]["copilot"] = {
 
             "Good response": "点赞",
             "Bad response": "点踩",
+            "Retry with…": "重试…",
 
             "Scroll to bottom": "滚动至底部",
 
@@ -24407,6 +24408,7 @@ I18N["zh-CN"]["copilot"] = {
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
         [/(\d+) vulnerability detected/, "检测到 $1 个漏洞"],
+        [/Retry with (.+)/, "使用 $1 重试"],
     ],
 };
 
