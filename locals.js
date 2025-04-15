@@ -7470,6 +7470,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Public repository · Forked from": "公共仓库 · 复刻自", // Android UA 下出现
                 "Public repository · Generated from": "公共仓库 · 创建自", // 同上
                 "Public archive repository": "公共存档仓库",
+                "Public archive repository · Forked from": "公共存档仓库 · 复刻自",
                 "generated from": "创建自",
                 "mirrored from": "镜像自",
 
