@@ -2208,7 +2208,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
         [/created a repository that has many stars./, "创建了一个拥有很多星标的仓库。"], // Starstruck
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
         [/answered discussions./, "回答了讨论。"], // Galaxy Brain
-        [/is sponsoring (\d+) organizations? or users?./, "赞助了 $1 个组织或用户。"], // Public Sponsor
+        [/(\@[^ ]+) (?:is sponsoring|has sponsored) (\d+) organizations? or users?./, "$1 赞助了 $2 个组织或用户。"], // Public Sponsor
         [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
         [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
