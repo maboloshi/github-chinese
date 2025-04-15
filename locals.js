@@ -6796,8 +6796,10 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
             "30 days": "30 天",
             "60 days": "60 天",
             "90 days": "90 天",
-            "Custom...": "自定义...",
+            "Custom": "自定义",
+                "Select date *": "选择日期 *",
             "No expiration": "无有效期",
+            "The token will expire on the selected date": "此令牌将在指定日期过期",
             "The token will never expire!": "此令牌永不过期！",
             "GitHub strongly recommends that you set an expiration date for your token to help keep your information secure.": "GitHub 强烈建议您为令牌设置有效期，以帮助确保您的信息安全。",
 
@@ -6908,6 +6910,11 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
             };
 
             return '该令牌有效期至' + year + '年' + monthKey[month] + day + '日，' + weekKey[week];
+        }],
+        [/(\d+) days? \((.+)\)/, (match, d , p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return d + `天（${translatedDate}）`;
         }],
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
