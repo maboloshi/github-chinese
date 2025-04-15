@@ -5834,6 +5834,8 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
                 "for the": "用于",
                 "GitHub App": "GitHub 应用",
 
+            "We couldn’t find any events matching your search.": "无匹配结果。",
+
     },
     "regexp": [ // 正则翻译
         [/Found (\d+) events?/, "发现 $1 个活动"],
