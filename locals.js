@@ -4369,10 +4369,22 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
         "GitHub Education": "GitHub 教育",
 
         "Education Benefits": "教育福利",
+            "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教师或学生申请，解锁教育旅程所需的工具和资源。",
             "You have a current student coupon applied.": "您当前已应用学生优惠券。",
             "Start an application": "申请",
+
+            "Approved": "批准",
+            "Loading details": "加载详情",
+            "Revoked": "撤销",
+            "Denied": "拒绝",
     },
-    "regexp": [],
+    "regexp": [
+        [/Submitted(?: about)? (.+)/, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `提交于 ${translatedDate}`;
+        }],
+    ],
 };
 
 I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
