@@ -45,7 +45,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
@@ -708,6 +708,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
             "Feature preview": "功能预览",
+                "New": "新",
                 // 对话框
                 "Feature preview dialog": "功能预览对话框",
                 "Enable": "启用",
@@ -17432,6 +17433,8 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
     "static": { // 静态翻译
 
         // 登录页 https://github.com/login
+            "Your account was created successfully. Please sign in to continue": "您的账户创建成功，请继续登录",
+
             "Sign in to GitHub": "登录 GitHub",
             "Sign in to": "登录",
             "Signed in as": "登录身份为",
@@ -17869,6 +17872,20 @@ I18N["zh-CN"].password_reset = I18N["zh-CN"]["session-authentication"];
 
 I18N["zh-CN"]["signup"] = { // 注册页
     "static": { // 静态翻译
+        "Create your free account": "创建免费账户",
+            "Explore GitHub's core features for individuals and organizations.": "探索 GitHub 为个人及组织提供的核心功能。",
+            "See what's included": "包含内容",
+                "Access to GitHub Copilot": "访问 GitHub Copilot",
+                    "Increase your productivity and accelerate software development.": "提升生产力，加快软件开发进程。",
+                "Unlimited repositories": "无限仓库",
+                    "Collaborate securely on public and private projects.": "在公开和私有项目上安全协作。",
+                "Integrated code reviews": "集成代码审查",
+                    "Boost code quality with built-in review tools.": "通过内置审查工具提升代码质量。",
+                "Automated workflows": "自动化工作流",
+                    "Save time with CI/CD integrations and GitHub Actions.": "使用 CI/CD 集成和 GitHub Actions 节省时间。",
+                "Community support": "社区支持",
+                    "Connect with developers worldwide for instant feedback and insights.": "与全球开发者即时交流，获取反馈和见解。",
+
         "Already have an account?": "已经有账户吗？",
         "Sign in →": "登录 →",
         "Welcome to GitHub!": "欢迎来到 GitHub!",
@@ -17899,11 +17916,35 @@ I18N["zh-CN"]["signup"] = { // 注册页
         ". For more information about GitHub's privacy practices, see the": "。更多关于 GitHub 隐私条款的信息，请参见",
         "GitHub Privacy Statement": "GitHub 隐私声明",
         ". We'll occasionally send you account-related emails.": "。我们偶尔会向您发送与账户相关的电子邮件。",
+
+        // 新版
+        "Sign up to GitHub": "注册 GitHub",
+            "Email": "电子邮件",
+            "Password": "密码",
+                "Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.": "密码应至少包含15个字符，或者至少包含8个字符且其中包括一个数字和一个小写字母。",
+            "Username": "用户名",
+            "Your Country/Region": "您的国家/地区",
+                "Select Country/Region": "选择国家/地区",
+                "For compliance reasons, we're required to collect country information to send you occasional updates and announcements.": "根据合规要求，我们需要收集您所在的国家/地区信息，以便向您发送最新的更新和公告。",
     },
     "regexp": [ // 正则翻译
         [/Username ([^ ]+) is not available./, "用户名 $1 不可用。"],
         [/([^ ]+) is available./, "用户名 $1 可用。"],
     ],
+};
+
+I18N["zh-CN"]["account_verifications"] = {
+    "static": {
+        ...I18N["zh-CN"]["signup"]["static"],
+
+        "Confirm your email address": "验证您的邮箱",
+            "We have sent a code to": "已发送验证码至",
+        "Enter code": "键入验证码",
+        "Didn't get your email?": "未收到邮件？",
+            "Resend the code": "重发验证码",
+            "update your email address": "修改邮箱",
+    },
+    "regexp": [],
 };
 
 I18N["zh-CN"]["notifications"] = { // 通知页面
