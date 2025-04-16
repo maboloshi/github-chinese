@@ -4372,6 +4372,30 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教师或学生申请，解锁教育旅程所需的工具和资源。",
             "You have a current student coupon applied.": "您当前已应用学生优惠券。",
             "Start an application": "申请",
+                "Education Benefits Application": "教育福利申请",
+                    "Select your role in education: *": "选择您的角色：*",
+                        "Teacher": "教师",
+                        "Student": "学生",
+
+                        "You have verified the email address": "您已验证邮件",
+                        "on your GitHub account. This academic domain is associated with the school": "。该域名属于：",
+                        "Unselect this school": "取消选择此学校",
+
+                        "Location share": "位置共享",
+                        "Location shared": "位置已共享",
+                        "Continue": "继续",
+
+                        "Please select the type of proof you would like to provide *": "请选择您希望提供的证明类型 *",
+                        "1. Dated school ID - Good": "1. 注明日期的学校证件 - 完整",
+                        "What is a valid proof of education?": "什么是有效的教育证明？",
+                        "Good": "完整",
+                            "proof requires infinite academic affiliation documentation most likely to help you be approved.": "的证明需要详尽的学术关系文件，以最大限度地帮助您通过审核。",
+                        "For": "部分",
+                            "proof types may lower your chances of being approved.": "证明类型可能会降低您的审核通过概率。",
+                        "Poor": "无效",
+                            "proof types are unlikely to be acceptable.": "的证明类型通常无法被接受。",
+
+                        "There was an error creating the discount request. Errors: Discount request could not be created. Discount request errors: School email must be verified on your GitHub account": "创建折扣请求时出错。错误信息：无法创建折扣请求。折扣请求错误：学校邮箱必须在您的 GitHub 账户中完成验证",
 
             "Approved": "批准",
             "Loading details": "加载详情",
