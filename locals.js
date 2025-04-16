@@ -17205,6 +17205,7 @@ I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 内容举报 /<user-name>
 
 I18N["zh-CN"]["homepage"] = { // 未登录的首页
     "static": { // 静态翻译
+        "GitHub Copilot is now available for free.": "免费使用 GitHub Copilot。",
         //"Let’s build from here": "让我们从这里开始",
         //"The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
         "Build and ship software on a single, collaborative platform": "在单一协作平台上构建和发布软件",
