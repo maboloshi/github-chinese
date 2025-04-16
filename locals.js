@@ -4373,16 +4373,24 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教师或学生申请，解锁教育旅程所需的工具和资源。",
             "You have a current student coupon applied.": "您当前已应用学生优惠券。",
             "Start an application": "申请",
+                "You have not submitted an application for education benefits.": "没有申请",
+
                 "Education Benefits Application": "教育福利申请",
                     "Select your role in education: *": "选择您的角色：*",
                         "Teacher": "教师",
                         "Student": "学生",
 
+                        "What is the name of your school? *": "学校名称 *",
+                            "If your school is not listed, then enter the full school name and continue. You will be asked to provide further information about your school on the next page. A minimum of two characters is required to find your school.": "如果您的学校未列出，请输入完整的学校名称并继续。下一页您将被要求提供有关学校的更多信息。查找您的学校至少需要输入两个字符。",
+                        "What is your school email address?": "教育邮箱地址",
+                            "Have a different email address you use with your school?": "您是否有一个与学校一起使用的不同电子邮件地址？",
+                            "Add it here.": "添加",
+
                         "You have verified the email address": "您已验证邮件",
                         "on your GitHub account. This academic domain is associated with the school": "。该域名属于：",
                         "Unselect this school": "取消选择此学校",
 
-                        "Location share": "位置共享",
+                        "Share Location": "位置共享",
                         "Location shared": "位置已共享",
                         "Continue": "继续",
 
