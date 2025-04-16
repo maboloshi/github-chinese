@@ -24332,23 +24332,6 @@ I18N["zh-CN"]["copilot"] = {
         // 中间
             // 模型选择窗
                 "Models": "模型",
-                //// Claude 3.5
-                //    "Enable Claude 3.5 Sonnet": "启用 Claude 3.5 Sonnet",
-                //        "Enable access to the latest Claude 3.5 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.5 Sonnet 模型。",
-                //        "Learn more about how GitHub Copilot serves Claude 3.5 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.5 Sonnet 提供服务。",
-                //// Claude 3.7
-                //    "Enable Claude 3.7 Sonnet": "启用 Claude 3.7 Sonnet",
-                //        "Enable access to the latest Claude 3.7 Sonnet model from Anthropic.": "允许访问 Anthropic 最新的 Claude 3.7 Sonnet 模型。",
-                //        "Learn more about how GitHub Copilot serves Claude 3.7 Sonnet": "了解更多关于 GitHub Copilot 如何为 Claude 3.7 Sonnet 提供服务。",
-                //    "Enable Claude 3.7 Sonnet Thinking": "启用 Claude 3.7 Sonnet Thinking",
-//
-                //// gemini 2.5 pro
-                //    "Enable Gemini 2.5 Pro": "启用 Gemini 2.5 Pro",
-                //        "Enable access to the latest Gemini 2.5 Pro model from Google.": "允许访问 Google 最新的 Gemini 2.5 Pro 模型。",
-                //        "Learn more about how GitHub Copilot serves Gemini 2.5 Pro": "了解更多关于 GitHub Copilot 如何为 Gemini 2.5 Pro 提供服务",
-                //
-                //// gpt-4.1
-
                 "Model capabilities": "模型限制",
                     "Limited capabilities (o1)": "功能限制（o1）",
                     "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
