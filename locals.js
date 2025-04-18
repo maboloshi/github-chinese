@@ -24474,6 +24474,11 @@ I18N["zh-CN"]["copilot"] = {
                         "Chat with your favorite tools and services": "使用您最喜欢的工具和服务聊天",
                         "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
                         "Browse marketplace": "前往市场",
+
+                        // 不支持
+                        "aren't supported by this model": "不支持此模型",
+                        "Switch back to the": "切回",
+                        "model or start a new conversation": "模型或新建对话",
             "Send now": "发送",
 
         // 漏洞相关
