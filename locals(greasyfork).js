@@ -384,6 +384,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Billing Overview": "账单概览",
         "Billing Usage": "计费用量",
         "Budgets": "预算",
+        "Code Security": "代码安全性",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -482,6 +483,15 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/([^ ]+) \((.+)\) \/ Achievements/, "$1($2) / 成就"], // github 账户名（昵称）/ 成就
         ["_regexp_end", "end"]
     ],
+};
+
+I18N["zh-CN"]["403"] = {
+    "static": { // 静态翻译
+        // 全站受限
+        "Access to this site has been restricted.": "访问受限",
+            "If you believe this is an error, please contact": "如您认为这是一个错误，请联系",
+            "Support": "支持",
+    }
 };
 
 I18N["zh-CN"]["public"] = { // 公共区域翻译
@@ -722,6 +732,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速导航并跳转到您所在的组织或仓库，并搜索最近的议题、拉取请求、项目等等。您还可以执行节省时间的命令，而无需将手指从键盘上移开！",
                     "To open the command palette:": "打开命令面板：",
                         "other:": "其他：",
+                "Organization Custom Instructions": "组织自定义指令",
+                    "Organization administrators can apply custom instructions across all Copilot chats in github.com.": "组织管理员可以在 GitHub.com 的所有 Copilot 聊天中应用自定义指令。",
                 "Copilot Workspace for Pull Requests": "适用于拉取请求的 Copilot 工作区",
                     "Copilot Workspace is a Copilot-native coding environment that helps you land high-quality pull requests faster by allowing you to edit and run code from your pull request without leaving GitHub.com.": "Copilot 工作区是 Copilot 的原生编码环境，允许您在不离开 GitHub.com 的情况下编辑和运行拉取请求中的代码，从而帮助您更快提交高质量的拉取请求。",
                     "Copilot Workspace is available to customers with access to the Copilot code review public preview.": "访问 Copilot 代码审查公开预览版的客户可使用 Copilot 工作区。",
@@ -1774,6 +1786,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Forked from": "复刻自", // 复刻仓库
 
         // 中间栏
+        "Feed": "动态",
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Learn with a tutorial project": "通过教程项目学习",
@@ -2999,6 +3012,9 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Notifications": "通知",
 
         "Access": "访问",
+        "Billing and plans": "账单和计划", // 旧版，暂时加回
+            "Plans and usage": "计划和使用情况",
+            "Spending limits": "支出限额",
         "Billing & Licensing": "账单 & 许可",
             "New": "新",
             "Usage": "使用情况",
@@ -3605,7 +3621,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         // 顶部提示
             "Successfully updated billing information.": "成功更新支付信息。",
             "For more information on using these billing pages": "有关使用这些账单页面的更多信息，",
-                "please refer to the docs content here": "请参阅此处的文档内容。",
+                "please refer to the docs content here": "请参阅此处的文档内容",
         
         // 概况
             "Current metered usage": "当前计费用量",
@@ -3644,6 +3660,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "No usage found": "无数据",
             
             // 底下计算部分
+                "More": "更多", // 小屏模式
                 "View details": "详情",
                 "consumed usage -": "计费 -",
                 "in discounts =": "折扣 =",
@@ -3689,16 +3706,30 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Actions Windows": "操作 Windows",
                 "Actions Linux": "操作 Linux",
                 "Actions macOS 3-core": "操作 macOS 三核",
+                "Codespaces compute 2-core": "代码空间 - 双核",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
-                
-            "Date": "日期",
-            "SKUs": "库存单位",
-            "Products": "产品",
-            "Repositories": "仓库",
-            "Units": "单位",
-            "Price/unit": "单价",
-            "Billed amount": "计费",
+
+            // 有上下文，后面重复部分直接省略
+            "Actions usage": "操作",
+            "Actions usage grouped by SKU": "操作 - 详细",
+            "Copilot usage": "Copilot",
+            "Copilot usage grouped by SKU": "Copilot - 详细",
+            "Codespaces usage": "代码空间",
+            "Codespaces usage grouped by SKU": "代码空间 - 详细",
+            "Git_lfs usage": "Git LFS",
+            "Git_lfs usage grouped by SKU": "Git LFS - 详细",
+            "Packages usage": "软件包",
+            "Packages usage grouped by SKU": "软件包 - 详细",
+
+            "Usage breakdown": "用量分析",               
+                "Date": "日期",
+                "SKUs": "库存单位",
+                "Products": "产品",
+                "Repositories": "仓库",
+                "Units": "单位",
+                "Price/unit": "单价",
+                "Billed amount": "计费",
 
         // 账户预算 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
@@ -4254,10 +4285,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}（UTC时间）`;
         }],
-        [/(Usage|codespaces|actions) (?:[^ ]+), (.+)/, (match, s1, p1) => {
+        [/(Usage|codespaces|actions|Codespaces storage|Codespaces compute 2-core|Actions Windows|Actions macOS 3-core|Actions Linux|Actions storage|All other) (?:[^ ]+), (.+)/, (match, s1, p1) => {
             //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间'};
+            var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Codespaces compute 2-core': '代码空间 - 双核','Actions Windows': '操作 Windows', 'Actions Linux': '操作 Linux','Actions macOS 3-core': '操作 macOS 三核','Actions storage': "操作存储",'All other': '其他'};
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `${translatedDate}` + s1Key[s1];// 星期几暂时省略
@@ -4281,6 +4312,16 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         }],
         [/This year \((\d+)\)/, "今年（$1）"],
         [/Last year \((\d+)\)/, "去年（$1）"],
+        [/(\d+)(AM|PM)/, (match, p1, p2) => {
+            // 运行规则：非12AM照搬，PM数字加12，12AM=0
+            let hour = parseInt(p1, 10);
+            if (p2 === "PM" && hour !== 12) {
+                hour += 12;
+            } else if (p2 === "AM" && hour === 12) {
+                hour = 0;
+            }
+            return `${hour}:00`;
+        }], // 计费用量 - 今天图表下方时间
         [/Top five repositories (today|this month|last month|this year|last year)/, function(all, time) {
             var timeKey = {
                 'today': '今天',
@@ -4309,8 +4350,14 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             var groupKey = {'None': '无','Product': '产品','SKU': '库存单位','Repository': '仓库'};
             return '分组：' + groupKey[group];
         }],
+        [/Usage for (.+)./, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}`; // 有标题作为上下文，直接省略，只剩日期
+        }],
         [/(\d+) min/, "$1 分"],
         [/([\d,+]\.\d+) GB-hr/, "$1 GB/时"],
+        [/(\d+\.\d+) hr/, "$1 小时"],
         // 账户预算
         [/(\d+) budgets?/, "$1 预算"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
@@ -5214,6 +5261,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "You currently have an active": "您当前拥有有效的",
                 "Copilot Pro subscription": "GitHub Copilot Pro 订阅",
                 "Get started by installing the extension in your preferred IDE.": "首先在您首选的 IDE 中安装扩展。",
+                "Get started by installing the extension in your preferred environment.": "首先在您首选环境中安装扩展。",
                 "Copilot in your IDE": "集成在 IDE",
                 "Copilot in the CLI": "在终端中使用",
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
@@ -7333,6 +7381,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Creating fork…": "正在创建复刻…",
 
             // "Owners": "所有者",
+                "Search owners": "搜索",
                 "Choose an owner": "选择所有者",
                     "(fork already exists)": "(复刻已存在)",
             // "Repository name": "仓库名称",
@@ -8654,6 +8703,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "removed a sub-issue": "移除子议题",
 
             // 右侧栏 补充
+            "Metadata": "元数据", // 小屏模式
                 // "Development": "进展",
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
@@ -8784,12 +8834,13 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Edits": "编辑",
                 "Most recent": "最近",
                 "Viewing edit": "查看编辑",
-                "Delete revision": "删除记录",
+                "Delete revision": "删除修订",
             "Reopen Issue": "重新打开议题",
                 "You do not have permissions to reopen this issue": "您没有权限重新打开此议题",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
             "Comment can not be empty": "评论不能为空",
+            "Add files": "添加文件", // 小屏模式
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
         // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
@@ -10522,6 +10573,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/expand all lines: ([^ ]+)/, "展开全部：$1"],
         [/collapse file: ([^ ]+)/, "折叠文件：$1"],
         [/collapse non diff lines: ([^ ]+)/, "折叠无差异行：$1"],
+        [/(\d+) tags?/, "$1 标签"], // 出现位置：某提交所跨标签数
     ],
 };
 
@@ -11661,8 +11713,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Startup failure": "失败",
                 "Cancelled": "取消",
                 "Action required": "请求操作",
+                "Waiting": "等待",
             "Total duration": "总时长",
             "Billable time": "计费时间",
+
+            "This workflow is waiting for": "该工作流程正在等待",
+                "to complete before running.": "完成后再运行。",
+                "Learn more about concurrency": "了解有关并发执行的更多信息",
 
             // 右侧中间栏
                 "This workflow graph cannot be shown": "无法显示此工作流图表",
@@ -14471,7 +14528,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
-            "Code security": "代码安全性",
+            "Code Security": "代码安全性",
                 "Code security and analysis": "代码安全性与分析",
                 "Deploy keys": "部署密钥",
                 "Secrets and variables": "机密和变量",
@@ -16424,6 +16481,7 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代
         // 代码安全性与分析 /<user-name>/<repo-name>/settings/security_analysis
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository. Unarchive your repository to access additional features.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。解除您仓库的存档以访问其他功能。", //存档仓库
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
+            "Code Security features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "代码安全功能有助于保持仓库的安全和更新。启用这些功能即表示您授予我们对仓库执行只读分析的权限。",
 
             "Private vulnerability reporting": "私下漏洞报告",
                 "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
@@ -24217,6 +24275,19 @@ I18N["zh-CN"]["copilot"] = {
                     "Delete link": "删除",
                         "Delete shared link and remove access for all users": "删除分享链接并移除所有用户的访问权限",
                 "Copy link": "复制链接",
+
+            // 分享
+            "Shared": "已分享",
+            "Conversation shared": "对话已分享",
+                "Only users with access to referenced private content can view this conversation.": "只有有权访问相关私人内容的用户才能查看此对话。",
+                "This conversation is private and only visible to you. Share it to make it accessible to others with the link.": "此对话为私密对话，仅您自己可见。通过分享链接，其他人才能访问此对话。",
+                "This conversation is now shared. Anyone with the link can view it. Keep in mind that it is live and publicly accessible.": "此对话已共享。任何拥有该链接的人均可查看此对话。请注意，该对话为实时且公开可访问的内容。",
+                "Conversation link will appear here after sharing": "对话链接将在分享后出现",
+                "Only visible to you": "私密",
+                "Visible to anyone with the link": "拥有链接者可见",
+
+                "Unshare": "取消",
+
             "Open menu": "菜单",
                 "Conversation": "对话",
                 "Prompt": "提示词",
@@ -24286,6 +24357,7 @@ I18N["zh-CN"]["copilot"] = {
                         "Search repositories": "搜索仓库",
                         "Fetching repositories…": "正在获取仓库",
                     "Close": "关闭",
+                "Image…": "图片…",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
                     "Extensions": "扩展",
