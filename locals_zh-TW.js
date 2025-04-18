@@ -431,7 +431,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         [/Skills/, "技能"],
         [/Sponsoring/, "捐助"],
         [/Stargazers/, "追星者"],
-        [/Forks?/, "復刻"],
+        [/Forks?/, "複刻"],
         [/Settings · Tags · ([^ ]+)/, "設置 · 標籤 · $1"],
         [/Tags?/, "標籤"],
         [/Edit release/, "編輯發行版"],
@@ -1118,7 +1118,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Stars": "星標",
             "Unstar": "已加星標",
             "Starred": "已加星標",
-            "Fork": "復刻",
+            "Fork": "複刻",
             "Save": "保存",
             "Saving…": "保存中…",
             "Saving...": "保存中...",
@@ -1774,7 +1774,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
             "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "準備好開始構建了嗎？為新想法創建一個倉庫或使用現有倉庫繼續為其做出貢獻。",
             "Create repository": "創建倉庫",
 
-        "Forked from": "復刻自", // 復刻倉庫
+        "Forked from": "複刻自", // 複刻倉庫
 
         // 中間欄
         "Feed": "動態",
@@ -1858,7 +1858,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
             "Stars": "星標",
                 "Repositories being starred by people": "被人們標星的倉庫",
             "Repositories": "倉庫",
-                "Repositories that are created or forked by people": "由人們創建或復刻的倉庫",
+                "Repositories that are created or forked by people": "由人們創建或複刻的倉庫",
             "Repository activity": "倉庫活動",
                 "Issues and pull requests from repositories": "來自倉庫的議題和拉取請求",
             "Follows": "關注",
@@ -1881,10 +1881,10 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         // 動態 狀態詞
         "starred": "星標了",
         "created": "創建了",
-        "forked from": "復刻自",
+        "forked from": "複刻自",
         "generated from": "創建自",
         "mirrored from": "鏡像自",
-        "forked": "復刻了",
+        "forked": "複刻了",
         "from": "來自",
         "for": "",
         "pushed to": "推送到",
@@ -1899,7 +1899,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         "created a repository": "創建了倉庫",
         "created a branch in": "創建了一個分支在",
         "in": "分支在",
-        "Forked to": "復刻為",
+        "Forked to": "複刻為",
         "of": "",
         "made": "將",
         "public": "設為公共",
@@ -1912,7 +1912,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         "All reactions": "所有看法",
 
         "published a release": "發佈發行版",
-        "forked a repository": "復刻倉庫",
+        "forked a repository": "複刻倉庫",
         "starred a repository": "星標倉庫",
         "sponsored": "贊助了",
         "followed": "關注了",
@@ -2177,7 +2177,7 @@ I18N["zh-TW"]["page-profile-public"] = { // 個人首頁（含組織）
                     "reporting abuse": "舉報濫用",
 
         // 倉庫
-            "Forked from": "復刻自",
+            "Forked from": "複刻自",
             "Updated": "更新於",
 
             // 許可證
@@ -2270,8 +2270,8 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
             "More": "更多",
             "Contribution settings": "貢獻設置",
 
-            // 復刻倉庫特有
-            "Forked from": "復刻自",
+            // 複刻倉庫特有
+            "Forked from": "複刻自",
             // 貢獻設置下拉菜單
             "Private contributions": "私人貢獻",
             "Turning on private contributions will show anonymized private activity on your profile.": "開啟私人貢獻則將在您的個人資料上顯示匿名的私人活動。",
@@ -2433,7 +2433,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
                 "Public": "公共",
                 "Private": "私有",
                 "Sources": "源碼",
-                "Forks": "復刻",
+                "Forks": "複刻",
                 "Archived": "存檔",
                 "Can be sponsored": "可贊助",
                 "Mirrors": "鏡像",
@@ -2459,7 +2459,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
                 "public": "公共",
                 "private": "私有",
                 "source": "源碼",
-                "forked": "復刻",
+                "forked": "複刻",
                 "archived": "存檔",
                 "sponsorable": "可贊助",
                 "mirror": "鏡像",
@@ -2490,7 +2490,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
 
             // 項目 狀態詞
             "Updated": "更新於",
-            "Forked from": "復刻自",
+            "Forked from": "複刻自",
 
             // 曲線圖提示
             "Past year of activity": "過去一年的活動",
@@ -2504,7 +2504,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
                     "Apply": "應用",
                     "Qualifier": "限定詞",
                         "Created": "已創建",
-                        "Total forks": "復刻總數",
+                        "Total forks": "複刻總數",
                         "Total good-first issues": "好的首發議題總數",
                         "Has": "包含文件",
                         "Total help-wanted issues": "求助議題總數",
@@ -2540,9 +2540,9 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
                             "Select items": "選擇項目",
                             "Select an item": "選擇項目",
                                 "Filter values": "篩選值",
-                                    // 復刻
-                                        "Only forks": "僅復刻",
-                                        "Exclude forks": "排除復刻",
+                                    // 複刻
+                                        "Only forks": "僅複刻",
+                                        "Exclude forks": "排除複刻",
                                     // 排序
                                         "Recently pushed": "最近推送",
                                         "Topics": "話題",
@@ -2554,7 +2554,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 倉庫標籤卡
                                         "Topics (ascending)": "主題（升序）",
                                         "Size (ascending)": "大小（降序）",
                                         "Total stars (ascending)": "星標總數（降序）",
-                                        "Total forks (ascending)": "復刻總數（降序）",
+                                        "Total forks (ascending)": "複刻總數（降序）",
                                         "Help-wanted issues (ascending)": "求助議題總數（升序）",
                                         "Help-wanted issues (descending)": "求助議題總數（降序）",
                                     // 可見性
@@ -2858,14 +2858,14 @@ I18N["zh-TW"]["page-profile/stars"] = { // 個人首頁 - 星標標籤卡
             "Type: Public" : "類型：公共",
             "Type: Private": "類型：私有",
             "Type: Sources": "類型：源碼",
-            "Type: Forks"  : "類型：復刻",
+            "Type: Forks"  : "類型：複刻",
             "Type: Mirrors": "類型：鏡像",
             "Type: Templates": "類型：模板",
                 "All"    : "全部",
                 "Public" : "公共",
                 "Private": "私有",
                 "Sources": "源碼",
-                "Forks"  : "復刻",
+                "Forks"  : "複刻",
                 "Can be sponsored": "可贊助",
                 "Mirrors": "鏡像",
                 "Templates": "模板",
@@ -2889,7 +2889,7 @@ I18N["zh-TW"]["page-profile/stars"] = { // 個人首頁 - 星標標籤卡
                 "public": "公共",
                 "private": "私有",
                 "source": "源碼",
-                "forked": "復刻",
+                "forked": "複刻",
                 "sponsorable": "可贊助",
                 "archived": "存檔",
                 "mirror": "鏡像",
@@ -2905,7 +2905,7 @@ I18N["zh-TW"]["page-profile/stars"] = { // 個人首頁 - 星標標籤卡
 
             // 項目 狀態詞
             "Updated": "更新於",
-            "Forked from": "復刻自",
+            "Forked from": "複刻自",
 
             "That’s it. You’ve reached the end of your stars.": "而已。您已經到了星海的盡頭。",
 
@@ -3343,7 +3343,7 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 賬戶
                 "Are you sure you want to do this?": "您確定要這麼做嗎？",
                 "This is extremely important.": "這是極其重要的。",
                 "We will": "我們將",
-                ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的復刻、Wiki、議題、拉取請求和 GitHub Pages 站點。",
+                ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的複刻、Wiki、議題、拉取請求和 GitHub Pages 站點。",
                 "You will no longer be billed, and after 90 days your username will be available to anyone on GitHub.": "您將不再被收取費用，並且 90 天后您的用戶名將被 GitHub 上的任何人使用。",
                 "For more help, read our article \"": "如需更多幫助，請閱讀我們的文章 “",
                 "Deleting your user account": "刪除您的賬戶",
@@ -4841,7 +4841,7 @@ I18N["zh-TW"]["settings/blocked_users"] = { // 設置 - 黑名單
             "Block a user": "拉黑用戶",
             "Blocking a user prevents the following on all your repositories:": "拉黑用戶可以防止所有倉庫中的以下操作：",
             "opening or commenting on issues or pull requests": "打開或評論議題或拉取請求",
-            "starring, forking, or watching": "加星標、復刻、關注",
+            "starring, forking, or watching": "加星標、複刻、關注",
             "adding or editing wiki pages": "添加或編輯 Wiki 頁面",
             "Additionally, blocked users are not able to:": "此外，被拉黑用戶無法：",
             "invite you as a collaborator to their repositories": "邀請您作為其倉庫的協作者",
@@ -4946,7 +4946,7 @@ I18N["zh-TW"]["settings/deleted_repositories"] = { // 設置 - 倉庫 - 刪除�
 
         // 刪除的倉庫 https://github.com/settings/deleted_repositories
             "Deleted repositories": "刪除的倉庫",
-            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "倉庫可能需要一個小時的時間才能顯示在這裡。您只能恢復不是復刻或沒有被複刻的倉庫。",
+            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "倉庫可能需要一個小時的時間才能顯示在這裡。您只能恢復不是複刻或沒有被複刻的倉庫。",
             "Learn more about restoring deleted repositories": "瞭解更多關於恢復已刪除倉庫的信息",
 
             "These repositories were deleted, but can't be restored by you. Contact support if you want to restore them.": "這些倉庫已被刪除，但您無法恢復。如果您想恢復它們，請聯繫 GitHub 支持人員。",
@@ -6140,8 +6140,8 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                     "Push ruleset bypass request was created, cancelled, completed, received a response, or a response was dismissed. Note: Delegated bypass for push rules is currently in beta and subject to change.": "推送規則集旁路請求已創建、取消、完成、收到響應或駁回響應。注：推送規則的委託旁路目前處於測試階段，可能會有更改。",
                 "Exemption request secret scanning": "秘密掃描豁免請求",
                     "Secret scanning push protection bypass request was created, cancelled, completed, received a response, or a response was dismissed. Note: Delegated bypass for push protection is currently in beta and subject to change.": "秘密掃描推送保護旁路請求已創建、取消、完成、收到響應或駁回響應。注：推送保護的授權旁路目前處於測試階段，可能會有更改。",
-                //"復刻": "",
-                    "Repository forked.": "倉庫復刻。",
+                //"複刻": "",
+                    "Repository forked.": "倉庫複刻。",
                 "Gollum": "咕嚕",
                     "Wiki page updated.": "Wiki 頁面的更新。",
                 "Issue comment": "議題評論",
@@ -6947,7 +6947,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
             "Some checks haven't completed yet": "部分檢查還未完成",
 
             "Jump to bottom": "跳到底部", //小屏模式
-            "Forked from": "復刻自", // 同上（發行版未登錄頁面）
+            "Forked from": "複刻自", // 同上（發行版未登錄頁面）
 
             "people": "人", // 提交
             "committed": "提交於", // 提交浮窗
@@ -7207,7 +7207,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
         [/This repository was archived by the owner on (.+). It is now read-only./, (match, p1) => {
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `此倉庫已由所有者於${translatedDate}存檔。它現在是隻讀的。`;
+            return `此倉庫已由所有者於${translatedDate}存檔。它現在是只讀的。`;
         }],
         [/, and ([^ ]+)/, ", 和 $1"],
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
@@ -7221,7 +7221,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
     ],
 };
 
-I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/復刻倉庫
+I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -7361,20 +7361,20 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/復刻倉庫
             "Importing complete! Your new repository": "導入完成！您的新倉庫",
             "is ready.": "已準備就緒。",
 
-        // 復刻倉庫 /<user-name>/<repo-name>/fork
-            "Create a new fork": "創建新復刻",
+        // 複刻倉庫 /<user-name>/<repo-name>/fork
+            "Create a new fork": "創建新複刻",
                 "A": " ",
-                "fork": "復刻",
-                "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一個倉庫的副本。復刻倉庫可以讓您在不影響原項目的情況下自由地進行修改實驗。",
-                "View existing forks.": "查看現有復刻。",
+                "fork": "複刻",
+                "is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.": "是一個倉庫的副本。複刻倉庫可以讓您在不影響原項目的情況下自由地進行修改實驗。",
+                "View existing forks.": "查看現有複刻。",
 
-            "No available destinations to fork this repository.": "沒有復刻此倉庫的可用目標。",
-            "Creating fork…": "正在創建復刻…",
+            "No available destinations to fork this repository.": "沒有複刻此倉庫的可用目標。",
+            "Creating fork…": "正在創建複刻…",
 
             // "Owners": "所有者",
                 "Search owners": "搜索",
                 "Choose an owner": "選擇所有者",
-                    "(fork already exists)": "(復刻已存在)",
+                    "(fork already exists)": "(複刻已存在)",
             // "Repository name": "倉庫名稱",
 
                 // "The repository": "倉庫",
@@ -7382,7 +7382,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/復刻倉庫
                 "Your new repository will be created as": "您的新倉庫將被創建為",
                     "The repository name can only contain ASCII letters, digits, and the characters": "倉庫名稱只能包含 ASCII 字母、數字和字符",
 
-            "By default, forks are named the same as their upstream repository. You can customize the name to distinguish it further.": "默認情況下，復刻的名稱與他們的上游倉庫相同。您可以自定義名稱以進一步區分它。",
+            "By default, forks are named the same as their upstream repository. You can customize the name to distinguish it further.": "默認情況下，複刻的名稱與他們的上游倉庫相同。您可以自定義名稱以進一步區分它。",
 
             "Copy the": "僅複製",
             "branch only": "分支",
@@ -7390,17 +7390,17 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/復刻倉庫
             "Contribute back to": "回饋給",
             "by adding your own branch.": "通過添加您自己的分支。",
 
-            "You are creating a fork in your personal account.": "您正在向您的個人賬戶中創建一個復刻。",
-            "Create fork": "創建復刻",
+            "You are creating a fork in your personal account.": "您正在向您的個人賬戶中創建一個複刻。",
+            "Create fork": "創建複刻",
 
     },
     "regexp": [ // 正則翻譯
         // [/([^ ]+) is available\./,"$1 名稱可用。"],
         [/You are creating a public repository in the ([^ ]+) organization./,"您正在 $1 組織中創建一個公共倉庫。"], // 創建組織的公共倉庫
         [/You are creating a private repository in the ([^ ]+) organization./,"您正在 $1 組織中創建一個私有倉庫。"], // 創建組織的私有倉庫
-        // [/\(fork already exists\)/, "（復刻已存在）"], // 復刻頁面
-        // [/\(repository already exists\)/, "（倉庫已存在）"], // 復刻頁面
-        [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 組織中創建一個復刻。"], // 復刻頁面
+        // [/\(fork already exists\)/, "（複刻已存在）"], // 複刻頁面
+        // [/\(repository already exists\)/, "（倉庫已存在）"], // 複刻頁面
+        [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 組織中創建一個複刻。"], // 複刻頁面
         [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 個提交者…"], // 倉庫導入第二頁
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 個組織"], // 用戶 浮動信息卡
@@ -7436,8 +7436,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 "Copy file permalink": "複製文件永久鏈接",
 
             // 操作條
-                "forked from": "復刻自",
-                "Public repository · Forked from": "公共倉庫 · 復刻自", // Android UA 下出現
+                "forked from": "複刻自",
+                "Public repository · Forked from": "公共倉庫 · 複刻自", // Android UA 下出現
                 "Public repository · Generated from": "公共倉庫 · 創建自", // 同上
                 "Public archive repository": "公共存檔倉庫",
                 "generated from": "創建自",
@@ -7465,8 +7465,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
 
                 "Star": "星標",
                 "Unstar": "已加星標",
-                "Fork": "復刻",
-                "Unfork": "取消復刻",
+                "Fork": "複刻",
+                "Unfork": "取消複刻",
 
                 "Sponsor": "贊助",
                 // 贊助對話框
@@ -7503,12 +7503,12 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 "Apply": "應用",
                 "Close": "關閉",
 
-                // 復刻下拉
-                "Cannot fork because repository is empty.": "無法復刻，因為倉庫是空的。",
-                "Cannot fork because you own this repository and are not a member of any organizations.": "不能復刻，因為您擁有該倉庫，而且不是任何組織的成員。",
-                "Existing forks": "現有的復刻",
-                "You don't have any forks of this repository.": "您沒有此倉庫的任何復刻。",
-                "Create a new fork": "創建復刻",
+                // 複刻下拉
+                "Cannot fork because repository is empty.": "無法複刻，因為倉庫是空的。",
+                "Cannot fork because you own this repository and are not a member of any organizations.": "不能複刻，因為您擁有該倉庫，而且不是任何組織的成員。",
+                "Existing forks": "現有的複刻",
+                "You don't have any forks of this repository.": "您沒有此倉庫的任何複刻。",
+                "Create a new fork": "創建複刻",
 
                 //
                 "Star this repository": "星標倉庫", //小屏模式
@@ -7571,7 +7571,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 // 上游倉庫分支重命名
                     "The default branch on the parent repository has been renamed!": "上游倉庫默認分支已被重新命名!",
                     "renamed its default branch": "默認分支重命名為",
-                    "You can rename this fork's default branch to match in": "您可以重命名此復刻默認分支以匹配，在",
+                    "You can rename this fork's default branch to match in": "您可以重命名此複刻默認分支以匹配，在",
                     "branch settings": "分支設置",
 
             "branch": "分支",
@@ -7685,10 +7685,10 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                             "This will create a new branch with any unpushed changes": "這將創建一個包含任何未推送更改的新分支",
                             "Checking branch status": "檢查分支情況",
                             "Create branch": "創建分支",
-                        "Export changes to a fork": "將更改導出到復刻",
+                        "Export changes to a fork": "將更改導出到複刻",
                             "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您沒有對此代碼空間的倉庫的寫訪問權限。這將創建一個新的倉庫分支在",
-                            ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該復刻，並將更改導出到新分支。",
-                            "Create fork": "創建復刻",
+                            ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該複刻，並將更改導出到新分支。",
+                            "Create fork": "創建複刻",
                         "Change machine type": "修改機器類型",
                             "Change codespace machine type": "修改代碼空間機器類型",
                             "Update codespace": "更新代碼空間",
@@ -7722,15 +7722,15 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 "This branch is not behind the upstream": "這個分支不落後於上游",
                 "Open pull request": "打開拉取請求",
 
-            "Sync fork": "同步復刻",
-                // 同步復刻按鈕下拉菜單
+            "Sync fork": "同步複刻",
+                // 同步複刻按鈕下拉菜單
                 "This branch is out-of-date": "此分支已過時",
                 "Update branch to merge the latest changes from the upstream repository into this branch.": "更新分支，將上游倉庫的最新修改合併到本分支。",
-                // [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通過從上游倉庫同步 $1 個提交來更新分支，以使該分支保持最新。"], // 同步復刻
+                // [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通過從上游倉庫同步 $1 個提交來更新分支，以使該分支保持最新。"], // 同步複刻
                 "Update branch to keep this branch up-to-date by syncing": "更新分支以保持該分支與最新狀態同步，需要同步",
                 "from the upstream repository.": "來自上游倉庫。",
-                "Learn more about syncing a fork": "瞭解更多關於復刻同步的信息",
-                // [/This branch is not behind the upstream ([^ ]+)/, "該分支不落後與上游 $1"], // 同步復刻
+                "Learn more about syncing a fork": "瞭解更多關於複刻同步的信息",
+                // [/This branch is not behind the upstream ([^ ]+)/, "該分支不落後與上游 $1"], // 同步複刻
                 "No new commits to fetch. Enjoy your day!": "尚無新提交。祝您愉快！", //相同
                 "Compare": "對比",
                 "Update branch": "更新分支",
@@ -7827,8 +7827,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
             "star": "星標",
             "stars": "星標",
             "watching": "關注",
-            "fork": "復刻",
-            "forks": "復刻",
+            "fork": "複刻",
+            "forks": "複刻",
             "Report repository": "舉報倉庫",
             "Public repository": "公共倉庫", //小屏模式
             "Private repository": "私有倉庫", //小屏模式
@@ -7900,8 +7900,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
             "More workflows": "更多工作流程",
             "Dismiss suggestions": "隱藏建議",
 
-        // 倉庫復刻中...
-            // [/Forking ([^ ]+)/, "復刻 $1 中"], // 復刻中...
+        // 倉庫複刻中...
+            // [/Forking ([^ ]+)/, "複刻 $1 中"], // 複刻中...
             "Generating your repository...": "正在創建您的倉庫...",
             "It should only take a few seconds.": "應該只需要幾秒鐘的時間。",
             "Refresh": "刷新",
@@ -7978,7 +7978,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
 
     },
     "regexp": [ // 正則翻譯
-        // 個人倉庫 貢獻和同步復刻操作後 信息提示條
+        // 個人倉庫 貢獻和同步複刻操作後 信息提示條
         [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功從上游 $1 中獲取並快速轉發。"],
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丟棄更改，並將分支與上游 $1 保持同步。"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
@@ -7997,7 +7997,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
         [/\+ ([\d,]+) contributors?/, "+ $1 位貢獻者"], // 倉庫首頁右側欄 貢獻者
         [/\+ ([\d,]+) environments?/, "+ $1 個環境"], // 倉庫首頁右側欄 環境
         [/\+ ([\d,]+) deployments?/, "+ $1 個部署"], // 倉庫首頁右側欄 部署
-        // 同步復刻
+        // 同步複刻
         [/Update branch to keep this branch up-to-date by syncing (\d+) commits? from the upstream repository./, "通過從上游倉庫同步 $1 個提交來更新分支，以使該分支保持最新。"],
         [/This branch is not behind the upstream ([^ ]+)/, "該分支不落後與上游 $1"],
         [/Discard (\d+) commits? to make this branch match the upstream repository. (\d+) commits? will be removed from this branch./, "丟棄 $1 個提交，以使本分支與上游倉庫一致。$2 個提交將從本分支中刪除。"],
@@ -8012,8 +8012,8 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
         [/(\d+) commits? behind/, "落後 $1 個提交"],
         [/(\d+) commits?/, "$1 個提交"], // 新版倉庫概述
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的電腦。"],
-        [/Forking ([^ ]+)/, "復刻 $1 中"], // 復刻中...
-        [/Fork your own copy of ([^ ]+)/, "復刻成您自己的 $1 副本"], // 復刻按鈕提示
+        [/Forking ([^ ]+)/, "複刻 $1 中"], // 複刻中...
+        [/Fork your own copy of ([^ ]+)/, "複刻成您自己的 $1 副本"], // 複刻按鈕提示
         [/will appear on ([^ ]+)'s member profile, visible only to organization members./, "將出現在 $1 的成員資料中，僅對組織成員可見。"],
         [/and ([^ ]+) were installed on this repository/, "和 $1 已安裝到此倉庫"], // 頂部提示：市場應用（如果有）
         [/([^ ]+) and (\d+) other licenses found/, function(all, lic, num){
@@ -9182,7 +9182,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
                     // 被拉黑
                         "Repository access limited": "倉庫訪問受限",
-                            "You do not have access to push to this repository and its owner has disabled forking.": "您無權推送到此倉庫，其所有者已禁用了復刻。",
+                            "You do not have access to push to this repository and its owner has disabled forking.": "您無權推送到此倉庫，其所有者已禁用了複刻。",
 
                     // [/Codespace \"(.+)\" stopped./, "代碼空間 “$1” 已停止。"],
                     // [/Codespace \"(.+)\" deleted./, "代碼空間 “$1” 已刪除。"],
@@ -9246,7 +9246,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                 "Search logs": "搜索日誌",
                 "Pushing new commits will allow the pull request to be re-opened.": "推送新的提交將允許重新打開拉取請求。", // 上面的句子走正則
             "Files changed": "更改的文件",
-                "No changes to show.": "無更改顯示。", // 刪除復刻倉庫的提交時出現
+                "No changes to show.": "無更改顯示。", // 刪除複刻倉庫的提交時出現
                 "This commit has no content.": "該提交無內容。", // 同上
               "authored": "撰寫於",
 
@@ -9516,8 +9516,8 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "This pull request is closed, but the": "此拉取請求已關閉，但是",
             "branch has unmerged commits.": "分支具有未合併的提交。",
             "branch has unmerged commits. You can delete this branch if you wish.": "分支具有未合併的提交。您可以根據需要刪除此分支。",
-            "If you wish, you can also delete this fork of": "如果需要，還可以刪除此復刻",
-            "If you wish, you can delete this fork of": "如果需要，可以刪除此復刻",
+            "If you wish, you can also delete this fork of": "如果需要，還可以刪除此複刻",
+            "If you wish, you can delete this fork of": "如果需要，可以刪除此複刻",
             "in the": "在",
             "settings": "設置",
 
@@ -9996,7 +9996,7 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
         // 變更比較 頁面 /<user-name>/<repo-name>/compare
             "Compare changes": "比較變更",
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比較跨分支，提交，標籤，和更多的變更。如果您需要，也可以",
-            "compare across forks": "比較復刻庫和源倉庫",
+            "compare across forks": "比較複刻庫和源倉庫",
             "Learn more about diff comparisons here": "點擊此處瞭解更多關於差異比較的信息",
             "This is a direct comparison between two commits made in this repository or its related repositories.": "這是本倉庫或其相關倉庫中兩次提交的直接比較。",
             "View the default comparison": "查看此範圍的默認比較",
@@ -10016,13 +10016,13 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
             "compare:": "比較分支：",
                 "Choose a head ref": "選擇頭部引用",
 
-            "Choose different branches or forks above to discuss and review changes.": "選擇不同的分支或復刻來討論和查看變化。",
+            "Choose different branches or forks above to discuss and review changes.": "選擇不同的分支或複刻來討論和查看變化。",
             "Learn about pull requests": "瞭解拉取請求",
 
             "Create pull request": "創建拉取請求",
 
             "Compare and review just about anything": "比較和審查任何文件",
-            "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，標籤，提交範圍和時間範圍。在同一倉庫和復刻的倉庫。",
+            "Branches, tags, commit ranges, and time ranges. In the same repository and across forks.": "分支，標籤，提交範圍和時間範圍。在同一倉庫和複刻的倉庫。",
             "Example comparisons": "比較例子",
 
             "Commit": "提交",
@@ -10036,7 +10036,7 @@ I18N["zh-TW"]["repository/compare"] = { // 倉庫 - 比較並創建拉取請求
             "Comparing changes": "比較變更",
             "Choose two branches to see what’s changed or to start a new pull request. If you need to, you can also": "選擇兩個分支，看看發生了什麼改變，或發起一個新的拉請求。如果您需要，您也可以",
             "learn more about diff comparisons": "瞭解更多關於差異比較的信息",
-            // "base fork:": "基復刻：",
+            // "base fork:": "基複刻：",
             "Documentation has changed since you last contributed": "文件已發生變化，自您上次提交文件於",
             ". Take a look before submitting a pull request:": "。在提交拉取請求前，請先看一下：",
             "Contributing guidelines": "貢獻指南",
@@ -10663,14 +10663,14 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽代碼
                     "Download raw file": "下載原始文件",
                 // 文件編輯圖標
                     "Edit this file": "編輯本文件",
-                    "Edit the file in your fork of this project": "在您的復刻中編輯文件",
+                    "Edit the file in your fork of this project": "在您的複刻中編輯文件",
                         "Edit file": "編輯文件",
                             "Edit in place": "就地編輯",
                         "Open with...": "打開...",
                             "You must be on a branch to make or propose changes to this file": "您必須在分支上才能對該文件進行修改或提出修改建議",
 
                     // 按鈕提示
-                    "Fork this repository and edit the file": "復刻此倉庫並編輯文件",
+                    "Fork this repository and edit the file": "複刻此倉庫並編輯文件",
                 // 符號面板圖標
                     "Open symbols panel": "打開符號面板",
                     "Close symbols panel": "關閉符號面板",
@@ -11359,7 +11359,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
         // 頂部提示
             "Actions Enabled.": "操作已啟用。",
 
-        // 復刻倉庫操作頁面提示
+        // 複刻倉庫操作頁面提示
             "Workflows aren’t being run on this forked repository": "這個分支倉庫並未運行任何工作流程。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因為這個倉庫在被分支時含有工作流文件，我們已禁止在此分支上運行它們。在開啟此倉庫的操作之前，請務必理解配置的工作流程及其預期的使用方式。",
             "I understand my workflows, go ahead and enable them": "我已理解我的工作流程，可以放心啟用它們。",
@@ -11574,7 +11574,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
 
             "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此計劃工作流程已禁用，因為此倉庫至少 60 天沒有活動。",
             "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days. Enable this workflow to resume scheduled runs.": "此計劃的工作流程已禁用，因為此倉庫至少有 60 天沒有活動。啟用此工作流程可恢復計劃運行。",
-            "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此計劃工作流程已被禁用，因為計劃工作流程在復刻倉庫中默認被禁用。",
+            "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此計劃工作流程已被禁用，因為計劃工作流程在複刻倉庫中默認被禁用。",
             "This workflow was disabled manually.": "工作流程已被手動禁用。",
             "This workflow is": "此工作流程正在等待維護者",
                 "awaiting approval": "批准",
@@ -12054,7 +12054,7 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
                     "for this commit and start a pull request": "為這個提交，並且發起一個拉取請求",
                     "Learn more about pull requests": "瞭解更多關於拉取請求的信息",
 
-                "Something went wrong. Please fork the project, then try from your fork.": "出錯了。請復刻該項目，然後從您的復刻處嘗試。",
+                "Something went wrong. Please fork the project, then try from your fork.": "出錯了。請複刻該項目，然後從您的複刻處嘗試。",
 
             // 底部欄
                 "Use": "使用",
@@ -12068,27 +12068,27 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
 
         // 編輯文件頁面 /<user-name>/<repo-name>/edit/<branch>/<file>
             // 非本人倉庫
-                "You need to fork this repository to propose changes.": "您需要復刻此倉庫以提出更改。",
-                    "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您無法直接編輯此倉庫——您需要將其復刻並從那裡提出您的更改。",
-                "Fork this repository": "復刻此倉庫",
-                    "Learn more about forks": "瞭解更多關於復刻的信息",
+                "You need to fork this repository to propose changes.": "您需要複刻此倉庫以提出更改。",
+                    "Sorry, you’re not able to edit this repository directly—you need to fork it and propose your changes from there instead.": "抱歉，您無法直接編輯此倉庫——您需要將其複刻並從那裡提出您的更改。",
+                "Fork this repository": "複刻此倉庫",
+                    "Learn more about forks": "瞭解更多關於複刻的信息",
 
                 "You have unsaved changes on this file that can be restored.": "您可以恢復該文件上未保存的更改。",
                     "Discard": "丟棄",
                     "Restore": "恢復",
 
-                "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在對沒有寫入權限的項目進行更改。提交更改會將其寫入您的復刻",
+                "You’re making changes in a project you don’t have write access to. Submitting a change will write it to a new branch in your fork": "您正在對沒有寫入權限的項目進行更改。提交更改會將其寫入您的複刻",
                 ", so you can send a pull request.": " 中的新分支，這樣您就可以發送拉取請求。",
 
-            // 復刻倉庫過舊
-                "Sorry, it looks like your fork is outdated!": "抱歉，您的復刻好像過時了！",
+            // 複刻倉庫過舊
+                "Sorry, it looks like your fork is outdated!": "抱歉，您的複刻好像過時了！",
                 "You’ll have to bring it up to date before you can propose changes.": "在提出修改意見之前，您必須對其進行更新。",
-                "Update your fork": "更新您的復刻",
+                "Update your fork": "更新您的複刻",
 
             // 組織倉庫 編輯文件頁面
                 "You’re making changes in a project you don’t have write access to. We’ve": "您正在對沒有寫入權限的項目進行更改。我們已經",
-                "created a fork of this project": "為該項目創建復刻",
-                "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建議的更改。提交更改會將其寫入復刻中的新分支，這樣您就可以發送拉取請求。",
+                "created a fork of this project": "為該項目創建複刻",
+                "for you to commit your proposed changes to. Submitting a change will write it to a new branch in your fork, so you can send a pull request.": "供您提交建議的更改。提交更改會將其寫入複刻中的新分支，這樣您就可以發送拉取請求。",
 
             // 混合換行符
                 "We’ve detected the file has mixed line endings. When you commit changes we will normalize them to": "我們檢測到該文件具有混合行結尾。當您提交更改時，我們會將它們標準化為",
@@ -12468,7 +12468,7 @@ I18N["zh-TW"]["repository/branches"] = { // 倉庫 - 分支頁面
             "New branch": "新建分支",
                 // 創建分支對話框
                 "Branch source": "源分支",
-                    "Choose from this fork or its upstream repository.": "從此復刻或其上游倉庫中進行選擇。",
+                    "Choose from this fork or its upstream repository.": "從此複刻或其上游倉庫中進行選擇。",
                     "Choose a source branch": "選擇源分支",
                 "Share feedback": "分享反饋",
             "Search branches…": "搜索分支…",
@@ -13546,7 +13546,7 @@ I18N["zh-TW"]["repository/security"] = { // 倉庫 - 安全頁面
 
         // 新建安全公告草案 /<user-name>/<repo-name>/security/advisories/new
             "Open a draft security advisory": "打開一個安全公告草案",
-            "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打開後，您可以與協作者私下討論，並創建一個臨時的私有復刻，在那裡您們可以協作進行修復。如果您已經修復了該漏洞，只需填寫安全公告草案，然後發佈即可。",
+            "After the draft security advisory is open, you can privately discuss it with collaborators and create a temporary private fork where you can collaborate on a fix. If you've already fixed the vulnerability, just fill out the draft security advisory and then publish it.": "在安全公告草案打開後，您可以與協作者私下討論，並創建一個臨時的私有複刻，在那裡您們可以協作進行修復。如果您已經修復了該漏洞，只需填寫安全公告草案，然後發佈即可。",
 
             "Advisory Details": "公告詳情",
             "Title *": "標題 *",
@@ -13717,7 +13717,7 @@ I18N["zh-TW"]["repository-insights-menu"] = { // 倉庫 -> 洞察 - 公共部分
             // "Punch card": "時刻",
             "Network": "網絡",
             // "Members": "成員",
-            "Forks": "復刻",
+            "Forks": "複刻",
             "Actions Usage Metrics": "操作使用情況",
             "Actions Performance Metrics": "操作數據看板",
 
@@ -13779,7 +13779,7 @@ I18N["zh-TW"]["repository/pulse"] = { // 倉庫 -> 洞察 - 統計
             "commits authored by": "次提交，作者：",
 
             "Want to help out?": "想幫忙嗎？",
-            "Fork this repository": "復刻倉庫",
+            "Fork this repository": "複刻倉庫",
             "Release published by": "個發行版已發佈由",
             "Releases published by": "個發行版已發佈由",
             "published": "發佈",
@@ -14343,7 +14343,7 @@ I18N["zh-TW"]["repository/network/updates"] = { // 倉庫 -> 洞察 - 依賴關�
         // 依賴關係圖 - Dependabot /network/updates
             "Enable Dependabot": "啟用 Dependabot",
             "Dependabot isn't enabled": "未啟用 Dependabot",
-            "Dependabot isn't enabled on forks by default": "默認情況下，Dependabot 不會在復刻上啟用。",
+            "Dependabot isn't enabled on forks by default": "默認情況下，Dependabot 不會在複刻上啟用。",
 
             "Dependabot version updates aren't configured yet": "尚未配置 Dependabot 版本更新",
             "Dependabot creates pull requests to keep your dependencies up-to-date.": "Dependabot 創建拉取請求以保持您的依賴項是最新的。",
@@ -14387,7 +14387,7 @@ I18N["zh-TW"]["repository/network"] = { // 倉庫 -> 洞察 - 網絡圖
             "Network graph": "網絡圖",
             "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to.": "最近提交到此倉庫的時間軸及其網絡圖按最近推送的順序排序。",
 
-            "The repository network shows the 100 most recently pushed forks.": "倉庫網絡圖顯示最近推送的 100 個復刻。",
+            "The repository network shows the 100 most recently pushed forks.": "倉庫網絡圖顯示最近推送的 100 個複刻。",
 
             "Loading graph data": "加載網絡圖數據",
             "Keyboard shortcuts available": "可用的鍵盤快捷鍵",
@@ -14398,17 +14398,17 @@ I18N["zh-TW"]["repository/network"] = { // 倉庫 -> 洞察 - 網絡圖
     ],
 };
 
-I18N["zh-TW"]["repository/network/members"] = { // 倉庫 -> 洞察 - 復刻
+I18N["zh-TW"]["repository/network/members"] = { // 倉庫 -> 洞察 - 複刻
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
 
-        // 復刻 - 樹形視圖 /<user-name>/<repo-name>/network/members
+        // 複刻 - 樹形視圖 /<user-name>/<repo-name>/network/members
             "switch to list view": "切換到列表視圖",
 
-            "No one has forked this repository yet.": "目前，暫無人復刻該倉庫。",
-            "Forks are a great way to contribute to a repository. After": "復刻是給該倉庫做貢獻的好方法。首先",
-            "forking a repository": "復刻倉庫",
+            "No one has forked this repository yet.": "目前，暫無人複刻該倉庫。",
+            "Forks are a great way to contribute to a repository. After": "複刻是給該倉庫做貢獻的好方法。首先",
+            "forking a repository": "複刻倉庫",
             ", you can send the original author a": "，然後您可向原作者發送",
             "pull request": "拉取請求",
 
@@ -14420,23 +14420,23 @@ I18N["zh-TW"]["repository/network/members"] = { // 倉庫 -> 洞察 - 復刻
     ],
 };
 
-I18N["zh-TW"]["repository/forks"] = { // 倉庫 -> 洞察 - 復刻
+I18N["zh-TW"]["repository/forks"] = { // 倉庫 -> 洞察 - 複刻
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
 
-        // 復刻 - 列表視圖 /<user-name>/<repo-name>/forks
+        // 複刻 - 列表視圖 /<user-name>/<repo-name>/forks
             "Switch to tree view": "切換到樹形視圖",
 
-            "No one has forked this repository yet": "目前，暫無人復刻該倉庫",
-            "Forks are a great way to contribute to a repository. After": "復刻是給該倉庫做貢獻的好方法。首先",
-            "forking a repository": "復刻倉庫",
+            "No one has forked this repository yet": "目前，暫無人複刻該倉庫",
+            "Forks are a great way to contribute to a repository. After": "複刻是給該倉庫做貢獻的好方法。首先",
+            "forking a repository": "複刻倉庫",
             ", you can send the original author a": "，然後您可向原作者發送",
             "pull request": "拉取請求",
 
-            "No forked repositories found": "尚無復刻倉庫",
+            "No forked repositories found": "尚無複刻倉庫",
             "Try changing your filters, or search for": "嘗試更改篩選器，或搜索",
-            "active forked repositories": "活躍的復刻倉庫",
+            "active forked repositories": "活躍的複刻倉庫",
 
             "Period:": "週期:",
                 "Filter by period": "篩選週期",
@@ -14456,7 +14456,7 @@ I18N["zh-TW"]["repository/forks"] = { // 倉庫 -> 洞察 - 復刻
                 "Inactive": "不活躍",
                     "Repositories with no push activity": "無推送活動的倉庫",
                 "Network": "網絡",
-                    "Forks of other forks": "其他復刻的復刻",
+                    "Forks of other forks": "其他複刻的複刻",
                 "Archived": "存檔",
                     "Archived repositories": "已存檔的倉庫",
                 "Starred": "星標",
@@ -14490,7 +14490,7 @@ I18N["zh-TW"]["repository-settings-menu"] = { // 倉庫設置公共部分
         // >>>>>>>>>>>>>>>>>>   倉庫設置 公共部分  <<<<<<<<<<<<<<<<<<<
             // 頂部提醒欄
             "Most repository settings are hidden for archived repositories. This repository must be unarchived to change them.": "對於存檔的倉庫，大多數倉庫設置都是隱藏的。 必須解除倉庫存檔才能更改它們。",
-            "This repository has been archived by the owner. It is now read-only.": "此倉庫已由所有者存檔。它現在是隻讀的。",
+            "This repository has been archived by the owner. It is now read-only.": "此倉庫已由所有者存檔。它現在是只讀的。",
             "Repository settings saved.": "倉庫設置已保存。",
 
 
@@ -14637,8 +14637,8 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Give contributors issue templates that help you cut through the noise and help them push your project forward.": "為貢獻者提供議題模板，幫助您消除干擾並幫助他們推進您的項目。",
             "Set up templates": "設置模板",
 
-            "Allow forking": "允許復刻", // 組織倉庫
-            "If disabled, existing forks will be unaffected.": "如果禁用，現有復刻將不受影響。", // 組織倉庫
+            "Allow forking": "允許複刻", // 組織倉庫
+            "If disabled, existing forks will be unaffected.": "如果禁用，現有複刻將不受影響。", // 組織倉庫
 
             // 贊助
             "Sponsorships": "贊助",
@@ -14728,9 +14728,9 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
 
             "Danger Zone": "危險區",
             "Change repository visibility": "更改倉庫可見性",
-            "You cannot change the visibility of a fork. please": "您無法更改復刻倉庫的可見性。請",
+            "You cannot change the visibility of a fork. please": "您無法更改複刻倉庫的可見性。請",
             "Duplicate the repository": "複製倉庫",
-            "For security reasons, you cannot change the visibility of a fork.": "出於安全原因，您無法更改復刻倉庫的可見性。",
+            "For security reasons, you cannot change the visibility of a fork.": "出於安全原因，您無法更改複刻倉庫的可見性。",
 
             // 更改倉庫可見性對話框
             "Change visibility": "更改可見性",
@@ -14741,7 +14741,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "I want to make this repository public": "我想將此倉庫設為公開",
                 "The code will be visible to everyone who can visit https://github.com": "所有可以訪問 https://github.com 的人都可以看到代碼",
                 "Attachments uploaded to this repository's issues and pull requests will not be accessible unless it is made private again.": "上傳到此倉庫的議題和拉取請求的附件將無法訪問，除非再次設為私有。",
-                "Anyone can fork your repository.": "任何人都可以復刻您的倉庫。",
+                "Anyone can fork your repository.": "任何人都可以複刻您的倉庫。",
                 "All push rulesets will be disabled.": "所有推送規則集都將被禁用。",
                 "Your changes will be published as activity.": "您的更改將作為活動發佈。",
                 "Make this repository public": "我想將此倉庫設為公開",
@@ -14755,7 +14755,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository.": "依賴關係圖和 Dependabot 警報將保持啟用，並有權限對該倉庫進行只讀分析。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository. Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "依賴關係圖和 Dependabot 警報將繼續啟用，並允許對該倉庫執行只讀分析。除非為該倉庫啟用了 GitHub 高級安全功能，否則任何自定義的 Dependabot 警報規則都將被禁用。",
                 "Code scanning will become unavailable.": "代碼掃描將變得不可用。",
-                "Current forks will remain public and will be detached from this repository.": "當前的復刻將保持公開，並將從該倉庫中分離出來。",
+                "Current forks will remain public and will be detached from this repository.": "當前的複刻將保持公開，並將從該倉庫中分離出來。",
                 "Make this repository private": "將此倉庫設為私有",
                 "I have read and understand these effects": "我已閱讀並理解這些影響",
 
@@ -14790,10 +14790,10 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "將此倉庫轉讓給另一位用戶或您可以創建倉庫的組織。",
             "Organization members cannot transfer repositories": "組織成員沒有轉讓所有權的權限",
 
-            "Leave fork network": "離開復刻網絡",
-            "Can't leave the fork network because this fork has child forks.": "無法離開復刻網絡，因為此復刻有子復刻。",
-            "Can't detach forks larger than 1 GB.": "無法解除大於 1 GB 的復刻關聯。",
-            "Unlink this repository from the fork network and make it standalone.": "將該倉庫從復刻網絡中解除關聯，使其成為獨立倉庫。",
+            "Leave fork network": "離開複刻網絡",
+            "Can't leave the fork network because this fork has child forks.": "無法離開複刻網絡，因為此複刻有子複刻。",
+            "Can't detach forks larger than 1 GB.": "無法解除大於 1 GB 的複刻關聯。",
+            "Unlink this repository from the fork network and make it standalone.": "將該倉庫從複刻網絡中解除關聯，使其成為獨立倉庫。",
 
             "Archive this repository": "存檔倉庫",
             "Mark this repository as archived and read-only.": "將此倉庫標記為已存檔和只讀。",
@@ -14801,7 +14801,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             // 存檔倉庫對話框
             "Archive repository": "存檔倉庫",
             "This repository will become read-only.": "該倉庫將設置為只讀。",
-            "You will still be able to fork the repository and unarchive it at any time.": "您仍然可以隨時訪問復刻倉庫並取消存檔。",
+            "You will still be able to fork the repository and unarchive it at any time.": "您仍然可以隨時訪問複刻倉庫並取消存檔。",
             "Unexpected bad things will happen if you don’t read this!": "如果您不閱讀此說明，將會發生意想不到的事情！",
             "All scheduled workflows will stop running.": "所有預定的工作流程將停止運行。",
             "Security features will be unavailable:": "安全功能將無法使用：",
@@ -14813,7 +14813,7 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Please type": "請鍵入",
             "to confirm.": "進行確定。",
             "I understand the consequences, archive this repository": "我明白後果，依然存檔該倉庫",
-            // "This repository has been archived by the owner. It is now read-only.": "此倉庫已由所有者存檔。它現在是隻讀的。",
+            // "This repository has been archived by the owner. It is now read-only.": "此倉庫已由所有者存檔。它現在是只讀的。",
 
             // 頂部提醒
             // [/Your repository \"([^ ]+)\" was successfully archived./, "您的倉庫 “$1” 已成功存檔。"], //倉庫存檔
@@ -14837,10 +14837,10 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
             "Once you delete a repository, there is no going back. Please be certain.": "您一旦刪除倉庫，將再也無法恢復。請確認。",
             "Organization members cannot delete repositories.": "組織成員沒有刪除倉庫的權限",
 
-            // 離開復刻網絡對話框
-                "This will permanently remove the fork relationship to the upstream repository": "這將永久移除與上游倉庫的復刻關係：",
+            // 離開複刻網絡對話框
+                "This will permanently remove the fork relationship to the upstream repository": "這將永久移除與上游倉庫的複刻關係：",
                 "will become a standalone repository and will no longer be able to fetch upstream updates or propose changes to the upstream repository": "將成為獨立倉庫，無法再獲取上游更新，也無法向原倉庫提交更改：",
-                "cannot rejoin the fork network.": "不能重新加入復刻網絡。",
+                "cannot rejoin the fork network.": "不能重新加入複刻網絡。",
 
             // 頂部提醒
             // [/Your repository \"([^ ]+)\" was successfully unarchived./, "您的倉庫 “$1” 已成功解除存檔。"], //倉庫解除存檔
@@ -14872,8 +14872,8 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
         [/(\d+) branch protection rules?/, "$1 項分支保護規則"], // 禁用/重啟啟用分支保護
         [/Delete/, "刪除"],
         [/Default branch changed to ([^ ])/, "默認分支更改為 $1"],
-        // 離開復刻網絡
-        [/Forked from ([^ ])/, "復刻自 $1"],
+        // 離開複刻網絡
+        [/Forked from ([^ ])/, "複刻自 $1"],
     ],
 };
 
@@ -15509,7 +15509,7 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 倉庫設置 - 規則 - 規則
                         "Only allow users with bypass permission to create matching refs.": "只允許具有繞過權限的用戶創建匹配的引用。",
                     "Restrict updates": "限制更新",
                         "Only allow users with bypass permission to update matching refs.": "只允許具有繞過權限的用戶更新匹配的引用。",
-                            "Allow fork syncing": "允許復刻倉庫同步",
+                            "Allow fork syncing": "允許複刻倉庫同步",
                                  "Branch can pull changes from its upstream repository": "分支可從上游倉庫中拉取更改",
                     "Restrict deletions": "限制刪除",
                         "Only allow users with bypass permissions to delete matching refs.": "只允許具有繞過權限的用戶刪除匹配的引用。",
@@ -15782,23 +15782,23 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 倉庫設置 - 操作 /<user
 
                 "days": "天",
 
-            "Fork pull request workflows": "復刻拉取請求工作流程",
-                "Run workflows from fork pull requests": "從復刻拉取請求運行工作流程",
-                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "這告訴 Actions 運行工作流程，來自倉庫復刻的拉取請求。請注意，這樣做將使這些復刻的維護者有能力在源碼庫上使用具有讀取權限的令牌。",
-                "Send write tokens to workflows from fork pull requests.": "從復刻拉取請求，發送可寫令牌到工作流程",
+            "Fork pull request workflows": "複刻拉取請求工作流程",
+                "Run workflows from fork pull requests": "從複刻拉取請求運行工作流程",
+                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "這告訴 Actions 運行工作流程，來自倉庫複刻的拉取請求。請注意，這樣做將使這些複刻的維護者有能力在源碼庫上使用具有讀取權限的令牌。",
+                "Send write tokens to workflows from fork pull requests.": "從複刻拉取請求，發送可寫令牌到工作流程",
                     "This tells Actions to send tokens with": "這告訴 Actions 發送令牌",
                     "write": "寫入",
-                    "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "權限到工作流程，來自倉庫復刻的拉取請求。請注意，這樣做將授予這些復刻的維護者",
+                    "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "權限到工作流程，來自倉庫複刻的拉取請求。請注意，這樣做將授予這些複刻的維護者",
                     "permissions against the source repository.": "權限，針對源倉庫。",
-                "Send secrets to workflows from fork pull requests.": "從復刻拉取請求，發送機密到工作流程",
-                    "This tells Actions to send repository secrets to workflows from pull requests originating from repository forks.": "這告訴 Actions 發送倉庫機密到工作流程，來自倉庫復刻的拉取請求。",
+                "Send secrets to workflows from fork pull requests.": "從複刻拉取請求，發送機密到工作流程",
+                    "This tells Actions to send repository secrets to workflows from pull requests originating from repository forks.": "這告訴 Actions 發送倉庫機密到工作流程，來自倉庫複刻的拉取請求。",
 
-            "Approval for running fork pull request workflows from contributors": "允許貢獻者運行復刻拉取請求工作流",
+            "Approval for running fork pull request workflows from contributors": "允許貢獻者運行複刻拉取請求工作流",
                 "Choose which subset of users will require approval before running workflows on their pull requests. Both the pull request author and the actor of the pull request event triggering the workflow will be checked to determine if approval is required. If approval is required, a user with write access to the repository must": "選擇在拉取請求上運行工作流之前需要批准的用戶子集。將檢查拉取請求作者和觸發工作流的拉取請求事件的行為者，以確定是否需要批准。如果需要批准，則必須由具有寫權限的用戶",
                 "approve the pull request workflow to be run.": "批准才能運行拉取請求工作流。",
-            "Fork pull request workflows from outside collaborators": "從外部協作者，復刻拉取請求工作流程",
+            "Fork pull request workflows from outside collaborators": "從外部協作者，複刻拉取請求工作流程",
                 "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "選擇哪些外部協作者的子集需要批准才能對他們的拉取請求運行工作流程。",
-                "Learn more about approving workflow runs from public forks.": "瞭解更多關於批准來自公共復刻的工作流運行的信息。",
+                "Learn more about approving workflow runs from public forks.": "瞭解更多關於批准來自公共複刻的工作流運行的信息。",
             "Require approval for first-time contributors who are new to GitHub": "要求對首次加入 GitHub 的貢獻者進行批准審查",
                 "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近創建 GitHub 賬戶的首次貢獻者才需要獲得批准才能運行工作流程。",
                 "Only users who are both new on GitHub and who have never had a commit or pull request merged into this repository will require approval to run workflows.": "只有新加入 GitHub 和從未有提交或拉取請求合併到該倉庫的用戶才需要批准運行工作流。",
@@ -15816,7 +15816,7 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 倉庫設置 - 操作 /<user
                 "Read and write permissions": "讀取和寫入權限",
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在倉庫中對所有作用域具有讀和寫的權限。",
                 "Read repository contents and packages permissions": "讀取倉庫的內容和軟件包的權限",
-                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在倉庫中僅對內容和軟件包作用域具有隻讀的權限。",
+                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在倉庫中僅對內容和軟件包作用域具有只讀的權限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 是否可以創建拉取請求或提交批准拉取請求審查。",
                         "Allow GitHub Actions to create and approve pull requests": "允許 GitHub Actions 創建和批准拉取請求",
 
@@ -15952,8 +15952,8 @@ I18N["zh-TW"]["repository/settings/hooks"] = { // 倉庫設置 - Web 鉤子 /<us
                         "Discussion comment created, edited, or deleted.": "討論評論的創建、編輯或刪除。",
                     // "Discussion": "討論",
                         "Discussion created, edited, closed, reopened, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "討論的創建、編輯、關閉、重新打開、置頂、取消置頂、鎖定、解鎖、轉移、答覆、取消答覆、標記、取消標記、更改其類別或刪除。",
-                    "Forks": "復刻",
-                        "Repository forked.": "倉庫復刻。",
+                    "Forks": "複刻",
+                        "Repository forked.": "倉庫複刻。",
                     "Issue comments": "議題評論",
                         "Issue comment created, edited, or deleted.": "議題評論的創建、編輯或刪除。",
                     // "Issue": "議題",
@@ -16346,7 +16346,7 @@ I18N["zh-TW"]["repository/settings/pages"] = { // 倉庫設置頁面(含組織�
             "GitHub Pages is designed to host your personal, organization, or project pages from a GitHub repository.": "GitHub Pages 旨在從 GitHub 倉庫中託管您的個人、組織或項目頁面。",
             "Learn more about GitHub Pages": "瞭解更多關於 GitHub Pages 的信息",
             // 存檔時 提醒
-            "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "該倉庫已存檔。相關的 GitHub Pages 網站仍然發佈，但設置是隻讀的。",
+            "This repository has been archived. The associated GitHub Pages site remains published but settings are read-only.": "該倉庫已存檔。相關的 GitHub Pages 網站仍然發佈，但設置是只讀的。",
 
             // 已發佈時
             "Your site is live at": "您的站點在",
@@ -16555,7 +16555,7 @@ I18N["zh-TW"]["repository/settings/security_analysis"] = { // 倉庫設置 - 代
                 // 組織倉庫
                     "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 進行代碼掃描不適用於該倉庫。",
 
-                    "GitHub Actions is disabled on this repository because it is a fork. To use code scanning please": "GitHub 操作已在此倉庫禁用，因為它是一個復刻。要使用代碼掃描，請",
+                    "GitHub Actions is disabled on this repository because it is a fork. To use code scanning please": "GitHub 操作已在此倉庫禁用，因為它是一個複刻。要使用代碼掃描，請",
                     "enable it": "啟用它",
                     "GitHub Actions is disabled on this repostiory by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "企業或組織策略在此倉庫上禁用了 GitHub Actions。要使用代碼掃描，請要求您的組織管理員啟用 GitHub Actions，或者",
                     "submit code scanning results externally using the API": "使用 API 在代碼掃描外部結果",
@@ -16751,7 +16751,7 @@ I18N["zh-TW"]["repository/settings/secrets"] = { // 倉庫設置 - 機密 /<user
             "data.": "數據。",
             "Learn more about variables": "瞭解更多關於變量的信息",
 
-            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有協作者權限的人都可以使用這些機密和變量進行操作。它們不會被傳遞到由復刻的拉取請求觸發的工作流中。",
+            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有協作者權限的人都可以使用這些機密和變量進行操作。它們不會被傳遞到由複刻的拉取請求觸發的工作流中。",
 
             "Secrets": "機密",
             "Variables": "變量",
@@ -16842,7 +16842,7 @@ I18N["zh-TW"]["repository/settings/secrets"] = { // 倉庫設置 - 機密 /<user
         // 代碼空間機密 /<user-name>/<repo-name>/settings/secrets/codespaces
             "Codespaces secrets": "代碼空間機密",
             "Development environment secrets are environment variables that are": "開發環境機密是環境變量",
-            ". Secrets are not passed to forks.": "。機密不會傳遞給復刻。",
+            ". Secrets are not passed to forks.": "。機密不會傳遞給複刻。",
 
             "Repository development environment secrets": "倉庫開發環境機密", // 組織倉庫
             "Organization development environment secrets": "組織開發環境機密", // 組織倉庫
@@ -16853,7 +16853,7 @@ I18N["zh-TW"]["repository/settings/secrets"] = { // 倉庫設置 - 機密 /<user
             ". Anyone with": "。任何對此倉庫具有",
             "collaborator": "協作者",
             "access to this repository can use these secrets for Dependabot.": "訪問權限的人可以將這些機密用於 Dependabot。",
-            "Secrets are not passed to forks.": "機密不會傳遞給復刻。",
+            "Secrets are not passed to forks.": "機密不會傳遞給複刻。",
             "Encrypted secrets allow you to store private access tokens so that Dependabot can update dependencies from private registries.": "加密的機密允許您存儲私有訪問令牌，以便 Dependabot 可以從私有註冊表更新依賴項。",
 
             // 組織倉庫
@@ -16983,7 +16983,7 @@ I18N["zh-TW"]["repository/transfer"] = { // 轉讓倉庫
                 "Any existing": "任何已存在的",
                 "wikis": "WiKi",
                 "Pulse, Contributors, Community, Traffic, Commits, Code Frequency, Network,": "統計，貢獻者，社區，流量，提交，代碼頻率，網絡，",
-                "Forks": "復刻",
+                "Forks": "複刻",
                 "on the": "在",
                 "Insights": "洞察",
                 "tab": "標籤頁",
@@ -17057,10 +17057,10 @@ I18N["zh-TW"]["repository/codespaces"] = { // 倉庫 - 代碼空間界面 /<user
                     "This will create a new branch with any unpushed changes": "這將創建一個包含任何未推送更改的新分支",
                     "Checking branch status": "檢查分支情況",
                     "Create branch": "創建分支",
-                "Export changes to a fork": "將更改導出到復刻",
+                "Export changes to a fork": "將更改導出到複刻",
                     "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您沒有對此代碼空間的倉庫的寫訪問權限。這將創建一個新的倉庫分支在",
-                    ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該復刻，並將更改導出到新分支。",
-                    "Create fork": "創建復刻",
+                    ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該複刻，並將更改導出到新分支。",
+                    "Create fork": "創建複刻",
                 "Change machine type": "修改機器類型",
                     "Change codespace machine type": "修改代碼空間機器類型",
                         "Machine type": "機器類型",
@@ -17227,7 +17227,7 @@ I18N["zh-TW"]["homepage"] = { // 未登錄的首頁
             "Explore customer stories": "探索客戶故事",
 
         "Millions of developers and businesses call GitHub home": "數百萬開發者和企業將 GitHub 視為自己的家",
-            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted AI-powered developer platform to build the technologies that redefine what’s possible.": "無論您是在擴展開發流程還是隻是學習如何編碼，GitHub 都是您的理想選擇。加入全球最廣泛採用的 AI 驅動開發者平臺，構建重新定義可能性的技術。",
+            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted AI-powered developer platform to build the technologies that redefine what’s possible.": "無論您是在擴展開發流程還是只是學習如何編碼，GitHub 都是您的理想選擇。加入全球最廣泛採用的 AI 驅動開發者平臺，構建重新定義可能性的技術。",
 
         //"Trusted by the world’s leading organizations ↘︎": "全球領先機構所信賴的合作伙伴 ↘︎",
 
@@ -18337,7 +18337,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
                 "Owner": "所有者",
                 "Size": "尺寸",
                 "Number of followers": "關注數",
-                "Number of forks": "復刻數",
+                "Number of forks": "複刻數",
                 "Number of stars": "星標數",
                 "Date created": "創建日期",
                 "Date pushed": "推送日期",
@@ -18409,8 +18409,8 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
                 "Best match": "最佳匹配",
                 "Most stars": "最多星標",
                 "Fewest stars": "最少星標",
-                "Most forks": "最多復刻",
-                "Fewest forks": "最少復刻",
+                "Most forks": "最多複刻",
+                "Fewest forks": "最少複刻",
                 "Recently updated": "最近更新",
                 "Least recently updated": "最早更新",
                 // 提交
@@ -18594,7 +18594,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
 
             "Repositories options": "倉庫選項",
             "With this many stars": "指定星標數",
-            "With this many forks": "指定復刻數",
+            "With this many forks": "指定複刻數",
             "Of this size": "倉庫大小",
             "Pushed to": "推送於",
             "With this license": "用何種許可證",
@@ -18605,7 +18605,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
             "not": "不",
             // "and": "要",
             "only": "僅",
-            "including forks.": "包含復刻倉庫。",
+            "including forks.": "包含複刻倉庫。",
 
             "Code options": "代碼選項",
             "With this extension": "文件後綴",
@@ -18696,7 +18696,7 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
         "Your public gists will show up here on your profile.": "您的公開代碼片段將顯示在這裡。",
         "Create a gist": "新建一個代碼片段",
 
-        "Forked": "復刻",
+        "Forked": "複刻",
         "Starred": "星標",
 
         // 左側用戶信息欄
@@ -18766,8 +18766,8 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
 
         "Created": "創建於",
         "Last active": "最後活動於",
-        "Forked from": "復刻自",
-        "— forked from": "— 復刻自",
+        "Forked from": "複刻自",
+        "— forked from": "— 複刻自",
         "View": "查看",
 
         "Newer": "新的",
@@ -18788,9 +18788,9 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
             "You must be signed in to star a gist": "您必須登錄才能星標代碼片段",
         "Unstar": "取消星標",
             "Unstar this gist": "取消該代碼片段星標",
-        "Forks": "復刻",
-            "Fork this gist": "復刻代碼片段",
-            "You must be signed in to fork a gist": "您必須登錄才能復刻代碼片段",
+        "Forks": "複刻",
+            "Fork this gist": "複刻代碼片段",
+            "You must be signed in to fork a gist": "您必須登錄才能複刻代碼片段",
         "User actions": "用戶操作",
         "Report abuse": "舉報濫用",
         "Disable comments": "禁用評論",
@@ -18854,9 +18854,9 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
         "Be the first to star this gist.": "成為第一個該代碼片段加註星標的人。",
         "Learn more about starring Gists": "瞭解更多關於標星代碼片段的信息",
 
-        // 復刻標籤卡
+        // 複刻標籤卡
         "Modified": "修改",
-        "View fork": "瀏覽復刻",
+        "View fork": "瀏覽複刻",
 
         // 編輯代碼頁面
         "Editing": "編輯",
@@ -18918,8 +18918,8 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
             "Best match": "最佳匹配",
             "Most stars": "最多星標",
             "Fewest stars": "最少星標",
-            "Most forks": "最多復刻",
-            "Fewest forks": "最少復刻",
+            "Most forks": "最多複刻",
+            "Fewest forks": "最少複刻",
 
         // 底部提示欄 (未登錄)
         "Sign up for free": "免費註冊",
@@ -18931,7 +18931,7 @@ I18N["zh-TW"]["gist"] = { // 代碼片段頁面
     "regexp": [ // 正則翻譯
         [/View ([^ ]+) on GitHub/, "查看 $1 的 GitHub"],
         [/(\d+) files?/, "$1 文件"],
-        [/(\d+) forks?/, "$1 復刻"],
+        [/(\d+) forks?/, "$1 複刻"],
         [/(\d+) comments?/, "$1 評論"],
         [/(\d+) stars?/, "$1 星標"],
         [/Save (.+?) to your computer and use it in GitHub Desktop./, "使用 GitHub Desktop，保存 $1 到您的電腦。"],
@@ -19140,8 +19140,8 @@ I18N["zh-TW"]["topics"] = { // 探索-->主題頁面
                 "Sort options": "排序選項",
                 "Most stars": "最多標星",
                 "Fewest stars": "最少星標",
-                "Most forks": "最多復刻",
-                "Fewest forks": "最少復刻",
+                "Most forks": "最多複刻",
+                "Fewest forks": "最少複刻",
                 "Recently updated": "最近更新",
                 "Least recently updated": "最早更新",
 
@@ -20392,7 +20392,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
                     "Public": "公共",
                     "Private": "私有",
                     "Sources": "源碼",
-                    "Forks": "復刻",
+                    "Forks": "複刻",
                     "Archived": "存檔",
                     "Can be sponsored": "可贊助",
                     "Mirrors": "鏡像",
@@ -20418,7 +20418,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
                     "public": "公共",
                     "private": "私有",
                     "source": "源碼",
-                    "forked": "復刻",
+                    "forked": "複刻",
                     "archived": "存檔",
                     "sponsorable": "可贊助",
                     "mirror": "鏡像",
@@ -20448,7 +20448,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
 
                 // 項目 狀態詞
                 "Updated": "更新於",
-                "Forked from": "復刻自",
+                "Forked from": "複刻自",
 
 
             // 右側欄
@@ -21090,12 +21090,12 @@ I18N["zh-TW"]["orgs/settings/member_privileges"] = { // 組織設置 - 成員權
                         "Members can now create public repositories.": "成員現在可以創建公共倉庫。",
                         "Members can now create public and private repositories.": "成員現在可以創建公共和私有倉庫。",
 
-                "Repository forking": "倉庫復刻",
-                    "Allow forking of private repositories": "允許復刻私有倉庫",
-                        "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果啟用，則私有和公共倉庫都允許復刻。如果禁用，則只允許復刻公共倉庫。此設置也可以在每個倉庫中進行配置。",
+                "Repository forking": "倉庫複刻",
+                    "Allow forking of private repositories": "允許複刻私有倉庫",
+                        "If enabled, forking is allowed on private and public repositories. If disabled, forking is only allowed on public repositories. This setting is also configurable per-repository.": "如果啟用，則私有和公共倉庫都允許複刻。如果禁用，則只允許複刻公共倉庫。此設置也可以在每個倉庫中進行配置。",
                     // 頂部提醒
-                        "Repository forking setting updated!": "倉庫復刻設置已經更新！",
-                        "Repository forking setting not updated. Please try again.": "倉庫復刻設置不能更新。請重試。",
+                        "Repository forking setting updated!": "倉庫複刻設置已經更新！",
+                        "Repository forking setting not updated. Please try again.": "倉庫複刻設置不能更新。請重試。",
 
                 "Repository discussions": "倉庫討論",
                     "Allow users with read access to create discussions": "允許具有讀取權限的用戶創建討論",
@@ -21244,7 +21244,7 @@ I18N["zh-TW"]["orgs/settings/blocked_users"] = { // 組織設置 - 黑名單
             "Block a user": "拉黑用戶",
             "Blocking a user prevents the following on all your repositories:": "拉黑用戶可以防止所有倉庫中的以下操作：",
             "opening or commenting on issues or pull requests": "打開或評論議題或拉取請求",
-            "starring, forking, or watching": "加星標、復刻、關注",
+            "starring, forking, or watching": "加星標、複刻、關注",
             "adding or editing wiki pages": "添加或編輯 Wiki 頁面",
 
             "Search by username, full name or email address": "搜索用戶名、全名、或電子郵箱",
@@ -21562,9 +21562,9 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
                 "Duration must be 90 or less": "必須為 1-90",
                 "Duration must be 1 or more.": "必須為 1-90",
 
-            "Fork pull request workflows from outside collaborators": "從外部協作者，復刻拉取請求工作流程",
+            "Fork pull request workflows from outside collaborators": "從外部協作者，複刻拉取請求工作流程",
                 "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "選擇哪些外部協作者的子集需要批准才能對他們的拉取請求運行工作流程。",
-                "Learn more about approving workflow runs from public forks.": "瞭解更多關於批准來自公共復刻的工作流運行的信息。",
+                "Learn more about approving workflow runs from public forks.": "瞭解更多關於批准來自公共複刻的工作流運行的信息。",
                 "Require approval for first-time contributors who are new to GitHub": "要求對首次加入 GitHub 的貢獻者進行批准審查",
                     "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近創建 GitHub 賬戶的首次貢獻者才需要獲得批准才能運行工作流程。",
                 "Require approval for first-time contributors": "要求對首次貢獻者進行批准審查",
@@ -21572,23 +21572,23 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
                 "Require approval for all outside collaborators": "要求對所有外部協作者進行批准審查",
                     "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部協作者將始終需要批准才能在他們的拉取請求上運行工作流程。",
                 // 頂部提醒
-                    "Fork pull request outside collaborators settings saved.": "外部協作者復刻拉取請求設置已保存。",
+                    "Fork pull request outside collaborators settings saved.": "外部協作者複刻拉取請求設置已保存。",
 
-            "Fork pull request workflows in private repositories": "私有倉庫的復刻拉取請求工作流程",
+            "Fork pull request workflows in private repositories": "私有倉庫的複刻拉取請求工作流程",
                 "These settings apply to private repositories. Repository administrators will only be able to change the settings that are enabled here.": "這些設置適用於私有倉庫。倉庫管理員只能改變這裡啟用的設置。",
-                "Run workflows from fork pull requests": "從復刻拉取請求運行工作流程",
-                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "這告訴 Actions 運行工作流程，來自倉庫復刻的拉取請求。請注意，這樣做將使這些復刻的維護者有能力在源碼庫上使用具有讀取權限的令牌。",
-                    "Send write tokens to workflows from fork pull requests.": "從復刻拉取請求，發送可寫令牌到工作流程",
+                "Run workflows from fork pull requests": "從複刻拉取請求運行工作流程",
+                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "這告訴 Actions 運行工作流程，來自倉庫複刻的拉取請求。請注意，這樣做將使這些複刻的維護者有能力在源碼庫上使用具有讀取權限的令牌。",
+                    "Send write tokens to workflows from fork pull requests.": "從複刻拉取請求，發送可寫令牌到工作流程",
                         "This tells Actions to send tokens with": "這告訴 Actions 發送令牌",
                         "write": "寫入",
-                        "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "權限到工作流程，來自倉庫復刻的拉取請求。請注意，這樣做將授予這些復刻的維護者",
+                        "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "權限到工作流程，來自倉庫複刻的拉取請求。請注意，這樣做將授予這些複刻的維護者",
                         "permissions against the source repository.": "權限，針對源倉庫。",
-                    "Send secrets and variables to workflows from fork pull requests.": "從復刻拉取請求，發送機密和變量到工作流程",
-                        "This tells Actions to send repository secrets and variables to workflows from pull requests originating from repository forks.": "這告訴 Actions 發送倉庫機密和變量到工作流程，來自倉庫復刻的拉取請求。",
-                    "Require approval for fork pull request workflows.": "要求批准復刻 拉取請求工作流程。",
-                        "Fork pull requests from users without write access will require approval to run workflows.": "來自沒有寫入權限的用戶的復刻拉取請求需要獲得批准才能運行工作流程。",
+                    "Send secrets and variables to workflows from fork pull requests.": "從複刻拉取請求，發送機密和變量到工作流程",
+                        "This tells Actions to send repository secrets and variables to workflows from pull requests originating from repository forks.": "這告訴 Actions 發送倉庫機密和變量到工作流程，來自倉庫複刻的拉取請求。",
+                    "Require approval for fork pull request workflows.": "要求批准複刻 拉取請求工作流程。",
+                        "Fork pull requests from users without write access will require approval to run workflows.": "來自沒有寫入權限的用戶的複刻拉取請求需要獲得批准才能運行工作流程。",
                 // 頂部提醒
-                    "Fork pull request workflow settings saved.": "復刻拉取請求工作流程設置已保存。",
+                    "Fork pull request workflow settings saved.": "複刻拉取請求工作流程設置已保存。",
 
             "Workflow permissions": "工作流程權限",
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this organization. You can specify more granular permissions in the workflow using YAML.": "在組織中運行工作流程時，選擇授予 GITHUB_TOKEN 的默認權限。您可以使用 YAML 在工作流程中指定更細化的權限。",
@@ -21598,7 +21598,7 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
                     "Read and write permissions": "讀取和寫入權限",
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在倉庫中對所有作用域具有讀和寫的權限。",
                     "Read repository contents and packages permissions": "讀取倉庫的內容和軟件包的權限",
-                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在倉庫中僅對內容和軟件包作用域具有隻讀的權限。",
+                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在倉庫中僅對內容和軟件包作用域具有只讀的權限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 是否可以創建拉取請求或提交批准拉取請求審查。",
                     "Allow GitHub Actions to create and approve pull requests": "允許 GitHub Actions 創建和批准拉取請求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "這控制 GitHub Actions 是否可以創建拉取請求或提交批准的拉取請求審查。",
@@ -22092,7 +22092,7 @@ I18N["zh-TW"]["orgs/settings/secrets"] = { // 組織設置 - 機密和變量
             "data.": "數據。",
             "Learn more about variables": "瞭解更多關於變量的信息",
 
-            "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有協作者權限的人，只要能接觸到機密或變量，都可以將其用於操作。它們不會被傳遞到由復刻的拉取請求觸發的工作流中。",
+            "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有協作者權限的人，只要能接觸到機密或變量，都可以將其用於操作。它們不會被傳遞到由複刻的拉取請求觸發的工作流中。",
 
             "Organization secrets and variables cannot be used by private repositories with your plan.": "在您的計劃中私有倉庫不能使用組織機密和變量。",
             "Please consider": "請考慮",
@@ -22218,7 +22218,7 @@ I18N["zh-TW"]["orgs/settings/secrets"] = { // 組織設置 - 機密和變量
             "Secrets are credentials that are": "機密是憑證",
             ". Anyone with": "。任何對此倉庫具有",
             "access to the repositories with access to each secret can use it for Dependabot.": "訪問權限的人都可以訪問倉庫的每個機密用於 Dependabot。",
-            "Secrets are not passed to forks.": "機密不會傳遞給復刻。",
+            "Secrets are not passed to forks.": "機密不會傳遞給複刻。",
 
         // Dependabot 機密 /organizations/<org-login>/settings/secrets/dependabot/new
             "All repositories": "所有倉庫",
@@ -22538,7 +22538,7 @@ I18N["zh-TW"]["orgs/settings/deleted_repositories"] = { // 組織設置 - 刪除
         // 刪除的倉庫 /organizations/<org-login>/settings/deleted_repositories
             "Deleted Repositories": "刪除的倉庫",
             // [/No recoverable repositories were found for ([^ ]+)./, "沒有發現 $1 中可恢復倉庫"],
-            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "倉庫可能需要一個小時的時間才能顯示在這裡。您只能恢復沒有復刻，或沒有被複刻的倉庫。",
+            "It may take up to an hour for repositories to be displayed here. You can only restore repositories that are not forks, or have not been forked.": "倉庫可能需要一個小時的時間才能顯示在這裡。您只能恢復沒有複刻，或沒有被複刻的倉庫。",
             "Learn more about restoring deleted repositories": "瞭解更多關於恢復已刪除倉庫的信息",
     },
     "regexp": [ // 正則翻譯
@@ -22605,7 +22605,7 @@ I18N["zh-TW"]["projects"] = { // 項目頁面(含倉庫項目)
     "static": { // 靜態翻譯
         // >>>>>>>>>>>>>>>>>>倉庫 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 頭部條
-            "forked from": "復刻自",
+            "forked from": "複刻自",
             "mirrored from": "鏡像自",
 
             "Unpin": "取消置頂",
@@ -22616,8 +22616,8 @@ I18N["zh-TW"]["projects"] = { // 項目頁面(含倉庫項目)
 
             "Star": "星標",
             "Unstar": "已加星標",
-            "Fork": "復刻",
-            "Unfork": "取消復刻",
+            "Fork": "複刻",
+            "Unfork": "取消複刻",
 
             // 贊助對話框
             "External links": "外部鏈接",
@@ -22641,10 +22641,10 @@ I18N["zh-TW"]["projects"] = { // 項目頁面(含倉庫項目)
             //"Cancel": "取消",
             "Apply": "應用",
 
-            // 復刻下拉
-            "Existing forks": "現有的復刻",
-            "You don't have any forks of this repository.": "您沒有此倉庫的任何復刻。",
-            "Create a new fork": "創建復刻",
+            // 複刻下拉
+            "Existing forks": "現有的複刻",
+            "You don't have any forks of this repository.": "您沒有此倉庫的任何複刻。",
+            "Create a new fork": "創建複刻",
 
             // 標籤欄
             "Code": "代碼",
@@ -23120,7 +23120,7 @@ I18N["zh-TW"]["projects"] = { // 項目頁面(含倉庫項目)
             "Collaboration settings": "協作設置",
                 "Options": "選項",
                     "Visibility": "可見性",
-                    "Visibility settings only impact the project itself. Project content that belongs to a repository the user does not have access to will be redacted.": "可見性設置隻影響項目本身。屬於用戶無權訪問的倉庫的項目內容將被編輯。",
+                    "Visibility settings only impact the project itself. Project content that belongs to a repository the user does not have access to will be redacted.": "可見性設置只影響項目本身。屬於用戶無權訪問的倉庫的項目內容將被編輯。",
                     "Public": "公開",
                         "Anyone on the internet can see this project. You choose who can make changes.": "互聯網上的任何人都可以看到這個項目。您選擇誰可以進行更改。",
                     "Private": "私密",
@@ -23310,10 +23310,10 @@ I18N["zh-TW"]["codespaces"] = { // 代碼空間頁面
                     "This will create a new branch with any unpushed changes": "這將創建一個包含任何未推送更改的新分支",
                     "Checking branch status": "檢查分支情況",
                     "Create branch": "創建分支",
-                "Export changes to a fork": "將更改導出到復刻",
+                "Export changes to a fork": "將更改導出到複刻",
                     "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您沒有對此代碼空間的倉庫的寫訪問權限。這將創建一個新的倉庫分支在",
-                    ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該復刻，並將更改導出到新分支。",
-                    "Create fork": "創建復刻",
+                    ", reassign your codespace to that fork, and export your changes to a new branch.": "，將代碼空間重新分配給該複刻，並將更改導出到新分支。",
+                    "Create fork": "創建複刻",
                 "Publish to a new repository": "發佈到新倉庫", // 從模板創建
                     "This will create a new repository and push up your work.": "這將創建一新倉庫，並推送您的工作。",
                     // 公共
@@ -23771,7 +23771,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
                 "course template": "課程模板",
             "Check the box for “Template repository” either when setting up your repository, or": "在創建倉庫時或在",
                 "in the repository settings": "倉庫設置",
-                "afterwards. Actions": "中勾選 “模板版本庫” 複選框。復刻倉庫中操作",
+                "afterwards. Actions": "中勾選 “模板版本庫” 複選框。複刻倉庫中操作",
                 "are not enabled by default": "默認不啟用",
                 "in forks.": "。",
             "Add a 1280×640 social image. Learners will share your course on different websites that will pull in the social image.": "添加一張 1280×640 的社交圖片。學員將在不同網站上分享您的課程，而這些網站將調入社交圖片。",
