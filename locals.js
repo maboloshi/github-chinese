@@ -24468,6 +24468,7 @@ I18N["zh-CN"]["copilot"] = {
                         "Fetching repositories…": "正在获取仓库",
                     "Close": "关闭",
                 "Image…": "图片…",
+                    "Only images below 3.75MB are supported": "仅支持小于 3.75 MB 的图片",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
                     "Extensions": "扩展",
