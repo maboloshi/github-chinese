@@ -24387,8 +24387,11 @@ I18N["zh-CN"]["copilot"] = {
                 "Copy link": "复制链接",
 
             // 分享
+            "This conversation is only visible to you": "此对话仅您可见",
+            "This conversation is visible to anyone with the link": "此对话对任何拥有链接的人可见",
             "Shared": "已分享",
             "Conversation shared": "对话已分享",
+                "This conversation and future messages are visible to anyone with the link. If private repository content is included, repository access is required to view.": "此对话及未来的消息对任何拥有链接的人都是可见的。如果包含私有仓库内容，则需要仓库访问权限才能查看。",
                 "Only users with access to referenced private content can view this conversation.": "只有有权访问相关私人内容的用户才能查看此对话。",
                 "This conversation is private and only visible to you. Share it to make it accessible to others with the link.": "此对话为私密对话，仅您自己可见。通过分享链接，其他人才能访问此对话。",
                 "This conversation is now shared. Anyone with the link can view it. Keep in mind that it is live and publicly accessible.": "此对话已共享。任何拥有该链接的人均可查看此对话。请注意，该对话为实时且公开可访问的内容。",
