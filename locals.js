@@ -24397,6 +24397,15 @@ I18N["zh-CN"]["copilot"] = {
                 "Visible to anyone with the link": "拥有链接者可见",
 
                 "Unshare": "取消",
+            
+            "Manage shared conversations": "管理已分享对话",
+                "Last updated": "最后更新",
+                    // 日期走正则
+
+                    "Copy share link": "复制分享链接",
+                    "Unshare conversation": "取消分享",
+
+                "Unshare all": "全部取消分享",
 
             "Open menu": "菜单",
                 "Conversation": "对话",
@@ -24504,6 +24513,21 @@ I18N["zh-CN"]["copilot"] = {
         [/Enable access to the latest (.+) model from ([^ ]+)./, "允许访问 $2 最新的 $1 模型。"],
         [/Enable (.+)/, "启用 $1"],
         [/Learn more about how GitHub Copilot serves (.+)/, "了解更多关于 GitHub Copilot 如何为 $1 提供服务"],
+        // 管理分享
+        [/(.+) at (\d{1,2}):(\d{2}) (AM|PM)/, (match, p1, p2, min, p3) =>{
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+
+            // 运行规则：非12AM照搬，PM数字加12，12AM=0
+            let hour = parseInt(p2, 10);
+            if (p3 === "PM" && hour !== 12) {
+                hour += 12;
+            } else if (p3 === "AM" && hour === 12) {
+                hour = 0;
+            }
+
+            return `${translatedDate}${hour}:${min}`;
+        }],
     ],
 };
 
