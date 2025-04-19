@@ -132,7 +132,7 @@ jobs:
       - name: Sync locals.js -> locals_zh-TW.js
         run: |
           opencc -i locals.js -o locals_zh-TW.js -c s2tw.json
-          sed -i 's/"zh-CN"/"zh-TW"/g' locals_zh-TW.js
+          sed -i -E -f locals_zh-TW_sed_rules.txt locals_zh-TW.js
 
       - name: Update version in main_zh-TW.user.js
         run: |
