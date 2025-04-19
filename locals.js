@@ -11780,6 +11780,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via repository dispatch": "通过仓库调度触发",
             "Triggered via release": "通过发行版触发",
             "Triggered via issue": "通过议题触发",
+            "Triggered via discussion": "通过讨论触发",
             "Triggered via discussion comment": "通过讨论评论触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
