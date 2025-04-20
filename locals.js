@@ -12257,7 +12257,7 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                         "not be rendered in the submitted issue body": "不会在提交的议题正文中呈现。",
                         // 必填项
                             "(String): The text that will be rendered. Markdown formatting is supported.": "(字符串）：将渲染的文本。支持 Markdown 格式。",
-                        "Tip #1: YAML processing will cause the hash symbol to be treated as a comment. To insert Markdown headers, wrap your text in quotes.": "提示 1：YAML 处理会将井字号视为注释。要插入 Markdown 标题，请用引号将文本包起来。",
+                        "Tip #1: YAML processing will cause the hash symbol to be treated as a comment. To insert Markdown headers, wrap your text in quotes.": "提示 1：YAML 处理会将 # 号视为注释。要插入 Markdown 标题，请用引号将文本包起来。",
                         "Tip #2: For multi-line text, you can use the pipe operator.": "提示 2：对于多行文本，可以使用管道运算符。",
                         "Example": "示例",
                     "Input": "输入",
