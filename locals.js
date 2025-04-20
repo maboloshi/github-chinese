@@ -718,7 +718,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Disabled": "禁用",
                 "Documentation": "文档",
                 "Colorblind themes": "色盲主题",
-                    "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响 8% 的男性和低于 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
+                    "Varying by gender and geography, color blindness can affect on average 8% of men and up to 0.5% of women. Our previous colorblind theme has been split into two new themes:": "色盲会因性别和地域的不同而有所不同，平均而言，色盲会影响约 8% 的男性和约 0.5% 的女性。我们之前的色盲主题被分为两个新主题：",
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 红绿色盲主题适用于红绿色盲。",
                     "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 蓝色盲主题适用于蓝黄色盲。",
                 "Command Palette": "命令面板",
