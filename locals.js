@@ -20902,7 +20902,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                 "Maintainer": "维护者",
                 "Member": "成员",
 
-        // 子团队成员 https://github.com/orgs/O0maboloshi0O/teams/team/members
+        // 子团队成员 https://github.com/orgs/<orgs-name>/teams/team/members
             "Invite": "邀请",
                 "Search by username, full name, or email address": "搜索用户名，全名或邮件",
 
