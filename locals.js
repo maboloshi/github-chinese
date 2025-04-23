@@ -20902,6 +20902,15 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                 "Maintainer": "维护者",
                 "Member": "成员",
 
+        // 子团队成员 https://github.com/orgs/O0maboloshi0O/teams/team/members
+            "Invite": "邀请",
+                "Search by username, full name, or email address": "搜索用户名，全名或邮件",
+
+            "Invitations": "邀请",
+            "Requests": "请求",
+                "Approve": "批准",
+                "Deny": "拒绝",
+
         // 创建团队 /orgs/<org-login>/new-team
             "Create new team": "新建团队",
             "Team name": "团队名称",
@@ -20934,6 +20943,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
         [/(\d+) teams? in the ([^ ]+) organization/, "$2 组织中的 $1 个团队"],
         [/(\d+) teams?/, "$1 团队"],
         [/(\d+) child team members?/, "$1 子团队成员"],
+        [/Add member to (.+)/, "添加成员至 $1"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
