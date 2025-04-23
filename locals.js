@@ -20880,6 +20880,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
             "Visibility": "可见性",
                 "All": "所有",
             "Members": "成员",
+            "Team members": "团队成员",
                 "My teams": "我的团队",
                 "No members": "没有成员",
 
