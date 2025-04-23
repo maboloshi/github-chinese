@@ -20881,6 +20881,24 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                 "My teams": "我的团队",
                 "No members": "没有成员",
 
+        // 子团队 https://github.com/orgs/<orgs-name>/teams/team
+            // 申请提示
+                "Membership requested. We’ll let you know once an administrator has reviewed your request.": "成员资格已申请。一旦管理员审核了您的请求，我们将通知您。",
+                "Okay, we’ve cancelled your request to join this team.": "好的，已取消加入此团队申请。",
+
+            "Find a member…": "查找成员…",
+
+            "Request to join": "请求加入",
+                "Requires approval from an owner or team maintainer": "需要所有者或团队维护者批准",
+            "Cancel pending request": "取消请求",
+                "Your request to join this team is pending review": "您的请求待审查",
+
+            "This team doesn’t have any child team members.": "此团队没有子团队成员。",
+
+            "Filter by role": "筛选角色",
+                "Maintainer": "维护者",
+                "Member": "成员",
+
         // 创建团队 /orgs/<org-login>/new-team
             "Create new team": "新建团队",
             "Team name": "团队名称",
@@ -20889,6 +20907,9 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
             "What is this team all about?": "这个团队是什么？",
             "Parent team": "父团队",
                 "There are no teams that can be selected.": "没有可以选择的团队。",
+                "Select parent team": "选择父团队",
+                "Search teams": "搜索团队",
+                "Clear selected value": "清除",
             "Team visibility": "团队可见性",
                 "Visible": "可见",
                     "Recommended": "推荐",
@@ -20907,7 +20928,9 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
     },
     "regexp": [ // 正则翻译
         [/(\d+) members?/, "$1 成员"],
+        [/(\d+) teams? in the ([^ ]+) organization/, "$2 组织中的 $1 个团队"],
         [/(\d+) teams?/, "$1 团队"],
+        [/(\d+) child team members?/, "$1 子团队成员"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
