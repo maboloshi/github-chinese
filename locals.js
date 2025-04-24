@@ -3699,6 +3699,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
 
+            "For license-based products, the price/unit is a prorated portion of the monthly price.": "对于基于许可证的产品，每单位价格为月度价格按比例分摊的部分。",
+
             // 有上下文，后面重复部分直接省略
             "Actions usage": "操作",
             "Actions usage grouped by SKU": "操作 - 详细",
