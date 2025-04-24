@@ -1837,6 +1837,9 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "We've combined the power of the Following feed with the For you feed so there’s one place to discover content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it, and a shiny new visual design. ✨": "我们将 “关注动态提要” 与 “您的动态提要” 的强大功能结合在一起，让您在一个地方就能发现 GitHub 上的内容。此外，我们还改进了筛选功能，让您可以完全按照自己的喜好定制动态提要，并采用全新的视觉设计。 ✨",
         "Learn more": "了解更多",
 
+        "Explore GitHub": "探索 GitHub",
+            "to receive personalized suggestions.": "以获取个性化建议。",
+
         // 提要筛选
         "Filter": "筛选器",
             "Feed filters": "提要筛选器",
