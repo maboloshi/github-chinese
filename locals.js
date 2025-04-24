@@ -7414,6 +7414,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Cancel": "取消",
             "Begin import": "开始导入",
             "Preparing import…": "准备导入…",
+            "Importing commits and revision history to GitHub...": "导入提交和修订历史到 GitHub...",
 
         // 导入仓库 第一页 /<user-name>/<repo-name>/import
             "Import all the files, including the revision history, from another version control system.": "导入的所有文件，包括修订历史记录，来自其他版本控制系统。",
