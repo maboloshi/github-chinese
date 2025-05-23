@@ -22196,6 +22196,9 @@ I18N["zh-CN"]["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
             "Allow members to change project visibilities for this organization": "允许成员更改此组织的项目可见性",
                 "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果启用，在项目上有管理权限的成员可以将项目设为公开或私有。如果禁用，则只有组织所有者可以将项目设为公开或私有。默认情况下，所有项目都是私有的。",
 
+            "Welcome to projects": "欢迎来到项目！",
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格的构造类似电子表格，为您提供了一个实时画布，可用于筛选、排序和分组问题及拉取请求。您可以使用自定义字段和保存的视图，根据自身需求对其进行定制。",    
+
             "Recommended templates": "推荐模板",
                 "Customize a selection of recommended project templates for this organization. These templates will be surfaced first when a member of the organization creates a new project.": "为此组织定制一系列推荐的项目模板。当组织成员创建新项目时，这些模板将首先出现。",
 
