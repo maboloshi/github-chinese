@@ -9688,6 +9688,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
                 "Resolve conflicts then push again. These conflicts are too complex to resolve in the web editor. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "解决冲突后再次推送。这些冲突过于复杂，无法在 Web 编辑器中解决。当该拉取请求存在合并冲突时，操作工作流将不会触发该拉取请求的活动。",
                 "These conflicts are too complex to resolve in the web editor.": "这些冲突过于复杂，无法在网页编辑器中解决。",
+                "You do not have permission to push to the head branch.": "您没有权限向主分支推送。",
                 "Use the command line": "使用命令行",
                 "to resolve conflicts before continuing.": "解决冲突后再继续。",
                 "or the command line to resolve conflicts before continuing. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "或通过命令行解决冲突。在此拉取请求仍存在合并冲突的情况下，操作工作流不会因该拉取请求的活动而触发。",
