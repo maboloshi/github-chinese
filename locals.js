@@ -21326,6 +21326,9 @@ I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
+        // 顶部提示
+            "Thanks for updating your Developer Program contact information!": "感谢您更新开发者联系信息！",
+
         // 组织资料 /organizations/<org-login>/settings/profile
             "Most organization settings are hidden for an archived organization. This organization must be unarchived to change them.": "对于已存档的组织，组织大多数设置都是隐藏的。必须取消对该组织的归档才能更改它们。",
 
