@@ -10141,6 +10141,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         // 任务
         [/(\d+) tasks?/, "$1 个任务"],
 
+        // 评论
+        [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
+
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
         [/\(Use \/re\/ syntax for regexp search\)/, "(使用 /re/ 进行正则搜索)"],
