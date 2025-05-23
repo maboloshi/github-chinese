@@ -1332,6 +1332,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             // 對話框
             "Ask about the repository:": "詢問關於此倉庫的信息：",
             "Ask about the tree comparison:": "詢問關於比較的信息：",
+            "Attach": "附件",
             "Attach files or symbols": "附加文件或符號",
                 "Fetching files, folders, and symbols…": "正在獲取文件（夾）和符號…",
             "Add an extension": "添加擴展",
@@ -4422,10 +4423,18 @@ I18N["zh-TW"]["settings/education/benefits"] = {  // 設置 - 賬單和計劃（
                 "Application Type:": "申請類型：",
 
             "Approved": "批准",
-                "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申請已獲批准，優惠碼已成功應用到您的賬戶。",
-                "Please visit the": "請訪問",
-                "Developer Pack": "開發者包",
-                "page to view your benefits.": "頁面查看您的權益。",
+                // 等待
+                    "Your academic status has been verified. Congratulations!": "您的學術狀態已驗證。恭喜！",
+                    "Your academic benefits, including Partner offers, will become available with 72 hours of your verification.": "您的學術權益，包括合作伙伴優惠，將在驗證通過後的72小時內生效。",
+                    "Once the benefits become available, you will be able to access the Students Developer Pack offers": "權益生效後，您將可以訪問學生開發者禮包優惠在",
+                    "To redeem your Copilot Pro coupon, please sign up via": "要兌換您的 Copilot Pro 優惠券，請訪問",
+                    "this link": "此鏈接",
+                    "We hope you enjoy your GitHub Education benefits.": "希望您享受 GitHub 教育權益。",
+                // 結束
+                    "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申請已獲批准，優惠碼已成功應用到您的賬戶。",
+                    "Please visit the": "請訪問",
+                    "Developer Pack": "開發者包",
+                    "page to view your benefits.": "頁面查看您的權益。",
                 "Your benefits will expire on": "您的福利過期時間：",
             "Loading details": "加載詳情",
             "Revoked": "撤銷",
@@ -7036,6 +7045,14 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
             "has invited you to collaborate on this repository": "邀請您成為該倉庫協作者",
                 "View invitation": "查看",
 
+            "Appearance settings": "外觀設置", // 未登錄時出現
+                "Increase contrast": "高對比度",
+                    "Enable high contrast for light or dark mode (or both) based on your system settings": "根據您的系統設置，為淺色或深色模式（或兩者）啟用高對比度",
+                    "Light mode": "淺色模式",
+                    "Dark mode": "深色模式",
+                    "On": "開",
+                    "Off": "關",
+
             // 倉庫違反 DMCA
             "Repository unavailable due to DMCA takedown.": "由於 DMCA 刪除，倉庫不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由於 DMCA 刪除通知，此倉庫當前已被禁用。我們已經禁止公眾訪問該倉庫。該通知已",
@@ -7820,6 +7837,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                             "Update codespace": "更新程式碼空間",
                         "Stop codespace": "停止程式碼空間",
                     "No changes": "未更改",
+                    "Uncommitted changes": "未提交更改",
 
                     // 刪除對話框
                         "Are you sure?": "您確定嗎？",
@@ -14505,6 +14523,13 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 倉庫 -> 洞察 - 依�
 
             "Export SBOM": "導出 SBOM",
 
+            "Detect additional dependencies with GitHub Actions": "使用 GitHub Actions 檢測額外的依賴項",
+                // 並非所有依賴項都會自動檢測到，例如 Gradle 這樣的生態系統。GitHub Actions 會通過依賴項提交 API 添加您的依賴項，這樣您就可以收到有關已知漏洞的 Dependabot 警報。
+                "Not all dependencies are automatically detected for ecosystems like Gradle. GitHub Actions adds your dependencies using the": "並非所有依賴項都會自動檢測到，例如 Gradle 這樣的生態系統。GitHub Actions 會通過",
+                "dependency submission API": "依賴項提交 API",
+                "so you can receive Dependabot alerts for known vulnerabilities.": "添加您的依賴項，這樣您就可以收到有關已知漏洞的 Dependabot 警報。",
+            "View in Marketplace": "去市場查看",
+
             // "Dependencies": "依賴關係",
             "Search all dependencies": "搜索所有依賴項",
                 "Suggested filters": "建議篩選",
@@ -21069,6 +21094,7 @@ I18N["zh-TW"]["orgs/pending_collaborators"] = I18N["zh-TW"]["orgs/people"];
 I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
+        "Organization roles": "組織角色",
 
         // 團隊標籤卡 https://github.com/orgs/<orgs-name>/teams
             "Seamless communication with teams": "與團隊的無縫溝通",
@@ -21083,6 +21109,8 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
                 "New team": "新建團隊",
 
             "Find a team…": "搜索團隊……",
+
+            "Select all": "全選",
             "Visibility": "可見性",
                 "All": "所有",
             "Members": "成員",
@@ -21090,12 +21118,15 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
                 "My teams": "我的團隊",
                 "No members": "沒有成員",
 
+            // [/(\d+) roles?/, "$1 角色"],
+
         // 子團隊 https://github.com/orgs/<orgs-name>/teams/team
             // 申請提示
                 "Membership requested. We’ll let you know once an administrator has reviewed your request.": "成員資格已申請。一旦管理員審核了您的請求，我們將通知您。",
                 "Okay, we’ve cancelled your request to join this team.": "好的，已取消加入此團隊申請。",
 
             "Find a member…": "查找成員…",
+            "Add a member": "添加成員",
 
             "Request to join": "請求加入",
                 "Requires approval from an owner or team maintainer": "需要所有者或團隊維護者批准",
@@ -21143,9 +21174,57 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
                         "No one will receive notifications.": "沒有人會收到通知。",
             "Create team": "創建團隊",
 
+        // 團隊設置 - 通常 https://github.com/orgs/<orgs-name>/teams/team/edit
+            "General": "通常",
+            "Code review": "程式碼審查",
+            "Scheduled reminders": "定時提醒",
+
+            "Team settings": "團隊設置：",
+            "Changing the team name will break past @mentions.": "更改團隊名稱會破壞過去的 @提及。",
+            "Profile picture": "團隊頭像",
+            "Upload new picture": "上傳新頭像",
+            "You may also drag and drop an image from your computer. The image must be less than 1MB.": "您也可以從電腦中拖放圖片。圖片必須小於 1MB。",
+
+            "Danger zone": "危險區",
+                "Delete this team": "刪除團隊",
+                "Once deleted, it will be gone forever. Please be certain.": "一旦刪除，將永遠消失。請確定",
+
+                // 刪除對話框
+                    "Are you sure you want to delete this team?": "您確定要刪除該團隊嗎？",
+                        "Once deleted, it will be gone forever.": "一旦刪除，它將永遠消失。",
+                        "I understand, delete this team": "我明白了，依然刪除該團隊",
+
+        // 團隊設置 - 程式碼審查 https://github.com/orgs/<orgs-name>/teams/team/edit/review_assignment
+            "Only notify requested team members": "僅通知被請求的團隊成員",
+                "If both a team and one or more of its members are requested for review, don't notify the entire team.": "不通知整個團隊，僅通知被請求的團隊成員",
+            "Enable auto assignment": "啟用自動分配",
+                "This will automatically route this team's code review requests to individual team members.": "自動將程式碼審查請求轉發給單個團隊成員。",
+                "Note: this won't assign members who have committed to the pull request or have set their status to Busy.": "注意：這不會將已提交的拉取請求或已將狀態設置為 “忙碌 ”的成員分配給他們。",
+                    "How many team members should be assigned to review?": "應指派多少名團隊成員進行審查？",
+                    "Routing algorithm": "旁路算法",
+                        "Round robin": "循環",
+                        "Alternate reviews between each team member": "每位團隊成員交替審核",
+                        "Load balance": "負載平衡",
+                        "Balance review load across the entire team": "平衡整個團隊的審核負載",
+                        "Never assign certain team members": "絕不指派某些團隊成員",
+                            "Select team members": "選擇團隊成員",
+                    "Child team members": "子團隊成員",
+                        "Include the members of any child teams when assigning requests.": "在分配申請時，包括任何子團隊的成員。",
+                    "Count existing requests": "計算現有請求",
+                        "Count any members whose review has already been requested against the total number of members to assign.": "在要分配的成員總數中計算任何已提出審核請求的成員。",
+                    "Team review request": "團隊審查請求",
+                        "When assigning team members, remove the review request for the team.": "分配團隊成員時，刪除團隊的審核請求。",
+
+        // 團隊設置 - 定時提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
+            "No scheduled reminders created.": "未創建預定提醒。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "為了保持專案進展，您現在可以提醒您的團隊關於他們需要審查的拉取請求。",
+
+            "Connect a Slack workspace to get started": "連接 Slack 工作區以開始使用",
+
     },
     "regexp": [ // 正則翻譯
         [/(\d+) members?/, "$1 成員"],
+        [/(\d+) roles?/, "$1 角色"],
         [/(\d+) teams? in the ([^ ]+) organization/, "$2 組織中的 $1 個團隊"],
         [/(\d+) teams?/, "$1 團隊"],
         [/(\d+) child team members?/, "$1 子團隊成員"],

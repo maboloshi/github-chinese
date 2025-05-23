@@ -1332,6 +1332,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             // 对话框
             "Ask about the repository:": "询问关于此仓库的信息：",
             "Ask about the tree comparison:": "询问关于比较的信息：",
+            "Attach": "附件",
             "Attach files or symbols": "附加文件或符号",
                 "Fetching files, folders, and symbols…": "正在获取文件（夹）和符号…",
             "Add an extension": "添加扩展",
@@ -4422,10 +4423,18 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
                 "Application Type:": "申请类型：",
 
             "Approved": "批准",
-                "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申请已获批准，优惠码已成功应用到您的账户。",
-                "Please visit the": "请访问",
-                "Developer Pack": "开发者包",
-                "page to view your benefits.": "页面查看您的权益。",
+                // 等待
+                    "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
+                    "Your academic benefits, including Partner offers, will become available with 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的72小时内生效。",
+                    "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
+                    "To redeem your Copilot Pro coupon, please sign up via": "要兑换您的 Copilot Pro 优惠券，请访问",
+                    "this link": "此链接",
+                    "We hope you enjoy your GitHub Education benefits.": "希望您享受 GitHub 教育权益。",
+                // 结束
+                    "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申请已获批准，优惠码已成功应用到您的账户。",
+                    "Please visit the": "请访问",
+                    "Developer Pack": "开发者包",
+                    "page to view your benefits.": "页面查看您的权益。",
                 "Your benefits will expire on": "您的福利过期时间：",
             "Loading details": "加载详情",
             "Revoked": "撤销",
@@ -7036,6 +7045,14 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "has invited you to collaborate on this repository": "邀请您成为该仓库协作者",
                 "View invitation": "查看",
 
+            "Appearance settings": "外观设置", // 未登录时出现
+                "Increase contrast": "高对比度",
+                    "Enable high contrast for light or dark mode (or both) based on your system settings": "根据您的系统设置，为浅色或深色模式（或两者）启用高对比度",
+                    "Light mode": "浅色模式",
+                    "Dark mode": "深色模式",
+                    "On": "开",
+                    "Off": "关",
+
             // 仓库违反 DMCA
             "Repository unavailable due to DMCA takedown.": "由于 DMCA 删除，仓库不可用。",
             "This repository is currently disabled due to a DMCA takedown notice. We have disabled public access to the repository. The notice has been": "由于 DMCA 删除通知，此仓库当前已被禁用。我们已经禁止公众访问该仓库。该通知已",
@@ -7820,6 +7837,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                             "Update codespace": "更新代码空间",
                         "Stop codespace": "停止代码空间",
                     "No changes": "未更改",
+                    "Uncommitted changes": "未提交更改",
 
                     // 删除对话框
                         "Are you sure?": "您确定吗？",
@@ -14505,6 +14523,13 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
 
             "Export SBOM": "导出 SBOM",
 
+            "Detect additional dependencies with GitHub Actions": "使用 GitHub Actions 检测额外的依赖项",
+                // 并非所有依赖项都会自动检测到，例如 Gradle 这样的生态系统。GitHub Actions 会通过依赖项提交 API 添加您的依赖项，这样您就可以收到有关已知漏洞的 Dependabot 警报。
+                "Not all dependencies are automatically detected for ecosystems like Gradle. GitHub Actions adds your dependencies using the": "并非所有依赖项都会自动检测到，例如 Gradle 这样的生态系统。GitHub Actions 会通过",
+                "dependency submission API": "依赖项提交 API",
+                "so you can receive Dependabot alerts for known vulnerabilities.": "添加您的依赖项，这样您就可以收到有关已知漏洞的 Dependabot 警报。",
+            "View in Marketplace": "去市场查看",
+
             // "Dependencies": "依赖关系",
             "Search all dependencies": "搜索所有依赖项",
                 "Suggested filters": "建议筛选",
@@ -21069,6 +21094,7 @@ I18N["zh-CN"]["orgs/pending_collaborators"] = I18N["zh-CN"]["orgs/people"];
 I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
+        "Organization roles": "组织角色",
 
         // 团队标签卡 https://github.com/orgs/<orgs-name>/teams
             "Seamless communication with teams": "与团队的无缝沟通",
@@ -21083,6 +21109,8 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                 "New team": "新建团队",
 
             "Find a team…": "搜索团队……",
+
+            "Select all": "全选",
             "Visibility": "可见性",
                 "All": "所有",
             "Members": "成员",
@@ -21090,12 +21118,15 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                 "My teams": "我的团队",
                 "No members": "没有成员",
 
+            // [/(\d+) roles?/, "$1 角色"],
+
         // 子团队 https://github.com/orgs/<orgs-name>/teams/team
             // 申请提示
                 "Membership requested. We’ll let you know once an administrator has reviewed your request.": "成员资格已申请。一旦管理员审核了您的请求，我们将通知您。",
                 "Okay, we’ve cancelled your request to join this team.": "好的，已取消加入此团队申请。",
 
             "Find a member…": "查找成员…",
+            "Add a member": "添加成员",
 
             "Request to join": "请求加入",
                 "Requires approval from an owner or team maintainer": "需要所有者或团队维护者批准",
@@ -21143,9 +21174,57 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                         "No one will receive notifications.": "没有人会收到通知。",
             "Create team": "创建团队",
 
+        // 团队设置 - 通常 https://github.com/orgs/<orgs-name>/teams/team/edit
+            "General": "通常",
+            "Code review": "代码审查",
+            "Scheduled reminders": "定时提醒",
+
+            "Team settings": "团队设置：",
+            "Changing the team name will break past @mentions.": "更改团队名称会破坏过去的 @提及。",
+            "Profile picture": "团队头像",
+            "Upload new picture": "上传新头像",
+            "You may also drag and drop an image from your computer. The image must be less than 1MB.": "您也可以从电脑中拖放图片。图片必须小于 1MB。",
+
+            "Danger zone": "危险区",
+                "Delete this team": "删除团队",
+                "Once deleted, it will be gone forever. Please be certain.": "一旦删除，将永远消失。请确定",
+
+                // 删除对话框
+                    "Are you sure you want to delete this team?": "您确定要删除该团队吗？",
+                        "Once deleted, it will be gone forever.": "一旦删除，它将永远消失。",
+                        "I understand, delete this team": "我明白了，依然删除该团队",
+
+        // 团队设置 - 代码审查 https://github.com/orgs/<orgs-name>/teams/team/edit/review_assignment
+            "Only notify requested team members": "仅通知被请求的团队成员",
+                "If both a team and one or more of its members are requested for review, don't notify the entire team.": "不通知整个团队，仅通知被请求的团队成员",
+            "Enable auto assignment": "启用自动分配",
+                "This will automatically route this team's code review requests to individual team members.": "自动将代码审查请求转发给单个团队成员。",
+                "Note: this won't assign members who have committed to the pull request or have set their status to Busy.": "注意：这不会将已提交的拉取请求或已将状态设置为 “忙碌 ”的成员分配给他们。",
+                    "How many team members should be assigned to review?": "应指派多少名团队成员进行审查？",
+                    "Routing algorithm": "旁路算法",
+                        "Round robin": "循环",
+                        "Alternate reviews between each team member": "每位团队成员交替审核",
+                        "Load balance": "负载平衡",
+                        "Balance review load across the entire team": "平衡整个团队的审核负载",
+                        "Never assign certain team members": "绝不指派某些团队成员",
+                            "Select team members": "选择团队成员",
+                    "Child team members": "子团队成员",
+                        "Include the members of any child teams when assigning requests.": "在分配申请时，包括任何子团队的成员。",
+                    "Count existing requests": "计算现有请求",
+                        "Count any members whose review has already been requested against the total number of members to assign.": "在要分配的成员总数中计算任何已提出审核请求的成员。",
+                    "Team review request": "团队审查请求",
+                        "When assigning team members, remove the review request for the team.": "分配团队成员时，删除团队的审核请求。",
+
+        // 团队设置 - 定时提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
+            "No scheduled reminders created.": "未创建预定提醒。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保持项目进展，您现在可以提醒您的团队关于他们需要审查的拉取请求。",
+
+            "Connect a Slack workspace to get started": "连接 Slack 工作区以开始使用",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) members?/, "$1 成员"],
+        [/(\d+) roles?/, "$1 角色"],
         [/(\d+) teams? in the ([^ ]+) organization/, "$2 组织中的 $1 个团队"],
         [/(\d+) teams?/, "$1 团队"],
         [/(\d+) child team members?/, "$1 子团队成员"],
