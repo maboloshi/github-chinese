@@ -388,6 +388,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Budgets": "預算",
         "Code Security": "程式碼安全性",
         "New Fine-grained Personal Access Token": "新建精細化個人訪問令牌",
+        "Coding agent": "編程助手",
     },
     "regexp": [ // 正則翻譯
         [/Authorized OAuth Apps/, "授權的 OAuth 應用"],
@@ -1332,6 +1333,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             // 對話框
             "Ask about the repository:": "詢問關於此倉庫的信息：",
             "Ask about the tree comparison:": "詢問關於比較的信息：",
+            "How can I help you?": "有什麼可以幫忙？",
             "Attach": "附件",
             "Attach files or symbols": "附加文件或符號",
                 "Fetching files, folders, and symbols…": "正在獲取文件（夾）和符號…",
@@ -3041,6 +3043,8 @@ I18N["zh-TW"]["settings-menu"] = { // 設置 - 公共部分
         // "Repository": "倉庫"
         "Packages": "軟體包",
         "Copilot": "GitHub Copilot",
+            "Features": "功能",
+            "Coding agent": "編程助手",
         "Pages": "GitHub Pages",
         "Saved replies": "快捷回覆",
 
@@ -5317,6 +5321,9 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                         "You won’t have access to the feature": "您將不能訪問此功能",
                 "Anthropic Claude 3.7 Sonnet in Copilot": "Claude 3.7 模型",
                     "You can use the latest Claude 3.7 Sonnet model.": "您可以使用最新 Claude 3.7 Sonnet 模型。",
+                "Anthropic Claude Sonnet 4 in Copilot": "Claude Sonnet 4 模型",
+                    "You can use the latest Anthropic Claude Sonnet 4 model.": "您可以使用最新 Claude Sonnet 4 模型。",
+                    "Learn more about how GitHub Copilot serves Anthropic Claude Sonnet 4.": "瞭解更多關於 GitHub Copilot 如何為 Claude Sonnet 4 提供服務。",
                 "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
                     "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
                     "Learn more about the public preview of Gemini 2.0 Flash.": "瞭解更多關於 GitHub Copilot 如何為 Gemini 2.0 Flash 提供服務。",
@@ -5370,6 +5377,40 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "personalized to a codebase.": "，個性化程式碼。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中獲得 Copilot 的協助。",
+
+        // 編程助手(預覽 https://github.com/settings/copilot/coding_agent
+            // 頂部提示
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程助手，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
+
+            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程助手，您可以將任務委派給 Copilot，從而讓您專注於最重要的創造性、複雜性和高影響力的工作。只需將問題分配給 Copilot，等待助手請求您的審查，然後在拉取請求中留下反饋以進行迭代。",
+                "Learn more in the docs.": "詳情",
+
+            "Repository access": "倉庫訪問",
+                "Choose which repositories Coding agent should be enabled in. Coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要啟用編程助手的倉庫。編程助手僅在為該倉庫啟用並符合 Copilot 許可證政策的情況下可用。",
+
+                "No repositories": "無倉庫",
+                // 所有
+                    "Include all current and future repositories": "包括所有當前和未來的倉庫",
+                "Only selected repositories": "手動選擇",
+                    "Applies only to specifically selected repositories": "僅適用於您選擇的倉庫",
+
+                    "Search or filter": "搜索或篩選",
+                        "Mirror": "鏡像",
+                        "Custom properties": "自定義屬性",
+                        "Language": "語言",
+                        "License": "許可證",
+                        "Exclude": "排除",
+
+                    "Select all": "全選",
+
+                    "of": "/",
+                    "items shown.": "倉庫顯示。",
+                    "Use the search to find specific items": "搜索查找特定倉庫",
+
+                    "Select": "選擇",
+
+            "Use of Copilot coding agent is subject to the": "使用 Copilot 編程助手需遵守",
+                "pre-release terms": "預發行條款",
 
     },
     "regexp": [ // 正則翻譯
@@ -9688,6 +9729,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "This branch has conflicts that must be resolved": "該分支存在衝突，必須解決",
                 "Resolve conflicts then push again. These conflicts are too complex to resolve in the web editor. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "解決衝突後再次推送。這些衝突過於複雜，無法在 Web 編輯器中解決。當該拉取請求存在合併衝突時，操作工作流將不會觸發該拉取請求的活動。",
                 "These conflicts are too complex to resolve in the web editor.": "這些衝突過於複雜，無法在網頁編輯器中解決。",
+                "You do not have permission to push to the head branch.": "您沒有權限向主分支推送。",
                 "Use the command line": "使用命令行",
                 "to resolve conflicts before continuing.": "解決衝突後再繼續。",
                 "or the command line to resolve conflicts before continuing. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "或通過命令行解決衝突。在此拉取請求仍存在合併衝突的情況下，操作工作流不會因該拉取請求的活動而觸發。",
@@ -10140,6 +10182,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
         // 任務
         [/(\d+) tasks?/, "$1 個任務"],
+
+        // 評論
+        [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
 
         // 解決衝突編輯器（似乎又是 F12 才會翻譯）
         [/Search:/, "搜索："],
@@ -21323,6 +21368,9 @@ I18N["zh-TW"]["orgs/settings/profile"] = { // 組織設置 - 組織資料
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
+        // 頂部提示
+            "Thanks for updating your Developer Program contact information!": "感謝您更新開發者聯繫信息！",
+
         // 組織資料 /organizations/<org-login>/settings/profile
             "Most organization settings are hidden for an archived organization. This organization must be unarchived to change them.": "對於已存檔的組織，組織大多數設置都是隱藏的。必須取消對該組織的歸檔才能更改它們。",
 
@@ -22189,6 +22237,9 @@ I18N["zh-TW"]["orgs/settings/projects"] = { // 組織設置 - 計劃 - 專案
                 "-owned repository.": "組織擁有的倉庫。",
             "Allow members to change project visibilities for this organization": "允許成員更改此組織的專案可見性",
                 "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果啟用，在專案上有管理權限的成員可以將專案設為公開或私有。如果禁用，則只有組織所有者可以將專案設為公開或私有。默認情況下，所有專案都是私有的。",
+
+            "Welcome to projects": "歡迎來到專案！",
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格的構造類似電子表格，為您提供了一個實時畫布，可用於篩選、排序和分組問題及拉取請求。您可以使用自定義字段和保存的視圖，根據自身需求對其進行定製。",    
 
             "Recommended templates": "推薦模板",
                 "Customize a selection of recommended project templates for this organization. These templates will be surfaced first when a member of the organization creates a new project.": "為此組織定製一系列推薦的專案模板。當組織成員創建新專案時，這些模板將首先出現。",
