@@ -7085,6 +7085,9 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Sorry, that branch already exists.": "抱歉，该分支已存在。",
             "has invited you to collaborate on this repository": "邀请您成为该仓库协作者",
                 "View invitation": "查看",
+            
+            // 存档
+            "This repository has been archived by the owner. It is now read-only.": "此仓库已被所有者存档。它现在是只读的。",
 
             "Appearance settings": "外观设置", // 未登录时出现
                 "Increase contrast": "高对比度",
