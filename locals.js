@@ -8288,6 +8288,28 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "Search all issues": "搜索所有议题",
             "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
+            "ProTip!": "专业提示！",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "如需查看您自己创建的内容，请使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "要找到所有标有",
+                "with": "标签的内容，请使用",
+                "Follow long discussions with": "要跟随长讨论，请使用",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
+                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
+                "to see everything that’s not assigned.": "查看所有未分配的内容。",
+                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
+                "Add comments to specific lines under": "为以下特定行添加注释于",
+                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
+                "Updated in the last three days:": "显示最近 3 天更新：",
+                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
+                "Adding": "添加",
+                "will show everything without a label.": "将显示所有无标签内容。",
+                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
+                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
+                // [/Ears burning? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
+
+
             "Labels": "标签",
                 "No labels": "无标签",
             "Milestones": "里程碑",
@@ -8599,16 +8621,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
                 ". Already have an account?": "。已经有账户？",
                 "Sign in to comment": "登录后发表评论",
-
-            // 专业提示
-                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
-                "Updated in the last three days:": "显示最近3天更新：",
-                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
-                "Adding": "添加",
-                "will show everything without a label.": "将显示所有无标签内容。",
-                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
-                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
-
     },
     "regexp": [ // 正则翻译
         // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
@@ -8620,6 +8632,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
         [/Open pull requests created by ([^ ]+)/, "$1 创建拉取请求"],
         [/pull requests opened by ([^ ]+)/, "$1 打开拉取请求"],
         [/(\d+) hidden conversations/, "$1 条隐藏对话"],
+        [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
     ]
 };
 
@@ -8766,13 +8779,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Move item after": "移动到…之后",
                     "Move to position": "指定位置",
                     "Move": "移动",
-
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -9234,19 +9240,6 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
-
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
-                "Follow long discussions with": "要跟随长讨论，请使用",
-                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
-                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
-                "to see everything that’s not assigned.": "查看所有未分配的内容。",
-                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
-                "Add comments to specific lines under": "为以下特定行添加注释于",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
