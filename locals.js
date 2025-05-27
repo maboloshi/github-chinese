@@ -7411,7 +7411,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Create a new repository": "创建新仓库",
                 "A repository contains all project files, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
                 "Already have a project repository elsewhere?": "在其他地方已有仓库？",
-                "Import a repository.": "导入仓库",
+                "Import a repository": "导入仓库",
                 "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
 
             "Repository template": "仓库模板",
@@ -7463,6 +7463,10 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     ".gitignore template": ".gitignore 模板",
                     "Filter…": "筛选…",
                     "None": "无",
+
+                    // 筛选 - 无模板
+                    "You haven't created any items yet": "您尚未创建任何项目",
+                        "Please add or create new items to populate the list.": "请添加或创建新项目以填充列表。",
             "Choose a license": "选择许可证",
                 "A license tells others what they can and can't do with your code.": "许可证告诉其他人，他们可以使用您的代码做什么和不能做什么。",
                 "Learn more about licenses.": "了解更多关于许可证的信息。",

@@ -38,7 +38,7 @@
 
 ## 🚩 功能
 
-- 中文化 GitHub 菜单栏，标题，按钮等公共组件
+- 中文化 GitHub **菜单栏，标题，按钮等公共组件**
 - 保留、完善正则功能
 - 支持对 “项目描述” 进行人机翻译 (参考: [k1995/github-i18n-plugin](https://github.com/k1995/github-i18n-plugin))
 
