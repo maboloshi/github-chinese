@@ -11329,6 +11329,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             "started this conversation in": "开始了这次讨论，在",
             "asked this question in": "提出了这个问题，在",
             "Maintainer": "维护者",
+            "Sponsor": "赞助者",
             "Discussion options": "讨论选项",
             "Category": "分类",
 
@@ -11570,6 +11571,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
 
             return '筛选：' + statKey[stat];
         }],
+        [/This user is sponsoring ([^ ]+)./, "该用户正在赞助 $1。"],
     ],
 };
 I18N["zh-CN"]["repository/orgs/discussions"] = I18N["zh-CN"]["repository/discussions"] ;
