@@ -8404,6 +8404,8 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "locked as": "锁定为",
                 "spam": "垃圾信息",
             "and limited conversation to collaborators": "并限制与协作者对话",
+            "assigned": "分配给",
+            "labels": "标签",
 
             // 图标浮窗
             "Open issue": "议题已打开",
@@ -9512,6 +9514,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "View reviewed changes": "查看已审核的更改",
             "self-requested a review": "自我要求审查",
             "self-assigned this": "已自我审查",
+            "unassign me": "取消自我分配",
             "marked this pull request as ready for review": "已将此拉取请求标记为可审核",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
@@ -18279,6 +18282,7 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
         "Subscriptions": "订阅",
         "Watching": "关注",
 
+        "assigned": "分配",
         "subscribed": "订阅",
         "mention": "提及",
         "commented": "评论",
