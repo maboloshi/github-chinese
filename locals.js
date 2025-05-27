@@ -8295,6 +8295,28 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "Search all issues": "搜索所有议题",
             "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
+            "ProTip!": "专业提示！",
+                "Find everything you created by searching": "查找您创建的所有内容，使用",
+                "Exclude your own issues with": "如需查看您自己创建的内容，请使用",
+                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
+                "Exclude everything labeled": "要找到所有标有",
+                "with": "标签的内容，请使用",
+                "Follow long discussions with": "要跟随长讨论，请使用",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
+                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
+                "to see everything that’s not assigned.": "查看所有未分配的内容。",
+                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
+                "Add comments to specific lines under": "为以下特定行添加注释于",
+                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
+                "Updated in the last three days:": "显示最近 3 天更新：",
+                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
+                "Adding": "添加",
+                "will show everything without a label.": "将显示所有无标签内容。",
+                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
+                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
+                // [/Ears burning? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
+
+
             "Labels": "标签",
                 "No labels": "无标签",
             "Milestones": "里程碑",
@@ -8606,16 +8628,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "to join this conversation on GitHub": "加入 GitHub 上的这个讨论",
                 ". Already have an account?": "。已经有账户？",
                 "Sign in to comment": "登录后发表评论",
-
-            // 专业提示
-                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
-                "Updated in the last three days:": "显示最近3天更新：",
-                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
-                "Adding": "添加",
-                "will show everything without a label.": "将显示所有无标签内容。",
-                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
-                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
-
     },
     "regexp": [ // 正则翻译
         // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
@@ -8627,6 +8639,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
         [/Open pull requests created by ([^ ]+)/, "$1 创建拉取请求"],
         [/pull requests opened by ([^ ]+)/, "$1 打开拉取请求"],
         [/(\d+) hidden conversations/, "$1 条隐藏对话"],
+        [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
     ]
 };
 
@@ -8773,13 +8786,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Move item after": "移动到…之后",
                     "Move to position": "指定位置",
                     "Move": "移动",
-
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -9241,19 +9247,6 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 // 筛选结果
                 "There aren’t any open pull requests.": "暂无拉取请求。",
-
-            "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "查看您自己的问题，使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "如果要找到所有标有",
-                "with": "标签的，请使用",
-                "Follow long discussions with": "要跟随长讨论，请使用",
-                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
-                "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
-                "to see everything that’s not assigned.": "查看所有未分配的内容。",
-                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
-                "Add comments to specific lines under": "为以下特定行添加注释于",
 
                 "You commented on and opened this pull request": "您打开了此拉取请求并发表了评论",
                 "You were mentioned on and commented on this pull request": "您被提及并对此拉取请求发表了评论",
@@ -15219,6 +15212,8 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             // 顶部提醒
                 "Repository invitation URLs work for invited users only. You may only share this URL with an invited user.": "仓库邀请 URL 仅适用于受邀请的用户。您只能与受邀请的用户共享此 URL。",
 
+                // [/Removed ([^ ]+) as a collaborator of ([^ ]+\/[^ ]+)/, "删除 $1 为 $2 的协作者"],
+
             "Who has access": "谁有权访问",
             "public repository": "公共仓库",
             "Public repository": "公共仓库",
@@ -15248,7 +15243,15 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "You haven't invited any collaborators yet": "您尚未邀请任何协作者",
             // "invite a collaborator": "邀请协作者",
             "Add people": "添加他人",
-                "Add to repository": "添加到仓库",
+                // 邀请对话框
+                    "Add people to": "添加成员到",
+                    "Search by username, full name, or email": "搜索用户名、全名、或电子邮箱",
+                    "Find people": "查找",
+                    "Invite collaborator": "邀请协作者",
+                    "Add to repository": "添加到仓库",
+                    // 顶部提醒
+                        // [/([^ ]+) has been added as a collaborator on the repository./, "$1 已被添加为仓库的协作者。"],
+
 
             "Select all": "全选",
                 // [/(\d+) members? selected…/, "已选择 $1 名成员..."],
@@ -15261,25 +15264,28 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
                     "Pending Invitations": "待处理邀请",
             "Find a collaborator…": "寻找协作者……",
             "Find people or a team…": "寻找用户或一个团队……",
+            "No Results": "无结果",
 
             "Pending Invite": "待处理邀请",
             "Invite expired": "已过期",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
             "Remove": "移除",
 
-            // 邀请对话框
-                "Add a collaborator to": "添加协作者到",
-                "Search by username, full name, or email": "搜索用户名、全名、或电子邮箱",
-                "Find people": "查找",
-                "Invite collaborator": "邀请协作者",
-                "Select a collaborator above": "从上方选择协作者",
-                "Add": "添加",
-                "to this repository": "到这个仓库",
-
-            "Confirm you want to remove this invitation": "确认移除邀请",
+            // 移除邀请对话框
+                "Confirm you want to remove this invitation": "确认移除邀请",
                 "Once canceled,": "取消后，",
                 "will no longer be invited to access the": "将不再被邀请访问",
                 "repository.": "仓库。",
+                // [/Cancel ([^ ]+)'s invitation/, "取消邀请 $1"],
+                // 顶部提醒
+                    // [/([^ ]+) is no longer invited to this repository./, "$1 不再受邀访问该仓库。"],
+
+            // 删除协助者对话框
+                "Confirm you want to remove this member": "确认要删除此成员？",
+                "Once removed,": "一旦删除，",
+                "will no longer have direct access to this repository. However, they may still have access to this repository if they are a member of a team that is granted access.": "将不再能直接访问此仓库。但是，如果他们是获准访问该仓库的团队成员，则仍可访问该仓库。",
+                // 顶部提醒
+                    // [/Remove ([^ ]+) from this repository/, "从该仓库移除 $1"],
 
             // 组织仓库
             "Create team": "创建组织",
@@ -15288,7 +15294,7 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "Learn more about organization access": "了解更多关于组织访问权限的信息",
             "Add teams": "添加团队",
 
-            "Add people to": "添加成员到",
+            // "Add people to": "添加成员到",
             "Select a member above": "在上面选择一名成员",
             "Add teams to": "添加团队",
             "Search by team name": "按团队名称搜索",
@@ -15301,12 +15307,16 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
         [/(\d+) collaborators?/, "$1 位协作者"],
         [/(\d+) invitations?/, "$1 个邀请"],
         [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
+        [/([^ ]+) • Collaborator/, "$1 • 协作者"],
         [/([^ ]+) • Invite collaborator/, "$1 • 邀请协作者"],
         [/(\d+) users?/, "$1 个用户"],
         [/(\d+) teams?/, "$1 个团队"],
         [/Add people to ([^ ]+)/, "添加人员到 $1"],
-        [/([^ ]+) has been added as a collaborator  on the repository./, "已将 $1 添加为仓库协作者。"],
+        [/([^ ]+) has been added as a collaborator on the repository./, "已将 $1 添加为仓库协作者。"],
         [/Cancel ([^ ]+)'s invitation/, "取消邀请 $1"],
+        [/([^ ]+) is no longer invited to this repository./, "$1 不再受邀访问该仓库。"],
+        [/Remove ([^ ]+) from this repository/, "从该仓库移除 $1"],
+        [/Removed ([^ ]+) as a collaborator of ([^ ]+\/[^ ]+)/, "删除 $1 为 $2 的协作者"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
