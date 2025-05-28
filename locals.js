@@ -9549,6 +9549,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // [/(\d+) pending reviewers?/, "$1 名待审者"],
             "was requested for review": "被请求审查",
 
+            "Changes reviewed": "更改已审查",
+                "No applicable reviews submitted by reviewers with write access.": "没有具有写入权限的审查者提交适用的审查意见。",
+
             // 已请求更改
                 // [/(\d+) reviews? requesting changes by reviewers with write access./, "$1 条评论请求更改由具有写入权限的审查者进行更改。"], // 拉取请求
 
