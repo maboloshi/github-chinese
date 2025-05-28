@@ -9147,6 +9147,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
         // Copilot 浮窗 独有词条
             "Ask about the issue:": "讨论此议题：",
+        
+        // 底部提示栏（未登录
+        "to join this conversation on GitHub.": "加入 GitHub 上的这个讨论。",
+            "Already have an account?": "已经有账户？",
 
     },
     "regexp": [ // 正则翻译
