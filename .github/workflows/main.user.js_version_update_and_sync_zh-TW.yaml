@@ -74,6 +74,12 @@ jobs:
             s/(@require.+locals.js\?v([0-9]+\.){2}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
           " main.user.js
 
+          # 更新 main(gitcode).user.js
+          sed -i -E "
+            s/(@version\s*([0-9]+\.){2}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
+            s/(@require.+locals.js\?v([0-9]+\.){2}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
+          " main(gitcode).user.js
+
           # 如果 main.user.js 变化，设置环境变量
           git diff --quiet --exit-code main.user.js || \
           echo "MAIN_USER_JS_CHANGED=true" >> $GITHUB_ENV
@@ -90,8 +96,8 @@ jobs:
             -R "${{ github.repository }}" \
             -B "${{ github.ref_name }}" \
             -P "${{ github.sha }}" \
-            -F "main.user.js" \
-            -h "main.user.js Update to $version" | tee >(cat >&2) | grep -oP '✅ 请求成功，SHA: \K[a-f0-9]{40}')
+            -F "main.user.js, main(gitcode).user.js" \
+            -h "main.user.js, main(gitcode).user.js Update to $version" | tee >(cat >&2) | grep -oP '✅ 请求成功，SHA: \K[a-f0-9]{40}')
 
           # 验证SHA格式
           if [[ "$oid" =~ ^[a-f0-9]{40}$ ]]; then
