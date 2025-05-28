@@ -54,7 +54,6 @@ Via 浏览器（Android）                | 浏览器内自带
 ## 💽 安装
 
 1. 安装用户脚本管理器。
-1. 打开浏览器的开发者模式。
 1. 然后再点击链接之一，安装脚本即可。
     - [GitHub 中文化插件 - GitHub 托管【开发版】][main.user.js]
     - [GitHub 中文化插件 - GitCode 托管【开发版】][main(gitcode).user.js]
