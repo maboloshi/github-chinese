@@ -7812,6 +7812,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                 // 代码空间
                     // 维护提示
+                        "Codespaces is undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间正在维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
                         "Codespaces will be undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间将进行维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
                         "this announcement": "此公告",
                     "Your workspaces in the cloud": "您在云端的工作空间",
@@ -7886,6 +7887,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Stop codespace": "停止代码空间",
                     "No changes": "未更改",
                     "Uncommitted changes": "未提交更改",
+
+                    "You seem to have a billing issue. Please adjust your billing settings to continue using codespaces.": "您似乎遇到了账单问题。请调整您的账单设置以继续使用代码空间。",
 
                     // 删除对话框
                         "Are you sure?": "您确定吗？",
@@ -9330,6 +9333,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 // 代码空间
                     // 维护提示
+                        "Codespaces is undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间正在维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
                         "Codespaces will be undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间将进行维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
                         "this announcement": "此公告",
                     "This pull request must be reopened to create new codespaces on it.": "必须重新打开此拉取请求才能在其上创建新的代码空间。",
@@ -9384,6 +9388,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "No changes": "未更改",
 
                     "Codespace usage for this repository is paid for by": "该仓库的代码空间使用费由以下人员支付",
+
+                    "You seem to have a billing issue. Please adjust your billing settings to continue using codespaces.": "您似乎遇到了账单问题。请调整您的账单设置以继续使用代码空间。",
 
                     // 被拉黑
                         "Repository access limited": "仓库访问受限",
