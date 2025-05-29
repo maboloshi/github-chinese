@@ -23801,6 +23801,7 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
 
         // 维护提示
+            "Codespaces is undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间正在维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
             "Codespaces will be undergoing maintenance. Users may experience connection issues during this time, for more details please visit": "代码空间将进行维护。在此期间，用户可能会遇到连接问题。更多详情请访问",
             "this announcement": "此公告",
 
@@ -23880,6 +23881,7 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
             // 警告
                 "You're at 100% of your included usage for this billing period. For more information, view your": "您已使用了本计费周期的 100% 额度。有关更多信息，请查看您的",
                 "billing settings": "账单设置",
+                "You seem to have a billing issue. Please adjust your billing settings to continue using codespaces.": "您似乎遇到了账单问题。请调整您的账单设置以继续使用代码空间。",
 
             // 状态
                 "No changes": "没有更改",
