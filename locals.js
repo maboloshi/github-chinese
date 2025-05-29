@@ -7401,6 +7401,8 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         // 成为协作者提示
         [/You now have push access to the ([^ ]+) repository./, "您现在拥有推送至 $1 仓库的权限"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
+        // 提交 - 作者窗
+        [/(\d+) authors?/, "$1 作者"],
     ],
 };
 
