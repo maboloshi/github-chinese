@@ -24869,6 +24869,27 @@ I18N["zh-CN"]["copilot"] = {
         "Discover all the": "了解世界领先的人工智能开发工具的所有",
             "benefits": "优势",
             "of the world’s leading AI developer tool.": "。",
+
+        "Spaces": "空间",
+
+        
+
+        "Set context once. Chat again and again": "一次设置上下文，反复聊天。",
+            "Create and share a custom Copilot experience using a collection of GitHub repositories, files, and other content.": "使用一组 GitHub 仓库、文件和其他内容创建并分享定制的 Copilot 体验。",
+            "Spaces lets you create shared research environments where you and your team can collaborate, explore topics, and exchange insights—all powered by AI-driven search and summarization.": "空间让您创建共享的研究环境，您和您的团队可以在其中协作、探索主题和交流见解——所有这些都得益于 AI 驱动的搜索和摘要。",
+
+        "Yours": "我的",
+            "Spaces you create will appear here.": "您创建的空间将在此显示。",
+
+        "New space": "新建",
+            "Name": "名称",
+                "Memorable name that helps you find your space.": "帮助你找到空间的易记名称。",
+
+            "Icon": "图标",
+                "Pick a color to make your space more recognizable.": "选择一种颜色，让您的空间更易于识别。",
+
+            "Owner": "所有者",
+                "Where we will store your space. Once created the space is not transferable.": "我们将存储您空间的位置，创建后无法转移。",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
