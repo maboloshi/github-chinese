@@ -548,7 +548,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Automate any workflow": "自动化任何工作流程",
                 // 软件包
                     "Host and manage packages": "托管和管理包",
-                // 安全
+                "GitHub Advanced Security": "GitHub 高级安全",
                     "Find and fix vulnerabilities": "查找并修复漏洞",
                 // 代码空间
                     "Instant dev environments": "即时开发环境",
@@ -556,6 +556,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Manage code changes": "管理代码更改",
                 // Copilot
                     "Write better code with AI": "借助 AI 写出更好的代码",
+                "GitHub Models": "GitHub 模型",
+                    "Manage and compare prompts": "管理和比较提示词",
                 // 议题
                     "Plan and track work": "计划和追踪工作",
                 // 讨论
@@ -564,6 +566,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Find more, search less": "查找更多，搜索更少",
 
                 // 右侧
+                "Why GitHub": "为什么选择 GitHub",
                 "All features": "所有功能",
                 "GitHub Skills": "GitHub 技能",
             "Solutions": "解决方案",
@@ -572,6 +575,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Enterprises": "企业",
                     "Small and medium teams": "中小团队",
                     "Startups": "创业",
+                    "Nonprofits": "非盈利组织",
                 "By industry": "工业",
                     "Healthcare": "健康护理",
                     "Financial services": "金融服务",
@@ -587,10 +591,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Resources": "资源",
                 "Innersource": "内部源",
                 "Learning Pathways": "学习路径",
+                "Events & Webinars": "事件 & 网络研讨会",
+                "Ebooks & Whitepapers": "电子书 & 白皮书",
                 "White papers, Ebooks, Webinars": "白皮书、电子书、网络研讨会",
                 "Customer Stories": "客户案例",
                 "Software Development": "软件开发",
                 "Partners": "合作",
+                "Executive Insights": "高管洞察",
                 "View all": "查看全部",
             "Open Source": "开源",
                 "GitHub Sponsors": "GitHub 赞助者",
@@ -613,7 +620,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Available add-ons": "可用扩展",
                     "Advanced Security": "高级安全",
                         "Enterprise-grade security features": "企业级安全功能",
-                    // Copilot
+                    "Copilot for business": "Copilot 企业版",
                         "Enterprise-grade AI features": "企业级 AI 功能",
                     // 高级支持
                         "Enterprise-grade 24/7 support": "企业级24小时全天候支持",
@@ -17503,6 +17510,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "Try GitHub Copilot": "试用 GitHub Copilot",
             "30 days free": "30天免费",
+        "Free Enterprise trial": "免费试用企业版", // 已登录
         "Explore upcoming releases": "探索即将发布的产品", // 已登录
 
         // 代码
@@ -17675,6 +17683,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         // 底部栏
         "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
+        "Get tips, technical guides, and best practices. Twice a month.": "获取提示、技术指南和最佳实践。每月两次。",
         "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
         "Subscribe": "订阅",
 
@@ -24165,6 +24174,8 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                 "Major Outage": "重大故障",
             "Degraded": "降级",
                 "Partial Outage": "部分中断",
+            "Maintenance": "维护",
+                "Under Maintenance": "维护中",
             "Git Operations": "Git 操作",
                 "Performance of git clones, pulls, pushes, and associated operations": "git 克隆、拉取、推送和相关操作的性能",
             "API Requests": "API 请求",
@@ -24186,6 +24197,12 @@ I18N["zh-CN"]["status"] = { // GitHub Status
             "For the status of GitHub Enterprise Cloud - EU, please visit:": "有关 GitHub 企业云的状态，请访问",
             "Current Status": "当前状态",
             "Incident History": "历史事故",
+
+        "Codespaces Scheduled Maintenance": "代码空间计划维护",
+
+        "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
+        "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
+
 
         // https://www.githubstatus.com/history
             "Incident with Packages": "软件包事故",
