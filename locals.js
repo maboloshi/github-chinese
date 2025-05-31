@@ -24888,8 +24888,43 @@ I18N["zh-CN"]["copilot"] = {
             "Icon": "图标",
                 "Pick a color to make your space more recognizable.": "选择一种颜色，让您的空间更易于识别。",
 
+            "Color:": "颜色：",
+                "Select a color": "选择颜色",
+                    "Filter colors": "筛选",
+                    "blue": "蓝",
+                    "brown": "棕",
+                    "cyan": "青",
+                    "gray": "灰",
+                    "green": "绿",
+                    "olive": "橄榄绿",
+                    "orange": "橙",
+                    "pink": "粉",
+                    "purple": "紫",
+                    "red": "红",
+                    "yellow": "黄",
+
             "Owner": "所有者",
                 "Where we will store your space. Once created the space is not transferable.": "我们将存储您空间的位置，创建后无法转移。",
+
+            "Description": "介绍",
+                "(optional)": "（可选）",
+                "Displays beneath the title on your spaces overview page without impacting responses.": "在您的空间概览页标题下方显示，不影响回复内容。",
+
+            "Instructions": "说明",
+                "Changes how Copilot responds on specific questions or tasks.": "更改 Copilot 对特定问题或任务的回应方式。",
+
+            "Attachments": "附件",
+                "Add text, code files, or GitHub data to set a permanent context": "添加文本、代码文件或 GitHub 数据，以设置永久上下文",
+
+                // 添加菜单
+                    "Add files, folders...": "文件（夹）...",
+                        "Select folders and files": "选择文件（夹）",
+                        "Search for files or folders": "搜索文件（夹）",
+                    "Add a text file": "文本文件",
+                        // 名称
+                            "Give the file a title": "文件标题",
+                        "Content": "内容",
+                            "Enter content here": "在此键入内容",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
@@ -24914,6 +24949,8 @@ I18N["zh-CN"]["copilot"] = {
 
             return `${translatedDate}${hour}:${min}`;
         }],
+        // 空间
+        [/Total percent used: (\d+\%)/, "总使用率：$1"],
     ],
 };
 
