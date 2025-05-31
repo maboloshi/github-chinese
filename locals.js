@@ -24872,8 +24872,6 @@ I18N["zh-CN"]["copilot"] = {
 
         "Spaces": "空间",
 
-        
-
         "Set context once. Chat again and again": "一次设置上下文，反复聊天。",
             "Create and share a custom Copilot experience using a collection of GitHub repositories, files, and other content.": "使用一组 GitHub 仓库、文件和其他内容创建并分享定制的 Copilot 体验。",
             "Spaces lets you create shared research environments where you and your team can collaborate, explore topics, and exchange insights—all powered by AI-driven search and summarization.": "空间让您创建共享的研究环境，您和您的团队可以在其中协作、探索主题和交流见解——所有这些都得益于 AI 驱动的搜索和摘要。",
@@ -24923,16 +24921,38 @@ I18N["zh-CN"]["copilot"] = {
 
             "Attachments": "附件",
                 "Add text, code files, or GitHub data to set a permanent context": "添加文本、代码文件或 GitHub 数据，以设置永久上下文",
+                "You've exceeded the size limit for this space. Remove some references to continue.": "您已超出此空间的大小限制。请移除一些引用以继续操作。",
 
                 // 添加菜单
                     "Add files, folders...": "文件（夹）...",
                         "Select folders and files": "选择文件（夹）",
                         "Search for files or folders": "搜索文件（夹）",
+                        "Fetching files...": "获取文件中...",
+                        "Up to": "一次最多添加",
+                        "files can be added at a time.": "个文件。",
+                        "One or more files can't be submitted:": "一个或多个文件不能提交：",
+                        ". Only supported file types are allowed.": "。只允许支持的文件类型。",
                     "Add a text file": "文本文件",
                         // 名称
                             "Give the file a title": "文件标题",
                         "Content": "内容",
                             "Enter content here": "在此键入内容",
+                
+                // 文件列表
+                "Size": "大小",
+                "Resource actions": "操作",
+        
+        // 空间 - 聊天
+            "Start a new conversation": "开始聊天",
+
+            "Ask anything": "询问任何事",
+
+            "Start your first conversation using the field above": "用上面的输入框开始您的第一次对话",
+            
+            // 右侧
+                "Owned by": "所有者",
+
+                "View all attachments": "查看所有附件",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
