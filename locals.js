@@ -24879,7 +24879,13 @@ I18N["zh-CN"]["copilot"] = {
         "Yours": "我的",
             "Spaces you create will appear here.": "您创建的空间将在此显示。",
 
+            "Manage space": "管理",
+              // 删除按钮
+                  "Delete space": "删除空间",
+                  "Are you sure you want to delete this space? This action cannot be undone.": "您确定要删除吗？此操作不可撤销！",
+
         "New space": "新建",
+        "Edit space": "编辑",
             "Name": "名称",
                 "Memorable name that helps you find your space.": "帮助你找到空间的易记名称。",
 
