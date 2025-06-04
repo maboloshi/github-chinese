@@ -15074,6 +15074,11 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
                 // 提醒
                 "Must be a whole number between 2 and 1000": "必须是 2 到 1000 之间的整数",
+            
+            // 议题
+                "After merging a pull request, linked issues can be closed automatically.": "合并拉取请求后，可以自动关闭关联议题。",
+                    "Auto-close issues with merged linked pull requests": "使用已合并的关联拉取请求自动关闭议题",
+                        "Whenever linked pull requests have merged, auto-close the issue.": "当关联的拉取请求被合并时，自动关闭该议题。",
 
             "Danger Zone": "危险区",
             "Change repository visibility": "更改仓库可见性",
