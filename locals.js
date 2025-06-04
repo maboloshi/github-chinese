@@ -24856,6 +24856,25 @@ I18N["zh-CN"]["copilot"] = {
                         "model or start a new conversation": "模型或新建对话",
             "Send now": "发送",
 
+            // 预设栏
+                "Create issue": "创建议题",
+                // 文件
+                    "Profile README": "个人资料",
+                    "Simple calculator": "简易计算器",
+                    "Pong game": "乒乓球游戏",
+                    "Mermaid architecture overview": "Mermaid 架构概览",
+                // 拉取请求
+                    "My open pull requests": "我打开的",
+                    "Summarize my latest PR": "总结最近",
+                // 议题
+                    "Issues assigned to me": "分配给我",
+                    "Create a new issue": "新建议题",
+                    "Summarize my latest issue": "总结最近",
+                // Git
+                    "Basic Git commands": "基本 Git 命令",
+                    "Git branching": "Git 分支",
+                    "Advanced Git commands": "高级 Git 命令",
+
         // 漏洞相关
             "Path Injection": "路径注入",
                 "Unvalidated input in path value creation risks unintended file/directory access": "创建路径值时输入的无效信息可能会导致意外文件/目录访问",
