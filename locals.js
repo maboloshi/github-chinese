@@ -8266,6 +8266,7 @@ I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
                 "Least issues": "最少的议题",
 
             "No due date": "没有截止日期",
+            "issues closed": "议题关闭",
             // [/Due by (.*)/, "截止日期 $1"], // 里程碑截止日期
             "Last updated": "最后更新",
             "(more)": "（更多）",
@@ -9223,7 +9224,7 @@ I18N["zh-CN"]["repository/labels"] = I18N["zh-CN"]["repository/issues"];
 I18N["zh-CN"]["repository/milestone"] = {
     "static": {
         ...I18N["zh-CN"]["repository/issues"]["static"],
-        "No due date": "无结束日期",
+        "No due date": "没有截止日期",
         "complete": "完成",
     },
     "regexp": [
