@@ -8284,14 +8284,29 @@ I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
             "Due date (optional)": "截止日期（可选）",
             "Description": "描述",
             "Create milestone": "创建里程碑",
+        
+        // 单个里程碑页 /<user-name>/<repo-name>/milestones
+            "opened": "打开于",
+            "was closed": "关闭于",
+
+            "There are no open issues in this milestone": "此里程碑没有打开议题",
+            "Add issues to milestones to help organize your work for a particular release or project. Find and add": "将议题添加到里程碑，有助于为特定的版本或项目组织您的工作。在此仓库中查找并添加",
+            "issues with no milestones": "没有里程碑的议题。",
+            "in this repo.": " ",
+
+            "There are no closed issues in this milestone": "此里程碑没有已关闭议题",
+            "Issues will automatically be moved here when they are closed.": "议题在关闭后会自动移到这里。",
 
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
+        [/(\d+\%) completed/, "$1 已完成"],
     ],
 };
+
+I18N["zh-CN"]["repository/milestone"] = I18N["zh-CN"]["repository/milestones"]; // 仓库 - 某里程碑
 
 I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
@@ -9220,17 +9235,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
     ],
 };
 I18N["zh-CN"]["repository/labels"] = I18N["zh-CN"]["repository/issues"];
-
-I18N["zh-CN"]["repository/milestone"] = {
-    "static": {
-        ...I18N["zh-CN"]["repository/issues"]["static"],
-        "No due date": "没有截止日期",
-        "complete": "完成",
-    },
-    "regexp": [
-        ...I18N["zh-CN"]["repository/issues"]["regexp"],
-    ]
-};
 
 I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
     "static": { // 静态翻译
