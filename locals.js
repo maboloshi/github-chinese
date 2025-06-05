@@ -697,6 +697,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
+                    "Spaces": "空间",
                     "Immersive": "全屏",
                 "Download for": "下载插件",
 
