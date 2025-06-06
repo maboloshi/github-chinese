@@ -24996,6 +24996,7 @@ I18N["zh-CN"]["copilot"] = {
             "Ask anything": "询问任何事",
 
             "Start your first conversation using the field above": "用上面的输入框开始您的第一次对话",
+            "Start your first conversation using the input above": "输入文本开始您的第一次对话",
             
             // 右侧
                 "Owned by": "所有者",
