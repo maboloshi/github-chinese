@@ -9231,6 +9231,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/(\d+\%) completed/, "$1 完成"],
         [/Issue (#\d+) created/, "议题 $1 已创建"],
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
+        [/mentioned this in (\d+) issues?/, "在 $1 个议题中提及"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
     ],
