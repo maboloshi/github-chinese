@@ -9575,6 +9575,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Requested changes": "请求更改",
             "restored the": "恢复",
             "unlocked this conversation": "解锁此对话",
+            "added this to the": "添加到",
+            "milestone": "里程碑",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
