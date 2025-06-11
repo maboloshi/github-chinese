@@ -9062,6 +9062,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             // 评论框
             "edited by": "编辑者",
             "Hidden as": "隐藏因",
+                "abuse": "滥用",
                 "show comment": "显示评论",
                 "hide comment": "隐藏评论",
             "Edits": "编辑",
