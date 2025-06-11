@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|events|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|hooks|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -14886,6 +14886,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 // "Actions": "操作",
                     // "General": "通常",
                     "Runners": "运行器",
+                "Models": "模型",
                 "Webhooks": "Web 钩子",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
@@ -16255,6 +16256,21 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
     ],
 };
 
+I18N["zh-CN"]["repository/settings/models/access-policy"] = { // 仓库设置 - 模型 /<user-name>/<repo-name>/settings/models/access-policy
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
+        
+        //"Models": "模型",
+
+        "Models in this repository": "此仓库模型",
+            "If disabled, the Models tab will be hidden, and the prompt editor and comparison tooling evaluations will be unavailable.": "如果禁用，模型选项卡将被隐藏，提示编辑器和对比工具评估也将不可用。",
+            "Learn more about Models.": "了解更多。",
+    },
+    "regexp": [],
+};
+
 I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-name>/<repo-name>/settings/hooks
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
@@ -16471,6 +16487,15 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
     ],
 };
 I18N["zh-CN"]["orgs/settings/hooks"] = I18N["zh-CN"]["repository/settings/hooks"];
+
+I18N["zh-CN"]["repository/copilot/coding_agent"] = {
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
+    },
+    "regexp": [],
+};
 
 I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-name>/<repo-name>/settings/environment
     "static": { // 静态翻译
