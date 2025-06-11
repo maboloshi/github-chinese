@@ -21037,7 +21037,7 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
         [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 组织成员的身份查看自述文件和置顶仓库。"],
         [/Invite a member to/, "邀请成员加入"],
-        [/\((\d+) issues? need help\)/, "($1 个议题需要帮助)"],
+        [/\((\d+) issues? needs? help\)/, "($1 个议题需要帮助)"],
         [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
         // 用户 - 浮动信息卡
         [/- (\d+)h (ahead|behind)/, function(all, num, compare){
