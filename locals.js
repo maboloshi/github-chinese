@@ -11577,6 +11577,11 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
         // 反应相关
             "You can't vote on a locked discussion": "您不能在锁定讨论投票",
             "Uh oh! You can't vote right now.": "哎呀！您现在不能投票。",
+
+        // 投票
+            "Show Results": "显示结果",
+            "Hide Results": "隐藏结果",
+            "Vote": "投票",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -11615,6 +11620,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             return '筛选：' + statKey[stat];
         }],
         [/This user is sponsoring ([^ ]+)./, "该用户正在赞助 $1。"],
+        [/(\d+) votes?/, "$1 投票"],
     ],
 };
 I18N["zh-CN"]["repository/orgs/discussions"] = I18N["zh-CN"]["repository/discussions"] ;
