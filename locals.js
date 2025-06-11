@@ -10562,6 +10562,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Ignore whitespace": "忽略空白字符差异",
             "Unified": "同屏",
             "Split": "分屏",
+            "Minimize comments": "最小化评论",
 
             "Display the source diff": "显示源差异",
             "Display the rich diff": "显示富差异",
