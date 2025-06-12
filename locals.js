@@ -15737,6 +15737,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                 "New branch ruleset": "新建分支规则集",
                     "New tag ruleset": "新建标签规则集",
                     "Import a ruleset": "导入规则集",
+                        "Choose a JSON file to upload": "选择 JSON 文件上传",
 
             "Ruleset": "规则集",
 
@@ -15780,6 +15781,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                     "This ruleset will not be enforced": "规则将不被执行",
 
             "Bypass list": "旁路列表",
+                "Exempt roles, teams, and apps from this ruleset by adding them to the bypass list.": "通过将角色、团队和应用程序添加到旁路列表，使其免受此规则集的约束。",
                 "Exempt roles, teams, or apps from this ruleset by adding them to the bypass list.": "通过将角色、团队或应用程序添加到旁路列表，使其免受此规则集的约束。",
                 "Exempt roles or teams from this ruleset by adding them to the bypass list": "通过将角色或团队添加到旁路列表，使其免受此规则集的约束", // 组织设置
                 "Add bypass": "添加旁路",
