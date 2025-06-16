@@ -24951,6 +24951,9 @@ I18N["zh-CN"]["copilot"] = {
 
             // 预设栏
                 "Create issue": "创建议题",
+                // 空间
+                    "Recent": "最近",
+                    "Create a space": "新建空间",
                 // 文件
                     "Profile README": "个人资料",
                     "Simple calculator": "简易计算器",
