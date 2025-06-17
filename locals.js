@@ -16202,6 +16202,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                 // 输入框提示
                 "Duration must be 1 or more.": "不能小于 1",
                 "Duration must be 90 or less": "不能大于 90",
+                "There is a maximum limit of": "最多",
 
                 "days": "天",
 
