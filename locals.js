@@ -8932,6 +8932,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "added sub-issues": "添加子议题",
             "removed a parent issue": "移除父议题",
             "removed a sub-issue": "移除子议题",
+            "marked": "标记",
+                "as a duplicate of this issue": "议题同此重复", // 示例 https://github.com/maboloshi/github-chinese/issues/405
 
             // 右侧栏 补充
             "Metadata": "元数据", // 小屏模式
