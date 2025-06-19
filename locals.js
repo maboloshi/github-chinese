@@ -9720,6 +9720,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Merge pull request": "合并拉取请求",
                 "Merging is blocked due to failing merge requirements": "由于未满足合并要求，合并已被阻止。",
             // 合并拉取请求 按钮下拉
+            "Select merge method": "选择合并方式",
                 "Create a merge commit": "创建合并提交",
                     "All commits from this branch will be added to the base branch via a merge commit.": "该分支的所有提交都将通过合并提交加入到基础分支中。",
                     "Not enabled for this repository": "未为此仓库启用",
