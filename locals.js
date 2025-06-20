@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage', 'repository/issues', 'repository/commit'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'repository/settings/rules'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -15767,6 +15767,10 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
             "Tag": "标签",
             "tags": "标签",
 
+            "Open additional options": "打开其他选项",
+            "Export": "导出",
+            "ruleset": "规则",
+
             "Name": "名称",
                 "Ruleset name cannot be empty": "规则集名称不能为空",
             "Enforcement status": "执行状态",
@@ -15953,7 +15957,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                         "Hide additional settings": "隐藏附加设置",
                         "Show additional settings": "显示附加设置",
                             "Search for deployment environments": "搜索部署环境",
-                            "No deployment environments found": "未找到部署环境",
+                            "No deployment environments have been added": "未添加部署环境",
                             "Learn more about deployment environments": "了解更多关于部署环境的信息",
                     "Require signed commits": "要求带签名的提交",
                         "Commits pushed to matching refs must have verified signatures.": "推送到匹配引用的提交必须带有经过验证的签名。",
@@ -15973,6 +15977,19 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                                 "Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.": "如果作者有权访问 Copilot 代码审查，则自动请求 Copilot 对新拉取请求进行审查。",
 
                             "Allowed merge methods": "允许合并方法",
+                                "Merge, Squash": "合并，压缩",
+                                "Merge, Squash, Rebase": "合并，压缩，变基",
+                                "Merge, Rebase, Squash": "合并，变基，压缩",
+                                "Merge, Rebase, Squash": "合并，变基，压缩",
+                                "Merge, Rebase": "合并，变基",
+                                "Squash, Rebase": "压缩，变基",
+                                "Squash, Rebase, Merge": "压缩，变基，合并",
+                                "Squash, Merge": "压缩，合并",
+                                "Squash, Merge, Rebase": "压缩，合并，变基",
+                                "Rebase, Merge": "变基，合并",
+                                "Rebase, Squash": "变基，压缩",
+                                "Rebase, Squash, Merge": "变基，压缩，合并",
+                                "Rebase, Merge, Squash": "变基，合并，压缩",
                                 "Merge": "合并",
                                     "Add all commits from the head branch to the base branch with a merge commit.": "将所有来自头部分支的提交通过一次合并提交添加到基础分支。",
                                 "Squash": "压缩",
@@ -16011,6 +16028,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                         "Alerts": "警报",
                             "Errors": "仅错误",
                             "Errors and Warnings": "错误和警告",
+                        "Delete Tool": "删除工具",
                         "Tools that must provide code scanning results for this rule to pass.": "必须提供代码扫描结果才能通过此规则的工具。",
                         "Learn more about enabling code scanning.": "了解更多关于启用代码扫描的信息。",
 
@@ -16196,8 +16214,9 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
 
             "Artifact and log retention": "工件和日志保留",
                 "Choose the repository settings for artifacts and logs.": "选择工件和日志的仓库设置。",
+                "There is a maximum limit of": "最大限制为",
+                "days.": "天。",
                 "Your organization has set a maximum limit of": "您的组织已将上限设置为", //组织仓库
-                "days.": "天。", //组织仓库
                 "Learn more about the artifact and log retention policy.": "了解更多关于工件和日志保留政策的信息。",
 
                 // 输入框提示
@@ -16233,7 +16252,8 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
             "Require approval for all outside collaborators": "要求对所有外部协作者进行批准审查",
                 "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流程。",
             "Require approval for all external contributors": "要求对所有外部贡献者进行批准审查",
-                "All users that are not a member or owner of this repository will require approval to run workflows.": "所有不是该仓库成员或所有者的用户都需要获得批准才能运行工作流。",
+                "All users that are not a member or owner of this repository will require approval to run workflows.": "所有不是该仓库成员或所有者的用户，均需获得批准才能运行工作流。",
+                // [/All users that are not a member or owner of this repository and not a member of the ([^ ]+) organization will require approval to run workflows./, "所有不是该仓库成员或所有者，且未加入 $1 组织的用户，均需获得批准才能运行工作流。"], // 组织
 
             "Workflow permissions": "工作流程权限",
                 "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
@@ -16278,6 +16298,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
         [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
+        [/All users that are not a member or owner of this repository and not a member of the ([^ ]+) organization will require approval to run workflows./, "所有不是该仓库成员或所有者，且未加入 $1 组织的用户，均需获得批准才能运行工作流。"], // 组织
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };

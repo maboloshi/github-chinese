@@ -307,9 +307,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/buiawpkgew1" title="菾凴">
   <img src="https://avatars.githubusercontent.com/u/71136405?v=4" width="42;" alt="菾凴"/>
 </a>
-<a href="https://github.com/pecasha" title="Pecasha">
-  <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
-</a>
 <a href="https://github.com/yrljroli" title="𠭞">
   <img src="https://avatars.githubusercontent.com/u/169890386?v=4" width="42;" alt="𠭞"/>
 </a>
@@ -343,8 +340,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/ImgBotApp" title="Imgbot">
   <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
 </a>
-<a href="https://github.com/NeoTraveler" title="NeoTraveler">
-  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="NeoTraveler"/>
+<a href="https://github.com/neveler" title="neveler">
+  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="neveler"/>
 </a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
