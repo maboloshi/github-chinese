@@ -389,6 +389,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Code Security": "代码安全性",
         "New Fine-grained Personal Access Token": "新建精细化个人访问令牌",
         "Coding agent": "编程助手",
+        "Get Started With GitHub Discussions": "开始使用 GitHub 讨论",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -11132,8 +11133,8 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             "Get started with GitHub Discussions": "开始使用 GitHub 讨论",
                 "Discussions is a central gathering space for your community to ask questions, share ideas, and build connections with each other—all right next to your code.": "讨论是一个社区成员集中交流的空间，大家可以在这里提问、分享想法，并彼此建立联系——而且这一切都在您的代码旁边完成。",
 
-                "Get Started": "开始",
-                "Not now": "现在不",
+                "Get Started": "开始使用",
+                "Not now": "暂不",
 
                 "Only maintainers can see this page and enable Discussions": "只有维护者能看到此页面并启用讨论",
 
@@ -11160,7 +11161,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             "Communities using Discussions": "使用讨论交流",
 
             "Ready to try Discussions?": "准备尝试讨论？",
-                "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "点击 “开始使用” 即可为您的社区启用该功能，并发起您的首次讨论。现在不方便操作？点击 “暂不启用” 可关闭此标签页。您也可以稍后在仓库设置中随时开启讨论功能。",
+                "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "点击 “开始使用” 即可为您的社区启用该功能，并发起您的首次讨论。现在不方便操作？点击 “暂不” 可关闭此标签页。您也可以稍后在仓库设置中随时开启讨论功能。",
 
             "Read about best practices for setting up Discussions for your community.": "了解为社区设置讨论功能的最佳实践。",
                 "Visit the docs": "查看",
