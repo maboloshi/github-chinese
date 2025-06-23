@@ -11128,6 +11128,31 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["orgs-public"]["static"],
 
+        // 没有任何讨论时
+            "Get started with GitHub Discussions": "开始使用 GitHub 讨论",
+                "Discussions is a central gathering space for your community to ask questions, share ideas, and build connections with each other—all right next to your code.": "讨论是一个社区成员集中交流的空间，大家可以在这里提问、分享想法，并彼此建立联系——而且这一切都在您的代码旁边完成。",
+
+                "Get Started": "开始",
+                "Not now": "现在不",
+
+                "Only maintainers can see this page and enable Discussions": "只有维护者能看到此页面并启用讨论",
+
+            // 用法介绍
+                // 自定义分类
+                    "Create custom categories and discussion types to suit your community's unique needs.": "创建自定义类别和讨论类型，以满足您社区的独特需求。",
+                "Mark the most helpful answer": "标记最有用的答案",
+                    "Highlight quality responses and make the best answer super discoverable.": "突出优质回答，让最佳答案易于被发现。",
+                "Pin big announcements": "置顶重大公告",
+                    "Direct the community’s attention to important announcements or popular discussions.": "将社区的注意力引导至重要公告或热门讨论。",
+
+            "Communities using Discussions": "使用讨论交流",
+
+            "Ready to try Discussions?": "准备尝试讨论？",
+                "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "点击 “开始使用” 即可为您的社区启用该功能，并发起您的首次讨论。现在不方便操作？点击 “暂不启用” 可关闭此标签页。您也可以稍后在仓库设置中随时开启讨论功能。",
+
+            "Read about best practices for setting up Discussions for your community.": "了解为社区设置讨论功能的最佳实践。",
+                "Visit the docs": "查看",
+
         // 讨论页面 /<user-name>/<repo-name>/discussions
         // 组织讨论页 /orgs/<orgs-name>/discussions
             // 顶部提示
