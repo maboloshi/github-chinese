@@ -10786,6 +10786,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "authored": "撰写于",
 
             // 左侧文件管理器
+            "Filter options": "筛选...",
             "Filter files…": "筛选文件...",
                 "File extensions": "文件扩展名",
                 "No extension": "无扩展名",
