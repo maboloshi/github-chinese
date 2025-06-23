@@ -4083,7 +4083,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Extra billing information": "额外的账单信息",
             "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
             "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
-            "To update the information that appears on invoices (if enabled), visit the": "要更新显示在发票上的信息（如果已启用），请访问",
+            //"To update the information that appears on invoices (if enabled), visit the": "要更新显示在发票上的信息（如果已启用），请访问",
+            "To update the information that appears on": "要更新显示在",
+                "invoices": "发票",
+                "(if enabled), visit the": "上的信息（如果已启用），请访问",
             "Full business name or address of record": "企业全称或记录地址",
             "Save contact information": "保存联系信息",
 
