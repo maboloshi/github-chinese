@@ -4364,6 +4364,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 return `${hour}:00`;
             }],
 
+        // 计费用量 - 按仓库统计
+            [/Top five repositories (today|this month|last month|this year|)/, function(all , time) {
+                var timeKey = {"today": "今天","this month": "这个月","last month": "上个月","this year": "今年","last year": "去年"};
+                return timeKey[time] + "用量前 5 的仓库";
+            }],
+
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "计划变更成功。@$1 已更新为专业版年度计费。"],
         // [/The plan change was successful. @([^ ]+) has been updated to the pro monthly plan./, "计划变更成功。@$1 已更新为专业版月度计费。"],
         // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
@@ -4381,9 +4387,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         // [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
         // [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
         // [/Last (\d+) days/, "最近 $1 天"],
-        // [/([^ ]+) support/, "$1 支持"],
         // [/Included minutes quota only applies to Ubuntu 2-core, Windows 2-core and macOS 3-core runners\. Windows 2-core and macOS 3-core runners consume included minutes at higher rates\. Your (\d+\.\d+) included minutes used consists of (.*)/, "包含的分钟配额仅适用于双核 Ubuntu、双核 Windows 和三核 macOS 运行器。双核 Windows 和三核 macOS 运行器以更高的速度消耗包括的分钟数。您已使用的 $1 分钟包含分钟数由 $2 组成。"],
-        // [/(\$\d+\.\d{2}) off per month for (\d+) years/, "每月优惠 $1，为期 $2 年"],
         // [/(\$\d+\.\d{2})\/month/, "$1/月"],
         // [/(\$\d+\.\d{2}) off \/ month/, "-$1/月"],
         // [/(\$\d+\.\d{2})\/year/, "$1/年"],
@@ -4393,11 +4397,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //     const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
         //     const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
         //     return `${translatedDate}` + optKey[opt];
-        // }],
-        // [/until (.+)./, (match, p1) => {
-        //     const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-        //     const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-        //     return `直到 ${translatedDate}。`;
         // }],
 
 
@@ -4418,6 +4417,19 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 账户预算 https://github.com/settings/billing/budgets
             [/(\d+) budgets?/, "$1 预算"],
+
+        // 支付信息 https://github.com/settings/billing/payment_information
+            [/(\$\d+\.\d{2}) off per month for (\d+) years/, "每月优惠 $1，为期 $2 年"],
+            [/until (.+)./, (match, p1) => {
+                const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+                const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+    
+                return `直到 ${translatedDate}。`;
+            }],
+
+        // 其他账单 https://github.com/settings/billing/subscriptions
+            [/([^ ]+) support/, "$1 支持"],
+
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
