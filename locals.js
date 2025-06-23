@@ -11140,10 +11140,22 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             // 用法介绍
                 // 自定义分类
                     "Create custom categories and discussion types to suit your community's unique needs.": "创建自定义类别和讨论类型，以满足您社区的独特需求。",
-                "Mark the most helpful answer": "标记最有用的答案",
+                "Mark the most helpful answer": "标记答案",
                     "Highlight quality responses and make the best answer super discoverable.": "突出优质回答，让最佳答案易于被发现。",
-                "Pin big announcements": "置顶重大公告",
+                "Pin big announcements": "置顶功能",
                     "Direct the community’s attention to important announcements or popular discussions.": "将社区的注意力引导至重要公告或热门讨论。",
+                "Label your discussions": "标签功能",
+                    "Organize and triage discussions to keep your space tidy and help contributors filter to areas of interest.": "组织和筛选讨论内容，以保持社区空间整洁，并帮助参与者过滤到感兴趣的领域。",
+                "Respond on-the-go with mobile": "通过移动端随时响应",
+                    "Check in and respond to discussions whenever and wherever is convenient for you.": "随时随地在方便的时候查看并回复讨论。",
+                "Connect to your apps": "链接应用",
+                    "Integrate with your existing workflows and GitHub Actions via the GraphQL API and webhooks.": "通过 GraphQL API 和 Web 钩子与现有工作流程及 GitHub Actions 集成。",
+                "Thread your conversations": "串联对话",
+                    "Keep conversations on track and encourage collaboration with threaded comments.": "通过串联评论让对话保持正轨并促进协作。",
+                "Monitor community insights": "社区数据看板",
+                    "Track the health and growth of your community with a dashboard full of actionable data.": "通过充满可操作数据的仪表盘，追踪社区的健康状况与发展情况。",
+                "Ask your community with polls": "社区投票",
+                    "Gauge interest in a feature, vote on a meetup time, or learn more about your community with polls.": "通过投票来衡量对某项功能的兴趣、对聚会时间进行表决，或进一步了解你的社区情况。",
 
             "Communities using Discussions": "使用讨论交流",
 
