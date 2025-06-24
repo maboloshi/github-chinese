@@ -3713,7 +3713,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "Billable licenses info": "计费许可信息",
                             "If a user stops consuming a license within the month, the adjustment will be reflected in your next month's bill.": "如果用户在当月停止使用许可，相关调整将体现在您下个月的账单中。",
                             "Billable licenses are only available for the 'Current month' timeframe.": "计费许可仅适用于“当前月”时间段。",
-                            "Learn more about billable licenses": "了解更多",
+                            "Learn more about billable licenses": "了解更多关于可计费许可证的信息",
                         "Showing total unique licenses billed for your enterprise. Actual billed amount for each license is prorated based on when it is added during the billing cycle.": "显示您企业所计费的唯一许可证总数。每个许可证的实际计费金额将根据其在计费周期内添加的时间按比例分摊。",
                     "Copilot premium requests": "Copilot 高级版请求",
                         "About Copilot premium requests": "关于 Copilot 高级版请求",
