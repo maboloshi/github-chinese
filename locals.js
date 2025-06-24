@@ -4370,9 +4370,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             }],
 
         // 计费用量 - 按仓库统计
-            [/Top five repositories (today|this month|last month|this year|)/, function(all , time) {
+            [/Top (three|four|five) repositories (today|this month|last month|this year|)/, function(all , num, time) {
+                var numKey = {"three": "三", "four": "四", "five": "五"}
                 var timeKey = {"today": "今天","this month": "这个月","last month": "上个月","this year": "今年","last year": "去年"};
-                return timeKey[time] + "用量前 5 的仓库";
+                return timeKey[time] + "排名前" + numKey[num] + "的仓库";
             }],
 
         // 计费用量 - 底下计算部分
@@ -10182,6 +10183,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
+        // 建议更改（词条打架移动至此）
+        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         // Dependabot 打开的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "此拉取请求解决了 1 个 Dependabot 警报，在 $1 上。"],
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
@@ -10276,7 +10279,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
-        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
@@ -10288,13 +10290,16 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Copy (.+?) to clipboard/, "复制 $1 到剪切板"],
 
         // 文件差异过大 参考 https://github.com/maboloshi/github-chinese/pull/306/files
-        [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "差异过大，不会显示 $1 行添加以及 $1 行删除。请使用本地 Git 客户端查看更改。"],
+        [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "差异过大，不会显示 $1 行添加以及 $2 行删除。请使用本地 Git 客户端查看更改。"],
 
         // 任务
         [/(\d+) tasks?/, "$1 个任务"],
 
         // 评论
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
+
+        // 建议更改
+        //[/on this commit as ([^@]+@[^\n]+)/, "提交，身份为 $1"],
 
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
