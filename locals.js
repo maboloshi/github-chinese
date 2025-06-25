@@ -9132,6 +9132,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Delete revision": "删除修订",
             "Reopen Issue": "重新打开议题",
                 "You do not have permissions to reopen this issue": "您没有权限重新打开此议题",
+            // 评论删除对话框
+                "Delete comment": "删除评论",
+                "Are you sure you'd like to delete this comment?": "您确定要删除这条评论吗？",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
             "Comment can not be empty": "评论不能为空",
