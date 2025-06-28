@@ -59,12 +59,13 @@ Via（Android）       | 内置管理器
 
 1. 安装用户脚本管理器：
     - 推荐：[Tampermonkey][Tampermonkey]
-1. 开启浏览器 “扩展程序” 管理中的 “开发者模式”[^1]
+1. **开启浏览器 “扩展程序” 管理中的 “开发者模式”[^1]**
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
     - [GitCode 镜像【开发版】][main(gitcode).user.js]【国内】
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
+1. 必要时，重启浏览器
 
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
@@ -101,7 +102,7 @@ Via（Android）       | 内置管理器
 
 ### 最新版本
 
-##### v1.9.3 (2024-08-18)
+#### v1.9.3 (2024-08-18)
 
 1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视
 1. 优化突变翻译处理：
