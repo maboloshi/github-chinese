@@ -5287,9 +5287,16 @@ I18N["zh-CN"]["settings/models"] = {
 
         "Billing": "账单",
 
-        "Models paid usage": "付费模型用量",
+        "Models paid usage": "使用付费模型",
             "If enabled, usage beyond the free tier will be billed per token based on model pricing from your Models budget.": "如果启用，超出免费额度的使用将根据您模型预算中的模型定价按令牌计费。",
             "Models pricing": "模型价格",
+
+            "To enable Models paid usage, a payment method is needed.": "要启用付费模型，需要添加支付方式。",
+                "Add payment method": "添加支付方式",
+
+            "You currently have": "您当前有",
+                "free rate limits": "免费额度",
+                ". Enable paid usage to avoid interruption and add tokens.": "。启用付费使用以避免中断并添加令牌。",
     },
     "regexp": [],
 };
