@@ -1373,6 +1373,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Choose repositories to chat about.": "选择以聊天",
                         "Choose a repository to chat about.": "选择以聊天",
                 "Remove topic": "移除主题",
+                "Upload from computer": "上传本机文件",
                 "Extension…": "扩展…",
                 "Extension": "扩展",
                     "Extensions": "扩展",
@@ -3052,6 +3053,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
 
         "Code, planning, and automation": "代码、规划和自动化",
         // "Repository": "仓库"
+        "Models": "模型",
         "Packages": "软件包",
         "Copilot": "GitHub Copilot",
             "Features": "功能",
