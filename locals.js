@@ -751,6 +751,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "New Files Changed Experience": "新版文件更改体验",
+                    "Feature enabling the new Files Changed Page": "启用新版更改的文件页",
                 "Slash Commands": "斜杠命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
@@ -10001,6 +10003,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Loading branch information": "正在加载分支信息",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
+            "Try the new experience": "尝试新体验",
             // 工具条
             "Show file tree": "显示文件树",
             "Hide file tree": "隐藏文件树",
