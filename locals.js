@@ -10126,6 +10126,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Explain": "解释",
                     "Attach to current thread": "附加到当前主题",
                     "Reference added to thread": "已附加至主题", // 左下角浮窗
+                    "Ask about this diff": "询问此差异",
 
                 "Select files to discuss": "选择文件讨论",
                     "Copilot is not available for this file": "Copilot 不支持此文件",
@@ -10153,6 +10154,39 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Refresh and try again.": "刷新并重试。",
 
                 "Multiple suggested changes can be batched together in a single commit. Each suggestion author will be attributed in the commit as a co-author.": "多个建议更改可以在一次提交中批量处理。每个建议作者都将在提交中被归为共同作者。",
+
+            // 新版
+                "Switch back": "返回旧版",
+                "Feedback": "反馈",
+
+                "Collapse file tree": "折叠文件树",
+                "Expand file tree": "展开文件树",
+
+                "All changes": "所有更改",
+                "Specific commit…": "特定提交…",
+                    "Pick one or more commits": "选择多个提交",
+                    "Clear selection": "清除选择",
+                        "Picking a range will select commits in between.": "选择一个范围将会选中其间的提交。",
+
+                "viewed": "已审查",
+
+                "Comments": "评论",
+                "Submit": "提交",
+                    "review": "审查",
+
+                "Filter files…": "筛选文件…",
+                "Filter options": "选项",
+                    "File extensions": "文件扩展名",
+
+                "Layout": "结构",
+                "Minimize comments": "最小化评论",
+                "Compact line height": "紧凑行高",
+
+                "Copy": "复制",
+                "Select all": "全选",
+                "Expand above": "向上展开",
+                "Expand below": "向下展开",
+                "Go to next hunk": "下一块",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files/<full SHA>
             "You are viewing a condensed version of this merge commit. You can view the": "您正在查看该合并提交的浓缩版本。您可以查看",
@@ -10239,6 +10273,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `提交于${translatedDate}`;
         }],
+        [/Add(?: a)? comment on line ((L|R)(\d+))/, "在 $1 行评论"],
+        [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
