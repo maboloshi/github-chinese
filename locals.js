@@ -3725,6 +3725,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "About Copilot premium requests": "关于 Copilot 高级版请求",
                         "If enabled, additional premium requests beyond the included amount for each license will be billed.": "若启用此功能，每个许可证所包含额度之外的额外高级请求将另行计费。",
                         "Manage Copilot policy": "管理 Copilot 策略",
+                    // 模型
+                        "About GitHub Models rate limits": "关于 GitHub 模型速率限制",
+                            "GitHub Models rate limits": "GitHub 模型速率限制",
+                                "The playground and free API usage are rate limited by requests per minute, requests per day, tokens per request, and concurrent requests.": "操场和免费 API 的使用受到以下限制：每分钟请求数、每天请求数、每次请求的令牌数以及并发请求数。",
+                                "Learn more about GitHub Models rate limits": "了解更多", // 有上下文，故省略
 
             // 代码空间超限
             "You've used 90% of included services for GitHub Codespaces storage.": "您已使用 90% 代码空间存储。",
@@ -4384,6 +4389,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 计费用量 - 底下计算部分
             [/Cost calculated based on additional (\d+) premium requests/, "费用根据额外的 $1 项高级版请求计算"],
+            [/Cost calculated based on additional (\d+) token units/, "费用根据额外的 $1 项令牌单位计算"],
 
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "计划变更成功。@$1 已更新为专业版年度计费。"],
         // [/The plan change was successful. @([^ ]+) has been updated to the pro monthly plan./, "计划变更成功。@$1 已更新为专业版月度计费。"],
