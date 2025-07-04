@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'repository/settings/rules'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'repository/settings/rules'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -130,6 +130,7 @@ I18N.conf = {
         ],
         'repository/issues': [
             '.styled-input-container', // 筛选条
+            '.Box-sc-g0xbh4-0.markdown-body', // 评论正文
         ],
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏
@@ -189,7 +190,7 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            '.js-comment-body', '.js-preview-body',
+            '.comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
@@ -389,6 +390,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Code Security": "代码安全性",
         "New Fine-grained Personal Access Token": "新建精细化个人访问令牌",
         "Coding agent": "编程助手",
+        "Get Started With GitHub Discussions": "开始使用 GitHub 讨论",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
@@ -3712,10 +3714,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "Billable licenses info": "计费许可信息",
                             "If a user stops consuming a license within the month, the adjustment will be reflected in your next month's bill.": "如果用户在当月停止使用许可，相关调整将体现在您下个月的账单中。",
                             "Billable licenses are only available for the 'Current month' timeframe.": "计费许可仅适用于“当前月”时间段。",
+                            "Learn more about billable licenses": "了解更多关于可计费许可证的信息",
                         "Showing total unique licenses billed for your enterprise. Actual billed amount for each license is prorated based on when it is added during the billing cycle.": "显示您企业所计费的唯一许可证总数。每个许可证的实际计费金额将根据其在计费周期内添加的时间按比例分摊。",
                     "Copilot premium requests": "Copilot 高级版请求",
                         "About Copilot premium requests": "关于 Copilot 高级版请求",
-                    // [/Cost calculated based on additional (\d+) premium requests/, "费用根据额外的 $1 项高级版请求计算"],
+                        "If enabled, additional premium requests beyond the included amount for each license will be billed.": "若启用此功能，每个许可证所包含额度之外的额外高级请求将另行计费。",
+                        "Manage Copilot policy": "管理 Copilot 策略",
 
             // 代码空间超限
             "You've used 90% of included services for GitHub Codespaces storage.": "您已使用 90% 代码空间存储。",
@@ -4082,7 +4086,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Extra billing information": "额外的账单信息",
             "This information will appear on all your receipts.": "此信息将出现在您的所有收据上。",
             "For your security, do not include any confidential or financial information (like credit card numbers).": "为了您的安全，请勿包含任何机密或财务信息（如信用卡号）。",
-            "To update the information that appears on invoices (if enabled), visit the": "要更新显示在发票上的信息（如果已启用），请访问",
+            //"To update the information that appears on invoices (if enabled), visit the": "要更新显示在发票上的信息（如果已启用），请访问",
+            "To update the information that appears on": "要更新显示在",
+                "invoices": "发票",
+                "(if enabled), visit the": "上的信息（如果已启用），请访问",
             "Full business name or address of record": "企业全称或记录地址",
             "Save contact information": "保存联系信息",
 
@@ -4363,6 +4370,16 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 return `${hour}:00`;
             }],
 
+        // 计费用量 - 按仓库统计
+            [/Top (three|four|five) repositories (today|this month|last month|this year|)/, function(all , num, time) {
+                var numKey = {"three": "三", "four": "四", "five": "五"}
+                var timeKey = {"today": "今天","this month": "这个月","last month": "上个月","this year": "今年","last year": "去年"};
+                return timeKey[time] + "排名前" + numKey[num] + "的仓库";
+            }],
+
+        // 计费用量 - 底下计算部分
+            [/Cost calculated based on additional (\d+) premium requests/, "费用根据额外的 $1 项高级版请求计算"],
+
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "计划变更成功。@$1 已更新为专业版年度计费。"],
         // [/The plan change was successful. @([^ ]+) has been updated to the pro monthly plan./, "计划变更成功。@$1 已更新为专业版月度计费。"],
         // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
@@ -4380,9 +4397,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         // [/of (\d+\.\d{2}) included core hours used/, "/ $1 核心小时数"],
         // [/of (\d+\.\d{2}) included GB-month used/, "/ $1 GB/每月"],
         // [/Last (\d+) days/, "最近 $1 天"],
-        // [/([^ ]+) support/, "$1 支持"],
         // [/Included minutes quota only applies to Ubuntu 2-core, Windows 2-core and macOS 3-core runners\. Windows 2-core and macOS 3-core runners consume included minutes at higher rates\. Your (\d+\.\d+) included minutes used consists of (.*)/, "包含的分钟配额仅适用于双核 Ubuntu、双核 Windows 和三核 macOS 运行器。双核 Windows 和三核 macOS 运行器以更高的速度消耗包括的分钟数。您已使用的 $1 分钟包含分钟数由 $2 组成。"],
-        // [/(\$\d+\.\d{2}) off per month for (\d+) years/, "每月优惠 $1，为期 $2 年"],
         // [/(\$\d+\.\d{2})\/month/, "$1/月"],
         // [/(\$\d+\.\d{2}) off \/ month/, "-$1/月"],
         // [/(\$\d+\.\d{2})\/year/, "$1/年"],
@@ -4393,13 +4408,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //     const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
         //     return `${translatedDate}` + optKey[opt];
         // }],
-        // [/until (.+)./, (match, p1) => {
-        //     const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-        //     const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-        //     return `直到 ${translatedDate}。`;
-        // }],
-
-
 
         // 计费用量 https://github.com/settings/billing/usage
             [/^Group: (None|Product|SKU|Repository)$/, function(all, group) {
@@ -4417,6 +4425,19 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 账户预算 https://github.com/settings/billing/budgets
             [/(\d+) budgets?/, "$1 预算"],
+
+        // 支付信息 https://github.com/settings/billing/payment_information
+            [/(\$\d+\.\d{2}) off per month for (\d+) years/, "每月优惠 $1，为期 $2 年"],
+            [/until (.+)./, (match, p1) => {
+                const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+                const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+    
+                return `直到 ${translatedDate}。`;
+            }],
+
+        // 其他账单 https://github.com/settings/billing/subscriptions
+            [/([^ ]+) support/, "$1 支持"],
+
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 };
@@ -9112,6 +9133,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Delete revision": "删除修订",
             "Reopen Issue": "重新打开议题",
                 "You do not have permissions to reopen this issue": "您没有权限重新打开此议题",
+            // 评论删除对话框
+                "Delete comment": "删除评论",
+                "Are you sure you'd like to delete this comment?": "您确定要删除这条评论吗？",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
             "Comment can not be empty": "评论不能为空",
@@ -9698,8 +9722,13 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 // 绕过规则合并
                 "Merge without waiting for requirements to be met (bypass rules)": "无需等待满足要求即可合并（绕过规则）",
-                "Bypass rules and merge": "绕过规则进行合并",
-                "Confirm bypass rules and merge": "确认绕过规则进行合并",
+                "Bypass rules and merge": "绕过规则合并",
+                    "Confirm bypass rules and merge": "确认绕过规则合并",
+                "Bypass rules and merge (squash)": "绕过规则合并（压缩）",
+                    "Confirm bypass rules and merge (squash)": "确认绕过规则合并（压缩）",
+                "Bypass rules and merge (rebase)": "绕过规则合并（变基）",
+                    "This will rebase your changes and merge them into": "将更改变基合并到",
+                    "Confirm bypass rules and merge (rebase)": "确认绕过规则合并（变基）",
 
             "Merging can be performed automatically once the requested changes are addressed.": "一旦请求的更改得到解决，合并就可以自动执行。",
             "This branch is out-of-date with the base branch": "此分支相比基础分支已过时",
@@ -9713,6 +9742,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                             "This branch cannot be rebased due to conflicts.": "由于冲突，此分支不能变基。",
                             "This pull request will be rebased on top of the latest changes and then force pushed.": "此拉取请求将会在最新的更改之上进行变基，并且会使用强制推送的方式提交。",
                             "This branch cannot be rebased due to conflicts": "由于冲突，无法对此分支执行变基操作。",
+                // [/Merge the latest changes from ([^ ]+) into this branch. This merge commit will be associated with ([^ ]+)./, "将最新更改从 $1 分支合并到当前分支。该合并提交将与用户 $2 相关联。"],
 
             "The base branch restricts merging to authorized users.": "基础分支合并仅限于授权用户。",
             "Learn more about protected branches.": "了解更多关于受保护分支的信息。",
@@ -10163,6 +10193,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
+        // 建议更改（词条打架移动至此）
+        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         // Dependabot 打开的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "此拉取请求解决了 1 个 Dependabot 警报，在 $1 上。"],
         [/(\d+) Dependabot alerts?/, "$1 个 Dependabot 警报"],
@@ -10227,6 +10259,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) of (\d+) checks? passed/, "$1/$2 次检查通过"],
         [/(\d+) checks? passed/, "$1 次检查通过"],
 
+        [/Merge the latest changes from ([^ ]+) into this branch. This merge commit will be associated with ([^ ]+)./, "将最新更改从 $1 分支合并到当前分支。该合并提交将与用户 $2 相关联。"],
         [/Merging can be performed automatically with (\d+) approving review./, "合并可以通过 $1 次批准审查自动执行。"],
         [/(\d+) workflow awaiting approval/, "$1 个工作流等待批准"],
         [/The ([^ ]+) branch requires linear history/, "$1 分支为要求线性历史记录"],
@@ -10257,7 +10290,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
-        [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
@@ -10269,13 +10301,16 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Copy (.+?) to clipboard/, "复制 $1 到剪切板"],
 
         // 文件差异过大 参考 https://github.com/maboloshi/github-chinese/pull/306/files
-        [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "差异过大，不会显示 $1 行添加以及 $1 行删除。请使用本地 Git 客户端查看更改。"],
+        [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "差异过大，不会显示 $1 行添加以及 $2 行删除。请使用本地 Git 客户端查看更改。"],
 
         // 任务
         [/(\d+) tasks?/, "$1 个任务"],
 
         // 评论
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
+
+        // 建议更改
+        //[/on this commit as ([^@]+@[^\n]+)/, "提交，身份为 $1"],
 
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
@@ -10786,6 +10821,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "authored": "撰写于",
 
             // 左侧文件管理器
+            "Filter options": "筛选...",
             "Filter files…": "筛选文件...",
                 "File extensions": "文件扩展名",
                 "No extension": "无扩展名",
@@ -11126,6 +11162,43 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["orgs-public"]["static"],
+
+        // 没有任何讨论时
+            "Get started with GitHub Discussions": "开始使用 GitHub 讨论",
+                "Discussions is a central gathering space for your community to ask questions, share ideas, and build connections with each other—all right next to your code.": "讨论是一个社区成员集中交流的空间，大家可以在这里提问、分享想法，并彼此建立联系——而且这一切都在您的代码旁边完成。",
+
+                "Get Started": "开始使用",
+                "Not now": "暂不",
+
+                "Only maintainers can see this page and enable Discussions": "只有维护者能看到此页面并启用讨论",
+
+            // 用法介绍
+                // 自定义分类
+                    "Create custom categories and discussion types to suit your community's unique needs.": "创建自定义类别和讨论类型，以满足您社区的独特需求。",
+                "Mark the most helpful answer": "标记答案",
+                    "Highlight quality responses and make the best answer super discoverable.": "突出优质回答，让最佳答案易于被发现。",
+                "Pin big announcements": "置顶功能",
+                    "Direct the community’s attention to important announcements or popular discussions.": "将社区的注意力引导至重要公告或热门讨论。",
+                "Label your discussions": "标签功能",
+                    "Organize and triage discussions to keep your space tidy and help contributors filter to areas of interest.": "组织和筛选讨论内容，以保持社区空间整洁，并帮助参与者过滤到感兴趣的领域。",
+                "Respond on-the-go with mobile": "通过移动端随时响应",
+                    "Check in and respond to discussions whenever and wherever is convenient for you.": "随时随地在方便的时候查看并回复讨论。",
+                "Connect to your apps": "链接应用",
+                    "Integrate with your existing workflows and GitHub Actions via the GraphQL API and webhooks.": "通过 GraphQL API 和 Web 钩子与现有工作流程及 GitHub Actions 集成。",
+                "Thread your conversations": "串联对话",
+                    "Keep conversations on track and encourage collaboration with threaded comments.": "通过串联评论让对话保持正轨并促进协作。",
+                "Monitor community insights": "社区数据看板",
+                    "Track the health and growth of your community with a dashboard full of actionable data.": "通过充满可操作数据的仪表盘，追踪社区的健康状况与发展情况。",
+                "Ask your community with polls": "社区投票",
+                    "Gauge interest in a feature, vote on a meetup time, or learn more about your community with polls.": "通过投票来衡量对某项功能的兴趣、对聚会时间进行表决，或进一步了解你的社区情况。",
+
+            "Communities using Discussions": "使用讨论交流",
+
+            "Ready to try Discussions?": "准备尝试讨论？",
+                "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "点击 “开始使用” 即可为您的社区启用该功能，并发起您的首次讨论。现在不方便操作？点击 “暂不” 可关闭此标签页。您也可以稍后在仓库设置中随时开启讨论功能。",
+
+            "Read about best practices for setting up Discussions for your community.": "了解为社区设置讨论功能的最佳实践。",
+                "Visit the docs": "查看",
 
         // 讨论页面 /<user-name>/<repo-name>/discussions
         // 组织讨论页 /orgs/<orgs-name>/discussions
@@ -24843,18 +24916,21 @@ I18N["zh-CN"]["copilot"] = {
         // 中间
             // 模型选择窗
                 "Models": "模型",
-                "Model capabilities": "模型限制",
-                    "Limited capabilities (o1)": "功能限制（o1）",
-                    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
-                        "This model has limited capabilities in retrieving external data. Learn more about selecting the right model": "该模型在检索外部数据方面的能力有限。如需了解如何选择合适的模型，请",
-                        "here": "此处",
-                        ". Here are a few of the common actions that are not supported:": "查看更多信息。以下是一些常见的不支持的操作：",
-                        "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
-                        "Not supported": "不支持",
-                            "Using knowledge bases": "使用知识库",
-                            "Retrieving issues": "检索议题",
-                            "Retrieving pull requests": "检索拉取请求",
-                            "Retrieving discussions": "检索讨论",
+                    "Fast and cost-efficient": "快速、经济高效",
+                    "Versatile and highly intelligent": "多功能、高智能",
+                    "Most powerful at complex tasks": "执行复杂任务",
+                //"Model capabilities": "模型限制",
+                //    "Limited capabilities (o1)": "功能限制（o1）",
+                //    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
+                //        "This model has limited capabilities in retrieving external data. Learn more about selecting the right model": "该模型在检索外部数据方面的能力有限。如需了解如何选择合适的模型，请",
+                //        "here": "此处",
+                //        ". Here are a few of the common actions that are not supported:": "查看更多信息。以下是一些常见的不支持的操作：",
+                //        "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
+                //        "Not supported": "不支持",
+                //            "Using knowledge bases": "使用知识库",
+                //            "Retrieving issues": "检索议题",
+                //            "Retrieving pull requests": "检索拉取请求",
+                //            "Retrieving discussions": "检索讨论",
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Get file": "获取文件",
 
