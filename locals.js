@@ -9584,6 +9584,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "suggested changes": "建议更改",
             "deleted the branch": "删除了分支",
             "deleted a comment from": "删除了评论从",
+            // Copilot 专属状态词
+            "started work": "开工",
+            "on behalf of": "代表",
+                "View session": "查看",
+            "finished work on behalf of": "完工，代表",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -9619,6 +9624,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取机密值，并获得对其他分支的访问。",
 
                 "Maintainers are allowed to edit this pull request.": "允许维护者编辑此拉取请求。",
+
+                // 进展
+                    "In progress": "进行中",
+                    "started": "开始于",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
@@ -9949,6 +9958,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Learn more about approving workflows.": "了解更多关于批准工作流程的信息。",
             "Approve and run": "批准并运行",
             "Approve and run workflows": "批准并运行工作流程",
+            "Approve workflows to run": "批准运行工作流程",
 
             // 状态词
             "reviewed": "审查",
@@ -10247,6 +10257,20 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "conflict": "冲突",
                 "conflicts": "冲突",
+
+        // 拉取请求 - 由 Copilot 编写 https://github.com/用户名/仓库名/pull/编号/agent-sessions
+            "Back to pull request #": "返回到拉取请求 #",
+
+            "Sessions": "进度",
+            "Duration": "总时长",
+            "Premium requests": "高级请求",
+                "Learn more about premium requests": "关于高级请求",
+
+            "Open menu": "操作",
+                "View verbose logs": "查看日志",
+
+            // 进度
+            "View repository": "查看仓库",
 
         // 新版拉取请求提交页面
             "authored and": "撰写和",
