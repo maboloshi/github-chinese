@@ -9628,6 +9628,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 // 进展
                     "In progress": "进行中",
                     "started": "开始于",
+                    "Copilot is done": "Copilot 已完成",
+                    "completed after": "总耗时", // 示例：总耗时 11分45秒
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
