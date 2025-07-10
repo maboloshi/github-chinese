@@ -25352,7 +25352,14 @@ I18N["zh-CN"]["copilot"] = {
             
             "Start task": "开始任务",
 
-            "Add a light/dark mode switcher": "添加浅色/深色模式切换器",
+            "Open": "打开",
+                "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
+            "Closed": "关闭",
+                "· started": "· 开始于",
+                "ago ·": "之前",
+                "Merged": "已合并",
+
+            //"Add a light/dark mode switcher": "添加浅色/深色模式切换器",
 
             "revision": "修订",
 
@@ -25383,6 +25390,8 @@ I18N["zh-CN"]["copilot"] = {
         }],
         // 空间
         [/Total percent used: (\d+\%)/, "总使用率：$1"],
+        // 代理
+        [/(\d+) revisions?/, "$1 次修订"],
     ],
 };
 
