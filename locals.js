@@ -753,6 +753,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
                 "New Files Changed Experience": "新版文件更改体验",
                     "Feature enabling the new Files Changed Page": "启用新版更改的文件页",
+                "New repository creation page": "新版仓库创建页",
+                    "New version of the repository creation page that streamlines the configuration and validation of required custom property values and initialization options.": "新版仓库创建页面，简化了必填自定义属性值和初始化选项的配置与校验流程。",
                 "Slash Commands": "斜杠命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜线命令可以让您更轻松地输入更复杂的 Markdown，如表格、任务列表和代码块。",
                     "Simply type": "只需在议题、拉取请求和讨论中键入",
