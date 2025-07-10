@@ -5490,7 +5490,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
                 "Copilot coding agent": "Copilot 编程助手",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "在已启用 Copilot 编码代理的仓库中委派任务给 Copilot 编码代理",
-                "MCP servers on GitHub.com": "MCP 服务器功能",
+                "MCP servers in Copilot": "MCP 服务器功能",
                     "Configure and use third-party Model Context Protocol (MCP) servers for use on GitHub.com. See MCP docs for": "有关在 GitHub.com 上使用第三方模型上下文协议 (MCP) 服务器的配置和使用，请参阅 MCP 文档。",
                     "Coding Agent": "编程助手",
 
