@@ -4442,7 +4442,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/until (.+)./, (match, p1) => {
                 const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
                 const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-    
+
                 return `直到 ${translatedDate}。`;
             }],
 
@@ -18683,6 +18683,8 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
         "Notifications you save will appear here to read later.": "您保存的通知会出现在这里，以便以后阅读。",
         "Mark notifications as done so you can move on with your work.": "将通知标记为已完成，以便您可以继续工作。",
         "New activity appears in your inbox.": "新活动出现在您的收件箱中。",
+        "All done here!":'这儿的事儿搞定啦！',
+        "You're caught up on this filter. ":'这个筛选条件下的内容你已经全部处理完啦。',
 
         // /notifications?query=repo 某个仓库
         "We've noticed that you rarely interact with this repository, are you sure you need notifications?": "我们注意到您很少与此仓库交互，您确定需要通知吗？",
@@ -20846,7 +20848,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Tags": "标签",
 
             // 获取 API 密钥窗口（从“使用此模型”进入
-               
+
                 "1. Create a personal access token": "1. 创建个人访问令牌（PAT）",
                 "2. Install dependencies": "2. 安装依赖",
                 "3. Run a basic code sample": "3. 运行基本代码示例",
@@ -20965,7 +20967,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 ". Not intended for production/sensitive data.": "约束。不适用于生产/敏感数据。",
 
         // 提示词编辑器 https://github.com/marketplace/models/<user-name>/<model-name>/prompt
-            
+
             // 左侧
                 "Edit variables": "编辑变量",
                     "System": "系统",
@@ -22599,7 +22601,7 @@ I18N["zh-CN"]["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
                 "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果启用，在项目上有管理权限的成员可以将项目设为公开或私有。如果禁用，则只有组织所有者可以将项目设为公开或私有。默认情况下，所有项目都是私有的。",
 
             "Welcome to projects": "欢迎来到项目！",
-                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格的构造类似电子表格，为您提供了一个实时画布，可用于筛选、排序和分组问题及拉取请求。您可以使用自定义字段和保存的视图，根据自身需求对其进行定制。",    
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格的构造类似电子表格，为您提供了一个实时画布，可用于筛选、排序和分组问题及拉取请求。您可以使用自定义字段和保存的视图，根据自身需求对其进行定制。",
 
             "Recommended templates": "推荐模板",
                 "Customize a selection of recommended project templates for this organization. These templates will be surfaced first when a member of the organization creates a new project.": "为此组织定制一系列推荐的项目模板。当组织成员创建新项目时，这些模板将首先出现。",
@@ -25305,7 +25307,7 @@ I18N["zh-CN"]["copilot"] = {
             // 仓库选择
                 "Select an item": "选择一项",
                     "Repos": "仓库",
-            
+
             "Start task": "开始任务",
 
             "Add a light/dark mode switcher": "添加浅色/深色模式切换器",
@@ -25372,312 +25374,312 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
     "static": {
         ...I18N["zh-CN"]["homepage"]["static"],
         // 顶栏
-            "Students": "学生",
-            "Teachers": "教师",
-            "Schools": "学校",
+        "Students": "学生",
+        "Teachers": "教师",
+        "Schools": "学校",
 
         "GitHub Education": "GitHub 教育",
         "Empowering the next generation of developers": "增强新一代开发人员的能力",
-            "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在编程教育和技术职业之间架起了一座桥梁，全球每个人都可以免费使用。",
+        "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在编程教育和技术职业之间架起了一座桥梁，全球每个人都可以免费使用。",
         "Join GitHub Education": "加入 GitHub 教育",
         // 教育包申请 https://education.github.com/pack
-            // 右上角菜单
-                "Your benefits application": "我的福利",
-                "Your GitHub.com profile": "我的个人资料",
-                "Education Docs": "教育文档",
-                "Education Support": "教育支持",
-                "Sign out of GitHub Education": "退出 GitHub 教育",
-            // 顶部提示
-                "We're still processing your application. Once this is complete you will have access to the student developer pack offers.": "我们仍在处理您的申请。一旦处理完毕，您就可以获得学生开发包优惠。",
+        // 右上角菜单
+        "Your benefits application": "我的福利",
+        "Your GitHub.com profile": "我的个人资料",
+        "Education Docs": "教育文档",
+        "Education Support": "教育支持",
+        "Sign out of GitHub Education": "退出 GitHub 教育",
+        // 顶部提示
+        "We're still processing your application. Once this is complete you will have access to the student developer pack offers.": "我们仍在处理您的申请。一旦处理完毕，您就可以获得学生开发包优惠。",
 
-            "GitHub Student Developer Pack": "GitHub 学生开发包",
-                "Learn to ship software like a pro.": "学习如何像专业人士一样开发软件。",
-                "There's no substitute for hands-on experience. But for most students, real world tools can be cost-prohibitive. That's why we created the GitHub Student Developer Pack with some of our partners and friends.": "没有替代品可以代替亲身实践的经验。但对于大多数学生来说，现实世界中的工具可能成本过高。这就是为什么我们与一些合作伙伴和朋友一起创建了GitHub 学生开发包。",
-            "Sign up for Student Developer Pack": "获取学生包",
-            "Love the pack? Spread the word": "喜欢吗？分享给朋友！",
-            // 后续内容完全用不到直接不翻
+        "GitHub Student Developer Pack": "GitHub 学生开发包",
+        "Learn to ship software like a pro.": "学习如何像专业人士一样开发软件。",
+        "There's no substitute for hands-on experience. But for most students, real world tools can be cost-prohibitive. That's why we created the GitHub Student Developer Pack with some of our partners and friends.": "没有替代品可以代替亲身实践的经验。但对于大多数学生来说，现实世界中的工具可能成本过高。这就是为什么我们与一些合作伙伴和朋友一起创建了GitHub 学生开发包。",
+        "Sign up for Student Developer Pack": "获取学生包",
+        "Love the pack? Spread the word": "喜欢吗？分享给朋友！",
+        // 后续内容完全用不到直接不翻
 
-            // https://education.github.com/discount_requests/application
-                "Benefits application": "优惠",
-                "Access free GitHub Education benefits": "获取免费 GitHub 教育福利",
-                    "Complete the fields below to unlock tools and resources for your educational journey": "填写以下字段，为您的教育之旅解锁工具和资源",
+        // https://education.github.com/discount_requests/application
+        "Benefits application": "优惠",
+        "Access free GitHub Education benefits": "获取免费 GitHub 教育福利",
+        "Complete the fields below to unlock tools and resources for your educational journey": "填写以下字段，为您的教育之旅解锁工具和资源",
 
-                "Select your role in education": "选择身份",
-                    "Teacher": "教师",
-                    "Student": "学生",
-                    "School": "学校",
+        "Select your role in education": "选择身份",
+        "Teacher": "教师",
+        "Student": "学生",
+        "School": "学校",
 
-                    // 学生
-                    "Enhance your tech skills with real-world tools": "利用现实世界中的工具提高您的技能",
-                        "STUDENT": "学生",
-                            "FREE GitHub Pro while you are a student": "学生期间免费使用 GitHub 专业版",
-                            "Valuable GitHub Student Developer Pack partner offers": "宝贵的 GitHub 学生开发包合作伙伴优惠",
-                            "GitHub Campus Expert training for qualified applicants": "为合格申请者提供 GitHub 校园专家培训",
-                        "To qualify for student benefits, you must:": "您必须具备以下条件：",
-                            "Have a GitHub account.": "持有 GitHub 账号。",
-                            "Be at least 13 years old.": "大于 13 岁。",
-                            "Be currently enrolled in a degree or diploma granting course of study from a recognized educational institution.": "目前就读于认可教育机构的学位或文凭课程。",
-                            "Be able to provide documentation from your school which demonstrates your current student status.": "能够提供学校出具的证明您当前学生身份的文件。",
-                        "Before you begin:": "在开始之前：",
-                            "Check that you are using a": "检查您使用的是",
-                                "supported browser": "受支持的浏览器",
-                                ", and that location services are not blocked by your browser or platform.": "，且您的浏览器或平台未阻止定位服务。",
-                            "Complete your GitHub account": "在 GitHub 帐户",
-                                "billing information": "账单信息",
-                                "with your full legal name as it appears on your academic affiliation documentation. (You do not have to add a payment method.)": "中填写您的法定全名，与您的学历证明材料上的姓名一致。(无需添加支付方式）。",
-                            "Verify": "验证",
-                                "your academic email address on your GitHub account, if your school provides one.": "您的教育邮箱于 GitHub，如果您的学校提供。",
-                            "Secure your GitHub account with": "保护您的 GitHub 账户安全，使用",
-                                "two-factor authentication": "双重身份验证",
-                                ". (We recommend using the": "。（我们推荐使用",
-                                "app.)": "。）",
-                            "Personalize": "个性化",
-                                "your public GitHub Profile with your photo, your name, your pronouns, and more.": "您的 GitHub 简介，使用照片、姓名、代词等。",
-                            "Generate a README for your public GitHub Profile,": "为您的公共 GitHub 简介生成 README，",
-                                "customize it with your interests": "根据您的兴趣进行定制",
-                                ", and publish it for the world to see.": "，然后公开。",
-                        "Offer availability:": "可提供优惠：",
-                            "All partner offers are subject to the partner company's terms and conditions and may not be available in all regions.": "所有合作伙伴优惠均受合作伙伴公司的条款和条件限制，可能不适用于所有地区。",
+        // 学生
+        "Enhance your tech skills with real-world tools": "利用现实世界中的工具提高您的技能",
+        "STUDENT": "学生",
+        "FREE GitHub Pro while you are a student": "学生期间免费使用 GitHub 专业版",
+        "Valuable GitHub Student Developer Pack partner offers": "宝贵的 GitHub 学生开发包合作伙伴优惠",
+        "GitHub Campus Expert training for qualified applicants": "为合格申请者提供 GitHub 校园专家培训",
+        "To qualify for student benefits, you must:": "您必须具备以下条件：",
+        "Have a GitHub account.": "持有 GitHub 账号。",
+        "Be at least 13 years old.": "大于 13 岁。",
+        "Be currently enrolled in a degree or diploma granting course of study from a recognized educational institution.": "目前就读于认可教育机构的学位或文凭课程。",
+        "Be able to provide documentation from your school which demonstrates your current student status.": "能够提供学校出具的证明您当前学生身份的文件。",
+        "Before you begin:": "在开始之前：",
+        "Check that you are using a": "检查您使用的是",
+        "supported browser": "受支持的浏览器",
+        ", and that location services are not blocked by your browser or platform.": "，且您的浏览器或平台未阻止定位服务。",
+        "Complete your GitHub account": "在 GitHub 帐户",
+        "billing information": "账单信息",
+        "with your full legal name as it appears on your academic affiliation documentation. (You do not have to add a payment method.)": "中填写您的法定全名，与您的学历证明材料上的姓名一致。(无需添加支付方式）。",
+        "Verify": "验证",
+        "your academic email address on your GitHub account, if your school provides one.": "您的教育邮箱于 GitHub，如果您的学校提供。",
+        "Secure your GitHub account with": "保护您的 GitHub 账户安全，使用",
+        "two-factor authentication": "双重身份验证",
+        ". (We recommend using the": "。（我们推荐使用",
+        "app.)": "。）",
+        "Personalize": "个性化",
+        "your public GitHub Profile with your photo, your name, your pronouns, and more.": "您的 GitHub 简介，使用照片、姓名、代词等。",
+        "Generate a README for your public GitHub Profile,": "为您的公共 GitHub 简介生成 README，",
+        "customize it with your interests": "根据您的兴趣进行定制",
+        ", and publish it for the world to see.": "，然后公开。",
+        "Offer availability:": "可提供优惠：",
+        "All partner offers are subject to the partner company's terms and conditions and may not be available in all regions.": "所有合作伙伴优惠均受合作伙伴公司的条款和条件限制，可能不适用于所有地区。",
 
-                        "Application": "申请",
-                            "Required fields are marked with an asterisk": "带星号的为必填项",
-                        "What is the name of your school?": "您的学校名称",
-                            "Note:": "注：",
-                            "If your school is not listed, then enter the full school name and continue. You will be asked to provide further information about your school on the next page.": "如果您的学校不在列表中，请输入学校全名并继续。下一页将要求您提供有关贵校的更多信息。",
-                            "A minimum of two characters is required to find your school.": "查找学校至少需要两个字符。",
-                            // 窗口
-                            "We require applicants of": "我们要求",
-                            "to use one of these school-issued email addresses to apply:": "的申请人使用其中一个学校发布的电子邮件地址进行申请：",
-                            "add and verify your": "添加并验证",
-                            "school-issued email address": "学校提供的电子邮件地址",
-                            "in your account settings – or a contact email if you do not have one. Once your email is verified, refresh this page.": "到您的 GitHub 账户。一旦您的电子邮件通过验证，请刷新此页面。",
-                            "Add an email address": "添加电子邮件",
-                            // 验证通过
-                            "You have verified the email address": "您已在 GitHub 上验证邮件",
-                            "on your GitHub account. That academic domain is associated with the school": "。该域名属于：",
-                            "Select this school": "选择此学校",
-                            "We chose this school based on your email. If this isn't your school, please": "我们根据您的电子邮件选择了这所学校。如果这不是您的学校，请在账户设置中",
-                            "add and verify another": "添加并验证其他",
-                            "in your account settings - or select another school.": "- 或选择其他学校。",
-                        "When you click \"Continue\" you will be prompted to share your location with us. Providing your current location helps us verify your affiliation with your chosen school.": "点击 “继续 ”后，系统会提示您与我们共享您的位置。提供您的当前位置有助于我们核实您与所选学校的关联。",
-                        "Continue": "继续",
+        "Application": "申请",
+        "Required fields are marked with an asterisk": "带星号的为必填项",
+        "What is the name of your school?": "您的学校名称",
+        "Note:": "注：",
+        "If your school is not listed, then enter the full school name and continue. You will be asked to provide further information about your school on the next page.": "如果您的学校不在列表中，请输入学校全名并继续。下一页将要求您提供有关贵校的更多信息。",
+        "A minimum of two characters is required to find your school.": "查找学校至少需要两个字符。",
+        // 窗口
+        "We require applicants of": "我们要求",
+        "to use one of these school-issued email addresses to apply:": "的申请人使用其中一个学校发布的电子邮件地址进行申请：",
+        "add and verify your": "添加并验证",
+        "school-issued email address": "学校提供的电子邮件地址",
+        "in your account settings – or a contact email if you do not have one. Once your email is verified, refresh this page.": "到您的 GitHub 账户。一旦您的电子邮件通过验证，请刷新此页面。",
+        "Add an email address": "添加电子邮件",
+        // 验证通过
+        "You have verified the email address": "您已在 GitHub 上验证邮件",
+        "on your GitHub account. That academic domain is associated with the school": "。该域名属于：",
+        "Select this school": "选择此学校",
+        "We chose this school based on your email. If this isn't your school, please": "我们根据您的电子邮件选择了这所学校。如果这不是您的学校，请在账户设置中",
+        "add and verify another": "添加并验证其他",
+        "in your account settings - or select another school.": "- 或选择其他学校。",
+        "When you click \"Continue\" you will be prompted to share your location with us. Providing your current location helps us verify your affiliation with your chosen school.": "点击 “继续 ”后，系统会提示您与我们共享您的位置。提供您的当前位置有助于我们核实您与所选学校的关联。",
+        "Continue": "继续",
 
-                        // 提交历史
-                            "You've already submitted": "您已提交申请",  // 后续正则
+        // 提交历史
+        "You've already submitted": "您已提交申请",  // 后续正则
 
-                            "approved": "批准",
-                                "Congrats! Your request for": "恭喜！您的申请",
-                                "was approved and your benefits will be available": "已获批准，福利将很快发放。",
-                                "soon": "常见问题", // 该处链接指向 https://github.com/orgs/community/discussions/111352#user-content-how-long-after-ive-been-approved-will-i-receive-my-academic-benefits
-                                "was approved and your benefits are now available.": "已获批准且福利已发放。",
+        "approved": "批准",
+        "Congrats! Your request for": "恭喜！您的申请",
+        "was approved and your benefits will be available": "已获批准，福利将很快发放。",
+        "soon": "常见问题", // 该处链接指向 https://github.com/orgs/community/discussions/111352#user-content-how-long-after-ive-been-approved-will-i-receive-my-academic-benefits
+        "was approved and your benefits are now available.": "已获批准且福利已发放。",
 
-                            "rejected": "驳回",
-                                "Unfortunately, we weren't able to approve your educational discount request for": "很遗憾，我们无法批准您的教育折扣申请：",
-                                "What happened?": "发生了什么？",
-                                    "Suggested proof to expedite your approval:": "建议提供证明，以加快审批：",
-                                "Have questions?": "有疑问？",
-                                    "Please seek help via our": "请通过我们的",
-                                    "Student Developer Pack Application FAQ": "学生开发包申请常见问题",
-                                    "or visit the": "或访问",
-                                    "GitHub Education Community.": "GitHub 教育社区。",
+        "rejected": "驳回",
+        "Unfortunately, we weren't able to approve your educational discount request for": "很遗憾，我们无法批准您的教育折扣申请：",
+        "What happened?": "发生了什么？",
+        "Suggested proof to expedite your approval:": "建议提供证明，以加快审批：",
+        "Have questions?": "有疑问？",
+        "Please seek help via our": "请通过我们的",
+        "Student Developer Pack Application FAQ": "学生开发包申请常见问题",
+        "or visit the": "或访问",
+        "GitHub Education Community.": "GitHub 教育社区。",
 
-                            "pending": "排队",
+        "pending": "排队",
 
-                        "Get help": "获取帮助",
-                            "Common questions about applying for your academic discount.": "关于申请学术折扣的常见问题。",
-                        // 学生
-                            "Learn about GitHub's programs": "了解 GitHub 计划",
-                        // 教师
-                            "Discover GitHub's resources": "探索 GitHub 资源",
+        "Get help": "获取帮助",
+        "Common questions about applying for your academic discount.": "关于申请学术折扣的常见问题。",
+        // 学生
+        "Learn about GitHub's programs": "了解 GitHub 计划",
+        // 教师
+        "Discover GitHub's resources": "探索 GitHub 资源",
 
-            // https://education.github.com/discount_requests/数字/additional_information
-                "Upload proof": "上传证明",
+        // https://education.github.com/discount_requests/数字/additional_information
+        "Upload proof": "上传证明",
 
-                "Upload proof of your academic status": "上传学籍证明",
-                "We need a little more proof to verify your academic status.": "还需要一点证明验证学籍状态。",
-                "What we need to see:": "我们需要查看：",
-                    "Your student ID": "您的学生证",
-                        "Your ID should": "您的学生证需要",
-                        "include a date": "包含日期",
-                        "that verifies your current enrollment. Make sure the image is clear and easy to read; if it looks blurry, please take a new photo and upload it again.": "，以证明您当前的注册情况。请确保图像清晰易读；如果图像模糊，请重新拍摄照片并上传。",
-                    "Or another form of proof": "或其他证明",
-                        "If you don't have a student ID, or it doesn't include a date, you can upload a letter on school letterhead or any documentation": "如果您没有学生证，或者学生证上没有日期，您可以上传一封印有学校信笺抬头的信件或任何能证明您",
-                        "with a date": "当前注册日期",
-                        "that demonstrates your current enrollment.": "的文件。",
+        "Upload proof of your academic status": "上传学籍证明",
+        "We need a little more proof to verify your academic status.": "还需要一点证明验证学籍状态。",
+        "What we need to see:": "我们需要查看：",
+        "Your student ID": "您的学生证",
+        "Your ID should": "您的学生证需要",
+        "include a date": "包含日期",
+        "that verifies your current enrollment. Make sure the image is clear and easy to read; if it looks blurry, please take a new photo and upload it again.": "，以证明您当前的注册情况。请确保图像清晰易读；如果图像模糊，请重新拍摄照片并上传。",
+        "Or another form of proof": "或其他证明",
+        "If you don't have a student ID, or it doesn't include a date, you can upload a letter on school letterhead or any documentation": "如果您没有学生证，或者学生证上没有日期，您可以上传一封印有学校信笺抬头的信件或任何能证明您",
+        "with a date": "当前注册日期",
+        "that demonstrates your current enrollment.": "的文件。",
 
-                    "Please upload proof of your academic status.": "请上传您的学籍证明。",
-                        "Snap a picture of your qualifying proof of current academic status using your HD webcam or smartphone camera.": "使用高清摄像头或智能手机摄像头拍下您当前学历的合格证明照片。",
-                        "Take a picture": "拍照",
-                            "Take photo": "拍照",
-                            "Reset": "重置",
-                            "Error: Could not access your webcam": "错误：无法访问您的网络摄像头",
-                            "camera2 1, facing front": "镜头2 1，前摄",
-                            "camera2 0, facing back": "镜头2 0，后摄",
-                            "Uploading…": "上传中…",
-                            "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感谢您上传照片。请填写表格并提交。",
-                            // 未拍照直接提交
-                                "Please upload proof of your current school affiliation": "请上传您目前所在学校的证明",
-                                "Please upload proof of your current school affiliation that is less than 1MB in size": "请上传小于 1MB 的照片",
-                                "Binary data can't be blank": "二进制数据不能为空",
+        "Please upload proof of your academic status.": "请上传您的学籍证明。",
+        "Snap a picture of your qualifying proof of current academic status using your HD webcam or smartphone camera.": "使用高清摄像头或智能手机摄像头拍下您当前学历的合格证明照片。",
+        "Take a picture": "拍照",
+        "Take photo": "拍照",
+        "Reset": "重置",
+        "Error: Could not access your webcam": "错误：无法访问您的网络摄像头",
+        "camera2 1, facing front": "镜头2 1，前摄",
+        "camera2 0, facing back": "镜头2 0，后摄",
+        "Uploading…": "上传中…",
+        "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感谢您上传照片。请填写表格并提交。",
+        // 未拍照直接提交
+        "Please upload proof of your current school affiliation": "请上传您目前所在学校的证明",
+        "Please upload proof of your current school affiliation that is less than 1MB in size": "请上传小于 1MB 的照片",
+        "Binary data can't be blank": "二进制数据不能为空",
 
-                    "Please note, your request cannot be edited once it has been submitted, so please verify your details for accuracy before sending them to us. After clicking \"Process my application\", please wait as processing can take several seconds.": "请注意，您的申请一经提交便无法编辑，因此在发送给我们之前，请核实您的详细信息是否准确。点击 “处理我的申请 ”后，请稍候，因为处理过程可能需要几秒钟。",
-                        "Process my application": "处理申请",
-                        "Processing your application": "处理中",
-                        "Processing information...": "处理中...",
+        "Please note, your request cannot be edited once it has been submitted, so please verify your details for accuracy before sending them to us. After clicking \"Process my application\", please wait as processing can take several seconds.": "请注意，您的申请一经提交便无法编辑，因此在发送给我们之前，请核实您的详细信息是否准确。点击 “处理我的申请 ”后，请稍候，因为处理过程可能需要几秒钟。",
+        "Process my application": "处理申请",
+        "Processing your application": "处理中",
+        "Processing information...": "处理中...",
 
-                    // 上传失败
-                        "Your application cannot be reviewed until you fix the following:": "您的申请将不被审查直到解决以下问题：",
-                            "You must configure your browser and operating system to allow location access. You may not use a VPN. If you believe that our information about your school is incomplete or incorrect, then please select ‘My selected school has incorrect or incomplete information e.g. domains or campus location’ option when submitting a GitHub Education support ticket.": "您必须配置您的浏览器和操作系统以允许位置访问。您不得使用VPN。如果您认为我们关于您学校的资料不完整或不正确，请在提交GitHub 教育支持工单时选择“我选择的学校信息有误或不完整，例如域名或校园位置”选项。",
-                            "Please use your device camera to submit your academic affiliation documents. If you’re having trouble using your device camera, please allow camera access for the application website on your browser. The steps for this will vary depending on which browser you are using. Information on browsers supported by GitHub can be found": "请使用设备摄像头提交您的学术关系文件。如果您在使用设备摄像头时遇到困难，请在浏览器上允许摄像头访问申请网站。具体步骤视您使用的浏览器而定。有关 GitHub 支持的浏览器信息，请点击",
-                                "here": "此处",
-                                ". You may also try applying from a different computer or mobile device.": "。您也可以尝试换一台电脑或移动设备申请。",
-                            "Please ensure that your academic affiliation document contains your last name exactly as it appears in your": "请确保您的学籍文件中的姓氏与",
-                                "GitHub billing information": "GitHub 账单信息",
-                                ". If you have only a single legal name, enter it in both the first and last name fields of your GitHub billing information.": "中的姓氏完全一致。如果您只有一个合法姓名，请在 GitHub 账单信息的姓和名栏中同时输入。",
-                            "The image you selected does not appear to contain your school name. Your complete school name must appear in your document, not only the school logo. You may include multiple documents together. If your official document is not in English then you may photograph the original next to an English translation.": "您选择的图片似乎不包含您的学校名称。文件中必须包含完整的校名，而不仅仅是校徽。您可以将多份文件放在一起。如果您的官方文件不是英文的，您可以将原件与英文翻译件放在一起拍照。",
-                            "Please ensure that your academic affiliation document contains your first name exactly as it appears in your": "请确保您的学术关系文件中的姓名与",
-                                //"GitHub billing information": "",
-                                ". Variations of your name and nicknames are unacceptable.": "中的姓名完全一致。请勿使用不同的姓名和昵称。",
-                            "You are unlikely to be verified until you have completed your": "在完成",
-                                "GitHub user profile": "GitHub 用户资料",
-                                "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新个人档案信息后，请退出并重新登录 GitHub，然后再重新申请。",
-                            "The image you captured appears to be a screen display. Please take a clear, live photo of physical documentation confirming your academic enrollment.": "您提供的图片似乎是屏幕显示内容。请直接拍摄纸质材料以确认您的在学状态，例如学生证、录取通知书或官方在学证明等纸质文件的原件照片。",
-            // https://education.github.com/discount_requests/数字/completed 成功
-                "Get benefits": "获取福利",
+        // 上传失败
+        "Your application cannot be reviewed until you fix the following:": "您的申请将不被审查直到解决以下问题：",
+        "You must configure your browser and operating system to allow location access. You may not use a VPN. If you believe that our information about your school is incomplete or incorrect, then please select ‘My selected school has incorrect or incomplete information e.g. domains or campus location’ option when submitting a GitHub Education support ticket.": "您必须配置您的浏览器和操作系统以允许位置访问。您不得使用VPN。如果您认为我们关于您学校的资料不完整或不正确，请在提交GitHub 教育支持工单时选择“我选择的学校信息有误或不完整，例如域名或校园位置”选项。",
+        "Please use your device camera to submit your academic affiliation documents. If you’re having trouble using your device camera, please allow camera access for the application website on your browser. The steps for this will vary depending on which browser you are using. Information on browsers supported by GitHub can be found": "请使用设备摄像头提交您的学术关系文件。如果您在使用设备摄像头时遇到困难，请在浏览器上允许摄像头访问申请网站。具体步骤视您使用的浏览器而定。有关 GitHub 支持的浏览器信息，请点击",
+        "here": "此处",
+        ". You may also try applying from a different computer or mobile device.": "。您也可以尝试换一台电脑或移动设备申请。",
+        "Please ensure that your academic affiliation document contains your last name exactly as it appears in your": "请确保您的学籍文件中的姓氏与",
+        "GitHub billing information": "GitHub 账单信息",
+        ". If you have only a single legal name, enter it in both the first and last name fields of your GitHub billing information.": "中的姓氏完全一致。如果您只有一个合法姓名，请在 GitHub 账单信息的姓和名栏中同时输入。",
+        "The image you selected does not appear to contain your school name. Your complete school name must appear in your document, not only the school logo. You may include multiple documents together. If your official document is not in English then you may photograph the original next to an English translation.": "您选择的图片似乎不包含您的学校名称。文件中必须包含完整的校名，而不仅仅是校徽。您可以将多份文件放在一起。如果您的官方文件不是英文的，您可以将原件与英文翻译件放在一起拍照。",
+        "Please ensure that your academic affiliation document contains your first name exactly as it appears in your": "请确保您的学术关系文件中的姓名与",
+        //"GitHub billing information": "",
+        ". Variations of your name and nicknames are unacceptable.": "中的姓名完全一致。请勿使用不同的姓名和昵称。",
+        "You are unlikely to be verified until you have completed your": "在完成",
+        "GitHub user profile": "GitHub 用户资料",
+        "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新个人档案信息后，请退出并重新登录 GitHub，然后再重新申请。",
+        "The image you captured appears to be a screen display. Please take a clear, live photo of physical documentation confirming your academic enrollment.": "您提供的图片似乎是屏幕显示内容。请直接拍摄纸质材料以确认您的在学状态，例如学生证、录取通知书或官方在学证明等纸质文件的原件照片。",
+        // https://education.github.com/discount_requests/数字/completed 成功
+        "Get benefits": "获取福利",
 
-                "Thanks for submitting!": "感谢提交！",
-                    "Be sure to check your email. If you don't hear from us within the hour, you should receive an email from us in less than": "请务必查看您的电子邮件。如果您在一小时内没有收到我们的回复，您应该会在",
-                    "5 days": "5 天内",
-                    ". Have an Octotastic day!": "收到我们的电子邮件。祝您度过愉快的一天！",
+        "Thanks for submitting!": "感谢提交！",
+        "Be sure to check your email. If you don't hear from us within the hour, you should receive an email from us in less than": "请务必查看您的电子邮件。如果您在一小时内没有收到我们的回复，您应该会在",
+        "5 days": "5 天内",
+        ". Have an Octotastic day!": "收到我们的电子邮件。祝您度过愉快的一天！",
 
-            // https://education.github.com/onboardings/new 申请批准后出现
-                "Welcome to GitHub Education!": "欢迎来到 GitHub 教育！",
-                    "GitHub Education offers resources and programs to help students achieve their career goals.": "GitHub 教育提供各种资源和计划，帮助学生实现职业目标。",
-                    "To get started, please answer two questions so we can add a learning path to your Education dashboard to help you with your goals.": "要开始学习，请回答两个问题，以便我们在您的教育仪表板上添加学习路径，帮助您实现目标。",
+        // https://education.github.com/onboardings/new 申请批准后出现
+        "Welcome to GitHub Education!": "欢迎来到 GitHub 教育！",
+        "GitHub Education offers resources and programs to help students achieve their career goals.": "GitHub 教育提供各种资源和计划，帮助学生实现职业目标。",
+        "To get started, please answer two questions so we can add a learning path to your Education dashboard to help you with your goals.": "要开始学习，请回答两个问题，以便我们在您的教育仪表板上添加学习路径，帮助您实现目标。",
 
-                "Question 1 of 2": "问题 1/2",
-                    "In the next 4-6 months, which of the following are you hoping to accomplish? Select two that apply best.": "在未来 4-6 个月内，您希望实现以下哪些目标？请选择最适合的两项。",
-                        "Understanding how to use GitHub": "了解如何使用 GitHub",
-                        "Refining my skills in a particular topic (coding, gaming, design, big data, artifical intelligence, etc.)": "提高我在某一特定领域（编码、游戏、设计、大数据、人工智能等）的技能",
-                        "Connecting with other students who have similar interests": "与其他兴趣相投的学生建立联系",
-                        "Developing career readiness skills": "培养职业准备技能",
-                        "Two selections are required to continue.": "必须选两项。",
-                "Question 2 of 2": "问题 2/2",
-                    "Which topics are of interest to you? Select all that apply.": "您对哪些主题感兴趣？请选择所有适用选项。",
-                        "GitHub features and products": "GitHub 功能和产品",
-                        "Building a professional identity on GitHub": "在 GitHub 上打造专业身份",
-                        "Understanding emerging technologies in a particular field of interest (web development, gaming, design, data, engineering, robotics, etc.)": "了解特定兴趣领域（网络开发、游戏、设计、数据、工程、机器人技术等）的新兴技术",
-                        "Finding people, projects, and communities to connect with": "寻找可以联系的人、项目和社区",
-                        "Speaking at a conference": "在会议上发言",
-                        "Gaining skills to start a great career": "掌握技能，开始美好的职业生涯",
-                "Skip this question": "跳过",
+        "Question 1 of 2": "问题 1/2",
+        "In the next 4-6 months, which of the following are you hoping to accomplish? Select two that apply best.": "在未来 4-6 个月内，您希望实现以下哪些目标？请选择最适合的两项。",
+        "Understanding how to use GitHub": "了解如何使用 GitHub",
+        "Refining my skills in a particular topic (coding, gaming, design, big data, artifical intelligence, etc.)": "提高我在某一特定领域（编码、游戏、设计、大数据、人工智能等）的技能",
+        "Connecting with other students who have similar interests": "与其他兴趣相投的学生建立联系",
+        "Developing career readiness skills": "培养职业准备技能",
+        "Two selections are required to continue.": "必须选两项。",
+        "Question 2 of 2": "问题 2/2",
+        "Which topics are of interest to you? Select all that apply.": "您对哪些主题感兴趣？请选择所有适用选项。",
+        "GitHub features and products": "GitHub 功能和产品",
+        "Building a professional identity on GitHub": "在 GitHub 上打造专业身份",
+        "Understanding emerging technologies in a particular field of interest (web development, gaming, design, data, engineering, robotics, etc.)": "了解特定兴趣领域（网络开发、游戏、设计、数据、工程、机器人技术等）的新兴技术",
+        "Finding people, projects, and communities to connect with": "寻找可以联系的人、项目和社区",
+        "Speaking at a conference": "在会议上发言",
+        "Gaining skills to start a great career": "掌握技能，开始美好的职业生涯",
+        "Skip this question": "跳过",
 
-                "Here's our recommendation!": "这是我们的推荐！",
-                    "Continue with our recommended learning path for you, or select another one. Based on your selection,": "继续我们为您推荐的学习路径，或选择其他路径。根据您的选择，",
-                    "we will display a learning path on your dashboard": "我们将在您的仪表板上显示学习路径，",
-                    "to help you get started.": "帮助您开始学习。",
+        "Here's our recommendation!": "这是我们的推荐！",
+        "Continue with our recommended learning path for you, or select another one. Based on your selection,": "继续我们为您推荐的学习路径，或选择其他路径。根据您的选择，",
+        "we will display a learning path on your dashboard": "我们将在您的仪表板上显示学习路径，",
+        "to help you get started.": "帮助您开始学习。",
 
-                    "Get Started with GitHub": "GitHub 入门",
-                        "With this learning path, you will learn how to make your first profile README and find other student repositories.": "通过本学习路径，您将学会如何制作第一个配置文件 README 和查找其他学生资源库。",
-                    "Recommended": "推荐",
-                    "GitHub Deep Dive": "深入了解 GitHub",
-                        "Go deeper on how to use codespaces and the GitHub flow to create a web application.": "深入了解如何使用代码空间和 GitHub 流程创建网络应用程序。",
-                    "Continue to Dashboard": "在仪表板继续",
+        "Get Started with GitHub": "GitHub 入门",
+        "With this learning path, you will learn how to make your first profile README and find other student repositories.": "通过本学习路径，您将学会如何制作第一个配置文件 README 和查找其他学生资源库。",
+        "Recommended": "推荐",
+        "GitHub Deep Dive": "深入了解 GitHub",
+        "Go deeper on how to use codespaces and the GitHub flow to create a web application.": "深入了解如何使用代码空间和 GitHub 流程创建网络应用程序。",
+        "Continue to Dashboard": "在仪表板继续",
 
-            // https://education.github.com/learner/learn
-                // 顶部提示
-                "Your onboarding preferences have been saved!": "您的入职首选项已保存！",
-                // 左侧
-                    // 左侧栏
-                        "Open Global Navigation Menu": "打开全局导航菜单",
-                            "Student Developer Pack": "学生开发包",
+        // https://education.github.com/learner/learn
+        // 顶部提示
+        "Your onboarding preferences have been saved!": "您的入职首选项已保存！",
+        // 左侧
+        // 左侧栏
+        "Open Global Navigation Menu": "打开全局导航菜单",
+        "Student Developer Pack": "学生开发包",
 
-                            "Explore More": "探索更多",
-                                "Education Community": "教育社区",
-                                "Campus Experts": "校园专家",
-                                "Education Blog": "教育博客",
+        "Explore More": "探索更多",
+        "Education Community": "教育社区",
+        "Campus Experts": "校园专家",
+        "Education Blog": "教育博客",
 
-                    "Your request was approved.": "您的申请已批准。",
-                        "Your benefits will be available soon.": "您的福利即将发放。",
+        "Your request was approved.": "您的申请已批准。",
+        "Your benefits will be available soon.": "您的福利即将发放。",
 
-                    "Learn new skills": "学习新技能",
-                        "Access learning resources from GitHub Education.": "从 GitHub 教育获取学习资源。",
-                    "Find opportunities": "寻找机遇",
-                        "Power up your skillset with real-world projects.": "通过实际项目增强您的技能。",
-                    "Get connected": "获得联系",
-                        "Discover other learners and build your network.": "发现其他学习者，建立自己的网络。",
-                // 中间
-                    "Learning path": "学习途径",
-                        "Intro to GitHub": "GitHub 介绍",
-                            "GitHub flow is a lightweight, branch-based workflow. In this Experience you'll learn the basics of the GitHub Flow including creating and making changes to branches within a repository, as well as creating and merging pull requests. The GitHub flow is useful for everyone, not just developers.": "GitHub 工作流是一种基于分支的轻量级工作流。在本体验中，您将学习 GitHub 工作流的基础知识，包括创建和修改版本库中的分支，以及创建和合并拉取请求。GitHub 工作流不仅对开发人员有用，对每个人都有用。",
-                            "Go to Intro to GitHub": "前往 GitHub 介绍",
-                        "Primer: Codespaces": "入门：代码空间",
-                            "Wondering how to get started with Codespaces? This Primer makes it easy by giving you the templates, videos and step-by-step resources you need to get you started running, testing, debugging and pushing code using this instant cloud developer environment.": "想知道如何开始使用代码空间吗？本入门指南为您提供模板、视频和分步资源，让您轻松开始运行、测试、调试和推送代码。",
-                            "Go to Primer: Codespaces": "前往入门：代码空间",
-                    "Not what you were looking for? Check out our": "还没有找到您想要的？请查看我们的",
-                        "other learning paths.": "其他学习路径。",
+        "Learn new skills": "学习新技能",
+        "Access learning resources from GitHub Education.": "从 GitHub 教育获取学习资源。",
+        "Find opportunities": "寻找机遇",
+        "Power up your skillset with real-world projects.": "通过实际项目增强您的技能。",
+        "Get connected": "获得联系",
+        "Discover other learners and build your network.": "发现其他学习者，建立自己的网络。",
+        // 中间
+        "Learning path": "学习途径",
+        "Intro to GitHub": "GitHub 介绍",
+        "GitHub flow is a lightweight, branch-based workflow. In this Experience you'll learn the basics of the GitHub Flow including creating and making changes to branches within a repository, as well as creating and merging pull requests. The GitHub flow is useful for everyone, not just developers.": "GitHub 工作流是一种基于分支的轻量级工作流。在本体验中，您将学习 GitHub 工作流的基础知识，包括创建和修改版本库中的分支，以及创建和合并拉取请求。GitHub 工作流不仅对开发人员有用，对每个人都有用。",
+        "Go to Intro to GitHub": "前往 GitHub 介绍",
+        "Primer: Codespaces": "入门：代码空间",
+        "Wondering how to get started with Codespaces? This Primer makes it easy by giving you the templates, videos and step-by-step resources you need to get you started running, testing, debugging and pushing code using this instant cloud developer environment.": "想知道如何开始使用代码空间吗？本入门指南为您提供模板、视频和分步资源，让您轻松开始运行、测试、调试和推送代码。",
+        "Go to Primer: Codespaces": "前往入门：代码空间",
+        "Not what you were looking for? Check out our": "还没有找到您想要的？请查看我们的",
+        "other learning paths.": "其他学习路径。",
 
-                    "Student Developer Pack offers": "学生开发包提供",
-                        "Your Student Developer Pack will be ready soon!": "您的学生开发包即将就绪！",
-                            "We will notify you via email when your": "我们将通过电子邮件通知，当您可以使用",
-                                "Experiences": "体验",
-                                "offers": "优惠",
-                                "become": " ",
-                                "available to you.": "时。",
-                        "Popular offers you have not explored:": "您尚未探索的热门优惠：",
-                            "Explore More Offers": "探索更多",
-                            "Curated Experiences with popular offers:": "精选体验与热门优惠：",
-                // 右侧
-                    // 右上角图标菜单
-                    "Update your location": "更新您的位置",
+        "Student Developer Pack offers": "学生开发包提供",
+        "Your Student Developer Pack will be ready soon!": "您的学生开发包即将就绪！",
+        "We will notify you via email when your": "我们将通过电子邮件通知，当您可以使用",
+        "Experiences": "体验",
+        "offers": "优惠",
+        "become": " ",
+        "available to you.": "时。",
+        "Popular offers you have not explored:": "您尚未探索的热门优惠：",
+        "Explore More Offers": "探索更多",
+        "Curated Experiences with popular offers:": "精选体验与热门优惠：",
+        // 右侧
+        // 右上角图标菜单
+        "Update your location": "更新您的位置",
 
-                    // 看板
-                    "Enabling Copilot": "启用 Copilot",
-                        "To ensure your free Copilot benefit is enabled, redeem by going to this link.": "要确保您的免费 Copilot 优惠已启用，请访问此链接进行兑换。",
+        // 看板
+        "Enabling Copilot": "启用 Copilot",
+        "To ensure your free Copilot benefit is enabled, redeem by going to this link.": "要确保您的免费 Copilot 优惠已启用，请访问此链接进行兑换。",
 
-                    "Updates in Learn New Skills": "学习新技能的更新内容",
-                        "No new updates": "无更新",
+        "Updates in Learn New Skills": "学习新技能的更新内容",
+        "No new updates": "无更新",
 
-                    "Claimed offers": "已申请优惠",
-                        "Your explored offers failed to load, please refresh the page to see this content.": "加载失败，请刷新页面以查看此内容。",
+        "Claimed offers": "已申请优惠",
+        "Your explored offers failed to load, please refresh the page to see this content.": "加载失败，请刷新页面以查看此内容。",
 
-            // https://education.github.com/learner/opportunities
-                "Community Exchange": "社区交流",
-                    "Community Exchange is a collection of student repositories for teaching, learning and collaborating.": "社区交流是一个用于教学、学习和合作的学生资源库。",
-                    "Go to Community Exchange": "前往社区交流",
-                "Updates in Find Opportunities": "寻找机遇的更新内容",
+        // https://education.github.com/learner/opportunities
+        "Community Exchange": "社区交流",
+        "Community Exchange is a collection of student repositories for teaching, learning and collaborating.": "社区交流是一个用于教学、学习和合作的学生资源库。",
+        "Go to Community Exchange": "前往社区交流",
+        "Updates in Find Opportunities": "寻找机遇的更新内容",
 
-            // https://education.github.com/learner/connect
-                "Events": "事件",
-                    "View more events": "查看更多",
-                    "See more": "详情",
-                "GitHub Education Live": "GitHub 教育直播",
-                    "Go to Twitch": "前往 Twitch",
+        // https://education.github.com/learner/connect
+        "Events": "事件",
+        "View more events": "查看更多",
+        "See more": "详情",
+        "GitHub Education Live": "GitHub 教育直播",
+        "Go to Twitch": "前往 Twitch",
 
-                // 右侧
-                    "Updates in Get Connected": "获得联系更新内容",
-                    "Campus Expert": "校园专家",
-                        "Campus Experts are student leaders that strive to build diverse and inclusive technical communities.": "校园专家是学生领袖，他们努力建设多元化和包容性的技术社区。",
+        // 右侧
+        "Updates in Get Connected": "获得联系更新内容",
+        "Campus Expert": "校园专家",
+        "Campus Experts are student leaders that strive to build diverse and inclusive technical communities.": "校园专家是学生领袖，他们努力建设多元化和包容性的技术社区。",
 
-                        "Follow your Expert": "关注专家",
-                        "Follow student leaders trained by GitHub to get help with hackathons & events": "关注由 GitHub 培训的学生领袖，在黑客马拉松和活动中获得帮助",
+        "Follow your Expert": "关注专家",
+        "Follow student leaders trained by GitHub to get help with hackathons & events": "关注由 GitHub 培训的学生领袖，在黑客马拉松和活动中获得帮助",
 
-                    "Education blog": "教育博客",
-                        "View more": "查看更多",
+        "Education blog": "教育博客",
+        "View more": "查看更多",
 
     },
-    "regexp":[
+    "regexp": [
         [/(\d+) requests?/, "$1 次"],
         [/Hi, ([^ ]+)! You were last verified as a on (.+). It is not necessary for you to reverify at this time. There may be a wait period between verification and access to academic benefits./, (match, user, p1) => {
-                const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-                const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-                return `您好，`+ user + `！您最近于${translatedDate}验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。`;
-            // return '您好，' + user + '！您最近于' + year + '年' + monthKey[month] + day + '日验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。';
-        }],
-        [/Hi, ([^ ]+)! You were last verified as a student on (.+). It is not necessary for you to reverify at this time. There may be a wait period between verification and access to academic benefits./, (match, user, p1)=> {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `您好，`+ user + `！您最近于${translatedDate}学生验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。`;
+            return `您好，` + user + `！您最近于${translatedDate}验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。`;
+            // return '您好，' + user + '！您最近于' + year + '年' + monthKey[month] + day + '日验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。';
+        }],
+        [/Hi, ([^ ]+)! You were last verified as a student on (.+). It is not necessary for you to reverify at this time. There may be a wait period between verification and access to academic benefits./, (match, user, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `您好，` + user + `！您最近于${translatedDate}学生验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。`;
             //return '您好，' + user + '！您最近于' + year + '年' + monthKey[month] + day + '日学生验证。您现在无需重新验证。从验证到享受学业福利之间可能会有一段等待时间。';
         }],
         [/(Submitted|Verified since) (.+)/, (match, opt, p1) => { // p1为(.+)
