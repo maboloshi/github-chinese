@@ -7257,6 +7257,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Discussions": "讨论",
             "Actions": "操作",
             "Projects": "项目",
+            "Models": "模型",
             "Security": "安全",
             "Insights": "洞察",
             "Settings": "设置",
@@ -12843,9 +12844,45 @@ I18N["zh-CN"]["repository/find"] = { //  仓库 - 查找文件页面
 I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
+        "Public Preview": "公共预览",
+        "Expand menu": "展开目录",
+        "Collapse menu": "折叠目录",
+        "Catalog": "目录",
+        "Share feedback": "反馈",
+
+        // 概况
+            "Build your AI products—right inside GitHub. Create prompts, test models, and ship AI-powered features with built-in tools for model access, prompt collaboration, and lightweight evaluation.": "在 GitHub 内部构建您的 AI 产品。利用内置的模型接入、提示协作和轻量级评估工具，创建提示词、测试模型，并发布 AI 驱动的功能。",
+                "Read the docs": "阅读文档",
+                "to learn more.": "了解详情。",
+
+            "You do not have access to GitHub Models on this repository": "您无权访问此仓库上的 GitHub 模型",
+                "You need write permissions or higher for this repository to use GitHub Models.": "您需要拥有此仓库写入权限或更高权限，才能使用 GitHub 模型。",
+                "Learn more about GitHub Models.": "了解更多。",
+
+            "Prompts": "提示词",
+                "Create, evaluate, and iterate on prompts right inside your repo.": "在您的仓库内直接创建、评估和迭代提示词。",
+                "Get write permissions or higher for this repository to create and manage prompts.": "获得对此仓库的写入权限或更高权限，才能创建和管理提示词。",
+
+            "Add AI to your project now": "立即添加 AI 到您的项目",
+                "Drop this snippet into your code to start using AI instantly.": "将此代码片段插入您的代码中，即可立即开始使用 AI。",
+                "Get API Key": "获取 API 密钥",
+
+            "Explore 40+ models in the catalog": "在目录中探索 40+ 模型",
+                "Compare models in the playground—test parameters, token usage, and latency to find the right fit for your use case.": "在游乐场中对比模型——测试参数、令牌使用量和延迟，以找到最适合你用例的模型。",
+            "Power your prompt with the right model": "为您的提示词选择合适的模型",
+                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "针对您的提示词测试和对比不同模型，以找到最合适的模型，然后在准备好后将其直接提交到您的项目中。",
+            "Instrument your Actions workflow with models": "使用模型为您的 Actions 工作流提供支持",
+                "Set up a new GitHub Actions workflow using models.": "使用模型新建 Actions 工作流。",
+
+        // 提示词
+            "Manage": "管理",
+                "prompts stored in your repo using": "您仓库中的提示词，使用",
+                ".prompt.yml file": ".prompt.yml 文件",
+                "format.": "格式。",
     },
     "regexp": [
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/(\d+) prompts? found/, "$1 条提示词"],
     ],
 }
 
