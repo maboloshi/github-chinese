@@ -5464,6 +5464,10 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
                 "More features": "更多功能",
 
+            "Premium requests": "高級請求",
+                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. You can enable additional premium requests in the": "請注意，顯示的使用百分比可能會有延遲。您計劃的高級請求權限將在下個月初重置。您可以在以下位置啟用額外的高級請求：",
+                "Billing settings": "賬單設置",
+
             "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
                     //"You can use Copilot Chat in Github.com, Copilot for pull requests, and all of the preview features.": "您可以在 Github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取請求和所有預覽功能。",
@@ -5479,6 +5483,14 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "personalized to a codebase.": "，個性化程式碼。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中獲得 Copilot 的協助",
+                "Automatic Copilot code review": "自動 Copilot 程式碼審查",
+                    "Copilot will automatically review your pull requests.": "Copilot 將自動審查您的拉取請求。",
+                    "Learn more about configuring automatic code reviews.": "瞭解如何配置自動程式碼審查。",
+                "Copilot coding agent": "Copilot 編程助手",
+                    "Delegate tasks to Copilot coding agent in repositories where it is enabled": "在已啟用 Copilot 編碼代理的倉庫中委派任務給 Copilot 編碼代理",
+                "MCP servers on GitHub.com": "MCP 服務器功能",
+                    "Configure and use third-party Model Context Protocol (MCP) servers for use on GitHub.com. See MCP docs for": "有關在 GitHub.com 上使用第三方模型上下文協議 (MCP) 服務器的配置和使用，請參閱 MCP 文檔。",
+                    "Coding Agent": "編程助手",
 
         // 編程助手(預覽 https://github.com/settings/copilot/coding_agent
             // 頂部提示
@@ -9572,6 +9584,11 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "suggested changes": "建議更改",
             "deleted the branch": "刪除了分支",
             "deleted a comment from": "刪除了評論從",
+            // Copilot 專屬狀態詞
+            "started work": "開工",
+            "on behalf of": "代表",
+                "View session": "查看",
+            "finished work on behalf of": "完工，代表",
 
             // 隱藏
             "Load more…": "加載更多…",
@@ -9607,6 +9624,12 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                     "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "維護者有可能編輯這個倉庫的工作流程來獲取機密值，並獲得對其他分支的訪問。",
 
                 "Maintainers are allowed to edit this pull request.": "允許維護者編輯此拉取請求。",
+
+                // 進展
+                    "In progress": "進行中",
+                    "started": "開始於",
+                    "Copilot is done": "Copilot 已完成",
+                    "completed after": "總耗時", // 示例：總耗時 11分45秒
 
             // 討論標籤卡 主頁
             "Refresh": "刷新",
@@ -9937,6 +9960,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "Learn more about approving workflows.": "瞭解更多關於批准工作流程的信息。",
             "Approve and run": "批准並運行",
             "Approve and run workflows": "批准並運行工作流程",
+            "Approve workflows to run": "批准運行工作流程",
 
             // 狀態詞
             "reviewed": "審查",
@@ -10235,6 +10259,20 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
                 "conflict": "衝突",
                 "conflicts": "衝突",
+
+        // 拉取請求 - 由 Copilot 編寫 https://github.com/用戶名/倉庫名/pull/編號/agent-sessions
+            "Back to pull request #": "返回到拉取請求 #",
+
+            "Sessions": "進度",
+            "Duration": "總時長",
+            "Premium requests": "高級請求",
+                "Learn more about premium requests": "關於高級請求",
+
+            "Open menu": "操作",
+                "View verbose logs": "查看日誌",
+
+            // 進度
+            "View repository": "查看倉庫",
 
         // 新版拉取請求提交頁面
             "authored and": "撰寫和",
@@ -25256,6 +25294,25 @@ I18N["zh-TW"]["copilot"] = {
                 "Owned by": "所有者",
 
                 "View all attachments": "查看所有附件",
+
+        // 代理 https://github.com/copilot/agents
+            "Agents": "代理",
+
+            "Let Copilot tackle your TODOs": "讓 Copilot 處理您的待辦",
+                "Delegate tasks to GitHub Copilot coding agent to work on in the background, and then monitor Copilot's progress.": "將任務委派給 GitHub Copilot 編碼代理在後臺處理，然後監控 Copilot 的進展。",
+                "Learn more about Copilot coding agent": "瞭解更多",
+
+            // 倉庫選擇
+                "Select an item": "選擇一項",
+                    "Repos": "倉庫",
+            
+            "Start task": "開始任務",
+
+            "Add a light/dark mode switcher": "添加淺色/深色模式切換器",
+
+            "revision": "修訂",
+
+            "In progress": "進行中",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的結果"],
