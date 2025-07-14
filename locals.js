@@ -13314,6 +13314,9 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
+            "Release notes": "发行版说明",
+                "Select a previous tag to create generated release notes": "选择一个先前的标签以生成发行说明",
+
             "Choose a tag": "选择标签",
                 "Find or create a new tag": "查找或创建新标签",
             "Target:": "目标：",
@@ -13343,6 +13346,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "Release title": "发行版标题",
 
             "Previous tag:": "上一个标签：",
+                "Auto": "自动",
                 "auto": "自动",
                 "Select previous tag to compare": "选择上一个标签进行比较",
                     "Find previous tag": "筛选上一个标签",
@@ -13486,6 +13490,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/^([^ ]+) and ([^ ]+)/, "$1 和 $2"], // 发行版 - 贡献者（2位
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
+        [/Edit (.+)/, "编辑 $1"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
