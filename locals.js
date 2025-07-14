@@ -8981,6 +8981,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Title": "标题",
             "Helpful resources": "帮助性资源",
             "Create more": "创建多个",
+            "Write with Copilot": "请 Copilot 编写",
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
