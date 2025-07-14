@@ -623,6 +623,12 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
+        if (typeof I18N === 'undefined') {
+            alert('依赖文件 locals.js 未加载，脚本无法运行！');
+        // 也可以选择 return 或 throw new Error
+        } else {
+            console.log(`依赖文件 locals.js 已加载`);
+        }
         // 设置中文环境
         document.documentElement.lang = CONFIG.LANG;
 
