@@ -25214,6 +25214,7 @@ I18N["zh-CN"]["copilot"] = {
                         "aren't supported by this model": "不支持此模型",
                         "Switch back to the": "切回",
                         "model or start a new conversation": "模型或新建对话",
+            "Space": "空间",
             "Send now": "发送",
 
             // 预设栏
