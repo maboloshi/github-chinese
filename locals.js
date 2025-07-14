@@ -9813,6 +9813,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
                 "View rules": "查看规则",
+                // 无权提交
+                "You're not authorized to push to this branch. Visit": "您没有权限推送到此分支。请访问",
+                    "for more information.": "获取更多信息。",
                 // 新版合并界面
                 "Merge is not an allowed merge method in this repository.": "合并不是此仓库允许的合并方法。",
                 "Pull request cannot be merged because it has a merge conflict.": "由于存在合并冲突，无法合并拉取请求。",
