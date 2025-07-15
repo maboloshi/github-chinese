@@ -8,9 +8,9 @@
 
 <!-- SHIELD GROUP -->
 
-[![GitHub issues][github-issues-shield]][github-issues-link]
 [![GitHub stars][github-stars-shield]][github-stars-link]
 [![GitHub forks][github-forks-shield]][github-forks-link]
+[![GitHub issues][github-issues-shield]][github-issues-link]
 [![license GPL-3.0][github-license-shield]][github-license-link]
 [![GreasyFork installs][greasyFork-shield]][greasyFork-link]
 
@@ -68,7 +68,7 @@ Via（Android）       | 内置管理器
 1. **开启浏览器 “扩展程序” 管理中的 “开发者模式”[^1]**
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
-    <!---- [GitCode 镜像【开发版】][main(gitcode).user.js]【国内】-->
+    - ~~[GitCode 镜像【开发版】][main(gitcode).user.js]【国内】~~
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
@@ -399,7 +399,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [github-license-link]: https://opensource.org/licenses/GPL-3.0  "许可证"
 [github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
 [greasyFork-link]: https://greasyfork.org/scripts/435208  "GreasyFork 源 - GitHub 中文化插件"
-[greasyFork-shield]: https://img.shields.io/badge/dynamic/json?style=flat-square&logo=GreasyFork&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
+[greasyFork-shield]: https://img.shields.io/greasyfork/dt/435208?style=flat-square&logo=GreasyFork&label=GreasyFork%20Installs
 [pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge "欢迎提交 PR"
 [Tampermonkey]: http://tampermonkey.net/ "篡改猴"
