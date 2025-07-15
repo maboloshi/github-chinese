@@ -68,7 +68,7 @@ Via（Android）       | 内置管理器
 1. **开启浏览器 “扩展程序” 管理中的 “开发者模式”[^1]**
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
-    - [GitCode 镜像【开发版】][main(gitcode).user.js]【国内】
+    <!---- [GitCode 镜像【开发版】][main(gitcode).user.js]【国内】-->
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
