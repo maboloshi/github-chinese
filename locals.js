@@ -5376,11 +5376,23 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Owner": "所有者",
             "Member": "成员",
 
+            "Getting started": "开始使用",
+            "Install Copilot in your editor": "在您的编辑器中安装 Copilot",
+            "Ask about coding problems and get code completions while you work.": "在工作时询问问题并获得代码补全。",
+            "Chat with Copilot anywhere": "随时随地与 Copilot 聊天",
+            "Open": "在 GitHub 的任何位置打开导航栏中的",
+            "Copilot chat in the navigation from anywhere on GitHub. Try asking": "按钮，即可与 Copilot 聊天。尝试询问",
+            "“what can I do with Copilot?”": "“我能用 Copilot 做什么？”",
+            "to get started.": "来开始聊天。",
+            "Go to Copilot": "前往 Copilot",
+            "Start building with Copilot": "使用 Copilot 开始构建项目",
+            "Learn how to build with Copilot in Visual Studio Code or Visual Studio.": "学习如何在 Visual Studio Code 或 Visual Studio 中使用 Copilot 来构建项目",
+            "Get started": "开始",
+
         // 免费版
             "You are using Copilot for free": "您正在使用 Copilot 免费版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回复上限为每月 2,000 次代码完成和 50 条聊天信息。",
-            //"Copilot Free is active for your account": "您的账户已启用 Copilot 免费版",
-                //"Responses are capped at 2,000 code completions and 50 chat messages per month.": "回复上限为每月 2,000 次代码完成和 50 条聊天信息。",
+                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得更高的限制、高级模型和 AI 评审。免费版的会话将在 20 天后重置。",
             "Get unlimited usage with Copilot Pro": "通过 Copilot Pro 无限制使用",
                 "Unlimited messages and interactions": "信息和互动无限制",
                 "Access to the latest models": "访问最新模型",
@@ -5389,7 +5401,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
 
             "Copilot policies": "Copilot 规则",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
-                    "You can use Copilot Chat in GitHub.com, but not preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，但无预览功能。",
+                    "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 代码审查和预览功能仅适用于付费版。",
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
@@ -5449,7 +5461,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Visibility": "可见度",
                 "Show Copilot": "显示 Copilot",
                 "Enable Copilot for all GitHub features, including navigation bar, search, and dashboard.": "为所有 GitHub 功能启用 Copilot，包括导航栏、搜索和仪表板。",
-                "When disabled, Copilot will be hidden and unavailable.": "禁用后，Copilot 将隐藏且不可用。",
+                "When disabled, Copilot will be hidden and unavailable. This setting does not apply to Copilot search on GitHub Docs.": "禁用后，Copilot 将隐藏且不可用。此设置不适用于 GitHub Docs 中的 Copilot 搜索。",
 
         // 专业版
             // 顶部提醒
@@ -5491,12 +5503,12 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Copilot coding agent": "Copilot 编程助手",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "在已启用 Copilot 编码代理的仓库中委派任务给 Copilot 编码代理",
                 "MCP servers in Copilot": "MCP 服务器功能",
-                    "Configure and use third-party Model Context Protocol (MCP) servers for use on GitHub.com. See MCP docs for": "有关在 GitHub.com 上使用第三方模型上下文协议 (MCP) 服务器的配置和使用，请参阅 MCP 文档。",
-                    "Coding Agent": "编程助手",
+                    "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "在 Visual Studio Code 和 Coding Agent 中将 MCP 服务器连接到 Copilot。MCP 在 VS Code 中已正式支持，在 Coding Agent 中尚处于公开预览阶段。相关信息请参阅 MCP 文档：",
 
         // 编程助手(预览 https://github.com/settings/copilot/coding_agent
             // 顶部提示
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程助手，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程助手，但您将无法向 Copilot 分配任务，因为 Copilot 编程助手已被管理员禁用。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程助手，您可以将任务委派给 Copilot，从而让您专注于最重要的创造性、复杂性和高影响力的工作。只需将问题分配给 Copilot，等待助手请求您的审查，然后在拉取请求中留下反馈以进行迭代。",
                 "Learn more in the docs.": "详情",
