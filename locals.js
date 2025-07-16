@@ -12388,6 +12388,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         // 时间
         [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2时$3分$4秒"],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)h (\d+)m/, "$1时$2分"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
