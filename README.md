@@ -68,7 +68,6 @@ Via（Android）       | 内置管理器
 1. **开启浏览器 “扩展程序” 管理中的 “开发者模式”[^1]**
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
-    - ~~[GitCode 镜像【开发版】][main(gitcode).user.js]【国内】~~
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
@@ -407,6 +406,5 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [Macaque]: https://macaque.app/ "猕猴"
 [Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 "Stay"
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 源"
-[main(gitcode).user.js]: https://raw.gitcode.com/gh_mirrors/gi/github-chinese/raw/gh-pages/main(gitcode).user.js "GitHub 中文化插件 - GitCode 镜像"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
