@@ -12247,6 +12247,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via issue": "通过议题触发",
             "Triggered via discussion": "通过讨论触发",
             "Triggered via discussion comment": "通过讨论评论触发",
+            "Triggered via workflow run": "通过工作流运行触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
 
@@ -12337,6 +12338,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Release": "发行版",
                 "published by": "发布者",
             "created by": "创建者",
+            "completed by": "完成者",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
