@@ -2233,7 +2233,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
 
             "Pinned": "已置頂",
             "Top repositories": "置頂的倉庫",
-            "Popular repositories": "流行的倉庫",
+            "Popular repositories": "熱門倉庫",
 
             "Learn how we count contributions": "瞭解我們如何計算貢獻",
             "Less": "更少",
@@ -18252,7 +18252,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
                 "When you search within a repository for the first time, please note that the repository undergoes indexing.": "首次在倉庫中搜索時，請注意倉庫會進行索引。",
                 "This process may take a few minutes.": "這一過程可能需要幾分鐘。",
 
-                "The index currently includes more than 70 million popular public repositories, plus all private repositories that users search for.": "該索引目前包括超過 7000 萬個流行的公共倉庫，以及用戶搜索的所有私有倉庫。",
+                "The index currently includes more than 70 million popular public repositories, plus all private repositories that users search for.": "該索引目前包括超過 7000 萬個受歡迎的公共倉庫，以及用戶搜索的所有私有倉庫。",
                 "Beyond that, we also don't include all files in the search index:": "除此之外，我們也不會將所有文件都納入搜索索引：",
                     "Vendored and generated code is excluded": "排除供應和生成的代碼",
                     "Empty files and files over 350 kiB are excluded": "排除空文件和超過 350 kiB 的文件",
@@ -18284,7 +18284,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
             "Created on the dates": "創建日期",
             "Written in this language": "使用語言",
             "Any language": "任何語言",
-                "Popular": "流行的",
+                "Popular": "熱門",
                 "Everything else": "其他語言",
 
             "Repositories options": "倉庫選項",
@@ -19173,7 +19173,7 @@ I18N["zh-TW"]["sponsors"] = { // 贊助界面
 I18N["zh-TW"]["showcases"] = { // 展示頁面
     "static": { // 靜態翻譯
         "Open source showcases": "開源展示",
-        "Browse popular repositories based on the topic that interests you most.": "瀏覽熱門倉庫基於您最感興趣的主題。",
+        "Browse popular repositories based on the topic that interests you most.": "按您感興趣的主體瀏覽熱門倉庫。",
         "Search showcases": "搜索展示",
     },
     "regexp": [ // 正則翻譯
@@ -20068,7 +20068,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
             "Send feedback": "發送反饋",
 
             "Pinned": "已置頂",
-            "Popular repositories": "流行的倉庫",
+            "Popular repositories": "熱門倉庫",
 
             // 倉庫
                 // 搜索, 篩選 & 排序工具欄
@@ -22884,7 +22884,7 @@ I18N["zh-TW"]["github-copilot/signup"] = { // GitHub Copilot 個人版獲取頁�
 
            "Next: Confirm your payment details": "下一步：確認您的付款詳細信息",
 
-           "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the": "GitHub Copilot 對於在 GitHub 上維護流行開源軟件的人員和經過驗證的學生是免費的。您可以查看",
+           "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the": "GitHub Copilot 對於在 GitHub 上維護熱門開源軟件的人員和經過驗證的學生是免費的。您可以查看",
            "free use FAQ": "免費使用常見問題解答（FAQ）",
            "for more details.": "以獲取更多詳細信息。",
 
