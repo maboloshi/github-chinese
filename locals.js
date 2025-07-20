@@ -685,6 +685,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Create new...": "新建...",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
+                "New agent task": "新建代理任务",
                 "New codespace": "新建代码空间",
                 "New gist": "新建代码片段",
                 "New organization": "新建组织",
@@ -765,6 +766,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "so we can improve it!": "以便我们加以改进！",
                 // 出错提示
                     "Sorry, something went wrong and we were not able to fetch the feature previews": "对不起，出了点问题，我们无法获取功能预览",
+            "GitHub MCP Server": "GitHub MCP 服务器",
             "Settings": "设置",
             "GitHub Website": "GitHub 首页", // 非仪表板页
             "GitHub Docs": "GitHub 文档",
@@ -9721,6 +9723,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "No conflicts with base branch": "与基础分支没有冲突",
                 "Changes can be cleanly merged.": "更改可以被干净地合并。",
             "Merging is blocked": "合并被阻止",
+                "Commits must have verified signatures.": "提交必须验证签名。",
                 "The base branch requires all conversations on code to be resolved.": "基础分支要求解决所有关于代码的对话。",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
@@ -10079,6 +10082,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Viewed": "已查看",
             "Comment on this file": "评论此文件",
+
+            "No changes to show": "没有更改",
+                "This commit does not include any file changes": "此提交未包含文件更改",
 
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
@@ -12156,6 +12162,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Triggered via issue": "通过议题触发",
             "Triggered via discussion": "通过讨论触发",
             "Triggered via discussion comment": "通过讨论评论触发",
+            "Triggered via workflow run": "通过工作流运行触发",
             "Re-run triggered": "重新触发",
             "Manually triggered": "手动触发",
 
@@ -12246,6 +12253,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Release": "发行版",
                 "published by": "发布者",
             "created by": "创建者",
+            "completed by": "完成者",
             //"Process completed with exit code 1.": "进程完成，退出代码为 1。",
             "Cache not found": "找不到缓存",
             "Starting job": "作业启动中",
@@ -12297,6 +12305,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         // 时间
         [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2时$3分$4秒"],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
+        [/(\d+)h (\d+)m/, "$1时$2分"],
     ],
 };
 I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
@@ -13281,11 +13290,15 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
+            "New release": "新建发行版",
+
             "Release notes": "发行版说明",
                 "Select a previous tag to create generated release notes": "选择一个先前的标签以生成发行说明",
 
             "Choose a tag": "选择标签",
                 "Find or create a new tag": "查找或创建新标签",
+            "Tag:": "标签：",
+                "Select tag": "选择标签",
             "Target:": "目标：",
                 "Pick a branch or recent commit": "选择分支或最近的提交",
                 "Filter branches…": "筛选分支…",
