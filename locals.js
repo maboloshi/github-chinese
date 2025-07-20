@@ -10083,6 +10083,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Viewed": "已查看",
             "Comment on this file": "评论此文件",
 
+            "No changes to show": "没有更改",
+                "This commit does not include any file changes": "此提交未包含文件更改",
+
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
