@@ -4448,74 +4448,64 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
 
         // Emails 电子邮箱 https://github.com/settings/emails
             // 黄框警告
-            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
+                "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
 
-            "Email settings": "电子邮箱设置",
+            // [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)/, "可用于登录账户的电子邮箱。这些邮箱不会用作基于网页的 Git 操作（如编辑和合并）的 “发件人” 地址。所有基于网页的 Git 操作都将关联至 $1。"],
+
             "Primary": "主账户",
-            "Unverified email addresses cannot receive notifications or be used to reset your password.": "未经验证的电子邮件地址无法接收通知或用于重置您的密码。",
-            "This email will be used for account-related notifications and can also be used for password resets.": "该电子邮箱将用于与账户有关的通知，也可用于密码重置。",
-            "Not visible in emails": "在电子邮件中不可见",
-            "Visible in emails": "在电子邮件中可见",
-                "This email may be used as the 'author' or 'committer' address for web-based Git operations, e.g., edits and merges.": "该电子邮箱可用作基于 Web 的 Git 操作（例如：编辑和合并）的 ‘作者’ 或 ‘提交者’ 地址。",
-            "Receives notifications": "接收通知",
-            "This email address is the default used for GitHub notifications, i.e., replies to issues, pull requests, etc.": "该电子邮箱默认用于 GitHub 的通知，即对议题和拉取请求的回复，等等。",
-            "At least one email is required.": "至少需要一个电子邮箱。",
-            // 删除按钮 提醒信息
-                "At least one verified email is required.": "至少需要1个经过验证的电子邮箱",
-                "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。",
-                "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从您的账户中删除此电子邮箱吗？删除后，归因于该电子邮箱地址的提交将不再与您的账户相关联。您的其他电子邮箱之一将成为您的主要地址。",
-
-            "At least one non-backup email is required.": "至少需要一个非备用电子邮箱",
-            "Backup": "备用电子邮箱",
-            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "该电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
-            "Add email address": "添加电子邮箱",
-            "Email address": "电子邮箱",
-                // 顶部提醒
+                "Backup": "备用",
+                "This email address is the default for GitHub notifications, such as replies to issues, pull requests, and similar activity.": "此电子邮箱地址是 GitHub 通知的默认地址，例如对议题、拉取请求和类似活动的回复。",
+                // [/Manage email/, "管理邮箱地址"],
+                "Manage email preferences": "管理电子邮件首选项",
                 "Resend verification email": "重新发送验证邮件",
-                "Your email was verified.": "您的电子邮箱地址验证成功！",
+                // 删除按钮 提醒信息
+                    "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account.": "您确定要从账户中移除此邮箱吗？移除后，该邮箱地址关联的提交记录将不再与您的账户关联。。",
+                    "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您确定要从账户中移除此邮箱吗？移除后，该邮箱地址关联的提交记录将不再与您的账户关联。您其他邮箱中的一个将自动成为主要地址。",
+                    "At least one email is required.": "至少需要一个电子邮箱。",
+                    "At least one verified email is required.": "至少需要一个已验证的电子邮箱。",
+                    // 顶部提醒
+                        // [/Removed email ([^@]+@[^\n]+) from your account./, "已将邮箱 $1 从您的账户中移除。"],
+
+            "Add email address": "添加电子邮箱",
+                "Email address": "电子邮箱",
+                    // 顶部提醒
+                        // [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
 
             "Primary email address": "主电子邮箱",
-            // 未电子邮箱隐私
-            "will be used for account-related notifications and can be used for password resets.": "将用于与账户相关的通知，并可用于密码重置。",
-            // 电子邮箱隐私
-            "Because you have email privacy enabled,": "因为您已经启用了电子邮箱隐私，",
-            "will be used for account-related notifications as well as password resets.": "将用于与账户相关的通知以及密码重置。",
-            "will be used for web-based Git operations, e.g., edits and merges.": "将用于基于 Web 的 Git 操作，例如编辑和合并。",
-            // 顶部提醒
-            "Your primary email was changed to": "您的主电子邮箱已更改为",
-            ". Your default notification email address is still set to": "。您的默认通知电子邮箱仍然设置为",
-            ". Would you like to update that as well?": "。您也想更新它吗？",
-            "Yes， update my notification email": "是的，更新我的通知电子邮箱",
+                "Select an email to be used for account-related notifications and can be used for password reset.": "选择用于帐户相关通知的电子邮件地址，并可用于密码重置。",
+                // 顶部提醒
+                    "Your primary email was changed to": "您的主电子邮箱已更改为",
+                    ". Your default notification email address is still set to": "。您的默认通知电子邮箱仍然设置为",
+                    ". Would you like to update that as well?": "。您也想更新它吗？",
+                    "Yes, update my notification email": "是的，更新我的通知电子邮箱",
 
             "Backup email address": "备用电子邮箱",
-            "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的备用 GitHub 电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
-            "Allow all verified emails": "允许所有已验证的电子邮箱",
-                // 顶部提醒
-                "All verified emails can now be used for password resets.": "所有已验证的电子邮箱现在均可用于密码重置。",
-            "Only allow primary email": "仅允许主电子邮箱",
-                // 顶部提醒
-                "Only your primary email address can now be used for password resets.": "现在只有您的主电子邮箱可用于密码重置。",
-            "Please add a verified email, in addition to your primary email, in order to choose a backup email address.": "请在您的主电子邮箱之外，添加一个经验证的电子邮箱，以便选择一个备用电子邮箱。",
+                "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的备用 GitHub 电子邮箱将用作接收账户安全相关通知的额外方式，也可以用于密码重置。",
+                    "Allow all verified emails": "允许所有已验证的电子邮箱",
+                        // 顶部提醒
+                            "All verified emails can now be used for password resets.": "所有已验证的电子邮箱现在均可用于密码重置。",
+                    "Only allow primary email": "仅允许主电子邮箱",
+                        // 顶部提醒
+                            "Only your primary email address can now be used for password resets.": "现在只有您的主电子邮箱可用于密码重置。",
 
             "Keep my email addresses private": "保持我的电子邮箱地址的私密性",
+                "We’ll remove your public profile email and use": "我们将删除您的公开个人资料中的电子邮箱，并使用",
+                "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "执行基于 Web 的 Git 操作（例如：编辑和合并）并以您的名义发送电子邮件。如果您想在命令行 Git 操作中使用您的私人电子邮箱，您必须",
+                "set your email in Git": "在 Git 中设置您的电子邮箱",
+                "Previously authored commits associated with a public email will remain public.": "以前创建的与公共电子邮件相关的提交将保持公开状态。",
+                "Off": "禁用",
+                "On": "启用",
+
                 // 顶部提醒
-                "Your primary email address is now public. To select which email to display on your profile, visit": "您的主电子邮箱地址现已公开。要选择在您的个人资料中显示哪个电子邮箱，请访问",
-                "profile settings.": "个人资料设置。",
-                "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主电子邮箱地址现已设为私密。如果您以前公开过您的电子邮箱，我们已经从您的个人资料中删除了它。",
-            "We’ll remove your public profile email and use": "我们将删除您的公开个人资料中的电子邮箱，并使用",
-            "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "执行基于 Web 的 Git 操作（例如：编辑和合并）并以您的名义发送电子邮件。如果您想在命令行 Git 操作中使用您的私人电子邮箱，您必须",
-            "set your email in Git": "在 Git 中设置您的电子邮箱",
-            "Previously authored commits associated with a public email will remain public.": "以前创建的与公共电子邮件相关的提交将保持公开状态。",
+                    "Your primary email address is now public. To select which email to display on your profile, visit": "您的主电子邮箱地址现已公开。要选择在您的个人资料中显示哪个电子邮箱，请访问",
+                    "profile settings.": "个人资料设置。",
+                    "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主电子邮箱地址现已设为私密。如果您以前公开过您的电子邮箱，我们已经从您的个人资料中删除了它。",
 
             "Block command line pushes that expose my email": "阻止在命令行推送中暴露我的电子邮箱",
+                "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "当您推送到 GitHub 时，我们会检查最近的提交。如果该提交的作者电子邮箱是您 GitHub 账户上的私人电子邮箱，我们会阻止推送并警告您不要暴露您的私人电子邮箱。",
                 // 顶部提醒
-                "Commits pushed with a private email will no longer be blocked.": "使用私人电子邮箱推送的提交将不再被阻止。",
-                "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人电子邮箱推送的提交将被阻止，您会看到一个警告。",
-            "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "当您推送到 GitHub 时，我们会检查最近的提交。如果该提交的作者电子邮箱是您 GitHub 账户上的私人电子邮箱，我们会阻止推送并警告您不要暴露您的私人电子邮箱。",
-
-            "Email preferences": "邮件首选项",
-                "Subscriptions through our various marketing platforms. Each email address has its own subscriptions.": "通过我们的各种营销平台进行订阅。每个电子邮件地址都有自己的订阅。",
-                "Manage": "管理",
+                    "Commits pushed with a private email will no longer be blocked.": "使用私人电子邮箱推送的提交将不再被阻止。",
+                    "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人电子邮箱推送的提交将被阻止，您会看到一个警告。",
 
         // 订阅偏好 https://github.com/settings/emails/subscriptions
             "Subscription preferences for": "订阅首选项",
@@ -4523,18 +4513,15 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
-            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主题的电子邮件，请取消选中您不想接收的主题，然后点击 “保存订阅首选项”",
-            "General info and offers from GitHub": "GitHub 的一般信息和优惠",
-            "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
-            "Unsubscribe from all topics": "取消订阅所有主题",
+
     },
     "regexp": [ // 正则翻译
-        [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "该电子邮箱不会用作基于 Web 的 Git 操作（例如编辑和合并）的 “发件人” 地址。我们将改为使用 $1。"],
+        [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)./, "可用于登录账户的电子邮箱。该邮箱不会用作基于网页的 Git 操作（如编辑和合并）的 “发件人” 地址。所有基于网页的 Git 操作都将关联至 $1。"],
+        [/Manage email/, "管理邮箱地址"],
+        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主电子邮箱已更改为 $1"],
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的订阅偏好"],
-        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我们已向 $1 发送了验证邮件，请登录邮箱已完成验证。"],
-        [/Delete ([^@]+@[^\n]+)/, "删除 $1"],
-        [/Error adding ([^@]+@[^:]+): email is already in use/, "$1 的邮箱已经在使用中"],
+        [/Removed email ([^@]+@[^\n]+) from your account./, "已将邮箱 $1 从您的账户中移除。"],
     ],
 };
 
@@ -9068,6 +9055,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Search for branches or pull requests": "搜索分支或拉取请求",
                         "no pull request": "无拉取请求",
 
+                "Duplicate issue": "复制议题",
+                    // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
+                    "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改仓库可能会从重复议题中移除里程碑、标签、类型和分配人员。",
+                    "This issue is being duplicated across repositories. The following metadata might not be copied: Milestone, Labels.": "该议题正跨仓库中被复制创建。以下元数据可能不会被复制：里程碑、标签。",
                 "Pin issue": "置顶议题",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置顶 3 个议题，它们将公开显示在议题页面的顶部",
                     "Up to 3 issues can be pinned to the top of the issues page": "最多可以在议题页面置顶 3 个议题",
@@ -9287,6 +9278,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
+        [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
