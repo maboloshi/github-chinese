@@ -25357,6 +25357,9 @@ I18N["zh-CN"]["copilot"] = {
                 "View all attachments": "查看所有附件",
 
         // 代理 https://github.com/copilot/agents
+            "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
+                "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
+
             "Agents": "代理",
 
             "Let Copilot tackle your TODOs": "让 Copilot 处理您的待办",
