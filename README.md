@@ -57,7 +57,7 @@
 浏览器类型           | 支持的脚本管理器
 :------------------: | :---------------:
 Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
-Safari（全平台）     | [Macaque][Macaque], [Stay][Stay]
+Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
 
