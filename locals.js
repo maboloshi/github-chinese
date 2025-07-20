@@ -17874,7 +17874,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Sign up for GitHub": "注册 GitHub",
         //"Start a free enterprise trial": "开始免费试用企业版",
 
-        "Try GitHub Copilot": "试用 GitHub Copilot",
+        "Try Copilot Free": "试用 GitHub Copilot",
             "30 days free": "30天免费",
         "Free Enterprise trial": "免费试用企业版", // 已登录
         "Explore upcoming releases": "探索即将发布的产品", // 已登录
@@ -17902,7 +17902,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
               "Read customer story": "阅读客户故事",
 
             "2024 Gartner® Magic Quadrant™ for AI Code Assistants": "2024 年 Gartner® 人工智能代码助手魔力象限™",
-              "Read report": "阅读报告",
+              "Read industry report": "阅读行业报告",
 
         "Optimize your process with simple and secured CI/CD.": "使用简单、安全的 CI/CD 优化您的流程。",
             "Get up and running in seconds": "数秒内即可启动并运行",
@@ -17913,7 +17913,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                 "Sync with 17,000+ integrations and a growing library of Copilot Extensions.": "与 17,000 多个集成和不断增长的 Copilot 扩展库同步。",
                 "Visit GitHub Marketplace": "访问 GitHub 市场",
 
-        "Built-in application security": "内置应用程序安全性",
+        "Built-in application security": "内置的应用程序安全",
         "where found means fixed": "发现即修复",
             "Use AI to find and fix vulnerabilities—freeing your teams to ship more secure software faster.": "使用人工智能来查找和修复漏洞——让您的团队能够更快地交付更安全的软件。",
 
@@ -17933,7 +17933,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                     "Detect, prevent, and remediate leaked secrets across your organization.": "检测、预防并补救整个组织内泄露的机密。",
 
                 "90% coverage": "90% 覆盖率",
-                    "of alert types in all supported languages with Copilot Autofix": "Copilot 自动修复支持所有语言的警报类型",
+                    "of alert types in all supported languages with Copilot Autofix": " Copilot自动修复支持所有语言的警报类型",
 
         "Work together, achieve more": "共同协作，取得更大成就",
             "Collaborate with your teams, use management tools that sync with your projects, and code from anywhere—all on a single, integrated platform.": "与您的团队协作，使用与您的项目同步的管理工具并从任何地方编写代码——所有这些都在单一集成平台上进行。",
@@ -24568,7 +24568,9 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                 "Frontend application and API servers for Pages builds": "用于页面构建的前端应用程序和应用程序接口服务器",
             // 代码空间
                 "Orchestration and Compute for GitHub Codespaces": "GitHub 代码空间的协调与计算",
-            "For the status of GitHub Enterprise Cloud - EU, please visit:": "有关 GitHub 企业云的状态，请访问",
+            "For the status of GitHub Enterprise Cloud - EU, please visit:": "有关欧盟版 GitHub 企业云的状态，请访问",
+            "For the status of GitHub Enterprise Cloud - Australia, please visit":"有关澳大利亚版 GitHub 企业云的状态，请访问",
+            "For the status of GitHub Enterprise Cloud - US, please visit":"有关美国版 GitHub 企业云的状态，请访问",            
             "Current Status": "当前状态",
             "Incident History": "历史事故",
 
