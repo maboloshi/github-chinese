@@ -654,14 +654,15 @@
         // 初始化菜单
         registerMenuCommand();
 
-        // 监视页面变化
-        watchUpdate();
 
         // 首次页面翻译
         window.addEventListener('DOMContentLoaded', () => {
             // 获取当前页面的翻译规则
             updatePageConfig('首次载入');
             if (pageConfig.currentPageType) traverseNode(document.body);
+
+            // 监视页面变化
+            watchUpdate();
         });
     }
 
