@@ -685,6 +685,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Create new...": "新建...",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
+                "New agent task": "新建代理任务",
                 "New codespace": "新建代码空间",
                 "New gist": "新建代码片段",
                 "New organization": "新建组织",
@@ -765,6 +766,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "so we can improve it!": "以便我们加以改进！",
                 // 出错提示
                     "Sorry, something went wrong and we were not able to fetch the feature previews": "对不起，出了点问题，我们无法获取功能预览",
+            "GitHub MCP Server": "GitHub MCP 服务器",
             "Settings": "设置",
             "GitHub Website": "GitHub 首页", // 非仪表板页
             "GitHub Docs": "GitHub 文档",
@@ -9721,6 +9723,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "No conflicts with base branch": "与基础分支没有冲突",
                 "Changes can be cleanly merged.": "更改可以被干净地合并。",
             "Merging is blocked": "合并被阻止",
+                "Commits must have verified signatures.": "提交必须验证签名。",
                 "The base branch requires all conversations on code to be resolved.": "基础分支要求解决所有关于代码的对话。",
                 "The base branch requires all commits to be signed.": "基础分支要求所有提交都经过签名。",
                 "Learn more about signing commits.": "了解更多关于签名提交的信息。",
