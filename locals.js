@@ -24209,7 +24209,7 @@ I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
         "Try Copilot Pro for 30 days free": "免费试用 Copilot Pro 30 天",
 
         "Everything in Copilot Free and:": "Copilot 免费版以及：",
-            "Unlimited agent mode and chat with GPT-4.1": "无限代理模式和与 GPT-4.1 聊天",
+            "Unlimited agent mode and chat with GPT-4.1": "智能体无限用 • GPT-4.1 畅聊",
             "Unlimited code completions": "无限代码补全",
             "Access to Anthropic Claude 3.7/4 Sonnet, Gemini 2.5 Pro, and more": "访问 Claude 3.7/4 Sonnet, Gemini 2.5 Pro 等模型",
             "300 premium requests to use the latest models and code review": "300 次高级请求，用于使用最新模型和代码审查",
