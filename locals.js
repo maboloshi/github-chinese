@@ -12848,7 +12848,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Write": "编辑",
             "Preview": "预览",
             "Edit mode:": "标记语言：",
-            "Edit message": "编辑摘要",
+            "Edit message": "提交消息",
 
             "Write a small message here explaining this change. (Optional)": "请简要描述所作修改(可选)",
             "Save page": "保存页面",
