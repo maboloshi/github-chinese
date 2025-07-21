@@ -725,7 +725,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Try Enterprise": "试用企业版",
                 "Free": "免费",
             "Feature preview": "功能预览",
-            "GitHub MCP Server":"GitHub MCP 服务器",
                 "New": "新",
                 // 对话框
                 "Feature preview dialog": "功能预览对话框",
@@ -17933,7 +17932,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                     "Detect, prevent, and remediate leaked secrets across your organization.": "检测、预防并补救整个组织内泄露的机密。",
 
                 "90% coverage": "90% 覆盖率",
-                    "of alert types in all supported languages with Copilot Autofix": " Copilot自动修复支持所有语言的警报类型",
+                    "of alert types in all supported languages with Copilot Autofix": "Copilot 自动修复支持所有语言的警报类型",
 
         "Work together, achieve more": "共同协作，取得更大成就",
             "Collaborate with your teams, use management tools that sync with your projects, and code from anywhere—all on a single, integrated platform.": "与您的团队协作，使用与您的项目同步的管理工具并从任何地方编写代码——所有这些都在单一集成平台上进行。",
