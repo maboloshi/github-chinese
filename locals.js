@@ -9547,6 +9547,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "on behalf of": "代表",
                 "View session": "查看",
             "finished work on behalf of": "完工，代表",
+            "stopped work on behalf of": "停工，代表",
+                "due to an error": "因为错误",
 
             // 隐藏
             "Load more…": "加载更多…",
@@ -9587,7 +9589,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "In progress": "进行中",
                     "started": "开始于",
                     "Copilot is done": "Copilot 已完成",
+                    "Copilot has failed": "Copilot 已失败",
                     "completed after": "总耗时", // 示例：总耗时 11分45秒
+                    "failed after": "失败于",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
@@ -10233,6 +10237,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
                 "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
 
+            // 状态
+                "Failed": "失败",
             "Sessions": "进度",
             "Duration": "总时长",
             "Premium requests": "高级请求",
@@ -10240,6 +10246,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "premium": "高级",
             "request": "请求",
+            "requests": "请求",
             "used in": "被用于",
             "session": "任务",
 
@@ -10248,6 +10255,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "View verbose logs": "查看日志",
 
             "Copilot is working…": "Copilot 工作中…",
+
+            "Copilot stopped work due to an error": "Copilot 因错误停工",
+                "Copilot has encountered an error. See logs for additional details.": "Copilot 遇到错误。请查看日志以获取更多详细信息。",
+                "View detailed logs": "查看详细日志",
 
             // 进度
             "View repository": "查看仓库",
@@ -25393,6 +25404,7 @@ I18N["zh-CN"]["copilot"] = {
 
             "Open": "打开",
                 "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
+                "Failed": "失败",
             "Closed": "关闭",
                 "· started": "· 开始于",
                 "ago ·": "之前",
