@@ -10197,6 +10197,18 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Sometimes commits can disappear after a force-push. Head back to the": "有时提交会在强推后消失。头部回到",
             "latest changes here": "最新的更改",
 
+            "Comment on line": "评论行",
+            "Expand comment": "展开评论",
+            "Collapse comment": "折叠评论",
+            "Unresolve comment": "取消解决评论",
+                "marked this comment as resolved": "标记为已完成",
+            "Resolve comment": "解决评论",
+                "Apply suggestion": "应用建议",
+                    "More suggestion batching options": "更多选项",
+                        "This feature is not supported yet.": "此功能尚未支持。",
+            "Return to code": "返回代码",
+            "Reference in a new issue": "在新议题中引用",
+
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
             "between": " ",
