@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 倉庫路徑
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 組織路徑
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -685,6 +685,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Create new...": "新建...",
                 "New repository": "新建倉庫",
                 "Import repository": "導入倉庫",
+                "New agent task": "新建代理任務",
                 "New codespace": "新建程式碼空間",
                 "New gist": "新建程式碼片段",
                 "New organization": "新建組織",
@@ -753,6 +754,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持對 Jupyter Notebook 的豐富差異視圖進行評論",
                 "New Files Changed Experience": "新版文件更改體驗",
                     "Feature enabling the new Files Changed Page": "啟用新版更改的文件頁",
+                "New repository creation page": "新版倉庫創建頁",
+                    "New version of the repository creation page that streamlines the configuration and validation of required custom property values and initialization options.": "新版倉庫創建頁面，簡化了必填自定義屬性值和初始化選項的配置與校驗流程。",
                 "Slash Commands": "斜槓命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜線命令可以讓您更輕鬆地輸入更複雜的 Markdown，如表格、任務列表和程式碼塊。",
                     "Simply type": "只需在議題、拉取請求和討論中鍵入",
@@ -763,6 +766,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "so we can improve it!": "以便我們加以改進！",
                 // 出錯提示
                     "Sorry, something went wrong and we were not able to fetch the feature previews": "對不起，出了點問題，我們無法獲取功能預覽",
+            "GitHub MCP Server": "GitHub MCP 服務器",
             "Settings": "設置",
             "GitHub Website": "GitHub 首頁", // 非儀表板頁
             "GitHub Docs": "GitHub 文檔",
@@ -839,7 +843,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Nothing to preview": "沒有什麼可預覽",
             "This repository has been archived.": "此倉庫已存檔。", // 已存檔倉庫 某個提交的評論框
             "Add review comment": "添加審查意見", // 具體拉取請求 文件審查意見
-            "Start a review": "開始評論", // 具體拉取請求 文件審查意見
+            "Start a review": "開始審查", // 具體拉取請求 文件審查意見
             // 取消按鈕 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您確定要放棄未保存的更改嗎？",
 
@@ -3364,8 +3368,8 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 賬戶
                 "You must": "您必須先",
                 "remove yourself": "刪除您自己",
                 "transfer ownership": "轉讓所有權",
-                "delete": "刪除",
-                "these organizations before you can delete your user.": "這些組織，您才可以刪除您的用戶。",
+                "delete these organizations": "刪除這些組織",
+                "before you can delete your user.": "，您才可以刪除您的用戶。",
             "Delete your account": "刪除賬戶",
             "Are you sure you don’t want to just": "您確定不希望僅僅是",
             "downgrade your account": "降級您的賬戶",
@@ -3666,11 +3670,15 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             // 概況
                 "Current metered usage": "當前計費用量",
                     "Showing gross metered usage for your account.": "顯示您賬戶的總計費用量。",
+                    "Showing gross metered usage for your organization.": "顯示您組織的總計費用量。", // 組織
 
                 "Current included usage": "當前包含用量",
                     "More details": "詳情",
                     "Showing currently applied discounts for your account.": "顯示您賬戶當前應用的折扣。",
+                    "Showing currently applied discounts for your organization.": "顯示您組織當前應用的折扣。", // 組織
                     "* As per current pricing": "* 根據當前定價方案",
+
+            "Next payment due": "下一次應付款",
 
             "Subscriptions": "訂閱",
                 "Manage subscriptions": "管理訂閱",
@@ -3743,8 +3751,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "delete prebuilds for a repository.": "刪除某個倉庫的預構建。",
             "Update spending limit": "更新支出限額",
 
-        // 計費用量 https://github.com/settings/billing/usage
-            "Search or filter usage": "搜索或篩選",
+        // 使用情況 https://github.com/settings/billing/usage
+            "Get usage report": "獲取使用情況報告",
+            "Search or filter usage": "搜索或篩選使用情況",
 
             //"Group: None": "分組：無",
             //"Group: Product": "分組：產品",
@@ -3790,7 +3799,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Price/unit": "單價",
                 "Billed amount": "計費",
 
-        // 賬戶預算 https://github.com/settings/billing/budgets
+        // 預算和警報 https://github.com/settings/billing/budgets
            "Account budgets": "賬戶預算",
                 "New budget": "新建",
                 // "On": "開",
@@ -3802,6 +3811,10 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
 
         // 新建/更新預算 https://github.com/settings/billing/budgets/new
         // https://github.com/settings/billing/budgets/<id>/edit
+            // 提醒欄
+                "Info": "信息",
+                "SKU level budgets are only available for products that have > 1 SKU.": "只有擁有大於 1個 SKU 的產品才有 SKU 級別的預算。",
+
             "Budgets and Alerts": "預算和警報",
             "New monthly budget": "新建月度預算",
             "Edit monthly budget": "編輯每月預算", // edit
@@ -3812,15 +3825,24 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Budget type": "預算類型",
                 "Set budget for either a product or individual SKU within a product.": "為產品或產品中的單個 SKU 設置預算。",
                 "Product-level budget": "產品級預算",
+                    "Codespaces": "程式碼空間",
+                    "Actions": "操作",
+                    "Models": "模型",
+                        "Enable billing to set a budget. See": "啟用計費以設置預算。查看",
+                        "Models policy configuration": "模型策略配置",
+                    "Packages": "軟體包",
                     "Select 1 product": "選擇產品",
                 "SKU-level budget": "SKU 級預算",
                     "Select": "選擇",
                     "Select an item": "選擇專案",
 
+            "Next: Configure budget": "下一步：配置預算",
+
             "Budget scope": "預算範圍",
                 "Select the scope of spending for this budget.": "選擇此預算的支出範圍。",
                 // 倉庫
-                    "Spending for a single repository.": "單個倉庫支出。",
+                    "Scoped budgets track spending for a single repository": "範圍預算跟蹤單個倉庫的支出",
+
                         "Select repository": "選擇倉庫",
                         "Select the": "選擇",
                         "to include in this": "包含在此",
@@ -3831,8 +3853,8 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                         "of": "/",
                         // [/(\d+) selected/, "$1 個選定"],
                 // 賬戶
-                    "Spending for all repositories owned by your account.": "賬戶擁有的所有倉庫的支出。",
-                    "Spending for all repositories owned by your account": "賬戶擁有的所有倉庫的支出。",
+                    "Scoped budgets track spending for all repositories owned by your account": "範圍預算跟蹤您賬戶下所有倉庫的支出",
+                    "Scoped budgets track all spending for your account": "範圍預算跟蹤您賬戶的所有支出",
 
             "Budget": "預算",
                 "Set a budget amount to track your spending on a monthly basis.": "設置預算金額以按月跟蹤您的支出。",
@@ -3842,7 +3864,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                         "Spending won't exceed your set budget": "支出不會超出您設定的預算",
 
             // 警示
-                "Get emails and GitHub notifications when your spending has reached 75%, 90%, and 100% of the budget threshold.": "當您的支出達到預算閾值的75%、90%和100%時，接收電子郵件和 GitHub 通知。",
+                "Get emails and GitHub notifications when your spending has reached 75%, 90%, and 100% of the budget threshold.": "當您的支出達到預算閾值的 75%、90% 和 100% 時，接收電子郵件和 GitHub 通知。",
 
                 "Receive budget threshold alerts": "接收預算閾值警報",
 
@@ -3853,36 +3875,15 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Please add a payment method to use budgets.": "請添加付款方式，以便使用預算。",
 
         // 許可 https://github.com/settings/billing/licensing
-
-        // 其他 https://github.com/settings/billing/subscriptions
-            // [/In addition to your personal account, you manage (\d+) organizations?./, "除個人賬戶外，您還可以管理 $1 個組織。"],
-            "Marketplace apps": "市場應用",
-            "Sponsorships": "贊助",
-
-        // 賬單和計劃 https://github.com/settings/billing/summary
-            "Billing summary": "賬單摘要",
-            "Your next payment": "您的下一次應付款",
-            "This amount does not include the spend on usage of metered service. View your": "該金額不包括使用計量服務的支出。在下面查看您的",
-            "usage this month": "本月使用情況",
-            "below.": "。",
-
-            // 組織設置
-                "Current monthly bill": "當前月度賬單",
-                "Switch to yearly billing and save": "切換到按年計費並保存",
-
-                "Next payment due": "下一次應付款",
-
-            "Payment information": "支付信息",
-            "Manage spending limit": "管理支出限額",
-            "View payment history": "查看支付記錄",
-            "Switch to yearly billing": "切換到按年計費",
-            "Switch to monthly billing": "切換到月度計費",
+            // Github Copllot
+                "Your AI pair programmer": "您的 AI 編程助理",
+                    "You are eligible to use GitHub Copilot for free.": "您有資格免費使用 GitHub Copilot。",
 
             "Current plan": "當前計劃",
                 "Compare all plans": "比較所有計劃",
                     "per month": "每月",
 
-                "GitHub Free": "GitHub 免費",
+                "GitHub Free": "GitHub 免費版",
                 "The basics for all developers": "基礎計劃（所有開發者）",
                 //"GitHub Pro": "GitHub 專業",
 
@@ -3890,15 +3891,15 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Unlimited public/private repos": "無限的公共/私有倉庫",
                 "Unlimited collaborators": "無限協作者",
                 "2,000 Actions minutes/month": "每月 2,000 分鐘 GitHub Actions",
-                "500MB of Packages storage": "500MB 的包存儲空間",
+                "500MB of Packages storage": "500MB 的 GitHub Packages 存儲空間",
                 "120 core-hours of Codespaces compute per developer": "每位開發者擁有 120 個核心小時的程式碼空間計算能力",
                 "15GB of Codespaces storage per developer": "每位開發者擁有 15GB 的程式碼空間存儲空間",
                 "Community support": "社區支持",
                 // pro
                     "Downgrade to Free": "降級至免費版",
                 "3,000 Actions minutes/month": "每月 3,000 分鐘 GitHub Actions",
-                "2GB of Packages storage": "2GB 的包存儲空間",
-                "180 core-hours of Codespaces compute": "180 個核心小時的程式碼空間計算能力",
+                "2GB of Packages storage": "2GB 的 GitHub Packages 存儲空間",
+                "180 core-hours of Codespaces compute": "180 核心小時的程式碼空間計算時長",
                 "20GB of Codespaces storage": "20GB 的程式碼空間存儲空間",
                 "Code owners, required reviewers, GitHub Pages,": "程式碼所有者、所需審核者、GitHub Pages，",
                 "and more": "以及更多",
@@ -3917,96 +3918,139 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Web-based support": "基於網絡的支持",
                 "See all features and compare plans": "查看所有功能並比較計劃",
 
-            "Start your first organization": "開設您的第一個組織賬戶",
-            "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "藉助 CI/CD、Dependabot 和世界上最大的開發者社區，GitHub為您的團隊提供了他們所需的一切，以更快地發佈更好的軟體。",
-            "Create an organization": "創建組織",
+        // 支付信息 https://github.com/settings/billing/payment_information
+            "Billing information": "賬單信息",
+                "You have not added any billing information.": "您尚未添加賬單信息。",
 
-            // [/In addition to your personal account, you manage (\d+) organizations?./, "除了您的個人賬戶之外，您還管理 $1 個組織。"],
+                // 添加賬單信息
+                    "Add your information to show on every invoice": "在每張發票上添加您的信息",
+
+                    "First name": "名字",
+                        "First name can't be blank": "名字不能為空",
+                    "Last name": "姓氏",
+                        "Last name can't be blank": "姓氏不能為空",
+                    "Add your business information to show on every invoice": "添加您的企業信息，在每張發票上顯示",
+                    "Address": "地址",
+                        "(Street, P.O. box)": "（街道，郵政信箱）",
+                        "Address can't be blank": "地址不能為空",
+                    "Address line 2": "地址第 2 行",
+                        "(Apartment, suite, unit)": "（公寓、套房、單元）",
+                    "City": "城市",
+                        "City can't be blank": "城市不能為空",
+                    "Country/Region": "國家/地區",
+                    "State/Province": "州/省",
+                        "Required for certain countries": "某些國家/地區需要",
+                    "Postal/Zip code": "郵政編碼",
+                        "(9-digit zip code for US)": "（美國為 9 位郵政編碼）",
+                    "VAT/GST ID": "增值稅/消費稅編號",
+                    "Save billing information": "保存賬單信息",
+
+                    // 頂部提醒
+                        "An error occurred while saving billing information.": "保存賬單信息時發生錯誤。",
+
+                // 組織設置
+                    "An organization owner or billing manager must link their personal billing information with this organization account. You can switch to a business account to use your business’ billing information by": "組織所有者或計費經理必須將他們的個人計費信息與該組織帳戶關聯。您可以通過",
+                    "signing": "簽署",
+                    "the": " ",
+                    "GitHub Customer Agreement": "GitHub 客戶協議",
+                    "Allow my billing information to be linked with this organization": "允許我的賬單信息與該組織關聯",
+
+                        "Confirm your details shown below. To make changes,": "確認以下顯示的詳細信息。要做出更改，",
+                        "edit your billing information": "請編輯您的賬單信息",
+
+                    "Update your billing information": "更新您的賬單信息",
+                    "to be able to link it with this organization.": "以便與該組織關聯。",
+
+            "Payment method": "支付方式",
+                "You have not added a payment method.": "您尚未添加支付方式。",
+
+                // 添加支付方式
+                    "Pay with": "支付方式：",
+                        "Loading payment information…": "正在加載支付信息…",
+
+                        "Credit or debit card": "信用卡或借記卡",
+                            "Card Number *": "卡號",
+                            "Expiration Date (YYYY) *": "終止日期 (YYYY) *",
+                                "- Select One -": "- 選擇一個 -",
+                            "Save payment information": "保存付款信息",
+                            "You are currently paying with your PayPal account": "您目前正在使用您的 PayPal 賬戶支付",
+                            ", but you can switch to using a credit or debit card at any time.": "，但是您隨時可以切換到使用信用卡或借記卡支付。",
+
+                        "PayPal account": "PayPal 賬戶",
+                            "Sign in to": "登錄到",
+                            "Connecting to PayPal…": "正在連接到 PayPal…",
+                            "Charge to": "收費至",
+                            "Sign in to PayPal to use a different account.": "登錄 PayPal 以使用其他賬戶。",
+                            // 頂部提醒
+                                "Your PayPal account has been successfully added.": "您的 PayPal 賬戶已成功添加。",
+
+                        "504 Gateway Time-out": "504 網關超時",
+                        "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我們可能會暫時凍結您的支付方式以驗證其有效性。這不是收費，驗證後將會自動解除。",
+
+            "Last payment": "最後一次支付",
+                "You have not made any payments.": "您尚未支付任何款項。",
+
+            "Coupon": "優惠劵",
+                "Redeem a coupon": "兌換優惠券",
+                "You don't have an active coupon.": "您沒有有效的優惠券。",
+                "* Discount only applies for GitHub Pro": "* 優惠僅限 GitHub Pro。",
+
+            "Additional information": "附加信息",
+                "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收據上添加具體的聯繫方式或稅務信息，例如您的企業全稱、VAT/GST 識別號碼或記錄地址。我們將確保它顯示在每張收據上。",
+                "Add information": "添加信息",
+                "No additional information added to your receipts.": "您的收據上沒有添加任何額外的信息。",
+                "Extra information": "附加信息",
+
+
+                // “額外賬單信息” 對話框
+                    "Extra billing information": "額外的賬單信息",
+                    "This information will appear on all your receipts.": "此信息將出現在您的所有收據上。",
+                    "For your security, do not include any confidential or financial information (like credit card numbers).": "為了您的安全，請勿包含任何機密或財務信息（如信用卡號）。",
+                    "To update the information that appears on": "要更新顯示在",
+                        "invoices": "發票",
+                        "(if enabled), visit the": "上的信息（如果已啟用），請訪問",
+                    "Full business name or address of record": "企業全稱或記錄地址",
+                    "Save contact information": "保存聯繫信息",
+                    "Saving contact information…": "正在保存聯繫信息...",
+                    // 頂部提醒
+                        "Updated your optional contact information, it will show up on your next receipt.": "已更新您的可選聯繫信息，該信息將顯示在您的下一張收據上。",
+
+            // 組織
+            "Invoice": "發票",
+                "Receive an invoice for your GitHub purchases": "接收 GitHub 購物發票",
+
+                "The data from Billing Information, such as your address and VAT/GST ID will appear on your invoices.": "賬單信息中的數據，如您的地址和增值稅/消費稅 ID，將顯示在您的發票上。",
+                "Update your information displayed on your invoices in the": "更新發票上顯示信息中的",
+                "billing information section": "賬單信息欄",
+
+                "Automatically receive an invoice alongside the payment receipt": "在收到付款收據的同時自動接收發票",
+                    "* Enables invoices for all NEW payments.": "* 為所有新付款啟用發票。",
+                "Save invoice preference": "保存發票首選項",
+
+            // 組織
+            "Metered billing via Azure": "通過 Azure 計量計費",
+                "Add Azure Subscription": "添加 Azure 訂閱",
+                "To manage metered billing for this account through Microsoft Azure an Azure Subscription ID must be added to your account.": "通過 Microsoft Azure 管理此賬戶的計量計費，必須將 Azure 訂閱 ID 添加到您的賬戶中。",
+
+        // 支付歷史 https://github.com/account/billing/history
+            "Amounts shown in USD": "以美元顯示的金額",
+
+        // 其他賬單 https://github.com/settings/billing/subscriptions
+            // [/In addition to your personal account, you manage (\d+) organizations?./, "除個人賬戶外，您還可以管理 $1 個組織。"],
             "Manage your organizations": "管理您的組織",
                 "Create a new organization": "創建新組織",
 
-            "Add-ons": "附加組件",
-                // "GitHub Copilot": "",
-                    "Your AI pair programmer": "您的人工智能助理程式員",
-                    "Your AI powered pair programmer": "您的人工智能助理程式員",
-                    "Upgrade to Copilot Pro": "升級至 Pro",
-                    "Active subscription": "已激活訂閱",
-                        "Copilot Free": "免費版",
-                    "You can upgrade to Copilot Pro at any time. Check out this": "您可以隨時升級到 Copilot Pro。詳情請查看",
-                    "You are eligible to use GitHub Copilot for free.": "您有資格免費使用 GitHub Copilot。",
-                    "documentation": "文檔",
-                    "for more details.": "。",
-                    //"Enable GitHub Copilot": "啟用 GitHub Copilot",
-                    //"GitHub Copilot suggests code and entire functions in real-time, right from your editor": "GitHub Copilot 會在編輯器中實時建議程式碼和整個函數。",
-                    //"GitHub Copilot uses the GPT-3.5 Turbo model to suggest code and entire functions in real-time, right from your editor": "GitHub Copilot 使用 GPT-3.5 Turbo 模型實時在您的編輯器中提供程式碼和整個函數建議",
-
-                     // 組織設置
-                    "Learn more about Copilot Business": "瞭解更多關於 GitHub Copilot 商業版的信息",
-                    "Copilot Business": "GitHub Copilot 商業版",
-                    "GitHub Copilot uses the OpenAI large language models to suggest code and entire functions in real-time, right from your editor. You can set up a GitHub Copilot Business subscription for your organization.": "GitHub Copilot 使用 OpenAI 大型語言模型，可在編輯器中實時建議程式碼和整個函數。您可以為您的組織設置 GitHub Copilot 商業版訂閱。",
-                    "Sign up for Copilot Business": "註冊 GitHub Copilot 商業版",
-
-            "Usage this month": "本月使用情況",
-                "Get usage report": "獲取使用報告",
-                    "A full detailed report will be generated including usage for all eligible": "我們將生成一份完整詳細的報告，其中包括所有符合條件的",
-                    "products.": "產品使用情況。",
-                    "You’ll receive an email at": "一旦準備就緒，您將收到",
-                    "as soon as it’s ready (it may take up to a couple of hours).": "的電子郵件（可能需要幾個小時）。",
-                    "Send report to email": "發送報告到郵箱",
-                "Included": "包含",
-                "Paid": "支出",
-                "Total": "總價",
-                // 操作
-                    "Usage minutes": "使用分鐘數",
-                    "Price / minute": "單價 / 分鐘",
-                    "Ubuntu 2-core": "雙核 Ubuntu",
-                    "Windows 2-core": "雙核 Windows",
-                    "macOS 3-core": "三核 macOS",
-                    "Included minutes quota only applies to Ubuntu 2-core, Windows 2-core and macOS 3-core runners. Windows 2-core and macOS 3-core runners consume included minutes at higher rates.": "包含的分鐘配額僅適用於雙核 Ubuntu、雙核 Windows 和三核 macOS 運行器。雙核 Windows 和三核 macOS 運行器以更高的速度消耗包括的分鐘數。",
-                // 軟體包
-                    "Data transfer out": "數據轉出",
-                    "Data transfer out (rounded)": "數據轉出（四捨五入）",
-                    "Price estimate / GB": "估算單價 / GB",
-                // 軟體包與操作的存儲空間
-                    "Storage for Actions and Packages": "軟體包與操作的存儲空間",
-                    "Shared storage consists of Actions artifacts and Packages usage. This graph shows the account's storage usage in GB-months. Removing stored artifacts will not reduce this number, but it will lower its rate of growth. To see your account's current storage, download a usage report.": "共享存儲由操作產生的文件和軟體包使用組成。此圖以每月 GB 數為單位顯示賬戶的存儲使用情況。刪除存儲的文件不會減少這個數字，但會降低其增長率。若要查看您賬戶的當前存儲空間，請下載使用情況報告。",
-                    "Storage": "存儲空間",
-                    "Shared Storage": "共享存儲空間",
-                // 程式碼空間
-                    "Usage hours": "使用小時數",
-                    "Core hours are calculated by multiplying the compute types by their per-hour rates, which can vary": "核心小時數是通過將計算類型乘以其每小時費率來計算的，該費率可能會有所不同",
-                    "Price / hour": "單價 / 小時",
-                    "2-core": "雙核",
-                    "4-core": "四核",
-                    "8-core": "八核",
-                    "16-core": "十六核",
-                    "32-core": "三十二核",
-                    "Storage usage is updated daily and billed monthly": "存儲使用情況每天更新，每月計費",
-                    "Price / GB": "單價 / GB",
-                    "Prebuild Storage": "預構建存儲",
-                // Git LFS 數據
-                    "Git LFS Data": "Git LFS 數據",
-                    "Add more data": "添加更多數據",
-                    "Bandwidth": "帶寬",
-                "See billing documentation": "查看計費政策",
-                "monthly spending limit": "每月支出限額",
-                "monthly spending limit |": "每月支出限額 |",  // 組織設置
-                "Set up a spending limit": "設置支出限額",
-
-            "GitHub Sponsors": "GitHub 贊助",
-                "Connect with the community that builds the tools you use": "與構建您使用的工具的社區聯繫",
-                "Start sponsoring": "開始贊助",
-                "You're currently not sponsoring anyone.": "您目前沒有贊助任何人。",
-                "Learn more about GitHub Sponsors": "瞭解更多關於 GitHub 贊助的信息",
-                "Switch to invoiced billing": "切換到發票賬單", // 組織
-
-            "GitHub Marketplace": "GitHub 市場",
+            "Marketplace apps": "市場應用",
                 "Change plan": "更改計劃",
                 "Cancel plan": "取消計劃",
+                    "Are you sure you want to cancel this integration?": "您確定要取消此集成嗎？",
+                    // 頂部提醒
+                        // [/You've cancelled your subscription to (.*). This plan change will take effect on (.*)./, "您已取消對 $1 的訂閱。此計劃變更將於 $2 生效。"],
+                        "Dismiss": "忽略",
                 "Do you have any questions? Contact": "您有任何問題嗎？請聯繫",
 
             // 組織設置
-            "Billing Management": "賬單管理",
+            "Billing Contacts": "賬單聯繫人",
                 "Receipts are sent to billing managers and email recipients.": "收據會被發送給賬單管理員和郵件接收者。",
 
                 "Billing managers": "賬單管理員",
@@ -4020,161 +4064,26 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     // 編輯賬單電子郵箱對話框
                         "Edit billing email address": "編輯賬單電子郵箱",
                         "Billing primary email": "賬單主賬戶郵箱",
+                        "(Private)": "（私密）",
                         "Update": "更新",
 
                     // 添加賬單接收者對話框
                         "Add billing recipient": "添加賬單接收者",
                         "Add billing recipient email": "添加賬單接收者郵箱",
 
-                "Metered billing via Azure": "通過 Azure 計量計費",
-                    "Add Azure Subscription": "添加 Azure 訂閱",
-                    "To manage metered billing for this account through Microsoft Azure an Azure Subscription ID must be added to your account.": "通過 Microsoft Azure 管理此賬戶的計量計費，必須將 Azure 訂閱 ID 添加到您的賬戶中。",
+            "Sponsorships": "贊助",
+                "GitHub Sponsors": "GitHub 贊助",
+                    "Connect with the community that builds the tools you use": "與構建您使用的工具的社區聯繫",
+                    "Start sponsoring": "開始贊助",
+                    "You're currently not sponsoring anyone.": "您目前沒有贊助任何人。",
+                    "Learn more about GitHub Sponsors": "瞭解更多關於 GitHub 贊助的信息",
+                    "Switch to invoiced billing": "切換到發票賬單", // 組織
 
-        // 支付信息 https://github.com/settings/billing/payment_information
-            // pro
-                "Your recurring charges & discounts": "您的定期費用和折扣",
-                    "GitHub Coupon": "GitHub 優惠券",
-                        "* Discount applies for GitHub Pro": "* 適用於 GitHub Pro 的折扣",
-
-            "Billing & plans": "賬單和計劃",
-            "/ Payment information": "/ 支付信息",
-
-            "Please update your billing information in order to add a payment method.": "請更新您的賬單信息，以便添加支付方式。",
-
-            "Billing information": "賬單信息",
-                "Add your information to show on every invoice": "在每張發票上添加您的信息",
-                "Remove": "移除",
-                    "Remove your billing information?": "確定移除賬單信息？",
-                    "You are about to remove the billing information for this account.": "您即將刪除此賬戶的賬單信息。",
-                    "Are you sure you want to do this?": "您確定要這樣做嗎？",
-                    "Remove billing information": "移除賬單信息",
-            // 組織設置
-            "An organization owner's personal billing information must be linked with this organization account.": "組織所有者的個人賬單信息必須與該組織賬戶關聯。",
-            "Update your billing information": "更新您的賬單信息",
-            "to be able to link it with this organization.": "以便將其與該組織關聯。",
-
-            "First name": "名字",
-            "Last name": "姓氏",
-            "Add your business information to show on every invoice": "添加您的企業信息，在每張發票上顯示",
-            "Address": "地址",
-                "(Street, P.O. box)": "（街道，郵政信箱）",
-            "Address line 2": "地址第 2 行",
-                "(Apartment, suite, unit)": "（公寓、套房、單元）",
-            "City": "城市",
-            "Country/Region": "國家/地區",
-                "Choose your country/region": "選擇您所在的國家/地區",
-            "State/Province": "州/省",
-            "Postal/Zip code": "郵政編碼",
-                "Required for certain countries": "某些國家/地區需要",
-                "(9-digit zip code for US)": "(美國為 9 位郵政編碼）",
-            "VAT/GST ID": "增值稅/消費稅編號",
-            "Save billing information": "保存賬單信息",
-            "You have not added any billing information.": "您尚未添加賬單方式。",
-
-            "Payment method": "支付方式",
-            "Add Information": "添加信息",
-            "You have not added a payment method.": "您尚未添加支付方式。",
-            "Credit or debit card": "信用卡或借記卡",
-                "504 Gateway Time-out": "504 網關超時",
-                "You may see an authorization hold on your provided payment method after accruing significant usage of metered services. Authorization holds are temporary and are released as quickly as possible.": "在您大量使用計量服務後，您可能會看到您提供的付款方式被授權暫停。授權暫停是暫時的，會盡快解除。",
-
-            "Last payment": "最後一次支付",
-            "You have not made any payments.": "您尚未支付任何款項。",
-
-            "Coupon": "優惠劵",
-            "Redeem a coupon": "兌換優惠券",
-            "You don't have an active coupon.": "您沒有有效的優惠券。",
-            "* Discount only applies for GitHub Pro": "* 優惠僅限 GitHub Pro。",
-
-            //"Additional Information": "附加信息",
-            "Additional information": "附加信息",
-                "Add specific contact or tax information to your receipts, like your full business name, VAT/GST identification number, or address of record here. We’ll make sure it shows up on every receipt.": "在您的收據上添加具體的聯繫方式或稅務信息，例如您的企業全稱、VAT/GST 識別號碼或記錄地址。我們將確保它顯示在每張收據上。",
-            "Add information": "添加信息",
-            "No additional information added to your receipts.": "您的收據上沒有添加任何額外的信息。",
-
-            // 對話框
-            "Extra billing information": "額外的賬單信息",
-            "This information will appear on all your receipts.": "此信息將出現在您的所有收據上。",
-            "For your security, do not include any confidential or financial information (like credit card numbers).": "為了您的安全，請勿包含任何機密或財務信息（如信用卡號）。",
-            //"To update the information that appears on invoices (if enabled), visit the": "要更新顯示在發票上的信息（如果已啟用），請訪問",
-            "To update the information that appears on": "要更新顯示在",
-                "invoices": "發票",
-                "(if enabled), visit the": "上的信息（如果已啟用），請訪問",
-            "Full business name or address of record": "企業全稱或記錄地址",
-            "Save contact information": "保存聯繫信息",
-
-            "Invoice": "發票",
-                "Receive an invoice for your GitHub purchases": "接收 GitHub 購物發票",
-
-                "The data from Billing Information, such as your address and VAT/GST ID will appear on your invoices.": "賬單信息中的數據，如您的地址和增值稅/消費稅 ID，將顯示在您的發票上。",
-                "Update your information displayed on your invoices in the": "更新發票上顯示信息中的",
-                "billing information section": "賬單信息欄",
-
-                "Automatically receive an invoice alongside the payment receipt": "在收到付款收據的同時自動接收發票",
-                    "* Enables invoices for all NEW payments.": "* 為所有新付款啟用發票。",
-                "Save invoice preference": "保存發票首選項",
-
-        // 支付方式 https://github.com/settings/billing/payment
-            "/ Payment method": "/ 支付方式",
-            "Loading payment information…": "正在加載支付信息…",
-            "Pay with": "支付方式：",
-                "Credit card": "信用卡",
-                    "Card Number": "卡號",
-                    "Expiration Date": "終止日期",
-                        "- Select One -": "- 選擇一個 -",
-                    "Address 1": "地址 1",
-                    "Address 2": "地址 2",
-                    "Country": "國家/地區",
-                    "City": "城市",
-                    "State": "州/省",
-                    "Postal Code": "郵政編碼",
-                    "Submit": "提交",
-                "PayPal account": "PayPal 賬戶",
-                    "Sign in to": "登錄到",
-                    "Connecting to PayPal…": "正在連接到 PayPal…",
-            "Back to billing settings": "返回賬單設置",
-            "There are no upcoming charges to your account.": "您的賬戶沒有即將發生的費用。",
-
-        // 支出限額 https://github.com/settings/billing/spending_limit
-            "/ Monthly spending limits": "/ 每月支付限額",
-            "/ Monthly spending limit": "/ 每月支付限額", // 組織設置
-            "Set up a monthly spending limit. You can adjust it at any time. Read more information about": "設置每月支出限額。您可以隨時調整它。閱讀更多關於",
-            "spending limits": "支付限額",
-            "Actions spending limits": "GitHub 操作支付限額", // 組織設置
-            "Packages spending limits": "軟體包支付限額", // 組織設置
-
-            "Payment method is missing": "缺失支付方式",
-            "You can’t increase the spending limits until you set up a valid payment method.": "在您設置有效的支付方式之前，您無法提高支出限額。",
-                // 教育認證
-                "Coupons do not apply to any overages.": "優惠券不適用於任何超額部分。",
-                    "Any incurred overages will be paid in full by the added payment method.": "任何超額費用都將通過添加的付款方式全額支付。",
-            "Add payment method": "添加支付方式",
-
-            "Actions & Packages": "操作與軟體包",
-            "Limit spending": "限制支出",
-                "Set up a spending limit on a monthly basis": "設置每月支出限額",
-                "Update limit": "更新限額",
-                // [/Leaving it at (\$\d+\.\d{2}) will avoid any extra expenses/, "將其限制在 $1 美元將避免任何額外的費用。"],
-            "Unlimited spending": "不限制支出",
-                "Pay as much as needed to keep Actions & Packages running": "按需支付，以保持操作和軟體包的運行",
-
-            "Email alerts": "電子郵件提醒",
-            "Receive email notifications when usage reaches 75%, 90% and 100% thresholds.": "當使用率達到 75%、90% 和 100% 的閾值時，會收到電子郵件通知。",
-            "Included resources alerts": "包含資源提醒",
-            "Spending limit alerts": "支出限額提醒",
-
-            // 程式碼空間
-                "Pay as much as needed to keep Codespaces running": "按需支付，以保持程式碼空間的運行",
-
-        // 賬單歷史 https://github.com/account/billing/history
-            "/ Payment history": "/ 支付歷史",
-            "Amounts shown in USD": "以美元顯示的金額",
-
-        // 用戶計劃 https://github.com/account/billing/plans
+        // 比較計劃 https://github.com/account/billing/plans
             "Compare plans": "比較計劃",
-            "Free": "免費",
+            "Free": "免費版",
                 "All the basics": "所有基礎",
-            "Pro": "專業",
+            "Pro": "專業版",
                 "Advanced tools for private repos": "用於私人倉庫的高級工具",
             // 具體內容
                 "Code management": "程式碼管理",
@@ -4292,7 +4201,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "have the ability to:": "具備以下能力：",
                 "Change the billing plan": "更改賬單計劃",
                 "Add, update, or remove payment methods": "添加、更新或刪除支付方式",
-                // "": "查看支付記錄",
+                "View payment history": "查看支付記錄",
                 "Download, and receive receipts": "下載並接收收據",
                 "View a list of billing managers": "查看賬單管理員列表",
                 "Invite additional billing managers": "邀請其他賬單管理員",
@@ -4388,7 +4297,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             }],
 
         // 計費用量 - 底下計算部分
-            [/Cost calculated based on additional (\d+) premium requests/, "費用根據額外的 $1 項高級版請求計算"],
+            [/Cost calculated based on additional (\d+) premium requests for Copilot and Spark./, "費用計算基於 Copilot 和 Spark 的 $1 項額外高級請求。"],
             [/Cost calculated based on additional (\d+) token units/, "費用根據額外的 $1 項令牌單位計算"],
 
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "計劃變更成功。@$1 已更新為專業版年度計費。"],
@@ -4442,12 +4351,13 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             [/until (.+)./, (match, p1) => {
                 const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
                 const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-    
                 return `直到 ${translatedDate}。`;
             }],
 
         // 其他賬單 https://github.com/settings/billing/subscriptions
+            [/In addition to your personal account, you manage (\d+) organizations?./, "除個人賬戶外，您還可以管理 $1 個組織。"],
             [/([^ ]+) support/, "$1 支持"],
+            [/You've cancelled your subscription to (.*). This plan change will take effect on (.*)./, "您已取消對 $1 的訂閱。此計劃變更將於 $2 生效。"],
 
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
@@ -4539,74 +4449,64 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子郵箱
 
         // Emails 電子郵箱 https://github.com/settings/emails
             // 黃框警告
-            "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 賬戶只有一個經過驗證的電子郵箱。添加另一個經過驗證的電子郵箱地址吧，那樣即使主電子郵箱無法使用也不要緊。",
+                "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 賬戶只有一個經過驗證的電子郵箱。添加另一個經過驗證的電子郵箱地址吧，那樣即使主電子郵箱無法使用也不要緊。",
 
-            "Email settings": "電子郵箱設置",
+            // [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)/, "可用於登錄賬戶的電子郵箱。這些郵箱不會用作基於網頁的 Git 操作（如編輯和合併）的 “發件人” 地址。所有基於網頁的 Git 操作都將關聯至 $1。"],
+
             "Primary": "主賬戶",
-            "Unverified email addresses cannot receive notifications or be used to reset your password.": "未經驗證的電子郵件地址無法接收通知或用於重置您的密碼。",
-            "This email will be used for account-related notifications and can also be used for password resets.": "該電子郵箱將用於與賬戶有關的通知，也可用於密碼重置。",
-            "Not visible in emails": "在電子郵件中不可見",
-            "Visible in emails": "在電子郵件中可見",
-                "This email may be used as the 'author' or 'committer' address for web-based Git operations, e.g., edits and merges.": "該電子郵箱可用作基於 Web 的 Git 操作（例如：編輯和合併）的 ‘作者’ 或 ‘提交者’ 地址。",
-            "Receives notifications": "接收通知",
-            "This email address is the default used for GitHub notifications, i.e., replies to issues, pull requests, etc.": "該電子郵箱默認用於 GitHub 的通知，即對議題和拉取請求的回覆，等等。",
-            "At least one email is required.": "至少需要一個電子郵箱。",
-            // 刪除按鈕 提醒信息
-                "At least one verified email is required.": "至少需要1個經過驗證的電子郵箱",
-                "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account.": "您確定要從您的賬戶中刪除此電子郵箱嗎？刪除後，歸因於該電子郵箱地址的提交將不再與您的賬戶相關聯。",
-                "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您確定要從您的賬戶中刪除此電子郵箱嗎？刪除後，歸因於該電子郵箱地址的提交將不再與您的賬戶相關聯。您的其他電子郵箱之一將成為您的主要地址。",
-
-            "At least one non-backup email is required.": "至少需要一個非備用電子郵箱",
-            "Backup": "備用電子郵箱",
-            "This email will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "該電子郵箱將用作接收賬戶安全相關通知的額外方式，也可以用於密碼重置。",
-            "Add email address": "添加電子郵箱",
-            "Email address": "電子郵箱",
-                // 頂部提醒
+                "Backup": "備用",
+                "This email address is the default for GitHub notifications, such as replies to issues, pull requests, and similar activity.": "此電子郵箱地址是 GitHub 通知的默認地址，例如對議題、拉取請求和類似活動的回覆。",
+                // [/Manage email/, "管理郵箱地址"],
+                "Manage email preferences": "管理電子郵件首選項",
                 "Resend verification email": "重新發送驗證郵件",
-                "Your email was verified.": "您的電子郵箱地址驗證成功！",
+                // 刪除按鈕 提醒信息
+                    "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account.": "您確定要從賬戶中移除此郵箱嗎？移除後，該郵箱地址關聯的提交記錄將不再與您的賬戶關聯。。",
+                    "Are you sure you want to remove this email from your account? Once removed, commits attributed to this email address will no longer be associated with your account. One of your other emails will become your primary address.": "您確定要從賬戶中移除此郵箱嗎？移除後，該郵箱地址關聯的提交記錄將不再與您的賬戶關聯。您其他郵箱中的一個將自動成為主要地址。",
+                    "At least one email is required.": "至少需要一個電子郵箱。",
+                    "At least one verified email is required.": "至少需要一個已驗證的電子郵箱。",
+                    // 頂部提醒
+                        // [/Removed email ([^@]+@[^\n]+) from your account./, "已將郵箱 $1 從您的賬戶中移除。"],
+
+            "Add email address": "添加電子郵箱",
+                "Email address": "電子郵箱",
+                    // 頂部提醒
+                        // [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我們已向 $1 發送了驗證郵件，請登錄郵箱已完成驗證。"],
 
             "Primary email address": "主電子郵箱",
-            // 未電子郵箱隱私
-            "will be used for account-related notifications and can be used for password resets.": "將用於與賬戶相關的通知，並可用於密碼重置。",
-            // 電子郵箱隱私
-            "Because you have email privacy enabled,": "因為您已經啟用了電子郵箱隱私，",
-            "will be used for account-related notifications as well as password resets.": "將用於與賬戶相關的通知以及密碼重置。",
-            "will be used for web-based Git operations, e.g., edits and merges.": "將用於基於 Web 的 Git 操作，例如編輯和合併。",
-            // 頂部提醒
-            "Your primary email was changed to": "您的主電子郵箱已更改為",
-            ". Your default notification email address is still set to": "。您的默認通知電子郵箱仍然設置為",
-            ". Would you like to update that as well?": "。您也想更新它嗎？",
-            "Yes， update my notification email": "是的，更新我的通知電子郵箱",
+                "Select an email to be used for account-related notifications and can be used for password reset.": "選擇用於帳戶相關通知的電子郵件地址，並可用於密碼重置。",
+                // 頂部提醒
+                    "Your primary email was changed to": "您的主電子郵箱已更改為",
+                    ". Your default notification email address is still set to": "。您的默認通知電子郵箱仍然設置為",
+                    ". Would you like to update that as well?": "。您也想更新它嗎？",
+                    "Yes, update my notification email": "是的，更新我的通知電子郵箱",
 
             "Backup email address": "備用電子郵箱",
-            "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的備用 GitHub 電子郵箱將用作接收賬戶安全相關通知的額外方式，也可以用於密碼重置。",
-            "Allow all verified emails": "允許所有已驗證的電子郵箱",
-                // 頂部提醒
-                "All verified emails can now be used for password resets.": "所有已驗證的電子郵箱現在均可用於密碼重置。",
-            "Only allow primary email": "僅允許主電子郵箱",
-                // 頂部提醒
-                "Only your primary email address can now be used for password resets.": "現在只有您的主電子郵箱可用於密碼重置。",
-            "Please add a verified email, in addition to your primary email, in order to choose a backup email address.": "請在您的主電子郵箱之外，添加一個經驗證的電子郵箱，以便選擇一個備用電子郵箱。",
+                "Your backup GitHub email address will be used as an additional destination for security-relevant account notifications and can also be used for password resets.": "您的備用 GitHub 電子郵箱將用作接收賬戶安全相關通知的額外方式，也可以用於密碼重置。",
+                    "Allow all verified emails": "允許所有已驗證的電子郵箱",
+                        // 頂部提醒
+                            "All verified emails can now be used for password resets.": "所有已驗證的電子郵箱現在均可用於密碼重置。",
+                    "Only allow primary email": "僅允許主電子郵箱",
+                        // 頂部提醒
+                            "Only your primary email address can now be used for password resets.": "現在只有您的主電子郵箱可用於密碼重置。",
 
             "Keep my email addresses private": "保持我的電子郵箱地址的私密性",
+                "We’ll remove your public profile email and use": "我們將刪除您的公開個人資料中的電子郵箱，並使用",
+                "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "執行基於 Web 的 Git 操作（例如：編輯和合併）並以您的名義發送電子郵件。如果您想在命令行 Git 操作中使用您的私人電子郵箱，您必須",
+                "set your email in Git": "在 Git 中設置您的電子郵箱",
+                "Previously authored commits associated with a public email will remain public.": "以前創建的與公共電子郵件相關的提交將保持公開狀態。",
+                "Off": "禁用",
+                "On": "啟用",
+
                 // 頂部提醒
-                "Your primary email address is now public. To select which email to display on your profile, visit": "您的主電子郵箱地址現已公開。要選擇在您的個人資料中顯示哪個電子郵箱，請訪問",
-                "profile settings.": "個人資料設置。",
-                "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主電子郵箱地址現已設為私密。如果您以前公開過您的電子郵箱，我們已經從您的個人資料中刪除了它。",
-            "We’ll remove your public profile email and use": "我們將刪除您的公開個人資料中的電子郵箱，並使用",
-            "when performing web-based Git operations (e.g. edits and merges) and sending email on your behalf. If you want command line Git operations to use your private email you must": "執行基於 Web 的 Git 操作（例如：編輯和合併）並以您的名義發送電子郵件。如果您想在命令行 Git 操作中使用您的私人電子郵箱，您必須",
-            "set your email in Git": "在 Git 中設置您的電子郵箱",
-            "Previously authored commits associated with a public email will remain public.": "以前創建的與公共電子郵件相關的提交將保持公開狀態。",
+                    "Your primary email address is now public. To select which email to display on your profile, visit": "您的主電子郵箱地址現已公開。要選擇在您的個人資料中顯示哪個電子郵箱，請訪問",
+                    "profile settings.": "個人資料設置。",
+                    "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主電子郵箱地址現已設為私密。如果您以前公開過您的電子郵箱，我們已經從您的個人資料中刪除了它。",
 
             "Block command line pushes that expose my email": "阻止在命令行推送中暴露我的電子郵箱",
+                "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "當您推送到 GitHub 時，我們會檢查最近的提交。如果該提交的作者電子郵箱是您 GitHub 賬戶上的私人電子郵箱，我們會阻止推送並警告您不要暴露您的私人電子郵箱。",
                 // 頂部提醒
-                "Commits pushed with a private email will no longer be blocked.": "使用私人電子郵箱推送的提交將不再被阻止。",
-                "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人電子郵箱推送的提交將被阻止，您會看到一個警告。",
-            "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "當您推送到 GitHub 時，我們會檢查最近的提交。如果該提交的作者電子郵箱是您 GitHub 賬戶上的私人電子郵箱，我們會阻止推送並警告您不要暴露您的私人電子郵箱。",
-
-            "Email preferences": "郵件首選項",
-                "Subscriptions through our various marketing platforms. Each email address has its own subscriptions.": "通過我們的各種營銷平臺進行訂閱。每個電子郵件地址都有自己的訂閱。",
-                "Manage": "管理",
+                    "Commits pushed with a private email will no longer be blocked.": "使用私人電子郵箱推送的提交將不再被阻止。",
+                    "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人電子郵箱推送的提交將被阻止，您會看到一個警告。",
 
         // 訂閱偏好 https://github.com/settings/emails/subscriptions
             "Subscription preferences for": "訂閱首選項",
@@ -4614,18 +4514,15 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子郵箱
             "No subscriptions found": "未找到訂閱信息",
             "Save subscription preferences": "保存訂閱首選項",
             "Back to email settings": "返回電子郵件設置",
-            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "若要停止接收以下主題的電子郵件，請取消選中您不想接收的主題，然後點擊 “保存訂閱首選項”",
-            "General info and offers from GitHub": "GitHub 的一般信息和優惠",
-            "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "從 GitHub 獲取我們認為您可能感興趣的產品、服務和活動的提示、解決方案和獨家優惠。",
-            "Unsubscribe from all topics": "取消訂閱所有主題",
+
     },
     "regexp": [ // 正則翻譯
-        [/This email will not be used as the 'from' address for web-based Git operations, e\.g\., edits and merges. We will instead use ([^@]+@users.noreply.github.com)\./, "該電子郵箱不會用作基於 Web 的 Git 操作（例如編輯和合併）的 “發件人” 地址。我們將改為使用 $1。"],
+        [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)./, "可用於登錄賬戶的電子郵箱。該郵箱不會用作基於網頁的 Git 操作（如編輯和合併）的 “發件人” 地址。所有基於網頁的 Git 操作都將關聯至 $1。"],
+        [/Manage email/, "管理郵箱地址"],
+        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我們已向 $1 發送了驗證郵件，請登錄郵箱已完成驗證。"],
         [/Your primary email was changed to ([^@]+@[^\n]+)\./, "您的主電子郵箱已更改為 $1"],
         [/Subscription preferences for ([^@]+@[^\n]+)/, "$1 的訂閱偏好"],
-        [/We sent a verification email to ([^@]+@[^\s]+)\. Please follow the instructions in it\./, "我們已向 $1 發送了驗證郵件，請登錄郵箱已完成驗證。"],
-        [/Delete ([^@]+@[^\n]+)/, "刪除 $1"],
-        [/Error adding ([^@]+@[^:]+): email is already in use/, "$1 的郵箱已經在使用中"],
+        [/Removed email ([^@]+@[^\n]+) from your account./, "已將郵箱 $1 從您的賬戶中移除。"],
     ],
 };
 
@@ -5374,11 +5271,23 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Owner": "所有者",
             "Member": "成員",
 
+            "Getting started": "開始使用",
+            "Install Copilot in your editor": "在您的編輯器中安裝 Copilot",
+            "Ask about coding problems and get code completions while you work.": "在工作時詢問問題並獲得程式碼補全。",
+            "Chat with Copilot anywhere": "隨時隨地與 Copilot 聊天",
+            "Open": "在 GitHub 的任何位置打開導航欄中的",
+            "Copilot chat in the navigation from anywhere on GitHub. Try asking": "按鈕，即可與 Copilot 聊天。嘗試詢問",
+            "“what can I do with Copilot?”": "“我能用 Copilot 做什麼？”",
+            "to get started.": "來開始聊天。",
+            "Go to Copilot": "前往 Copilot",
+            "Start building with Copilot": "使用 Copilot 開始構建專案",
+            "Learn how to build with Copilot in Visual Studio Code or Visual Studio.": "學習如何在 Visual Studio Code 或 Visual Studio 中使用 Copilot 來構建專案",
+            "Get started": "開始",
+
         // 免費版
             "You are using Copilot for free": "您正在使用 Copilot 免費版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回覆上限為每月 2,000 次程式碼完成和 50 條聊天信息。",
-            //"Copilot Free is active for your account": "您的賬戶已啟用 Copilot 免費版",
-                //"Responses are capped at 2,000 code completions and 50 chat messages per month.": "回覆上限為每月 2,000 次程式碼完成和 50 條聊天信息。",
+                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升級以獲得更高的限制、高級模型和 AI 評審。免費版的會話將在 20 天后重置。",
             "Get unlimited usage with Copilot Pro": "通過 Copilot Pro 無限制使用",
                 "Unlimited messages and interactions": "信息和互動無限制",
                 "Access to the latest models": "訪問最新模型",
@@ -5387,7 +5296,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
 
             "Copilot policies": "Copilot 規則",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
-                    "You can use Copilot Chat in GitHub.com, but not preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，但無預覽功能。",
+                    "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 程式碼審查和預覽功能僅適用於付費版。",
                     "Learn more about Copilot in GitHub.com": "瞭解更多關於在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "編輯器預覽功能",
                     "You can use preview features in your editor.": "您可以在編輯器中使用預覽功能。",
@@ -5447,7 +5356,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Visibility": "可見度",
                 "Show Copilot": "顯示 Copilot",
                 "Enable Copilot for all GitHub features, including navigation bar, search, and dashboard.": "為所有 GitHub 功能啟用 Copilot，包括導航欄、搜索和儀表板。",
-                "When disabled, Copilot will be hidden and unavailable.": "禁用後，Copilot 將隱藏且不可用。",
+                "When disabled, Copilot will be hidden and unavailable. This setting does not apply to Copilot search on GitHub Docs.": "禁用後，Copilot 將隱藏且不可用。此設置不適用於 GitHub Docs 中的 Copilot 搜索。",
 
         // 專業版
             // 頂部提醒
@@ -5488,13 +5397,13 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "Learn more about configuring automatic code reviews.": "瞭解如何配置自動程式碼審查。",
                 "Copilot coding agent": "Copilot 編程助手",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "在已啟用 Copilot 編碼代理的倉庫中委派任務給 Copilot 編碼代理",
-                "MCP servers on GitHub.com": "MCP 服務器功能",
-                    "Configure and use third-party Model Context Protocol (MCP) servers for use on GitHub.com. See MCP docs for": "有關在 GitHub.com 上使用第三方模型上下文協議 (MCP) 服務器的配置和使用，請參閱 MCP 文檔。",
-                    "Coding Agent": "編程助手",
+                "MCP servers in Copilot": "MCP 服務器功能",
+                    "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "在 Visual Studio Code 和 Coding Agent 中將 MCP 服務器連接到 Copilot。MCP 在 VS Code 中已正式支持，在 Coding Agent 中尚處於公開預覽階段。相關信息請參閱 MCP 文檔：",
 
         // 編程助手(預覽 https://github.com/settings/copilot/coding_agent
             // 頂部提示
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程助手，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以為其他用戶啟用 Copilot 編程助手，但您將無法向 Copilot 分配任務，因為 Copilot 編程助手已被管理員禁用。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程助手，您可以將任務委派給 Copilot，從而讓您專注於最重要的創造性、複雜性和高影響力的工作。只需將問題分配給 Copilot，等待助手請求您的審查，然後在拉取請求中留下反饋以進行迭代。",
                 "Learn more in the docs.": "詳情",
@@ -7255,6 +7164,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
             "Discussions": "討論",
             "Actions": "操作",
             "Projects": "專案",
+            "Models": "模型",
             "Security": "安全",
             "Insights": "洞察",
             "Settings": "設置",
@@ -7530,6 +7440,8 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
                 "Import a repository": "導入倉庫",
                 "Required fields are marked with an asterisk (*).": "帶星號 (*) 的為必填項。",
 
+            "🎉 Try the new experience": "🎉 嘗試新版頁面",
+
             "Repository template": "倉庫模板",
                 "Fetching templates…": "正在獲取模板…",
                 "No template": "不設置模板",
@@ -7696,6 +7608,43 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
             "You are creating a fork in your personal account.": "您正在向您的個人賬戶中創建一個複刻。",
             "Create fork": "創建複刻",
 
+        // 新版新建倉庫頁
+            "Switch back to classic experience": "回到經典頁面",
+            "Repositories contain a project's files and version history.": "倉庫包含專案的文件和版本歷史。",
+            "Have a project elsewhere?": "在其他地方已有倉庫？",
+
+            "General": "通常",
+                "Great repository names are short and memorable. How about": "好的倉庫名稱應該簡單且容易記憶。這個怎麼樣：",
+
+            "Configuration": "配置",
+                "Choose visibility": "選擇可見性",
+                    "Choose who can see and commit to this repository": "選擇誰可以查看並提交此倉庫",
+                "Start with a template": "使用模板開始",
+                    "Templates pre-configure your repository with files.": "模板會用文件預先配置您的倉庫。",
+                "Add README": "添加自述文件",
+                    "READMEs can be used as longer descriptions.": "自述文件可以用作更長的描述。",
+                    "About READMEs": "關於自述文件",
+                // gitignore
+                    ".gitignore tells git which files not to track.": ".gitignore 告訴 git 不追蹤哪些文件。",
+                    "About ignoring files": "關於忽略文件",
+
+                    "Choose a .gitignore template": "選擇 .gitignore 模板",
+                        "Search templates": "搜索模板",
+                        "No .gitignore": "無",
+                "Add license": "添加許可證",
+                    "Licenses explain how others can use your code.": "許可證解釋其他人如何使用您的程式碼。",
+                    "About licenses": "關於許可證",
+
+                    "Search licenses": "選擇許可證",
+                    "No license": "無",
+                "Connect GitHub Apps": "連接 GitHub 應用",
+                    "Connect this repository to apps": "將此倉庫連接到",
+                    "is subscribed to": "訂閱的應用",
+
+                    "Choose GitHub Apps": "選擇 GitHub 應用",
+                    "Search apps": "搜索應用",
+                    "Cancel and close": "關閉",
+
     },
     "regexp": [ // 正則翻譯
         // [/([^ ]+) is available\./,"$1 名稱可用。"],
@@ -7705,6 +7654,9 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
         // [/\(repository already exists\)/, "（倉庫已存在）"], // 複刻頁面
         [/You are creating a fork in the ([^ ]+) organization./, "您正在 $1 組織中創建一個複刻。"], // 複刻頁面
         [/Updating branches and (\d+) commit authors?…/, "更新分支和 $1 個提交者…"], // 倉庫導入第二頁
+        //[/Connect this repository to apps ([^ ]+) is subscribed to/, "將此倉庫連接到 $1 訂閱的應用程式"],
+        [/Auto-installed by ([^ ]+)/, "由 $1 自動安裝"],
+        [/(\d+) apps? selected/, "已選擇 $1 個應用"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 個組織"], // 用戶 浮動信息卡
         // [/(\d+) repositor(y|ies)/, "$1 個倉庫"], // 組織  浮動信息卡
@@ -8937,6 +8889,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "Title": "標題",
             "Helpful resources": "幫助性資源",
             "Create more": "創建多個",
+            "Write with Copilot": "請 Copilot 編寫",
 
         // 從討論創建議題  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次貢獻以來，文檔已更改",
@@ -9041,9 +8994,9 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             // 右側欄 補充
             "Metadata": "元數據", // 小屏模式
                 // "Development": "進展",
-                    "Code with Copilot Agent Mode": "使用 Copilot 代理模式編寫程式碼",
+                    "Code with agent mode": "使用代理模式編寫程式碼",
                         "Select code repository": "選擇倉庫",
-                        "Start a Codespace with Copilot Agent Mode for this issue in another repository.": "為另一個倉庫中的此議題啟動使用 Copilot 代理模式的程式碼空間",
+                        "Start a codespace with Copilot agent mode for this issue in another repository.": "為另一個倉庫中的此議題啟動使用 Copilot 代理模式的程式碼空間。",
                     "No branches or pull requests": "沒有分支或拉取請求",
                     "Shows branches and pull requests linked to this issue.": "顯示與該議題相關的分支和拉取請求。",
                     "Create a branch": "創建分支",
@@ -9103,6 +9056,10 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                         "Search for branches or pull requests": "搜索分支或拉取請求",
                         "no pull request": "無拉取請求",
 
+                "Duplicate issue": "複製議題",
+                    // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前議題"],
+                    "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改倉庫可能會從重複議題中移除里程碑、標籤、類型和分配人員。",
+                    "This issue is being duplicated across repositories. The following metadata might not be copied: Milestone, Labels.": "該議題正跨倉庫中被複制創建。以下元數據可能不會被複制：里程碑、標籤。",
                 "Pin issue": "置頂議題",
                     "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置頂 3 個議題，它們將公開顯示在議題頁面的頂部",
                     "Up to 3 issues can be pinned to the top of the issues page": "最多可以在議題頁面置頂 3 個議題",
@@ -9322,6 +9279,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
         [/edited by ([^ ]+)/, "由 $1 編輯"],
         [/This issue will close when (#?\d+) is merged/, "此議題將在 $1 合併時關閉"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打開了這個議題（首次在 $1 發表）"],
+        [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前議題"],
 
         // 標籤頁面
         [/open issues? and pull requests?/, "個打開的議題和拉取請求"],
@@ -9765,10 +9723,14 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "No conflicts with base branch": "與基礎分支沒有衝突",
                 "Changes can be cleanly merged.": "更改可以被幹淨地合併。",
             "Merging is blocked": "合併被阻止",
+                "Commits must have verified signatures.": "提交必須驗證簽名。",
                 "The base branch requires all conversations on code to be resolved.": "基礎分支要求解決所有關於程式碼的對話。",
                 "The base branch requires all commits to be signed.": "基礎分支要求所有提交都經過簽名。",
                 "Learn more about signing commits.": "瞭解更多關於簽名提交的信息。",
                 "View rules": "查看規則",
+                // 無權提交
+                "You're not authorized to push to this branch. Visit": "您沒有權限推送到此分支。請訪問",
+                    "for more information.": "獲取更多信息。",
                 // 新版合併界面
                 "Merge is not an allowed merge method in this repository.": "合併不是此倉庫允許的合併方法。",
                 "Pull request cannot be merged because it has a merge conflict.": "由於存在合併衝突，無法合併拉取請求。",
@@ -10120,6 +10082,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
             "Viewed": "已查看",
             "Comment on this file": "評論此文件",
+
+            "No changes to show": "沒有更改",
+                "This commit does not include any file changes": "此提交未包含文件更改",
 
             "Load diff": "載入差異",
             "This file was deleted.": "該文件已被刪除",
@@ -11016,6 +10981,52 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
+        // 公共部分
+            // 許可證文件 中間欄 頂部 權限信息
+                "the": "為：", // 上半句走正則
+
+                // 許可證類型
+                    "GNU General Public License v3.0": "GNU 通用公共許可證 v3.0",
+                    "GPL-3.0 License": "GPL-3.0 許可證",
+                    "AGPL-3.0 License": "AGPL-3.0 許可證",
+                    "LGPL-3.0 License": "LGPL-3.0 許可證",
+                    "MIT License": "MIT 許可證",
+                    "Apache License 2.0": "Apache-2.0 許可證",
+                    "OFL-1.1 License": "OFL-1.1 許可證",
+                    "0BSD License": "0BSD 許可證",
+                    "BSD-3-Clause License": "BSD-3-Clause 許可證",
+                    "BSD 3-Clause \"New\" or \"Revised\" License": "BSD-3-Clause 許可證",
+                    "CC0-1.0 License": "CC0-1.0 許可證",
+                    "WTFPL License": "WTFPL 許可證",
+                    "Unknown": "未知",
+
+                // 許可證概述 懶得翻譯 O(∩_∩)O哈哈~
+
+                // 許可證範圍, 限制, 條件
+                    "Permissions": "許可事項",
+                    "Limitations": "限制條件",
+                        "Commercial use": "商業用途",
+                        "Modification": "修改",
+                        "Distribution": "分佈",
+                        "Patent use": "專利使用",
+                        "Private use": "私人使用",
+                        "Trademark use": "商標使用",
+                        "Liability": "責任",
+                        "Warranty": "擔保",
+                        "Disclose source": "開源",
+                        "Same license": "相同的許可證",
+                    "Conditions": "條件",
+                        "License and copyright notice": "許可和版權聲明",
+                        "State changes": "狀態變化",
+                        "License and copyright notice for source": "來源許可和版權聲明",
+                        "Network use is distribution": "網絡使用即分發",
+                        "Same license (library)": "相同的許可證（庫）",
+                        "Same license (file)": "相同的許可證（文件）",
+
+                "This is not legal advice.": "這並不是法律建議。",
+                "Learn more about repository licenses": "瞭解更多關於倉庫許可證的信息",
+
+
         // 文件程式碼頁面 /<user-name>/<repo-name>/blob/<brach>/<file>
             // 頂部提醒
                 "This commit does not belong to any branch on this repository, and may belong to a fork outside of the repository.": "此提交不屬於該倉庫上的任何分支，並且可能屬於倉庫的外部分支。",
@@ -11055,8 +11066,11 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
             // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
                 "View Runs": "查看運行情況",
             // 議題模板 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.yml
-                "This file is used as an Issue Form template.": "該文件是議題表單模板",
+                "This file is used as an Issue Form template.": "該文件用作議題表單模板。",
                 "Give Feedback.": "提交反饋。",
+            // 議題模板 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.md
+                "info": "信息",
+                "This file is used as a markdown issue template.": "該文件用作 Markdown 議題模板。",
             // 添加文件按鈕, 文件夾模式下
                 "Add file": "添加文件",
             // 三個點
@@ -11111,6 +11125,7 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
                     "Download raw file": "下載原始文件",
                 // 文件編輯圖標
                     "Edit this file": "編輯本文件",
+                        "More edit options": "更多編輯選項",
                     "Edit the file in your fork of this project": "在您的複刻中編輯文件",
                         "Edit file": "編輯文件",
                             "Edit in place": "就地編輯",
@@ -11161,12 +11176,14 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
 
             "More Pages": "更多頁面",
 
-            // 右側大綱面板
-                "Outline": "大綱", // md 文件
-                    "Filter headings": "篩選標題", // md 文件
+            // Markdown 文件右側大綱面板
+                "Outline": "大綱",
+                    "Close outline": "關閉大綱",
+                    "Filter headings": "篩選標題",
 
             // 右側符號面板
                 "Symbols": "符號",
+                    "Close symbols": "關閉符號面板",
                     "Symbol outline not available for this file": "大綱不適用於此文件",
                     "To inspect a symbol, try clicking on the symbol directly in the code view.": "要檢查一個符號，可以嘗試在程式碼視圖中直接點擊該符號。",
                     "Code navigation supports a limited number of languages.": "程式碼導航支持有限數量的語言。",
@@ -11203,47 +11220,6 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
                 "Explain": "解釋",
                 "Suggest improvements": "提出優化建議",
                 "Attach to current thread": "附加至當前話題",
-
-        // 中間欄 頂部 權限信息
-        "the": "為：", // 上半句走正則
-
-        // 許可證
-            "GNU General Public License v3.0": "GNU 通用公共許可證 v3.0",
-            "GPL-3.0 License": "GPL-3.0 許可證",
-            "AGPL-3.0 License": "AGPL-3.0 許可證",
-            "LGPL-3.0 License": "LGPL-3.0 許可證",
-            "MIT License": "MIT 許可證",
-            "Apache License 2.0": "Apache-2.0 許可證",
-            "OFL-1.1 License": "OFL-1.1 許可證",
-            "0BSD License": "0BSD 許可證",
-            "BSD-3-Clause License": "BSD-3-Clause 許可證",
-            "BSD 3-Clause \"New\" or \"Revised\" License": "BSD-3-Clause 許可證",
-            "CC0-1.0 License": "CC0-1.0 許可證",
-            "WTFPL License": "WTFPL 許可證",
-            "Unknown": "未知",
-
-        "Permissions": "許可事項",
-        "Limitations": "限制條件",
-            "Commercial use": "商業用途",
-            "Modification": "修改",
-            "Distribution": "分佈",
-            "Patent use": "專利使用",
-            "Private use": "私人使用",
-            "Trademark use": "商標使用",
-            "Liability": "責任",
-            "Warranty": "擔保",
-            "Disclose source": "開源",
-            "Same license": "相同的許可證",
-        "Conditions": "條件",
-            "License and copyright notice": "許可和版權聲明",
-            "State changes": "狀態變化",
-            "License and copyright notice for source": "來源許可和版權聲明",
-            "Network use is distribution": "網絡使用即分發",
-            "Same license (library)": "相同的許可證（庫）",
-            "Same license (file)": "相同的許可證（文件）",
-
-        "This is not legal advice.": "這並不是法律建議。",
-        "Learn more about repository licenses": "瞭解更多關於倉庫許可證的信息",
 
     },
     "regexp": [ // 正則翻譯
@@ -11951,7 +11927,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
                 "This workflow does not exist.": "此工作流不存在。",
 
             "All workflows": "全部工作流程",
-                "Show more workflows...": "顯示更多...",
+                "Show more workflows...": "顯示更多工作流程...",
                 "Showing runs from all workflows": "顯示所有工作流程的運行情況",
 
             "Codespaces Prebuilds": "程式碼空間預構建",
@@ -12186,6 +12162,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "Triggered via issue": "通過議題觸發",
             "Triggered via discussion": "通過討論觸發",
             "Triggered via discussion comment": "通過討論評論觸發",
+            "Triggered via workflow run": "通過工作流運行觸發",
             "Re-run triggered": "重新觸發",
             "Manually triggered": "手動觸發",
 
@@ -12276,6 +12253,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "Release": "發行版",
                 "published by": "發佈者",
             "created by": "創建者",
+            "completed by": "完成者",
             //"Process completed with exit code 1.": "進程完成，退出程式碼為 1。",
             "Cache not found": "找不到緩存",
             "Starting job": "作業啟動中",
@@ -12327,6 +12305,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
         // 時間
         [/(\d+)d (\d+)h (\d+)m (\d+)s/, "$1天$2時$3分$4秒"],
         [/(\d+)h (\d+)m (\d+)s/, "$1時$2分$3秒"],
+        [/(\d+)h (\d+)m/, "$1時$2分"],
     ],
 };
 I18N["zh-TW"]["repository/runs"] = I18N["zh-TW"]["repository/actions"];
@@ -12791,6 +12770,51 @@ I18N["zh-TW"]["repository/find"] = { //  倉庫 - 查找文件頁面
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
+
+I18N["zh-TW"]["repository/models"] = { // 倉庫 - 模型
+    "static": {
+        ...I18N["zh-TW"]["repository-public"]["static"],
+        "Public Preview": "公共預覽",
+        "Expand menu": "展開目錄",
+        "Collapse menu": "摺疊目錄",
+        "Catalog": "目錄",
+        "Share feedback": "反饋",
+
+        // 概況
+            "Build your AI products—right inside GitHub. Create prompts, test models, and ship AI-powered features with built-in tools for model access, prompt collaboration, and lightweight evaluation.": "在 GitHub 內部構建您的 AI 產品。利用內置的模型接入、提示協作和輕量級評估工具，創建提示詞、測試模型，並發布 AI 驅動的功能。",
+                "Read the docs": "閱讀文檔",
+                "to learn more.": "瞭解詳情。",
+
+            "You do not have access to GitHub Models on this repository": "您無權訪問此倉庫上的 GitHub 模型",
+                "You need write permissions or higher for this repository to use GitHub Models.": "您需要擁有此倉庫寫入權限或更高權限，才能使用 GitHub 模型。",
+                "Learn more about GitHub Models.": "瞭解更多。",
+
+            "Prompts": "提示詞",
+                "Create, evaluate, and iterate on prompts right inside your repo.": "在您的倉庫內直接創建、評估和迭代提示詞。",
+                "Get write permissions or higher for this repository to create and manage prompts.": "獲得對此倉庫的寫入權限或更高權限，才能創建和管理提示詞。",
+
+            "Add AI to your project now": "立即添加 AI 到您的專案",
+                "Drop this snippet into your code to start using AI instantly.": "將此程式碼片段插入您的程式碼中，即可立即開始使用 AI。",
+                "Get API Key": "獲取 API 密鑰",
+
+            "Explore 40+ models in the catalog": "在目錄中探索 40+ 模型",
+                "Compare models in the playground—test parameters, token usage, and latency to find the right fit for your use case.": "在遊樂場中對比模型——測試參數、令牌使用量和延遲，以找到最適合你用例的模型。",
+            "Power your prompt with the right model": "為您的提示詞選擇合適的模型",
+                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "針對您的提示詞測試和對比不同模型，以找到最合適的模型，然後在準備好後將其直接提交到您的專案中。",
+            "Instrument your Actions workflow with models": "使用模型為您的 Actions 工作流提供支持",
+                "Set up a new GitHub Actions workflow using models.": "使用模型新建 Actions 工作流。",
+
+        // 提示詞
+            "Manage": "管理",
+                "prompts stored in your repo using": "您倉庫中的提示詞，使用",
+                ".prompt.yml file": ".prompt.yml 文件",
+                "format.": "格式。",
+    },
+    "regexp": [
+        ...I18N["zh-TW"]["repository-public"]["regexp"],
+        [/(\d+) prompts? found/, "$1 條提示詞"],
+    ],
+}
 
 I18N["zh-TW"]["repository/wiki"] = { // 倉庫 - wiki 頁面
     "static": { // 靜態翻譯
@@ -13266,8 +13290,15 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
             "This is a draft and won’t be seen by the public unless it’s published.": "這是一個草案，除非發佈，否則不會被公眾看到。",
             "Discard draft": "丟棄草案",
 
+            "New release": "新建發行版",
+
+            "Release notes": "發行版說明",
+                "Select a previous tag to create generated release notes": "選擇一個先前的標籤以生成發行說明",
+
             "Choose a tag": "選擇標籤",
                 "Find or create a new tag": "查找或創建新標籤",
+            "Tag:": "標籤：",
+                "Select tag": "選擇標籤",
             "Target:": "目標：",
                 "Pick a branch or recent commit": "選擇分支或最近的提交",
                 "Filter branches…": "篩選分支…",
@@ -13295,6 +13326,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
             "Release title": "發行版標題",
 
             "Previous tag:": "上一個標籤：",
+                "Auto": "自動",
                 "auto": "自動",
                 "Select previous tag to compare": "選擇上一個標籤進行比較",
                     "Find previous tag": "篩選上一個標籤",
@@ -13438,6 +13470,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
         [/^([^ ]+) and ([^ ]+)/, "$1 和 $2"], // 發行版 - 貢獻者（2位
         [/(\d+) (people|person) reacted/, "$1 人表達看法"],
         [/There are no releases containing \"([^ ]+)\"./, "沒有發行版包含“$1”。"],
+        [/Edit (.+)/, "編輯 $1"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -19359,7 +19392,7 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
             "With the reason": "原因",
                 "any reason": "任何原因",
                 "completed": "已完成",
-                "not planned": "未計劃",
+                "not planned": "無計劃",
                 "reopened": "重新打開",
             "With this many comments": "評論數量",
             "With the labels": "議題標籤",
@@ -20288,71 +20321,96 @@ I18N["zh-TW"]["account/choose"] = { // 賬戶升級選擇
 
 I18N["zh-TW"]["account/upgrade"] = { // 賬戶
     "static": {
-        "Change how often your account is billed": "更改您賬戶的計費頻率",
-
-        "Back to billing settings": "返回賬單設置",
-
-        "Change duration to": "切換週期至",
-
-        "Pay yearly": "按年支付",
-        "/ year": "/年",
-        "Pay monthly": "按月支付",
-        "/ month": "/月",
-
-        "Payment frequency": "支付頻率",
-            "Total amount": "總計",
-            "Due today": "今天到期",
-
-        "Billing information": "賬單信息",
-            "Personal account": "個人賬戶",
-
-            "Change your account's billing cycle": "更改計費週期",
-
-        "By clicking “Change your account's billing cycle”, you agree to our": "通過點擊“更改計費週期”，您同意我們的",
-        "Terms of Service": "服務條款",
-        ". We’ll occasionally send you account-related emails.": "我們會偶爾發送與賬戶相關的電子郵件。",
-
         // https://github.com/account/upgrade?plan=pro&source=account+compare+plans
             "Upgrade your account from GitHub Free to GitHub Pro": "從 GitHub 免費版升級到 GitHub 專業版",
+            "Back to billing settings": "返回賬單設置",
+
             "Plan details": "計劃詳情",
+                "Pro": "Pro 專業版",
+                "Includes everything in": "包含所有",
+                "GitHub Free": "GitHub 免費版",
+                "plus:": "以及：",
+                "Required reviewers in private repos": "私有倉庫的必需審查者",
+                "Protected branches in private repos": "私有倉庫的受保護分支",
+                "Repository insights in private repos": "私有倉庫的倉庫洞察",
+                "Wikis in private repos": "私有倉庫的 Wiki",
+                "Pages in private repos": "私有倉庫的 GitHub Pages",
+                "Code owners in private repos": "私有倉庫的程式碼所有者",
+                "3,000 minutes for GitHub Actions": "3,000 分鐘的 GitHub Actions 使用時長",
+                "2GB of GitHub Packages storage": "2GB 的 GitHub Packages 存儲空間",
+                "180 core-hours of Codespaces compute": "180 核心小時的程式碼空間計算時長",
+                "20GB of Codespaces storage": "20GB 的程式碼空間存儲空間",
 
-            // "Billing information": "賬單信息",
-            "Please confirm your billing details to continue. You only need to do this once.": "請確認您的賬單詳情以繼續。您只需確認一次。",
-            // "Personal account": "個人賬戶",
+            "Payment frequency": "支付頻率",
+                "Pay yearly": "按年支付",
+                "Pay monthly": "按月支付",
+                "/ year": "/年",
+                "/ month": "/月",
 
-            "First name": "名字",
-                "First name can't be blank.": "名字不能為空。",
-                "First name can't be blank": "名字不能為空",
-            "Last name": "姓氏",
-                "Last name can't be blank.": "姓氏不能為空。",
-                "Last name can't be blank": "姓氏不能為空",
-            "Address": "地址",
-            "(Street, P.O. box)": "（街道，郵政信箱）",
-                "Address can't be blank.": "地址不能為空。",
-                "Address can't be blank": "地址不能為空",
-            "Address line 2": "地址第 2 行",
-            "(Apartment, suite, unit)": "（公寓、套房、單元）",
-            "City": "城市",
-                "City can't be blank.": "城市不能為空。",
-                "City can't be blank": "城市不能為空",
-            "Country/Region": "國家/地區",
-                "Country code can't be blank.": "國家/地區不能為空。",
-                "Country code can't be blank": "國家/地區不能為空",
-                "Choose your country/region": "選擇您所在的國家/地區",
-            "State/Province": "州/省",
-                "Required for certain countries": "某些國家/地區需要",
-            "Postal/Zip code": "郵政編碼",
-                "(9-digit zip code for US)": "(美國為 9 位郵政編碼）",
-            "VAT/GST ID": "增值稅/消費稅編號",
+                "Total amount": "總計",
+                "Due today": "今天到期",
 
-            "Save and continue": "保存並繼續",
+            "Billing information": "賬單信息",
+                "Personal account": "個人賬戶",
+
+            // 編輯賬單信息
+                "First name": "名字",
+                    "First name can't be blank.": "名字不能為空。",
+                    "First name can't be blank": "名字不能為空",
+                "Last name": "姓氏",
+                    "Last name can't be blank.": "姓氏不能為空。",
+                    "Last name can't be blank": "姓氏不能為空",
+                "Address": "地址",
+                    "(Street, P.O. box)": "（街道，郵政信箱）",
+                    "Address can't be blank.": "地址不能為空。",
+                    "Address can't be blank": "地址不能為空",
+                "Address line 2": "地址第 2 行",
+                    "(Apartment, suite, unit)": "（公寓、套房、單元）",
+                "City": "城市",
+                    "City can't be blank.": "城市不能為空。",
+                    "City can't be blank": "城市不能為空",
+                "Country/Region": "國家/地區",
+                "State/Province": "州/省",
+                    "Required for certain countries": "某些國家/地區需要",
+                "Postal/Zip code": "郵政編碼",
+                    "(9-digit zip code for US)": "（美國為 9 位郵政編碼）",
+                "VAT/GST ID": "增值稅/消費稅編號",
+
+                "Save and continue": "保存並繼續",
+                // 頂部提醒
+                    "An error occurred while saving billing information.": "保存賬單信息時發生錯誤。",
+
+            "Payment information": "付款信息",
+                "Pay with": "支付方式：",
+                    "Loading payment information…": "正在加載支付信息…",
+
+                    "Credit or debit card": "信用卡或借記卡",
+                        "Card Number *": "卡號",
+                        "Expiration Date (YYYY) *": "終止日期 (YYYY) *",
+                            "- Select One -": "- 選擇一個 -",
+                        "Save payment information": "保存付款信息",
+                        "You are currently paying with your PayPal account": "您目前正在使用您的 PayPal 賬戶支付",
+                        ", but you can switch to using a credit or debit card at any time.": "，但是您隨時可以切換到使用信用卡或借記卡支付。",
+
+                    "PayPal account": "PayPal 賬戶",
+                        "Sign in to": "登錄到",
+                        "Connecting to PayPal…": "正在連接到 PayPal…",
+                        "Charge to": "收費至",
+                        "Sign in to PayPal to use a different account.": "登錄 PayPal 以使用其他賬戶。",
+                        // 頂部提醒
+                            "Your PayPal account has been successfully added.": "您的 PayPal 賬戶已成功添加。",
+
+                    "504 Gateway Time-out": "504 網關超時",
+                    "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我們可能會暫時凍結您的支付方式以驗證其有效性。這不是收費，驗證後將會自動解除。",
+
+            "Upgrade to GitHub Pro": "更新到 GitHub Pro",
+            "By clicking “Upgrade to GitHub Pro”, you agree to our": "通過點擊 “更新到 GitHub Pro”，您同意我們的",
+            "Terms of Service": "服務條款",
+            "Corporate Terms of Service": "企業服務條款",
+            ". We’ll occasionally send you account-related emails.": "。我們會偶爾發送與賬戶相關的電子郵件。",
+
     },
     "regexp": [
-        [/Payment due (.+)/, (match, p1) => {
-        const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
-        const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-        return `${translatedDate}結算`;
-        }],
     ],
 };
 
@@ -22599,7 +22657,7 @@ I18N["zh-TW"]["orgs/settings/projects"] = { // 組織設置 - 計劃 - 專案
                 "If enabled, members with admin permissions on a project can make the project public or private. If disabled, only organization owners can make the project public or private. All projects are private by default.": "如果啟用，在專案上有管理權限的成員可以將專案設為公開或私有。如果禁用，則只有組織所有者可以將專案設為公開或私有。默認情況下，所有專案都是私有的。",
 
             "Welcome to projects": "歡迎來到專案！",
-                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格的構造類似電子表格，為您提供了一個實時畫布，可用於篩選、排序和分組問題及拉取請求。您可以使用自定義字段和保存的視圖，根據自身需求對其進行定製。",    
+                "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格的構造類似電子表格，為您提供了一個實時畫布，可用於篩選、排序和分組問題及拉取請求。您可以使用自定義字段和保存的視圖，根據自身需求對其進行定製。",
 
             "Recommended templates": "推薦模板",
                 "Customize a selection of recommended project templates for this organization. These templates will be surfaced first when a member of the organization creates a new project.": "為此組織定製一系列推薦的專案模板。當組織成員創建新專案時，這些模板將首先出現。",
@@ -25166,6 +25224,7 @@ I18N["zh-TW"]["copilot"] = {
                         "aren't supported by this model": "不支持此模型",
                         "Switch back to the": "切回",
                         "model or start a new conversation": "模型或新建對話",
+            "Space": "空間",
             "Send now": "發送",
 
             // 預設欄
@@ -25305,10 +25364,17 @@ I18N["zh-TW"]["copilot"] = {
             // 倉庫選擇
                 "Select an item": "選擇一項",
                     "Repos": "倉庫",
-            
+
             "Start task": "開始任務",
 
-            "Add a light/dark mode switcher": "添加淺色/深色模式切換器",
+            "Open": "打開",
+                "No open tasks yet. Start a new task to see it here.": "還沒有打開的任務。開始一個新任務後即可在這裡查看。",
+            "Closed": "關閉",
+                "· started": "· 開始於",
+                "ago ·": "之前",
+                "Merged": "已合併",
+
+            //"Add a light/dark mode switcher": "添加淺色/深色模式切換器",
 
             "revision": "修訂",
 
@@ -25339,6 +25405,8 @@ I18N["zh-TW"]["copilot"] = {
         }],
         // 空間
         [/Total percent used: (\d+\%)/, "總使用率：$1"],
+        // 代理
+        [/(\d+) revisions?/, "$1 次修訂"],
     ],
 };
 
