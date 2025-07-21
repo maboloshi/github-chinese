@@ -12848,7 +12848,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Write": "编辑",
             "Preview": "预览",
             "Edit mode:": "标记语言：",
-            "Edit message": "提交消息",
+            "Edit message": "提交信息",
 
             "Write a small message here explaining this change. (Optional)": "请简要描述所作修改(可选)",
             "Save page": "保存页面",
@@ -23654,13 +23654,13 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Welcome to projects": "欢迎访问项目",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, 和 group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样，为您提供一个实时编辑的画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, 和 group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
             "Provide quick access to relevant projects.":"为相关项目提供便捷访问",
             "Add projects to view them here.":"添加项目以在此处查看。",
-            "Link a project":" 链接一个项目",
-            "Link projects":"链接项目",
+            "Link a project":" 关联一个项目",
+            "Link projects":"关联项目",
             "Link a project to this repository":"将项目与该仓库进行关联",
 
             "Organize your issues with project boards": "使用项目面板组织您的议题",
