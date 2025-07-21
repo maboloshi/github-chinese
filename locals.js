@@ -10230,13 +10230,24 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         // 拉取请求 - 由 Copilot 编写 https://github.com/用户名/仓库名/pull/编号/agent-sessions
             "Back to pull request #": "返回到拉取请求 #",
 
+            "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
+                "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
+
             "Sessions": "进度",
             "Duration": "总时长",
             "Premium requests": "高级请求",
                 "Learn more about premium requests": "关于高级请求",
 
+            "premium": "高级",
+            "request": "请求",
+            "used in": "被用于",
+            "session": "任务",
+
+            "Stop session": "停止任务",
             "Open menu": "操作",
                 "View verbose logs": "查看日志",
+
+            "Copilot is working…": "Copilot 工作中…",
 
             // 进度
             "View repository": "查看仓库",
