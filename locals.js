@@ -12870,7 +12870,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "History": "历史",
             "Edit page": "编辑页面",
             "Revisions": "修订",
-            "Compare revisions": "对比版本间差异",
+            "Compare revisions": "对比差异",
                 "Invalid or empty diff.": "无效或无差异。",
 
         // wiki 编辑器（补全未翻译部分
