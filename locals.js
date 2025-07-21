@@ -12855,7 +12855,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
 
         // 编辑 wiki 页面 /<user-name>/<repo-name>/wiki/<page name>/_edit
             // [/Editing/, "编辑"], //编辑 wiki
-            "Page history": "查看历史",
+            "Page history": "页面历史",
             "Delete page": "删除页面",
                 "Are you sure you want to delete this page?": "您确定要删除此页面吗？",
 
