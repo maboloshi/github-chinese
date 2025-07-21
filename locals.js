@@ -10201,7 +10201,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Expand comment": "展开评论",
             "Collapse comment": "折叠评论",
             "Unresolve comment": "取消解决评论",
-                "marked this comment as resolved": "标记为已完成",
+                "marked this comment as resolved": "标记为已解决",
             "Resolve comment": "解决评论",
                 "Apply suggestion": "应用建议",
                     "More suggestion batching options": "更多选项",
@@ -10246,7 +10246,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         // 拉取请求 - 由 Copilot 编写 https://github.com/用户名/仓库名/pull/编号/agent-sessions
             "Back to pull request #": "返回到拉取请求 #",
 
-            "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
+            "Copilot coding agent now uses fewer premium requests!": "Copilot 编程智能体现在使用更少的高级请求！",
                 "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
 
             // 状态
