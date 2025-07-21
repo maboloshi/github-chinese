@@ -45,7 +45,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
@@ -24190,6 +24190,24 @@ I18N["zh-CN"]["github-copilot/free_signup"] = { // GitHub Copilot 个人免费�
     },
     "regexp": [ // 正则翻译
     ],
+};
+
+I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
+    "static": {
+        "Try Copilot Pro for 30 days free": "免费试用 Copilot Pro 30 天",
+
+        "Everything in Copilot Free and:": "Copilot 免费版以及：",
+            "Unlimited agent mode and chat with GPT-4.1": "无限代理模式和与 GPT-4.1 聊天",
+            "Unlimited code completions": "无限代码补全",
+            "Access to Anthropic Claude 3.7/4 Sonnet, Gemini 2.5 Pro, and more": "访问 Claude 3.7/4 Sonnet, Gemini 2.5 Pro 等模型",
+            "300 premium requests to use the latest models and code review": "300 次高级请求，用于使用最新模型和代码审查",
+
+        "Try now": "立即试用",
+            "Part of an organization? Upgrade to": "属于某个组织吗？升级到",
+                "Copilot Business": "Copilot 商业版",
+                "to enable across teams.": "，以便在整个团队中启用。",
+    },
+    "regexp": [],
 };
 
 I18N["zh-CN"]["orgs/enterprise_plan"] = { // 企业版订阅页面
