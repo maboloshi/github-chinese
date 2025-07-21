@@ -19334,7 +19334,7 @@ I18N["zh-CN"]["search"] = { // 搜索页面
                 "When you search within a repository for the first time, please note that the repository undergoes indexing.": "首次在仓库中搜索时，请注意仓库会进行索引。",
                 "This process may take a few minutes.": "这一过程可能需要几分钟。",
 
-                "The index currently includes more than 70 million popular public repositories, plus all private repositories that users search for.": "该索引目前包括超过 7000 万个受欢迎的公共仓库，以及用户搜索的所有私有仓库。",
+                "The index currently includes more than 70 million popular public repositories, plus all private repositories that users search for.": "该索引目前包括超过 7000 万个热门公共仓库，以及用户搜索的所有私有仓库。",
                 "Beyond that, we also don't include all files in the search index:": "除此之外，我们也不会将所有文件都纳入搜索索引：",
                     "Vendored and generated code is excluded": "排除供应和生成的代码",
                     "Empty files and files over 350 kiB are excluded": "排除空文件和超过 350 kiB 的文件",
@@ -24124,7 +24124,7 @@ I18N["zh-CN"]["github-copilot/signup"] = { // GitHub Copilot 个人版获取页�
 
            "Next: Confirm your payment details": "下一步：确认您的付款详细信息",
 
-           "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the": "GitHub Copilot 对于在 GitHub 上维护流行开源软件的人员和经过验证的学生是免费的。查看详情",
+           "GitHub Copilot is free for maintainers of popular open source software on GitHub and verified students. Check out the": "GitHub Copilot 对于在 GitHub 上维护流行开源软件的人员和经过验证的学生是免费的。查看",
            "free use FAQ": "免费使用常见问题解答（FAQ）",
            "for more details.": "以获取更多详细信息。",
 
