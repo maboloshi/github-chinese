@@ -9722,6 +9722,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 // [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
             "No conflicts with base branch": "与基础分支没有冲突",
                 "Changes can be cleanly merged.": "更改可以被干净地合并。",
+
+                "Update branch options": "更新分支选项",
             "Merging is blocked": "合并被阻止",
                 "Commits must have verified signatures.": "提交必须验证签名。",
                 "The base branch requires all conversations on code to be resolved.": "基础分支要求解决所有关于代码的对话。",
@@ -25369,6 +25371,9 @@ I18N["zh-CN"]["copilot"] = {
                 "View all attachments": "查看所有附件",
 
         // 代理 https://github.com/copilot/agents
+            "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
+                "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
+
             "Agents": "代理",
 
             "Let Copilot tackle your TODOs": "让 Copilot 处理您的待办",
