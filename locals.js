@@ -389,7 +389,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Budgets": "预算",
         "Code Security": "代码安全性",
         "New Fine-grained Personal Access Token": "新建精细化个人访问令牌",
-        "Coding agent": "编程助手",
+        "Coding agent": "编程智能体",
         "Get Started With GitHub Discussions": "开始使用 GitHub 讨论",
     },
     "regexp": [ // 正则翻译
@@ -685,7 +685,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Create new...": "新建...",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
-                "New agent task": "新建代理任务",
+                "New agent task": "新建智能体任务",
                 "New codespace": "新建代码空间",
                 "New gist": "新建代码片段",
                 "New organization": "新建组织",
@@ -924,6 +924,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Markdown is supported": "支持 Markdown 语法",
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
+            "Write with Copilot": "使用 Copilot 撰写",
             "Uploading your files…": "正在上传您的文件…",
             // 文件过大
                 "This video is too big.": "该影片过大。",
@@ -976,12 +977,14 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "🔮 Future ideas": "🔮 超前想法",
                     "🚀 My stack": "🚀 技术栈",
                     "✨ Inspiration": "✨ 灵感",
+                    "No results found.": "未找到结果。",
                 "Create list": "创建清单",
                     "Create a list to organize your starred repositories.": "创建一个清单来组织您的星标仓库。",
                     "⭐️ Name this list": "⭐️ 清单名称",
                     "Write a description": "简单描述",
                     // 小贴士
-                        "type : to add emoji to the name or description.": "输入: 在名称或描述中添加表情符号",
+                        "type": "输入",
+                        "to add emoji to the name or description.": "在名称或描述中添加表情符号",
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中...",
@@ -3064,7 +3067,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Packages": "软件包",
         "Copilot": "GitHub Copilot",
             "Features": "功能",
-            "Coding agent": "编程助手",
+            "Coding agent": "编程智能体",
         "Pages": "GitHub Pages",
         "Saved replies": "快捷回复",
 
@@ -5395,21 +5398,21 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Automatic Copilot code review": "自动 Copilot 代码审查",
                     "Copilot will automatically review your pull requests.": "Copilot 将自动审查您的拉取请求。",
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
-                "Copilot coding agent": "Copilot 编程助手",
-                    "Delegate tasks to Copilot coding agent in repositories where it is enabled": "在已启用 Copilot 编码代理的仓库中委派任务给 Copilot 编码代理",
-                "MCP servers in Copilot": "MCP 服务器功能",
-                    "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "在 Visual Studio Code 和 Coding Agent 中将 MCP 服务器连接到 Copilot。MCP 在 VS Code 中已正式支持，在 Coding Agent 中尚处于公开预览阶段。相关信息请参阅 MCP 文档：",
+                "Copilot coding agent": "Copilot 编程智能体",
+                    "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
+                "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
+                    "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "将 MCP 服务器连接到 Visual Studio Code 和编程智能体中的 Copilot。MCP 支持在 VS Code 中已正式发布，而编程智能体 目前处于公开预览阶段。详情请参阅 MCP 文档：",
 
-        // 编程助手(预览 https://github.com/settings/copilot/coding_agent
+        // 编程智能体(预览 https://github.com/settings/copilot/coding_agent
             // 顶部提示
-                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程助手，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
-                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程助手，但您将无法向 Copilot 分配任务，因为 Copilot 编程助手已被管理员禁用。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程智能体，但由于管理员已禁用 Copilot 编程智能体策略，您将无法向 Copilot 分配任务。",
 
-            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程助手，您可以将任务委派给 Copilot，从而让您专注于最重要的创造性、复杂性和高影响力的工作。只需将问题分配给 Copilot，等待助手请求您的审查，然后在拉取请求中留下反馈以进行迭代。",
+            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                 "Learn more in the docs.": "详情",
 
             "Repository access": "仓库访问",
-                "Choose which repositories Coding agent should be enabled in. Coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要启用编程助手的仓库。编程助手仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
+                "Choose which repositories Coding agent should be enabled in. Coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要启用编程智能体的仓库。编程智能体仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
 
                 "No repositories": "无仓库",
                 // 所有
@@ -5432,7 +5435,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
 
                     "Select": "选择",
 
-            "Use of Copilot coding agent is subject to the": "使用 Copilot 编程助手需遵守",
+            "Use of Copilot coding agent is subject to the": "使用 Copilot 编程智能体需遵守",
                 "pre-release terms": "预发行条款",
 
     },
@@ -6512,7 +6515,7 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Are you sure you want to update permissions?": "您确定要更新权限吗？",
                     "Current users will be prompted to accept these changes and enable the new permissions on their installation.": "系统将提示当前用户接受这些更改，并在其安装中启用新权限。",
 
-        // 某个 GitHub 应用 - 助理 https://github.com/settings/apps/<app-name>/agent
+        // 某个 GitHub 应用 - 智能体 https://github.com/settings/apps/<app-name>/agent
             "A Copilot configuration allows your GitHub App to integrate with Copilot. Learn more about building GitHub Copilot Extensions in the": "Copilot 配置允许您的 GitHub 应用与 Copilot 集成。了解更多关于构建 GitHub Copilot 扩展的信息，请访问",
             "documentation": "文档",
 
@@ -7672,7 +7675,7 @@ I18N["zh-CN"]["orgs/repositories/new"] = I18N["zh-CN"]["page-new-repo"];
 
 I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
-            ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-public"]["static"],
 
         // 顶部
             "Help us improve GitHub Codespaces": "帮助我们改进 GitHub 代码空间",
@@ -8994,9 +8997,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             // 右侧栏 补充
             "Metadata": "元数据", // 小屏模式
                 // "Development": "进展",
-                    "Code with agent mode": "使用代理模式编写代码",
+                    "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
-                        "Start a codespace with Copilot agent mode for this issue in another repository.": "为另一个仓库中的此议题启动使用 Copilot 代理模式的代码空间。",
+                        "Start a codespace with Copilot agent mode for this issue in another repository.": "为另一个仓库中的此议题启动使用 Copilot 智能体模式的代码空间。",
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
                     "Create a branch": "创建分支",
@@ -9799,7 +9802,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
 
             "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
+            "No conflicts with base branch": "与基本分支无冲突",
                 "Merging can be performed automatically.": "可以自动地执行合并。",
+                "Changes can be cleanly merged.": "可以干净地合并更改。",
 
             "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。",
                 "Rebase and merge can be performed automatically.": "可以自动执行变基和合并。",
@@ -9836,7 +9841,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "or view": "，或查看",
             "You can also merge this with the command line, view": "您也可以使用命令行合并，查看",
             "command line instructions": "命令行指令",
-            "You can also merge this with the command line.": "您也可以使用命令行合并，",
+            "You can also merge this with the command line.": "您也可以使用命令行合并。",
             "View command line instructions.": "查看命令行指令。",
 
             // "Merged": "已合并",
@@ -10092,11 +10097,13 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "No changes to show": "没有更改",
                 "This commit does not include any file changes": "此提交未包含文件更改",
 
-            "Load diff": "载入差异",
+            "Load diff": "载入差异", // old 待清理
+            "Load Diff": "载入差异", // new
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
-            "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
+            "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式", // old 待清理
+            "customizing how changed files appear on GitHub.": "自定义更改文件在 GitHub 中的显示方式。", // new
             "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
             "Binary file not shown.": "不显示二进制文件。",
@@ -12074,6 +12081,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                     "Workflow does not exist or does not have a": "工作流程不存在或没有",
                     "trigger in this branch.": "触发在此分支。",
                     "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
+                "Running workflow...": "正在运行工作流程...",
                 // 顶部提醒
                     "Workflow run was successfully requested.": "工作流程已成功请求运行。",
 
@@ -15182,7 +15190,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Models": "模型",
                 "Webhooks": "Web 钩子",
                 // Copilot
-                    "Coding agent": "编程助手",
+                    "Coding agent": "编程智能体",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
                 "Custom properties": "自定义属性",  // 组织仓库
@@ -16824,21 +16832,21 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
-        "Copilot coding agent": "Copilot 编程助手",
+        "Copilot coding agent": "Copilot 编程智能体",
 
-        "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程助手，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
+        "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程助手，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
 
         "Model Context Protocol (MCP)": "模型上下文协议（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一个开放标准，定义了应用程序如何与大型语言模型（LLM）共享上下文。MCP 提供了一种标准化的方法，将 AI 模型与不同的数据源和工具连接起来，使它们能够更高效地协同工作。",
-            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程助手的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
+            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
 
             "MCP configuration": "MCP 配置",
 
             "Your configuration will be validated on save.": "您的配置将在保存时进行验证。",
 
-            "Use of Copilot coding agent is subject to the": "使用 Copilot 编程助手需遵守",
+            "Use of Copilot coding agent is subject to the": "使用 Copilot 编程智能体需遵守",
                 "pre-release terms": "预发行条款",
     },
     "regexp": [],
@@ -20505,7 +20513,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                         "Embeddings": "嵌入",
                     "Tag:": "标签",
                     "Category:": "类型：",
-                        "Agents": "代理",
+                        "Agents": "智能体",
                         "Conversation": "对话",
                         "Large context": "大模型",
                         "Low latency": "低延迟",
@@ -20946,7 +20954,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Tags": "标签",
 
             // 获取 API 密钥窗口（从“使用此模型”进入
-               
+
                 "1. Create a personal access token": "1. 创建个人访问令牌（PAT）",
                 "2. Install dependencies": "2. 安装依赖",
                 "3. Run a basic code sample": "3. 运行基本代码示例",
@@ -21065,7 +21073,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 ". Not intended for production/sensitive data.": "约束。不适用于生产/敏感数据。",
 
         // 提示词编辑器 https://github.com/marketplace/models/<user-name>/<model-name>/prompt
-            
+
             // 左侧
                 "Edit variables": "编辑变量",
                     "System": "系统",
@@ -24623,7 +24631,7 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                 "Orchestration and Compute for GitHub Codespaces": "GitHub 代码空间的协调与计算",
             "For the status of GitHub Enterprise Cloud - EU, please visit:": "有关欧盟版 GitHub 企业云的状态，请访问",
             "For the status of GitHub Enterprise Cloud - Australia, please visit":"有关澳大利亚版 GitHub 企业云的状态，请访问",
-            "For the status of GitHub Enterprise Cloud - US, please visit":"有关美国版 GitHub 企业云的状态，请访问",            
+            "For the status of GitHub Enterprise Cloud - US, please visit":"有关美国版 GitHub 企业云的状态，请访问",
             "Current Status": "当前状态",
             "Incident History": "历史事故",
 
@@ -25417,14 +25425,14 @@ I18N["zh-CN"]["copilot"] = {
                 "View all attachments": "查看所有附件",
 
         // 代理 https://github.com/copilot/agents
-            "Copilot coding agent now uses fewer premium requests!": "Copilot 编码代理现在使用更少的高级请求！",
+            "Copilot coding agent now uses fewer premium requests!": "Copilot 编程智能体现在使用更少的高级请求！",
                 "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
 
-            "Agents": "代理",
+            "Agents": "智能体",
 
             "Let Copilot tackle your TODOs": "让 Copilot 处理您的待办",
-                "Delegate tasks to GitHub Copilot coding agent to work on in the background, and then monitor Copilot's progress.": "将任务委派给 GitHub Copilot 编码代理在后台处理，然后监控 Copilot 的进展。",
-                "Learn more about Copilot coding agent": "了解更多",
+                "Delegate tasks to GitHub Copilot coding agent to work on in the background, and then monitor Copilot's progress.": "将任务委派给 GitHub Copilot 编程智能体在后台处理，然后监控 Copilot 的进展。",
+                "Learn more about Copilot coding agent": "了解更多关于 Copilot 编程智能体的信息",
 
             // 仓库选择
                 "Select an item": "选择一项",
