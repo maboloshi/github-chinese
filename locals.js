@@ -12889,10 +12889,10 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Title": "标题",
             "Write": "编辑",
             "Preview": "预览",
-            "Edit mode:": "编辑模式：",
+            "Edit mode:": "标记语言：",
             "Edit message": "提交信息",
 
-            "Write a small message here explaining this change. (Optional)": "在这里写一条小消息，解释这一变化。(可选)",
+            "Write a small message here explaining this change. (Optional)": "请简要描述所作修改(可选)",
             "Save page": "保存页面",
             // 顶部提醒
                 "Your Wiki was created.": "您的 Wiki 已创建。",
@@ -12903,7 +12903,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Delete page": "删除页面",
                 "Are you sure you want to delete this page?": "您确定要删除此页面吗？",
 
-            "Someone has edited the wiki since you started. Please reload this page and re-apply your changes.": "自您开始以来，有人编辑了 wiki。请重新加载此页面并重新应用您的更改。",
+            "Someone has edited the wiki since you started. Please reload this page and re-apply your changes.": "此页面已被其他用户修改。请重新加载此页面并重新应用您的更改。",
 
             // 顶部提醒
                 "The wiki page was successfully deleted.": "Wiki 页面已成功删除。",
@@ -12912,7 +12912,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "History": "历史",
             "Edit page": "编辑页面",
             "Revisions": "修订",
-            "Compare revisions": "比较修订",
+            "Compare revisions": "对比差异",
                 "Invalid or empty diff.": "无效或无差异。",
 
         // wiki 编辑器（补全未翻译部分
@@ -13794,6 +13794,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                 "Get notified when one of your dependencies has a vulnerability": "当您的一个依赖项存在漏洞时得到通知",
                 "Enable Dependabot alerts": "启用 Dependabot 警报",
                 "View Dependabot alerts": "查看 Dependabot 警报",
+                "You don't have permissito enable this feature":"您没有启用此功能的权限。",
 
             "Code scanning alerts •": "代码扫描警报 •",
                 "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
@@ -14898,10 +14899,11 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
         // 依赖关系图 - 依赖关系 /network/dependencies
             "Tell us how to make the Dependency Graph work better for you with a few quick questions.": "请通过几个简单的问题告诉我们，如何使 “依赖关系图” 更好地为您工作。",
 
-            "The dependency graph is not enabled": "依赖关系图未启用",
+            "Dependency graph is disabled": "依赖关系图未启用",
             "The owner of this repository has not yet enabled the dependency graph. Once enabled, you can": "此仓库的所有者尚未启用依赖关系图。一旦启用，您可以", //个人仓库
-            "The dependency graph has not yet been enabled by an organization owner or a user with admin permissions for this repository. Once enabled, you can": "依赖关系图还没有被组织所有者或具有该仓库管理权限的用户启用。一旦启用，您可以", // 组织仓库
+            "Dependency graph has not been enabled by an organization owner or a user with admin permissions for this repository. Once enabled, you can": "依赖关系图还没有被组织所有者或具有该仓库管理权限的用户启用。一旦启用，您可以", // 组织仓库
             "track this repository’s dependencies": "追踪此仓库的依赖关系",
+            "Learn more about how we use your data.":"深入了解我们对您数据的使用方式。",
 
             "Enable the dependency graph": "启用依赖关系图",
             "Track this repository’s dependencies and sub-dependencies": "追踪该仓库的依赖关系和子依赖关系",
@@ -23693,11 +23695,15 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Create project": "创建项目",
 
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-            "Welcome to the all-new projects": "欢迎访问全新的项目",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
-
+            "Welcome to projects": "欢迎访问项目",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, 和 group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
+            "Provide quick access to relevant projects.":"为相关项目提供便捷访问",
+            "Add projects to view them here.":"添加项目以在此处查看。",
+            "Link a project":" 关联一个项目",
+            "Link projects":"关联项目",
+            "Link a project to this repository":"将项目与该仓库进行关联",
 
             "Organize your issues with project boards": "使用项目面板组织您的议题",
             "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存代码的同一个地方管理项目吗？在 GitHub 上设置项目面板以简化和自动化您的工作流程。",
