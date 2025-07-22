@@ -313,7 +313,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Manage two-factor authentication": "管理双因素身份验证",
         "Options": "仓库 · 选项",
         "Confirm access": "授权访问",
-        "General": "通常",
+        "General": "通用",
         "Manage access": "访问管理",
         "Branches": "分支",
         "Tags": "标签",
@@ -3490,7 +3490,7 @@ I18N["zh-CN"]["settings/accessibility"] = { // 设置 - 无障碍
 
         // Accessibility 无障碍 https://github.com/settings/accessibility
             "GitHub keyboard shortcuts": "GitHub 键盘快捷键",
-            "General": "通常",
+            "General": "通用",
             "Character keys": "字符键",
                 "GitHub shortcuts": "GitHub 快捷键",
                 "that don't use modifier keys in their activation. For example, the": "，这些快捷键在激活时不使用修改键。例如，",
@@ -6423,7 +6423,7 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 
             "Developer settings": "开发者设置",
             // 左侧栏
-                "General": "通常",
+                "General": "通用",
                 "Permissions & events": "权限与事件",
                 "Install App": "安装应用",
                 "Advanced": "高级",
@@ -7616,7 +7616,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "Repositories contain a project's files and version history.": "仓库包含项目的文件和版本历史。",
             "Have a project elsewhere?": "在其他地方已有仓库？",
 
-            "General": "通常",
+            "General": "通用",
                 "Great repository names are short and memorable. How about": "好的仓库名称应该简单且容易记忆。这个怎么样：",
 
             "Configuration": "配置",
@@ -15137,7 +15137,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
 
 
             // 左侧菜单
-            "General": "通常",
+            "General": "通用",
 
             "Access": "访问",
                 // "Collaborators": "协作者",
@@ -15153,7 +15153,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Rules": "规则",
                     "Rulesets": "规则集",
                 // "Actions": "操作",
-                    // "General": "通常",
+                    // "General": "通用",
                     "Runners": "运行器",
                 "Models": "模型",
                 "Webhooks": "Web 钩子",
@@ -15179,12 +15179,12 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
     ],
 };
 
-I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-name>/settings
+I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通用 /<user-name>/<repo-name>/settings
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
 
-        // 通常 - 设置页面 /<user-name>/<repo-name>/settings ====================================
+        // 通用 - 设置页面 /<user-name>/<repo-name>/settings ====================================
             "Repository name": "仓库名称",
             "Rename": "重命名",
                 // [/is available./, "名称可用。"],
@@ -21655,8 +21655,8 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                         "No one will receive notifications.": "没有人会收到通知。",
             "Create team": "创建团队",
 
-        // 团队设置 - 通常 https://github.com/orgs/<orgs-name>/teams/team/edit
-            "General": "通常",
+        // 团队设置 - 通用 https://github.com/orgs/<orgs-name>/teams/team/edit
+            "General": "通用",
             "Code review": "代码审查",
             "Scheduled reminders": "定时提醒",
 
