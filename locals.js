@@ -12882,13 +12882,10 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
                 "Invalid or empty diff.": "无效或无差异。",
         
         // wiki修订间差异 /<user-name>/<repo-name>/wiki/<page name>/_compare
-            // [/Compare:/, "对比："],
             "Revert changes": "撤销更改",
             "Back to top": "回到顶部",
             "Showing": "显示",
             "with": "包含",
-            // [/(\d+) additions?/, "$1 处增加"],
-            // [/(\d+) deletions?/, "$1 处删除"],
             "Unified": "同屏",
             "Split": "分屏",
             // 差异按钮
@@ -13001,8 +12998,9 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
         [/(\d+) revisions?/, "$1 次修订"], // wiki
         [/Editing/, "编辑"], //编辑 wiki
         [/Could not find version "([^ ]+)"/, "找不到版本 “$1”"],
-        [/Compare: (\d+)/, "修订间差异：$1"],
-        [/ Showing (\d+) changed file with (\d+) additions and (\d+) deletions。/, "展示 $1 个更改的文件，共计 $2 处添加和 $3 处移除。"], 
+        [/Compare:/, "对比："],
+        [/(\d+) additions?/, "$1 处增加"],
+        [/(\d+) deletions?/, "$1 处删除"],
     ],
 };
 
