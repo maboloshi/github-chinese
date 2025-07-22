@@ -12878,7 +12878,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "History": "历史",
             "Edit page": "编辑页面",
             "Revisions": "修订",
-            "Compare revisions": "比较被选修订",
+            "Compare revisions": "对比修订",
                 "Invalid or empty diff.": "无效或无差异。",
         
         // wiki修订间差异 /<user-name>/<repo-name>/wiki/<page name>/_compare
