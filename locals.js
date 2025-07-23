@@ -4607,7 +4607,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Preferred 2FA method": "首选 2FA 方法",
                 "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双因素身份验证的首选方法。",
-                "Passkeys should be used primarily for standalone, password-less authentication.":"密钥应主要用于独立的无密码身份验证。",
+                "Passkeys should be used primarily for standalone, password-less authentication.":"通行密钥应主要用于独立的无密码身份验证。",
 
             "Two-factor methods": "双因素身份验证方式",
                 "Configured": "已配置",
