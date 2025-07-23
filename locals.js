@@ -4422,7 +4422,7 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Approved": "批准",
                 // 等待
                     "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
-                    "Your academic benefits, including Partner offers, will become available within 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的72小时内生效。",
+                    "Your academic benefits, including Partner offers, will become available within 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的 72 小时内生效。",
                     "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
                     "To redeem your Copilot Pro coupon, please sign up via this link": "要兑换您的 Copilot Pro 优惠券，请访问此链接",
                     "this link": "此链接",
