@@ -1377,6 +1377,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Fetching repositories…": "正在获取仓库",
                     "Close": "关闭",
                 "Repository": "仓库",
+                "Repositories…": "仓库…",
                     "Select a repository": "选择仓库",
                     "Select repositories": "选择仓库",
                         "Choose repositories to chat about.": "选择以聊天",
