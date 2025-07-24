@@ -8894,6 +8894,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Helpful resources": "帮助性资源",
             "Create more": "创建多个",
             "Write with Copilot": "请 Copilot 编写",
+                "Navigate to Copilot Chat": "导航到 Copilot 聊天",
+                    "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                    "Keep editing": "否", // 实际作用：返回编写页面
+                    "Go to Copilot": "是", // 实际作用：前往 Copilot 页面
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
