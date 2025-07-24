@@ -25141,6 +25141,8 @@ I18N["zh-CN"]["copilot"] = {
             "Conversation failed to load": "加载失败",
                 "Reload the page": "重载页面。",
                 "to try again.": " ",
+        // 高级请求数已用完
+            "You have reached your monthly limit for premium requests. Enable additional requests or switch to the default model. Limit resets on.": "你已达到本月高级请求的额度上限。请启用额外请求或切换到默认模型。额度将重置。",
         // 左侧边栏
             "Open sidebar": "打开侧边栏",
             "Close sidebar": "关闭侧边栏",
