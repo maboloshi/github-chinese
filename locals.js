@@ -3973,7 +3973,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "Loading payment information…": "正在加载支付信息…",
 
                         "Credit or debit card": "信用卡或借记卡",
-                            "Card Number *": "卡号",
+                            "Card Number *": "卡号 *",
                             "Expiration Date (YYYY) *": "终止日期 (YYYY) *",
                                 "- Select One -": "- 选择一个 -",
                             "Save payment information": "保存付款信息",
@@ -4393,9 +4393,16 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
                         "Student": "学生",
 
                         "What is the name of your school? *": "学校名称 *",
-                            "If your school is not listed, then enter the full school name and continue. You will be asked to provide further information about your school on the next page. A minimum of two characters is required to find your school.": "如果您的学校未列出，请输入完整的学校名称并继续。下一页您将被要求提供有关学校的更多信息。查找您的学校至少需要输入两个字符。",
+                            "If your school is not listed, then enter the full school name and continue. You will be asked to provide further information about your school on the next page. A minimum of two characters is required to find your school.": "如果您的学校未在列表中，请输入完整的学校名称并继续。下一页将要求您提供有关学校的更多信息。查找学校至少需要输入两个字符。",
+                            // 提醒设置学校邮箱
+                                "We require applicants of": "我们要求申请者",
+                                "to use one of these school-issues email addresses to apply:": "使用以下学校发放的电子邮箱地址进行申请：",
+                                "add and verify your": "添加并验证您的",
+                                "school-issued email address": "学校发放的电子邮箱地址",
+                                "in your account settings -- or a contact email if you do not have one. Once your email is verified, you can try applying again.": "在您的账户设置中——若未设置邮箱，请填写联系邮箱。邮箱验证通过后，即可重新尝试申请。",
+
                         "What is your school email address?": "教育邮箱地址",
-                            "Have a different email address you use with your school?": "您是否有一个与学校一起使用的不同电子邮件地址？",
+                            "Have a different email address you use with your school?": "您是否有其他在校使用的电子邮件地址？",
                             "Add it here.": "添加",
 
                         "You have verified the email address": "您已验证邮件",
@@ -4423,10 +4430,10 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Approved": "批准",
                 // 等待
                     "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
-                    "Your academic benefits, including Partner offers, will become available with 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的72小时内生效。",
+                    "Your academic benefits, including Partner offers, will become available within 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的 72 小时内生效。",
                     "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
-                    "To redeem your Copilot Pro coupon, please sign up via": "要兑换您的 Copilot Pro 优惠券，请访问",
-                    "this link": "此链接",
+                    "To redeem your Copilot Pro coupon, please sign up via this": "要兑换您的 Copilot Pro 优惠券，请访问此",
+                    "link": "链接",
                     "We hope you enjoy your GitHub Education benefits.": "希望您享受 GitHub 教育权益。",
                 // 结束
                     "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申请已获批准，优惠码已成功应用到您的账户。",
@@ -4608,6 +4615,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
 
             "Preferred 2FA method": "首选 2FA 方法",
                 "Set your preferred method to use for two-factor authentication when signing into GitHub.": "设置登录 GitHub 时用于双因素身份验证的首选方法。",
+                "Passkeys should be used primarily for standalone, password-less authentication.":"通行密钥应主要用于独立的无密码身份验证。",
 
             "Two-factor methods": "双因素身份验证方式",
                 "Configured": "已配置",
