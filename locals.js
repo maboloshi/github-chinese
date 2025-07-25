@@ -25465,7 +25465,7 @@ I18N["zh-CN"]["copilot"] = {
 
                 "View all attachments": "查看所有附件",
 
-        // 代理 https://github.com/copilot/agents
+        // 智能体 https://github.com/copilot/agents
             "Copilot coding agent now uses fewer premium requests!": "Copilot 编程智能体现在使用更少的高级请求！",
                 "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
 
@@ -25478,6 +25478,9 @@ I18N["zh-CN"]["copilot"] = {
             // 仓库选择
                 "Select an item": "选择一项",
                     "Repos": "仓库",
+                "Switch branches": "选择分支",
+                    "Find a branch...": "查找分支...",
+                "default": "默认",
 
             "Start task": "开始任务",
 
