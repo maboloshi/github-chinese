@@ -10286,6 +10286,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Open menu": "操作",
                 "View verbose logs": "查看日志",
 
+            "Spinning up dev environment…": "正在启动开发环境...",
+            "Starting MCP servers…": "正在启动 MCP 服务器...",
+            "Making sure Copilot feels comfortable in the cockpit…": "确保 Copilot 在驾驶舱中感到舒适...",
+            "Fueling the runtime engines…": "为运行时引擎加油...",
             "Copilot is working…": "Copilot 工作中…",
 
             "Copilot stopped work due to an error": "Copilot 因错误停工",
@@ -25275,6 +25279,9 @@ I18N["zh-CN"]["copilot"] = {
                         "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
                         "Privacy Policy": "隐私政策",
                         "Send": "发送",
+
+            "Upgrade to Pro": "升级至专业版",
+                "to access higher limits and premium models.": "以获取更高额度和高级模型。",
 
             "Open panel": "打开面板",
             "Close panel": "关闭面板",
