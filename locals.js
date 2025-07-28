@@ -3924,7 +3924,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             "Active subscription": "当前订阅",
                 "Copilot Free": "Copilot 免费版",
-                    "Upgrade Copilot": "升级 Copilot", // 过于啰嗦直接省略
+                    "Upgrade Copilot": "升级 Copilot",
                     "You can upgrade to Copilot Pro at any time. Check out this": "您可以随时升级至 Copilot 专业版。详情查看",
                         "documentation": "文档",
                         "for more details.": "。",
@@ -3932,6 +3932,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Current GitHub base plan": "当前 GitHub 基础计划",
                 "Compare base plans": "比较基础计划",
                 "Upgrade to GitHub Pro": "升级至 GitHub 专业版",
+                // 有付费计划
+                    "Switch to yearly billing": "切换至年度计费",
+                    "Switch to monthly billing": "切换至月度计费",
 
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing information": "账单信息",
