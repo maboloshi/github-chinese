@@ -3681,6 +3681,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
                     "Showing currently applied discounts for your organization.": "显示您组织当前应用的折扣。", // 组织
                     "* As per current pricing": "* 根据当前定价方案",
+                    "Download your Copilot premium request usage report": "下载您的 Copilot 高级请求使用报告：",
+                        "here": "下载",
 
             "Next payment due": "下一次应付款",
 
