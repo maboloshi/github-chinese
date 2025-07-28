@@ -695,7 +695,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
         // 右上角 Copilot 下拉菜单
             "Chat with Copilot": "与 Copilot 聊天",
-            "Open Copilot…": "打开 Copilot…",
+            "Open Copilot… (Alt+Shift+C)": "打开 Copilot… (Alt+Shift+C)",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
@@ -3922,6 +3922,17 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
 
+            "Active subscription": "当前订阅",
+                "Copilot Free": "Copilot 免费版",
+                    "Upgrade Copilot": "升级 Copilot", // 过于啰嗦直接省略
+                    "You can upgrade to Copilot Pro at any time. Check out this": "您可以随时升级至 Copilot 专业版。详情查看",
+                        "documentation": "文档",
+                        "for more details.": "。",
+
+            "Current GitHub base plan": "当前 GitHub 基础计划",
+                "Compare base plans": "比较基础计划",
+                "Upgrade to GitHub Pro": "升级至 GitHub 专业版",
+
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing information": "账单信息",
                 "You have not added any billing information.": "您尚未添加账单信息。",
@@ -5284,6 +5295,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Member": "成员",
 
             "Getting started": "开始使用",
+                "complete": "完成",
             "Install Copilot in your editor": "在您的编辑器中安装 Copilot",
             "Ask about coding problems and get code completions while you work.": "在工作时询问问题并获得代码补全。",
             "Chat with Copilot anywhere": "随时随地与 Copilot 聊天",
@@ -5451,6 +5463,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
     ],
 };
 
@@ -24270,6 +24283,8 @@ I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
             "Part of an organization? Upgrade to": "属于某个组织吗？升级到",
                 "Copilot Business": "Copilot 商业版",
                 "to enable across teams.": "，以便在整个团队中启用。",
+
+        "Upgrade now": "现在升级",
     },
     "regexp": [],
 };
