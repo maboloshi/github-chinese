@@ -25515,6 +25515,7 @@ I18N["zh-CN"]["copilot"] = {
             "Open": "打开",
                 "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
                 "Failed": "失败",
+                "Ready for review": "准备审查",
             "Closed": "关闭",
                 "· started": "· 开始于",
                 "ago ·": "之前",
