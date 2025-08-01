@@ -1418,6 +1418,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Issue API": "议题 API",
                     "tool": "工具",
 
+            // 聊天内容 - 创建拉取请求
+                "Are you sure?": "您确定吗？",
+                    "Are you sure you wish to execute the \"Create pull request with Copilot coding agent\" tool?": "您确定要执行“使用 Copilot 编程智能体创建拉取请求”工具吗？",
+                    "Allow": "允许",
+                    "Dismiss": "拒绝",
+
+                "accepted": "允许",
+                    "the action": "此操作",
+
             // 引用
                 "More reference options": "更多引用选项",
                     "Attach to chat": "附加至聊天",
@@ -3692,6 +3701,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "month": "月",
 
             "Metered usage": "计费用量",
+                "Usage by products": "按产品分类", // 省略重复内容
                 // 时间段，这部分走正则
                     "Today": "今天",
                     "Current month": "这个月",
@@ -3735,8 +3745,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                             "Billable licenses are only available for the 'Current month' timeframe.": "计费许可仅适用于“当前月”时间段。",
                             "Learn more about billable licenses": "了解更多关于可计费许可证的信息",
                         "Showing total unique licenses billed for your enterprise. Actual billed amount for each license is prorated based on when it is added during the billing cycle.": "显示您企业所计费的唯一许可证总数。每个许可证的实际计费金额将根据其在计费周期内添加的时间按比例分摊。",
-                    "Copilot premium requests": "Copilot 高级版请求",
-                        "About Copilot premium requests": "关于 Copilot 高级版请求",
+                    "Copilot premium requests": "Copilot 高级请求",
+                        "About Copilot premium requests": "关于 Copilot 高级请求",
                         "If enabled, additional premium requests beyond the included amount for each license will be billed.": "若启用此功能，每个许可证所包含额度之外的额外高级请求将另行计费。",
                         "Manage Copilot policy": "管理 Copilot 策略",
                     // 模型
@@ -4249,6 +4259,19 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
     "regexp": [ // 正则翻译
 
         // billing 概况页面
+        [/(?:Gross metered usage|Included usage discounts) for (.+)-(.+)./, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
+            //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+            //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+            return `${translatedP1}-${translatedP2}`;
+        }],
+        //[/Included usage discounts for (.+) - (.+)./, (match, p1, p2) => {
+        //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+        //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+        //    return `${translatedP1}-${translatedP2}`;
+        //}],
         // 当前包含用量 - 详情 对话框
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
             [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
@@ -4317,6 +4340,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             }],
 
         // 计费用量 - 底下计算部分
+            [/Cost calculated based on additional (\d+) premium requests?/, "费用计算基于额外的 $1 高级请求"],
             [/Cost calculated based on additional (\d+) premium requests for Copilot and Spark./, "费用计算基于 Copilot 和 Spark 的 $1 项额外高级请求。"],
             [/Cost calculated based on additional (\d+) token units/, "费用根据额外的 $1 项令牌单位计算"],
 
