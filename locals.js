@@ -3769,6 +3769,32 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 使用情况 https://github.com/settings/billing/usage
             "Get usage report": "获取使用情况报告",
+                "Metered billing usage report": "计费用量",
+                    "Provides a breakdown of all metered usage": "提供所有计量使用情况的详细分解",
+                    // 窗口
+                    "Select report type:": "选择报告类型：", // 下方小字走正则
+                        "Summarized": "总结",
+                            "Metered usage by repository for up to 1 year": "每个仓库的计量使用情况，最长可追溯至一年",
+                        "Detailed": "详细",
+                            "Metered usage by username and workflow for up to 31 days": "每个用户和工作流的计量使用情况，最长可追溯至 31 天",
+                        "Legacy": "传统",
+                            "Metered usage before the billing transition, until April 04, 2025": "计费切换前的计量使用情况，截至2025年4月4日",
+                    "Select time frame": "选择时间段",
+                        "This year": "今年",
+                        "Custom range": "自定义",
+                            "Up to 1 year": "最长 1 年",
+                            "Up to 31 days": "最长 31 天",
+                            "Choose date...": "选择日期...",
+                                "Su": "日",
+                                "Mo": "一",
+                                "Tu": "二",
+                                "We": "三",
+                                "Th": "四",
+                                "Fr": "五",
+                                "Sa": "六",
+                    "Email me the report": "发送",
+                "Copilot premium requests usage report": "Copilot 高级请求",
+                    "Provides a per user breakdown of requests exhausted and their monthly quota for the current billing period.": "提供每个用户的请求耗尽情况及其当前计费周期的月度配额。",
             "Search or filter usage": "搜索或筛选使用情况",
 
             //"Group: None": "分组：无",
@@ -4383,9 +4409,22 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
                 return `${translatedDate}`; // 有标题作为上下文，直接省略，只剩日期
             }],
-            [/(\d+) min/, "$1 分"],
+            [/(\d+) min$/, "$1 分"],
             [/([\d,+]\.\d+|[\d,+]) GB-hr/, "$1 GB/时"],
             [/(\d+\.\d+) hr/, "$1 小时"],
+
+        // 使用情况
+            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。可能需要大约 30 分钟。报告准备好后，我们会发送电子邮件到 $1。"],
+            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。报告准备好后，我们会发送电子邮件到 $1。"],
+            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用报告请求正在处理。报告准备好后，请到 $1 查收。"],
+            // 获取使用报告窗口
+            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用报告准备好后，将通过电子邮件发送到 $1。"],
+              // 传统选项
+              //[/Metered usage before the billing transition, until (.+)/, (match, p1) => {
+              //  const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+              //  const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+              //  return `计费切换前的计量使用情况，截至${translatedDate}`;
+              //}],
 
         // 账户预算 https://github.com/settings/billing/budgets
             [/(\d+) budgets?/, "$1 预算"],
