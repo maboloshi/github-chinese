@@ -5312,7 +5312,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
-                "Suggestions matching public code (duplication detection filter)": "公共代码匹配的建议（重复检测过滤器）",
+                "Suggestions matching public code": "公共代码匹配的建议",
                     "Copilot can allow or block suggestions matching public code. Learn more about": "Copilot 可允许或阻止与公共代码匹配的建议。了解更多关于",
                     "code suggestions": "代码建议",
                     "Allowed": "允许",
@@ -5555,7 +5555,7 @@ I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性与�
                             // [/Security settings updated for ([^ ]+)\'s repositories./, "更新了 $1 的仓库的安全设置。"],
 
             // 仓库
-                "Advanced Security features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
+                 "Security and analysis features help keep your repositories secure and updated.": "安全和分析功能有助于确保您的代码仓库安全且保持更新。",
 
             "Disable all": "禁用全部",
             "Enable all": "启用全部",
@@ -12923,7 +12923,7 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             "Revisions": "修订",
             "Compare revisions": "对比修订",
                 "Invalid or empty diff.": "无效或无差异。",
-        
+
         // wiki修订间差异 /<user-name>/<repo-name>/wiki/<page name>/_compare
             "Revert changes": "撤销更改",
             "Back to top": "回到顶部",
