@@ -13524,6 +13524,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             // 附加文件
             "Attach binaries by dropping them here or selecting them.": "拖拽文件到这来或选择它们来附加文件。",
             "Uploading your release now…": "正在上传到您的发行版…",
+            "Uploading your file now…": "正在上传您的文件…",
             "An attachment with that filename already exists.": "同名附件已经存在。",
             "Try a different file.": "请尝试不同的文件。",
             "We don’t support that file type.  try zipping it.": "我们不支持该文件类型，请尝试压缩它。",
