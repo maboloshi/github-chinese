@@ -4096,6 +4096,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Manage your organizations": "管理您的组织",
                 "Create a new organization": "创建新组织",
 
+            "Start your first organization": "开始您的第一个组织",
+                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "通过 CI/CD、Dependabot 以及全球最大的开发者社区，GitHub 为你的团队提供了交付更优质软件所需的一切，让开发更高效、更快捷。",
+                "Create an organization": "创建组织",
+
             "Marketplace apps": "市场应用",
                 "Change plan": "更改计划",
                 "Cancel plan": "取消计划",
