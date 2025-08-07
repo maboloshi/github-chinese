@@ -3682,11 +3682,13 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             // 概况
                 "Current metered usage": "当前计费用量",
+                    "Gross metered usage for": " ",
                     "Showing gross metered usage for your account.": "显示您账户的总计费用量。",
                     "Showing gross metered usage for your organization.": "显示您组织的总计费用量。", // 组织
 
                 "Current included usage": "当前包含用量",
                     "More details": "详情",
+                    "Included usage discounts for": " ",
                     "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
                     "Showing currently applied discounts for your organization.": "显示您组织当前应用的折扣。", // 组织
                     "* As per current pricing": "* 根据当前定价方案",
@@ -4289,7 +4291,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
     "regexp": [ // 正则翻译
 
         // billing 概况页面
-        [/(?:Gross metered usage|Included usage discounts) for (.+)-(.+)./, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
+        [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+)./, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
             //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
