@@ -5444,6 +5444,9 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "OpenAI GPT-4.1 in Copilot": "GPT-4.1 模型",
                     "You can use the latest OpenAI GPT-4.1 model.": "您可以使用 GPT-4.1 模型。",
                     "Learn more about how GitHub Copilot serves OpenAI GPT-4.1.": "了解更多关于 GitHub Copilot 如何为 GPT-4.1 提供服务。",
+                "OpenAI GPT-5 in Copilot": "GPT-5 模型",
+                    "You can use the latest OpenAI GPT-5 model.": "您可以使用 GPT-5 模型。",
+                    "Learn more about how GitHub Copilot serves OpenAI GPT-5.": "了解更多关于 GitHub Copilot 如何为 GPT-5 提供服务。",
                 "Dashboard entry point": "仪表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允许登陆 GitHub.com 时即时聊天",
 
@@ -5474,6 +5477,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Premium requests": "高级请求",
                 "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. You can enable additional premium requests in the": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。您可以在以下位置启用额外的高级请求：",
                 "Billing settings": "账单设置",
+                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。要启用额外的高级请求，请",
+                "update your Copilot premium request budget": "更新您的 Copilot 高级请求预算",
 
             "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
