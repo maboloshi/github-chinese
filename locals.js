@@ -695,7 +695,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
         // 右上角 Copilot 下拉菜单
             "Chat with Copilot": "与 Copilot 聊天",
-            "Open Copilot…": "打开 Copilot…",
+            "Open Copilot… (Alt+Shift+C)": "打开 Copilot… (Alt+Shift+C)",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
@@ -1417,6 +1417,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Copilot used the": "Copilot 已使用",
                     "Issue API": "议题 API",
                     "tool": "工具",
+
+            // 聊天内容 - 创建拉取请求
+                "Are you sure?": "您确定吗？",
+                    "Are you sure you wish to execute the \"Create pull request with Copilot coding agent\" tool?": "您确定要执行“使用 Copilot 编程智能体创建拉取请求”工具吗？",
+                    "Allow": "允许",
+                    "Dismiss": "拒绝",
+
+                "accepted": "允许",
+                    "the action": "此操作",
 
             // 引用
                 "More reference options": "更多引用选项",
@@ -3673,14 +3682,18 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             // 概况
                 "Current metered usage": "当前计费用量",
+                    "Gross metered usage for": " ",
                     "Showing gross metered usage for your account.": "显示您账户的总计费用量。",
                     "Showing gross metered usage for your organization.": "显示您组织的总计费用量。", // 组织
 
                 "Current included usage": "当前包含用量",
                     "More details": "详情",
+                    "Included usage discounts for": " ",
                     "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
                     "Showing currently applied discounts for your organization.": "显示您组织当前应用的折扣。", // 组织
                     "* As per current pricing": "* 根据当前定价方案",
+                    "Download your Copilot premium request usage report": "下载您的 Copilot 高级请求使用报告：",
+                        "here": "下载",
 
             "Next payment due": "下一次应付款",
 
@@ -3690,6 +3703,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "month": "月",
 
             "Metered usage": "计费用量",
+                "Usage by products": "按产品分类", // 省略重复内容
                 // 时间段，这部分走正则
                     "Today": "今天",
                     "Current month": "这个月",
@@ -3733,8 +3747,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                             "Billable licenses are only available for the 'Current month' timeframe.": "计费许可仅适用于“当前月”时间段。",
                             "Learn more about billable licenses": "了解更多关于可计费许可证的信息",
                         "Showing total unique licenses billed for your enterprise. Actual billed amount for each license is prorated based on when it is added during the billing cycle.": "显示您企业所计费的唯一许可证总数。每个许可证的实际计费金额将根据其在计费周期内添加的时间按比例分摊。",
-                    "Copilot premium requests": "Copilot 高级版请求",
-                        "About Copilot premium requests": "关于 Copilot 高级版请求",
+                    "Copilot premium requests": "Copilot 高级请求",
+                        "About Copilot premium requests": "关于 Copilot 高级请求",
                         "If enabled, additional premium requests beyond the included amount for each license will be billed.": "若启用此功能，每个许可证所包含额度之外的额外高级请求将另行计费。",
                         "Manage Copilot policy": "管理 Copilot 策略",
                     // 模型
@@ -3757,6 +3771,32 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // 使用情况 https://github.com/settings/billing/usage
             "Get usage report": "获取使用情况报告",
+                "Metered billing usage report": "计费用量",
+                    "Provides a breakdown of all metered usage": "提供所有计量使用情况的详细分解",
+                    // 窗口
+                    "Select report type:": "选择报告类型：", // 下方小字走正则
+                        "Summarized": "总结",
+                            "Metered usage by repository for up to 1 year": "每个仓库的计量使用情况，最长可追溯至一年",
+                        "Detailed": "详细",
+                            "Metered usage by username and workflow for up to 31 days": "每个用户和工作流的计量使用情况，最长可追溯至 31 天",
+                        "Legacy": "传统",
+                            "Metered usage before the billing transition, until April 04, 2025": "计费切换前的计量使用情况，截至2025年4月4日",
+                    "Select time frame": "选择时间段",
+                        "This year": "今年",
+                        "Custom range": "自定义",
+                            "Up to 1 year": "最长 1 年",
+                            "Up to 31 days": "最长 31 天",
+                            "Choose date...": "选择日期...",
+                                "Su": "日",
+                                "Mo": "一",
+                                "Tu": "二",
+                                "We": "三",
+                                "Th": "四",
+                                "Fr": "五",
+                                "Sa": "六",
+                    "Email me the report": "发送",
+                "Copilot premium requests usage report": "Copilot 高级请求",
+                    "Provides a per user breakdown of requests exhausted and their monthly quota for the current billing period.": "提供每个用户的请求耗尽情况及其当前计费周期的月度配额。",
             "Search or filter usage": "搜索或筛选使用情况",
 
             //"Group: None": "分组：无",
@@ -3922,6 +3962,20 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Web-based support": "基于网络的支持",
                 "See all features and compare plans": "查看所有功能并比较计划",
 
+            "Active subscription": "当前订阅",
+                "Copilot Free": "Copilot 免费版",
+                    "Upgrade Copilot": "升级 Copilot",
+                    "You can upgrade to Copilot Pro at any time. Check out this": "您可以随时升级至 Copilot 专业版。详情查看",
+                        "documentation": "文档",
+                        "for more details.": "。",
+
+            "Current GitHub base plan": "当前 GitHub 基础计划",
+                "Compare base plans": "比较基础计划",
+                "Upgrade to GitHub Pro": "升级至 GitHub 专业版",
+                // 有付费计划
+                    "Switch to yearly billing": "切换至年度计费",
+                    "Switch to monthly billing": "切换至月度计费",
+
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing information": "账单信息",
                 "You have not added any billing information.": "您尚未添加账单信息。",
@@ -4043,6 +4097,10 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             // [/In addition to your personal account, you manage (\d+) organizations?./, "除个人账户外，您还可以管理 $1 个组织。"],
             "Manage your organizations": "管理您的组织",
                 "Create a new organization": "创建新组织",
+
+            "Start your first organization": "开始您的第一个组织",
+                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "通过 CI/CD、Dependabot 以及全球最大的开发者社区，GitHub 为你的团队提供了交付更优质软件所需的一切，让开发更高效、更快捷。",
+                "Create an organization": "创建组织",
 
             "Marketplace apps": "市场应用",
                 "Change plan": "更改计划",
@@ -4233,6 +4291,19 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
     "regexp": [ // 正则翻译
 
         // billing 概况页面
+        [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+)./, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
+            //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+            //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+            return `${translatedP1}-${translatedP2}`;
+        }],
+        //[/Included usage discounts for (.+) - (.+)./, (match, p1, p2) => {
+        //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
+        //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
+        //    return `${translatedP1}-${translatedP2}`;
+        //}],
         // 当前包含用量 - 详情 对话框
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
             [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
@@ -4301,6 +4372,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             }],
 
         // 计费用量 - 底下计算部分
+            [/Cost calculated based on additional (\d+) premium requests?/, "费用计算基于额外的 $1 高级请求"],
             [/Cost calculated based on additional (\d+) premium requests for Copilot and Spark./, "费用计算基于 Copilot 和 Spark 的 $1 项额外高级请求。"],
             [/Cost calculated based on additional (\d+) token units/, "费用根据额外的 $1 项令牌单位计算"],
 
@@ -4343,9 +4415,22 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
                 return `${translatedDate}`; // 有标题作为上下文，直接省略，只剩日期
             }],
-            [/(\d+) min/, "$1 分"],
+            [/(\d+) min$/, "$1 分"],
             [/([\d,+]\.\d+|[\d,+]) GB-hr/, "$1 GB/时"],
             [/(\d+\.\d+) hr/, "$1 小时"],
+
+        // 使用情况
+            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。可能需要大约 30 分钟。报告准备好后，我们会发送电子邮件到 $1。"],
+            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。报告准备好后，我们会发送电子邮件到 $1。"],
+            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用报告请求正在处理。报告准备好后，请到 $1 查收。"],
+            // 获取使用报告窗口
+            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用报告准备好后，将通过电子邮件发送到 $1。"],
+              // 传统选项
+              //[/Metered usage before the billing transition, until (.+)/, (match, p1) => {
+              //  const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+              //  const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+              //  return `计费切换前的计量使用情况，截至${translatedDate}`;
+              //}],
 
         // 账户预算 https://github.com/settings/billing/budgets
             [/(\d+) budgets?/, "$1 预算"],
@@ -5284,6 +5369,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Member": "成员",
 
             "Getting started": "开始使用",
+                "complete": "完成",
             "Install Copilot in your editor": "在您的编辑器中安装 Copilot",
             "Ask about coding problems and get code completions while you work.": "在工作时询问问题并获得代码补全。",
             "Chat with Copilot anywhere": "随时随地与 Copilot 聊天",
@@ -5451,6 +5537,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
     ],
 };
 
@@ -7669,6 +7756,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         //[/Connect this repository to apps ([^ ]+) is subscribed to/, "将此仓库连接到 $1 订阅的应用程序"],
         [/Auto-installed by ([^ ]+)/, "由 $1 自动安装"],
         [/(\d+) apps? selected/, "已选择 $1 个应用"],
+        [/The repository ([^ ]+) already exists on this account/, "仓库 $1 已存在于此账户"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -8902,6 +8990,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Helpful resources": "帮助性资源",
             "Create more": "创建多个",
             "Write with Copilot": "请 Copilot 编写",
+                "Navigate to Copilot Chat": "导航到 Copilot 聊天",
+                    "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
+                    "Keep editing": "否", // 实际作用：返回编写页面
+                    "Go to Copilot": "是", // 实际作用：前往 Copilot 页面
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
@@ -10282,6 +10374,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Open menu": "操作",
                 "View verbose logs": "查看日志",
 
+            "Spinning up dev environment…": "正在启动开发环境...",
+            "Starting MCP servers…": "正在启动 MCP 服务器...",
+            "Making sure Copilot feels comfortable in the cockpit…": "确保 Copilot 在驾驶舱中感到舒适...",
+            "Fueling the runtime engines…": "为运行时引擎加油...",
             "Copilot is working…": "Copilot 工作中…",
 
             "Copilot stopped work due to an error": "Copilot 因错误停工",
@@ -13363,7 +13459,8 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
-            "New release": "新建发行版",
+            "New Release": "新建发行版", // 上方
+            "New release": "新建发行版", // 下方
 
             "Release notes": "发行版说明",
                 "Select a previous tag to create generated release notes": "选择一个先前的标签以生成发行说明",
@@ -13433,6 +13530,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             // 附加文件
             "Attach binaries by dropping them here or selecting them.": "拖拽文件到这来或选择它们来附加文件。",
             "Uploading your release now…": "正在上传到您的发行版…",
+            "Uploading your file now…": "正在上传您的文件…",
             "An attachment with that filename already exists.": "同名附件已经存在。",
             "Try a different file.": "请尝试不同的文件。",
             "We don’t support that file type.  try zipping it.": "我们不支持该文件类型，请尝试压缩它。",
@@ -24261,6 +24359,8 @@ I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
             "Part of an organization? Upgrade to": "属于某个组织吗？升级到",
                 "Copilot Business": "Copilot 商业版",
                 "to enable across teams.": "，以便在整个团队中启用。",
+
+        "Upgrade now": "现在升级",
     },
     "regexp": [],
 };
@@ -25137,6 +25237,8 @@ I18N["zh-CN"]["copilot"] = {
             "Conversation failed to load": "加载失败",
                 "Reload the page": "重载页面。",
                 "to try again.": " ",
+        // 高级请求数已用完
+            "You have reached your monthly limit for premium requests. Enable additional requests or switch to the default model. Limit resets on.": "你已达到本月高级请求的额度上限。请启用额外请求或切换到默认模型。额度将重置。",
         // 左侧边栏
             "Open sidebar": "打开侧边栏",
             "Close sidebar": "关闭侧边栏",
@@ -25268,6 +25370,9 @@ I18N["zh-CN"]["copilot"] = {
                         "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
                         "Privacy Policy": "隐私政策",
                         "Send": "发送",
+
+            "Upgrade to Pro": "升级至专业版",
+                "to access higher limits and premium models.": "以获取更高额度和高级模型。",
 
             "Open panel": "打开面板",
             "Close panel": "关闭面板",
@@ -25459,7 +25564,7 @@ I18N["zh-CN"]["copilot"] = {
 
                 "View all attachments": "查看所有附件",
 
-        // 代理 https://github.com/copilot/agents
+        // 智能体 https://github.com/copilot/agents
             "Copilot coding agent now uses fewer premium requests!": "Copilot 编程智能体现在使用更少的高级请求！",
                 "From now on, each session uses just one premium request.": "从现在起，每个会话只会使用一次高级请求。",
 
@@ -25472,12 +25577,16 @@ I18N["zh-CN"]["copilot"] = {
             // 仓库选择
                 "Select an item": "选择一项",
                     "Repos": "仓库",
+                "Switch branches": "选择分支",
+                    "Find a branch...": "查找分支...",
+                "default": "默认",
 
             "Start task": "开始任务",
 
             "Open": "打开",
                 "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
                 "Failed": "失败",
+                "Ready for review": "准备审查",
             "Closed": "关闭",
                 "· started": "· 开始于",
                 "ago ·": "之前",
