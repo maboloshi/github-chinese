@@ -20019,6 +20019,7 @@ I18N["zh-CN"]["explore"] = { // 探索页面
                 "Staff pick": "员工精选",
                 "This recommendation was created by GitHub staff": "此推荐由 GitHub 工作人员创建",
                 "Upcoming event recommended by GitHub": "GitHub 推荐的即将举行的活动",
+                "For the Love of Code submission": "代码之爱投稿", // 机翻
 
             "Trending repository": "热门仓库", // 未登录
             "Popular topic": "热门主题", // 未登录
