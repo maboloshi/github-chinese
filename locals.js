@@ -599,7 +599,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Customer Stories": "客户案例",
                 "Software Development": "软件开发",
                 "Partners": "合作洽谈",
-                "Executive Insights": "智慧企业",
+                "Executive Insights": "高管洞察,
                 "View all": "查看全部",
             "Open Source": "开源",
                 "GitHub Sponsors": "GitHub 赞助者",
