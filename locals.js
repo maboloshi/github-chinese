@@ -683,6 +683,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
         // 右上角新建按钮下拉菜单
             "Create new...": "新建...",
+            "Create new…": "新建…",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
                 "New agent task": "新建智能体任务",
