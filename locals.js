@@ -662,6 +662,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Explore": "探索",
             "Marketplace": "市场",
 
+            "Download Copilot": "下载 Copilot", // 小屏模式
+
             "Filter repositories": "筛选仓库",
             "Close filter": "关闭筛选器",
 
