@@ -576,7 +576,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "By size": "規模",
                     "Enterprises": "企業",
                     "Small and medium teams": "中小團隊",
-                    "Startups": "創業",
+                    "Startups": "初創公司",
                     "Nonprofits": "非盈利組織",
                 "By industry": "工業",
                     "Healthcare": "健康護理",
@@ -593,18 +593,18 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Resources": "資源",
                 "Innersource": "內部源",
                 "Learning Pathways": "學習路徑",
-                "Events & Webinars": "事件 & 網絡研討會",
-                "Ebooks & Whitepapers": "電子書 & 白皮書",
+                "Events & Webinars": "社區活動",
+                "Ebooks & Whitepapers": "資料庫",
                 "White papers, Ebooks, Webinars": "白皮書、電子書、網絡研討會",
                 "Customer Stories": "客戶案例",
                 "Software Development": "軟體開發",
-                "Partners": "合作",
+                "Partners": "合作洽談",
                 "Executive Insights": "高管洞察",
                 "View all": "查看全部",
             "Open Source": "開源",
                 "GitHub Sponsors": "GitHub 贊助者",
                     "Fund open source developers": "資助開源開發人員",
-                "The ReadME Project": "自述文件專案",
+                "The ReadME Project": "ReadME 專案",
                     "GitHub community articles": "GitHub 社區文章",
                 // 倉庫
                     "Topics": "主題",
@@ -683,6 +683,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
         // 右上角新建按鈕下拉菜單
             "Create new...": "新建...",
+            "Create new…": "新建…",
                 "New repository": "新建倉庫",
                 "Import repository": "導入倉庫",
                 "New agent task": "新建智能體任務",
@@ -695,7 +696,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
         // 右上角 Copilot 下拉菜單
             "Chat with Copilot": "與 Copilot 聊天",
-            "Open Copilot… (Alt+Shift+C)": "打開 Copilot… (Alt+Shift+C)",
+            "Open Copilot…": "打開 Copilot…",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
@@ -3682,11 +3683,13 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
 
             // 概況
                 "Current metered usage": "當前計費用量",
+                    "Gross metered usage for": " ",
                     "Showing gross metered usage for your account.": "顯示您賬戶的總計費用量。",
                     "Showing gross metered usage for your organization.": "顯示您組織的總計費用量。", // 組織
 
                 "Current included usage": "當前包含用量",
                     "More details": "詳情",
+                    "Included usage discounts for": " ",
                     "Showing currently applied discounts for your account.": "顯示您賬戶當前應用的折扣。",
                     "Showing currently applied discounts for your organization.": "顯示您組織當前應用的折扣。", // 組織
                     "* As per current pricing": "* 根據當前定價方案",
@@ -4096,6 +4099,10 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Manage your organizations": "管理您的組織",
                 "Create a new organization": "創建新組織",
 
+            "Start your first organization": "開始您的第一個組織",
+                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "通過 CI/CD、Dependabot 以及全球最大的開發者社區，GitHub 為你的團隊提供了交付更優質軟體所需的一切，讓開發更高效、更快捷。",
+                "Create an organization": "創建組織",
+
             "Marketplace apps": "市場應用",
                 "Change plan": "更改計劃",
                 "Cancel plan": "取消計劃",
@@ -4285,7 +4292,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
     "regexp": [ // 正則翻譯
 
         // billing 概況頁面
-        [/(?:Gross metered usage|Included usage discounts) for (.+)-(.+)./, (match, p1, p2) => { // 概況下方小字，過於囉嗦直接省略
+        [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+)./, (match, p1, p2) => { // 概況下方小字，過於囉嗦直接省略
             //const translatedP1 = I18N["zh-TW"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-TW"]["public"]["time-regexp"][p2] || p2;
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
@@ -5438,6 +5445,9 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "OpenAI GPT-4.1 in Copilot": "GPT-4.1 模型",
                     "You can use the latest OpenAI GPT-4.1 model.": "您可以使用 GPT-4.1 模型。",
                     "Learn more about how GitHub Copilot serves OpenAI GPT-4.1.": "瞭解更多關於 GitHub Copilot 如何為 GPT-4.1 提供服務。",
+                "OpenAI GPT-5 in Copilot": "GPT-5 模型",
+                    "You can use the latest OpenAI GPT-5 model.": "您可以使用 GPT-5 模型。",
+                    "Learn more about how GitHub Copilot serves OpenAI GPT-5.": "瞭解更多關於 GitHub Copilot 如何為 GPT-5 提供服務。",
                 "Dashboard entry point": "儀表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允許登陸 GitHub.com 時即時聊天",
 
@@ -5468,6 +5478,8 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Premium requests": "高級請求",
                 "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. You can enable additional premium requests in the": "請注意，顯示的使用百分比可能會有延遲。您計劃的高級請求權限將在下個月初重置。您可以在以下位置啟用額外的高級請求：",
                 "Billing settings": "賬單設置",
+                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "請注意，顯示的使用百分比可能會有延遲。您計劃的高級請求權限將在下個月初重置。要啟用額外的高級請求，請",
+                "update your Copilot premium request budget": "更新您的 Copilot 高級請求預算",
 
             "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
@@ -7619,6 +7631,8 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
                 "Copy all branches from": "複製所有",
                 "and not just the default branch.": "倉庫分支，而不僅僅是默認分支。",
 
+                "If enabled, all branches from the template repository will be included.": "如果啟用，將包含來自模板倉庫的所有分支。",
+
         // 導入倉庫 第一頁 https://github.com/new/import
             "Import your project to GitHub": "將您的專案導入到 GitHub",
                 "Import all the files, including revision history, from another version control system.": "導入的所有文件，包括修訂歷史記錄，來自其他版本控制系統。",
@@ -7750,6 +7764,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
         //[/Connect this repository to apps ([^ ]+) is subscribed to/, "將此倉庫連接到 $1 訂閱的應用程式"],
         [/Auto-installed by ([^ ]+)/, "由 $1 自動安裝"],
         [/(\d+) apps? selected/, "已選擇 $1 個應用"],
+        [/The repository ([^ ]+) already exists on this account/, "倉庫 $1 已存在於此賬戶"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 個組織"], // 用戶 浮動信息卡
         // [/(\d+) repositor(y|ies)/, "$1 個倉庫"], // 組織  浮動信息卡
@@ -9597,6 +9612,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                 // Copilot
                     "Describe a change you'd like to make to this pull request, such as adding tests or documentation...": "描述您想對此拉取請求進行的更改，例如添加測試或文檔…",
                     "Start task": "開始任務",
+                    "You can ask Copilot to make changes to this pull request by mentioning @copilot in a comment.": "您可以在評論中提及 @copilot，讓 Copilot 對此拉取請求進行更改。",
 
             // 自動修復漏洞 提示
                 "This automated pull request fixes a": "這個自動拉取請求將修復了一個",
@@ -13523,6 +13539,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
             // 附加文件
             "Attach binaries by dropping them here or selecting them.": "拖拽文件到這來或選擇它們來附加文件。",
             "Uploading your release now…": "正在上傳到您的發行版…",
+            "Uploading your file now…": "正在上傳您的文件…",
             "An attachment with that filename already exists.": "同名附件已經存在。",
             "Try a different file.": "請嘗試不同的文件。",
             "We don’t support that file type.  try zipping it.": "我們不支持該文件類型，請嘗試壓縮它。",
@@ -18235,12 +18252,12 @@ I18N["zh-TW"]["homepage"] = { // 未登錄的首頁
 
         "Company": "公司",
         "Customer stories": "客戶案例",
-        "The ReadME Project": "自述文件專案",
-        "Careers": "職業",
+        "The ReadME Project": "ReadME 專案",
+        "Careers": "招賢納士",
         "Press": "新聞",
         "Inclusion": "包容性",
-        "Newsroom": "編輯部",
-        "Social Impact": "社會影響",
+        "Newsroom": "媒體",
+        "Social Impact": "社會責任",
         "Shop": "商店",
 
         "Sitemap": "網站地圖",
@@ -20005,6 +20022,7 @@ I18N["zh-TW"]["explore"] = { // 探索頁面
                 "Staff pick": "員工精選",
                 "This recommendation was created by GitHub staff": "此推薦由 GitHub 工作人員創建",
                 "Upcoming event recommended by GitHub": "GitHub 推薦的即將舉行的活動",
+                "For the Love of Code submission": "程式碼之愛投稿", // 機翻
 
             "Trending repository": "熱門倉庫", // 未登錄
             "Popular topic": "熱門主題", // 未登錄
@@ -25579,6 +25597,7 @@ I18N["zh-TW"]["copilot"] = {
                 "No open tasks yet. Start a new task to see it here.": "還沒有打開的任務。開始一個新任務後即可在這裡查看。",
                 "Failed": "失敗",
                 "Ready for review": "準備審查",
+                "· Initializing pull request…": "· 初始化拉取請求…",
             "Closed": "關閉",
                 "· started": "· 開始於",
                 "ago ·": "之前",
