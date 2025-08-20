@@ -706,6 +706,17 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Immersive": "全屏",
                 "Download for": "下载插件",
 
+            "Open agents panel": "打开智能体面板",
+                "Start a task with Copilot coding agent": "使用 Copilot 编程智能体开始任务",
+                    "Describe your task in natural language. Copilot will work in the background and open a pull request for your review.": "请用自然语言描述您的任务。Copilot 会在后台工作，并创建一个拉取请求供您审核。",
+
+                "Agent tasks": "智能体任务",
+                    "Switch branches": "切换分支",
+                        "Filter branches": "查找分支",
+                        "default": "默认",
+
+                "Recent tasks": "近期任务",
+
         // 右上角个人图标下拉菜单
             "Account switcher": "账户切换",
                 "Add account": "添加账户",
