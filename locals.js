@@ -3065,13 +3065,13 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Billing and plans": "账单和计划", // 旧版，暂时加回
             "Plans and usage": "计划和使用情况",
             "Spending limits": "支出限额",
-        "Billing and licensing": "账单和许可",
+        "Billing and licensing": "账单和订阅",
             "New": "新",
             "Usage": "使用情况",
             "Budgets and alerts": "预算和警报",
-            "Licensing": "许可",
+            "Licensing": "订阅",
             "Payment information": "支付信息",
-            "Payment history": "支付历史",
+            "Payment history": "账单",
             "Additional billing details": "其他账单",
             "Education benefits": "教育福利",
         "Emails": "电子邮箱",
@@ -3696,13 +3696,13 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             // 概况
                 "Current metered usage": "当前计费用量",
-                    "Gross metered usage for": " ",
+                    "Gross metered usage for": "总计费用量",
                     "Showing gross metered usage for your account.": "显示您账户的总计费用量。",
                     "Showing gross metered usage for your organization.": "显示您组织的总计费用量。", // 组织
 
                 "Current included usage": "当前包含用量",
                     "More details": "详情",
-                    "Included usage discounts for": " ",
+                    "Included usage discounts for": "包含的折扣",
                     "Showing currently applied discounts for your account.": "显示您账户当前应用的折扣。",
                     "Showing currently applied discounts for your organization.": "显示您组织当前应用的折扣。", // 组织
                     "* As per current pricing": "* 根据当前定价方案",
@@ -4560,7 +4560,7 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
         // Emails 电子邮箱 https://github.com/settings/emails
             // 黄框警告
                 "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
-
+                "Emails you can use to sign in to your account. Verified emails can be used as the author or committer addresses for web-based Git operations, e.g. edits and merges.":'可用于登录您账户的电子邮箱。经过验证的电子邮箱可以用作基于网页的 Git 操作（如编辑和合并）的作者或提交者地址。',
             // [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)/, "可用于登录账户的电子邮箱。这些邮箱不会用作基于网页的 Git 操作（如编辑和合并）的 “发件人” 地址。所有基于网页的 Git 操作都将关联至 $1。"],
 
             "Primary": "主账户",
