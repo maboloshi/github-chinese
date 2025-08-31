@@ -15448,6 +15448,10 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 // 顶部提醒
                     // [/Default branch changed to ([^ ])/, "默认分支更改为 $1"]
 
+            // 发行版
+                "Enable release immutability": "启用发行版不可修改",
+                    "Disallow assets and tags from being modified once a release is published.": "禁止在发布发行版后修改资产和标签。",
+
             "Social preview": "社交预览",
             // 关于私有库提醒
             "You can upload a social image, but it will not be visible publicly while": "您可以上传社交图片，但当",
