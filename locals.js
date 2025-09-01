@@ -8877,6 +8877,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
             "create an issue": "创建议题",
+                "Open issue creation in fullscreen": "全屏", // 有议题模板时
 
             "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
             "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
@@ -9019,6 +9020,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             "View organization templates": "查看组织模板", // 组织仓库
 
+            // 警告
+                "Discard changes?": "丢弃更改？",
+                "Close and discard": "丢弃并关闭",
+
         // 新建空白议题  /<user-name>/<repo-name>/issues/new
             "Title": "标题",
             "Helpful resources": "帮助性资源",
@@ -9028,6 +9033,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
                     "Keep editing": "否", // 实际作用：返回编写页面
                     "Go to Copilot": "是", // 实际作用：前往 Copilot 页面
+
+            "Choose a different template": "切换模板",
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
