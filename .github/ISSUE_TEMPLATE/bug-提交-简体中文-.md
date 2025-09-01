@@ -1,6 +1,6 @@
 ---
 name: Bug 提交（简体中文）
-about: BUG 提交
+about: 提交 BUG
 title: ''
 labels: bug
 assignees: ''
