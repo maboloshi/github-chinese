@@ -4551,7 +4551,7 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
 
                     "You are unlikely to be verified until you have completed your": "在您用学籍证明文件上的全名完善",
                     "GitHub user profile": "GitHub 用户资料",
-                    "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，你可能不会被验证通过。请不要使用姓名的变体或昵称。更新资料信息后，请先登出 GitHub，然后重新登录后再申请。",
+                    "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新资料信息后，请先登出 GitHub，然后重新登录后再申请。",
     },
     "regexp": [
         [/Submitted(?: about)? (.+)/, (match, p1) => {
