@@ -4543,6 +4543,15 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Loading details": "加载详情",
             "Revoked": "撤销",
             "Denied": "拒绝",
+                "Reason(s):": "拒绝原因：",
+
+                    "Please complete your": "请完善您的",
+                    "GitHub billing information": "GitHub 账单信息",
+                    "with your full name exactly as it appears in your academic affiliation document. You do not have to add a payment method. You may need to log out and log back in to GitHub before reapplying. If you have only a single legal name, enter it in both the first and last name fields.": "，并确保其中的姓名与您学籍证明文件中的姓名完全一致。您无需添加支付方式。您可能需要先登出 GitHub，然后重新登录后再申请。如果您只有一个法定姓名，请在名字和姓氏字段中填写相同的姓名。",
+
+                    "You are unlikely to be verified until you have completed your": "在您用学籍证明文件上的全名完善",
+                    "GitHub user profile": "GitHub 用户资料",
+                    "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新资料信息后，请先登出 GitHub，然后重新登录后再申请。",
     },
     "regexp": [
         [/Submitted(?: about)? (.+)/, (match, p1) => {
