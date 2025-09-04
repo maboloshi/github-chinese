@@ -5421,6 +5421,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Copilot policies": "Copilot 规则",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
                     "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 代码审查和预览功能仅适用于付费版。",
+                    "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。预览功能仅适用于付费版。", 
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
@@ -5475,6 +5476,14 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Learn more about how GitHub Copilot serves OpenAI GPT-5.": "了解更多关于 GitHub Copilot 如何为 GPT-5 提供服务。",
                 "Dashboard entry point": "仪表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允许登陆 GitHub.com 时即时聊天",
+                "Copilot code review": "Copilot 代码审查",
+                    "Use Copilot to": "使用 Copilot",
+                    "review your code": "审查代码",
+                    "and generate": "并生成",
+                    "pull request summaries": "拉取请求总结",
+
+                    "Automatically request Copilot code review": "自带请求 Copilot 代码审查",
+                        "Use Copilot to automatically review all the pull requests you've created.": "使用 Copilot 自动审查您创建的拉取请求。",
 
             "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需了解贵机构在使用 GitHub Copilot 时会收到哪些数据，请查看",
                 "GitHub's Privacy Statement": "GitHub 的《隐私声明》",
@@ -5528,6 +5537,12 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
                     "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "将 MCP 服务器连接到 Visual Studio Code 和编程智能体中的 Copilot。MCP 支持在 VS Code 中已正式发布，而编程智能体目前处于公开预览阶段。详情请参阅 MCP 文档：",
+                "OpenAI GPT-5 mini in Copilot": "GPT-5 mini 模型",
+                    "You can use the latest OpenAI GPT-5 mini model.": "您可以使用 GPT-5 mini 模型。",
+                    "Learn more about how GitHub Copilot serves OpenAI GPT-5 mini.": "了解更多关于 GitHub Copilot 如何为 GPT-5 mini 提供服务。",
+                "xAI Grok Code Fast 1 in Copilot": "Grok Code Fast 1 模型",
+                    "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若启用，您可以访问 xAI Grok Code Fast 1 并发送数据。",
+
 
         // 编程智能体(预览 https://github.com/settings/copilot/coding_agent
             // 顶部提示
