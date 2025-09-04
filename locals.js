@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -9457,6 +9457,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
         [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
+        [/added (\d+) commits? that reference this issue/, "添加 $1 个引用此议题的提交"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -15397,6 +15398,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Models": "模型",
                 "Webhooks": "Web 钩子",
                 // Copilot
+                    "Code review": "代码审查",
                     "Coding agent": "编程智能体",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
@@ -17036,6 +17038,27 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
     ],
 };
 I18N["zh-CN"]["orgs/settings/hooks"] = I18N["zh-CN"]["repository/settings/hooks"];
+
+I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
+
+        // 代码审查
+            "Enable automatic code review": "启用自动代码审查",
+                "You can enable Copilot to automatically review pull requests by enabling it inside Repository rules.": "您可以在仓库规则中启用 Copilot，从而让 Copilot 自动审查拉取请求。",
+                "Learn more about automatic code reviews.": "了解更多关于自动代码生成的信息。",
+                "Go to repository rules": "前往仓库规则",
+
+        "General settings": "常规设置",
+            "Use custom instructions when reviewing pull requests": "在审查拉取请求时使用自定义指令",
+                "Copilot references": "Copilot 在审查拉取请求时会参考",
+                "repository custom instructions": "仓库自定义指令",
+                "when reviewing pull requests.": "。",
+    },
+    "regexp": [],
+};
 
 I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
     "static": {
