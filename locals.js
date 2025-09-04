@@ -17092,6 +17092,7 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
                 "e.g. https://example.com/a/path or example.com": "例：https://example.com/a/path 或 example.com",
                 "Add rule": "添加规则",
+                "Rule must be a valid domain, IP address, or URL": "规则必须是有效域名、IP 地址或 URL",
 
                 "No rules yet": "无规则",
                     "Tip: Paste a list of rules into the input to add them all at once.": "提示：将规则列表粘贴到输入框中，可以一次性添加所有规则。",
