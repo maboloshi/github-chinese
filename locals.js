@@ -17086,6 +17086,20 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
             "Custom allowlist": "自定义白名单",
                 "Allow access to specific domains, IP addresses, or URLs.": "允许访问特定域名、IP 地址或 URL。",
 
+            // settings/copilot/coding_agent/allowlist 自定义白名单
+                "Add items to the allowlist to enable Copilot coding agent to access specific domains, IP addresses, or URLs.": "将项目添加到允许列表，以便 Copilot 智能体能够访问特定的域名、IP 地址或 URL。",
+                    "See the GitHub Docs for syntax and examples.": "请参阅 GitHub 文档以获取语法和示例。",
+
+                "e.g. https://example.com/a/path or example.com": "例：https://example.com/a/path 或 example.com",
+                "Add rule": "添加规则",
+
+                "No rules yet": "无规则",
+                    "Tip: Paste a list of rules into the input to add them all at once.": "提示：将规则列表粘贴到输入框中，可以一次性添加所有规则。",
+                "Delete rule": "删除规则",
+
+                // 保存
+                    "Allowlist settings saved successfully!": "白名单设置保存成功！",
+
         "Model Context Protocol (MCP)": "模型上下文协议（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一个开放标准，定义了应用程序如何与大型语言模型（LLM）共享上下文。MCP 提供了一种标准化的方法，将 AI 模型与不同的数据源和工具连接起来，使它们能够更高效地协同工作。",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
@@ -17093,6 +17107,11 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
                 "Learn how to write your JSON MCP configuration": "了解如何编写您的 JSON MCP 配置",
 
             "MCP configuration": "MCP 配置",
+                // 代码窗 - 底部栏
+                  "to toggle the": "切换",
+                  "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                  "then": "键，然后",
+                  "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
             "Your configuration will be validated on save.": "您的配置将在保存时进行验证。",
 
@@ -17101,7 +17120,9 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
             "Use of Copilot coding agent is subject to the": "使用 Copilot 编程智能体需遵守",
                 "pre-release terms": "预发行条款",
     },
-    "regexp": [],
+    "regexp": [
+        [/(\d+) rules?/, "$1 规则"],
+    ],
 };
 
 I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-name>/<repo-name>/settings/environment
