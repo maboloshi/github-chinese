@@ -17071,14 +17071,32 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
+        "Learn more about Copilot coding agent": "了解更多",
+
+        "Internet access": "访问互联网",
+            "Ensure that the agent only accesses approved network resources during code generation and execution.": "确保智能体在代码生成和执行过程中只访问已批准的网络资源。",
+                "Learn more about customizing network access": "了解更多",
+
+            "Enable firewall": "启用防火墙",
+                "Recommended": "推荐",
+                "Limit Copilot coding agent’s Internet access to only allow access to allowlisted locations": "将 Copilot 编程智能体的互联网访问权限限制为仅允许访问白名单中的位置。",
+            "Recommended allowlist": "推荐白名单",
+                "Allow access to locations frequently used to install tools, packages, and dependencies": "允许访问常用于安装工具、软件包和依赖项的位置",
+            "Custom allowlist": "自定义白名单",
+                "Allow access to specific domains, IP addresses, or URLs.": "允许访问特定域名、IP 地址或 URL。",
 
         "Model Context Protocol (MCP)": "模型上下文协议（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一个开放标准，定义了应用程序如何与大型语言模型（LLM）共享上下文。MCP 提供了一种标准化的方法，将 AI 模型与不同的数据源和工具连接起来，使它们能够更高效地协同工作。",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
+            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services.": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。",
+                "Learn how to write your JSON MCP configuration": "了解如何编写您的 JSON MCP 配置",
 
             "MCP configuration": "MCP 配置",
 
             "Your configuration will be validated on save.": "您的配置将在保存时进行验证。",
+
+            "Save MCP configuration": "保存",
 
             "Use of Copilot coding agent is subject to the": "使用 Copilot 编程智能体需遵守",
                 "pre-release terms": "预发行条款",
