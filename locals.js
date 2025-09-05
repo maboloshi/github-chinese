@@ -3502,7 +3502,7 @@ I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
 
             "Tab size preference": "制表符首选项",
             "Choose the number of spaces a tab is equal to when rendering code": "在渲染代码时，选择一个制表符等于多少个空格",
-            "8 (Default)": "8 (默认)",
+            "4 (Default)": "4 (默认)",
 
             "Markdown editor font preference": "Markdown 编辑器字体首选项",
             "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 样式的纯文本编辑器的字体首选项（例如拉取请求和议题描述、评论。）",
