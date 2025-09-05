@@ -10363,6 +10363,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Expand file tree": "展开文件树",
 
                 "All changes": "所有更改",
+                "All commits": "所有提交",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
