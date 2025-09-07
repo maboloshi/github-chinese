@@ -7,7 +7,11 @@
 // @version      1.9.3-2025-08-22
 // @author       沙漠之子
 // @license      GPL-3.0
-// @match        https://github.com/*
+// @include        *github.com/*
+// @include        *://hub.whtrys.space/*
+// @include        *github.xyz/*
+// @include        *://github.site/*
+// @include        *://github.store/*
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
