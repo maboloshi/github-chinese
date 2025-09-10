@@ -3728,6 +3728,25 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Current month": "这个月",
                     "Last month": "上个月",
                     // 后 2 项正则
+
+                    "Billable usage": "计费",
+                        // 操作
+                        "consumed usage": "使用",
+                        "discounts": "减免",
+
+                        "Billable spend for Actions and Actions Runners for the selected timeframe. Applicable discounts cover Actions usage in public repositories and included usage for Actions minutes and storage.": "在所选时间范围内，Actions 和 Actions 运行器的可计费支出。适用的折扣涵盖公共仓库中的 Actions 使用，以及包含的 Actions 分钟数和存储用量。",
+                        "Billable spend for Codespaces for the selected timeframe.": "所选时间范围内代码空间的可计费支出。",
+                        "Billable spend for Git LFS for the selected timeframe. Applicable discounts cover included usage for Git LFS bandwidth and storage.": "所选时间范围内 Git LFS 的可计费支出。适用的折扣涵盖 Git LFS 带宽和存储的包含用量。",
+                        "Billable spend for Packages for the selected timeframe. Applicable discounts cover Packages usage in public repositories and included usage for Packages data transfer and storage.": "所选时间范围内软件包的可计费支出。适用的折扣涵盖公共仓库中的软件包使用，以及包含的软件包数据传输和存储用量。",
+                    "Included usage": "包含",
+                        "Manage budgets": "管理预算",
+                        "Actions minutes": "操作分钟数",
+                        "Git LFS bandwidth": "Git LFS 带宽",
+                        "Git LFS storage": "Git LFS 存储",
+                        "Packages data transfer": "软件包数据传输",
+                        "Packages storage": "软件包存储",
+                        "Included usage limits reset in": "将重置于",
+                        "days": "天内",
                 "Chart options": "图表选项",
                     "View as table": "以表格形式查看",
                         "DateTime": "日期时间",
@@ -4323,6 +4342,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
         //    return `${translatedP1}-${translatedP2}`;
         //}],
+        [/([\d,]+) min used \/ ([\d,]+) min included/, "$1 / $2 分钟"],
+        //(\d+) min used \/ ([\d,+]) min included
+        [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
         // 当前包含用量 - 详情 对话框
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
             [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
@@ -4338,7 +4360,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
 
         // 计费用量 - 右上角时间选项
-            [/^Time Frame: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
+            [/^Timeframe: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
                 switch (p1) {
                   case 'Today':
                     return '时间段：今天';
@@ -4354,6 +4376,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     return match;
                 }
             }],
+            //Timeframe: Current month
             [/This year \((\d+)\)/, "今年（$1）"],
             [/Last year \((\d+)\)/, "去年（$1）"],
         // 计费用量 - 今天 日期标题
@@ -25408,6 +25431,7 @@ I18N["zh-CN"]["copilot"] = {
             "New conversation": "新聊天",
             "Close conversations": "关闭侧边栏",
             "Open conversations": "打开侧边栏",
+            "New chat": "新聊天",
 
             // 时间
                 "Today": "今天",
@@ -25610,6 +25634,11 @@ I18N["zh-CN"]["copilot"] = {
                     "Simple calculator": "简易计算器",
                     "Pong game": "乒乓球游戏",
                     "Mermaid architecture overview": "Mermaid 架构概览",
+                "Write code": "写代码",
+                    "Create a profile README": "个人资料",
+                    "Generate a simple calculator": "简易计算器",
+                    "Make a Pong game": "乒乓球游戏",
+                    "Design a Mermaid architecture overview": "Mermaid 架构概览",
                 // 拉取请求
                     "My open pull requests": "我打开的",
                     "Summarize my latest PR": "总结最近",
