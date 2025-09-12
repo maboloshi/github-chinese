@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/coding_agent|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -723,17 +723,22 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Switch account": "切换账户",
                 "Sign out...": "登出...",
             "Set status": "状态设置",
-            "Your profile": "我的资料",
-            "Your repositories": "我的仓库",
-            "Your codespaces": "我的代码空间",
-            "Your Copilot": "我的 Copilot",
-            "Your projects": "我的项目",
-            "Your discussions": "我的讨论",
-            "Your stars": "我的星标",
-            "Your gists": "我的代码片段",
-            "Your organizations": "我的组织",
-            "Your enterprises": "我的企业",
-            "Your sponsors": "我的赞助者",
+            //"Your profile": "我的资料",
+            //"Your repositories": "我的仓库",
+            //"Your codespaces": "我的代码空间",
+            //"Your Copilot": "我的 Copilot",
+            //"Your projects": "我的项目",
+            //"Your discussions": "我的讨论",
+            //"Your stars": "我的星标",
+            //"Your gists": "我的代码片段",
+            //"Your organizations": "我的组织",
+            //"Your enterprises": "我的企业",
+            //"Your sponsors": "我的赞助者",
+            "Profile": "个人资料",
+            "Gists": "代码片段",
+            "Copilot settings": "Copilot 设置",
+            "Appearance": "外观",
+            "Accessibility": "无障碍",
             "Create new": "创建...", // Android UA 下出现
             "Upgrade": "升级",
             "Try Enterprise": "试用企业版",
@@ -4543,6 +4548,15 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             "Loading details": "加载详情",
             "Revoked": "撤销",
             "Denied": "拒绝",
+                "Reason(s):": "拒绝原因：",
+
+                    "Please complete your": "请完善您的",
+                    "GitHub billing information": "GitHub 账单信息",
+                    "with your full name exactly as it appears in your academic affiliation document. You do not have to add a payment method. You may need to log out and log back in to GitHub before reapplying. If you have only a single legal name, enter it in both the first and last name fields.": "，并确保其中的姓名与您学籍证明文件中的姓名完全一致。您无需添加支付方式。您可能需要先登出 GitHub，然后重新登录后再申请。如果您只有一个法定姓名，请在名字和姓氏字段中填写相同的姓名。",
+
+                    "You are unlikely to be verified until you have completed your": "在您用学籍证明文件上的全名完善",
+                    "GitHub user profile": "GitHub 用户资料",
+                    "with your full name exactly as it appears in your academic affiliation document. Please do not use a variation of your name or a nickname. Once you have updated your profile information log out and log back into GitHub before re-applying.": "之前，您不可能通过验证。请不要使用姓名的变体或昵称。更新资料信息后，请先登出 GitHub，然后重新登录后再申请。",
     },
     "regexp": [
         [/Submitted(?: about)? (.+)/, (match, p1) => {
@@ -5421,6 +5435,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Copilot policies": "Copilot 规则",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
                     "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 代码审查和预览功能仅适用于付费版。",
+                    "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。预览功能仅适用于付费版。", 
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
@@ -5475,6 +5490,14 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Learn more about how GitHub Copilot serves OpenAI GPT-5.": "了解更多关于 GitHub Copilot 如何为 GPT-5 提供服务。",
                 "Dashboard entry point": "仪表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允许登陆 GitHub.com 时即时聊天",
+                "Copilot code review": "Copilot 代码审查",
+                    "Use Copilot to": "使用 Copilot",
+                    "review your code": "审查代码",
+                    "and generate": "并生成",
+                    "pull request summaries": "拉取请求总结",
+
+                    "Automatically request Copilot code review": "自带请求 Copilot 代码审查",
+                        "Use Copilot to automatically review all the pull requests you've created.": "使用 Copilot 自动审查您创建的拉取请求。",
 
             "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需了解贵机构在使用 GitHub Copilot 时会收到哪些数据，请查看",
                 "GitHub's Privacy Statement": "GitHub 的《隐私声明》",
@@ -5528,6 +5551,12 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
                     "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "将 MCP 服务器连接到 Visual Studio Code 和编程智能体中的 Copilot。MCP 支持在 VS Code 中已正式发布，而编程智能体目前处于公开预览阶段。详情请参阅 MCP 文档：",
+                "OpenAI GPT-5 mini in Copilot": "GPT-5 mini 模型",
+                    "You can use the latest OpenAI GPT-5 mini model.": "您可以使用 GPT-5 mini 模型。",
+                    "Learn more about how GitHub Copilot serves OpenAI GPT-5 mini.": "了解更多关于 GitHub Copilot 如何为 GPT-5 mini 提供服务。",
+                "xAI Grok Code Fast 1 in Copilot": "Grok Code Fast 1 模型",
+                    "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若启用，您可以访问 xAI Grok Code Fast 1 并发送数据。",
+
 
         // 编程智能体(预览 https://github.com/settings/copilot/coding_agent
             // 顶部提示
@@ -7238,6 +7267,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Sorry, that branch already exists.": "抱歉，该分支已存在。",
             "has invited you to collaborate on this repository": "邀请您成为该仓库协作者",
                 "View invitation": "查看",
+            "Updated issue templates for this repository": "已为此仓库更新议题模板",
 
             // 存档
             "This repository has been archived by the owner. It is now read-only.": "此仓库已被所有者存档。它现在是只读的。",
@@ -8203,6 +8233,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "No description, website, or topics provided.": "未提供描述、网站或主题。",
             "Readme": "自述文件",
             "README": "自述文件",
+            "Contributing": "贡献指南",
             "View license": "查看许可证",
                 "GPL-3.0 license": "GPL-3.0 许可证",
                 "AGPL-3.0 license": "AGPL-3.0 许可证",
@@ -8876,6 +8907,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
             "create an issue": "创建议题",
+                "Open issue creation in fullscreen": "全屏", // 有议题模板时
 
             "Label issues and pull requests for new contributors": "标记新贡献者的议题和拉取请求",
             "Now, GitHub will help potential first-time contributors": "现在，GitHub 将帮助潜在的首次贡献者",
@@ -9018,6 +9050,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             "View organization templates": "查看组织模板", // 组织仓库
 
+            // 警告
+                "Discard changes?": "丢弃更改？",
+                "Close and discard": "丢弃并关闭",
+
         // 新建空白议题  /<user-name>/<repo-name>/issues/new
             "Title": "标题",
             "Helpful resources": "帮助性资源",
@@ -9027,6 +9063,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "You have unsaved changes. Are you sure you want to discard them?": "您有未保存的更改。您确定要放弃它们吗？",
                     "Keep editing": "否", // 实际作用：返回编写页面
                     "Go to Copilot": "是", // 实际作用：前往 Copilot 页面
+
+            "Choose a different template": "切换模板",
 
         // 从讨论创建议题  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次贡献以来，文档已更改",
@@ -9378,9 +9416,25 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Template name": "模板名称",
             "This file lives in": "该文件位于",
             "Template content": "模板内容",
+                "Styling with Markdown is supported": "支持 Markdown 格式",
             "Optional additional items": "可选附加项目",
             "Issue default title": "议题默认标题",
             "This will be suggested as the issue title": "建议作为议题标题",
+                "Add a placeholder for issue title, ex. [BUG]": "设置默认议题标题，例如：[BUG]",
+
+            "Commit changes": "提交更改",
+                "Commit message": "提交信息",
+                "Extended commit message": "扩展描述",
+                    "Add an optional extended description": "添加描述... (可选)",
+                "Commit directly to the": "提交到",
+                "branch.": "分支。",
+
+                "Some rules will be bypassed by committing directly": "直接提交可以绕过一些规则",
+                "Bypass rules and commit changes": "绕过规则并提交更改",
+
+                "Create a": "创建",
+                "new branch": "新分支",
+                "for this commit and start a pull request.": "为这个提交，并且发起一个拉取请求。",
 
         // Copilot 浮窗 独有词条
             "Ask about the issue:": "讨论此议题：",
@@ -9418,6 +9472,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
         [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
+        [/added (\d+) commits? that reference this issue/, "添加 $1 个引用此议题的提交"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
@@ -9439,6 +9494,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/Issue (#\d+) created/, "议题 $1 已创建"],
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
         [/mentioned this in (\d+) issues?/, "在 $1 个议题中提及"],
+        [/Create new issue in (.+)/, "在 $1 新建议题"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["regexp"],
     ],
@@ -10307,6 +10363,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Expand file tree": "展开文件树",
 
                 "All changes": "所有更改",
+                "All commits": "所有提交",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
@@ -12695,6 +12752,9 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                     "Commit message": "提交信息",
                     "Extended description": "扩展描述",
                         "Add an optional extended description...": "添加描述... (可选)",
+                    
+                    "Message and description suggested by Copilot.": "Copilot建议的消息和描述。",
+                        "Send feedback": "提交反馈",
 
                     "You are": "您将",
                     "signing off": "签署",
@@ -15354,6 +15414,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Models": "模型",
                 "Webhooks": "Web 钩子",
                 // Copilot
+                    "Code review": "代码审查",
                     "Coding agent": "编程智能体",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
@@ -15447,6 +15508,10 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "I understand, update the default branch.": "我明白了，依然更新默认分支",
                 // 顶部提醒
                     // [/Default branch changed to ([^ ])/, "默认分支更改为 $1"]
+
+            // 发行版
+                "Enable release immutability": "启用发行版不可修改",
+                    "Disallow assets and tags from being modified once a release is published.": "禁止在发布发行版后修改资产和标签。",
 
             "Social preview": "社交预览",
             // 关于私有库提醒
@@ -16990,6 +17055,27 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
 };
 I18N["zh-CN"]["orgs/settings/hooks"] = I18N["zh-CN"]["repository/settings/hooks"];
 
+I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
+
+        // 代码审查
+            "Enable automatic code review": "启用自动代码审查",
+                "You can enable Copilot to automatically review pull requests by enabling it inside Repository rules.": "您可以在仓库规则中启用 Copilot，从而让 Copilot 自动审查拉取请求。",
+                "Learn more about automatic code reviews.": "了解更多关于自动代码生成的信息。",
+                "Go to repository rules": "前往仓库规则",
+
+        "General settings": "常规设置",
+            "Use custom instructions when reviewing pull requests": "在审查拉取请求时使用自定义指令",
+                "Copilot references": "Copilot 在审查拉取请求时会参考",
+                "repository custom instructions": "仓库自定义指令",
+                "when reviewing pull requests.": "。",
+    },
+    "regexp": [],
+};
+
 I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
@@ -17001,19 +17087,59 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
+        "Learn more about Copilot coding agent": "了解更多",
+
+        "Internet access": "访问互联网",
+            "Ensure that the agent only accesses approved network resources during code generation and execution.": "确保智能体在代码生成和执行过程中只访问已批准的网络资源。",
+                "Learn more about customizing network access": "了解更多",
+
+            "Enable firewall": "启用防火墙",
+                "Recommended": "推荐",
+                "Limit Copilot coding agent’s Internet access to only allow access to allowlisted locations": "将 Copilot 编程智能体的互联网访问权限限制为仅允许访问白名单中的位置。",
+            "Recommended allowlist": "推荐白名单",
+                "Allow access to locations frequently used to install tools, packages, and dependencies": "允许访问常用于安装工具、软件包和依赖项的位置",
+            "Custom allowlist": "自定义白名单",
+                "Allow access to specific domains, IP addresses, or URLs.": "允许访问特定域名、IP 地址或 URL。",
+
+            // settings/copilot/coding_agent/allowlist 自定义白名单
+                "Add items to the allowlist to enable Copilot coding agent to access specific domains, IP addresses, or URLs.": "将项目添加到允许列表，以便 Copilot 智能体能够访问特定的域名、IP 地址或 URL。",
+                    "See the GitHub Docs for syntax and examples.": "请参阅 GitHub 文档以获取语法和示例。",
+
+                "e.g. https://example.com/a/path or example.com": "例：https://example.com/a/path 或 example.com",
+                "Add rule": "添加规则",
+                "Rule must be a valid domain, IP address, or URL": "规则必须是有效域名、IP 地址或 URL",
+
+                "No rules yet": "无规则",
+                    "Tip: Paste a list of rules into the input to add them all at once.": "提示：将规则列表粘贴到输入框中，可以一次性添加所有规则。",
+                "Delete rule": "删除规则",
+
+                // 保存
+                    "Allowlist settings saved successfully!": "白名单设置保存成功！",
 
         "Model Context Protocol (MCP)": "模型上下文协议（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一个开放标准，定义了应用程序如何与大型语言模型（LLM）共享上下文。MCP 提供了一种标准化的方法，将 AI 模型与不同的数据源和工具连接起来，使它们能够更高效地协同工作。",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
+            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services.": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。",
+                "Learn how to write your JSON MCP configuration": "了解如何编写您的 JSON MCP 配置",
 
             "MCP configuration": "MCP 配置",
+                // 代码窗 - 底部栏
+                  "to toggle the": "切换",
+                  "key moving focus. Alternatively, use": "键移动对焦。或者使用",
+                  "then": "键，然后",
+                  "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
             "Your configuration will be validated on save.": "您的配置将在保存时进行验证。",
+
+            "Save MCP configuration": "保存",
 
             "Use of Copilot coding agent is subject to the": "使用 Copilot 编程智能体需遵守",
                 "pre-release terms": "预发行条款",
     },
-    "regexp": [],
+    "regexp": [
+        [/(\d+) rules?/, "$1 规则"],
+    ],
 };
 
 I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-name>/<repo-name>/settings/environment
