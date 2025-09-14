@@ -14752,6 +14752,7 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
         [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
         [/releases? published/, "发行版已发布"],
         [/pull requests? opened/, "拉取请求打开"],
+        [/pull requests? merged/, "拉取请求合并"],
         [/issues? opened/, "议题打开"],
         [/issues? closed/, "议题关闭"],
         [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
