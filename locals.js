@@ -14711,6 +14711,23 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
             "opened": "打开",
             "closed": "已关闭",
 
+            // 新版（2025/9）
+            "Summary": "总结",
+                "authors": "位作者",
+                "have": " ",
+                "pushed": "推送",
+                "to all branches.": "到所有分支。",
+
+                "On": "在",
+                "changed and there have been": "已经发生了变化，并且有",
+
+            "Top Committers": "提交排行",
+                "Chart options": "图表选项",
+                    "View as table": "以表格形式查看",
+                        "Category": "作者", // 此处原文错误
+                    "Download CSV": "下载 CSV",
+                    "Download PNG": "下载 PNG",
+
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -14724,6 +14741,8 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
         [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在过去的 3 天里，$1 没有任何提交活动。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
+        [/releases? published/, "发行版已发布"],
+        [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
     ],
 };
 
