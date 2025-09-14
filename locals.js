@@ -14712,6 +14712,9 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
             "closed": "已关闭",
 
             // 新版（2025/9）
+            "There hasn't been any commit activity on": "没有任何提交活动于",
+            "over the last": "在最近",
+
             "Summary": "总结",
                 "author": "位作者",
                 "authors": "位作者",
@@ -15042,9 +15045,36 @@ I18N["zh-CN"]["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
             "It looks like traffic to your repository is a little light. Go spread the word and check back later!": "看起来您的仓库的流量有点少呀。去宣传一下吧，稍后再回来查看！",
 
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
+
+        // 新版
+            "Referring sites and popular content are temporarily unavailable or may not display accurately. We're actively working to resolve the issue.": "引用网站和热门内容暂时无法使用或可能无法准确显示。我们正在积极解决该问题。",
+
+            "Clones in last 14 days": "最近 14 天克隆数",
+            "Unique cloners in last 14 days": "最近 14 天唯一克隆者",
+                "Cloners": "克隆者",
+            "Total views in last 14 days": "最近 14 天访问数",
+                "Total views": "总访问数",
+            "Unique visitors in last 14 days": "最近 14 天唯一访客",
+
+            "Chart options": "图表选项",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下载 CSV",
+                "Download PNG": "下载 PNG",
+
+            // 表格
+            "Category": "日期", // 实际上为日期
+            "Total": "总计",
+            "Unique": "唯一",
+
+            "We don't have enough data to show anything useful.": "我们没有足够的数据来显示任何有用的东西。",
+            "It usually takes about a week to populate this table.": "通常需要一周左右的时间来填充此图表。",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/(\d+) Clones?/, "$1 次克隆"],
+        [/(\d+) Unique cloners?/, "$1 位唯一克隆者"],
+        [/(\d+) Views?/, "$1 次访问"],
+        [/(\d+) Unique visitors?/, "$1 位唯一访客"],
     ],
 };
 
@@ -15063,6 +15093,18 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
             "Saturday"  : "周六",
 
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
+
+        // 新版
+            "Commits over the last year of": "最近一年内提交到",
+
+            "Number of commits per week": "每周提交数",
+
+            "Chart options": "图表选项",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下载 CSV",
+                "Download PNG": "下载 PNG",
+
+                "DateTime": "日期",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -15083,6 +15125,11 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
             };
 
             return '次提交本周，' + monthKey[month] + day + '日';
+        }],
+        [/Week of (.+)/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}当周` ; // 这里写翻译结果
         }],
     ],
 };
