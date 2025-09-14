@@ -14713,8 +14713,10 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
 
             // 新版（2025/9）
             "Summary": "总结",
+                "author": "位作者",
                 "authors": "位作者",
                 "have": " ",
+                "has": " ",
                 "pushed": "推送",
                 "to all branches.": "到所有分支。",
 
@@ -14727,6 +14729,10 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
                         "Category": "作者", // 此处原文错误
                     "Download CSV": "下载 CSV",
                     "Download PNG": "下载 PNG",
+
+            "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时对尚未关闭的旧项目会有新的讨论。以下是所有有未解决讨论的议题和拉取请求列表。",
+                "commented on": "评论于",
+                "new comments": "新评论",
 
     },
     "regexp": [ // 正则翻译
@@ -14742,6 +14748,9 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
         [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
         [/releases? published/, "发行版已发布"],
+        [/pull requests? opened/, "拉取请求打开"],
+        [/issues? opened/, "议题打开"],
+        [/issues? closed/, "议题关闭"],
         [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
     ],
 };
