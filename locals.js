@@ -2276,7 +2276,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
         [/contributed code to (\d+) repositor(y|ies) used in the/, "贡献于 $1 个仓库收录于"], // Mars 2020 Helicopter Mission.
         [/The (.+) achievement will now be hidden from your profile./, "现在，将从您的个人资料中隐藏 “$1” 成就。"],
         [/The (.+) achievement will now be shown in your profile./, "现在，将在您的个人资料中显示 “$1” 成就。"],
-        [/(\d+) repositor(y|ies)/, "$1 仓库"],
+        [/^(\d+) repositor(y|ies)/, "$1 仓库"],
         [/(\d+) members?/, "$1 成员"],
         [/and (\d+) more/, "等 $1 人"],
         [/- (\d+)h (ahead|behind)/, function(all, num, compare){
@@ -13585,6 +13585,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
 
             "Choose a tag": "选择标签",
                 "Find or create a new tag": "查找或创建新标签",
+                "Search or create a new tag": "查找或新建标签",
             "Tag:": "标签：",
                 "Select tag": "选择标签",
             "Target:": "目标：",
@@ -13614,6 +13615,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "Release title": "发行版标题",
 
             "Previous tag:": "上一个标签：",
+            "Previous tag": "上一个标签",
                 "Auto": "自动",
                 "auto": "自动",
                 "Select previous tag to compare": "选择上一个标签进行比较",
