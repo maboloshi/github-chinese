@@ -3855,6 +3855,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Actions Linux": "操作 Linux",
                 "Actions macOS 3-core": "操作 macOS 三核",
                 "Codespaces compute 2-core": "代码空间 - 双核",
+                "Copilot Premium Request": "Copilot 高级请求",
             "Metered usage grouped by Repository": "分组：仓库",
                 "All other": "其他",
 
@@ -4358,6 +4359,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/Discount for usage in public repositories \((\d+%) off\)/, "公共仓库使用折扣（$1 减免）"],
             [/(\d+) GB included Codespaces storage/, "$1 GB 代码空间存储"],
             [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
+            [/(\d+) requests/, "$1 请求"],
 
         // 计费用量 - 右上角时间选项
             [/^Timeframe: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
