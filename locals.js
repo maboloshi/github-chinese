@@ -14728,6 +14728,7 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
                 "to all branches.": "到所有分支。",
 
                 "On": "在",
+                "file": "文件",
                 "changed and there have been": "已经发生了变化，并且有",
 
             "Top Committers": "提交排行",
