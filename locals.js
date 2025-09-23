@@ -10422,6 +10422,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Sometimes commits can disappear after a force-push. Head back to the": "有时提交会在强推后消失。头部回到",
             "latest changes here": "最新的更改",
 
+            "Previous file (K)": "上个文件 (K)",
+            "Next file (J)": "下个文件 (J)",
+
             "Comment on line": "评论行",
             "Expand comment": "展开评论",
             "Collapse comment": "折叠评论",
@@ -10433,6 +10436,14 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                         "This feature is not supported yet.": "此功能尚未支持。",
             "Return to code": "返回代码",
             "Reference in a new issue": "在新议题中引用",
+
+            // 图片压缩
+            "You're in single-file mode": "当前为单文件模式",
+                "Due to the large number of changes in this pull request, only one file is being shown at a time.": "由于此拉取请求中的更改数量较多，因此一次只显示一个文件。",
+
+                "buttons to move between files.": "按钮在文件之间移动。",
+
+                "OK, got it": "知道了",
 
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
