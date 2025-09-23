@@ -10445,6 +10445,14 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "OK, got it": "知道了",
 
+            // 评论
+                "Filter comments": "筛选评论",
+                    "Show resolved comments": "显示已解决评论",
+                    "Show outdated comments": "显示陈旧的评论",
+
+                "No comments on changes yet": "还没有评论",
+                    "Comments will show up here as soon as there are some.": "评论将在此显示。",
+
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解决冲突",
             "between": " ",
