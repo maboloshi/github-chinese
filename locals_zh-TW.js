@@ -3502,7 +3502,7 @@ I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
 
             "Tab size preference": "製表符首選項",
             "Choose the number of spaces a tab is equal to when rendering code": "在渲染程式碼時，選擇一個製表符等於多少個空格",
-            "8 (Default)": "8 (默認)",
+            "4 (Default)": "4 (默認)",
 
             "Markdown editor font preference": "Markdown 編輯器字體首選項",
             "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 樣式的純文本編輯器的字體首選項（例如拉取請求和議題描述、評論。）",
@@ -3728,6 +3728,25 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     "Current month": "這個月",
                     "Last month": "上個月",
                     // 後 2 項正則
+
+                    "Billable usage": "計費",
+                        // 操作
+                        "consumed usage": "使用",
+                        "discounts": "減免",
+
+                        "Billable spend for Actions and Actions Runners for the selected timeframe. Applicable discounts cover Actions usage in public repositories and included usage for Actions minutes and storage.": "在所選時間範圍內，Actions 和 Actions 運行器的可計費支出。適用的折扣涵蓋公共倉庫中的 Actions 使用，以及包含的 Actions 分鐘數和存儲用量。",
+                        "Billable spend for Codespaces for the selected timeframe.": "所選時間範圍內程式碼空間的可計費支出。",
+                        "Billable spend for Git LFS for the selected timeframe. Applicable discounts cover included usage for Git LFS bandwidth and storage.": "所選時間範圍內 Git LFS 的可計費支出。適用的折扣涵蓋 Git LFS 帶寬和存儲的包含用量。",
+                        "Billable spend for Packages for the selected timeframe. Applicable discounts cover Packages usage in public repositories and included usage for Packages data transfer and storage.": "所選時間範圍內軟體包的可計費支出。適用的折扣涵蓋公共倉庫中的軟體包使用，以及包含的軟體包數據傳輸和存儲用量。",
+                    "Included usage": "包含",
+                        "Manage budgets": "管理預算",
+                        "Actions minutes": "操作分鐘數",
+                        "Git LFS bandwidth": "Git LFS 帶寬",
+                        "Git LFS storage": "Git LFS 存儲",
+                        "Packages data transfer": "軟體包數據傳輸",
+                        "Packages storage": "軟體包存儲",
+                        "Included usage limits reset in": "將重置於",
+                        "days": "天內",
                 "Chart options": "圖表選項",
                     "View as table": "以表格形式查看",
                         "DateTime": "日期時間",
@@ -4323,6 +4342,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
         //    const translatedP2 = I18N["zh-TW"]["public"]["time-regexp"][p2] || p2;
         //    return `${translatedP1}-${translatedP2}`;
         //}],
+        [/([\d,]+) min used \/ ([\d,]+) min included/, "$1 / $2 分鐘"],
+        //(\d+) min used \/ ([\d,+]) min included
+        [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
         // 當前包含用量 - 詳情 對話框
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分鐘數（~$2 減免*）"],
             [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 減免*）"],
@@ -4338,7 +4360,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             [/(\d+) included Codespaces core hours/, "$1 程式碼空間核心小時數"],
 
         // 計費用量 - 右上角時間選項
-            [/^Time Frame: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
+            [/^Timeframe: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
                 switch (p1) {
                   case 'Today':
                     return '時間段：今天';
@@ -4354,6 +4376,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     return match;
                 }
             }],
+            //Timeframe: Current month
             [/This year \((\d+)\)/, "今年（$1）"],
             [/Last year \((\d+)\)/, "去年（$1）"],
         // 計費用量 - 今天 日期標題
@@ -14688,6 +14711,32 @@ I18N["zh-TW"]["repository/pulse"] = { // 倉庫 -> 洞察 - 統計
             "opened": "打開",
             "closed": "已關閉",
 
+            // 新版（2025/9）
+            "There hasn't been any commit activity on": "沒有任何提交活動於",
+            "over the last": "在最近",
+
+            "Summary": "總結",
+                "author": "位作者",
+                "authors": "位作者",
+                "have": " ",
+                "has": " ",
+                "pushed": "推送",
+                "to all branches.": "到所有分支。",
+
+                "On": "在",
+                "changed and there have been": "已經發生了變化，並且有",
+
+            "Top Committers": "提交排行",
+                "Chart options": "圖表選項",
+                    "View as table": "以表格形式查看",
+                        "Category": "作者", // 此處原文錯誤
+                    "Download CSV": "下載 CSV",
+                    "Download PNG": "下載 PNG",
+
+            "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時對尚未關閉的舊專案會有新的討論。以下是所有有未解決討論的議題和拉取請求列表。",
+                "commented on": "評論於",
+                "new comments": "新評論",
+
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
@@ -14701,6 +14750,12 @@ I18N["zh-TW"]["repository/pulse"] = { // 倉庫 -> 洞察 - 統計
         [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在過去的 3 天裡，$1 沒有任何提交活動。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在過去的 1 周裡，$1 沒有任何提交活動。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在過去的 1 月裡，$1 沒有任何提交活動。"],
+        [/releases? published/, "發行版已發佈"],
+        [/pull requests? opened/, "拉取請求打開"],
+        [/pull requests? merged/, "拉取請求合併"],
+        [/issues? opened/, "議題打開"],
+        [/issues? closed/, "議題關閉"],
+        [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
     ],
 };
 
@@ -14991,9 +15046,36 @@ I18N["zh-TW"]["repository/graphs/traffic"] = { // 倉庫 -> 洞察 - 流量
             "It looks like traffic to your repository is a little light. Go spread the word and check back later!": "看起來您的倉庫的流量有點少呀。去宣傳一下吧，稍後再回來查看！",
 
             "Crunching the latest data, just for you. Hang tight…": "正在為您準備最新數據，請稍後…",
+
+        // 新版
+            "Referring sites and popular content are temporarily unavailable or may not display accurately. We're actively working to resolve the issue.": "引用網站和熱門內容暫時無法使用或可能無法準確顯示。我們正在積極解決該問題。",
+
+            "Clones in last 14 days": "最近 14 天克隆數",
+            "Unique cloners in last 14 days": "最近 14 天唯一克隆者",
+                "Cloners": "克隆者",
+            "Total views in last 14 days": "最近 14 天訪問數",
+                "Total views": "總訪問數",
+            "Unique visitors in last 14 days": "最近 14 天唯一訪客",
+
+            "Chart options": "圖表選項",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下載 CSV",
+                "Download PNG": "下載 PNG",
+
+            // 表格
+            "Category": "日期", // 實際上為日期
+            "Total": "總計",
+            "Unique": "唯一",
+
+            "We don't have enough data to show anything useful.": "我們沒有足夠的數據來顯示任何有用的東西。",
+            "It usually takes about a week to populate this table.": "通常需要一週左右的時間來填充此圖表。",
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
+        [/(\d+) Clones?/, "$1 次克隆"],
+        [/(\d+) Unique cloners?/, "$1 位唯一克隆者"],
+        [/(\d+) Views?/, "$1 次訪問"],
+        [/(\d+) Unique visitors?/, "$1 位唯一訪客"],
     ],
 };
 
@@ -15012,6 +15094,18 @@ I18N["zh-TW"]["repository/graphs/commit-activity"] = { // 倉庫 -> 洞察 - 提
             "Saturday"  : "週六",
 
             "Crunching the latest data, just for you. Hang tight…": "正在為您準備最新數據，請稍後…",
+
+        // 新版
+            "Commits over the last year of": "最近一年內提交到",
+
+            "Number of commits per week": "每週提交數",
+
+            "Chart options": "圖表選項",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下載 CSV",
+                "Download PNG": "下載 PNG",
+
+                "DateTime": "日期",
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
@@ -15032,6 +15126,11 @@ I18N["zh-TW"]["repository/graphs/commit-activity"] = { // 倉庫 -> 洞察 - 提
             };
 
             return '次提交本週，' + monthKey[month] + day + '日';
+        }],
+        [/Week of (.+)/, (match, p1) => { // p1為(.+)
+            const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}當週` ; // 這裡寫翻譯結果
         }],
     ],
 };
@@ -25408,6 +25507,7 @@ I18N["zh-TW"]["copilot"] = {
             "New conversation": "新聊天",
             "Close conversations": "關閉側邊欄",
             "Open conversations": "打開側邊欄",
+            "New chat": "新聊天",
 
             // 時間
                 "Today": "今天",
@@ -25610,6 +25710,11 @@ I18N["zh-TW"]["copilot"] = {
                     "Simple calculator": "簡易計算器",
                     "Pong game": "乒乓球遊戲",
                     "Mermaid architecture overview": "Mermaid 架構概覽",
+                "Write code": "寫程式碼",
+                    "Create a profile README": "個人資料",
+                    "Generate a simple calculator": "簡易計算器",
+                    "Make a Pong game": "乒乓球遊戲",
+                    "Design a Mermaid architecture overview": "Mermaid 架構概覽",
                 // 拉取請求
                     "My open pull requests": "我打開的",
                     "Summarize my latest PR": "總結最近",
