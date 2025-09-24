@@ -12272,6 +12272,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Find a user": "查找用户",
 
             // 日志 右侧按钮
+                // 时间补丁 25年9月24日更新
+                "Today at": "今天",
             "Cancel run": "取消运行",
             "View workflow file": "查看工作流程文件",
             "Delete workflow run": "删除工作流程运行",
