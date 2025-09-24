@@ -16854,6 +16854,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                 "Saving...": "保存中...",
                 // 顶部提醒
                     "Actions policy updated.": "操作政策已更新",
+            "Require actions to be pinned to a full-length commit SHA": "要求将操作固定到完整的提交 SHA",
 
             "Artifact and log retention": "工件和日志保留",
                 "Choose the repository settings for artifacts and logs.": "选择工件和日志的仓库设置。",
