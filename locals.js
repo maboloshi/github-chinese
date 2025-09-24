@@ -9139,6 +9139,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "moved this to": "移动到",
             "closed this": "关闭了",
             "as": "因",
+            "as a": "因",
             "closed this as": "已关闭因",
                 "not planned": "非计划中",
                 "completed": "已完成",
