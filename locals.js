@@ -7832,6 +7832,13 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "Search apps": "搜索应用",
                     "Cancel and close": "关闭",
 
+            "Jumpstart your project with Copilot (optional)": "用 Copilot 快速启动您的项目（可选）",
+                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备好后请求您进行审核。",
+                "About Copilot coding agent": "关于 Copilot 编程智能体",
+
+                "Prompt": "提示词",
+                    "Describe what you want Copilot to build": "描述您想让 Copilot 做什么",
+
     },
     "regexp": [ // 正则翻译
         // [/([^ ]+) is available\./,"$1 名称可用。"],
