@@ -10553,6 +10553,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Try reloading the page, or if the problem persists contact support.": "尝试重载页面，或联系支持",
             "GitHub status": "GitHub 状态",
 
+        "Mention \@copilot in a comment to make changes to this pull request.": "在评论中提及 @copilot 以对该拉取请求进行更改。",
+
 
     },
     "regexp": [ // 正则翻译
