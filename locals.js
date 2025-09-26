@@ -7874,6 +7874,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
 
             "Sorry, couldn’t delete that branch.": "抱歉，无法删除此分支。",
+            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 将起草一个拉取请求开始处理您的需求，并在准备好后请求您进行审核。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
