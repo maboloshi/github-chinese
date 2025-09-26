@@ -10515,6 +10515,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "requests": "请求",
             "used in": "被用于",
             "session": "任务",
+            "sessions": "任务",
 
             "Stop session": "停止任务",
             "Open menu": "操作",
