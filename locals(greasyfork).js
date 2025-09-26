@@ -3502,7 +3502,7 @@ I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
 
             "Tab size preference": "制表符首选项",
             "Choose the number of spaces a tab is equal to when rendering code": "在渲染代码时，选择一个制表符等于多少个空格",
-            "8 (Default)": "8 (默认)",
+            "4 (Default)": "4 (默认)",
 
             "Markdown editor font preference": "Markdown 编辑器字体首选项",
             "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 样式的纯文本编辑器的字体首选项（例如拉取请求和议题描述、评论。）",
@@ -3728,6 +3728,25 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Current month": "这个月",
                     "Last month": "上个月",
                     // 后 2 项正则
+
+                    "Billable usage": "计费",
+                        // 操作
+                        "consumed usage": "使用",
+                        "discounts": "减免",
+
+                        "Billable spend for Actions and Actions Runners for the selected timeframe. Applicable discounts cover Actions usage in public repositories and included usage for Actions minutes and storage.": "在所选时间范围内，Actions 和 Actions 运行器的可计费支出。适用的折扣涵盖公共仓库中的 Actions 使用，以及包含的 Actions 分钟数和存储用量。",
+                        "Billable spend for Codespaces for the selected timeframe.": "所选时间范围内代码空间的可计费支出。",
+                        "Billable spend for Git LFS for the selected timeframe. Applicable discounts cover included usage for Git LFS bandwidth and storage.": "所选时间范围内 Git LFS 的可计费支出。适用的折扣涵盖 Git LFS 带宽和存储的包含用量。",
+                        "Billable spend for Packages for the selected timeframe. Applicable discounts cover Packages usage in public repositories and included usage for Packages data transfer and storage.": "所选时间范围内软件包的可计费支出。适用的折扣涵盖公共仓库中的软件包使用，以及包含的软件包数据传输和存储用量。",
+                    "Included usage": "包含",
+                        "Manage budgets": "管理预算",
+                        "Actions minutes": "操作分钟数",
+                        "Git LFS bandwidth": "Git LFS 带宽",
+                        "Git LFS storage": "Git LFS 存储",
+                        "Packages data transfer": "软件包数据传输",
+                        "Packages storage": "软件包存储",
+                        "Included usage limits reset in": "将重置于",
+                        "days": "天内",
                 "Chart options": "图表选项",
                     "View as table": "以表格形式查看",
                         "DateTime": "日期时间",
@@ -4323,6 +4342,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
         //    return `${translatedP1}-${translatedP2}`;
         //}],
+        [/([\d,]+) min used \/ ([\d,]+) min included/, "$1 / $2 分钟"],
+        //(\d+) min used \/ ([\d,+]) min included
+        [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
         // 当前包含用量 - 详情 对话框
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
             [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
@@ -4338,7 +4360,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/(\d+) included Codespaces core hours/, "$1 代码空间核心小时数"],
 
         // 计费用量 - 右上角时间选项
-            [/^Time Frame: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
+            [/^Timeframe: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
                 switch (p1) {
                   case 'Today':
                     return '时间段：今天';
@@ -4354,6 +4376,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     return match;
                 }
             }],
+            //Timeframe: Current month
             [/This year \((\d+)\)/, "今年（$1）"],
             [/Last year \((\d+)\)/, "去年（$1）"],
         // 计费用量 - 今天 日期标题
@@ -14688,6 +14711,32 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
             "opened": "打开",
             "closed": "已关闭",
 
+            // 新版（2025/9）
+            "There hasn't been any commit activity on": "没有任何提交活动于",
+            "over the last": "在最近",
+
+            "Summary": "总结",
+                "author": "位作者",
+                "authors": "位作者",
+                "have": " ",
+                "has": " ",
+                "pushed": "推送",
+                "to all branches.": "到所有分支。",
+
+                "On": "在",
+                "changed and there have been": "已经发生了变化，并且有",
+
+            "Top Committers": "提交排行",
+                "Chart options": "图表选项",
+                    "View as table": "以表格形式查看",
+                        "Category": "作者", // 此处原文错误
+                    "Download CSV": "下载 CSV",
+                    "Download PNG": "下载 PNG",
+
+            "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时对尚未关闭的旧项目会有新的讨论。以下是所有有未解决讨论的议题和拉取请求列表。",
+                "commented on": "评论于",
+                "new comments": "新评论",
+
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -14701,6 +14750,12 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
         [/There hasn’t been any commit activity on ([^ ]+) in the last 3 days./, "在过去的 3 天里，$1 没有任何提交活动。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last week./, "在过去的 1 周里，$1 没有任何提交活动。"],
         [/There hasn’t been any commit activity on ([^ ]+) in the last month./, "在过去的 1 月里，$1 没有任何提交活动。"],
+        [/releases? published/, "发行版已发布"],
+        [/pull requests? opened/, "拉取请求打开"],
+        [/pull requests? merged/, "拉取请求合并"],
+        [/issues? opened/, "议题打开"],
+        [/issues? closed/, "议题关闭"],
+        [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
     ],
 };
 
@@ -14991,9 +15046,36 @@ I18N["zh-CN"]["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
             "It looks like traffic to your repository is a little light. Go spread the word and check back later!": "看起来您的仓库的流量有点少呀。去宣传一下吧，稍后再回来查看！",
 
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
+
+        // 新版
+            "Referring sites and popular content are temporarily unavailable or may not display accurately. We're actively working to resolve the issue.": "引用网站和热门内容暂时无法使用或可能无法准确显示。我们正在积极解决该问题。",
+
+            "Clones in last 14 days": "最近 14 天克隆数",
+            "Unique cloners in last 14 days": "最近 14 天唯一克隆者",
+                "Cloners": "克隆者",
+            "Total views in last 14 days": "最近 14 天访问数",
+                "Total views": "总访问数",
+            "Unique visitors in last 14 days": "最近 14 天唯一访客",
+
+            "Chart options": "图表选项",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下载 CSV",
+                "Download PNG": "下载 PNG",
+
+            // 表格
+            "Category": "日期", // 实际上为日期
+            "Total": "总计",
+            "Unique": "唯一",
+
+            "We don't have enough data to show anything useful.": "我们没有足够的数据来显示任何有用的东西。",
+            "It usually takes about a week to populate this table.": "通常需要一周左右的时间来填充此图表。",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/(\d+) Clones?/, "$1 次克隆"],
+        [/(\d+) Unique cloners?/, "$1 位唯一克隆者"],
+        [/(\d+) Views?/, "$1 次访问"],
+        [/(\d+) Unique visitors?/, "$1 位唯一访客"],
     ],
 };
 
@@ -15012,6 +15094,18 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
             "Saturday"  : "周六",
 
             "Crunching the latest data, just for you. Hang tight…": "正在为您准备最新数据，请稍后…",
+
+        // 新版
+            "Commits over the last year of": "最近一年内提交到",
+
+            "Number of commits per week": "每周提交数",
+
+            "Chart options": "图表选项",
+                "View as table": "以表格形式查看",
+                "Download CSV": "下载 CSV",
+                "Download PNG": "下载 PNG",
+
+                "DateTime": "日期",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -15032,6 +15126,11 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
             };
 
             return '次提交本周，' + monthKey[month] + day + '日';
+        }],
+        [/Week of (.+)/, (match, p1) => { // p1为(.+)
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `${translatedDate}当周` ; // 这里写翻译结果
         }],
     ],
 };
@@ -25408,6 +25507,7 @@ I18N["zh-CN"]["copilot"] = {
             "New conversation": "新聊天",
             "Close conversations": "关闭侧边栏",
             "Open conversations": "打开侧边栏",
+            "New chat": "新聊天",
 
             // 时间
                 "Today": "今天",
@@ -25610,6 +25710,11 @@ I18N["zh-CN"]["copilot"] = {
                     "Simple calculator": "简易计算器",
                     "Pong game": "乒乓球游戏",
                     "Mermaid architecture overview": "Mermaid 架构概览",
+                "Write code": "写代码",
+                    "Create a profile README": "个人资料",
+                    "Generate a simple calculator": "简易计算器",
+                    "Make a Pong game": "乒乓球游戏",
+                    "Design a Mermaid architecture overview": "Mermaid 架构概览",
                 // 拉取请求
                     "My open pull requests": "我打开的",
                     "Summarize my latest PR": "总结最近",
