@@ -10528,6 +10528,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Copilot stopped work due to an error": "Copilot 因错误停工",
                 "Copilot has encountered an error. See logs for additional details.": "Copilot 遇到错误。请查看日志以获取更多详细信息。",
+                // 内部错误，走正则
                 "View detailed logs": "查看详细日志",
 
             // 进度
@@ -10677,6 +10678,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 建议更改
         //[/on this commit as ([^@]+@[^\n]+)/, "提交，身份为 $1"],
+
+        // Copilot
+        [/Copilot has encountered an internal error. If the problem persists, please contact GitHub Support, including the request ID `([^ ]+)`. To retry, leave a comment on this pull request asking Copilot to try again./, "Copilot 遇到了内部错误。如果问题仍然存在，请联系 GitHub 支持，并附上请求 ID `$1`。要重试，请在此拉取请求中发表评论，要求 Copilot 再试一次。"],
 
         // 解决冲突编辑器（似乎又是 F12 才会翻译）
         [/Search:/, "搜索："],
