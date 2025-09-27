@@ -25694,6 +25694,8 @@ I18N["zh-CN"]["copilot"] = {
                     "Download all files": "下载全部",
                     "Close all tabs": "关闭所有标签",
 
+                "Diff": "差异",
+
                 "Download code": "下载代码",
 
                 "lines": "行",
