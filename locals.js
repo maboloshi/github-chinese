@@ -828,6 +828,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Privacy": "隐私",
             "Security": "安全",
             "Status": "状态",
+            "Community": "社区",
             "Docs": "文档",
             "Contact": "联系我们",
             "Manage cookies": "管理 Cookies",
