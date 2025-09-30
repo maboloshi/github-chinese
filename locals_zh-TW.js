@@ -2276,7 +2276,7 @@ I18N["zh-TW"]["page-profile-public"] = { // 個人首頁（含組織）
         [/contributed code to (\d+) repositor(y|ies) used in the/, "貢獻於 $1 個倉庫收錄於"], // Mars 2020 Helicopter Mission.
         [/The (.+) achievement will now be hidden from your profile./, "現在，將從您的個人資料中隱藏 “$1” 成就。"],
         [/The (.+) achievement will now be shown in your profile./, "現在，將在您的個人資料中顯示 “$1” 成就。"],
-        [/(\d+) repositor(y|ies)/, "$1 倉庫"],
+        [/^(\d+) repositor(y|ies)/, "$1 倉庫"],
         [/(\d+) members?/, "$1 成員"],
         [/and (\d+) more/, "等 $1 人"],
         [/- (\d+)h (ahead|behind)/, function(all, num, compare){
@@ -3855,6 +3855,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Actions Linux": "操作 Linux",
                 "Actions macOS 3-core": "操作 macOS 三核",
                 "Codespaces compute 2-core": "程式碼空間 - 雙核",
+                "Copilot Premium Request": "Copilot 高級請求",
             "Metered usage grouped by Repository": "分組：倉庫",
                 "All other": "其他",
 
@@ -4358,6 +4359,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             [/Discount for usage in public repositories \((\d+%) off\)/, "公共倉庫使用折扣（$1 減免）"],
             [/(\d+) GB included Codespaces storage/, "$1 GB 程式碼空間存儲"],
             [/(\d+) included Codespaces core hours/, "$1 程式碼空間核心小時數"],
+            [/(\d+) requests/, "$1 請求"],
 
         // 計費用量 - 右上角時間選項
             [/^Timeframe: (Today|Current month|Last month|This year \((\d+)\)|Last year \((\d+)\))$/, (match, p1, p2, p3) => {
@@ -7830,6 +7832,13 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
                     "Search apps": "搜索應用",
                     "Cancel and close": "關閉",
 
+            "Jumpstart your project with Copilot (optional)": "用 Copilot 快速啟動您的專案（可選）",
+                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告訴 Copilot 您想在此倉庫中構建什麼。在創建完成後，Copilot 會打開一個包含生成文件的拉取請求（例如基礎應用、起始程式碼或您描述的其他功能），然後在準備好後請求您進行審核。",
+                "About Copilot coding agent": "關於 Copilot 編程智能體",
+
+                "Prompt": "提示詞",
+                    "Describe what you want Copilot to build": "描述您想讓 Copilot 做什麼",
+
     },
     "regexp": [ // 正則翻譯
         // [/([^ ]+) is available\./,"$1 名稱可用。"],
@@ -7865,6 +7874,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通過三個簡單的問題告訴我們如何讓 GitHub 程式碼空間更適合您。",
 
             "Sorry, couldn’t delete that branch.": "抱歉，無法刪除此分支。",
+            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 將起草一個拉取請求開始處理您的需求，並在準備好後請求您進行審核。",
 
         // 程式碼標籤卡 & 倉庫首頁 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名為 $2。"],
@@ -9137,6 +9147,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
             "moved this to": "移動到",
             "closed this": "關閉了",
             "as": "因",
+            "as a": "因",
             "closed this as": "已關閉因",
                 "not planned": "非計劃中",
                 "completed": "已完成",
@@ -9518,6 +9529,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
         [/mentioned this in (\d+) issues?/, "在 $1 個議題中提及"],
         [/Create new issue in (.+)/, "在 $1 新建議題"],
+        [/Close as duplicate of (\#\d+)/, "因同 $1 重複關閉"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["regexp"],
     ],
@@ -10420,6 +10432,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "Sometimes commits can disappear after a force-push. Head back to the": "有時提交會在強推後消失。頭部回到",
             "latest changes here": "最新的更改",
 
+            "Previous file (K)": "上個文件 (K)",
+            "Next file (J)": "下個文件 (J)",
+
             "Comment on line": "評論行",
             "Expand comment": "展開評論",
             "Collapse comment": "摺疊評論",
@@ -10431,6 +10446,22 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                         "This feature is not supported yet.": "此功能尚未支持。",
             "Return to code": "返回程式碼",
             "Reference in a new issue": "在新議題中引用",
+
+            // 圖片壓縮
+            "You're in single-file mode": "當前為單文件模式",
+                "Due to the large number of changes in this pull request, only one file is being shown at a time.": "由於此拉取請求中的更改數量較多，因此一次只顯示一個文件。",
+
+                "buttons to move between files.": "按鈕在文件之間移動。",
+
+                "OK, got it": "知道了",
+
+            // 評論
+                "Filter comments": "篩選評論",
+                    "Show resolved comments": "顯示已解決評論",
+                    "Show outdated comments": "顯示陳舊的評論",
+
+                "No comments on changes yet": "還沒有評論",
+                    "Comments will show up here as soon as there are some.": "評論將在此顯示。",
 
         // 拉取請求 --> 解決衝突 /<user-name>/<repo-name>/pull/<id>/conflicts
             "Resolving conflicts": "解決衝突",
@@ -10484,6 +10515,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "requests": "請求",
             "used in": "被用於",
             "session": "任務",
+            "sessions": "任務",
 
             "Stop session": "停止任務",
             "Open menu": "操作",
@@ -10497,6 +10529,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
             "Copilot stopped work due to an error": "Copilot 因錯誤停工",
                 "Copilot has encountered an error. See logs for additional details.": "Copilot 遇到錯誤。請查看日誌以獲取更多詳細信息。",
+                // 內部錯誤，走正則
                 "View detailed logs": "查看詳細日誌",
 
             // 進度
@@ -10520,6 +10553,8 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
         "Merge status cannot be loaded": "合併狀態加載出錯",
             "Try reloading the page, or if the problem persists contact support.": "嘗試重載頁面，或聯繫支持",
             "GitHub status": "GitHub 狀態",
+
+        "Mention \@copilot in a comment to make changes to this pull request.": "在評論中提及 @copilot 以對該拉取請求進行更改。",
 
 
     },
@@ -10646,6 +10681,9 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
         // 建議更改
         //[/on this commit as ([^@]+@[^\n]+)/, "提交，身份為 $1"],
+
+        // Copilot
+        [/Copilot has encountered an internal error. If the problem persists, please contact GitHub Support, including the request ID `([^ ]+)`. To retry, leave a comment on this pull request asking Copilot to try again./, "Copilot 遇到了內部錯誤。如果問題仍然存在，請聯繫 GitHub 支持，並附上請求 ID `$1`。要重試，請在此拉取請求中發表評論，要求 Copilot 再試一次。"],
 
         // 解決衝突編輯器（似乎又是 F12 才會翻譯）
         [/Search:/, "搜索："],
@@ -12249,6 +12287,8 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
                 "Find a user": "查找用戶",
 
             // 日誌 右側按鈕
+                // 時間補丁 25年9月24日更新
+                "Today at": "今天",
             "Cancel run": "取消運行",
             "View workflow file": "查看工作流程文件",
             "Delete workflow run": "刪除工作流程運行",
@@ -13585,6 +13625,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
 
             "Choose a tag": "選擇標籤",
                 "Find or create a new tag": "查找或創建新標籤",
+                "Search or create a new tag": "查找或新建標籤",
             "Tag:": "標籤：",
                 "Select tag": "選擇標籤",
             "Target:": "目標：",
@@ -13614,6 +13655,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
             "Release title": "發行版標題",
 
             "Previous tag:": "上一個標籤：",
+            "Previous tag": "上一個標籤",
                 "Auto": "自動",
                 "auto": "自動",
                 "Select previous tag to compare": "選擇上一個標籤進行比較",
@@ -14724,6 +14766,7 @@ I18N["zh-TW"]["repository/pulse"] = { // 倉庫 -> 洞察 - 統計
                 "to all branches.": "到所有分支。",
 
                 "On": "在",
+                "file": "文件",
                 "changed and there have been": "已經發生了變化，並且有",
 
             "Top Committers": "提交排行",
@@ -16830,6 +16873,7 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 倉庫設置 - 操作 /<user
                 "Saving...": "保存中...",
                 // 頂部提醒
                     "Actions policy updated.": "操作政策已更新",
+            "Require actions to be pinned to a full-length commit SHA": "要求將操作固定到完整的提交 SHA",
 
             "Artifact and log retention": "工件和日誌保留",
                 "Choose the repository settings for artifacts and logs.": "選擇工件和日誌的倉庫設置。",
