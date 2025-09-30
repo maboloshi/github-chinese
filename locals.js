@@ -3749,6 +3749,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "Packages storage": "软件包存储",
                         "Included usage limits reset in": "将重置于",
                         "days": "天内",
+                        "day": "天内",
                 "Chart options": "图表选项",
                     "View as table": "以表格形式查看",
                         "DateTime": "日期时间",
