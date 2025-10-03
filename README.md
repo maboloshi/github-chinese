@@ -72,6 +72,11 @@ Via（Android）       | 内置管理器
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
 
+> [!IMPORTANT]
+> **若无效，请检查 “扩展程序” 管理中的以下设置：**
+> 1.  “允许运行用户脚本” 是否开启
+> 1.  “有权访问的网站”
+
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
 > [!NOTE]
@@ -92,6 +97,12 @@ Via（Android）       | 内置管理器
    // @require file:///D:/github-chinese/locals.js
    ```
 1. 刷新页面生效
+
+> [!IMPORTANT]
+> **若无效：**
+> 1. 进入 [Tampermonkey][Tampermonkey] 插件`设置页`
+> 1. 将 `通用 - 配置模式` 设置为`高级`，进入高级设置模式
+> 1. 找到 `安全 - 允许脚本访问本地文件` 并设置为 `外部(@require 和 @resource)`
 
 > [!TIP]
 > 💡 **温馨提示：** 您可以将词库文件拖拽至浏览器地址栏，复制路径直接使用。
@@ -301,11 +312,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/wyc-26" title="wyc-26">
   <img src="https://avatars.githubusercontent.com/u/154735436?v=4" width="42;" alt="wyc-26"/>
 </a>
+<a href="https://github.com/tangyuan0821" title="松花酿酒">
+  <img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="松花酿酒"/>
+</a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
-</a>
-<a href="https://github.com/tangyuan0821" title="Tangyuan">
-  <img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="Tangyuan"/>
 </a>
 <a href="https://github.com/cat-kun" title="cat-kun">
   <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
@@ -319,8 +330,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/pecasha" title="Pecasha">
   <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
 </a>
-<a href="https://github.com/yrljroli" title="𠭞">
-  <img src="https://avatars.githubusercontent.com/u/169890386?v=4" width="42;" alt="𠭞"/>
+<a href="https://github.com/yrljroli" title="苓𥤚">
+  <img src="https://avatars.githubusercontent.com/u/169890386?v=4" width="42;" alt="苓𥤚"/>
 </a>
 <a href="https://github.com/YiShengJunn" title="益生君">
   <img src="https://avatars.githubusercontent.com/u/134821571?v=4" width="42;" alt="益生君"/>
@@ -345,6 +356,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/NyA1K0" title="NyA!K0">
   <img src="https://avatars.githubusercontent.com/u/177237971?v=4" width="42;" alt="NyA!K0"/>
+</a>
+<a href="https://github.com/Kisechan" title="Kise Platinyl">
+  <img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/>
 </a>
 <a href="https://github.com/KS-OTO" title="KS-OTO">
   <img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/>
