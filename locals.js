@@ -11388,6 +11388,9 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                         "No matches found": "未找到匹配项",
                         "Go to folder": "转到文件夹",
                         "See all results": "查看所有结果",
+            
+            // Git LFS 托管的文件
+                "Stored with Git LFS": "Git LFS 托管",
 
             // Action的 action.yml 文件
                 "You can publish this Action to the GitHub Marketplace": "您可以将此 Action 发布到 GitHub 市场",
