@@ -25748,6 +25748,9 @@ I18N["zh-CN"]["copilot"] = {
                 "Remove attachments": "移除附件",
 
             "Ask Copilot": "询问 Copilot",
+            "Add repositories, files and spaces": "添加仓库，文件和空间",
+                // 文件（夹）和符号
+                "Select folders and files in": "选择文件（夹）于",
             "Add attachment": "添加附件",
                 "Files and symbols…": "文件和符号…",
                     "First attach a repository": "请先附加仓库",
