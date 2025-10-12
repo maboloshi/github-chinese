@@ -391,6 +391,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "New Fine-grained Personal Access Token": "新建精细化个人访问令牌",
         "Coding agent": "编程智能体",
         "Get Started With GitHub Discussions": "开始使用 GitHub 讨论",
+        "SSH and GPG keys": "SSH 和 GPG 密钥",
     },
     "regexp": [ // 正则翻译
         [/Authorized OAuth Apps/, "授权的 OAuth 应用"],
