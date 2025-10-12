@@ -14812,6 +14812,13 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
                     "Download CSV": "下载 CSV",
                     "Download PNG": "下载 PNG",
 
+                "Customization settings": "自定义设置",
+                    "Column & bar chart settings": "柱状图设置",
+                        "Increase Contrast": "增加对比度",
+                            "Adds gradients and outlines to increase contrast in charts.": "为图表添加渐变效果和轮廓，以增强对比度",
+                        "Show data labels": "显示数据标签",
+                            "Show labels for each data point in column and bar charts.": "在柱状图中显示每个数据点的标签",
+
             "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有时对尚未关闭的旧项目会有新的讨论。以下是所有有未解决讨论的议题和拉取请求列表。",
                 "commented on": "评论于",
                 "new comments": "新评论",
