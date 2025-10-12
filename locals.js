@@ -4957,6 +4957,8 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             "Authentication keys": "认证密钥",
             "There are no SSH keys associated with your account.": "没有与您的账户关联的 SSH 密钥。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "这是与您的账户相关的 SSH 密钥的列表。删除任何您无法识别的密钥。",
+            "Never used": "从未使用",
+                "— Read/write": "- 读写",
             "Last used within the last week": "上周内最后一次使用",
             "Check out our guide to": "请看我们的指南",
             "connecting to GitHub using SSH keys": "使用 SSH 密钥连接到 GitHub",
