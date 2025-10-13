@@ -15154,6 +15154,13 @@ I18N["zh-CN"]["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
                 "Download CSV": "下载 CSV",
                 "Download PNG": "下载 PNG",
 
+            "Customization settings": "自定义设置",
+                "Line chart settings": "折线图设置",
+                    "Differentiate by line style": "折线样式区分",
+                        "Use unique line styles (dashed, dotted, etc.) to differentiate lines in charts.": "使用独特的线条样式（如虚线、点线等）在图表中区分不同的线条。",
+                    "Show data labels": "显示数据标签",
+                        "Show labels for each data point in line chart.": "在折线图每个数据点显示标签。",
+
             // 表格
             "Category": "日期", // 实际上为日期
             "Total": "总计",
