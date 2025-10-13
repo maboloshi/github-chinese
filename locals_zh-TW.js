@@ -828,6 +828,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Privacy": "隱私",
             "Security": "安全",
             "Status": "狀態",
+            "Community": "社區",
             "Docs": "文檔",
             "Contact": "聯繫我們",
             "Manage cookies": "管理 Cookies",
@@ -3073,6 +3074,7 @@ I18N["zh-TW"]["settings-menu"] = { // 設置 - 公共部分
         "Billing and licensing": "賬單和許可",
             "New": "新",
             "Usage": "使用情況",
+            "Premium request analytics": "高級請求分析",
             "Budgets and alerts": "預算和警報",
             "Licensing": "許可",
             "Payment information": "支付信息",
@@ -3747,6 +3749,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                         "Packages storage": "軟體包存儲",
                         "Included usage limits reset in": "將重置於",
                         "days": "天內",
+                        "day": "天內",
                 "Chart options": "圖表選項",
                     "View as table": "以表格形式查看",
                         "DateTime": "日期時間",
@@ -3881,6 +3884,23 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Units": "單位",
                 "Price/unit": "單價",
                 "Billed amount": "計費",
+
+        // 高級請求分析 https://github.com/settings/billing/premium_requests_usage
+            "Usage analytics for premium requests in your personal account.": "在您的個人賬戶中針對高級請求的使用分析。",
+
+            "Billed premium requests": "計費高級請求",
+                "Increase your budget": "提高您的預算",
+                    "to use premium requests beyond your included request limit.": "以便在超出包含請求額度後繼續使用。",
+
+            "Included premium requests consumed": "包含高級請求",
+                "Premium requests included in your": "高級請求包含在您的",
+                    "Copilot plan": "Copilot 計劃中",
+                    // 後續走正則
+
+            // 用量分析
+                "Model": "模型",
+                    "Included requests": "包含請求",
+                    "Billed requests": "計費請求",
 
         // 預算和警報 https://github.com/settings/billing/budgets
            "Account budgets": "賬戶預算",
@@ -4328,9 +4348,17 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
 
     },
     "regexp": [ // 正則翻譯
+        // 高級請求分析（詞條打架調整位置） https://github.com/settings/billing/premium_requests_usage
+        [/. Monthly limit resets in (\d+) days? on (.+)./, "。將在 $1 天后（$2）重置。"],
+        [/Usage for (.+) - (.+). Price per premium request is \$0.04./, (match, p1, p2) => {
+            const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
+            const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+            return `${translatedP1}-${translatedP2}用量。高級請求價格為 $0.04 / 個。`;
+        }],
 
         // billing 概況頁面
-        [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+)./, (match, p1, p2) => { // 概況下方小字，過於囉嗦直接省略
+        [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概況下方小字，過於囉嗦直接省略
             //const translatedP1 = I18N["zh-TW"]["public"]["time-regexp"][p1] || p1;
             //const translatedP2 = I18N["zh-TW"]["public"]["time-regexp"][p2] || p2;
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
@@ -4449,9 +4477,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
         //     return `${translatedDate}` + optKey[opt];
         // }],
 
-        // 計費用量 https://github.com/settings/billing/usage
-            [/^Group: (None|Product|SKU|Repository)$/, function(all, group) {
-                var groupKey = {'None': '無','Product': '產品','SKU': 'SKU','Repository': '倉庫'};
+        // 計費用量 https://github.com/settings/billing/usage + 高級請求分析 https://github.com/settings/billing/premium_requests_usage
+            [/^Group(?: by)?: (None|Product|SKU|Repository|Models)$/, function(all, group) {
+                var groupKey = {'None': '無','Product': '產品','SKU': 'SKU','Repository': '倉庫', 'Models': '模型'};
                 return '分組：' + groupKey[group];
             }],
             [/Usage for (.+)./, (match, p1) => {
@@ -11360,6 +11388,9 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
                         "No matches found": "未找到匹配項",
                         "Go to folder": "轉到文件夾",
                         "See all results": "查看所有結果",
+            
+            // Git LFS 託管的文件
+                "Stored with Git LFS": "Git LFS 託管",
 
             // Action的 action.yml 文件
                 "You can publish this Action to the GitHub Marketplace": "您可以將此 Action 發佈到 GitHub 市場",
@@ -25693,6 +25724,8 @@ I18N["zh-TW"]["copilot"] = {
                 "More options": "更多",
                     "Download all files": "下載全部",
                     "Close all tabs": "關閉所有標籤",
+
+                "Diff": "差異",
 
                 "Download code": "下載程式碼",
 

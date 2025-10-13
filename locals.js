@@ -74,7 +74,7 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            'div.QueryBuilder-StyledInputContainer',  // 顶部搜索栏 关键词被翻译
+            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
         ],
     },
 
@@ -192,7 +192,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            'span.ActionListItem-label.text-normal', // 顶部搜索栏 关键词被翻译
+            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
         ],
     },
@@ -866,6 +866,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Nothing to preview": "没有什么可预览",
             "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
             "Add review comment": "添加审查意见", // 具体拉取请求 文件审查意见
+            "Failed to save comment: Body can't be blank": "保存评论失败：正文内容不能为空", // 具体拉取请求 文件审查意见
             "Start a review": "开始审查", // 具体拉取请求 文件审查意见
             // 取消按钮 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
@@ -1152,8 +1153,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 公共词 高频词
             "Follow": "关注",
             "Unfollow": "取消关注",
-            "Star": "标星",
-            "Stars": "标星",
+            "Star": "星标",
+            "Stars": "星标",
             "Unstar": "已加星标",
             "Starred": "已加星标",
             "Fork": "复刻",
@@ -9352,6 +9353,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "The issue was successfully deleted.": "该议题已成功删除。",
 
                 "Participants": "参与者",
+                    "No participants": "尚无参与者",
 
             "Load more…": "载入更多…",
             // 新版议题页面
@@ -10432,6 +10434,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "All changes": "所有更改",
                 "All commits": "所有提交",
+                "Changes since your last review": "自您上次审核以来的更改",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
@@ -11496,6 +11499,9 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "View remainder of file in raw view": "以原码视图查看文件剩余部分",
 
             // 正文部分
+                // 只读模式
+                    "Code view is read-only. ": "代码视图是只读的。",
+                    "Switch to the editor.": "请切换至编辑器。",
                 // csv 文件
                     "Search this file": "搜索这个文件", // csv 文件
                     // 提醒
