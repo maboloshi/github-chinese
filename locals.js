@@ -269,7 +269,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Forgot your password? · GitHub": "忘记您的密码了吗？· GitHub",
         "Forgot your password?": "忘记您的密码了吗？",
         "GitHub · Where software is built": "GitHub · 软件构建的地方",
-        "Create a New Repository": "创建新仓库",
+        "Create a New Repository": "新建仓库",
         "Import a Repository": "导入仓库",
         "New Project": "创建项目",
         "Your Repositories": "我的仓库",
@@ -7653,7 +7653,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         ...I18N["zh-CN"]["repository-public"]["static"],
 
         // 新建仓库 https://github.com/new
-            "Create a new repository": "创建新仓库",
+            "Create a new repository": "新建仓库",
                 "A repository contains all project files, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
                 "Already have a project repository elsewhere?": "在其他地方已有仓库？",
                 "Import a repository": "导入仓库",
@@ -8201,7 +8201,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
 
             "Use this template": "使用此模板",
-                "Create a new repository": "创建新仓库",
+                "Create a new repository": "新建仓库",
                 "Open in a codespace": "在代码空间中打开",
 
             // 个人仓库 当前分支状态
@@ -13670,6 +13670,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
                 "Search or create a new tag": "查找或新建标签",
             "Tag:": "标签：",
                 "Select tag": "选择标签",
+                "Create new tag": "新建标签",
             "Target:": "目标：",
                 "Pick a branch or recent commit": "选择分支或最近的提交",
                 "Filter branches…": "筛选分支…",
@@ -13844,6 +13845,8 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         [/(\d+) (people|person) reacted/, "$1 人表达看法"],
         [/There are no releases containing \"([^ ]+)\"./, "没有发行版包含“$1”。"],
         [/Edit (.+)/, "编辑 $1"],
+        [/^([^ ]+) will be created on publish/, "$1 将在发布时创建"],
+        [/^([^ ]+) is used by another release/, "$1 已存在"], // 省略部分内容
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
