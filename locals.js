@@ -15387,6 +15387,7 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
                 "Filter by ecosystem": "按生态系统筛选",
 
             "ProTip!": "专业提示！",
+            "What’s not been updated": "未更新内容",
                 "Supported ecosystems will have transitivity labels on their packages.": "受支持的生态系统将在其包上有传递性标签。",
 
     },
@@ -22065,6 +22066,7 @@ I18N["zh-CN"]["orgs/people"] = { // 组织 - 成员标签卡
 
             "Sort": "排序",
             "Sort Order": "排序方式",
+            "Order": "方式",
             "Newest": "最新的",
             "Oldest": "最早的",
 
