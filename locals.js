@@ -14713,6 +14713,7 @@ I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
             "Contributors": "贡献者",
             "Community": "社区",
             "Community Standards": "社区准则",
+            "Community standards": "社区准则",
             "Traffic": "流量",
             "Commits": "提交",
             "Code frequency": "代码频率",
@@ -14723,6 +14724,8 @@ I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
             "Forks": "复刻",
             "Actions Usage Metrics": "操作使用情况",
             "Actions Performance Metrics": "操作数据看板",
+            "Actions usage metrics": "操作使用情况",
+            "Actions performance metrics": "操作数据看板",
 
             "People": "成员", //组织仓库
 
