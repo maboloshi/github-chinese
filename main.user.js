@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.3-2025-10-08
+// @require      https://raw.githubusercontent.com/SychO3/github-chinese/gh-pages/locals.js?v1.9.3-2025-10-08
 // @run-at       document-start
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
