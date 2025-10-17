@@ -9928,6 +9928,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "unlocked this conversation": "解锁此对话",
             "added this to the": "添加到",
             "milestone": "里程碑",
+            "review requested due to automatic review settings": "因设置自动审查",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
