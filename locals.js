@@ -705,6 +705,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Chat with Copilot": "与 Copilot 聊天",
             "Learn more about Copilot coding agent": "了解有关 Copilot 编程智能体的更多信息",
             "Start a new task with Copilot": "使用 Copilot 启动新任务",
+            "Describe a coding task to work on": "描述要完成的编程任务",
             "Open Copilot…": "打开 Copilot…",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
