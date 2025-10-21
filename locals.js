@@ -10805,6 +10805,8 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "switching the base": "切换基础库",
                 "for your comparison.": "来进行比较。",
 
+                "are entirely different commit histories.": "是完全不同的提交历史。",
+
             "Discuss and review the changes in this comparison with others.": "与他人讨论并回顾此次对比中的变化。",
 
             "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的 250 个提交。",
