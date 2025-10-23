@@ -12184,7 +12184,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // 复刻仓库操作页面提示
             "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
+            "Workflows aren't being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
+            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository. Some GitHub features that depend on Actions may still be able to run.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。一些依赖于 Actions 的 GitHub 功能可能可以运行。",
             "I understand my workflows, go ahead and enable them": "我已理解我的工作流程，可以放心启用它们。",
             "View the workflows directory": "查看工作流程目录",
 
