@@ -5056,6 +5056,7 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
     },
     "regexp": [ // 正则翻译
         [/You have successfully added the key \'([^ ]+)\'./, "成功添加密钥 “$1”。"],
+        [/Last used within the last (\d+) weeks?/, "$1 周内最后一次使用"],
     ],
 };
 
