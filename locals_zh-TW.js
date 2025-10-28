@@ -45,7 +45,7 @@ I18N.conf = {
      * 導入倉庫 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 倉庫路徑
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
@@ -74,7 +74,7 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            'div.QueryBuilder-StyledInputContainer',  // 頂部搜索欄 關鍵詞被翻譯
+            '#qb-input-query',  // 頂部搜索欄 關鍵詞被翻譯
         ],
     },
 
@@ -192,7 +192,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            'span.ActionListItem-label.text-normal', // 頂部搜索欄 關鍵詞被翻譯
+            '#qb-input-query',  // 頂部搜索欄 關鍵詞被翻譯
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素標籤
         ],
     },
@@ -269,7 +269,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Forgot your password? · GitHub": "忘記您的密碼了嗎？· GitHub",
         "Forgot your password?": "忘記您的密碼了嗎？",
         "GitHub · Where software is built": "GitHub · 軟體構建的地方",
-        "Create a New Repository": "創建新倉庫",
+        "Create a New Repository": "新建倉庫",
         "Import a Repository": "導入倉庫",
         "New Project": "創建專案",
         "Your Repositories": "我的倉庫",
@@ -359,6 +359,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Discover gists · GitHub": "探索程式碼片段 · GitHub",
         "Explore GitHub Sponsors": "探索 GitHub 贊助者",
         "Actions Usage Metrics": "操作使用情況",
+        "Actions usage metrics": "操作使用情況",
         "Fine-grained Personal Access Tokens": "精細化的個人訪問令牌",
         "Import repository": "導入倉庫",
         "Explore GitHub": "探索 GitHub",
@@ -370,6 +371,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Code security": "程式碼安全",
         "Deploy keys": "部署密鑰",
         "Actions Performance Metrics": "操作數據看板",
+        "Actions performance metrics": "操作數據看板",
         "GitHub Sitemap · GitHub": "GitHub 網站地圖",
         "Code search results": "程式碼搜索結果",
         "Enterprises": "企業版",
@@ -391,6 +393,8 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "New Fine-grained Personal Access Token": "新建精細化個人訪問令牌",
         "Coding agent": "編程智能體",
         "Get Started With GitHub Discussions": "開始使用 GitHub 討論",
+        "SSH and GPG keys": "SSH 和 GPG 密鑰",
+        "MCP Registry": "MCP 互聯",
     },
     "regexp": [ // 正則翻譯
         [/Authorized OAuth Apps/, "授權的 OAuth 應用"],
@@ -661,6 +665,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Codespaces": "程式碼空間",
             "Explore": "探索",
             "Marketplace": "市場",
+            "MCP Registry": "MCP 互聯",
 
             "Download Copilot": "下載 Copilot", // 小屏模式
 
@@ -698,6 +703,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
         // 右上角 Copilot 下拉菜單
             "Chat with Copilot": "與 Copilot 聊天",
+            "Learn more about Copilot coding agent": "瞭解有關 Copilot 編程智能體的更多信息",
+            "Start a new task with Copilot": "使用 Copilot 啟動新任務",
+            "Describe a coding task to work on": "描述要完成的編程任務",
             "Open Copilot…": "打開 Copilot…",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
@@ -863,6 +871,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Nothing to preview": "沒有什麼可預覽",
             "This repository has been archived.": "此倉庫已存檔。", // 已存檔倉庫 某個提交的評論框
             "Add review comment": "添加審查意見", // 具體拉取請求 文件審查意見
+            "Failed to save comment: Body can't be blank": "保存評論失敗：正文內容不能為空", // 具體拉取請求 文件審查意見
             "Start a review": "開始審查", // 具體拉取請求 文件審查意見
             // 取消按鈕 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您確定要放棄未保存的更改嗎？",
@@ -1149,8 +1158,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         // 公共詞 高頻詞
             "Follow": "關注",
             "Unfollow": "取消關注",
-            "Star": "標星",
-            "Stars": "標星",
+            "Star": "星標",
+            "Stars": "星標",
             "Unstar": "已加星標",
             "Starred": "已加星標",
             "Fork": "複刻",
@@ -4957,6 +4966,8 @@ I18N["zh-TW"]["settings/keys"] = { // 設置 - SSH 與 GPG 公鑰
             "Authentication keys": "認證密鑰",
             "There are no SSH keys associated with your account.": "沒有與您的賬戶關聯的 SSH 密鑰。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "這是與您的賬戶相關的 SSH 密鑰的列表。刪除任何您無法識別的密鑰。",
+            "Never used": "從未使用",
+                "— Read/write": "- 讀寫",
             "Last used within the last week": "上週內最後一次使用",
             "Check out our guide to": "請看我們的指南",
             "connecting to GitHub using SSH keys": "使用 SSH 密鑰連接到 GitHub",
@@ -5003,6 +5014,7 @@ I18N["zh-TW"]["settings/keys"] = { // 設置 - SSH 與 GPG 公鑰
 
     },
     "regexp": [ // 正則翻譯
+        [/You have successfully added the key \'([^ ]+)\'./, "成功添加密鑰 “$1”。"],
     ],
 };
 
@@ -5488,7 +5500,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Copilot policies": "Copilot 規則",
                 "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
                     "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 程式碼審查和預覽功能僅適用於付費版。",
-                    "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。預覽功能僅適用於付費版。", 
+                    "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。預覽功能僅適用於付費版。",
                     "Learn more about Copilot in GitHub.com": "瞭解更多關於在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "編輯器預覽功能",
                     "You can use preview features in your editor.": "您可以在編輯器中使用預覽功能。",
@@ -7370,6 +7382,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
             "people": "人", // 提交
             "committed": "提交於", // 提交浮窗
             "authored": "撰寫於",
+            "authored and": "撰寫和", // 1 編寫，由 2 提交
 
             // 標籤欄
             "Code": "程式碼",
@@ -7469,6 +7482,7 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
                 "View all tags": "查看全部標籤",
 
                 "Find or create a branch...": "查找或創建分支...",
+                "Search or create a new tag": "搜索或創建新標籤",
                 "View all": "查看全部",
                 "branches": "分支",
                 "Find a tag...": "查找標籤...",
@@ -7647,7 +7661,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 倉庫 - 新建/導入/複刻倉庫
         ...I18N["zh-TW"]["repository-public"]["static"],
 
         // 新建倉庫 https://github.com/new
-            "Create a new repository": "創建新倉庫",
+            "Create a new repository": "新建倉庫",
                 "A repository contains all project files, including the revision history.": "倉庫包含專案中的所有文件，包括修訂歷史記錄。",
                 "Already have a project repository elsewhere?": "在其他地方已有倉庫？",
                 "Import a repository": "導入倉庫",
@@ -8195,7 +8209,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
 
 
             "Use this template": "使用此模板",
-                "Create a new repository": "創建新倉庫",
+                "Create a new repository": "新建倉庫",
                 "Open in a codespace": "在程式碼空間中打開",
 
             // 個人倉庫 當前分支狀態
@@ -9347,6 +9361,7 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
                     "The issue was successfully deleted.": "該議題已成功刪除。",
 
                 "Participants": "參與者",
+                    "No participants": "尚無參與者",
 
             "Load more…": "載入更多…",
             // 新版議題頁面
@@ -9920,6 +9935,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "unlocked this conversation": "解鎖此對話",
             "added this to the": "添加到",
             "milestone": "里程碑",
+            "review requested due to automatic review settings": "因設置自動審查",
 
             //
             "This branch has not been deployed": "該分支尚未部署",
@@ -10427,6 +10443,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
                 "All changes": "所有更改",
                 "All commits": "所有提交",
+                "Changes since your last review": "自您上次審核以來的更改",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "選擇多個提交",
                     "Clear selection": "清除選擇",
@@ -11388,7 +11405,7 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
                         "No matches found": "未找到匹配項",
                         "Go to folder": "轉到文件夾",
                         "See all results": "查看所有結果",
-            
+
             // Git LFS 託管的文件
                 "Stored with Git LFS": "Git LFS 託管",
 
@@ -11491,6 +11508,9 @@ I18N["zh-TW"]["repository/blob"] = { // 倉庫 - 瀏覽程式碼
                 "View remainder of file in raw view": "以原碼視圖查看文件剩餘部分",
 
             // 正文部分
+                // 只讀模式
+                    "Code view is read-only. ": "程式碼視圖是只讀的。",
+                    "Switch to the editor.": "請切換至編輯器。",
                 // csv 文件
                     "Search this file": "搜索這個文件", // csv 文件
                     // 提醒
@@ -12846,7 +12866,7 @@ I18N["zh-TW"]["repository/new"] = { // 倉庫 - 新建/編輯/上傳/刪除文�
                     "Commit message": "提交信息",
                     "Extended description": "擴展描述",
                         "Add an optional extended description...": "添加描述... (可選)",
-                    
+
                     "Message and description suggested by Copilot.": "Copilot建議的消息和描述。",
                         "Send feedback": "提交反饋",
 
@@ -13659,6 +13679,7 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
                 "Search or create a new tag": "查找或新建標籤",
             "Tag:": "標籤：",
                 "Select tag": "選擇標籤",
+                "Create new tag": "新建標籤",
             "Target:": "目標：",
                 "Pick a branch or recent commit": "選擇分支或最近的提交",
                 "Filter branches…": "篩選分支…",
@@ -13833,6 +13854,8 @@ I18N["zh-TW"]["repository/releases"] = { // 倉庫 - 發行版頁面
         [/(\d+) (people|person) reacted/, "$1 人表達看法"],
         [/There are no releases containing \"([^ ]+)\"./, "沒有發行版包含“$1”。"],
         [/Edit (.+)/, "編輯 $1"],
+        [/^([^ ]+) will be created on publish/, "$1 將在發佈時創建"],
+        [/^([^ ]+) is used by another release/, "$1 已存在"], // 省略部分內容
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
 };
@@ -14692,6 +14715,7 @@ I18N["zh-TW"]["repository-insights-menu"] = { // 倉庫 -> 洞察 - 公共部分
             "Contributors": "貢獻者",
             "Community": "社區",
             "Community Standards": "社區準則",
+            "Community standards": "社區準則",
             "Traffic": "流量",
             "Commits": "提交",
             "Code frequency": "程式碼頻率",
@@ -14702,6 +14726,8 @@ I18N["zh-TW"]["repository-insights-menu"] = { // 倉庫 -> 洞察 - 公共部分
             "Forks": "複刻",
             "Actions Usage Metrics": "操作使用情況",
             "Actions Performance Metrics": "操作數據看板",
+            "Actions usage metrics": "操作使用情況",
+            "Actions performance metrics": "操作數據看板",
 
             "People": "成員", //組織倉庫
 
@@ -14806,6 +14832,13 @@ I18N["zh-TW"]["repository/pulse"] = { // 倉庫 -> 洞察 - 統計
                         "Category": "作者", // 此處原文錯誤
                     "Download CSV": "下載 CSV",
                     "Download PNG": "下載 PNG",
+
+                "Customization settings": "自定義設置",
+                    "Column & bar chart settings": "柱狀圖設置",
+                        "Increase Contrast": "增加對比度",
+                            "Adds gradients and outlines to increase contrast in charts.": "為圖表添加漸變效果和輪廓，以增強對比度",
+                        "Show data labels": "顯示數據標籤",
+                            "Show labels for each data point in column and bar charts.": "在柱狀圖中顯示每個數據點的標籤",
 
             "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時對尚未關閉的舊專案會有新的討論。以下是所有有未解決討論的議題和拉取請求列表。",
                 "commented on": "評論於",
@@ -15136,6 +15169,13 @@ I18N["zh-TW"]["repository/graphs/traffic"] = { // 倉庫 -> 洞察 - 流量
                 "Download CSV": "下載 CSV",
                 "Download PNG": "下載 PNG",
 
+            "Customization settings": "自定義設置",
+                "Line chart settings": "折線圖設置",
+                    "Differentiate by line style": "折線樣式區分",
+                        "Use unique line styles (dashed, dotted, etc.) to differentiate lines in charts.": "使用獨特的線條樣式（如虛線、點線等）在圖表中區分不同的線條。",
+                    "Show data labels": "顯示數據標籤",
+                        "Show labels for each data point in line chart.": "在折線圖每個數據點顯示標籤。",
+
             // 表格
             "Category": "日期", // 實際上為日期
             "Total": "總計",
@@ -15348,6 +15388,7 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 倉庫 -> 洞察 - 依�
                 "Filter by ecosystem": "按生態系統篩選",
 
             "ProTip!": "專業提示！",
+            "What’s not been updated": "未更新內容",
                 "Supported ecosystems will have transitivity labels on their packages.": "受支持的生態系統將在其包上有傳遞性標籤。",
 
     },
@@ -22026,6 +22067,7 @@ I18N["zh-TW"]["orgs/people"] = { // 組織 - 成員標籤卡
 
             "Sort": "排序",
             "Sort Order": "排序方式",
+            "Order": "方式",
             "Newest": "最新的",
             "Oldest": "最早的",
 
@@ -25748,6 +25790,9 @@ I18N["zh-TW"]["copilot"] = {
                 "Remove attachments": "移除附件",
 
             "Ask Copilot": "詢問 Copilot",
+            "Add repositories, files and spaces": "添加倉庫，文件和空間",
+                // 文件（夾）和符號
+                "Select folders and files in": "選擇文件（夾）於",
             "Add attachment": "添加附件",
                 "Files and symbols…": "文件和符號…",
                     "First attach a repository": "請先附加倉庫",
@@ -26321,4 +26366,25 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
         //[/Verified since (.+)/, "驗證自 $1"],
         [/(\d+) views?/, "$1 次觀看"],
     ],
+};
+
+I18N["zh-TW"]["mcp"] = {
+    "static": {
+        "Connect models to the real world": "連接模型至真實世界",
+            "Servers and tools from the community that connect models to files, APIs, databases, and more.": "來自社區的服務器和工具，可以將模型連接到文件、API、數據庫等。",
+
+        "Search MCPs": "搜索 MCP",
+
+        "All MCP servers": "所有 MCP 服務器",
+            "Install": "安裝",
+                "Install in VS Code": "安裝到 VS Code",
+                "Install in VS Code Insiders": "安裝到 VS Code 測試版",
+
+            "By": "作者",
+
+        // 具體頁面
+            "Install MCP server": "安裝 MCP 服務器",
+            "Contact support": "獲取支持",
+    },
+    "regexp": [],
 };
