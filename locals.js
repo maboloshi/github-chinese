@@ -24493,17 +24493,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Hidden fields": "隐藏字段",
             "New field": "新建字段",
             "Column by": "栏目",
-            "Link a project": "关联项目",
-            "Welcome to projects": "欢迎使用项目",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
-            "updated": "更新于",
-            "Sort": "排序",
-            "Make a copy": "复制",
-            "Remove project": "删除项目",
-            "Recently updated": "最近更新",
-            "Newest": "最新",
-            "Oldest": "最早",
-            "Least recently updated": "最久未更新",
             "Workflows": "工作流",
             "Archived items": "已存档项目",
             "Make a copy": "复制",
@@ -24649,6 +24638,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
 I18N["zh-CN"]["new/project"] = I18N["zh-CN"]["projects"];
 I18N["zh-CN"]["repository/projects/new"] = I18N["zh-CN"]["projects"];
+I18N["zh-CN"]["repository/projects"] = I18N["zh-CN"]["projects"];
 
 I18N["zh-CN"]["redeem"] = { // 兑换页面
     "static": { // 静态翻译
