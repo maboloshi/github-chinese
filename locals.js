@@ -1496,7 +1496,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "No, thanks": "不，谢谢",
             
             "No chats yet": "还没有聊天",
-            "Ask Copilot anything on the right to start your first chat." :"在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
+            "Ask Copilot anything on the right to start your first chat.": "在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
 
     },
     "regexp": [ // 正则翻译
@@ -3434,7 +3434,7 @@ I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
             "downgrade your account": "降级您的账户",
             "to a": "为",
             "FREE": "免费",
-            "account? We won’t charge your credit card anymore.": "账户吗？我们不会再收取您的信用卡账单。",
+            "account? We won’t charge your credit card anymore.": "账户吗？我们不会再向您的信用卡收费。",
             "account? We won’t charge your payment information anymore.": "账户吗？我们不会再收取您的支付信息。",
                 "Are you sure you want to do this?": "您确定要这么做吗？",
                 "This is extremely important.": "这是极其重要的。",
@@ -4921,7 +4921,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/Are you sure you want to delete your `([^ ]+)` passkey?/, "您确定要删除您的 “$1” 通行密钥吗？"],
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
-        [/(\d+) passkey(?:s)? configured/, "$1 个通行密钥已配置"],
+        [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
     ],
 };
 
@@ -5663,7 +5663,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
-                    "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和 Coding Agent 中连接 MCP 服务器。",
+                    "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和编程智能体中连接 MCP 服务器。",
                 "OpenAI GPT-5 mini in Copilot": "GPT-5 mini 模型",
                     "You can use the latest OpenAI GPT-5 mini model.": "您可以使用 GPT-5 mini 模型。",
                     "Learn more about how GitHub Copilot serves OpenAI GPT-5 mini.": "了解更多关于 GitHub Copilot 如何为 GPT-5 mini 提供服务。",
@@ -5671,10 +5671,10 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若启用，您可以访问 xAI Grok Code Fast 1 并发送数据。",
                     "Learn more about how GitHub Copilot serves xAI Grok Code Fast 1.": "了解更多关于 GitHub Copilot 如何为 xAI Grok Code Fast 1 提供服务。",
                 "Copilot-generated commit messages" : "Copilot 生成的提交消息",
-                    "Allow Copilot to suggest commit messages when you make changes on GitHub.com.": "允许 Copilot 在你于 GitHub.com 上进行更改时提供提交消息建议。",
+                    "Allow Copilot to suggest commit messages when you make changes on GitHub.com.": "允许 Copilot 在您于 GitHub.com 上进行更改时提供提交消息建议。",
                     "Learn more about Copilot-generated commit messages.": "了解更多关于 Copilot 生成的提交消息。",
                 "Copilot Spaces": "Copilot 空间",
-                    "If enabled, you can view and create" : "若启用，您可以查看和创建",
+                    "If enabled, you can view and create": "若启用，您可以查看和创建",
                     "Copilot Spaces": "Copilot 空间",
                     ". When disabled, you cannot view or create any Copilot Spaces.": "。当禁用时，您无法查看或创建任何 Copilot 空间。",
                 "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要在其中启用 Copilot 编程智能体的仓库。Copilot 编程智能体仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
@@ -17819,7 +17819,7 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository. Unarchive your repository to access additional features.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。解除您仓库的存档以访问其他功能。", //存档仓库
             "Security and analysis features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "安全和分析功能有助于确保您的仓库安全和更新。通过启用这些功能，您授予我们对您的仓库执行只读分析的权限。",
             "Code Security features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.": "代码安全功能有助于保持仓库的安全和更新。启用这些功能即表示您授予我们对仓库执行只读分析的权限。",
-            "Advanced Security features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.":"高级安全功能有助于保持您的代码仓库安全并及时更新。启用这些功能后，您将授权我们对您的仓库进行只读分析。",
+            "Advanced Security features help keep your repository secure and updated. By enabling these features, you're granting us permission to perform read-only analysis on your repository.":"高级安全功能有助于保持您的仓库安全并及时更新。启用这些功能后，您将授权我们对您的仓库进行只读分析。",
 
             "Private vulnerability reporting": "私下漏洞报告",
                 "Allow your community to privately report potential security vulnerabilities to maintainers and repository owners.": "允许您的社区向维护者和仓库所有者私下报告潜在的安全漏洞。",
