@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -702,6 +702,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "New team": "新建团队", // 组织
 
         // 右上角 Copilot 下拉菜单
+            "Agents":"智能体",
             "Chat with Copilot": "与 Copilot 聊天",
             "Learn more about Copilot coding agent": "了解有关 Copilot 编程智能体的更多信息",
             "Start a new task with Copilot": "使用 Copilot 启动新任务",
@@ -1412,9 +1413,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Choose repositories to chat about.": "选择以聊天",
                         "Choose a repository to chat about.": "选择以聊天",
                 "Remove topic": "移除主题",
+                "Add repositories, files, and spaces": "添加仓库，文件和空间",
                 "Upload from computer": "上传本机文件",
-                "Extension…": "扩展…",
-                "Extension": "扩展",
+                "Files and folders": "文件和文件夹",
+                "Spaces…": "空间…",
+                "Create your first space": "创建您的第一个空间",
+                "Extensions…": "扩展…",
+                "Extensions": "扩展",
                     "Extensions": "扩展",
                         "Chat with your favorite tools and services": "使用您最喜欢的工具和服务聊天",
                         "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
@@ -1489,6 +1494,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "You will be compensated for your time": "您的时间将得到补偿。",
                 "Book a session": "预约",
                 "No, thanks": "不，谢谢",
+            
+            "No chats yet": "还没有聊天",
+            "Ask Copilot anything on the right to start your first chat." :"在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
 
     },
     "regexp": [ // 正则翻译
@@ -2020,7 +2028,9 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Report": "举报",
         "Recommended for you": "为您推荐",
         "Trending repositories": "热门仓库",
+        "Latest from our changelog":"来自我们的更新日志",
         "See more": "查看更多",
+        "Read more": "阅读更多",
         "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
         "Recommended based on people you follow": "根据您关注的人推荐",
         "has a new discussion in": "有一条新讨论，在",
@@ -3089,7 +3099,13 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
             "Payment information": "支付信息",
             "Payment history": "支付历史",
             "Additional billing details": "其他账单",
+            "Payment Method": "支付方式",
+            "Amount": "金额",
+            "Receipt": "收据",
             "Education benefits": "教育福利",
+            "Success": "成功",
+            "Refund": "退款",
+            "Declined": "拒绝",
         "Emails": "电子邮箱",
         "Password and authentication": "密码和身份验证",
         "Sessions": "会话",
@@ -3418,6 +3434,7 @@ I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
             "downgrade your account": "降级您的账户",
             "to a": "为",
             "FREE": "免费",
+            "account? We won’t charge your credit card anymore.": "账户吗？我们不会再收取您的信用卡账单。",
             "account? We won’t charge your payment information anymore.": "账户吗？我们不会再收取您的支付信息。",
                 "Are you sure you want to do this?": "您确定要这么做吗？",
                 "This is extremely important.": "这是极其重要的。",
@@ -3671,6 +3688,9 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                 "Don't send": "不发送",
                 "Send weekly": "每周发送",
                 "Send daily": "每日发送",
+
+            "Security campaign emails": "安全活动电子邮件",
+                "Receive email notifications about security campaigns in repositories where you have access to security alerts.": "接收有关您有权访问安全警报的仓库中的安全活动的电子邮件通知。",
 
             "\'Deploy key\' alert email": "“部署密钥” 警报电子邮件",
                 "When you are given admin permissions to an organization, automatically receive notifications when a new deploy key is added.": "当您获得组织的管理员权限时，会在添加新部署密钥时自动接收通知。",
@@ -4043,6 +4063,18 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 // 有付费计划
                     "Switch to yearly billing": "切换至年度计费",
                     "Switch to monthly billing": "切换至月度计费",
+
+            "Current Copilot plan": "当前 Copilot 计划",
+                "Monthly payment": "每月支付",
+                "Next payment": "下次支付",
+                "You can upgrade your subscription to yearly billing or cancel any time." : "您可以随时将订阅升级为年度计费或取消订阅。",
+                "Read billing documentation": "阅读计费文档",
+            
+            "Compare Copilot plans": "比较 Copilot 计划",
+            "Upgrade to Copilot Pro+" : "升级至 Copilot Pro+",
+            "Manage subscription": "管理订阅",
+            "Switch to annual billing": "切换至年度计费",
+            "Cancel subscription": "取消订阅",
 
         // 支付信息 https://github.com/settings/billing/payment_information
             "Billing information": "账单信息",
@@ -4777,9 +4809,13 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
                 // 通行密钥
                     "Passwordless sign-in with biometrics or security keys": "使用生物识别或安全密钥进行无密码登录",
                     "Add passkey": "添加通行密钥",
+                    "Seen from this browser": "在此浏览器中可见",
+                    "Synced": "已同步",
                 // Google
                     "Sign in with your Google account": "使用 Google 账户登录",
                     "Connect": "连接",
+                // Apple
+                    "Sign in with your Apple account": "使用 Apple 账户登录",
 
             "Two-factor authentication": "双因素身份验证",
                 "Two-factor authentication is not enabled yet.": "尚未启用双因素身份验证。",
@@ -4830,6 +4866,9 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
 
                 "SMS/Text message": "短信/文字信息",
                     "Manage SMS/Text message": "管理短信/文字信息",
+                    "Less secure": "不安全",
+
+                    "Get one-time codes sent to your phone via SMS to complete authentication requests. We strongly advise against using SMS because it is susceptible to interception, does not provide resistance against phishing attacks, and deliverability can be unreliable. It is recommended to use an Authenticator app instead of SMS.": "通过短信向您的手机发送一次性代码，以完成认证请求。我们强烈建议不要使用短信，因为它容易受到拦截，无法抵抗钓鱼攻击，且送达可靠性可能不稳定。建议使用身份验证器应用而不是短信。",
 
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
 
@@ -4881,6 +4920,8 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
         [/Are you sure you want to delete your `([^ ]+)` passkey?/, "您确定要删除您的 “$1” 通行密钥吗？"],
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
+        // 1 passkey configured
+        [/(\d+) passkey(?:s)? configured/, "$1 个通行密钥已配置"],
     ],
 };
 
@@ -5538,6 +5579,12 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Anthropic Claude Sonnet 4 in Copilot": "Claude Sonnet 4 模型",
                     "You can use the latest Anthropic Claude Sonnet 4 model.": "您可以使用最新 Claude Sonnet 4 模型。",
                     "Learn more about how GitHub Copilot serves Anthropic Claude Sonnet 4.": "了解更多关于 GitHub Copilot 如何为 Claude Sonnet 4 提供服务。",
+                "You can use the latest Anthropic Claude Sonnet 4.5 model." : "您可以使用最新 Claude Sonnet 4.5 模型。",
+                "Learn more about how GitHub Copilot serves Anthropic Claude Sonnet 4.5.": "了解更多关于 GitHub Copilot 如何为 Claude Sonnet 4.5 提供服务。",
+                "You can use the latest Anthropic Claude Haiku 4.5 model.": "您可以使用最新 Claude Haiku 4.5 模型。",
+                "Learn more about how GitHub Copilot serves Anthropic Claude Haiku 4.5.": "了解更多关于 GitHub Copilot 如何为 Claude Haiku 4.5 提供服务。",
+                "You can use the latest OpenAI GPT-5-Codex model.": "您可以使用最新 OpenAI GPT-5-Codex 模型。",
+                "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "了解更多关于 GitHub Copilot 如何为 OpenAI GPT-5-Codex 提供服务，并确认与您的 IDE 的兼容性。",
                 "Google Gemini 2.0 Flash in Copilot": "Gemini 2.0 Flash 模型",
                     "You can use Google’s Gemini 2.0 Flash model in Copilot.": "您可以使用 Gemini 2.0 Flash 模型。",
                     "Learn more about the public preview of Gemini 2.0 Flash.": "了解更多关于 GitHub Copilot 如何为 Gemini 2.0 Flash 提供服务。",
@@ -5613,14 +5660,24 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Copilot will automatically review your pull requests.": "Copilot 将自动审查您的拉取请求。",
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
                 "Copilot coding agent": "Copilot 编程智能体",
+                    "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
-                    "Connect MCP servers to Copilot in Visual Studio Code and Coding Agent. MCP support is GA in VS Code, while Coding Agent is in public preview. See MCP docs for": "将 MCP 服务器连接到 Visual Studio Code 和编程智能体中的 Copilot。MCP 支持在 VS Code 中已正式发布，而编程智能体目前处于公开预览阶段。详情请参阅 MCP 文档：",
+                    "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和 Coding Agent 中连接 MCP 服务器。",
                 "OpenAI GPT-5 mini in Copilot": "GPT-5 mini 模型",
                     "You can use the latest OpenAI GPT-5 mini model.": "您可以使用 GPT-5 mini 模型。",
                     "Learn more about how GitHub Copilot serves OpenAI GPT-5 mini.": "了解更多关于 GitHub Copilot 如何为 GPT-5 mini 提供服务。",
                 "xAI Grok Code Fast 1 in Copilot": "Grok Code Fast 1 模型",
                     "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若启用，您可以访问 xAI Grok Code Fast 1 并发送数据。",
+                    "Learn more about how GitHub Copilot serves xAI Grok Code Fast 1.": "了解更多关于 GitHub Copilot 如何为 xAI Grok Code Fast 1 提供服务。",
+                "Copilot-generated commit messages" : "Copilot 生成的提交消息",
+                    "Allow Copilot to suggest commit messages when you make changes on GitHub.com.": "允许 Copilot 在你于 GitHub.com 上进行更改时提供提交消息建议。",
+                    "Learn more about Copilot-generated commit messages.": "了解更多关于 Copilot 生成的提交消息。",
+                "Copilot Spaces": "Copilot 空间",
+                    "If enabled, you can view and create" : "若启用，您可以查看和创建",
+                    "Copilot Spaces": "Copilot 空间",
+                    ". When disabled, you cannot view or create any Copilot Spaces.": "。当禁用时，您无法查看或创建任何 Copilot 空间。",
+                "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要在其中启用 Copilot 编程智能体的仓库。Copilot 编程智能体仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
 
 
         // 编程智能体(预览 https://github.com/settings/copilot/coding_agent
@@ -6897,6 +6954,7 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
                 "Need an API token for scripts or testing?": "需要用于脚本或测试的 API 令牌？",
                 "Generate a personal access token": "生成个人访问令牌",
                 "for quick access to the": "用于快速访问",
+                "This token has expired": "此令牌已过期",
 
                 "These are fine-grained, repository-scoped tokens suitable for personal": "这些都是精细化的、仓库域的令牌，适合个人",
                 "use and for using Git over HTTPS.": "使用和通过 HTTPS 使用 Git。",
@@ -19493,6 +19551,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "Pull Requests mentioning you": "提及您的拉取请求", // pulls
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
+        "Recent activity": "最近活动",
+        "Views": "查看",
+        "Untitled view": "未命名的视图",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
@@ -24207,7 +24268,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Welcome to projects": "欢迎访问项目",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, 和 group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
             "Provide quick access to relevant projects.":"为相关项目提供便捷访问",
@@ -24235,6 +24296,8 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Try the": "尝试",
             "new projects today.": "新版项目。",
             "Repository access coming soon ✨": "仓库访问即将推出 ✨",
+            "Remove project":"移除项目",
+            "Open":"已打开",
 
             "Sort": "排序",
             "Sort by": "排序方式",
