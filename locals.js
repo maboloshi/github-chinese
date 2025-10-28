@@ -15345,7 +15345,8 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
             "Learn more about how we use your data.":"深入了解我们对您数据的使用方式。",
 
             "Enable the dependency graph": "启用依赖关系图",
-            "Track this repository’s dependencies and sub-dependencies": "追踪该仓库的依赖关系和子依赖关系",
+            "Track this repository’s": "追踪该仓库的",
+            "dependencies and sub-dependencies": "依赖关系和子依赖关系",
             "The": " ",
             "is not enabled for this repository. Click on \"Enable the dependency graph\" below to enable it.": "暂未启用。单击下面的 “启用依赖关系图” 以启用它。",
             "If you’d like to enable the": "如果您想启用",
