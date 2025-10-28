@@ -1512,6 +1512,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "从 $1 中选择项目来进行交流。使用较少的引用以获得更准确的回答。"],
         [/Choose files, folders, and symbols from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "选择 $1 中的文件（夹）和符号进行聊天。引用越少，回复越准确。"],
         [/Delete conversation: \"(.+)\"/, "删除对话：“$1”"],
+        // 智能体
+        [/Branch: (.+)/, "分支：$1"],
         /**
          * 匹配时间格式
          *
