@@ -665,7 +665,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Codespaces": "代码空间",
             "Explore": "探索",
             "Marketplace": "市场",
-            "MCP Registry": "MCP 互联",
+            "MCP registry": "MCP 互联",
 
             "Download Copilot": "下载 Copilot", // 小屏模式
 
