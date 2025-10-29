@@ -16721,7 +16721,8 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
 
                 "Bypass list is empty": "旁路列表为空",
 
-            "Targets": "目标",
+            "Target branches": "目标分支",
+                "Which branches should be matched?": "哪些分支应匹配？",
                 "Which branches do you want to make a ruleset for?": "您想为哪些分支制定规则集？",
                 "Which tags do you want to make a ruleset for?": "您想为哪些标签制定规则集？", // 标签
                 "Which repositories and branches do you want to make a ruleset for?": "您想为哪些仓库和分支创建规则集？", // 组织设置
@@ -16815,6 +16816,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Add Exclusion pattern": "添加排除规则",
 
             // 规则
+            "Branch rules": "分支规则",
             "rules": "规则",
                 "Which rules should be applied to the targets that you have selected?": "哪些规则应适用于您选择的目标？",
                 "Which rules should be applied?": "应适用哪些规则？",
@@ -16923,12 +16925,28 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Critical": "关键",
                             "High or higher": "高风险及以上",
                             "Medium or higher": "中风险及以上",
-                        "Alerts": "警报",
+                        "Alerts": "警报",   
                             "Errors": "仅错误",
                             "Errors and Warnings": "错误和警告",
                         "Delete Tool": "删除工具",
                         "Tools that must provide code scanning results for this rule to pass.": "必须提供代码扫描结果才能通过此规则的工具。",
                         "Learn more about enabling code scanning.": "了解更多关于启用代码扫描的信息。",
+                    
+                    "Require code quality results": "要求代码质量结果",
+                        "Choose which severity levels of code quality results should block pull request merges. When configured, a code quality analysis must be done on the pull request before the changes can be merged.": "选择哪些代码质量结果严重级别应阻止拉取请求合并。配置后，必须在拉取请求上进行代码质量分析，才能合并更改。",
+                        "Severity": "严重级别",
+                            "Error": "错误",
+                            "Warning": "警告",
+                            "Warnings and higher": "警告及以上",
+                            "Notes and higher": "备注及以上",
+                        "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合并提交之前，需要解决的最低严重级别代码质量审查。",
+
+                    "Automatically request Copilot code review": "自动请求 Copilot 代码审查",
+                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.": "如果作者有权访问 Copilot 代码审查，则自动请求 Copilot 对新拉取请求进行审查。",
+                        "Review new pushes": "审查新的推送",
+                        "Copilot automatically reviews each new push to the pull request.": "Copilot 自动审查每个新的推送请求。",
+                        "Review draft pull requests": "审查草稿拉取请求",
+                        "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "Copilot 自动审查草稿拉取请求，在标记为准备好审查之前。",
 
                     // 组织设置
                     "Require workflows to pass before merging": "要求合并前，工作流通过状态检查",
@@ -17189,6 +17207,12 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
             "Using your self-hosted runner": "使用您的自托管运行器",
             "For additional details about configuring, running, or shutting down the runner, please check out our": "关于配置、运行或关闭运行器的其他细节，请查看我们的",
             "product docs": "产品文档",
+            "Add new self-hosted runner": "添加新的自托管运行器",
+            "Using self-hosted runners in public repositories is not recommended.": "在公共仓库中使用自托管运行器不推荐。",
+            "Forks of your public repository can potentially run dangerous code on your self-hosted runner by creating a pull request.": "公共仓库的复刻可以潜在地在您的自托管运行器上运行危险代码，通过创建拉取请求。",
+            "Learn more about security hardening for self-hosted runners": "了解更多关于自托管运行器的安全强化",
+            "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. If you do not already have an existing volume licensing agreement for your GitHub purchases, by downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。如果您还没有现有的 GitHub 购买量许可证协议，通过下载并配置 GitHub 操作运行器，您同意",
+            "GitHub Customer Agreement": "GitHub 客户协议",
 
     },
     "regexp": [ // 正则翻译
@@ -17451,8 +17475,25 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
                 "Copilot references": "Copilot 在审查拉取请求时会参考",
                 "repository custom instructions": "仓库自定义指令",
                 "when reviewing pull requests.": "。",
+
+        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求的审查者，包括草稿。您还可以在 Visual Studio Code 中选择行，并请求 Copilot 审查和评论特定部分。",
+        "Learn more about Copilot code reviews.": "了解更多关于 Copilot 代码审查的信息。",
+
+        "Automated code reviews using rulesets": "使用规则集自动代码审查",
+            "Use rulesets to configure Copilot to review pull requests automatically.": "使用规则集配置 Copilot 自动审查拉取请求。",
+            "Learn how to set up rulesets.": "了解如何设置规则集。",
+        
+        "Go to rulesets": "前往规则集",
+        "No rulesets set up for automated reviews": "尚无设置自动代码审查的规则集",
+        "Create a ruleset to automate code reviews for pull requests targeting your default branch": "创建一个规则集，自动代码审查针对您的默认分支的拉取请求",
+        "Create ruleset for default branch": "创建针对默认分支的规则集",
     },
-    "regexp": [],
+    "regexp": [
+        // 1 repository ruleset
+        [/([^\s]+) repository ruleset/, "$1 仓库规则集"],
+        // 3 branch rules • targeting 1 branch
+        [/([^\s]+) branch rules \• targeting ([^\s]+) branch/, "$1 分支规则 • 针对 $2 分支"],
+    ],
 };
 
 I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
@@ -18169,6 +18210,7 @@ I18N["zh-CN"]["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<u
             "Allow write access": "允许写访问",
             "Can this key be used to": "该密钥允许",
             "push": "推送",
+            "Begins with": "以",
             "to this repository? Deploy keys always have pull access.": "到这个仓库？部署密钥始终具有拉取访问权限。",
             "Add key": "添加密钥",
             // 顶部提醒
