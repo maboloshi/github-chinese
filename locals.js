@@ -1941,11 +1941,11 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Fast and cost-efficient": "快速、经济高效",
         "Versatile and highly intelligent": "多功能、高智能",
         "Most powerful at complex tasks": "在复杂任务中最强大",
-        "Agent sessions": "智能体会话",
+        "Agent sessions": "智能体任务",
         "No sessions found. Try a different filter, or": "没有找到会话。尝试不同的过滤器，或",
-        "start a session": "创建一个会话",
-        "Agent sessions options": "智能体会话选项",
-        "Agent sessions to include": "智能体会话包含",
+        "start a session": "开始任务",
+        "Agent sessions options": "智能体任务选项",
+        "Agent sessions to include": "智能体任务包含",
             "Open": "打开",
             "Closed": "关闭",
         "Number of results": "结果数量",
@@ -2259,6 +2259,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
 
         // 新版首页（已登录）2025-10-29
             "Your personal account": "我的个人账户",
+
+            "Completed": "完成于",
 
             "Ready for review": "准备审查",
             "Assigned to Copilot": "分配给 Copilot",
