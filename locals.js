@@ -10342,6 +10342,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 中间
             "Loading branch information": "正在加载分支信息",
 
+            "Some comments aren't visible on the classic Files Changed page.": "某些评论在传统更改的文件页不可见。",
+
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
             "Try the new experience": "尝试新体验",
             // 工具条
