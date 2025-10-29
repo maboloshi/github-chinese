@@ -25724,6 +25724,10 @@ I18N["zh-CN"]["copilot"] = {
             "Open conversations": "打开侧边栏",
             "New chat": "新聊天",
 
+            "Agent sessions": "智能体任务",
+                "No agents running": "无智能体运行",
+                    "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以让 Copilot 在后台为您处理任务，创建一个供您审核的拉取请求。",
+
             // 时间
                 "Today": "今天",
                 "Yesterday": "昨天",
@@ -25749,18 +25753,6 @@ I18N["zh-CN"]["copilot"] = {
                     "Fast and cost-efficient": "快速、经济高效",
                     "Versatile and highly intelligent": "多功能、高智能",
                     "Most powerful at complex tasks": "执行复杂任务",
-                //"Model capabilities": "模型限制",
-                //    "Limited capabilities (o1)": "功能限制（o1）",
-                //    "Limited capabilities (Claude 3.7 Sonnet Thinking)": "模型限制（Claude 3.7 Sonnet Thinking）",
-                //        "This model has limited capabilities in retrieving external data. Learn more about selecting the right model": "该模型在检索外部数据方面的能力有限。如需了解如何选择合适的模型，请",
-                //        "here": "此处",
-                //        ". Here are a few of the common actions that are not supported:": "查看更多信息。以下是一些常见的不支持的操作：",
-                //        "While this model is better at reasoning, it is generally slower for everyday tasks and has limited capabilities in retrieving external data. Here are a few of the common actions that are not supported:": "虽然这种模型的推理能力更强，但在执行日常任务时通常速度较慢，而且检索外部数据的能力有限。以下是一些不支持的常见操作：",
-                //        "Not supported": "不支持",
-                //            "Using knowledge bases": "使用知识库",
-                //            "Retrieving issues": "检索议题",
-                //            "Retrieving pull requests": "检索拉取请求",
-                //            "Retrieving discussions": "检索讨论",
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Get file": "获取文件",
 
