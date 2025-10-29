@@ -1802,9 +1802,21 @@ I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
 I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
-        "Ask Copilot": "询问 Copilot",
+        "Ask anything": "询问任何事",
         "Send": "发送",
         "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
+
+            // 选项
+                "Task": "任务",
+                "Create issue": "创建议题",
+
+            "Models": "模型",
+                    "Fast and cost-efficient": "快速、经济高效",
+                    "Versatile and highly intelligent": "多功能、高智能",
+                    "Most powerful at complex tasks": "执行复杂任务",
+
+        "Try the new experience": "尝试新版",
+
         // 新手帮助
         "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
         "Using the Hello World guide, you’ll create a repository, start a branch,": "使用 Hello World 指南，您将创建一个仓库，开始一个分支，",
