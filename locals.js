@@ -7603,6 +7603,11 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "Reference in new issue": "引用到新议题",
                     // 引用到新议题 对话框
                     "Body": "正文",
+                    "Issue title": "议题标题",
+                    "Issue body": "议题正文",
+                    "Select repository": "选择仓库",
+                    "Repository:": "仓库：",
+                    "No matching repositories.": "没有匹配的仓库。",
                 "Report content": "举报内容",
                 "Report": "举报",
                 // 评论删除提醒
