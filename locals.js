@@ -17318,6 +17318,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
         [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
         [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
         [/All users that are not a member or owner of this repository and not a member of the ([^ ]+) organization will require approval to run workflows./, "所有不是该仓库成员或所有者，且未加入 $1 组织的用户，均需获得批准才能运行工作流。"], // 组织
+        [/Add new self-hosted runner · (.+)/, "添加自托管运行器 · $1"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
 };
