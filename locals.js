@@ -99,7 +99,7 @@ I18N.conf = {
             'strong[itemprop="name"]', // 仓库名称
             // 'ul.list-style-none', // 右侧 部署列表 无效
             'div[data-testid="latest-commit"]', // 最新的提交
-            'tr.react-directory-row', // 文件列表中文件夹和文件条目
+            '.react-directory-row', // 文件列表中文件夹和文件条目
             'p.f4.my-3', // 仓库简介正文
             '#translate-me',
             '.my-3.d-flex.flex-items-center', // 仓库简介中的链接
@@ -110,7 +110,7 @@ I18N.conf = {
             '.AppHeader-context-full', // 顶部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左侧文件树项目
             'span.PRIVATE_TreeView-item-content-text', // 左侧文件树项目 - 子文件夹
-            'tr.react-directory-row', // 文件列表中文件夹和文件条目
+            '.react-directory-row', // 文件列表中文件夹和文件条目
             '#repos-header-breadcrumb',
             '#file-name-id', // 文件路径中文件部分
             'article.markdown-body', // Markdown 正文
@@ -1496,7 +1496,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "You will be compensated for your time": "您的时间将得到补偿。",
                 "Book a session": "预约",
                 "No, thanks": "不，谢谢",
-            
+
             "No chats yet": "还没有聊天",
             "Ask Copilot anything on the right to start your first chat.": "在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
 
@@ -4076,7 +4076,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Next payment": "下次支付",
                 "You can upgrade your subscription to yearly billing or cancel any time." : "您可以随时将订阅升级为年度计费或取消订阅。",
                 "Read billing documentation": "阅读计费文档",
-            
+
             "Compare Copilot plans": "比较 Copilot 计划",
             "Upgrade to Copilot Pro+" : "升级至 Copilot Pro+",
             "Manage subscription": "管理订阅",
@@ -10817,7 +10817,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
-        // 变更比较 页面 /<user-name>/<repo-name>/compare
+        // 变更比较 页面 /<user-name>/<repo-name>/compare@
             "Compare changes": "比较变更",
             "Compare changes across branches, commits, tags, and more below. If you need to, you can also": "比较跨分支，提交，标签，和更多的变更。如果您需要，也可以",
             "compare across forks": "比较复刻库和源仓库",
@@ -24283,7 +24283,8 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Welcome to projects": "欢迎访问项目",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图。",
+            "No open projects": "无已打开的项目",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
             "Provide quick access to relevant projects.":"为相关项目提供便捷访问",
