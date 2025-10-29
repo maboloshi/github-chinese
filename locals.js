@@ -25756,6 +25756,9 @@ I18N["zh-CN"]["copilot"] = {
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Get file": "获取文件",
 
+            "Recent agent sessions": "最近智能体任务",
+                "No sessions found. Create one by sending a prompt above.": "未找到会话。请通过在上方发送提示来创建一个会话。",
+
             // 拉取请求列表
             "opened": "打开于",
             "closed": "关闭于",
@@ -26062,6 +26065,8 @@ I18N["zh-CN"]["copilot"] = {
                 "default": "默认",
 
             "Start task": "开始任务",
+
+            "Recent sessions": "最近任务",
 
             "Open": "打开",
                 "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
