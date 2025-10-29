@@ -5,6 +5,7 @@ on:
 
 jobs:
   clean:
+    name: 词条去重
     runs-on: ubuntu-latest
     steps:
       - name: 拉取仓库
