@@ -5050,8 +5050,6 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
 
                     "Get one-time codes sent to your phone via SMS to complete authentication requests. We strongly advise against using SMS because it is susceptible to interception, does not provide resistance against phishing attacks, and deliverability can be unreliable. It is recommended to use an Authenticator app instead of SMS.": "通过短信向您的手机发送一次性代码，以完成认证请求。我们强烈建议不要使用短信，因为它容易受到拦截，无法抵抗钓鱼攻击，且送达可靠性可能不稳定。建议使用身份验证器应用而不是短信。",
 
-                    "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
-
                     "Get authentication codes by SMS on your mobile phone when signing into GitHub. Make sure that": "登录 GitHub 时通过手机短信获取验证码。确保",
                     "your country or region is supported": "支持您的国家/地区",
                     "for SMS delivery.": "用于短信发送。",
