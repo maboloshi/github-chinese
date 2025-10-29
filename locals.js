@@ -3926,6 +3926,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "to use premium requests beyond your included request limit.": "以便在超出包含请求额度后继续使用。",
 
             "Included premium requests consumed": "包含高级请求",
+                "included": " ", // 多余原文，直接删除
                 "Premium requests included in your": "高级请求包含在您的",
                     "Copilot plan": "Copilot 计划中",
                     // 后续走正则
@@ -3934,6 +3935,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Model": "模型",
                     "Included requests": "包含请求",
                     "Billed requests": "计费请求",
+                    "Code Review model": "代码审查模型",
+                    "Coding Agent model": "编程智能体模型",
 
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
