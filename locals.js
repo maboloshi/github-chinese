@@ -7775,6 +7775,10 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "You must be signed in to star a repository": "您必须登录后才能标星仓库",
             "You must be signed in to add this repository to a list": "您必须登录后才能将此仓库添加到列表中",
             "You must be logged in to vote": "您必须登录后才能投票",
+        
+
+        "Open commit details": "打开提交详情",
+        "failure": "失败",
     },
     "regexp": [ // 正则翻译
         [/Started (\d+) discussions? in this repository in the past day/, "过去一天内在此仓库中开启了 $1 个讨论"], // 用户 浮动信息卡
@@ -7789,6 +7793,8 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         [/Successful in (\d+)s/, "在 $1 秒内成功"],
         [/Successful in (\d+)m/, "在 $1 分内成功"],
         [/(\d+) failing checks?/, "$1 个失败的检查"],
+        // 3 skipped
+        [/(\d+) skipped/, "$1 个跳过"],
         [/Failing after (\d+)s/, "在 $1 秒后失败"],
         [/(\d+) in progress check/, "$1 个正在运行的检查"],
         // [/ and /, " 和 "],
@@ -13357,6 +13363,7 @@ I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
         "Collapse menu": "折叠目录",
         "Catalog": "目录",
         "Share feedback": "反馈",
+        "Filter items": "筛选项目",
 
         // 概况
             "Build your AI products—right inside GitHub. Create prompts, test models, and ship AI-powered features with built-in tools for model access, prompt collaboration, and lightweight evaluation.": "在 GitHub 内部构建您的 AI 产品。利用内置的模型接入、提示协作和轻量级评估工具，创建提示词、测试模型，并发布 AI 驱动的功能。",
@@ -13367,9 +13374,19 @@ I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
                 "You need write permissions or higher for this repository to use GitHub Models.": "您需要拥有此仓库写入权限或更高权限，才能使用 GitHub 模型。",
                 "Learn more about GitHub Models.": "了解更多。",
 
+            "Get started": "开始使用",
+                "Watch the models demo": "观看模型演示",
+                "Watch this 3-minute demo reel to learn everything you can do with GitHub Models": "观看这个 3 分钟的演示视频，了解您可以使用 GitHub 模型完成的所有操作",
+
             "Prompts": "提示词",
                 "Create, evaluate, and iterate on prompts right inside your repo.": "在您的仓库内直接创建、评估和迭代提示词。",
                 "Get write permissions or higher for this repository to create and manage prompts.": "获得对此仓库的写入权限或更高权限，才能创建和管理提示词。",
+                "Create a prompt": "创建提示词",
+                "Build with natural language or using": "使用自然语言或使用",
+                "prompt.yml files": "prompt.yml 文件",
+                "Test sample prompt": "测试示例提示词",
+                "Manage prompts stored in your repo using": "管理您仓库中的提示词，使用",
+                "Get started with Models in your codebase": "开始使用模型您的代码库", // 还有一些部分未翻译
 
             "Add AI to your project now": "立即添加 AI 到您的项目",
                 "Drop this snippet into your code to start using AI instantly.": "将此代码片段插入您的代码中，即可立即开始使用 AI。",
@@ -24488,6 +24505,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
         // 仓库 项目页面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Welcome to projects": "欢迎访问项目",
             "No open projects": "无已打开的项目",
+            "No open project templates": "无已打开的项目模板",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
@@ -25812,7 +25830,21 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
 I18N["zh-CN"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
     "static": {
         //"hasn’t sponsored any users yet.": "尚未赞助任何人。",
-        "'s sponsorships": "的赞助者",
+        "'s sponsorships": " 的赞助者",
+
+        "Current Sponsorships": "当前赞助者",
+        "Past Sponsorships": "曾经赞助者",
+
+        "has": "有",
+        "current": "当前",
+        "past": "曾经", 
+        "and": "和",
+        "sponsorship": "赞助者",
+        "sponsorships": "赞助者",
+        "Search users": "搜索用户",
+        "Name": "名称",
+        "Start date": "开始日期",
+        "Sponsor": "赞助",
     },
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
