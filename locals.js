@@ -45,7 +45,7 @@ I18N.conf = {
      * 导入仓库 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|copilot|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'repository/settings/rules'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'spark', 'repository/settings/rules'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -71,6 +71,9 @@ I18N.conf = {
             '.styled-input-container', // 筛选条
         ],
         'copilot':[
+            '.cm-line',
+        ],
+        'spark':[
             '.cm-line',
         ],
         '*': [
@@ -663,6 +666,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Pull requests": "拉取请求",
             "Projects": "项目",
             "Codespaces": "代码空间",
+            "Feed": "动态",
+            "MCP registry": "MCP 互联",
             "Explore": "探索",
             "Marketplace": "市场",
             "MCP Registry": "MCP 互联",
@@ -1479,6 +1484,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Please don’t include sensitive, confidential, or personal data. Your anonymous feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的匿名反馈有助于我们改进服务，根据",
             "Privacy Policy": "隐私政策",
             "Send": "发送",
+            "Task": "任务",
+            "Create task": "创建任务",
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
 
             "Copy code": "复制代码",
@@ -1495,8 +1502,70 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Book a session": "预约",
                 "No, thanks": "不，谢谢",
 
+            "Chats": "聊天",
             "No chats yet": "还没有聊天",
             "Ask Copilot anything on the right to start your first chat." :"在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
+
+            "Agent sessions": "代理会话",
+                "New agent session": "新代理会话",
+                "No agents running": "没有代理会话运行",
+                "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以请求 Copilot 在后台处理任务，创建一个拉取请求供您审查。",
+
+            "Explore the latest Copilot launches from Universe ’25": "探索 Universe ’25 的最新 Copilot 启动",
+            "See what’s new": "查看最新内容",
+
+            "Recent agent sessions": "最近代理会话",
+            "Recent sessions": "最近会话",
+            "No sessions found. Create one by sending a prompt above.": "没有找到会话。通过发送提示来创建一个。",
+
+            // 空间
+            "Duplicate": "复制",
+            "Duplicate Space": "复制空间",
+            "Spaces are now available through the GitHub MCP in VSCode.": "空间现在可以通过 VSCode 的 GitHub MCP 使用。",
+            "Install": "安装",
+            "Spaces organize your files, pull requests, issues, and standards so Copilot can give more relevant help for your work.": "空间组织您的文件、拉取请求、议题和标准，以便 Copilot 为您的工作提供更相关的帮助。",
+            "Create space": "创建空间",
+            "Search...": "搜索...",
+            "Start your first space": "开始您的第一个空间",
+            "Need help? Read the docs": "需要帮助？阅读文档",
+            "Generate code": "生成代码",
+            "Produce code that follows your team's patterns.": "生成符合团队规范的代码。",
+            "Share knowledge": "分享知识",
+            "Centralize docs so your team can quickly find answers.": "集中管理文档，让团队快速找到答案。",
+            "Plan projects": "规划项目",
+            "Create requirements and issues your team can ship.": "创建团队可交付的需求与议题。",
+            "New Space": "新空间",
+            "Space name": "空间名称",
+            "Choose a name that describes your project or use case": "选择一个描述您的项目或用例的名称",
+            "Only you will be able to see this space.": "只有您可以看到此空间。",
+            "Create Space": "创建空间",
+            "Install MCP": "安装 MCP",
+            "Add a short description to explain this space's purpose (e.g., 'Frontend design system' or 'API docs hub').": "添加一个简短的描述，解释此空间的用途（例如，'前端设计系统'或'API 文档中心'）。",
+            "Add files": "添加文件",
+            "Define Copilot’s role, focus, and what to avoid in this space. Ex. “You are a [role]. Follow our [framework/patterns] to [type of task]. Avoid [practices or tools] unless specified”.": "定义 Copilot 的角色、焦点和在此空间中避免的内容。例如，“您是 [角色]。遵循我们的 [框架/规范] 来 [任务类型]。除非另有说明，否则避免 [实践或工具]。”",
+            "Sources": "来源",
+            "Conversations": "对话",
+            "Add sources": "添加来源",
+                "Add repository": "添加仓库",
+                "Add files from repository": "从仓库添加文件",
+                "Link files, pull requests, and issues": "链接文件、拉取请求和议题",
+                "Local": "本地",
+                "Upload a file": "上传文件",
+                "Add text content": "添加文本内容",
+            "Add sources to get started": "添加来源以开始",
+            "Provide files, docs, issues, or repositories so Copilot can give more relevant answers.": "提供文件、文档、议题或仓库，以便 Copilot 为您提供更相关的答案。",
+            "Start a new conversation in this space by typing in the input box at the top.": "通过在顶部输入框中输入，开始在此空间中的新对话。",
+            "Space not found": "空间未找到",
+            "This URL may be incorrect, you're signed out of your organization, or the Space may have been deleted.": "此 URL 可能不正确，您已退出组织，或空间可能已被删除。",
+            "Manage session": "管理会话",
+            "View pull request": "查看拉取请求",
+            "View verbose logs": "查看详细日志",
+            "More actions": "更多操作",
+            "Copilot started work": "Copilot 开始工作",
+            "Summary": "摘要",
+            "Copy head branch name to clipboard": "复制头分支名称到剪贴板",
+
+
 
     },
     "regexp": [ // 正则翻译
@@ -1799,7 +1868,35 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
         "Ask Copilot": "询问 Copilot",
+        "Ask anything": "询问任何事",
         "Send": "发送",
+        "Feedback": "反馈",
+        "Task": "任务",
+        "Create issue": "创建议题",
+        "Models": "模型",
+        "Fast and cost-efficient": "快速、经济高效",
+        "Versatile and highly intelligent": "多功能、高智能",
+        "Most powerful at complex tasks": "在复杂任务中最强大",
+        "Agent sessions": "代理会话",
+        "No sessions found. Try a different filter, or": "没有找到会话。尝试不同的过滤器，或",
+        "start a session": "创建一个会话",
+        "Agent sessions options": "代理会话选项",
+        "Agent sessions to include": "代理会话包含",
+            "Open": "打开",
+            "Closed": "关闭",
+        "Number of results": "结果数量",
+        "Pull request options": "拉取请求选项",
+        "Pull requests to include": "拉取请求包含",
+            "Authored": "由您创建",
+            "Mentioned": "被提及",
+            "Review requested": "请求审查",
+            "Reviewed": "已审查",
+        "Issue options": "议题选项",
+        "Issues to include": "议题包含",
+            "Assigned to me": "分配给我",
+            "Involves me": "涉及我",
+        "Open in Copilot chat": "在 Copilot Chat 中打开",
+        "Assign to Copilot": "分配给 Copilot",
         "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
         // 新手帮助
         "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
@@ -2029,6 +2126,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Recommended for you": "为您推荐",
         "Trending repositories": "热门仓库",
         "Latest from our changelog":"来自我们的更新日志",
+        "Try the new experience": "尝试新体验",
         "See more": "查看更多",
         "Read more": "阅读更多",
         "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
@@ -2100,6 +2198,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/(\d+) issues? needs? help/, "$1 个议题需要帮助"],
         [/Join discussion/, "加入讨论"],
         // [/Updated/, "更新于"],
+        // 创建于
+        [/Created/, "创建于"],
         [/You’re an owner of the ([^ ]+) organization!/, "您是 $1 组织的所有者！"], // 组织
         [/Create a repository for ([^ ]+)/, "为 $1 创建仓库"], // 组织
         [/Edit ([^ ]+)’s settings/, "编辑 $1 的设置"], // 组织
@@ -2131,6 +2231,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
     ],
 };
 I18N["zh-CN"]["dashboard"] = I18N["zh-CN"]["page-dashboard"];
+I18N["zh-CN"]["feed"] = I18N["zh-CN"]["page-dashboard"];
 I18N["zh-CN"]["orgs/dashboard"] = I18N["zh-CN"]["page-dashboard"];
 
 I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
@@ -26059,6 +26160,12 @@ I18N["zh-CN"]["copilot"] = {
             "revision": "修订",
 
             "In progress": "进行中",
+
+            "Dream it. See it. Ship it.": "梦想它。看到它。交付它。",
+            "Transform ideas into full-stack intelligent apps in a snap. Publish with a click.": "将想法转化为全栈智能应用，一键发布。",
+            "Spark is currently only available to Copilot Pro+ and Enterprise users.": "Spark 目前仅适用于 Copilot Pro+ 和 Enterprise 用户。",
+            "Upgrade now to access Spark": "立即升级以访问 Spark",
+            "Create web apps with React and TypeScript to prototype ideas, build tools, and more": "使用 React 和 TypeScript 创建 Web 应用，原型化想法，构建工具等",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
@@ -26459,3 +26566,6 @@ I18N["zh-CN"]["mcp"] = {
     },
     "regexp": [],
 };
+
+// 页面别名：让 /spark 复用 Copilot 的翻译
+I18N["zh-CN"]["spark"] = I18N["zh-CN"]["copilot"];
