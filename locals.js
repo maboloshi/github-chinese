@@ -16744,8 +16744,9 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
             "• targeting": "• 针对",
             ", targeting": ", 针对",
 
-            "Export ruleset": "导出规则集",
-            "Delete ruleset": "删除规则",
+            "Ruleset menu": "菜单",
+                "Export ruleset": "导出规则集",
+                "Delete ruleset": "删除规则",
 
             // 删除规则对话框
                 "Delete ruleset?": "删除规则？",
@@ -17021,7 +17022,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Critical": "关键",
                             "High or higher": "高风险及以上",
                             "Medium or higher": "中风险及以上",
-                        "Alerts": "警报",   
+                        "Alerts": "警报",
                             "Errors": "仅错误",
                             "Errors and Warnings": "错误和警告",
                         "Delete Tool": "删除工具",
@@ -17144,12 +17145,15 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                 "Changes reverted": "更改已恢复",
                 "No changes have been made": "未作任何更改",
                 "Invalid rules: 'Required status checks'": "无效规则：“必需的状态检查”",
+                "This": "此",
+                    "does not target any resources and will not be applied.": "未针对任何资源，将不会生效。",
 
 
     },
     "regexp": [ // 正则翻译
         [/Applies to (\d+) target/, "适用于 $1 个目标"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/(\d+) branch rules? • targeting (\d+) branch(es)?/, "$1 条分支规则 • 针对 $1 个分支"],
         [/(\d+) branch rules?/, "$1 条分支规则"],
         [/(\d+) rules?/, "$1 条规则"],
         [/(\d+) branch(?:es|)?/, "$1 个分支"],
@@ -17587,9 +17591,9 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
     },
     "regexp": [
         // 1 repository ruleset
-        [/([^\s]+) repository ruleset/, "$1 仓库规则集"],
+        [/(\d+) repository rulesets?/, "$1 仓库规则集"],
         // 3 branch rules • targeting 1 branch
-        [/([^\s]+) branch rules \• targeting ([^\s]+) branch/, "$1 分支规则 • 针对 $2 分支"],
+        [/(\d+) branch rules? • targeting (\d+) branch(?:es)?/, "$1 分支规则 • 针对 $2 分支"],
     ],
 };
 
