@@ -26066,6 +26066,8 @@ I18N["zh-CN"]["copilot"] = {
 
             "Start task": "开始任务",
 
+            "Started": "开始于",
+
             "Recent sessions": "最近任务",
 
             "Open": "打开",
@@ -26089,6 +26091,15 @@ I18N["zh-CN"]["copilot"] = {
             "revision": "修订",
 
             "In progress": "进行中",
+
+            // 智能体总结页
+                "session": "任务",
+                "sessions": "任务",
+
+                "premium": "高级",
+                "request": "请求",
+                "requests": "请求",
+                "· Last updated": "· 最后更新于",
     },
     "regexp":[
         [/Using results for “([^ ]+)” in ([^ ]+)/, "使用 $2 中“$1”的结果"],
