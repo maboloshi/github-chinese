@@ -5675,7 +5675,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
-        // GitHub Copilot https://github.com/settings/copilot
+        // GitHub Copilot https://github.com/settings/copilot/features
             "Trained on billions of lines of code,": "经过数十亿行代码的训练，",
             "turns natural language prompts into coding suggestions across dozens of languages.": "将自然语言提示转换为多种语言的编码建议。",
             "Start free trial": "开始免费试用",
@@ -5721,7 +5721,6 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
 
             "Copilot policies": "Copilot 规则",
                 "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
-                "Copilot in GitHub.com": "在 GitHub.com 中使用 Copilot",
                     "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 代码审查和预览功能仅适用于付费版。",
                     "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。预览功能仅适用于付费版。",
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
