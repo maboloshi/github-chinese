@@ -322,7 +322,6 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Tags": "标签",
         "Webhooks": "Web 钩子",
         "Environments": "环境",
-        "Security & analysis": "安全性与分析",
         "Deploy keys": "部署密钥",
         "Add deploy key": "添加部署密钥",
         "Actions secrets": "操作机密",
@@ -372,7 +371,6 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "GitHub · Build and ship software on a single, collaborative platform": "GitHub · 在单一协作平台上构建和发布软件",
         "Topics on GitHub · GitHub": "GitHub 上的主题",
         "Code security": "代码安全",
-        "Deploy keys": "部署密钥",
         "Actions Performance Metrics": "操作数据看板",
         "Actions performance metrics": "操作数据看板",
         "GitHub Sitemap · GitHub": "GitHub 网站地图",
@@ -396,7 +394,6 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "New Fine-grained Personal Access Token": "新建精细化个人访问令牌",
         "Coding agent": "编程智能体",
         "Get Started With GitHub Discussions": "开始使用 GitHub 讨论",
-        "SSH and GPG keys": "SSH 和 GPG 密钥",
         "MCP Registry": "MCP 互联",
     },
     "regexp": [ // 正则翻译
@@ -531,8 +528,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 速率限制 - 短时间频繁访问网页，至少包括 https://github.com/issues
         "Whoa there!": "请停一下！",
         "You have exceeded a secondary rate limit.": "您已经超出次要速率限制。",
-        "Please wait a few minutes before you try again;": "请稍等几分钟再重试；",
-        "in some cases this may take up to an hour.": "在某些情况下，这可能最多需要一个小时。",
         // 议题、拉取请求、讨论浮动信息卡（在任一引用这些链接的页面都会出现
         "You opened this issue": "您打开了这个议题",
         "You opened this pull request": "您打开了这个拉取请求",
@@ -656,9 +651,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Start a new Copilot thread": "启动新的 Copilot 对话",
 
             // 未登录时
-                "Enterprise": "企业",
                 "Security": "安全",
-                "Pricing": "价格",
 
         // 左上角下拉栏 (已登录)
             "Home": "主页",
@@ -841,7 +834,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 底部条
             "Terms": "服务条款",
             "Privacy": "隐私",
-            "Security": "安全",
             "Status": "状态",
             "Community": "社区",
             "Docs": "文档",
@@ -875,7 +867,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Write a comment": "发表评论", // 具体讨论页
             "Suggest an answer": "提出答复", // 具体讨论页
             "Ask a question, start a conversation, or make an announcement": "提出问题、开始讨论或发布公告", // 新建讨论
-            "Nothing to preview": "没有什么可预览",
             "This repository has been archived.": "此仓库已存档。", // 已存档仓库 某个提交的评论框
             "Add review comment": "添加审查意见", // 具体拉取请求 文件审查意见
             "Failed to save comment: Body can't be blank": "保存评论失败：正文内容不能为空", // 具体拉取请求 文件审查意见
@@ -1384,7 +1375,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "public": "公共",
             "repository": "仓库",
 
-            "Ask Copilot": "询问 Copilot",
                 "Select a repository to get started. Ask questions about your codebase to get answers fast and learn your way around.": "选择一个仓库即可开始。询问有关代码库的问题，以快速获得答案并了解相关知识。",
                 "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Search repositories to chat about": "搜索要讨论的仓库",
@@ -1435,7 +1425,6 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Browse the marketplace to find extensions for the tools and services you rely on": "浏览市场以查找您所依赖的工具和服务的扩展",
                     "Browse marketplace": "前往市场",
             "Add attachment": "添加附件",
-            "Remove topic": "移除主题",
             "Convert to file": "转成文件",
             "Remove": "移除",
             "Attachments options": "附件选项",
@@ -1491,10 +1480,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Send": "发送",
             "Task": "任务",
             "Create task": "创建任务",
-            "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
 
             "Copy code": "复制代码",
-            "Copied!": "复制成功！",
 
             "Good response": "点赞",
                 "positive feedback submitted": "已提交正面反馈",
@@ -1969,13 +1956,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
 
             // 选项
-                "Task": "任务",
-                "Create issue": "创建议题",
 
-            "Models": "模型",
-                    "Fast and cost-efficient": "快速、经济高效",
-                    "Versatile and highly intelligent": "多功能、高智能",
-                    "Most powerful at complex tasks": "执行复杂任务",
 
         "Try the new experience": "尝试新版",
 
@@ -2207,9 +2188,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Recommended for you": "为您推荐",
         "Trending repositories": "热门仓库",
         "Latest from our changelog":"来自我们的更新日志",
-        "Try the new experience": "尝试新体验",
         "See more": "查看更多",
-        "Read more": "阅读更多",
         "You're seeing this based on GitHub-wide trends.": "您看到的是基于 GitHub-wide 的趋势。",
         "Recommended based on people you follow": "根据您关注的人推荐",
         "has a new discussion in": "有一条新讨论，在",
@@ -2364,9 +2343,6 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                     "other users and organizations to link to them.": "链接到其他用户和组织。",
                 "Pronouns": "代词",
                     "Don't specify": "不说明",
-                    "they/them": "他们",
-                    "she/her": "她",
-                    "he/him": "他",
                     "Custom": "自定义",
                 "Company": "公司",
                 "Location": "位置",
@@ -2987,7 +2963,6 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Private project": "私有项目",
             "Only those with access to this project can view it.": "只有有权访问此项目的人才能查看它.",
             "Invite collaborators": "邀请协作者",
-            "Manage access": "管理访问权限",
             "Custom fields": "自定义字段",
             "Field name": "字段名称",
             "Field type": "字段类型",
@@ -3239,7 +3214,6 @@ I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
                 "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
             "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
             "Verify": "验证",
-            "Verify": "验证",
             "Verifying…": "验证中…",
             "Your authentication code has been sent.": "您的验证码已发送。",
 
@@ -3377,7 +3351,6 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
             "Planning": "计划",
             "Codespaces": "代码空间",
             "Copilot": "GitHub Copilot",
-                "Access": "访问",
                 "Policies and features": "政策和功能",
             "Actions": "操作",
                 "Runners": "运行器",
@@ -3522,8 +3495,6 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
             "Available for hire": "求 HR 带走",
             "Save jobs profile": "保存状态",
                 // 顶部提醒
-                "Profile updated successfully —": "个人资料更新成功 —",
-                "view your profile.": "查看您的个人资料。",
                 "Visitors will now see your public and anonymized private contributions.": "现在访客可以看到您的公开和匿名私人贡献。",
                 "Visitors will now see only your public contributions.": "现在访客只能看到您的公开贡献",
 
@@ -3846,7 +3817,6 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                     "Close": "关闭",
                     "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, CLI": "在 GitHub、CLI 上",
-                    "on GitHub, Email, CLI": "在 GitHub、电子邮件、CLI 上",
                     "on GitHub, Email": "在 GitHub、电子邮件 上",
                     "On GitHub": "在 GitHub 上",
                     "on GitHub": "在 GitHub 上",
@@ -4095,7 +4065,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             // 有上下文，后面重复部分直接省略
             "Actions usage": "操作",
             "Actions usage grouped by SKU": "操作 - 详细",
-            "Copilot usage": "Copilot",
             "Copilot usage grouped by SKU": "Copilot - 详细",
             "Codespaces usage": "代码空间",
             "Codespaces usage grouped by SKU": "代码空间 - 详细",
@@ -4107,7 +4076,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Usage breakdown": "用量分析",
                 "Date": "日期",
                 "SKUs": "库存单位",
-                "Products": "产品",
                 "Repositories": "仓库",
                 "Units": "单位",
                 "Price/unit": "单价",
@@ -4552,7 +4520,6 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "2,000 minutes/month": "2000 分钟/月",
                         "Free for public repositories": "免费用于公共仓库",
                     "3,000 minutes/month": "3,000 分钟/月",
-                    "Public repositories": "公共仓库",
 
         // 组织设置 邀请账单管理员 '/organizations/<org-login>/billing_managers/new'
             "Billing": "账单",
@@ -5879,7 +5846,6 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Learn more about Copilot-generated commit messages.": "了解更多关于 Copilot 生成的提交消息。",
                 "Copilot Spaces": "Copilot 空间",
                     "If enabled, you can view and create": "若启用，您可以查看和创建",
-                    "Copilot Spaces": "Copilot 空间",
                     ". When disabled, you cannot view or create any Copilot Spaces.": "。当禁用时，您无法查看或创建任何 Copilot 空间。",
                 "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要在其中启用 Copilot 编程智能体的仓库。Copilot 编程智能体仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
 
@@ -6202,7 +6168,6 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
                 "Update github action workflows": "更新 GitHub Action 工作流",
                 "Update all user data": "更新所有用户数据",
                 "Full control of codespaces": "完全控制 Codespaces",
-                "Read all user profile data": "读取所有用户个人资料数据",
 
             "Repository access": "仓库访问权限",
             "All repositories": "所有仓库",
@@ -6266,8 +6231,6 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Never used · Owned by": "从未使用 · 作者",
             "Last used within the last week · Owned by": "最后一次使用是最近 1 周之内 · 作者",
 
-            "Report abuse": "举报滥用",
-            "Revoke": "撤销",
 
             // 撤销对话框
             "Are you sure you want to revoke authorization?": "您确定要撤销授权吗？",
@@ -6292,12 +6255,8 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Never used": "从未使用",
             "Last used within the last week": "最后一次使用是最近一周之内",
 
-            "Developed by": "开发者:",
-            "Permissions": "权限",
             "Revoke access": "撤销授权",
-                "Are you sure you want to revoke authorization?": "您确定要撤销授权吗？",
                     // [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 将无法再访问 GitHub API。您无法撤销此操作。"],
-                "I understand, revoke access": "我明白了，依然撤销授权",
                     "Revoking…": "撤消中…",
 
             "Applications act on your behalf to access your data based on the permissions you grant them. Organizations control which applications are allowed to access their private data. Applications you authorize will always have access to public data in your organizations.": "应用根据您授予的权限代表您访问数据。组织可控制允许哪些应用访问其私人数据。您授权的应用始终可以访问您组织中的公共数据。",
@@ -6689,7 +6648,6 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                         "Manage private registries for an organization.": "管理组织的私有注册表。",
                     "Personal access token requests": "个人访问令牌请求",
                         "Manage personal access token requests from organization members.": "管理来自组织成员的个人访问令牌请求。",
-                    "Personal access tokens": "个人访问令牌",
                         "View and revoke personal access tokens that have been granted access to an organization.": "查看和撤销已被授予组织访问权限的个人访问令牌。",
                     "Plan": "计划",
                         "View an organization's plan.": "查看组织的计划。",
@@ -6881,8 +6839,6 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                     "A user has been blocked or unblocked.": "用户拉黑或解除拉黑。",
                 "Repository advisory": "仓库公告",
                     "Repository advisory published or reported.": "仓库公告发布或报告。",
-                "Sub issues": "子提议",
-                    "Sub-issues added or removed, and parent issues added or removed.": "子议题和父议题的添加或删除。",
 
             "Where can this GitHub App be installed?": "这款 GitHub 应用可以安装在哪里？",
                 "Only on this account": "仅在当前账户",
@@ -7390,7 +7346,6 @@ I18N["zh-CN"]["settings/tokens"] = { // 设置 - 开发者设置/个人访问令
                         "Manage Codespaces settings for an organization.": "管理组织的代码空间设置。",
                     "Organization dependabot secrets": "组织 Dependabot 机密",
                         "Manage Dependabot organization secrets.": "管理 Dependabot 组织的机密。",
-                    "Plan": "计划",
                         "View an organization's plan.": "查看组织的计划。",
                     // 项目
                         "Manage projects for an organization.": "管理组织的项目。",
@@ -7753,7 +7708,6 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "View all": "查看全部",
                 "branches": "分支",
                 "Find a tag...": "查找标签...",
-                "Nothing to show": "暂无",
                 "tags": "标签",
 
                 "View all rules": "查看全部规则",
@@ -7815,8 +7769,6 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "Merged": "已合并",
                 "Draft": "草案",
                 "Branch": "分支",
-                "Branches": "分支",
-                "Tags": "标签",
 
             "Compare & pull request": "比较 & 拉取请求",
 
@@ -8096,7 +8048,6 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
 
                 // "The repository": "仓库",
                 // "already exists on this account.": "已经存在于此账户。",
-                "Your new repository will be created as": "您的新仓库将被创建为",
                     "The repository name can only contain ASCII letters, digits, and the characters": "仓库名称只能包含 ASCII 字母、数字和字符",
 
             "By default, forks are named the same as their upstream repository. You can customize the name to distinguish it further.": "默认情况下，复刻的名称与他们的上游仓库相同。您可以自定义名称以进一步区分它。",
@@ -8445,25 +8396,14 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         "Stop codespace": "停止代码空间",
                     "Show more actions for codespace": "显示代码空间的更多操作",
                         "Open in Browser": "在浏览器中打开",
-                        "Open in Visual Studio Code": "在 Visual Studio Code 中打开",
-                        "Open in JetBrains Gateway": "在 JetBrains Gateway 中打开",
-                        "Open in JupyterLab": "在 JupyterLab 中打开",
-                        "Rename": "重命名",
                             "Rename codespace": "重命名代码空间",
                             "Name": "名称",
                         "Auto-delete codespace": "自动删除代码空间",
-                        "Export changes to a branch": "将更改导出到分支",
-                            "This will create a new branch with any unpushed changes": "这将创建一个包含任何未推送更改的新分支",
                             "Checking branch status": "检查分支情况",
-                            "Create branch": "创建分支",
                         "Export changes to a fork": "将更改导出到复刻",
                             "You do not have write access to this codespace's repository. This will create a new fork of the repository at": "您没有对此代码空间的仓库的写访问权限。这将创建一个新的仓库分支在",
                             ", reassign your codespace to that fork, and export your changes to a new branch.": "，将代码空间重新分配给该复刻，并将更改导出到新分支。",
                             "Create fork": "创建复刻",
-                        "Change machine type": "修改机器类型",
-                            "Change codespace machine type": "修改代码空间机器类型",
-                            "Update codespace": "更新代码空间",
-                        "Stop codespace": "停止代码空间",
                     "No changes": "未更改",
                     "Uncommitted changes": "未提交更改",
 
@@ -8569,7 +8509,6 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "and it will appear on the organization's profile!": "并将出现在该组织资料中!",
                 "Add profile README": "添加 profile/README",
 
-                "is a special repository.": "是一个特殊的仓库。",
                 "will appear on the organization's profile.": "将出现在该组织资料中。",
 
             // 组织下.github-private 仓库 README
@@ -8633,7 +8572,6 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 // 顶部提醒
                 "Your repository details have been saved.": "您的仓库简述已保存。",
 
-            "Releases": "发行版",
                 "No releases published": "未发布任何版本",
                 "Latest": "最新",
                 "Create a new release": "创建发行版",
@@ -8720,15 +8658,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Search this repository": "搜索此仓库",
 
                 // 搜索框
-                    "Go to file": "转到文件",
-                        "No matches found": "未找到匹配项",
-                        "Go to folder": "转到文件夹",
-                        "See all results": "查看所有结果",
 
-            "Add file": "添加文件",
                 // 添加文件 下拉菜单
-                "Create new file": "新建文件",
-                "Upload files": "上传文件",
 
             // 新三个点
                 "Copy path": "复制路径",
@@ -8744,12 +8675,10 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "Top": "顶部",
             "Jump to file": "跳转到文件",
 
-            "Name": "文件名",
             "Last commit message": "最后提交消息",
             "Last commit date": "最后提交时间",
 
             // 编辑按钮
-            "Edit README": "编辑 README", // md 文件
 
         // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
             "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
@@ -9088,8 +9017,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     "Edit labels": "编辑标签",
 
                     // 拉取请求
-                    "dependencies": "依赖关系",
-                        "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
 
                 // 项目
                     "Recent": "最近",
@@ -9100,7 +9027,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     "No milestone": "无里程碑",
                     //下拉
                     "Set milestone": "设置里程碑",
-                        "Nothing to show": "暂无",
 
                 "Development": "进展",
                     "Successfully merging this pull request may close these issues.": "成功合并此拉取请求可能会关闭这些议题。",
@@ -9195,13 +9121,10 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "comment": "评论",
                 "Unhide": "取消隐藏",
                 "Choose a reason for hiding this comment": "选择隐藏此评论原因",
-                "Choose a reason": "选择原因",
                     "Abuse": "滥用",
-                    "Spam": "垃圾信息",
                     "Off Topic": "偏离主题",
                     "Outdated": "过时",
                     "Duplicate": "重复",
-                    "Resolved": "已解决",
 
                 "This comment has been minimized.": "此评论已最小化。",
                     "Show comment": "显示评论",
@@ -9213,7 +9136,6 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "contributing guidelines": "贡献指南",
             "security policy": "安全政策",
             "code of conduct": "行为准则",
-            "contributing guidelines": "贡献准则",
 
             // 被锁定
                 "This conversation has been locked as": "此对话已锁定为",
@@ -9676,7 +9598,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Milestones": "里程碑",
             "Search all labels": "搜索所有标签",
 
-            "labels": "标签",
 
             "New label": "新建标签",
                 "Label preview": "标签预览",
@@ -9737,12 +9658,6 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Discussions do not have milestones": "讨论没有里程碑",
                     "You must choose a category for the discussion to belong to. You will be able to change this after the conversion is complete.": "您必须为讨论选择一个所属类别。转换完成后，您可以更改类别。",
                     "Choose a category": "选择类别",
-                        "Announcements": "公告",
-                        "General": "通常",
-                        "Ideas": "想法",
-                        "Polls": "投票",
-                        "Q&A": "问与答",
-                        "Show and tell": "展示与讲述",
                     "I understand, convert issue to discussion": "我明白了，依然将议题转换为讨论",
                     "I understand, convert issues to discussions": "我明白了，依然将议题转换为讨论",
                     "Future issues with this label will not be automatically converted into discussions.": "今后带有此标签的议题不会自动转换为讨论。",
@@ -10202,8 +10117,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "changed the base branch from": "更改基础分支从",
             "added the": "添加",
             "label": "标签",
-            "closed this": "已关闭",
-            "reopened this": "已重新打开",
             "closed this by deleting the head repository": "已关闭因仓库已删除",
             "Requested changes": "请求更改",
             "restored the": "恢复",
@@ -10348,9 +10261,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
 
             "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
-            "No conflicts with base branch": "与基本分支无冲突",
                 "Merging can be performed automatically.": "可以自动地执行合并。",
-                "Changes can be cleanly merged.": "可以干净地合并更改。",
 
             "This branch has no conflicts with the base branch when rebasing": "该分支基变时与基础分支没有冲突。",
                 "Rebase and merge can be performed automatically.": "可以自动执行变基和合并。",
@@ -10676,7 +10587,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // Copilot 菜单
                 "Ask Copilot about this diff": "与 Copilot 讨论此差异",
-                    "Copilot is not available for this file type": "Copilot 不支持此文件类型",
                 "Ask Copilot about this file-diff": "与 Copilot 讨论此文件差异",
                 "Copilot menu": "Copilot 菜单",
                     "Explain": "解释",
@@ -10689,7 +10599,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Start chat": "开始聊天",
 
             // 建议更改
-                "Suggested change": "建议更改",
                 "Sign off and commit suggestion": "签署并提交建议",
                     "Suggestions cannot be applied from pending reviews.": "无法应用待审核中的更改",
                     "This suggestion has been applied or marked resolved.": "该建议已被应用或标记为已解决。",
@@ -10810,7 +10719,6 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Sign off and commit merge": "签署并提交合并",
                 "Heads up, this will commit to": "请注意，这将提交到",
                 "Commit updates to the": "提交更改到",
-                "branch.": "分支。",
                 "Create a": "创建",
                 "new branch": "新分支",
                 "and commit updates. Your pull request will be updated automatically.": "并提交更改。您的拉取请求将自动更新。",
@@ -11092,7 +11000,6 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的 250 个提交。",
 
-            "You’ll need to use two different branch names to get a valid comparison.": "您需要使用两个不同的分支名称来进行有效的比较。",
 
             "are identical.": "是相同的。",
 
@@ -11218,8 +11125,6 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 "Apply labels to this pull request": "应用标签", // 拉取请求
                 "Edit labels": "编辑标签",
 
-                "dependencies": "依赖关系",
-                    "Pull requests that update a dependency file": "更新依赖文件的拉取请求",
                 "Recent": "最近",
                 "User": "用户",
                 "No projects": "无项目",
@@ -11371,9 +11276,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不呈现。了解更多信息关于",
             "how customized files appear on GitHub": "更改文件在 GitHub 中的显示方式",
             "customizing how changed files appear on GitHub.": "自定义更改文件在 GitHub 上显示方式。",
-            "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "File renamed without changes": "文件仅重命名，内容没有更改",
-            "Binary file not shown.": "不显示二进制文件。",
             "Diff is too big to render. To view,": "差异过大，",
             "check out this pull request locally.": "请在本地查看拉取请求。",
 
@@ -11431,7 +11334,6 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             // 隐藏评论
             "Choose a reason for hiding this comment": "选择隐藏此评论原因",
             "The reason will be displayed to describe this comment to others.": "将显示原因，以便向其他人描述此评论。",
-                "Choose a reason for hiding this comment": "选择隐藏此评论原因",
                 "Unhide": "取消隐藏",
                 "comment": "评论",
                 "Choose a reason": "选择原因",
@@ -11451,7 +11353,6 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
         // 提交 commits 页面 /<user-name>/<repo-name>/commits/<branch> 或 /<user-name>/<repo-name>/commits
             "Commits": "提交",
-            "commit": "提交",
             // 快捷键
                 "Copy file permalink": "复制文件永久链接",
 
@@ -11776,7 +11677,6 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
             // 代码视图 行号栏 菜单
                 "Copy line": "复制行",
                 "Copy lines": "复制行",
-                "Copy permalink": "复制永久链接",
                 "View git blame": "浏览 Git 追溯",
                 "Reference in new issue": "引用到新议题",
                 "Reference in new discussion": "引用到新讨论",
@@ -11796,7 +11696,6 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
             // 正文部分
                 // 只读模式
                     "Code view is read-only. ": "代码视图是只读的。",
-                    "Switch to the editor.": "请切换至编辑器。",
                 // csv 文件
                     "Search this file": "搜索这个文件", // csv 文件
                     // 提醒
@@ -11852,7 +11751,6 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
                 "Find": "查找",
                 "Press": "按",
                 "again to open the browser's find menu": "打开浏览器的查找菜单",
-                "Search this file": "搜索此文件",
 
             "Ask Copilot about this snippet": "向 Copilot 询问此片段",
                 "Explain": "解释",
@@ -12144,7 +12042,6 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
                 // [/Section \"(.*)\" has been deleted./, "栏目 “$1” 已删除。"],
 
         // 新建讨论页面 /<user-name>/<repo-name>/discussions/new
-            "Start a new discussion": "开始新的讨论",
             "Select a discussion category": "选择讨论分类",
             "Get started": "开始",
             "Category:": "分类：",
@@ -12256,7 +12153,6 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
                     "Resolved": "已解决",
 
             // 取消隐藏评论
-                "Unhide": "取消隐藏",
                 "Unhide comment": "取消隐藏评论",
                 "Are you sure you want to unhide this comment?": "您确定要取消隐藏此评论吗？",
 
@@ -13285,7 +13181,6 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                         "Continuous integration": "持续集成",
                         "Project management": "项目管理",
                         "Deployment": "部署",
-                        "Project management": "项目管理",
                         "Testing": "测试",
                     "\/ Search results": "\/搜索结果",
                     "Browse all actions on the GitHub Marketplace": "浏览 GitHub 市场 上的所有 Actions",
@@ -13807,7 +13702,6 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
                 "Ahead": "领先",
                 "Pull request": "拉取请求",
 
-                "Copy branch name to clipboard": "将分支名称复制到剪贴板",
                 "This branch is protected by branch protections": "该分支受分支保护的保护",
 
                 "Branch menu": "分支菜单",
@@ -14610,7 +14504,6 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "Dismiss alerts": "忽略警报",
                 "Select a reason to dismiss": "选择忽略理由",
 
-            "opened": "打开于",
 
             "No results matched your search.": "没有与您的搜索匹配的结果。",
             "Clear current search filters.": "清除当前搜索筛选器。",
@@ -16037,7 +15930,6 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "Rename branch": "重命名分支",
                 // 重命名分支对话框
                 "Rename this branch": "重命名分支",
-                "Rename": "重命名",
                 "to:": "为：",
                 // [/is already the branch name./, "已经是分支的名称了。"],
                 // [/Your branch name will be/, "您的分支的名称将重命名为"],
@@ -17073,7 +16965,6 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                                 "Merge, Squash": "合并，压缩",
                                 "Merge, Squash, Rebase": "合并，压缩，变基",
                                 "Merge, Rebase, Squash": "合并，变基，压缩",
-                                "Merge, Rebase, Squash": "合并，变基，压缩",
                                 "Merge, Rebase": "合并，变基",
                                 "Squash, Rebase": "压缩，变基",
                                 "Squash, Rebase, Merge": "压缩，变基，合并",
@@ -17335,7 +17226,6 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                 // 输入框提示
                 "Duration must be 1 or more.": "不能小于 1",
                 "Duration must be 90 or less": "不能大于 90",
-                "There is a maximum limit of": "最多",
 
                 "days": "天",
 
@@ -17462,7 +17352,6 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
 
         // 添加钩子 页面 /<user-name>/<repo-name>/settings/hooks/new ====================================
             "Webhooks /": "Web 钩子 /",
-            "Add webhook": "添加 Web 钩子",
             "We'll send a": "我们将",
             "request to the URL below with details of any subscribed events. You can also specify which data format you'd like to receive (JSON,": "请求到以下 URL，其中包含任何订阅事件的详细信息。您还可以指定要接收的数据格式（JSON、",
             "etc": "等",
@@ -17858,7 +17747,6 @@ I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /
                 "Secrets are encrypted environment variables. They are accessible only by GitHub Actions in the context of this environment by using the": "机密是加密的环境变量。它们只能由 GitHub Actions 在这个环境中访问",
                     "secret context": "机密上下文",
 
-                "Name": "名称",
                 "Value": "值",
                 "Last updated": "最后更新",
 
@@ -18271,7 +18159,6 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 代
                                     "Group of queries": "查询套件",
                                     "to run against your code.": "针对您的代码运行。",
 
-                                    "Default": "默认",
                                         "Recommended": "推荐",
                                         "CodeQL high-precision queries.": "CodeQL 高精度查询。",
                                 "Scan events": "扫描事件",
@@ -18411,7 +18298,6 @@ I18N["zh-CN"]["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<u
             "to this repository? Deploy keys always have pull access.": "到这个仓库？部署密钥始终具有拉取访问权限。",
             "Add key": "添加密钥",
             // 顶部提醒
-            "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
 
     },
     "regexp": [ // 正则翻译
@@ -18516,7 +18402,6 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
             "prefix.": "前缀开头。",
 
             "Add variable": "添加变量",
-                "Adding…": "添加中…",
 
         // 更新操作机密 /<user-name>/<repo-name>/settings/secrets/actions/<name>
             "/ Update secret": "/ 更新机密",
@@ -19304,34 +19189,24 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
 
         // ...I18N["zh-CN"]["confirm-access"]["static"], // [留待后期合并] 授权访问 sudo 模式身份验证
             "Confirm access": "授权访问",
-            "Signed in as": "登录身份为",
-            "Authentication code": "验证码",
                 "More information about sudo mode authentication": "更多关于 sudo 模式身份验证的信息",
             "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器 (TOTP) 应用或浏览器扩展以查看您的身份验证码。",
-            "Verify": "验证",
-            "Verify": "验证",
-            "Verifying…": "验证中…",
             "Your authentication code has been sent.": "您的验证码已发送。",
 
-            "Having problems?": "有问题吗？",
             "Use GitHub Mobile": "使用 GitHub Mobile",
             "Use your authenticator app": "使用您的身份验证器应用",
             "Send a code via SMS": "通过短信发送验证码",
             "Resend SMS": "重新发送短信",
             "Use your password": "使用您的密码",
 
-            "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
             "When your phone is ready, click the button below.": "当您的手机准备就绪时，请点击下面的按钮。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
-            "We could not verify your identity": "我们无法核实您的身份",
-            "Retry": "请重试",
 
             "We just sent you a message via SMS with your authentication code. Enter the code in the form above to verify your identity.": "我们刚刚通过短信向您发送了一条消息，其中包含您的验证码。在上面的表格中输入验证码以验证您的身份。",
 
             // "Password": "密码",
             // "Forgot password?": "忘记密码？",
-            "Confirm": "确认",
 
             "You are entering": "您正在进入",
             "sudo mode": "Sudo 模式",
@@ -19370,12 +19245,10 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
                     "Sent. It may take a minute for the SMS to arrive.": "已发送。短信可能需要一分钟时间才能送达。",
                     "Verify the code sent to your phone": "验证发送到您手机的验证码",
 
-                "Continue": "继续",
 
                 "Alternative 2FA option:": "备选 2FA 选项:",
                 "SMS authentication": "短信验证",
                     "Get one-time codes sent to your phone via SMS to complete authentication requests.": "通过短信向您的手机发送一次性代码，以完成认证请求。",
-                "Authenticator app": "身份验证器应用",
                     "Use an authentication app or browser extension to generate one-time codes.": "使用身份验证应用或浏览器扩展生成一次性代码。",
                 "Select": "选择",
 
@@ -19405,7 +19278,6 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
                     "Security key registration failed.": "安全密钥注册失败。",
                     "Try again": "请重试",
 
-                "GitHub Mobile": "GitHub Mobile",
                     "Install": "安装",
                     "The GitHub Mobile app on your phone can be used as a 2FA method. Enable it by installing the GitHub Mobile app for": "您手机上的 GitHub Mobile 应用可用作双因素身份验证方法。通过安装 GitHub Mobile 应用（",
                     "and signing in to your account.": "）并登录您的账户来启用它。",
@@ -19421,7 +19293,6 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "at this moment, we'll remind you again tomorrow.": "此刻，我们会在明天再次提醒您。",
 
         // https://github.com/settings/two_factor_checkup?
-            "Open your two-factor authenticator (TOTP) app or browser extension to view your authentication code.": "打开您的双因素身份验证器（TOTP）应用或浏览器扩展，以查看您的身份验证码。",
             "Verify your 2FA setup tomorrow": "明天验证您的双因素身份验证设置",
             "Reconfigure 2FA on this account": "重新配置双因素身份验证",
 
@@ -22725,7 +22596,6 @@ I18N["zh-CN"]["orgs/invitation"] = { // 组织 - 接受邀请页面
 
             "Opt out": "拒绝",
                 "of future invitations from this organization.": "该组织未来的邀请。",
-            "of future invitations from this organization.": "该组织未来的邀请。",
 
     },
     "regexp": [
@@ -23002,7 +22872,6 @@ I18N["zh-CN"]["orgs/settings/member_privileges"] = { // 组织设置 - 成员权
                     // 管理员
                         "Members can see, make changes to, and add new collaborators to projects.": "成员可以查看和修改项目，并可为项目添加新的协助者。",
                         // 对话框
-                            "You are about to change the base projects permission for this organization.": "您将更改该组织的基本项目权限",
                     // 顶部提醒
                         "Base permission updated to \"None\" for projects.": "项目的基本权限已更新为 “无”。",
                         "Base permission updated to \"Read\" for projects.": "项目的基本权限已更新为 “只读”。",
@@ -24084,7 +23953,6 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
         // 代码空间机密 /organizations/<org-login>/settings/secrets/codespaces
             "Codespaces secrets": "代码空间机密",
             "Development environment secrets are environment variables that are": "开发环境机密是环境变量",
-            "encrypted": "被加密",
             ". They are available to any codespace user with": "。任何代码空间用户具有",
             "collaborator": "协作者",
             "access to the repositories with access to that secret.": "权限访问该机密的仓库。",
@@ -24116,7 +23984,6 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
 
         // 新建私有登记表 /organizations/<org-login>/settings/secrets/private_registries/new
             "Private registries": "私有注册表",
-            "New private registry": "新建私有注册表",
             "Select registry type": "选择注册表类型",
                 "Maven Repository": "Maven 仓库",
                 "NuGet Feed": "NuGet 订阅",
@@ -24732,8 +24599,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
             // 编辑对话框
                 "Edit project": "编辑项目",
-                "Name": "名称",
-                "Description": "描述",
                 "Track project progress": "跟踪项目进度",
                     "A progress bar will be displayed to help you visualize the overall progress of your project based on your automated To Do, In Progress, and Done columns.": "将显示一个进度条，以帮助您根据您的自动化的待办、进行中和已完成栏目，直观地了解项目的总体进展。",
                 "Save project": "保存项目",
@@ -24749,7 +24614,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                     "Search organizations and repositories": "搜索组织和仓库",
                     "Suggested": "建议",
                     "Everything else": "其他一切",
-                "Project board name": "项目面板名称",
                 "Copy project": "复制项目",
 
             // 存档的卡片
@@ -24774,7 +24638,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                 "Loading…": "载入中…",
                 "Preset:": "预设：",
                     "Select type": "选择类型",
-                    "None": "无",
                         "This column will not be automated": "本栏目将不会自动化",
                     "To do": "待办",
                         "Planned but not started": "已计划但未开始",
@@ -24795,7 +24658,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                         "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小批准审查数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
                     "Done": "已完成",
                         "Items are complete": "项目已完成",
-                        "Closed": "已关闭",
                             "If an open issue in this project is closed, it will automatically move here.": "如果该项目中的一个打开的议题被关闭，它将自动转移到这里。",
                         "Merged": "已合并",
                             "If an open pull request in this project is merged, it will automatically move here.": "如果该项目中的一个打开的拉取请求被合并，它将自动转移到这里。",
@@ -24825,7 +24687,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Update column": "更新栏目",
 
             "Cards": "卡片",
-            "Automation": "自动化",
 
             // "Archive all cards in To do": "存档所有 “待办” 卡片",
             // "Archive all cards in In progress": "存档所有 “进行中” 卡片",
@@ -24861,7 +24722,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Group by": "分组",
             "No grouping": "不进行分组",
             "Markers": "标记",
-            "Sort by": "排序",
             "No sorting": "不进行排序",
             "Zoom level": "缩放级别",
             "Field sum": "字段总和",
@@ -24872,7 +24732,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Rename view": "重命名视图",
             "Delete view": "删除视图",
             "Export view data": "导出视图数据",
-            "Assignees": "负责人",
             "Project templates": "项目模板",
             "Featured": "特色",
             "Iteration": "迭代",
@@ -25023,7 +24882,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Private project": "私有项目",
             "Only those with access to this project can view it.": "只有有权访问此项目的人才能查看它.",
             "Invite collaborators": "邀请协作者",
-            "Manage access": "管理访问权限",
             "Custom fields": "自定义字段",
             "Field name": "字段名称",
             "Field type": "字段类型",
@@ -25040,9 +24898,6 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Add a collaborator to see them here.": "添加协作者以在此处查看他们.",
             "Make template": "制作模板",
             "Copy as template": "复制为模板",
-            "Visibility": "可见性",
-            "Close project": "关闭项目",
-            "Delete project": "删除项目",
             "Delete this project": "删除此项目",
             "Status chart": "状态图表",
             "This chart shows the current status for the total number of items in your project.": "此图表显示了项目中所有项目的当前状态。",
@@ -25110,12 +24965,8 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
         // https://github.com/users/<user-name>/projects/<id>/settings
             "Collaboration settings": "协作设置",
                 "Options": "选项",
-                    "Visibility": "可见性",
                     "Visibility settings only impact the project itself. Project content that belongs to a repository the user does not have access to will be redacted.": "可见性设置只影响项目本身。属于用户无权访问的仓库的项目内容将被编辑。",
                     "Public": "公开",
-                        "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
-                    "Private": "私密",
-                        "You choose who can see and make changes to this project.": "您可以选择谁查看此项目并对其进行更改。",
             // 协作者
                 "This project doesn’t have any collaborators yet. Use the form below to add a collaborator.": "该项目还没有任何协作者。使用下面的表格添加协作者。",
                 "Search by username, full name or email address": "搜索用户名、全名、或电子邮箱",
@@ -25123,14 +24974,12 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                 "You’ll only be able to find a GitHub user by their email address if they’ve chosen to list it publicly. Otherwise, use their username instead.": "只有当 GitHub 用户选择公开电子邮箱地址时，您才能通过他们的电子邮箱地址找到他们。否则，请使用他们的用户名代替。",
                 "Add collaborator": "Add collaborator",
                 // [/isn’t a GitHub member/, "不是 GitHub 成员"],
-            "Linked repositories": "关联的仓库",
                 "Link a repository": "关联仓库",
                 "Get more accurate suggestions and better search results by linking up to 25 repositories to this project.": "通过将多达 25 个仓库关联到这个项目，获得更准确的建议和更好的搜索结果。",
                 // [/(\d+) linked repositories/, "$1 个关联仓库"],
                 "This project doesn’t have any linked repositories yet.": "该项目暂无任何关联的仓库。",
 
         // https://github.com/users/<user-name>/projects/<id>/edit
-            "(optional)": "(可选)",
             "Once you delete this project, there is no going back. Please be certain.": "一旦您删除了这个项目，就再也无法恢复。请确认。",
     },
     "regexp": [ // 正则翻译
@@ -25379,7 +25228,6 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
         // https://github.com/codespaces/templates
             "Choose a template": "选择模版",
             "Start a codespace from a template and get to developing with the power of a virtual machine in the cloud.": "从模板开始创建代码空间，然后利用云中虚拟机的能力进行开发。",
-            "Use this template": "使用此模版",
 
         // https://github.com/codespaces/new
             "Create a new codespace": "新建代码空间",
@@ -25406,13 +25254,8 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
                 "Europe West": "欧洲西部",
                 "Southeast Asia": "东南亚",
                 "Australia": "澳大利亚",
-            "Machine type": "机器类型",
                 "Resources for your codespace": "代码空间的资源",
                 "None": "无",
-                "2-core": "双核",
-                "8GB RAM • 32GB": "8GB 内存 • 32GB 硬盘",
-                "4-core": "四核",
-                "16GB RAM • 32GB": "16GB 内存 • 32GB 硬盘",
             "Dev container configuration": "开发容器配置",
                 "Your codespace will use this configuration": "您的代码空间将使用此配置",
             "Create codespace": "新建代码空间",
@@ -26231,7 +26074,6 @@ I18N["zh-CN"]["copilot"] = {
                         "This shared link is up to date": "分享链接是最新的",
                     "Delete link": "删除",
                         "Delete shared link and remove access for all users": "删除分享链接并移除所有用户的访问权限",
-                "Copy link": "复制链接",
 
             // 分享
             "This conversation has not yet been shared": "还没有分享",
