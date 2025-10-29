@@ -1508,15 +1508,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "No chats yet": "还没有聊天",
             "Ask Copilot anything on the right to start your first chat.": "在右侧询问 Copilot 任何问题，开始您的第一次聊天。",
 
-            "Agent sessions": "代理会话",
-                "New agent session": "新代理会话",
-                "No agents running": "没有代理会话运行",
+            "Agent sessions": "智能体会话",
+                "New agent session": "新智能体会话",
+                "No agents running": "没有智能体会话运行",
                 "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以请求 Copilot 在后台处理任务，创建一个拉取请求供您审查。",
 
             "Explore the latest Copilot launches from Universe ’25": "探索 Universe ’25 的最新 Copilot 启动",
             "See what’s new": "查看最新内容",
 
-            "Recent agent sessions": "最近代理会话",
+            "Recent agent sessions": "最近智能体会话",
             "Recent sessions": "最近会话",
             "No sessions found. Create one by sending a prompt above.": "没有找到会话。通过发送提示来创建一个。",
 
@@ -1569,15 +1569,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
 
 
-            "Agent sessions": "代理会话",
-                "New agent session": "新代理会话",
-                "No agents running": "没有代理会话运行",
+            "Agent sessions": "智能体会话",
+                "New agent session": "新智能体会话",
+                "No agents running": "没有智能体会话运行",
                 "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以请求 Copilot 在后台处理任务，创建一个拉取请求供您审查。",
 
             "Explore the latest Copilot launches from Universe ’25": "探索 Universe ’25 的最新 Copilot 启动",
             "See what’s new": "查看最新内容",
 
-            "Recent agent sessions": "最近代理会话",
+            "Recent agent sessions": "最近智能体会话",
             "Recent sessions": "最近会话",
             "No sessions found. Create one by sending a prompt above.": "没有找到会话。通过发送提示来创建一个。",
 
@@ -1941,11 +1941,11 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Fast and cost-efficient": "快速、经济高效",
         "Versatile and highly intelligent": "多功能、高智能",
         "Most powerful at complex tasks": "在复杂任务中最强大",
-        "Agent sessions": "代理会话",
+        "Agent sessions": "智能体会话",
         "No sessions found. Try a different filter, or": "没有找到会话。尝试不同的过滤器，或",
         "start a session": "创建一个会话",
-        "Agent sessions options": "代理会话选项",
-        "Agent sessions to include": "代理会话包含",
+        "Agent sessions options": "智能体会话选项",
+        "Agent sessions to include": "智能体会话包含",
             "Open": "打开",
             "Closed": "关闭",
         "Number of results": "结果数量",
@@ -2256,6 +2256,12 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Dashboards": "仪表板",
         "Go to your issues": "跳转到您的议题",
         "Go to your pull requests": "跳转到您的拉取请求",
+
+        // 新版首页（已登录）2025-10-29
+            "Your personal account": "我的个人账户",
+
+            "Ready for review": "准备审查",
+            "Assigned to Copilot": "分配给 Copilot",
     },
     "regexp": [ // 正则翻译
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
@@ -2304,6 +2310,10 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/You have declined to become the designated successor for ([^ ]+)'s account./, "您已经谢绝了成为 $1 账户指定继任者的邀请。"],
         // 拉取请求状态
         [/merged (\d+) commits?/, "合并 $1 个提交"],
+        // 新版首页
+        [/Good evening, ([^ ]+)!/, "晚上好，$1！"],
+        [/Switch dashboard: ([^ ]+)/, "切换仪表板：$1"],
+        [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打开者 $3"],
     ],
 };
 I18N["zh-CN"]["dashboard"] = I18N["zh-CN"]["page-dashboard"];
