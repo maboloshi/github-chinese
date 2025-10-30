@@ -2298,6 +2298,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/merged (\d+) commits?/, "合并 $1 个提交"],
         // 新版首页
         [/Good morning, ([^ ]+)!/, "早上好，$1！"],
+        [/Good afternoon, ([^ ]+)!/, "下午好，$1！"],
         [/Good evening, ([^ ]+)!/, "晚上好，$1！"],
         [/Switch dashboard: ([^ ]+)/, "切换仪表板：$1"],
         [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打开者 $3"],
