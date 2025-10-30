@@ -10740,6 +10740,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "conflict": "冲突",
                 "conflicts": "冲突",
 
+            "Accept current change": "接受当前更改",
+            "Accept incoming change": "接受传入更改",
+            "Accept both changes": "接受全部更改",
+
         // 拉取请求 - 由 Copilot 编写 https://github.com/用户名/仓库名/pull/编号/agent-sessions
             "Back to pull request #": "返回到拉取请求 #",
 
