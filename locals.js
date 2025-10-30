@@ -10706,6 +10706,14 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // [/(\d+) conflicting files?/, "$1 个冲突文件"],
             // [/(\d+) conflicts?/, "$1 处冲突"],
 
+            "Keyboard hints": "快捷键",
+                "How to interact with code conflict editor via keyboard": "如何通过键盘与代码冲突编辑器交互",
+                    "Toggle between edit mode and tab focus mode": "切换编辑模式和标签焦点模式",
+                    "Navigation between elements with tab focus mode on": "在 Tab 焦点模式下在元素之间导航",
+                    "Move to next conflict control after accepting suggestion": "接受建议后移动到下一个冲突控件",
+                    "Exit editor": "退出编辑器",
+                        "then": "以及",
+
             "Mark as resolved": "标记为已解决",
                 "Remove all conflict markers to resolve this file": "删除所有冲突标记以解决此文件冲突",
             "Indent mode": "缩进模式",
