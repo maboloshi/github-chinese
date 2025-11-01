@@ -103,7 +103,7 @@
             titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
             // 页面标题正则词库
             titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
-                        // 静态词库
+            // 静态词库
             staticDict: {
                 ...I18N[CONFIG.LANG].public.static,
                 ...(I18N[CONFIG.LANG][pageType]?.static || {})
