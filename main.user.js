@@ -356,7 +356,7 @@
         const text = document.title; // 获取标题文本内容
         let translatedText = pageConfig.titleStaticDict[text] || '';
         if (!translatedText) {
-            for (const [pattern, replacement] of state.pageConfig.titleRegexpRules) {
+            for (const [pattern, replacement] of pageConfig.titleRegexpRules) {
                 translatedText = text.replace(pattern, replacement);
                 if (translatedText !== text) break;
             }
