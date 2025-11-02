@@ -99,6 +99,10 @@
         return {
             // 当前页面类型
             currentPageType: pageType,
+            // 页面标题静态词库
+            titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
+            // 页面标题正则词库
+            titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
             // 静态词库
             staticDict: {
                 ...I18N[CONFIG.LANG].public.static,
@@ -350,10 +354,9 @@
      */
     function transTitle() {
         const text = document.title; // 获取标题文本内容
-        let translatedText = I18N[CONFIG.LANG]['title']['static'][text] || '';
+        let translatedText = pageConfig.titleStaticDict[text] || '';
         if (!translatedText) {
-            const res = I18N[CONFIG.LANG]['title'].regexp || [];
-            for (const [pattern, replacement] of res) {
+            for (const [pattern, replacement] of pageConfig.titleRegexpRules) {
                 translatedText = text.replace(pattern, replacement);
                 if (translatedText !== text) break;
             }
