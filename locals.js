@@ -672,10 +672,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "MCP registry": "MCP 互联",
 
             "Top repositories": "热门仓库",
-
-            "Search for repositories": "搜索仓库",
-            "Search for teams": "搜索团队",
-            "Close search": "关闭搜索",
+                "Search for repositories": "搜索仓库",
+                "Close search": "关闭搜索",
+                // 团队
+                "Search for teams": "搜索团队",
 
         // 顶部提示横幅
             "Don't get locked out of your account.": "不要被锁定在您的账户之外。",
