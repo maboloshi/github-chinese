@@ -671,8 +671,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Marketplace": "市场",
             "MCP registry": "MCP 互联",
 
+            "Top repositories": "热门仓库",
+
             "Search for repositories": "搜索仓库",
-            "Search for teams": "搜索仓库",
+            "Search for teams": "搜索团队",
             "Close search": "关闭搜索",
 
         // 顶部提示横幅
