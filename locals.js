@@ -25237,6 +25237,8 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
             "this announcement": "此公告",
 
         // https://github.com/codespaces
+            "Your codespaces": "您的代码空间",
+
             "All": "所有",
             "Templates": "模版",
             "By repository": "按仓库",
