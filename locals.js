@@ -10334,7 +10334,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Learn more about required linear history.": "了解更多关于要求线性历史记录的信息。",
 
             "Checking for ability to merge automatically…": "检测自动合并的能力…",
+            "Checking for the ability to merge automatically...": "检测自动合并的能力...",
             "Hang in there while we check the branch’s status.": "请等待，我们正在检查该分支的状态",
+            "Hang in there while we check the branch's status.": "请等待，我们正在检查该分支的状态",
 
             "Required statuses must pass before merging": "合并前必须通过所需的状态",
             "All required": "所有必需",
