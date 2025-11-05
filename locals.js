@@ -11432,6 +11432,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "Reply…": "回复…",
 
             "commented on": "评论于",
+            "Comment on line": "评论行",
 
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
 
