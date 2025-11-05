@@ -3201,14 +3201,14 @@ I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
 
 I18N["zh-CN"]["payment-module"] = { // 通用账单及支付信息模块
     "static": { // 静态翻译
-        "Billing information": "账单信息",
-            "You have not added any billing information.": "您尚未添加账单信息。",
-
+        "Account": "账户",
             "Personal account": "个人账户",
 
-            // 添加/编辑账单信息
-               // "Add your information to show on every invoice": "在每张发票上添加您的信息",
+        "Billing information": "账单信息",
+            "You have not added any billing information.": "您尚未添加账单信息。",
+               "Add your information to show on every invoice": "在每张发票上添加您的信息",
 
+            // 添加/编辑账单信息
                 "First name": "名字",
                     "First name can't be blank.": "名字不能为空。",
                     "First name can't be blank": "名字不能为空",
@@ -25210,7 +25210,36 @@ I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
 
             "Upgrade now": "现在升级",
 
-    // https://github.com/github-copilot/pro/signup?
+        // https://github.com/github-copilot/pro/signup?
+            "Copilot Pro checkout": "Copilot Pro 结账",
+            "Free for 30 days": "免费试用 30天",
+            "Subscribe to GitHub Copilot Pro": "订阅 GitHub Copilot Pro",
+                "Everything in Free, plus unlimited chats and code completions, premium model access (Claude 3.7/4 and more), and 6x more premium requests.": "免费提供所有服务，包括无限聊天和代码补全，高级模型访问权限（Claude 3.7/4 及更多），以及 6 倍以上的高级请求量。",
+                "Review": "审查",
+
+            ...I18N["zh-CN"]["payment-module"]["static"], // 调用通用账单及支付信息模块
+
+            "Billing frequency": "支付频率",
+                "Pay monthly": "按月支付",
+                    "/ month": "/月",
+                "Pay yearly": "按年支付",
+                    "/ year": "/年",
+                    "Save $20.00": "节省 $20.00",
+
+            "- Free trial": "- 免费试用",
+
+            "You will be billed $100.00/year starting": "您将每年被收取 $100.00 自：",
+            "You will be billed $10.00/month starting": "您将每月被收取 $10.00 自：",
+
+            "To prevent abuse, we require billing information upfront. Your 30-day free trial will automatically convert to a paid plan after the trial ends. You can cancel anytime from settings before the trial expires to avoid being billed.": "为防止滥用，我们要求提前提供账单信息。您的 30 天免费试用将在试用结束后自动转换为付费计划。您可以在试用到期前从设置中随时取消，以避免被收费。",
+
+            "Yes please, I'd like GitHub and affiliates to use my information for personalized communications, targeted advertising and campaign effectiveness. The information used includes, but is not limited to, name、email address and country.": "好的。我希望 GitHub 及其附属机构能使用我的信息进行个性化沟通、精准广告和活动效果提升。所使用的信息包括但不限于姓名、电子邮件地址和国家。",
+            "See the": "请参阅",
+            "GitHub Privacy Statement": "GitHub 隐私声明",
+            "for more details.": "获取更多详情。",
+
+            "Participation requires transferring your personal data to other countries in which GitHub operates, including the United States. By submitting this form, you agree to the transfer of your data outside of China.": "参与需要将您的个人数据转移到 GitHub 运营的其他国家，包括美国。通过提交此表单，您同意将您的数据转移到中国以外的地方。",
+            "Activate now": "立即激活",
 
     },
     "regexp": [],
