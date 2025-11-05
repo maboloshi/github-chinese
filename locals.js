@@ -19916,6 +19916,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
     "static": { // 静态翻译
         "Pull Requests": "拉取请求", // pulls
 
+        "Assigned to me": "分配给您",
+        "Created by me": "由您创建",
+
         "Created": "已创建",
         "Assigned": "已分配",
         "Mentioned": "提到的",
@@ -19956,6 +19959,10 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Changes requested": "请求更改",
         "outdated": "陈旧的",
         "Draft": "草案",
+        "Open": "打开",
+        "Closed": "已关闭",
+        "Merged": "已合并",
+        "opened": "打开于",
 
         "This issue was": "此议题已",
             "closed": "关闭",
