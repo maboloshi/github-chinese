@@ -2194,6 +2194,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
 
             "Completed": "完成于",
 
+            "Unable to load agent tasks, try again later.": "无法加载智能体任务，请稍后重试。",
+
             "Ready for review": "准备审查",
             "Assigned to Copilot": "分配给 Copilot",
     },
