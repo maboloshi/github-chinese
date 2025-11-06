@@ -9248,6 +9248,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
     },
     "regexp": [ // 正则翻译
         // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+        [/(\+\d+) more reviewers?/, "$1 个审查者"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
         [/Edited (\d+) times?/, "编辑 $1 次"],
