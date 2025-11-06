@@ -5129,6 +5129,8 @@ I18N["zh-CN"]["settings/sessions"] = {
             "See more": "查看更多",
             "Your current session": "您当前的会话",
             "Last accessed on": "最后访问日期：",
+            "active": "激活",
+            "stale": "闲置",
 
             "GitHub Mobile sessions": "GitHub Mobile 会话",
             "This is a list of devices that have logged into your account via the GitHub Mobile app. Revoke any session that you do not recognize or you can": "这是已通过 GitHub Mobile 应用登录到您账户的设备列表。撤销任何您不认识的会话，或者您可以",
