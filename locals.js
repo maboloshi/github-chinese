@@ -3962,6 +3962,19 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Download your Copilot premium request usage report": "下载您的 Copilot 高级请求使用报告：",
                         "here": "下载",
 
+                // 当前包含用量详情
+                    "Included usage and credits": "包含用量和额度",
+                        "Showing currently applied usage and credits for your account.": "显示您账户当前的使用情况和额度。", // 后续走正则
+
+                        "Included usage*": "包含用量*",
+                            "Included premium requests": "包含高级请求",
+                            "Free usage**": "免费使用**",
+                                "100% off per month": "100%减免/每月",
+
+                        "* Included usage is an approximate amount based on current pricing.": "* 所包含的用量是基于当前定价的预估值。",
+                        "** GitHub Packages usage is free for public packages. For details on free Actions usage, see": "** GitHub 软件包对公共包的使用是免费的。有关 GitHub Actions 免费使用的详细信息，请参阅",
+                        "Free use of GitHub Actions": "Github Actions 的免费使用",
+
             "Next payment due": "下一次应付款",
 
             "Subscriptions": "订阅",
@@ -4573,8 +4586,15 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         //(\d+) min used \/ ([\d,+]) min included
         [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
         // 当前包含用量 - 详情 对话框
+            [/Current usage for (.+) - (.+). Monthly quota resets in (\d+) day\(s\)./, (match, p1, p2, p3) => {
+                const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+                const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+                const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+                return `统计时间段：${translatedP1}-${translatedP2}。本月配额将在${p3}天内重置。`;
+            }],
             [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
-            [/\(~(\$\d+\.\d+) off\*\)/, "（~$1 减免*）"],
+            [/~(\$\d+\.\d+) off\*/, "~$1 减免*"],
+            [/~(\$\d+(\.\d+)?) off/, "~$1 减免"],
 
             [/([\d,+]) included Actions minutes/, "$1 操作分钟数"],
             [/(\d+) GB included Actions storage/, "$1 GB 操作存储"],
