@@ -10951,6 +10951,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
         [/Expand all lines: (.+)/, "展开所有行：$1"],
         [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
+        // CODEOWNERS 文件指定所有者
+        [/Owned by (\@.+) \(from CODEOWNERS line (\d+)\)/, "由 $1 拥有（来自 CODEOWNERS 第 $2 行）"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
