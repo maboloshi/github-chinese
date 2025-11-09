@@ -141,6 +141,9 @@ I18N.conf = {
         ],
         'repository/pull': [
             'td.blob-code', // 代码差异 分屏/同屏
+            '.js-preview-body', // PR 描述预览
+            '.markdown-body[data-testid="preview-content"]', // PR 描述预览内容
+            '[data-testid="preview-content"] .markdown-body', // PR 描述预览区域内的 markdown
         ],
         'repository/compare': [
             'td.blob-code', // 代码差异 分屏/同屏
