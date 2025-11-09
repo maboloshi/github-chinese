@@ -1251,6 +1251,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Verified": "已验证",
             "Expired": "已过期",
             "Partially verified": "部分验证",
+                "We cannot verify signatures from co-authors, and some of the co-authors attributed to this commit require their commits to be signed.": "我们无法验证来自共同作者的签名，并且此提交的某些共同作者要求对其提交进行签名。",
             "Unverified": "未验证",
                 "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
                 "to verify your signature.": "以验证您的签名。",
