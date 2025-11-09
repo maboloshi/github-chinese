@@ -10628,7 +10628,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Hide whitespace": "隐藏空白",
                 "Apply and reload": "应用并重新加载",
             "Show whitespace": "显示空白",
+            "Expand file": "展开文件",
+            "Collapse file": "折叠文件",
             // "Refresh": "刷新",
+            // 复制文件按钮
+                "Copy file name to clipboard": "复制文件名到剪切板",
 
             "files viewed": "查看过的文件",
                 "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -10665,6 +10669,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Viewed": "已查看",
             "Comment on this file": "评论此文件",
+            "Comment on file": "评论此文件",
 
             "No changes to show": "没有更改",
                 "This commit does not include any file changes": "此提交未包含文件更改",
@@ -10944,6 +10949,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         }],
         [/Add(?: a)? comment on line ((L|R)(\d+))/, "在 $1 行评论"],
         [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
+        [/Expand all lines: (.+)/, "展开所有行：$1"],
+        [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
