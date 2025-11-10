@@ -10145,6 +10145,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
               "authored": "撰写于",
 
             // 右侧栏 补充
+                // 审查者
+                "Reviewers whose approvals may not affect merge requirements": "审查者的批准可能不影响合并要求。",
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "Allowing edits by maintainers": "允许维护者进行编辑",
