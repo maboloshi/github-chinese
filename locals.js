@@ -60,7 +60,10 @@ I18N.conf = {
     ignoreMutationSelectorPage: {
         'repository/new': [".cm-scroller"], // 代码编辑器
         'repository/edit': [".cm-scroller", "table"], // 代码编辑器
-        'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
+        'repository/pull': [
+            "td.blob-code", // 代码差异 分屏/同屏
+            '.js-full-logs-container', // 工作流运行日志
+        ],
         'repository/compare': ["tbody"], // 代码差异
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
@@ -69,6 +72,10 @@ I18N.conf = {
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
             '.styled-input-container', // 筛选条
+        ],
+        'repository/actions': [
+            'table.highlight', // 工作流程文件 源码视图
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'copilot':[
             '.cm-line',
@@ -141,6 +148,7 @@ I18N.conf = {
         ],
         'repository/pull': [
             'td.blob-code', // 代码差异 分屏/同屏
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'repository/compare': [
             'td.blob-code', // 代码差异 分屏/同屏
@@ -155,8 +163,7 @@ I18N.conf = {
         ],
         'repository/actions': [
             'table.highlight', // 工作流程文件 源码视图
-            'span.user-select-none', // 日志 - 作业名
-            'span.CheckStep-line-content', // 日志 - 具体内容
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'repository/releases': [
             'div.markdown-body', // 发布版正文
