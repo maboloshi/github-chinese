@@ -64,7 +64,10 @@ I18N.conf = {
             "td.blob-code", // 代码差异 分屏/同屏
             '.js-full-logs-container', // 工作流运行日志
         ],
-        'repository/compare': ["tbody"], // 代码差异
+        'repository/compare': [
+            "tbody", // 代码差异
+            ".js-preview-body", // 新建拉取请求 - 正文编辑器预览
+        ],
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
         'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
@@ -72,6 +75,8 @@ I18N.conf = {
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
             '.styled-input-container', // 筛选条
+            'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
+            '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
         'repository/actions': [
             'table.highlight', // 工作流程文件 源码视图
@@ -140,7 +145,8 @@ I18N.conf = {
         ],
         'repository/issues': [
             '.styled-input-container', // 筛选条
-            '.Box-sc-g0xbh4-0.markdown-body', // 评论正文
+            'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
+            '.markdown-body[data-team-hovercards-enabled="true"]', //  某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏
