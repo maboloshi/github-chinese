@@ -69,7 +69,10 @@ I18N.conf = {
             ".js-preview-body", // 新建拉取请求 - 正文编辑器预览
         ],
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
+        'repository/blob': [
+            "#highlighted-line-menu-positioner", // 代码视图 存在
+            "#repos-sticky-header", // 代码视图 置顶标题
+        ],
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
