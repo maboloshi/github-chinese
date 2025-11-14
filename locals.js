@@ -92,7 +92,8 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
+            'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
+            '#qb-input-query span', // 搜索页面 搜索栏 关键词
         ],
     },
 
@@ -176,7 +177,7 @@ I18N.conf = {
             '.js-full-logs-container', // 工作流运行日志
         ],
         'repository/releases': [
-            'div.markdown-body', // 发布版正文
+            'div.Box-body>div.markdown-body', // 发布版正文
         ],
         'repository/wiki': [
             '#wiki-body', // wiki 正文
@@ -212,7 +213,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
+            'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
         ],
     },
