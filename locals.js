@@ -4849,8 +4849,10 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
 
             "Approved": "批准",
                 // 等待
+                    "Coupon applied": "优惠券已应用",
+                    "Expires in almost 2 years": "有效期大约 2年",
                     "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
-                    "Your academic benefits, including Partner offers, will become available within 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的 72 小时内生效。",
+                    "Your academic benefits, including Partner offers, will become available after 72 hours of your verification.": "您的学术福利，包括合作伙伴优惠，将在您资格审核通过后的 72 小时内生效。",
                     "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
                     "To redeem your Copilot Pro coupon, please sign up via this": "要兑换您的 Copilot Pro 优惠券，请访问此",
                     "link": "链接",
@@ -4880,6 +4882,7 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `提交于 ${translatedDate}`;
         }],
+        [/Expires in almost (\d+) years?/, "有效期大约 $1 年"],
     ],
 };
 
