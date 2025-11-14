@@ -9873,6 +9873,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/Opened this issue \(their first in ([^ ]+)\)/, "打开了这个议题（首次在 $1 发表）"],
         [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
         [/added (\d+) commits? that reference this issue/, "添加 $1 个引用此议题的提交"],
+        [/This issue will close once commit ([a-f0-9]{7}) is merged into the \'([^ ]+)\' branch./, "此议题将在提交 $1 合并到 '$2' 分支后关闭。"],
 
         // 标签页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
