@@ -26183,14 +26183,15 @@ I18N["zh-CN"]["copilot"] = {
         // 高级请求数已用完
             "You have reached your monthly limit for premium requests. Enable additional requests or switch to the default model. Limit resets on.": "您已达到本月高级请求的额度上限。请启用额外请求或切换到默认模型。额度将重置。",
         // 左侧边栏
-            "Open sidebar": "打开侧边栏",
-            "Close sidebar": "关闭侧边栏",
             "New conversation": "新聊天",
             "Close conversations": "关闭侧边栏",
             "Open conversations": "打开侧边栏",
             "New chat": "新聊天",
+            "Collapse": "折叠",
+            "Expand sidebar": "展开侧边栏",
 
             "Agent sessions": "智能体任务",
+            "Agent sessions and chats": "智能体任务及聊天",
                 "No agents running": "无智能体运行",
                     "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以让 Copilot 在后台为您处理任务，创建一个供您审核的拉取请求。",
 
@@ -26205,13 +26206,13 @@ I18N["zh-CN"]["copilot"] = {
             "Ask Copilot anything on the right to start your first conversation.": "向 Copilot 提出任何问题，开始第一次对话。",
 
             // 某条对话
-                "Manage conversation": "管理",
+                "Manage chat": "管理",
                     "Rename": "重命名",
-                        "Rename conversation": "重命名对话",
+                        "Rename chat": "重命名",
                     "Share": "分享",
                     // 删除
-                        "Delete conversation": "删除对话",
-                        "Are you sure you want to delete this conversation? This action cannot be undone.": "您确定要删除这段对话吗？此操作无法撤销。",
+                        "Delete chat": "删除聊天",
+                        "Are you sure you want to delete this chat? This action cannot be undone.": "您确定要删除该聊天吗？此操作无法撤销。",
 
         // 中间
             // 模型选择窗
