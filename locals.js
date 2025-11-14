@@ -154,6 +154,7 @@ I18N.conf = {
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏
             'span.ws-pre-wrap', // 提交说明
+            "h4[class^='Title-module__heading']", // 提交标题
         ],
         'repository/pull': [
             'td.blob-code', // 代码差异 分屏/同屏
