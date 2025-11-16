@@ -26567,6 +26567,12 @@ I18N["zh-CN"]["copilot"] = {
             // 评论框
                 "Steer active session while Copilot is working": "在 Copilot 工作时引导活动任务",
 
+                "Copilot stopped work due to an error": "Copilot 因错误停工",
+                    "View detailed logs": "查看详细日志",
+                    "Copilot encountered an unknown Git error. If the problem persists, please contact GitHub Support. To retry, leave a comment on this pull request asking Copilot to try again.": "Copilot 遇到未知的 Git 错误。如果问题仍然存在，请联系 GitHub 支持。要重试，请在此拉取请求上留言，要求 Copilot 再试一次。",
+
+                "Submitting will post a pull request comment": "提交后将发布一个拉取请求评论",
+
             // 文件框
                 "Filter files…": "筛选文件…",
                     "Filter options": "筛选选项",
