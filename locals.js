@@ -26564,6 +26564,34 @@ I18N["zh-CN"]["copilot"] = {
 
             "In progress": "进行中",
 
+            // 评论框
+                "Steer active session while Copilot is working": "在 Copilot 工作时引导活动任务",
+
+            // 文件框
+                "Filter files…": "筛选文件…",
+                    "Filter options": "筛选选项",
+                    "File extensions": "文件扩展名",
+                    "No extension": "无扩展名",
+                    "Vendored files": "引入的文件",
+                    "Viewed files": "已查看文件",
+
+                "Files changed": "更改的文件",
+                "Copilot is still working. Changes will automatically appear once they have been committed to the branch.": "Copilot 仍在工作中。更改将在提交到分支后自动显示。",
+
+                "Expand file tree": "展开文件树",
+                "Collapse file tree": "折叠文件树",
+                "Previous file (K)": "上一个文件（K）",
+                "Next file (J)": "下一个文件（J）",
+                "Open diff view settings": "打开差异视图设置",
+                    "Compact line height": "自定义行高",
+
+                "Copy file name to clipboard": "复制文件名到剪切板",
+                "viewed": "已查看",
+                "Viewed": "已查看",
+                "Comment on this file": "评论此文件",
+                "View file": "查看文件",
+                "Due to the large number of changes in this pull request, only one file is being shown at a time.": "由于此拉取请求中更改的文件数量较多，因此仅显示一个文件。",
+
             // 智能体总结页
                 "session": "任务",
                 "sessions": "任务",
@@ -26598,8 +26626,12 @@ I18N["zh-CN"]["copilot"] = {
         }],
         // 空间
         [/Total percent used: (\d+\%)/, "总使用率：$1"],
-        // 代理
+        // 智能体
         [/(\d+) revisions?/, "$1 次修订"],
+        [/No extension \((\d+)\)/, "无扩展名($1)"],
+        [/Expand all lines: (.+)/, "展开所有行：$1"],
+        [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
+
     ],
 };
 
