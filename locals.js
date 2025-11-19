@@ -20969,6 +20969,12 @@ I18N["zh-CN"]["topics"] = { // 探索-->主题页面
                 "To associate your repository with the": "将您的仓库与",
                 "topic, visit your repo's landing page and select \"manage topics.\"": "主题关联，请访问仓库的登录页面，然后选择 “管理主题”。",
 
+            // 没有任何仓库
+                // 原句：The <主题名> topic hasn't been used on any public repositories, yet.
+                "The": " ",
+                    "topic hasn't been used on any public repositories, yet.": "尚未被任何公共仓库使用。",
+                "Explore topics": "探索主题",
+
     },
     "regexp": [ // 正则翻译
         [/followers?/, "个关注者"],
