@@ -14081,6 +14081,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         // 创建发行版 /releases/new 和 编辑发行版 /releases/edit/<tag>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 提醒条
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
+            "This is a draft and won’t be seen by the public unless it is published": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
             "New Release": "新建发行版", // 上方
