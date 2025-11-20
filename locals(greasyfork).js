@@ -60,15 +60,30 @@ I18N.conf = {
     ignoreMutationSelectorPage: {
         'repository/new': [".cm-scroller"], // 代码编辑器
         'repository/edit': [".cm-scroller", "table"], // 代码编辑器
-        'repository/pull': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/compare': ["tbody"], // 代码差异
+        'repository/pull': [
+            "td.blob-code", // 代码差异 分屏/同屏
+            '.js-full-logs-container', // 工作流运行日志
+        ],
+        'repository/compare': [
+            "tbody", // 代码差异
+            ".js-preview-body", // 新建拉取请求 - 正文编辑器预览
+        ],
         'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
-        'repository/blob': ["#highlighted-line-menu-positioner"], // 代码视图 存在
+        'repository/blob': [
+            "#highlighted-line-menu-positioner", // 代码视图 存在
+            "#repos-sticky-header", // 代码视图 置顶标题
+        ],
         'repository/blame': ["#highlighted-line-menu-positioner"], // 代码视图
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
             '.styled-input-container', // 筛选条
+            'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
+            '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
+        ],
+        'repository/actions': [
+            'table.highlight', // 工作流程文件 源码视图
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'copilot':[
             '.cm-line',
@@ -77,7 +92,8 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
+            'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
+            '#qb-input-query span', // 搜索页面 搜索栏 关键词
         ],
     },
 
@@ -133,14 +149,17 @@ I18N.conf = {
         ],
         'repository/issues': [
             '.styled-input-container', // 筛选条
-            '.Box-sc-g0xbh4-0.markdown-body', // 评论正文
+            'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
+            '.markdown-body[data-team-hovercards-enabled="true"]', //  某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
         'repository/commit': [
             'td.blob-code', // 代码差异 分屏/同屏
             'span.ws-pre-wrap', // 提交说明
+            "h4[class^='Title-module__heading']", // 提交标题
         ],
         'repository/pull': [
             'td.blob-code', // 代码差异 分屏/同屏
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'repository/compare': [
             'td.blob-code', // 代码差异 分屏/同屏
@@ -155,11 +174,10 @@ I18N.conf = {
         ],
         'repository/actions': [
             'table.highlight', // 工作流程文件 源码视图
-            'span.user-select-none', // 日志 - 作业名
-            'span.CheckStep-line-content', // 日志 - 具体内容
+            '.js-full-logs-container', // 工作流运行日志
         ],
         'repository/releases': [
-            'div.markdown-body', // 发布版正文
+            'div.Box-body>div.markdown-body', // 发布版正文
         ],
         'repository/wiki': [
             '#wiki-body', // wiki 正文
@@ -195,7 +213,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            '#qb-input-query',  // 顶部搜索栏 关键词被翻译
+            'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
         ],
     },
@@ -1268,6 +1286,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Verified": "已验证",
             "Expired": "已过期",
             "Partially verified": "部分验证",
+                "We cannot verify signatures from co-authors, and some of the co-authors attributed to this commit require their commits to be signed.": "我们无法验证来自共同作者的签名，并且此提交的某些共同作者要求对其提交进行签名。",
             "Unverified": "未验证",
                 "Upload your public signing GPG key": "上传您的公共签名 GPG 密钥",
                 "to verify your signature.": "以验证您的签名。",
@@ -4831,8 +4850,10 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
 
             "Approved": "批准",
                 // 等待
+                    "Coupon applied": "优惠券已应用",
+                    "Expires in almost 2 years": "有效期大约 2年",
                     "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
-                    "Your academic benefits, including Partner offers, will become available within 72 hours of your verification.": "您的学术权益，包括合作伙伴优惠，将在验证通过后的 72 小时内生效。",
+                    "Your academic benefits, including Partner offers, will become available after 72 hours of your verification.": "您的学术福利，包括合作伙伴优惠，将在您资格审核通过后的 72 小时内生效。",
                     "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
                     "To redeem your Copilot Pro coupon, please sign up via this": "要兑换您的 Copilot Pro 优惠券，请访问此",
                     "link": "链接",
@@ -4862,6 +4883,7 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `提交于 ${translatedDate}`;
         }],
+        [/Expires in almost (\d+) years?/, "有效期大约 $1 年"],
     ],
 };
 
@@ -9268,6 +9290,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
     },
     "regexp": [ // 正则翻译
         // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+        [/(\+\d+) more reviewers?/, "$1 个审查者"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
         [/Edited (\d+) times?/, "编辑 $1 次"],
@@ -10143,6 +10166,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
               "authored": "撰写于",
 
             // 右侧栏 补充
+                // 审查者
+                "Reviewers whose approvals may not affect merge requirements": "审查者的批准可能不影响合并要求。",
 
                 "Allow edits by maintainers": "允许维护者进行编辑",
                     "Allowing edits by maintainers": "允许维护者进行编辑",
@@ -10637,7 +10662,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Hide whitespace": "隐藏空白",
                 "Apply and reload": "应用并重新加载",
             "Show whitespace": "显示空白",
+            "Expand file": "展开文件",
+            "Collapse file": "折叠文件",
             // "Refresh": "刷新",
+            // 复制文件按钮
+                "Copy file name to clipboard": "复制文件名到剪切板",
 
             "files viewed": "查看过的文件",
                 "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -10674,6 +10703,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Viewed": "已查看",
             "Comment on this file": "评论此文件",
+            "Comment on file": "评论此文件",
 
             "No changes to show": "没有更改",
                 "This commit does not include any file changes": "此提交未包含文件更改",
@@ -10952,6 +10982,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         }],
         [/Add(?: a)? comment on line ((L|R)(\d+))/, "在 $1 行评论"],
         [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
+        [/Expand all lines: (.+)/, "展开所有行：$1"],
+        [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
+        // CODEOWNERS 文件指定所有者
+        [/Owned by (\@.+) \(from CODEOWNERS line (\d+)\)/, "由 $1 拥有（来自 CODEOWNERS 第 $2 行）"],
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
