@@ -77,7 +77,7 @@ I18N.conf = {
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
-            '.styled-input-container', // 筛选条
+            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -148,7 +148,7 @@ I18N.conf = {
             '#file-name-id', // 文件路径中文件部分
         ],
         'repository/issues': [
-            '.styled-input-container', // 筛选条
+            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', //  某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -9472,6 +9472,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Move item after": "移动到…之后",
                     "Move to position": "指定位置",
                     "Move": "移动",
+            "Search Issues": "搜索议题",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
