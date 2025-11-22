@@ -3317,10 +3317,12 @@ I18N["zh-CN"]["payment-module"] = { // 通用账单及支付信息模块
                     "PayPal update": "",
                     "Charge to": "收费至",
                     "Sign in to PayPal to use a different account.": "登录 PayPal 以使用其他账户。",
+                    "You are currently paying with a credit card, but you can switch to using PayPal at any time.": "您目前使用信用卡付款，但您可以随时切换为使用 PayPal。",
 
                 // 顶部提醒
                     "An error occurred while saving payment information.": "保存支付信息时发生错误。",
                     "Your PayPal account has been successfully added.": "您的 PayPal 账户已成功添加。",
+                    "Your credit card has been successfully updated.": "您的信用卡已成功更新。",
 
                 "504 Gateway Time-out": "504 网关超时",
                 "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我们可能会暂时冻结您的支付方式以验证其有效性。这不是收费，验证后将会自动解除。",
@@ -4214,6 +4216,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
 
+            // 获取使用情况报告
+                "Premium requests usage report": "高级请求使用报告",
+                    "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
+                "Legacy usage report": "旧版使用报告",
+
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
                 "New budget": "新建",
@@ -4612,6 +4619,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
             return `${translatedP1}-${translatedP2}用量。高级请求价格为 $0.04 / 个。`;
         }],
+        [/Per-user breakdown of premium requests in the last 45 days.(.*)/, "过去 45 天内每用户高级请求的明细。$1"], // TODO: 翻译时间
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
@@ -5010,8 +5018,6 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Learn more about passkeys": "了解更多关于通行密钥的信息",
 
                 "Your passkeys": "您的通行密钥",
-                "| Last used": "| 最后使用",
-                // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑通行密钥昵称",
                 // [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
 
@@ -5021,6 +5027,10 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
                     "You will no longer be able to use it to sign-in to your account.": "您将无法再使用它登录您的账户。",
                     "Note: You may continue to see this passkey as an option during sign-in until you also delete it from your browser, device or associated account's password management settings.": "注意：您可能会在登录过程中继续看到此通行密钥作为一个选项，直到您将其从浏览器、设备或关联账户的密码管理设置中删除。",
                     "Deleting…": "删除中…",
+
+            // Google
+                "1 account connected": "已连接 1 个帐户",
+                "Google sign in method dropdown": "Google 登录方法下拉菜单",
 
             // 双因素身份验证
                 // 顶部提醒
@@ -5149,6 +5159,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
         [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
+        [/Added (.*) \| Last used (.*)/, "添加于 $1 | 最后使用 $2"] // TODO: 翻译时间
     ],
 };
 
@@ -6199,10 +6210,12 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求", // 组织设置
                 "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以请求安装 GitHub 应用。下面列出了待处理的请求。",
 
-            "No installed applications": "没有已安装的应用",
-            "You have no applications installed on this account.": "此账户上没有安装任何应用。",
+            "No installed GitHub Apps": "没有已安装的 GitHub 应用",
+            "You have no GitHub Apps installed on this account.": "此账户上没有安装任何 GitHub 应用。",
             "Configure": "配置",
             "Suspended": "已暂停",
+            "Visit Marketplace": "访问市场",
+            "My GitHub Apps": "我的 GitHub 应用",
 
         // 安装的 GitHub 应用设置 https://github.com/settings/installations/<id>
             // 顶部提醒
@@ -8597,6 +8610,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "success": "成功",
             "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
+            "Open commit details": "打开提交详细信息", // TODO: 修复该词条翻译不生效问题
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
 
@@ -8819,6 +8833,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/commits by (.+)/, "由 $1 提交"],
+        [/Signed-off-by: (.*)/, "签字人：$1"], // TODO: 修复该词条翻译不生效问题
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
@@ -19388,6 +19403,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Having problems?": "有问题吗？",
             "Use GitHub Mobile": "使用 GitHub Mobile",
             "Use your authenticator app": "使用您的身份验证器应用",
+            "Send a code via email": "通过电子邮件发送验证码",
             "Send a code via SMS": "通过短信发送验证码",
             "Resend SMS": "重新发送短信",
             "Use your password": "使用您的密码",
@@ -19975,8 +19991,22 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
         "Recent activity": "最近活动",
-        "Views": "查看",
-        "Untitled view": "未命名的视图",
+        "Views": "视图",
+            "Untitled view": "未命名的视图",
+            "All views": "所有视图",
+            "Create view": "创建视图",
+                "Build powerful views to keep track of work": "构建强大的视图来跟踪工作",
+                "Create your own views to quickly find and access your work.": "创建您自己的视图以快速查找和访问您的工作。",
+                "You have unsaved changes": "您有未保存的更改",
+                    "Are you sure you want to discard them?": "您确定要丢弃它们吗？",
+                    "OK": "确定",
+            "Saved views menu": "保存的视图菜单",
+            "Edit view": "编辑视图",
+                "Icon": "图标",
+                "Description": "描述",
+                "Query": "查询",
+                "Save view": "保存视图",
+            "Delete view": "删除视图",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
@@ -19989,6 +20019,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
 
         "Sort": "排序",
         "Sort by": "排序方式",
+        "Order": "顺序",
         "Newest": "最新的",
         "Oldest": "最早的",
         "Most commented": "最多评论",
@@ -20085,6 +20116,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         [/#([^ ]+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Are you sure you want to delete view (.*)\?/, "您确定要删除视图 $1 吗？"]
     ],
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
@@ -26188,6 +26220,7 @@ I18N["zh-CN"]["copilot"] = {
                 "to try again.": " ",
         // 高级请求数已用完
             "You have reached your monthly limit for premium requests. Enable additional requests or switch to the default model. Limit resets on.": "您已达到本月高级请求的额度上限。请启用额外请求或切换到默认模型。额度将重置。",
+            "You have used 80% of your premium responses this month. Enable additional requests to get more usage after the limit is reached.": "您本月已使用 80% 的高级请求。达到限制后启用额外请求以获得更多使用量。",
         // 左侧边栏
             "New conversation": "新聊天",
             "Close conversations": "关闭侧边栏",
@@ -26385,6 +26418,12 @@ I18N["zh-CN"]["copilot"] = {
                         "Switch back to the": "切回",
                         "model or start a new conversation": "模型或新建对话",
             "Space": "空间",
+                "Select a space": "选择一个空间",
+                "Recent spaces": "最近的空间",
+                "Filter items": "过滤项目",
+                "No spaces found": "没有找到空间",
+                "You can create a new space to get started.": "您可以创建一个新空间来开始。",
+                "Create a new space": "创建一个新空间",
             "Send now": "发送",
 
             // 预设栏
