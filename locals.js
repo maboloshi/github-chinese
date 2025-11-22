@@ -210,6 +210,9 @@ I18N.conf = {
         'copilot':[
             '.cm-line',
         ],
+        'issues':[
+            'div.styled-input-content', // 搜索框
+        ],
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
@@ -11980,6 +11983,8 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
         [/([^ ]+) is licensed under/, "$1 的许可证"],
 
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
+
+        [/Line (\d+) options/, "行 $1 选项"], // TODO: 修复翻译未生效问题
 
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
