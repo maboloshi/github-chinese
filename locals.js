@@ -4619,7 +4619,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
             return `${translatedP1}-${translatedP2}用量。高级请求价格为 $0.04 / 个。`;
         }],
-        [/Per-user breakdown of premium requests in the last 45 days.(.*)/, "过去 45 天内每用户高级请求的明细。$1"], // TODO: 翻译时间
+        [/Per-user breakdown of premium requests in the last 45 days. Sunsetting(.*)\./, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
+        }],
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
@@ -5159,7 +5163,12 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
         [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
-        [/Added (.*) \| Last used (.*)/, "添加于 $1 | 最后使用 $2"] // TODO: 翻译时间
+        [/Added (.*) \| Last used (.*)/, (matchm, p1, p2) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const dateAdded = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            const dateLastUsed = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+            return `添加于 ${dateAdded} | 最后使用 ${dateLastUsed}`;
+        }]
     ],
 };
 
