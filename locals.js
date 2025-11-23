@@ -11916,12 +11916,12 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
         [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
+        [/Add a comment on lines (L|R)(\d+) to (L|R)(\d+)/, "在 $1$2 行到 $3$4 行上添加评论"],
         [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
         [/Expand all lines: ([^ ]+)/, "展开全部：$1"],
         [/Collapse file: ([^ ]+)/, "折叠文件：$1"],
         [/Collapse non-diff lines: ([^ ]+)/, "折叠无差异行：$1"],
         [/(\d+) tags?/, "$1 标签"], // 出现位置：某提交所跨标签数
-        [/Add comment on line (.*)/, "在行 $1 上添加注释"],
     ],
 };
 
@@ -20542,7 +20542,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         [/#(\d+) by/, "#$1 打开者"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
         [/Are you sure you want to delete view (.*)\?/, "您确定要删除视图 $1 吗？"],
-        [/Filter contains (\d+) issue:/, "过滤器包含 $1 个问题："]
+        [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
