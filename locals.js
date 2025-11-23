@@ -5169,7 +5169,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
         [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
-        [/Added (.*) \| Last used (.*)/, (matchm, p1, p2) => {
+        [/Added (.*) \| Last used (.*)/, (match, p1, p2) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const dateAdded = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             const dateLastUsed = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
