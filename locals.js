@@ -10481,6 +10481,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "a team": "团队",
                 "as a": "作为",
                 "code owner": "代码所有者",
+            "started reviewing": "开始审查",
+            "finished reviewing on behalf of": "完成审查，代表",
             "This pull request was": "此拉取请求已",
             "Compare": "比较",
             "deleted the": "删除",
