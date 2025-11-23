@@ -14316,6 +14316,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         // 创建发行版 /releases/new 和 编辑发行版 /releases/edit/<tag>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 提醒条
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
+            "This is a draft and won’t be seen by the public unless it is published": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
             "New Release": "新建发行版", // 上方
@@ -21423,6 +21424,12 @@ I18N["zh-CN"]["topics"] = { // 探索-->主题页面
             "Add this topic to your repo": "将此主题添加到您的仓库",
                 "To associate your repository with the": "将您的仓库与",
                 "topic, visit your repo's landing page and select \"manage topics.\"": "主题关联，请访问仓库的登录页面，然后选择 “管理主题”。",
+
+            // 没有任何仓库
+                // 原句：The <主题名> topic hasn't been used on any public repositories, yet.
+                "The": " ",
+                    "topic hasn't been used on any public repositories, yet.": "尚未被任何公共仓库使用。",
+                "Explore topics": "探索主题",
 
     },
     "regexp": [ // 正则翻译
