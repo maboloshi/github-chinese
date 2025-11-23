@@ -20521,6 +20521,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "Empty value for": "空值",
             "Invalid value": "无效值",
             "for": "对于",
+        "Clear filter": "清除筛选",
     },
     "regexp": [ // 正则翻译
         [/(\d+) Open/, "$1 打开"],
