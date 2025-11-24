@@ -892,10 +892,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             // 取消按钮 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
+            "Apply Suggestion": "添加建议",
             "Add a title": "添加标题",
                 "Title": "标题",
             "Add a description": "添加描述",
                 "Add your description here...": "在此添加您的描述…",
+                "Add an optional description...": "添加可选描述…",
+            "There was an error trying to commit changes: Failed to submit suggested changes": "提交更改时出错：提交建议更改失败",
 
             // 网络错误
                 "There was a problem saving your comment. Please try again.": "保存您的评论时出现问题。请再试一次。",
@@ -10847,6 +10850,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Some comments aren't visible on the classic Files Changed page.": "某些评论在传统更改的文件页不可见。",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
+            // 网络错误
+            "There was an issue loading this file": "加载此文件时出错",
+                "Try refreshing the page or if the problem persists": "请尝试刷新页面，如果问题仍然存在，请",
+                    "contact support": "联系支持人员",
+
             "Try the new experience": "尝试新体验",
             // 工具条
             "Show file tree": "显示文件树",
@@ -10995,7 +11003,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Add suggestion to batch": "批量添加建议",
                     "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
                     "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
-                "Commit suggestion": "提交更改",
+                "Commit suggestion": "提交建议",
 
                 "Pending in batch": "待批量处理",
                 "Remove from batch": "从批量处理中移除",
