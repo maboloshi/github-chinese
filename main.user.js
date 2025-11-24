@@ -364,7 +364,9 @@
                 if (translatedText !== text) break;
             }
         }
-        document.title = translatedText;
+        if (translatedText) {
+            document.title = translatedText;
+        }
     }
 
     /**
