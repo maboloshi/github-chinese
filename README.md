@@ -312,8 +312,8 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/wyc-26" title="wyc-26">
   <img src="https://avatars.githubusercontent.com/u/154735436?v=4" width="42;" alt="wyc-26"/>
 </a>
-<a href="https://github.com/tangyuan0821" title="松花酿酒">
-  <img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="松花酿酒"/>
+<a href="https://github.com/tangyuan0821" title="Paper Moon">
+  <img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="Paper Moon"/>
 </a>
 <a href="https://github.com/pylover7" title="大叶子">
   <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
@@ -356,6 +356,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </a>
 <a href="https://github.com/NyA1K0" title="NyA!K0">
   <img src="https://avatars.githubusercontent.com/u/177237971?v=4" width="42;" alt="NyA!K0"/>
+</a>
+<a href="https://github.com/LuYifei2011" title="Lu Yifei">
+  <img src="https://avatars.githubusercontent.com/u/118034848?v=4" width="42;" alt="Lu Yifei"/>
 </a>
 <a href="https://github.com/Kisechan" title="Kise Platinyl">
   <img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/>
