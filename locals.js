@@ -10995,6 +10995,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Add suggestion to batch": "批量添加建议",
                     "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
                     "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
+                "Commit suggestion": "提交更改",
 
                 "Pending in batch": "待批量处理",
                 "Remove from batch": "从批量处理中移除",
