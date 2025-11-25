@@ -10857,6 +10857,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Try the new experience": "尝试新体验",
             // 工具条
+            "Browse files": "浏览文件",
             "Show file tree": "显示文件树",
             "Hide file tree": "隐藏文件树",
             "Changes from": "更改自",
@@ -10910,6 +10911,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // "Refresh": "刷新",
             // 复制文件按钮
                 "Copy file name to clipboard": "复制文件名到剪切板",
+            
+            "Open overview side panel": "打开概览侧边栏",
+                "Close overview panel": "关闭", // 过于啰嗦省略
+            // 评论
+                "No replies": "无回复",
 
             "files viewed": "查看过的文件",
                 "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -11093,6 +11099,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 // Copilot
                     "Implement suggestion": "采纳建议",
+                    "Mention Copilot": "提及 Copilot",
                         "Copilot isn't available for cross-repository pull requests": "Copilot 在跨仓库的拉取请求中不可用",
 
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
