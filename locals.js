@@ -1270,6 +1270,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "This commit was signed with the committer’s": "此提交已签名，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", //
+            "This commit is signed with the committer’s": "此提交已签名，使用提交者的",
+            "’s contribution has been verified via GPG key.": "的贡献已通过 GPG 密钥验证。",
             "verified signature": "已验证签名",
             "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
@@ -1278,7 +1280,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "This user has not yet uploaded their public signing key.": "此用户尚未上传其公共签名密钥。",
 
             "GPG key ID:": "GPG 密钥 ID：",
+            "GPG Key ID:": "GPG 密钥 ID：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
+            "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
             "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不相符。",
             "No user is associated with the committer email.": "提交者的电子邮箱未与用户相关联。",
