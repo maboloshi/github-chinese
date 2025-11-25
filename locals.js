@@ -10857,7 +10857,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Try the new experience": "尝试新体验",
             // 工具条
-            "Browse files": "浏览文件",
+            "Browse files": "浏览文件", // 两个提交的比较页面
+
             "Show file tree": "显示文件树",
             "Hide file tree": "隐藏文件树",
             "Changes from": "更改自",
