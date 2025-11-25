@@ -2288,6 +2288,11 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/Switch dashboard: ([^ ]+)/, "切换仪表板：$1"],
         [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打开者 $3"],
     ],
+    "title": {
+        "static": {
+            "Feed": "动态",
+        },
+    },
 };
 I18N["zh-CN"]["dashboard"] = I18N["zh-CN"]["page-dashboard"];
 I18N["zh-CN"]["feed"] = I18N["zh-CN"]["page-dashboard"];
@@ -3619,6 +3624,11 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
     },
     "regexp": [ // 正则翻译
     ],
+    "title": {
+        "static": {
+            "Your profile": "个人资料",
+        },
+    },
 };
 I18N["zh-CN"]["settings"] = I18N["zh-CN"]["settings/profile"];
 
@@ -3736,6 +3746,11 @@ I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
         [/You have revoked the successor invitation to ([^ ]+)./, "您已经撤销了对 $1 的继任者邀请。"],
         [/You have canceled the invitation to ([^ ]+) to be your designated successor./, "您已经取消了让 $1 成为您的指定继任者的邀请。"],
     ],
+    "title": {
+        "static": {
+            "Account settings": "账户设置",
+        },
+    },
 };
 
 I18N["zh-CN"]["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
@@ -3810,6 +3825,11 @@ I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
     },
     "regexp": [ // 正则翻译
     ],
+    "title": {
+        "static": {
+            "Appearance": "外观",
+        },
+    },
 };
 
 I18N["zh-CN"]["settings/accessibility"] = { // 设置 - 无障碍
@@ -3893,6 +3913,11 @@ I18N["zh-CN"]["settings/accessibility"] = { // 设置 - 无障碍
     },
     "regexp": [ // 正则翻译
     ],
+    "title": {
+        "static": {
+            "Accessibility": "无障碍",
+        },
+    },
 };
 
 I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
@@ -3989,6 +4014,11 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
     },
     "regexp": [ // 正则翻译
     ],
+    "title": {
+        "static": {
+            "Notification settings": "通知设置",
+        },
+    },
 };
 
 I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
@@ -4804,6 +4834,17 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
+    "title": {
+        "static": {
+            "Billing Overview": "账单概览",
+            "Billing Usage": "计费用量",
+            "Premium request analytics": "高级请求分析",
+            "Budgets": "预算",
+            "Billing": "账单",
+            "Payment Information": "支付信息",
+            "Payment history": "支付历史",
+        },
+    },
 };
 I18N["zh-CN"]["account/billing/history"] = I18N["zh-CN"]["settings/billing"];
 I18N["zh-CN"]["orgs/settings/billing"] = I18N["zh-CN"]["settings/billing"];
@@ -20544,6 +20585,15 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         [/Are you sure you want to delete view (.*)\?/, "您确定要删除视图 $1 吗？"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
+    "title": {
+        "static": {
+            "Assigned to me": "分配给您",
+            "Created by me": "由您创建",
+            "Mentioned": "提到的",
+            "Recent Activity": "最近活动",
+            "View": "视图",
+        },
+    },
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
 
@@ -27110,6 +27160,13 @@ I18N["zh-CN"]["copilot"] = {
         [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
 
     ],
+    "title": {
+        "static": {
+            "Agents · GitHub Copilot": "智能体 · GitHub Copilot",
+            "New chat · GitHub Copilot": "新聊天 · GitHub Copilot",
+            "Spaces · GitHub Copilot": "空间 · GitHub Copilot",
+        },
+    },
 };
 
 I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
