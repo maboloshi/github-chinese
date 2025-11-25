@@ -77,7 +77,7 @@ I18N.conf = {
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
-            '.styled-input-container', // 筛选条
+            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -90,6 +90,9 @@ I18N.conf = {
         ],
         'spark':[
             '.cm-line',
+        ],
+        'issues':[
+            'div.styled-input-content', // 筛选条
         ],
         '*': [
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
@@ -148,7 +151,7 @@ I18N.conf = {
             '#file-name-id', // 文件路径中文件部分
         ],
         'repository/issues': [
-            '.styled-input-container', // 筛选条
+            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', //  某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -209,6 +212,9 @@ I18N.conf = {
         ],
         'copilot':[
             '.cm-line',
+        ],
+        'issues':[
+            'div.styled-input-content', // 筛选条
         ],
         '*': [
             '.comment-body', '.js-preview-body',
@@ -3317,10 +3323,12 @@ I18N["zh-CN"]["payment-module"] = { // 通用账单及支付信息模块
                     "PayPal update": "",
                     "Charge to": "收费至",
                     "Sign in to PayPal to use a different account.": "登录 PayPal 以使用其他账户。",
+                    "You are currently paying with a credit card, but you can switch to using PayPal at any time.": "您目前使用信用卡付款，但您可以随时切换为使用 PayPal。",
 
                 // 顶部提醒
                     "An error occurred while saving payment information.": "保存支付信息时发生错误。",
                     "Your PayPal account has been successfully added.": "您的 PayPal 账户已成功添加。",
+                    "Your credit card has been successfully updated.": "您的信用卡已成功更新。",
 
                 "504 Gateway Time-out": "504 网关超时",
                 "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我们可能会暂时冻结您的支付方式以验证其有效性。这不是收费，验证后将会自动解除。",
@@ -4214,6 +4222,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
 
+            // 获取使用情况报告
+                "Premium requests usage report": "高级请求使用报告",
+                    "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
+                "Legacy usage report": "旧版使用报告",
+
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
                 "New budget": "新建",
@@ -4611,6 +4624,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
             return `${translatedP1}-${translatedP2}用量。高级请求价格为 $0.04 / 个。`;
+        }],
+        [/Per-user breakdown of premium requests in the last 45 days. Sunsetting(.*)\./, (match, p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
         }],
 
         // billing 概况页面
@@ -5010,8 +5028,6 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
                 "Learn more about passkeys": "了解更多关于通行密钥的信息",
 
                 "Your passkeys": "您的通行密钥",
-                "| Last used": "| 最后使用",
-                // | Last used less than 1 小时之前
                 "Edit passkey nickname": "编辑通行密钥昵称",
                 // [/Delete `([^ ]+)` passkey/, "删除 “$1” 通行密钥"],
 
@@ -5021,6 +5037,10 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
                     "You will no longer be able to use it to sign-in to your account.": "您将无法再使用它登录您的账户。",
                     "Note: You may continue to see this passkey as an option during sign-in until you also delete it from your browser, device or associated account's password management settings.": "注意：您可能会在登录过程中继续看到此通行密钥作为一个选项，直到您将其从浏览器、设备或关联账户的密码管理设置中删除。",
                     "Deleting…": "删除中…",
+
+            // Google
+                "1 account connected": "已连接 1 个帐户",
+                "Google sign in method dropdown": "Google 登录方法下拉菜单",
 
             // 双因素身份验证
                 // 顶部提醒
@@ -5149,6 +5169,12 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
         [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
+        [/Added (.*) \| Last used (.*)/, (matchm, p1, p2) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const dateAdded = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            const dateLastUsed = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
+            return `添加于 ${dateAdded} | 最后使用 ${dateLastUsed}`;
+        }]
     ],
 };
 
@@ -6201,10 +6227,12 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求", // 组织设置
                 "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以请求安装 GitHub 应用。下面列出了待处理的请求。",
 
-            "No installed applications": "没有已安装的应用",
-            "You have no applications installed on this account.": "此账户上没有安装任何应用。",
+            "No installed GitHub Apps": "没有已安装的 GitHub 应用",
+            "You have no GitHub Apps installed on this account.": "此账户上没有安装任何 GitHub 应用。",
             "Configure": "配置",
             "Suspended": "已暂停",
+            "Visit Marketplace": "访问市场",
+            "My GitHub Apps": "我的 GitHub 应用",
 
         // 安装的 GitHub 应用设置 https://github.com/settings/installations/<id>
             // 顶部提醒
@@ -8599,6 +8627,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             "success": "成功",
             "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
+            "Open commit details": "打开提交详细信息", // TODO: 修复该词条翻译不生效问题
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
 
@@ -8821,6 +8850,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         [/commits by (.+)/, "由 $1 提交"],
+        [/Signed-off-by: (.*)/, "签字人：$1"], // TODO: 修复该词条翻译不生效问题
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
@@ -9447,6 +9477,207 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Move item after": "移动到…之后",
                     "Move to position": "指定位置",
                     "Move": "移动",
+            "Search Issues": "搜索议题",
+                // 仓库
+                    "No repository": "无仓库",
+                    "Has repository": "包含仓库",
+                    "Exclude repo": "排除仓库",
+                // 组织
+                    "Has organization": "包含组织",
+                    "Exclude org": "排除组织",
+                "Is": "类型为",
+                    "Exclude is": "排除类型为",
+                    "Issue": "议题",
+                    "Pull Request": "拉取请求",
+                    "Unmerged": "未合并",
+                    "Locked": "已锁定",
+                    "Unlocked": "未锁定",
+                    "Blocked": "已阻塞",
+                "State": "状态",
+                    "Exclude state": "排除状态",
+                // 标签
+                    "No label": "无标签",
+                    "Has label": "包含标签",
+                    "Exclude label": "排除标签",
+                    "aesthetics": "美化",
+                    "bug": "缺陷",
+                    "dependencies": "依赖项",
+                    "development": "开发中",
+                    "discuss": "讨论",
+                    "documentation": "文档",
+                    "duplicate": "重复",
+                    "enhancement": "功能增强",
+                    "forums": "论坛",
+                    "good first issue": "适合新手",
+                    "help wanted": "求助",
+                    "invalid": "无效",
+                    "question": "提问",
+                    "website": "网站",
+                    "wontfix": "不会修复",
+                // 类型
+                    "No type": "无类型",
+                    "Has type": "包含类型",
+                "Project": "项目",
+                    "No project": "无项目",
+                    "Has project": "包含项目",
+                    "Exclude project": "排除项目",
+                "Milestone": "里程碑",
+                    "No milestone": "无里程碑",
+                    "Has milestone": "包含里程碑",
+                    "Exclude milestone": "排除里程碑",
+                // 受理人
+                    "No assignee": "无受理人",
+                    "Has assignee": "包含受理人",
+                    "Me": "我",
+                        "Signed-in user": "已登录用户",
+                    // Copilot
+                        "Your AI pair programmer": "您的 AI 编程助理",
+                    "Exclude assignee": "排除受理人",
+                "Author": "作者",
+                    "Has author": "包含作者",
+                    "Exclude author": "排除作者",
+                "Involves": "涉及",
+                    "Has involves": "包含涉及",
+                    "Exclude involves": "排除涉及",
+                "Mentions": "提及",
+                    "Has mentions": "包含提及",
+                    "Exclude mentions": "排除提及",
+                "Parent issue": "父议题",
+                    "No parent issue": "无父议题",
+                    "Has parent issue": "包含父议题",
+                    "Exclude parent-issue": "排除父议题",
+                "Blocking": "阻塞",
+                    "No blocking": "无阻塞",
+                    "Has blocking": "包含阻塞",
+                    "Exclude blocking": "排除阻塞",
+                "Blocked by": "被…阻塞",
+                    "No blocked by": "无被阻塞",
+                    "Has blocked by": "包含被阻塞",
+                    "Exclude blocked-by": "排除被阻塞",
+                "Sub-issue": "子议题",
+                    "No sub-issue": "无子议题",
+                    "Has sub-issue": "包含子议题",
+                    "Exclude sub-issue": "排除子议题",
+                "Update date": "更新日期",
+                    "Exclude updated": "排除更新日期",
+                    "Today": "今天",
+                    "Yesterday": "昨天",
+                    "Past 7 days": "过去 7 天",
+                    "Past 30 days": "过去 30 天",
+                    "Past year": "过去 1 年",
+                "Creation date": "创建日期",
+                    "Has creation date": "包含创建日期",
+                    "Exclude created": "排除创建日期",
+                "Closed date": "关闭日期",
+                    "Has closed date": "包含关闭日期",
+                    "Exclude closed": "排除关闭日期",
+                "Merge date": "合并日期",
+                    "Has merge date": "包含合并日期",
+                    "Exclude merged": "排除合并日期",
+                "Review requested": "已请求评审",
+                    "Has review requested": "包含已请求评审",
+                    "Exclude review-requested": "排除已请求评审",
+                "In": "在",
+                    "Has in": "包含在",
+                    "Exclude in": "排除在",
+                    "Body": "正文",
+                    "Comments": "评论",
+                "Commenter": "评论者",
+                    "Has commenter": "包含评论者",
+                    "Exclude commenter": "排除评论者",
+                "User": "用户",
+                    "Has user": "包含用户",
+                    "Exclude user": "排除用户",
+                "User review requested": "已请求用户评审",
+                    "Has user review requested": "包含已请求用户评审",
+                    "Exclude user-review-requested": "排除已请求用户评审",
+                "Reviewed by": "评审者",
+                    "Has reviewed by": "包含评审者",
+                    "Exclude reviewed-by": "排除评审者",
+                "Comment count": "评论数",
+                    "Has comment count": "有评论数",
+                    "Less than 10": "少于 10",
+                    "More than 10": "多于 10",
+                    "Between 10 and 100": "10 到 100",
+                "Interactions count": "互动数",
+                    "Has interactions count": "有互动数",
+                "Closed reason": "关闭原因",
+                    "Exclude reason": "排除原因",
+                    "Completed": "已完成",
+                    "Not planned": "未计划",
+                    "Duplicate": "重复",
+                "Linked": "已链接",
+                    "Has linked": "包含已链接",
+                    "Exclude linked": "排除已链接",
+                "Archived": "已归档",
+                    "Has archived": "包含已归档",
+                    "Exclude archived": "排除已归档",
+                    "True": "是",
+                    "False": "否",
+                "Reaction count": "表情回应数",
+                    "Has reaction count": "有表情回应数",
+                // 草案
+                    "Has draft": "包含草案",
+                    "Exclude draft": "排除草案",
+                "Review state": "评审状态",
+                    "Has review state": "包含评审状态",
+                    "Exclude review": "排除评审状态",
+                    "No reviews": "无评审",
+                "Code language": "代码语言",
+                    "Has code language": "包含代码语言",
+                    "Exclude language": "排除代码语言",
+                "Commit SHA": "提交 SHA",
+                    "Has commit sha": "包含提交 SHA",
+                    "Exclude sha": "排除提交 SHA",
+                "Base": "基础分支",
+                    "Has base": "包含基础分支",
+                    "Exclude base": "排除基础分支",
+                "Head": "对比分支",
+                    "Has head": "包含对比分支",
+                    "Exclude head": "排除对比分支",
+                // 状态 (Status)
+                    "Has status": "包含状态检查",
+                    "Exclude status": "排除状态检查",
+                    "Pending": "待处理",
+                    "Success": "成功",
+                    "Failure": "失败",
+                    "Queued": "排队中",
+                    "Waiting": "等待中",
+                    "Cancelled": "已取消",
+                    "Skipped": "已跳过",
+                "Team": "团队",
+                    "Has team": "包含团队",
+                    "Exclude team": "排除团队",
+                "Team review requested": "已请求团队评审",
+                    "Has team review requested": "包含已请求团队评审",
+                    "Exclude team-review-requested": "排除已请求团队评审",
+                // 排序
+                    "Has sort": "包含排序",
+                    "Exclude sort": "排除排序",
+                    "Least reactions": "最少回应",
+                    "Most thumbs up (👍) reactions": "👍 回应最多",
+                    "Least thumbs up (👍) reactions": "👍 回应最少",
+                    "Most thumbs down (👎) reactions": "👎 回应最多",
+                    "Least thumbs down (👎) reactions": "👎 回应最少",
+                    "Most laugh (😄) reactions": "😄 回应最多",
+                    "Least laugh (😄) reactions": "😄 回应最少",
+                    "Most confused (😕) reactions": "😕 回应最多",
+                    "Least confused (😕) reactions": "😕 回应最少",
+                    "Most tada (🎉) reactions": "🎉 回应最多",
+                    "Least tada (🎉) reactions": "🎉 回应最少",
+                    "Most heart (❤️) reactions": "❤️ 回应最多",
+                    "Least heart (❤️) reactions": "❤️ 回应最少",
+                    "Most eyes (👀) reactions": "👀 回应最多",
+                    "Least eyes (👀) reactions": "👀 回应最少",
+                "AND": "且",
+                "OR": "或",
+                "Exclude": "排除",
+            // 过滤器问题
+                "Empty value for": "空值",
+                "Invalid value": "无效值",
+                "for": "对于",
+
+            "Order": "顺序",
 
         // 新建议题 选择议题模板  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "开始",
@@ -9885,6 +10116,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/open issues? and pull requests?/, "个打开的议题和拉取请求"],
         [/open issues? or pull requests?/, "个打开的议题或拉取请求"],
         [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您确定要将带有以下标签的 $1 条议题转换为讨论吗？"],
+        [/(\d+) labels/, "$1 个标签"],
 
         // 子议题
         [/Create new sub-issue in ([^ ]+)/, "在 $1 中新建子议题"],
@@ -11660,10 +11892,10 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
                 "Off-topic": "偏离主题",
             "Load more comments": "加载更多评论",
             "Reference in a new issue": "在新议题中提及",
-            "Add files": "添加文件",
+            "Add Files": "添加文件",
             "You're not receiving notifications from this thread.": "您没有收到来自此主题的通知。",
             "You're receiving notifications because you're subscribed to this thread.": "您收到通知是因为您订阅了此主题。",
-
+            "Return to code": "返回代码",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -11686,6 +11918,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
         [/View (\d+) commit comments?/, "查看 $1 条提交评论"], // 新版提交 commits 页面 /<user-name>/<repo-name>/commits/<branch>
         [/View checks?/, "查看检查"], // Android UA
         [/Add a comment on line (L|R)(\d+)/, "在 $1$2 行添加评论"], // 新版提交详情页
+        [/Add a comment on lines (L|R)(\d+) to (L|R)(\d+)/, "在 $1$2 行到 $3$4 行上添加评论"],
         [/Start conversation on line (L|R)(\d+)/, "在 $1$2 行开始讨论"], // 新版提交详情页
         [/Expand all lines: ([^ ]+)/, "展开全部：$1"],
         [/Collapse file: ([^ ]+)/, "折叠文件：$1"],
@@ -11958,6 +12191,8 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
         [/([^ ]+) is licensed under/, "$1 的许可证"],
 
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
+
+        [/Line (\d+) options/, "行 $1 选项"], // TODO: 修复翻译未生效问题
 
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
@@ -14083,6 +14318,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
         // 创建发行版 /releases/new 和 编辑发行版 /releases/edit/<tag>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 提醒条
             "This is a draft and won’t be seen by the public unless it’s published.": "这是一个草案，除非发布，否则不会被公众看到。",
+            "This is a draft and won’t be seen by the public unless it is published": "这是一个草案，除非发布，否则不会被公众看到。",
             "Discard draft": "丢弃草案",
 
             "New Release": "新建发行版", // 上方
@@ -19390,6 +19626,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Having problems?": "有问题吗？",
             "Use GitHub Mobile": "使用 GitHub Mobile",
             "Use your authenticator app": "使用您的身份验证器应用",
+            "Send a code via email": "通过电子邮件发送验证码",
             "Send a code via SMS": "通过短信发送验证码",
             "Resend SMS": "重新发送短信",
             "Use your password": "使用您的密码",
@@ -19977,8 +20214,22 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Review requests": "审查请求", // pulls
             "Pull Requests requesting your review": "请求您审查的拉取请求", // pulls
         "Recent activity": "最近活动",
-        "Views": "查看",
-        "Untitled view": "未命名的视图",
+        "Views": "视图",
+            "Untitled view": "未命名的视图",
+            "All views": "所有视图",
+            "Create view": "创建视图",
+                "Build powerful views to keep track of work": "构建强大的视图来跟踪工作",
+                "Create your own views to quickly find and access your work.": "创建您自己的视图以快速查找和访问您的工作。",
+                "You have unsaved changes": "您有未保存的更改",
+                    "Are you sure you want to discard them?": "您确定要丢弃它们吗？",
+                    "OK": "确定",
+            "Saved views menu": "保存的视图菜单",
+            "Edit view": "编辑视图",
+                "Icon": "图标",
+                "Description": "描述",
+                "Query": "查询",
+                "Save view": "保存视图",
+            "Delete view": "删除视图",
 
         "Visibility": "可见性",
         "Repository visibility": "仓库可见性",
@@ -19991,6 +20242,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
 
         "Sort": "排序",
         "Sort by": "排序方式",
+        "Order": "顺序",
         "Newest": "最新的",
         "Oldest": "最早的",
         "Most commented": "最多评论",
@@ -19999,6 +20251,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Least recently updated": "最早更新",
         "Best match": "最佳匹配",
         "Most reactions": "最多回应",
+        "Least reactions": "最少回应",
 
         // 状态词
         "was merged": "已合并",
@@ -20025,6 +20278,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "advanced search": "高级搜索",
         "No results":"无结果",
         "Try adjusting your search filters.":"尝试调整您的搜索筛选条件。",
+        "Failed to load issues.": "无法加载议题。",
+        "We encountered an error trying to load issues.": "我们在尝试加载议题时遇到了错误。",
 
         // "Use the links above to find what you’re looking for, or try": "使用上面的链接找到您要找的内容，或尝试",
         // "a new search query": "新的搜索查询",
@@ -20068,6 +20323,207 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                 "Submit a review comment": "提交审查意见",
                 "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                     "and click": "和点击",
+
+        "Search Issues": "搜索议题",
+            // 仓库
+                "No repository": "无仓库",
+                "Has repository": "包含仓库",
+                "Exclude repo": "排除仓库",
+            // 组织
+                "Has organization": "包含组织",
+                "Exclude org": "排除组织",
+            "Is": "类型为",
+                "Exclude is": "排除类型为",
+                "Issue": "议题",
+                "Pull Request": "拉取请求",
+                "Unmerged": "未合并",
+                "Locked": "已锁定",
+                "Unlocked": "未锁定",
+                "Blocked": "已阻塞",
+            "State": "状态",
+                "Exclude state": "排除状态",
+            // 标签
+                "No label": "无标签",
+                "Has label": "包含标签",
+                "Exclude label": "排除标签",
+                "aesthetics": "美化",
+                "bug": "缺陷",
+                "dependencies": "依赖项",
+                "development": "开发中",
+                "discuss": "讨论",
+                "documentation": "文档",
+                "duplicate": "重复",
+                "enhancement": "功能增强",
+                "forums": "论坛",
+                "good first issue": "适合新手",
+                "help wanted": "求助",
+                "invalid": "无效",
+                "question": "提问",
+                "website": "网站",
+                "wontfix": "不会修复",
+            // 类型
+                "No type": "无类型",
+                "Has type": "包含类型",
+            "Project": "项目",
+                "No project": "无项目",
+                "Has project": "包含项目",
+                "Exclude project": "排除项目",
+            "Milestone": "里程碑",
+                "No milestone": "无里程碑",
+                "Has milestone": "包含里程碑",
+                "Exclude milestone": "排除里程碑",
+            // 受理人
+                "No assignee": "无受理人",
+                "Has assignee": "包含受理人",
+                "Me": "我",
+                    "Signed-in user": "已登录用户",
+                // Copilot
+                    "Your AI pair programmer": "您的 AI 编程助理",
+                "Exclude assignee": "排除受理人",
+            "Author": "作者",
+                "Has author": "包含作者",
+                "Exclude author": "排除作者",
+            "Involves": "涉及",
+                "Has involves": "包含涉及",
+                "Exclude involves": "排除涉及",
+            "Mentions": "提及",
+                "Has mentions": "包含提及",
+                "Exclude mentions": "排除提及",
+            "Parent issue": "父议题",
+                "No parent issue": "无父议题",
+                "Has parent issue": "包含父议题",
+                "Exclude parent-issue": "排除父议题",
+            "Blocking": "阻塞",
+                "No blocking": "无阻塞",
+                "Has blocking": "包含阻塞",
+                "Exclude blocking": "排除阻塞",
+            "Blocked by": "被…阻塞",
+                "No blocked by": "无被阻塞",
+                "Has blocked by": "包含被阻塞",
+                "Exclude blocked-by": "排除被阻塞",
+            "Sub-issue": "子议题",
+                "No sub-issue": "无子议题",
+                "Has sub-issue": "包含子议题",
+                "Exclude sub-issue": "排除子议题",
+            "Update date": "更新日期",
+                "Exclude updated": "排除更新日期",
+                "Today": "今天",
+                "Yesterday": "昨天",
+                "Past 7 days": "过去 7 天",
+                "Past 30 days": "过去 30 天",
+                "Past year": "过去 1 年",
+            "Creation date": "创建日期",
+                "Has creation date": "包含创建日期",
+                "Exclude created": "排除创建日期",
+            "Closed date": "关闭日期",
+                "Has closed date": "包含关闭日期",
+                "Exclude closed": "排除关闭日期",
+            "Merge date": "合并日期",
+                "Has merge date": "包含合并日期",
+                "Exclude merged": "排除合并日期",
+            "Review requested": "已请求评审",
+                "Has review requested": "包含已请求评审",
+                "Exclude review-requested": "排除已请求评审",
+            "In": "在",
+                "Has in": "包含在",
+                "Exclude in": "排除在",
+                "Body": "正文",
+                "Comments": "评论",
+            "Commenter": "评论者",
+                "Has commenter": "包含评论者",
+                "Exclude commenter": "排除评论者",
+            "User": "用户",
+                "Has user": "包含用户",
+                "Exclude user": "排除用户",
+            "User review requested": "已请求用户评审",
+                "Has user review requested": "包含已请求用户评审",
+                "Exclude user-review-requested": "排除已请求用户评审",
+            "Reviewed by": "评审者",
+                "Has reviewed by": "包含评审者",
+                "Exclude reviewed-by": "排除评审者",
+            "Comment count": "评论数",
+                "Has comment count": "有评论数",
+                "Less than 10": "少于 10",
+                "More than 10": "多于 10",
+                "Between 10 and 100": "10 到 100",
+            "Interactions count": "互动数",
+                "Has interactions count": "有互动数",
+            "Closed reason": "关闭原因",
+                "Exclude reason": "排除原因",
+                "Completed": "已完成",
+                "Not planned": "未计划",
+                "Duplicate": "重复",
+            "Linked": "已链接",
+                "Has linked": "包含已链接",
+                "Exclude linked": "排除已链接",
+            "Archived": "已归档",
+                "Has archived": "包含已归档",
+                "Exclude archived": "排除已归档",
+                "True": "是",
+                "False": "否",
+            "Reaction count": "表情回应数",
+                "Has reaction count": "有表情回应数",
+            // 草案
+                "Has draft": "包含草案",
+                "Exclude draft": "排除草案",
+            "Review state": "评审状态",
+                "Has review state": "包含评审状态",
+                "Exclude review": "排除评审状态",
+                "No reviews": "无评审",
+            "Code language": "代码语言",
+                "Has code language": "包含代码语言",
+                "Exclude language": "排除代码语言",
+            "Commit SHA": "提交 SHA",
+                "Has commit sha": "包含提交 SHA",
+                "Exclude sha": "排除提交 SHA",
+            "Base": "基础分支",
+                "Has base": "包含基础分支",
+                "Exclude base": "排除基础分支",
+            "Head": "对比分支",
+                "Has head": "包含对比分支",
+                "Exclude head": "排除对比分支",
+            // 状态 (Status)
+                "Has status": "包含状态检查",
+                "Exclude status": "排除状态检查",
+                "Pending": "待处理",
+                "Success": "成功",
+                "Failure": "失败",
+                "Queued": "排队中",
+                "Waiting": "等待中",
+                "Cancelled": "已取消",
+                "Skipped": "已跳过",
+            "Team": "团队",
+                "Has team": "包含团队",
+                "Exclude team": "排除团队",
+            "Team review requested": "已请求团队评审",
+                "Has team review requested": "包含已请求团队评审",
+                "Exclude team-review-requested": "排除已请求团队评审",
+            // 排序
+                "Has sort": "包含排序",
+                "Exclude sort": "排除排序",
+                "Least reactions": "最少回应",
+                "Most thumbs up (👍) reactions": "👍 回应最多",
+                "Least thumbs up (👍) reactions": "👍 回应最少",
+                "Most thumbs down (👎) reactions": "👎 回应最多",
+                "Least thumbs down (👎) reactions": "👎 回应最少",
+                "Most laugh (😄) reactions": "😄 回应最多",
+                "Least laugh (😄) reactions": "😄 回应最少",
+                "Most confused (😕) reactions": "😕 回应最多",
+                "Least confused (😕) reactions": "😕 回应最少",
+                "Most tada (🎉) reactions": "🎉 回应最多",
+                "Least tada (🎉) reactions": "🎉 回应最少",
+                "Most heart (❤️) reactions": "❤️ 回应最多",
+                "Least heart (❤️) reactions": "❤️ 回应最少",
+                "Most eyes (👀) reactions": "👀 回应最多",
+                "Least eyes (👀) reactions": "👀 回应最少",
+            "AND": "且",
+            "OR": "或",
+            "Exclude": "排除",
+        // 过滤器问题
+            "Empty value for": "空值",
+            "Invalid value": "无效值",
+            "for": "对于",
+        "Clear filter": "清除筛选",
     },
     "regexp": [ // 正则翻译
         [/(\d+) Open/, "$1 打开"],
@@ -20087,6 +20543,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         [/#([^ ]+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
         [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Are you sure you want to delete view (.*)\?/, "您确定要删除视图 $1 吗？"],
+        [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
 };
 I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
@@ -20969,6 +21427,12 @@ I18N["zh-CN"]["topics"] = { // 探索-->主题页面
             "Add this topic to your repo": "将此主题添加到您的仓库",
                 "To associate your repository with the": "将您的仓库与",
                 "topic, visit your repo's landing page and select \"manage topics.\"": "主题关联，请访问仓库的登录页面，然后选择 “管理主题”。",
+
+            // 没有任何仓库
+                // 原句：The <主题名> topic hasn't been used on any public repositories, yet.
+                "The": " ",
+                    "topic hasn't been used on any public repositories, yet.": "尚未被任何公共仓库使用。",
+                "Explore topics": "探索主题",
 
     },
     "regexp": [ // 正则翻译
@@ -26190,6 +26654,7 @@ I18N["zh-CN"]["copilot"] = {
                 "to try again.": " ",
         // 高级请求数已用完
             "You have reached your monthly limit for premium requests. Enable additional requests or switch to the default model. Limit resets on.": "您已达到本月高级请求的额度上限。请启用额外请求或切换到默认模型。额度将重置。",
+            "You have used 80% of your premium responses this month. Enable additional requests to get more usage after the limit is reached.": "您本月已使用 80% 的高级请求。达到限制后启用额外请求以获得更多使用量。",
         // 左侧边栏
             "New conversation": "新聊天",
             "Close conversations": "关闭侧边栏",
@@ -26387,6 +26852,12 @@ I18N["zh-CN"]["copilot"] = {
                         "Switch back to the": "切回",
                         "model or start a new conversation": "模型或新建对话",
             "Space": "空间",
+                "Select a space": "选择一个空间",
+                "Recent spaces": "最近的空间",
+                "Filter items": "过滤项目",
+                "No spaces found": "没有找到空间",
+                "You can create a new space to get started.": "您可以创建一个新空间来开始。",
+                "Create a new space": "创建一个新空间",
             "Send now": "发送",
 
             // 预设栏
