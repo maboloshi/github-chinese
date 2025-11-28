@@ -892,10 +892,13 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             // 取消按钮 提醒信息
             "Are you sure you want to discard your unsaved changes?": "您确定要放弃未保存的更改吗？",
 
+            "Apply Suggestion": "添加建议",
             "Add a title": "添加标题",
                 "Title": "标题",
             "Add a description": "添加描述",
                 "Add your description here...": "在此添加您的描述…",
+                "Add an optional description...": "添加可选描述…",
+            "There was an error trying to commit changes: Failed to submit suggested changes": "提交更改时出错：提交建议更改失败",
 
             // 网络错误
                 "There was a problem saving your comment. Please try again.": "保存您的评论时出现问题。请再试一次。",
@@ -1276,6 +1279,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "This tag was signed with the committer's": "此标签已签署，使用提交者的", // /<user-name>/<repo-name>/releases
             "This commit was signed with the committer’s": "此提交已签名，使用提交者的",
             "This tag was signed with the committer’s": "此标签已签署，使用提交者的", //
+            "This commit is signed with the committer’s": "此提交已签名，使用提交者的",
+            "’s contribution has been verified via GPG key.": "的贡献已通过 GPG 密钥验证。",
             "verified signature": "已验证签名",
             "The key has expired": "密钥已过期",
             "This commit is not signed, but one or more authors requires that any commit attributed to them is signed.": "此提交未签名，但一位或多位作者要求对归属于他们的任何提交进行签名。",
@@ -1284,7 +1289,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "This user has not yet uploaded their public signing key.": "此用户尚未上传其公共签名密钥。",
 
             "GPG key ID:": "GPG 密钥 ID：",
+            "GPG Key ID:": "GPG 密钥 ID：",
             "SSH key Fingerprint:": "SSH 密钥指纹：",
+            "SSH Key Fingerprint:": "SSH 密钥指纹：",
             "Learn about vigilant mode": "了解警戒模式",
             "The email in this signature doesn’t match the committer email.": "此签名中的电子邮箱与提交者的电子邮箱不相符。",
             "No user is associated with the committer email.": "提交者的电子邮箱未与用户相关联。",
@@ -5210,7 +5217,7 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
         [/(\d+) verified emails? configured/, "已配置 $1 个已验证的邮箱"],
         // 1 passkey configured
         [/(\d+) passkeys? configured/, "已配置 $1 个通行密钥"],
-        [/Added (.*) \| Last used (.*)/, (matchm, p1, p2) => {
+        [/Added (.*) \| Last used (.*)/, (match, p1, p2) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const dateAdded = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             const dateLastUsed = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
@@ -5299,6 +5306,8 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             "SSH keys": "SSH 密钥",
             "New SSH key": "新建 SSH 密钥",
             "Authentication keys": "认证密钥",
+            "Signing keys": "签名密钥",
+            "Signing": "签名",
             "There are no SSH keys associated with your account.": "没有与您的账户关联的 SSH 密钥。",
             "This is a list of SSH keys associated with your account. Remove any keys that you do not recognize.": "这是与您的账户相关的 SSH 密钥的列表。删除任何您无法识别的密钥。",
             "Never used": "从未使用",
@@ -5339,8 +5348,11 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             "Are you sure you want to delete this GPG key?": "您确定要删除此 GPG 密钥吗？",
             "be undone. This will permanently delete the GPG key, and if you’d like to use it in the future, you will need to upload it again.": "被撤销。这将永久地删除 GPG 密钥，如果您想在未来使用它，您将需要再次上传它。",
             "Any commits you signed with this key will become unverified after removing it.": "删除后，您使用此密钥签名的任何提交都将变成未验证。",
+            "Commits you signed with this key may become unverified after removing it.": "移除此密钥后，您使用它签署的提交可能会变为未验证状态。",
+            "Learn more about persistent commit signature verification.": "了解更多关于持久性提交签名验证的信息。",
             "I understand, delete this GPG key": "我明白了，删除此 GPG 密钥",
             "Okay, you have successfully deleted that key.": "好的，您已成功删除该密钥。",
+            "cannot": "不能",
 
             // 顶部提醒
             "Key is invalid. You must supply a key in OpenSSH public key format": "密钥无效。您必须提供 OpenSSH 公钥格式的密钥",
@@ -10522,6 +10534,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "a team": "团队",
                 "as a": "作为",
                 "code owner": "代码所有者",
+            "started reviewing": "开始审查",
+            "finished reviewing on behalf of": "完成审查，代表",
             "This pull request was": "此拉取请求已",
             "Compare": "比较",
             "deleted the": "删除",
@@ -10886,8 +10900,15 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Some comments aren't visible on the classic Files Changed page.": "某些评论在传统更改的文件页不可见。",
 
         // 拉取请求 --> 更改的文件 标签卡 /<user-name>/<repo-name>/pull/<id>/files
+            // 网络错误
+            "There was an issue loading this file": "加载此文件时出错",
+                "Try refreshing the page or if the problem persists": "请尝试刷新页面，如果问题仍然存在，请",
+                    "contact support": "联系支持人员",
+
             "Try the new experience": "尝试新体验",
             // 工具条
+            "Browse files": "浏览文件", // 两个提交的比较页面
+
             "Show file tree": "显示文件树",
             "Hide file tree": "隐藏文件树",
             "Changes from": "更改自",
@@ -10941,6 +10962,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // "Refresh": "刷新",
             // 复制文件按钮
                 "Copy file name to clipboard": "复制文件名到剪切板",
+            
+            "Open overview side panel": "打开概览侧边栏",
+                "Close overview panel": "关闭", // 过于啰嗦省略
+            // 评论
+                "No replies": "无回复",
 
             "files viewed": "查看过的文件",
                 "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
@@ -11034,6 +11060,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Add suggestion to batch": "批量添加建议",
                     "Add this suggestion to a batch that can be applied as a single commit.": "将此建议添加到可批量处理的单个提交中。",
                     "Batching suggestions must be done from the files tab.": "批处理建议必须在 “文件” 选项卡中进行。",
+                "Commit suggestion": "提交建议",
 
                 "Pending in batch": "待批量处理",
                 "Remove from batch": "从批量处理中移除",
@@ -11123,6 +11150,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 // Copilot
                     "Implement suggestion": "采纳建议",
+                    "Mention Copilot": "提及 Copilot",
                         "Copilot isn't available for cross-repository pull requests": "Copilot 在跨仓库的拉取请求中不可用",
 
         // 拉取请求 --> 解决冲突 /<user-name>/<repo-name>/pull/<id>/conflicts
