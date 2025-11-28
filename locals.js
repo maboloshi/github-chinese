@@ -27487,7 +27487,8 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
 
                     "Education blog": "教育博客",
                         "View more": "查看更多",
-
+        // 底部
+            "Product": "产品",
     },
     "regexp":[
         [/(\d+) requests?/, "$1 次"],
