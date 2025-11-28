@@ -21841,13 +21841,56 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
     "static": { // 静态翻译
 
         // GitHub 市场主页及相关type页 https://github.com/marketplace
-           "Enhance your workflow with extensions": "增强您的工作流程",
-               "Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
-               "Search for Copilot extensions, apps, actions, and models": "搜索 Copilot 扩展、应用、操作和模型",
-               "Listing Type": "显示类型",
-                   "Copilot extensions": "Copilot 扩展",
-               "Clear filter": "清除筛选",
-               "Menu": "菜单", // Android UA 下出现
+			"Enhance your workflow with extensions": "增强您的工作流程",
+				"Tools from the community and partners to simplify tasks and automate processes": "社区和合作伙伴提供的简化任务和自动化流程的工具",
+				"Search for apps, actions, and models": "搜索应用程序、操作和模型",
+    				"Listing Type": "显示类型",
+    					"Has listing type": "包含显示类型",
+                    "Input modality": "输入模态",
+                        "No input modality": "无输入模态",
+                        "Has input modality": "包含输入模态",
+                        "audio": "音频",
+                        "image": "图片",
+                        "text": "文本",
+                    "Supported language": "支持的语言",
+                        "No supported language": "无支持的语言",
+                        "Has supported language": "包含支持的语言",
+                    "Output modality": "输出模态",
+                        "No output modality": "无输出模态",
+                        "Has output modality": "包含输出模态",
+                        "embeddings": "嵌入",
+                    "Capability": "能力",
+                        "No capability": "无能力",
+                        "Has capability": "包含能力",
+                    "Publisher": "供应商",
+                        "No publisher": "无供应商",
+                        "Has publisher": "包含供应商",
+                    // 类别
+                        "No category": "无类别",
+                        "Has category": "包含类别",
+                        "agents": "智能体",
+                        "coding": "编码",
+                        "conversation": "对话",
+                        "instruction": "指令",
+                        "large context": "长上下文",
+                        "low latency": "低延时",
+                        "multilingual": "多语言",
+                        "multimodal": "多模态",
+                        "multipurpose": "多用途",
+                        "rag": "RAG",
+                        "reasoning": "推理",
+                        "summarization": "文本摘要",
+                        "understanding": "理解",
+                        "vision": "视觉",
+				    "Exclude": "排除",
+                    "Has": "包含",
+                "Copilot extensions": "Copilot 扩展",
+				"Clear filter": "清除筛选",
+				// 过滤器问题
+					"Empty value for": "空值",
+					"Invalid value": "无效值",
+					"for": "对于",
+				"Menu": "菜单", // Android UA 下出现
 
             "Featured": "精选",
                 "Models for your every use case": "适用于各种方案的模型",
@@ -21859,6 +21902,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 
                 "Recommended": "推荐",
                 "Recently added": "最近添加",
+				"Most popular": "最热门",
 
             // Copilot
                 "Copilot Extensions": "Copilot 扩展",
@@ -21877,8 +21921,12 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Models": "模型",
                 "Model": "模型",
                 "Catalog": "目录",
-
-                    // 分类
+				
+					"Create applications with GitHub powered by AI Models. Free to use, quick personal setup, and seamless model switching to help you build AI products using the latest models.": "使用由 AI 模型提供支持的 GitHub 创建应用程序。免费使用、快速个人设置和无缝模型切换，帮助您使用最新模型构建 AI 产品。",
+					
+					"Try models in playground": "在运行场上尝试模型",
+                    
+					// 分类
                         "All providers": "所有提供商",
                     "Publisher:": "发布者：",
                     "Capability:": "能力：",
@@ -21896,6 +21944,11 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                         "Rag": "检索增强生成",
                         "Reasoning": "推理",
                         "Understanding": "理解",
+						"Audio": "音频",
+						"Coding": "编码",
+						"Instruction": "指令",
+						"RAG": "检索增强生成",
+						"Vision": "视觉",
                     // 排序
                         "Alphabetical": "A-Z",
                         "Output token limit": "输出令牌限制",
@@ -22283,7 +22336,9 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "input": "输入",
                 "output": "输出",
             "Training date": "训练日期",
-            "Rate limit tier": "速率限制",
+            // 价格
+                "View pricing": "查看价格",
+            "Free rate limit tier": "免费速率限制等级",
                 "Low": "低",
                 "High": "高",
                 "Custom": "自定义",
@@ -22465,7 +22520,19 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Admission to the limited public beta for GitHub Models will be limited. You will receive an email if you are granted access.": "GitHub 模型的限量公开测试有名额限制。如果您获准访问，您将收到一封电子邮件。",
                 "Return to continue exploring": "继续探索",
                 "GitHub Models": "GitHub 模型",
+		// 新上市市场页 https://github.com/marketplace/new
+			"List your tool": "上市你的工具",
+			"List your tool on GitHub Marketplace": "在 GitHub 市场上市你的工具",
+			
+			"You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上市的工具",
+				"Learn more about the requirements": "了解有关要求的更多信息",
+				"to list a tool on GitHub Marketplace.": "在 GitHub 市场上市工具。",
 
+            "More about tools and GitHub Marketplace": "有关工具和 GitHub 市场的更多信息",
+                "About GitHub Marketplace": "关于 GitHub 市场",
+                    "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和上市工具，包括列出内容、插图和屏幕截图的指南。",
+                "Adding webhooks for a GitHub Marketplace listing": "为 GitHub 市场上市添加 Webhook",
+                    "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加 Webhooks，以便在触发指定事件时通知您。",
     },
     "regexp": [ // 正则翻译
         [/Search results for “(.+)”/, "“$1”的搜索结果"], // 市场搜索
@@ -22479,6 +22546,8 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
         [/Prorated for/, "按比例计算"],
 
         [/Thank you! ([^ ]+) is now on the waitlist for GitHub Models./, "谢谢！$1 现已进入 GitHub 模型等待名单。"],
+		
+		[/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
 };
 
