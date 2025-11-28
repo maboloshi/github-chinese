@@ -724,6 +724,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Create new…": "新建…",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
+                "New spark": "新建 spark",
                 "New agent task": "新建智能体任务",
                 "New codespace": "新建代码空间",
                 "New gist": "新建代码片段",
@@ -2574,6 +2575,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
         [/(\d+) contributions? in private repositor(y|ies)/, "私有仓库 $1 个贡献"],
+        [/Only people who can see (.+) can see this contribution/, "只有能看到 $1 的人才能看到此贡献"],
         [/(\d+|No) contribution(?:s)? on (.+)(?:st|nd|rd|th)./, (match, number, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
