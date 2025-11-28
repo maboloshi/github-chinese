@@ -596,7 +596,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "GitHub Skills": "GitHub 技能",
                 "Integrations": "集成",
                     "GitHub Marketplace": "GitHub 市场",
-                    "MCP Registry": "MCP 注册",
+                    "MCP Registry": "MCP 互联",
                 "View all features": "查看所有功能",
 
             "Solutions": "解决方案",
