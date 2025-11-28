@@ -3204,6 +3204,7 @@ I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
             "Use GitHub Mobile": "使用 GitHub Mobile",
             "Use your passkey": "使用您的通行密钥",
             "Use your authenticator app": "使用您的身份验证器应用",
+            "Send a code via email": "通过电子邮件发送验证码",
             "Use your password": "使用您的密码",
 
             "GitHub Mobile": "GitHub Mobile",
