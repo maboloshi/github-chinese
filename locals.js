@@ -1037,6 +1037,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
                     "Share feedback and report bugs.": "分享反馈意见和报告错误。",
                     "Creating...": "创建中…",
+                    // 私有
+                        "Enabling this makes the list visible only to you.": "启用此选项将使该列表仅对您可见。",
 
         // 全局快捷键对话框 - 快捷键 ? 打开
             "Keyboard shortcuts": "键盘快捷键",
