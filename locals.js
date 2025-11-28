@@ -11148,7 +11148,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "off-topic": "偏离主题",
 
         "Merge status cannot be loaded": "合并状态加载出错",
-            "Try reloading the page, or if the problem persists contact support.": "尝试重载页面，或联系支持",
+            "Try reloading the page, or if the problem persists": "尝试重新加载页面，或者如果问题仍然存在",
+                "contact support": "请联系支持人员",
             "GitHub status": "GitHub 状态",
 
         "Mention \@copilot in a comment to make changes to this pull request.": "在评论中提及 @copilot 以对该拉取请求进行更改。",
