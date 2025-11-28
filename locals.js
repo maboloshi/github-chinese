@@ -77,7 +77,6 @@ I18N.conf = {
         'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
         'repository/releases': [".Box-footer"], // 附件清单
         'repository/issues': [
-            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -91,12 +90,10 @@ I18N.conf = {
         'spark':[
             '.cm-line',
         ],
-        'issues':[
-            'div.styled-input-content', // 筛选条
-        ],
         '*': [
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
+			'div.styled-input-content', // 筛选条
         ],
     },
 
@@ -151,7 +148,6 @@ I18N.conf = {
             '#file-name-id', // 文件路径中文件部分
         ],
         'repository/issues': [
-            'div.styled-input-content', // 筛选条
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', //  某个议题 - 正文以及正文编辑器、添加评论编辑器预览
         ],
@@ -213,14 +209,12 @@ I18N.conf = {
         'copilot':[
             '.cm-line',
         ],
-        'issues':[
-            'div.styled-input-content', // 筛选条
-        ],
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
-            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK' // 特定元素标签
+            'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK', // 特定元素标签
+			'div.styled-input-content', // 筛选条
         ],
     },
 
