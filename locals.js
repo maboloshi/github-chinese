@@ -20166,6 +20166,8 @@ I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
 
 I18N["zh-CN"]["issues"] = { // 议题页面
     "static": { // 静态翻译
+        ...I18N["zh-CN"]["repository/issues"]["static"],
+
         "Pull Requests": "拉取请求", // pulls
 
         "Assigned to me": "分配给您",
@@ -20500,8 +20502,12 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "Invalid value": "无效值",
             "for": "对于",
         "Clear filter": "清除筛选",
+
+        "View issue": "查看议题",
     },
     "regexp": [ // 正则翻译
+        ...I18N["zh-CN"]["repository/issues"]["regexp"],
+
         [/(\d+) Open/, "$1 打开"],
         [/(\d+) Closed/, "$1 已关闭"],
         [/(\d+) tasks? done/, "$1 个任务完成"],
