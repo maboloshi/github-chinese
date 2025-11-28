@@ -8947,24 +8947,24 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "Clear current search query, filters, and sorts": "清除当前的搜索查询、筛选器和排序方式",
 
             "ProTip!": "专业提示！",
-                "Find everything you created by searching": "查找您创建的所有内容，使用",
-                "Exclude your own issues with": "如需查看您自己创建的内容，请使用",
-                "Mix and match filters to narrow down what you’re looking for.": "混搭筛选器，以缩小范围，找到您想看到的。",
-                "Exclude everything labeled": "要找到所有标有",
-                "with": "标签的内容，请使用",
-                "Follow long discussions with": "要跟随长讨论，请使用",
-                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求来返回拉取请求列表页面。",
+                "Find everything you created by searching": "通过搜索查找您创建的所有内容：",
+                "Exclude your own issues with": "排除您自己创建的议题：",
+                "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小查找范围。",
+                "Exclude everything labeled": "排除所有标有",
+                "with": "标签的内容，使用：",
+                "Follow long discussions with": "要跟进长讨论，请使用：",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何议题或拉取请求上使用以返回拉取请求列表页面。",
                 "Filter pull requests by the default branch with": "通过默认分支过滤拉取请求：",
-                "to see everything that’s not assigned.": "查看所有未分配的内容。",
-                "Find all pull requests that aren't related to any open issues with": "查找所有与任何打开议题无关的拉取请求，并使用",
-                "Add comments to specific lines under": "为以下特定行添加注释于",
-                "will show everything without a milestone.": "将显示所有不含里程碑的内容",
-                "Updated in the last three days:": "显示最近 3 天更新：",
-                "Notify someone on an issue with a mention, like:": "用提及的方式通知某人某个议题，例如：",
+                "to see everything that’s not assigned.": "以查看所有未分配的内容。",
+                "Find all pull requests that aren't related to any open issues with": "查找所有未关联任何打开议题的拉取请求，使用：",
+                "Add comments to specific lines under": "在以下特定行添加注释：",
+                "will show everything without a milestone.": "将显示所有没有里程碑的内容。",
+                "Updated in the last three days:": "最近 3 天更新：",
+                "Notify someone on an issue with a mention, like:": "在议题中通过 @ 提及通知某人，例如：",
                 "Adding": "添加",
-                "will show everything without a label.": "将显示所有无标签内容。",
-                "on any issue or pull request to go back to the issue listing page.": "可返回议题列表页面。",
-                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧的复选框可同时编辑多个议题。",
+                "will show everything without a label.": "将显示所有无标签的内容。",
+                "on any issue or pull request to go back to the issue listing page.": "在任何议题或拉取请求上使用以返回议题列表页面。",
+                "Click a checkbox on the left to edit multiple issues at once.": "单击左侧复选框即可同时编辑多个议题。",
                 // [/Ears burning? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
 
 
@@ -10065,7 +10065,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         [/added a commit to ([^ ]+) that referenced this issue/, "为 $1 添加了引用这个议题的提交"],
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到这个参考。"],
         [/Sponsor ([^ ]+)?/, "赞助 $1"], // 赞助按钮 对话框 标题
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在议题中通过 @ 提及通知某人，例如：@$1。"], // 专业提示
         [/Edited (\d+) times?/, "已编辑 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/This issue will close when (#?\d+) is merged/, "此议题将在 $1 合并时关闭"],
@@ -10176,8 +10176,8 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
         [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
-        [/Ears burning\? Get\@([^ ]+) mentions with/, "烧脑吗？使用 @$1 提及"], // 专业提示
-        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "通知某人在议题上使用提及，例如：@$1"],
+        [/Ears burning\? Get\@([^ ]+) mentions with/, "耳朵痒吗？使用 @$1 查看提及："], // 专业提示
+        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "在议题中通过 @ 提及通知某人，例如：@$1"],
     ],
 };
 
@@ -11262,7 +11262,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在议题中通过 @ 提及通知某人，例如：@$1。"], // 专业提示
         [/(\d+) conversations? must be resolved before merging./, "合并之前必须解决 $1 个对话。"],
         [/(\d+) hidden items?/, "$1 条隐藏项目"],
         [/([^ ]+) requested changes/, "$1 要求更改"],
@@ -20249,10 +20249,21 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。筛选菜单也是快速找到议题最相关的您超级有帮助的。",
         // "Updated in the last three days": "更新了最后三天：",
         "ProTip!": "专业提示！",
-            "Exclude your own issues with": "排除自己的问题",
+            "Exclude your own issues with": "排除自己的议题",
             "Mix and match filters to narrow down what you’re looking for.": "通过混合和匹配筛选器以缩小您要查找的范围。",
             "Exclude everything labeled": "如果要找到所有标有",
             "with": "标签的，请使用",
+            "on any issue or pull request to go back to the issue listing page.": "在任何议题或拉取请求上以返回到问题列表页面。",
+            "on any issue or pull request to go back to the pull request listing page.": "在任何问题或拉取请求上以返回拉取请求列表页面。",
+            "Updated in the last three days:": "最近三天更新：",
+            "Find all pull requests that aren't related to any open issues with": "查找与任何未解决议题无关的所有拉取请求",
+            "Adding": "添加",
+            "will show everything without a label.": "将显示没有标签的所有内容。",
+            "Follow long discussions with": "要跟随长讨论，请使用",
+            "Find everything you created by searching": "找到您创建的所有内容，通过搜索",
+            "will show everything without a milestone.": "将显示没有里程碑的任何东西。",
+            "What’s not been updated in a month:": "1 个月之内没有更新的内容：",
+            "to see everything that’s not assigned.": "以查看所有未分配的内容。",
 
         // 键盘快捷键
             "Pull request list"  : "拉取请求列表",
@@ -20505,7 +20516,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         [/Updated/, "更新于"],
         [/#([^ ]+) opened/, "#$1 打开于"],
         [/#(\d+) by/, "#$1 打开者"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在某个问题上通知并提及某人，例如：@$1。"], // 专业提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在议题中通过 @ 提及通知某人，例如：@$1。"], // 专业提示
+        [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵痒了？用它筛选 @$1 的提及："], // 专业提示
         [/Are you sure you want to delete view (.*)\?/, "您确定要删除视图 $1 吗？"],
         [/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
