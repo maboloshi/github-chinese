@@ -17408,11 +17408,14 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                         "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合并提交之前，需要解决的最低严重级别代码质量审查。",
 
                     "Automatically request Copilot code review": "自动请求 Copilot 代码审查",
-                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review.": "如果作者有权访问 Copilot 代码审查，则自动请求 Copilot 对新拉取请求进行审查。",
+                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.": "如果作者有权访问 Copilot 代码审查并且其高级请求配额尚未达到限制，则自动请求 Copilot 对新拉取请求进行代码审查。",
                         "Review new pushes": "审查新的推送",
                         "Copilot automatically reviews each new push to the pull request.": "Copilot 自动审查每个新的推送请求。",
                         "Review draft pull requests": "审查草稿拉取请求",
                         "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "Copilot 自动审查草稿拉取请求，在标记为准备好审查之前。",
+
+                    "Manage static analysis tools in Copilot code review": "在 Copilot 代码审查中管理静态分析工具",
+                        "Copilot code review will include findings from the selected static analysis tools in its review comments.": "Copilot 代码审查将在其审查意见中包括所选静态分析工具的结果。",
 
                     // 组织设置
                     "Require workflows to pass before merging": "要求合并前，工作流通过状态检查",
@@ -17516,6 +17519,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                 "Invalid rules: 'Required status checks'": "无效规则：“必需的状态检查”",
                 "This": "此",
                     "does not target any resources and will not be applied.": "未针对任何资源，将不会生效。",
+                "Ruleset updated": "规则已更新",
 
 
     },
