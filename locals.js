@@ -19858,6 +19858,11 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
     },
     "regexp": [ // 正则翻译
     ],
+    "title": {
+        "static": {
+            "GitHub · Change is constant. GitHub keeps you ahead. · GitHub": "GitHub · 变化是常态，GitHub 让你始终领先 · GitHub",
+        },
+    },
 };
 
 I18N["zh-CN"]["home"] = I18N["zh-CN"]["homepage"];
@@ -20305,6 +20310,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
         "static": {
             "Confirm access": "授权访问",
             "Forgot your password?": "忘记您的密码了吗？",
+            "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
         },
     },
 };
@@ -20375,6 +20381,11 @@ I18N["zh-CN"]["signup"] = { // 注册页
         [/Username ([^ ]+) is not available./, "用户名 $1 不可用。"],
         [/([^ ]+) is available./, "用户名 $1 可用。"],
     ],
+    "title": {
+        "static": {
+            "Sign up for GitHub · GitHub": "注册 GitHub · GitHub",
+        },
+    },
 };
 
 I18N["zh-CN"]["account_verifications"] = {
