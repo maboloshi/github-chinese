@@ -18848,10 +18848,9 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
             "create a secret": "创建机密",
             "instead.": "代替。",
 
-            "Alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_) only.": "字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
-            "Spaces are not allowed.": "不允许出现空格。",
-            "Cannot start with a number.": "不能以数字开头。",
-            "Cannot start with": "不能以",
+            "Variable names may only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_).": "变量名称只能包含字母数字字符（[A-Z]，[A-Z]，[0-9]）或仅下划线（_）。",
+            "Variable names cannot start with a number.": "变量名称不能以数字开头。",
+            "Variable names cannot start with": "变量名称不能以",
             "prefix.": "前缀开头。",
 
             "Add variable": "添加变量",
