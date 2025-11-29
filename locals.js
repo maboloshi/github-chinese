@@ -16331,8 +16331,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                 "Custom properties": "自定义属性",  // 组织仓库
 
             // "Security": "安全",
-            "Code Security": "代码安全性",
-                "Code security and analysis": "代码安全性与分析",
+                "Advanced Security": "高级安全",
                 "Deploy keys": "部署密钥",
                 "Secrets and variables": "机密和变量",
 
