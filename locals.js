@@ -22363,6 +22363,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "GitHub Sponsors accounts": "GitHub 赞助者账户",
             "GitHub Sponsors · Get sponsored": "GitHub 赞助者 · 获得赞助",
             "Choose frequency to bulk sponsor": "选择批量赞助的频率",
+            "Create sponsorships in bulk via file import": "通过文件导入批量创建赞助",
         },
         "regexp": [
             [/Sponsor @(.+) on GitHub Sponsors/, "GitHub 赞助上赞助者 @$1"],
