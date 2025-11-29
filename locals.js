@@ -26747,6 +26747,11 @@ I18N["zh-CN"]["features"] = {
     },
     "regexp": [
     ],
+    "title": {
+        "static": {
+            "GitHub Features · GitHub": "GitHub 特点 · GitHub",
+        },
+    },
 };
 
 I18N["zh-CN"]["status"] = { // GitHub Status
