@@ -14759,6 +14759,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "Code scanning alerts •": "代码扫描警报 •",
                 "Automatically detect common vulnerability and coding errors": "自动检测常见漏洞和编码错误",
                 "Set up code scanning": "设置代码扫描",
+                "View alerts": "查看警报",
                 // 私有库
                 "Advanced Security is only available for Organizations": "高级安全只适用于组织",
                 "Find out more": "了解更多",
@@ -14777,6 +14778,13 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             // "Create dependabot security update": "创建可靠的安全更新",
 
             "Suggest a policy": "建议政策",
+
+            "Code scanning configuratierror": "代码扫描配置错误",
+                "CodeQL is reporting errors. Check the": "CodeQL 出错。检查",
+                "status page": "状态页",
+                "for help.": "以寻求帮助",
+
+            "Checking code scanning status...": "正在检查代码扫描状态",
 
         // 安全政策 /<user-name>/<repo-name>/security/policy
             "Set up a security policy": "制定安全政策",
@@ -14837,7 +14845,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                         "Refresh queued, it may take several minutes to see changes reflected in your alerts.": "刷新队列后，可能需要几分钟才能看到警报中反映的更改。",
                         "Refreshed recently, available again in about 1 hour.": "最近刷新，约 1 小时后可再次使用。",
 
-            // 搜索条
+            "Search all Dependabot alerts": "搜索所有 Dependabot 警报",
                 "- submit": "- 提交",
                 "Narrow your search": "缩小搜索范围",
                     "fix-started, no-bandwidth, tolerable-risk, inaccurate, not-used, fixed, auto-dismissed": "修复启动、无带宽、可容忍风险、不准确、未使用、已修复、自动忽略",
@@ -14863,6 +14871,8 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                         "Risk is tolerable to this project": "风险可承受",
                         "This alert is inaccurate or incorrect": "此警报不准确或不正确",
                         "Vulnerable code is not actually used": "漏洞代码实际未使用",
+                        "Dismissal comment": "忽略评论",
+                        "Dismiss Alerts": "忽略警报",
                         "Fixed": "已修复",
                         "fixed": "已修复",
                         "Auto-dismissed": "自动忽略",
@@ -14937,40 +14947,50 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
 
             // 右侧栏
                 "This score calculates overall vulnerability severity from 0 to 10 and is based on the Common Vulnerability Scoring System (CVSS).": "该分数以通用漏洞评分系统 (CVSS) 为基础，从 0 到 10 计算总体漏洞严重性。",
-                "CVSS v3 base metrics": "CVSS v3 基本指标",
-                    "Attack vector": "攻击载体",
-                        "Network": "网络",
-                        "Local": "本地",
-                    "Attack complexity": "攻击复杂性",
-                    "Privileges required": "所需权限",
-                        "None": "无",
-                    "User interaction": "用户交互",
-                        "Required": "必须",
-                    "Scope": "范围",
-                        "Unchanged": "无变化",
-                        "Changed": "已变化",
-                    "Confidentiality": "保密性",
-                    "Integrity": "完整性",
-                    "Availability": "可利用性",
+                "CVSS v4 base metrics": "CVSS v4 基本指标",
+                    "Exploitability Metrics": "可利用性指标",
+                        "Attack Vector": "攻击载体",
+                            "Network": "网络",
+                            "Local": "本地",
+                        "Attack Complexity": "攻击复杂性",
+                        "Attack Requirements": "攻击要求",
+                        "Privileges Required": "所需权限",
+                            "None": "无",
+                        "User interaction": "用户交互",
+                            "Required": "必须",
+                    "Vulnerable System Impact Metrics": "脆弱系统影响指标",
+                        "Confidentiality": "保密性",
+                        "Integrity": "完整性",
+                        "Availability": "可利用性",
+                    "Subsequent System Impact Metrics": "后续系统影响指标",
                     "Learn more about base metrics": "了解更多关于基础指标的信息",
 
-                    // CVSS v3 基本指标 对话框
-                    "Attack vector:": "攻击向量：",
-                        "More severe the more the remote (logically and physically) an attacker can be in order to exploit the vulnerability.": "越严重，攻击者利用漏洞的远程（逻辑上和物理上）距离就越远。",
-                    "Attack complexity:": "攻击复杂性：",
-                        "More severe for the least complex attacks.": "对最不复杂的攻击来说更严重。",
-                    "Privileges required:": "所需权限：",
-                        "More severe if no privileges are required.": "如果不需要权限，则更严重。",
-                    "User interaction:": "用户交互：",
-                        "More severe when no user interaction is required.": "不需要用户交互时更严重。",
-                    "Scope:": "范围：",
-                        "More severe when a scope change occurs, e.g. one vulnerable component impacts resources in components beyond its security scope.": "当范围发生变化时更严重，例如，一个易受攻击的组件会影响其安全范围以外组件的资源。",
-                    "Confidentiality:": "保密性：",
-                        "More severe when loss of data confidentiality is highest, measuring the level of data access available to an unauthorized user.": "数据失密程度最高时更严重，衡量未授权用户可访问数据的程度。",
-                    "Integrity:": "完整性：",
-                        "More severe when loss of data integrity is the highest, measuring the consequence of data modification possible by an unauthorized user.": "当数据完整性损失最高时更严重，衡量未经授权的用户可能修改数据的后果。",
-                    "Availability:": "可用性：",
-                        "More severe when the loss of impacted component availability is highest.": "当受影响组件可用性损失最大时，情况更为严重。",
+                    // CVSS v4 基本指标 对话框 // BUG: 详细解释文本翻译不生效
+                    // 可利用性指标
+                        "Attack Vector:": "攻击载体：",
+                            "This metric reflects the context by which vulnerability exploitation is possible. This metric value (and consequently the resulting severity) will be larger the more remote (logically, and physically) an attacker can be in order to exploit the vulnerable system. The assumption is that the number of potential attackers for a vulnerability that could be exploited from across a network is larger than the number of potential attackers that could exploit a vulnerability requiring physical access to a device, and therefore warrants a greater severity.": "该指标反映漏洞被利用的可能性的上下文。攻击者距离越远（逻辑上和物理上），该指标值（以及由此得出的严重性）就越高。假设可以从网络上利用的漏洞比需要物理访问设备的漏洞拥有更多的潜在攻击者，因此严重性更高。",
+                        "Attack Complexity:": "攻击复杂性：",
+                            "This metric captures measurable actions that must be taken by the attacker to actively evade or circumvent existing built-in security-enhancing conditions in order to obtain a working exploit. These are conditions whose primary purpose is to increase security and/or increase exploit engineering complexity. A vulnerability exploitable without a target-specific variable has a lower complexity than a vulnerability that would require non-trivial customization. This metric is meant to capture security mechanisms utilized by the vulnerable system.": "该指标衡量攻击者为绕过或规避现有内置安全机制而必须采取的可量化操作。这些机制的主要目的是提升安全性或增加利用难度。不需要目标特定变量的漏洞比需要非平凡定制的漏洞复杂性更低。",
+                        "Attack Requirements:": "攻击要求：",
+                            "This metric captures the prerequisite deployment and executiconditions or variables of the vulnerable system that enable the attack. These differ from security-enhancing techniques/technologies (ref Attack Complexity) as the primary purpose of these conditions is not to explicitly mitigate attacks, but rather, emerge naturally as a consequence of the deployment and execution of the vulnerable system.": "该指标衡量使攻击成为可能的先决部署和执行条件或变量。这些条件与安全增强技术不同（参见攻击复杂性），它们并非专门用于缓解攻击，而是脆弱系统部署和运行的自然结果。",
+                        "Privileges Required:": "所需权限：",
+                            "This metric describes the level of privileges an attacker must possess prior to successfully exploiting the vulnerability. The method by which the attacker obtains privileged credentials prior to the attack (e.g., free trial accounts), is outside the scope of this metric. Generally, self-service provisioned accounts do not constitute a privilege requirement if the attacker can grant themselves privileges as part of the attack.": "该指标描述攻击者在成功利用漏洞前必须拥有的权限级别。攻击者在攻击前获取特权凭据的方式（如免费试用账户）不在本指标范围内。",
+                        "User interaction:": "用户交互：",
+                            "This metric captures the requirement for a human user, other than the attacker, to participate in the successful compromise of the vulnerable system. This metric determines whether the vulnerability can be exploited solely at the will of the attacker, or whether a separate user (or user-initiated process) must participate in some manner.": "该指标衡量除攻击者外是否需要其他人类用户参与才能成功攻破脆弱系统。",
+                    // 脆弱系统影响指标
+                        "Confidentiality:": "机密性：",
+                            "This metric measures the impact to the confidentiality of the informatimanaged by the VULNERABLE SYSTEM due to a successfully exploited vulnerability. Confidentiality refers to limiting information access and disclosure to only authorized users, as well as preventing access by, or disclosure to, unauthorized ones.": "该指标衡量成功利用漏洞后对脆弱系统所管理信息的机密性影响。",
+                        "Integrity:": "完整性：",
+                            "This metric measures the impact to integrity of a successfully exploited vulnerability. Integrity refers to the trustworthiness and veracity of information. Integrity of the VULNERABLE SYSTEM is impacted when an attacker makes unauthorized modificatiof system data. Integrity is also impacted when a system user can repudiate critical actions taken in the context of the system (e.g. due to insufficient logging).": "该指标衡量成功利用漏洞后对信息的可信度和准确性的影响。",
+                        "Availability:": "可用性：",
+                            "This metric measures the impact to the availability of the VULNERABLE SYSTEM resulting from a successfully exploited vulnerability. While the Confidentiality and Integrity impact metrics apply to the loss of confidentiality or integrity of data (e.g., information, files) used by the system, this metric refers to the loss of availability of the impacted system itself, such as a networked service (e.g., web, database, email). Since availability refers to the accessibility of information resources, attacks that consume network bandwidth, processor cycles, or disk space all impact the availability of a system.": "该指标衡量成功利用漏洞后对脆弱系统本身可用性的影响（如网络服务被打挂）。",
+                    // 后续系统影响指标
+                        // 机密性
+                            "This metric measures the impact to the confidentiality of the informatimanaged by the SUBSEQUENT SYSTEM due to a successfully exploited vulnerability. Confidentiality refers to limiting information access and disclosure to only authorized users, as well as preventing access by, or disclosure to, unauthorized ones.": "该指标衡量成功利用漏洞后对后续系统所管理信息的机密性影响。",
+                        // 完整性
+                            "This metric measures the impact to integrity of a successfully exploited vulnerability. Integrity refers to the trustworthiness and veracity of information. Integrity of the SUBSEQUENT SYSTEM is impacted when an attacker makes unauthorized modificatiof system data. Integrity is also impacted when a system user can repudiate critical actions taken in the context of the system (e.g. due to insufficient logging).": "该指标衡量成功利用漏洞后对后续系统数据完整性的影响。",
+                        // 可用性
+                            "This metric measures the impact to the availability of the SUBSEQUENT SYSTEM resulting from a successfully exploited vulnerability. While the Confidentiality and Integrity impact metrics apply to the loss of confidentiality or integrity of data (e.g., information, files) used by the system, this metric refers to the loss of availability of the impacted system itself, such as a networked service (e.g., web, database, email). Since availability refers to the accessibility of information resources, attacks that consume network bandwidth, processor cycles, or disk space all impact the availability of a system.": "该指标衡量成功利用漏洞后对后续系统本身可用性的影响。",
 
                 "EPSS score": "EPSS 得分",
                 "Weaknesses": "缺陷",
@@ -15019,6 +15039,10 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                     "filter by closure reason": "按关闭原因筛选",
                     "filter by file path (e.g. lib/crypto or *_test.js)": "按文件路径筛选（例如 lib/crypto or *_test.js）",
                     "filter by language": "按语言筛选",
+                    "filter by assignee": "按受理人过滤",
+                    "filter by presence of a property": "按属性的存在进行过滤",
+                    "filter by absence of a property": "按不存在属性进行过滤",
+                "Filter alerts": "筛选警报",
 
             "Language": "语言",
                 "Filter by language": "筛选语言",
@@ -15045,14 +15069,48 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "Detected by": "检测者",
             "in": "在",
 
+            "CodeQL is reporting errors.": "CodeQL 出错。",
+            "Check the": "检查",
+
+            // 专业提示
+                "You can run CodeQL locally from the command line.": "您可以从命令行在本地运行 CodeQL。",
+                "You can run CodeQL locally using Visual Studio Code.": "您可以使用 Visual Studio Code 在本地运行 CodeQL。",
+                "CodeQL queries are developed by an open-source coaliticalled the": "CodeQL 查询由一个开源联盟开发：", // BUG: 翻译不生效
+                    "GitHub Security Lab": "GitHub 安全实验室",
+                "The libraries and queries that power CodeQL are open-source.": "支持 CodeQL 的库和查询是开源的。",
+                "You can upload code scanning analyses from other third-party tools using GitHub Actions.": "您可以使用 GitHub Actions 从其他第三方工具上传代码扫描分析。",
+                "You can configure CodeQL to run with additional queries.": "您可以配置 CodeQL 以运行其他查询。",
+
         // 具体某条 代码扫描 警报/<user-name>/<repo-name>/security/security/code-scanning/<id>
             "Code scanning alerts": "代码扫描警报",
+            "Speed up the remediatiof this alert with": "加快修复此警报的速度，使用", // BUG: 翻译不生效
+                "Copilot Autofix for CodeQL": "CodeQL 的 Copilot 自动修复",
             "Generate fix": "创建修复",
             "Affected branches": "受影响分支",
             "Rule ID": "规则 ID",
             "Query": "查询",
             "View source": "查看源代码",
             "First detected in commit": "首次在提交中检测到",
+            "Assignees": "受理人",
+                "No one -": "无人 -",
+                "Assign yourself": "分配给自己",
+                "Assign up to 10 people to this alert": "最多为 10 人分配此警报",
+                "Filter assignees": "筛选受理人",
+                // Copilot
+                    "bot": "机器人",
+                    "Ensure a fix has been generated.": "确保已生成修复程序。",
+            "Development": "开发",
+                "Link a branch, pull request, or": "链接分支、拉取请求或",
+                    "create a new branch": "创建新分支",
+                    "to start working this alert.": "以开始处理此警报。", // BUG: 翻译不生效
+                "Link a branch or pull request": "链接分支或拉取请求",
+                "Search pull requests": "搜索拉取请求",
+                "Group selected": "已选择组",
+            // 受影响的分支
+                "Configurations analyzing": "配置分析",
+                    "The following configurations have reported this alert.": "以下配置已报告此警报。",
+                    "Last updated": "最后更新",
+            "Appeared in branch": "出现在分支",
 
         // /<user-name>/<repo-name>/security/code-scanning/tools/CodeQL/status
             "Scanned files": "扫描文件",
@@ -15251,6 +15309,11 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
         [/on (.+)/, "$1"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
         [/Prototype Pollution in ([^ ]+)/, "$1 上游污染"],
+        [/First detected (.+)/, (match, p1) => { // 受影响的分支 // BUG: 翻译不生效
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `初次检测 ${translatedDate}`;
+        }],
     ],
 };
 
