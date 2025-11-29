@@ -209,6 +209,10 @@ I18N.conf = {
         'copilot':[
             '.cm-line',
         ],
+        'spark': [
+            '.Table',
+            '.monaco-editor',
+        ],
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
@@ -564,48 +568,52 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
         // 顶部栏 (未登录)
             "Platform": "平台",
-                // Copilot
-                    "Write better code with AI": "借助 AI 写出更好的代码",
-                // Spark
-                    "Build and deploy intelligent apps": "构建和部署智能应用",
-                "GitHub Models": "GitHub 模型",
-                    "Manage and compare prompts": "管理和比较提示词",
-                // 操作
-                    "Automate any workflow": "自动化任何工作流程",
-                "GitHub Advanced Security": "GitHub 高级安全",
-                    "Find and fix vulnerabilities": "查找并修复漏洞",
-                // 代码空间
-                    "Instant dev environments": "即时开发环境",
-                // 议题
-                    "Plan and track work": "计划和追踪工作",
-                "Code Review": "代码审查",
-                    "Manage code changes": "管理代码更改",
-                // 讨论
-                    "Collaborate outside of code": "代码之外的协作",
-                "Code Search": "代码搜索",
-                    "Find more, search less": "查找更多，搜索更少",
-
-                // 右侧 搜索
-                    "Why GitHub": "为什么选择 GitHub",
-                "GitHub Skills": "GitHub 技能",
-                "Integrations": "集成",
-                    "GitHub Marketplace": "GitHub 市场",
+                "AI CODE CREATION": "AI 代码生成",
+                    // Copilot
+                        "Write better code with AI": "借助 AI 写出更好的代码",
+                    // Spark
+                        "Build and deploy intelligent apps": "构建和部署智能应用",
+                    "GitHub Models": "GitHub 模型",
+                        "Manage and compare prompts": "管理和比较提示词",
                     "MCP Registry": "MCP 互联",
+                        "Integrate external tools": "集成外部工具",
+                "DEVELOPER WORKFLOWS": "开发者工作流",
+                    // 操作
+                        "Automate any workflow": "自动化任何工作流程",
+                    // 代码空间
+                        "Instant dev environments": "即时开发环境",
+                    // 议题
+                        "Plan and track work": "计划和追踪工作",
+                    "Code Review": "代码审查",
+                        "Manage code changes": "管理代码更改",
+                "APPLICATION SECURITY": "应用安全",
+                    "GitHub Advanced Security": "GitHub 高级安全",
+                        "Find and fix vulnerabilities": "查找并修复漏洞",
+                    "Code security": "代码安全",
+                        "Secure your code as you build": "边开发边保障代码安全",
+                    "Secret protection": "密钥保护",
+                        "Stop leaks before they start": "在泄露发生前就阻止它们",
+
+                "EXPLORE": "探索",
+                    "Why GitHub": "为什么选择 GitHub",
+                    "Changelog": "更新日志",
+                    "GitHub Marketplace": "GitHub 市场",
+
                 "View all features": "查看所有功能",
 
             "Solutions": "解决方案",
-                "By company size": "企业规模",
+                "BY COMPANY SIZE": "企业规模",
                     "Enterprises": "企业",
                     "Small and medium teams": "中小团队",
                     "Startups": "初创公司",
                     "Nonprofits": "非盈利组织",
-                "By use case": "使用案例",
+                "BY USE CASE": "使用案例",
                     "App Modernization": "应用现代化",
                     "DevSecOps": "开发安全运维",
                     "DevOps": "开发运维",
                     "CI/CD": "持续集成/持续部署",
                     "View all use cases": "查看所有使用案例",
-                "By industry": "工业",
+                "BY INDUSTRY": "工业",
                     "Healthcare": "健康护理",
                     "Financial services": "金融服务",
                     "Manufacturing": "制造业",
@@ -614,34 +622,44 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "View all solutions": "查看所有解决方案",
 
             "Resources": "资源",
-                // 主题
+                "EXPLORE BY TOPIC": "按主题探索",
                     "Software Development": "软件开发",
-                // 探索
-                    "Learning Pathways": "学习路径",
-                    "Events & Webinars": "社区活动",
-                    "Ebooks & Whitepapers": "资料库",
+                    "View all topics": "查看所有主题",
+                "EXPLORE BY TYPE": "按类型探索",
                     "Customer Stories": "客户案例",
+                    "Customer stories": "客户案例",
+                    "Events & webinars": "活动与网络研讨会",
+                    "Ebooks & reports": "电子书与报告",
+                    "Business insights": "商业洞察",
+                    "GitHub Skills": "GitHub 技能课程",
+                "SUPPORT & SERVICES": "支持与服务",
                     "Partners": "合作洽谈",
-                    "Executive Insights": "高管洞察",
-                "View all": "查看全部",
+                    "Customer support": "客户支持",
+                    "Community forum": "社区论坛",
+                    "Trust center": "信任中心",
 
             "Open Source": "开源",
-                "GitHub Sponsors": "GitHub 赞助者",
-                    "Fund open source developers": "资助开源开发人员",
-                "The ReadME Project": "ReadME 项目",
-                    "GitHub community articles": "GitHub 社区文章",
-                // 仓库
+                "COMMUNITY": "社区",
+                    "GitHub Sponsors": "GitHub 赞助者",
+                        "Fund open source developers": "资助开源开发人员",
+                "PROGRAMS": "项目",
+                    "Security Lab": "安全实验室",
+                    "Maintainer Community": "维护者社区",
+                    "Accelerator": "加速器计划",
+                    "Archive Program": "存档计划",
+                "REPOSITORIES": "仓库",
                     "Topics": "主题",
                     "Trending": "趋势",
                     "Collections": "集合",
 
             "Enterprise": "企业",
-                "Enterprise platform": "企业平台",
-                    "AI-powered developer platform": "AI 驱动的开发者平台",
-                "Available add-ons": "可用扩展",
+                "ENTERPRISE SOLUTIONS": "企业级解决方案",
+                    "Enterprise platform": "企业平台",
+                        "AI-powered developer platform": "AI 驱动的开发者平台",
+                "AVAILABLE ADD-ONS": "可选附加组件",
                     // GitHub 高级安全
                         "Enterprise-grade security features": "企业级安全功能",
-                    "Copilot for business": "Copilot 企业版",
+                    "Copilot for Business": "Copilot 企业版",
                         "Enterprise-grade AI features": "企业级 AI 功能",
                     "Premium Support": "高级支持",
                         "Enterprise-grade 24/7 support": "企业级 24 小时全天候支持",
@@ -732,6 +750,12 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "New project": "新建项目",
                 "This organization": "本组织", // 组织
                 "New team": "新建团队", // 组织
+                // 新建议题 对话框
+                    "Create new issue": "新建议题",
+                    "Copy link": "复制链接",
+                    "Templates and forms": "模板和表单",
+                    "Blank issue": "空白议题",
+                        "Create a new issue from scratch": "从头开始创建新议题",
 
         // 右上角 Copilot 下拉菜单
             "Agents":"智能体",
@@ -2309,6 +2333,8 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
             "Highlights": "高光时刻",
                 "Label: Pro": "标签：专业版",
             "Developer Program Member": "开发者计划成员",
+            "security advisory credits": "个安全咨询分",
+            "security advisory credit": "个安全咨询分",
             "Organizations": "组织",
             "Block or Report": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
@@ -2815,6 +2841,8 @@ I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
             "repository": "仓库",
             "No language": "无语言",
 
+            "Compact display density": "紧凑显示密度",
+            "Comfortable display density": "舒适显示密度",
     },
     "regexp": [ // 正则翻译
         [/(\d+(k|M|B)?) repositor(y|ies)/, "$1 个仓库"],
@@ -2856,6 +2884,8 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
                 "Least recently updated": "最早更新",
             // 清除筛选
             "Clear current search query and sorts": "清除当前的搜索查询和分类",
+
+            "No open projects": "无已打开的项目",
 
             "Plan and track work across repositories with custom fields and multiple views": "通过自定义字段和多个视图来计划和跟踪整个仓库的工作",
             "Kanban-style project board": "看板式项目面板",
@@ -2999,11 +3029,16 @@ I18N["zh-CN"]["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
             "Get started": "前去赞助",
             "Past sponsorship": "曾经赞助",
             "Sponsored": "赞助于",
-
+            "organizations and maintainers and has sponsored": "个组织和维护者，过去曾赞助过",
+                "in the past": "个",
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
-        [/Sponsoring since/, "赞助自"],
+        [/Sponsoring since (.+)/, (match ,p1) => {
+            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
+            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
+            return `赞助自 ${translatedDate}`;
+        }],
         [/Sponsored/, "赞助于"],
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
@@ -4975,6 +5010,10 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
             "No subscriptions found": "未找到订阅信息",
             "Save subscription preferences": "保存订阅首选项",
             "Back to email settings": "返回电子邮件设置",
+            "To stop receiving emails for the topics below, uncheck any topics you don't want to receive, then click Save subscription preferences": "要停止接收以下主题的电子邮件，请取消选中您不想接收的任何主题，然后单击保存订阅首选项",
+            "General info and offers from GitHub": "GitHub 上的一般信息和优惠",
+                "Get tips, solutions and exclusive offers from GitHub about products, services and events we think you might find interesting.": "从 GitHub 获取有关我们认为您可能感兴趣的产品、服务和活动的提示、解决方案和独家优惠。",
+            "Unsubscribe from all topics": "取消订阅所有主题",
 
     },
     "regexp": [ // 正则翻译
@@ -19151,17 +19190,21 @@ I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 内容举报 /<user-name>
 
 I18N["zh-CN"]["homepage"] = { // 未登录的首页
     "static": { // 静态翻译
-        "GitHub Copilot is now available for free.": "免费使用 GitHub Copilot。",
+        //"GitHub Copilot is now available for free.": "免费使用 GitHub Copilot。",
         //"Let’s build from here": "让我们从这里开始",
         //"The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
-        "Build and ship software on a single, collaborative platform": "在单一协作平台上构建和发布软件",
-        "Join the world’s most widely adopted AI-powered developer platform.": "加入全球最广泛采用的人工智能开发者平台",
+        //"Build and ship software on a single, collaborative platform": "在单一协作平台上构建和发布软件",
+        //"Join the world’s most widely adopted AI-powered developer platform.": "加入全球最广泛采用的人工智能开发者平台",
         //"Join the world’s most widely adopted AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.": "加入全球最广泛采用的人工智能开发者平台，在这里，数百万的开发人员、企业和最大的开源社区构建推动人类进步的软件。",
+        "Explore the latest tools from Universe '25": "探索 Universe '25 的最新工具",
+        "The future of building happens together": "构建未来的方式是共同创造",
+        "Tools and trends evolve, but collaboration endures. With GitHub, developers, agents, and code come together on one platform.": "工具与趋势不断演变，但协作永恒。有 GitHub在，开发者、智能体与代码在同一个平台汇聚。",
 
         //"Email address": "电子邮箱地址",
         "Enter your email": "键入邮箱地址",
         "Sign up for GitHub": "注册 GitHub",
         //"Start a free enterprise trial": "开始免费试用企业版",
+        "Try GitHub Copilot free": "免费试用 GitHub Copilot",
 
         "Try Copilot Free": "试用 GitHub Copilot",
             "30 days free": "30天免费",
@@ -19169,18 +19212,21 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Explore upcoming releases": "探索即将发布的产品", // 已登录
 
         // 代码
-            "Build code quickly and more securely with GitHub Copilot embedded throughout your workflows.": "使用嵌入在整个工作流程中的 GitHub Copilot 快速、更安全地构建代码。",
+            "Write, test, and fix code quickly with GitHub Copilot, from simple boilerplate to complex features.": "使用 GitHub Copilot 快速编写、测试和修复代码，从简单的样板代码到复杂功能都能胜任。",
         "Plan": "计划",
-            "Track and coordinate your work with GitHub Issues, GitHub Projects, and insights.": "使用 GitHub 议题、GitHub 项目和见解来跟踪和协调您的工作。",
+            "Align your team from idea to launch with tools that track work, visualize roadmaps, and gather insights.": "借助跟踪工作、可视化路线图、收集洞察的工具，让团队从创意到上线全程对齐。",
         "Collaborate": "协作",
-            "Work easily with your team in real time with GitHub Pull Requests, code reviews, and GitHub Discussions.": "通过 GitHub 拉取请求、代码审查和 GitHub 讨论轻松地与您的团队实时合作。",
+            "Enable your team to collaborate with agents to plan, code, and test the next big thing.": "让团队与智能体协作，一起规划、编写和测试下一个大项目。",
         "Automate": "自动化",
-            "Streamline your workflows with automated CI/CD, testing, planning, project management, issue labeling, approvals, onboarding, and more.": "通过自动化的 CI/CD、测试、规划、项目管理、问题标签、批准、入职等简化您的工作流程。",
+            "Improve your software development process by automating builds, tests, and deployments with CI/CD.": "通过 CI/CD 自动化构建、测试和部署，提升整个软件开发流程。",
         "Secure": "安全",
             "Leverage tooling to detect, review, and fix vulnerabilities before they reach production.": "利用工具在漏洞进入生产之前检测、审查并修复漏洞。",
 
-        "Accelerate performance": "提高性能",
-            "With GitHub Copilot embedded throughout the platform, you can simplify your toolchain, automate tasks, and improve the developer experience.": "通过嵌入整个平台的 GitHub Copilot，您可以简化工具链、自动执行任务并改善开发人员体验。",
+        "Accelerate your entire workflow": "加速你的全部工作流",
+            "From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster.": "从第一行代码到最终部署，GitHub 提供 AI 和自动化工具，帮助你更快地构建并发布更优质的软件。",
+
+            "Your AI partner everywhere.": "你的 AI 伙伴，无处不在。",
+                "Copilot is ready to work with you at each step of the software development lifecycle.": "Copilot 已准备好在软件开发生命周期的每一个阶段与你并肩工作。",
 
             "Work 55% faster.": "工作快 55%。",
                 "Increase productivity with AI-powered coding assistance, including code completion, chat, and more.": "通过人工智能编码辅助（包括代码完成、聊天等）提高生产力。",
@@ -19190,46 +19236,56 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
             "Duolingo boosts developer speed by 25% with GitHub Copilot": "多邻国利用 GitHub Copilot 将开发速度提高了 25%",
               "Read customer story": "阅读客户故事",
 
-            "2024 Gartner® Magic Quadrant™ for AI Code Assistants": "2024 年 Gartner® 人工智能代码助手魔力象限™",
+            "2025 Gartner® Magic Quadrant™ for AI Code Assistants": "2025 Gartner® AI 代码助手魔力象限™",
               "Read industry report": "阅读行业报告",
 
-        "Optimize your process with simple and secured CI/CD.": "使用简单、安全的 CI/CD 优化您的流程。",
-            "Get up and running in seconds": "数秒内即可启动并运行",
-                "Start building instantly with a comprehensive dev environment in the cloud.": "利用云中全面的开发环境立即开始构建。",
-            "Build on the go": "随时随地构建",
-                "Manage projects and chat with GitHub Copilot from anywhere.": "随时随地管理项目并与 GitHub Copilot 聊天。",
-            "Integrate the tools you love": "整合您喜爱的工具",
-                "Sync with 17,000+ integrations and a growing library of Copilot Extensions.": "与 17,000 多个集成和不断增长的 Copilot 扩展库同步。",
-                "Visit GitHub Marketplace": "访问 GitHub 市场",
+        "Automate your path to production": "自动化通往生产的路径",
+            "Ship faster with secure, reliable CI/CD.": "使用安全可靠的 CI/CD，更快交付。",
+            "Explore GitHub Actions": "探索 GitHub Actions",
 
-        "Built-in application security": "内置的应用程序安全",
-        "where found means fixed": "发现即修复",
-            "Use AI to find and fix vulnerabilities—freeing your teams to ship more secure software faster.": "使用人工智能来查找和修复漏洞——让您的团队能够更快地交付更安全的软件。",
+            "Code instantly from anywhere": "随时随地立即开始编码",
+            "Launch a full, cloud-based development environment in seconds.": "几秒内启动完整的云端开发环境。",
+            "Explore GitHub Codespaces": "探索 GitHub 代码空间",
 
+            "Keep momentum on the go": "随时随地保持开发节奏",
+            "Manage projects and assign tasks to Copilot, all from your mobile device.": "在手机上就能管理项目、给 Copilot 派任务。",
+            "Explore GitHub Mobile": "探索 GitHub 移动端",
+
+            "Shape your toolchain": "塑造你的工具链",
+            "Extend your stack with apps, actions, and AI models.": "通过应用、Actions 和 AI 模型扩展你的技术栈。",
+            "Explore GitHub Marketplace": "探索 GitHub 市场",
+
+        "Built-in application security where found means fixed": "内置应用安全，发现即修复",
+            "Use AI to find and fix vulnerabilities so your team can ship more secure software faster.": "利用 AI 发现并修复漏洞，让团队更快交付更安全的软件。",
+            
             "Apply fixes in seconds.": "在几秒钟内完成修复。",
-                "Spend less time fixing vulnerabilities and more time building features with Copilot Autofix.": "使用 Copilot 自动修复可以减少修复漏洞的时间，而将更多的时间用于构建功能。",
+                "Spend less time debugging and more time building features with Copilot Autofix.": "使用 Copilot 自动修复，花更少时间调试，把更多时间用来开发新功能。",
                 "Explore GitHub Advanced Security": "探索 GitHub 高级安全",
 
-                "Solve security debt.": "解决担保债务。",
-                    "Leverage AI-assisted security campaigns to reduce application vulnerabilities and zero-day attacks.": "利用人工智能辅助安全活动来减少\n应用程序漏洞和零日攻击。",
-                    "Discover security campaigns": "探索安全活动",
+                "Security debt, solved.": "安全债务，一键解决。",
+                    "Leverage security campaigns and Copilot Autofix to reduce application vulnerabilities.": "利用安全整治活动和 Copilot 自动修复，大幅减少应用漏洞。",
+                    "Learn about GitHub Code Security": "了解 GitHub 代码安全功能",
 
                 "Dependencies you can depend on.": "您可以依赖的依赖项。",
                     "Update vulnerable dependencies with supported fixes for breaking changes.": "使用支持的修复程序更新易受攻击的依赖项\n以解决重大更改。",
                     "Learn about Dependabot": "了解 Dependabot",
 
-                "Your secrets, your business: protected.": "您的机密、您的业务：受到保护。",
+                "Your secrets, your business.": "你的密钥，你说了算。",
                     "Detect, prevent, and remediate leaked secrets across your organization.": "检测、预防并补救整个组织内泄露的机密。",
+                    "Learn about GitHub Secret Protection": "了解 GitHub 密钥保护功能",
 
-                "90% coverage": "90% 覆盖率",
-                    "of alert types in all supported languages with Copilot Autofix": "Copilot 自动修复支持所有语言的警报类型",
+                "70% MTTR reduction": "平均修复时间 (MTTR) 降低 70%",
+                    "with Copilot Autofix": "得益于 Copilot 自动修复",
+
+                "8.3M secret leaks stopped": "阻止了 830 万次密钥泄露",
+                    "in the past 12 months with push protection": "过去 12 个月内通过推送保护实现",
 
         "Work together, achieve more": "共同协作，取得更大成就",
-            "Collaborate with your teams, use management tools that sync with your projects, and code from anywhere—all on a single, integrated platform.": "与您的团队协作，使用与您的项目同步的管理工具并从任何地方编写代码——所有这些都在单一集成平台上进行。",
+            "From planning and discussion to code review, GitHub keeps your team’s conversation and context next to your code.": "从规划、讨论到代码审查，GitHub 始终将团队的对话和上下文紧贴在代码旁边。",
 
-            "Your workflows, your way.": "您的工作流程，您的方式。",
-                "Plan effectively with an adaptable spreadsheet that syncs with your work.": "使用与工作同步的可调整电子表格，有效制定计划。",
-                "Jump into GitHub Projects": "跳转到 GitHub 项目",
+            "Plan with clarity.": "清晰规划。",
+                "Organize everything from high-level roadmaps to everyday tasks.": "从高层路线图到日常任务，一切井井有条。",
+                "Explore GitHub Projects": "探索 GitHub 项目",
             "It helps us onboard new software engineers and get them productive right away. We have all our source code, issues, and pull requests in one place... GitHub is a complete platform that frees us from menial tasks and enables us to do our best work.": "它可以帮助我们吸收新的软件工程师，让他们立即投入工作。我们的所有源代码、问题和拉取请求都在一个地方... GitHub 是一个完整的平台，它将我们从琐碎的工作中解脱出来，让我们能够全力以赴。",
                 "Application manager at Mercedes-Benz": "Mercedes-Benz 应用管理员",
             "Keep track of your tasks": "跟踪任务",
@@ -19237,104 +19293,39 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                 "Explore GitHub Issues": "探索 GitHub 议题",
             "Share ideas and ask questions": "交流想法和提出问题",
                 "Create space for open-ended conversations alongside your project.": "在开展项目的同时，为开放式对话创造空间。",
-                "Discover GitHub Discussions": "探索 GitHub 讨论",
+                "Explore GitHub Discussions": "探索 GitHub 讨论",
             "Review code changes together": "共同审查代码",
-                "Create review processes that improve code quality and fit neatly into your workflow.": "创建可提高代码质量的审查流程，并与您的工作流程完美契合。",
-                "Learn about code review": "了解代码审查",
+                "Assign initial reviews to Copilot for greater speed and quality.": "将初步审查交给 Copilot，获得更快的速度和更高的质量。",
+                "Explore code review": "探索代码审查",
             "Fund open source projects": "资助开源项目",
                 "Become an open source partner and support the tools and libraries that power your work.": "成为开源合作伙伴，支持为您的工作提供动力的工具和库。",
-                "Dive into GitHub Sponsors": " 深入了解 GitHub 赞助",
+                "Explore GitHub Sponsors": "探索 GitHub 赞助",
 
-        // 从初创公司到大型企业，GitHub 可以适应任何行业、任何规模的团队。
         "From startups to enterprises,": "从初创公司到大型企业，",
-            "GitHub scales": "GitHub",
-            "with teams of any size in any industry.": "可以适应任何行业、任何规模的团队。",
+            "GitHub scales with teams of any size in any industry.": "GitHub 能适配任何规模、任何行业的团队。",
+
+            // 工业
+                "Technology": "技术",
+                "Figma streamlines development and strengthens security": "Figma 简化开发并增强安全性",
+                "Automotive": "汽车",
+                "Mercedes-Benz standardizes source code and automates onboarding": "奔驰标准化源代码并自动化入职",
+                "Mercado Libre cuts coding time by 50%": "Mercado Libre 将编码时间缩短了 50%",
+            "By size": "规模",
+                "Buffer enhances collaboration and control with GitHub Team": "Buffer 通过 GitHub 团队 提升协作与控制力",
+                "Accenture customizes GitHub Copilot for its 12,000 developers": "埃森哲为其 12,000 名开发者定制 GitHub Copilot",
+                "Philips reduces infrastructure costs by 80%": "飞利浦将基础设施成本降低 80%",
+            // 使用案例
+                "TELUS saves $16.9M with GitHub": "TELUS 使用 GitHub 节省 1690 万美元",
+                "Automation": "自动化",
+                "Fullstory automates DevSecOps at scale with GitHub": "Fullstory 使用 GitHub 大规模自动化 DevSecOps",
+                "EY leverages GitHub and Microsoft Azure DevOps to outpace the competition": "安永（EY）借助 GitHub 和 Microsoft Azure DevOps 领先竞争对手",
 
             "Explore customer stories": "探索客户故事",
 
         "Millions of developers and businesses call GitHub home": "数百万开发者和企业将 GitHub 视为自己的家",
-            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted AI-powered developer platform to build the technologies that redefine what’s possible.": "无论您是在扩展开发流程还是只是学习如何编码，GitHub 都是您的理想选择。加入全球最广泛采用的 AI 驱动开发者平台，构建重新定义可能性的技术。",
+            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted developer platform to build the technologies that shape what’s next.": "无论你是正在扩展开发流程，还是刚刚开始学习编程，GitHub 都是你的归属之地。加入全球采用最广泛的开发者平台，一起构建塑造未来的技术。",
 
-        //"Trusted by the world’s leading organizations ↘︎": "全球领先机构所信赖的合作伙伴 ↘︎",
-
-        //"Productivity": "生产力",
-        //"Accelerate innovation": "加快创新",
-        //"Our AI-powered platform increases the pace of software development.": "我们的人工智能平台加快了软件开发的步伐。",
-
-        //"empowers developers to complete tasks 55% faster with contextualized AI coding assistance across workflows.": "能够为开发者提供上下文化的 AI 编程辅助，帮助他们在整个工作流程中完成任务的速度提高 55%。",
-
-        //"Did you know?": "您知道吗?",
-
-        //"22% increase": "22% 效率提升",
-        //"in developer productivity after three years with GitHub": "使用 GitHub 三年后，开发人员的工作效率",
-        //"Read the report": "阅读报告",
-
-        //automates your build, test, and deployment workflow with simple and secure CI/CD.": "可以使用简单且安全的 CI/CD 来自动化您的构建、测试和部署工作流。",
-        "Discover GitHub Actions": "探索 GitHub Actions",
-
-        //GitHub Codespaces": "GitHub 代码空间",
-        //offers a complete dev environment in seconds. Code, build, test, and open pull requests from any repo.": "可在几秒钟内提供完整的开发环境。可在任何代码库中编写代码、构建、测试并打开拉取请求。",
-        "Check out GitHub Codespaces": "查看 GitHub 代码空间",
-
-        //GitHub Mobile and Copilot": "GitHub Mobile 和 Copilot",
-        //"fits your projects in your pocket, so you never miss a beat while on the go.": "让您的项目尽在掌握，让您在旅途中永不遗漏任何信息。",
-        //"now let you manage projects and converse with your AI pair programmer on the go.": "让您可以管理项目，并与您的 AI 结对程序员在旅途中交流。",
-        "Download GitHub Mobile": "下载 GitHub 移动端",
-
-        //"Application security": "应用安全",
-        //"Empower developers": "为开发者赋能",
-        //"With GitHub, you can secure code in minutes.": "通过 GitHub，您可以在几分钟内保护代码安全",
-
-        //"GitHub Advanced Security": "GitHub 高级安全功能",
-        //"enables you to find and fix vulnerabilities with ease and ship secure code quickly.": "可帮助您轻松发现和修复漏洞，并快速发布安全代码。",
-        //"Dive into GitHub Advanced Security": "深入了解 GitHub 高级安全功能",
-
-        "7x faster": "快 7 倍",
-        "vulnerability fixes with GitHub": "GitHub 漏洞修复速度",
-
-        //"Code scanning": "代码扫描",
-        //"is our code analysis tool that helps you remediate issues in your code.": "是我们的代码分析工具，可以帮助您修复代码中的问题。",
-        //"Download the latest SAST ebook": "下载最新 SAST 电子书",
-
-        //"makes it easy to find and fix vulnerable dependencies in your supply chain.": "易于发现和修复供应链中的脆弱依赖项。",
-        //"Explore Dependabot": "探索 Dependabot",
-
-        //"Secret scanning": "机密扫描",
-        //"automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.": "可以自动寻找合作伙伴模式，并防止意外泄露的机密被恶意使用。",
-        "Read about secret scanning": "了解机密扫描",
-
-        //"Collaboration": "协作",
-        //"Supercharge collaboration": "加强协作",
-        //"GitHub helps your teams work more efficiently together.": "GitHub 帮助您的团队更高效地协作。",
-
-        //"GitHub Issues and GitHub Projects": "GitHub 议题和 GitHub 项目",
-        //"supply project management tools that adapt to your team alongside your code.": "提供了适合您的团队和代码的项目管理工具。",
-        //"Get started with GitHub Issues": "开始使用 GitHub 议题",
-
-        //"reduction in onboarding time with GitHub": "使用 GitHub 缩短入职时间",
-
-       //"GitHub Discussions": "GitHub 讨论",
-       //"creates space to ask questions and have open-ended conversations.": "营造了提问和开放式对话的空间。",
-       //"Jump into GitHub Discussions": "跳转到 GitHub 讨论",
-
-       //"allow real-time communication and collaboration about code changes.": "允许就代码更改进行实时交流和协作。",
-       //"Check out pull requests": "查看拉取请求",
-
-       //"GitHub Sponsors": "GitHub 赞助者",
-       //"lets you support your favorite open source maintainers and projects.": "让您能够支持您喜欢的开源维护者和项目。",
-       //"Invest with GitHub Sponsors": "通过 GitHub 赞助者进行投资",
-
-       //"Over 100 million developers call GitHub home": "超过 1 亿开发者把 GitHub 视为自己的家",
-       //"Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.": "无论您是正在扩大创业规模，还是刚刚开始学习编程，GitHub 都是您的家。加入全球最大的开发者平台，构建赋予人类力量的创新。让我们从这里开始。",
-
-        // 动画下方按钮
-        //"Pause": "停止",
-        //"Play": "播放",
-
-        "This 7X times factor is based on data from the industry’s longest running analysis of fix rates Veracode State of Software Security 2023, which cites the average time to fix 50% of flaws as 198 days vs. GitHub’s fix rates of 72% of flaws with in 28 days which is at a minimum of 7X faster when compared.": "这个 7 倍的修复速率是基于软件安全领域持续时间最长的修复率分析数据 —— Veracode《2023 年软件安全状况》中提到的，修复 50% 漏洞的平均时间为 198 天，而 GitHub 在 28 天内修复了 72% 的漏洞，相比之下至少快 7 倍。",
-        //"The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.": "由 Forrester Consulting 开展的委托研究《GitHub Enterprise Cloud 和高级安全的总体经济影响》(The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security)，其结果显示了基于受访客户的综合组织的结果。",
-        //"There are now 100 million developers around the world using GitHub.": "现在全球有 1 亿开发者使用 GitHub。",
-        //"Read the blog post": "阅读博客文章",
+        "GitHub internal customer data, 2025.": "GitHub 内部客户数据，2025年。",
 
         // 底部栏
         "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
@@ -19346,6 +19337,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Roadmap": "路线图",
         "Compare GitHub": "比较 GitHub",
 
+        "Ecosystem": "生态",
         "Platform": "平台",
         "Developer API": "开发者 API",
         "Education": "教育",
@@ -20212,7 +20204,7 @@ I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
         "You don’t have any starred topics, yet.": "您尚无任何的星标主题。",
         "As you": "如果您",
         "explore GitHub": "探索 GitHub",
-        ", star topics to save them for later and they’ll show up here.": " 时，标星主题，它们会在这里显示出来。",
+        "star topics to save them for later and they’ll show up here.": " 时，标星主题，它们会在这里显示出来。",
 
 
         // 右侧栏
@@ -21559,13 +21551,14 @@ I18N["zh-CN"]["collections"] = { // 集合页面
         "Topics": "主题",
         "Trending": "热门",
         "Collections": "集合",
+        "Collection": "集合",
         "Events": "活动",
         "GitHub Sponsors": "GitHub 赞助",
         "Get email updates": "获取电子邮件更新",
         "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
         "Curated lists and insight into burgeoning industries, topics, and communities.": "精心策划的列表和对新兴行业、主题和社区的见解。",
         "Create a collection": "创建一个集合",
-
+        "Suggest edits": "建议修改",
     },
     "regexp": [ // 正则翻译
     ],
@@ -21767,6 +21760,31 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "Talk to your organization about GitHub Sponsors": "与您的组织讨论 GitHub 赞助者事宜",
             "Share this discovery page with your team to start a conversation about investing in the people and projects you rely on.": "与您的团队分享本发现页面，并就投资于您所依赖的人员和项目展开讨论。",
             "Invest in open source software and we'll track your progress here!": "投资开源软件，我们将在这里跟踪您的进度！",
+
+        // 批量赞助页 https://github.com/sponsors/bulk-sponsorships/frequencies
+            "Bulk sponsor": "批量赞助",
+            "Bulk sponsorship": "批量赞助",
+
+            "Choose a frequency": "选择一个频率",
+                "Choose": "选择",
+                // 一次性
+                    "Sponsored maintainers will receive a one-time payment. Your profile picture will appear in their sponsors for one month.": "赞助的维护者将收到一笔一次性付款。您的个人资料照片将在他们的赞助商中显示一个月。",
+                // 每月
+                    "Sponsored maintainers will receive a recurring sponsorship until you cancel. Your profile picture will appear in their sponsors for the duration of your sponsorship.": "赞助的维护者将获得定期赞助，直到您取消为止。在您的赞助期间，您的个人资料照片将显示在他们的赞助商中。",
+        // 批量赞助页 https://github.com/sponsors/bulk-sponsorships/import/new
+            "Import": "导入",
+
+            "One-time bulk sponsorship": "一次性批量赞助",
+            "Monthly bulk sponsorship": "每月批量赞助",
+
+            "Import a CSV": "从 CSV 导入",
+                "Choose file": "选择文件",
+                "Download example CSV": "下载示例 CSV",
+
+                "Or export a list of your dependencies on": "或者导出您的依赖项列表",
+                    "Explore Sponsors": "探索赞助者",
+
+                "A CSV is a type of file that contains the names of the people you want to sponsor and the sponsorship amount. We'll look for columns labeled Maintainer Username and Amount in USD. We'll safely ignore the rest of your columns. You can modify the file using a tool like Microsoft Excel, Google Sheets, or a text editor.": "CSV 是一种文件类型，其中包含您想要赞助的人员的姓名和赞助金额。我们将查找标有维护者用户名和美元金额的列。我们将安全地忽略您的其余专栏。您可以使用 Microsoft Excel、Google Sheets 或文本编辑器等工具修改该文件。",
     },
     "regexp": [ // 正则匹配
         [/You are previewing ([^ ]+)’s GitHub Sponsors profile./, "您正在预览 $1 组织的 GitHub 赞助者个人资料。"], // sponsors/<org-name>?preview=true
@@ -26568,6 +26586,10 @@ I18N["zh-CN"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/spons
         "Name": "名称",
         "Start date": "开始日期",
         "Sponsor": "赞助",
+
+        "No sponsorships": "无赞助",
+        "No sponsorships to display.": "暂无赞助内容可显示。",
+        "Explore your dependencies": "探索你的依赖项",
     },
     "regexp": [
         [/([^ ]+) hasn’t sponsored any users yet./, "$1 尚未赞助任何人。"],
@@ -27263,11 +27285,179 @@ I18N["zh-CN"]["spark"] = {
 
             "Create web apps with React and TypeScript to prototype ideas, build tools, and more": "使用 React 和 TypeScript 创建 Web 应用，原型化想法，构建工具等",
                 "Submit prompt": "提交提示词",
+                "Attach image": "附上图片",
+
+            "Recent": "最近",
+                "Favorite this spark": "收藏此 spark",
+                "Unfavorite this spark": "取消收藏此 spark",
+                "More Options": "更多选项",
+            "Favorites": "收藏",
+                "Nothing to see here… yet.": "这里还没有什么可看的。",
+            "Last updated": "最后更新于",
 
             "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
             "Terms of service": "服务条款",
 
-    }
+        // https://github.com/spark/<user-name>/<spark-name>
+            "All sparks": "所有 spark",
+
+            // 顶部提示条
+            "Live preview is interrupted. Try refreshing the page to reconnect.": "实时预览已中断。请尝试刷新页面重新连接。",
+            "Refresh": "刷新",
+
+            // 预览区
+                "Hm, something went wrong": "嗯，出了点问题",
+                    "Runtime error": "运行时错误",
+                        "at": "位于",
+                    "Autofix error": "自动修复错误",
+
+            // 代码区
+                "Read-only": "只读",
+                "Cannot edit in read-only editor": "不能在只读编辑器中编辑",
+                "to escape the editor.": "退出编辑器",
+                "Dismiss hint": "关闭提示",
+                "Styling with Markdown is supported": "支持使用 Markdown 进行样式设置",
+                "Collapse file tree": "折叠文件树",
+                "Expand file tree": "展开文件树",
+                "Copy file contents": "复制文件内容",
+                "Display options": "显示选项",
+                    "Wrap lines": "自动换行",
+                    "Hide whitespace": "隐藏空白字符",
+                    "Hide problems": "隐藏问题标记",
+                    "Show minimap": "显示缩略图",
+
+            // 顶栏
+                "Action unavailable": "无法执行操作",
+                "Action unavailable in this mode": "在此模式下无法执行操作",
+                "Action loading": "操作加载中",
+                "Select element to edit": "选择要编辑的元素",
+                "Refresh preview": "刷新预览",
+                "Show mobile view": "显示移动端视图",
+                "Exit mobile view": "退出移动端视图",
+                "Publish": "发布",
+                "Preview mode": "预览模式",
+                "Code mode": "代码模式",
+                "Why not both?": "为什么不两者兼得呢？",
+                // 更多操作
+                    "Open codespace": "打开代码空间",
+                    "Create repository": "创建仓库",
+                    // 设置
+                        "Close settings": "关闭设置",
+                        "Name": "名称",
+                        "Your spark will be published as": "你的 Spark 将被发布为",
+                        "Description": "描述",
+                        "Generated by Spark": "由 Spark 生成",
+                        "Delete spark": "删除 Spark",
+                        "Once you delete a spark, there is no going back. Please be certain.": "一旦删除 Spark，就无法恢复。请确认是否确定。",
+
+            // 左侧面板
+                "Collapse side panel": "折叠侧面板",
+                "Expand side panel": "展开侧面板",
+                "Iterate": "迭代",
+                    "What do you want to change?": "你想改变什么？",
+                    // 提示词操作
+                    "Restore": "还原",
+                    "Expand prompt": "展开提示词",
+                    "Collapse prompt": "折叠提示词",
+                    "Copy prompt": "复制提示词",
+                    "Manual edit": "手动编辑",
+                    // 错误
+                    "Fix all": "修复全部",
+                    "At": "在",
+                "Theme": "主题",
+                    "Custom theme": "自定义主题",
+                    "Select a theme": "选择一个主题",
+                        "Filter themes": "筛选主题",
+                        "Aurora Borealis": "极光",
+                        "Neon Noir": "霓虹黑",
+                        "Minimalist": "极简",
+                        "Cosmic Latte": "宇宙拿铁",
+                        "Candy Shop": "糖果店",
+                        "Neutral": "中性",
+                        "Golden Hour": "黄金时段",
+                        "Hacker Terminal": "黑客终端",
+                        "Neobrutalism": "新粗野主义",
+                        "High Contrast": "高对比度",
+                        "No themes found": "未找到主题",
+                        "Try changing the filter or selecting a different theme.": "尝试更改筛选条件或选择其他主题。",
+                    "Typography": "排版",
+                        "Sans serif": "无衬线",
+                        "Serif": "衬线",
+                        "Monospace": "等宽",
+                        "Select an item": "选择一项",
+                        "Select a font": "选择字体",
+                    "Color": "颜色",
+                        "Accent": "强调色",
+                        "Primary": "主色",
+                        "Secondary": "次要色",
+                        "Base": "基础色",
+                        "Muted": "柔和色",
+                        "Destructive": "危险色",
+                        "Card": "卡片",
+                        "Popover": "气泡提示",
+                        "Input": "输入框",
+                        "Border": "边框",
+                        "Ring": "聚焦环",
+                        "Background": "背景",
+                        "Text": "文字",
+                        "Search colors...": "搜索颜色...",
+                            "slate": "石板",
+                            "gray": "灰色",
+                            "zinc": "锌色",
+                            "neutral": "中性",
+                            "stone": "岩石",
+                            "red": "红色",
+                            "orange": "橙色",
+                            "amber": "琥珀",
+                            "yellow": "黄色",
+                            "lime": "酸橙",
+                            "green": "绿色",
+                            "emerald": "翡翠",
+                            "teal": "蓝绿",
+                            "cyan": "青色",
+                            "sky": "天蓝",
+                            "blue": "蓝色",
+                            "indigo": "靛蓝",
+                            "violet": "紫罗兰",
+                            "purple": "紫色",
+                            "fuchsia": "品红/紫红",
+                            "pink": "粉色",
+                            "rose": "玫瑰",
+                        "Show all colors": "显示所有颜色",
+                        "Hide colors": "隐藏颜色",
+                    // 外观
+                        "Border radius": "圆角",
+                            "Border radius None": "无圆角",
+                            "Border radius Small": "小圆角",
+                            "Border radius Medium": "中等圆角",
+                            "Border radius Large": "大圆角",
+                            "Border radius Full": "完全圆角",
+                        "Spacing": "间距",
+                            "Spacing None": "无间距",
+                            "Spacing Small": "小间距",
+                            "Spacing Medium": "中等间距",
+                "Data": "数据",
+                    "Add data storage by asking in the Iterate panel. View and edit the associated tables and data here.": "在 迭代 面板中提出需求即可添加数据存储。你可以在这里查看和编辑相关的表格与数据。",
+                    "rows": "行",
+                    "Edit this row": "编辑此行",
+                    "Edit value": "编辑值",
+                    "Done": "完成",
+                    "Read only": "只读",
+                "Prompts": "提示词",
+                    "Add AI capabilities by asking in the Iterate panel. View and edit the prompts powering those features here.": "在 Iterate 面板中提出需求即可添加 AI 能力。你可以在这里查看和编辑驱动这些功能的提示词。",
+                    
+                    "We couldn't load your data": "无法加载你的数据",
+                        "Please try again. If the problem persists, try again later.": "请重试。如果问题仍然存在，请稍后再试。",
+                "Assets": "素材",
+                    "Upload files": "上传文件",
+                    "Upload assets here or in the Iterate panel. Assets support images, documents, audio, and video. Ask in the Iterate panel to add them to your app.": "在此处或 迭代 面板中上传素材。素材支持图片、文档、音频和视频。在 迭代 面板中提出需求即可将它们添加到你的应用中。",
+    },
+    "regexp": [
+        [/(\d+) Errors?/, "$1 个错误"],
+        [/Made (\d+) changes?/, "做了 $1 个更改"],
+        [/(\d+) rows? • (.+)/, "$1 行 • $2"],
+        [/Delete \((\d+)\)/, "删除（$1）"],
+    ],
 };
 
 I18N["zh-CN"]["sitemap"] = { // 网站地图页，仅匹配公共部分
