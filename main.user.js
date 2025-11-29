@@ -100,9 +100,15 @@
             // 当前页面类型
             currentPageType: pageType,
             // 页面标题静态词库
-            titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
+            titleStaticDict: {
+                ...I18N[CONFIG.LANG].public.title.static,
+                ...(I18N[CONFIG.LANG][pageType]?.title?.static || {})
+            },
             // 页面标题正则词库
-            titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
+            titleRegexpRules: [
+                ...I18N[CONFIG.LANG].public.title.regexp,
+                ...(I18N[CONFIG.LANG][pageType]?.title?.regexp || [])
+            ],
             // 静态词库
             staticDict: {
                 ...I18N[CONFIG.LANG].public.static,
