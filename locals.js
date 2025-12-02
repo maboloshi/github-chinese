@@ -27716,9 +27716,12 @@ I18N["zh-CN"]["copilot"] = {
 
             //"Add a light/dark mode switcher": "添加浅色/深色模式切换器",
 
+            "You": "您",
             "started a task": "开始任务",
             "started work": "Copilot 开工",
             "Copilot is working…": "Copilot 工作中…",
+
+            "Stop": "停止",
 
             "View pull request": "查看拉取请求",
 
