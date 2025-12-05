@@ -1953,6 +1953,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "start a session": "开始任务",
         "Agent sessions options": "智能体任务选项",
         "Agent sessions to include": "智能体任务包含",
+        "View all": "查看全部",
         "Number of results": "结果数量",
         "Pull request options": "拉取请求选项",
         "Pull requests to include": "拉取请求包含",
@@ -1978,6 +1979,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
                     "Most powerful at complex tasks": "执行复杂任务",
 
         "Try the new experience": "尝试新版",
+        "Try the new dashboard experience": "试用新仪表板",
+        "Switch back": "切回旧版",
 
         // 新手帮助
         "Learn Git and GitHub without any code!": "了解 Git 和 GitHub 无需任何代码！",
