@@ -8882,6 +8882,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 仓库缺失 README 提醒
             "Help people interested in this repository understand your project by adding a README.": "通过添加 README，帮助对此仓库感兴趣的人了解您的项目。",
+            "Help people interested in this repository understand your project.": "帮助对此仓库感兴趣的人了解您的项目。",
             "Add a README": "添加 README",
 
             // 右侧栏
