@@ -2265,7 +2265,9 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // 新版首页（已登录）2025-10-29
             "Your personal account": "我的个人账户",
 
+            "Started": "开始于",
             "Completed": "完成于",
+            "In progress": "进行中",
 
             "Unable to load agent tasks, try again later.": "无法加载智能体任务，请稍后重试。",
 
