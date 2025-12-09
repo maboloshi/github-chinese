@@ -17005,6 +17005,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "Anyone can fork your repository.": "任何人都可以复刻您的仓库。",
                 "All push rulesets will be disabled.": "所有推送规则集都将被禁用。",
                 "Your changes will be published as activity.": "您的更改将作为活动发布。",
+                "Actions history and logs will be visible to everyone.": "操作历史和日志将对所有人可见。",
                 "Make this repository public": "我想将此仓库设为公开",
             "I want to make this repository private": "我想将此仓库设为私有",
                 "Making this repository private could permanently erase these counts by removing stars and watchers associated to users that will no longer have access to this repository:": "该仓库私有化，将会通过解除星标者和关注者，删除这些计数。他们将无法访问该仓库：",
