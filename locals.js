@@ -27535,6 +27535,7 @@ I18N["zh-CN"]["copilot"] = {
             "Get file": "获取文件",
 
             "Recent agent sessions": "最近智能体任务",
+            "View all": "查看全部",
                 "No sessions found. Create one by sending a prompt above.": "未找到会话。请通过在上方发送提示来创建一个会话。",
 
             // 拉取请求列表
@@ -27843,9 +27844,16 @@ I18N["zh-CN"]["copilot"] = {
             // 仓库选择
                 "Select an item": "选择一项",
                     "Repos": "仓库",
-                "Switch branches": "选择分支",
+                "Select a branch": "选择分支",
                     "Find a branch...": "查找分支...",
                 "default": "默认",
+
+            // 自定义智能体
+            "This repository has no custom agents": "此仓库没有自定义智能体",
+                "Custom agents are reusable instructions and tools in your repository.": "自定义智能体是您仓库中的可复用指令和工具。",
+                "Create a custom agent": "创建",
+
+            "Auto": "自动",
 
             "Start task": "开始任务",
 
