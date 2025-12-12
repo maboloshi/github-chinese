@@ -2270,6 +2270,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "In progress": "进行中",
 
             "Unable to load agent tasks, try again later.": "无法加载智能体任务，请稍后重试。",
+            "Unable to load pull requests, try again later.": "无法加载拉取请求，请稍后重试。",
 
             "Updated": "更新于",
             "Ready for review": "准备审查",
