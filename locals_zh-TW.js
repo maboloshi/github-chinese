@@ -5058,7 +5058,8 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子郵箱
         // Emails 電子郵箱 https://github.com/settings/emails
             // 黃框警告
                 "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 賬戶只有一個經過驗證的電子郵箱。添加另一個經過驗證的電子郵箱地址吧，那樣即使主電子郵箱無法使用也不要緊。",
-
+            // 頂部提示信息
+                "Emails you can use to sign in to your account. Verified emails can be used as the author or committer addresses for web-based Git operations, e.g. edits and merges.":"可用於登錄賬戶的電子郵箱。經過驗證的電子郵箱可以用作基於網頁的 Git 操作（如編輯和合併）的作者或提交者地址。",
             // [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)/, "可用於登錄賬戶的電子郵箱。這些郵箱不會用作基於網頁的 Git 操作（如編輯和合併）的 “發件人” 地址。所有基於網頁的 Git 操作都將關聯至 $1。"],
 
             "Primary": "主賬戶",
@@ -5532,6 +5533,7 @@ I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
             "Member": "成員",
             "Compare plans": "比較計劃",
             "Leave": "離開",
+            "Leave organization":"離開組織",
 
             "Transform account": "賬戶變更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您離開您所屬的所有組織之前，您無法將此賬戶轉換為組織。", // 存在所屬組織時
@@ -5555,6 +5557,7 @@ I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 個倉庫的成員和協作者"],
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您確定要離開 $1 嗎？您將失去對所有倉庫和團隊的訪問權。"], // 設置 - 組織 離開按鈕 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您確定要離開 $1 嗎？您將失去對所有倉庫的訪問權。"], // 設置 - 組織 離開按鈕 提醒
+        [/You left ([^ ]+)\. It may take a few minutes to process\./, "您已離開 $1。可能需要幾分鐘處理。"], // 設置 - 組織 離開後提示
     ],
     "title": {
         "static": {
@@ -6011,6 +6014,8 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Access to the latest models": "訪問最新模型",
                 "Customize conversations to your private codebase and extensions": "為您的私人程式碼庫和擴展定製會話",
                 "Start a free trial": "免費試用",
+                "Code completions":"程式碼補全",
+                "Chat messages":"聊天訊息",
 
             "Copilot policies": "Copilot 規則",
                 "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
@@ -6123,6 +6128,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             // 頂部提示
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程智能體，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以為其他用戶啟用 Copilot 編程智能體，但由於管理員已禁用 Copilot 編程智能體策略，您將無法向 Copilot 分配任務。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程智能體，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程智能體，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待智能體請求您審查，然後在拉取請求中留下反饋以進行迭代。",
                 "Learn more in the docs.": "詳情",
@@ -6158,7 +6164,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
     "regexp": [ // 正則翻譯
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 個倉庫的外部協作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 個倉庫的成員和協作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days?/, "升級以獲取更高的限制、高級模型和 AI 審核。免費額度將在 $1 天內重置。"], // 免費版額度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升級以獲取更高的限制、高級模型和 AI 審核。免費額度將在 $1 天內重置。"], // 免費版額度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "瞭解更多關於 GitHub Copilot 如何為 $1 提供服務。"],
     ],
@@ -7458,6 +7464,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
 
             "Loading expiration ...": "載入有效期 …",
             "This token has expired.": "此令牌已過期。",
+            "This token has expired": "此令牌已過期",
                 "To set a new expiration date, you must regenerate the token.": "要設置新的有效期，您必須重新生成令牌。",
             "Regenerate": "重新生成",
 

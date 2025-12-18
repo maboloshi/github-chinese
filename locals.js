@@ -5058,7 +5058,8 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
         // Emails 电子邮箱 https://github.com/settings/emails
             // 黄框警告
                 "You have a single verified email associated with your GitHub account. Add an additional verified email address in case you lose access to your primary email.": "您的 GitHub 账户只有一个经过验证的电子邮箱。添加另一个经过验证的电子邮箱地址吧，那样即使主电子邮箱无法使用也不要紧。",
-
+            // 顶部提示信息
+                "Emails you can use to sign in to your account. Verified emails can be used as the author or committer addresses for web-based Git operations, e.g. edits and merges.":"可用于登录账户的电子邮箱。经过验证的电子邮箱可以用作基于网页的 Git 操作（如编辑和合并）的作者或提交者地址。",
             // [/Emails you can use to sign in to your account. Your emails will not be used as the 'from' address for web-based Git operations, e.g. edits and merges. All web-based Git operations will be linked to ([^@]+@users.noreply.github.com)/, "可用于登录账户的电子邮箱。这些邮箱不会用作基于网页的 Git 操作（如编辑和合并）的 “发件人” 地址。所有基于网页的 Git 操作都将关联至 $1。"],
 
             "Primary": "主账户",
@@ -5532,6 +5533,7 @@ I18N["zh-CN"]["settings/organizations"] = { // 设置 - 组织
             "Member": "成员",
             "Compare plans": "比较计划",
             "Leave": "离开",
+            "Leave organization":"离开组织",
 
             "Transform account": "账户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此账户转换为组织。", // 存在所属组织时
@@ -5555,6 +5557,7 @@ I18N["zh-CN"]["settings/organizations"] = { // 设置 - 组织
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您确定要离开 $1 吗？您将失去对所有仓库和团队的访问权。"], // 设置 - 组织 离开按钮 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您确定要离开 $1 吗？您将失去对所有仓库的访问权。"], // 设置 - 组织 离开按钮 提醒
+        [/You left ([^ ]+)\. It may take a few minutes to process\./, "您已离开 $1。可能需要几分钟处理。"], //设置，离开组织后的提示
     ],
     "title": {
         "static": {
@@ -6011,6 +6014,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Access to the latest models": "访问最新模型",
                 "Customize conversations to your private codebase and extensions": "为您的私人代码库和扩展定制会话",
                 "Start a free trial": "免费试用",
+                "Code completions":"代码补全",
+                "Chat messages":"聊天信息",
 
             "Copilot policies": "Copilot 规则",
                 "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
@@ -6044,7 +6049,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                         "You won’t have access to the feature": "您将不能访问此功能",
                 "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "了解更多关于 GitHub Copilot 如何为 OpenAI GPT-5-Codex 提供服务，并确认与您的 IDE 的兼容性。",
                 "Dashboard entry point": "仪表板入口",
-                    "Allows instant chatting when landing on GitHub.com": "允许登陆 GitHub.com 时即时聊天",
+                    "Allows instant chatting when landing on GitHub.com": "允许登录 GitHub.com 时即时聊天",
                 "Copilot code review": "Copilot 代码审查",
                     "Use Copilot to": "使用 Copilot",
                     "review your code": "审查代码",
@@ -6117,12 +6122,22 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Copilot Spaces": "Copilot 空间",
                     ". When disabled, you cannot view or create any Copilot Spaces.": "。当禁用时，您无法查看或创建任何 Copilot 空间。",
                 "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "选择要在其中启用 Copilot 编程智能体的仓库。Copilot 编程智能体仅在为该仓库启用并符合 Copilot 许可证政策的情况下可用。",
+                "Copilot Spaces Individual Access":"Copilot Spaces 个人访问权限",
+                    "If enabled, you can create individually owned":"若启用，您可以创建个人拥有的",
+                    "Copilot Spaces": "Copilot 空间",
+                    ". When disabled, you cannot create individual spaces.":"。当禁用时，您无法创建个人空间。",
+                "Copilot Spaces Individual Sharing":"Copilot Spaces 个人分享",
+                    "If enabled, you can share individually owned": "若启用，您可以分享个人拥有的",
+                    "Copilot Spaces": "Copilot 空间",
+                    ". When disabled, you cannot share individual spaces.":"。当禁用时，您无法分享个人空间。",
+
 
 
         // 编程智能体(预览 https://github.com/settings/copilot/coding_agent
             // 顶部提示
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程智能体，但由于管理员已禁用 Copilot 编程智能体策略，您将无法向 Copilot 分配任务。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编码代理，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                 "Learn more in the docs.": "详情",
@@ -6158,7 +6173,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
     ],
@@ -7768,6 +7783,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
 
             "Expires": "有效期至",
             "This token has no expiration date": "此令牌未设置有效期",
+            "This token has expired": "此令牌已过期",
             "Never used": "从未使用",
 
             // 生成令牌后提醒复制
