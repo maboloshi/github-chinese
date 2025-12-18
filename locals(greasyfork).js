@@ -2265,10 +2265,13 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // 新版首页（已登录）2025-10-29
             "Your personal account": "我的个人账户",
 
+            "Started": "开始于",
             "Completed": "完成于",
+            "In progress": "进行中",
 
             "Unable to load agent tasks, try again later.": "无法加载智能体任务，请稍后重试。",
 
+            "Updated": "更新于",
             "Ready for review": "准备审查",
             "Assigned to Copilot": "分配给 Copilot",
     },
@@ -8882,6 +8885,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 仓库缺失 README 提醒
             "Help people interested in this repository understand your project by adding a README.": "通过添加 README，帮助对此仓库感兴趣的人了解您的项目。",
+            "Help people interested in this repository understand your project.": "帮助对此仓库感兴趣的人了解您的项目。",
             "Add a README": "添加 README",
 
             // 右侧栏
@@ -17002,6 +17006,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "Anyone can fork your repository.": "任何人都可以复刻您的仓库。",
                 "All push rulesets will be disabled.": "所有推送规则集都将被禁用。",
                 "Your changes will be published as activity.": "您的更改将作为活动发布。",
+                "Actions history and logs will be visible to everyone.": "操作历史和日志将对所有人可见。",
                 "Make this repository public": "我想将此仓库设为公开",
             "I want to make this repository private": "我想将此仓库设为私有",
                 "Making this repository private could permanently erase these counts by removing stars and watchers associated to users that will no longer have access to this repository:": "该仓库私有化，将会通过解除星标者和关注者，删除这些计数。他们将无法访问该仓库：",
@@ -27530,6 +27535,7 @@ I18N["zh-CN"]["copilot"] = {
             "Get file": "获取文件",
 
             "Recent agent sessions": "最近智能体任务",
+            "View all": "查看全部",
                 "No sessions found. Create one by sending a prompt above.": "未找到会话。请通过在上方发送提示来创建一个会话。",
 
             // 拉取请求列表
@@ -27838,9 +27844,16 @@ I18N["zh-CN"]["copilot"] = {
             // 仓库选择
                 "Select an item": "选择一项",
                     "Repos": "仓库",
-                "Switch branches": "选择分支",
+                "Select a branch": "选择分支",
                     "Find a branch...": "查找分支...",
                 "default": "默认",
+
+            // 自定义智能体
+            "This repository has no custom agents": "此仓库没有自定义智能体",
+                "Custom agents are reusable instructions and tools in your repository.": "自定义智能体是您仓库中的可复用指令和工具。",
+                "Create a custom agent": "创建",
+
+            "Auto": "自动",
 
             "Start task": "开始任务",
 

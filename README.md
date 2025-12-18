@@ -65,17 +65,15 @@ Via（Android）       | 内置管理器
 
 1. 安装用户脚本管理器：
     - 推荐：[Tampermonkey][Tampermonkey]
-1. **Chrome / Chromium 内核浏览器，请务必开启 “扩展程序” 管理中的 “开发者模式”[^1]**
+1. **基于 Chrome / Chromium 内核浏览器：**
+    1. 务必开启 “扩展程序” 管理中的 **“开发者模式”**[^1]
+    1. 务必开启 “扩展程序” 管理中脚本管理器扩展的 **“允许运行用户脚本”**
+    1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
-
-> [!IMPORTANT]
-> **若无效，请检查 “扩展程序” 管理中的以下设置：**
-> 1.  “允许运行用户脚本” 是否开启
-> 1.  “有权访问的网站”
 
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
@@ -268,6 +266,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
 1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
 1. [GitHub 词汇表官方译本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
+1. **[CSS 选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Selectors) 用于编写忽略规则**
 
 > [查看详细贡献指南](https://github.com/maboloshi/github-chinese/discussions/57)
 
