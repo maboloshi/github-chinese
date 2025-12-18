@@ -1591,6 +1591,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Spaces organize your files, pull requests, issues, and standards so Copilot can give more relevant help for your work.": "空間組織您的文件、拉取請求、議題和標準，以便 Copilot 為您的工作提供更相關的幫助。",
             "Create space": "創建空間",
             "Search...": "搜索…",
+            "Shared with me":"與我共享的空間",
             "Start your first space": "開始您的第一個空間",
             "Need help? Read the docs": "需要幫助？閱讀文檔",
             "Generate code": "生成程式碼",
@@ -1945,9 +1946,24 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
             "Message": "訊息",
             "Tell us your feedback on the new dashboard experience":"告訴我們您對新儀表板體驗的反饋",
             "Please don’t include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our":"請不要包含敏感、機密或個人資訊。您的反饋有助於改進我們的服務",
+        // 新版首頁功能區
         "Task": "任務",
         "Create issue": "創建議題",
+            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，建立一個新的草稿議題。然後，請求提供更多資訊來完善議題。",
+            "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，建立一個包含子議題的議題。然後，請求提供更多資訊來完善這些議題。",
+        "Write code": "編寫程式碼",
         "Models": "模型",
+            "Create a profile README":"個人資料",
+            "Generate a simple calculator":"簡易計算器",
+            "Make a Pong game":"乒乓球遊戲",
+            "Design a Mermaid architecture overview":"Mermaid 架構預覽",
+        // Git
+            "Basic Git commands":"基本 Git 命令",
+            "Git branching":"Git 分支",
+            "Advanced Git commands":"進階 Git 命令",
+        // 拉取請求
+            "My open pull requests":"我打開的",
+            "Summarize my latest PR":"總結最近",
         "Fast and cost-efficient": "快速、經濟高效",
         "Versatile and highly intelligent": "多功能、高智能",
         "Most powerful at complex tasks": "在複雜任務中最強大",
@@ -3910,6 +3926,7 @@ I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
             "Active": "激活",
             "This theme will be active when your system is set to “light mode”": "當您的系統設置為 “淺色模式” 時，該主題將被激活。",
             "This theme will be active when your system is set to “dark mode”": "當您的系統設置為 “深色模式” 時，該主題將被激活。",
+            "Beta":"預覽",
 
             "Contrast": "對比度",
                 "Increase contrast": "增加對比度",
@@ -4374,6 +4391,8 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Yes": "是",
                 "spent": "支出",
                 "budget": "預算",
+            "Budgets let you set monthly usage limits for specific GitHub products or SKUs. If no budget is set, usage for that product is unlimited.":"預算允許您為特定的 GitHub 產品或 SKU 設定每月使用上限。如果未設定預算，該產品的使用量將不受限制。",
+            "Product":"產品類型",
 
         // 新建/更新預算 https://github.com/settings/billing/budgets/new
         // https://github.com/settings/billing/budgets/<id>/edit
@@ -4386,7 +4405,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Edit monthly budget": "編輯每月預算", // edit
                 "Create a budget to track spending for a selected product and scope.": "創建預算以跟蹤選定產品和範圍的支出。",
             // 缺失支付方式
+                "Payment method is missing":"缺少付款方式",
                 "Please set up a valid payment method before creating or adjusting your budget.": "請在創建或調整預算前設置有效的付款方式。",
+                "Add payment method":"添加付款方式",
 
             "Budget type": "預算類型",
                 "Set budget for either a product or individual SKU within a product.": "為產品或產品中的單個 SKU 設置預算。",
@@ -4403,6 +4424,11 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     "Select an item": "選擇專案",
 
             "Next: Configure budget": "下一步：配置預算",
+
+            "All Premium Request SKUs":"所有高級請求 SKU",
+            "A budget for all SKUs that consume premium requests":"適用於所有消耗高級請求的 SKU 的預算",
+            "Supported SKUs:":"支援的 SKU：",
+                "Coding Agent premium requests":"Coding Agent 高級請求",
 
             "Budget scope": "預算範圍",
                 "Select the scope of spending for this budget.": "選擇此預算的支出範圍。",
@@ -4431,6 +4457,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
 
             // 警示
                 "Get emails and GitHub notifications when your spending has reached 75%, 90%, and 100% of the budget threshold.": "當您的支出達到預算閾值的 75%、90% 和 100% 時，接收電子郵件和 GitHub 通知。",
+                "Receive emails when usage reaches 75%, 90%, and 100% of the budget amount.":"當您的支出達到預算閾值的 75%、90% 和 100% 時，接收電子郵件通知。",
 
                 "Receive budget threshold alerts": "接收預算閾值警報",
 
@@ -5996,6 +6023,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
 
             "Getting started": "開始使用",
                 "complete": "完成",
+                "Remove section":"移除區域",
             "Install Copilot in your editor": "在您的編輯器中安裝 Copilot",
             "Ask about coding problems and get code completions while you work.": "在工作時詢問問題並獲得程式碼補全。",
             "Chat with Copilot anywhere": "隨時隨地與 Copilot 聊天",
@@ -27846,6 +27874,10 @@ I18N["zh-TW"]["copilot"] = {
                 "From now on, each session uses just one premium request.": "從現在起，每個會話只會使用一次高級請求。",
 
             "Agents": "智能體",
+
+            "Delegate tasks to GitHub Copilot coding agent":"將任務委派給 GitHub Copilot 編程智能體",
+            "Let Copilot work independently in the background to complete tasks, and then monitor Copilot's progress.":"讓 Copilot 在背景中獨立工作以完成任務，然後監控 Copilot 的進展。",
+            "This feature is not available on your current plan.":"此功能目前不包含在您的方案中。",
 
             "Let Copilot tackle your TODOs": "讓 Copilot 處理您的待辦",
                 "Delegate tasks to GitHub Copilot coding agent to work on in the background, and then monitor Copilot's progress.": "將任務委派給 GitHub Copilot 編程智能體在後臺處理，然後監控 Copilot 的進展。",
