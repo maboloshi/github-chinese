@@ -1943,14 +1943,15 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         "Ask anything": "詢問任何事",
         "Send": "發送",
         "Feedback": "反饋",
-            "Message": "訊息",
+            "Message": "消息",
             "Tell us your feedback on the new dashboard experience":"告訴我們您對新儀表板體驗的反饋",
-            "Please don’t include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our":"請不要包含敏感、機密或個人資訊。您的反饋有助於改進我們的服務",
+            "Please don’t include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our":"請不要包含敏感、機密或個人信息。您的反饋有助於改進我們的服務",
+
         // 新版首頁功能區
         "Task": "任務",
         "Create issue": "創建議題",
-            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，建立一個新的草稿議題。然後，請求提供更多資訊來完善議題。",
-            "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，建立一個包含子議題的議題。然後，請求提供更多資訊來完善這些議題。",
+            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，創建一個新的草稿議題。然後，要求提供更多信息來完善議題。",
+            "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，創建一個包含子議題的議題。然後，要求提供更多信息來完善這些子議題。",
         "Write code": "編寫程式碼",
         "Models": "模型",
             "Create a profile README":"個人資料",
@@ -1960,10 +1961,11 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         // Git
             "Basic Git commands":"基本 Git 命令",
             "Git branching":"Git 分支",
-            "Advanced Git commands":"進階 Git 命令",
+            "Advanced Git commands":"高級 Git 命令",
         // 拉取請求
             "My open pull requests":"我打開的",
             "Summarize my latest PR":"總結最近",
+
         "Fast and cost-efficient": "快速、經濟高效",
         "Versatile and highly intelligent": "多功能、高智能",
         "Most powerful at complex tasks": "在複雜任務中最強大",
@@ -4391,7 +4393,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                 "Yes": "是",
                 "spent": "支出",
                 "budget": "預算",
-            "Budgets let you set monthly usage limits for specific GitHub products or SKUs. If no budget is set, usage for that product is unlimited.":"預算允許您為特定的 GitHub 產品或 SKU 設定每月使用上限。如果未設定預算，該產品的使用量將不受限制。",
+            "Budgets let you set monthly usage limits for specific GitHub products or SKUs. If no budget is set, usage for that product is unlimited.":"預算允許您為特定的 GitHub 產品或 SKU 設置每月使用限制。如果未設置預算，該產品的使用量將不受限制。",
             "Product":"產品類型",
 
         // 新建/更新預算 https://github.com/settings/billing/budgets/new
@@ -4405,9 +4407,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Edit monthly budget": "編輯每月預算", // edit
                 "Create a budget to track spending for a selected product and scope.": "創建預算以跟蹤選定產品和範圍的支出。",
             // 缺失支付方式
-                "Payment method is missing":"缺少付款方式",
+                "Payment method is missing":"支付方式缺失",
                 "Please set up a valid payment method before creating or adjusting your budget.": "請在創建或調整預算前設置有效的付款方式。",
-                "Add payment method":"添加付款方式",
+                "Add payment method":"添加支付方式",
 
             "Budget type": "預算類型",
                 "Set budget for either a product or individual SKU within a product.": "為產品或產品中的單個 SKU 設置預算。",
@@ -4426,8 +4428,8 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
             "Next: Configure budget": "下一步：配置預算",
 
             "All Premium Request SKUs":"所有高級請求 SKU",
-            "A budget for all SKUs that consume premium requests":"適用於所有消耗高級請求的 SKU 的預算",
-            "Supported SKUs:":"支援的 SKU：",
+            "A budget for all SKUs that consume premium requests":"所有消耗高級請求的 SKU 的預算",
+            "Supported SKUs:":"支持的 SKUs：",
                 "Coding Agent premium requests":"Coding Agent 高級請求",
 
             "Budget scope": "預算範圍",
@@ -4660,6 +4662,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     // 拉取請求
                         "Allow contributors to easily notify you of changes they've pushed to a repository – with access limited to the contributors you specify. Easily merge changes you accept.": "允許貢獻者輕鬆通知您他們推送到倉庫的更改，訪問權限僅限於您指定的貢獻者。輕鬆合併您接受的更改。",
                     "Protected branches": "受保護的分支",
+                    "Repository rules":"倉庫規則",
                         "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "對程式碼分支的合併方式實施限制，包括要求由選定的協作者進行審查，或僅允許特定的貢獻者在特定分支上工作。",
                     // 程式碼所有者
                         "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "當選定的貢獻者對其擁有的程式碼部分進行修改時，自動要求審查或要求批准。",
@@ -4690,6 +4693,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     "Milestones": "里程碑",
                         "Track progress on groups of issues or pull requests in a repository, and map groups to overall project goals.": "跟蹤倉庫中議題或拉取請求組的進展，並將組映射到整體專案目標。",
                     // 團隊討論
+                    "Team discussions": "團隊討論",
                         "Discuss any topic, unattached to a specific project or issue. Control who has access, notify discussion participants with updates, and link from anywhere.": "討論任何主題，不與特定專案或議題相關。控制訪問權限，通知討論參與者最新情況，並從任何地方進行鏈接。",
                     "Organization and team management": "組織和團隊管理",
                         "Manage access to projects on a team-by-team, or individual user, basis.": "以團隊或個人用戶為基礎管理對專案的訪問。",
@@ -5587,7 +5591,7 @@ I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 個倉庫的成員和協作者"],
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories and teams./, "您確定要離開 $1 嗎？您將失去對所有倉庫和團隊的訪問權。"], // 設置 - 組織 離開按鈕 提醒
         [/Are you positive you want to leave ([^ ]+)\? You will lose access to all repositories./, "您確定要離開 $1 嗎？您將失去對所有倉庫的訪問權。"], // 設置 - 組織 離開按鈕 提醒
-        [/You left ([^ ]+)\. It may take a few minutes to process\./, "您已離開 $1。可能需要幾分鐘處理。"], // 設置 - 組織 離開後提示
+        [/You left ([^ ]+)\. It may take a few minutes to process\./, "您已離開 $1。可能需要幾分鐘處理。"], //設置，離開組織後的提示
     ],
     "title": {
         "static": {
@@ -6046,7 +6050,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Customize conversations to your private codebase and extensions": "為您的私人程式碼庫和擴展定製會話",
                 "Start a free trial": "免費試用",
                 "Code completions":"程式碼補全",
-                "Chat messages":"聊天訊息",
+                "Chat messages":"聊天信息",
 
             "Copilot policies": "Copilot 規則",
                 "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
@@ -6080,7 +6084,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                         "You won’t have access to the feature": "您將不能訪問此功能",
                 "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "瞭解更多關於 GitHub Copilot 如何為 OpenAI GPT-5-Codex 提供服務，並確認與您的 IDE 的兼容性。",
                 "Dashboard entry point": "儀表板入口",
-                    "Allows instant chatting when landing on GitHub.com": "允許登陸 GitHub.com 時即時聊天",
+                    "Allows instant chatting when landing on GitHub.com": "允許登錄 GitHub.com 時即時聊天",
                 "Copilot code review": "Copilot 程式碼審查",
                     "Use Copilot to": "使用 Copilot",
                     "review your code": "審查程式碼",
@@ -6125,6 +6129,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     //"You can use Copilot Chat in Github.com, Copilot for pull requests, and all of the preview features.": "您可以在 Github.com 中使用 Copilot Chat，也可以使用 Copilot 拉取請求和所有預覽功能。",
                     "You can use Copilot Chat in GitHub.com, Copilot for pull requests, and all of the preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，Copilot 拉取請求和所有預覽功能。",
                     "You can use Copilot Chat in GitHub.com and Copilot for pull requests. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 上使用 Copilot Chat，也可以在拉取請求中使用 Copilot。Copilot 的程式碼審查和預覽功能僅對付費許可證用戶開放。",
+
                 // "Copilot in the CLI": "在終端中使用",
                     "You can use": "您可以",
                     "GitHub Copilot for assistance in terminal": "GitHub Copilot 終端輔助工具",
@@ -6153,13 +6158,22 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "Copilot Spaces": "Copilot 空間",
                     ". When disabled, you cannot view or create any Copilot Spaces.": "。當禁用時，您無法查看或創建任何 Copilot 空間。",
                 "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要在其中啟用 Copilot 編程智能體的倉庫。Copilot 編程智能體僅在為該倉庫啟用並符合 Copilot 許可證政策的情況下可用。",
+                "Copilot Spaces Individual Access":"Copilot Spaces 個人訪問權限",
+                    "If enabled, you can create individually owned":"若啟用，您可以創建個人擁有的",
+                    "Copilot Spaces": "Copilot 空間",
+                    ". When disabled, you cannot create individual spaces.":"。當禁用時，您無法創建個人空間。",
+                "Copilot Spaces Individual Sharing":"Copilot Spaces 個人分享",
+                    "If enabled, you can share individually owned": "若啟用，您可以分享個人擁有的",
+                    "Copilot Spaces": "Copilot 空間",
+                    ". When disabled, you cannot share individual spaces.":"。當禁用時，您無法分享個人空間。",
+
 
 
         // 編程智能體(預覽 https://github.com/settings/copilot/coding_agent
             // 頂部提示
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程智能體，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以為其他用戶啟用 Copilot 編程智能體，但由於管理員已禁用 Copilot 編程智能體策略，您將無法向 Copilot 分配任務。",
-                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程智能體，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "雖然您可以為其他用戶啟用 Copilot 編碼代理，但由於您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程智能體，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待智能體請求您審查，然後在拉取請求中留下反饋以進行迭代。",
                 "Learn more in the docs.": "詳情",
@@ -7495,7 +7509,6 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
 
             "Loading expiration ...": "載入有效期 …",
             "This token has expired.": "此令牌已過期。",
-            "This token has expired": "此令牌已過期",
                 "To set a new expiration date, you must regenerate the token.": "要設置新的有效期，您必須重新生成令牌。",
             "Regenerate": "重新生成",
 
@@ -7806,6 +7819,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
 
             "Expires": "有效期至",
             "This token has no expiration date": "此令牌未設置有效期",
+            "This token has expired": "此令牌已過期",
             "Never used": "從未使用",
 
             // 生成令牌後提醒複製
@@ -27876,8 +27890,8 @@ I18N["zh-TW"]["copilot"] = {
             "Agents": "智能體",
 
             "Delegate tasks to GitHub Copilot coding agent":"將任務委派給 GitHub Copilot 編程智能體",
-            "Let Copilot work independently in the background to complete tasks, and then monitor Copilot's progress.":"讓 Copilot 在背景中獨立工作以完成任務，然後監控 Copilot 的進展。",
-            "This feature is not available on your current plan.":"此功能目前不包含在您的方案中。",
+            "Let Copilot work independently in the background to complete tasks, and then monitor Copilot's progress.":"讓 Copilot 在後臺獨立工作，完成任務後，您可以監控 Copilot 的進展。",
+            "This feature is not available on your current plan.":"此功能當前不在您的計劃中。",
 
             "Let Copilot tackle your TODOs": "讓 Copilot 處理您的待辦",
                 "Delegate tasks to GitHub Copilot coding agent to work on in the background, and then monitor Copilot's progress.": "將任務委派給 GitHub Copilot 編程智能體在後臺處理，然後監控 Copilot 的進展。",
