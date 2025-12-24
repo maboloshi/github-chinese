@@ -21225,9 +21225,33 @@ I18N["zh-CN"]["repos"] = {
         "My repositories": "我的仓库",
         "My forks": "我的复刻",
         "Adminable by me": "我可管理",
+
+        "Views": "视图",
+            "Create view": "新建",
+                "Icon": "图标",
+                "Description": "描述",
+                "Query": "查询",
+
+                "Save view": "保存",
+
+        // 搜索栏
+            "Clear filter": "清除筛选",
+            "Comfortable display density": "舒适视图",
+            "Compact display density": "紧凑视图",
+
+        // 筛选框
+            "Relevance": "相关性",
+            "Last pushed": "最后推送",
+            "Name": "名称",
+
+            "Ascending": "递增",
+            "Descending": "递减",
+
+        "Updated": "更新于",
     },
     "regexp": [
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
+        [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
     ],
 };
 
