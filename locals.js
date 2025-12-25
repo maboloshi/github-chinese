@@ -804,6 +804,11 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Settings": "设置",
             "Copilot settings": "Copilot 设置",
             "Feature preview": "功能预览",
+            "Feature Preview": "功能预览",
+                "Get early access to new features and give feedback": "测试新功能并提交反馈",
+                "Help us improve this and make your experience even better.": "帮我们改进此功能，提升您的体验。",
+                "On": "开",
+                "Off": "关",
                 // 对话框
                 "Feature preview dialog": "功能预览对话框",
                 "Enable": "启用",
