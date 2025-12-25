@@ -2671,6 +2671,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
         [/(\d+) remaining/, "$1 剩余"], // 置顶项目 剩余
         [/([^ ]+) doesn('|’)t have any public repositories yet./, "$1 尚无任何公共仓库。"],
+        [/([\d,]+) contributions? in the last year in ([^ ]+)/, "在过去的一年中向 $2 贡献 $1 次"],
         [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
