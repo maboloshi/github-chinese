@@ -13490,6 +13490,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             // 左侧栏
             "Summary": "摘要",
+            "All jobs": "所有作业",
+                "Filter by job status": "由作业状态筛选",
+                    "Filter by status": "状态筛选",
             "Jobs": "作业",
             "Run details": "运行详情",
             "Usage": "运用",
