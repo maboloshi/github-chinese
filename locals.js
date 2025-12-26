@@ -15767,6 +15767,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
         [/on (.+)/, "$1"],
+        [/(\d+)\/(\d+) files? scanned/, "$1/$2 文件已扫描"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
         [/Prototype Pollution in ([^ ]+)/, "$1 上游污染"],
         [/First detected (.+)/, (match, p1) => { // 受影响的分支 // BUG: 翻译不生效
