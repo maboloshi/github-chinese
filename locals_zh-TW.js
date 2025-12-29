@@ -45,7 +45,7 @@ I18N.conf = {
      * 導入倉庫 /new/import
      * ...
      */
-    rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
+    rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|repos|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 倉庫路徑
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content)/,
@@ -72,9 +72,20 @@ I18N.conf = {
         'repository/blob': [
             "#highlighted-line-menu-positioner", // 程式碼視圖 存在
             "#repos-sticky-header", // 程式碼視圖 置頂標題
+            'nav[data-testid="breadcrumbs"]', // 麵包屑導航
+            'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 文件名部分
         ],
         'repository/blame': ["#highlighted-line-menu-positioner"], // 程式碼視圖
-        'repository': [".AppHeader-context", "table"], //  "article.markdown-body",
+        'repository': [
+            ".AppHeader-context",
+            "table",
+            "article.markdown-body",
+        ],
+        'repository/tree': [
+            'nav[data-testid="breadcrumbs"]', // 麵包屑導航
+            'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 文件名部分
+            'tr.react-directory-row', // 文件列表中文件夾和文件條目
+        ],
         'repository/releases': [".Box-footer"], // 附件清單
         'repository/issues': [
             'div[aria-live="polite"]>div.markdown-body', // 新建議題 - 正文編輯器預覽
@@ -118,7 +129,7 @@ I18N.conf = {
             'strong[itemprop="name"]', // 倉庫名稱
             // 'ul.list-style-none', // 右側 部署列表 無效
             'div[data-testid="latest-commit"]', // 最新的提交
-            '.react-directory-row', // 文件列表中文件夾和文件條目
+            'tr.react-directory-row', // 文件列表中文件夾和文件條目
             'p.f4.my-3', // 倉庫簡介正文
             '#translate-me',
             '.my-3.d-flex.flex-items-center', // 倉庫簡介中的鏈接
@@ -129,10 +140,10 @@ I18N.conf = {
             '.AppHeader-context-full', // 頂部 <username>/<repo_name>
             'div.react-tree-show-tree-items', // 左側文件樹專案
             'span.PRIVATE_TreeView-item-content-text', // 左側文件樹專案 - 子文件夾
-            '.react-directory-row', // 文件列表中文件夾和文件條目
-            '#repos-header-breadcrumb',
-            '#file-name-id', // 文件路徑中文件部分
             'article.markdown-body', // Markdown 正文
+            'nav[data-testid="breadcrumbs"]', // 麵包屑導航
+            'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 文件名部分
+            'tr.react-directory-row', // 文件列表中文件夾和文件條目
         ],
         'repository/blob': [
             '.AppHeader-context-full', // 頂部 <username>/<repo_name>
@@ -142,10 +153,8 @@ I18N.conf = {
             '#highlighted-line-menu-positioner', // 程式碼視圖
             '#filter-results', // 右側 符號篩選
             '.Text__StyledText-sc-17v1xeu-0', // 右側 符號篩選
-            '#repos-header-breadcrumb', // 文件路徑中文件夾路徑
-            '#repos-header-breadcrumb--wide', // 文件路徑中文件夾路徑 左側文件樹展開情況
-            '#sticky-breadcrumb',
-            '#file-name-id', // 文件路徑中文件部分
+            'nav[data-testid="breadcrumbs"]', // 麵包屑導航
+            'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 文件名部分
         ],
         'repository/issues': [
             'div[aria-live="polite"]>div.markdown-body', // 新建議題 - 正文編輯器預覽
@@ -420,6 +429,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Get Started With GitHub Discussions": "開始使用 GitHub 討論",
         "SSH and GPG keys": "SSH 和 GPG 密鑰",
         "MCP Registry": "MCP 互聯",
+        "User repositories": "用戶倉庫",
     },
     "regexp": [ // 正則翻譯
         [/Authorized OAuth Apps/, "授權的 OAuth 應用"],
@@ -794,6 +804,11 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Settings": "設置",
             "Copilot settings": "Copilot 設置",
             "Feature preview": "功能預覽",
+            "Feature Preview": "功能預覽",
+                "Get early access to new features and give feedback": "測試新功能並提交反饋",
+                "Help us improve this and make your experience even better.": "幫我們改進此功能，提升您的體驗。",
+                "On": "開",
+                "Off": "關",
                 // 對話框
                 "Feature preview dialog": "功能預覽對話框",
                 "Enable": "啟用",
@@ -2291,6 +2306,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
             "In progress": "進行中",
 
             "Unable to load agent tasks, try again later.": "無法加載智能體任務，請稍後重試。",
+            "Unable to load pull requests, try again later.": "無法加載拉取請求，請稍後重試。",
 
             "Updated": "更新於",
             "Ready for review": "準備審查",
@@ -21207,6 +21223,42 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
     },
 };
 I18N["zh-TW"].pulls = I18N["zh-TW"].issues;
+
+I18N["zh-TW"]["repos"] = {
+    "static": {
+        "My contributions": "我的貢獻",
+        "My repositories": "我的倉庫",
+        "My forks": "我的複刻",
+        "Adminable by me": "我可管理",
+
+        "Views": "視圖",
+            "Create view": "新建",
+                "Icon": "圖標",
+                "Description": "描述",
+                "Query": "查詢",
+
+                "Save view": "保存",
+
+        // 搜索欄
+            "Clear filter": "清除篩選",
+            "Comfortable display density": "舒適視圖",
+            "Compact display density": "緊湊視圖",
+
+        // 篩選框
+            "Relevance": "相關性",
+            "Last pushed": "最後推送",
+            "Name": "名稱",
+
+            "Ascending": "遞增",
+            "Descending": "遞減",
+
+        "Updated": "更新於",
+    },
+    "regexp": [
+        [/(\d+) repositor(y|ies)/, "$1 個倉庫"],
+        [/([^ ]+)’s past year of commit activity/, "近幾年 $1 的提交活動"],
+    ],
+};
 
 I18N["zh-TW"]["search"] = { // 搜索頁面
     "static": { // 靜態翻譯
