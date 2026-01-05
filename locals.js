@@ -723,6 +723,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 // 团队
                 "Search for teams": "搜索团队",
 
+            "Teams have moved to": "团队已迁移至",
+
         // 顶部提示横幅
             "Don't get locked out of your account.": "不要被锁定在您的账户之外。",
             "Download your recovery codes": "下载您的恢复码",
@@ -774,12 +776,20 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Start a new task with Copilot": "使用 Copilot 启动新任务",
             "Describe a coding task to work on": "描述要完成的编程任务",
             "Open Copilot…": "打开 Copilot…",
+                "Start a pull request": "创建一个拉取请求",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
                     "Spaces": "空间",
                     "Immersive": "全屏",
                 "Download for": "下载插件",
+
+            "Select a branch": "选择分支",
+            "Find a branch...": "选择一个分支…",
+
+            "Create a custom agent": "创建一个自定义智能体",
+            
+            "Navigate to Copilot": "导航到 Copilot",
 
             "Open agents panel": "打开智能体面板",
                 "Start a task with Copilot coding agent": "使用 Copilot 编程智能体开始任务",
@@ -1662,6 +1672,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         [/Delete conversation: \"(.+)\"/, "删除对话：“$1”"],
         // 智能体
         [/Branch: (.+)/, "分支：$1"],
+        [/Agent: (.+)/, "智能体：$1"],
         /**
          * 匹配时间格式
          *
@@ -4251,11 +4262,13 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Discount:": "优惠：",
                 "Usage by repository": "按仓库统计",
                     "Top three repositories today": "今日排名前三的仓库",
+                    "Top two repositories this month": "本月排名前二的仓库",
                     "Top three repositories this month": "本月排名前三的仓库",
                     "Top four repositories last month": "上月排名前四的仓库",
                     "Top four repositories this year": "今年排名前四的仓库",
                     "Top four repositories this month": "上年排名前四的仓库",
 
+                    "View all": "查看所有",
                     "usage": "用量",
                     "Gross amount": "总计",
                     "All other repositories": "其他",
@@ -5014,6 +5027,8 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
 
         "GitHub Education": "GitHub 教育",
+
+        "Free GitHub developer resources for students and teachers": "为学生和教师提供免费的 GitHub 开发者资源",
 
         "Education Benefits": "教育福利",
             "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教师或学生申请，解锁教育旅程所需的工具和资源。",
@@ -11250,7 +11265,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // "Refresh": "刷新",
             // 复制文件按钮
                 "Copy file name to clipboard": "复制文件名到剪切板",
-            
+
             "Open overview side panel": "打开概览侧边栏",
                 "Close overview panel": "关闭", // 过于啰嗦省略
             // 评论
@@ -19854,7 +19869,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "Built-in application security where found means fixed": "内置应用安全，发现即修复",
             "Use AI to find and fix vulnerabilities so your team can ship more secure software faster.": "利用 AI 发现并修复漏洞，让团队更快交付更安全的软件。",
-            
+
             "Apply fixes in seconds.": "在几秒钟内完成修复。",
                 "Spend less time debugging and more time building features with Copilot Autofix.": "使用 Copilot 自动修复，花更少时间调试，把更多时间用来开发新功能。",
                 "Explore GitHub Advanced Security": "探索 GitHub 高级安全",
@@ -22779,11 +22794,11 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Models": "模型",
                 "Model": "模型",
                 "Catalog": "目录",
-				
+
 					"Create applications with GitHub powered by AI Models. Free to use, quick personal setup, and seamless model switching to help you build AI products using the latest models.": "使用由 AI 模型提供支持的 GitHub 创建应用程序。免费使用、快速个人设置和无缝模型切换，帮助您使用最新模型构建 AI 产品。",
-					
+
 					"Try models in playground": "在运行场上尝试模型",
-                    
+
 					// 分类
                         "All providers": "所有提供商",
                     "Publisher:": "发布者：",
@@ -23381,7 +23396,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 		// 新上市市场页 https://github.com/marketplace/new
 			"List your tool": "上市你的工具",
 			"List your tool on GitHub Marketplace": "在 GitHub 市场上市你的工具",
-			
+
 			"You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上市的工具",
 				"Learn more about the requirements": "了解有关要求的更多信息",
 				"to list a tool on GitHub Marketplace.": "在 GitHub 市场上市工具。",
@@ -23404,7 +23419,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
         [/Prorated for/, "按比例计算"],
 
         [/Thank you! ([^ ]+) is now on the waitlist for GitHub Models./, "谢谢！$1 现已进入 GitHub 模型等待名单。"],
-		
+
 		[/Filter contains (\d+) issues?:/, "过滤器包含 $1 个问题："]
     ],
     "title": {
@@ -28275,7 +28290,7 @@ I18N["zh-CN"]["spark"] = {
                     "Read only": "只读",
                 "Prompts": "提示词",
                     "Add AI capabilities by asking in the Iterate panel. View and edit the prompts powering those features here.": "在 Iterate 面板中提出需求即可添加 AI 能力。你可以在这里查看和编辑驱动这些功能的提示词。",
-                    
+
                     "We couldn't load your data": "无法加载你的数据",
                         "Please try again. If the problem persists, try again later.": "请重试。如果问题仍然存在，请稍后再试。",
                 "Assets": "素材",
