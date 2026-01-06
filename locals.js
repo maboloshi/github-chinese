@@ -776,7 +776,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Start a new task with Copilot": "使用 Copilot 启动新任务",
             "Describe a coding task to work on": "描述要完成的编程任务",
             "Open Copilot…": "打开 Copilot…",
-                "Start a pull request": "创建一个拉取请求",
+                "Start a pull request": "创建拉取请求",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
@@ -785,10 +785,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Download for": "下载插件",
 
             "Select a branch": "选择分支",
-            "Find a branch...": "选择一个分支…",
+            "Find a branch...": "查找分支…",
 
-            "Create a custom agent": "创建一个自定义智能体",
-            
+            "Create a custom agent": "创建自定义智能体",
+
             "Navigate to Copilot": "导航到 Copilot",
 
             "Open agents panel": "打开智能体面板",
