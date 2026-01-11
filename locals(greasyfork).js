@@ -2671,6 +2671,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/(\d+) GitHub Archive Program/, "$1 GitHub 存档计划"], // 成就浮动款
         [/(\d+) remaining/, "$1 剩余"], // 置顶项目 剩余
         [/([^ ]+) doesn('|’)t have any public repositories yet./, "$1 尚无任何公共仓库。"],
+        [/([\d,]+) contributions? in the last year in ([^ ]+)/, "在过去的一年中向 $2 贡献 $1 次"],
         [/([\d,]+) contributions? in the last year/, "在过去的一年中贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+) in ([^ ]+)/, "在 $2 年中向 $3, 贡献 $1 次"],
         [/([\d,]+) contributions? in (\d+)/, "在 $2 年中贡献 $1 次"],
@@ -13489,6 +13490,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             // 左侧栏
             "Summary": "摘要",
+            "All jobs": "所有作业",
+                "Filter by job status": "由作业状态筛选",
+                    "Filter by status": "状态筛选",
             "Jobs": "作业",
             "Run details": "运行详情",
             "Usage": "运用",
@@ -15763,6 +15767,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
         [/on ([^ ]+) in/, "关于 $1 在"],
         [/Or, manually upgrade ([^ ]+) to version/, "或者，手动将 $1 升级到版本"],
         [/on (.+)/, "$1"],
+        [/(\d+)\/(\d+) files? scanned/, "$1/$2 文件已扫描"],
         //[/Copy ([^/]\/(?:[^/]+\/)*[^/]+$) to clipboard/, "复制 $1 到剪切板"],
         [/Prototype Pollution in ([^ ]+)/, "$1 上游污染"],
         [/First detected (.+)/, (match, p1) => { // 受影响的分支 // BUG: 翻译不生效
