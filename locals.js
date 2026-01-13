@@ -27986,6 +27986,7 @@ I18N["zh-CN"]["copilot"] = {
             "Start task": "开始任务",
 
             "Started": "开始于",
+            "Completed": "完成于",
 
             "Recent sessions": "最近任务",
 
