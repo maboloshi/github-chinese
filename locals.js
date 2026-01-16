@@ -1455,6 +1455,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "characters": "字符",
                 "Delete conversation": "删除对话",
                 "View all conversations": "查看全部对话",
+                    "There are no conversations at the moment.":"目前没有对话。",
+                    "Start a new conversation":"开始新对话",
                     "Active conversations": "最近对话",
                     "All conversations": "所有对话",
                     // 删除
@@ -3947,9 +3949,11 @@ I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
             "GitHub theme will match your system active settings": "GitHub 主题将匹配您的系统设置",
             "Light default": "浅色 - 默认",
             "Light protanopia and deuteranopia": "浅色 - 色盲",
+            "Light colorblind": "浅色 - 色盲",
             "Light tritanopia": "浅色 - 蓝色盲",
             "Dark default": "深色 - 默认",
             "Dark protanopia and deuteranopia": "深色 - 色盲",
+            "Dark colorblind": "深色 - 色盲",
             "Dark tritanopia": "深色 - 蓝色盲",
             "Soft dark": "深色 - 柔和",
             "Light theme": "浅色主题",
@@ -7832,6 +7836,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
             "User permissions": "用户权限",
             "Repository permissions": "仓库权限",
             "Organization permissions": "组织权限",
+           
 
             // 具体权限暂时翻译 太麻烦 主要他将读/写具体的权限合并描述
 
@@ -13298,6 +13303,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // 筛选条
                 "Filter workflow runs": "筛选工作流程",
                     "Narrow your search": "缩小搜索范围",
+
+            //访问上限
+            //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
+                "You have hit the limit of pages.": "您已到达页面访问上限。",
+                "You could filter by":"您可以按以下筛选",
+                "to continue reviewing older workflow runs.":"继续查看旧的工作流程运行。", 
+                
 
             // 反馈提醒
                 "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
@@ -20597,6 +20609,7 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
             "Marking your notifications as \"done\" helps to create a more focused inbox. Don't worry - if there is new activity, you'll still be notified.": "将您的通知标记为 “已完成” 有助于创建一个更加集中的收件箱。不用担心 - 如果有新的活动，您仍然会收到通知。",
             "Mark all read notifications as done": "将所有已读通知标记为已完成",
             "This process could take a few moments depending on the quantity.": "这个过程可能会根据数量的多少而耗费一些时间。",
+            "Bulk action processing complete.": "批量操作处理完成。",
 
         "Manage notifications": "管理通知",
         "Notification settings": "通知设置",
