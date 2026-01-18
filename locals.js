@@ -803,6 +803,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Recent tasks": "近期任务",
 
         // 右上角个人图标下拉菜单
+            "Open user navigation menu": "打开用户导航菜单",
             "Account switcher": "账户切换",
                 "Add account": "添加账户",
                 "Switch account": "切换账户",
