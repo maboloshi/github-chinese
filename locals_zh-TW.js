@@ -723,6 +723,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 // 團隊
                 "Search for teams": "搜索團隊",
 
+            "Teams have moved to": "團隊已遷移至",
+
         // 頂部提示橫幅
             "Don't get locked out of your account.": "不要被鎖定在您的賬戶之外。",
             "Download your recovery codes": "下載您的恢復碼",
@@ -774,12 +776,20 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Start a new task with Copilot": "使用 Copilot 啟動新任務",
             "Describe a coding task to work on": "描述要完成的編程任務",
             "Open Copilot…": "打開 Copilot…",
+                "Start a pull request": "創建拉取請求",
                 "New conversation in": "新聊天",
                 "New conversation": "新聊天",
                     "Assistive": "小窗",
                     "Spaces": "空間",
                     "Immersive": "全屏",
                 "Download for": "下載插件",
+
+            "Select a branch": "選擇分支",
+            "Find a branch...": "查找分支…",
+
+            "Create a custom agent": "創建自定義智能體",
+
+            "Navigate to Copilot": "導航到 Copilot",
 
             "Open agents panel": "打開智能體面板",
                 "Start a task with Copilot coding agent": "使用 Copilot 編程智能體開始任務",
@@ -1662,6 +1672,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         [/Delete conversation: \"(.+)\"/, "刪除對話：“$1”"],
         // 智能體
         [/Branch: (.+)/, "分支：$1"],
+        [/Agent: (.+)/, "智能體：$1"],
         /**
          * 匹配時間格式
          *
@@ -3934,11 +3945,11 @@ I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
             "GitHub will use your selected theme": "GitHub 將使用您選擇的主題",
             "GitHub theme will match your system active settings": "GitHub 主題將匹配您的系統設置",
             "Light default": "淺色 - 默認",
-            "Light colorblind": "淺色 - 色盲",
-            "Light Tritanopia": "淺色 - 藍色盲",
+            "Light protanopia and deuteranopia": "淺色 - 色盲",
+            "Light tritanopia": "淺色 - 藍色盲",
             "Dark default": "深色 - 默認",
-            "Dark colorblind": "深色 - 色盲",
-            "Dark Tritanopia": "深色 - 藍色盲",
+            "Dark protanopia and deuteranopia": "深色 - 色盲",
+            "Dark tritanopia": "深色 - 藍色盲",
             "Soft dark": "深色 - 柔和",
             "Light theme": "淺色主題",
             "Dark theme": "深色主題",
@@ -4251,11 +4262,13 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 賬單和計劃
                     "Discount:": "優惠：",
                 "Usage by repository": "按倉庫統計",
                     "Top three repositories today": "今日排名前三的倉庫",
+                    "Top two repositories this month": "本月排名前二的倉庫",
                     "Top three repositories this month": "本月排名前三的倉庫",
                     "Top four repositories last month": "上月排名前四的倉庫",
                     "Top four repositories this year": "今年排名前四的倉庫",
                     "Top four repositories this month": "上年排名前四的倉庫",
 
+                    "View all": "查看所有",
                     "usage": "用量",
                     "Gross amount": "總計",
                     "All other repositories": "其他",
@@ -5014,6 +5027,8 @@ I18N["zh-TW"]["settings/education/benefits"] = {  // 設置 - 賬單和計劃（
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
 
         "GitHub Education": "GitHub 教育",
+
+        "Free GitHub developer resources for students and teachers": "為學生和教師提供免費的 GitHub 開發者資源",
 
         "Education Benefits": "教育福利",
             "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教師或學生申請，解鎖教育旅程所需的工具和資源。",
@@ -11250,7 +11265,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             // "Refresh": "刷新",
             // 複製文件按鈕
                 "Copy file name to clipboard": "複製文件名到剪切板",
-            
+
             "Open overview side panel": "打開概覽側邊欄",
                 "Close overview panel": "關閉", // 過於囉嗦省略
             // 評論
@@ -19854,7 +19869,7 @@ I18N["zh-TW"]["homepage"] = { // 未登錄的首頁
 
         "Built-in application security where found means fixed": "內置應用安全，發現即修復",
             "Use AI to find and fix vulnerabilities so your team can ship more secure software faster.": "利用 AI 發現並修復漏洞，讓團隊更快交付更安全的軟體。",
-            
+
             "Apply fixes in seconds.": "在幾秒鐘內完成修復。",
                 "Spend less time debugging and more time building features with Copilot Autofix.": "使用 Copilot 自動修復，花更少時間調試，把更多時間用來開發新功能。",
                 "Explore GitHub Advanced Security": "探索 GitHub 高級安全",
@@ -22779,11 +22794,11 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             "Models": "模型",
                 "Model": "模型",
                 "Catalog": "目錄",
-				
+
 					"Create applications with GitHub powered by AI Models. Free to use, quick personal setup, and seamless model switching to help you build AI products using the latest models.": "使用由 AI 模型提供支持的 GitHub 創建應用程式。免費使用、快速個人設置和無縫模型切換，幫助您使用最新模型構建 AI 產品。",
-					
+
 					"Try models in playground": "在運行場上嘗試模型",
-                    
+
 					// 分類
                         "All providers": "所有提供商",
                     "Publisher:": "發佈者：",
@@ -23381,7 +23396,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
 		// 新上市市場頁 https://github.com/marketplace/new
 			"List your tool": "上市你的工具",
 			"List your tool on GitHub Marketplace": "在 GitHub 市場上市你的工具",
-			
+
 			"You have no tools to list on GitHub Marketplace": "您沒有可在 GitHub 市場上市的工具",
 				"Learn more about the requirements": "瞭解有關要求的更多信息",
 				"to list a tool on GitHub Marketplace.": "在 GitHub 市場上市工具。",
@@ -23404,7 +23419,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
         [/Prorated for/, "按比例計算"],
 
         [/Thank you! ([^ ]+) is now on the waitlist for GitHub Models./, "謝謝！$1 現已進入 GitHub 模型等待名單。"],
-		
+
 		[/Filter contains (\d+) issues?:/, "過濾器包含 $1 個問題："]
     ],
     "title": {
@@ -27971,6 +27986,7 @@ I18N["zh-TW"]["copilot"] = {
             "Start task": "開始任務",
 
             "Started": "開始於",
+            "Completed": "完成於",
 
             "Recent sessions": "最近任務",
 
@@ -28275,7 +28291,7 @@ I18N["zh-TW"]["spark"] = {
                     "Read only": "只讀",
                 "Prompts": "提示詞",
                     "Add AI capabilities by asking in the Iterate panel. View and edit the prompts powering those features here.": "在 Iterate 面板中提出需求即可添加 AI 能力。你可以在這裡查看和編輯驅動這些功能的提示詞。",
-                    
+
                     "We couldn't load your data": "無法加載你的數據",
                         "Please try again. If the problem persists, try again later.": "請重試。如果問題仍然存在，請稍後再試。",
                 "Assets": "素材",
