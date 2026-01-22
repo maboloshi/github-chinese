@@ -8034,6 +8034,13 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "how to file a counter notice": "如何提交反通知",
             ". If you have any questions about the process or the risks in filing a counter notice, we suggest that you consult with a lawyer.": "。如果您对提交反通知的流程或风险有任何疑问，我们建议您咨询律师。",
 
+            // 仓库包含危险内容
+            "This repository contains malicious content that may cause technical harms. We have decided to preserve this content for security research purposes. Please exercise CAUTION when clicking links, downloading releases, or otherwise interacting with this repository.": "此仓库包含恶意内容，可能导致技术性损害。出于安全研究目的，我们决定保留此内容。在点击链接、下载发行版或与此仓库进行任何交互时，请务必谨慎。",
+            "Discover other projects on GitHub": "在 GitHub 上探索其他仓库",
+            "View repository": "查看仓库",
+            "Additional resources": "更多资源",
+            "GitHub Community Guidelines": "GitHub 社区准则",
+
              // 用户 浮动信息卡
                 "- same time": "- 时间相同",
                 "Recently edited these files": "最近编辑过这些文件",
@@ -19335,7 +19342,7 @@ I18N["zh-CN"]["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<u
 
         // 部署密钥 页面 /<user-name>/<repo-name>/settings/keys====================================
             "We recommend using": "我们建议使用",
-            "instead for fine grained control over repositories and": "来对存储库进行细粒度控制并",
+            "instead for fine grained control over repositories and": "来对仓库进行细粒度控制并",
             "enhanced security": "增强安全性",
             "use an SSH key to grant readonly or write access to a single repository. They are not protected by a passphrase and can be a security risk if your server is compromised. If you have a complex project or want more fine-grain control over permissions, consider using": "使用 SSH 密钥授予对单个仓库的只读或写入访问权限。它们不受密码保护，如果您的服务器受到威胁，则可能存在安全风险。如果您的项目很复杂或想要更精细地控制权限，请考虑使用",
             "instead.": "。",
