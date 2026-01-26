@@ -9891,6 +9891,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Signed-in user": "已登录用户",
                     // Copilot
                         "Your AI pair programmer": "您的 AI 编程助理",
+                        "Assign to Copilot": "受理给 Copilot",
                     "Exclude assignee": "排除受理人",
                 "Author": "作者",
                     "Has author": "包含作者",
