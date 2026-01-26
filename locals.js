@@ -705,7 +705,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Pricing": "价格",
 
         // 左上角下拉栏 (已登录)
+            "Open menu": "打开菜单",
             "Close menu": "关闭菜单",
+            "Homepage": "主页",
             "Home": "主页",
             "Feed": "动态",
             "Issues": "议题",
