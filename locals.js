@@ -68,7 +68,7 @@ I18N.conf = {
             "tbody", // 代码差异
             ".js-preview-body", // 新建拉取请求 - 正文编辑器预览
         ],
-        'repository/commit': ["td.blob-code"], // 代码差异 分屏/同屏
+        'repository/commit': ["td.blob-code", "div.diff-text-inner"], // 代码差异 分屏/同屏
         'repository/blob': [
             "#highlighted-line-menu-positioner", // 代码视图 存在
             "#repos-sticky-header", // 代码视图 置顶标题
