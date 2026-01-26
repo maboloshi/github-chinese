@@ -10035,6 +10035,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Empty value for": "空值",
                 "Invalid value": "无效值",
                 "for": "对于",
+                "Unbalanced quotation marks": "引号不匹配",
 
             "Order": "顺序",
 
