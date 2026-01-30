@@ -2209,6 +2209,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "forked": "复刻了",
         "from": "来自",
         "for": "",
+        "pushed": "推送",
         "pushed to": "推送到",
         "released": "发布了",
         "published": "发布了",
@@ -2219,6 +2220,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "a repository": "1 个仓库",
         "has a new repository": "创建了仓库",
         "created a repository": "创建了仓库",
+        "a branch in": "一个分支在",
         "created a branch in": "创建了一个分支在",
         "in": "分支在",
         "Forked to": "复刻为",
@@ -2232,6 +2234,13 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "launched their sponsorship page 💖": "推出了他们的赞助页面 💖",
         //[/and (\d+) more/, "和另外 $1 个"],
         "All reactions": "所有看法",
+        "commented on an issue in": "于一个议题发表了评论在",
+        "commented on a pull request in": "于一个拉取请求发表了评论在",
+        "opened a pull request": "打开了一个拉取请求在",
+        "closed a pull request": "关闭了一个拉取请求在",
+        "opened": "打开",
+        "deleted": "删除",
+        "commented on": "发表了评论于",
 
         "published a release": "发布发行版",
         "forked a repository": "复刻仓库",
@@ -2246,6 +2255,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "your repository": "您的仓库",
 
         "Read more": "阅读更多内容",
+        "Load more...": "加载更多……",
 
         "Subscribe to your news feed": "订阅您的新闻提要",
         "Subscribe to the": "订阅", // 组织
@@ -2304,6 +2314,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         // [/(\d+) members?/, "$1 个成员"],
 
+        "Go to organization dashboard": "前往组织仪表板", // 组织
         "Switch dashboard context": "切换默认身份", // 组织
         "Manage organizations": "管理组织", // 组织
         "Create organization": "创建组织", // 组织
@@ -2336,6 +2347,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Assigned to Copilot": "分配给 Copilot",
     },
     "regexp": [ // 正则翻译
+        [/(\d+) pull requests/, "$1 个拉取请求"],
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
         [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
