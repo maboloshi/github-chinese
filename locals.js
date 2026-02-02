@@ -95,6 +95,9 @@ I18N.conf = {
             'table.highlight', // 工作流程文件 源码视图
             '.js-full-logs-container', // 工作流运行日志
         ],
+        'repository/security': [
+            'td.blob-code',
+        ],
         'copilot':[
             '.cm-line',
         ],
@@ -190,6 +193,9 @@ I18N.conf = {
         'repository/wiki': [
             '#wiki-body', // wiki 正文
             'ul.list-style-none.mx-4.px-1', // 右侧目录
+        ],
+        'repository/security': [
+            'td.blob-code',
         ],
         'orgs': [
             'a[itemprop="name codeRepository"]', // 仓库名称
@@ -845,6 +851,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "Semantic issue search": "语义议题搜索",
+                    "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的语义搜索查找问题。在存储库的问题页面上输入自然语言查询，以发现相关的语义索引结果。您还可以结合过滤器和关键字进行传统搜索。",
                 "New Files Changed Experience": "新版文件更改体验",
                     "Feature enabling the new Files Changed Page": "启用新版更改的文件页",
                 "New Files Changed Perf Experiment": "新版更改的文件性能优化",
@@ -860,6 +868,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "so we can improve it!": "以便我们加以改进！",
                 // 出错提示
                     "Sorry, something went wrong and we were not able to fetch the feature previews": "对不起，出了点问题，我们无法获取功能预览",
+                "Changes saved! Please": "更改已保存！请",
+                    "reload": "刷新",
+                    "the page to view the changes.": "页面以查看更改。",
             "Appearance": "外观",
             "Accessibility": "无障碍",
             "Upgrade": "升级",
@@ -1975,11 +1986,16 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
         "Ask anything": "询问任何事",
+        "Ask": "询问",
         "Send": "发送",
         "Feedback": "反馈",
             "Message": "消息",
             "Tell us your feedback on the new dashboard experience":"告诉我们您对新仪表板体验的反馈",
             "Please don’t include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our":"请不要包含敏感、机密或个人信息。您的反馈有助于改进我们的服务",
+
+        // 智能体任务
+            "Start an agent session to create new work or iterate on an existing project.": "启动代理会话以创建新工作或迭代现有项目。",
+            "Start a session": "启动一个会话",
 
         // 新版首页功能区
         "Task": "任务",
@@ -10725,6 +10741,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Merging this pull request will resolve a": "合并此拉取请求将解决",
                 "high": "高",
                 "severity": "严重性",
+                    "Filter alerts by 'high' severity.": "按“高”严重性过滤警报。", // BUG: 不生效
                 "Dependabot alert": "Dependabot 警报",
                 "on": "：",
                 // 首次弹窗
@@ -15585,6 +15602,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
 
         // 具体某条 代码扫描 警报/<user-name>/<repo-name>/security/security/code-scanning/<id>
             "Code scanning alerts": "代码扫描警报",
+            "← Code scanning alerts": "← 代码扫描警报",
             "Speed up the remediatiof this alert with": "加快修复此警报的速度，使用", // BUG: 翻译不生效
                 "Copilot Autofix for CodeQL": "CodeQL 的 Copilot 自动修复",
             "Generate fix": "创建修复",
@@ -15613,6 +15631,9 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                     "The following configurations have reported this alert.": "以下配置已报告此警报。",
                     "Last updated": "最后更新",
             "Appeared in branch": "出现在分支",
+            "Show paths": "显示路径",
+                "Source": "源头",
+                "Sink": "汇点",
 
         // /<user-name>/<repo-name>/security/code-scanning/tools/CodeQL/status
             "Scanned files": "扫描文件",
@@ -15622,6 +15643,26 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "· Last scan": "· 最近一次扫描",
             "Menu": "菜单",
             "View setup type": "查看设置类型",
+
+        // /<user-name>/<repo-name>/security/code-scanning/tools/CodeQL/status/configurations/automatic
+            // 设置类型
+                "This setup is working as expected.": "此设置正在按预期工作。",
+                // 详细信息
+                    "Setup type": "设置类型",
+                    "First scan": "首次扫描",
+                    "Last scan": "最后扫描",
+                "Scan events": "扫描事件",
+                    "Push to": "推送到",
+                    "Pull request to": "拉取请求到",
+            "Configurations": "配置",
+                "last scan": "最后扫描", // BUG: 不生效
+                "This configuratiis working as expected.": "此配置正在按预期工作", // BUG: 不生效
+                "Configuratimenu": "配置菜单", // BUG: 不生效
+                    "Delete configuration": "删除配置",
+                    "Download list of rules used": "下载所用规则列表",
+                // 详细信息
+                    "Configuration": "配置",
+                    "Tool version": "工具版本",
 
         // 机密扫描警报 /<user-name>/<repo-name>/security/secret-scanning
             // 顶端窗口
@@ -15817,6 +15858,8 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `初次检测 ${translatedDate}`;
         }],
+        [/(\d+) steps? in (.+)/, "$1 个步骤在 $2"],
+        [/Step (\d+)/, "步骤 $1"]
     ],
     "title": {
         "regexp": [
@@ -15826,6 +15869,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             [/Dependabot alerts?/, "Dependabot 警报"],
             [/Code scanning alerts?/, "代码扫描警报"],
             [/Secret scanning/, "机密扫描"],
+            [/Code scanning tool status/, "代码扫描工具状态"],
         ],
     },
 };
@@ -18275,6 +18319,14 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                 "There is a maximum limit of": "最多",
 
                 "days": "天",
+
+            "Cache": "缓存",
+                "Choose the repository settings for cache.": "选择此存储库的缓存设置。",
+                "Cache retention": "缓存保留",
+                    "Retention can be set up to": "保留可以设置为",
+                "Cache size eviction limit": "缓存大小逐出限制",
+                    "Use this limit to control when cache evictions occur. Exceeding this limit will trigger evictions of the least recently used cache. Note this limit should not be used for controlling costs.": "使用此限制来控制何时发生缓存逐出。超过此限制将触发最近最少使用的缓存的逐出。请注意，此限制不应用于控制成本。",
+                    "Total cache size can be set up to": "总缓存大小可设置为",
 
             "Fork pull request workflows": "复刻拉取请求工作流程",
                 "Run workflows from fork pull requests": "从复刻拉取请求运行工作流程",
@@ -27678,6 +27730,7 @@ I18N["zh-CN"]["copilot"] = {
                         "Are you sure you want to delete this chat? This action cannot be undone.": "您确定要删除该聊天吗？此操作无法撤销。",
 
         // 中间
+            "Ask": "询问",
             // 模型选择窗
                 "Models": "模型",
                     "Fast and cost-efficient": "快速、经济高效",
