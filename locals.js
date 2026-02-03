@@ -10781,6 +10781,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "started work": "开工",
             "on behalf of": "代表",
                 "View session": "查看",
+            "finished work": "完工",
             "finished work on behalf of": "完工，代表",
             "stopped work on behalf of": "停工，代表",
                 "due to an error": "因为错误",
@@ -12219,6 +12220,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             // 用户筛选
                 "All users": "所有用户",
                 "Find a user...": "寻找一个用户……",
+                "Filter on author": "筛选作者：",
                 "View commits for all users": "查看所有用户的提交",
             // 时间筛选
                 "All time": "所有时间",
@@ -15609,6 +15611,8 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
 
         // 具体某条 代码扫描 警报/<user-name>/<repo-name>/security/security/code-scanning/<id>
             "Code scanning alerts": "代码扫描警报",
+            // 状态词
+                "Dismissed": "关闭",
             "← Code scanning alerts": "← 代码扫描警报",
             "Speed up the remediatiof this alert with": "加快修复此警报的速度，使用", // BUG: 翻译不生效
                 "Copilot Autofix for CodeQL": "CodeQL 的 Copilot 自动修复",
