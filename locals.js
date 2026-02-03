@@ -9908,6 +9908,13 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     // Copilot
                         "Your AI pair programmer": "您的 AI 编程助理",
                         "Assign to Copilot": "受理给 Copilot",
+                        // 窗口
+                            "Assign Copilot to issue": "分配议题给 Copilot",
+                            "Feedback": "反馈",
+                                "Copilot will open a pull request using the issue's description, comments, and the additional prompt if you provide one. Choose a custom agent to tailor Copilot for specific tasks.": "Copilot 将根据议题的描述、评论以及您提供的额外提示词（若有）来开启拉取请求。您可以选择自定义智能体，以便针对特定任务定制 Copilot。",
+                                "Optional prompt": "提示词（可选）",
+                                    "Provide additional instructions for Copilot": "提供可选提示给 Copilot",
+                                "Auto": "自动",
                     "Exclude assignee": "排除受理人",
                 "Author": "作者",
                     "Has author": "包含作者",
