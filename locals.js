@@ -1994,7 +1994,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Please don’t include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our":"请不要包含敏感、机密或个人信息。您的反馈有助于改进我们的服务",
 
         // 智能体任务
-            "Start an agent session to create new work or iterate on an existing project.": "启动代理会话以创建新工作或迭代现有项目。",
+            "Start an agent session to create new work or iterate on an existing project.": "启动智能体会话以新建工作或迭代现有项目。",
             "Start a session": "启动一个会话",
 
         // 新版首页功能区
