@@ -758,7 +758,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "You have unread notifications": "您有未读通知",
 
         // 右上角新建按钮下拉菜单
-            "Create New...": "新建…",
+            "Create new...": "新建…",
             "Create new…": "新建…",
                 "New repository": "新建仓库",
                 "Import repository": "导入仓库",
