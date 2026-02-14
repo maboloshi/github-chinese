@@ -28790,7 +28790,7 @@ I18N["zh-CN"]["repository/agents"] = {
                 "View Copilot Coding Agent capabilities": "查看 Copilot 编程智能体功能",
 
         // 免费试用提示
-        "Available on paid plans. Try it with Copilot Pro — free for 30 天之前.": "仅在付费计划中可用。立即试用 Copilot Pro，享受 30 天免费体验。",
+        "Available on paid plans. Try it with Copilot Pro — free for 30 days.": "仅在付费计划中可用。立即试用 Copilot Pro，享受 30 天免费体验。",
             "Start free trial": "开始免费试用",
 
         // 左侧Tab
