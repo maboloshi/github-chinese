@@ -7873,7 +7873,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
             "User permissions": "用户权限",
             "Repository permissions": "仓库权限",
             "Organization permissions": "组织权限",
-           
+
 
             // 具体权限暂时翻译 太麻烦 主要他将读/写具体的权限合并描述
 
@@ -10926,6 +10926,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // 拉取请求状态
             "Review requested": "请求审查",
+            "New changes require approval from someone other than the last pusher.": "新更改需要最后推送者以外的其他人批准。",
             "Review has been requested on this pull request. It is not required to merge.": "此拉取请求已请求进行审查。这不是合并的必要条件。",
             "Learn more about requesting a pull request review.": "了解更多关于申请拉取请求审核的信息。",
             // [/(\d+) pending reviewers?/, "$1 名待审者"],
@@ -13357,8 +13358,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
                 "You have hit the limit of pages.": "您已到达页面访问上限。",
                 "You could filter by":"您可以按以下筛选",
-                "to continue reviewing older workflow runs.":"继续查看旧的工作流程运行。", 
-                
+                "to continue reviewing older workflow runs.":"继续查看旧的工作流程运行。",
+
 
             // 反馈提醒
                 "Help us improve GitHub Actions": "帮助我们改进 GitHub Actions",
