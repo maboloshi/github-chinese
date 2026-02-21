@@ -11691,7 +11691,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合并页面
 
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
-        [/(\d+) in progress?/, "$1 个正在进行的检查"],
+        [/(\d+) in progress(es)?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
         [/(\d+) successful and (\d+) failing checks?/, "$1 个成功, $2 个失败检查"],
         [/(\d+) skipped, (\d+) successful, and (\d+) failing checks?/, "$1 个跳过, $2 个成功, $3 个失败检查"],
@@ -13639,7 +13639,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                     "This artifact has expired and you can no longer download it": "此附件已过期，您无法再下载",
             "Annotations": "说明",
                 "The self-hosted runner lost communication with the server. Verify the machine is running and has a healthy network connection. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.": "自行托管的运行器与服务器通信中断。请确认机器正在运行且网络连接正常。工作流中任何终止运行器进程、耗尽 CPU/内存或阻塞其网络访问的操作都可能导致此错误。",
-                "The job has exceeded the maximum execution time of 6h0m0s": "该作业已超过最大执行时间 6h0m0s",
+                "The job has exceeded the maximum execution time of 6h0m0s": "该作业已超过最大执行时间 6 小时",
                 // [/1 error/, "$1 个错误"],
 
         // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
@@ -18421,7 +18421,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
         // 运行器详情页面 /<user-name>/<repo-name>/settings/actions/runners/<id>
             "Configuration": "配置",
             "Labels": "标签",
-            "Labels are values used with the": "标签（Labels）是在工作流的 YAML 文件中与",
+            "Labels are values used with the": "标签是在工作流的 YAML 文件中与",
             "key in your workflow's YAML to send jobs to specific runners. To copy a label, click on it.": "键配合使用的值，用于将任务分配到特定的运行器。要复制标签，请单击它。",
             "Learn more about labels.": "了解有关标签的更多信息。",
             "Active Job": "活跃中的作业",
