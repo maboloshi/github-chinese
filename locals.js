@@ -11360,6 +11360,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     // 顶部提醒
                         "You need to leave a comment indicating the requested changes.": "您需要留下评论，说明所要求的更改。",
                 "Cancel review": "取消审核",
+                "Commit suggestions": "提交建议",
+                "Discard batch": "放弃批处理",
+                    "Discard batch?": "放弃批处理？",
+                    "Are you sure you want to discard this batch? This will remove all": "您确定要放弃此批处理吗？",
+                    "from the batch.": "将从批处理中移除。",
+                    "Discard": "放弃",
                 "pending": "条待处理",
                 "comment": "评论",
                 "comments": "评论",
@@ -11437,6 +11443,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Sign off and commit changes": "签署并提交更改",
                     "Applying commit...": "正在应用提交…",
 
+                "Apply suggestions": "应用建议",
+                    "Suggestions to apply": "待应用的建议",
+                    "There was an error trying to commit changes.": "尝试提交更改时出错。",
+                
                 "This diff has recently been updated.": "该差异最近已更新。",
                 "Refresh and try again.": "刷新并重试。",
 
@@ -11756,6 +11766,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 建议更改
         //[/on this commit as ([^@]+@[^\n]+)/, "提交，身份为 $1"],
+        [/Remove suggestion from (.+)/,"从 $1 中移除建议"],
+        [/suggestions?/, "个建议"],
 
         // Copilot
         [/Copilot has encountered an internal error. If the problem persists, please contact GitHub Support, including the request ID `([^ ]+)`. To retry, leave a comment on this pull request asking Copilot to try again./, "Copilot 遇到了内部错误。如果问题仍然存在，请联系 GitHub 支持，并附上请求 ID `$1`。要重试，请在此拉取请求中发表评论，要求 Copilot 再试一次。"],
