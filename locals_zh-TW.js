@@ -7873,7 +7873,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
             "User permissions": "用戶權限",
             "Repository permissions": "倉庫權限",
             "Organization permissions": "組織權限",
-           
+
 
             // 具體權限暫時翻譯 太麻煩 主要他將讀/寫具體的權限合併描述
 
@@ -8104,6 +8104,8 @@ I18N["zh-TW"]["repository-public"] = { // 倉庫 - 公共部分
                 // [/(\d+) members?/, "$1 個成員"],
 
             "Some checks haven't completed yet": "部分檢查還未完成",
+            "Started": "開始於",
+            "— This check has started...": "— 檢查已開始...",
 
             "Jump to bottom": "跳到底部", //小屏模式
             "Forked from": "複刻自", // 同上（發行版未登錄頁面）
@@ -10926,6 +10928,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
             // 拉取請求狀態
             "Review requested": "請求審查",
+            "New changes require approval from someone other than the last pusher.": "新更改需要最後推送者以外的其他人批准。",
             "Review has been requested on this pull request. It is not required to merge.": "此拉取請求已請求進行審查。這不是合併的必要條件。",
             "Learn more about requesting a pull request review.": "瞭解更多關於申請拉取請求審核的信息。",
             // [/(\d+) pending reviewers?/, "$1 名待審者"],
@@ -11688,6 +11691,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合併頁面
 
         [/(\d+) in progress checks?/, "$1 個正在進行的檢查"],
+        [/(\d+) in progress(es)?/, "$1 個正在進行的檢查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 個跳過, $2 個成功檢查"],
         [/(\d+) successful and (\d+) failing checks?/, "$1 個成功, $2 個失敗檢查"],
         [/(\d+) skipped, (\d+) successful, and (\d+) failing checks?/, "$1 個跳過, $2 個成功, $3 個失敗檢查"],
@@ -13357,8 +13361,8 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
                 "You have hit the limit of pages.": "您已到達頁面訪問上限。",
                 "You could filter by":"您可以按以下篩選",
-                "to continue reviewing older workflow runs.":"繼續查看舊的工作流程運行。", 
-                
+                "to continue reviewing older workflow runs.":"繼續查看舊的工作流程運行。",
+
 
             // 反饋提醒
                 "Help us improve GitHub Actions": "幫助我們改進 GitHub Actions",
@@ -13634,11 +13638,15 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
                 "Expired": "已過期",
                     "This artifact has expired and you can no longer download it": "此附件已過期，您無法再下載",
             "Annotations": "說明",
+                "The self-hosted runner lost communication with the server. Verify the machine is running and has a healthy network connection. Anything in your workflow that terminates the runner process, starves it for CPU/Memory, or blocks its network access can cause this error.": "自行託管的運行器與服務器通信中斷。請確認機器正在運行且網絡連接正常。工作流中任何終止運行器進程、耗盡 CPU/內存或阻塞其網絡訪問的操作都可能導致此錯誤。",
+                "The job has exceeded the maximum execution time of 6h0m0s": "該作業已超過最大執行時間 6 小時",
                 // [/1 error/, "$1 個錯誤"],
 
         // /<user-name>/<repo-name>/actions/runs/<id>/job/<job-id>
             "The logs for this run have expired and are no longer available.": "此運行日誌已過期，不再可用。",
             "This job was cancelled": "作業已取消",
+            "This step has been truncated due to its large size. View the raw logs from the": "此步驟因內容過大，已將其截斷。工作流運行完成後，從",
+            "menu once the workflow run has completed.": "菜單中查看原始日誌。",
 
             "Started": "開始於",
             "succeeded": "成功於",
@@ -18406,6 +18414,23 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 倉庫設置 - 操作 /<user
             "There are no runners configured": "暫無設置運行器",
             "Learn more about using runners": "瞭解更多關於使用運行器的信息",
             "to run actions on your own servers.": "在您自己的服務器上運行操作的信息。",
+            "Idle": "空閒",
+            "Active": "活躍",
+            "Offline": "離線",
+
+        // 運行器詳情頁面 /<user-name>/<repo-name>/settings/actions/runners/<id>
+            "Configuration": "配置",
+            "Labels": "標籤",
+            "Labels are values used with the": "標籤是在工作流的 YAML 文件中與",
+            "key in your workflow's YAML to send jobs to specific runners. To copy a label, click on it.": "鍵配合使用的值，用於將任務分配到特定的運行器。要複製標籤，請單擊它。",
+            "Learn more about labels.": "瞭解有關標籤的更多信息。",
+            "Active Job": "活躍中的作業",
+            "There are currently no running jobs": "當前沒有正在運行的作業",
+            "Add `": "在工作流的 YAML 文件中添加 `",
+            "` to your workflow's YAML to send jobs to this runner.": "`，即可將任務發送至此運行器。",
+            "In progress": "進行中",
+            "Cancel run": "取消運行",
+            "View workflow file": "查看工作流文件",
 
         // 創建運行器頁面 /<user-name>/<repo-name>/settings/actions/runners/new
             // [/\/ Add new self-hosted runner ·/, "/ 創建自託管運行器 ·"],
@@ -25018,6 +25043,9 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
 
             "Standard GitHub-hosted runners": "標準 GitHub 託管運行器",
             "Ready-to-use runners managed by GitHub.": "由 GitHub 管理的即用型運行器。",
+            "Idle": "空閒",
+            "Active": "活躍",
+            "Offline": "離線",
             // [/(\d+) active jobs?/ ,"$1 個活躍的工作"]
 
         // 由 GitHub 託管的運行器 /organizations/<org-login>/settings/actions/hosted-runners
