@@ -13605,6 +13605,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "opened": "打开",
             "reopened": "重新打开",
             "commented on": "评论于",
+            "opened by": "打开者",
 
             // 状态
                 "Success": "成功",
@@ -13686,7 +13687,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "The run was canceled by": "取消由", // 原文过于啰嗦
             "Pull request": "拉取请求",
                 "synchronize by": "同步者",
-                "opened by": "打开者",
+                "synchronize": "同步自",
                 "reopened by": "重新打开者",
             "The operation was canceled.": "已取消。",
             "Release": "发行版",
@@ -13721,6 +13722,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
         [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
+        [/Download ([^ ]+) \(opens in a new tab\)/, "下载 $1（在新标签中打开）"],
         [/Download ([^ ]+)/, "下载 $1"],
         [/Delete ([^ ]+)/, "删除 $1"],
         [/(\d+) errors?/, "$1 个错误"],
@@ -21463,6 +21465,9 @@ I18N["zh-CN"]["search"] = { // 搜索页面
             "More languages...": "更多语言…",
 
             // &type=code
+            "Files with identical content are grouped together.": "内容相同的文件已归为一组。",
+                "Hide these extra files instead": "隐藏这些重复文件",
+
             "More repositories...": "更多仓库…",
             "Paths": "路径",
             "More directories...": "更多路径…",
