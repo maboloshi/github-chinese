@@ -16999,6 +16999,8 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 // 顶部提醒
                 "Repository name was not changed": "仓库名称未更改",
 
+                "Renaming...": "重命名中…",
+
             "Template repository": "模板库",
                 "Template repositories let users generate new repositories with the same directory structure and files.": "模板仓库允许用户生成具有相同目录结构和文件的新仓库。",
                 "A repository with LFS content cannot be used as a template.": "带有 LFS 内容的仓库不能作为模板使用。",
@@ -17119,6 +17121,16 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
             // 项目
             "Projects on GitHub are created at the repository owner's level (organization or user) and can be linked to a repository's Projects tab. Projects are suitable for cross-repository development efforts such as feature work, complex product roadmaps or even Issue triage.": "GitHub 上的项目是在仓库所有者级别（组织或用户）创建的，并且可以链接到仓库的项目选项卡。项目适用于跨仓库的开发工作，例如功能工作、复杂的产品路线图，甚至问题分流。",
+
+            // 拉取请求
+            "Pull requests allow others to suggest changes to your repository.": "拉取请求允许其他人向您的代码仓库提出更改建议。",
+            "Pull request permissions": "拉取请求权限",
+                "Creation allowed by:": "允许创建：",
+                    "All users": "所有用户",
+                    "Anyone can create a pull request": "任何人都可以创建拉取请求",
+                    "Collaborators only": "仅限协作者",
+                    "Only collaborators can create PRs": "仅协作者可以创建拉取请求",
+                "If restricted, pull requests will still be readable by everyone who can see this repository.": "即使设置了限制，所有能够查看此存储库的人仍然可以阅读拉取请求。",
 
             // "Pull Requests": "拉取请求",
                 "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "当合并拉取请求时，您可以允许合并提交、压缩或变基的任意组合。必须至少启用一个选项。如果您在任何受保护分支上启用了线性历史要求，则必须启用压缩或变基。",
