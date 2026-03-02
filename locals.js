@@ -11393,6 +11393,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Swipe": "拖拽",
                 "Onion Skin": "渐变",
 
+            // 大型拉取请求提示
+            "This page has been optimized for large pull requests. Some browser features (like Find on Page or Select All) may not work as expected.": "此页面已针对大型拉取请求进行了优化。某些浏览器功能（如页面查找或全选）可能无法正常工作。",
+                "Switch to single file mode": "切换至单文件模式",
+
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
 
