@@ -22219,6 +22219,7 @@ I18N["zh-CN"]["login/oauth"] = { // 应用授权
         // 选择账户授权 https://github.com/login/oauth/select_account?*
             //"Select user to authorize": "选择用户进行授权",
             //"Signed in as": "登录身份为",
+            "From the options below, choose which account you would like to use to authorize this app.": "从下面的选项中，选择您要使用哪个帐户来授权此应用程序。",
             "Use a different account": "使用其他账户",
 
     },
