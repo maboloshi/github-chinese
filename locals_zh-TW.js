@@ -758,7 +758,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "You have unread notifications": "您有未讀通知",
 
         // 右上角新建按鈕下拉菜單
-            "Create New...": "新建…",
+            "Create new...": "新建…",
             "Create new…": "新建…",
                 "New repository": "新建倉庫",
                 "Import repository": "導入倉庫",
@@ -13605,6 +13605,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "opened": "打開",
             "reopened": "重新打開",
             "commented on": "評論於",
+            "opened by": "打開者",
 
             // 狀態
                 "Success": "成功",
@@ -13686,7 +13687,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "The run was canceled by": "取消由", // 原文過於囉嗦
             "Pull request": "拉取請求",
                 "synchronize by": "同步者",
-                "opened by": "打開者",
+                "synchronize": "同步自",
                 "reopened by": "重新打開者",
             "The operation was canceled.": "已取消。",
             "Release": "發行版",
@@ -13721,6 +13722,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
         [/Found (\d+) workflows?/, "發現 $1 個工作流程"],
         [/(\d+) workflow runs?$/, "$1 個工作流程運行"],
         [/(\d+) workflow runs? results?/, "$1 個工作流程運行結果"],
+        [/Download ([^ ]+) \(opens in a new tab\)/, "下載 $1（在新標籤中打開）"],
         [/Download ([^ ]+)/, "下載 $1"],
         [/Delete ([^ ]+)/, "刪除 $1"],
         [/(\d+) errors?/, "$1 個錯誤"],
@@ -16999,6 +17001,8 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
                 // 頂部提醒
                 "Repository name was not changed": "倉庫名稱未更改",
 
+                "Renaming...": "重命名中…",
+
             "Template repository": "模板庫",
                 "Template repositories let users generate new repositories with the same directory structure and files.": "模板倉庫允許用戶生成具有相同目錄結構和文件的新倉庫。",
                 "A repository with LFS content cannot be used as a template.": "帶有 LFS 內容的倉庫不能作為模板使用。",
@@ -17119,6 +17123,16 @@ I18N["zh-TW"]["repository/settings"] = { // 倉庫設置 - 通常 /<user-name>/<
 
             // 專案
             "Projects on GitHub are created at the repository owner's level (organization or user) and can be linked to a repository's Projects tab. Projects are suitable for cross-repository development efforts such as feature work, complex product roadmaps or even Issue triage.": "GitHub 上的專案是在倉庫所有者級別（組織或用戶）創建的，並且可以鏈接到倉庫的專案選項卡。專案適用於跨倉庫的開發工作，例如功能工作、複雜的產品路線圖，甚至問題分流。",
+
+            // 拉取請求
+            "Pull requests allow others to suggest changes to your repository.": "拉取請求允許其他人向您的程式碼倉庫提出更改建議。",
+            "Pull request permissions": "拉取請求權限",
+                "Creation allowed by:": "允許創建：",
+                    "All users": "所有用戶",
+                    "Anyone can create a pull request": "任何人都可以創建拉取請求",
+                    "Collaborators only": "僅限協作者",
+                    "Only collaborators can create PRs": "僅協作者可以創建拉取請求",
+                "If restricted, pull requests will still be readable by everyone who can see this repository.": "即使設置了限制，所有能夠查看此存儲庫的人仍然可以閱讀拉取請求。",
 
             // "Pull Requests": "拉取請求",
                 "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled. If you have linear history requirement enabled on any protected branch, you must enable squashing or rebasing.": "當合併拉取請求時，您可以允許合併提交、壓縮或變基的任意組合。必須至少啟用一個選項。如果您在任何受保護分支上啟用了線性歷史要求，則必須啟用壓縮或變基。",
@@ -21463,6 +21477,9 @@ I18N["zh-TW"]["search"] = { // 搜索頁面
             "More languages...": "更多語言…",
 
             // &type=code
+            "Files with identical content are grouped together.": "內容相同的文件已歸為一組。",
+                "Hide these extra files instead": "隱藏這些重複文件",
+
             "More repositories...": "更多倉庫…",
             "Paths": "路徑",
             "More directories...": "更多路徑…",
