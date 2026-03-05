@@ -9225,6 +9225,12 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
+            // 超过 1000 个文件
+            "Sorry, we had to truncate this directory to": "抱歉，我们已将该目录截断至",
+                "files.": "文件。",
+                "entries were": "条目",
+                "omitted from the list. Latest commit info may be omitted.": "被省略。最新提交信息可能会省略。",
+
         // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
             "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
             "file.": "文件。",
