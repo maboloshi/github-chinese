@@ -9225,7 +9225,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
-            // 超过 1000 个文件
+            // 超过 1000 个文件截断提示
             "Sorry, we had to truncate this directory to": "抱歉，我们已将该目录截断至",
                 "files.": "文件。",
                 "entries were": "条目",
