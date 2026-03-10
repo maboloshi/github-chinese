@@ -16009,6 +16009,13 @@ I18N["zh-CN"]["repository/tasks"] = {
         "Stop": "停止",
         "Setting up environment": "设置环境",
         "View repository": "查看仓库",
+
+        "Archive session": "存档任务",
+            "Are you sure you want to archive this session?": "您确定要存档此任务吗？",
+            "Yes, archive": "确定",
+        
+        "This pull request was merged. To continue iterating,": "此拉取请求已合并。若要继续迭代，",
+            "start a new session": "请开始一个新会话",
     },
     "regexp": [
         [/View (\d+) files?/, "查看 $1 个文件"],
