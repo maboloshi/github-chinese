@@ -1676,6 +1676,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Copilot started work": "Copilot 开始工作",
             "Summary": "摘要",
             "Copy head branch name to clipboard": "复制头分支名称到剪贴板",
+            "Edit title": "编辑标题",
 
     },
     "regexp": [ // 正则翻译
@@ -10669,6 +10670,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Are you sure you want to change the base?": "您确定要更改基础分支吗？",
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
+
+            "View status": "查看状态",
+            "Able to merge": "可以合并",
+                "Merge status": "合并状态",
+                "What's new": "新内容",
+                "Close merge status": "关闭",
 
             // 代码 下拉菜单
                 "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
