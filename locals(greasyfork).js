@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|repos|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -9225,6 +9225,12 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             // 编辑按钮
             "Edit README": "编辑 README", // md 文件
 
+            // 超过 1000 个文件截断提示
+            "Sorry, we had to truncate this directory to": "抱歉，我们已将该目录截断至",
+                "files.": "文件。",
+                "entries were": "条目",
+                "omitted from the list. Latest commit info may be omitted.": "被省略。最新提交信息可能会省略。",
+
         // 文件管理器 - 议题模板 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
             "Customize the issue creation experience with a": "自定义议题的创建模板使用一个",
             "file.": "文件。",
@@ -11392,6 +11398,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "2-up": "并排",
                 "Swipe": "拖拽",
                 "Onion Skin": "渐变",
+
+            // 大型拉取请求提示
+            "This page has been optimized for large pull requests. Some browser features (like Find on Page or Select All) may not work as expected.": "此页面已针对大型拉取请求进行了优化。某些浏览器功能（如页面查找或全选）可能无法正常工作。",
+                "Switch to single file mode": "切换至单文件模式",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -15976,6 +15986,26 @@ I18N["zh-CN"]["repository/invitations"] = { // 仓库 - 接受邀请页面
     "regexp": [ // 正则翻译
         [/of ([^ ]+) will be able to see:/, "$1 将能够看到："], // 邀请页
         [/Block ([^ ]+)/, "拉黑 $1"],
+    ],
+};
+
+I18N["zh-CN"]["repository/tasks"] = {
+    "static": {
+        "You": "您",
+        "created the session": "创建此任务",
+
+        "session": "任务",
+        "premium request": "高级请求",
+
+        "started a task": "开始任务",
+
+        "Stop": "停止",
+        "Setting up environment": "设置环境",
+        "View repository": "查看仓库",
+    },
+    "regexp": [
+        [/View (\d+) files?/, "查看 $1 个文件"],
+        [/Edit (\d+) files?/, "编辑 $1 个文件"],
     ],
 };
 
@@ -22195,6 +22225,7 @@ I18N["zh-CN"]["login/oauth"] = { // 应用授权
         // 选择账户授权 https://github.com/login/oauth/select_account?*
             //"Select user to authorize": "选择用户进行授权",
             //"Signed in as": "登录身份为",
+            "From the options below, choose which account you would like to use to authorize this app.": "从下面的选项中，选择您要使用哪个帐户来授权此应用程序。",
             "Use a different account": "使用其他账户",
 
     },
