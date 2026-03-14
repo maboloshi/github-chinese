@@ -343,7 +343,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Security log": "安全日志",
         "Sponsorship Log": "赞助日志",
         "GitHub Apps": "GitHub 应用",
-        "Developer applications": "开发者应用",
+        "Developer applications": "开发人员应用",
         "Personal Access Tokens": "个人访问令牌",
         "Register new GitHub App": "注册新 GitHub 应用",
         "New OAuth Application": "新 OAuth 应用",
@@ -391,7 +391,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Your stars": "我的星标",
         "Your starred repositories": "我的星标仓库",
         "Your starred topics": "我的星标主题",
-        "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
+        "Register for the GitHub Developer Program": "注册 GitHub 开发人员计划",
         "Codespaces": "代码空间",
         "Codespace Templates": "代码空间模版",
         "Create new codespace": "创建代码空间",
@@ -593,7 +593,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Manage and compare prompts": "管理和比较提示词",
                     "MCP Registry": "MCP 互联",
                         "Integrate external tools": "集成外部工具",
-                "DEVELOPER WORKFLOWS": "开发者工作流",
+                "DEVELOPER WORKFLOWS": "开发人员工作流",
                     // 操作
                         "Automate any workflow": "自动化任何工作流程",
                     // 代码空间
@@ -671,7 +671,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Enterprise": "企业",
                 "ENTERPRISE SOLUTIONS": "企业级解决方案",
                     "Enterprise platform": "企业平台",
-                        "AI-powered developer platform": "AI 驱动的开发者平台",
+                        "AI-powered developer platform": "AI 驱动的开发人员平台",
                 "AVAILABLE ADD-ONS": "可选附加组件",
                     // GitHub 高级安全
                         "Enterprise-grade security features": "企业级安全功能",
@@ -1618,7 +1618,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Explore the latest Copilot launches from Universe ’25": "探索 Universe ’25 的最新 Copilot 启动",
             "See what’s new": "查看最新内容",
-            "Explore GitHub’s latest tools shaping agentic software and developer choice.": "探索 GitHub 最新的工具，塑造智能化的软件和开发者选择。",
+            "Explore GitHub’s latest tools shaping agentic software and developer choice.": "探索 GitHub 最新的工具，塑造智能化的软件和开发人员选择。",
 
             "Select a custom agent": "选择自定义智能体",
                 "Create an agent": "新建智能体",
@@ -2114,7 +2114,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
 
         // 中间栏
         "Feed": "动态",
-        "The home for all developers — including you.": "所有开发者的家园——包括您。",
+        "The home for all developers — including you.": "所有开发人员的家园——包括您。",
         "Welcome to your personal dashboard, where you can find an introduction to how GitHub works, tools to help you build software, and help merging your first lines of code.": "欢迎来到您的个人仪表板，在这里您可以看到关于 GitHub 工作原理的介绍，帮助您构建软件的工具，以及帮助您合并您的第一行代码。",
         "Learn with a tutorial project": "通过教程项目学习",
             "Introduction to GitHub": "GitHub 简介",
@@ -2446,7 +2446,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
             "Achievements": "成就",
             "Highlights": "高光时刻",
                 "Label: Pro": "标签：专业版",
-            "Developer Program Member": "开发者计划成员",
+            "Developer Program Member": "开发人员计划成员",
             "security advisory credits": "个安全咨询分",
             "security advisory credit": "个安全咨询分",
             "Organizations": "组织",
@@ -3253,7 +3253,7 @@ I18N["zh-CN"]["page-profile/sponsors"] = { // 个人首页 - 赞助标签卡
 
         // 赞助标签卡 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // [/is sponsoring/, "正在赞助"],
-            "organization or developer:": "个组织或开发者：",
+            "organization or developer:": "个组织或开发人员：",
     },
     "regexp": [ // 正则翻译
         [/is sponsoring/, "正在赞助"],
@@ -3591,7 +3591,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
             "Security log": "安全日志",
             "Sponsorship log": "赞助日志",
 
-        "Developer settings": "开发者设置",
+        "Developer settings": "开发人员设置",
 
     },
     "regexp": [ // 正则翻译
@@ -3682,12 +3682,12 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
                     "Audit log": "审计日志",
                 "Deleted repositories": "删除的仓库",
 
-            "Developer settings": "开发者设置",
+            "Developer settings": "开发人员设置",
                 "OAuth Apps": "OAuth 应用",
                 "Publisher Verification": "发布者验证",
             "Account settings": "账户设置",
 
-            "Developer Settings": "开发者设置"
+            "Developer Settings": "开发人员设置"
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
@@ -3772,7 +3772,7 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
                 "Show Achievements on my profile": "在我的个人资料上显示成就",
                     "Your achievements will be shown on your profile.": "您的成就将显示在您的个人资料中。",
 
-            "GitHub Developer Program": "GitHub 开发者计划",
+            "GitHub Developer Program": "GitHub 开发人员计划",
                 "has guides, API and webhook references, information about creating GitHub Apps and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "包含指南、API 和 Web 钩子、有关创建 GitHub 应用的信息以及用于构建与 GitHub 集成的应用的其他资源。确保您的联系信息是最新的。感谢您的加入！",
 
                 "Support email address": "技术支持电子邮件地址",
@@ -3783,10 +3783,10 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
                 "Leave the program": "退出计划",
 
                 "Building an application, service, or tool that integrates with GitHub?": "构建与 GitHub 集成的应用、服务或工具？",
-                "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
+                "Join the GitHub Developer Program": "加入 GitHub 开发人员计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
-                "GitHub developer program": "GitHub 开发者计划",
-                "Developer site": "开发者站点",
+                "GitHub developer program": "GitHub 开发人员计划",
+                "Developer site": "开发人员站点",
 
             "Jobs profile": "就业状态",
             "Available for hire": "求 HR 带走",
@@ -4551,16 +4551,16 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "per month": "每月",
 
                 "GitHub Free": "GitHub 免费版",
-                "The basics for all developers": "基础计划（所有开发者）",
+                "The basics for all developers": "基础计划（所有开发人员）",
                 //"GitHub Pro": "GitHub 专业",
 
-                "The basics for organizations and developers": "组织和开发者的基本计划", // 组织设置
+                "The basics for organizations and developers": "组织和开发人员的基本计划", // 组织设置
                 "Unlimited public/private repos": "无限的公共/私有仓库",
                 "Unlimited collaborators": "无限协作者",
                 "2,000 Actions minutes/month": "每月 2,000 分钟 GitHub Actions",
                 "500MB of Packages storage": "500MB 的 GitHub Packages 存储空间",
-                "120 core-hours of Codespaces compute per developer": "每位开发者拥有 120 个核心小时的代码空间计算能力",
-                "15GB of Codespaces storage per developer": "每位开发者拥有 15GB 的代码空间存储空间",
+                "120 core-hours of Codespaces compute per developer": "每位开发人员拥有 120 个核心小时的代码空间计算能力",
+                "15GB of Codespaces storage per developer": "每位开发人员拥有 15GB 的代码空间存储空间",
                 "Community support": "社区支持",
                 // pro
                     "Downgrade to Free": "降级至免费版",
@@ -4667,7 +4667,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Create a new organization": "创建新组织",
 
             "Start your first organization": "开始您的第一个组织",
-                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "通过 CI/CD、Dependabot 以及全球最大的开发者社区，GitHub 为您的团队提供了交付更优质软件所需的一切，让开发更高效、更快捷。",
+                "With CI/CD, Dependabot, and the world's largest developer community, GitHub gives your team everything they need to ship better software faster": "通过 CI/CD、Dependabot 以及全球最大的开发人员社区，GitHub 为您的团队提供了交付更优质软件所需的一切，让开发更高效、更快捷。",
                 "Create an organization": "创建组织",
 
             "Marketplace apps": "市场应用",
@@ -5070,7 +5070,7 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
 
         "GitHub Education": "GitHub 教育",
 
-        "Free GitHub developer resources for students and teachers": "为学生和教师提供免费的 GitHub 开发者资源",
+        "Free GitHub developer resources for students and teachers": "为学生和教师提供免费的 GitHub 开发人员资源",
 
         "Education Benefits": "教育福利",
             "Complete a teacher or student application to unlock tools and resources for your educational journey.": "完成教师或学生申请，解锁教育旅程所需的工具和资源。",
@@ -5126,14 +5126,14 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
                     "Expires in almost 2 years": "有效期大约 2年",
                     "Your academic status has been verified. Congratulations!": "您的学术状态已验证。恭喜！",
                     "Your academic benefits, including Partner offers, will become available after 72 hours of your verification.": "您的学术福利，包括合作伙伴优惠，将在您资格审核通过后的 72 小时内生效。",
-                    "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发者礼包优惠在",
+                    "Once the benefits become available, you will be able to access the Students Developer Pack offers": "权益生效后，您将可以访问学生开发人员礼包优惠在",
                     "To redeem your Copilot Pro coupon, please sign up via this": "要兑换您的 Copilot Pro 优惠券，请访问此",
                     "link": "链接",
                     "We hope you enjoy your GitHub Education benefits.": "希望您享受 GitHub 教育权益。",
                 // 结束
                     "Congratulations! Your application has been approved and the coupon code has been applied to your account.": "恭喜！您的申请已获批准，优惠码已成功应用到您的账户。",
                     "Please visit the": "请访问",
-                    "Developer Pack": "开发者包",
+                    "Developer Pack": "开发人员包",
                     "page to view your benefits.": "页面查看您的权益。",
                 "Your benefits will expire on": "您的福利过期时间：",
             "Loading details": "加载详情",
@@ -6565,7 +6565,7 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
                 "Your app has been unsuspended": "您的应用已被取消暂停",
 
             "Installed": "安装于",
-            "Developed by": "开发者",
+            "Developed by": "开发人员",
             "App settings": "应用设置",
             "Permissions": "权限",
                 // [/is requesting an update to its permissions./, "正在请求更新其权限。"],
@@ -6671,7 +6671,7 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Never used": "从未使用",
             "Last used within the last week": "最后一次使用是最近一周之内",
 
-            "Developed by": "开发者:",
+            "Developed by": "开发人员:",
             "Permissions": "权限",
             "Revoke access": "撤销授权",
                 "Are you sure you want to revoke authorization?": "您确定要撤销授权吗？",
@@ -6897,9 +6897,9 @@ I18N["zh-CN"]["settings/sponsors-log"] = { // 设置 - 赞助日志
     },
 };
 
-I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
+I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发人员设置/GitHub 应用
     "static": { // 静态翻译
-        "Developer Settings": "开发者设置",
+        "Developer Settings": "开发人员设置",
         "GitHub Apps": "GitHub 应用",
         "OAuth Apps": "OAuth 应用",
         "Personal access tokens": "个人访问令牌",
@@ -6914,7 +6914,7 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "Want to build something that integrates with and extends GitHub?": "想要构建与 GitHub 集成和扩展的东西吗？",
             "New GitHub App": "注册新 GitHub 应用",
             "to get started developing on the GitHub API. You can also read more about building GitHub Apps in our": "，开始在 GitHub API 上进行开发。您还可以在我们的文档中阅读更多关于构建 GitHub 应用的信息",
-            "developer documentation": "开发者文档",
+            "developer documentation": "开发人员文档",
             "A GitHub App can act on its own behalf, taking actions via the API directly instead of impersonating a user. Read more in our": "GitHub 应用可以代表自己执行操作，直接通过 API 执行操作，而不是冒充用户。阅读我们的更多内容", // 存在 app时
 
             // 无应用提示
@@ -7304,7 +7304,7 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "The GitHub App is now public. Anyone is free to install it.": "GitHub 应用已公开化。任何人都可以自由安装。",
                 "The GitHub App is now private. It can only be installed on this account.": "GitHub 应用已私有化。只能安装在此账户上。",
 
-            "Developer settings": "开发者设置",
+            "Developer settings": "开发人员设置",
             // 左侧栏
                 "General": "通常",
                 "Permissions & events": "权限与事件",
@@ -7319,7 +7319,7 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "use your Client ID instead": "使用您的 Client ID",
                 "Revoke all user tokens": "撤销所有用户令牌",
                 "GitHub Apps can use OAuth credentials to identify users. Learn more about identifying users by reading our": "GitHub 应用可以使用 OAuth 凭据来识别用户。了解更多关于识别用户的信息，请阅读我们的",
-                "integration developer documentation": "集成开发者文档",
+                "integration developer documentation": "集成开发人员文档",
 
                 "Public link": "公共链接",
 
@@ -7405,15 +7405,15 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "A Copilot configuration allows your GitHub App to integrate with Copilot. Learn more about building GitHub Copilot Extensions in the": "Copilot 配置允许您的 GitHub 应用与 Copilot 集成。了解更多关于构建 GitHub Copilot 扩展的信息，请访问",
             "documentation": "文档",
 
-            "Accept the Marketplace Developer agreement to create your Copilot Extension": "接受市场开发者协议以创建您的 Copilot 扩展",
+            "Accept the Marketplace Developer agreement to create your Copilot Extension": "接受市场开发人员协议以创建您的 Copilot 扩展",
                 "By clicking \"Accept Terms\" below, you agree to the": "点击下面的 “接受条款”，即表示您同意以下条款",
-                "GitHub Copilot Extension Developer Policy": "GitHub Copilot 扩展开发者政策",
+                "GitHub Copilot Extension Developer Policy": "GitHub Copilot 扩展开发人员政策",
                 "Pre-release License terms": "预发布许可条款",
                 "on behalf of": "代表",
                 ". Please check to make sure that you are agreeing to these terms on behalf of the correct account.": "。请检查以确保您代表正确的帐户同意这些条款。",
                 "Accept Terms": "接受条款",
 
-            "To enable Copilot functionality, you must first accept the Marketplace Developer agreement": "要启用 Copilot 功能，您必须首先接受市场开发者协议",
+            "To enable Copilot functionality, you must first accept the Marketplace Developer agreement": "要启用 Copilot 功能，您必须首先接受市场开发人员协议",
             "To enable Copilot functionality, you must first grant your app permission to read Copilot Messages. To do so, navigate to Permissions & Events > Account Permissions > Read-only for Copilot Chat": "要启用 Copilot 功能，必须先授予应用读取 Copilot 消息的权限。为此，请导航至权限和事件 > 帐户权限 > Copilot 聊天 - 只读",
 
         // 某个 GitHub 应用 - 安装 https://github.com/settings/apps/<app-name>/installations
@@ -7496,9 +7496,9 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
 };
 I18N["zh-CN"]["orgs/settings/apps/new"] = I18N["zh-CN"]["settings/apps"];
 
-I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用
+I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发人员设置/OAuth 应用
     "static": { // 静态翻译
-            "Developer Settings": "开发者设置",
+            "Developer Settings": "开发人员设置",
             "GitHub Apps": "GitHub 应用",
             "OAuth Apps": "OAuth 应用",
             "Personal access tokens": "个人访问令牌",
@@ -7523,16 +7523,16 @@ I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应�
     ],
     "title": {
         "static": {
-            "Developer applications": "开发者应用",
+            "Developer applications": "开发人员应用",
         },
     },
 };
 
-I18N["zh-CN"]["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应用
+I18N["zh-CN"]["settings/applications/new"] = { // 设置 - 开发人员设置/OAuth 应用
     "static": { // 静态翻译
 
         // 注册 OAuth 应用 https://github.com/settings/applications/new
-            "Developer Settings": "开发者设置",
+            "Developer Settings": "开发人员设置",
 
             "Register a new OAuth app": "注册 OAuth 应用",
             "Application name": "应用名",
@@ -7559,16 +7559,16 @@ I18N["zh-CN"]["settings/applications/new"] = { // 设置 - 开发者设置/OAuth
 };
 I18N["zh-CN"]["orgs/settings/applications/new"] = I18N["zh-CN"]["settings/applications/new"];
 
-I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置/个人访问令牌
+I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发人员设置/个人访问令牌
     "static": { // 静态翻译
-            "Developer Settings": "开发者设置",
+            "Developer Settings": "开发人员设置",
             "GitHub Apps": "GitHub 应用",
             "OAuth Apps": "OAuth 应用",
             "Personal access tokens": "个人访问令牌",
                 "Fine-grained tokens": "精细化的令牌",
                 "Tokens (classic)": "令牌（经典）",
 
-        // 开发者设置 - 精细化的个人访问令牌 https://github.com/settings/personal-access-tokens
+        // 开发人员设置 - 精细化的个人访问令牌 https://github.com/settings/personal-access-tokens
             "Fine-grained personal access tokens": "精细化的个人访问令牌",
             // 未创建时
                 "No fine-grained tokens created": "没有创建精细化的个人访问令牌",
@@ -7883,7 +7883,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
         // 重新生成精细化个人访问令牌 https://github.com/settings/personal-access-tokens/<id>/regenerate
             "Regenerate fine-grained personal access token": "重新生成精细化个人访问令牌",
 
-        // 开发者设置 - 个人访问令牌（经典） https://github.com/settings/tokens
+        // 开发人员设置 - 个人访问令牌（经典） https://github.com/settings/tokens
             "Personal access tokens (classic)": "个人访问令牌（经典）",
             "Generate new token": "生成新令牌",
                 "Fine-grained, repo-scoped": "精细化、 仓库域",
@@ -7965,7 +7965,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Full control of projects": "完全控制项目",
                 "Read access of projects": "读取项目",
                 "Full control of public user GPG keys": "完全控制公共用户 GPG 密钥",
-                "(Developer Preview)": "（开发者预览版）",
+                "(Developer Preview)": "（开发人员预览版）",
                 "Write public user GPG keys": "写入公共用户 GPG 密钥",
                 "Read public user GPG keys": "读取公共用户 GPG 密钥",
                 "Full control of public user SSH signing keys": "完全控制公共用户 SSH 签名密钥",
@@ -14983,7 +14983,7 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "Release Action": "发布 Action",
                 "Publish this release to the GitHub Marketplace": "将此版本发布到 GitHub 市场",
                 "You must": "您必须",
-                "accept the GitHub Marketplace Developer Agreement": "接受 GitHub 市场开发者协议",
+                "accept the GitHub Marketplace Developer Agreement": "接受 GitHub 市场开发人员协议",
                 "before publishing an Action.": "在发布之前。",
 
                 "Publish this Action to the GitHub Marketplace": "将此 Action 发布到 GitHub  市场",
@@ -17040,7 +17040,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
 
                 "Require contributors to sign off on web-based commits": "要求贡献者在基于 Web 的提交上签署",
                 "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发人员来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
 
             "This setting is enabled on the upstream repository. Disabling this setting may block commits from being merged upstream.": "此设置在上游仓库中启用。禁用此设置可能会阻止提交向上游合并。",
@@ -18815,8 +18815,8 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发人员可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发人员可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
         "Learn more about Copilot coding agent": "了解更多",
 
         "Internet access": "访问互联网",
@@ -19721,7 +19721,7 @@ I18N["zh-CN"]["repository/settings/installations"] = { // 仓库设置 - GitHub 
 
             "There aren't any GitHub Apps installed on this repository.": "此仓库上未安装任何 GitHub 应用。",
             "Suspended": "已暂停",
-            "Developed by": "开发者:",
+            "Developed by": "开发人员:",
 
     },
     "regexp": [ // 正则翻译
@@ -19981,13 +19981,13 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
     "static": { // 静态翻译
         //"GitHub Copilot is now available for free.": "免费使用 GitHub Copilot。",
         //"Let’s build from here": "让我们从这里开始",
-        //"The world’s leading AI-powered developer platform.": "全球领先的人工智能开发者平台。",
+        //"The world’s leading AI-powered developer platform.": "全球领先的人工智能开发人员平台。",
         //"Build and ship software on a single, collaborative platform": "在单一协作平台上构建和发布软件",
-        //"Join the world’s most widely adopted AI-powered developer platform.": "加入全球最广泛采用的人工智能开发者平台",
-        //"Join the world’s most widely adopted AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.": "加入全球最广泛采用的人工智能开发者平台，在这里，数百万的开发人员、企业和最大的开源社区构建推动人类进步的软件。",
+        //"Join the world’s most widely adopted AI-powered developer platform.": "加入全球最广泛采用的人工智能开发人员平台",
+        //"Join the world’s most widely adopted AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.": "加入全球最广泛采用的人工智能开发人员平台，在这里，数百万的开发人员、企业和最大的开源社区构建推动人类进步的软件。",
         "Explore the latest tools from Universe '25": "探索 Universe '25 的最新工具",
         "The future of building happens together": "构建未来的方式是共同创造",
-        "Tools and trends evolve, but collaboration endures. With GitHub, developers, agents, and code come together on one platform.": "工具与趋势不断演变，但协作永恒。有 GitHub在，开发者、智能体与代码在同一个平台汇聚。",
+        "Tools and trends evolve, but collaboration endures. With GitHub, developers, agents, and code come together on one platform.": "工具与趋势不断演变，但协作永恒。有 GitHub在，开发人员、智能体与代码在同一个平台汇聚。",
 
         //"Email address": "电子邮箱地址",
         "Enter your email": "键入邮箱地址",
@@ -20101,7 +20101,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                 "Mercado Libre cuts coding time by 50%": "Mercado Libre 将编码时间缩短了 50%",
             "By size": "规模",
                 "Buffer enhances collaboration and control with GitHub Team": "Buffer 通过 GitHub 团队 提升协作与控制力",
-                "Accenture customizes GitHub Copilot for its 12,000 developers": "埃森哲为其 12,000 名开发者定制 GitHub Copilot",
+                "Accenture customizes GitHub Copilot for its 12,000 developers": "埃森哲为其 12,000 名开发人员定制 GitHub Copilot",
                 "Philips reduces infrastructure costs by 80%": "飞利浦将基础设施成本降低 80%",
             // 使用案例
                 "TELUS saves $16.9M with GitHub": "TELUS 使用 GitHub 节省 1690 万美元",
@@ -20111,13 +20111,13 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
             "Explore customer stories": "探索客户故事",
 
-        "Millions of developers and businesses call GitHub home": "数百万开发者和企业将 GitHub 视为自己的家",
-            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted developer platform to build the technologies that shape what’s next.": "无论你是正在扩展开发流程，还是刚刚开始学习编程，GitHub 都是你的归属之地。加入全球采用最广泛的开发者平台，一起构建塑造未来的技术。",
+        "Millions of developers and businesses call GitHub home": "数百万开发人员和企业将 GitHub 视为自己的家",
+            "Whether you’re scaling your development process or just learning how to code, GitHub is where you belong. Join the world’s most widely adopted developer platform to build the technologies that shape what’s next.": "无论你是正在扩展开发流程，还是刚刚开始学习编程，GitHub 都是你的归属之地。加入全球采用最广泛的开发人员平台，一起构建塑造未来的技术。",
 
         "GitHub internal customer data, 2025.": "GitHub 内部客户数据，2025年。",
 
         // 底部栏
-        "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
+        "Subscribe to our developer newsletter": "订阅我们的开发人员新闻",
         "Get tips, technical guides, and best practices. Twice a month.": "获取提示、技术指南和最佳实践。每月两次。",
         "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
         "Subscribe": "订阅",
@@ -20128,7 +20128,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "Ecosystem": "生态",
         "Platform": "平台",
-        "Developer API": "开发者 API",
+        "Developer API": "开发人员 API",
         "Education": "教育",
         "GitHub Desktop": "GitHub 桌面端",
         "GitHub Mobile": "GitHub 移动端",
@@ -20631,7 +20631,7 @@ I18N["zh-CN"]["signup"] = { // 注册页
                 "Automated workflows": "自动化工作流",
                     "Save time with CI/CD integrations and GitHub Actions.": "使用 CI/CD 集成和 GitHub Actions 节省时间。",
                 "Community support": "社区支持",
-                    "Connect with developers worldwide for instant feedback and insights.": "与全球开发者即时交流，获取反馈和见解。",
+                    "Connect with developers worldwide for instant feedback and insights.": "与全球开发人员即时交流，获取反馈和见解。",
 
         "Already have an account?": "已经有账户吗？",
         "Sign in →": "登录 →",
@@ -22264,8 +22264,8 @@ I18N["zh-CN"]["explore"] = { // 探索页面
             "Trending repositories": "热门仓库",
                 "today": "今日",
             "See more trending repositories": "查看更多热门仓库",
-            "Trending developers": "热门开发者",
-            "See more trending developers": "查看更多热门开发者",
+            "Trending developers": "热门开发人员",
+            "See more trending developers": "查看更多热门开发人员",
 
             // 中间信息栏
             "Here's what we found based on your interests...": "以下是我们根据您的兴趣发现的内容…",
@@ -22419,7 +22419,7 @@ I18N["zh-CN"]["trending"] = { // 热门页面
         "These are the developers building the hot tools this month.": "这些是本月创建热门项目的开发人员。",
 
         "Repositories": "仓库",
-        "Developers": "开发者",
+        "Developers": "开发人员",
 
         "Sponsor": "赞助",
         "Built by": "构建者",
@@ -22447,11 +22447,11 @@ I18N["zh-CN"]["trending"] = { // 热门页面
                 "This month": "本月",
         "Sponsorable:": "可赞助：",
             "GitHub Sponsors participation": "参与 GitHub 赞助",
-            "Sponsorable developers": "可赞助的开发者",
-            "All developers": "所有开发者",
+            "Sponsorable developers": "可赞助的开发人员",
+            "All developers": "所有开发人员",
             "All": "所有",
 
-        // 开发者页
+        // 开发人员页
         "Popular repo": "热门仓库",
 
     },
@@ -22465,9 +22465,9 @@ I18N["zh-CN"]["trending"] = { // 热门页面
             "Trending repositories on GitHub today": "今日热门仓库",
             "Trending repositories on GitHub this week": "本周热门仓库",
             "Trending repositories on GitHub this month": "本月热门仓库",
-            "Trending developers on GitHub today": "今日热门开发者",
-            "Trending developers on GitHub this week": "本周热门开发者",
-            "Trending developers on GitHub this month": "本月热门开发者",
+            "Trending developers on GitHub today": "今日热门开发人员",
+            "Trending developers on GitHub this week": "本周热门开发人员",
+            "Trending developers on GitHub this month": "本月热门开发人员",
         },
     },
 };
@@ -22554,7 +22554,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "Meet the team": "查看团队",
             "Featured work": "精选",
 
-            "Learn more about sponsoring developers and organizations": "了解更多关于赞助开发者和组织的信息",
+            "Learn more about sponsoring developers and organizations": "了解更多关于赞助开发人员和组织的信息",
             "Report abuse": "举报滥用",
 
             // 右侧栏
@@ -22640,7 +22640,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "Change email updates": "更改电子邮件更新", // 已设置邮件更新通知
 
             "Explore GitHub Sponsors": "探索 GitHub 赞助者",
-                "Fund the work of developers and projects you depend on.": "为您所依赖的开发者和项目提供资金。",
+                "Fund the work of developers and projects you depend on.": "为您所依赖的开发人员和项目提供资金。",
 
             // 左侧栏
                 "Explore as": "使用以下身份进行探索",
@@ -23018,7 +23018,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "AI Assisted": "AI 助理",
                 "AI Assisted apps": "AI 助理应用",
                 "AI Assisted actions": "AI 助理操作",
-                "Tools that are superpowered with AI (artificial intelligence) to help you be a better developer.": "使用人工智能（AI）强化的工具，助您成为更优秀的开发者。",
+                "Tools that are superpowered with AI (artificial intelligence) to help you be a better developer.": "使用人工智能（AI）强化的工具，助您成为更优秀的开发人员。",
 
             "API management": "API 管理",
                 "API management apps": "API 管理应用",
@@ -23082,7 +23082,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 
             "Desktop tools": "桌面工具",
                 "Desktop tools apps": "桌面工具应用",
-                "Developer tools that are run natively on your local machine.": "在本地计算机上本机运行的开发者工具。",
+                "Developer tools that are run natively on your local machine.": "在本地计算机上本机运行的开发人员工具。",
 
             "Game CI": "游戏 CI",
                 "Game CI apps": "游戏 CI 应用",
@@ -23231,7 +23231,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Category": "类别",
                 "Supported languages": "支持的语言",
                 "Customers": "客户",
-                "From the developer": "来自开发者",
+                "From the developer": "来自开发人员",
                 "Support": "支持",
                 "Documentation": "文档",
                 "Privacy Policy": "隐私条款",
@@ -23641,7 +23641,7 @@ I18N["zh-CN"]["apps"] = { // GitHub 应用
             // 私有 App
                 "Learn more about GitHub Apps": "了解更多关于 GitHub 应用的信息",
 
-            "Developer": "开发者",
+            "Developer": "开发人员",
                 "App settings": "应用设置", // 已安装
                 "Website": "网站",
 
@@ -23843,7 +23843,7 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
                 "Top languages": "热门语言",
                     "Loading…": "载入中…",
                 "Most used topics": "最常用的话题",
-                "Developer Program Member": "开发者计划成员",
+                "Developer Program Member": "开发人员计划成员",
                 "Report abuse": "举报滥用",
 
             "Create new repository": "新建仓库",
@@ -24323,7 +24323,7 @@ I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
         // 顶部提示
-            "Thanks for updating your Developer Program contact information!": "感谢您更新开发者联系信息！",
+            "Thanks for updating your Developer Program contact information!": "感谢您更新开发人员联系信息！",
 
         // 组织资料 /organizations/<org-login>/settings/profile
             "Most organization settings are hidden for an archived organization. This organization must be unarchived to change them.": "对于已存档的组织，组织大多数设置都是隐藏的。必须取消对该组织的归档才能更改它们。",
@@ -24357,12 +24357,12 @@ I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
                 "to sponsor maintainers with. Get recognition on GitHub for sponsorships made on Patreon when the sponsored person has linked Patreon and GitHub, too, and has a public GitHub Sponsors profile.": "的 Patreon 账户，以便赞助维护者。当被赞助者也关联 Patreon 和 GitHub 账户时，在 Patreon 上获得的赞助也会显示在 GitHub 上，并显示 GitHub 赞助者的公开个人资料。",
                 "Connect with Patreon": "关联 Patreon 账户",
 
-            "GitHub Developer Program": "GitHub 开发者计划",
+            "GitHub Developer Program": "GitHub 开发人员计划",
                 "Building an application, service, or tool that integrates with GitHub?": "构建应用、服务或工具，集成到 GitHub 吗？",
-                "Join the GitHub Developer Program": "加入 GitHub 开发者计划",
+                "Join the GitHub Developer Program": "加入 GitHub 开发人员计划",
                 ", or read more about it at our": "，或了解更多信息在我们的",
-                "GitHub developer program": "GitHub 开发者计划",
-                "Check out the Developer site": "查看开发者站点，",
+                "GitHub developer program": "GitHub 开发人员计划",
+                "Check out the Developer site": "查看开发人员站点，",
                 "for guides, our API reference, and other resources for building applications that integrate with GitHub. Make sure your contact information is up-to-date below. Thanks for being a member!": "以获取指南、我们的 API 参考和其他用于构建与 GitHub 集成的应用的资源。请确保您的联系信息是最新的。感谢您成为我们的成员！",
 
             "Terms of Service": "服务条款",
@@ -24823,7 +24823,7 @@ I18N["zh-CN"]["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 
 
             "Commit signoff": "提交签署",
                 "Choose whether repositories will require contributors to sign off on commits they make through GitHub's web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "选择仓库是否要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
+                "Developer Certificate of Origin (DCO)": "开发人员来源证书（DCO）",
                 "Learn more about signing off on commits": "了解更多关于签署提交的信息",
                 "All repositories": "所有仓库",
                     "Require signoff on web-based commits for all repositories in this organization": "要求对该组织中所有仓库的基于 Web 的提交进行签署",
@@ -27113,12 +27113,12 @@ I18N["zh-CN"]["codespaces/allow_permissions"] = { // 代码空间申请额外权
     ],
 };
 
-I18N["zh-CN"]["developer/register"] = { // 开发者注册
+I18N["zh-CN"]["developer/register"] = { // 开发人员注册
     "static": {
         // https://github.com/developer/register
             // 标题
                 "Register for the": "注册",
-                "GitHub Developer Program": "GitHub 开发者计划",
+                "GitHub Developer Program": "GitHub 开发人员计划",
                 "The best way to integrate with GitHub.": "与 GitHub 集成最佳方法。",
             // 注册表单
                 "Select an account": "选择账户",
@@ -27131,20 +27131,20 @@ I18N["zh-CN"]["developer/register"] = { // 开发者注册
                     "The URL for the product, company, or service that integrates with GitHub.": "与 GitHub 集成的产品、公司或服务的网址。",
                     "Website can't be blank": "网站不能为空",
             // 免责声明
-                "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击 “注册 GitHub 开发者计划”，表示您已阅读并同意",
-                "developer terms of service": "开发者服务条款",
+                "By clicking “Register for the GitHub Developer Program” below, you agree to the": "点击 “注册 GitHub 开发人员计划”，表示您已阅读并同意",
+                "developer terms of service": "开发人员服务条款",
                 "and the": "和",
                 "privacy statement": "隐私声明",
                 ". We’ll occasionally send you account related emails.": "。我们会偶尔向您发送与账户相关的电子邮件。",
 
-            "Register for the GitHub Developer Program": "注册 GitHub 开发者计划",
+            "Register for the GitHub Developer Program": "注册 GitHub 开发人员计划",
 
-            "Program Benefits": "开发者权益",
+            "Program Benefits": "开发人员权益",
                 "Notification of API changes": "API 更改通知",
                 "Early access eligibility on select features": "获得部分功能的抢先体验资格",
                 "Eligibility for development licenses for GitHub products": "获得 GitHub 产品的开发许可资格",
                 "GitHub profile membership badge": "GitHub 个人资料成员徽章",
-                "Learn more about the program": "了解更多关于 GitHub 开发者计划的信息",
+                "Learn more about the program": "了解更多关于 GitHub 开发人员计划的信息",
     },
     "regexp": [ // 正则匹配
     ],
@@ -27174,7 +27174,7 @@ I18N["zh-CN"]["features"] = {
             // 讨论
                 "Dedicated space for your community to come together, ask and answer questions, and have open-ended conversations.": "为您的社区提供一个专门的空间，以便聚集在一起，提问和回答问题，以及进行开放式的交流。",
             "Code search & code view": "代码搜索 & 代码审查",
-                "Our powerful new code search and code view enable developers to rapidly search, navigate, and understand code right from GitHub.com.": "我们强大的新代码搜索和代码查看功能，使开发者能够从GitHub.com上快速搜索、导航并理解代码。",
+                "Our powerful new code search and code view enable developers to rapidly search, navigate, and understand code right from GitHub.com.": "我们强大的新代码搜索和代码查看功能，使开发人员能够从GitHub.com上快速搜索、导航并理解代码。",
             // 通知
                 "Get updates on the GitHub activity you've subscribed to. Use the notifications inbox to customize, triage, and manage your updates.": "获取您订阅的 GitHub 活动更新。使用通知收件箱来自定义、分类和管理您的更新。",
             "Code reviews": "代码审查",
@@ -27302,7 +27302,7 @@ I18N["zh-CN"]["status"] = { // GitHub Status
 
         "Codespaces Scheduled Maintenance": "代码空间计划维护",
 
-        "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
+        "Subscribe to our developer newsletter": "订阅我们的开发人员新闻",
         "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
 
 
@@ -28825,7 +28825,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
     "title": {
         "static": {
             "GitHub Education": "GitHub 教育",
-            "GitHub Student Developer Pack - GitHub Education": "GitHub 学生开发者包 - GitHub 教育",
+            "GitHub Student Developer Pack - GitHub Education": "GitHub 学生开发人员包 - GitHub 教育",
             "Community Exchange - GitHub Education": "社区交流 - GitHub 教育",
             "Events - GitHub Education": "事件 - GitHub 教育",
         },
