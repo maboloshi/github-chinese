@@ -9119,6 +9119,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Learn more about GitHub Sponsors": "了解更多关于 GitHub 赞助者的信息",
             "Used by": "使用者",
             "Contributors": "贡献者",
+                "No contributors": "无贡献者",
             "Environments": "环境",
             "Deployments": "部署",
                 "+ more deployments": "+ 更多部署",
