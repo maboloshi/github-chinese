@@ -10673,6 +10673,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "View status": "查看状态",
             "Able to merge": "可以合并",
+            "Ready to merge": "准备合并",
                 "Merge status": "合并状态",
                 "What's new": "新内容",
                 "Close merge status": "关闭",
