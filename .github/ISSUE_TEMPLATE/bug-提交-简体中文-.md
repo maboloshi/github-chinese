@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-感谢您提交议题！请补充以下内容，以便我们能更好地协助您：
-提交议题前确保您已阅读[常见问题（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)
+<!--感谢您提交议题！请补充以下内容，以便我们能更好地协助您：
+提交议题前确保您已阅读[常见问题（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)-->
 
 ### 问题/建议的具体描述
 
