@@ -225,7 +225,7 @@ I18N.conf = {
             '.cm-line',
         ],
         'spark': [
-            '.Table'，
+            '.Table',
             '.monaco-editor',
         ],
         '*': [
