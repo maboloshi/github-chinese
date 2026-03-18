@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-感謝您提交議題！請補充以下內容，以便我們能更好地協助您：
-提交議題前確保您已閲讀[常見問題（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)
+<!--感謝您提交議題！請補充以下內容，以便我們能更好地協助您：
+提交議題前確保您已閲讀[常見問題（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)-->
 
 ### 問題/建議的具體描述
 
