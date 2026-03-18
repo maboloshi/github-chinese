@@ -10678,6 +10678,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Merge status": "合并状态",
                 "What's new": "新内容",
                 "Close merge status": "关闭",
+            "Merge conflicts": "合并冲突",
 
             // 代码 下拉菜单
                 "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
