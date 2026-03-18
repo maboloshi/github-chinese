@@ -2660,6 +2660,7 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
             "Pinned": "已置顶",
             "Top repositories": "置顶的仓库",
             "Popular repositories": "热门仓库",
+            "You don't have any public repositories yet.": "你还没有公共仓库。",
 
             "Learn how we count contributions": "了解我们如何计算贡献",
             "Contribution settings": "贡献设置",
