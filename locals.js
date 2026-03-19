@@ -1101,7 +1101,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "type": "输入",
                         "to add emoji to the name or description.": "在名称或描述中添加表情符号",
                     "Lists are currently in beta.": "清单目前处于测试阶段。",
-                    "Share feedback and report bugs.": "分享反馈意见和报告错误。",
+                    "Share feedback and report bugs.": "分享反馈意见和报告隐错。",
                     "Creating...": "创建中…",
                     // 私有
                         "Enabling this makes the list visible only to you.": "启用此选项将使该列表仅对您可见。",
@@ -4761,7 +4761,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Collaborators for private repositories": "私有仓库协作者",
                         "Invite any GitHub member, or all GitHub members, to work with you on code in a private repository you control – including making changes and opening issues.": "邀请任何 GitHub 成员或所有 GitHub 成员，在您控制的私有仓库上与您共同处理代码，包括进行更改和提出议题。",
                     // 议题
-                        "Track bugs, enhancements, and other requests, prioritize work, and communicate with stakeholders as changes are proposed and merged.": "跟踪漏洞、增强功能和其他请求，确定工作的优先级，并在提出和合并变更时与利益相关者沟通。",
+                        "Track bugs, enhancements, and other requests, prioritize work, and communicate with stakeholders as changes are proposed and merged.": "跟踪隐错、功能增强和其他请求，确定工作的优先级，并在提出和合并变更时与利益相关者沟通。",
                     // 项目
                         "Visualize and manage issues and pull requests across tables, boards, and roadmaps with custom fields and views that you can arrange to suit your workflow.": "通过自定义字段和视图，在表格、面板和路线图上可视化管理议题和拉取请求，以适应您的工作流程。",
                     "Milestones": "里程碑",
@@ -6211,7 +6211,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "GitHub Copilot for assistance in terminal": "GitHub Copilot 终端辅助工具",
                 "Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
                     "GitHub Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
-                    "to explain a piece of code, propose bug fixes, or generate unit tests in a chat interface from your editor.": "在编辑器的聊天界面上解释代码、提出错误修复建议或生成单元测试。",
+                    "to explain a piece of code, propose bug fixes, or generate unit tests in a chat interface from your editor.": "在编辑器的聊天界面上解释代码、提出隐错修复建议或生成单元测试。",
                 "Copilot Chat in GitHub Mobile": "在 GitHub Mobile 中使用 Copilot Chat",
                     "personalized to a codebase.": "，个性化代码。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
@@ -9552,7 +9552,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 // "Labels": "标签",
                     "None yet": "暂无",
                     // 下拉
-                    "bug": "BUG",
+                    "bug": "隐错",
                         "Something isn't working": "有些东西不工作",
                     "dependencies": "依赖性",
                         "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
@@ -9746,7 +9746,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
         // /<user-name>/<repo-name>/labels/<label-name>
             // 欢迎信息
             "Welcome to issues!": "欢迎关注议题！",
-            "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
+            "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、隐错、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
             "create an issue": "创建议题",
                 "Open issue creation in fullscreen": "全屏", // 有议题模板时
 
@@ -9793,9 +9793,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Try adjusting your search filters.": "尝试调整搜索筛选器。",
 
             // [/Want to contribute to ([^ ]+)/, "想为 $1 做贡献吗？"], /issues
-            "If you have a bug or an idea, read the": "如果您发现一个错误或有任何想法，请阅读",
+            "If you have a bug or an idea, read the": "如果您发现一个隐错或有任何想法，请阅读",
             "before opening an issue.": "，在打开议题之前。",
-            "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
+            "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个隐错或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
             "Open Source Guide": "开源指南",
                 "Learn about Open Source and how to contribute": "了解开源和如何贡献",
             "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
@@ -9902,7 +9902,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Has label": "包含标签",
                     "Exclude label": "排除标签",
                     "aesthetics": "美化",
-                    "bug": "缺陷",
+                    "bug": "隐错",
                     "dependencies": "依赖项",
                     "development": "开发中",
                     "discuss": "讨论",
@@ -10393,7 +10393,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Fewest issues": "最少的议题",
 
             // 标签
-                "bug": "BUG",
+                "bug": "隐错",
                     "Something isn't working": "有些东西不工作",
                 "dependencies": "依赖性",
                     "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
@@ -10447,8 +10447,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Propose changes": "提出更改",
             "Add template:": "添加模板：",
             "select": "选择",
-            "Bug report": "错误报告",
-                "Standard bug report template": "标准错误报告模板",
+            "Bug report": "隐错报告",
+                "Standard bug report template": "标准隐错报告模板",
                 "Create a report to help us improve": "创建报告以帮助我们改进",
             "Feature request": "功能要求",
                 "Standard feature request template": "标准功能请求模板",
@@ -11074,7 +11074,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "Continuous integration has not been set up": "尚未设置持续集成",
             "several other apps": "其他一些应用",
-            "can be used to automatically catch bugs and enforce style.": "可用于自动捕获错误和强制执行样式。",
+            "can be used to automatically catch bugs and enforce style.": "可用于自动捕获隐错和强制执行样式。",
 
             "This branch has no conflicts with the base branch": "该分支与基础分支没有冲突",
             "No conflicts with base branch": "与基本分支无冲突",
@@ -11964,7 +11964,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "Labels": "标签",
                 "None yet": "暂无",
-                "bug": "BUG",
+                "bug": "隐错",
                     "Something isn't working": "有些东西不工作",
                 "confirmed": "已确认",
                     "Issue confirmed to exist and the reason is known": "问题已确认存在，原因已知",
@@ -12778,7 +12778,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
                 "Filter labels": "筛选标签",
                 "Unlabeled": "无标签",
 
-                "bug": "BUG",
+                "bug": "隐错",
                     "Something isn't working": "有些东西不工作",
                 "dependencies": "依赖性",
                     "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
@@ -14146,7 +14146,7 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                         "(String): A description of this template's intended use. This will be shown in the issue template chooser interface.": "(字符串）：该模板预期用途的说明。这将显示在议题模板选择界面中。",
                     "Optional Fields": "可选项",
                         "(Array or String): This issue will be automatically assigned to these users. Can be array of usernames or comma-delimited string, e.g. \"monalisa,nat\"": "(数组或字符串）：此议题将自动分配给这些用户。可以是用户名数组或以逗号分隔的字符串，例如 “monalisa,nat”。",
-                        "(Array or String): This issue will automatically receive these labels upon creation. Can be array of labels or comma-delimited string, e.g. \"bug,needs-triage\"": "(数组或字符串）：该议题在创建时将自动接收这些标签。可以是标签数组或以逗号分隔的字符串，例如 “bug,needs-triage”（错误，需要分流）。",
+                        "(Array or String): This issue will automatically receive these labels upon creation. Can be array of labels or comma-delimited string, e.g. \"bug,needs-triage\"": "(数组或字符串）：该议题在创建时将自动接收这些标签。可以是标签数组或以逗号分隔的字符串，例如 “bug,needs-triage”（隐错，需要分流）。",
                         "(Array or String): This issue will be automatically added to these projects. Can be array of projects or comma-delimited string, e.g. \"github\/1,github\/2\"": "(数组或字符串）：该议题将自动添加到这些项目中。可以是项目数组或以逗号分隔的字符串，如 “github\/1,github\/2”。",
                         "(String): Default title that will be pre-populated in the issue submission form.": "(字符串）：将在议题表单中预填的默认标题。",
                         "(Array): Definition of user inputs.": "(数组）：用户输入的定义。",
@@ -21217,7 +21217,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                 "Has label": "包含标签",
                 "Exclude label": "排除标签",
                 "aesthetics": "美化",
-                "bug": "缺陷",
+                "bug": "隐错",
                 "dependencies": "依赖项",
                 "development": "开发中",
                 "discuss": "讨论",
@@ -23080,7 +23080,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Continuous integration": "持续集成",
                 "Continuous integration apps": "持续集成应用",
                 "Continuous integration actions": "持续集成操作",
-                "Automatically build and test your code as you push it to GitHub, preventing bugs from being deployed to production.": "当您将代码推送到 GitHub 时，自动构建和测试您的代码，从而防止将错误部署到生产中。",
+                "Automatically build and test your code as you push it to GitHub, preventing bugs from being deployed to production.": "当您将代码推送到 GitHub 时，自动构建和测试您的代码，从而防止将隐错部署到生产中。",
 
             "Dependency management": "依赖管理",
                 "Dependency management apps": "依赖管理应用",
@@ -23182,7 +23182,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Testing": "测试",
                 "Testing apps": "测试应用",
                 "Testing actions": "测试操作",
-                "Eliminate bugs and ship with more confidence by adding these tools to your workflow.": "通过将这些工具添加到您的工作流程中，消除错误并更有信心地交付。",
+                "Eliminate bugs and ship with more confidence by adding these tools to your workflow.": "通过将这些工具添加到您的工作流程中，消除隐错并更有信心地交付。",
 
             "Time tracking": "时间跟踪",
                 "Time tracking apps": "时间追踪应用",
@@ -24867,7 +24867,7 @@ I18N["zh-CN"]["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 
 
             "label": "个标签",
             "labels": "个标签",
-            "bug": "BUG",
+            "bug": "隐错",
                 "Something isn't working": "有些东西不工作",
             "dependencies": "依赖性",
                 "Pull requests that update a dependency file": "更新一个依赖文件的拉取请求",
@@ -26192,8 +26192,8 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                     "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "带有内置触发器的风格看板，可以自动将议题和拉取请求移到待办、进行中和已完成栏目中。",
                 "Automated kanban with reviews": "带审查的自动看板",
                     "Everything included in the Automated kanban template with additional triggers for pull request reviews.": "除了包含自动化看板模板中的所有内容，还有拉取请求审查的额外触发器。",
-                "Bug triage": "BUG 分类",
-                    "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待办事项、高优先级、低优先级和已关闭的栏目对错误进行分类和优先级排序。",
+                "Bug triage": "隐错分类",
+                    "Triage and prioritize bugs with columns for To do, High priority, Low priority, and Closed.": "使用待办事项、高优先级、低优先级和已关闭的栏目对隐错进行分类和优先级排序。",
             "Visibility": "可见性",
                 // "Public": "公共",
                     "Anyone on the internet can see this project. You choose who can make changes.": "互联网上的任何人都可以看到这个项目。您选择谁可以进行更改。",
@@ -26695,7 +26695,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
 
         // 错误分类模板项目 https://github.com/users/<user-name>/projects/<id>?add_cards_query=is%3Aopen
             // 顶部提醒
-            "Project created from Bug triage template.": "已从错误分类模板创建项目。",
+            "Project created from Bug triage template.": "已从隐错分类模板创建项目。",
 
             "Needs triage": "需要分流",
             "High priority": "高优先级",
