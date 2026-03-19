@@ -21,5 +21,5 @@ assignees: ''
 ### 您使用的浏览器类型、脚本管理器及插件版本（不再接受 1.9.2 版本反馈）
 
 - 浏览器类型及版本<!--[Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)-->：
-- 脚本管理器及版本：
+- 脚本管理器及版本<!--[Microsoft Edge 扩展](https://support.microsoft.com/zh-cn/topic/a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)-->：
 - GitHub 中文化插件版本:
