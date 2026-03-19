@@ -5,7 +5,7 @@ labels: bug
 body:
 - type: markdown
   attributes:
-    value: ### 欢迎！
+    value: "### 欢迎！"
 - type: markdown
   attributes:
     value: |
