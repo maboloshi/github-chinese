@@ -81,7 +81,8 @@ body:
   id: script-manager-version
   attributes:
     label: 腳本管理器版本
-    description: |請填入管理本插件的腳本管理器的版本。
+    description: |
+      請填入管理本插件的腳本管理器的版本。
       [Microsoft Edge 扩展](https://support.microsoft.com/zh-cn/topic/a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)
     placeholder: 5.4.1
   validations:
