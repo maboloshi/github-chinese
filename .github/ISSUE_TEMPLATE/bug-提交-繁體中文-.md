@@ -22,4 +22,4 @@ assignees: ''
 
 - 瀏覽器類型及版本<!--[Microsoft Edge 版本](https://support.microsoft.com/zh-tw/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)-->：
 - 腳本管理器及版本<!--[Microsoft Edge 擴充功能](https://support.microsoft.com/zh-tw/topic/-a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)-->：
-- GitHub 中文化插件版本:
+- GitHub 中文化插件版本<!--[GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)-->：
