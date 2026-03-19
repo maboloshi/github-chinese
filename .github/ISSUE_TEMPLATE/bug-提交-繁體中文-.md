@@ -20,6 +20,6 @@ assignees: ''
 
 ### 您使用的瀏覽器類型、腳本管理器及插件版本（不再接受 1.9.2 版本反饋）
 
-- 瀏覽器類型及版本：
+- 瀏覽器類型及版本<!--[Microsoft Edge 版本](https://support.microsoft.com/zh-tw/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)-->：
 - 腳本管理器及版本：
 - GitHub 中文化插件版本:
