@@ -22,4 +22,4 @@ assignees: ''
 
 - 浏览器类型及版本<!--[Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)-->：
 - 脚本管理器及版本<!--[Microsoft Edge 扩展](https://support.microsoft.com/zh-cn/topic/a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)-->：
-- GitHub 中文化插件版本<!--[Microsoft Edge 篡改猴已安装脚本](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)-->：
+- GitHub 中文化插件版本<!--见 [GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c) 中 `@version` 的值-->：
