@@ -35,16 +35,9 @@ body:
   id: realization
   attributes:
     label: 实际
-    description: "请描述你对本插件的实际行为。"
+    description: "请描述本插件的实际行为。"
   validations:
     required: true
-- type: textarea
-  id: evidence
-  attributes:
-    label: 附件
-    description: "请提供相关截图或附件（如有）。"
-  validations:
-    required: false
 - type: textarea
   id: evidence
   attributes:
