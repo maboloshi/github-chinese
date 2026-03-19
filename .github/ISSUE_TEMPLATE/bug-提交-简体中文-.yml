@@ -64,6 +64,7 @@ body:
     description: |
       请填入运行本插件的浏览器的版本。
       [Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)
+      [Google Chrome 版本](chrome://settings/help)
     placeholder: 版本 146.0.3856.62 (正式版本) (arm64)
   validations:
     required: true
