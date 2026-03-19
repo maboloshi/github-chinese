@@ -93,7 +93,7 @@ body:
     label: 插件版本
     description: |
       請填入 GitHub 中文化插件的版本。
-      见 [GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)源码中 `@version` 的值（不再接受 1.9.2 版本反饋）。
+      見 [GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)源码中 `@version` 的值（不再接受 1.9.2 版本反饋）。
     placeholder: 1.9.3
   validations:
     required: true
