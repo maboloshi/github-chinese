@@ -2005,7 +2005,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Task": "任务",
         "to access more models and higher limits.": "来获得更多模型和更高限制。",
         "Create issue": "创建议题",
-            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，创建一个新的草稿议题。然后，要求提供更多信息来完善议题。",
+            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，创建一个新的议题草案。然后，要求提供更多信息来完善议题。",
             "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，创建一个包含子议题的议题。然后，要求提供更多信息来完善这些子议题。",
         "Write code": "编写代码",
         "Models": "模型",
@@ -8616,7 +8616,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "Cancel and close": "关闭",
 
             "Jumpstart your project with Copilot (optional)": "用 Copilot 快速启动您的项目（可选）",
-                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在就绪时请求您审查。",
+                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），就绪后请求您审查。",
                 "About Copilot coding agent": "关于 Copilot 编程智能体",
 
                 "Prompt": "提示词",
@@ -20466,7 +20466,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
 
             "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
-            "When your phone is ready, click the button below.": "当您的手机就绪时，请点击下面的按钮。",
+            "When your phone is ready, click the button below.": "您的手机就绪后，请点击下面的按钮。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
