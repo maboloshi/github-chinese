@@ -27214,7 +27214,7 @@ I18N["zh-CN"]["features"] = {
             "Multi-line comments": "多行评论",
                 "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次性对多行代码进行引用或评论，来使得代码审查一目了然。",
             "Public repositories": "公共仓库",
-                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共仓库中的代码，同任何 GitHub 成员合作。进行更改、打开拉取请求、创建议题，诸如此类。", // 合作在汉语中用作动词时通常是不及物的
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共仓库中的代码，同任何 GitHub 成员合作。进行更改、打开拉取请求、创建议题，诸如此类。", // 合作在汉语中用作动词时通常是不及物的。顿号用法见 GB/T 4.5.3.1
             "Dark mode": "深色模式",
                 "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择您使用 GitHub 的方式。切换到深色主题或默认使用您的系统偏好设置。",
     },
@@ -28316,7 +28316,7 @@ I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
             "the pre-release terms": "预发行条款",
             ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。注册并不保证您一定能获得访问权限。如果您被纳入预览计划，我们将通过电子邮件通知您。",
 
-        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "预览使用 Copilot 驱动的代码审查的名额有限。如果授予您访问权限，您将收到一封电子邮件通知。",
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "使用 Copilot 驱动的代码审查的预览体验名额有限。如果授予您访问权限，您将收到一封电子邮件通知。",
     },
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感谢！$1 已加入候补名单"],
