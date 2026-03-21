@@ -2108,7 +2108,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "When you take actions across GitHub, we’ll provide links to that activity here.": "当您在 GitHub 上采取行动时，我们会在这里提供该活动的链接。", // 组织
 
         "Create your first project": "创建您的第一个项目",
-            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "准备好开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
+            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "就绪以开始构建了吗？为新想法创建一个仓库或使用现有仓库继续为其做出贡献。",
             "Create repository": "创建仓库",
 
         "Forked from": "复刻自", // 复刻仓库
@@ -3418,7 +3418,7 @@ I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
             "Confirm": "确认",
 
             "Passkey": "通行密钥",
-            "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+            "When you are ready, authenticate using the button below.": "就绪后，请使用下面的按钮进行身份验证。",
             "This browser or device does not fully support passkeys.": "此浏览器或设备不完全支持通行密钥。",
             "Use passkey": "使用通行密钥",
 
@@ -4975,7 +4975,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "计划变更成功。@$1 已更新为专业版年度计费。"],
         // [/The plan change was successful. @([^ ]+) has been updated to the pro monthly plan./, "计划变更成功。@$1 已更新为专业版月度计费。"],
-        // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我们正在准备您的报告！完成后，我们将发送电子邮件至 $1。"], //顶部提醒
+        // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我们正在准备您的报告！就绪后，我们将发送电子邮件至 $1。"], //顶部提醒
         // [/Included minutes quota resets? in (\d+) days?./, "包含的分钟配额将在 $1 天之内重置"],
         // [/Data transfer quota resets? in (\d+) days?./, "数据传输配额将在 $1 天之内重置"],
         // //[/Included minutes quota resets/, ""],
@@ -5017,11 +5017,11 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/(\d+\.\d+) hr/, "$1 小时"],
 
         // 使用情况
-            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。可能需要大约 30 分钟。报告准备好后，我们会发送电子邮件到 $1。"],
-            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。报告准备好后，我们会发送电子邮件到 $1。"],
-            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用报告请求正在处理。报告准备好后，请到 $1 查收。"],
+            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。可能需要大约 30 分钟。报告就绪后，我们会发送电子邮件到 $1。"],
+            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我们正在准备您的使用报告。报告就绪后，我们会发送电子邮件到 $1。"],
+            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用报告请求正在处理。报告就绪后，请到 $1 查收。"],
             // 获取使用报告窗口
-            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用报告准备好后，将通过电子邮件发送到 $1。"],
+            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用报告就绪后，将通过电子邮件发送到 $1。"],
               // 传统选项
               //[/Metered usage before the billing transition, until (.+)/, (match, p1) => {
               //  const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
@@ -7851,11 +7851,11 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 // Web 钩子
                     "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
 
-            "This token will be ready for use immediately.": "该令牌将即可可用。",
+            "This token will be ready for use immediately.": "该令牌将立即就绪可用。",
 
             "New personal access token": "新建个人访问令牌",
                 "Your new personal access token": "您的新个人访问令牌",
-                "will be ready for use immediately. It will expire on": "将立即准备就绪，可供使用。其有效期至",
+                "will be ready for use immediately. It will expire on": "将立即就绪可用。其有效期至",
                 // [/(.+) grants you/, "$1 授予您"],
                 // [/(\d+) account permissions?/, "$1 项账户权限"],
                 // [/(\d+) permissions? for all repositories:/, "所有仓库的 $1 项权限"],
@@ -8404,7 +8404,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         // 新建仓库 https://github.com/new
             "Create a new repository": "新建仓库",
                 "A repository contains all project files, including the revision history.": "仓库包含项目中的所有文件，包括修订历史记录。",
-                "Already have a project repository elsewhere?": "在其他地方已有仓库？",
+                "Already have a project repository elsewhere?": "在他处已有仓库？",
                 "Import a repository": "导入仓库",
                 "Required fields are marked with an asterisk (*).": "带星号 (*) 的为必填项。",
 
@@ -8544,7 +8544,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             // [/Updating branches and (\d) commit authors?…/, "更新分支和 $1 个提交者…"],
             "Optimizing repository and pushing commits to GitHub…": "优化仓库并将提交推送到 GitHub…",
             "Importing complete! Your new repository": "导入完成！您的新仓库",
-            "is ready.": "已准备就绪。",
+            "is ready.": "已就绪。",
 
         // 复刻仓库 /<user-name>/<repo-name>/fork
             "Create a new fork": "创建新复刻",
@@ -8616,7 +8616,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "Cancel and close": "关闭",
 
             "Jumpstart your project with Copilot (optional)": "用 Copilot 快速启动您的项目（可选）",
-                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备就绪时请求您审查。",
+                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在就绪时请求您审查。",
                 "About Copilot coding agent": "关于 Copilot 编程智能体",
 
                 "Prompt": "提示词",
@@ -8666,7 +8666,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
 
             "Sorry, couldn’t delete that branch.": "抱歉，无法删除此分支。",
-            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 将起草一个拉取请求开始处理您的需求，并在准备好后请求您审查。",
+            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 将起草一个拉取请求开始处理您的需求，并在就绪后请求您审查。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -9525,7 +9525,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     // [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"]
                     "Learn about draft PRs": "了解拉取请求草案",
                         "Try draft pull requests": "尝试拉取请求草案",
-                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您准备就绪可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
+                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您就绪，可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
                         "Ask admin for access": "向管理员请求权限",
                     "Convert to draft": "设置为草案",
                         // 设置草案对话框
@@ -9798,7 +9798,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您发现一个错误或有任何想法，请在打开新议题之前浏览未解决的议题。您也可以看看",
             "Open Source Guide": "开源指南",
                 "Learn about Open Source and how to contribute": "了解开源和如何贡献",
-            "If you're ready to tackle some open issues,": "如果您准备好解决一些未解决的议题，",
+            "If you're ready to tackle some open issues,": "如果您为解决一些打开的议题准备就绪，",
             "we've collected some good first issues for you": "我们已为您收集了一些好的首发议题",
             "we've collected some good first issues for you.": "我们已为您收集了一些好的首发议题。", // 新版议题页
 
@@ -10675,7 +10675,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             "View status": "查看状态",
             "Able to merge": "可以合并",
-            "Ready to merge": "准备合并",
+            "Ready to merge": "可供合并",
                 "Merge status": "合并状态",
                 "What's new": "新内容",
                 "Close merge status": "关闭",
@@ -11939,7 +11939,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
                 // [/Awaiting requested review from ([^ ]+)/, "等待 $1 应请求进行审查"]
                 "Learn about draft PRs": "了解拉取请求草案",
                     "Try draft pull requests": "尝试拉取请求草案",
-                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您准备就绪可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
+                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您就绪，可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
                     "Ask admin for access": "向管理员请求权限",
                 "Convert to draft": "设置为草案",
                 "Request up to 15 reviewers": "最多请求 15 个审查者",
@@ -12016,7 +12016,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Open a pull request that is ready for review": "打开一个可供审查的拉取请求",
             "Automatically requests reviews from code owners": "自动请求代码所有者审查",
             "Create draft pull request": "创建拉取请求草案",
-            "Cannot be merged until marked ready for review": "在标记为可供审核之前无法合并",
+            "Cannot be merged until marked ready for review": "在标记为可供审查之前无法合并",
             "Doesn't request code owners review and cannot be merged": "不请求代码所有者审查并且无法合并",
             "Draft pull request": "拉取请求草案",
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
@@ -12712,7 +12712,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
 
             "Communities using Discussions": "使用讨论交流",
 
-            "Ready to try Discussions?": "准备尝试讨论？",
+            "Ready to try Discussions?": "准备就绪，尝试讨论？",
                 "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "点击 “开始使用” 即可为您的社区启用该功能，并发起您的首次讨论。现在不方便操作？点击 “暂不” 可关闭此标签页。您也可以稍后在仓库设置中随时开启讨论功能。",
 
             "Read about best practices for setting up Discussions for your community.": "了解为社区设置讨论功能的最佳实践。",
@@ -14056,7 +14056,7 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                 "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
 
             // 顶部提醒
-            // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
+            // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
 
         // 编辑文件页面 /<user-name>/<repo-name>/edit/<branch>/<file>
             // 非本人仓库
@@ -14255,7 +14255,7 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
     "regexp": [ // 正则翻译
         [/on this commit as/,"该提交以"],
         [/Commit changes?/, "提交更改"], // 提交对话框
-        [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已准备就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
+        [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的许可证已就绪。请在下面审查它并将其提交到 $1 分支或新分支。"],
         [/Your search has returned (\d+) results?./, "您的搜索返回了 $1 条结果。"],
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
         [/([^ ]+) has committed since you started editing./, "$1 自您开始编辑以来已提交。"],
@@ -14331,7 +14331,7 @@ I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
             "Explore 40+ models in the catalog": "在目录中探索 40+ 模型",
                 "Compare models in the playground—test parameters, token usage, and latency to find the right fit for your use case.": "在游乐场中对比模型——测试参数、令牌使用量和延迟，以找到最适合您用例的模型。",
             "Power your prompt with the right model": "为您的提示词选择合适的模型",
-                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "针对您的提示词测试和对比不同模型，以找到最合适的模型，然后在准备好后将其直接提交到您的项目中。",
+                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "针对您的提示词测试和对比不同模型，以找到最合适的模型，然后在就绪后将其直接提交到您的项目中。",
             "Instrument your Actions workflow with models": "使用模型为您的 Actions 工作流提供支持",
                 "Set up a new GitHub Actions workflow using models.": "使用模型新建 Actions 工作流。",
 
@@ -14947,8 +14947,8 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "Undo": "撤销",
 
             "Set as a pre-release": "设置为预发布版本",
-                "This release is labeled as non-production ready.": "此版本标记为非正式版本。",
-                "This release will be labeled as non-production ready": "此版本将被标记为非正式版本。",
+                "This release is labeled as non-production ready.": "此版本标记为非供投产。",
+                "This release will be labeled as non-production ready": "此版本将被标记为非供投产。",
             "Create a discussion for this release": "为此版本创建讨论",
                 "People will be able to leave comments and reactions on this release using Discussions.": "人们将能够使用“讨论”对此版本发表评论和反应。",
                         "Category:": "类别：",
@@ -20032,7 +20032,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
             "From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster.": "从第一行代码到最终部署，GitHub 提供 AI 和自动化工具，帮助你更快地构建并发布更优质的软件。",
 
             "Your AI partner everywhere.": "你的 AI 伙伴，无处不在。",
-                "Copilot is ready to work with you at each step of the software development lifecycle.": "Copilot 已准备好在软件开发生命周期的每一个阶段与你并肩工作。",
+                "Copilot is ready to work with you at each step of the software development lifecycle.": "Copilot 已就绪，在软件开发生命周期的每一个阶段与你并肩工作。",
 
             "Work 55% faster.": "工作快 55%。",
                 "Increase productivity with AI-powered coding assistance, including code completion, chat, and more.": "通过人工智能编码辅助（包括代码完成、聊天等）提高生产力。",
@@ -20302,7 +20302,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
 
         // https://github.com/sessions/two-factor/webauthn
             "Passkey": "通行密钥",
-            "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+            "When you are ready, authenticate using the button below.": "就绪后，请使用下面的按钮进行身份验证。",
             "Use passkey": "使用通行密钥",
 
             "Authentication failed.": "认证失败。",
@@ -20466,7 +20466,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
 
             "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "为您的 GitHub Mobile 应用创建验证请求。",
-            "When your phone is ready, click the button below.": "当您的手机准备就绪时，请点击下面的按钮。",
+            "When your phone is ready, click the button below.": "当您的手机就绪时，请点击下面的按钮。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我们向您的 GitHub Mobile 应用发送了一个验证请求。输入下面显示的数字以进入 sudo 模式。",
             "We could not verify your identity": "我们无法核实您的身份",
             "Retry": "请重试",
@@ -23154,7 +23154,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Publishing": "发布",
                 "Publishing apps": "发布应用",
                 "Publishing actions": "发布操作",
-                "Get your site ready for production so you can get the word out.": "让您的网站做好生产准备，以便您可以宣传。",
+                "Get your site ready for production so you can get the word out.": "让您的网站就绪以供投产，以便您可以宣传。",
 
             // "Recently added": "最近添加",
                 "Recently added apps": "最近添加应用",
@@ -26813,7 +26813,7 @@ I18N["zh-CN"]["github-copilot/signup"] = { // GitHub Copilot 个人版获取页�
             "Save and complete setup": "保存并继续",
 
         // https://github.com/github-copilot/signup/settings
-            "GitHub Copilot is now ready": "GitHub Copilot 已就绪",
+            "GitHub Copilot is now ready": "GitHub Copilot 现已就绪",
                 "Add it to your editor and start building.": "添加至您的编辑器并开始构建",
 
             "Install the GitHub Copilot extension": "安装 GitHub Copilot 扩展",
@@ -28664,7 +28664,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                             "camera2 1, facing front": "镜头2 1，前摄",
                             "camera2 0, facing back": "镜头2 0，后摄",
                             "Uploading…": "上传中…",
-                            "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感谢您上传照片。请填写表格并提交。",
+                            "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感谢您上传照片。请填写表格并在一切就绪后提交。",
                             // 未拍照直接提交
                                 "Please upload proof of your current school affiliation": "请上传您目前所在学校的证明",
                                 "Please upload proof of your current school affiliation that is less than 1MB in size": "请上传小于 1MB 的照片",
@@ -28710,7 +28710,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                         "Understanding how to use GitHub": "了解如何使用 GitHub",
                         "Refining my skills in a particular topic (coding, gaming, design, big data, artifical intelligence, etc.)": "提高我在某一特定领域（编码、游戏、设计、大数据、人工智能等）的技能",
                         "Connecting with other students who have similar interests": "与其他兴趣相投的学生建立联系",
-                        "Developing career readiness skills": "培养职业准备技能",
+                        "Developing career readiness skills": "培养职业预备技能",
                         "Two selections are required to continue.": "必须选两项。",
                 "Question 2 of 2": "问题 2/2",
                     "Which topics are of interest to you? Select all that apply.": "您对哪些主题感兴趣？请选择所有适用选项。",
