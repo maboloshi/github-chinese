@@ -2162,7 +2162,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Introduce yourself with a profile README": "使用 README 介绍自己",
             "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人资料自述文件（README）来分享有关您自己的信息，该信息将显示在您的个人资料页面顶部。",
         "Follow this exercise to try the GitHub flow": "按照此练习尝试 GitHub 流程",
-            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 的拉取请求工作流程，它们分别用于创建和审查代码。",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库和学习 GitHub 的拉取请求工作流程，它们分别用于代码创建和代码审查。",
             "Try the GitHub flow": "尝试 GitHub 流程",
         "About version control and Git": "关于版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
