@@ -6779,9 +6779,9 @@ I18N["zh-CN"]["settings/reminders"] = { // 设置 - 定时提醒
             "Times": "时间",
                 "Filter": "筛选",
             "Review requests assigned to you": "审查分配给您的请求",
-                "Receive reminders for reviews waiting on you.": "接收关于等待您接手的审查流程的提醒。",
+                "Receive reminders for reviews waiting on you.": "就等您处理的审查流程接收提醒。",
             "Review requests assigned to your team": "审查分配给您团队的请求",
-                "Receive reminders for reviews waiting on your team.": "接收关于等待您的团队接手的审查流程的提醒。",
+                "Receive reminders for reviews waiting on your team.": "就等您的团队处理的审查流程接收提醒。",
             "Enable real-time alerts": "启用实时警报",
                 "Receive immediate Slack messages when certain events happen": "当某些事件发生时，会立即收到 Slack 消息",
 
