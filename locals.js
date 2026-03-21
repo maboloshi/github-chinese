@@ -11352,7 +11352,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "No replies": "无回复",
 
             "files viewed": "查看过的文件",
-                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查意见",
+                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您发表的审查意见",
             // 咨询 Copilot
                 "Loading Copilot features…": "加载 Copilot 功能…",
                 "Copilot is not available for this pull request": "Copilot 不可用于此拉取请求",
