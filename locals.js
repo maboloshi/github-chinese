@@ -24229,7 +24229,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                     "Count existing requests": "计算现有请求",
                         "Count any members whose review has already been requested against the total number of members to assign.": "在待分配的成员总数中清点所有已收到审核请求的成员。",
                     "Team review request": "团队审查请求",
-                        "When assigning team members, remove the review request for the team.": "分配团队成员时，为团队移除审核请求。",
+                        "When assigning team members, remove the review request for the team.": "分配团队成员时，为团队移除审查请求。",
 
         // 团队设置 - 定时提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
             "No scheduled reminders created.": "未创建预定提醒。",
