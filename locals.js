@@ -18797,7 +18797,7 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
                 "repository custom instructions": "仓库自定义指令",
                 "when reviewing pull requests.": "。",
 
-        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求的审查者，包括草案。您还可以在 Visual Studio Code 中选择代码行，并要求 Copilot 审查和评论特定部分。",
+        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求——包括草案——的审查者。您还可以在 Visual Studio Code 中选择代码行，并要求 Copilot 审查和评论特定部分。", // GB/T 15834—2011, 4.10.3.2 规定，破折号可标示插入语
         "Learn more about Copilot code reviews.": "就 Copilot 代码审查了解更多信息。",
 
         "Automated code reviews using rulesets": "使用规则集的自动代码审查",
