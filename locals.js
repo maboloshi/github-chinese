@@ -4739,7 +4739,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Repository rules":"仓库规则",
                         "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "对代码分支的合并方式实施限制，包括要求由选定的协作者进行审查，或仅允许特定的贡献者在特定分支上工作。",
                     // 代码所有者
-                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当被更改的代码部分由选定的贡献者所有时，自动请求其审查或要求其批准。",
+                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当更改所选贡献者拥有的代码部分时，自动请求其审查，或要求其批准。",
                     "Draft pull requests": "拉取请求草案",
                         "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式审查之前，就拉取请求进行轻松讨论和协作。", //协作在汉语中用作动词时作为不及物动词比较通顺
                     "Multiple pull request assignees": "多个拉取请求受理人",
@@ -27200,7 +27200,7 @@ I18N["zh-CN"]["features"] = {
             "Code review assignments": "代码审查分配",
                 "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该对拉取请求发表审查意见。",
             "Code owners": "代码所有者",
-                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当所选贡献者拥有的代码部分被更改时，自动请求其审查，或要求其批准。",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当更改所选贡献者拥有的代码部分时，自动请求其审查，或要求其批准。",
             "Draft pull requests": "起草拉取请求",
                 "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "将拉取请求用作讨论和协作的方式，而无需提请正式审查，也不必冒险在暂不需要时合并。",
             "Protected branches": "受保护的分支",
