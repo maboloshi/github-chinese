@@ -18130,7 +18130,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Required approvals": "要求批准审查",
                                 "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的批准审查次数。",
                             "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，驳回对陈旧的拉取请求的批准",
-                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将驳回对之前的拉取请求的批准。",
+                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查的提交，将驳回对之前的拉取请求的批准。", // GB/T 15834—2011, 4.4.3.2a) 规定，逗号可用于较长的主语之后
                             "Require review from Code Owners": "要求代码所有者进行审查",
                                 "Require an approving review in pull requests that modify files that have a designated code owner.": "要求对具有指定代码所有者的文件修改的拉取请求中进行批准审查。",
                             "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
