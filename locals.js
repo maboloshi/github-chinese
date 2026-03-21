@@ -8276,7 +8276,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                     "Previous commit": "上一个提交",
                     "Show or hide annotations": "显示或隐藏批注",
                     "Show or hide comments": "显示或隐藏评论",
-                    "Submit a review comment": "提交审查意见",
+                    "Submit a review comment": "发表审查意见",
                     "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                     "and click": "和点击",
 
@@ -11372,7 +11372,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Pull request authors can’t request changes on their own pull request.": "拉取请求作者不能在自己的拉取请求上请求更改。",
                     "Only users with explicit access to this repository may request changes to pull requests": "只有对这个仓库有明确访问权限的用户才能请求更改拉取请求",
                 "Abandon review": "放弃审查",
-                "Submit review": "提交审查意见",
+                "Submit review": "发表审查意见",
                     // 顶部提醒
                         "You need to leave a comment indicating the requested changes.": "您需要留言评论，表明所请求的更改。",
                 "Cancel review": "取消审查",
@@ -21190,7 +21190,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                 "Previous commit": "上一个提交",
                 "Show or hide annotations": "显示或隐藏批注",
                 "Show or hide comments": "显示或隐藏评论",
-                "Submit a review comment": "提交审查意见",
+                "Submit a review comment": "发表审查意见",
                 "Collapse or expand all files instead of just the current one": "折叠或展开所有文件，而不仅仅是当前文件",
                     "and click": "和点击",
 
