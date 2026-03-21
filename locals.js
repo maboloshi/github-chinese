@@ -11870,7 +11870,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "are identical.": "是相同的。",
 
-            "Create another pull request to discuss and review the changes again.": "另行创建拉取请求已再次讨论和审查这些更改。",
+            "Create another pull request to discuss and review the changes again.": "另行创建拉取请求以再次讨论和审查这些更改。",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
