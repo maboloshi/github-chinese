@@ -6220,7 +6220,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "Copilot will automatically review your pull requests.": "Copilot 将自动审查您的拉取请求。",
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
                 "Copilot coding agent": "Copilot 编程智能体",
-                    "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以进行迭代。",
+                    "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以供迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
                     "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和编程智能体中连接 MCP 服务器。",
@@ -6251,7 +6251,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程智能体，但由于管理员已禁用 Copilot 编程智能体策略，您将无法向 Copilot 分配任务。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编码代理，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
 
-            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以进行迭代。",
+            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以供迭代。",
                 "Learn more in the docs.": "详情",
 
             "Repository access": "仓库访问",
