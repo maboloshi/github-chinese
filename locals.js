@@ -6119,7 +6119,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         // 免费版
             "You are using Copilot for free": "您正在使用 Copilot 免费版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回复上限为每月 2,000 次代码完成和 50 条聊天信息。",
-                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得限制放宽、高级模型和 AI 审查。免费版的会话将在 20 天后重置。",
+                // "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得限制放宽、高级模型和 AI 审查。免费版的会话将在 20 天后重置。", // 见正则翻译
             "Get unlimited usage with Copilot Pro": "通过 Copilot Pro 无限制使用",
                 "Unlimited messages and interactions": "信息和互动无限制",
                 "Access to the latest models": "访问最新模型",
@@ -6285,7 +6285,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取限制放宽、高级模型和 AI 审查。免费额度将在 $1 天内重置。"], // 免费版额度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获得限制放宽、高级模型和 AI 审查。免费额度将在 $1 天内重置。"], // 免费版额度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
     ],
