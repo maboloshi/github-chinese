@@ -17697,7 +17697,7 @@ I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置
                         "When enabled, pull requests targeting a matching branch require a number of approvals and no changes requested before they can be merged.": "启用后，针对匹配分支的拉取请求需要若干次批准审查，并且在合并之前无需请求更改。",
                         "Required number of approvals before merging:": "合并前所需的批准审查数量：",
                     "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
-                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查的提交将驳回对之前的拉取请求的批准。",
+                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查的提交，将驳回对之前的拉取请求的批准。", // GB/T 15834—2011, 4.4.3.2a) 规定，逗号可用于较长的主语之后
                     "Require review from Code Owners": "要求代码所有者审查",
                         "Require an approved review in pull requests including files with a designated code owner.": "要求在拉取请求中进行批准审查，包括有指定代码所有者的文件。",
                     "Restrict who can dismiss pull request reviews": "限制谁可以驳回拉取请求审查", // 组织仓库
