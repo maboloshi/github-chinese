@@ -26383,10 +26383,10 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                     "In progress": "进行中",
                         "Actively being worked on": "正在积极开展工作",
                         "Approved by reviewer": "由审查者批准",
-                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉取请求达到所需的最低审查批准数时，将自动移至此处。当另一栏启用了 “",
+                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当此项目中的拉取请求达到所需的最低审查批准数时，将自动移至此处。当另一栏启用了 “",
                         "automation enabled.": "” 的自动化功能时推荐使用。",
                         "Pending approval by reviewer": "等待审查者批准",
-                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小审查批准数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
+                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "此项目中的拉取请求，在被审查者要求更改，或不再满足所需的最小审查批准数时，将自动移至此处。当另一栏目启用了 “",
                     "Done": "已完成",
                         "Items are complete": "项目已完成",
                         // 已关闭
