@@ -2162,7 +2162,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Introduce yourself with a profile README": "使用 README 介绍自己",
             "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人资料自述文件（README）来分享有关您自己的信息，该信息将显示在您的个人资料页面顶部。",
         "Follow this exercise to try the GitHub flow": "按照此练习尝试 GitHub 流程",
-            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 的拉取请求工作流程，它们分别用于创建和审查代码。",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库和学习 GitHub 的拉取请求工作流程，它们分别用于代码创建和代码审查。",
             "Try the GitHub flow": "尝试 GitHub 流程",
         "About version control and Git": "关于版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
@@ -4739,7 +4739,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Repository rules":"仓库规则",
                         "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "对代码分支的合并方式实施限制，包括要求由选定的协作者进行审查，或仅允许特定的贡献者在特定分支上工作。",
                     // 代码所有者
-                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当被更改的代码部分由选定的贡献者所有时，自动请求其审查或要求其批准。",
+                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当更改所选贡献者拥有的代码部分时，自动请求其审查，或要求其批准。",
                     "Draft pull requests": "拉取请求草案",
                         "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式审查之前，就拉取请求进行轻松讨论和协作。", //协作在汉语中用作动词时作为不及物动词比较通顺
                     "Multiple pull request assignees": "多个拉取请求受理人",
@@ -6119,7 +6119,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         // 免费版
             "You are using Copilot for free": "您正在使用 Copilot 免费版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回复上限为每月 2,000 次代码完成和 50 条聊天信息。",
-                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得限制放宽、高级模型和 AI 审查。免费版的会话将在 20 天后重置。",
+                // "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得限制放宽、高级模型和 AI 审查。免费版的会话将在 20 天后重置。", // 见正则翻译
             "Get unlimited usage with Copilot Pro": "通过 Copilot Pro 无限制使用",
                 "Unlimited messages and interactions": "信息和互动无限制",
                 "Access to the latest models": "访问最新模型",
@@ -6285,7 +6285,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取限制放宽、高级模型和 AI 审查。免费额度将在 $1 天内重置。"], // 免费版额度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获得限制放宽、高级模型和 AI 审查。免费额度将在 $1 天内重置。"], // 免费版额度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
     ],
@@ -6779,9 +6779,9 @@ I18N["zh-CN"]["settings/reminders"] = { // 设置 - 定时提醒
             "Times": "时间",
                 "Filter": "筛选",
             "Review requests assigned to you": "审查分配给您的请求",
-                "Receive reminders for reviews waiting on you.": "接收关于等待您接手的审查流程的提醒。",
+                "Receive reminders for reviews waiting on you.": "就等您处理的审查流程接收提醒。",
             "Review requests assigned to your team": "审查分配给您团队的请求",
-                "Receive reminders for reviews waiting on your team.": "接收关于等待您的团队接手的审查流程的提醒。",
+                "Receive reminders for reviews waiting on your team.": "就等您的团队处理的审查流程接收提醒。",
             "Enable real-time alerts": "启用实时警报",
                 "Receive immediate Slack messages when certain events happen": "当某些事件发生时，会立即收到 Slack 消息",
 
@@ -27200,7 +27200,7 @@ I18N["zh-CN"]["features"] = {
             "Code review assignments": "代码审查分配",
                 "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该对拉取请求发表审查意见。",
             "Code owners": "代码所有者",
-                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当所选贡献者拥有的代码部分被更改时，自动请求其审查，或要求其批准。",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当更改所选贡献者拥有的代码部分时，自动请求其审查，或要求其批准。",
             "Draft pull requests": "起草拉取请求",
                 "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "将拉取请求用作讨论和协作的方式，而无需提请正式审查，也不必冒险在暂不需要时合并。",
             "Protected branches": "受保护的分支",
