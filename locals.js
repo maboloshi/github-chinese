@@ -11870,7 +11870,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "are identical.": "是相同的。",
 
-            "Create another pull request to discuss and review the changes again.": "另行创建拉取请求已再次讨论和审查这些更改。",
+            "Create another pull request to discuss and review the changes again.": "另行创建拉取请求以再次讨论和审查这些更改。",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
@@ -17697,11 +17697,11 @@ I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置
                         "When enabled, pull requests targeting a matching branch require a number of approvals and no changes requested before they can be merged.": "启用后，针对匹配分支的拉取请求需要若干次批准审查，并且在合并之前无需请求更改。",
                         "Required number of approvals before merging:": "合并前所需的批准审查数量：",
                     "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
-                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查的提交将驳回对之前的拉取请求的批准。",
+                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查的提交，将驳回对之前的拉取请求的批准。", // GB/T 15834—2011, 4.4.3.2a) 规定，逗号可用于较长的主语之后
                     "Require review from Code Owners": "要求代码所有者审查",
                         "Require an approved review in pull requests including files with a designated code owner.": "要求在拉取请求中进行批准审查，包括有指定代码所有者的文件。",
                     "Restrict who can dismiss pull request reviews": "限制谁可以驳回拉取请求审查", // 组织仓库
-                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定允许驳回拉取请求审查意见的人员、团队或应用。",
+                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定人员、团队或应用，允许他们驳回对拉取请求的审查意见。",
                         "People, teams, or apps that can dismiss reviews.": "允许驳回审查的人员、团队或应用。",
                             "Organization and repository administrators": "组织和仓库管理员",
                                 "These members can always dismiss.": "这些成员总是允许驳回。",
@@ -18130,7 +18130,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Required approvals": "要求批准审查",
                                 "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的批准审查次数。",
                             "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，驳回对陈旧的拉取请求的批准",
-                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将驳回对之前的拉取请求的批准。",
+                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查的提交，将驳回对之前的拉取请求的批准。", // GB/T 15834—2011, 4.4.3.2a) 规定，逗号可用于较长的主语之后
                             "Require review from Code Owners": "要求代码所有者进行审查",
                                 "Require an approving review in pull requests that modify files that have a designated code owner.": "要求对具有指定代码所有者的文件修改的拉取请求中进行批准审查。",
                             "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
@@ -18462,7 +18462,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                 "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
                     "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交拉取请求审查批准意见。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求或发表审查意见批准拉取请求。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
 
                 // 顶部提醒
@@ -18797,7 +18797,7 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
                 "repository custom instructions": "仓库自定义指令",
                 "when reviewing pull requests.": "。",
 
-        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求的审查者，包括草案。您还可以在 Visual Studio Code 中选择代码行，并要求 Copilot 审查和评论特定部分。",
+        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求——包括草案——的审查者。您还可以在 Visual Studio Code 中选择代码行，并要求 Copilot 审查和评论特定部分。", // GB/T 15834—2011, 4.10.3.2 规定，破折号可标示插入语
         "Learn more about Copilot code reviews.": "就 Copilot 代码审查了解更多信息。",
 
         "Automated code reviews using rulesets": "使用规则集的自动代码审查",
@@ -23055,7 +23055,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Code quality": "代码质量",
                 "Code quality apps": "代码质量应用",
                 "Code quality actions": "代码质量操作",
-                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，就样式、质量、安全性和测试覆盖率检查方面，对您的代码审查进行自动化。",
+                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "需要时，在样式、质量、安全性和测试覆盖率检查方面，为您自动化代码审查。",
 
             "Code review": "代码审查",
                 "Code review apps": "代码审查应用",
@@ -24229,7 +24229,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
                     "Count existing requests": "计算现有请求",
                         "Count any members whose review has already been requested against the total number of members to assign.": "在待分配的成员总数中清点所有已收到审核请求的成员。",
                     "Team review request": "团队审查请求",
-                        "When assigning team members, remove the review request for the team.": "分配团队成员时，为团队移除审核请求。",
+                        "When assigning team members, remove the review request for the team.": "分配团队成员时，为团队移除审查请求。",
 
         // 团队设置 - 定时提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
             "No scheduled reminders created.": "未创建预定提醒。",
@@ -25075,7 +25075,7 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                     "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
                         "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求或提交对拉取请求的审查批准。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求，或发表审查意见批准拉取请求。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 能否创建拉取请求或提交对拉取请求的审查批准。",
                     // 顶部提醒
@@ -26383,10 +26383,10 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                     "In progress": "进行中",
                         "Actively being worked on": "正在积极开展工作",
                         "Approved by reviewer": "由审查者批准",
-                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉取请求达到所需的最低审查批准数时，将自动移至此处。当另一栏启用了 “",
+                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当此项目中的拉取请求达到所需的最低审查批准数时，将自动移至此处。当另一栏启用了 “",
                         "automation enabled.": "” 的自动化功能时推荐使用。",
                         "Pending approval by reviewer": "等待审查者批准",
-                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小审查批准数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
+                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "此项目中的拉取请求，在被审查者要求更改，或不再满足所需的最小审查批准数时，将自动移至此处。当另一栏目启用了 “",
                     "Done": "已完成",
                         "Items are complete": "项目已完成",
                         // 已关闭
@@ -27214,7 +27214,7 @@ I18N["zh-CN"]["features"] = {
             "Multi-line comments": "多行评论",
                 "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次性对多行代码进行引用或评论，来使得代码审查一目了然。",
             "Public repositories": "公共仓库",
-                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共仓库中的代码，同任何 GitHub 成员合作。进行更改，打开拉取请求，创建议题，诸如此类。", // 合作在汉语中用作动词时通常是不及物的
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共仓库中的代码，同任何 GitHub 成员合作。进行更改、打开拉取请求、创建议题，诸如此类。", // 合作在汉语中用作动词时通常是不及物的。顿号用法见 GB/T 4.5.3.1
             "Dark mode": "深色模式",
                 "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择您使用 GitHub 的方式。切换到深色主题或默认使用您的系统偏好设置。",
     },
@@ -28316,7 +28316,7 @@ I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
             "the pre-release terms": "预发行条款",
             ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。注册并不保证您一定能获得访问权限。如果您被纳入预览计划，我们将通过电子邮件通知您。",
 
-        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "预览使用 Copilot 驱动的代码审查的名额有限。如果授予您访问权限，您将收到一封电子邮件通知。",
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "使用 Copilot 驱动的代码审查的预览体验名额有限。如果授予您访问权限，您将收到一封电子邮件通知。",
     },
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感谢！$1 已加入候补名单"],
