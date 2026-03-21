@@ -23055,7 +23055,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Code quality": "代码质量",
                 "Code quality apps": "代码质量应用",
                 "Code quality actions": "代码质量操作",
-                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，就样式、质量、安全性和测试覆盖率检查方面，对您的代码审查进行自动化。",
+                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "需要时，在样式、质量、安全性和测试覆盖率检查方面，为您自动化代码审查。",
 
             "Code review": "代码审查",
                 "Code review apps": "代码审查应用",
