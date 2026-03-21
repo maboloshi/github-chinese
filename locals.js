@@ -576,7 +576,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You are assigned to this pull request": "您被指派处理此拉取请求",
             "You are assigned to and opened this pull request": "您打开并被指派处理此拉取请求",
-            "You left a review": "您已留下审查意见",
+            "You left a review": "您发表了审查意见",
             "Changes requested": "请求更改", // 拉取请求
             "Review required": "需要审查", // 拉取请求
             "Approved": "已批准", // 拉取请求
