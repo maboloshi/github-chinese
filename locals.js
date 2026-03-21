@@ -10032,7 +10032,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Review state": "审查状态",
                     "Has review state": "包含审查状态",
                     "Exclude review": "排除审查状态",
-                    "No reviews": "尚无审查",
+                    "No reviews": "未经审查",
                 "Code language": "代码语言",
                     "Has code language": "包含代码语言",
                     "Exclude language": "排除代码语言",
@@ -10595,7 +10595,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
             "Reviews": "审查",
                 // 筛选工作条
                 "Filter by reviews": "按审查筛选",
-                "No reviews": "尚无审查",
+                "No reviews": "未经审查",
                 // "Review required": "需要审查",
                 "Approved review": "已批准的审查",
                 "Changes requested": "已请求更改",
@@ -11929,11 +11929,11 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             // "No commit comments for this range": "该范围变更没有提交注释",
 
             "Reviewers": "审查者",
-                "No reviews": "尚无审查",
+                "No reviews": "未经审查",
                 "Loading suggestions…": "载入推荐…",
                 // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                 // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次审查批准才能合并此拉取请求。"],
-                "No reviews—at least 0 approving review is required.": "尚无审查 — 至少需要 0 次批准审查。",
+                "No reviews—at least 0 approving review is required.": "未经审查 — 至少需要 0 次审查批准。",
                 "Re-request review": "重新请求审查",
                 "Still in progress?": "仍在进行中吗？",
                 // [/Awaiting requested review from ([^ ]+)/, "等待 $1 应请求进行审查"]
