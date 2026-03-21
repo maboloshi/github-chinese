@@ -494,7 +494,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/Sponsorship Log/, "赞助日志"],
         [/Sponsor @([^ ]+) on GitHub Sponsors/, "在 GitHub 上赞助 $1"],
         [/OAuth applications/, "OAuth 应用"],
-        [/People · Pending Collaborators/, "成员 · 待定协作者"],
+        [/People · Pending Collaborators/, "成员 · 未决协作者"],
         [/Members · People · ([^ ]+)/, "成员 · $1"],
         [/People/, "成员"],
         [/Outside collaborators/, "外部协作者"],
@@ -576,9 +576,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "You were mentioned on and opened this pull request": "您被提及并打开了此拉取请求",
             "You are assigned to this pull request": "您被指派处理此拉取请求",
             "You are assigned to and opened this pull request": "您打开并被指派处理此拉取请求",
-            "You left a review": "您已评论",
+            "You left a review": "您已留下审查意见",
             "Changes requested": "请求更改", // 拉取请求
-            "Review required": "请求审查", // 拉取请求
+            "Review required": "需要审查", // 拉取请求
             "Approved": "已批准", // 拉取请求
             "replied": "已回复", // 讨论
 
@@ -801,7 +801,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Open agents panel": "打开智能体面板",
                 "Start a task with Copilot coding agent": "使用 Copilot 编程智能体开始任务",
-                    "Describe your task in natural language. Copilot will work in the background and open a pull request for your review.": "请用自然语言描述您的任务。Copilot 会在后台工作，并创建一个拉取请求供您审核。",
+                    "Describe your task in natural language. Copilot will work in the background and open a pull request for your review.": "请用自然语言描述您的任务。Copilot 会在后台工作，并创建一个拉取请求供您审查。",
 
                 "Agent tasks": "智能体任务",
                     "Switch branches": "切换分支",
@@ -892,7 +892,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Focusing": "专注中",
 
             "Busy": "繁忙中",
-                "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您进行评论时，GitHub 会告知他们您很忙。",
+                "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "当其他人提及您、指派您或请求您审查时，GitHub 会告知他们您忙不过来了。",
                 "I may be slow to respond.": "我的回复可能比较慢。",
 
             "Clear status": "清除状态",
@@ -2162,7 +2162,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Introduce yourself with a profile README": "使用 README 介绍自己",
             "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通过创建个人资料自述文件（README）来分享有关您自己的信息，该信息将显示在您的个人资料页面顶部。",
         "Follow this exercise to try the GitHub flow": "按照此练习尝试 GitHub 流程",
-            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 用于创建和审查代码的拉取请求工作流程。",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程会教您基本知识，您可以在其中创建自己的仓库并学习 GitHub 的拉取请求工作流程，它们分别用于创建和审查代码。",
             "Try the GitHub flow": "尝试 GitHub 流程",
         "About version control and Git": "关于版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "了解版本控制系统、Git 以及它如何与 GitHub 一起工作。",
@@ -2360,7 +2360,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Unable to load pull requests, try again later.": "无法加载拉取请求，请稍后重试。",
 
             "Updated": "更新于",
-            "Ready for review": "准备审查",
+            "Ready for review": "可供审查",
             "Assigned to Copilot": "分配给 Copilot",
     },
     "regexp": [ // 正则翻译
@@ -2493,7 +2493,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                 // YOLO
                     "You want it? You merge it.": "您想要它？您合并它。",
                     "inaccessible": "已删库",
-                    "Merged without a review": "未经审查就合并",
+                    "Merged without a review": "未经审查即合并",
                 // Pull Shark
                     "Pull Shark": "鲨鱼拉",
                     "Bronze unlocked": "青铜已解锁",
@@ -3673,7 +3673,7 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
                 "OAuth app policy": "OAuth 应用策略",
                 "Personal access tokens": "个人访问令牌",
                     "Active tokens": "活跃的令牌",
-                    "Pending requests": "待处理的请求",
+                    "Pending requests": "未决请求",
 
             "Integrations": "集成",
                 "Scheduled reminders": "定时提醒",
@@ -3889,7 +3889,7 @@ I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
             "Search by username, full name, or email address": "搜索用户名、全名、或电子邮箱",
             "You have not designated a successor.": "您还没有指定继任者。",
             // 等待回应
-            "Pending": "待处理",
+            "Pending": "未决",
             "Copy invite link": "复制邀请链接",
             // 已指定
             "Learn more about account successors": "了解更多关于账户继任者的信息",
@@ -4160,7 +4160,7 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                     "Reviews, Pushes": "审查、推送",
                     "Reviews, Pushes, Comments": "审查、推送、评论",
                     "Reviews, Pushes, Comments, My own updates": "审查、推送、评论、自我更新",
-                    "Pull Request reviews": "拉取请求审核",
+                    "Pull Request reviews": "拉取请求审查.",
                     "Pull Request pushes": "拉取请求推送",
                     "Comments on Issues and Pull Requests": "关于议题和拉取请求的评论",
                     "Includes your own updates": "包括您自己的更新",
@@ -4739,9 +4739,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Repository rules":"仓库规则",
                         "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "对代码分支的合并方式实施限制，包括要求由选定的协作者进行审查，或仅允许特定的贡献者在特定分支上工作。",
                     // 代码所有者
-                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当选定的贡献者对其拥有的代码部分进行修改时，自动要求审查或要求批准。",
+                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "当被更改的代码部分由选定的贡献者所有时，自动请求其审查或要求其批准。",
                     "Draft pull requests": "拉取请求草案",
-                        "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式审查之前，轻松讨论和协作拉取请求。",
+                        "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式审查之前，就拉取请求进行轻松讨论和协作。", //协作在汉语中用作动词时作为不及物动词比较通顺
                     "Multiple pull request assignees": "多个拉取请求受理人",
                         "Assign more than one person to a pull request.": "为拉取请求指派多人受理。",
                     "Repository insights": "仓库洞察",
@@ -5785,7 +5785,7 @@ I18N["zh-CN"]["settings/code_review_limits"] = { // 设置 - 代码审查限制
         // Code review limits 代码审查限制 https://github.com/settings/code_review_limits
             "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制允许批准或请求更改公共仓库中拉取请求的用户。",
             "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
-            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
+            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制均单独管理。启用限制则仅允许每个仓库的被明确授予访问权的用户发表 “批准” 或 “请求更改” 的审查意见。移除限制则允许所有用户对拉取请求发表审查意见。所有能够对拉取请求发表评论性审查意见的用户将继续能够这样做。",
             "Code review limits are currently": "目前，所有仓库都",
             "enabled": "启用",
             "disabled": "禁用",
@@ -6119,7 +6119,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         // 免费版
             "You are using Copilot for free": "您正在使用 Copilot 免费版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回复上限为每月 2,000 次代码完成和 50 条聊天信息。",
-                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得更高的限制、高级模型和 AI 评审。免费版的会话将在 20 天后重置。",
+                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升级以获得限制放宽、高级模型和 AI 审查。免费版的会话将在 20 天后重置。",
             "Get unlimited usage with Copilot Pro": "通过 Copilot Pro 无限制使用",
                 "Unlimited messages and interactions": "信息和互动无限制",
                 "Access to the latest models": "访问最新模型",
@@ -6167,10 +6167,10 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "and generate": "并生成",
                     "pull request summaries": "拉取请求总结",
 
-                    "Automatically request Copilot code review": "自带请求 Copilot 代码审查",
+                    "Automatically request Copilot code review": "自动请求 Copilot 代码审查",
                         "Use Copilot to automatically review all the pull requests you've created.": "使用 Copilot 自动审查您创建的拉取请求。",
 
-            "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需了解贵机构在使用 GitHub Copilot 时会收到哪些数据，请查看",
+            "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需了解您的组织在使用 GitHub Copilot 时会收到哪些数据，请查看",
                 "GitHub's Privacy Statement": "GitHub 的《隐私声明》",
             "It can take up to 30 minutes for the changes to take effect. Restart your code editor for the changes to take effect immediately.": "更改可能需要 30 分钟才能生效。重新启动代码编辑器，更改会立即生效。",
 
@@ -6216,7 +6216,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "personalized to a codebase.": "，个性化代码。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中获得 Copilot 的协助",
-                "Automatic Copilot code review": "自动 Copilot 代码审查",
+                "Automatic Copilot code review": "Copilot 自动代码审查",
                     "Copilot will automatically review your pull requests.": "Copilot 将自动审查您的拉取请求。",
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
                 "Copilot coding agent": "Copilot 编程智能体",
@@ -6285,7 +6285,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
     "regexp": [ // 正则翻译
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的外部协作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 个仓库的成员和协作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取限制放宽、高级模型和 AI 审查。免费额度将在 $1 天内重置。"], // 免费版额度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
     ],
@@ -6551,8 +6551,8 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 应用通过商业、开源和自主开发的工具来增强和扩展您在 GitHub 上的工作流程。",
                 "Permission updates requested.": "待处理的 GitHub 权限请求",
 
-            "Pending GitHub Apps installation requests": "待处理的 GitHub 应用安装请求", // 组织设置
-                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以请求安装 GitHub 应用。下面列出了待处理的请求。",
+            "Pending GitHub Apps installation requests": "未决的 GitHub 应用安装请求", // 组织设置
+                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您组织中的成员可以请求安装 GitHub 应用。下面列出了未决请求。",
 
             "No installed GitHub Apps": "没有已安装的 GitHub 应用",
             "You have no GitHub Apps installed on this account.": "此账户上没有安装任何 GitHub 应用。",
@@ -6574,7 +6574,7 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
                 "Read": "读取",
                 "write": "写入",
                 "access to metadata": "元数据的权限",
-                "Review request": "审核请求",
+                "Review request": "审查请求",
                 "Access public information (read-only)": "访问公开信息（只读）",
                 "Access user email addresses (read-only)": "访问用户电子邮件地址（只读）",
                 "Read all user profile data": "读取所有用户个人资料数据",
@@ -6779,9 +6779,9 @@ I18N["zh-CN"]["settings/reminders"] = { // 设置 - 定时提醒
             "Times": "时间",
                 "Filter": "筛选",
             "Review requests assigned to you": "审查分配给您的请求",
-                "Receive reminders for reviews waiting on you.": "接收等待您的审查提醒。",
+                "Receive reminders for reviews waiting on you.": "接收关于等待您接手的审查流程的提醒。",
             "Review requests assigned to your team": "审查分配给您团队的请求",
-                "Receive reminders for reviews waiting on your team.": "接收等待您的团队的审查提醒。",
+                "Receive reminders for reviews waiting on your team.": "接收关于等待您的团队接手的审查流程的提醒。",
             "Enable real-time alerts": "启用实时警报",
                 "Receive immediate Slack messages when certain events happen": "当某些事件发生时，会立即收到 Slack 消息",
 
@@ -7235,13 +7235,13 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 // 公共
                     "Repository changes from private to public.": "仓库从私有更改为公共。",
                 "Pull request": "拉取请求",
-                    "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "拉取请求的分配、禁用自动合并、启用自动合并、关闭、转换为草案、取消里程碑、取消队列、编辑、队列、标记、锁定、设置里程碑、打开、准备审查、重新打开、取消审查请求、请求审查、同步、取消分配、取消标记或解锁。",
+                    "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "拉取请求的分配、禁用自动合并、启用自动合并、关闭、转为草案、取消里程碑、离开队列、编辑、加入队列、标记、锁定、设置里程碑、打开、可供审查、重新打开、移除审查请求、请求审查、同步、取消分配、取消标记或解锁。",
                 "Pull request review": "拉取请求审查",
                     "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或驳回。",
                 "Pull request review comment": "拉取请求审查意见",
                     "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
                 "Pull request review thread": "拉取请求线程",
-                    "A pull request review thread was resolved or unresolved.": "拉取请求的审查线程解决或未解决。",
+                    "A pull request review thread was resolved or unresolved.": "拉取请求的审查线程已解决或未解决。",
                 "Push": "推送",
                     "Git push to a repository.": "Git 推送到仓库。",
                 "Registry package": "注册软件包",
@@ -7724,8 +7724,8 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                     "View and manage secret scanning alert dismissal requests":"查看和管理机密扫描警报解除请求",
                 "Secret scanning alerts": "机密扫描警报",
                     "View and manage secret scanning alerts.": "查看和管理机密扫描警报。",
-                "Secret scanning push protection bypass requests": "机密扫描推送保护绕过请求",
-                    "Review and manage repository secret scanning push protection bypass requests.": "审查和管理仓库机密扫描推送保护绕过请求。",
+                "Secret scanning push protection bypass requests": "关于绕过机密扫描推送保护的请求",
+                    "Review and manage repository secret scanning push protection bypass requests.": "审查和管理关于绕过仓库机密扫描推送保护的请求。",
                 "Secrets": "机密",
                     "Manage Actions repository secrets.": "管理操作仓库机密。",
                 "Variables": "变量",
@@ -7821,7 +7821,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Organization announcement banners": "组织公告横幅",
                     "View and modify announcement banners for an organization.": "查看并修改组织的公告横幅。",
                 "Organization bypass requests for secret scanning": "组织绕过机密扫描请求",
-                    "Review and manage secret scanning push protection bypass requests.": "审查和管理机密扫描推送保护绕过请求。",
+                    "Review and manage secret scanning push protection bypass requests.": "审查和管理关于绕过机密扫描推送保护的请求。",
                 "Organization codespaces": "组织代码空间",
                     "Manage Codespaces for an organization.": "管理组织的代码空间。",
                 "Organization codespaces secrets": "组织代码空间机密",
@@ -7831,7 +7831,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Organization dependabot secrets": "组织 Dependabot 机密",
                     "Manage Dependabot organization secrets.": "管理 Dependabot 组织的机密。",
                 "Organization dismissal requests for code scanning": "组织代码扫描的解除请求",
-                    "Review and manage code scanning alert dismissal requests.": "审查和管理代码扫描警报解除请求。",
+                    "Review and manage code scanning alert dismissal requests.": "审查和管理关于解除代码扫描警报的请求。",
                 "Organization private registries": "组织私有注册表",
                     "Manage private registries for an organization.": "管理组织的私有注册表。",
                 "Plan": "计划",
@@ -7839,7 +7839,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 // 项目
                     "Manage projects for an organization.": "管理组织的项目。",
                 // 机密扫描警报解除请求
-                    "Review and manage secret scanning alert dismissal requests": "审查和管理机密扫描警报解除请求",
+                    "Review and manage secret scanning alert dismissal requests": "审查和管理关于解除机密扫描警报的请求",
                 // 机密
                     "Manage Actions organization secrets.": "管理操作组织机密",
                 "Self-hosted runners": "自托管运行器",
@@ -8089,7 +8089,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "- same time": "- 时间相同",
                 "Recently edited these files": "最近编辑过这些文件",
                 "Owns this repository": "拥有该仓库",
-                "Left a review": "留下了一个评论",
+                "Left a review": "留下了审查意见",
                 "Committed to this repository": "已提交过这个仓库",
                 "Committed to this repository in the past day": "最近一天里已提交过这个仓库",
                 "Committed to this repository in the past week": "最近一周里已提交过这个仓库",
@@ -8327,7 +8327,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Queued": "队列中",
             "Skipped": "已跳过",
             "Deployed": "已部署",
-            "Pending": "待处理",
+            "Pending": "未决",
             "Build Failed": "构建失败",
             "Build Passed": "构建通过",
             "Build Errored": "构建错误",
@@ -8616,7 +8616,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "Cancel and close": "关闭",
 
             "Jumpstart your project with Copilot (optional)": "用 Copilot 快速启动您的项目（可选）",
-                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备好后请求您进行审核。",
+                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备就绪时请求您审查。",
                 "About Copilot coding agent": "关于 Copilot 编程智能体",
 
                 "Prompt": "提示词",
@@ -8666,7 +8666,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通过三个简单的问题告诉我们如何让 GitHub 代码空间更适合您。",
 
             "Sorry, couldn’t delete that branch.": "抱歉，无法删除此分支。",
-            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 将起草一个拉取请求开始处理您的需求，并在准备好后请求您进行审核。",
+            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 将起草一个拉取请求开始处理您的需求，并在准备好后请求您审查。",
 
         // 代码标签卡 & 仓库首页 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -9487,7 +9487,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
             "Review required": "需要审查", // 拉取请求 页面状态词
                 "Review required before merging": "合并前需要审查",
             "outdated": "陈旧的",
-            "Pending": "待定",
+            "Pending": "未决",
             "Draft": "草案",
             "deployed": "部署",
                 "View deployment": "查看部署",
@@ -9515,17 +9515,17 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
 
             // 右侧栏
                 "Reviewers": "审查者",
-                    "No reviews": "无人审查",
-                    "Loading suggestions…": "载入推荐…",
+                    "No reviews": "尚未审查",
+                    "Loading suggestions…": "载入建议…",
                     // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
                     // [/At least (\d+) approving reviews? is required to merge this pull request./, "合并此拉取请求至少需要 $1 次批准审核。"], // 具体的拉取请求 审查者
-                    "No reviews—at least 1 approving review is required.": "未经审查—至少需要 1 次批准审查。",
-                    "Re-request review": "重新请求审核",
+                    "No reviews—at least 1 approving review is required.": "尚未审查—至少需要 1 次审查批准。",
+                    "Re-request review": "重新请求审查",
                     "Still in progress?": "仍在进行中吗？",
-                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 审查请求"]
                     "Learn about draft PRs": "了解拉取请求草案",
                         "Try draft pull requests": "尝试拉取请求草案",
-                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开正在进行的拉取请求，无需请求正式审核，也不必冒不必要的合并风险。当您准备好进行代码审核时，您可以将拉取请求草案标记为已准备好审核，这将请求任何代码所有者进行审核。",
+                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您准备就绪可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
                         "Ask admin for access": "向管理员请求权限",
                     "Convert to draft": "设置为草案",
                         // 设置草案对话框
@@ -9536,7 +9536,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                     // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
                     "Request": "请求",
                     // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                    "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+                    "This pull request is waiting on your review.": "此拉取请求正在等待您审查。",
 
                 "Assignees": "受理人",
                     "No one assigned": "无人受理",
@@ -9723,8 +9723,8 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Sign in to comment": "登录后发表评论",
     },
     "regexp": [ // 正则翻译
-        // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
-        [/(\+\d+) more reviewers?/, "$1 个审查者"],
+        // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次审查批准。"],
+        [/(\+\d+) more reviewers?/, "另外 $1 个审查者"],
         [/(\d+) linked issues?/, "链接 $1 个议题"],
         [/Assigned to (.*)/, "分配给 $1"],
         [/Edited (\d+) times?/, "编辑 $1 次"],
@@ -9984,9 +9984,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Merge date": "合并日期",
                     "Has merge date": "包含合并日期",
                     "Exclude merged": "排除合并日期",
-                "Review requested": "已请求评审",
-                    "Has review requested": "包含已请求评审",
-                    "Exclude review-requested": "排除已请求评审",
+                "Review requested": "已请求审查",
+                    "Has review requested": "包含已请求审查的条目",
+                    "Exclude review-requested": "排除已请求审查的条目",
                 "In": "在",
                     "Has in": "包含在",
                     "Exclude in": "排除在",
@@ -9998,12 +9998,12 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "User": "用户",
                     "Has user": "包含用户",
                     "Exclude user": "排除用户",
-                "User review requested": "已请求用户评审",
-                    "Has user review requested": "包含已请求用户评审",
-                    "Exclude user-review-requested": "排除已请求用户评审",
-                "Reviewed by": "评审者",
-                    "Has reviewed by": "包含评审者",
-                    "Exclude reviewed-by": "排除评审者",
+                "User review requested": "已请求用户审查",
+                    "Has user review requested": "包含已请求用户审查的条目",
+                    "Exclude user-review-requested": "排除已请求用户审查的条目",
+                "Reviewed by": "审查者",
+                    "Has reviewed by": "包含审查者",
+                    "Exclude reviewed-by": "排除审查者",
                 "Comment count": "评论数",
                     "Has comment count": "有评论数",
                     "Less than 10": "少于 10",
@@ -10029,10 +10029,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 // 草案
                     "Has draft": "包含草案",
                     "Exclude draft": "排除草案",
-                "Review state": "评审状态",
-                    "Has review state": "包含评审状态",
-                    "Exclude review": "排除评审状态",
-                    "No reviews": "无评审",
+                "Review state": "审查状态",
+                    "Has review state": "包含审查状态",
+                    "Exclude review": "排除审查状态",
+                    "No reviews": "尚无审查",
                 "Code language": "代码语言",
                     "Has code language": "包含代码语言",
                     "Exclude language": "排除代码语言",
@@ -10048,7 +10048,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 // 状态 (Status)
                     "Has status": "包含状态检查",
                     "Exclude status": "排除状态检查",
-                    "Pending": "待处理",
+                    "Pending": "未决",
                     "Success": "成功",
                     "Failure": "失败",
                     "Queued": "排队中",
@@ -10058,9 +10058,9 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                 "Team": "团队",
                     "Has team": "包含团队",
                     "Exclude team": "排除团队",
-                "Team review requested": "已请求团队评审",
-                    "Has team review requested": "包含已请求团队评审",
-                    "Exclude team-review-requested": "排除已请求团队评审",
+                "Team review requested": "已请求团队审查",
+                    "Has team review requested": "包含已请求团队审查的条目",
+                    "Exclude team-review-requested": "排除已请求团队审查的条目",
                 // 排序
                     "Has sort": "包含排序",
                     "Exclude sort": "排除排序",
@@ -10198,7 +10198,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "and unassigned": "和取消了分配给",
             "marked this pull request as draft": "将此拉取请求标记为草案",
             "marked this pull request as ready for review": "将此拉取请求标记为可供审查",
-            "dismissed a stale review via": "驳回了一个陈旧的审查，通过",
+            "dismissed a stale review via": "驳回了一个陈旧的审查，途径是",
             "requested changes": "请求了更改",
             "added a commit that referenced this issue": "添加了一个引用此问题的提交",
             "referenced this issue": "提及这个议题",
@@ -10247,7 +10247,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
                     // 第一次打开议题
                     "It looks like this is your first time opening an issue in this project!": "看起来这是您第一次在此项目中打开议题！",
-                    "Be sure to review the": "请务必查阅",
+                    "Be sure to review the": "请务必查看",
 
                     // 议题表单
                     "You're using an": "您正在使用",
@@ -10494,7 +10494,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
     },
     "regexp": [ // 正则翻译
         [/Want to contribute to ([^ ]+)\?/, "想为 $1 做贡献？"],
-        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 审查请求"],
+        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 应请求进行审查"],
         [/([\d,]+) Open/, "$1 打开"],
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/(#\d+) opened/, "$1 打开于"],
@@ -10595,7 +10595,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
             "Reviews": "审查",
                 // 筛选工作条
                 "Filter by reviews": "按审查筛选",
-                "No reviews": "未经审查",
+                "No reviews": "尚无审查",
                 // "Review required": "需要审查",
                 "Approved review": "已批准的审查",
                 "Changes requested": "已请求更改",
@@ -10630,7 +10630,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 个任务"],
         [/(\d+) tasks?/, "$1 个任务"],
         [/(\d+) Total/, "$1 总计"],
-        [/(\d+) review requesting changes/, "$1 个要求修改的审查"],
+        [/(\d+) review requesting changes/, "$1 个审查要求更改"],
         [/First time contributing to ([^ ]+)\?/, "首次为 $1 做贡献？"],
         [/Suggested change/, "建议更改"],
         [/Ears burning\? Get\@([^ ]+) mentions with/, "耳朵痒吗？使用 @$1 查看提及："], // 专业提示
@@ -10652,9 +10652,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
-                "Marked pull request as ready for review.": "标记拉取请求为可审核。",
+                "Marked pull request as ready for review.": "标记拉取请求为可供审查。",
                 "Your review was submitted successfully.": "您的审查已成功提交。",
-                "requested your review on this pull request.": "请求审核此拉取请求。",
+                "requested your review on this pull request.": "请求您审查此拉取请求。",
                 // Dependabot 打开的拉取请求
                     "Merging this pull request will resolve": "合并此拉取请求将解决", // 后面警报数走正则
                     //"on rollup including a": "，包括 1 个",
@@ -10670,7 +10670,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 // 更改基础分支对话框
                 "Find a branch": "搜索分支",
                 "Are you sure you want to change the base?": "您确定要更改基础分支吗？",
-                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上删除，而旧的审查意见可能会变得过时。",
+                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上移除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
 
             "View status": "查看状态",
@@ -10903,11 +10903,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "See review": "查看审查",
                 "Dismiss review": "驳回审查",
             "started a review": "开始审查",
-                "View reviewed changes": "查看已审核的更改",
-            "self-requested a review": "自我要求审查",
+                "View reviewed changes": "查看经审查的更改",
+            "self-requested a review": "自行要求审查",
             "self-assigned this": "已自我审查",
             "unassign me": "取消自我分配",
-            "marked this pull request as ready for review": "已将此拉取请求标记为可审核",
+            "marked this pull request as ready for review": "已将此拉取请求标记为可供审查",
             "merged commit": "合并提交",
             "left a comment": "发表评论",
             "Add more commits by pushing to the": "添加更多提交，通过推送到",
@@ -10945,10 +10945,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 拉取请求状态
             "Review requested": "请求审查",
             "New changes require approval from someone other than the last pusher.": "新更改需要最后推送者以外的其他人批准。",
-            "Review has been requested on this pull request. It is not required to merge.": "此拉取请求已请求进行审查。这不是合并的必要条件。",
-            "Learn more about requesting a pull request review.": "了解更多关于申请拉取请求审核的信息。",
-            // [/(\d+) pending reviewers?/, "$1 名待审者"],
-            "was requested for review": "被请求审查",
+            "Review has been requested on this pull request. It is not required to merge.": "此拉取请求已申请审查。这不是合并的必要条件。",
+            "Learn more about requesting a pull request review.": "就申请审查拉取请求了解更多信息。",
+            // [/(\d+) pending reviewers?/, "$1 名未决审查者"],
+            "was requested for review": "将应申请进行审查",
 
             "Changes reviewed": "更改已审查",
                 "No applicable reviews submitted by reviewers with write access.": "没有具有写入权限的审查者提交适用的审查意见。",
@@ -10963,7 +10963,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "There aren't yet any conversations on this pull request.": "此拉取请求尚无任何对话。",
 
             "This pull request is still a work in progress": "此拉取请求仍在进行中",
-                "Ready for review": "准备审核",
+                "Ready for review": "可供审查",
                 "Draft pull requests cannot be merged.": "拉取请求草案不能合并。",
             "This pull request can be automatically merged by project collaborators": "此拉取请求可以由项目协作者自动合并",
                 "Only those with": "只有对此仓库具有",
@@ -10972,17 +10972,17 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "to this repository can mark a draft pull request as ready for review.": "的才可将拉取请求草案标记为可供审查。",
 
             // "Review required": "需要审查", // 拉取请求 页面状态词
-                "Add your review": "添加您的评论",
-                // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
+                "Add your review": "添加您的审查意见",
+                // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次审查批准。"],
             "Code owner review required": "需要代码所有者审核",
-                "was requested for review as a code owner": "要求以代码所有者身份进行审查",
+                "was requested for review as a code owner": "将应请求以代码所有者身份进行审查",
             "Conversation resolution required": "需要解决对话",
                 "A conversation must be resolved before this pull request can be merged.": "在合并此拉取请求前，必须先解决对话。",
-            "Learn more about pull request reviews.": "了解更多关于拉取请求审核的信息。",
+            "Learn more about pull request reviews.": "就审查拉取请求了解更多信息。",
             "Changes approved": "变更已获批准",
             "Approval not required": "不需要批准",
             "This pull request may be merged without approvals.": "可以在没有批准的情况下合并此拉取请求。",
-            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
+            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 个审查批准由具有写入权限的审查者进行审查。"],
             // [/(\d+) approvals?/, "$1 项批准"],
             "Some checks haven’t completed yet": "有些检查还没有完成",
             // [/1 in progress check/, "$1个正在进行的检查"],
@@ -11196,7 +11196,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "These conflicts are too complex to resolve in the web editor": "这些冲突过于复杂，无法在网页编辑器中解决",
             "Conflicting files": "冲突的文件:",
 
-            "Require approval from specific reviewers before merging": "合并前需要特定审查者的批准",
+            "Require approval from specific reviewers before merging": "合并前需要特定审查者批准",
                 "Branch protection rules": "分支保护规则",
                 "Rulesets": "规则集",
                 "ensure specific people approve pull requests before they're merged.": "确保特定人员在合并之前批准拉取请求。",
@@ -11211,7 +11211,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Approve workflows to run": "批准运行工作流程",
 
             // 状态词
-            "reviewed": "审查",
+            "reviewed": "已审查",
             "requested a review from": "请求审查",
             "Reply...": "回复…",
 
@@ -11252,7 +11252,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Expand Down": "向下展开",
 
             // 修改的 yaml 文件，预览窗口
-            "Loading Dependency Review...": "正在加载依赖审查…",
+            "Loading Dependency Review...": "正在加载依赖项审查…",
             "No dependencies changed.": "未更改依赖。",
                 "The changes to this file likely do not affect the dependencies": "对此文件的更改可能不会影响依赖",
 
@@ -11299,9 +11299,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 // 下拉
                 "Show all changes": "显示所有更改",
                 // [/(\d+) commits?/, "$1 条提交"],
-                "Show changes since your last review": "显示自您上次评论以来的更改",
-                // "You haven‘t reviewed this pull requeste": "您尚未审查过此请求请求",
-                "You haven’t reviewed this pull request yet": "您尚未审查此请求请求",
+                "Show changes since your last review": "显示自您上次审查以来的更改",
+                // "You haven‘t reviewed this pull requeste": "您尚未审查此拉取请求",
+                "You haven’t reviewed this pull request yet": "您尚未审查此拉取请求",
                 "Select commit": "选择提交",
                 "Hold shift + click to select a range": "按住 shift + 单击以选择一个范围",
             "File filter": "文件筛选",
@@ -11325,7 +11325,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "All of your conversations have been resolved.": "您的所有讨论都已解决。",
                 // [/Resolved conversations/, "已解决的讨论"],
                 "No conversations yet": "尚无讨论",
-                "Review conversations will show up here.": "审查讨论将显示在这里。",
+                "Review conversations will show up here.": "审查讨论将在此显示。",
             // "Jump to": "跳转到",
                 "Jump to file": "跳转到文件",
                 "Filter changed files": "筛选已更改文件",
@@ -11352,7 +11352,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "No replies": "无回复",
 
             "files viewed": "查看过的文件",
-                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查",
+                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "将文件标记为已查看可以帮助您跟踪进度，但不会纠正您提交的审查意见",
             // 咨询 Copilot
                 "Loading Copilot features…": "加载 Copilot 功能…",
                 "Copilot is not available for this pull request": "Copilot 不可用于此拉取请求",
@@ -11371,12 +11371,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "Submit feedback that must be addressed before merging.": "提交合并前必须解决的反馈意见",
                     "Pull request authors can’t request changes on their own pull request.": "拉取请求作者不能在自己的拉取请求上请求更改。",
                     "Only users with explicit access to this repository may request changes to pull requests": "只有对这个仓库有明确访问权限的用户才能请求更改拉取请求",
-                "Abandon review": "放弃审核",
-                "Submit review": "提交审查",
+                "Abandon review": "放弃审查",
+                "Submit review": "提交审查意见",
                     // 顶部提醒
                         "You need to leave a comment indicating the requested changes.": "您需要留下评论，说明所要求的更改。",
-                "Cancel review": "取消审核",
-                "pending": "条待处理",
+                "Cancel review": "取消审查",
+                "pending": "条未决",
                 "comment": "评论",
                 "comments": "评论",
 
@@ -11441,7 +11441,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 建议更改
                 "Suggested change": "建议更改",
                 "Sign off and commit suggestion": "签署并提交建议",
-                    "Suggestions cannot be applied from pending reviews.": "无法应用待审核中的更改",
+                    "Suggestions cannot be applied from pending reviews.": "无法应用待审查的更改",
                     "This suggestion has been applied or marked resolved.": "该建议已被应用或标记为已解决。",
                     "Outdated suggestions cannot be applied.": "过时建议不能应用。",
                 "Add suggestion to batch": "批量添加建议",
@@ -11471,7 +11471,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "All changes": "所有更改",
                 "All commits": "所有提交",
-                "Changes since your last review": "自您上次审核以来的更改",
+                "Changes since your last review": "自您上次审查以来的更改",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
@@ -11679,7 +11679,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
         // 具体某条拉取请求
         [/edited by ([^ ]+)/, "由 $1 编辑"],
-        [/At least (\d+) approving reviews? is required to merge this pull request./, "合并此拉取请求至少需要 $1 次批准审核。"],
+        [/At least (\d+) approving reviews? is required to merge this pull request./, "合并此拉取请求至少需要 $1 次审查批准。"],
         [/Commits?/, "提交"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
@@ -11689,15 +11689,15 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
         [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
         [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
-        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 具体的拉取请求 审查者
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次审查批准才能合并此拉取请求。"], // 具体的拉取请求 审查者
         [/This user is a first-time contributor to the ([^ ]+) repository./, "该用户是第一次为 $1 仓库做贡献。"],
-        [/(\d+) pending reviewers?/, "$1 名待审者"],
+        [/(\d+) pending reviewers?/, "$1 名审查者未决"],
         [/([\d,]+) participants?/, "$1 位参与者"],
         [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有写入权限的审查者至少需要 $1 次批准审查。"],
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 个批准的审查由具有写入权限的审查者进行审查。"],
         [/(\d+) review requesting changes by reviewers? with write access./, "$1 个请求审查更改由具有写入权限的审查者进行审查。"],
         [/(\d+) approvals?/, "$1 项批准"],
-        [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求有写入权限的审查者进行更改"], // 拉取请求
+        [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 项审查，要求具有写入权限的审查者进行更改"], // 拉取请求
         [/(\d+) changes? requested by reviewers with write access/, "具有写入权限的审查者提出 $1 项更改请求"],
         [/(\d+) changes? requested/, "$1 项更改请求"],
         [/This pull request closes issue (#\d+)./, "该拉取请求将关闭议题 $1。"], // 死活不翻译
@@ -11823,7 +11823,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "compare:": "比较分支：",
                 "Choose a head ref": "选择头部引用",
 
-            "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或复刻来讨论和查看变化。",
+            "Choose different branches or forks above to discuss and review changes.": "选择不同的分支或复刻来讨论和审查更改。",
             "Learn about pull requests": "了解拉取请求",
 
             "Create pull request": "创建拉取请求",
@@ -11862,7 +11862,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
                 "are entirely different commit histories.": "是完全不同的提交历史。",
 
-            "Discuss and review the changes in this comparison with others.": "与他人讨论并回顾此次对比中的变化。",
+            "Discuss and review the changes in this comparison with others.": "与他人讨论和审查此次对比中的更改。",
 
             "This comparison is big! We’re only showing the most recent 250 commits": "这个比较是很大的! 我们只显示最近的 250 个提交。",
 
@@ -11870,7 +11870,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             "are identical.": "是相同的。",
 
-            "Create another pull request to discuss and review the changes again.": "创建另一个拉取请求，再次讨论和审查这些更改。",
+            "Create another pull request to discuss and review the changes again.": "另行创建拉取请求已再次讨论和审查这些更改。",
 
             // 修改的文件 左侧 展开按钮
             "Expand all": "展开全部",
@@ -11903,7 +11903,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
 
             // 提示框（第一次提交拉取请求时）
             "It looks like this is your first time opening a pull request in this project!": "看起来这是您在这个项目中首次发起的拉取请求呢！",
-            "Be sure to review the": "请务必查阅",
+            "Be sure to review the": "请务必查看",
             "contributing guidelines": "贡献指南",
             "Reporting a security vulnerability?": "报告安全漏洞？",
             "Check out the project's": "查看本项目的",
@@ -11929,27 +11929,27 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             // "No commit comments for this range": "该范围变更没有提交注释",
 
             "Reviewers": "审查者",
-                "No reviews": "未经审查",
+                "No reviews": "尚无审查",
                 "Loading suggestions…": "载入推荐…",
                 // [/([^ ]+) left review comments/, "$1 发表了审查意见"],
-                // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"],
-                "No reviews—at least 0 approving review is required.": "未经审查 — 至少需要 0 次批准审查。",
-                "Re-request review": "重新请求审核",
+                // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次审查批准才能合并此拉取请求。"],
+                "No reviews—at least 0 approving review is required.": "尚无审查 — 至少需要 0 次批准审查。",
+                "Re-request review": "重新请求审查",
                 "Still in progress?": "仍在进行中吗？",
-                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的审查请求"]
+                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 应请求进行审查"]
                 "Learn about draft PRs": "了解拉取请求草案",
                     "Try draft pull requests": "尝试拉取请求草案",
-                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开正在进行的拉取请求，无需请求正式审核，也不必冒不必要的合并风险。当您准备好进行代码审核时，您可以将拉取请求草案标记为已准备好审核，这将请求任何代码所有者进行审核。",
+                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打开尚在途中的拉取请求而不请求正式审查，也不必冒险在暂不需要时合并。当您准备就绪可供代码审查时，您可以将拉取请求草案标记为可供审查，这将请求任何代码所有者进行审查。",
                     "Ask admin for access": "向管理员请求权限",
                 "Convert to draft": "设置为草案",
                 "Request up to 15 reviewers": "最多请求 15 个审查者",
                 // [/([^ ]+) approved these changes/, "$1 批准这些更改"], // 具体的拉取请求 审查者
                 "Request": "请求",
                 // [/Request review from ([^ ]+)/, "请求 $1 审查"], // 具体的拉取请求 审查者
-                "This pull request is waiting on your review.": "此拉取请求正在等待您的审核。",
+                "This pull request is waiting on your review.": "此拉取请求正在等待您审查。",
                 // Copilot
                     "Copilot can review pull requests": "Copilot 可以审查拉取请求",
-                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 请求代码审查，即可获得快速且可操作的反馈，让您能在收到人工审查前就开始迭代优化。",
+                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 请求代码审查以获得快速、可行的反馈，让您能在收到人工审查前就开始迭代优化。",
                     "OK, dismiss": "关闭",
 
             "Assignees": "受理人",
@@ -12013,11 +12013,11 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流程以揭示机密值，并获取对其他分支的访问权限。",
             "Got it": "知道了",
         // 创建拉取请求 按钮下拉
-            "Open a pull request that is ready for review": "打开一个准备好进行审核的拉取请求",
-            "Automatically requests reviews from code owners": "自动请求代码所有者进行审查",
+            "Open a pull request that is ready for review": "打开一个可供审查的拉取请求",
+            "Automatically requests reviews from code owners": "自动请求代码所有者审查",
             "Create draft pull request": "创建拉取请求草案",
-            "Cannot be merged until marked ready for review": "在标记为准备好进行审核之前无法合并",
-            "Doesn't request code owners review and cannot be merged": "不请求代码所有者审核并且无法合并",
+            "Cannot be merged until marked ready for review": "在标记为可供审核之前无法合并",
+            "Doesn't request code owners review and cannot be merged": "不请求代码所有者审查并且无法合并",
             "Draft pull request": "拉取请求草案",
         "Remember, contributions to this repository should follow its": "请记住，对该仓库的贡献应遵循其",
         "security policy": "安全政策",
@@ -12080,7 +12080,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
         [/(\d+) changed files?/, "更改的文件"],
         [/(\d+) additions?/, "$1 处增加"],
         [/(\d+) deletions?/, "$1 处删除"],
-        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准审查才能合并此拉取请求。"], // 创建拉取请求
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次审查批准才能合并此拉取请求。"], // 创建拉取请求
     ],
     "title": {
         "regexp": [
@@ -12163,7 +12163,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             "Collapse expanded lines": "折叠展开的线",
 
             // 修改的 yaml 文件，预览窗口
-            "Loading Dependency Review...": "正在加载依赖审查…",
+            "Loading Dependency Review...": "正在加载依赖项审查…",
             "No dependencies changed.": "未更改依赖。",
                 "The changes to this file likely do not affect the dependencies": "对此文件的更改可能不会影响依赖",
 
@@ -12244,7 +12244,7 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
 
             // 拉取请求悬浮卡
                 "You were mentioned on and commented on this pull request": "您在该请求中被提及并发表了评论",
-                "You left a review": "您发表了评论",
+                "You left a review": "您发表了审查意见",
 
             // 议题悬浮卡
                 "You commented on this issue": "您对此议题发表了评论",
@@ -13279,10 +13279,10 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "开始使用 GitHub Actions",
             "Choose a workflow": "选择工作流程",
-            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式进行代码审查、分支管理和议题分类。选择一个工作流以开始使用。",
+            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式审查代码、管理分支和进行议题分诊。选择一个工作流程以开始使用。", //汉语中使用动词结构更通顺
             "Skip this and": "跳过并",
             "set up a workflow yourself": "建立工作流程",
-            "Search workflows": "搜索工作流",
+            "Search workflows": "搜索工作流程",
 
             "Suggested for this repository": "建议该仓库采用",
             "Categories": "类别",
@@ -13381,7 +13381,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
                 "You have hit the limit of pages.": "您已到达页面访问上限。",
                 "You could filter by":"您可以按以下筛选",
-                "to continue reviewing older workflow runs.":"继续查看旧的工作流程运行。",
+                "to continue reviewing older workflow runs.":"继续查看旧的工作流程的运行状况。",
 
 
             // 反馈提醒
@@ -13454,7 +13454,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 // 工作流程运行状态
                 "In progress": "进行中",
                 "Queued": "排队中",
-                "Pending": "待定中",
+                "Pending": "未决",
 
             // 顶部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功请求取消工作流。",
@@ -13719,7 +13719,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Starting job": "作业启动中",
             "This job failed": "此作业失败",
             "This job was skipped": "此作业被跳过",
-            "Waiting for pending jobs": "等待中",
+            "Waiting for pending jobs": "等待未决作业",
             "Input required and not supplied: token": "需要输入但未提供：令牌",
             "The deployment was rejected or didn't satisfy other protection rules.": "部署被拒绝或不符合其他保护规则。",
             "Fit to window": "适合",
@@ -13808,7 +13808,7 @@ I18N["zh-CN"]["repository/deployments"] = { // 仓库 - 部署页面
                                 "failure": "失败",
                                 "error": "错误",
                                 "inactive": "不活跃",
-                                "pending": "待定",
+                                "pending": "未决",
                                 "queued": "排队",
                                 "in progress": "进行中",
                                 "waiting": "等待中",
@@ -17210,7 +17210,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "Always suggest updating pull request branches": "始终建议更新拉取请求分支",
                     "Whenever there are new changes available in the base branch, present an “update branch” option in the pull request.": "每当基础分支中有可用的新更改时，就在拉取请求中显示 “更新分支” 选项。",
 
-                "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "一旦所有必需的审查和状态检查都通过，您可以允许设置拉取请求自动合并。",
+                "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "您可以允许设置拉取请求一经通过了所有必需的审查和状态检查就自动合并。",
 
                 "Allow auto-merge": "允许自动合并",
                     "Waits for merge requirements to be met and then merges automatically.": "等待满足合并要求，然后自动合并。",
@@ -17464,12 +17464,12 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
                 "Filter by member type": "按成员类型筛选",
                     "Organization Members": "组织成员",
                     "Outside Collaborators": "外部协作者",
-                    "Pending Invitations": "待处理邀请",
+                    "Pending Invitations": "未决邀请",
             "Find a collaborator…": "寻找协作者……",
             "Find people or a team…": "寻找用户或一个团队……",
             "No Results": "无结果",
 
-            "Pending Invite": "待处理邀请",
+            "Pending Invite": "未决邀请",
             "Invite expired": "已过期",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回复"],
             "Remove": "移除",
@@ -17598,10 +17598,10 @@ I18N["zh-CN"]["repository/settings/code_review_limits"] = { // 仓库设置 - �
             "Limit to users explicitly granted": "限于明确授予",
             "read": "读取",
             "or higher access": "或 更高权限的用户",
-                "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "启用后，只有被明确授予该仓库访问权的用户才能提交 “批准” 或 “请求更改” 的拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
+                "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "启用后，只有被明确授予本仓库访问权的用户才能对拉取请求发表 “批准” 或 “请求更改” 的审查意见。所有能够对拉取请求发表评论性审查意见的用户将继续能够这样做。",
 
             // 顶部提醒
-                "Code review limit settings saved.": "代码审查限制设置已保存。",
+                "Code review limit settings saved.": "已保存代码审查限制设置。",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -17697,11 +17697,11 @@ I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置
                         "When enabled, pull requests targeting a matching branch require a number of approvals and no changes requested before they can be merged.": "启用后，针对匹配分支的拉取请求需要若干次批准审查，并且在合并之前无需请求更改。",
                         "Required number of approvals before merging:": "合并前所需的批准审查数量：",
                     "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
-                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查提交将撤销之前的拉取请求的批准审查。",
-                    "Require review from Code Owners": "要求代码所有者进行审查",
+                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可审查的提交将驳回对之前的拉取请求的批准。",
+                    "Require review from Code Owners": "要求代码所有者审查",
                         "Require an approved review in pull requests including files with a designated code owner.": "要求在拉取请求中进行批准审查，包括有指定代码所有者的文件。",
                     "Restrict who can dismiss pull request reviews": "限制谁可以驳回拉取请求审查", // 组织仓库
-                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定允许驳回拉取请求审查的人员、团队或应用。",
+                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定允许驳回拉取请求审查意见的人员、团队或应用。",
                         "People, teams, or apps that can dismiss reviews.": "允许驳回审查的人员、团队或应用。",
                             "Organization and repository administrators": "组织和仓库管理员",
                                 "These members can always dismiss.": "这些成员总是允许驳回。",
@@ -18129,8 +18129,8 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                         "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必须在非目标分支上进行，并在合并前通过拉取请求提交。",
                             "Required approvals": "要求批准审查",
                                 "The number of approving reviews that are required before a pull request can be merged.": "拉取请求合并前所需的批准审查次数。",
-                            "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，撤销陈旧的拉取请求批准审查",
-                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将撤销之前的拉取请求的批准审查。",
+                            "Dismiss stale pull request approvals when new commits are pushed": "当新的提交被推送时，驳回对陈旧的拉取请求的批准",
+                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可审查提交将驳回对之前的拉取请求的批准。",
                             "Require review from Code Owners": "要求代码所有者进行审查",
                                 "Require an approving review in pull requests that modify files that have a designated code owner.": "要求对具有指定代码所有者的文件修改的拉取请求中进行批准审查。",
                             "Require approval of the most recent reviewable push": "要求批准最新的可审查推送",
@@ -18138,7 +18138,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Require conversation resolution before merging": "要求在合并前解决对话",
                                 "All conversations on code must be resolved before a pull request can be merged.": "在合并拉取请求之前，必须解决有关代码的所有对话。",
                             "Request pull request review from Copilot": "请求 Copilot 进行拉取请求审查",
-                                "Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.": "如果作者有权访问 Copilot 代码审查，则自动请求 Copilot 对新拉取请求进行审查。",
+                                "Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.": "如果作者有权访问 Copilot 代码审查，则自动请求 Copilot 审查新的拉取请求。", //汉语中使用动词结构更通顺
 
                             "Allowed merge methods": "允许合并方法",
                                 "Merge, Squash": "合并，压缩",
@@ -18203,16 +18203,16 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                             "Warning": "警告",
                             "Warnings and higher": "警告及以上",
                             "Notes and higher": "备注及以上",
-                        "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合并提交之前，需要解决的最低严重级别代码质量审查。",
+                        "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合并提交之前，需要解决的最低严重级别的代码质量审查。",
 
                     "Automatically request Copilot code review": "自动请求 Copilot 代码审查",
-                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.": "如果作者有权访问 Copilot 代码审查并且其高级请求配额尚未达到限制，则自动请求 Copilot 对新拉取请求进行代码审查。",
+                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.": "如果作者有权访问 Copilot 代码审查并且其高级请求配额尚未达到限制，则自动请求 Copilot 对新的拉取请求进行代码审查。",
                         "Review new pushes": "审查新的推送",
-                        "Copilot automatically reviews each new push to the pull request.": "Copilot 自动审查每个新的推送请求。",
-                        "Review draft pull requests": "审查草稿拉取请求",
-                        "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "Copilot 自动审查草稿拉取请求，在标记为准备好审查之前。",
+                        "Copilot automatically reviews each new push to the pull request.": "Copilot 自动审查拉取请求的每条新推送。",
+                        "Review draft pull requests": "审查拉取请求草案", // #195 (https://github.com/maboloshi/github-chinese/issues/195#issue-2375583925)
+                        "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "拉取请求草案在标记为可供审查之前自动接受 Copilot 审查。", // #195 (https://github.com/maboloshi/github-chinese/issues/195#issue-2375583925)
 
-                    "Manage static analysis tools in Copilot code review": "在 Copilot 代码审查中管理静态分析工具",
+                    "Manage static analysis tools in Copilot code review": "管理 Copilot 代码审查中的静态分析工具",
                         "Copilot code review will include findings from the selected static analysis tools in its review comments.": "Copilot 代码审查将在其审查意见中包括所选静态分析工具的结果。",
 
                     // 组织设置
@@ -18462,7 +18462,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                 "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
                     "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交拉取请求审查批准意见。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
 
                 // 顶部提醒
@@ -18687,11 +18687,11 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
                     "Pull request review comments": "拉取请求审查意见",
                         "Pull request diff comment created, edited, or deleted.": "拉取请求差异评论的创建、编辑或删除。",
                     "Pull request review threads": "拉取请求的审查线程",
-                        "A pull request review thread was resolved or unresolved.": "拉取请求的审查线程的解决或未解决。",
+                        "A pull request review thread was resolved or unresolved.": "拉取请求的审查线程已解决或未解决。",
                     "Pull request reviews": "拉取请求审查",
-                        "Pull request review submitted, edited, or dismissed.": "拉取请求审查的提交、编辑或驳回。",
+                        "Pull request review submitted, edited, or dismissed.": "拉取请求审查已提交、编辑或驳回。",
                     // "": "拉取请求",
-                        "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "拉取请求的分配、禁用自动合并、启用自动合并、关闭、转换为草案、取消里程碑、取消队列、编辑、队列、标记、锁定、设置里程碑、打开、准备审查、重新打开、取消审查请求、请求审查、同步、取消分配、取消标记或解锁。",
+                        "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "拉取请求的分配、禁用自动合并、启用自动合并、关闭、转为草案、取消里程碑、离开队列、编辑、加入队列、标记、锁定、设置里程碑、打开、可供审查、重新打开、移除审查请求、请求审查、同步、取消分配、取消标记或解锁。",
                     "Pushes": "推送",
                         "Git push to a repository.": "Git 推送到仓库。",
                     "Registry packages": "注册软件包",
@@ -18788,7 +18788,7 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
         // 代码审查
             "Enable automatic code review": "启用自动代码审查",
                 "You can enable Copilot to automatically review pull requests by enabling it inside Repository rules.": "您可以在仓库规则中启用 Copilot，从而让 Copilot 自动审查拉取请求。",
-                "Learn more about automatic code reviews.": "了解更多关于自动代码生成的信息。",
+                "Learn more about automatic code reviews.": "就自动代码审查了解更多信息。",
                 "Go to repository rules": "前往仓库规则",
 
         "General settings": "常规设置",
@@ -18797,16 +18797,16 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
                 "repository custom instructions": "仓库自定义指令",
                 "when reviewing pull requests.": "。",
 
-        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求的审查者，包括草稿。您还可以在 Visual Studio Code 中选择行，并请求 Copilot 审查和评论特定部分。",
-        "Learn more about Copilot code reviews.": "了解更多关于 Copilot 代码审查的信息。",
+        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 代码审查，您可以将 Copilot 添加为拉取请求的审查者，包括草案。您还可以在 Visual Studio Code 中选择代码行，并要求 Copilot 审查和评论特定部分。",
+        "Learn more about Copilot code reviews.": "就 Copilot 代码审查了解更多信息。",
 
-        "Automated code reviews using rulesets": "使用规则集自动代码审查",
-            "Use rulesets to configure Copilot to review pull requests automatically.": "使用规则集配置 Copilot 自动审查拉取请求。",
+        "Automated code reviews using rulesets": "使用规则集的自动代码审查",
+            "Use rulesets to configure Copilot to review pull requests automatically.": "使用规则集配置 Copilot 以自动审查拉取请求。",
             "Learn how to set up rulesets.": "了解如何设置规则集。",
 
         "Go to rulesets": "前往规则集",
         "No rulesets set up for automated reviews": "尚无设置自动代码审查的规则集",
-        "Create a ruleset to automate code reviews for pull requests targeting your default branch": "创建一个规则集，自动代码审查针对您的默认分支的拉取请求",
+        "Create a ruleset to automate code reviews for pull requests targeting your default branch": "就针对您的默认分支的拉取请求，创建规则集以自动化代码审查",
         "Create ruleset for default branch": "创建针对默认分支的规则集",
     },
     "regexp": [
@@ -18832,12 +18832,12 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
-        "Learn more about Copilot coding agent": "了解更多",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委派给 Copilot，从而专注于创造性的、复杂的和高冲击力的最重要工作。只需将议题分配给 Copilot，等待智能体来请求审查，然后就拉取请求留下反馈以供迭代。更多信息请参阅",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，开发者可以将任务委派给 Copilot，从而专注于创造性的、复杂的和高冲击力的最重要工作。只需将议题分配给 Copilot，等待智能体来请求审查，然后就拉取请求留下反馈以供迭代。",
+        "Learn more about Copilot coding agent": "就 Copilot 编程智能体了解更多信息",
 
         "Internet access": "访问互联网",
-            "Ensure that the agent only accesses approved network resources during code generation and execution.": "确保智能体在代码生成和执行过程中只访问已批准的网络资源。",
+            "Ensure that the agent only accesses approved network resources during code generation and execution.": "确保智能体在代码生成和执行过程中只访问已批准其访问的网络资源。",
                 "Learn more about customizing network access": "了解更多",
 
             "Enable firewall": "启用防火墙",
@@ -18939,7 +18939,7 @@ I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /
                         "reviewers": "位审查者",
                         "Search for people or teams...": "搜索人员或团队…",
 
-                    "Prevent self-review": "防止自我审查",
+                    "Prevent self-review": "防止自行审查",
                         "Require a different approver than the user who triggered the workflow run.": "要求与触发工作流程运行的用户不同的批准审查者。",
                 "Wait timer": "等待计时器",
                     "Set an amount of time to wait before allowing deployments to proceed.": "设置允许部署继续之前等待的时间。",
@@ -19335,7 +19335,7 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 高
                     // 启用时
                     "Dependabot rules": "Dependabot 规则",
                         "Create your own custom rules and manage alert presets.": "创建您自己的自定义规则并管理警报预设。",
-                        "Review and manage alert presets.": "查看和管理警报预设。", //私有库
+                        "Review and manage alert presets.": "查看和管理预设警报。", //私有库
                         // [/(\d+) rules? enabled/, "已启用 $1 条规则"],
 
                 "Dependabot security updates": "Dependabot 安全更新",
@@ -19858,7 +19858,7 @@ I18N["zh-CN"]["repository/transfer"] = { // 转让仓库
                 "tab": "标签页",
                 "Draft": "草案",
                 "PRs": "拉取请求",
-                "Multiple assignees": "多个受让人",
+                "Multiple assignees": "多个受理人",
                 "for issues and PRs": "的议题和拉取请求",
                 "Multiple reviewers": "多个审查者",
                 "for PRs": "的拉去请求",
@@ -19971,7 +19971,7 @@ I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 内容举报 /<user-name>
         ...I18N["zh-CN"]["repository-public"]["static"],
 
         "Reported content": "内容举报",
-        "Users can report abusive or distruptive content for review and moderation.": "用户可以举报辱骂性或破坏性内容，以供审查和审核。",
+        "Users can report abusive or distruptive content for review and moderation.": "用户可以举报滥用或破坏性内容，以供审查和审核。",
         "Learn more about reported content": "了解更多关于举报内容的信息。",
         "Report content setting": "举报内容设置",
         "All users": "所有用户",
@@ -20026,7 +20026,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Automate": "自动化",
             "Improve your software development process by automating builds, tests, and deployments with CI/CD.": "通过 CI/CD 自动化构建、测试和部署，提升整个软件开发流程。",
         "Secure": "安全",
-            "Leverage tooling to detect, review, and fix vulnerabilities before they reach production.": "利用工具在漏洞进入生产之前检测、审查并修复漏洞。",
+            "Leverage tooling to detect, review, and fix vulnerabilities before they reach production.": "利用工具在漏洞进入生产之前检测、审查和修复漏洞。",
 
         "Accelerate your entire workflow": "加速你的全部工作流",
             "From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster.": "从第一行代码到最终部署，GitHub 提供 AI 和自动化工具，帮助你更快地构建并发布更优质的软件。",
@@ -20101,7 +20101,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                 "Create space for open-ended conversations alongside your project.": "在开展项目的同时，为开放式对话创造空间。",
                 "Explore GitHub Discussions": "探索 GitHub 讨论",
             "Review code changes together": "共同审查代码",
-                "Assign initial reviews to Copilot for greater speed and quality.": "将初步审查交给 Copilot，获得更快的速度和更高的质量。",
+                "Assign initial reviews to Copilot for greater speed and quality.": "将初步审查分配给 Copilot，以提质增速。",
                 "Explore code review": "探索代码审查",
             "Fund open source projects": "资助开源项目",
                 "Become an open source partner and support the tools and libraries that power your work.": "成为开源合作伙伴，支持为您的工作提供动力的工具和库。",
@@ -20414,7 +20414,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Verify a personal access token": "验证个人访问令牌",
             "you've used in the past to verify your account. The token must have": "您过去曾用于验证您的账户。令牌必须具有",
             "scope.": "范围。",
-            "Verify and submit for review": "验证并提交审核",
+            "Verify and submit for review": "验证并提交以供审查",
 
             // 验证提醒
             "Unable to verify personal access token": "无法验证个人访问令牌",
@@ -20972,7 +20972,7 @@ I18N["zh-CN"]["notifications/subscriptions"] = { //订阅的仓库页面
             "Mention": "提及",
             "You were specifically @mentioned in the content.": "在内容中特别 @您。",
             "Review Requested": "请求审查",
-            "You were requested for review.": "您被要求进行审查。",
+            "You were requested for review.": "请求您审查。",
             "State Change": "状态变化",
             "You changed the thread state (for example, closing an Issue or merging a Pull Request).": "您更改了话题状态（例如，关闭议题或合并拉取请求）。",
             "Team Mention": "提及团队",
@@ -21116,7 +21116,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "was merged": "已合并",
         "was closed": "已关闭",
         "Approved": "已批准",
-        "Review required": "请求审查", // 拉取请求 页面状态词
+        "Review required": "需要审查", // 拉取请求 页面状态词
             "Review required before merging": "合并前需要审查",
         "Changes requested": "请求更改",
         "outdated": "陈旧的",
@@ -21182,7 +21182,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                 "Reply (quoting selected text)": "答复（引用所选文本）",
                 "Open saved replies": "打开快捷回复（引用所选文本）",
                 "Insert saved reply (with open saved replies)": "插入快捷回复（打开快捷回复）",
-                "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有折叠审查意见的可见性，而不仅仅是当前的审查意见",
+                "Toggle visibility of all collapsed review comments instead of just the current one": "切换所有已折叠的审查意见的可见性，而不仅仅是当前的审查意见",
             "Pull request - Files changed tab": "拉取请求 - 文件更改标签卡",
                 "Open commits list": "打开提交列表",
                 "Open files list": "打开文件列表",
@@ -21291,9 +21291,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "Merge date": "合并日期",
                 "Has merge date": "包含合并日期",
                 "Exclude merged": "排除合并日期",
-            "Review requested": "已请求评审",
-                "Has review requested": "包含已请求评审",
-                "Exclude review-requested": "排除已请求评审",
+            "Review requested": "已请求审查",
+                "Has review requested": "包含已请求审查的条目",
+                "Exclude review-requested": "排除已请求审查的条目",
             "In": "在",
                 "Has in": "包含在",
                 "Exclude in": "排除在",
@@ -21305,9 +21305,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "User": "用户",
                 "Has user": "包含用户",
                 "Exclude user": "排除用户",
-            "User review requested": "已请求用户评审",
-                "Has user review requested": "包含已请求用户评审",
-                "Exclude user-review-requested": "排除已请求用户评审",
+            "User review requested": "已请求用户审查",
+                "Has user review requested": "包含已请求用户审查的条目",
+                "Exclude user-review-requested": "排除已请求用户审查的条目",
             "Reviewed by": "评审者",
                 "Has reviewed by": "包含评审者",
                 "Exclude reviewed-by": "排除评审者",
@@ -21355,7 +21355,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             // 状态 (Status)
                 "Has status": "包含状态检查",
                 "Exclude status": "排除状态检查",
-                "Pending": "待处理",
+                "Pending": "未决",
                 "Success": "成功",
                 "Failure": "失败",
                 "Queued": "排队中",
@@ -21366,8 +21366,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
                 "Has team": "包含团队",
                 "Exclude team": "排除团队",
             "Team review requested": "已请求团队评审",
-                "Has team review requested": "包含已请求团队评审",
-                "Exclude team-review-requested": "排除已请求团队评审",
+                "Has team review requested": "包含已请求团队审查的条目",
+                "Exclude team-review-requested": "排除已请求团队审查的条目",
             // 排序
                 "Has sort": "包含排序",
                 "Exclude sort": "排除排序",
@@ -22548,8 +22548,8 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
                     "Join the waitlist": "加入等候名单",
 
             "GitHub Sponsors applications": "GitHub 赞助者申请",
-                "Pending": "排队",
-                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 赞助者个人资料正在等待 GitHub 审核。",
+                "Pending": "未决",
+                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 赞助者个人资料正在等待 GitHub 审查。",
                 "Manage": "管理",
 
         // GitHub 赞助者个人资料 https://github.com/sponsors/<user-name>
@@ -22614,7 +22614,7 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 赞助者现已在 103 个地区推出测试版！",
                 "If you have a bank account in": "如果您的银行账户所在",
                 "a country or region where GitHub Sponsors is generally available": "国家或地区普遍支持 GitHub 赞助者",
-                ", you will get an email from us when your application has been reviewed.": "，您将在申请通过审核后收到我们的电子邮件。",
+                ", you will get an email from us when your application has been reviewed.": "，您的申请经审查后您将收到我们的电子邮件。", // 审查结果不一定是“通过”。也可能是未通过
                 "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果您没有符合条件的银行账户，也不用担心！我们正在努力让更多的国家或地区通过测试。加入等候名单，第一时间获知消息。",
             "Contact email": "联系电子邮箱",
                 "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly.": "请选择一个经过验证的电子邮箱地址，以便我们就您的 GitHub 赞助者个人资料与您联系。该邮箱地址不会公开。",
@@ -23055,7 +23055,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             "Code quality": "代码质量",
                 "Code quality apps": "代码质量应用",
                 "Code quality actions": "代码质量操作",
-                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，通过样式、质量、安全性和测试覆盖检查自动进行代码审查。",
+                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要时，就样式、质量、安全性和测试覆盖率检查方面，对您的代码审查进行自动化。",
 
             "Code review": "代码审查",
                 "Code review apps": "代码审查应用",
@@ -23208,15 +23208,15 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
         // 待处理订单页面 https://github.com/marketplace/orders/pending
             // 老页面 左侧栏 不在兼容
 
-            "Pending orders": "待处理订单",
+            "Pending orders": "未决订单",
             "Review and complete your orders": "查看并完成您的订单",
-                "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我们注意到您开始制定一些新计划，但尚未完成。您可以完成下面的待处理订单或查看任何有效的订阅在",
+                "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我们注意到您开始制定一些新计划，但尚未完成。您可以完成下面的未决订单或查看任何有效的订阅，途径是访问",
                 "billing overview page": "账单概览页面",
 
             "Next: Confirm your installation location.": "下一步：确认您的安装位置。",
             "Next: Confirm your installation location and payment information.": "下一步：确认您的安装位置和支付信息。",
 
-            "Remove from pending orders": "从待处理订单中删除",
+            "Remove from pending orders": "从未决订单中移除",
             "This will not affect your existing subscriptions.": "这不会影响您现有的订阅。",
 
             // 顶部提醒
@@ -23225,7 +23225,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
         // 待安装页面 https://github.com/marketplace/installations/pending
             // 老页面 左侧栏 不在兼容
 
-            "Pending installations": "待安装",
+            "Pending installations": "未决",
             "We noticed you’ve purchased some apps but didn't finish installing them. You can review and install them below.": "我们注意到您购买了一些应用，但尚未完成安装。您可以在下面查看并安装它们。",
             "View or cancel any active subscriptions on the": "查看或取消任何有效的订阅",
             "Install": "安装",
@@ -23318,7 +23318,7 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             ...I18N["zh-CN"]["payment-module"]["static"], // 调用通用账单及支付信息模块
 
         // 组织 应用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
-            "Review your order": "审查您的订单",
+            "Review your order": "查看您的订单",
             "For individuals, teams, and communities, public and private projects": "对于个人、团队和社区，公共和私人项目",
             "Total amount": "总金额",
 
@@ -23956,7 +23956,7 @@ I18N["zh-CN"]["orgs/people"] = { // 组织 - 成员标签卡
             "Organization permissions": "组织权限",
             "Members": "成员",
             "Outside collaborators": "外部协作者",
-            "Pending collaborators": "待定协作者",
+            "Pending collaborators": "未决协作者",
             "Invitations": "邀请",
             "Failed invitations": "失败邀请",
             "Security Managers": "安全管理员",
@@ -24035,11 +24035,11 @@ I18N["zh-CN"]["orgs/people"] = { // 组织 - 成员标签卡
             "Select all": "全选",
             "No one outside of the organization has access to its repositories.": "组织外部的任何人都无法访问其仓库。",
 
-        // 待定协作者 https://github.com/orgs/<orgs-name>/pending_collaborators
-            "Find a pending collaborator…": "搜索待定协作者…",
-            "There aren't any pending collaborators.": "暂无任何待定的协作者",
+        // 未决协作者 https://github.com/orgs/<orgs-name>/pending_collaborators
+            "Find a pending collaborator…": "搜索未决协作者…",
+            "There aren't any pending collaborators.": "暂无任何未决的协作者",
 
-        // 待定邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
+        // 未决邀请 https://github.com/orgs/<orgs-name>/people/pending_invitations
             // 顶部提醒
                 // [/You've invited ([^ ]+) to ([^ ]+)! They'll be receiving an email shortly. They can also visit ([^ ]+) to accept the invitation./, "您已邀请 $1 加入到 $2 ！他们很快就会收到一封电子邮件。他们还可以访问 $3 接受邀请。"],
                 // [/You've successfully updated ([^ ]+)'s invitation./, "您已成功更新 $1 的邀请。"],
@@ -24138,7 +24138,7 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
 
         // 子团队 https://github.com/orgs/<orgs-name>/teams/team
             // 申请提示
-                "Membership requested. We’ll let you know once an administrator has reviewed your request.": "成员资格已申请。一旦管理员审核了您的请求，我们将通知您。",
+                "Membership requested. We’ll let you know once an administrator has reviewed your request.": "已申请成员资格。一旦管理员审查了您的请求，我们将通知您。",
                 "Okay, we’ve cancelled your request to join this team.": "好的，已取消加入此团队申请。",
 
             "Find a member…": "查找成员…",
@@ -24146,8 +24146,8 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
 
             "Request to join": "请求加入",
                 "Requires approval from an owner or team maintainer": "需要所有者或团队维护者批准",
-            "Cancel pending request": "取消请求",
-                "Your request to join this team is pending review": "您的请求待审查",
+            "Cancel pending request": "取消未决请求",
+                "Your request to join this team is pending review": "您请求加入团队，此请求正在等待审查",
 
             "This team doesn’t have any child team members.": "此团队没有子团队成员。",
 
@@ -24214,26 +24214,26 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
             "Only notify requested team members": "仅通知被请求的团队成员",
                 "If both a team and one or more of its members are requested for review, don't notify the entire team.": "不通知整个团队，仅通知被请求的团队成员",
             "Enable auto assignment": "启用自动分配",
-                "This will automatically route this team's code review requests to individual team members.": "自动将代码审查请求转发给单个团队成员。",
+                "This will automatically route this team's code review requests to individual team members.": "将代码审查请求自动转发给单个团队成员。",
                 "Note: this won't assign members who have committed to the pull request or have set their status to Busy.": "注意：这不会将已提交的拉取请求或已将状态设置为 “忙碌 ”的成员分配给他们。",
                     "How many team members should be assigned to review?": "应指派多少名团队成员进行审查？",
                     "Routing algorithm": "旁路算法",
                         "Round robin": "循环",
-                        "Alternate reviews between each team member": "每位团队成员交替审核",
+                        "Alternate reviews between each team member": "每位团队成员交替审查",
                         "Load balance": "负载平衡",
-                        "Balance review load across the entire team": "平衡整个团队的审核负载",
+                        "Balance review load across the entire team": "平衡整个团队的审查负担",
                         "Never assign certain team members": "绝不指派某些团队成员",
                             "Select team members": "选择团队成员",
                     "Child team members": "子团队成员",
-                        "Include the members of any child teams when assigning requests.": "在分配申请时，包括任何子团队的成员。",
+                        "Include the members of any child teams when assigning requests.": "在分配请求时，包括任何子团队的成员。",
                     "Count existing requests": "计算现有请求",
-                        "Count any members whose review has already been requested against the total number of members to assign.": "在要分配的成员总数中计算任何已提出审核请求的成员。",
+                        "Count any members whose review has already been requested against the total number of members to assign.": "在待分配的成员总数中清点所有已收到审核请求的成员。",
                     "Team review request": "团队审查请求",
-                        "When assigning team members, remove the review request for the team.": "分配团队成员时，删除团队的审核请求。",
+                        "When assigning team members, remove the review request for the team.": "分配团队成员时，为团队移除审核请求。",
 
         // 团队设置 - 定时提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
             "No scheduled reminders created.": "未创建预定提醒。",
-            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保持项目进展，您现在可以提醒您的团队关于他们需要审查的拉取请求。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保证项目推进，您现在可以就需要您团队成员审查的拉取请求提醒他们。",
 
             "Connect a Slack workspace to get started": "连接 Slack 工作区以开始使用",
 
@@ -24790,8 +24790,8 @@ I18N["zh-CN"]["orgs/settings/code_review_limits"] = { // 组织设置 - 代码�
         // 代码审查限制 /organizations/<org-login>/settings/code_review_limits
             "Restrict users who are permitted to approve or request changes on pull requests in public repositories within this organization.": "限制该组织内允许批准或请求更改公共仓库中拉取请求的用户。",
             "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "代码审查限制可能已经由各个仓库指定。此处的任何更改都将覆盖这些限制，直至取消设置。",
-            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制，只允许明确授予每个仓库访问权的用户提交 “批准” 或 “请求更改” 的审查。删除限制，允许所有用户提交拉取请求审查。所有能够提交评论拉取请求审查的用户将继续能够这样做。",
-            "Limit reviews on all repositories": "限制对所有仓库的审查",
+            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有仓库代码审查限制都是单独管理的。启用限制则仅允许每个仓库的具有明确授予的访问权的用户发表 “批准” 或 “请求更改” 的审查意见。移除限制则允许所有用户对拉取请求发表审查意见。所有能够对拉取请求发表评论性审查意见的用户将继续能够这样做。",
+            "Limit reviews on all repositories": "对所有仓库进行审查限制",
             "Remove review limits from all repositories": "取消对所有仓库的审查限制",
 
 
@@ -25075,9 +25075,9 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
                     "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
                         "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 是否可以创建拉取请求或提交批准拉取请求审查。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求或提交对拉取请求的审查批准。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
-                        "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 是否可以创建拉取请求或提交批准的拉取请求审查。",
+                        "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 能否创建拉取请求或提交对拉取请求的审查批准。",
                     // 顶部提醒
                         "Default workflow permissions settings saved.": "默认工作流程权限设置已保存。",
 
@@ -25763,7 +25763,7 @@ I18N["zh-CN"]["orgs/settings/oauth_application_policy"] = { // 组织设置 - �
             "Denied": "拒绝",
             "Approved": "已批准",
 
-            "No pending requests": "没有待处理的请求",
+            "No pending requests": "尚无未决请求",
             "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "当成员请求访问特定应用时，这些请求将在此处列出以供您批准。您可以浏览",
             "your own authorized applications": "您授权的应用",
 
@@ -25808,7 +25808,7 @@ I18N["zh-CN"]["orgs/settings/personal-access-token"] = { // 组织设置 - 个�
                     "Organization members will not be allowed to access your organization using a fine-grained personal access token": "不允许组织成员使用精细化的个人访问令牌访问您的组织",
 
             "Require approval of fine-grained personal access tokens": "要求批准精细化的个人访问令牌",
-                "Access requests by organization members can be subject to review by administrator before approval.": "组织成员的访问请求在批准之前可能需要经过管理员审查。",
+                "Access requests by organization members can be subject to review by administrator before approval.": "组织成员的访问请求可能需要经过管理员审查后方可批准。",
                 "Require administrator approval": "需要管理员批准",
                     "All access requests by organization members to this organization must be approved before the token is usable.": "组织成员对该组织的所有访问请求都必须在令牌可用之前得到批准。",
                 "Do not require administrator approval": "不需要管理员批准",
@@ -25922,7 +25922,7 @@ I18N["zh-CN"]["orgs/settings/reminders"] = { // 组织设置 - 定时提醒
 
         // 定时提醒 /organizations/<org-login>/settings/reminders
             "No scheduled reminders created.": "未创建预定提醒。",
-            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保持项目进展，您现在可以提醒您的团队关于他们需要审查的拉取请求。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "为了保证项目推进，您现在可以就需要您团队成员审查的拉取请求提醒他们。",
 
             "Connect a Slack workspace to get started": "连接 Slack 工作区以开始使用",
             // 对话框
@@ -26002,7 +26002,7 @@ I18N["zh-CN"]["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
         // 源IP泄露 /organizations/<org-login>/audit-log/event_settings
             "Disclose actor IP addresses in audit logs": "在审计日志中披露行为人 IP 地址",
             "Enable source IP disclosure": "启用源 IP 泄露",
-            "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "启用此功能将允许您查看组织审计日志事件中当前成员的 IP 地址。由于此功能会自动公开用户的 IP 地址，因此您应该与法律团队一起审核此更改，以确定是否需要任何用户通知。当在企业级别启用时，它将自动为企业拥有的所有组织启用，反之则不然。",
+            "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "启用此功能将允许您查看组织审计日志事件中当前成员的 IP 地址。由于此功能会自动公开用户的 IP 地址，因此您宜与法律团队一起审查此更改，以确定是否需要向用户做任何通知。当在企业级别启用时，它将自动为企业拥有的所有组织启用，反之则不然。", // GB/T 1.1——2020 表 C.3 规定能愿动词 should 译为“宜”
     },
     "regexp": [ // 正则翻译
         [/Found (\d+) events?/, "找到 $1 个事件"],
@@ -26383,10 +26383,10 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                     "In progress": "进行中",
                         "Actively being worked on": "正在积极开展工作",
                         "Approved by reviewer": "由审查者批准",
-                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉取请求达到所需的最低批准审查数时，将自动移至此处。当另一栏启用了 “",
+                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "当该项目中的拉取请求达到所需的最低审查批准数时，将自动移至此处。当另一栏启用了 “",
                         "automation enabled.": "” 的自动化功能时推荐使用。",
-                        "Pending approval by reviewer": "由审查者待批准",
-                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小批准审查数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
+                        "Pending approval by reviewer": "等待审查者批准",
+                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "当审查者请求更改或不再满足所需的最小审查批准数时，此项目中的拉取请求将自动移至此处。当另一栏目启用了 “",
                     "Done": "已完成",
                         "Items are complete": "项目已完成",
                         // 已关闭
@@ -26682,8 +26682,8 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Issue closed": "议题已关闭",
             "Pull Request reopened": "拉取请求已重新打开",
             "Issue reopened": "议题已重新打开",
-            "Pull Request pending card added": "添加了拉取请求待办卡",
-            "Issue pending card added": "添加了议题待办卡",
+            "Pull Request pending card added": "添加了拉取请求未决卡",
+            "Issue pending card added": "添加了议题未决卡",
 
             "automation": "自动化",
             "to the": "到",
@@ -27198,23 +27198,23 @@ I18N["zh-CN"]["features"] = {
             "Code reviews": "代码审查",
                 "Review new code, see visual code changes, and confidently merge code changes with automated status checks.": "审查新代码，查看视觉代码更改，并通过自动化状态检查自信地合并代码更改。",
             "Code review assignments": "代码审查分配",
-                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该为拉取请求提交他们的审查。",
+                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配代码审查，明确哪些团队成员应该对拉取请求发表审查意见。",
             "Code owners": "代码所有者",
-                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当对他们拥有的代码部分进行更改时，自动请求选定贡献者的审查，或者要求他们的批准。",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "当所选贡献者拥有的代码部分被更改时，自动请求其审查，或要求其批准。",
             "Draft pull requests": "起草拉取请求",
-                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "使用拉取请求作为一种讨论和协作的方式，无需提交正式审查或冒不必要合并的风险。",
-            "Protected branches": "保护分支",
+                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "将拉取请求用作讨论和协作的方式，而无需提请正式审查，也不必冒险在暂不需要时合并。",
+            "Protected branches": "受保护的分支",
                 "Enforce restrictions on how code branches are merged, including requiring reviews, or allowing only specific contributors to work on a particular branch.": "强制限制代码分支的合并方式，包括要求审查，或者只允许特定贡献者在某个特定分支上工作。",
-            "Team reviewers": "团队审查人员",
-                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在 GitHub 上请求一个团队审查您的拉取请求。团队成员将收到通知，表明您已经要求他们进行审查。",
-            "Multiple assignees": "多人分配",
-                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达 10 人处理特定问题或拉取请求，让您更容易追踪谁在处理什么。",
-            "Multiple reviewers": "多人审查",
-                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多个贡献者进行审查。被请求的审核者将收到通知，告知您已请求他们进行审查。",
+            "Team reviewers": "团队审查者",
+                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "请求 GitHub 上的团队审查您的拉取请求。将通知团队成员，表明您已要求其审查。",
+            "Multiple assignees": "多位受理人",
+                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多达 10 人处理特定议题或拉取请求，让您更容易追踪谁在处理什么。",
+            "Multiple reviewers": "多位审查者",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "请求多位贡献者进行审查。将通知请求所涉审查者，表明您已要求其审查。",
             "Multi-line comments": "多行评论",
-                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次引用或评论多行代码，来澄清代码审查。",
+                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通过在拉取请求差异视图中一次性对多行代码进行引用或评论，来使得代码审查一目了然。",
             "Public repositories": "公共仓库",
-                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "与任何 GitHub 成员合作在您控制的公共仓库中的代码。进行更改，打开一个拉取请求，创建一个问题等等。",
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共仓库中的代码，同任何 GitHub 成员合作。进行更改，打开拉取请求，创建议题，诸如此类。", // 合作在汉语中用作动词时通常是不及物的
             "Dark mode": "深色模式",
                 "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通过主题设置来选择您使用 GitHub 的方式。切换到深色主题或默认使用您的系统偏好设置。",
     },
@@ -27498,7 +27498,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "In the finish section,": "在结束部分，",
                 "Celebrate that the learner finished the course": "庆祝学习者完成课程",
                 "Include an celebratory image": "附上一张庆祝图片",
-                "Review what the learner just did": "回顾学习者刚刚做的事情",
+                "Review what the learner just did": "查看学习者刚刚做的事情",
                 "Provide next steps for learners who want to know more": "为想要了解更多信息的学习者提供后续步骤",
                 "Invite feedback about the course": "邀请学习者对课程提出反馈",
             "Writing your README: Footer": "编写自述文件：页脚",
@@ -27511,7 +27511,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
             "Writing your Actions workflow files: Connect your steps to GitHub Actions events": "编写操作工作流程文件：将步骤连接到 GitHub 操作事件",
                "Every step will have an Actions workflow file that triggers on": "每个步骤都会有一个根据",
                "GitHub Actions events": "GitHub 操作事件",
-               ". Start by reviewing which event corresponds with each of your steps.": "触发的操作工作流文件。首先查看每个步骤对应的事件。",
+               ". Start by reviewing which event corresponds with each of your steps.": "触发的操作工作流文件。首先查看每个步骤对应的事件。", // GitHub Actions 应该保持原文吧？
             "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "编写操作工作流程文件：确定 GitHub 操作在每个步骤中需要做的事情",
                 "You can use": "您可以在操作工作流中使用",
                 "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "来执行您能想到的几乎所有 GitHub 交互操作。写下完成每个步骤需要做的所有事情。存储链接，以便在学习课程时参考。",
@@ -27544,7 +27544,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流程文件中包含详尽的注释，以描述每个部分。其他作者和未来的自己都会感谢您。",
         "Testing and monitoring your course": "测试和监控课程",
             "Click on “Use this template” and run through your course on a your personal account. Does everything work? Do any actions go red?": "点击 “使用此模板”，然后在个人账户上运行课程。一切正常吗？是否有任何操作变红？",
-            "Consider asking for both technical and content review.": "考虑要求进行技术和内容审查。",
+            "Consider asking for both technical and content review.": "考虑要求进行技术审查和内容审查。",
             "Test your course with a potential learner.": "与潜在学员一起测试课程。",
             "Check in our your course regularly for any reported issues or out-of-date information.": "定期检查您的课程，查看是否有任何报告的问题或过时的信息。",
         "Best practices for building courses": "构建课程的最佳做法",
@@ -27566,7 +27566,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "Follow the": "遵循",
                 "GitHub docs content style guide": "GitHub 文档内容风格指南",
             "Actions workflows": "操作工作流程",
-                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在课程中做任何 GitHub 操作能做的事。查看",
+                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在课程中做任何 GitHub 操作能做的事。查看", // GitHub Actions 应该保持原文吧？
                 "GitHub Actions docs": "GitHub 操作文档",
                 "and some": "和一些",
                 "examples of GitHub Actions": "GitHub 操作示例",
@@ -27832,7 +27832,7 @@ I18N["zh-CN"]["copilot"] = {
             "Agent sessions": "智能体任务",
             "Agent sessions and chats": "智能体任务及聊天",
                 "No agents running": "无智能体运行",
-                    "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以让 Copilot 在后台为您处理任务，创建一个供您审核的拉取请求。",
+                    "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您现在可以让 Copilot 在后台为您处理任务，创建供您审查的拉取请求。",
 
             // 时间
                 "Today": "今天",
@@ -28198,7 +28198,7 @@ I18N["zh-CN"]["copilot"] = {
             "Open": "打开",
                 "No open tasks yet. Start a new task to see it here.": "还没有打开的任务。开始一个新任务后即可在这里查看。",
                 "Failed": "失败",
-                "Ready for review": "准备审查",
+                "Ready for review": "可供审查",
                 "· Initializing pull request…": "· 初始化拉取请求…",
             "Closed": "关闭",
                 "· started": "· 开始于",
@@ -28308,7 +28308,7 @@ I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
     "static": {
         "Copilot-powered code reviews waitlist": "Copilot 驱动的代码审查候补名单",
 
-        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驱动代码审查候补名单",
+        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驱动的代码审查候补名单",
             "Get fast AI-powered code feedback in pull requests on GitHub.com and in Visual Studio Code. Jump from your pull request to Copilot Workspace to refine, validate and land suggestions.": "在 GitHub.com 和 Visual Studio Code 的拉取请求中获取由 AI 驱动的快速代码反馈。您可以直接从拉取请求跳转至 Copilot 工作区，对建议进行优化、验证并最终落实。",
 
         "Join the waitlist": "加入等候名单",
@@ -28316,7 +28316,7 @@ I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
             "the pre-release terms": "预发行条款",
             ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。注册并不保证您一定能获得访问权限。如果您被纳入预览计划，我们将通过电子邮件通知您。",
 
-        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "预览使用Copilot驱动的代码审查的名额有限。如果您获得访问权限，您将收到一封电子邮件通知。",
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "预览使用 Copilot 驱动的代码审查的名额有限。如果授予您访问权限，您将收到一封电子邮件通知。",
     },
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感谢！$1 已加入候补名单"],
@@ -28631,7 +28631,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                                     "or visit the": "或访问",
                                     "GitHub Education Community.": "GitHub 教育社区。",
 
-                            "pending": "排队",
+                            "pending": "未决",
 
                         "Get help": "获取帮助",
                             "Common questions about applying for your academic discount.": "关于申请学术折扣的常见问题。",
@@ -28676,7 +28676,7 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
                         "Processing information...": "处理中…",
 
                     // 上传失败
-                        "Your application cannot be reviewed until you fix the following:": "您的申请将不被审查直到解决以下问题：",
+                        "Your application cannot be reviewed until you fix the following:": "无法审查您的申请，直到您解决以下问题：",
                             "You must configure your browser and operating system to allow location access. You may not use a VPN. If you believe that our information about your school is incomplete or incorrect, then please select ‘My selected school has incorrect or incomplete information e.g. domains or campus location’ option when submitting a GitHub Education support ticket.": "您必须配置您的浏览器和操作系统以允许位置访问。您不得使用VPN。如果您认为我们关于您学校的资料不完整或不正确，请在提交GitHub 教育支持工单时选择“我选择的学校信息有误或不完整，例如域名或校园位置”选项。",
                             "Please use your device camera to submit your academic affiliation documents. If you’re having trouble using your device camera, please allow camera access for the application website on your browser. The steps for this will vary depending on which browser you are using. Information on browsers supported by GitHub can be found": "请使用设备摄像头提交您的学术关系文件。如果您在使用设备摄像头时遇到困难，请在浏览器上允许摄像头访问申请网站。具体步骤视您使用的浏览器而定。有关 GitHub 支持的浏览器信息，请点击",
                                 "here": "此处",
