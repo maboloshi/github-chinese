@@ -17701,7 +17701,7 @@ I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置
                     "Require review from Code Owners": "要求代码所有者审查",
                         "Require an approved review in pull requests including files with a designated code owner.": "要求在拉取请求中进行批准审查，包括有指定代码所有者的文件。",
                     "Restrict who can dismiss pull request reviews": "限制谁可以驳回拉取请求审查", // 组织仓库
-                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定允许驳回拉取请求审查意见的人员、团队或应用。",
+                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定人员、团队或应用，允许他们驳回对拉取请求的审查意见。",
                         "People, teams, or apps that can dismiss reviews.": "允许驳回审查的人员、团队或应用。",
                             "Organization and repository administrators": "组织和仓库管理员",
                                 "These members can always dismiss.": "这些成员总是允许驳回。",
