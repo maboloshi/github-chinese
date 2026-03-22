@@ -13499,6 +13499,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "This workflow is": "此工作流程正在等待维护者",
                 "awaiting approval": "批准",
                 "from a maintainer in": "在",
+            "Approve and run": "批准并运行",
             "Enable workflow": "启用工作流程",
                 // 顶部提醒
                     "Workflow enabled successfully.": "工作流程已成功启用。",
