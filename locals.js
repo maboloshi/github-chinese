@@ -16018,6 +16018,9 @@ I18N["zh-CN"]["repository/tasks"] = {
         "Archive session": "存档任务",
             "Are you sure you want to archive this session?": "您确定要存档此任务吗？",
             "Yes, archive": "确定",
+
+        "Diff": "差异",
+        "Create pull request": "创建拉取请求",
         
         "This pull request was merged. To continue iterating,": "此拉取请求已合并。若要继续迭代，",
             "start a new session": "请开始一个新会话",
