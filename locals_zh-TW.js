@@ -1676,6 +1676,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Copilot started work": "Copilot 開始工作",
             "Summary": "摘要",
             "Copy head branch name to clipboard": "複製頭分支名稱到剪貼板",
+            "Edit title": "編輯標題",
 
     },
     "regexp": [ // 正則翻譯
@@ -2659,6 +2660,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
             "Pinned": "已置頂",
             "Top repositories": "置頂的倉庫",
             "Popular repositories": "熱門倉庫",
+            "You don't have any public repositories yet.": "你還沒有公共倉庫。",
 
             "Learn how we count contributions": "瞭解我們如何計算貢獻",
             "Contribution settings": "貢獻設置",
@@ -9118,6 +9120,7 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
                 "Learn more about GitHub Sponsors": "瞭解更多關於 GitHub 贊助者的信息",
             "Used by": "使用者",
             "Contributors": "貢獻者",
+                "No contributors": "無貢獻者",
             "Environments": "環境",
             "Deployments": "部署",
                 "+ more deployments": "+ 更多部署",
@@ -10669,6 +10672,13 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
                 "Are you sure you want to change the base?": "您確定要更改基礎分支嗎？",
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "舊的基礎分支的一些提交可能會從時間線上刪除，而舊的審查意見可能會變得過時。",
                 "Change base": "更改基礎分支",
+
+            "View status": "查看狀態",
+            "Able to merge": "可以合併",
+            "Ready to merge": "準備合併",
+                "Merge status": "合併狀態",
+                "What's new": "新內容",
+                "Close merge status": "關閉",
 
             // 程式碼 下拉菜單
                 "Code 55% faster with AI pair programming.": "與 AI 一起編程，寫程式碼速度提高55%。",
@@ -16002,6 +16012,13 @@ I18N["zh-TW"]["repository/tasks"] = {
         "Stop": "停止",
         "Setting up environment": "設置環境",
         "View repository": "查看倉庫",
+
+        "Archive session": "存檔任務",
+            "Are you sure you want to archive this session?": "您確定要存檔此任務嗎？",
+            "Yes, archive": "確定",
+        
+        "This pull request was merged. To continue iterating,": "此拉取請求已合併。若要繼續迭代，",
+            "start a new session": "請開始一個新會話",
     },
     "regexp": [
         [/View (\d+) files?/, "查看 $1 個文件"],
@@ -27082,6 +27099,7 @@ I18N["zh-TW"]["codespaces"] = { // 程式碼空間頁面
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `最後使用${translatedDate}`;
         }],
+        [/This codespace is (\d+) commits? ahead of remote and has uncommitted changes/, "此程式碼空間 $1 條提交領先遠端且有未提交更改"],
         [/This codespace is (\d+) commits? ahead of remote/, "此程式碼空間 $1 條提交領先遠端"],
     ],
     "title": {
