@@ -10939,6 +10939,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "added this to the": "添加到",
             "milestone": "里程碑",
             "review requested due to automatic review settings": "因设置自动审查",
+            "created this pull request from a session": "从任务创建拉取请求",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
