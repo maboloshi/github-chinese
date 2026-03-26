@@ -6165,7 +6165,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                         "You will have access to the feature": "您将能够访问此功能",
                         "You won’t have access to the feature": "您将不能访问此功能",
                 "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "了解更多关于 GitHub Copilot 如何为 OpenAI GPT-5-Codex 提供服务，并确认与您的 IDE 的兼容性。",
-                "Dashboard entry point": "仪表板入口",
+                "Dashboard Entry Point": "仪表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允许登录 GitHub.com 时即时聊天",
                 "Copilot code review": "Copilot 代码审查",
                     "Use Copilot to": "使用 Copilot",
@@ -6191,6 +6191,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Your GitHub Copilot setup is incomplete. Select your preferences below to start using GitHub Copilot.": "您的 GitHub Copilot 设置不完整。请在下面选择您的偏好，开始使用 GitHub Copilot。",
 
             "GitHub Copilot Pro is active for your account": "您的 GitHub Copilot Pro 帐户已激活",
+            "GitHub Copilot Student is active for your account": "您的 GitHub Copilot 学生帐户已激活",
                 "You currently have an active": "您当前拥有有效的",
                 "Copilot Pro subscription": "GitHub Copilot Pro 订阅",
                 "Get started by installing the extension in your preferred IDE.": "首先在您首选的 IDE 中安装扩展。",
@@ -6222,6 +6223,8 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "personalized to a codebase.": "，个性化代码。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中获得 Copilot 的协助",
+                "Copilot can search the web using model native search": "使用模型原生搜索",
+                    "Copilot can answer questions using a model's built-in search capabilities.": "Copilot 可以使用模型内置搜索功能回答。",
                 "Automatic Copilot code review": "自动 Copilot 代码审查",
                     "Copilot will automatically review your pull requests.": "Copilot 将自动审查您的拉取请求。",
                     "Learn more about configuring automatic code reviews.": "了解如何配置自动代码审查。",
@@ -6294,6 +6297,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升级以获取更高的限制、高级模型和 AI 审核。免费额度将在 $1 天内重置。"], // 免费版额度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
+        [/Your GitHub Copilot subscription will renew in (\d+) days?./, "您的 GitHub Copilot 订阅将在 $1 天后续订。"],
     ],
     "title": {
         "static": {
