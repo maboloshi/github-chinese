@@ -749,6 +749,12 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "You can also": "您也可以",
             "view this object as it appeared at the time of the comment": "查看此对象在评论时的状态",
 
+            // 临时信息
+            "On April 24 we'll start using GitHub Copilot interaction data for AI model training unless you opt out.": "除非您选择退出，否则我们将于 4 月 24 日开始使用 GitHub Copilot 的交互数据来训练 AI 模型。",
+                "Review this update": "查看此更新",
+                "and manage your preferences in your": "并管理您的偏好在",
+                "GitHub account settings": "GitHub 账号设置",
+
 
         "Your issues": "您的议题",
         "Your pull requests": "您的拉取请求",
