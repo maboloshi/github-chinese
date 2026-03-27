@@ -17291,8 +17291,10 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "If you decide to make this repository public in the future, it will not be possible to restore these stars and watchers and this will affect its repository rankings.": "即使您决定将来公开此仓库，也无法恢复这些星标者和关注者，这将影响其仓库排名。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository.": "依赖项关系图和 Dependabot 警报将保持启用，并有权限对该仓库进行只读分析。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository. Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "依赖项关系图和 Dependabot 警报将继续启用，并允许对该仓库执行只读分析。除非为该仓库启用了 GitHub 高级安全功能，否则任何自定义的 Dependabot 警报规则都将被禁用。",
+                "Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "除非为该仓库启用了 GitHub 高级安全，否则任何自定义的 Dependabot 警报规则都将被禁用。",
                 "Code scanning will become unavailable.": "代码扫描将变得不可用。",
                 "Current forks will remain public and will be detached from this repository.": "当前的复刻将保持公开，并将从该仓库中分离出来。",
+                "Advanced Security will be disabled.": "高级安全将被禁用。",
                 "Make this repository private": "将此仓库设为私有",
                 "I have read and understand these effects": "我已阅读并理解这些影响",
 
