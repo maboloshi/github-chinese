@@ -17072,10 +17072,15 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "A repository with LFS content cannot be used as a template.": "带有 LFS 内容的仓库不能作为模板使用。",
                 "Learn more about template repositories": "了解更多关于模板库的信息",
 
+            "Commits": "提交",
                 "Require contributors to sign off on web-based commits": "要求贡献者在基于 Web 的提交上签署",
-                "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
-                "Learn more about signing off on commits": "了解更多关于签署提交的信息",
+                    "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
+                    "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
+                    "Learn more about signing off on commits": "了解更多关于签署提交的信息",
+                "Allow comments on individual commits": "允许对单个提交发表评论",
+                    "Enabling this setting will allow anyone who can view this repository to add": "启用此设置后，任何能查看该仓库的人都可以添加",
+                    "commit comments": "提交评论",
+                    ". Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "。现有的提交评论不受此设置影响，依然可以查看、编辑和删除",
 
             "This setting is enabled on the upstream repository. Disabling this setting may block commits from being merged upstream.": "此设置在上游仓库中启用。禁用此设置可能会阻止提交向上游合并。",
 
