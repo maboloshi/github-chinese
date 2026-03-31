@@ -749,6 +749,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "You can also": "您也可以",
             "view this object as it appeared at the time of the comment": "查看此對象在評論時的狀態",
 
+            // 臨時信息
+            "On April 24 we'll start using GitHub Copilot interaction data for AI model training unless you opt out.": "除非您選擇退出，否則我們將於 4 月 24 日開始使用 GitHub Copilot 的交互數據來訓練 AI 模型。",
+                "Review this update": "查看此更新",
+                "and manage your preferences in your": "並管理您的偏好在",
+                "GitHub account settings": "GitHub 賬戶設置",
+
 
         "Your issues": "您的議題",
         "Your pull requests": "您的拉取請求",
@@ -2660,7 +2666,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
             "Pinned": "已置頂",
             "Top repositories": "置頂的倉庫",
             "Popular repositories": "熱門倉庫",
-            "You don't have any public repositories yet.": "你還沒有公共倉庫。",
+            "You don't have any public repositories yet.": "您還沒有公共倉庫。",
 
             "Learn how we count contributions": "瞭解我們如何計算貢獻",
             "Contribution settings": "貢獻設置",
@@ -6159,7 +6165,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                         "You will have access to the feature": "您將能夠訪問此功能",
                         "You won’t have access to the feature": "您將不能訪問此功能",
                 "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "瞭解更多關於 GitHub Copilot 如何為 OpenAI GPT-5-Codex 提供服務，並確認與您的 IDE 的兼容性。",
-                "Dashboard entry point": "儀表板入口",
+                "Dashboard Entry Point": "儀表板入口",
                     "Allows instant chatting when landing on GitHub.com": "允許登錄 GitHub.com 時即時聊天",
                 "Copilot code review": "Copilot 程式碼審查",
                     "Use Copilot to": "使用 Copilot",
@@ -6185,6 +6191,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Your GitHub Copilot setup is incomplete. Select your preferences below to start using GitHub Copilot.": "您的 GitHub Copilot 設置不完整。請在下面選擇您的偏好，開始使用 GitHub Copilot。",
 
             "GitHub Copilot Pro is active for your account": "您的 GitHub Copilot Pro 帳戶已激活",
+            "GitHub Copilot Student is active for your account": "您的 GitHub Copilot 學生帳戶已激活",
                 "You currently have an active": "您當前擁有有效的",
                 "Copilot Pro subscription": "GitHub Copilot Pro 訂閱",
                 "Get started by installing the extension in your preferred IDE.": "首先在您首選的 IDE 中安裝擴展。",
@@ -6216,6 +6223,8 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "personalized to a codebase.": "，個性化程式碼。",
                 "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中獲得 Copilot 的協助",
+                "Copilot can search the web using model native search": "使用模型原生搜索",
+                    "Copilot can answer questions using a model's built-in search capabilities.": "Copilot 可以使用模型內置搜索功能回答。",
                 "Automatic Copilot code review": "自動 Copilot 程式碼審查",
                     "Copilot will automatically review your pull requests.": "Copilot 將自動審查您的拉取請求。",
                     "Learn more about configuring automatic code reviews.": "瞭解如何配置自動程式碼審查。",
@@ -6288,6 +6297,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
         [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升級以獲取更高的限制、高級模型和 AI 審核。免費額度將在 $1 天內重置。"], // 免費版額度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "瞭解更多關於 GitHub Copilot 如何為 $1 提供服務。"],
+        [/Your GitHub Copilot subscription will renew in (\d+) days?./, "您的 GitHub Copilot 訂閱將在 $1 天后續訂。"],
     ],
     "title": {
         "static": {
@@ -10675,10 +10685,12 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
 
             "View status": "查看狀態",
             "Able to merge": "可以合併",
+            "Unable to merge": "無法合併",
             "Ready to merge": "準備合併",
                 "Merge status": "合併狀態",
                 "What's new": "新內容",
                 "Close merge status": "關閉",
+            "Merge conflicts": "合併衝突",
 
             // 程式碼 下拉菜單
                 "Code 55% faster with AI pair programming.": "與 AI 一起編程，寫程式碼速度提高55%。",
@@ -10937,6 +10949,7 @@ I18N["zh-TW"]["repository/pull"] = { // 倉庫 - 某個拉取請求頁面
             "added this to the": "添加到",
             "milestone": "里程碑",
             "review requested due to automatic review settings": "因設置自動審查",
+            "created this pull request from a session": "從任務創建拉取請求",
 
             //
             "This branch has not been deployed": "該分支尚未部署",
@@ -13497,6 +13510,7 @@ I18N["zh-TW"]["repository/actions"] = { // 倉庫 - 操作頁面
             "This workflow is": "此工作流程正在等待維護者",
                 "awaiting approval": "批准",
                 "from a maintainer in": "在",
+            "Approve and run": "批准並運行",
             "Enable workflow": "啟用工作流程",
                 // 頂部提醒
                     "Workflow enabled successfully.": "工作流程已成功啟用。",
@@ -16016,6 +16030,9 @@ I18N["zh-TW"]["repository/tasks"] = {
         "Archive session": "存檔任務",
             "Are you sure you want to archive this session?": "您確定要存檔此任務嗎？",
             "Yes, archive": "確定",
+
+        "Diff": "差異",
+        "Create pull request": "創建拉取請求",
         
         "This pull request was merged. To continue iterating,": "此拉取請求已合併。若要繼續迭代，",
             "start a new session": "請開始一個新會話",
