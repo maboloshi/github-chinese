@@ -4879,6 +4879,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
         }],
+        [/of (\d+) included/, "/$1"], // 高级请求总数
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
