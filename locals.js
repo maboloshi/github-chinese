@@ -4893,7 +4893,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             return `${translatedP1}-${translatedP2}`;
         }],
         // 订阅相关
-        [/^(\$\d+(\.\d+)?) off/, "$1 减免"],
+        [/^(\$\d+(\.\d+)?) off$/, "$1 减免"],
         [/· (\d+) years? remaining/, " · 剩余 $1 年"],
         //[/Included usage discounts for (.+) - (.+)./, (match, p1, p2) => {
         //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
