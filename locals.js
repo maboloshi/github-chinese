@@ -8184,6 +8184,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                     //[/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
                 "Pick your reaction": "选择您的表情",
                 "Copy link": "复制链接",
+                "Copy Markdown": "复制为 Markdown",
                 "Quote reply": "引用回复",
                 "Reference in new issue": "引用到新议题",
                     // 引用到新议题 对话框
@@ -8193,6 +8194,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                     "Select repository": "选择仓库",
                     "Repository:": "仓库：",
                     "No matching repositories.": "没有匹配的仓库。",
+                "Pin": "置顶",
                 "Report content": "举报内容",
                 "Report": "举报",
                 // 评论删除提醒
