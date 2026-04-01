@@ -4269,6 +4269,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Next payment due": "下一次应付款",
 
             "Subscriptions": "订阅",
+                "Copilot Student": "Copilot 学生",
                 "Manage subscriptions": "管理订阅",
                 "per": "/",
                 "month": "月",
@@ -4461,6 +4462,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             // 获取使用情况报告
                 "Premium requests usage report": "高级请求使用报告",
+                "Get premium request usage report": "获取高级请求使用报告",
                     "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
                 "Legacy usage report": "旧版使用报告",
 
@@ -4890,6 +4892,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
             return `${translatedP1}-${translatedP2}`;
         }],
+        // 订阅相关
+        [/^(\$\d+(\.\d+)?) off/, "$1 减免"],
+        [/· (\d+) years? remaining/, " · 剩余 $1 年"],
         //[/Included usage discounts for (.+) - (.+)./, (match, p1, p2) => {
         //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
         //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
@@ -4898,6 +4903,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/([\d,]+) min used \/ ([\d,]+) min included/, "$1 / $2 分钟"],
         //(\d+) min used \/ ([\d,+]) min included
         [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
+        [/Based on (\d+) additional premium requests? beyond your included usage./, "超额高级请求：$1"],
         // 当前包含用量 - 详情 对话框
             [/Current usage for (.+) - (.+). Monthly quota resets in (\d+) day\(s\)./, (match, p1, p2, p3) => {
                 const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
