@@ -852,6 +852,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "other:": "其他：",
                 "Organization Custom Instructions": "组织自定义指令",
                     "Organization administrators can apply custom instructions across all Copilot chats in github.com.": "组织管理员可以在 GitHub.com 的所有 Copilot 聊天中应用自定义指令。",
+                "New Pull Requests Dashboard": "新版拉取请求仪表板",
+                    "The updated pull requests overview (github.com/pulls) introduces saved views, smart default filters, and enhanced search, making it easier to organize and find pull requests across your repos, teams, and orgs. Once enabled, please refresh to see the changes.": "更新后的拉取请求概览（github.com/pulls）引入了保存的视图、智能默认过滤器和增强的搜索功能，使您更轻松地组织并查找仓库、团队和组织中的拉取请求。启用后，请刷新以查看更改。",
                 "New Dashboard Experience": "新仪表板体验",
                     "The updated home dashboard introduces enhanced agent workflows, making it easier to create and manage agent sessions, issues, and pull requests directly from your personalized dashboard. Once enabled, please refresh to see the changes.": "更新后的主页仪表板引入了增强的智能体工作流，使您可以更轻松地直接从个性化仪表板创建和管理智能体会话、议题和拉取请求。启用后，请刷新以查看更改。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
@@ -8134,7 +8136,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Actions": "操作",
             "Projects": "项目",
             "Models": "模型",
-            "Security": "安全",
+            "Security and quality": "安全和质量",
             "Insights": "洞察",
             "Settings": "设置",
 
@@ -8826,6 +8828,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                     "You can rename this fork's default branch to match in": "您可以重命名此复刻默认分支以匹配，在",
                     "branch settings": "分支设置",
 
+            "Draft a new release": "起草发行版",
             "branch": "分支",
             "branches": "分支",
             "tag": "标签",
@@ -9255,6 +9258,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/More than (\d+) unreleased commits since ([^ ]+)/, "$2 以来有超过 $1 个未发布的提交"],
+        [/(\d+) unreleased commits since ([^ ]+)/, "$2 以来有 $1 个未发布的提交"],
         [/commits by (.+)/, "由 $1 提交"],
         [/Signed-off-by: (.*)/, "签字人：$1"], // TODO: 修复该词条翻译不生效问题
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -27805,7 +27810,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
     },
     "regexp": [
         ...I18N["zh-CN"]["repo-actions-merics-public"]["regexp"],
-        [/(Average run time of|Average queue time of|Failure rate across|Total minutes used across failed) jobs in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
+        [/(Average run time of|Average queue time of|Failure rate across|Total minutes used across failed) jobs in this repository for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
             var typeKey = {'Average run time of': '平均运行时长', 'Average queue time of': '平均等待时长', 'Failure rate across': '作业失败率', 'Total minutes used across failed': '作业失败次数'};
             var periodKey = {
                 "current week (mon-sun)": "本周（周一 ~ 周日）",
@@ -27816,7 +27821,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
                 "last year": "最近一年",
                 "custom": "自定义时间段",
             };
-            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
+            return periodKey[period] + '该仓库所有工作流程的' + typeKey[type];
         }],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
         [/(\d+)m (\d+)s/, "$1分$2秒"],
