@@ -36,7 +36,7 @@ body:
   id: realization
   attributes:
     label: 實際表現
-    description: 請描述本插件的实际表現。
+    description: 請描述本插件的實際表現。
   validations:
     required: true
 - type: textarea
@@ -50,7 +50,7 @@ body:
   id: browser-name
   attributes:
     label: 瀏覽器名稱
-    description: 請選择运行本插件的瀏覽器的名稱。
+    description: 請選择運行本插件的瀏覽器的名稱。
     options:
       - Microsoft Edge
       - Google Chrome
@@ -62,7 +62,7 @@ body:
   attributes:
     label: 瀏覽器版本
     description: |
-      请填入运行本插件的瀏覽器的版本。
+      請填入運行本插件的瀏覽器的版本。
       [Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)
       [Google Chrome 版本](chrome://settings/help)
     placeholder: 版本 146.0.3856.62 (正式版本) (arm64)
