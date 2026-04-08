@@ -4277,6 +4277,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Next payment due": "下一次应付款",
 
             "Subscriptions": "订阅",
+                "Copilot Student": "Copilot 学生",
                 "Manage subscriptions": "管理订阅",
                 "per": "/",
                 "month": "月",
@@ -4469,6 +4470,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
             // 获取使用情况报告
                 "Premium requests usage report": "高级请求使用报告",
+                "Get premium request usage report": "获取高级请求使用报告",
                     "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
                 "Legacy usage report": "旧版使用报告",
 
@@ -4887,6 +4889,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
         }],
+        [/of (\d+) included/, "/$1"], // 高级请求总数
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
@@ -4897,6 +4900,9 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
             return `${translatedP1}-${translatedP2}`;
         }],
+        // 订阅相关
+        [/^(\$\d+(\.\d+)?) off$/, "$1 减免"],
+        [/· (\d+) years? remaining/, " · 剩余 $1 年"],
         //[/Included usage discounts for (.+) - (.+)./, (match, p1, p2) => {
         //    const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
         //    const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
@@ -4905,6 +4911,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         [/([\d,]+) min used \/ ([\d,]+) min included/, "$1 / $2 分钟"],
         //(\d+) min used \/ ([\d,+]) min included
         [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
+        [/Based on (\d+) additional premium requests? beyond your included usage./, "超额高级请求：$1"],
         // 当前包含用量 - 详情 对话框
             [/Current usage for (.+) - (.+). Monthly quota resets in (\d+) day\(s\)./, (match, p1, p2, p3) => {
                 const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
@@ -6146,6 +6153,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
                     "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 代码审查和预览功能仅适用于付费版。",
                     "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。预览功能仅适用于付费版。",
+                    "You can use Copilot Chat in GitHub.com and Copilot for pull requests. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat 和 Copilot 拉取请求。预览功能仅适用于付费版。",
                     "Learn more about Copilot in GitHub.com": "了解更多关于在 GitHub.com 中使用 Copilot 的信息",
                 "Editor preview features": "编辑器预览功能",
                     "You can use preview features in your editor.": "您可以在编辑器中使用预览功能。",
@@ -6163,6 +6171,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                     "About GitHub Copilot privacy.": "关于 GitHub Copilot 隐私的信息。",
                 "Allow GitHub to use my data for AI model training": "允许 GitHub 将数据用于训练 AI 模型",
                     "Allow GitHub, its affiliates and third parties to use my data, including Prompts, Suggestions, and Code Snippets, for AI model training. More information in the": "允许GitHub、其关联公司和第三方使用我的数据，包括提示、建议和代码片段，以训练 AI 模型。更多信息请查看",
+                    "Allow GitHub to collect and use my Inputs, Outputs, and associated context to train and improve AI models. Read more in the": "允许 GitHub 收集并使用我的输入、输出、交互上下文以训练并提升 AI 模型。更多信息在",
                 "Copilot can search the web": "网络搜索",
                     "Copilot can answer questions about new trends and give improved answers, via Bing. See": "Copilot 可以回答有关新趋势的问题并给出改进的答案，通过必应。请参阅",
                     "Microsoft Privacy Statement": "微软隐私声明",
@@ -6239,6 +6248,10 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Copilot coding agent": "Copilot 编程智能体",
                     "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
+                "Copilot Memory": "Copilot 记忆",
+                    "to remember repository context across Copilot agent interactions.": "在 Copilot 智能体交互过程中记住代码仓库上下文。",
+                    "This preview is governed by": "此预览受此约束：",
+                    "GitHub's pre-release terms": "GitHub 预发行条款",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
                     "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和编程智能体中连接 MCP 服务器。",
                 // Grok
@@ -8142,6 +8155,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Actions": "操作",
             "Projects": "项目",
             "Models": "模型",
+            "Security": "安全",
             "Security and quality": "安全和质量",
             "Insights": "洞察",
             "Settings": "设置",
@@ -8178,6 +8192,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                     //[/This user has been invited to collaborate on the ([^ ]+) repository./, "该用户已被邀请在 $1 仓库上进行协作。"],
                 "Pick your reaction": "选择您的表情",
                 "Copy link": "复制链接",
+                "Copy Markdown": "复制为 Markdown",
                 "Quote reply": "引用回复",
                 "Reference in new issue": "引用到新议题",
                     // 引用到新议题 对话框
@@ -8187,6 +8202,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                     "Select repository": "选择仓库",
                     "Repository:": "仓库：",
                     "No matching repositories.": "没有匹配的仓库。",
+                "Pin": "置顶",
                 "Report content": "举报内容",
                 "Report": "举报",
                 // 评论删除提醒
@@ -17088,10 +17104,15 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "A repository with LFS content cannot be used as a template.": "带有 LFS 内容的仓库不能作为模板使用。",
                 "Learn more about template repositories": "了解更多关于模板库的信息",
 
+            "Commits": "提交",
                 "Require contributors to sign off on web-based commits": "要求贡献者在基于 Web 的提交上签署",
-                "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
-                "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
-                "Learn more about signing off on commits": "了解更多关于签署提交的信息",
+                    "Enabling this setting will require contributors to sign off on commits made through GitHub’s web interface. Signing off is a way for contributors to affirm that their commit complies with the repository's terms, commonly the": "启用此设置将要求贡献者签署通过 GitHub 的 Web 界面所做的提交。签署是贡献者确认他们的提交符合仓库条款的一种方式，通常是",
+                    "Developer Certificate of Origin (DCO)": "开发者来源证书（DCO）",
+                    "Learn more about signing off on commits": "了解更多关于签署提交的信息",
+                "Allow comments on individual commits": "允许对单个提交发表评论",
+                    "Enabling this setting will allow anyone who can view this repository to add": "启用此设置后，任何能查看该仓库的人都可以添加",
+                    "commit comments": "提交评论",
+                    ". Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "。现有的提交评论不受此设置影响，依然可以查看、编辑和删除",
 
             "This setting is enabled on the upstream repository. Disabling this setting may block commits from being merged upstream.": "此设置在上游仓库中启用。禁用此设置可能会阻止提交向上游合并。",
 
@@ -17307,8 +17328,10 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "If you decide to make this repository public in the future, it will not be possible to restore these stars and watchers and this will affect its repository rankings.": "即使您决定将来公开此仓库，也无法恢复这些星标者和关注者，这将影响其仓库排名。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository.": "依赖项关系图和 Dependabot 警报将保持启用，并有权限对该仓库进行只读分析。",
                 "Dependency graph and Dependabot alerts will remain enabled with permission to perform read-only analysis on this repository. Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "依赖项关系图和 Dependabot 警报将继续启用，并允许对该仓库执行只读分析。除非为该仓库启用了 GitHub 高级安全功能，否则任何自定义的 Dependabot 警报规则都将被禁用。",
+                "Any custom Dependabot alert rules will be disabled unless GitHub Advanced Security is enabled for this repository.": "除非为该仓库启用了 GitHub 高级安全，否则任何自定义的 Dependabot 警报规则都将被禁用。",
                 "Code scanning will become unavailable.": "代码扫描将变得不可用。",
                 "Current forks will remain public and will be detached from this repository.": "当前的复刻将保持公开，并将从该仓库中分离出来。",
+                "Advanced Security will be disabled.": "高级安全将被禁用。",
                 "Make this repository private": "将此仓库设为私有",
                 "I have read and understand these effects": "我已阅读并理解这些影响",
 
