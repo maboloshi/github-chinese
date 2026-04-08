@@ -889,6 +889,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
             "Edit status": "编辑状态",
+            "What's happening": "发生了什么",
             "What's happening?": "发生了什么？",
 
             "Suggestions": "建议",
@@ -902,6 +903,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "I may be slow to respond.": "我的回复可能比较慢。",
 
             "Clear status": "清除状态",
+                "Expiration": "有效期",
                 "Never": "永不",
                 "in 30 minutes": "30 分钟",
                 "in 1 hour": "1 小时",
@@ -910,8 +912,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "after this week": "本周之后",
                 "after a month": "本月之后",
                 "How long until this status will automatically clear.": "多久后状态自动清除。",
+                "Your status will be cleared after the selected time.": "在所选时间后，您的状态将被清除。",
             "Visible to": "可见",
                 "Everyone": "任何人",
+                    "Limit status visibility to a single organization.": "将状态可见范围限制为单个组织。",
                     "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
             "Filter emoji": "筛选表情符号",
                 "Search results": "筛选结果",
@@ -1531,6 +1535,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Choose a repository to chat about.": "选择以聊天",
                 "Remove topic": "移除主题",
                 "Add repositories, files, and spaces": "添加仓库、文件和空间",
+                "Add files, and spaces": "添加文件和空间",
                 "Upload from computer": "上传本机文件",
                 "Files and folders": "文件和文件夹",
                 "Spaces…": "空间…",
@@ -2423,6 +2428,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/Good evening, ([^ ]+)!/, "晚上好，$1！"],
         [/Switch dashboard: ([^ ]+)/, "切换仪表板：$1"],
         [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打开者 $3"],
+        [/(\d+) characters remaining/, "还可输入 $1 个字符"],
     ],
     "title": {
         "static": {
@@ -8731,6 +8737,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                 // 提交栏 GitHub Action
                 "All checks have passed": "已通过所有检查",
+                "View status": "查看状态",
+                "What's new": "新变化",
+                "Switch to the classic experience": "切换到经典体验",
 
 
                 // 关注 & 订阅通知设置 下拉菜单
@@ -10388,8 +10397,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             "New label": "新建标签",
                 "Label preview": "标签预览",
+                "Name": "名称",
                 "Label name": "标签名",
                 "Description": "描述",
+                "Optionally add a description": "可选添加描述",
                 "Description (optional)": "描述（可选）",
                 "Color": "颜色",
                     "Get a new color": "获得新颜色",

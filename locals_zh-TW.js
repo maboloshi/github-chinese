@@ -889,6 +889,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         // 狀態設置對話框
         // 出現位置: 個人資料頁, Gist 個人主頁, 倉庫頁右上角個人圖標下拉菜單
             "Edit status": "編輯狀態",
+            "What's happening": "發生了什麼",
             "What's happening?": "發生了什麼？",
 
             "Suggestions": "建議",
@@ -902,6 +903,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "I may be slow to respond.": "我的回覆可能比較慢。",
 
             "Clear status": "清除狀態",
+                "Expiration": "有效期",
                 "Never": "永不",
                 "in 30 minutes": "30 分鐘",
                 "in 1 hour": "1 小時",
@@ -910,8 +912,10 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "after this week": "本週之後",
                 "after a month": "本月之後",
                 "How long until this status will automatically clear.": "多久後狀態自動清除。",
+                "Your status will be cleared after the selected time.": "在所選時間後，您的狀態將被清除。",
             "Visible to": "可見",
                 "Everyone": "任何人",
+                    "Limit status visibility to a single organization.": "將狀態可見範圍限制為單個組織。",
                     "Scope status visibility to a single organization.": "將狀態可視範圍擴大到單個組織。",
             "Filter emoji": "篩選表情符號",
                 "Search results": "篩選結果",
@@ -1531,6 +1535,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "Choose a repository to chat about.": "選擇以聊天",
                 "Remove topic": "移除主題",
                 "Add repositories, files, and spaces": "添加倉庫、文件和空間",
+                "Add files, and spaces": "添加文件和空間",
                 "Upload from computer": "上傳本機文件",
                 "Files and folders": "文件和文件夾",
                 "Spaces…": "空間…",
@@ -2423,6 +2428,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登錄的首頁 - 儀表板（含組�
         [/Good evening, ([^ ]+)!/, "晚上好，$1！"],
         [/Switch dashboard: ([^ ]+)/, "切換儀表板：$1"],
         [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打開者 $3"],
+        [/(\d+) characters remaining/, "還可輸入 $1 個字元"],
     ],
     "title": {
         "static": {
@@ -8731,6 +8737,9 @@ I18N["zh-TW"]["repository"] = { // 倉庫頁面 /<user-name>/<repo-name>/
 
                 // 提交欄 GitHub Action
                 "All checks have passed": "已通過所有檢查",
+                "View status": "查看狀態",
+                "What's new": "新變化",
+                "Switch to the classic experience": "切換到經典體驗",
 
 
                 // 關注 & 訂閱通知設置 下拉菜單
@@ -10388,8 +10397,10 @@ I18N["zh-TW"]["repository/issues"] = { // 倉庫 - 議題頁面
 
             "New label": "新建標籤",
                 "Label preview": "標籤預覽",
+                "Name": "名稱",
                 "Label name": "標籤名",
                 "Description": "描述",
+                "Optionally add a description": "可選新增描述",
                 "Description (optional)": "描述（可選）",
                 "Color": "顏色",
                     "Get a new color": "獲得新顏色",

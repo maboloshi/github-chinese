@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'spark', 'repository/settings/rules'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'spark', 'repository/settings/rules', 'pulls'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -852,6 +852,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "other:": "其他：",
                 "Organization Custom Instructions": "组织自定义指令",
                     "Organization administrators can apply custom instructions across all Copilot chats in github.com.": "组织管理员可以在 GitHub.com 的所有 Copilot 聊天中应用自定义指令。",
+                "New Pull Requests Dashboard": "新版拉取请求仪表板",
+                    "The updated pull requests overview (github.com/pulls) introduces saved views, smart default filters, and enhanced search, making it easier to organize and find pull requests across your repos, teams, and orgs. Once enabled, please refresh to see the changes.": "更新后的拉取请求概览（github.com/pulls）引入了保存的视图、智能默认过滤器和增强的搜索功能，使您更轻松地组织并查找仓库、团队和组织中的拉取请求。启用后，请刷新以查看更改。",
                 "New Dashboard Experience": "新仪表板体验",
                     "The updated home dashboard introduces enhanced agent workflows, making it easier to create and manage agent sessions, issues, and pull requests directly from your personalized dashboard. Once enabled, please refresh to see the changes.": "更新后的主页仪表板引入了增强的智能体工作流，使您可以更轻松地直接从个性化仪表板创建和管理智能体会话、议题和拉取请求。启用后，请刷新以查看更改。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
@@ -889,6 +891,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 状态设置对话框
         // 出现位置: 个人资料页, Gist 个人主页, 仓库页右上角个人图标下拉菜单
             "Edit status": "编辑状态",
+            "What's happening": "发生了什么",
             "What's happening?": "发生了什么？",
 
             "Suggestions": "建议",
@@ -902,6 +905,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "I may be slow to respond.": "我的回复可能比较慢。",
 
             "Clear status": "清除状态",
+                "Expiration": "有效期",
                 "Never": "永不",
                 "in 30 minutes": "30 分钟",
                 "in 1 hour": "1 小时",
@@ -910,8 +914,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "after this week": "本周之后",
                 "after a month": "本月之后",
                 "How long until this status will automatically clear.": "多久后状态自动清除。",
+                "Your status will be cleared after the selected time.": "在所选时间后，您的状态将被清除。",
             "Visible to": "可见",
                 "Everyone": "任何人",
+                    "Limit status visibility to a single organization.": "将状态可见范围限制为单个组织。",
                     "Scope status visibility to a single organization.": "将状态可视范围扩大到单个组织。",
             "Filter emoji": "筛选表情符号",
                 "Search results": "筛选结果",
@@ -1531,6 +1537,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Choose a repository to chat about.": "选择以聊天",
                 "Remove topic": "移除主题",
                 "Add repositories, files, and spaces": "添加仓库、文件和空间",
+                "Add files, and spaces": "添加文件和空间",
                 "Upload from computer": "上传本机文件",
                 "Files and folders": "文件和文件夹",
                 "Spaces…": "空间…",
@@ -2423,6 +2430,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         [/Good evening, ([^ ]+)!/, "晚上好，$1！"],
         [/Switch dashboard: ([^ ]+)/, "切换仪表板：$1"],
         [/(.+)\#(\d+) · Opened by ([^ ]+) ·/, "$1#$2 · 打开者 $3"],
+        [/(\d+) characters remaining/, "还可输入 $1 个字符"],
     ],
     "title": {
         "static": {
@@ -2501,7 +2509,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                     "inaccessible": "已删库",
                     "Merged without a review": "未经审查就合并",
                 // Pull Shark
-                    "Pull Shark": "鲨鱼拉",
+                    "Pull Shark": "合纵连横",
                     "Bronze unlocked": "青铜已解锁",
                     "Bronze and Silver unlocked": "青铜和白银已解锁",
                     "· First unlocked": "· 首次解锁于",
@@ -2516,16 +2524,16 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                     "⭐️ 512 stars": "⭐️ 512 个星标",
                     "⭐️ 4096 stars": "⭐️ 4096 个星标",
                 // Pair Extraordinaire
-                    "Pair Extraordinaire": "非凡搭档",
+                    "Pair Extraordinaire": "珠璧联辉",
                     "Unlocked": "解锁于",
                     "Coauthored with": "与下列用户共同合作",
                     "Coauthored with an unknown user": "与未知用户共同合作",
                 // Quickdraw
-                    "Quickdraw": "快速关闭",
+                    "Quickdraw": "电光石火",
                     "Gitty up!": "赶快开始！",
                     "Closed within 5 minutes of opening": "在打开的 5 分钟内关闭",
                 // Galaxy Brain
-                    "Galaxy Brain": "银河大脑",
+                    "Galaxy Brain": "天工慧心",
                     "2nd accepted answer": "2 个答案被接受",
                     "8th accepted answer": "8 个答案被接受",
                     "16th accepted answer": "16 个答案被接受",
@@ -8147,7 +8155,6 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Actions": "操作",
             "Projects": "项目",
             "Models": "模型",
-            "Security": "安全",
             "Security and quality": "安全和质量",
             "Insights": "洞察",
             "Settings": "设置",
@@ -8747,6 +8754,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                 // 提交栏 GitHub Action
                 "All checks have passed": "已通过所有检查",
+                "View status": "查看状态",
+                "What's new": "新变化",
+                "Switch to the classic experience": "切换到经典体验",
 
 
                 // 关注 & 订阅通知设置 下拉菜单
@@ -8842,6 +8852,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                     "You can rename this fork's default branch to match in": "您可以重命名此复刻默认分支以匹配，在",
                     "branch settings": "分支设置",
 
+            "Draft a new release": "起草发行版",
             "branch": "分支",
             "branches": "分支",
             "tag": "标签",
@@ -9271,6 +9282,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         [/Successfully fetched and fast-forwarded from upstream ([^ ]+)\./, "成功从上游 $1 中获取并快速转发。"],
         [/Successfully discarded changes and synchronized branch to match upstream ([^ ]+)\./, "成功丢弃更改，并将分支与上游 $1 保持同步。"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
+        [/More than (\d+) unreleased commits since ([^ ]+)/, "$2 以来有超过 $1 个未发布的提交"],
+        [/(\d+) unreleased commits since ([^ ]+)/, "$2 以来有 $1 个未发布的提交"],
         [/commits by (.+)/, "由 $1 提交"],
         [/Signed-off-by: (.*)/, "签字人：$1"], // TODO: 修复该词条翻译不生效问题
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
@@ -10059,8 +10072,8 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                     "Has review state": "包含评审状态",
                     "Exclude review": "排除评审状态",
                     "No reviews": "无评审",
-                "Code language": "代码语言",
-                    "Has code language": "包含代码语言",
+                "Language": "代码语言",
+                    "Has language": "包含代码语言",
                     "Exclude language": "排除代码语言",
                 "Commit SHA": "提交 SHA",
                     "Has commit sha": "包含提交 SHA",
@@ -10404,8 +10417,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             "New label": "新建标签",
                 "Label preview": "标签预览",
+                "Name": "名称",
                 "Label name": "标签名",
                 "Description": "描述",
+                "Optionally add a description": "可选添加描述",
                 "Description (optional)": "描述（可选）",
                 "Color": "颜色",
                     "Get a new color": "获得新颜色",
@@ -21478,7 +21493,94 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         },
     },
 };
-I18N["zh-CN"].pulls = I18N["zh-CN"].issues;
+
+I18N["zh-CN"]["pulls"] = { // 拉取请求页面
+    "static": {
+        ...I18N["zh-CN"]["issues"]["static"],
+
+        // 预览
+            "What's new": "新功能",
+            "Switch to the classic experience": "切换到经典视图",
+
+        // 侧边栏
+            "Inbox": "收件箱",
+                "Needs your review": "需要您的审查",
+                "Needs action": "需要操作",
+                "Ready to merge": "准备合并",
+                "All caught up": "全部已处理",
+                "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
+            "Authored by me": "由我创建",
+            "Involves me": "涉及我",
+
+        // 收件箱右上角
+            "Select repositories": "选择仓库",
+                "Select all": "全选",
+                "Select": "选择",
+                "Loading repositories...": "加载仓库中...",
+                "Use the search to find specific items": "使用搜索查找特定项目",
+                "Search or filter": "搜索或筛选",
+                // "Fork": "复刻",
+                    "Exclude fork": "排除复刻",
+                "Mirror": "镜像",
+                    "Exclude mirror": "排除镜像",
+                "License": "许可证",
+                    "Exclude license": "排除许可证",
+                "Visibility": "可见性",
+                    "Exclude visibility": "排除可见性",
+                    "Internal": "内部",
+                "Created": "已创建",
+                "Total forks": "复刻总数",
+                "Total good-first issues": "好的首发议题总数",
+                "Has": "包含文件",
+                "Total help-wanted issues": "求助议题总数",
+                "License": "许可证",
+                "Mirror": "镜像",
+                "Size (Kb)": "大小 (Kb)",
+                "Sponsorable": "可接受赞助",
+                "Text": "文本",
+                "Total topics": "主题总数",
+                "Template": "模板",
+                "Topic": "话题",
+                "Visibility": "可见性",
+                "Admin Access": "管理员访问权限",
+                "Contributions": "贡献",
+
+        // 搜索结果框上边栏
+            "result": "个结果",
+            "results": "个结果",
+            "Comfortable display density": "舒适视图",
+            "Compact display density": "紧凑视图",
+
+        // 搜索结果框
+            "Enter a query to start searching.": "输入查询以开始搜索。",
+            "No pull requests matched your search.": "没有拉取请求匹配您的搜索。",
+            "Try a different search query.": "尝试不同的搜索查询。",
+            "Learn more about searching and filtering pull requests.": "了解更多关于搜索和过滤拉取请求的信息。",
+
+        // 视图
+            "No saved views": "没有保存的视图",
+            "Change icon": "更改图标",
+            "Apply": "应用",
+            "Title can not be empty": "标题不能为空",
+            "Query can not be empty": "查询不能为空",
+            "Discard changes": "放弃更改",
+            "Are you sure you want to discard changes?": "您确定要放弃更改吗？",
+            "Discard": "放弃",
+            "Saved view menu": "已保存视图菜单",
+            "Saved view menu (update available)": "已保存视图菜单（更新可用）",
+            "Update view with current query": "使用当前查询更新视图",
+    },
+    "regexp": [
+        ...I18N["zh-CN"]["issues"]["regexp"],
+        // 收件箱右上角
+        [/(\d+) 个仓库 selected/, "已选择 $1 个仓库"],
+        [/Last month/, "上个月"],
+        [/Last 3 months/, "近 3 个月"],
+        [/Last year/, "去年"],
+        [/Any time/, "任意时间"],
+    ],
+}
+
 
 I18N["zh-CN"]["repos"] = {
     "static": {
@@ -27828,7 +27930,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
     },
     "regexp": [
         ...I18N["zh-CN"]["repo-actions-merics-public"]["regexp"],
-        [/(Average run time of|Average queue time of|Failure rate across|Total minutes used across failed) jobs in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
+        [/(Average run time of|Average queue time of|Failure rate across|Total minutes used across failed) jobs in this repository for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
             var typeKey = {'Average run time of': '平均运行时长', 'Average queue time of': '平均等待时长', 'Failure rate across': '作业失败率', 'Total minutes used across failed': '作业失败次数'};
             var periodKey = {
                 "current week (mon-sun)": "本周（周一 ~ 周日）",
@@ -27839,7 +27941,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
                 "last year": "最近一年",
                 "custom": "自定义时间段",
             };
-            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
+            return periodKey[period] + '该仓库所有工作流程的' + typeKey[type];
         }],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
         [/(\d+)m (\d+)s/, "$1分$2秒"],
