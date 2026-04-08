@@ -8155,7 +8155,6 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Actions": "操作",
             "Projects": "项目",
             "Models": "模型",
-            "Security": "安全",
             "Security and quality": "安全和质量",
             "Insights": "洞察",
             "Settings": "设置",
