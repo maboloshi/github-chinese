@@ -21510,19 +21510,36 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
     "static": {
         ...I18N["zh-CN"]["issues"]["static"],
 
-        // 预览
+        // 上边栏
             "What's new": "新功能",
             "Switch to the classic experience": "切换到经典视图",
+            "Default view options": "默认视图选项",
+            "Set as default view": "设为默认视图",
+            "Default to this view when visiting /pulls": "访问 /pulls 时默认使用此视图",
 
-        // 侧边栏
-            "Inbox": "收件箱",
-                "Needs your review": "需要您的审查",
-                "Needs action": "需要操作",
-                "Ready to merge": "准备合并",
-                "All caught up": "全部已处理",
-                "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
-            "Authored by me": "由我创建",
-            "Involves me": "涉及我",
+        "Inbox": "收件箱",
+            "Needs your review": "需要您的审查",
+                "Expand Needs your review": "展开“需要您的审查”选项卡",
+                "Collapse Needs your review": "折叠“需要您的审查”选项卡",
+                "Pull requests that need your review will appear here.": "需要您审查的拉取请求将出现在这里。",
+            "Needs action": "需要操作",
+                "Expand Needs action": "展开“需要操作”选项卡",
+                "Collapse Needs action": "折叠“需要操作”选项卡",
+                "Pull requests with failing checks, merge conflicts, or required changes will appear here.": "检查失败、存在合并冲突或需要更改的拉取请求将出现在这里。",
+            "Ready to merge": "准备合并",
+                "Expand Ready to merge": "展开“准备合并”选项卡",
+                "Collapse Ready to merge": "折叠“准备合并”选项卡",
+                "Pull requests that are ready to merge will appear here.": "准备合并的拉取请求将出现在这里。",
+            "Needs your teams' review": "需要您团队的审查",
+                "Expand Needs your teams' review": "展开“需要您团队的审查”选项卡",
+                "Collapse Needs your teams' review": "折叠“需要您团队的审查”选项卡",
+                "Pull requests that need your teams' review will appear here.": "需要您团队审查的拉取请求将出现在这里。",
+            "All caught up": "全部已处理",
+            "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
+            "Awaiting approval": "等待批准",
+
+        "Authored by me": "由我创建",
+        "Involves me": "涉及我",
 
         // 收件箱右上角
             "Select repositories": "选择仓库",
