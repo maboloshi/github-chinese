@@ -2001,7 +2001,7 @@ I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
 I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
-        "Ask anything": "询问任何事",
+        "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
         "Ask": "询问",
         "Send": "发送",
         "Feedback": "反馈",
@@ -2044,6 +2044,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Agent sessions to include": "智能体任务包含",
         "View all": "查看全部",
         "Number of results": "结果数量",
+        "Maximum age of results": "结果最大年龄",
+        "No maximum": "无限制",
         "Pull request options": "拉取请求选项",
         "Pull requests to include": "拉取请求包含",
             "Authored": "由您创建",
@@ -2054,7 +2056,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Issues to include": "议题包含",
             "Assigned to me": "分配给我",
             "Involves me": "涉及我",
-        "Open in Copilot chat": "在 Copilot Chat 中打开",
+        "Open in Copilot Chat": "在 Copilot Chat 中打开",
         "Assign to Copilot": "分配给 Copilot",
         "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
 
@@ -2200,6 +2202,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // 提要筛选
         "Filter": "筛选器",
             "Feed filters": "提要筛选器",
+            "Organization feed filters": "组织提要筛选器",
             "Events": "事件",
                 "Activity you want to see on your feed": "您想在提要上看到的活动",
             "Announcements": "公告",
@@ -2214,6 +2217,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
                 "Repositories that are created or forked by people": "由人们创建或复刻的仓库",
             "Repository activity": "仓库活动",
                 "Issues and pull requests from repositories": "来自仓库的议题和拉取请求",
+                "Issues, pull requests, and contributions from repositories": "来自仓库的议题、拉取请求和贡献",
             "Follows": "关注",
                 "Who people are following": "人们在关注谁",
             "Recommendations": "推荐",
@@ -10722,6 +10726,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "What's new": "新内容",
                 "Close merge status": "关闭",
             "Merge conflicts": "合并冲突",
+            "Not planning to merge?": "不打算合并吗？",
+            "Awaiting approval": "等待批准",
 
             // 代码 下拉菜单
                 "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
@@ -11403,7 +11409,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Review in codespace": "在代码空间中审查",
             // "Review changes": "审查更改", // 使用 Selector 规则翻译
                 // 下拉
-                "Finish your review": "完成审查",
+                "Finish your": "完成您的",
                     "Submit general feedback without explicit approval.": "未批准，并提出一般性反馈意见。",
                 "Approve": "批准",
                     "Submit feedback approving these changes.": "批准，并提出反馈意见。",
@@ -11462,6 +11468,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 大型拉取请求提示
             "This page has been optimized for large pull requests. Some browser features (like Find on Page or Select All) may not work as expected.": "此页面已针对大型拉取请求进行了优化。某些浏览器功能（如页面查找或全选）可能无法正常工作。",
                 "Switch to single file mode": "切换至单文件模式",
+            "Due to the size of this pull request, only one file can be shown at a time.": "由于此拉取请求的大小，一次只能显示一个文件。",
+                "To view all files in a single page,": "要在单个页面上查看所有文件，",
+                "try a new experimental mode": "请尝试一种新的实验模式",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -11523,9 +11532,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Collapse file tree": "折叠文件树",
                 "Expand file tree": "展开文件树",
 
+                "Select commits to view": "选择要查看的提交",
                 "All changes": "所有更改",
                 "All commits": "所有提交",
                 "Changes since your last review": "自您上次审核以来的更改",
+                "No previous review found": "未找到之前的审核",
+                "Select a range of commits": "选择一个提交范围",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
@@ -11585,6 +11597,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Filter comments": "筛选评论",
                     "Show resolved comments": "显示已解决评论",
                     "Show outdated comments": "显示陈旧的评论",
+                    "Filter by": "筛选条件",
+                    "Hide resolved comments": "隐藏已解决评论",
+                    "Hide outdated comments": "隐藏陈旧的评论",
+                    "Jump to the comment in the diff": "跳转到差异中的评论",
+                    "Showing": "显示",
+                    "of": "条中的",
 
                 "No comments on changes yet": "还没有评论",
                     "Comments will show up here as soon as there are some.": "评论将在此显示。",
@@ -11705,6 +11723,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
+        [/(\d+) pending reviews?/, "$1 名待审者"],
         // 建议更改（词条打架移动至此）
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         // Dependabot 打开的拉取请求
@@ -20816,6 +20835,9 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
             "filter by notification reason": "按通知原因筛选",
             "filter by notification author": "按通知作者筛选",
             "filter by organization": "按组织筛选",
+        "Sort by:": "排序：",
+            "Newest to oldest": "从新到旧",
+            "Oldest to newest": "从旧到新",
         "Group by:": "分组：",
         "Group by: Date": "分组：日期",
         "Group by: Repository": "分组：仓库",
