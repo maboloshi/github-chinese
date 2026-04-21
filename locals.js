@@ -10719,6 +10719,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Change base": "更改基础分支",
 
             "View status": "查看状态",
+            "Not ready": "未准备好",
             "Able to merge": "可以合并",
             "Unable to merge": "无法合并",
             "Ready to merge": "准备合并",
