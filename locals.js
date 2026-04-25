@@ -11960,7 +11960,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
-            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "Binary file not shown.": "不显示二进制文件。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不会呈现。详细了解",
                 "how customized files appear on GitHub": "自定义文件在 GitHub 上的显示方式",
