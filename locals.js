@@ -1048,6 +1048,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "dragging & dropping,": "拖放，",
             "selecting or pasting them.": "选择或粘贴来附加文件。",
             "Markdown is supported": "支持 Markdown 语法",
+                "is supported": "语法支持",
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
             "Write with Copilot": "使用 Copilot 撰写",
