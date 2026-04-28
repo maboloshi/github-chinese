@@ -717,7 +717,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Home": "主页",
             "Feed": "动态",
             "Issues": "议题",
+            "All issues": "所有议题",
             "Pull requests": "拉取请求",
+            "All pull requests": "所有拉取请求",
             "Projects": "项目",
             "Discussions": "讨论",
             "Codespaces": "代码空间",
@@ -823,6 +825,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Switch account": "切换账户",
                 "Sign out...": "登出…",
             "Set status": "状态设置",
+            "Create new repository": "新建仓库", // 小屏模式
             "Profile": "个人资料",
             "Gists": "代码片段",
 
