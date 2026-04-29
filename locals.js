@@ -10669,6 +10669,12 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 "Suggested change": "建议更改",
 
+        // 疑似临时信息
+            "Some pull requests may be missing due to an": "某些拉取请求可能丢失因",
+                "ongoing search incident": "持续搜索事故",
+                ", but no data is lost. Use the": "，但没有数据丢失。使用",
+                ") for complete pull request results.": ") 获取完整结果。",
+
     },
     "regexp": [
         ...I18N["zh-CN"]["repository-public"]["regexp"],
