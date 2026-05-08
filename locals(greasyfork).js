@@ -717,7 +717,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Home": "主页",
             "Feed": "动态",
             "Issues": "议题",
+            "All issues": "所有议题",
             "Pull requests": "拉取请求",
+            "All pull requests": "所有拉取请求",
             "Projects": "项目",
             "Discussions": "讨论",
             "Codespaces": "代码空间",
@@ -816,6 +818,11 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
                 "Recent tasks": "近期任务",
 
+            "Ask Copilot…": "询问 Copilot…",
+                "About this page": "关于此页面",
+                "In a space": "在空间",
+                "Download for…": "下载插件…",
+
         // 右上角个人图标下拉菜单
             "Open user navigation menu": "打开用户导航菜单",
             "Account switcher": "账户切换",
@@ -823,6 +830,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Switch account": "切换账户",
                 "Sign out...": "登出…",
             "Set status": "状态设置",
+            "Create new repository": "新建仓库", // 小屏模式
             "Profile": "个人资料",
             "Gists": "代码片段",
 
@@ -1045,6 +1053,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "dragging & dropping,": "拖放，",
             "selecting or pasting them.": "选择或粘贴来附加文件。",
             "Markdown is supported": "支持 Markdown 语法",
+                "is supported": "语法支持",
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
             "Write with Copilot": "使用 Copilot 撰写",
@@ -10660,6 +10669,12 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 "Suggested change": "建议更改",
 
+        // 疑似临时信息
+            "Some pull requests may be missing due to an": "某些拉取请求可能丢失因",
+                "ongoing search incident": "持续搜索事故",
+                ", but no data is lost. Use the": "，但没有数据丢失。使用",
+                ") for complete pull request results.": ") 获取完整结果。",
+
     },
     "regexp": [
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -10719,6 +10734,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Change base": "更改基础分支",
 
             "View status": "查看状态",
+            "Not ready": "未准备好",
             "Able to merge": "可以合并",
             "Unable to merge": "无法合并",
             "Ready to merge": "准备合并",
@@ -11959,7 +11975,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
-            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "Binary file not shown.": "不显示二进制文件。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不会呈现。详细了解",
                 "how customized files appear on GitHub": "自定义文件在 GitHub 上的显示方式",
