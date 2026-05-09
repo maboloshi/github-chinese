@@ -14517,11 +14517,14 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
             // [/(\d+) revisions?/, "$1 次修订"], // wiki
             "New page": "新建页面",
             "Add a custom footer": "添加自定义页脚",
+            "+ Add a custom footer": "+ 添加自定义页脚",
 
             // 右侧栏
             "Pages": "页面",
                 "Toggle table of contents": "折叠/展开目录",
                 "Find a page…": "搜索页面…",
+                "Find a page or section...": "查找页面或章节...",
+                "Find a page or section…": "查找页面或章节…",
             "Add a custom sidebar": "添加自定义侧边栏",
             "Clone this wiki locally": "在本地克隆这个 Wiki",
 
