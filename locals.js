@@ -19016,9 +19016,17 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
         "Copilot coding agent": "Copilot 编程智能体",
+        "Copilot cloud agent": "Copilot 云端智能体",
+        "Cloud agent": "云端智能体",
 
+        "You can configure Copilot cloud agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 云端智能体，但由于您没有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
+        "With Copilot cloud agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 云端智能体，开发者可以将任务委托给 Copilot，从而专注于最重要的创造性、复杂和高影响力工作。将任务分配给 Copilot，等待智能体请求审查，然后在拉取请求中留下反馈以继续迭代。",
+        "With": "借助",
+        ", developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "，开发者可以将任务委托给 Copilot，从而专注于最重要的创造性、复杂和高影响力工作。将任务分配给 Copilot，等待智能体请求审查，然后在拉取请求中留下反馈以继续迭代。",
+        "Learn more about": "详细了解",
+        "Learn more about Copilot cloud agent": "了解更多关于 Copilot 云端智能体的信息",
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而专注于更具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待助手发起评审请求，然后在拉取请求上留下反馈进行迭代。更多信息请参阅",
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "借助 Copilot 编程智能体，开发者可以将任务委托给 Copilot，从而有更多时间专注于最重要的创造性、复杂和高影响力的工作。只需将议题分配给 Copilot，等待请求代码审查，然后在拉取请求上留下反馈，进行迭代即可。",
         "Learn more about Copilot coding agent": "了解更多",
@@ -19029,9 +19037,11 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
             "Enable firewall": "启用防火墙",
                 "Recommended": "推荐",
+                "Limit Copilot cloud agent’s Internet access to only allow access to allowlisted locations": "将 Copilot 云端智能体的互联网访问权限限制为仅允许访问白名单中的位置",
                 "Limit Copilot coding agent’s Internet access to only allow access to allowlisted locations": "将 Copilot 编程智能体的互联网访问权限限制为仅允许访问白名单中的位置。",
             "Recommended allowlist": "推荐白名单",
                 "Allow access to locations frequently used to install tools, packages, and dependencies": "允许访问常用于安装工具、软件包和依赖项的位置",
+                "Allow access to locations frequently used to install tools, packages, and dependencies.": "允许访问常用于安装工具、软件包和依赖项的位置。",
             "Custom allowlist": "自定义白名单",
                 "Allow access to specific domains, IP addresses, or URLs.": "允许访问特定域名、IP 地址或 URL。",
 
@@ -19050,8 +19060,35 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
                 // 保存
                     "Allowlist settings saved successfully!": "白名单设置保存成功！",
 
+        "Policy": "策略",
+            "Require approval for workflow runs": "要求审批工作流运行",
+                "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run.": "当 Copilot 推送更改时，要求具有写入权限的维护者批准后再运行 Actions 工作流。",
+                "Allowing GitHub Actions workflows to run without approval may allow unreviewed code written by Copilot to gain write access to your repository or access your GitHub Actions secrets.": "允许 GitHub Actions 工作流未经审批即运行，可能会让 Copilot 编写的未经审查代码获得仓库写入权限，或访问您的 GitHub Actions 机密。",
+
+        "Validation tools": "验证工具",
+            "Configure which tools Copilot cloud agent uses to validate its work and iterate before requesting human review.": "配置 Copilot 云端智能体在请求人工审查前用于验证工作并迭代的工具。",
+            "CodeQL code scanning": "CodeQL 代码扫描",
+                "Use CodeQL to scan for security vulnerabilities.": "使用 CodeQL 扫描安全漏洞。",
+            "Copilot code review": "Copilot 代码审查",
+                "Use Copilot code review to identify code quality issues.": "使用 Copilot 代码审查识别代码质量问题。",
+            "Secret scanning": "机密扫描",
+                "Scan for accidentally committed secrets and credentials.": "扫描意外提交的机密和凭据。",
+            "Dependency vulnerability checks": "依赖漏洞检查",
+                "Check new dependencies against the GitHub Advisory Database for known vulnerabilities.": "根据 GitHub Advisory Database 检查新依赖项是否存在已知漏洞。",
+
         "Model Context Protocol (MCP)": "模型上下文协议（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一个开放标准，定义了应用程序如何与大型语言模型（LLM）共享上下文。MCP 提供了一种标准化的方法，将 AI 模型与不同的数据源和工具连接起来，使它们能够更高效地协同工作。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The GitHub and Playwright MCP servers are enabled by default.": "借助 MCP，您可以将 Copilot 云端智能体连接到其他工具和服务，从而扩展其能力。GitHub 和 Playwright MCP 服务器默认启用。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The": "借助 MCP，您可以将 Copilot 云端智能体连接到其他工具和服务，从而扩展其能力。",
+            "With MCP, you can extend the capabilities of": "借助 MCP，您可以扩展",
+            "by connecting it to other tools and services. The": "的能力，将其连接到其他工具和服务。",
+            "MCP servers are enabled by default.": "MCP 服务器默认启用。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment.": "您可以在下方添加 JSON 配置来配置自己的 MCP 服务器。MCP 服务器可选择访问仓库 .copilot 环境中定义的机密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment. Learn more about configuring MCP servers.": "您可以在下方添加 JSON 配置来配置自己的 MCP 服务器。MCP 服务器可选择访问仓库 .copilot 环境中定义的机密。了解更多关于配置 MCP 服务器的信息。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment.": "您可以在下方添加 JSON 配置来配置自己的 MCP 服务器。MCP 服务器可选择访问仓库 copilot 环境中定义的机密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment. Learn more about configuring MCP servers.": "您可以在下方添加 JSON 配置来配置自己的 MCP 服务器。MCP 服务器可选择访问仓库 copilot 环境中定义的机密。了解更多关于配置 MCP 服务器的信息。",
+            "Learn more about configuring MCP servers.": "了解更多关于配置 MCP 服务器的信息。",
+            "You can use MCP to extend the capabilities of Copilot cloud agent by connecting it to other tools and services.": "您可以使用 MCP 将 Copilot 云端智能体连接到其他工具和服务，从而扩展其能力。",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。有关如何编写您的 JSON MCP 配置的详细信息，请参见",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services.": "您可以使用 MCP 通过将其连接到其他工具和服务，来扩展 Copilot 编程智能体的功能。",
                 "Learn how to write your JSON MCP configuration": "了解如何编写您的 JSON MCP 配置",
@@ -19076,6 +19113,7 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
     "title": {
         "static": {
             "Copilot coding agent": "Copilot 编程智能体",
+            "Copilot cloud agent": "Copilot 云端智能体",
         },
     },
 };
