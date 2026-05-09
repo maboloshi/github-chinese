@@ -27916,7 +27916,11 @@ I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看�
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
 
+        "Showing data:": "显示数据：",
+        "Range": "范围",
+        "Range:": "范围：",
         "Period": "周期",
+            "This month": "本月",
             "Current week (Mon-Sun)": "本周（周一 ~ 周日）",
             "Current month": "本月",
             "Last month": "上个月",
@@ -28006,8 +28010,9 @@ I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看�
     },
     "regexp": [
         [/Showing data from (\d+)\/(\d+)\/(\d+) to/, "显示数据：从$1年$2月$3日至"],
-        [/Total (minutes|job runs) across all workflows in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
-            var typeKey = {'minutes': '总分钟数', 'job runs': '总工作运行数'};
+        [/Total (minutes|job runs) across all workflows in this (organization|repository) for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, scope, period){
+            var typeKey = {'minutes': '总分钟数', 'job runs': '作业运行总数'};
+            var scopeKey = {'organization': '该组织', 'repository': '该仓库'};
             var periodKey = {
                 "current week (mon-sun)": "本周（周一 ~ 周日）",
                 "current month": "本月",
@@ -28017,7 +28022,7 @@ I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看�
                 "last year": "最近一年",
                 "custom": "自定义时间段",
             };
-            return periodKey[period] + '该组织所有工作流程的' + typeKey[type];
+            return periodKey[period] + scopeKey[scope] + '所有工作流的' + typeKey[type];
         }],
         [/Period: (Current week \(Mon-Sun\)|Current month|Last month|Last 30 days|Last 90 days|Last year|Custom)/, function(all, period){
             var periodKey = {
@@ -28039,7 +28044,7 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = {
         ...I18N["zh-CN"]["repo-actions-merics-public"]["static"],
 
         "Total minutes": "总分钟数",
-        "Total job runs": "总工作运行",
+        "Total job runs": "总作业运行次数",
 
         "Row Actions": "更多", // 暂译
         "View performance": "查看数据看板",
