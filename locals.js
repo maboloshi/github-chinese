@@ -5687,6 +5687,10 @@ I18N["zh-CN"]["settings/organizations"] = { // 设置 - 组织
             "Transform account": "账户变更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您离开您所属的所有组织之前，您无法将此账户转换为组织。", // 存在所属组织时
             "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由于您有一个活跃的 GitHub 赞助者账户，因此您无法将此账户转换为组织。", // 存在赞助者账户时
+            "Move to an organization": "迁移到组织",
+            "Your personal account cannot be converted to an organization. You must create a new organization and transfer your repositories and projects to it instead. You can then rename your personal account and the organization if you want your organization to have the same name that you are currently using for your personal account.": "个人账户无法直接转换为组织。您需要新建一个组织，并将仓库和项目转移到该组织。如果希望组织使用当前个人账户的名称，之后可以分别重命名个人账户和组织。",
+            "Move work to an organization": "将工作迁移到组织",
+
             "Account Transformation Warning": "账户变更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "这将是一个不可逆转的过程，请确认：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用户特定的信息（OAuth 令牌, SSH 密钥, 职位简介, 等）将被删除。",
