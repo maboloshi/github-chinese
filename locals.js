@@ -3031,8 +3031,10 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Provide quick access to relevant projects.": "提供快速访问相关项目的途径。",
             "Add projects to view them here.": "将项目添加到此处查看。",
 
-            "Welcome to projects": "欢迎访问项目页面",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "构建像电子表格一样的项目表，给您一个实时的画布来对议题和拉取请求进行筛选、排序和分组。通过自定义字段和保存的视图，使它们符合您的需要。",
+            "Welcome to projects": "欢迎访问项目",
+            "Welcome to Projects": "欢迎访问项目",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格像电子表格一样构建，为您提供实时画布，可用于筛选、排序和分组议题与拉取请求。您可以通过自定义字段和保存的视图，按需定制项目。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "项目专为灵活适配而构建，为您提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。您可以通过自定义字段、保存的视图、工作流程和洞察，按需定制项目。",
 
             "Learn more about projects": "了解更多关于项目的信息", // ?tab=projects
 
