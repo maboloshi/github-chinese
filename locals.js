@@ -15533,15 +15533,21 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "Security Advisories": "安全公告",
             "Privately discuss, fix, and publish information about security vulnerabilities in your repository's code.": "私人讨论，修复和发布仓库代码中的安全漏洞的信息。",
             "New draft security advisory": "新的安全建议草案",
+            "Filter advisories": "筛选安全公告",
+            "Filter advisories: severity:critical, ecosystem:npm, sort:newest": "筛选安全公告：severity:critical, ecosystem:npm, sort:newest",
 
             // [/(\d+) Draft/, "$1 项草案"],
             // [/(\d+) Published/, "$1 项已发布"],
             // [/(\d+) Closed/, "$1 项已关闭"],
 
-            "There aren’t any triage security advisories": "没有任何安全建议通知",
-            "There aren’t any draft security advisories": "没有任何安全建议草案",
+            "There aren’t any triage security advisories": "暂无待分类的安全公告",
+            "There aren't any triage security advisories": "暂无待分类的安全公告",
+            "There aren’t any draft security advisories": "暂无安全公告草案",
+            "There aren't any draft security advisories": "暂无安全公告草案",
             "There aren’t any published security advisories": "没有任何已发布的安全公告",
+            "There aren't any published security advisories": "没有任何已发布的安全公告",
             "There aren’t any closed security advisories": "没有任何已关闭的安全公告",
+            "There aren't any closed security advisories": "没有任何已关闭的安全公告",
 
             // 他人库
             "View information about security vulnerabilities from this repository's maintainers.": "查看仓库维护者提供的安全漏洞信息。",
