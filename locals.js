@@ -5859,6 +5859,17 @@ I18N["zh-CN"]["settings/repositories"] = { // 设置 - 仓库
             "Deleted repositories": "删除的仓库",
             "Leave": "离开",
 
+            "Commit comments": "提交评论",
+            "commit comments": "提交评论",
+            "Choose whether commit comments are enabled or disabled by default for repositories you own. Individual repositories can override this default.": "选择是否默认对您拥有的仓库启用或禁用提交评论。各个仓库可以覆盖此默认设置。",
+            "Choose whether": "选择是否",
+            "are enabled or disabled by default for repositories you own. Individual repositories can override this default.": "默认对您拥有的仓库启用或禁用。各个仓库可以覆盖此默认设置。",
+            "are enabled or disabled by default for repositories you own. Individual repositories can override this default. Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "默认对您拥有的仓库启用或禁用。各个仓库可以覆盖此默认设置。现有提交评论不受此设置影响，仍可查看、编辑和删除。",
+            "Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "现有提交评论不受此设置影响，仍可查看、编辑和删除。",
+            "Commit comments:": "提交评论：",
+            "Enabled by default": "默认启用",
+            "Disabled by default": "默认禁用",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) collaborators?/, "$1 位协作者"]
