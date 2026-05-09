@@ -15889,6 +15889,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "to discuss the GitHub secret scanning experience.": "讨论 GitHub 机密扫描体验。",
 
             "Secret scanning alerts": "机密扫描警报",
+            "Filter": "筛选",
             "Secret scanning disabled": "机密扫描已停用",
                 "To scan for secrets, you must first enable secret scanning in": "要扫描机密，您必须首先启用机密扫描在",
                 "this repository's settings": "此仓库设置",
@@ -15917,6 +15918,14 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             "Provider": "提供者",
                 "Filter by provider": "按提供者筛选",
                 "Filter provider": "筛选提供者",
+                "Advanced filters": "高级筛选",
+                    "Qualifier": "限定",
+                    "Operator": "操作",
+                    "Value": "值",
+                    "Is": "是",
+                    "is one of": "之中的",
+                    "Add a filter": "添加筛选器",
+                    "Apply": "应用",
 
             // 排序
                 "Recently updated": "最近更新",
