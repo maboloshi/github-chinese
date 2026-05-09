@@ -17040,8 +17040,10 @@ I18N["zh-CN"]["repository/network"] = { // 仓库 -> 洞察 - 网络图
 
             "Network graph": "网络图",
             "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to.": "最近提交到此仓库的时间轴及其网络图按最近推送的顺序排序。",
+            "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to and updated daily.": "此仓库及其网络中最新提交的时间线，按最近推送排序，并每日更新。",
 
             "The repository network shows the 100 most recently pushed forks.": "仓库网络图显示最近推送的 100 个复刻。",
+            "The repository network shows the 50 most recently pushed forks.": "仓库网络图显示最近推送的 50 个复刻。",
 
             "Loading graph data": "加载网络图数据",
             "Keyboard shortcuts available": "可用的键盘快捷键",
