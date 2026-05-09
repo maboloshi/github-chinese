@@ -29186,6 +29186,13 @@ I18N["zh-CN"]["repository/agents"] = {
         "Created by me": "由我创建的",
         "All sessions": "所有任务",
 
+        // 任务列表
+        "Sessions": "智能体任务",
+            "Active": "进行中",
+            "Completed": "已完成",
+            "Let Copilot work on tasks for you in the background.": "让 Copilot 在后台为您处理任务。",
+            "Your code review sessions are available from the pull request timeline. Enable Copilot cloud agent to assign tasks, track progress, and review changes — all from this page.": "您的代码审查任务可从拉取请求时间线访问。启用 Copilot 云端智能体后，即可在此页面分配任务、跟踪进度并审查更改。",
+
         "Customize environment": "自定义环境",
         "Configure": "自定义配置",
     },
