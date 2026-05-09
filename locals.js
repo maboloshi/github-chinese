@@ -15444,9 +15444,12 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
 
             // 公共部分
             "Reporting": "报告",
+            "Findings": "发现",
                 "Policy": "政策",
                 "Advisories": "咨询",
             "Vulnerability alerts": "漏洞警报",
+                "Malware": "恶意软件",
+                "Vulnerabilities": "漏洞",
                 "Code scanning": "代码扫描",
                 "Secret scanning": "机密扫描",
 
