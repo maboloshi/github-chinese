@@ -4204,6 +4204,9 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                     "Failed workflows only": "仅工作流程失败时",
                     "Only notify for failed workflows": "只对失败的工作流程进行通知",
 
+                "Agent tasks": "智能体任务",
+                    "Notifications for agent sessions that you started.": "您启动的智能体任务通知。",
+
             "Dependabot alerts: New vulnerabilities": "Dependabot 警报：新漏洞",
                 "When you're given access to": "当您获得",
                 "Dependabot alerts": "Dependabot 警报",
