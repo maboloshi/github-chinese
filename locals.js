@@ -6256,6 +6256,10 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Billing settings": "账单设置",
                 "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。要启用额外的高级请求，请",
                 "update your Copilot premium request budget": "更新您的 Copilot 高级请求预算",
+            "Plan upgrades are temporarily unavailable.": "计划升级暂时不可用。",
+            "Free responses reset": "免费响应额度将在",
+            "Read more.": "了解更多。",
+            "Read more": "了解更多",
 
             "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
@@ -6265,7 +6269,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
 
                 // "Copilot in the CLI": "在终端中使用",
                     "You can use": "您可以",
-                    "GitHub Copilot for assistance in terminal": "GitHub Copilot 终端辅助工具",
+                    "GitHub Copilot for assistance in terminal": "使用 GitHub Copilot 终端辅助工具",
                 "Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
                     "GitHub Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
                     "to explain a piece of code, propose bug fixes, or generate unit tests in a chat interface from your editor.": "在编辑器的聊天界面上解释代码、提出错误修复建议或生成单元测试。",
@@ -6281,12 +6285,15 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Copilot coding agent": "Copilot 编程智能体",
                     "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 编程智能体，您可以将任务委托给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以进行迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "将任务委托给已启用 Copilot 编程智能体的仓库",
+                "Copilot cloud agent": "Copilot 云端智能体",
+                    "Delegate tasks to Copilot cloud agent in repositories where it is enabled": "在已启用的仓库中，将任务委托给 Copilot 云端智能体",
                 "Copilot Memory": "Copilot 记忆",
                     "to remember repository context across Copilot agent interactions.": "在 Copilot 智能体交互过程中记住代码仓库上下文。",
                     "This preview is governed by": "此预览受此约束：",
                     "GitHub's pre-release terms": "GitHub 预发行条款",
                 "MCP servers in Copilot": "Copilot 中的 MCP 服务器",
                     "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 编辑器和编程智能体中连接 MCP 服务器。",
+                    "Connect MCP servers to Copilot in all Copilot editors and Copilot cloud agent.": "在所有 Copilot 编辑器和 Copilot 云端智能体中连接 MCP 服务器。",
                 // Grok
                     "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若启用，您可以访问 xAI Grok Code Fast 1 并发送数据。",
                 "Copilot-generated commit messages" : "Copilot 生成的提交消息",
@@ -6352,6 +6359,10 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "了解更多关于 GitHub Copilot 如何为 $1 提供服务。"],
         [/Your GitHub Copilot subscription will renew in (\d+) days?./, "您的 GitHub Copilot 订阅将在 $1 天后续订。"],
+        [/Free responses reset\s+(\d+)\s+天之内\.\s*Plan upgrades are temporarily unavailable\./, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。"],
+        [/Free responses reset (\d+) 天之内\. Plan upgrades are temporarily unavailable\. Read more。?/, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。了解更多。"],
+        [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\./, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。"],
+        [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\. Read more\.?/, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。了解更多。"],
     ],
     "title": {
         "static": {
