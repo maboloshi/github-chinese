@@ -15516,6 +15516,9 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                 "for help.": "以寻求帮助",
 
             "Checking code scanning status...": "正在检查代码扫描状态",
+            "Code scanning is not enabled": "代码扫描未启用",
+            "Code scanning helps you find and fix vulnerabilities and coding errors.": "代码扫描可帮助您发现并修复漏洞和编码错误。",
+            "Enable code scanning": "启用代码扫描",
 
         // 安全政策 /<user-name>/<repo-name>/security/policy
             "Set up a security policy": "制定安全政策",
