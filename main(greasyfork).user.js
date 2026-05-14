@@ -396,8 +396,10 @@
             translateDescText(desc, text => {
                 // 翻译完成后，隐藏翻译按钮，并在元素后面插入翻译结果
                 button.style.display = "none";
-                const translationHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>${text}`;
-                element.insertAdjacentHTML('afterend', translationHTML);
+                const resultContainer = document.createElement('span');
+                resultContainer.innerHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://www.iflyrec.com/html/translate.html'>讯飞听见</a> 翻译👇</span><br/>`;
+                resultContainer.appendChild(document.createTextNode(text));
+                element.after(resultContainer);
             });
         });
     }

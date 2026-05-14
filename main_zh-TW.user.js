@@ -380,8 +380,10 @@
             transDescText(descText, translatedText => {
                 // 翻譯完成後，隱藏翻譯按鈕，並在元素後面插入翻譯結果
                 button.style.display = "none";
-                const translatedHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>訊飛聽見</a> 翻譯👇</span><br/>${translatedText}`;
-                element.insertAdjacentHTML('afterend', translatedHTML);
+                const resultContainer = document.createElement('span');
+                resultContainer.innerHTML = `<span style='font-size: small'>由 <a target='_blank' style='color:rgb(27, 149, 224);' href='https://fanyi.iflyrec.com/text-translate'>訊飛聽見</a> 翻譯👇</span><br/>`;
+                resultContainer.appendChild(document.createTextNode(translatedText));
+                element.after(resultContainer);
             });
         });
     }
