@@ -28,8 +28,10 @@ jobs:
           avatarSize: 42
 
       - name: Modify README.md
+        env:
+          HTML_LIST: ${{ steps.contributors.outputs.htmlList }}
         run: |
-          escapedHtmlList=$(echo -e '${{steps.contributors.outputs.htmlList}}' | sed ':a;N;$!ba;s/\n/\\n/g;s/\\n$//')
+          escapedHtmlList=$(echo -e "$HTML_LIST" | sed ':a;N;$!ba;s/\n/\\n/g;s/\\n$//')
           openDelimiter='<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
           closeDelimiter='<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
           sed -i "/$openDelimiter/,/$closeDelimiter/c\\$openDelimiter$escapedHtmlList$closeDelimiter" README.md
