@@ -5870,6 +5870,11 @@ I18N["zh-CN"]["settings/repositories"] = { // 设置 - 仓库
             "Enabled by default": "默认启用",
             "Disabled by default": "默认禁用",
 
+            // 提交评论
+            "are enabled or disabled by default for repositories you own.": "默认对您拥有的仓库启用或禁用。",
+            "Individual repositories can override this default.": "各个仓库可以覆盖此默认设置。",
+            "Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "现有提交评论不会受到此设置影响，仍然可以查看、编辑和删除。",
+
     },
     "regexp": [ // 正则翻译
         [/(\d+) collaborators?/, "$1 位协作者"]
