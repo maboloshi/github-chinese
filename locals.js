@@ -4257,6 +4257,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
 
+        // GitHub Copilot 正在转向 AI 积分提示
+        "GitHub Copilot is moving to AI credits":"GitHub Copilot 正在转向 AI 积分",
+        "Starting June 1, 2026 Copilot usage will be measured and billed in AI credits instead of Premium request units. AI credits give you more granular visibility into your usage across models and features. Preview how this change will affect your billing based on your recent usage.":"从2026年6月1日起，Copilot 的使用将以 AI 积分计量和计费，而不是高级请求单位。AI 积分可以让您更细致地了解不同模型和功能的使用情况。您可以预览此更改将如何根据您近期的使用情况影响您的计费。",
+        "Preview your usage":"预览你的使用情况",
+        "Read the blog post":"阅读博客",
+
         // 概况 https://github.com/settings/billing
             // 顶部提示
                 "Successfully updated billing information.": "成功更新支付信息。",
