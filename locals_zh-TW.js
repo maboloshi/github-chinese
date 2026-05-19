@@ -3031,8 +3031,10 @@ I18N["zh-TW"]["page-profile/projects"] = { // 個人首頁- 專案標籤卡
             "Provide quick access to relevant projects.": "提供快速訪問相關專案的途徑。",
             "Add projects to view them here.": "將專案新增到此處查看。",
 
-            "Welcome to projects": "歡迎訪問專案頁面",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "構建像電子表格一樣的專案表，給您一個實時的畫布來對議題和合併請求進行篩選、排序和分組。通過自定義字段和保存的視圖，使它們符合您的需要。",
+            "Welcome to projects": "歡迎訪問專案",
+            "Welcome to Projects": "歡迎訪問專案",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格像電子表格一樣構建，為您提供實時畫布，可用於篩選、排序和分組議題與合併請求。您可以通過自定義字段和保存的視圖，按需定製專案。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組議題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
 
             "Learn more about projects": "瞭解更多關於專案的訊息", // ?tab=projects
 
@@ -4202,6 +4204,9 @@ I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
                     "Failed workflows only": "僅工作流程失敗時",
                     "Only notify for failed workflows": "只對失敗的工作流程進行通知",
 
+                "Agent tasks": "AI 代理任務",
+                    "Notifications for agent sessions that you started.": "您啟動的AI 代理任務通知。",
+
             "Dependabot alerts: New vulnerabilities": "Dependabot 警報：新漏洞",
                 "When you're given access to": "當您獲得",
                 "Dependabot alerts": "Dependabot 警報",
@@ -4251,6 +4256,12 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
+
+        // GitHub Copilot 正在轉向 AI 積分提示
+        "GitHub Copilot is moving to AI credits":"GitHub Copilot 正在轉向 AI 積分",
+        "Starting June 1, 2026 Copilot usage will be measured and billed in AI credits instead of Premium request units. AI credits give you more granular visibility into your usage across models and features. Preview how this change will affect your billing based on your recent usage.":"從2026年6月1日起，Copilot 的使用將以 AI 積分計量和計費，而不是高級請求單位。AI 積分可以讓您更細緻地瞭解不同模型和功能的使用情況。您可以預覽此更改將如何根據您近期的使用情況影響您的計費。",
+        "Preview your usage":"預覽你的使用情況",
+        "Read the blog post":"閱讀博客",
 
         // 概況 https://github.com/settings/billing
             // 頂部提示
@@ -5682,6 +5693,10 @@ I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
             "Transform account": "帳戶變更",
             "You cannot transform this account into an organization until you leave all organizations that you’re a member of.": "在您離開您所屬的所有組織之前，您無法將此帳戶轉換為組織。", // 存在所屬組織時
             "You cannot transform this account into an organization because you have an active GitHub Sponsors account.": "由於您有一個活躍的 GitHub 贊助者帳戶，因此您無法將此帳戶轉換為組織。", // 存在贊助者帳戶時
+            "Move to an organization": "遷移到組織",
+            "Your personal account cannot be converted to an organization. You must create a new organization and transfer your repositories and projects to it instead. You can then rename your personal account and the organization if you want your organization to have the same name that you are currently using for your personal account.": "個人帳戶無法直接轉換為組織。您需要新建一個組織，並將儲存庫和專案轉移到該組織。如果希望組織使用當前個人帳戶的名稱，之後可以分別重命名個人帳戶和組織。",
+            "Move work to an organization": "將工作遷移到組織",
+
             "Account Transformation Warning": "帳戶變更警告",
             "What you are about to do is an irreversible and destructive process. Please be aware:": "這將是一個不可逆轉的過程，請確認：",
             "Any user-specific information (OAuth tokens, SSH keys, Job Profile, etc) will be erased": "任何用戶特定的訊息（OAuth 令牌, SSH 金鑰, 職位簡介, 等）將被刪除。",
@@ -5849,6 +5864,22 @@ I18N["zh-TW"]["settings/repositories"] = { // 設置 - 儲存庫
             "Learn more about default branches.": "瞭解更多關於預設分支的訊息。",
             "Deleted repositories": "刪除的儲存庫",
             "Leave": "離開",
+
+            "Commit comments": "提交評論",
+            "commit comments": "提交評論",
+            "Choose whether commit comments are enabled or disabled by default for repositories you own. Individual repositories can override this default.": "選擇是否預設對您擁有的儲存庫啟用或禁用提交評論。各個儲存庫可以覆蓋此預設設置。",
+            "Choose whether": "選擇是否",
+            "are enabled or disabled by default for repositories you own. Individual repositories can override this default.": "預設對您擁有的儲存庫啟用或禁用。各個儲存庫可以覆蓋此預設設置。",
+            "are enabled or disabled by default for repositories you own. Individual repositories can override this default. Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "預設對您擁有的儲存庫啟用或禁用。各個儲存庫可以覆蓋此預設設置。現有提交評論不受此設置影響，仍可查看、編輯和刪除。",
+            "Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "現有提交評論不受此設置影響，仍可查看、編輯和刪除。",
+            "Commit comments:": "提交評論：",
+            "Enabled by default": "預設啟用",
+            "Disabled by default": "預設禁用",
+
+            // 提交評論
+            "are enabled or disabled by default for repositories you own.": "預設對您擁有的儲存庫啟用或禁用。",
+            "Individual repositories can override this default.": "各個儲存庫可以覆蓋此預設設置。",
+            "Existing commit comments are not affected by this setting and will remain viewable, editable, and deletable.": "現有提交評論不會受到此設置影響，仍然可以查看、編輯和刪除。",
 
     },
     "regexp": [ // 正則翻譯
@@ -6236,6 +6267,10 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Billing settings": "帳單設置",
                 "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "請注意，顯示的使用百分比可能會有延遲。您計劃的高級請求權限將在下個月初重置。要啟用額外的高級請求，請",
                 "update your Copilot premium request budget": "更新您的 Copilot 高級請求預算",
+            "Plan upgrades are temporarily unavailable.": "計劃升級暫時不可用。",
+            "Free responses reset": "免費響應額度將在",
+            "Read more.": "瞭解更多。",
+            "Read more": "瞭解更多",
 
             "Features": "功能",
                 // "Copilot in github.com": "在 github.com 中使用 Copilot",
@@ -6245,7 +6280,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
 
                 // "Copilot in the CLI": "在終端中使用",
                     "You can use": "您可以",
-                    "GitHub Copilot for assistance in terminal": "GitHub Copilot 終端輔助工具",
+                    "GitHub Copilot for assistance in terminal": "使用 GitHub Copilot 終端輔助工具",
                 "Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
                     "GitHub Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
                     "to explain a piece of code, propose bug fixes, or generate unit tests in a chat interface from your editor.": "在編輯器的聊天介面上解釋程式碼、提出錯誤修復建議或生成單元測試。",
@@ -6261,12 +6296,15 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "Copilot coding agent": "Copilot 編程AI 代理",
                     "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，您可以將任務委託給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以進行迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "將任務委託給已啟用 Copilot 編程AI 代理的儲存庫",
+                "Copilot cloud agent": "Copilot 雲端AI 代理",
+                    "Delegate tasks to Copilot cloud agent in repositories where it is enabled": "在已啟用的儲存庫中，將任務委託給 Copilot 雲端AI 代理",
                 "Copilot Memory": "Copilot 記憶",
                     "to remember repository context across Copilot agent interactions.": "在 Copilot AI 代理交互過程中記住程式碼儲存庫上下文。",
                     "This preview is governed by": "此預覽受此約束：",
                     "GitHub's pre-release terms": "GitHub 預發行條款",
                 "MCP servers in Copilot": "Copilot 中的 MCP 伺服器",
                     "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 編輯器和編程AI 代理中連接 MCP 伺服器。",
+                    "Connect MCP servers to Copilot in all Copilot editors and Copilot cloud agent.": "在所有 Copilot 編輯器和 Copilot 雲端AI 代理中連接 MCP 伺服器。",
                 // Grok
                     "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若啟用，您可以訪問 xAI Grok Code Fast 1 並發送資料。",
                 "Copilot-generated commit messages" : "Copilot 生成的提交消息",
@@ -6290,15 +6328,20 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
 
         // 編程AI 代理(預覽 https://github.com/settings/copilot/coding_agent
             // 頂部提示
+                "Cloud agent": "雲端AI 代理",
+                "Copilot cloud agent": "Copilot 雲端AI 代理",
+                "You can enable Copilot cloud agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 雲端AI 代理，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程AI 代理，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以為其他用戶啟用 Copilot 編程AI 代理，但由於管理員已禁用 Copilot 編程AI 代理策略，您將無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "雖然您可以為其他用戶啟用 Copilot 編碼代理，但由於您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程AI 代理，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以進行迭代。",
+            "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 雲端AI 代理，您可以將任務委託給 Copilot，從而專注於最具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以繼續迭代。",
                 "Learn more in the docs.": "詳情",
 
             "Repository access": "儲存庫訪問",
                 "Choose which repositories Coding agent should be enabled in. Coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要啟用編程AI 代理的儲存庫。編程AI 代理僅在為該儲存庫啟用並符合 Copilot 許可證政策的情況下可用。",
+                "Choose which repositories Copilot cloud agent should be enabled in. Copilot cloud agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要啟用 Copilot 雲端AI 代理的儲存庫。Copilot 雲端AI 代理僅在為該儲存庫啟用並符合 Copilot 許可證政策的情況下可用。",
 
                 "No repositories": "無儲存庫",
                 // 所有
@@ -6332,10 +6375,15 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "瞭解更多關於 GitHub Copilot 如何為 $1 提供服務。"],
         [/Your GitHub Copilot subscription will renew in (\d+) days?./, "您的 GitHub Copilot 訂閱將在 $1 天后續訂。"],
+        [/Free responses reset\s+(\d+)\s+天之內\.\s*Plan upgrades are temporarily unavailable\./, "免費響應額度將在 $1 天后重置。計劃升級暫時不可用。"],
+        [/Free responses reset (\d+) 天之內\. Plan upgrades are temporarily unavailable\. Read more。?/, "免費響應額度將在 $1 天后重置。計劃升級暫時不可用。瞭解更多。"],
+        [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\./, "免費響應額度將在 $1 天后重置。計劃升級暫時不可用。"],
+        [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\. Read more\.?/, "免費響應額度將在 $1 天后重置。計劃升級暫時不可用。瞭解更多。"],
     ],
     "title": {
         "static": {
             "Copilot coding agent": "Copilot 編程AI 代理",
+            "Copilot cloud agent": "Copilot 雲端AI 代理",
         },
     },
 };
@@ -6680,7 +6728,9 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
         // 授權的 OAuth 應用 https://github.com/settings/applications
             // "Authorized OAuth Apps": "授權的 OAuth 應用",
             "You have granted": "您已經授權",
+            "You have authorized": "您已授權",
             "access to your account.": "訪問您的帳戶。",
+            "to access your account.": "訪問您的帳戶。",
             "Revoke all": "撤銷全部",
             "Sort": "排序",
             "Sort by": "排序方式",
@@ -6690,6 +6740,7 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
 
             "Never used · Owned by": "從未使用 · 作者",
             "Last used within the last week · Owned by": "最後一次使用是最近 1 周之內 · 作者",
+            "Owned by": "作者",
 
             "Report abuse": "舉報濫用",
             "Revoke": "撤銷",
@@ -6760,11 +6811,17 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
         [/This action cannot be undone. Are you sure you want to uninstall this GitHub App from (\d+) repositor(y|ies)?/, "此操作無法撤消。您確定要從 $1 個儲存庫中解除安裝此 GitHub 應用嗎？"],
         [/Uninstall "(.*)"/, "解除安裝 “$1”"],
         [/You will no longer be able to sign in to ([^ ]+) \(all administrative privileges will be bestowed upon the owners you choose\)/, "您將無法再登入 $1（所有管理權限都將授予您選擇的所有者）"],
+        [/You have authorized (\d+) applications? to access your account\./, "您已授權 $1 個應用訪問您的帳戶。"],
+        [/You have granted (\d+) applications? access to your account\./, "您已經授權 $1 個應用訪問您的帳戶。"],
         [/(\d+) applications?/, "$1 個應用"],
         [/([^ ]+) will no longer be able to access your GitHub account. You cannot undo this action./, "$1 將無法再訪問您的 GitHub 帳戶。您無法撤消此操作。"],
         [/([^ ]+) has been revoked from your account./, "$1 已經從您的帳戶中被撤銷了。"],
         [/Last used within the last (\d+) weeks? · Owned by/, "最後一次使用是最近 $1 周之內 · 作者"],
         [/Last used within the last (\d+) months? · Owned by/, "最後一次使用是最近 $1 月之內 · 作者"],
+        [/Last used within the last (\d+) 年之前\. Owned by (.+)/, "最後一次使用是最近 $1 年之內 · 作者 $2"],
+        [/Last used within the last (\d+) 年之前/, "最後一次使用是最近 $1 年之內"],
+        [/Last used within the last (\d+) years? · Owned by/, "最後一次使用是最近 $1 年之內 · 作者"],
+        [/Last used within the last (\d+) years?\. Owned by (.+)/, "最後一次使用是最近 $1 年之內 · 作者 $2"],
         [/Selected (\d+) repositor(y|ies)./, "選擇了 $1 個儲存庫。"],
         [/You're all set! (.*) has been uninstalled./, "一切就緒！$1 已被解除安裝。"],
         [/You're all set! A job has been queued to uninstall the \'(.*)\' app./, "一切就緒！解除安裝 “$1” 應用的任務已排隊等候。"],
@@ -6772,6 +6829,7 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
         [/Okay, (.*) was updated for the (@[^ ]+) account./, "好的，$2 帳戶的 $1 已更新。"],
         [/Last used within the last (\d+) weeks?/, "最後一次使用是最近 $1 周之內"],
         [/Last used within the last (\d+) months?/, "最後一次使用是最近 $1 月之內"],
+        [/Owned by (.+)/, "作者 $1"],
         [/(.+) will no longer be able to access the GitHub API. You cannot undo this action./, "$1 將無法再訪問 GitHub API。您無法撤銷此操作。"],
         [/is requesting an update to its permissions./, "正在請求更新其權限。"],
         [/The (.*) app by/, "$1 應用（由"],
@@ -6881,11 +6939,17 @@ I18N["zh-TW"]["settings/security-log"] = { // 設置 - 安全日誌
             "New Device Used": "使用新設備",
             "Created the repository": "創建了儲存庫",
             "Deleted the repository": "刪除了儲存庫",
-            "Created GitHub Pages site in": "創建了 GitHub Pages 在",
-            "Modified GitHub Pages source in": "修改了 GitHub Pages 源程式碼在",
-            "Created environment": "創造環境",
+            "Created GitHub Pages site in": "創建了 GitHub Pages 站點：",
+            "Modified GitHub Pages source in": "修改了 GitHub Pages 源程式碼：",
+            "Changed GitHub Pages visibility to public": "將 GitHub Pages 可見性更改為公開",
+            "Created environment": "創建環境",
+            "Added deployment branch pattern with value": "新增部署分支模式，值為",
+            "Created a deployment branch protection rule for": "創建部署分支保護規則，用於",
+            "The environment can only deploy in branches matching a branch policy pattern.": "該環境只能部署與分支策略模式匹配的分支。",
+            ". The environment can only deploy in branches matching a branch policy pattern.": "。該環境只能部署與分支策略模式匹配的分支。",
             "Added": "新增",
             "to the": "至",
+            "for": "用於",
             "repository": "儲存庫",
                 "organization with": "組織，使用",
                 "read": "讀取",
@@ -6898,8 +6962,8 @@ I18N["zh-TW"]["settings/security-log"] = { // 設置 - 安全日誌
             "Created a token for": "創建令牌：",
             "Regenerated a token for": "重新生成令牌：",
             "Revoked a token for": "撤銷令牌：",
-                "ending in": "結尾",
-                "for the": "用於",
+                "ending in": "，尾號",
+                "for the": "，用於",
                 "GitHub App": "GitHub 應用",
 
             "We couldn’t find any events matching your search.": "無匹配結果。",
@@ -6908,6 +6972,11 @@ I18N["zh-TW"]["settings/security-log"] = { // 設置 - 安全日誌
     "regexp": [ // 正則翻譯
         [/Found (\d+) events?/, "發現 $1 個活動"],
         [/View ([^ ]+)'s profile/, "查看 $1 的資料"],
+        [/Regenerated a token for (.+) ending in (.+) for the (.+) GitHub App\./, "為 $3 GitHub 應用重新生成了 $1 的令牌（尾號 $2）。"],
+        [/ending in (.+) for the/, "，尾號 $1，用於"],
+        [/Added deployment branch pattern with value (.+) for (.+)\./, "新增部署分支模式，值為 $1，用於 $2。"],
+        [/Created a deployment branch protection rule for (.+)\. The environment can only deploy in branches matching a branch policy pattern\./, "為 $1 創建了部署分支保護規則。該環境只能部署與分支策略模式匹配的分支。"],
+        [/Changed GitHub Pages visibility to public (.+)/, "將 $1 的 GitHub Pages 可見性更改為公開"],
     ],
     "title": {
         "static": {
@@ -8801,6 +8870,9 @@ I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
                 "Existing forks": "現有的復刻",
                 "You don't have any forks of this repository.": "您沒有此儲存庫的任何復刻。",
                 "Create a new fork": "創建復刻",
+
+                // 復刻被鎖
+                "Cannot fork because repository is locked.": "無法復刻，因為儲存庫被鎖定。",
 
                 //
                 "Star this repository": "標星儲存庫", //小屏模式
@@ -11260,6 +11332,9 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "command line": "命令行",
                 "to resolve conflicts.": "來解決衝突。",
                 "These conflicts are too complex to resolve in the web editor": "這些衝突過於複雜，無法在網頁編輯器中解決",
+
+                "Edit on the web": "在線編輯",
+                "Fix with Copilot": "使用 Copilot 修復",
             "Conflicting files": "衝突的文件:",
 
             "Require approval from specific reviewers before merging": "合併前需要特定審查者的批准",
@@ -14459,11 +14534,14 @@ I18N["zh-TW"]["repository/wiki"] = { // 儲存庫 - wiki 頁面
             // [/(\d+) revisions?/, "$1 次修訂"], // wiki
             "New page": "新建頁面",
             "Add a custom footer": "新增自定義頁腳",
+            "+ Add a custom footer": "+ 新增自定義頁腳",
 
             // 右側欄
             "Pages": "頁面",
                 "Toggle table of contents": "摺疊/展開目錄",
                 "Find a page…": "搜尋頁面…",
+                "Find a page or section...": "查找頁面或章節...",
+                "Find a page or section…": "查找頁面或章節…",
             "Add a custom sidebar": "新增自定義側邊欄",
             "Clone this wiki locally": "在本地複製這個 Wiki",
 
@@ -15383,11 +15461,15 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
 
             // 公共部分
             "Reporting": "報告",
+            "Findings": "發現",
                 "Policy": "政策",
                 "Advisories": "諮詢",
             "Vulnerability alerts": "漏洞警報",
+                "Malware": "惡意軟體",
+                "Vulnerabilities": "漏洞",
                 "Code scanning": "程式碼掃描",
                 "Secret scanning": "機密掃描",
+            "Malware alerts": "惡意軟體警報",
 
             "Disabled": "禁用",
             "Enabled": "啟用",
@@ -15451,6 +15533,9 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
                 "for help.": "以尋求幫助",
 
             "Checking code scanning status...": "正在檢查程式碼掃描狀態",
+            "Code scanning is not enabled": "程式碼掃描未啟用",
+            "Code scanning helps you find and fix vulnerabilities and coding errors.": "程式碼掃描可幫助您發現並修復漏洞和編碼錯誤。",
+            "Enable code scanning": "啟用程式碼掃描",
 
         // 安全政策 /<user-name>/<repo-name>/security/policy
             "Set up a security policy": "制定安全政策",
@@ -15465,15 +15550,21 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
             "Security Advisories": "安全公告",
             "Privately discuss, fix, and publish information about security vulnerabilities in your repository's code.": "私人討論，修復和發布儲存庫程式碼中的安全漏洞的訊息。",
             "New draft security advisory": "新的安全建議草案",
+            "Filter advisories": "篩選安全公告",
+            "Filter advisories: severity:critical, ecosystem:npm, sort:newest": "篩選安全公告：severity:critical, ecosystem:npm, sort:newest",
 
             // [/(\d+) Draft/, "$1 項草案"],
             // [/(\d+) Published/, "$1 項已發布"],
             // [/(\d+) Closed/, "$1 項已關閉"],
 
-            "There aren’t any triage security advisories": "沒有任何安全建議通知",
-            "There aren’t any draft security advisories": "沒有任何安全建議草案",
+            "There aren’t any triage security advisories": "暫無待分類的安全公告",
+            "There aren't any triage security advisories": "暫無待分類的安全公告",
+            "There aren’t any draft security advisories": "暫無安全公告草案",
+            "There aren't any draft security advisories": "暫無安全公告草案",
             "There aren’t any published security advisories": "沒有任何已發布的安全公告",
+            "There aren't any published security advisories": "沒有任何已發布的安全公告",
             "There aren’t any closed security advisories": "沒有任何已關閉的安全公告",
+            "There aren't any closed security advisories": "沒有任何已關閉的安全公告",
 
             // 他人庫
             "View information about security vulnerabilities from this repository's maintainers.": "查看儲存庫維護者提供的安全漏洞訊息。",
@@ -15821,6 +15912,7 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
             "to discuss the GitHub secret scanning experience.": "討論 GitHub 機密掃描體驗。",
 
             "Secret scanning alerts": "機密掃描警報",
+            "Filter": "篩選",
             "Secret scanning disabled": "機密掃描已停用",
                 "To scan for secrets, you must first enable secret scanning in": "要掃描機密，您必須首先啟用機密掃描在",
                 "this repository's settings": "此儲存庫設置",
@@ -15849,6 +15941,14 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
             "Provider": "提供者",
                 "Filter by provider": "按提供者篩選",
                 "Filter provider": "篩選提供者",
+                "Advanced filters": "高級篩選",
+                    "Qualifier": "限定",
+                    "Operator": "操作",
+                    "Value": "值",
+                    "Is": "是",
+                    "is one of": "之中的",
+                    "Add a filter": "新增篩選器",
+                    "Apply": "應用",
 
             // 排序
                 "Recently updated": "最近更新",
@@ -16963,8 +17063,10 @@ I18N["zh-TW"]["repository/network"] = { // 儲存庫 -> 分析 - 網路圖
 
             "Network graph": "網路圖",
             "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to.": "最近提交到此儲存庫的時間軸及其網路圖按最近推送的順序排序。",
+            "Timeline of the most recent commits to this repository and its network ordered by most recently pushed to and updated daily.": "此儲存庫及其網路中最新提交的時間線，按最近推送排序，並每日更新。",
 
             "The repository network shows the 100 most recently pushed forks.": "儲存庫網路圖顯示最近推送的 100 個復刻。",
+            "The repository network shows the 50 most recently pushed forks.": "儲存庫網路圖顯示最近推送的 50 個復刻。",
 
             "Loading graph data": "加載網路圖資料",
             "Keyboard shortcuts available": "可用的鍵盤快捷鍵",
@@ -18931,9 +19033,17 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
         "Copilot coding agent": "Copilot 編程AI 代理",
+        "Copilot cloud agent": "Copilot 雲端AI 代理",
+        "Cloud agent": "雲端AI 代理",
 
+        "You can configure Copilot cloud agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他具有此儲存庫訪問權限的用戶配置 Copilot 雲端AI 代理，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他具有此儲存庫訪問權限的用戶配置 Copilot 編程AI 代理，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
 
+        "With Copilot cloud agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 雲端AI 代理，開發者可以將任務委託給 Copilot，從而專注於最重要的創造性、複雜和高影響力工作。將任務分配給 Copilot，等待AI 代理請求審查，然後在合併請求中留下回饋以繼續迭代。",
+        "With": "藉助",
+        ", developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "，開發者可以將任務委託給 Copilot，從而專注於最重要的創造性、複雜和高影響力工作。將任務分配給 Copilot，等待AI 代理請求審查，然後在合併請求中留下回饋以繼續迭代。",
+        "Learn more about": "詳細瞭解",
+        "Learn more about Copilot cloud agent": "瞭解更多關於 Copilot 雲端AI 代理的訊息",
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而專注於更具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待助手發起評審請求，然後在合併請求上留下回饋進行迭代。更多訊息請參閱",
         "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而有更多時間專注於最重要的創造性、複雜和高影響力的工作。只需將議題分配給 Copilot，等待請求程式碼審查，然後在合併請求上留下回饋，進行迭代即可。",
         "Learn more about Copilot coding agent": "瞭解更多",
@@ -18944,9 +19054,11 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
 
             "Enable firewall": "啟用防火牆",
                 "Recommended": "推薦",
+                "Limit Copilot cloud agent’s Internet access to only allow access to allowlisted locations": "將 Copilot 雲端AI 代理的互聯網訪問權限限制為僅允許訪問白名單中的位置",
                 "Limit Copilot coding agent’s Internet access to only allow access to allowlisted locations": "將 Copilot 編程AI 代理的互聯網訪問權限限制為僅允許訪問白名單中的位置。",
             "Recommended allowlist": "推薦白名單",
                 "Allow access to locations frequently used to install tools, packages, and dependencies": "允許訪問常用於安裝工具、軟件包和依賴項的位置",
+                "Allow access to locations frequently used to install tools, packages, and dependencies.": "允許訪問常用於安裝工具、軟件包和依賴項的位置。",
             "Custom allowlist": "自定義白名單",
                 "Allow access to specific domains, IP addresses, or URLs.": "允許訪問特定網域、IP 地址或 URL。",
 
@@ -18965,8 +19077,35 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
                 // 保存
                     "Allowlist settings saved successfully!": "白名單設置保存成功！",
 
+        "Policy": "策略",
+            "Require approval for workflow runs": "要求審批工作流執行",
+                "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run.": "當 Copilot 推送更改時，要求具有寫入權限的維護者批准後再執行 Actions 工作流。",
+                "Allowing GitHub Actions workflows to run without approval may allow unreviewed code written by Copilot to gain write access to your repository or access your GitHub Actions secrets.": "允許 GitHub Actions 工作流未經審批即執行，可能會讓 Copilot 編寫的未經審查程式碼獲得儲存庫寫入權限，或訪問您的 GitHub Actions 機密。",
+
+        "Validation tools": "驗證工具",
+            "Configure which tools Copilot cloud agent uses to validate its work and iterate before requesting human review.": "配置 Copilot 雲端AI 代理在請求人工審查前用於驗證工作並迭代的工具。",
+            "CodeQL code scanning": "CodeQL 程式碼掃描",
+                "Use CodeQL to scan for security vulnerabilities.": "使用 CodeQL 掃描安全漏洞。",
+            "Copilot code review": "Copilot 程式碼審查",
+                "Use Copilot code review to identify code quality issues.": "使用 Copilot 程式碼審查識別程式碼質量問題。",
+            "Secret scanning": "機密掃描",
+                "Scan for accidentally committed secrets and credentials.": "掃描意外提交的機密和憑據。",
+            "Dependency vulnerability checks": "依賴漏洞檢查",
+                "Check new dependencies against the GitHub Advisory Database for known vulnerabilities.": "根據 GitHub Advisory Database 檢查新依賴項是否存在已知漏洞。",
+
         "Model Context Protocol (MCP)": "模型上下文協議（MCP）",
             "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一個開放標準，定義了應用程式如何與大型語言模型（LLM）共享上下文。MCP 提供了一種標準化的方法，將 AI 模型與不同的資料源和工具連接起來，使它們能夠更高效地協同工作。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The GitHub and Playwright MCP servers are enabled by default.": "藉助 MCP，您可以將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。GitHub 和 Playwright MCP 伺服器預設啟用。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The": "藉助 MCP，您可以將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。",
+            "With MCP, you can extend the capabilities of": "藉助 MCP，您可以擴展",
+            "by connecting it to other tools and services. The": "的能力，將其連接到其他工具和服務。",
+            "MCP servers are enabled by default.": "MCP 伺服器預設啟用。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 .copilot 環境中定義的機密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment. Learn more about configuring MCP servers.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 .copilot 環境中定義的機密。瞭解更多關於配置 MCP 伺服器的訊息。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 copilot 環境中定義的機密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment. Learn more about configuring MCP servers.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 copilot 環境中定義的機密。瞭解更多關於配置 MCP 伺服器的訊息。",
+            "Learn more about configuring MCP servers.": "瞭解更多關於配置 MCP 伺服器的訊息。",
+            "You can use MCP to extend the capabilities of Copilot cloud agent by connecting it to other tools and services.": "您可以使用 MCP 將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通過將其連接到其他工具和服務，來擴展 Copilot 編程AI 代理的功能。有關如何編寫您的 JSON MCP 配置的詳細訊息，請參見",
             "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services.": "您可以使用 MCP 通過將其連接到其他工具和服務，來擴展 Copilot 編程AI 代理的功能。",
                 "Learn how to write your JSON MCP configuration": "瞭解如何編寫您的 JSON MCP 配置",
@@ -18991,6 +19130,7 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
     "title": {
         "static": {
             "Copilot coding agent": "Copilot 編程AI 代理",
+            "Copilot cloud agent": "Copilot 雲端AI 代理",
         },
     },
 };
@@ -26419,9 +26559,11 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
 
         // 儲存庫 專案頁面  /<user-name>/<repo-name>/projects >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             "Welcome to projects": "歡迎訪問專案",
+            "Welcome to Projects": "歡迎訪問專案",
             "No open projects": "無已打開的專案",
             "No open project templates": "無已打開的專案範本",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"專案表格就像電子表格一樣構建，為您提供實時畫布，用於篩選、排序和分組問題及合併請求。您可以根據需求自定義字段並保存視圖。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組議題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
             "This repository doesn't have any projects yet": "該儲存庫目前沒有任何專案",
             "Create a project": "創建一個專案",
             "Provide quick access to relevant projects.":"為相關專案提供便捷訪問",
@@ -27835,7 +27977,11 @@ I18N["zh-TW"]["repo-actions-merics-public"] = { // 儲存庫 - 分析 - 操作�
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
 
+        "Showing data:": "顯示資料：",
+        "Range": "範圍",
+        "Range:": "範圍：",
         "Period": "週期",
+            "This month": "本月",
             "Current week (Mon-Sun)": "本週（週一 ~ 週日）",
             "Current month": "本月",
             "Last month": "上個月",
@@ -27925,8 +28071,9 @@ I18N["zh-TW"]["repo-actions-merics-public"] = { // 儲存庫 - 分析 - 操作�
     },
     "regexp": [
         [/Showing data from (\d+)\/(\d+)\/(\d+) to/, "顯示資料：從$1年$2月$3日至"],
-        [/Total (minutes|job runs) across all workflows in this organization for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, period){
-            var typeKey = {'minutes': '總分鐘數', 'job runs': '總工作執行數'};
+        [/Total (minutes|job runs) across all workflows in this (organization|repository) for (current week \(mon-sun\)|current month|last month|last 30 days|last 90 days|last year|custom)/, function(all, type, scope, period){
+            var typeKey = {'minutes': '總分鐘數', 'job runs': '作業執行總數'};
+            var scopeKey = {'organization': '該組織', 'repository': '該儲存庫'};
             var periodKey = {
                 "current week (mon-sun)": "本週（週一 ~ 週日）",
                 "current month": "本月",
@@ -27936,7 +28083,7 @@ I18N["zh-TW"]["repo-actions-merics-public"] = { // 儲存庫 - 分析 - 操作�
                 "last year": "最近一年",
                 "custom": "自定義時間段",
             };
-            return periodKey[period] + '該組織所有工作流程的' + typeKey[type];
+            return periodKey[period] + scopeKey[scope] + '所有工作流的' + typeKey[type];
         }],
         [/Period: (Current week \(Mon-Sun\)|Current month|Last month|Last 30 days|Last 90 days|Last year|Custom)/, function(all, period){
             var periodKey = {
@@ -27958,7 +28105,7 @@ I18N["zh-TW"]["repository/actions/metrics/usage"] = {
         ...I18N["zh-TW"]["repo-actions-merics-public"]["static"],
 
         "Total minutes": "總分鐘數",
-        "Total job runs": "總工作執行",
+        "Total job runs": "總作業執行次數",
 
         "Row Actions": "更多", // 暫譯
         "View performance": "查看資料看板",
@@ -29099,6 +29246,13 @@ I18N["zh-TW"]["repository/agents"] = {
         // 左側Tab
         "Created by me": "由我創建的",
         "All sessions": "所有任務",
+
+        // 任務列表
+        "Sessions": "AI 代理任務",
+            "Active": "進行中",
+            "Completed": "已完成",
+            "Let Copilot work on tasks for you in the background.": "讓 Copilot 在後台為您處理任務。",
+            "Your code review sessions are available from the pull request timeline. Enable Copilot cloud agent to assign tasks, track progress, and review changes — all from this page.": "您的程式碼審查任務可從合併請求時間線訪問。啟用 Copilot 雲端AI 代理後，即可在此頁面分配任務、跟蹤進度並審查更改。",
 
         "Customize environment": "自定義環境",
         "Configure": "自定義配置",
