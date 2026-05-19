@@ -15145,6 +15145,11 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "This will delete the information for this draft.": "这将会删除该草案的信息。",
             "Delete this draft": "删除草案",
 
+            "Release label": "发行版标签",
+                "None": "无",
+                "Label release as non-production ready": "标记为测试版",
+                "Label release as the latest for this repository": "标记为最新版",
+
             // 右侧栏
             "Tagging suggestions": "标签建议",
             "It’s common practice to prefix your version names with the letter": "通常的做法是在版本名称前加上字母",
