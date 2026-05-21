@@ -116,6 +116,26 @@ Via（Android）       | 内置管理器
 
 ### 最新版本
 
+#### v1.9.4 (2025-05-17)
+
+1. 代码重构：
+   - 全面结构化重组：抽离配置常量 `CONFIG`、状态管理器 `State`
+   - 引入 `safe()` 错误边界包裹关键函数，便于排错
+   - 函数拆分细化：`watchUpdate` → `setupMutationObserver` + `processMutations`，`transDesc` → `handleTransClick` + `requestRemoteTrans` + `showTransResult`
+   - `processMutations` 祖先去重：同一批 mutation 中后代节点不再重复遍历
+1. 新增功能：
+   - 翻译结果 UI 暗色主题适配（CSS 变量 + `prefers-color-scheme` 媒体查询），使用 `GM_addStyle` 插入
+   - 未命中词条管理器 `MissedTermsManager`（记录、导出 JSON、清空、统计、菜单）
+   - 开发者模式（`CONFIG.DEV`）控制未命中词条菜单显隐
+   - Tampermonkey `onurlchange` 事件支持（`setupUrlChangeListener`）
+1. 修复：
+   - 修复翻译 API 响应 XSS 漏洞：`innerHTML` 模板拼接改为 `textContent` 安全赋值（由 #692 报告）
+   - 修复 TreeWalker 过滤器在 `ignoreSelectors` 为空时抛出 `SyntaxError`
+   - 修复翻译按钮可能重复添加的问题（`nextSibling` 空值检查）
+   - 修复 `RELATIVE-TIME` shadowRoot 为 null 时的崩溃
+   - 修复从未识别页面离开后 `State.pageConfig` 未清空，导致旧配置残留的问题
+1. 性能优化：减少无效迭代，消除不必要的 DOM 遍历
+
 #### v1.9.3 (2024-08-18)
 
 1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留`on`开头的时间正则，并停用时间元素监视

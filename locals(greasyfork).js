@@ -717,7 +717,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Home": "主页",
             "Feed": "动态",
             "Issues": "议题",
+            "All issues": "所有议题",
             "Pull requests": "拉取请求",
+            "All pull requests": "所有拉取请求",
             "Projects": "项目",
             "Discussions": "讨论",
             "Codespaces": "代码空间",
@@ -816,6 +818,11 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
                 "Recent tasks": "近期任务",
 
+            "Ask Copilot…": "询问 Copilot…",
+                "About this page": "关于此页面",
+                "In a space": "在空间",
+                "Download for…": "下载插件…",
+
         // 右上角个人图标下拉菜单
             "Open user navigation menu": "打开用户导航菜单",
             "Account switcher": "账户切换",
@@ -823,6 +830,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Switch account": "切换账户",
                 "Sign out...": "登出…",
             "Set status": "状态设置",
+            "Create new repository": "新建仓库", // 小屏模式
             "Profile": "个人资料",
             "Gists": "代码片段",
 
@@ -1045,6 +1053,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "dragging & dropping,": "拖放，",
             "selecting or pasting them.": "选择或粘贴来附加文件。",
             "Markdown is supported": "支持 Markdown 语法",
+                "is supported": "语法支持",
             "Styling with Markdown is supported.": "支持 Markdown 语法。",
             "Paste, drop, or click to add files": "粘贴、拖放或点击添加文件",
             "Write with Copilot": "使用 Copilot 撰写",
@@ -2001,7 +2010,7 @@ I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
 I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
-        "Ask anything": "询问任何事",
+        "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
         "Ask": "询问",
         "Send": "发送",
         "Feedback": "反馈",
@@ -2044,6 +2053,8 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Agent sessions to include": "智能体任务包含",
         "View all": "查看全部",
         "Number of results": "结果数量",
+        "Maximum age of results": "结果最大年龄",
+        "No maximum": "无限制",
         "Pull request options": "拉取请求选项",
         "Pull requests to include": "拉取请求包含",
             "Authored": "由您创建",
@@ -2054,7 +2065,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         "Issues to include": "议题包含",
             "Assigned to me": "分配给我",
             "Involves me": "涉及我",
-        "Open in Copilot chat": "在 Copilot Chat 中打开",
+        "Open in Copilot Chat": "在 Copilot Chat 中打开",
         "Assign to Copilot": "分配给 Copilot",
         "uses AI. Check for mistakes.": "使用 AI。请检查错误。",
 
@@ -2200,6 +2211,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // 提要筛选
         "Filter": "筛选器",
             "Feed filters": "提要筛选器",
+            "Organization feed filters": "组织提要筛选器",
             "Events": "事件",
                 "Activity you want to see on your feed": "您想在提要上看到的活动",
             "Announcements": "公告",
@@ -2214,6 +2226,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
                 "Repositories that are created or forked by people": "由人们创建或复刻的仓库",
             "Repository activity": "仓库活动",
                 "Issues and pull requests from repositories": "来自仓库的议题和拉取请求",
+                "Issues, pull requests, and contributions from repositories": "来自仓库的议题、拉取请求和贡献",
             "Follows": "关注",
                 "Who people are following": "人们在关注谁",
             "Recommendations": "推荐",
@@ -10656,6 +10669,12 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
 
                 "Suggested change": "建议更改",
 
+        // 疑似临时信息
+            "Some pull requests may be missing due to an": "某些拉取请求可能丢失因",
+                "ongoing search incident": "持续搜索事故",
+                ", but no data is lost. Use the": "，但没有数据丢失。使用",
+                ") for complete pull request results.": ") 获取完整结果。",
+
     },
     "regexp": [
         ...I18N["zh-CN"]["repository-public"]["regexp"],
@@ -10715,6 +10734,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Change base": "更改基础分支",
 
             "View status": "查看状态",
+            "Not ready": "未准备好",
             "Able to merge": "可以合并",
             "Unable to merge": "无法合并",
             "Ready to merge": "准备合并",
@@ -10722,6 +10742,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "What's new": "新内容",
                 "Close merge status": "关闭",
             "Merge conflicts": "合并冲突",
+            "Not planning to merge?": "不打算合并吗？",
+            "Awaiting approval": "等待批准",
 
             // 代码 下拉菜单
                 "Code 55% faster with AI pair programming.": "与 AI 一起编程，写代码速度提高55%。",
@@ -11403,7 +11425,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Review in codespace": "在代码空间中审查",
             // "Review changes": "审查更改", // 使用 Selector 规则翻译
                 // 下拉
-                "Finish your review": "完成审查",
+                "Finish your": "完成您的",
                     "Submit general feedback without explicit approval.": "未批准，并提出一般性反馈意见。",
                 "Approve": "批准",
                     "Submit feedback approving these changes.": "批准，并提出反馈意见。",
@@ -11462,6 +11484,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // 大型拉取请求提示
             "This page has been optimized for large pull requests. Some browser features (like Find on Page or Select All) may not work as expected.": "此页面已针对大型拉取请求进行了优化。某些浏览器功能（如页面查找或全选）可能无法正常工作。",
                 "Switch to single file mode": "切换至单文件模式",
+            "Due to the size of this pull request, only one file can be shown at a time.": "由于此拉取请求的大小，一次只能显示一个文件。",
+                "To view all files in a single page,": "要在单个页面上查看所有文件，",
+                "try a new experimental mode": "请尝试一种新的实验模式",
 
             "These merge commits were added into this branch cleanly.": "这些合并提交已被干净利落地添加到该分支中。",
                 "There are no new changes to show.": "没有任何新的变化。",
@@ -11523,9 +11548,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Collapse file tree": "折叠文件树",
                 "Expand file tree": "展开文件树",
 
+                "Select commits to view": "选择要查看的提交",
                 "All changes": "所有更改",
                 "All commits": "所有提交",
                 "Changes since your last review": "自您上次审核以来的更改",
+                "No previous review found": "未找到之前的审核",
+                "Select a range of commits": "选择一个提交范围",
                 "Specific commit…": "特定提交…",
                     "Pick one or more commits": "选择多个提交",
                     "Clear selection": "清除选择",
@@ -11585,6 +11613,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Filter comments": "筛选评论",
                     "Show resolved comments": "显示已解决评论",
                     "Show outdated comments": "显示陈旧的评论",
+                    "Filter by": "筛选条件",
+                    "Hide resolved comments": "隐藏已解决评论",
+                    "Hide outdated comments": "隐藏陈旧的评论",
+                    "Jump to the comment in the diff": "跳转到差异中的评论",
+                    "Showing": "显示",
+                    "of": "条中的",
 
                 "No comments on changes yet": "还没有评论",
                     "Comments will show up here as soon as there are some.": "评论将在此显示。",
@@ -11705,6 +11739,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
     "regexp": [ // 正则翻译
         [/The (\d+) commits? from this branch will be rebased and added to the base branch./, "该分支的 $1 次提交将变基并添加到基本分支。"],
         [/([^ ]+):([^ ]+)% was force-pushed and no longer has any new commits./, "$1:$2 分支被强制推送，现在没有新的提交。"], // 放这里是因为跟现有词条冲突
+        [/(\d+) pending reviews?/, "$1 名待审者"],
         // 建议更改（词条打架移动至此）
         [/on this commit as ([^@]+@[^\n]+)/, "该提交以 $1 身份"],
         // Dependabot 打开的拉取请求
@@ -11940,7 +11975,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "Load diff": "载入差异",
             "This file was deleted.": "该文件已被删除",
             "Large diffs are not rendered by default.": "默认情况下，大的差异不会被呈现。",
-            "File renamed without changes": "文件仅重命名，内容没有更改",
+            "File renamed without changes.": "文件仅重命名，内容没有更改。",
             "Binary file not shown.": "不显示二进制文件。",
             "Some generated files are not rendered by default. Learn more about": "某些生成的文件默认不会呈现。详细了解",
                 "how customized files appear on GitHub": "自定义文件在 GitHub 上的显示方式",
@@ -20816,6 +20851,9 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
             "filter by notification reason": "按通知原因筛选",
             "filter by notification author": "按通知作者筛选",
             "filter by organization": "按组织筛选",
+        "Sort by:": "排序：",
+            "Newest to oldest": "从新到旧",
+            "Oldest to newest": "从旧到新",
         "Group by:": "分组：",
         "Group by: Date": "分组：日期",
         "Group by: Repository": "分组：仓库",
@@ -21510,19 +21548,36 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
     "static": {
         ...I18N["zh-CN"]["issues"]["static"],
 
-        // 预览
+        // 上边栏
             "What's new": "新功能",
             "Switch to the classic experience": "切换到经典视图",
+            "Default view options": "默认视图选项",
+            "Set as default view": "设为默认视图",
+            "Default to this view when visiting /pulls": "访问 /pulls 时默认使用此视图",
 
-        // 侧边栏
-            "Inbox": "收件箱",
-                "Needs your review": "需要您的审查",
-                "Needs action": "需要操作",
-                "Ready to merge": "准备合并",
-                "All caught up": "全部已处理",
-                "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
-            "Authored by me": "由我创建",
-            "Involves me": "涉及我",
+        "Inbox": "收件箱",
+            "Needs your review": "需要您的审查",
+                "Expand Needs your review": "展开“需要您的审查”选项卡",
+                "Collapse Needs your review": "折叠“需要您的审查”选项卡",
+                "Pull requests that need your review will appear here.": "需要您审查的拉取请求将出现在这里。",
+            "Needs action": "需要操作",
+                "Expand Needs action": "展开“需要操作”选项卡",
+                "Collapse Needs action": "折叠“需要操作”选项卡",
+                "Pull requests with failing checks, merge conflicts, or required changes will appear here.": "检查失败、存在合并冲突或需要更改的拉取请求将出现在这里。",
+            "Ready to merge": "准备合并",
+                "Expand Ready to merge": "展开“准备合并”选项卡",
+                "Collapse Ready to merge": "折叠“准备合并”选项卡",
+                "Pull requests that are ready to merge will appear here.": "准备合并的拉取请求将出现在这里。",
+            "Needs your teams' review": "需要您团队的审查",
+                "Expand Needs your teams' review": "展开“需要您团队的审查”选项卡",
+                "Collapse Needs your teams' review": "折叠“需要您团队的审查”选项卡",
+                "Pull requests that need your teams' review will appear here.": "需要您团队审查的拉取请求将出现在这里。",
+            "All caught up": "全部已处理",
+            "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
+            "Awaiting approval": "等待批准",
+
+        "Authored by me": "由我创建",
+        "Involves me": "涉及我",
 
         // 收件箱右上角
             "Select repositories": "选择仓库",
