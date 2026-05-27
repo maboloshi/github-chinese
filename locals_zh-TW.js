@@ -21692,6 +21692,7 @@ I18N["zh-TW"]["pulls"] = { // 合併請求頁面
             "What's new": "新功能",
             "Switch to the classic experience": "切換到經典視圖",
             "Default view options": "預設視圖選項",
+            "View options": "視圖選項",
             "Set as default view": "設為預設視圖",
             "Default to this view when visiting /pulls": "訪問 /pulls 時預設使用此視圖",
 
@@ -21712,6 +21713,14 @@ I18N["zh-TW"]["pulls"] = { // 合併請求頁面
                 "Expand Needs your teams' review": "展開“需要您團隊的審查”選項卡",
                 "Collapse Needs your teams' review": "摺疊“需要您團隊的審查”選項卡",
                 "Pull requests that need your teams' review will appear here.": "需要您團隊審查的合併請求將出現在這裡。",
+            "Your drafts": "您的草案",
+                "Expand Your drafts": "展開“您的草案”選項卡",
+                "Collapse Your drafts": "摺疊“您的草案”選項卡",
+                "Pull requests that you have started but not yet submitted for review will appear here.": "您已開始但尚未提交審查的合併請求將出現在這裡。",
+            "Waiting for review": "等待審查",
+                "Expand Waiting for review": "展開“等待審查”選項卡",
+                "Collapse Waiting for review": "摺疊“等待審查”選項卡",
+                "Pull requests that are waiting for review but have not had a review will appear here.": "等待審查但尚未獲得審查的合併請求將出現在這裡。",
             "All caught up": "全部已處理",
             "When a pull request needs your review or attention, it'll appear here.": "當一個合併請求需要您的審查或追蹤時，它將出現在這裡。",
             "Awaiting approval": "等待批准",
@@ -21760,9 +21769,8 @@ I18N["zh-TW"]["pulls"] = { // 合併請求頁面
 
         // 搜尋結果框
             "Enter a query to start searching.": "輸入查詢以開始搜尋。",
-            "No pull requests matched your search.": "沒有合併請求匹配您的搜尋。",
+            "No pull requests matched your search": "沒有合併請求匹配您的搜尋",
             "Try a different search query.": "嘗試不同的搜尋查詢。",
-            "Learn more about searching and filtering pull requests.": "瞭解更多關於搜尋和過濾合併請求的訊息。",
 
         // 視圖
             "No saved views": "沒有保存的視圖",
