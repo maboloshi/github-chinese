@@ -21692,6 +21692,7 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
             "What's new": "新功能",
             "Switch to the classic experience": "切换到经典视图",
             "Default view options": "默认视图选项",
+            "View options": "视图选项",
             "Set as default view": "设为默认视图",
             "Default to this view when visiting /pulls": "访问 /pulls 时默认使用此视图",
 
@@ -21712,6 +21713,14 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
                 "Expand Needs your teams' review": "展开“需要您团队的审查”选项卡",
                 "Collapse Needs your teams' review": "折叠“需要您团队的审查”选项卡",
                 "Pull requests that need your teams' review will appear here.": "需要您团队审查的拉取请求将出现在这里。",
+            "Your drafts": "您的草案",
+                "Expand Your drafts": "展开“您的草案”选项卡",
+                "Collapse Your drafts": "折叠“您的草案”选项卡",
+                "Pull requests that you have started but not yet submitted for review will appear here.": "您已开始但尚未提交审查的拉取请求将出现在这里。",
+            "Waiting for review": "等待审查",
+                "Expand Waiting for review": "展开“等待审查”选项卡",
+                "Collapse Waiting for review": "折叠“等待审查”选项卡",
+                "Pull requests that are waiting for review but have not had a review will appear here.": "等待审查但尚未获得审查的拉取请求将出现在这里。",
             "All caught up": "全部已处理",
             "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
             "Awaiting approval": "等待批准",
@@ -21760,9 +21769,8 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
 
         // 搜索结果框
             "Enter a query to start searching.": "输入查询以开始搜索。",
-            "No pull requests matched your search.": "没有拉取请求匹配您的搜索。",
+            "No pull requests matched your search": "没有拉取请求匹配您的搜索",
             "Try a different search query.": "尝试不同的搜索查询。",
-            "Learn more about searching and filtering pull requests.": "了解更多关于搜索和过滤拉取请求的信息。",
 
         // 视图
             "No saved views": "没有保存的视图",
