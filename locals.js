@@ -105,6 +105,8 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
+            'header.GlobalNav', // React 版全局导航
+            '#__primerPortalRoot__', // React 弹层挂载点
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
@@ -229,6 +231,8 @@ I18N.conf = {
             '.monaco-editor',
         ],
         '*': [
+            'header.GlobalNav', // React 版全局导航
+            '#__primerPortalRoot__', // React 弹层挂载点
             '.comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词

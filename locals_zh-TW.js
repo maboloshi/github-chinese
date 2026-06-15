@@ -105,6 +105,8 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
+            'header.GlobalNav', // React 版全域導覽
+            '#__primerPortalRoot__', // React 彈層掛載點
             'div.QueryBuilder-StyledInputContainer', // 頂部搜尋欄 關鍵詞
             '#qb-input-query span', // 搜尋頁面 搜尋欄 關鍵詞
 			'div.styled-input-content', // 篩選條
@@ -229,6 +231,8 @@ I18N.conf = {
             '.monaco-editor',
         ],
         '*': [
+            'header.GlobalNav', // React 版全域導覽
+            '#__primerPortalRoot__', // React 彈層掛載點
             '.comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 頂部搜尋欄 關鍵詞
