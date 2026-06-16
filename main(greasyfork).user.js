@@ -30,6 +30,32 @@
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
+    function getElementFromNode(node) {
+        if (!node) return null;
+        return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+    }
+
+    function getIgnoreMutationSelectors() {
+        const selectorPage = I18N.conf.ignoreMutationSelectorPage || {};
+        return [
+            ...(selectorPage['*'] || []),
+            ...((page && selectorPage[page]) || []),
+        ].join(', ');
+    }
+
+    function shouldIgnoreMutation(mutation, ignoreMutationSelectors) {
+        if (!ignoreMutationSelectors) return false;
+
+        const target = getElementFromNode(mutation.target);
+        if (target?.closest?.(ignoreMutationSelectors)) return true;
+
+        return Array.from(mutation.addedNodes || []).some(node => {
+            const element = getElementFromNode(node);
+            return element?.matches?.(ignoreMutationSelectors) ||
+                element?.closest?.(ignoreMutationSelectors);
+        });
+    }
+
     /**
      * watchUpdate 函数：监视页面变化，根据变化的节点进行翻译
      */
@@ -72,7 +98,11 @@
             if (page) {
                 // 使用 filter 方法对 mutations 数组进行筛选，
                 // 返回 `节点增加、文本更新 或 属性更改的 mutation` 组成的新数组 filteredMutations。
-                const filteredMutations = mutations.filter(mutation => mutation.addedNodes.length > 0 || mutation.type === 'attributes' || mutation.type === 'characterData');
+                const ignoreMutationSelectors = getIgnoreMutationSelectors();
+                const filteredMutations = mutations.filter(mutation =>
+                    !shouldIgnoreMutation(mutation, ignoreMutationSelectors) &&
+                    (mutation.addedNodes.length > 0 || mutation.type === 'attributes' || mutation.type === 'characterData')
+                );
 
                 // 处理每个变化
                 filteredMutations.forEach(mutation => traverseNode(mutation.target));

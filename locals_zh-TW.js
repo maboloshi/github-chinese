@@ -106,6 +106,8 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全域導覽
+            '[class*="Search-module__"]', // React 版頂部搜尋按鈕
+            'qbsearch-input', // 頂部搜尋框自定義元素
             '#__primerPortalRoot__', // React 彈層掛載點
             'div.QueryBuilder-StyledInputContainer', // 頂部搜尋欄 關鍵詞
             '#qb-input-query span', // 搜尋頁面 搜尋欄 關鍵詞
@@ -232,6 +234,8 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全域導覽
+            '[class*="Search-module__"]', // React 版頂部搜尋按鈕
+            'qbsearch-input', // 頂部搜尋框自定義元素
             '#__primerPortalRoot__', // React 彈層掛載點
             '.comment-body', '.js-preview-body',
             '.markdown-title',
@@ -275,7 +279,7 @@ I18N.conf = {
      * tree 視圖 檔名 react-directory-filename-column 提交訊息 react-directory-commit-message
      * 程式碼差異頁面 程式碼 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
      */
-    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+    reIgnoreClass: /(GlobalNav|Search-module|QueryBuilder|cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
 
     /**
      * 忽略區域的 itemprop 屬性正則
@@ -291,17 +295,285 @@ I18N.conf = {
      * /blob頁面 右側 符號篩選 filter-results
      * fix repo詳情頁文件路徑breadcrumb
      */
-    reIgnoreId: /(readme|^offset|breadcrumb|file-name-id|filter-results)/,
+    reIgnoreId: /(__primerPortalRoot__|search-suggestions-dialog|readme|^offset|breadcrumb|file-name-id|filter-results)/,
 
     /**
      * 忽略區域的 標籤 正則
      * /i 規則不區分大小寫
      */
-    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'QBSEARCH-INPUT'],
     // marked-text --> 文件搜尋模式/<user-name>/<repo-name>/find/<branch> 文件列表條目
     // ^script$ --> 避免勿過濾 notifications-list-subscription-form
     // ^pre$ --> 避免勿過濾
 };
+
+(function setupReactGlobalNavTranslation() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') return;
+
+    const labels = {
+        "Overview": "概況",
+        "Repositories": "儲存庫",
+        "Code": "程式碼",
+        "Issues": "議題",
+        "Pull requests": "拉取請求",
+        "Discussions": "討論",
+        "Actions": "操作",
+        "Projects": "專案",
+        "Wiki": "Wiki",
+        "Security": "安全",
+        "Security and quality": "安全和品質",
+        "Insights": "洞察",
+        "Settings": "設定",
+        "Packages": "軟體包",
+        "Releases": "發行版",
+        "Stars": "星號",
+        "Agents": "智能體",
+        "Models": "模型",
+        "Set status": "狀態設置",
+        "Profile": "個人資料",
+        "Gists": "程式碼片段",
+        "Copilot settings": "Copilot 設置",
+        "Feature preview": "功能預覽",
+        "Appearance": "外觀",
+        "Accessibility": "無障礙",
+        "Try Enterprise": "試用企業版",
+        "Sign out": "退出",
+        "Free": "免費",
+        "Type / to search": "輸入 / 搜尋",
+        "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、使用者、議題、拉取請求...",
+        "Search": "搜尋",
+        "Clear": "清除",
+        "Search syntax tips": "搜尋語法提示",
+        "Give feedback": "回饋",
+        "Saved searches": "保存搜尋",
+        "Use saved searches to filter your results more quickly": "使用保存的搜尋快速篩選結果",
+        "Create saved search": "創建保存的搜尋",
+        "Provide feedback": "提供回饋",
+        "Submit feedback": "提交回饋",
+        "Cancel": "取消",
+        "Name": "名稱",
+        "Query": "查詢",
+        "0 suggestions.": "0 條建議。",
+        "To see all available qualifiers, see our documentation.": "要查看所有可用限定符，請參閱文件。",
+        "People": "成員",
+        "Teams": "團隊",
+        "Sponsoring": "贊助",
+        "Followers": "追蹤者",
+        "Following": "正在追蹤",
+        "Activity": "活動",
+        "Branches": "分支",
+        "Tags": "標籤",
+        "Codespaces": "程式碼空間",
+        "Dashboard": "儀表板",
+        "Explore": "探索",
+        "Marketplace": "市場",
+        "Sponsors": "贊助者",
+        "Organizations": "組織",
+        "Enterprises": "企業版",
+        "Billing": "帳單",
+        "Copilot": "GitHub Copilot",
+    };
+
+    const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
+    const controlledSurfaceSelector = [
+        'header.GlobalNav',
+        '#__primerPortalRoot__ [role="menu"]',
+        '#__primerPortalRoot__ [role="dialog"]',
+        '#__primerPortalRoot__ [role="tooltip"]',
+    ].join(', ');
+    const searchSurfaceSelector = 'qbsearch-input';
+    const unsafeTextSelector = [
+        'textarea',
+        '[contenteditable="true"]',
+        'code',
+        'pre',
+        'kbd',
+        'svg',
+        'img',
+        'canvas',
+        'video',
+    ].join(', ');
+    const searchSelector = 'header.GlobalNav [class*="Search-module__"], qbsearch-input, #__primerPortalRoot__ [role="dialog"]';
+    const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
+    let timer = null;
+    let headerObserver = null;
+    const observedSurfaces = new WeakSet();
+
+    function isReactGlobalNavSearchActive() {
+        const active = document.activeElement;
+        return !!active?.closest?.(searchSelector)
+            || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
+    }
+
+    function findStaticGlobalNavLabel(source) {
+        const locale = I18N["zh-TW"] || I18N.zh;
+        if (!locale) return null;
+
+        for (const section of Object.values(locale)) {
+            const label = section?.static?.[source];
+            if (typeof label === 'string' && label && label !== source) {
+                return label;
+            }
+        }
+
+        return null;
+    }
+
+    function findRegexpGlobalNavLabel(source) {
+        const locale = I18N["zh-TW"] || I18N.zh;
+        if (!locale) return null;
+
+        for (const section of Object.values(locale)) {
+            for (const [pattern, replacement] of section?.regexp || []) {
+                const label = source.replace(pattern, replacement);
+                if (label !== source) return label;
+            }
+        }
+
+        return null;
+    }
+
+    function resolveReactGlobalNavLabel(source) {
+        return labels[source] || findStaticGlobalNavLabel(source) || findRegexpGlobalNavLabel(source);
+    }
+
+    function normalizeReactGlobalNavText(text) {
+        return text?.replace(/\s+/g, ' ').trim();
+    }
+
+    function translateReactGlobalNavText(text) {
+        const source = normalizeReactGlobalNavText(text);
+        return source ? resolveReactGlobalNavLabel(source) : null;
+    }
+
+    function translateReactGlobalNavElement(element, source) {
+        const label = translateReactGlobalNavText(source ?? element.textContent);
+        if (label && element.textContent !== label) {
+            element.textContent = label;
+        }
+    }
+
+    function shouldSkipReactGlobalNavNode(node) {
+        const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+        if (!element) return true;
+        if (element.closest?.(unsafeTextSelector)) return true;
+
+        const searchRoot = element.closest?.(searchSurfaceSelector);
+        return !!searchRoot && !isReactGlobalNavSearchActive();
+    }
+
+    function translateReactGlobalNavAttributes(element) {
+        translatableAttributeNames.forEach(attributeName => {
+            const value = element.getAttribute?.(attributeName);
+            const label = translateReactGlobalNavText(value);
+            if (label && value !== label) {
+                element.setAttribute(attributeName, label);
+            }
+        });
+    }
+
+    function translateReactGlobalNavTextNode(node) {
+        const label = translateReactGlobalNavText(node.data);
+        if (label) {
+            node.data = node.data.replace(node.data.trim(), label);
+        }
+    }
+
+    function translateReactGlobalNavSurface(surface) {
+        if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
+
+        if (surface.nodeType === Node.ELEMENT_NODE) {
+            translateReactGlobalNavAttributes(surface);
+        }
+
+        const walker = document.createTreeWalker(
+            surface,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    return shouldSkipReactGlobalNavNode(node)
+                        ? NodeFilter.FILTER_REJECT
+                        : NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        let node;
+        while ((node = walker.nextNode())) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                translateReactGlobalNavAttributes(node);
+            } else if (node.nodeType === Node.TEXT_NODE) {
+                translateReactGlobalNavTextNode(node);
+            }
+        }
+    }
+
+    function getReactGlobalNavSurfaces() {
+        const surfaces = Array.from(document.querySelectorAll(controlledSurfaceSelector));
+
+        if (isReactGlobalNavSearchActive()) {
+            surfaces.push(...document.querySelectorAll(searchSurfaceSelector));
+        }
+
+        return Array.from(new Set(surfaces));
+    }
+
+    function translateReactGlobalNavLabels() {
+        document.querySelectorAll(dataContentLabelSelector).forEach(element => {
+            translateReactGlobalNavElement(element, element.getAttribute('data-content'));
+        });
+
+        getReactGlobalNavSurfaces().forEach(translateReactGlobalNavSurface);
+
+        observeReactGlobalNav();
+    }
+
+    function scheduleReactGlobalNavTranslation(delay = 800) {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(translateReactGlobalNavLabels, delay);
+    }
+
+    function scheduleReactGlobalNavSeries() {
+        [800, 1600, 3000].forEach(delay => {
+            window.setTimeout(translateReactGlobalNavLabels, delay);
+        });
+    }
+
+    function observeReactGlobalNav() {
+        if (!headerObserver) {
+            headerObserver = new MutationObserver(() => {
+                scheduleReactGlobalNavTranslation(500);
+            });
+        }
+
+        [
+            document.querySelector('header.GlobalNav'),
+            document.querySelector('#__primerPortalRoot__'),
+        ].forEach(surface => {
+            if (!surface || observedSurfaces.has(surface)) return;
+
+            observedSurfaces.add(surface);
+            headerObserver.observe(surface, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scheduleReactGlobalNavSeries, { once: true });
+    } else {
+        scheduleReactGlobalNavSeries();
+    }
+
+    window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
+    window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
+    document.addEventListener('click', () => scheduleReactGlobalNavTranslation(100), true);
+    document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(100), true);
+    document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(500), true);
+    document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(100), true);
+})();
 
 I18N["zh-TW"] = {};
 

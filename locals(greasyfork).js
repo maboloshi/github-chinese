@@ -106,6 +106,8 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全局导航
+            '[class*="Search-module__"]', // React 版顶部搜索按钮
+            'qbsearch-input', // 顶部搜索框自定义元素
             '#__primerPortalRoot__', // React 弹层挂载点
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
@@ -232,6 +234,8 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全局导航
+            '[class*="Search-module__"]', // React 版顶部搜索按钮
+            'qbsearch-input', // 顶部搜索框自定义元素
             '#__primerPortalRoot__', // React 弹层挂载点
             '.comment-body', '.js-preview-body',
             '.markdown-title',
@@ -275,7 +279,7 @@ I18N.conf = {
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
      * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
      */
-    reIgnoreClass: /(cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+    reIgnoreClass: /(GlobalNav|Search-module|QueryBuilder|cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
 
     /**
      * 忽略区域的 itemprop 属性正则
@@ -291,17 +295,285 @@ I18N.conf = {
      * /blob页面 右侧 符号筛选 filter-results
      * fix repo详情页文件路径breadcrumb
      */
-    reIgnoreId: /(readme|^offset|breadcrumb|file-name-id|filter-results)/,
+    reIgnoreId: /(__primerPortalRoot__|search-suggestions-dialog|readme|^offset|breadcrumb|file-name-id|filter-results)/,
 
     /**
      * 忽略区域的 标签 正则
      * /i 规则不区分大小写
      */
-    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD'],
+    reIgnoreTag: ['CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'QBSEARCH-INPUT'],
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤
 };
+
+(function setupReactGlobalNavTranslation() {
+    if (typeof document === 'undefined' || typeof window === 'undefined') return;
+
+    const labels = {
+        "Overview": "概况",
+        "Repositories": "仓库",
+        "Code": "代码",
+        "Issues": "议题",
+        "Pull requests": "拉取请求",
+        "Discussions": "讨论",
+        "Actions": "操作",
+        "Projects": "项目",
+        "Wiki": "Wiki",
+        "Security": "安全",
+        "Security and quality": "安全和质量",
+        "Insights": "洞察",
+        "Settings": "设置",
+        "Packages": "软件包",
+        "Releases": "发行版",
+        "Stars": "星标",
+        "Agents": "智能体",
+        "Models": "模型",
+        "Set status": "状态设置",
+        "Profile": "个人资料",
+        "Gists": "代码片段",
+        "Copilot settings": "Copilot 设置",
+        "Feature preview": "功能预览",
+        "Appearance": "外观",
+        "Accessibility": "无障碍",
+        "Try Enterprise": "试用企业版",
+        "Sign out": "退出",
+        "Free": "免费",
+        "Type / to search": "输入 / 搜索",
+        "Search code, repositories, users, issues, pull requests...": "搜索代码、仓库、用户、议题、拉取请求...",
+        "Search": "搜索",
+        "Clear": "清除",
+        "Search syntax tips": "搜索语法提示",
+        "Give feedback": "反馈",
+        "Saved searches": "保存搜索",
+        "Use saved searches to filter your results more quickly": "使用保存的搜索快速筛选结果",
+        "Create saved search": "创建保存的搜索",
+        "Provide feedback": "提供反馈",
+        "Submit feedback": "提交反馈",
+        "Cancel": "取消",
+        "Name": "名称",
+        "Query": "查询",
+        "0 suggestions.": "0 条建议。",
+        "To see all available qualifiers, see our documentation.": "要查看所有可用限定符，请参阅文档。",
+        "People": "成员",
+        "Teams": "团队",
+        "Sponsoring": "赞助",
+        "Followers": "关注者",
+        "Following": "正在关注",
+        "Activity": "活动",
+        "Branches": "分支",
+        "Tags": "标签",
+        "Codespaces": "代码空间",
+        "Dashboard": "仪表板",
+        "Explore": "探索",
+        "Marketplace": "市场",
+        "Sponsors": "赞助者",
+        "Organizations": "组织",
+        "Enterprises": "企业版",
+        "Billing": "账单",
+        "Copilot": "GitHub Copilot",
+    };
+
+    const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
+    const controlledSurfaceSelector = [
+        'header.GlobalNav',
+        '#__primerPortalRoot__ [role="menu"]',
+        '#__primerPortalRoot__ [role="dialog"]',
+        '#__primerPortalRoot__ [role="tooltip"]',
+    ].join(', ');
+    const searchSurfaceSelector = 'qbsearch-input';
+    const unsafeTextSelector = [
+        'textarea',
+        '[contenteditable="true"]',
+        'code',
+        'pre',
+        'kbd',
+        'svg',
+        'img',
+        'canvas',
+        'video',
+    ].join(', ');
+    const searchSelector = 'header.GlobalNav [class*="Search-module__"], qbsearch-input, #__primerPortalRoot__ [role="dialog"]';
+    const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
+    let timer = null;
+    let headerObserver = null;
+    const observedSurfaces = new WeakSet();
+
+    function isReactGlobalNavSearchActive() {
+        const active = document.activeElement;
+        return !!active?.closest?.(searchSelector)
+            || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
+    }
+
+    function findStaticGlobalNavLabel(source) {
+        const locale = I18N["zh-CN"] || I18N.zh;
+        if (!locale) return null;
+
+        for (const section of Object.values(locale)) {
+            const label = section?.static?.[source];
+            if (typeof label === 'string' && label && label !== source) {
+                return label;
+            }
+        }
+
+        return null;
+    }
+
+    function findRegexpGlobalNavLabel(source) {
+        const locale = I18N["zh-CN"] || I18N.zh;
+        if (!locale) return null;
+
+        for (const section of Object.values(locale)) {
+            for (const [pattern, replacement] of section?.regexp || []) {
+                const label = source.replace(pattern, replacement);
+                if (label !== source) return label;
+            }
+        }
+
+        return null;
+    }
+
+    function resolveReactGlobalNavLabel(source) {
+        return labels[source] || findStaticGlobalNavLabel(source) || findRegexpGlobalNavLabel(source);
+    }
+
+    function normalizeReactGlobalNavText(text) {
+        return text?.replace(/\s+/g, ' ').trim();
+    }
+
+    function translateReactGlobalNavText(text) {
+        const source = normalizeReactGlobalNavText(text);
+        return source ? resolveReactGlobalNavLabel(source) : null;
+    }
+
+    function translateReactGlobalNavElement(element, source) {
+        const label = translateReactGlobalNavText(source ?? element.textContent);
+        if (label && element.textContent !== label) {
+            element.textContent = label;
+        }
+    }
+
+    function shouldSkipReactGlobalNavNode(node) {
+        const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+        if (!element) return true;
+        if (element.closest?.(unsafeTextSelector)) return true;
+
+        const searchRoot = element.closest?.(searchSurfaceSelector);
+        return !!searchRoot && !isReactGlobalNavSearchActive();
+    }
+
+    function translateReactGlobalNavAttributes(element) {
+        translatableAttributeNames.forEach(attributeName => {
+            const value = element.getAttribute?.(attributeName);
+            const label = translateReactGlobalNavText(value);
+            if (label && value !== label) {
+                element.setAttribute(attributeName, label);
+            }
+        });
+    }
+
+    function translateReactGlobalNavTextNode(node) {
+        const label = translateReactGlobalNavText(node.data);
+        if (label) {
+            node.data = node.data.replace(node.data.trim(), label);
+        }
+    }
+
+    function translateReactGlobalNavSurface(surface) {
+        if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
+
+        if (surface.nodeType === Node.ELEMENT_NODE) {
+            translateReactGlobalNavAttributes(surface);
+        }
+
+        const walker = document.createTreeWalker(
+            surface,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
+            {
+                acceptNode(node) {
+                    return shouldSkipReactGlobalNavNode(node)
+                        ? NodeFilter.FILTER_REJECT
+                        : NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+
+        let node;
+        while ((node = walker.nextNode())) {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+                translateReactGlobalNavAttributes(node);
+            } else if (node.nodeType === Node.TEXT_NODE) {
+                translateReactGlobalNavTextNode(node);
+            }
+        }
+    }
+
+    function getReactGlobalNavSurfaces() {
+        const surfaces = Array.from(document.querySelectorAll(controlledSurfaceSelector));
+
+        if (isReactGlobalNavSearchActive()) {
+            surfaces.push(...document.querySelectorAll(searchSurfaceSelector));
+        }
+
+        return Array.from(new Set(surfaces));
+    }
+
+    function translateReactGlobalNavLabels() {
+        document.querySelectorAll(dataContentLabelSelector).forEach(element => {
+            translateReactGlobalNavElement(element, element.getAttribute('data-content'));
+        });
+
+        getReactGlobalNavSurfaces().forEach(translateReactGlobalNavSurface);
+
+        observeReactGlobalNav();
+    }
+
+    function scheduleReactGlobalNavTranslation(delay = 800) {
+        window.clearTimeout(timer);
+        timer = window.setTimeout(translateReactGlobalNavLabels, delay);
+    }
+
+    function scheduleReactGlobalNavSeries() {
+        [800, 1600, 3000].forEach(delay => {
+            window.setTimeout(translateReactGlobalNavLabels, delay);
+        });
+    }
+
+    function observeReactGlobalNav() {
+        if (!headerObserver) {
+            headerObserver = new MutationObserver(() => {
+                scheduleReactGlobalNavTranslation(500);
+            });
+        }
+
+        [
+            document.querySelector('header.GlobalNav'),
+            document.querySelector('#__primerPortalRoot__'),
+        ].forEach(surface => {
+            if (!surface || observedSurfaces.has(surface)) return;
+
+            observedSurfaces.add(surface);
+            headerObserver.observe(surface, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scheduleReactGlobalNavSeries, { once: true });
+    } else {
+        scheduleReactGlobalNavSeries();
+    }
+
+    window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
+    window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
+    document.addEventListener('click', () => scheduleReactGlobalNavTranslation(100), true);
+    document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(100), true);
+    document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(500), true);
+    document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(100), true);
+})();
 
 I18N["zh-CN"] = {};
 
