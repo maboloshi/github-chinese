@@ -381,7 +381,9 @@ I18N.conf = {
         '#__primerPortalRoot__ [role="dialog"]',
         '#__primerPortalRoot__ [role="tooltip"]',
     ].join(', ');
+    const portalSurfaceSelector = '#__primerPortalRoot__ [role="menu"], #__primerPortalRoot__ [role="dialog"], #__primerPortalRoot__ [role="tooltip"]';
     const searchSurfaceSelector = 'qbsearch-input';
+    const searchModuleSelector = 'header.GlobalNav [class*="Search-module__"]';
     const unsafeTextSelector = [
         'textarea',
         '[contenteditable="true"]',
@@ -393,16 +395,33 @@ I18N.conf = {
         'canvas',
         'video',
     ].join(', ');
-    const searchSelector = 'header.GlobalNav [class*="Search-module__"], qbsearch-input, #__primerPortalRoot__ [role="dialog"]';
+    const searchSelector = `${searchModuleSelector}, ${searchSurfaceSelector}, #__primerPortalRoot__ [role="dialog"]`;
     const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
+    const reactGlobalNavIdleMs = 700;
+    const reactGlobalNavRetryMs = 400;
     let timer = null;
     let headerObserver = null;
+    let lastReactGlobalNavMutationAt = Date.now();
+    let lastReactGlobalNavPortalMutationAt = Date.now();
     const observedSurfaces = new WeakSet();
 
     function isReactGlobalNavSearchActive() {
         const active = document.activeElement;
         return !!active?.closest?.(searchSelector)
             || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
+    }
+
+    function isReactGlobalNavSurfaceIdle(surfaceType = 'header') {
+        const lastMutationAt = surfaceType === 'portal'
+            ? lastReactGlobalNavPortalMutationAt
+            : lastReactGlobalNavMutationAt;
+        return Date.now() - lastMutationAt >= reactGlobalNavIdleMs;
+    }
+
+    function canTranslateReactGlobalNavHeader() {
+        return document.readyState === 'complete'
+            && isReactGlobalNavSurfaceIdle('header')
+            && !isReactGlobalNavSearchActive();
     }
 
     function findStaticGlobalNavLabel(source) {
@@ -457,9 +476,10 @@ I18N.conf = {
         const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
         if (!element) return true;
         if (element.closest?.(unsafeTextSelector)) return true;
+        if (element.closest?.(searchModuleSelector)) return true;
+        if (element.closest?.(searchSurfaceSelector)) return true;
 
-        const searchRoot = element.closest?.(searchSurfaceSelector);
-        return !!searchRoot && !isReactGlobalNavSearchActive();
+        return false;
     }
 
     function translateReactGlobalNavAttributes(element) {
@@ -508,29 +528,45 @@ I18N.conf = {
         }
     }
 
-    function getReactGlobalNavSurfaces() {
-        const surfaces = Array.from(document.querySelectorAll(controlledSurfaceSelector));
+    function translateReactGlobalNavHeader() {
+        const header = document.querySelector('header.GlobalNav');
+        if (!header) return true;
+        if (!canTranslateReactGlobalNavHeader()) return false;
 
-        if (isReactGlobalNavSearchActive()) {
-            surfaces.push(...document.querySelectorAll(searchSurfaceSelector));
-        }
-
-        return Array.from(new Set(surfaces));
-    }
-
-    function translateReactGlobalNavLabels() {
         document.querySelectorAll(dataContentLabelSelector).forEach(element => {
-            translateReactGlobalNavElement(element, element.getAttribute('data-content'));
+            if (!shouldSkipReactGlobalNavNode(element)) {
+                translateReactGlobalNavElement(element, element.getAttribute('data-content'));
+            }
         });
+        translateReactGlobalNavSurface(header);
 
-        getReactGlobalNavSurfaces().forEach(translateReactGlobalNavSurface);
-
-        observeReactGlobalNav();
+        return true;
     }
 
-    function scheduleReactGlobalNavTranslation(delay = 800) {
+    function translateReactGlobalNavPortals() {
+        const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector));
+        if (!surfaces.length) return true;
+        if (!isReactGlobalNavSurfaceIdle('portal')) return false;
+
+        surfaces.forEach(translateReactGlobalNavSurface);
+
+        return true;
+    }
+
+    function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
+        observeReactGlobalNav();
+
+        const headerTranslated = translateReactGlobalNavHeader();
+        const portalsTranslated = translateReactGlobalNavPortals();
+
+        if ((options.requireSettledHeader && !headerTranslated) || !portalsTranslated) {
+            scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, options);
+        }
+    }
+
+    function scheduleReactGlobalNavTranslation(delay = 800, options = {}) {
         window.clearTimeout(timer);
-        timer = window.setTimeout(translateReactGlobalNavLabels, delay);
+        timer = window.setTimeout(() => translateReactGlobalNavLabels(options), delay);
     }
 
     function scheduleReactGlobalNavSeries() {
@@ -539,10 +575,20 @@ I18N.conf = {
         });
     }
 
+    function recordReactGlobalNavMutation(surface) {
+        if (surface?.id === '__primerPortalRoot__' || surface?.closest?.('#__primerPortalRoot__')) {
+            lastReactGlobalNavPortalMutationAt = Date.now();
+            return;
+        }
+
+        lastReactGlobalNavMutationAt = Date.now();
+    }
+
     function observeReactGlobalNav() {
         if (!headerObserver) {
-            headerObserver = new MutationObserver(() => {
-                scheduleReactGlobalNavTranslation(500);
+            headerObserver = new MutationObserver(mutations => {
+                mutations.forEach(mutation => recordReactGlobalNavMutation(mutation.target));
+                scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true });
             });
         }
 
@@ -553,6 +599,7 @@ I18N.conf = {
             if (!surface || observedSurfaces.has(surface)) return;
 
             observedSurfaces.add(surface);
+            recordReactGlobalNavMutation(surface);
             headerObserver.observe(surface, {
                 childList: true,
                 subtree: true,
@@ -569,10 +616,10 @@ I18N.conf = {
 
     window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
     window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
-    document.addEventListener('click', () => scheduleReactGlobalNavTranslation(100), true);
-    document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(100), true);
-    document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(500), true);
-    document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(100), true);
+    document.addEventListener('click', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+    document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+    document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+    document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
 })();
 
 I18N["zh-TW"] = {};

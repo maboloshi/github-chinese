@@ -298,6 +298,9 @@ for (const fileName of localeFiles) {
         assert.match(source, /function findRegexpGlobalNavLabel/);
         assert.match(source, /function translateReactGlobalNavSurface/);
         assert.match(source, /function translateReactGlobalNavAttributes/);
+        assert.match(source, /function canTranslateReactGlobalNavHeader/);
+        assert.match(source, /function isReactGlobalNavSurfaceIdle/);
+        assert.match(source, /requireSettledHeader: true/);
         assert.match(source, /controlledSurfaceSelector/);
         assert.match(source, /searchSurfaceSelector/);
         assert.match(source, /pointerover/);
@@ -316,5 +319,17 @@ for (const fileName of localeFiles) {
 
         assert.doesNotMatch(source, /::after/);
         assert.doesNotMatch(source, /github-chinese-react-global-nav-style/);
+    });
+
+    test(`${fileName} does not translate React search widgets during early interactions`, () => {
+        const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
+
+        assert.match(source, /const searchSurfaceSelector = 'qbsearch-input'/);
+        assert.match(source, /element\.closest\?\.\(searchSurfaceSelector\)/);
+        assert.match(source, /if \(!shouldSkipReactGlobalNavNode\(element\)\)/);
+        assert.doesNotMatch(
+            source,
+            /surfaces\.push\(\.\.\.document\.querySelectorAll\(searchSurfaceSelector\)\)/,
+        );
     });
 }
