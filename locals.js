@@ -106,7 +106,7 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全局导航
-            '[class*="Search-module__"]', // React 版顶部搜索按钮
+            'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
             'qbsearch-input', // 顶部搜索框自定义元素
             '#__primerPortalRoot__', // React 弹层挂载点
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
@@ -234,7 +234,7 @@ I18N.conf = {
         ],
         '*': [
             'header.GlobalNav', // React 版全局导航
-            '[class*="Search-module__"]', // React 版顶部搜索按钮
+            'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
             'qbsearch-input', // 顶部搜索框自定义元素
             '#__primerPortalRoot__', // React 弹层挂载点
             '.comment-body', '.js-preview-body',
@@ -279,7 +279,7 @@ I18N.conf = {
      * tree 视图 文件名 react-directory-filename-column 提交信息 react-directory-commit-message
      * 代码差异页面 代码 pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en
      */
-    reIgnoreClass: /(GlobalNav|Search-module|QueryBuilder|cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
+    reIgnoreClass: /(GlobalNav|QueryBuilder|cm-line|ͼ.*|pl-s1|pl-smi|pl-token|pl-c1|pl-kos|pl-k|pl-c|pl-en|CodeMirror|blob-code|highlight-.*|repo-and-owner|js-path-segment|final-path|files js-navigation-container|js-comment-body|js-preview-body|comment-form-textarea|markdown-title|js-tree-finder-virtual-filter|js-navigation-open Link--primary|js-modifier-key|capped-list-label|blob-code blob-code-inner js-file-line|markdown-body my-3|f4 my-3|commit-author$|search-match|react-directory-filename-column|react-directory-commit-message|react-code-text|zausi)/,
 
     /**
      * 忽略区域的 itemprop 属性正则

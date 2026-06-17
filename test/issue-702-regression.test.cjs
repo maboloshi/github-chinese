@@ -16,7 +16,7 @@ const protectedReactGlobalNavSelectors = [
 ];
 
 const protectedReactTraversalSelectors = [
-    '[class*="Search-module__"]',
+    'header.GlobalNav [class*="Search-module__"]',
     'qbsearch-input',
     '#__primerPortalRoot__',
 ];
@@ -251,6 +251,15 @@ for (const fileName of localeFiles) {
             );
         }
 
+        assert.ok(
+            !mutationSelectors.includes('[class*="Search-module__"]'),
+            'React Search-module classes must not be ignored globally because repository and search pages reuse them',
+        );
+        assert.ok(
+            !traversalSelectors.includes('[class*="Search-module__"]'),
+            'React Search-module classes must not be skipped outside GlobalNav',
+        );
+
         assert.equal(config.reactGlobalNavStyle, undefined);
     });
 
@@ -263,9 +272,9 @@ for (const fileName of localeFiles) {
             'Legacy traversal should skip the React global navigation before it is hydrated',
         );
         assert.equal(
-            config.reIgnoreClass.test('Search-module__searchButton__aiE0a'),
-            true,
-            'React search button class should be ignored by the legacy traversal',
+            config.reIgnoreClass.test('Search-module__SearchContainer__O_2rw'),
+            false,
+            'Repository and search page React search modules should remain translatable',
         );
         assert.ok(
             config.reIgnoreTag.includes('QBSEARCH-INPUT'),
