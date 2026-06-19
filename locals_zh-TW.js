@@ -2316,11 +2316,15 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
 I18N["zh-TW"]["orgs-public"] = { // 組織公共部分
     "static": { // 靜態翻譯
+        "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的組織已對公眾隱藏。如果您認為這是一個錯誤，",
+        "contact support": "聯繫支持人員",
+        "to have your organization’s status reviewed.": "以便審查您組織的狀態。",
     },
     "regexp": [ // 正則翻譯
         [/Invite someone to/, "邀請加入到組織"],
         [/New team in/, "新建團隊在組織"],
         [/New repository in/, "新建儲存庫在組織"],
+        [/The (.+) organization has been flagged\./, "$1 組織已被標記。"],
         [/This organization was marked as archived by an administrator on (.+). It is no longer maintained./, (match, p1) => {
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);

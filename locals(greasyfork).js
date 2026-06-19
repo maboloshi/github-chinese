@@ -1993,11 +1993,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
 I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
     "static": { // 静态翻译
+        "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的组织已对公众隐藏。如果您认为这是一个错误，",
+        "contact support": "联系支持人员",
+        "to have your organization’s status reviewed.": "以便审核您组织的状态。",
     },
     "regexp": [ // 正则翻译
         [/Invite someone to/, "邀请加入到组织"],
         [/New team in/, "新建团队在组织"],
         [/New repository in/, "新建仓库在组织"],
+        [/The (.+) organization has been flagged\./, "$1 组织已被标记。"],
         [/This organization was marked as archived by an administrator on (.+). It is no longer maintained./, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
