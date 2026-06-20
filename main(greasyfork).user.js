@@ -30,6 +30,332 @@
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
+    function isReactGlobalNavPortalNode(node) {
+        const element = node?.nodeType === 1 ? node : node?.parentElement;
+        const portalRoot = element?.closest?.('#__primerPortalRoot__');
+        if (!portalRoot) return false;
+
+        const portal = element.closest?.('[data-component="Portal"]')
+            || element.querySelector?.('[data-component="Portal"]')
+            || portalRoot;
+        if (portal.matches?.('#search-suggestions-dialog')
+            || portal.querySelector?.('#search-suggestions-dialog')) return true;
+
+        const referenceAttributes = ['aria-labelledby', 'aria-describedby', 'aria-controls', 'aria-owns'];
+        const referenceElements = [
+            portal,
+            ...portal.querySelectorAll?.(
+                referenceAttributes.map(attribute => `[${attribute}]`).join(', ')
+            ) || [],
+        ];
+
+        for (const referenceElement of referenceElements) {
+            for (const attribute of referenceAttributes) {
+                const ids = referenceElement.getAttribute?.(attribute)?.split(/\s+/) || [];
+                if (ids.some(id => document.getElementById(id)?.closest?.('header.GlobalNav'))) {
+                    return true;
+                }
+            }
+        }
+
+        const portalIds = new Set([
+            portal.id,
+            ...Array.from(portal.querySelectorAll?.('[id]') || [], item => item.id),
+        ].filter(Boolean));
+        if (portalIds.size) {
+            const headerReferences = document.querySelectorAll(
+                'header.GlobalNav [aria-describedby], header.GlobalNav [aria-controls], header.GlobalNav [aria-owns]'
+            );
+            for (const headerReference of headerReferences) {
+                for (const attribute of ['aria-describedby', 'aria-controls', 'aria-owns']) {
+                    const ids = headerReference.getAttribute(attribute)?.split(/\s+/) || [];
+                    if (ids.some(id => portalIds.has(id))) return true;
+                }
+            }
+        }
+
+        const hasControlledSurface = portal.matches?.('[role="menu"], [role="dialog"], [role="tooltip"]')
+            || portal.querySelector?.('[role="menu"], [role="dialog"], [role="tooltip"]');
+        return !!hasControlledSurface
+            && !!document.activeElement?.closest?.('header.GlobalNav, qbsearch-input');
+
+    }
+
+    function setupReactGlobalNavTranslation() {
+        if (typeof document === 'undefined' || typeof window === 'undefined') return;
+
+        const labels = I18N.conf.reactGlobalNavLabels || {};
+
+        const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
+        const controlledSurfaceSelector = [
+            'header.GlobalNav',
+            '#__primerPortalRoot__ [role="menu"]',
+            '#__primerPortalRoot__ [role="dialog"]',
+            '#__primerPortalRoot__ [role="tooltip"]',
+        ].join(', ');
+        const portalSurfaceSelector = '#__primerPortalRoot__ [role="menu"], #__primerPortalRoot__ [role="dialog"], #__primerPortalRoot__ [role="tooltip"]';
+        const searchSurfaceSelector = 'qbsearch-input';
+        const searchModuleSelector = 'header.GlobalNav [class*="Search-module__"]';
+        const unsafeTextSelector = [
+            'textarea',
+            '[contenteditable="true"]',
+            'code',
+            'pre',
+            'kbd',
+            'svg',
+            'img',
+            'canvas',
+            'video',
+        ].join(', ');
+        const searchSelector = `${searchModuleSelector}, ${searchSurfaceSelector}, #__primerPortalRoot__ [role="dialog"]`;
+        const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
+        const reactGlobalNavIdleMs = 700;
+        const reactGlobalNavRetryMs = 400;
+        let timer = null;
+        let headerObserver = null;
+        let lastReactGlobalNavMutationAt = Date.now();
+        let lastReactGlobalNavPortalMutationAt = Date.now();
+        const observedSurfaces = new WeakSet();
+
+        function isReactGlobalNavSearchActive() {
+            const active = document.activeElement;
+            return !!active?.closest?.(searchSelector)
+                || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
+        }
+
+        function isReactGlobalNavSurfaceIdle(surfaceType = 'header') {
+            const lastMutationAt = surfaceType === 'portal'
+                ? lastReactGlobalNavPortalMutationAt
+                : lastReactGlobalNavMutationAt;
+            return Date.now() - lastMutationAt >= reactGlobalNavIdleMs;
+        }
+
+        function canTranslateReactGlobalNavHeader() {
+            return document.readyState === 'complete'
+                && isReactGlobalNavSurfaceIdle('header')
+                && !isReactGlobalNavSearchActive();
+        }
+
+        function findStaticGlobalNavLabel(source) {
+            const locale = I18N["zh-CN"] || I18N.zh;
+            if (!locale) return null;
+
+            for (const section of Object.values(locale)) {
+                const label = section?.static?.[source];
+                if (typeof label === 'string' && label && label !== source) {
+                    return label;
+                }
+            }
+
+            return null;
+        }
+
+        function findRegexpGlobalNavLabel(source) {
+            const locale = I18N["zh-CN"] || I18N.zh;
+            if (!locale) return null;
+
+            for (const section of Object.values(locale)) {
+                for (const [pattern, replacement] of section?.regexp || []) {
+                    const match = source.match(pattern);
+                    if (!match || match.index !== 0 || match[0] !== source) continue;
+
+                    const label = source.replace(pattern, replacement);
+                    if (label !== source) return label;
+                }
+            }
+
+            return null;
+        }
+
+        function resolveReactGlobalNavLabel(source) {
+            return labels[source] || findStaticGlobalNavLabel(source) || findRegexpGlobalNavLabel(source);
+        }
+
+        function normalizeReactGlobalNavText(text) {
+            return text?.replace(/\s+/g, ' ').trim();
+        }
+
+        function translateReactGlobalNavText(text) {
+            const source = normalizeReactGlobalNavText(text);
+            return source ? resolveReactGlobalNavLabel(source) : null;
+        }
+
+        function translateReactGlobalNavElement(element, source) {
+            const label = translateReactGlobalNavText(source ?? element.textContent);
+            if (label && element.textContent !== label) {
+                element.textContent = label;
+            }
+        }
+
+        function shouldSkipReactGlobalNavNode(node) {
+            const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+            if (!element) return true;
+            if (element.closest?.(unsafeTextSelector)) return true;
+            if (element.closest?.(searchModuleSelector)) return true;
+            if (element.closest?.(searchSurfaceSelector)) return true;
+
+            return false;
+        }
+
+        function translateReactGlobalNavAttributes(element) {
+            translatableAttributeNames.forEach(attributeName => {
+                const value = element.getAttribute?.(attributeName);
+                const label = translateReactGlobalNavText(value);
+                if (label && value !== label) {
+                    element.setAttribute(attributeName, label);
+                }
+            });
+        }
+
+        function translateReactGlobalNavTextNode(node) {
+            const label = translateReactGlobalNavText(node.data);
+            if (label) {
+                node.data = node.data.replace(node.data.trim(), label);
+            }
+        }
+
+        function translateReactGlobalNavSurface(surface) {
+            if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
+
+            if (surface.nodeType === Node.ELEMENT_NODE) {
+                translateReactGlobalNavAttributes(surface);
+            }
+
+            const walker = document.createTreeWalker(
+                surface,
+                NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        return shouldSkipReactGlobalNavNode(node)
+                            ? NodeFilter.FILTER_REJECT
+                            : NodeFilter.FILTER_ACCEPT;
+                    }
+                }
+            );
+
+            let node;
+            while ((node = walker.nextNode())) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    translateReactGlobalNavAttributes(node);
+                } else if (node.nodeType === Node.TEXT_NODE) {
+                    translateReactGlobalNavTextNode(node);
+                }
+            }
+        }
+
+        function translateReactGlobalNavHeader() {
+            const header = document.querySelector('header.GlobalNav');
+            if (!header) return true;
+            if (!canTranslateReactGlobalNavHeader()) return false;
+
+            document.querySelectorAll(dataContentLabelSelector).forEach(element => {
+                if (!shouldSkipReactGlobalNavNode(element)) {
+                    translateReactGlobalNavElement(element, element.getAttribute('data-content'));
+                }
+            });
+            translateReactGlobalNavSurface(header);
+
+            return true;
+        }
+
+        function isReactGlobalNavSearchPortal(surface) {
+            return surface.matches?.('[role="dialog"]')
+                || !!surface.querySelector?.('#search-suggestions-dialog, qbsearch-input, [role="dialog"]');
+        }
+
+        function translateReactGlobalNavPortals() {
+            const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector))
+                .filter(isReactGlobalNavPortalNode);
+            if (!surfaces.length) return true;
+
+            let searchPortalPending = false;
+            surfaces.forEach(surface => {
+                if (isReactGlobalNavSearchPortal(surface) && !isReactGlobalNavSurfaceIdle('portal')) {
+                    searchPortalPending = true;
+                    return;
+                }
+                translateReactGlobalNavSurface(surface);
+            });
+
+            return !searchPortalPending;
+        }
+
+        function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
+            observeReactGlobalNav();
+
+            const headerTranslated = translateReactGlobalNavHeader();
+            const portalsTranslated = translateReactGlobalNavPortals();
+
+            if ((options.requireSettledHeader && !headerTranslated) || !portalsTranslated) {
+                scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, options);
+            }
+        }
+
+        function scheduleReactGlobalNavTranslation(delay = 800, options = {}) {
+            window.clearTimeout(timer);
+            timer = window.setTimeout(() => translateReactGlobalNavLabels(options), delay);
+        }
+
+        function scheduleReactGlobalNavSeries() {
+            [800, 1600, 3000].forEach(delay => {
+                window.setTimeout(translateReactGlobalNavLabels, delay);
+            });
+        }
+
+        function recordReactGlobalNavMutation(surface) {
+            if (surface?.id === '__primerPortalRoot__' || surface?.closest?.('#__primerPortalRoot__')) {
+                lastReactGlobalNavPortalMutationAt = Date.now();
+                return;
+            }
+
+            lastReactGlobalNavMutationAt = Date.now();
+        }
+
+        function observeReactGlobalNav() {
+            if (!headerObserver) {
+                headerObserver = new MutationObserver(mutations => {
+                    mutations.forEach(mutation => recordReactGlobalNavMutation(mutation.target));
+                    translateReactGlobalNavPortals();
+                    scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true });
+                });
+            }
+
+            [
+                document.querySelector('header.GlobalNav'),
+                document.querySelector('#__primerPortalRoot__'),
+            ].forEach(surface => {
+                if (!surface || observedSurfaces.has(surface)) return;
+
+                observedSurfaces.add(surface);
+                recordReactGlobalNavMutation(surface);
+                headerObserver.observe(surface, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true,
+                });
+            });
+        }
+
+        function startReactGlobalNavTranslation() {
+            observeReactGlobalNav();
+            scheduleReactGlobalNavSeries();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startReactGlobalNavTranslation, { once: true });
+        } else {
+            startReactGlobalNavTranslation();
+        }
+
+        window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
+        window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
+        document.addEventListener('click', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+        document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+        document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+        document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
+
+    }
+
     function getElementFromNode(node) {
         if (!node) return null;
         return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
@@ -53,7 +379,7 @@
             return true;
         }
 
-        return I18N.conf.isReactGlobalNavPortalNode?.(element) || false;
+        return isReactGlobalNavPortalNode(element);
     }
 
     /**
@@ -519,6 +845,8 @@
      * init 函数：初始化翻译功能。
      */
     function init() {
+        setupReactGlobalNavTranslation();
+
         // 获取当前页面的翻译规则
         page = getPage();
         console.log(`开始page= ${page}`);

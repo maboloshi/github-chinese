@@ -232,17 +232,6 @@ function loadConfig(fileName) {
     return context.I18N.conf;
 }
 
-function loadConfigWithDocument(fileName, document) {
-    const filePath = path.join(__dirname, '..', fileName);
-    const context = vm.createContext({ document });
-
-    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, {
-        filename: filePath,
-    });
-
-    return context.I18N.conf;
-}
-
 function loadLocale(fileName, localeName) {
     const filePath = path.join(__dirname, '..', fileName);
     const context = vm.createContext({});
@@ -261,6 +250,20 @@ function translateWithRules(source, rules) {
     }
 
     return source;
+}
+
+function loadRuntimeFunction(fileName, functionName, document) {
+    const filePath = path.join(__dirname, '..', fileName);
+    const source = fs.readFileSync(filePath, 'utf8');
+    const start = source.indexOf(`    function ${functionName}(`);
+    const end = source.indexOf('\n\n    function ', start + 1);
+    assert.notEqual(start, -1, `${functionName} should exist in ${fileName}`);
+    assert.notEqual(end, -1, `${functionName} should be followed by another runtime function`);
+
+    const context = vm.createContext({ document });
+    return vm.runInContext(`(${source.slice(start, end).trim()})`, context, {
+        filename: filePath,
+    });
 }
 
 for (const fileName of localeFiles) {
@@ -339,16 +342,57 @@ test('main(greasyfork).user.js skips GlobalNav mutation updates for the legacy s
     assert.match(script, /function shouldIgnoreMutationNode/);
     assert.match(script, /ignoreMutationSelectorPage/);
     assert.match(script, /closest\?\.\(ignoreMutationSelectors\)/);
-    assert.match(script, /I18N\.conf\.isReactGlobalNavPortalNode/);
+    assert.match(script, /isReactGlobalNavPortalNode/);
     assert.match(script, /addedNodes\.forEach/);
 });
 
 for (const scriptName of runtimeScripts) {
-    test(`${scriptName} routes only GlobalNav-owned portals away from generic translation`, () => {
+    test(`${scriptName} owns the React GlobalNav runtime patch`, () => {
         const script = fs.readFileSync(path.join(__dirname, '..', scriptName), 'utf8');
 
+        assert.match(script, /function setupReactGlobalNavTranslation/);
+        assert.ok(
+            script.match(/\bsetupReactGlobalNavTranslation\(\)/g)?.length >= 2,
+            'The runtime patch must be defined and started during script initialization',
+        );
+        assert.match(script, /function translateReactGlobalNavLabels/);
+        assert.match(script, /function resolveReactGlobalNavLabel/);
+        assert.match(script, /function findStaticGlobalNavLabel/);
+        assert.match(script, /function findRegexpGlobalNavLabel/);
+        assert.match(script, /match\[0\] !== source/);
+        assert.match(script, /function translateReactGlobalNavSurface/);
+        assert.match(script, /function translateReactGlobalNavAttributes/);
+        assert.match(script, /function canTranslateReactGlobalNavHeader/);
+        assert.match(script, /function isReactGlobalNavSurfaceIdle/);
+        assert.match(script, /function isReactGlobalNavSearchPortal/);
+        assert.match(script, /function startReactGlobalNavTranslation/);
+        assert.match(
+            script,
+            /function startReactGlobalNavTranslation\(\) \{\s*observeReactGlobalNav\(\);\s*scheduleReactGlobalNavSeries\(\);/s,
+        );
+        assert.match(
+            script,
+            /isReactGlobalNavSearchPortal\(surface\) && !isReactGlobalNavSurfaceIdle\('portal'\)/,
+        );
+        assert.match(script, /requireSettledHeader: true/);
+        assert.match(script, /controlledSurfaceSelector/);
+        assert.match(script, /searchSurfaceSelector/);
+        assert.match(script, /pointerover/);
+        assert.match(script, /#__primerPortalRoot__ \[role="tooltip"\]/);
+        assert.match(script, /\.filter\(isReactGlobalNavPortalNode\)/);
+        assert.match(script, /I18N\.conf\.reactGlobalNavLabels/);
+        assert.match(script, /qbsearch-input/);
+        assert.match(script, /placeholder/);
+        assert.match(script, /element\.closest\?\.\(searchSurfaceSelector\)/);
+        assert.match(script, /if \(!shouldSkipReactGlobalNavNode\(element\)\)/);
+        assert.doesNotMatch(
+            script,
+            /surfaces\.push\(\.\.\.document\.querySelectorAll\(searchSurfaceSelector\)\)/,
+        );
+        assert.doesNotMatch(script, /input:not/);
+        assert.match(script, /textContent = label/);
         assert.match(script, /function shouldIgnoreMutationNode/);
-        assert.match(script, /I18N\.conf\.isReactGlobalNavPortalNode/);
+        assert.match(script, /function isReactGlobalNavPortalNode/);
         assert.doesNotMatch(
             script,
             /closest\?\.\(State\.pageConfig\.ignoreMutationSelectors\)/,
@@ -358,45 +402,22 @@ for (const scriptName of runtimeScripts) {
 }
 
 for (const fileName of localeFiles) {
-    test(`${fileName} translates React GlobalNav labels without CSS pseudo-elements`, () => {
+    test(`${fileName} only stores React GlobalNav configuration and labels`, () => {
         const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
+        const config = loadConfig(fileName);
         const { labels } = expectedReactNavLabels[fileName];
 
-        assert.match(source, /function translateReactGlobalNavLabels/);
-        assert.match(source, /function resolveReactGlobalNavLabel/);
-        assert.match(source, /function findStaticGlobalNavLabel/);
-        assert.match(source, /function findRegexpGlobalNavLabel/);
-        assert.match(source, /match\[0\] !== source/);
-        assert.match(source, /function translateReactGlobalNavSurface/);
-        assert.match(source, /function translateReactGlobalNavAttributes/);
-        assert.match(source, /function canTranslateReactGlobalNavHeader/);
-        assert.match(source, /function isReactGlobalNavSurfaceIdle/);
-        assert.match(source, /function isReactGlobalNavSearchPortal/);
-        assert.match(source, /function startReactGlobalNavTranslation/);
-        assert.match(
-            source,
-            /function startReactGlobalNavTranslation\(\) \{\s*observeReactGlobalNav\(\);\s*scheduleReactGlobalNavSeries\(\);/s,
-        );
-        assert.match(
-            source,
-            /isReactGlobalNavSearchPortal\(surface\) && !isReactGlobalNavSurfaceIdle\('portal'\)/,
-        );
-        assert.match(source, /requireSettledHeader: true/);
-        assert.match(source, /controlledSurfaceSelector/);
-        assert.match(source, /searchSurfaceSelector/);
-        assert.match(source, /pointerover/);
-        assert.match(source, /#__primerPortalRoot__ \[role="tooltip"\]/);
-        assert.match(source, /I18N\.conf\.isReactGlobalNavPortalNode/);
-        assert.match(source, /\.filter\(I18N\.conf\.isReactGlobalNavPortalNode\)/);
-        assert.match(source, /qbsearch-input/);
-        assert.match(source, /placeholder/);
-        assert.doesNotMatch(source, /input:not/);
-        assert.match(source, /textContent = label/);
+        assert.ok(config.reactGlobalNavLabels);
+        assert.doesNotMatch(source, /setupReactGlobalNavTranslation/);
+        assert.doesNotMatch(source, /function translateReactGlobalNav/);
+        assert.doesNotMatch(source, /function isReactGlobalNavPortalNode/);
+        assert.doesNotMatch(source, /new MutationObserver/);
 
         for (const [sourceLabel, targetLabel] of Object.entries(labels)) {
-            assert.ok(
-                source.includes(`"${sourceLabel}": "${targetLabel}"`),
-                `${fileName} should include ${sourceLabel} -> ${targetLabel}`,
+            assert.equal(
+                config.reactGlobalNavLabels[sourceLabel],
+                targetLabel,
+                `${fileName} should retain ${sourceLabel} -> ${targetLabel}`,
             );
         }
 
@@ -404,54 +425,10 @@ for (const fileName of localeFiles) {
         assert.doesNotMatch(source, /github-chinese-react-global-nav-style/);
     });
 
-    test(`${fileName} does not translate React search widgets during early interactions`, () => {
-        const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
-
-        assert.match(source, /const searchSurfaceSelector = 'qbsearch-input'/);
-        assert.match(source, /element\.closest\?\.\(searchSurfaceSelector\)/);
-        assert.match(source, /if \(!shouldSkipReactGlobalNavNode\(element\)\)/);
-        assert.doesNotMatch(
-            source,
-            /surfaces\.push\(\.\.\.document\.querySelectorAll\(searchSurfaceSelector\)\)/,
-        );
-    });
 }
 
-test('Simplified Chinese contributor periods use the page-specific full phrase rule', () => {
-    const locale = loadLocale('locals.js', 'zh-CN');
-    const rules = locale['repository/graphs/contributors'].regexp;
-
-    assert.equal(translateWithRules('Last 6 months', rules), '最后 6 个月');
-    assert.equal(translateWithRules('Last 12 months', rules), '最后 12 个月');
-    assert.equal(translateWithRules('Last 24 months', rules), '最后 24 个月');
-});
-
-test('Traditional Chinese contributor periods use the page-specific full phrase rule', () => {
-    const locale = loadLocale('locals_zh-TW.js', 'zh-TW');
-    const rules = locale['repository/graphs/contributors'].regexp;
-
-    assert.equal(translateWithRules('Last 6 months', rules), '最後 6 個月');
-    assert.equal(translateWithRules('Last 12 months', rules), '最後 12 個月');
-    assert.equal(translateWithRules('Last 24 months', rules), '最後 24 個月');
-});
-
-for (const [fileName, localeName, expected] of [
-    ['locals.js', 'zh-CN', '查看所有用户的提交'],
-    ['locals(greasyfork).js', 'zh-CN', '查看所有用户的提交'],
-    ['locals_zh-TW.js', 'zh-TW', '查看所有用戶的提交'],
-]) {
-    test(`${fileName} retains the commits menu footer translation`, () => {
-        const locale = loadLocale(fileName, localeName);
-
-        assert.equal(
-            locale['repository/commit'].static['View commits for all users'],
-            expected,
-        );
-    });
-}
-
-for (const fileName of localeFiles) {
-    test(`${fileName} distinguishes page portals from GlobalNav-owned portals`, () => {
+for (const scriptName of runtimeScripts) {
+    test(`${scriptName} distinguishes page portals from GlobalNav-owned portals`, () => {
         let headerOwned = false;
         let activeHeader = false;
         const trigger = {
@@ -509,13 +486,50 @@ for (const fileName of localeFiles) {
                 return [];
             },
         };
-        const config = loadConfigWithDocument(fileName, document);
+        const isReactGlobalNavPortalNode = loadRuntimeFunction(
+            scriptName,
+            'isReactGlobalNavPortalNode',
+            document,
+        );
 
-        assert.equal(config.isReactGlobalNavPortalNode(node), false);
+        assert.equal(isReactGlobalNavPortalNode(node), false);
         activeHeader = true;
-        assert.equal(config.isReactGlobalNavPortalNode(node), true);
+        assert.equal(isReactGlobalNavPortalNode(node), true);
         activeHeader = false;
         headerOwned = true;
-        assert.equal(config.isReactGlobalNavPortalNode(node), true);
+        assert.equal(isReactGlobalNavPortalNode(node), true);
+    });
+}
+
+test('Simplified Chinese contributor periods use the page-specific full phrase rule', () => {
+    const locale = loadLocale('locals.js', 'zh-CN');
+    const rules = locale['repository/graphs/contributors'].regexp;
+
+    assert.equal(translateWithRules('Last 6 months', rules), '最后 6 个月');
+    assert.equal(translateWithRules('Last 12 months', rules), '最后 12 个月');
+    assert.equal(translateWithRules('Last 24 months', rules), '最后 24 个月');
+});
+
+test('Traditional Chinese contributor periods use the page-specific full phrase rule', () => {
+    const locale = loadLocale('locals_zh-TW.js', 'zh-TW');
+    const rules = locale['repository/graphs/contributors'].regexp;
+
+    assert.equal(translateWithRules('Last 6 months', rules), '最後 6 個月');
+    assert.equal(translateWithRules('Last 12 months', rules), '最後 12 個月');
+    assert.equal(translateWithRules('Last 24 months', rules), '最後 24 個月');
+});
+
+for (const [fileName, localeName, expected] of [
+    ['locals.js', 'zh-CN', '查看所有用户的提交'],
+    ['locals(greasyfork).js', 'zh-CN', '查看所有用户的提交'],
+    ['locals_zh-TW.js', 'zh-TW', '查看所有用戶的提交'],
+]) {
+    test(`${fileName} retains the commits menu footer translation`, () => {
+        const locale = loadLocale(fileName, localeName);
+
+        assert.equal(
+            locale['repository/commit'].static['View commits for all users'],
+            expected,
+        );
     });
 }
