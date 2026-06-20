@@ -108,7 +108,6 @@ I18N.conf = {
             'header.GlobalNav', // React 版全局导航
             'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
             'qbsearch-input', // 顶部搜索框自定义元素
-            '#__primerPortalRoot__', // React 弹层挂载点
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
@@ -305,6 +304,56 @@ I18N.conf = {
     // marked-text --> 文件搜索模式/<user-name>/<repo-name>/find/<branch> 文件列表条目
     // ^script$ --> 避免勿过滤 notifications-list-subscription-form
     // ^pre$ --> 避免勿过滤
+
+    isReactGlobalNavPortalNode(node) {
+        const element = node?.nodeType === 1 ? node : node?.parentElement;
+        const portalRoot = element?.closest?.('#__primerPortalRoot__');
+        if (!portalRoot) return false;
+
+        const portal = element.closest?.('[data-component="Portal"]')
+            || element.querySelector?.('[data-component="Portal"]')
+            || portalRoot;
+        if (portal.matches?.('#search-suggestions-dialog')
+            || portal.querySelector?.('#search-suggestions-dialog')) return true;
+
+        const referenceAttributes = ['aria-labelledby', 'aria-describedby', 'aria-controls', 'aria-owns'];
+        const referenceElements = [
+            portal,
+            ...portal.querySelectorAll?.(
+                referenceAttributes.map(attribute => `[${attribute}]`).join(', ')
+            ) || [],
+        ];
+
+        for (const referenceElement of referenceElements) {
+            for (const attribute of referenceAttributes) {
+                const ids = referenceElement.getAttribute?.(attribute)?.split(/\s+/) || [];
+                if (ids.some(id => document.getElementById(id)?.closest?.('header.GlobalNav'))) {
+                    return true;
+                }
+            }
+        }
+
+        const portalIds = new Set([
+            portal.id,
+            ...Array.from(portal.querySelectorAll?.('[id]') || [], item => item.id),
+        ].filter(Boolean));
+        if (portalIds.size) {
+            const headerReferences = document.querySelectorAll(
+                'header.GlobalNav [aria-describedby], header.GlobalNav [aria-controls], header.GlobalNav [aria-owns]'
+            );
+            for (const headerReference of headerReferences) {
+                for (const attribute of ['aria-describedby', 'aria-controls', 'aria-owns']) {
+                    const ids = headerReference.getAttribute(attribute)?.split(/\s+/) || [];
+                    if (ids.some(id => portalIds.has(id))) return true;
+                }
+            }
+        }
+
+        const hasControlledSurface = portal.matches?.('[role="menu"], [role="dialog"], [role="tooltip"]')
+            || portal.querySelector?.('[role="menu"], [role="dialog"], [role="tooltip"]');
+        return !!hasControlledSurface
+            && !!document.activeElement?.closest?.('header.GlobalNav, qbsearch-input');
+    },
 };
 
 (function setupReactGlobalNavTranslation() {
@@ -444,6 +493,9 @@ I18N.conf = {
 
         for (const section of Object.values(locale)) {
             for (const [pattern, replacement] of section?.regexp || []) {
+                const match = source.match(pattern);
+                if (!match || match.index !== 0 || match[0] !== source) continue;
+
                 const label = source.replace(pattern, replacement);
                 if (label !== source) return label;
             }
@@ -543,14 +595,26 @@ I18N.conf = {
         return true;
     }
 
+    function isReactGlobalNavSearchPortal(surface) {
+        return surface.matches?.('[role="dialog"]')
+            || !!surface.querySelector?.('#search-suggestions-dialog, qbsearch-input, [role="dialog"]');
+    }
+
     function translateReactGlobalNavPortals() {
-        const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector));
+        const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector))
+            .filter(I18N.conf.isReactGlobalNavPortalNode);
         if (!surfaces.length) return true;
-        if (!isReactGlobalNavSurfaceIdle('portal')) return false;
 
-        surfaces.forEach(translateReactGlobalNavSurface);
+        let searchPortalPending = false;
+        surfaces.forEach(surface => {
+            if (isReactGlobalNavSearchPortal(surface) && !isReactGlobalNavSurfaceIdle('portal')) {
+                searchPortalPending = true;
+                return;
+            }
+            translateReactGlobalNavSurface(surface);
+        });
 
-        return true;
+        return !searchPortalPending;
     }
 
     function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
@@ -588,6 +652,7 @@ I18N.conf = {
         if (!headerObserver) {
             headerObserver = new MutationObserver(mutations => {
                 mutations.forEach(mutation => recordReactGlobalNavMutation(mutation.target));
+                translateReactGlobalNavPortals();
                 scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true });
             });
         }
@@ -608,10 +673,15 @@ I18N.conf = {
         });
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', scheduleReactGlobalNavSeries, { once: true });
-    } else {
+    function startReactGlobalNavTranslation() {
+        observeReactGlobalNav();
         scheduleReactGlobalNavSeries();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startReactGlobalNavTranslation, { once: true });
+    } else {
+        startReactGlobalNavTranslation();
     }
 
     window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);

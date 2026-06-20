@@ -12,13 +12,18 @@ const localeFiles = [
 
 const protectedReactGlobalNavSelectors = [
     'header.GlobalNav',
-    '#__primerPortalRoot__',
 ];
 
 const protectedReactTraversalSelectors = [
     'header.GlobalNav [class*="Search-module__"]',
     'qbsearch-input',
     '#__primerPortalRoot__',
+];
+
+const runtimeScripts = [
+    'main.user.js',
+    'main_zh-TW.user.js',
+    'main(greasyfork).user.js',
 ];
 
 const expectedReactNavLabels = {
@@ -227,6 +232,37 @@ function loadConfig(fileName) {
     return context.I18N.conf;
 }
 
+function loadConfigWithDocument(fileName, document) {
+    const filePath = path.join(__dirname, '..', fileName);
+    const context = vm.createContext({ document });
+
+    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, {
+        filename: filePath,
+    });
+
+    return context.I18N.conf;
+}
+
+function loadLocale(fileName, localeName) {
+    const filePath = path.join(__dirname, '..', fileName);
+    const context = vm.createContext({});
+
+    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, {
+        filename: filePath,
+    });
+
+    return context.I18N[localeName];
+}
+
+function translateWithRules(source, rules) {
+    for (const [pattern, replacement] of rules) {
+        const result = source.replace(pattern, replacement);
+        if (result !== source) return result;
+    }
+
+    return source;
+}
+
 for (const fileName of localeFiles) {
     test(`${fileName} keeps React global navigation out of generic DOM traversal`, () => {
         const config = loadConfig(fileName);
@@ -243,6 +279,15 @@ for (const fileName of localeFiles) {
                 `${selector} must be ignored during the initial DOM traversal`,
             );
         }
+
+        assert.ok(
+            !mutationSelectors.includes('#__primerPortalRoot__'),
+            'Shared Primer portals must remain available to page-specific MutationObserver translation',
+        );
+        assert.ok(
+            traversalSelectors.includes('#__primerPortalRoot__'),
+            'Initial traversal should still avoid an already-open Primer portal',
+        );
 
         for (const selector of protectedReactTraversalSelectors) {
             assert.ok(
@@ -291,10 +336,26 @@ for (const fileName of localeFiles) {
 test('main(greasyfork).user.js skips GlobalNav mutation updates for the legacy script', () => {
     const script = fs.readFileSync(path.join(__dirname, '..', 'main(greasyfork).user.js'), 'utf8');
 
-    assert.match(script, /function shouldIgnoreMutation/);
+    assert.match(script, /function shouldIgnoreMutationNode/);
     assert.match(script, /ignoreMutationSelectorPage/);
     assert.match(script, /closest\?\.\(ignoreMutationSelectors\)/);
+    assert.match(script, /I18N\.conf\.isReactGlobalNavPortalNode/);
+    assert.match(script, /addedNodes\.forEach/);
 });
+
+for (const scriptName of runtimeScripts) {
+    test(`${scriptName} routes only GlobalNav-owned portals away from generic translation`, () => {
+        const script = fs.readFileSync(path.join(__dirname, '..', scriptName), 'utf8');
+
+        assert.match(script, /function shouldIgnoreMutationNode/);
+        assert.match(script, /I18N\.conf\.isReactGlobalNavPortalNode/);
+        assert.doesNotMatch(
+            script,
+            /closest\?\.\(State\.pageConfig\.ignoreMutationSelectors\)/,
+            'Mutation routing must use the shared node-level ownership check',
+        );
+    });
+}
 
 for (const fileName of localeFiles) {
     test(`${fileName} translates React GlobalNav labels without CSS pseudo-elements`, () => {
@@ -305,15 +366,28 @@ for (const fileName of localeFiles) {
         assert.match(source, /function resolveReactGlobalNavLabel/);
         assert.match(source, /function findStaticGlobalNavLabel/);
         assert.match(source, /function findRegexpGlobalNavLabel/);
+        assert.match(source, /match\[0\] !== source/);
         assert.match(source, /function translateReactGlobalNavSurface/);
         assert.match(source, /function translateReactGlobalNavAttributes/);
         assert.match(source, /function canTranslateReactGlobalNavHeader/);
         assert.match(source, /function isReactGlobalNavSurfaceIdle/);
+        assert.match(source, /function isReactGlobalNavSearchPortal/);
+        assert.match(source, /function startReactGlobalNavTranslation/);
+        assert.match(
+            source,
+            /function startReactGlobalNavTranslation\(\) \{\s*observeReactGlobalNav\(\);\s*scheduleReactGlobalNavSeries\(\);/s,
+        );
+        assert.match(
+            source,
+            /isReactGlobalNavSearchPortal\(surface\) && !isReactGlobalNavSurfaceIdle\('portal'\)/,
+        );
         assert.match(source, /requireSettledHeader: true/);
         assert.match(source, /controlledSurfaceSelector/);
         assert.match(source, /searchSurfaceSelector/);
         assert.match(source, /pointerover/);
         assert.match(source, /#__primerPortalRoot__ \[role="tooltip"\]/);
+        assert.match(source, /I18N\.conf\.isReactGlobalNavPortalNode/);
+        assert.match(source, /\.filter\(I18N\.conf\.isReactGlobalNavPortalNode\)/);
         assert.match(source, /qbsearch-input/);
         assert.match(source, /placeholder/);
         assert.doesNotMatch(source, /input:not/);
@@ -340,5 +414,108 @@ for (const fileName of localeFiles) {
             source,
             /surfaces\.push\(\.\.\.document\.querySelectorAll\(searchSurfaceSelector\)\)/,
         );
+    });
+}
+
+test('Simplified Chinese contributor periods use the page-specific full phrase rule', () => {
+    const locale = loadLocale('locals.js', 'zh-CN');
+    const rules = locale['repository/graphs/contributors'].regexp;
+
+    assert.equal(translateWithRules('Last 6 months', rules), '最后 6 个月');
+    assert.equal(translateWithRules('Last 12 months', rules), '最后 12 个月');
+    assert.equal(translateWithRules('Last 24 months', rules), '最后 24 个月');
+});
+
+test('Traditional Chinese contributor periods use the page-specific full phrase rule', () => {
+    const locale = loadLocale('locals_zh-TW.js', 'zh-TW');
+    const rules = locale['repository/graphs/contributors'].regexp;
+
+    assert.equal(translateWithRules('Last 6 months', rules), '最後 6 個月');
+    assert.equal(translateWithRules('Last 12 months', rules), '最後 12 個月');
+    assert.equal(translateWithRules('Last 24 months', rules), '最後 24 個月');
+});
+
+for (const [fileName, localeName, expected] of [
+    ['locals.js', 'zh-CN', '查看所有用户的提交'],
+    ['locals(greasyfork).js', 'zh-CN', '查看所有用户的提交'],
+    ['locals_zh-TW.js', 'zh-TW', '查看所有用戶的提交'],
+]) {
+    test(`${fileName} retains the commits menu footer translation`, () => {
+        const locale = loadLocale(fileName, localeName);
+
+        assert.equal(
+            locale['repository/commit'].static['View commits for all users'],
+            expected,
+        );
+    });
+}
+
+for (const fileName of localeFiles) {
+    test(`${fileName} distinguishes page portals from GlobalNav-owned portals`, () => {
+        let headerOwned = false;
+        let activeHeader = false;
+        const trigger = {
+            closest(selector) {
+                return selector === 'header.GlobalNav' && headerOwned ? {} : null;
+            },
+        };
+        const labelledMenu = {
+            getAttribute(attribute) {
+                return attribute === 'aria-labelledby' ? 'portal-trigger' : null;
+            },
+        };
+        const portalRoot = {};
+        const portal = {
+            id: '',
+            closest(selector) {
+                return selector === '[data-component="Portal"]' ? portal : null;
+            },
+            getAttribute() {
+                return null;
+            },
+            matches(selector) {
+                return selector.includes('[role="menu"]');
+            },
+            querySelector(selector) {
+                return selector === '[data-component="Portal"]' ? portal : null;
+            },
+            querySelectorAll(selector) {
+                if (selector === '[id]') return [];
+                return selector.includes('aria-labelledby') ? [labelledMenu] : [];
+            },
+        };
+        const node = {
+            nodeType: 1,
+            parentElement: null,
+            closest(selector) {
+                if (selector === '#__primerPortalRoot__') return portalRoot;
+                if (selector === '[data-component="Portal"]') return portal;
+                return null;
+            },
+            querySelector() {
+                return portal;
+            },
+        };
+        const document = {
+            activeElement: {
+                closest(selector) {
+                    return selector.includes('header.GlobalNav') && activeHeader ? {} : null;
+                },
+            },
+            getElementById(id) {
+                return id === 'portal-trigger' ? trigger : null;
+            },
+            querySelectorAll() {
+                return [];
+            },
+        };
+        const config = loadConfigWithDocument(fileName, document);
+
+        assert.equal(config.isReactGlobalNavPortalNode(node), false);
+        activeHeader = true;
+        assert.equal(config.isReactGlobalNavPortalNode(node), true);
+        activeHeader = false;
+        headerOwned = true;
+        assert.equal(config.isReactGlobalNavPortalNode(node), true);
     });
 }

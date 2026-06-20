@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜單及內容。原作者為樓教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.3-2026-06-17
+// @version      1.9.4.4-2026-06-20
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.3-2026-06-17
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.4-2026-06-20
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -463,6 +463,16 @@
      * 收集突變節點、過濾忽略選擇器、對祖先-後代關系去重，僅遍歷頂層節點
      * @param {Array} mutations - 變化記錄數組
      */
+    function shouldIgnoreMutationNode(node) {
+        const element = node?.nodeType === Node.ELEMENT_NODE ? node : node?.parentElement;
+        if (!element) return true;
+
+        const ignoredSelectors = State.pageConfig?.ignoreMutationSelectors;
+        if (ignoredSelectors && element.closest?.(ignoredSelectors)) return true;
+
+        return I18N.conf.isReactGlobalNavPortalNode?.(element) || false;
+    }
+
     function processMutations(mutations) {
         const nodesToProcess = new Set();
 
@@ -471,20 +481,18 @@
             if (type === 'childList' && addedNodes.length > 0) {
                 // 處理新增節點
                 addedNodes.forEach(node => {
-                    const parent = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-                    if (parent && !parent.closest?.(State.pageConfig.ignoreMutationSelectors)) {
+                    if (!shouldIgnoreMutationNode(node)) {
                         nodesToProcess.add(node);
                     }
                 });
             } else if (type === 'attributes') {
                 // 處理屬性變化，target 就是元素
-                if (target && !target.closest?.(State.pageConfig.ignoreMutationSelectors)) {
+                if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
             } else if (type === 'characterData' && State.pageConfig.characterData) {
                 // 處理文本變化，2target 是文本節點，取其父元素
-                const parent = target.parentElement;
-                if (parent && !parent.closest?.(State.pageConfig.ignoreMutationSelectors)) {
+                if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
             }
