@@ -8294,6 +8294,9 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
                 // [/(\d+) members?/, "$1 个成员"],
 
+            // 仓库名 - 右侧下拉菜单
+                "Switch repository": "切换仓库",
+
             "Some checks haven't completed yet": "部分检查还未完成",
             "Started": "开始于",
             "— This check has started...": "— 检查已开始...",
@@ -9096,6 +9099,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                     "On current branch": "在当前分支",
                         "No codespaces on current branch": "当前分支上没有代码空间",
+
+                        "Auto-deletes": "将自动删除",
                     "On other branches": "在其他分支",
                     "miniature adventure": "迷你探险",
                     "Open miniature adventure in web": "在网络中打开迷你探险",
@@ -10070,6 +10075,15 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "You opened this issue": "您打开了此议题",
 
             // 置顶议题
+            "How to move objects via keyboard": "通过键盘移动项目",
+                "This navigation is only available when move mode is activated.": "此导航仅在开启移动模式可用。",
+
+                "Cancel drag mode": "取消拖拽",
+                "Move item one position": "单次移动",
+                "Place item": "放置",
+
+                "Don't show this again": "下次不再显示",
+
             "Pinned issues": "置顶议题",
             "Drag to reorder": "拖拽排序",
             "Pinned issue options": "置顶选项",
