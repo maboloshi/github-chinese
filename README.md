@@ -71,7 +71,7 @@ Via（Android）       | 内置管理器
     1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
-    - [Github 源 【开发版】（国内镜像）][main(mirror).uesr.js]
+    - [Github 源 【开发版】（国内镜像）][main.uesr(mirror).js]
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
