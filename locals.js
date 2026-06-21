@@ -14001,7 +14001,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
         [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
-        [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
+        [/(\d+(\+)?) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
         [/Download ([^ ]+) \(opens in a new tab\)/, "下载 $1（在新标签中打开）"],
         [/Download ([^ ]+)/, "下载 $1"],
