@@ -3658,7 +3658,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Access": "访问",
             "Billing and licensing": "账单和许可",
                 "Usage": "使用情况",
-                "Premium request analytics": "高级请求分析",
+                "AI usage": "AI 用量",
                 "Budgets and alerts": "预算和警报",
                 "Licensing": "许可",
                 "Payment information": "支付信息",
