@@ -4566,6 +4566,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
 
+                    "Each GitHub AI credit costs $0.01.": "每 GitHub AI 额度消耗 $0.01。",
+
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
                 "New budget": "新建",
