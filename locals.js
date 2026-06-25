@@ -9657,6 +9657,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
                 "No one -": "无人 -",
                     "Assign yourself": "分配给自己",
+                "Assign to Agent": "分配给智能体",
 
             "Relationships": "关系",
                 "Parent issue": "父议题",
@@ -10525,6 +10526,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Warning!": "警告！",
                             "Transferring an issue does not scrub any issue content. Content such as text references to other issues, pull requests, projects, teams will remain in this issue's descriptions and comments.": "转移议题不会清除任何议题内容。诸如对其他议题、拉取请求、项目、团队的文本引用等内容将保留在此议题的描述和评论中。",
                             "Assignees, labels and milestones will be transferred if they are present in the target repository.": "如果目标仓库中存在受让人、标签和里程碑，它们将被转移。",
+                "Clone issue": "复制议题",
                 "Convert to discussion": "转为讨论",
                     // 转换议题为讨论 对话框
                     "Convert issue to a discussion": "转换议题为讨论",
@@ -10568,6 +10570,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             // 评论框
             "edited by": "编辑者",
+            "Last edited by": "最后编辑：",
             "Hidden as": "隐藏因",
                 "abuse": "滥用",
                 "show comment": "显示评论",
@@ -13652,6 +13655,11 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
 
+            "Workflow": "工作流程",
+                "Filter by Workflow": "按工作流程筛选",
+                "No matching workflows.": "无匹配工作流程。",
+                "to exclude": "排除",
+
             "Event": "事件",
                 "Filter by Event": "按事件筛选",
                 "No matching events.": "无匹配事件。",
@@ -13850,6 +13858,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             //"Latest attempt": "最后运行",
             //"Attempt": "运行",
+            "Fix with Copilot": "使用 Copilot 修复",
+                "More fix options": "更多选项",
+                "Customize prompt": "自定义提示词",
             "Explain error": "解释错误",
             //右侧按钮
             "View workflow runs": "查看工作流程运行",
