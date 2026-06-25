@@ -4548,31 +4548,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Price/unit": "单价",
                 "Billed amount": "计费",
 
-        // 高级请求分析 https://github.com/settings/billing/premium_requests_usage
-            "Usage analytics for premium requests in your personal account.": "在您的个人账户中针对高级请求的使用分析。",
-
-            "Billed premium requests": "计费高级请求",
-                "Increase your budget": "提高您的预算",
-                    "to use premium requests beyond your included request limit.": "以便在超出包含请求额度后继续使用。",
-
-            "Included premium requests consumed": "包含高级请求",
-                "included": " ", // 多余原文，直接删除
-                "Premium requests included in your": "高级请求包含在您的",
-                    "Copilot plan": "Copilot 计划中",
-                    // 后续走正则
+        // AI 用量分析 https://github.com/settings/billing/ai_usage
 
             // 用量分析
                 "Model": "模型",
-                    "Included requests": "包含请求",
-                    "Billed requests": "计费请求",
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
-
-            // 获取使用情况报告
-                "Premium requests usage report": "高级请求使用报告",
-                "Get premium request usage report": "获取高级请求使用报告",
-                    "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
-                "Legacy usage report": "旧版使用报告",
 
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
