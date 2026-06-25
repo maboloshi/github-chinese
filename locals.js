@@ -4551,7 +4551,18 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
         // AI 用量分析 https://github.com/settings/billing/ai_usage
 
             // 用量分析
+                "Included credits": "包含额度",
+                    "About included credits": "关于包含额度",
+                "Additional usage": "附加用量",
+                    "About Additional Usage": "关于附加用量",
+                    "Edit budget": "编辑预算",
+                    "Not enabled": "未启用",
                 "Model": "模型",
+                    "Model usage": "模型用量",
+                        "Overage": "超额",
+
+                    "Additional credits": "附加额度",
+
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
 
@@ -4957,20 +4968,27 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        // 高级请求分析（词条打架调整位置） https://github.com/settings/billing/premium_requests_usage
-        [/. Monthly limit resets in (\d+) days? on (.+)./, "。将在 $1 天后（$2）重置。"],
-        [/Usage for (.+) - (.+). Price per premium request is \$0.04./, (match, p1, p2) => {
-            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-            const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
-            return `${translatedP1}-${translatedP2}用量。高级请求价格为 $0.04 / 个。`;
+        // AI 用量
+        [/\/ (\d+) AI credits/, "/ $1 额度"],
+        [/Resets in (\d+) days? on (.+)/i, (match, p1, p2) => {
+            // 使用可选链和默认值，防止 I18N 数据缺失导致报错
+            const dateRegExp = I18N?.["zh-CN"]?.["public"]?.["time-regexp"] || [];
+            let translatedDate = p2;
+
+            // 如果 dateRegExp 是预期的数组格式，则执行替换
+            if (Array.isArray(dateRegExp)) {
+                translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => {
+                    // 确保 pattern 是有效的正则表达式
+                    if (pattern instanceof RegExp) {
+                        return acc.replace(pattern, replacement);
+                    }
+                    return acc;
+                }, p2);
+            }
+
+            // 正确引用 p1 变量的值
+            return `${p1} 天后（${translatedDate}）重置`;
         }],
-        [/Per-user breakdown of premium requests in the last 45 days. Sunsetting(.*)\./, (match, p1) => {
-            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
-        }],
-        [/of (\d+) included/, "/$1"], // 高级请求总数
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
