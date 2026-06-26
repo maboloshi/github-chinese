@@ -28493,6 +28493,10 @@ I18N["zh-CN"]["copilot"] = {
                   "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
+            // 错误 - 拒绝访问
+            "Access denied": "拒绝访问",
+                "Single sign-on to view this chat.": "单点登录以查看此聊天",
+
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
             "Dismiss banner": "关闭",
 
