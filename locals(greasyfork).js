@@ -349,7 +349,7 @@ I18N.conf = {
         "Name": "名称",
         "Query": "查询",
         "0 suggestions.": "0 条建议。",
-        "To see all available qualifiers, see our documentation.": "要查看所有可用限定符，请参阅文档。",
+        "To see all available qualifiers, see our documentation.": "要查看全部可用限定符，请参阅文档。",
         "People": "成员",
         "Teams": "团队",
         "Sponsoring": "赞助",
@@ -686,27 +686,27 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Changelog": "更新日志",
                     "GitHub Marketplace": "GitHub 市场",
 
-                "View all features": "查看所有功能",
+                "View all features": "查看全部功能",
 
             "Solutions": "解决方案",
                 "BY COMPANY SIZE": "企业规模",
                     "Enterprises": "企业",
                     "Small and medium teams": "中小团队",
                     "Startups": "初创公司",
-                    "Nonprofits": "非盈利组织",
+                    "Nonprofits": "非营利组织",
                 "BY USE CASE": "使用案例",
                     "App Modernization": "应用现代化",
                     "DevSecOps": "开发安全运维",
                     "DevOps": "开发运维",
                     "CI/CD": "持续集成/持续部署",
-                    "View all use cases": "查看所有使用案例",
-                "BY INDUSTRY": "工业",
-                    "Healthcare": "健康护理",
+                    "View all use cases": "查看全部使用案例",
+                "BY INDUSTRY": "行业",
+                    "Healthcare": "医疗健康",
                     "Financial services": "金融服务",
                     "Manufacturing": "制造业",
                     "Government": "政府",
-                    "View all industries": "查看所有工业",
-                "View all solutions": "查看所有解决方案",
+                    "View all industries": "查看所有行业",
+                "View all solutions": "查看全部解决方案",
 
             "Resources": "资源",
                 "EXPLORE BY TOPIC": "按主题探索",
@@ -724,6 +724,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                     "Customer support": "客户支持",
                     "Community forum": "社区论坛",
                     "Trust center": "信任中心",
+                "View all resources": "查看全部资源",
 
             "Open Source": "开源",
                 "COMMUNITY": "社区",
@@ -750,7 +751,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Enterprise-grade AI features": "企业级 AI 功能",
                     "Premium Support": "高级支持",
                         "Enterprise-grade 24/7 support": "企业级 24 小时全天候支持",
-            "Pricing": "价格",
+            "Pricing": "定价",
             "Search": "搜索",
             "Sign in": "登录",
             "Sign up": "注册",
@@ -779,7 +780,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             // 未登录时
                 "Enterprise": "企业",
                 "Security": "安全",
-                "Pricing": "价格",
+                "Pricing": "定价",
 
         // 左上角下拉栏 (已登录)
             "Open menu": "打开菜单",
@@ -1005,7 +1006,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Terms": "服务条款",
             "Privacy": "隐私",
             "Security": "安全",
-            "Status": "状态",
+            "Status": "状态监测",
             "Community": "社区",
             "Docs": "文档",
             "Contact": "联系我们",
@@ -2064,11 +2065,15 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
 I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
     "static": { // 静态翻译
+        "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的组织已对公众隐藏。如果您认为这是一个错误，",
+        "contact support": "联系支持人员",
+        "to have your organization’s status reviewed.": "以便审核您组织的状态。",
     },
     "regexp": [ // 正则翻译
         [/Invite someone to/, "邀请加入到组织"],
         [/New team in/, "新建团队在组织"],
         [/New repository in/, "新建仓库在组织"],
+        [/The (.+) organization has been flagged\./, "$1 组织已被标记。"],
         [/This organization was marked as archived by an administrator on (.+). It is no longer maintained./, (match, p1) => {
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
@@ -8802,7 +8807,10 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
                     "Cancel and close": "关闭",
 
             "Jumpstart your project with Copilot (optional)": "用 Copilot 快速启动您的项目（可选）",
-                "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备好后请求您进行审核。",
+                // "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告诉 Copilot 您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备好后请求您进行审核。",
+                "Tell": "告诉",
+                    "Copilot cloud agent": "Copilot 智能体",
+                    "what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "您想在此仓库中构建什么。在创建完成后，Copilot 会打开一个包含生成文件的拉取请求（例如基础应用、起始代码或您描述的其他功能），然后在准备好后请求您进行审核。",
                 "About Copilot coding agent": "关于 Copilot 编程智能体",
 
                 "Prompt": "提示词",
@@ -8821,6 +8829,7 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
         [/Auto-installed by ([^ ]+)/, "由 $1 自动安装"],
         [/(\d+) apps? selected/, "已选择 $1 个应用"],
         [/The repository ([^ ]+) already exists on this account/, "仓库 $1 已存在于此账户"],
+        [/([^ ]+) already exists in this account/, "$1 已存在于此账户"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         // [/, and (\d+) more/, "，以及其他 $1 个组织"], // 用户 浮动信息卡
         // [/(\d+) repositor(y|ies)/, "$1 个仓库"], // 组织  浮动信息卡
@@ -11681,7 +11690,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Apply suggestions": "应用建议",
                     "Suggestions to apply": "待应用的建议",
                     "There was an error trying to commit changes.": "尝试提交更改时出错。",
-                
+
                 "This diff has recently been updated.": "该差异最近已更新。",
                 "Refresh and try again.": "刷新并重试。",
 
@@ -15216,6 +15225,12 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "This will delete the information for this draft.": "这将会删除该草案的信息。",
             "Delete this draft": "删除草案",
 
+            "Release label": "发行版标签",
+                "None": "无",
+                "Label release as non-production ready": "标记为测试版",
+                "Label release as the latest for this repository": "标记为最新版",
+            "Additional settings": "附加设置",
+
             // 右侧栏
             "Tagging suggestions": "标签建议",
             "It’s common practice to prefix your version names with the letter": "通常的做法是在版本名称前加上字母",
@@ -16282,7 +16297,7 @@ I18N["zh-CN"]["repository/tasks"] = {
 
         "Diff": "差异",
         "Create pull request": "创建拉取请求",
-        
+
         "This pull request was merged. To continue iterating,": "此拉取请求已合并。若要继续迭代，",
             "start a new session": "请开始一个新会话",
     },
@@ -20454,7 +20469,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "Features": "功能",
         "Roadmap": "路线图",
-        "Compare GitHub": "比较 GitHub",
+        "Compare GitHub": "GitHub 优势",
 
         "Ecosystem": "生态",
         "Platform": "平台",
@@ -20474,7 +20489,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "The ReadME Project": "ReadME 项目",
         "Careers": "招贤纳士",
         "Press": "新闻",
-        "Inclusion": "包容性",
+        "Inclusion": "多元、包容与归属感",
         "Newsroom": "媒体",
         "Social Impact": "社会责任",
         "Shop": "商店",
@@ -27714,7 +27729,7 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                         "Get the": "获取",
                         "Atom Feed": "Atom 反馈",
                         "RSS Feed": "RSS 反馈",
-            "Current Status: GitHub.com": "当前状态：GitHub.com",
+            "Current Status: GitHub.com": "GitHub.com 当前状态",
             "All Systems Operational": "所有系统运行正常",
             "Normal": "正常",
                 "Operational": "运行",
@@ -27724,12 +27739,22 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                 "Partial Outage": "部分中断",
             "Maintenance": "维护",
                 "Under Maintenance": "维护中",
+            // uptime 提示框翻译
+            "Major outage": "重大故障",
+            "Partial outage": "部分中断",
+            "No downtime recorded on this day.": "此日无停机记录。",
+            "No data exists for this day.": "此日无数据。",
+            "had a major outage.": "发生重大故障。",
+            "had a partial outage.": "发生部分中断。",
+            "Related": "相关事件",
+            "No incidents or maintenance related to this downtime.": "没有与此停机相关的事故或维护。",
             "Git Operations": "Git 操作",
                 "Performance of git clones, pulls, pushes, and associated operations": "git 克隆、拉取、推送和相关操作的性能",
             "API Requests": "API 请求",
                 "Requests for GitHub APIs": "GitHub API 请求",
             "Webhooks": "Web 钩子",
                 "Real time HTTP callbacks of user-generated and system events": "实时 HTTP 回调用户生成的事件和系统事件",
+            "Copilot AI Model Providers":"Copilot AI 模型提供商",
             // 议题
                 "Requests for Issues on GitHub.com": "GitHub.com 上的议题请求",
             "Pull Requests": "拉取请求",
@@ -27742,11 +27767,19 @@ I18N["zh-CN"]["status"] = { // GitHub Status
                 "Frontend application and API servers for Pages builds": "用于页面构建的前端应用程序和应用程序接口服务器",
             // 代码空间
                 "Orchestration and Compute for GitHub Codespaces": "GitHub 代码空间的协调与计算",
-            "For the status of GitHub Enterprise Cloud - EU, please visit:": "有关欧盟版 GitHub 企业云的状态，请访问",
-            "For the status of GitHub Enterprise Cloud - Australia, please visit":"有关澳大利亚版 GitHub 企业云的状态，请访问",
-            "For the status of GitHub Enterprise Cloud - US, please visit":"有关美国版 GitHub 企业云的状态，请访问",
+            "Check GitHub Enterprise Cloud status by region:": "按区域查看GitHub Enterprise Cloud状态：",
+            "- Australia: au.githubstatus.com": "- 澳大利亚：au.githubstatus.com",
+            "- EU: eu.githubstatus.com": "- 欧盟：eu.githubstatus.com",
+            "- Japan: jp.githubstatus.com": "- 日本：jp.githubstatus.com",
+            "- US: us.githubstatus.com": "- 美国：us.githubstatus.com",
             "Current Status": "当前状态",
             "Incident History": "历史事故",
+            "Uptime over the past 90 days. ":"过去90天的正常运行时间",
+            "View historical uptime.":"查看历史正常运行时间",
+            // uptime 图例翻译
+            "% uptime": "% 可用性",
+            "days ago": "天前",
+            "Today": "今日",
 
         "Codespaces Scheduled Maintenance": "代码空间计划维护",
 
@@ -27769,10 +27802,11 @@ I18N["zh-CN"]["status"] = { // GitHub Status
             "This incident has been resolved.": "此事故已解决。",
             "Disruption with some GitHub services": "某些 GitHub 服务中断",
             "+ Show All": "+ 展开全部",
-            "Incidents": "个事故",
+            "Incidents": "事故",
             "- Collapse Incidents": "- 收起事故",
             "Current status": "当前状态",
             "No incidents reported for this month.": "本月无事故报告。",
+            "Uptime":"可用性",
 
         // https://www.githubstatus.com/incidents/xxxxxxxxxxxx
             "Incident Report for GitHub": "GitHub 事故报告",
@@ -27781,6 +27815,22 @@ I18N["zh-CN"]["status"] = { // GitHub Status
             "Posted": "更新",
     },
     "regexp": [
+        // uptime 页面标题文本（因 <var>/<a> 元素而拆开的文本节点）
+        [/^Uptime over the past $/, "近 "],
+        [/^days\.$/, " 天。"],
+        // uptime 提示框动态文本翻译
+        // 日期 "23 Apr 2026" → "2026年4月23日"
+        [/(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})/,
+            function (all, day, month, year) {
+                var monthKey = {"Jan":"1月","Feb":"2月","Mar":"3月","Apr":"4月","May":"5月","Jun":"6月","Jul":"7月","Aug":"8月","Sep":"9月","Oct":"10月","Nov":"11月","Dec":"12月"};
+                return year + '年' + monthKey[month] + parseInt(day) + '日';
+            }
+        ],
+        // "0 hrs" → "0 小时", "50 mins" → "50 分钟"
+        [/ hrs$/, " 小时"],
+        [/ mins$/, " 分钟"],
+        // "1 component" → "1 个组件", "2 components" → "2 个组件"
+        [/ components?$/, " 个组件"],
     ],
 };
 
