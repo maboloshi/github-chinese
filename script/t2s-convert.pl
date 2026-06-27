@@ -4,7 +4,6 @@ use warnings;
 use utf8;
 use open ':std', ':encoding(UTF-8)';
 use Getopt::Long;
-use Cwd qw(abs_path);
 use File::Copy qw(move);
 
 # 配置参数
@@ -14,7 +13,6 @@ my %opt = (
     verbose   => 0,                # 显示详细信息
     encoding  => 'UTF-8',          # 文件编码
     output    => undef,           # 输出目录或文件
-
 );
 GetOptions(
     'r|rules=s'    => \$opt{rules},
