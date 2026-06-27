@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 拉取仓库
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: 去重
         run: |

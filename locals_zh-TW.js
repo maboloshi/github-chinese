@@ -105,7 +105,7 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            'header.GlobalNav', // React 版全域導覽
+            'header.GlobalNav', // React 版全局導航
             'header.GlobalNav [class*="Search-module__"]', // React 版頂部搜尋按鈕
             'qbsearch-input', // 頂部搜尋框自定義元素
             'div.QueryBuilder-StyledInputContainer', // 頂部搜尋欄 關鍵詞
@@ -232,7 +232,7 @@ I18N.conf = {
             '.monaco-editor',
         ],
         '*': [
-            'header.GlobalNav', // React 版全域導覽
+            'header.GlobalNav', // React 版全局導航
             'header.GlobalNav [class*="Search-module__"]', // React 版頂部搜尋按鈕
             'qbsearch-input', // 頂部搜尋框自定義元素
             '#__primerPortalRoot__', // React 彈層掛載點
@@ -310,19 +310,19 @@ I18N.conf = {
         "Repositories": "儲存庫",
         "Code": "程式碼",
         "Issues": "議題",
-        "Pull requests": "拉取請求",
+        "Pull requests": "合併請求",
         "Discussions": "討論",
         "Actions": "操作",
         "Projects": "專案",
         "Wiki": "Wiki",
         "Security": "安全",
-        "Security and quality": "安全和品質",
-        "Insights": "洞察",
-        "Settings": "設定",
-        "Packages": "軟體包",
-        "Releases": "發行版",
+        "Security and quality": "安全和質量",
+        "Insights": "分析",
+        "Settings": "設置",
+        "Packages": "軟件包",
+        "Releases": "發行版本",
         "Stars": "星號",
-        "Agents": "智能體",
+        "Agents": "AI 代理",
         "Models": "模型",
         "Set status": "狀態設置",
         "Profile": "個人資料",
@@ -335,7 +335,7 @@ I18N.conf = {
         "Sign out": "退出",
         "Free": "免費",
         "Type / to search": "輸入 / 搜尋",
-        "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、使用者、議題、拉取請求...",
+        "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、用戶、議題、合併請求...",
         "Search": "搜尋",
         "Clear": "清除",
         "Search syntax tips": "搜尋語法提示",
@@ -349,7 +349,7 @@ I18N.conf = {
         "Name": "名稱",
         "Query": "查詢",
         "0 suggestions.": "0 條建議。",
-        "To see all available qualifiers, see our documentation.": "要查看所有可用限定符，請參閱文件。",
+        "To see all available qualifiers, see our documentation.": "要查看全部可用限定符，請參閱文件。",
         "People": "成員",
         "Teams": "團隊",
         "Sponsoring": "贊助",
@@ -686,27 +686,27 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Changelog": "更新日誌",
                     "GitHub Marketplace": "GitHub 市場",
 
-                "View all features": "查看所有功能",
+                "View all features": "查看全部功能",
 
             "Solutions": "解決方案",
                 "BY COMPANY SIZE": "企業規模",
                     "Enterprises": "企業",
                     "Small and medium teams": "中小團隊",
                     "Startups": "初創公司",
-                    "Nonprofits": "非盈利組織",
+                    "Nonprofits": "非營利組織",
                 "BY USE CASE": "使用案例",
                     "App Modernization": "應用現代化",
                     "DevSecOps": "開發安全運維",
                     "DevOps": "開發運維",
                     "CI/CD": "持續集成/持續部署",
-                    "View all use cases": "查看所有使用案例",
-                "BY INDUSTRY": "工業",
-                    "Healthcare": "健康護理",
+                    "View all use cases": "查看全部使用案例",
+                "BY INDUSTRY": "行業",
+                    "Healthcare": "醫療健康",
                     "Financial services": "金融服務",
                     "Manufacturing": "製造業",
                     "Government": "政府",
-                    "View all industries": "查看所有工業",
-                "View all solutions": "查看所有解決方案",
+                    "View all industries": "查看所有行業",
+                "View all solutions": "查看全部解決方案",
 
             "Resources": "資源",
                 "EXPLORE BY TOPIC": "按主題探索",
@@ -724,6 +724,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Customer support": "客戶支持",
                     "Community forum": "社區論壇",
                     "Trust center": "信任中心",
+                "View all resources": "查看全部資源",
 
             "Open Source": "開源",
                 "COMMUNITY": "社區",
@@ -750,7 +751,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "Enterprise-grade AI features": "企業級 AI 功能",
                     "Premium Support": "高級支持",
                         "Enterprise-grade 24/7 support": "企業級 24 小時全天候支持",
-            "Pricing": "價格",
+            "Pricing": "定價",
             "Search": "搜尋",
             "Sign in": "登入",
             "Sign up": "註冊",
@@ -779,7 +780,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             // 未登入時
                 "Enterprise": "企業",
                 "Security": "安全",
-                "Pricing": "價格",
+                "Pricing": "定價",
 
         // 左上角下拉欄 (已登入)
             "Open menu": "打開選單",
@@ -1005,7 +1006,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Terms": "服務條款",
             "Privacy": "隱私",
             "Security": "安全",
-            "Status": "狀態",
+            "Status": "狀態監測",
             "Community": "社區",
             "Docs": "文件",
             "Contact": "聯繫我們",
@@ -2064,11 +2065,15 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
 I18N["zh-TW"]["orgs-public"] = { // 組織公共部分
     "static": { // 靜態翻譯
+        "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的組織已對公眾隱藏。如果您認為這是一個錯誤，",
+        "contact support": "聯繫支持人員",
+        "to have your organization’s status reviewed.": "以便審核您組織的狀態。",
     },
     "regexp": [ // 正則翻譯
         [/Invite someone to/, "邀請加入到組織"],
         [/New team in/, "新建團隊在組織"],
         [/New repository in/, "新建儲存庫在組織"],
+        [/The (.+) organization has been flagged\./, "$1 組織已被標記。"],
         [/This organization was marked as archived by an administrator on (.+). It is no longer maintained./, (match, p1) => {
             const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
@@ -11685,7 +11690,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "Apply suggestions": "應用建議",
                     "Suggestions to apply": "待應用的建議",
                     "There was an error trying to commit changes.": "嘗試提交更改時出錯。",
-                
+
                 "This diff has recently been updated.": "該差異最近已更新。",
                 "Refresh and try again.": "刷新並重試。",
 
@@ -16292,7 +16297,7 @@ I18N["zh-TW"]["repository/tasks"] = {
 
         "Diff": "差異",
         "Create pull request": "創建合併請求",
-        
+
         "This pull request was merged. To continue iterating,": "此合併請求已合併。若要繼續迭代，",
             "start a new session": "請開始一個新會話",
     },
@@ -20464,7 +20469,7 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
 
         "Features": "功能",
         "Roadmap": "路線圖",
-        "Compare GitHub": "比較 GitHub",
+        "Compare GitHub": "GitHub 優勢",
 
         "Ecosystem": "生態",
         "Platform": "平臺",
@@ -20484,7 +20489,7 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
         "The ReadME Project": "ReadME 專案",
         "Careers": "招賢納士",
         "Press": "新聞",
-        "Inclusion": "包容性",
+        "Inclusion": "多元、包容與歸屬感",
         "Newsroom": "媒體",
         "Social Impact": "社會責任",
         "Shop": "商店",
@@ -27724,7 +27729,7 @@ I18N["zh-TW"]["status"] = { // GitHub Status
                         "Get the": "獲取",
                         "Atom Feed": "Atom 回饋",
                         "RSS Feed": "RSS 回饋",
-            "Current Status: GitHub.com": "當前狀態：GitHub.com",
+            "Current Status: GitHub.com": "GitHub.com 當前狀態",
             "All Systems Operational": "所有系統執行正常",
             "Normal": "正常",
                 "Operational": "執行",
@@ -27734,12 +27739,22 @@ I18N["zh-TW"]["status"] = { // GitHub Status
                 "Partial Outage": "部分中斷",
             "Maintenance": "維護",
                 "Under Maintenance": "維護中",
+            // uptime 提示框翻譯
+            "Major outage": "重大故障",
+            "Partial outage": "部分中斷",
+            "No downtime recorded on this day.": "此日無停機記錄。",
+            "No data exists for this day.": "此日無資料。",
+            "had a major outage.": "發生重大故障。",
+            "had a partial outage.": "發生部分中斷。",
+            "Related": "相關事件",
+            "No incidents or maintenance related to this downtime.": "沒有與此停機相關的異常事件或維護。",
             "Git Operations": "Git 操作",
                 "Performance of git clones, pulls, pushes, and associated operations": "git 複製、拉取、推送和相關操作的性能",
             "API Requests": "API 請求",
                 "Requests for GitHub APIs": "GitHub API 請求",
             "Webhooks": "Web 鉤子",
                 "Real time HTTP callbacks of user-generated and system events": "實時 HTTP 回調用戶生成的事件和系統事件",
+            "Copilot AI Model Providers":"Copilot AI 模型提供商",
             // 議題
                 "Requests for Issues on GitHub.com": "GitHub.com 上的議題請求",
             "Pull Requests": "合併請求",
@@ -27752,11 +27767,19 @@ I18N["zh-TW"]["status"] = { // GitHub Status
                 "Frontend application and API servers for Pages builds": "用於頁面構建的前端應用程式和應用程式接口伺服器",
             // 程式碼空間
                 "Orchestration and Compute for GitHub Codespaces": "GitHub 程式碼空間的協調與計算",
-            "For the status of GitHub Enterprise Cloud - EU, please visit:": "有關歐盟版 GitHub 企業雲的狀態，請訪問",
-            "For the status of GitHub Enterprise Cloud - Australia, please visit":"有關澳大利亞版 GitHub 企業雲的狀態，請訪問",
-            "For the status of GitHub Enterprise Cloud - US, please visit":"有關美國版 GitHub 企業雲的狀態，請訪問",
+            "Check GitHub Enterprise Cloud status by region:": "按區域查看GitHub Enterprise Cloud狀態：",
+            "- Australia: au.githubstatus.com": "- 澳大利亞：au.githubstatus.com",
+            "- EU: eu.githubstatus.com": "- 歐盟：eu.githubstatus.com",
+            "- Japan: jp.githubstatus.com": "- 日本：jp.githubstatus.com",
+            "- US: us.githubstatus.com": "- 美國：us.githubstatus.com",
             "Current Status": "當前狀態",
             "Incident History": "歷史異常事件",
+            "Uptime over the past 90 days. ":"過去90天的正常執行時間",
+            "View historical uptime.":"查看歷史正常執行時間",
+            // uptime 圖例翻譯
+            "% uptime": "% 可用性",
+            "days ago": "天前",
+            "Today": "今日",
 
         "Codespaces Scheduled Maintenance": "程式碼空間計劃維護",
 
@@ -27779,10 +27802,11 @@ I18N["zh-TW"]["status"] = { // GitHub Status
             "This incident has been resolved.": "此異常事件已解決。",
             "Disruption with some GitHub services": "某些 GitHub 服務中斷",
             "+ Show All": "+ 顯示全部",
-            "Incidents": "個異常事件",
+            "Incidents": "異常事件",
             "- Collapse Incidents": "- 收起異常事件",
             "Current status": "當前狀態",
             "No incidents reported for this month.": "本月無異常事件報告。",
+            "Uptime":"可用性",
 
         // https://www.githubstatus.com/incidents/xxxxxxxxxxxx
             "Incident Report for GitHub": "GitHub 異常事件報告",
@@ -27791,6 +27815,22 @@ I18N["zh-TW"]["status"] = { // GitHub Status
             "Posted": "更新",
     },
     "regexp": [
+        // uptime 頁面標題文本（因 <var>/<a> 元素而拆開的文本節點）
+        [/^Uptime over the past $/, "近 "],
+        [/^days\.$/, " 天。"],
+        // uptime 提示框動態文本翻譯
+        // 日期 "23 Apr 2026" → "2026年4月23日"
+        [/(\d{1,2}) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (\d{4})/,
+            function (all, day, month, year) {
+                var monthKey = {"Jan":"1月","Feb":"2月","Mar":"3月","Apr":"4月","May":"5月","Jun":"6月","Jul":"7月","Aug":"8月","Sep":"9月","Oct":"10月","Nov":"11月","Dec":"12月"};
+                return year + '年' + monthKey[month] + parseInt(day) + '日';
+            }
+        ],
+        // "0 hrs" → "0 小時", "50 mins" → "50 分鐘"
+        [/ hrs$/, " 小時"],
+        [/ mins$/, " 分鐘"],
+        // "1 component" → "1 個組件", "2 components" → "2 個組件"
+        [/ components?$/, " 個組件"],
     ],
 };
 
