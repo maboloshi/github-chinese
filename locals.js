@@ -15060,6 +15060,8 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             "Latest": "最新发行版",
             "Draft": "草案",
 
+            "Release list": "发行版列表",
+
             "Compare": "对比",
                 "Choose a tag to compare": "选择标签进行比较",
                 "Find a tag": "搜索标签",
