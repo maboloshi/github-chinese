@@ -3658,7 +3658,7 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
         "Access": "访问",
             "Billing and licensing": "账单和许可",
                 "Usage": "使用情况",
-                "Premium request analytics": "高级请求分析",
+                "AI usage": "AI 用量",
                 "Budgets and alerts": "预算和警报",
                 "Licensing": "许可",
                 "Payment information": "支付信息",
@@ -4548,31 +4548,25 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Price/unit": "单价",
                 "Billed amount": "计费",
 
-        // 高级请求分析 https://github.com/settings/billing/premium_requests_usage
-            "Usage analytics for premium requests in your personal account.": "在您的个人账户中针对高级请求的使用分析。",
-
-            "Billed premium requests": "计费高级请求",
-                "Increase your budget": "提高您的预算",
-                    "to use premium requests beyond your included request limit.": "以便在超出包含请求额度后继续使用。",
-
-            "Included premium requests consumed": "包含高级请求",
-                "included": " ", // 多余原文，直接删除
-                "Premium requests included in your": "高级请求包含在您的",
-                    "Copilot plan": "Copilot 计划中",
-                    // 后续走正则
+        // AI 用量分析 https://github.com/settings/billing/ai_usage
 
             // 用量分析
+                "Included credits": "包含额度",
+                    "About included credits": "关于包含额度",
+                "Additional usage": "附加用量",
+                    "About Additional Usage": "关于附加用量",
+                    "Edit budget": "编辑预算",
+                    "Not enabled": "未启用",
                 "Model": "模型",
-                    "Included requests": "包含请求",
-                    "Billed requests": "计费请求",
+                    "Model usage": "模型用量",
+                        "Overage": "超额",
+
+                    "Additional credits": "附加额度",
+
                     "Code Review model": "代码审查模型",
                     "Coding Agent model": "编程智能体模型",
 
-            // 获取使用情况报告
-                "Premium requests usage report": "高级请求使用报告",
-                "Get premium request usage report": "获取高级请求使用报告",
-                    "Detailed per-user breakdown of premium requests consumed.": "详细列出每位用户消耗的高级请求数量。",
-                "Legacy usage report": "旧版使用报告",
+                    "Each GitHub AI credit costs $0.01.": "每 GitHub AI 额度消耗 $0.01。",
 
         // 预算和警报 https://github.com/settings/billing/budgets
            "Account budgets": "账户预算",
@@ -4976,20 +4970,27 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
 
     },
     "regexp": [ // 正则翻译
-        // 高级请求分析（词条打架调整位置） https://github.com/settings/billing/premium_requests_usage
-        [/. Monthly limit resets in (\d+) days? on (.+)./, "。将在 $1 天后（$2）重置。"],
-        [/Usage for (.+) - (.+). Price per premium request is \$0.04./, (match, p1, p2) => {
-            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-            const translatedP1 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
-            return `${translatedP1}-${translatedP2}用量。高级请求价格为 $0.04 / 个。`;
+        // AI 用量
+        [/\/ (\d+) AI credits/, "/ $1 额度"],
+        [/Resets in (\d+) days? on (.+)/i, (match, p1, p2) => {
+            // 使用可选链和默认值，防止 I18N 数据缺失导致报错
+            const dateRegExp = I18N?.["zh-CN"]?.["public"]?.["time-regexp"] || [];
+            let translatedDate = p2;
+
+            // 如果 dateRegExp 是预期的数组格式，则执行替换
+            if (Array.isArray(dateRegExp)) {
+                translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => {
+                    // 确保 pattern 是有效的正则表达式
+                    if (pattern instanceof RegExp) {
+                        return acc.replace(pattern, replacement);
+                    }
+                    return acc;
+                }, p2);
+            }
+
+            // 正确引用 p1 变量的值
+            return `${p1} 天后（${translatedDate}）重置`;
         }],
-        [/Per-user breakdown of premium requests in the last 45 days. Sunsetting(.*)\./, (match, p1) => {
-            const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
-            const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
-            return `过去 45 天内每用户高级请求明细。${translatedDate} 日落`;
-        }],
-        [/of (\d+) included/, "/$1"], // 高级请求总数
 
         // billing 概况页面
         [/(?:Gross metered usage|Included usage discounts) for (.+) - (.+).$/, (match, p1, p2) => { // 概况下方小字，过于啰嗦直接省略
@@ -8294,6 +8295,9 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 // [/(\d+) repositor(y|ies)/, "$1 个仓库"],
                 // [/(\d+) members?/, "$1 个成员"],
 
+            // 仓库名 - 右侧下拉菜单
+                "Switch repository": "切换仓库",
+
             "Some checks haven't completed yet": "部分检查还未完成",
             "Started": "开始于",
             "— This check has started...": "— 检查已开始...",
@@ -9096,6 +9100,8 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
                     "On current branch": "在当前分支",
                         "No codespaces on current branch": "当前分支上没有代码空间",
+
+                        "Auto-deletes": "将自动删除",
                     "On other branches": "在其他分支",
                     "miniature adventure": "迷你探险",
                     "Open miniature adventure in web": "在网络中打开迷你探险",
@@ -9652,6 +9658,7 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Requested changes must be addressed to merge this pull request.": "要合并这个拉取请求，必须先解决所要求的更改。",
                 "No one -": "无人 -",
                     "Assign yourself": "分配给自己",
+                "Assign to Agent": "分配给智能体",
 
             "Relationships": "关系",
                 "Parent issue": "父议题",
@@ -10070,6 +10077,15 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "You opened this issue": "您打开了此议题",
 
             // 置顶议题
+            "How to move objects via keyboard": "通过键盘移动项目",
+                "This navigation is only available when move mode is activated.": "此导航仅在开启移动模式可用。",
+
+                "Cancel drag mode": "取消拖拽",
+                "Move item one position": "单次移动",
+                "Place item": "放置",
+
+                "Don't show this again": "下次不再显示",
+
             "Pinned issues": "置顶议题",
             "Drag to reorder": "拖拽排序",
             "Pinned issue options": "置顶选项",
@@ -10511,6 +10527,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Warning!": "警告！",
                             "Transferring an issue does not scrub any issue content. Content such as text references to other issues, pull requests, projects, teams will remain in this issue's descriptions and comments.": "转移议题不会清除任何议题内容。诸如对其他议题、拉取请求、项目、团队的文本引用等内容将保留在此议题的描述和评论中。",
                             "Assignees, labels and milestones will be transferred if they are present in the target repository.": "如果目标仓库中存在受让人、标签和里程碑，它们将被转移。",
+                "Clone issue": "复制议题",
                 "Convert to discussion": "转为讨论",
                     // 转换议题为讨论 对话框
                     "Convert issue to a discussion": "转换议题为讨论",
@@ -10554,6 +10571,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
 
             // 评论框
             "edited by": "编辑者",
+            "Last edited by": "最后编辑：",
             "Hidden as": "隐藏因",
                 "abuse": "滥用",
                 "show comment": "显示评论",
@@ -13638,6 +13656,11 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
 
+            "Workflow": "工作流程",
+                "Filter by Workflow": "按工作流程筛选",
+                "No matching workflows.": "无匹配工作流程。",
+                "to exclude": "排除",
+
             "Event": "事件",
                 "Filter by Event": "按事件筛选",
                 "No matching events.": "无匹配事件。",
@@ -13836,6 +13859,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
             //"Latest attempt": "最后运行",
             //"Attempt": "运行",
+            "Fix with Copilot": "使用 Copilot 修复",
+                "More fix options": "更多选项",
+                "Customize prompt": "自定义提示词",
             "Explain error": "解释错误",
             //右侧按钮
             "View workflow runs": "查看工作流程运行",
@@ -13987,7 +14013,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
         [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
         [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
-        [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
+        [/(\d+(\+)?) workflow runs?$/, "$1 个工作流程运行"],
         [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
         [/Download ([^ ]+) \(opens in a new tab\)/, "下载 $1（在新标签中打开）"],
         [/Download ([^ ]+)/, "下载 $1"],
@@ -28467,6 +28493,10 @@ I18N["zh-CN"]["copilot"] = {
                   "to move to the next interactive element on the page.": "键移动到页面上的下一个交互元素。",
         // 聊天窗口
         "Install Copilot in your favorite code editor": "安装 Copilot 到您的代码编辑器",
+            // 错误 - 拒绝访问
+            "Access denied": "拒绝访问",
+                "Single sign-on to view this chat.": "单点登录以查看此聊天",
+
             "Copilot is available for a multitude of editors to fit your needs": "Copilot 可用于多种编辑器，以满足您的需求",
             "Dismiss banner": "关闭",
 
