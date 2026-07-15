@@ -37,7 +37,7 @@ I18N.conf = {
      * 通知頁面 /notifications
      * 追蹤頁面 /watching
      * 星號頁面 /stars
-     * 議題頁面 /issues
+     * 問題頁面 /issues
      * 合併請求 /pulls
      * 搜尋頁面 /search
      * 趨勢頁面 /trending
@@ -88,8 +88,8 @@ I18N.conf = {
         ],
         'repository/releases': [".Box-footer"], // 附件清單
         'repository/issues': [
-            'div[aria-live="polite"]>div.markdown-body', // 新建議題 - 正文編輯器預覽
-            '.markdown-body[data-team-hovercards-enabled="true"]', // 某個議題 - 正文以及正文編輯器、新增評論編輯器預覽
+            'div[aria-live="polite"]>div.markdown-body', // 新建問題 - 正文編輯器預覽
+            '.markdown-body[data-team-hovercards-enabled="true"]', // 某個問題 - 正文以及正文編輯器、新增評論編輯器預覽
         ],
         'repository/actions': [
             'table.highlight', // 工作流程文件 原始碼視圖
@@ -163,8 +163,8 @@ I18N.conf = {
             'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 檔名部分
         ],
         'repository/issues': [
-            'div[aria-live="polite"]>div.markdown-body', // 新建議題 - 正文編輯器預覽
-            '.markdown-body[data-team-hovercards-enabled="true"]', //  某個議題 - 正文以及正文編輯器、新增評論編輯器預覽
+            'div[aria-live="polite"]>div.markdown-body', // 新建問題 - 正文編輯器預覽
+            '.markdown-body[data-team-hovercards-enabled="true"]', //  某個問題 - 正文以及正文編輯器、新增評論編輯器預覽
         ],
         'repository/commit': [
             'td.blob-code', // 程式碼差異 分屏/同屏
@@ -309,7 +309,7 @@ I18N.conf = {
         "Overview": "概況",
         "Repositories": "儲存庫",
         "Code": "程式碼",
-        "Issues": "議題",
+        "Issues": "問題",
         "Pull requests": "合併請求",
         "Discussions": "討論",
         "Actions": "操作",
@@ -335,7 +335,7 @@ I18N.conf = {
         "Sign out": "退出",
         "Free": "免費",
         "Type / to search": "輸入 / 搜尋",
-        "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、用戶、議題、合併請求...",
+        "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、用戶、問題、合併請求...",
         "Search": "搜尋",
         "Clear": "清除",
         "Search syntax tips": "搜尋語法提示",
@@ -409,7 +409,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         "Saved replies": "快捷回覆",
         "Security & analysis": "安全與分析",
         "Installed GitHub Apps": "已安裝的 GitHub 應用",
-        "Issue search results": "議題搜尋結果",
+        "Issue search results": "問題搜尋結果",
         "Scheduled reminders": "定時提醒",
         "Security log": "安全日誌",
         "Sponsorship Log": "贊助日誌",
@@ -523,8 +523,8 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         [/starred topics/, "星號主題"],
         [/starred/, "星號"],
         [/Commits · ([^ ]+)/, "提交 · $1"],
-        [/New Issue/, "新建議題"],
-        [/Issues?/, "議題"],
+        [/New Issue/, "新建問題"],
+        [/Issues?/, "問題"],
         [/Pull (R|r)equests?/, "合併請求"],
         [/Actions secrets · ([^ ]+)/, "操作機密 · $1"],
         [/Actions settings · ([^ ]+)/, "操作設置 · $1"],
@@ -635,14 +635,14 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Please wait a few minutes before you try again;": "請稍等幾分鐘再重試；",
             "in some cases this may take up to an hour.": "在某些情況下，這可能最多需要一個小時。",
 
-        // 議題、合併請求、討論浮動訊息卡（在任一引用這些連結的頁面都會出現
-            "You opened this issue": "您打開了這個議題",
+        // 問題、合併請求、討論浮動訊息卡（在任一引用這些連結的頁面都會出現
+            "You opened this issue": "您打開了這個問題",
             "You opened this pull request": "您打開了這個合併請求",
-            "You commented on this issue": "您對此議題發表了評論",
-            "You commented on and opened this issue": "您打開了這個議題並發表評論",
+            "You commented on this issue": "您對此問題發表了評論",
+            "You commented on and opened this issue": "您打開了這個問題並發表評論",
             "You commented on this pull request": "您對此合併請求發表了評論",
             "You commented on and opened this pull request": "您打開了這個合併請求並發表評論",
-            "You were mentioned on and commented on this issue": "您在此議題上被提及並發表評論",
+            "You were mentioned on and commented on this issue": "您在此問題上被提及並發表評論",
             "You were mentioned on and commented on this pull request": "您在此合併請求上被提及並發表評論",
             "You were mentioned on and opened this pull request": "您被提及並打開了此合併請求",
             "You are assigned to this pull request": "您被指派處理此合併請求",
@@ -669,7 +669,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "Automate any workflow": "自動化任何工作流程",
                     // 程式碼空間
                         "Instant dev environments": "即時開發環境",
-                    // 議題
+                    // 問題
                         "Plan and track work": "計劃和追蹤工作",
                     "Code Review": "程式碼審查",
                         "Manage code changes": "管理程式碼更改",
@@ -788,8 +788,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Homepage": "主頁",
             "Home": "主頁",
             "Feed": "動態",
-            "Issues": "議題",
-            "All issues": "所有議題",
+            "Issues": "問題",
+            "All issues": "所有問題",
             "Pull requests": "合併請求",
             "All pull requests": "所有合併請求",
             "Projects": "專案",
@@ -830,7 +830,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "GitHub account settings": "GitHub 帳戶設置",
 
 
-        "Your issues": "您的議題",
+        "Your issues": "您的問題",
         "Your pull requests": "您的合併請求",
 
         // 右上角通知按鈕提示
@@ -850,12 +850,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "New project": "新建專案",
                 "This organization": "本組織", // 組織
                 "New team": "新建團隊", // 組織
-                // 新建議題 對話框
-                    "Create new issue": "新建議題",
+                // 新建問題 對話框
+                    "Create new issue": "新建問題",
                     "Copy link": "複製連結",
                     "Templates and forms": "範本和表單",
-                    "Blank issue": "空白議題",
-                        "Create a new issue from scratch": "從頭開始創建新議題",
+                    "Blank issue": "空白問題",
+                        "Create a new issue from scratch": "從頭開始創建新問題",
 
         // 右上角 Copilot 下拉選單
             "Agents":"AI 代理",
@@ -927,7 +927,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Light/dark Protanopia & Deuteranopia for red/green color blindness.": "明/暗 - 紅綠色盲主題適用於紅綠色盲。",
                     "Light/dark Tritanopia for blue/yellow color blindness.": "明/暗 - 藍色盲主題適用於藍黃色盲。",
                 "Command Palette": "命令面板",
-                    "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速導航並跳轉到您所在的組織或儲存庫，並搜尋最近的議題、合併請求、專案等等。您還可以執行節省時間的命令，而無需將手指從鍵盤上移開！",
+                    "Quickly navigate and jump between your organizations or repositories and search recent issues, pull requests, projects and more with the new command palette. You can also execute time saving commands all without lifting your fingers off the keyboard!": "使用新的命令面板，可以快速導航並跳轉到您所在的組織或儲存庫，並搜尋最近的問題、合併請求、專案等等。您還可以執行節省時間的命令，而無需將手指從鍵盤上移開！",
                     "To open the command palette:": "打開命令面板：",
                         "other:": "其他：",
                 "Organization Custom Instructions": "組織自定義指令",
@@ -935,11 +935,11 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "New Pull Requests Dashboard": "新版合併請求儀表板",
                     "The updated pull requests overview (github.com/pulls) introduces saved views, smart default filters, and enhanced search, making it easier to organize and find pull requests across your repos, teams, and orgs. Once enabled, please refresh to see the changes.": "更新後的合併請求概覽（github.com/pulls）引入了保存的視圖、智能預設過濾器和增強的搜尋功能，使您更輕鬆地組織並查找儲存庫、團隊和組織中的合併請求。啟用後，請刷新以查看更改。",
                 "New Dashboard Experience": "新儀表板體驗",
-                    "The updated home dashboard introduces enhanced agent workflows, making it easier to create and manage agent sessions, issues, and pull requests directly from your personalized dashboard. Once enabled, please refresh to see the changes.": "更新後的主頁儀表板引入了增強的AI 代理工作流，使您可以更輕鬆地直接從個性化儀表板創建和管理AI 代理會話、議題和合併請求。啟用後，請刷新以查看更改。",
+                    "The updated home dashboard introduces enhanced agent workflows, making it easier to create and manage agent sessions, issues, and pull requests directly from your personalized dashboard. Once enabled, please refresh to see the changes.": "更新後的主頁儀表板引入了增強的AI 代理工作流，使您可以更輕鬆地直接從個性化儀表板創建和管理AI 代理會話、問題和合併請求。啟用後，請刷新以查看更改。",
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的豐富差異視圖",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在合併請求中啟用 Jupyter Notebook 的豐富差異視圖",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持對 Jupyter Notebook 的豐富差異視圖進行評論",
-                "Semantic issue search": "語義議題搜尋",
+                "Semantic issue search": "語義問題搜尋",
                     "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的語義搜尋查找問題。在存儲庫的問題頁面上輸入自然語言查詢，以發現相關的語義索引結果。您還可以結合過濾器和關鍵字進行傳統搜尋。",
                 "New Files Changed Experience": "新版文件更改體驗",
                     "Feature enabling the new Files Changed Page": "啟用新版更改的文件頁",
@@ -948,14 +948,14 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Note: this features only works when the New Files Changed Experience feature preview is enabled.": "注意：此功能僅在啟用“新版文件更改體驗”功能預覽時才生效。",
                 "Slash Commands": "斜槓命令",
                     "Slash commands make it easier to type more complex Markdown, such as tables, tasklists, and code blocks.": "斜線命令可以讓您更輕鬆地輸入更複雜的 Markdown，如表格、任務列表和程式碼塊。",
-                    "Simply type": "只需在議題、合併請求和討論中輸入",
+                    "Simply type": "只需在問題、合併請求和討論中輸入",
                     "on Issues, PRs and Discussions to check out a list of available commands!": "，即可查看可用命令的列表！",
                 "Feature disabled.": "功能已禁用。",
                     "Please": "請",
                     "give feedback": "提交回饋",
                     "so we can improve it!": "以便我們加以改進！",
-                "Semantic issue search": "語義議題搜尋",
-                    "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的語義議題搜尋功能查找議題。在儲存庫的議題頁面輸入自然語言查詢，即可發現語義索引的相關結果。您還可以結合過濾器和關鍵詞進行傳統搜尋。",
+                "Semantic issue search": "語義問題搜尋",
+                    "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的語義問題搜尋功能查找問題。在儲存庫的問題頁面輸入自然語言查詢，即可發現語義索引的相關結果。您還可以結合過濾器和關鍵詞進行傳統搜尋。",
                 // 出錯提示
                     "Sorry, something went wrong and we were not able to fetch the feature previews": "對不起，出了點問題，我們無法獲取功能預覽",
                 "Changes saved! Please": "更改已保存！請",
@@ -1087,7 +1087,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "Table": "表格",
                         "Add markdown table": "新增 Markdown 表格",
                     "Templates": "範本",
-                        "Insert one of your issue templates": "插入您的議題範本",
+                        "Insert one of your issue templates": "插入您的問題範本",
 
                     "Slash": "斜槓",
                     // 程式碼塊
@@ -1112,9 +1112,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                         "5 rows": "5 行",
 
                     // 範本
-                        "No issue templates": "尚無議題範本",
+                        "No issue templates": "尚無問題範本",
                         "Learn more about": "瞭解更多關於",
-                        "issue templates": "議題範本",
+                        "issue templates": "問題範本",
 
                 // 小屏 插入連結 對話框
                     "Insert Link": "插入連結",
@@ -1140,15 +1140,15 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Try again": "請上傳",
                 "with a file size less than 10MB.": "體積小於10MB的文件",
 
-            "Close issue": "關閉議題", // issue頁 評論框
+            "Close issue": "關閉問題", // issue頁 評論框
                 "Close as completed": "完成後關閉",
                     "Done, closed, fixed, resolved": "已完成、已關閉、已修復、已解決",
                 "Close as not planned": "非計劃中關閉",
                     "Won't fix, can't repro, duplicate, stale": "不會修復，無法重現，重複，陳舊",
-                    "Won't fix, can't repro, stale": "不會修復，無法重現，陳舊", // 新版議題頁
-                // 因重複而關閉（新版議題頁）
-                    "Duplicate of another issue": "重複議題",
-            "Close with comment": "評論並關閉", // 議題/合併請求 評論框
+                    "Won't fix, can't repro, stale": "不會修復，無法重現，陳舊", // 新版問題頁
+                // 因重複而關閉（新版問題頁）
+                    "Duplicate of another issue": "重複問題",
+            "Close with comment": "評論並關閉", // 問題/合併請求 評論框
             "Close pull request": "關閉合併請求", // 合併請求頁 評論框
             "Reopen discussion": "重新打開討論", // discussion頁 評論框
             "Close discussion": "關閉討論", // discussion頁 評論框
@@ -1160,12 +1160,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                     "The discussion is a duplicate of another": "討論與另一個討論重複",
             "Comment": "評論",
             "comment": "評論",
-            "Submit new issue": "提交新議題",
+            "Submit new issue": "提交新問題",
             "Comment on this commit": "評論",
             "Close and comment": "提交並關閉",
             "Reopen and comment": "提交並重新打開",
-            "Reopen issue": "重新打開議題", // 具體議題
-            "Reopen with comment": "重新打開評論", // 具體議題
+            "Reopen issue": "重新打開問題", // 具體問題
+            "Reopen with comment": "重新打開評論", // 具體問題
             "Reopen pull request": "重新打開合併請求", //具體合併請求
             "Add single comment": "評論", // 具體提交頁 進行某條程式碼評論
             "Reply": "回覆", // 具體討論頁
@@ -1208,7 +1208,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Open search bar": "打開搜尋欄",
                 "Go to notifications": "跳轉到通知",
                 "Go to dashboard": "跳轉到儀表板",
-                "Go to your issues": "跳轉到議題",
+                "Go to your issues": "跳轉到問題",
                 "Go to your pull requests": "跳轉到合併請求",
                 "Bring up this help dialog": "彈出這個幫助對話框",
                 "Move selection down": "向下移動選擇",
@@ -1223,13 +1223,13 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Tip:": "小貼士：",
                 "Go to your accessibility settings to change your keyboard shortcuts": "跳轉到您的無障礙設置，以更改您的鍵盤快捷鍵",
                 "to search discussions": "搜尋討論", // 輸入 #
-                "to search issues": "搜尋議題", // 輸入 #
+                "to search issues": "搜尋問題", // 輸入 #
                 "to search pull requests": "搜尋合併請求", // 輸入 #
                 "to search projects": "搜尋專案", // 輸入 !
                 "to search people and organizations": "搜尋成員和組織", // 輸入 @
                 "to search teams": "搜尋團隊", // 輸入 @
                 "to activate command mode": "激活命令模式", // 輸入 >
-                "Type is:issue to filter to issues": "輸入 is:issue 以篩選議題",
+                "Type is:issue to filter to issues": "輸入 is:issue 以篩選問題",
                 "Type is:pr to filter to pull requests": "輸入 is:pr 以篩選合併請求",
                 "Type is:open to filter to open content": "輸入 is:open 以篩選打開的內容",
                 "Type author:@me to search your content": "輸入 author:@me 以篩選您的內容",
@@ -1252,9 +1252,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             // [/in ([\w]+/[\w]+)/, "在 $1"],
 
             // # 模式
-                "Search issues and pull requests": "搜尋議題和合併請求",
-                "Search issues, pull requests, discussions, and projects": "搜尋議題、合併請求、討論和專案",
-                "Issues, pull requests, and discussions": "議題、合併請求和討論",
+                "Search issues and pull requests": "搜尋問題和合併請求",
+                "Search issues, pull requests, discussions, and projects": "搜尋問題、合併請求、討論和專案",
+                "Issues, pull requests, and discussions": "問題、合併請求和討論",
 
             // ! 模式
                 "Search projects": "搜尋專案",
@@ -1279,12 +1279,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "– New discussion": "- 新建討論",
                 "– New organization": "- 新建組織",
                 "– New gist": "- 新建程式碼片段",
-                "– New issue": "- 新建議題",
+                "– New issue": "- 新建問題",
                 "– New file": "- 新建文件",
                 "– Change tab size rendering": "- 切換製表符尺寸",
                 "– Switch theme": "- 切換主題",
 
-                "New issue": "新建議題",
+                "New issue": "新建問題",
                 "New discussion": "新建討論",
                 "New file": "新建文件",
                 "Change tab size rendering": "切換製表符尺寸",
@@ -1310,11 +1310,11 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Modes": "模式",
                 "Search for": "搜尋",
                 "across all of GitHub": "在整個 GitHub 中",
-                "issues, pull requests, discussions,": "議題、合併請求、討論",
+                "issues, pull requests, discussions,": "問題、合併請求、討論",
                 "organizations, repositories,": "組織、儲存庫",
                 "projects": "專案",
                 "files": "文件",
-                "issues": "議題",
+                "issues": "問題",
                 "pull requests": "合併請求",
                 "organizations": "組織",
                 "repositories": "儲存庫",
@@ -1322,19 +1322,19 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Activate": "激活",
                 "command mode": "命令模式",
 
-                "Use filters in issues, pull requests, discussions, and projects": "在議題、合併請求、討論和專案中使用過濾器",
-                "Search your issues, pull requests, and discussions": "搜尋您的議題、合併請求和討論",
+                "Use filters in issues, pull requests, discussions, and projects": "在問題、合併請求、討論和專案中使用過濾器",
+                "Search your issues, pull requests, and discussions": "搜尋您的問題、合併請求和討論",
                 "Filter to pull requests": "篩選合併請求",
-                "Filter to issues": "篩選議題",
+                "Filter to issues": "篩選問題",
                 "Filter to discussions": "篩選討論",
                 "Filter to projects": "篩選專案",
-                "Filter to open issues, pull requests, and discussions": "篩選打開的議題、合併請求和討論",
+                "Filter to open issues, pull requests, and discussions": "篩選打開的問題、合併請求和討論",
 
-            // 議題頁面
-                "Edit issue title": "編輯議題標題",
-                "Edit issue body": "編輯議題內容",
-                "Transfer issue…": "轉移議題…",
-                "Delete issue…": "刪除議題…",
+            // 問題頁面
+                "Edit issue title": "編輯問題標題",
+                "Edit issue body": "編輯問題內容",
+                "Transfer issue…": "轉移問題…",
+                "Delete issue…": "刪除問題…",
 
         // 公共詞 高頻詞
             "Follow": "追蹤",
@@ -1653,7 +1653,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Using the GitHub API to search pull requests": "正在使用 GitHub API 搜尋合併請求",
                 "Using the GitHub API to get latest release": "正在使用 GitHub API 獲取最新發行版本",
                     "Copilot used the": "Copilot 已使用",
-                    "Issue API": "議題 API",
+                    "Issue API": "問題 API",
                     "tool": "工具",
 
             // 聊天內容 - 創建合併請求
@@ -1728,7 +1728,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Duplicate Space": "複製空間",
             "Spaces are now available through the GitHub MCP in VSCode.": "空間現在可以通過 VSCode 的 GitHub MCP 使用。",
             "Install": "安裝",
-            "Spaces organize your files, pull requests, issues, and standards so Copilot can give more relevant help for your work.": "空間組織您的文件、合併請求、議題和標準，以便 Copilot 為您的工作提供更相關的幫助。",
+            "Spaces organize your files, pull requests, issues, and standards so Copilot can give more relevant help for your work.": "空間組織您的文件、合併請求、問題和標準，以便 Copilot 為您的工作提供更相關的幫助。",
             "Create space": "創建空間",
             "Search...": "搜尋…",
             "Shared with me":"與我共享的空間",
@@ -1739,7 +1739,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Share knowledge": "分享知識",
             "Centralize docs so your team can quickly find answers.": "集中管理文件，讓團隊快速找到答案。",
             "Plan projects": "規劃專案",
-            "Create requirements and issues your team can ship.": "創建團隊可交付的需求與議題。",
+            "Create requirements and issues your team can ship.": "創建團隊可交付的需求與問題。",
             "New Space": "新空間",
             "Space name": "空間名稱",
             "Choose a name that describes your project or use case": "選擇一個描述您的專案或用例的名稱",
@@ -1754,12 +1754,12 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Add sources": "新增來源",
                 "Add repository": "新增儲存庫",
                 "Add files from repository": "從儲存庫新增文件",
-                "Link files, pull requests, and issues": "連結文件、合併請求和議題",
+                "Link files, pull requests, and issues": "連結文件、合併請求和問題",
                 "Local": "本地",
                 "Upload a file": "上傳文件",
                 "Add text content": "新增文本內容",
             "Add sources to get started": "新增來源以開始",
-            "Provide files, docs, issues, or repositories so Copilot can give more relevant answers.": "提供文件、文件、議題或儲存庫，以便 Copilot 為您提供更相關的答案。",
+            "Provide files, docs, issues, or repositories so Copilot can give more relevant answers.": "提供文件、文件、問題或儲存庫，以便 Copilot 為您提供更相關的答案。",
             "Start a new conversation in this space by typing in the input box at the top.": "通過在頂部輸入框中輸入，開始在此空間中的新對話。",
             "Space not found": "空間未找到",
             "This URL may be incorrect, you're signed out of your organization, or the Space may have been deleted.": "此 URL 可能不正確，您已退出組織，或空間可能已被刪除。",
@@ -1781,7 +1781,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         [/Public code references from (\d+) repositor(y|ies)/, "公共程式碼，引用自 $1 個儲存庫"],
         [/(\d+) references?/, "$1 條引用"],
         [/(\d+) lines? \((\d+) loc\) ·/, "$1 行（$2 非空行）·"],  // loc = 程式碼行（line of code）= 行數 - 空行數（lines - blank lines）
-        [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜尋分配給用戶 $1 的議題"],
+        [/Using the GitHub API to search for issues assigned to user ([^ ]+)/, "使用 GitHub API 搜尋分配給用戶 $1 的問題"],
         [/Chatting with (\d+) attachments?/, "附件 $1 個"],
         [/Choose items from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "從 $1 中選擇專案來進行交流。使用較少的引用以獲得更準確的回答。"],
         [/Choose files, folders, and symbols from ([^ ]+) to chat about. Use fewer references for more accurate responses./, "選擇 $1 中的文件（夾）和符號進行聊天。引用越少，回覆越準確。"],
@@ -2102,9 +2102,9 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
         "Ask": "詢問",
         "Task": "任務",
         "to access more models and higher limits.": "來獲得更多模型和更高限制。",
-        "Create issue": "創建議題",
-            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，創建一個新的草稿議題。然後，要求提供更多訊息來完善議題。",
-            "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，創建一個包含子議題的議題。然後，要求提供更多訊息來完善這些子議題。",
+        "Create issue": "創建問題",
+            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，創建一個新的草稿問題。然後，要求提供更多訊息來完善問題。",
+            "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，創建一個包含子問題的問題。然後，要求提供更多訊息來完善這些子問題。",
         "Write code": "編寫程式碼",
         "Models": "模型",
             "Create a profile README":"個人資料",
@@ -2137,8 +2137,8 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "Mentioned": "被提及",
             "Review requested": "請求審查",
             "Reviewed": "已審查",
-        "Issue options": "議題選項",
-        "Issues to include": "議題包含",
+        "Issue options": "問題選項",
+        "Issues to include": "問題包含",
             "Assigned to me": "分配給我",
             "Involves me": "涉及我",
         "Open in Copilot Chat": "在 Copilot Chat 中打開",
@@ -2147,7 +2147,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
 
             // 選項
                 "Task": "任務",
-                "Create issue": "創建議題",
+                "Create issue": "創建問題",
 
             "Models": "模型",
                     "Fast and cost-efficient": "快速、經濟高效",
@@ -2234,10 +2234,10 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "You choose who can see and commit to this repository": "您可以選擇誰可以看和提交到該儲存庫。",
             "Create a new repository": "創建新的儲存庫",
             "You're seeing this because you haven't created a repository in a while.": "您看到這個是因為您有一段時間沒有創建儲存庫了。",
-            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到這個是因為您最近沒有使用儲存庫、議題和合併請求。",
+            "You're seeing this because you haven't used repositories, issues, and pull requests recently.": "您看到這個是因為您最近沒有使用儲存庫、問題和合併請求。",
             "Remove from dashboard": "從儀表板中刪除",
             "Repositories that need your help": "這些儲存庫需要您的幫助",
-            "See more repos with good first issues": "查看更多適合新手提交議題的儲存庫",
+            "See more repos with good first issues": "查看更多適合新手提交問題的儲存庫",
         "Use tools of the trade": "使用貿易工具",
             "You're seeing this because you haven't opened a pull request in a while.": "您看到這個是因為您有一段時間沒有打開合併請求了。",
                 "Simplify your development workflow with a GUI": "使用 GUI 簡化開發工作流程",
@@ -2301,8 +2301,8 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "Repositories": "儲存庫",
                 "Repositories that are created or forked by people": "由人們創建或復刻的儲存庫",
             "Repository activity": "儲存庫活動",
-                "Issues and pull requests from repositories": "來自儲存庫的議題和合併請求",
-                "Issues, pull requests, and contributions from repositories": "來自儲存庫的議題、合併請求和貢獻",
+                "Issues and pull requests from repositories": "來自儲存庫的問題和合併請求",
+                "Issues, pull requests, and contributions from repositories": "來自儲存庫的問題、合併請求和貢獻",
             "Follows": "追蹤",
                 "Who people are following": "人們在追蹤誰",
             "Recommendations": "推薦",
@@ -2353,7 +2353,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
         "launched their sponsorship page 💖": "推出了他們的贊助頁面 💖",
         //[/and (\d+) more/, "和另外 $1 個"],
         "All reactions": "所有看法",
-        "commented on an issue in": "於一個議題發表了評論在",
+        "commented on an issue in": "於一個問題發表了評論在",
         "commented on a pull request in": "於一個合併請求發表了評論在",
         "opened a pull request": "打開了一個合併請求在",
         "closed a pull request": "關閉了一個合併請求在",
@@ -2448,7 +2448,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
 
         // 快捷鍵
         "Dashboards": "儀表板",
-        "Go to your issues": "跳轉到您的議題",
+        "Go to your issues": "跳轉到您的問題",
         "Go to your pull requests": "跳轉到您的合併請求",
 
         // 新版首頁（已登入）2025-10-29
@@ -2480,7 +2480,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
         [/(\d+) comments?/, "$1 條評論"],
         [/(\d+) commits? to/, "$1 個提交到"],
         [/(\d+) more commits? »/, "$1 個更多提交到"],
-        [/(\d+) issues? needs? help/, "$1 個議題需要幫助"],
+        [/(\d+) issues? needs? help/, "$1 個問題需要幫助"],
         [/Join discussion/, "加入討論"],
         // [/Updated/, "更新於"],
         // 創建於
@@ -2802,14 +2802,14 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
             "Built by": "構建者",
 
             "Created their first repository": "創建了他們的第一個儲存庫",
-            "Created an issue in": "創建一個議題在",
+            "Created an issue in": "創建一個問題在",
             "a private repository": "私有儲存庫",
             "Created a pull request in": "創建一個合併請求在",
                 "lines changed": "行更改",
             "First repository": "第一個儲存庫",
             "First pull request": "第一次合併請求",
-            "First issue": "第一次議題",
-            "Opened their first issue on GitHub in": "打開了他們第一個議題",
+            "First issue": "第一次問題",
+            "Opened their first issue on GitHub in": "打開了他們第一個問題",
             "Opened their first pull request on GitHub in": "打開了他們第一個合併請求",
             "Opened their first pull request on GitHub in a private repository": "在私有儲存庫中打開了他們第一個合併請求",
             "Joined GitHub": "剛加入 GitHub",
@@ -2846,8 +2846,8 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
         [/Created (\d+) (other)? repositor(y|ies)/, "創建了 $1 個儲存庫"],
         [/Opened (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中打開了 $1 個合併請求"],
         [/Opened (\d+) other pull requests? in (\d+) repositor(y|ies)/, "在 $2 個其他儲存庫中打開了 $1 個合併請求"],
-        [/Opened (\d+) issues? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中打開了 $1 個議題"],
-        [/Opened (\d+) other issues? in (\d+) repositor(y|ies)/, "在 $2 個其他儲存庫中打開了 $1 個其他議題"],
+        [/Opened (\d+) issues? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中打開了 $1 個問題"],
+        [/Opened (\d+) other issues? in (\d+) repositor(y|ies)/, "在 $2 個其他儲存庫中打開了 $1 個其他問題"],
         [/Reviewed (\d+) pull requests? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中審查了 $1 個合併請求"],
         [/Answered (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中答覆了 $1 個討論"],
         [/Started (\d+) discussions? in (\d+) repositor(y|ies)/, "在 $2 個儲存庫中發起了 $1 個討論"],
@@ -2867,7 +2867,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
         [/Created (\d+\+?) repositor(y|ies)/, "創建了 $1 個儲存庫"],
         [/(\d+) repositor(y|ies)/, "$1 個儲存庫"],
         [/(\d+) members?/, "$1 成員"], // 組織 浮動訊息卡
-        [/(\d+) tasks?/, "$1 任務"], // 帶任務議題
+        [/(\d+) tasks?/, "$1 任務"], // 帶任務問題
         [/and (\d+) more/, "等 $1 人"],
         [/- (\d+)h (ahead|behind)/, function(all, num, compare){
             var compareKey = {ahead: '早', behind: '晚'};
@@ -2897,7 +2897,7 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
         //        'commits': '提交',
         //        'pull requests': '合併請求',
         //        'code review': '程式碼審查',
-        //        'issues': '議題',
+        //        'issues': '問題',
         //    };
         //    return user + '從' + date1 + '到' + date2 + '的貢獻圖。其中' + cd1 + c1Key[c1] + '，' + cd2 + c2Key[c2] + '，' +cd3 + c3Key[c3] + '，' + cd4 + c4Key[c4]+ '。';
         //}],
@@ -3004,9 +3004,9 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 儲存庫標籤
                     "Qualifier": "限定詞",
                         "Created": "已創建",
                         "Total forks": "復刻總數",
-                        "Total good-first issues": "好的首發議題總數",
+                        "Total good-first issues": "好的首發問題總數",
                         "Has": "包含文件",
-                        "Total help-wanted issues": "求助議題總數",
+                        "Total help-wanted issues": "求助問題總數",
                         "License": "許可證",
                         "Mirror": "鏡像",
                         "Size (Kb)": "大小 (Kb)",
@@ -3054,8 +3054,8 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 儲存庫標籤
                                         "Size (ascending)": "大小（降序）",
                                         "Total stars (ascending)": "星號總數（降序）",
                                         "Total forks (ascending)": "復刻總數（降序）",
-                                        "Help-wanted issues (ascending)": "求助議題總數（升序）",
-                                        "Help-wanted issues (descending)": "求助議題總數（降序）",
+                                        "Help-wanted issues (ascending)": "求助問題總數（升序）",
+                                        "Help-wanted issues (descending)": "求助問題總數（降序）",
                                     // 可見性
                                         "Internal": "內部",
                 "Discard changes?": "放棄更改？",
@@ -3081,7 +3081,7 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 儲存庫標籤
         [/([^ ]+) doesn’t have any repositories that match./, "$1 沒有任何匹配的儲存庫"], // 儲存庫標籤卡
         [/([^ ]+) doesn’t have any public repositories yet./, "$1 沒有任何公共儲存庫。"],
         [/Your repository \"([^ ]+)\" was successfully deleted./, "您的儲存庫 “$1” 已成功刪除。"],
-        [/(\d+) issues? needs? help/, "$1 個議題需要幫助"],
+        [/(\d+) issues? needs? help/, "$1 個問題需要幫助"],
         [/and (\d+) more/, "等 $1 人"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
@@ -3109,8 +3109,8 @@ I18N["zh-TW"]["page-profile/projects"] = { // 個人首頁- 專案標籤卡
 
             "Welcome to projects": "歡迎訪問專案",
             "Welcome to Projects": "歡迎訪問專案",
-            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格像電子表格一樣構建，為您提供實時畫布，可用於篩選、排序和分組議題與合併請求。您可以通過自定義字段和保存的視圖，按需定製專案。",
-            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組議題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
+            "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "專案表格像電子表格一樣構建，為您提供實時畫布，可用於篩選、排序和分組問題與合併請求。您可以通過自定義字段和保存的視圖，按需定製專案。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組問題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
 
             "Learn more about projects": "瞭解更多關於專案的訊息", // ?tab=projects
 
@@ -3746,7 +3746,7 @@ I18N["zh-TW"]["orgs-settings-menu"] = { // 組織設置 公共部分
                     "Custom properties": "自定義屬性",
                 "Codespaces": "程式碼空間",
                 "Planning": "計劃",
-                    "Issue types": "議題類型",
+                    "Issue types": "問題類型",
                 "Copilot": "GitHub Copilot",
                     "Access": "訪問",
                     "Coding agent": "編程AI 代理",
@@ -4021,7 +4021,7 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 帳戶
                 "Are you sure you want to do this?": "您確定要這麼做嗎？",
                 "This is extremely important.": "這是極其重要的。",
                 "We will": "我們將",
-                ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的復刻、Wiki、議題、合併請求和 GitHub Pages 站點。",
+                ", along with all of your forks, wikis, issues, pull requests, and GitHub Pages sites.": "以及您所有的復刻、Wiki、問題、合併請求和 GitHub Pages 站點。",
                 "You will no longer be billed, and after 90 days your username will be available to anyone on GitHub.": "您將不再被收取費用，並且 90 天后您的用戶名將被 GitHub 上的任何人使用。",
                 "For more help, read our article \"": "如需更多幫助，請閱讀我們的文章 “",
                 "Deleting your user account": "刪除您的帳戶",
@@ -4123,7 +4123,7 @@ I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
             "4 (Default)": "4 (預設)",
 
             "Markdown editor font preference": "Markdown 編輯器字體首選項",
-            "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 樣式的純文本編輯器的字體首選項（例如合併請求和議題描述、評論。）",
+            "Font preference for plain text editors that support Markdown styling (e.g. pull request and issue descriptions, comments.)": "支持 Markdown 樣式的純文本編輯器的字體首選項（例如合併請求和問題描述、評論。）",
             "Use a fixed-width (monospace) font when editing Markdown": "編輯 Markdown 時使用固定寬度（等寬）字體",
 
     },
@@ -4267,7 +4267,7 @@ I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
                     "Reviews, Pushes, Comments, My own updates": "審查、推送、評論、自我更新",
                     "Pull Request reviews": "合併請求審核",
                     "Pull Request pushes": "合併請求推送",
-                    "Comments on Issues and Pull Requests": "關於議題和合併請求的評論",
+                    "Comments on Issues and Pull Requests": "關於問題和合併請求的評論",
                     "Includes your own updates": "包括您自己的更新",
                 "Ignored repositories": "忽略的儲存庫",
                 "You'll never be notified.": "您將永遠不會收到通知。",
@@ -4873,24 +4873,24 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
 
                 "Collaboration": "協作",
                     "Collaborators for public repositories": "公共儲存庫協作者",
-                        "Invite any GitHub member, or all GitHub members, to work with you on code in a public repository you control – including making changes and opening issues.": "邀請任何 GitHub 成員或所有 GitHub 成員，在您控制的公共儲存庫上與您共同處理程式碼，包括進行更改和提出議題。",
+                        "Invite any GitHub member, or all GitHub members, to work with you on code in a public repository you control – including making changes and opening issues.": "邀請任何 GitHub 成員或所有 GitHub 成員，在您控制的公共儲存庫上與您共同處理程式碼，包括進行更改和提出問題。",
                     "Collaborators for private repositories": "私有儲存庫協作者",
-                        "Invite any GitHub member, or all GitHub members, to work with you on code in a private repository you control – including making changes and opening issues.": "邀請任何 GitHub 成員或所有 GitHub 成員，在您控制的私有儲存庫上與您共同處理程式碼，包括進行更改和提出議題。",
-                    // 議題
+                        "Invite any GitHub member, or all GitHub members, to work with you on code in a private repository you control – including making changes and opening issues.": "邀請任何 GitHub 成員或所有 GitHub 成員，在您控制的私有儲存庫上與您共同處理程式碼，包括進行更改和提出問題。",
+                    // 問題
                         "Track bugs, enhancements, and other requests, prioritize work, and communicate with stakeholders as changes are proposed and merged.": "跟蹤漏洞、增強功能和其他請求，確定工作的優先級，並在提出和合併變更時與利益相關者溝通。",
                     // 專案
-                        "Visualize and manage issues and pull requests across tables, boards, and roadmaps with custom fields and views that you can arrange to suit your workflow.": "通過自定義字段和視圖，在表格、面板和路線圖上可視化管理議題和合併請求，以適應您的工作流程。",
+                        "Visualize and manage issues and pull requests across tables, boards, and roadmaps with custom fields and views that you can arrange to suit your workflow.": "通過自定義字段和視圖，在表格、面板和路線圖上可視化管理問題和合併請求，以適應您的工作流程。",
                     "Milestones": "里程碑",
-                        "Track progress on groups of issues or pull requests in a repository, and map groups to overall project goals.": "跟蹤儲存庫中議題或合併請求組的進展，並將組映射到整體專案目標。",
+                        "Track progress on groups of issues or pull requests in a repository, and map groups to overall project goals.": "跟蹤儲存庫中問題或合併請求組的進展，並將組映射到整體專案目標。",
                     // 團隊討論
                     "Team discussions": "團隊討論",
-                        "Discuss any topic, unattached to a specific project or issue. Control who has access, notify discussion participants with updates, and link from anywhere.": "討論任何主題，不與特定專案或議題相關。控制訪問權限，通知討論參與者最新情況，並從任何地方進行連結。",
+                        "Discuss any topic, unattached to a specific project or issue. Control who has access, notify discussion participants with updates, and link from anywhere.": "討論任何主題，不與特定專案或問題相關。控制訪問權限，通知討論參與者最新情況，並從任何地方進行連結。",
                     "Organization and team management": "組織和團隊管理",
                         "Manage access to projects on a team-by-team, or individual user, basis.": "以團隊或個人用戶為基礎管理對專案的訪問。",
                     "Pages and wikis": "GitHub Pages 和 Wiki",
                         "Host documentation and simple websites for your project in a wiki format that contributors can easily edit either on the web or command line.": "以 Wiki 格式為您的專案託管文件和簡單網站，貢獻者可以輕鬆在網路或命令行上進行編輯。",
-                    "Multiple issue assignees": "多個議題受理人",
-                        "Assign more than one person to an issue.": "為議題指派多人受理",
+                    "Multiple issue assignees": "多個問題受理人",
+                        "Assign more than one person to an issue.": "為問題指派多人受理",
                     "GitHub organizations give you team-based access control and discussions.": "GitHub 組織為您提供基於團隊的訪問控制和討論。",
                         "Learn more about organizations": "瞭解更多關於組織的訊息",
 
@@ -4921,7 +4921,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
 
                 "Support and deployment": "支持與部署",
                     "Community Support": "社區支持",
-                        "Get help with most of your GitHub questions and issues in our Community Forum.": "在我們的社區論壇中，獲取大多數有關 GitHub 問題和議題的幫助。",
+                        "Get help with most of your GitHub questions and issues in our Community Forum.": "在我們的社區論壇中，獲取大多數有關 GitHub 問題和問題的幫助。",
                     "Standard Support": "標準支持",
                         "GitHub Support can help you troubleshoot issues you run into while using GitHub. Get support via the web.": "GitHub 支持可幫助您解決使用 GitHub 時遇到的問題。通過網路獲取支持。",
                     "Enterprises also get Premium Support, invoice billing, and self-hosted deployment.": "企業還可以獲得高級支持、發票計費和自託管部署。",
@@ -5295,7 +5295,7 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子信箱
 
             "Primary": "主帳戶",
                 "Backup": "備用",
-                "This email address is the default for GitHub notifications, such as replies to issues, pull requests, and similar activity.": "此電子信箱地址是 GitHub 通知的預設地址，例如對議題、合併請求和類似活動的回覆。",
+                "This email address is the default for GitHub notifications, such as replies to issues, pull requests, and similar activity.": "此電子信箱地址是 GitHub 通知的預設地址，例如對問題、合併請求和類似活動的回覆。",
                 // [/Manage email/, "管理信箱地址"],
                 "Manage email preferences": "管理電子郵件首選項",
                 "Resend verification email": "重新發送驗證郵件",
@@ -5830,7 +5830,7 @@ I18N["zh-TW"]["settings/blocked_users"] = { // 設置 - 黑名單
         // Blocked users 黑名單 https://github.com/settings/blocked_users
             "Block a user": "拉黑用戶",
             "Blocking a user prevents the following on all your repositories:": "拉黑用戶可以防止所有儲存庫中的以下操作：",
-            "opening or commenting on issues or pull requests": "打開或評論議題或合併請求",
+            "opening or commenting on issues or pull requests": "打開或評論問題或合併請求",
             "starring, forking, or watching": "標星、復刻、追蹤",
             "adding or editing wiki pages": "新增或編輯 Wiki 頁面",
             "Additionally, blocked users are not able to:": "此外，被拉黑用戶無法：",
@@ -5864,7 +5864,7 @@ I18N["zh-TW"]["settings/interaction_limits"] = { // 設置 - 互動限制
 
         // Interaction limits 互動限制 https://github.com/settings/interaction_limits
             "Temporary interaction limits": "臨時互動限制",
-            "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開議題或創建合併請求）。",
+            "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開問題或創建合併請求）。",
             "This may be used to force a \"cool-down\" period during heated discussions or prevent unwanted interactions.": "可用於在激烈討論期間，強制進入 “冷靜” 期或防止不必要的互動。",
             "Interaction limits may already exist in your account's": "互動限制可能已經存在於您的",
             "public repositories": "公開儲存庫",
@@ -6412,7 +6412,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "雖然您可以為其他用戶啟用 Copilot 編碼代理，但由於您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程AI 代理，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以進行迭代。",
-            "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 雲端AI 代理，您可以將任務委託給 Copilot，從而專注於最具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以繼續迭代。",
+            "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 雲端AI 代理，您可以將任務委託給 Copilot，從而專注於最具創造性、複雜性和高影響力的重要工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以繼續迭代。",
                 "Learn more in the docs.": "詳情",
 
             "Repository access": "儲存庫訪問",
@@ -7213,8 +7213,8 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                         "Discussions and related comments and labels.": "討論及相關評論和標籤。",
                     "Environments": "環境",
                         "Manage repository environments.": "管理儲存庫環境。",
-                    "Issues": "議題",
-                        "Issues and related comments, assignees, labels, and milestones.": "議題及相關評論、受理人、標籤和里程碑。",
+                    "Issues": "問題",
+                        "Issues and related comments, assignees, labels, and milestones.": "問題及相關評論、受理人、標籤和里程碑。",
                     "Merge queues": "合併列隊",
                         "Manage a repository's merge queues": "管理儲存庫的合併隊列。",
                     "Metadata": "元資料",
@@ -7387,10 +7387,10 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                     "Repository forked.": "儲存庫復刻。",
                 "Gollum": "咕嚕",
                     "Wiki page updated.": "Wiki 頁面的更新。",
-                "Issue comment": "議題評論",
-                    "Issue comment created, edited, or deleted.": "議題評論的創建、編輯或刪除。",
-                //"議題": "",
-                    "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, unlocked, typed, or untyped.": "議題的打開、編輯、刪除、轉移、置頂、取消置頂、關閉、重新打開、分配、取消分配、標記、取消標記、設置里程碑、取消里程碑、鎖定、解鎖。",
+                "Issue comment": "問題評論",
+                    "Issue comment created, edited, or deleted.": "問題評論的創建、編輯或刪除。",
+                //"問題": "",
+                    "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, unlocked, typed, or untyped.": "問題的打開、編輯、刪除、轉移、置頂、取消置頂、關閉、重新打開、分配、取消分配、標記、取消標記、設置里程碑、取消里程碑、鎖定、解鎖。",
                 "Label": "標籤",
                     "Label created, edited or deleted.": "標籤的創建、編輯或刪除。",
                 "Milestone": "里程碑",
@@ -7457,8 +7457,8 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                     "Commit status updated from the API.": "通過 API 更新提交狀態。",
                 //"團隊": "",
                     "Team is created, deleted, edited, or added to/removed from a repository.": "團隊的創建、刪除、編輯以及向儲存庫新增團隊、從儲存庫中移除團隊。",
-                "Sub issues": "子議題",
-                    "Sub-issues added or removed, and parent issues added or removed.": "子議題和父議題的新增或刪除。",
+                "Sub issues": "子問題",
+                    "Sub-issues added or removed, and parent issues added or removed.": "子問題和父問題的新增或刪除。",
                 "Team add": "團隊新增",
                     "Team added or modified on a repository.": "儲存庫團隊的新增或修改。",
                 "Watch": "追蹤",
@@ -7474,7 +7474,7 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                 "Repository advisory": "儲存庫公告",
                     "Repository advisory published or reported.": "儲存庫公告發布或報告。",
                 "Sub issues": "子提議",
-                    "Sub-issues added or removed, and parent issues added or removed.": "子議題和父議題的新增或刪除。",
+                    "Sub-issues added or removed, and parent issues added or removed.": "子問題和父問題的新增或刪除。",
 
             "Where can this GitHub App be installed?": "這款 GitHub 應用可以安裝在哪裡？",
                 "Only on this account": "僅在當前帳戶",
@@ -7893,8 +7893,8 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                     "Discussions and related comments and labels.": "討論及相關評論和標籤。",
                 "Environments": "環境",
                     "Manage repository environments.": "管理儲存庫環境。",
-                "Issues": "議題",
-                    "Issues and related comments, assignees, labels, and milestones.": "議題及相關評論、受理人、標籤和里程碑。",
+                "Issues": "問題",
+                    "Issues and related comments, assignees, labels, and milestones.": "問題及相關評論、受理人、標籤和里程碑。",
                 "Merge queues": "合併列隊",
                     "Manage a repository's merge queues": "管理儲存庫的合併隊列。",
                 "Metadata": "元資料",
@@ -7995,10 +7995,10 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                     "Manage Copilot Business seats and settings": "管理 GitHub Copilot 商業版席位和設置",
                 "Hosted runner custom images": "託管的執行器自定義鏡像",
                     "View and manage hosted runner custom images available to an organization.": "查看和管理組織可用的託管執行器自定義鏡像。",
-                "Issue Fields": "議題字段",
-                    "Manage issue fields for an organization.": "管理組織的議題字段。",
-                "Issue Types": "議題類型",
-                    "Manage issue types for an organization.": "管理組織的議題類型。",
+                "Issue Fields": "問題字段",
+                    "Manage issue fields for an organization.": "管理組織的問題字段。",
+                "Issue Types": "問題類型",
+                    "Manage issue types for an organization.": "管理組織的問題類型。",
                 // 知識庫
                     "View and manage knowledge bases for an organization.": "查看和管理組織的知識庫。",
                 "Members": "成員",
@@ -8245,7 +8245,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
             "Sorry, that branch already exists.": "抱歉，該分支已存在。",
             "has invited you to collaborate on this repository": "邀請您成為該儲存庫協作者",
                 "View invitation": "查看",
-            "Updated issue templates for this repository": "已為此儲存庫更新議題範本",
+            "Updated issue templates for this repository": "已為此儲存庫更新問題範本",
 
             // 存檔
             "This repository has been archived by the owner. It is now read-only.": "此儲存庫已被所有者存檔。它現在是只讀的。",
@@ -8285,7 +8285,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "Committed to this repository in the past month": "最近一個月裡已提交過這個儲存庫",
                 "Member of": "隸屬組織",
                 // [/, and (\d+) more/, "，以及其他 $1 個組織"],
-                "Opened this issue": "打開了該議題",
+                "Opened this issue": "打開了該問題",
                 "Opened this pull request": "打開了該合併請求",
                 "Opened this pull request (their first ever)": "打開了該合併請求（他們有史以來的第一個請求）",
                 "Started this discussion": "開啟了該討論",
@@ -8334,14 +8334,14 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
             "Save": "保存",
             "Unsave": "未保存",
 
-            // 評論框頭部欄 (議題 & 合併請求)
+            // 評論框頭部欄 (問題 & 合併請求)
                 "Contributor": "貢獻者",
                 "Owner": "所有者",
                 "Author": "作者",
-                    "You are the author of this issue": "您是這個議題的作者。",  // 議題
+                    "You are the author of this issue": "您是這個問題的作者。",  // 問題
                     "You are the author of this pull request.": "您是這個合併請求的作者。", // 合併請求
-                    "This user is the author of this issue": "該用戶是這個議題的作者。",  // 議題
-                    "This user is the author of this issue.": "該用戶是這個議題的作者。",// 合併請求
+                    "This user is the author of this issue": "該用戶是這個問題的作者。",  // 問題
+                    "This user is the author of this issue.": "該用戶是這個問題的作者。",// 合併請求
                     "This user is the author of this pull request.": "該用戶是這個合併請求的作者。",// 合併請求
                 "Member": "成員",
                     //[/This user is a member of the ([^ ]+)./, "該用戶是 $1 組織的成員。"],
@@ -8351,11 +8351,11 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "Copy link": "複製連結",
                 "Copy Markdown": "複製為 Markdown",
                 "Quote reply": "引用回覆",
-                "Reference in new issue": "引用到新議題",
-                    // 引用到新議題 對話框
+                "Reference in new issue": "引用到新問題",
+                    // 引用到新問題 對話框
                     "Body": "正文",
-                    "Issue title": "議題標題",
-                    "Issue body": "議題正文",
+                    "Issue title": "問題標題",
+                    "Issue body": "問題正文",
                     "Select repository": "選擇儲存庫",
                     "Repository:": "儲存庫：",
                     "No matching repositories.": "沒有匹配的儲存庫。",
@@ -8427,7 +8427,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "Open cs.github.com in a new tab": "在新標籤頁中打開 cs.github.com",
                 "Focus secondary search bar" : "聚焦二級搜尋欄",
                 "Go to Code"                 : "跳轉到程式碼",
-                "Go to Issues"               : "跳轉到議題",
+                "Go to Issues"               : "跳轉到問題",
                 "Go to Pull Requests"        : "跳轉到合併請求",
                 "Go to Actions"              : "跳轉到操作",
                 "Go to Projects"             : "跳轉到專案",
@@ -8439,11 +8439,11 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "Close Copilot chat": "關閉 Copilot 聊天",
                 "Expand/collapse Copilot chat": "展開/摺疊 Copilot 聊天",
 
-            // 議題
+            // 問題
                 "Submit comment": "提交評論",
-                "Submit comment and close issue": "提交評論並關閉議題",
+                "Submit comment and close issue": "提交評論並關閉問題",
                 "Preview comment": "預覽評論",
-                "Create issue": "創建議題",
+                "Create issue": "創建問題",
                 // "篩選用戶": "",
                 "Filter by or edit assignees"  : "按受理人篩選或編輯受理人",
                 "Filter by or edit labels"     : "按標籤篩選或編輯標籤",
@@ -8458,7 +8458,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "Pull request - Conversation tab": "合併請求 - 對話標籤卡",
                     "Submit comment and close or open pull request": "提交評論和關閉或打開合併請求",
                     "Request reviewers": "請求審查者",
-                    "Link an issue or pull request from the same repository": "連結同一儲存庫的議題或合併請求",
+                    "Link an issue or pull request from the same repository": "連結同一儲存庫的問題或合併請求",
                     "Toggle visibility of all collapsed review comments instead of just the current one": "切換所有摺疊審查意見的可見性，而不僅僅是當前的審查意見",
                 "Pull request - Files changed tab": "合併請求 - 文件更改標籤卡",
                     "Open commits list": "打開提交列表",
@@ -8935,7 +8935,7 @@ I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
                     "Select events you want to be notified of in addition to participating and @mentions.": "選擇除參與和 @您 之外還要接收通知的事件。",
                 "Get push notifications on": "要獲取推送通知，使用",
                 "Releases": "發行版本",
-                    //"Issues are not enabled for this repository": "此儲存庫未啟用議題功能",
+                    //"Issues are not enabled for this repository": "此儲存庫未啟用問題功能",
                 "Discussions": "討論",
                     //"Discussions are not enabled for this repository": "該儲存庫未啟用討論功能",
                     //"Discussions are not enabled for this repo": "此儲存庫未啟用討論功能",
@@ -9436,8 +9436,8 @@ I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
                 "entries were": "條目",
                 "omitted from the list. Latest commit info may be omitted.": "被省略。最新提交訊息可能會省略。",
 
-        // 文件管理器 - 議題範本 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
-            "Customize the issue creation experience with a": "自定義議題的創建範本使用一個",
+        // 文件管理器 - 問題範本 /<user-name>/<repo-name>/tree/<branch>/.github/ISSUE_TEMPLATE
+            "Customize the issue creation experience with a": "自定義問題的創建範本使用一個",
             "file.": "文件。",
             "Learn more about configuring a template chooser.": "瞭解更多關於配置範本選擇器的訊息。",
 
@@ -9512,7 +9512,7 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
             "Milestones": "里程碑",
 
             "You haven’t created any Milestones.": "您尚未創建任何里程碑。",
-            "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑為特定版本或專案創建議題和合併請求的集合。",
+            "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑為特定版本或專案創建問題和合併請求的集合。",
 
             // 組織 儲存庫 里程碑
             "No Milestones found!": "沒有發現里程碑!",
@@ -9529,11 +9529,11 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
                 "Most complete": "最完整",
                 "Alphabetical": "按字母順序",
                 "Reverse alphabetical": "按字母倒序",
-                "Most issues": "最多的議題",
-                "Fewest issues": "最少的議題",
+                "Most issues": "最多的問題",
+                "Fewest issues": "最少的問題",
 
             "No due date": "沒有截止日期",
-            "issues closed": "議題關閉",
+            "issues closed": "問題關閉",
             // [/Due by (.*)/, "截止日期 $1"], // 里程碑截止日期
             "Last updated": "最後更新",
             "(more)": "（更多）",
@@ -9544,8 +9544,8 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
 
         // 新建里程碑頁面 /<user-name>/<repo-name>/milestones/new
             "New milestone": "新建里程牌",
-                "Create a new milestone to help organize your issues and pull requests. Learn more about": "創建一個新的里程碑來幫助組織您的議題和合併請求。瞭解更多關於",
-                "milestones and issues": "里程碑和議題",
+                "Create a new milestone to help organize your issues and pull requests. Learn more about": "創建一個新的里程碑來幫助組織您的問題和合併請求。瞭解更多關於",
+                "milestones and issues": "里程碑和問題",
             "Title": "標題",
             "Due date (optional)": "截止日期（可選）",
             "Description": "描述",
@@ -9555,13 +9555,13 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
             "opened": "打開於",
             "was closed": "關閉於",
 
-            "There are no open issues in this milestone": "此里程碑沒有打開議題",
-            "Add issues to milestones to help organize your work for a particular release or project. Find and add": "將議題新增到里程碑，有助於為特定的版本或專案組織您的工作。在此儲存庫中查找並新增",
-            "issues with no milestones": "沒有里程碑的議題。",
+            "There are no open issues in this milestone": "此里程碑沒有打開問題",
+            "Add issues to milestones to help organize your work for a particular release or project. Find and add": "將問題新增到里程碑，有助於為特定的版本或專案組織您的工作。在此儲存庫中查找並新增",
+            "issues with no milestones": "沒有里程碑的問題。",
             "in this repo.": " ",
 
-            "There are no closed issues in this milestone": "此里程碑沒有已關閉議題",
-            "Issues will automatically be moved here when they are closed.": "議題在關閉後會自動移到這裡。",
+            "There are no closed issues in this milestone": "此里程碑沒有已關閉問題",
+            "Issues will automatically be moved here when they are closed.": "問題在關閉後會自動移到這裡。",
 
     },
     "regexp": [ // 正則翻譯
@@ -9574,48 +9574,48 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
 
 I18N["zh-TW"]["repository/milestone"] = I18N["zh-TW"]["repository/milestones"]; // 儲存庫 - 某里程碑
 
-I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併請求頁面公共部分
+I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 問題和合併請求頁面公共部分
     "static": { // 靜態翻譯
         // pull 與 request 公共詞條
             "Filters": "篩選",
                 // 篩選下拉選單
-                "Filter Issues": "篩選議題",
-                "Open issues and pull requests": "打開的議題和合併請求",
-                "Your issues": "您提出的議題",
+                "Filter Issues": "篩選問題",
+                "Open issues and pull requests": "打開的問題和合併請求",
+                "Your issues": "您提出的問題",
                 "Your pull requests": "您的合併請求",
                 "Everything assigned to you": "任何分配給您的",
                 "Everything mentioning you": "任何提及您的",
                 "View advanced search syntax": "查看高級搜尋語法",
 
-            "Search all issues": "搜尋所有議題",
+            "Search all issues": "搜尋所有問題",
             "Clear current search query, filters, and sorts": "清除當前的搜尋查詢、篩選器和排序方式",
 
             "ProTip!": "專業提示！",
                 "Find everything you created by searching": "通過搜尋查找您創建的所有內容：",
-                "Exclude your own issues with": "排除您自己創建的議題：",
+                "Exclude your own issues with": "排除您自己創建的問題：",
                 "Mix and match filters to narrow down what you’re looking for.": "通過混合和匹配篩選器以縮小查找範圍。",
                 "Exclude everything labeled": "排除所有標有",
                 "with": "標籤的內容，使用：",
                 "Follow long discussions with": "要跟進長討論，請使用：",
-                "on any issue or pull request to go back to the pull request listing page.": "在任何議題或合併請求上使用以返回合併請求列表頁面。",
+                "on any issue or pull request to go back to the pull request listing page.": "在任何問題或合併請求上使用以返回合併請求列表頁面。",
                 "Filter pull requests by the default branch with": "通過預設分支過濾合併請求：",
                 "to see everything that’s not assigned.": "以查看所有未分配的內容。",
-                "Find all pull requests that aren't related to any open issues with": "查找所有未關聯任何打開議題的合併請求，使用：",
+                "Find all pull requests that aren't related to any open issues with": "查找所有未關聯任何打開問題的合併請求，使用：",
                 "Add comments to specific lines under": "在以下特定行新增註釋：",
                 "will show everything without a milestone.": "將顯示所有沒有里程碑的內容。",
                 "Updated in the last three days:": "最近 3 天更新：",
-                "Notify someone on an issue with a mention, like:": "在議題中通過 @ 提及通知某人，例如：",
+                "Notify someone on an issue with a mention, like:": "在問題中通過 @ 提及通知某人，例如：",
                 "Adding": "新增",
                 "will show everything without a label.": "將顯示所有無標籤的內容。",
-                "on any issue or pull request to go back to the issue listing page.": "在任何議題或合併請求上使用以返回議題列表頁面。",
-                "Click a checkbox on the left to edit multiple issues at once.": "單擊左側複選框即可同時編輯多個議題。",
+                "on any issue or pull request to go back to the issue listing page.": "在任何問題或合併請求上使用以返回問題列表頁面。",
+                "Click a checkbox on the left to edit multiple issues at once.": "單擊左側複選框即可同時編輯多個問題。",
                 // [/Ears burning? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的內容，請使用"]
 
 
             "Labels": "標籤",
                 "No labels": "無標籤",
             "Milestones": "里程碑",
-            "New issue": "創建議題",
+            "New issue": "創建問題",
             "New": "創建", // 小屏
 
             // 篩選工作條
@@ -9640,7 +9640,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
             // "Milestones": "里程碑",
                 "Filter by milestone": "按里程碑篩選",
                 "Filter milestones": "篩選里程碑",
-                "Issues with no milestone": "無里程碑的議題",
+                "Issues with no milestone": "無里程碑的問題",
                 "Pull requests with no milestone": "無里程碑的合併請求", // pulls
                 "Nothing to show": "暫無",
 
@@ -9654,7 +9654,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     "Assign yourself": "分配給自己",
 
             "Relationships": "關係",
-                "Parent issue": "父議題",
+                "Parent issue": "父問題",
 
             "Sort": "排序",
                 "Sort by": "排序",
@@ -9703,9 +9703,9 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
             "labels": "標籤",
 
             // 圖示浮窗
-            "Open issue": "議題已打開",
-            "Closed issue": "議題已完成",
-            "Closed as not planned issue": "議題已關閉因未計劃",
+            "Open issue": "問題已打開",
+            "Closed issue": "問題已完成",
+            "Closed as not planned issue": "問題已關閉因未計劃",
             "Open Pull Request": "合併請求已打開",
             "Draft Pull Request": "合併請求草案",
             "Merged Pull Request": "合併請求已合併",
@@ -9713,7 +9713,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
 
             // [/(\d+) linked pull requests?/, "連結 $1 個合併請求"],
 
-        // 某個合併請求和某個議題 公共詞條
+        // 某個合併請求和某個問題 公共詞條
             // 頂部提醒
                 "You’ve been unsubscribed from this thread.": "您已退訂該主題。",
 
@@ -9747,7 +9747,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     "No one—": "無人 - ",
                     "assign yourself": " 受理自己",
                     // 下拉框
-                    "Assign up to 10 people to this issue": "最多指定 10 人", // 議題
+                    "Assign up to 10 people to this issue": "最多指定 10 人", // 問題
                     "Assign up to 10 people to this pull request": "最多指定 10 人", // 合併請求
                     "Clear assignees": "清除受理人",
                     "Type or choose a user": "輸入或選擇用戶",
@@ -9763,10 +9763,10 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     "documentation": "文件",
                         "Improvements or additions to documentation": "文件的改進或補充",
                     "duplicate": "重複",
-                        "This issue or pull request already exists": "這個議題或合併請求已經存在",
+                        "This issue or pull request already exists": "這個問題或合併請求已經存在",
                     "enhancement": "增強",
                         "New feature or request": "新功能或請求",
-                    "good first issue": "好的首發議題",
+                    "good first issue": "好的首發問題",
                         "Good for newcomers": "適合新人",
                     "help wanted": "需要幫助",
                         "Extra attention is needed": "需要特別追蹤",
@@ -9777,7 +9777,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     "wontfix": "不會修復",
                         "This will not be worked on": "這將不會被處理",
 
-                    "Apply labels to this issue": "應用標籤", // 議題
+                    "Apply labels to this issue": "應用標籤", // 問題
                     "Apply labels to this pull request": "應用標籤", // 合併請求
                     "Edit labels": "編輯標籤",
 
@@ -9797,10 +9797,10 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                         "Nothing to show": "暫無",
 
                 "Development": "進展",
-                    "Successfully merging this pull request may close these issues.": "成功合併此合併請求可能會關閉這些議題。",
-                    "Successfully merging a pull request may close this issue.": "成功合併一個合併請求可能會關閉此議題。",
+                    "Successfully merging this pull request may close these issues.": "成功合併此合併請求可能會關閉這些問題。",
+                    "Successfully merging a pull request may close this issue.": "成功合併一個合併請求可能會關閉此問題。",
                     // 下拉
-                    "Link an issue from this repository": "關聯來自此儲存庫的議題",
+                    "Link an issue from this repository": "關聯來自此儲存庫的問題",
                     "Filter": "篩選",
                     "No results": "無結果",
                     "Open in Workspace": "在工作區打開",
@@ -9818,50 +9818,50 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                 "You’re receiving notifications because you were mentioned.": "您收到通知是因為有人 @您。",
                 "You’re receiving notifications because you commented.": "您收到通知是因為您發表了評論。",
                 "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的合併請求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的議題。",
+                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的問題。",
                 "You’re receiving notifications because you modified the open/close state.": "您收到通知是因為您修改了打開/關閉狀態。",
                 "You’re receiving notifications because you were assigned.": "您收到通知是因為您受理了它。",
                 "You’re ignoring this repository.": "您忽略了這個儲存庫。",
 
                     // 通知設置對話框
                     "Notification settings": "通知設置",
-                    "Notifications settings": "通知設置", // 新版議題頁面
+                    "Notifications settings": "通知設置", // 新版問題頁面
                     "Not subscribed": "未訂閱",
                         "Only receive notifications from this pull request when you have participated or have been @mentioned.": "只有在您參與或被 @您 時才會收到來自此合併請求的通知。",
-                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您參與或被 @您 時才會收到來自此議題的通知。", // 議題頁面
+                        "Only receive notifications from this issue when you have participated or have been @mentioned.": "只有在您參與或被 @您 時才會收到來自此問題的通知。", // 問題頁面
                     "Subscribed": "訂閱",
                         "Receive all notifications from this pull request.": "接收來自此合併請求的所有通知。",
-                        "Receive all notifications from this issue.": "接收來自此議題的所有通知。",  // 議題頁面
+                        "Receive all notifications from this issue.": "接收來自此問題的所有通知。",  // 問題頁面
                     "Custom": "自定義",
                         "You will only be notified for events selected from the list below. If you participate or are @mentioned you will be subscribed.": "您只會收到從以下列表中選擇的事件的通知。如果您參與或 @您 時，將自動訂閱。",
                         "You will only be notified for the events selected from the list below.": "您只會收到從以下列表中選擇的事件的通知。",
                         "If you participate or are @mentioned you will be subscribed.": "如果您參與或 @您 時，將自動訂閱。",
-                    // 議題
-                        "Receive a notification when this issue has been closed.": "當議題被關閉時，收到通知。",
+                    // 問題
+                        "Receive a notification when this issue has been closed.": "當問題被關閉時，收到通知。",
                         "Reopened": "重新打開",
-                            "Receive a notification when this issue has been reopened.": "當議題被重新打開時，收到通知。",
+                            "Receive a notification when this issue has been reopened.": "當問題被重新打開時，收到通知。",
                     // 合併請求
                         "Receive a notification when this pull request has been merged.": "當合併請求被合併時，收到通知。",
                         "Receive a notification when this pull request has been closed.": "當合併請求被關閉時，收到通知。",
                         "Receive a notification when this pull request has been reopened.": "當合併請求被重新打開時，收到通知。",
 
                 "Lock conversation": "鎖定對話",
-                    "Lock conversation on this issue": "鎖定此議題的對話",
+                    "Lock conversation on this issue": "鎖定此問題的對話",
                     "Lock conversation on this pull request": "鎖定此合併請求的對話",
                     "Other users": "其他用戶",
                     "can’t add new comments": "無法新增新評論",
-                    "to this issue.": "到該議題。",
+                    "to this issue.": "到該問題。",
                     "to this pull request.": "到該合併請求。",
                     "You and other collaborators": "您和其他協作者",
                     "with access": "有權限訪問",
                     "to this repository": "該儲存庫",
                     "can still leave comments": "仍然可以發表評論",
                     "that others can see.": "其他人可以看到。",
-                    "You can always unlock this issue again in the future.": "您今後仍可以隨時再次解鎖此議題。",
+                    "You can always unlock this issue again in the future.": "您今後仍可以隨時再次解鎖此問題。",
                     "You can always unlock this pull request again in the future.": "您今後仍可以隨時再次解鎖此合併請求。",
-                    "Other users can't add new comments to this issue. You and other members of teams with": "其他用戶無法在此議題下新增新評論。您及",
+                    "Other users can't add new comments to this issue. You and other members of teams with": "其他用戶無法在此問題下新增新評論。您及",
                     "write access": "有權訪問",
-                    "to this repository can still leave comments that others can see. You can always unlock this issue again in the future.": "該儲存庫的團隊成員仍可發表其他用戶可見的評論。您隨時可以在未來重新解鎖此議題。",
+                    "to this repository can still leave comments that others can see. You can always unlock this issue again in the future.": "該儲存庫的團隊成員仍可發表其他用戶可見的評論。您隨時可以在未來重新解鎖此問題。",
                     "Reason for locking": "鎖定原因",
                     "Choose a reason": "選擇原因",
                     "Reason": "原因",
@@ -9874,14 +9874,14 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     "lock conversations": "鎖定對話",
                     // "Lock conversation on this issue": "鎖定對話",
                 "Unlock conversation": "解鎖對話",
-                    "Unlock conversation on this issue": "解鎖此議題的對話",
+                    "Unlock conversation on this issue": "解鎖此問題的對話",
                     "Unlock conversation on this pull request": "解鎖此合併請求的對話",
                     "Everyone": "任何人",
-                    "will be able to comment on this issue once more.": "將能夠再次對這個議題發表評論。",
+                    "will be able to comment on this issue once more.": "將能夠再次對這個問題發表評論。",
                     "will be able to comment on this pull request once more.": "將能夠再次對這個合併請求發表評論。",
                     "You can always lock this pull request again in the future.": "您今後仍可以隨時再次鎖定此合併請求。",
-                    "You can always lock this issue again in the future.": "您今後仍可以隨時再次鎖定此議題。",
-                    "Everyone will be able to comment on this issue once more. You can always lock this issue again in the future.": "任何人將能夠再次對這個議題發表評論。您今後仍可以隨時再次鎖定此議題。",
+                    "You can always lock this issue again in the future.": "您今後仍可以隨時再次鎖定此問題。",
+                    "Everyone will be able to comment on this issue once more. You can always lock this issue again in the future.": "任何人將能夠再次對這個問題發表評論。您今後仍可以隨時再次鎖定此問題。",
 
                 // 隱藏評論對話框
                 "The reason will be displayed to describe this comment to others.": "將顯示原因，以便向其他人描述此評論。",
@@ -9929,11 +9929,11 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
     "regexp": [ // 正則翻譯
         // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次批准審查。"],
         [/(\+\d+) more reviewers?/, "$1 個審查者"],
-        [/(\d+) linked issues?/, "連結 $1 個議題"],
+        [/(\d+) linked issues?/, "連結 $1 個問題"],
         [/Assigned to (.*)/, "分配給 $1"],
         [/Edited (\d+) times?/, "編輯 $1 次"],
-        [/Open issues created by ([^ ]+)/, "$1 創建議題"],
-        [/issues opened by ([^ ]+)/, "$1 打開議題"],
+        [/Open issues created by ([^ ]+)/, "$1 創建問題"],
+        [/issues opened by ([^ ]+)/, "$1 打開問題"],
         [/Open pull requests created by ([^ ]+)/, "$1 創建合併請求"],
         [/pull requests opened by ([^ ]+)/, "$1 打開合併請求"],
         [/(\d+) hidden conversations/, "$1 條隱藏對話"],
@@ -9941,22 +9941,22 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
     ]
 };
 
-I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
+I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 問題頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["static"],
 
-        // 儲存庫 --> 議題 標籤卡/<user-name>/<repo-name>/issues
+        // 儲存庫 --> 問題 標籤卡/<user-name>/<repo-name>/issues
         // /<user-name>/<repo-name>/labels/<label-name>
             // 歡迎訊息
-            "Welcome to issues!": "歡迎追蹤議題！",
-            "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "議題用於跟蹤待辦事項、錯誤、功能請求等。創建議題後，它們將出現在可搜尋和可篩選的列表中。要開始，您應該",
-            "create an issue": "創建議題",
-                "Open issue creation in fullscreen": "全屏", // 有議題範本時
+            "Welcome to issues!": "歡迎追蹤問題！",
+            "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "問題用於跟蹤待辦事項、錯誤、功能請求等。創建問題後，它們將出現在可搜尋和可篩選的列表中。要開始，您應該",
+            "create an issue": "創建問題",
+                "Open issue creation in fullscreen": "全屏", // 有問題範本時
 
-            "Label issues and pull requests for new contributors": "標記新貢獻者的議題和合併請求",
+            "Label issues and pull requests for new contributors": "標記新貢獻者的問題和合併請求",
             "Now, GitHub will help potential first-time contributors": "現在，GitHub 將幫助潛在的首次貢獻者",
-            "discover issues": "探索議題",
+            "discover issues": "探索問題",
             "labeled with": "標記為",
                 "Completed": "已完成",
             "Project": "專案",
@@ -9986,25 +9986,25 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                     "Descending": "遞減",
 
                 "Types": "類型",
-                "Issue type": "議題類型",
-                    "Filter by issue type": "按議題類型篩選",
-                    "Select issue type": "選擇議題類型",
+                "Issue type": "問題類型",
+                    "Filter by issue type": "按問題類型篩選",
+                    "Select issue type": "選擇問題類型",
                     "Filter types": "篩選類型",
                         "No type": "無類型",
-                            "Issues with no type": "無類型議題",
-                            "No issue type": "無議題類型",
+                            "Issues with no type": "無類型問題",
+                            "No issue type": "無問題類型",
                 // 搜尋
                 "Try adjusting your search filters.": "嘗試調整搜尋篩選器。",
 
             // [/Want to contribute to ([^ ]+)/, "想為 $1 做貢獻嗎？"], /issues
             "If you have a bug or an idea, read the": "如果您發現一個錯誤或有任何想法，請閱讀",
-            "before opening an issue.": "，在打開議題之前。",
-            "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您發現一個錯誤或有任何想法，請在打開新議題之前瀏覽未解決的議題。您也可以看看",
+            "before opening an issue.": "，在打開問題之前。",
+            "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您發現一個錯誤或有任何想法，請在打開新問題之前瀏覽未解決的問題。您也可以看看",
             "Open Source Guide": "開源指南",
                 "Learn about Open Source and how to contribute": "瞭解開源和如何貢獻",
-            "If you're ready to tackle some open issues,": "如果您準備好解決一些未解決的議題，",
-            "we've collected some good first issues for you": "我們已為您收集了一些好的首發議題",
-            "we've collected some good first issues for you.": "我們已為您收集了一些好的首發議題。", // 新版議題頁
+            "If you're ready to tackle some open issues,": "如果您準備好解決一些未解決的問題，",
+            "we've collected some good first issues for you": "我們已為您收集了一些好的首發問題",
+            "we've collected some good first issues for you.": "我們已為您收集了一些好的首發問題。", // 新版問題頁
 
             "Dismiss": "忽略",
                 // 忽略 下拉
@@ -10012,7 +10012,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Dismiss for all repositories": "對所有儲存庫均不在提示",
 
 
-            "There aren’t any open issues.": "暫無開放的議題。",
+            "There aren’t any open issues.": "暫無開放的問題。",
 
             // 狀態詞
             "Merged": "已合併",
@@ -10026,51 +10026,51 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "of": "於",
                 "Not planned": "未計劃",
 
-            // 父級議題
+            // 父級問題
             "Parent:": "父級：",
-            // 子級議題
-            "Create sub-issue": "創建子議題",
-                //"Create sub-issue": "創建子議題",
+            // 子級問題
+            "Create sub-issue": "創建子問題",
+                //"Create sub-issue": "創建子問題",
                     // 視窗
-                        "Create new issue": "新建議題",
+                        "Create new issue": "新建問題",
                             "Select an item": "選擇一項",
                                 "Select repository": "選擇儲存庫",
                             "Templates and forms": "範本和表單",
-                                // 空白議題
-                                    "Create a new issue from scratch": "從頭開始創建新議題",
-                "Add existing issue": "新增現有議題",
-                    "Search issues": "搜尋議題",
+                                // 空白問題
+                                    "Create a new issue from scratch": "從頭開始創建新問題",
+                "Add existing issue": "新增現有問題",
+                    "Search issues": "搜尋問題",
                         "Group selected": "分組選擇",
 
 
-                "Blank issue": "空白議題",
+                "Blank issue": "空白問題",
                     "in": "在",
                 "Type your description here…": "在此輸入介紹…",
-                "Create more sub-issues": "創建更多子議題",
+                "Create more sub-issues": "創建更多子問題",
 
                 // 警告
                     "Are you sure?": "您確定嗎？",
-                        "Sub-issues are limited to one parent. Confirm you want to proceed with this change.": "子議題僅允許關聯一個父議題。請確認是否要繼續進行此更改？",
-                        "Change parent issue": "更改父議題",
+                        "Sub-issues are limited to one parent. Confirm you want to proceed with this change.": "子問題僅允許關聯一個父問題。請確認是否要繼續進行此更改？",
+                        "Change parent issue": "更改父問題",
 
-            "Sub-issues": "子議題",
-                "Collapse Sub-issues": "摺疊子議題",
-                "Expand Sub-issues": "展開子議題",
+            "Sub-issues": "子問題",
+                "Collapse Sub-issues": "摺疊子問題",
+                "Expand Sub-issues": "展開子問題",
 
                 "More list item action bar": "更多操作",
-                    "Remove sub-issue": "移除子議題",
+                    "Remove sub-issue": "移除子問題",
 
             "Invalid value": "無效值",
             "for": "，",
-            //"parent-issue": "父議題",
+            //"parent-issue": "父問題",
 
-            "You commented on and opened this issue": "您打開了此議題並發表了評論",
-            "You were mentioned on and commented on this issue": "您被提及並對此議題發表了評論",
-            "You commented on this issue": "您對此議題發表了評論",
-            "You opened this issue": "您打開了此議題",
+            "You commented on and opened this issue": "您打開了此問題並發表了評論",
+            "You were mentioned on and commented on this issue": "您被提及並對此問題發表了評論",
+            "You commented on this issue": "您對此問題發表了評論",
+            "You opened this issue": "您打開了此問題",
 
-            // 置頂議題
-            "Pinned issues": "置頂議題",
+            // 置頂問題
+            "Pinned issues": "置頂問題",
             "Drag to reorder": "拖拽排序",
             "Pinned issue options": "置頂選項",
 
@@ -10083,7 +10083,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                     "Move item after": "移動到…之後",
                     "Move to position": "指定位置",
                     "Move": "移動",
-            "Search Issues": "搜尋議題",
+            "Search Issues": "搜尋問題",
                 // 儲存庫
                     "No repository": "無儲存庫",
                     "Has repository": "包含儲存庫",
@@ -10093,7 +10093,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                     "Exclude org": "排除組織",
                 "Is": "類型為",
                     "Exclude is": "排除類型為",
-                    "Issue": "議題",
+                    "Issue": "問題",
                     "Pull Request": "合併請求",
                     "Unmerged": "未合併",
                     "Locked": "已鎖定",
@@ -10140,9 +10140,9 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                         "Your AI pair programmer": "您的 AI 編程助理",
                         "Assign to Copilot": "受理給 Copilot",
                         // 視窗
-                            "Assign Copilot to issue": "分配議題給 Copilot",
+                            "Assign Copilot to issue": "分配問題給 Copilot",
                             "Feedback": "回饋",
-                                "Copilot will open a pull request using the issue's description, comments, and the additional prompt if you provide one. Choose a custom agent to tailor Copilot for specific tasks.": "Copilot 將根據議題的描述、評論以及您提供的額外提示詞（若有）來開啟合併請求。您可以選擇自定義AI 代理，以便針對特定任務定製 Copilot。",
+                                "Copilot will open a pull request using the issue's description, comments, and the additional prompt if you provide one. Choose a custom agent to tailor Copilot for specific tasks.": "Copilot 將根據問題的描述、評論以及您提供的額外提示詞（若有）來開啟合併請求。您可以選擇自定義AI 代理，以便針對特定任務定製 Copilot。",
                                 "Optional prompt": "提示詞（可選）",
                                     "Provide additional instructions for Copilot": "提供可選提示給 Copilot",
                                 "Auto": "自動",
@@ -10156,10 +10156,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Mentions": "提及",
                     "Has mentions": "包含提及",
                     "Exclude mentions": "排除提及",
-                "Parent issue": "父議題",
-                    "No parent issue": "無父議題",
-                    "Has parent issue": "包含父議題",
-                    "Exclude parent-issue": "排除父議題",
+                "Parent issue": "父問題",
+                    "No parent issue": "無父問題",
+                    "Has parent issue": "包含父問題",
+                    "Exclude parent-issue": "排除父問題",
                 "Blocking": "阻塞",
                     "No blocking": "無阻塞",
                     "Has blocking": "包含阻塞",
@@ -10168,10 +10168,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                     "No blocked by": "無被阻塞",
                     "Has blocked by": "包含被阻塞",
                     "Exclude blocked-by": "排除被阻塞",
-                "Sub-issue": "子議題",
-                    "No sub-issue": "無子議題",
-                    "Has sub-issue": "包含子議題",
-                    "Exclude sub-issue": "排除子議題",
+                "Sub-issue": "子問題",
+                    "No sub-issue": "無子問題",
+                    "Has sub-issue": "包含子問題",
+                    "Exclude sub-issue": "排除子問題",
                 "Update date": "更新日期",
                     "Exclude updated": "排除更新日期",
                     "Today": "今天",
@@ -10294,10 +10294,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
 
             "Order": "順序",
 
-        // 新建議題 選擇議題範本  /<user-name>/<repo-name>/issues/new/choose
+        // 新建問題 選擇問題範本  /<user-name>/<repo-name>/issues/new/choose
             "Get started": "開始",
-            "Don’t see your issue here?": "在這裡沒有看到您的議題？",
-            "Open a blank issue.": "打開一個空白議題。",
+            "Don’t see your issue here?": "在這裡沒有看到您的問題？",
+            "Open a blank issue.": "打開一個空白問題。",
             "Edit templates": "編輯範本",
             "Report abuse": "舉報濫用",
 
@@ -10307,7 +10307,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Discard changes?": "丟棄更改？",
                 "Close and discard": "丟棄並關閉",
 
-        // 新建空白議題  /<user-name>/<repo-name>/issues/new
+        // 新建空白問題  /<user-name>/<repo-name>/issues/new
             "Title": "標題",
             "Helpful resources": "幫助性資源",
             "Create more": "創建多個",
@@ -10319,17 +10319,17 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
 
             "Choose a different template": "切換範本",
 
-        // 從討論創建議題  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
+        // 從討論創建問題  /<user-name>/<repo-name>/issues/new?created_from_discussion_number=<id>
             "Documentation has changed since you last contributed": "自您上次貢獻以來，文件已更改",
-            ". Take a look before submitting an issue:": "。在提交議題之前先看一下：",
+            ". Take a look before submitting an issue:": "。在提交問題之前先看一下：",
             "Contributing guidelines": "貢獻指南",
             "Last updated": "最後更新",
 
-        // 某條具體的議題 /<user-name>/<repo-name>/issues/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // 某條具體的問題 /<user-name>/<repo-name>/issues/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             // 快捷鍵
-                "Convert issue to discussion…": "將議題轉化為討論…",
+                "Convert issue to discussion…": "將問題轉化為討論…",
 
-            "This issue was moved to a discussion.": "這個議題被轉移到討論中。",
+            "This issue was moved to a discussion.": "這個問題被轉移到討論中。",
             "You can continue the conversation there.": "您可以在那裡繼續討論。",
             "Go to discussion →": "轉到討論→",
 
@@ -10338,19 +10338,19 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
 
             // 狀態詞 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了標題",
-            "opened this issue": "打開了該議題",
+            "opened this issue": "打開了該問題",
             "· Fixed by": "· 修復了",
-            "mentioned this issue": "提及了該議題",
+            "mentioned this issue": "提及了該問題",
             "mentioned this": "提及此",
             "opened this": "打開了這個",
             "linked a pull request": "關聯了一個合併請求",
-            "linked a pull request that will close this issue": "關聯了一個關閉此議題的合併請求",
+            "linked a pull request that will close this issue": "關聯了一個關閉此問題的合併請求",
             //"that will": "這將會",
             //"close": "關閉",
-            //"this issue": "這個議題",
-            // "that will close this issue": "這將會關閉這個議題",
-            // "Issue": "議題",
-            "added a commit that closed this issue": "在提交時關閉了這個議題",
+            //"this issue": "這個問題",
+            // "that will close this issue": "這將會關閉這個問題",
+            // "Issue": "問題",
+            "added a commit that closed this issue": "在提交時關閉了這個問題",
             "closed this in": "關閉於",
             "added the": "新增了",
             "added": "新增了",
@@ -10359,7 +10359,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "removed": "移除了",
             "label": "標籤",
             "labels": "標籤",
-            "self-assigned this": "自己受理了該議題",
+            "self-assigned this": "自己受理了該問題",
             // "edited": "編輯的",
             "added this to the": "新增到",
             "added this to": "新增到",
@@ -10375,7 +10375,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "This was referenced": "這是引用",
             "deleted a comment from": "刪除了評論，來自",
             "· May be fixed by": " · 可通過該方案修復",
-            "pinned this issue": "置頂議題",
+            "pinned this issue": "置頂問題",
             "unpinned this issue": "取消置頂",
             "Repository owner": "儲存庫所有者",
             "Repository owner locked and limited conversation to collaborators": "儲存庫所有者鎖定並限制與協作者對話",
@@ -10394,8 +10394,8 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             // "into": "到",
             "deleted the": "刪除了",
             "locked and limited conversation to collaborators": "鎖定並限制與協作者對話",
-            "converted this issue into discussion": "此議題已轉化為討論",
-            "converted this issue into a discussion": "此議題已轉化為討論",
+            "converted this issue into discussion": "此問題已轉化為討論",
+            "converted this issue into a discussion": "此問題已轉化為討論",
             "removed their assignment": "取消了他們的任務",
             "assigned": "分配給了",
             "unassigned": "取消分配給",
@@ -10405,38 +10405,38 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "dismissed a stale review via": "駁回了一個陳舊的審查，通過",
             "requested changes": "請求了更改",
             "added a commit that referenced this issue": "新增了一個引用此問題的提交",
-            "referenced this issue": "提及這個議題",
+            "referenced this issue": "提及這個問題",
             "closed this as completed": "已完成，關閉",
-            "added a parent issue": "新增了一個父議題",
-            "added a commit that references this issue": "新增了一個引用此議題的提交",
-            "transferred this issue from": "將此議題轉移，從",
+            "added a parent issue": "新增了一個父問題",
+            "added a commit that references this issue": "新增了一個引用此問題的提交",
+            "transferred this issue from": "將此問題轉移，從",
             "as off topic": "為偏離主題",
             "as too heated": "為爭論不休",
             "as spam": "為垃圾訊息",
             "as resolved": "為已解決",
-            "added a sub-issue": "新增子議題",
-            "added sub-issues": "新增子議題",
-            "removed a parent issue": "移除父議題",
-            "removed a sub-issue": "移除子議題",
+            "added a sub-issue": "新增子問題",
+            "added sub-issues": "新增子問題",
+            "removed a parent issue": "移除父問題",
+            "removed a sub-issue": "移除子問題",
             "marked": "標記",
-                "as a duplicate of this issue": "議題同此重複", // 示例 https://github.com/maboloshi/github-chinese/issues/405
+                "as a duplicate of this issue": "問題同此重複", // 示例 https://github.com/maboloshi/github-chinese/issues/405
 
             // 右側欄 補充
             "Metadata": "元資料", // 小屏模式
                 // "Development": "進展",
                     "Code with agent mode": "AI 代理模式編程",
                         "Select code repository": "選擇儲存庫",
-                        "Start a codespace with Copilot agent mode for this issue in another repository.": "為另一個儲存庫中的此議題啟動使用 Copilot AI 代理模式的程式碼空間。",
+                        "Start a codespace with Copilot agent mode for this issue in another repository.": "為另一個儲存庫中的此問題啟動使用 Copilot AI 代理模式的程式碼空間。",
                     "No branches or pull requests": "沒有分支或合併請求",
-                    "Shows branches and pull requests linked to this issue.": "顯示與該議題相關的分支和合併請求。",
+                    "Shows branches and pull requests linked to this issue.": "顯示與該問題相關的分支和合併請求。",
                     "Create a branch": "創建分支",
-                    "for this issue or link a pull request.": "為這個議題或關聯一個合併請求",
-                    "When branches are created from issues, their pull requests are automatically linked.": "當從議題中創建分支時，它們的合併請求會自動關聯。",
+                    "for this issue or link a pull request.": "為這個問題或關聯一個合併請求",
+                    "When branches are created from issues, their pull requests are automatically linked.": "當從問題中創建分支時，它們的合併請求會自動關聯。",
 
                     // 關係
-                        "Add parent": "新增父議題",
+                        "Add parent": "新增父問題",
                         "Select a repository": "選擇一個儲存庫",
-                        "Change or remove parent": "更改或移除父議題",
+                        "Change or remove parent": "更改或移除父問題",
                             "Selected": "當前",
 
                     // 參與者數大於2
@@ -10447,19 +10447,19 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
 
                     // "linked a pull request that will": "關聯一個合併請求, 將會",
                     // "close": "關閉",
-                    // "this issue": "這個議題",
+                    // "this issue": "這個問題",
 
-                    // 第一次打開議題
-                    "It looks like this is your first time opening an issue in this project!": "看起來這是您第一次在此專案中打開議題！",
+                    // 第一次打開問題
+                    "It looks like this is your first time opening an issue in this project!": "看起來這是您第一次在此專案中打開問題！",
                     "Be sure to review the": "請務必查閱",
 
-                    // 議題表單
+                    // 問題表單
                     "You're using an": "您正在使用",
-                    "issue form": "議題表單",
-                    ", a new type of issue template.": "，一種新型議題範本。",
+                    "issue form": "問題表單",
+                    ", a new type of issue template.": "，一種新型問題範本。",
 
                     // 創建分支 對話框
-                        "Create a branch for this issue": "為該議題創建一個分支",
+                        "Create a branch for this issue": "為該問題創建一個分支",
                         "Branch name": "分支名稱",
                         "Repository destination": "儲存庫目的地",
                             "Search for a repository": "搜尋儲存庫",
@@ -10486,39 +10486,39 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                         "Search for branches or pull requests": "搜尋分支或合併請求",
                         "no pull request": "無合併請求",
 
-                "Duplicate issue": "複製議題",
-                    // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前議題"],
-                    "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改儲存庫可能會從重複議題中移除里程碑、標籤、類型和分配人員。",
-                    "This issue is being duplicated across repositories. The following metadata might not be copied: Milestone, Labels.": "該議題正跨儲存庫中被複制創建。以下元資料可能不會被複制：里程碑、標籤。",
-                "Pin issue": "置頂議題",
-                    "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置頂 3 個議題，它們將公開顯示在議題頁面的頂部",
-                    "Up to 3 issues can be pinned to the top of the issues page": "最多可以在議題頁面置頂 3 個議題",
-                    "This will unpin this issue from the top of the issues page": "將從議題頁面取消置頂該議題",
+                "Duplicate issue": "複製問題",
+                    // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前問題"],
+                    "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改儲存庫可能會從重複問題中移除里程碑、標籤、類型和分配人員。",
+                    "This issue is being duplicated across repositories. The following metadata might not be copied: Milestone, Labels.": "該問題正跨儲存庫中被複制創建。以下元資料可能不會被複制：里程碑、標籤。",
+                "Pin issue": "置頂問題",
+                    "Up to 3 issues can be pinned and they will appear publicly at the top of the issues page": "最多可以置頂 3 個問題，它們將公開顯示在問題頁面的頂部",
+                    "Up to 3 issues can be pinned to the top of the issues page": "最多可以在問題頁面置頂 3 個問題",
+                    "This will unpin this issue from the top of the issues page": "將從問題頁面取消置頂該問題",
                     // 頂部提醒
-                    "The issue has been pinned.": "該議題已置頂。",
+                    "The issue has been pinned.": "該問題已置頂。",
                 "Unpin issue": "取消置頂",
-                    "Up to 3 issues can be pinned and they will appear at the top of the issues page": "最多可以置頂 3 個議題，它們將顯示在議題頁面的頂部",
-                    "3/3 issues already pinned. Unpin an issue to pin this one.": "已有3/3個議題被置頂。請先取消置頂其中一個議題，才能置頂當前議題。",
+                    "Up to 3 issues can be pinned and they will appear at the top of the issues page": "最多可以置頂 3 個問題，它們將顯示在問題頁面的頂部",
+                    "3/3 issues already pinned. Unpin an issue to pin this one.": "已有3/3個問題被置頂。請先取消置頂其中一個問題，才能置頂當前問題。",
                     // 頂部提醒
-                    "The issue has been unpinned.": "該議題已取消置頂。",
-                "Transfer issue": "轉移議題",
-                    // 轉移議題 對話框
-                        "Transfer this issue": "轉移議題",
-                            "This does not scrub any issue content. Content such as text references to other issues, pull requests, projects and teams will still appear in the description or comments. Labels will be transferred.": "該操作不會清除任何議題內容。對其它議題、合併請求、專案和團隊的文本引用仍會保留在描述或評論中。標籤將會被轉移。",
-                            "Repository projects assigned to this issue will not transfer to the new location": "分配給此議題的儲存庫專案不會轉移到新位置",
+                    "The issue has been unpinned.": "該問題已取消置頂。",
+                "Transfer issue": "轉移問題",
+                    // 轉移問題 對話框
+                        "Transfer this issue": "轉移問題",
+                            "This does not scrub any issue content. Content such as text references to other issues, pull requests, projects and teams will still appear in the description or comments. Labels will be transferred.": "該操作不會清除任何問題內容。對其它問題、合併請求、專案和團隊的文本引用仍會保留在描述或評論中。標籤將會被轉移。",
+                            "Repository projects assigned to this issue will not transfer to the new location": "分配給此問題的儲存庫專案不會轉移到新位置",
                         "Choose a repository": "選擇儲存庫",
                         "Find a repository": "搜尋儲存庫",
                         "Warning!": "警告！",
-                            "Transferring an issue does not scrub any issue content. Content such as text references to other issues, pull requests, projects, teams will remain in this issue's descriptions and comments.": "轉移議題不會清除任何議題內容。諸如對其他議題、合併請求、專案、團隊的文本引用等內容將保留在此議題的描述和評論中。",
+                            "Transferring an issue does not scrub any issue content. Content such as text references to other issues, pull requests, projects, teams will remain in this issue's descriptions and comments.": "轉移問題不會清除任何問題內容。諸如對其他問題、合併請求、專案、團隊的文本引用等內容將保留在此問題的描述和評論中。",
                             "Assignees, labels and milestones will be transferred if they are present in the target repository.": "如果目標儲存庫中存在受讓人、標籤和里程碑，它們將被轉移。",
                 "Convert to discussion": "轉為討論",
-                    // 轉換議題為討論 對話框
-                    "Convert issue to a discussion": "轉換議題為討論",
-                        "Are you sure you want to convert this issue to a discussion?": "您確定要將議題轉換為討論嗎？",
-                        "What happens when an issue is converted into a discussion:": "將議題轉化為討論時，會發生什麼：",
-                        "Issue will be closed and locked": "議題將被關閉並鎖定",
-                        "Title, description, and author will be the same as the issue": "標題、描述和作者將與議題相同",
-                        "All comments and reactions will be the same as the issue": "所有評論和反應將與議題相同",
+                    // 轉換問題為討論 對話框
+                    "Convert issue to a discussion": "轉換問題為討論",
+                        "Are you sure you want to convert this issue to a discussion?": "您確定要將問題轉換為討論嗎？",
+                        "What happens when an issue is converted into a discussion:": "將問題轉化為討論時，會發生什麼：",
+                        "Issue will be closed and locked": "問題將被關閉並鎖定",
+                        "Title, description, and author will be the same as the issue": "標題、描述和作者將與問題相同",
+                        "All comments and reactions will be the same as the issue": "所有評論和反應將與問題相同",
                         "Category for new discussion": "新討論的類別",
                             "Announcements": "公告",
                             "General": "通常",
@@ -10526,31 +10526,31 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                             "Polls": "投票",
                             "Q&A": "問與答",
                             "Show and tell": "展示與講述",
-                        "I understand, convert this issue": "我明白了，依然轉化該議題",
-                "Delete issue": "刪除議題",
-                    "Delete issue?": "刪除議題？",
-                    "Are you sure you want to delete this issue?": "您確定要刪除此議題嗎？",
+                        "I understand, convert this issue": "我明白了，依然轉化該問題",
+                "Delete issue": "刪除問題",
+                    "Delete issue?": "刪除問題？",
+                    "Are you sure you want to delete this issue?": "您確定要刪除此問題嗎？",
                     "This cannot be undone": "這不能被撤消",
-                    "Only adminstrators can delete issues": "只有管理員可以刪除議題",
-                    "Deletion will remove the issue from search and previous references will point to a placeholder": "刪除將會從搜尋中刪除議題，以前的引用將指向一個佔位符",
-                    "Delete this issue": "刪除議題",
-                    "Deleting issue…": "議題刪除中…",
+                    "Only adminstrators can delete issues": "只有管理員可以刪除問題",
+                    "Deletion will remove the issue from search and previous references will point to a placeholder": "刪除將會從搜尋中刪除問題，以前的引用將指向一個佔位符",
+                    "Delete this issue": "刪除問題",
+                    "Deleting issue…": "問題刪除中…",
                     // 頂部提醒
-                    "The issue was successfully deleted.": "該議題已成功刪除。",
+                    "The issue was successfully deleted.": "該問題已成功刪除。",
 
                 "Participants": "參與者",
                     "No participants": "尚無參與者",
 
-            // 新版議題頁面
+            // 新版問題頁面
             "remaining": "剩餘",
             "items": "項",
             "Load more": "載入更多",
 
             "This conversation has been locked and limited to collaborators.": "此對話已鎖定並限制與協作者對話。",
-            "This issue has been deleted.": "該議題已被刪除。",
+            "This issue has been deleted.": "該問題已被刪除。",
             "deleted this from": "刪除了這個，從",
 
-            "Reference in a new issue": "在新議題中提及",
+            "Reference in a new issue": "在新問題中提及",
 
             // 評論框
             "edited by": "編輯者",
@@ -10562,17 +10562,17 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Most recent": "最近",
                 "Viewing edit": "查看編輯",
                 "Delete revision": "刪除修訂",
-            "Reopen Issue": "重新打開議題",
-                "You do not have permissions to reopen this issue": "您沒有權限重新打開此議題",
+            "Reopen Issue": "重新打開問題",
+                "You do not have permissions to reopen this issue": "您沒有權限重新打開此問題",
             // 評論刪除對話框
                 "Delete comment": "刪除評論",
                 "Are you sure you'd like to delete this comment?": "您確定要刪除這條評論嗎？",
-            // 關閉議題
-                "You do not have permissions to close this issue": "您沒有權限關閉此議題",
+            // 關閉問題
+                "You do not have permissions to close this issue": "您沒有權限關閉此問題",
             "Comment can not be empty": "評論不能為空",
             "Add files": "新增文件", // 小屏模式
 
-        // 議題標籤管理 /<user-name>/<repo-name>/issues/labels
+        // 問題標籤管理 /<user-name>/<repo-name>/issues/labels
         // 儲存庫 --> 標籤頁面 /<user-name>/<repo-name>/labels
             "Labels": "標籤",
             "Milestones": "里程碑",
@@ -10595,8 +10595,8 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "Sort": "排序",
                 "Alphabetically": "按字母順序",
                 "Reverse alphabetically": "按字母倒序",
-                "Most issues": "最多的議題",
-                "Fewest issues": "最少的議題",
+                "Most issues": "最多的問題",
+                "Fewest issues": "最少的問題",
 
             // 標籤
                 "bug": "BUG",
@@ -10606,10 +10606,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "documentation": "文件",
                     "Improvements or additions to documentation": "文件的改進或補充",
                 "duplicate": "重複",
-                    "This issue or pull request already exists": "這個議題或合併請求已經存在",
+                    "This issue or pull request already exists": "這個問題或合併請求已經存在",
                 "enhancement": "增強",
                     "New feature or request": "新功能或請求",
-                "good first issue": "好的首發議題",
+                "good first issue": "好的首發問題",
                     "Good for newcomers": "適合新人",
                 "help wanted": "需要幫助",
                     "Extra attention is needed": "需要特別追蹤",
@@ -10620,19 +10620,19 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "wontfix": "不會修復",
                     "This will not be worked on": "這將不會被處理",
 
-            // [/open issues? and pull requests?/, "個打開的議題和合併請求"], // 標籤頁面
-            // [/open issues? or pull requests?/, "個打開的議題或合併請求"], // 標籤頁面
+            // [/open issues? and pull requests?/, "個打開的問題和合併請求"], // 標籤頁面
+            // [/open issues? or pull requests?/, "個打開的問題或合併請求"], // 標籤頁面
 
             "Convert to discussions": "轉為討論",
-                // 轉換議題為討論 對話框
-                "Convert issue to discussion": "轉換議題為討論",
-                "Convert issues to discussions": "轉換議題為討論",
-                    // [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您確定要將帶有以下標籤的 $1 條議題轉換為討論嗎？"],
-                    // "What happens when an issue is converted into a discussion:": "將議題轉化為討論時，會發生什麼：",
-                    "Issue will be locked": "議題將被鎖定",
-                    // "Title, description, and author will be the same as the issue": "標題、描述和作者將與議題相同",
+                // 轉換問題為討論 對話框
+                "Convert issue to discussion": "轉換問題為討論",
+                "Convert issues to discussions": "轉換問題為討論",
+                    // [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您確定要將帶有以下標籤的 $1 條問題轉換為討論嗎？"],
+                    // "What happens when an issue is converted into a discussion:": "將問題轉化為討論時，會發生什麼：",
+                    "Issue will be locked": "問題將被鎖定",
+                    // "Title, description, and author will be the same as the issue": "標題、描述和作者將與問題相同",
                     "Existing links will redirect to the new discussion": "現有連結將重定向至新討論",
-                    // "All comments and reactions will be the same as the issue": "所有評論和反應將與議題相同",
+                    // "All comments and reactions will be the same as the issue": "所有評論和反應將與問題相同",
                     "Discussions do not have tasklists": "討論沒有任務列表",
                     "Discussions do not have assignees": "討論沒有受理人",
                     "Discussions cannot be added to projects": "討論無法新增到專案",
@@ -10645,11 +10645,11 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                         "Polls": "投票",
                         "Q&A": "問與答",
                         "Show and tell": "展示與講述",
-                    "I understand, convert issue to discussion": "我明白了，依然將議題轉換為討論",
-                    "I understand, convert issues to discussions": "我明白了，依然將議題轉換為討論",
-                    "Future issues with this label will not be automatically converted into discussions.": "今後帶有此標籤的議題不會自動轉換為討論。",
+                    "I understand, convert issue to discussion": "我明白了，依然將問題轉換為討論",
+                    "I understand, convert issues to discussions": "我明白了，依然將問題轉換為討論",
+                    "Future issues with this label will not be automatically converted into discussions.": "今後帶有此標籤的問題不會自動轉換為討論。",
 
-        // 新增/編輯議題範本 /<user-name>/<repo-name>/issues/templates/edit
+        // 新增/編輯問題範本 /<user-name>/<repo-name>/issues/templates/edit
             "Propose changes": "提出更改",
             "Add template:": "新增範本：",
             "select": "選擇",
@@ -10660,9 +10660,9 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Standard feature request template": "標準功能請求範本",
                 "Suggest an idea for this project": "為這個專案提出想法",
             "Custom template": "自定義範本",
-                "Blank template for other issue types": "其他議題類型的空白範本",
-                "Custom issue template": "自定義議題範本",
-                "Describe this issue template's purpose here.": "在此處描述此議題範本的用途。",
+                "Blank template for other issue types": "其他問題類型的空白範本",
+                "Custom issue template": "自定義問題範本",
+                "Describe this issue template's purpose here.": "在此處描述此問題範本的用途。",
 
             "Preview and edit": "預覽和編輯",
             "Close preview": "關閉預覽",
@@ -10672,9 +10672,9 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "Template content": "範本內容",
                 "Styling with Markdown is supported": "支持 Markdown 格式",
             "Optional additional items": "可選附加專案",
-            "Issue default title": "議題預設標題",
-            "This will be suggested as the issue title": "建議作為議題標題",
-                "Add a placeholder for issue title, ex. [BUG]": "設置預設議題標題，例如：[BUG]",
+            "Issue default title": "問題預設標題",
+            "This will be suggested as the issue title": "建議作為問題標題",
+                "Add a placeholder for issue title, ex. [BUG]": "設置預設問題標題，例如：[BUG]",
 
             "Commit changes": "提交更改",
                 "Commit message": "提交訊息",
@@ -10691,7 +10691,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "for this commit and start a pull request.": "為這個提交，並且發起一個合併請求。",
 
         // Copilot 浮窗 獨有詞條
-            "Ask about the issue:": "討論此議題：",
+            "Ask about the issue:": "討論此問題：",
 
         // 底部提示欄（未登入
         "to join this conversation on GitHub.": "加入 GitHub 上的這個討論。",
@@ -10706,61 +10706,61 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
         [/(#\d+) opened/, "$1 打開於"],
         [/(#\d+) by/, "$1 打開者"],
         [/(\d+) linked pull requests?/, "連結 $1 個合併請求"],
-        [/([\d,]+) linked issues?/, "$1 個關聯議題"],
+        [/([\d,]+) linked issues?/, "$1 個關聯問題"],
         [/(\d+) tasks? done/, "$1 個任務完成"],
         [/(\d+) of (\d+) tasks?/, "$1 / $2 個任務"],
         [/(\d+) tasks?/, "$1 個任務"],
         [/First time contributing to ([^ ]+)\?/, "首次為 $1 做貢獻？"],
 
-        // 具體某條議題 /<user-name>/<repo-name>/issues/<id>
+        // 具體某條問題 /<user-name>/<repo-name>/issues/<id>
         [/· ([\d,]+) comments?/, "• $1 條評論"],
         [/([\d,]+) participants?/, "$1 位參與者"],
         [/(\d+) similar comments?/, "$1 條類似評論"],
         [/(\d+) hidden items?/, "$1 條隱藏專案"],
-        [/added a commit to ([^ ]+) that referenced this issue/, "為 $1 新增了引用這個議題的提交"],
+        [/added a commit to ([^ ]+) that referenced this issue/, "為 $1 新增了引用這個問題的提交"],
         [/Only people who can see ([^ ]+) will see this reference./, "只有能看到 $1 的人才能看到這個參考。"],
         [/Sponsor ([^ ]+)?/, "贊助 $1"], // 贊助按鈕 對話框 標題
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在議題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在問題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
         [/Edited (\d+) times?/, "已編輯 $1 次"],
         [/edited by ([^ ]+)/, "由 $1 編輯"],
-        [/This issue will close when (#?\d+) is merged/, "此議題將在 $1 合併時關閉"],
-        [/Opened this issue \(their first in ([^ ]+)\)/, "打開了這個議題（首次在 $1 發表）"],
-        [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前議題"],
-        [/added (\d+) commits? that reference this issue/, "新增 $1 個引用此議題的提交"],
-        [/This issue will close once commit ([a-f0-9]{7}) is merged into the \'([^ ]+)\' branch./, "此議題將在提交 $1 合併到 '$2' 分支後關閉。"],
+        [/This issue will close when (#?\d+) is merged/, "此問題將在 $1 合併時關閉"],
+        [/Opened this issue \(their first in ([^ ]+)\)/, "打開了這個問題（首次在 $1 發表）"],
+        [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中複製當前問題"],
+        [/added (\d+) commits? that reference this issue/, "新增 $1 個引用此問題的提交"],
+        [/This issue will close once commit ([a-f0-9]{7}) is merged into the \'([^ ]+)\' branch./, "此問題將在提交 $1 合併到 '$2' 分支後關閉。"],
 
         // 標籤頁面
-        [/open issues? and pull requests?/, "個打開的議題和合併請求"],
-        [/open issues? or pull requests?/, "個打開的議題或合併請求"],
-        [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您確定要將帶有以下標籤的 $1 條議題轉換為討論嗎？"],
+        [/open issues? and pull requests?/, "個打開的問題和合併請求"],
+        [/open issues? or pull requests?/, "個打開的問題或合併請求"],
+        [/Are you sure you want to convert (\d+) issues? with the following label to (?:a |)discussions?\?/, "您確定要將帶有以下標籤的 $1 條問題轉換為討論嗎？"],
         [/(\d+) labels/, "$1 個標籤"],
 
-        // 子議題
-        [/Create new sub-issue in ([^ ]+)/, "在 $1 中新建子議題"],
+        // 子問題
+        [/Create new sub-issue in ([^ ]+)/, "在 $1 中新建子問題"],
         [/(\d+) of (\d+)/, "$1 / $2"],
-        [/Filter contains (\d+) issues?\:/, "篩選包含 $1 個議題："],
+        [/Filter contains (\d+) issues?\:/, "篩選包含 $1 個問題："],
 
-        // 新版議題
+        // 新版問題
         [/(.+) will be between (.+) and (.+)./, "“$1” 將在 “$2” 和 “$3” 之間。"],
         [/(.+) will not be moved./, "“$1” 將不會被移動。"],
         [/(.+) will be first item in the list./, "“$1” 將移至最前。"],
         [/(.+) will be last item in the list./, "“$1” 將移至最後。"],
         [/of (\d+) selected/, "/ $1 選中"],
         [/(\d+\%) completed/, "$1 完成"],
-        [/Issue (#\d+) created/, "議題 $1 已創建"],
+        [/Issue (#\d+) created/, "問題 $1 已創建"],
         [/Lines (\d+) to (\d+) in/, "第 $1 - $2 行，"],
-        [/mentioned this in (\d+) issues?/, "在 $1 個議題中提及"],
-        [/Create new issue in (.+)/, "在 $1 新建議題"],
+        [/mentioned this in (\d+) issues?/, "在 $1 個問題中提及"],
+        [/Create new issue in (.+)/, "在 $1 新建問題"],
         [/Close as duplicate of (\#\d+)/, "因同 $1 重複關閉"],
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["regexp"],
     ],
     "title": {
         "static": {
-            "New Issue": "創建議題",
+            "New Issue": "創建問題",
         },
         "regexp": [
-            [/Issues?/, "議題"],
+            [/Issues?/, "問題"],
         ],
     },
 };
@@ -10779,16 +10779,16 @@ I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
 
             // [/First time contributing to ([^ ]+)?/, "首次為 $1 做貢獻？"], // /pulls
             "If you know how to fix an": "如果您知道如何修復一個",
-            "issue": "議題",
+            "issue": "問題",
             ", consider opening a pull request for it.": "，可考慮為它打開一個合併請求。",
             "You can read this repository’s": "您可以閱讀該儲存庫的",
             "to learn how to open a good pull request.": "，去學習如何打開一個好的合併請求。",
             "If you would like to submit code to this repository, consider opening a pull request.": "如果您想向這個儲存庫提交程式碼，請考慮打開一個合併請求。",
             "If you would like to submit code to this repository, consider opening a pull request. You can read this repository’s": "如果您想向這個儲存庫提交程式碼，請考慮打開一個合併請求。您可以閱讀該儲存庫的",
 
-            "Label issues and pull requests for new contributors": "標記新貢獻者的議題和合併請求",
+            "Label issues and pull requests for new contributors": "標記新貢獻者的問題和合併請求",
             "Now, GitHub will help potential first-time contributors": "現在，GitHub 將幫助潛在的首次貢獻者",
-            "discover issues": "探索議題",
+            "discover issues": "探索問題",
             "labeled with": "標記為",
 
             "Dismiss": "忽略",
@@ -10833,7 +10833,7 @@ I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
         ...I18N["zh-TW"]["repository/pull_issue_public"]["regexp"],
 
         [/(\d+) reviews? requesting changes?/, "$1 個請求審查更改"],
-        [/(\d+) linked issues?/, "連結 $1 個議題"],
+        [/(\d+) linked issues?/, "連結 $1 個問題"],
         [/([\d,]+) Open/, "$1 打開"],
         [/([\d,]+) Closed/, "$1 已關閉"],
         [/(#\d+) opened/, "$1 打開於"],
@@ -10846,7 +10846,7 @@ I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
         [/First time contributing to ([^ ]+)\?/, "首次為 $1 做貢獻？"],
         [/Suggested change/, "建議更改"],
         [/Ears burning\? Get\@([^ ]+) mentions with/, "耳朵癢嗎？使用 @$1 查看提及："], // 專業提示
-        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "在議題中通過 @ 提及通知某人，例如：@$1"],
+        [/Notify someone on an issue with a mention, like: \@([^ ]+)/, "在問題中通過 @ 提及通知某人，例如：@$1"],
     ],
     "title": {
         "regexp": [
@@ -11101,7 +11101,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             "Hide all reviewers": "隱藏所有審查者",
             "New changes since you last viewed": "自您上次查看以來的新變化",
             "mentioned this pull request": "提及這個合併請求",
-            "linked an issue": "連結議題",
+            "linked an issue": "連結問題",
             "that may be": "將在該合併請求合併時",
             "closed": "關閉",  // 浮動小字走正則
             "by this pull request": " ",
@@ -11754,7 +11754,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                     "More suggestion batching options": "更多選項",
                         "This feature is not supported yet.": "此功能尚未支持。",
             "Return to code": "返回程式碼",
-            "Reference in a new issue": "在新議題中引用",
+            "Reference in a new issue": "在新問題中引用",
 
             // 圖片壓縮
             "You're in single-file mode": "當前為單文件模式",
@@ -11944,7 +11944,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
         [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 項審查，要求有寫入權限的審查者進行更改"], // 合併請求
         [/(\d+) changes? requested by reviewers with write access/, "具有寫入權限的審查者提出 $1 項更改請求"],
         [/(\d+) changes? requested/, "$1 項更改請求"],
-        [/This pull request closes issue (#\d+)./, "該合併請求將關閉議題 $1。"], // 死活不翻譯
+        [/This pull request closes issue (#\d+)./, "該合併請求將關閉問題 $1。"], // 死活不翻譯
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 處增加，$2 處刪除未顯示，因為差異太大。請使用本地 Git 客戶端查看這些更改。"],
         [/(\d+) requested change/, "$1 項請求更改"],
 
@@ -11999,7 +11999,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
         [/(\d+) resolved conversations?/, "$1 條對話已解決"], // 合併請求
         [/I understand, continue updating ([^ ]+)/, "我明白了，繼續更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然簽署並更新"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在議題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在問題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
         [/(\d+) conversations? must be resolved before merging./, "合併之前必須解決 $1 個對話。"],
         [/(\d+) hidden items?/, "$1 條隱藏專案"],
         [/([^ ]+) requested changes/, "$1 要求更改"],
@@ -12202,7 +12202,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
                 "No one assigned": "無人受理",
                 "No one—": "無人 - ",
                 "assign yourself": " 受理自己",
-                "Assign up to 10 people to this issue": "最多指定 10 人", // 議題
+                "Assign up to 10 people to this issue": "最多指定 10 人", // 問題
                 "Assign up to 10 people to this pull request": "最多指定 10 人", // 合併請求
                 "Clear assignees": "清除受理人",
                 "Type or choose a user": "輸入或選擇用戶",
@@ -12219,10 +12219,10 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
                 "documentation": "文件",
                     "Improvements or additions to documentation": "文件的改進或補充",
                 "duplicate": "重複",
-                    "This issue or pull request already exists": "這個議題或合併請求已經存在",
+                    "This issue or pull request already exists": "這個問題或合併請求已經存在",
                 "enhancement": "增強",
                     "New feature or request": "新功能或請求",
-                "good first issue": "好的首發議題",
+                "good first issue": "好的首發問題",
                     "Good for newcomers": "適合新人",
                 "help wanted": "需要幫助",
                     "Extra attention is needed": "需要特別追蹤",
@@ -12234,7 +12234,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
                     "Not going to fix it": "不打算修復",
                     "This will not be worked on": "這將不會被處理",
 
-                "Apply labels to this issue": "應用標籤", // 議題
+                "Apply labels to this issue": "應用標籤", // 問題
                 "Apply labels to this pull request": "應用標籤", // 合併請求
                 "Edit labels": "編輯標籤",
 
@@ -12276,7 +12276,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
         "Development": "進展",
             "Use": "使用",
             "Closing keywords": "關閉關鍵詞",
-            "in the description to automatically close issues": "在描述中，以自動關閉議題",
+            "in the description to automatically close issues": "在描述中，以自動關閉問題",
             "Use Closing keywords to add a closing reference": "使用關閉關鍵詞新增一個關閉引用",
 
         "Helpful resources": "幫助性資源",
@@ -12492,9 +12492,9 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
                 "You were mentioned on and commented on this pull request": "您在該請求中被提及並發表了評論",
                 "You left a review": "您發表了評論",
 
-            // 議題懸浮卡
-                "You commented on this issue": "您對此議題發表了評論",
-                "You commented on and opened this issue": "您評論並打開了此議題",
+            // 問題懸浮卡
+                "You commented on this issue": "您對此問題發表了評論",
+                "You commented on and opened this issue": "您評論並打開了此問題",
 
         // /commits?since=<start-date XXXX-XX-XX>&until=<end-date XXXX-XX-XX>&author=<author-name>
             "No commits history": "尚無提交歷史記錄",
@@ -12604,7 +12604,7 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
                 "conversation": "對話",
                 "Off-topic": "偏離主題",
             "Load more comments": "加載更多評論",
-            "Reference in a new issue": "在新議題中提及",
+            "Reference in a new issue": "在新問題中提及",
             "Add Files": "新增文件",
             "You're not receiving notifications from this thread.": "您沒有收到來自此主題的通知。",
             "You're receiving notifications because you're subscribed to this thread.": "您收到通知是因為您訂閱了此主題。",
@@ -12618,7 +12618,7 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
         [/(\d+) changes?: (\d+) additions? & (\d+) deletions?$/, "$1 處更改：$2 處增加和 $3 處刪除"],
         [/(\d+) additions?$/, "$1 處增加"],
         [/(\d+) deletions?$/, "$1 處刪除"],
-        [/This commit closes issue (#\d+)./, "此提交關閉了議題 $1。"], //具體提交頁面
+        [/This commit closes issue (#\d+)./, "此提交關閉了問題 $1。"], //具體提交頁面
         [/from ([^ ]+) to ([^ ]+)/, "從 $1 到 $2。"], //具體提交頁面
         [/([\d,]+) additions, ([\d,]+) deletions not shown because the diff is too large. Please use a local Git client to view these changes./, "$1 處增加，$2 處刪除未顯示，因為差異太大。請使用本地 Git 客戶端查看這些更改。"],
         [/(\d+) comments? on commit/, "該提交有 $1 條評論"],
@@ -12736,12 +12736,12 @@ I18N["zh-TW"]["repository/blob"] = { // 儲存庫 - 瀏覽程式碼
                 "Draft a release": "起草發布",
             // 工作流程文件 /blob/<brach>/.github/workflows/xxxx.yml
                 "View Runs": "查看執行情況",
-            // 議題範本 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.yml
-                "This file is used as an Issue Form template.": "該文件用作議題表單範本。",
+            // 問題範本 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.yml
+                "This file is used as an Issue Form template.": "該文件用作問題表單範本。",
                 "Give Feedback.": "提交回饋。",
-            // 議題範本 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.md
+            // 問題範本 /blob/<brach>/.github/ISSUE_TEMPLATE/xxxx.md
                 "info": "訊息",
-                "This file is used as a markdown issue template.": "該文件用作 Markdown 議題範本。",
+                "This file is used as a markdown issue template.": "該文件用作 Markdown 問題範本。",
             // 新增文件按鈕, 資料夾模式下
                 "Add file": "新增文件",
             // 三個點
@@ -12814,7 +12814,7 @@ I18N["zh-TW"]["repository/blob"] = { // 儲存庫 - 瀏覽程式碼
                 "Copy lines": "複製行",
                 "Copy permalink": "複製永久連結",
                 "View git blame": "瀏覽 Git 追溯",
-                "Reference in new issue": "引用到新議題",
+                "Reference in new issue": "引用到新問題",
                 "Reference in new discussion": "引用到新討論",
                 "View file in GitHub.dev": "在 GitHub.dev 中查看文件",
                 "View file in different branch/tag": "查看不同分支/標籤中的文件",
@@ -13031,10 +13031,10 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 "documentation": "文件",
                     "Improvements or additions to documentation": "文件的改進或補充",
                 "duplicate": "重複",
-                    "This issue or pull request already exists": "這個議題或合併請求已經存在",
+                    "This issue or pull request already exists": "這個問題或合併請求已經存在",
                 "enhancement": "增強",
                     "New feature or request": "新功能或請求",
-                "good first issue": "好的首發議題",
+                "good first issue": "好的首發問題",
                     "Good for newcomers": "適合新人",
                 "help wanted": "需要幫助",
                     "Extra attention is needed": "需要特別追蹤",
@@ -13321,8 +13321,8 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
             "Closed as resolved": "關閉為已解決",
 
             "Change category": "更改類別",
-            "Converted from issue": "由議題轉化而來",
-                // [/This discussion was converted from issue/, "本討論由以下議題轉換而來"],
+            "Converted from issue": "由問題轉化而來",
+                // [/This discussion was converted from issue/, "本討論由以下問題轉換而來"],
 
             "Notifications": "通知類型",
                 "Subscribe": "訂閱",
@@ -13334,7 +13334,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 "You’re receiving notifications because you were mentioned.": "您收到通知是因為有人 @您。",
                 "You’re receiving notifications because you commented.": "您收到通知是因為您發表了評論。",
                 "You’re receiving notifications because you are watching pull requests on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的合併請求。",
-                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的議題。",
+                "You’re receiving notifications because you are watching issues on this repository.": "您收到通知是因為您正在追蹤此儲存庫上的問題。",
                 "You’re receiving notifications because you modified the open/close state.": "您收到通知是因為您修改了打開/關閉狀態。",
                 "You’re ignoring this repository.": "您忽略了這個儲存庫。",
 
@@ -13357,7 +13357,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 "will be able to comment on this discussion once more.": "將能夠再次對這個討論發表評論。",
                 "You can always lock this discussion again in the future.": "您今後仍可以隨時再次鎖定此討論。",
             "Transfer this discussion": "轉移討論",
-                // 轉移議題 對話框
+                // 轉移問題 對話框
                 "Results are limited to top repositories, search to find more.": "結果僅限於置頂儲存庫，請搜尋以查找更多訊息。",
                 "Move this discussion to another repository owned by": "將此討論移至另一個擁有的儲存庫由",
                 "Move this discussion to another repository you own.": "將此討論移至您擁有的另一個儲存庫。",
@@ -13404,7 +13404,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 "Are you sure you want to unpin this discussion from Q&A?": "您確定要從 “問與答” 中取消置頂此討論嗎？",
                 "Are you sure you want to unpin this discussion from Show and tell?": "您確定要從 “展示與講述” 中取消置頂此討論嗎？",
                 "The discussion itself won't be deleted, it just won't be shown at the top of this category.": "討論本身不會被刪除，只是不會顯示在該類別的頂部。",
-            "Create issue from discussion": "從討論中創建議題",
+            "Create issue from discussion": "從討論中創建問題",
             "Delete discussion": "刪除討論",
                 "Delete discussion?": "刪除討論？",
                 "The discussion will be deleted permanently. You will not be able to restore the discussion or its comments.": "該討論將被永久刪除。您將無法恢復該討論或其評論。",
@@ -13412,7 +13412,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 // 頂部提醒
                 "The discussion was successfully deleted.": "該討論已成功刪除。",
 
-            "The original post will be copied into a new issue, and the discussion will remain active.": "原帖將被複制到一個新的議題中，討論將保持活躍。",
+            "The original post will be copied into a new issue, and the discussion will remain active.": "原帖將被複制到一個新的問題中，討論將保持活躍。",
             "OK, got it!": "好的，我知道了！",
 
             // 評論刪除對話框
@@ -13425,9 +13425,9 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 ". Already have an account?": "。已經有帳戶？",
                 "Sign in to comment": "登入後發表評論",
 
-        // 轉移議題到討論 /<user-name>/<repo-name>discussions/<id>?converting=<討論id>
+        // 轉移問題到討論 /<user-name>/<repo-name>discussions/<id>?converting=<討論id>
             "This discussion is being migrated": "此討論正在遷移",
-                "The issue and any comments are still being copied to this discussion thread, please check back later.": "該議題和所有評論仍在複製到此討論話題中，請稍後查看",
+                "The issue and any comments are still being copied to this discussion thread, please check back later.": "該問題和所有評論仍在複製到此討論話題中，請稍後查看",
                 "Refresh": "刷新",
 
         // /<user-name>/community/discussions
@@ -13483,7 +13483,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
         [/Delete section (.*)/, "刪除欄目 “$1”"],
         [/Delete (.*) section/, "刪除 “$1” 欄目"],
         [/(\d+) new suggested answers?/, "$1 個新的建議答案"],
-        [/This discussion was converted from issue (#\d+) on (.+)/, "本討論由以下議題轉換而來：$1 ，$2"],
+        [/This discussion was converted from issue (#\d+) on (.+)/, "本討論由以下問題轉換而來：$1 ，$2"],
         [/(\d+) new comments?/, "$1 條新評論"],
         [/Show (\d+) more repl(y|ies)/, "顯示剩餘 $1 條答覆"],
         [/(\d+) new/, "$1 新"],
@@ -13525,7 +13525,7 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "開始使用 GitHub Actions",
             "Choose a workflow": "選擇工作流程",
-            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "構建、測試和部署您的程式碼。以您想要的方式進行程式碼審查、分支管理和議題分類。選擇一個工作流以開始使用。",
+            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "構建、測試和部署您的程式碼。以您想要的方式進行程式碼審查、分支管理和問題分類。選擇一個工作流以開始使用。",
             "Skip this and": "跳過並",
             "set up a workflow yourself": "建立工作流程",
             "Search workflows": "搜尋工作流",
@@ -13643,7 +13643,7 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
                 "No matching events.": "無匹配事件。",
                 //"Filter by event": "按事件篩選",
                 "Find an event": "查找事件",
-                    "issue_comment": "議題評論",
+                    "issue_comment": "問題評論",
                     "pull_request": "合併請求",
                     "pull_request_target": "合併請求目標",
                     "push": "推送",
@@ -13854,14 +13854,14 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
 
             //狀態條
             "Triggered via pull request": "通過合併請求觸發",
-            "Triggered via issues": "通過議題觸發",
+            "Triggered via issues": "通過問題觸發",
             "Triggered via push": "通過推送觸發",
             "Triggered via schedule": "通過計劃表觸發",
             "Triggered via dynamic": "通過動態觸發",
             "Triggered via GitHub Pages": "通過 GitHub 頁面觸發",
             "Triggered via repository dispatch": "通過儲存庫調度觸發",
             "Triggered via release": "通過發行版本觸發",
-            "Triggered via issue": "通過議題觸發",
+            "Triggered via issue": "通過問題觸發",
             "Triggered via discussion": "通過討論觸發",
             "Triggered via discussion comment": "通過討論評論觸發",
             "Triggered via workflow run": "通過工作流執行觸發",
@@ -14381,26 +14381,26 @@ I18N["zh-TW"]["repository/new"] = { // 儲存庫 - 新建/編輯/上傳/刪除�
             // 編輯 LICENSE 許可證文件
                 "Choose a license template": "選擇許可證範本",
 
-            // 編輯 議題表單範本文件 .github/ISSUE_TEMPLATE/xxxx.yml
+            // 編輯 問題表單範本文件 .github/ISSUE_TEMPLATE/xxxx.yml
                 // 頂部提示
-                "Looks like this file is an issue template. Need help?": "此文件是一個議題範本。需要幫助？",
-                "Learn more about issue templates.": "瞭解更多關於議題範本的訊息。",
+                "Looks like this file is an issue template. Need help?": "此文件是一個問題範本。需要幫助？",
+                "Learn more about issue templates.": "瞭解更多關於問題範本的訊息。",
                 "Give feedback.": "提交回饋。",
                 // 右側幫助說明
                 "Top-level configuration options": "頂層配置選項",
                     "Required Fields": "必填項",
                         "(String): The template's name. Must be unique across all templates, including Markdown templates.": "（字符串）範本名。不能與其他範本名重複，包括 Markdown 範本",
-                        "(String): A description of this template's intended use. This will be shown in the issue template chooser interface.": "(字符串）：該範本預期用途的說明。這將顯示在議題範本選擇介面中。",
+                        "(String): A description of this template's intended use. This will be shown in the issue template chooser interface.": "(字符串）：該範本預期用途的說明。這將顯示在問題範本選擇介面中。",
                     "Optional Fields": "可選項",
-                        "(Array or String): This issue will be automatically assigned to these users. Can be array of usernames or comma-delimited string, e.g. \"monalisa,nat\"": "(數組或字符串）：此議題將自動分配給這些用戶。可以是用戶名數組或以逗號分隔的字符串，例如 “monalisa,nat”。",
-                        "(Array or String): This issue will automatically receive these labels upon creation. Can be array of labels or comma-delimited string, e.g. \"bug,needs-triage\"": "(數組或字符串）：該議題在創建時將自動接收這些標籤。可以是標籤數組或以逗號分隔的字符串，例如 “bug,needs-triage”（錯誤，需要分流）。",
-                        "(Array or String): This issue will be automatically added to these projects. Can be array of projects or comma-delimited string, e.g. \"github\/1,github\/2\"": "(數組或字符串）：該議題將自動新增到這些專案中。可以是專案數組或以逗號分隔的字符串，如 “github\/1,github\/2”。",
-                        "(String): Default title that will be pre-populated in the issue submission form.": "(字符串）：將在議題表單中預填的預設標題。",
+                        "(Array or String): This issue will be automatically assigned to these users. Can be array of usernames or comma-delimited string, e.g. \"monalisa,nat\"": "(數組或字符串）：此問題將自動分配給這些用戶。可以是用戶名數組或以逗號分隔的字符串，例如 “monalisa,nat”。",
+                        "(Array or String): This issue will automatically receive these labels upon creation. Can be array of labels or comma-delimited string, e.g. \"bug,needs-triage\"": "(數組或字符串）：該問題在創建時將自動接收這些標籤。可以是標籤數組或以逗號分隔的字符串，例如 “bug,needs-triage”（錯誤，需要分流）。",
+                        "(Array or String): This issue will be automatically added to these projects. Can be array of projects or comma-delimited string, e.g. \"github\/1,github\/2\"": "(數組或字符串）：該問題將自動新增到這些專案中。可以是專案數組或以逗號分隔的字符串，如 “github\/1,github\/2”。",
+                        "(String): Default title that will be pre-populated in the issue submission form.": "(字符串）：將在問題表單中預填的預設標題。",
                         "(Array): Definition of user inputs.": "(數組）：用戶輸入的定義。",
                 "Input type configuration options": "輸入類型配置項",
                     // Markdown
                         "Markdown blocks contain arbitrary text that a maintainer can add to a template, to provide extra context or guidance to a contributor. Supports Markdown formatting. This text will": "Markdown 塊包含任意文本，維護者可將其新增到範本中，為貢獻者提供額外的上下文或指導。支持 Markdown 格式。這些文本",
-                        "not be rendered in the submitted issue body": "不會在提交的議題正文中呈現。",
+                        "not be rendered in the submitted issue body": "不會在提交的問題正文中呈現。",
                         // 必填項
                             "(String): The text that will be rendered. Markdown formatting is supported.": "(字符串）：將渲染的文本。支持 Markdown 格式。",
                         "Tip #1: YAML processing will cause the hash symbol to be treated as a comment. To insert Markdown headers, wrap your text in quotes.": "提示 1：YAML 處理會將 # 號視為註釋。要插入 Markdown 標題，請用引號將文本包起來。",
@@ -15167,7 +15167,7 @@ I18N["zh-TW"]["repository/releases"] = { // 儲存庫 - 發行版本頁面
                 "Add a numbered list, <Ctrl+Shift+7>": "新增有序列表 <Ctrl+Shift+7>",
                 "Add a task list, <Ctrl+Shift+l>": "新增任務列表 <Ctrl+Shift+l>",
                 "Directly mention a user or team": "直接提及用戶或團隊",
-                "Reference an issue, pull request or discussion": "引用議題，合併請求或討論",
+                "Reference an issue, pull request or discussion": "引用問題，合併請求或討論",
                 "Add saved reply": "新增快捷回覆",
                     "Select a reply": "選擇回覆",
                         "Filter saved replies": "篩選快捷回覆",
@@ -15461,7 +15461,7 @@ I18N["zh-TW"]["repository/pkgs"] = { // 儲存庫 - 軟件包
             "Total downloads": "總下載量",
             "Start a discussion": "開始討論",
             "Contributors": "貢獻者",
-            "Open an issue": "打開一個議題",
+            "Open an issue": "打開一個問題",
             "Package settings": "軟件包設置",
 
             "Recent Versions": "最近版本",
@@ -16214,17 +16214,17 @@ I18N["zh-TW"]["repository/contribute"] = { // 儲存庫 - 貢獻頁面
 
         // 貢獻頁面 /<user-name>/<repo-name>/contribute
             "Contribute to": "貢獻於",
-            "Make your first contribution to this repository by tackling one of the issues listed below.": "通過解決下面列出的一個議題，為這個儲存庫做出您的第一個貢獻。",
-            "Each issue displayed here is a \"good first issue,\" selected for its relative approachability for first-time contributors.": "此處顯示的每個議題都是 “好的首發議題”，因其對首次貢獻者來說相對容易。",
+            "Make your first contribution to this repository by tackling one of the issues listed below.": "通過解決下面列出的一個問題，為這個儲存庫做出您的第一個貢獻。",
+            "Each issue displayed here is a \"good first issue,\" selected for its relative approachability for first-time contributors.": "此處顯示的每個問題都是 “好的首發問題”，因其對首次貢獻者來說相對容易。",
 
             "Read the contributing guidelines": "閱讀貢獻指南",
 
-            "Good first issues": "好的首發議題",
-            "See all issues": "查看所有議題",
+            "Good first issues": "好的首發問題",
+            "See all issues": "查看所有問題",
 
-            "This repo doesn't have any good first issues, yet": "該儲存庫暫無任何好的首發議題",
-            "Once its maintainers label issues and pull requests for new contributors, they will begin to appear here.": "一旦它的維護者為新的貢獻者標記了議題和合併請求，它們就會開始出現在這裡。",
-            "All issues in this repository": "此儲存庫中的所有議題",
+            "This repo doesn't have any good first issues, yet": "該儲存庫暫無任何好的首發問題",
+            "Once its maintainers label issues and pull requests for new contributors, they will begin to appear here.": "一旦它的維護者為新的貢獻者標記了問題和合併請求，它們就會開始出現在這裡。",
+            "All issues in this repository": "此儲存庫中的所有問題",
 
     },
     "regexp": [ // 正則翻譯
@@ -16237,7 +16237,7 @@ I18N["zh-TW"]["repository/subscription"] = { // 儲存庫 - 通知狀態頁面
         // 儲存庫通知狀態管理 /<user-name>/<repo-name>/subscription
             "Your": "您的",
             "notifications status": "通知狀態",
-            "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每當有人在儲存庫內討論什麼，比如合併請求、議題、評論和提交討論，都會產生一個通知。無論您是追蹤儲存庫、不追蹤還是忽略它，都決定了您會收到哪些通知。",
+            "A notification is created every time someone discusses something inside of the repository — Pull Requests, Issues, Comments, and Commit discussions. Whether you are watching the repository, not watching it, or ignoring it determines which notifications you receive.": "每當有人在儲存庫內討論什麼，比如合併請求、問題、評論和提交討論，都會產生一個通知。無論您是追蹤儲存庫、不追蹤還是忽略它，都決定了您會收到哪些通知。",
             "Not watching": "不追蹤",
                 "You will only receive notifications when you participate or are @mentioned.": "只有當您參與或被 @您 時，您才會收到通知。",
             "Releases only": "僅發行版本",
@@ -16361,16 +16361,16 @@ I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
                 "1 month": "1 個月",
             "Active pull request": "活躍的合併請求",
             "Active pull requests": "活躍的合併請求",
-            "Active issue": "活躍的議題",
-            "Active issues": "活躍的議題",
+            "Active issue": "活躍的問題",
+            "Active issues": "活躍的問題",
             "Merged pull request": "合併的合併請求",
             "Merged pull requests": "合併的合併請求",
             "Open pull request": "打開的合併請求",
             "Open pull requests": "打開的合併請求",
-            "Closed issue": "關閉的議題",
-            "Closed issues": "關閉的議題",
-            "New issue": "新議題",
-            "New issues": "新議題",
+            "Closed issue": "關閉的問題",
+            "Closed issues": "關閉的問題",
+            "New issue": "新問題",
+            "New issues": "新問題",
 
             "Excluding merges,": "不包括合併，",
             // [/(\d+) authors?/, "$1 位作者"],
@@ -16398,13 +16398,13 @@ I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
             "Pull requests merged by": "個合併請求已合併由",
             "Pull request opened by": "個合併請求打開由",
             "Pull requests opened by": "個合併請求打開由",
-            "Issue closed by": "個議題已關閉由",
-            "Issues closed by": "個議題已關閉由",
-            "Issue opened by": "個議題打開由",
-            "Issues opened by": "個議題打開由",
+            "Issue closed by": "個問題已關閉由",
+            "Issues closed by": "個問題已關閉由",
+            "Issue opened by": "個問題打開由",
+            "Issues opened by": "個問題打開由",
             "person": "人",
             "people": "人",
-            "Sometimes conversations happen on old items that aren’t yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時會針對尚未關閉的舊專案進行討論。以下是所有未解決的討論的議題和合併請求的列表。",
+            "Sometimes conversations happen on old items that aren’t yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時會針對尚未關閉的舊專案進行討論。以下是所有未解決的討論的問題和合併請求的列表。",
             // [/• (\d+) new comments/, "• $1 個新評論"],
             "Unresolved conversation": "個未解決的討論",
             "Unresolved conversations": "個未解決的討論",
@@ -16443,7 +16443,7 @@ I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
                         "Show data labels": "顯示資料標籤",
                             "Show labels for each data point in column and bar charts.": "在柱狀圖中顯示每個資料點的標籤",
 
-            "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時對尚未關閉的舊專案會有新的討論。以下是所有有未解決討論的議題和合併請求列表。",
+            "Sometimes conversations happen on old items that aren't yet closed. Here is a list of all the Issues and Pull Requests with unresolved conversations.": "有時對尚未關閉的舊專案會有新的討論。以下是所有有未解決討論的問題和合併請求列表。",
                 "commented on": "評論於",
                 "new comments": "新評論",
 
@@ -16463,8 +16463,8 @@ I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
         [/releases? published/, "發行版本已發布"],
         [/pull requests? opened/, "合併請求打開"],
         [/pull requests? merged/, "合併請求合併"],
-        [/issues? opened/, "議題打開"],
-        [/issues? closed/, "議題關閉"],
+        [/issues? opened/, "問題打開"],
+        [/issues? closed/, "問題關閉"],
         [/(\d+) commits? authored by ([^ ]+)/, "$2 提交 $1 次"],
     ],
     "title": {
@@ -16604,7 +16604,7 @@ I18N["zh-TW"]["repository/graphs/community"] = { // 儲存庫 -> 分析 - 社區
                 "Last year": "最近 1 年",
 
             "Contribution activity": "貢獻活動",
-                "Count of total contribution activity to Discussions, Issues, and PRs": "對討論、議題和合併請求的總貢獻活動計數",
+                "Count of total contribution activity to Discussions, Issues, and PRs": "對討論、問題和合併請求的總貢獻活動計數",
                 "discussions": "討論",
                 "Quantity": "數量",
                 "Timeline": "時間軸",
@@ -16629,7 +16629,7 @@ I18N["zh-TW"]["repository/graphs/community"] = { // 儲存庫 -> 分析 - 社區
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         [/(\d+) pull requests? created/, "$1 個合併請求創建"],
-        [/(\d+) issues? created/, "$1 個議題創建"],
+        [/(\d+) issues? created/, "$1 個問題創建"],
         [/(\d+) discussions? created/, "$1 個討論創建"],
         [/(\d+) contributors?/, "$1 貢獻者"],
     ],
@@ -16659,7 +16659,7 @@ I18N["zh-TW"]["repository/community"] = { // 儲存庫 -> 分析 - 社區準則
                 "Choosing a license": "選擇許可證",
             "Security policy": "安全政策",
                 "Set up a security policy": "設置安全策略",
-            "Issue templates": "議題範本",
+            "Issue templates": "問題範本",
             "Pull request template": "合併請求範本",
             "Repository admins accept content reports": "儲存庫管理員接受內容報告", // 組織儲存庫?
             "What is": "什麼是",
@@ -17237,7 +17237,7 @@ I18N["zh-TW"]["repository/forks"] = { // 儲存庫 -> 分析 - 復刻
                 "Sort by": "排序方式",
                     "Most starred": "最多星號",
                     "Recently updated": "最近更新",
-                    "Open issues": "打開的議題",
+                    "Open issues": "打開的問題",
                     "Open pull requests": "打開的合併請求",
                 "Defaults Saved": "預設值已保存",
                 "Save Defaults": "保存預設值",
@@ -17423,10 +17423,10 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
                 // "Upgrade": "升級",
                     "Learn more about wikis": "瞭解更多關於 Wiki 的訊息",
 
-            // 議題
-            "Issues integrate lightweight task tracking into your repository. Keep projects on track with issue labels and milestones, and reference them in commit messages.": "議題將輕量級任務跟蹤集成到您的儲存庫中。使用議題標籤和里程碑保持專案正常執行，並在提交消息中引用它們。",
-            "Get organized with issue templates": "使用議題範本進行組織",
-            "Give contributors issue templates that help you cut through the noise and help them push your project forward.": "為貢獻者提供議題範本，幫助您消除干擾並幫助他們推進您的專案。",
+            // 問題
+            "Issues integrate lightweight task tracking into your repository. Keep projects on track with issue labels and milestones, and reference them in commit messages.": "問題將輕量級任務跟蹤集成到您的儲存庫中。使用問題標籤和里程碑保持專案正常執行，並在提交消息中引用它們。",
+            "Get organized with issue templates": "使用問題範本進行組織",
+            "Give contributors issue templates that help you cut through the noise and help them push your project forward.": "為貢獻者提供問題範本，幫助您消除干擾並幫助他們推進您的專案。",
             "Set up templates": "設置範本",
 
             "Allow forking": "允許復刻", // 組織儲存庫
@@ -17451,7 +17451,7 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
             "Autogenerate table of contents for markdown files in this repository. the table of contents will be displayed near the top of the file.": "自動生成此儲存庫中 Markdown 文件的目錄。目錄將顯示在文件頂部附近。",
 
             // "Discussions": "討論",
-            "Discussions is the space for your community to have conversations, ask questions and post answers without opening issues.": "討論是您的社區進行對話、提問和發布答案的地方，而無需打開議題。",
+            "Discussions is the space for your community to have conversations, ask questions and post answers without opening issues.": "討論是您的社區進行對話、提問和發布答案的地方，而無需打開問題。",
             "Get started with Discussions": "開始討論",
             "Engage your community by having discussions right in your repository, where your community already lives": "通過在您的社區已經存在的儲存庫中進行討論來吸引您的社區",
             "Set up discussions": "建立討論",
@@ -17528,10 +17528,10 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
                 // 提醒
                 "Must be a whole number between 2 and 1000": "必須是 2 到 1000 之間的整數",
 
-            // 議題
-                "After merging a pull request, linked issues can be closed automatically.": "合併合併請求後，可以自動關閉關聯議題。",
-                    "Auto-close issues with merged linked pull requests": "使用已合併的關聯合併請求自動關閉議題",
-                        "Whenever linked pull requests have merged, auto-close the issue.": "當關聯的合併請求被合併時，自動關閉該議題。",
+            // 問題
+                "After merging a pull request, linked issues can be closed automatically.": "合併合併請求後，可以自動關閉關聯問題。",
+                    "Auto-close issues with merged linked pull requests": "使用已合併的關聯合併請求自動關閉問題",
+                        "Whenever linked pull requests have merged, auto-close the issue.": "當關聯的合併請求被合併時，自動關閉該問題。",
 
             "Danger Zone": "危險區",
             "Change repository visibility": "更改儲存庫可見性",
@@ -17547,7 +17547,7 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
             "This repository is currently private.": "該儲存庫當前是私有的。",
             "I want to make this repository public": "我想將此儲存庫設為公開",
                 "The code will be visible to everyone who can visit https://github.com": "所有可以訪問 https://github.com 的人都可以看到程式碼",
-                "Attachments uploaded to this repository's issues and pull requests will not be accessible unless it is made private again.": "上傳到此儲存庫的議題和合併請求的附件將無法訪問，除非再次設為私有。",
+                "Attachments uploaded to this repository's issues and pull requests will not be accessible unless it is made private again.": "上傳到此儲存庫的問題和合併請求的附件將無法訪問，除非再次設為私有。",
                 "Anyone can fork your repository.": "任何人都可以復刻您的儲存庫。",
                 "All push rulesets will be disabled.": "所有推送規則集都將被禁用。",
                 "Your changes will be published as activity.": "您的更改將作為活動發布。",
@@ -17621,7 +17621,7 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
             "Code scanning": "程式碼掃描",
             "Before you archive, please consider:": "在您存檔之前，請考慮：",
             "Updating any repository settings": "更新儲存庫設置",
-            "Closing all open issues and pull requests": "關閉所有打開的議題和合併請求",
+            "Closing all open issues and pull requests": "關閉所有打開的問題和合併請求",
             "Making a note in your README": "在您的 README 中做個說明",
             "Please type": "請輸入",
             "to confirm.": "進行確定。",
@@ -17664,9 +17664,9 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
                 "I want to delete this repository": "我想刪除這個儲存庫",
 
                 "This will permanently delete the": "這將永久刪除",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "儲存庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "儲存庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "儲存庫、Wiki、議題、評論、軟件包、機密、工作流程，並刪除所有團隊關聯。", // 組織儲存庫
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "儲存庫、Wiki、問題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "儲存庫、Wiki、問題、評論、軟件包、機密、工作流程，並刪除所有協作者關聯。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "儲存庫、Wiki、問題、評論、軟件包、機密、工作流程，並刪除所有團隊關聯。", // 組織儲存庫
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "這並不會更改您的結算方案。 如果您想降級，可以在結算設置中進行降級。",
 
     },
@@ -17827,7 +17827,7 @@ I18N["zh-TW"]["repository/settings/interaction_limits"] = { // 儲存庫設置 -
         // 審查設置 (儲存庫)互動限制 /<user-name>/<repo-name>/settings/interaction_limits
         // 同全局 同組織儲存庫
             "Temporary interaction limits": "臨時互動限制",
-            "Temporarily restrict which external users can interact with your repository (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開議題或創建合併請求）。",
+            "Temporarily restrict which external users can interact with your repository (comment, open issues, or create pull requests) for a configurable period of time.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開問題或創建合併請求）。",
             "This may be used to force a \"cool-down\" period during heated discussions or prevent unwanted interactions.": "可用於在激烈討論期間，強制進入 “冷靜” 期或防止不必要的互動。",
 
             "You can restrict repository interactions across your account in your": "您可以限制儲存庫交互，在您的帳戶設置中的",
@@ -18792,7 +18792,7 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 儲存庫設置 - 操作 /<u
             "Runner image": "執行器鏡像",
             "Architecture": "架構",
             "Download": "下載",
-            "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我們建議在 “\\actions-runner” 下配置執行器。這將有助於避免與 Windows 上的服務標識資料夾權限和長路徑限制相關的議題。",
+            "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我們建議在 “\\actions-runner” 下配置執行器。這將有助於避免與 Windows 上的服務標識資料夾權限和長路徑限制相關的問題。",
             "Configure": "設置",
             "Using your self-hosted runner": "使用您的自託管執行器",
             "For additional details about configuring, running, or shutting down the runner, please check out our": "關於配置、執行或關閉執行器的其他細節，請查看我們的",
@@ -18941,10 +18941,10 @@ I18N["zh-TW"]["repository/settings/hooks"] = { // 儲存庫設置 - Web 鉤子 /
                         "Discussion created, edited, closed, reopened, pinned, unpinned, locked, unlocked, transferred, answered, unanswered, labeled, unlabeled, had its category changed, or was deleted.": "討論的創建、編輯、關閉、重新打開、置頂、取消置頂、鎖定、解鎖、轉移、答覆、取消答覆、標記、取消標記、更改其類別或刪除。",
                     "Forks": "復刻",
                         "Repository forked.": "儲存庫復刻。",
-                    "Issue comments": "議題評論",
-                        "Issue comment created, edited, or deleted.": "議題評論的創建、編輯或刪除。",
-                    // "Issue": "議題",
-                        "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "議題的打開、編輯、刪除、轉移、置頂、取消置頂、關閉、重新打開、分配、取消分配、標記、取消標記、設置里程碑、取消里程碑、鎖定或解鎖。",
+                    "Issue comments": "問題評論",
+                        "Issue comment created, edited, or deleted.": "問題評論的創建、編輯或刪除。",
+                    // "Issue": "問題",
+                        "Issue opened, edited, deleted, transferred, pinned, unpinned, closed, reopened, assigned, unassigned, labeled, unlabeled, milestoned, demilestoned, locked, or unlocked.": "問題的打開、編輯、刪除、轉移、置頂、取消置頂、關閉、重新打開、分配、取消分配、標記、取消標記、設置里程碑、取消里程碑、鎖定或解鎖。",
                     "Labels": "標籤",
                         "Label created, edited or deleted.": "標籤的創建、編輯或刪除。",
                     "Memberships": "團隊成員", // 組織設置
@@ -19130,8 +19130,8 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
         ", developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "，開發者可以將任務委託給 Copilot，從而專注於最重要的創造性、複雜和高影響力工作。將任務分配給 Copilot，等待AI 代理請求審查，然後在合併請求中留下回饋以繼續迭代。",
         "Learn more about": "詳細瞭解",
         "Learn more about Copilot cloud agent": "瞭解更多關於 Copilot 雲端AI 代理的訊息",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而專注於更具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待助手發起評審請求，然後在合併請求上留下回饋進行迭代。更多訊息請參閱",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而有更多時間專注於最重要的創造性、複雜和高影響力的工作。只需將議題分配給 Copilot，等待請求程式碼審查，然後在合併請求上留下回饋，進行迭代即可。",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而專注於更具創造性、複雜性和高影響力的重要工作。只需將問題分配給 Copilot，等待助手發起評審請求，然後在合併請求上留下回饋進行迭代。更多訊息請參閱",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而有更多時間專注於最重要的創造性、複雜和高影響力的工作。只需將問題分配給 Copilot，等待請求程式碼審查，然後在合併請求上留下回饋，進行迭代即可。",
         "Learn more about Copilot coding agent": "瞭解更多",
 
         "Internet access": "訪問互聯網",
@@ -20131,7 +20131,7 @@ I18N["zh-TW"]["repository/settings/key_links"] = { // 儲存庫設置 - 自動�
                     "Numeric autolinks only match": "只匹配",
 
                 "Reference prefix": "引用前綴",
-                    "This prefix appended by a string will generate a link any time it is found in an issue, pull request, or commit.": "這段前綴加上一個字符串後，在議題、合併請求或提交中找到時將生成一個連結。",
+                    "This prefix appended by a string will generate a link any time it is found in an issue, pull request, or commit.": "這段前綴加上一個字符串後，在問題、合併請求或提交中找到時將生成一個連結。",
                 "Target URL": "目標連結",
                     "The URL must contain": "該連結必須包含",
                     "for the reference number.": "作為引用編號。",
@@ -20151,7 +20151,7 @@ I18N["zh-TW"]["repository/transfer"] = { // 轉讓儲存庫
         // 轉讓儲存庫 /<user-name>/<repo-name>/transfer
             "Transfer this repository to another user or to an organization where you have the ability to create repositories.": "將該儲存庫轉讓給另一位用戶或一個您可以創建儲存庫的組織。",
             "Required fields are marked with an asterisk (*).": "帶星號 (*) 的為必填項。",
-            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解儲存庫轉移後的管理員訪問權限、團隊、議題分配和重定向，請參閱",
+            "To understand admin access, teams, issue assignments, and redirects after a repository is transferred, see": "要了解儲存庫轉移後的管理員訪問權限、團隊、問題分配和重定向，請參閱",
             "Transferring a repository": "轉讓儲存庫",
             "in GitHub Help.": "在 GitHub 幫助中。",
             "Transferring may be delayed until the new owner approves the transfer.": "轉讓可能會延遲，直到新所有者批准轉讓。",
@@ -20187,7 +20187,7 @@ I18N["zh-TW"]["repository/transfer"] = { // 轉讓儲存庫
                 "Draft": "草案",
                 "PRs": "合併請求",
                 "Multiple assignees": "多個受讓人",
-                "for issues and PRs": "的議題和合併請求",
+                "for issues and PRs": "的問題和合併請求",
                 "Multiple reviewers": "多個審查者",
                 "for PRs": "的拉去請求",
                 "Branch and tag protection rules": "分支和標籤保護規則",
@@ -20423,8 +20423,8 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
             "It helps us onboard new software engineers and get them productive right away. We have all our source code, issues, and pull requests in one place... GitHub is a complete platform that frees us from menial tasks and enables us to do our best work.": "它可以幫助我們吸收新的軟體工程師，讓他們立即投入工作。我們的所有源程式碼、問題和合併請求都在一個地方... GitHub 是一個完整的平臺，它將我們從瑣碎的工作中解脫出來，讓我們能夠全力以赴。",
                 "Application manager at Mercedes-Benz": "Mercedes-Benz 應用管理員",
             "Keep track of your tasks": "跟蹤任務",
-                "Create issues and manage projects with tools that adapt to your code.": "創建議題和管理專案的工具能適應您的程式碼。",
-                "Explore GitHub Issues": "探索 GitHub 議題",
+                "Create issues and manage projects with tools that adapt to your code.": "創建問題和管理專案的工具能適應您的程式碼。",
+                "Explore GitHub Issues": "探索 GitHub 問題",
             "Share ideas and ask questions": "交流想法和提出問題",
                 "Create space for open-ended conversations alongside your project.": "在開展專案的同時，為開放式對話創造空間。",
                 "Explore GitHub Discussions": "探索 GitHub 討論",
@@ -21293,19 +21293,19 @@ I18N["zh-TW"]["notifications/subscriptions"] = { //訂閱的儲存庫頁面
             "Any reason": "任何原因",
             "Show all subscriptions": "顯示所有訂閱",
             "Assign": "分配",
-            "You were assigned to the Issue/PR.": "您被分配到議題/合併請求。",
+            "You were assigned to the Issue/PR.": "您被分配到問題/合併請求。",
             "Author": "作者",
             "You created the thread.": "您創造了這個話題。",
             "Comment": "評論",
             "You commented on the thread.": "您評論了這個話題。",
             "Manual": "手動",
-            "You subscribed to the thread (via an Issue or Pull Request).": "您訂閱了該主題（通過議題或合併請求）。",
+            "You subscribed to the thread (via an Issue or Pull Request).": "您訂閱了該主題（通過問題或合併請求）。",
             "Mention": "提及",
             "You were specifically @mentioned in the content.": "在內容中特別 @您。",
             "Review Requested": "請求審查",
             "You were requested for review.": "您被要求進行審查。",
             "State Change": "狀態變化",
-            "You changed the thread state (for example, closing an Issue or merging a Pull Request).": "您更改了話題狀態（例如，關閉議題或合併合併請求）。",
+            "You changed the thread state (for example, closing an Issue or merging a Pull Request).": "您更改了話題狀態（例如，關閉問題或合併合併請求）。",
             "Team Mention": "提及團隊",
             "You were on a team that was mentioned.": "您在團隊中被提及。",
         "Repository": "儲存庫",
@@ -21387,7 +21387,7 @@ I18N["zh-TW"]["stars"] = { // 星號 https://github.com/stars/<user-name>
     },
 };
 
-I18N["zh-TW"]["issues"] = { // 議題頁面
+I18N["zh-TW"]["issues"] = { // 問題頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository/issues"]["static"],
 
@@ -21399,7 +21399,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         "Created": "已創建",
         "Assigned": "已分配",
         "Mentioned": "提到的",
-            "Issues mentioning you": "提及您的議題",
+            "Issues mentioning you": "提及您的問題",
             "Pull Requests mentioning you": "提及您的合併請求", // pulls
         "Review requests": "審查請求", // pulls
             "Pull Requests requesting your review": "請求您審查的合併請求", // pulls
@@ -21455,11 +21455,11 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         "Merged": "已合併",
         "opened": "打開於",
 
-        "This issue was": "此議題已",
+        "This issue was": "此問題已",
             "closed": "關閉",
 
         // "No results matched your search.": "沒有符合您的搜尋結果。",
-        "Search all issues": "搜尋所有議題",
+        "Search all issues": "搜尋所有問題",
         // 篩選結果
         "No results matched your search.": "沒有與您的搜尋匹配的結果。",
         "You could search": "您可以搜尋",
@@ -21468,22 +21468,22 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         "advanced search": "高級搜尋",
         "No results":"無結果",
         "Try adjusting your search filters.":"嘗試調整您的搜尋篩選條件。",
-        "Failed to load issues.": "無法加載議題。",
-        "We encountered an error trying to load issues.": "我們在嘗試加載議題時遇到了錯誤。",
+        "Failed to load issues.": "無法加載問題。",
+        "We encountered an error trying to load issues.": "我們在嘗試加載問題時遇到了錯誤。",
 
         // "Use the links above to find what you’re looking for, or try": "使用上面的連結找到您要找的內容，或嘗試",
         // "a new search query": "新的搜尋查詢",
-        // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。篩選選單也是快速找到議題最相關的您超級有幫助的。",
+        // ". The Filters menu is also super helpful for quickly finding issues most relevant to you.": "。篩選選單也是快速找到問題最相關的您超級有幫助的。",
         // "Updated in the last three days": "更新了最後三天：",
         "ProTip!": "專業提示！",
-            "Exclude your own issues with": "排除自己的議題",
+            "Exclude your own issues with": "排除自己的問題",
             "Mix and match filters to narrow down what you’re looking for.": "通過混合和匹配篩選器以縮小您要查找的範圍。",
             "Exclude everything labeled": "如果要找到所有標有",
             "with": "標籤的，請使用",
-            "on any issue or pull request to go back to the issue listing page.": "在任何議題或合併請求上以返回到問題列表頁面。",
+            "on any issue or pull request to go back to the issue listing page.": "在任何問題或合併請求上以返回到問題列表頁面。",
             "on any issue or pull request to go back to the pull request listing page.": "在任何問題或合併請求上以返回合併請求列表頁面。",
             "Updated in the last three days:": "最近三天更新：",
-            "Find all pull requests that aren't related to any open issues with": "查找與任何未解決議題無關的所有合併請求",
+            "Find all pull requests that aren't related to any open issues with": "查找與任何未解決問題無關的所有合併請求",
             "Adding": "新增",
             "will show everything without a label.": "將顯示沒有標籤的所有內容。",
             "Follow long discussions with": "要跟隨長討論，請使用",
@@ -21500,16 +21500,16 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Open github.dev editor in a new tab"  : "在新標籤頁中打開 github.dev 編輯器",
                 "Submit comment": "提交評論",
                 "Submit comment and close or open pull request": "提交評論並關閉或打開合併請求",
-                "Submit comment and close issue": "提交評論並關閉??議題", // 議題
+                "Submit comment and close issue": "提交評論並關閉??問題", // 問題
                 "Preview comment": "預覽評論",
-                "Create issue": "創建議題", //議題
+                "Create issue": "創建問題", //問題
                 "Request reviewers": "請求審查者",
                 "Filter by author"             : "按作者篩選",
                 "Filter by or edit assignees"  : "按受理人篩選或編輯受理人",
                 "Filter by or edit labels"     : "按標籤篩選或編輯標籤",
                 "Filter by or edit projects"   : "按專案篩選或編輯專案",
                 "Filter by or edit milestones" : "按里程碑篩選或編輯里程碑",
-                "Link an issue or pull request from the same repository": "連結同一儲存庫的議題或合併請求",
+                "Link an issue or pull request from the same repository": "連結同一儲存庫的問題或合併請求",
                 "Reply (quoting selected text)": "答覆（引用所選文本）",
                 "Open saved replies": "打開快捷回覆（引用所選文本）",
                 "Insert saved reply (with open saved replies)": "插入快捷回覆（打開快捷回覆）",
@@ -21525,7 +21525,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Collapse or expand all files instead of just the current one": "摺疊或展開所有文件，而不僅僅是當前文件",
                     "and click": "和點擊",
 
-        "Search Issues": "搜尋議題",
+        "Search Issues": "搜尋問題",
             // 儲存庫
                 "No repository": "無儲存庫",
                 "Has repository": "包含儲存庫",
@@ -21535,7 +21535,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Exclude org": "排除組織",
             "Is": "類型為",
                 "Exclude is": "排除類型為",
-                "Issue": "議題",
+                "Issue": "問題",
                 "Pull Request": "合併請求",
                 "Unmerged": "未合併",
                 "Locked": "已鎖定",
@@ -21590,10 +21590,10 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             "Mentions": "提及",
                 "Has mentions": "包含提及",
                 "Exclude mentions": "排除提及",
-            "Parent issue": "父議題",
-                "No parent issue": "無父議題",
-                "Has parent issue": "包含父議題",
-                "Exclude parent-issue": "排除父議題",
+            "Parent issue": "父問題",
+                "No parent issue": "無父問題",
+                "Has parent issue": "包含父問題",
+                "Exclude parent-issue": "排除父問題",
             "Blocking": "阻塞",
                 "No blocking": "無阻塞",
                 "Has blocking": "包含阻塞",
@@ -21602,10 +21602,10 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "No blocked by": "無被阻塞",
                 "Has blocked by": "包含被阻塞",
                 "Exclude blocked-by": "排除被阻塞",
-            "Sub-issue": "子議題",
-                "No sub-issue": "無子議題",
-                "Has sub-issue": "包含子議題",
-                "Exclude sub-issue": "排除子議題",
+            "Sub-issue": "子問題",
+                "No sub-issue": "無子問題",
+                "Has sub-issue": "包含子問題",
+                "Exclude sub-issue": "排除子問題",
             "Update date": "更新日期",
                 "Exclude updated": "排除更新日期",
                 "Today": "今天",
@@ -21726,7 +21726,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             "for": "對於",
         "Clear filter": "清除篩選",
 
-        "View issue": "查看議題",
+        "View issue": "查看問題",
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository/issues"]["regexp"],
@@ -21739,7 +21739,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         [/(\d+) tasks?/, "$1 個任務"],
         [/(\d+) review approvals?/, "$1 次審查批准"],// 合併請求頁 "已批准' 浮動提示
         [/(\d+) review requesting changes?/, "$1 條請求更改評論"],
-        [/([\d,]+) linked issues?/, "$1 個關聯議題"],
+        [/([\d,]+) linked issues?/, "$1 個關聯問題"],
         [/([\d,]+) linked pull requests?/, "$1 個關聯合併請求"],
         [/(\d+) \/ (\d+) checks? OK/, "$1 / $2 檢查 OK"], // 對勾 的提醒 /pulls
         [/Assigned to ([^ ]+)/, "分配給 $1"],
@@ -21747,7 +21747,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         [/Updated/, "更新於"],
         [/#([^ ]+) opened/, "#$1 打開於"],
         [/#(\d+) by/, "#$1 打開者"],
-        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在議題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
+        [/Notify someone on an issue with a mention, like: @([^ ]+)./, "在問題中通過 @ 提及通知某人，例如：@$1。"], // 專業提示
         [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵癢了？用它篩選 @$1 的提及："], // 專業提示
         [/Are you sure you want to delete view (.*)\?/, "您確定要刪除視圖 $1 嗎？"],
         [/Filter contains (\d+) issues?:/, "過濾器包含 $1 個問題："]
@@ -21832,9 +21832,9 @@ I18N["zh-TW"]["pulls"] = { // 合併請求頁面
                     "Internal": "內部",
                 "Created": "已創建",
                 "Total forks": "復刻總數",
-                "Total good-first issues": "好的首發議題總數",
+                "Total good-first issues": "好的首發問題總數",
                 "Has": "包含文件",
-                "Total help-wanted issues": "求助議題總數",
+                "Total help-wanted issues": "求助問題總數",
                 "License": "許可證",
                 "Mirror": "鏡像",
                 "Size (Kb)": "大小 (Kb)",
@@ -21948,7 +21948,7 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
             "Finds repositories with…": "查找儲存庫…",
             "Repository search": "儲存庫搜尋",
             "Code search": "程式碼搜尋",
-            "Issue search": "議題搜尋",
+            "Issue search": "問題搜尋",
             "User search": "用戶搜尋",
 
         // 搜尋結果頁面 https://github.com/search?q=  >>>>>>>>>>>>>>>>>>>>>>>>
@@ -22065,7 +22065,7 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
                 "Least recently committed": "最早提交",
                 "Recently authored": "最近撰寫",
                 "Least recently authored": "最早撰寫",
-                // 議題
+                // 問題
                 "Most commented": "最多評論",
                 "Least commented": "最少評論",
                 "Newest": "最新",
@@ -22143,9 +22143,9 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
                 "Before you can access our code search functionality please sign in or create a free account.": "在使用程式碼搜尋功能之前，請先登入或創建一個免費帳戶。",
 
             // &type=issues
-                "Learn how you can use GitHub Issues to plan and track your work.": "瞭解如何使用 GitHub 議題計劃和跟蹤工作。",
-                "Save views for sprints, backlogs, teams, or releases. Rank, sort, and filter issues to suit the occasion. The possibilities are endless.": "保存衝刺、待辦事項、團隊或發布的視圖。根據場合對議題進行排名、排序和篩選。可能性是無止境。",
-                "Learn more about GitHub Issues": "瞭解更多關於 GitHub 議題的訊息",
+                "Learn how you can use GitHub Issues to plan and track your work.": "瞭解如何使用 GitHub 問題計劃和跟蹤工作。",
+                "Save views for sprints, backlogs, teams, or releases. Rank, sort, and filter issues to suit the occasion. The possibilities are endless.": "保存衝刺、待辦事項、團隊或發布的視圖。根據場合對問題進行排名、排序和篩選。可能性是無止境。",
+                "Learn more about GitHub Issues": "瞭解更多關於 GitHub 問題的訊息",
 
             // &type=registrypackages
                 "Learn GitHub Packages": "瞭解 GitHub 軟件包",
@@ -22160,8 +22160,8 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
 
             "Your search did not match any": "您的搜尋沒有匹配任何",
             "code": "程式碼",
-            "issue": "議題",
-            "issues": "議題",
+            "issue": "問題",
+            "issues": "問題",
             "pull request": "合併請求",
             "pull requests": "合併請求",
             "discussion": "討論",
@@ -22261,8 +22261,8 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
             "Return code": "搜尋結果",
             // "Return code from forked repositories": "搜尋結果包括被Fork的儲存庫。",
 
-            "Issues options": "議題選項",
-            "In the state": "議題狀態",
+            "Issues options": "問題選項",
+            "In the state": "問題狀態",
                 "open/closed": "打開/關閉",
                 "open": "打開",
                 "closed": "已關閉",
@@ -22272,7 +22272,7 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
                 "not planned": "無計劃",
                 "reopened": "重新打開",
             "With this many comments": "評論數量",
-            "With the labels": "議題標籤",
+            "With the labels": "問題標籤",
             "Opened by the author": "提議人",
             "Mentioning the users": "提及誰",
             "Assigned to the users": "分配給誰",
@@ -22293,7 +22293,7 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
         [/(\d+(k|M|B)?) files?/, "$1 個文件"], // 同上 https://github.com/search?q=<keyword>&type=code
         [/More than ([\d,]+) results?/, "大於 $1 個結果"],
         [/Show ([\d,]+) more matches?/, "顯示更多 $1 處匹配"],
-        [/(\d+) issues? needs? help/, "$1 個議題需要幫助"],
+        [/(\d+) issues? needs? help/, "$1 個問題需要幫助"],
         [/Sponsor ([^ ]+)?/, "贊助 $1"], // 贊助按鈕 對話框 標題
         [/on (.+)/, "$1"], // 日期去除 on
     ],
@@ -22305,7 +22305,7 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
         "static": {
             "Repository search results": "儲存庫搜尋結果",
             "Code search results": "程式碼搜尋結果",
-            "Issue search results": "議題搜尋結果",
+            "Issue search results": "問題搜尋結果",
             "Pull request search results": "合併請求搜尋結果",
             "Discussion search results": "討論搜尋結果",
             "User search results": "用戶搜尋結果",
@@ -23592,7 +23592,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             "Project management": "專案管理",
                 "Project management apps": "專案管理應用",
                 "Project management actions": "專案管理操作",
-                "Organize, manage, and track your project with tools that build on top of issues and pull requests.": "使用基於置頂議題和合併請求的工具來組織、管理和跟蹤您的專案。",
+                "Organize, manage, and track your project with tools that build on top of issues and pull requests.": "使用基於置頂問題和合併請求的工具來組織、管理和跟蹤您的專案。",
 
             "Publishing": "發布",
                 "Publishing apps": "發布應用",
@@ -23804,7 +23804,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
 
                 "Contributors": "貢獻者",
                 "Start a discussion": "開始討論",
-                "Open an issue": "打開議題",
+                "Open an issue": "打開問題",
                 "View source code": "查看源程式碼",
                 "Security policy": "安全政策",
 
@@ -24339,7 +24339,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
                     "Enforce certain workflows for one or more branches.": "為一個或多個分支強制執行某些工作流程。",
             "Automation and CI/CD": "自動化和 CI/CD",
                 "See more about automation and CI/CD": "查看更多關於自動化和 CI/CD 的訊息",
-                "Auto-assign new issues": "自動分配新議題",
+                "Auto-assign new issues": "自動分配新問題",
                     "Try automatically assigning work with GitHub Actions.": "嘗試使用 GitHub Actions 自動分配工作。",
                 "Run a continuous integration test": "執行持續集成測試",
                     "Validate your code using a CI workflow.": "使用 CI 工作流程驗證您的程式碼。",
@@ -24363,7 +24363,7 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
         [/doesn't have any pinned public repositories yet./, "還沒有任何置頂的公共儲存庫。"],
         [/You are viewing the README and pinned repositories as a member of the ([^ ]+) organization./, "您正在以 $1 組織成員的身份查看自述文件和置頂儲存庫。"],
         [/Invite a member to/, "邀請成員加入"],
-        [/\((\d+) issues? needs? help\)/, "($1 個議題需要幫助)"],
+        [/\((\d+) issues? needs? help\)/, "($1 個問題需要幫助)"],
         [/([^ ]+)’s past year of commit activity/, "近幾年 $1 的提交活動"],
         // 用戶 - 浮動訊息卡
         [/- (\d+)h (ahead|behind)/, function(all, num, compare){
@@ -24564,7 +24564,7 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
                 "Members can quickly request to join any team. An owner or team maintainer can approve the request.": "成員可以快速申請加入任何團隊。一個所有者或團隊維護者可以批准該請求。",
             "Team mentions": "團隊提及",
                 "Use team @mentions (ex.": "使用團隊 @提及（例如",
-                "for the entire team) in any comment, issue, or pull request.": "對於整個團隊）在任何評論、議題或合併請求中。",
+                "for the entire team) in any comment, issue, or pull request.": "對於整個團隊）在任何評論、問題或合併請求中。",
                 "New team": "新建團隊",
 
             "Find a team…": "搜尋團隊……",
@@ -24943,11 +24943,11 @@ I18N["zh-TW"]["orgs/settings/roles"] = { // 組織設置 - 儲存庫角色
                     "Read": "只讀",
                         "Read and clone repositories. Open and comment on issues and pull requests.": "讀取和複製儲存庫。打開並評論問題和合併請求。",
                     "Triage": "分級",
-                        "Read permissions plus manage issues and pull requests.": "讀取權限外加管理議題和合併請求的權限。",
+                        "Read permissions plus manage issues and pull requests.": "讀取權限外加管理問題和合併請求的權限。",
                     "Write": "可寫",
                         "Triage permissions plus read, clone and push to repositories.": "分級權限外加讀取、複製和推送到儲存庫。",
                     "Maintain": "維護",
-                        "Write permissions plus manage issues, pull requests and some repository settings.": "可寫權限外加管理議題、合併請求和一些儲存庫設置。",
+                        "Write permissions plus manage issues, pull requests and some repository settings.": "可寫權限外加管理問題、合併請求和一些儲存庫設置。",
                     "Admin": "管理員",
                         "Full access to repositories including sensitive and destructive actions.": "對儲存庫的完全訪問權限，包括敏感和破壞性操作。",
                         "Modify Admin Role": "修改管理角色",
@@ -25088,14 +25088,14 @@ I18N["zh-TW"]["orgs/settings/member_privileges"] = { // 組織設置 - 成員權
                             "Members can now delete or transfer repositories.": "成員現在可以刪除或轉讓儲存庫。",
                             "Members can no longer delete or transfer repositories.": "成員不能再刪除或轉讓儲存庫。",
 
-                    "Issue deletion": "議題刪除",
-                        "Allow repository administrators to delete issues for this organization": "允許儲存庫管理員刪除此組織的議題",
-                            "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果啟用，對儲存庫有管理權限的成員將能夠刪除議題。如果禁用，只有組織所有者可以刪除議題。",
-                            "Learn more about allowing people to delete issues in your organization": "瞭解更多關於允許成員刪除組織內議題的訊息",
+                    "Issue deletion": "問題刪除",
+                        "Allow repository administrators to delete issues for this organization": "允許儲存庫管理員刪除此組織的問題",
+                            "If enabled, members with admin permissions for the repository will be able to delete issues. If disabled, only organization owners can delete issues.": "如果啟用，對儲存庫有管理權限的成員將能夠刪除問題。如果禁用，只有組織所有者可以刪除問題。",
+                            "Learn more about allowing people to delete issues in your organization": "瞭解更多關於允許成員刪除組織內問題的訊息",
 
                         // 頂部提醒
-                            "Members can now delete issues.": "成員現在可以刪除議題。",
-                            "Members can no longer delete issues.": "成員不能再刪除議題。",
+                            "Members can now delete issues.": "成員現在可以刪除問題。",
+                            "Members can no longer delete issues.": "成員不能再刪除問題。",
 
                 "Member team permissions": "成員團隊權限",
                     "Team creation rules": "團隊創建規則",
@@ -25117,7 +25117,7 @@ I18N["zh-TW"]["orgs/settings/teams"] = { // 組織設置 - 團隊討論
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
         // 團隊討論 /organizations/<org-login>/settings/teams
-            "Team discussions provide a place for a team to have conversations that span across projects or repositories and that don’t belong in an issue or a pull request.": "團隊討論為團隊提供了一個進行跨專案或儲存庫，且不屬於議題或合併請求的對話的場所。",
+            "Team discussions provide a place for a team to have conversations that span across projects or repositories and that don’t belong in an issue or a pull request.": "團隊討論為團隊提供了一個進行跨專案或儲存庫，且不屬於問題或合併請求的對話的場所。",
             "Enable team discussions for this organization": "為此組織啟用團隊討論",
                 "This allows members to start discussions in any team in the": "這允許成員在任何團隊中開始討論，在",
             "organization.": "組織中。",
@@ -25165,7 +25165,7 @@ I18N["zh-TW"]["orgs/settings/blocked_users"] = { // 組織設置 - 黑名單
         // Blocked users 黑名單 /organizations/<org-login>/settings/blocked_users
             "Block a user": "拉黑用戶",
             "Blocking a user prevents the following on all your repositories:": "拉黑用戶可以防止所有儲存庫中的以下操作：",
-            "opening or commenting on issues or pull requests": "打開或評論議題或合併請求",
+            "opening or commenting on issues or pull requests": "打開或評論問題或合併請求",
             "starring, forking, or watching": "標星、復刻、追蹤",
             "adding or editing wiki pages": "新增或編輯 Wiki 頁面",
 
@@ -25193,7 +25193,7 @@ I18N["zh-TW"]["orgs/settings/interaction_limits"] = { // 組織設置 - 互動�
 
         // Interaction limits 互動限制 /organizations/<org-login>/settings/interaction_limits
             "Temporary interaction limits": "臨時互動限制",
-            "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time. Users who are members of this organization will not be affected by these limits.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開議題或創建合併請求）。作為該組織成員的用戶將不受這些限制的影響。",
+            "Temporarily restrict which external users can interact with your repositories (comment, open issues, or create pull requests) for a configurable period of time. Users who are members of this organization will not be affected by these limits.": "在配置的時間段內，可臨時限制哪些外部用戶與您的儲存庫互動（評論、打開問題或創建合併請求）。作為該組織成員的用戶將不受這些限制的影響。",
             "This may be used to force a \"cool-down\" period during heated discussions or prevent unwanted interactions.": "可用於在激烈討論期間，強制進入 “冷靜” 期或防止不必要的互動。",
             "Interaction limits may already exist in your organization's": "互動限制可能已經存在於您的組織",
             "public repositories": "公開儲存庫",
@@ -25317,10 +25317,10 @@ I18N["zh-TW"]["orgs/settings/repository-defaults"] = { // 組織設置 - 儲存�
             "documentation": "文件",
                 "Improvements or additions to documentation": "文件的改進或補充",
             "duplicate": "重複",
-                "This issue or pull request already exists": "這個議題或合併請求已經存在",
+                "This issue or pull request already exists": "這個問題或合併請求已經存在",
             "enhancement": "增強",
                 "New feature or request": "新功能或請求",
-            "good first issue": "好的首發議題",
+            "good first issue": "好的首發問題",
                 "Good for newcomers": "適合新人",
             "help wanted": "需要幫助",
                 "Extra attention is needed": "需要特別追蹤",
@@ -25579,7 +25579,7 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
             "Architecture": "架構",
             "Download": "下載",
             // win 64
-            "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我們建議在 “\\actions-runner” 下配置執行器。這將有助於避免與 Windows 上的服務標識資料夾權限和長路徑限制相關的議題。",
+            "We recommend configuring the runner under \"\\actions-runner\". This will help avoid issues related to service identity folder permissions and long path restrictions on Windows.": "我們建議在 “\\actions-runner” 下配置執行器。這將有助於避免與 Windows 上的服務標識資料夾權限和長路徑限制相關的問題。",
             // macOS-arm64
             "macOS-arm64 runners are currently in pre-release status and subject to change.": "macOS-arm64 的執行器目前處於預發布狀態，可能會有變化。",
             "Configure": "設置",
@@ -26586,7 +26586,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                 "Open cs.github.com in a new tab": "在新標籤頁中打開 cs.github.com",
                 "Focus secondary search bar" : "聚焦二級搜尋欄",
                 "Go to Code"                 : "跳轉到程式碼",
-                "Go to Issues"               : "跳轉到議題",
+                "Go to Issues"               : "跳轉到問題",
                 "Go to Pull Requests"        : "跳轉到合併請求",
                 "Go to Actions"              : "跳轉到操作",
                 "Go to Projects"             : "跳轉到專案",
@@ -26600,7 +26600,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                 "Create your first GitHub project": "創建您的第一個 GitHub 專案",
                 "Projects are a customizable, flexible tool for planning and tracking your work.": "專案是用於規劃和跟蹤您工作的可定製、靈活的工具。",
 
-        // 公共詞 簡版 議題&合併請求訊息
+        // 公共詞 簡版 問題&合併請求訊息
             "opened by": "打開者",
             "Opened in": "打開在",
             "commented": "評論於",
@@ -26610,9 +26610,9 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             "Milestone": "里程碑",
                 "No milestone": "尚無里程碑",
             "Linked pull requests": "關聯的合併請求",
-                "Successfully merging a pull request may close this issue.": "成功合併一個合併請求可能會關閉此議題。",
+                "Successfully merging a pull request may close this issue.": "成功合併一個合併請求可能會關閉此問題。",
             "None yet": "暫無",
-            "Go to issue for full details": "跳轉到議題以獲取完整詳細訊息",
+            "Go to issue for full details": "跳轉到問題以獲取完整詳細訊息",
 
             "Loading details…": "載入細節…",
 
@@ -26632,7 +26632,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                 "Basic kanban": "基礎看板",
                     "Basic kanban-style board with columns for To do, In progress and Done.": "基礎風格看板，帶有待辦、進行中和已完成等欄目。",
                 "Automated kanban": "自動化看板",
-                    "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "帶有內置觸發器的風格看板，可以自動將議題和合併請求移到待辦、進行中和已完成欄目中。",
+                    "Kanban-style board with built-in triggers to automatically move issues and pull requests across To do, In progress and Done columns.": "帶有內置觸發器的風格看板，可以自動將問題和合併請求移到待辦、進行中和已完成欄目中。",
                 "Automated kanban with reviews": "帶審查的自動看板",
                     "Everything included in the Automated kanban template with additional triggers for pull request reviews.": "除了包含自動化看板範本中的所有內容，還有合併請求審查的額外觸發器。",
                 "Bug triage": "BUG 分類",
@@ -26657,7 +26657,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             "No open projects": "無已打開的專案",
             "No open project templates": "無已打開的專案範本",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"專案表格就像電子表格一樣構建，為您提供實時畫布，用於篩選、排序和分組問題及合併請求。您可以根據需求自定義字段並保存視圖。",
-            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組議題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "專案專為靈活適配而構建，為您提供實時畫布，可在表格、看板或路線圖中篩選、排序和分組問題與合併請求。您可以通過自定義字段、保存的視圖、工作流程和分析，按需定製專案。",
             "This repository doesn't have any projects yet": "該儲存庫目前沒有任何專案",
             "Create a project": "創建一個專案",
             "Provide quick access to relevant projects.":"為相關專案提供便捷訪問",
@@ -26666,11 +26666,11 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             "Link projects":"關聯專案",
             "Link a project to this repository":"將專案與該儲存庫進行關聯",
 
-            "Organize your issues with project boards": "使用專案面板組織您的議題",
+            "Organize your issues with project boards": "使用專案面板組織您的問題",
             "Did you know you can manage projects in the same place you keep your code? Set up a project board on GitHub to streamline and automate your workflow.": "您知道您可以在保存程式碼的同一個地方管理專案嗎？在 GitHub 上設置專案面板以簡化和自動化您的工作流程。",
 
             "Sort tasks": "排序任務",
-            "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "將議題和合併請求新增到您的看板中，並將它們與包含想法或任務清單的筆記卡一起進行優先排序。",
+            "Add issues and pull requests to your board and prioritize them alongside note cards containing ideas or task lists.": "將問題和合併請求新增到您的看板中，並將它們與包含想法或任務清單的筆記卡一起進行優先排序。",
             "Plan your project": "規劃專案",
             "Sort tasks into columns by status. You can label columns with status indicators like \"To Do\", \"In Progress\", and \"Done\".": "將任務按狀態分類成列。您可以用 “待辦”、“進行中” 和 “已完成” 等狀態指標給各欄貼上標籤。",
             "Automate your workflow": "自動化工作流程",
@@ -26708,7 +26708,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
         // https://github.com/users/<user-name>/projects/<id>
             // 鍵盤快捷鍵
                 "Project card shortcuts": "專案卡快捷鍵",
-                    "Open the issue or pull request associated with the focused card in the sidebar": "聚焦卡片的側邊欄中打開相關聯的議題或合併請求",
+                    "Open the issue or pull request associated with the focused card in the sidebar": "聚焦卡片的側邊欄中打開相關聯的問題或合併請求",
                 "Moving a card": "移動卡片",
                     "Start moving the focused card": "開始移動聚焦卡片",
                     "Cancel the move in progress": "取消正在進行的移動",
@@ -26740,7 +26740,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             // 工具欄
             "Add cards": "新增卡片",
                 "You can use the filters available in": "您可使用的篩選器在",
-                "issue search": "議題搜尋",
+                "issue search": "問題搜尋",
                 "Loading search results…": "載入搜尋結果…",
                 "Search results": "搜尋結果",
             "Fullscreen": "全屏",
@@ -26817,11 +26817,11 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                         "This column will not be automated": "本欄目將不會自動化",
                     "To do": "待辦",
                         "Planned but not started": "已計劃但未開始",
-                        "Move issues here when…": "當…時，將議題移至此處",
+                        "Move issues here when…": "當…時，將問題移至此處",
                             "Newly added": "新新增的",
-                                "Issues will automatically move here when added to this project.": "新增到此專案時，議題將自動移至此處。",
+                                "Issues will automatically move here when added to this project.": "新增到此專案時，問題將自動移至此處。",
                             "Reopened": "重新打開",
-                                "If a closed issue in this project reopens, it will automatically move here.": "如果此專案中已關閉的議題重新打開，它將自動移至此處。",
+                                "If a closed issue in this project reopens, it will automatically move here.": "如果此專案中已關閉的問題重新打開，它將自動移至此處。",
                         "Move pull requests here when…": "當…時，將合併請求移到此處",
                             "Pull requests will automatically move here when added to this project.": "新增到此專案時，合併請求將自動移至此處。",
                             "If a closed pull request in this project reopens, it will automatically move here.": "如果此專案中已關閉的合併請求重新打開，它將自動移至此處。",
@@ -26835,7 +26835,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                     "Done": "已完成",
                         "Items are complete": "專案已完成",
                         // 已關閉
-                            "If an open issue in this project is closed, it will automatically move here.": "如果該專案中的一個打開的議題被關閉，它將自動轉移到這裡。",
+                            "If an open issue in this project is closed, it will automatically move here.": "如果該專案中的一個打開的問題被關閉，它將自動轉移到這裡。",
                         "Merged": "已合併",
                             "If an open pull request in this project is merged, it will automatically move here.": "如果該專案中的一個打開的合併請求被合併，它將自動轉移到這裡。",
                         "Closed with unmerged commits": "已關閉的未合併的提交",
@@ -26878,10 +26878,10 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             "This action will remove any cards and automation preset associated with the column.": "此操作將刪除與該列關聯的所有卡片和自動化預設。",
 
             "Copy card link": "複製卡片連結",
-            "Convert to issue": "轉換為議題",
-                "Convert note to issue": "轉換註釋為議題",
+            "Convert to issue": "轉換為問題",
+                "Convert note to issue": "轉換註釋為問題",
                 "Repository": "儲存庫",
-                    "Choose a repository for this issue": "為這個議題選擇一個儲存庫",
+                    "Choose a repository for this issue": "為這個問題選擇一個儲存庫",
                     "Find a repository": "查找儲存庫",
                     "Title": "標題",
                     "Body": "內容",
@@ -26969,7 +26969,7 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                 "Move right": "向右移動",
                     "This is the right-most column": "這是最右邊的欄目",
 
-                "Sub-issues progress field settings": "子議題進度字段設置",
+                "Sub-issues progress field settings": "子問題進度字段設置",
                 "Show numerical value": "顯示數值",
                 "Saved!": "保存成功！",
                 "Custom field options": "自定義字段選項",
@@ -26979,19 +26979,19 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                     "Edit field": "編輯字段",
                     "Move field...": "移動字段…",
             "Reviewers": "審查者",
-            "Parent issue": "父議題",
-            "Sub-issues progress": "子議題進度",
-            "Create new issue": "創建新議題",
+            "Parent issue": "父問題",
+            "Sub-issues progress": "子問題進度",
+            "Create new issue": "創建新問題",
                 "Templates and forms": "範本和表單",
-                "Create a new issue from scratch": "從頭開始創建新議題",
+                "Create a new issue from scratch": "從頭開始創建新問題",
                 "Select repository": "選擇儲存庫",
                 "Copy link": "複製連結",
-                "Blank issue": "空白議題",
+                "Blank issue": "空白問題",
             "Add item from repository": "從儲存庫新增專案",
                 "No items to add": "無專案可新增",
                 "This repository is either empty or all items were already added to this project.": "此儲存庫要麼為空，要麼所有專案都已新增到此專案中。",
                 "Select an item": "選擇一個專案",
-                "Search for issues and pull requests": "搜尋議題和合併請求",
+                "Search for issues and pull requests": "搜尋問題和合併請求",
                 "Add selected items": "新增選定專案",
                 "Select all items": "選擇所有專案",
             "Search by username": "按用戶名搜尋",
@@ -27124,11 +27124,11 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
 
             "Pull Request closed without merge": "合併請求關閉而不合併",
             "Pull Request merged": "合併合併請求",
-            "Issue closed": "議題已關閉",
+            "Issue closed": "問題已關閉",
             "Pull Request reopened": "合併請求已重新打開",
-            "Issue reopened": "議題已重新打開",
+            "Issue reopened": "問題已重新打開",
             "Pull Request pending card added": "新增了合併請求待辦卡",
-            "Issue pending card added": "新增了議題待辦卡",
+            "Issue pending card added": "新增了問題待辦卡",
 
             "automation": "自動化",
             "to the": "到",
@@ -27755,8 +27755,8 @@ I18N["zh-TW"]["status"] = { // GitHub Status
             "Webhooks": "Web 鉤子",
                 "Real time HTTP callbacks of user-generated and system events": "實時 HTTP 回調用戶生成的事件和系統事件",
             "Copilot AI Model Providers":"Copilot AI 模型提供商",
-            // 議題
-                "Requests for Issues on GitHub.com": "GitHub.com 上的議題請求",
+            // 問題
+                "Requests for Issues on GitHub.com": "GitHub.com 上的問題請求",
             "Pull Requests": "合併請求",
                 "Requests for Pull Requests on GitHub.com": "GitHub.com 上的合併請求",
             // 操作
@@ -27789,7 +27789,7 @@ I18N["zh-TW"]["status"] = { // GitHub Status
 
         // https://www.githubstatus.com/history
             "Incident with Packages": "軟件包異常事件",
-            "Incident with Issues": "議題異常事件",
+            "Incident with Issues": "問題異常事件",
             "Incident with Codespaces": "程式碼空間異常事件",
             "Incident with Copilot": "Copilot 異常事件",
             "Incident with Pull Requests": "合併請求異常事件",
@@ -28031,7 +28031,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
             "Not everyone reads docs! Many potential course authors will use your course as an example. Make sure to include lots of comments in your README and Actions workflow files.": "不是每個人都會閱讀文件！許多潛在的課程作者會將您的課程作為範例。請確保在您的 README 和操作工作流程文件中包含大量註釋。",
             "Keep everything you need in the one course repository.": "將您需要的一切都保存在一個課程儲存庫內。",
             "If you need your courses to have limited access, create an organization for your courses, make your courses private, and invite the specific users that need these courses to your organization.": "如果您需要限制課程的訪問權限，請為您的課程創建一個組織，將您的課程設為私人課程，並邀請需要這些課程的特定用戶加入您的組織。",
-            "Consider adding a Code of Conduct, contributing guide, and issue templates.": "考慮新增行為準則、貢獻指南和議題範本。",
+            "Consider adding a Code of Conduct, contributing guide, and issue templates.": "考慮新增行為準則、貢獻指南和問題範本。",
             "Keep the number of files and folders in the root directory short. More items in the root level means the README is further down the page.": "儘量減少根目錄中文件和資料夾的數量。根目錄中的專案越多，README 就越靠近頁面底部。",
             "Content": "內容",
                 "The more content you have, the more content you will have to update later. Be concise. Link to the GitHub Docs whenever you can.": "內容越多，以後需要更新的內容就越多。簡明扼要。儘可能連結到 GitHub 文件。",
@@ -28514,7 +28514,7 @@ I18N["zh-TW"]["copilot"] = {
             "Send now": "發送",
 
             // 預設欄
-                "Create issue": "創建議題",
+                "Create issue": "創建問題",
                 // 空間
                     "Recent": "最近",
                     "Create a space": "新建空間",
@@ -28531,9 +28531,9 @@ I18N["zh-TW"]["copilot"] = {
                 // 合併請求
                     "My open pull requests": "我打開的",
                     "Summarize my latest PR": "總結最近",
-                // 議題
+                // 問題
                     "Issues assigned to me": "分配給我",
-                    "Create a new issue": "新建議題",
+                    "Create a new issue": "新建問題",
                     "Summarize my latest issue": "總結最近",
                 // Git
                     "Basic Git commands": "基本 Git 命令",
@@ -29365,7 +29365,7 @@ I18N["zh-TW"]["repository/agents"] = {
     "static": {
         // 介紹頁面
         "Copilot Coding Agent handles routine tasks so you can focus on core work": "Copilot 編程AI 代理處理例行任務，讓您專注於核心工作",
-            "Save time by offloading testing, dependency upgrades, migrations and maintenance to agents. Create pull requests from Copilot Chat, CLI, IDEs or assign an Issue to Copilot to get started.": "將測試、依賴項升級、遷移和維護等工作交給AI 代理處理，節省您的時間。您可以通過 Copilot Chat、命令行、IDE 創建合併請求，或直接將議題分配給 Copilot 來開始使用。",
+            "Save time by offloading testing, dependency upgrades, migrations and maintenance to agents. Create pull requests from Copilot Chat, CLI, IDEs or assign an Issue to Copilot to get started.": "將測試、依賴項升級、遷移和維護等工作交給AI 代理處理，節省您的時間。您可以通過 Copilot Chat、命令行、IDE 創建合併請求，或直接將問題分配給 Copilot 來開始使用。",
                 "View Copilot Coding Agent capabilities": "查看 Copilot 編程AI 代理功能",
 
         // 免費試用提示
