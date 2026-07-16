@@ -63,12 +63,15 @@ I18N.conf = {
         'repository/pull': [
             "td.blob-code", // 代码差异 分屏/同屏
             '.js-full-logs-container', // 工作流运行日志
+            'span.PRIVATE_TreeView-item-content-text', // 文件树文件夹/文件名
+            'span.ActionList-item-label', // PR 文件树文件夹/文件名
         ],
         'repository/compare': [
             "tbody", // 代码差异
             ".js-preview-body", // 新建拉取请求 - 正文编辑器预览
+            'span.PRIVATE_TreeView-item-content-text', // 文件树文件夹/文件名
         ],
-        'repository/commit': ["td.blob-code", "div.diff-text-inner"], // 代码差异 分屏/同屏
+        'repository/commit': ["td.blob-code", "div.diff-text-inner", 'span.PRIVATE_TreeView-item-content-text'], // 代码差异 分屏/同屏
         'repository/blob': [
             "#highlighted-line-menu-positioner", // 代码视图 存在
             "#repos-sticky-header", // 代码视图 置顶标题
@@ -170,13 +173,17 @@ I18N.conf = {
             'td.blob-code', // 代码差异 分屏/同屏
             'span.ws-pre-wrap', // 提交说明
             "h4[class^='Title-module__heading']", // 提交标题
+            'span.PRIVATE_TreeView-item-content-text', // 文件树文件夹/文件名
         ],
         'repository/pull': [
             'td.blob-code', // 代码差异 分屏/同屏
             '.js-full-logs-container', // 工作流运行日志
+            'span.PRIVATE_TreeView-item-content-text', // 文件树文件夹/文件名
+            'span.ActionList-item-label', // PR 文件树文件夹/文件名
         ],
         'repository/compare': [
             'td.blob-code', // 代码差异 分屏/同屏
+            'span.PRIVATE_TreeView-item-content-text', // 文件树文件夹/文件名
         ],
         'repository/edit': [
             '.cm-scroller', // 代码编辑器
