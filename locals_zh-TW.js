@@ -1932,6 +1932,17 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             all = minute ? minute + '分' + second + '秒' : second + '秒';
             return (prefix ? all + '之內' : all);
         }],
+        /**
+         * 相對時間縮寫（Intl.RelativeTimeFormat narrow）
+         * GitHub: s=秒, m=分鐘, h=小時, d=天, w=週, mo=月, y=年
+         * 注意：mo 必須寫在 m 前面，避免 1mo 被拆成 1m + o
+         * 修復 #735：原先 m 被誤譯為「個月」
+         */
+        [/^(\d+)(y|mo|h|d|w|m|s)(?: ago)?$/, function (all, count, suffix) {
+            var suffixKey = {y: '年', mo: '個月', h: '小時', d: '天', w: '周', m: '分鐘', s: '秒'};
+
+            return count + ' ' + suffixKey[suffix] + '之前';
+        }],
 
         // 其他翻譯
         [/to enable two-factor authentication as an additional security measure. Your activity on GitHub includes you in this requirement. You will need to enable two-factor authentication on your account before ([^ ]+), or be restricted from account actions./, "啟用雙因素身份驗證（2FA）作為額外安全措施。您在 GitHub 上的活動讓您接收到此要求。您將需要在 $1 前啟用雙因素身份驗證，否則會被限制帳戶操作。"],
@@ -2048,8 +2059,8 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 return count + ' ' + unitKey[unit] + (prefix === 'in' ? '之內' : '之前');
             }
         }],
-        [/(\d+)(y|h|d|w|m)/, function (all, count, suffix) {
-            var suffixKey = {y: '年', h: '小時', d: '天', w: '周', m: '個月'};
+        [/(\d+)(y|mo|h|d|w|m|s)(?: ago)?/, function (all, count, suffix) {
+            var suffixKey = {y: '年', mo: '個月', h: '小時', d: '天', w: '周', m: '分鐘', s: '秒'};
 
             return count + ' ' + suffixKey[suffix] + '之前';
         }],
