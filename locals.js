@@ -2049,7 +2049,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             }
         }],
         [/(\d+)(y|h|d|w|m)/, function (all, count, suffix) {
-            var suffixKey = {y: '年', h: '小时', d: '天', w: '周', m: '个月'};
+            var suffixKey = {y: '年', h: '小时', d: '天', w: '周', m: '分钟'};
 
             return count + ' ' + suffixKey[suffix] + '之前';
         }],
