@@ -1652,14 +1652,18 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Stop response": "停止响应",
             // 反馈
             "Rate your experience": "反馈",
-            // 四个表情
-                "Love it": "优",
-                "It’s ok": "良",
-                "Not great": "中",
-                "Hate it": "差",
-
-            "Tell us what you liked or what could be better": "告诉我们您喜欢什么或可以改进的地方",
-
+            "Give feedback on Issues": "反馈议题意见",
+                "Hate": "很差",
+                "Dislike": "差",
+                "Neutral": "一般",
+                "Like": "好",
+                "Love": "很好",
+            "Message": "留言",
+                "Tell us what you liked or what could be better": "请告诉我们您喜欢什么，或者哪里可以改进",
+            "Please don't include sensitive, confidential, or personal data. Your feedback helps us improve our services in line with our": "请不要包含敏感、机密或个人数据。您的反馈有助于我们改进服务，相关处理遵循我们的",
+            "Privacy Policy": "隐私政策",
+            "Cancel": "取消",
+            "Send": "发送",
             // 响应状态
                 "Copilot is responding…": "Copilot 响应中…",
                 "creating plan": "创建计划中",
