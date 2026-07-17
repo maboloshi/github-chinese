@@ -631,6 +631,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Sorry about that. Please try refreshing and contact us if the problem persists.": "对此我们很抱歉。请尝试刷新，如果问题仍然存在，请联系我们。",
             "Error": "错误",
             "Looks like network is down!": "看起来网络未连接！",
+            "Failed to fetch data,": "加载数据失败",
+            "click here to reload the page.": "点击此处刷新页面。",
             "Contact Support": "联系 GitHub 支持",
             "GitHub Status": "GitHub 状态",
 
@@ -1209,7 +1211,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
         // 全局快捷键对话框 - 快捷键 ? 打开
             "Keyboard shortcuts": "键盘快捷键",
-            "Site-wide shortcuts": "全站快捷键",
+            "Site-wide shortcuts": "全局快捷键",
                 "Open command palette": "打开命令面板",
                 "Open command palette in command mode": "在命令模式下打开命令面板",
                 "Focus search bar": "聚焦搜索栏", // gist
@@ -1224,6 +1226,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "Toggle selection": "切换选择",
                 "Open selection": "打开选择",
                 "Expand and move focus into focused link's hovercard": "展开并将焦点移至聚焦链接的悬浮卡",
+                "Show keyboard shortcuts dialog": "显示键盘快捷键对话框",
+            "Copilot Chat": "Copilot 聊天",
+                "Open Copilot Chat (assistive mode)": "打开 Copilot 聊天（辅助模式）",
+                "Open Copilot Chat (immersive mode)": "打开 Copilot 聊天（沉浸模式）",
             "View all keyboard shortcuts": "查看所有键盘快捷键",
 
         // 命令面板 - ctrl k 或 ctrl alt k 打开
@@ -2644,6 +2650,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
                     "this repository was included": "该仓库已收录",
 
                 // ?tab=achievements
+                "Earned achievements": "已获得成就",
                     "Hide from profile": "从个人资料中隐藏",
                     "Hidden from your profile.": "已从您的个人资料中隐藏",
                     "Show on profile": "在个人资料中显示",
@@ -2723,7 +2730,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
             "Who You’re Following": "我关注的人",
         },
         "regexp": [
-            [/Achievements/, "成就"],
+            [/Your Achievements/, "我的成就"],
             [/Followers/, "关注者"],
             [/Following/, "关注"],
         ],
