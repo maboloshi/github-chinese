@@ -902,6 +902,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Ask Copilot…": "询问 Copilot…",
                 "About this page": "关于此页面",
+                "In immersive chat": "在沉浸式聊天中",
                 "In a space": "在空间",
                 "Download for…": "下载插件…",
 
