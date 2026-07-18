@@ -10622,6 +10622,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "remaining": "剩余",
             "items": "项",
             "Load more": "载入更多",
+                // 右侧菜单
+                "Load more actions": "更多选项",
+                    "Load older activity": "加载更旧活动",
+                    "Load newer activity": "加载更新活动",
 
             "This conversation has been locked and limited to collaborators.": "此对话已锁定并限制与协作者对话。",
             "This issue has been deleted.": "该议题已被删除。",
