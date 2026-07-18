@@ -641,7 +641,6 @@
             const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
             if (!element) return true;
             if (element.closest?.(unsafeTextSelector)) return true;
-            if (element.closest?.(searchModuleSelector)) return true;
             if (element.closest?.(searchSurfaceSelector)) return true;
 
             return false;
@@ -720,6 +719,8 @@
                     translateReactGlobalNavElement(element, element.getAttribute('data-content'));
                 }
             });
+            // 翻译搜索输入框占位文本
+            translateReactGlobalNavSearchButton();
             // 翻译整个头部区域
             translateReactGlobalNavSurface(header);
 
@@ -753,11 +754,46 @@
         }
 
         /**
+         * 翻译搜索输入框的占位文本（处理混合了 kbd 标签的内容）
+         */
+        function translateReactGlobalNavSearchButton() {
+            const placeholder = document.querySelector('header.GlobalNav [class*="Search-module__placeholder__"]');
+            if (!placeholder) return;
+            const text = placeholder.textContent;
+            const label = translateReactGlobalNavText(text);
+            if (label && placeholder.textContent !== label) {
+                placeholder.textContent = label;
+            }
+        }
+
+        /**
+         * 翻译搜索弹窗内的静态标签（区域标题、底部提示等，不翻译用户输入或动态建议）
+         */
+        function translateReactGlobalNavSearchDialog() {
+            const dialog = document.querySelector('#search-suggestions-dialog');
+            if (!dialog) return;
+            const header = document.getElementById('search-suggestions-dialog-header');
+            if (header) {
+                const label = translateReactGlobalNavText(header.textContent);
+                if (label) header.textContent = label;
+            }
+            dialog.querySelectorAll('.ActionList-sectionDivider-title').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+            dialog.querySelectorAll('.search-feedback-prompt a, .search-feedback-prompt button').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+        }
+
+        /**
          * 总翻译入口，被调度函数调用
          * @param {object} options - { requireSettledHeader: true/false }
          */
         function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
             observeReactGlobalNav();   // 确保观察器已启动
+            translateReactGlobalNavSearchDialog();
 
             const headerTranslated = translateReactGlobalNavHeader();
             const portalsTranslated = translateReactGlobalNavPortals();

@@ -585,7 +585,6 @@
             const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
             if (!element) return true;
             if (element.closest?.(unsafeTextSelector)) return true;
-            if (element.closest?.(searchModuleSelector)) return true;
             if (element.closest?.(searchSurfaceSelector)) return true;
 
             return false;
@@ -647,6 +646,7 @@
                     translateReactGlobalNavElement(element, element.getAttribute('data-content'));
                 }
             });
+            translateReactGlobalNavSearchButton();
             translateReactGlobalNavSurface(header);
 
             return true;
@@ -674,8 +674,37 @@
             return !searchPortalPending;
         }
 
+        function translateReactGlobalNavSearchButton() {
+            const placeholder = document.querySelector('header.GlobalNav [class*="Search-module__placeholder__"]');
+            if (!placeholder) return;
+            const text = placeholder.textContent;
+            const label = translateReactGlobalNavText(text);
+            if (label && placeholder.textContent !== label) {
+                placeholder.textContent = label;
+            }
+        }
+
+        function translateReactGlobalNavSearchDialog() {
+            const dialog = document.querySelector('#search-suggestions-dialog');
+            if (!dialog) return;
+            const header = document.getElementById('search-suggestions-dialog-header');
+            if (header) {
+                const label = translateReactGlobalNavText(header.textContent);
+                if (label) header.textContent = label;
+            }
+            dialog.querySelectorAll('.ActionList-sectionDivider-title').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+            dialog.querySelectorAll('.search-feedback-prompt a, .search-feedback-prompt button').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+        }
+
         function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
             observeReactGlobalNav();
+            translateReactGlobalNavSearchDialog();
 
             const headerTranslated = translateReactGlobalNavHeader();
             const portalsTranslated = translateReactGlobalNavPortals();
