@@ -14384,7 +14384,8 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
 
                     "Create a": "创建",
                     "new branch": "新分支",
-                    "for this commit and start a pull request": "为这个提交，并且发起一个拉取请求",
+                    "for this commit": "为这个提交，",
+                    "and start a pull request": "并发起拉取请求",
                     "Learn more about pull requests": "了解更多关于拉取请求的信息",
 
                 "Something went wrong. Please fork the project, then try from your fork.": "出错了。请复刻该项目，然后从您的复刻处尝试。",
