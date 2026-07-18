@@ -1771,7 +1771,6 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "Summary": "摘要",
             "Copy head branch name to clipboard": "複製頭分支名稱到剪貼板",
             "Edit title": "編輯標題",
-            "Dismiss banner": "關閉",
 
     },
     "regexp": [ // 正則翻譯
@@ -3648,8 +3647,6 @@ I18N["zh-TW"]["settings-menu"] = { // 設置 - 公共部分
 
         "Your personal account": "我的個人帳戶",
         "Switch settings context": "切換設置上下文", // 存在組織時
-        "Select settings context": "選擇帳戶或組織",
-        "Go to settings page": "轉到其他設置頁面",
         "Go to your personal profile": "去我的個人資料",
         // 左側選單
         "Public profile": "基本資料",
@@ -4010,7 +4007,6 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 帳戶
                 "Your account is currently an owner in these organizations:": "您的帳戶目前是以下組織的所有者：", // 存在組織
                 "You must": "您必須先",
                 "remove yourself": "刪除您自己",
-                "remove yourself from these organizations": "從這些組織中刪除您自己",
                 "transfer ownership": "轉讓所有權",
                 "delete these organizations": "刪除這些組織",
                 "before you can delete your user.": "，您才可以刪除您的用戶。",
@@ -4328,7 +4324,6 @@ I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
     "title": {
         "static": {
             "Notification settings": "通知設置",
-            "Notification Settings": "通知設置",
         },
     },
 };
@@ -4447,8 +4442,6 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
                     "Usage for Actions and Actions Runners.": "操作（執行器）用量。", // 後半句走正則
                     "Copilot usage": "Copilot 用量",
                         "Total spend on Copilot for the selected timeframe, excluding applicable discounts.": "所選時間段內 Copilot 的總支出，不含適用折扣。",
-                        "Total gross spend on Copilot for the selected timeframe including licenses and AI Credits.": "所選時間段內 Copilot 的總支出（含許可和 AI 額度）。",
-
                     "Billable licenses": "計費許可數",
                         "Billable licenses info": "計費許可訊息",
                             "If a user stops consuming a license within the month, the adjustment will be reflected in your next month's bill.": "如果用戶在當月停止使用許可，相關調整將體現在您下個月的帳單中。",
@@ -4459,8 +4452,6 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
                         "About Copilot premium requests": "關於 Copilot 高級請求",
                         "If enabled, additional premium requests beyond the included amount for each license will be billed.": "若啟用此功能，每個許可證所包含額度之外的額外高級請求將另行計費。",
                         "Manage Copilot policy": "管理 Copilot 策略",
-                        "About Copilot AI credits": "關於 Copilot AI 額度",
-                        "If enabled, your account will be billed for additional AI credits usage after your included credits have been exhausted.": "若啟用此功能，在您的包含額度用盡後，額外 AI 額度使用量將另行計費。",
                     // 模型
                         "About GitHub Models rate limits": "關於 GitHub 模型速率限制",
                             "GitHub Models rate limits": "GitHub 模型速率限制",
@@ -5021,7 +5012,6 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
         //(\d+) min used \/ ([\d,+]) min included
         [/(\d+) GB used \/ (\d+) GB included/, "$1/$2 GB"],
         [/Based on (\d+) additional premium requests? beyond your included usage./, "超額高級請求：$1"],
-        [/Based on (\d+) additional AI credits? beyond your included usage./, "基於 $1 個額外 AI 額度（超出包含用量）。"],
         // 當前包含用量 - 詳情 對話框
             [/Current usage for (.+) - (.+). Monthly quota resets in (\d+) day\(s\)./, (match, p1, p2, p3) => {
                 const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
@@ -5353,7 +5343,7 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子信箱
                     "Your primary email address is now private. If you previously made your email public, we’ve removed it from your profile.": "您的主電子信箱地址現已設為私密。如果您以前公開過您的電子信箱，我們已經從您的個人資料中刪除了它。",
 
             "Block command line pushes that expose my email": "阻止在命令行推送中暴露我的電子信箱",
-                "When you push to GitHub, we'll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "當您推送到 GitHub 時，我們會檢查最近的提交。如果該提交的作者電子信箱是您 GitHub 帳戶上的私人電子信箱，我們會阻止推送並警告您不要暴露您的私人電子信箱。",
+                "When you push to GitHub, we’ll check the most recent commit. If the author email on that commit is a private email on your GitHub account, we will block the push and warn you about exposing your private email.": "當您推送到 GitHub 時，我們會檢查最近的提交。如果該提交的作者電子信箱是您 GitHub 帳戶上的私人電子信箱，我們會阻止推送並警告您不要暴露您的私人電子信箱。",
                 // 頂部提醒
                     "Commits pushed with a private email will no longer be blocked.": "使用私人電子信箱推送的提交將不再被阻止。",
                     "Commits pushed with a private email will now be blocked and you will see a warning.": "使用私人電子信箱推送的提交將被阻止，您會看到一個警告。",
@@ -8085,7 +8075,6 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
             "Regenerate fine-grained personal access token": "重新生成精細化個人訪問令牌",
 
         // 開發者設置 - 個人訪問令牌（經典） https://github.com/settings/tokens
-            "No personal access token created": "沒有建立個人訪問令牌",
             "Personal access tokens (classic)": "個人訪問令牌（經典）",
             "Generate new token": "生成新令牌",
                 "Fine-grained, repo-scoped": "精細化、 儲存庫域",
@@ -20350,7 +20339,7 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
         "Sign up for GitHub": "註冊 GitHub",
         //"Start a free enterprise trial": "開始免費試用企業版",
         "Try GitHub Copilot free": "免費試用 GitHub Copilot",
-        "Try GitHub Copilot": "試用 GitHub Copilot",
+
         "Try Copilot Free": "試用 GitHub Copilot",
             "30 days free": "30天免費",
         "Free Enterprise trial": "免費試用企業版", // 已登入
