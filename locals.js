@@ -2579,7 +2579,7 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
             "security advisory credits": "个安全咨询分",
             "security advisory credit": "个安全咨询分",
             "Organizations": "组织",
-            "Block or Report": "拉黑或举报",
+            "Block or Report user": "拉黑或举报",
             "Unblock or report user": "取消拉黑或举报",
             "- same time": "- 时间相同",
 
@@ -14315,6 +14315,10 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
                         "No matches found": "未找到匹配项",
                         "Go to folder": "转到文件夹",
                         "See all results": "查看所有结果",
+
+            // 文件编码非 UTF-8
+            "We’ve detected the file encoding as": "检测到此文件编码为",
+                ". When you commit changes we will transcode it to": "。提交时将转码成",
 
             "Name your file...": "文件名…",
             "in": "在",
