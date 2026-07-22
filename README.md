@@ -34,6 +34,8 @@
 - [🌟 功能特性](#-功能特性)
 - [🌐 兼容环境](#-兼容环境)
 - [💻 安装指南](#-安装指南)
+    - [浏览器（Tampermonkey）](#浏览器tampermonkey)
+    - [VS Code 集成浏览器](#vs-code-集成浏览器)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
 - [📌 待办事项](#-待办事项)
@@ -60,8 +62,11 @@ Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violent
 Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
+VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Extensions]（已下架）
 
 ## 💻 安装指南
+
+### 浏览器（Tampermonkey）
 
 1. 安装用户脚本管理器：
     - 推荐：[Tampermonkey][Tampermonkey]
@@ -75,6 +80,7 @@ Via（Android）       | 内置管理器
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
+1. 对于 **VS Code 集成浏览器**，请参考下方 [VS Code 集成浏览器](#vs-code-集成浏览器) 小节
 
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
@@ -82,6 +88,32 @@ Via（Android）       | 内置管理器
 > **版本说明**：
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
+
+### VS Code 集成浏览器
+
+> [!WARNING]
+> [Integrated Browser Extensions][Integrated Browser Extensions] 已从 VS Code 市场下架，以下方法暂时不可用。请关注 https://github.com/maboloshi/github-chinese/issues/747#issuecomment-5046504139 获取最新进展。
+
+<details>
+<summary>历史配置方法（扩展已下架）</summary>
+
+适用于 VS Code 集成浏览器（[1.116+](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-my-current-vs-code-version)），通过 Integrated Browser Extensions 运行。
+
+1. 安装 [Integrated Browser Extensions][Integrated Browser Extensions]
+1. 打开 **Browser Scripts** 面板（活动栏），点击 **+ New Userscript**
+1. 粘贴 [main(vscode).user.js][main(vscode).user.js] 内容并保存
+1. **关键**：该扩展依赖 VS Code `browser` 提案 API，需通过以下方式之一启用：
+    - **Win+R** 粘贴运行：
+      ```
+      "%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe" --enable-proposed-api boylett.integrated-browser-extensions
+      ```
+    - 或修改开始菜单快捷方式的`目标`字段，在 `Code.exe` 后追加 ` --enable-proposed-api boylett.integrated-browser-extensions`
+1. 打开[集成浏览器][vscode-integrated-browser] → 进入 `github.com`
+
+> [!NOTE]
+> 如果 `raw.githubusercontent.com` 不可达，`main(vscode).user.js` 已默认使用南大镜像源。
+
+</details>
 
 ## 🔧 本地调试
 
@@ -433,4 +465,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 源"
 [main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
+[main(vscode).user.js]: main(vscode).user.js "GitHub 中文化插件 - VS Code 集成浏览器"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
+[Integrated Browser Extensions]: https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions "Integrated Browser Extensions"
+[vscode-integrated-browser]: https://code.visualstudio.com/docs/debugtest/integrated-browser "VS Code 集成浏览器"
