@@ -2,8 +2,9 @@
 // @name         GitHub 中文化插件 (VS Code)
 // @namespace    https://github.com/maboloshi/github-chinese
 // @description  专为 VS Code 集成浏览器 + Integrated Browser Extensions 优化。
-//                ⚠️ 注意：Integrated Browser Extensions 已从 VS Code 市场下架，此脚本暂时不可用。
-//                📌 关注 Issue #747 获取最新进展。
+//                ⚠️ 注意：Integrated Browser Extensions 的 GitHub 源码仓库已被删除（404），
+//                市场列表仍存在但不再维护。此脚本供已安装用户参考。
+//                📌 关注 https://github.com/maboloshi/github-chinese/issues/747#issuecomment-5046504139 获取最新进展。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
 // @version      1.0.0
@@ -28,12 +29,8 @@
 // @supportURL   https://github.com/maboloshi/github-chinese/issues/747#issuecomment-5046504139
 // ==/UserScript==
 
-// ⚠️ Integrated Browser Extensions 已从 VS Code 市场下架
-//    请关注 https://github.com/maboloshi/github-chinese/issues/747#issuecomment-5046504139 获取最新进展
-//
 // 此文件为 VS Code Integrated Browser Extensions 的轻量包装脚本。
 // 通过 @require 从南大镜像远程加载 locals.js（词库）和 main.user.js（主逻辑）。
-//
 // 如果 raw.githubusercontent.com 不可达，可使用南大镜像源 [main(nju.edu).user.js]。
 
 (function () {

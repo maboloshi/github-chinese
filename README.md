@@ -62,7 +62,7 @@ Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violent
 Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
-VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Extensions]（已下架）
+VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Extensions]（扩展的源码仓库已删除）
 
 ## 💻 安装指南
 
@@ -92,10 +92,10 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 ### VS Code 集成浏览器
 
 > [!WARNING]
-> [Integrated Browser Extensions][Integrated Browser Extensions] 已从 VS Code 市场下架，以下方法暂时不可用。请关注 https://github.com/maboloshi/github-chinese/issues/747#issuecomment-5046504139 获取最新进展。
+> [Integrated Browser Extensions][Integrated Browser Extensions] 的 GitHub 源码仓库已被作者删除（404），市场列表仍存在，但扩展不再维护。以下方法供参考。
 
 <details>
-<summary>历史配置方法（扩展已下架）</summary>
+<summary>历史配置方法（扩展的源码仓库已删除）</summary>
 
 适用于 VS Code 集成浏览器（[1.116+](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-my-current-vs-code-version)），通过 Integrated Browser Extensions 运行。
 
