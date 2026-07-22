@@ -6,7 +6,7 @@
 
 1. 打开 Chrome 浏览器 → **设置** → **扩展程序**
 2. 请务必开启 **"开发者模式"**（位于扩展程序管理页面右上角）
-3. 下载 [tampermonkey_stable.crx](https://www.tampermonkey.net/)，将插件文件拖到扩展程序页面即可安装
+3. 下载 [tampermonkey_stable.crx](https://www.tampermonkey.net/crx/tampermonkey_stable.crx)，将插件文件拖到扩展程序页面即可安装
 4. 在扩展详情中，开启 **"允许运行用户脚本"**（未开启则脚本无法生效，部分版本默认已开启，有的版本无此选项可忽略）
 
 ## 2. 安装汉化脚本
