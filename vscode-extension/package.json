@@ -55,16 +55,6 @@
         "command": "github-chinese.status",
         "title": "GitHub 中文化: 检查脚本状态"
       }
-    ],
-    "configuration": {
-      "title": "GitHub 中文化",
-      "properties": {
-        "github-chinese.mirrorUrl": {
-          "type": "string",
-          "default": "https://mirror.nju.edu.cn/github-chinese",
-          "description": "词库和主脚本的镜像地址（国内用户默认使用南大镜像）"
-        }
-      }
-    }
+    ]
   }
 }

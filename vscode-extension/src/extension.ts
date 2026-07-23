@@ -20,40 +20,13 @@ async function installScript(): Promise<boolean> {
         return false;
     }
 
-    const mirrorUrl = vscode.workspace.getConfiguration('github-chinese').get<string>('mirrorUrl', 'https://mirror.nju.edu.cn/github-chinese')!;
     const userscriptsDir = vscode.Uri.joinPath(_ctx.globalStorageUri, '../boylett.integrated-browser-extensions/userscripts');
     try { await vscode.workspace.fs.stat(userscriptsDir); } catch { await vscode.workspace.fs.createDirectory(userscriptsDir); }
 
-    await vscode.workspace.fs.writeFile(vscode.Uri.joinPath(userscriptsDir, USERSCRIPT_NAME), new TextEncoder().encode(
-`// ==UserScript==
-// @name         GitHub 中文化插件 (VS Code)
-// @namespace    https://github.com/maboloshi/github-chinese
-// @description  通过 VS Code 集成浏览器自动注入—GitHub 界面全面中文化
-// @version      1.0.0
-// @author       沙漠之子
-// @license      GPL-3.0
-// @match        https://github.com/*
-// @match        https://skills.github.com/*
-// @match        https://gist.github.com/*
-// @match        https://education.github.com/*
-// @match        https://www.githubstatus.com/*
-// @run-at       document-start
-// @grant        GM_addStyle
-// @grant        GM_xmlhttpRequest
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_registerMenuCommand
-// @grant        GM_unregisterMenuCommand
-// @grant        GM_notification
-// @connect      fanyi.iflyrec.com
-// @require      ${mirrorUrl}/locals.js
-// @require      ${mirrorUrl}/main.user.js
-// ==/UserScript==
-
-(function () {
-    "use strict";
-})();
-`));
+    await vscode.workspace.fs.writeFile(
+        vscode.Uri.joinPath(userscriptsDir, USERSCRIPT_NAME),
+        await vscode.workspace.fs.readFile(vscode.Uri.joinPath(_ctx.extensionUri, 'main(vscode).user.js'))
+    );
 
     vscode.window.showInformationMessage('✅ GitHub 中文化脚本已安装到集成浏览器！\n请确保 VS Code 以 --enable-proposed-api boylett.integrated-browser-extensions 启动。');
     await refreshStatus();
