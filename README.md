@@ -35,7 +35,7 @@
 - [🌐 兼容环境](#-兼容环境)
 - [💻 安装指南](#-安装指南)
     - [浏览器（Tampermonkey）](#浏览器tampermonkey)
-    - [VS Code 集成浏览器](#vs-code-集成浏览器)
+    - [VS Code 市场扩展](#vs-code-市场扩展)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
 - [📌 待办事项](#-待办事项)
@@ -80,7 +80,7 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
-1. 对于 **VS Code 集成浏览器**，请参考下方 [VS Code 集成浏览器](#vs-code-集成浏览器) 小节
+1. 对于 **VS Code 集成浏览器**，请参考[本项目 VS Code 扩展的自述文件](vscode-extension/README.md)
 
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
@@ -88,32 +88,6 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 > **版本说明**：
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
-
-### VS Code 集成浏览器
-
-> [!WARNING]
-> [Integrated Browser Extensions][Integrated Browser Extensions] 的 GitHub 源码仓库已被作者删除（404），市场列表仍存在，但扩展不再维护。以下方法供参考。
-
-<details>
-<summary>历史配置方法（扩展的源码仓库已删除）</summary>
-
-适用于 VS Code 集成浏览器（[1.116+](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-my-current-vs-code-version)），通过 Integrated Browser Extensions 运行。
-
-1. 安装 [Integrated Browser Extensions][Integrated Browser Extensions]
-1. 打开 **Browser Scripts** 面板（活动栏），点击 **+ New Userscript**
-1. 粘贴 [main(vscode).user.js][main(vscode).user.js] 内容并保存
-1. **关键**：该扩展依赖 VS Code `browser` 提案 API，需通过以下方式之一启用：
-    - **Win+R** 粘贴运行：
-      ```
-      "%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe" --enable-proposed-api boylett.integrated-browser-extensions
-      ```
-    - 或修改开始菜单快捷方式的`目标`字段，在 `Code.exe` 后追加 ` --enable-proposed-api boylett.integrated-browser-extensions`
-1. 打开[集成浏览器][vscode-integrated-browser] → 进入 `github.com`
-
-> [!NOTE]
-> 如果 `raw.githubusercontent.com` 不可达，`main(vscode).user.js` 已默认使用南大镜像源。
-
-</details>
 
 ### VS Code 市场扩展
 
@@ -483,7 +457,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 源"
 [main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
-[main(vscode).user.js]: main(vscode).user.js "GitHub 中文化插件 - VS Code 集成浏览器"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
 [Integrated Browser Extensions]: https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions "Integrated Browser Extensions"
-[vscode-integrated-browser]: https://code.visualstudio.com/docs/debugtest/integrated-browser "VS Code 集成浏览器"
+
