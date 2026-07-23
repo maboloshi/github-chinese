@@ -14,7 +14,7 @@
 > 该依赖扩展的 GitHub 源码仓库已被作者删除（404），市场列表仍存在但扩展不再维护。功能在当前版本中正常可用，但未来可能因 VS Code 更新而失效。
 
 > [!NOTE]
-> [从市场安装](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)本扩展时会自动安装 Integrated Browser Extensions；[VSIX 安装](#从本仓库源码构建)本扩展需手动安装依赖扩展。
+> 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过[源码构建](#从本仓库源码构建)或下载 VSIX 安装。上架后从市场安装时会自动安装 Integrated Browser Extensions。
 
 ### 添加启动参数
 
