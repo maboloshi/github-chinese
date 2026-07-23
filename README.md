@@ -125,7 +125,7 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 
 | 方式 | 说明 |
 |---|---|
-| VSIX **（推荐）** | 从[发行版](https://github.com/maboloshi/github-chinese/releases) 下载 `.vsix` → VS Code 右键 → 安装扩展 VSIX |
+| VSIX **（推荐）** | 从[发行版](https://github.com/maboloshi/github-chinese/releases)下载 `.vsix` → VS Code 右键 → 安装扩展 VSIX |
 | 源码安装 | `cd vscode-extension/ && npm install && npx @vscode/vsce package` |
 
 > [!IMPORTANT]
