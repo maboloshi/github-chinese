@@ -34,6 +34,8 @@
 - [🌟 功能特性](#-功能特性)
 - [🌐 兼容环境](#-兼容环境)
 - [💻 安装指南](#-安装指南)
+    - [浏览器（Tampermonkey）](#浏览器tampermonkey)
+    - [VS Code 市场扩展](#vs-code-市场扩展)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
 - [📌 待办事项](#-待办事项)
@@ -60,8 +62,11 @@ Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violent
 Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
+VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Extensions]（扩展的源码仓库已删除）
 
 ## 💻 安装指南
+
+### 浏览器（Tampermonkey）
 
 1. 安装用户脚本管理器：
     - 推荐：[Tampermonkey][Tampermonkey]
@@ -82,6 +87,10 @@ Via（Android）       | 内置管理器
 > **版本说明**：
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
+
+### VS Code 集成浏览器（Integrated Browser Extensions）
+
+请参考[扩展的自述文件](vscode-extension/README.md)。
 
 ## 🔧 本地调试
 
@@ -434,3 +443,5 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
+[Integrated Browser Extensions]: https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions "Integrated Browser Extensions"
+

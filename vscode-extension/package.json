@@ -1,0 +1,60 @@
+{
+  "name": "github-chinese",
+  "displayName": "GitHub 中文化",
+  "description": "一键安装 GitHub 中文化脚本到 VS Code 集成浏览器",
+  "version": "1.0.0",
+  "author": "PtJade-Ceramic",
+  "publisher": "PtJade-Ceramic",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maboloshi/github-chinese"
+  },
+  "engines":  {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "github",
+    "chinese",
+    "translation",
+    "i18n",
+    "github-chinese"
+  ],
+  "extensionDependencies": [
+    "boylett.integrated-browser-extensions"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "tsc --noEmit",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.116.0",
+    "typescript": "^5.5.0"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "github-chinese.install",
+        "title": "GitHub 中文化: 安装/更新集成浏览器脚本"
+      },
+      {
+        "command": "github-chinese.uninstall",
+        "title": "GitHub 中文化: 卸载集成浏览器脚本"
+      },
+      {
+        "command": "github-chinese.status",
+        "title": "GitHub 中文化: 检查脚本状态"
+      }
+    ]
+  }
+}
