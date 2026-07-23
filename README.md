@@ -115,6 +115,22 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 
 </details>
 
+### VS Code 市场扩展
+
+> [GitHub 中文化](vscode-extension/) 是一款 VS Code 市场扩展，可自动完成上述配置。
+
+安装后会自动检测 [Integrated Browser Extensions][Integrated Browser Extensions] 并在 `userscripts` 目录下写入包装脚本。用户无需手动创建和粘贴。
+
+**安装方式**：
+
+| 方式 | 说明 |
+|---|---|
+| VSIX **（推荐）** | 从[发行版](https://github.com/maboloshi/github-chinese/releases) 下载 `.vsix` → VS Code 右键 → 安装扩展 VSIX |
+| 源码安装 | `cd vscode-extension/ && npm install && npx @vscode/vsce package` |
+
+> [!IMPORTANT]
+> VS Code 必须以 `--enable-proposed-api boylett.integrated-browser-extensions` 启动，否则集成浏览器无法注入脚本。
+
 ## 🔧 本地调试
 
 1. 安装 [Tampermonkey][Tampermonkey]，并启用 “允许访问文件网址”。
