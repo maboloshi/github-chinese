@@ -80,7 +80,6 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
-1. 对于 **VS Code 集成浏览器**，请参考[本项目 VS Code 扩展的自述文件](vscode-extension/README.md)
 
 [^1]: [Chrome 切换到 Manifest V3后，使用问题](https://github.com/maboloshi/github-chinese/issues/234)
 
@@ -89,23 +88,9 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
 
-### VS Code 市场扩展
+### VS Code 集成浏览器（Integrated Browser Extensions）
 
-> [GitHub 中文化](vscode-extension/) 是一款 VS Code 市场扩展，可自动完成上述配置。
-
-安装后会自动检测 [Integrated Browser Extensions][Integrated Browser Extensions] 并在 `userscripts` 目录下写入包装脚本。用户无需手动创建和粘贴。
-
-**安装方式**：
-
-| 方式 | 说明 |
-|---|---|
-| VSIX **（推荐）** | 从[发行版](https://github.com/maboloshi/github-chinese/releases)下载 `.vsix` → VS Code 右键 → 安装扩展 VSIX |
-| 源码安装 | `cd vscode-extension/ && npm install && npx @vscode/vsce package` |
-
-> [!IMPORTANT]
-> VS Code 必须以 `--enable-proposed-api boylett.integrated-browser-extensions` 启动，否则集成浏览器无法注入脚本。
->
-> 扩展默认使用 [南大镜像源](https://mirror.nju.edu.cn/github-chinese/) 加载词库与主脚本，国内用户可直接访问。
+请参考[扩展的自述文件](vscode-extension/README.md)。
 
 ## 🔧 本地调试
 
