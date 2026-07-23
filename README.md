@@ -130,6 +130,8 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 
 > [!IMPORTANT]
 > VS Code 必须以 `--enable-proposed-api boylett.integrated-browser-extensions` 启动，否则集成浏览器无法注入脚本。
+>
+> 扩展默认使用 [南大镜像源](https://mirror.nju.edu.cn/github-chinese/) 加载词库与主脚本，国内用户可直接访问。
 
 ## 🔧 本地调试
 
