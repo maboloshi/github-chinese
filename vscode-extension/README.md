@@ -1,5 +1,7 @@
 # GitHub 中文化 (VS Code 扩展)
 
+[![license GPL-3.0](https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&label=License)](https://opensource.org/licenses/GPL-3.0)
+
 一键安装 GitHub 中文化脚本到 VS Code 集成浏览器。
 
 ## 前提
@@ -48,7 +50,3 @@ VS Code 必须带 `--enable-proposed-api boylett.integrated-browser-extensions` 
 ## 调试
 
 [打开扩展开发宿主窗口](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)。
-
-## 许可
-
-[GPL-3.0](LICENSE)
