@@ -82,7 +82,6 @@ I18N.conf = {
             "article.markdown-body",
         ],
         'repository/tree': [
-            'article.markdown-body', // Markdown 正文
             'nav[data-testid="breadcrumbs"]', // 麵包屑導航
             'div[data-testid="breadcrumbs-filename"]', // 麵包屑導航 檔名部分
             'tr.react-directory-row', // 文件列表中資料夾和文件條目

@@ -5,8 +5,6 @@ const vm = require('node:vm');
 
 const localeFiles = [
     'locals.js',
-    'locals(greasyfork).js',
-    'locals_zh-TW.js',
 ];
 
 function loadConfig(fileName) {
