@@ -1,3 +1,4 @@
+# 在 VS Code 中编辑本文件时可使用 [GitHub Issue Template](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。
 name: Bug 提交（简体中文）
 description: 提交 BUG
 labels: bug
@@ -5,11 +6,10 @@ labels: bug
 body:
 - type: markdown
   attributes:
-    value: "### 欢迎！"
-- type: markdown
-  attributes:
     value: |
+      ### 欢迎！
       感谢您提交议题！请补充以下内容，以便我们能更好地协助您。
+
       提交议题前确保您已阅读[常见问题（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)。
 - type: textarea
   id: description
@@ -26,14 +26,14 @@ body:
   validations:
     required: true
 - type: textarea
-  id: expectation
+  id: expected
   attributes:
     label: 预期
     description: 请描述你对本插件行为的预期。
   validations:
     required: true
 - type: textarea
-  id: realization
+  id: real
   attributes:
     label: 实际
     description: 请描述本插件的实际行为。
@@ -49,33 +49,56 @@ body:
 - type: dropdown
   id: browser-name
   attributes:
-    label: 浏览器名称
-    description: 请选择运行本插件的浏览器的名称。
+    label: 浏览器和脚本管理器名称
+    description: 请选择运行本插件的浏览器和脚本管理器的名称。反映文档问题请选择“其他/不适用”选项。
     options:
-      - Microsoft Edge
-      - Google Chrome
-      - Others
+      - Google Chrome + 篡改猴（Tampermonkey）
+      # TODO(docs): 在 Google Chrome 中安装暴力猴时，如果提示“无法安装扩展程序，因为它使用了不受支持的清单版本，无法加载清单”，请带参数 ` --disable-features=ExtensionManifestV2Unsupported,ExtensionManifestV2Disabled`（参考 https://zhuanlan.zhihu.com/p/1929336447493735977 ）重启浏览器后再安装；重启后仍然无法安装的，请在关闭浏览器后打开任务管理器（按 <kbd>^</kbd> <kbd>⇧</kbd> <kbd>⎋</kbd>），删除所有 Google Chrome 进程。见 https://learn.microsoft.com/shows/Inside/Task-Manager, https://learn.microsoft.com/troubleshoot/windows-server/support-tools/support-tools-task-manager
+      - Google Chrome + 暴力猴（Violentmonkey）
+      - Microsoft Edge + 篡改猴（Tampermonkey）
+      - Microsoft Edge + 暴力猴（Violentmonkey）
+      - Safari + 篡改猴（Tampermonkey）
+      - Safari + 暴力猴（Violentmonkey）
+      - Safari + 猕猴（Macaque）
+      - Safari + Stay
+      - Firefox + 篡改猴（Tampermonkey）
+      - Firefox + 暴力猴（Violentmonkey）
+      - Via + 内置管理器
+      - VS Code 集成浏览器 + Integrated Browser Extensions
+      - 其他 Chromium 内核浏览器 + 篡改猴（Tampermonkey）
+      - 其他 Chromium 内核浏览器 + 暴力猴（Violentmonkey）
+      - 其他 WebKit 内核浏览器 + 篡改猴（Tampermonkey）
+      - 其他 WebKit 内核浏览器 + 猕猴（Macaque）
+      - 其他 WebKit 内核浏览器 + Stay
+      - 其他 Gecko 内核浏览器 + 篡改猴（Tampermonkey）
+      - 其他 Gecko 内核浏览器 + 暴力猴（Violentmonkey）
+      - 其他/不适用
   validations:
     required: true
+- type: input
+  id: other-browser-name
+  attributes:
+    label: 其他浏览器名称
+    description: 如果在上一项中选择了“其他……”选项，请在此处补充具体的浏览器名称（如适用）。
+  validations:
+    required: false
 - type: input
   id: browser-version
   attributes:
     label: 浏览器版本
     description: |
       请填入运行本插件的浏览器的版本。
-      [Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)
-      [Google Chrome 版本](chrome://settings/help)
+
+      [Google Chrome](https://support.google.cn/chrome/answer/95414 '查看 Google Chrome 版本') ·
+      [Microsoft Edge](https://support.microsoft.com/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb '查看 Microsoft Edge 版本') ·
+      [Safari](https://support.apple.com/102665 '更新 Safari') ·
+      [Firefox](https://support.mozilla.org/kb/find-what-version-firefox-you-are-using '查看 Firefox 版本') ·
+      [VS Code](https://code.visualstudio.com/docs/supporting/faq#_how-do-i-find-my-current-vs-code-version '查看 VS Code 版本')
+
+      Microsoft Edge 移动端：**≡** > **⚙ 设置** > **关于 Microsoft Edge**
+
+      Via：**≡** > **⚙ 设置** > **关于**
     placeholder: 版本 146.0.3856.62 (正式版本) (arm64)
-  validations:
-    required: true
-- type: dropdown
-  id: script-manager-name
-  attributes:
-    label: 脚本管理器名称
-    description: 请选择管理本插件的脚本管理器的名称。
-    options:
-      - 篡改猴（Tampermonkey）
-      - Others
   validations:
     required: true
 - type: input
@@ -83,18 +106,44 @@ body:
   attributes:
     label: 脚本管理器版本
     description: |
-      请填入管理本插件的脚本管理器的版本。
-      [Microsoft Edge 扩展](https://support.microsoft.com/zh-cn/topic/a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)
-    placeholder: "5.4.1"
+      请填入管理本插件的脚本管理器的版本（Via 浏览器用户可填“不适用”）。
+
+      [Microsoft Edge](https://learn.microsoft.com/microsoft-edge/extensions/getting-started/user-docs '有关 Microsoft Edge 扩展的用户文档') ·
+      [Google Chrome](https://chrome.polamus.com/help/193.html '如何在 Chrome 浏览器中查看扩展程序的详细信息') ·
+      [Safari](https://support.apple.com/zh-cn/guide/safari/sfri32508/mac '管理 Safari 扩展') ·
+      [Firefox](https://support.mozilla.org/kb/extensions-button '在 Firefox 中通过扩展按钮来管理您的扩展') ·
+      [VS Code](https://code.visualstudio.com/docs/configure/extensions/extensions#_browse-extensions '在 VS Code 中浏览扩展')
+    placeholder: 5.4.1
   validations:
     required: true
-- type: input
+- type: dropdown
   id: plugin-version
   attributes:
     label: 插件版本
     description: |
-      请填入 GitHub 中文化插件的版本。
-      见 [GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)源码中 `@version` 的值（不再接受 1.9.2 版本反馈）。
-    placeholder: "1.9.3"
+      请选择本插件的版本。
+
+      见本插件源代码中 `@version` 的值（使用 1.9.2 或更低版本的，请更新版本）。
+
+      [Google Chrome + 篡改猴（Tampermonkey）](chrome-extension://dhdgffkkebhmkfjojejmpbldmpobfkfo/options.html#nav=dashboard 'Google Chrome + 篡改猴（Tampermonkey）“已安装的脚本”选项卡')
+
+      [Google Chrome + 暴力猴（Violentmonkey）](chrome-extension://jinjaccalgkegednnccohejagnlnfdag/options/index.html#scripts 'Google Chrome + 暴力猴（Violentmonkey）“已安装的脚本”选项卡')
+
+      [Microsoft Edge + 篡改猴（Tampermonkey）](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=dashboard 'Microsoft Edge + 篡改猴（Tampermonkey）“已安装的脚本”选项卡')
+
+      [Microsoft Edge + 暴力猴（Violentmonkey）](extension://eeagobfjdenkkddmbclomhiblgggliao/options/index.html#scripts 'Microsoft Edge + 暴力猴（Violentmonkey）“已安装的脚本”选项卡')
+
+      [Safari](https://support.apple.com/102343 '在 Mac 上使用 Safari 浏览器扩展')
+
+      [Firefox](about:addons 'Firefox 中“管理您的扩展”设置页')
+    options:
+      # 见 https://github.com/maboloshi/github-chinese#-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97
+      # TODO: 推送更新时自动更新本列表。
+      - 1.9.4.4-2026-07-26（兼容修复 1.9.2.4, 1.9.4.4）
+      - 1.9.4.3-2026-06-17（兼容修复 1.9.2.3, 1.9.4.3）
+      - 1.9.4.2-2026-06-17（兼容修复 1.9.2.2, 1.9.4.2）
+      - 1.9.4.1-2026-06-16（临时修复 1.9.2, 1.9.4）
+      - 1.9.4-2026-05-17
+      - 1.9.3-2024-08-18
   validations:
     required: true
