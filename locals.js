@@ -112,6 +112,9 @@ I18N.conf = {
             'header.GlobalNav', // React 版全局导航
             'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
             'qbsearch-input', // 顶部搜索框自定义元素
+            '.highlight',
+            '.notranslate',
+            '[translate="no"]',
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
@@ -248,6 +251,9 @@ I18N.conf = {
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK', // 特定元素标签
+            '.highlight',
+            '.notranslate',
+            '[translate="no"]',
 			'div.styled-input-content', // 筛选条
         ],
     },
