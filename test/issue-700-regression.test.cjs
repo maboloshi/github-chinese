@@ -5,7 +5,6 @@ const vm = require('node:vm');
 
 const localeFiles = [
     'locals.js',
-    'locals_zh-TW.js',
 ];
 
 const globalTranslationSkipSelectors = [
