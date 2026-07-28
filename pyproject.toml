@@ -1,0 +1,8 @@
+[project]
+name = "github-chinese-scripts"
+description = "GitHub 中文化插件辅助脚本"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml>=6.0",
+    "opencc-python-reimplemented>=0.1.7",
+]
