@@ -759,11 +759,47 @@
         function translateReactGlobalNavSearchButton() {
             const placeholder = document.querySelector('header.GlobalNav [class*="Search-module__placeholder__"]');
             if (!placeholder) return;
-            const text = placeholder.textContent;
-            const label = translateReactGlobalNavText(text);
-            if (label && placeholder.textContent !== label) {
-                placeholder.textContent = label;
+            const label = translateReactGlobalNavText(placeholder.textContent);
+            if (!label || normalizeReactGlobalNavText(placeholder.textContent) === label) return;
+
+            const textNodeGroups = [[]];
+            const protectedTexts = [];
+            function collectSearchPlaceholderNodes(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    textNodeGroups[textNodeGroups.length - 1].push(node);
+                    return;
+                }
+                if (node.nodeType !== Node.ELEMENT_NODE) return;
+                if (node.matches?.(unsafeTextSelector)) {
+                    const protectedText = normalizeReactGlobalNavText(node.textContent);
+                    if (protectedText) {
+                        protectedTexts.push(protectedText);
+                        textNodeGroups.push([]);
+                    }
+                    return;
+                }
+                node.childNodes.forEach(collectSearchPlaceholderNodes);
             }
+            placeholder.childNodes.forEach(collectSearchPlaceholderNodes);
+
+            const segments = [];
+            let remainingLabel = label;
+            for (const protectedText of protectedTexts) {
+                const protectedIndex = remainingLabel.indexOf(protectedText);
+                if (protectedIndex === -1) return;
+                segments.push(remainingLabel.slice(0, protectedIndex));
+                remainingLabel = remainingLabel.slice(protectedIndex + protectedText.length);
+            }
+            segments.push(remainingLabel);
+
+            if (segments.some((segment, index) => {
+                return normalizeReactGlobalNavText(segment) && !textNodeGroups[index].length;
+            })) return;
+            textNodeGroups.forEach((nodes, segmentIndex) => {
+                nodes.forEach((node, nodeIndex) => {
+                    node.data = nodeIndex === 0 ? segments[segmentIndex] : '';
+                });
+            });
         }
 
         /**
