@@ -12,7 +12,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Any, cast
+from typing import Any
 
 
 SCRIPT = Path(__file__).name
@@ -81,29 +81,6 @@ def _resolve(node: Any, lang: str) -> Any:
     if isinstance(node, list):
         return [_resolve(item, lang) for item in node]  # type: ignore[unknown-variable]
     return node
-
-
-def _render_doc(node: dict[str, Any], depth: int = 0) -> str:
-    """按约定渲染：title→#, 顶层字符串→原文；块字段首个子字段为 heading，层级 = 嵌套深度+2。
-
-    渲染结构完全从 YAML 键顺序与嵌套推断，Python 不硬编码任何键名。
-    """
-    lines: list[str] = []
-    L = lines.append
-    for key, val in node.items():
-        if isinstance(val, dict):
-            val = cast(dict[str, Any], val)
-            if next(iter(val)) == "heading":
-                L("#" * (depth + 2) + " " + val["heading"])
-                L("")
-                body = {k: v for k, v in val.items() if k != "heading"}
-                if body:
-                    L(_render_doc(body, depth + 1).rstrip("\n"))
-                    L("")
-        elif isinstance(val, str):
-            L(f"# {val}" if key == "title" else val)
-            L("")
-    return "\n".join(lines)
 
 
 def _generate_requirements(pyproject: Path = Path("pyproject.toml")) -> None:
@@ -217,7 +194,18 @@ def main() -> None:
             }[lang]
             out = out_dir / f"{f.stem}{suffix}.{ext}"
             if is_doc:
-                out.write_text(f"<!-- {comment} -->\n\n" + _render_doc(resolved), encoding="utf-8")
+                # 延迟导入：仅在渲染文档时才需要 jinja2，保证 --requirements/--check 仅用标准库
+                from jinja2 import Environment, FileSystemLoader, StrictUndefined
+
+                out.write_text(
+                    f"<!-- {comment} -->\n\n"
+                    # Jinja2 环境：模板从多语言源文件目录加载，缺字段即报错
+                    + Environment(
+                        loader=FileSystemLoader(multilingual_dir),
+                        undefined=StrictUndefined,
+                    ).get_template(f"{f.stem}.md.j2").render(resolved=resolved),
+                    encoding="utf-8",
+                )
             else:
                 with open(out, "w", encoding="utf-8") as fh:
                     fh.write(f"# {comment}\n")

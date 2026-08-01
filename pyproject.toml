@@ -5,4 +5,5 @@ requires-python = ">=3.10"
 dependencies = [
     "pyyaml>=6.0",
     "opencc-python-reimplemented>=0.1.7",
+    "Jinja2>=3.1",
 ]
