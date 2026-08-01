@@ -258,23 +258,7 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 
 ## 🤝 參與貢獻
 
-歡迎通過以下方式參與貢獻：
-
-1. 完善詞庫翻譯（編輯 `locals.js`）
-1. 提交議題報告，參與話題討論
-1. 改進代碼邏輯
-
-[![][pr-welcome-shield]][pr-welcome-link]
-
-### 翻譯參考資源:
-
-1. [Pro Git 第二版 簡體中文](https://git-scm.com/book/zh/v2)
-1. [Pro Git: 翻譯約定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
-1. [Git 官方軟件包的簡體中文翻譯](https://github.com/git/git/blob/master/po/zh_CN.po)
-1. [GitHub 詞彙表官方譯本](https://docs.github.com/cn/get-started/quickstart/github-glossary)
-1. **[CSS 選擇器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference/Selectors) 用於編寫忽略規則**
-
-> [查看詳細貢獻指南](https://github.com/maboloshi/github-chinese/discussions/57)
+請參閱 [貢獻指南](CONTRIBUTING_zh-TW.md)。
 
 ## 🖼️ 效果預覽
 
@@ -415,8 +399,6 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 [github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
 [greasyFork-link]: https://greasyfork.org/scripts/435208  "GreasyFork 源 - GitHub 中文化插件"
 [greasyFork-shield]: https://img.shields.io/badge/dynamic/json?style=flat-square&logo=GreasyFork&label=GreasyFork&query=total_installs&suffix=%20installs&url=https://greasyfork.org/scripts/435208.json
-[pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
-[pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge "歡迎提交 PR"
 [Tampermonkey]: http://tampermonkey.net/ "篡改猴"
 [Violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
 [Macaque]: https://macaque.app/ "獼猴"

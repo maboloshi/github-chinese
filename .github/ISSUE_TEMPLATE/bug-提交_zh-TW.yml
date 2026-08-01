@@ -1,4 +1,4 @@
-# 由 manage_templates.py 自动生成，请勿手动编辑。来源：bug-提交.yml
+# 由 manage_templates.py 自動生成，請勿手動編輯。來源：bug-提交.yml
 name: Bug 提交（繁體中文）
 description: 提交 BUG
 labels: bug

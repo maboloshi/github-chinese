@@ -2,10 +2,11 @@
 # pre-commit hook：提交前验证多语言源文件 & 议题模板一致性
 set -e
 
-STAGED_MULTILINGUAL=$(git diff --cached --name-only -- script/multilingual-issue-templates/)
-STAGED_TEMPLATES=$(git diff --cached --name-only -- .github/ISSUE_TEMPLATE/ | grep -v config.yml || true)
+STAGED_SOURCES=$(git diff --cached --name-only -- script/multilingual-issue-templates/)
+STAGED_GENERATED=$(git diff --cached --name-only -- .github/ISSUE_TEMPLATE/ | grep -v config.yml || true)
+STAGED_DOCS=$(git diff --cached --name-only -- CONTRIBUTING.md CONTRIBUTING_zh-TW.md)
 
-if [ -z "$STAGED_MULTILINGUAL" ] && [ -z "$STAGED_TEMPLATES" ]; then
+if [ -z "$STAGED_SOURCES" ] && [ -z "$STAGED_GENERATED" ] && [ -z "$STAGED_DOCS" ]; then
     exit 0
 fi
 
@@ -17,22 +18,35 @@ elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
 fi
 
-# ── 情况 1：手动更改议题模板（多语言源文件未变）→ 阻止提交 ──
-if [ -n "$STAGED_TEMPLATES" ] && [ -z "$STAGED_MULTILINGUAL" ]; then
+# ── 检测到手动修改生成文件（源文件未改）→ 阻止提交 ──
+$PYTHON script/manage_templates.py
+all_clean=true
+for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:CONTRIBUTING.md CONTRIBUTING_zh-TW.md"; do
+    varname="${entry%%:*}"
+    diff_target="${entry#*:}"
+    eval "staged=\${$varname:-}"
+    [ -z "$staged" ] && continue
+    [ -n "$STAGED_SOURCES" ] && continue
+
+    if ! git diff --exit-code -- $diff_target; then
+        echo -e "\n   差异如下："
+        git diff -- $diff_target
+        ROOT=$(git rev-parse --show-toplevel)
         echo ""
-        echo "   请通过多语言源文件修改，不要直接编辑议题模板。这些更改对应的多语言源文件："
-        for f in $STAGED_TEMPLATES; do
-            stem=$(echo "$f" | sed 's/-简体中文-.yml$//;s/-繁體中文-.yml$//')
+        echo "   请通过源文件修改，不要直接编辑生成的文件。源文件："
+        for f in $staged; do
+            stem=$(echo "$f" | sed 's/_zh-TW//;s/\.md$//;s/\.yml$//')
             echo "   ${ROOT}/script/multilingual-issue-templates/${stem}.yml"
         done | sort -u
-        echo ""
-        exit 1
+        all_clean=false
     fi
-    exit 0
-fi
+done
+$all_clean || exit 1
 
-# ── 情况 2：多语言源文件变更 → 验证 + 生成 + 自动纳入暂存 ──
-echo "📋 检测到多语言议题模板变更..."
-$PYTHON script/manage_templates.py --check
-$PYTHON script/manage_templates.py
-git add .github/ISSUE_TEMPLATE/
+# ── 源文件变更 → 验证 + 生成 + 自动纳入暂存 ──
+if [ -n "$STAGED_SOURCES" ]; then
+    echo "📋 检测到多语言源文件变更..."
+    $PYTHON script/manage_templates.py --check
+    $PYTHON script/manage_templates.py
+    git add .github/ISSUE_TEMPLATE/ CONTRIBUTING.md CONTRIBUTING_zh-TW.md
+fi

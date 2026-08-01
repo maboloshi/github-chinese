@@ -1,4 +1,4 @@
-name: Issue 模板一致性
+name: 多语言文件一致性
 on:
   pull_request:
     paths:
@@ -6,7 +6,6 @@ on:
       - 'script/manage_templates.py'
       - 'pyproject.toml'
   push:
-    branches: [main]
     paths:
       - 'script/multilingual-issue-templates/**'
       - 'script/manage_templates.py'
@@ -27,28 +26,28 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install pyyaml opencc-python-reimplemented
+        run: |
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
 
-      # ── PR：验证 + 试生成（不检查 diff，不提交） ──
-      - name: Validate multilingual sources
+      # ── PR：验证 + 试生成（不提交） ──
+      - name: Validate & dry-run
         if: github.event_name == 'pull_request'
-        run: python script/manage_templates.py --check
+        run: |
+          python script/manage_templates.py --check
+          python script/manage_templates.py
 
-      - name: Dry-run generate
-        if: github.event_name == 'pull_request'
-        run: python script/manage_templates.py
-
-      # ── push to main：验证 + 生成 + 自动提交 ──
+      # ── 默认分支：验证 + 生成 + 自动提交（分支名语义化，随默认分支自适应） ──
       - name: Generate & commit
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         run: |
           python script/manage_templates.py
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .github/ISSUE_TEMPLATE/
+          git add .github/ISSUE_TEMPLATE/ CONTRIBUTING.md CONTRIBUTING_zh-TW.md
           if git diff --cached --exit-code; then
             echo "No changes."
           else
-            git commit -m "chore: auto-generate issue templates"
+            git commit -m "chore: auto-generate multilingual files"
             git push
           fi

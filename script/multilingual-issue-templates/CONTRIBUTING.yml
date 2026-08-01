@@ -1,0 +1,186 @@
+# 贡献指南 —— 唯一维护来源
+# 由 manage_templates.py 校验并生成 CN/TW 贡献指南。
+#
+# 规则：
+#   - 纯字符串 → CN/TW 共享该值
+#   - CN: "简体" / TW: "繁體" → 分语言翻译
+#   - 结构字段（链接 URL 等）不翻译，保持原样
+#   - 渲染：title→#，顶层字符串→原文；块字段首个子字段为 heading，层级 = 嵌套深度+2
+
+top_align_begin: <div align="center"><a name="contributing-top"></a>
+
+title:
+  CN: 贡献指南
+  TW: 貢獻指南
+
+lang_links:
+  CN: "**简体中文** · [繁體中文](./CONTRIBUTING_zh-TW.md)"
+  TW: "[简体中文](./CONTRIBUTING.md) · **繁體中文**"
+
+top_align_end: </div>
+
+setup_env:
+  heading:
+    CN: 设置开发环境
+    TW: 設置開發環境
+  steps:
+    CN: |
+      1. [克隆仓库](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
+      1. 进入仓库目录：
+        [Bash](https://www.gnu.org/software/bash/manual/bash.html#index-cd 'cd') ·
+        [Zsh](https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html 'cd') ·
+        [Fish](https://fishshell.com/docs/current/cmds/cd.html 'cd') ·
+        [C Shell](https://www.freebsd.org/cgi/man.cgi?query=cd&sektion=1 'cd') ·
+        [Windows 命令提示符](https://learn.microsoft.com/windows-server/administration/windows-commands/cd 'cd') ·
+        [PowerShell](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location 'Set-Location') ·
+        [Windows 文件资源管理器](https://windowsforum.com/windows-news.4/bridge-file-explorer-and-terminal-in-windows-11-for-faster-workflows.389155/#_xfUid-1-1781860855 '在终端中打开')
+      1. [创建和激活虚拟环境](https://docs.python.org/3/library/venv.html)
+      1. 安装依赖：
+          ```bash
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
+          ```
+      1. 启用提交前的钩子（提交前自动验证多语言源文件）：
+          ```bash
+          git config core.hooksPath .githooks
+          ```
+    TW: |
+      1. [克隆倉庫](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
+      1. 進入倉庫目錄：
+        [Bash](https://www.gnu.org/software/bash/manual/bash.html#index-cd 'cd') ·
+        [Zsh](https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html 'cd') ·
+        [Fish](https://fishshell.com/docs/current/cmds/cd.html 'cd') ·
+        [C Shell](https://www.freebsd.org/cgi/man.cgi?query=cd&sektion=1 'cd') ·
+        [Windows 命令提示字元](https://learn.microsoft.com/windows-server/administration/windows-commands/cd 'cd') ·
+        [PowerShell](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location 'Set-Location') ·
+        [Windows 檔案總管](https://windowsforum.com/windows-news.4/bridge-file-explorer-and-terminal-in-windows-11-for-faster-workflows.389155/#_xfUid-1-1781860855 '在終端中打開')
+      1. [創建和啟動虛擬環境](https://docs.python.org/3/library/venv.html)
+      1. 安裝依賴：
+          ```bash
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
+          ```
+      1. 啟用提交前的掛鉤（提交前自動驗證多語言源文件）：
+          ```bash
+          git config core.hooksPath .githooks
+          ```
+
+contribute:
+  heading:
+    CN: 贡献方式
+    TW: 貢獻方式
+  intro_text:
+    CN: |
+      欢迎通过以下方式参与贡献：
+
+      1. 完善词库翻译（编辑 [`locals.js`](locals.js)）
+      1. 提交议题报告，参与话题讨论
+      1. 改进代码逻辑
+    TW: |
+      歡迎通過以下方式參與貢獻：
+
+      1. 完善詞庫翻譯（編輯 [`locals.js`](locals.js)）
+      1. 提交議題報告，參與話題討論
+      1. 改進程式碼邏輯
+  badge: |
+    [![PR Welcome](https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge)](https://github.com/maboloshi/github-chinese/pulls)
+  references:
+    heading:
+      CN: 翻译参考资源
+      TW: 翻譯參考資源
+    items:
+      CN: |
+        1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh-tw/v2)
+        1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
+        1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+        1. [GitHub 术语表](https://docs.github.com/get-started/learning-about-github/github-glossary)
+        1. **[CSS 选择器](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors)用于编写忽略规则**
+      TW: |
+        1. [Pro Git 第二版 繁體中文](https://git-scm.com/book/zh-tw/v2)
+        1. [Pro Git: 翻譯約定](https://github.com/progit/progit2-zh-tw/blob/master/TRANSLATION_NOTES.asc)
+        1. [Git 官方軟體包的繁體中文翻譯](https://github.com/git/git/blob/master/po/zh_TW.po)
+        1. [GitHub 詞彙表](https://docs.github.com/get-started/learning-about-github/github-glossary)
+        1. **[CSS 選擇器](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors)用於編寫忽略規則**
+
+workflow:
+  heading:
+    CN: 议题模板工作流
+    TW: 議題模板工作流
+  auto:
+    heading:
+      CN: 自动生成
+      TW: 自動生成
+    intro:
+      CN: |
+        议题模板和本贡献指南的维护采用**多语言源文件驱动**模式：
+
+        ```mermaid
+        flowchart LR
+            subgraph Sources["多语言源文件"]
+                S1["script/multilingual-issue-templates/bug-提交.yml"]
+                S2["script/multilingual-issue-templates/CONTRIBUTING.yml"]
+            end
+            S1 --> B[manage_templates.py]
+            S2 --> B
+            B --> C["CN: .github/ISSUE_TEMPLATE/*.yml"]
+            B --> D["TW: .github/ISSUE_TEMPLATE/*_zh-TW.yml"]
+            B --> E["CONTRIBUTING.md"]
+            B --> F["CONTRIBUTING_zh-TW.md"]
+        ```
+      TW: |
+        議題模板和本貢獻指南的維護採用**多語言源文件驅動**模式：
+
+        ```mermaid
+        flowchart LR
+            subgraph Sources["多語言源文件"]
+                S1["script/multilingual-issue-templates/bug-提交.yml"]
+                S2["script/multilingual-issue-templates/CONTRIBUTING.yml"]
+            end
+            S1 --> B[manage_templates.py]
+            S2 --> B
+            B --> C["CN: .github/ISSUE_TEMPLATE/*.yml"]
+            B --> D["TW: .github/ISSUE_TEMPLATE/*_zh-TW.yml"]
+            B --> E["CONTRIBUTING.md"]
+            B --> F["CONTRIBUTING_zh-TW.md"]
+        ```
+  maintain:
+    heading:
+      CN: 维护
+      TW: 維護
+    steps:
+      CN: |
+        1. 编辑 [`script/multilingual-issue-templates/bug-提交.yml`](script/multilingual-issue-templates/bug-提交.yml)
+        1. 验证和预览（可选）
+           1. 验证多语言源文件（提交会自动触发）：
+              ```bash
+              python script/manage_templates.py --check
+              ```
+              或 Windows 用包装脚本 `script/manage.ps1`（自动选 venv Python 且 UTF-8 输出不乱码）：
+              ```powershell
+              .\script\manage.ps1 --check
+              ```
+              命令提示符则通过 PowerShell 调用：
+              ```cmd
+              powershell -ExecutionPolicy RemoteSigned -File script\manage.ps1 --check
+              ```
+           1. 预览生成的 CN/TW 模板：如果使用 VS Code，可启用 [GitHub Issue Template Preview](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。如果 [reespozzi/gh-issue-template-preview#14](https://github.com/reespozzi/gh-issue-template-preview/pull/14) 尚未合并，请[调试](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)待合并的分支。
+        1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的钩子自动验证
+        1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交到远程仓库') → [拉取请求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '创建拉取请求') → [持续集成](https://docs.github.com/actions/get-started/continuous-integration '持续集成')验证 → 合并到默认分支 → 云端自动生成并提交模板
+      TW: |
+        1. 編輯 [`script/multilingual-issue-templates/bug-提交.yml`](script/multilingual-issue-templates/bug-提交.yml)
+        1. 驗證和預覽（可選）
+           1. 驗證多語言源文件（提交會自動觸發）：
+              ```bash
+              python script/manage_templates.py --check
+              ```
+              或 Windows 用包裝腳本 `script/manage.ps1`（自動選 venv Python 且 UTF-8 輸出不亂碼）：
+              ```powershell
+              .\script\manage.ps1 --check
+              ```
+              命令提示字元則透過 PowerShell 呼叫：
+              ```cmd
+              powershell -ExecutionPolicy RemoteSigned -File script\manage.ps1 --check
+              ```
+           1. 預覽生成的 CN/TW 模板：如果使用 VS Code，可啟用 [GitHub Issue Template Preview](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。如果 [reespozzi/gh-issue-template-preview#14](https://github.com/reespozzi/gh-issue-template-preview/pull/14) 尚未合併，請[調試](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)待合併的分支。
+        1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的掛鉤自動驗證
+        1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交至遠端倉儲') → [拉取請求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '創建拉取請求') → [持續集成](https://docs.github.com/actions/get-started/continuous-integration '持續集成')驗證 → 合併到預設分支 → 雲端自動生成並提交模板
