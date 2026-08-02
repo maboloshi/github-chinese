@@ -10131,6 +10131,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                             "Templates and forms": "模板和表单",
                                 // 空白议题
                                     "Create a new issue from scratch": "从头开始创建新议题",
+                                    "Maintainers only": "仅维护者",
                 "Add existing issue": "添加现有议题",
                     "Search issues": "搜索议题",
                         "Group selected": "分组选择",
