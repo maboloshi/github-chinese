@@ -9024,12 +9024,19 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
                 "Create a new fork": "创建复刻",
 
+                // 复刻浮窗（右侧箭头）
+                "See your forks of this repository": "查看您的复刻",
+
                 // 复刻被锁
                 "Cannot fork because repository is locked.": "无法复刻，因为仓库被锁定。",
 
-                //
+                // 标星
                 "Star this repository": "标星仓库", //小屏模式
                 "Unstar this repository": "取消仓库星标", //小屏模式
+
+                "Add this repository to one or more lists": "添加此仓库到 1 或多个列表",
+
+                "Star lists": "标星列表",
 
             // 仓库主页 分支保护
                 // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
@@ -9568,6 +9575,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // 代码 -> 代码空间
         [/(\d+) changes?/, "$1 个更改"],
         [/(.+) has unpushed changes, are you sure you want to delete\?/, "$1 有未提交更改，您确定要删除吗？"],
+        // 标星
+        [/Star ([^ ]+)/, "标星 $1"],
+        [/Unstar ([^ ]+)/, "取消标星 $1"],
     ],
     "title": {
         "regexp": [
