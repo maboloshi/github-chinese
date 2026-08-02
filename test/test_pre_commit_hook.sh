@@ -10,6 +10,9 @@
 #   C. 无关改动 → 应直接放行
 set -euo pipefail
 
+# 非交互环境：钩子检测到不一致时跳过 Y/N 询问，默认视为 N（取消提交）
+export GIT_HOOK_NONINTERACTIVE=1
+
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP" 2>/dev/null || true' EXIT
@@ -45,6 +48,7 @@ assert_blocked() {
     [ "$(git rev-parse HEAD)" = "$before" ] || fail "场景A($desc)：不一致未被阻止"
     echo "$output" | grep -q "不一致" || fail "场景A($desc)：未打印不一致提示"
     echo "$output" | grep -q "请通过源文件修改" || fail "场景A($desc)：未提示通过源文件修改"
+    echo "$output" | grep -q "重新生成" || fail "场景A($desc)：未提示重新生成选项"
     git reset -q --hard
     echo "✅ 场景A($desc)：被阻止并打印差异"
 }

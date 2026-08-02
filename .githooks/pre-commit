@@ -3,9 +3,7 @@
 # 模型 B：生成文件不入库（由 CI 自动生成并提交），提交时忽略它们
 set -e
 
-STAGED_SOURCES=$(git diff --cached --name-only -- "script/multilingual-docs/")
-
-if [ -z "$STAGED_SOURCES" ]; then
+if [ -z "$(git diff --cached --name-only -- "script/multilingual-docs/")" ]; then
     exit 0
 fi
 
@@ -20,24 +18,49 @@ fi
 echo "📋 检测到多语言源文件变更..."
 $PYTHON script/manage_templates.py --check
 
-# ── 生成到临时目录（期望结果），与工作区比对：检测手动修改生成文件 → 阻止 ──
+# ── 生成到临时目录（期望结果），与工作区比对：收集不一致的生成文件 ──
 GEN_TMP="$(mktemp -d)"
 trap 'rm -rf "$GEN_TMP" 2>/dev/null || true' EXIT
 $PYTHON script/manage_templates.py script/multilingual-docs/ "$GEN_TMP/.github/ISSUE_TEMPLATE/" --doc-dir "$GEN_TMP" >/dev/null
 
-all_clean=true
+mismatched=""
 for gen in $(find "$GEN_TMP" -type f); do
     rel="${gen#"$GEN_TMP"/}"
     if [ -f "$rel" ] && ! diff -q "$gen" "$rel" >/dev/null 2>&1; then
-        echo -e "\n   生成文件与源文件不一致（可能被手动修改）：$rel"
-        echo "   差异如下："
-        diff "$gen" "$rel" || true
-        echo ""
-        echo "   请通过源文件修改 script/multilingual-docs/ 下的 YAML，不要直接编辑生成文件。"
-        all_clean=false
+        mismatched="$mismatched $rel"
     fi
 done
-$all_clean || exit 1
 
-# ── 源文件变更 → 生成到工作区（本地方便预览）；生成文件不入库，由 CI 自动生成提交 ──
-$PYTHON script/manage_templates.py
+if [ -n "$mismatched" ]; then
+    echo -e "\n   以下生成文件与源文件不一致（可能被手动修改或未重新生成）："
+    for rel in $mismatched; do
+        echo "   - $rel"
+    done
+    echo ""
+    echo "   请通过源文件修改 script/multilingual-docs/ 下的 YAML，不要直接编辑生成文件；"
+    echo "   也可以选择重新生成到工作区，预览最新效果。"
+    echo -n "   是否重新生成并继续提交？[y/N] "
+    answer=""
+    # GIT_HOOK_NONINTERACTIVE：测试/CI 等非交互环境跳过询问，默认视为 N
+    if [ -z "${GIT_HOOK_NONINTERACTIVE:-}" ]; then
+        if [ -t 0 ]; then
+            read -r answer || true
+        else
+            # 钩子 stdin 默认是 /dev/null，交互提交时改从终端读取
+            read -r answer < /dev/tty || true
+        fi
+    fi
+    case "$answer" in
+        [Yy]*)
+            echo "   正在重新生成到工作区..."
+            $PYTHON script/manage_templates.py
+            ;;
+        *)
+            echo "   已取消提交。"
+            exit 1
+            ;;
+    esac
+else
+    # 无不一致：生成到工作区（本地方便预览）；生成文件不入库，由 CI 自动生成提交
+    $PYTHON script/manage_templates.py
+fi
