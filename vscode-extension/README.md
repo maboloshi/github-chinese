@@ -2,38 +2,43 @@
 
 [![license GPL-3.0](https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&label=License)](https://opensource.org/licenses/GPL-3.0)
 
-一键安装 GitHub 中文化脚本到 VS Code 集成浏览器。
+一键安装 GitHub 扩展，实现 VS Code 集成浏览器中 GitHub 网页的中文化。
 
-## 前提
+## 工作原理
 
-### 安装依赖扩展
+- 扩展启用 VS Code 的 proposed `browser` API（`vscode.window.browserTabs` + `startCDPSession()`）
+- 在扩展宿主侧从 [南大镜像](https://mirror.nju.edu.cn/github-chinese/) 拉取词库 `locals.js` 与主脚本 `main.user.js`，规避页面 CORS 限制
+- 通过 CDP `Page.addScriptToEvaluateOnNewDocument` 直接注入源码（非 eval），绕过 github.com 的 CSP 限制（IBE 因使用 `new Function` 被 CSP 拦截）
+- 注入内容内置 GM_* 兼容层与 document-end 语义（等 `DOMContentLoaded` 后执行）
 
-需要 [Integrated Browser Extensions](https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions)。
-
-> [!WARNING]
-> 该依赖扩展的 GitHub 源码仓库已被作者删除（404），市场列表仍存在但扩展不再维护。功能在当前版本中正常可用，但未来可能因 VS Code 更新而失效。
-
-> [!NOTE]
-> 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过[源码构建](#从本仓库源码构建)或下载 VSIX 安装。上架后从市场安装时会自动安装 Integrated Browser Extensions。
+## 先决条件
 
 ### 添加启动参数
 
-VS Code 必须带 `--enable-proposed-api boylett.integrated-browser-extensions` 参数启动。
+VS Code 必须带 `--enable-proposed-api maboloshi.github-chinese` 参数启动，否则无法使用 browser API。
 
 <details>
 <summary>带参数启动 VS Code 的方式</summary>
 
 - 打开[运行对话框](https://learn.microsoft.com/windows/advanced-settings/modern-run)，录入：
   ```cmd
-  "%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe" --enable-proposed-api boylett.integrated-browser-extensions
+  "%LOCALAPPDATA%\Programs\Microsoft VS Code\Code.exe" --enable-proposed-api maboloshi.github-chinese
   ```
 - 或修改[“开始”菜单](https://www.microsoft.com/zh-cn/windows/tips/start-menu)的 VS Code 快捷方式，在 `目标` 字段末尾追加 [COMMAND_LINE_ARGUMENTS](https://learn.microsoft.com/openspecs/windows_protocols/ms-shllink/17b69472-0f34-4bcf-b290-eccdb8de224b)：
   ```cmd
-   --enable-proposed-api boylett.integrated-browser-extensions
+   --enable-proposed-api maboloshi.github-chinese
   ```
   然后从“开始”菜单启动
 
 </details>
+
+> [!NOTE]
+> 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过[源码构建](#从本仓库源码构建)或下载 VSIX 安装。
+
+## 命令
+
+- `GitHub 中文化: 检查注入状态` — 查看 browser API 可用性、注入标签数与词库加载状态
+- `GitHub 中文化: 刷新集成浏览器注入` — 重新拉取词库/主脚本并重新注入所有已打开的集成浏览器标签
 
 ## 从本仓库源码构建
 
