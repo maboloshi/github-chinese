@@ -85,6 +85,7 @@ I18N.conf = {
             "article.markdown-body",
         ],
         'repository/tree': [
+            'article.markdown-body', // Markdown 正文
             'nav[data-testid="breadcrumbs"]', // 面包屑导航
             'div[data-testid="breadcrumbs-filename"]', // 面包屑导航 文件名部分
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
@@ -111,6 +112,9 @@ I18N.conf = {
             'header.GlobalNav', // React 版全局导航
             'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
             'qbsearch-input', // 顶部搜索框自定义元素
+            '.highlight',
+            '.notranslate',
+            '[translate="no"]',
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
@@ -247,6 +251,9 @@ I18N.conf = {
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK', // 特定元素标签
+            '.highlight',
+            '.notranslate',
+            '[translate="no"]',
 			'div.styled-input-content', // 筛选条
         ],
     },
