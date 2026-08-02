@@ -1,14 +1,11 @@
 #!/bin/sh
-# pre-commit hook：提交前验证多语言源文件 & 议题模板一致性
+# pre-commit hook：验证多语言源文件，检测手动修改生成文件
+# 模型 B：生成文件不入库（由 CI 自动生成并提交），提交时忽略它们
 set -e
 
-DOC_FILES="CONTRIBUTING.md CONTRIBUTING_zh-TW.md README.md README_zh-TW.md vscode-extension/README.md vscode-extension/README_zh-TW.md"
-
 STAGED_SOURCES=$(git diff --cached --name-only -- "script/multilingual-docs/")
-STAGED_GENERATED=$(git diff --cached --name-only -- .github/ISSUE_TEMPLATE/ | grep -v config.yml || true)
-STAGED_DOCS=$(git diff --cached --name-only -- $DOC_FILES)
 
-if [ -z "$STAGED_SOURCES" ] && [ -z "$STAGED_GENERATED" ] && [ -z "$STAGED_DOCS" ]; then
+if [ -z "$STAGED_SOURCES" ]; then
     exit 0
 fi
 
@@ -20,39 +17,27 @@ elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
 fi
 
-# ── 检测到手动修改生成文件（源文件未改）→ 阻止提交并打印差异 ──
+echo "📋 检测到多语言源文件变更..."
+$PYTHON script/manage_templates.py --check
+
+# ── 生成到临时目录（期望结果），与工作区比对：检测手动修改生成文件 → 阻止 ──
+GEN_TMP="$(mktemp -d)"
+trap 'rm -rf "$GEN_TMP" 2>/dev/null || true' EXIT
+$PYTHON script/manage_templates.py script/multilingual-docs/ "$GEN_TMP/.github/ISSUE_TEMPLATE/" --doc-dir "$GEN_TMP" >/dev/null
+
 all_clean=true
-
-for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:$DOC_FILES"; do
-    varname="${entry%%:*}"
-    diff_target="${entry#*:}"
-    eval "staged=\${$varname:-}"
-    [ -z "$staged" ] && continue
-    [ -n "$STAGED_SOURCES" ] && continue
-
-    if ! git diff --exit-code HEAD -- $diff_target; then
-        echo -e "\n   差异如下："
-        git diff HEAD -- $diff_target
+for gen in $(find "$GEN_TMP" -type f); do
+    rel="${gen#"$GEN_TMP"/}"
+    if [ -f "$rel" ] && ! diff -q "$gen" "$rel" >/dev/null 2>&1; then
+        echo -e "\n   生成文件与源文件不一致（可能被手动修改）：$rel"
+        echo "   差异如下："
+        diff "$gen" "$rel" || true
         echo ""
-        echo "   请通过源文件修改，不要直接编辑生成的文件。源文件："
-        for f in $staged; do
-            case "$f" in
-                CONTRIBUTING.md|CONTRIBUTING_zh-TW.md) src="CONTRIBUTING.yml" ;;
-                README.md|README_zh-TW.md) src="README.yml" ;;
-                vscode-extension/README.md|vscode-extension/README_zh-TW.md) src="vscode-extension-README.yml" ;;
-                *) src="" ;;
-            esac
-            [ -n "$src" ] && echo "   $(git rev-parse --show-toplevel)/script/multilingual-docs/${src}"
-        done | sort -u
+        echo "   请通过源文件修改 script/multilingual-docs/ 下的 YAML，不要直接编辑生成文件。"
         all_clean=false
     fi
 done
 $all_clean || exit 1
 
-# ── 源文件变更 → 验证 + 生成 + 自动纳入暂存 ──
-if [ -n "$STAGED_SOURCES" ]; then
-    echo "📋 检测到多语言源文件变更..."
-    $PYTHON script/manage_templates.py --check
-    $PYTHON script/manage_templates.py
-    git add .github/ISSUE_TEMPLATE/ $DOC_FILES
-fi
+# ── 源文件变更 → 生成到工作区（本地方便预览）；生成文件不入库，由 CI 自动生成提交 ──
+$PYTHON script/manage_templates.py

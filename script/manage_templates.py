@@ -5,6 +5,7 @@
 用法：
     python script/manage_templates.py               # 验证通过后生成所有文件
     python script/manage_templates.py --check       # 仅验证，不生成
+    python script/manage_templates.py --doc-dir DIR # 文档输出到指定根目录（供钩子比对）
 """
 
 import argparse
@@ -140,6 +141,11 @@ def main() -> None:
         help="模板输出目录（默认: .github/ISSUE_TEMPLATE/）"
     )
     parser.add_argument(
+        "--doc-dir",
+        default=None,
+        help="文档输出根目录（默认：各模板的相对输出目录，如 . / vscode-extension）"
+    )
+    parser.add_argument(
         "--check",
         action="store_true",
         help="仅验证，不生成"
@@ -219,7 +225,8 @@ def main() -> None:
             }[lang]
             if doc:
                 template_name, out_name, out_dir = doc
-                out = out_dir / out_name.format(suffix=suffix)
+                base = Path(args.doc_dir) / out_dir if args.doc_dir else out_dir
+                out = base / out_name.format(suffix=suffix)
                 # 延迟导入：仅在渲染文档时才需要 jinja2，保证 --requirements/--check 仅用标准库
                 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
@@ -246,9 +253,11 @@ def main() -> None:
                     idx = content.find("\n## ")
                     if idx != -1:
                         content = content[: idx + 1] + "\n".join(toc_lines) + "\n\n" + content[idx + 1 :]
+                out.parent.mkdir(parents=True, exist_ok=True)
                 out.write_text(content, encoding="utf-8")
             else:
                 out = output_dir / f"{f.stem}{suffix}.yml"
+                out.parent.mkdir(parents=True, exist_ok=True)
                 with open(out, "w", encoding="utf-8") as fh:
                     fh.write(f"# {comment}\n")
                     yaml.dump(resolved, fh, Dumper=template_dumper,
