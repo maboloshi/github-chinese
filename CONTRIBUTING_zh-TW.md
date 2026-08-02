@@ -8,6 +8,19 @@
 
 </div>
 
+<details>
+<summary><kbd>目錄樹</kbd></summary>
+
+#### TOC
+- [設置開發環境](#設置開發環境)
+- [貢獻方式](#貢獻方式)
+    - [翻譯參考資源](#翻譯參考資源)
+- [議題模板工作流](#議題模板工作流)
+    - [自動生成](#自動生成)
+    - [維護](#維護)
+
+</details>
+
 ## 設置開發環境
 
 1. [克隆倉庫](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
@@ -59,8 +72,8 @@
 ```mermaid
 flowchart LR
     subgraph Sources["多語言源文件"]
-        S1["script/multilingual-issue-templates/bug-提交.yml"]
-        S2["script/multilingual-issue-templates/CONTRIBUTING.yml"]
+        S1["script/multilingual-docs/bug-提交.yml"]
+        S2["script/multilingual-docs/CONTRIBUTING.yml"]
     end
     S1 --> B[manage_templates.py]
     S2 --> B
@@ -72,7 +85,7 @@ flowchart LR
 
 ### 維護
 
-1. 編輯 [`script/multilingual-issue-templates/bug-提交.yml`](script/multilingual-issue-templates/bug-提交.yml)
+1. 編輯 [`script/multilingual-docs/bug-提交.yml`](script/multilingual-docs/bug-提交.yml)
 1. 驗證和預覽（可選）
    1. 驗證多語言源文件（提交會自動觸發）：
       ```bash

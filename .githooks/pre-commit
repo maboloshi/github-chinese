@@ -2,9 +2,11 @@
 # pre-commit hook：提交前验证多语言源文件 & 议题模板一致性
 set -e
 
-STAGED_SOURCES=$(git diff --cached --name-only -- script/multilingual-issue-templates/)
+DOC_FILES="CONTRIBUTING.md CONTRIBUTING_zh-TW.md README.md README_zh-TW.md vscode-extension/README.md vscode-extension/README_zh-TW.md"
+
+STAGED_SOURCES=$(git diff --cached --name-only -- "script/multilingual-docs/")
 STAGED_GENERATED=$(git diff --cached --name-only -- .github/ISSUE_TEMPLATE/ | grep -v config.yml || true)
-STAGED_DOCS=$(git diff --cached --name-only -- CONTRIBUTING.md CONTRIBUTING_zh-TW.md)
+STAGED_DOCS=$(git diff --cached --name-only -- $DOC_FILES)
 
 if [ -z "$STAGED_SOURCES" ] && [ -z "$STAGED_GENERATED" ] && [ -z "$STAGED_DOCS" ]; then
     exit 0
@@ -21,7 +23,8 @@ fi
 # ── 检测到手动修改生成文件（源文件未改）→ 阻止提交 ──
 $PYTHON script/manage_templates.py
 all_clean=true
-for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:CONTRIBUTING.md CONTRIBUTING_zh-TW.md"; do
+
+for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:$DOC_FILES"; do
     varname="${entry%%:*}"
     diff_target="${entry#*:}"
     eval "staged=\${$varname:-}"
@@ -31,12 +34,16 @@ for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:CONTRIBUTIN
     if ! git diff --exit-code -- $diff_target; then
         echo -e "\n   差异如下："
         git diff -- $diff_target
-        ROOT=$(git rev-parse --show-toplevel)
         echo ""
         echo "   请通过源文件修改，不要直接编辑生成的文件。源文件："
         for f in $staged; do
-            stem=$(echo "$f" | sed 's/_zh-TW//;s/\.md$//;s/\.yml$//')
-            echo "   ${ROOT}/script/multilingual-issue-templates/${stem}.yml"
+            case "$f" in
+                CONTRIBUTING.md|CONTRIBUTING_zh-TW.md) src="CONTRIBUTING.yml" ;;
+                README.md|README_zh-TW.md) src="README.yml" ;;
+                vscode-extension/README.md|vscode-extension/README_zh-TW.md) src="vscode-extension-README.yml" ;;
+                *) src="" ;;
+            esac
+            [ -n "$src" ] && echo "   $(git rev-parse --show-toplevel)/script/multilingual-docs/${src}"
         done | sort -u
         all_clean=false
     fi
@@ -48,5 +55,5 @@ if [ -n "$STAGED_SOURCES" ]; then
     echo "📋 检测到多语言源文件变更..."
     $PYTHON script/manage_templates.py --check
     $PYTHON script/manage_templates.py
-    git add .github/ISSUE_TEMPLATE/ CONTRIBUTING.md CONTRIBUTING_zh-TW.md
+    git add .github/ISSUE_TEMPLATE/ $DOC_FILES
 fi

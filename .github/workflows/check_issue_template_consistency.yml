@@ -2,12 +2,12 @@ name: 多语言文件一致性
 on:
   pull_request:
     paths:
-      - 'script/multilingual-issue-templates/**'
+      - 'script/multilingual-docs/**'
       - 'script/manage_templates.py'
       - 'pyproject.toml'
   push:
     paths:
-      - 'script/multilingual-issue-templates/**'
+      - 'script/multilingual-docs/**'
       - 'script/manage_templates.py'
       - 'pyproject.toml'
   workflow_dispatch:

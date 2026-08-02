@@ -1,0 +1,2 @@
+# 钩子必须保持 LF 行尾：CRLF 会导致 Git Bash 解析失败
+.githooks/pre-commit text eol=lf

@@ -96,6 +96,32 @@ def _generate_requirements(pyproject: Path = Path("pyproject.toml")) -> None:
     print(f"✅ {pyproject.name} → {out}")
 
 
+def _collect_headings(node: Any, depth: int = 0, out: list[tuple[int, str]] | None = None) -> list[tuple[int, str]]:
+    """递归收集文档标题（## 与 ###，排除更深层级）。"""
+    if out is None:
+        out = []
+    for key, value in node.items():  # type: ignore[unknown-variable]
+        if isinstance(value, dict):
+            first = next(iter(value), None)
+            if first == "heading":
+                level = depth + 2
+                if level <= 3:
+                    out.append((level, value["heading"]))
+                body = {k: v for k, v in value.items() if k != "heading"}
+                if body:
+                    _collect_headings(body, depth + 1, out)
+    return out
+
+
+# 文档类源文件 → (Jinja 模板名, 输出文件名模式, 输出目录)
+# {suffix} 占位："" = 简体, "_zh-TW" = 繁体
+DOC_TEMPLATES: dict[str, tuple[str, str, Path]] = {
+    "CONTRIBUTING.yml": ("CONTRIBUTING.md.j2", "CONTRIBUTING{suffix}.md", Path(".")),
+    "README.yml": ("README.md.j2", "README{suffix}.md", Path(".")),
+    "vscode-extension-README.yml": ("vscode-extension-README.md.j2", "README{suffix}.md", Path("vscode-extension")),
+}
+
+
 def main() -> None:
     # Windows 管道重定向时强制 UTF-8，避免 ✅ 等字符触发 GBK UnicodeEncodeError
     sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
@@ -104,8 +130,8 @@ def main() -> None:
     parser.add_argument(
         "multilingual_dir",
         nargs="?",
-        default="script/multilingual-issue-templates/",
-        help="多语言源文件目录（默认: script/multilingual-issue-templates/）"
+        default="script/multilingual-docs/",
+        help="多语言源文件目录（默认: script/multilingual-docs/）"
     )
     parser.add_argument(
         "output_dir",
@@ -184,36 +210,52 @@ def main() -> None:
 
     for f in sorted(multilingual_dir.glob("*.yml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        is_doc = f.name == "CONTRIBUTING.yml"
-        out_dir, ext = (Path("."), "md") if is_doc else (output_dir, "yml")
+        doc = DOC_TEMPLATES.get(f.name)
         for lang, suffix in {"CN": "", "TW": "_zh-TW"}.items():
             resolved = _resolve(data, lang)
             comment = {
                 "CN": f"由 {SCRIPT} 自动生成，请勿手动编辑。来源：{f.name}",
                 "TW": f"由 {SCRIPT} 自動生成，請勿手動編輯。來源：{f.name}",
             }[lang]
-            out = out_dir / f"{f.stem}{suffix}.{ext}"
-            if is_doc:
+            if doc:
+                template_name, out_name, out_dir = doc
+                out = out_dir / out_name.format(suffix=suffix)
                 # 延迟导入：仅在渲染文档时才需要 jinja2，保证 --requirements/--check 仅用标准库
                 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
-                out.write_text(
+                content = (
                     f"<!-- {comment} -->\n\n"
                     # Jinja2 环境：模板从多语言源文件目录加载，缺字段即报错
                     + Environment(
                         loader=FileSystemLoader(multilingual_dir),
                         undefined=StrictUndefined,
-                    ).get_template(f"{f.stem}.md.j2").render(resolved=resolved),
-                    encoding="utf-8",
+                    ).get_template(template_name).render(resolved=resolved)
                 )
+                # 自动生成目录树（插入到第一个二级标题之前）
+                headings = _collect_headings(resolved)
+                if headings:
+                    toc_lines = ["<details>", f'<summary><kbd>{"目录树" if lang == "CN" else "目錄樹"}</kbd></summary>', "", "#### TOC"]
+                    for level, title in headings:
+                        indent = "    " * (level - 2)
+                        slug = title.lower()
+                        slug = re.sub(r"\s+", "-", slug)
+                        slug = re.sub(r"[^\w-]+", "", slug)
+                        slug = re.sub(r"-+", "-", slug)
+                        toc_lines.append(f"{indent}- [{title}](#{slug})")
+                    toc_lines += ["", "</details>"]
+                    idx = content.find("\n## ")
+                    if idx != -1:
+                        content = content[: idx + 1] + "\n".join(toc_lines) + "\n\n" + content[idx + 1 :]
+                out.write_text(content, encoding="utf-8")
             else:
+                out = output_dir / f"{f.stem}{suffix}.yml"
                 with open(out, "w", encoding="utf-8") as fh:
                     fh.write(f"# {comment}\n")
                     yaml.dump(resolved, fh, Dumper=template_dumper,
                               allow_unicode=True, default_flow_style=False,
                               sort_keys=False, width=120)
             print(f"✅ {f.name} → {out.name}")
-        print(_tr(f"✅ {f.name}: {'文档' if is_doc else '模板'}生成完成"))
+        print(_tr(f"✅ {f.name}: {'文档' if doc else '模板'}生成完成"))
 
     _generate_requirements()
 

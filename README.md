@@ -1,3 +1,5 @@
+<!-- 由 manage_templates.py 自动生成，请勿手动编辑。来源：README.yml -->
+
 <div align="center"><a name="readme-top"></a>
 
 # [GitHub 中文化插件][github-project-link]
@@ -8,9 +10,9 @@
 
 <!-- SHIELD GROUP -->
 
+[![GitHub issues][github-issues-shield]][github-issues-link]
 [![GitHub stars][github-stars-shield]][github-stars-link]
 [![GitHub forks][github-forks-shield]][github-forks-link]
-[![GitHub issues][github-issues-shield]][github-issues-link]
 [![license GPL-3.0][github-license-shield]][github-license-link]
 [![GreasyFork installs][greasyFork-shield]][greasyFork-link]
 
@@ -35,15 +37,19 @@
 - [🌐 兼容环境](#-兼容环境)
 - [💻 安装指南](#-安装指南)
     - [浏览器（Tampermonkey）](#浏览器tampermonkey)
-    - [VS Code 市场扩展](#vs-code-市场扩展)
+    - [VS Code 集成浏览器（Integrated Browser Extensions）](#vs-code-集成浏览器integrated-browser-extensions)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
+    - [最新版本](#最新版本)
 - [📌 待办事项](#-待办事项)
 - [🤝 参与贡献](#-参与贡献)
 - [🖼️ 效果预览](#-效果预览)
 - [🙏 特别鸣谢](#-特别鸣谢)
+    - [核心团队](#核心团队)
+    - [贡献者墙](#贡献者墙)
 - [📈 项目统计](#-项目统计)
 - [🎁 欢迎打赏](#-欢迎打赏)
+
 </details>
 
 ## 🌟 功能特性
@@ -100,7 +106,7 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
    ```js
    // 原始路径
    // @require https://raw.githubusercontent.com/...
-   
+
    // 修改为
    // @require file:///D:/github-chinese/locals.js
    ```
@@ -120,7 +126,6 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 [![][back-to-top]](#readme-top)
 
 </div>
-
 
 ## 🔄 更新日志
 
@@ -293,7 +298,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 </div>
 
-
 ## 📌 待办事项
 
 1. 添加 GitHub 专用名词解释
@@ -306,16 +310,16 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## 🖼️ 效果预览
 
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png"/>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png"/>
-    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png" width="75%" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png"/>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png"/>
-    <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png" width="75%" />
-  </picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img3.png"/>
+  <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img1.png" width="75%" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img4.png"/>
+  <img src="https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/preview/img2.png" width="75%" />
+</picture>
 
 ## 🙏 特别鸣谢
 
@@ -377,7 +381,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 </div>
 
-
 ## 📈 项目统计
 
 <a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
@@ -397,11 +400,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 </div>
 
 ## 🎁 欢迎打赏
+
 [赞赏列表](https://github.com/maboloshi/maboloshi/issues/1)
 |                                        微信赞赏                                        |                                       支付宝赞赏                                       |
 | :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
 | <img src="https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/wechat.png?raw=true" alt="WeChat QRcode" width=200> <br><small>☕喝点咖啡继续干☕</small> | <img src="https://cdn.jsdelivr.net/gh/maboloshi/maboloshi/img/alipay-1.jpg?raw=true" alt="AliPay QRcode" width=200> <br><small>🌶️来包辣条吧~🍪</small> |
-
 
 <!-- LINK GROUP -->
 
@@ -426,4 +429,3 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
 [Integrated Browser Extensions]: https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions "Integrated Browser Extensions"
-

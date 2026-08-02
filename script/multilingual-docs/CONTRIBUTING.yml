@@ -117,8 +117,8 @@ workflow:
         ```mermaid
         flowchart LR
             subgraph Sources["多语言源文件"]
-                S1["script/multilingual-issue-templates/bug-提交.yml"]
-                S2["script/multilingual-issue-templates/CONTRIBUTING.yml"]
+                S1["script/multilingual-docs/bug-提交.yml"]
+                S2["script/multilingual-docs/CONTRIBUTING.yml"]
             end
             S1 --> B[manage_templates.py]
             S2 --> B
@@ -133,8 +133,8 @@ workflow:
         ```mermaid
         flowchart LR
             subgraph Sources["多語言源文件"]
-                S1["script/multilingual-issue-templates/bug-提交.yml"]
-                S2["script/multilingual-issue-templates/CONTRIBUTING.yml"]
+                S1["script/multilingual-docs/bug-提交.yml"]
+                S2["script/multilingual-docs/CONTRIBUTING.yml"]
             end
             S1 --> B[manage_templates.py]
             S2 --> B
@@ -149,7 +149,7 @@ workflow:
       TW: 維護
     steps:
       CN: |
-        1. 编辑 [`script/multilingual-issue-templates/bug-提交.yml`](script/multilingual-issue-templates/bug-提交.yml)
+        1. 编辑 [`script/multilingual-docs/bug-提交.yml`](script/multilingual-docs/bug-提交.yml)
         1. 验证和预览（可选）
            1. 验证多语言源文件（提交会自动触发）：
               ```bash
@@ -167,7 +167,7 @@ workflow:
         1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的钩子自动验证
         1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交到远程仓库') → [拉取请求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '创建拉取请求') → [持续集成](https://docs.github.com/actions/get-started/continuous-integration '持续集成')验证 → 合并到默认分支 → 云端自动生成并提交模板
       TW: |
-        1. 編輯 [`script/multilingual-issue-templates/bug-提交.yml`](script/multilingual-issue-templates/bug-提交.yml)
+        1. 編輯 [`script/multilingual-docs/bug-提交.yml`](script/multilingual-docs/bug-提交.yml)
         1. 驗證和預覽（可選）
            1. 驗證多語言源文件（提交會自動觸發）：
               ```bash

@@ -1,8 +1,30 @@
+<!-- 由 manage_templates.py 自动生成，请勿手动编辑。来源：vscode-extension-README.yml -->
+
+<div align="center"><a name="vscode-extension-readme-top"></a>
+
 # GitHub 中文化 (VS Code 扩展)
+
+一键安装 GitHub 中文化脚本到 VS Code 集成浏览器。
+
+**简体中文** · [繁體中文](./README_zh-TW.md)
+
+<!-- SHIELD GROUP -->
 
 [![license GPL-3.0](https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&label=License)](https://opensource.org/licenses/GPL-3.0)
 
-一键安装 GitHub 中文化脚本到 VS Code 集成浏览器。
+</div>
+
+<details>
+<summary><kbd>目录树</kbd></summary>
+
+#### TOC
+- [前提](#前提)
+    - [安装依赖扩展](#安装依赖扩展)
+    - [添加启动参数](#添加启动参数)
+- [从本仓库源码构建](#从本仓库源码构建)
+- [调试](#调试)
+
+</details>
 
 ## 前提
 
