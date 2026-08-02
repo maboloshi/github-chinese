@@ -184,3 +184,92 @@ workflow:
            1. 預覽生成的 CN/TW 模板：如果使用 VS Code，可啟用 [GitHub Issue Template Preview](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。如果 [reespozzi/gh-issue-template-preview#14](https://github.com/reespozzi/gh-issue-template-preview/pull/14) 尚未合併，請[調試](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)待合併的分支。
         1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的掛鉤自動驗證
         1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交至遠端倉儲') → [拉取請求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '創建拉取請求') → [持續集成](https://docs.github.com/actions/get-started/continuous-integration '持續集成')驗證 → 合併到預設分支 → 雲端自動生成並提交模板
+
+windows_dev:
+  heading:
+    CN: Windows 开发者注意事项
+    TW: Windows 開發者注意事項
+  warning:
+    CN: |
+      > [!WARNING]
+      > 本仓库的开发、测试与云端持续集成（CI）[工作流程](.github\workflows)基于 Linux（`ubuntu-latest`）。
+      > 
+      > Windows 开发者若只在本机测试，可能踩到 Linux 才有、CI 才会暴露的坑。
+    TW: |
+      > [!WARNING]
+      > 本倉庫的開發、測試與雲端持續整合（CI）[工作流程](.github\workflows)基於 Linux（`ubuntu-latest`）。
+      > 
+      > Windows 開發者若只在本機測試，可能踩到 Linux 才有、CI 才會暴露的坑。
+  tips:
+    CN: |
+      > [!TIP]
+      > 建议 Windows 开发者在[适用于 Linux 的 Windows 子系统](https://learn.microsoft.com/windows/wsl/)中测试，以获得最接近云端 CI 的环境。
+    TW: |
+      > [!TIP]
+      > 建議 Windows 開發者在[適用於 Linux 的 Windows 子系統](https://learn.microsoft.com/windows/wsl/)中測試，以獲得最接近雲端 CI 的環境。
+  known_issues:
+    heading:
+      CN: 常见坑
+      TW: 常見坑
+    body:
+      CN: |
+        - **钩子可执行位**：Linux 上 git 严格[要求](https://git-scm.com/docs/api-run-command/2.0.5#Documentation/technical/api-run-command.txt-runhook 'run_hook')钩子有 `chmod +x`，否则报 "hook was ignored because it's not set as executable"；Windows 不检查，本地正常但 CI 失败。
+        - **CRLF/LF 行尾**：bash 脚本（`.githooks/pre-commit`、`test/*.sh`）应使用 [LF 行尾](https://pubs.opengroup.org/onlinepubs/9799919799.2024edition/basedefs/V1_chap03.html#tag_03_185 'The Open Group Base Specifications Issue 8/IEEE Std 1003.1-2024, 3.185')，CRLF 会导致解析失败；[`.gitattributes`](.gitattributes) 已用 `eol=lf` 强制。
+        - **钩子 stdin**：pre-commit 钩子的 stdin 默认是 `/dev/null`，交互读取输入需从 `/dev/tty`；非交互环境用 `GIT_HOOK_NONINTERACTIVE=1` 跳过询问。
+        - **[PEP 668](https://peps.python.org/pep-0668/)**：Ubuntu/WSL 的系统 Python 受保护，直接 `pip install` 报 `externally-managed-environment`，请用 venv（见下）。
+      TW: |
+        - **鉤子可執行位**：Linux 上 git 嚴格[要求](https://git-scm.com/docs/api-run-command/2.0.5#Documentation/technical/api-run-command.txt-runhook 'run_hook')掛鉤有 `chmod +x`，否則報 "hook was ignored because it's not set as executable"；Windows 不檢查，本地正常但 CI 失敗。
+        - **CRLF/LF 行尾**：bash 腳本（`.githooks/pre-commit`、`test/*.sh`）應使用 [LF 行尾](https://pubs.opengroup.org/onlinepubs/9799919799.2024edition/basedefs/V1_chap03.html#tag_03_185 'The Open Group Base Specifications Issue 8/IEEE Std 1003.1-2024, 3.185')，CRLF 會導致解析失敗；[`.gitattributes`](.gitattributes) 已用 `eol=lf` 強制。
+        - **鉤子 stdin**：pre-commit 鉤子的 stdin 預設是 `/dev/null`，互動讀取輸入需從 `/dev/tty`；非互動環境用 `GIT_HOOK_NONINTERACTIVE=1` 跳過詢問。
+        - **[PEP 668](https://peps.python.org/pep-0668/)**：Ubuntu/WSL 的系統 Python 受保護，直接 `pip install` 報 `externally-managed-environment`，請用 venv（見下）。
+  wsl_setup:
+    heading:
+      CN: 在 WSL 中准备测试环境
+      TW: 在 WSL 中準備測試環境
+    body:
+      CN: |
+        生成文件不入库（由云端 CI 自动生成），开发者提交源文件即可。要在 WSL 中本地验证，可参考以下步骤（依赖统一从 [`script/requirements.txt`](script/requirements.txt) 安装）：
+
+        ```bash
+        # 安装官方 Python 工具（需要 sudo 密码）
+        sudo apt update
+        sudo apt install -y python3-pip python3-venv
+
+        # 克隆/复制仓库到 WSL 原生文件系统（比 /mnt/c 更接近云端 CI）
+        cd ~
+        git clone https://github.com/maboloshi/github-chinese.git
+        cd github-chinese
+
+        # 创建 venv 并从项目依赖清单安装
+        python3 -m venv .venv-wsl
+        .venv-wsl/bin/pip install -r script/requirements.txt
+
+        # 让钩子与测试使用 venv 的 Python
+        export PATH="$(pwd)/.venv-wsl/bin:$PATH"
+
+        # 运行钩子测试
+        bash test/test_pre_commit_hook.sh
+        ```
+      TW: |
+        生成檔案不入庫（由雲端 CI 自動生成），開發者提交源檔案即可。要在 WSL 中本地驗證，可參考以下步驟（依賴統一從 [`script/requirements.txt`](script/requirements.txt) 安裝）：
+
+        ```bash
+        # 安裝官方 Python 工具（需要 sudo 密碼）
+        sudo apt update
+        sudo apt install -y python3-pip python3-venv
+
+        # 克隆/複製倉庫到 WSL 原生檔案系統（比 /mnt/c 更接近雲端 CI）
+        cd ~
+        git clone https://github.com/maboloshi/github-chinese.git
+        cd github-chinese
+
+        # 建立 venv 並從專案依賴清單安裝
+        python3 -m venv .venv-wsl
+        .venv-wsl/bin/pip install -r script/requirements.txt
+
+        # 讓掛鉤與測試使用 venv 的 Python
+        export PATH="$(pwd)/.venv-wsl/bin:$PATH"
+
+        # 執行掛鉤測試
+        bash test/test_pre_commit_hook.sh
+        ```
