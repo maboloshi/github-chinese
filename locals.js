@@ -6386,11 +6386,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
                 "More features": "更多功能",
 
-            "Premium requests": "高级请求",
-                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. You can enable additional premium requests in the": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。您可以在以下位置启用额外的高级请求：",
-                "Billing settings": "账单设置",
-                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。要启用额外的高级请求，请",
-                "update your Copilot premium request budget": "更新您的 Copilot 高级请求预算",
+            
             "Plan upgrades are temporarily unavailable.": "计划升级暂时不可用。",
             "Free responses reset": "免费响应额度将在",
             "Read more.": "了解更多。",
