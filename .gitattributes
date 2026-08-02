@@ -1,2 +1,3 @@
-# 钩子必须保持 LF 行尾：CRLF 会导致 Git Bash 解析失败
+# bash 脚本必须保持 LF 行尾（CRLF 会导致解析问题）
 .githooks/pre-commit text eol=lf
+test/*.sh text eol=lf

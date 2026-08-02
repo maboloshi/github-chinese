@@ -5,11 +5,15 @@ on:
       - 'script/multilingual-docs/**'
       - 'script/manage_templates.py'
       - 'pyproject.toml'
+      - '.githooks/**'
+      - 'test/test_pre_commit_hook.sh'
   push:
     paths:
       - 'script/multilingual-docs/**'
       - 'script/manage_templates.py'
       - 'pyproject.toml'
+      - '.githooks/**'
+      - 'test/test_pre_commit_hook.sh'
   workflow_dispatch:
 
 permissions:
@@ -36,6 +40,11 @@ jobs:
         run: |
           python script/manage_templates.py --check
           python script/manage_templates.py
+
+      # ── PR：测试 pre-commit 钩子行为 ──
+      - name: Test pre-commit hook
+        if: github.event_name == 'pull_request'
+        run: bash test/test_pre_commit_hook.sh
 
       # ── 默认分支：验证 + 生成 + 自动提交（分支名语义化，随默认分支自适应） ──
       - name: Generate & commit

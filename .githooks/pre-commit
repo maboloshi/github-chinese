@@ -20,8 +20,7 @@ elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
 fi
 
-# ── 检测到手动修改生成文件（源文件未改）→ 阻止提交 ──
-$PYTHON script/manage_templates.py
+# ── 检测到手动修改生成文件（源文件未改）→ 阻止提交并打印差异 ──
 all_clean=true
 
 for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:$DOC_FILES"; do
@@ -31,9 +30,9 @@ for entry in "STAGED_GENERATED:.github/ISSUE_TEMPLATE/" "STAGED_DOCS:$DOC_FILES"
     [ -z "$staged" ] && continue
     [ -n "$STAGED_SOURCES" ] && continue
 
-    if ! git diff --exit-code -- $diff_target; then
+    if ! git diff --exit-code HEAD -- $diff_target; then
         echo -e "\n   差异如下："
-        git diff -- $diff_target
+        git diff HEAD -- $diff_target
         echo ""
         echo "   请通过源文件修改，不要直接编辑生成的文件。源文件："
         for f in $staged; do
