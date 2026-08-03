@@ -59,6 +59,8 @@ jobs:
           esac
           sha=$(gh api "repos/$repo/pulls/$pr" --jq '.head.sha' 2>/dev/null || echo "")
           echo "repo=$repo" >> "$GITHUB_OUTPUT"
+          echo "owner=${repo%%/*}" >> "$GITHUB_OUTPUT"
+          echo "repo_name=${repo#*/}" >> "$GITHUB_OUTPUT"
           echo "pr=$pr" >> "$GITHUB_OUTPUT"
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
 
@@ -96,7 +98,8 @@ jobs:
         with:
           client-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          installation-id: ${{ secrets.APP_INSTALLATION_ID }}
+          owner: ${{ steps.ctx.outputs.owner }}
+          repositories: ${{ steps.ctx.outputs.repo_name }}
 
       - name: 组装审查评论文件（追加去重标记）
         if: steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
