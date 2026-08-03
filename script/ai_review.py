@@ -102,8 +102,8 @@ def main() -> None:
         instructions = fetch(
             f"https://raw.githubusercontent.com/{args.repo}/{base}/.github/copilot-instructions.md"
         )[:2000]
-    except Exception:
-        pass
+    except Exception as e:  # noqa: BLE001
+        print(f"⚠️ 无法获取仓库审查规范 .github/copilot-instructions.md：{e}", file=sys.stderr)
 
     # 3) 组装 prompt
     system = (

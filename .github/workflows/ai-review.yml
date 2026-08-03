@@ -81,11 +81,11 @@ jobs:
           elif [ "${{ github.event_name }}" = "schedule" ]; then
             repo="${TARGET_REPO:-maboloshi/github-chinese}"
             owner="${{ github.repository_owner }}"
-            for p in ${WATCHLIST//,/ }; do
+            IFS=',' read -ra WATCH <<< "$WATCHLIST"
+            for p in "${WATCH[@]}"; do
               [ -z "$p" ] && continue
               hit=$(gh api "repos/$repo/issues/$p/comments" \
-                --jq '[.[] | select(.user.login == $o) | select(.body | contains("/review"))] | length' \
-                --arg o "$owner" 2>/dev/null || echo 0)
+                --jq "[.[] | select(.user.login == \"$owner\") | select(.body | contains(\"/review\"))] | length" 2>/dev/null || echo 0)
               if [ "$hit" != "0" ]; then
                 pr="$p"
                 break
