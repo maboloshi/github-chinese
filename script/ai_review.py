@@ -30,7 +30,7 @@ def fetch(url: str, headers: dict | None = None, retries: int = 3) -> str:
                 return r.read().decode("utf-8")
         except urllib.error.HTTPError as e:
             last_err = f"HTTP {e.code}"
-            if e.code < 500:  # 4xx 不重试
+            if e.code < 500 and e.code != 429:  # 4xx（除 429 限流外）不重试
                 raise
         except Exception as e:  # noqa: BLE001 - 网络层异常统一重试
             last_err = str(e)
@@ -49,7 +49,7 @@ def post_json(url: str, payload: dict, headers: dict, retries: int = 3) -> dict:
                 return json.loads(r.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
             last_err = f"HTTP {e.code}"
-            if e.code < 500:  # 4xx（401/402/429 等）不重试
+            if e.code < 500 and e.code != 429:  # 4xx（除 429 限流外）不重试
                 raise
         except Exception as e:  # noqa: BLE001 - 网络层异常统一重试
             last_err = str(e)
@@ -81,7 +81,7 @@ def main() -> None:
         print(f"❌ 无法获取 PR 信息：{e}", file=sys.stderr)
         sys.exit(1)
     title = pr_meta.get("title", "")
-    body = (pr_meta.get("body") or "")[:2000]
+    body = (pr_meta.get("body") or "")[:4000]
     base, head = pr_meta["base"]["ref"], pr_meta["head"]["ref"]
     try:
         diff = fetch(f"https://github.com/{args.repo}/pull/{args.pr}.diff")
@@ -99,7 +99,7 @@ def main() -> None:
     instructions = ""
     try:
         instructions = fetch(
-            f"https://raw.githubusercontent.com/{args.repo}/HEAD/.github/copilot-instructions.md"
+            f"https://raw.githubusercontent.com/{args.repo}/{base}/.github/copilot-instructions.md"
         )
     except Exception:
         pass
