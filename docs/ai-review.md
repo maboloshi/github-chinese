@@ -61,7 +61,7 @@ flowchart LR
 - **提示词注入**：密钥绝不进入 prompt；模型输出只作为文本渲染，不执行。
 - **工作流安全**：不使用 `pull_request_target`；第三方 Action 建议钉版本；不打印密钥。
 - **已知限制**：
-  - 上游 `/review` 为**轮询**（约 15 分钟），非即时。
+  - 上游 `/review` 为**轮询**：fork 实例每 15 分钟扫描一次 `REVIEW_WATCHLIST`，从评论 `/review` 到 bot 回复最长约 15 分钟，非即时。
   - fork PR 的 `pull_request` 事件**读不到 secrets** → fork 内 PR 自动审需要把工作流放到 fork 默认分支；上游 PR 的自动审依赖 fork 侧 `push` 反查或轮询。
   - 发布到上游需仓库维护者安装 GitHub App（可随时撤销）。
 

@@ -29,6 +29,7 @@ concurrency:
 jobs:
   review:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       GH_TOKEN: ${{ github.token }}
@@ -50,6 +51,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: 校验 workflow_dispatch 输入
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          IN_REPO: ${{ inputs.repo }}
+          IN_PR: ${{ inputs.pr }}
+        run: |
+          case "$IN_REPO" in
+            */*) ;;
+            *) echo "::error::repo 参数格式应为 owner/repo（当前：$IN_REPO）"; exit 1 ;;
+          esac
+          case "$IN_PR" in
+            ''|*[!0-9]*) echo "::error::pr 参数必须为数字（当前：$IN_PR）"; exit 1 ;;
+          esac
 
       - name: 解析目标仓库、PR 与 head SHA
         id: ctx
