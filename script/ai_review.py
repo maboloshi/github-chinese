@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI 代码审查（DeepSeek）—— 生成结构化中文审查。
+AI 代码审查（DeepSeek）—— 生成结构化中文审查。需要 Python 3.10+。
 用法：
   python script/ai_review.py --repo <owner/repo> --pr <number> [--mode full|summary] [--out file.md]
 输出：审查 Markdown（默认 stdout，--out 写文件）。
@@ -38,6 +38,25 @@ def fetch(url: str, headers: dict | None = None, retries: int = 3) -> str:
     raise RuntimeError(f"请求失败（重试 {retries} 次后仍失败）：{last_err}")
 
 
+def post_json(url: str, payload: dict, headers: dict, retries: int = 3) -> dict:
+    """POST JSON；对超时 / 5xx 做指数退避重试。"""
+    data = json.dumps(payload).encode("utf-8")
+    last_err = ""
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, data=data, headers=headers)
+            with urllib.request.urlopen(req, timeout=180) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            last_err = f"HTTP {e.code}"
+            if e.code < 500:  # 4xx（401/402/429 等）不重试
+                raise
+        except Exception as e:  # noqa: BLE001 - 网络层异常统一重试
+            last_err = str(e)
+        time.sleep(2 * (attempt + 1))
+    raise RuntimeError(f"DeepSeek 请求失败（重试 {retries} 次后仍失败）：{last_err}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AI 代码审查（DeepSeek）")
     parser.add_argument("--repo", required=True, help="owner/repo")
@@ -54,6 +73,10 @@ def main() -> None:
     # 1) PR 元数据 + diff
     try:
         pr_meta = json.loads(fetch(f"https://api.github.com/repos/{args.repo}/pulls/{args.pr}"))
+    except urllib.error.HTTPError as e:
+        hint = "（PR 不存在？）" if e.code == 404 else ("（可能被 API 限流，请稍后重试）" if e.code == 403 else "")
+        print(f"❌ 无法获取 PR 信息：HTTP {e.code} {hint}", file=sys.stderr)
+        sys.exit(1)
     except Exception as e:  # noqa: BLE001
         print(f"❌ 无法获取 PR 信息：{e}", file=sys.stderr)
         sys.exit(1)
@@ -119,16 +142,15 @@ PR 描述：
         "temperature": 0.2,
         "stream": False,
     }
-    req = urllib.request.Request(
-        f"{base_url}/chat/completions",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-    )
+    headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}
     try:
-        with urllib.request.urlopen(req, timeout=180) as r:
-            resp = json.loads(r.read().decode("utf-8"))
+        resp = post_json(f"{base_url}/chat/completions", payload, headers)
     except urllib.error.HTTPError as e:
-        print(f"❌ DeepSeek 调用失败：{e.code} {e.read().decode('utf-8')[:500]}", file=sys.stderr)
+        hint = {401: "（API key 无效，请检查 LLM_API_KEY）", 402: "（余额不足）", 429: "（触发限流）"}.get(e.code, "")
+        print(f"❌ DeepSeek 调用失败：HTTP {e.code} {hint}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:  # noqa: BLE001
+        print(f"❌ DeepSeek 调用失败：{e}", file=sys.stderr)
         sys.exit(1)
 
     choices = resp.get("choices") or []

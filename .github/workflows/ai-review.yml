@@ -41,7 +41,9 @@ jobs:
       github.event_name == 'schedule' ||
       (github.event_name == 'issue_comment' &&
        github.event.issue.pull_request &&
-       contains(github.event.comment.body, '/review'))
+       contains(github.event.comment.body, '/review') &&
+       (github.event.comment.user.login == github.event.issue.user.login ||
+        github.event.comment.user.login == github.repository_owner))
     steps:
       - uses: actions/checkout@v4
 
@@ -103,6 +105,10 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: 检查 LLM_API_KEY
+        if: steps.ctx.outputs.pr != '' && env.LLM_API_KEY == ''
+        run: echo "⚠️ 未配置 LLM_API_KEY，本次审查已跳过。请在 Settings → Secrets and variables → Actions 中添加。"
+
       - name: 生成 AI 审查
         if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
         env:
@@ -116,7 +122,7 @@ jobs:
 
       - name: 生成 GitHub App 安装令牌（bot 身份）
         id: app-token
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != '' && success()
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != ''
         uses: actions/create-github-app-token@v3
         with:
           client-id: ${{ secrets.APP_ID }}
@@ -125,15 +131,20 @@ jobs:
           repositories: ${{ steps.ctx.outputs.repo_name }}
 
       - name: 组装审查评论文件（追加去重标记）
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
         run: |
           printf '\n\n<!--ai-review:%s-->' "${{ steps.ctx.outputs.sha }}" >> review.md
 
       - name: 发布审查评论（App bot 优先，否则 github-actions[bot]）
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           export GH_TOKEN="${APP_TOKEN:-${{ github.token }}}"
+          python - <<'PY'
+          import json
+          body = open('review.md', encoding='utf-8').read()
+          open('.comment.json', 'w', encoding='utf-8').write(json.dumps({'body': body}))
+          PY
           echo "以 bot 身份发布到 ${{ steps.ctx.outputs.repo }}#${{ steps.ctx.outputs.pr }}"
-          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" -F "body=@review.md" --jq '.html_url'
+          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" --input .comment.json --jq '.html_url'
