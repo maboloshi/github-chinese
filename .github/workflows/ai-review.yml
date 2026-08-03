@@ -30,6 +30,7 @@ jobs:
     env:
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       GH_TOKEN: ${{ github.token }}
+      APP_ID: ${{ secrets.APP_ID }}
     if: >-
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'pull_request' ||
@@ -88,19 +89,25 @@ jobs:
             --pr "${{ steps.ctx.outputs.pr }}" \
             --out review.md
 
-      - name: 发布审查评论
-        if: steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
-        uses: actions/github-script@v7
+      - name: 生成 GitHub App 安装令牌（bot 身份）
+        id: app-token
+        if: steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != '' && success()
+        uses: actions/create-github-app-token@v3
         with:
-          script: |
-            const fs = require('fs');
-            const body = fs.readFileSync('review.md', 'utf8');
-            const sha = "${{ steps.ctx.outputs.sha }}";
-            const repo = '${{ steps.ctx.outputs.repo }}';
-            const pr = Number('${{ steps.ctx.outputs.pr }}');
-            await github.rest.issues.createComment({
-              owner: repo.split('/')[0],
-              repo: repo.split('/')[1],
-              issue_number: pr,
-              body: body + `\n\n<!--ai-review:${sha}-->`
-            });
+          client-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          installation-id: ${{ secrets.APP_INSTALLATION_ID }}
+
+      - name: 组装审查评论文件（追加去重标记）
+        if: steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        run: |
+          printf '\n\n<!--ai-review:%s-->' "${{ steps.ctx.outputs.sha }}" >> review.md
+
+      - name: 发布审查评论（App bot 优先，否则 github-actions[bot]）
+        if: steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          export GH_TOKEN="${APP_TOKEN:-${{ github.token }}}"
+          echo "以 bot 身份发布到 ${{ steps.ctx.outputs.repo }}#${{ steps.ctx.outputs.pr }}"
+          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" -F "body=@review.md" --jq '.html_url'
