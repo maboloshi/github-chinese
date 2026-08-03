@@ -55,7 +55,7 @@ flowchart LR
 
 ## 安全模型
 
-- **任何人看不到明文**：DeepSeek key 只存在于请求者自己的 fork secret / 本地；上游仓库零密钥。
+- **任何人看不到明文**：DeepSeek key 只存在于请求者自己的 fork secret / 本地；上游仓库零密钥。（除非工作流被恶意修改或日志意外泄露——已通过不打印密钥、最小权限、Action 版本审计等措施缓解）
 - **自负额度**：每次审查只用触发者自己的 `LLM_API_KEY`（`secrets.LLM_API_KEY`）。
 - **bot 身份**：审查以 `github-actions[bot]` 或 GitHub App 机器人发布，不占用用户账号。
 - **提示词注入**：密钥绝不进入 prompt；模型输出只作为文本渲染，不执行。

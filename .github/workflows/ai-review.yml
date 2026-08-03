@@ -23,7 +23,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ai-review-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr }}
+  group: ai-review-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr || 'manual' }}
   cancel-in-progress: true
 
 jobs:
@@ -46,6 +46,10 @@ jobs:
         github.event.comment.user.login == github.repository_owner))
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: 解析目标仓库、PR 与 head SHA
         id: ctx
