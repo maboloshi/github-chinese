@@ -161,19 +161,19 @@ const expectedReactNavLabels = {
             "Repositories": "儲存庫",
             "Code": "程式碼",
             "Issues": "議題",
-            "Pull requests": "拉取請求",
+            "Pull requests": "合併請求",
             "Discussions": "討論",
             "Actions": "操作",
             "Projects": "專案",
             "Wiki": "Wiki",
             "Security": "安全",
-            "Security and quality": "安全和品質",
-            "Insights": "洞察",
-            "Settings": "設定",
-            "Packages": "軟體包",
-            "Releases": "發行版",
+            "Security and quality": "安全和質量",
+            "Insights": "分析",
+            "Settings": "設置",
+            "Packages": "軟件包",
+            "Releases": "發行版本",
             "Stars": "星號",
-            "Agents": "智能體",
+            "Agents": "AI 代理",
             "Models": "模型",
             "Set status": "狀態設置",
             "Profile": "個人資料",
@@ -186,7 +186,7 @@ const expectedReactNavLabels = {
             "Sign out": "退出",
             "Free": "免費",
             "Type / to search": "輸入 / 搜尋",
-            "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、使用者、議題、拉取請求...",
+            "Search code, repositories, users, issues, pull requests...": "搜尋程式碼、儲存庫、用戶、議題、合併請求...",
             "Search": "搜尋",
             "Clear": "清除",
             "Search syntax tips": "搜尋語法提示",
@@ -256,7 +256,8 @@ function loadRuntimeFunction(fileName, functionName, document) {
     const filePath = path.join(__dirname, '..', fileName);
     const source = fs.readFileSync(filePath, 'utf8');
     const start = source.indexOf(`    function ${functionName}(`);
-    const end = source.indexOf('\n\n    function ', start + 1);
+    const nextFunction = source.slice(start + 1).search(/\r?\n\r?\n    function /);
+    const end = nextFunction === -1 ? -1 : start + 1 + nextFunction;
     assert.notEqual(start, -1, `${functionName} should exist in ${fileName}`);
     assert.notEqual(end, -1, `${functionName} should be followed by another runtime function`);
 
