@@ -13,3 +13,6 @@ Desktop.ini
 main(local).js
 # VS Code extension package
 *.vsix
+
+# logs
+*.log
