@@ -2,7 +2,7 @@
   "name": "github-chinese",
   "displayName": "GitHub 中文化",
   "description": "一键安装 GitHub 中文化脚本到 VS Code 集成浏览器",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "PtJade-Ceramic",
   "publisher": "PtJade-Ceramic",
   "license": "GPL-3.0",
