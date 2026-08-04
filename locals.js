@@ -9730,6 +9730,8 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Repository": "仓库",
                 "Organization": "组织",
                 "No projects found. Sorry about that.": "很抱歉，未找到任何项目。",
+                "No projects were found": "未找到项目",
+                    "Please try a different search query.": "请尝试不同搜索查询。",
 
             // "Milestones": "里程碑",
                 "Filter by milestone": "按里程碑筛选",
@@ -10060,6 +10062,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Filter authors": "筛选作者",
             "Filter by assignees": "筛选受理人",
                 "No assignees": "无人受理",
+            
+            // 左侧栏
+            "Assigned to me": "分配给您",
+            "Created by me": "由您创建",
+            "Mentioned": "提及",
+            "Recent activity": "最近活动",
+
+            "Collapse sidebar": "折叠侧边栏",
+            "Expand sidebar": "展开侧边栏",
+
             // 新版内容
                 // 顶部
                     "👋 Want to contribute to": "👋 想做贡献给",
