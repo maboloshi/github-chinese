@@ -40,7 +40,7 @@
   "devDependencies": {
     "@types/vscode": "^1.116.0",
     "@vscode/vsce": "3.9.2",
-    "typescript": "^5.5.0"
+    "typescript": "^7.0.2"
   },
   "contributes": {
     "commands": [
