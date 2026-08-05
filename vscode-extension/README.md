@@ -42,7 +42,7 @@ VS Code 必须带 `--enable-proposed-api maboloshi.github-chinese` 参数启动�
 
 > 该方案需要登录 GitHub 账号，若你没有账号，请使用 [方案二](#方案二从源码构建)
 
-1. 打开本仓库的 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension) 页面
+1. 打开本仓库的 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension.yml) 页面
 
 2. 选择最近一次成功运行的 workflow
 
