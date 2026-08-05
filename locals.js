@@ -6386,11 +6386,13 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
                 "More features": "更多功能",
 
-            "Premium requests": "高级请求",
-                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. You can enable additional premium requests in the": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。您可以在以下位置启用额外的高级请求：",
-                "Billing settings": "账单设置",
-                "Please note that there may be a delay in the displayed usage percentage. The premium request entitlement for your plan will reset at the start of next month. To enable additional premium requests,": "请注意，显示的使用百分比可能会有延迟。您计划的高级请求权限将在下个月初重置。要启用额外的高级请求，请",
-                "update your Copilot premium request budget": "更新您的 Copilot 高级请求预算",
+            // 使用情况
+            "Included usage": "套内用量",
+                "AI credits included with your plan, reset monthly. Enable additional usage to continue with pay-as-you-go credits once you run out of your included usage.": "AI 额度包含在您的计划中，每月重置。一旦用套内用量，可以启用超套用量以继续使用按需付费的额度。",
+                "No usage yet": "尚未使用",
+            "Additional usage": "超套用量",
+                "Not enabled": "未启用",
+
             "Plan upgrades are temporarily unavailable.": "计划升级暂时不可用。",
             "Free responses reset": "免费响应额度将在",
             "Read more.": "了解更多。",
@@ -9031,12 +9033,19 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "You don't have any forks of this repository.": "您没有此仓库的任何复刻。",
                 "Create a new fork": "创建复刻",
 
+                // 复刻浮窗（右侧箭头）
+                "See your forks of this repository": "查看您的复刻",
+
                 // 复刻被锁
                 "Cannot fork because repository is locked.": "无法复刻，因为仓库被锁定。",
 
-                //
+                // 标星
                 "Star this repository": "标星仓库", //小屏模式
                 "Unstar this repository": "取消仓库星标", //小屏模式
+
+                "Add this repository to one or more lists": "添加此仓库到 1 或多个列表",
+
+                "Star lists": "标星列表",
 
             // 仓库主页 分支保护
                 // [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
@@ -9575,6 +9584,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
         // 代码 -> 代码空间
         [/(\d+) changes?/, "$1 个更改"],
         [/(.+) has unpushed changes, are you sure you want to delete\?/, "$1 有未提交更改，您确定要删除吗？"],
+        // 标星
+        [/Star ([^ ]+)/, "标星 $1"],
+        [/Unstar ([^ ]+)/, "取消标星 $1"],
     ],
     "title": {
         "regexp": [
@@ -9718,6 +9730,8 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
                 "Repository": "仓库",
                 "Organization": "组织",
                 "No projects found. Sorry about that.": "很抱歉，未找到任何项目。",
+                "No projects were found": "未找到项目",
+                    "Please try a different search query.": "请尝试不同搜索查询。",
 
             // "Milestones": "里程碑",
                 "Filter by milestone": "按里程碑筛选",
@@ -10048,6 +10062,16 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             "Filter authors": "筛选作者",
             "Filter by assignees": "筛选受理人",
                 "No assignees": "无人受理",
+            
+            // 左侧栏
+            "Assigned to me": "分配给您",
+            "Created by me": "由您创建",
+            "Mentioned": "提及",
+            "Recent activity": "最近活动",
+
+            "Collapse sidebar": "折叠侧边栏",
+            "Expand sidebar": "展开侧边栏",
+
             // 新版内容
                 // 顶部
                     "👋 Want to contribute to": "👋 想做贡献给",
@@ -10121,6 +10145,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                             "Templates and forms": "模板和表单",
                                 // 空白议题
                                     "Create a new issue from scratch": "从头开始创建新议题",
+                                    "Maintainers only": "仅维护者",
                 "Add existing issue": "添加现有议题",
                     "Search issues": "搜索议题",
                         "Group selected": "分组选择",

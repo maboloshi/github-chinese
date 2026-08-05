@@ -62,7 +62,7 @@ Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violent
 Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
-VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Extensions]（扩展的源码仓库已删除）
+VS Code 集成浏览器  |
 
 ## 💻 安装指南
 
@@ -88,7 +88,7 @@ VS Code 集成浏览器  | [Integrated Browser Extensions][Integrated Browser Ex
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
 
-### VS Code 集成浏览器（Integrated Browser Extensions）
+### VS Code 集成浏览器
 
 请参考[扩展的自述文件](vscode-extension/README.md)。
 
@@ -443,5 +443,4 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
-[Integrated Browser Extensions]: https://marketplace.visualstudio.com/items?itemName=boylett.integrated-browser-extensions "Integrated Browser Extensions"
 
