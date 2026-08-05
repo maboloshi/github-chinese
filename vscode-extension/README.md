@@ -85,7 +85,7 @@ npx @vscode/vsce package # 打包插件
 构建完成后，按方案一的第 4-5 步安装生成的 `.vsix` 文件。
 
 > [!NOTE]
-> 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过[源码构建](#从本仓库源码构建)或下载 VSIX 安装。
+> 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过 [源码构建](#方案二从源码构建) 或从 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension) 下载 VSIX 安装。
 
 ## 命令
 
@@ -94,7 +94,7 @@ npx @vscode/vsce package # 打包插件
 
 ## 常见问题
 
-### 为什么打开 GitHub 页面没有汉化
+### 为什么打开 GitHub 页面没有汉化？
 
 请检查以下几点：
 
