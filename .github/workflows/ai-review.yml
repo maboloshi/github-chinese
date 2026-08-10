@@ -43,7 +43,7 @@ jobs:
        github.event.issue.pull_request &&
        contains(github.event.comment.body, '/review'))
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: 解析目标仓库、PR 与 head SHA
         id: ctx
