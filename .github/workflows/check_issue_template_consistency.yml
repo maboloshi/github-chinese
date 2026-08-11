@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+      - uses: actions/checkout@v4
     steps:
       - uses: actions/checkout@v7
 
