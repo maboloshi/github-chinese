@@ -21,7 +21,6 @@ permissions:
 
 jobs:
   check:
-      - uses: actions/checkout@v4
     steps:
       - uses: actions/checkout@v7
 
