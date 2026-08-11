@@ -63,4 +63,7 @@ if [ -n "$mismatched" ]; then
 else
     # 无不一致：生成到工作区（本地方便预览）；生成文件不入库，由 CI 自动生成提交
     $PYTHON script/manage_templates.py
+else
+    # 无不一致：无需生成，保持工作区干净
+    exit 0
 fi
