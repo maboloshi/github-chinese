@@ -27,7 +27,7 @@ $InputEncoding = [System.Text.Encoding]::UTF8
     @{
         Command = "python";
         Args    = @()
-    }
+# 删除从 $python = @( 到 exit $LASTEXITCODE 之前的所有前半部分代码，仅保留后半部分
 ) | Where-Object { Get-Command $_.Command -ErrorAction SilentlyContinue } | Select-Object -First 1 | ForEach-Object {
     if (-not $_) {
         $message = if ([System.Globalization.CultureInfo]::CurrentUICulture.Name.ToLowerInvariant() -match '^(zh-(hk|mo|tw)|zh-hant)') {
