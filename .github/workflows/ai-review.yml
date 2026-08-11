@@ -137,7 +137,8 @@ jobs:
           python script/ai_review.py \
             --repo "${{ steps.ctx.outputs.repo }}" \
             --pr "${{ steps.ctx.outputs.pr }}" \
-            --out review.md
+            --out review.md \
+            --out-comments review_comments.json
 
       - name: 生成 GitHub App 安装令牌（bot 身份）
         id: app-token
@@ -154,16 +155,40 @@ jobs:
         run: |
           printf '\n\n<!--ai-review:%s-->' "${{ steps.ctx.outputs.sha }}" >> review.md
 
-      - name: 发布审查评论（App bot 优先，否则 github-actions[bot]）
+      - name: 发布审查评论（汇总 + 内联建议）
         if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
+          C_REPO: ${{ steps.ctx.outputs.repo }}
+          C_PR: ${{ steps.ctx.outputs.pr }}
+          C_SHA: ${{ steps.ctx.outputs.sha }}
         run: |
           export GH_TOKEN="${APP_TOKEN:-${{ github.token }}}"
           python - <<'PY'
-          import json
-          body = open('review.md', encoding='utf-8').read()
-          open('.comment.json', 'w', encoding='utf-8').write(json.dumps({'body': body}))
+          import json, os, subprocess
+          repo = os.environ["C_REPO"]
+          pr = os.environ["C_PR"]
+          sha = os.environ["C_SHA"]
+
+          # 1) 汇总评论（含去重标记）
+          summary = open('review.md', encoding='utf-8').read()
+          open('.comment.json', 'w', encoding='utf-8').write(json.dumps({'body': summary}))
+          r = subprocess.run(['gh', 'api', f'repos/{repo}/issues/{pr}/comments', '--input', '.comment.json', '--jq', '.html_url'], capture_output=True, text=True)
+          print('汇总评论:', r.stdout.strip() or r.stderr.strip())
+
+          # 2) 内联建议评论（带 Apply suggestion 按钮）
+          try:
+              comments = json.load(open('review_comments.json', encoding='utf-8'))
+          except Exception:
+              comments = []
+          ok = 0
+          for c in comments:
+              payload = {'body': c['body'], 'commit_id': sha, 'path': c['path'], 'line': c['line'], 'side': 'RIGHT'}
+              open('.inline.json', 'w', encoding='utf-8').write(json.dumps(payload))
+              r = subprocess.run(['gh', 'api', f'repos/{repo}/pulls/{pr}/comments', '--input', '.inline.json', '--jq', '.html_url'], capture_output=True, text=True)
+              if r.returncode == 0:
+                  ok += 1
+              else:
+                  print(f"⚠️ 内联建议失败 {c.get('path')}:{c.get('line')} {r.stderr.strip()[:200]}")
+          print(f'内联建议：共 {len(comments)} 条，成功 {ok} 条')
           PY
-          echo "以 bot 身份发布到 ${{ steps.ctx.outputs.repo }}#${{ steps.ctx.outputs.pr }}"
-          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" --input .comment.json --jq '.html_url'

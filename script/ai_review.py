@@ -12,6 +12,7 @@ AI 代码审查（DeepSeek）—— 生成结构化中文审查。需要 Python 
 import argparse
 import json
 import os
+import re
 import sys
 import time
 import urllib.request
@@ -57,12 +58,41 @@ def post_json(url: str, payload: dict, headers: dict, retries: int = 3) -> dict:
     raise RuntimeError(f"DeepSeek 请求失败（重试 {retries} 次后仍失败）：{last_err}")
 
 
+def extract_json(text: str) -> str:
+    """去除可能的 markdown ```json 包裹后返回。"""
+    t = text.strip()
+    if t.startswith("```"):
+        t = re.sub(r"^```(?:json)?\s*", "", t)
+        t = re.sub(r"\s*```$", "", t)
+    return t.strip()
+
+
+def parse_diff_lines(diff_text: str) -> dict[str, set[int]]:
+    """从 PR diff 提取「文件 → 新文件行号集合」（+ 侧、@@ -a,b +c,d @@ 的 c..c+d）。"""
+    valid: dict[str, set[int]] = {}
+    cur: str | None = None
+    for ln in diff_text.splitlines():
+        m = re.match(r"^\+\+\+ b/(.*)$", ln)
+        if m:
+            cur = m.group(1).strip().strip('"')
+            valid.setdefault(cur, set())
+            continue
+        m = re.match(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@", ln)
+        if m and cur is not None:
+            start = int(m.group(1))
+            count = int(m.group(2)) if m.group(2) else 1
+            for i in range(start, start + count):
+                valid[cur].add(i)
+    return valid
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="AI 代码审查（DeepSeek）")
     parser.add_argument("--repo", required=True, help="owner/repo")
     parser.add_argument("--pr", required=True, help="PR 编号")
     parser.add_argument("--mode", choices=["full", "summary"], default="full")
     parser.add_argument("--out", help="输出文件（默认 stdout）")
+    parser.add_argument("--out-comments", help="内联建议 JSON 输出文件（可选）")
     args = parser.parse_args()
 
     api_key = os.environ.get("LLM_API_KEY")
@@ -92,6 +122,7 @@ def main() -> None:
     except Exception as e:  # noqa: BLE001
         print(f"❌ 无法获取 PR diff：{e}", file=sys.stderr)
         sys.exit(1)
+    valid_lines = parse_diff_lines(diff)
     diff_truncated = len(diff) > 60000
     if diff_truncated:
         diff = diff[:60000] + "\n...(diff 过长已截断，以下审查仅基于前 60KB)"
@@ -121,23 +152,30 @@ def main() -> None:
 PR 描述：
 {body}
 
-变更 diff：
+变更 diff（行号为新文件行号，@@ -a,b +c,d @@ 表示新文件第 c 行起共 d 行）：
 ```diff
 {diff}
 ```
 
 {scope}
 
-完整输出请用如下 Markdown 结构：
-## 概览
-一句话结论 + 变更规模/重点。
-## 发现的问题
-按严重度分组（🔴 阻断 / 🟠 重要 / 🟡 建议 / 🔵 nit），每条尽量给出「文件:行号 + 问题 + 修改建议」。
-## 优点
-值得肯定的点。
-## 重写/改进建议（必要时）
-对明显可简化的逻辑给出具体改法；若无需重写则省略本节。
-若 diff 为空或无可审内容，请如实说明。"""
+请**只输出一个 JSON 对象**（不要输出任何其他文字，不要用 ``` 包裹），结构如下：
+{{
+  "summary": "完整的 Markdown 审查报告：## 概览 / ## 发现的问题（按 🔴 阻断 / 🟠 重要 / 🟡 建议 / 🔵 nit 分级，每条尽量给出 文件:行号）/ ## 优点 / ## 重写/改进建议（必要时）。",
+  "comments": [
+    {{
+      "path": "变更文件的路径",
+      "line": 新文件中的行号（整数）,
+      "body": "一句话问题说明 + 修改建议，并附一个 suggestion 代码块：```suggestion\\n<该位置完整替换代码>\\n```"
+    }}
+  ]
+}}
+
+要求：
+- comments 只放入「能给出具体可点击应用的修改建议、且能确定文件路径与行号」的问题；无法确定就返回空数组 []。
+- line 必须是 diff 中新文件（+ 侧）范围内、且确实是该问题所在的行号。
+- body 里的 suggestion 代码块必须是该行/该段位置的完整替换文本（用户会点击 Apply 直接应用）。
+- 若 diff 为空或无可审内容，summary 如实说明，comments 返回 []。"""
 
     # 4) 调用 DeepSeek
     base_url = os.environ.get("LLM_BASE_URL") or "https://api.deepseek.com"
@@ -167,9 +205,42 @@ PR 描述：
         print("❌ DeepSeek 返回空 choices（可能被内容过滤或额度/余额不足）", file=sys.stderr)
         sys.exit(1)
     content = choices[0].get("message", {}).get("content", "")
-    truncated_note = "\n\n> ⚠️ diff 超过 60KB 已截断，本次审查可能不完整。\n" if diff_truncated else ""
+
+    # 5) 解析结构化 JSON → summary + 内联建议（校验行号/路径）
+    summary = content
+    comments: list[dict] = []
+    try:
+        parsed = json.loads(extract_json(content))
+        if isinstance(parsed, dict):
+            summary = parsed.get("summary") or content
+            raw_comments = parsed.get("comments")
+            if isinstance(raw_comments, list):
+                comments = raw_comments
+    except Exception:  # noqa: BLE001 - JSON 解析失败则回退为纯文本汇总
+        pass
+
+    kept: list[dict] = []
+    dropped = 0
+    for c in comments:
+        path = c.get("path", "")
+        line = c.get("line")
+        body = c.get("body", "")
+        if not isinstance(path, str) or not isinstance(line, int) or line < 1 or not isinstance(body, str) or not body:
+            dropped += 1
+            continue
+        if path not in valid_lines or line not in valid_lines.get(path, set()):
+            dropped += 1
+            continue
+        kept.append({"path": path, "line": line, "body": body})
+
+    notes = []
+    if diff_truncated:
+        notes.append("> ⚠️ diff 超过 60KB 已截断，本次审查可能不完整。")
+    if dropped:
+        notes.append(f"> ℹ️ {dropped} 条建议因行号/路径不在 diff 内，未生成内联评论（内容仍见上文）。")
+    note_block = ("\n\n" + "\n".join(notes) + "\n") if notes else ""
     review = (
-        f"## 🤖 AI 审查（DeepSeek）— PR #{args.pr}\n\n{content}{truncated_note}\n"
+        f"## 🤖 AI 审查（DeepSeek）— PR #{args.pr}\n\n{summary}{note_block}\n"
         "---\n*由 `script/ai_review.py` 生成，使用请求者自己的 DeepSeek 额度。*"
     )
     if args.out:
@@ -178,6 +249,10 @@ PR 描述：
         print(f"✅ 审查已写入 {args.out}", file=sys.stderr)
     else:
         print(review)
+    if args.out_comments:
+        with open(args.out_comments, "w", encoding="utf-8") as f:
+            json.dump(kept, f, ensure_ascii=False, indent=2)
+        print(f"✅ 内联建议 {len(kept)} 条（丢弃 {dropped} 条）已写入 {args.out_comments}", file=sys.stderr)
 
 
 if __name__ == "__main__":
