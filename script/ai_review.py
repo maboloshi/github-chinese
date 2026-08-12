@@ -136,27 +136,34 @@ def main() -> None:
             _pitem = _pitem.strip()
             if not _pitem:
                 continue
-            # 从反引号 token 中筛选形似仓库文件路径的（无空格、无 @、非 actions/uses）
+            # 从反引号 token 中筛选形似仓库文件路径的（无空格、无 @、非 actions/uses、非 shebang）
+            # 允许含 / 的路径，或带已知文件扩展名的裸文件名（如 manage_templates.py）
             _ptoks = re.findall(r"`([^`]+)`", _pitem)
             _ppaths = {
                 _t.strip()
                 for _t in _ptoks
                 if _t.strip()
-                and "/" in _t
+                and ("/" in _t or re.search(r"\.(py|md|yml|yaml|js|cmd|ps1|sh|txt|toml|json)$", _t.strip()))
                 and " " not in _t
                 and "@" not in _t
                 and not _t.startswith("$")
                 and not _t.startswith("http")
                 and not _t.startswith("actions/")
                 and not _t.startswith("uses:")
+                and not _t.startswith("#!")
             }
             # 未提到任何文件路径 → 保守保留（无法判定是否已解决）
             if not _ppaths:
                 _pkept.append(_pitem)
                 continue
-            # 提到的所有文件都已被本次 diff 修改 → 视为已解决，跳过
-            if _ppaths.issubset(set(valid_lines.keys())):
-                print(f"ℹ️ 过滤历史问题（文件已变更，视为已解决）：{sorted(_ppaths)}", file=sys.stderr)
+            # 提到的任一文件（或 basename）已在本次 diff 变更 → 视为可能已解决，跳过
+            _changed = set(valid_lines.keys())
+            _changed_base = {_p.split("/")[-1] for _p in _changed}
+            _hit = _ppaths & _changed
+            if not _hit:
+                _hit = {_p for _p in _ppaths if _p.split("/")[-1] in _changed_base}
+            if _hit:
+                print(f"ℹ️ 过滤历史问题（文件已变更，视为已解决）：{sorted(_hit)}", file=sys.stderr)
                 continue
             _pkept.append(_pitem)
         prior_issues = ("\n\n".join(_pkept))[:4000]
