@@ -60,7 +60,10 @@ def _check_node(node: Any, path: str, s2tw: Any, t2s: Any, missing: list[str], i
                        and (converted := converter(text_only)) != text_only \
                        and (diffs := sorted({f"{o}→{n}" for o, n in zip(text_only, converted) if o != n})):
                         kind = "简体" if label == "TW" else "繁体"
-                        impure.append(f"{path}: {label} 含{kind}字 {diffs}")
+                        shown = diffs[:8]
+                        if len(diffs) > 8:
+                            shown.append(f"…等共 {len(diffs)} 处")
+                        impure.append(f"{path}: {label} 含{kind}字 {shown}")
             return
         for key, value in node.items():  # type: ignore[unknown-variable]
             _check_node(value, f"{path}.{key}", s2tw, t2s, missing, impure)

@@ -40,6 +40,22 @@ jobs:
           python script/manage_templates.py --check
           python script/manage_templates.py
 
+      # ── PR：上传生成文件供审查预览（生成文件不入库，PR 中无法直接查看） ──
+      - name: Upload generated docs artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-docs
+          path: |
+            .github/ISSUE_TEMPLATE/
+            CONTRIBUTING.md
+            CONTRIBUTING_zh-TW.md
+            README.md
+            README_zh-TW.md
+            vscode-extension/README.md
+            vscode-extension/README_zh-TW.md
+          if-no-files-found: warn
+
       # ── PR：测试 pre-commit 钩子行为 ──
       - name: Test pre-commit hook
         if: github.event_name == 'pull_request'
