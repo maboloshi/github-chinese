@@ -1,6 +1,9 @@
 name: Update contributors images in README.md
 on:
   workflow_dispatch:
+  # 定时自动检测贡献者头像变更：每周一 03:00 UTC
+  schedule:
+    - cron: '0 3 * * 1'
 
 permissions:
   contents: write
