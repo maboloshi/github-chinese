@@ -86,11 +86,12 @@ def parse_diff_lines(diff_text: str) -> dict[str, set[int]]:
     return valid
 
 
-def fetch_prior_issues(repo: str, pr: str) -> str:
-    """拉取该 PR 上最近一次 AI 审查评论中的「发现的问题」部分，用于增量审查。
+def fetch_prior_issues(repo: str, pr: str, changed_files: set[str]) -> str:
+    """拉取该 PR 上最近一次 AI 审查评论中的「发现的问题」部分，做增量过滤。
 
-    仅提取问题列表（去掉概览/优点等），供下一次审查参考以省略已提过、已解决的内容。
-    拉取失败时静默返回空串（不影响本次审查）。
+    过滤规则：逐条解析历史问题中提到的文件路径；若某条问题提到的所有文件
+    都在本次 diff 中发生变更（changed_files），则该问题大概率已被修复，过滤掉；
+    否则视为「可能仍未解决」，保留供下次审查参考。拉取失败时返回空串。
     """
     headers = {"User-Agent": "github-chinese-ai-review"}
     token = os.environ.get("GH_TOKEN")
@@ -115,7 +116,39 @@ def fetch_prior_issues(repo: str, pr: str) -> str:
     latest = reviews[-1]
     m = re.search(r"## 发现的问题(.*?)(?=\n## |\Z)", latest, re.S)
     section = m.group(1).strip() if m else latest
-    return section[:4000]
+
+    # 按「编号.」切分历史问题条目
+    items = re.split(r"\n\s*(?=\d+\.\s)", section)
+    kept: list[str] = []
+    for item in items:
+        item = item.strip()
+        if not item:
+            continue
+        # 从反引号 token 中筛选形似仓库文件路径的（以常见根开头、无空格、无 @）
+        tokens = re.findall(r"`([^`]+)`", item)
+        paths = {
+            t.strip()
+            for t in tokens
+            if t.strip()
+            and "/" in t
+            and " " not in t
+            and "@" not in t
+            and not t.startswith("$")
+            and not t.startswith("http")
+            and not t.startswith("actions/")
+            and not t.startswith("uses:")
+        }
+        # 未提到任何文件路径 → 保守保留（无法判定是否已解决）
+        if not paths:
+            kept.append(item)
+            continue
+        # 提到的所有文件都已被本次 diff 修改 → 视为已解决，跳过
+        if paths.issubset(changed_files):
+            print(f"ℹ️ 过滤历史问题（文件已变更，视为已解决）：{sorted(paths)}", file=sys.stderr)
+            continue
+        kept.append(item)
+
+    return ("\n\n".join(kept))[:4000]
 
 
 def main() -> None:
@@ -168,10 +201,10 @@ def main() -> None:
     except Exception as e:  # noqa: BLE001
         print(f"⚠️ 无法获取仓库审查规范 .github/copilot-instructions.md：{e}", file=sys.stderr)
 
-    # 2.5) 历史审查问题（增量审查：省略已提过/已解决的内容，保留未解决）
-    prior_issues = fetch_prior_issues(args.repo, args.pr)
+    # 2.5) 历史审查问题（增量过滤：省略已解决/文件已变更的内容，保留未解决）
+    prior_issues = fetch_prior_issues(args.repo, args.pr, set(valid_lines.keys()))
     if prior_issues:
-        print(f"ℹ️ 检测到历史审查问题 {len(prior_issues)} 字符，将做增量审查。", file=sys.stderr)
+        print(f"ℹ️ 检测到历史审查遗留问题 {len(prior_issues)} 字符，将做增量审查。", file=sys.stderr)
 
     # 3) 组装 prompt
     system = (
