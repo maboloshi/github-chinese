@@ -40,7 +40,16 @@ def fetch(url: str, headers: dict | None = None, retries: int = 3) -> str:
 
 
 def main() -> None:
-    args = (p := argparse.ArgumentParser(description="AI 代码审查（DeepSeek）"), p.add_argument("--repo", required=True, help="owner/repo"), p.add_argument("--pr", required=True, help="PR 编号"), p.add_argument("--mode", choices=["full", "summary"], default="full"), p.add_argument("--out", help="输出文件（默认 stdout）"), p.add_argument("--out-comments", help="内联建议 JSON 输出文件（可选）"), p.parse_args())[-1]
+    _parser = argparse.ArgumentParser(description="AI 代码审查（DeepSeek）")
+    for _name, _kw in {
+        "--repo": {"required": True, "help": "owner/repo"},
+        "--pr": {"required": True, "help": "PR 编号"},
+        "--mode": {"choices": ["full", "summary"], "default": "full"},
+        "--out": {"help": "输出文件（默认 stdout）"},
+        "--out-comments": {"help": "内联建议 JSON 输出文件（可选）"},
+    }.items():
+        _parser.add_argument(_name, **_kw)
+    args = _parser.parse_args()
 
     api_key = os.environ.get("LLM_API_KEY")
     if not api_key:
