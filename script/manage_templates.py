@@ -23,8 +23,11 @@ def _tr(text: str) -> str:
     """简体 → 繁体 提示文案（按终端文化设置）；非繁体环境原样返回。"""
     lang = (os.environ.get("LANG") or os.environ.get("LC_ALL") or "").lower()
     if not lang and sys.platform == "win32":
-        import ctypes
-        lang = "zh_hant" if ctypes.windll.kernel32.GetConsoleOutputCP() == 950 else "zh_hans"
+        try:
+            import ctypes
+            lang = "zh_hant" if ctypes.windll.kernel32.GetConsoleOutputCP() == 950 else "zh_hans"
+        except Exception:  # noqa: BLE001 - 获取控制台代码页失败则按简体处理
+            lang = "zh_hans"
     if not lang.replace("-", "_").startswith(("zh_tw", "zh_hk", "zh_mo", "zh_hant")):
         return text
     for s, t in (("通过", "通過"), ("个问题", "個問題"), ("文档", "文檔"),
@@ -42,7 +45,7 @@ def _tr(text: str) -> str:
 def _check_node(node: Any, path: str, s2tw: Any, t2s: Any, missing: list[str], impure: list[str]) -> None:
     """递归检查多语言源文件节点。"""
     if isinstance(node, dict):
-        if "CN" in node and "TW" in node and len(node) == 2:  # type: ignore[arg-type]
+        if "CN" in node and "TW" in node:  # type: ignore[arg-type]
             cn, tw = node["CN"], node["TW"]  # type: ignore[assignment]
             for val, label in (  # type: ignore[assignment]
                 (cn, "CN"),
@@ -79,7 +82,7 @@ def _check_node(node: Any, path: str, s2tw: Any, t2s: Any, missing: list[str], i
 def _resolve(node: Any, lang: str) -> Any:
     """递归解析，提取指定语言的值。"""
     if isinstance(node, dict):
-        if "CN" in node and "TW" in node and len(node) == 2:  # type: ignore[arg-type]
+        if "CN" in node and "TW" in node:  # type: ignore[arg-type]
             return node[lang]  # type: ignore[return-value]
         return {key: _resolve(value, lang) for key, value in node.items()}  # type: ignore[unknown-variable]
     if isinstance(node, list):
@@ -94,7 +97,11 @@ def _generate_requirements(pyproject: Path = Path("pyproject.toml")) -> None:
     except ModuleNotFoundError:
         print(_tr("⚠️ 需要 Python 3.11+ 才能生成 requirements.txt（当前版本过低），已跳过"), file=sys.stderr)
         return
-    deps = tomllib.loads(pyproject.read_text(encoding="utf-8"))["project"]["dependencies"]
+    try:
+        deps = tomllib.loads(pyproject.read_text(encoding="utf-8"))["project"]["dependencies"]
+    except (KeyError, TypeError, tomllib.TOMLDecodeError):  # type: ignore[attr-defined]
+        print(_tr("⚠️ pyproject.toml 缺少 dependencies 或格式错误，已跳过"), file=sys.stderr)
+        return
     out = Path("script") / "requirements.txt"
     out.write_text("".join(f"{d}\n" for d in deps), encoding="utf-8")
     print(f"✅ {pyproject.name} → {out}")
@@ -104,10 +111,12 @@ def _collect_headings(node: Any, depth: int = 0, out: list[tuple[int, str]] | No
     """递归收集文档标题（## 与 ###，排除更深层级）。"""
     if out is None:
         out = []
+    if not isinstance(node, dict):
+        return out
     for key, value in node.items():  # type: ignore[unknown-variable]
         if isinstance(value, dict):
             first = next(iter(value), None)
-            if first == "heading":
+            if first == "heading" and value.get("heading"):
                 level = depth + 2
                 if level <= 3:
                     out.append((level, value["heading"]))

@@ -39,7 +39,8 @@ jobs:
         run: |
           printf '%s' "$HTML_LIST" | python script/update_contributors.py
           python script/manage_templates.py
-          git diff --quiet --exit-code README.md README_zh-TW.md script/multilingual-docs/README.yml || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
+          # 检测源文件 README.yml 是否被更新（生成文件已 gitignore，git diff 检测不到未跟踪文件）
+          git diff --quiet --exit-code script/multilingual-docs/README.yml || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
 
       - name: Commit and push docs
         if: ${{ env.CHANGES_DETECTED == 'true' }}
