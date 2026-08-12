@@ -33,6 +33,8 @@ jobs:
         run: |
           python script/manage_templates.py --requirements
           pip install -r script/requirements.txt
+          # pre-commit 钩子对暂存 .py 文件做类型检查，需 pyright
+          pip install pyright
 
       # ── PR：验证 + 试生成（不提交） ──
       - name: Validate & dry-run

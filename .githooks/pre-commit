@@ -14,9 +14,9 @@ elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
 fi
 
-# ── 1) 类型检查：仅针对本次暂存的 .py 文件 ──
+# ── 1) 类型检查：仅针对本次暂存的 .py 文件（可用 SKIP_TYPECHECK=1 跳过） ──
 STAGED_PY="$(git diff --cached --name-only --diff-filter=ACM -- '*.py')"
-if [ -n "$STAGED_PY" ]; then
+if [ -n "$STAGED_PY" ] && [ -z "${SKIP_TYPECHECK:-}" ]; then
     # 优先用 venv 中已装的 pyright，否则提示安装
     if ! "$PYTHON" -m pyright --version >/dev/null 2>&1; then
         cat <<'HOOKMSG'

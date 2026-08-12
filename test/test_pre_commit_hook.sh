@@ -24,18 +24,23 @@ elif [ -f "$ROOT/.venv/bin/python" ]; then
 fi
 
 # 确保 PATH 中存在 `python`（钩子复制到临时目录后靠 PATH 解析 python）
-# 当用 venv 时，创建一个指向它的 python shim 目录并置于 PATH 首位
+# 当用 venv 时，在临时 shim 目录放一个调用它的 `python` wrapper 脚本并置于 PATH 首位
+# （直接复制 venv 的 python.exe 会破坏 venv 相对路径，如 pyvenv.cfg 定位）
+SHIM_DIR="$(mktemp -d)"
 if [ "$PYTHON" != "python" ]; then
-    _BIN="$(dirname "$PYTHON")"
-    PATH="$_BIN:$PATH"
+    printf '#!/bin/sh\nexec "%s" "$@"\n' "$PYTHON" > "$SHIM_DIR/python"
+    chmod +x "$SHIM_DIR/python"
+    PATH="$SHIM_DIR:$PATH"
 fi
 export PATH
 
 # 非交互环境：钩子检测到不一致时跳过 Y/N 询问，默认视为 N（取消提交）
 export GIT_HOOK_NONINTERACTIVE=1
+# 本测试聚焦多语言一致性，跳过 pyright 类型检查（临时目录无 pyright 且非测试目标）
+export SKIP_TYPECHECK=1
 
 TMP="$(mktemp -d)"
-trap 'rm -rf "$TMP" 2>/dev/null || true' EXIT
+trap 'rm -rf "$TMP" "$SHIM_DIR" 2>/dev/null || true' EXIT
 
 cd "$TMP"
 git init -q
@@ -103,7 +108,24 @@ git add unrelated.txt
 git commit -q -m "unrelated" || fail "场景C：无关改动被阻止"
 echo "✅ 场景C：无关改动直接放行"
 
+# ── 场景 D：暂存含类型错误的 .py → 应被 pyright 阻止（仅当 pyright 可用）──
+if "$PYTHON" -m pyright --version >/dev/null 2>&1; then
+    cat > typo.py <<'PYEOF'
+def bad(x: int) -> str:
+    return x
+PYEOF
+    git add typo.py
+    if { GIT_HOOK_NONINTERACTIVE=1 SKIP_TYPECHECK= git commit -m "type err" 2>&1 || true; } \
+        | grep -q "类型检查未通过"; then
+        git reset -q --hard
+        echo "✅ 场景D：类型错误被 pyright 阻止"
+    else
+        git reset -q --hard
+        fail "场景D：类型错误未被阻止"
+    fi
+else
+    echo "⚠️ 场景D：pyright 不可用，跳过类型检查测试"
+fi
+
 echo ""
 echo "🎉 全部钩子测试通过"
-# 验证 runs-on 修复
-# AI 增量审查功能验证触发
