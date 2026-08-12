@@ -23,13 +23,12 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: ai-review-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr || 'manual' }}
+  group: ai-review-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr }}
   cancel-in-progress: true
 
 jobs:
   review:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     env:
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       GH_TOKEN: ${{ github.token }}
@@ -39,32 +38,12 @@ jobs:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'pull_request' ||
-      (github.event_name == 'schedule' && vars.REVIEW_WATCHLIST != '') ||
+      github.event_name == 'schedule' ||
       (github.event_name == 'issue_comment' &&
        github.event.issue.pull_request &&
-       contains(github.event.comment.body, '/review') &&
-       (github.event.comment.user.login == github.event.issue.user.login ||
-        github.event.comment.user.login == github.repository_owner))
+       contains(github.event.comment.body, '/review'))
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: 校验 workflow_dispatch 输入
-        if: github.event_name == 'workflow_dispatch'
-        env:
-          IN_REPO: ${{ inputs.repo }}
-          IN_PR: ${{ inputs.pr }}
-        run: |
-          case "$IN_REPO" in
-            */*) ;;
-            *) echo "::error::repo 参数格式应为 owner/repo（当前：$IN_REPO）"; exit 1 ;;
-          esac
-          case "$IN_PR" in
-            ''|*[!0-9]*) echo "::error::pr 参数必须为数字（当前：$IN_PR）"; exit 1 ;;
-          esac
+      - uses: actions/checkout@v7
 
       - name: 解析目标仓库、PR 与 head SHA
         id: ctx
@@ -81,11 +60,11 @@ jobs:
           elif [ "${{ github.event_name }}" = "schedule" ]; then
             repo="${TARGET_REPO:-maboloshi/github-chinese}"
             owner="${{ github.repository_owner }}"
-            IFS=',' read -ra WATCH <<< "$WATCHLIST"
-            for p in "${WATCH[@]}"; do
+            for p in ${WATCHLIST//,/ }; do
               [ -z "$p" ] && continue
               hit=$(gh api "repos/$repo/issues/$p/comments" \
-                --jq "[.[] | select(.user.login == \"$owner\") | select(.body | contains(\"/review\"))] | length" 2>/dev/null || echo 0)
+                --jq '[.[] | select(.user.login == $o) | select(.body | contains("/review"))] | length' \
+                --arg o "$owner" 2>/dev/null || echo 0)
               if [ "$hit" != "0" ]; then
                 pr="$p"
                 break
@@ -124,10 +103,6 @@ jobs:
             echo "skip=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: 检查 LLM_API_KEY
-        if: steps.ctx.outputs.pr != '' && env.LLM_API_KEY == ''
-        run: echo "⚠️ 未配置 LLM_API_KEY，本次审查已跳过。请在 Settings → Secrets and variables → Actions 中添加。"
-
       - name: 生成 AI 审查
         if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
         env:
@@ -137,12 +112,11 @@ jobs:
           python script/ai_review.py \
             --repo "${{ steps.ctx.outputs.repo }}" \
             --pr "${{ steps.ctx.outputs.pr }}" \
-            --out review.md \
-            --out-comments review_comments.json
+            --out review.md
 
       - name: 生成 GitHub App 安装令牌（bot 身份）
         id: app-token
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != ''
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != '' && success()
         uses: actions/create-github-app-token@v3
         with:
           client-id: ${{ secrets.APP_ID }}
@@ -151,59 +125,15 @@ jobs:
           repositories: ${{ steps.ctx.outputs.repo_name }}
 
       - name: 组装审查评论文件（追加去重标记）
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
         run: |
           printf '\n\n<!--ai-review:%s-->' "${{ steps.ctx.outputs.sha }}" >> review.md
 
-      - name: 发布审查评论（汇总 + 内联建议）
-        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
+      - name: 发布审查评论（App bot 优先，否则 github-actions[bot]）
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
-          C_REPO: ${{ steps.ctx.outputs.repo }}
-          C_PR: ${{ steps.ctx.outputs.pr }}
-          C_SHA: ${{ steps.ctx.outputs.sha }}
         run: |
           export GH_TOKEN="${APP_TOKEN:-${{ github.token }}}"
-          python - <<'PY'
-          import json, os, subprocess
-          repo = os.environ["C_REPO"]
-          pr = os.environ["C_PR"]
-          sha = os.environ["C_SHA"]
-
-          # 0) 隐藏之前所有 AI 审查评论（汇总 + 内联建议），避免 PR 讨论区堆积
-          def hide_comment(node_id):
-              q = 'mutation { minimizeComment(input: {subjectId: "%s", classifier: OUTDATED}) { minimizedComment { isMinimized } } }' % node_id
-              r = subprocess.run(['gh', 'api', 'graphql', '-f', 'query=' + q], capture_output=True, text=True)
-              return r.returncode == 0
-
-          def find_ai_comments(path):
-              r = subprocess.run(['gh', 'api', path, '--paginate', '--jq', '.[] | select((.body // "") | contains("script/ai_review.py")) | .node_id'], capture_output=True, text=True)
-              return [x.strip() for x in r.stdout.splitlines() if x.strip()]
-
-          old_ids = find_ai_comments(f'repos/{repo}/issues/{pr}/comments') + find_ai_comments(f'repos/{repo}/pulls/{pr}/comments')
-          hidden = sum(1 for nid in old_ids if hide_comment(nid))
-          if old_ids:
-              print(f'隐藏旧 AI 审查评论：{hidden}/{len(old_ids)}')
-
-          # 1) 汇总评论（含去重标记）
-          summary = open('review.md', encoding='utf-8').read()
-          open('.comment.json', 'w', encoding='utf-8').write(json.dumps({'body': summary}))
-          r = subprocess.run(['gh', 'api', f'repos/{repo}/issues/{pr}/comments', '--input', '.comment.json', '--jq', '.html_url'], capture_output=True, text=True)
-          print('汇总评论:', r.stdout.strip() or r.stderr.strip())
-
-          # 2) 内联建议评论（带 Apply suggestion 按钮）
-          try:
-              comments = json.load(open('review_comments.json', encoding='utf-8'))
-          except Exception:
-              comments = []
-          ok = 0
-          for c in comments:
-              payload = {'body': c['body'], 'commit_id': sha, 'path': c['path'], 'line': c['line'], 'side': 'RIGHT'}
-              open('.inline.json', 'w', encoding='utf-8').write(json.dumps(payload))
-              r = subprocess.run(['gh', 'api', f'repos/{repo}/pulls/{pr}/comments', '--input', '.inline.json', '--jq', '.html_url'], capture_output=True, text=True)
-              if r.returncode == 0:
-                  ok += 1
-              else:
-                  print(f"⚠️ 内联建议失败 {c.get('path')}:{c.get('line')} {r.stderr.strip()[:200]}")
-          print(f'内联建议：共 {len(comments)} 条，成功 {ok} 条')
-          PY
+          echo "以 bot 身份发布到 ${{ steps.ctx.outputs.repo }}#${{ steps.ctx.outputs.pr }}"
+          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" -F "body=@review.md" --jq '.html_url'

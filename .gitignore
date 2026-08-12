@@ -25,3 +25,6 @@ main(local).js
 vscode-extension/README.md
 vscode-extension/README_zh-TW.md
 .github/ISSUE_TEMPLATE/bug-*.yml
+
+# logs
+*.log

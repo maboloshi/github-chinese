@@ -1,16 +1,16 @@
 {
   "name": "github-chinese",
   "displayName": "GitHub 中文化",
-  "description": "一键安装 GitHub 中文化脚本到 VS Code 集成浏览器",
-  "version": "1.0.0",
-  "author": "PtJade-Ceramic",
-  "publisher": "PtJade-Ceramic",
+  "description": "通过 VS Code browser API 向集成浏览器注入 GitHub 中文化脚本",
+  "version": "2.0.0",
+  "author": "maboloshi",
+  "publisher": "maboloshi",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/maboloshi/github-chinese"
   },
-  "engines":  {
+  "engines": {
     "vscode": "^1.116.0"
   },
   "categories": [
@@ -23,8 +23,8 @@
     "i18n",
     "github-chinese"
   ],
-  "extensionDependencies": [
-    "boylett.integrated-browser-extensions"
+  "enabledApiProposals": [
+    "browser"
   ],
   "activationEvents": [
     "onStartupFinished"
@@ -39,22 +39,23 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.116.0",
-    "typescript": "^5.5.0"
+    "@vscode/vsce": "3.9.2",
+    "typescript": "^7.0.2"
   },
   "contributes": {
     "commands": [
       {
-        "command": "github-chinese.install",
-        "title": "GitHub 中文化: 安装/更新集成浏览器脚本"
-      },
-      {
-        "command": "github-chinese.uninstall",
-        "title": "GitHub 中文化: 卸载集成浏览器脚本"
+        "command": "github-chinese.refresh",
+        "title": "GitHub 中文化: 刷新集成浏览器注入"
       },
       {
         "command": "github-chinese.status",
-        "title": "GitHub 中文化: 检查脚本状态"
+        "title": "GitHub 中文化: 检查注入状态"
       }
     ]
+  },
+  "allowScripts": {
+    "@vscode/vsce-sign@2.0.9": true,
+    "keytar@7.9.0": true
   }
 }

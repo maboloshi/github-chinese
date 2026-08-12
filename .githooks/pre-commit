@@ -7,10 +7,12 @@ if [ -z "$(git diff --cached --name-only -- "script/multilingual-docs/")" ]; the
     exit 0
 fi
 
-# 优先使用 venv 的 python
+# 优先使用 venv 的 python（Windows 为 .exe，类 Unix 为无扩展名）
 PYTHON="python"
 if [ -f ".venv/Scripts/python" ]; then
     PYTHON=".venv/Scripts/python"
+elif [ -f ".venv/Scripts/python.exe" ]; then
+    PYTHON=".venv/Scripts/python.exe"
 elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
 fi
@@ -34,14 +36,26 @@ for gen in $(find "$GEN_TMP" -type f); do
 done
 
 if [ -n "$mismatched" ]; then
-    echo -e "\n   以下生成文件与源文件不一致（可能被手动修改或未重新生成）："
+    cat <<'HOOKMSG'
+
+   ⚠️ 以下生成文件与源文件不一致（可能被手动修改或未重新生成）：
+HOOKMSG
     for rel in $mismatched; do
         echo "   - $rel"
     done
-    echo ""
-    echo "   请通过源文件修改 script/multilingual-docs/ 下的 YAML，不要直接编辑生成文件；"
-    echo "   也可以选择重新生成到工作区，预览最新效果。"
-    echo -n "   是否重新生成并继续提交？[y/N] "
+    cat <<'HOOKMSG'
+
+   📌 正确做法（源文件驱动，请勿直接编辑生成文件）：
+      1. 修改 script/multilingual-docs/ 下的 YAML 源文件
+      2. 运行以下命令重新生成所有文件：
+         python script/manage_templates.py
+      3. 核对无误后重新提交（生成文件不入库，由 CI 自动生成提交）
+
+   ⚠️ 请勿使用 git commit --no-verify 跳过本钩子：
+      CI 的纯度检查会在推送时拦截不一致，绕过只会让问题更晚暴露、更难定位。
+
+HOOKMSG
+    printf "   是否立即重新生成并继续提交？[y/N] "
     answer=""
     # GIT_HOOK_NONINTERACTIVE：测试/CI 等非交互环境跳过询问，默认视为 N
     if [ -z "${GIT_HOOK_NONINTERACTIVE:-}" ]; then
@@ -58,7 +72,10 @@ if [ -n "$mismatched" ]; then
             $PYTHON script/manage_templates.py
             ;;
         *)
-            echo "   已取消提交。"
+            cat <<'HOOKMSG'
+
+   ❌ 已取消提交。请先运行 `python script/manage_templates.py` 重新生成文件，再重新提交。
+HOOKMSG
             exit 1
             ;;
     esac

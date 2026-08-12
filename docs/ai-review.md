@@ -55,13 +55,13 @@ flowchart LR
 
 ## 安全模型
 
-- **密钥不会主动打印或记录**：DeepSeek key 只存在于请求者自己的 fork secret / 本地，不经日志打印；上游仓库零密钥。（极端情况：若工作流被恶意修改或日志被泄露，仍有暴露风险——已通过最小权限、不打印密钥、Action 版本审计等措施缓解）
+- **任何人看不到明文**：DeepSeek key 只存在于请求者自己的 fork secret / 本地；上游仓库零密钥。
 - **自负额度**：每次审查只用触发者自己的 `LLM_API_KEY`（`secrets.LLM_API_KEY`）。
 - **bot 身份**：审查以 `github-actions[bot]` 或 GitHub App 机器人发布，不占用用户账号。
 - **提示词注入**：密钥绝不进入 prompt；模型输出只作为文本渲染，不执行。
 - **工作流安全**：不使用 `pull_request_target`；第三方 Action 建议钉版本；不打印密钥。
 - **已知限制**：
-  - 上游 `/review` 为**轮询**：fork 实例每 15 分钟扫描一次 `REVIEW_WATCHLIST`，从评论 `/review` 到 bot 回复最长约 15 分钟，非即时。
+  - 上游 `/review` 为**轮询**（约 15 分钟），非即时。
   - fork PR 的 `pull_request` 事件**读不到 secrets** → fork 内 PR 自动审需要把工作流放到 fork 默认分支；上游 PR 的自动审依赖 fork 侧 `push` 反查或轮询。
   - 发布到上游需仓库维护者安装 GitHub App（可随时撤销）。
 

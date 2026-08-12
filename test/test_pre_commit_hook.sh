@@ -10,10 +10,30 @@
 #   C. 无关改动 → 应直接放行
 set -euo pipefail
 
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# 优先使用 venv 的 python（与 .githooks/pre-commit 一致），否则回退 PATH 中的 python
+# 用绝对路径：测试在临时目录运行，相对路径会失效
+PYTHON="python"
+if [ -f "$ROOT/.venv/Scripts/python" ]; then
+    PYTHON="$ROOT/.venv/Scripts/python"
+elif [ -f "$ROOT/.venv/Scripts/python.exe" ]; then
+    PYTHON="$ROOT/.venv/Scripts/python.exe"
+elif [ -f "$ROOT/.venv/bin/python" ]; then
+    PYTHON="$ROOT/.venv/bin/python"
+fi
+
+# 确保 PATH 中存在 `python`（钩子复制到临时目录后靠 PATH 解析 python）
+# 当用 venv 时，创建一个指向它的 python shim 目录并置于 PATH 首位
+if [ "$PYTHON" != "python" ]; then
+    _BIN="$(dirname "$PYTHON")"
+    PATH="$_BIN:$PATH"
+fi
+export PATH
+
 # 非交互环境：钩子检测到不一致时跳过 Y/N 询问，默认视为 N（取消提交）
 export GIT_HOOK_NONINTERACTIVE=1
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP" 2>/dev/null || true' EXIT
 
@@ -33,7 +53,7 @@ cp "$ROOT/script/manage_templates.py" script/manage_templates.py
 cp "$ROOT/script/multilingual-docs/"./* script/multilingual-docs/
 
 # 生成到工作区；baseline 只提交源文件（生成文件被 gitignore，不入库）
-python script/manage_templates.py >/dev/null
+$PYTHON script/manage_templates.py >/dev/null
 git add -A
 git commit -q -m "baseline"
 
@@ -47,8 +67,9 @@ assert_blocked() {
     local output; output="$(git commit -m "source change" 2>&1 || true)"
     [ "$(git rev-parse HEAD)" = "$before" ] || fail "场景A($desc)：不一致未被阻止"
     echo "$output" | grep -q "不一致" || fail "场景A($desc)：未打印不一致提示"
-    echo "$output" | grep -q "请通过源文件修改" || fail "场景A($desc)：未提示通过源文件修改"
-    echo "$output" | grep -q "重新生成" || fail "场景A($desc)：未提示重新生成选项"
+    echo "$output" | grep -q "请勿直接编辑生成文件" || fail "场景A($desc)：未提示通过源文件修改"
+    echo "$output" | grep -q "python script/manage_templates.py" || fail "场景A($desc)：未提示重新生成命令"
+    echo "$output" | grep -q -- "--no-verify" || fail "场景A($desc)：未警告 --no-verify 绕过"
     git reset -q --hard
     echo "✅ 场景A($desc)：被阻止并打印差异"
 }
@@ -56,18 +77,18 @@ assert_blocked() {
 # ── 场景 A：改源文件并同步生成后，再手动修改 README.md → 应阻止 ──
 sed -i 's/CN: 贡献指南/CN: 贡献指南钩子测试/; s/TW: 貢獻指南/TW: 貢獻指南鉤子測試/' \
     script/multilingual-docs/CONTRIBUTING.yml
-python script/manage_templates.py >/dev/null
+$PYTHON script/manage_templates.py >/dev/null
 echo "<!-- manual edit -->" >> README.md
 assert_blocked "手动修改 README.md"
 
 # 恢复：重置源文件改动 + 重新生成（README 回到 baseline 渲染）
 git reset -q --hard
-python script/manage_templates.py >/dev/null
+$PYTHON script/manage_templates.py >/dev/null
 
 # ── 场景 B：改源文件 + 生成同步 → 应提交成功，生成文件不入库 ──
 sed -i 's/CN: 贡献指南/CN: 贡献指南钩子测试/; s/TW: 貢獻指南/TW: 貢獻指南鉤子測試/' \
     script/multilingual-docs/CONTRIBUTING.yml
-python script/manage_templates.py >/dev/null
+$PYTHON script/manage_templates.py >/dev/null
 git add script/multilingual-docs/
 git commit -q -m "source change" || fail "场景B：源文件变更被阻止"
 git show --stat HEAD | grep -q "CONTRIBUTING.md" && fail "场景B：生成文件不应入库"
