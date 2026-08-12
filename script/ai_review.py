@@ -17,9 +17,10 @@ import sys
 import time
 import urllib.request
 import urllib.error
+from typing import Any, cast
 
 
-def fetch(url: str, headers: dict | None = None, retries: int = 3) -> str:
+def fetch(url: str, headers: dict[str, str] | None = None, retries: int = 3) -> str:
     """拉取 URL；对 5xx / 网络错误做指数退避重试。"""
     req = urllib.request.Request(
         url, headers=headers or {"User-Agent": "github-chinese-ai-review"}
@@ -41,13 +42,14 @@ def fetch(url: str, headers: dict | None = None, retries: int = 3) -> str:
 
 def main() -> None:
     _parser = argparse.ArgumentParser(description="AI 代码审查（DeepSeek）")
-    for _name, _kw in {
+    _arg_opts: dict[str, dict[str, Any]] = {
         "--repo": {"required": True, "help": "owner/repo"},
         "--pr": {"required": True, "help": "PR 编号"},
         "--mode": {"choices": ["full", "summary"], "default": "full"},
         "--out": {"help": "输出文件（默认 stdout）"},
         "--out-comments": {"help": "内联建议 JSON 输出文件（可选）"},
-    }.items():
+    }
+    for _name, _kw in _arg_opts.items():
         _parser.add_argument(_name, **_kw)
     args = _parser.parse_args()
 
@@ -58,7 +60,7 @@ def main() -> None:
 
     # 1) PR 元数据 + diff
     try:
-        pr_meta = json.loads(fetch(f"https://api.github.com/repos/{args.repo}/pulls/{args.pr}"))
+        pr_meta: dict[str, Any] = json.loads(fetch(f"https://api.github.com/repos/{args.repo}/pulls/{args.pr}"))
     except urllib.error.HTTPError as e:
         hint = "（PR 不存在？）" if e.code == 404 else ("（可能被 API 限流，请稍后重试）" if e.code == 403 else "")
         print(f"❌ 无法获取 PR 信息：HTTP {e.code} {hint}", file=sys.stderr)
@@ -85,7 +87,8 @@ def main() -> None:
         _m = re.match(r"^\+\+\+ b/(.*)$", _ln)
         if _m:
             _cur = _m.group(1).strip().strip('"')
-            valid_lines.setdefault(_cur, set())
+            if _cur:
+                valid_lines.setdefault(_cur, set())
             continue
         _m = re.match(r"^@@ -\d+(?:,\d+)? \+(\d+)(?:,(\d+))? @@", _ln)
         if _m and _cur is not None:
@@ -113,13 +116,14 @@ def main() -> None:
     if _pt:
         _ph["Authorization"] = f"Bearer {_pt}"
     try:
-        _pcom = json.loads(fetch(f"https://api.github.com/repos/{args.repo}/issues/{args.pr}/comments?per_page=100", headers=_ph))
+        _pcom: list[dict[str, Any]] = json.loads(fetch(f"https://api.github.com/repos/{args.repo}/issues/{args.pr}/comments?per_page=100", headers=_ph))
     except Exception:  # noqa: BLE001 - 历史审查拉取失败不影响本次审查
         _pcom = []
-    _prev = [
-        _c.get("body", "")
+    _prev: list[str] = [
+        _body
         for _c in _pcom
-        if isinstance(_c, dict) and ("script/ai_review.py" in _c.get("body", "") or "ai-review:" in _c.get("body", ""))
+        for _body in [_c.get("body", "")]
+        if ("script/ai_review.py" in _body or "ai-review:" in _body)
     ]
     if _prev:
         _plat = _prev[-1]
@@ -216,7 +220,7 @@ PR 描述：
     # 4) 调用 DeepSeek
     base_url = os.environ.get("LLM_BASE_URL") or "https://api.deepseek.com"
     model = os.environ.get("LLM_MODEL") or "deepseek-chat"
-    payload = {
+    payload: dict[str, Any] = {
         "model": model,
         "messages": [
             {"role": "system", "content": system},
@@ -229,6 +233,7 @@ PR 描述：
     try:
         _data = json.dumps(payload).encode("utf-8")
         _last_err = ""
+        resp: dict[str, Any] = {}
         for _attempt in range(3):
             try:
                 _req = urllib.request.Request(f"{base_url}/chat/completions", data=_data, headers=headers)
@@ -252,30 +257,29 @@ PR 描述：
         print(f"❌ DeepSeek 调用失败：{e}", file=sys.stderr)
         sys.exit(1)
 
-    choices = resp.get("choices") or []
-    if not choices:
+    _choices = cast("list[dict[str, Any]]", resp.get("choices") or [])
+    if not _choices:
         print("❌ DeepSeek 返回空 choices（可能被内容过滤或额度/余额不足）", file=sys.stderr)
         sys.exit(1)
-    content = choices[0].get("message", {}).get("content", "")
+    content: str = str(_choices[0].get("message", {}).get("content", "") or "")
 
     # 5) 解析结构化 JSON → summary + 内联建议（校验行号/路径）
     summary = content
-    comments: list[dict] = []
+    comments: list[dict[str, Any]] = []
     try:
         _t = content.strip()
         if _t.startswith("```"):
             _t = re.sub(r"^```(?:json)?\s*", "", _t)
             _t = re.sub(r"\s*```$", "", _t)
-        parsed = json.loads(_t.strip())
-        if isinstance(parsed, dict):
-            summary = parsed.get("summary") or content
-            raw_comments = parsed.get("comments")
-            if isinstance(raw_comments, list):
-                comments = raw_comments
+        parsed = cast("dict[str, Any]", json.loads(_t.strip()))
+        summary = parsed.get("summary") or content
+        raw_comments = parsed.get("comments")
+        if isinstance(raw_comments, list):
+            comments = cast("list[dict[str, Any]]", raw_comments)
     except Exception:  # noqa: BLE001 - JSON 解析失败则回退为纯文本汇总
         pass
 
-    kept: list[dict] = []
+    kept: list[dict[str, Any]] = []
     dropped = 0
     for c in comments:
         path = c.get("path", "")
@@ -289,7 +293,7 @@ PR 描述：
             continue
         kept.append({"path": path, "line": line, "body": body})
 
-    notes = []
+    notes: list[str] = []
     if diff_truncated:
         notes.append("> ⚠️ diff 超过 60KB 已截断，本次审查可能不完整。")
     if dropped:
