@@ -1,0 +1,225 @@
+# VS Code 扩展自述 —— 唯一维护来源
+# 由 manage_templates.py 校验并生成 CN/TW 扩展自述。
+# TW 为 opencc s2tw 自动转换草案，供人工校对。
+
+top_align_begin: <div align="center"><a name="vscode-extension-readme-top"></a>
+title:
+  CN: GitHub 中文化 (VS Code 扩展)
+  TW: GitHub 中文化 (VS Code 擴展)
+slogan:
+  CN: 一键安装 GitHub 扩展，实现 VS Code 集成浏览器中 GitHub 网页的中文化。
+  TW: 一鍵安裝 GitHub 擴展，實現 VS Code 集成瀏覽器中 GitHub 網頁的中文化。
+lang_links:
+  CN: '**简体中文** · [繁體中文](./README_zh-TW.md)'
+  TW: '[简体中文](./README.md) · **繁體中文**'
+badge: '<!-- SHIELD GROUP -->
+
+
+  [![license GPL-3.0](https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&label=License)](https://opensource.org/licenses/GPL-3.0)
+
+  '
+top_align_end: </div>
+how_it_works:
+  heading:
+    CN: 工作原理
+    TW: 工作原理
+  text:
+    CN: '- 扩展启用 VS Code 的 proposed `browser` API（`vscode.window.browserTabs` + `startCDPSession()`）
+
+      - 在扩展宿主侧从[南大镜像](https://mirror.nju.edu.cn/github-chinese/)拉取词库 `locals.js` 与主脚本 `main.user.js`，规避页面 CORS 限制
+
+      - 通过 CDP `Page.addScriptToEvaluateOnNewDocument` 直接注入源码（非 eval），绕过 github.com 的 CSP 限制（IBE 因使用 `new Function` 被 CSP 拦截）
+
+      - 注入内容内置 GM_* 兼容层与 document-end 语义（等 `DOMContentLoaded` 后执行）'
+    TW: '- 擴展啟用 VS Code 的 proposed `browser` API（`vscode.window.browserTabs` + `startCDPSession()`）
+
+      - 在擴展宿主側從[南大鏡像](https://mirror.nju.edu.cn/github-chinese/)拉取詞庫 `locals.js` 與主腳本 `main.user.js`，規避頁面 CORS 限制
+
+      - 通過 CDP `Page.addScriptToEvaluateOnNewDocument` 直接注入源碼（非 eval），繞過 github.com 的 CSP 限制（IBE 因使用 `new Function` 被 CSP 攔截）
+
+      - 注入內容內置 GM_* 兼容層與 document-end 語義（等 `DOMContentLoaded` 後執行）'
+prereq:
+  heading:
+    CN: 先决条件
+    TW: 先決條件
+  add_launch_args:
+    heading:
+      CN: 添加启动参数
+      TW: 添加啟動參數
+    text:
+      CN: "VS Code 必须带 `--enable-proposed-api maboloshi.github-chinese` 参数启动，否则无法使用 browser API。\n\n<details>\n<summary>带参数启动 VS Code 的方式</summary>\n\n- 打开[运行对话框](https://learn.microsoft.com/windows/advanced-settings/modern-run)，输入：\n\n  ```cmd\n  \"%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe\" --enable-proposed-api maboloshi.github-chinese\n  ```\n\n- 或修改[“开始”菜单](https://www.microsoft.com/zh-cn/windows/tips/start-menu)的 VS Code 快捷方式，在 `目标` 字段末尾追加 [COMMAND_LINE_ARGUMENTS](https://learn.microsoft.com/openspecs/windows_protocols/ms-shllink/17b69472-0f34-4bcf-b290-eccdb8de224b)：\n\n  ```cmd\n   --enable-proposed-api maboloshi.github-chinese\n  ```\n\n  然后从“开始”菜单启动\n\n</details>"
+      TW: "VS Code 必須帶 `--enable-proposed-api maboloshi.github-chinese` 參數啟動，否則無法使用 browser API。\n\n<details>\n<summary>帶參數啟動 VS Code 的方式</summary>\n\n- 打開[運行對話框](https://learn.microsoft.com/windows/advanced-settings/modern-run)，輸入：\n\n  ```cmd\n  \"%LOCALAPPDATA%\\Programs\\Microsoft VS Code\\Code.exe\" --enable-proposed-api maboloshi.github-chinese\n  ```\n\n- 或修改[“開始”菜單](https://www.microsoft.com/zh-cn/windows/tips/start-menu)的 VS Code 快捷方式，在 `目標` 字段末尾追加 [COMMAND_LINE_ARGUMENTS](https://learn.microsoft.com/openspecs/windows_protocols/ms-shllink/17b69472-0f34-4bcf-b290-eccdb8de224b)：\n\n  ```cmd\n   --enable-proposed-api maboloshi.github-chinese\n  ```\n\n  然後從“開始”菜單啟動\n\n</details>"
+install:
+  heading:
+    CN: 安装方式
+    TW: 安裝方式
+  plan1:
+    heading:
+      CN: 方案一：从 GitHub Actions 下载（推荐）
+      TW: 方案一：從 GitHub Actions 下載（推薦）
+    text:
+      CN: '> 该方案需要登录 GitHub 账号，若你没有账号，请使用[方案二](#方案二从源码构建)
+
+
+        1. 打开本仓库的 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension.yml) 页面
+
+        2. 选择最近一次成功运行的 workflow
+
+        3. 滚动到页面底部，在 **Artifacts** 区域下载 `github-chinese-extension.vsix`
+
+        4. 在 VS Code 中按 `Ctrl+Shift+P` 打开命令面板
+
+        5. 输入 `Extensions: Install from VSIX...` 并选择刚下载的 `.vsix` 文件
+
+        6. 安装完成后，在 VS Code 集成浏览器中刷新 GitHub 页面即可生效'
+      TW: '> 該方案需要登錄 GitHub 賬號，若你沒有賬號，請使用[方案二](#方案二從源碼構建)
+
+
+        1. 打開本倉庫的 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension.yml) 頁面
+
+        2. 選擇最近一次成功運行的 workflow
+
+        3. 滾動到頁面底部，在 **Artifacts** 區域下載 `github-chinese-extension.vsix`
+
+        4. 在 VS Code 中按 `Ctrl+Shift+P` 打開命令面板
+
+        5. 輸入 `Extensions: Install from VSIX...` 並選擇剛下載的 `.vsix` 文件
+
+        6. 安裝完成後，在 VS Code 集成瀏覽器中刷新 GitHub 頁面即可生效'
+  plan2:
+    heading:
+      CN: 方案二：从源码构建
+      TW: 方案二：從源碼構建
+    env_require:
+      heading:
+        CN: 环境要求
+        TW: 環境要求
+      text:
+        CN: '- [Git](https://git-scm.cn/install)（可选，用于克隆仓库；若不打算安装 Git，请自行将仓库下载至本地）
+
+          - [NodeJS](https://nodejs.org)'
+        TW: '- [Git](https://git-scm.cn/install)（可選，用於克隆倉庫；若不打算安裝 Git，請自行將倉庫下載至本地）
+
+          - [NodeJS](https://nodejs.org)'
+    build_steps:
+      heading:
+        CN: 构建步骤
+        TW: 構建步驟
+      text:
+        CN: '在 PowerShell 中执行以下代码：
+
+
+          ```shell
+
+          git clone https://github.com/maboloshi/github-chinese.git # 克隆仓库
+
+
+          # 若你的网络环境无法访问 GitHub 克隆仓库，请自行寻找加速器等解决
+
+          cd github-chinese/vscode-extension # 进入插件目录
+
+
+          npm install # 安装依赖
+
+
+          # 若你的网络环境缓慢，请使用这行命令：
+
+
+          # npm install --registry=https://registry.npmmirror.com
+
+
+          npx @vscode/vsce package # 打包插件
+
+          ```
+
+
+          构建完成后，按方案一的第 4-5 步安装生成的 `.vsix` 文件。
+
+
+          > [!NOTE]
+
+          > 本扩展尚未上架 [VS Code 市场](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通过[源码构建](#方案二从源码构建)或从 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension.yml) 下载 VSIX 安装。'
+        TW: '在 PowerShell 中執行以下代碼：
+
+
+          ```shell
+
+          git clone https://github.com/maboloshi/github-chinese.git # 克隆倉庫
+
+
+          # 若你的網絡環境無法訪問 GitHub 克隆倉庫，請自行尋找加速器等解決
+
+          cd github-chinese/vscode-extension # 進入插件目錄
+
+
+          npm install # 安裝依賴
+
+
+          # 若你的網絡環境緩慢，請使用這行命令：
+
+
+          # npm install --registry=https://registry.npmmirror.com
+
+
+          npx @vscode/vsce package # 打包插件
+
+          ```
+
+
+          構建完成後，按方案一的第 4-5 步安裝生成的 `.vsix` 文件。
+
+
+          > [!NOTE]
+
+          > 本擴展尚未上架 [VS Code 市場](https://code.visualstudio.com/docs/configure/extensions/extension-marketplace#_find-and-install-an-extension)，需通過[源碼構建](#方案二從源碼構建)或從 [Actions](https://github.com/maboloshi/github-chinese/actions/workflows/build-vscode-extension.yml) 下載 VSIX 安裝。'
+commands:
+  heading:
+    CN: 命令
+    TW: 命令
+  text:
+    CN: '- `GitHub 中文化: 检查注入状态` — 查看 browser API 可用性、注入标签数与词库加载状态
+
+      - `GitHub 中文化: 刷新集成浏览器注入` — 重新拉取词库/主脚本并重新注入所有已打开的集成浏览器标签'
+    TW: '- `GitHub 中文化: 檢查注入狀態` — 查看 browser API 可用性、注入標籤數與詞庫加載狀態
+
+      - `GitHub 中文化: 刷新集成瀏覽器注入` — 重新拉取詞庫/主腳本並重新注入所有已打開的集成瀏覽器標籤'
+faq:
+  heading:
+    CN: 常见问题
+    TW: 常見問題
+  why_not_translate:
+    heading:
+      CN: 为什么打开 GitHub 页面没有汉化？
+      TW: 為什麼打開 GitHub 頁面沒有漢化？
+    text:
+      CN: '请检查以下几点：
+
+
+        1. **确认已安装依赖扩展**：Integrated Browser Extensions 必须已安装并启用
+
+        2. **确认启动参数正确**：VS Code 必须带 `--enable-proposed-api boylett.integrated-browser-extensions` 参数启动
+
+        3. **确认扩展已启用**：在扩展面板中确认 `GitHub 中文化` 扩展已启用
+
+        4. **刷新页面**：在 VS Code 的集成浏览器中按 `Ctrl+R` 或 `F5` 刷新页面
+
+        5. **重启 VS Code**：尝试完全退出并重新启动 VS Code'
+      TW: '請檢查以下幾點：
+
+
+        1. **確認已安裝依賴擴展**：Integrated Browser Extensions 必須已安裝並啟用
+
+        2. **確認啟動參數正確**：VS Code 必須帶 `--enable-proposed-api boylett.integrated-browser-extensions` 參數啟動
+
+        3. **確認擴展已啟用**：在擴展面板中確認 `GitHub 中文化` 擴展已啟用
+
+        4. **刷新頁面**：在 VS Code 的集成瀏覽器中按 `Ctrl+R` 或 `F5` 刷新頁面
+
+        5. **重啟 VS Code**：嘗試完全退出並重新啟動 VS Code'
+debug:
+  heading:
+    CN: 调试
+    TW: 調試
+  text:
+    CN: '[打开扩展开发宿主窗口](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)。'
+    TW: '[打開擴展開發宿主窗口](https://code.visualstudio.com/api/get-started/your-first-extension#debugging-the-extension)。'

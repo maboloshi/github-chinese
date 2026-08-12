@@ -1,0 +1,131 @@
+#!/usr/bin/env bash
+# 测试 .githooks/pre-commit 钩子行为（模型 B：生成文件不入库，由 CI 自动生成）
+#
+# 用法：bash test/test_pre_commit_hook.sh
+# 前置条件：`python` 可执行且已安装依赖（pyyaml、Jinja2、opencc-python-reimplemented）
+#
+# 场景：
+#   A. 工作区生成文件与源文件渲染不一致（手动修改）→ 应阻止提交并打印差异
+#   B. 修改源文件且工作区生成文件已同步 → 应提交成功；生成文件不入库
+#   C. 无关改动 → 应直接放行
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+# 优先使用 venv 的 python（与 .githooks/pre-commit 一致），否则回退 PATH 中的 python
+# 用绝对路径：测试在临时目录运行，相对路径会失效
+PYTHON="python"
+if [ -f "$ROOT/.venv/Scripts/python" ]; then
+    PYTHON="$ROOT/.venv/Scripts/python"
+elif [ -f "$ROOT/.venv/Scripts/python.exe" ]; then
+    PYTHON="$ROOT/.venv/Scripts/python.exe"
+elif [ -f "$ROOT/.venv/bin/python" ]; then
+    PYTHON="$ROOT/.venv/bin/python"
+fi
+
+# 确保 PATH 中存在 `python`（钩子复制到临时目录后靠 PATH 解析 python）
+# 当用 venv 时，在临时 shim 目录放一个调用它的 `python` wrapper 脚本并置于 PATH 首位
+# （直接复制 venv 的 python.exe 会破坏 venv 相对路径，如 pyvenv.cfg 定位）
+SHIM_DIR="$(mktemp -d)"
+if [ "$PYTHON" != "python" ]; then
+    printf '#!/bin/sh\nexec "%s" "$@"\n' "$PYTHON" > "$SHIM_DIR/python"
+    chmod +x "$SHIM_DIR/python"
+    PATH="$SHIM_DIR:$PATH"
+fi
+export PATH
+
+# 非交互环境：钩子检测到不一致时跳过 Y/N 询问，默认视为 N（取消提交）
+export GIT_HOOK_NONINTERACTIVE=1
+# 本测试聚焦多语言一致性，跳过 pyright 类型检查（临时目录无 pyright 且非测试目标）
+export SKIP_TYPECHECK=1
+
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP" "$SHIM_DIR" 2>/dev/null || true' EXIT
+
+cd "$TMP"
+git init -q
+git config user.name "test"
+git config user.email "test@example.com"
+git config core.hooksPath ".githooks"
+
+# 复制钩子、源文件与 .gitignore（生成文件不入库）
+mkdir -p .githooks script/multilingual-docs .github/ISSUE_TEMPLATE vscode-extension
+cp "$ROOT/.githooks/pre-commit" .githooks/pre-commit
+chmod +x .githooks/pre-commit
+cp "$ROOT/.gitignore" .gitignore
+cp "$ROOT/pyproject.toml" pyproject.toml
+cp "$ROOT/script/manage_templates.py" script/manage_templates.py
+cp "$ROOT/script/multilingual-docs/"./* script/multilingual-docs/
+
+# 生成到工作区；baseline 只提交源文件（生成文件被 gitignore，不入库）
+$PYTHON script/manage_templates.py >/dev/null
+git add -A
+git commit -q -m "baseline"
+
+fail() { echo "❌ FAIL: $1"; exit 1; }
+
+# ── 断言：改源文件提交，若工作区生成文件与源文件渲染不一致 → 应阻止并打印差异 ──
+assert_blocked() {
+    local desc="$1"
+    git add script/multilingual-docs/
+    local before; before="$(git rev-parse HEAD)"
+    local output; output="$(git commit -m "source change" 2>&1 || true)"
+    [ "$(git rev-parse HEAD)" = "$before" ] || fail "场景A($desc)：不一致未被阻止"
+    echo "$output" | grep -q "不一致" || fail "场景A($desc)：未打印不一致提示"
+    echo "$output" | grep -q "请勿直接编辑生成文件" || fail "场景A($desc)：未提示通过源文件修改"
+    echo "$output" | grep -q "python script/manage_templates.py" || fail "场景A($desc)：未提示重新生成命令"
+    echo "$output" | grep -q -- "--no-verify" || fail "场景A($desc)：未警告 --no-verify 绕过"
+    git reset -q --hard
+    echo "✅ 场景A($desc)：被阻止并打印差异"
+}
+
+# ── 场景 A：改源文件并同步生成后，再手动修改 README.md → 应阻止 ──
+sed -i 's/CN: 贡献指南/CN: 贡献指南钩子测试/; s/TW: 貢獻指南/TW: 貢獻指南鉤子測試/' \
+    script/multilingual-docs/CONTRIBUTING.yml
+$PYTHON script/manage_templates.py >/dev/null
+echo "<!-- manual edit -->" >> README.md
+assert_blocked "手动修改 README.md"
+
+# 恢复：重置源文件改动 + 重新生成（README 回到 baseline 渲染）
+git reset -q --hard
+$PYTHON script/manage_templates.py >/dev/null
+
+# ── 场景 B：改源文件 + 生成同步 → 应提交成功，生成文件不入库 ──
+sed -i 's/CN: 贡献指南/CN: 贡献指南钩子测试/; s/TW: 貢獻指南/TW: 貢獻指南鉤子測試/' \
+    script/multilingual-docs/CONTRIBUTING.yml
+$PYTHON script/manage_templates.py >/dev/null
+git add script/multilingual-docs/
+git commit -q -m "source change" || fail "场景B：源文件变更被阻止"
+git show --stat HEAD | grep -q "CONTRIBUTING.md" && fail "场景B：生成文件不应入库"
+git show --stat HEAD | grep -q "README.md" && fail "场景B：生成文件不应入库"
+git show --stat HEAD | grep -q "CONTRIBUTING.yml" || fail "场景B：源文件未提交"
+[ -z "$(git status --short)" ] || fail "场景B：提交后工作区不干净"
+echo "✅ 场景B：源文件提交成功，生成文件不入库"
+
+# ── 场景 C：无关改动 → 应直接放行 ──
+echo "unrelated" > unrelated.txt
+git add unrelated.txt
+git commit -q -m "unrelated" || fail "场景C：无关改动被阻止"
+echo "✅ 场景C：无关改动直接放行"
+
+# ── 场景 D：暂存含类型错误的 .py → 应被 pyright 阻止（仅当 pyright 可用）──
+if "$PYTHON" -m pyright --version >/dev/null 2>&1; then
+    cat > typo.py <<'PYEOF'
+def bad(x: int) -> str:
+    return x
+PYEOF
+    git add typo.py
+    if { GIT_HOOK_NONINTERACTIVE=1 SKIP_TYPECHECK= git commit -m "type err" 2>&1 || true; } \
+        | grep -q "类型检查未通过"; then
+        git reset -q --hard
+        echo "✅ 场景D：类型错误被 pyright 阻止"
+    else
+        git reset -q --hard
+        fail "场景D：类型错误未被阻止"
+    fi
+else
+    echo "⚠️ 场景D：pyright 不可用，跳过类型检查测试"
+fi
+
+echo ""
+echo "🎉 全部钩子测试通过"

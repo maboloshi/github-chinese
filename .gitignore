@@ -14,5 +14,17 @@ main(local).js
 # VS Code extension package
 *.vsix
 
+# Python
+.venv/
+
+# 多语言生成文件（由 CI 自动生成并提交，不入库）
+/CONTRIBUTING.md
+/CONTRIBUTING_zh-TW.md
+/README.md
+/README_zh-TW.md
+vscode-extension/README.md
+vscode-extension/README_zh-TW.md
+.github/ISSUE_TEMPLATE/bug-*.yml
+
 # logs
 *.log

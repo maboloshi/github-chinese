@@ -1,0 +1,24 @@
+{# 通用递归渲染模板：结构与层级完全由 YAML 数据（键顺序 + heading 嵌套）推断，
+   模板本身不硬编码任何块名/顺序/层级。多语言文档（README / CONTRIBUTING / vscode 扩展自述）共用此模板。#}
+{%- macro render(node, depth=0) -%}
+{%- set ns = namespace(lines=[]) -%}
+{%- for key, value in node.items() -%}
+{%- if value is mapping and (value.keys() | list | first) == 'heading' -%}
+{%- set _ = ns.lines.append('#' * (depth + 2) + ' ' + value['heading']) -%}
+{%- set _ = ns.lines.append('') -%}
+{%- set body = namespace(d={}) -%}
+{%- for k2, v2 in value.items() -%}
+{%- if k2 != 'heading' -%}{%- set _ = body.d.update({k2: v2}) -%}{%- endif -%}
+{%- endfor -%}
+{%- if body.d -%}
+{%- set _ = ns.lines.append(render(body.d, depth + 1) | trim) -%}
+{%- set _ = ns.lines.append('') -%}
+{%- endif -%}
+{%- elif value is string -%}
+{%- set _ = ns.lines.append(('# ' + value) if key == 'title' else value) -%}
+{%- set _ = ns.lines.append('') -%}
+{%- endif -%}
+{%- endfor -%}
+{{ ns.lines | join('\n') -}}
+{%- endmacro %}
+{{- render(resolved) -}}

@@ -1,0 +1,111 @@
+#!/bin/sh
+# pre-commit hook：
+#   1) 对暂存的 Python 文件运行类型检查（pyright），有任何错误即阻止提交
+#   2) 验证多语言源文件，检测手动修改生成文件（模型 B：生成文件不入库）
+set -e
+
+# 优先使用 venv 的 python（Windows 为 .exe，类 Unix 为无扩展名）
+PYTHON="python"
+if [ -f ".venv/Scripts/python" ]; then
+    PYTHON=".venv/Scripts/python"
+elif [ -f ".venv/Scripts/python.exe" ]; then
+    PYTHON=".venv/Scripts/python.exe"
+elif [ -f ".venv/bin/python" ]; then
+    PYTHON=".venv/bin/python"
+fi
+
+# ── 1) 类型检查：仅针对本次暂存的 .py 文件（可用 SKIP_TYPECHECK=1 跳过） ──
+STAGED_PY="$(git diff --cached --name-only --diff-filter=ACM -- '*.py')"
+if [ -n "$STAGED_PY" ] && [ -z "${SKIP_TYPECHECK:-}" ]; then
+    # 优先用 venv 中已装的 pyright，否则提示安装
+    if ! "$PYTHON" -m pyright --version >/dev/null 2>&1; then
+        cat <<'HOOKMSG'
+
+   ⚠️ 暂存了 Python 文件，但未安装 pyright（类型检查器）。
+     请先安装后重新提交：
+         pip install pyright
+HOOKMSG
+        exit 1
+    fi
+    echo "🔍 类型检查：$(echo "$STAGED_PY" | tr '\n' ' ')"
+    if ! "$PYTHON" -m pyright $STAGED_PY; then
+        cat <<'HOOKMSG'
+
+   ❌ 类型检查未通过，已阻止提交。请修复上述类型错误后重新提交。
+     可运行 `python -m pyright <file>` 单独复查。
+HOOKMSG
+        exit 1
+    fi
+fi
+
+# ── 2) 多语言源文件验证与生成文件一致性 ──
+if [ -z "$(git diff --cached --name-only -- "script/multilingual-docs/")" ]; then
+    exit 0
+fi
+
+echo "📋 检测到多语言源文件变更..."
+$PYTHON script/manage_templates.py --check
+
+# ── 生成到临时目录（期望结果），与工作区比对：收集不一致的生成文件 ──
+# 用项目内相对临时目录（跨平台，避免 Windows 绝对路径在 WSL/MSYS 下的转换差异）
+GEN_TMP=".gen_tmp_$$"
+rm -rf "$GEN_TMP"
+trap 'rm -rf "$GEN_TMP" 2>/dev/null || true' EXIT
+$PYTHON script/manage_templates.py script/multilingual-docs/ "$GEN_TMP/.github/ISSUE_TEMPLATE/" --doc-dir "$GEN_TMP" >/dev/null
+
+mismatched=""
+for gen in $(find "$GEN_TMP" -type f); do
+    rel="${gen#"$GEN_TMP"/}"
+    if [ -f "$rel" ] && ! diff -q "$gen" "$rel" >/dev/null 2>&1; then
+        mismatched="$mismatched $rel"
+    fi
+done
+
+if [ -n "$mismatched" ]; then
+    cat <<'HOOKMSG'
+
+   ⚠️ 以下生成文件与源文件不一致（可能被手动修改或未重新生成）：
+HOOKMSG
+    for rel in $mismatched; do
+        echo "   - $rel"
+    done
+    cat <<'HOOKMSG'
+
+   📌 正确做法（源文件驱动，请勿直接编辑生成文件）：
+      1. 修改 script/multilingual-docs/ 下的 YAML 源文件
+      2. 运行以下命令重新生成所有文件：
+         python script/manage_templates.py
+      3. 核对无误后重新提交（生成文件不入库，由 CI 自动生成提交）
+
+   ⚠️ 请勿使用 git commit --no-verify 跳过本钩子：
+      CI 的纯度检查会在推送时拦截不一致，绕过只会让问题更晚暴露、更难定位。
+
+HOOKMSG
+    printf "   是否立即重新生成并继续提交？[y/N] "
+    answer=""
+    # GIT_HOOK_NONINTERACTIVE：测试/CI 等非交互环境跳过询问，默认视为 N
+    if [ -z "${GIT_HOOK_NONINTERACTIVE:-}" ]; then
+        if [ -t 0 ]; then
+            read -r answer || true
+        else
+            # 钩子 stdin 默认是 /dev/null，交互提交时改从终端读取
+            read -r answer < /dev/tty || true
+        fi
+    fi
+    case "$answer" in
+        [Yy]*)
+            echo "   正在重新生成到工作区..."
+            $PYTHON script/manage_templates.py
+            ;;
+        *)
+            cat <<'HOOKMSG'
+
+   ❌ 已取消提交。请先运行 `python script/manage_templates.py` 重新生成文件，再重新提交。
+HOOKMSG
+            exit 1
+            ;;
+    esac
+else
+    # 无不一致：生成到工作区（本地方便预览）；生成文件不入库，由 CI 自动生成提交
+    $PYTHON script/manage_templates.py
+fi

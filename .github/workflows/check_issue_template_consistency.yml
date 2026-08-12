@@ -1,0 +1,82 @@
+name: 多语言文件一致性
+on:
+  pull_request:
+    paths:
+      - 'script/multilingual-docs/**'
+      - 'script/manage_templates.py'
+      - 'pyproject.toml'
+      - '.githooks/**'
+      - 'test/test_pre_commit_hook.sh'
+  push:
+    paths:
+      - 'script/multilingual-docs/**'
+      - 'script/manage_templates.py'
+      - 'pyproject.toml'
+      - '.githooks/**'
+      - 'test/test_pre_commit_hook.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
+          # pre-commit 钩子对暂存 .py 文件做类型检查，需 pyright
+          pip install pyright
+
+      # ── PR：验证 + 试生成（不提交） ──
+      - name: Validate & dry-run
+        if: github.event_name == 'pull_request'
+        run: |
+          python script/manage_templates.py --check
+          python script/manage_templates.py
+
+      # ── PR：上传生成文件供审查预览（生成文件不入库，PR 中无法直接查看） ──
+      - name: Upload generated docs artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-docs
+          path: |
+            .github/ISSUE_TEMPLATE/
+            CONTRIBUTING.md
+            CONTRIBUTING_zh-TW.md
+            README.md
+            README_zh-TW.md
+            vscode-extension/README.md
+            vscode-extension/README_zh-TW.md
+          if-no-files-found: warn
+
+      # ── PR：测试 pre-commit 钩子行为 ──
+      - name: Test pre-commit hook
+        if: github.event_name == 'pull_request'
+        run: bash test/test_pre_commit_hook.sh
+
+      # ── 默认分支：验证 + 生成 + 自动提交（分支名语义化，随默认分支自适应） ──
+      - name: Generate & commit
+        if: github.event_name != 'pull_request' && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        run: |
+          python script/manage_templates.py
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          # 生成文件已 gitignore，需 -f 强制加回；文件列表由脚本动态输出，避免硬编码
+          mapfile -t GEN_FILES < <(python script/manage_templates.py --list-generated)
+          git add -f "${GEN_FILES[@]}"
+          if git diff --cached --exit-code; then
+            echo "No changes."
+          else
+            git commit -m "chore: auto-generate multilingual files"
+            git push
+          fi

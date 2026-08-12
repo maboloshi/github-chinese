@@ -1,0 +1,293 @@
+# 贡献指南 —— 唯一维护来源
+# 由 manage_templates.py 校验并生成 CN/TW 贡献指南。
+#
+# 规则：
+#   - 纯字符串 → CN/TW 共享该值
+#   - CN: "简体" / TW: "繁體" → 分语言翻译
+#   - 结构字段（链接 URL 等）不翻译，保持原样
+#   - 渲染：title→#，顶层字符串→原文；块字段首个子字段为 heading，层级 = 嵌套深度+2
+
+top_align_begin: <div align="center"><a name="contributing-top"></a>
+
+title:
+  CN: 贡献指南
+  TW: 貢獻指南
+
+lang_links:
+  CN: "**简体中文** · [繁體中文](./CONTRIBUTING_zh-TW.md)"
+  TW: "[简体中文](./CONTRIBUTING.md) · **繁體中文**"
+
+top_align_end: </div>
+
+setup_env:
+  heading:
+    CN: 设置开发环境
+    TW: 設置開發環境
+  steps:
+    CN: |
+      1. [克隆仓库](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
+      1. 进入仓库目录：
+        [Bash](https://www.gnu.org/software/bash/manual/bash.html#index-cd 'cd') ·
+        [Zsh](https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html 'cd') ·
+        [Fish](https://fishshell.com/docs/current/cmds/cd.html 'cd') ·
+        [C Shell](https://www.freebsd.org/cgi/man.cgi?query=cd&sektion=1 'cd') ·
+        [Windows 命令提示符](https://learn.microsoft.com/windows-server/administration/windows-commands/cd 'cd') ·
+        [PowerShell](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location 'Set-Location') ·
+        [Windows 文件资源管理器](https://windowsforum.com/windows-news.4/bridge-file-explorer-and-terminal-in-windows-11-for-faster-workflows.389155/#_xfUid-1-1781860855 '在终端中打开')
+      1. [创建和激活虚拟环境](https://docs.python.org/3/library/venv.html)
+      1. 安装依赖：
+          ```bash
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
+          ```
+      1. 启用提交前的钩子（提交前自动验证多语言源文件）：
+          ```bash
+          git config core.hooksPath .githooks
+          ```
+    TW: |
+      1. [克隆倉庫](https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository)
+      1. 進入倉庫目錄：
+        [Bash](https://www.gnu.org/software/bash/manual/bash.html#index-cd 'cd') ·
+        [Zsh](https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html 'cd') ·
+        [Fish](https://fishshell.com/docs/current/cmds/cd.html 'cd') ·
+        [C Shell](https://www.freebsd.org/cgi/man.cgi?query=cd&sektion=1 'cd') ·
+        [Windows 命令提示字元](https://learn.microsoft.com/windows-server/administration/windows-commands/cd 'cd') ·
+        [PowerShell](https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location 'Set-Location') ·
+        [Windows 檔案總管](https://windowsforum.com/windows-news.4/bridge-file-explorer-and-terminal-in-windows-11-for-faster-workflows.389155/#_xfUid-1-1781860855 '在終端中打開')
+      1. [創建和啟動虛擬環境](https://docs.python.org/3/library/venv.html)
+      1. 安裝依賴：
+          ```bash
+          python script/manage_templates.py --requirements
+          pip install -r script/requirements.txt
+          ```
+      1. 啟用提交前的掛鉤（提交前自動驗證多語言源文件）：
+          ```bash
+          git config core.hooksPath .githooks
+          ```
+
+contribute:
+  heading:
+    CN: 贡献方式
+    TW: 貢獻方式
+  intro_text:
+    CN: |
+      欢迎通过以下方式参与贡献：
+
+      1. 完善词库翻译（编辑 [`locals.js`](locals.js)）
+      1. 提交议题报告，参与话题讨论
+      1. 改进代码逻辑
+    TW: |
+      歡迎通過以下方式參與貢獻：
+
+      1. 完善詞庫翻譯（編輯 [`locals.js`](locals.js)）
+      1. 提交議題報告，參與話題討論
+      1. 改進程式碼邏輯
+  badge: |
+    [![PR Welcome](https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge)](https://github.com/maboloshi/github-chinese/pulls)
+  references:
+    heading:
+      CN: 翻译参考资源
+      TW: 翻譯參考資源
+    items:
+      CN: |
+        1. [Pro Git 第二版 简体中文](https://git-scm.com/book/zh-tw/v2)
+        1. [Pro Git: 翻译约定](https://github.com/progit/progit2-zh/blob/master/TRANSLATION_NOTES.asc)
+        1. [Git 官方软件包的简体中文翻译](https://github.com/git/git/blob/master/po/zh_CN.po)
+        1. [GitHub 术语表](https://docs.github.com/get-started/learning-about-github/github-glossary)
+        1. **[CSS 选择器](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors)用于编写忽略规则**
+      TW: |
+        1. [Pro Git 第二版 繁體中文](https://git-scm.com/book/zh-tw/v2)
+        1. [Pro Git: 翻譯約定](https://github.com/progit/progit2-zh-tw/blob/master/TRANSLATION_NOTES.asc)
+        1. [Git 官方軟體包的繁體中文翻譯](https://github.com/git/git/blob/master/po/zh_TW.po)
+        1. [GitHub 詞彙表](https://docs.github.com/get-started/learning-about-github/github-glossary)
+        1. **[CSS 選擇器](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors)用於編寫忽略規則**
+
+workflow:
+  heading:
+    CN: 多语言文档工作流
+    TW: 多語言文件工作流
+  auto:
+    heading:
+      CN: 自动生成
+      TW: 自動生成
+    intro:
+      CN: |
+        [README.md](README.md '仓库自述')、[vscode-extension/README.md](vscode-extension/README.md 'VS Code 扩展自述')、议题模板、[CONTRIBUTING.md](CONTRIBUTING.md '贡献指南')均采用**多语言源文件驱动**模式，由 `manage_templates.py` 从 YAML 源文件统一生成简体/繁体版本：
+
+        ```mermaid
+        flowchart LR
+            subgraph Sources["多语言源文件 script/multilingual-docs/"]
+                S1["bug-提交.yml"]
+                S2["CONTRIBUTING.yml"]
+                S3["README.yml"]
+                S4["vscode-extension-README.yml"]
+            end
+            S1 --> B["manage_templates.py"]
+            S2 --> B
+            S3 --> B
+            S4 --> B
+            B --> C["议题模板 .github/ISSUE_TEMPLATE/*.yml"]
+            B --> D["贡献指南 CONTRIBUTING*.md"]
+            B --> E["仓库自述 README*.md"]
+            B --> F["扩展自述 vscode-extension/README*.md"]
+            C --> G["生成文件不入库"]
+            D --> G
+            E --> G
+            F --> G
+            G --> H["云端 CI 默认分支自动生成并提交"]
+        ```
+      TW: |
+        [README.md](README.md '倉庫自述')、[vscode-extension/README.md](vscode-extension/README.md 'VS Code 擴展自述')、議題模板、[CONTRIBUTING.md](CONTRIBUTING.md '貢獻指南')均採用**多語言源文件驅動**模式，由 `manage_templates.py` 從 YAML 源文件統一生成簡體/繁體版本：
+
+        ```mermaid
+        flowchart LR
+            subgraph Sources["多語言源文件 script/multilingual-docs/"]
+                S1["bug-提交.yml"]
+                S2["CONTRIBUTING.yml"]
+                S3["README.yml"]
+                S4["vscode-extension-README.yml"]
+            end
+            S1 --> B["manage_templates.py"]
+            S2 --> B
+            S3 --> B
+            S4 --> B
+            B --> C["議題模板 .github/ISSUE_TEMPLATE/*.yml"]
+            B --> D["貢獻指南 CONTRIBUTING*.md"]
+            B --> E["倉庫自述 README*.md"]
+            B --> F["擴展自述 vscode-extension/README*.md"]
+            C --> G["生成文件不入庫"]
+            D --> G
+            E --> G
+            F --> G
+            G --> H["雲端 CI 預設分支自動生成並提交"]
+        ```
+  maintain:
+    heading:
+      CN: 维护
+      TW: 維護
+    steps:
+      CN: |
+        1. 编辑源文件
+        1. 验证并预览：提交时钩子会自动验证源文件并检查生成文件一致性（过时或手动修改会阻止提交）；本地可提前验证或生成到工作区预览。
+           ```bash
+           python script/manage_templates.py --check
+           python script/manage_templates.py
+           ```
+           或 Windows 用包装脚本 `script/manage.ps1`（自动选 venv Python 且 UTF-8 输出不乱码）：
+           ```powershell
+           .\script\manage.ps1 --check
+           ```
+           命令提示符则通过 PowerShell 调用：
+           ```cmd
+           powershell -ExecutionPolicy RemoteSigned -File script\manage.ps1 --check
+           ```
+           如果使用 VS Code，可启用 [GitHub Issue Template Preview](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。
+        1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的钩子自动验证源文件，并检测手动修改的生成文件；生成文件**不入库**
+        1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交到远程仓库') → [拉取请求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '创建拉取请求') → [持续集成](https://docs.github.com/actions/get-started/continuous-integration '持续集成')验证与钩子测试 → 合并到默认分支 → **云端自动生成并提交**简体/繁体文档与模板
+      TW: |
+        1. 編輯源檔案
+        1. 驗證並預覽：提交時掛鉤會自動驗證源檔案並檢查生成檔案一致性（過時或手動修改會阻止提交）；本地可提前驗證或生成到工作區預覽。
+           ```bash
+           python script/manage_templates.py --check
+           python script/manage_templates.py
+           ```
+           或 Windows 用包裝腳本 `script/manage.ps1`（自動選 venv Python 且 UTF-8 輸出不亂碼）：
+           ```powershell
+           .\script\manage.ps1 --check
+           ```
+           命令提示字元則透過 PowerShell 呼叫：
+           ```cmd
+           powershell -ExecutionPolicy RemoteSigned -File script\manage.ps1 --check
+           ```
+           如果使用 VS Code，可啟用 [GitHub Issue Template Preview](https://marketplace.visualstudio.com/items?itemName=ReesPozzi.github-issue-template-preview)。
+        1. [提交](https://docs.github.com/pull-requests/how-tos/commit-changes) → 提交前的掛鉤自動驗證源檔案，並檢測手動修改的生成檔案；生成檔案**不入庫**
+        1. [推送](https://docs.github.com/get-started/using-git/pushing-commits-to-a-remote-repository '推送提交至遠端倉儲') → [拉取請求](https://docs.github.com/pull-requests/how-tos/create-pull-requests/creating-a-pull-request '創建拉取請求') → [持續集成](https://docs.github.com/actions/get-started/continuous-integration '持續集成')驗證與掛鉤測試 → 合併到預設分支 → **雲端自動生成並提交**簡體/繁體文件與模板
+
+windows_dev:
+  heading:
+    CN: Windows 开发者注意事项
+    TW: Windows 開發者注意事項
+  warning:
+    CN: |
+      > [!WARNING]
+      > 本仓库的开发、测试与云端持续集成（CI）[工作流程](.github\workflows)基于 Linux（`ubuntu-latest`）。
+      > 
+      > Windows 开发者若只在本机测试，可能踩到 Linux 才有、CI 才会暴露的坑。
+    TW: |
+      > [!WARNING]
+      > 本倉庫的開發、測試與雲端持續整合（CI）[工作流程](.github\workflows)基於 Linux（`ubuntu-latest`）。
+      > 
+      > Windows 開發者若只在本機測試，可能踩到 Linux 才有、CI 才會暴露的坑。
+  tips:
+    CN: |
+      > [!TIP]
+      > 建议 Windows 开发者在[适用于 Linux 的 Windows 子系统](https://learn.microsoft.com/windows/wsl/)中测试，以获得最接近云端 CI 的环境。
+    TW: |
+      > [!TIP]
+      > 建議 Windows 開發者在[適用於 Linux 的 Windows 子系統](https://learn.microsoft.com/windows/wsl/)中測試，以獲得最接近雲端 CI 的環境。
+  known_issues:
+    heading:
+      CN: 常见坑
+      TW: 常見坑
+    body:
+      CN: |
+        - **钩子可执行位**：Linux 上 git 严格[要求](https://git-scm.com/docs/api-run-command/2.0.5#Documentation/technical/api-run-command.txt-runhook 'run_hook')钩子有 `chmod +x`，否则报 "hook was ignored because it's not set as executable"；Windows 不检查，本地正常但 CI 失败。
+        - **CRLF/LF 行尾**：bash 脚本（`.githooks/pre-commit`、`test/*.sh`）应使用 [LF 行尾](https://pubs.opengroup.org/onlinepubs/9799919799.2024edition/basedefs/V1_chap03.html#tag_03_185 'The Open Group Base Specifications Issue 8/IEEE Std 1003.1-2024, 3.185')，CRLF 会导致解析失败；[`.gitattributes`](.gitattributes) 已用 `eol=lf` 强制。
+        - **钩子 stdin**：pre-commit 钩子的 stdin 默认是 `/dev/null`，交互读取输入需从 `/dev/tty`；非交互环境用 `GIT_HOOK_NONINTERACTIVE=1` 跳过询问。
+        - **[PEP 668](https://peps.python.org/pep-0668/)**：Ubuntu/WSL 的系统 Python 受保护，直接 `pip install` 报 `externally-managed-environment`，请用 venv（见下）。
+      TW: |
+        - **鉤子可執行位**：Linux 上 git 嚴格[要求](https://git-scm.com/docs/api-run-command/2.0.5#Documentation/technical/api-run-command.txt-runhook 'run_hook')掛鉤有 `chmod +x`，否則報 "hook was ignored because it's not set as executable"；Windows 不檢查，本地正常但 CI 失敗。
+        - **CRLF/LF 行尾**：bash 腳本（`.githooks/pre-commit`、`test/*.sh`）應使用 [LF 行尾](https://pubs.opengroup.org/onlinepubs/9799919799.2024edition/basedefs/V1_chap03.html#tag_03_185 'The Open Group Base Specifications Issue 8/IEEE Std 1003.1-2024, 3.185')，CRLF 會導致解析失敗；[`.gitattributes`](.gitattributes) 已用 `eol=lf` 強制。
+        - **鉤子 stdin**：pre-commit 鉤子的 stdin 預設是 `/dev/null`，互動讀取輸入需從 `/dev/tty`；非互動環境用 `GIT_HOOK_NONINTERACTIVE=1` 跳過詢問。
+        - **[PEP 668](https://peps.python.org/pep-0668/)**：Ubuntu/WSL 的系統 Python 受保護，直接 `pip install` 報 `externally-managed-environment`，請用 venv（見下）。
+  wsl_setup:
+    heading:
+      CN: 在 WSL 中准备测试环境
+      TW: 在 WSL 中準備測試環境
+    body:
+      CN: |
+        生成文件不入库（由云端 CI 自动生成），开发者提交源文件即可。要在 WSL 中本地验证，可参考以下步骤（依赖统一从 [`script/requirements.txt`](script/requirements.txt) 安装）：
+
+        ```bash
+        # 安装官方 Python 工具（需要 sudo 密码）
+        sudo apt update
+        sudo apt install -y python3-pip python3-venv
+
+        # 克隆/复制仓库到 WSL 原生文件系统（比 /mnt/c 更接近云端 CI）
+        cd ~
+        git clone https://github.com/maboloshi/github-chinese.git
+        cd github-chinese
+
+        # 创建 venv 并从项目依赖清单安装
+        python3 -m venv .venv-wsl
+        .venv-wsl/bin/pip install -r script/requirements.txt
+
+        # 让钩子与测试使用 venv 的 Python
+        export PATH="$(pwd)/.venv-wsl/bin:$PATH"
+
+        # 运行钩子测试
+        bash test/test_pre_commit_hook.sh
+        ```
+      TW: |
+        生成檔案不入庫（由雲端 CI 自動生成），開發者提交源檔案即可。要在 WSL 中本地驗證，可參考以下步驟（依賴統一從 [`script/requirements.txt`](script/requirements.txt) 安裝）：
+
+        ```bash
+        # 安裝官方 Python 工具（需要 sudo 密碼）
+        sudo apt update
+        sudo apt install -y python3-pip python3-venv
+
+        # 克隆/複製倉庫到 WSL 原生檔案系統（比 /mnt/c 更接近雲端 CI）
+        cd ~
+        git clone https://github.com/maboloshi/github-chinese.git
+        cd github-chinese
+
+        # 建立 venv 並從專案依賴清單安裝
+        python3 -m venv .venv-wsl
+        .venv-wsl/bin/pip install -r script/requirements.txt
+
+        # 讓掛鉤與測試使用 venv 的 Python
+        export PATH="$(pwd)/.venv-wsl/bin:$PATH"
+
+        # 執行掛鉤測試
+        bash test/test_pre_commit_hook.sh
+        ```
