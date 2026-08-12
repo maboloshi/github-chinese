@@ -1,3 +1,6 @@
 # bash 脚本必须保持 LF 行尾（CRLF 会导致解析问题）
 .githooks/pre-commit text eol=lf
 test/*.sh text eol=lf
+# PowerShell 脚本统一 LF；.cmd 批处理在 Windows 检出为 CRLF（存储保持 LF，由 autocrlf 转换）
+script/manage.ps1 text eol=lf
+script/manage.cmd text eol=crlf

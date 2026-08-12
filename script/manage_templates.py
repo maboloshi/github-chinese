@@ -158,6 +158,11 @@ def main() -> None:
         action="store_true",
         help="仅从 pyproject.toml 生成 script/requirements.txt（无需 pyyaml/opencc），供安装依赖前使用"
     )
+    parser.add_argument(
+        "--list-generated",
+        action="store_true",
+        help="仅列出所有生成文件路径（供 CI git add -f 动态获取，避免硬编码列表）"
+    )
     args = parser.parse_args()
 
     if args.requirements:
@@ -215,6 +220,19 @@ def main() -> None:
     print(_tr("\n✅ 全部通过"))
 
     if args.check:
+        return
+
+    if args.list_generated:
+        # 输出所有生成文件路径（文档 + 模板），供 CI git add -f 动态使用
+        for f in sorted(multilingual_dir.glob("*.yml")):
+            doc = DOC_TEMPLATES.get(f.name)
+            for suffix in ("", "_zh-TW"):
+                if doc:
+                    _, out_name, out_dir = doc
+                    base = Path(args.doc_dir) / out_dir if args.doc_dir else out_dir
+                    print(base / out_name.format(suffix=suffix))
+                else:
+                    print(output_dir / f"{f.stem}{suffix}.yml")
         return
 
     for f in sorted(multilingual_dir.glob("*.yml")):
