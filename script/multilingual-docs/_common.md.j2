@@ -1,5 +1,5 @@
-{# 通用递归渲染：结构与层级完全由 YAML 数据（键顺序 + heading 嵌套）推断，
-   模板本身不硬编码任何块名/顺序/层级。#}
+{# 通用递归渲染模板：结构与层级完全由 YAML 数据（键顺序 + heading 嵌套）推断，
+   模板本身不硬编码任何块名/顺序/层级。多语言文档（README / CONTRIBUTING / vscode 扩展自述）共用此模板。#}
 {%- macro render(node, depth=0) -%}
 {%- set ns = namespace(lines=[]) -%}
 {%- for key, value in node.items() -%}

@@ -13,7 +13,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 
 SCRIPT = Path(__file__).name
@@ -107,32 +107,38 @@ def _generate_requirements(pyproject: Path = Path("pyproject.toml")) -> None:
     print(f"✅ {pyproject.name} → {out}")
 
 
-def _collect_headings(node: Any, depth: int = 0, out: list[tuple[int, str]] | None = None) -> list[tuple[int, str]]:
+def _collect_headings(node: dict[str, Any], depth: int = 0, out: list[tuple[int, str]] | None = None) -> list[tuple[int, str]]:
     """递归收集文档标题（## 与 ###，排除更深层级）。"""
     if out is None:
         out = []
-    if not isinstance(node, dict):
-        return out
-    for key, value in node.items():  # type: ignore[unknown-variable]
-        if isinstance(value, dict):
-            first = next(iter(value), None)
-            if first == "heading" and value.get("heading"):
+    for _key, _value in node.items():
+        if isinstance(_value, dict):
+            d = cast("dict[str, Any]", _value)
+            heading = d.get("heading")
+            if heading:
                 level = depth + 2
                 if level <= 3:
-                    out.append((level, value["heading"]))
-                body = {k: v for k, v in value.items() if k != "heading"}
+                    out.append((level, str(heading)))
+                body = {k: v for k, v in d.items() if k != "heading"}
                 if body:
                     _collect_headings(body, depth + 1, out)
     return out
 
 
-# 文档类源文件 → (Jinja 模板名, 输出文件名模式, 输出目录)
-# {suffix} 占位："" = 简体, "_zh-TW" = 繁体
-DOC_TEMPLATES: dict[str, tuple[str, str, Path]] = {
-    "CONTRIBUTING.yml": ("CONTRIBUTING.md.j2", "CONTRIBUTING{suffix}.md", Path(".")),
-    "README.yml": ("README.md.j2", "README{suffix}.md", Path(".")),
-    "vscode-extension-README.yml": ("vscode-extension-README.md.j2", "README{suffix}.md", Path("vscode-extension")),
-}
+# 三个文档共用同一通用递归模板（DOC_TEMPLATE），模板不硬编码任何块名/顺序/层级，
+# 结构与层级完全由各 YAML 数据推断（DRY）。
+DOC_TEMPLATE = "_common.md.j2"
+
+
+def _doc_config(name: str) -> tuple[str, Path] | None:
+    """按源文件名查文档输出配置（输出文件名模式 + 输出目录）；非文档模板返回 None。"""
+    # 文档类源文件 → (输出文件名模式, 输出目录)
+    # {suffix} 占位："" = 简体, "_zh-TW" = 繁体
+    return {
+        "CONTRIBUTING.yml": ("CONTRIBUTING{suffix}.md", Path(".")),
+        "README.yml": ("README{suffix}.md", Path(".")),
+        "vscode-extension-README.yml": ("README{suffix}.md", Path("vscode-extension")),
+    }.get(name)
 
 
 def main() -> None:
@@ -234,10 +240,10 @@ def main() -> None:
     if args.list_generated:
         # 输出所有生成文件路径（文档 + 模板），供 CI git add -f 动态使用
         for f in sorted(multilingual_dir.glob("*.yml")):
-            doc = DOC_TEMPLATES.get(f.name)
+            doc = _doc_config(f.name)
             for suffix in ("", "_zh-TW"):
                 if doc:
-                    _, out_name, out_dir = doc
+                    out_name, out_dir = doc
                     base = Path(args.doc_dir) / out_dir if args.doc_dir else out_dir
                     print(base / out_name.format(suffix=suffix))
                 else:
@@ -246,7 +252,7 @@ def main() -> None:
 
     for f in sorted(multilingual_dir.glob("*.yml")):
         data = yaml.safe_load(f.read_text(encoding="utf-8"))
-        doc = DOC_TEMPLATES.get(f.name)
+        doc = _doc_config(f.name)
         for lang, suffix in {"CN": "", "TW": "_zh-TW"}.items():
             resolved = _resolve(data, lang)
             comment = {
@@ -254,7 +260,7 @@ def main() -> None:
                 "TW": f"由 {SCRIPT} 自動生成，請勿手動編輯。來源：{f.name}",
             }[lang]
             if doc:
-                template_name, out_name, out_dir = doc
+                out_name, out_dir = doc
                 base = Path(args.doc_dir) / out_dir if args.doc_dir else out_dir
                 out = base / out_name.format(suffix=suffix)
                 # 延迟导入：仅在渲染文档时才需要 jinja2，保证 --requirements/--check 仅用标准库
@@ -266,7 +272,7 @@ def main() -> None:
                     + Environment(
                         loader=FileSystemLoader(multilingual_dir),
                         undefined=StrictUndefined,
-                    ).get_template(template_name).render(resolved=resolved)
+                    ).get_template(DOC_TEMPLATE).render(resolved=resolved)
                 )
                 # 自动生成目录树（插入到第一个二级标题之前）
                 headings = _collect_headings(resolved)

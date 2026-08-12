@@ -1,11 +1,8 @@
 #!/bin/sh
-# pre-commit hook：验证多语言源文件，检测手动修改生成文件
-# 模型 B：生成文件不入库（由 CI 自动生成并提交），提交时忽略它们
+# pre-commit hook：
+#   1) 对暂存的 Python 文件运行类型检查（pyright），有任何错误即阻止提交
+#   2) 验证多语言源文件，检测手动修改生成文件（模型 B：生成文件不入库）
 set -e
-
-if [ -z "$(git diff --cached --name-only -- "script/multilingual-docs/")" ]; then
-    exit 0
-fi
 
 # 优先使用 venv 的 python（Windows 为 .exe，类 Unix 为无扩展名）
 PYTHON="python"
@@ -15,6 +12,35 @@ elif [ -f ".venv/Scripts/python.exe" ]; then
     PYTHON=".venv/Scripts/python.exe"
 elif [ -f ".venv/bin/python" ]; then
     PYTHON=".venv/bin/python"
+fi
+
+# ── 1) 类型检查：仅针对本次暂存的 .py 文件 ──
+STAGED_PY="$(git diff --cached --name-only --diff-filter=ACM -- '*.py')"
+if [ -n "$STAGED_PY" ]; then
+    # 优先用 venv 中已装的 pyright，否则提示安装
+    if ! "$PYTHON" -m pyright --version >/dev/null 2>&1; then
+        cat <<'HOOKMSG'
+
+   ⚠️ 暂存了 Python 文件，但未安装 pyright（类型检查器）。
+     请先安装后重新提交：
+         pip install pyright
+HOOKMSG
+        exit 1
+    fi
+    echo "🔍 类型检查：$(echo "$STAGED_PY" | tr '\n' ' ')"
+    if ! "$PYTHON" -m pyright $STAGED_PY; then
+        cat <<'HOOKMSG'
+
+   ❌ 类型检查未通过，已阻止提交。请修复上述类型错误后重新提交。
+     可运行 `python -m pyright <file>` 单独复查。
+HOOKMSG
+        exit 1
+    fi
+fi
+
+# ── 2) 多语言源文件验证与生成文件一致性 ──
+if [ -z "$(git diff --cached --name-only -- "script/multilingual-docs/")" ]; then
+    exit 0
 fi
 
 echo "📋 检测到多语言源文件变更..."
