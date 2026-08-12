@@ -170,6 +170,21 @@ jobs:
           pr = os.environ["C_PR"]
           sha = os.environ["C_SHA"]
 
+          # 0) 隐藏之前所有 AI 审查评论（汇总 + 内联建议），避免 PR 讨论区堆积
+          def hide_comment(node_id):
+              q = 'mutation { minimizeComment(input: {subjectId: "%s", classifier: OUTDATED}) { minimizedComment { isMinimized } } }' % node_id
+              r = subprocess.run(['gh', 'api', 'graphql', '-f', 'query=' + q], capture_output=True, text=True)
+              return r.returncode == 0
+
+          def find_ai_comments(path):
+              r = subprocess.run(['gh', 'api', path, '--paginate', '--jq', '.[] | select((.body // "") | contains("script/ai_review.py")) | .node_id'], capture_output=True, text=True)
+              return [x.strip() for x in r.stdout.splitlines() if x.strip()]
+
+          old_ids = find_ai_comments(f'repos/{repo}/issues/{pr}/comments') + find_ai_comments(f'repos/{repo}/pulls/{pr}/comments')
+          hidden = sum(1 for nid in old_ids if hide_comment(nid))
+          if old_ids:
+              print(f'隐藏旧 AI 审查评论：{hidden}/{len(old_ids)}')
+
           # 1) 汇总评论（含去重标记）
           summary = open('review.md', encoding='utf-8').read()
           open('.comment.json', 'w', encoding='utf-8').write(json.dumps({'body': summary}))
