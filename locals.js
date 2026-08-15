@@ -6505,6 +6505,9 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
         [/Free responses reset (\d+) 天之内\. Plan upgrades are temporarily unavailable\. Read more。?/, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。了解更多。"],
         [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\./, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。"],
         [/Free responses reset in (\d+) days?\. Plan upgrades are temporarily unavailable\. Read more\.?/, "免费响应额度将在 $1 天后重置。计划升级暂时不可用。了解更多。"],
+        // 使用情况
+        [/((\d+) \/ (\d+)) AI credits/, "$1 AI 额度"],
+        [/((\$\d+(\.\d+)?) \/ (\$\d+(\.\d+)?)) budget/, "$1 预算"],
     ],
     "title": {
         "static": {
@@ -8820,6 +8823,9 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             "is ready.": "已准备就绪。",
 
         // 复刻仓库 /<user-name>/<repo-name>/fork
+            // 错误信息
+                "You can't fork this repository at this time.": "您此时不能复刻此仓库。",
+
             "Create a new fork": "创建新复刻",
                 "A": " ",
                 "fork": "复刻",
@@ -17756,6 +17762,8 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "Unexpected bad things will happen if you don’t read this!": "如果您不阅读此说明，将会发生意想不到的事情！",
             "All scheduled workflows will stop running.": "所有预定的工作流程将停止运行。",
             "Security features will be unavailable:": "安全功能将无法使用：",
+            "Security features will be interrupted:": "安全功能将停止",
+            "Code scanning will be paused": "代码扫描将暂停",
             "Code scanning": "代码扫描",
             "Before you archive, please consider:": "在您存档之前，请考虑：",
             "Updating any repository settings": "更新仓库设置",
