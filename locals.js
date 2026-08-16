@@ -115,6 +115,11 @@ I18N.conf = {
             '.highlight',
             '.notranslate',
             '[translate="no"]',
+            'input',
+            'textarea',
+            '[contenteditable=""]',
+            '[contenteditable="true"]',
+            '[contenteditable="plaintext-only"]',
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
@@ -254,6 +259,11 @@ I18N.conf = {
             '.highlight',
             '.notranslate',
             '[translate="no"]',
+            'input',
+            'textarea',
+            '[contenteditable=""]',
+            '[contenteditable="true"]',
+            '[contenteditable="plaintext-only"]',
 			'div.styled-input-content', // 筛选条
         ],
     },
