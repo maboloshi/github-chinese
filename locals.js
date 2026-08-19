@@ -1678,6 +1678,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Privacy Policy": "隐私政策",
             "Cancel": "取消",
             "Send": "发送",
+
+            "View token usage": "查看词元消耗",
             // 响应状态
                 "Copilot is responding…": "Copilot 响应中…",
                 "creating plan": "创建计划中",
@@ -28602,7 +28604,16 @@ I18N["zh-CN"]["copilot"] = {
             "Bad response": "点踩",
             "Retry with…": "重试…",
 
+            "View message token usage": "查看此消息词元消耗",
+                "Message token usage": "此消息词元消耗",
+                    "Input:": "输入：",
+                    "Output:": "输出：",
+                    "tokens": "词元",
+
             "Scroll to bottom": "滚动至底部",
+
+            "New topic? A fresh chat keeps your usage lower.": "新话题？新聊天有助于降低使用量。",
+                "Start new chat": "开始新聊天",
 
         // 右侧
             "Share conversation": "分享对话",
