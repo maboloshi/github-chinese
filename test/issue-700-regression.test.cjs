@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
 const test = require('node:test');
-const vm = require('node:vm');
+
+const { loadConfig } = require('./helpers/load-config.cjs');
 
 const localeFiles = [
     'locals.js',
@@ -12,17 +12,6 @@ const globalTranslationSkipSelectors = [
     '.notranslate',
     '[translate="no"]',
 ];
-
-function loadConfig(fileName) {
-    const filePath = `${__dirname}/../${fileName}`;
-    const context = vm.createContext({});
-
-    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, {
-        filename: filePath,
-    });
-
-    return context.I18N.conf;
-}
 
 test('locals.js keeps repository tree README content out of translation', () => {
     const config = loadConfig('locals.js');

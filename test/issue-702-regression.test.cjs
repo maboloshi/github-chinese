@@ -4,6 +4,8 @@ const path = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
 
+const { loadConfig } = require('./helpers/load-config.cjs');
+
 const localeFiles = [
     'locals.js',
     'locals(greasyfork).js',
@@ -220,17 +222,6 @@ const expectedReactNavLabels = {
         },
     },
 };
-
-function loadConfig(fileName) {
-    const filePath = path.join(__dirname, '..', fileName);
-    const context = vm.createContext({});
-
-    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, {
-        filename: filePath,
-    });
-
-    return context.I18N.conf;
-}
 
 function loadLocale(fileName, localeName) {
     const filePath = path.join(__dirname, '..', fileName);
