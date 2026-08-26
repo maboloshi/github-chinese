@@ -93,7 +93,8 @@ class Element {
 
 function loadGlobalNavTranslation(document) {
     const filePath = path.join(__dirname, '..', 'main.user.js');
-    const source = fs.readFileSync(filePath, 'utf8');
+    // 归一化 CRLF -> LF，保证 \n\n 标记在 Windows 检出（core.autocrlf）下也能匹配
+    const source = fs.readFileSync(filePath, 'utf8').replace(/\r\n/g, '\n');
     const start = source.indexOf('    function setupReactGlobalNavTranslation(');
     const end = source.indexOf('\n\n    /* =========================== MutationObserver', start);
     assert.notEqual(start, -1);

@@ -354,6 +354,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/PtJade-Ceramic" title="PtJade Ceramic"><img src="https://avatars.githubusercontent.com/u/185668489?v=4" width="42;" alt="PtJade Ceramic"/></a>
 <a href="https://github.com/tangyuan0821" title="Tang Yuan"><img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="Tang Yuan"/></a>
 <a href="https://github.com/LuYifei2011" title="Lu Yifei"><img src="https://avatars.githubusercontent.com/u/118034848?v=4" width="42;" alt="Lu Yifei"/></a>
+<a href="https://github.com/mvanhorn" title="Matt Van Horn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="42;" alt="Matt Van Horn"/></a>
 <a href="https://github.com/MrBaoboer" title="Mr.Baoboer"><img src="https://avatars.githubusercontent.com/u/272576744?v=4" width="42;" alt="Mr.Baoboer"/></a>
 <a href="https://github.com/pylover7" title="大叶子"><img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/></a>
 <a href="https://github.com/cat-kun" title="cat-kun"><img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/></a>
@@ -361,7 +362,6 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/th-dd" title="叹号大帝"><img src="https://avatars.githubusercontent.com/u/162813557?v=4" width="42;" alt="叹号大帝"/></a>
 <a href="https://github.com/pooneyy" title="poney"><img src="https://avatars.githubusercontent.com/u/85266337?v=4" width="42;" alt="poney"/></a>
 <a href="https://github.com/pecasha" title="Pecasha"><img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/></a>
-<a href="https://github.com/mvanhorn" title="Matt Van Horn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="42;" alt="Matt Van Horn"/></a>
 <a href="https://github.com/Kisechan" title="Kise Platinyl"><img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/></a>
 <a href="https://github.com/wang93wei" title="AlanWang"><img src="https://avatars.githubusercontent.com/u/6371053?v=4" width="42;" alt="AlanWang"/></a>
 <a href="https://github.com/Iamliuxiaozhen" title="Oliver Lin"><img src="https://avatars.githubusercontent.com/u/149680880?v=4" width="42;" alt="Oliver Lin"/></a>

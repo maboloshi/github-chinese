@@ -1,4 +1,4 @@
-name: main.user.js version update & sync zh-TW
+name: main.user.js version update & sync main(nju.edu).user.js, zh-TW
 on:
   schedule:
     # 每周日的UTC时间16点（北京时间周一凌晨0点）
@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: github-pages
     outputs:
-      locals_js_date: ${{ steps.version_update.outputs.locals_js_date }}
-      oid: ${{ steps.api_commit.outputs.oid }}
+      locals_js_date: ${{ steps.main_version.outputs.locals_js_date }}
+      commit-sha: ${{ steps.api_commit.outputs.commit-sha }}
     steps:
       - name: Generate a token
         id: generate_token
@@ -58,7 +58,7 @@ jobs:
         run: echo "No changes in locals.js, exiting..."
 
       - name: Update version in main.user.js
-        id: version_update
+        id: main_version
         if: env.LOCALS_JS_CHANGED == 'true'
         run: |
           # 获取最后一次提交中`locals.js`的文件时间
@@ -74,40 +74,38 @@ jobs:
             s/(@require.+locals\.js\?v([0-9]+\.){2,3}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
           " main.user.js
 
-          # 如果 main.user.js 变化，设置环境变量
+          # 同步 main(nju.edu).user.js 镜像
+          cp main.user.js "main(nju.edu).user.js"
+          # 将 @require 中的 URL 替换为 nju.edu 镜像地址（请根据实际情况修改 URL）
+          sed -i -E "
+            s|(@require\s+)https?://[^/]+/.*/locals\.js\?v[^ ]*|\1https://mirror.nju.edu.cn/github-chinese/locals.js?v=$locals_js_date|
+          " "main(nju.edu).user.js"
+
+          # 如果 main.user.js 变化，设置环境变量、并获取 version
           git diff --quiet --exit-code main.user.js || \
           echo "MAIN_USER_JS_CHANGED=true" >> $GITHUB_ENV
+          echo "version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main.user.js)" >> $GITHUB_OUTPUT
 
-      - name: Commit and push main.user.js
+      - name: Commit and push
         id: api_commit
         if: env.LOCALS_JS_CHANGED == 'true' && env.MAIN_USER_JS_CHANGED == 'true'
-        env:
-          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
-          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
-        run: |
-          version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main.user.js)
-          oid=$(bash script/ci_commit_with_signature.sh \
-            -R "${{ github.repository }}" \
-            -B "${{ github.ref_name }}" \
-            -P "${{ github.sha }}" \
-            -F "main.user.js" \
-            -h "main.user.js Update to $version" | tee >(cat >&2) | grep -oP '✅ 请求成功，SHA: \K[a-f0-9]{40}')
-
-          # 验证SHA格式
-          if [[ "$oid" =~ ^[a-f0-9]{40}$ ]]; then
-            echo "oid=$oid" >> $GITHUB_OUTPUT
-          fi
+        uses: maboloshi/dco-commit-action@v1
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          app-slug: ${{ steps.generate_token.outputs.app-slug }}
+          files: "main.user.js, main(nju.edu).user.js"
+          headline: "main.user.js, main(nju.edu).user.js Update to ${{ steps.main_version.outputs.version }}"
 
   sync_zh_tw:
     runs-on: ubuntu-latest
-    if: success() && needs.update_main.outputs.oid
+    if: success() && needs.update_main.outputs.commit-sha != ''
     needs: update_main
     environment: github-pages
     steps:
       - name: Checkout files
         uses: actions/checkout@v7
         with:
-          ref: ${{ needs.update_main.outputs.oid }}
+          ref: ${{ needs.update_main.outputs.commit-sha }}
 
       - name: Generate token
         id: generate_token
@@ -138,6 +136,7 @@ jobs:
           perl ./script/t2s-convert.pl -v locals_zh-TW.js
 
       - name: Update version in main_zh-TW.user.js
+        id: TW_version
         run: |
           # 同步版本号
           locals_js_date="${{ needs.update_main.outputs.locals_js_date }}"
@@ -145,16 +144,13 @@ jobs:
             s/(@version\s*([0-9]+\.){2,3}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
             s/(@require.+locals_zh-TW.js\?v([0-9]+\.){2,3}[0-9]+)(-[0-9]{4}-[0-9]{2}-[0-9]{2})?/\1-$locals_js_date/
           " main_zh-TW.user.js
+          echo "version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main_zh-TW.user.js)" >> $GITHUB_OUTPUT
 
-      - name: Commit and push main_zh-TW.user.js, locals_zh-TW.js
-        env:
-          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
-          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
-        run: |
-          version=$(sed -n -E 's/^\/\/ @version\s+(.+)/\1/p' main_zh-TW.user.js)
-          bash script/ci_commit_with_signature.sh \
-            -R "${{ github.repository }}" \
-            -B "${{ github.ref_name }}" \
-            -P "${{ needs.update_main.outputs.oid }}" \
-            -F "main_zh-TW.user.js, locals_zh-TW.js" \
-            -h "main_zh-TW.user.js Sync Thesaurus to $version"
+      - name: Commit and push
+        uses: maboloshi/dco-commit-action@v1
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          app-slug: ${{ steps.generate_token.outputs.app-slug }}
+          parent-sha: ${{ needs.update_main.outputs.commit-sha }}
+          files: "main_zh-TW.user.js, locals_zh-TW.js"
+          headline: "main_zh-TW.user.js Sync Thesaurus to ${{ steps.TW_version.outputs.version }}"

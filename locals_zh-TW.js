@@ -63,6 +63,11 @@ I18N.conf = {
         'repository/pull': [
             "td.blob-code", // 程式碼差異 分屏/同屏
             '.js-full-logs-container', // 工作流執行日誌
+            'div.commit-title', // 提交標題（經典 UI）
+            'div.commit-desc', // 提交說明（經典 UI）
+            'span.ws-pre-wrap', // 提交說明
+            "h4[class^='Title-module__heading']", // 提交標題
+            'div[class^="CommitHeader-module__commitMessageContainer"]', // PR changes 頁提交訊息容器
         ],
         'repository/compare': [
             "tbody", // 程式碼差異
@@ -174,6 +179,11 @@ I18N.conf = {
         'repository/pull': [
             'td.blob-code', // 程式碼差異 分屏/同屏
             '.js-full-logs-container', // 工作流執行日誌
+            'div.commit-title', // 提交標題（經典 UI）
+            'div.commit-desc', // 提交說明（經典 UI）
+            'span.ws-pre-wrap', // 提交說明
+            "h4[class^='Title-module__heading']", // 提交標題
+            'div[class^="CommitHeader-module__commitMessageContainer"]', // PR changes 頁提交訊息容器
         ],
         'repository/compare': [
             'td.blob-code', // 程式碼差異 分屏/同屏
