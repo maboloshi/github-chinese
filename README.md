@@ -401,11 +401,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## 📈 项目统计
 
-<a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
+<a href="https://star-history.dera.page/#maboloshi/github-chinese&Timeline">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
   </picture>
 </a>
 
