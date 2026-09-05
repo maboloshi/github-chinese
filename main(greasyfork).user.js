@@ -469,14 +469,9 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (
-                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
-            ) {
+            if (node.tagName === "RELATIVE-TIME") {
                 if (node.shadowRoot) {
                     transTimeElement(node.shadowRoot);
-                    watchTimeElement(node.shadowRoot);
-                } else {
-                    transTimeElement(node);
                 }
                 return;
             }
@@ -623,33 +618,13 @@
      * @param {Element} el - 需要翻译的元素。
      */
     function transTimeElement(el) {
-        let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        let res = I18N[lang]['public']['time-regexp']; // 时间正则规则
-
-        for (let [a, b] of res) {
-            let str = key.replace(a, b);
-            if (str !== key) {
-                el.textContent = str;
-                break;
-            }
+        const text = el.textContent;
+        if (!text) return;
+        // 移除开头的"on"
+        const result = text.replace(/^on/, "");
+        if (result !== text) {
+            el.textContent = result;
         }
-    }
-
-    /**
-     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
-     * @param {Element} el - 需要监视的元素。
-     */
-    function watchTimeElement(el) {
-        const MutationObserver =
-            window.MutationObserver ||
-            window.WebKitMutationObserver ||
-            window.MozMutationObserver;
-
-        new MutationObserver(mutations => {
-            transTimeElement(mutations[0].addedNodes[0]);
-        }).observe(el, {
-            childList: true
-        });
     }
 
     /**
@@ -842,10 +817,28 @@
     }
 
     /**
+     * 初始化并保护中文语言环境
+     */
+    function initLangEnv() {
+        // 设置初始语言
+        document.documentElement.lang = 'zh-CN';
+
+        // 监视语言属性变化，防止被改回英文
+        const langObserver = new MutationObserver(() => {
+            // 如果检测到语言被改回英文，重新设置
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = 'zh-CN';
+            }
+        });
+        langObserver.observe(document.documentElement, { attributeFilter: ['lang'] });
+    }
+
+    /**
      * init 函数：初始化翻译功能。
      */
     function init() {
         setupReactGlobalNavTranslation();
+        initLangEnv();
 
         // 获取当前页面的翻译规则
         page = getPage();
