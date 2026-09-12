@@ -2141,7 +2141,7 @@ I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
 I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
-        "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
+        "Ask anything or type @ to add context": "询问任何问题或键入@以添加上下文",
         "Ask": "询问",
         "Send": "发送",
         "Feedback": "反馈",
