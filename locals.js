@@ -13678,9 +13678,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // 顶部提示
             "Actions Enabled.": "操作已启用。",
+        "Upcoming change to GitHub App installation token format": "GitHub 应用安装令牌格式即将变更",
+            "GitHub App installation tokens will soon use a new stateless format (ghs_...) and may be longer (~520 characters). Apps with hardcoded length assumptions may break.": "GitHub 应用安装令牌即将采用新的无状态格式（ghs_...），长度可能更长（约 520 个字符）。如果应用硬编码了长度限制，可能会出错。",
+            "Validate your apps and workflows with the per-request override header detailed in this": "请使用按请求覆盖标头来验证您的应用和工作流程，详情请见",
+            "GitHub Changelog": "GitHub 更新日志",
+            ".": "。",
 
         // 复刻仓库操作页面提示
-            "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
             "Workflows aren't being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository. Some GitHub features that depend on Actions may still be able to run.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。一些依赖于 Actions 的 GitHub 功能可能可以运行。",
@@ -21921,6 +21925,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Clear filter": "清除筛选",
 
         "View issue": "查看议题",
+
+        "Open in GitHub Copilot app": "在 GitHub Copilot 应用中打开",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository/issues"]["regexp"],
@@ -24394,6 +24400,9 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
         ...I18N["zh-CN"]["orgs-public"]["static"],
         //>>>>>>>>>>>>>>>>>> 组织主页/概况页 <<<<<<<<<<<<<<<<<<<<<
             // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
+        "GitHub Copilot billing for": "GitHub Copilot 计费：",
+        "is now usage-based. Set a per-user budget to manage costs.": "现已改为按用量计费。设置每位用户的预算以管理成本。",
+            "Set your budget": "设置您的预算",
 
             "followers": "关注者",
             "Sponsor": "赞助",
