@@ -695,6 +695,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                 "AI CODE CREATION": "AI 代码生成",
                     // Copilot
                         "Write better code with AI": "借助 AI 写出更好的代码",
+                    "GitHub Copilot app": "GitHub Copilot 应用",
+                        "Direct agents from issue to merge": "让智能体从议题直达合并",
                     // Spark
                         "Build and deploy intelligent apps": "构建和部署智能应用",
                     "GitHub Models": "GitHub 模型",
@@ -710,6 +712,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
                         "Plan and track work": "计划和追踪工作",
                     "Code Review": "代码审查",
                         "Manage code changes": "管理代码更改",
+                    "Code Quality": "代码质量",
+                        "Enforce quality at merge": "在合并时强制检查质量",
                 "APPLICATION SECURITY": "应用安全",
                     "GitHub Advanced Security": "GitHub 高级安全",
                         "Find and fix vulnerabilities": "查找并修复漏洞",
@@ -1291,6 +1295,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
 
             "Top result": "最佳结果",
             "No results matched your search": "没有与您的搜索相符的结果",
+            "Try a different search query.": "请尝试其他搜索查询。",
+            "Learn more about searching and filtering issues and pull requests.": "了解有关搜索和筛选议题及拉取请求的更多信息。",
             // [/in ([\w]+/[\w]+)/, "在 $1"],
 
             // # 模式
@@ -1700,6 +1706,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Send": "发送",
 
             "View token usage": "查看词元消耗",
+                "Included credits": "包含额度",
+                    "Learn more about Included credits": "了解有关包含额度的更多信息",
+                "Refresh for latest usage": "刷新以获取最新用量",
             // 响应状态
                 "Copilot is responding…": "Copilot 响应中…",
                 "creating plan": "创建计划中",
@@ -1844,6 +1853,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         // 智能体
         [/Branch: (.+)/, "分支：$1"],
         [/Agent: (.+)/, "智能体：$1"],
+        [/Resets on /, "重置于 "],
+        [/^AI credits$/, "AI 额度"],
+
         /**
          * 匹配时间格式
          *
@@ -2173,10 +2185,18 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
         // 拉取请求
             "My open pull requests":"我打开的",
             "Summarize my latest PR":"总结最近",
+            "No pull requests found, try a different filter.": "未找到拉取请求，请尝试其他筛选条件。",
 
-        "Fast and cost-efficient": "快速、经济高效",
-        "Versatile and highly intelligent": "多功能、高智能",
-        "Most powerful at complex tasks": "在复杂任务中最强大",
+            "No issues found, try a different filter.": "未找到议题，请尝试其他筛选条件。",
+        
+        "Auto": "自动",
+        "Optimized for:": "优化方向：",
+        "Prioritizes speed and efficiency": "优先考虑速度和效率",
+        "Efficiency": "效率",
+        "Balances speed and intelligence": "兼顾速度和智能",
+        "Balance": "均衡",
+        "Prioritizes intelligence": "优先考虑智能",
+        "Intelligence": "智能",
         "Agent sessions": "智能体任务",
         "No sessions found. Try a different filter, or": "没有找到会话。尝试不同的过滤器，或",
         "start a session": "开始任务",
@@ -2203,11 +2223,6 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             // 选项
                 "Task": "任务",
                 "Create issue": "创建议题",
-
-            "Models": "模型",
-                    "Fast and cost-efficient": "快速、经济高效",
-                    "Versatile and highly intelligent": "多功能、高智能",
-                    "Most powerful at complex tasks": "执行复杂任务",
 
         "Try the new experience": "尝试新版",
         "Try the new dashboard experience": "试用新仪表板",
@@ -9165,7 +9180,9 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                         // GitHub CLI
                         "Work fast with our official CLI.": "使用我们的官方 CLI 快速工作。",
                         "Learn more about the CLI": "了解更多关于 CLI 的信息",
-
+                    
+                    "Open in GitHub Copilot app": "在 GitHub Copilot 应用中打开",
+                    
                     "Open with GitHub Desktop": "在 GitHub Desktop 中打开",
                         "Launching GitHub Desktop": "GitHub Desktop 启动中",
                             "If nothing happens,": "如果没有响应",
@@ -13661,9 +13678,13 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // 顶部提示
             "Actions Enabled.": "操作已启用。",
+        "Upcoming change to GitHub App installation token format": "GitHub 应用安装令牌格式即将变更",
+            "GitHub App installation tokens will soon use a new stateless format (ghs_...) and may be longer (~520 characters). Apps with hardcoded length assumptions may break.": "GitHub 应用安装令牌即将采用新的无状态格式（ghs_...），长度可能更长（约 520 个字符）。如果应用硬编码了长度限制，可能会出错。",
+            "Validate your apps and workflows with the per-request override header detailed in this": "请使用按请求覆盖标头来验证您的应用和工作流程，详情请见",
+            "GitHub Changelog": "GitHub 更新日志",
+            ".": "。",
 
         // 复刻仓库操作页面提示
-            "Workflows aren’t being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
             "Workflows aren't being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
             "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository. Some GitHub features that depend on Actions may still be able to run.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。一些依赖于 Actions 的 GitHub 功能可能可以运行。",
@@ -20505,6 +20526,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         //"Email address": "电子邮箱地址",
         "Enter your email": "键入邮箱地址",
         "Sign up for GitHub": "注册 GitHub",
+        "Download GitHub Copilot app": "下载 GitHub Copilot 应用",
         //"Start a free enterprise trial": "开始免费试用企业版",
         "Try GitHub Copilot free": "免费试用 GitHub Copilot",
         "Try GitHub Copilot": "试用 GitHub Copilot",
@@ -20607,6 +20629,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
             "GitHub scales with teams of any size in any industry.": "GitHub 能适配任何规模、任何行业的团队。",
 
             // 工业
+            "By industry": "按行业",
                 "Technology": "技术",
                 "Figma streamlines development and strengthens security": "Figma 简化开发并增强安全性",
                 "Automotive": "汽车",
@@ -20617,6 +20640,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
                 "Accenture customizes GitHub Copilot for its 12,000 developers": "埃森哲为其 12,000 名开发者定制 GitHub Copilot",
                 "Philips reduces infrastructure costs by 80%": "飞利浦将基础设施成本降低 80%",
             // 使用案例
+            "By use case": "按使用场景",
                 "TELUS saves $16.9M with GitHub": "TELUS 使用 GitHub 节省 1690 万美元",
                 "Automation": "自动化",
                 "Fullstory automates DevSecOps at scale with GitHub": "Fullstory 使用 GitHub 大规模自动化 DevSecOps",
@@ -20630,6 +20654,7 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "GitHub internal customer data, 2025.": "GitHub 内部客户数据，2025年。",
 
         // 底部栏
+        "The developer newsletter": "开发者新闻通讯",
         "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
         "Get tips, technical guides, and best practices. Twice a month.": "获取提示、技术指南和最佳实践。每月两次。",
         "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
@@ -20691,7 +20716,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Password": "密码",
             "Forgot password?": "忘记密码？",
             "Sign in": "登录",
-            "Sign in with a passkey": "使用通行密钥登录",
+            "Continue with passkey": "使用通行密钥继续",
             "Signing in…": "登录中…",
 
             "Add an account": "添加账号", // 添加新账号
@@ -20798,8 +20823,12 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
 
         // https://github.com/sessions/two-factor/webauthn
             "Passkey": "通行密钥",
-            "When you are ready, authenticate using the button below.": "准备好后，请使用下面的按钮进行身份验证。",
+            "Authenticate using your passkey.": "使用您的通行密钥进行身份验证。",
             "Use passkey": "使用通行密钥",
+
+            "2FA recovery code": "双重身份验证恢复码",
+
+            "More options": "更多选项",
 
             "Authentication failed.": "认证失败。",
             "Retry passkey": "重试通行密钥",
@@ -21314,12 +21343,19 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
         "these repositories may be causing unnecessary notifications.": "这些仓库可能导致不必要的通知。",
         "unwatch all": "取消所有关注",
         "customize": "自定义",
-
+        
+        // 不带表情为电脑UA，带表情为手机UA
+        "Assigned": "已分配",
         "🎯 Assigned": "🎯 已分配",
-        "💬 Participating": "💬 参与",
-        "✋ Mentioned": "✋ 提及",
-        "🙌 Team mentioned": "🙌 提到的团队",
-        "👀 Review requested": "👀 审查请求",
+        "Participating": "参与中",
+        "💬 Participating": "💬 参与中",
+        "Mentioned": "被提及",
+        "✋ Mentioned": "✋ 被提及",
+        "Team mentioned": "团队被提及",
+        "🙌 Team mentioned": "🙌 团队被提及",
+        "Review requested": "请求审查",
+        "👀 Review requested": "👀 请求审查",
+        
         "Add new filter": "添加新筛选器",
         "Name": "名称",
         "Filter by…": "筛选…", // Android UA 下才有
@@ -21566,7 +21602,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
 
         "Created": "已创建",
         "Assigned": "已分配",
-        "Mentioned": "提到的",
+        "Mentioning me": "提及我",
             "Issues mentioning you": "提及您的议题",
             "Pull Requests mentioning you": "提及您的拉取请求", // pulls
         "Review requests": "审查请求", // pulls
@@ -21575,6 +21611,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Views": "视图",
             "Untitled view": "未命名的视图",
             "All views": "所有视图",
+                "No saved views": "没有已保存的视图",
             "Create view": "创建视图",
                 "Build powerful views to keep track of work": "构建强大的视图来跟踪工作",
                 "Create your own views to quickly find and access your work.": "创建您自己的视图以快速查找和访问您的工作。",
@@ -21895,6 +21932,8 @@ I18N["zh-CN"]["issues"] = { // 议题页面
         "Clear filter": "清除筛选",
 
         "View issue": "查看议题",
+
+        "Open in GitHub Copilot app": "在 GitHub Copilot 应用中打开",
     },
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository/issues"]["regexp"],
@@ -21925,7 +21964,7 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             // issues
             "Assigned to me": "分配给您",
             "Created by me": "由您创建",
-            "Mentioned": "提到的",
+            "Mentioning me": "提及我",
             "Recent Activity": "最近活动",
             "View": "视图",
 
@@ -21952,33 +21991,28 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
 
         "Inbox": "收件箱",
             "Needs your review": "需要您的审查",
-                "Expand Needs your review": "展开“需要您的审查”选项卡",
-                "Collapse Needs your review": "折叠“需要您的审查”选项卡",
                 "Pull requests that need your review will appear here.": "需要您审查的拉取请求将出现在这里。",
             "Needs action": "需要操作",
-                "Expand Needs action": "展开“需要操作”选项卡",
-                "Collapse Needs action": "折叠“需要操作”选项卡",
                 "Pull requests with failing checks, merge conflicts, or required changes will appear here.": "检查失败、存在合并冲突或需要更改的拉取请求将出现在这里。",
             "Ready to merge": "准备合并",
-                "Expand Ready to merge": "展开“准备合并”选项卡",
-                "Collapse Ready to merge": "折叠“准备合并”选项卡",
                 "Pull requests that are ready to merge will appear here.": "准备合并的拉取请求将出现在这里。",
             "Needs your teams' review": "需要您团队的审查",
-                "Expand Needs your teams' review": "展开“需要您团队的审查”选项卡",
-                "Collapse Needs your teams' review": "折叠“需要您团队的审查”选项卡",
                 "Pull requests that need your teams' review will appear here.": "需要您团队审查的拉取请求将出现在这里。",
             "Your drafts": "您的草案",
-                "Expand Your drafts": "展开“您的草案”选项卡",
-                "Collapse Your drafts": "折叠“您的草案”选项卡",
                 "Pull requests that you have started but not yet submitted for review will appear here.": "您已开始但尚未提交审查的拉取请求将出现在这里。",
             "Waiting for review or checks": "等待审查或检查",
-                "Expand Waiting for review": "展开“等待审查”选项卡",
-                "Collapse Waiting for review": "折叠“等待审查”选项卡",
                 "Pull requests that are waiting for review but have not had a review will appear here.": "等待审查但尚未获得审查的拉取请求将出现在这里。",
             "All caught up": "全部已处理",
+            "About the “Needs your review” section": "关于“需要您的审查”版块",
+            "About the “Needs your teams' review” section": "关于“需要您团队的审查”版块",
+            "About the “Your drafts” section": "关于“您的草案”版块",
+            "About the “Waiting for review or checks” section": "关于“等待审查或检查”版块",
+            "About the “Needs action” section": "关于“需要操作”版块",
+            "About the “Ready to merge” section": "关于“准备合并”版块",
             "When a pull request needs your review or attention, it'll appear here.": "当一个拉取请求需要您的审查或关注时，它将出现在这里。",
             "Awaiting approval": "等待批准",
             "Customize sections": "自定义版块", // 右上角设置
+                "Loading customize sections...": "正在加载自定义版块…",
                 "Move up": "上移",
                 "Move down": "下移",
                 "Hide section": "隐藏版块",
@@ -22000,6 +22034,9 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
                     "More options for Needs action": "需要操作",
                     "More options for Ready to merge": "准备合并",
                     "More options for Merging": "合并中",
+
+            "Expand": "展开",
+            "Collapse": "折叠",
 
         "Authored by me": "由我创建",
         "Involves me": "涉及我",
@@ -22078,9 +22115,10 @@ I18N["zh-CN"]["repos"] = {
         "My contributions": "我的贡献",
         "My repositories": "我的仓库",
         "My forks": "我的复刻",
-        "Adminable by me": "我可管理",
+        "Admin access": "拥有管理权限",
 
         "Views": "视图",
+        "No saved views": "没有保存的视图",
             "Create view": "新建",
                 "Icon": "图标",
                 "Description": "描述",
@@ -22102,6 +22140,7 @@ I18N["zh-CN"]["repos"] = {
             "Descending": "递减",
 
         "Updated": "更新于",
+        "Collapse sidebar": "折叠侧边栏",
     },
     "regexp": [
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
@@ -24368,6 +24407,9 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
         ...I18N["zh-CN"]["orgs-public"]["static"],
         //>>>>>>>>>>>>>>>>>> 组织主页/概况页 <<<<<<<<<<<<<<<<<<<<<
             // [/doesn't have any pinned public repositories yet./, "还没有任何置顶的公共仓库。"],
+        "GitHub Copilot billing for": "GitHub Copilot 计费：",
+        "is now usage-based. Set a per-user budget to manage costs.": "现已改为按用量计费。设置每位用户的预算以管理成本。",
+            "Set your budget": "设置您的预算",
 
             "followers": "关注者",
             "Sponsor": "赞助",
