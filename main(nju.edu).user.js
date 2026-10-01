@@ -127,6 +127,7 @@
         currentURL: window.location.href, // 当前页面URL
         transEngine: 'iflyrec',  // 当前翻译引擎
         mutationObserver: null,  // DOM变化观察器
+        observedBody: null,      // 当前观察的页面主体
         urlChangeHandler: null,  // 存储URL变化处理器
         dynamicMenus: {},        // 动态菜单ID记录
         initDone: false,
@@ -206,6 +207,8 @@
      */
     function setupInitTrans() {
         function doInitTrans() {
+            if (!document.body) return;
+            State.currentURL = window.location.href;
             updatePageConfig('首次载入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍历')(document.body);
@@ -228,6 +231,25 @@
      * Tampermonkey 环境使用 onurlchange 事件，其他环境回退到 MutationObserver URL 检测
      */
     function setupUrlChangeListener() {
+        // 合并历史事件，在当前事件结束后读取最终的 URL 和 body
+        let historyTimer = null;
+        let restorePending = false;
+        function scheduleHistoryRefresh(event) {
+            restorePending ||= event.type === 'pageshow' && event.persisted;
+            if (historyTimer !== null) clearTimeout(historyTimer);
+            historyTimer = setTimeout(() => {
+                historyTimer = null;
+                const force = restorePending;
+                restorePending = false;
+                handleUrlChange(force);
+            }, 0);
+        }
+
+        window.addEventListener('popstate', scheduleHistoryRefresh);
+        window.addEventListener('pageshow', event => {
+            if (event.persisted) scheduleHistoryRefresh(event);
+        });
+
         // Tampermonkey 环境下 window.onurlchange 为 null（支持），其他环境为 undefined
         if (State.featureSet.enable_onurlchange && window.onurlchange === null) {
 
@@ -247,26 +269,17 @@
     /**
      * 处理URL变化
      */
-    function handleUrlChange() {
+    function handleUrlChange(force = false) {
         const currentURL = window.location.href;
+        const sameRoute = currentURL.split('#')[0] === State.currentURL.split('#')[0];
 
-        // 如果URL没有实际变化，则跳过处理
-        if (currentURL === State.currentURL) return;
-
-        State.currentURL = currentURL;
-        updatePageConfig("URL变化 (onurlchange)");
-
-        // 重新设置观察器
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
+        // 仅锚点变化且 body 未更换时，无需重新遍历
+        if (!force && sameRoute && document.body === State.observedBody) {
+            State.currentURL = currentURL;
+            return;
         }
 
-        // 如果页面类型有效，重新遍历DOM
-        if (State.pageConfig) {
-            safe(traverseNode, 'URL变化遍历')(document.body);
-        }
-
-        setupMutationObserver();
+        handleTurboLoad();
     }
 
     /* =========================== Turbo 事件 =========================== */
@@ -275,6 +288,7 @@
      * 处理GitHub的Turbolinks页面切换
      */
     function setupTurboEvents() {
+        document.addEventListener('turbo:render', handleTurboLoad);
         document.addEventListener('turbo:load', handleTurboLoad);
     }
 
@@ -283,15 +297,27 @@
      * 在新页面加载后执行必要的翻译
      */
     function handleTurboLoad() {
+        if (!document.body) return;
+
+        State.currentURL = window.location.href;
+        updatePageConfig('页面导航');
+        State.mutationObserver?.disconnect();
+
+        // 即使 URL 已更新，也要翻译当前 body 并重新连接观察器
+        if (State.pageConfig) {
+            safe(traverseNode, '导航遍历')(document.body);
+        }
+        setupMutationObserver();
+
         if (!State.pageConfig) return;
 
-        transTitle(); // 翻译页面标题
-        transBySelector(); // 通过选择器翻译特定元素
+        safe(transTitle, '标题翻译')(); // 翻译页面标题
+        safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
 
         // 如果描述翻译功能启用，翻译页面描述
         if (State.featureSet.enable_transDesc &&
             CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            transDesc(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
+            safe(transDesc, '描述翻译')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
         }
     }
 
@@ -305,7 +331,8 @@
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType) {
+        } else if (newType !== State.pageConfig?.currentPageType ||
+            window.location.pathname !== State.pageConfig?.currentPath) {
             State.pageConfig = buildPageConfig(newType);
         }
         console.log(`【Debug】${trigger}触发, 页面类型为 ${State.pageConfig?.currentPageType}`);
@@ -936,6 +963,9 @@
             State.mutationObserver.disconnect();
         }
 
+        State.observedBody = null;
+        if (!document.body) return;
+
         State.mutationObserver = new MutationObserver(
             safe((mutations) => {
                 const currentURL = window.location.href;
@@ -955,6 +985,7 @@
 
         // 开始观察页面主体
         State.mutationObserver.observe(document.body, CONFIG.OBSERVER_CONFIG);
+        State.observedBody = document.body;
     }
 
     /**
