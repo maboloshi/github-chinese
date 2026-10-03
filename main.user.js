@@ -675,7 +675,15 @@
          * 使用 TreeWalker 遍历所有元素和文本节点
          */
         function translateReactGlobalNavSurface(surface) {
-            if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
+            if (!surface) return;
+
+            // textarea 只翻译占位符和 aria-label，然后拒绝节点，避免翻译输入内容
+            if (surface.nodeType === Node.ELEMENT_NODE && surface.tagName === 'TEXTAREA') {
+                translateReactGlobalNavAttributes(surface);
+                return;
+            }
+
+            if (shouldSkipReactGlobalNavNode(surface)) return;
 
             if (surface.nodeType === Node.ELEMENT_NODE) {
                 translateReactGlobalNavAttributes(surface);
@@ -686,6 +694,10 @@
                 NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
                 {
                     acceptNode(node) {
+                        if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'TEXTAREA') {
+                            translateReactGlobalNavAttributes(node);
+                            return NodeFilter.FILTER_REJECT;
+                        }
                         return shouldSkipReactGlobalNavNode(node)
                             ? NodeFilter.FILTER_REJECT
                             : NodeFilter.FILTER_ACCEPT;
@@ -972,21 +984,36 @@
         return isReactGlobalNavPortalNode(element);
     }
 
+    /**
+     * textarea 在忽略列表中，但仍翻译占位符和 aria-label。
+     * 值、子文本和 contenteditable 继续走忽略路径。
+     * @param {Node} node - 新增节点或属性变化目标
+     * @param {string} type - 突变类型
+     * @param {string} [attributeName] - 变化的属性名
+     * @returns {boolean}
+     */
+    function shouldTranslateTextareaChrome(node, type, attributeName) {
+        if (node?.nodeType !== Node.ELEMENT_NODE || node.tagName !== 'TEXTAREA') return false;
+        if (type === 'childList') return true;
+        return type === 'attributes'
+            && (attributeName === 'placeholder' || attributeName === 'aria-label');
+    }
+
     function processMutations(mutations) {
         const nodesToProcess = new Set();
 
         // 收集需要处理的节点
-        mutations.forEach(({ target, addedNodes, type }) => {
+        mutations.forEach(({ target, addedNodes, type, attributeName }) => {
             if (type === 'childList' && addedNodes.length > 0) {
-                // 处理新增节点
+                // 处理新增节点。textarea 即使位于 header.GlobalNav 等忽略祖先下也要翻译控件文案
                 addedNodes.forEach(node => {
-                    if (!shouldIgnoreMutationNode(node)) {
+                    if (shouldTranslateTextareaChrome(node, type) || !shouldIgnoreMutationNode(node)) {
                         nodesToProcess.add(node);
                     }
                 });
             } else if (type === 'attributes') {
                 // 处理属性变化，target 就是元素
-                if (!shouldIgnoreMutationNode(target)) {
+                if (shouldTranslateTextareaChrome(target, type, attributeName) || !shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
             } else if (type === 'characterData' && State.pageConfig.characterData) {
@@ -1036,6 +1063,12 @@
             return;
         }
 
+        // TreeWalker.nextNode 不访问根节点。textarea 仍翻译控件文案，且不遍历子文本
+        if (rootNode.tagName === 'TEXTAREA') {
+            handleElementNode(rootNode);
+            return;
+        }
+
         // 创建TreeWalker遍历节点树
         const treeWalker = document.createTreeWalker(
             rootNode,
@@ -1044,6 +1077,9 @@
                 if (node.nodeType === Node.ELEMENT_NODE
                     && State.pageConfig.ignoreSelectors
                     && node.matches(State.pageConfig.ignoreSelectors)) {
+                    if (node.tagName === 'TEXTAREA') {
+                        handleElementNode(node); // 拒绝子树前翻译占位符和 aria-label
+                    }
                     return NodeFilter.FILTER_REJECT; // 跳过忽略的选择器
                 }
                 return NodeFilter.FILTER_ACCEPT; // 接受其他节点
@@ -1097,6 +1133,7 @@
                 transElementAttrs(node, 'value'); // 值属性
             } else {
                 transElementAttrs(node, 'placeholder'); // 占位符
+                transElementAttrs(node, 'ariaLabel'); // 无障碍名称
             }
             return;
         }
