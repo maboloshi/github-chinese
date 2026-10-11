@@ -1,0 +1,61 @@
+{
+  "name": "github-chinese",
+  "displayName": "GitHub 中文化",
+  "description": "通过 VS Code browser API 向集成浏览器注入 GitHub 中文化脚本",
+  "version": "2.0.0",
+  "author": "maboloshi",
+  "publisher": "maboloshi",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maboloshi/github-chinese"
+  },
+  "engines": {
+    "vscode": "^1.116.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "github",
+    "chinese",
+    "translation",
+    "i18n",
+    "github-chinese"
+  ],
+  "enabledApiProposals": [
+    "browser"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "tsc --noEmit",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.116.0",
+    "@vscode/vsce": "3.9.2",
+    "typescript": "^7.0.2"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "github-chinese.refresh",
+        "title": "GitHub 中文化: 刷新集成浏览器注入"
+      },
+      {
+        "command": "github-chinese.status",
+        "title": "GitHub 中文化: 检查注入状态"
+      }
+    ]
+  },
+  "allowScripts": {
+    "@vscode/vsce-sign@2.0.9": true,
+    "keytar@7.9.0": true
+  }
+}

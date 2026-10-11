@@ -34,6 +34,8 @@
 - [🌟 功能特性](#-功能特性)
 - [🌐 兼容环境](#-兼容环境)
 - [💻 安装指南](#-安装指南)
+    - [浏览器（Tampermonkey）](#浏览器tampermonkey)
+    - [VS Code 市场扩展](#vs-code-市场扩展)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
 - [📌 待办事项](#-待办事项)
@@ -60,8 +62,11 @@ Chrome / Chromium 内核 | [Tampermonkey][Tampermonkey], [Violentmonkey][Violent
 Safari（全平台）     | [Tampermonkey][Tampermonkey], [Macaque][Macaque], [Stay][Stay]
 Firefox / Gecko 内核   | [Tampermonkey][Tampermonkey], [Violentmonkey][Violentmonkey]
 Via（Android）       | 内置管理器
+VS Code 集成浏览器  |
 
 ## 💻 安装指南
+
+### 浏览器（Tampermonkey）
 
 1. 安装用户脚本管理器：
     - 推荐：[Tampermonkey][Tampermonkey]
@@ -71,6 +76,7 @@ Via（Android）       | 内置管理器
     1. 具体可参考 [Tampermonkey 官方指引](https://www.tampermonkey.net/faq.php#Q209)
 1. 选择安装源：
     - [GitHub 源【开发版】][main.user.js]
+    - [南大镜像源【开发版】][main(nju.edu).user.js]
     - [GreasyFork 源【稳定版】][main(greasyfork).user.js]
 1. 刷新页面后，插件即可生效
 1. 必要时，重启浏览器
@@ -81,6 +87,10 @@ Via（Android）       | 内置管理器
 > **版本说明**：
 > - 🚀 开发版：实时更新，每周五自动更新词库
 > - 🛡️ 稳定版：每周一同步开发版词库，更稳定
+
+### VS Code 集成浏览器
+
+请参考[扩展的自述文件](vscode-extension/README.md)。
 
 ## 🔧 本地调试
 
@@ -115,6 +125,46 @@ Via（Android）       | 内置管理器
 ## 🔄 更新日志
 
 ### 最新版本
+
+#### v1.9.4.4 (2026-06-20)
+
+1. 兼容修复`1.9.2.4`,`1.9.4.4`：
+   - 区分 React GlobalNav 与页面主体共享的 Primer 弹层，恢复下拉菜单即时、完整翻译。
+
+#### v1.9.4.3 (2026-06-17)
+
+1. 兼容修复`1.9.2.3`,`1.9.4.3`：
+   - 收窄 React 搜索模块忽略范围，恢复仓库议题页和搜索页主体区域翻译。
+
+#### v1.9.4.2 (2026-06-17)
+
+1. 兼容修复`1.9.2.2`,`1.9.4.2`：
+   - 在保持 React 头部搜索框稳定的前提下，恢复头部导航、菜单、搜索弹层和提示翻译。
+
+#### v1.9.4.1 (2026-06-16)
+
+1. 临时修复`1.9.2`,`1.9.4`：
+   - 关于 GitHub 引入 React 机制导致头部搜索框消失。副作用整个头部导航全部加入忽略规则，无法翻译。
+
+#### v1.9.4 (2026-05-17)
+
+1. 代码重构：
+   - 全面结构化重组：抽离配置常量 `CONFIG`、状态管理器 `State`
+   - 引入 `safe()` 错误边界包裹关键函数，便于排错
+   - 函数拆分细化：`watchUpdate` → `setupMutationObserver` + `processMutations`，`transDesc` → `handleTransClick` + `requestRemoteTrans` + `showTransResult`
+   - `processMutations` 祖先去重：同一批 mutation 中后代节点不再重复遍历
+1. 新增功能：
+   - 翻译结果 UI 暗色主题适配（CSS 变量 + `prefers-color-scheme` 媒体查询），使用 `GM_addStyle` 插入
+   - 未命中词条管理器 `MissedTermsManager`（记录、导出 JSON、清空、统计、菜单）
+   - 开发者模式（`CONFIG.DEV`）控制未命中词条菜单显隐
+   - Tampermonkey `onurlchange` 事件支持（`setupUrlChangeListener`）
+1. 修复：
+   - 修复翻译 API 响应 XSS 漏洞：`innerHTML` 模板拼接改为 `textContent` 安全赋值（由 #692 报告）
+   - 修复 TreeWalker 过滤器在 `ignoreSelectors` 为空时抛出 `SyntaxError`
+   - 修复翻译按钮可能重复添加的问题（`nextSibling` 空值检查）
+   - 修复 `RELATIVE-TIME` shadowRoot 为 null 时的崩溃
+   - 修复从未识别页面离开后 `State.pageConfig` 未清空，导致旧配置残留的问题
+1. 性能优化：减少无效迭代，消除不必要的 DOM 遍历
 
 #### v1.9.3 (2024-08-18)
 
@@ -296,87 +346,48 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 一如既往，感谢我们出色的贡献者❤️！
 
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->
-<a href="https://github.com/maboloshi" title="沙漠之子">
-  <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
-</a>
-<a href="https://github.com/52cik" title="楼教主">
-  <img src="https://avatars.githubusercontent.com/u/5033310?v=4" width="42;" alt="楼教主"/>
-</a>
-<a href="https://github.com/TC999" title="陈生杂物房">
-  <img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/>
-</a>
-<a href="https://github.com/qznfbnj" title="其智乃反不能及">
-  <img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/>
-</a>
-<a href="https://github.com/wyc-26" title="wyc-26">
-  <img src="https://avatars.githubusercontent.com/u/154735436?v=4" width="42;" alt="wyc-26"/>
-</a>
-<a href="https://github.com/LuYifei2011" title="Lu Yifei">
-  <img src="https://avatars.githubusercontent.com/u/118034848?v=4" width="42;" alt="Lu Yifei"/>
-</a>
-<a href="https://github.com/tangyuan0821" title="Paper Moon">
-  <img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="Paper Moon"/>
-</a>
-<a href="https://github.com/pylover7" title="大叶子">
-  <img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/>
-</a>
-<a href="https://github.com/cat-kun" title="cat-kun">
-  <img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/>
-</a>
-<a href="https://github.com/ChinaGodMan" title="人民的勤务员">
-  <img src="https://avatars.githubusercontent.com/u/96548841?v=4" width="42;" alt="人民的勤务员"/>
-</a>
-<a href="https://github.com/buiawpkgew1" title="菾凴">
-  <img src="https://avatars.githubusercontent.com/u/71136405?v=4" width="42;" alt="菾凴"/>
-</a>
-<a href="https://github.com/pecasha" title="Pecasha">
-  <img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/>
-</a>
-<a href="https://github.com/Kisechan" title="Kise Platinyl">
-  <img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/>
-</a>
-<a href="https://github.com/yrljroli" title="苓𥤚">
-  <img src="https://avatars.githubusercontent.com/u/169890386?v=4" width="42;" alt="苓𥤚"/>
-</a>
-<a href="https://github.com/YiShengJunn" title="益生君">
-  <img src="https://avatars.githubusercontent.com/u/134821571?v=4" width="42;" alt="益生君"/>
-</a>
-<a href="https://github.com/3DMXM" title="小莫">
-  <img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/>
-</a>
-<a href="https://github.com/xuexb" title="前端小武">
-  <img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/>
-</a>
-<a href="https://github.com/wang4yu6peng13" title="wang4yu6peng13">
-  <img src="https://avatars.githubusercontent.com/u/10207042?v=4" width="42;" alt="wang4yu6peng13"/>
-</a>
-<a href="https://github.com/pangshitong" title="pangshitong">
-  <img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/>
-</a>
-<a href="https://github.com/daydaygo" title="dayday">
-  <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
-</a>
-<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝">
-  <img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/>
-</a>
-<a href="https://github.com/NyA1K0" title="NyA!K0">
-  <img src="https://avatars.githubusercontent.com/u/177237971?v=4" width="42;" alt="NyA!K0"/>
-</a>
-<a href="https://github.com/KS-OTO" title="KS-OTO">
-  <img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/>
-</a>
-<a href="https://github.com/swsoyee" title="InfinityLoop">
-  <img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/>
-</a>
-<a href="https://github.com/ImgBotApp" title="Imgbot">
-  <img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/>
-</a>
-<a href="https://github.com/neveler" title="neveler">
-  <img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="neveler"/>
-</a>
-<a href="https://github.com/wang93wei" title="AlanWang">
-  <img src="https://avatars.githubusercontent.com/u/6371053?v=4" width="42;" alt="AlanWang"/>
-</a>
+<a href="https://github.com/maboloshi" title="沙漠之子"><img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/></a>
+<a href="https://github.com/52cik" title="楼教主"><img src="https://avatars.githubusercontent.com/u/5033310?v=4" width="42;" alt="楼教主"/></a>
+<a href="https://github.com/TC999" title="陈生杂物房"><img src="https://avatars.githubusercontent.com/u/88823709?v=4" width="42;" alt="陈生杂物房"/></a>
+<a href="https://github.com/wyc-26" title="wyc-26"><img src="https://avatars.githubusercontent.com/u/154735436?v=4" width="42;" alt="wyc-26"/></a>
+<a href="https://github.com/qznfbnj" title="其智乃反不能及"><img src="https://avatars.githubusercontent.com/u/100760086?v=4" width="42;" alt="其智乃反不能及"/></a>
+<a href="https://github.com/PtJade-Ceramic" title="PtJade Ceramic"><img src="https://avatars.githubusercontent.com/u/185668489?v=4" width="42;" alt="PtJade Ceramic"/></a>
+<a href="https://github.com/tangyuan0821" title="Tang Yuan"><img src="https://avatars.githubusercontent.com/u/195516213?v=4" width="42;" alt="Tang Yuan"/></a>
+<a href="https://github.com/LuYifei2011" title="Lu Yifei"><img src="https://avatars.githubusercontent.com/u/118034848?v=4" width="42;" alt="Lu Yifei"/></a>
+<a href="https://github.com/mvanhorn" title="Matt Van Horn"><img src="https://avatars.githubusercontent.com/u/455140?v=4" width="42;" alt="Matt Van Horn"/></a>
+<a href="https://github.com/MrBaoboer" title="Mr.Baoboer"><img src="https://avatars.githubusercontent.com/u/272576744?v=4" width="42;" alt="Mr.Baoboer"/></a>
+<a href="https://github.com/pylover7" title="大叶子"><img src="https://avatars.githubusercontent.com/u/56282729?v=4" width="42;" alt="大叶子"/></a>
+<a href="https://github.com/cat-kun" title="cat-kun"><img src="https://avatars.githubusercontent.com/u/8529528?v=4" width="42;" alt="cat-kun"/></a>
+<a href="https://github.com/ChinaGodMan" title="人民的勤务员"><img src="https://avatars.githubusercontent.com/u/96548841?v=4" width="42;" alt="人民的勤务员"/></a>
+<a href="https://github.com/th-dd" title="叹号大帝"><img src="https://avatars.githubusercontent.com/u/162813557?v=4" width="42;" alt="叹号大帝"/></a>
+<a href="https://github.com/pooneyy" title="poney"><img src="https://avatars.githubusercontent.com/u/85266337?v=4" width="42;" alt="poney"/></a>
+<a href="https://github.com/pecasha" title="Pecasha"><img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/></a>
+<a href="https://github.com/Kisechan" title="Kise Platinyl"><img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/></a>
+<a href="https://github.com/wang93wei" title="AlanWang"><img src="https://avatars.githubusercontent.com/u/6371053?v=4" width="42;" alt="AlanWang"/></a>
+<a href="https://github.com/Iamliuxiaozhen" title="Oliver Lin"><img src="https://avatars.githubusercontent.com/u/149680880?v=4" width="42;" alt="Oliver Lin"/></a>
+<a href="https://github.com/sebastionoss" title="Sebastion OSS"><img src="https://avatars.githubusercontent.com/u/262984339?v=4" width="42;" alt="Sebastion OSS"/></a>
+<a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"><img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/></a>
+<a href="https://github.com/daydaygo" title="dayday"><img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/></a>
+<a href="https://github.com/pangshitong" title="pangshitong"><img src="https://avatars.githubusercontent.com/u/41714457?v=4" width="42;" alt="pangshitong"/></a>
+<a href="https://github.com/saime428" title="saime428"><img src="https://avatars.githubusercontent.com/u/51110572?v=4" width="42;" alt="saime428"/></a>
+<a href="https://github.com/wang4yu6peng13" title="wang4yu6peng13"><img src="https://avatars.githubusercontent.com/u/10207042?v=4" width="42;" alt="wang4yu6peng13"/></a>
+<a href="https://github.com/wmwlwmwl" title="wmwlwmwl"><img src="https://avatars.githubusercontent.com/u/168271477?v=4" width="42;" alt="wmwlwmwl"/></a>
+<a href="https://github.com/xuexb" title="前端小武"><img src="https://avatars.githubusercontent.com/u/3872051?v=4" width="42;" alt="前端小武"/></a>
+<a href="https://github.com/xuezhaju" title="学渣驹"><img src="https://avatars.githubusercontent.com/u/175468713?v=4" width="42;" alt="学渣驹"/></a>
+<a href="https://github.com/3DMXM" title="小莫"><img src="https://avatars.githubusercontent.com/u/28587093?v=4" width="42;" alt="小莫"/></a>
+<a href="https://github.com/YiShengJunn" title="益生君"><img src="https://avatars.githubusercontent.com/u/134821571?v=4" width="42;" alt="益生君"/></a>
+<a href="https://github.com/yrljroli" title="苓𥤚"><img src="https://avatars.githubusercontent.com/u/169890386?v=4" width="42;" alt="苓𥤚"/></a>
+<a href="https://github.com/TNTXZ" title="TNTXZ"><img src="https://avatars.githubusercontent.com/u/119731745?v=4" width="42;" alt="TNTXZ"/></a>
+<a href="https://github.com/shuwn" title="Shuwn Hsu"><img src="https://avatars.githubusercontent.com/u/20023822?v=4" width="42;" alt="Shuwn Hsu"/></a>
+<a href="https://github.com/NyA1K0" title="NyA!K0"><img src="https://avatars.githubusercontent.com/u/177237971?v=4" width="42;" alt="NyA!K0"/></a>
+<a href="https://github.com/MaydayV" title="MaydayV"><img src="https://avatars.githubusercontent.com/u/61279703?v=4" width="42;" alt="MaydayV"/></a>
+<a href="https://github.com/KS-OTO" title="KS-OTO"><img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/></a>
+<a href="https://github.com/swsoyee" title="InfinityLoop"><img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/></a>
+<a href="https://github.com/ImgBotApp" title="Imgbot"><img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/></a>
+<a href="https://github.com/HeavenlessLing" title="Heavenless"><img src="https://avatars.githubusercontent.com/u/238226870?v=4" width="42;" alt="Heavenless"/></a>
+<a href="https://github.com/BluewhaleYF" title="Flint Scophire"><img src="https://avatars.githubusercontent.com/u/206069864?v=4" width="42;" alt="Flint Scophire"/></a>
+<a href="https://github.com/neveler" title="neveler"><img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="neveler"/></a>
+<a href="https://github.com/Aethersailor" title="Aethersailor"><img src="https://avatars.githubusercontent.com/u/22260104?v=4" width="42;" alt="Aethersailor"/></a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 > 贡献者列表，由 [GitHub Action][update-contributors-images] 自动生成
@@ -390,11 +401,11 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 ## 📈 项目统计
 
-<a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
+<a href="https://star-history.dera.page/#maboloshi/github-chinese&Timeline">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
   </picture>
 </a>
 
@@ -434,5 +445,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 [Macaque]: https://macaque.app/ "猕猴"
 [Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 "Stay"
 [main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 源"
+[main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
 [main(greasyfork).user.js]: https://greasyfork.org/scripts/435208-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6.user.js "GitHub 中文化插件 - GreasyFork 源"
 [update-contributors-images]: https://github.com/maboloshi/github-chinese/blob/gh-pages/.github/workflows/update_contributors_images.yml
+

@@ -1,0 +1,100 @@
+name: Bug 提交（繁體中文）
+description: 提交 BUG
+labels: bug
+
+body:
+- type: markdown
+  attributes:
+    value: "### 欢迎！"
+- type: markdown
+  attributes:
+    value: |
+      感謝您提交議題！請補充以下內容，以便我們能更好地協助您：
+      提交議題前確保您已閲讀[常見問題（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)。
+- type: textarea
+  id: description
+  attributes:
+    label: 問題/建議
+    description: 請描述你遇到的問題/提出的建議。
+  validations:
+    required: true
+- type: textarea
+  id: steps
+  attributes:
+    label: 步骤
+    description: 請逐步描述你遇到的問題，并帶上測試連結（如有）。
+  validations:
+    required: true
+- type: textarea
+  id: expectation
+  attributes:
+    label: 預期
+    description: 請描述你对本插件行為的預期。
+  validations:
+    required: true
+- type: textarea
+  id: realization
+  attributes:
+    label: 實際表現
+    description: 請描述本插件的實際表現。
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: 附件
+    description: 請提供相关相關截圖或附件（如有）。
+  validations:
+    required: false
+- type: dropdown
+  id: browser-name
+  attributes:
+    label: 瀏覽器名稱
+    description: 請選择運行本插件的瀏覽器的名稱。
+    options:
+      - Microsoft Edge
+      - Google Chrome
+      - Others
+  validations:
+    required: true
+- type: input
+  id: browser-version
+  attributes:
+    label: 瀏覽器版本
+    description: |
+      請填入運行本插件的瀏覽器的版本。
+      [Microsoft Edge 版本](https://support.microsoft.com/zh-cn/microsoft-edge/c726bee8-c42e-e472-e954-4cf5123497eb)
+      [Google Chrome 版本](chrome://settings/help)
+    placeholder: 版本 146.0.3856.62 (正式版本) (arm64)
+  validations:
+    required: true
+- type: dropdown
+  id: script-manager-name
+  attributes:
+    label: 腳本管理器名稱
+    description: 請選择管理本插件的腳本管理器的名稱。
+    options:
+      - 篡改猴（Tampermonkey）
+      - Others
+  validations:
+    required: true
+- type: input
+  id: script-manager-version
+  attributes:
+    label: 腳本管理器版本
+    description: |
+      請填入管理本插件的腳本管理器的版本。
+      [Microsoft Edge 扩展](https://support.microsoft.com/zh-cn/topic/a3ae1ebb-8e7f-49df-a5f8-8c3f56c8078b)
+    placeholder: 5.4.1
+  validations:
+    required: true
+- type: input
+  id: plugin-version
+  attributes:
+    label: 插件版本
+    description: |
+      請填入 GitHub 中文化插件的版本。
+      見 [GitHub 中文化插件](extension://iikmkjmpaadaobahmlepeloendndfphd/options.html#nav=49f369f3-16e7-423f-86d9-1aa23aa2fd1c)源码中 `@version` 的值（不再接受 1.9.2 版本反饋）。
+    placeholder: 1.9.3
+  validations:
+    required: true

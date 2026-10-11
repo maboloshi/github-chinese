@@ -1,0 +1,31 @@
+name: 功能请求（简体中文）
+description: 提出新功能或改进建议
+labels: enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 欢迎！
+        感谢您提出功能建议，请尽量说明希望解决的问题和预期结果。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题/建议
+      description: 请描述希望解决的问题，或希望新增、改进的功能。
+    validations:
+      required: true
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: 预期结果
+      description: 请描述您期望的功能或行为。
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 补充信息
+      description: 请提供有助于理解该建议的示例、背景或参考链接（如有）。
+    validations:
+      required: false

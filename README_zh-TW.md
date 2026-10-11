@@ -112,6 +112,16 @@ Via（Android）       | 內置管理器
 
 ### 最新版本
 
+#### v1.9.4.4 (2026-06-20)
+
+1. 相容修復`1.9.2.4`,`1.9.4.4`：
+   - 區分 React GlobalNav 與頁面主體共用的 Primer 彈層，恢復下拉選單即時、完整翻譯。
+
+#### v1.9.4.3 (2026-06-17)
+
+1. 相容修復`1.9.2.3`,`1.9.4.3`：
+   - 收窄 React 搜尋模組忽略範圍，恢復倉庫議題頁和搜尋頁主體區域翻譯。
+
 #### v1.9.3 (2024-08-18)
 
 1. 新增功能：通過設置中文環境，自動本地化時間元素，僅保留`on`開頭的時間正則，並停用時間元素監視
@@ -368,11 +378,11 @@ GitHub 的 ajax 載入方式逐步從 [defunkt/jquery-pjax](https://github.com/d
 
 ## 📈 項目統計
 
-<a href="https://star-history.com/#maboloshi/github-chinese&Timeline">
+<a href="https://star-history.dera.page/#maboloshi/github-chinese&Timeline">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=maboloshi/github-chinese&type=Timeline" width="75%" />
   </picture>
 </a>
 
