@@ -1,0 +1,31 @@
+name: 功能請求（繁體中文）
+description: 提出新功能或改進建議
+labels: enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 歡迎！
+        感謝您提出功能建議，請盡量說明希望解決的問題和預期結果。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 問題/建議
+      description: 請描述希望解決的問題，或希望新增、改進的功能。
+    validations:
+      required: true
+  - type: textarea
+    id: expected-result
+    attributes:
+      label: 預期結果
+      description: 請描述您期望的功能或行為。
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 補充資訊
+      description: 請提供有助於理解該建議的範例、背景或參考連結（如有）。
+    validations:
+      required: false
