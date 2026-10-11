@@ -1163,8 +1163,8 @@
         // 获取时间文本
         const text = element.textContent;
         if (!text) return;
-        // 移除开头的"on"
-        const result = text.replace(/^on/, "");
+        // 移除时间文本中的"on"
+        const result = text.replace(/\bon\s+/gi, (match, offset) => offset === 0 ? " " : "");
         if (result !== text) {
             element.textContent = result; // 应用翻译
         }

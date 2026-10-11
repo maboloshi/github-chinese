@@ -620,8 +620,8 @@
     function transTimeElement(el) {
         const text = el.textContent;
         if (!text) return;
-        // 移除开头的"on"
-        const result = text.replace(/^on/, "");
+        // 移除时间文本中的"on"
+        const result = text.replace(/\bon\s+/gi, (match, offset) => offset === 0 ? " " : "");
         if (result !== text) {
             el.textContent = result;
         }

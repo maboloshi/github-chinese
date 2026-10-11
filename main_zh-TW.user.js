@@ -991,8 +991,8 @@
         // 獲取時間文本
         const text = element.textContent;
         if (!text) return;
-        // 移除開頭的"on"
-        const result = text.replace(/^on/, "");
+        // 移除時間文本中的"on"
+        const result = text.replace(/\bon\s+/gi, (match, offset) => offset === 0 ? " " : "");
         if (result !== text) {
             element.textContent = result; // 應用翻譯
         }
