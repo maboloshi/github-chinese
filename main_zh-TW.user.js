@@ -127,6 +127,7 @@
         currentURL: window.location.href, // 當前頁面URL
         transEngine: 'iflyrec',  // 當前翻譯引擎
         mutationObserver: null,  // DOM變化觀察器
+        observedBody: null,      // 當前觀察的頁面主體
         urlChangeHandler: null,  // 存儲URL變化處理器
         dynamicMenus: {},        // 動態菜單ID記錄
         initDone: false,
@@ -206,6 +207,8 @@
      */
     function setupInitTrans() {
         function doInitTrans() {
+            if (!document.body) return;
+            State.currentURL = window.location.href;
             updatePageConfig('首次載入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍歷')(document.body);
@@ -228,6 +231,25 @@
      * Tampermonkey 環境使用 onurlchange 事件，其他環境回退到 MutationObserver URL 檢測
      */
     function setupUrlChangeListener() {
+        // 合併歷史事件，在當前事件結束後讀取最終的 URL 和 body
+        let historyTimer = null;
+        let restorePending = false;
+        function scheduleHistoryRefresh(event) {
+            restorePending ||= event.type === 'pageshow' && event.persisted;
+            if (historyTimer !== null) clearTimeout(historyTimer);
+            historyTimer = setTimeout(() => {
+                historyTimer = null;
+                const force = restorePending;
+                restorePending = false;
+                handleUrlChange(force);
+            }, 0);
+        }
+
+        window.addEventListener('popstate', scheduleHistoryRefresh);
+        window.addEventListener('pageshow', event => {
+            if (event.persisted) scheduleHistoryRefresh(event);
+        });
+
         // Tampermonkey 環境下 window.onurlchange 為 null（支持），其他環境為 undefined
         if (State.featureSet.enable_onurlchange && window.onurlchange === null) {
 
@@ -247,26 +269,17 @@
     /**
      * 處理URL變化
      */
-    function handleUrlChange() {
+    function handleUrlChange(force = false) {
         const currentURL = window.location.href;
+        const sameRoute = currentURL.split('#')[0] === State.currentURL.split('#')[0];
 
-        // 如果URL沒有實際變化，則跳過處理
-        if (currentURL === State.currentURL) return;
-
-        State.currentURL = currentURL;
-        updatePageConfig("URL變化 (onurlchange)");
-
-        // 重新設置觀察器
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
+        // 僅錨點變化且 body 未更換時，無需重新遍歷
+        if (!force && sameRoute && document.body === State.observedBody) {
+            State.currentURL = currentURL;
+            return;
         }
 
-        // 如果頁面類型有效，重新遍歷DOM
-        if (State.pageConfig) {
-            safe(traverseNode, 'URL變化遍歷')(document.body);
-        }
-
-        setupMutationObserver();
+        handleTurboLoad();
     }
 
     /* =========================== Turbo 事件 =========================== */
@@ -275,6 +288,7 @@
      * 處理GitHub的Turbolinks頁面切換
      */
     function setupTurboEvents() {
+        document.addEventListener('turbo:render', handleTurboLoad);
         document.addEventListener('turbo:load', handleTurboLoad);
     }
 
@@ -283,15 +297,27 @@
      * 在新頁面加載後執行必要的翻譯
      */
     function handleTurboLoad() {
+        if (!document.body) return;
+
+        State.currentURL = window.location.href;
+        updatePageConfig('頁面導航');
+        State.mutationObserver?.disconnect();
+
+        // 即使 URL 已更新，也要翻譯當前 body 並重新連接觀察器
+        if (State.pageConfig) {
+            safe(traverseNode, '導航遍歷')(document.body);
+        }
+        setupMutationObserver();
+
         if (!State.pageConfig) return;
 
-        transTitle(); // 翻譯頁面標題
-        transBySelector(); // 通過選擇器翻譯特定元素
+        safe(transTitle, '標題翻譯')(); // 翻譯頁面標題
+        safe(transBySelector, '選擇器翻譯')(); // 通過選擇器翻譯特定元素
 
         // 如果描述翻譯功能啟用，翻譯頁面描述
         if (State.featureSet.enable_transDesc &&
             CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            transDesc(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
+            safe(transDesc, '描述翻譯')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
         }
     }
 
@@ -305,7 +331,8 @@
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType) {
+        } else if (newType !== State.pageConfig?.currentPageType ||
+            window.location.pathname !== State.pageConfig?.currentPath) {
             State.pageConfig = buildPageConfig(newType);
         }
         console.log(`【Debug】${trigger}觸發, 頁面類型為 ${State.pageConfig?.currentPageType}`);
@@ -764,6 +791,9 @@
             State.mutationObserver.disconnect();
         }
 
+        State.observedBody = null;
+        if (!document.body) return;
+
         State.mutationObserver = new MutationObserver(
             safe((mutations) => {
                 const currentURL = window.location.href;
@@ -783,6 +813,7 @@
 
         // 開始觀察頁面主體
         State.mutationObserver.observe(document.body, CONFIG.OBSERVER_CONFIG);
+        State.observedBody = document.body;
     }
 
     /**
