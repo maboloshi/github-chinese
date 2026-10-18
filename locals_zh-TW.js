@@ -51,7 +51,7 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent)|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 組織路徑
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定頁面，啟用`字符資料`監測
     characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'repository/issues', 'repository/commit', 'copilot', 'spark', 'repository/settings/rules', 'pulls'],
@@ -600,7 +600,7 @@ I18N["zh-TW"]["title"] = { // 標題翻譯
         [/Sponsorship Log/, "贊助日誌"],
         [/Sponsor @([^ ]+) on GitHub Sponsors/, "在 GitHub 上贊助 $1"],
         [/OAuth applications/, "OAuth 應用"],
-        [/People · Pending Collaborators/, "成員 · 待定協作者"],
+        [/People · Pending Collaborators/, "成員 · 未決協作者"],
         [/Members · People · ([^ ]+)/, "成員 · $1"],
         [/People/, "成員"],
         [/Outside collaborators/, "外部協作者"],
@@ -684,9 +684,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
             "You were mentioned on and opened this pull request": "您被提及並打開了此合併請求",
             "You are assigned to this pull request": "您被指派處理此合併請求",
             "You are assigned to and opened this pull request": "您打開並被指派處理此合併請求",
-            "You left a review": "您已評論",
+            "You left a review": "您發表了審查意見",
             "Changes requested": "請求更改", // 合併請求
-            "Review required": "請求審查", // 合併請求
+            "Review required": "需要審查", // 合併請求
             "Approved": "已批准", // 合併請求
             "replied": "已回覆", // 討論
 
@@ -922,7 +922,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
 
             "Open agents panel": "打開AI 代理面板",
                 "Start a task with Copilot coding agent": "使用 Copilot 編程AI 代理開始任務",
-                    "Describe your task in natural language. Copilot will work in the background and open a pull request for your review.": "請用自然語言描述您的任務。Copilot 會在後台工作，並創建一個合併請求供您審核。",
+                    "Describe your task in natural language. Copilot will work in the background and open a pull request for your review.": "請用自然語言描述您的任務。Copilot 會在後台工作，並創建一個合併請求供您審查。",
 
                 "Agent tasks": "AI 代理任務",
                     "Switch branches": "切換分支",
@@ -1023,7 +1023,7 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
                 "Focusing": "專注中",
 
             "Busy": "繁忙中",
-                "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "當其他人提及您、指派您或請求您進行評論時，GitHub 會告知他們您很忙。",
+                "When others mention you, assign you, or request your review, GitHub will let them know that you have limited availability.": "當其他人提及您、指派您或請求您審查時，GitHub 會告知他們您忙不過來了。",
                 "I may be slow to respond.": "我的回覆可能比較慢。",
 
             "Clear status": "清除狀態",
@@ -2170,7 +2170,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
         "Task": "任務",
         "to access more models and higher limits.": "來獲得更多模型和更高限制。",
         "Create issue": "創建議題",
-            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，創建一個新的草稿議題。然後，要求提供更多訊息來完善議題。",
+            "First, create a new draft issue. Then ask for additional information to fill out the issue.":"首先，創建一個新的議題草案。然後，要求提供更多訊息來完善議題。",
             "First, create an issue with sub issues. Then ask for additional information to fill out these issues.":"首先，創建一個包含子議題的議題。然後，要求提供更多訊息來完善這些子議題。",
         "Write code": "編寫程式碼",
         "Models": "模型",
@@ -2278,7 +2278,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "When you take actions across GitHub, we’ll provide links to that activity here.": "當您在 GitHub 上採取行動時，我們會在這裡提供該活動的連結。", // 組織
 
         "Create your first project": "創建您的第一個專案",
-            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "準備好開始構建了嗎？為新想法創建一個儲存庫或使用現有儲存庫繼續為其做出貢獻。",
+            "Ready to start building? Create a repository for a new idea or bring over an existing repository to keep contributing to it.": "就緒以開始構建了嗎？為新想法創建一個儲存庫或使用現有儲存庫繼續為其做出貢獻。",
             "Create repository": "創建儲存庫",
 
         "Forked from": "復刻自", // 復刻儲存庫
@@ -2332,7 +2332,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
         "Introduce yourself with a profile README": "使用 README 介紹自己",
             "Share information about yourself by creating a profile README, which appears at the top of your profile page.": "通過創建個人資料自述文件（README）來分享有關您自己的訊息，該訊息將顯示在您的個人資料頁面頂部。",
         "Follow this exercise to try the GitHub flow": "按照此練習嘗試 GitHub 流程",
-            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程會教您基本知識，您可以在其中創建自己的儲存庫並學習 GitHub 用於創建和審查程式碼的合併請求工作流程。",
+            "GitHub's “Hello World” tutorial teaches you essentials, where you create your own repository and learn GitHub's pull request workflow for creating and reviewing code.": "GitHub 的 “Hello World” 教程會教您基本知識，您可以在其中創建自己的儲存庫和學習 GitHub 的合併請求工作流程，它們分別用於程式碼創建和程式碼審查。",
             "Try the GitHub flow": "嘗試 GitHub 流程",
         "About version control and Git": "關於版本控制和 Git",
         "Learn about the version control system, Git, and how it works with GitHub.": "瞭解版本控制系統、Git 以及它如何與 GitHub 一起工作。",
@@ -2532,7 +2532,7 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "Unable to load pull requests, try again later.": "無法加載合併請求，請稍後重試。",
 
             "Updated": "更新於",
-            "Ready for review": "準備審查",
+            "Ready for review": "可供審查",
             "Assigned to Copilot": "分配給 Copilot",
     },
     "regexp": [ // 正則翻譯
@@ -2666,7 +2666,7 @@ I18N["zh-TW"]["page-profile-public"] = { // 個人首頁（含組織）
                 // YOLO
                     "You want it? You merge it.": "您想要它？您合併它。",
                     "inaccessible": "已刪庫",
-                    "Merged without a review": "未經審查就合併",
+                    "Merged without a review": "未經審查即合併",
                 // Pull Shark
                     "Pull Shark": "合縱連橫",
                     "Bronze unlocked": "青銅已解鎖",
@@ -3596,7 +3596,7 @@ I18N["zh-TW"]["confirm-access"] = { // “授權訪問” 對話框
             "Confirm": "確認",
 
             "Passkey": "通行金鑰",
-            "When you are ready, authenticate using the button below.": "準備好後，請使用下面的按鈕進行身份驗證。",
+            "When you are ready, authenticate using the button below.": "就緒後，請使用下面的按鈕進行身份驗證。",
             "This browser or device does not fully support passkeys.": "此瀏覽器或設備不完全支持通行金鑰。",
             "Use passkey": "使用通行金鑰",
 
@@ -3824,9 +3824,13 @@ I18N["zh-TW"]["orgs-settings-menu"] = { // 組織設置 公共部分
                 "Sandboxes": "沙盒",
                 "Planning": "計劃",
                     "Issue types": "議題類型",
+                    "Issue fields": "議題字段",
                 "Copilot": "GitHub Copilot",
                     "Access": "訪問",
                     "Coding agent": "編程AI 代理",
+                    "Code review": "程式碼審查",
+                    "Internet access": "訪問互聯網",
+                    "Runner type": "執行器類型",
                 "Actions": "操作",
                     "Runners": "執行器",
                     "Runner groups": "執行器組",
@@ -3855,7 +3859,7 @@ I18N["zh-TW"]["orgs-settings-menu"] = { // 組織設置 公共部分
                 "OAuth app policy": "OAuth 應用策略",
                 "Personal access tokens": "個人訪問令牌",
                     "Active tokens": "活躍的令牌",
-                    "Pending requests": "待處理的請求",
+                    "Pending requests": "未決請求",
 
             "Integrations": "集成",
                 "Scheduled reminders": "定時提醒",
@@ -4071,7 +4075,7 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 帳戶
             "Search by username, full name, or email address": "搜尋用戶名、全名、或電子信箱",
             "You have not designated a successor.": "您還沒有指定繼任者。",
             // 等待回應
-            "Pending": "待處理",
+            "Pending": "未決",
             "Copy invite link": "複製邀請連結",
             // 已指定
             "Learn more about account successors": "瞭解更多關於帳戶繼任者的訊息",
@@ -4343,7 +4347,7 @@ I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
                     "Reviews, Pushes": "審查、推送",
                     "Reviews, Pushes, Comments": "審查、推送、評論",
                     "Reviews, Pushes, Comments, My own updates": "審查、推送、評論、自我更新",
-                    "Pull Request reviews": "合併請求審核",
+                    "Pull Request reviews": "合併請求審查.",
                     "Pull Request pushes": "合併請求推送",
                     "Comments on Issues and Pull Requests": "關於議題和合併請求的評論",
                     "Includes your own updates": "包括您自己的更新",
@@ -4932,9 +4936,9 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
                     "Repository rules":"儲存庫規則",
                         "Enforce restrictions on how code branches are merged, including requiring reviews by selected collaborators, or allowing only specific contributors to work on a particular branch.": "對程式碼分支的合併方式實施限制，包括要求由選定的協作者進行審查，或僅允許特定的貢獻者在特定分支上工作。",
                     // 程式碼所有者
-                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "當選定的貢獻者對其擁有的程式碼部分進行修改時，自動要求審查或要求批准。",
+                        "Automatically request reviews – or require approval – by selected contributors when changes are made to sections of code that they own.": "當更改所選貢獻者擁有的程式碼部分時，自動請求其審查，或要求其批准。",
                     "Draft pull requests": "合併請求草案",
-                        "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式審查之前，輕鬆討論和協作合併請求。",
+                        "Easily discuss and collaborate on pull requests before submitting to formal review.": "在提交正式審查之前，就合併請求進行輕鬆討論和協作。", //協作在漢語中用作動詞時作為不及物動詞比較通順
                     "Multiple pull request assignees": "多個合併請求受理人",
                         "Assign more than one person to a pull request.": "為合併請求指派多人受理。",
                     "Repository insights": "儲存庫分析",
@@ -5181,7 +5185,7 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
 
         // [/The plan change was successful. @([^ ]+) has been updated to the pro yearly plan./, "計劃變更成功。@$1 已更新為專業版年度計費。"],
         // [/The plan change was successful. @([^ ]+) has been updated to the pro monthly plan./, "計劃變更成功。@$1 已更新為專業版月度計費。"],
-        // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我們正在準備您的報告！完成後，我們將發送電子郵件至 $1。"], //頂部提醒
+        // [/We're preparing your report! We’ll send an email to ([^@]+@[^\n]+) when it’s ready./, "我們正在準備您的報告！就緒後，我們將發送電子郵件至 $1。"], //頂部提醒
         // [/Included minutes quota resets? in (\d+) days?./, "包含的分鐘配額將在 $1 天之內重置"],
         // [/Data transfer quota resets? in (\d+) days?./, "資料傳輸配額將在 $1 天之內重置"],
         // //[/Included minutes quota resets/, ""],
@@ -5223,11 +5227,11 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
             [/(\d+\.\d+) hr/, "$1 小時"],
 
         // 使用情況
-            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我們正在準備您的使用報告。可能需要大約 30 分鐘。報告準備好後，我們會發送電子郵件到 $1。"],
-            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我們正在準備您的使用報告。報告準備好後，我們會發送電子郵件到 $1。"],
-            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用報告請求正在處理。報告準備好後，請到 $1 查收。"],
+            [/We're preparing your usage report. It may take ~30 minutes to see usage in your report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我們正在準備您的使用報告。可能需要大約 30 分鐘。報告就緒後，我們會發送電子郵件到 $1。"],
+            [/We're preparing your usage report. We'll send an email to ([^@]+@[^\n]+) when it's ready./, "我們正在準備您的使用報告。報告就緒後，我們會發送電子郵件到 $1。"],
+            [/Your usage report request is already in progress. Check ([^@]+@[^\n]+) for the report when it's ready./, "您的使用報告請求正在處理。報告就緒後，請到 $1 查收。"],
             // 獲取使用報告視窗
-            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用報告準備好後，將通過電子郵件發送到 $1。"],
+            [/The usage report will be emailed when it's ready to ([^@]+@[^\n]+)./, "使用報告就緒後，將通過電子郵件發送到 $1。"],
               // 傳統選項
               //[/Metered usage before the billing transition, until (.+)/, (match, p1) => {
               //  const dateRegExp = I18N["zh-TW"]["public"]["time-regexp"];
@@ -5933,6 +5937,13 @@ I18N["zh-TW"]["settings/blocked_users"] = { // 設置 - 黑名單
             "On repositories you haven't contributed to yet, we'll warn you when a user you've blocked has previously made contributions.": "在您還沒有貢獻的儲存庫裡，當您拉黑的用戶之前有貢獻時，我們會警告您。",
             "All blocked users": "所有被拉黑的用戶",
 
+            "Block options": "拉黑選項",
+            "For 1 day": "1 天",
+            "For 3 days": "3 天",
+            "For 7 days": "7 天",
+            "For 30 days": "30 天",
+            "Until I unblock them": "直到取消拉黑",
+
     },
     "regexp": [ // 正則翻譯
     ],
@@ -5995,7 +6006,7 @@ I18N["zh-TW"]["settings/code_review_limits"] = { // 設置 - 程式碼審查限�
         // Code review limits 程式碼審查限制 https://github.com/settings/code_review_limits
             "Restrict users who are permitted to approve or request changes on pull requests in your public repositories.": "限制允許批准或請求更改公共儲存庫中合併請求的用戶。",
             "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "程式碼審查限制可能已經由各個儲存庫指定。此處的任何更改都將覆蓋這些限制，直至取消設置。",
-            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有儲存庫程式碼審查限制都是單獨管理的。啟用限制，只允許明確授予每個儲存庫訪問權的用戶提交 “批准” 或 “請求更改” 的審查。刪除限制，允許所有用戶提交合併請求審查。所有能夠提交評論合併請求審查的用戶將繼續能夠這樣做。",
+            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有儲存庫程式碼審查限制均單獨管理。啟用限制則僅允許每個儲存庫的被明確授予訪問權的用戶發表 “批准” 或 “請求更改” 的審查意見。移除限制則允許所有用戶對合併請求發表審查意見。所有能夠對合併請求發表評論性審查意見的用戶將繼續能夠這樣做。",
             "Code review limits are currently": "目前，所有儲存庫都",
             "enabled": "啟用",
             "disabled": "禁用",
@@ -6345,7 +6356,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
         // 免費版
             "You are using Copilot for free": "您正在使用 Copilot 免費版",
                 "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回覆上限為每月 2,000 次程式碼完成和 50 條聊天訊息。",
-                "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升級以獲得更高的限制、高級模型和 AI 評審。免費版的會話將在 20 天后重置。",
+                // "Upgrade for higher limits, premium models, AI reviews. Free responses reset in 20 days.": "升級以獲得限制放寬、高級模型和 AI 審查。免費版的會話將在 20 天后重置。", // 見正則翻譯
             "Get unlimited usage with Copilot Pro": "通過 Copilot Pro 無限制使用",
                 "Unlimited messages and interactions": "訊息和互動無限制",
                 "Access to the latest models": "訪問最新模型",
@@ -6395,10 +6406,10 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "and generate": "並生成",
                     "pull request summaries": "合併請求總結",
 
-                    "Automatically request Copilot code review": "自帶請求 Copilot 程式碼審查",
+                    "Automatically request Copilot code review": "自動請求 Copilot 程式碼審查",
                         "Use Copilot to automatically review all the pull requests you've created.": "使用 Copilot 自動審查您創建的合併請求。",
 
-            "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需瞭解貴機構在使用 GitHub Copilot 時會收到哪些資料，請查看",
+            "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需瞭解您的組織在使用 GitHub Copilot 時會收到哪些資料，請查看",
                 "GitHub's Privacy Statement": "GitHub 的《隱私聲明》",
             "It can take up to 30 minutes for the changes to take effect. Restart your code editor for the changes to take effect immediately.": "更改可能需要 30 分鐘才能生效。重新啟動程式碼編輯器，更改會立即生效。",
 
@@ -6453,11 +6464,11 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                     "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中獲得 Copilot 的協助",
                 "Copilot can search the web using model native search": "使用模型原生搜尋",
                     "Copilot can answer questions using a model's built-in search capabilities.": "Copilot 可以使用模型內置搜尋功能回答。",
-                "Automatic Copilot code review": "自動 Copilot 程式碼審查",
+                "Automatic Copilot code review": "Copilot 自動程式碼審查",
                     "Copilot will automatically review your pull requests.": "Copilot 將自動審查您的合併請求。",
                     "Learn more about configuring automatic code reviews.": "瞭解如何配置自動程式碼審查。",
                 "Copilot coding agent": "Copilot 編程AI 代理",
-                    "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，您可以將任務委託給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以進行迭代。",
+                    "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，您可以將任務委託給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留言回饋以供迭代。",
                     "Delegate tasks to Copilot coding agent in repositories where it is enabled": "將任務委託給已啟用 Copilot 編程AI 代理的儲存庫",
                 "Copilot cloud agent": "Copilot 雲端AI 代理",
                     "Delegate tasks to Copilot cloud agent in repositories where it is enabled": "在已啟用的儲存庫中，將任務委託給 Copilot 雲端AI 代理",
@@ -6498,7 +6509,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以為其他用戶啟用 Copilot 編程AI 代理，但由於管理員已禁用 Copilot 編程AI 代理策略，您將無法向 Copilot 分配任務。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "雖然您可以為其他用戶啟用 Copilot 編碼代理，但由於您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
 
-            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程AI 代理，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以進行迭代。",
+            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程AI 代理，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留言回饋以供迭代。",
             "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 雲端AI 代理，您可以將任務委託給 Copilot，從而專注於最具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以繼續迭代。",
                 "Learn more in the docs.": "詳情",
 
@@ -6534,7 +6545,7 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
     "regexp": [ // 正則翻譯
         [/Outside collaborator on (\d+) repositor(y|ies)/, "$1 個儲存庫的外部協作者"],
         [/Member and collaborator on (\d+) repositor(y|ies)/, "$1 個儲存庫的成員和協作者"],
-        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升級以獲取更高的限制、高級模型和 AI 審核。免費額度將在 $1 天內重置。"], // 免費版額度
+        [/Upgrade for higher limits, premium models, AI reviews. Free responses reset in (\d+) days.?/, "升級以獲得限制放寬、高級模型和 AI 審查。免費額度將在 $1 天內重置。"], // 免費版額度
         [/You can use the latest (.+) model\./, "您可以使用最新的 $1 模型。"],
         [/Learn more about how GitHub Copilot serves (.+)\./, "瞭解更多關於 GitHub Copilot 如何為 $1 提供服務。"],
         [/Your GitHub Copilot subscription will renew in (\d+) days?./, "您的 GitHub Copilot 訂閱將在 $1 天后續訂。"],
@@ -6809,8 +6820,8 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
                 "GitHub Apps augment and extend your workflows on GitHub with commercial, open source, and homegrown tools.": "GitHub 應用通過商業、開源和自主開發的工具來增強和擴展您在 GitHub 上的工作流程。",
                 "Permission updates requested.": "待處理的 GitHub 權限請求",
 
-            "Pending GitHub Apps installation requests": "待處理的 GitHub 應用安裝請求", // 組織設置
-                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您組織中的成員可以請求安裝 GitHub 應用。下面列出了待處理的請求。",
+            "Pending GitHub Apps installation requests": "未決的 GitHub 應用安裝請求", // 組織設置
+                "Members in your organization can request that GitHub Apps be installed. Pending requests are listed below.": "您組織中的成員可以請求安裝 GitHub 應用。下面列出了未決請求。",
 
             "No installed GitHub Apps": "沒有已安裝的 GitHub 應用",
             "You have no GitHub Apps installed on this account.": "此帳戶上沒有安裝任何 GitHub 應用。",
@@ -6832,7 +6843,7 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
                 "Read": "讀取",
                 "write": "寫入",
                 "access to metadata": "元資料的權限",
-                "Review request": "審核請求",
+                "Review request": "審查請求",
                 "Access public information (read-only)": "訪問公開訊息（只讀）",
                 "Access user email addresses (read-only)": "訪問用戶電子電子郵件（只讀）",
                 "Read all user profile data": "讀取所有用戶個人資料資料",
@@ -7047,9 +7058,9 @@ I18N["zh-TW"]["settings/reminders"] = { // 設置 - 定時提醒
             "Times": "時間",
                 "Filter": "篩選",
             "Review requests assigned to you": "審查分配給您的請求",
-                "Receive reminders for reviews waiting on you.": "接收等待您的審查提醒。",
+                "Receive reminders for reviews waiting on you.": "就等您處理的審查流程接收提醒。",
             "Review requests assigned to your team": "審查分配給您團隊的請求",
-                "Receive reminders for reviews waiting on your team.": "接收等待您的團隊的審查提醒。",
+                "Receive reminders for reviews waiting on your team.": "就等您的團隊處理的審查流程接收提醒。",
             "Enable real-time alerts": "啟用實時警報",
                 "Receive immediate Slack messages when certain events happen": "當某些事件發生時，會立即收到 Slack 消息",
 
@@ -7514,13 +7525,13 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
                 // 公共
                     "Repository changes from private to public.": "儲存庫從私有更改為公共。",
                 "Pull request": "合併請求",
-                    "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "合併請求的分配、禁用自動合併、啟用自動合併、關閉、轉換為草案、取消里程碑、取消隊列、編輯、隊列、標記、鎖定、設置里程碑、打開、準備審查、重新打開、取消審查請求、請求審查、同步、取消分配、取消標記或解鎖。",
+                    "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "合併請求的分配、禁用自動合併、啟用自動合併、關閉、轉為草案、取消里程碑、離開隊列、編輯、加入隊列、標記、鎖定、設置里程碑、打開、可供審查、重新打開、移除審查請求、請求審查、同步、取消分配、取消標記或解鎖。",
                 "Pull request review": "合併請求審查",
                     "Pull request review submitted, edited, or dismissed.": "合併請求審查的提交、編輯或駁回。",
                 "Pull request review comment": "合併請求審查意見",
                     "Pull request diff comment created, edited, or deleted.": "合併請求差異評論的創建、編輯或刪除。",
                 "Pull request review thread": "合併請求線程",
-                    "A pull request review thread was resolved or unresolved.": "合併請求的審查線程解決或未解決。",
+                    "A pull request review thread was resolved or unresolved.": "合併請求的審查線程已解決或未解決。",
                 "Push": "推送",
                     "Git push to a repository.": "Git 推送到儲存庫。",
                 "Registry package": "註冊軟件包",
@@ -8002,8 +8013,8 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                     "View and manage secret scanning alert dismissal requests":"查看和管理機密掃描警報解除請求",
                 "Secret scanning alerts": "機密掃描警報",
                     "View and manage secret scanning alerts.": "查看和管理機密掃描警報。",
-                "Secret scanning push protection bypass requests": "機密掃描推送保護繞過請求",
-                    "Review and manage repository secret scanning push protection bypass requests.": "審查和管理儲存庫機密掃描推送保護繞過請求。",
+                "Secret scanning push protection bypass requests": "關於繞過機密掃描推送保護的請求",
+                    "Review and manage repository secret scanning push protection bypass requests.": "審查和管理關於繞過儲存庫機密掃描推送保護的請求。",
                 "Secrets": "機密",
                     "Manage Actions repository secrets.": "管理操作儲存庫機密。",
                 "Variables": "變量",
@@ -8099,7 +8110,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                 "Organization announcement banners": "組織公告橫幅",
                     "View and modify announcement banners for an organization.": "查看並修改組織的公告橫幅。",
                 "Organization bypass requests for secret scanning": "組織繞過機密掃描請求",
-                    "Review and manage secret scanning push protection bypass requests.": "審查和管理機密掃描推送保護繞過請求。",
+                    "Review and manage secret scanning push protection bypass requests.": "審查和管理關於繞過機密掃描推送保護的請求。",
                 "Organization codespaces": "組織程式碼空間",
                     "Manage Codespaces for an organization.": "管理組織的程式碼空間。",
                 "Organization codespaces secrets": "組織程式碼空間機密",
@@ -8109,7 +8120,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                 "Organization dependabot secrets": "組織 Dependabot 機密",
                     "Manage Dependabot organization secrets.": "管理 Dependabot 組織的機密。",
                 "Organization dismissal requests for code scanning": "組織程式碼掃描的解除請求",
-                    "Review and manage code scanning alert dismissal requests.": "審查和管理程式碼掃描警報解除請求。",
+                    "Review and manage code scanning alert dismissal requests.": "審查和管理關於解除程式碼掃描警報的請求。",
                 "Organization private registries": "組織私有註冊表",
                     "Manage private registries for an organization.": "管理組織的私有註冊表。",
                 "Plan": "計劃",
@@ -8117,7 +8128,7 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                 // 專案
                     "Manage projects for an organization.": "管理組織的專案。",
                 // 機密掃描警報解除請求
-                    "Review and manage secret scanning alert dismissal requests": "審查和管理機密掃描警報解除請求",
+                    "Review and manage secret scanning alert dismissal requests": "審查和管理關於解除機密掃描警報的請求",
                 // 機密
                     "Manage Actions organization secrets.": "管理操作組織機密",
                 "Self-hosted runners": "自託管執行器",
@@ -8129,11 +8140,11 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
                 // Web 鉤子
                     "Manage the post-receive hooks for an organization.": "管理組織的接收後鉤子。",
 
-            "This token will be ready for use immediately.": "該令牌將即可可用。",
+            "This token will be ready for use immediately.": "該令牌將立即就緒可用。",
 
             "New personal access token": "新建個人訪問令牌",
                 "Your new personal access token": "您的新個人訪問令牌",
-                "will be ready for use immediately. It will expire on": "將立即準備就緒，可供使用。其有效期至",
+                "will be ready for use immediately. It will expire on": "將立即就緒可用。其有效期至",
                 // [/(.+) grants you/, "$1 授予您"],
                 // [/(\d+) account permissions?/, "$1 項帳戶權限"],
                 // [/(\d+) permissions? for all repositories:/, "所有儲存庫的 $1 項權限"],
@@ -8397,7 +8408,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                 "- same time": "- 時間相同",
                 "Recently edited these files": "最近編輯過這些文件",
                 "Owns this repository": "擁有該儲存庫",
-                "Left a review": "留下了一個評論",
+                "Left a review": "發表了審查意見",
                 "Committed to this repository": "已提交過這個儲存庫",
                 "Committed to this repository in the past day": "最近一天裡已提交過這個儲存庫",
                 "Committed to this repository in the past week": "最近一週裡已提交過這個儲存庫",
@@ -8589,7 +8600,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
                     "Previous commit": "上一個提交",
                     "Show or hide annotations": "顯示或隱藏批註",
                     "Show or hide comments": "顯示或隱藏評論",
-                    "Submit a review comment": "提交審查意見",
+                    "Submit a review comment": "發表審查意見",
                     "Collapse or expand all files instead of just the current one": "摺疊或展開所有文件，而不僅僅是當前文件",
                     "and click": "和點擊",
 
@@ -8640,7 +8651,7 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
             "Queued": "隊列中",
             "Skipped": "已跳過",
             "Deployed": "已部署",
-            "Pending": "待處理",
+            "Pending": "未決",
             "Build Failed": "構建失敗",
             "Build Passed": "構建通過",
             "Build Errored": "構建錯誤",
@@ -8717,7 +8728,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 儲存庫 - 新建/導入/復刻儲存庫
         // 新建儲存庫 https://github.com/new
             "Create a new repository": "新建儲存庫",
                 "A repository contains all project files, including the revision history.": "儲存庫包含專案中的所有文件，包括修訂歷史記錄。",
-                "Already have a project repository elsewhere?": "在其他地方已有儲存庫？",
+                "Already have a project repository elsewhere?": "在他處已有儲存庫？",
                 "Import a repository": "導入儲存庫",
                 "Required fields are marked with an asterisk (*).": "帶星號 (*) 的為必填項。",
 
@@ -8857,7 +8868,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 儲存庫 - 新建/導入/復刻儲存庫
             // [/Updating branches and (\d) commit authors?…/, "更新分支和 $1 個提交者…"],
             "Optimizing repository and pushing commits to GitHub…": "優化儲存庫並將提交推送到 GitHub…",
             "Importing complete! Your new repository": "導入完成！您的新儲存庫",
-            "is ready.": "已準備就緒。",
+            "is ready.": "已就緒。",
 
         // 復刻儲存庫 /<user-name>/<repo-name>/fork
             // 錯誤訊息
@@ -8935,7 +8946,7 @@ I18N["zh-TW"]["page-new-repo"] = {// 儲存庫 - 新建/導入/復刻儲存庫
                 // "Tell Copilot what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "告訴 Copilot 您想在此儲存庫中構建什麼。在創建完成後，Copilot 會打開一個包含生成文件的合併請求（例如基礎應用、起始程式碼或您描述的其他功能），然後在準備好後請求您進行審核。",
                 "Tell": "告訴",
                     "Copilot cloud agent": "Copilot AI 代理",
-                    "what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "您想在此儲存庫中構建什麼。在創建完成後，Copilot 會打開一個包含生成文件的合併請求（例如基礎應用、起始程式碼或您描述的其他功能），然後在準備好後請求您進行審核。",
+                    "what you want to build in this repository. After creation, Copilot will open a pull request with generated files - such as a basic app, starter code, or other features you describe - then request your review when it's ready.": "您想在此儲存庫中構建什麼。在創建完成後，Copilot 會打開一個包含生成文件的合併請求（例如基礎應用、起始程式碼或您描述的其他功能），就緒後請求您審查。",
                 "About Copilot coding agent": "關於 Copilot 編程AI 代理",
 
                 "Prompt": "提示詞",
@@ -8986,7 +8997,7 @@ I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
                 "Tell us how to make GitHub Codespaces work better for you with three quick questions.": "通過三個簡單的問題告訴我們如何讓 GitHub 程式碼空間更適合您。",
 
             "Sorry, couldn’t delete that branch.": "抱歉，無法刪除此分支。",
-            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 將起草一個合併請求開始處理您的需求，並在準備好後請求您進行審核。",
+            "Copilot will begin working on your prompt in a draft pull request, and will request review from you when ready.": "Copilot 將起草一個合併請求開始處理您的需求，並在就緒後請求您審查。",
 
         // 程式碼標籤卡 & 儲存庫首頁 /<user-name>/<repo-name>/ 和 /<user-name>/<repo-name>/tree/<branch>
             // [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名為 $2。"],
@@ -9833,7 +9844,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
             "Review required": "需要審查", // 合併請求 頁面狀態詞
                 "Review required before merging": "合併前需要審查",
             "outdated": "陳舊的",
-            "Pending": "待定",
+            "Pending": "未決",
             "Draft": "草案",
             "deployed": "部署",
                 "View deployment": "查看部署",
@@ -9861,17 +9872,17 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
 
             // 右側欄
                 "Reviewers": "審查者",
-                    "No reviews": "無人審查",
-                    "Loading suggestions…": "載入推薦…",
+                    "No reviews": "尚未審查",
+                    "Loading suggestions…": "載入建議…",
                     // [/([^ ]+) left review comments/, "$1 發表了審查意見"],
                     // [/At least (\d+) approving reviews? is required to merge this pull request./, "合併此合併請求至少需要 $1 次批准審核。"], // 具體的合併請求 審查者
-                    "No reviews—at least 1 approving review is required.": "未經審查—至少需要 1 次批准審查。",
-                    "Re-request review": "重新請求審核",
+                    "No reviews—at least 1 approving review is required.": "尚未審查—至少需要 1 次審查批准。",
+                    "Re-request review": "重新請求審查",
                     "Still in progress?": "仍在進行中嗎？",
-                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的審查請求"]
+                    // [/Awaiting requested review from ([^ ]+)/, "等待 $1 審查請求"]
                     "Learn about draft PRs": "瞭解合併請求草案",
                         "Try draft pull requests": "嘗試合併請求草案",
-                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打開正在進行的合併請求，無需請求正式審核，也不必冒不必要的合併風險。當您準備好進行程式碼審核時，您可以將合併請求草案標記為已準備好審核，這將請求任何程式碼所有者進行審核。",
+                        "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打開尚在途中的合併請求而不請求正式審查，也不必冒險在暫不需要時合併。當您就緒，可供程式碼審查時，您可以將合併請求草案標記為可供審查，這將請求任何程式碼所有者進行審查。",
                         "Ask admin for access": "向管理員請求權限",
                     "Convert to draft": "設置為草案",
                         // 設置草案對話框
@@ -9882,7 +9893,7 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                     // [/([^ ]+) approved these changes/, "$1 批准這些更改"], // 具體的合併請求 審查者
                     "Request": "請求",
                     // [/Request review from ([^ ]+)/, "請求 $1 審查"], // 具體的合併請求 審查者
-                    "This pull request is waiting on your review.": "此合併請求正在等待您的審核。",
+                    "This pull request is waiting on your review.": "此合併請求正在等待您審查。",
 
                 "Assignees": "受理人",
                     "No one assigned": "無人受理",
@@ -10069,8 +10080,8 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
                 "Sign in to comment": "登入後發表評論",
     },
     "regexp": [ // 正則翻譯
-        // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次批准審查。"],
-        [/(\+\d+) more reviewers?/, "$1 個審查者"],
+        // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次審查批准。"],
+        [/(\+\d+) more reviewers?/, "另外 $1 個審查者"],
         [/(\d+) linked issues?/, "連結 $1 個議題"],
         [/Assigned to (.*)/, "分配給 $1"],
         [/Edited (\d+) times?/, "編輯 $1 次"],
@@ -10154,7 +10165,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the": "如果您發現一個錯誤或有任何想法，請在打開新議題之前瀏覽未解決的議題。您也可以看看",
             "Open Source Guide": "開源指南",
                 "Learn about Open Source and how to contribute": "瞭解開源和如何貢獻",
-            "If you're ready to tackle some open issues,": "如果您準備好解決一些未解決的議題，",
+            "If you're ready to tackle some open issues,": "如果您為解決一些打開的議題準備就緒，",
             "we've collected some good first issues for you": "我們已為您收集了一些好的首發議題",
             "we've collected some good first issues for you.": "我們已為您收集了一些好的首發議題。", // 新版議題頁
 
@@ -10350,9 +10361,9 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Merge date": "合併日期",
                     "Has merge date": "包含合併日期",
                     "Exclude merged": "排除合併日期",
-                "Review requested": "已請求評審",
-                    "Has review requested": "包含已請求評審",
-                    "Exclude review-requested": "排除已請求評審",
+                "Review requested": "已請求審查",
+                    "Has review requested": "包含已請求審查的專案",
+                    "Exclude review-requested": "排除已請求審查的專案",
                 "In": "在",
                     "Has in": "包含在",
                     "Exclude in": "排除在",
@@ -10364,12 +10375,12 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "User": "用戶",
                     "Has user": "包含用戶",
                     "Exclude user": "排除用戶",
-                "User review requested": "已請求用戶評審",
-                    "Has user review requested": "包含已請求用戶評審",
-                    "Exclude user-review-requested": "排除已請求用戶評審",
-                "Reviewed by": "評審者",
-                    "Has reviewed by": "包含評審者",
-                    "Exclude reviewed-by": "排除評審者",
+                "User review requested": "已請求用戶審查",
+                    "Has user review requested": "包含已請求用戶審查的專案",
+                    "Exclude user-review-requested": "排除已請求用戶審查的專案",
+                "Reviewed by": "審查者",
+                    "Has reviewed by": "包含審查者",
+                    "Exclude reviewed-by": "排除審查者",
                 "Comment count": "評論數",
                     "Has comment count": "有評論數",
                     "Less than 10": "少於 10",
@@ -10395,10 +10406,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 // 草案
                     "Has draft": "包含草案",
                     "Exclude draft": "排除草案",
-                "Review state": "評審狀態",
-                    "Has review state": "包含評審狀態",
-                    "Exclude review": "排除評審狀態",
-                    "No reviews": "無評審",
+                "Review state": "審查狀態",
+                    "Has review state": "包含審查狀態",
+                    "Exclude review": "排除審查狀態",
+                    "No reviews": "未經審查",
                 "Language": "程式碼語言",
                     "Has language": "包含程式碼語言",
                     "Exclude language": "排除程式碼語言",
@@ -10414,7 +10425,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 // 狀態 (Status)
                     "Has status": "包含狀態檢查",
                     "Exclude status": "排除狀態檢查",
-                    "Pending": "待處理",
+                    "Pending": "未決",
                     "Success": "成功",
                     "Failure": "失敗",
                     "Queued": "排隊中",
@@ -10424,9 +10435,9 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
                 "Team": "團隊",
                     "Has team": "包含團隊",
                     "Exclude team": "排除團隊",
-                "Team review requested": "已請求團隊評審",
-                    "Has team review requested": "包含已請求團隊評審",
-                    "Exclude team-review-requested": "排除已請求團隊評審",
+                "Team review requested": "已請求團隊審查",
+                    "Has team review requested": "包含已請求團隊審查的專案",
+                    "Exclude team-review-requested": "排除已請求團隊審查的專案",
                 // 排序
                     "Has sort": "包含排序",
                     "Exclude sort": "排除排序",
@@ -10564,7 +10575,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             "and unassigned": "和取消了分配給",
             "marked this pull request as draft": "將此合併請求標記為草案",
             "marked this pull request as ready for review": "將此合併請求標記為可供審查",
-            "dismissed a stale review via": "駁回了一個陳舊的審查，通過",
+            "dismissed a stale review via": "駁回了一個陳舊的審查，途徑是",
             "requested changes": "請求了更改",
             "added a commit that referenced this issue": "新增了一個引用此問題的提交",
             "referenced this issue": "提及這個議題",
@@ -10613,7 +10624,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
 
                     // 第一次打開議題
                     "It looks like this is your first time opening an issue in this project!": "看起來這是您第一次在此專案中打開議題！",
-                    "Be sure to review the": "請務必查閱",
+                    "Be sure to review the": "請務必查看",
 
                     // 議題表單
                     "You're using an": "您正在使用",
@@ -10868,7 +10879,7 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
     },
     "regexp": [ // 正則翻譯
         [/Want to contribute to ([^ ]+)\?/, "想為 $1 做貢獻？"],
-        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 審查請求"],
+        [/Awaiting requested review from ([^ ]+)/, "正在等待 $1 應請求進行審查"],
         [/([\d,]+) Open/, "$1 打開"],
         [/([\d,]+) Closed/, "$1 已關閉"],
         [/(#\d+) opened/, "$1 打開於"],
@@ -11010,7 +11021,7 @@ I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
         [/(\d+) of (\d+) tasks?/, "$1 / $2 個任務"],
         [/(\d+) tasks?/, "$1 個任務"],
         [/(\d+) Total/, "$1 總計"],
-        [/(\d+) review requesting changes/, "$1 個要求修改的審查"],
+        [/(\d+) review requesting changes/, "$1 個審查要求更改"],
         [/First time contributing to ([^ ]+)\?/, "首次為 $1 做貢獻？"],
         [/Suggested change/, "建議更改"],
         [/Ears burning\? Get\@([^ ]+) mentions with/, "耳朵癢嗎？使用 @$1 查看提及："], // 專業提示
@@ -11032,9 +11043,9 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             // 頂部提醒
                 "The head ref may contain hidden characters:": "頭部引用可能包含隱藏字符：",
                 "Your review was submitted on a merged pull request.": "您的審查已提交，一個合併的合併請求。",
-                "Marked pull request as ready for review.": "標記合併請求為可審核。",
+                "Marked pull request as ready for review.": "標記合併請求為可供審查。",
                 "Your review was submitted successfully.": "您的審查已成功提交。",
-                "requested your review on this pull request.": "請求審核此合併請求。",
+                "requested your review on this pull request.": "請求您審查此合併請求。",
                 // Dependabot 打開的合併請求
                     "Merging this pull request will resolve": "合併此合併請求將解決", // 後面警報數走正則
                     //"on rollup including a": "，包括 1 個",
@@ -11050,14 +11061,14 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 // 更改基礎分支對話框
                 "Find a branch": "搜尋分支",
                 "Are you sure you want to change the base?": "您確定要更改基礎分支嗎？",
-                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "舊的基礎分支的一些提交可能會從時間線上刪除，而舊的審查意見可能會變得過時。",
+                "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "舊的基礎分支的一些提交可能會從時間線上移除，而舊的審查意見可能會變得過時。",
                 "Change base": "更改基礎分支",
 
             "View status": "查看狀態",
             "Not ready": "未準備好",
             "Able to merge": "可以合併",
             "Unable to merge": "無法合併",
-            "Ready to merge": "準備合併",
+            "Ready to merge": "可供合併",
                 "Merge status": "合併狀態",
                 "What's new": "新內容",
                 "Close merge status": "關閉",
@@ -11288,11 +11299,11 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "See review": "查看審查",
                 "Dismiss review": "駁回審查",
             "started a review": "開始審查",
-                "View reviewed changes": "查看已審核的更改",
-            "self-requested a review": "自我要求審查",
+                "View reviewed changes": "查看經審查的更改",
+            "self-requested a review": "自行要求審查",
             "self-assigned this": "已自我審查",
             "unassign me": "取消自我分配",
-            "marked this pull request as ready for review": "已將此合併請求標記為可審核",
+            "marked this pull request as ready for review": "已將此合併請求標記為可供審查",
             "merged commit": "合併提交",
             "left a comment": "發表評論",
             "Add more commits by pushing to the": "新增更多提交，通過推送到",
@@ -11331,10 +11342,10 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             // 合併請求狀態
             "Review requested": "請求審查",
             "New changes require approval from someone other than the last pusher.": "新更改需要最後推送者以外的其他人批准。",
-            "Review has been requested on this pull request. It is not required to merge.": "此合併請求已請求進行審查。這不是合併的必要條件。",
-            "Learn more about requesting a pull request review.": "瞭解更多關於申請合併請求審核的訊息。",
-            // [/(\d+) pending reviewers?/, "$1 名待審者"],
-            "was requested for review": "被請求審查",
+            "Review has been requested on this pull request. It is not required to merge.": "此合併請求已申請審查。這不是合併的必要條件。",
+            "Learn more about requesting a pull request review.": "就申請審查合併請求瞭解更多訊息。",
+            // [/(\d+) pending reviewers?/, "$1 名未決審查者"],
+            "was requested for review": "將應申請進行審查",
 
             "Changes reviewed": "更改已審查",
                 "No applicable reviews submitted by reviewers with write access.": "沒有具有寫入權限的審查者提交適用的審查意見。",
@@ -11349,7 +11360,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "There aren't yet any conversations on this pull request.": "此合併請求尚無任何對話。",
 
             "This pull request is still a work in progress": "此合併請求仍在進行中",
-                "Ready for review": "準備審核",
+                "Ready for review": "可供審查",
                 "Draft pull requests cannot be merged.": "合併請求草案不能合併。",
             "This pull request can be automatically merged by project collaborators": "此合併請求可以由專案協作者自動合併",
                 "Only those with": "只有對此儲存庫具有",
@@ -11358,17 +11369,17 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "to this repository can mark a draft pull request as ready for review.": "的才可將合併請求草案標記為可供審查。",
 
             // "Review required": "需要審查", // 合併請求 頁面狀態詞
-                "Add your review": "新增您的評論",
-                // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次批准審查。"],
+                "Add your review": "新增您的審查意見",
+                // [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次審查批准。"],
             "Code owner review required": "需要程式碼所有者審核",
-                "was requested for review as a code owner": "要求以程式碼所有者身份進行審查",
+                "was requested for review as a code owner": "將應請求以程式碼所有者身份進行審查",
             "Conversation resolution required": "需要解決對話",
                 "A conversation must be resolved before this pull request can be merged.": "在合併此合併請求前，必須先解決對話。",
-            "Learn more about pull request reviews.": "瞭解更多關於合併請求審核的訊息。",
+            "Learn more about pull request reviews.": "就審查合併請求瞭解更多訊息。",
             "Changes approved": "變更已獲批准",
             "Approval not required": "不需要批准",
             "This pull request may be merged without approvals.": "可以在沒有批准的情況下合併此合併請求。",
-            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 個批准的審查由具有寫入權限的審查者進行審查。"],
+            // [/(\d+) approving reviews? by reviewers? with write access./, "$1 個審查批准由具有寫入權限的審查者進行審查。"],
             // [/(\d+) approvals?/, "$1 項批准"],
             "Some checks haven’t completed yet": "有些檢查還沒有完成",
             // [/1 in progress check/, "$1個正在進行的檢查"],
@@ -11585,7 +11596,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "Fix with Copilot": "使用 Copilot 修復",
             "Conflicting files": "衝突的文件:",
 
-            "Require approval from specific reviewers before merging": "合併前需要特定審查者的批准",
+            "Require approval from specific reviewers before merging": "合併前需要特定審查者批准",
                 "Branch protection rules": "分支保護規則",
                 "Rulesets": "規則集",
                 "ensure specific people approve pull requests before they're merged.": "確保特定人員在合併之前批准合併請求。",
@@ -11600,7 +11611,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             "Approve workflows to run": "批准執行工作流程",
 
             // 狀態詞
-            "reviewed": "審查",
+            "reviewed": "已審查",
             "requested a review from": "請求審查",
             "Reply...": "回覆…",
 
@@ -11641,7 +11652,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             "Expand Down": "向下展開",
 
             // 修改的 yaml 文件，預覽視窗
-            "Loading Dependency Review...": "正在加載依賴審查…",
+            "Loading Dependency Review...": "正在加載依賴項審查…",
             "No dependencies changed.": "未更改依賴。",
                 "The changes to this file likely do not affect the dependencies": "對此文件的更改可能不會影響依賴",
 
@@ -11688,9 +11699,9 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 // 下拉
                 "Show all changes": "顯示所有更改",
                 // [/(\d+) commits?/, "$1 條提交"],
-                "Show changes since your last review": "顯示自您上次評論以來的更改",
-                // "You haven‘t reviewed this pull requeste": "您尚未審查過此請求請求",
-                "You haven’t reviewed this pull request yet": "您尚未審查此請求請求",
+                "Show changes since your last review": "顯示自您上次審查以來的更改",
+                // "You haven‘t reviewed this pull requeste": "您尚未審查此合併請求",
+                "You haven’t reviewed this pull request yet": "您尚未審查此合併請求",
                 "Select commit": "選擇提交",
                 "Hold shift + click to select a range": "按住 shift + 單擊以選擇一個範圍",
             "File filter": "文件篩選",
@@ -11714,7 +11725,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "All of your conversations have been resolved.": "您的所有討論都已解決。",
                 // [/Resolved conversations/, "已解決的討論"],
                 "No conversations yet": "尚無討論",
-                "Review conversations will show up here.": "審查討論將顯示在這裡。",
+                "Review conversations will show up here.": "審查討論將在此顯示。",
             // "Jump to": "跳轉到",
                 "Jump to file": "跳轉到文件",
                 "Filter changed files": "篩選已更改文件",
@@ -11741,7 +11752,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "No replies": "無回覆",
 
             "files viewed": "查看過的文件",
-                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "將文件標記為已查看可以幫助您跟蹤進度，但不會糾正您提交的審查",
+                "Marking files as viewed can help keep track of your progress, but will not affect your submitted review": "將文件標記為已查看可以幫助您跟蹤進度，但不會糾正您發表的審查意見",
             // 諮詢 Copilot
                 "Loading Copilot features…": "加載 Copilot 功能…",
                 "Copilot is not available for this pull request": "Copilot 不可用於此合併請求",
@@ -11760,18 +11771,18 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                     "Submit feedback that must be addressed before merging.": "提交合併前必須解決的回饋意見",
                     "Pull request authors can’t request changes on their own pull request.": "合併請求作者不能在自己的合併請求上請求更改。",
                     "Only users with explicit access to this repository may request changes to pull requests": "只有對這個儲存庫有明確訪問權限的用戶才能請求更改合併請求",
-                "Abandon review": "放棄審核",
-                "Submit review": "提交審查",
+                "Abandon review": "放棄審查",
+                "Submit review": "發表審查意見",
                     // 頂部提醒
-                        "You need to leave a comment indicating the requested changes.": "您需要留下評論，說明所要求的更改。",
-                "Cancel review": "取消審核",
+                        "You need to leave a comment indicating the requested changes.": "您需要留言評論，表明所請求的更改。",
+                "Cancel review": "取消審查",
                 "Commit suggestions": "提交建議",
                 "Discard batch": "放棄批處理",
                     "Discard batch?": "放棄批處理？",
                     "Are you sure you want to discard this batch? This will remove all": "您確定要放棄此批處理嗎？",
                     "from the batch.": "將從批處理中移除。",
                     "Discard": "放棄",
-                "pending": "條待處理",
+                "pending": "條未決",
                 "comment": "評論",
                 "comments": "評論",
 
@@ -11839,7 +11850,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             // 建議更改
                 "Suggested change": "建議更改",
                 "Sign off and commit suggestion": "簽署並提交建議",
-                    "Suggestions cannot be applied from pending reviews.": "無法應用待審核中的更改",
+                    "Suggestions cannot be applied from pending reviews.": "無法應用待審查的更改",
                     "This suggestion has been applied or marked resolved.": "該建議已被應用或標記為已解決。",
                     "Outdated suggestions cannot be applied.": "過時建議不能應用。",
                 "Add suggestion to batch": "批量新增建議",
@@ -11874,7 +11885,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
                 "Select commits to view": "選擇要查看的提交",
                 "All changes": "所有更改",
                 "All commits": "所有提交",
-                "Changes since your last review": "自您上次審核以來的更改",
+                "Changes since your last review": "自您上次審查以來的更改",
                 "No previous review found": "未找到之前的審核",
                 "Select a range of commits": "選擇一個提交範圍",
                 "Specific commit…": "特定提交…",
@@ -12091,7 +12102,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
 
         // 具體某條合併請求
         [/edited by ([^ ]+)/, "由 $1 編輯"],
-        [/At least (\d+) approving reviews? is required to merge this pull request./, "合併此合併請求至少需要 $1 次批准審核。"],
+        [/At least (\d+) approving reviews? is required to merge this pull request./, "合併此合併請求至少需要 $1 次審查批准。"],
         [/Commits?/, "提交"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "將 $1 個提交合併到"],
@@ -12101,15 +12112,15 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
         [/([^ ]+) approved these changes?/, "$1 批准這些更改"], // 具體的合併請求 審查者
         [/Request review from ([^ ]+)/, "請求 $1 審查"], // 具體的合併請求 審查者
         [/users with write access to ([^ ]+) can add new commits/, "對 $1 具有寫權限的用戶可以新增新的提交"], // 具體合併請求
-        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准審查才能合併此合併請求。"], // 具體的合併請求 審查者
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次審查批准才能合併此合併請求。"], // 具體的合併請求 審查者
         [/This user is a first-time contributor to the ([^ ]+) repository./, "該用戶是第一次為 $1 儲存庫做貢獻。"],
-        [/(\d+) pending reviewers?/, "$1 名待審者"],
+        [/(\d+) pending reviewers?/, "$1 名審查者未決"],
         [/([\d,]+) participants?/, "$1 位參與者"],
         [/At least (\d+) approving reviews? is required by reviewers with write access./, "具有寫入權限的審查者至少需要 $1 次批准審查。"],
         [/(\d+) approving reviews? by reviewers? with write access./, "$1 個批准的審查由具有寫入權限的審查者進行審查。"],
         [/(\d+) review requesting changes by reviewers? with write access./, "$1 個請求審查更改由具有寫入權限的審查者進行審查。"],
         [/(\d+) approvals?/, "$1 項批准"],
-        [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 項審查，要求有寫入權限的審查者進行更改"], // 合併請求
+        [/(\d+) reviews? requesting changes by reviewers with write access/, "$1 項審查，要求具有寫入權限的審查者進行更改"], // 合併請求
         [/(\d+) changes? requested by reviewers with write access/, "具有寫入權限的審查者提出 $1 項更改請求"],
         [/(\d+) changes? requested/, "$1 項更改請求"],
         [/This pull request closes issue (#\d+)./, "該合併請求將關閉議題 $1。"], // 死活不翻譯
@@ -12237,7 +12248,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
             "compare:": "比較分支：",
                 "Choose a head ref": "選擇頭部引用",
 
-            "Choose different branches or forks above to discuss and review changes.": "選擇不同的分支或復刻來討論和查看變化。",
+            "Choose different branches or forks above to discuss and review changes.": "選擇不同的分支或復刻來討論和審查更改。",
             "Learn about pull requests": "瞭解合併請求",
 
             "Create pull request": "創建合併請求",
@@ -12276,7 +12287,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
 
                 "are entirely different commit histories.": "是完全不同的提交歷史。",
 
-            "Discuss and review the changes in this comparison with others.": "與他人討論並回顧此次對比中的變化。",
+            "Discuss and review the changes in this comparison with others.": "與他人討論和審查此次對比中的更改。",
 
             "This comparison is big! We’re only showing the most recent 250 commits": "這個比較是很大的! 我們只顯示最近的 250 個提交。",
 
@@ -12284,7 +12295,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
 
             "are identical.": "是相同的。",
 
-            "Create another pull request to discuss and review the changes again.": "創建另一個合併請求，再次討論和審查這些更改。",
+            "Create another pull request to discuss and review the changes again.": "另行創建合併請求以再次討論和審查這些更改。",
 
             // 修改的文件 左側 展開按鈕
             "Expand all": "顯示全部",
@@ -12317,7 +12328,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
 
             // 提示框（第一次提交合併請求時）
             "It looks like this is your first time opening a pull request in this project!": "看起來這是您在這個專案中首次發起的合併請求呢！",
-            "Be sure to review the": "請務必查閱",
+            "Be sure to review the": "請務必查看",
             "contributing guidelines": "貢獻指南",
             "Reporting a security vulnerability?": "報告安全漏洞？",
             "Check out the project's": "查看本專案的",
@@ -12346,24 +12357,24 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
                 "No reviews": "未經審查",
                 "Loading suggestions…": "載入推薦…",
                 // [/([^ ]+) left review comments/, "$1 發表了審查意見"],
-                // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准審查才能合併此合併請求。"],
-                "No reviews—at least 0 approving review is required.": "未經審查 — 至少需要 0 次批准審查。",
-                "Re-request review": "重新請求審核",
+                // [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次審查批准才能合併此合併請求。"],
+                "No reviews—at least 0 approving review is required.": "未經審查 — 至少需要 0 次審查批准。",
+                "Re-request review": "重新請求審查",
                 "Still in progress?": "仍在進行中嗎？",
-                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 的審查請求"]
+                // [/Awaiting requested review from ([^ ]+)/, "等待 $1 應請求進行審查"]
                 "Learn about draft PRs": "瞭解合併請求草案",
                     "Try draft pull requests": "嘗試合併請求草案",
-                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打開正在進行的合併請求，無需請求正式審核，也不必冒不必要的合併風險。當您準備好進行程式碼審核時，您可以將合併請求草案標記為已準備好審核，這將請求任何程式碼所有者進行審核。",
+                    "Open an in-progress pull request without asking for formal review or risking an unwanted merge. When you're ready for code review, you can mark your draft pull request as ready for review, which will request reviews from any code owners.": "打開尚在途中的合併請求而不請求正式審查，也不必冒險在暫不需要時合併。當您就緒，可供程式碼審查時，您可以將合併請求草案標記為可供審查，這將請求任何程式碼所有者進行審查。",
                     "Ask admin for access": "向管理員請求權限",
                 "Convert to draft": "設置為草案",
                 "Request up to 15 reviewers": "最多請求 15 個審查者",
                 // [/([^ ]+) approved these changes/, "$1 批准這些更改"], // 具體的合併請求 審查者
                 "Request": "請求",
                 // [/Request review from ([^ ]+)/, "請求 $1 審查"], // 具體的合併請求 審查者
-                "This pull request is waiting on your review.": "此合併請求正在等待您的審核。",
+                "This pull request is waiting on your review.": "此合併請求正在等待您審查。",
                 // Copilot
                     "Copilot can review pull requests": "Copilot 可以審查合併請求",
-                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 請求程式碼審查，即可獲得快速且可操作的回饋，讓您能在收到人工審查前就開始迭代優化。",
+                    "Request a review from Copilot to get fast, actionable feedback on your code, so you can start iterating before you receive a human review.": "向 Copilot 請求程式碼審查以獲得快速、可行的回饋，讓您能在收到人工審查前就開始迭代優化。",
                     "OK, dismiss": "關閉",
 
             "Assignees": "受理人",
@@ -12427,11 +12438,11 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
             "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通過授予寫入權限，維護者可能會編輯您儲存庫的工作流程以揭示機密值，並獲取對其他分支的訪問權限。",
             "Got it": "知道了",
         // 創建合併請求 按鈕下拉
-            "Open a pull request that is ready for review": "打開一個準備好進行審核的合併請求",
-            "Automatically requests reviews from code owners": "自動請求程式碼所有者進行審查",
+            "Open a pull request that is ready for review": "打開一個可供審查的合併請求",
+            "Automatically requests reviews from code owners": "自動請求程式碼所有者審查",
             "Create draft pull request": "創建合併請求草案",
-            "Cannot be merged until marked ready for review": "在標記為準備好進行審核之前無法合併",
-            "Doesn't request code owners review and cannot be merged": "不請求程式碼所有者審核並且無法合併",
+            "Cannot be merged until marked ready for review": "在標記為可供審查之前無法合併",
+            "Doesn't request code owners review and cannot be merged": "不請求程式碼所有者審查並且無法合併",
             "Draft pull request": "合併請求草案",
         "Remember, contributions to this repository should follow its": "請記住，對該儲存庫的貢獻應遵循其",
         "security policy": "安全政策",
@@ -12494,7 +12505,7 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
         [/(\d+) changed files?/, "更改的文件"],
         [/(\d+) additions?/, "$1 處增加"],
         [/(\d+) deletions?/, "$1 處刪除"],
-        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次批准審查才能合併此合併請求。"], // 創建合併請求
+        [/At least (\d+) approving reviews? are required to merge this pull request./, "至少需要 $1 次審查批准才能合併此合併請求。"], // 創建合併請求
     ],
     "title": {
         "regexp": [
@@ -12577,7 +12588,7 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
             "Collapse expanded lines": "摺疊展開的線",
 
             // 修改的 yaml 文件，預覽視窗
-            "Loading Dependency Review...": "正在加載依賴審查…",
+            "Loading Dependency Review...": "正在加載依賴項審查…",
             "No dependencies changed.": "未更改依賴。",
                 "The changes to this file likely do not affect the dependencies": "對此文件的更改可能不會影響依賴",
 
@@ -12658,7 +12669,7 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
 
             // 合併請求懸浮卡
                 "You were mentioned on and commented on this pull request": "您在該請求中被提及並發表了評論",
-                "You left a review": "您發表了評論",
+                "You left a review": "您發表了審查意見",
 
             // 議題懸浮卡
                 "You commented on this issue": "您對此議題發表了評論",
@@ -13126,7 +13137,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
 
             "Communities using Discussions": "使用討論交流",
 
-            "Ready to try Discussions?": "準備嘗試討論？",
+            "Ready to try Discussions?": "準備就緒，嘗試討論？",
                 "Click “get started” to enable it for your community and start your first discussion. Now is not the right time? Click “not now” to dismiss this tab. You can always turn Discussions on in your repository settings later.": "點擊 “開始使用” 即可為您的社區啟用該功能，並發起您的首次討論。現在不方便操作？點擊 “暫不” 可關閉此標籤頁。您也可以稍後在儲存庫設置中隨時開啟討論功能。",
 
             "Read about best practices for setting up Discussions for your community.": "瞭解為社區設置討論功能的最佳實踐。",
@@ -13515,7 +13526,7 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
                 "You and other collaborators": "您和其他協作者",
                 "with access": "具有訪問權限",
                 "to this repository": "該儲存庫",
-                "can still leave comments": "仍然可以留下評論",
+                "can still leave comments": "仍然可以留言評論",
                 "that others can see.": "，其他人可以看到。",
                 "You can always unlock this discussion again in the future.": "您今後仍可以隨時再次解鎖此討論。",
                 "This conversation has been locked and limited to collaborators.": "此對話已鎖定，僅協作者可評論。",
@@ -13697,10 +13708,10 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "開始使用 GitHub Actions",
             "Choose a workflow": "選擇工作流程",
-            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "構建、測試和部署您的程式碼。以您想要的方式進行程式碼審查、分支管理和議題分類。選擇一個工作流以開始使用。",
+            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "構建、測試和部署您的程式碼。以您想要的方式審查程式碼、管理分支和進行議題分診。選擇一個工作流程以開始使用。", //漢語中使用動詞結構更通順
             "Skip this and": "跳過並",
             "set up a workflow yourself": "建立工作流程",
-            "Search workflows": "搜尋工作流",
+            "Search workflows": "搜尋工作流程",
 
             "Suggested for this repository": "建議該儲存庫採用",
             "Categories": "類別",
@@ -13799,7 +13810,7 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
             //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
                 "You have hit the limit of pages.": "您已到達頁面訪問上限。",
                 "You could filter by":"您可以按以下篩選",
-                "to continue reviewing older workflow runs.":"繼續查看舊的工作流程執行。",
+                "to continue reviewing older workflow runs.":"繼續查看舊的工作流程的執行狀況。",
 
 
             // 回饋提醒
@@ -13877,7 +13888,7 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
                 // 工作流程執行狀態
                 "In progress": "進行中",
                 "Queued": "排隊中",
-                "Pending": "待定中",
+                "Pending": "未決",
 
             // 頂部提醒
                 "You have successfully requested the workflow to be canceled.": "您已成功請求取消工作流。",
@@ -14146,7 +14157,7 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
             "Starting job": "作業啟動中",
             "This job failed": "此作業失敗",
             "This job was skipped": "此作業被跳過",
-            "Waiting for pending jobs": "等待中",
+            "Waiting for pending jobs": "等待未決作業",
             "Input required and not supplied: token": "需要輸入但未提供：令牌",
             "The deployment was rejected or didn't satisfy other protection rules.": "部署被拒絕或不符合其他保護規則。",
             "Fit to window": "適合",
@@ -14235,7 +14246,7 @@ I18N["zh-TW"]["repository/deployments"] = { // 儲存庫 - 部署頁面
                                 "failure": "失敗",
                                 "error": "錯誤",
                                 "inactive": "不活躍",
-                                "pending": "待定",
+                                "pending": "未決",
                                 "queued": "排隊",
                                 "in progress": "進行中",
                                 "waiting": "等待中",
@@ -14488,7 +14499,7 @@ I18N["zh-TW"]["repository/new"] = { // 儲存庫 - 新建/編輯/上傳/刪除�
                 "to move to the next interactive element on the page.": "鍵移動到頁面上的下一個交互元素。",
 
             // 頂部提醒
-            // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的許可證已準備就緒。請在下面審查它並將其提交到 $1 分支或新分支。"],
+            // [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的許可證已就緒。請在下面審查它並將其提交到 $1 分支或新分支。"],
 
         // 編輯文件頁面 /<user-name>/<repo-name>/edit/<branch>/<file>
             // 非本人儲存庫
@@ -14687,7 +14698,7 @@ I18N["zh-TW"]["repository/new"] = { // 儲存庫 - 新建/編輯/上傳/刪除�
     "regexp": [ // 正則翻譯
         [/on this commit as/,"該提交以"],
         [/Commit changes?/, "提交更改"], // 提交對話框
-        [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的許可證已準備就緒。請在下面審查它並將其提交到 $1 分支或新分支。"],
+        [/Your license is ready. Please review it below and either commit it to the ([^ ]+) branch or to a new branch./, "您的許可證已就緒。請在下面審查它並將其提交到 $1 分支或新分支。"],
         [/Your search has returned (\d+) results?./, "您的搜尋返回了 $1 條結果。"],
         [/First (\d+) files? shown./, "顯示前 $1 個文件。"],
         [/([^ ]+) has committed since you started editing./, "$1 自您開始編輯以來已提交。"],
@@ -14763,7 +14774,7 @@ I18N["zh-TW"]["repository/models"] = { // 儲存庫 - 模型
             "Explore 40+ models in the catalog": "在目錄中探索 40+ 模型",
                 "Compare models in the playground—test parameters, token usage, and latency to find the right fit for your use case.": "在遊樂場中對比模型——測試參數、令牌使用量和延遲，以找到最適合您用例的模型。",
             "Power your prompt with the right model": "為您的提示詞選擇合適的模型",
-                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "針對您的提示詞測試和對比不同模型，以找到最合適的模型，然後在準備好後將其直接提交到您的專案中。",
+                "Test and compare models against your prompt to find the best fit, then commit it directly to your project when you're ready.": "針對您的提示詞測試和對比不同模型，以找到最合適的模型，然後在就緒後將其直接提交到您的專案中。",
             "Instrument your Actions workflow with models": "使用模型為您的 Actions 工作流提供支持",
                 "Set up a new GitHub Actions workflow using models.": "使用模型新建 Actions 工作流。",
 
@@ -15384,8 +15395,8 @@ I18N["zh-TW"]["repository/releases"] = { // 儲存庫 - 發行版本頁面
             "Undo": "撤銷",
 
             "Set as a pre-release": "設置為預發布版本",
-                "This release is labeled as non-production ready.": "此版本標記為非正式版本。",
-                "This release will be labeled as non-production ready": "此版本將被標記為非正式版本。",
+                "This release is labeled as non-production ready.": "此版本標記為非供投產。",
+                "This release will be labeled as non-production ready": "此版本將被標記為非供投產。",
             "Create a discussion for this release": "為此版本創建討論",
                 "People will be able to leave comments and reactions on this release using Discussions.": "人們將能夠使用“討論”對此版本發表評論和反應。",
                         "Category:": "類別：",
@@ -17685,7 +17696,7 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
                 "Always suggest updating pull request branches": "始終建議更新合併請求分支",
                     "Whenever there are new changes available in the base branch, present an “update branch” option in the pull request.": "每當基礎分支中有可用的新更改時，就在合併請求中顯示 “更新分支” 選項。",
 
-                "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "一旦所有必需的審查和狀態檢查都通過，您可以允許設置合併請求自動合併。",
+                "You can allow setting pull requests to merge automatically once all required reviews and status checks have passed.": "您可以允許設置合併請求一經通過了所有必需的審查和狀態檢查就自動合併。",
 
                 "Allow auto-merge": "允許自動合併",
                     "Waits for merge requirements to be met and then merges automatically.": "等待滿足合併要求，然後自動合併。",
@@ -17943,12 +17954,12 @@ I18N["zh-TW"]["repository/settings/access"] = { // 儲存庫設置 - 協作者/(
                 "Filter by member type": "按成員類型篩選",
                     "Organization Members": "組織成員",
                     "Outside Collaborators": "外部協作者",
-                    "Pending Invitations": "待處理邀請",
+                    "Pending Invitations": "未決邀請",
             "Find a collaborator…": "尋找協作者……",
             "Find people or a team…": "尋找用戶或一個團隊……",
             "No Results": "無結果",
 
-            "Pending Invite": "待處理邀請",
+            "Pending Invite": "未決邀請",
             "Invite expired": "已過期",
             // [/Awaiting ([^ ]+)’s response/, "等待 $1 的回覆"],
             "Remove": "移除",
@@ -18077,10 +18088,10 @@ I18N["zh-TW"]["repository/settings/code_review_limits"] = { // 儲存庫設置 -
             "Limit to users explicitly granted": "限於明確授予",
             "read": "讀取",
             "or higher access": "或 更高權限的用戶",
-                "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "啟用後，只有被明確授予該儲存庫訪問權的用戶才能提交 “批准” 或 “請求更改” 的合併請求審查。所有能夠提交評論合併請求審查的用戶將繼續能夠這樣做。",
+                "When enabled, only users explicitly granted access to this repository will be able to submit pull request reviews that \"approve\" or \"request changes\". All users able to submit comment pull request reviews will continue to be able to do so.": "啟用後，只有被明確授予本儲存庫訪問權的用戶才能對合併請求發表 “批准” 或 “請求更改” 的審查意見。所有能夠對合併請求發表評論性審查意見的用戶將繼續能夠這樣做。",
 
             // 頂部提醒
-                "Code review limit settings saved.": "程式碼審查限制設置已保存。",
+                "Code review limit settings saved.": "已保存程式碼審查限制設置。",
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
@@ -18176,11 +18187,11 @@ I18N["zh-TW"]["repository/settings/branch_protection_rules"] = { // 儲存庫設
                         "When enabled, pull requests targeting a matching branch require a number of approvals and no changes requested before they can be merged.": "啟用後，針對匹配分支的合併請求需要若干次批准審查，並且在合併之前無需請求更改。",
                         "Required number of approvals before merging:": "合併前所需的批准審查數量：",
                     "Dismiss stale pull request approvals when new commits are pushed": "當新的提交被推送時，撤銷陳舊的合併請求批准審查",
-                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可審查提交將撤銷之前的合併請求的批准審查。",
-                    "Require review from Code Owners": "要求程式碼所有者進行審查",
+                        "New reviewable commits pushed to a matching branch will dismiss pull request review approvals.": "推送到匹配分支的新的可審查的提交，將駁回對之前的合併請求的批准。", // GB/T 15834—2011, 4.4.3.2a) 規定，逗號可用於較長的主語之後
+                    "Require review from Code Owners": "要求程式碼所有者審查",
                         "Require an approved review in pull requests including files with a designated code owner.": "要求在合併請求中進行批准審查，包括有指定程式碼所有者的文件。",
                     "Restrict who can dismiss pull request reviews": "限制誰可以駁回合併請求審查", // 組織儲存庫
-                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定允許駁回合併請求審查的人員、團隊或應用。",
+                        "Specify people, teams, or apps allowed to dismiss pull request reviews.": "指定人員、團隊或應用，允許他們駁回對合併請求的審查意見。",
                         "People, teams, or apps that can dismiss reviews.": "允許駁回審查的人員、團隊或應用。",
                             "Organization and repository administrators": "組織和儲存庫管理員",
                                 "These members can always dismiss.": "這些成員總是允許駁回。",
@@ -18608,8 +18619,8 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 儲存庫設置 - 規則 - 規
                         "Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.": "要求所有的提交都必須在非目標分支上進行，並在合併前通過合併請求提交。",
                             "Required approvals": "要求批准審查",
                                 "The number of approving reviews that are required before a pull request can be merged.": "合併請求合併前所需的批准審查次數。",
-                            "Dismiss stale pull request approvals when new commits are pushed": "當新的提交被推送時，撤銷陳舊的合併請求批准審查",
-                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可審查提交將撤銷之前的合併請求的批准審查。",
+                            "Dismiss stale pull request approvals when new commits are pushed": "當新的提交被推送時，駁回對陳舊的合併請求的批准",
+                                "New, reviewable commits pushed will dismiss previous pull request review approvals.": "推送新的可審查的提交，將駁回對之前的合併請求的批准。", // GB/T 15834—2011, 4.4.3.2a) 規定，逗號可用於較長的主語之後
                             "Require review from Code Owners": "要求程式碼所有者進行審查",
                                 "Require an approving review in pull requests that modify files that have a designated code owner.": "要求對具有指定程式碼所有者的文件修改的合併請求中進行批准審查。",
                             "Require approval of the most recent reviewable push": "要求批准最新的可審查推送",
@@ -18617,7 +18628,7 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 儲存庫設置 - 規則 - 規
                             "Require conversation resolution before merging": "要求在合併前解決對話",
                                 "All conversations on code must be resolved before a pull request can be merged.": "在合併合併請求之前，必須解決有關程式碼的所有對話。",
                             "Request pull request review from Copilot": "請求 Copilot 進行合併請求審查",
-                                "Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.": "如果作者有權訪問 Copilot 程式碼審查，則自動請求 Copilot 對新合併請求進行審查。",
+                                "Automatically request review from Copilot for new pull requests, if the author has access to Copilot code review.": "如果作者有權訪問 Copilot 程式碼審查，則自動請求 Copilot 審查新的合併請求。", //漢語中使用動詞結構更通順
 
                             "Allowed merge methods": "允許合併方法",
                                 "Merge, Squash": "合併，壓縮",
@@ -18682,16 +18693,16 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 儲存庫設置 - 規則 - 規
                             "Warning": "警告",
                             "Warnings and higher": "警告及以上",
                             "Notes and higher": "備註及以上",
-                        "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合併提交之前，需要解決的最低嚴重級別程式碼質量審查。",
+                        "The lowest severity level at which code quality reviews need to be resolved before commits can be merged.": "在合併提交之前，需要解決的最低嚴重級別的程式碼質量審查。",
 
                     "Automatically request Copilot code review": "自動請求 Copilot 程式碼審查",
-                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.": "如果作者有權訪問 Copilot 程式碼審查並且其高級請求配額尚未達到限制，則自動請求 Copilot 對新合併請求進行程式碼審查。",
+                        "Request Copilot code review for new pull requests automatically if the author has access to Copilot code review and their premium requests quota has not reached the limit.": "如果作者有權訪問 Copilot 程式碼審查並且其高級請求配額尚未達到限制，則自動請求 Copilot 對新的合併請求進行程式碼審查。",
                         "Review new pushes": "審查新的推送",
-                        "Copilot automatically reviews each new push to the pull request.": "Copilot 自動審查每個新的推送請求。",
-                        "Review draft pull requests": "審查草稿合併請求",
-                        "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "Copilot 自動審查草稿合併請求，在標記為準備好審查之前。",
+                        "Copilot automatically reviews each new push to the pull request.": "Copilot 自動審查合併請求的每條新推送。",
+                        "Review draft pull requests": "審查合併請求草案", // #195 (https://github.com/maboloshi/github-chinese/issues/195#issue-2375583925)
+                        "Copilot automatically reviews draft pull requests before they are marked as ready for review.": "合併請求草案在標記為可供審查之前自動接受 Copilot 審查。", // #195 (https://github.com/maboloshi/github-chinese/issues/195#issue-2375583925)
 
-                    "Manage static analysis tools in Copilot code review": "在 Copilot 程式碼審查中管理靜態分析工具",
+                    "Manage static analysis tools in Copilot code review": "管理 Copilot 程式碼審查中的靜態分析工具",
                         "Copilot code review will include findings from the selected static analysis tools in its review comments.": "Copilot 程式碼審查將在其審查意見中包括所選靜態分析工具的結果。",
 
                     // 組織設置
@@ -18941,7 +18952,7 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 儲存庫設置 - 操作 /<u
                     "Workflows have read and write permissions in the repository for all scopes.": "工作流程在儲存庫中對所有作用域具有讀和寫的權限。",
                 "Read repository contents and packages permissions": "讀取儲存庫的內容和軟件包的權限",
                     "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在儲存庫中僅對內容和軟件包作用域具有只讀的權限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 是否可以創建合併請求或提交批准合併請求審查。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 能否創建合併請求或發表審查意見批准合併請求。",
                         "Allow GitHub Actions to create and approve pull requests": "允許 GitHub Actions 創建和批准合併請求",
 
                 // 頂部提醒
@@ -19166,11 +19177,11 @@ I18N["zh-TW"]["repository/settings/hooks"] = { // 儲存庫設置 - Web 鉤子 /
                     "Pull request review comments": "合併請求審查意見",
                         "Pull request diff comment created, edited, or deleted.": "合併請求差異評論的創建、編輯或刪除。",
                     "Pull request review threads": "合併請求的審查線程",
-                        "A pull request review thread was resolved or unresolved.": "合併請求的審查線程的解決或未解決。",
+                        "A pull request review thread was resolved or unresolved.": "合併請求的審查線程已解決或未解決。",
                     "Pull request reviews": "合併請求審查",
-                        "Pull request review submitted, edited, or dismissed.": "合併請求審查的提交、編輯或駁回。",
+                        "Pull request review submitted, edited, or dismissed.": "合併請求審查已提交、編輯或駁回。",
                     // "": "合併請求",
-                        "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "合併請求的分配、禁用自動合併、啟用自動合併、關閉、轉換為草案、取消里程碑、取消隊列、編輯、隊列、標記、鎖定、設置里程碑、打開、準備審查、重新打開、取消審查請求、請求審查、同步、取消分配、取消標記或解鎖。",
+                        "Pull request assigned, auto merge disabled, auto merge enabled, closed, converted to draft, demilestoned, dequeued, edited, enqueued, labeled, locked, milestoned, opened, ready for review, reopened, review request removed, review requested, synchronized, unassigned, unlabeled, or unlocked.": "合併請求的分配、禁用自動合併、啟用自動合併、關閉、轉為草案、取消里程碑、離開隊列、編輯、加入隊列、標記、鎖定、設置里程碑、打開、可供審查、重新打開、移除審查請求、請求審查、同步、取消分配、取消標記或解鎖。",
                     "Pushes": "推送",
                         "Git push to a repository.": "Git 推送到儲存庫。",
                     "Registry packages": "註冊軟件包",
@@ -19267,7 +19278,7 @@ I18N["zh-TW"]["repository/settings/copilot/code_review"] = {
         // 程式碼審查
             "Enable automatic code review": "啟用自動程式碼審查",
                 "You can enable Copilot to automatically review pull requests by enabling it inside Repository rules.": "您可以在儲存庫規則中啟用 Copilot，從而讓 Copilot 自動審查合併請求。",
-                "Learn more about automatic code reviews.": "瞭解更多關於自動程式碼生成的訊息。",
+                "Learn more about automatic code reviews.": "就自動程式碼審查瞭解更多訊息。",
                 "Go to repository rules": "前往儲存庫規則",
 
         "General settings": "常規設置",
@@ -19276,16 +19287,16 @@ I18N["zh-TW"]["repository/settings/copilot/code_review"] = {
                 "repository custom instructions": "儲存庫自定義指令",
                 "when reviewing pull requests.": "。",
 
-        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 程式碼審查，您可以將 Copilot 新增為合併請求的審查者，包括草稿。您還可以在 Visual Studio Code 中選擇行，並請求 Copilot 審查和評論特定部分。",
-        "Learn more about Copilot code reviews.": "瞭解更多關於 Copilot 程式碼審查的訊息。",
+        "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 程式碼審查，您可以將 Copilot 新增為合併請求——包括草案——的審查者。您還可以在 Visual Studio Code 中選擇程式碼行，並要求 Copilot 審查和評論特定部分。", // GB/T 15834—2011, 4.10.3.2 規定，破折號可標示插入語
+        "Learn more about Copilot code reviews.": "就 Copilot 程式碼審查瞭解更多訊息。",
 
-        "Automated code reviews using rulesets": "使用規則集自動程式碼審查",
-            "Use rulesets to configure Copilot to review pull requests automatically.": "使用規則集配置 Copilot 自動審查合併請求。",
+        "Automated code reviews using rulesets": "使用規則集的自動程式碼審查",
+            "Use rulesets to configure Copilot to review pull requests automatically.": "使用規則集配置 Copilot 以自動審查合併請求。",
             "Learn how to set up rulesets.": "瞭解如何設置規則集。",
 
         "Go to rulesets": "前往規則集",
         "No rulesets set up for automated reviews": "尚無設置自動程式碼審查的規則集",
-        "Create a ruleset to automate code reviews for pull requests targeting your default branch": "創建一個規則集，自動程式碼審查針對您的預設分支的合併請求",
+        "Create a ruleset to automate code reviews for pull requests targeting your default branch": "就針對您的預設分支的合併請求，創建規則集以自動化程式碼審查",
         "Create ruleset for default branch": "創建針對預設分支的規則集",
     },
     "regexp": [
@@ -19319,12 +19330,12 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
         ", developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "，開發者可以將任務委託給 Copilot，從而專注於最重要的創造性、複雜和高影響力工作。將任務分配給 Copilot，等待AI 代理請求審查，然後在合併請求中留下回饋以繼續迭代。",
         "Learn more about": "詳細瞭解",
         "Learn more about Copilot cloud agent": "瞭解更多關於 Copilot 雲端AI 代理的訊息",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而專注於更具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待助手發起評審請求，然後在合併請求上留下回饋進行迭代。更多訊息請參閱",
-        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 編程AI 代理，開發者可以將任務委託給 Copilot，從而有更多時間專注於最重要的創造性、複雜和高影響力的工作。只需將議題分配給 Copilot，等待請求程式碼審查，然後在合併請求上留下回饋，進行迭代即可。",
-        "Learn more about Copilot coding agent": "瞭解更多",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委派給 Copilot，從而專注於創造性的、複雜的和高衝擊力的最重要工作。只需將議題分配給 Copilot，等待AI 代理來請求審查，然後就合併請求留言回饋以供迭代。更多訊息請參閱",
+        "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，開發者可以將任務委派給 Copilot，從而專注於創造性的、複雜的和高衝擊力的最重要工作。只需將議題分配給 Copilot，等待AI 代理來請求審查，然後就合併請求留言回饋以供迭代。",
+        "Learn more about Copilot coding agent": "就 Copilot 編程AI 代理瞭解更多訊息",
 
         "Internet access": "訪問互聯網",
-            "Ensure that the agent only accesses approved network resources during code generation and execution.": "確保AI 代理在程式碼生成和執行過程中只訪問已批准的網路資源。",
+            "Ensure that the agent only accesses approved network resources during code generation and execution.": "確保AI 代理在程式碼生成和執行過程中只訪問已批准其訪問的網路資源。",
                 "Learn more about customizing network access": "瞭解更多",
 
             "Enable firewall": "啟用防火牆",
@@ -19456,7 +19467,7 @@ I18N["zh-TW"]["repository/settings/environments"] = { // 儲存庫設置 - 環�
                         "reviewers": "位審查者",
                         "Search for people or teams...": "搜尋人員或團隊…",
 
-                    "Prevent self-review": "防止自我審查",
+                    "Prevent self-review": "防止自行審查",
                         "Require a different approver than the user who triggered the workflow run.": "要求與觸發工作流程執行的用戶不同的批准審查者。",
                 "Wait timer": "等待計時器",
                     "Set an amount of time to wait before allowing deployments to proceed.": "設置允許部署繼續之前等待的時間。",
@@ -19852,7 +19863,7 @@ I18N["zh-TW"]["repository/settings/security_analysis"] = { // 儲存庫設置 - 
                     // 啟用時
                     "Dependabot rules": "Dependabot 規則",
                         "Create your own custom rules and manage alert presets.": "創建您自己的自定義規則並管理警報預設。",
-                        "Review and manage alert presets.": "查看和管理警報預設。", //私有庫
+                        "Review and manage alert presets.": "查看和管理預設警報。", //私有庫
                         // [/(\d+) rules? enabled/, "已啟用 $1 條規則"],
 
                 "Dependabot security updates": "Dependabot 安全更新",
@@ -20375,7 +20386,7 @@ I18N["zh-TW"]["repository/transfer"] = { // 轉讓儲存庫
                 "tab": "標籤頁",
                 "Draft": "草案",
                 "PRs": "合併請求",
-                "Multiple assignees": "多個受讓人",
+                "Multiple assignees": "多個受理人",
                 "for issues and PRs": "的議題和合併請求",
                 "Multiple reviewers": "多個審查者",
                 "for PRs": "的拉去請求",
@@ -20488,7 +20499,7 @@ I18N["zh-TW"]["repository/codespaces"] = { // 儲存庫 - 內容舉報 /<user-na
         ...I18N["zh-TW"]["repository-public"]["static"],
 
         "Reported content": "內容舉報",
-        "Users can report abusive or distruptive content for review and moderation.": "用戶可以舉報辱罵性或破壞性內容，以供審查和審核。",
+        "Users can report abusive or distruptive content for review and moderation.": "用戶可以舉報濫用或破壞性內容，以供審查和審核。",
         "Learn more about reported content": "瞭解更多關於舉報內容的訊息。",
         "Report content setting": "舉報內容設置",
         "All users": "所有用戶",
@@ -20544,13 +20555,13 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
         "Automate": "自動化",
             "Improve your software development process by automating builds, tests, and deployments with CI/CD.": "通過 CI/CD 自動化構建、測試和部署，提升整個軟體開發流程。",
         "Secure": "安全",
-            "Leverage tooling to detect, review, and fix vulnerabilities before they reach production.": "利用工具在漏洞進入生產之前檢測、審查並修復漏洞。",
+            "Leverage tooling to detect, review, and fix vulnerabilities before they reach production.": "利用工具在漏洞進入生產之前檢測、審查和修復漏洞。",
 
         "Accelerate your entire workflow": "加速你的全部工作流",
             "From your first line of code to final deployment, GitHub provides AI and automation tools to help you build and ship better software faster.": "從第一行程式碼到最終部署，GitHub 提供 AI 和自動化工具，幫助你更快地構建並發布更優質的軟體。",
 
             "Your AI partner everywhere.": "你的 AI 夥伴，無處不在。",
-                "Copilot is ready to work with you at each step of the software development lifecycle.": "Copilot 已準備好在軟體開發生命週期的每一個階段與你並肩工作。",
+                "Copilot is ready to work with you at each step of the software development lifecycle.": "Copilot 已就緒，在軟體開發生命週期的每一個階段與你並肩工作。",
 
             "Work 55% faster.": "工作快 55%。",
                 "Increase productivity with AI-powered coding assistance, including code completion, chat, and more.": "通過人工智能編碼輔助（包括程式碼完成、聊天等）提高生產力。",
@@ -20619,7 +20630,7 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
                 "Create space for open-ended conversations alongside your project.": "在開展專案的同時，為開放式對話創造空間。",
                 "Explore GitHub Discussions": "探索 GitHub 討論",
             "Review code changes together": "共同審查程式碼",
-                "Assign initial reviews to Copilot for greater speed and quality.": "將初步審查交給 Copilot，獲得更快的速度和更高的質量。",
+                "Assign initial reviews to Copilot for greater speed and quality.": "將初步審查分配給 Copilot，以提質增速。",
                 "Explore code review": "探索程式碼審查",
             "Fund open source projects": "資助開源專案",
                 "Become an open source partner and support the tools and libraries that power your work.": "成為開源合作伙伴，支持為您的工作提供動力的工具和庫。",
@@ -20823,6 +20834,7 @@ I18N["zh-TW"]["session-authentication"] = { // 登入頁 包含(/login, /session
 
         // https://github.com/sessions/two-factor/webauthn
             "Passkey": "通行金鑰",
+            "When you are ready, authenticate using the button below.": "就緒後，請使用下面的按鈕進行身份驗證。",
             "Authenticate using your passkey.": "使用您的通行金鑰進行身份驗證。",
             "Use passkey": "使用通行金鑰",
 
@@ -20939,7 +20951,7 @@ I18N["zh-TW"]["session-authentication"] = { // 登入頁 包含(/login, /session
             "Verify a personal access token": "驗證個人訪問令牌",
             "you've used in the past to verify your account. The token must have": "您過去曾用於驗證您的帳戶。令牌必須具有",
             "scope.": "範圍。",
-            "Verify and submit for review": "驗證並提交審核",
+            "Verify and submit for review": "驗證並提交以供審查",
 
             // 驗證提醒
             "Unable to verify personal access token": "無法驗證個人訪問令牌",
@@ -20991,7 +21003,7 @@ I18N["zh-TW"]["session-authentication"] = { // 登入頁 包含(/login, /session
 
             "GitHub Mobile": "GitHub Mobile",
             "Creating a verification request for your GitHub Mobile app.": "為您的 GitHub Mobile 應用創建驗證請求。",
-            "When your phone is ready, click the button below.": "當您的手機準備就緒時，請點擊下面的按鈕。",
+            "When your phone is ready, click the button below.": "您的手機就緒後，請點擊下面的按鈕。",
             "We sent you a verification request on your GitHub Mobile app. Enter the digits shown below to enter sudo mode.": "我們向您的 GitHub Mobile 應用發送了一個驗證請求。輸入下面顯示的數字以進入 sudo 模式。",
             "We could not verify your identity": "我們無法核實您的身份",
             "Retry": "請重試",
@@ -21507,7 +21519,7 @@ I18N["zh-TW"]["notifications/subscriptions"] = { //訂閱的儲存庫頁面
             "Mention": "提及",
             "You were specifically @mentioned in the content.": "在內容中特別 @您。",
             "Review Requested": "請求審查",
-            "You were requested for review.": "您被要求進行審查。",
+            "You were requested for review.": "請求您審查。",
             "State Change": "狀態變化",
             "You changed the thread state (for example, closing an Issue or merging a Pull Request).": "您更改了話題狀態（例如，關閉議題或合併合併請求）。",
             "Team Mention": "提及團隊",
@@ -21652,7 +21664,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
         "was merged": "已合併",
         "was closed": "已關閉",
         "Approved": "已批准",
-        "Review required": "請求審查", // 合併請求 頁面狀態詞
+        "Review required": "需要審查", // 合併請求 頁面狀態詞
             "Review required before merging": "合併前需要審查",
         "Changes requested": "請求更改",
         "outdated": "陳舊的",
@@ -21718,7 +21730,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Reply (quoting selected text)": "答覆（引用所選文本）",
                 "Open saved replies": "打開快捷回覆（引用所選文本）",
                 "Insert saved reply (with open saved replies)": "插入快捷回覆（打開快捷回覆）",
-                "Toggle visibility of all collapsed review comments instead of just the current one": "切換所有摺疊審查意見的可見性，而不僅僅是當前的審查意見",
+                "Toggle visibility of all collapsed review comments instead of just the current one": "切換所有已摺疊的審查意見的可見性，而不僅僅是當前的審查意見",
             "Pull request - Files changed tab": "合併請求 - 文件更改標籤卡",
                 "Open commits list": "打開提交列表",
                 "Open files list": "打開文件列表",
@@ -21726,7 +21738,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Previous commit": "上一個提交",
                 "Show or hide annotations": "顯示或隱藏批註",
                 "Show or hide comments": "顯示或隱藏評論",
-                "Submit a review comment": "提交審查意見",
+                "Submit a review comment": "發表審查意見",
                 "Collapse or expand all files instead of just the current one": "摺疊或展開所有文件，而不僅僅是當前文件",
                     "and click": "和點擊",
 
@@ -21827,9 +21839,9 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             "Merge date": "合併日期",
                 "Has merge date": "包含合併日期",
                 "Exclude merged": "排除合併日期",
-            "Review requested": "已請求評審",
-                "Has review requested": "包含已請求評審",
-                "Exclude review-requested": "排除已請求評審",
+            "Review requested": "已請求審查",
+                "Has review requested": "包含已請求審查的專案",
+                "Exclude review-requested": "排除已請求審查的專案",
             "In": "在",
                 "Has in": "包含在",
                 "Exclude in": "排除在",
@@ -21841,9 +21853,9 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             "User": "用戶",
                 "Has user": "包含用戶",
                 "Exclude user": "排除用戶",
-            "User review requested": "已請求用戶評審",
-                "Has user review requested": "包含已請求用戶評審",
-                "Exclude user-review-requested": "排除已請求用戶評審",
+            "User review requested": "已請求用戶審查",
+                "Has user review requested": "包含已請求用戶審查的專案",
+                "Exclude user-review-requested": "排除已請求用戶審查的專案",
             "Reviewed by": "評審者",
                 "Has reviewed by": "包含評審者",
                 "Exclude reviewed-by": "排除評審者",
@@ -21891,7 +21903,7 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             // 狀態 (Status)
                 "Has status": "包含狀態檢查",
                 "Exclude status": "排除狀態檢查",
-                "Pending": "待處理",
+                "Pending": "未決",
                 "Success": "成功",
                 "Failure": "失敗",
                 "Queued": "排隊中",
@@ -21902,8 +21914,8 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
                 "Has team": "包含團隊",
                 "Exclude team": "排除團隊",
             "Team review requested": "已請求團隊評審",
-                "Has team review requested": "包含已請求團隊評審",
-                "Exclude team-review-requested": "排除已請求團隊評審",
+                "Has team review requested": "包含已請求團隊審查的專案",
+                "Exclude team-review-requested": "排除已請求團隊審查的專案",
             // 排序
                 "Has sort": "包含排序",
                 "Exclude sort": "排除排序",
@@ -23220,8 +23232,8 @@ I18N["zh-TW"]["sponsors"] = { // 贊助介面
                     "Join the waitlist": "加入等候名單",
 
             "GitHub Sponsors applications": "GitHub 贊助者申請",
-                "Pending": "排隊",
-                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 贊助者個人資料正在等待 GitHub 審核。",
+                "Pending": "未決",
+                    "This GitHub Sponsors profile is waiting to be reviewed by GitHub.": "此 GitHub 贊助者個人資料正在等待 GitHub 審查。",
                 "Manage": "管理",
 
         // GitHub 贊助者個人資料 https://github.com/sponsors/<user-name>
@@ -23286,7 +23298,7 @@ I18N["zh-TW"]["sponsors"] = { // 贊助介面
             "GitHub Sponsors is now out of beta for 103 regions!": "GitHub 贊助者現已在 103 個地區推出測試版！",
                 "If you have a bank account in": "如果您的銀行帳戶所在",
                 "a country or region where GitHub Sponsors is generally available": "國家或地區普遍支持 GitHub 贊助者",
-                ", you will get an email from us when your application has been reviewed.": "，您將在申請通過審核後收到我們的電子郵件。",
+                ", you will get an email from us when your application has been reviewed.": "，您的申請經審查後您將收到我們的電子郵件。", // 審查結果不一定是“通過”。也可能是未通過
                 "If you don't have an eligible bank account, don't worry! We're working hard to get more countries out of beta soon. Join the waitlist to be the first to know.": "如果您沒有符合條件的銀行帳戶，也不用擔心！我們正在努力讓更多的國家或地區通過測試。加入等候名單，第一時間獲知消息。",
             "Contact email": "聯繫電子信箱",
                 "Select a verified email address for us to contact you about your GitHub Sponsors profile. This will not be shared publicly.": "請選擇一個經過驗證的電子信箱地址，以便我們就您的 GitHub 贊助者個人資料與您聯繫。該信箱地址不會公開。",
@@ -23727,7 +23739,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             "Code quality": "程式碼質量",
                 "Code quality apps": "程式碼質量應用",
                 "Code quality actions": "程式碼質量操作",
-                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "在需要時，通過樣式、質量、安全性和測試覆蓋檢查自動進行程式碼審查。",
+                "Automate your code review with style, quality, security, and test‑coverage checks when you need them.": "需要時，在樣式、質量、安全性和測試覆蓋率檢查方面，為您自動化程式碼審查。",
 
             "Code review": "程式碼審查",
                 "Code review apps": "程式碼審查應用",
@@ -23826,7 +23838,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             "Publishing": "發布",
                 "Publishing apps": "發布應用",
                 "Publishing actions": "發布操作",
-                "Get your site ready for production so you can get the word out.": "讓您的網站做好生產準備，以便您可以宣傳。",
+                "Get your site ready for production so you can get the word out.": "讓您的網站就緒以供投產，以便您可以宣傳。",
 
             // "Recently added": "最近新增",
                 "Recently added apps": "最近新增應用",
@@ -23880,15 +23892,15 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
         // 待處理訂單頁面 https://github.com/marketplace/orders/pending
             // 老頁面 左側欄 不在兼容
 
-            "Pending orders": "待處理訂單",
+            "Pending orders": "未決訂單",
             "Review and complete your orders": "查看並完成您的訂單",
-                "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我們注意到您開始制定一些新計劃，但尚未完成。您可以完成下面的待處理訂單或查看任何有效的訂閱在",
+                "We noticed you started setting up some new plans but didn’t finish. You can complete your pending orders below or review any active subscriptions on the": "我們注意到您開始制定一些新計劃，但尚未完成。您可以完成下面的未決訂單或查看任何有效的訂閱，途徑是訪問",
                 "billing overview page": "帳單概覽頁面",
 
             "Next: Confirm your installation location.": "下一步：確認您的安裝位置。",
             "Next: Confirm your installation location and payment information.": "下一步：確認您的安裝位置和支付訊息。",
 
-            "Remove from pending orders": "從待處理訂單中刪除",
+            "Remove from pending orders": "從未決訂單中移除",
             "This will not affect your existing subscriptions.": "這不會影響您現有的訂閱。",
 
             // 頂部提醒
@@ -23897,7 +23909,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
         // 待安裝頁面 https://github.com/marketplace/installations/pending
             // 老頁面 左側欄 不在兼容
 
-            "Pending installations": "待安裝",
+            "Pending installations": "未決",
             "We noticed you’ve purchased some apps but didn't finish installing them. You can review and install them below.": "我們注意到您購買了一些應用，但尚未完成安裝。您可以在下面查看並安裝它們。",
             "View or cancel any active subscriptions on the": "查看或取消任何有效的訂閱",
             "Install": "安裝",
@@ -23990,7 +24002,7 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             ...I18N["zh-TW"]["payment-module"]["static"], // 調用通用帳單及支付訊息模塊
 
         // 組織 應用示例: https://github.com/marketplace/gitlocalize/order/MDIyOk1hcmtldHBsYWNlTGlzdGluZ1BsYW4zOTg=?account=maboloshi
-            "Review your order": "審查您的訂單",
+            "Review your order": "查看您的訂單",
             "For individuals, teams, and communities, public and private projects": "對於個人、團隊和社區，公共和私人專案",
             "Total amount": "總金額",
 
@@ -24635,7 +24647,7 @@ I18N["zh-TW"]["orgs/people"] = { // 組織 - 成員標籤卡
             "Organization permissions": "組織權限",
             "Members": "成員",
             "Outside collaborators": "外部協作者",
-            "Pending collaborators": "待定協作者",
+            "Pending collaborators": "未決協作者",
             "Invitations": "邀請",
             "Failed invitations": "失敗邀請",
             "Security Managers": "安全管理員",
@@ -24720,11 +24732,11 @@ I18N["zh-TW"]["orgs/people"] = { // 組織 - 成員標籤卡
                 "All": "所有",
             "No one outside of the organization has access to its repositories.": "組織外部的任何人都無法訪問其儲存庫。",
 
-        // 待定協作者 https://github.com/orgs/<orgs-name>/pending_collaborators
-            "Find a pending collaborator…": "搜尋待定協作者…",
-            "There aren't any pending collaborators.": "暫無任何待定的協作者",
+        // 未決協作者 https://github.com/orgs/<orgs-name>/pending_collaborators
+            "Find a pending collaborator…": "搜尋未決協作者…",
+            "There aren't any pending collaborators.": "暫無任何未決的協作者",
 
-        // 待定邀請 https://github.com/orgs/<orgs-name>/people/pending_invitations
+        // 未決邀請 https://github.com/orgs/<orgs-name>/people/pending_invitations
             // 頂部提醒
                 // [/You've invited ([^ ]+) to ([^ ]+)! They'll be receiving an email shortly. They can also visit ([^ ]+) to accept the invitation./, "您已邀請 $1 加入到 $2 ！他們很快就會收到一封電子郵件。他們還可以訪問 $3 接受邀請。"],
                 // [/You've successfully updated ([^ ]+)'s invitation./, "您已成功更新 $1 的邀請。"],
@@ -24830,7 +24842,7 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
 
         // 子團隊 https://github.com/orgs/<orgs-name>/teams/team
             // 申請提示
-                "Membership requested. We’ll let you know once an administrator has reviewed your request.": "成員資格已申請。一旦管理員審核了您的請求，我們將通知您。",
+                "Membership requested. We’ll let you know once an administrator has reviewed your request.": "已申請成員資格。一旦管理員審查了您的請求，我們將通知您。",
                 "Okay, we’ve cancelled your request to join this team.": "好的，已取消加入此團隊申請。",
 
             "Find a member…": "查找成員…",
@@ -24838,8 +24850,8 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
 
             "Request to join": "請求加入",
                 "Requires approval from an owner or team maintainer": "需要所有者或團隊維護者批准",
-            "Cancel pending request": "取消請求",
-                "Your request to join this team is pending review": "您的請求待審查",
+            "Cancel pending request": "取消未決請求",
+                "Your request to join this team is pending review": "您請求加入團隊，此請求正在等待審查",
 
             "This team doesn’t have any child team members.": "此團隊沒有子團隊成員。",
 
@@ -24906,26 +24918,26 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
             "Only notify requested team members": "僅通知被請求的團隊成員",
                 "If both a team and one or more of its members are requested for review, don't notify the entire team.": "不通知整個團隊，僅通知被請求的團隊成員",
             "Enable auto assignment": "啟用自動分配",
-                "This will automatically route this team's code review requests to individual team members.": "自動將程式碼審查請求轉發給單個團隊成員。",
+                "This will automatically route this team's code review requests to individual team members.": "將程式碼審查請求自動轉發給單個團隊成員。",
                 "Note: this won't assign members who have committed to the pull request or have set their status to Busy.": "注意：這不會將已提交的合併請求或已將狀態設置為 “忙碌 ”的成員分配給他們。",
                     "How many team members should be assigned to review?": "應指派多少名團隊成員進行審查？",
                     "Routing algorithm": "旁路算法",
                         "Round robin": "循環",
-                        "Alternate reviews between each team member": "每位團隊成員交替審核",
+                        "Alternate reviews between each team member": "每位團隊成員交替審查",
                         "Load balance": "負載平衡",
-                        "Balance review load across the entire team": "平衡整個團隊的審核負載",
+                        "Balance review load across the entire team": "平衡整個團隊的審查負擔",
                         "Never assign certain team members": "絕不指派某些團隊成員",
                             "Select team members": "選擇團隊成員",
                     "Child team members": "子團隊成員",
-                        "Include the members of any child teams when assigning requests.": "在分配申請時，包括任何子團隊的成員。",
+                        "Include the members of any child teams when assigning requests.": "在分配請求時，包括任何子團隊的成員。",
                     "Count existing requests": "計算現有請求",
-                        "Count any members whose review has already been requested against the total number of members to assign.": "在要分配的成員總數中計算任何已提出審核請求的成員。",
+                        "Count any members whose review has already been requested against the total number of members to assign.": "在待分配的成員總數中清點所有已收到審核請求的成員。",
                     "Team review request": "團隊審查請求",
-                        "When assigning team members, remove the review request for the team.": "分配團隊成員時，刪除團隊的審核請求。",
+                        "When assigning team members, remove the review request for the team.": "分配團隊成員時，為團隊移除審查請求。",
 
         // 團隊設置 - 定時提醒 https://github.com/orgs/<orgs-name>/teams/team/settings/reminders
             "No scheduled reminders created.": "未創建預定提醒。",
-            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "為了保持專案進展，您現在可以提醒您的團隊關於他們需要審查的合併請求。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "為了保證專案推進，您現在可以就需要您團隊成員審查的合併請求提醒他們。",
 
             "Connect a Slack workspace to get started": "連接 Slack 工作區以開始使用",
 
@@ -25458,6 +25470,16 @@ I18N["zh-TW"]["orgs/settings/blocked_users"] = { // 組織設置 - 黑名單
             "You have not blocked any users.": "您還沒有拉黑任何用戶。",
             "Unblock": "取消拉黑",
 
+            "Additionally, blocked users are not able to:": "此外，被拉黑用戶無法：",
+            "invite you as a collaborator to their repositories": "邀請您作為其儲存庫的協作者",
+            "follow your account’s public activity": "追蹤您的帳戶的公共活動",
+            "send you notifications by @mentioning your username in public repositories": "在公共儲存庫中通過 @您 向您發送通知",
+            "Warn me when a blocked user is a prior contributor to a repository": "請警告我，當被拉黑的用戶是儲存庫的先前貢獻者時",
+            "On repositories you haven’t contributed to yet, we’ll warn you when a user you’ve blocked has previously made contributions.": "在您還沒有貢獻的儲存庫裡，當您拉黑的用戶之前有貢獻時，我們會警告您。",
+            "On repositories you haven't contributed to yet, we'll warn you when a user you've blocked has previously made contributions.": "在您還沒有貢獻的儲存庫裡，當您拉黑的用戶之前有貢獻時，我們會警告您。",
+            "You can block a user to deny them access to repositories and more.": "您可以拉黑用戶，以拒絕他們訪問儲存庫和其他功能。",
+            "All blocked users": "所有被拉黑的用戶",
+
     },
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
@@ -25510,8 +25532,8 @@ I18N["zh-TW"]["orgs/settings/code_review_limits"] = { // 組織設置 - 程式�
         // 程式碼審查限制 /organizations/<org-login>/settings/code_review_limits
             "Restrict users who are permitted to approve or request changes on pull requests in public repositories within this organization.": "限制該組織內允許批准或請求更改公共儲存庫中合併請求的用戶。",
             "Code review limits may already be specified by individual repositories. Any changes here will override those limits until unset.": "程式碼審查限制可能已經由各個儲存庫指定。此處的任何更改都將覆蓋這些限制，直至取消設置。",
-            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有儲存庫程式碼審查限制都是單獨管理的。啟用限制，只允許明確授予每個儲存庫訪問權的用戶提交 “批准” 或 “請求更改” 的審查。刪除限制，允許所有用戶提交合併請求審查。所有能夠提交評論合併請求審查的用戶將繼續能夠這樣做。",
-            "Limit reviews on all repositories": "限制對所有儲存庫的審查",
+            "Code review limits are currently managed individually for all repositories. Enable limits to permit only users who have explicitly been granted access to each repository to submit reviews that \"approve\" or \"request changes\". Remove limits to allow all users to submit pull request reviews. All users able to submit comment pull request reviews will continue to be able to do so.": "目前，所有儲存庫程式碼審查限制都是單獨管理的。啟用限制則僅允許每個儲存庫的具有明確授予的訪問權的用戶發表 “批准” 或 “請求更改” 的審查意見。移除限制則允許所有用戶對合併請求發表審查意見。所有能夠對合併請求發表評論性審查意見的用戶將繼續能夠這樣做。",
+            "Limit reviews on all repositories": "對所有儲存庫進行審查限制",
             "Remove review limits from all repositories": "取消對所有儲存庫的審查限制",
 
 
@@ -25694,6 +25716,40 @@ I18N["zh-TW"]["orgs/settings/sandboxes"] = {
     }
 };
 
+I18N["zh-TW"]["orgs/settings/custom-properties"] = { // 組織設置 - 自定義屬性
+    "static": { // 靜態翻譯
+        ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
+        ...I18N["zh-TW"]["repository/custom-properties"]["static"],
+    },
+    "regexp": [ // 正則翻譯
+        ...I18N["zh-TW"]["orgs-public"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            "Custom properties": "自定義屬性",
+        },
+    },
+};
+
+I18N["zh-TW"]["orgs/settings/issue-fields"] = { // 組織設置 - 議題字段
+    "static": { // 靜態翻譯
+        ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
+
+        "Issue Fields": "議題字段",
+        "Manage issue fields for an organization.": "管理組織的議題字段。",
+        "Issue fields": "議題字段",
+    },
+    "regexp": [ // 正則翻譯
+        ...I18N["zh-TW"]["orgs-public"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            "Issue Fields": "議題字段",
+            "Issue fields": "議題字段",
+        },
+    },
+};
+
 I18N["zh-TW"]["orgs/settings/copilot"] = {  // 組織設置 - GitHub Copilot
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
@@ -25703,10 +25759,271 @@ I18N["zh-TW"]["orgs/settings/copilot"] = {  // 組織設置 - GitHub Copilot
             "inside your organization.": "。",
 
             "Enable GitHub Copilot": "啟用 GitHub Copilot",
+
+        // 儲存庫設置 - Copilot 程式碼審查
+            "Enable automatic code review": "啟用自動程式碼審查",
+            "You can enable Copilot to automatically review pull requests by enabling it inside Repository rules.": "您可以在儲存庫規則中啟用 Copilot，從而讓 Copilot 自動審查合併請求。",
+            "Learn more about automatic code reviews.": "就自動程式碼審查瞭解更多訊息。",
+            "Go to repository rules": "前往儲存庫規則",
+            "General settings": "常規設置",
+            "Use custom instructions when reviewing pull requests": "在審查合併請求時使用自定義指令",
+            "Copilot references": "Copilot 在審查合併請求時會參考",
+            "repository custom instructions": "儲存庫自定義指令",
+            "when reviewing pull requests.": "。",
+            "With Copilot code review, you can add Copilot as a reviewer to your pull requests, including drafts. You can also select lines in Visual Studio Code and ask Copilot to review and comment on specific sections.": "使用 Copilot 程式碼審查，您可以將 Copilot 新增為合併請求——包括草案——的審查者。您還可以在 Visual Studio Code 中選擇程式碼行，並要求 Copilot 審查和評論特定部分。",
+            "Learn more about Copilot code reviews.": "就 Copilot 程式碼審查瞭解更多訊息。",
+            "Automated code reviews using rulesets": "使用規則集的自動程式碼審查",
+            "Use rulesets to configure Copilot to review pull requests automatically.": "使用規則集配置 Copilot 以自動審查合併請求。",
+            "Learn how to set up rulesets.": "瞭解如何設置規則集。",
+            "Go to rulesets": "前往規則集",
+            "No rulesets set up for automated reviews": "尚無設置自動程式碼審查的規則集",
+            "Create a ruleset to automate code reviews for pull requests targeting your default branch": "就針對您的預設分支的合併請求，創建規則集以自動化程式碼審查",
+            "Create ruleset for default branch": "創建針對預設分支的規則集",
+
+        // 儲存庫設置 - Copilot 編程AI 代理
+            "Copilot coding agent": "Copilot 編程AI 代理",
+            "Copilot cloud agent": "Copilot 雲端AI 代理",
+            "Cloud agent": "雲端AI 代理",
+            "You can configure Copilot cloud agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他具有此儲存庫訪問權限的用戶配置 Copilot 雲端AI 代理，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
+            "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他具有此儲存庫訪問權限的用戶配置 Copilot 編程AI 代理，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
+            "With Copilot cloud agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign a task to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "藉助 Copilot 雲端AI 代理，開發者可以將任務委託給 Copilot，從而專注於最重要的創造性、複雜和高影響力工作。將任務分配給 Copilot，等待AI 代理請求審查，然後在合併請求中留下回饋以繼續迭代。",
+            "Learn more about Copilot cloud agent": "瞭解更多關於 Copilot 雲端AI 代理的訊息",
+            "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate. To learn more, see the": "使用 Copilot 編程AI 代理，開發者可以將任務委派給 Copilot，從而專注於創造性的、複雜的和高衝擊力的最重要工作。只需將議題分配給 Copilot，等待AI 代理來請求審查，然後就合併請求留言回饋以供迭代。更多訊息請參閱",
+            "With Copilot coding agent, developers can delegate tasks to Copilot, freeing them to focus on the creative, complex, and high-impact work that matters most. Assign an issue to Copilot, wait for the agent to request review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，開發者可以將任務委派給 Copilot，從而專注於創造性的、複雜的和高衝擊力的最重要工作。只需將議題分配給 Copilot，等待AI 代理來請求審查，然後就合併請求留言回饋以供迭代。",
+            "Learn more about Copilot coding agent": "就 Copilot 編程AI 代理瞭解更多訊息",
+            "Internet access": "訪問互聯網",
+            "Ensure that the agent only accesses approved network resources during code generation and execution.": "確保AI 代理在程式碼生成和執行過程中只訪問已批准其訪問的網路資源。",
+            "Learn more about customizing network access": "瞭解更多",
+            "Enable firewall": "啟用防火牆",
+            "Recommended": "推薦",
+            "Limit Copilot cloud agent’s Internet access to only allow access to allowlisted locations": "將 Copilot 雲端AI 代理的互聯網訪問權限限制為僅允許訪問白名單中的位置",
+            "Limit Copilot coding agent’s Internet access to only allow access to allowlisted locations": "將 Copilot 編程AI 代理的互聯網訪問權限限制為僅允許訪問白名單中的位置。",
+            "Recommended allowlist": "推薦白名單",
+            "Allow access to locations frequently used to install tools, packages, and dependencies": "允許訪問常用於安裝工具、軟件包和依賴項的位置",
+            "Allow access to locations frequently used to install tools, packages, and dependencies.": "允許訪問常用於安裝工具、軟件包和依賴項的位置。",
+            "Custom allowlist": "自定義白名單",
+            "Allow access to specific domains, IP addresses, or URLs.": "允許訪問特定網域、IP 地址或 URL。",
+            "Add items to the allowlist to enable Copilot coding agent to access specific domains, IP addresses, or URLs.": "將專案新增到允許列表，以便 Copilot AI 代理能夠訪問特定的網域、IP 地址或 URL。",
+            "See the GitHub Docs for syntax and examples.": "請參閱 GitHub 文件以獲取語法和示例。",
+            "e.g. https://example.com/a/path or example.com": "例：https://example.com/a/path 或 example.com",
+            "Add rule": "新增規則",
+            "Rule must be a valid domain, IP address, or URL": "規則必須是有效網域、IP 地址或 URL",
+            "No rules yet": "無規則",
+            "Tip: Paste a list of rules into the input to add them all at once.": "提示：將規則列表粘貼到輸入框中，可以一次性新增所有規則。",
+            "Delete rule": "刪除規則",
+            "Allowlist settings saved successfully!": "白名單設置保存成功！",
+            "Policy": "策略",
+            "Require approval for workflow runs": "要求審批工作流執行",
+            "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run.": "當 Copilot 推送更改時，要求具有寫入權限的維護者批准後再執行 Actions 工作流。",
+            "Allowing GitHub Actions workflows to run without approval may allow unreviewed code written by Copilot to gain write access to your repository or access your GitHub Actions secrets.": "允許 GitHub Actions 工作流未經審批即執行，可能會讓 Copilot 編寫的未經審查程式碼獲得儲存庫寫入權限，或訪問您的 GitHub Actions 機密。",
+            "Validation tools": "驗證工具",
+            "Configure which tools Copilot cloud agent uses to validate its work and iterate before requesting human review.": "配置 Copilot 雲端AI 代理在請求人工審查前用於驗證工作並迭代的工具。",
+            "CodeQL code scanning": "CodeQL 程式碼掃描",
+            "Use CodeQL to scan for security vulnerabilities.": "使用 CodeQL 掃描安全漏洞。",
+            "Copilot code review": "Copilot 程式碼審查",
+            "Use Copilot code review to identify code quality issues.": "使用 Copilot 程式碼審查識別程式碼質量問題。",
+            "Secret scanning": "機密掃描",
+            "Scan for accidentally committed secrets and credentials.": "掃描意外提交的機密和憑據。",
+            "Dependency vulnerability checks": "依賴漏洞檢查",
+            "Check new dependencies against the GitHub Advisory Database for known vulnerabilities.": "根據 GitHub Advisory Database 檢查新依賴項是否存在已知漏洞。",
+            "Model Context Protocol (MCP)": "模型上下文協議（MCP）",
+            "The MCP is an open standard that defines how applications share context with large language models (LLMs). MCP provides a standardized way to connect AI models to different data sources and tools, enabling them to work together more effectively.": "MCP 是一個開放標準，定義了應用程式如何與大型語言模型（LLM）共享上下文。MCP 提供了一種標準化的方法，將 AI 模型與不同的資料源和工具連接起來，使它們能夠更高效地協同工作。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The GitHub and Playwright MCP servers are enabled by default.": "藉助 MCP，您可以將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。GitHub 和 Playwright MCP 伺服器預設啟用。",
+            "With MCP, you can extend the capabilities of Copilot cloud agent by connecting it to other tools and services. The": "藉助 MCP，您可以將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。",
+            "With MCP, you can extend the capabilities of": "藉助 MCP，您可以擴展",
+            "by connecting it to other tools and services. The": "的能力，將其連接到其他工具和服務。",
+            "MCP servers are enabled by default.": "MCP 伺服器預設啟用。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 .copilot 環境中定義的機密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's .copilot environment. Learn more about configuring MCP servers.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 .copilot 環境中定義的機密。瞭解更多關於配置 MCP 伺服器的訊息。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 copilot 環境中定義的機密。",
+            "You can configure your own MCP servers by adding JSON configuration below. MCP servers can optionally access secrets defined in the repository's copilot environment. Learn more about configuring MCP servers.": "您可以在下方新增 JSON 配置來配置自己的 MCP 伺服器。MCP 伺服器可選擇訪問儲存庫 copilot 環境中定義的機密。瞭解更多關於配置 MCP 伺服器的訊息。",
+            "Learn more about configuring MCP servers.": "瞭解更多關於配置 MCP 伺服器的訊息。",
+            "You can use MCP to extend the capabilities of Copilot cloud agent by connecting it to other tools and services.": "您可以使用 MCP 將 Copilot 雲端AI 代理連接到其他工具和服務，從而擴展其能力。",
+            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services. For information on how to write your JSON MCP configuration, see the": "您可以使用 MCP 通過將其連接到其他工具和服務，來擴展 Copilot 編程AI 代理的功能。有關如何編寫您的 JSON MCP 配置的詳細訊息，請參見",
+            "You can use MCP to extend the capabilities of Copilot coding agent by connecting it to other tools and services.": "您可以使用 MCP 通過將其連接到其他工具和服務，來擴展 Copilot 編程AI 代理的功能。",
+            "Learn how to write your JSON MCP configuration": "瞭解如何編寫您的 JSON MCP 配置",
+            "MCP configuration": "MCP 配置",
+            "Your configuration will be validated on save.": "您的配置將在保存時進行驗證。",
+            "Save MCP configuration": "保存",
+            "Use of Copilot coding agent is subject to the": "使用 Copilot 編程AI 代理需遵守",
+            "pre-release terms": "預發行條款",
+
+        // 個人設置 - GitHub Copilot
+            "Trained on billions of lines of code,": "經過數十億行程式碼的訓練，",
+            "turns natural language prompts into coding suggestions across dozens of languages.": "將自然語言提示轉換為多種語言的編碼建議。",
+            "Start free trial": "開始免費試用",
+            "After that $10/month": "結束試用後 $10 / 月",
+            "Get Copilot from an organization": "從組織中獲取 GitHub Copilot",
+            "Organizations can provide their members (including you) and their teams access to GitHub Copilot.": "組織可以為其成員（包括您）及其團隊提供使用 GitHub Copilot 的權限。",
+            "Organizations owned by enterprise accounts": "企業帳戶擁有的組織",
+            "are not currently listed.": "目前未包含在此計劃中。",
+            "You do not belong to any organizations.": "您不屬於任何組織。",
+            "Create an organization": "創建一個組織",
+            "Ask admin for access": "向管理員請求訪問權限",
+            "Requesting...": "請求中…",
+            "Remove request": "撤銷請求",
+            "Cancelling...": "撤銷中…",
+            "Buy Copilot Business": "購買 GitHub Copilot 企業版",
+            "Getting started": "開始使用",
+            "Remove section": "移除區域",
+            "Install Copilot in your editor": "在您的編輯器中安裝 Copilot",
+            "Ask about coding problems and get code completions while you work.": "在工作時詢問問題並獲得程式碼補全。",
+            "Chat with Copilot anywhere": "隨時隨地與 Copilot 聊天",
+            "Copilot chat in the navigation from anywhere on GitHub. Try asking": "按鈕，即可與 Copilot 聊天。嘗試詢問",
+            "“what can I do with Copilot?”": "“我能用 Copilot 做什麼？”",
+            "to get started.": "來開始聊天。",
+            "Go to Copilot": "前往 Copilot",
+            "Start building with Copilot": "使用 Copilot 開始構建專案",
+            "Learn how to build with Copilot in Visual Studio Code or Visual Studio.": "學習如何在 Visual Studio Code 或 Visual Studio 中使用 Copilot 來構建專案",
+            "Get started": "開始",
+            "You are using Copilot for free": "您正在使用 Copilot 免費版",
+            "Responses are limited to 2,000 code completions and 50 chat messages per month.": "回覆上限為每月 2,000 次程式碼完成和 50 條聊天訊息。",
+            "Get unlimited usage with Copilot Pro": "通過 Copilot Pro 無限制使用",
+            "Unlimited messages and interactions": "訊息和互動無限制",
+            "Access to the latest models": "訪問最新模型",
+            "Customize conversations to your private codebase and extensions": "為您的私人程式碼庫和擴展定製會話",
+            "Start a free trial": "免費試用",
+            "Code completions": "程式碼補全",
+            "Chat messages": "聊天訊息",
+            "Copilot policies": "Copilot 規則",
+            "Copilot Chat in GitHub.com": "在 GitHub.com 中使用 Copilot Chat",
+            "You can use Copilot Chat in GitHub.com. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。Copilot 程式碼審查和預覽功能僅適用於付費版。",
+            "You can use Copilot Chat in GitHub.com. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat。預覽功能僅適用於付費版。",
+            "You can use Copilot Chat in GitHub.com and Copilot for pull requests. Preview features are only available for paid licenses.": "您可以在 GitHub.com 中使用 Copilot Chat 和 Copilot 合併請求。預覽功能僅適用於付費版。",
+            "Learn more about Copilot in GitHub.com": "瞭解更多關於在 GitHub.com 中使用 Copilot 的訊息",
+            "Editor preview features": "編輯器預覽功能",
+            "You can use preview features in your editor.": "您可以在編輯器中使用預覽功能。",
+            "Suggestions matching public code": "公共程式碼匹配的建議",
+            "Copilot can allow or block suggestions matching public code. Learn more about": "Copilot 可允許或阻止與公共程式碼匹配的建議。瞭解更多關於",
+            "code suggestions": "程式碼建議",
+            "GitHub Copilot will show suggestions matching public code.": "GitHub Copilot 將顯示與公共程式碼匹配的建議。",
+            "GitHub Copilot won't show suggestions matching public code.": "GitHub Copilot 不會顯示與公共程式碼匹配的建議。",
+            "Allow GitHub to use my data for product improvements": "允許 GitHub 將資料用於產品改進",
+            "Allow GitHub, its affiliates and third parties to use my data, including Prompts, Suggestions, and Code Snippets, for product improvements. More information in the": "允許GitHub、其關聯公司和第三方使用我的資料，包括提示、建議和程式碼片段，以改進產品。更多訊息請查看",
+            "About GitHub Copilot privacy.": "關於 GitHub Copilot 隱私的訊息。",
+            "Allow GitHub to use my data for AI model training": "允許 GitHub 將資料用於訓練 AI 模型",
+            "Allow GitHub, its affiliates and third parties to use my data, including Prompts, Suggestions, and Code Snippets, for AI model training. More information in the": "允許GitHub、其關聯公司和第三方使用我的資料，包括提示、建議和程式碼片段，以訓練 AI 模型。更多訊息請查看",
+            "Allow GitHub to collect and use my Inputs, Outputs, and associated context to train and improve AI models. Read more in the": "允許 GitHub 收集並使用我的輸入、輸出、交互上下文以訓練並提升 AI 模型。更多訊息在",
+            "Copilot can search the web": "網路搜尋",
+            "Copilot can answer questions about new trends and give improved answers, via Bing. See": "Copilot 可以回答有關新趨勢的問題並給出改進的答案，通過必應。請參閱",
+            "Microsoft Privacy Statement": "微軟隱私聲明",
+            "GitHub Copilot will answer questions about new trends and give improved answers": "GitHub Copilot 將回答有關新趨勢的問題並給出改進的答案",
+            "GitHub Copilot won't answer questions about new trends and give improved answers": "GitHub Copilot 將不會回答有關新趨勢的問題並給出改進的答案",
+            "Select an option": "選擇",
+            "You will have access to the feature": "您將能夠訪問此功能",
+            "You won’t have access to the feature": "您將不能訪問此功能",
+            "Learn more about how GitHub Copilot serves OpenAI GPT-5-Codex and confirm compatibility with your IDE in our documentation.": "瞭解更多關於 GitHub Copilot 如何為 OpenAI GPT-5-Codex 提供服務，並確認與您的 IDE 的兼容性。",
+            "Dashboard Entry Point": "儀表板入口",
+            "Allows instant chatting when landing on GitHub.com": "允許登入 GitHub.com 時即時聊天",
+            "review your code": "審查程式碼",
+            "pull request summaries": "合併請求總結",
+            "Automatically request Copilot code review": "自動請求 Copilot 程式碼審查",
+            "Use Copilot to automatically review all the pull requests you've created.": "使用 Copilot 自動審查您創建的合併請求。",
+            "For more information about the data your organization receives regarding your use of GitHub Copilot, please review": "如需瞭解您的組織在使用 GitHub Copilot 時會收到哪些資料，請查看",
+            "GitHub's Privacy Statement": "GitHub 的《隱私聲明》",
+            "It can take up to 30 minutes for the changes to take effect. Restart your code editor for the changes to take effect immediately.": "更改可能需要 30 分鐘才能生效。重新啟動程式碼編輯器，更改會立即生效。",
+            "Visibility": "可見度",
+            "Show Copilot": "顯示 Copilot",
+            "Enable Copilot for all GitHub features, including navigation bar, search, and dashboard.": "為所有 GitHub 功能啟用 Copilot，包括導航欄、搜尋和儀表板。",
+            "When disabled, Copilot will be hidden and unavailable. This setting does not apply to Copilot search on GitHub Docs.": "禁用後，Copilot 將隱藏且不可用。此設置不適用於 GitHub Docs 中的 Copilot 搜尋。",
+            "It appears you are not eligible to sign up to GitHub Copilot for free": "您似乎沒有資格免費註冊 GitHub Copilot",
+            "Your GitHub Copilot setup is incomplete. Select your preferences below to start using GitHub Copilot.": "您的 GitHub Copilot 設置不完整。請在下面選擇您的偏好，開始使用 GitHub Copilot。",
+            "GitHub Copilot Pro is active for your account": "您的 GitHub Copilot Pro 帳戶已激活",
+            "GitHub Copilot Student is active for your account": "您的 GitHub Copilot 學生帳戶已激活",
+            "You currently have an active": "您當前擁有有效的",
+            "Copilot Pro subscription": "GitHub Copilot Pro 訂閱",
+            "Get started by installing the extension in your preferred IDE.": "首先在您首選的 IDE 中安裝擴展。",
+            "Get started by installing the extension in your preferred environment.": "首先在您首選環境中安裝擴展。",
+            "Copilot in your IDE": "集成在 IDE",
+            "Copilot in the CLI": "在終端中使用",
+            "Chat in GitHub Mobile": "在 GitHub Mobile 中使用",
+            "More features": "更多功能",
+            "Included usage": "套內用量",
+            "AI credits included with your plan, reset monthly. Enable additional usage to continue with pay-as-you-go credits once you run out of your included usage.": "AI 額度包含在您的計劃中，每月重置。一旦用套內用量，可以啟用超套用量以繼續使用按需付費的額度。",
+            "No usage yet": "尚未使用",
+            "Additional usage": "超套用量",
+            "Not enabled": "未啟用",
+            "Plan upgrades are temporarily unavailable.": "計劃升級暫時不可用。",
+            "Free responses reset": "免費響應額度將在",
+            "Read more.": "瞭解更多。",
+            "Read more": "瞭解更多",
+            "You can use Copilot Chat in GitHub.com, Copilot for pull requests, and all of the preview features.": "您可以在 GitHub.com 中使用 Copilot Chat，Copilot 合併請求和所有預覽功能。",
+            "You can use Copilot Chat in GitHub.com and Copilot for pull requests. Copilot code review and preview features are only available for paid licenses.": "您可以在 GitHub.com 上使用 Copilot Chat，也可以在合併請求中使用 Copilot。Copilot 的程式碼審查和預覽功能僅對付費許可證用戶開放。",
+            "GitHub Copilot for assistance in terminal": "使用 GitHub Copilot 終端輔助工具",
+            "Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
+            "GitHub Copilot Chat in the IDE": "在 IDE 中使用 Copilot Chat",
+            "to explain a piece of code, propose bug fixes, or generate unit tests in a chat interface from your editor.": "在編輯器的聊天介面上解釋程式碼、提出錯誤修復建議或生成單元測試。",
+            "Copilot Chat in GitHub Mobile": "在 GitHub Mobile 中使用 Copilot Chat",
+            "personalized to a codebase.": "，個性化程式碼。",
+            "Copilot in GitHub Desktop": "在 GitHub Desktop 中使用",
+            "GitHub Copilot for assistance in GitHub Desktop": "在 GitHub Desktop 中獲得 Copilot 的協助",
+            "Copilot can search the web using model native search": "使用模型原生搜尋",
+            "Copilot can answer questions using a model's built-in search capabilities.": "Copilot 可以使用模型內置搜尋功能回答。",
+            "Automatic Copilot code review": "Copilot 自動程式碼審查",
+            "Copilot will automatically review your pull requests.": "Copilot 將自動審查您的合併請求。",
+            "Learn more about configuring automatic code reviews.": "瞭解如何配置自動程式碼審查。",
+            "With Copilot coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 編程AI 代理，您可以將任務委託給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留言回饋以供迭代。",
+            "Delegate tasks to Copilot coding agent in repositories where it is enabled": "將任務委託給已啟用 Copilot 編程AI 代理的儲存庫",
+            "Delegate tasks to Copilot cloud agent in repositories where it is enabled": "在已啟用的儲存庫中，將任務委託給 Copilot 雲端AI 代理",
+            "Copilot Memory": "Copilot 記憶",
+            "to remember repository context across Copilot agent interactions.": "在 Copilot AI 代理交互過程中記住程式碼儲存庫上下文。",
+            "This preview is governed by": "此預覽受此約束：",
+            "GitHub's pre-release terms": "GitHub 預發行條款",
+            "MCP servers in Copilot": "Copilot 中的 MCP 伺服器",
+            "Connect MCP servers to Copilot in all Copilot editors and Coding Agent.": "在所有 Copilot 編輯器和編程AI 代理中連接 MCP 伺服器。",
+            "Connect MCP servers to Copilot in all Copilot editors and Copilot cloud agent.": "在所有 Copilot 編輯器和 Copilot 雲端AI 代理中連接 MCP 伺服器。",
+            "If enabled, you can access and send data to xAI Grok Code Fast 1.": "若啟用，您可以訪問 xAI Grok Code Fast 1 並發送資料。",
+            "Copilot-generated commit messages": "Copilot 生成的提交消息",
+            "Allow Copilot to suggest commit messages when you make changes on GitHub.com.": "允許 Copilot 在您於 GitHub.com 上進行更改時提供提交消息建議。",
+            "Learn more about Copilot-generated commit messages.": "瞭解更多關於 Copilot 生成的提交消息。",
+            "If enabled, you can view and create": "若啟用，您可以查看和創建",
+            ". When disabled, you cannot view or create any Copilot Spaces.": "。當禁用時，您無法查看或創建任何 Copilot 空間。",
+            "Choose which repositories Copilot coding agent should be enabled in. Copilot coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要在其中啟用 Copilot 編程AI 代理的儲存庫。Copilot 編程AI 代理僅在為該儲存庫啟用並符合 Copilot 許可證政策的情況下可用。",
+            "Copilot Spaces Individual Access": "Copilot Spaces 個人訪問權限",
+            "If enabled, you can create individually owned": "若啟用，您可以創建個人擁有的",
+            ". When disabled, you cannot create individual spaces.": "。當禁用時，您無法創建個人空間。",
+            "Copilot Spaces Individual Sharing": "Copilot Spaces 個人分享",
+            "If enabled, you can share individually owned": "若啟用，您可以分享個人擁有的",
+            "Copilot Spaces": "Copilot 空間",
+            ". When disabled, you cannot share individual spaces.": "。當禁用時，您無法分享個人空間。",
+            "You can enable Copilot cloud agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 雲端AI 代理，但由於您沒有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
+            "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以為其他用戶啟用 Copilot 編程AI 代理，但由於您沒有 Copilot Pro+ 或 Copilot 企業版許可證，因此無法向 Copilot 分配任務。",
+            "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.": "您可以為其他用戶啟用 Copilot 編程AI 代理，但由於管理員已禁用 Copilot 編程AI 代理策略，您將無法向 Copilot 分配任務。",
+            "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "雖然您可以為其他用戶啟用 Copilot 編碼代理，但由於您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 許可證，因此無法向 Copilot 分配任務。",
+            "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用編程AI 代理，您可以將任務委派給 Copilot，從而讓您專注於最具創造性的、複雜且影響深遠的工作。只需將問題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留言回饋以供迭代。",
+            "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 雲端AI 代理，您可以將任務委託給 Copilot，從而專注於最具創造性、複雜性和高影響力的重要工作。只需將議題分配給 Copilot，等待AI 代理請求您審查，然後在合併請求中留下回饋以繼續迭代。",
+            "Learn more in the docs.": "詳情",
+            "Repository access": "儲存庫訪問",
+            "Choose which repositories Coding agent should be enabled in. Coding agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要啟用編程AI 代理的儲存庫。編程AI 代理僅在為該儲存庫啟用並符合 Copilot 許可證政策的情況下可用。",
+            "Choose which repositories Copilot cloud agent should be enabled in. Copilot cloud agent will only be available where it is enabled for the repository and in the Copilot license policies.": "選擇要啟用 Copilot 雲端AI 代理的儲存庫。Copilot 雲端AI 代理僅在為該儲存庫啟用並符合 Copilot 許可證政策的情況下可用。",
+            "No repositories": "無儲存庫",
+            "Include all current and future repositories": "包括所有當前和未來的儲存庫",
+            "Only selected repositories": "手動選擇",
+            "Applies only to specifically selected repositories": "僅適用於您選擇的儲存庫",
+            "Search or filter": "搜尋或篩選",
+            "Mirror": "鏡像",
+            "Language": "語言",
+            "License": "許可證",
+            "Exclude": "排除",
+            "Select all": "全選",
+            "items shown.": "儲存庫顯示。",
+            "Use the search to find specific items": "搜尋查找特定儲存庫",
     },
     "regexp": [ // 正則翻譯
-        ...I18N["zh-TW"]["orgs-public"]["regexp"],
+        ...I18N["zh-TW"]["repository/settings/copilot/code_review"].regexp,
+        ...I18N["zh-TW"]["repository/settings/copilot/coding_agent"].regexp,
+        ...I18N["zh-TW"]["settings/copilot"].regexp,
+        ...I18N["zh-TW"]["orgs-public"].regexp,
     ],
+    "title": {
+        "static": {
+            ...I18N["zh-TW"]["repository/settings/copilot/coding_agent"].title.static,
+            ...I18N["zh-TW"]["settings/copilot"].title.static,
+        },
+        "regexp": [
+            ...I18N["zh-TW"]["repository/settings/copilot/code_review"].title.regexp,
+        ],
+    },
 };
 
 I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
@@ -25817,9 +26134,9 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
                         "Workflows have read and write permissions in the repository for all scopes.": "工作流程在儲存庫中對所有作用域具有讀和寫的權限。",
                     "Read repository contents and packages permissions": "讀取儲存庫的內容和軟件包的權限",
                         "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在儲存庫中僅對內容和軟件包作用域具有只讀的權限。",
-                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 是否可以創建合併請求或提交批准合併請求審查。",
+                    "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "選擇 GitHub Actions 能否創建合併請求，或發表審查意見批准合併請求。",
                     "Allow GitHub Actions to create and approve pull requests": "允許 GitHub Actions 創建和批准合併請求",
-                        "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "這控制 GitHub Actions 是否可以創建合併請求或提交批准的合併請求審查。",
+                        "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "這控制 GitHub Actions 能否創建合併請求或提交對合併請求的審查批准。",
                     // 頂部提醒
                         "Default workflow permissions settings saved.": "預設工作流程權限設置已保存。",
 
@@ -26505,7 +26822,7 @@ I18N["zh-TW"]["orgs/settings/oauth_application_policy"] = { // 組織設置 - �
             "Denied": "拒絕",
             "Approved": "已批准",
 
-            "No pending requests": "沒有待處理的請求",
+            "No pending requests": "尚無未決請求",
             "As members request access for specific applications, those requests will be listed here for your approval. You can start by browsing": "當成員請求訪問特定應用時，這些請求將在此處列出以供您批准。您可以瀏覽",
             "your own authorized applications": "您授權的應用",
 
@@ -26550,7 +26867,7 @@ I18N["zh-TW"]["orgs/settings/personal-access-token"] = { // 組織設置 - 個�
                     "Organization members will not be allowed to access your organization using a fine-grained personal access token": "不允許組織成員使用精細化的個人訪問令牌訪問您的組織",
 
             "Require approval of fine-grained personal access tokens": "要求批准精細化的個人訪問令牌",
-                "Access requests by organization members can be subject to review by administrator before approval.": "組織成員的訪問請求在批准之前可能需要經過管理員審查。",
+                "Access requests by organization members can be subject to review by administrator before approval.": "組織成員的訪問請求可能需要經過管理員審查後方可批准。",
                 "Require administrator approval": "需要管理員批准",
                     "All access requests by organization members to this organization must be approved before the token is usable.": "組織成員對該組織的所有訪問請求都必須在令牌可用之前得到批准。",
                 "Do not require administrator approval": "不需要管理員批准",
@@ -26664,7 +26981,7 @@ I18N["zh-TW"]["orgs/settings/reminders"] = { // 組織設置 - 定時提醒
 
         // 定時提醒 /organizations/<org-login>/settings/reminders
             "No scheduled reminders created.": "未創建預定提醒。",
-            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "為了保持專案進展，您現在可以提醒您的團隊關於他們需要審查的合併請求。",
+            "To keep projects moving, you can now remind your teams about pull requests they need to review.": "為了保證專案推進，您現在可以就需要您團隊成員審查的合併請求提醒他們。",
 
             "Connect a Slack workspace to get started": "連接 Slack 工作區以開始使用",
             // 對話框
@@ -26744,7 +27061,7 @@ I18N["zh-TW"]["orgs/settings/audit-log"] = { // 組織設置 - 審計日誌
         // 源IP洩露 /organizations/<org-login>/audit-log/event_settings
             "Disclose actor IP addresses in audit logs": "在審計日誌中披露行為人 IP 地址",
             "Enable source IP disclosure": "啟用源 IP 洩露",
-            "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "啟用此功能將允許您查看組織審計日誌事件中當前成員的 IP 地址。由於此功能會自動公開用戶的 IP 地址，因此您應該與法律團隊一起審核此更改，以確定是否需要任何用戶通知。當在企業級別啟用時，它將自動為企業擁有的所有組織啟用，反之則不然。",
+            "Enabling will allow you to view IP addresses of current members for organization audit log events. As this feature makes your users' IP addresses automatically available, you should review this change with your legal team to determine whether any user notification is required. When enabled at the enterprise level it will be automatically enabled for all organizations owned by the enterprise, the reverse is not true.": "啟用此功能將允許您查看組織審計日誌事件中當前成員的 IP 地址。由於此功能會自動公開用戶的 IP 地址，因此您宜與法律團隊一起審查此更改，以確定是否需要向用戶做任何通知。當在企業級別啟用時，它將自動為企業擁有的所有組織啟用，反之則不然。", // GB/T 1.1——2020 表 C.3 規定能願動詞 should 譯為“宜”
     },
     "regexp": [ // 正則翻譯
         [/Found (\d+) events?/, "找到 $1 個事件"],
@@ -27130,10 +27447,10 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
                     "In progress": "進行中",
                         "Actively being worked on": "正在積極開展工作",
                         "Approved by reviewer": "由審查者批准",
-                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "當該專案中的合併請求達到所需的最低批准審查數時，將自動移至此處。當另一欄啟用了 “",
+                        "Pull requests in this project will automatically move here when they meet the minimum number of required approving reviews. Recommended when another column has the": "當此專案中的合併請求達到所需的最低審查批准數時，將自動移至此處。當另一欄啟用了 “",
                         "automation enabled.": "” 的自動化功能時推薦使用。",
-                        "Pending approval by reviewer": "由審查者待批准",
-                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "當審查者請求更改或不再滿足所需的最小批准審查數時，此專案中的合併請求將自動移至此處。當另一欄目啟用了 “",
+                        "Pending approval by reviewer": "等待審查者批准",
+                        "Pull requests in this project will automatically move here when a reviewer requests changes, or it no longer meets the minimum number of required approving reviews. Recommended when another column has the": "此專案中的合併請求，在被審查者要求更改，或不再滿足所需的最小審查批准數時，將自動移至此處。當另一欄目啟用了 “",
                     "Done": "已完成",
                         "Items are complete": "專案已完成",
                         // 已關閉
@@ -27429,8 +27746,8 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             "Issue closed": "議題已關閉",
             "Pull Request reopened": "合併請求已重新打開",
             "Issue reopened": "議題已重新打開",
-            "Pull Request pending card added": "新增了合併請求待辦卡",
-            "Issue pending card added": "新增了議題待辦卡",
+            "Pull Request pending card added": "新增了合併請求未決卡",
+            "Issue pending card added": "新增了議題未決卡",
 
             "automation": "自動化",
             "to the": "到",
@@ -27560,7 +27877,7 @@ I18N["zh-TW"]["github-copilot/signup"] = { // GitHub Copilot 個人版獲取頁�
             "Save and complete setup": "保存並繼續",
 
         // https://github.com/github-copilot/signup/settings
-            "GitHub Copilot is now ready": "GitHub Copilot 已就緒",
+            "GitHub Copilot is now ready": "GitHub Copilot 現已就緒",
                 "Add it to your editor and start building.": "新增至您的編輯器並開始構建",
 
             "Install the GitHub Copilot extension": "安裝 GitHub Copilot 擴展",
@@ -27945,23 +28262,23 @@ I18N["zh-TW"]["features"] = {
             "Code reviews": "程式碼審查",
                 "Review new code, see visual code changes, and confidently merge code changes with automated status checks.": "審查新程式碼，查看視覺程式碼更改，並通過自動化狀態檢查自信地合併程式碼更改。",
             "Code review assignments": "程式碼審查分配",
-                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配程式碼審查，明確哪些團隊成員應該為合併請求提交他們的審查。",
+                "Assign code reviews to make it clear which team members should submit their review for a pull request.": "分配程式碼審查，明確哪些團隊成員應該對合併請求發表審查意見。",
             "Code owners": "程式碼所有者",
-                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "當對他們擁有的程式碼部分進行更改時，自動請求選定貢獻者的審查，或者要求他們的批准。",
+                "Automatically request reviews–or require approval—by selected contributors when changes are made to sections of code that they own.": "當更改所選貢獻者擁有的程式碼部分時，自動請求其審查，或要求其批准。",
             "Draft pull requests": "起草合併請求",
-                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "使用合併請求作為一種討論和協作的方式，無需提交正式審查或冒不必要合併的風險。",
-            "Protected branches": "保護分支",
+                "Use a pull request as a way to discuss and collaborate, without submitting to formal review or risking an unwanted merge.": "將合併請求用作討論和協作的方式，而無需提請正式審查，也不必冒險在暫不需要時合併。",
+            "Protected branches": "受保護的分支",
                 "Enforce restrictions on how code branches are merged, including requiring reviews, or allowing only specific contributors to work on a particular branch.": "強制限制程式碼分支的合併方式，包括要求審查，或者只允許特定貢獻者在某個特定分支上工作。",
-            "Team reviewers": "團隊審查人員",
-                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "在 GitHub 上請求一個團隊審查您的合併請求。團隊成員將收到通知，表明您已經要求他們進行審查。",
-            "Multiple assignees": "多人分配",
-                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多達 10 人處理特定問題或合併請求，讓您更容易追蹤誰在處理什麼。",
-            "Multiple reviewers": "多人審查",
-                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "請求多個貢獻者進行審查。被請求的審核者將收到通知，告知您已請求他們進行審查。",
+            "Team reviewers": "團隊審查者",
+                "Request a team on GitHub to review your pull request. Members of the team will get a notification indicating that you've asked for their review.": "請求 GitHub 上的團隊審查您的合併請求。將通知團隊成員，表明您已要求其審查。",
+            "Multiple assignees": "多位受理人",
+                "Assign up to 10 people to work on a given issue or pull request, letting you more easily track who's working on what.": "可指派多達 10 人處理特定議題或合併請求，讓您更容易追蹤誰在處理什麼。",
+            "Multiple reviewers": "多位審查者",
+                "Request review from multiple contributors. Requested reviewers will be notified that you've asked for their review.": "請求多位貢獻者進行審查。將通知請求所涉審查者，表明您已要求其審查。",
             "Multi-line comments": "多行評論",
-                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通過在合併請求差異視圖中一次引用或評論多行程式碼，來澄清程式碼審查。",
+                "Clarify code reviews by referencing or commenting on multiple lines at once in a pull request diff view.": "通過在合併請求差異視圖中一次性對多行程式碼進行引用或評論，來使得程式碼審查一目瞭然。",
             "Public repositories": "公共儲存庫",
-                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "與任何 GitHub 成員合作在您控制的公共儲存庫中的程式碼。進行更改，打開一個合併請求，創建一個問題等等。",
+                "Work with any GitHub member on code in a public repository you control. Make changes, open a pull request, create an issue, and more.": "就您控制的公共儲存庫中的程式碼，同任何 GitHub 成員合作。進行更改、打開合併請求、創建議題，諸如此類。", // 合作在漢語中用作動詞時通常是不及物的。頓號用法見 GB/T 4.5.3.1
             "Dark mode": "深色模式",
                 "Choose how you experience GitHub with theme settings. Swap to dark theme or default to your system preferences.": "通過主題設置來選擇您使用 GitHub 的方式。切換到深色主題或預設使用您的系統偏好設置。",
     },
@@ -28280,7 +28597,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
                 "In the finish section,": "在結束部分，",
                 "Celebrate that the learner finished the course": "慶祝學習者完成課程",
                 "Include an celebratory image": "附上一張慶祝圖片",
-                "Review what the learner just did": "回顧學習者剛剛做的事情",
+                "Review what the learner just did": "查看學習者剛剛做的事情",
                 "Provide next steps for learners who want to know more": "為想要了解更多訊息的學習者提供後續步驟",
                 "Invite feedback about the course": "邀請學習者對課程提出回饋",
             "Writing your README: Footer": "編寫自述文件：頁腳",
@@ -28293,7 +28610,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
             "Writing your Actions workflow files: Connect your steps to GitHub Actions events": "編寫操作工作流程文件：將步驟連接到 GitHub 操作事件",
                "Every step will have an Actions workflow file that triggers on": "每個步驟都會有一個根據",
                "GitHub Actions events": "GitHub 操作事件",
-               ". Start by reviewing which event corresponds with each of your steps.": "觸發的操作工作流文件。首先查看每個步驟對應的事件。",
+               ". Start by reviewing which event corresponds with each of your steps.": "觸發的操作工作流文件。首先查看每個步驟對應的事件。", // GitHub Actions 應該保持原文吧？
             "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "編寫操作工作流程文件：確定 GitHub 操作在每個步驟中需要做的事情",
                 "You can use": "您可以在操作工作流中使用",
                 "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "來執行您能想到的幾乎所有 GitHub 交互操作。寫下完成每個步驟需要做的所有事情。存儲連結，以便在學習課程時參考。",
@@ -28326,7 +28643,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
                 "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流程文件中包含詳盡的註釋，以描述每個部分。其他作者和未來的自己都會感謝您。",
         "Testing and monitoring your course": "測試和監控課程",
             "Click on “Use this template” and run through your course on a your personal account. Does everything work? Do any actions go red?": "點擊 “使用此範本”，然後在個人帳戶上執行課程。一切正常嗎？是否有任何操作變紅？",
-            "Consider asking for both technical and content review.": "考慮要求進行技術和內容審查。",
+            "Consider asking for both technical and content review.": "考慮要求進行技術審查和內容審查。",
             "Test your course with a potential learner.": "與潛在學員一起測試課程。",
             "Check in our your course regularly for any reported issues or out-of-date information.": "定期檢查您的課程，查看是否有任何報告的問題或過時的訊息。",
         "Best practices for building courses": "構建課程的最佳做法",
@@ -28348,7 +28665,7 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
                 "Follow the": "遵循",
                 "GitHub docs content style guide": "GitHub 文件內容風格指南",
             "Actions workflows": "操作工作流程",
-                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在課程中做任何 GitHub 操作能做的事。查看",
+                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在課程中做任何 GitHub 操作能做的事。查看", // GitHub Actions 應該保持原文吧？
                 "GitHub Actions docs": "GitHub 操作文件",
                 "and some": "和一些",
                 "examples of GitHub Actions": "GitHub 操作示例",
@@ -28619,7 +28936,7 @@ I18N["zh-TW"]["copilot"] = {
             "Agent sessions": "AI 代理任務",
             "Agent sessions and chats": "AI 代理任務及聊天",
                 "No agents running": "無AI 代理執行",
-                    "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您現在可以讓 Copilot 在後台為您處理任務，創建一個供您審核的合併請求。",
+                    "You can now ask Copilot to work on a task for you in the background, creating a pull request which you can review.": "您現在可以讓 Copilot 在後台為您處理任務，創建供您審查的合併請求。",
 
             // 時間
                 "Today": "今天",
@@ -28998,7 +29315,7 @@ I18N["zh-TW"]["copilot"] = {
             "Open": "打開",
                 "No open tasks yet. Start a new task to see it here.": "還沒有打開的任務。開始一個新任務後即可在這裡查看。",
                 "Failed": "失敗",
-                "Ready for review": "準備審查",
+                "Ready for review": "可供審查",
                 "· Initializing pull request…": "· 初始化合併請求…",
             "Closed": "關閉",
                 "· started": "· 開始於",
@@ -29108,7 +29425,7 @@ I18N["zh-TW"]["github-copilot/code-review-waitlist"] = {
     "static": {
         "Copilot-powered code reviews waitlist": "Copilot 驅動的程式碼審查候補名單",
 
-        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驅動程式碼審查候補名單",
+        "Join the waitlist for Copilot-powered code reviews": "加入 Copilot 驅動的程式碼審查候補名單",
             "Get fast AI-powered code feedback in pull requests on GitHub.com and in Visual Studio Code. Jump from your pull request to Copilot Workspace to refine, validate and land suggestions.": "在 GitHub.com 和 Visual Studio Code 的合併請求中獲取由 AI 驅動的快速程式碼回饋。您可以直接從合併請求跳轉至 Copilot 工作區，對建議進行優化、驗證並最終落實。",
 
         "Join the waitlist": "加入等候名單",
@@ -29116,7 +29433,7 @@ I18N["zh-TW"]["github-copilot/code-review-waitlist"] = {
             "the pre-release terms": "預發行條款",
             ". Signing up does not guarantee access. You will receive an email once you are accepted into the preview.": "。註冊並不保證您一定能獲得訪問權限。如果您被納入預覽計劃，我們將通過電子郵件通知您。",
 
-        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "預覽使用Copilot驅動的程式碼審查的名額有限。如果您獲得訪問權限，您將收到一封電子郵件通知。",
+        "Admission to the preview of Copilot-powered code reviews is limited. You will receive an email if you are granted access.": "使用 Copilot 驅動的程式碼審查的預覽體驗名額有限。如果授予您訪問權限，您將收到一封電子郵件通知。",
     },
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感謝！$1 已加入候補名單"],
@@ -29431,7 +29748,7 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
                                     "or visit the": "或訪問",
                                     "GitHub Education Community.": "GitHub 教育社區。",
 
-                            "pending": "排隊",
+                            "pending": "未決",
 
                         "Get help": "獲取幫助",
                             "Common questions about applying for your academic discount.": "關於申請學術折扣的常見問題。",
@@ -29464,7 +29781,7 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
                             "camera2 1, facing front": "鏡頭2 1，前攝",
                             "camera2 0, facing back": "鏡頭2 0，後攝",
                             "Uploading…": "上傳中…",
-                            "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感謝您上傳照片。請填寫表格並提交。",
+                            "Thanks for uploading your photo. Please complete the form and submit when you're ready.": "感謝您上傳照片。請填寫表格並在一切就緒後提交。",
                             // 未拍照直接提交
                                 "Please upload proof of your current school affiliation": "請上傳您目前所在學校的證明",
                                 "Please upload proof of your current school affiliation that is less than 1MB in size": "請上傳小於 1MB 的照片",
@@ -29476,7 +29793,7 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
                         "Processing information...": "處理中…",
 
                     // 上傳失敗
-                        "Your application cannot be reviewed until you fix the following:": "您的申請將不被審查直到解決以下問題：",
+                        "Your application cannot be reviewed until you fix the following:": "無法審查您的申請，直到您解決以下問題：",
                             "You must configure your browser and operating system to allow location access. You may not use a VPN. If you believe that our information about your school is incomplete or incorrect, then please select ‘My selected school has incorrect or incomplete information e.g. domains or campus location’ option when submitting a GitHub Education support ticket.": "您必須配置您的瀏覽器和操作系統以允許位置訪問。您不得使用VPN。如果您認為我們關於您學校的資料不完整或不正確，請在提交GitHub 教育支持工單時選擇“我選擇的學校訊息有誤或不完整，例如網域或校園位置”選項。",
                             "Please use your device camera to submit your academic affiliation documents. If you’re having trouble using your device camera, please allow camera access for the application website on your browser. The steps for this will vary depending on which browser you are using. Information on browsers supported by GitHub can be found": "請使用設備攝像頭提交您的學術關係文件。如果您在使用設備攝像頭時遇到困難，請在瀏覽器上允許攝像頭訪問申請網站。具體步驟視您使用的瀏覽器而定。有關 GitHub 支持的瀏覽器訊息，請點擊",
                                 "here": "此處",
@@ -29510,7 +29827,7 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
                         "Understanding how to use GitHub": "瞭解如何使用 GitHub",
                         "Refining my skills in a particular topic (coding, gaming, design, big data, artifical intelligence, etc.)": "提高我在某一特定領域（編碼、遊戲、設計、大資料、人工智能等）的技能",
                         "Connecting with other students who have similar interests": "與其他興趣相投的學生建立聯繫",
-                        "Developing career readiness skills": "培養職業準備技能",
+                        "Developing career readiness skills": "培養職業預備技能",
                         "Two selections are required to continue.": "必須選兩項。",
                 "Question 2 of 2": "問題 2/2",
                     "Which topics are of interest to you? Select all that apply.": "您對哪些主題感興趣？請選擇所有適用選項。",
