@@ -532,6 +532,44 @@
     }
 
     /**
+     * Turbo 导航会暂时拿掉 analytics-location。
+     * 仅在元数据缺失或无法识别时按路径回退，已有元数据仍优先。
+     * 全局路由按完整首段排除，避免没有结尾锚点的 rePagePath 把 settings-tools 当成 settings。
+     */
+    function isFallbackRepositoryPath(pathname) {
+        // 与 rePagePath 的全局首段一致，并包含组织页别名 organizations。
+        const reservedRoots = new Set([
+            'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
+            'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
+            'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
+            'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
+            'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
+            'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
+            'security', 'sitemap', 'education', 'mcp', 'users',
+        ]);
+        const segments = pathname.split('/');
+        if (segments.length < 3) return false;
+
+        const owner = segments[1];
+        const repo = segments[2];
+        function isSegment(segment) {
+            return /^[A-Za-z0-9._-]+$/.test(segment) && !/^\.+$/.test(segment);
+        }
+        if (!isSegment(owner) || !isSegment(repo)) return false;
+        if (reservedRoots.has(owner.toLowerCase())) return false;
+
+        const extra = segments.slice(3);
+        const isRoot = extra.length === 0 || (extra.length === 1 && extra[0] === '');
+        if (isRoot) {
+            // /<org>/enterprise_plan 与 /<org>/sponsoring 属于组织路径，不是仓库根路径
+            const repoName = repo.toLowerCase();
+            return repoName !== 'enterprise_plan' && repoName !== 'sponsoring';
+        }
+        if (extra.some(segment => segment === '' || segment === '.' || segment === '..')) return false;
+        return I18N.conf.rePagePathRepo.test(pathname);
+    }
+
+    /**
      * getPage 函数：获取当前页面的类型。
      * @returns {string|boolean} 当前页面的类型，如果无法确定类型，那么返回 false。
      */
@@ -550,11 +588,13 @@
         const isLogin = document.body.classList.contains("logged-in");
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
-        const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';
+        const analyticsLocation = ((document.getElementsByName('analytics-location')[0] || {}).content || '').trim();
+        const metaUsable = /\/<(?:user-name|org-login)>/.test(analyticsLocation);
         // 组织页
         const isOrganization = /\/<org-login>/.test(analyticsLocation) || /^\/(?:orgs|organizations)/.test(pathname);
-        // 仓库页
-        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation);
+        // 仓库页。analytics-location 在 Turbo 跳转中可能缺失，缺失时按路径回退。
+        const isRepository = /\/<user-name>\/<repo-name>/.test(analyticsLocation)
+            || (!metaUsable && isFallbackRepositoryPath(pathname));
 
         // 优先匹配 body 的 class
         let page, t = document.body.className.match(I18N.conf.rePageClass);
