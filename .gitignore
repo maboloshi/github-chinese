@@ -16,3 +16,6 @@ main(local).js
 
 # logs
 *.log
+
+# python
+__pycache__/
