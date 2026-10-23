@@ -414,6 +414,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Forgot your password? · GitHub": "忘记您的密码了吗？· GitHub",
         "Forgot your password?": "忘记您的密码了吗？",
         "GitHub · Where software is built": "GitHub · 软件构建的地方",
+        "GitHub · Change is constant. GitHub keeps you ahead. · GitHub": "GitHub · 世事变化无常，GitHub让你保持领先。· GitHub"
         "Create a New Repository": "新建仓库",
         "Import a Repository": "导入仓库",
         "New Project": "创建项目",
