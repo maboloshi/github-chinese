@@ -347,7 +347,7 @@ I18N.conf = {
         "Issues": "议题",
         "Pull requests": "拉取请求",
         "Discussions": "讨论",
-        "Actions": "操作",
+        "Actions": "Actions",
         "Projects": "项目",
         "Wiki": "Wiki",
         "Security": "安全",
@@ -469,7 +469,7 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Security & analysis": "安全性与分析",
         "Deploy keys": "部署密钥",
         "Add deploy key": "添加部署密钥",
-        "Actions secrets": "操作机密",
+        "Actions secrets": "Actions 机密",
         "Dependabot secrets": "Dependabot 机密",
         "Configure email notifications": "配置邮件通知",
         "Community Standards": "社区准则",
@@ -505,8 +505,8 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Error": "错误",
         "Discover gists · GitHub": "探索代码片段 · GitHub",
         "Explore GitHub Sponsors": "探索 GitHub 赞助者",
-        "Actions Usage Metrics": "操作使用情况",
-        "Actions usage metrics": "操作使用情况",
+        "Actions Usage Metrics": "Actions 使用情况",
+        "Actions usage metrics": "Actions 使用情况",
         "Fine-grained Personal Access Tokens": "精细化的个人访问令牌",
         "Import repository": "导入仓库",
         "Explore GitHub": "探索 GitHub",
@@ -517,8 +517,8 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         "Topics on GitHub · GitHub": "GitHub 上的主题",
         "Code security": "代码安全",
         "Deploy keys": "部署密钥",
-        "Actions Performance Metrics": "操作数据看板",
-        "Actions performance metrics": "操作数据看板",
+        "Actions Performance Metrics": "Actions 数据看板",
+        "Actions performance metrics": "Actions 数据看板",
         "GitHub Sitemap · GitHub": "GitHub 网站地图",
         "Code search results": "代码搜索结果",
         "Enterprises": "企业版",
@@ -562,9 +562,9 @@ I18N["zh-CN"]["title"] = { // 标题翻译
         [/New Issue/, "新建议题"],
         [/Issues?/, "议题"],
         [/Pull (R|r)equests?/, "拉取请求"],
-        [/Actions secrets · ([^ ]+)/, "操作机密 · $1"],
-        [/Actions settings · ([^ ]+)/, "操作设置 · $1"],
-        [/Actions/, "操作"],
+        [/Actions secrets · ([^ ]+)/, "Actions 机密 · $1"],
+        [/Actions settings · ([^ ]+)/, "Actions 设置 · $1"],
+        [/Actions/, "Actions"],
         [/Projects/, "项目"],
         [/Packages?/, "软件包"],
         [/Settings · Rulesets/, "设置 · 规则集"],
@@ -1353,7 +1353,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Dashboard": "仪表板",
             "Notifications": "通知",
             // "Discussions": "讨论",
-            "Actions": "操作",
+            "Actions": "Actions",
             "Insights": "洞察",
             "Organizations": "组织",
             "Repositories": "仓库",
@@ -1775,7 +1775,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Cancel": "取消",
             "Send": "发送",
 
-            "View token usage": "查看词元消耗",
+            "View token usage": "查看 Token 消耗",
                 "Included credits": "包含额度",
                     "Learn more about Included credits": "了解有关包含额度的更多信息",
                     "AI credits included with your plan, reset monthly. Enable additional usage to continue with pay-as-you-go credits once you run out of your included usage.": "套餐内包含的 AI 额度，每月重置。启用额外用量后，套餐内用量耗尽时可继续使用按量付费额度。",
@@ -2387,7 +2387,7 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Code with Copilot": "使用 Copilot 编程",
             "Develop with AI-powered code suggestions using GitHub Copilot, Codespaces, and VS Code.": "使用 GitHub Copilot、代码空间和 VS Code 通过 AI 驱动的代码建议进行开发。",
             "Hello GitHub Actions": "您好 GitHub Actions",
-            "Create a GitHub Action and use it in a workflow.": "创建一个 GitHub Actions 并在工作流中使用它 ",
+            "Create a GitHub Action and use it in a workflow.": "创建一个 GitHub 操作并在工作流中使用它 ",
             "See more tutorial projects": "查看更多的教程项目",
         "Start writing code": "开始编写代码",
             "A repository contains all of your project's files, revision history, and collaborator discussion.": "仓库包含项目的所有文件、修订历史记录和协作者讨论。",
@@ -3277,7 +3277,7 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Welcome to projects": "欢迎访问项目",
             "Welcome to Projects": "欢迎访问项目",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.": "项目表格像电子表格一样构建，为您提供实时画布，可用于筛选、排序和分组议题与拉取请求。您可以通过自定义字段和保存的视图，按需定制项目。",
-            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "项目专为灵活适配而构建，为您提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。您可以通过自定义字段、保存的视图、工作流程和洞察，按需定制项目。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "项目专为灵活适配而构建，为您提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。您可以通过自定义字段、保存的视图、工作流和洞察，按需定制项目。",
 
             "Learn more about projects": "了解更多关于项目的信息", // ?tab=projects
 
@@ -3374,7 +3374,7 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             "Make a copy of this project.": "复制此项目",
             "Danger zone": "危险区",
             "This project is currently private.": "此项目当前为私有.",
-            "Closing a project will disable its workflows & remove it from the list of open projects.": "关闭项目将禁用其工作流程，并将其从打开项目列表中删除.",
+            "Closing a project will disable its workflows & remove it from the list of open projects.": "关闭项目将禁用其工作流，并将其从打开项目列表中删除.",
             "Close this project": "关闭此项目",
             "Manage access": "管理访问权限",
             "Who has access": "谁有访问权限",
@@ -3927,7 +3927,7 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
                     "Code review": "代码审查",
                     "Internet access": "访问互联网",
                     "Runner type": "运行器类型",
-                "Actions": "操作",
+                "Actions": "Actions",
                     "Runners": "运行器",
                     "Runner groups": "运行器组",
                     "Custom images": "自定义镜像",
@@ -4461,11 +4461,11 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
                 "View ignored repositories": "查看忽略的仓库",
 
             "System": "系统",
-                "Actions": "操作",
-                    "Notifications for workflow runs on repositories set up with": "仓库的工作流程通知，设置在",
+                "Actions": "Actions",
+                    "Notifications for workflow runs on repositories set up with": "仓库的工作流通知，设置在",
                     ". (": "。（",
-                    "Failed workflows only": "仅工作流程失败时",
-                    "Only notify for failed workflows": "只对失败的工作流程进行通知",
+                    "Failed workflows only": "仅工作流失败时",
+                    "Only notify for failed workflows": "只对失败的工作流进行通知",
 
                 "Agent tasks": "智能体任务",
                     "Notifications for agent sessions that you started.": "您启动的智能体任务通知。",
@@ -4595,7 +4595,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                         "Billable spend for Packages for the selected timeframe. Applicable discounts cover Packages usage in public repositories and included usage for Packages data transfer and storage.": "所选时间范围内软件包的可计费支出。适用的折扣涵盖公共仓库中的软件包使用，以及包含的软件包数据传输和存储用量。",
                     "Included usage": "包含",
                         "Manage budgets": "管理预算",
-                        "Actions minutes": "操作分钟数",
+                        "Actions minutes": "Actions 分钟数",
                         "Git LFS bandwidth": "Git LFS 带宽",
                         "Git LFS storage": "Git LFS 存储",
                         "Packages data transfer": "软件包数据传输",
@@ -4639,7 +4639,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     "consumed usage -": "计费 -",
                     "in discounts =": "折扣 =",
                     "in billable usage": "计费",
-                    "Usage for Actions and Actions Runners.": "操作（运行器）用量。", // 后半句走正则
+                    "Usage for Actions and Actions Runners.": "Actions 和 Actions 运行器用量。", // 后半句走正则
                     "Copilot usage": "Copilot 用量",
                         "Total spend on Copilot for the selected timeframe, excluding applicable discounts.": "所选时间段内 Copilot 的总支出，不含适用折扣。",
                         "Total gross spend on Copilot for the selected timeframe including licenses and AI Credits.": "所选时间段内 Copilot 的总支出（含许可和 AI 额度）。",
@@ -4661,7 +4661,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                     // 模型
                         "About GitHub Models rate limits": "关于 GitHub 模型速率限制",
                             "GitHub Models rate limits": "GitHub 模型速率限制",
-                                "The playground and free API usage are rate limited by requests per minute, requests per day, tokens per request, and concurrent requests.": "操场和免费 API 的使用受到以下限制：每分钟请求数、每天请求数、每次请求的令牌数以及并发请求数。",
+                                "The playground and free API usage are rate limited by requests per minute, requests per day, tokens per request, and concurrent requests.": "操场和免费 API 的使用受到以下限制：每分钟请求数、每天请求数、每次请求的 Token 数以及并发请求数。",
                                 "Learn more about GitHub Models rate limits": "了解更多", // 有上下文，故省略
 
                     // Sandbox
@@ -4727,17 +4727,17 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "None": "无",
                 // "SKU": "库存单位",
             "Metered usage grouped by Product": "分组：产品",
-                "actions": "操作",
+                "actions": "Actions",
                 "codespaces": "代码空间",
 
                 "Products": "产品",
             "Metered usage grouped by SKU": "分组：库存单位",
-                "Actions storage": "操作存储",
+                "Actions storage": "Actions 存储",
                 "Codespaces storage": "代码空间存储",
-                "Actions Windows": "操作 Windows",
-                "Actions Linux": "操作 Linux",
-                "Actions Linux ARM": "操作 Linux ARM",
-                "Actions macOS 3-core": "操作 macOS 三核",
+                "Actions Windows": "Actions Windows",
+                "Actions Linux": "Actions Linux",
+                "Actions Linux ARM": "Actions Linux ARM",
+                "Actions macOS 3-core": "Actions macOS 三核",
                 "Codespaces compute 2-core": "代码空间 - 双核",
                 "Copilot Premium Request": "Copilot 高级请求",
             "Metered usage grouped by Repository": "分组：仓库",
@@ -4746,8 +4746,8 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "For license-based products, the price/unit is a prorated portion of the monthly price.": "对于基于许可证的产品，每单位价格为月度价格按比例分摊的部分。",
 
             // 有上下文，后面重复部分直接省略
-            "Actions usage": "操作",
-            "Actions usage grouped by SKU": "操作 - 详细",
+            "Actions usage": "Actions 用量",
+            "Actions usage grouped by SKU": "按 SKU 分组的 Actions 用量",
             "Copilot usage": "Copilot",
             "Copilot usage grouped by SKU": "Copilot - 详细",
             "Codespaces usage": "代码空间",
@@ -4835,7 +4835,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Set budget for either a product or individual SKU within a product.": "为产品或产品中的单个 SKU 设置预算。",
                 "Product-level budget": "产品级预算",
                     "Codespaces": "代码空间",
-                    "Actions": "操作",
+                    "Actions": "Actions",
                     "Models": "模型",
                         "Enable billing to set a budget. See": "启用计费以设置预算。查看",
                         "Models policy configuration": "模型策略配置",
@@ -4851,7 +4851,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "All AI Credit SKUs": "所有 AI 额度 SKU",
             "A budget for all SKUs that consume premium requests":"所有消耗高级请求的 SKU 的预算",
             "Supported SKUs:":"支持的 SKUs：",
-                "Coding Agent premium requests":"Coding Agent 高级请求",
+                "Coding Agent premium requests":"编程智能体高级请求",
 
             "Budget scope": "预算范围",
                 "Select the scope of spending for this budget.": "选择此预算的支出范围。",
@@ -5081,7 +5081,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 "Code workflow": "代码工作流",
                     "GitHub Codespaces": "GitHub 代码空间",
                         "Spin up fully configured dev environments in the cloud with the power of your favorite editor. A \"core hour\" denotes compute usage. On a 2-core machine, you would get 60 hours free. On a 4-core machine, you would get 30 hours free, etc. Free hours are assigned to personal accounts, rather than free organizations.": "利用您喜爱的编辑器的强大功能，在云中快速配置完整的开发环境。“核心小时” 表示计算使用量。在双核机器上，您将获得 60 小时的免费时长。在 4 核机器上，您将获得 30 小时的免费时长，以此类推。免费时长数分配给个人账户，而不是免费组织。",
-                    "GitHub Actions": "Github 操作",
+                    "GitHub Actions": "GitHub Actions",
                         "Use execution minutes with GitHub Actions to automate your software development workflows. Write tasks and combine them to build, test, and deploy any code project on GitHub. Minutes are free for public repositories.": "利用 GitHub Actions 的几分钟执行时间，实现软件开发工作流程自动化。编写任务并组合它们，即可在 GitHub 上构建、测试和部署任何代码项目。对于公共仓库，执行时间是免费的。",
                         "Learn more about billing": "了解更多关于账单的信息",
                     "GitHub Packages": "Github 软件包",
@@ -5207,7 +5207,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Send invitation": "发送邀请",
 
             // 加载
-            "Loading Actions data...": "加载操作数据…",
+            "Loading Actions data...": "加载 Actions 数据…",
             "Loading Packages data...": "加载软件包数据…",
             "Loading Shared Storage data...": "加载共享存储数据…",
             "Loading Codespaces data...": "加载代码空间数据…",
@@ -5266,12 +5266,12 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
                 const translatedP2 = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p2);
                 return `统计时间段：${translatedP1}-${translatedP2}。本月配额将在${p3}天内重置。`;
             }],
-            [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 操作分钟数（~$2 减免*）"],
+            [/([\d,+]) included Actions minutes \(~(\$\d+\.\d+) off\*\)/, "$1 Actions 分钟数（~$2 减免*）"],
             [/~(\$\d+\.\d+) off\*/, "~$1 减免*"],
             [/~(\$\d+(\.\d+)?) off/, "~$1 减免"],
 
-            [/([\d,+]) included Actions minutes/, "$1 操作分钟数"],
-            [/(\d+) GB included Actions storage/, "$1 GB 操作存储"],
+            [/([\d,+]) included Actions minutes/, "$1 Actions 分钟数"],
+            [/(\d+) GB included Actions storage/, "$1 GB Actions 存储"],
             [/(\d+) GB included Git LFS bandwidth/, "$1 GB Git LFS 带宽"],
             [/(\d+) GB included Git LFS storage/, "$1 GB Git LFS 存储"],
             [/(\d+) GB included Packages data transfer/, "$1 GB 软件包数据传输"],
@@ -5314,7 +5314,7 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             [/(Usage|codespaces|actions|Codespaces storage|Codespaces compute 2-core|Actions Windows|Actions macOS 3-core|Actions Linux|Actions storage|All other) (?:[^ ]+), (.+)/, (match, s1, p1) => {
                 //const translatedP1 = I18N["zh-CN"]["public"]["time-regexp"][p1] || p1;
                 //const translatedP2 = I18N["zh-CN"]["public"]["time-regexp"][p2] || p2;
-                var s1Key = {'Usage': '用量','actions': '操作', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Codespaces compute 2-core': '代码空间 - 双核','Actions Windows': '操作 Windows', 'Actions Linux': '操作 Linux','Actions macOS 3-core': '操作 macOS 三核','Actions storage': "操作存储",'All other': '其他'};
+                var s1Key = {'Usage': '用量','actions': 'Actions', 'codespaces': '代码空间', 'Codespaces storage': '代码空间存储', 'Codespaces compute 2-core': '代码空间 - 双核','Actions Windows': 'Actions Windows', 'Actions Linux': 'Actions Linux','Actions macOS 3-core': 'Actions macOS 三核','Actions storage': "Actions 存储",'All other': '其他'};
                 const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
                 const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
                 return `${translatedDate}` + s1Key[s1];// 星期几暂时省略
@@ -6443,7 +6443,7 @@ I18N["zh-CN"]["settings/models"] = {
         "Billing": "账单",
 
         "Models paid usage": "使用付费模型",
-            "If enabled, usage beyond the free tier will be billed per token based on model pricing from your Models budget.": "如果启用，超出免费额度的使用将根据您模型预算中的模型定价按令牌计费。",
+            "If enabled, usage beyond the free tier will be billed per token based on model pricing from your Models budget.": "如果启用，超出免费额度的使用将根据您模型预算中的模型定价按 Token 计费。",
             "Models pricing": "模型价格",
 
             "To enable Models paid usage, a payment method is needed.": "要启用付费模型，需要添加支付方式。",
@@ -6451,7 +6451,7 @@ I18N["zh-CN"]["settings/models"] = {
 
             "You currently have": "您当前有",
                 "free rate limits": "免费额度",
-                ". Enable paid usage to avoid interruption and add tokens.": "。启用付费使用以避免中断并添加令牌。",
+                ". Enable paid usage to avoid interruption and add tokens.": "。启用付费使用以避免中断并添加 Token。",
     },
     "regexp": [],
     "title": {
@@ -6729,7 +6729,7 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
                 "You can enable Copilot cloud agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 云端智能体，但由于您没有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
                 "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.":  "您可以为其他用户启用 Copilot 编程智能体，但由于管理员已禁用 Copilot 编程智能体策略，您将无法向 Copilot 分配任务。",
-                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编码代理，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
+                "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编程智能体，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
 
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以供迭代。",
             "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 云端智能体，您可以将任务委托给 Copilot，从而专注于最具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以继续迭代。",
@@ -6970,22 +6970,22 @@ I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性与�
                         "Disable grouped security updates": "禁用分组安全更新",
                             "You're about to disable grouped security updates on all your repositories.": "您即将禁用您所有仓库上的分组安全更新。",
 
-                "Dependabot on Actions runners": "Dependabot 应用于操作运行器",
-                    "Run Dependabot security and version updates on Actions runners.": "在操作运行器上运行 Dependabot 安全和版本更新。",
+                "Dependabot on Actions runners": "在 Actions 运行器上运行 Dependabot",
+                    "Run Dependabot security and version updates on Actions runners.": "在 Actions 运行器上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
-                        "Enable dependabot on actions": "在操作中启用 Dependabot",
-                            "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将要在所有仓库操作中启用 dependabot 。操作中的 Dependabot需要操作，因此我们还将为所有仓库启用它。",
+                        "Enable dependabot on actions": "在 Actions 中启用 Dependabot",
+                            "You're about to enable dependabot on actions on all your repositories. Dependabot on actions requires Actions so we'll also turn that on for all repositories.": "您将在所有仓库中启用在 Actions 上运行的 Dependabot。此功能需要 Actions，因此也会为所有仓库启用 Actions。",
 
-                        "Disable dependabot on actions": "在操作中禁用 Dependabot",
-                            "You're about to disable dependabot on actions on all your repositories.": "您将要在所有仓库操作中禁用 Dependabot。",
+                        "Disable dependabot on actions": "在 Actions 中禁用 Dependabot",
+                            "You're about to disable dependabot on actions on all your repositories.": "您将在所有仓库中禁用在 Actions 上运行的 Dependabot。",
 
                 "Dependabot on self-hosted runners": "Dependabot 应用于自托管运行器",
-                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管运行程序上运行 Dependabot 安全和版本更新。",
+                    "Run Dependabot security and version updates on self-hosted Actions runners.": "在自托管 Actions 运行程序上运行 Dependabot 安全和版本更新。",
 
                     // 对话框
                         "Enable dependabot self-hosted": "在自托管运行器上启用 Dependabot",
-                            "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库上启用 dependabot 自托管。Dependabot 自托管依赖于操作中的 Dependabot，因此我们还将为所有仓库启用它。",
+                            "You're about to enable dependabot self-hosted on all your repositories. Dependabot self-hosted depends on Dependabot on Actions so we'll also turn that on for all repositories.": "您将在所有仓库中启用 Dependabot 自托管。Dependabot 自托管依赖于在 Actions 上运行的 Dependabot，因此也会为所有仓库启用该功能。",
 
                         "Disable dependabot self-hosted": "在自托管运行器上禁用 Dependabot",
                             "You're about to disable dependabot self-hosted on all your repositories.": "您将在所有仓库上禁用 dependabot 自托管。",
@@ -7364,7 +7364,7 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "Added the following repositories to the": "添加以下仓库到",
             "Removed the following repositories from the": "删除以下仓库到",
             "integration:": "集成：",
-            "Enabled GitHub Actions for": "启用仓库操作：",
+            "Enabled GitHub Actions for": "已启用 GitHub Actions：",
             "Created a secret for": "创建机密：",
             "Created a token for": "创建令牌：",
             "Updated a token for": "为以下用户更新了令牌：",
@@ -7514,8 +7514,8 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                 "Repository permissions": "仓库权限",
                     "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
 
-                    "Actions": "操作",
-                        "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
+                    "Actions": "Actions",
+                        "Workflows, workflow runs and artifacts.": "工作流、工作流的运行和工件。",
                     "Administration": "管理",
                         "Repository creation, deletion, settings, teams, and collaborators.": "仓库创建、删除、设置、团队和协作者。",
                     "Attestations": "证书",
@@ -7567,17 +7567,17 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                     "Secret scanning alerts": "机密扫描警报",
                         "View and manage secret scanning alerts.": "查看和管理机密扫描警报。",
                     "Secrets": "机密",
-                        "Manage Actions repository secrets.": "管理操作仓库机密。",
+                        "Manage Actions repository secrets.": "管理 Actions 仓库机密。",
                     "Single file": "单个文件",
                         "Manage just a single file.": "只管理单个文件。",
                         "Path": "路径",
                         "The content paths to single files your app can access.": "应用可以访问的单个文件的内容路径。",
                     "Variables": "变量",
-                        "Manage Actions repository variables.": "管理操作仓库变量。",
+                        "Manage Actions repository variables.": "管理 Actions 仓库变量。",
                     "Webhooks": "Web 钩子",
                         "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
-                    "Workflows": "工作流程",
-                        "Update GitHub Action workflow files.": "更新 GitHub Action 工作流程文件。",
+                    "Workflows": "工作流",
+                        "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流文件。",
 
                 "Organization permissions": "组织权限",
                     "Organization permissions permit access to organization related resources.": "组织权限允许访问组织相关资源。",
@@ -7623,13 +7623,13 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                     // 项目
                         "Manage projects for an organization.": "管理组织的项目。",
                     // 机密
-                        "Manage Actions organization secrets.": "管理操作组织机密",
+                        "Manage Actions organization secrets.": "管理 Actions 组织机密",
                     "Self-hosted runners": "自托管运行器",
-                        "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的 “操作自托管运行器”。",
+                        "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的 “Actions 自托管运行器”。",
                     "Team discussions": "团队讨论",
                         "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
                     // 变量
-                        "Manage Actions organization variables.": "管理操作组织变量。",
+                        "Manage Actions organization variables.": "管理 Actions 组织变量。",
                     // Web 钩子
                         "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
 
@@ -7798,12 +7798,12 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
                     "Team added or modified on a repository.": "仓库团队的添加或修改。",
                 "Watch": "关注",
                     "User stars a repository.": "用户标星仓库。",
-                "Workflow dispatch": "工作流程调度",
-                    "A manual workflow run is requested.": "请求手动运行工作流程。",
-                "Workflow job": "工作流程作业",
+                "Workflow dispatch": "工作流调度",
+                    "A manual workflow run is requested.": "请求手动运行工作流。",
+                "Workflow job": "工作流作业",
                     "Workflow job queued, waiting, in progress, or completed on a repository.": "仓库中工作流作业的队列、等待、正在进行或完成。",
-                "Workflow run": "工作流程运行",
-                    "Workflow run requested or completed on a repository.": "仓库中工作流程运行的请求或完成。",
+                "Workflow run": "工作流运行",
+                    "Workflow run requested or completed on a repository.": "仓库中工作流运行的请求或完成。",
                 "Org block": "组织黑名单", // 组织设置
                     "A user has been blocked or unblocked.": "用户拉黑或解除拉黑。",
                 "Repository advisory": "仓库公告",
@@ -8193,8 +8193,8 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "No repository permissions added yet": "尚未添加仓库权限",
                 "Repository permissions permit access to repositories and related resources.": "仓库权限允许访问仓库和相关资源。",
 
-                "Actions": "操作",
-                    "Workflows, workflow runs and artifacts.": "工作流程、工作流程的运行和工件。",
+                "Actions": "Actions",
+                    "Workflows, workflow runs and artifacts.": "工作流、工作流的运行和工件。",
                 "Administration": "管理",
                     "Repository creation, deletion, settings, teams, and collaborators.": "仓库创建、删除、设置、团队和协作者。",
                 "Artifact metadata": "附件元数据",
@@ -8252,13 +8252,13 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Secret scanning push protection bypass requests": "关于绕过机密扫描推送保护的请求",
                     "Review and manage repository secret scanning push protection bypass requests.": "审查和管理关于绕过仓库机密扫描推送保护的请求。",
                 "Secrets": "机密",
-                    "Manage Actions repository secrets.": "管理操作仓库机密。",
+                    "Manage Actions repository secrets.": "管理 Actions 仓库机密。",
                 "Variables": "变量",
-                    "Manage Actions repository variables.": "管理操作仓库变量。",
+                    "Manage Actions repository variables.": "管理 Actions 仓库变量。",
                 "Webhooks": "Web 钩子",
                     "Manage the post-receive hooks for a repository.": "管理仓库的接收后钩子。",
-                "Workflows": "工作流程",
-                    "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流程文件。",
+                "Workflows": "工作流",
+                    "Update GitHub Action workflow files.": "更新 GitHub Actions 工作流文件。",
 
             // 账户权限
                 "Account": "账户",
@@ -8366,13 +8366,13 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 // 机密扫描警报解除请求
                     "Review and manage secret scanning alert dismissal requests": "审查和管理关于解除机密扫描警报的请求",
                 // 机密
-                    "Manage Actions organization secrets.": "管理操作组织机密",
+                    "Manage Actions organization secrets.": "管理 Actions 组织机密",
                 "Self-hosted runners": "自托管运行器",
-                    "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的 “操作自托管运行器”。",
+                    "View and manage Actions self-hosted runners available to an organization.": "查看和管理组织可用的 “Actions 自托管运行器”。",
                 "Team discussions": "团队讨论",
                     "Manage team discussions and related comments.": "管理团队讨论及相关评论。",
                 // 变量
-                    "Manage Actions organization variables.": "管理操作组织变量。",
+                    "Manage Actions organization variables.": "管理 Actions 组织变量。",
                 // Web 钩子
                     "Manage the post-receive hooks for an organization.": "管理组织的接收后钩子。",
 
@@ -8453,7 +8453,7 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Access public repositories": "访问公共仓库",
                 "Access repository invitations": "访问仓库邀请",
                 "Read and write security events": "读写安全事件",
-                "Update GitHub Action workflows": "更新 GitHub Actions 工作流程",
+                "Update GitHub Action workflows": "更新 GitHub Actions 工作流",
                 "Upload packages to GitHub Package Registry": "将包上传到 GitHub Packages 包注册",
                 "Download packages from GitHub Package Registry": "从 GitHub Packages 包注册表下载包",
                 "Delete packages from GitHub Package Registry": "从 GitHub Packages 包注册表中删除包",
@@ -8679,7 +8679,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             "Code": "代码",
             "Pull requests": "拉取请求",
             "Discussions": "讨论",
-            "Actions": "操作",
+            "Actions": "Actions",
             "Projects": "项目",
             "Models": "模型",
             "Security and quality": "安全和质量",
@@ -8798,7 +8798,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
                 "Go to Code"                 : "跳转到代码",
                 "Go to Issues"               : "跳转到议题",
                 "Go to Pull Requests"        : "跳转到拉取请求",
-                "Go to Actions"              : "跳转到操作",
+                "Go to Actions"              : "跳转到 Actions",
                 "Go to Projects"             : "跳转到项目",
                 "Go to Wiki"                 : "跳转到 Wiki",
                 "Go to Discussions"          : "跳转到讨论",
@@ -9364,7 +9364,7 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
 
             // 已上架的 GitHub Action 项目
                 "Use this GitHub action with your project": "将此 GitHub Actions 用于您的项目",
-                "Add this Action to an existing workflow or create a new one": "将此操作添加到现有工作流程或创建新工作流程",
+                "Add this Action to an existing workflow or create a new one": "将此操作添加到现有工作流或创建新工作流",
                 "View on Marketplace": "去市场查看",
 
             // 未上架的 GitHub Action 项目
@@ -9748,11 +9748,11 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
                 "Help your community understand how to securely report security vulnerabilities for your project.": "帮助您的社区了解如何安全地报告项目的安全漏洞。",
 
         // Action 仓库 右侧栏
-            "Suggested workflows": "建议的工作流程",
+            "Suggested workflows": "建议的工作流",
             "Based on your tech stack": "基于您的技术堆栈",
             "Set up": "设立",
             "Configure": "设置",
-            "More workflows": "更多工作流程",
+            "More workflows": "更多工作流",
             "Dismiss suggestions": "隐藏建议",
 
         // 仓库复刻中...
@@ -11536,14 +11536,14 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "can add new commits to": "具有写入权限的用户可以在您的",
                     "branch.": "分支上添加新的提交。",
                     "You can always change this setting later.": "您可以随时修改此设置。",
-                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流程以揭示机密值，并获取对其他分支的访问权限。",
+                    "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流以揭示机密值，并获取对其他分支的访问权限。",
                     "Got it": "知道了",
                     "If checked,": "如果选中，",
                     // [/users with write access to ([^ ]+) can add new commits/, "对 $1 具有写权限的用户可以添加新的提交"], // 具体拉取请求
                     "to your": "到您的",
                     "branch. You can always change this setting later.": "分支。您以后可以随时更改此设置。",
                 "Allow edits and access to secrets by maintainers": "允许维护者编辑和访问机密",
-                    "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流程来获取机密值，并获得对其他分支的访问。",
+                    "Maintainers could potentially edit this repository's workflows to reveal values of secrets and gain access to other branches.": "维护者有可能编辑这个仓库的工作流来获取机密值，并获得对其他分支的访问。",
 
                 "Maintainers are allowed to edit this pull request.": "允许维护者编辑此拉取请求。",
 
@@ -11845,12 +11845,12 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "You’re all set—the": "一切就绪 —",
             "branch can be safely deleted.": "分支可以被安全删除。",
             "This branch has conflicts that must be resolved": "该分支存在冲突，必须解决",
-                "Resolve conflicts then push again. These conflicts are too complex to resolve in the web editor. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "解决冲突后再次推送。这些冲突过于复杂，无法在 Web 编辑器中解决。当该拉取请求存在合并冲突时，操作工作流将不会触发该拉取请求的活动。",
+                "Resolve conflicts then push again. These conflicts are too complex to resolve in the web editor. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "解决冲突后再次推送。这些冲突过于复杂，无法在 Web 编辑器中解决。当该拉取请求存在合并冲突时，Actions 工作流将不会触发该拉取请求的活动。",
                 "These conflicts are too complex to resolve in the web editor.": "这些冲突过于复杂，无法在网页编辑器中解决。",
                 "You do not have permission to push to the head branch.": "您没有权限向主分支推送。",
                 "Use the command line": "使用命令行",
                 "to resolve conflicts before continuing.": "解决冲突后再继续。",
-                "or the command line to resolve conflicts before continuing. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "或通过命令行解决冲突。在此拉取请求仍存在合并冲突的情况下，操作工作流不会因该拉取请求的活动而触发。",
+                "or the command line to resolve conflicts before continuing. Actions workflows will not trigger on activity from this pull request while it has merge conflicts.": "或通过命令行解决冲突。在此拉取请求仍存在合并冲突的情况下，Actions 工作流不会因该拉取请求的活动而触发。",
                 "or the command line to resolve conflicts before continuing.": "或通过命令行解决冲突后再继续。",
                 "Use the command line to resolve conflicts before continuing.": "使用命令行解决冲突后再继续。",
 
@@ -11901,11 +11901,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             // [/Ensure specific people or teams approve pull requests before they're merged into your ([^ ]+) branch./, "确保特定的人或团队在拉取请求被合并到您的 $1 分支之前批准它们。"], // 合并拉取请求
 
             // [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
-            "This workflow requires approval from a maintainer.": "此工作流程需要维护者批准。",
-            "Learn more about approving workflows.": "了解更多关于批准工作流程的信息。",
+            "This workflow requires approval from a maintainer.": "此工作流需要维护者批准。",
+            "Learn more about approving workflows.": "了解更多关于批准工作流的信息。",
             "Approve and run": "批准并运行",
-            "Approve and run workflows": "批准并运行工作流程",
-            "Approve workflows to run": "批准运行工作流程",
+            "Approve and run workflows": "批准并运行工作流",
+            "Approve workflows to run": "批准运行工作流",
 
             // 状态词
             "reviewed": "已审查",
@@ -12124,7 +12124,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
             // 未更改文件检查注释(GA 检查)
                 "Unchanged files with check annotations": "带检查注释的未更改文件",
-                    "View workflow job for this annotation": "查看此注释的工作流程作业",
+                    "View workflow job for this annotation": "查看此注释的工作流作业",
 
             // 代码评论
                 "Comment on lines": "评论行",
@@ -12471,7 +12471,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/([^ ]+) is a code owner/, "$1 是代码所有者"], // 具体的拉取请求
         [/This commit will be authored by ([^@]+@[^\n]+)/, "此提交的作者是 $1"], // 具体的拉取请求
         [/This pull request resolved a Dependabot alert on ([^ ]+)./, "该请求解决了 $1 的 Dependabot 警报问题。"],
-        [/(\d+) workflows? awaiting approval/, "$1 个工作流程等待批准"],
+        [/(\d+) workflows? awaiting approval/, "$1 个工作流等待批准"],
         [/(\d+) resolved conversations?/, "$1 条对话已解决"], // 拉取请求
         [/I understand, continue updating ([^ ]+)/, "我明白了，继续更新 $1"],
         [/I understand, sign off and update/, "我明白了，依然签署并更新"],
@@ -12732,7 +12732,7 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             "to your": "向您的",
             "branch.": "分支添加新提交。",
             "You can always change this setting later.": "您可以随时更改这一设置。",
-            "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流程以揭示机密值，并获取对其他分支的访问权限。",
+            "Note: By granting write access, maintainers could potentially edit your repository's workflows to reveal values of secrets and gain access to other branches.": "注意：通过授予写入权限，维护者可能会编辑您仓库的工作流以揭示机密值，并获取对其他分支的访问权限。",
             "Got it": "知道了",
         // 创建拉取请求 按钮下拉
             "Open a pull request that is ready for review": "打开一个可供审查的拉取请求",
@@ -13991,30 +13991,30 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         ...I18N["zh-CN"]["repository-public"]["static"],
 
         // 顶部提示
-            "Actions Enabled.": "操作已启用。",
+            "Actions Enabled.": "Actions 已启用。",
         "Upcoming change to GitHub App installation token format": "GitHub 应用安装令牌格式即将变更",
             "GitHub App installation tokens will soon use a new stateless format (ghs_...) and may be longer (~520 characters). Apps with hardcoded length assumptions may break.": "GitHub 应用安装令牌即将采用新的无状态格式（ghs_...），长度可能更长（约 520 个字符）。如果应用硬编码了长度限制，可能会出错。",
-            "Validate your apps and workflows with the per-request override header detailed in this": "请使用按请求覆盖标头来验证您的应用和工作流程，详情请见",
+            "Validate your apps and workflows with the per-request override header detailed in this": "请使用按请求覆盖标头来验证您的应用和工作流，详情请见",
             "GitHub Changelog": "GitHub 更新日志",
             ".": "。",
 
         // 复刻仓库操作页面提示
-            "Workflows aren't being run on this forked repository": "这个分支仓库并未运行任何工作流程。",
-            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。",
-            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository. Some GitHub features that depend on Actions may still be able to run.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的操作之前，请务必理解配置的工作流程及其预期的使用方式。一些依赖于 Actions 的 GitHub 功能可能可以运行。",
-            "I understand my workflows, go ahead and enable them": "我已理解我的工作流程，可以放心启用它们。",
-            "View the workflows directory": "查看工作流程目录",
+            "Workflows aren't being run on this forked repository": "这个分支仓库并未运行任何工作流。",
+            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的 Actions 之前，请务必理解配置的工作流及其预期的使用方式。",
+            "Because this repository contained workflow files when it was forked, we have disabled them from running on this fork. Make sure you understand the configured workflows and their expected usage before enabling Actions on this repository. Some GitHub features that depend on Actions may still be able to run.": "因为这个仓库在被分支时含有工作流文件，我们已禁止在此分支上运行它们。在开启此仓库的 Actions 之前，请务必理解配置的工作流及其预期的使用方式。一些依赖于 Actions 的 GitHub 功能可能可以运行。",
+            "I understand my workflows, go ahead and enable them": "我已理解我的工作流，可以放心启用它们。",
+            "View the workflows directory": "查看工作流目录",
 
         //无工作流程
-            "There are no workflow runs yet.": "无工作流程运行。",
+            "There are no workflow runs yet.": "无工作流运行。",
 
         // 新建操作 /<user-name>/<repo-name>/actions/new
             "Get started with GitHub Actions": "开始使用 GitHub Actions",
-            "Choose a workflow": "选择工作流程",
-            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式审查代码、管理分支和进行议题分诊。选择一个工作流程以开始使用。", //汉语中使用动词结构更通顺
+            "Choose a workflow": "选择工作流",
+            "Build, test, and deploy your code. Make code reviews, branch management, and issue triaging work the way you want. Select a workflow to get started.": "构建、测试和部署您的代码。以您想要的方式审查代码、管理分支和进行议题分诊。选择一个工作流以开始使用。", //汉语中使用动词结构更通顺
             "Skip this and": "跳过并",
-            "set up a workflow yourself": "建立工作流程",
-            "Search workflows": "搜索工作流程",
+            "set up a workflow yourself": "建立工作流",
+            "Search workflows": "搜索工作流",
 
             "Suggested for this repository": "建议该仓库采用",
             "Categories": "类别",
@@ -14029,8 +14029,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Learn more about GitHub Actions": "了解更多关于 GitHub Actions 的信息",
             "Getting started and core concepts": "入门和核心概念",
             "New to Actions? Start here. Learn the core concepts and how to get started.": "初次接触 Actions？从这里开始。了解核心概念和如何开始。",
-            "Configuring and managing workflows": "配置和管理工作流程",
-            "Create custom workflows to control your project's life cycle processes.": "创建自定义工作流程以控制项目的生命周期过程。",
+            "Configuring and managing workflows": "配置和管理工作流",
+            "Create custom workflows to control your project's life cycle processes.": "创建自定义工作流以控制项目的生命周期过程。",
             "Language and framework guides": "语言与框架指南",
             "Guides for projects written in many programming languages.": "项目指南由多种编程语言编写。",
 
@@ -14042,10 +14042,10 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
 
         // 操作 /<user-name>/<repo-name>/actions
-            "Workflows": "工作流程",
+            "Workflows": "工作流",
             "completed successfully:": "成功完成：",
             "Exclude": "排除",
-                "Exclude workflow": "排除工作流程",
+                "Exclude workflow": "排除工作流",
                 "Exclude event": "排除事件",
                 "Exclude is": "排除状态",
                 "Exclude branch": "排除分支",
@@ -14058,17 +14058,17 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Every minute": "每分钟",
                 "Every 5 minutes": "每 5 分钟",
                 "Refresh now": "立即刷新",
-            "Workflow runs": "工作流程运行",
+            "Workflow runs": "工作流运行",
             "Lockfile": "锁定文件",
             "Expand sidebar": "展开侧边栏",
             "Collapse sidebar": "折叠侧边栏",
             // 快捷键
                 "Go to usage": "跳转到运用",
-                "Go to workflow file": "跳转到工作流程文件", // /actions/runs/<id>
+                "Go to workflow file": "跳转到工作流文件", // /actions/runs/<id>
                 "Toggle timestamps in logs": "切换日志中的时间戳",
                 "Toggle fullscreen logs": "切换全屏日志",
                 "Exit fullscreen logs": "退出全屏日志",
-                "Actions main view search bar": "操作主视图搜索栏",
+                "Actions main view search bar": "Actions 主视图搜索栏",
 
             "Automate your workflow from idea to production": "从创意到产品，使您的工作流程自动化",
             "GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.": "GitHub Actions 现在可以使用世界一流的 CI/CD 轻松自动化所有软件工作流程。直接从 GitHub 构建、测试和部署您的代码。",
@@ -14077,24 +14077,24 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Hosted runners for every major OS make it easy to build and test all your projects. Run directly on a VM or inside a container. Use your own VMs, in the cloud or on-prem, with self-hosted runners.": "为每一个主要的操作系统提供的托管运行程序，使您能够轻松地构建和测试您的所有项目。直接在虚拟机上或容器内运行。在云端或本地使用您自己的虚拟机，以及自托管的运行器。",
 
             "Matrix builds": "矩阵式构建",
-            "Save time with matrix workflows that simultaneously test across multiple operating systems and versions of your runtime.": "使用矩阵工作流程可同时跨多个操作系统和版本运行，节省时间",
+            "Save time with matrix workflows that simultaneously test across multiple operating systems and versions of your runtime.": "使用矩阵工作流可同时跨多个操作系统和版本运行，节省时间",
 
             "Any language": "任何语言",
             "GitHub Actions supports Node.js, Python, Java, Ruby, PHP, Go, Rust, .NET, and more. Build, test, and deploy applications in your language of choice.": "GitHub Actions 支持 Node.js、Python、Java、Ruby、PHP、Go、Rust、.NET 等。以您选择的语言构建、测试和部署应用。",
 
             "Live logs": "实时日志",
-            "See your workflow run in realtime with color and emoji. It’s one click to copy a link that highlights a specific line number to share a CI/CD failure.": "使用颜色和表情符号实时查看您的工作流程。只需单击即可复制突出显示特定行号的链接以共享 CI/CD 故障。",
+            "See your workflow run in realtime with color and emoji. It’s one click to copy a link that highlights a specific line number to share a CI/CD failure.": "使用颜色和表情符号实时查看您的工作流。只需单击即可复制突出显示特定行号的链接以共享 CI/CD 故障。",
 
             "Built-in secret store": "内置的机密存储",
-            "Automate your software development practices with workflow files embracing the Git flow by codifying it in your repository.": "通过将工作流程文件编码到您的仓库，您的软件开发实践，包括 Git 流程自动化。",
+            "Automate your software development practices with workflow files embracing the Git flow by codifying it in your repository.": "通过将工作流文件编码到您的仓库，您的软件开发实践，包括 Git 流程自动化。",
 
             "Multi-container testing": "多容器测试",
-            "Test your web service and its DB in your workflow by simply adding some": "在您的工作流程中测试您的网络服务和它的数据库，只需添加一些",
+            "Test your web service and its DB in your workflow by simply adding some": "在您的工作流中测试您的网络服务和它的数据库，只需添加一些",
             "docker-compose": "docker-组合",
-            "to your workflow file.": "到您的工作流程文件。",
+            "to your workflow file.": "到您的工作流文件。",
 
             // 左侧栏
-                "New workflow": "新建工作流程",
+                "New workflow": "新建工作流",
                 "Management": "管理",
                     "Caches": "缓存",
                     "Deployments": "部署",
@@ -14109,31 +14109,31 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                     // [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
 
                 // 取消置顶对话框
-                    "Unpin this workflow?": "取消工作流程置顶？",
-                        "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流程。",
+                    "Unpin this workflow?": "取消工作流置顶？",
+                        "This action will unpin the workflow for all viewers of this repository.": "此操作将为该仓库的所有查看者取消置顶工作流。",
                     "Yes, unpin": "是的，取消固定",
 
             // 工作流文件不存在
             "Not found": "未找到",
                 "This workflow does not exist.": "此工作流不存在。",
 
-            "All workflows": "全部工作流程",
-                "Show more workflows...": "显示更多工作流程…",
-                "Showing runs from all workflows": "显示所有工作流程的运行情况",
+            "All workflows": "全部工作流",
+                "Show more workflows...": "显示更多工作流…",
+                "Showing runs from all workflows": "显示所有工作流的运行情况",
 
             "Codespaces Prebuilds": "代码空间预构建",
                 "Showing all prebuild configuration runs for Codespaces. Learn about": "显示代码空间所有预构建设置的运行情况。了解",
                 "prebuilding your codespaces.": "代码空间预构建。",
 
             // 筛选条
-                "Filter workflow runs": "筛选工作流程",
+                "Filter workflow runs": "筛选工作流",
                     "Narrow your search": "缩小搜索范围",
 
             //访问上限
             //示例：https://github.com/wilsonzlin/fastrender/actions/workflows/ci.yml?page=1174
                 "You have hit the limit of pages.": "您已到达页面访问上限。",
                 "You could filter by":"您可以按以下筛选",
-                "to continue reviewing older workflow runs.":"继续查看旧的工作流程的运行状况。",
+                "to continue reviewing older workflow runs.":"继续查看旧的工作流的运行状况。",
 
 
             // 反馈提醒
@@ -14144,9 +14144,9 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // [/(\d+) workflow runs?$/, "$1 个工作流程运行"],
             // [/(\d+) workflow runs results/, "$1 个工作流程运行结果"],
 
-            "Workflow": "工作流程",
-                "Filter by Workflow": "按工作流程筛选",
-                "No matching workflows.": "无匹配工作流程。",
+            "Workflow": "工作流",
+                "Filter by Workflow": "按工作流筛选",
+                "No matching workflows.": "无匹配工作流。",
                 "to exclude": "排除",
 
             "Event": "事件",
@@ -14160,8 +14160,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                     "push": "推送",
                     "schedule": "日程",
                     "watch": "关注",
-                    "workflow_dispatch": "工作流程调度",
-                    "workflow_run": "工作流程运行",
+                    "workflow_dispatch": "工作流调度",
+                    "workflow_run": "工作流运行",
                     "repository_dispatch": "仓库调度",
                     "dynamic": "动态",
             // 状态
@@ -14198,19 +14198,19 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 // 时间补丁 25年9月24日更新
                 "Today at": "今天",
             "Cancel run": "取消运行",
-            "View workflow file": "查看工作流程文件",
-            "Delete workflow run": "删除工作流程运行",
+            "View workflow file": "查看工作流文件",
+            "Delete workflow run": "删除工作流运行",
                 // 删除工作流程运行 对话框
-                    "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流程运行吗？",
+                    "Are you sure you want to permanently delete this workflow run?": "您确定要永久删除此工作流运行吗？",
                     "This action cannot be undone.": "此操作无法撤消。",
-                    "Yes, delete this workflow run": "是的，删除此工作流程运行",
+                    "Yes, delete this workflow run": "是的，删除此工作流运行",
                 // 顶部提醒
-                    "Workflow run deleted successfully.": "工作流程运行删除成功。",
+                    "Workflow run deleted successfully.": "工作流运行删除成功。",
 
             // 筛选结果
                 "No results matched your search.": "没有与您的搜索匹配的结果。",
                 "You could search": "您可以搜索",
-                "all workflow runs": "所有工作流程运行",
+                "all workflow runs": "所有工作流运行",
                 "or try different filters.": "或尝试不同的筛选器。",
 
             // 列表区域
@@ -14224,61 +14224,61 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
 
         // /<user-name>/<repo-name>/actions/workflows/<file>.yml
             //右侧三个点
-                "Show workflow options": "显示工作流程选项",
+                "Show workflow options": "显示工作流选项",
                     "Create status badge": "创建状态徽章",
                         // 对话框
                             "Default branch": "默认分支",
                                 "Filter branches": "筛选分支",
                             "Copy status badge Markdown": "复制状态徽章 Markdown 代码",
-                    "Pin workflow": "固定工作流程",
-                    "Disable workflow": "禁用工作流程",
+                    "Pin workflow": "固定工作流",
+                    "Disable workflow": "禁用工作流",
                         // 顶部提醒
-                        "Workflow disabled successfully.": "工作流程已成功禁用。",
+                        "Workflow disabled successfully.": "工作流已成功禁用。",
 
-            "This workflow has a": "这个工作流程有一个",
+            "This workflow has a": "这个工作流有一个",
             "event trigger.": "事件触发器。",
 
-            "Run workflow": "运行工作流程",
-                "Use workflow from": "使用工作流程来自：",
+            "Run workflow": "运行工作流",
+                "Use workflow from": "使用工作流来自：",
                 "Branch:": "分支：",
                 "Select branch": "选择分支",
                 "Select ref": "选择引用",
                 "Select a tag": "选择标签",
                     "Nothing to show": "暂无",
 
-                    "Workflow does not exist or does not have a": "工作流程不存在或没有",
+                    "Workflow does not exist or does not have a": "工作流不存在或没有",
                     "trigger in this branch.": "触发在此分支。",
-                    "Learn more about manual workflows": "了解更多关于手工工作流程的信息",
-                "Running workflow...": "正在运行工作流程…",
+                    "Learn more about manual workflows": "了解更多关于手工工作流的信息",
+                "Running workflow...": "正在运行工作流…",
                 // 顶部提醒
-                    "Workflow run was successfully requested.": "工作流程已成功请求运行。",
+                    "Workflow run was successfully requested.": "工作流已成功请求运行。",
 
-            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流程已禁用，因为此仓库至少 60 天没有活动。",
-            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days. Enable this workflow to resume scheduled runs.": "此计划的工作流程已禁用，因为此仓库至少有 60 天没有活动。启用此工作流程可恢复计划运行。",
-            "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此计划工作流程已被禁用，因为计划工作流程在复刻仓库中默认被禁用。",
-            "This workflow was disabled manually.": "工作流程已被手动禁用。",
-            "This workflow is": "此工作流程正在等待维护者",
+            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days.": "此计划工作流已禁用，因为此仓库至少 60 天没有活动。",
+            "This scheduled workflow is disabled because there hasn't been activity in this repository for at least 60 days. Enable this workflow to resume scheduled runs.": "此计划的工作流已禁用，因为此仓库至少有 60 天没有活动。启用此工作流可恢复计划运行。",
+            "This scheduled workflow is disabled because scheduled workflows are disabled by default in forks.": "此计划工作流已被禁用，因为计划工作流在复刻仓库中默认被禁用。",
+            "This workflow was disabled manually.": "工作流已被手动禁用。",
+            "This workflow is": "此工作流正在等待维护者",
                 "awaiting approval": "批准",
                 "from a maintainer in": "在",
             "Approve and run": "批准并运行",
-            "Enable workflow": "启用工作流程",
+            "Enable workflow": "启用工作流",
                 // 顶部提醒
-                    "Workflow enabled successfully.": "工作流程已成功启用。",
+                    "Workflow enabled successfully.": "工作流已成功启用。",
             "Re-run jobs": "重新运行作业",
                 "Re-running...": "重新运行中…",
 
             // 重新运行对话框
             "Re-run single job": "重新运行单个作业",
-                "A new attempt of this workflow will be started, including": "将开始此工作流程的新尝试，包括",
+                "A new attempt of this workflow will be started, including": "将开始此工作流的新尝试，包括",
                 "all the jobs": "所有作业",
                 "all failed jobs": "所有失败作业",
                 "and dependents:": "和依赖：",
                 "debug logging": "调试日志",
 
-            "This workflow has no runs yet.": "此工作流程尚未运行。",
+            "This workflow has no runs yet.": "此工作流尚未运行。",
 
         // 缓存 /<user-name>/<repo-name>/actions/caches
-            "Showing caches from all workflows.": "显示所有工作流程的缓存。",
+            "Showing caches from all workflows.": "显示所有工作流的缓存。",
             "Learn more about managing caches.": "了解更多关于管理缓存的信息。",
             "Filter caches": "筛选缓存",
             "Filter by branch": "按分支筛选",
@@ -14297,7 +14297,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Largest size": "最大尺寸",
                 "Smallest size": "最小尺寸",
             "No caches": "尚无缓存",
-            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流程尚未缓存任何内容。",
+            "Nothing has been cached by workflows running in this repository.": "在此仓库中运行的工作流尚未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存的信息",
             "dependencies and build outputs to improve workflow execution time.": "依赖项和构建输出以缩短工作流执行时间。",
             "Last used": "最近使用",
@@ -14340,7 +14340,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "You don't have any": "此仓库尚无任何",
                 "self-hosted": "自托管",
                 "runners for this repository": "运行器",
-                    "Self-hosted runners are virtual machines for GitHub Actions workflows that you manage and maintain outside of GitHub.": "自托管运行器是您在 GitHub 外部管理和维护的 GitHub Actions 工作流程的虚拟机。",
+                    "Self-hosted runners are virtual machines for GitHub Actions workflows that you manage and maintain outside of GitHub.": "自托管运行器是您在 GitHub 外部管理和维护的 GitHub Actions 工作流的虚拟机。",
 
         // /<user-name>/<repo-name>/actions/runs/<id>
             // 顶部提醒
@@ -14349,7 +14349,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             // 标题
             "Re-run all jobs": "重新运行所有作业",
             "Re-run failed jobs": "重新运行失败作业",
-            "Cancel workflow": "取消工作流程",
+            "Cancel workflow": "取消工作流",
 
             //"Latest attempt": "最后运行",
             //"Attempt": "运行",
@@ -14358,8 +14358,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
                 "Customize prompt": "自定义提示词",
             "Explain error": "解释错误",
             //右侧按钮
-            "View workflow runs": "查看工作流程运行",
-            "Workflow run options": "工作流程运行选项",
+            "View workflow runs": "查看工作流运行",
+            "Workflow run options": "工作流运行选项",
             "Delete all logs": "删除所有日志",
             "Sign in to view logs": "登录后查看日志",
 
@@ -14404,7 +14404,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "Total duration": "总时长",
             "Billable time": "计费时间",
 
-            "This workflow is waiting for": "该工作流程正在等待",
+            "This workflow is waiting for": "该工作流正在等待",
                 "to complete before running.": "完成后再运行。",
                 "Learn more about concurrency": "了解有关并发执行的更多信息",
 
@@ -14462,8 +14462,8 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             "time": "时间",
 
         // /<user-name>/<repo-name>/actions/runs/<id>/workflow
-            "Workflow file": "工作流程文件",
-            "Workflow file for this run": "本次运行的工作流程文件",
+            "Workflow file": "工作流文件",
+            "Workflow file for this run": "本次运行的工作流文件",
 
         // 操作面板
             "Show all jobs": "显示所有工作",
@@ -14507,11 +14507,11 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
         [/^([^\s]+) \(default\)$/, "$1（默认）"],
         [/^Auto-refresh: (\d+)(s|m)$/, (match, count, unit) => `自动刷新：${count} ${unit === "s" ? "秒" : "分钟"}`],
         [/Back to pull request (#\d+)/, "返回拉取请求 $1"],
-        [/Workflow (.*) pinned./, "工作流程 $1 已置顶"],
-        [/Workflow (.*) unpinned./, "工作流程 $1 已取消置顶"],
-        [/Found (\d+) workflows?/, "发现 $1 个工作流程"],
-        [/(\d+(\+)?) workflow runs?$/, "$1 个工作流程运行"],
-        [/(\d+) workflow runs? results?/, "$1 个工作流程运行结果"],
+        [/Workflow (.*) pinned./, "工作流 $1 已置顶"],
+        [/Workflow (.*) unpinned./, "工作流 $1 已取消置顶"],
+        [/Found (\d+) workflows?/, "发现 $1 个工作流"],
+        [/(\d+(\+)?) workflow runs?$/, "$1 个工作流运行"],
+        [/(\d+) workflow runs? results?/, "$1 个工作流运行结果"],
         [/Download ([^ ]+) \(opens in a new tab\)/, "下载 $1（在新标签中打开）"],
         [/Download ([^ ]+)/, "下载 $1"],
         [/Delete ([^ ]+)/, "删除 $1"],
@@ -14540,7 +14540,7 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
     ],
     "title": {
         "regexp": [
-            [/Workflow runs/, "工作流程运行"],
+            [/Workflow runs/, "工作流运行"],
             [/Caches/, "缓存"],
         ],
     },
@@ -14624,7 +14624,7 @@ I18N["zh-CN"]["repository/deployments"] = { // 仓库 - 部署页面
                     "Failed to deploy to": "无法部署到",
 
                     "View logs": "查看日志",
-                    "View workflow run": "查看工作流程运行",
+                    "View workflow run": "查看工作流运行",
 
         // /<user-name>/<repo-name>/deployments/activity_log?environment=github-pages
             "Deployments": "部署",
@@ -14653,7 +14653,7 @@ I18N["zh-CN"]["repository/attestations"] = { // 仓库 - 证书页面
 
             "No attestations": "尚无证书",
                 "Create attestations using the": "创建证书，请使用",
-                "action": "操作工作流",
+                "action": "操作",
 
             "Filter": "筛选",
                 "Sort by:": "排序方式：",
@@ -15861,7 +15861,7 @@ I18N["zh-CN"]["repository/packages"] = { // 仓库 - 软件包页面
             "field.": "定义的。",
             "A GitHub repository has been identified as the source for this package. This package will be displayed in this repositories package list.": "GitHub 仓库已被确定为该软件包的来源，该软件包将显示在此仓库的软件包列表中。",
             "You have referenced a non-GitHub source for this package that cannot be verified.": "您引用了一个无法验证的非 GitHub 来源的软件包。",
-            "Manage Actions access": "操作访问权限管理",
+            "Manage Actions access": "Actions 访问权限管理",
             "Add Repository": "添加仓库",
             "Pick the repositories that can access this package using": "选择可以访问此软件包的仓库，用于",
             "Role:": "角色:",
@@ -15871,7 +15871,7 @@ I18N["zh-CN"]["repository/packages"] = { // 仓库 - 软件包页面
             "Write": "编辑",
             "Admin": "管理",
             "Remove": "删除",
-            "Actions repository access": "操作仓库访问",
+            "Actions repository access": "Actions 仓库访问",
             "Pick the repositories that can access this package using GitHub Actions.": "选择可以使用 GitHub Actions 访问此软件包的仓库。",
             "Permissions added for selected repositories.": "为选定的仓库添加了权限。",
             "Permissions updated for selected repositories.": "更新了选定仓库的权限。",
@@ -15902,7 +15902,7 @@ I18N["zh-CN"]["repository/packages"] = { // 仓库 - 软件包页面
             "Yes, unlink this repository": "是的，取消链接此仓库",
 
         // 添加仓库对话框
-            "Select repository that can access this package using GitHub actions": "选择可以使用 GitHub 操作访问此软件包的仓库",
+            "Select repository that can access this package using GitHub actions": "选择可通过 GitHub Actions 访问此软件包的仓库",
             "Add repositories": "添加仓库",
 
         // 删除仓库对话框
@@ -16600,7 +16600,7 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
 
                 "Remediation steps": "补救措施",
                     "Follow the steps below before you close this alert.": "关闭此警报前，请按照以下步骤操作。",
-                    "Rotate the secret if it's in use to prevent breaking workflows.": "如果正在使用，请轮换机密以防中断工作流程。",
+                    "Rotate the secret if it's in use to prevent breaking workflows.": "如果正在使用，请轮换机密以防中断工作流。",
                     "Revoke this": "撤销",
                     "through": "通过",
                     "to prevent unauthorized access.": "，以防止未经授权的访问。",
@@ -16858,10 +16858,10 @@ I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
             "Network": "网络",
             // "Members": "成员",
             "Forks": "复刻",
-            "Actions Usage Metrics": "操作使用情况",
-            "Actions Performance Metrics": "操作数据看板",
-            "Actions usage metrics": "操作使用情况",
-            "Actions performance metrics": "操作数据看板",
+            "Actions Usage Metrics": "Actions 使用情况",
+            "Actions Performance Metrics": "Actions 数据看板",
+            "Actions usage metrics": "Actions 使用情况",
+            "Actions performance metrics": "Actions 数据看板",
 
             "People": "成员", //组织仓库
 
@@ -18095,7 +18095,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "Anyone can fork your repository.": "任何人都可以复刻您的仓库。",
                 "All push rulesets will be disabled.": "所有推送规则集都将被禁用。",
                 "Your changes will be published as activity.": "您的更改将作为活动发布。",
-                "Actions history and logs will be visible to everyone.": "操作历史和日志将对所有人可见。",
+                "Actions history and logs will be visible to everyone.": "Actions 历史和日志将对所有人可见。",
                 "Make this repository public": "我想将此仓库设为公开",
             "I want to make this repository private": "我想将此仓库设为私有",
                 "Making this repository private could permanently erase these counts by removing stars and watchers associated to users that will no longer have access to this repository:": "该仓库私有化，将会通过解除星标者和关注者，删除这些计数。他们将无法访问该仓库：",
@@ -18160,7 +18160,7 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "This repository will become read-only.": "该仓库将设置为只读。",
             "You will still be able to fork the repository and unarchive it at any time.": "您仍然可以复刻此仓库，也可以随时解除存档。",
             "Unexpected bad things will happen if you don’t read this!": "如果您不阅读此说明，将会发生意想不到的事情！",
-            "All scheduled workflows will stop running.": "所有预定的工作流程将停止运行。",
+            "All scheduled workflows will stop running.": "所有预定的工作流将停止运行。",
             "Security features will be unavailable:": "安全功能将无法使用：",
             "Security features will be interrupted:": "安全功能将停止",
             "Code scanning will be paused": "代码扫描将暂停",
@@ -18210,9 +18210,9 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
                 "I want to delete this repository": "我想删除这个仓库",
 
                 "This will permanently delete the": "这将永久删除",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有协作者关联。",
-                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流程，并删除所有团队关联。", // 组织仓库
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations will be permanently deleted.": "仓库、Wiki、议题、评论、软件包、机密、工作流，并删除所有协作者关联。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all collaborator associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流，并删除所有协作者关联。",
+                "repository, wiki, issues, comments, packages, secrets, workflow runs, and remove all team associations.": "仓库、Wiki、议题、评论、软件包、机密、工作流，并删除所有团队关联。", // 组织仓库
                 "This will not change your billing plan. If you want to downgrade, you can do so in your Billing Settings.": "这并不会更改您的结算方案。 如果您想降级，可以在结算设置中进行降级。",
 
     },
@@ -19063,7 +19063,7 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
                     // 组织设置
                     "Require workflows to pass before merging": "要求合并前，工作流通过状态检查",
                         "Require all changes made to a targeted branch to pass the specified workflows before they can be merged.": "要求目标分支上的所有更改在合并前通过指定的工作流",
-                        "Workflow configurations": "工作流程配置",
+                        "Workflow configurations": "工作流配置",
                             "No workflow configurations found": "尚无工作流配置",
 
                         "Add workflow": "添加工作流",
@@ -19224,7 +19224,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
 
         // 操作页面 /<user-name>/<repo-name>/settings/actions
-            "Actions permissions": "操作权限",
+            "Actions permissions": "Actions 权限",
             "Actions policies": "Actions 策略",
             "Actions policy insights": "Actions 策略洞察",
                 "Filter rules insights": "筛选规则洞察",
@@ -19243,30 +19243,30 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
             "On December 2, 2026, GitHub will restrict": "自 2026 年 12 月 2 日起，GitHub 将默认限制",
             "on public repositories by default. To continue allowing the event trigger, configure an Actions policy.": "在公共仓库中的触发。若要继续允许此事件触发，请配置 Actions 策略。",
                 "This setting has been disabled by organization administrators.": "此设置已被组织管理员禁用。", // 组织仓库
-                "Allow all actions and reusable workflows": "允许所有操作和可复用的工作流程",
-                    "Any action or reusable workflow can be used, regardless of who authored it or where it is defined.": "可以使用任何操作或可复用的工作流程，而不管它是谁创作的或在哪里定义的。",
-            "Disable actions": "禁用操作",
-                "The Actions tab is hidden and no workflows can run.": "“操作” 选项卡将被隐藏，无法运行任何工作流程。",
+                "Allow all actions and reusable workflows": "允许所有操作和可复用的工作流",
+                    "Any action or reusable workflow can be used, regardless of who authored it or where it is defined.": "可以使用任何操作或可复用的工作流，而不管它是谁创作的或在哪里定义的。",
+            "Disable actions": "禁用 Actions",
+                "The Actions tab is hidden and no workflows can run.": "“Actions” 选项卡将被隐藏，无法运行任何工作流。",
             // [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
                 // [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
             // [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
                 // [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
-                "Learn more about allowing specific actions and reusable workflows to run.": "了解更多关于允许运行特定操作和可复用的工作流程的信息。",
+                "Learn more about allowing specific actions and reusable workflows to run.": "了解更多关于允许运行特定操作和可复用的工作流的信息。",
                 "Allow actions created by GitHub": "允许由 GitHub 创建的操作",
                 "Allow actions by Marketplace": "允许来自市场的操作，",
                 "verified creators": "由经验证的创建者创建",
-                "Allow specified actions and reusable workflows": "允许指定的操作和可复用的工作流程",
-                "Allow or block specified actions and reusable workflows": "允许或阻止指定的操作和可复用工作流程",
-                "Enter a comma-separated list of actions and reusable workflows": "输入以逗号分隔的操作和可复用的工作流程列表",
+                "Allow specified actions and reusable workflows": "允许指定的操作和可复用的工作流",
+                "Allow or block specified actions and reusable workflows": "允许或阻止指定的操作和可复用工作流",
+                "Enter a comma-separated list of actions and reusable workflows": "输入以逗号分隔的操作和可复用的工作流列表",
                 "Wildcards, tags, and SHAs are allowed.": "允许使用通配符、标签和 SHA。",
                 "Wildcards, tags, and SHAs are allowed. Use": "支持通配符、标签和 SHA。使用",
                 "prefix to block.": "前缀可阻止匹配项。",
                 "Action examples:": "操作示例：",
-                "Reusable workflow examples:": "可复用的工作流程示例：",
+                "Reusable workflow examples:": "可复用的工作流示例：",
                 "Entire organization or repository examples:": "整个组织或仓库的示例：",
                 // "Save": "保存",
                 // 顶部提醒
-                    "Actions policy updated.": "操作政策已更新",
+                    "Actions policy updated.": "Actions 政策已更新",
             "Require actions to be pinned to a full-length commit SHA": "要求将操作固定到完整的提交 SHA",
 
             "Artifact and log retention": "工件和日志保留",
@@ -19294,51 +19294,51 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
                     "Use this limit to control when cache evictions occur. Exceeding this limit will trigger evictions of the least recently used cache. Note this limit should not be used for controlling costs.": "使用此限制来控制何时发生缓存逐出。超过此限制将触发最近最少使用的缓存的逐出。请注意，此限制不应用于控制成本。",
                     "Total cache size can be set up to": "总缓存大小可设置为",
 
-            "Fork pull request workflows": "复刻拉取请求工作流程",
-                "Run workflows from fork pull requests": "从复刻拉取请求运行工作流程",
-                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "这告诉 Actions 运行工作流程，来自仓库复刻的拉取请求。请注意，这样做将使这些复刻的维护者有能力在源码库上使用具有读取权限的令牌。",
-                "Send write tokens to workflows from fork pull requests.": "从复刻拉取请求，发送可写令牌到工作流程",
+            "Fork pull request workflows": "复刻拉取请求工作流",
+                "Run workflows from fork pull requests": "从复刻拉取请求运行工作流",
+                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "这告诉 Actions 运行工作流，来自仓库复刻的拉取请求。请注意，这样做将使这些复刻的维护者有能力在源码库上使用具有读取权限的令牌。",
+                "Send write tokens to workflows from fork pull requests.": "从复刻拉取请求，发送可写令牌到工作流",
                     "This tells Actions to send tokens with": "这告诉 Actions 发送令牌",
                     "write": "写入",
-                    "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "权限到工作流程，来自仓库复刻的拉取请求。请注意，这样做将授予这些复刻的维护者",
+                    "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "权限到工作流，来自仓库复刻的拉取请求。请注意，这样做将授予这些复刻的维护者",
                     "permissions against the source repository.": "权限，针对源仓库。",
-                "Send secrets to workflows from fork pull requests.": "从复刻拉取请求，发送机密到工作流程",
-                    "This tells Actions to send repository secrets to workflows from pull requests originating from repository forks.": "这告诉 Actions 发送仓库机密到工作流程，来自仓库复刻的拉取请求。",
+                "Send secrets to workflows from fork pull requests.": "从复刻拉取请求，发送机密到工作流",
+                    "This tells Actions to send repository secrets to workflows from pull requests originating from repository forks.": "这告诉 Actions 发送仓库机密到工作流，来自仓库复刻的拉取请求。",
 
             "Approval for running fork pull request workflows from contributors": "允许贡献者运行复刻拉取请求工作流",
                 "Choose which subset of users will require approval before running workflows on their pull requests. Both the pull request author and the actor of the pull request event triggering the workflow will be checked to determine if approval is required. If approval is required, a user with write access to the repository must": "选择在拉取请求上运行工作流之前需要批准的用户子集。将检查拉取请求作者和触发工作流的拉取请求事件的行为者，以确定是否需要批准。如果需要批准，则必须由具有写权限的用户",
                 "approve the pull request workflow to be run.": "批准才能运行拉取请求工作流。",
-            "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
-                "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
+            "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流",
+                "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流。",
                 "Learn more about approving workflow runs from public forks.": "了解更多关于批准来自公共复刻的工作流运行的信息。",
             "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行批准审查",
-                "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 账户的首次贡献者才需要获得批准才能运行工作流程。",
+                "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 账户的首次贡献者才需要获得批准才能运行工作流。",
                 "Only users who are both new on GitHub and who have never had a commit or pull request merged into this repository will require approval to run workflows.": "只有新加入 GitHub 和从未有提交或拉取请求合并到该仓库的用户才需要批准运行工作流。",
             "Require approval for first-time contributors": "要求对首次贡献者进行批准审查",
-                "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流程。",
+                "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流。",
                 "Only users who have never had a commit or pull request merged into this repository will require approval to run workflows.": "只有从未有提交或拉取请求合并到该仓库的用户才需要批准运行工作流。",
             "Require approval for all outside collaborators": "要求对所有外部协作者进行批准审查",
-                "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流程。",
+                "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流。",
             "Require approval for all external contributors": "要求对所有外部贡献者进行批准审查",
                 "All users that are not a member or owner of this repository will require approval to run workflows.": "所有不是该仓库成员或所有者的用户，均需获得批准才能运行工作流。",
                 // [/All users that are not a member or owner of this repository and not a member of the ([^ ]+) organization will require approval to run workflows./, "所有不是该仓库成员或所有者，且未加入 $1 组织的用户，均需获得批准才能运行工作流。"], // 组织
 
-            "Workflow permissions": "工作流程权限",
-                "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+            "Workflow permissions": "工作流权限",
+                "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this repository. You can specify more granular permissions in the workflow using YAML.": "在仓库中运行工作流时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流中指定更细化的权限。",
                 "Learn more about managing permissions.": "了解更多关于管理权限的信息。",
                 "Read and write permissions": "读取和写入权限",
-                    "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
+                    "Workflows have read and write permissions in the repository for all scopes.": "工作流在仓库中对所有作用域具有读和写的权限。",
                 "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
-                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
+                    "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求或发表审查意见批准拉取请求。",
                         "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
 
                 // 顶部提醒
-                    "Default workflow permissions settings saved.": "已保存默认工作流程权限设置。",
+                    "Default workflow permissions settings saved.": "已保存默认工作流权限设置。",
 
         // 运行器页面 /<user-name>/<repo-name>/settings/actions/runners
             "New self-hosted runner": "新建自托管运行器",
-            "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。",
+            "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流中运行作业的环境。",
             "Learn more about self-hosted runners": "了解更多关于自托管运行器的信息",
             "There are no runners configured": "暂无设置运行器",
             "Learn more about using runners": "了解更多关于使用运行器的信息",
@@ -19379,7 +19379,7 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
             "Using self-hosted runners in public repositories is not recommended.": "在公共仓库中使用自托管运行器不推荐。",
             "Forks of your public repository can potentially run dangerous code on your self-hosted runner by creating a pull request.": "公共仓库的复刻可以潜在地在您的自托管运行器上运行危险代码，通过创建拉取请求。",
             "Learn more about security hardening for self-hosted runners": "了解更多关于自托管运行器的安全强化",
-            "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. If you do not already have an existing volume licensing agreement for your GitHub purchases, by downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。如果您还没有现有的 GitHub 购买量许可证协议，通过下载并配置 GitHub 操作运行器，您同意",
+            "Adding a self-hosted runner requires that you download, configure, and execute the GitHub Actions Runner. If you do not already have an existing volume licensing agreement for your GitHub purchases, by downloading and configuring the GitHub Actions Runner, you agree to the": "添加一个自托管运行器需要您下载、配置并执行 GitHub Actions 运行器。如果您还没有现有的 GitHub 购买量许可证协议，通过下载并配置 GitHub Actions 运行器，您同意",
             "GitHub Customer Agreement": "GitHub 客户协议",
 
         // OIDC 配置 /<user-name>/<repo-name>/settings/actions/oidc-configuration
@@ -19400,17 +19400,17 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
     },
     "regexp": [ // 正则翻译
         [/\/ Add new self-hosted runner ·/, "/ 创建自托管运行器 ·"],
-        [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
-        [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
-        [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
-        [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流程，以及在 $1 的仓库中定义的操作或可复用的工作流程。"], // 操作页面
+        [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流"],
+        [/Any action or reusable workflow defined in a repository within ([^ ]+) can be used./, "可以使用在 $1 的仓库中定义的任何操作或可复用的工作流。"], // 操作页面
+        [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流"],
+        [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within ([^ ]+), can be used./, "可以使用符合指定条件的操作或工作流，以及在 $1 的仓库中定义的操作或可复用的工作流。"], // 操作页面
         [/All users that are not a member or owner of this repository and not a member of the ([^ ]+) organization will require approval to run workflows./, "所有不是该仓库成员或所有者，且未加入 $1 组织的用户，均需获得批准才能运行工作流。"], // 组织
         [/Add new self-hosted runner · (.+)/, "添加自托管运行器 · $1"],
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
     "title": {
         "regexp": [
-            [/Actions settings/, "操作设置"],
+            [/Actions settings/, "Actions 设置"],
             [/Runners/, "运行器"],
             [/Add new self-hosted runner/, "添加自托管运行器"],
         ],
@@ -19613,10 +19613,10 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
                         "User stars a repository.": "用户标星仓库。",
                     "Wiki": "",
                         "Wiki page updated.": "Wiki 页面的更新。",
-                    "Workflow jobs": "工作流程作业",
+                    "Workflow jobs": "工作流作业",
                         "Workflow job queued, waiting, in progress, or completed on a repository.": "仓库中工作流作业的队列、等待、正在进行或完成。",
-                    "Workflow runs": "工作流程运行",
-                        "Workflow run requested or completed on a repository.": "仓库中工作流程运行的请求或完成。",
+                    "Workflow runs": "工作流运行",
+                        "Workflow run requested or completed on a repository.": "仓库中工作流运行的请求或完成。",
                 "Active": "激活",
                 "We will deliver event details when this hook is triggered.": "当钩子被触发时，我们将提供事件详细信息。",
 
@@ -19907,7 +19907,7 @@ I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /
             "Learn more about configuring environments.": "了解更多关于配置环境的信息。",
 
             "There are no environments for this repository": "此仓库尚无环境",
-            "Environments are used by your workflows for deployments.": "您的工作流程使用环境进行部署。",
+            "Environments are used by your workflows for deployments.": "您的工作流使用环境进行部署。",
             "You can configure environments with protection rules and secrets.": "您可以使用保护规则和机密配置环境。",
 
             "Delete environment": "删除环境",
@@ -19943,7 +19943,7 @@ I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /
                         "Search for people or teams...": "搜索人员或团队…",
 
                     "Prevent self-review": "防止自行审查",
-                        "Require a different approver than the user who triggered the workflow run.": "要求与触发工作流程运行的用户不同的批准审查者。",
+                        "Require a different approver than the user who triggered the workflow run.": "要求与触发工作流运行的用户不同的批准审查者。",
                 "Wait timer": "等待计时器",
                     "Set an amount of time to wait before allowing deployments to proceed.": "设置允许部署继续之前等待的时间。",
                     "minutes": "分钟",
@@ -20103,7 +20103,7 @@ I18N["zh-CN"]["repository/settings/codespaces"] = { // 仓库设置 - 代码空�
 
             "Access and cost control": "访问和成本控制",
             "Prebuild triggers": "预构建触发器",
-            "You can specify how often to prebuild your codespace based on changes to your repository or a schedule to manage Actions usage.": "您可以根据对仓库的更改或管理操作使用的计划来指定预构建代码空间的频率。",
+            "You can specify how often to prebuild your codespace based on changes to your repository or a schedule to manage Actions usage.": "您可以根据对仓库的更改或管理 Actions 使用的计划来指定预构建代码空间的频率。",
             "Learn about prebuild triggers": "了解预构建触发器",
             "Every push": "每次推送",
                 "Default": "默认",
@@ -20203,21 +20203,21 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
 
             // GitHub Actions 部署模式
                 "Send feedback": "发送反馈",
-                "Use a suggested workflow,": "使用建议的工作流程，",
-                "browse all workflows": "浏览所有工作流程",
+                "Use a suggested workflow,": "使用建议的工作流，",
+                "browse all workflows": "浏览所有工作流",
                 ", or": "，或",
                 "create your own": "自建",
 
                 "Configure": "设置",
 
-                "Workflow details will appear here once your site has been deployed.": "部署站点后，工作流程详细信息将显示在此处。",
-                "View workflow runs.": "查看工作流程运行情况。",
+                "Workflow details will appear here once your site has been deployed.": "部署站点后，工作流详细信息将显示在此处。",
+                "View workflow runs.": "查看工作流运行情况。",
 
                 "Your site was last deployed to the": "您的站点上次部署到",
                 "environment by the": "环境，由",
                 "pages build and deployment": "页面构建和部署",
-                "workflow.": "工作流程。",
-                "Learn more about deploying to GitHub Pages using custom workflows": "了解更多关于使用自定义工作流程部署到 GitHub Pages 的信息",
+                "workflow.": "工作流。",
+                "Learn more about deploying to GitHub Pages using custom workflows": "了解更多关于使用自定义工作流部署到 GitHub Pages 的信息",
 
             // 从分支部署模式
             "Branch": "分支",
@@ -20408,7 +20408,7 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 高
                     // 提示区
                         "Code scanning with GitHub Actions is not available for this repository.": "使用 GitHub Actions 进行代码扫描不适用于该仓库。",
 
-                        "GitHub Actions is disabled on this repository because it is a fork. To use code scanning please": "GitHub 操作已在此仓库禁用，因为它是一个复刻。要使用代码扫描，请",
+                        "GitHub Actions is disabled on this repository because it is a fork. To use code scanning please": "GitHub Actions 已在此仓库禁用，因为它是一个复刻。要使用代码扫描，请",
                         "enable it": "启用它",
 
                         "GitHub Actions is disabled on this repository by an enterprise or organization policy. To use code scanning, please ask your organization administrator to enable Actions, or": "由于企业或组织策略，此仓库中禁用了 GitHub Actions。要使用代码扫描，请请求您的组织管理员启用 GitHub Actions，或者",
@@ -20472,17 +20472,17 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 高
                             "View CodeQL configuration": "查看 CodeQL 设置",
                             "Switch to advanced": "切换到高级",
                             // 切换到 CodeQL 工作流程对话框
-                                "Switch to a CodeQL workflow?": "切换到 CodeQL 工作流程？",
+                                "Switch to a CodeQL workflow?": "切换到 CodeQL 工作流？",
                                     "To switch to a workflow-based configuration, we must disable CodeQL first. CodeQL will stop analyzing code and resume once a valid workflow file is committed to the repository.": "要切换到基于工作流的配置，我们必须先禁用 CodeQL。CodeQL 将停止分析代码，并在有效的工作流文件提交到仓库后恢复分析。",
                             "Disable CodeQL": "禁用 CodeQL",
                                 // 禁用对话框
                                     "Disable CodeQL?": "禁用 CodeQL？",
-                                    "CodeQL will stop analyzing code from this repository. Existing alerts will remain open; you can dismiss them but not close them as fixed, as CodeQL needs to be enabled for that to happen. Existing CodeQL Actions workflows on this repository must be": "CodeQL 将停止分析该仓库中的代码。现有的警报将保持打开；您可以忽略它们，但不能关闭它们，因为 CodeQL 需要启用才能关闭。要",
+                                    "CodeQL will stop analyzing code from this repository. Existing alerts will remain open; you can dismiss them but not close them as fixed, as CodeQL needs to be enabled for that to happen. Existing CodeQL Actions workflows on this repository must be": "CodeQL 将停止分析该仓库中的代码。现有的警报将保持打开；您可以忽略它们，但不能关闭它们，因为 CodeQL 需要启用才能关闭。此仓库现有的 CodeQL Actions 工作流必须",
                                     "manually re-enabled to resume previous analyses": "恢复先前的分析，必须手动重新启用",
 
                     "Other tools": "其他工具",
                         "Add any third-party code scanning tool.": "添加任意第三方代码扫描工具。",
-                        "Explore workflows": "探索工作流程",
+                        "Explore workflows": "探索工作流",
 
                     "Copilot Autofix": "Copilot 自动修复",
                         "Suggest fixes for CodeQL alerts using AI. CodeQL default or advanced setup must be enabled for this feature to work. Learn more about the": "使用 AI 为 CodeQL 警报提出修复建议。必须启用 CodeQL 默认设置或高级设置才能使用此功能。了解更多关于",
@@ -20618,7 +20618,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
 
         // 操作机密 /<user-name>/<repo-name>/settings/secrets/actions
-            "Actions secrets and variables": "操作机密和变量",
+            "Actions secrets and variables": "Actions 机密和变量",
             "Agents secrets and variables": "智能体机密和变量",
                 "Anyone with collaborator access to this repository can use these secrets and variables for the Copilot cloud agent.": "任何拥有此仓库协作者权限的人都可以将这些机密和变量用于 Copilot 云端智能体。",
             "New repository secret": "新建仓库机密",
@@ -20631,7 +20631,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
             "data.": "数据。",
             "Learn more about variables": "了解更多关于变量的信息",
 
-            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有协作者权限的人都可以使用这些机密和变量进行操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
+            "Anyone with collaborator access to this repository can use these secrets and variables for actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何有协作者权限的人都可以将这些机密和变量用于 Actions。它们不会被传递到由复刻的拉取请求触发的工作流中。",
 
             "Secrets": "机密",
             "Variables": "变量",
@@ -20686,7 +20686,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
                 "variable": "变量",
 
         // 新建仓库机密 /<user-name>/<repo-name>/settings/secrets/actions/new
-            "Actions secrets": "操作机密",
+            "Actions secrets": "Actions 机密",
             "/ New secret": "/ 新建机密",
 
             "Name": "名称",
@@ -20696,7 +20696,7 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
                 "Adding…": "添加中…",
 
         // 新建仓库变量 /<user-name>/<repo-name>/settings/variables/actions/new
-            "Actions variables": "操作变量",
+            "Actions variables": "Actions 变量",
             "/ New variable": "/ 新建变量",
             "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
             "create a secret": "创建机密",
@@ -20749,10 +20749,10 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
     ],
     "title": {
         "regexp": [
-            [/Actions secrets/, "操作机密"],
-            [/Add Actions secret/, "新建操作机密"],
-            [/Actions variables/, "操作变量"],
-            [/Add Actions variable/, "新建操作变量"],
+            [/Actions secrets/, "Actions 机密"],
+            [/Add Actions secret/, "新建 Actions 机密"],
+            [/Actions variables/, "Actions 变量"],
+            [/Add Actions variable/, "新建 Actions 变量"],
             [/Codespaces secrets/, "代码空间机密"],
             [/Add Codespaces secret/, "新建代码空间机密"],
         ],
@@ -21929,7 +21929,7 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
         [/View all (\d+) notifications?/, "查看全部 $1 条通知"], // 仓库分组模式
         [/(\d+) new notifications?/, "$1 条新通知"],
         [/of (\d+)/, " 共 $1 条"],
-        [/workflow run failed for ([^ ]+) branch/, "工作流程运行失败，$1 分支"], // F12 才翻译
+        [/workflow run failed for ([^ ]+) branch/, "工作流运行失败，$1 分支"], // F12 才翻译
     ],
     "title": {
         "static": {
@@ -24258,8 +24258,8 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
 						"Vision": "视觉",
                     // 排序
                         "Alphabetical": "A-Z",
-                        "Output token limit": "输出令牌限制",
-                        "Input token limit": "输入令牌顺序",
+                        "Output token limit": "输出 Token 上限",
+                        "Input token limit": "输入 Token 上限",
 
             "All apps": "所有应用",
                 "Apps": "应用",
@@ -24736,9 +24736,9 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Response format": "响应格式",
                     "Text": "文本",
                     "Set the format for the model response.": "设置模型响应的格式。",
-                "Max Tokens": "最大令牌",
-                "Max Completion Tokens": "最大输出标记",
-                    "Limit the maximum output tokens for the model response.": "限制模型响应的最大输出标记。",
+                "Max Tokens": "最大 Token 数",
+                "Max Completion Tokens": "最大输出 Token 数",
+                    "Limit the maximum output tokens for the model response.": "限制模型响应的最大输出 Token 数。",
                 "Reasoning Effort": "推理强度调节",
                     "Adjust the model's cognitive load with options for low, medium, and high reasoning levels.": "通过低、中、高三级可选项调整模型的计算资源分配，控制输出结果的逻辑复杂度和思考深度。",
                     "high": "高",
@@ -25134,13 +25134,13 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
                 "Create a pull request": "创建拉取请求",
                     "Propose and collaborate on changes to a repository.": "就对仓库的更改提出建议并进行协作。",
                 "Create a branch protection rule": "创建分支保护规则",
-                    "Enforce certain workflows for one or more branches.": "为一个或多个分支强制执行某些工作流程。",
+                    "Enforce certain workflows for one or more branches.": "为一个或多个分支强制执行某些工作流。",
             "Automation and CI/CD": "自动化和 CI/CD",
                 "See more about automation and CI/CD": "查看更多关于自动化和 CI/CD 的信息",
                 "Auto-assign new issues": "自动分配新议题",
                     "Try automatically assigning work with GitHub Actions.": "尝试使用 GitHub Actions 自动分配工作。",
                 "Run a continuous integration test": "运行持续集成测试",
-                    "Validate your code using a CI workflow.": "使用 CI 工作流程验证您的代码。",
+                    "Validate your code using a CI workflow.": "使用 CI 工作流验证您的代码。",
             "Discover new GitHub features": "发现 GitHub 的新功能",
                 "See all features": "查看所有功能",
                 "Client apps": "客户端应用",
@@ -26539,7 +26539,7 @@ I18N["zh-CN"]["orgs/settings/copilot"] = {  // 组织设置 - GitHub Copilot
             "You can enable Copilot cloud agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 云端智能体，但由于您没有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
             "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他用户启用 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
             "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because the Copilot coding agent policy has been disabled by an administrator.": "您可以为其他用户启用 Copilot 编程智能体，但由于管理员已禁用 Copilot 编程智能体策略，您将无法向 Copilot 分配任务。",
-            "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编码代理，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
+            "You can enable Copilot coding agent for other users, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "虽然您可以为其他用户启用 Copilot 编程智能体，但由于您未持有 Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
             "With Coding agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用编程智能体，您可以将任务委派给 Copilot，从而让您专注于最具创造性的、复杂且影响深远的工作。只需将问题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留言反馈以供迭代。",
             "With Copilot cloud agent, you can delegate tasks to Copilot, freeing you to focus on the creative, complex, and high-impact work that matters most. Simply assign an issue to Copilot, wait for the agent to request your review, then leave feedback on the pull request to iterate.": "使用 Copilot 云端智能体，您可以将任务委托给 Copilot，从而专注于最具创造性、复杂性和高影响力的重要工作。只需将议题分配给 Copilot，等待智能体请求您审查，然后在拉取请求中留下反馈以继续迭代。",
             "Learn more in the docs.": "详情",
@@ -26581,49 +26581,49 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
         // 操作页面 /organizations/<org-login>/settings/actions
-            "General actions permissions": "常规操作权限",
+            "General actions permissions": "常规 Actions 权限",
 
             "Policies": "政策",
                 "Choose which repositories are permitted to use GitHub Actions.": "选择允许哪些仓库使用 GitHub Actions。",
                 "All repositories": "所有仓库",
-                    "Actions can be run by any repository in the organization": "操作可以由组织中的任何仓库运行",
+                    "Actions can be run by any repository in the organization": "Actions 可以由组织中的任何仓库运行",
                 "Selected repositories": "选定的仓库",
-                    "Actions can only be run by specifically selected repositories": "操作只能由特定选择的仓库运行",
+                    "Actions can only be run by specifically selected repositories": "Actions 只能由特定选择的仓库运行",
                     // [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
                     "selected repository": "个选定的仓库",
                     "selected repositories": "个选定的仓库",
                     // 对话框
-                        "Select the organization repositories that may use Actions.": "选择可以使用操作的组织仓库。",
+                        "Select the organization repositories that may use Actions.": "选择可以使用 Actions 的组织仓库。",
                         "Filter repositories": "筛选仓库",
                         "No repositories found.": "未找到仓库。",
                         "Select repositories": "选定仓库",
                 "Disabled": "禁用",
                     "GitHub Actions is disabled for all repositories in the organization": "对组织中的所有仓库禁用 GitHub Actions",
 
-                "Allow all actions and reusable workflows": "允许所有操作和可复用的工作流程",
-                    "Any action or reusable workflow can be used, regardless of who authored it or where it is defined.": "可以使用任何操作或可复用的工作流程，而不管它是谁创作的或在哪里定义的。",
+                "Allow all actions and reusable workflows": "允许所有操作和可复用的工作流",
+                    "Any action or reusable workflow can be used, regardless of who authored it or where it is defined.": "可以使用任何操作或可复用的工作流，而不管它是谁创作的或在哪里定义的。",
                 // [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
                 //     [/Any action or reusable workflow defined in a repository within the ([^ ]+) organization can be used./, "可以使用在 $1 组织内的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
                 // [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
                 //     [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the ([^ ]+) organization, can be used./, "可以使用符合指定条件的操作或可复用的工作流程，以及在 $1 组织内的仓库中定义的操作或可复用的工作流程。"], // 操作页面
-                    "Learn more about allowing specific actions and reusable workflows to run.": "了解更多关于允许运行特定操作和可复用的工作流程的信息。",
+                    "Learn more about allowing specific actions and reusable workflows to run.": "了解更多关于允许运行特定操作和可复用的工作流的信息。",
                     "Allow actions created by GitHub": "允许由 GitHub 创建的操作",
                     "Allow actions by Marketplace": "允许来自市场的操作，",
                     "verified creators": "由经验证的创建者创建",
-                    "Allow specified actions and reusable workflows": "允许指定的操作和可复用的工作流程",
+                    "Allow specified actions and reusable workflows": "允许指定的操作和可复用的工作流",
                     "Applies to": "适用于",
                     "repositories only": "仓库，仅仅",
                         // "Workflows using these actions in private repositories will fail.": "在私有仓库中使用这些操作的工作流程将失败。",
                         // "Using a list of specific actions is only supported for public repositories on your current GitHub plan. To have this list apply to private repositories,": "只有当前 GitHub 计划中的公共仓库才支持使用特定操作列表。要将此列表应用于私有仓库，",
                         // "upgrade your plan": "升级您的计划",
-                "Enter a comma-separated list of actions and reusable workflows": "输入以逗号分隔的操作和可复用的工作流程列表",
+                "Enter a comma-separated list of actions and reusable workflows": "输入以逗号分隔的操作和可复用的工作流列表",
                 "Wildcards, tags, and SHAs are allowed.": "允许使用通配符、标签和 SHA。",
                 "Action examples:": "操作示例：",
-                "Reusable workflow examples:": "可复用的工作流程示例：",
+                "Reusable workflow examples:": "可复用的工作流示例：",
                 "Entire organization or repository examples:": "整个组织或仓库的示例：",
 
                 // 顶部提醒
-                    "Actions policy updated.": "操作政策已更新",
+                    "Actions policy updated.": "Actions 政策已更新",
 
             // 运行器
                 "Choose which repositories are allowed to create repository-level self-hosted runners.": "选择哪些仓库允许创建仓库级自托管运行器。",
@@ -26647,59 +26647,59 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Duration must be 90 or less": "必须为 1-90",
                 "Duration must be 1 or more.": "必须为 1-90",
 
-            "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流程",
-                "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流程。",
+            "Fork pull request workflows from outside collaborators": "从外部协作者，复刻拉取请求工作流",
+                "Choose which subset of outside collaborators will require approval to run workflows on their pull requests.": "选择哪些外部协作者的子集需要批准才能对他们的拉取请求运行工作流。",
                 "Learn more about approving workflow runs from public forks.": "了解更多关于批准来自公共复刻的工作流运行的信息。",
                 "Require approval for first-time contributors who are new to GitHub": "要求对首次加入 GitHub 的贡献者进行批准审查",
-                    "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 账户的首次贡献者才需要获得批准才能运行工作流程。",
+                    "Only first-time contributors who recently created a GitHub account will require approval to run workflows.": "只有最近创建 GitHub 账户的首次贡献者才需要获得批准才能运行工作流。",
                 "Require approval for first-time contributors": "要求对首次贡献者进行批准审查",
-                    "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流程。",
+                    "Only first-time contributors will require approval to run workflows.": "只有首次贡献者才需要获得批准才能运行工作流。",
                 "Require approval for all outside collaborators": "要求对所有外部协作者进行批准审查",
-                    "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流程。",
+                    "All outside collaborators will always require approval to run workflows on their pull requests.": "所有外部协作者将始终需要批准才能在他们的拉取请求上运行工作流。",
                 // 顶部提醒
                     "Fork pull request outside collaborators settings saved.": "外部协作者复刻拉取请求设置已保存。",
 
-            "Fork pull request workflows in private repositories": "私有仓库的复刻拉取请求工作流程",
+            "Fork pull request workflows in private repositories": "私有仓库的复刻拉取请求工作流",
                 "These settings apply to private repositories. Repository administrators will only be able to change the settings that are enabled here.": "这些设置适用于私有仓库。仓库管理员只能改变这里启用的设置。",
-                "Run workflows from fork pull requests": "从复刻拉取请求运行工作流程",
-                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "这告诉 Actions 运行工作流程，来自仓库复刻的拉取请求。请注意，这样做将使这些复刻的维护者有能力在源码库上使用具有读取权限的令牌。",
-                    "Send write tokens to workflows from fork pull requests.": "从复刻拉取请求，发送可写令牌到工作流程",
+                "Run workflows from fork pull requests": "从复刻拉取请求运行工作流",
+                    "This tells Actions to run workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks the ability to use tokens with read permissions on the source repository.": "这告诉 Actions 运行工作流，来自仓库复刻的拉取请求。请注意，这样做将使这些复刻的维护者有能力在源码库上使用具有读取权限的令牌。",
+                    "Send write tokens to workflows from fork pull requests.": "从复刻拉取请求，发送可写令牌到工作流",
                         "This tells Actions to send tokens with": "这告诉 Actions 发送令牌",
                         "write": "写入",
-                        "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "权限到工作流程，来自仓库复刻的拉取请求。请注意，这样做将授予这些复刻的维护者",
+                        "permissions to workflows from pull requests originating from repository forks. Note that doing so will give maintainers of those forks": "权限到工作流，来自仓库复刻的拉取请求。请注意，这样做将授予这些复刻的维护者",
                         "permissions against the source repository.": "权限，针对源仓库。",
-                    "Send secrets and variables to workflows from fork pull requests.": "从复刻拉取请求，发送机密和变量到工作流程",
-                        "This tells Actions to send repository secrets and variables to workflows from pull requests originating from repository forks.": "这告诉 Actions 发送仓库机密和变量到工作流程，来自仓库复刻的拉取请求。",
-                    "Require approval for fork pull request workflows.": "要求批准复刻 拉取请求工作流程。",
-                        "Fork pull requests from users without write access will require approval to run workflows.": "来自没有写入权限的用户的复刻拉取请求需要获得批准才能运行工作流程。",
+                    "Send secrets and variables to workflows from fork pull requests.": "从复刻拉取请求，发送机密和变量到工作流",
+                        "This tells Actions to send repository secrets and variables to workflows from pull requests originating from repository forks.": "这告诉 Actions 发送仓库机密和变量到工作流，来自仓库复刻的拉取请求。",
+                    "Require approval for fork pull request workflows.": "要求批准复刻 拉取请求工作流。",
+                        "Fork pull requests from users without write access will require approval to run workflows.": "来自没有写入权限的用户的复刻拉取请求需要获得批准才能运行工作流。",
                 // 顶部提醒
-                    "Fork pull request workflow settings saved.": "复刻拉取请求工作流程设置已保存。",
+                    "Fork pull request workflow settings saved.": "复刻拉取请求工作流设置已保存。",
 
-            "Workflow permissions": "工作流程权限",
-                "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this organization. You can specify more granular permissions in the workflow using YAML.": "在组织中运行工作流程时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流程中指定更细化的权限。",
+            "Workflow permissions": "工作流权限",
+                "Choose the default permissions granted to the GITHUB_TOKEN when running workflows in this organization. You can specify more granular permissions in the workflow using YAML.": "在组织中运行工作流时，选择授予 GITHUB_TOKEN 的默认权限。您可以使用 YAML 在工作流中指定更细化的权限。",
                 "Learn more about managing permissions.": "了解更多关于管理权限的信息。",
 
                 "Repository administrators will only be able to change the default permissions to a more restrictive setting.": "仓库管理员只能将默认权限改为更严格的设置。",
                     "Read and write permissions": "读取和写入权限",
-                        "Workflows have read and write permissions in the repository for all scopes.": "工作流程在仓库中对所有作用域具有读和写的权限。",
+                        "Workflows have read and write permissions in the repository for all scopes.": "工作流在仓库中对所有作用域具有读和写的权限。",
                     "Read repository contents and packages permissions": "读取仓库的内容和软件包的权限",
-                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流程在仓库中仅对内容和软件包作用域具有只读的权限。",
+                        "Workflows have read permissions in the repository for the contents and packages scopes only.": "工作流在仓库中仅对内容和软件包作用域具有只读的权限。",
                     "Choose whether GitHub Actions can create pull requests or submit approving pull request reviews.": "选择 GitHub Actions 能否创建拉取请求，或发表审查意见批准拉取请求。",
                     "Allow GitHub Actions to create and approve pull requests": "允许 GitHub Actions 创建和批准拉取请求",
                         "This controls whether GitHub Actions can create pull requests or submit approving pull request reviews.": "这控制 GitHub Actions 能否创建拉取请求或提交对拉取请求的审查批准。",
                     // 顶部提醒
-                        "Default workflow permissions settings saved.": "默认工作流程权限设置已保存。",
+                        "Default workflow permissions settings saved.": "默认工作流权限设置已保存。",
 
-            "Required workflows": "所需的工作流程",
+            "Required workflows": "所需的工作流",
                 "Add workflow": "添加工作流",
-                "Set required workflows to run in your organization’s repositories. These workflows will run alongside the repository workflows and branch merging will be blocked until the required checks succeed.": "设置所需的工作流程，在您的组织的仓库中运行。这些工作流程将与仓库的工作流程一起运行，分支合并将被阻止，直到所需的检查成功。",
-                "Learn more about required workflows.": "了解更多关于所需工作流程的信息。",
-                "There are no required workflows in this organization.": "此组织中尚无所需的工作流程。",
+                "Set required workflows to run in your organization’s repositories. These workflows will run alongside the repository workflows and branch merging will be blocked until the required checks succeed.": "设置所需的工作流，在您的组织的仓库中运行。这些工作流将与仓库的工作流一起运行，分支合并将被阻止，直到所需的检查成功。",
+                "Learn more about required workflows.": "了解更多关于所需工作流的信息。",
+                "There are no required workflows in this organization.": "此组织中尚无所需的工作流。",
 
         // 运行器页面 /organizations/<org-login>/settings/actions/runners
             "Includes all runners across self-hosted and GitHub-hosted runners.": "包括所有自托管和 GitHub 托管的运行器。",
 
-            "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows. Runners added to this organization can be used to process jobs in multiple repositories in your organization.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流程中运行作业的环境。添加到该组织的运行器可以用来处理您的组织中的多个仓库的工作。",
+            "Host your own runners and customize the environment used to run jobs in your GitHub Actions workflows. Runners added to this organization can be used to process jobs in multiple repositories in your organization.": "托管您自己的运行器，并定制用于在您的 GitHub Actions 工作流中运行作业的环境。添加到该组织的运行器可以用来处理您的组织中的多个仓库的工作。",
             "Learn more about self-hosted runners": "了解更多关于自托管运行器的信息",
 
             "Search runners": "搜索运行器",
@@ -26733,7 +26733,7 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
             "Active jobs": "活跃的工作",
             "There are currently no running jobs": "目前没有正在运行的工作",
             "Add `": "添加 `",
-            "` to your workflow's YAML to send jobs to GitHub-hosted runners.": "`到您的工作流程的YAML中，以发送作业到 GitHub 托管的运行器。",
+            "` to your workflow's YAML to send jobs to GitHub-hosted runners.": "`到您的工作流的YAML中，以发送作业到 GitHub 托管的运行器。",
 
         // 创建运行器页面 /organizations/<org-login>/settings/actions/runners/new
             "/ Create self-hosted runner": "/ 创建自托管运行器",
@@ -26766,7 +26766,7 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
 
         // 缓存 /organizations/<org-login>/settings/actions/caches
             "Caches": "缓存",
-            "You can use caches for dependencies and other commonly reused files to speed up your workflows. The data on this page have at least 5 minutes of latency.": "您可以对依赖项和其他经常重复使用的文件的缓存来加快您的工作流程。此页面上的数据至少有 5 分钟的延迟。",
+            "You can use caches for dependencies and other commonly reused files to speed up your workflows. The data on this page have at least 5 minutes of latency.": "您可以对依赖项和其他经常重复使用的文件的缓存来加快您的工作流。此页面上的数据至少有 5 分钟的延迟。",
             "Learn more about caches": "了解更多关于缓存的信息",
 
             "Search repositories": "搜索仓库",
@@ -26776,17 +26776,17 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
                 "Smallest size": "最小尺寸",
 
             "No repository uses caches": "尚无仓库使用缓存",
-            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流程都未缓存任何内容。",
+            "Nothing has been cached by workflows running in any repositories of this organization.": "该组织任何仓库中运行的工作流都未缓存任何内容。",
             "Learn more about caching": "了解更多关于缓存",
-            "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流程执行时间的信息。",
+            "dependencies and build outputs to improve workflow execution time.": "依赖关系和构建输出以改善工作流执行时间的信息。",
 
     },
     "regexp": [ // 正则翻译
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
-        [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流程"],
-        [/Any action or reusable workflow defined in a repository within the ([^ ]+) organization can be used./, "可以使用在 $1 组织内的仓库中定义的任何操作或可复用的工作流程。"], // 操作页面
-        [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流程"],
-        [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the ([^ ]+) organization, can be used./, "可以使用符合指定条件的操作或可复用的工作流程，以及在 $1 组织内的仓库中定义的操作或可复用的工作流程。"], // 操作页面
+        [/Allow ([^ ]+) actions and reusable workflows/, "允许 $1 的操作和可复用的工作流"],
+        [/Any action or reusable workflow defined in a repository within the ([^ ]+) organization can be used./, "可以使用在 $1 组织内的仓库中定义的任何操作或可复用的工作流。"], // 操作页面
+        [/Allow ([^ ]+), and select non-([^ ]+), actions and reusable workflows/, "允许 $1，并选择非 $2、操作和可复用的工作流"],
+        [/Any action or reusable workflow that matches the specified criteria, plus those defined in a repository within the ([^ ]+) organization, can be used./, "可以使用符合指定条件的操作或可复用的工作流，以及在 $1 组织内的仓库中定义的操作或可复用的工作流。"], // 操作页面
         [/(\d+) active jobs?/ ,"$1 个活跃的工作"], // settings/actions/runners
         [/(\d+) caches?/, "$1 项缓存"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
@@ -27173,7 +27173,7 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
         ...I18N["zh-CN"]["confirm-access"]["static"],
 
         // 操作机密 /organizations/<org-login>/settings/secrets/actions
-            "Actions secrets and variables": "操作机密和变量",
+            "Actions secrets and variables": "Actions 机密和变量",
             "Secrets and variables allow you to manage reusable configuration data. Secrets are": "机密和变量允许您管理可重复使用的配置数据。机密是",
             "encrypted": "被加密",
             "and are used for sensitive data.": "，用于敏感数据。",
@@ -27183,7 +27183,7 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
             "data.": "数据。",
             "Learn more about variables": "了解更多关于变量的信息",
 
-            "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有协作者权限的人，只要能接触到机密或变量，都可以将其用于操作。它们不会被传递到由复刻的拉取请求触发的工作流中。",
+            "Anyone with collaborator access to the repositories with access to a secret or variable can use it for Actions. They are not passed to workflows that are triggered by a pull request from a fork.": "任何具有协作者权限的人，只要能接触到机密或变量，都可以将其用于 Actions。它们不会被传递到由复刻的拉取请求触发的工作流中。",
 
             "Organization secrets and variables cannot be used by private repositories with your plan.": "在您的计划中私有仓库不能使用组织机密和变量。",
             "Please consider": "请考虑",
@@ -27215,7 +27215,7 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
                 "secret": "机密",
 
         // 新建组织机密 /organizations/<org-login>/settings/secrets/actions/new
-            "Actions secrets": "操作机密",
+            "Actions secrets": "Actions 机密",
             "/ New secret": "/ 新建机密",
             "Add secret": "添加机密",
                 "Adding…": "添加中…",
@@ -27255,7 +27255,7 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
                 "variable": "变量",
 
         // 新建组织变量 /organizations/<org-login>/settings/variables/actions/new
-            "Actions variables": "操作变量",
+            "Actions variables": "Actions 变量",
             "/ New variable": "/ 新建变量",
             "Note: Variable values are exposed as plain text. If you need to encrypt and mask sensitive information,": "注意：变量值是以纯文本形式暴露的。如果您需要对敏感信息进行加密和屏蔽，请使用",
             "create a secret": "创建机密",
@@ -27490,7 +27490,7 @@ I18N["zh-CN"]["orgs/settings/personal-access-token"] = { // 组织设置 - 个�
                     "Secret scanning alerts": "机密扫描警报",
                     "Secrets": "机密",
                     "Variables": "变量",
-                    "Workflows": "工作流程",
+                    "Workflows": "工作流",
                     "Organization": "组织",
                         "API Insights": "API 透视",
                         "Blocking users": "拉黑用户",
@@ -27742,7 +27742,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Code": "代码",
             "Pull requests": "拉取请求",
             "Discussions": "讨论",
-            "Actions": "操作",
+            "Actions": "Actions",
             "Projects": "项目",
             "Security": "安全",
             "Insights": "洞察",
@@ -27757,7 +27757,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
                 "Go to Code"                 : "跳转到代码",
                 "Go to Issues"               : "跳转到议题",
                 "Go to Pull Requests"        : "跳转到拉取请求",
-                "Go to Actions"              : "跳转到操作",
+                "Go to Actions"              : "跳转到 Actions",
                 "Go to Projects"             : "跳转到项目",
                 "Go to Wiki"                 : "跳转到 Wiki",
                 "Go to Discussions"          : "跳转到讨论",
@@ -27826,7 +27826,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "No open projects": "无已打开的项目",
             "No open project templates": "无已打开的项目模板",
             "Built like a spreadsheet, project tables give you a live canvas to filter, sort, and group issues and pull requests. Tailor them to your needs with custom fields and saved views.":"项目表格就像电子表格一样构建，为您提供实时画布，用于筛选、排序和分组问题及拉取请求。您可以根据需求自定义字段并保存视图。",
-            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "项目专为灵活适配而构建，为您提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。您可以通过自定义字段、保存的视图、工作流程和洞察，按需定制项目。",
+            "Built to be flexible and adaptable, Projects gives you a live canvas to filter, sort, and group issues and pull requests in a table, board, or roadmap. Tailor them to your needs with custom fields, saved views, workflows, and insights.": "项目专为灵活适配而构建，为您提供实时画布，可在表格、看板或路线图中筛选、排序和分组议题与拉取请求。您可以通过自定义字段、保存的视图、工作流和洞察，按需定制项目。",
             "This repository doesn't have any projects yet": "该仓库目前没有任何项目",
             "Create a project": "创建一个项目",
             "Provide quick access to relevant projects.":"为相关项目提供便捷访问",
@@ -28224,7 +28224,7 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             "Make a copy of this project.": "复制此项目",
             "Danger zone": "危险区",
             "This project is currently private.": "此项目当前为私有.",
-            "Closing a project will disable its workflows & remove it from the list of open projects.": "关闭项目将禁用其工作流程，并将其从打开项目列表中删除.",
+            "Closing a project will disable its workflows & remove it from the list of open projects.": "关闭项目将禁用其工作流，并将其从打开项目列表中删除.",
             "Close this project": "关闭此项目",
             "Manage access": "管理访问权限",
             "Who has access": "谁有访问权限",
@@ -28929,7 +28929,7 @@ I18N["zh-CN"]["status"] = { // GitHub Status
             "Pull Requests": "拉取请求",
                 "Requests for Pull Requests on GitHub.com": "GitHub.com 上的拉取请求",
             // 操作
-                "Workflows, Compute and Orchestration for GitHub Actions": "GitHub 操作的工作流、计算和协调",
+                "Workflows, Compute and Orchestration for GitHub Actions": "GitHub Actions 的工作流、计算和协调",
             // 软件包
                 "API requests and webhook delivery for GitHub Packages": "GitHub 软件包的 API 请求和 Web 钩子发送",
             // Github Pages
@@ -28964,7 +28964,7 @@ I18N["zh-CN"]["status"] = { // GitHub Status
             "Incident with Pull Requests": "拉取请求事故",
             "Incident with Git Operations": "Git 操作事故",
             "Incident with API Requests": "API 请求事故",
-            "Incident with Actions": "操作事故",
+            "Incident with Actions": "Actions 事故",
             "Incident with Pages": "Pages 事故",
             "Incident with Webhooks": "Web 钩子事故",
             "We are investigating reports of degraded performance.": "我们正在调查性能下降的报告。",
@@ -29030,19 +29030,19 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                     "Develop code using GitHub Codespaces and Visual Studio Code.": "使用 GitHub 代码空间和 Visual Studio Code 开发代码。",
                 "Code with Copilot": "使用 Copilot 编程",
                     "Develop with AI-powered code suggestions using GitHub Copilot, Codespaces, and VS Code.": "使用 GitHub Copilot、代码空间和 VS Code，利用人工智能驱动的代码建议进行开发。",
-            "Automate workflows with GitHub Actions": "使用 GitHub 操作自动执行工作流程",
-                "Hello GitHub Actions": "您好 GitHub 操作",
-                    "Create a GitHub Action and use it in a workflow.": "创建 GitHub 操作并在工作流程中使用。",
-                "Test with Actions": "使用操作测试",
-                    "Create workflows that enable you to use Continuous Integration (CI) for your projects.": "创建工作流程，使您能够在项目中使用持续集成 (CI)。",
+            "Automate workflows with GitHub Actions": "使用 GitHub Actions 自动执行工作流",
+                "Hello GitHub Actions": "您好 GitHub Actions",
+                    "Create a GitHub Action and use it in a workflow.": "创建 GitHub 操作并在工作流中使用。",
+                "Test with Actions": "使用 Actions 测试",
+                    "Create workflows that enable you to use Continuous Integration (CI) for your projects.": "创建工作流，使您能够在项目中使用持续集成 (CI)。",
                 "Publish packages": "发布软件包",
-                    "Use GitHub Actions to publish your project to a Docker image.": "使用 GitHub 操作将项目发布为 Docker 镜像。",
+                    "Use GitHub Actions to publish your project to a Docker image.": "使用 GitHub Actions 将项目发布为 Docker 镜像。",
                 "Deploy to Azure": "部署到 Azure",
-                    "Create a deployment workflow using GitHub Actions and Microsoft Azure.": "使用 GitHub 操作和 Microsoft Azure 创建部署工作流程。",
+                    "Create a deployment workflow using GitHub Actions and Microsoft Azure.": "使用 GitHub Actions 和 Microsoft Azure 创建部署工作流。",
                 "Write JavaScript actions": "编写 JavaScript 操作",
                    "Write your own GitHub JavaScript Action.": "编写自己的 GitHub JavaScript 操作。",
-                "Reusable workflows": "可重复使用的工作流程",
-                    "Make a workflow reusable in other workflows.": "让一个工作流程可在其他工作流程中重复使用。",
+                "Reusable workflows": "可重复使用的工作流",
+                    "Make a workflow reusable in other workflows.": "让一个工作流可在其他工作流中重复使用。",
             "Code security and analysis": "代码安全和分析",
                 "Secure your repository supply chain": "确保您的仓库供应链安全",
                     "Secure your supply chain, patch dependency vulnerabilities.": "确保供应链安全，修补依赖性漏洞。",
@@ -29063,14 +29063,14 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
 
         // 快速入门指南 https://skills.github.com/quickstart
         "GitHub Skills Quickstart Guide": "GitHub 技能快速入门指南",
-            "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub 操作驱动的课程。",
-            "This guide covers planning your course, building your course, and best practices for GitHub Actions-powered courses.": "本指南包括规划课程、构建课程以及由 GitHub 操作驱动的课程的最佳实践。",
+            "Build your own GitHub Actions-powered courses in a few simple steps.": "只需几个简单的步骤，就能构建自己的由 GitHub Actions 驱动的课程。",
+            "This guide covers planning your course, building your course, and best practices for GitHub Actions-powered courses.": "本指南包括规划课程、构建课程以及由 GitHub Actions 驱动的课程的最佳实践。",
             "Take a look at our": "查看我们的",
             "courses for examples and templates.": "课程，了解示例和模板。",
         "Table of contents": "目录",
         "Author prerequisites": "作者必备条件",
             "Course authors should be familiar with": "课程作者在开始制作自己的课程之前，应熟悉",
-            "GitHub Actions": "GitHub 操作",
+            "GitHub Actions": "GitHub Actions",
             "before starting to make their own courses.": "。",
             "Some courses will require knowledge of": "部分课程需要了解",
             "command line": "命令行",
@@ -29081,7 +29081,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                     "How can the learner use this project after they finish the course?": "完成课程后，学员如何使用该项目？",
                 "What specific skill does the learner leave your course with?": "学员在结束课程后能掌握哪些具体技能？",
                     "Focus on what the learner will be able to do after they complete the course.": "重点是学员在完成课程后能够做什么。",
-                "Is an Actions-based course right for your goal?": "基于操作的课程适合您的目标吗？",
+                "Is an Actions-based course right for your goal?": "基于 Actions 的课程适合您的目标吗？",
                     "Does the learning experience benefit from step-by-step, in-repository learning?": "学习体验是否得益于循序渐进的库内学习？",
             "Outline your steps": "概述步骤",
                 "Does this workflow match what the learner will do in the “real world”?": "这一工作流程是否与学员在“真实世界”中要做的事情相匹配？",
@@ -29094,13 +29094,13 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "Does the order of the steps build the learner’s knowledge in each step?": "步骤的顺序是否有助于学员掌握每个步骤的知识？",
                     "Each step should reference and build on the knowledge in the previous steps.": "每个步骤都应参考和借鉴前几个步骤的知识。",
                 "Does each step relate to the main learning goal?": "每个步骤都与主要学习目标相关吗？",
-                    "You can use GitHub Actions and GitHub CLI to automate any needed steps that don’t build towards the learning goal.": "您可以使用 GitHub 操作和 GitHub CLI 自动执行任何不需要的步骤，以实现学习目标。",
+                    "You can use GitHub Actions and GitHub CLI to automate any needed steps that don’t build towards the learning goal.": "您可以使用 GitHub Actions 和 GitHub CLI 自动执行任何不需要的步骤，以实现学习目标。",
         "Set up your repository": "设置仓库",
             "Start by clicking “Use this template” on our": "点击 “使用此模板” 开始。",
                 "course template": "课程模板",
             "Check the box for “Template repository” either when setting up your repository, or": "在创建仓库时或在",
                 "in the repository settings": "仓库设置",
-                "afterwards. Actions": "中勾选 “模板版本库” 复选框。复刻仓库中操作",
+                "afterwards. Actions": "中勾选 “模板版本库” 复选框。复刻仓库中 Actions",
                 "are not enabled by default": "默认不启用",
                 "in forks.": "。",
             "Add a 1280×640 social image. Learners will share your course on different websites that will pull in the social image.": "添加一张 1280×640 的社交图片。学员将在不同网站上分享您的课程，而这些网站将调入社交图片。",
@@ -29117,7 +29117,7 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "in the": "包含于",
                 "repository topics": "仓库主题内",
         "Writing your README": "编写自述文件",
-            "Your README file will have a few sections: a header, a start step, three to five workflow steps, a finish step, and a footer.": "README 文件将包含几个部分：页眉、开始步骤、三到五个工作流程步骤、结束步骤和页脚。",
+            "Your README file will have a few sections: a header, a start step, three to five workflow steps, a finish step, and a footer.": "README 文件将包含几个部分：页眉、开始步骤、三到五个工作流步骤、结束步骤和页脚。",
             "The raw source of the README in": " ",
                 "includes many comments you can use to guide the development of your course’s README file.": "中的 README 源码包含了许多注释，您可以用来指导课程 README 文件的开发。",
             "Writing your README: Header": "编写自述文件：页眉",
@@ -29152,52 +29152,52 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "Invite feedback about the course": "邀请学习者对课程提出反馈",
             "Writing your README: Footer": "编写自述文件：页脚",
                 "Include a link for how learners should get help if they get stuck or have further questions": "如果学习者遇到困难或有进一步的问题，可通过链接了解如何获得帮助",
-                "Include a link to the GitHub status page. If GitHub Actions is down, the course won’t work.": "包含指向 GitHub 状态页面的链接。如果 GitHub 操作崩溃，课程将无法运行。",
+                "Include a link to the GitHub status page. If GitHub Actions is down, the course won’t work.": "包含指向 GitHub 状态页面的链接。如果 GitHub Actions 崩溃，课程将无法运行。",
                 "Include copyright information and a link to the license": "包含版权信息和许可证链接",
                 "Include Code of Conduct and other contributing information": "包含行为准则和其他有效信息",
                 "The footer should not be included in the finish section. The footer should appear regardless of which step the learner is currently on.": "结束部分不应包含页脚。无论学员当前处于哪个步骤，都应显示页脚。",
-        "Writing your Actions workflow files": "编写操作工作流程文件",
-            "Writing your Actions workflow files: Connect your steps to GitHub Actions events": "编写操作工作流程文件：将步骤连接到 GitHub 操作事件",
+        "Writing your Actions workflow files": "编写 Actions 工作流文件",
+            "Writing your Actions workflow files: Connect your steps to GitHub Actions events": "编写 Actions 工作流文件：将步骤连接到 GitHub Actions 事件",
                "Every step will have an Actions workflow file that triggers on": "每个步骤都会有一个根据",
-               "GitHub Actions events": "GitHub 操作事件",
-               ". Start by reviewing which event corresponds with each of your steps.": "触发的操作工作流文件。首先查看每个步骤对应的事件。", // GitHub Actions 应该保持原文吧？
-            "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "编写操作工作流程文件：确定 GitHub 操作在每个步骤中需要做的事情",
-                "You can use": "您可以在操作工作流中使用",
+               "GitHub Actions events": "GitHub Actions 事件",
+               ". Start by reviewing which event corresponds with each of your steps.": "触发的 Actions 工作流文件。首先查看每个步骤对应的事件。", // GitHub Actions 应该保持原文吧？
+            "Writing your Actions workflow files: Identify what GitHub Actions will need to do in each step": "编写 Actions 工作流文件：确定 GitHub Actions 在每个步骤中需要做的事情",
+                "You can use": "您可以在 Actions 工作流中使用",
                 "in your Actions workflows to perform almost any GitHub interaction you can think of. Write down everything each step will need to do to complete the step. Store links for reference as your work on your course.": "来执行您能想到的几乎所有 GitHub 交互操作。写下完成每个步骤需要做的所有事情。存储链接，以便在学习课程时参考。",
-            "Writing your Actions workflow files: Sections of the workflow file": "编写操作工作流程文件： 工作流程文件的各部分",
+            "Writing your Actions workflow files: Sections of the workflow file": "编写 Actions 工作流文件： 工作流文件的各部分",
                 "Take a look at": "查看",
-                "for example workflow files.": "中的工作流程示例文件。",
-                "Each workflow file has the name format:": "每个工作流程文件的名称格式为",
+                "for example workflow files.": "中的工作流示例文件。",
+                "Each workflow file has the name format:": "每个工作流文件的名称格式为",
                 ", where": "其中",
                 "is the step number and": "是步骤编号，",
                 "describes the step. We recommend this format to make it easy to see the order the steps will run in.": "描述步骤。我们推荐使用这种格式，以便于查看各步骤的运行顺序。",
-                "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流程文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
+                "Each workflow file will have a few sections, the name, describing comments, event trigger, job header, and steps.": "每个工作流文件都有几个部分：名称、描述注释、事件触发器、任务标题和步骤。",
                 "The first section is the": "第一部分为",
                 "name": "名称",
                 "Next, add": "接下来，添加",
                 "comments describing": "注释",
-                "what the Actions workflow will do:": "，说明操作工作流要做什么：",
+                "what the Actions workflow will do:": "，说明 Actions 工作流要做什么：",
                 "Followed by the": "随后是",
                 "event trigger": "事件触发器",
                 "Next is the": "接下来是",
                 "job header": "任务标题",
                 ". You can add": "。您可以在这里添加",
                 "tags to limit the scope of the event trigger here. You’ll also need to specify": "标签来限制事件触发的范围。您还需要指定",
-                "to get your Actions workflow running.": "，以运行操作工作流。",
-                "Last, we are finally in the": "最后，我们终于进入了操作工作流的",
+                "to get your Actions workflow running.": "，以运行 Actions 工作流。",
+                "Last, we are finally in the": "最后，我们终于进入了 Actions 工作流的",
                 "steps": "步骤",
                 "of the Actions workflow. This is the heart of the file, where you can customize your course the most.": "。这是文件的核心部分，在这里您可以对课程进行最大程度的自定义。",
                 "You may include the": "您可以在课程中包含",
                 "update step action": "更新步骤操作",
                 "in your course, however it is not fully required. You may also customize this script to meet the needs of your course.": "，但并非完全必需。您也可以自定义此脚本，以满足课程的需要。",
-                "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流程文件中包含详尽的注释，以描述每个部分。其他作者和未来的自己都会感谢您。",
+                "Include thorough comments in your workflow files to describe each section. Other authors and your future self will thank you later.": "在您的工作流文件中包含详尽的注释，以描述每个部分。其他作者和未来的自己都会感谢您。",
         "Testing and monitoring your course": "测试和监控课程",
             "Click on “Use this template” and run through your course on a your personal account. Does everything work? Do any actions go red?": "点击 “使用此模板”，然后在个人账户上运行课程。一切正常吗？是否有任何操作变红？",
             "Consider asking for both technical and content review.": "考虑要求进行技术审查和内容审查。",
             "Test your course with a potential learner.": "与潜在学员一起测试课程。",
             "Check in our your course regularly for any reported issues or out-of-date information.": "定期检查您的课程，查看是否有任何报告的问题或过时的信息。",
         "Best practices for building courses": "构建课程的最佳做法",
-            "Not everyone reads docs! Many potential course authors will use your course as an example. Make sure to include lots of comments in your README and Actions workflow files.": "不是每个人都会阅读文档！许多潜在的课程作者会将您的课程作为范例。请确保在您的 README 和操作工作流程文件中包含大量注释。",
+            "Not everyone reads docs! Many potential course authors will use your course as an example. Make sure to include lots of comments in your README and Actions workflow files.": "不是每个人都会阅读文档！许多潜在的课程作者会将您的课程作为范例。请确保在您的 README 和 Actions 工作流文件中包含大量注释。",
             "Keep everything you need in the one course repository.": "将您需要的一切都保存在一个课程仓库内。",
             "If you need your courses to have limited access, create an organization for your courses, make your courses private, and invite the specific users that need these courses to your organization.": "如果您需要限制课程的访问权限，请为您的课程创建一个组织，将您的课程设为私人课程，并邀请需要这些课程的特定用户加入您的组织。",
             "Consider adding a Code of Conduct, contributing guide, and issue templates.": "考虑添加行为准则、贡献指南和议题模板。",
@@ -29214,13 +29214,13 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
                 "Provide examples and templates to reduce how much work the learner needs to do to complete the step.": "提供示例和模板，以减少学员完成该步骤所需的工作量。",
                 "Follow the": "遵循",
                 "GitHub docs content style guide": "GitHub 文档内容风格指南",
-            "Actions workflows": "操作工作流程",
-                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在课程中做任何 GitHub 操作能做的事。查看", // GitHub Actions 应该保持原文吧？
-                "GitHub Actions docs": "GitHub 操作文档",
+            "Actions workflows": "Actions 工作流",
+                "You can do anything in your course that GitHub Actions can do. Review the": "您可以在课程中做任何 GitHub Actions 能做的事。查看", // GitHub Actions 应该保持原文吧？
+                "GitHub Actions docs": "GitHub Actions 文档",
                 "and some": "和一些",
-                "examples of GitHub Actions": "GitHub 操作示例",
+                "examples of GitHub Actions": "GitHub Actions 示例",
                 "to get a feel for what all actions can do.": "，了解所有操作的功能。",
-                "If you are building a course for your own organization, you can add your own analytics or learning management system integration as part of the Actions workflows.": "如果您正在为自己的组织构建课程，您可以添加自己的分析或学习管理系统集成，作为操作工作流的一部分。",
+                "If you are building a course for your own organization, you can add your own analytics or learning management system integration as part of the Actions workflows.": "如果您正在为自己的组织构建课程，您可以添加自己的分析或学习管理系统集成，作为 Actions 工作流的一部分。",
             "Sharing your course": "分享您的课程",
                 "Your course only matters if potential learners know about it. Where can you link to your course? If public, is social media an option?": "只有当潜在学员知道您的课程时，您的课程才有意义。在哪里可以链接到您的课程？如果是公开的，是否可以选择社交媒体？",
                 "Make sure your course includes keywords and text that someone would search for in Google and other search engines.": "确保您的课程中包含有人会在 Google 和其他搜索引擎中搜索的关键字和文本。",
@@ -29358,7 +29358,7 @@ I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看�
 
         // 无数据
             "No table data available yet.": "还没有数据。",
-                "You don't have workflows on any of your organization repositories.": "您的任何组织仓库中都没有工作流程。",
+                "You don't have workflows on any of your organization repositories.": "您的任何组织仓库中都没有工作流。",
             "Get started with GitHub Actions": "快速开始",
 
         // 工作流条目
@@ -29413,7 +29413,7 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = {
     ],
     "title": {
         "static": {
-            "Actions usage metrics": "操作使用情况",
+            "Actions usage metrics": "Actions 使用情况",
         },
     },
 };
@@ -29453,7 +29453,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
                 "last year": "最近一年",
                 "custom": "自定义时间段",
             };
-            return periodKey[period] + '该仓库所有工作流程的' + typeKey[type];
+            return periodKey[period] + '该仓库所有工作流的' + typeKey[type];
         }],
         [/(\d+)h (\d+)m (\d+)s/, "$1时$2分$3秒"],
         [/(\d+)m (\d+)s/, "$1分$2秒"],
@@ -29461,7 +29461,7 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
     ],
     "title": {
         "static": {
-            "Actions performance metrics": "操作数据看板",
+            "Actions performance metrics": "Actions 数据看板",
         },
     },
 };
@@ -29510,6 +29510,7 @@ I18N["zh-CN"]["copilot"] = {
 
         // 中间
             "Ask": "询问",
+            "Agent": "智能体",
             "Debug": "调试",
             "Optimized for:": "优化方向：",
                 "Efficiency": "效率",
@@ -29544,11 +29545,11 @@ I18N["zh-CN"]["copilot"] = {
             "Bad response": "点踩",
             "Retry with…": "重试…",
 
-            "View message token usage": "查看此消息词元消耗",
-                "Message token usage": "此消息词元消耗",
+            "View message token usage": "查看此消息 Token 消耗",
+                "Message token usage": "此消息 Token 消耗",
                     "Input:": "输入：",
                     "Output:": "输出：",
-                    "tokens": "词元",
+                    "tokens": "Token",
 
             "Scroll to bottom": "滚动至底部",
 
