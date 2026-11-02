@@ -349,6 +349,44 @@
     /* =========================== 页面类型检测 =========================== */
 
     /**
+     * Turbo 导航会暂时拿掉 analytics-location。
+     * 仅在元数据缺失或无法识别时按路径回退，已有元数据仍优先。
+     * 全局路由按完整首段排除，避免没有结尾锚点的 rePagePath 把 settings-tools 当成 settings。
+     */
+    function isFallbackRepositoryPath(pathname) {
+        // 与 rePagePath 的全局首段一致，并包含组织页别名 organizations。
+        const reservedRoots = new Set([
+            'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
+            'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
+            'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
+            'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
+            'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
+            'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
+            'security', 'sitemap', 'education', 'mcp', 'users',
+        ]);
+        const segments = pathname.split('/');
+        if (segments.length < 3) return false;
+
+        const owner = segments[1];
+        const repo = segments[2];
+        function isSegment(segment) {
+            return /^[A-Za-z0-9._-]+$/.test(segment) && !/^\.+$/.test(segment);
+        }
+        if (!isSegment(owner) || !isSegment(repo)) return false;
+        if (reservedRoots.has(owner.toLowerCase())) return false;
+
+        const extra = segments.slice(3);
+        const isRoot = extra.length === 0 || (extra.length === 1 && extra[0] === '');
+        if (isRoot) {
+            // /<org>/enterprise_plan 与 /<org>/sponsoring 属于组织路径，不是仓库根路径
+            const repoName = repo.toLowerCase();
+            return repoName !== 'enterprise_plan' && repoName !== 'sponsoring';
+        }
+        if (extra.some(segment => segment === '' || segment === '.' || segment === '..')) return false;
+        return I18N.conf.rePagePathRepo.test(pathname);
+    }
+
+    /**
      * 检测当前页面类型
      * @returns {string|boolean} 页面类型或false（如果未识别）
      */
@@ -360,14 +398,17 @@
         // 基础配置
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
         const isLogin = document.body.classList.contains("logged-in");
-        const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
+        const metaLocation = (document.head.querySelector('meta[name="analytics-location"]')?.content || '').trim();
+        const metaUsable = /\/<(?:user-name|org-login)>/.test(metaLocation);
 
         // 页面特征检测
         const isSession = document.body.classList.contains("session-authentication");
         const isHomepage = pathname === '/' && site === 'github';
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
+        // 元数据优先；Turbo 暂时拿掉 analytics-location 时再按仓库路径回退
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
-            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content;
+            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content
+            || (!metaUsable && isFallbackRepositoryPath(pathname));
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
         let pageType;
