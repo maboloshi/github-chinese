@@ -40,7 +40,11 @@
         },
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站點類型
         DESC_SELECTORS: { // 簡介元素的CSS選擇器
-            repository: ".f4.tmp-my-3",
+            repository: [
+                ".f4.tmp-my-3", // 經典 UI
+                'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 目前 React UI：About 側欄內的描述
+            ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
         OBSERVER_CONFIG: { // MutationObserver配置
@@ -777,6 +781,12 @@
                 // 處理DOM變化
                 if (State.pageConfig) {
                     processMutations(mutations);
+
+                    // GitHub 會用 React 動態替換倉庫描述節點，舊按鈕隨節點一起遺失：重新掛載
+                    if (State.featureSet?.enable_transDesc) {
+                        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
+                        if (descSelector) transDesc(descSelector);
+                    }
                 }
             }, 'MutationObserver')
         );

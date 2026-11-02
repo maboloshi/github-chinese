@@ -40,7 +40,11 @@
         },
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
-            repository: ".f4.tmp-my-3",
+            repository: [
+                ".f4.tmp-my-3", // 经典 UI
+                'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 当前 React UI：About 侧栏内的描述
+            ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
         OBSERVER_CONFIG: { // MutationObserver配置
@@ -950,6 +954,12 @@
                 // 处理DOM变化
                 if (State.pageConfig) {
                     processMutations(mutations);
+
+                    // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
+                    if (State.featureSet?.enable_transDesc) {
+                        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
+                        if (descSelector) transDesc(descSelector);
+                    }
                 }
             }, 'MutationObserver')
         );
