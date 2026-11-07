@@ -2041,7 +2041,7 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
          * 1. 修复 Bug: 意外的扩大了匹配范围(不带前缀与后缀的时间) 干扰了带有相对时间的其他规则
          *  7 months
          */
-         [/^just now|^now|^last month|^yesterday|(?:(over|about|almost|in) |)(an?|\d+)(?: |)(second|minute|hour|day|month|year)s?( ago|)/, function (all, prefix, count, unit, suffix) {
+         [/^just now|^now|^last month|^yesterday|\b(?:(over|about|almost|in) |)(an?|\d+) ?(second|minute|hour|day|month|year)s?\b( ago\b|)/, function (all, prefix, count, unit, suffix, _offset, text) {
             if (all === 'now') {
                 return '现在';
             }
@@ -2053,6 +2053,10 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             }
             if (all === 'yesterday') {
                 return '昨天';
+            }
+            // 无 ago 或 in 的时长只匹配整个文本，避免误译 a second monitor 等短语。
+            if (!suffix && prefix !== 'in' && all !== text) {
+                return all;
             }
             if (count[0] === 'a') {
                 count = '1';
