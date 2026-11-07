@@ -21371,6 +21371,11 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Uh oh, we couldn't find anything": "呃，我们找不到任何东西",
             "Please make sure you entered the user code correctly.": "请确保您输入正确的用户代码。",
 
+        // 浏览器异常页面
+        "What‽": "怎么回事‽",
+        "Your browser did something unexpected. Please try again. If the error continues, try disabling all browser extensions.": "您的浏览器出现了意外状况。请重试。如果错误仍然存在，请尝试禁用所有浏览器扩展。",
+        "Please contact us if the problem persists.": "如果问题仍然存在，请联系我们。",
+
         // 设备验证 https://github.com/sessions/verified-device
             "Device verification": "设备验证",
             "Email": "电子邮件",
@@ -21753,6 +21758,7 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Confirm access": "授权访问",
             "Forgot your password?": "忘记您的密码了吗？",
             "Sign in to GitHub · GitHub": "登录 GitHub · GitHub",
+            "Oh no · GitHub": "糟糕 · GitHub",
         },
     },
 };
