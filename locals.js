@@ -21040,9 +21040,11 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
         "Explore the latest tools from Universe '25": "探索 Universe '25 的最新工具",
         "The future of building happens together": "构建未来的方式是共同创造",
         "Tools and trends evolve, but collaboration endures. With GitHub, developers, agents, and code come together on one platform.": "工具与趋势不断演变，但协作永恒。有 GitHub在，开发者、智能体与代码在同一个平台汇聚。",
+        "Software still starts": "软件，依然",
+        "with you": "始于你",
 
         //"Email address": "电子邮箱地址",
-        "Enter your email": "键入邮箱地址",
+        "Enter your email": "输入你的邮箱",
         "Sign up for GitHub": "注册 GitHub",
         "Download GitHub Copilot app": "下载 GitHub Copilot 应用",
         //"Start a free enterprise trial": "开始免费试用企业版",
@@ -21052,6 +21054,12 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
             "30 days free": "30天免费",
         "Free Enterprise trial": "免费试用企业版", // 已登录
         "Explore upcoming releases": "探索即将发布的产品", // 已登录
+
+        "Review changes": "审查更改",
+        "Direct the fix": "指导修复",
+        "Check the results": "检查结果",
+        "Approve and merge": "批准并合并",
+        "See it shipped": "见证发布",
 
         // 代码
             "Write, test, and fix code quickly with GitHub Copilot, from simple boilerplate to complex features.": "使用 GitHub Copilot 快速编写、测试和修复代码，从简单的样板代码到复杂功能都能胜任。",
@@ -21171,12 +21179,64 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "GitHub internal customer data, 2025.": "GitHub 内部客户数据，2025年。",
 
+        "GitHub Platform": "GitHub 平台",
+            "Repository hosting, code review, and collaboration": "仓库托管、代码审查与协作",
+            "AI coding agent for tasks, projects, and automated work": "用于任务、项目与自动化工作的 AI 编程智能体",
+            "See plans and pricing": "查看计划与定价",
+        
+        "More ways to use GitHub": "更多使用 GitHub 的方式",
+            "CI/CD and automation": "CI/CD 与自动化",
+                "Explore Actions": "探索 Actions",
+            "Quality analysis, fixes, and enforcement": "质量分析、修复与强制执行",
+                "Explore Code Quality": "探索代码质量",
+            "Code Security": "代码安全",
+                "Vulnerability detection and response": "漏洞检测与响应",
+            "Explore Code Security": "探索代码安全",
+            "Secret Protection": "机密保护",
+            "Secret scanning and leak prevention": "机密扫描与防泄露",
+            "Explore Secret Protection": "探索机密保护",
+            "Cloud development environments": "云开发环境",
+            "Explore Codespaces": "探索代码空间",
+
+        "Whatever you're building, you can build it on GitHub": "无论您在构建什么，都能在 GitHub 上实现",
+        "Start Enterprise free trial": "开始企业版免费试用",
+
+        "GitHub is one of the de facto tools that engineers want to use, and because of that, we don't have long, expensive onboarding periods or productivity gaps.": "GitHub 是工程师们想要使用的事实标准工具之一，正因为如此，我们无需经历漫长、昂贵的入职培训期，也不会出现生产力断层。",
+        "CTO, Coinbase": "Coinbase 首席技术官",
+        "public and open source repositories": "公共与开源仓库",
+        "of the Fortune 100 uses GitHub": "的财富 100 强企业都在使用 GitHub", 
+
+        "With the time savings Copilot unlocks, our developers are empowered to spend more time on the tasks they enjoy the most — creative-problem solving, innovative projects and experimentation.": "借助 Copilot 释放的时间红利，我们的开发者能够将更多时间花在他们最享受的任务上——创造性解决问题、创新项目和实验探索。",        "Head of AI Accelerator, Mercedes-Benz": "梅赛德斯-奔驰 AI 加速器负责人",
+
+        "GitHub has been critical to evolving our software development lifecycle. We now average about 4,000 commits daily, a speed that just wouldn’t have been possible otherwise.": "GitHub 对于演进我们的软件开发生命周期至关重要。我们现在平均每天约有 4,000 次提交，这种速度在其他情况下是不可能实现的。",
+        "Distinguished Engineer, Home Depot": "家得宝（Home Depot）杰出工程师",
+
+        "GitHub helps us build better solutions, faster. And in the end, it’s our clients who benefit.": "GitHub 帮助我们更快地构建更好的解决方案。最终，受益的是我们的客户。",
+        "Application architect, Accenture": "埃森哲（Accenture）应用架构师",
+
+        "With GitHub Copilot, our developers stay in the flow state and keep momentum instead of clawing through code libraries or documentation.": "借助 GitHub Copilot，我们的开发者能保持心流状态和动力，而不必费力地翻阅代码库或文档。",
+        "Engineering Director, Duolingo": "多邻国（Duolingo）工程总监",
+
+        "Next testimonial": "下一条评价",
+        "Previous testimonial": "上一条评价",
+
+        "Mercado Libre cuts coding time by 50%with GitHub Copilot": "Mercado Libre 借助 GitHub Copilot 将编码时间缩短了 50%",
+
+        "BUILT WITH GITHUB": "使用 GitHub 构建",
+        "Join the world's largest developer community": "加入全球最大的开发者社区",
+        "Every project adds something new to the community. Explore what developers are building across GitHub, then create an account and contribute your own.": "每个项目都为社区带来了新事物。探索开发者们在 GitHub 上的作品，然后创建一个账户并贡献您的一份力量。",
+
         // 底部栏
         "The developer newsletter": "开发者新闻通讯",
         "Subscribe to our developer newsletter": "订阅我们的开发者新闻",
         "Get tips, technical guides, and best practices. Twice a month.": "获取提示、技术指南和最佳实践。每月两次。",
         "Get tips, technical guides, and best practices. Twice a month. Right in your inbox.": "获取提示、技术指南和最佳实践。每月两次。直接发送到您的收件箱。",
         "Subscribe": "订阅",
+
+        "Products": "产品",
+        "Developers": "开发者",
+        "Support": "支持",
+        "Company": "公司",
 
         "Features": "功能",
         "Roadmap": "路线图",
@@ -21207,6 +21267,34 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
 
         "Sitemap": "网站地图",
         "What is Git?": "什么是 Git？",
+
+        "GitHub": "GitHub",
+        "Actions": "操作",
+        "Code Quality": "代码质量",
+        "Copilot": "GitHub Copilot",
+        "Codespaces": "代码空间",
+        "Code Security": "代码安全",
+        "Secret Protection": "机密保护",
+        "Pricing": "定价",
+        "Team": "团队",
+        "Resources": "资源",
+        "All Features": "所有功能",
+
+        "GitHub CLI": "GitHub CLI",
+        "Integrations": "集成",
+        "MCP Registry": "MCP 互联",
+        "Training": "培训",
+        "Build with Copilot": "使用 Copilot 构建",
+
+        "Docs": "文档",
+        "GitHub Status": "GitHub 状态",
+        "Contact GitHub": "联系 GitHub",
+
+        "About": "关于",
+        "Why GitHub": "为什么选择 GitHub",
+        "Customer Stories": "客户案例",
+        "Blog": "博客",
+        "Partners": "合作伙伴",
 
     },
     "regexp": [ // 正则翻译
