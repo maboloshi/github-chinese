@@ -12218,6 +12218,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Filter files…": "筛选文件…",
                 "Filter options": "选项",
                     "File extensions": "文件扩展名",
+                "Open diff view settings": "打开差异视图设置",
+                "Open overview panel": "打开概况面板",
+                "Open comments panel": "打开评论面板",
+                "Open Copilot panel": "打开 Copilot 面板",
 
                 "Layout": "结构",
                 "Whitespace changes": "空白字符更改",
