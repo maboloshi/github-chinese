@@ -11247,6 +11247,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
             "Review requests": "审查请求",
             "Involves me": "涉及我",
             "Assigned to me": "分配给我",
+            "Stacks": "拉取请求堆栈",
             // 欢迎信息
             "Welcome to pull requests!": "欢迎使用拉取请求！",
             "Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should": "拉取请求可帮助您与其他人协作处理代码。创建拉取请求后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
