@@ -19818,6 +19818,8 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
             "Allow automations": "允许自动化",
                 "Let users with write access create automations that run on a schedule or in response to events.": "允许具有写入权限的用户创建按计划或由事件触发的自动化。",
                 "When enabled, users with write access can create automations that automatically run agents on a schedule or in response to events like new issues or updated pull requests.": "启用后，具有写入权限的用户可以创建自动化，按计划或在新建议题、更新拉取请求等事件发生时自动运行智能体。",
+            "Allow shared automations": "允许共享自动化",
+                "Shared automations belong to the repository and run as its owner, so their usage is billed to the owner. When disabled, shared automations are hidden and the owner isn't billed for them.": "共享自动化属于仓库，代表仓库所有者运行，使用费用由仓库所有者承担。关闭此设置后，共享自动化将被隐藏，仓库所有者无需为其付费。",
             "Only allow automations to be triggered by users with write access": "仅允许具有写入权限的用户触发自动化",
                 "When enabled, automations will only run if the user triggering the event has write access to the repository. When disabled, users can create automations that listen for events triggered by users without write access.": "启用后，只有触发事件的用户具有仓库写入权限时才会运行自动化。禁用后，用户可以创建监听无写入权限用户所触发事件的自动化。",
                 "Allowing automations to be triggered by users without write access to the repository increases risk of prompt injection attacks, where an untrusted user can cause an agent to take actions in the repository using the agent's permissions.": "允许没有仓库写入权限的用户触发自动化，会增加提示词注入攻击的风险：不受信任的用户可能诱使智能体利用其自身权限在仓库中执行操作。",
