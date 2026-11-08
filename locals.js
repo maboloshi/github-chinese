@@ -19823,6 +19823,8 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
             "Only allow automations to be triggered by users with write access": "仅允许具有写入权限的用户触发自动化",
                 "When enabled, automations will only run if the user triggering the event has write access to the repository. When disabled, users can create automations that listen for events triggered by users without write access.": "启用后，只有触发事件的用户具有仓库写入权限时才会运行自动化。禁用后，用户可以创建监听无写入权限用户所触发事件的自动化。",
                 "Allowing automations to be triggered by users without write access to the repository increases risk of prompt injection attacks, where an untrusted user can cause an agent to take actions in the repository using the agent's permissions.": "允许没有仓库写入权限的用户触发自动化，会增加提示词注入攻击的风险：不受信任的用户可能诱使智能体利用其自身权限在仓库中执行操作。",
+            "Require write access to trigger automations": "仅允许具有写入权限的用户触发自动化",
+                "Automations only run for events from users with write access.": "只有在事件由具有写入权限的用户触发时，自动化才会响应该事件。",
             "Limit automation writes to the triggering resource": "将自动化写入限制为触发它的资源",
                 "When enabled, automation runs can only change the issue, pull request, or discussion that triggered them, and anything they create. This does not apply to scheduled runs, security alert runs, or runs started by another automation.": "启用后，自动化运行只能修改触发它的议题、拉取请求或讨论，以及它创建的内容。此限制不适用于计划运行、安全警报触发的运行或由其他自动化启动的运行。",
             "Require approval for workflow runs": "要求审批工作流运行",
