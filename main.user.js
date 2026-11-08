@@ -422,21 +422,25 @@
     /* =========================== 页面类型检测 =========================== */
 
     /**
+     * 全局路由保留首段（与 rePagePath 的全局首段一致，并包含组织页别名 organizations）。
+     * 这些首段是站点固定路径，不可能是账号名 / 组织名。
+     */
+    const RESERVED_ROOTS = new Set([
+        'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
+        'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
+        'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
+        'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
+        'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
+        'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
+        'security', 'sitemap', 'education', 'mcp', 'users',
+    ]);
+
+    /**
      * Turbo 导航会暂时拿掉 analytics-location。
      * 仅在元数据缺失或无法识别时按路径回退，已有元数据仍优先。
      * 全局路由按完整首段排除，避免没有结尾锚点的 rePagePath 把 settings-tools 当成 settings。
      */
     function isFallbackRepositoryPath(pathname) {
-        // 与 rePagePath 的全局首段一致，并包含组织页别名 organizations。
-        const reservedRoots = new Set([
-            'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
-            'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
-            'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
-            'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
-            'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
-            'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
-            'security', 'sitemap', 'education', 'mcp', 'users',
-        ]);
         const segments = pathname.split('/');
         if (segments.length < 3) return false;
 
@@ -446,7 +450,7 @@
             return /^[A-Za-z0-9._-]+$/.test(segment) && !/^\.+$/.test(segment);
         }
         if (!isSegment(owner) || !isSegment(repo)) return false;
-        if (reservedRoots.has(owner.toLowerCase())) return false;
+        if (RESERVED_ROOTS.has(owner.toLowerCase())) return false;
 
         const extra = segments.slice(3);
         const isRoot = extra.length === 0 || (extra.length === 1 && extra[0] === '');
@@ -681,6 +685,9 @@
         if (segments[0] === 'orgs' || segments[0] === 'organizations') {
             return !!segments[1] && linkPath === `/${segments[1]}`;
         }
+        // 只有「/首段」是账号名时首项才是标识符；notifications / settings / marketplace
+        // 这类保留路径的首段是固定路由，面包屑里的对应项是界面文案，不能拒翻。
+        if (RESERVED_ROOTS.has(segments[0])) return false;
         return linkPath === `/${segments[0]}`;
     }
 

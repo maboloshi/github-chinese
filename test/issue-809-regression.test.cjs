@@ -40,6 +40,15 @@ function extractConfig() {
     return source.slice(start, end + '\n    };'.length);
 }
 
+/** 顶层常量（如 RESERVED_ROOTS）不属于任何函数，抽取函数时要一并带上。 */
+function extractConst(name) {
+    const start = source.indexOf(`    const ${name} = `);
+    assert.notEqual(start, -1, `${name} should exist`);
+    const end = source.indexOf('\n    ]);', start);
+    assert.notEqual(end, -1, `could not extract ${name}`);
+    return source.slice(start, end + '\n    ]);'.length);
+}
+
 function createEnvironment() {
     const state = {
         href: 'https://github.com/settings/profile',
@@ -99,6 +108,7 @@ function loadDetector() {
     });
     vm.runInContext(`
 ${extractConfig()}
+${extractConst('RESERVED_ROOTS')}
 ${extractFunction('isFallbackRepositoryPath')}
 ${extractFunction('detectPageType')}
 globalThis.__detect = detectPageType;
