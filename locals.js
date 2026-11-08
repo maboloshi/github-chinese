@@ -11372,6 +11372,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Unable to merge": "无法合并",
             "Ready to merge": "可供合并",
                 "Merge status": "合并状态",
+                "Merge info": "合并信息",
                 "What's new": "新内容",
                 "Close merge status": "关闭",
             "Merge conflicts": "合并冲突",
