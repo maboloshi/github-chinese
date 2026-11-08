@@ -88,7 +88,7 @@ const expectedReactNavLabels = {
             "Marketplace": "市场",
             "Sponsors": "赞助者",
             "Organizations": "组织",
-            "Enterprises": "企业版",
+            "Enterprises": "企业",
             "Billing": "账单",
             "Copilot": "GitHub Copilot",
         },
