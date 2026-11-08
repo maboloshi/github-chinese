@@ -200,24 +200,34 @@ for (const options of [{ urlchange: true }, { urlchange: false }, { urlchange: t
     });
 }
 
-test(`${fileName}: pageshow 恢复同一 URL 会重翻，纯锚点历史保持空闲`, () => {
+test(`${fileName}: bfcache 原样恢复不重翻，观察器仍在工作；纯锚点历史保持空闲`, () => {
     const runtime = loadRuntime(fileName);
     const count = runtime.walks.length;
-    runtime.window.dispatch('pageshow', { persisted: false });
+    const observer = runtime.context.State.mutationObserver;
+
+    // bfcache：文档、观察器、译文都原样还原，没有任何事要做
+    runtime.window.dispatch('pageshow', { persisted: true });
     runtime.flush();
+    assert.equal(runtime.walks.length, count);
+    assert.equal(runtime.context.State.mutationObserver, observer);
+
+    // 恢复后 React 若再改 DOM，活着的观察器仍然接得住
+    runtime.document.body.text.data = 'restored english';
+    runtime.mutate();
+    assert.equal(runtime.document.body.text.data, 'translated:repository');
+
+    // 纯锚点变化不重翻
     runtime.navigate(`${repository}#readme`);
     runtime.window.dispatch('popstate');
     runtime.flush();
     assert.equal(runtime.walks.length, count);
     assert.equal(runtime.context.State.currentURL, runtime.window.location.href);
-    for (const replace of [false, true]) {
-        if (replace) runtime.document.body = body();
-        runtime.document.body.text.data = 'restored';
-        runtime.window.dispatch('pageshow', { persisted: true });
-        runtime.window.dispatch('popstate');
-        runtime.flush();
-        assertObserved(runtime, runtime.document.body, 'repository');
-    }
+
+    // 同 body、换路由：按新路由重翻
+    runtime.navigate(issues);
+    runtime.window.dispatch('popstate');
+    runtime.flush();
+    assertObserved(runtime, runtime.document.body, 'repository/issues');
     assert.equal(runtime.work.menus, 1);
 });
 
@@ -261,7 +271,8 @@ test(`${fileName}: 连续历史操作只按最终目的地做一次，且不累�
         runtime.document.dispatch('turbo:load');
     }
     assertObserved(runtime, finalBody, 'repository');
-    for (const type of ['popstate', 'pageshow']) assert.equal(runtime.window.listeners.get(type).length, 1);
+    for (const type of ['popstate']) assert.equal(runtime.window.listeners.get(type).length, 1);
+    assert.equal(runtime.window.listeners.get('pageshow'), undefined, 'bfcache 原样恢复不需要监听');
     for (const type of ['turbo:render', 'turbo:load']) assert.equal(runtime.document.listeners.get(type).length, 1);
     assert.equal(runtime.work.menus, 1);
 });

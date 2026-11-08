@@ -234,24 +234,20 @@
      * Tampermonkey 环境使用 onurlchange 事件，其他环境回退到 MutationObserver URL 检测
      */
     function setupUrlChangeListener() {
-        // 合并历史事件，在当前事件结束后读取最终的 URL 和 body
+        // 合并同一轮历史事件，在当前事件结束后读取最终的 URL 与 body
         let historyTimer = null;
-        let restorePending = false;
-        function scheduleHistoryRefresh(event) {
-            restorePending ||= event.type === 'pageshow' && event.persisted;
+        function scheduleHistoryRefresh() {
             if (historyTimer !== null) clearTimeout(historyTimer);
             historyTimer = setTimeout(() => {
                 historyTimer = null;
-                const force = restorePending;
-                restorePending = false;
-                handleUrlChange(force);
+                handleUrlChange();
             }, 0);
         }
 
+        // 只处理同文档历史（Turbo/SPA 的 pushState 回退）。
+        // bfcache 的跨文档恢复不触发 popstate，而且 DOM 与观察器都原样还原，
+        // 缓存里的文字已经是译文——不需要也不应该再全量重翻，故不监听 pageshow。
         window.addEventListener('popstate', scheduleHistoryRefresh);
-        window.addEventListener('pageshow', event => {
-            if (event.persisted) scheduleHistoryRefresh(event);
-        });
 
         // Tampermonkey 环境下 window.onurlchange 为 null（支持），其他环境为 undefined
         if (State.featureSet.enable_onurlchange && window.onurlchange === null) {
@@ -272,12 +268,14 @@
     /**
      * 处理URL变化
      */
-    function handleUrlChange(force = false) {
+    function handleUrlChange() {
         const currentURL = window.location.href;
         const sameRoute = currentURL.split('#')[0] === State.currentURL.split('#')[0];
 
-        // 仅锚点变化且 body 未更换时，无需重新遍历
-        if (!force && sameRoute && document.body === State.observedBody) {
+        // 同一路由且 body 未更换（含 bfcache 原样恢复）：译文与观察器都还在，直接返回。
+        // 判断依据不是「有没有缓存」，而是 body 是否还是我们观察的那一个：
+        // Turbo 的快照恢复会替换 body（cloneNode 丢弃监听器），那种才需要重新遍历与挂载。
+        if (sameRoute && document.body === State.observedBody) {
             State.currentURL = currentURL;
             return;
         }
