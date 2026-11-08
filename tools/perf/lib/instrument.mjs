@@ -10,6 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { splitDictionaryTopLevel } from './split-dictionary.mjs';
 
 /** 仓库根目录（由本文件位置推出，不受调用方 cwd 影响）。 */
 export const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
@@ -252,7 +253,9 @@ export function readScripts(root = repoRoot, mainPath = null) {
  */
 export async function installHarness(session, { root = repoRoot, mainPath = null } = {}) {
     const { locals, main } = readScripts(root, mainPath);
-    const sources = [INSTRUMENT, SHIMS, locals, buildBootstrap(main)];
+    // 词库已到 2MB 量级，单条登记会让浏览器迟迟不回包（实测 30s 超时）；
+    // GitHub 的 CSP 又不许 eval，只能按顶层语句边界切段逐条登记。
+    const sources = [INSTRUMENT, SHIMS, ...splitDictionaryTopLevel(locals), buildBootstrap(main)];
     const identifiers = [];
     for (const source of sources) {
         const { identifier } = await session.send('Page.addScriptToEvaluateOnNewDocument', { source });

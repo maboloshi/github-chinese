@@ -69,6 +69,10 @@ bench 开始前会关掉调试浏览器里多余的标签页——插桩只存�
 **测量纪律**：基准台注入的是**仓库里的 `main.user.js` 与 `locals.js`**，不是 Tampermonkey 里已发布的版本。
 改完脚本直接重跑即可，不需要重新打包、也不需要动浏览器里的插件。
 
+**注入约束**：`locals.js` 已有 2MB 量级，单条 `Page.addScriptToEvaluateOnNewDocument` 会让浏览器
+迟迟不回包（实测 30s 超时）；而 GitHub 的 CSP 又不允许 `eval`。所以 `lib/instrument.mjs` 用
+`lib/split-dictionary.mjs` 按顶层语句边界把词库切段、逐条登记。改注入逻辑时别退回一次性注入。
+
 ## 指标口径
 
 全部来自 [`lib/instrument.mjs`](lib/instrument.mjs) 对原生原型的包装，`bench` 与各 probe/stress 脚本共用同一套：
@@ -118,10 +122,6 @@ node tools\perf\smoke-single-pipeline.mjs https://github.com/community/community
 它自起 headless Edge，逐个页面检查：header 存在、导航出现中文、搜索控件无中文、面包屑里的
 账号名/仓库名未被翻译、无未捕获错误、`removeChildErrors=0`，并打印 `cjkTextWrites`/`revertWrites`。
 
-**注入约束**：`locals.js` 有 2MB，单条 `Page.addScriptToEvaluateOnNewDocument` 会让浏览器
-迟迟不回包（实测 30s 超时）；而 GitHub 的 CSP 又不允许 `eval`，所以
-`lib/split-dictionary.mjs` 按顶层语句边界把它切成多段逐条登记。改注入逻辑时别退回一次性注入。
-
 **环境限制**：headless 访问 github.com 在部分网络下会落到 `chrome-error://`，
 所以它只适合做冒烟，不能替代调试窗口里的 `bench.mjs`。
 
@@ -151,6 +151,8 @@ node tools\perf\probe-writetargets.mjs --url <页面地址> --wait 9000
 | `stress-heavy.mjs` | 文件查找器 + 通知面板压力 |
 | `probe-hover.mjs` | hover 提示气泡的翻译与遍历成本 |
 | `probe-mutations.mjs` | 各条变更通道（新增元素自身 / 后代 / 属性变化 / 文本）实际覆盖到谁 |
+| `probe-header-translate.mjs` | 按 250ms 采样 header 导航项，区分「从未翻」与「翻了又被 React 覆盖」 |
+| `probe-search-placeholder.mjs` | 摊开搜索控件文案的真实来源（DOM 文本 / input 属性 / CSS），改 input 补翻前先看它 |
 | `probe-writetargets.mjs` | 写入目标的 DOM 形状（空 / 单文本 / 多子节点），改写入方式前先看它 |
 | `probe-docstart.mjs` | `document_start` vs CDP 注入时机对照 |
 | `start-edge-debug.cmd` | 起基准台专用调试浏览器 |
