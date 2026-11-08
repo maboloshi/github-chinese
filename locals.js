@@ -12208,6 +12208,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "No review comments yet": "暂无审查评论",
                 "Request a review to get feedback on your changes.": "请求审查以获取有关更改的反馈。",
                 "You haven't left any review comments yet": "您尚未发表审查评论",
+                "Newest first": "最新优先",
+                "Oldest first": "最早优先",
+                "Code order": "按代码顺序",
                 "Submit": "提交",
                     "review": "审查",
 
