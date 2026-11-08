@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.4-2026-10-14
+// @version      1.9.4.4-2026-11-08
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-10-14
+// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-11-08
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -370,7 +370,8 @@
         const isSession = document.body.classList.contains("session-authentication");
         const isHomepage = pathname === '/' && site === 'github';
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
-        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation);
+        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
+            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content;
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
         let pageType;
@@ -497,6 +498,7 @@
 
         // ----- 选择器定义 -----
         const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
+        const breadcrumbLinkSelector = 'header.GlobalNav nav[data-component="Breadcrumbs"] a[data-component="Breadcrumbs.Item"][href]';
         // 需要监听的 React 渲染区域：头部和弹层
         const controlledSurfaceSelector = [
             'header.GlobalNav',
@@ -638,6 +640,26 @@
             }
         }
 
+        function isReactGlobalNavIdentifierLink(element) {
+            const link = element.closest?.(breadcrumbLinkSelector);
+            if (!link) return false;
+
+            const linkPath = link.pathname.toLowerCase();
+            const repository = document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content.toLowerCase();
+            if (repository) {
+                const [owner] = repository.split('/');
+                return linkPath === `/${owner}` || linkPath === `/${repository}`;
+            }
+
+            const [, firstSegment, secondSegment] = window.location.pathname.toLowerCase().split('/');
+            if (firstSegment === 'orgs' || firstSegment === 'organizations') {
+                return linkPath === `/${secondSegment}`;
+            }
+
+            const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
+            return /^\/<(?:user-name|org-login)>(?:\/|$)/.test(metaLocation) && linkPath === `/${firstSegment}`;
+        }
+
         /**
          * 判断节点是否应该被跳过（不翻译）
          */
@@ -647,7 +669,7 @@
             if (element.closest?.(unsafeTextSelector)) return true;
             if (element.closest?.(searchSurfaceSelector)) return true;
 
-            return false;
+            return isReactGlobalNavIdentifierLink(element);
         }
 
         /**
