@@ -12049,7 +12049,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Collapse file": "折叠文件",
             // "Refresh": "刷新",
             // 复制文件按钮
-                "Copy file name to clipboard": "复制文件名到剪切板",
+                "Copy file name to clipboard": "复制文件名到剪贴板",
 
             "Open overview side panel": "打开概览侧边栏",
                 "Close overview panel": "关闭", // 过于啰嗦省略
@@ -12438,7 +12438,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Commits?/, "提交"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
-        [/Copy full SHA for ([^ ]+)/, "复制 $1 完整的 SHA"], // Android UA ? 提交卡
+        [/Copy full SHA for ([^ ]+)/, "复制提交 $1 的完整 SHA"],
         [/View checks?/, "查看检查"], // Android UA ?
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
