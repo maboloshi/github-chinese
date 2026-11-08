@@ -12199,6 +12199,11 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "viewed": "已审查",
 
                 "Comments": "评论",
+                "All": "全部",
+                "Unresolved": "未解决",
+                "Mine": "我的",
+                "Show hidden comments": "显示隐藏的评论",
+                "Show AI and bot comments": "显示 AI 和机器人评论",
                 "Submit": "提交",
                     "review": "审查",
 
