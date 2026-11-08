@@ -11823,6 +11823,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "More actions": "更多操作",
             "View details": "查看详情",
             "Hide details": "隐藏详情",
+            "Annotations": "注释",
             "Revert": "还原",
                 "Create a new pull request to revert these changes": "创建一个新的拉取请求以恢复这些更改",
             "Closed with unmerged commits": "已关闭的未合并的提交",
@@ -12463,6 +12464,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
         [/(\d+) neutral checks?/, "$1 次中立检查"],
         [/(\d+) successful checks?/, "$1 次成功检查"],
+        [/^([\d,]+) notices?$/, "$1 条提示"],
         [/(\d+) of (\d+) checks? passed/, "$1/$2 次检查通过"],
         [/(\d+) checks? passed/, "$1 次检查通过"],
 
