@@ -1,0 +1,13 @@
+{
+  "note": "短语规则测试夹具：Learn more about 后必须接「了解更多关于」，「了解如何」例外。",
+  "terms": [],
+  "phrases": [
+    {
+      "id": "learn-more-about",
+      "match": "Learn more about",
+      "prefix": "了解更多关于",
+      "allow": ["^了解如何"],
+      "severity": "error"
+    }
+  ]
+}

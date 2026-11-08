@@ -304,7 +304,7 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 
 欢迎通过以下方式参与贡献：
 
-1. 完善词库翻译（编辑 `locals.js`）
+1. 完善词库翻译（编辑 `locals.js`，术语请遵循[术语表](docs/terminology.md)）
 1. 提交议题报告，参与话题讨论
 1. 改进代码逻辑
 

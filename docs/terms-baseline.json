@@ -1,0 +1,4 @@
+{
+  "note": "术语检查的存量豁免清单，由 `node script/check-terms.mjs --update-baseline` 生成。当前为空：所有已知漂移已修正。只应随修正而收缩，不应手工新增。",
+  "terms": []
+}

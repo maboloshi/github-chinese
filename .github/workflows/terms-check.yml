@@ -1,0 +1,33 @@
+name: 术语一致性检查
+
+on:
+  pull_request:
+    paths:
+      - 'locals.js'
+      - 'docs/terms.json'
+      - 'docs/terms-baseline.json'
+      - 'script/check-terms.mjs'
+      - 'test/terms-check.test.cjs'
+      - 'test/fixtures/terms/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terms:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v7
+
+      - name: 安装 Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: 检查器自测
+        run: node --test test/terms-check.test.cjs
+
+      - name: 校验词库术语
+        run: node script/check-terms.mjs

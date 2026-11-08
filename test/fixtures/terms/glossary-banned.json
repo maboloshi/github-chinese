@@ -1,0 +1,12 @@
+{
+  "note": "全域禁用词测试夹具：帐户 禁用，迷你 放行。",
+  "terms": [],
+  "phrases": [],
+  "banned": [
+    {
+      "id": "account-simplified",
+      "match": "帐户",
+      "severity": "error"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "note": "术语检查测试夹具：仓库段用「策略」，其余段落用「政策」。",
+  "terms": [
+    {
+      "id": "policies",
+      "labels": ["Policies"],
+      "zh": "政策",
+      "forbid": ["策略"],
+      "severity": "error",
+      "overrides": [
+        { "sectionPrefix": "repository/", "zh": "策略", "forbid": ["政策"] }
+      ]
+    }
+  ]
+}
