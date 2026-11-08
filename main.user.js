@@ -498,6 +498,7 @@
 
         // ----- 选择器定义 -----
         const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
+        const breadcrumbLinkSelector = 'header.GlobalNav nav[data-component="Breadcrumbs"] a[data-component="Breadcrumbs.Item"][href]';
         // 需要监听的 React 渲染区域：头部和弹层
         const controlledSurfaceSelector = [
             'header.GlobalNav',
@@ -639,6 +640,26 @@
             }
         }
 
+        function isReactGlobalNavIdentifierLink(element) {
+            const link = element.closest?.(breadcrumbLinkSelector);
+            if (!link) return false;
+
+            const linkPath = link.pathname.toLowerCase();
+            const repository = document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content.toLowerCase();
+            if (repository) {
+                const [owner] = repository.split('/');
+                return linkPath === `/${owner}` || linkPath === `/${repository}`;
+            }
+
+            const [, firstSegment, secondSegment] = window.location.pathname.toLowerCase().split('/');
+            if (firstSegment === 'orgs' || firstSegment === 'organizations') {
+                return linkPath === `/${secondSegment}`;
+            }
+
+            const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
+            return /^\/<(?:user-name|org-login)>(?:\/|$)/.test(metaLocation) && linkPath === `/${firstSegment}`;
+        }
+
         /**
          * 判断节点是否应该被跳过（不翻译）
          */
@@ -648,7 +669,7 @@
             if (element.closest?.(unsafeTextSelector)) return true;
             if (element.closest?.(searchSurfaceSelector)) return true;
 
-            return false;
+            return isReactGlobalNavIdentifierLink(element);
         }
 
         /**
