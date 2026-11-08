@@ -12436,6 +12436,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/At least (\d+) approving reviews? is required to merge this pull request./, "合并此拉取请求至少需要 $1 次审查批准。"],
         [/Commits?/, "提交"],
+        [/^Lines changed: ([\d,]+) additions? & ([\d,]+) deletions?$/, "更改行数：新增 $1 行，删除 $2 行"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
         [/Copy full SHA for ([^ ]+)/, "复制提交 $1 的完整 SHA"],
