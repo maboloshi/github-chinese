@@ -48,7 +48,7 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|repos|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits|credentials)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp|dreaming)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
@@ -17837,6 +17837,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                     "Cloud": "云端",
                     "Internet access": "访问互联网",
                     "MCP servers": "MCP 服务器",
+                    "Dreaming": "梦境",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
                 "Custom properties": "自定义属性",  // 组织仓库
@@ -19900,6 +19901,29 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
 I18N["zh-CN"]["repository/settings/copilot/internet_access"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
 I18N["zh-CN"]["repository/settings/copilot/mcp"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
+
+I18N["zh-CN"]["repository/settings/copilot/dreaming"] = { // 仓库设置 - Copilot 梦境
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+
+        "Copilot Dreaming": "Copilot 梦境",
+        "Manage Dreaming for this repository. Only repository administrators can change this setting.": "管理此仓库的梦境功能。只有仓库管理员可以更改此设置。",
+        "Dreaming works in the background to improve the memories and guidance Copilot uses in future coding sessions and code reviews.": "梦境在后台运行，改进 Copilot 在后续编程会话和代码审查中使用的记忆与指引。",
+        "Memories are fully managed.": "记忆由 Copilot 自动管理。",
+        "Dreaming applies memory changes automatically, without a pull request or manual approval.": "梦境会自动应用对记忆的更改，无需创建拉取请求或人工批准。",
+        "Repository skills and custom instructions are managed through pull requests.": "仓库技能和自定义指令通过拉取请求管理。",
+        "Dreaming proposes changes to files checked into your repository for review.": "梦境会对仓库中已纳入版本控制的文件提出更改建议，供审查。",
+        "Dreaming runs only where repository Memory and other required policies and features are enabled. Session-based Dreams also require session upload.": "只有在启用仓库记忆以及其他必需的策略和功能时，梦境才会运行。基于会话的梦境还需上传会话。",
+        "Learn more about Copilot Dreaming": "详细了解 Copilot 梦境",
+        "Repository Dreaming requires a Copilot Pro, Pro+ or Max plan.": "仓库梦境功能需要 Copilot Pro、Pro+ 或 Max 套餐。",
+    },
+    "title": {
+        "static": {
+            "Copilot Dreaming": "Copilot 梦境",
+        },
+    },
+};
 
 I18N["zh-CN"]["repository/settings/suggestions"] = {
     "static": {
