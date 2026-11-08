@@ -363,7 +363,9 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/pooneyy" title="poney"><img src="https://avatars.githubusercontent.com/u/85266337?v=4" width="42;" alt="poney"/></a>
 <a href="https://github.com/pecasha" title="Pecasha"><img src="https://avatars.githubusercontent.com/u/9607128?v=4" width="42;" alt="Pecasha"/></a>
 <a href="https://github.com/Kisechan" title="Kise Platinyl"><img src="https://avatars.githubusercontent.com/u/162338950?v=4" width="42;" alt="Kise Platinyl"/></a>
+<a href="https://github.com/Aethersailor" title="Aethersailor"><img src="https://avatars.githubusercontent.com/u/22260104?v=4" width="42;" alt="Aethersailor"/></a>
 <a href="https://github.com/wang93wei" title="AlanWang"><img src="https://avatars.githubusercontent.com/u/6371053?v=4" width="42;" alt="AlanWang"/></a>
+<a href="https://github.com/MaydayV" title="MaydayV"><img src="https://avatars.githubusercontent.com/u/61279703?v=4" width="42;" alt="MaydayV"/></a>
 <a href="https://github.com/Iamliuxiaozhen" title="Oliver Lin"><img src="https://avatars.githubusercontent.com/u/149680880?v=4" width="42;" alt="Oliver Lin"/></a>
 <a href="https://github.com/SomSamantray" title="Som Samantray"><img src="https://avatars.githubusercontent.com/u/92726151?v=4" width="42;" alt="Som Samantray"/></a>
 <a href="https://github.com/heicks" title="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"><img src="https://avatars.githubusercontent.com/u/12287943?v=4" width="42;" alt="create new ██████╗  ██╔══██╗ ██████╔╝ ██╔══██╗ ██████╔╝ ╚═════╝  　　██╗ 　  ██╗ 　　██║ 　  ██║ 　　██║  　 ██║ 　　██║  　 ██║ 　　╚█████╔╝  　　╚═════╝  ███████╗ ██╔════╝　 ██║████═╗　 ██║　   ██　║ ╚██████╔╝　 　╚══════╝"/></a>
@@ -381,14 +383,13 @@ GitHub 的 ajax 载入方式逐步从 [defunkt/jquery-pjax](https://github.com/d
 <a href="https://github.com/shuwn" title="Shuwn Hsu"><img src="https://avatars.githubusercontent.com/u/20023822?v=4" width="42;" alt="Shuwn Hsu"/></a>
 <a href="https://github.com/OctoBored" title="OctoBored"><img src="https://avatars.githubusercontent.com/u/212877535?v=4" width="42;" alt="OctoBored"/></a>
 <a href="https://github.com/NyA1K0" title="NyA!K0"><img src="https://avatars.githubusercontent.com/u/177237971?v=4" width="42;" alt="NyA!K0"/></a>
-<a href="https://github.com/MaydayV" title="MaydayV"><img src="https://avatars.githubusercontent.com/u/61279703?v=4" width="42;" alt="MaydayV"/></a>
 <a href="https://github.com/KS-OTO" title="KS-OTO"><img src="https://avatars.githubusercontent.com/u/6616413?v=4" width="42;" alt="KS-OTO"/></a>
 <a href="https://github.com/swsoyee" title="InfinityLoop"><img src="https://avatars.githubusercontent.com/u/20528423?v=4" width="42;" alt="InfinityLoop"/></a>
 <a href="https://github.com/ImgBotApp" title="Imgbot"><img src="https://avatars.githubusercontent.com/u/31427850?v=4" width="42;" alt="Imgbot"/></a>
 <a href="https://github.com/HeavenlessLing" title="Heavenless"><img src="https://avatars.githubusercontent.com/u/238226870?v=4" width="42;" alt="Heavenless"/></a>
+<a href="https://github.com/GitRuozhi" title="GitRuozhi"><img src="https://avatars.githubusercontent.com/u/209591500?v=4" width="42;" alt="GitRuozhi"/></a>
 <a href="https://github.com/BluewhaleYF" title="Flint Shen"><img src="https://avatars.githubusercontent.com/u/206069864?v=4" width="42;" alt="Flint Shen"/></a>
 <a href="https://github.com/neveler" title="neveler"><img src="https://avatars.githubusercontent.com/u/55753029?v=4" width="42;" alt="neveler"/></a>
-<a href="https://github.com/Aethersailor" title="Aethersailor"><img src="https://avatars.githubusercontent.com/u/22260104?v=4" width="42;" alt="Aethersailor"/></a>
 <!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 > 贡献者列表，由 [GitHub Action][update-contributors-images] 自动生成
