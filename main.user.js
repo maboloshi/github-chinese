@@ -132,6 +132,8 @@
         transEngine: 'iflyrec',  // 当前翻译引擎
         mutationObserver: null,  // DOM变化观察器
         observedBody: null,      // 当前观察的页面主体
+        visitAction: null,       // 当前 Turbo 访问动作：advance / replace / restore
+        idleSweep: null,         // 恢复访问时的空闲补扫句柄
         urlChangeHandler: null,  // 存储URL变化处理器
         dynamicMenus: {},        // 动态菜单ID记录
         initDone: false,
@@ -289,8 +291,43 @@
      * 处理GitHub的Turbolinks页面切换
      */
     function setupTurboEvents() {
-        document.addEventListener('turbo:render', handleTurboLoad);
-        document.addEventListener('turbo:load', handleTurboLoad);
+        // Turbo 的访问动作：advance（点链接）/ replace / restore（前进后退）
+        document.addEventListener('turbo:visit', event => {
+            State.visitAction = event.detail?.action || null;
+        });
+
+        // 新 body 还没插入文档时就把观察器挂上去：
+        // React 水合把译文写回英文的那批变更，从第一帧就被接住
+        document.addEventListener('turbo:before-render', event => {
+            const newBody = event.detail?.newBody;
+            if (newBody) attachMutationObserver(newBody);
+        });
+
+        document.addEventListener('turbo:render', () => handleTurboLoad());
+        document.addEventListener('turbo:load', () => {
+            handleTurboLoad();
+            State.visitAction = null;
+        });
+    }
+
+    /**
+     * 恢复访问不必同步全量遍历：缓存快照里已经是译文，
+     * 水合回写的英文由预挂的观察器接住；再安排一次空闲补扫，
+     * 兜住「离开时还没翻完」的快照，同时不阻塞渲染。
+     */
+    function scheduleIdleTraversal() {
+        if (State.idleSweep !== null) return;
+        const run = () => {
+            State.idleSweep = null;
+            // 等空闲期间又换页了：新导航已经负责过，别再扫一遍
+            if (State.observedBody !== document.body) return;
+            safe(traverseNode, '恢复补扫')(document.body);
+        };
+        if (typeof window.requestIdleCallback === 'function') {
+            State.idleSweep = window.requestIdleCallback(run, { timeout: 1500 });
+        } else {
+            State.idleSweep = setTimeout(run, 200);
+        }
     }
 
     /**
@@ -301,14 +338,22 @@
         if (!document.body) return;
 
         State.currentURL = window.location.href;
+        const restoring = State.visitAction === 'restore';
         updatePageConfig('页面导航');
-        State.mutationObserver?.disconnect();
 
-        // 即使 URL 已更新，也要翻译当前 body 并重新连接观察器
-        if (State.pageConfig) {
-            safe(traverseNode, '导航遍历')(document.body);
+        // before-render 已经挂好的观察器直接沿用；否则在这里兜底
+        const preAttached = State.observedBody === document.body && !!State.mutationObserver;
+        if (!preAttached) {
+            attachMutationObserver(document.body);
         }
-        setupMutationObserver();
+
+        if (State.pageConfig) {
+            if (restoring && preAttached) {
+                scheduleIdleTraversal();
+            } else {
+                safe(traverseNode, '导航遍历')(document.body);
+            }
+        }
 
         if (!State.pageConfig) return;
 
@@ -497,26 +542,15 @@
     /* =========================== MutationObserver =========================== */
 
     /**
-     * 设置DOM变化观察器
+     * 创建DOM变化观察器
      * 监听页面变化并触发翻译
      */
-    function setupMutationObserver() {
-        // 缓存当前页面的 URL
-        let previousURL = window.location.href;
-
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
-        }
-
-        State.observedBody = null;
-        if (!document.body) return;
-
-        State.mutationObserver = new MutationObserver(
+    function createMutationObserver() {
+        return new MutationObserver(
             safe((mutations) => {
                 const currentURL = window.location.href;
                 // 当没有 onurlchange 支持时，通过 Observer 检测 URL 变化
-                if (!State.urlChangeHandler && currentURL !== previousURL) {
-                    previousURL = currentURL;
+                if (!State.urlChangeHandler && currentURL !== State.currentURL) {
                     State.currentURL = currentURL;
                     updatePageConfig("URL变化 (MutationObserver)");
                 }
@@ -533,10 +567,27 @@
                 }
             }, 'MutationObserver')
         );
+    }
 
-        // 开始观察页面主体
-        State.mutationObserver.observe(document.body, CONFIG.OBSERVER_CONFIG);
-        State.observedBody = document.body;
+    /**
+     * 把观察器挂到指定 body 上 — 允许传入尚未插入文档的新 body，
+     * 这样 Turbo 换 body 时，React 水合产生的那批变更从第一帧就被接住。
+     * @param {Element} body
+     */
+    function attachMutationObserver(body) {
+        State.mutationObserver?.disconnect();
+        State.mutationObserver = createMutationObserver();
+        State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
+        State.observedBody = body;
+    }
+
+    /**
+     * 设置DOM变化观察器（当前文档 body）
+     */
+    function setupMutationObserver() {
+        State.observedBody = null;
+        if (!document.body) return;
+        attachMutationObserver(document.body);
     }
 
     /**

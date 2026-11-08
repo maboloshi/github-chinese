@@ -110,7 +110,8 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
     assert.ok(state);
     const names = [
         'safe', 'init', 'setupInitTrans', 'setupUrlChangeListener', 'handleUrlChange',
-        'setupTurboEvents', 'handleTurboLoad', 'updatePageConfig', 'setupMutationObserver',
+        'setupTurboEvents', 'handleTurboLoad', 'updatePageConfig',
+        'createMutationObserver', 'attachMutationObserver', 'scheduleIdleTraversal', 'setupMutationObserver',
         'shouldIgnoreMutationNode', 'processMutations', 'traverseNode', 'isBreadcrumbIdentifierLink',
     ];
     const functions = names.map(name => {
@@ -199,6 +200,49 @@ for (const options of [{ urlchange: true }, { urlchange: false }, { urlchange: t
         }
     });
 }
+
+test(`${fileName}: 恢复访问在插入前挂好观察器，同步全量遍历让位给空闲补扫`, () => {
+    const runtime = loadRuntime(fileName);
+    const count = runtime.walks.length;
+    const replacement = body();
+
+    runtime.document.dispatch('turbo:visit', { detail: { action: 'restore' } });
+    // before-render 时 newBody 还没插入文档
+    runtime.document.dispatch('turbo:before-render', { detail: { newBody: replacement } });
+    assert.equal(runtime.context.State.observedBody, replacement);
+    assert.equal(runtime.context.State.mutationObserver.target, replacement);
+
+    // 换 body 后，React 水合窗口内的改写从第一帧就被接住
+    runtime.document.body = replacement;
+    replacement.text.data = 'rehydrated english';
+    runtime.mutate(replacement);
+    assert.equal(replacement.text.data, 'translated:repository');
+
+    runtime.document.dispatch('turbo:render');
+    assert.equal(runtime.walks.length, count, '恢复访问不应同步全量遍历');
+    assert.ok(runtime.timers.size >= 1, '应安排空闲补扫');
+
+    runtime.document.dispatch('turbo:load');
+    assert.equal(runtime.context.State.visitAction, null);
+    runtime.flush();
+    assert.ok(runtime.walks.length > count, '空闲补扫仍要兜底遍历');
+    assertObserved(runtime, replacement, 'repository');
+});
+
+test(`${fileName}: 应用访问（advance）仍同步遍历新页面`, () => {
+    const runtime = loadRuntime(fileName);
+    const count = runtime.walks.length;
+    const replacement = body();
+
+    runtime.document.dispatch('turbo:visit', { detail: { action: 'advance' } });
+    runtime.document.dispatch('turbo:before-render', { detail: { newBody: replacement } });
+    runtime.document.body = replacement;
+    runtime.document.dispatch('turbo:load');
+
+    assert.ok(runtime.walks.length > count, '新页面是英文，必须同步遍历');
+    assert.equal(runtime.timers.size, 0, '应用访问不需要空闲补扫');
+    assertObserved(runtime, replacement, 'repository');
+});
 
 test(`${fileName}: bfcache 原样恢复不重翻，观察器仍在工作；纯锚点历史保持空闲`, () => {
     const runtime = loadRuntime(fileName);
