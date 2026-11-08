@@ -15434,8 +15434,8 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
             // 标签卡栏
             "Overview": "概况",
             "Yours": "您的",
-            "Active": "活跃的",
-            "Stale": "陈旧的",
+            "Active": "活跃",
+            "Stale": "陈旧",
             "All branches": "所有分支",
             "All": "全部",
             "branches": "分支",
@@ -16379,8 +16379,8 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
                 "Filter by severity": "按严重性筛选",
             "Sort": "排序",
                 "Most important": "最重要的",
-                "Newest": "最新的",
-                "Oldest": "最早的",
+                "Newest": "最新",
+                "Oldest": "最早",
                 "Manifest path": "表现路径",
                 "Package name": "包名称",
 
@@ -25281,18 +25281,18 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
                 "Admission to the limited public beta for GitHub Models will be limited. You will receive an email if you are granted access.": "GitHub 模型的限量公开测试有名额限制。如果您获准访问，您将收到一封电子邮件。",
                 "Return to continue exploring": "继续探索",
                 "GitHub Models": "GitHub 模型",
-		// 新上市市场页 https://github.com/marketplace/new
-			"List your tool": "上市您的工具",
-			"List your tool on GitHub Marketplace": "在 GitHub 市场上市您的工具",
+		// 新上架市场页 https://github.com/marketplace/new
+			"List your tool": "上架您的工具",
+			"List your tool on GitHub Marketplace": "在 GitHub 市场上架您的工具",
 
-			"You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上市的工具",
+			"You have no tools to list on GitHub Marketplace": "您没有可在 GitHub 市场上架的工具",
 				"Learn more about the requirements": "了解有关要求的更多信息",
-				"to list a tool on GitHub Marketplace.": "在 GitHub 市场上市工具。",
+				"to list a tool on GitHub Marketplace.": "在 GitHub 市场上架工具。",
 
             "More about tools and GitHub Marketplace": "有关工具和 GitHub 市场的更多信息",
                 "About GitHub Marketplace": "关于 GitHub 市场",
-                    "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和上市工具，包括列出内容、插图和屏幕截图的指南。",
-                "Adding webhooks for a GitHub Marketplace listing": "为 GitHub 市场上市添加 Webhook",
+                    "How to create and list tools on the GitHub Marketplace, including guidelines for listing content, artwork, and screenshots.": "如何在 GitHub 市场上创建和上架工具，包括列出内容、插图和屏幕截图的指南。",
+                "Adding webhooks for a GitHub Marketplace listing": "为 GitHub 市场上架添加 Webhook",
                     "Add webhooks for your app to notify you when specified events are triggered.": "为您的应用程序添加 Webhooks，以便在触发指定事件时通知您。",
     },
     "regexp": [ // 正则翻译
@@ -26154,7 +26154,7 @@ I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
                         // 顶部提醒
                         // [/Your organization ([^ ]+) is being archived./, "您的组织 $1 已归档。"],
 
-                "Unarchive this organization": "解锁归档组织",
+                "Unarchive this organization": "解除组织归档",
                     "Mark this organization as unarchived and read-write.": "将此组织标记为未归档且可读写。",
 
                     "Unarchive organization": "解除组织归档",
