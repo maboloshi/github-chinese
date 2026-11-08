@@ -10947,6 +10947,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Search for branches or pull requests": "搜索分支或拉取请求",
                         "no pull request": "无拉取请求",
 
+                "Open in GitHub Copilot app": "在 GitHub Copilot 应用中打开",
                 "Duplicate issue": "复制议题",
                     // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
                     "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改仓库可能会从重复议题中移除里程碑、标签、类型和分配人员。",
