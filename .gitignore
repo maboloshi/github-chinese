@@ -16,3 +16,12 @@ main(local).js
 
 # logs
 *.log
+
+# tools/perf 基准台的运行输出（基线数据在 tools/perf/baseline/ 已入库）
+tools/perf/reports/
+# README 里的 --out 是相对当前工作目录的，所以在仓库根跑就会落到这里
+/reports/
+
+# 根 package.json 的依赖（vscode-extension/ 有自己独立的 node_modules）
+node_modules/
+
