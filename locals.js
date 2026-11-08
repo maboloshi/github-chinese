@@ -48,13 +48,13 @@ I18N.conf = {
     rePagePath: /^\/($|home|dashboard|feed|copilot|spark|signup|account_verifications|login\/oauth|login|logout|sessions?|password_reset|orgs|explore|topics|notifications\/subscriptions|notifications|watching|stars|issues|pulls|repos|search|trending|showcases|new\/(import|project)|new|import|settings\/(profile|admin|appearance|accessibility|notifications|billing|emails|security_analysis|security-log|security|auth|sessions|keys|ssh|gpg|organizations|enterprises|blocked_users|interaction_limits|code_review_limits|repositories|codespaces|models|codespaces\/allow_permissions|deleted_repositories|packages|copilot|pages|replies|installations|apps\/authorizations|reminders|sponsors-log|apps|(?:personal-access-|)tokens|developers|applications\/new|applications|connections\/applications|education\/benefits|credentials)|settings|installations\/new|marketplace|apps|account\/(organizations\/new|choose|upgrade|billing\/history)|projects|redeem|discussions|collections|sponsors|sponsoring|github-copilot\/(signup|free_signup|code-review-waitlist|pro)|codespaces|developer\/register|features|security|sitemap|education|mcp)|^\/users\/[^\/]+\/(projects|packages|succession\/invitation)/,
 
     // 仓库路径
-    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
+    rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp|dreaming)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 组织路径
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -95,7 +95,10 @@ I18N.conf = {
             'div[data-testid="breadcrumbs-filename"]', // 面包屑导航 文件名部分
             'tr.react-directory-row', // 文件列表中文件夹和文件条目
         ],
-        'repository/releases': [".Box-footer"], // 附件清单
+        'repository/releases': [
+            'div.Box-body>div.markdown-body', // 发行版正文
+            ".Box-footer", // 附件清单
+        ],
         'repository/issues': [
             'div[aria-live="polite"]>div.markdown-body', // 新建议题 - 正文编辑器预览
             '.markdown-body[data-team-hovercards-enabled="true"]', // 某个议题 - 正文以及正文编辑器、添加评论编辑器预览
@@ -11063,6 +11066,7 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
                         "Search for branches or pull requests": "搜索分支或拉取请求",
                         "no pull request": "无拉取请求",
 
+                "Open in GitHub Copilot app": "在 GitHub Copilot 应用中打开",
                 "Duplicate issue": "复制议题",
                     // [/Duplicate current issue in ([^ ]+\/[^ ]+)/, "在 $1 中复制当前议题"],
                     "Changing the repository may remove Milestone, Labels, Type, and Assignees from the duplicate issue.": "更改仓库可能会从重复议题中移除里程碑、标签、类型和分配人员。",
@@ -11362,6 +11366,7 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
             "Review requests": "审查请求",
             "Involves me": "涉及我",
             "Assigned to me": "分配给我",
+            "Stacks": "拉取请求堆栈",
             // 欢迎信息
             "Welcome to pull requests!": "欢迎使用拉取请求！",
             "Pull requests help you collaborate on code with other people. As pull requests are created, they’ll appear here in a searchable and filterable list. To get started, you should": "拉取请求可帮助您与其他人协作处理代码。创建拉取请求后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
@@ -11483,6 +11488,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Unable to merge": "无法合并",
             "Ready to merge": "可供合并",
                 "Merge status": "合并状态",
+                "Merge info": "合并信息",
                 "What's new": "新内容",
                 "Close merge status": "关闭",
             "Merge conflicts": "合并冲突",
@@ -11748,6 +11754,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "review requested due to automatic review settings": "因设置自动审查",
             "created this pull request from a session": "从任务创建拉取请求",
             "with Copilot acting as the agent": "，Copilot 作为智能体",
+            "commits": "个提交",
 
             //
             "This branch has not been deployed": "该分支尚未部署",
@@ -11934,6 +11941,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "More actions": "更多操作",
             "View details": "查看详情",
             "Hide details": "隐藏详情",
+            "Annotations": "注释",
             "Revert": "还原",
                 "Create a new pull request to revert these changes": "创建一个新的拉取请求以恢复这些更改",
             "Closed with unmerged commits": "已关闭的未合并的提交",
@@ -12158,7 +12166,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             "Collapse file": "折叠文件",
             // "Refresh": "刷新",
             // 复制文件按钮
-                "Copy file name to clipboard": "复制文件名到剪切板",
+                "Copy file name to clipboard": "复制文件名到剪贴板",
 
             "Open overview side panel": "打开概览侧边栏",
                 "Close overview panel": "关闭", // 过于啰嗦省略
@@ -12295,6 +12303,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "Collapse file tree": "折叠文件树",
                 "Expand file tree": "展开文件树",
+                "File tree": "文件树",
+                "Pull request toolbar": "拉取请求工具栏",
 
                 "Select commits to view": "选择要查看的提交",
                 "All changes": "所有更改",
@@ -12310,14 +12320,38 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "viewed": "已审查",
 
                 "Comments": "评论",
+                "All": "全部",
+                "Unresolved": "未解决",
+                "Mine": "我的",
+                "Close side panel": "关闭侧面板",
+                "Show hidden comments": "显示隐藏的评论",
+                "Show AI and bot comments": "显示 AI 和机器人评论",
+                "No comments yet": "暂无评论",
+                "No review comments yet": "暂无审查评论",
+                "Request a review to get feedback on your changes.": "请求审查以获取有关更改的反馈。",
+                "You haven't left any review comments yet": "您尚未发表审查评论",
+                "Newest first": "最新优先",
+                "Oldest first": "最早优先",
+                "Code order": "按代码顺序",
+                "Sort comments: Newest": "评论排序：最新优先",
+                "Sort comments: Oldest": "评论排序：最早优先",
+                "Sort comments: Code order": "评论排序：按代码顺序",
                 "Submit": "提交",
                     "review": "审查",
 
                 "Filter files…": "筛选文件…",
                 "Filter options": "选项",
                     "File extensions": "文件扩展名",
+                "Open diff view settings": "打开差异视图设置",
+                "Open overview panel": "打开概况面板",
+                "Open comments panel": "打开评论面板",
+                "Open Copilot panel": "打开 Copilot 面板",
 
                 "Layout": "结构",
+                "Whitespace changes": "空白字符更改",
+                    "Always show": "始终显示",
+                    "Always hide": "始终隐藏",
+                    "Hide for this diff only": "仅在当前差异中隐藏",
                 "Minimize comments": "最小化评论",
                 "Compact line height": "紧凑行高",
 
@@ -12511,6 +12545,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
         [/Expand all lines: (.+)/, "展开所有行：$1"],
         [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
+        [/^([\d,]+) of ([\d,]+) files? viewed$/, "已查看 $1 / $2 个文件"],
         // CODEOWNERS 文件指定所有者
         [/Owned by (\@.+) \(from CODEOWNERS line (\d+)\)/, "由 $1 拥有（来自 CODEOWNERS 第 $2 行）"],
 
@@ -12518,9 +12553,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/edited by ([^ ]+)/, "由 $1 编辑"],
         [/At least (\d+) approving reviews? is required to merge this pull request./, "合并此拉取请求至少需要 $1 次审查批准。"],
         [/Commits?/, "提交"],
+        [/^Lines changed: ([\d,]+) additions? & ([\d,]+) deletions?$/, "更改行数：新增 $1 行，删除 $2 行"],
         [/Files? changed/, "文件更改"],
         [/merged (\d+) commits? into/, "将 $1 个提交合并到"],
-        [/Copy full SHA for ([^ ]+)/, "复制 $1 完整的 SHA"], // Android UA ? 提交卡
+        [/Copy full SHA for ([^ ]+)/, "复制提交 $1 的完整 SHA"],
         [/View checks?/, "查看检查"], // Android UA ?
         [/([^ ]+) left review comments?/, "$1 发表了审查意见"],
         [/([^ ]+) approved these changes?/, "$1 批准这些更改"], // 具体的拉取请求 审查者
@@ -12558,6 +12594,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/(\d+) skipped, (\d+) successful, (\d+) in progress, and (\d+) expected checks?/, "$1 个跳过, $2 个成功, $3 个正在进行, $4 个预先检查"],
         [/(\d+) neutral checks?/, "$1 次中立检查"],
         [/(\d+) successful checks?/, "$1 次成功检查"],
+        [/^([\d,]+) notices?$/, "$1 条提示"],
         [/(\d+) of (\d+) checks? passed/, "$1/$2 次检查通过"],
         [/(\d+) checks? passed/, "$1 次检查通过"],
 
@@ -13877,6 +13914,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
 
             "This comment has been minimized.": "此评论被最小化。",
             "This comment was marked as off-topic.": "此评论被标记为偏离主题。",
+            "This comment was marked as low quality.": "此评论被标记为低质量内容。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
 
@@ -15675,6 +15713,9 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
                 // 搜索未找到
                 "No releases found": "无匹配结果",
             // 左侧栏
+            "On this page": "本页目录",
+            "Collapse sidebar": "折叠侧边栏",
+            "Expand sidebar": "展开侧边栏",
             "Pre-release": "预发行版",
             "Latest": "最新发行版",
             "Draft": "草案",
@@ -17951,6 +17992,7 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
                     "Cloud": "云端",
                     "Internet access": "访问互联网",
                     "MCP servers": "MCP 服务器",
+                    "Dreaming": "梦境",
                 "Environments": "环境",
                 "Pages": "GitHub Pages",
                 "Custom properties": "自定义属性",  // 组织仓库
@@ -19871,6 +19913,16 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         "Copilot in the cloud": "云端 Copilot",
         "No Copilot in the cloud access": "无云端 Copilot 访问权限",
 
+        "Sandbox resources": "沙盒资源",
+            "Choose the compute size for new cloud agent sandboxes. Existing sandboxes keep their current size. For tasks using multiple repositories, the largest repository setting is used.": "为新建的云端智能体沙盒选择计算资源规格。现有沙盒继续使用当前规格。任务涉及多个仓库时，采用这些仓库中配置的最高规格。",
+            "Sandbox size": "沙盒规格",
+                "No repository default": "未设置仓库默认规格",
+                "Small (S)": "小型（S）",
+                "Medium (M)": "中型（M）",
+                "Large (L)": "大型（L）",
+                "No repository-specific size is set. Choose a size to save a repository default.": "此仓库尚未设置沙盒规格。选择规格并保存，即可将其设为仓库默认规格。",
+                "Save sandbox size": "保存沙盒规格",
+
         "You can configure Copilot cloud agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 云端智能体，但由于您没有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
@@ -19920,16 +19972,28 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
         "Policy": "策略",
             "Allow automations": "允许自动化",
+                "Let users with write access create automations that run on a schedule or in response to events.": "允许具有写入权限的用户创建按计划或由事件触发的自动化。",
                 "When enabled, users with write access can create automations that automatically run agents on a schedule or in response to events like new issues or updated pull requests.": "启用后，具有写入权限的用户可以创建自动化，按计划或在新建议题、更新拉取请求等事件发生时自动运行智能体。",
+            "Allow shared automations": "允许共享自动化",
+                "Shared automations belong to the repository and run as its owner, so their usage is billed to the owner. When disabled, shared automations are hidden and the owner isn't billed for them.": "共享自动化属于仓库，代表仓库所有者运行，使用费用由仓库所有者承担。关闭此设置后，共享自动化将被隐藏，仓库所有者无需为其付费。",
             "Only allow automations to be triggered by users with write access": "仅允许具有写入权限的用户触发自动化",
                 "When enabled, automations will only run if the user triggering the event has write access to the repository. When disabled, users can create automations that listen for events triggered by users without write access.": "启用后，只有触发事件的用户具有仓库写入权限时才会运行自动化。禁用后，用户可以创建监听无写入权限用户所触发事件的自动化。",
                 "Allowing automations to be triggered by users without write access to the repository increases risk of prompt injection attacks, where an untrusted user can cause an agent to take actions in the repository using the agent's permissions.": "允许没有仓库写入权限的用户触发自动化，会增加提示词注入攻击的风险：不受信任的用户可能诱使智能体利用其自身权限在仓库中执行操作。",
+            "Require write access to trigger automations": "仅允许具有写入权限的用户触发自动化",
+                "Automations only run for events from users with write access.": "只有在事件由具有写入权限的用户触发时，自动化才会响应该事件。",
             "Limit automation writes to the triggering resource": "将自动化写入限制为触发它的资源",
                 "When enabled, automation runs can only change the issue, pull request, or discussion that triggered them, and anything they create. This does not apply to scheduled runs, security alert runs, or runs started by another automation.": "启用后，自动化运行只能修改触发它的议题、拉取请求或讨论，以及它创建的内容。此限制不适用于计划运行、安全警报触发的运行或由其他自动化启动的运行。",
+            "Only allow automations to update the resource that triggered them": "仅允许自动化更新触发它的资源",
+                "Runs can only change the issue, pull request, or discussion that triggered them, and anything the run created. Doesn't apply to scheduled runs, security alert runs, or runs started by another automation.": "自动化运行只能修改触发它的议题、拉取请求或讨论，以及该次运行创建的内容。此限制不适用于计划运行、安全警报触发的运行或由其他自动化启动的运行。",
             "Require approval for workflow runs": "要求审批工作流运行",
+                "Actions workflows wait for approval from someone with write access before they run on Copilot's changes.": "针对 Copilot 更改运行的 Actions 工作流，须先由具有写入权限的用户批准。",
                 "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run.": "当 Copilot 推送更改时，要求具有写入权限的维护者批准后再运行 Actions 工作流。",
                 "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run. When this policy is disabled, Actions workflows run automatically when Copilot pushes, except when the push comes from an automation that requires approval.": "当 Copilot 推送更改时，要求具有写入权限的维护者批准后再运行 Actions 工作流。禁用此策略后，Copilot 推送时将自动运行 Actions 工作流，但推送来自需要批准的自动化时除外。",
                 "Allowing GitHub Actions workflows to run without approval may allow unreviewed code written by Copilot to gain write access to your repository or access your GitHub Actions secrets.": "允许 GitHub Actions 工作流未经审批即运行，可能会让 Copilot 编写的未经审查代码获得仓库写入权限，或访问您的 GitHub Actions 机密。",
+
+        "Automations": "自动化",
+            "Require approval for workflows on automation pull requests": "要求审批自动化拉取请求的工作流",
+                "Workflows on automation pull requests wait for approval, even when \"Require approval for workflow runs\" is off.": "即使关闭“要求审批工作流运行”，自动化所建拉取请求的工作流也须经批准后才能运行。",
 
         "Validation tools": "验证工具",
             "Configure which tools Copilot in the cloud uses to validate its work and iterate before requesting human review.": "配置云端 Copilot 在请求人工审查前用于验证工作并迭代的工具。",
@@ -19992,6 +20056,29 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
 I18N["zh-CN"]["repository/settings/copilot/internet_access"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
 I18N["zh-CN"]["repository/settings/copilot/mcp"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
+
+I18N["zh-CN"]["repository/settings/copilot/dreaming"] = { // 仓库设置 - Copilot 梦境
+    "static": {
+        ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository-settings-menu"]["static"],
+
+        "Copilot Dreaming": "Copilot 梦境",
+        "Manage Dreaming for this repository. Only repository administrators can change this setting.": "管理此仓库的梦境功能。只有仓库管理员可以更改此设置。",
+        "Dreaming works in the background to improve the memories and guidance Copilot uses in future coding sessions and code reviews.": "梦境在后台运行，改进 Copilot 在后续编程会话和代码审查中使用的记忆与指引。",
+        "Memories are fully managed.": "记忆由 Copilot 自动管理。",
+        "Dreaming applies memory changes automatically, without a pull request or manual approval.": "梦境会自动应用对记忆的更改，无需创建拉取请求或人工批准。",
+        "Repository skills and custom instructions are managed through pull requests.": "仓库技能和自定义指令通过拉取请求管理。",
+        "Dreaming proposes changes to files checked into your repository for review.": "梦境会对仓库中已纳入版本控制的文件提出更改建议，供审查。",
+        "Dreaming runs only where repository Memory and other required policies and features are enabled. Session-based Dreams also require session upload.": "只有在启用仓库记忆以及其他必需的策略和功能时，梦境才会运行。基于会话的梦境还需上传会话。",
+        "Learn more about Copilot Dreaming": "详细了解 Copilot 梦境",
+        "Repository Dreaming requires a Copilot Pro, Pro+ or Max plan.": "仓库梦境功能需要 Copilot Pro、Pro+ 或 Max 套餐。",
+    },
+    "title": {
+        "static": {
+            "Copilot Dreaming": "Copilot 梦境",
+        },
+    },
+};
 
 I18N["zh-CN"]["repository/settings/suggestions"] = {
     "static": {
