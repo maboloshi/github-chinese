@@ -15561,6 +15561,8 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
                 "No releases found": "无匹配结果",
             // 左侧栏
             "On this page": "本页目录",
+            "Collapse sidebar": "折叠侧边栏",
+            "Expand sidebar": "展开侧边栏",
             "Pre-release": "预发行版",
             "Latest": "最新发行版",
             "Draft": "草案",
