@@ -19757,6 +19757,16 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
         "Copilot in the cloud": "云端 Copilot",
         "No Copilot in the cloud access": "无云端 Copilot 访问权限",
 
+        "Sandbox resources": "沙盒资源",
+            "Choose the compute size for new cloud agent sandboxes. Existing sandboxes keep their current size. For tasks using multiple repositories, the largest repository setting is used.": "为新建的云端智能体沙盒选择计算资源规格。现有沙盒继续使用当前规格。任务涉及多个仓库时，采用这些仓库中配置的最高规格。",
+            "Sandbox size": "沙盒规格",
+                "No repository default": "未设置仓库默认规格",
+                "Small (S)": "小型（S）",
+                "Medium (M)": "中型（M）",
+                "Large (L)": "大型（L）",
+                "No repository-specific size is set. Choose a size to save a repository default.": "此仓库尚未设置沙盒规格。选择规格并保存，即可将其设为仓库默认规格。",
+                "Save sandbox size": "保存沙盒规格",
+
         "You can configure Copilot cloud agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro, Copilot Pro+, Copilot Business or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 云端智能体，但由于您没有 Copilot Pro、Copilot Pro+、Copilot Business 或 Copilot Enterprise 许可证，因此无法向 Copilot 分配任务。",
         "You can configure Copilot coding agent for other users with access to this repository, but you won't be able to assign tasks to Copilot because you don't have a Copilot Pro+ or Copilot Enterprise license.": "您可以为其他具有此仓库访问权限的用户配置 Copilot 编程智能体，但由于您没有 Copilot Pro+ 或 Copilot 企业版许可证，因此无法向 Copilot 分配任务。",
 
