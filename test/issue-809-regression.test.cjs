@@ -66,6 +66,14 @@ function extractOptionalFunction(source, name) {
     return `${extractFunction(source, name)}\n\n`;
 }
 
+function extractConst(source, name) {
+    const start = source.indexOf(`    const ${name} = `);
+    assert.notEqual(start, -1, `${name} should exist`);
+    const end = source.indexOf(';\n', start);
+    assert.notEqual(end, -1, `could not extract ${name}`);
+    return `${source.slice(start, end + 1)}\n\n`;
+}
+
 function extractConfig(source) {
     const start = source.indexOf('    const CONFIG = {');
     const end = source.indexOf('\n    };', start);
@@ -280,6 +288,7 @@ function loadStableRuntime() {
     const api = runScript(host.context, `
 const lang = I18N.zh ? 'zh' : 'zh-CN';
 let page = false;
+${extractConst(source, 'REPOSITORY_DESC_SELECTOR')}
 ${extractOptionalFunction(source, 'isFallbackRepositoryPath')}
 ${names.map(name => extractFunction(source, name)).join('\n\n')}
 globalThis.__api = {
@@ -287,6 +296,7 @@ globalThis.__api = {
     watchUpdate,
     readPage() { return page; },
     get lang() { return lang; },
+    descSelector: REPOSITORY_DESC_SELECTOR,
 };
 `, 'main(greasyfork).user.js');
     host.bridge.page = () => api.readPage();
@@ -543,15 +553,17 @@ test('stable observer resumes translation after navigation without metadata', ()
 
     assert.equal(api.readPage(), 'repository');
     assert.equal(typeof I18N[api.lang][api.readPage()].static.Pin, 'string');
-    assert.deepEqual(calls, ['title', ['traverse', node, 'repository']]);
+    const remount = [['desc', api.descSelector]];
+    assert.deepEqual(calls, ['title', ['traverse', node, 'repository'], ...remount]);
     assert.equal(tasks.length, 1);
     assert.equal(tasks[0].delay, 500);
     tasks.shift().fn();
     assert.deepEqual(calls, [
         'title',
         ['traverse', node, 'repository'],
+        ...remount,
         'selector',
-        ['desc', '.f4.my-3'],
+        ['desc', api.descSelector],
     ]);
 
     calls.length = 0;
@@ -560,7 +572,7 @@ test('stable observer resumes translation after navigation without metadata', ()
     callback([{ type: 'childList', addedNodes: [node], target: env.document.body }]);
     assert.equal(api.readPage(), 'repository');
     assert.equal(api.getPage(), 'repository');
-    assert.deepEqual(calls, ['title', ['traverse', node, 'repository']]);
+    assert.deepEqual(calls, ['title', ['traverse', node, 'repository'], ...remount]);
 
     calls.length = 0;
     tasks.length = 0;
