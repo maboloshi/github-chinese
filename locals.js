@@ -13797,6 +13797,7 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
 
             "This comment has been minimized.": "此评论被最小化。",
             "This comment was marked as off-topic.": "此评论被标记为偏离主题。",
+            "This comment was marked as low quality.": "此评论被标记为低质量内容。",
             "Show comment": "显示评论",
             "Hide comment": "隐藏评论",
 
