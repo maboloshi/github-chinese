@@ -12207,6 +12207,10 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                     "File extensions": "文件扩展名",
 
                 "Layout": "结构",
+                "Whitespace changes": "空白字符更改",
+                    "Always show": "始终显示",
+                    "Always hide": "始终隐藏",
+                    "Hide for this diff only": "仅在当前差异中隐藏",
                 "Minimize comments": "最小化评论",
                 "Compact line height": "紧凑行高",
 
