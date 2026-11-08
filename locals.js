@@ -19816,6 +19816,7 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
 
         "Policy": "策略",
             "Allow automations": "允许自动化",
+                "Let users with write access create automations that run on a schedule or in response to events.": "允许具有写入权限的用户创建按计划或由事件触发的自动化。",
                 "When enabled, users with write access can create automations that automatically run agents on a schedule or in response to events like new issues or updated pull requests.": "启用后，具有写入权限的用户可以创建自动化，按计划或在新建议题、更新拉取请求等事件发生时自动运行智能体。",
             "Only allow automations to be triggered by users with write access": "仅允许具有写入权限的用户触发自动化",
                 "When enabled, automations will only run if the user triggering the event has write access to the repository. When disabled, users can create automations that listen for events triggered by users without write access.": "启用后，只有触发事件的用户具有仓库写入权限时才会运行自动化。禁用后，用户可以创建监听无写入权限用户所触发事件的自动化。",
