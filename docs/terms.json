@@ -1,0 +1,432 @@
+{
+  "note": "GitHub 中文化术语表 —— zh-CN 词条的单一数据源，由 script/check-terms.mjs 校验 locals.js。新增/修改术语请只改这里。",
+  "version": 1,
+  "phrases": [
+    {
+      "id": "learn-more-about",
+      "match": "Learn more about",
+      "prefix": "了解更多关于",
+      "allow": ["^了解如何", "^点击此处了解更多关于", "^深入了解"],
+      "severity": "error",
+      "note": "统一为「了解更多关于 X 的信息」；「了解有关…的更多信息」属冗余变体，「了解如何」保留。"
+    },
+    {
+      "id": "are-you-sure",
+      "match": "Are you sure",
+      "prefix": "您确定要",
+      "allow": ["^您确定吗", "^您确定不希望"],
+      "severity": "error",
+      "note": "确认句统一「您确定要…吗？」；独立成句的「Are you sure?」用「您确定吗」放行。"
+    },
+    {
+      "id": "unable-to",
+      "match": "Unable to",
+      "prefix": "无法",
+      "allow": ["^抱歉"],
+      "severity": "error",
+      "note": "「Unable to X」统一译「无法 X」，不写成「不能」「未能」。"
+    },
+    {
+      "id": "you-are-about-to",
+      "match": "You are about to",
+      "prefix": "您即将",
+      "allow": ["^您将"],
+      "severity": "error",
+      "note": "「You are about to X」统一「您即将 X」。"
+    },
+    {
+      "id": "you-must",
+      "match": "You must",
+      "prefix": "您必须",
+      "severity": "error",
+      "note": "291 个键全部符合；用作防回归。"
+    },
+    {
+      "id": "this-action",
+      "match": "This action",
+      "prefix": "此操作",
+      "severity": "error",
+      "note": "统一「此操作」，不用「该操作」。"
+    },
+    {
+      "id": "no-matching",
+      "match": "No matching",
+      "prefix": "没有匹配",
+      "severity": "error",
+      "note": "空状态统一「没有匹配…」，不用「无匹配」「暂无匹配」。"
+    }
+  ],
+  "banned": [
+    {
+      "id": "account-simplified",
+      "match": "帐户",
+      "severity": "error",
+      "note": "#195：帐户 → 账户。"
+    },
+    {
+      "id": "you-formal",
+      "match": "你",
+      "allow": ["迷你", "你好"],
+      "severity": "error",
+      "note": "#195：你 → 您（「迷你」「你好」除外）。"
+    },
+    {
+      "id": "interaction",
+      "match": "交互",
+      "allow": ["交互式", "浏览器交互", "页面交互"],
+      "severity": "error",
+      "note": "#195：交互 → 互动（「交互式」「浏览器/页面交互」除外）。"
+    }
+  ],
+  "terms": [
+    {
+      "id": "repository",
+      "labels": ["Repositories", "Repository"],
+      "words": ["repository"],
+      "zh": "仓库",
+      "forbid": ["存储库", "代码仓库", "代码仓"],
+      "severity": "error",
+      "note": "仓库 = repository；「代码库」留给 codebase，不要混用。"
+    },
+    {
+      "id": "issue",
+      "labels": ["Issues", "Issue"],
+      "zh": "议题",
+      "forbid": ["问题"],
+      "severity": "error",
+      "note": "长句里的「问题」多为普通名词（如「解决问题」），故不做整句扫描。"
+    },
+    {
+      "id": "pull-request",
+      "labels": ["Pull requests", "Pull request"],
+      "words": ["pull request"],
+      "zh": "拉取请求",
+      "forbid": ["合并请求"],
+      "severity": "error"
+    },
+    {
+      "id": "fork",
+      "labels": ["Fork", "Forks"],
+      "zh": "复刻",
+      "forbid": ["分叉", "派生"],
+      "severity": "error"
+    },
+    {
+      "id": "release",
+      "labels": ["Releases", "Release"],
+      "zh": "发行版",
+      "forbid": ["发布版本"],
+      "severity": "error"
+    },
+    {
+      "id": "actions",
+      "labels": ["Actions"],
+      "zh": "Actions",
+      "forbid": ["操作", "动作"],
+      "severity": "error",
+      "note": "按 issue-702 的结论保留英文；「操作」属于旧译法。"
+    },
+    {
+      "id": "workflow",
+      "labels": ["Workflow", "Workflows"],
+      "words": ["workflow"],
+      "zh": "工作流",
+      "forbid": ["工作流程"],
+      "severity": "error"
+    },
+    {
+      "id": "codespaces",
+      "labels": ["Codespaces"],
+      "zh": "代码空间",
+      "forbid": ["代码仓库"],
+      "severity": "error"
+    },
+    {
+      "id": "pending",
+      "labels": ["Pending"],
+      "zh": "待处理",
+      "forbid": ["未决", "待定"],
+      "severity": "error",
+      "note": "「未决」是旧译法，2026-11 统一为「待处理」。"
+    },
+    {
+      "id": "done",
+      "labels": ["Done"],
+      "zh": "已完成",
+      "forbid": ["完成"],
+      "severity": "error",
+      "note": "状态用「已完成」；安装/编辑流程里的按钮用「完成」。",
+      "overrides": [
+        { "sectionPrefix": "session-authentication", "zh": "完成" },
+        { "sectionPrefix": "spark", "zh": "完成" }
+      ]
+    },
+    {
+      "id": "visibility",
+      "labels": ["Visibility"],
+      "words": ["visibility"],
+      "zh": "可见性",
+      "forbid": ["可见度"],
+      "severity": "error"
+    },
+    {
+      "id": "credentials",
+      "labels": ["Credentials"],
+      "zh": "凭证",
+      "forbid": ["凭据"],
+      "severity": "error",
+      "note": "2026-11 统一为「凭证」，「凭据」为旧译法。"
+    },
+    {
+      "id": "sessions",
+      "labels": ["Sessions"],
+      "words": ["session"],
+      "zh": "会话",
+      "forbid": ["智能体任务"],
+      "severity": "error",
+      "note": "「agent 任务」仍译「智能体任务」；agent 会话页面用「智能体会话」。",
+      "overrides": [
+        { "sectionPrefix": "repository/agents", "zh": "智能体会话" }
+      ]
+    },
+    {
+      "id": "all",
+      "labels": ["All"],
+      "zh": "全部",
+      "forbid": ["所有"],
+      "severity": "error"
+    },
+    {
+      "id": "everyone",
+      "labels": ["Everyone"],
+      "zh": "任何人",
+      "forbid": ["所有人"],
+      "severity": "error"
+    },
+    {
+      "id": "configure",
+      "labels": ["Configure"],
+      "zh": "配置",
+      "forbid": ["设置", "自定义配置"],
+      "severity": "error"
+    },
+    {
+      "id": "remove",
+      "labels": ["Remove"],
+      "zh": "移除",
+      "forbid": ["删除"],
+      "severity": "error",
+      "note": "「删除」对应 Delete；Remove 仅表示从当前范围移除。"
+    },
+    {
+      "id": "active",
+      "labels": ["Active"],
+      "zh": "活跃",
+      "forbid": ["激活", "已启用", "进行中"],
+      "severity": "error",
+      "note": "「Active」在多数页面作状态「活跃」，个别页面指开关/运行态，按段落覆盖。",
+      "overrides": [
+        { "sectionPrefix": "settings/appearance", "zh": "已启用" },
+        { "sectionPrefix": "repository/settings/hooks", "zh": "激活" },
+        { "sectionPrefix": "repository/agents", "zh": "进行中" }
+      ]
+    },
+    {
+      "id": "draft",
+      "labels": ["Draft"],
+      "zh": "草案",
+      "forbid": ["草稿"],
+      "severity": "error"
+    },
+    {
+      "id": "archive",
+      "labels": ["Archive", "Archives"],
+      "zh": "归档",
+      "forbid": ["存档", "归档文件"],
+      "severity": "error",
+      "note": "仓库设置里的 Archives 指归档文件本身，按段落覆盖。",
+      "overrides": [
+        { "sectionPrefix": "repository/settings", "labels": ["Archives"], "zh": "归档文件" }
+      ]
+    },
+    {
+      "id": "discussions",
+      "labels": ["Discussions"],
+      "zh": "讨论",
+      "forbid": ["议论"],
+      "severity": "error"
+    },
+    {
+      "id": "milestones",
+      "labels": ["Milestones"],
+      "zh": "里程碑",
+      "severity": "error"
+    },
+    {
+      "id": "projects",
+      "labels": ["Projects"],
+      "zh": "项目",
+      "severity": "error"
+    },
+    {
+      "id": "organizations",
+      "labels": ["Organizations"],
+      "zh": "组织",
+      "severity": "error"
+    },
+    {
+      "id": "teams",
+      "labels": ["Teams"],
+      "zh": "团队",
+      "severity": "error"
+    },
+    {
+      "id": "packages",
+      "labels": ["Packages"],
+      "zh": "软件包",
+      "severity": "error"
+    },
+    {
+      "id": "security",
+      "labels": ["Security"],
+      "zh": "安全",
+      "forbid": ["安全性"],
+      "severity": "error"
+    },
+    {
+      "id": "insights",
+      "labels": ["Insights"],
+      "zh": "洞察",
+      "forbid": ["分析"],
+      "severity": "error"
+    },
+    {
+      "id": "marketplace",
+      "labels": ["Marketplace"],
+      "zh": "市场",
+      "forbid": ["商城"],
+      "severity": "error"
+    },
+    {
+      "id": "environments",
+      "labels": ["Environments"],
+      "zh": "环境",
+      "severity": "error"
+    },
+    {
+      "id": "deployments",
+      "labels": ["Deployments"],
+      "zh": "部署",
+      "severity": "error"
+    },
+    {
+      "id": "branches",
+      "labels": ["Branches"],
+      "zh": "分支",
+      "severity": "error"
+    },
+    {
+      "id": "tags",
+      "labels": ["Tags"],
+      "zh": "标签",
+      "forbid": ["标记"],
+      "severity": "error"
+    },
+    {
+      "id": "commits",
+      "labels": ["Commits"],
+      "zh": "提交",
+      "forbid": ["承诺"],
+      "severity": "error"
+    },
+    {
+      "id": "notifications",
+      "labels": ["Notifications"],
+      "zh": "通知",
+      "severity": "error"
+    },
+    {
+      "id": "settings",
+      "labels": ["Settings"],
+      "zh": "设置",
+      "severity": "error"
+    },
+    {
+      "id": "watch",
+      "labels": ["Watch"],
+      "zh": "关注",
+      "forbid": ["监视"],
+      "severity": "error"
+    },
+    {
+      "id": "stars",
+      "labels": ["Stars"],
+      "zh": "星标",
+      "forbid": ["收藏", "加星"],
+      "severity": "error"
+    },
+    {
+      "id": "star",
+      "labels": ["Star"],
+      "zh": "标星",
+      "forbid": ["星标"],
+      "severity": "warn",
+      "note": "按钮/动作（Star this repository）用「标星」，名词「星标」见 stars。"
+    },
+    {
+      "id": "moderation",
+      "labels": ["Moderation"],
+      "zh": "社区管理",
+      "forbid": ["节制"],
+      "severity": "error",
+      "note": "2026-11 由「节制」统一为「社区管理」；「节制」不再接受。"
+    },
+    {
+      "id": "policies",
+      "labels": ["Policies", "policies"],
+      "zh": "策略",
+      "forbid": ["政策"],
+      "severity": "error",
+      "note": "2026-11 统一为「策略」（软件语境 policy）；「政策」仅保留在许可证等句子里。"
+    },
+    {
+      "id": "planning",
+      "labels": ["Planning"],
+      "zh": "计划",
+      "forbid": ["规划"],
+      "severity": "error",
+      "note": "2026-11 由「规划」统一为「计划」。"
+    },
+    {
+      "id": "assignees",
+      "labels": ["Assignees"],
+      "zh": "受理人",
+      "forbid": ["负责人"],
+      "severity": "warn",
+      "note": "「负责人」多用于团队角色，指派到议题/PR 的人用「受理人」，待统一。"
+    },
+    {
+      "id": "profile",
+      "labels": ["Profile"],
+      "zh": "个人信息",
+      "forbid": ["个人资料页", "个人资料"],
+      "severity": "warn"
+    },
+    {
+      "id": "recently-updated",
+      "labels": ["Recently updated"],
+      "zh": "最近更新",
+      "forbid": ["近期更新"],
+      "severity": "error",
+      "note": "#195：近期更新 → 最近更新。"
+    },
+    {
+      "id": "least-recently-updated",
+      "labels": ["Least recently updated"],
+      "zh": "最早更新",
+      "forbid": ["最近最少更新"],
+      "severity": "error",
+      "note": "#195：最近最少更新 → 最早更新。"
+    }
+  ]
+}
