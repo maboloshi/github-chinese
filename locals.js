@@ -9040,7 +9040,7 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return `此仓库已由所有者于${translatedDate}归档。它现在是只读的。`;
         }],
-        [/, and ([^ ]+)/, ", 和 $1"],
+        // [/, and ([^ ]+)/, ", 和 $1"], // 存在误杀
         [/reacted with (thumbs up|thumbs down|laugh|hooray|confused|heart|rocket|eyes) emoji/, function (all, reacted) {
             var reactedKey = {'thumbs up': "点赞", 'thumbs down': "点踩", laugh: "大笑", hooray: "欢呼", confused: "表示困惑", heart: "比心", rocket: "发送火箭", eyes: "表示关注"};
 
