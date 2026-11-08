@@ -30,6 +30,13 @@
     let page;
     let enable_RegExp = GM_getValue("enable_RegExp", 1);
 
+    // 仓库简介元素的选择器：兼容经典 UI、新版 React UI 与当前 About 侧栏（issue #811）
+    const REPOSITORY_DESC_SELECTOR = [
+        ".f4.tmp-my-3", // 经典 UI
+        'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
+        '[class*="borderGrid__"] p[class*="description__"]', // 当前 React UI：About 侧栏内的描述
+    ].join(", ");
+
     function isReactGlobalNavPortalNode(node) {
         const element = node?.nodeType === 1 ? node : node?.parentElement;
         const portalRoot = element?.closest?.('#__primerPortalRoot__');
@@ -413,7 +420,7 @@
                         // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
                         transBySelector();
                         if (page === "repository") { //仓库简介翻译
-                            transDesc(".f4.my-3");
+                            transDesc(REPOSITORY_DESC_SELECTOR);
                         } else if (page === "gist") { // Gist 简介翻译
                             transDesc(".gist-content [itemprop='about']");
                         }
@@ -437,6 +444,11 @@
                         traverseNode(mutation.target);
                     }
                 });
+            }
+
+            // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
+            if (page === "repository") {
+                transDesc(REPOSITORY_DESC_SELECTOR);
             }
         });
 
@@ -855,7 +867,7 @@
                 // 使用 CSS 选择器找到页面上的元素，并将其文本内容替换为预定义的翻译
                 transBySelector();
                 if (page === "repository") { //仓库简介翻译
-                    transDesc(".f4.my-3");
+                    transDesc(REPOSITORY_DESC_SELECTOR);
                 } else if (page === "gist") { // Gist 简介翻译
                     transDesc(".gist-content [itemprop='about']");
                 }
