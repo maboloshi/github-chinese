@@ -37,7 +37,7 @@ const expectedReactNavLabels = {
             "Issues": "议题",
             "Pull requests": "拉取请求",
             "Discussions": "讨论",
-            "Actions": "操作",
+            "Actions": "Actions",
             "Projects": "项目",
             "Wiki": "Wiki",
             "Security": "安全",
