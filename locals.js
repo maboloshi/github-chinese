@@ -12186,6 +12186,8 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
 
                 "Collapse file tree": "折叠文件树",
                 "Expand file tree": "展开文件树",
+                "File tree": "文件树",
+                "Pull request toolbar": "拉取请求工具栏",
 
                 "Select commits to view": "选择要查看的提交",
                 "All changes": "所有更改",
@@ -12422,6 +12424,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
         [/Suggest change on line ((L|R)(\d+))/, "建议更改 $1 行"],
         [/Expand all lines: (.+)/, "展开所有行：$1"],
         [/Collapse non-diff lines: (.+)/, "折叠未更改行：$1"],
+        [/^([\d,]+) of ([\d,]+) files? viewed$/, "已查看 $1 / $2 个文件"],
         // CODEOWNERS 文件指定所有者
         [/Owned by (\@.+) \(from CODEOWNERS line (\d+)\)/, "由 $1 拥有（来自 CODEOWNERS 第 $2 行）"],
 
