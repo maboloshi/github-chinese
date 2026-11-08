@@ -708,6 +708,7 @@
         }
 
         if (tag === "INPUT" || tag === "TEXTAREA") { // 输入框和文本域
+            transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
             if (['button', 'submit', 'reset'].includes(node.type)) {
                 transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
                 transElementAttrs(node, 'value'); // 值属性
