@@ -19827,6 +19827,8 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
                 "Automations only run for events from users with write access.": "只有在事件由具有写入权限的用户触发时，自动化才会响应该事件。",
             "Limit automation writes to the triggering resource": "将自动化写入限制为触发它的资源",
                 "When enabled, automation runs can only change the issue, pull request, or discussion that triggered them, and anything they create. This does not apply to scheduled runs, security alert runs, or runs started by another automation.": "启用后，自动化运行只能修改触发它的议题、拉取请求或讨论，以及它创建的内容。此限制不适用于计划运行、安全警报触发的运行或由其他自动化启动的运行。",
+            "Only allow automations to update the resource that triggered them": "仅允许自动化更新触发它的资源",
+                "Runs can only change the issue, pull request, or discussion that triggered them, and anything the run created. Doesn't apply to scheduled runs, security alert runs, or runs started by another automation.": "自动化运行只能修改触发它的议题、拉取请求或讨论，以及该次运行创建的内容。此限制不适用于计划运行、安全警报触发的运行或由其他自动化启动的运行。",
             "Require approval for workflow runs": "要求审批工作流运行",
                 "Actions workflows wait for approval from someone with write access before they run on Copilot's changes.": "针对 Copilot 更改运行的 Actions 工作流，须先由具有写入权限的用户批准。",
                 "When Copilot pushes changes, require approval from a maintainer with write access before Actions workflows are run.": "当 Copilot 推送更改时，要求具有写入权限的维护者批准后再运行 Actions 工作流。",
