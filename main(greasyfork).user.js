@@ -4,14 +4,14 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.2.4-2026-06-21
+// @version      1.9.2.4-2026-10-14
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
 // @match        https://skills.github.com/*
 // @match        https://gist.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.9.2.4-2026-06-21
+// @require      https://greasyfork.org/scripts/435207-github-%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6-%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99/code/GitHub%20%E4%B8%AD%E6%96%87%E5%8C%96%E6%8F%92%E4%BB%B6%20-%20%E4%B8%AD%E6%96%87%E8%AF%8D%E5%BA%93%E8%A7%84%E5%88%99.js?v1.9.2.4-2026-10-14
 // @run-at       document-end
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -469,14 +469,9 @@
         if (node.nodeType === Node.ELEMENT_NODE) { // 元素节点处理
 
             // 翻译时间元素
-            if (
-                ["RELATIVE-TIME", "TIME-AGO", "TIME", "LOCAL-TIME"].includes(node.tagName)
-            ) {
+            if (node.tagName === "RELATIVE-TIME") {
                 if (node.shadowRoot) {
                     transTimeElement(node.shadowRoot);
-                    watchTimeElement(node.shadowRoot);
-                } else {
-                    transTimeElement(node);
                 }
                 return;
             }
@@ -623,33 +618,13 @@
      * @param {Element} el - 需要翻译的元素。
      */
     function transTimeElement(el) {
-        let key = el.childNodes.length > 0 ? el.lastChild.textContent : el.textContent;
-        let res = I18N[lang]['public']['time-regexp']; // 时间正则规则
-
-        for (let [a, b] of res) {
-            let str = key.replace(a, b);
-            if (str !== key) {
-                el.textContent = str;
-                break;
-            }
+        const text = el.textContent;
+        if (!text) return;
+        // 移除时间文本中的"on"
+        const result = text.replace(/\bon\s+/gi, (match, offset) => offset === 0 ? " " : "");
+        if (result !== text) {
+            el.textContent = result;
         }
-    }
-
-    /**
-     * watchTimeElement 函数：监视时间元素变化, 触发和调用时间元素翻译
-     * @param {Element} el - 需要监视的元素。
-     */
-    function watchTimeElement(el) {
-        const MutationObserver =
-            window.MutationObserver ||
-            window.WebKitMutationObserver ||
-            window.MozMutationObserver;
-
-        new MutationObserver(mutations => {
-            transTimeElement(mutations[0].addedNodes[0]);
-        }).observe(el, {
-            childList: true
-        });
     }
 
     /**
@@ -842,10 +817,28 @@
     }
 
     /**
+     * 初始化并保护中文语言环境
+     */
+    function initLangEnv() {
+        // 设置初始语言
+        document.documentElement.lang = 'zh-CN';
+
+        // 监视语言属性变化，防止被改回英文
+        const langObserver = new MutationObserver(() => {
+            // 如果检测到语言被改回英文，重新设置
+            if (document.documentElement.lang === "en") {
+                document.documentElement.lang = 'zh-CN';
+            }
+        });
+        langObserver.observe(document.documentElement, { attributeFilter: ['lang'] });
+    }
+
+    /**
      * init 函数：初始化翻译功能。
      */
     function init() {
         setupReactGlobalNavTranslation();
+        initLangEnv();
 
         // 获取当前页面的翻译规则
         page = getPage();

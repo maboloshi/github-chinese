@@ -1,0 +1,90 @@
+name: Build Extension
+
+on:
+  # 定时触发：每5天自动运行一次
+  schedule:
+    - cron: '0 0 */5 * *'
+  
+  # 代码推送触发：当 vscode-extension 目录有变更时自动构建
+  push:
+    paths:
+      - 'vscode-extension/**'
+  
+  # PR 触发：当 PR 涉及 vscode-extension 目录变更时构建
+  pull_request:
+    paths:
+      - 'vscode-extension/**'
+  
+  # 手动触发：允许在 Actions 页面手动点击运行
+  workflow_dispatch:
+  
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      expires_at: ${{ steps.calc-expiry.outputs.expires_at }}
+      artifact_name: ${{ steps.package.outputs.artifact_name }}
+      vsix_path: ${{ steps.package.outputs.vsix_path }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v7
+
+      - name: 设置 Node.js 环境
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: 'vscode-extension/package-lock.json'
+
+      - name: 进入插件目录并安装依赖
+        run: |
+          cd vscode-extension
+          npm ci
+
+      - name: 打包 VSIX
+        id: package
+        run: |
+          cd vscode-extension
+          # 清理旧的 VSIX 文件，避免上传历史构件
+          rm -f ./*.vsix
+          # 使用 package.json 中的 name 和 version 生成确定性的文件名
+          PKG_NAME=$(node -p "require('./package.json').name")
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          VSIX_FILE="${PKG_NAME}-${PKG_VERSION}.vsix"
+          # 以指定的文件名打包 VSIX，避免依赖 ls 和通配符
+          npx @vscode/vsce package -o "$VSIX_FILE"
+          echo "artifact_name=$VSIX_FILE" >> $GITHUB_OUTPUT
+          echo "vsix_path=vscode-extension/$VSIX_FILE" >> $GITHUB_OUTPUT
+
+      - name: 计算过期时间
+        id: calc-expiry
+        run: |
+          EXPIRY_DATE=$(date -u -d "+5 days" '+%Y-%m-%d %H:%M UTC')
+          echo "expires_at=$EXPIRY_DATE" >> $GITHUB_OUTPUT
+
+      - name: 上传构件
+        uses: actions/upload-artifact@v7
+        with:
+          name: github-chinese-extension
+          path: ${{ steps.package.outputs.vsix_path }}
+          retention-days: 5
+          archive: false
+
+      - name: 生成运行摘要
+        if: always()
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'EOF'
+          ## 📦 GitHub 中文化扩展构建报告
+
+          | 项目 | 详情 |
+          | :--- | :--- |
+          | **构建状态** | ${{ job.status == 'success' && '✅ 成功' || '❌ 失败' }} |
+          | **触发方式** | ${{ github.event_name }} |
+          | **产物名称** | `${{ steps.package.outputs.artifact_name }}` |
+          | **预计过期时间** | **${{ steps.calc-expiry.outputs.expires_at }}** |
+          EOF

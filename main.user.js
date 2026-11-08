@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.4-2026-07-01
+// @version      1.9.4.4-2026-10-14
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.4-2026-07-01
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.4-2026-10-14
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -366,7 +366,8 @@
         const isSession = document.body.classList.contains("session-authentication");
         const isHomepage = pathname === '/' && site === 'github';
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
-        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation);
+        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
+            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content;
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
         let pageType;
@@ -641,7 +642,6 @@
             const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
             if (!element) return true;
             if (element.closest?.(unsafeTextSelector)) return true;
-            if (element.closest?.(searchModuleSelector)) return true;
             if (element.closest?.(searchSurfaceSelector)) return true;
 
             return false;
@@ -720,6 +720,8 @@
                     translateReactGlobalNavElement(element, element.getAttribute('data-content'));
                 }
             });
+            // 翻译搜索输入框占位文本
+            translateReactGlobalNavSearchButton();
             // 翻译整个头部区域
             translateReactGlobalNavSurface(header);
 
@@ -753,11 +755,82 @@
         }
 
         /**
+         * 翻译搜索输入框的占位文本（处理混合了 kbd 标签的内容）
+         */
+        function translateReactGlobalNavSearchButton() {
+            const placeholder = document.querySelector('header.GlobalNav [class*="Search-module__placeholder__"]');
+            if (!placeholder) return;
+            const label = translateReactGlobalNavText(placeholder.textContent);
+            if (!label || normalizeReactGlobalNavText(placeholder.textContent) === label) return;
+
+            const textNodeGroups = [[]];
+            const protectedTexts = [];
+            function collectSearchPlaceholderNodes(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    textNodeGroups[textNodeGroups.length - 1].push(node);
+                    return;
+                }
+                if (node.nodeType !== Node.ELEMENT_NODE) return;
+                if (node.matches?.(unsafeTextSelector)) {
+                    const protectedText = normalizeReactGlobalNavText(node.textContent);
+                    if (protectedText) {
+                        protectedTexts.push(protectedText);
+                        textNodeGroups.push([]);
+                    }
+                    return;
+                }
+                node.childNodes.forEach(collectSearchPlaceholderNodes);
+            }
+            placeholder.childNodes.forEach(collectSearchPlaceholderNodes);
+
+            const segments = [];
+            let remainingLabel = label;
+            for (const protectedText of protectedTexts) {
+                const protectedIndex = remainingLabel.indexOf(protectedText);
+                if (protectedIndex === -1) return;
+                segments.push(remainingLabel.slice(0, protectedIndex));
+                remainingLabel = remainingLabel.slice(protectedIndex + protectedText.length);
+            }
+            segments.push(remainingLabel);
+
+            if (segments.some((segment, index) => {
+                return normalizeReactGlobalNavText(segment) && !textNodeGroups[index].length;
+            })) return;
+            textNodeGroups.forEach((nodes, segmentIndex) => {
+                nodes.forEach((node, nodeIndex) => {
+                    node.data = nodeIndex === 0 ? segments[segmentIndex] : '';
+                });
+            });
+        }
+
+        /**
+         * 翻译搜索弹窗内的静态标签（区域标题、底部提示等，不翻译用户输入或动态建议）
+         */
+        function translateReactGlobalNavSearchDialog() {
+            const dialog = document.querySelector('#search-suggestions-dialog');
+            if (!dialog) return;
+            const header = document.getElementById('search-suggestions-dialog-header');
+            if (header) {
+                const label = translateReactGlobalNavText(header.textContent);
+                if (label) header.textContent = label;
+            }
+            dialog.querySelectorAll('.ActionList-sectionDivider-title').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+            dialog.querySelectorAll('.search-feedback-prompt a, .search-feedback-prompt button').forEach(el => {
+                const label = translateReactGlobalNavText(el.textContent);
+                if (label) el.textContent = label;
+            });
+        }
+
+        /**
          * 总翻译入口，被调度函数调用
          * @param {object} options - { requireSettledHeader: true/false }
          */
         function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
             observeReactGlobalNav();   // 确保观察器已启动
+            translateReactGlobalNavSearchDialog();
 
             const headerTranslated = translateReactGlobalNavHeader();
             const portalsTranslated = translateReactGlobalNavPortals();
@@ -1091,8 +1164,8 @@
         // 获取时间文本
         const text = element.textContent;
         if (!text) return;
-        // 移除开头的"on"
-        const result = text.replace(/^on/, "");
+        // 移除时间文本中的"on"
+        const result = text.replace(/\bon\s+/gi, (match, offset) => offset === 0 ? " " : "");
         if (result !== text) {
             element.textContent = result; // 应用翻译
         }

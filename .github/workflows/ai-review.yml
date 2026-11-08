@@ -1,0 +1,139 @@
+name: AI 代码审查（DeepSeek）
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: 目标仓库 owner/repo（默认本仓库）
+        required: false
+        default: ''
+      pr:
+        description: PR 编号
+        required: true
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+  issue_comment:
+    types: [created]
+  schedule:
+    - cron: '*/15 * * * *'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: ai-review-${{ github.event_name }}-${{ github.event.pull_request.number || github.event.issue.number || inputs.pr }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    env:
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      GH_TOKEN: ${{ github.token }}
+      APP_ID: ${{ secrets.APP_ID }}
+      TARGET_REPO: ${{ vars.REVIEW_TARGET || 'maboloshi/github-chinese' }}
+      WATCHLIST: ${{ vars.REVIEW_WATCHLIST || '' }}
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'pull_request' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       contains(github.event.comment.body, '/review'))
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: 解析目标仓库、PR 与 head SHA
+        id: ctx
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            repo="${{ inputs.repo || github.repository }}"
+            pr="${{ inputs.pr }}"
+          elif [ "${{ github.event_name }}" = "issue_comment" ]; then
+            repo="${{ github.repository }}"
+            pr="${{ github.event.issue.number }}"
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            repo="${{ github.repository }}"
+            pr="${{ github.event.pull_request.number }}"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            repo="${TARGET_REPO:-maboloshi/github-chinese}"
+            owner="${{ github.repository_owner }}"
+            for p in ${WATCHLIST//,/ }; do
+              [ -z "$p" ] && continue
+              hit=$(gh api "repos/$repo/issues/$p/comments" \
+                --jq '[.[] | select(.user.login == $o) | select(.body | contains("/review"))] | length' \
+                --arg o "$owner" 2>/dev/null || echo 0)
+              if [ "$hit" != "0" ]; then
+                pr="$p"
+                break
+              fi
+            done
+          fi
+          if [ -z "$repo" ] || [ -z "$pr" ]; then
+            echo "本次无目标 PR（schedule 看护清单中无待审 /review），跳过。"
+            exit 0
+          fi
+          case "$repo" in
+            */*) ;;
+            *) echo "❌ repo 参数格式应为 owner/repo（当前：$repo）"; exit 1 ;;
+          esac
+          sha=$(gh api "repos/$repo/pulls/$pr" --jq '.head.sha' 2>/dev/null || echo "")
+          echo "repo=$repo" >> "$GITHUB_OUTPUT"
+          echo "owner=${repo%%/*}" >> "$GITHUB_OUTPUT"
+          echo "repo_name=${repo#*/}" >> "$GITHUB_OUTPUT"
+          echo "pr=$pr" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: 去重（同一 head SHA 已审过则跳过）
+        id: dedup
+        if: steps.ctx.outputs.pr != ''
+        run: |
+          sha="${{ steps.ctx.outputs.sha }}"
+          if [ -z "$sha" ]; then
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          comments=$(gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" --jq '.[].body' 2>/dev/null || true)
+          if printf '%s' "$comments" | grep -q "ai-review:$sha"; then
+            echo "该 head（$sha）已审查过，跳过。"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 生成 AI 审查
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != ''
+        env:
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL || '' }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL || '' }}
+        run: |
+          python script/ai_review.py \
+            --repo "${{ steps.ctx.outputs.repo }}" \
+            --pr "${{ steps.ctx.outputs.pr }}" \
+            --out review.md
+
+      - name: 生成 GitHub App 安装令牌（bot 身份）
+        id: app-token
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && env.APP_ID != '' && success()
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ steps.ctx.outputs.owner }}
+          repositories: ${{ steps.ctx.outputs.repo_name }}
+
+      - name: 组装审查评论文件（追加去重标记）
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        run: |
+          printf '\n\n<!--ai-review:%s-->' "${{ steps.ctx.outputs.sha }}" >> review.md
+
+      - name: 发布审查评论（App bot 优先，否则 github-actions[bot]）
+        if: steps.ctx.outputs.pr != '' && steps.dedup.outputs.skip != 'true' && env.LLM_API_KEY != '' && success()
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          export GH_TOKEN="${APP_TOKEN:-${{ github.token }}}"
+          echo "以 bot 身份发布到 ${{ steps.ctx.outputs.repo }}#${{ steps.ctx.outputs.pr }}"
+          gh api "repos/${{ steps.ctx.outputs.repo }}/issues/${{ steps.ctx.outputs.pr }}/comments" -F "body=@review.md" --jq '.html_url'

@@ -38,14 +38,10 @@ jobs:
           git diff --quiet --exit-code README.md || echo "CHANGES_DETECTED=true" >> $GITHUB_ENV
 
       - name: Commit and push README.md
-        if: ${{ env.CHANGES_DETECTED == 'true' }}
-        env:
-          GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
-          APP_SLUG: ${{ steps.generate_token.outputs.app-slug }}
-        run: |
-          bash script/ci_commit_with_signature.sh \
-          -R "${{ github.repository }}" \
-          -B "${{ github.ref_name }}" \
-          -P "${{ github.sha }}" \
-          -F "README.md" \
-          -h "修改文档: 更新\`贡献者列表\`"
+        if: env.CHANGES_DETECTED == 'true'
+        uses: maboloshi/dco-commit-action@v1
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          app-slug: ${{ steps.generate_token.outputs.app-slug }}
+          files: "README.md"
+          headline: "修改文档: 更新`贡献者列表`"
