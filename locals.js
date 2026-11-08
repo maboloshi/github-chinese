@@ -12206,6 +12206,7 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "All": "全部",
                 "Unresolved": "未解决",
                 "Mine": "我的",
+                "Close side panel": "关闭侧面板",
                 "Show hidden comments": "显示隐藏的评论",
                 "Show AI and bot comments": "显示 AI 和机器人评论",
                 "No comments yet": "暂无评论",
@@ -12215,6 +12216,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
                 "Newest first": "最新优先",
                 "Oldest first": "最早优先",
                 "Code order": "按代码顺序",
+                "Sort comments: Newest": "评论排序：最新优先",
+                "Sort comments: Oldest": "评论排序：最早优先",
+                "Sort comments: Code order": "评论排序：按代码顺序",
                 "Submit": "提交",
                     "review": "审查",
 
