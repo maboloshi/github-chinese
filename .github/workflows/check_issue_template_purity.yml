@@ -1,0 +1,39 @@
+name: 议题模板语种纯度
+
+on:
+  pull_request:
+    paths:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/workflows/check_issue_template_purity.yml'
+      - 'script/check_issue_template_purity.py'
+      - 'test/test_check_issue_template_purity.py'
+  push:
+    paths:
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/workflows/check_issue_template_purity.yml'
+      - 'script/check_issue_template_purity.py'
+      - 'test/test_check_issue_template_purity.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 固定版本：字形级转换的行为取决于包内词典，升级前先看单元测试
+      - name: 安装依赖
+        run: pip install pyyaml==6.0.3 opencc-python-reimplemented==0.1.7
+
+      - name: 检查议题模板语种纯度
+        run: python script/check_issue_template_purity.py
+
+      - name: 运行单元测试
+        run: python -m unittest discover -s test -p 'test_check_issue_template_purity.py'
