@@ -160,3 +160,30 @@ test('transDesc re-attaches the button after React replaces the description node
     assert.equal(firstElement.nextElementSibling, document.created[0]);
     assert.equal(secondElement.nextElementSibling, document.created[1]);
 });
+
+for (const fileName of ['main.user.js', 'main(nju.edu).user.js', 'main_zh-TW.user.js']) {
+    test(`${fileName} skips re-mount when the translation result is already shown`, () => {
+        const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
+
+        assert.match(
+            source,
+            /contains\('translate-button'\)[\s\S]{0,160}?contains\('translation-result'\)/,
+            `${fileName} should also check for an existing translation result in transDesc`,
+        );
+    });
+}
+
+test('transDesc does not insert a new button when the translation result is already shown', () => {
+    const element = createDescriptionElement();
+    // 翻译完成后的 DOM：按钮已被 showTransResult 移除，结果容器插在描述后面
+    element.nextElementSibling = {
+        classList: { contains: (className) => className === 'translation-result' },
+    };
+    const document = createDocument(element);
+    const transDesc = loadTransDesc(document);
+
+    // MutationObserver 重挂载不得再插入按钮，否则每次点击都会叠加一个翻译框
+    transDesc('[class*="borderGrid__"] p[class*="description__"]');
+
+    assert.equal(document.created.length, 0);
+});

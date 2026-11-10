@@ -1315,7 +1315,9 @@
 
         // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
         const nextSibling = element.nextElementSibling;
-        if (nextSibling?.classList?.contains('translate-button')) return;
+        // 已有按钮或翻译结果时不再插入，否则 MutationObserver 重挂载会让每次点击都叠加一个翻译框（#811 回归）
+        if (nextSibling?.classList?.contains('translate-button') ||
+            nextSibling?.classList?.contains('translation-result')) return;
 
         // 创建翻译按钮
         const button = document.createElement('div');
