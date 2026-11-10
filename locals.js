@@ -117,19 +117,18 @@ I18N.conf = {
             '.cm-line',
         ],
         '*': [
-            'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
-            'qbsearch-input', // 顶部搜索框自定义元素
             '.highlight',
             '.notranslate',
             '[translate="no"]',
-            'input',
-            'textarea',
+            // input / textarea 交给通用遍历的标签分支处理：只翻 placeholder / aria-label，
+            // 文本域子文本（默认值）在 handleTextNode 拦截，contenteditable 仍整体排除（#727）
             '[contenteditable=""]',
             '[contenteditable="true"]',
             '[contenteditable="plaintext-only"]',
             'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
+            'div[data-testid="quick-search-input-overlay"]', // 顶部搜索栏 关键词
         ],
     },
 
@@ -260,8 +259,6 @@ I18N.conf = {
             '.monaco-editor',
         ],
         '*': [
-            'header.GlobalNav [class*="Search-module__"]', // React 版顶部搜索按钮
-            'qbsearch-input', // 顶部搜索框自定义元素
             '.comment-body', '.js-preview-body',
             '.markdown-title',
             'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
@@ -269,12 +266,12 @@ I18N.conf = {
             '.highlight',
             '.notranslate',
             '[translate="no"]',
-            'input',
-            'textarea',
+            // 同 ignoreMutationSelectorPage：input / textarea 由通用遍历的标签分支负责
             '[contenteditable=""]',
             '[contenteditable="true"]',
             '[contenteditable="plaintext-only"]',
 			'div.styled-input-content', // 筛选条
+            'span[class^="suggestionName__"]', // 顶部搜索栏 建议
         ],
     },
 
@@ -739,7 +736,8 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Type": "请键入",
             "to search": "去搜索",
             "Command palette": "命令面板",
-            "Saved queries": "已保存的搜索",
+            "Saved": "已保存",
+                "saved:": "已保存：",
             "All of GitHub": "整个 GitHub",
             "Autocomplete": "自动完成",
             "Search all of GitHub": "搜索整个 GitHub",
@@ -1885,7 +1883,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
             "Open quick search dialog, type / to search": "打开快速搜索对话框，键入 / 搜索",
             "Quick search": "快速搜索",
             "Search or jump to…": "搜索或跳转到…",
+            "Search or jump to": "搜索或跳转到",
             "Search suggestions": "搜索建议",
+            "Clear search": "清除搜索",
             "Recent": "最近",
             "Breadcrumbs": "面包屑导航",
             "Search code, repositories, users, issues, pull requests...": "搜索代码、仓库、用户、议题、拉取请求...",

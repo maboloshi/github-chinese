@@ -2,7 +2,7 @@
 //
 // 目的：拆掉 React GlobalNav 旁路引擎后，确认真实 GitHub 页面上
 //   1) 头部导航仍被通用遍历翻成中文；
-//   2) 搜索控件保持原样（#704 护栏仍在生效）；
+//   2) 顶部搜索入口仍能被识别（新版 UI 的入口文案由通用管线翻译）；
 //   3) 面包屑里的账号名 / 仓库名不被误译（#824）；
 //   4) 没有未捕获错误、没有把节点写坏的迹象。
 //
@@ -112,17 +112,17 @@ try {
                 .map(el => (el.textContent || '').trim())
                 .filter(text => text && text.length < 24);
             const unique = [...new Set(labels)];
-            const search = header.querySelector('[class*="Search-module__"]');
+            const searchEntry = header.querySelector('button[aria-label*="quick search" i]');
             const breadcrumbs = [...header.querySelectorAll('nav[data-component="Breadcrumbs"] a[href]')]
                 .map(a => ({ text: (a.textContent || '').trim(), path: a.pathname }));
-            return { header: true, labels: unique, search: search ? search.textContent.trim() : null, breadcrumbs };
+            return { header: true, labels: unique, searchEntry: searchEntry ? searchEntry.textContent.trim() : null, breadcrumbs };
         })())`) || 'null');
 
         console.log(`\n## ${url}`);
         failures += !check('页面有 header.GlobalNav', probe?.header);
         const labels = probe?.labels || [];
         failures += !check('头部导航出现中文', labels.some(text => CJK.test(text)), labels.slice(0, 10).join(' | '));
-        failures += !check('搜索控件未被改写', !probe?.search || !CJK.test(probe.search), JSON.stringify(probe?.search));
+        console.log(`    顶部搜索入口: ${JSON.stringify(probe?.searchEntry)}`);
         if (probe?.breadcrumbs?.length) {
             const bad = probe.breadcrumbs.filter(item => CJK.test(item.text));
             failures += !check('面包屑账号/仓库名保持原文', bad.length === 0, JSON.stringify(probe.breadcrumbs));

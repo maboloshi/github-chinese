@@ -61,7 +61,7 @@ test('locals.js 把 GlobalNav 与 portal 交还通用遍历', () => {
     }
 });
 
-test('搜索控件仍被排除在遍历之外（#704 的护栏）', () => {
+test('失效的旧搜索选择器不再保留', () => {
     const traversalIgnored = config.ignoreSelectorPage['*'];
     const mutationIgnored = config.ignoreMutationSelectorPage['*'];
 
@@ -69,11 +69,11 @@ test('搜索控件仍被排除在遍历之外（#704 的护栏）', () => {
         ['ignoreMutationSelectorPage', mutationIgnored],
         ['ignoreSelectorPage', traversalIgnored],
     ]) {
+        assert.ok(!list.includes('qbsearch-input'), `${name} 不应再有 qbsearch-input`);
         assert.ok(
-            list.includes('header.GlobalNav [class*="Search-module__"]'),
-            `${name} 应继续跳过 React 头部搜索按钮`,
+            !list.some(selector => selector.includes('Search-module__')),
+            `${name} 不应再有 Search-module__`,
         );
-        assert.ok(list.includes('qbsearch-input'), `${name} 应继续跳过搜索自定义元素`);
     }
 });
 

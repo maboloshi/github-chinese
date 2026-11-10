@@ -619,7 +619,7 @@
                     }
                 });
             } else if (type === 'attributes') {
-                // 处理属性变化，target 就是元素
+                // 处理属性变化，target 就是元素（input / textarea 也走这里）
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
@@ -744,6 +744,8 @@
      */
     function handleTextNode(node) {
         if (node.length > 500) return; // 跳过长文本节点
+        // 文本域的子文本是它的默认值（用户内容），翻了就破坏编辑器内容（#727）
+        if (node.parentElement?.tagName === 'TEXTAREA') return;
         transElementAttrs(node, 'data'); // 翻译文本内容
     }
 
@@ -763,8 +765,16 @@
         }
 
         if (tag === "INPUT" || tag === "TEXTAREA") { // 输入框和文本域
+            // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
+            // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
+            //
+            // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
+            // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
+            // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
             transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
             if (['button', 'submit', 'reset'].includes(node.type)) {
+                // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
+                // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
                 transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
                 transElementAttrs(node, 'value'); // 值属性
             } else {
