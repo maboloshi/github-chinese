@@ -80,6 +80,10 @@
                 --ghc-border-color: #e1e4e8;
                 --ghc-button-bg: #f6f8fa;
             }
+            [class*="TrailingVisual__"] {
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
             /* 浅色主题样式（默认） */
             .translate-button {
                 color: var(--ghc-primary-color);

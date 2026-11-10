@@ -828,6 +828,18 @@
         let id = GM_registerMenuCommand(`${enable_RegExp ? '关闭' : '开启'}正则功能`, toggleRegExp);
     }
 
+    function injectStyles() {
+        if (!document.head) return;
+        const style = document.createElement('style');
+        style.textContent = `
+            [class*="TrailingVisual__"] {
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
     /**
      * 初始化并保护中文语言环境
      */
@@ -851,6 +863,7 @@
     function init() {
         setupReactGlobalNavTranslation();
         initLangEnv();
+        injectStyles();
 
         // 获取当前页面的翻译规则
         page = getPage();

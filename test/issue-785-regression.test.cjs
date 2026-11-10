@@ -82,6 +82,7 @@ function loadStableTimeTranslation() {
         window: { MutationObserver },
     });
     const functions = [
+        'injectStyles',
         'initLangEnv',
         'transTimeElement',
         'traverseNode',
