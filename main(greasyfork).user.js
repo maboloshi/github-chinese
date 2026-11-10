@@ -559,7 +559,8 @@
         const pathname = location.pathname; // 当前路径
 
         // 是否登录
-        const isLogin = document.body.classList.contains("logged-in");
+        const isLogin = document.body.classList.contains("logged-in")
+            || !!document.querySelector('meta[name="user-login"]')?.content;
 
         // 用于确定 个人首页，组织首页，仓库页 然后做判断
         const analyticsLocation = (document.getElementsByName('analytics-location')[0] || {}).content || '';

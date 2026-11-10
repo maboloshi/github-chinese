@@ -363,7 +363,8 @@
 
         // 基础配置
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
-        const isLogin = document.body.classList.contains("logged-in");
+        const isLogin = document.body.classList.contains("logged-in")
+            || !!document.head.querySelector('meta[name="user-login"]')?.content;
         const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
 
         // 页面特征检测
