@@ -1157,10 +1157,7 @@
             transElementAttrs(node.dataset, 'visibleText'); // 可见文本
         }
 
-        // 带有 tooltipped 样式的元素
-        if (/tooltipped/.test(node.className)) {
-            transElementAttrs(node, 'ariaLabel');
-        }
+        transElementAttrs(node, 'ariaLabel');
     }
 
     /* =========================== 翻译功能 =========================== */

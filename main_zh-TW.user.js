@@ -963,10 +963,7 @@
             transElementAttrs(node.dataset, 'visibleText'); // 可見文本
         }
 
-        // 帶有 tooltipped 樣式的元素
-        if (/tooltipped/.test(node.className)) {
-            transElementAttrs(node, 'ariaLabel');
-        }
+        transElementAttrs(node, 'ariaLabel');
     }
 
     /* =========================== 翻譯功能 =========================== */

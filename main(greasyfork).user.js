@@ -533,6 +533,10 @@
                 }
             }
 
+            if (node.hasAttribute && node.hasAttribute('aria-label')) {
+                transElement(node, 'aria-label', true);
+            }
+
             let childNodes = node.childNodes;
             childNodes.forEach(traverseNode); // 遍历子节点
 
