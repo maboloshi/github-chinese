@@ -47,6 +47,16 @@ body:
         - 其他问题
     validations:
       required: true
+  - type: dropdown
+    id: volunteer
+    attributes:
+      label: 贡献意愿
+      description: 您能自行解决本议题并贡献到本仓库吗？
+      options:
+        - 我将自行解决本议题并贡献到本仓库。
+        - 我希望他人解决本议题。
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
