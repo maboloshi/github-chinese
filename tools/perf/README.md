@@ -1,7 +1,8 @@
 # 性能基准台（tools/perf）
 
 量的是 `main.user.js` 在**真实 GitHub 页面**上对 React 管理的 DOM 做了什么。
-它需要真实浏览器 + GitHub 登录态，只在动头部翻译模块时手动跑，不属于 `node --test test/`。
+它需要真实浏览器 + GitHub 登录态，只在动头部翻译、导航生命周期、描述翻译等 DOM 路径时手动跑，
+不属于 `node --test test/`。
 
 **为什么不放在 `test/` 下**：裸跑 `node --test` 会把 `test/` 目录下的每个文件都当成测试文件，
 连 `lib/*.mjs` 和 `reports/` 里的副本都算，等于跑一次七十秒的浏览器基准并报一堆失败。
@@ -63,6 +64,9 @@ git show HEAD:main.user.js > reports\head-main.user.js
 node tools\perf\bench.mjs --main reports\head-main.user.js
 ```
 
+`baseline/1.9.4.4.json` 是 1.9.4.4 的冻结基线；当前脚本已是 1.9.4.5，跨版本对照只用于看趋势，
+不作为回归门禁。刷新基线时用 `--out tools\perf\baseline\<version>.json`，并同步更新同名 `.md`。
+
 bench 开始前会关掉调试浏览器里多余的标签页——插桩只存在于它重载的那个文档里，
 留着多个标签页会让后续的 probe/stress 分不清被测对象。
 
@@ -72,6 +76,40 @@ bench 开始前会关掉调试浏览器里多余的标签页——插桩只存�
 **注入约束**：`locals.js` 已有 2MB 量级，单条 `Page.addScriptToEvaluateOnNewDocument` 会让浏览器
 迟迟不回包（实测 30s 超时）；而 GitHub 的 CSP 又不允许 `eval`。所以 `lib/instrument.mjs` 用
 `lib/split-dictionary.mjs` 按顶层语句边界把词库切段、逐条登记。改注入逻辑时别退回一次性注入。
+
+## 多页面巡检
+
+bench 只盯仓库主页，其他页面的头部、弹层、词条可能完全不同。`sweep.mjs` 用同一套注入流程过一遍
+内置页面清单，逐页记录翻译覆盖度、全页中文指纹、driver 键集合和写入/错误计数：
+
+```bat
+node tools\perf\sweep.mjs
+node tools\perf\sweep.mjs --out reports\sweep.json
+node tools\perf\sweep.mjs --baseline reports\sweep-before.json
+node tools\perf\sweep.mjs --pages https://github.com/notifications,https://github.com/settings/profile --settle 3000
+```
+
+**读数纪律**：先把同一份脚本跑两遍，确认哪些页面的中文指纹稳定；不稳定的页面只比 driver 键集合
+（`resolved:` / `miss:` / `hit-static:`），剪枝类改造只要没丢翻译，这份集合就该完全一致。
+
+## 探针（按问题排查）
+
+大多数探针要求先跑过一次 `bench.mjs`（它负责注入插桩并重载页面），然后在同一个页面上执行；
+带 `--main <副本>` 的探针会自己登记插桩并导航，适合一条命令复现。
+
+| 场景 | 命令 |
+|---|---|
+| 看页面/注入状态，或执行任意表达式 | `node tools\perf\probe.mjs "document.title"` |
+| 各条 mutation 通道实际覆盖到哪些节点 | `node tools\perf\probe-mutations.mjs` |
+| hover 提示气泡是否仍被翻译、遍历成本 | `node tools\perf\probe-hover.mjs` |
+| 按 250ms 采样 header，区分「从未翻」与「翻了又被 React 覆盖」 | `node tools\perf\probe-header-translate.mjs [url]` |
+| 搜索控件文案的真实来源（DOM 文本 / input 属性 / CSS） | `node tools\perf\probe-search-placeholder.mjs [url]` |
+| 写入目标的真实 DOM 形状（空 / 单文本 / 多子节点） | `node tools\perf\probe-writetargets.mjs [--url <页面>] [--wait 9000]` |
+| `document_start` vs CDP 注入时机对照（自带 headless） | `node tools\perf\probe-docstart.mjs` |
+| Turbo/站内跳转触发路径 | `node tools\perf\probe-navigation.mjs [--main <副本>]` |
+| 各种导航方式矩阵（点击 / 刷新 / 前进后退 / pushState / hash） | `node tools\perf\probe-navigations.mjs [--main <副本>]` |
+| 页面基线 + 导航矩阵 + 鼠标交互三合一 | `node tools\perf\probe-matrix.mjs [--main <副本>]` |
+| 描述翻译结果已存在时不得重挂按钮（#826） | `node tools\perf\probe-transdesc-rearm.mjs [url]` |
 
 ## 指标口径
 
@@ -125,36 +163,29 @@ node tools\perf\smoke-single-pipeline.mjs https://github.com/community/community
 **环境限制**：headless 访问 github.com 在部分网络下会落到 `chrome-error://`，
 所以它只适合做冒烟，不能替代调试窗口里的 `bench.mjs`。
 
-`probe-docstart.mjs` 是独立的注入时机对照实验（自己起 headless 浏览器，不依赖调试窗口）：
-
-```bat
-node tools\perf\probe-docstart.mjs
-```
-
-`probe-writetargets.mjs` 不装插桩，只把页面里各类写入目标的真实 DOM 形状摊开
-（子节点个数与类型、可见文字到底来自 DOM 还是 CSS），改写入方式之前先跑它：
-
-```bat
-node tools\perf\probe-writetargets.mjs
-node tools\perf\probe-writetargets.mjs --url <页面地址> --wait 9000
-```
-
 ## 文件
 
 | 路径 | 作用 |
 |---|---|
 | `lib/cdp.mjs` | CDP 连接、求值、指标差值、单行摘要 |
 | `lib/instrument.mjs` | 插桩脚本 + `GM_*` 垫片 + 主脚本外壳 + 注入顺序 |
+| `lib/split-dictionary.mjs` | 按顶层语句边界切分大词库 |
 | `bench.mjs` | 五场景基准，可对照基线 |
+| `sweep.mjs` | 多页面巡检与基线对照 |
+| `smoke-single-pipeline.mjs` | 单管线 headless 冒烟 |
 | `probe.mjs` | 读页面/注入状态，或执行任意表达式 |
+| `probe-mutations.mjs` | 各条变更通道实际覆盖到谁 |
+| `probe-hover.mjs` | hover 提示气泡的翻译与遍历成本 |
+| `probe-header-translate.mjs` | 按 250ms 采样 header 导航项 |
+| `probe-search-placeholder.mjs` | 搜索控件文案的真实来源 |
+| `probe-writetargets.mjs` | 写入目标的真实 DOM 形状 |
+| `probe-docstart.mjs` | `document_start` vs CDP 注入时机对照 |
+| `probe-navigation.mjs` | 单次 Turbo/站内跳转触发路径 |
+| `probe-navigations.mjs` | 各种导航方式矩阵 |
+| `probe-matrix.mjs` | 页面基线 + 导航矩阵 + 鼠标交互 |
+| `probe-transdesc-rearm.mjs` | 描述翻译结果存在时的按钮重挂载 |
 | `stress-search.mjs` | 搜索弹层打字压力 |
 | `stress-heavy.mjs` | 文件查找器 + 通知面板压力 |
-| `probe-hover.mjs` | hover 提示气泡的翻译与遍历成本 |
-| `probe-mutations.mjs` | 各条变更通道（新增元素自身 / 后代 / 属性变化 / 文本）实际覆盖到谁 |
-| `probe-header-translate.mjs` | 按 250ms 采样 header 导航项，区分「从未翻」与「翻了又被 React 覆盖」 |
-| `probe-search-placeholder.mjs` | 摊开搜索控件文案的真实来源（DOM 文本 / input 属性 / CSS），改 input 补翻前先看它 |
-| `probe-writetargets.mjs` | 写入目标的 DOM 形状（空 / 单文本 / 多子节点），改写入方式前先看它 |
-| `probe-docstart.mjs` | `document_start` vs CDP 注入时机对照 |
 | `start-edge-debug.cmd` | 起基准台专用调试浏览器 |
 | `baseline/` | 冻结的基线数据 |
 | `reports/` | 每次运行的输出（不入库） |

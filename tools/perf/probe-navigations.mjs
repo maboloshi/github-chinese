@@ -13,12 +13,10 @@
 //   node tools/perf/probe-navigations.mjs --main <插桩副本>     # 一条命令可复现
 //   node tools/perf/probe-navigations.mjs                       # 用当前文档（先跑过 bench.mjs）
 
-import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
-const BASE = 'D:\\App\\github项目\\github-chinese\\tools\\perf\\lib\\';
-const { attach, debugPort, sleep, openPage, benchUrl, closeOtherPages } = await import(pathToFileURL(BASE + 'cdp.mjs').href);
-const { installHarness, uninstallHarness } = await import(pathToFileURL(BASE + 'instrument.mjs').href);
+const { attach, debugPort, sleep, openPage, benchUrl, closeOtherPages } = await import(new URL('./lib/cdp.mjs', import.meta.url));
+const { installHarness, uninstallHarness } = await import(new URL('./lib/instrument.mjs', import.meta.url));
 
 const args = process.argv.slice(2);
 const argOf = name => {

@@ -1,9 +1,9 @@
 // GitHub 汉化插件 · 性能基准台
 //
 // 用法:
-//   node test/perf/bench.mjs                       # 跑完整场景，写 reports/bench-report.json
-//   node test/perf/bench.mjs --baseline test/perf/baseline/1.9.4.4.json
-//   node test/perf/bench.mjs --main <另一个 main.user.js>     # A/B 对照历史版本
+//   node tools/perf/bench.mjs                       # 跑完整场景，写 reports/bench-report.json
+//   node tools/perf/bench.mjs --baseline tools/perf/baseline/1.9.4.4.json
+//   node tools/perf/bench.mjs --main <另一个 main.user.js>     # A/B 对照历史版本
 //
 // `--out` 与 `--baseline` 都按当前工作目录解析，`--main` 也是。
 //

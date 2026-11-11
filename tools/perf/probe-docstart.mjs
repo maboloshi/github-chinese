@@ -7,8 +7,8 @@
 //       Tampermonkey 用的时机），一个 CDP Page.addScriptToEvaluateOnNewDocument
 //       （更早一档）——比对各自看到的 DOM 状态。
 //
-// 用法: node test/perf/probe-docstart.mjs
-//       EDGE_BIN=... node test/perf/probe-docstart.mjs
+// 用法: node tools/perf/probe-docstart.mjs
+//       EDGE_BIN=... node tools/perf/probe-docstart.mjs
 
 import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';

@@ -16,14 +16,10 @@
 //   - 新页面的中文叶子数 > 0（列表/正文被翻出来，不只是头部）
 //   - 错误为 0
 
-import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 
-const LIB = 'D:\\App\\github项目\\github-chinese\\tools\\perf\\lib\\cdp.mjs';
-const { attach, debugPort, sleep, openPage, benchUrl, closeOtherPages } = await import(pathToFileURL(LIB).href);
-const { installHarness, uninstallHarness } = await import(
-    pathToFileURL('D:\\App\\github项目\\github-chinese\\tools\\perf\\lib\\instrument.mjs').href
-);
+const { attach, debugPort, sleep, openPage, benchUrl, closeOtherPages } = await import(new URL('./lib/cdp.mjs', import.meta.url));
+const { installHarness, uninstallHarness } = await import(new URL('./lib/instrument.mjs', import.meta.url));
 
 const args = process.argv.slice(2);
 const argOf = name => {

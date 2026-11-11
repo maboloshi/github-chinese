@@ -1,8 +1,8 @@
 // GitHub 汉化插件 · 调试浏览器探针
 //
 // 用法:
-//   node test/perf/probe.mjs                       # 打印页面与脚本注入的关键状态
-//   node test/perf/probe.mjs "document.title"      # 执行任意表达式并打印结果
+//   node tools/perf/probe.mjs                       # 打印页面与脚本注入的关键状态
+//   node tools/perf/probe.mjs "document.title"      # 执行任意表达式并打印结果
 //
 // 前置: start-edge-debug.cmd 起的调试浏览器（默认端口 9222，EDGE_DEBUG_PORT 可覆盖）。
 
