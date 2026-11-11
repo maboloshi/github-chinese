@@ -106,6 +106,8 @@ VS Code 集成浏览器  |
    ```
 1. 刷新页面生效
 
+性能基准台（真实浏览器 + 登录态，开发用）见 [`tools/perf/README.md`](tools/perf/README.md)。
+
 > [!IMPORTANT]
 > **若无效：**
 > 1. 进入 [Tampermonkey][Tampermonkey] 插件`设置页`
