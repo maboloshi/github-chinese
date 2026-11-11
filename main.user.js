@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.4-2026-11-08
+// @version      1.9.4.5-2026-11-11
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.4-2026-11-08
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.5-2026-11-11
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -965,9 +965,13 @@
 
         // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
         const nextSibling = element.nextElementSibling;
-        // 已有按钮或翻译结果时不再插入，否则 MutationObserver 重挂载会让每次点击都叠加一个翻译框（#811 回归）
+        // 已有按钮或翻译结果时都不再插入。showTransResult 会移除按钮、把结果容器插到描述后面，
+        // 这次插入又会触发 MutationObserver 重挂载；只认 .translate-button 的话，每轮重挂载都会
+        // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
         if (nextSibling?.classList?.contains('translate-button') ||
-            nextSibling?.classList?.contains('translation-result')) return;
+            nextSibling?.classList?.contains('translation-result')) {
+            return;
+        }
 
         // 创建翻译按钮
         const button = document.createElement('div');
