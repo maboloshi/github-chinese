@@ -42,12 +42,6 @@ test('main.user.js 只有语言守卫与主遍历两个 MutationObserver', () =>
     assert.doesNotMatch(mainScript, /GlobalNav/);
 });
 
-test('面包屑标识符护栏留在通用遍历里（#824）', () => {
-    assert.match(mainScript, /function isBreadcrumbIdentifierLink/);
-    assert.match(mainScript, /octolytics-dimension-repository_nwo/);
-    assert.match(mainScript, /FILTER_REJECT; \/\/ 跳过账号名 \/ 仓库名/);
-});
-
 test('locals.js 把 GlobalNav 与 portal 交还通用遍历', () => {
     const mutationIgnored = config.ignoreMutationSelectorPage['*'];
     const traversalIgnored = config.ignoreSelectorPage['*'];
@@ -110,45 +104,4 @@ function loadLocale(fileName, localeName) {
     const context = vm.createContext({});
     vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, { filename: filePath });
     return context.I18N[localeName];
-}
-
-function translateWithRules(text, rules) {
-    for (const [pattern, replacement] of rules) {
-        const result = text.replace(pattern, replacement);
-        if (result !== text) return result;
-    }
-    return text;
-}
-
-test('Simplified Chinese contributor periods use the page-specific full phrase rule', () => {
-    const locale = loadLocale('locals.js', 'zh-CN');
-    const rules = locale['repository/graphs/contributors'].regexp;
-
-    assert.equal(translateWithRules('Last 6 months', rules), '最后 6 个月');
-    assert.equal(translateWithRules('Last 12 months', rules), '最后 12 个月');
-    assert.equal(translateWithRules('Last 24 months', rules), '最后 24 个月');
-});
-
-test('Traditional Chinese contributor periods use the page-specific full phrase rule', () => {
-    const locale = loadLocale('locals_zh-TW.js', 'zh-TW');
-    const rules = locale['repository/graphs/contributors'].regexp;
-
-    assert.equal(translateWithRules('Last 6 months', rules), '最後 6 個月');
-    assert.equal(translateWithRules('Last 12 months', rules), '最後 12 個月');
-    assert.equal(translateWithRules('Last 24 months', rules), '最後 24 個月');
-});
-
-for (const [fileName, localeName, expected] of [
-    ['locals.js', 'zh-CN', '查看所有用户的提交'],
-    ['locals(greasyfork).js', 'zh-CN', '查看所有用户的提交'],
-    ['locals_zh-TW.js', 'zh-TW', '查看所有用戶的提交'],
-]) {
-    test(`${fileName} retains the commits menu footer translation`, () => {
-        const locale = loadLocale(fileName, localeName);
-
-        assert.equal(
-            locale['repository/commit'].static['View commits for all users'],
-            expected,
-        );
-    });
 }

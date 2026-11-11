@@ -1,13 +1,21 @@
-// 输入框的 placeholder / aria-label 现在由通用遍历的 INPUT / TEXTAREA 分支负责：
-// React 搜索框（portal 里的文本 input）与普通 input 走同一条管线，不再有旁路补翻。
+// 输入框 / 文本域 / 可编辑内容：只翻 placeholder、aria-label 与按钮 value，
+// 用户输入、textarea 默认值、contenteditable 正文都保持原文。
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
 const vm = require('node:vm');
 
+const { loadConfig } = require('./helpers/load-config.cjs');
+
 const ROOT = path.join(__dirname, '..');
 const source = fs.readFileSync(path.join(ROOT, 'main.user.js'), 'utf8').replace(/\r\n/g, '\n');
+
+const editableSelectors = [
+    '[contenteditable=""]',
+    '[contenteditable="true"]',
+    '[contenteditable="plaintext-only"]',
+];
 
 function extractFunction(name) {
     const start = source.indexOf(`    function ${name}(`);
@@ -106,4 +114,74 @@ globalThis.__process = processMutations;`, context);
     ]);
 
     assert.deepEqual(traversed, [input], '新增与属性变化合并后只遍历一次');
+});
+
+test('输入框与文本域会翻译 aria-label', () => {
+    const textarea = { tagName: 'TEXTAREA', type: 'textarea', ariaLabel: 'Ask anything' };
+    const textInput = { tagName: 'INPUT', type: 'text', ariaLabel: 'Search' };
+    const submit = { tagName: 'INPUT', type: 'submit', ariaLabel: 'Submit', dataset: { confirm: 'x' } };
+
+    const { calls, handle } = loadHandleElementNode();
+    for (const element of [textarea, textInput, submit]) {
+        calls.length = 0;
+        handle(element);
+        assert.ok(
+            calls.some(call => call.target === element && call.attr === 'ariaLabel'),
+            `${element.tagName}[${element.type}] 应请求翻译 ariaLabel，实际 ${JSON.stringify(calls.map(c => c.attr))}`,
+        );
+    }
+});
+
+test('非按钮输入框仍然翻译 placeholder', () => {
+    const element = { tagName: 'TEXTAREA', type: 'textarea', ariaLabel: 'x' };
+    const { calls, handle } = loadHandleElementNode();
+    handle(element);
+    assert.ok(calls.some(call => call.attr === 'placeholder'));
+});
+
+test('locals.js keeps contenteditable content out of translation', () => {
+    const config = loadConfig('locals.js');
+
+    for (const selector of editableSelectors) {
+        assert.ok(
+            config.ignoreMutationSelectorPage['*'].includes(selector),
+            `${selector} must be ignored by MutationObserver translation`,
+        );
+        assert.ok(
+            config.ignoreSelectorPage['*'].includes(selector),
+            `${selector} must be ignored during the initial DOM traversal`,
+        );
+    }
+});
+
+test('input / textarea 交给通用遍历，不再留在忽略表里', () => {
+    const config = loadConfig('locals.js');
+
+    for (const selector of ['input', 'textarea']) {
+        assert.ok(
+            !config.ignoreMutationSelectorPage['*'].includes(selector),
+            `${selector} 不应再被 MutationObserver 忽略`,
+        );
+        assert.ok(
+            !config.ignoreSelectorPage['*'].includes(selector),
+            `${selector} 不应再被遍历忽略`,
+        );
+    }
+});
+
+test('textarea 的子文本（默认值）不会被当作文本节点翻译', () => {
+    const translated = [];
+    const context = vm.createContext({
+        transElementAttrs(node, attr) { translated.push({ node, attr }); },
+    });
+    vm.runInContext(`${extractFunction('handleTextNode')}
+globalThis.__handleText = handleTextNode;`, context);
+
+    const textareaDefaultValue = { length: 12, parentElement: { tagName: 'TEXTAREA' } };
+    context.__handleText(textareaDefaultValue);
+    assert.equal(translated.length, 0, 'textarea 的默认值属于用户内容，不能翻');
+
+    const bodyText = { length: 12, parentElement: { tagName: 'P' } };
+    context.__handleText(bodyText);
+    assert.deepEqual(translated.map(call => call.attr), ['data']);
 });

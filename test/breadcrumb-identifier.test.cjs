@@ -98,3 +98,9 @@ test('只对面包屑里的 <a> 生效', () => {
     const page = load({ pathname: '/maboloshi' });
     assert.equal(page.link('/maboloshi', { inBreadcrumbs: false }), false, '不在面包屑里就不管');
 });
+
+test('面包屑标识符护栏留在通用遍历里（#824）', () => {
+    assert.match(source, /function isBreadcrumbIdentifierLink/);
+    assert.match(source, /octolytics-dimension-repository_nwo/);
+    assert.match(source, /FILTER_REJECT; \/\/ 跳过账号名 \/ 仓库名/);
+});
