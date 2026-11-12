@@ -109,6 +109,27 @@ for (const fileName of runtimeScripts) {
                 /if \(page === "repository"\) \{[^}]{0,120}transDesc\(REPOSITORY_DESC_SELECTOR\)/,
                 `${fileName} should re-mount the description button on mutations`,
             );
+        } else if (fileName === 'main.user.js') {
+            // 描述按钮在载入/导航时强制核对，之后由批次按 isConnected 决定是否重挂
+            assert.match(
+                source,
+                /safe\(mountDescButton, '描述翻译'\)\(true\)/,
+                `${fileName} should mount the description button on load/navigation`,
+            );
+            assert.match(
+                source,
+                /safe\(mountDescButton, '描述按钮'\)\(true\)/,
+                `${fileName} should mount the description button on first load`,
+            );
+            assert.match(
+                source,
+                /mountDescButton\(\);[\s\S]{0,240}?takeRecords\(\)/,
+                `${fileName} should re-mount after mutations and drop its own records`,
+            );
+            assert.ok(
+                !source.includes('enable_descRearm'),
+                `${fileName} should not expose a behavior switch for re-mounting`,
+            );
         } else {
             assert.match(
                 source,
@@ -149,6 +170,11 @@ test('transDesc inserts exactly one translate button after the matched descripti
     assert.equal(document.created.length, 1);
     assert.ok(document.created[0].classList.contains('translate-button'));
     assert.equal(element.nextElementSibling, document.created[0]);
+    assert.equal(
+        transDesc('[class*="borderGrid__"] p[class*="description__"]').mount,
+        document.created[0],
+        '已挂载时应返回现有按钮，供按帧重挂逻辑记住节点',
+    );
 
     // 同一描述节点重复调用不应插入第二个按钮（MutationObserver 会反复触发）
     transDesc('[class*="borderGrid__"] p[class*="description__"]');

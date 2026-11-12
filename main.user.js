@@ -139,6 +139,8 @@
         dynamicMenus: {},        // 动态菜单ID记录
         pendingMutations: [],    // 一帧内攒下的 mutation 记录
         mutationFlush: null,     // 已排期的批次处理句柄
+        descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
+        descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
         initDone: false,
     };
 
@@ -220,6 +222,7 @@
             updatePageConfig('首次载入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍历')(document.body);
+                safe(mountDescButton, '描述按钮')(true);
             }
             setupMutationObserver(); // 设置DOM变化观察器
         }
@@ -334,6 +337,28 @@
     }
 
     /**
+     * 确保描述翻译按钮挂在该页的描述节点后面。
+     *
+     * 不监控每个突变：描述节点还在、且按钮仍是它的下一个兄弟节点时，只做两次
+     * isConnected / nextElementSibling 判断；只有 React 换掉描述（或把按钮挪走）才重新查询。
+     * @param {boolean} force - 载入 / 导航后强制核对一次，防止同一 body 内换了描述节点
+     */
+    function mountDescButton(force = false) {
+        if (!State.featureSet.enable_transDesc) return;
+        const pageType = State.pageConfig?.currentPageType;
+        if (!pageType) return;
+        const descSelector = CONFIG.DESC_SELECTORS[pageType];
+        if (!descSelector) return;
+        if (!force && State.descHost?.isConnected &&
+            State.descHost.nextElementSibling === State.descMount) {
+            return;
+        }
+        const mounted = transDesc(descSelector);
+        State.descHost = mounted?.host || null;
+        State.descMount = mounted?.mount || null;
+    }
+
+    /**
      * 处理Turbo页面加载事件
      * 在新页面加载后执行必要的翻译
      */
@@ -362,27 +387,25 @@
 
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
-
-        // 如果描述翻译功能启用，翻译页面描述
-        if (State.featureSet.enable_transDesc &&
-            CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            safe(transDesc, '描述翻译')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
-        }
+        safe(mountDescButton, '描述翻译')(true); // 翻译页面描述（载入/导航时强制核对一次）
     }
 
     /* =========================== 页面配置管理 =========================== */
 
     /**
      * 更新页面配置 — 页面类型变化时重建 State.pageConfig
+     * 同一页面类型内只更新路径：词库、正则规则和翻译缓存都与具体路径无关，
+     * 站内翻页（议题列表、仓库之间）不必重新展开词库和重算前置过滤。
      * @param {string} trigger - 触发更新的原因（用于调试）
      */
     function updatePageConfig(trigger) {
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType ||
-            window.location.pathname !== State.pageConfig?.currentPath) {
+        } else if (newType !== State.pageConfig?.currentPageType) {
             State.pageConfig = buildPageConfig(newType);
+        } else {
+            State.pageConfig.currentPath = window.location.pathname;
         }
         console.log(`【Debug】${trigger}触发, 页面类型为 ${State.pageConfig?.currentPageType}`);
     }
@@ -563,12 +586,15 @@
         State.pendingMutations = [];
         if (!State.pageConfig) return;
 
-        processMutations(batch);
+        try {
+            processMutations(batch);
 
-        // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
-        if (State.featureSet?.enable_transDesc) {
-            const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
-            if (descSelector) transDesc(descSelector);
+            // React 替换描述节点时，按钮会随旧节点一起消失；下次批次按 isConnected 决定是否重挂。
+            mountDescButton();
+        } finally {
+            // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
+            // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
+            State.mutationObserver?.takeRecords();
         }
     }
 
@@ -858,7 +884,7 @@
         }
 
         // 带有 tooltipped 样式的元素
-        if (/tooltipped/.test(node.className)) {
+        if (typeof node.className === 'string' && node.className.includes('tooltipped')) {
             transElementAttrs(node, 'ariaLabel');
         }
     }
@@ -923,8 +949,11 @@
      * @param {string|string[]} attrs - 要翻译的属性名或属性名数组
      */
     function transElementAttrs(target, attrs) {
-        const attrList = Array.isArray(attrs) ? attrs : [attrs];
-        attrList.forEach(attrName => transElementAttr(target, attrName));
+        if (Array.isArray(attrs)) {
+            for (const attrName of attrs) transElementAttr(target, attrName);
+        } else {
+            transElementAttr(target, attrs);
+        }
     }
 
     /**
@@ -945,13 +974,9 @@
      * @returns {string|boolean} 翻译后的文本或 false
      */
     function transText(text) {
-        // 跳过不需要翻译的文本：
-        // 1. 空文本（包空白字符）或纯数字
-        // 2. 纯中文字符
-        // 3. 不包含英文字母和,.符号的文本
-        if (/^[\s0-9]*$/.test(text) ||
-            /^[\u4e00-\u9fa5]+$/.test(text) ||
-            !/[a-zA-Z,.]/.test(text)) {
+        // 跳过不需要翻译的文本：不含英文字母和 , . 的文本一律不查词库
+        //（空文本、纯数字、纯中文都落在这里；有英文的文本才可能命中词条或正则）
+        if (!/[a-zA-Z,.]/.test(text)) {
             return false;
         }
 
@@ -1045,7 +1070,10 @@
         const pageConfig = State.pageConfig;
         // 未命中词条记录依赖「每次查询都记账」，开启时绕开缓存以保证行为不变（仅开发者模式）。
         const cache = State.featureSet.enable_missedTerms ? null : pageConfig.transCache;
-        if (cache && cache.has(text)) return cache.get(text);
+        if (cache) {
+            const cached = cache.get(text);
+            if (cached !== undefined) return cached;
+        }
 
         let result = false;
 
@@ -1090,10 +1118,11 @@
     /**
      * 为描述元素添加翻译按钮
      * @param {string} selector - 描述元素的选择器
+     * @returns {{host: Element, mount: Element}|null} 描述节点与已存在的按钮 / 翻译结果或新按钮
      */
     function transDesc(selector) {
         const element = document.querySelector(selector);
-        if (!element) return;
+        if (!element) return null;
 
         // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
         const nextSibling = element.nextElementSibling;
@@ -1102,7 +1131,7 @@
         // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
         if (nextSibling?.classList?.contains('translate-button') ||
             nextSibling?.classList?.contains('translation-result')) {
-            return;
+            return { host: element, mount: nextSibling };
         }
 
         // 创建翻译按钮
@@ -1113,6 +1142,7 @@
 
         // 绑定点击事件
         button.addEventListener('click', () => handleTransClick(button, element));
+        return { host: element, mount: button };
     }
 
     /**
@@ -1167,6 +1197,7 @@
         // 移除按钮并显示结果
         button.remove();
         element.after(resultContainer);
+        State.descMount = resultContainer;
     }
 
     /**
@@ -1503,13 +1534,13 @@
                 label: "描述翻译",
                 key: "enable_transDesc",
                 callback: (enabled) => {
-                    const pageType = State.pageConfig?.currentPageType;
-                    if (enabled && pageType) {
-                        // 启用描述翻译
-                        transDesc(CONFIG.DESC_SELECTORS[pageType]);
-                    } else if (!enabled) {
-                        // 禁用描述翻译，移除按钮
+                    if (enabled) {
+                        mountDescButton(true);
+                    } else {
+                        // 禁用描述翻译，移除按钮；重挂由 mountDescButton 的特性检查挡住
                         document.querySelector('.translate-button')?.remove();
+                        State.descHost = null;
+                        State.descMount = null;
                     }
                 }
             }

@@ -1,4 +1,5 @@
-// 观察器回调按帧合并：同一帧内的多次回调只遍历一次，换 body 时丢弃旧批次。
+// 观察器回调按帧合并：同一帧内的多次回调只遍历一次，换 body 时丢弃旧批次；
+// 自己的写入不回流成下一批突变；描述节点被替换后才重挂按钮。
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -28,7 +29,14 @@ function createHarness() {
     const processed = [];
     const updates = [];
     let descCalls = 0;
+    let takeRecordsCalls = 0;
     let observer = null;
+    const initialMount = { isConnected: true };
+    const initialHost = { isConnected: true, nextElementSibling: initialMount };
+    let nextDesc = {
+        host: { isConnected: true, nextElementSibling: null },
+        mount: { isConnected: true },
+    };
 
     const window = {
         location: { href: 'https://github.com/owner/repo' },
@@ -51,6 +59,8 @@ function createHarness() {
             pageConfig: { currentPageType: 'repository' },
             pendingMutations: [],
             mutationFlush: null,
+            descHost: initialHost,
+            descMount: initialMount,
             featureSet: { enable_transDesc: true },
         },
         MutationObserver: class {
@@ -61,14 +71,18 @@ function createHarness() {
             }
             observe(target) { this.target = target; }
             disconnect() { this.target = null; }
+            takeRecords() { takeRecordsCalls += 1; return []; }
         },
         safe: fn => fn,
         processMutations: batch => processed.push(batch),
-        transDesc: () => { descCalls += 1; },
+        transDesc: () => { descCalls += 1; return nextDesc; },
         updatePageConfig: trigger => updates.push(trigger),
     });
 
-    const functions = ['createMutationObserver', 'flushMutationBatch', 'scheduleMutationFlush', 'resetMutationBatch']
+    const functions = [
+        'createMutationObserver', 'flushMutationBatch', 'scheduleMutationFlush',
+        'resetMutationBatch', 'mountDescButton',
+    ]
         .map(name => extractFunction(name))
         .join('\n');
     vm.runInContext(functions, context);
@@ -76,15 +90,19 @@ function createHarness() {
     return {
         window, context, frames, cancelled, processed, updates,
         get descCalls() { return descCalls; },
+        get takeRecordsCalls() { return takeRecordsCalls; },
         get observer() { return observer; },
+        setDescMount(node) { context.State.descMount = node; },
+        setNextDesc(node) { nextDesc = node; },
     };
 }
 
 const record = (id) => ({ type: 'childList', target: {}, addedNodes: [], id });
 
-test('同一帧内的多次回调只处理一次', () => {
+test('同一帧内的多次回调只处理一次，并丢弃本次遍历自己产生的记录', () => {
     const harness = createHarness();
     const observer = vm.runInContext('createMutationObserver()', harness.context);
+    harness.context.State.mutationObserver = observer; // attachMutationObserver 会做这一步
 
     observer.callback([record(1)]);
     observer.callback([record(2)]);
@@ -95,7 +113,45 @@ test('同一帧内的多次回调只处理一次', () => {
     harness.frames[0]();
     assert.equal(harness.processed.length, 1);
     assert.deepEqual(harness.processed[0].map(item => item.id), [1, 2]);
-    assert.equal(harness.descCalls, 1, '描述重挂一轮只做一次');
+    assert.equal(harness.takeRecordsCalls, 1, '遍历后必须取走自己写入产生的记录');
+    assert.equal(harness.descCalls, 0, '描述按钮仍在文档里时不做查询');
+});
+
+test('描述节点被 React 替换后，批次处理重挂按钮并记住新节点', () => {
+    const harness = createHarness();
+    const observer = vm.runInContext('createMutationObserver()', harness.context);
+    const replacement = {
+        host: { isConnected: true, nextElementSibling: null },
+        mount: { isConnected: true },
+    };
+
+    harness.setDescMount({ isConnected: false });
+    harness.setNextDesc(replacement);
+    observer.callback([record(1)]);
+    harness.frames[0]();
+
+    assert.equal(harness.descCalls, 1);
+    assert.equal(harness.context.State.descHost, replacement.host);
+    assert.equal(harness.context.State.descMount, replacement.mount);
+});
+
+test('载入 / 导航时强制执行一次挂载，即使节点仍连着也重新核对', () => {
+    const harness = createHarness();
+    const forceMount = vm.runInContext('mountDescButton', harness.context);
+
+    forceMount(true);
+    assert.equal(harness.descCalls, 1);
+});
+
+test('关闭描述翻译后批次不再挂载按钮', () => {
+    const harness = createHarness();
+    const observer = vm.runInContext('createMutationObserver()', harness.context);
+    harness.context.State.featureSet.enable_transDesc = false;
+
+    observer.callback([record(1)]);
+    harness.frames[0]();
+
+    assert.equal(harness.descCalls, 0);
 });
 
 test('flush 之后的新回调会重新排期', () => {
