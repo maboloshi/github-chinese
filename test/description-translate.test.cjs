@@ -89,16 +89,10 @@ function loadTransDesc(document) {
 }
 
 for (const fileName of runtimeScripts) {
-    test(`${fileName} covers classic, React module and current BorderGrid description selectors`, () => {
+    test(`${fileName} covers the current BorderGrid description selector`, () => {
         const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
 
-        for (const token of [
-            '.f4.tmp-my-3',
-            'SidebarAbout-module_',
-            '_description',
-            'borderGrid__',
-            'description__',
-        ]) {
+        for (const token of ['borderGrid__', 'description__']) {
             assert.ok(
                 source.includes(token),
                 `${fileName} should include ${token} in the repository description selectors`,
@@ -124,6 +118,21 @@ for (const fileName of runtimeScripts) {
         }
     });
 }
+
+test('main.user.js 的描述选择器只保留当前 React UI', () => {
+    // 经典 UI 的 .f4.tmp-my-3 与 SidebarAbout-module_ 已不再命中线上 DOM，留着只会误伤
+    const block = mainSource.match(/DESC_SELECTORS: \{[\s\S]*?\n        \},/);
+    assert.ok(block, 'main.user.js should still declare DESC_SELECTORS');
+
+    const effective = block[0]
+        .split('\n')
+        .filter(line => !line.trim().startsWith('//'))
+        .join('\n');
+
+    assert.ok(effective.includes('borderGrid__'), '保留当前 React UI 的选择器');
+    assert.ok(!effective.includes('.f4.tmp-my-3'), '不再使用经典 UI 选择器');
+    assert.ok(!effective.includes('SidebarAbout-module_'), '不再使用 SidebarAbout 选择器');
+});
 
 test('transDesc inserts exactly one translate button after the matched description', () => {
     const element = createDescriptionElement();
@@ -159,4 +168,31 @@ test('transDesc re-attaches the button after React replaces the description node
     assert.equal(document.created.length, 2);
     assert.equal(firstElement.nextElementSibling, document.created[0]);
     assert.equal(secondElement.nextElementSibling, document.created[1]);
+});
+
+for (const fileName of ['main.user.js', 'main(nju.edu).user.js', 'main_zh-TW.user.js']) {
+    test(`${fileName} skips re-mount when the translation result is already shown`, () => {
+        const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
+
+        assert.match(
+            source,
+            /contains\('translate-button'\)[\s\S]{0,160}?contains\('translation-result'\)/,
+            `${fileName} should also check for an existing translation result in transDesc`,
+        );
+    });
+}
+
+test('transDesc does not insert a new button when the translation result is already shown', () => {
+    const element = createDescriptionElement();
+    // 翻译完成后的 DOM：按钮已被 showTransResult 移除，结果容器插在描述后面
+    element.nextElementSibling = {
+        classList: { contains: (className) => className === 'translation-result' },
+    };
+    const document = createDocument(element);
+    const transDesc = loadTransDesc(document);
+
+    // MutationObserver 重挂载不得再插入按钮，否则每次点击都会叠加一个翻译框
+    transDesc('[class*="borderGrid__"] p[class*="description__"]');
+
+    assert.equal(document.created.length, 0);
 });

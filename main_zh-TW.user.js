@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜單及內容。原作者為樓教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.4-2026-11-08
+// @version      1.9.4.5-2026-11-11
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.4-2026-11-08
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.5-2026-11-11
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -41,9 +41,8 @@
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站點類型
         DESC_SELECTORS: { // 簡介元素的CSS選擇器
             repository: [
-                ".f4.tmp-my-3", // 經典 UI
-                'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
-                '[class*="borderGrid__"] p[class*="description__"]', // 目前 React UI：About 側欄內的描述
+                // 'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 當前 React UI：About 側欄內的描述
             ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
@@ -135,6 +134,9 @@
         currentURL: window.location.href, // 當前頁面URL
         transEngine: 'iflyrec',  // 當前翻譯引擎
         mutationObserver: null,  // DOM變化觀察器
+        observedBody: null,      // 當前觀察的頁面主體
+        visitAction: null,       // 當前 Turbo 訪問動作：advance / replace / restore
+        idleSweep: null,         // 恢復訪問時的空閒補掃句柄
         urlChangeHandler: null,  // 存儲URL變化處理器
         dynamicMenus: {},        // 動態菜單ID記錄
         initDone: false,
@@ -155,7 +157,7 @@
     /**
      * 錯誤邊界 — 包裝函數，捕獲異常避免阻斷頁面正常使用
      * @param {Function} fn - 要執行的函數
-     * @param {string} label - 錯誤標簽
+     * @param {string} label - 錯誤標籤
      * @returns {Function} 包裝後的函數
      */
     function safe(fn, label) {
@@ -171,7 +173,6 @@
     /* =========================== 初始化入口 =========================== */
     function init() {
         checkI18NLoaded();
-        setupReactGlobalNavTranslation();
         initLangEnv();
         injectStyles();
         setupMenuCommands();
@@ -199,7 +200,7 @@
     }
 
     /**
-     * 註入自定義樣式到頁面
+     * 注入自定義樣式到頁面
      */
     function injectStyles() {
         GM_addStyle(CONFIG.STYLES);
@@ -208,12 +209,14 @@
     /**
      * 設置初始翻譯
      *
-     * 即使 @run-at document-start，Tampermonkey 註入腳本也可能晚於 DOMContentLoaded
+     * 即使 @run-at document-start，Tampermonkey 注入腳本也可能晚於 DOMContentLoaded
      *（擴展冷啟動、bfcache 恢復等場景）。因此不能假設註冊監聽器時事件尚未觸發：
      * readyState 已是 interactive/complete 則直接執行，否則才註冊一次性監聽器。
      */
     function setupInitTrans() {
         function doInitTrans() {
+            if (!document.body) return;
+            State.currentURL = window.location.href;
             updatePageConfig('首次載入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍歷')(document.body);
@@ -236,6 +239,21 @@
      * Tampermonkey 環境使用 onurlchange 事件，其他環境回退到 MutationObserver URL 檢測
      */
     function setupUrlChangeListener() {
+        // 合併同一輪歷史事件，在當前事件結束後讀取最終的 URL 與 body
+        let historyTimer = null;
+        function scheduleHistoryRefresh() {
+            if (historyTimer !== null) clearTimeout(historyTimer);
+            historyTimer = setTimeout(() => {
+                historyTimer = null;
+                handleUrlChange();
+            }, 0);
+        }
+
+        // 只處理同文檔歷史（Turbo/SPA 的 pushState 回退）。
+        // bfcache 的跨文檔恢復不觸發 popstate，而且 DOM 與觀察器都原樣還原，
+        // 緩存裡的文字已經是譯文——不需要也不應該再全量重翻，故不監聽 pageshow。
+        window.addEventListener('popstate', scheduleHistoryRefresh);
+
         // Tampermonkey 環境下 window.onurlchange 為 null（支持），其他環境為 undefined
         if (State.featureSet.enable_onurlchange && window.onurlchange === null) {
 
@@ -257,24 +275,17 @@
      */
     function handleUrlChange() {
         const currentURL = window.location.href;
+        const sameRoute = currentURL.split('#')[0] === State.currentURL.split('#')[0];
 
-        // 如果URL沒有實際變化，則跳過處理
-        if (currentURL === State.currentURL) return;
-
-        State.currentURL = currentURL;
-        updatePageConfig("URL變化 (onurlchange)");
-
-        // 重新設置觀察器
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
+        // 同一路由且 body 未更換（含 bfcache 原樣恢復）：譯文與觀察器都還在，直接返回。
+        // 判斷依據不是「有沒有緩存」，而是 body 是否還是我們觀察的那一個：
+        // Turbo 的快照恢復會替換 body（cloneNode 丟棄監聽器），那種才需要重新遍歷與掛載。
+        if (sameRoute && document.body === State.observedBody) {
+            State.currentURL = currentURL;
+            return;
         }
 
-        // 如果頁面類型有效，重新遍歷DOM
-        if (State.pageConfig) {
-            safe(traverseNode, 'URL變化遍歷')(document.body);
-        }
-
-        setupMutationObserver();
+        handleTurboLoad();
     }
 
     /* =========================== Turbo 事件 =========================== */
@@ -283,7 +294,43 @@
      * 處理GitHub的Turbolinks頁面切換
      */
     function setupTurboEvents() {
-        document.addEventListener('turbo:load', handleTurboLoad);
+        // Turbo 的訪問動作：advance（點鏈接）/ replace / restore（前進後退）
+        document.addEventListener('turbo:visit', event => {
+            State.visitAction = event.detail?.action || null;
+        });
+
+        // 新 body 還沒插入文檔時就把觀察器掛上去：
+        // React 水合把譯文寫回英文的那批變更，從第一幀就被接住
+        document.addEventListener('turbo:before-render', event => {
+            const newBody = event.detail?.newBody;
+            if (newBody) attachMutationObserver(newBody);
+        });
+
+        document.addEventListener('turbo:render', () => handleTurboLoad());
+        document.addEventListener('turbo:load', () => {
+            handleTurboLoad();
+            State.visitAction = null;
+        });
+    }
+
+    /**
+     * 恢復訪問不必同步全量遍歷：緩存快照裡已經是譯文，
+     * 水合回寫的英文由預掛的觀察器接住；再安排一次空閒補掃，
+     * 兜住「離開時還沒翻完」的快照，同時不阻塞渲染。
+     */
+    function scheduleIdleTraversal() {
+        if (State.idleSweep !== null) return;
+        const run = () => {
+            State.idleSweep = null;
+            // 等空閒期間又換頁了：新導航已經負責過，別再掃一遍
+            if (State.observedBody !== document.body) return;
+            safe(traverseNode, '恢復補掃')(document.body);
+        };
+        if (typeof window.requestIdleCallback === 'function') {
+            State.idleSweep = window.requestIdleCallback(run, { timeout: 1500 });
+        } else {
+            State.idleSweep = setTimeout(run, 200);
+        }
     }
 
     /**
@@ -291,15 +338,35 @@
      * 在新頁面加載後執行必要的翻譯
      */
     function handleTurboLoad() {
+        if (!document.body) return;
+
+        State.currentURL = window.location.href;
+        const restoring = State.visitAction === 'restore';
+        updatePageConfig('頁面導航');
+
+        // before-render 已經掛好的觀察器直接沿用；否則在這裡兜底
+        const preAttached = State.observedBody === document.body && !!State.mutationObserver;
+        if (!preAttached) {
+            attachMutationObserver(document.body);
+        }
+
+        if (State.pageConfig) {
+            if (restoring && preAttached) {
+                scheduleIdleTraversal();
+            } else {
+                safe(traverseNode, '導航遍歷')(document.body);
+            }
+        }
+
         if (!State.pageConfig) return;
 
-        transTitle(); // 翻譯頁面標題
-        transBySelector(); // 通過選擇器翻譯特定元素
+        safe(transTitle, '標題翻譯')(); // 翻譯頁面標題
+        safe(transBySelector, '選擇器翻譯')(); // 通過選擇器翻譯特定元素
 
         // 如果描述翻譯功能啟用，翻譯頁面描述
         if (State.featureSet.enable_transDesc &&
             CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            transDesc(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
+            safe(transDesc, '描述翻譯')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
         }
     }
 
@@ -313,7 +380,8 @@
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType) {
+        } else if (newType !== State.pageConfig?.currentPageType ||
+            window.location.pathname !== State.pageConfig?.currentPath) {
             State.pageConfig = buildPageConfig(newType);
         }
         console.log(`【Debug】${trigger}觸發, 頁面類型為 ${State.pageConfig?.currentPageType}`);
@@ -330,11 +398,11 @@
             currentPath: window.location.pathname, // 當前路徑
             titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
             titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
-            staticDict: { // 合並公共和頁面特定的靜態詞典
+            staticDict: { // 合併公共和頁面特定的靜態詞典
                 ...I18N[CONFIG.LANG].public.static,
                 ...(I18N[CONFIG.LANG][pageType]?.static || {})
             },
-            regexpRules: [ // 合並公共和頁面特定的正則規則
+            regexpRules: [ // 合併公共和頁面特定的正則規則
                 ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
                 ...(I18N[CONFIG.LANG].public.regexp || [])
             ],
@@ -357,6 +425,48 @@
     /* =========================== 頁面類型檢測 =========================== */
 
     /**
+     * 全局路由保留首段（與 rePagePath 的全局首段一致，幷包含組織頁別名 organizations）。
+     * 這些首段是站點固定路徑，不可能是賬號名 / 組織名。
+     */
+    const RESERVED_ROOTS = new Set([
+        'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
+        'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
+        'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
+        'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
+        'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
+        'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
+        'security', 'sitemap', 'education', 'mcp', 'users',
+    ]);
+
+    /**
+     * Turbo 導航會暫時拿掉 analytics-location。
+     * 僅在元數據缺失或無法識別時按路徑回退，已有元數據仍優先。
+     * 全局路由按完整首段排除，避免沒有結尾錨點的 rePagePath 把 settings-tools 當成 settings。
+     */
+    function isFallbackRepositoryPath(pathname) {
+        const segments = pathname.split('/');
+        if (segments.length < 3) return false;
+
+        const owner = segments[1];
+        const repo = segments[2];
+        function isSegment(segment) {
+            return /^[A-Za-z0-9._-]+$/.test(segment) && !/^\.+$/.test(segment);
+        }
+        if (!isSegment(owner) || !isSegment(repo)) return false;
+        if (RESERVED_ROOTS.has(owner.toLowerCase())) return false;
+
+        const extra = segments.slice(3);
+        const isRoot = extra.length === 0 || (extra.length === 1 && extra[0] === '');
+        if (isRoot) {
+            // /<org>/enterprise_plan 與 /<org>/sponsoring 屬於組織路徑，不是倉庫根路徑
+            const repoName = repo.toLowerCase();
+            return repoName !== 'enterprise_plan' && repoName !== 'sponsoring';
+        }
+        if (extra.some(segment => segment === '' || segment === '.' || segment === '..')) return false;
+        return I18N.conf.rePagePathRepo.test(pathname);
+    }
+
+    /**
      * 檢測當前頁面類型
      * @returns {string|boolean} 頁面類型或false（如果未識別）
      */
@@ -368,17 +478,21 @@
         // 基礎配置
         const site = PAGE_MAP[hostname] || 'github'; // 通過站點映射獲取基礎類型
         const isLogin = document.body.classList.contains("logged-in");
-        const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
+        const metaLocation = (document.head.querySelector('meta[name="analytics-location"]')?.content || '').trim();
+        const metaUsable = /\/<(?:user-name|org-login)>/.test(metaLocation);
 
-        // 頁面特征檢測
+        // 頁面特徵檢測
         const isSession = document.body.classList.contains("session-authentication");
         const isHomepage = pathname === '/' && site === 'github';
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
-        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation);
+        // 元數據優先；Turbo 暫時拿掉 analytics-location 時再按倉庫路徑回退
+        const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
+            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content
+            || (!metaUsable && isFallbackRepositoryPath(pathname));
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
         let pageType;
-        // 根據頁面特征確定頁面類型
+        // 根據頁面特徵確定頁面類型
         switch (true) { // 使用 switch(true) 模式處理多條件分支
             case isSession: // 登錄/認證頁面
                 pageType = 'session-authentication';
@@ -432,352 +546,18 @@
         return pageType;
     }
 
-    function isReactGlobalNavPortalNode(node) {
-        const element = node?.nodeType === 1 ? node : node?.parentElement;
-        const portalRoot = element?.closest?.('#__primerPortalRoot__');
-        if (!portalRoot) return false;
-
-        const portal = element.closest?.('[data-component="Portal"]')
-            || element.querySelector?.('[data-component="Portal"]')
-            || portalRoot;
-        if (portal.matches?.('#search-suggestions-dialog')
-            || portal.querySelector?.('#search-suggestions-dialog')) return true;
-
-        const referenceAttributes = ['aria-labelledby', 'aria-describedby', 'aria-controls', 'aria-owns'];
-        const referenceElements = [
-            portal,
-            ...portal.querySelectorAll?.(
-                referenceAttributes.map(attribute => `[${attribute}]`).join(', ')
-            ) || [],
-        ];
-
-        for (const referenceElement of referenceElements) {
-            for (const attribute of referenceAttributes) {
-                const ids = referenceElement.getAttribute?.(attribute)?.split(/\s+/) || [];
-                if (ids.some(id => document.getElementById(id)?.closest?.('header.GlobalNav'))) {
-                    return true;
-                }
-            }
-        }
-
-        const portalIds = new Set([
-            portal.id,
-            ...Array.from(portal.querySelectorAll?.('[id]') || [], item => item.id),
-        ].filter(Boolean));
-        if (portalIds.size) {
-            const headerReferences = document.querySelectorAll(
-                'header.GlobalNav [aria-describedby], header.GlobalNav [aria-controls], header.GlobalNav [aria-owns]'
-            );
-            for (const headerReference of headerReferences) {
-                for (const attribute of ['aria-describedby', 'aria-controls', 'aria-owns']) {
-                    const ids = headerReference.getAttribute(attribute)?.split(/\s+/) || [];
-                    if (ids.some(id => portalIds.has(id))) return true;
-                }
-            }
-        }
-
-        const hasControlledSurface = portal.matches?.('[role="menu"], [role="dialog"], [role="tooltip"]')
-            || portal.querySelector?.('[role="menu"], [role="dialog"], [role="tooltip"]');
-        return !!hasControlledSurface
-            && !!document.activeElement?.closest?.('header.GlobalNav, qbsearch-input');
-
-    }
-
-    function setupReactGlobalNavTranslation() {
-        if (typeof document === 'undefined' || typeof window === 'undefined') return;
-
-        const labels = I18N.conf.reactGlobalNavLabels || {};
-
-        const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
-        const controlledSurfaceSelector = [
-            'header.GlobalNav',
-            '#__primerPortalRoot__ [role="menu"]',
-            '#__primerPortalRoot__ [role="dialog"]',
-            '#__primerPortalRoot__ [role="tooltip"]',
-        ].join(', ');
-        const portalSurfaceSelector = '#__primerPortalRoot__ [role="menu"], #__primerPortalRoot__ [role="dialog"], #__primerPortalRoot__ [role="tooltip"]';
-        const searchSurfaceSelector = 'qbsearch-input';
-        const searchModuleSelector = 'header.GlobalNav [class*="Search-module__"]';
-        const unsafeTextSelector = [
-            'textarea',
-            '[contenteditable="true"]',
-            'code',
-            'pre',
-            'kbd',
-            'svg',
-            'img',
-            'canvas',
-            'video',
-        ].join(', ');
-        const searchSelector = `${searchModuleSelector}, ${searchSurfaceSelector}, #__primerPortalRoot__ [role="dialog"]`;
-        const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
-        const reactGlobalNavIdleMs = 700;
-        const reactGlobalNavRetryMs = 400;
-        let timer = null;
-        let headerObserver = null;
-        let lastReactGlobalNavMutationAt = Date.now();
-        let lastReactGlobalNavPortalMutationAt = Date.now();
-        const observedSurfaces = new WeakSet();
-
-        function isReactGlobalNavSearchActive() {
-            const active = document.activeElement;
-            return !!active?.closest?.(searchSelector)
-                || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
-        }
-
-        function isReactGlobalNavSurfaceIdle(surfaceType = 'header') {
-            const lastMutationAt = surfaceType === 'portal'
-                ? lastReactGlobalNavPortalMutationAt
-                : lastReactGlobalNavMutationAt;
-            return Date.now() - lastMutationAt >= reactGlobalNavIdleMs;
-        }
-
-        function canTranslateReactGlobalNavHeader() {
-            return document.readyState === 'complete'
-                && isReactGlobalNavSurfaceIdle('header')
-                && !isReactGlobalNavSearchActive();
-        }
-
-        function findStaticGlobalNavLabel(source) {
-            const locale = I18N["zh-TW"] || I18N.zh;
-            if (!locale) return null;
-
-            for (const section of Object.values(locale)) {
-                const label = section?.static?.[source];
-                if (typeof label === 'string' && label && label !== source) {
-                    return label;
-                }
-            }
-
-            return null;
-        }
-
-        function findRegexpGlobalNavLabel(source) {
-            const locale = I18N["zh-TW"] || I18N.zh;
-            if (!locale) return null;
-
-            for (const section of Object.values(locale)) {
-                for (const [pattern, replacement] of section?.regexp || []) {
-                    const match = source.match(pattern);
-                    if (!match || match.index !== 0 || match[0] !== source) continue;
-
-                    const label = source.replace(pattern, replacement);
-                    if (label !== source) return label;
-                }
-            }
-
-            return null;
-        }
-
-        function resolveReactGlobalNavLabel(source) {
-            return labels[source] || findStaticGlobalNavLabel(source) || findRegexpGlobalNavLabel(source);
-        }
-
-        function normalizeReactGlobalNavText(text) {
-            return text?.replace(/\s+/g, ' ').trim();
-        }
-
-        function translateReactGlobalNavText(text) {
-            const source = normalizeReactGlobalNavText(text);
-            return source ? resolveReactGlobalNavLabel(source) : null;
-        }
-
-        function translateReactGlobalNavElement(element, source) {
-            const label = translateReactGlobalNavText(source ?? element.textContent);
-            if (label && element.textContent !== label) {
-                element.textContent = label;
-            }
-        }
-
-        function shouldSkipReactGlobalNavNode(node) {
-            const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-            if (!element) return true;
-            if (element.closest?.(unsafeTextSelector)) return true;
-            if (element.closest?.(searchModuleSelector)) return true;
-            if (element.closest?.(searchSurfaceSelector)) return true;
-
-            return false;
-        }
-
-        function translateReactGlobalNavAttributes(element) {
-            translatableAttributeNames.forEach(attributeName => {
-                const value = element.getAttribute?.(attributeName);
-                const label = translateReactGlobalNavText(value);
-                if (label && value !== label) {
-                    element.setAttribute(attributeName, label);
-                }
-            });
-        }
-
-        function translateReactGlobalNavTextNode(node) {
-            const label = translateReactGlobalNavText(node.data);
-            if (label) {
-                node.data = node.data.replace(node.data.trim(), label);
-            }
-        }
-
-        function translateReactGlobalNavSurface(surface) {
-            if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
-
-            if (surface.nodeType === Node.ELEMENT_NODE) {
-                translateReactGlobalNavAttributes(surface);
-            }
-
-            const walker = document.createTreeWalker(
-                surface,
-                NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
-                {
-                    acceptNode(node) {
-                        return shouldSkipReactGlobalNavNode(node)
-                            ? NodeFilter.FILTER_REJECT
-                            : NodeFilter.FILTER_ACCEPT;
-                    }
-                }
-            );
-
-            let node;
-            while ((node = walker.nextNode())) {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    translateReactGlobalNavAttributes(node);
-                } else if (node.nodeType === Node.TEXT_NODE) {
-                    translateReactGlobalNavTextNode(node);
-                }
-            }
-        }
-
-        function translateReactGlobalNavHeader() {
-            const header = document.querySelector('header.GlobalNav');
-            if (!header) return true;
-            if (!canTranslateReactGlobalNavHeader()) return false;
-
-            document.querySelectorAll(dataContentLabelSelector).forEach(element => {
-                if (!shouldSkipReactGlobalNavNode(element)) {
-                    translateReactGlobalNavElement(element, element.getAttribute('data-content'));
-                }
-            });
-            translateReactGlobalNavSurface(header);
-
-            return true;
-        }
-
-        function isReactGlobalNavSearchPortal(surface) {
-            return surface.matches?.('[role="dialog"]')
-                || !!surface.querySelector?.('#search-suggestions-dialog, qbsearch-input, [role="dialog"]');
-        }
-
-        function translateReactGlobalNavPortals() {
-            const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector))
-                .filter(isReactGlobalNavPortalNode);
-            if (!surfaces.length) return true;
-
-            let searchPortalPending = false;
-            surfaces.forEach(surface => {
-                if (isReactGlobalNavSearchPortal(surface) && !isReactGlobalNavSurfaceIdle('portal')) {
-                    searchPortalPending = true;
-                    return;
-                }
-                translateReactGlobalNavSurface(surface);
-            });
-
-            return !searchPortalPending;
-        }
-
-        function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
-            observeReactGlobalNav();
-
-            const headerTranslated = translateReactGlobalNavHeader();
-            const portalsTranslated = translateReactGlobalNavPortals();
-
-            if ((options.requireSettledHeader && !headerTranslated) || !portalsTranslated) {
-                scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, options);
-            }
-        }
-
-        function scheduleReactGlobalNavTranslation(delay = 800, options = {}) {
-            window.clearTimeout(timer);
-            timer = window.setTimeout(() => translateReactGlobalNavLabels(options), delay);
-        }
-
-        function scheduleReactGlobalNavSeries() {
-            [800, 1600, 3000].forEach(delay => {
-                window.setTimeout(translateReactGlobalNavLabels, delay);
-            });
-        }
-
-        function recordReactGlobalNavMutation(surface) {
-            if (surface?.id === '__primerPortalRoot__' || surface?.closest?.('#__primerPortalRoot__')) {
-                lastReactGlobalNavPortalMutationAt = Date.now();
-                return;
-            }
-
-            lastReactGlobalNavMutationAt = Date.now();
-        }
-
-        function observeReactGlobalNav() {
-            if (!headerObserver) {
-                headerObserver = new MutationObserver(mutations => {
-                    mutations.forEach(mutation => recordReactGlobalNavMutation(mutation.target));
-                    translateReactGlobalNavPortals();
-                    scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true });
-                });
-            }
-
-            [
-                document.querySelector('header.GlobalNav'),
-                document.querySelector('#__primerPortalRoot__'),
-            ].forEach(surface => {
-                if (!surface || observedSurfaces.has(surface)) return;
-
-                observedSurfaces.add(surface);
-                recordReactGlobalNavMutation(surface);
-                headerObserver.observe(surface, {
-                    childList: true,
-                    subtree: true,
-                    characterData: true,
-                });
-            });
-        }
-
-        function startReactGlobalNavTranslation() {
-            observeReactGlobalNav();
-            scheduleReactGlobalNavSeries();
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startReactGlobalNavTranslation, { once: true });
-        } else {
-            startReactGlobalNavTranslation();
-        }
-
-        window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
-        window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
-        document.addEventListener('click', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
-        document.addEventListener('focusin', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
-        document.addEventListener('focusout', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
-        document.addEventListener('pointerover', () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
-
-    }
-
     /* =========================== MutationObserver =========================== */
 
     /**
-     * 設置DOM變化觀察器
+     * 創建DOM變化觀察器
      * 監聽頁面變化並觸發翻譯
      */
-    function setupMutationObserver() {
-        // 緩存當前頁面的 URL
-        let previousURL = window.location.href;
-
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
-        }
-
-        State.mutationObserver = new MutationObserver(
+    function createMutationObserver() {
+        return new MutationObserver(
             safe((mutations) => {
                 const currentURL = window.location.href;
                 // 當沒有 onurlchange 支持時，通過 Observer 檢測 URL 變化
-                if (!State.urlChangeHandler && currentURL !== previousURL) {
-                    previousURL = currentURL;
+                if (!State.urlChangeHandler && currentURL !== State.currentURL) {
                     State.currentURL = currentURL;
                     updatePageConfig("URL變化 (MutationObserver)");
                 }
@@ -786,7 +566,7 @@
                 if (State.pageConfig) {
                     processMutations(mutations);
 
-                    // GitHub 會用 React 動態替換倉庫描述節點，舊按鈕隨節點一起遺失：重新掛載
+                    // GitHub 會用 React 動態替換倉庫描述節點，舊按鈕隨節點一起丟失：重新掛載
                     if (State.featureSet?.enable_transDesc) {
                         const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
                         if (descSelector) transDesc(descSelector);
@@ -794,14 +574,32 @@
                 }
             }, 'MutationObserver')
         );
+    }
 
-        // 開始觀察頁面主體
-        State.mutationObserver.observe(document.body, CONFIG.OBSERVER_CONFIG);
+    /**
+     * 把觀察器掛到指定 body 上 — 允許傳入尚未插入文檔的新 body，
+     * 這樣 Turbo 換 body 時，React 水合產生的那批變更從第一幀就被接住。
+     * @param {Element} body
+     */
+    function attachMutationObserver(body) {
+        State.mutationObserver?.disconnect();
+        State.mutationObserver = createMutationObserver();
+        State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
+        State.observedBody = body;
+    }
+
+    /**
+     * 設置DOM變化觀察器（當前文檔 body）
+     */
+    function setupMutationObserver() {
+        State.observedBody = null;
+        if (!document.body) return;
+        attachMutationObserver(document.body);
     }
 
     /**
      * 處理MutationObserver檢測到的變化
-     * 收集突變節點、過濾忽略選擇器、對祖先-後代關系去重，僅遍歷頂層節點
+     * 收集突變節點、過濾忽略選擇器、對祖先-後代關係去重，僅遍歷頂層節點
      * @param {Array} mutations - 變化記錄數組
      */
     function shouldIgnoreMutationNode(node) {
@@ -809,9 +607,7 @@
         if (!element) return true;
 
         const ignoredSelectors = State.pageConfig?.ignoreMutationSelectors;
-        if (ignoredSelectors && element.closest?.(ignoredSelectors)) return true;
-
-        return isReactGlobalNavPortalNode(element);
+        return !!(ignoredSelectors && element.closest?.(ignoredSelectors));
     }
 
     function processMutations(mutations) {
@@ -827,19 +623,19 @@
                     }
                 });
             } else if (type === 'attributes') {
-                // 處理屬性變化，target 就是元素
+                // 處理屬性變化，target 就是元素（input / textarea 也走這裡）
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
             } else if (type === 'characterData' && State.pageConfig.characterData) {
-                // 處理文本變化，2target 是文本節點，取其父元素
+                // 處理文本變化，target 是文本節點，取其父元素
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
             }
         });
 
-        // 過濾掉祖先已在集合中的後代節點，避免重復遍歷
+        // 過濾掉祖先已在集合中的後代節點，避免重複遍歷
         const topNodes = new Set();
         nodesToProcess.forEach(node => {
             let ancestor = node.parentElement;
@@ -856,7 +652,7 @@
             }
         });
 
-        console.log("DOM變化(已過濾)", topNodes);
+        if (CONFIG.DEV) console.log("DOM變化(已過濾)", topNodes);
 
         // 僅遍歷頂層節點
         topNodes.forEach(node => {
@@ -865,6 +661,39 @@
     }
 
     /* =========================== DOM 遍歷與節點處理 =========================== */
+
+    /**
+     * 麵包屑裡的賬號名 / 倉庫名是標識符，不是界面文案（#824）
+     * 例：github.com/community/community 不應顯示成「社區 / 社區」
+     * @param {Element} element
+     * @returns {boolean} 是否應跳過該鏈接
+     */
+    function isBreadcrumbIdentifierLink(element) {
+        if (element.tagName !== 'A') return false;
+        if (!element.closest?.('nav[data-component="Breadcrumbs"]')) return false;
+
+        const linkPath = element.pathname?.toLowerCase().replace(/\/+$/, '');
+        if (!linkPath) return false;
+
+        const repository = document.head
+            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
+            ?.content?.toLowerCase();
+        if (repository) {
+            const [owner] = repository.split('/');
+            return linkPath === `/${owner}` || linkPath === `/${repository}`;
+        }
+
+        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
+        if (!segments.length) return false;
+        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
+            return !!segments[1] && linkPath === `/${segments[1]}`;
+        }
+        // 只有「/首段」是賬號名時首項才是標識符；notifications / settings / marketplace
+        // 這類保留路徑的首段是固定路由，麵包屑裡的對應項是界面文案，不能拒翻。
+        if (RESERVED_ROOTS.has(segments[0])) return false;
+        return linkPath === `/${segments[0]}`;
+    }
+
     /**
      * 遍歷節點樹並進行翻譯
      * @param {Node} rootNode - 要遍歷的根節點
@@ -883,10 +712,14 @@
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
             node => {
-                if (node.nodeType === Node.ELEMENT_NODE
-                    && State.pageConfig.ignoreSelectors
-                    && node.matches(State.pageConfig.ignoreSelectors)) {
-                    return NodeFilter.FILTER_REJECT; // 跳過忽略的選擇器
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    if (State.pageConfig.ignoreSelectors
+                        && node.matches(State.pageConfig.ignoreSelectors)) {
+                        return NodeFilter.FILTER_REJECT; // 跳過忽略的選擇器
+                    }
+                    if (isBreadcrumbIdentifierLink(node)) {
+                        return NodeFilter.FILTER_REJECT; // 跳過賬號名 / 倉庫名
+                    }
                 }
                 return NodeFilter.FILTER_ACCEPT; // 接受其他節點
             }
@@ -915,6 +748,8 @@
      */
     function handleTextNode(node) {
         if (node.length > 500) return; // 跳過長文本節點
+        // 文本域的子文本是它的默認值（用戶內容），翻了就破壞編輯器內容（#727）
+        if (node.parentElement?.tagName === 'TEXTAREA') return;
         transElementAttrs(node, 'data'); // 翻譯文本內容
     }
 
@@ -923,7 +758,7 @@
      * @param {Element} node - 元素節點
      */
     function handleElementNode(node) {
-        // 根據標簽類型進行不同的翻譯處理
+        // 根據標籤類型進行不同的翻譯處理
         const tag = node.tagName;
 
         if (tag === "RELATIVE-TIME") { // 相對時間元素
@@ -934,17 +769,26 @@
         }
 
         if (tag === "INPUT" || tag === "TEXTAREA") { // 輸入框和文本域
+            // 標籤本身已由通用遍歷到達（不在忽略表裡），這裡只碰界面文案屬性：
+            // 文本域的子文本是默認值，由 handleTextNode 攔截，不在這裡處理。
+            //
+            // 注意：這段在 #774（2026-08 把 input/textarea 加進忽略表）之前一直是生效的，
+            // 後來被忽略表擋成死代碼、改由旁路補翻；單管線重構後又回到這裡。
+            // 它翻譯 value 是長期行為，不是誤留的死代碼——不要因為“看起來走不到”就刪。
+            transElementAttrs(node, 'ariaLabel'); // 可訪問名稱（佔位符之外的屏幕閱讀器文案）
             if (['button', 'submit', 'reset'].includes(node.type)) {
+                // value 是按鈕文案；只有 submit 帶 name 時它同時是原生表單的提交值，
+                // GitHub 現在基本不用原生表單提交，暫不特判——若遇到提交異常先查這裡
                 transElementAttrs(node.dataset, 'confirm'); // 確認對話框文本
                 transElementAttrs(node, 'value'); // 值屬性
             } else {
-                transElementAttrs(node, 'placeholder'); // 占位符
+                transElementAttrs(node, 'placeholder'); // 佔位符
             }
             return;
         }
 
         if (tag === "OPTGROUP") { // 選項組
-            transElementAttrs(node, 'label'); // 標簽文本
+            transElementAttrs(node, 'label'); // 標籤文本
             return;
         }
 
@@ -1065,7 +909,7 @@
             return false;
         }
 
-        // 清理文本：去除首尾空格和多余空白
+        // 清理文本：去除首尾空格和多餘空白
         const trimmedText = text.trim();
         const cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' ');
 
@@ -1125,7 +969,13 @@
 
         // 修復：安全檢查 classList.contains，避免 null sibling 時崩潰
         const nextSibling = element.nextElementSibling;
-        if (nextSibling?.classList?.contains('translate-button')) return;
+        // 已有按鈕或翻譯結果時都不再插入。showTransResult 會移除按鈕、把結果容器插到描述後面，
+        // 這次插入又會觸發 MutationObserver 重掛載；只認 .translate-button 的話，每輪重掛載都會
+        // 再補一個新按鈕，點一次「翻譯」就疊一層翻譯框（#811 迴歸）。
+        if (nextSibling?.classList?.contains('translate-button') ||
+            nextSibling?.classList?.contains('translation-result')) {
+            return;
+        }
 
         // 創建翻譯按鈕
         const button = document.createElement('div');
@@ -1144,7 +994,7 @@
      */
     function handleTransClick(button, element) {
         if (button.disabled) return;
-        button.disabled = true; // 防止重復點擊
+        button.disabled = true; // 防止重複點擊
 
         const descText = element.textContent.trim();
         if (!descText) {
@@ -1236,13 +1086,13 @@
     /**
      * 安全獲取嵌套對象屬性
      * 支持路徑格式如 'biz[0]?.sectionResult[0]?.dst'
-     *   - '?.' 在路徑中作為可選鏈標記被忽略，實際按強製訪問處理
+     *   - '?.' 在路徑中作為可選鏈標記被忽略，實際按強制訪問處理
      * @param {Object} obj - 目標對象
      * @param {string} path - 屬性路徑
      * @returns {*} 屬性值或 undefined
      */
     function getNestedProperty(obj, path) {
-        // 移除路徑中的 ?. 標記（訊飛API返回的路徑表示可選，但此處按強製處理）
+        // 移除路徑中的 ?. 標記（訊飛API返回的路徑表示可選，但此處按強制處理）
         const cleanPath = path.replace(/\?\./g, '.');
         return cleanPath.split('.').reduce((acc, part) => {
             if (!acc) return undefined;
@@ -1482,7 +1332,7 @@
         const { label, key, callback } = config;
         let menuId;
 
-        // 生成菜單標簽（根據當前狀態）
+        // 生成菜單標籤（根據當前狀態）
         const getMenuLabel = () =>
             `${State.featureSet[key] ? "禁用" : "啟用"} ${label}`;
 
@@ -1498,7 +1348,7 @@
             // 執行回調
             callback?.(newState);
 
-            // 重新註冊菜單（更新標簽）
+            // 重新註冊菜單（更新標籤）
             GM_unregisterMenuCommand(menuId);
             menuId = GM_registerMenuCommand(getMenuLabel(), toggle);
         };

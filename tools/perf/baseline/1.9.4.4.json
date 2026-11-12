@@ -1,0 +1,1298 @@
+{
+  "generatedAt": "2026-10-03T09:34:54.525Z",
+  "repo": "D:\\App\\github项目\\github-chinese",
+  "url": "https://github.com/maboloshi/github-chinese",
+  "phases": [
+    {
+      "name": "after-load",
+      "moCallbacks": 141,
+      "moRecords": 1223,
+      "moTimeMs": 116.1,
+      "treeWalkers": 48,
+      "treeNodes": 3393,
+      "textContentWrites": 222,
+      "dataWrites": 258,
+      "setAttributeWrites": 3325,
+      "cjkTextWrites": 317,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 8,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 16,
+      "longTaskMs": 1368,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          45,
+          648
+        ],
+        [
+          "undefined.",
+          55,
+          345
+        ],
+        [
+          "HEAD.",
+          11,
+          45
+        ],
+        [
+          "body",
+          19,
+          147
+        ],
+        [
+          "__primerPortalRoot__",
+          5,
+          31
+        ]
+      ]
+    },
+    {
+      "name": "hover-issues",
+      "moCallbacks": 142,
+      "moRecords": 1225,
+      "moTimeMs": 116.3,
+      "treeWalkers": 49,
+      "treeNodes": 3587,
+      "textContentWrites": 222,
+      "dataWrites": 258,
+      "setAttributeWrites": 3325,
+      "cjkTextWrites": 317,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 8,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 17,
+      "longTaskMs": 1431,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          46,
+          650
+        ],
+        [
+          "undefined.",
+          55,
+          345
+        ],
+        [
+          "HEAD.",
+          11,
+          45
+        ],
+        [
+          "body",
+          19,
+          147
+        ],
+        [
+          "__primerPortalRoot__",
+          5,
+          31
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 1,
+        "moRecords": 2,
+        "moTimeMs": 0.2,
+        "treeWalkers": 1,
+        "treeNodes": 194,
+        "textContentWrites": 0,
+        "dataWrites": 0,
+        "setAttributeWrites": 0,
+        "cjkTextWrites": 0,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 0,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 1,
+        "longTaskMs": 63,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            46,
+            650
+          ],
+          [
+            "undefined.",
+            55,
+            345
+          ],
+          [
+            "HEAD.",
+            11,
+            45
+          ],
+          [
+            "body",
+            19,
+            147
+          ],
+          [
+            "__primerPortalRoot__",
+            5,
+            31
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "menu-open",
+      "moCallbacks": 160,
+      "moRecords": 1362,
+      "moTimeMs": 128.3,
+      "treeWalkers": 57,
+      "treeNodes": 3696,
+      "textContentWrites": 225,
+      "dataWrites": 261,
+      "setAttributeWrites": 3835,
+      "cjkTextWrites": 320,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 9,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 17,
+      "longTaskMs": 1431,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          51,
+          703
+        ],
+        [
+          "undefined.",
+          62,
+          407
+        ],
+        [
+          "HEAD.",
+          11,
+          45
+        ],
+        [
+          "body",
+          22,
+          158
+        ],
+        [
+          "__primerPortalRoot__",
+          8,
+          42
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 18,
+        "moRecords": 137,
+        "moTimeMs": 12,
+        "treeWalkers": 8,
+        "treeNodes": 109,
+        "textContentWrites": 3,
+        "dataWrites": 3,
+        "setAttributeWrites": 510,
+        "cjkTextWrites": 3,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 1,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            51,
+            703
+          ],
+          [
+            "undefined.",
+            62,
+            407
+          ],
+          [
+            "HEAD.",
+            11,
+            45
+          ],
+          [
+            "body",
+            22,
+            158
+          ],
+          [
+            "__primerPortalRoot__",
+            8,
+            42
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "menu-close",
+      "moCallbacks": 166,
+      "moRecords": 1412,
+      "moTimeMs": 130.5,
+      "treeWalkers": 58,
+      "treeNodes": 3890,
+      "textContentWrites": 225,
+      "dataWrites": 261,
+      "setAttributeWrites": 3860,
+      "cjkTextWrites": 320,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 11,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 18,
+      "longTaskMs": 1500,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          53,
+          737
+        ],
+        [
+          "undefined.",
+          64,
+          415
+        ],
+        [
+          "HEAD.",
+          11,
+          45
+        ],
+        [
+          "body",
+          23,
+          162
+        ],
+        [
+          "__primerPortalRoot__",
+          9,
+          46
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 6,
+        "moRecords": 50,
+        "moTimeMs": 2.2,
+        "treeWalkers": 1,
+        "treeNodes": 194,
+        "textContentWrites": 0,
+        "dataWrites": 0,
+        "setAttributeWrites": 25,
+        "cjkTextWrites": 0,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 2,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 1,
+        "longTaskMs": 69,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            53,
+            737
+          ],
+          [
+            "undefined.",
+            64,
+            415
+          ],
+          [
+            "HEAD.",
+            11,
+            45
+          ],
+          [
+            "body",
+            23,
+            162
+          ],
+          [
+            "__primerPortalRoot__",
+            9,
+            46
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "search-open",
+      "moCallbacks": 239,
+      "moRecords": 1736,
+      "moTimeMs": 174.3,
+      "treeWalkers": 91,
+      "treeNodes": 4207,
+      "textContentWrites": 307,
+      "dataWrites": 283,
+      "setAttributeWrites": 4894,
+      "cjkTextWrites": 342,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 19,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 20,
+      "longTaskMs": 1705,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          67,
+          804
+        ],
+        [
+          "undefined.",
+          93,
+          556
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          34,
+          209
+        ],
+        [
+          "__primerPortalRoot__",
+          20,
+          93
+        ],
+        [
+          "_r_3i_",
+          4,
+          18
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 73,
+        "moRecords": 324,
+        "moTimeMs": 43.8,
+        "treeWalkers": 33,
+        "treeNodes": 317,
+        "textContentWrites": 82,
+        "dataWrites": 22,
+        "setAttributeWrites": 1034,
+        "cjkTextWrites": 22,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 8,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 2,
+        "longTaskMs": 205,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            67,
+            804
+          ],
+          [
+            "undefined.",
+            93,
+            556
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            34,
+            209
+          ],
+          [
+            "__primerPortalRoot__",
+            20,
+            93
+          ],
+          [
+            "_r_3i_",
+            4,
+            18
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "search-type-5",
+      "moCallbacks": 280,
+      "moRecords": 2114,
+      "moTimeMs": 224.1,
+      "treeWalkers": 161,
+      "treeNodes": 4570,
+      "textContentWrites": 409,
+      "dataWrites": 308,
+      "setAttributeWrites": 6182,
+      "cjkTextWrites": 367,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 43,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 20,
+      "longTaskMs": 1705,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          76,
+          886
+        ],
+        [
+          "undefined.",
+          103,
+          654
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          43,
+          286
+        ],
+        [
+          "__primerPortalRoot__",
+          29,
+          169
+        ],
+        [
+          "_r_3i_",
+          8,
+          63
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 41,
+        "moRecords": 378,
+        "moTimeMs": 49.8,
+        "treeWalkers": 70,
+        "treeNodes": 363,
+        "textContentWrites": 102,
+        "dataWrites": 25,
+        "setAttributeWrites": 1288,
+        "cjkTextWrites": 25,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 24,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            76,
+            886
+          ],
+          [
+            "undefined.",
+            103,
+            654
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            43,
+            286
+          ],
+          [
+            "__primerPortalRoot__",
+            29,
+            169
+          ],
+          [
+            "_r_3i_",
+            8,
+            63
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "search-type-more",
+      "moCallbacks": 429,
+      "moRecords": 4025,
+      "moTimeMs": 421.8,
+      "treeWalkers": 537,
+      "treeNodes": 6645,
+      "textContentWrites": 997,
+      "dataWrites": 434,
+      "setAttributeWrites": 13091,
+      "cjkTextWrites": 493,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 171,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 20,
+      "longTaskMs": 1705,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          6,
+          7
+        ],
+        [
+          "HTML.",
+          109,
+          1274
+        ],
+        [
+          "undefined.",
+          137,
+          1162
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          76,
+          669
+        ],
+        [
+          "__primerPortalRoot__",
+          62,
+          551
+        ],
+        [
+          "_r_3i_",
+          24,
+          313
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 149,
+        "moRecords": 1911,
+        "moTimeMs": 197.7,
+        "treeWalkers": 376,
+        "treeNodes": 2075,
+        "textContentWrites": 588,
+        "dataWrites": 126,
+        "setAttributeWrites": 6909,
+        "cjkTextWrites": 126,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 128,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "targets": [
+          [
+            "DIV.",
+            6,
+            7
+          ],
+          [
+            "HTML.",
+            109,
+            1274
+          ],
+          [
+            "undefined.",
+            137,
+            1162
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            76,
+            669
+          ],
+          [
+            "__primerPortalRoot__",
+            62,
+            551
+          ],
+          [
+            "_r_3i_",
+            24,
+            313
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "search-close",
+      "moCallbacks": 435,
+      "moRecords": 4062,
+      "moTimeMs": 423.7,
+      "treeWalkers": 537,
+      "treeNodes": 6645,
+      "textContentWrites": 997,
+      "dataWrites": 434,
+      "setAttributeWrites": 13097,
+      "cjkTextWrites": 493,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 174,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 20,
+      "longTaskMs": 1705,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          7,
+          8
+        ],
+        [
+          "HTML.",
+          110,
+          1290
+        ],
+        [
+          "undefined.",
+          139,
+          1172
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          77,
+          674
+        ],
+        [
+          "__primerPortalRoot__",
+          63,
+          556
+        ],
+        [
+          "_r_3i_",
+          24,
+          313
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 6,
+        "moRecords": 37,
+        "moTimeMs": 1.9,
+        "treeWalkers": 0,
+        "treeNodes": 0,
+        "textContentWrites": 0,
+        "dataWrites": 0,
+        "setAttributeWrites": 6,
+        "cjkTextWrites": 0,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 3,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "targets": [
+          [
+            "DIV.",
+            7,
+            8
+          ],
+          [
+            "HTML.",
+            110,
+            1290
+          ],
+          [
+            "undefined.",
+            139,
+            1172
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            77,
+            674
+          ],
+          [
+            "__primerPortalRoot__",
+            63,
+            556
+          ],
+          [
+            "_r_3i_",
+            24,
+            313
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "menu-stress",
+      "moCallbacks": 485,
+      "moRecords": 4566,
+      "moTimeMs": 449,
+      "treeWalkers": 563,
+      "treeNodes": 7354,
+      "textContentWrites": 1003,
+      "dataWrites": 440,
+      "setAttributeWrites": 14684,
+      "cjkTextWrites": 499,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 180,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 22,
+      "longTaskMs": 1823,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          7,
+          8
+        ],
+        [
+          "HTML.",
+          123,
+          1518
+        ],
+        [
+          "undefined.",
+          158,
+          1370
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          86,
+          713
+        ],
+        [
+          "__primerPortalRoot__",
+          72,
+          595
+        ],
+        [
+          "_r_3i_",
+          24,
+          313
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 50,
+        "moRecords": 504,
+        "moTimeMs": 25.3,
+        "treeWalkers": 26,
+        "treeNodes": 709,
+        "textContentWrites": 6,
+        "dataWrites": 6,
+        "setAttributeWrites": 1587,
+        "cjkTextWrites": 6,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 6,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 2,
+        "longTaskMs": 118,
+        "targets": [
+          [
+            "DIV.",
+            7,
+            8
+          ],
+          [
+            "HTML.",
+            123,
+            1518
+          ],
+          [
+            "undefined.",
+            158,
+            1370
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            86,
+            713
+          ],
+          [
+            "__primerPortalRoot__",
+            72,
+            595
+          ],
+          [
+            "_r_3i_",
+            24,
+            313
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "settle-3s",
+      "moCallbacks": 485,
+      "moRecords": 4566,
+      "moTimeMs": 449,
+      "treeWalkers": 564,
+      "treeNodes": 7548,
+      "textContentWrites": 1003,
+      "dataWrites": 440,
+      "setAttributeWrites": 14684,
+      "cjkTextWrites": 499,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 180,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 23,
+      "longTaskMs": 1887,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          7,
+          8
+        ],
+        [
+          "HTML.",
+          123,
+          1518
+        ],
+        [
+          "undefined.",
+          158,
+          1370
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          86,
+          713
+        ],
+        [
+          "__primerPortalRoot__",
+          72,
+          595
+        ],
+        [
+          "_r_3i_",
+          24,
+          313
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 0,
+        "moRecords": 0,
+        "moTimeMs": 0,
+        "treeWalkers": 1,
+        "treeNodes": 194,
+        "textContentWrites": 0,
+        "dataWrites": 0,
+        "setAttributeWrites": 0,
+        "cjkTextWrites": 0,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 0,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 1,
+        "longTaskMs": 64,
+        "targets": [
+          [
+            "DIV.",
+            7,
+            8
+          ],
+          [
+            "HTML.",
+            123,
+            1518
+          ],
+          [
+            "undefined.",
+            158,
+            1370
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            86,
+            713
+          ],
+          [
+            "__primerPortalRoot__",
+            72,
+            595
+          ],
+          [
+            "_r_3i_",
+            24,
+            313
+          ]
+        ],
+        "errors": []
+      }
+    },
+    {
+      "name": "idle-10s",
+      "moCallbacks": 485,
+      "moRecords": 4566,
+      "moTimeMs": 449,
+      "treeWalkers": 564,
+      "treeNodes": 7548,
+      "textContentWrites": 1003,
+      "dataWrites": 440,
+      "setAttributeWrites": 14684,
+      "cjkTextWrites": 499,
+      "revertWrites": 2,
+      "destructiveTextWrites": 14,
+      "removeChildCalls": 180,
+      "removedWritten": 1,
+      "removeChildErrors": 0,
+      "insertErrors": 0,
+      "longTasks": 23,
+      "longTaskMs": 1887,
+      "errors": [],
+      "targets": [
+        [
+          "DIV.",
+          7,
+          8
+        ],
+        [
+          "HTML.",
+          123,
+          1518
+        ],
+        [
+          "undefined.",
+          158,
+          1370
+        ],
+        [
+          "HEAD.",
+          15,
+          49
+        ],
+        [
+          "body",
+          86,
+          713
+        ],
+        [
+          "__primerPortalRoot__",
+          72,
+          595
+        ],
+        [
+          "_r_3i_",
+          24,
+          313
+        ]
+      ],
+      "delta": {
+        "moCallbacks": 0,
+        "moRecords": 0,
+        "moTimeMs": 0,
+        "treeWalkers": 0,
+        "treeNodes": 0,
+        "textContentWrites": 0,
+        "dataWrites": 0,
+        "setAttributeWrites": 0,
+        "cjkTextWrites": 0,
+        "revertWrites": 0,
+        "destructiveTextWrites": 0,
+        "removeChildCalls": 0,
+        "removedWritten": 0,
+        "removeChildErrors": 0,
+        "insertErrors": 0,
+        "longTasks": 0,
+        "longTaskMs": 0,
+        "targets": [
+          [
+            "DIV.",
+            7,
+            8
+          ],
+          [
+            "HTML.",
+            123,
+            1518
+          ],
+          [
+            "undefined.",
+            158,
+            1370
+          ],
+          [
+            "HEAD.",
+            15,
+            49
+          ],
+          [
+            "body",
+            86,
+            713
+          ],
+          [
+            "__primerPortalRoot__",
+            72,
+            595
+          ],
+          [
+            "_r_3i_",
+            24,
+            313
+          ]
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "coverage0": {
+    "headerElements": 232,
+    "cjkLeafElements": 18,
+    "navSamples": [
+      "maboloshi",
+      "github-chinese",
+      "打开 Copilot…",
+      "打开智能体面板",
+      "代码",
+      "议题54 (54)",
+      "拉取请求10 (10)",
+      "智能体",
+      "讨论",
+      "操作",
+      "安全和质量14 (14)",
+      "洞察",
+      "设置",
+      "更多 项"
+    ]
+  },
+  "coverage1": {
+    "headerElements": 232,
+    "cjkLeafElements": 18,
+    "navSamples": [
+      "maboloshi",
+      "github-chinese",
+      "打开 Copilot…",
+      "打开智能体面板",
+      "代码",
+      "议题54 (54)",
+      "拉取请求10 (10)",
+      "智能体",
+      "讨论",
+      "操作",
+      "安全和质量14 (14)",
+      "洞察",
+      "设置",
+      "更多 项"
+    ]
+  },
+  "portalSample": [
+    "切换仓库",
+    "Items will be filtered as you type",
+    "github-chinese",
+    "scoop-private",
+    "mihomo-tray-rs",
+    "博客",
+    "dco-commit-action",
+    "build-assistant",
+    "clip",
+    "MyNotebook"
+  ],
+  "searchDialogOpen": {
+    "dialog": false,
+    "input": "repo:maboloshi/github-chinese "
+  },
+  "searchState": {
+    "dialog": false,
+    "input": "repo:maboloshi/github-chinese react hooks useEffect",
+    "placeholder": "输入 / 搜索"
+  },
+  "finalMetrics": {
+    "moCallbacks": 485,
+    "moRecords": 4566,
+    "moTimeMs": 449,
+    "treeWalkers": 564,
+    "treeNodes": 7548,
+    "textContentWrites": 1003,
+    "dataWrites": 440,
+    "setAttributeWrites": 14684,
+    "cjkTextWrites": 499,
+    "revertWrites": 2,
+    "destructiveTextWrites": 14,
+    "removeChildCalls": 180,
+    "removedWritten": 1,
+    "removeChildErrors": 0,
+    "insertErrors": 0,
+    "longTasks": 23,
+    "longTaskMs": 1887,
+    "errors": [],
+    "targets": [
+      [
+        "DIV.",
+        7,
+        8
+      ],
+      [
+        "HTML.",
+        123,
+        1518
+      ],
+      [
+        "undefined.",
+        158,
+        1370
+      ],
+      [
+        "HEAD.",
+        15,
+        49
+      ],
+      [
+        "body",
+        86,
+        713
+      ],
+      [
+        "__primerPortalRoot__",
+        72,
+        595
+      ],
+      [
+        "_r_3i_",
+        24,
+        313
+      ]
+    ]
+  }
+}
