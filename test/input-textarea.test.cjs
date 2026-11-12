@@ -101,6 +101,9 @@ test('新增的 input 由通用 mutation 管线遍历，无需单独补翻', () 
         State: { pageConfig: { characterData: false } },
         CONFIG: { DEV: false },
         shouldIgnoreMutationNode: () => false,
+        isTooltipElement: () => false,
+        transTooltipElements() {},
+        handleElementNode() {},
         traverseNode: node => traversed.push(node),
         console: { log() {} },
     });
