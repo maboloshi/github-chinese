@@ -137,6 +137,8 @@
         idleSweep: null,         // 恢复访问时的空闲补扫句柄
         urlChangeHandler: null,  // 存储URL变化处理器
         dynamicMenus: {},        // 动态菜单ID记录
+        pendingMutations: [],    // 一帧内攒下的 mutation 记录
+        mutationFlush: null,     // 已排期的批次处理句柄
         initDone: false,
     };
 
@@ -551,6 +553,55 @@
     /* =========================== MutationObserver =========================== */
 
     /**
+     * 处理攒下的突变批次（一帧一次）
+     */
+    function flushMutationBatch() {
+        State.mutationFlush = null;
+        if (!State.pendingMutations.length) return;
+
+        const batch = State.pendingMutations;
+        State.pendingMutations = [];
+        if (!State.pageConfig) return;
+
+        processMutations(batch);
+
+        // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
+        if (State.featureSet?.enable_transDesc) {
+            const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
+            if (descSelector) transDesc(descSelector);
+        }
+    }
+
+    /**
+     * 安排一次批次处理；没有 requestAnimationFrame 的环境（测试/极老浏览器）
+     * 保持同步处理，避免行为变化。
+     */
+    function scheduleMutationFlush() {
+        if (State.mutationFlush) return;
+        if (typeof window.requestAnimationFrame === 'function') {
+            const id = window.requestAnimationFrame(flushMutationBatch);
+            State.mutationFlush = {
+                cancel() {
+                    window.cancelAnimationFrame?.(id);
+                },
+            };
+        } else {
+            flushMutationBatch();
+        }
+    }
+
+    /**
+     * 换 body 时丢弃上一份文档攒下的突变，避免继续处理已断开的节点。
+     */
+    function resetMutationBatch() {
+        State.pendingMutations = [];
+        if (State.mutationFlush) {
+            State.mutationFlush.cancel();
+            State.mutationFlush = null;
+        }
+    }
+
+    /**
      * 创建DOM变化观察器
      * 监听页面变化并触发翻译
      */
@@ -564,16 +615,8 @@
                     updatePageConfig("URL变化 (MutationObserver)");
                 }
 
-                // 处理DOM变化
-                if (State.pageConfig) {
-                    processMutations(mutations);
-
-                    // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
-                    if (State.featureSet?.enable_transDesc) {
-                        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
-                        if (descSelector) transDesc(descSelector);
-                    }
-                }
+                State.pendingMutations.push(...mutations);
+                scheduleMutationFlush();
             }, 'MutationObserver')
         );
     }
@@ -584,6 +627,7 @@
      * @param {Element} body
      */
     function attachMutationObserver(body) {
+        resetMutationBatch();
         State.mutationObserver?.disconnect();
         State.mutationObserver = createMutationObserver();
         State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
