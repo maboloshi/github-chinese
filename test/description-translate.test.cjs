@@ -89,7 +89,7 @@ function loadTransDesc(document) {
 }
 
 for (const fileName of runtimeScripts) {
-    test(`${fileName} covers the current BorderGrid description selector`, () => {
+    test(`${fileName} covers the BorderGrid fallback description selector`, () => {
         const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
 
         for (const token of ['borderGrid__', 'description__']) {
@@ -119,8 +119,10 @@ for (const fileName of runtimeScripts) {
     });
 }
 
-test('main.user.js 的描述选择器只保留当前 React UI', () => {
-    // 经典 UI 的 .f4.tmp-my-3 与 SidebarAbout-module_ 已不再命中线上 DOM，留着只会误伤
+test('main.user.js 的描述选择器同时覆盖登录态与未登录态结构', () => {
+    // 登录态（#811 实测）：<p class="SidebarAbout-module_eqNI3a_description prc-Text-Text-9mHv3">
+    // 未登录/桌面：<p class="description__ej4leF prc-Text-Text-9mHv3">
+    // 前者不含 description__：只保留 borderGrid 选择器会让登录态按钮消失（f9bcddd 回归）。
     const block = mainSource.match(/DESC_SELECTORS: \{[\s\S]*?\n        \},/);
     assert.ok(block, 'main.user.js should still declare DESC_SELECTORS');
 
@@ -129,9 +131,11 @@ test('main.user.js 的描述选择器只保留当前 React UI', () => {
         .filter(line => !line.trim().startsWith('//'))
         .join('\n');
 
-    assert.ok(effective.includes('borderGrid__'), '保留当前 React UI 的选择器');
-    assert.ok(!effective.includes('.f4.tmp-my-3'), '不再使用经典 UI 选择器');
-    assert.ok(!effective.includes('SidebarAbout-module_'), '不再使用 SidebarAbout 选择器');
+    assert.ok(effective.includes('SidebarAbout-module_'), '保留登录态 React 组件选择器');
+    assert.ok(effective.includes('_description'), '登录态类名以 _description 结尾');
+    assert.ok(effective.includes('borderGrid__'), '保留未登录态 About 侧栏选择器');
+    assert.ok(effective.includes('description__'), '未登录态类名以 description__ 开头');
+    assert.ok(!effective.includes('.f4.tmp-my-3'), '经典 UI 选择器已失效，不再保留');
 });
 
 test('transDesc inserts exactly one translate button after the matched description', () => {

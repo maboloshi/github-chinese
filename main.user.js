@@ -41,8 +41,10 @@
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
             repository: [
-                // 'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
-                '[class*="borderGrid__"] p[class*="description__"]', // 当前 React UI：About 侧栏内的描述
+                // 登录态是独立的 React 组件，类名形如 SidebarAbout-module_xxxx_description，
+                // 不含未登录态的 description__（#811）
+                'p[class*="SidebarAbout-module_"][class*="_description"]', // 登录态 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 未登录/桌面 About 侧栏
             ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
