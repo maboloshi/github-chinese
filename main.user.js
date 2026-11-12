@@ -415,6 +415,7 @@
                 ...(I18N[CONFIG.LANG].public.selector || []),
                 ...(I18N[CONFIG.LANG][pageType]?.selector || [])
             ],
+            transCache: new Map(), // 当前页面类型的翻译结果缓存（文本 -> 译文/false）
         };
     }
 
@@ -918,6 +919,18 @@
         return false;
     }
 
+    // 单页翻译结果缓存上限：文本重复率高（导航、按钮、时间），缓存命中率远高于随机内容，
+    // 上限只是防止长时间会话里无限增长。
+    const TRANS_CACHE_LIMIT = 5000;
+
+    /**
+     * 清空当前页面的翻译结果缓存 — 正则功能开关变化后必须调用，
+     * 否则会命中「关闭正则时算出的未命中结果」而漏翻。
+     */
+    function resetTransCache() {
+        if (State.pageConfig) State.pageConfig.transCache = new Map();
+    }
+
     /**
      * 从词库获取翻译 — 直接读取 State.pageConfig
      * @param {string} text - 要翻译的文本
@@ -926,31 +939,42 @@
     function fetchTransResult(text) {
         if (!State.pageConfig) return false;
 
-        // 静态词典查找
-        const staticResult = State.pageConfig.staticDict[text];
-        if (typeof staticResult === 'string') {
-            MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-            return staticResult;
-        }
+        const pageConfig = State.pageConfig;
+        // 未命中词条记录依赖「每次查询都记账」，开启时绕开缓存以保证行为不变（仅开发者模式）。
+        const cache = State.featureSet.enable_missedTerms ? null : pageConfig.transCache;
+        if (cache && cache.has(text)) return cache.get(text);
 
-        // 正则规则查找
-        if (State.featureSet.enable_RegExp) {
-            for (const [pattern, replacement] of State.pageConfig.regexpRules) {
-                const result = text.replace(pattern, replacement);
-                if (result !== text) {
-                    MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-                    return result;
+        let result = false;
+
+        // 静态词典查找
+        const staticResult = pageConfig.staticDict[text];
+        if (typeof staticResult === 'string') {
+            MissedTermsManager.cleanup(text, pageConfig.currentPath);
+            result = staticResult;
+        } else if (State.featureSet.enable_RegExp) {
+            // 正则规则查找
+            for (const [pattern, replacement] of pageConfig.regexpRules) {
+                const translated = text.replace(pattern, replacement);
+                if (translated !== text) {
+                    MissedTermsManager.cleanup(text, pageConfig.currentPath);
+                    result = translated;
+                    break;
                 }
             }
         }
 
         // 记录未命中词条
-        if (State.featureSet.enable_missedTerms) {
-            MissedTermsManager.record(text, State.pageConfig.currentPath);
+        if (result === false && State.featureSet.enable_missedTerms) {
+            MissedTermsManager.record(text, pageConfig.currentPath);
             refreshMenuStates();
         }
 
-        return false;
+        if (cache) {
+            if (cache.size >= TRANS_CACHE_LIMIT) cache.clear();
+            cache.set(text, result);
+        }
+
+        return result;
     }
 
     /* =========================== 远程翻译 =========================== */
@@ -1362,6 +1386,8 @@
                 label: "正则功能",
                 key: "enable_RegExp",
                 callback: (enabled) => {
+                    // 缓存里可能存着「关闭正则时算出的未命中结果」，切换后必须先失效
+                    resetTransCache();
                     if (enabled && State.pageConfig) safe(traverseNode, '菜单触发遍历')(document.body);
                 }
             },
