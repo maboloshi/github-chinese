@@ -391,6 +391,10 @@
      * @returns {Object} 页面配置对象
      */
     function buildPageConfig(pageType) {
+        const regexpRules = [ // 合并公共和页面特定的正则规则
+            ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
+            ...(I18N[CONFIG.LANG].public.regexp || [])
+        ];
         return {
             currentPageType: pageType, // 当前页面类型
             currentPath: window.location.pathname, // 当前路径
@@ -400,10 +404,9 @@
                 ...I18N[CONFIG.LANG].public.static,
                 ...(I18N[CONFIG.LANG][pageType]?.static || {})
             },
-            regexpRules: [ // 合并公共和页面特定的正则规则
-                ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
-                ...(I18N[CONFIG.LANG].public.regexp || [])
-            ],
+            regexpRules,
+            // 与 regexpRules 一一对应的「匹配时必然出现的字面量」，用于跳过不可能命中的规则
+            regexpPrefilters: regexpRules.map(([pattern]) => getRequiredLiteral(pattern)),
             ignoreMutationSelectors: [ // 忽略的突变选择器
                 ...(I18N.conf.ignoreMutationSelectorPage['*'] || []),
                 ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
@@ -934,6 +937,60 @@
     }
 
     /**
+     * 提取正则规则「一旦匹配就必然出现在文本里」的字面量，用来跳过不可能命中的规则。
+     * 只认长度 >= 4 的纯字母连续段，并保守放弃以下情况：
+     * - 带 i 标志（大小写不敏感，includes 会误判）
+     * - 任意位置的 `|`（分支不共享字面量）
+     * - 前后向断言 / 被可选量词修饰的组（字面量可能不出现）
+     * - 字面量本身后跟可选量词（可能零次出现）
+     * 返回 null 表示这条规则必须照常执行。
+     * @param {RegExp} pattern
+     * @returns {string|null}
+     */
+    function getRequiredLiteral(pattern) {
+        if (!pattern || pattern.flags.includes('i')) return null;
+        const source = pattern.source;
+        if (source.includes('|')) return null;
+        if (/\(\?<?[=!]/.test(source)) return null; // 前后向断言一律不参与
+        // 右花括号用 charCode 表示，避免测试里按花括号配对提取函数时被字面量干扰
+        const optional = char => char === '?' || char === '*' || char === String.fromCharCode(123);
+
+        let best = '';
+        let run = '';
+        let inClass = false;
+        const flush = end => {
+            if (run.length >= 4 && !optional(source[end]) && run.length > best.length) {
+                best = run;
+            }
+            run = '';
+        };
+
+        for (let i = 0; i < source.length; i += 1) {
+            const char = source[i];
+            if (char === '\\') {
+                if (!inClass) flush(i); // 转义序列不是字面量字母
+                i += 1;
+            } else if (inClass) {
+                if (char === ']') inClass = false;
+            } else if (char === '[') {
+                flush(i);
+                inClass = true;
+            } else if (char === ')') {
+                if (optional(source[i + 1])) return null; // 整个组被可选量词修饰
+                flush(i);
+            } else if (char === '(' || char === '^' || char === '$') {
+                flush(i);
+            } else if (/[A-Za-z]/.test(char)) {
+                run += char;
+            } else {
+                flush(i);
+            }
+        }
+        flush(source.length);
+        return best || null;
+    }
+
+    /**
      * 从词库获取翻译 — 直接读取 State.pageConfig
      * @param {string} text - 要翻译的文本
      * @returns {string|boolean} 翻译结果或 false
@@ -954,8 +1011,13 @@
             MissedTermsManager.cleanup(text, pageConfig.currentPath);
             result = staticResult;
         } else if (State.featureSet.enable_RegExp) {
-            // 正则规则查找
-            for (const [pattern, replacement] of pageConfig.regexpRules) {
+            // 正则规则查找：先用「必然出现的字面量」跳过不可能命中的规则
+            const prefilters = pageConfig.regexpPrefilters;
+            const rules = pageConfig.regexpRules;
+            for (let index = 0; index < rules.length; index += 1) {
+                const required = prefilters?.[index];
+                if (required && !text.includes(required)) continue;
+                const [pattern, replacement] = rules[index];
                 const translated = text.replace(pattern, replacement);
                 if (translated !== text) {
                     MissedTermsManager.cleanup(text, pageConfig.currentPath);
