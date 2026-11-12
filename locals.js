@@ -20914,7 +20914,7 @@ I18N["zh-CN"]["repository/custom-properties"] = { // 仓库 - 自定义属性 ht
     "regexp": [],
 };
 
-I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 内容举报 /<user-name>/<repo-name>/reported_content
+I18N["zh-CN"]["repository/reported_content"] = { // 仓库 - 内容举报 /<user-name>/<repo-name>/reported_content
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
