@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.4-2026-11-08
+// @version      1.9.4.5-2026-11-11
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-11-08
+// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-11-11
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -41,8 +41,7 @@
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
             repository: [
-                ".f4.tmp-my-3", // 经典 UI
-                'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
+                // 'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
                 '[class*="borderGrid__"] p[class*="description__"]', // 当前 React UI：About 侧栏内的描述
             ].join(", "),
             gist: ".gist-content [itemprop='about']"
@@ -131,6 +130,9 @@
         currentURL: window.location.href, // 当前页面URL
         transEngine: 'iflyrec',  // 当前翻译引擎
         mutationObserver: null,  // DOM变化观察器
+        observedBody: null,      // 当前观察的页面主体
+        visitAction: null,       // 当前 Turbo 访问动作：advance / replace / restore
+        idleSweep: null,         // 恢复访问时的空闲补扫句柄
         urlChangeHandler: null,  // 存储URL变化处理器
         dynamicMenus: {},        // 动态菜单ID记录
         initDone: false,
@@ -167,7 +169,6 @@
     /* =========================== 初始化入口 =========================== */
     function init() {
         checkI18NLoaded();
-        setupReactGlobalNavTranslation();
         initLangEnv();
         injectStyles();
         setupMenuCommands();
@@ -210,6 +211,8 @@
      */
     function setupInitTrans() {
         function doInitTrans() {
+            if (!document.body) return;
+            State.currentURL = window.location.href;
             updatePageConfig('首次载入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍历')(document.body);
@@ -232,6 +235,21 @@
      * Tampermonkey 环境使用 onurlchange 事件，其他环境回退到 MutationObserver URL 检测
      */
     function setupUrlChangeListener() {
+        // 合并同一轮历史事件，在当前事件结束后读取最终的 URL 与 body
+        let historyTimer = null;
+        function scheduleHistoryRefresh() {
+            if (historyTimer !== null) clearTimeout(historyTimer);
+            historyTimer = setTimeout(() => {
+                historyTimer = null;
+                handleUrlChange();
+            }, 0);
+        }
+
+        // 只处理同文档历史（Turbo/SPA 的 pushState 回退）。
+        // bfcache 的跨文档恢复不触发 popstate，而且 DOM 与观察器都原样还原，
+        // 缓存里的文字已经是译文——不需要也不应该再全量重翻，故不监听 pageshow。
+        window.addEventListener('popstate', scheduleHistoryRefresh);
+
         // Tampermonkey 环境下 window.onurlchange 为 null（支持），其他环境为 undefined
         if (State.featureSet.enable_onurlchange && window.onurlchange === null) {
 
@@ -253,24 +271,17 @@
      */
     function handleUrlChange() {
         const currentURL = window.location.href;
+        const sameRoute = currentURL.split('#')[0] === State.currentURL.split('#')[0];
 
-        // 如果URL没有实际变化，则跳过处理
-        if (currentURL === State.currentURL) return;
-
-        State.currentURL = currentURL;
-        updatePageConfig("URL变化 (onurlchange)");
-
-        // 重新设置观察器
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
+        // 同一路由且 body 未更换（含 bfcache 原样恢复）：译文与观察器都还在，直接返回。
+        // 判断依据不是「有没有缓存」，而是 body 是否还是我们观察的那一个：
+        // Turbo 的快照恢复会替换 body（cloneNode 丢弃监听器），那种才需要重新遍历与挂载。
+        if (sameRoute && document.body === State.observedBody) {
+            State.currentURL = currentURL;
+            return;
         }
 
-        // 如果页面类型有效，重新遍历DOM
-        if (State.pageConfig) {
-            safe(traverseNode, 'URL变化遍历')(document.body);
-        }
-
-        setupMutationObserver();
+        handleTurboLoad();
     }
 
     /* =========================== Turbo 事件 =========================== */
@@ -279,7 +290,43 @@
      * 处理GitHub的Turbolinks页面切换
      */
     function setupTurboEvents() {
-        document.addEventListener('turbo:load', handleTurboLoad);
+        // Turbo 的访问动作：advance（点链接）/ replace / restore（前进后退）
+        document.addEventListener('turbo:visit', event => {
+            State.visitAction = event.detail?.action || null;
+        });
+
+        // 新 body 还没插入文档时就把观察器挂上去：
+        // React 水合把译文写回英文的那批变更，从第一帧就被接住
+        document.addEventListener('turbo:before-render', event => {
+            const newBody = event.detail?.newBody;
+            if (newBody) attachMutationObserver(newBody);
+        });
+
+        document.addEventListener('turbo:render', () => handleTurboLoad());
+        document.addEventListener('turbo:load', () => {
+            handleTurboLoad();
+            State.visitAction = null;
+        });
+    }
+
+    /**
+     * 恢复访问不必同步全量遍历：缓存快照里已经是译文，
+     * 水合回写的英文由预挂的观察器接住；再安排一次空闲补扫，
+     * 兜住「离开时还没翻完」的快照，同时不阻塞渲染。
+     */
+    function scheduleIdleTraversal() {
+        if (State.idleSweep !== null) return;
+        const run = () => {
+            State.idleSweep = null;
+            // 等空闲期间又换页了：新导航已经负责过，别再扫一遍
+            if (State.observedBody !== document.body) return;
+            safe(traverseNode, '恢复补扫')(document.body);
+        };
+        if (typeof window.requestIdleCallback === 'function') {
+            State.idleSweep = window.requestIdleCallback(run, { timeout: 1500 });
+        } else {
+            State.idleSweep = setTimeout(run, 200);
+        }
     }
 
     /**
@@ -287,15 +334,35 @@
      * 在新页面加载后执行必要的翻译
      */
     function handleTurboLoad() {
+        if (!document.body) return;
+
+        State.currentURL = window.location.href;
+        const restoring = State.visitAction === 'restore';
+        updatePageConfig('页面导航');
+
+        // before-render 已经挂好的观察器直接沿用；否则在这里兜底
+        const preAttached = State.observedBody === document.body && !!State.mutationObserver;
+        if (!preAttached) {
+            attachMutationObserver(document.body);
+        }
+
+        if (State.pageConfig) {
+            if (restoring && preAttached) {
+                scheduleIdleTraversal();
+            } else {
+                safe(traverseNode, '导航遍历')(document.body);
+            }
+        }
+
         if (!State.pageConfig) return;
 
-        transTitle(); // 翻译页面标题
-        transBySelector(); // 通过选择器翻译特定元素
+        safe(transTitle, '标题翻译')(); // 翻译页面标题
+        safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
 
         // 如果描述翻译功能启用，翻译页面描述
         if (State.featureSet.enable_transDesc &&
             CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            transDesc(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
+            safe(transDesc, '描述翻译')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
         }
     }
 
@@ -309,7 +376,8 @@
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType) {
+        } else if (newType !== State.pageConfig?.currentPageType ||
+            window.location.pathname !== State.pageConfig?.currentPath) {
             State.pageConfig = buildPageConfig(newType);
         }
         console.log(`【Debug】${trigger}触发, 页面类型为 ${State.pageConfig?.currentPageType}`);
@@ -353,6 +421,48 @@
     /* =========================== 页面类型检测 =========================== */
 
     /**
+     * 全局路由保留首段（与 rePagePath 的全局首段一致，并包含组织页别名 organizations）。
+     * 这些首段是站点固定路径，不可能是账号名 / 组织名。
+     */
+    const RESERVED_ROOTS = new Set([
+        'home', 'dashboard', 'feed', 'copilot', 'spark', 'signup', 'account_verifications',
+        'login', 'logout', 'session', 'sessions', 'password_reset', 'orgs', 'organizations',
+        'explore', 'topics', 'notifications', 'watching', 'stars', 'issues', 'pulls', 'repos',
+        'search', 'trending', 'showcases', 'new', 'import', 'settings', 'installations',
+        'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
+        'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
+        'security', 'sitemap', 'education', 'mcp', 'users',
+    ]);
+
+    /**
+     * Turbo 导航会暂时拿掉 analytics-location。
+     * 仅在元数据缺失或无法识别时按路径回退，已有元数据仍优先。
+     * 全局路由按完整首段排除，避免没有结尾锚点的 rePagePath 把 settings-tools 当成 settings。
+     */
+    function isFallbackRepositoryPath(pathname) {
+        const segments = pathname.split('/');
+        if (segments.length < 3) return false;
+
+        const owner = segments[1];
+        const repo = segments[2];
+        function isSegment(segment) {
+            return /^[A-Za-z0-9._-]+$/.test(segment) && !/^\.+$/.test(segment);
+        }
+        if (!isSegment(owner) || !isSegment(repo)) return false;
+        if (RESERVED_ROOTS.has(owner.toLowerCase())) return false;
+
+        const extra = segments.slice(3);
+        const isRoot = extra.length === 0 || (extra.length === 1 && extra[0] === '');
+        if (isRoot) {
+            // /<org>/enterprise_plan 与 /<org>/sponsoring 属于组织路径，不是仓库根路径
+            const repoName = repo.toLowerCase();
+            return repoName !== 'enterprise_plan' && repoName !== 'sponsoring';
+        }
+        if (extra.some(segment => segment === '' || segment === '.' || segment === '..')) return false;
+        return I18N.conf.rePagePathRepo.test(pathname);
+    }
+
+    /**
      * 检测当前页面类型
      * @returns {string|boolean} 页面类型或false（如果未识别）
      */
@@ -364,14 +474,17 @@
         // 基础配置
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
         const isLogin = document.body.classList.contains("logged-in");
-        const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
+        const metaLocation = (document.head.querySelector('meta[name="analytics-location"]')?.content || '').trim();
+        const metaUsable = /\/<(?:user-name|org-login)>/.test(metaLocation);
 
         // 页面特征检测
         const isSession = document.body.classList.contains("session-authentication");
         const isHomepage = pathname === '/' && site === 'github';
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
+        // 元数据优先；Turbo 暂时拿掉 analytics-location 时再按仓库路径回退
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
-            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content;
+            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content
+            || (!metaUsable && isFallbackRepositoryPath(pathname));
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
         let pageType;
@@ -429,545 +542,18 @@
         return pageType;
     }
 
-    /* =========================== React 新版头部翻译补丁 =================== */
-    /**
-     * 模块：React 新版头部翻译补丁
-     * 说明：针对 GitHub 新版 React 头部（GlobalNav）及其弹层，
-     *       通过 DOM 操作 + 精细的时机控制来翻译文本，
-     *       避免与 React 渲染发生冲突。
-     * 作者：MasterBao66
-     * 日期：2026-06-17
-     */
-    function isReactGlobalNavPortalNode(node) {
-        const element = node?.nodeType === 1 ? node : node?.parentElement;
-        const portalRoot = element?.closest?.('#__primerPortalRoot__');
-        if (!portalRoot) return false;
-
-        const portal = element.closest?.('[data-component="Portal"]')
-            || element.querySelector?.('[data-component="Portal"]')
-            || portalRoot;
-        if (portal.matches?.('#search-suggestions-dialog')
-            || portal.querySelector?.('#search-suggestions-dialog')) return true;
-
-        const referenceAttributes = ['aria-labelledby', 'aria-describedby', 'aria-controls', 'aria-owns'];
-        const referenceElements = [
-            portal,
-            ...portal.querySelectorAll?.(
-                referenceAttributes.map(attribute => `[${attribute}]`).join(', ')
-            ) || [],
-        ];
-
-        for (const referenceElement of referenceElements) {
-            for (const attribute of referenceAttributes) {
-                const ids = referenceElement.getAttribute?.(attribute)?.split(/\s+/) || [];
-                if (ids.some(id => document.getElementById(id)?.closest?.('header.GlobalNav'))) {
-                    return true;
-                }
-            }
-        }
-
-        const portalIds = new Set([
-            portal.id,
-            ...Array.from(portal.querySelectorAll?.('[id]') || [], item => item.id),
-        ].filter(Boolean));
-        if (portalIds.size) {
-            const headerReferences = document.querySelectorAll(
-                'header.GlobalNav [aria-describedby], header.GlobalNav [aria-controls], header.GlobalNav [aria-owns]'
-            );
-            for (const headerReference of headerReferences) {
-                for (const attribute of ['aria-describedby', 'aria-controls', 'aria-owns']) {
-                    const ids = headerReference.getAttribute(attribute)?.split(/\s+/) || [];
-                    if (ids.some(id => portalIds.has(id))) return true;
-                }
-            }
-        }
-
-        const hasControlledSurface = portal.matches?.('[role="menu"], [role="dialog"], [role="tooltip"]')
-            || portal.querySelector?.('[role="menu"], [role="dialog"], [role="tooltip"]');
-        return !!hasControlledSurface
-            && !!document.activeElement?.closest?.('header.GlobalNav, qbsearch-input');
-
-    }
-
-    function setupReactGlobalNavTranslation() {
-        // ----- 环境检查 -----
-        if (typeof document === 'undefined' || typeof window === 'undefined') return;
-
-        // ----- 词库（从 I18N 读取）-----
-        const labels = I18N.conf.reactGlobalNavLabels || {};
-
-        // ----- 选择器定义 -----
-        const dataContentLabelSelector = 'header.GlobalNav [data-component="text"][data-content]';
-        const breadcrumbLinkSelector = 'header.GlobalNav nav[data-component="Breadcrumbs"] a[data-component="Breadcrumbs.Item"][href]';
-        // 需要监听的 React 渲染区域：头部和弹层
-        const controlledSurfaceSelector = [
-            'header.GlobalNav',
-            '#__primerPortalRoot__ [role="menu"]',
-            '#__primerPortalRoot__ [role="dialog"]',
-            '#__primerPortalRoot__ [role="tooltip"]',
-        ].join(', ');
-        // 仅弹层（用于单独判断更新状态）
-        const portalSurfaceSelector = '#__primerPortalRoot__ [role="menu"], #__primerPortalRoot__ [role="dialog"], #__primerPortalRoot__ [role="tooltip"]';
-        // 旧版搜索框（兼容）
-        const searchSurfaceSelector = 'qbsearch-input';
-        // 新版搜索模块（类名包含 Search-module__）
-        const searchModuleSelector = 'header.GlobalNav [class*="Search-module__"]';
-        // 不翻译的标签（避免破坏代码、图片等）
-        const unsafeTextSelector = [
-            'textarea',
-            '[contenteditable="true"]',
-            'code',
-            'pre',
-            'kbd',
-            'svg',
-            'img',
-            'canvas',
-            'video',
-        ].join(', ');
-        // 搜索相关区域（用于判断焦点状态）
-        const searchSelector = `${searchModuleSelector}, ${searchSurfaceSelector}, #__primerPortalRoot__ [role="dialog"]`;
-        // 需要翻译的属性列表
-        const translatableAttributeNames = ['title', 'aria-label', 'data-visible-text', 'placeholder'];
-
-        // ----- 时间控制参数 -----
-        const reactGlobalNavIdleMs = 700;       // 判断渲染空闲的等待时间（毫秒）
-        const reactGlobalNavRetryMs = 400;      // 重试间隔
-
-        // ----- 状态变量 -----
-        let timer = null;                       // 延时执行句柄
-        let headerObserver = null;              // MutationObserver 实例
-        let lastReactGlobalNavMutationAt = Date.now();     // 头部最后变化时间
-        let lastReactGlobalNavPortalMutationAt = Date.now(); // 弹层最后变化时间
-        const observedSurfaces = new WeakSet(); // 已监听的 DOM 元素（避免重复绑定）
-
-
-        // ----- 状态查询函数 -----
-        /**
-         * 判断当前是否处于搜索激活状态（输入框有焦点或弹层打开）
-         */
-        function isReactGlobalNavSearchActive() {
-            const active = document.activeElement;
-            return !!active?.closest?.(searchSelector)
-                || !!document.querySelector('#__primerPortalRoot__ [role="dialog"]');
-        }
-
-        /**
-         * 判断指定区域是否已经处于空闲状态（无变化超过 IDLE_MS）
-         * @param {string} surfaceType - 'header' 或 'portal'
-         */
-        function isReactGlobalNavSurfaceIdle(surfaceType = 'header') {
-            const lastMutationAt = surfaceType === 'portal'
-                ? lastReactGlobalNavPortalMutationAt
-                : lastReactGlobalNavMutationAt;
-            return Date.now() - lastMutationAt >= reactGlobalNavIdleMs;
-        }
-
-        /**
-         * 判断是否可以进行头部翻译
-         * 条件：页面完全加载、头部空闲、搜索未激活
-         */
-        function canTranslateReactGlobalNavHeader() {
-            return document.readyState === 'complete'
-                && isReactGlobalNavSurfaceIdle('header')
-                && !isReactGlobalNavSearchActive();
-        }
-
-        // ----- 词库查找函数（与现有 I18N 集成） -----
-        /**
-         * 从 I18N 的静态词典中查找翻译
-         * @param {string} source - 原文
-         * @returns {string|null}
-         */
-        function findStaticGlobalNavLabel(source) {
-            const locale = I18N["zh-CN"] || I18N.zh;
-            if (!locale) return null;
-
-            for (const section of Object.values(locale)) {
-                const label = section?.static?.[source];
-                if (typeof label === 'string' && label && label !== source) {
-                    return label;
-                }
-            }
-
-            return null;
-        }
-
-        /**
-         * 从 I18N 的正则规则中查找翻译
-         */
-        function findRegexpGlobalNavLabel(source) {
-            const locale = I18N["zh-CN"] || I18N.zh;
-            if (!locale) return null;
-
-            for (const section of Object.values(locale)) {
-                for (const [pattern, replacement] of section?.regexp || []) {
-                    const match = source.match(pattern);
-                    if (!match || match.index !== 0 || match[0] !== source) continue;
-
-                    const label = source.replace(pattern, replacement);
-                    if (label !== source) return label;
-                }
-            }
-
-            return null;
-        }
-
-        /**
-         * 解析翻译：优先硬编码标签 -> 静态词库 -> 正则词库
-         */
-        function resolveReactGlobalNavLabel(source) {
-            return labels[source] || findStaticGlobalNavLabel(source) || findRegexpGlobalNavLabel(source);
-        }
-
-        // ----- 文本处理辅助函数 -----
-        function normalizeReactGlobalNavText(text) {
-            return text?.replace(/\s+/g, ' ').trim();
-        }
-
-        function translateReactGlobalNavText(text) {
-            const source = normalizeReactGlobalNavText(text);
-            return source ? resolveReactGlobalNavLabel(source) : null;
-        }
-
-        // ----- 翻译执行函数 -----
-        /**
-         * 翻译单个元素的文本内容（直接修改 textContent）
-         */
-        function translateReactGlobalNavElement(element, source) {
-            const label = translateReactGlobalNavText(source ?? element.textContent);
-            if (label && element.textContent !== label) {
-                element.textContent = label;
-            }
-        }
-
-        function isReactGlobalNavIdentifierLink(element) {
-            const link = element.closest?.(breadcrumbLinkSelector);
-            if (!link) return false;
-
-            const linkPath = link.pathname.toLowerCase();
-            const repository = document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content.toLowerCase();
-            if (repository) {
-                const [owner] = repository.split('/');
-                return linkPath === `/${owner}` || linkPath === `/${repository}`;
-            }
-
-            const [, firstSegment, secondSegment] = window.location.pathname.toLowerCase().split('/');
-            if (firstSegment === 'orgs' || firstSegment === 'organizations') {
-                return linkPath === `/${secondSegment}`;
-            }
-
-            const metaLocation = document.head.querySelector('meta[name="analytics-location"]')?.content || '';
-            return /^\/<(?:user-name|org-login)>(?:\/|$)/.test(metaLocation) && linkPath === `/${firstSegment}`;
-        }
-
-        /**
-         * 判断节点是否应该被跳过（不翻译）
-         */
-        function shouldSkipReactGlobalNavNode(node) {
-            const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
-            if (!element) return true;
-            if (element.closest?.(unsafeTextSelector)) return true;
-            if (element.closest?.(searchSurfaceSelector)) return true;
-
-            return isReactGlobalNavIdentifierLink(element);
-        }
-
-        /**
-         * 翻译元素的可翻译属性（title、aria-label 等）
-         */
-        function translateReactGlobalNavAttributes(element) {
-            translatableAttributeNames.forEach(attributeName => {
-                const value = element.getAttribute?.(attributeName);
-                const label = translateReactGlobalNavText(value);
-                if (label && value !== label) {
-                    element.setAttribute(attributeName, label);
-                }
-            });
-        }
-
-        /**
-         * 翻译文本节点
-         */
-        function translateReactGlobalNavTextNode(node) {
-            const label = translateReactGlobalNavText(node.data);
-            if (label) {
-                // 替换原有文本（保留前后空白）
-                node.data = node.data.replace(node.data.trim(), label);
-            }
-        }
-
-        /**
-         * 遍历并翻译整个 Surface（区域）
-         * 使用 TreeWalker 遍历所有元素和文本节点
-         */
-        function translateReactGlobalNavSurface(surface) {
-            if (!surface || shouldSkipReactGlobalNavNode(surface)) return;
-
-            if (surface.nodeType === Node.ELEMENT_NODE) {
-                translateReactGlobalNavAttributes(surface);
-            }
-
-            const walker = document.createTreeWalker(
-                surface,
-                NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
-                {
-                    acceptNode(node) {
-                        return shouldSkipReactGlobalNavNode(node)
-                            ? NodeFilter.FILTER_REJECT
-                            : NodeFilter.FILTER_ACCEPT;
-                    }
-                }
-            );
-
-            let node;
-            while ((node = walker.nextNode())) {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    translateReactGlobalNavAttributes(node);
-                } else if (node.nodeType === Node.TEXT_NODE) {
-                    translateReactGlobalNavTextNode(node);
-                }
-            }
-        }
-
-        // ----- 主翻译入口 -----
-        /**
-         * 翻译头部（header.GlobalNav）
-         * @returns {boolean} 是否成功翻译（头部存在且空闲）
-         */
-        function translateReactGlobalNavHeader() {
-            const header = document.querySelector('header.GlobalNav');
-            if (!header) return true;   // 不存在时认为已处理
-            if (!canTranslateReactGlobalNavHeader()) return false;
-
-            // 优先翻译包含 data-content 的元素（React 组件通过此属性存储原始文案）
-            document.querySelectorAll(dataContentLabelSelector).forEach(element => {
-                if (!shouldSkipReactGlobalNavNode(element)) {
-                    translateReactGlobalNavElement(element, element.getAttribute('data-content'));
-                }
-            });
-            // 翻译搜索输入框占位文本
-            translateReactGlobalNavSearchButton();
-            // 翻译整个头部区域
-            translateReactGlobalNavSurface(header);
-
-            return true;
-        }
-
-        function isReactGlobalNavSearchPortal(surface) {
-            return surface.matches?.('[role="dialog"]')
-                || !!surface.querySelector?.('#search-suggestions-dialog, qbsearch-input, [role="dialog"]');
-        }
-
-        /**
-         * 翻译弹层（portal）
-         * @returns {boolean} 是否成功翻译（弹层存在且空闲）
-         */
-        function translateReactGlobalNavPortals() {
-            const surfaces = Array.from(document.querySelectorAll(portalSurfaceSelector))
-                .filter(isReactGlobalNavPortalNode);
-            if (!surfaces.length) return true;
-
-            let searchPortalPending = false;
-            surfaces.forEach(surface => {
-                if (isReactGlobalNavSearchPortal(surface) && !isReactGlobalNavSurfaceIdle('portal')) {
-                    searchPortalPending = true;
-                    return;
-                }
-                translateReactGlobalNavSurface(surface);
-            });
-
-            return !searchPortalPending;
-        }
-
-        /**
-         * 翻译搜索输入框的占位文本（处理混合了 kbd 标签的内容）
-         */
-        function translateReactGlobalNavSearchButton() {
-            const placeholder = document.querySelector('header.GlobalNav [class*="Search-module__placeholder__"]');
-            if (!placeholder) return;
-            const label = translateReactGlobalNavText(placeholder.textContent);
-            if (!label || normalizeReactGlobalNavText(placeholder.textContent) === label) return;
-
-            const textNodeGroups = [[]];
-            const protectedTexts = [];
-            function collectSearchPlaceholderNodes(node) {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    textNodeGroups[textNodeGroups.length - 1].push(node);
-                    return;
-                }
-                if (node.nodeType !== Node.ELEMENT_NODE) return;
-                if (node.matches?.(unsafeTextSelector)) {
-                    const protectedText = normalizeReactGlobalNavText(node.textContent);
-                    if (protectedText) {
-                        protectedTexts.push(protectedText);
-                        textNodeGroups.push([]);
-                    }
-                    return;
-                }
-                node.childNodes.forEach(collectSearchPlaceholderNodes);
-            }
-            placeholder.childNodes.forEach(collectSearchPlaceholderNodes);
-
-            const segments = [];
-            let remainingLabel = label;
-            for (const protectedText of protectedTexts) {
-                const protectedIndex = remainingLabel.indexOf(protectedText);
-                if (protectedIndex === -1) return;
-                segments.push(remainingLabel.slice(0, protectedIndex));
-                remainingLabel = remainingLabel.slice(protectedIndex + protectedText.length);
-            }
-            segments.push(remainingLabel);
-
-            if (segments.some((segment, index) => {
-                return normalizeReactGlobalNavText(segment) && !textNodeGroups[index].length;
-            })) return;
-            textNodeGroups.forEach((nodes, segmentIndex) => {
-                nodes.forEach((node, nodeIndex) => {
-                    node.data = nodeIndex === 0 ? segments[segmentIndex] : '';
-                });
-            });
-        }
-
-        /**
-         * 翻译搜索弹窗内的静态标签（区域标题、底部提示等，不翻译用户输入或动态建议）
-         */
-        function translateReactGlobalNavSearchDialog() {
-            const dialog = document.querySelector('#search-suggestions-dialog');
-            if (!dialog) return;
-            const header = document.getElementById('search-suggestions-dialog-header');
-            if (header) {
-                const label = translateReactGlobalNavText(header.textContent);
-                if (label) header.textContent = label;
-            }
-            dialog.querySelectorAll('.ActionList-sectionDivider-title').forEach(el => {
-                const label = translateReactGlobalNavText(el.textContent);
-                if (label) el.textContent = label;
-            });
-            dialog.querySelectorAll('.search-feedback-prompt a, .search-feedback-prompt button').forEach(el => {
-                const label = translateReactGlobalNavText(el.textContent);
-                if (label) el.textContent = label;
-            });
-        }
-
-        /**
-         * 总翻译入口，被调度函数调用
-         * @param {object} options - { requireSettledHeader: true/false }
-         */
-        function translateReactGlobalNavLabels(options = { requireSettledHeader: true }) {
-            observeReactGlobalNav();   // 确保观察器已启动
-            translateReactGlobalNavSearchDialog();
-
-            const headerTranslated = translateReactGlobalNavHeader();
-            const portalsTranslated = translateReactGlobalNavPortals();
-
-            // 如果未完成（头部未就绪或弹层未空闲），则安排重试
-            if ((options.requireSettledHeader && !headerTranslated) || !portalsTranslated) {
-                scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, options);
-            }
-        }
-
-        // ----- 调度函数 -----
-        /**
-         * 延迟调度翻译
-         */
-        function scheduleReactGlobalNavTranslation(delay = 800, options = {}) {
-            window.clearTimeout(timer);
-            timer = window.setTimeout(() => translateReactGlobalNavLabels(options), delay);
-        }
-
-        /**
-         * 初始启动序列：在多个时间点尝试翻译，覆盖 React 异步渲染
-         */
-        function scheduleReactGlobalNavSeries() {
-            [800, 1600, 3000].forEach(delay => {
-                window.setTimeout(translateReactGlobalNavLabels, delay);
-            });
-        }
-
-        // ----- MutationObserver 与状态记录 -----
-        /**
-         * 记录 DOM 变化的时间戳（区分头部和弹层）
-         */
-        function recordReactGlobalNavMutation(surface) {
-            if (surface?.id === '__primerPortalRoot__' || surface?.closest?.('#__primerPortalRoot__')) {
-                lastReactGlobalNavPortalMutationAt = Date.now();
-                return;
-            }
-
-            lastReactGlobalNavMutationAt = Date.now();
-        }
-
-        /**
-         * 设置 MutationObserver，监听头部和弹层的变化
-         */
-        function observeReactGlobalNav() {
-            if (!headerObserver) {
-                headerObserver = new MutationObserver(mutations => {
-                    mutations.forEach(mutation => recordReactGlobalNavMutation(mutation.target));
-                    translateReactGlobalNavPortals();
-                    // 变化后延迟重试翻译
-                    scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true });
-                });
-            }
-
-            [
-                document.querySelector('header.GlobalNav'),
-                document.querySelector('#__primerPortalRoot__'),
-            ].forEach(surface => {
-                if (!surface || observedSurfaces.has(surface)) return;
-
-                observedSurfaces.add(surface);
-                recordReactGlobalNavMutation(surface);
-                headerObserver.observe(surface, {
-                    childList: true,
-                    subtree: true,
-                    characterData: true,
-                });
-            });
-        }
-
-        function startReactGlobalNavTranslation() {
-            observeReactGlobalNav();
-            scheduleReactGlobalNavSeries();
-        }
-
-        // ----- 初始化入口 -----
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', startReactGlobalNavTranslation, { once: true });
-        } else {
-            startReactGlobalNavTranslation();
-        }
-
-        // 监听 Turbo 导航和 URL 变化
-        window.addEventListener('turbo:load', scheduleReactGlobalNavSeries);
-        window.addEventListener('urlchange', scheduleReactGlobalNavSeries);
-
-        // 监听用户交互事件，交互后可能触发 React 更新，延迟重试翻译
-        ['click', 'focusin', 'focusout', 'pointerover'].forEach(evt => {
-            document.addEventListener(evt, () => scheduleReactGlobalNavTranslation(reactGlobalNavRetryMs, { requireSettledHeader: true }), true);
-        });
-    }
-
     /* =========================== MutationObserver =========================== */
 
     /**
-     * 设置DOM变化观察器
+     * 创建DOM变化观察器
      * 监听页面变化并触发翻译
      */
-    function setupMutationObserver() {
-        // 缓存当前页面的 URL
-        let previousURL = window.location.href;
-
-        if (State.mutationObserver) {
-            State.mutationObserver.disconnect();
-        }
-
-        State.mutationObserver = new MutationObserver(
+    function createMutationObserver() {
+        return new MutationObserver(
             safe((mutations) => {
                 const currentURL = window.location.href;
                 // 当没有 onurlchange 支持时，通过 Observer 检测 URL 变化
-                if (!State.urlChangeHandler && currentURL !== previousURL) {
-                    previousURL = currentURL;
+                if (!State.urlChangeHandler && currentURL !== State.currentURL) {
                     State.currentURL = currentURL;
                     updatePageConfig("URL变化 (MutationObserver)");
                 }
@@ -984,9 +570,27 @@
                 }
             }, 'MutationObserver')
         );
+    }
 
-        // 开始观察页面主体
-        State.mutationObserver.observe(document.body, CONFIG.OBSERVER_CONFIG);
+    /**
+     * 把观察器挂到指定 body 上 — 允许传入尚未插入文档的新 body，
+     * 这样 Turbo 换 body 时，React 水合产生的那批变更从第一帧就被接住。
+     * @param {Element} body
+     */
+    function attachMutationObserver(body) {
+        State.mutationObserver?.disconnect();
+        State.mutationObserver = createMutationObserver();
+        State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
+        State.observedBody = body;
+    }
+
+    /**
+     * 设置DOM变化观察器（当前文档 body）
+     */
+    function setupMutationObserver() {
+        State.observedBody = null;
+        if (!document.body) return;
+        attachMutationObserver(document.body);
     }
 
     /**
@@ -999,9 +603,7 @@
         if (!element) return true;
 
         const ignoredSelectors = State.pageConfig?.ignoreMutationSelectors;
-        if (ignoredSelectors && element.closest?.(ignoredSelectors)) return true;
-
-        return isReactGlobalNavPortalNode(element);
+        return !!(ignoredSelectors && element.closest?.(ignoredSelectors));
     }
 
     function processMutations(mutations) {
@@ -1017,7 +619,7 @@
                     }
                 });
             } else if (type === 'attributes') {
-                // 处理属性变化，target 就是元素
+                // 处理属性变化，target 就是元素（input / textarea 也走这里）
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
@@ -1055,6 +657,39 @@
     }
 
     /* =========================== DOM 遍历与节点处理 =========================== */
+
+    /**
+     * 面包屑里的账号名 / 仓库名是标识符，不是界面文案（#824）
+     * 例：github.com/community/community 不应显示成「社区 / 社区」
+     * @param {Element} element
+     * @returns {boolean} 是否应跳过该链接
+     */
+    function isBreadcrumbIdentifierLink(element) {
+        if (element.tagName !== 'A') return false;
+        if (!element.closest?.('nav[data-component="Breadcrumbs"]')) return false;
+
+        const linkPath = element.pathname?.toLowerCase().replace(/\/+$/, '');
+        if (!linkPath) return false;
+
+        const repository = document.head
+            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
+            ?.content?.toLowerCase();
+        if (repository) {
+            const [owner] = repository.split('/');
+            return linkPath === `/${owner}` || linkPath === `/${repository}`;
+        }
+
+        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
+        if (!segments.length) return false;
+        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
+            return !!segments[1] && linkPath === `/${segments[1]}`;
+        }
+        // 只有「/首段」是账号名时首项才是标识符；notifications / settings / marketplace
+        // 这类保留路径的首段是固定路由，面包屑里的对应项是界面文案，不能拒翻。
+        if (RESERVED_ROOTS.has(segments[0])) return false;
+        return linkPath === `/${segments[0]}`;
+    }
+
     /**
      * 遍历节点树并进行翻译
      * @param {Node} rootNode - 要遍历的根节点
@@ -1073,10 +708,14 @@
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
             node => {
-                if (node.nodeType === Node.ELEMENT_NODE
-                    && State.pageConfig.ignoreSelectors
-                    && node.matches(State.pageConfig.ignoreSelectors)) {
-                    return NodeFilter.FILTER_REJECT; // 跳过忽略的选择器
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    if (State.pageConfig.ignoreSelectors
+                        && node.matches(State.pageConfig.ignoreSelectors)) {
+                        return NodeFilter.FILTER_REJECT; // 跳过忽略的选择器
+                    }
+                    if (isBreadcrumbIdentifierLink(node)) {
+                        return NodeFilter.FILTER_REJECT; // 跳过账号名 / 仓库名
+                    }
                 }
                 return NodeFilter.FILTER_ACCEPT; // 接受其他节点
             }
@@ -1105,6 +744,8 @@
      */
     function handleTextNode(node) {
         if (node.length > 500) return; // 跳过长文本节点
+        // 文本域的子文本是它的默认值（用户内容），翻了就破坏编辑器内容（#727）
+        if (node.parentElement?.tagName === 'TEXTAREA') return;
         transElementAttrs(node, 'data'); // 翻译文本内容
     }
 
@@ -1124,7 +765,16 @@
         }
 
         if (tag === "INPUT" || tag === "TEXTAREA") { // 输入框和文本域
+            // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
+            // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
+            //
+            // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
+            // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
+            // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
+            transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
             if (['button', 'submit', 'reset'].includes(node.type)) {
+                // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
+                // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
                 transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
                 transElementAttrs(node, 'value'); // 值属性
             } else {
@@ -1312,7 +962,13 @@
 
         // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
         const nextSibling = element.nextElementSibling;
-        if (nextSibling?.classList?.contains('translate-button')) return;
+        // 已有按钮或翻译结果时都不再插入。showTransResult 会移除按钮、把结果容器插到描述后面，
+        // 这次插入又会触发 MutationObserver 重挂载；只认 .translate-button 的话，每轮重挂载都会
+        // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
+        if (nextSibling?.classList?.contains('translate-button') ||
+            nextSibling?.classList?.contains('translation-result')) {
+            return;
+        }
 
         // 创建翻译按钮
         const button = document.createElement('div');
