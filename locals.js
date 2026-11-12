@@ -13487,7 +13487,7 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
 
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
 
-        [/Line (\d+) options/, "行 $1 选项"], // 代码行菜单 TooltipV2（#574）
+        [/Line (\d+) options/, "行 $1 选项"], // TODO: 修复翻译未生效问题
 
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],

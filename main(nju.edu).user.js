@@ -352,8 +352,6 @@
             } else {
                 safe(traverseNode, '导航遍历')(document.body);
             }
-            // 忽略区里已存在的 TooltipV2 气泡（代码行菜单等）也要翻译（#574）
-            safe(transTooltipElements, '提示气泡翻译')(document.body);
         }
 
         if (!State.pageConfig) return;
@@ -600,15 +598,9 @@
      * 收集突变节点、过滤忽略选择器、对祖先-后代关系去重，仅遍历顶层节点
      * @param {Array} mutations - 变化记录数组
      */
-    // 新版悬浮提示（TooltipV2）使用 class / data-component 标识（#574）
-    const TOOLTIP_SELECTOR = '[data-component="Tooltip"], [class*="Tooltip"]';
-
     function shouldIgnoreMutationNode(node) {
         const element = node?.nodeType === Node.ELEMENT_NODE ? node : node?.parentElement;
         if (!element) return true;
-
-        // 气泡可能生成在忽略区（代码行菜单等）内部，但自身仍要翻译（#574）
-        if (element.closest?.(TOOLTIP_SELECTOR)) return false;
 
         const ignoredSelectors = State.pageConfig?.ignoreMutationSelectors;
         return !!(ignoredSelectors && element.closest?.(ignoredSelectors));
@@ -623,21 +615,12 @@
                 // 处理新增节点
                 addedNodes.forEach(node => {
                     if (!shouldIgnoreMutationNode(node)) {
-                        if (isTooltipElement(node)) {
-                            handleElementNode(node); // 新增气泡根节点自身的属性
-                        }
                         nodesToProcess.add(node);
-                    } else {
-                        // 忽略区里新增的 TooltipV2 气泡单独翻译（#574）
-                        transTooltipElements(node);
                     }
                 });
             } else if (type === 'attributes') {
                 // 处理属性变化，target 就是元素（input / textarea 也走这里）
                 if (!shouldIgnoreMutationNode(target)) {
-                    if (isTooltipElement(target)) {
-                        handleElementNode(target); // 气泡自身的属性
-                    }
                     nodesToProcess.add(target);
                 }
             } else if (type === 'characterData' && State.pageConfig.characterData) {
@@ -756,36 +739,6 @@
     }
 
     /**
-     * 判断是否为 TooltipV2 气泡
-     * @param {Node} node - 节点
-     * @returns {boolean}
-     */
-    function isTooltipElement(node) {
-        return node?.nodeType === Node.ELEMENT_NODE && !!node.matches?.(TOOLTIP_SELECTOR);
-    }
-
-    /**
-     * 翻译 TooltipV2 气泡自身及其提示文本。
-     * 气泡可能生成在忽略区内（如代码行菜单），需要绕开常规忽略规则单独处理（#574）。
-     * @param {Node} root - 查找气泡的根节点
-     */
-    function transTooltipElements(root) {
-        if (!root) return;
-
-        const tooltips = [];
-        if (isTooltipElement(root)) {
-            tooltips.push(root);
-        } else if (root.nodeType === Node.ELEMENT_NODE && root.querySelectorAll) {
-            tooltips.push(...root.querySelectorAll(TOOLTIP_SELECTOR));
-        }
-
-        tooltips.forEach(tooltip => {
-            handleElementNode(tooltip); // 翻译气泡上的 aria-label 等属性
-            traverseNode(tooltip); // 翻译气泡里的提示文本
-        });
-    }
-
-    /**
      * 处理文本节点
      * @param {Node} node - 文本节点
      */
@@ -854,7 +807,10 @@
             transElementAttrs(node.dataset, 'visibleText'); // 可见文本
         }
 
-        transElementAttrs(node, 'ariaLabel');
+        // 带有 tooltipped 样式的元素
+        if (/tooltipped/.test(node.className)) {
+            transElementAttrs(node, 'ariaLabel');
+        }
     }
 
     /* =========================== 翻译功能 =========================== */

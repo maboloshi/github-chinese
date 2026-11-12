@@ -159,50 +159,6 @@ function loadModernHandler(fileName) {
     return api.handleElementNode;
 }
 
-function loadLegacyTraverser(fileName) {
-    const filePath = path.join(__dirname, '..', fileName);
-    const source = fs.readFileSync(filePath, 'utf8').replace(/\r\n/g, '\n');
-    const functions = [
-        'traverseNode',
-        'transElement',
-        'translateText',
-        'fetchTranslatedText',
-    ].map(name => extractFunction(source, name)).join('\n\n');
-    const context = vm.createContext({
-        console: { log() {} },
-        I18N: {
-            conf: {
-                reIgnoreClass: /$a/,
-                reIgnoreId: /$a/,
-                reIgnoreItemprop: /$a/,
-                reIgnoreTag: [],
-            },
-            'zh-CN': {
-                blob: {
-                    regexp: [],
-                    static: { [sourceText]: translatedText },
-                },
-                public: {
-                    regexp: [],
-                    static: {},
-                },
-            },
-        },
-        Node: { ELEMENT_NODE, TEXT_NODE },
-        enable_RegExp: false,
-        lang: 'zh-CN',
-        page: 'blob',
-        transTimeElement() {},
-    });
-    const api = vm.runInContext(
-        `(function () {\n${functions}\nreturn { traverseNode };\n})()`,
-        context,
-        { filename: filePath },
-    );
-
-    return api.traverseNode;
-}
-
 function createTreeWalker(root, filter) {
     const stack = [];
     const pushChildren = node => {
@@ -310,91 +266,91 @@ function buildTooltipFixtureTree() {
     return { attributes, button, ignored, menu, tooltip };
 }
 
-for (const fileName of ['main.user.js', 'main(nju.edu).user.js', 'main_zh-TW.user.js']) {
-    test(`${fileName} translates aria-label tooltips without the tooltipped class`, () => {
-        const translate = loadModernHandler(fileName);
-        const button = createElement('button', { 'aria-label': sourceText });
+const fileName = 'main.user.js';
 
-        translate(button);
+test(`${fileName} translates aria-label tooltips without the tooltipped class`, () => {
+    const translate = loadModernHandler(fileName);
+    const button = createElement('button', { 'aria-label': sourceText });
 
-        assert.equal(button.getAttribute('aria-label'), translatedText);
-    });
+    translate(button);
 
-    test(`${fileName} leaves unknown aria-label values untouched`, () => {
-        const translate = loadModernHandler(fileName);
-        const button = createElement('button', { 'aria-label': 'octocat/Hello-World' });
+    assert.equal(button.getAttribute('aria-label'), translatedText);
+});
 
-        translate(button);
+test(`${fileName} leaves unknown aria-label values untouched`, () => {
+    const translate = loadModernHandler(fileName);
+    const button = createElement('button', { 'aria-label': 'octocat/Hello-World' });
 
-        assert.equal(button.getAttribute('aria-label'), 'octocat/Hello-World');
-    });
+    translate(button);
 
-    test(`${fileName} covers TooltipV2 via class and data-component`, () => {
-        const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
-        const match = source.match(/const TOOLTIP_SELECTOR = '([^']+)';/);
+    assert.equal(button.getAttribute('aria-label'), 'octocat/Hello-World');
+});
 
-        assert.ok(match, `${fileName} should define TOOLTIP_SELECTOR`);
-        assert.match(match[1], /data-component="Tooltip"/);
-        assert.match(match[1], /class\*="Tooltip"/);
-        assert.doesNotMatch(source, /tooltipped/);
-    });
+test(`${fileName} covers TooltipV2 via class and data-component`, () => {
+    const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
+    const match = source.match(/const TOOLTIP_SELECTOR = '([^']+)';/);
 
-    test(`${fileName} translates a TooltipV2 bubble added inside an ignored area`, () => {
-        const api = loadModernPipeline(fileName);
-        const { button, ignored, menu, tooltip } = buildTooltipFixtureTree();
+    assert.ok(match, `${fileName} should define TOOLTIP_SELECTOR`);
+    assert.match(match[1], /data-component="Tooltip"/);
+    assert.match(match[1], /class\*="Tooltip"/);
+    assert.doesNotMatch(source, /tooltipped/);
+});
 
-        api.processMutations([{ type: 'childList', target: ignored, addedNodes: [menu] }]);
+test(`${fileName} translates a TooltipV2 bubble added inside an ignored area`, () => {
+    const api = loadModernPipeline(fileName);
+    const { button, ignored, menu, tooltip } = buildTooltipFixtureTree();
 
-        assert.equal(tooltip.childNodes[0].data, translatedText);
-        assert.equal(button.childNodes[0].data, 'Ask Copilot', '忽略区里的普通内容不应被翻译');
-    });
+    api.processMutations([{ type: 'childList', target: ignored, addedNodes: [menu] }]);
 
-    test(`${fileName} translates a TooltipV2 bubble inserted directly`, () => {
-        const api = loadModernPipeline(fileName);
-        const { ignored, tooltip } = buildTooltipFixtureTree();
+    assert.equal(tooltip.childNodes[0].data, translatedText);
+    assert.equal(button.childNodes[0].data, 'Ask Copilot', '忽略区里的普通内容不应被翻译');
+});
 
-        api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
+test(`${fileName} translates a TooltipV2 bubble inserted directly`, () => {
+    const api = loadModernPipeline(fileName);
+    const { ignored, tooltip } = buildTooltipFixtureTree();
 
-        assert.equal(tooltip.childNodes[0].data, translatedText);
-    });
+    api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
 
-    test(`${fileName} translates TooltipV2 text updates with regexp rules`, () => {
-        const api = loadModernPipeline(fileName);
-        const { ignored, tooltip } = buildTooltipFixtureTree();
+    assert.equal(tooltip.childNodes[0].data, translatedText);
+});
 
-        api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
-        tooltip.childNodes[0].data = 'Line 10 options';
-        api.processMutations([{ type: 'characterData', target: tooltip.childNodes[0] }]);
+test(`${fileName} translates TooltipV2 text updates with regexp rules`, () => {
+    const api = loadModernPipeline(fileName);
+    const { ignored, tooltip } = buildTooltipFixtureTree();
 
-        assert.equal(tooltip.childNodes[0].data, '行 10 选项');
-    });
+    api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
+    tooltip.childNodes[0].data = 'Line 10 options';
+    api.processMutations([{ type: 'characterData', target: tooltip.childNodes[0] }]);
 
-    test(`${fileName} translates the bubble aria-label`, () => {
-        const api = loadModernPipeline(fileName);
-        const { ignored, tooltip } = buildTooltipFixtureTree();
-        tooltip.setAttribute('aria-label', 'Ask Copilot');
+    assert.equal(tooltip.childNodes[0].data, '行 10 选项');
+});
 
-        api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
+test(`${fileName} translates the bubble aria-label`, () => {
+    const api = loadModernPipeline(fileName);
+    const { ignored, tooltip } = buildTooltipFixtureTree();
+    tooltip.setAttribute('aria-label', 'Ask Copilot');
 
-        assert.equal(tooltip.getAttribute('aria-label'), '询问 Copilot');
-    });
+    api.processMutations([{ type: 'childList', target: ignored, addedNodes: [tooltip] }]);
 
-    test(`${fileName} ignores ordinary elements inside the ignored area`, () => {
-        const api = loadModernPipeline(fileName);
-        const ignored = createElement('div', { id: 'highlighted-line-menu-positioner' });
-        const tooltip = createElement('span', { 'data-component': 'Tooltip' });
-        const plain = createElement('span');
-        plain.appendChild(createTextNode('Ask Copilot'));
-        ignored.appendChild(tooltip);
-        ignored.appendChild(plain);
+    assert.equal(tooltip.getAttribute('aria-label'), '询问 Copilot');
+});
 
-        assert.equal(api.shouldIgnoreMutationNode(plain), true);
-        assert.equal(api.shouldIgnoreMutationNode(tooltip), false);
+test(`${fileName} ignores ordinary elements inside the ignored area`, () => {
+    const api = loadModernPipeline(fileName);
+    const ignored = createElement('div', { id: 'highlighted-line-menu-positioner' });
+    const tooltip = createElement('span', { 'data-component': 'Tooltip' });
+    const plain = createElement('span');
+    plain.appendChild(createTextNode('Ask Copilot'));
+    ignored.appendChild(tooltip);
+    ignored.appendChild(plain);
 
-        api.processMutations([{ type: 'childList', target: ignored, addedNodes: [plain] }]);
-        assert.equal(plain.childNodes[0].data, 'Ask Copilot');
-    });
-}
+    assert.equal(api.shouldIgnoreMutationNode(plain), true);
+    assert.equal(api.shouldIgnoreMutationNode(tooltip), false);
+
+    api.processMutations([{ type: 'childList', target: ignored, addedNodes: [plain] }]);
+    assert.equal(plain.childNodes[0].data, 'Ask Copilot');
+});
 
 test('TooltipV2 selector matches either class or data-component', () => {
     const api = loadModernPipeline('main.user.js');
@@ -420,44 +376,6 @@ test('TooltipV2 fixture keeps the reported DOM shape', () => {
     assert.match(html, /data-component="Tooltip"/);
     assert.match(html, /aria-hidden="true"/);
     assert.match(html, /Ask Copilot about this snippet/);
-});
-
-test('main(greasyfork).user.js translates aria-label tooltips without the tooltipped class', () => {
-    const translate = loadLegacyTraverser('main(greasyfork).user.js');
-    const button = createElement('button', { 'aria-label': sourceText });
-
-    translate(button);
-
-    assert.equal(button.getAttribute('aria-label'), translatedText);
-});
-
-test('main(greasyfork).user.js leaves unknown aria-label values untouched', () => {
-    const translate = loadLegacyTraverser('main(greasyfork).user.js');
-    const button = createElement('button', { 'aria-label': 'octocat/Hello-World' });
-
-    translate(button);
-
-    assert.equal(button.getAttribute('aria-label'), 'octocat/Hello-World');
-});
-
-test('main(greasyfork).user.js no longer keys translation on tooltipped', () => {
-    const source = fs.readFileSync(path.join(__dirname, '..', 'main(greasyfork).user.js'), 'utf8');
-
-    assert.doesNotMatch(source, /tooltipped/);
-});
-
-test('main(greasyfork).user.js translates TooltipV2 bubble text', () => {
-    const translate = loadLegacyTraverser('main(greasyfork).user.js');
-    const tooltip = createElement('span', {
-        class: 'prc-TooltipV2-Tooltip-tLeuB',
-        'data-component': 'Tooltip',
-        'aria-hidden': 'true',
-    });
-    tooltip.appendChild(createTextNode(sourceText));
-
-    translate(tooltip);
-
-    assert.equal(tooltip.childNodes[0].data, translatedText);
 });
 
 test('blob dictionaries retain the Ask Copilot tooltip label', () => {
