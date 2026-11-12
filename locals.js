@@ -54,7 +54,12 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users', 'settings/personal-access-tokens'],
+
+    // 特定页面，放宽文本节点长度上限（默认 500）
+    maxTextNodeLengthPage: {
+        'settings/personal-access-tokens': 2000, // 权限预览会把整份权限列表渲染成一个长文本节点
+    },
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -8192,6 +8197,9 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
                 "Make sure to copy your personal access token now as you will not be able to see this again.": "请务必立即复制您的个人访问令牌，因为您将无法再次看到它。",
 
             // 删除令牌对话框
+                "Delete token": "删除令牌",
+                "Confirm token deletion": "确认删除令牌",
+                "Delete this token": "删除此令牌",
                 "Are you sure you want to delete this token?": "您确定要删除此令牌吗？",
                 "Any applications or scripts using this token will no longer be able to access the GitHub API. You cannot undo this action.": "任何使用此令牌的应用或脚本将无法再访问 GitHub API。您无法撤消此操作。",
                 "I understand, delete this token": "我明白了，依然删除该令牌。",
@@ -8453,6 +8461,12 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
 
             "This token will be ready for use immediately.": "该令牌将立即就绪可用。",
 
+            // 权限预览
+                "This token has access to all repositories owned by you.": "此令牌可以访问您拥有的所有仓库。",
+                "This token does not have any user permissions.": "此令牌没有任何用户权限。",
+                "This token does not have any repository permissions.": "此令牌没有任何仓库权限。",
+                "This token does not have access to any repositories.": "此令牌无法访问任何仓库。",
+
             "New personal access token": "新建个人访问令牌",
                 "Your new personal access token": "您的新个人访问令牌",
                 "will be ready for use immediately. It will expire on": "将立即就绪可用。其有效期至",
@@ -8618,6 +8632,61 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
             const dateRegExp = I18N["zh-CN"]["public"]["time-regexp"];
             const translatedDate = dateRegExp.reduce((acc, [pattern, replacement]) => acc.replace(pattern, replacement), p1);
             return d + `天（${translatedDate}）`;
+        }],
+        // 权限预览：Read access to metadata / Read and write access to A, B, and C
+        [/^(Read and write|Read|Admin) access to (.+?)(\.?)$/, (match, level, list, dot) => {
+            const accessLevel = {
+                'Read': '读取',
+                'Read and write': '读写',
+                'Admin': '管理',
+            }[level] || level;
+            const permissionNames = {
+                'actions': 'Actions',
+                'actions variables': 'Actions 变量',
+                'administration': '管理',
+                'artifact metadata': '附件元数据',
+                'attestations api': '证书 API',
+                'checks': '检查',
+                'code': '代码',
+                'codespaces': '代码空间',
+                'codespaces lifecycle admin': '代码空间生命周期管理',
+                'codespaces metadata': '代码空间元数据',
+                'codespaces secrets': '代码空间机密',
+                'commit statuses': '提交状态',
+                'contents': '内容',
+                'custom properties for repositories': '仓库自定义属性',
+                'Dependabot alerts': 'Dependabot 警报',
+                'dependabot alerts': 'Dependabot 警报',
+                'Dependabot secrets': 'Dependabot 机密',
+                'dependabot secrets': 'Dependabot 机密',
+                'deployments': '部署',
+                'discussions': '讨论',
+                'environments': '环境',
+                'issues': '议题',
+                'merge queues': '合并队列',
+                'metadata': '元数据',
+                'packages': '软件包',
+                'pages': 'GitHub Pages',
+                'projects': '项目',
+                'pull requests': '拉取请求',
+                'repository advisories': '仓库公告',
+                'repository hooks': '仓库 Web 钩子',
+                'secret scanning alert dismissal requests': '机密扫描警报解除请求',
+                'secret scanning alerts': '机密扫描警报',
+                'secret scanning push protection bypass requests': '绕过机密扫描推送保护的请求',
+                'secrets': '机密',
+                'security events': '安全事件',
+                'statuses': '状态',
+                'variables': '变量',
+                'vulnerability alerts': '漏洞警报',
+                'webhooks': 'Web 钩子',
+                'workflows': '工作流',
+            };
+            const items = list.split(/, and |, | and /).map(item => permissionNames[item] || item);
+            const translatedList = items.length > 1
+                ? items.slice(0, -1).join('、') + '和' + items[items.length - 1]
+                : items[0];
+            return `${translatedList}的${accessLevel}访问权限${dot ? '。' : ''}`;
         }],
         [/Last used within the last (\d+) weeks?/, "最后一次使用是最近 $1 周之内"],
         [/Last used within the last (\d+) months?/, "最后一次使用是最近 $1 月之内"],
