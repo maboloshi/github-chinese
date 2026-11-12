@@ -19396,6 +19396,12 @@ I18N["zh-CN"]["orgs-settings-insights"] = { // 组织设置 - 规则洞察公共
             "Actions ruleset insights": "Actions 规则集洞察",
             "Actions rules insights": "Actions 规则洞察",
         },
+        "regexp": [
+            [/^Repository ruleset insights\b/, "仓库规则集洞察"],
+            [/^Actions ruleset insights\b/, "Actions 规则集洞察"],
+            [/^Actions rules insights\b/, "Actions 规则洞察"],
+            [/^Rule insights\b/, "规则洞察"],
+        ],
     },
 };
 
@@ -19414,6 +19420,7 @@ I18N["zh-CN"]["orgs/settings/rules/insights"] = { // 组织设置 - 规则 - 规
             ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["static"],
         },
         "regexp": [
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["regexp"],
             ...I18N["zh-CN"]["orgs/settings/rules"]["title"]["regexp"],
         ],
     },
@@ -27392,6 +27399,9 @@ I18N["zh-CN"]["orgs/settings/actions/rules/insights"] = { // 组织设置 - Acti
         "static": {
             ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["static"],
         },
+        "regexp": [
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["regexp"],
+        ],
     },
 };
 

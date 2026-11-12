@@ -151,6 +151,20 @@ test('translates rules insights filters and empty states', () => {
     );
 });
 
+test('translates rules insights document titles', () => {
+    const rulesTitle = zh['orgs/settings/rules/insights'].title.regexp
+        .map(([pattern, replacement]) => ['Rule insights · GitHub'.replace(pattern, replacement), pattern, replacement])
+        .find(([title]) => title !== 'Rule insights · GitHub');
+    assert.ok(rulesTitle);
+    assert.equal(rulesTitle[0], '规则洞察 · GitHub');
+
+    const actionsTitle = zh['orgs/settings/actions/rules/insights'].title.regexp
+        .map(([pattern, replacement]) => ['Actions ruleset insights · GitHub'.replace(pattern, replacement), pattern, replacement])
+        .find(([title]) => title !== 'Actions ruleset insights · GitHub');
+    assert.ok(actionsTitle);
+    assert.equal(actionsTitle[0], 'Actions 规则集洞察 · GitHub');
+});
+
 test('translates rule evaluation results and shares them with actions insights', () => {
     const insights = zh['orgs/settings/rules/insights'].static;
     const actionsInsights = zh['orgs/settings/actions/rules/insights'].static;
