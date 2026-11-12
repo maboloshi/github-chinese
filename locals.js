@@ -340,8 +340,38 @@ I18N.conf = {
 
 I18N["zh-CN"] = {};
 
+/*
+ * 页面词典按需构建：脚本求值时只登记 builder，
+ * 首次访问某个页面类型时才展开它（以及它继承的公共块），
+ * 避免每次页面加载都把两百多个页面全部展开成对象。
+ */
+function defineI18nPage(locale, name, build) {
+    let value;
+    let ready = false;
+    Object.defineProperty(locale, name, {
+        enumerable: true,
+        configurable: true,
+        get() {
+            if (!ready) {
+                value = build();
+                ready = true;
+            }
+            return value;
+        },
+    });
+}
 
-I18N["zh-CN"]["public"] = { // 公共区域翻译
+function defineI18nAlias(locale, name, source) {
+    Object.defineProperty(locale, name, {
+        enumerable: true,
+        configurable: true,
+        get() {
+            return locale[source];
+        },
+    });
+}
+
+defineI18nPage(I18N["zh-CN"], "public", () => ({ // 公共区域翻译
     "static": { // 静态翻译
         // 错误页面
             "Find code, projects, and people on GitHub:": "在 GitHub 上查找代码、项目和人员：",
@@ -1983,9 +2013,9 @@ I18N["zh-CN"]["public"] = { // 公共区域翻译
         },
         "regexp": [],
     },
-};
+}));
 
-I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
+defineI18nPage(I18N["zh-CN"], "orgs-public", () => ({ // 组织公共部分
     "static": { // 静态翻译
         "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的组织已对公众隐藏。如果您认为这是一个错误，",
         "contact support": "联系支持",
@@ -2003,9 +2033,9 @@ I18N["zh-CN"]["orgs-public"] = { // 组织公共部分
         }],
         [/You are now a member of ([^ ]+)!/, "您现在是 $1 的成员了！"],
     ],
-};
+}));
 
-I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组织）
+defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 - 仪表板（含组织）
     "static": { // 静态翻译
         // 顶部 GPT 聊天窗口
         "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
@@ -2471,12 +2501,12 @@ I18N["zh-CN"]["page-dashboard"] = { // 已登录的首页 - 仪表板（含组�
             "Feed": "动态",
         },
     },
-};
-I18N["zh-CN"]["dashboard"] = I18N["zh-CN"]["page-dashboard"];
-I18N["zh-CN"]["feed"] = I18N["zh-CN"]["page-dashboard"];
-I18N["zh-CN"]["orgs/dashboard"] = I18N["zh-CN"]["page-dashboard"];
+}));
+defineI18nAlias(I18N["zh-CN"], "dashboard", "page-dashboard");
+defineI18nAlias(I18N["zh-CN"], "feed", "page-dashboard");
+defineI18nAlias(I18N["zh-CN"], "orgs/dashboard", "page-dashboard");
 
-I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
+defineI18nPage(I18N["zh-CN"], "page-profile-public", () => ({ // 个人首页（含组织）
     "static": { // 静态翻译
         // 左侧用户信息栏
             "Change your avatar": "修改头像",
@@ -2665,12 +2695,12 @@ I18N["zh-CN"]["page-profile-public"] = { // 个人首页（含组织）
             [/Following/, "关注"],
         ],
     },
-};
-I18N["zh-CN"]["page-profile/achievements"] = I18N["zh-CN"]["page-profile-public"]; // ?tab=achievements
-I18N["zh-CN"]["page-profile/followers"] = I18N["zh-CN"]["page-profile-public"]; // ?tab=followers
-I18N["zh-CN"]["page-profile/following"] = I18N["zh-CN"]["page-profile-public"]; // ?tab=following
+}));
+defineI18nAlias(I18N["zh-CN"], "page-profile/achievements", "page-profile-public"); // ?tab=achievements
+defineI18nAlias(I18N["zh-CN"], "page-profile/followers", "page-profile-public"); // ?tab=followers
+defineI18nAlias(I18N["zh-CN"], "page-profile/following", "page-profile-public"); // ?tab=following
 
-I18N["zh-CN"]["page-profile"] = { // 个人首页
+defineI18nPage(I18N["zh-CN"], "page-profile", () => ({ // 个人首页
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -2853,10 +2883,10 @@ I18N["zh-CN"]["page-profile"] = { // 个人首页
         [/coauthored commits on merged pull requests./, "与他人共同提交了合并的拉取请求。"], // Pair Extraordinaire
         [/(\@[^ ]+) contributed code to several repositories in the/, "$1 为多个仓库贡献了代码，在"], // 北极代码库贡献者
     ],
-};
-I18N["zh-CN"]["page-profile/overview"] = I18N["zh-CN"]["page-profile"];
+}));
+defineI18nAlias(I18N["zh-CN"], "page-profile/overview", "page-profile");
 
-I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/repositories", () => ({ // 个人首页 - 仓库标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -3043,9 +3073,9 @@ I18N["zh-CN"]["page-profile/repositories"] = { // 个人首页 - 仓库标签卡
             [/(R|r)epositories/, "仓库"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/projects", () => ({ // 个人首页- 项目标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -3212,9 +3242,9 @@ I18N["zh-CN"]["page-profile/projects"] = { // 个人首页- 项目标签卡
             [/Projects/, "项目"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/sponsoring", () => ({ // 个人首页- 赞助标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
             "has sponsored": "曾赞助",
@@ -3244,9 +3274,9 @@ I18N["zh-CN"]["page-profile/sponsoring"] = { // 个人首页- 赞助标签卡
             [/Sponsoring/, "赞助"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["page-profile/packages"] = { // 个人首页 - 软件包标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/packages", () => ({ // 个人首页 - 软件包标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -3299,9 +3329,9 @@ I18N["zh-CN"]["page-profile/packages"] = { // 个人首页 - 软件包标签卡
             [/Packages/, "软件包"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["page-profile/sponsors"] = { // 个人首页 - 赞助标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/sponsors", () => ({ // 个人首页 - 赞助标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -3314,9 +3344,9 @@ I18N["zh-CN"]["page-profile/sponsors"] = { // 个人首页 - 赞助标签卡
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/(\d+) members?/, "$1 成员"], // 组织 浮动信息卡
     ],
-};
+}));
 
-I18N["zh-CN"]["page-profile/stars"] = { // 个人首页 - 星标标签卡
+defineI18nPage(I18N["zh-CN"], "page-profile/stars", () => ({ // 个人首页 - 星标标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["page-profile-public"]["static"],
 
@@ -3437,9 +3467,9 @@ I18N["zh-CN"]["page-profile/stars"] = { // 个人首页 - 星标标签卡
             [/'s list/, " 的清单"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
+defineI18nPage(I18N["zh-CN"], "confirm-access", () => ({ // “授权访问” 对话框
     "static": { // 静态翻译
         // 授权访问 sudo 模式身份验证
             "Confirm access": "授权访问",
@@ -3479,9 +3509,9 @@ I18N["zh-CN"]["confirm-access"] = { // “授权访问” 对话框
 
             "Unable to verify with your passkey?": "无法验证您的通行密钥？",
     },
-};
+}));
 
-I18N["zh-CN"]["payment-module"] = { // 通用账单及支付信息模块
+defineI18nPage(I18N["zh-CN"], "payment-module", () => ({ // 通用账单及支付信息模块
     "static": { // 静态翻译
         "Account": "账户",
             "Personal account": "个人账户",
@@ -3587,9 +3617,9 @@ I18N["zh-CN"]["payment-module"] = { // 通用账单及支付信息模块
                 "504 Gateway Time-out": "504 网关超时",
                 "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我们可能会暂时冻结您的支付方式以验证其有效性。这不是收费，验证后将会自动解除。",
     },
-};
+}));
 
-I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
+defineI18nPage(I18N["zh-CN"], "settings-menu", () => ({ // 设置 - 公共部分
     "static": { // 静态翻译
         "Settings": "设置", // 新版全局导航
         "User settings": "用户设置",
@@ -3659,9 +3689,9 @@ I18N["zh-CN"]["settings-menu"] = { // 设置 - 公共部分
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
+defineI18nPage(I18N["zh-CN"], "orgs-settings-menu", () => ({ // 组织设置 公共部分
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
 
@@ -3760,9 +3790,9 @@ I18N["zh-CN"]["orgs-settings-menu"] = { // 组织设置 公共部分
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
+defineI18nPage(I18N["zh-CN"], "settings/profile", () => ({ // 设置 - 个人资料
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -3891,10 +3921,10 @@ I18N["zh-CN"]["settings/profile"] = { // 设置 - 个人资料
             "Your profile": "个人资料",
         },
     },
-};
-I18N["zh-CN"]["settings"] = I18N["zh-CN"]["settings/profile"];
+}));
+defineI18nAlias(I18N["zh-CN"], "settings", "settings/profile");
 
-I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
+defineI18nPage(I18N["zh-CN"], "settings/admin", () => ({ // 设置 - 账户
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -4016,9 +4046,9 @@ I18N["zh-CN"]["settings/admin"] = { // 设置 - 账户
             "Account settings": "账户设置",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["succession/invitation"] = { // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
+defineI18nPage(I18N["zh-CN"], "succession/invitation", () => ({ // 账户继任者邀请  users/<邀请者的 user-name>/succession/invitation
     "static": { // 静态翻译
         // 受邀者
         "invited you to be their account successor": "邀请您成为其账户继任者",
@@ -4041,9 +4071,9 @@ I18N["zh-CN"]["succession/invitation"] = { // 账户继任者邀请  users/<邀�
         [/As an account successor, you would be able to manage ([^ ]+)'s repositories if they're not able to./, "作为账户继任者，在 $1 再也无法管理其仓库时，您将能够管理其仓库。"],
         [/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通过点击下面的 “接受邀请”，我确认我同意按照其继任者要求所授权的方式担任 $1 的继任者。我同意在使用和维护其账户内容时遵守 GitHub 的"],
     ]
-};
+}));
 
-I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
+defineI18nPage(I18N["zh-CN"], "settings/appearance", () => ({ // 设置 - 外观
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -4104,9 +4134,9 @@ I18N["zh-CN"]["settings/appearance"] = { // 设置 - 外观
             "Appearance": "外观",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/accessibility"] = { // 设置 - 无障碍
+defineI18nPage(I18N["zh-CN"], "settings/accessibility", () => ({ // 设置 - 无障碍
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -4192,9 +4222,9 @@ I18N["zh-CN"]["settings/accessibility"] = { // 设置 - 无障碍
             "Accessibility": "无障碍",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
+defineI18nPage(I18N["zh-CN"], "settings/notifications", () => ({ // 设置 - 通知
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         "Email": "电子邮件",
@@ -4298,9 +4328,9 @@ I18N["zh-CN"]["settings/notifications"] = { // 设置 - 通知
             "Notification Settings": "通知设置",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
+defineI18nPage(I18N["zh-CN"], "settings/billing", () => ({ // 设置 - 账单和计划
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
@@ -5228,14 +5258,14 @@ I18N["zh-CN"]["settings/billing"] = { // 设置 - 账单和计划
             "Payment history": "支付历史",
         },
     },
-};
-I18N["zh-CN"]["account/billing/history"] = I18N["zh-CN"]["settings/billing"];
-I18N["zh-CN"]["orgs/settings/billing"] = I18N["zh-CN"]["settings/billing"];
-I18N["zh-CN"]["orgs/billing_managers/new"] = I18N["zh-CN"]["settings/billing"];
-I18N["zh-CN"]["orgs/billing/history"] = I18N["zh-CN"]["settings/billing"];
-I18N["zh-CN"]["orgs/billing/plans"] = I18N["zh-CN"]["settings/billing"];
+}));
+defineI18nAlias(I18N["zh-CN"], "account/billing/history", "settings/billing");
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/billing", "settings/billing");
+defineI18nAlias(I18N["zh-CN"], "orgs/billing_managers/new", "settings/billing");
+defineI18nAlias(I18N["zh-CN"], "orgs/billing/history", "settings/billing");
+defineI18nAlias(I18N["zh-CN"], "orgs/billing/plans", "settings/billing");
 
-I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（新）- 教育福利
+defineI18nPage(I18N["zh-CN"], "settings/education/benefits", () => ({  // 设置 - 账单和计划（新）- 教育福利
     "static": {
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
@@ -5331,9 +5361,9 @@ I18N["zh-CN"]["settings/education/benefits"] = {  // 设置 - 账单和计划（
         }],
         [/Expires in almost (\d+) years?/, "有效期大约 $1 年"],
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
+defineI18nPage(I18N["zh-CN"], "settings/emails", () => ({ // 设置 - 电子邮箱
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         "Connected to Google": "已关联 Google",
@@ -5428,9 +5458,9 @@ I18N["zh-CN"]["settings/emails"] = { // 设置 - 电子邮箱
             "Email settings": "邮箱设置",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
+defineI18nPage(I18N["zh-CN"], "settings/security", () => ({ // 设置 - 密码和身份身份验证
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["confirm-access"]["static"],
@@ -5623,9 +5653,9 @@ I18N["zh-CN"]["settings/security"] = { // 设置 - 密码和身份身份验证
             "Account security": "账户安全",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/auth"] = {
+defineI18nPage(I18N["zh-CN"], "settings/auth", () => ({
     "static": { // 静态翻译
 
         // 查看恢复码 https://github.com/settings/auth/recovery-codes
@@ -5654,9 +5684,9 @@ I18N["zh-CN"]["settings/auth"] = {
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/sessions"] = {
+defineI18nPage(I18N["zh-CN"], "settings/sessions", () => ({
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5701,9 +5731,9 @@ I18N["zh-CN"]["settings/sessions"] = {
             "Sessions": "会话",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/credentials"] = { // 设置 - 凭证
+defineI18nPage(I18N["zh-CN"], "settings/credentials", () => ({ // 设置 - 凭证
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5733,9 +5763,9 @@ I18N["zh-CN"]["settings/credentials"] = { // 设置 - 凭证
             "Credentials": "凭证",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
+defineI18nPage(I18N["zh-CN"], "settings/keys", () => ({ // 设置 - SSH 与 GPG 公钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5806,9 +5836,9 @@ I18N["zh-CN"]["settings/keys"] = { // 设置 - SSH 与 GPG 公钥
             "SSH and GPG keys": "SSH 与 GPG 密钥",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/ssh"] = { // 设置 - SSH 与 GPG 公钥 - 添加 SSH 公钥
+defineI18nPage(I18N["zh-CN"], "settings/ssh", () => ({ // 设置 - SSH 与 GPG 公钥 - 添加 SSH 公钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5824,9 +5854,9 @@ I18N["zh-CN"]["settings/ssh"] = { // 设置 - SSH 与 GPG 公钥 - 添加 SSH �
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/gpg"] = { // 设置 - SSH 与 GPG 公钥 - 添加 GPG 公钥
+defineI18nPage(I18N["zh-CN"], "settings/gpg", () => ({ // 设置 - SSH 与 GPG 公钥 - 添加 GPG 公钥
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5839,9 +5869,9 @@ I18N["zh-CN"]["settings/gpg"] = { // 设置 - SSH 与 GPG 公钥 - 添加 GPG �
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/organizations"] = { // 设置 - 组织
+defineI18nPage(I18N["zh-CN"], "settings/organizations", () => ({ // 设置 - 组织
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5887,9 +5917,9 @@ I18N["zh-CN"]["settings/organizations"] = { // 设置 - 组织
             "Organizations": "组织",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/enterprises"] = { // 设置 - 企业版
+defineI18nPage(I18N["zh-CN"], "settings/enterprises", () => ({ // 设置 - 企业版
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5909,9 +5939,9 @@ I18N["zh-CN"]["settings/enterprises"] = { // 设置 - 企业版
             "Enterprises": "企业",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/blocked_users"] = { // 设置 - 黑名单
+defineI18nPage(I18N["zh-CN"], "settings/blocked_users", () => ({ // 设置 - 黑名单
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -5972,9 +6002,9 @@ I18N["zh-CN"]["settings/blocked_users"] = { // 设置 - 黑名单
             "Blocked users": "黑名单",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/interaction_limits"] = { // 设置 - 互动限制
+defineI18nPage(I18N["zh-CN"], "settings/interaction_limits", () => ({ // 设置 - 互动限制
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6014,9 +6044,9 @@ I18N["zh-CN"]["settings/interaction_limits"] = { // 设置 - 互动限制
             "Temporary interaction limits": "临时互动限制",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/code_review_limits"] = { // 设置 - 代码审查限制
+defineI18nPage(I18N["zh-CN"], "settings/code_review_limits", () => ({ // 设置 - 代码审查限制
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6044,9 +6074,9 @@ I18N["zh-CN"]["settings/code_review_limits"] = { // 设置 - 代码审查限制
             "Code review limits": "代码审查限制",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/repositories"] = { // 设置 - 仓库
+defineI18nPage(I18N["zh-CN"], "settings/repositories", () => ({ // 设置 - 仓库
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6082,9 +6112,9 @@ I18N["zh-CN"]["settings/repositories"] = { // 设置 - 仓库
             "Repositorys": "仓库",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除的仓库
+defineI18nPage(I18N["zh-CN"], "settings/deleted_repositories", () => ({ // 设置 - 仓库 - 删除的仓库
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6113,9 +6143,9 @@ I18N["zh-CN"]["settings/deleted_repositories"] = { // 设置 - 仓库 - 删除�
         [/by/, "由"], // 删除的仓库
         [/Are you sure you want to restore ([^ ]+)?/, "您确定要恢复 $1 吗？"], // 删除的仓库
     ],
-};
+}));
 
-I18N["zh-CN"]["settings/codespaces"] = { // 设置 - 代码空间
+defineI18nPage(I18N["zh-CN"], "settings/codespaces", () => ({ // 设置 - 代码空间
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6263,9 +6293,9 @@ I18N["zh-CN"]["settings/codespaces"] = { // 设置 - 代码空间
             "Codespaces": "代码空间",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/models"] = {
+defineI18nPage(I18N["zh-CN"], "settings/models", () => ({
     "static": {
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
@@ -6289,9 +6319,9 @@ I18N["zh-CN"]["settings/models"] = {
             "Models": "模型",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/packages"] = { // 设置 - 软件包
+defineI18nPage(I18N["zh-CN"], "settings/packages", () => ({ // 设置 - 软件包
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置
@@ -6345,10 +6375,10 @@ I18N["zh-CN"]["settings/packages"] = { // 设置 - 软件包
             "Packages": "软件包",
         },
     },
-};
-I18N["zh-CN"]["orgs/settings/packages"] = I18N["zh-CN"]["settings/packages"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/packages", "settings/packages");
 
-I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
+defineI18nPage(I18N["zh-CN"], "settings/copilot", () => ({ // 设置 - GitHub Copilot
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6628,9 +6658,9 @@ I18N["zh-CN"]["settings/copilot"] = { // 设置 - GitHub Copilot
             "Copilot cloud agent": "Copilot 云端智能体",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/pages"] = { // 设置 - GitHub Pages
+defineI18nPage(I18N["zh-CN"], "settings/pages", () => ({ // 设置 - GitHub Pages
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"], // 组织设置菜单
@@ -6673,10 +6703,10 @@ I18N["zh-CN"]["settings/pages"] = { // 设置 - GitHub Pages
         [/Successfully verified/, "已成功验证"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["orgs/settings/pages"] = I18N["zh-CN"]["settings/pages"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/pages", "settings/pages");
 
-I18N["zh-CN"]["settings/replies"] = { // 设置 - 快捷回复
+defineI18nPage(I18N["zh-CN"], "settings/replies", () => ({ // 设置 - 快捷回复
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         "Loading preview…": "载入预览…",
@@ -6704,9 +6734,9 @@ I18N["zh-CN"]["settings/replies"] = { // 设置 - 快捷回复
             "Saved replies": "快捷回复",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性与分析
+defineI18nPage(I18N["zh-CN"], "settings/security_analysis", () => ({ // 设置 - 代码安全性与分析
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -6866,9 +6896,9 @@ I18N["zh-CN"]["settings/security_analysis"] = { // 设置 - 代码安全性与�
             "Security & analysis": "安全与分析",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 应用
+defineI18nPage(I18N["zh-CN"], "settings/installations", () => ({ // 设置 - 应用/安装的 GitHub 应用
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
@@ -7090,14 +7120,14 @@ I18N["zh-CN"]["settings/installations"] = { // 设置 - 应用/安装的 GitHub 
             "Authorized OAuth Apps": "授权的 OAuth 应用",
         },
     },
-};
-I18N["zh-CN"]["settings/apps/authorizations"] = I18N["zh-CN"]["settings/installations"];
-I18N["zh-CN"]["settings/applications"] = I18N["zh-CN"]["settings/installations"];
-I18N["zh-CN"]["settings/connections/applications"] = I18N["zh-CN"]["settings/installations"];
-I18N["zh-CN"]["orgs/settings/installations"] = I18N["zh-CN"]["settings/installations"];
-I18N["zh-CN"]["orgs/policies/applications"] = I18N["zh-CN"]["settings/installations"];
+}));
+defineI18nAlias(I18N["zh-CN"], "settings/apps/authorizations", "settings/installations");
+defineI18nAlias(I18N["zh-CN"], "settings/applications", "settings/installations");
+defineI18nAlias(I18N["zh-CN"], "settings/connections/applications", "settings/installations");
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/installations", "settings/installations");
+defineI18nAlias(I18N["zh-CN"], "orgs/policies/applications", "settings/installations");
 
-I18N["zh-CN"]["settings/reminders"] = { // 设置 - 定时提醒
+defineI18nPage(I18N["zh-CN"], "settings/reminders", () => ({ // 设置 - 定时提醒
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -7145,9 +7175,9 @@ I18N["zh-CN"]["settings/reminders"] = { // 设置 - 定时提醒
             "Scheduled reminders": "定时提醒",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
+defineI18nPage(I18N["zh-CN"], "settings/security-log", () => ({ // 设置 - 安全日志
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -7232,9 +7262,9 @@ I18N["zh-CN"]["settings/security-log"] = { // 设置 - 安全日志
             "Security log": "安全日志",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/sponsors-log"] = { // 设置 - 赞助日志
+defineI18nPage(I18N["zh-CN"], "settings/sponsors-log", () => ({ // 设置 - 赞助日志
     "static": { // 静态翻译
         ...I18N["zh-CN"]["settings-menu"]["static"],
 
@@ -7259,9 +7289,9 @@ I18N["zh-CN"]["settings/sponsors-log"] = { // 设置 - 赞助日志
             "Sponsorship Log": "赞助日志",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
+defineI18nPage(I18N["zh-CN"], "settings/apps", () => ({ // 设置 - 开发者设置/GitHub 应用
     "static": { // 静态翻译
         "Developer Settings": "开发者设置",
         "GitHub Apps": "GitHub 应用",
@@ -7857,10 +7887,10 @@ I18N["zh-CN"]["settings/apps"] = { // 设置 - 开发者设置/GitHub 应用
             "New OAuth Application": "新 OAuth 应用",
         },
     },
-};
-I18N["zh-CN"]["orgs/settings/apps/new"] = I18N["zh-CN"]["settings/apps"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/apps/new", "settings/apps");
 
-I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应用
+defineI18nPage(I18N["zh-CN"], "settings/developers", () => ({ // 设置 - 开发者设置/OAuth 应用
     "static": { // 静态翻译
         "New OAuth app": "新建 OAuth 应用",
             "Developer Settings": "开发者设置",
@@ -7890,9 +7920,9 @@ I18N["zh-CN"]["settings/developers"] = { // 设置 - 开发者设置/OAuth 应�
             "Developer applications": "开发者应用",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["settings/applications/new"] = { // 设置 - 开发者设置/OAuth 应用
+defineI18nPage(I18N["zh-CN"], "settings/applications/new", () => ({ // 设置 - 开发者设置/OAuth 应用
     "static": { // 静态翻译
 
         // 注册 OAuth 应用 https://github.com/settings/applications/new
@@ -7920,10 +7950,10 @@ I18N["zh-CN"]["settings/applications/new"] = { // 设置 - 开发者设置/OAuth
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["orgs/settings/applications/new"] = I18N["zh-CN"]["settings/applications/new"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/applications/new", "settings/applications/new");
 
-I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置/个人访问令牌
+defineI18nPage(I18N["zh-CN"], "settings/personal-access-tokens", () => ({ // 设置 - 开发者设置/个人访问令牌
     "static": { // 静态翻译
             "Developer Settings": "开发者设置",
             "GitHub Apps": "GitHub 应用",
@@ -8402,11 +8432,11 @@ I18N["zh-CN"]["settings/personal-access-tokens"] = { // 设置 - 开发者设置
             "New Personal Access Token (Classic)": "新建个人访问令牌（经典）",
         },
     },
-};
-I18N["zh-CN"]["settings/tokens"] = I18N["zh-CN"]["settings/personal-access-tokens"];
+}));
+defineI18nAlias(I18N["zh-CN"], "settings/tokens", "settings/personal-access-tokens");
 
 // 仓库相关==
-I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
+defineI18nPage(I18N["zh-CN"], "repository-public", () => ({ // 仓库 - 公共部分
     "static": { // 静态翻译
         // 仓库页面 /<user-name>/<repo-name>/
             // 被 GitHub 官方禁用
@@ -8762,9 +8792,9 @@ I18N["zh-CN"]["repository-public"] = { // 仓库 - 公共部分
         // 提交 - 作者窗
         [/(\d+) authors?/, "$1 作者"],
     ],
-};
+}));
 
-I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
+defineI18nPage(I18N["zh-CN"], "page-new-repo", () => ({// 仓库 - 新建/导入/复刻仓库
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -9023,14 +9053,14 @@ I18N["zh-CN"]["page-new-repo"] = {// 仓库 - 新建/导入/复刻仓库
             [/Fork/, "复刻"],
         ],
     },
-};
-I18N["zh-CN"]["new"] = I18N["zh-CN"]["page-new-repo"];
-I18N["zh-CN"]["new/import"] = I18N["zh-CN"]["page-new-repo"];
-I18N["zh-CN"]["repository/import"] = I18N["zh-CN"]["page-new-repo"];
-I18N["zh-CN"]["repository/fork"] = I18N["zh-CN"]["page-new-repo"];
-I18N["zh-CN"]["orgs/repositories/new"] = I18N["zh-CN"]["page-new-repo"];
+}));
+defineI18nAlias(I18N["zh-CN"], "new", "page-new-repo");
+defineI18nAlias(I18N["zh-CN"], "new/import", "page-new-repo");
+defineI18nAlias(I18N["zh-CN"], "repository/import", "page-new-repo");
+defineI18nAlias(I18N["zh-CN"], "repository/fork", "page-new-repo");
+defineI18nAlias(I18N["zh-CN"], "orgs/repositories/new", "page-new-repo");
 
-I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
+defineI18nPage(I18N["zh-CN"], "repository", () => ({ // 仓库页面 /<user-name>/<repo-name>/
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -9737,10 +9767,10 @@ I18N["zh-CN"]["repository"] = { // 仓库页面 /<user-name>/<repo-name>/
             [/(.+) at (.+)/, "$1 在分支 $2"],
         ],
     },
-};
-I18N["zh-CN"]["repository/tree"] = I18N["zh-CN"]["repository"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/tree", "repository");
 
-I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
+defineI18nPage(I18N["zh-CN"], "repository/milestones", () => ({ // 仓库 - 里程碑页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -9807,11 +9837,11 @@ I18N["zh-CN"]["repository/milestones"] = { // 仓库 - 里程碑页面
         [/([\d,]+) Closed/, "$1 已关闭"],
         [/(\d+\%) completed/, "$1 已完成"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/milestone"] = I18N["zh-CN"]["repository/milestones"]; // 仓库 - 某里程碑
+defineI18nAlias(I18N["zh-CN"], "repository/milestone", "repository/milestones"); // 仓库 - 某里程碑
 
-I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请求页面公共部分
+defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库 - 议题和拉取请求页面公共部分
     "static": { // 静态翻译
         // pull 与 request 公共词条
             "Select all": "全选",
@@ -10204,9 +10234,9 @@ I18N["zh-CN"]["repository/pull_issue_public"] = { // 仓库 - 议题和拉取请
         [/(\d+) hidden conversations/, "$1 条隐藏对话"],
         [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的内容，请使用"]
     ]
-};
+}));
 
-I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
+defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
@@ -11060,10 +11090,10 @@ I18N["zh-CN"]["repository/issues"] = { // 仓库 - 议题页面
             [/Issues?/, "议题"],
         ],
     },
-};
-I18N["zh-CN"]["repository/labels"] = I18N["zh-CN"]["repository/issues"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/labels", "repository/issues");
 
-I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
+defineI18nPage(I18N["zh-CN"], "repository/pulls", () => ({ // 仓库 - 拉取请求页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/issues"]["static"],
@@ -11160,9 +11190,9 @@ I18N["zh-CN"]["repository/pulls"] = { // 仓库 - 拉取请求页面
             [/Pull requests/, "拉取请求"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
+defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉取请求页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
@@ -12380,9 +12410,9 @@ I18N["zh-CN"]["repository/pull"] = { // 仓库 - 某个拉取请求页面
             [/(.+) by (.+) · Pull Request #(\d+) · (.+)/, "$1 作者：$2 · 拉取请求 #$3 · $4"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
+defineI18nPage(I18N["zh-CN"], "repository/compare", () => ({ // 仓库 - 比较并创建拉取请求
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -12673,9 +12703,9 @@ I18N["zh-CN"]["repository/compare"] = { // 仓库 - 比较并创建拉取请求
             [/Compare/, "比较"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
+defineI18nPage(I18N["zh-CN"], "repository/commit", () => ({ // 仓库 - 提交页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -12983,9 +13013,9 @@ I18N["zh-CN"]["repository/commit"] = { // 仓库 - 提交页面
             [/Commits/, "提交"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
+defineI18nPage(I18N["zh-CN"], "repository/blob", () => ({ // 仓库 - 浏览代码
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -13259,10 +13289,10 @@ I18N["zh-CN"]["repository/blob"] = { // 仓库 - 浏览代码
             [/(.+) at (.+?) · (.+)/, "$1 在分支 $2 · $3"],
         ],
     },
-};
-I18N["zh-CN"]["repository/blame"] = I18N["zh-CN"]["repository/blob"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/blame", "repository/blob");
 
-I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
+defineI18nPage(I18N["zh-CN"], "repository/discussions", () => ({ // 讨论页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["orgs-public"]["static"],
@@ -13848,10 +13878,10 @@ I18N["zh-CN"]["repository/discussions"] = { // 讨论页面
             [/New Discussion · (.+) · Category selection/, "新讨论 · $1 · 分类选择"],
         ],
     },
-};
-I18N["zh-CN"]["repository/orgs/discussions"] = I18N["zh-CN"]["repository/discussions"] ;
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/orgs/discussions", "repository/discussions");
 
-I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
+defineI18nPage(I18N["zh-CN"], "repository/actions", () => ({ // 仓库 - 操作页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14409,10 +14439,10 @@ I18N["zh-CN"]["repository/actions"] = { // 仓库 - 操作页面
             [/Caches/, "缓存"],
         ],
     },
-};
-I18N["zh-CN"]["repository/runs"] = I18N["zh-CN"]["repository/actions"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/runs", "repository/actions");
 
-I18N["zh-CN"]["repository/deployments"] = { // 仓库 - 部署页面
+defineI18nPage(I18N["zh-CN"], "repository/deployments", () => ({ // 仓库 - 部署页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14507,9 +14537,9 @@ I18N["zh-CN"]["repository/deployments"] = { // 仓库 - 部署页面
             [/Deployments/, "部署"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/attestations"] = { // 仓库 - 证书页面
+defineI18nPage(I18N["zh-CN"], "repository/attestations", () => ({ // 仓库 - 证书页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14559,9 +14589,9 @@ I18N["zh-CN"]["repository/attestations"] = { // 仓库 - 证书页面
             [/Attestations/, "证书"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/watchers"] = { // 仓库 - 关注者页面
+defineI18nPage(I18N["zh-CN"], "repository/watchers", () => ({ // 仓库 - 关注者页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14574,9 +14604,9 @@ I18N["zh-CN"]["repository/watchers"] = { // 仓库 - 关注者页面
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         // [/Joined/,"加入于"], // 追星者，关注者页面
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/stargazers"] = { // 仓库 - 追星者页面
+defineI18nPage(I18N["zh-CN"], "repository/stargazers", () => ({ // 仓库 - 追星者页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14596,9 +14626,9 @@ I18N["zh-CN"]["repository/stargazers"] = { // 仓库 - 追星者页面
         ...I18N["zh-CN"]["repository-public"]["regexp"],
         // [/Joined/,"加入于"], // 追星者，关注者页面
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文件页面
+defineI18nPage(I18N["zh-CN"], "repository/new", () => ({ // 仓库 - 新建/编辑/上传/删除文件页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14907,12 +14937,12 @@ I18N["zh-CN"]["repository/new"] = { // 仓库 - 新建/编辑/上传/删除文�
             [/Editing (.+) at (.+) · (.+)/, "编辑文件 $1 在分支 $2 · $3"],
         ],
     },
-};
-I18N["zh-CN"]["repository/edit"] = I18N["zh-CN"]["repository/new"];
-I18N["zh-CN"]["repository/delete"] = I18N["zh-CN"]["repository/new"];
-I18N["zh-CN"]["repository/upload"] = I18N["zh-CN"]["repository/new"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/edit", "repository/new");
+defineI18nAlias(I18N["zh-CN"], "repository/delete", "repository/new");
+defineI18nAlias(I18N["zh-CN"], "repository/upload", "repository/new");
 
-I18N["zh-CN"]["repository/find"] = { //  仓库 - 查找文件页面
+defineI18nPage(I18N["zh-CN"], "repository/find", () => ({ //  仓库 - 查找文件页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -14929,9 +14959,9 @@ I18N["zh-CN"]["repository/find"] = { //  仓库 - 查找文件页面
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
+defineI18nPage(I18N["zh-CN"], "repository/models", () => ({ // 仓库 - 模型
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         "Public Preview": "公共预览",
@@ -14991,9 +15021,9 @@ I18N["zh-CN"]["repository/models"] = { // 仓库 - 模型
             [/Prompts/, "提示词"],
         ],
     },
-}
+}));
 
-I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
+defineI18nPage(I18N["zh-CN"], "repository/wiki", () => ({ // 仓库 - wiki 页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -15172,9 +15202,9 @@ I18N["zh-CN"]["repository/wiki"] = { // 仓库 - wiki 页面
         [/(\d+) additions?/, "$1 处增加"],
         [/(\d+) deletions?/, "$1 处删除"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
+defineI18nPage(I18N["zh-CN"], "repository/branches", () => ({ // 仓库 - 分支页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -15329,9 +15359,9 @@ I18N["zh-CN"]["repository/branches"] = { // 仓库 - 分支页面
             [/Branches/, "分支"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/activity"] = { // 仓库 - 活动页面
+defineI18nPage(I18N["zh-CN"], "repository/activity", () => ({ // 仓库 - 活动页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -15399,9 +15429,9 @@ I18N["zh-CN"]["repository/activity"] = { // 仓库 - 活动页面
         [/pushed (\d+) commits? to/, "推送 $1 个提交到"],
         [/pushed (\d+) commits?/, "推送 $1 个提交"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
+defineI18nPage(I18N["zh-CN"], "repository/releases", () => ({ // 仓库 - 发行版页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -15702,10 +15732,10 @@ I18N["zh-CN"]["repository/releases"] = { // 仓库 - 发行版页面
             [/New release/, "新建发行版"],
         ],
     },
-};
-I18N["zh-CN"]["repository/tags"] = I18N["zh-CN"]["repository/releases"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/tags", "repository/releases");
 
-I18N["zh-CN"]["repository/packages"] = { // 仓库 - 软件包页面
+defineI18nPage(I18N["zh-CN"], "repository/packages", () => ({ // 仓库 - 软件包页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -15828,9 +15858,9 @@ I18N["zh-CN"]["repository/packages"] = { // 仓库 - 软件包页面
         // 更改仓库角色对话框
         [/Change (\d+) Roles?/, "更改 $1 个角色"],
     ],
-}
+}));
 
-I18N["zh-CN"]["repository/pkgs"] = { // 仓库 - 软件包
+defineI18nPage(I18N["zh-CN"], "repository/pkgs", () => ({ // 仓库 - 软件包
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/packages"]["static"],
@@ -15919,8 +15949,8 @@ I18N["zh-CN"]["repository/pkgs"] = { // 仓库 - 软件包
         [/(\d+) deleted/, "$1 个已删除"],
         [/(\d+) contributors?/, "$1 位贡献者"],
     ],
-};
-I18N["zh-CN"]["packages"] = { // 软件包 - 未链接仓库的软件包
+}));
+defineI18nPage(I18N["zh-CN"], "packages", () => ({ // 软件包 - 未链接仓库的软件包
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository/pkgs"]["static"],
 
@@ -15934,9 +15964,9 @@ I18N["zh-CN"]["packages"] = { // 软件包 - 未链接仓库的软件包
     "regexp": [  // 正则翻译
         ...I18N["zh-CN"]["repository/pkgs"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
+defineI18nPage(I18N["zh-CN"], "repository/security", () => ({ // 仓库 - 安全页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -16605,9 +16635,9 @@ I18N["zh-CN"]["repository/security"] = { // 仓库 - 安全页面
             [/Code scanning tool status/, "代码扫描工具状态"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/contribute"] = { // 仓库 - 贡献页面
+defineI18nPage(I18N["zh-CN"], "repository/contribute", () => ({ // 仓库 - 贡献页面
     "static": { // 静态翻译
 
         // 贡献页面 /<user-name>/<repo-name>/contribute
@@ -16627,9 +16657,9 @@ I18N["zh-CN"]["repository/contribute"] = { // 仓库 - 贡献页面
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/subscription"] = { // 仓库 - 通知状态页面
+defineI18nPage(I18N["zh-CN"], "repository/subscription", () => ({ // 仓库 - 通知状态页面
     "static": { // 静态翻译
 
         // 仓库通知状态管理 /<user-name>/<repo-name>/subscription
@@ -16648,9 +16678,9 @@ I18N["zh-CN"]["repository/subscription"] = { // 仓库 - 通知状态页面
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/invitations"] = { // 仓库 - 接受邀请页面
+defineI18nPage(I18N["zh-CN"], "repository/invitations", () => ({ // 仓库 - 接受邀请页面
     "static": { // 静态翻译
 
         // 接受邀请 /<user-name>/<repo-name>/invitations
@@ -16673,9 +16703,9 @@ I18N["zh-CN"]["repository/invitations"] = { // 仓库 - 接受邀请页面
         [/of ([^ ]+) will be able to see:/, "$1 将能够看到："], // 邀请页
         [/Block ([^ ]+)/, "拉黑 $1"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/tasks"] = {
+defineI18nPage(I18N["zh-CN"], "repository/tasks", () => ({
     "static": {
         "You": "您",
         "created the session": "创建此任务",
@@ -16703,12 +16733,12 @@ I18N["zh-CN"]["repository/tasks"] = {
         [/View (\d+) files?/, "查看 $1 个文件"],
         [/Edit (\d+) files?/, "编辑 $1 个文件"],
     ],
-};
+}));
 
 
 // 洞察 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
+defineI18nPage(I18N["zh-CN"], "repository-insights-menu", () => ({ // 仓库 -> 洞察 - 公共部分
     "static": { // 静态翻译
         // 公共部分
             // 左侧菜单
@@ -16743,9 +16773,9 @@ I18N["zh-CN"]["repository-insights-menu"] = { // 仓库 -> 洞察 - 公共部分
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
+defineI18nPage(I18N["zh-CN"], "repository/pulse", () => ({ // 仓库 -> 洞察 - 统计
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -16872,9 +16902,9 @@ I18N["zh-CN"]["repository/pulse"] = { // 仓库 -> 洞察 - 统计
             [/Pulse/, "洞察"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献者
+defineI18nPage(I18N["zh-CN"], "repository/graphs/contributors", () => ({ // 仓库 -> 洞察 - 贡献者
     "static": { // 静态翻译
 
         // 贡献者 /<user-name>/<repo-name>/graphs/contributors
@@ -16984,9 +17014,9 @@ I18N["zh-CN"]["repository/graphs/contributors"] = { // 仓库 -> 洞察 - 贡献
             [/Contributors to (.+)/, "$1 的贡献者"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
+defineI18nPage(I18N["zh-CN"], "repository/graphs/community", () => ({ // 仓库 -> 洞察 - 社区
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17033,9 +17063,9 @@ I18N["zh-CN"]["repository/graphs/community"] = { // 仓库 -> 洞察 - 社区
         [/(\d+) discussions? created/, "$1 个讨论创建"],
         [/(\d+) contributors?/, "$1 贡献者"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/community"] = { // 仓库 -> 洞察 - 社区准则
+defineI18nPage(I18N["zh-CN"], "repository/community", () => ({ // 仓库 -> 洞察 - 社区准则
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17134,9 +17164,9 @@ I18N["zh-CN"]["repository/community"] = { // 仓库 -> 洞察 - 社区准则
             "Community Standards": "社区准则",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
+defineI18nPage(I18N["zh-CN"], "repository/graphs/traffic", () => ({ // 仓库 -> 洞察 - 流量
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17209,9 +17239,9 @@ I18N["zh-CN"]["repository/graphs/traffic"] = { // 仓库 -> 洞察 - 流量
         [/(\d+) Views?/, "$1 次访问"],
         [/(\d+) Unique visitors?/, "$1 位唯一访客"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提交
+defineI18nPage(I18N["zh-CN"], "repository/graphs/commit-activity", () => ({ // 仓库 -> 洞察 - 提交
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17276,9 +17306,9 @@ I18N["zh-CN"]["repository/graphs/commit-activity"] = { // 仓库 -> 洞察 - 提
             [/Commits/, "提交"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代码频率
+defineI18nPage(I18N["zh-CN"], "repository/graphs/code-frequency", () => ({ // 仓库 -> 洞察 - 代码频率
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17356,9 +17386,9 @@ I18N["zh-CN"]["repository/graphs/code-frequency"] = { // 仓库 -> 洞察 - 代�
             [/Code frequency/, "代码频率"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依赖项关系图 - 依赖项
+defineI18nPage(I18N["zh-CN"], "repository/network/dependencies", () => ({ // 仓库 -> 洞察 - 依赖项关系图 - 依赖项
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17456,9 +17486,9 @@ I18N["zh-CN"]["repository/network/dependencies"] = { // 仓库 -> 洞察 - 依�
             [/Dependencies/, "依赖项"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖项关系图 - 依赖者
+defineI18nPage(I18N["zh-CN"], "repository/network/dependents", () => ({ // 仓库 -> 洞察 - 依赖项关系图 - 依赖者
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17492,9 +17522,9 @@ I18N["zh-CN"]["repository/network/dependents"] = { // 仓库 -> 洞察 - 依赖�
             [/Network Dependents/, "网络依赖者"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖项关系图 - Dependabot
+defineI18nPage(I18N["zh-CN"], "repository/network/updates", () => ({ // 仓库 -> 洞察 - 依赖项关系图 - Dependabot
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17528,9 +17558,9 @@ I18N["zh-CN"]["repository/network/updates"] = { // 仓库 -> 洞察 - 依赖项�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/network"] = { // 仓库 -> 洞察 - 网络图
+defineI18nPage(I18N["zh-CN"], "repository/network", () => ({ // 仓库 -> 洞察 - 网络图
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17568,9 +17598,9 @@ I18N["zh-CN"]["repository/network"] = { // 仓库 -> 洞察 - 网络图
             [/Network Graph/, "网络图"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
+defineI18nPage(I18N["zh-CN"], "repository/network/members", () => ({ // 仓库 -> 洞察 - 复刻
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17590,9 +17620,9 @@ I18N["zh-CN"]["repository/network/members"] = { // 仓库 -> 洞察 - 复刻
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/forks"] = { // 仓库 -> 洞察 - 复刻
+defineI18nPage(I18N["zh-CN"], "repository/forks", () => ({ // 仓库 -> 洞察 - 复刻
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -17658,11 +17688,11 @@ I18N["zh-CN"]["repository/forks"] = { // 仓库 -> 洞察 - 复刻
             [/Forks/, "复刻"],
         ],
     },
-};
+}));
 
 // 洞察 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
+defineI18nPage(I18N["zh-CN"], "repository-settings-menu", () => ({ // 仓库设置公共部分
     "static": { // 静态翻译
         // >>>>>>>>>>>>>>>>>>   仓库设置 公共部分  <<<<<<<<<<<<<<<<<<<
             // 顶部提醒栏
@@ -17722,9 +17752,9 @@ I18N["zh-CN"]["repository-settings-menu"] = { // 仓库设置公共部分
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<repo-name>/settings
+defineI18nPage(I18N["zh-CN"], "repository/settings", () => ({ // 仓库设置 - 通常 /<user-name>/<repo-name>/settings
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18108,9 +18138,9 @@ I18N["zh-CN"]["repository/settings"] = { // 仓库设置 - 通常 /<user-name>/<
             "General": "常规",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组织仓库 协作者和团队) /<user-name>/<repo-name>/settings/access
+defineI18nPage(I18N["zh-CN"], "repository/settings/access", () => ({ // 仓库设置 - 协作者/(组织仓库 协作者和团队) /<user-name>/<repo-name>/settings/access
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18231,9 +18261,9 @@ I18N["zh-CN"]["repository/settings/access"] = { // 仓库设置 - 协作者/(组
             "Manage access": "访问管理",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/interaction_limits"] = { // 仓库设置 - 互动限制 /<user-name>/<repo-name>/settings/interaction_limits
+defineI18nPage(I18N["zh-CN"], "repository/settings/interaction_limits", () => ({ // 仓库设置 - 互动限制 /<user-name>/<repo-name>/settings/interaction_limits
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18295,9 +18325,9 @@ I18N["zh-CN"]["repository/settings/interaction_limits"] = { // 仓库设置 - �
             "Temporary interaction limits": "临时互动限制",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/code_review_limits"] = { // 仓库设置 - 代码审查限制 /<user-name>/<repo-name>/settings/code_review_limits
+defineI18nPage(I18N["zh-CN"], "repository/settings/code_review_limits", () => ({ // 仓库设置 - 代码审查限制 /<user-name>/<repo-name>/settings/code_review_limits
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18320,9 +18350,9 @@ I18N["zh-CN"]["repository/settings/code_review_limits"] = { // 仓库设置 - �
             "Code review limits": "代码审查限制",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/branches"] = { // 仓库设置 - 分支 /<user-name>/<repo-name>/settings/branches
+defineI18nPage(I18N["zh-CN"], "repository/settings/branches", () => ({ // 仓库设置 - 分支 /<user-name>/<repo-name>/settings/branches
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18380,9 +18410,9 @@ I18N["zh-CN"]["repository/settings/branches"] = { // 仓库设置 - 分支 /<use
             [/Settings · Branches/, "设置 · 分支"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置 - 分支/分支保护 /<user-name>/<repo-name>/settings/branch_protection_rules
+defineI18nPage(I18N["zh-CN"], "repository/settings/branch_protection_rules", () => ({ // 仓库设置 - 分支/分支保护 /<user-name>/<repo-name>/settings/branch_protection_rules
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18522,9 +18552,9 @@ I18N["zh-CN"]["repository/settings/branch_protection_rules"] = { // 仓库设置
             [/Settings · Branches · New branch protection rule/, "设置 · 分支 · 新建分支保护规则"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/tag_protection"] = { // 仓库设置 - 标签 /<user-name>/<repo-name>/settings/tag_protection
+defineI18nPage(I18N["zh-CN"], "repository/settings/tag_protection", () => ({ // 仓库设置 - 标签 /<user-name>/<repo-name>/settings/tag_protection
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -18589,9 +18619,9 @@ I18N["zh-CN"]["repository/settings/tag_protection"] = { // 仓库设置 - 标签
             [/Settings · Tags/, "设置 · 标签"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则集 /<user-name>/<repo-name>/settings/rules
+defineI18nPage(I18N["zh-CN"], "repository/settings/rules", () => ({ // 仓库设置 - 规则 - 规则集 /<user-name>/<repo-name>/settings/rules
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19082,11 +19112,11 @@ I18N["zh-CN"]["repository/settings/rules"] = { // 仓库设置 - 规则 - 规则
             [/Settings · Rulesets?/, "设置 · 规则集"],
         ],
     },
-};
-I18N["zh-CN"]["orgs/settings/rules"] = I18N["zh-CN"]["repository/settings/rules"];
-I18N["zh-CN"]["repository/rules"] = I18N["zh-CN"]["repository/settings/rules"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/rules", "repository/settings/rules");
+defineI18nAlias(I18N["zh-CN"], "repository/rules", "repository/settings/rules");
 
-I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
+defineI18nPage(I18N["zh-CN"], "repository/settings/actions", () => ({ // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19283,9 +19313,9 @@ I18N["zh-CN"]["repository/settings/actions"] = { // 仓库设置 - 操作 /<user
             [/Add new self-hosted runner/, "添加自托管运行器"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/models/access-policy"] = { // 仓库设置 - 模型 /<user-name>/<repo-name>/settings/models/access-policy
+defineI18nPage(I18N["zh-CN"], "repository/settings/models/access-policy", () => ({ // 仓库设置 - 模型 /<user-name>/<repo-name>/settings/models/access-policy
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19303,9 +19333,9 @@ I18N["zh-CN"]["repository/settings/models/access-policy"] = { // 仓库设置 - 
             [/settings · GitHub Models access policy/, "设置 · GitHub 模型访问政策"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<user-name>/<repo-name>/settings/hooks
+defineI18nPage(I18N["zh-CN"], "repository/settings/hooks", () => ({ // 仓库设置 - Web 钩子 /<user-name>/<repo-name>/settings/hooks
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19527,10 +19557,10 @@ I18N["zh-CN"]["repository/settings/hooks"] = { // 仓库设置 - Web 钩子 /<us
             [/Webhooks · Settings/, "Web 钩子 · 设置"],
         ],
     },
-};
-I18N["zh-CN"]["orgs/settings/hooks"] = I18N["zh-CN"]["repository/settings/hooks"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/hooks", "repository/settings/hooks");
 
-I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
+defineI18nPage(I18N["zh-CN"], "repository/settings/copilot/code_review", () => ({
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19609,9 +19639,9 @@ I18N["zh-CN"]["repository/settings/copilot/code_review"] = {
             [/Settings · Code review/, "设置 · 代码审查"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
+defineI18nPage(I18N["zh-CN"], "repository/settings/copilot/coding_agent", () => ({
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19762,12 +19792,12 @@ I18N["zh-CN"]["repository/settings/copilot/coding_agent"] = {
             "Copilot cloud agent": "Copilot 云端智能体",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/copilot/internet_access"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
-I18N["zh-CN"]["repository/settings/copilot/mcp"] = I18N["zh-CN"]["repository/settings/copilot/coding_agent"];
+defineI18nAlias(I18N["zh-CN"], "repository/settings/copilot/internet_access", "repository/settings/copilot/coding_agent");
+defineI18nAlias(I18N["zh-CN"], "repository/settings/copilot/mcp", "repository/settings/copilot/coding_agent");
 
-I18N["zh-CN"]["repository/settings/copilot/dreaming"] = { // 仓库设置 - Copilot 梦境
+defineI18nPage(I18N["zh-CN"], "repository/settings/copilot/dreaming", () => ({ // 仓库设置 - Copilot 梦境
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19788,9 +19818,9 @@ I18N["zh-CN"]["repository/settings/copilot/dreaming"] = { // 仓库设置 - Copi
             "Copilot Dreaming": "Copilot 梦境",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/suggestions"] = {
+defineI18nPage(I18N["zh-CN"], "repository/settings/suggestions", () => ({
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19807,9 +19837,9 @@ I18N["zh-CN"]["repository/settings/suggestions"] = {
             "Full automation": "完全自动化",
                 "Every change is applied automatically. The agent only holds a change back if it's flagged as uncertain.": "自动应用所有更改。智能体仅在更改被标记为不确定时将其暂缓。",
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /<user-name>/<repo-name>/settings/environment
+defineI18nPage(I18N["zh-CN"], "repository/settings/environments", () => ({ // 仓库设置 - 环境 /<user-name>/<repo-name>/settings/environment
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -19967,9 +19997,9 @@ I18N["zh-CN"]["repository/settings/environments"] = { // 仓库设置 - 环境 /
             [/Configure environment/, "配置环境"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/codespaces"] = { // 仓库设置 - 代码空间 /<user-name>/<repo-name>/settings/codespaces
+defineI18nPage(I18N["zh-CN"], "repository/settings/codespaces", () => ({ // 仓库设置 - 代码空间 /<user-name>/<repo-name>/settings/codespaces
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20078,9 +20108,9 @@ I18N["zh-CN"]["repository/settings/codespaces"] = { // 仓库设置 - 代码空�
             "Codespaces": "代码空间",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
+defineI18nPage(I18N["zh-CN"], "repository/settings/pages", () => ({ // 仓库设置页面(含组织仓库) /<user-name>/<repo-name>/settings
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20210,9 +20240,9 @@ I18N["zh-CN"]["repository/settings/pages"] = { // 仓库设置页面(含组织�
         [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您网站的 DNS 设置使用的是自定义子域 $1，该子域未设置正确的 CNAME 记录。我们建议您将此 CNAME 记录设置为指向 [YOUR USERNAME].github.io。有关详细信息，请参阅"],
         [/Something went wrong issuing a certificate for ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?). Please contact the Pages team./, "为 $1 颁发证书时出现问题。请联系 Pages 团队。"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 高级安全 /<user-name>/<repo-name>/settings/security_analysis
+defineI18nPage(I18N["zh-CN"], "repository/settings/security_analysis", () => ({ // 仓库设置 - 高级安全 /<user-name>/<repo-name>/settings/security_analysis
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20465,9 +20495,9 @@ I18N["zh-CN"]["repository/settings/security_analysis"] = { // 仓库设置 - 高
             [/Settings · Advanced Security/, "设置 · 高级安全"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<user-name>/<repo-name>/settings/keys
+defineI18nPage(I18N["zh-CN"], "repository/settings/keys", () => ({ // 仓库设置 - 部署密钥 /<user-name>/<repo-name>/settings/keys
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20523,9 +20553,9 @@ I18N["zh-CN"]["repository/settings/keys"] = { // 仓库设置 - 部署密钥 /<u
             "Add deploy key": "添加部署密钥",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user-name>/<repo-name>/settings/secrets
+defineI18nPage(I18N["zh-CN"], "repository/settings/secrets", () => ({ // 仓库设置 - 机密 /<user-name>/<repo-name>/settings/secrets
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20670,10 +20700,10 @@ I18N["zh-CN"]["repository/settings/secrets"] = { // 仓库设置 - 机密 /<user
             [/Add Codespaces secret/, "新建代码空间机密"],
         ],
     },
-};
-I18N["zh-CN"]["repository/settings/variables"] = I18N["zh-CN"]["repository/settings/secrets"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/settings/variables", "repository/settings/secrets");
 
-I18N["zh-CN"]["repository/settings/installations"] = { // 仓库设置 - GitHub 应用 /<user-name>/<repo-name>/settings/installations
+defineI18nPage(I18N["zh-CN"], "repository/settings/installations", () => ({ // 仓库设置 - GitHub 应用 /<user-name>/<repo-name>/settings/installations
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20697,9 +20727,9 @@ I18N["zh-CN"]["repository/settings/installations"] = { // 仓库设置 - GitHub 
             "GitHub Apps": "GitHub 应用",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/notifications"] = { // 仓库设置 - 邮件通知 /<user-name>/<repo-name>/settings/notifications/edit
+defineI18nPage(I18N["zh-CN"], "repository/settings/notifications", () => ({ // 仓库设置 - 邮件通知 /<user-name>/<repo-name>/settings/notifications/edit
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20726,9 +20756,9 @@ I18N["zh-CN"]["repository/settings/notifications"] = { // 仓库设置 - 邮件�
             "Configure email notifications": "配置电子邮件通知",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/settings/key_links"] = { // 仓库设置 - 自动链接引用（注：只有专业版有） /<user-name>/<repo-name>/settings/key_links
+defineI18nPage(I18N["zh-CN"], "repository/settings/key_links", () => ({ // 仓库设置 - 自动链接引用（注：只有专业版有） /<user-name>/<repo-name>/settings/key_links
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -20763,9 +20793,9 @@ I18N["zh-CN"]["repository/settings/key_links"] = { // 仓库设置 - 自动链�
             "Add autolink reference": "添加自动链接引用",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/transfer"] = { // 转让仓库
+defineI18nPage(I18N["zh-CN"], "repository/transfer", () => ({ // 转让仓库
     "static": { // 静态翻译
 
         // 转让仓库 /<user-name>/<repo-name>/transfer
@@ -20834,9 +20864,9 @@ I18N["zh-CN"]["repository/transfer"] = { // 转让仓库
         [/(\d+) codespaces?/, "$1 个代码空间"],
         [/is available./, "名称可用。"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user-name>/<repo-name>/codespaces
+defineI18nPage(I18N["zh-CN"], "repository/codespaces", () => ({ // 仓库 - 代码空间界面 /<user-name>/<repo-name>/codespaces
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -20899,9 +20929,9 @@ I18N["zh-CN"]["repository/codespaces"] = { // 仓库 - 代码空间界面 /<user
         [/(\d+) codespaces?/, "$1 个代码空间"],
         [/Last used ([^ ]+)/, "上次使用 $1"],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/custom-properties"] = { // 仓库 - 自定义属性 https://github.com/<uesr-name>/<repo-name>/custom-properties
+defineI18nPage(I18N["zh-CN"], "repository/custom-properties", () => ({ // 仓库 - 自定义属性 https://github.com/<uesr-name>/<repo-name>/custom-properties
     "static": {
         "Custom properties": "自定义属性",
         "Custom properties allow you to decorate your repository with information such as compliance frameworks, data sensitivity, or project details.": "自定义属性允许您为仓库添加信息，例如合规框架、数据敏感性或项目详情。",
@@ -20912,9 +20942,9 @@ I18N["zh-CN"]["repository/custom-properties"] = { // 仓库 - 自定义属性 ht
         "and how to set them at the organization level.": "以及如何在组织级别进行设置。",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-CN"]["repository/reported_content"] = { // 仓库 - 内容举报 /<user-name>/<repo-name>/reported_content
+defineI18nPage(I18N["zh-CN"], "repository/reported_content", () => ({ // 仓库 - 内容举报 /<user-name>/<repo-name>/reported_content
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
 
@@ -20938,11 +20968,11 @@ I18N["zh-CN"]["repository/reported_content"] = { // 仓库 - 内容举报 /<user
     "regexp": [ // 正则翻译
 
     ],
-};
+}));
 
 // 仓库相关==
 
-I18N["zh-CN"]["homepage"] = { // 未登录的首页
+defineI18nPage(I18N["zh-CN"], "homepage", () => ({ // 未登录的首页
     "static": { // 静态翻译
         "Explore the latest tools from Universe '25": "探索 Universe '25 的最新工具",
         "The future of building happens together": "构建未来的方式是共同创造",
@@ -21215,11 +21245,11 @@ I18N["zh-CN"]["homepage"] = { // 未登录的首页
             "GitHub · Change is constant. GitHub keeps you ahead. · GitHub · GitHub": "GitHub · 变化是常态，GitHub 让您始终领先 · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["home"] = I18N["zh-CN"]["homepage"];
+defineI18nAlias(I18N["zh-CN"], "home", "homepage");
 
-I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session, /sessions/two-factor, sessions/recovery, /sessions/recovery/token, /password_reset等)
+defineI18nPage(I18N["zh-CN"], "session-authentication", () => ({ // 登录页 包含(/login, /session, /sessions/two-factor, sessions/recovery, /sessions/recovery/token, /password_reset等)
     "static": { // 静态翻译
 
         // 登录页 https://github.com/login
@@ -21676,14 +21706,14 @@ I18N["zh-CN"]["session-authentication"] = { // 登录页 包含(/login, /session
             "Oh no · GitHub": "糟糕 · GitHub",
         },
     },
-};
-I18N["zh-CN"].login = I18N["zh-CN"]["session-authentication"];
-I18N["zh-CN"].logout = I18N["zh-CN"]["session-authentication"];
-I18N["zh-CN"].session = I18N["zh-CN"]["session-authentication"];
-I18N["zh-CN"].sessions = I18N["zh-CN"]["session-authentication"];
-I18N["zh-CN"].password_reset = I18N["zh-CN"]["session-authentication"];
+}));
+defineI18nAlias(I18N["zh-CN"], "login", "session-authentication");
+defineI18nAlias(I18N["zh-CN"], "logout", "session-authentication");
+defineI18nAlias(I18N["zh-CN"], "session", "session-authentication");
+defineI18nAlias(I18N["zh-CN"], "sessions", "session-authentication");
+defineI18nAlias(I18N["zh-CN"], "password_reset", "session-authentication");
 
-I18N["zh-CN"]["signup"] = { // 注册页
+defineI18nPage(I18N["zh-CN"], "signup", () => ({ // 注册页
     "static": { // 静态翻译
         "Create your free account": "创建免费账户",
             "Explore GitHub's core features for individuals and organizations.": "探索 GitHub 为个人及组织提供的核心功能。",
@@ -21749,9 +21779,9 @@ I18N["zh-CN"]["signup"] = { // 注册页
             "Sign up for GitHub · GitHub": "注册 GitHub · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["account_verifications"] = {
+defineI18nPage(I18N["zh-CN"], "account_verifications", () => ({
     "static": {
         ...I18N["zh-CN"]["signup"]["static"],
 
@@ -21763,9 +21793,9 @@ I18N["zh-CN"]["account_verifications"] = {
             "update your email address": "修改邮箱",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-CN"]["notifications"] = { // 通知页面
+defineI18nPage(I18N["zh-CN"], "notifications", () => ({ // 通知页面
     "static": { // 静态翻译
         "Notifications": "通知",
         "All": "全部",
@@ -21941,9 +21971,9 @@ I18N["zh-CN"]["notifications"] = { // 通知页面
             "Notifications": "通知",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["watching"] = { // 关注的仓库页面
+defineI18nPage(I18N["zh-CN"], "watching", () => ({ // 关注的仓库页面
     "static": { // 静态翻译
         "Notifications": "通知",
         "Watching": "关注",
@@ -22008,9 +22038,9 @@ I18N["zh-CN"]["watching"] = { // 关注的仓库页面
         [/You will stop receiving notifications for all repositories owned by ([^ ]+) that you are watching./, "您将停止接收您所关注的 $1 拥有的所有仓库的通知。"],
         [/([^ ]+)'s repositories/, "$1 的仓库"],
     ],
-};
+}));
 
-I18N["zh-CN"]["notifications/subscriptions"] = { //订阅的仓库页面
+defineI18nPage(I18N["zh-CN"], "notifications/subscriptions", () => ({ //订阅的仓库页面
     "static": { // 静态翻译
         "Notifications": "通知",
         "Watching": "关注",
@@ -22060,9 +22090,9 @@ I18N["zh-CN"]["notifications/subscriptions"] = { //订阅的仓库页面
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
+defineI18nPage(I18N["zh-CN"], "stars", () => ({ // 星标 https://github.com/stars/<user-name>
     "static": { // 静态翻译
         "Your Stars": "我的星标",
         "Browse your starred repositories and topics": "浏览我的星标仓库和主题",
@@ -22113,9 +22143,9 @@ I18N["zh-CN"]["stars"] = { // 星标 https://github.com/stars/<user-name>
             "Your starred topics": "我的星标主题",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["issues"] = { // 议题页面
+defineI18nPage(I18N["zh-CN"], "issues", () => ({ // 议题页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository/issues"]["static"],
 
@@ -22512,9 +22542,9 @@ I18N["zh-CN"]["issues"] = { // 议题页面
             "Pull requests - Review requests": "拉取请求 - 审查请求",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["pulls"] = { // 拉取请求页面
+defineI18nPage(I18N["zh-CN"], "pulls", () => ({ // 拉取请求页面
     "static": {
         ...I18N["zh-CN"]["issues"]["static"],
 
@@ -22647,10 +22677,10 @@ I18N["zh-CN"]["pulls"] = { // 拉取请求页面
         [/Last year/, "去年"],
         [/Any time/, "任意时间"],
     ],
-}
+}));
 
 
-I18N["zh-CN"]["repos"] = {
+defineI18nPage(I18N["zh-CN"], "repos", () => ({
     "static": {
         "My contributions": "我的贡献",
         "My repositories": "我的仓库",
@@ -22705,9 +22735,9 @@ I18N["zh-CN"]["repos"] = {
         [/(\d+) repositor(y|ies)/, "$1 个仓库"],
         [/([^ ]+)’s past year of commit activity/, "近几年 $1 的提交活动"],
     ],
-};
+}));
 
-I18N["zh-CN"]["search"] = { // 搜索页面
+defineI18nPage(I18N["zh-CN"], "search", () => ({ // 搜索页面
     "static": { // 静态翻译
         "More than": "多余",
         "ms": "毫秒", // 时间，前面"结果"走正则匹配
@@ -23104,10 +23134,10 @@ I18N["zh-CN"]["search"] = { // 搜索页面
             "Marketplace search results": "市场搜索结果",
         },
     },
-};
-I18N["zh-CN"]["repository/search"] = I18N["zh-CN"]["search"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/search", "search");
 
-I18N["zh-CN"]["discussions"] = {
+defineI18nPage(I18N["zh-CN"], "discussions", () => ({
     "static": { // 静态翻译
         // https://github.com/discussions
             "Discussions": "讨论",
@@ -23133,9 +23163,9 @@ I18N["zh-CN"]["discussions"] = {
             "Discussions": "讨论",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["gist"] = { // 代码片段页面
+defineI18nPage(I18N["zh-CN"], "gist", () => ({ // 代码片段页面
     "static": { // 静态翻译
         // 快捷键
         "Site wide shortcuts": "全局快捷键",
@@ -23416,9 +23446,9 @@ I18N["zh-CN"]["gist"] = { // 代码片段页面
             [/Search/, "搜索"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["login/oauth"] = { // 应用授权
+defineI18nPage(I18N["zh-CN"], "login/oauth", () => ({ // 应用授权
     "static": { // 静态翻译
         // 第三页 安装中
 
@@ -23496,10 +23526,10 @@ I18N["zh-CN"]["login/oauth"] = { // 应用授权
         // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安装和授权 $1 则会立即授予您账户的以下权限："],
         [/Selected (\d+) repositor(y|ies)./, "选择了 $1 个仓库。"],
     ],
-};
+}));
 // I18N["zh-CN"]["installations/new"] = I18N["zh-CN"]["login/oauth"];
 
-I18N["zh-CN"]["explore"] = { // 探索页面
+defineI18nPage(I18N["zh-CN"], "explore", () => ({ // 探索页面
     "static": { // 静态翻译
 
         // github.com/explore
@@ -23580,9 +23610,9 @@ I18N["zh-CN"]["explore"] = { // 探索页面
             "Explore GitHub": "探索 GitHub",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["topics"] = { // 探索-->主题页面
+defineI18nPage(I18N["zh-CN"], "topics", () => ({ // 探索-->主题页面
     "static": { // 静态翻译
 
         // github.com/topics
@@ -23649,9 +23679,9 @@ I18N["zh-CN"]["topics"] = { // 探索-->主题页面
             [/GitHub Topics/, "GitHub 主题"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["trending"] = { // 热门页面
+defineI18nPage(I18N["zh-CN"], "trending", () => ({ // 热门页面
     "static": { // 静态翻译
         "Explore": "探索",
         "Topics": "主题",
@@ -23722,9 +23752,9 @@ I18N["zh-CN"]["trending"] = { // 热门页面
             "Trending developers on GitHub this month": "本月热门开发者",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["collections"] = { // 集合页面
+defineI18nPage(I18N["zh-CN"], "collections", () => ({ // 集合页面
     "static": { // 静态翻译
         "Explore": "探索",
         "Topics": "主题",
@@ -23749,9 +23779,9 @@ I18N["zh-CN"]["collections"] = { // 集合页面
             [/Collection: /, "集合："],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["sponsors"] = { // 赞助界面
+defineI18nPage(I18N["zh-CN"], "sponsors", () => ({ // 赞助界面
     "static": {
         // 赞助者首页 https://github.com/sponsors
             "Invest in the software that powers your world": "投资驱动您世界的项目",
@@ -24249,9 +24279,9 @@ I18N["zh-CN"]["sponsors"] = { // 赞助界面
             [/Sponsor @(.+) on GitHub Sponsors/, "GitHub 赞助上赞助者 @$1"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["showcases"] = { // 展示页面
+defineI18nPage(I18N["zh-CN"], "showcases", () => ({ // 展示页面
     "static": { // 静态翻译
         "Open source showcases": "开源展示",
         "Browse popular repositories based on the topic that interests you most.": "浏览热门仓库基于您最感兴趣的主题。",
@@ -24259,9 +24289,9 @@ I18N["zh-CN"]["showcases"] = { // 展示页面
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["account/organizations/new"] = { // 创建组织
+defineI18nPage(I18N["zh-CN"], "account/organizations/new", () => ({ // 创建组织
     "static": { // 静态翻译
         // 创建免费的组织 https://github.com/account/organizations/new?coupon=&plan=team_free
         // https://github.com/account/organizations/new?coupon=&plan=free
@@ -24325,9 +24355,9 @@ I18N["zh-CN"]["account/organizations/new"] = { // 创建组织
             "Set up your organization": "设置您的组织",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["account/choose"] = { // 账户升级选择
+defineI18nPage(I18N["zh-CN"], "account/choose", () => ({ // 账户升级选择
     "static": { // 静态翻译
         // https://github.com/account/choose?action=upgrade
             "Which do you want to upgrade?": "您想升级哪个？",
@@ -24338,9 +24368,9 @@ I18N["zh-CN"]["account/choose"] = { // 账户升级选择
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["account/upgrade"] = { // 账户
+defineI18nPage(I18N["zh-CN"], "account/upgrade", () => ({ // 账户
     "static": {
         // https://github.com/account/upgrade?plan=pro&source=account+compare+plans
             "Upgrade your account from GitHub Free to GitHub Pro": "从 GitHub 免费版升级到 GitHub 专业版",
@@ -24388,9 +24418,9 @@ I18N["zh-CN"]["account/upgrade"] = { // 账户
     "regexp": [
         [/Payment due/, "付款截止日期为"],
     ],
-};
+}));
 
-I18N["zh-CN"]["marketplace"] = { // GitHub 市场
+defineI18nPage(I18N["zh-CN"], "marketplace", () => ({ // GitHub 市场
     "static": { // 静态翻译
         "Search Marketplace": "搜索市场",
         "Listing type": "显示类型",
@@ -25119,9 +25149,9 @@ I18N["zh-CN"]["marketplace"] = { // GitHub 市场
             [/Models/, "模型"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["apps"] = { // GitHub 应用
+defineI18nPage(I18N["zh-CN"], "apps", () => ({ // GitHub 应用
     "static": { // 静态翻译
 
         // GitHub 应用页面 https://github.com/apps/<app-name>
@@ -25213,9 +25243,9 @@ I18N["zh-CN"]["apps"] = { // GitHub 应用
         [/Where do you want to install (.*)\?/, "您想把 $1 安装在哪里？"],
         [/(.*) is installed. Click to configure./, "$1 已安装。点击进行配置。"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs"] = { // 组织页面
+defineI18nPage(I18N["zh-CN"], "orgs", () => ({ // 组织页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
         //>>>>>>>>>>>>>>>>>> 组织主页/概况页 <<<<<<<<<<<<<<<<<<<<<
@@ -25431,15 +25461,15 @@ I18N["zh-CN"]["orgs"] = { // 组织页面
             "Choose a plan": "选择一个计划",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["orgs/repositories"] = I18N["zh-CN"]["page-profile/repositories"];
+defineI18nAlias(I18N["zh-CN"], "orgs/repositories", "page-profile/repositories");
 
-I18N["zh-CN"]["orgs/projects"] = I18N["zh-CN"]["page-profile/projects"];
+defineI18nAlias(I18N["zh-CN"], "orgs/projects", "page-profile/projects");
 
-I18N["zh-CN"]["orgs/packages"] = I18N["zh-CN"]["page-profile/packages"];
+defineI18nAlias(I18N["zh-CN"], "orgs/packages", "page-profile/packages");
 
-I18N["zh-CN"]["orgs/people"] = { // 组织 - 成员标签卡
+defineI18nPage(I18N["zh-CN"], "orgs/people", () => ({ // 组织 - 成员标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
 
@@ -25606,12 +25636,12 @@ I18N["zh-CN"]["orgs/people"] = { // 组织 - 成员标签卡
             [/Security Managers for/, "安全管理员"],
         ],
     },
-};
-I18N["zh-CN"]["orgs/outside-collaborators"] = I18N["zh-CN"]["orgs/people"];
-I18N["zh-CN"]["orgs/pending_collaborators"] = I18N["zh-CN"]["orgs/people"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/outside-collaborators", "orgs/people");
+defineI18nAlias(I18N["zh-CN"], "orgs/pending_collaborators", "orgs/people");
 
 
-I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
+defineI18nPage(I18N["zh-CN"], "orgs/teams", () => ({ // 组织 - 团队标签卡
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
         "Organization roles": "组织角色",
@@ -25752,10 +25782,10 @@ I18N["zh-CN"]["orgs/teams"] = { // 组织 - 团队标签卡
         [/Add member to (.+)/, "添加成员至 $1"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["orgs/new-team"]= I18N["zh-CN"]["orgs/teams"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/new-team", "orgs/teams");
 
-I18N["zh-CN"]["orgs/invitations"] = { // 组织 - 邀请页面
+defineI18nPage(I18N["zh-CN"], "orgs/invitations", () => ({ // 组织 - 邀请页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-public"]["static"],
 
@@ -25789,9 +25819,9 @@ I18N["zh-CN"]["orgs/invitations"] = { // 组织 - 邀请页面
         [/Invite a member to ([^ ]+)/, "邀请会员加入 $1"],
         [/is already a member of ([^ ]+)./, "已经是 $1 的成员。"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/invitation"] = { // 组织 - 接受邀请页面
+defineI18nPage(I18N["zh-CN"], "orgs/invitation", () => ({ // 组织 - 接受邀请页面
     "static": {
 
         // 接受邀请 https://github.com/<orgs-name>/invitation
@@ -25825,9 +25855,9 @@ I18N["zh-CN"]["orgs/invitation"] = { // 组织 - 接受邀请页面
         [/of ([^ ]+) may be able to see:/, "$1 将可以查看："],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/domain/new"] = { // 组织 - 添加域名
+defineI18nPage(I18N["zh-CN"], "orgs/domain/new", () => ({ // 组织 - 添加域名
     "static": { // 静态翻译
         "Verified & approved domains": "经验证和批准的域名",
         "Add a domain": "添加域名",
@@ -25838,9 +25868,9 @@ I18N["zh-CN"]["orgs/domain/new"] = { // 组织 - 添加域名
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
+defineI18nPage(I18N["zh-CN"], "orgs/settings/profile", () => ({ // 组织设置 - 组织资料
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -25984,9 +26014,9 @@ I18N["zh-CN"]["orgs/settings/profile"] = { // 组织设置 - 组织资料
         [/(Link to social profile )(\d+)/, "社交账户链接 $2"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/policies/repositories"] = { // 组织设置 - 策略 - 仓库策略
+defineI18nPage(I18N["zh-CN"], "orgs/settings/policies/repositories", () => ({ // 组织设置 - 策略 - 仓库策略
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -25999,9 +26029,9 @@ I18N["zh-CN"]["orgs/settings/policies/repositories"] = { // 组织设置 - 策�
             "until you upgrade this organization account to GitHub Team.": "直到您将此组织账户升级至 GitHub 团体版。",
             "New policy": "新建策略",
     }
-}
+}));
 
-I18N["zh-CN"]["orgs/settings/roles"] = { // 组织设置 - 仓库角色
+defineI18nPage(I18N["zh-CN"], "orgs/settings/roles", () => ({ // 组织设置 - 仓库角色
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26035,9 +26065,9 @@ I18N["zh-CN"]["orgs/settings/roles"] = { // 组织设置 - 仓库角色
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/member_privileges"] = { // 组织设置 - 成员权限
+defineI18nPage(I18N["zh-CN"], "orgs/settings/member_privileges", () => ({ // 组织设置 - 成员权限
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26200,9 +26230,9 @@ I18N["zh-CN"]["orgs/settings/member_privileges"] = { // 组织设置 - 成员权
         [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果启用，所有具有读取权限的用户都可以在 $1 的仓库中创建和评论讨论。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/teams"] = { // 组织设置 - 团队讨论
+defineI18nPage(I18N["zh-CN"], "orgs/settings/teams", () => ({ // 组织设置 - 团队讨论
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26225,9 +26255,9 @@ I18N["zh-CN"]["orgs/settings/teams"] = { // 组织设置 - 团队讨论
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/import-export"] = { // 组织设置 - 导入/导出
+defineI18nPage(I18N["zh-CN"], "orgs/settings/import-export", () => ({ // 组织设置 - 导入/导出
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26246,9 +26276,9 @@ I18N["zh-CN"]["orgs/settings/import-export"] = { // 组织设置 - 导入/导出
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/blocked_users"] = { // 组织设置 - 黑名单
+defineI18nPage(I18N["zh-CN"], "orgs/settings/blocked_users", () => ({ // 组织设置 - 黑名单
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26285,9 +26315,9 @@ I18N["zh-CN"]["orgs/settings/blocked_users"] = { // 组织设置 - 黑名单
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/interaction_limits"] = { // 组织设置 - 互动限制
+defineI18nPage(I18N["zh-CN"], "orgs/settings/interaction_limits", () => ({ // 组织设置 - 互动限制
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26324,9 +26354,9 @@ I18N["zh-CN"]["orgs/settings/interaction_limits"] = { // 组织设置 - 互动�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/code_review_limits"] = { // 组织设置 - 代码审查限制
+defineI18nPage(I18N["zh-CN"], "orgs/settings/code_review_limits", () => ({ // 组织设置 - 代码审查限制
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26342,9 +26372,9 @@ I18N["zh-CN"]["orgs/settings/code_review_limits"] = { // 组织设置 - 代码�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/moderators"] = { // 组织设置 - 版主
+defineI18nPage(I18N["zh-CN"], "orgs/settings/moderators", () => ({ // 组织设置 - 版主
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26367,9 +26397,9 @@ I18N["zh-CN"]["orgs/settings/moderators"] = { // 组织设置 - 版主
         [/Successfully removed (@[^\n]+) as a moderator/, "已成功将 $1 的版主身份移除"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 / 默认值
+defineI18nPage(I18N["zh-CN"], "orgs/settings/repository-defaults", () => ({ // 组织设置 - 仓库 / 默认值
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26437,9 +26467,9 @@ I18N["zh-CN"]["orgs/settings/repository-defaults"] = { // 组织设置 - 仓库 
         [/Your default branch name will be ([^ ]+)/, "您的默认分支名称将是 $1"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/topics"] = { // 组织设置 - 仓库 /仓库主题
+defineI18nPage(I18N["zh-CN"], "orgs/topics", () => ({ // 组织设置 - 仓库 /仓库主题
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26453,9 +26483,9 @@ I18N["zh-CN"]["orgs/topics"] = { // 组织设置 - 仓库 /仓库主题
         [/There are no repositories in ([^ ]+) that you’ve contributed to and that you can set topics on./, "$1  中没有您贡献过的并且可以设置主题的仓库。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码空间
+defineI18nPage(I18N["zh-CN"], "orgs/settings/codespaces", () => ({ // 组织设置 - 仓库 /代码空间
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
         "To manage Codespace ownership settings, please": "要管理代码空间所有权设置，请",
@@ -26493,9 +26523,9 @@ I18N["zh-CN"]["orgs/settings/codespaces"] = { // 组织设置 - 仓库 /代码�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/sandboxes"] = {
+defineI18nPage(I18N["zh-CN"], "orgs/settings/sandboxes", () => ({
     "static": {
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26515,9 +26545,9 @@ I18N["zh-CN"]["orgs/settings/sandboxes"] = {
             "Sandboxes": "沙盒"
         }
     }
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/custom-properties"] = { // 组织设置 - 自定义属性
+defineI18nPage(I18N["zh-CN"], "orgs/settings/custom-properties", () => ({ // 组织设置 - 自定义属性
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
         ...I18N["zh-CN"]["repository/custom-properties"]["static"],
@@ -26530,9 +26560,9 @@ I18N["zh-CN"]["orgs/settings/custom-properties"] = { // 组织设置 - 自定义
             "Custom properties": "自定义属性",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/issue-fields"] = { // 组织设置 - 议题字段
+defineI18nPage(I18N["zh-CN"], "orgs/settings/issue-fields", () => ({ // 组织设置 - 议题字段
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26549,9 +26579,9 @@ I18N["zh-CN"]["orgs/settings/issue-fields"] = { // 组织设置 - 议题字段
             "Issue fields": "议题字段",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/copilot"] = {  // 组织设置 - GitHub Copilot
+defineI18nPage(I18N["zh-CN"], "orgs/settings/copilot", () => ({  // 组织设置 - GitHub Copilot
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -26825,9 +26855,9 @@ I18N["zh-CN"]["orgs/settings/copilot"] = {  // 组织设置 - GitHub Copilot
             ...I18N["zh-CN"]["repository/settings/copilot/code_review"].title.regexp,
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
+defineI18nPage(I18N["zh-CN"], "orgs/settings/actions", () => ({ // 组织设置 - 操作
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27042,9 +27072,9 @@ I18N["zh-CN"]["orgs/settings/actions"] = { // 组织设置 - 操作
         [/(\d+) caches?/, "$1 项缓存"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/discussions"] = { // 组织设置 - 讨论
+defineI18nPage(I18N["zh-CN"], "orgs/settings/discussions", () => ({ // 组织设置 - 讨论
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27069,9 +27099,9 @@ I18N["zh-CN"]["orgs/settings/discussions"] = { // 组织设置 - 讨论
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
+defineI18nPage(I18N["zh-CN"], "orgs/settings/projects", () => ({ // 组织设置 - 计划 - 项目
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27098,9 +27128,9 @@ I18N["zh-CN"]["orgs/settings/projects"] = { // 组织设置 - 计划 - 项目
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/security"] = { // 组织设置 - 身份验证安全
+defineI18nPage(I18N["zh-CN"], "orgs/settings/security", () => ({ // 组织设置 - 身份验证安全
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27129,9 +27159,9 @@ I18N["zh-CN"]["orgs/settings/security"] = { // 组织设置 - 身份验证安全
         [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求对 $1 组织中的每个成员进行双因素身份验证。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/security_analysis"] = { // 组织设置 - 代码安全性与分析
+defineI18nPage(I18N["zh-CN"], "orgs/settings/security_analysis", () => ({ // 组织设置 - 代码安全性与分析
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27302,9 +27332,9 @@ I18N["zh-CN"]["orgs/settings/security_analysis"] = { // 组织设置 - 代码安
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot 规则
+defineI18nPage(I18N["zh-CN"], "orgs/settings/dependabot_rules", () => ({ // 组织设置 - Dependabot 规则
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-settings-menu"]["static"],
@@ -27400,10 +27430,10 @@ I18N["zh-CN"]["orgs/settings/dependabot_rules"] = { // 组织设置 - Dependabot
         [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "这将永久删除规则 “$1” 并可能重新打开相关警报。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["repository/settings/dependabot_rules"] = I18N["zh-CN"]["orgs/settings/dependabot_rules"];
+}));
+defineI18nAlias(I18N["zh-CN"], "repository/settings/dependabot_rules", "orgs/settings/dependabot_rules");
 
-I18N["zh-CN"]["orgs/settings/domains"] = { // 组织设置 - 经验证和批准的域名
+defineI18nPage(I18N["zh-CN"], "orgs/settings/domains", () => ({ // 组织设置 - 经验证和批准的域名
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27417,9 +27447,9 @@ I18N["zh-CN"]["orgs/settings/domains"] = { // 组织设置 - 经验证和批准�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
+defineI18nPage(I18N["zh-CN"], "orgs/settings/secrets", () => ({ // 组织设置 - 机密和变量
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
         ...I18N["zh-CN"]["confirm-access"]["static"],
@@ -27596,10 +27626,10 @@ I18N["zh-CN"]["orgs/settings/secrets"] = { // 组织设置 - 机密和变量
         [/(\d+) selected repositor(y|ies)/, "$1 个选定的仓库"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["orgs/settings/variables"] = I18N["zh-CN"]["orgs/settings/secrets"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/settings/variables", "orgs/settings/secrets");
 
-I18N["zh-CN"]["orgs/settings/oauth_application_policy"] = { // 组织设置 - 第三方应用访问策略
+defineI18nPage(I18N["zh-CN"], "orgs/settings/oauth_application_policy", () => ({ // 组织设置 - 第三方应用访问策略
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27653,9 +27683,9 @@ I18N["zh-CN"]["orgs/settings/oauth_application_policy"] = { // 组织设置 - �
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/personal-access-token"] = { // 组织设置 - 个人访问令牌
+defineI18nPage(I18N["zh-CN"], "orgs/settings/personal-access-token", () => ({ // 组织设置 - 个人访问令牌
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27775,9 +27805,9 @@ I18N["zh-CN"]["orgs/settings/personal-access-token"] = { // 组织设置 - 个�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/reminders"] = { // 组织设置 - 定时提醒
+defineI18nPage(I18N["zh-CN"], "orgs/settings/reminders", () => ({ // 组织设置 - 定时提醒
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27798,9 +27828,9 @@ I18N["zh-CN"]["orgs/settings/reminders"] = { // 组织设置 - 定时提醒
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/sponsors-log"] = { // 组织设置 - 赞助日志
+defineI18nPage(I18N["zh-CN"], "orgs/settings/sponsors-log", () => ({ // 组织设置 - 赞助日志
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27822,9 +27852,9 @@ I18N["zh-CN"]["orgs/settings/sponsors-log"] = { // 组织设置 - 赞助日志
         [/This is where you can review activity from ([^ ]+)'s sponsorships./,  "在这里您可以查看 $1 赞助的活动。"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
+defineI18nPage(I18N["zh-CN"], "orgs/settings/audit-log", () => ({ // 组织设置 - 审计日志
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27869,10 +27899,10 @@ I18N["zh-CN"]["orgs/settings/audit-log"] = { // 组织设置 - 审计日志
         [/Found (\d+) events?/, "找到 $1 个事件"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-CN"]["orgs/audit-log/event_settings"] = I18N["zh-CN"]["orgs/settings/audit-log"];
+}));
+defineI18nAlias(I18N["zh-CN"], "orgs/audit-log/event_settings", "orgs/settings/audit-log");
 
-I18N["zh-CN"]["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除的仓库
+defineI18nPage(I18N["zh-CN"], "orgs/settings/deleted_repositories", () => ({ // 组织设置 - 删除的仓库
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27886,9 +27916,9 @@ I18N["zh-CN"]["orgs/settings/deleted_repositories"] = { // 组织设置 - 删除
         [/No recoverable repositories were found for ([^ ]+)./, "没有发现 $1 中可恢复仓库"],
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/applications"] = { // 组织设置 - OAuth 应用
+defineI18nPage(I18N["zh-CN"], "orgs/settings/applications", () => ({ // 组织设置 - OAuth 应用
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27902,9 +27932,9 @@ I18N["zh-CN"]["orgs/settings/applications"] = { // 组织设置 - OAuth 应用
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/apps"] = { // 组织设置 - GitHub 应用
+defineI18nPage(I18N["zh-CN"], "orgs/settings/apps", () => ({ // 组织设置 - GitHub 应用
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27927,9 +27957,9 @@ I18N["zh-CN"]["orgs/settings/apps"] = { // 组织设置 - GitHub 应用
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/publisher"] = { // 组织设置 - GitHub 发布者验证
+defineI18nPage(I18N["zh-CN"], "orgs/settings/publisher", () => ({ // 组织设置 - GitHub 发布者验证
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs-settings-menu"]["static"],
 
@@ -27943,9 +27973,9 @@ I18N["zh-CN"]["orgs/settings/publisher"] = { // 组织设置 - GitHub 发布者�
     "regexp": [ // 正则翻译
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
+defineI18nPage(I18N["zh-CN"], "projects", () => ({ // 项目页面(含仓库项目)
     "static": { // 静态翻译
         // >>>>>>>>>>>>>>>>>>仓库 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 头部条
@@ -28614,22 +28644,22 @@ I18N["zh-CN"]["projects"] = { // 项目页面(含仓库项目)
             [/Projects/, "项目"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["new/project"] = I18N["zh-CN"]["projects"];
-I18N["zh-CN"]["repository/projects/new"] = I18N["zh-CN"]["projects"];
-I18N["zh-CN"]["repository/projects"] = I18N["zh-CN"]["projects"];
+defineI18nAlias(I18N["zh-CN"], "new/project", "projects");
+defineI18nAlias(I18N["zh-CN"], "repository/projects/new", "projects");
+defineI18nAlias(I18N["zh-CN"], "repository/projects", "projects");
 
-I18N["zh-CN"]["redeem"] = { // 兑换页面
+defineI18nPage(I18N["zh-CN"], "redeem", () => ({ // 兑换页面
     "static": { // 静态翻译
         "Enter coupon code": "输入优惠券代码",
         "Redeem": "兑换",
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["github-copilot/signup"] = { // GitHub Copilot 个人版获取页面
+defineI18nPage(I18N["zh-CN"], "github-copilot/signup", () => ({ // GitHub Copilot 个人版获取页面
     "static": { // 静态翻译
     ...I18N["zh-CN"]["settings/copilot"]["static"],
 
@@ -28690,9 +28720,9 @@ I18N["zh-CN"]["github-copilot/signup"] = { // GitHub Copilot 个人版获取页�
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["github-copilot/free_signup"] = { // GitHub Copilot 个人免费版获取页面
+defineI18nPage(I18N["zh-CN"], "github-copilot/free_signup", () => ({ // GitHub Copilot 个人免费版获取页面
     "static": { // 静态翻译
 
         "Your AI pair programmer": "您的 AI 编程助理",
@@ -28709,9 +28739,9 @@ I18N["zh-CN"]["github-copilot/free_signup"] = { // GitHub Copilot 个人免费�
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
+defineI18nPage(I18N["zh-CN"], "github-copilot/pro", () => ({ // GitHub Copilot 专业版适用页面
     "static": {
         // https://github.com/github-copilot/pro
             "Try Copilot Pro for 30 days free": "免费试用 Copilot Pro 30 天",
@@ -28762,9 +28792,9 @@ I18N["zh-CN"]["github-copilot/pro"] = { // GitHub Copilot 专业版适用页面
 
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-CN"]["orgs/enterprise_plan"] = { // 企业版订阅页面
+defineI18nPage(I18N["zh-CN"], "orgs/enterprise_plan", () => ({ // 企业版订阅页面
     "static": {
         // https://github.com/organizations/enterprise_plan
             "Pick your trial plan": "选择您的试用计划",
@@ -28779,9 +28809,9 @@ I18N["zh-CN"]["orgs/enterprise_plan"] = { // 企业版订阅页面
     },
     "regexp": [ // 正则翻译
     ],
-};
+}));
 
-I18N["zh-CN"]["codespaces"] = { // 代码空间页面
+defineI18nPage(I18N["zh-CN"], "codespaces", () => ({ // 代码空间页面
     "static": {
         // 顶部
             "Help us improve GitHub Codespaces": "帮助我们改进 GitHub 代码空间",
@@ -28975,9 +29005,9 @@ I18N["zh-CN"]["codespaces"] = { // 代码空间页面
             "Create new codespace": "创建代码空间",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["codespaces/allow_permissions"] = { // 代码空间申请额外权限页面，似乎不可用
+defineI18nPage(I18N["zh-CN"], "codespaces/allow_permissions", () => ({ // 代码空间申请额外权限页面，似乎不可用
     "static": {
         "This codespace is requesting": "该代码空间要求",
         "additional permissions": "额外权限",
@@ -28995,9 +29025,9 @@ I18N["zh-CN"]["codespaces/allow_permissions"] = { // 代码空间申请额外权
     "regexp": [
         [/(\d+) permissions? requested/, "要求 $1 项权限"],
     ],
-};
+}));
 
-I18N["zh-CN"]["developer/register"] = { // 开发者注册
+defineI18nPage(I18N["zh-CN"], "developer/register", () => ({ // 开发者注册
     "static": {
         // https://github.com/developer/register
             // 标题
@@ -29032,9 +29062,9 @@ I18N["zh-CN"]["developer/register"] = { // 开发者注册
     },
     "regexp": [ // 正则匹配
     ],
-};
+}));
 
-I18N["zh-CN"]["features"] = {
+defineI18nPage(I18N["zh-CN"], "features", () => ({
     "static": {
         "The tools you need to build what you want.": "构建您想要的内容所需的工具。",
         // 看板
@@ -29091,9 +29121,9 @@ I18N["zh-CN"]["features"] = {
             "GitHub Features · GitHub": "GitHub 特点 · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["status"] = { // GitHub Status
+defineI18nPage(I18N["zh-CN"], "status", () => ({ // GitHub Status
     "static": {
         // https://www.githubstatus.com/
             "Help": "帮助",
@@ -29238,9 +29268,9 @@ I18N["zh-CN"]["status"] = { // GitHub Status
     },
     "regexp": [
     ],
-};
+}));
 
-I18N["zh-CN"]["skills"] = { // https://skills.github.com/
+defineI18nPage(I18N["zh-CN"], "skills", () => ({ // https://skills.github.com/
     "static": { // 静态翻译
         "GitHub Skills": "Github 技能",
             "Learn how to use GitHub with interactive courses designed for beginners and experts.": "通过专为初学者和专家设计的互动课程，学习如何使用 GitHub。",
@@ -29464,9 +29494,9 @@ I18N["zh-CN"]["skills"] = { // https://skills.github.com/
     },
     "regexp": [
     ],
-};
+}));
 
-I18N["zh-CN"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 赞助页
+defineI18nPage(I18N["zh-CN"], "orgs/sponsoring", () => ({ // https://github.com/orgs/<org-name>/sponsoring 赞助页
     "static": {
         //"hasn’t sponsored any users yet.": "尚未赞助任何人。",
         "'s sponsorships": " 的赞助者",
@@ -29498,16 +29528,16 @@ I18N["zh-CN"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/spons
             [/Sponsoring/, "赞助"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["organizations/plan"] = {
+defineI18nPage(I18N["zh-CN"], "organizations/plan", () => ({
     "static": {
         "Pick a plan for your organization": "为您的组织选择计划",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看板公共部分
+defineI18nPage(I18N["zh-CN"], "repo-actions-merics-public", () => ({ // 仓库 - 洞察 - 操作看板公共部分
     "static": {
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository-insights-menu"]["static"],
@@ -29633,9 +29663,9 @@ I18N["zh-CN"]["repo-actions-merics-public"] = { // 仓库 - 洞察 - 操作看�
             return '范围：' + periodKey[period];
         }],
     ],
-};
+}));
 
-I18N["zh-CN"]["repository/actions/metrics/usage"] = {
+defineI18nPage(I18N["zh-CN"], "repository/actions/metrics/usage", () => ({
     "static": {
         ...I18N["zh-CN"]["repo-actions-merics-public"]["static"],
 
@@ -29653,9 +29683,9 @@ I18N["zh-CN"]["repository/actions/metrics/usage"] = {
             "Actions usage metrics": "Actions 使用情况",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/actions/metrics/performance"] = {
+defineI18nPage(I18N["zh-CN"], "repository/actions/metrics/performance", () => ({
     "static": {
         ...I18N["zh-CN"]["repo-actions-merics-public"]["static"],
 
@@ -29701,9 +29731,9 @@ I18N["zh-CN"]["repository/actions/metrics/performance"] = {
             "Actions performance metrics": "Actions 数据看板",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["copilot"] = {
+defineI18nPage(I18N["zh-CN"], "copilot", () => ({
     "static": {
         // 错误
             "Conversation failed to load": "加载失败",
@@ -30220,9 +30250,9 @@ I18N["zh-CN"]["copilot"] = {
             "Spaces · GitHub Copilot": "空间 · GitHub Copilot",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
+defineI18nPage(I18N["zh-CN"], "github-copilot/code-review-waitlist", () => ({
     "static": {
         "Copilot-powered code reviews waitlist": "Copilot 驱动的代码审查候补名单",
 
@@ -30239,9 +30269,9 @@ I18N["zh-CN"]["github-copilot/code-review-waitlist"] = {
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感谢！$1 已加入候补名单"],
     ],
-};
+}));
 
-I18N["zh-CN"]["spark"] = {
+defineI18nPage(I18N["zh-CN"], "spark", () => ({
     "static": {
         // spark https://github.com/spark
             "Dream it.": "梦想它。",
@@ -30427,16 +30457,16 @@ I18N["zh-CN"]["spark"] = {
         [/(\d+) rows? • (.+)/, "$1 行 • $2"],
         [/Delete \((\d+)\)/, "删除（$1）"],
     ],
-};
+}));
 
-I18N["zh-CN"]["sitemap"] = { // 网站地图页，仅匹配公共部分
+defineI18nPage(I18N["zh-CN"], "sitemap", () => ({ // 网站地图页，仅匹配公共部分
     "static": {
         ...I18N["zh-CN"]["homepage"]["static"],
     },
     "regexp":[],
-};
+}));
 
-I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
+defineI18nPage(I18N["zh-CN"], "education", () => ({ // 教育页面，申请学生包会用到
     "static": {
         ...I18N["zh-CN"]["homepage"]["static"],
         // 顶栏
@@ -30766,9 +30796,9 @@ I18N["zh-CN"]["education"] = { // 教育页面，申请学生包会用到
             "Events - GitHub Education": "事件 - GitHub 教育",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["mcp"] = {
+defineI18nPage(I18N["zh-CN"], "mcp", () => ({
     "static": {
         "Connect models to the real world": "连接模型至真实世界",
             "Servers and tools from the community that connect models to files, APIs, databases, and more.": "来自社区的服务器和工具，可以将模型连接到文件、API、数据库等。",
@@ -30794,9 +30824,9 @@ I18N["zh-CN"]["mcp"] = {
             "MCP Registry": "MCP 互联",
         },
     },
-};
+}));
 
-I18N["zh-CN"]["repository/agents"] = {
+defineI18nPage(I18N["zh-CN"], "repository/agents", () => ({
     "static": {
         // 介绍页面
         "Copilot Coding Agent handles routine tasks so you can focus on core work": "Copilot 编程智能体处理例行任务，让您专注于核心工作",
@@ -30887,4 +30917,4 @@ I18N["zh-CN"]["repository/agents"] = {
         ['p.Blankslate-Description', '将测试、依赖项升级、迁移和维护等工作交给智能体处理，节省您的时间。您可以通过 Copilot Chat、命令行、IDE 创建拉取请求，或直接将议题分配给 Copilot 来开始使用。'],
         ['.BannerDescription', '仅在付费计划中可用。试用 Copilot Pro，可免费 30 天。'],
     ],
-};
+}));
