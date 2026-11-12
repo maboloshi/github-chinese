@@ -31,6 +31,15 @@ function extractFunction(source, functionName) {
     assert.fail(`${functionName} body should be balanced`);
 }
 
+function extractConst(source, constName) {
+    const start = source.indexOf(`    const ${constName} = new Set([`);
+    assert.notEqual(start, -1, `${constName} should exist in the userscript`);
+
+    const end = source.indexOf('\n    ]);', start);
+    assert.notEqual(end, -1, `${constName} body should be balanced`);
+    return source.slice(start, end + '\n    ]);'.length);
+}
+
 function parseFixture(fileName) {
     const html = fs.readFileSync(path.join(fixtureDir, fileName), 'utf8');
     const metas = {};
@@ -96,6 +105,11 @@ function detectPageType(fileName, fixture, href) {
         },
     });
     loadI18N(context, 'locals.js');
+    vm.runInContext(
+        `${extractConst(source, 'RESERVED_ROOTS')}\n${extractFunction(source, 'isFallbackRepositoryPath')}`,
+        context,
+        { filename: fileName },
+    );
 
     return vm.runInContext(
         `(${extractFunction(source, 'detectPageType')})`,

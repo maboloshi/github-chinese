@@ -1,0 +1,107 @@
+'use strict';
+
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const test = require('node:test');
+const vm = require('node:vm');
+
+const { loadConfig } = require('./helpers/load-config.cjs');
+
+// 单管线契约（2026-11 重构）：
+// React GlobalNav 与 portal 不再由旁路引擎接管，改由通用 MutationObserver + 词库翻译。
+// 这些断言锁的是「旁路引擎不复活」，不是实现细节。
+
+const repoRoot = path.join(__dirname, '..');
+const mainScript = fs.readFileSync(path.join(repoRoot, 'main.user.js'), 'utf8');
+const config = loadConfig('locals.js');
+
+const removalSymbols = [
+    'setupReactGlobalNavTranslation',
+    'isReactGlobalNavPortalNode',
+    'translateReactGlobalNav',
+    'reactGlobalNavLabels',
+    'findStaticGlobalNavLabel',
+    'scheduleReactGlobalNavTranslation',
+];
+
+test('main.user.js 不再携带 React GlobalNav 旁路引擎', () => {
+    for (const symbol of removalSymbols) {
+        assert.doesNotMatch(
+            mainScript,
+            new RegExp(`\\b${symbol}\\b`),
+            `main.user.js 仍残留 ${symbol}`,
+        );
+    }
+});
+
+test('main.user.js 只有语言守卫与主遍历两个 MutationObserver', () => {
+    const observers = mainScript.match(/new MutationObserver\(/g) || [];
+    assert.equal(observers.length, 2, '除语言守卫外不应再有专属观察器');
+    assert.doesNotMatch(mainScript, /__primerPortalRoot__/);
+    assert.doesNotMatch(mainScript, /GlobalNav/);
+});
+
+test('locals.js 把 GlobalNav 与 portal 交还通用遍历', () => {
+    const mutationIgnored = config.ignoreMutationSelectorPage['*'];
+    const traversalIgnored = config.ignoreSelectorPage['*'];
+
+    for (const [name, list] of [
+        ['ignoreMutationSelectorPage', mutationIgnored],
+        ['ignoreSelectorPage', traversalIgnored],
+    ]) {
+        assert.ok(!list.includes('header.GlobalNav'), `${name} 仍在跳过 GlobalNav`);
+        assert.ok(!list.includes('#__primerPortalRoot__'), `${name} 仍在跳过 portal`);
+    }
+});
+
+test('失效的旧搜索选择器不再保留', () => {
+    const traversalIgnored = config.ignoreSelectorPage['*'];
+    const mutationIgnored = config.ignoreMutationSelectorPage['*'];
+
+    for (const [name, list] of [
+        ['ignoreMutationSelectorPage', mutationIgnored],
+        ['ignoreSelectorPage', traversalIgnored],
+    ]) {
+        assert.ok(!list.includes('qbsearch-input'), `${name} 不应再有 qbsearch-input`);
+        assert.ok(
+            !list.some(selector => selector.includes('Search-module__')),
+            `${name} 不应再有 Search-module__`,
+        );
+    }
+});
+
+test('locals.js 不再有独立的 GlobalNav 词表', () => {
+    assert.equal(config.reactGlobalNavLabels, undefined);
+    assert.doesNotMatch(
+        fs.readFileSync(path.join(repoRoot, 'locals.js'), 'utf8'),
+        /reactGlobalNavLabels\s*:/,
+    );
+});
+
+test('GlobalNav 文案并入公共词库，仍可被通用查表命中', () => {
+    const publicStatic = loadLocale('locals.js', 'zh-CN').public.static;
+
+    const expected = {
+        'Pull requests': '拉取请求',
+        'Wiki': 'Wiki',
+        'Billing': '账单',
+        'Following': '正在关注',
+        'Search suggestions': '搜索建议',
+        'Branches': '分支',
+        'Tags': '标签',
+        'Copilot': 'GitHub Copilot',
+        'Repository navigation': '仓库导航',
+    };
+
+    for (const [source, target] of Object.entries(expected)) {
+        assert.equal(publicStatic[source], target, `公共词库缺少 ${source}`);
+    }
+});
+
+function loadLocale(fileName, localeName) {
+    const filePath = path.join(repoRoot, fileName);
+    const context = vm.createContext({});
+    vm.runInContext(fs.readFileSync(filePath, 'utf8'), context, { filename: filePath });
+    return context.I18N[localeName];
+}
