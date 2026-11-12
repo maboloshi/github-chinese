@@ -129,6 +129,8 @@ test('routes org rules insights and actions rules insights to dedicated dictiona
 
     assert.equal(typeof zh['orgs/settings/rules/insights'], 'object');
     assert.equal(typeof zh['orgs/settings/actions/rules/insights'], 'object');
+    assert.ok(I18N.conf.characterDataPage.includes('orgs/settings/rules/insights'));
+    assert.ok(I18N.conf.characterDataPage.includes('orgs/settings/actions/rules/insights'));
 });
 
 test('translates rules insights filters and empty states', () => {
