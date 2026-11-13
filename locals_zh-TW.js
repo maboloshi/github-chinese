@@ -340,245 +340,38 @@ I18N.conf = {
 
 I18N["zh-TW"] = {};
 
-I18N["zh-TW"]["title"] = { // 標題翻譯
-    "static": { // 靜態翻譯
-        "Sign up to GitHub · GitHub": "註冊 · GitHub",
-        "Sign in to GitHub · GitHub": "登入 GitHub · GitHub",
-        "Join GitHub · GitHub": "加入 GitHub · GitHub",
-        "Forgot your password? · GitHub": "忘記您的密碼了嗎？· GitHub",
-        "Forgot your password?": "忘記您的密碼了嗎？",
-        "GitHub · Where software is built": "GitHub · 軟體構建的地方",
-        "Create a New Repository": "新建儲存庫",
-        "Import a Repository": "導入儲存庫",
-        "New Project": "創建專案",
-        "Your Repositories": "我的儲存庫",
-        "Your Projects": "我的專案",
-        "Your Packages": "我的軟件包",
-        "Your Stars": "我的星號頁面",
-        "Your profile": "個人資料",
-        "Your Achievements": "我的成就",
-        "Your Followers": "我的追蹤者",
-        "Who You’re Following": "我追蹤的人",
-        "Account settings": "帳戶設置",
-        "Appearance": "外觀",
-        "Accessibility": "無障礙",
-        "Notification settings": "通知設置",
-        "Billing": "帳單",
-        "Email settings": "信箱設置",
-        "Account security": "帳戶安全",
-        "SSH and GPG keys": "SSH 與 GPG 金鑰",
-        "Credentials": "憑證",
-        "Organizations": "組織",
-        //"Blocked users": "拉黑用戶",
-        "Temporary interaction limits": "臨時互動限制",
-        "Code review limits": "程式碼審查限制",
-        "Repositorys": "儲存庫",
-        "Deleted Packages": "刪除的軟件包",
-        "Pages": "GitHub Pages",
-        "Saved replies": "快捷回覆",
-        "Security & analysis": "安全與分析",
-        "Installed GitHub Apps": "已安裝的 GitHub 應用",
-        "Issue search results": "議題搜尋結果",
-        "Scheduled reminders": "定時提醒",
-        "Security log": "安全日誌",
-        "Sponsorship Log": "贊助日誌",
-        "GitHub Apps": "GitHub 應用",
-        "Developer applications": "開發者應用",
-        "Personal Access Tokens": "個人訪問令牌",
-        "Register new GitHub App": "註冊新 GitHub 應用",
-        "New OAuth Application": "新 OAuth 應用",
-        "Create a new Gist": "創建新程式碼片段",
-        "Discover gists": "探索程式碼片段",
-        "Enable two-factor authentication": "啟用雙因素身份驗證",
-        "Manage two-factor authentication": "管理雙因素身份驗證",
-        "Options": "儲存庫 · 選項",
-        "Confirm access": "授權訪問",
-        "General": "常規",
-        "Manage access": "訪問管理",
-        "Branches": "分支",
-        "Tags": "標籤",
-        "Webhooks": "Web 鉤子",
-        "Environments": "環境",
-        "Security & analysis": "安全性與分析",
-        "Deploy keys": "部署金鑰",
-        "Add deploy key": "新增部署金鑰",
-        "Actions secrets": "Actions 機密",
-        "Dependabot secrets": "Dependabot 機密",
-        "Configure email notifications": "配置郵件通知",
-        "Community Standards": "社區準則",
-        "General Organization Settings": "常規組織設置",
-        "Member privileges": "成員權限",
-        "Teams": "團隊",
-        "Trending repositories on GitHub today": "今日熱門儲存庫",
-        "Trending repositories on GitHub this week": "本週熱門儲存庫",
-        "Trending repositories on GitHub this month": "本月熱門儲存庫",
-        "Repository defaults": "儲存庫預設值",
-        "Repository search results": "儲存庫搜尋結果",
-        "Runners": "執行器",
-        "Runner Groups": "執行器組",
-        "Packages": "軟件包",
-        "Package": "軟件包",
-        "Payment Information": "支付訊息",
-        "Security": "安全",
-        "Verified & approved domains": "經驗證和批准的網域",
-        "Add a Pages verified domain": "新增一個經驗證的 GitHub Pages 網域",
-        "Third-party application access policy": "第三方應用訪問策略",
-        "Audit log": "審計日誌",
-        "Deleted Repositories": "已刪除的儲存庫",
-        "GitHub Publisher Verification": "GitHub 發布者驗證",
-        "Notifications": "通知",
-        "Confirm your account recovery settings": "確認您的帳戶恢復設置",
-        "Your stars": "我的星號",
-        "Your starred repositories": "我的星號儲存庫",
-        "Your starred topics": "我的星號主題",
-        "Register for the GitHub Developer Program": "註冊 GitHub 開發者計劃",
-        "Codespaces": "程式碼空間",
-        "Codespace Templates": "程式碼空間模版",
-        "Create new codespace": "創建程式碼空間",
-        "Error": "錯誤",
-        "Discover gists · GitHub": "探索程式碼片段 · GitHub",
-        "Explore GitHub Sponsors": "探索 GitHub 贊助者",
-        "Actions Usage Metrics": "Actions 使用情況",
-        "Actions usage metrics": "Actions 使用情況",
-        "Fine-grained Personal Access Tokens": "精細化的個人訪問令牌",
-        "Import repository": "導入儲存庫",
-        "Explore GitHub": "探索 GitHub",
-        //"Rate limit · GitHub": "速率限制 · GitHub",
-        //"GitHub: Let’s build from here · GitHub": "GitHub: 讓我們從這裡開始",
-        "GitHub · Build and ship software on a single, collaborative platform · GitHub": "GitHub · 在單一協作平臺上構建和發布軟體",
-        "GitHub · Build and ship software on a single, collaborative platform": "GitHub · 在單一協作平臺上構建和發布軟體",
-        "Topics on GitHub · GitHub": "GitHub 上的主題",
-        "Code security": "程式碼安全",
-        "Deploy keys": "部署金鑰",
-        "Actions Performance Metrics": "Actions 資料看板",
-        "Actions performance metrics": "Actions 資料看板",
-        "GitHub Sitemap · GitHub": "GitHub 網站地圖",
-        "Code search results": "程式碼搜尋結果",
-        "Enterprises": "企業",
-        "Blocked users": "黑名單",
-        "New conversation · GitHub Copilot": "新聊天 · GitHub Copilot",
-        "Models · GitHub Marketplace": "模型 · GitHub 市場",
-        "GitHub Education": "GitHub 教育",
-        "GitHub Student Developer Pack - GitHub Education": "學生開發包 - GitHub 教育",
-        "Get your GitHub benefits - GitHub Education": "獲取福利 - GitHub 教育",
-        "Signup to GitHub Copilot": "註冊 GitHub Copilot",
-        "Device Activation": "設備激活",
-        "Spending Limit": "支付限額",
-        "Autolink references": "自動連結引用",
-        "Add autolink reference": "新增自動連結引用",
-        "Billing Overview": "帳單概覽",
-        "Billing Usage": "計費用量",
-        "Budgets": "預算",
-        "Code Security": "程式碼安全性",
-        "New Fine-grained Personal Access Token": "新建精細化個人訪問令牌",
-        "Coding agent": "編程AI 代理",
-        "Get Started With GitHub Discussions": "開始使用 GitHub 討論",
-            "SSH and GPG keys": "SSH 與 GPG 金鑰",
-        "MCP Registry": "MCP 互聯",
-        "User repositories": "用戶儲存庫",
-    },
-    "regexp": [ // 正則翻譯
-        [/Authorized OAuth Apps/, "授權的 OAuth 應用"],
-        [/Authorized GitHub Apps/, "授權的 GitHub 應用"],
-        [/Installed GitHub Apps/, "已安裝的 GitHub 應用"],
-        [/Accessibility/, "無障礙"],
-        [/Environments/, "環境"],
-        [/New repository/, "新儲存庫"],
-        [/([^ ]+) \((.+)\) \/ Repositories/, "$1 / 儲存庫"], // github 帳戶名/ 成就
-        [/([^ ]+) \((.+)\) \/ Starred/, "$1($2) / 星號"], // github 帳戶名（暱稱）/ 星號
-        [/Repositories/, "儲存庫"],
-        [/Starred/, "星號頁面"],
-        [/starred repositories/, "星號儲存庫"],
-        [/starred topics/, "星號主題"],
-        [/starred/, "星號"],
-        [/Commits · ([^ ]+)/, "提交 · $1"],
-        [/New Issue/, "新建議題"],
-        [/Issues?/, "議題"],
-        [/Pull (R|r)equests?/, "合併請求"],
-        [/Actions secrets · ([^ ]+)/, "Actions 機密 · $1"],
-        [/Actions settings · ([^ ]+)/, "Actions 設置 · $1"],
-        [/Actions/, "Actions"],
-        [/Projects/, "專案"],
-        [/Packages?/, "軟件包"],
-        [/Settings · Rulesets/, "設置 · 規則集"],
-        [/Security Overview/, "安全概述"],
-        [/Security Policy/, "安全政策"],
-        [/Security Advisories/, "安全公告"],
-        [/Dependabot alerts/, "Dependabot 警報"],
-        [/Pulse/, "統計"],
-        //[/Contributors to/, "貢獻者 ·"],
-        [/Dashboard/, "儀表板"],
-        [/Deployments/, "部署"],
-        [/Community/, "社區"],
-        [/Traffic/, "流量"],
-        [/Commit Activity/, "提交活動"],
-        [/Code frequency/, "程式碼頻率"],
-        [/Created/, "已創建"],
-        [/Dependencies/, "依賴項"],
-        [/Network Dependents/, "網路依賴者"],
-        [/Network Graph/, "網路圖"],
-        [/Revisions/,"修訂"],
-        [/GitHub Skills Quickstart Guide/, "GitHub 技能快速入門指南"],
-        [/Skills/, "技能"],
-        [/Sponsoring/, "捐助"],
-        [/Stargazers/, "追星者"],
-        [/Forks?/, "復刻"],
-        [/Settings · Tags · ([^ ]+)/, "設置 · 標籤 · $1"],
-        [/Tags?/, "標籤"],
-        [/Edit release/, "編輯發行版本"],
-        [/Releases?/, "發行版本"],
-        [/Draft Advisory/, "安全公告草案"],
-        [/Code scanning alerts/, "程式碼掃描警報"],
-        [/Repository topics/, "儲存庫主題"],
-        [/Scheduled reminders/, "定時提醒"],
-        [/Sponsorship Log/, "贊助日誌"],
-        [/Sponsor @([^ ]+) on GitHub Sponsors/, "在 GitHub 上贊助 $1"],
-        [/OAuth applications/, "OAuth 應用"],
-        [/People · Pending Collaborators/, "成員 · 未決協作者"],
-        [/Members · People · ([^ ]+)/, "成員 · $1"],
-        [/People/, "成員"],
-        [/Outside collaborators/, "外部協作者"],
-        [/New Discussion/, "新討論"],
-        [/Discussions/, "討論"],
-        [/Workflow runs/, "工作流執行"],
-        [/Webhooks · Settings/, "Web 鉤子 · 設置"],
-        [/Add a code of conduct to/, "新增程式碼行為準則到"],
-        [/Caches?/, "快取"],
-        [/Runners?/, "執行器"],
-        [/Attestations?/, "證書"],
-        [/Activit(y|ies)/, "活動"],
-        [/Rate limit/, "速率限制"],
-        [/Comparing/, "比較"],
-        [/History for ([^ ]+)/, "$1 的歷史"],
-        [/Compare plans for ([^ ]+)/, "為 $1 比較計劃"],
-        [/([^ ]+)’s gists/, "$1 的程式碼片段"],
-        [/Secret scanning · ([^ ]+)/, "機密掃描 · $1"],
-        [/Dependabot secrets · ([^ ]+)/, "Dependabot 機密 · $1"],
-        [/Contributors to ([^ ]+)/, "貢獻者 · $1"],
-        [/([^ ]+) repositories^/, "$1 的儲存庫"],
-        [/Create new page · ([^ ]+) Wiki/, "新建頁面 · $1 的 Wiki"],
-        [/Settings · Branches · ([^ ]+)/, "設置 · 分支 · $1"],
-        [/Webhooks · Settings · ([^ ]+)/, "Web 鉤子  · 設置 · $1"],
-        [/Environments · ([^ ]+)/, "環境 · $1"],
-        [/Branches · ([^ ]+)/, "分支 · $1"],
-        [/([^ ]+) · GitHub Topics/, "$1 · GitHub 主題"],
-        [/New release · ([^ ]+)/, "新發行版本 · $1"],
-        [/Codespaces secrets · ([^ ]+)/, "程式碼空間機密 · $1"],
-        [/Dependabot secrets · ([^ ]+)/, "Dependabot 機密 · $1"],
-        [/Invitation to join ([^ ]+)/, "加入 $1 邀請"],
-        [/Security Managers for · ([^ ]+)/, "安全管理員 · $1"],
-        [/New File at \/ · ([^ ]+)/, "新建文件 · $1"],
-        [/Blaming ([^ ]+) at ([^ ]+) · ([^ ]+)/, "追溯 $1（$2） · $3"],
-        [/Deleting ([^ ]+)\/([^ ]+) at ([^ ]+) · ([^ ]+)/, "刪除 $3/$2 · $4"], // 簡化部分內容
-        [/([^ ]+)'s list \/ (.+)/, "$1 的列表 / $2"],
-        [/([^ ]+) \((.+)\) \/ Achievements/, "$1($2) / 成就"], // github 帳戶名（暱稱）/ 成就
-        [/Teams · ([^ ]+)/, "團隊 · $1"],
-        [/Create new team · ([^ ]+)/, "新建團隊 · $1"],
-        ["_regexp_end", "end"]
-    ],
-};
+/*
+ * 頁面詞典按需構建：腳本求值時只登記 builder，
+ * 首次訪問某個頁面類型時才展開它（以及它繼承的公共塊），
+ * 避免每次頁面加載都把兩百多個頁面全部展開成對象。
+ */
+function defineI18nPage(locale, name, build) {
+    let value;
+    let ready = false;
+    Object.defineProperty(locale, name, {
+        enumerable: true,
+        configurable: true,
+        get() {
+            if (!ready) {
+                value = build();
+                ready = true;
+            }
+            return value;
+        },
+    });
+}
 
-I18N["zh-TW"]["public"] = { // 公共區域翻譯
+function defineI18nAlias(locale, name, source) {
+    Object.defineProperty(locale, name, {
+        enumerable: true,
+        configurable: true,
+        get() {
+            return locale[source];
+        },
+    });
+}
+
+defineI18nPage(I18N["zh-TW"], "public", () => ({ // 公共區域翻譯
     "static": { // 靜態翻譯
         // 錯誤頁面
             "Find code, projects, and people on GitHub:": "在 GitHub 上查找程式碼、專案和人員：",
@@ -2220,9 +2013,9 @@ I18N["zh-TW"]["public"] = { // 公共區域翻譯
         },
         "regexp": [],
     },
-};
+}));
 
-I18N["zh-TW"]["orgs-public"] = { // 組織公共部分
+defineI18nPage(I18N["zh-TW"], "orgs-public", () => ({ // 組織公共部分
     "static": { // 靜態翻譯
         "Because of that, your organization is hidden from the public. If you believe this is a mistake,": "因此，您的組織已對公眾隱藏。如果您認為這是一個錯誤，",
         "contact support": "聯繫支持",
@@ -2240,9 +2033,9 @@ I18N["zh-TW"]["orgs-public"] = { // 組織公共部分
         }],
         [/You are now a member of ([^ ]+)!/, "您現在是 $1 的成員了！"],
     ],
-};
+}));
 
-I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組織）
+defineI18nPage(I18N["zh-TW"], "page-dashboard", () => ({ // 已登入的首頁 - 儀表板（含組織）
     "static": { // 靜態翻譯
         // 頂部 GPT 聊天視窗
         "Ask anything or type @ to add context": "詢問任何問題或輸入 @ 來新增上下文",
@@ -2708,12 +2501,12 @@ I18N["zh-TW"]["page-dashboard"] = { // 已登入的首頁 - 儀表板（含組�
             "Feed": "動態",
         },
     },
-};
-I18N["zh-TW"]["dashboard"] = I18N["zh-TW"]["page-dashboard"];
-I18N["zh-TW"]["feed"] = I18N["zh-TW"]["page-dashboard"];
-I18N["zh-TW"]["orgs/dashboard"] = I18N["zh-TW"]["page-dashboard"];
+}));
+defineI18nAlias(I18N["zh-TW"], "dashboard", "page-dashboard");
+defineI18nAlias(I18N["zh-TW"], "feed", "page-dashboard");
+defineI18nAlias(I18N["zh-TW"], "orgs/dashboard", "page-dashboard");
 
-I18N["zh-TW"]["page-profile-public"] = { // 個人首頁（含組織）
+defineI18nPage(I18N["zh-TW"], "page-profile-public", () => ({ // 個人首頁（含組織）
     "static": { // 靜態翻譯
         // 左側用戶訊息欄
             "Change your avatar": "修改頭像",
@@ -2902,12 +2695,12 @@ I18N["zh-TW"]["page-profile-public"] = { // 個人首頁（含組織）
             [/Following/, "追蹤"],
         ],
     },
-};
-I18N["zh-TW"]["page-profile/achievements"] = I18N["zh-TW"]["page-profile-public"]; // ?tab=achievements
-I18N["zh-TW"]["page-profile/followers"] = I18N["zh-TW"]["page-profile-public"]; // ?tab=followers
-I18N["zh-TW"]["page-profile/following"] = I18N["zh-TW"]["page-profile-public"]; // ?tab=following
+}));
+defineI18nAlias(I18N["zh-TW"], "page-profile/achievements", "page-profile-public"); // ?tab=achievements
+defineI18nAlias(I18N["zh-TW"], "page-profile/followers", "page-profile-public"); // ?tab=followers
+defineI18nAlias(I18N["zh-TW"], "page-profile/following", "page-profile-public"); // ?tab=following
 
-I18N["zh-TW"]["page-profile"] = { // 個人首頁
+defineI18nPage(I18N["zh-TW"], "page-profile", () => ({ // 個人首頁
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3090,10 +2883,10 @@ I18N["zh-TW"]["page-profile"] = { // 個人首頁
         [/coauthored commits on merged pull requests./, "與他人共同提交了合併的合併請求。"], // Pair Extraordinaire
         [/(\@[^ ]+) contributed code to several repositories in the/, "$1 為多個儲存庫貢獻了程式碼，在"], // 北極程式碼庫貢獻者
     ],
-};
-I18N["zh-TW"]["page-profile/overview"] = I18N["zh-TW"]["page-profile"];
+}));
+defineI18nAlias(I18N["zh-TW"], "page-profile/overview", "page-profile");
 
-I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 儲存庫標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/repositories", () => ({ // 個人首頁 - 儲存庫標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3280,9 +3073,9 @@ I18N["zh-TW"]["page-profile/repositories"] = { // 個人首頁 - 儲存庫標籤
             [/(R|r)epositories/, "儲存庫"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["page-profile/projects"] = { // 個人首頁- 專案標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/projects", () => ({ // 個人首頁- 專案標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3449,9 +3242,9 @@ I18N["zh-TW"]["page-profile/projects"] = { // 個人首頁- 專案標籤卡
             [/Projects/, "專案"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["page-profile/sponsoring"] = { // 個人首頁- 贊助標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/sponsoring", () => ({ // 個人首頁- 贊助標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
             "has sponsored": "曾贊助",
@@ -3481,9 +3274,9 @@ I18N["zh-TW"]["page-profile/sponsoring"] = { // 個人首頁- 贊助標籤卡
             [/Sponsoring/, "贊助"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["page-profile/packages"] = { // 個人首頁 - 軟件包標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/packages", () => ({ // 個人首頁 - 軟件包標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3536,9 +3329,9 @@ I18N["zh-TW"]["page-profile/packages"] = { // 個人首頁 - 軟件包標籤卡
             [/Packages/, "軟件包"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["page-profile/sponsors"] = { // 個人首頁 - 贊助標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/sponsors", () => ({ // 個人首頁 - 贊助標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3551,9 +3344,9 @@ I18N["zh-TW"]["page-profile/sponsors"] = { // 個人首頁 - 贊助標籤卡
         [/(\d+) repositor(y|ies)/, "$1 個儲存庫"],
         [/(\d+) members?/, "$1 成員"], // 組織 浮動訊息卡
     ],
-};
+}));
 
-I18N["zh-TW"]["page-profile/stars"] = { // 個人首頁 - 星號標籤卡
+defineI18nPage(I18N["zh-TW"], "page-profile/stars", () => ({ // 個人首頁 - 星號標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["page-profile-public"]["static"],
 
@@ -3674,9 +3467,9 @@ I18N["zh-TW"]["page-profile/stars"] = { // 個人首頁 - 星號標籤卡
             [/'s list/, " 的清單"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["confirm-access"] = { // “授權訪問” 對話框
+defineI18nPage(I18N["zh-TW"], "confirm-access", () => ({ // “授權訪問” 對話框
     "static": { // 靜態翻譯
         // 授權訪問 sudo 模式身份驗證
             "Confirm access": "授權訪問",
@@ -3716,9 +3509,9 @@ I18N["zh-TW"]["confirm-access"] = { // “授權訪問” 對話框
 
             "Unable to verify with your passkey?": "無法驗證您的通行金鑰？",
     },
-};
+}));
 
-I18N["zh-TW"]["payment-module"] = { // 通用帳單及支付訊息模塊
+defineI18nPage(I18N["zh-TW"], "payment-module", () => ({ // 通用帳單及支付訊息模塊
     "static": { // 靜態翻譯
         "Account": "帳戶",
             "Personal account": "個人帳戶",
@@ -3824,9 +3617,9 @@ I18N["zh-TW"]["payment-module"] = { // 通用帳單及支付訊息模塊
                 "504 Gateway Time-out": "504 網關超時",
                 "We may place a temporary hold on your payment method to verify its validity. This is not a charge, and it will be released automatically after verification.": "我們可能會暫時凍結您的支付方式以驗證其有效性。這不是收費，驗證後將會自動解除。",
     },
-};
+}));
 
-I18N["zh-TW"]["settings-menu"] = { // 設置 - 公共部分
+defineI18nPage(I18N["zh-TW"], "settings-menu", () => ({ // 設置 - 公共部分
     "static": { // 靜態翻譯
         "Settings": "設置", // 新版全局導航
         "User settings": "用戶設置",
@@ -3896,9 +3689,9 @@ I18N["zh-TW"]["settings-menu"] = { // 設置 - 公共部分
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs-settings-menu"] = { // 組織設置 公共部分
+defineI18nPage(I18N["zh-TW"], "orgs-settings-menu", () => ({ // 組織設置 公共部分
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
 
@@ -3997,9 +3790,9 @@ I18N["zh-TW"]["orgs-settings-menu"] = { // 組織設置 公共部分
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/profile"] = { // 設置 - 個人資料
+defineI18nPage(I18N["zh-TW"], "settings/profile", () => ({ // 設置 - 個人資料
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -4128,10 +3921,10 @@ I18N["zh-TW"]["settings/profile"] = { // 設置 - 個人資料
             "Your profile": "個人資料",
         },
     },
-};
-I18N["zh-TW"]["settings"] = I18N["zh-TW"]["settings/profile"];
+}));
+defineI18nAlias(I18N["zh-TW"], "settings", "settings/profile");
 
-I18N["zh-TW"]["settings/admin"] = { // 設置 - 帳戶
+defineI18nPage(I18N["zh-TW"], "settings/admin", () => ({ // 設置 - 帳戶
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -4253,9 +4046,9 @@ I18N["zh-TW"]["settings/admin"] = { // 設置 - 帳戶
             "Account settings": "帳戶設置",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["succession/invitation"] = { // 帳戶繼任者邀請  users/<邀請者的 user-name>/succession/invitation
+defineI18nPage(I18N["zh-TW"], "succession/invitation", () => ({ // 帳戶繼任者邀請  users/<邀請者的 user-name>/succession/invitation
     "static": { // 靜態翻譯
         // 受邀者
         "invited you to be their account successor": "邀請您成為其帳戶繼任者",
@@ -4278,9 +4071,9 @@ I18N["zh-TW"]["succession/invitation"] = { // 帳戶繼任者邀請  users/<邀�
         [/As an account successor, you would be able to manage ([^ ]+)'s repositories if they're not able to./, "作為帳戶繼任者，在 $1 再也無法管理其儲存庫時，您將能夠管理其儲存庫。"],
         [/By clicking \"Accept invitation\" below, I acknowledge that I agree to serve as the successor for ([^ ]+), in such ways authorized by their successor request. I agree to abide by GitHub's/, "通過點擊下面的 “接受邀請”，我確認我同意按照其繼任者要求所授權的方式擔任 $1 的繼任者。我同意在使用和維護其帳戶內容時遵守 GitHub 的"],
     ]
-};
+}));
 
-I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
+defineI18nPage(I18N["zh-TW"], "settings/appearance", () => ({ // 設置 - 外觀
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -4341,9 +4134,9 @@ I18N["zh-TW"]["settings/appearance"] = { // 設置 - 外觀
             "Appearance": "外觀",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/accessibility"] = { // 設置 - 無障礙
+defineI18nPage(I18N["zh-TW"], "settings/accessibility", () => ({ // 設置 - 無障礙
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -4429,9 +4222,9 @@ I18N["zh-TW"]["settings/accessibility"] = { // 設置 - 無障礙
             "Accessibility": "無障礙",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
+defineI18nPage(I18N["zh-TW"], "settings/notifications", () => ({ // 設置 - 通知
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         "Email": "電子郵件",
@@ -4535,9 +4328,9 @@ I18N["zh-TW"]["settings/notifications"] = { // 設置 - 通知
             "Notification Settings": "通知設置",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
+defineI18nPage(I18N["zh-TW"], "settings/billing", () => ({ // 設置 - 帳單和計劃
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
@@ -5465,14 +5258,14 @@ I18N["zh-TW"]["settings/billing"] = { // 設置 - 帳單和計劃
             "Payment history": "支付歷史",
         },
     },
-};
-I18N["zh-TW"]["account/billing/history"] = I18N["zh-TW"]["settings/billing"];
-I18N["zh-TW"]["orgs/settings/billing"] = I18N["zh-TW"]["settings/billing"];
-I18N["zh-TW"]["orgs/billing_managers/new"] = I18N["zh-TW"]["settings/billing"];
-I18N["zh-TW"]["orgs/billing/history"] = I18N["zh-TW"]["settings/billing"];
-I18N["zh-TW"]["orgs/billing/plans"] = I18N["zh-TW"]["settings/billing"];
+}));
+defineI18nAlias(I18N["zh-TW"], "account/billing/history", "settings/billing");
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/billing", "settings/billing");
+defineI18nAlias(I18N["zh-TW"], "orgs/billing_managers/new", "settings/billing");
+defineI18nAlias(I18N["zh-TW"], "orgs/billing/history", "settings/billing");
+defineI18nAlias(I18N["zh-TW"], "orgs/billing/plans", "settings/billing");
 
-I18N["zh-TW"]["settings/education/benefits"] = {  // 設置 - 帳單和計劃（新）- 教育福利
+defineI18nPage(I18N["zh-TW"], "settings/education/benefits", () => ({  // 設置 - 帳單和計劃（新）- 教育福利
     "static": {
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
@@ -5568,9 +5361,9 @@ I18N["zh-TW"]["settings/education/benefits"] = {  // 設置 - 帳單和計劃（
         }],
         [/Expires in almost (\d+) years?/, "有效期大約 $1 年"],
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子信箱
+defineI18nPage(I18N["zh-TW"], "settings/emails", () => ({ // 設置 - 電子信箱
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         "Connected to Google": "已關聯 Google",
@@ -5665,9 +5458,9 @@ I18N["zh-TW"]["settings/emails"] = { // 設置 - 電子信箱
             "Email settings": "信箱設置",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/security"] = { // 設置 - 密碼和身份身份驗證
+defineI18nPage(I18N["zh-TW"], "settings/security", () => ({ // 設置 - 密碼和身份身份驗證
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["confirm-access"]["static"],
@@ -5860,9 +5653,9 @@ I18N["zh-TW"]["settings/security"] = { // 設置 - 密碼和身份身份驗證
             "Account security": "帳戶安全",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/auth"] = {
+defineI18nPage(I18N["zh-TW"], "settings/auth", () => ({
     "static": { // 靜態翻譯
 
         // 查看恢復碼 https://github.com/settings/auth/recovery-codes
@@ -5891,9 +5684,9 @@ I18N["zh-TW"]["settings/auth"] = {
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/sessions"] = {
+defineI18nPage(I18N["zh-TW"], "settings/sessions", () => ({
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -5938,9 +5731,9 @@ I18N["zh-TW"]["settings/sessions"] = {
             "Sessions": "會話",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/credentials"] = { // 設置 - 憑證
+defineI18nPage(I18N["zh-TW"], "settings/credentials", () => ({ // 設置 - 憑證
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -5970,9 +5763,9 @@ I18N["zh-TW"]["settings/credentials"] = { // 設置 - 憑證
             "Credentials": "憑證",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/keys"] = { // 設置 - SSH 與 GPG 公鑰
+defineI18nPage(I18N["zh-TW"], "settings/keys", () => ({ // 設置 - SSH 與 GPG 公鑰
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6043,9 +5836,9 @@ I18N["zh-TW"]["settings/keys"] = { // 設置 - SSH 與 GPG 公鑰
             "SSH and GPG keys": "SSH 與 GPG 金鑰",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/ssh"] = { // 設置 - SSH 與 GPG 公鑰 - 新增 SSH 公鑰
+defineI18nPage(I18N["zh-TW"], "settings/ssh", () => ({ // 設置 - SSH 與 GPG 公鑰 - 新增 SSH 公鑰
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6061,9 +5854,9 @@ I18N["zh-TW"]["settings/ssh"] = { // 設置 - SSH 與 GPG 公鑰 - 新增 SSH �
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/gpg"] = { // 設置 - SSH 與 GPG 公鑰 - 新增 GPG 公鑰
+defineI18nPage(I18N["zh-TW"], "settings/gpg", () => ({ // 設置 - SSH 與 GPG 公鑰 - 新增 GPG 公鑰
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6076,9 +5869,9 @@ I18N["zh-TW"]["settings/gpg"] = { // 設置 - SSH 與 GPG 公鑰 - 新增 GPG �
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
+defineI18nPage(I18N["zh-TW"], "settings/organizations", () => ({ // 設置 - 組織
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6124,9 +5917,9 @@ I18N["zh-TW"]["settings/organizations"] = { // 設置 - 組織
             "Organizations": "組織",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/enterprises"] = { // 設置 - 企業版
+defineI18nPage(I18N["zh-TW"], "settings/enterprises", () => ({ // 設置 - 企業版
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6146,9 +5939,9 @@ I18N["zh-TW"]["settings/enterprises"] = { // 設置 - 企業版
             "Enterprises": "企業",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/blocked_users"] = { // 設置 - 黑名單
+defineI18nPage(I18N["zh-TW"], "settings/blocked_users", () => ({ // 設置 - 黑名單
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6209,9 +6002,9 @@ I18N["zh-TW"]["settings/blocked_users"] = { // 設置 - 黑名單
             "Blocked users": "黑名單",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/interaction_limits"] = { // 設置 - 互動限制
+defineI18nPage(I18N["zh-TW"], "settings/interaction_limits", () => ({ // 設置 - 互動限制
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6251,9 +6044,9 @@ I18N["zh-TW"]["settings/interaction_limits"] = { // 設置 - 互動限制
             "Temporary interaction limits": "臨時互動限制",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/code_review_limits"] = { // 設置 - 程式碼審查限制
+defineI18nPage(I18N["zh-TW"], "settings/code_review_limits", () => ({ // 設置 - 程式碼審查限制
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6281,9 +6074,9 @@ I18N["zh-TW"]["settings/code_review_limits"] = { // 設置 - 程式碼審查限�
             "Code review limits": "程式碼審查限制",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/repositories"] = { // 設置 - 儲存庫
+defineI18nPage(I18N["zh-TW"], "settings/repositories", () => ({ // 設置 - 儲存庫
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6319,9 +6112,9 @@ I18N["zh-TW"]["settings/repositories"] = { // 設置 - 儲存庫
             "Repositorys": "儲存庫",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/deleted_repositories"] = { // 設置 - 儲存庫 - 刪除的儲存庫
+defineI18nPage(I18N["zh-TW"], "settings/deleted_repositories", () => ({ // 設置 - 儲存庫 - 刪除的儲存庫
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6350,9 +6143,9 @@ I18N["zh-TW"]["settings/deleted_repositories"] = { // 設置 - 儲存庫 - 刪�
         [/by/, "由"], // 刪除的儲存庫
         [/Are you sure you want to restore ([^ ]+)?/, "您確定要恢復 $1 嗎？"], // 刪除的儲存庫
     ],
-};
+}));
 
-I18N["zh-TW"]["settings/codespaces"] = { // 設置 - 程式碼空間
+defineI18nPage(I18N["zh-TW"], "settings/codespaces", () => ({ // 設置 - 程式碼空間
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6500,9 +6293,9 @@ I18N["zh-TW"]["settings/codespaces"] = { // 設置 - 程式碼空間
             "Codespaces": "程式碼空間",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/models"] = {
+defineI18nPage(I18N["zh-TW"], "settings/models", () => ({
     "static": {
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
@@ -6526,9 +6319,9 @@ I18N["zh-TW"]["settings/models"] = {
             "Models": "模型",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/packages"] = { // 設置 - 軟件包
+defineI18nPage(I18N["zh-TW"], "settings/packages", () => ({ // 設置 - 軟件包
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置
@@ -6582,10 +6375,10 @@ I18N["zh-TW"]["settings/packages"] = { // 設置 - 軟件包
             "Packages": "軟件包",
         },
     },
-};
-I18N["zh-TW"]["orgs/settings/packages"] = I18N["zh-TW"]["settings/packages"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/packages", "settings/packages");
 
-I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
+defineI18nPage(I18N["zh-TW"], "settings/copilot", () => ({ // 設置 - GitHub Copilot
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -6865,9 +6658,9 @@ I18N["zh-TW"]["settings/copilot"] = { // 設置 - GitHub Copilot
             "Copilot cloud agent": "Copilot 雲端AI 代理",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/pages"] = { // 設置 - GitHub Pages
+defineI18nPage(I18N["zh-TW"], "settings/pages", () => ({ // 設置 - GitHub Pages
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"], // 組織設置選單
@@ -6910,10 +6703,10 @@ I18N["zh-TW"]["settings/pages"] = { // 設置 - GitHub Pages
         [/Successfully verified/, "已成功驗證"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["orgs/settings/pages"] = I18N["zh-TW"]["settings/pages"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/pages", "settings/pages");
 
-I18N["zh-TW"]["settings/replies"] = { // 設置 - 快捷回覆
+defineI18nPage(I18N["zh-TW"], "settings/replies", () => ({ // 設置 - 快捷回覆
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         "Loading preview…": "載入預覽…",
@@ -6941,9 +6734,9 @@ I18N["zh-TW"]["settings/replies"] = { // 設置 - 快捷回覆
             "Saved replies": "快捷回覆",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/security_analysis"] = { // 設置 - 程式碼安全性與分析
+defineI18nPage(I18N["zh-TW"], "settings/security_analysis", () => ({ // 設置 - 程式碼安全性與分析
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -7103,9 +6896,9 @@ I18N["zh-TW"]["settings/security_analysis"] = { // 設置 - 程式碼安全性�
             "Security & analysis": "安全與分析",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 應用
+defineI18nPage(I18N["zh-TW"], "settings/installations", () => ({ // 設置 - 應用/安裝的 GitHub 應用
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
@@ -7327,14 +7120,14 @@ I18N["zh-TW"]["settings/installations"] = { // 設置 - 應用/安裝的 GitHub 
             "Authorized OAuth Apps": "授權的 OAuth 應用",
         },
     },
-};
-I18N["zh-TW"]["settings/apps/authorizations"] = I18N["zh-TW"]["settings/installations"];
-I18N["zh-TW"]["settings/applications"] = I18N["zh-TW"]["settings/installations"];
-I18N["zh-TW"]["settings/connections/applications"] = I18N["zh-TW"]["settings/installations"];
-I18N["zh-TW"]["orgs/settings/installations"] = I18N["zh-TW"]["settings/installations"];
-I18N["zh-TW"]["orgs/policies/applications"] = I18N["zh-TW"]["settings/installations"];
+}));
+defineI18nAlias(I18N["zh-TW"], "settings/apps/authorizations", "settings/installations");
+defineI18nAlias(I18N["zh-TW"], "settings/applications", "settings/installations");
+defineI18nAlias(I18N["zh-TW"], "settings/connections/applications", "settings/installations");
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/installations", "settings/installations");
+defineI18nAlias(I18N["zh-TW"], "orgs/policies/applications", "settings/installations");
 
-I18N["zh-TW"]["settings/reminders"] = { // 設置 - 定時提醒
+defineI18nPage(I18N["zh-TW"], "settings/reminders", () => ({ // 設置 - 定時提醒
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -7382,9 +7175,9 @@ I18N["zh-TW"]["settings/reminders"] = { // 設置 - 定時提醒
             "Scheduled reminders": "定時提醒",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/security-log"] = { // 設置 - 安全日誌
+defineI18nPage(I18N["zh-TW"], "settings/security-log", () => ({ // 設置 - 安全日誌
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -7469,9 +7262,9 @@ I18N["zh-TW"]["settings/security-log"] = { // 設置 - 安全日誌
             "Security log": "安全日誌",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/sponsors-log"] = { // 設置 - 贊助日誌
+defineI18nPage(I18N["zh-TW"], "settings/sponsors-log", () => ({ // 設置 - 贊助日誌
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["settings-menu"]["static"],
 
@@ -7496,9 +7289,9 @@ I18N["zh-TW"]["settings/sponsors-log"] = { // 設置 - 贊助日誌
             "Sponsorship Log": "贊助日誌",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
+defineI18nPage(I18N["zh-TW"], "settings/apps", () => ({ // 設置 - 開發者設置/GitHub 應用
     "static": { // 靜態翻譯
         "Developer Settings": "開發者設置",
         "GitHub Apps": "GitHub 應用",
@@ -8094,10 +7887,10 @@ I18N["zh-TW"]["settings/apps"] = { // 設置 - 開發者設置/GitHub 應用
             "New OAuth Application": "新 OAuth 應用",
         },
     },
-};
-I18N["zh-TW"]["orgs/settings/apps/new"] = I18N["zh-TW"]["settings/apps"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/apps/new", "settings/apps");
 
-I18N["zh-TW"]["settings/developers"] = { // 設置 - 開發者設置/OAuth 應用
+defineI18nPage(I18N["zh-TW"], "settings/developers", () => ({ // 設置 - 開發者設置/OAuth 應用
     "static": { // 靜態翻譯
         "New OAuth app": "新建 OAuth 應用",
             "Developer Settings": "開發者設置",
@@ -8127,9 +7920,9 @@ I18N["zh-TW"]["settings/developers"] = { // 設置 - 開發者設置/OAuth 應�
             "Developer applications": "開發者應用",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["settings/applications/new"] = { // 設置 - 開發者設置/OAuth 應用
+defineI18nPage(I18N["zh-TW"], "settings/applications/new", () => ({ // 設置 - 開發者設置/OAuth 應用
     "static": { // 靜態翻譯
 
         // 註冊 OAuth 應用 https://github.com/settings/applications/new
@@ -8157,10 +7950,10 @@ I18N["zh-TW"]["settings/applications/new"] = { // 設置 - 開發者設置/OAuth
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["orgs/settings/applications/new"] = I18N["zh-TW"]["settings/applications/new"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/applications/new", "settings/applications/new");
 
-I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置/個人訪問令牌
+defineI18nPage(I18N["zh-TW"], "settings/personal-access-tokens", () => ({ // 設置 - 開發者設置/個人訪問令牌
     "static": { // 靜態翻譯
             "Developer Settings": "開發者設置",
             "GitHub Apps": "GitHub 應用",
@@ -8639,11 +8432,11 @@ I18N["zh-TW"]["settings/personal-access-tokens"] = { // 設置 - 開發者設置
             "New Personal Access Token (Classic)": "新建個人訪問令牌（經典）",
         },
     },
-};
-I18N["zh-TW"]["settings/tokens"] = I18N["zh-TW"]["settings/personal-access-tokens"];
+}));
+defineI18nAlias(I18N["zh-TW"], "settings/tokens", "settings/personal-access-tokens");
 
 // 儲存庫相關==
-I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
+defineI18nPage(I18N["zh-TW"], "repository-public", () => ({ // 儲存庫 - 公共部分
     "static": { // 靜態翻譯
         // 儲存庫頁面 /<user-name>/<repo-name>/
             // 被 GitHub 官方禁用
@@ -8999,9 +8792,9 @@ I18N["zh-TW"]["repository-public"] = { // 儲存庫 - 公共部分
         // 提交 - 作者窗
         [/(\d+) authors?/, "$1 作者"],
     ],
-};
+}));
 
-I18N["zh-TW"]["page-new-repo"] = {// 儲存庫 - 新建/導入/復刻儲存庫
+defineI18nPage(I18N["zh-TW"], "page-new-repo", () => ({// 儲存庫 - 新建/導入/復刻儲存庫
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -9260,14 +9053,14 @@ I18N["zh-TW"]["page-new-repo"] = {// 儲存庫 - 新建/導入/復刻儲存庫
             [/Fork/, "復刻"],
         ],
     },
-};
-I18N["zh-TW"]["new"] = I18N["zh-TW"]["page-new-repo"];
-I18N["zh-TW"]["new/import"] = I18N["zh-TW"]["page-new-repo"];
-I18N["zh-TW"]["repository/import"] = I18N["zh-TW"]["page-new-repo"];
-I18N["zh-TW"]["repository/fork"] = I18N["zh-TW"]["page-new-repo"];
-I18N["zh-TW"]["orgs/repositories/new"] = I18N["zh-TW"]["page-new-repo"];
+}));
+defineI18nAlias(I18N["zh-TW"], "new", "page-new-repo");
+defineI18nAlias(I18N["zh-TW"], "new/import", "page-new-repo");
+defineI18nAlias(I18N["zh-TW"], "repository/import", "page-new-repo");
+defineI18nAlias(I18N["zh-TW"], "repository/fork", "page-new-repo");
+defineI18nAlias(I18N["zh-TW"], "orgs/repositories/new", "page-new-repo");
 
-I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
+defineI18nPage(I18N["zh-TW"], "repository", () => ({ // 儲存庫頁面 /<user-name>/<repo-name>/
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -9974,10 +9767,10 @@ I18N["zh-TW"]["repository"] = { // 儲存庫頁面 /<user-name>/<repo-name>/
             [/(.+) at (.+)/, "$1 在分支 $2"],
         ],
     },
-};
-I18N["zh-TW"]["repository/tree"] = I18N["zh-TW"]["repository"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/tree", "repository");
 
-I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
+defineI18nPage(I18N["zh-TW"], "repository/milestones", () => ({ // 儲存庫 - 里程碑頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -10044,11 +9837,11 @@ I18N["zh-TW"]["repository/milestones"] = { // 儲存庫 - 里程碑頁面
         [/([\d,]+) Closed/, "$1 已關閉"],
         [/(\d+\%) completed/, "$1 已完成"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/milestone"] = I18N["zh-TW"]["repository/milestones"]; // 儲存庫 - 某里程碑
+defineI18nAlias(I18N["zh-TW"], "repository/milestone", "repository/milestones"); // 儲存庫 - 某里程碑
 
-I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併請求頁面公共部分
+defineI18nPage(I18N["zh-TW"], "repository/pull_issue_public", () => ({ // 儲存庫 - 議題和合併請求頁面公共部分
     "static": { // 靜態翻譯
         // pull 與 request 公共詞條
             "Select all": "全選",
@@ -10441,9 +10234,9 @@ I18N["zh-TW"]["repository/pull_issue_public"] = { // 儲存庫 - 議題和合併
         [/(\d+) hidden conversations/, "$1 條隱藏對話"],
         [/Ears burning\? Get @([^ ]+) mentions with/, "耳朵要炸了？如果只需要查看提及了 $1 的內容，請使用"]
     ]
-};
+}));
 
-I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
+defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議題頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["static"],
@@ -11297,10 +11090,10 @@ I18N["zh-TW"]["repository/issues"] = { // 儲存庫 - 議題頁面
             [/Issues?/, "議題"],
         ],
     },
-};
-I18N["zh-TW"]["repository/labels"] = I18N["zh-TW"]["repository/issues"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/labels", "repository/issues");
 
-I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
+defineI18nPage(I18N["zh-TW"], "repository/pulls", () => ({ // 儲存庫 - 合併請求頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/issues"]["static"],
@@ -11397,9 +11190,9 @@ I18N["zh-TW"]["repository/pulls"] = { // 儲存庫 - 合併請求頁面
             [/Pull requests/, "合併請求"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
+defineI18nPage(I18N["zh-TW"], "repository/pull", () => ({ // 儲存庫 - 某個合併請求頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["static"],
@@ -11984,7 +11777,7 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             "requested a review from": "請求審查",
             "Reply...": "回覆…",
 
-            // 程式碼審查回覆
+            // 程式碼審查回復
             "Suggestions cannot be applied on outdated comments.": "建議不要應用於過時的評論。",
             "Suggested change": "更改建議",
             "This code change can be committed by users with write permissions.": "具有寫入權限的用戶可以提交此程式碼更改。",
@@ -12617,9 +12410,9 @@ I18N["zh-TW"]["repository/pull"] = { // 儲存庫 - 某個合併請求頁面
             [/(.+) by (.+) · Pull Request #(\d+) · (.+)/, "$1 作者：$2 · 合併請求 #$3 · $4"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請求
+defineI18nPage(I18N["zh-TW"], "repository/compare", () => ({ // 儲存庫 - 比較並創建合併請求
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -12910,9 +12703,9 @@ I18N["zh-TW"]["repository/compare"] = { // 儲存庫 - 比較並創建合併請�
             [/Compare/, "比較"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
+defineI18nPage(I18N["zh-TW"], "repository/commit", () => ({ // 儲存庫 - 提交頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -13220,9 +13013,9 @@ I18N["zh-TW"]["repository/commit"] = { // 儲存庫 - 提交頁面
             [/Commits/, "提交"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/blob"] = { // 儲存庫 - 瀏覽程式碼
+defineI18nPage(I18N["zh-TW"], "repository/blob", () => ({ // 儲存庫 - 瀏覽程式碼
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -13496,10 +13289,10 @@ I18N["zh-TW"]["repository/blob"] = { // 儲存庫 - 瀏覽程式碼
             [/(.+) at (.+?) · (.+)/, "$1 在分支 $2 · $3"],
         ],
     },
-};
-I18N["zh-TW"]["repository/blame"] = I18N["zh-TW"]["repository/blob"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/blame", "repository/blob");
 
-I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
+defineI18nPage(I18N["zh-TW"], "repository/discussions", () => ({ // 討論頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["orgs-public"]["static"],
@@ -14085,10 +13878,10 @@ I18N["zh-TW"]["repository/discussions"] = { // 討論頁面
             [/New Discussion · (.+) · Category selection/, "新討論 · $1 · 分類選擇"],
         ],
     },
-};
-I18N["zh-TW"]["repository/orgs/discussions"] = I18N["zh-TW"]["repository/discussions"] ;
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/orgs/discussions", "repository/discussions");
 
-I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
+defineI18nPage(I18N["zh-TW"], "repository/actions", () => ({ // 儲存庫 - 操作頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -14646,10 +14439,10 @@ I18N["zh-TW"]["repository/actions"] = { // 儲存庫 - 操作頁面
             [/Caches/, "快取"],
         ],
     },
-};
-I18N["zh-TW"]["repository/runs"] = I18N["zh-TW"]["repository/actions"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/runs", "repository/actions");
 
-I18N["zh-TW"]["repository/deployments"] = { // 儲存庫 - 部署頁面
+defineI18nPage(I18N["zh-TW"], "repository/deployments", () => ({ // 儲存庫 - 部署頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -14744,9 +14537,9 @@ I18N["zh-TW"]["repository/deployments"] = { // 儲存庫 - 部署頁面
             [/Deployments/, "部署"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/attestations"] = { // 儲存庫 - 證書頁面
+defineI18nPage(I18N["zh-TW"], "repository/attestations", () => ({ // 儲存庫 - 證書頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -14796,9 +14589,9 @@ I18N["zh-TW"]["repository/attestations"] = { // 儲存庫 - 證書頁面
             [/Attestations/, "證書"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/watchers"] = { // 儲存庫 - 追蹤者頁面
+defineI18nPage(I18N["zh-TW"], "repository/watchers", () => ({ // 儲存庫 - 追蹤者頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -14811,9 +14604,9 @@ I18N["zh-TW"]["repository/watchers"] = { // 儲存庫 - 追蹤者頁面
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         // [/Joined/,"加入於"], // 追星者，追蹤者頁面
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/stargazers"] = { // 儲存庫 - 追星者頁面
+defineI18nPage(I18N["zh-TW"], "repository/stargazers", () => ({ // 儲存庫 - 追星者頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -14833,9 +14626,9 @@ I18N["zh-TW"]["repository/stargazers"] = { // 儲存庫 - 追星者頁面
         ...I18N["zh-TW"]["repository-public"]["regexp"],
         // [/Joined/,"加入於"], // 追星者，追蹤者頁面
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/new"] = { // 儲存庫 - 新建/編輯/上傳/刪除文件頁面
+defineI18nPage(I18N["zh-TW"], "repository/new", () => ({ // 儲存庫 - 新建/編輯/上傳/刪除文件頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15144,12 +14937,12 @@ I18N["zh-TW"]["repository/new"] = { // 儲存庫 - 新建/編輯/上傳/刪除�
             [/Editing (.+) at (.+) · (.+)/, "編輯文件 $1 在分支 $2 · $3"],
         ],
     },
-};
-I18N["zh-TW"]["repository/edit"] = I18N["zh-TW"]["repository/new"];
-I18N["zh-TW"]["repository/delete"] = I18N["zh-TW"]["repository/new"];
-I18N["zh-TW"]["repository/upload"] = I18N["zh-TW"]["repository/new"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/edit", "repository/new");
+defineI18nAlias(I18N["zh-TW"], "repository/delete", "repository/new");
+defineI18nAlias(I18N["zh-TW"], "repository/upload", "repository/new");
 
-I18N["zh-TW"]["repository/find"] = { //  儲存庫 - 查找文件頁面
+defineI18nPage(I18N["zh-TW"], "repository/find", () => ({ //  儲存庫 - 查找文件頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15166,9 +14959,9 @@ I18N["zh-TW"]["repository/find"] = { //  儲存庫 - 查找文件頁面
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/models"] = { // 儲存庫 - 模型
+defineI18nPage(I18N["zh-TW"], "repository/models", () => ({ // 儲存庫 - 模型
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         "Public Preview": "公共預覽",
@@ -15228,9 +15021,9 @@ I18N["zh-TW"]["repository/models"] = { // 儲存庫 - 模型
             [/Prompts/, "提示詞"],
         ],
     },
-}
+}));
 
-I18N["zh-TW"]["repository/wiki"] = { // 儲存庫 - wiki 頁面
+defineI18nPage(I18N["zh-TW"], "repository/wiki", () => ({ // 儲存庫 - wiki 頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15409,9 +15202,9 @@ I18N["zh-TW"]["repository/wiki"] = { // 儲存庫 - wiki 頁面
         [/(\d+) additions?/, "$1 處增加"],
         [/(\d+) deletions?/, "$1 處刪除"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/branches"] = { // 儲存庫 - 分支頁面
+defineI18nPage(I18N["zh-TW"], "repository/branches", () => ({ // 儲存庫 - 分支頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15566,9 +15359,9 @@ I18N["zh-TW"]["repository/branches"] = { // 儲存庫 - 分支頁面
             [/Branches/, "分支"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/activity"] = { // 儲存庫 - 活動頁面
+defineI18nPage(I18N["zh-TW"], "repository/activity", () => ({ // 儲存庫 - 活動頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15636,9 +15429,9 @@ I18N["zh-TW"]["repository/activity"] = { // 儲存庫 - 活動頁面
         [/pushed (\d+) commits? to/, "推送 $1 個提交到"],
         [/pushed (\d+) commits?/, "推送 $1 個提交"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/releases"] = { // 儲存庫 - 發行版本頁面
+defineI18nPage(I18N["zh-TW"], "repository/releases", () => ({ // 儲存庫 - 發行版本頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -15939,10 +15732,10 @@ I18N["zh-TW"]["repository/releases"] = { // 儲存庫 - 發行版本頁面
             [/New release/, "新建發行版本"],
         ],
     },
-};
-I18N["zh-TW"]["repository/tags"] = I18N["zh-TW"]["repository/releases"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/tags", "repository/releases");
 
-I18N["zh-TW"]["repository/packages"] = { // 儲存庫 - 軟件包頁面
+defineI18nPage(I18N["zh-TW"], "repository/packages", () => ({ // 儲存庫 - 軟件包頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -16065,9 +15858,9 @@ I18N["zh-TW"]["repository/packages"] = { // 儲存庫 - 軟件包頁面
         // 更改儲存庫角色對話框
         [/Change (\d+) Roles?/, "更改 $1 個角色"],
     ],
-}
+}));
 
-I18N["zh-TW"]["repository/pkgs"] = { // 儲存庫 - 軟件包
+defineI18nPage(I18N["zh-TW"], "repository/pkgs", () => ({ // 儲存庫 - 軟件包
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/packages"]["static"],
@@ -16156,8 +15949,8 @@ I18N["zh-TW"]["repository/pkgs"] = { // 儲存庫 - 軟件包
         [/(\d+) deleted/, "$1 個已刪除"],
         [/(\d+) contributors?/, "$1 位貢獻者"],
     ],
-};
-I18N["zh-TW"]["packages"] = { // 軟件包 - 未連結儲存庫的軟件包
+}));
+defineI18nPage(I18N["zh-TW"], "packages", () => ({ // 軟件包 - 未連結儲存庫的軟件包
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository/pkgs"]["static"],
 
@@ -16171,9 +15964,9 @@ I18N["zh-TW"]["packages"] = { // 軟件包 - 未連結儲存庫的軟件包
     "regexp": [  // 正則翻譯
         ...I18N["zh-TW"]["repository/pkgs"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
+defineI18nPage(I18N["zh-TW"], "repository/security", () => ({ // 儲存庫 - 安全頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -16842,9 +16635,9 @@ I18N["zh-TW"]["repository/security"] = { // 儲存庫 - 安全頁面
             [/Code scanning tool status/, "程式碼掃描工具狀態"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/contribute"] = { // 儲存庫 - 貢獻頁面
+defineI18nPage(I18N["zh-TW"], "repository/contribute", () => ({ // 儲存庫 - 貢獻頁面
     "static": { // 靜態翻譯
 
         // 貢獻頁面 /<user-name>/<repo-name>/contribute
@@ -16864,9 +16657,9 @@ I18N["zh-TW"]["repository/contribute"] = { // 儲存庫 - 貢獻頁面
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/subscription"] = { // 儲存庫 - 通知狀態頁面
+defineI18nPage(I18N["zh-TW"], "repository/subscription", () => ({ // 儲存庫 - 通知狀態頁面
     "static": { // 靜態翻譯
 
         // 儲存庫通知狀態管理 /<user-name>/<repo-name>/subscription
@@ -16885,9 +16678,9 @@ I18N["zh-TW"]["repository/subscription"] = { // 儲存庫 - 通知狀態頁面
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/invitations"] = { // 儲存庫 - 接受邀請頁面
+defineI18nPage(I18N["zh-TW"], "repository/invitations", () => ({ // 儲存庫 - 接受邀請頁面
     "static": { // 靜態翻譯
 
         // 接受邀請 /<user-name>/<repo-name>/invitations
@@ -16910,9 +16703,9 @@ I18N["zh-TW"]["repository/invitations"] = { // 儲存庫 - 接受邀請頁面
         [/of ([^ ]+) will be able to see:/, "$1 將能夠看到："], // 邀請頁
         [/Block ([^ ]+)/, "拉黑 $1"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/tasks"] = {
+defineI18nPage(I18N["zh-TW"], "repository/tasks", () => ({
     "static": {
         "You": "您",
         "created the session": "創建此任務",
@@ -16940,12 +16733,12 @@ I18N["zh-TW"]["repository/tasks"] = {
         [/View (\d+) files?/, "查看 $1 個文件"],
         [/Edit (\d+) files?/, "編輯 $1 個文件"],
     ],
-};
+}));
 
 
 // 分析 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-I18N["zh-TW"]["repository-insights-menu"] = { // 儲存庫 -> 分析 - 公共部分
+defineI18nPage(I18N["zh-TW"], "repository-insights-menu", () => ({ // 儲存庫 -> 分析 - 公共部分
     "static": { // 靜態翻譯
         // 公共部分
             // 左側選單
@@ -16980,9 +16773,9 @@ I18N["zh-TW"]["repository-insights-menu"] = { // 儲存庫 -> 分析 - 公共部
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
+defineI18nPage(I18N["zh-TW"], "repository/pulse", () => ({ // 儲存庫 -> 分析 - 統計
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17109,9 +16902,9 @@ I18N["zh-TW"]["repository/pulse"] = { // 儲存庫 -> 分析 - 統計
             [/Pulse/, "分析"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/graphs/contributors"] = { // 儲存庫 -> 分析 - 貢獻者
+defineI18nPage(I18N["zh-TW"], "repository/graphs/contributors", () => ({ // 儲存庫 -> 分析 - 貢獻者
     "static": { // 靜態翻譯
 
         // 貢獻者 /<user-name>/<repo-name>/graphs/contributors
@@ -17221,9 +17014,9 @@ I18N["zh-TW"]["repository/graphs/contributors"] = { // 儲存庫 -> 分析 - 貢
             [/Contributors to (.+)/, "$1 的貢獻者"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/graphs/community"] = { // 儲存庫 -> 分析 - 社區
+defineI18nPage(I18N["zh-TW"], "repository/graphs/community", () => ({ // 儲存庫 -> 分析 - 社區
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17270,9 +17063,9 @@ I18N["zh-TW"]["repository/graphs/community"] = { // 儲存庫 -> 分析 - 社區
         [/(\d+) discussions? created/, "$1 個討論創建"],
         [/(\d+) contributors?/, "$1 貢獻者"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/community"] = { // 儲存庫 -> 分析 - 社區準則
+defineI18nPage(I18N["zh-TW"], "repository/community", () => ({ // 儲存庫 -> 分析 - 社區準則
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17371,9 +17164,9 @@ I18N["zh-TW"]["repository/community"] = { // 儲存庫 -> 分析 - 社區準則
             "Community Standards": "社區準則",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/graphs/traffic"] = { // 儲存庫 -> 分析 - 流量
+defineI18nPage(I18N["zh-TW"], "repository/graphs/traffic", () => ({ // 儲存庫 -> 分析 - 流量
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17446,9 +17239,9 @@ I18N["zh-TW"]["repository/graphs/traffic"] = { // 儲存庫 -> 分析 - 流量
         [/(\d+) Views?/, "$1 次訪問"],
         [/(\d+) Unique visitors?/, "$1 位唯一訪客"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/graphs/commit-activity"] = { // 儲存庫 -> 分析 - 提交
+defineI18nPage(I18N["zh-TW"], "repository/graphs/commit-activity", () => ({ // 儲存庫 -> 分析 - 提交
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17513,9 +17306,9 @@ I18N["zh-TW"]["repository/graphs/commit-activity"] = { // 儲存庫 -> 分析 - 
             [/Commits/, "提交"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/graphs/code-frequency"] = { // 儲存庫 -> 分析 - 程式碼頻率
+defineI18nPage(I18N["zh-TW"], "repository/graphs/code-frequency", () => ({ // 儲存庫 -> 分析 - 程式碼頻率
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17593,9 +17386,9 @@ I18N["zh-TW"]["repository/graphs/code-frequency"] = { // 儲存庫 -> 分析 - �
             [/Code frequency/, "程式碼頻率"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/network/dependencies"] = { // 儲存庫 -> 分析 - 依賴項關係圖 - 依賴項
+defineI18nPage(I18N["zh-TW"], "repository/network/dependencies", () => ({ // 儲存庫 -> 分析 - 依賴項關係圖 - 依賴項
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17693,9 +17486,9 @@ I18N["zh-TW"]["repository/network/dependencies"] = { // 儲存庫 -> 分析 - �
             [/Dependencies/, "依賴項"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/network/dependents"] = { // 儲存庫 -> 分析 - 依賴項關係圖 - 依賴者
+defineI18nPage(I18N["zh-TW"], "repository/network/dependents", () => ({ // 儲存庫 -> 分析 - 依賴項關係圖 - 依賴者
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17729,9 +17522,9 @@ I18N["zh-TW"]["repository/network/dependents"] = { // 儲存庫 -> 分析 - 依�
             [/Network Dependents/, "網路依賴者"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/network/updates"] = { // 儲存庫 -> 分析 - 依賴項關係圖 - Dependabot
+defineI18nPage(I18N["zh-TW"], "repository/network/updates", () => ({ // 儲存庫 -> 分析 - 依賴項關係圖 - Dependabot
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17765,9 +17558,9 @@ I18N["zh-TW"]["repository/network/updates"] = { // 儲存庫 -> 分析 - 依賴�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/network"] = { // 儲存庫 -> 分析 - 網路圖
+defineI18nPage(I18N["zh-TW"], "repository/network", () => ({ // 儲存庫 -> 分析 - 網路圖
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17805,9 +17598,9 @@ I18N["zh-TW"]["repository/network"] = { // 儲存庫 -> 分析 - 網路圖
             [/Network Graph/, "網路圖"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/network/members"] = { // 儲存庫 -> 分析 - 復刻
+defineI18nPage(I18N["zh-TW"], "repository/network/members", () => ({ // 儲存庫 -> 分析 - 復刻
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17827,9 +17620,9 @@ I18N["zh-TW"]["repository/network/members"] = { // 儲存庫 -> 分析 - 復刻
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/forks"] = { // 儲存庫 -> 分析 - 復刻
+defineI18nPage(I18N["zh-TW"], "repository/forks", () => ({ // 儲存庫 -> 分析 - 復刻
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -17895,11 +17688,11 @@ I18N["zh-TW"]["repository/forks"] = { // 儲存庫 -> 分析 - 復刻
             [/Forks/, "復刻"],
         ],
     },
-};
+}));
 
 // 分析 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-I18N["zh-TW"]["repository-settings-menu"] = { // 儲存庫設置公共部分
+defineI18nPage(I18N["zh-TW"], "repository-settings-menu", () => ({ // 儲存庫設置公共部分
     "static": { // 靜態翻譯
         // >>>>>>>>>>>>>>>>>>   儲存庫設置 公共部分  <<<<<<<<<<<<<<<<<<<
             // 頂部提醒欄
@@ -17959,9 +17752,9 @@ I18N["zh-TW"]["repository-settings-menu"] = { // 儲存庫設置公共部分
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name>/<repo-name>/settings
+defineI18nPage(I18N["zh-TW"], "repository/settings", () => ({ // 儲存庫設置 - 通常 /<user-name>/<repo-name>/settings
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18345,9 +18138,9 @@ I18N["zh-TW"]["repository/settings"] = { // 儲存庫設置 - 通常 /<user-name
             "General": "常規",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/access"] = { // 儲存庫設置 - 協作者/(組織儲存庫 協作者和團隊) /<user-name>/<repo-name>/settings/access
+defineI18nPage(I18N["zh-TW"], "repository/settings/access", () => ({ // 儲存庫設置 - 協作者/(組織儲存庫 協作者和團隊) /<user-name>/<repo-name>/settings/access
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18468,9 +18261,9 @@ I18N["zh-TW"]["repository/settings/access"] = { // 儲存庫設置 - 協作者/(
             "Manage access": "訪問管理",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/interaction_limits"] = { // 儲存庫設置 - 互動限制 /<user-name>/<repo-name>/settings/interaction_limits
+defineI18nPage(I18N["zh-TW"], "repository/settings/interaction_limits", () => ({ // 儲存庫設置 - 互動限制 /<user-name>/<repo-name>/settings/interaction_limits
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18532,9 +18325,9 @@ I18N["zh-TW"]["repository/settings/interaction_limits"] = { // 儲存庫設置 -
             "Temporary interaction limits": "臨時互動限制",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/code_review_limits"] = { // 儲存庫設置 - 程式碼審查限制 /<user-name>/<repo-name>/settings/code_review_limits
+defineI18nPage(I18N["zh-TW"], "repository/settings/code_review_limits", () => ({ // 儲存庫設置 - 程式碼審查限制 /<user-name>/<repo-name>/settings/code_review_limits
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18557,9 +18350,9 @@ I18N["zh-TW"]["repository/settings/code_review_limits"] = { // 儲存庫設置 -
             "Code review limits": "程式碼審查限制",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/branches"] = { // 儲存庫設置 - 分支 /<user-name>/<repo-name>/settings/branches
+defineI18nPage(I18N["zh-TW"], "repository/settings/branches", () => ({ // 儲存庫設置 - 分支 /<user-name>/<repo-name>/settings/branches
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18617,9 +18410,9 @@ I18N["zh-TW"]["repository/settings/branches"] = { // 儲存庫設置 - 分支 /<
             [/Settings · Branches/, "設置 · 分支"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/branch_protection_rules"] = { // 儲存庫設置 - 分支/分支保護 /<user-name>/<repo-name>/settings/branch_protection_rules
+defineI18nPage(I18N["zh-TW"], "repository/settings/branch_protection_rules", () => ({ // 儲存庫設置 - 分支/分支保護 /<user-name>/<repo-name>/settings/branch_protection_rules
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18759,9 +18552,9 @@ I18N["zh-TW"]["repository/settings/branch_protection_rules"] = { // 儲存庫設
             [/Settings · Branches · New branch protection rule/, "設置 · 分支 · 新建分支保護規則"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/tag_protection"] = { // 儲存庫設置 - 標籤 /<user-name>/<repo-name>/settings/tag_protection
+defineI18nPage(I18N["zh-TW"], "repository/settings/tag_protection", () => ({ // 儲存庫設置 - 標籤 /<user-name>/<repo-name>/settings/tag_protection
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -18826,9 +18619,9 @@ I18N["zh-TW"]["repository/settings/tag_protection"] = { // 儲存庫設置 - 標
             [/Settings · Tags/, "設置 · 標籤"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/rules"] = { // 儲存庫設置 - 規則 - 規則集 /<user-name>/<repo-name>/settings/rules
+defineI18nPage(I18N["zh-TW"], "repository/settings/rules", () => ({ // 儲存庫設置 - 規則 - 規則集 /<user-name>/<repo-name>/settings/rules
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19319,11 +19112,11 @@ I18N["zh-TW"]["repository/settings/rules"] = { // 儲存庫設置 - 規則 - 規
             [/Settings · Rulesets?/, "設置 · 規則集"],
         ],
     },
-};
-I18N["zh-TW"]["orgs/settings/rules"] = I18N["zh-TW"]["repository/settings/rules"];
-I18N["zh-TW"]["repository/rules"] = I18N["zh-TW"]["repository/settings/rules"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/rules", "repository/settings/rules");
+defineI18nAlias(I18N["zh-TW"], "repository/rules", "repository/settings/rules");
 
-I18N["zh-TW"]["repository/settings/actions"] = { // 儲存庫設置 - 操作 /<user-name>/<repo-name>/settings/actions
+defineI18nPage(I18N["zh-TW"], "repository/settings/actions", () => ({ // 儲存庫設置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19520,9 +19313,9 @@ I18N["zh-TW"]["repository/settings/actions"] = { // 儲存庫設置 - 操作 /<u
             [/Add new self-hosted runner/, "新增自託管執行器"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/models/access-policy"] = { // 儲存庫設置 - 模型 /<user-name>/<repo-name>/settings/models/access-policy
+defineI18nPage(I18N["zh-TW"], "repository/settings/models/access-policy", () => ({ // 儲存庫設置 - 模型 /<user-name>/<repo-name>/settings/models/access-policy
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19540,9 +19333,9 @@ I18N["zh-TW"]["repository/settings/models/access-policy"] = { // 儲存庫設置
             [/settings · GitHub Models access policy/, "設置 · GitHub 模型訪問政策"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/hooks"] = { // 儲存庫設置 - Web 鉤子 /<user-name>/<repo-name>/settings/hooks
+defineI18nPage(I18N["zh-TW"], "repository/settings/hooks", () => ({ // 儲存庫設置 - Web 鉤子 /<user-name>/<repo-name>/settings/hooks
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19764,10 +19557,10 @@ I18N["zh-TW"]["repository/settings/hooks"] = { // 儲存庫設置 - Web 鉤子 /
             [/Webhooks · Settings/, "Web 鉤子 · 設置"],
         ],
     },
-};
-I18N["zh-TW"]["orgs/settings/hooks"] = I18N["zh-TW"]["repository/settings/hooks"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/hooks", "repository/settings/hooks");
 
-I18N["zh-TW"]["repository/settings/copilot/code_review"] = {
+defineI18nPage(I18N["zh-TW"], "repository/settings/copilot/code_review", () => ({
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19846,9 +19639,9 @@ I18N["zh-TW"]["repository/settings/copilot/code_review"] = {
             [/Settings · Code review/, "設置 · 程式碼審查"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
+defineI18nPage(I18N["zh-TW"], "repository/settings/copilot/coding_agent", () => ({
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -19999,12 +19792,12 @@ I18N["zh-TW"]["repository/settings/copilot/coding_agent"] = {
             "Copilot cloud agent": "Copilot 雲端AI 代理",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/copilot/internet_access"] = I18N["zh-TW"]["repository/settings/copilot/coding_agent"];
-I18N["zh-TW"]["repository/settings/copilot/mcp"] = I18N["zh-TW"]["repository/settings/copilot/coding_agent"];
+defineI18nAlias(I18N["zh-TW"], "repository/settings/copilot/internet_access", "repository/settings/copilot/coding_agent");
+defineI18nAlias(I18N["zh-TW"], "repository/settings/copilot/mcp", "repository/settings/copilot/coding_agent");
 
-I18N["zh-TW"]["repository/settings/copilot/dreaming"] = { // 儲存庫設置 - Copilot 夢境
+defineI18nPage(I18N["zh-TW"], "repository/settings/copilot/dreaming", () => ({ // 儲存庫設置 - Copilot 夢境
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20025,9 +19818,9 @@ I18N["zh-TW"]["repository/settings/copilot/dreaming"] = { // 儲存庫設置 - C
             "Copilot Dreaming": "Copilot 夢境",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/suggestions"] = {
+defineI18nPage(I18N["zh-TW"], "repository/settings/suggestions", () => ({
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20044,9 +19837,9 @@ I18N["zh-TW"]["repository/settings/suggestions"] = {
             "Full automation": "完全自動化",
                 "Every change is applied automatically. The agent only holds a change back if it's flagged as uncertain.": "自動應用所有更改。AI 代理僅在更改被標記為不確定時將其暫緩。",
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/environments"] = { // 儲存庫設置 - 環境 /<user-name>/<repo-name>/settings/environment
+defineI18nPage(I18N["zh-TW"], "repository/settings/environments", () => ({ // 儲存庫設置 - 環境 /<user-name>/<repo-name>/settings/environment
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20204,9 +19997,9 @@ I18N["zh-TW"]["repository/settings/environments"] = { // 儲存庫設置 - 環�
             [/Configure environment/, "配置環境"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/codespaces"] = { // 儲存庫設置 - 程式碼空間 /<user-name>/<repo-name>/settings/codespaces
+defineI18nPage(I18N["zh-TW"], "repository/settings/codespaces", () => ({ // 儲存庫設置 - 程式碼空間 /<user-name>/<repo-name>/settings/codespaces
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20315,9 +20108,9 @@ I18N["zh-TW"]["repository/settings/codespaces"] = { // 儲存庫設置 - 程式�
             "Codespaces": "程式碼空間",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/pages"] = { // 儲存庫設置頁面(含組織儲存庫) /<user-name>/<repo-name>/settings
+defineI18nPage(I18N["zh-TW"], "repository/settings/pages", () => ({ // 儲存庫設置頁面(含組織儲存庫) /<user-name>/<repo-name>/settings
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20447,9 +20240,9 @@ I18N["zh-TW"]["repository/settings/pages"] = { // 儲存庫設置頁面(含組�
         [/Your site's DNS settings are using a custom subdomain, ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?), that's not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see/, "您網站的 DNS 設置使用的是自定義子域 $1，該子域未設置正確的 CNAME 記錄。我們建議您將此 CNAME 記錄設置為指向 [YOUR USERNAME].github.io。有關詳細訊息，請參閱"],
         [/Something went wrong issuing a certificate for ([a-zA-Z0-9][-a-zA-Z0-9]{0,62}(?:\.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+\.?). Please contact the Pages team./, "為 $1 頒發證書時出現問題。請聯繫 Pages 團隊。"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/settings/security_analysis"] = { // 儲存庫設置 - 高級安全 /<user-name>/<repo-name>/settings/security_analysis
+defineI18nPage(I18N["zh-TW"], "repository/settings/security_analysis", () => ({ // 儲存庫設置 - 高級安全 /<user-name>/<repo-name>/settings/security_analysis
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20702,9 +20495,9 @@ I18N["zh-TW"]["repository/settings/security_analysis"] = { // 儲存庫設置 - 
             [/Settings · Advanced Security/, "設置 · 高級安全"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/keys"] = { // 儲存庫設置 - 部署金鑰 /<user-name>/<repo-name>/settings/keys
+defineI18nPage(I18N["zh-TW"], "repository/settings/keys", () => ({ // 儲存庫設置 - 部署金鑰 /<user-name>/<repo-name>/settings/keys
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20760,9 +20553,9 @@ I18N["zh-TW"]["repository/settings/keys"] = { // 儲存庫設置 - 部署金鑰 
             "Add deploy key": "新增部署金鑰",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/secrets"] = { // 儲存庫設置 - 機密 /<user-name>/<repo-name>/settings/secrets
+defineI18nPage(I18N["zh-TW"], "repository/settings/secrets", () => ({ // 儲存庫設置 - 機密 /<user-name>/<repo-name>/settings/secrets
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20907,10 +20700,10 @@ I18N["zh-TW"]["repository/settings/secrets"] = { // 儲存庫設置 - 機密 /<u
             [/Add Codespaces secret/, "新建程式碼空間機密"],
         ],
     },
-};
-I18N["zh-TW"]["repository/settings/variables"] = I18N["zh-TW"]["repository/settings/secrets"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/settings/variables", "repository/settings/secrets");
 
-I18N["zh-TW"]["repository/settings/installations"] = { // 儲存庫設置 - GitHub 應用 /<user-name>/<repo-name>/settings/installations
+defineI18nPage(I18N["zh-TW"], "repository/settings/installations", () => ({ // 儲存庫設置 - GitHub 應用 /<user-name>/<repo-name>/settings/installations
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20934,9 +20727,9 @@ I18N["zh-TW"]["repository/settings/installations"] = { // 儲存庫設置 - GitH
             "GitHub Apps": "GitHub 應用",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/notifications"] = { // 儲存庫設置 - 郵件通知 /<user-name>/<repo-name>/settings/notifications/edit
+defineI18nPage(I18N["zh-TW"], "repository/settings/notifications", () => ({ // 儲存庫設置 - 郵件通知 /<user-name>/<repo-name>/settings/notifications/edit
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -20963,9 +20756,9 @@ I18N["zh-TW"]["repository/settings/notifications"] = { // 儲存庫設置 - 郵�
             "Configure email notifications": "配置電子郵件通知",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/settings/key_links"] = { // 儲存庫設置 - 自動連結引用（注：只有專業版有） /<user-name>/<repo-name>/settings/key_links
+defineI18nPage(I18N["zh-TW"], "repository/settings/key_links", () => ({ // 儲存庫設置 - 自動連結引用（注：只有專業版有） /<user-name>/<repo-name>/settings/key_links
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -21000,9 +20793,9 @@ I18N["zh-TW"]["repository/settings/key_links"] = { // 儲存庫設置 - 自動�
             "Add autolink reference": "新增自動連結引用",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/transfer"] = { // 轉讓儲存庫
+defineI18nPage(I18N["zh-TW"], "repository/transfer", () => ({ // 轉讓儲存庫
     "static": { // 靜態翻譯
 
         // 轉讓儲存庫 /<user-name>/<repo-name>/transfer
@@ -21071,9 +20864,9 @@ I18N["zh-TW"]["repository/transfer"] = { // 轉讓儲存庫
         [/(\d+) codespaces?/, "$1 個程式碼空間"],
         [/is available./, "名稱可用。"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/codespaces"] = { // 儲存庫 - 程式碼空間介面 /<user-name>/<repo-name>/codespaces
+defineI18nPage(I18N["zh-TW"], "repository/codespaces", () => ({ // 儲存庫 - 程式碼空間介面 /<user-name>/<repo-name>/codespaces
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -21136,9 +20929,9 @@ I18N["zh-TW"]["repository/codespaces"] = { // 儲存庫 - 程式碼空間介面 
         [/(\d+) codespaces?/, "$1 個程式碼空間"],
         [/Last used ([^ ]+)/, "上次使用 $1"],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/custom-properties"] = { // 儲存庫 - 自定義屬性 https://github.com/<uesr-name>/<repo-name>/custom-properties
+defineI18nPage(I18N["zh-TW"], "repository/custom-properties", () => ({ // 儲存庫 - 自定義屬性 https://github.com/<uesr-name>/<repo-name>/custom-properties
     "static": {
         "Custom properties": "自定義屬性",
         "Custom properties allow you to decorate your repository with information such as compliance frameworks, data sensitivity, or project details.": "自定義屬性允許您為儲存庫新增訊息，例如合規框架、資料敏感性或專案詳情。",
@@ -21149,9 +20942,9 @@ I18N["zh-TW"]["repository/custom-properties"] = { // 儲存庫 - 自定義屬性
         "and how to set them at the organization level.": "以及如何在組織級別進行設置。",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-TW"]["repository/codespaces"] = { // 儲存庫 - 內容舉報 /<user-name>/<repo-name>/reported_content
+defineI18nPage(I18N["zh-TW"], "repository/reported_content", () => ({ // 儲存庫 - 內容舉報 /<user-name>/<repo-name>/reported_content
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
 
@@ -21175,11 +20968,11 @@ I18N["zh-TW"]["repository/codespaces"] = { // 儲存庫 - 內容舉報 /<user-na
     "regexp": [ // 正則翻譯
 
     ],
-};
+}));
 
 // 儲存庫相關==
 
-I18N["zh-TW"]["homepage"] = { // 未登入的首頁
+defineI18nPage(I18N["zh-TW"], "homepage", () => ({ // 未登入的首頁
     "static": { // 靜態翻譯
         "Explore the latest tools from Universe '25": "探索 Universe '25 的最新工具",
         "The future of building happens together": "構建未來的方式是共同創造",
@@ -21452,11 +21245,11 @@ I18N["zh-TW"]["homepage"] = { // 未登入的首頁
             "GitHub · Change is constant. GitHub keeps you ahead. · GitHub · GitHub": "GitHub · 變化是常態，GitHub 讓您始終領先 · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["home"] = I18N["zh-TW"]["homepage"];
+defineI18nAlias(I18N["zh-TW"], "home", "homepage");
 
-I18N["zh-TW"]["session-authentication"] = { // 登入頁 包含(/login, /session, /sessions/two-factor, sessions/recovery, /sessions/recovery/token, /password_reset等)
+defineI18nPage(I18N["zh-TW"], "session-authentication", () => ({ // 登入頁 包含(/login, /session, /sessions/two-factor, sessions/recovery, /sessions/recovery/token, /password_reset等)
     "static": { // 靜態翻譯
 
         // 登入頁 https://github.com/login
@@ -21913,14 +21706,14 @@ I18N["zh-TW"]["session-authentication"] = { // 登入頁 包含(/login, /session
             "Oh no · GitHub": "糟糕 · GitHub",
         },
     },
-};
-I18N["zh-TW"].login = I18N["zh-TW"]["session-authentication"];
-I18N["zh-TW"].logout = I18N["zh-TW"]["session-authentication"];
-I18N["zh-TW"].session = I18N["zh-TW"]["session-authentication"];
-I18N["zh-TW"].sessions = I18N["zh-TW"]["session-authentication"];
-I18N["zh-TW"].password_reset = I18N["zh-TW"]["session-authentication"];
+}));
+defineI18nAlias(I18N["zh-TW"], "login", "session-authentication");
+defineI18nAlias(I18N["zh-TW"], "logout", "session-authentication");
+defineI18nAlias(I18N["zh-TW"], "session", "session-authentication");
+defineI18nAlias(I18N["zh-TW"], "sessions", "session-authentication");
+defineI18nAlias(I18N["zh-TW"], "password_reset", "session-authentication");
 
-I18N["zh-TW"]["signup"] = { // 註冊頁
+defineI18nPage(I18N["zh-TW"], "signup", () => ({ // 註冊頁
     "static": { // 靜態翻譯
         "Create your free account": "創建免費帳戶",
             "Explore GitHub's core features for individuals and organizations.": "探索 GitHub 為個人及組織提供的核心功能。",
@@ -21986,9 +21779,9 @@ I18N["zh-TW"]["signup"] = { // 註冊頁
             "Sign up for GitHub · GitHub": "註冊 GitHub · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["account_verifications"] = {
+defineI18nPage(I18N["zh-TW"], "account_verifications", () => ({
     "static": {
         ...I18N["zh-TW"]["signup"]["static"],
 
@@ -22000,9 +21793,9 @@ I18N["zh-TW"]["account_verifications"] = {
             "update your email address": "修改信箱",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-TW"]["notifications"] = { // 通知頁面
+defineI18nPage(I18N["zh-TW"], "notifications", () => ({ // 通知頁面
     "static": { // 靜態翻譯
         "Notifications": "通知",
         "All": "全部",
@@ -22178,9 +21971,9 @@ I18N["zh-TW"]["notifications"] = { // 通知頁面
             "Notifications": "通知",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["watching"] = { // 追蹤的儲存庫頁面
+defineI18nPage(I18N["zh-TW"], "watching", () => ({ // 追蹤的儲存庫頁面
     "static": { // 靜態翻譯
         "Notifications": "通知",
         "Watching": "追蹤",
@@ -22245,9 +22038,9 @@ I18N["zh-TW"]["watching"] = { // 追蹤的儲存庫頁面
         [/You will stop receiving notifications for all repositories owned by ([^ ]+) that you are watching./, "您將停止接收您所追蹤的 $1 擁有的所有儲存庫的通知。"],
         [/([^ ]+)'s repositories/, "$1 的儲存庫"],
     ],
-};
+}));
 
-I18N["zh-TW"]["notifications/subscriptions"] = { //訂閱的儲存庫頁面
+defineI18nPage(I18N["zh-TW"], "notifications/subscriptions", () => ({ //訂閱的儲存庫頁面
     "static": { // 靜態翻譯
         "Notifications": "通知",
         "Watching": "追蹤",
@@ -22297,9 +22090,9 @@ I18N["zh-TW"]["notifications/subscriptions"] = { //訂閱的儲存庫頁面
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["stars"] = { // 星號 https://github.com/stars/<user-name>
+defineI18nPage(I18N["zh-TW"], "stars", () => ({ // 星號 https://github.com/stars/<user-name>
     "static": { // 靜態翻譯
         "Your Stars": "我的星號",
         "Browse your starred repositories and topics": "瀏覽我的星號儲存庫和主題",
@@ -22350,9 +22143,9 @@ I18N["zh-TW"]["stars"] = { // 星號 https://github.com/stars/<user-name>
             "Your starred topics": "我的星號主題",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["issues"] = { // 議題頁面
+defineI18nPage(I18N["zh-TW"], "issues", () => ({ // 議題頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository/issues"]["static"],
 
@@ -22749,9 +22542,9 @@ I18N["zh-TW"]["issues"] = { // 議題頁面
             "Pull requests - Review requests": "合併請求 - 審查請求",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["pulls"] = { // 合併請求頁面
+defineI18nPage(I18N["zh-TW"], "pulls", () => ({ // 合併請求頁面
     "static": {
         ...I18N["zh-TW"]["issues"]["static"],
 
@@ -22884,10 +22677,10 @@ I18N["zh-TW"]["pulls"] = { // 合併請求頁面
         [/Last year/, "去年"],
         [/Any time/, "任意時間"],
     ],
-}
+}));
 
 
-I18N["zh-TW"]["repos"] = {
+defineI18nPage(I18N["zh-TW"], "repos", () => ({
     "static": {
         "My contributions": "我的貢獻",
         "My repositories": "我的儲存庫",
@@ -22942,9 +22735,9 @@ I18N["zh-TW"]["repos"] = {
         [/(\d+) repositor(y|ies)/, "$1 個儲存庫"],
         [/([^ ]+)’s past year of commit activity/, "近幾年 $1 的提交活動"],
     ],
-};
+}));
 
-I18N["zh-TW"]["search"] = { // 搜尋頁面
+defineI18nPage(I18N["zh-TW"], "search", () => ({ // 搜尋頁面
     "static": { // 靜態翻譯
         "More than": "多餘",
         "ms": "毫秒", // 時間，前面"結果"走正則匹配
@@ -23341,10 +23134,10 @@ I18N["zh-TW"]["search"] = { // 搜尋頁面
             "Marketplace search results": "市場搜尋結果",
         },
     },
-};
-I18N["zh-TW"]["repository/search"] = I18N["zh-TW"]["search"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/search", "search");
 
-I18N["zh-TW"]["discussions"] = {
+defineI18nPage(I18N["zh-TW"], "discussions", () => ({
     "static": { // 靜態翻譯
         // https://github.com/discussions
             "Discussions": "討論",
@@ -23370,9 +23163,9 @@ I18N["zh-TW"]["discussions"] = {
             "Discussions": "討論",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["gist"] = { // 程式碼片段頁面
+defineI18nPage(I18N["zh-TW"], "gist", () => ({ // 程式碼片段頁面
     "static": { // 靜態翻譯
         // 快捷鍵
         "Site wide shortcuts": "全局快捷鍵",
@@ -23653,9 +23446,9 @@ I18N["zh-TW"]["gist"] = { // 程式碼片段頁面
             [/Search/, "搜尋"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["login/oauth"] = { // 應用授權
+defineI18nPage(I18N["zh-TW"], "login/oauth", () => ({ // 應用授權
     "static": { // 靜態翻譯
         // 第三頁 安裝中
 
@@ -23733,10 +23526,10 @@ I18N["zh-TW"]["login/oauth"] = { // 應用授權
         // [/Installing and authorizing (.*) immediately grants these permissions on your account:/, "安裝和授權 $1 則會立即授予您帳戶的以下權限："],
         [/Selected (\d+) repositor(y|ies)./, "選擇了 $1 個儲存庫。"],
     ],
-};
+}));
 // I18N["zh-TW"]["installations/new"] = I18N["zh-TW"]["login/oauth"];
 
-I18N["zh-TW"]["explore"] = { // 探索頁面
+defineI18nPage(I18N["zh-TW"], "explore", () => ({ // 探索頁面
     "static": { // 靜態翻譯
 
         // github.com/explore
@@ -23817,9 +23610,9 @@ I18N["zh-TW"]["explore"] = { // 探索頁面
             "Explore GitHub": "探索 GitHub",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["topics"] = { // 探索-->主題頁面
+defineI18nPage(I18N["zh-TW"], "topics", () => ({ // 探索-->主題頁面
     "static": { // 靜態翻譯
 
         // github.com/topics
@@ -23886,9 +23679,9 @@ I18N["zh-TW"]["topics"] = { // 探索-->主題頁面
             [/GitHub Topics/, "GitHub 主題"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["trending"] = { // 熱門頁面
+defineI18nPage(I18N["zh-TW"], "trending", () => ({ // 熱門頁面
     "static": { // 靜態翻譯
         "Explore": "探索",
         "Topics": "主題",
@@ -23959,9 +23752,9 @@ I18N["zh-TW"]["trending"] = { // 熱門頁面
             "Trending developers on GitHub this month": "本月熱門開發者",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["collections"] = { // 集合頁面
+defineI18nPage(I18N["zh-TW"], "collections", () => ({ // 集合頁面
     "static": { // 靜態翻譯
         "Explore": "探索",
         "Topics": "主題",
@@ -23986,9 +23779,9 @@ I18N["zh-TW"]["collections"] = { // 集合頁面
             [/Collection: /, "集合："],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["sponsors"] = { // 贊助介面
+defineI18nPage(I18N["zh-TW"], "sponsors", () => ({ // 贊助介面
     "static": {
         // 贊助者首頁 https://github.com/sponsors
             "Invest in the software that powers your world": "投資驅動您世界的專案",
@@ -24486,9 +24279,9 @@ I18N["zh-TW"]["sponsors"] = { // 贊助介面
             [/Sponsor @(.+) on GitHub Sponsors/, "GitHub 贊助上贊助者 @$1"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["showcases"] = { // 展示頁面
+defineI18nPage(I18N["zh-TW"], "showcases", () => ({ // 展示頁面
     "static": { // 靜態翻譯
         "Open source showcases": "開源展示",
         "Browse popular repositories based on the topic that interests you most.": "瀏覽熱門儲存庫基於您最感興趣的主題。",
@@ -24496,9 +24289,9 @@ I18N["zh-TW"]["showcases"] = { // 展示頁面
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["account/organizations/new"] = { // 創建組織
+defineI18nPage(I18N["zh-TW"], "account/organizations/new", () => ({ // 創建組織
     "static": { // 靜態翻譯
         // 創建免費的組織 https://github.com/account/organizations/new?coupon=&plan=team_free
         // https://github.com/account/organizations/new?coupon=&plan=free
@@ -24562,9 +24355,9 @@ I18N["zh-TW"]["account/organizations/new"] = { // 創建組織
             "Set up your organization": "設置您的組織",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["account/choose"] = { // 帳戶升級選擇
+defineI18nPage(I18N["zh-TW"], "account/choose", () => ({ // 帳戶升級選擇
     "static": { // 靜態翻譯
         // https://github.com/account/choose?action=upgrade
             "Which do you want to upgrade?": "您想升級哪個？",
@@ -24575,9 +24368,9 @@ I18N["zh-TW"]["account/choose"] = { // 帳戶升級選擇
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["account/upgrade"] = { // 帳戶
+defineI18nPage(I18N["zh-TW"], "account/upgrade", () => ({ // 帳戶
     "static": {
         // https://github.com/account/upgrade?plan=pro&source=account+compare+plans
             "Upgrade your account from GitHub Free to GitHub Pro": "從 GitHub 免費版升級到 GitHub 專業版",
@@ -24625,9 +24418,9 @@ I18N["zh-TW"]["account/upgrade"] = { // 帳戶
     "regexp": [
         [/Payment due/, "付款截止日期為"],
     ],
-};
+}));
 
-I18N["zh-TW"]["marketplace"] = { // GitHub 市場
+defineI18nPage(I18N["zh-TW"], "marketplace", () => ({ // GitHub 市場
     "static": { // 靜態翻譯
         "Search Marketplace": "搜尋市場",
         "Listing type": "顯示類型",
@@ -25356,9 +25149,9 @@ I18N["zh-TW"]["marketplace"] = { // GitHub 市場
             [/Models/, "模型"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["apps"] = { // GitHub 應用
+defineI18nPage(I18N["zh-TW"], "apps", () => ({ // GitHub 應用
     "static": { // 靜態翻譯
 
         // GitHub 應用頁面 https://github.com/apps/<app-name>
@@ -25450,9 +25243,9 @@ I18N["zh-TW"]["apps"] = { // GitHub 應用
         [/Where do you want to install (.*)\?/, "您想把 $1 安裝在哪裡？"],
         [/(.*) is installed. Click to configure./, "$1 已安裝。點擊進行配置。"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs"] = { // 組織頁面
+defineI18nPage(I18N["zh-TW"], "orgs", () => ({ // 組織頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
         //>>>>>>>>>>>>>>>>>> 組織主頁/概況頁 <<<<<<<<<<<<<<<<<<<<<
@@ -25668,15 +25461,15 @@ I18N["zh-TW"]["orgs"] = { // 組織頁面
             "Choose a plan": "選擇一個計劃",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["orgs/repositories"] = I18N["zh-TW"]["page-profile/repositories"];
+defineI18nAlias(I18N["zh-TW"], "orgs/repositories", "page-profile/repositories");
 
-I18N["zh-TW"]["orgs/projects"] = I18N["zh-TW"]["page-profile/projects"];
+defineI18nAlias(I18N["zh-TW"], "orgs/projects", "page-profile/projects");
 
-I18N["zh-TW"]["orgs/packages"] = I18N["zh-TW"]["page-profile/packages"];
+defineI18nAlias(I18N["zh-TW"], "orgs/packages", "page-profile/packages");
 
-I18N["zh-TW"]["orgs/people"] = { // 組織 - 成員標籤卡
+defineI18nPage(I18N["zh-TW"], "orgs/people", () => ({ // 組織 - 成員標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
 
@@ -25843,12 +25636,12 @@ I18N["zh-TW"]["orgs/people"] = { // 組織 - 成員標籤卡
             [/Security Managers for/, "安全管理員"],
         ],
     },
-};
-I18N["zh-TW"]["orgs/outside-collaborators"] = I18N["zh-TW"]["orgs/people"];
-I18N["zh-TW"]["orgs/pending_collaborators"] = I18N["zh-TW"]["orgs/people"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/outside-collaborators", "orgs/people");
+defineI18nAlias(I18N["zh-TW"], "orgs/pending_collaborators", "orgs/people");
 
 
-I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
+defineI18nPage(I18N["zh-TW"], "orgs/teams", () => ({ // 組織 - 團隊標籤卡
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
         "Organization roles": "組織角色",
@@ -25989,10 +25782,10 @@ I18N["zh-TW"]["orgs/teams"] = { // 組織 - 團隊標籤卡
         [/Add member to (.+)/, "新增成員至 $1"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["orgs/new-team"]= I18N["zh-TW"]["orgs/teams"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/new-team", "orgs/teams");
 
-I18N["zh-TW"]["orgs/invitations"] = { // 組織 - 邀請頁面
+defineI18nPage(I18N["zh-TW"], "orgs/invitations", () => ({ // 組織 - 邀請頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-public"]["static"],
 
@@ -26026,9 +25819,9 @@ I18N["zh-TW"]["orgs/invitations"] = { // 組織 - 邀請頁面
         [/Invite a member to ([^ ]+)/, "邀請會員加入 $1"],
         [/is already a member of ([^ ]+)./, "已經是 $1 的成員。"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/invitation"] = { // 組織 - 接受邀請頁面
+defineI18nPage(I18N["zh-TW"], "orgs/invitation", () => ({ // 組織 - 接受邀請頁面
     "static": {
 
         // 接受邀請 https://github.com/<orgs-name>/invitation
@@ -26062,9 +25855,9 @@ I18N["zh-TW"]["orgs/invitation"] = { // 組織 - 接受邀請頁面
         [/of ([^ ]+) may be able to see:/, "$1 將可以查看："],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/domain/new"] = { // 組織 - 新增網域
+defineI18nPage(I18N["zh-TW"], "orgs/domain/new", () => ({ // 組織 - 新增網域
     "static": { // 靜態翻譯
         "Verified & approved domains": "經驗證和批准的網域",
         "Add a domain": "新增網域",
@@ -26075,9 +25868,9 @@ I18N["zh-TW"]["orgs/domain/new"] = { // 組織 - 新增網域
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/profile"] = { // 組織設置 - 組織資料
+defineI18nPage(I18N["zh-TW"], "orgs/settings/profile", () => ({ // 組織設置 - 組織資料
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26221,9 +26014,9 @@ I18N["zh-TW"]["orgs/settings/profile"] = { // 組織設置 - 組織資料
         [/(Link to social profile )(\d+)/, "社交帳戶連結 $2"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/policies/repositories"] = { // 組織設置 - 策略 - 儲存庫策略
+defineI18nPage(I18N["zh-TW"], "orgs/settings/policies/repositories", () => ({ // 組織設置 - 策略 - 儲存庫策略
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26236,9 +26029,9 @@ I18N["zh-TW"]["orgs/settings/policies/repositories"] = { // 組織設置 - 策�
             "until you upgrade this organization account to GitHub Team.": "直到您將此組織帳戶升級至 GitHub 團體版。",
             "New policy": "新建策略",
     }
-}
+}));
 
-I18N["zh-TW"]["orgs/settings/roles"] = { // 組織設置 - 儲存庫角色
+defineI18nPage(I18N["zh-TW"], "orgs/settings/roles", () => ({ // 組織設置 - 儲存庫角色
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26272,9 +26065,9 @@ I18N["zh-TW"]["orgs/settings/roles"] = { // 組織設置 - 儲存庫角色
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/member_privileges"] = { // 組織設置 - 成員權限
+defineI18nPage(I18N["zh-TW"], "orgs/settings/member_privileges", () => ({ // 組織設置 - 成員權限
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26437,9 +26230,9 @@ I18N["zh-TW"]["orgs/settings/member_privileges"] = { // 組織設置 - 成員權
         [/If enabled, all users with read access can create and comment on discussions in ([^ ]+)’s repositories./, "如果啟用，所有具有讀取權限的用戶都可以在 $1 的儲存庫中創建和評論討論。"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/teams"] = { // 組織設置 - 團隊討論
+defineI18nPage(I18N["zh-TW"], "orgs/settings/teams", () => ({ // 組織設置 - 團隊討論
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26462,9 +26255,9 @@ I18N["zh-TW"]["orgs/settings/teams"] = { // 組織設置 - 團隊討論
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/import-export"] = { // 組織設置 - 導入/導出
+defineI18nPage(I18N["zh-TW"], "orgs/settings/import-export", () => ({ // 組織設置 - 導入/導出
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26483,9 +26276,9 @@ I18N["zh-TW"]["orgs/settings/import-export"] = { // 組織設置 - 導入/導出
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/blocked_users"] = { // 組織設置 - 黑名單
+defineI18nPage(I18N["zh-TW"], "orgs/settings/blocked_users", () => ({ // 組織設置 - 黑名單
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26522,9 +26315,9 @@ I18N["zh-TW"]["orgs/settings/blocked_users"] = { // 組織設置 - 黑名單
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/interaction_limits"] = { // 組織設置 - 互動限制
+defineI18nPage(I18N["zh-TW"], "orgs/settings/interaction_limits", () => ({ // 組織設置 - 互動限制
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26561,9 +26354,9 @@ I18N["zh-TW"]["orgs/settings/interaction_limits"] = { // 組織設置 - 互動�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/code_review_limits"] = { // 組織設置 - 程式碼審查限制
+defineI18nPage(I18N["zh-TW"], "orgs/settings/code_review_limits", () => ({ // 組織設置 - 程式碼審查限制
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26579,9 +26372,9 @@ I18N["zh-TW"]["orgs/settings/code_review_limits"] = { // 組織設置 - 程式�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/moderators"] = { // 組織設置 - 版主
+defineI18nPage(I18N["zh-TW"], "orgs/settings/moderators", () => ({ // 組織設置 - 版主
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26604,9 +26397,9 @@ I18N["zh-TW"]["orgs/settings/moderators"] = { // 組織設置 - 版主
         [/Successfully removed (@[^\n]+) as a moderator/, "已成功將 $1 的版主身份移除"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/repository-defaults"] = { // 組織設置 - 儲存庫 / 預設值
+defineI18nPage(I18N["zh-TW"], "orgs/settings/repository-defaults", () => ({ // 組織設置 - 儲存庫 / 預設值
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26674,9 +26467,9 @@ I18N["zh-TW"]["orgs/settings/repository-defaults"] = { // 組織設置 - 儲存�
         [/Your default branch name will be ([^ ]+)/, "您的預設分支名稱將是 $1"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/topics"] = { // 組織設置 - 儲存庫 /儲存庫主題
+defineI18nPage(I18N["zh-TW"], "orgs/topics", () => ({ // 組織設置 - 儲存庫 /儲存庫主題
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26690,9 +26483,9 @@ I18N["zh-TW"]["orgs/topics"] = { // 組織設置 - 儲存庫 /儲存庫主題
         [/There are no repositories in ([^ ]+) that you’ve contributed to and that you can set topics on./, "$1  中沒有您貢獻過的並且可以設置主題的儲存庫。"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/codespaces"] = { // 組織設置 - 儲存庫 /程式碼空間
+defineI18nPage(I18N["zh-TW"], "orgs/settings/codespaces", () => ({ // 組織設置 - 儲存庫 /程式碼空間
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
         "To manage Codespace ownership settings, please": "要管理程式碼空間所有權設置，請",
@@ -26730,9 +26523,9 @@ I18N["zh-TW"]["orgs/settings/codespaces"] = { // 組織設置 - 儲存庫 /程�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/sandboxes"] = {
+defineI18nPage(I18N["zh-TW"], "orgs/settings/sandboxes", () => ({
     "static": {
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26752,9 +26545,9 @@ I18N["zh-TW"]["orgs/settings/sandboxes"] = {
             "Sandboxes": "沙盒"
         }
     }
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/custom-properties"] = { // 組織設置 - 自定義屬性
+defineI18nPage(I18N["zh-TW"], "orgs/settings/custom-properties", () => ({ // 組織設置 - 自定義屬性
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
         ...I18N["zh-TW"]["repository/custom-properties"]["static"],
@@ -26767,9 +26560,9 @@ I18N["zh-TW"]["orgs/settings/custom-properties"] = { // 組織設置 - 自定義
             "Custom properties": "自定義屬性",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/issue-fields"] = { // 組織設置 - 議題字段
+defineI18nPage(I18N["zh-TW"], "orgs/settings/issue-fields", () => ({ // 組織設置 - 議題字段
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -26786,9 +26579,9 @@ I18N["zh-TW"]["orgs/settings/issue-fields"] = { // 組織設置 - 議題字段
             "Issue fields": "議題字段",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/copilot"] = {  // 組織設置 - GitHub Copilot
+defineI18nPage(I18N["zh-TW"], "orgs/settings/copilot", () => ({  // 組織設置 - GitHub Copilot
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27062,9 +26855,9 @@ I18N["zh-TW"]["orgs/settings/copilot"] = {  // 組織設置 - GitHub Copilot
             ...I18N["zh-TW"]["repository/settings/copilot/code_review"].title.regexp,
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
+defineI18nPage(I18N["zh-TW"], "orgs/settings/actions", () => ({ // 組織設置 - 操作
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27279,9 +27072,9 @@ I18N["zh-TW"]["orgs/settings/actions"] = { // 組織設置 - 操作
         [/(\d+) caches?/, "$1 項快取"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/discussions"] = { // 組織設置 - 討論
+defineI18nPage(I18N["zh-TW"], "orgs/settings/discussions", () => ({ // 組織設置 - 討論
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27306,9 +27099,9 @@ I18N["zh-TW"]["orgs/settings/discussions"] = { // 組織設置 - 討論
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/projects"] = { // 組織設置 - 計劃 - 專案
+defineI18nPage(I18N["zh-TW"], "orgs/settings/projects", () => ({ // 組織設置 - 計劃 - 專案
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27335,9 +27128,9 @@ I18N["zh-TW"]["orgs/settings/projects"] = { // 組織設置 - 計劃 - 專案
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/security"] = { // 組織設置 - 身份驗證安全
+defineI18nPage(I18N["zh-TW"], "orgs/settings/security", () => ({ // 組織設置 - 身份驗證安全
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27366,9 +27159,9 @@ I18N["zh-TW"]["orgs/settings/security"] = { // 組織設置 - 身份驗證安全
         [/Require two-factor authentication for everyone in the ([^]+) organization./, "要求對 $1 組織中的每個成員進行雙因素身份驗證。"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/security_analysis"] = { // 組織設置 - 程式碼安全性與分析
+defineI18nPage(I18N["zh-TW"], "orgs/settings/security_analysis", () => ({ // 組織設置 - 程式碼安全性與分析
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27539,9 +27332,9 @@ I18N["zh-TW"]["orgs/settings/security_analysis"] = { // 組織設置 - 程式碼
         [/(\d+) selected repositor(y|ies)/, "$1 個選定的儲存庫"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/dependabot_rules"] = { // 組織設置 - Dependabot 規則
+defineI18nPage(I18N["zh-TW"], "orgs/settings/dependabot_rules", () => ({ // 組織設置 - Dependabot 規則
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-settings-menu"]["static"],
@@ -27637,10 +27430,10 @@ I18N["zh-TW"]["orgs/settings/dependabot_rules"] = { // 組織設置 - Dependabot
         [/This will permanently delete the rule \"(.*)\" and potentially reopen associated alerts./, "這將永久刪除規則 “$1” 並可能重新打開相關警報。"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["repository/settings/dependabot_rules"] = I18N["zh-TW"]["orgs/settings/dependabot_rules"];
+}));
+defineI18nAlias(I18N["zh-TW"], "repository/settings/dependabot_rules", "orgs/settings/dependabot_rules");
 
-I18N["zh-TW"]["orgs/settings/domains"] = { // 組織設置 - 經驗證和批准的網域
+defineI18nPage(I18N["zh-TW"], "orgs/settings/domains", () => ({ // 組織設置 - 經驗證和批准的網域
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27654,9 +27447,9 @@ I18N["zh-TW"]["orgs/settings/domains"] = { // 組織設置 - 經驗證和批准�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/secrets"] = { // 組織設置 - 機密和變量
+defineI18nPage(I18N["zh-TW"], "orgs/settings/secrets", () => ({ // 組織設置 - 機密和變量
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
         ...I18N["zh-TW"]["confirm-access"]["static"],
@@ -27833,10 +27626,10 @@ I18N["zh-TW"]["orgs/settings/secrets"] = { // 組織設置 - 機密和變量
         [/(\d+) selected repositor(y|ies)/, "$1 個選定的儲存庫"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["orgs/settings/variables"] = I18N["zh-TW"]["orgs/settings/secrets"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/settings/variables", "orgs/settings/secrets");
 
-I18N["zh-TW"]["orgs/settings/oauth_application_policy"] = { // 組織設置 - 第三方應用訪問策略
+defineI18nPage(I18N["zh-TW"], "orgs/settings/oauth_application_policy", () => ({ // 組織設置 - 第三方應用訪問策略
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -27890,9 +27683,9 @@ I18N["zh-TW"]["orgs/settings/oauth_application_policy"] = { // 組織設置 - �
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/personal-access-token"] = { // 組織設置 - 個人訪問令牌
+defineI18nPage(I18N["zh-TW"], "orgs/settings/personal-access-token", () => ({ // 組織設置 - 個人訪問令牌
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28012,9 +27805,9 @@ I18N["zh-TW"]["orgs/settings/personal-access-token"] = { // 組織設置 - 個�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/reminders"] = { // 組織設置 - 定時提醒
+defineI18nPage(I18N["zh-TW"], "orgs/settings/reminders", () => ({ // 組織設置 - 定時提醒
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28035,9 +27828,9 @@ I18N["zh-TW"]["orgs/settings/reminders"] = { // 組織設置 - 定時提醒
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/sponsors-log"] = { // 組織設置 - 贊助日誌
+defineI18nPage(I18N["zh-TW"], "orgs/settings/sponsors-log", () => ({ // 組織設置 - 贊助日誌
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28059,9 +27852,9 @@ I18N["zh-TW"]["orgs/settings/sponsors-log"] = { // 組織設置 - 贊助日誌
         [/This is where you can review activity from ([^ ]+)'s sponsorships./,  "在這裡您可以查看 $1 贊助的活動。"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/audit-log"] = { // 組織設置 - 審計日誌
+defineI18nPage(I18N["zh-TW"], "orgs/settings/audit-log", () => ({ // 組織設置 - 審計日誌
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28106,10 +27899,10 @@ I18N["zh-TW"]["orgs/settings/audit-log"] = { // 組織設置 - 審計日誌
         [/Found (\d+) events?/, "找到 $1 個事件"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
-I18N["zh-TW"]["orgs/audit-log/event_settings"] = I18N["zh-TW"]["orgs/settings/audit-log"];
+}));
+defineI18nAlias(I18N["zh-TW"], "orgs/audit-log/event_settings", "orgs/settings/audit-log");
 
-I18N["zh-TW"]["orgs/settings/deleted_repositories"] = { // 組織設置 - 刪除的儲存庫
+defineI18nPage(I18N["zh-TW"], "orgs/settings/deleted_repositories", () => ({ // 組織設置 - 刪除的儲存庫
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28123,9 +27916,9 @@ I18N["zh-TW"]["orgs/settings/deleted_repositories"] = { // 組織設置 - 刪除
         [/No recoverable repositories were found for ([^ ]+)./, "沒有發現 $1 中可恢復儲存庫"],
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/applications"] = { // 組織設置 - OAuth 應用
+defineI18nPage(I18N["zh-TW"], "orgs/settings/applications", () => ({ // 組織設置 - OAuth 應用
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28139,9 +27932,9 @@ I18N["zh-TW"]["orgs/settings/applications"] = { // 組織設置 - OAuth 應用
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/apps"] = { // 組織設置 - GitHub 應用
+defineI18nPage(I18N["zh-TW"], "orgs/settings/apps", () => ({ // 組織設置 - GitHub 應用
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28164,9 +27957,9 @@ I18N["zh-TW"]["orgs/settings/apps"] = { // 組織設置 - GitHub 應用
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/settings/publisher"] = { // 組織設置 - GitHub 發布者驗證
+defineI18nPage(I18N["zh-TW"], "orgs/settings/publisher", () => ({ // 組織設置 - GitHub 發布者驗證
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
 
@@ -28180,9 +27973,9 @@ I18N["zh-TW"]["orgs/settings/publisher"] = { // 組織設置 - GitHub 發布者�
     "regexp": [ // 正則翻譯
         ...I18N["zh-TW"]["orgs-public"]["regexp"],
     ],
-};
+}));
 
-I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
+defineI18nPage(I18N["zh-TW"], "projects", () => ({ // 專案頁面(含儲存庫專案)
     "static": { // 靜態翻譯
         // >>>>>>>>>>>>>>>>>>儲存庫 公共部分<<<<<<<<<<<<<<<<<<<<<<<<<<<
             // 頭部條
@@ -28851,22 +28644,22 @@ I18N["zh-TW"]["projects"] = { // 專案頁面(含儲存庫專案)
             [/Projects/, "專案"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["new/project"] = I18N["zh-TW"]["projects"];
-I18N["zh-TW"]["repository/projects/new"] = I18N["zh-TW"]["projects"];
-I18N["zh-TW"]["repository/projects"] = I18N["zh-TW"]["projects"];
+defineI18nAlias(I18N["zh-TW"], "new/project", "projects");
+defineI18nAlias(I18N["zh-TW"], "repository/projects/new", "projects");
+defineI18nAlias(I18N["zh-TW"], "repository/projects", "projects");
 
-I18N["zh-TW"]["redeem"] = { // 兌換頁面
+defineI18nPage(I18N["zh-TW"], "redeem", () => ({ // 兌換頁面
     "static": { // 靜態翻譯
         "Enter coupon code": "輸入優惠券程式碼",
         "Redeem": "兌換",
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["github-copilot/signup"] = { // GitHub Copilot 個人版獲取頁面
+defineI18nPage(I18N["zh-TW"], "github-copilot/signup", () => ({ // GitHub Copilot 個人版獲取頁面
     "static": { // 靜態翻譯
     ...I18N["zh-TW"]["settings/copilot"]["static"],
 
@@ -28927,9 +28720,9 @@ I18N["zh-TW"]["github-copilot/signup"] = { // GitHub Copilot 個人版獲取頁�
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["github-copilot/free_signup"] = { // GitHub Copilot 個人免費版獲取頁面
+defineI18nPage(I18N["zh-TW"], "github-copilot/free_signup", () => ({ // GitHub Copilot 個人免費版獲取頁面
     "static": { // 靜態翻譯
 
         "Your AI pair programmer": "您的 AI 編程助理",
@@ -28946,9 +28739,9 @@ I18N["zh-TW"]["github-copilot/free_signup"] = { // GitHub Copilot 個人免費�
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["github-copilot/pro"] = { // GitHub Copilot 專業版適用頁面
+defineI18nPage(I18N["zh-TW"], "github-copilot/pro", () => ({ // GitHub Copilot 專業版適用頁面
     "static": {
         // https://github.com/github-copilot/pro
             "Try Copilot Pro for 30 days free": "免費試用 Copilot Pro 30 天",
@@ -28999,9 +28792,9 @@ I18N["zh-TW"]["github-copilot/pro"] = { // GitHub Copilot 專業版適用頁面
 
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-TW"]["orgs/enterprise_plan"] = { // 企業版訂閱頁面
+defineI18nPage(I18N["zh-TW"], "orgs/enterprise_plan", () => ({ // 企業版訂閱頁面
     "static": {
         // https://github.com/organizations/enterprise_plan
             "Pick your trial plan": "選擇您的試用計劃",
@@ -29016,9 +28809,9 @@ I18N["zh-TW"]["orgs/enterprise_plan"] = { // 企業版訂閱頁面
     },
     "regexp": [ // 正則翻譯
     ],
-};
+}));
 
-I18N["zh-TW"]["codespaces"] = { // 程式碼空間頁面
+defineI18nPage(I18N["zh-TW"], "codespaces", () => ({ // 程式碼空間頁面
     "static": {
         // 頂部
             "Help us improve GitHub Codespaces": "幫助我們改進 GitHub 程式碼空間",
@@ -29212,9 +29005,9 @@ I18N["zh-TW"]["codespaces"] = { // 程式碼空間頁面
             "Create new codespace": "創建程式碼空間",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["codespaces/allow_permissions"] = { // 程式碼空間申請額外權限頁面，似乎不可用
+defineI18nPage(I18N["zh-TW"], "codespaces/allow_permissions", () => ({ // 程式碼空間申請額外權限頁面，似乎不可用
     "static": {
         "This codespace is requesting": "該程式碼空間要求",
         "additional permissions": "額外權限",
@@ -29232,9 +29025,9 @@ I18N["zh-TW"]["codespaces/allow_permissions"] = { // 程式碼空間申請額外
     "regexp": [
         [/(\d+) permissions? requested/, "要求 $1 項權限"],
     ],
-};
+}));
 
-I18N["zh-TW"]["developer/register"] = { // 開發者註冊
+defineI18nPage(I18N["zh-TW"], "developer/register", () => ({ // 開發者註冊
     "static": {
         // https://github.com/developer/register
             // 標題
@@ -29269,9 +29062,9 @@ I18N["zh-TW"]["developer/register"] = { // 開發者註冊
     },
     "regexp": [ // 正則匹配
     ],
-};
+}));
 
-I18N["zh-TW"]["features"] = {
+defineI18nPage(I18N["zh-TW"], "features", () => ({
     "static": {
         "The tools you need to build what you want.": "構建您想要的內容所需的工具。",
         // 看板
@@ -29328,9 +29121,9 @@ I18N["zh-TW"]["features"] = {
             "GitHub Features · GitHub": "GitHub 特點 · GitHub",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["status"] = { // GitHub Status
+defineI18nPage(I18N["zh-TW"], "status", () => ({ // GitHub Status
     "static": {
         // https://www.githubstatus.com/
             "Help": "幫助",
@@ -29475,9 +29268,9 @@ I18N["zh-TW"]["status"] = { // GitHub Status
     },
     "regexp": [
     ],
-};
+}));
 
-I18N["zh-TW"]["skills"] = { // https://skills.github.com/
+defineI18nPage(I18N["zh-TW"], "skills", () => ({ // https://skills.github.com/
     "static": { // 靜態翻譯
         "GitHub Skills": "Github 技能",
             "Learn how to use GitHub with interactive courses designed for beginners and experts.": "通過專為初學者和專家設計的互動課程，學習如何使用 GitHub。",
@@ -29701,9 +29494,9 @@ I18N["zh-TW"]["skills"] = { // https://skills.github.com/
     },
     "regexp": [
     ],
-};
+}));
 
-I18N["zh-TW"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/sponsoring 贊助頁
+defineI18nPage(I18N["zh-TW"], "orgs/sponsoring", () => ({ // https://github.com/orgs/<org-name>/sponsoring 贊助頁
     "static": {
         //"hasn’t sponsored any users yet.": "尚未贊助任何人。",
         "'s sponsorships": " 的贊助者",
@@ -29735,16 +29528,16 @@ I18N["zh-TW"]["orgs/sponsoring"] = { // https://github.com/orgs/<org-name>/spons
             [/Sponsoring/, "贊助"],
         ],
     },
-};
+}));
 
-I18N["zh-TW"]["organizations/plan"] = {
+defineI18nPage(I18N["zh-TW"], "organizations/plan", () => ({
     "static": {
         "Pick a plan for your organization": "為您的組織選擇計劃",
     },
     "regexp": [],
-};
+}));
 
-I18N["zh-TW"]["repo-actions-merics-public"] = { // 儲存庫 - 分析 - 操作看板公共部分
+defineI18nPage(I18N["zh-TW"], "repo-actions-merics-public", () => ({ // 儲存庫 - 分析 - 操作看板公共部分
     "static": {
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository-insights-menu"]["static"],
@@ -29870,9 +29663,9 @@ I18N["zh-TW"]["repo-actions-merics-public"] = { // 儲存庫 - 分析 - 操作�
             return '範圍：' + periodKey[period];
         }],
     ],
-};
+}));
 
-I18N["zh-TW"]["repository/actions/metrics/usage"] = {
+defineI18nPage(I18N["zh-TW"], "repository/actions/metrics/usage", () => ({
     "static": {
         ...I18N["zh-TW"]["repo-actions-merics-public"]["static"],
 
@@ -29890,9 +29683,9 @@ I18N["zh-TW"]["repository/actions/metrics/usage"] = {
             "Actions usage metrics": "Actions 使用情況",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/actions/metrics/performance"] = {
+defineI18nPage(I18N["zh-TW"], "repository/actions/metrics/performance", () => ({
     "static": {
         ...I18N["zh-TW"]["repo-actions-merics-public"]["static"],
 
@@ -29938,9 +29731,9 @@ I18N["zh-TW"]["repository/actions/metrics/performance"] = {
             "Actions performance metrics": "Actions 資料看板",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["copilot"] = {
+defineI18nPage(I18N["zh-TW"], "copilot", () => ({
     "static": {
         // 錯誤
             "Conversation failed to load": "加載失敗",
@@ -30457,9 +30250,9 @@ I18N["zh-TW"]["copilot"] = {
             "Spaces · GitHub Copilot": "空間 · GitHub Copilot",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["github-copilot/code-review-waitlist"] = {
+defineI18nPage(I18N["zh-TW"], "github-copilot/code-review-waitlist", () => ({
     "static": {
         "Copilot-powered code reviews waitlist": "Copilot 驅動的程式碼審查候補名單",
 
@@ -30476,9 +30269,9 @@ I18N["zh-TW"]["github-copilot/code-review-waitlist"] = {
     "regexp":[
         [/Thank you! ([^ ]+) is now on the waitlist/, "感謝！$1 已加入候補名單"],
     ],
-};
+}));
 
-I18N["zh-TW"]["spark"] = {
+defineI18nPage(I18N["zh-TW"], "spark", () => ({
     "static": {
         // spark https://github.com/spark
             "Dream it.": "夢想它。",
@@ -30664,16 +30457,16 @@ I18N["zh-TW"]["spark"] = {
         [/(\d+) rows? • (.+)/, "$1 行 • $2"],
         [/Delete \((\d+)\)/, "刪除（$1）"],
     ],
-};
+}));
 
-I18N["zh-TW"]["sitemap"] = { // 網站地圖頁，僅匹配公共部分
+defineI18nPage(I18N["zh-TW"], "sitemap", () => ({ // 網站地圖頁，僅匹配公共部分
     "static": {
         ...I18N["zh-TW"]["homepage"]["static"],
     },
     "regexp":[],
-};
+}));
 
-I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
+defineI18nPage(I18N["zh-TW"], "education", () => ({ // 教育頁面，申請學生包會用到
     "static": {
         ...I18N["zh-TW"]["homepage"]["static"],
         // 頂欄
@@ -30683,7 +30476,7 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
 
         "GitHub Education": "GitHub 教育",
         "Empowering the next generation of developers": "增強新一代開發人員的能力",
-            "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在編程教育和技術職業之間架起了一座橋樑，全球每個人都可以免費使用。",
+            "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在編程教育和技術職業之間架起了一座橋梁，全球每個人都可以免費使用。",
         "Join GitHub Education": "加入 GitHub 教育",
         // 教育包申請 https://education.github.com/pack
             // 右上角選單
@@ -31003,9 +30796,9 @@ I18N["zh-TW"]["education"] = { // 教育頁面，申請學生包會用到
             "Events - GitHub Education": "事件 - GitHub 教育",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["mcp"] = {
+defineI18nPage(I18N["zh-TW"], "mcp", () => ({
     "static": {
         "Connect models to the real world": "連接模型至真實世界",
             "Servers and tools from the community that connect models to files, APIs, databases, and more.": "來自社區的伺服器和工具，可以將模型連接到文件、API、資料庫等。",
@@ -31031,9 +30824,9 @@ I18N["zh-TW"]["mcp"] = {
             "MCP Registry": "MCP 互聯",
         },
     },
-};
+}));
 
-I18N["zh-TW"]["repository/agents"] = {
+defineI18nPage(I18N["zh-TW"], "repository/agents", () => ({
     "static": {
         // 介紹頁面
         "Copilot Coding Agent handles routine tasks so you can focus on core work": "Copilot 編程AI 代理處理例行任務，讓您專注於核心工作",
@@ -31124,4 +30917,4 @@ I18N["zh-TW"]["repository/agents"] = {
         ['p.Blankslate-Description', '將測試、依賴項升級、遷移和維護等工作交給AI 代理處理，節省您的時間。您可以通過 Copilot Chat、命令行、IDE 創建合併請求，或直接將議題分配給 Copilot 來開始使用。'],
         ['.BannerDescription', '僅在付費計劃中可用。試用 Copilot Pro，可免費 30 天。'],
     ],
-};
+}));

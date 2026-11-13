@@ -109,16 +109,19 @@ for (const fileName of runtimeScripts) {
                 /if \(page === "repository"\) \{[^}]{0,120}transDesc\(REPOSITORY_DESC_SELECTOR\)/,
                 `${fileName} should re-mount the description button on mutations`,
             );
-        } else if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js') {
+        } else if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js' || fileName === 'main_zh-TW.user.js') {
             // 描述按钮在载入/导航时强制核对，之后由批次按 isConnected 决定是否重挂
+            const traditional = fileName === 'main_zh-TW.user.js';
+            const loadLabel = traditional ? '描述翻譯' : '描述翻译';
+            const firstLabel = traditional ? '描述按鈕' : '描述按钮';
             assert.match(
                 source,
-                /safe\(mountDescButton, '描述翻译'\)\(true\)/,
+                new RegExp(`safe\\(mountDescButton, '${loadLabel}'\\)\\(true\\)`),
                 `${fileName} should mount the description button on load/navigation`,
             );
             assert.match(
                 source,
-                /safe\(mountDescButton, '描述按钮'\)\(true\)/,
+                new RegExp(`safe\\(mountDescButton, '${firstLabel}'\\)\\(true\\)`),
                 `${fileName} should mount the description button on first load`,
             );
             assert.match(
