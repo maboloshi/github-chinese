@@ -109,7 +109,7 @@ for (const fileName of runtimeScripts) {
                 /if \(page === "repository"\) \{[^}]{0,120}transDesc\(REPOSITORY_DESC_SELECTOR\)/,
                 `${fileName} should re-mount the description button on mutations`,
             );
-        } else if (fileName === 'main.user.js') {
+        } else if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js') {
             // 描述按钮在载入/导航时强制核对，之后由批次按 isConnected 决定是否重挂
             assert.match(
                 source,
