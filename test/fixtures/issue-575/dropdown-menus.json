@@ -1,0 +1,60 @@
+{
+  "contributionSettings": {
+    "pageType": "page-profile",
+    "url": "https://github.com/<user-name>",
+    "texts": [
+      {
+        "source": "Private contributions",
+        "expected": "私人贡献"
+      },
+      {
+        "source": "Turning off private contributions will show only public activity on your profile.",
+        "expected": "关闭私人贡献则将仅在您的个人资料中显示公开活动。"
+      },
+      {
+        "source": "Activity overview",
+        "expected": "活动概况"
+      },
+      {
+        "source": "Turning on the activity overview will show an overview of your activity across organizations and repositories.",
+        "expected": "开启活动概况将显示跨组织和仓库的活动概况。"
+      }
+    ]
+  },
+  "copilotFeatures": {
+    "pageType": "settings/copilot",
+    "url": "https://github.com/settings/copilot/features",
+    "texts": [
+      {
+        "source": "Enabled",
+        "expected": "启用"
+      },
+      {
+        "source": "Disabled",
+        "expected": "已禁用"
+      },
+      {
+        "source": "You will have access to the feature",
+        "expected": "您将能够访问此功能"
+      },
+      {
+        "source": "You won’t have access to the feature",
+        "expected": "您将不能访问此功能"
+      }
+    ]
+  },
+  "dependabot": {
+    "pageType": "repository/security",
+    "url": "https://github.com/<username>/<repo-name>/security/dependabot",
+    "texts": [
+      {
+        "source": "Refresh Dependabot alerts",
+        "expected": "刷新 Dependabot 警报"
+      },
+      {
+        "source": "Reprocess your project's current dependency files.",
+        "expected": "重新处理项目当前的依赖项文件。"
+      }
+    ]
+  }
+}
