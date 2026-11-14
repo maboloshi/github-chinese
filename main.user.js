@@ -142,7 +142,6 @@
         lastTraversal: null,     // 最近一次全量遍历的 {url, body}，避免同一次载入遍历两遍
         descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
         descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
-        initDone: false,
     };
 
     /* =========================== 安全检查 =========================== */
@@ -182,7 +181,6 @@
         setupInitTrans();
         setupUrlChangeListener();
         setupTurboEvents();
-        State.initDone = true;
     }
 
     /**
@@ -1379,50 +1377,11 @@
         },
 
         /**
-         * 获取所有未命中词条
-         * @returns {Object} 未命中词条数据
-         */
-        getAll() {
-            return this.data;
-        },
-
-        /**
-         * 按路径获取词条
-         * @param {string} path - 页面路径
-         * @returns {Object} 该路径下的词条对象
-         */
-        getByPath(path) {
-            return this.data[path] || {};
-        },
-
-        /**
-         * 获取所有词条的文本数组（按路径分组）
-         * @returns {Array} 格式为 [{path, terms: []}, ...]
-         */
-        getAllTermsArray() {
-            return Object.entries(this.data).map(([path, terms]) => ({
-                path,
-                terms: Object.keys(terms)
-            }));
-        },
-
-        /**
          * 清空所有词条
          */
         clearAll() {
             this.data = {};
             this.save();
-        },
-
-        /**
-         * 清空指定路径的词条
-         * @param {string} path - 页面路径
-         */
-        clearPath(path) {
-            if (this.data[path]) {
-                delete this.data[path];
-                this.save();
-            }
         },
 
         /**
