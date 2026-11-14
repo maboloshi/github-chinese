@@ -53,6 +53,8 @@ function load({ pathname, nwo = null }) {
     });
     vm.runInContext(`
 ${extractConst('RESERVED_ROOTS')}
+${extractFunction('readRepositoryNwo')}
+${extractFunction('getOwnerFromPath')}
 ${extractFunction('isBreadcrumbIdentifierLink')}
 globalThis.__isIdentifier = isBreadcrumbIdentifierLink;
 `, context, { filename: 'main.user.js' });

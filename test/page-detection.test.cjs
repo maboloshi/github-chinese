@@ -109,6 +109,7 @@ function loadDetector() {
     vm.runInContext(`
 ${extractConfig()}
 ${extractConst('RESERVED_ROOTS')}
+${extractFunction('readRepositoryNwo')}
 ${extractFunction('isFallbackRepositoryPath')}
 ${extractFunction('detectPageType')}
 globalThis.__detect = detectPageType;

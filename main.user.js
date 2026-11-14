@@ -504,6 +504,35 @@
     ]);
 
     /**
+     * 当前页面对应的仓库（owner/repo），取自 GitHub 的 octolytics 元数据。
+     * Turbo 导航期间元数据会短暂缺失，调用方自行处理空串。
+     * @returns {string} 形如 "owner/repo" 的小写串；缺失时为空串
+     */
+    function readRepositoryNwo() {
+        const content = document.head
+            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
+            ?.content;
+        return (content || '').trim().toLowerCase();
+    }
+
+    /**
+     * 从 pathname 推断当前页面归属的账号 / 组织名。
+     * 保留首段（settings / notifications 等）是站点固定路径，返回 null。
+     * @returns {string|null} 小写的账号 / 组织名
+     */
+    function getOwnerFromPath() {
+        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
+        if (!segments.length) return null;
+
+        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
+            return segments[1] || null;
+        }
+        // notifications / settings / marketplace 这类保留路径的首段不是账号名
+        if (RESERVED_ROOTS.has(segments[0])) return null;
+        return segments[0];
+    }
+
+    /**
      * Turbo 导航会暂时拿掉 analytics-location。
      * 仅在元数据缺失或无法识别时按路径回退，已有元数据仍优先。
      * 全局路由按完整首段排除，避免没有结尾锚点的 rePagePath 把 settings-tools 当成 settings。
@@ -552,7 +581,7 @@
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
         // 元数据优先；Turbo 暂时拿掉 analytics-location 时再按仓库路径回退
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
-            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content
+            || !!readRepositoryNwo()
             || (!metaUsable && isFallbackRepositoryPath(pathname));
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
@@ -785,23 +814,16 @@
         const linkPath = element.pathname?.toLowerCase().replace(/\/+$/, '');
         if (!linkPath) return false;
 
-        const repository = document.head
-            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
-            ?.content?.toLowerCase();
+        const repository = readRepositoryNwo();
         if (repository) {
             const [owner] = repository.split('/');
             return linkPath === `/${owner}` || linkPath === `/${repository}`;
         }
 
-        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
-        if (!segments.length) return false;
-        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
-            return !!segments[1] && linkPath === `/${segments[1]}`;
-        }
-        // 只有「/首段」是账号名时首项才是标识符；notifications / settings / marketplace
-        // 这类保留路径的首段是固定路由，面包屑里的对应项是界面文案，不能拒翻。
-        if (RESERVED_ROOTS.has(segments[0])) return false;
-        return linkPath === `/${segments[0]}`;
+        // 元数据缺失时按 pathname 推断：只有「/首段」是账号名时首项才是标识符；
+        // notifications / settings / marketplace 这类保留路径的首项是界面文案，不能拒翻。
+        const owner = getOwnerFromPath();
+        return !!owner && linkPath === `/${owner}`;
     }
 
     /**
