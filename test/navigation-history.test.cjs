@@ -103,6 +103,8 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
         },
         handleTextNode(node) { node.data = `translated:${context.State.pageConfig.currentPageType}`; },
         handleElementNode() {},
+        isTooltipElement: () => false,
+        transTooltipElements() {},
         transTitle() { work.title++; },
         transBySelector() { work.selector++; },
         transDesc() { work.description++; },
@@ -110,6 +112,8 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
     // 执行生产代码里的声明：注册、遍历、变更处理都必须是真的那一份
     const state = source.match(/^    const State = \{[\s\S]*?^    \};/m);
     assert.ok(state);
+    const tooltipSelector = source.match(/^    const TOOLTIP_SELECTOR = '[^']+';/m);
+    assert.ok(tooltipSelector);
     const names = [
         'safe', 'init', 'setupInitTrans', 'setupUrlChangeListener', 'handleUrlChange',
         'setupTurboEvents', 'handleTurboLoad', 'updatePageConfig',
@@ -123,7 +127,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
         assert.ok(declaration, `${fileName}: ${name}`);
         return declaration[0];
     });
-    vm.runInContext(`${state[0]}\nthis.State = State;\n${functions.join('\n')}`, context, { filename: filePath });
+    vm.runInContext(`${state[0]}\n${tooltipSelector[0]}\nthis.State = State;\n${functions.join('\n')}`, context, { filename: filePath });
     context.State.featureSet.enable_onurlchange = urlchange;
     context.init();
     return {
