@@ -866,6 +866,7 @@
 
         if (tag === "BUTTON") { // 按钮
             transElementAttrs(node, [
+                'ariaLabel',
                 'title',
                 'cancelConfirmText'
             ]);
