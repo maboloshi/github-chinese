@@ -38,7 +38,6 @@
             'skills.github.com': 'skills',
             'education.github.com': 'education'
         },
-        SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
             repository: [
                 // 登录态是独立的 React 组件，类名形如 SidebarAbout-module_xxxx_description，
@@ -385,29 +384,26 @@
         if (!document.body) return;
 
         State.currentURL = window.location.href;
-        const restoring = State.visitAction === 'restore';
-
         updatePageConfig(reason);
 
         // before-render 已经挂好的观察器直接沿用；没有页面配置时也要挂上
         const preAttached = State.observedBody === document.body && !!State.mutationObserver;
         if (!preAttached) setupMutationObserver();
 
-        if (State.pageConfig) {
-            if (restoring && preAttached) {
-                scheduleIdleTraversal();
-            } else if (!hasFreshTraversal()) {
-                traversePage('页面遍历');
-            }
-        }
+        const pageConfig = State.pageConfig;
+        if (!pageConfig) return;
 
-        if (!State.pageConfig) return;
+        // 恢复访问时快照里已是译文：交给预挂的观察器和空闲补扫，不做同步全量遍历
+        if (State.visitAction === 'restore' && preAttached) {
+            scheduleIdleTraversal();
+        } else if (!hasFreshTraversal()) {
+            traversePage('页面遍历');
+        }
 
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
         // 仓库页等 React 提交后再挂（watchReactCommits）；gist 等非 React 页面载入即挂
-        if (State.pageConfig.currentPageType !== 'repository' ||
-            typeof PerformanceObserver !== 'function') {
+        if (pageConfig.currentPageType !== 'repository' || typeof PerformanceObserver !== 'function') {
             safe(mountDescButton, '描述翻译')();
         }
     }
@@ -469,34 +465,35 @@
      * @returns {Object} 页面配置对象
      */
     function buildPageConfig(pageType) {
+        const conf = I18N.conf;
+        const dict = I18N[CONFIG.LANG];
+        const pageDict = dict[pageType] || {};
+
+        // 合并公共（'*'）与页面特定的选择器列表
+        const pickSelectors = key => [...(conf[key]['*'] || []), ...(conf[key][pageType] || [])];
+
         const regexpRules = [ // 合并公共和页面特定的正则规则
-            ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
-            ...(I18N[CONFIG.LANG].public.regexp || [])
+            ...(pageDict.regexp || []),
+            ...(dict.public.regexp || [])
         ];
         return {
             currentPageType: pageType, // 当前页面类型
             currentPath: window.location.pathname, // 当前路径
-            titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
-            titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
+            titleStaticDict: pageDict.title?.static || {},
+            titleRegexpRules: pageDict.title?.regexp || [],
             staticDict: { // 合并公共和页面特定的静态词典
-                ...I18N[CONFIG.LANG].public.static,
-                ...(I18N[CONFIG.LANG][pageType]?.static || {})
+                ...dict.public.static,
+                ...(pageDict.static || {})
             },
             regexpRules,
             // 与 regexpRules 一一对应的「匹配时必然出现的字面量」，用于跳过不可能命中的规则
             regexpPrefilters: regexpRules.map(([pattern]) => getRequiredLiteral(pattern)),
-            ignoreMutationSelectors: [ // 忽略的突变选择器
-                ...(I18N.conf.ignoreMutationSelectorPage['*'] || []),
-                ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
-            ].join(', '),
-            ignoreSelectors: [ // 忽略的选择器
-                ...(I18N.conf.ignoreSelectorPage['*'] || []),
-                ...(I18N.conf.ignoreSelectorPage[pageType] || [])
-            ].join(', '),
-            characterData: (I18N.conf.characterDataPage || []).includes(pageType), // 是否监视文本节点变化
+            ignoreMutationSelectors: pickSelectors('ignoreMutationSelectorPage').join(', '), // 忽略的突变选择器
+            ignoreSelectors: pickSelectors('ignoreSelectorPage').join(', '), // 忽略的选择器
+            characterData: (conf.characterDataPage || []).includes(pageType), // 是否监视文本节点变化
             transSelectors: [ // 翻译选择器规则
-                ...(I18N[CONFIG.LANG].public.selector || []),
-                ...(I18N[CONFIG.LANG][pageType]?.selector || [])
+                ...(dict.public.selector || []),
+                ...(pageDict.selector || [])
             ],
             transCache: new Map(), // 当前页面类型的翻译结果缓存（文本 -> 译文/false）
         };
@@ -580,9 +577,8 @@
      * @returns {string|boolean} 页面类型或false（如果未识别）
      */
     function detectPageType() {
-        const url = new URL(window.location.href);
-        const { PAGE_MAP, SPECIAL_SITES } = CONFIG;
-        const { hostname, pathname } = url;
+        const { PAGE_MAP } = CONFIG;
+        const { hostname, pathname, search } = window.location;
 
         // 基础配置
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
@@ -606,11 +602,11 @@
             case isSession: // 登录/认证页面
                 pageType = 'session-authentication';
                 break;
-            case SPECIAL_SITES.includes(site): // 特殊站点
+            case site !== 'github': // 特殊站点（gist / status / skills / education）
                 pageType = site;
                 break;
             case isProfile: { // 用户资料页面
-                const tabParam = new URLSearchParams(url.search).get('tab');
+                const tabParam = new URLSearchParams(search).get('tab');
                 pageType = pathname.includes('/stars') ? 'page-profile/stars'
                          : tabParam ? `page-profile/${tabParam}`
                          : 'page-profile';
@@ -762,46 +758,28 @@
     }
 
     function processMutations(mutations) {
+        const { characterData } = State.pageConfig;
         const nodesToProcess = new Set();
+        const collect = node => {
+            if (!shouldIgnoreMutationNode(node)) nodesToProcess.add(node);
+        };
 
-        // 收集需要处理的节点
-        mutations.forEach(({ target, addedNodes, type }) => {
-            if (type === 'childList' && addedNodes.length > 0) {
-                // 处理新增节点
-                addedNodes.forEach(node => {
-                    if (!shouldIgnoreMutationNode(node)) {
-                        nodesToProcess.add(node);
-                    }
-                });
-            } else if (type === 'attributes') {
-                // 处理属性变化，target 就是元素（input / textarea 也走这里）
-                if (!shouldIgnoreMutationNode(target)) {
-                    nodesToProcess.add(target);
-                }
-            } else if (type === 'characterData' && State.pageConfig.characterData) {
-                // 处理文本变化，target 是文本节点，取其父元素
-                if (!shouldIgnoreMutationNode(target)) {
-                    nodesToProcess.add(target);
-                }
+        // 收集需要处理的节点：新增节点、变化的属性、文本变化（页面开启时）
+        for (const { target, addedNodes, type } of mutations) {
+            if (type === 'childList') {
+                for (const node of addedNodes) collect(node);
+            } else if (type === 'attributes' || (type === 'characterData' && characterData)) {
+                collect(target);
             }
-        });
+        }
 
-        // 过滤掉祖先已在集合中的后代节点，避免重复遍历
+        // 祖先也在集合里时只遍历祖先：后代已在它的子树内，不必重复走
         const topNodes = new Set();
-        nodesToProcess.forEach(node => {
+        for (const node of nodesToProcess) {
             let ancestor = node.parentElement;
-            let hasAncestor = false;
-            while (ancestor) {
-                if (nodesToProcess.has(ancestor)) {
-                    hasAncestor = true;
-                    return;
-                }
-                ancestor = ancestor.parentElement;
-            }
-            if (!hasAncestor) {
-                topNodes.add(node);
-            }
-        });
+            while (ancestor && !nodesToProcess.has(ancestor)) ancestor = ancestor.parentElement;
+            if (!ancestor) topNodes.add(node);
+        }
 
         if (CONFIG.DEV) console.log("DOM变化(已过滤)", topNodes);
 
@@ -851,14 +829,16 @@
             return;
         }
 
+        // 忽略选择器在遍历期间不变，提到过滤器外，避免每个节点都读一遍配置
+        const ignoreSelectors = State.pageConfig.ignoreSelectors;
+
         // 创建TreeWalker遍历节点树
         const treeWalker = document.createTreeWalker(
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
             node => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
-                    if (State.pageConfig.ignoreSelectors
-                        && node.matches(State.pageConfig.ignoreSelectors)) {
+                    if (ignoreSelectors && node.matches(ignoreSelectors)) {
                         return NodeFilter.FILTER_REJECT; // 跳过忽略的选择器
                     }
                     if (isBreadcrumbIdentifierLink(node)) {
@@ -902,57 +882,56 @@
      * @param {Element} node - 元素节点
      */
     function handleElementNode(node) {
-        // 根据标签类型进行不同的翻译处理
-        const tag = node.tagName;
-
-        if (tag === "RELATIVE-TIME") { // 相对时间元素
-            if (node.shadowRoot) {
-                transTimeElement(node.shadowRoot);
+        // 按标签分派；只有需要继续检查 tooltipped 的分支才走到末尾
+        switch (node.tagName) {
+            case "RELATIVE-TIME": { // 相对时间元素
+                if (node.shadowRoot) transTimeElement(node.shadowRoot);
+                return;
             }
-            return;
-        }
 
-        if (tag === "INPUT" || tag === "TEXTAREA") { // 输入框和文本域
-            // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
-            // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
-            //
-            // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
-            // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
-            // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
-            transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
-            if (['button', 'submit', 'reset'].includes(node.type)) {
-                // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
-                // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
-                transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
-                transElementAttrs(node, 'value'); // 值属性
-            } else {
-                transElementAttrs(node, 'placeholder'); // 占位符
+            case "INPUT":
+            case "TEXTAREA": { // 输入框和文本域
+                // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
+                // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
+                //
+                // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
+                // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
+                // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
+                transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
+                if (/^(?:button|submit|reset)$/.test(node.type)) {
+                    // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
+                    // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
+                    transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
+                    transElementAttrs(node, 'value'); // 值属性
+                } else {
+                    transElementAttrs(node, 'placeholder'); // 占位符
+                }
+                return;
             }
-            return;
-        }
 
-        if (tag === "OPTGROUP") { // 选项组
-            transElementAttrs(node, 'label'); // 标签文本
-            return;
-        }
+            case "OPTGROUP": // 选项组
+                transElementAttrs(node, 'label'); // 标签文本
+                return;
 
-        if (tag === "BUTTON") { // 按钮
-            transElementAttrs(node, [
-                'title',
-                'cancelConfirmText'
-            ]);
-            transElementAttrs(node.dataset, [
-                'confirm', // 确认文本
-                'confirmText', // 确认按钮文本
-                'confirmCancelText', // 取消按钮文本
-                'disableWith', // 禁用提示
-                'visibleText'
-            ]);
-        }
+            case "BUTTON": // 按钮
+                transElementAttrs(node, [
+                    'title',
+                    'cancelConfirmText'
+                ]);
+                transElementAttrs(node.dataset, [
+                    'confirm', // 确认文本
+                    'confirmText', // 确认按钮文本
+                    'confirmCancelText', // 取消按钮文本
+                    'disableWith', // 禁用提示
+                    'visibleText'
+                ]);
+                break;
 
-        if (tag === "A" || tag === "SPAN") {
-            transElementAttrs(node, 'title'); // 标题提示
-            transElementAttrs(node.dataset, 'visibleText'); // 可见文本
+            case "A":
+            case "SPAN":
+                transElementAttrs(node, 'title'); // 标题提示
+                transElementAttrs(node.dataset, 'visibleText'); // 可见文本
+                break;
         }
 
         // 带有 tooltipped 样式的元素
@@ -967,15 +946,18 @@
      * 翻译页面标题
      */
     function transTitle() {
+        const { titleStaticDict, titleRegexpRules } = State.pageConfig;
         const text = document.title;
-        let result = State.pageConfig.titleStaticDict[text] || '';
+        let result = titleStaticDict[text];
 
-        // 尝试静态翻译
+        // 静态词条未命中才跑正则
         if (!result) {
-            // 尝试正则表达式翻译
-            for (const [pattern, replacement] of State.pageConfig.titleRegexpRules) {
-                result = text.replace(pattern, replacement);
-                if (result !== text) break;
+            for (const [pattern, replacement] of titleRegexpRules) {
+                const translated = text.replace(pattern, replacement);
+                if (translated !== text) {
+                    result = translated;
+                    break;
+                }
             }
         }
 
@@ -1052,9 +1034,9 @@
             return false;
         }
 
-        // 清理文本：去除首尾空格和多余空白
+        // 清理文本：去除首尾空格和多余空白（\s 已覆盖不换行空格 \u00a0）
         const trimmedText = text.trim();
-        const cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' ');
+        const cleanedText = trimmedText.replace(/\s+/g, ' ');
 
         // 获取翻译
         const result = fetchTransResult(cleanedText);
@@ -1152,27 +1134,27 @@
         // 静态词典查找
         const staticResult = pageConfig.staticDict[text];
         if (typeof staticResult === 'string') {
-            MissedTermsManager.cleanup(text, pageConfig.currentPath);
             result = staticResult;
         } else if (State.featureSet.enable_RegExp) {
             // 正则规则查找：先用「必然出现的字面量」跳过不可能命中的规则
-            const prefilters = pageConfig.regexpPrefilters;
-            const rules = pageConfig.regexpRules;
-            for (let index = 0; index < rules.length; index += 1) {
-                const required = prefilters?.[index];
+            const { regexpPrefilters, regexpRules } = pageConfig;
+            for (let index = 0; index < regexpRules.length; index += 1) {
+                const required = regexpPrefilters?.[index];
                 if (required && !text.includes(required)) continue;
-                const [pattern, replacement] = rules[index];
+                const [pattern, replacement] = regexpRules[index];
                 const translated = text.replace(pattern, replacement);
                 if (translated !== text) {
-                    MissedTermsManager.cleanup(text, pageConfig.currentPath);
                     result = translated;
                     break;
                 }
             }
         }
 
-        // 记录未命中词条
-        if (result === false && State.featureSet.enable_missedTerms) {
+        if (result !== false) {
+            // 命中的词条可能还挂在未命中记录里：命中即清理
+            MissedTermsManager.cleanup(text, pageConfig.currentPath);
+        } else if (State.featureSet.enable_missedTerms) {
+            // 未命中才记账，并刷新菜单里的计数
             MissedTermsManager.record(text, pageConfig.currentPath);
             refreshMenuStates();
         }
@@ -1263,43 +1245,31 @@
     /**
      * 请求远程翻译API
      * @param {string} text - 要翻译的文本
-     * @returns {Promise} 返回翻译结果的Promise
+     * @returns {Promise<string>} 翻译结果
      */
-    function requestRemoteTrans(text) {
-        return new Promise((resolve, reject) => {
-            const engine = CONFIG.TRANS_ENGINES[State.transEngine];
-            const { url_api, method, headers, getRequestData, responseIdentifier } = engine;
+    async function requestRemoteTrans(text) {
+        const { url_api, method, headers, getRequestData, responseIdentifier } =
+            CONFIG.TRANS_ENGINES[State.transEngine];
+        const requestData = getRequestData(text);
 
-            // 准备请求数据
-            const requestData = getRequestData(text);
-
-            // 使用GM_xmlhttpRequest发起跨域请求
+        // 使用GM_xmlhttpRequest发起跨域请求
+        const responseText = await new Promise((resolve, reject) => {
             GM_xmlhttpRequest({
-                method: method,
+                method,
                 url: url_api,
-                headers: headers,
+                headers,
                 data: method === 'POST' ? JSON.stringify(requestData) : null,
                 params: method === 'GET' ? requestData : null, // For GET requests
                 timeout: 10000, // 10秒超时
-                onload: (res) => {
-                    try {
-                        const response = JSON.parse(res.responseText);
-                        // 从响应中提取翻译结果
-                        const result = getNestedProperty(response, responseIdentifier);
-                        if (result) {
-                            resolve(result);
-                        } else {
-                            reject(new Error('翻译结果无效'));
-                        }
-                    } catch (err) {
-                        reject(err);
-                    }
-                },
-                onerror: (err) => {
-                    reject(err);
-                }
+                onload: res => resolve(res.responseText),
+                onerror: reject,
             });
         });
+
+        // 从响应中提取翻译结果；解析失败与结果缺失都以 reject 结束
+        const result = getNestedProperty(JSON.parse(responseText), responseIdentifier);
+        if (!result) throw new Error('翻译结果无效');
+        return result;
     }
 
     /**
@@ -1345,17 +1315,12 @@
          */
         record(text, path) {
             if (!path) return false;
-            if (!this.data[path]) {
-                this.data[path] = {};
-            }
+            const bucket = this.data[path] || (this.data[path] = {});
+            if (text in bucket) return false; // 词条已存在
 
-            // 使用对象存储，保持简洁
-            if (!(text in this.data[path])) {
-                this.data[path][text] = "";
-                this.save();
-                return true; // 新增词条
-            }
-            return false; // 词条已存在
+            bucket[text] = "";
+            this.save();
+            return true; // 新增词条
         },
 
         /**
@@ -1364,18 +1329,15 @@
          * @param {string} path - 当前页面路径
          */
         cleanup(text, path) {
-            if (!path) return false;
-            if (this.data[path] && text in this.data[path]) {
-                delete this.data[path][text];
+            const bucket = path ? this.data[path] : null;
+            if (!bucket || !(text in bucket)) return false;
 
-                // 如果该路径下没有词条了，删除路径条目
-                if (Object.keys(this.data[path]).length === 0) {
-                    delete this.data[path];
-                }
-                this.save();
-                return true;
-            }
-            return false;
+            delete bucket[text];
+
+            // 如果该路径下没有词条了，删除路径条目
+            if (Object.keys(bucket).length === 0) delete this.data[path];
+            this.save();
+            return true;
         },
 
         /**
