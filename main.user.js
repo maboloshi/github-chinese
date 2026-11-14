@@ -441,6 +441,7 @@
                 ...(I18N.conf.ignoreSelectorPage[pageType] || [])
             ].join(', '),
             characterData: (I18N.conf.characterDataPage || []).includes(pageType), // 是否监视文本节点变化
+            maxTextNodeLength: I18N.conf.maxTextNodeLengthPage?.[pageType] ?? 500, // 文本节点翻译长度上限
             transSelectors: [ // 翻译选择器规则
                 ...(I18N[CONFIG.LANG].public.selector || []),
                 ...(I18N[CONFIG.LANG][pageType]?.selector || [])
@@ -819,7 +820,7 @@
      * @param {Node} node - 文本节点
      */
     function handleTextNode(node) {
-        if (node.length > 500) return; // 跳过长文本节点
+        if (node.length > (State.pageConfig?.maxTextNodeLength ?? 500)) return; // 跳过长文本节点
         // 文本域的子文本是它的默认值（用户内容），翻了就破坏编辑器内容（#727）
         if (node.parentElement?.tagName === 'TEXTAREA') return;
         transElementAttrs(node, 'data'); // 翻译文本内容

@@ -172,6 +172,7 @@ test('input / textarea 交给通用遍历，不再留在忽略表里', () => {
 test('textarea 的子文本（默认值）不会被当作文本节点翻译', () => {
     const translated = [];
     const context = vm.createContext({
+        State: { pageConfig: { maxTextNodeLength: 500 } },
         transElementAttrs(node, attr) { translated.push({ node, attr }); },
     });
     vm.runInContext(`${extractFunction('handleTextNode')}

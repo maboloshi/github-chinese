@@ -139,6 +139,7 @@ const repositoryPages = [
 
 const preservedPages = [
     ['https://github.com/settings/profile', [], 'settings/profile'],
+    ['https://github.com/settings/personal-access-tokens/new', [], 'settings/personal-access-tokens'],
     ['https://github.com/topics/javascript', [], 'topics'],
     ['https://github.com/notifications/subscriptions', [], 'notifications/subscriptions'],
     ['https://github.com/copilot/chat', [], 'copilot'],

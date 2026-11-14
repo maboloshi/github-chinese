@@ -1,0 +1,67 @@
+{
+  "pageType": "settings/personal-access-tokens",
+  "static": [
+    {
+      "input": "No account permissions added yet",
+      "expected": "尚未添加账户权限"
+    },
+    {
+      "input": "User permissions permit access to resources under your personal GitHub account.",
+      "expected": "用户权限允许访问您个人 GitHub 账户下的资源。"
+    },
+    {
+      "input": "Delete token",
+      "expected": "删除令牌"
+    },
+    {
+      "input": "Confirm token deletion",
+      "expected": "确认删除令牌"
+    },
+    {
+      "input": "Delete this token",
+      "expected": "删除此令牌"
+    },
+    {
+      "input": "This token has access to all repositories owned by you.",
+      "expected": "此令牌可以访问您拥有的所有仓库。"
+    },
+    {
+      "input": "This token does not have any user permissions.",
+      "expected": "此令牌没有任何用户权限。"
+    },
+    {
+      "input": "This token does not have any repository permissions.",
+      "expected": "此令牌没有任何仓库权限。"
+    },
+    {
+      "input": "This token does not have access to any repositories.",
+      "expected": "此令牌无法访问任何仓库。"
+    }
+  ],
+  "regexp": [
+    {
+      "input": "7 days (May 31, 2026)",
+      "expected": "7天（2026年5月31日）"
+    },
+    {
+      "input": "30 days (Jun 23, 2026)",
+      "expected": "30天（2026年6月23日）"
+    },
+    {
+      "input": "60 days (Jul 23, 2026)",
+      "expected": "60天（2026年7月23日）"
+    },
+    {
+      "input": "90 days (Aug 22, 2026)",
+      "expected": "90天（2026年8月22日）"
+    },
+    {
+      "input": "Read access to codespaces metadata and metadata",
+      "expected": "代码空间元数据和元数据的读取访问权限"
+    }
+  ],
+  "longPreview": {
+    "input": "Read and write access to Dependabot alerts, actions, actions variables, administration, artifact metadata, attestations api, code, codespaces, codespaces lifecycle admin, codespaces secrets, commit statuses, custom properties for repositories, dependabot secrets, deployments, discussions, environments, issues, merge queues, pages, pull requests, repository advisories, repository hooks, secret scanning alert dismissal requests, secret scanning alerts, secret scanning push protection bypass requests, secrets, security events, and workflows",
+    "expected": "Dependabot 警报、Actions、Actions 变量、管理、附件元数据、证书 API、代码、代码空间、代码空间生命周期管理、代码空间机密、提交状态、仓库自定义属性、Dependabot 机密、部署、讨论、环境、议题、合并队列、GitHub Pages、拉取请求、仓库公告、仓库 Web 钩子、机密扫描警报解除请求、机密扫描警报、绕过机密扫描推送保护的请求、机密、安全事件和工作流的读写访问权限"
+  }
+}
