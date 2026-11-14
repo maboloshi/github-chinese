@@ -14,6 +14,7 @@ import { existsSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { connect, sleep } from './lib/cdp.mjs';
+import { proxyArgs } from './lib/edge.mjs';
 import { INSTRUMENT, SHIMS, buildBootstrap, readScripts } from './lib/instrument.mjs';
 import { splitDictionaryTopLevel } from './lib/split-dictionary.mjs';
 
@@ -60,6 +61,7 @@ const child = spawn(EDGE, [
     '--headless=new',
     `--remote-debugging-port=${PORT}`,
     `--user-data-dir=${profile}`,
+    ...proxyArgs(),
     '--no-first-run',
     '--no-default-browser-check',
     '--disable-component-extensions-with-background-pages',
