@@ -113,6 +113,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
     const names = [
         'safe', 'init', 'setupInitTrans', 'setupUrlChangeListener', 'handleUrlChange',
         'setupTurboEvents', 'handleTurboLoad', 'updatePageConfig',
+        'applyPage', 'traversePage', 'hasFreshTraversal', 'markPageTraversed',
         'createMutationObserver', 'attachMutationObserver', 'scheduleIdleTraversal', 'setupMutationObserver',
         'flushMutationBatch', 'scheduleMutationFlush', 'resetMutationBatch',
         'mountDescButton',
@@ -165,8 +166,19 @@ test(`${fileName}: Turbo 换 body 后刷新配置与观察目标`, () => {
     assertObserved(runtime, replacement);
     assert.ok(originalObserver.disconnects > 0);
     assert.equal(originalObserver.target, null);
-    assert.equal(runtime.work.title, 1);
+    // 首次载入已经翻过标题 / 选择器，这次换 body 再应用一次
+    assert.equal(runtime.work.title, 2);
+    assert.equal(runtime.work.selector, 2);
+});
+
+test(`${fileName}: 首次载入即翻标题与选择器，随后的 turbo:load 不重复全量遍历`, () => {
+    const runtime = loadRuntime(fileName);
+    assert.equal(runtime.work.title, 1, '首次载入也要翻标题，晚注入时不能缺译文');
     assert.equal(runtime.work.selector, 1);
+
+    const walks = runtime.walks.length;
+    runtime.document.dispatch('turbo:load');
+    assert.equal(runtime.walks.length, walks, '同一 URL + 同一 body 不应再走一遍树');
 });
 
 test(`${fileName}: 同一页面类型的站内翻页复用词典与规则配置`, () => {
@@ -365,10 +377,11 @@ test(`${fileName}: 刷新保留忽略规则、功能开关与错误边界`, () =
     runtime.document.dispatch('turbo:load');
     assert.equal(runtime.work.description, 2);
     runtime.document.body.fail = true;
+    runtime.context.State.lastTraversal = null; // 模拟一次尚未遍历的页面，让失败路径真的走到
     assert.doesNotThrow(() => runtime.document.dispatch('turbo:load'));
     assert.equal(runtime.errors.length, 1);
-    assert.equal(runtime.work.title, 3);
-    assert.equal(runtime.work.selector, 3);
+    assert.equal(runtime.work.title, 4);
+    assert.equal(runtime.work.selector, 4);
     assert.equal(runtime.context.State.mutationObserver.target, runtime.document.body);
     runtime.context.handleTextNode = () => { throw new Error('mutation failure'); };
     assert.doesNotThrow(() => runtime.mutate());
@@ -376,6 +389,6 @@ test(`${fileName}: 刷新保留忽略规则、功能开关与错误边界`, () =
     runtime.document.body.fail = false;
     runtime.context.transTitle = () => { throw new Error('title failure'); };
     assert.doesNotThrow(() => runtime.document.dispatch('turbo:load'));
-    assert.equal(runtime.work.selector, 4, '标题翻译失败不应挡住选择器翻译');
+    assert.equal(runtime.work.selector, 5, '标题翻译失败不应挡住选择器翻译');
     assert.equal(runtime.context.State.mutationObserver.target, runtime.document.body);
 });

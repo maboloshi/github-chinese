@@ -139,6 +139,7 @@
         dynamicMenus: {},        // 动态菜单ID记录
         pendingMutations: [],    // 一帧内攒下的 mutation 记录
         mutationFlush: null,     // 已排期的批次处理句柄
+        lastTraversal: null,     // 最近一次全量遍历的 {url, body}，避免同一次载入遍历两遍
         descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
         descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
         initDone: false,
@@ -217,14 +218,7 @@
      */
     function setupInitTrans() {
         function doInitTrans() {
-            if (!document.body) return;
-            State.currentURL = window.location.href;
-            updatePageConfig('首次载入');
-            if (State.pageConfig) {
-                safe(traverseNode, '首次遍历')(document.body);
-                safe(mountDescButton, '描述按钮')(true);
-            }
-            setupMutationObserver(); // 设置DOM变化观察器
+            applyPage('首次载入');
         }
 
         if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -327,7 +321,7 @@
             State.idleSweep = null;
             // 等空闲期间又换页了：新导航已经负责过，别再扫一遍
             if (State.observedBody !== document.body) return;
-            safe(traverseNode, '恢复补扫')(document.body);
+            traversePage('恢复补扫');
         };
         if (typeof window.requestIdleCallback === 'function') {
             State.idleSweep = window.requestIdleCallback(run, { timeout: 1500 });
@@ -363,23 +357,36 @@
      * 在新页面加载后执行必要的翻译
      */
     function handleTurboLoad() {
+        applyPage('页面导航');
+    }
+
+    /* =========================== 页面应用入口 =========================== */
+
+    /**
+     * 应用当前页面 —— 首次载入与 Turbo 换页共用这一条路径。
+     *
+     * 两条路径曾经各写一份：首次载入不翻标题 / 选择器（晚注入时一直缺译文），
+     * Turbo 载入又会在同一次载入里把整棵树走两遍（DOMContentLoaded + turbo:load）。
+     * 现在统一到这里，由 hasFreshTraversal() 决定还要不要重走 DOM。
+     * @param {string} reason - 触发原因（用于调试日志）
+     */
+    function applyPage(reason) {
         if (!document.body) return;
 
         State.currentURL = window.location.href;
         const restoring = State.visitAction === 'restore';
-        updatePageConfig('页面导航');
 
-        // before-render 已经挂好的观察器直接沿用；否则在这里兜底
+        updatePageConfig(reason);
+
+        // before-render 已经挂好的观察器直接沿用；没有页面配置时也要挂上
         const preAttached = State.observedBody === document.body && !!State.mutationObserver;
-        if (!preAttached) {
-            attachMutationObserver(document.body);
-        }
+        if (!preAttached) setupMutationObserver();
 
         if (State.pageConfig) {
             if (restoring && preAttached) {
                 scheduleIdleTraversal();
-            } else {
-                safe(traverseNode, '导航遍历')(document.body);
+            } else if (!hasFreshTraversal()) {
+                traversePage('页面遍历');
             }
         }
 
@@ -388,6 +395,37 @@
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
         safe(mountDescButton, '描述翻译')(true); // 翻译页面描述（载入/导航时强制核对一次）
+    }
+
+    /**
+     * 全量遍历当前 body，成功后才记为「已遍历」；失败留给下一次导航重试
+     * @param {string} label - 错误标签
+     */
+    function traversePage(label) {
+        try {
+            traverseNode(document.body);
+            markPageTraversed();
+        } catch (e) {
+            console.error(`[GitHub 中文化插件] ${label} 出错:`, e);
+        }
+    }
+
+    /**
+     * 当前 body 是否已按当前 URL 完整遍历过。
+     * DOMContentLoaded 与 turbo:load 会先后触发同一次页面载入，第二次不必再走一遍树；
+     * 两次之间的增量变化由 MutationObserver 负责，不依赖这里重扫。
+     */
+    function hasFreshTraversal() {
+        return State.lastTraversal !== null
+            && State.lastTraversal.body === document.body
+            && State.lastTraversal.url === window.location.href;
+    }
+
+    /**
+     * 记录「当前 URL + body 已完整遍历」，供 hasFreshTraversal() 判定
+     */
+    function markPageTraversed() {
+        State.lastTraversal = { url: window.location.href, body: document.body };
     }
 
     /* =========================== 页面配置管理 =========================== */
@@ -1527,7 +1565,7 @@
                 callback: (enabled) => {
                     // 缓存里可能存着「关闭正则时算出的未命中结果」，切换后必须先失效
                     resetTransCache();
-                    if (enabled && State.pageConfig) safe(traverseNode, '菜单触发遍历')(document.body);
+                    if (enabled && State.pageConfig) traversePage('菜单触发遍历');
                 }
             },
             {

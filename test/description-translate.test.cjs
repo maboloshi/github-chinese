@@ -109,8 +109,30 @@ for (const fileName of runtimeScripts) {
                 /if \(page === "repository"\) \{[^}]{0,120}transDesc\(REPOSITORY_DESC_SELECTOR\)/,
                 `${fileName} should re-mount the description button on mutations`,
             );
-        } else if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js' || fileName === 'main_zh-TW.user.js') {
-            // 描述按钮在载入/导航时强制核对，之后由批次按 isConnected 决定是否重挂
+        } else if (fileName === 'main.user.js') {
+            // 首次载入与 Turbo 换页共用 applyPage：载入路径同样强制核对描述按钮，
+            // 之后由批次按 isConnected 决定是否重挂
+            assert.match(
+                source,
+                /applyPage\('首次载入'\)/,
+                `${fileName} should apply the first page through the unified entry`,
+            );
+            assert.match(
+                source,
+                /safe\(mountDescButton, '描述翻译'\)\(true\)/,
+                `${fileName} should mount the description button on load/navigation`,
+            );
+            assert.match(
+                source,
+                /mountDescButton\(\);[\s\S]{0,240}?takeRecords\(\)/,
+                `${fileName} should re-mount after mutations and drop its own records`,
+            );
+            assert.ok(
+                !source.includes('enable_descRearm'),
+                `${fileName} should not expose a behavior switch for re-mounting`,
+            );
+        } else if (fileName === 'main(nju.edu).user.js' || fileName === 'main_zh-TW.user.js') {
+            // 衍生脚本尚未接入统一入口，仍是载入 + 导航两处各自强制核对
             const traditional = fileName === 'main_zh-TW.user.js';
             const loadLabel = traditional ? '描述翻譯' : '描述翻译';
             const firstLabel = traditional ? '描述按鈕' : '描述按钮';
