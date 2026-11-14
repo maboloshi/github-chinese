@@ -140,8 +140,6 @@
         pendingMutations: [],    // 一帧内攒下的 mutation 记录
         mutationFlush: null,     // 已排期的批次处理句柄
         lastTraversal: null,     // 最近一次全量遍历的 {url, body}，避免同一次载入遍历两遍
-        descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
-        descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
     };
 
     /* =========================== 安全检查 =========================== */
@@ -178,6 +176,7 @@
         initLangEnv();
         injectStyles();
         setupMenuCommands();
+        watchReactCommits();
         setupInitTrans();
         setupUrlChangeListener();
         setupTurboEvents();
@@ -329,25 +328,39 @@
     }
 
     /**
-     * 确保描述翻译按钮挂在该页的描述节点后面。
+     * 页面载入 / 导航时挂描述翻译按钮（非 React 页面，如 gist）。
      *
-     * 不监控每个突变：描述节点还在、且按钮仍是它的下一个兄弟节点时，只做两次
-     * isConnected / nextElementSibling 判断；只有 React 换掉描述（或把按钮挪走）才重新查询。
-     * @param {boolean} force - 载入 / 导航后强制核对一次，防止同一 body 内换了描述节点
+     * GitHub 仓库页同时渲染窄屏（NarrowOnly）与桌面侧栏（HideWhenNarrow）两份 About 描述，
+     * 由 CSS 决定显示哪一份；两份都要挂，否则宽屏没有按钮。
+     * 仓库页不在这里挂：SSR 树还没被 React 接管，插入节点会触发 hydration mismatch，
+     * 由 watchReactCommits 在 React 提交之后挂。
      */
-    function mountDescButton(force = false) {
+    function mountDescButton() {
         if (!State.featureSet.enable_transDesc) return;
-        const pageType = State.pageConfig?.currentPageType;
-        if (!pageType) return;
-        const descSelector = CONFIG.DESC_SELECTORS[pageType];
+        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig?.currentPageType];
         if (!descSelector) return;
-        if (!force && State.descHost?.isConnected &&
-            State.descHost.nextElementSibling === State.descMount) {
-            return;
+        transDesc(descSelector);
+    }
+
+    /**
+     * React 提交之后补挂描述翻译按钮。
+     *
+     * GitHub 新版 UI 是 SSR HTML + 客户端 React app（React 19，react-core）。
+     * 载入时往 SSR 描述后面插按钮会造成 hydration mismatch，React 丢弃 SSR 树重渲染，按钮随之消失。
+     * react-core 在每次 root 提交后记 performance mark（react-root:commit:<app>），
+     * 以这个「提交结束」事件为准，提交后再挂。机制与实测见 docs/github-react.md。
+     */
+    function watchReactCommits() {
+        if (typeof PerformanceObserver !== 'function') return;
+        try {
+            new PerformanceObserver((list) => {
+                if (list.getEntries().some(entry => entry.name.startsWith('react-root:commit:'))) {
+                    safe(mountDescButton, '描述翻译')();
+                }
+            }).observe({ entryTypes: ['mark'], buffered: true });
+        } catch (e) {
+            console.error('[GitHub 中文化插件] React 提交监听失败:', e);
         }
-        const mounted = transDesc(descSelector);
-        State.descHost = mounted?.host || null;
-        State.descMount = mounted?.mount || null;
     }
 
     /**
@@ -392,7 +405,11 @@
 
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
-        safe(mountDescButton, '描述翻译')(true); // 翻译页面描述（载入/导航时强制核对一次）
+        // 仓库页等 React 提交后再挂（watchReactCommits）；gist 等非 React 页面载入即挂
+        if (State.pageConfig.currentPageType !== 'repository' ||
+            typeof PerformanceObserver !== 'function') {
+            safe(mountDescButton, '描述翻译')();
+        }
     }
 
     /**
@@ -653,9 +670,6 @@
 
         try {
             processMutations(batch);
-
-            // React 替换描述节点时，按钮会随旧节点一起消失；下次批次按 isConnected 决定是否重挂。
-            mountDescButton();
         } finally {
             // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
             // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
@@ -1174,33 +1188,22 @@
     /* =========================== 远程翻译 =========================== */
 
     /**
-     * 为描述元素添加翻译按钮
+     * 为每个还没挂载的描述元素添加翻译按钮
      * @param {string} selector - 描述元素的选择器
-     * @returns {{host: Element, mount: Element}|null} 描述节点与已存在的按钮 / 翻译结果或新按钮
      */
     function transDesc(selector) {
-        const element = document.querySelector(selector);
-        if (!element) return null;
+        for (const host of document.querySelectorAll(selector)) {
+            // 按钮或翻译结果已在描述后面：重复调用不叠按钮
+            if (host.nextElementSibling?.matches('.translate-button, .translation-result')) {
+                continue;
+            }
 
-        // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
-        const nextSibling = element.nextElementSibling;
-        // 已有按钮或翻译结果时都不再插入。showTransResult 会移除按钮、把结果容器插到描述后面，
-        // 这次插入又会触发 MutationObserver 重挂载；只认 .translate-button 的话，每轮重挂载都会
-        // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
-        if (nextSibling?.classList?.contains('translate-button') ||
-            nextSibling?.classList?.contains('translation-result')) {
-            return { host: element, mount: nextSibling };
+            const button = document.createElement('div');
+            button.classList.add('translate-button');
+            button.textContent = '翻译';
+            button.addEventListener('click', () => handleTransClick(button, host));
+            host.after(button);
         }
-
-        // 创建翻译按钮
-        const button = document.createElement('div');
-        button.classList.add('translate-button');
-        button.textContent = '翻译';
-        element.after(button);
-
-        // 绑定点击事件
-        button.addEventListener('click', () => handleTransClick(button, element));
-        return { host: element, mount: button };
     }
 
     /**
@@ -1255,7 +1258,6 @@
         // 移除按钮并显示结果
         button.remove();
         element.after(resultContainer);
-        State.descMount = resultContainer;
     }
 
     /**
@@ -1554,12 +1556,11 @@
                 key: "enable_transDesc",
                 callback: (enabled) => {
                     if (enabled) {
-                        mountDescButton(true);
+                        mountDescButton();
                     } else {
-                        // 禁用描述翻译，移除按钮；重挂由 mountDescButton 的特性检查挡住
-                        document.querySelector('.translate-button')?.remove();
-                        State.descHost = null;
-                        State.descMount = null;
+                        // 禁用描述翻译，移除所有按钮；重新启用时再挂
+                        document.querySelectorAll('.translate-button')
+                            .forEach(button => button.remove());
                     }
                 }
             }

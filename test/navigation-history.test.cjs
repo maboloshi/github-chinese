@@ -117,6 +117,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
         'createMutationObserver', 'attachMutationObserver', 'scheduleIdleTraversal', 'setupMutationObserver',
         'flushMutationBatch', 'scheduleMutationFlush', 'resetMutationBatch',
         'mountDescButton',
+        'watchReactCommits',
         'shouldIgnoreMutationNode', 'processMutations', 'traverseNode', 'isBreadcrumbIdentifierLink',
     ];
     const functions = names.map(name => {
