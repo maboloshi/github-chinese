@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.5-2026-11-11
+// @version      1.9.4.6-2026-11-13
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.5-2026-11-11
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals.js?v1.9.4.6-2026-11-13
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -41,8 +41,10 @@
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
             repository: [
-                // 'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
-                '[class*="borderGrid__"] p[class*="description__"]', // 当前 React UI：About 侧栏内的描述
+                // 登录态是独立的 React 组件，类名形如 SidebarAbout-module_xxxx_description，
+                // 不含未登录态的 description__（#811）
+                'p[class*="SidebarAbout-module_"][class*="_description"]', // 登录态 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 未登录/桌面 About 侧栏
             ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
@@ -135,6 +137,10 @@
         idleSweep: null,         // 恢复访问时的空闲补扫句柄
         urlChangeHandler: null,  // 存储URL变化处理器
         dynamicMenus: {},        // 动态菜单ID记录
+        pendingMutations: [],    // 一帧内攒下的 mutation 记录
+        mutationFlush: null,     // 已排期的批次处理句柄
+        descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
+        descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
         initDone: false,
     };
 
@@ -216,6 +222,7 @@
             updatePageConfig('首次载入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍历')(document.body);
+                safe(mountDescButton, '描述按钮')(true);
             }
             setupMutationObserver(); // 设置DOM变化观察器
         }
@@ -330,6 +337,28 @@
     }
 
     /**
+     * 确保描述翻译按钮挂在该页的描述节点后面。
+     *
+     * 不监控每个突变：描述节点还在、且按钮仍是它的下一个兄弟节点时，只做两次
+     * isConnected / nextElementSibling 判断；只有 React 换掉描述（或把按钮挪走）才重新查询。
+     * @param {boolean} force - 载入 / 导航后强制核对一次，防止同一 body 内换了描述节点
+     */
+    function mountDescButton(force = false) {
+        if (!State.featureSet.enable_transDesc) return;
+        const pageType = State.pageConfig?.currentPageType;
+        if (!pageType) return;
+        const descSelector = CONFIG.DESC_SELECTORS[pageType];
+        if (!descSelector) return;
+        if (!force && State.descHost?.isConnected &&
+            State.descHost.nextElementSibling === State.descMount) {
+            return;
+        }
+        const mounted = transDesc(descSelector);
+        State.descHost = mounted?.host || null;
+        State.descMount = mounted?.mount || null;
+    }
+
+    /**
      * 处理Turbo页面加载事件
      * 在新页面加载后执行必要的翻译
      */
@@ -360,27 +389,25 @@
 
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
-
-        // 如果描述翻译功能启用，翻译页面描述
-        if (State.featureSet.enable_transDesc &&
-            CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            safe(transDesc, '描述翻译')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
-        }
+        safe(mountDescButton, '描述翻译')(true); // 翻译页面描述（载入/导航时强制核对一次）
     }
 
     /* =========================== 页面配置管理 =========================== */
 
     /**
      * 更新页面配置 — 页面类型变化时重建 State.pageConfig
+     * 同一页面类型内只更新路径：词库、正则规则和翻译缓存都与具体路径无关，
+     * 站内翻页（议题列表、仓库之间）不必重新展开词库和重算前置过滤。
      * @param {string} trigger - 触发更新的原因（用于调试）
      */
     function updatePageConfig(trigger) {
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType ||
-            window.location.pathname !== State.pageConfig?.currentPath) {
+        } else if (newType !== State.pageConfig?.currentPageType) {
             State.pageConfig = buildPageConfig(newType);
+        } else {
+            State.pageConfig.currentPath = window.location.pathname;
         }
         console.log(`【Debug】${trigger}触发, 页面类型为 ${State.pageConfig?.currentPageType}`);
     }
@@ -391,6 +418,10 @@
      * @returns {Object} 页面配置对象
      */
     function buildPageConfig(pageType) {
+        const regexpRules = [ // 合并公共和页面特定的正则规则
+            ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
+            ...(I18N[CONFIG.LANG].public.regexp || [])
+        ];
         return {
             currentPageType: pageType, // 当前页面类型
             currentPath: window.location.pathname, // 当前路径
@@ -400,10 +431,9 @@
                 ...I18N[CONFIG.LANG].public.static,
                 ...(I18N[CONFIG.LANG][pageType]?.static || {})
             },
-            regexpRules: [ // 合并公共和页面特定的正则规则
-                ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
-                ...(I18N[CONFIG.LANG].public.regexp || [])
-            ],
+            regexpRules,
+            // 与 regexpRules 一一对应的「匹配时必然出现的字面量」，用于跳过不可能命中的规则
+            regexpPrefilters: regexpRules.map(([pattern]) => getRequiredLiteral(pattern)),
             ignoreMutationSelectors: [ // 忽略的突变选择器
                 ...(I18N.conf.ignoreMutationSelectorPage['*'] || []),
                 ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
@@ -417,6 +447,7 @@
                 ...(I18N[CONFIG.LANG].public.selector || []),
                 ...(I18N[CONFIG.LANG][pageType]?.selector || [])
             ],
+            transCache: new Map(), // 当前页面类型的翻译结果缓存（文本 -> 译文/false）
         };
     }
 
@@ -547,6 +578,58 @@
     /* =========================== MutationObserver =========================== */
 
     /**
+     * 处理攒下的突变批次（一帧一次）
+     */
+    function flushMutationBatch() {
+        State.mutationFlush = null;
+        if (!State.pendingMutations.length) return;
+
+        const batch = State.pendingMutations;
+        State.pendingMutations = [];
+        if (!State.pageConfig) return;
+
+        try {
+            processMutations(batch);
+
+            // React 替换描述节点时，按钮会随旧节点一起消失；下次批次按 isConnected 决定是否重挂。
+            mountDescButton();
+        } finally {
+            // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
+            // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
+            State.mutationObserver?.takeRecords();
+        }
+    }
+
+    /**
+     * 安排一次批次处理；没有 requestAnimationFrame 的环境（测试/极老浏览器）
+     * 保持同步处理，避免行为变化。
+     */
+    function scheduleMutationFlush() {
+        if (State.mutationFlush) return;
+        if (typeof window.requestAnimationFrame === 'function') {
+            const id = window.requestAnimationFrame(flushMutationBatch);
+            State.mutationFlush = {
+                cancel() {
+                    window.cancelAnimationFrame?.(id);
+                },
+            };
+        } else {
+            flushMutationBatch();
+        }
+    }
+
+    /**
+     * 换 body 时丢弃上一份文档攒下的突变，避免继续处理已断开的节点。
+     */
+    function resetMutationBatch() {
+        State.pendingMutations = [];
+        if (State.mutationFlush) {
+            State.mutationFlush.cancel();
+            State.mutationFlush = null;
+        }
+    }
+
+    /**
      * 创建DOM变化观察器
      * 监听页面变化并触发翻译
      */
@@ -560,16 +643,8 @@
                     updatePageConfig("URL变化 (MutationObserver)");
                 }
 
-                // 处理DOM变化
-                if (State.pageConfig) {
-                    processMutations(mutations);
-
-                    // GitHub 会用 React 动态替换仓库描述节点，旧按钮随节点一起丢失：重新挂载
-                    if (State.featureSet?.enable_transDesc) {
-                        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
-                        if (descSelector) transDesc(descSelector);
-                    }
-                }
+                State.pendingMutations.push(...mutations);
+                scheduleMutationFlush();
             }, 'MutationObserver')
         );
     }
@@ -580,6 +655,7 @@
      * @param {Element} body
      */
     function attachMutationObserver(body) {
+        resetMutationBatch();
         State.mutationObserver?.disconnect();
         State.mutationObserver = createMutationObserver();
         State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
@@ -917,8 +993,11 @@
      * @param {string|string[]} attrs - 要翻译的属性名或属性名数组
      */
     function transElementAttrs(target, attrs) {
-        const attrList = Array.isArray(attrs) ? attrs : [attrs];
-        attrList.forEach(attrName => transElementAttr(target, attrName));
+        if (Array.isArray(attrs)) {
+            for (const attrName of attrs) transElementAttr(target, attrName);
+        } else {
+            transElementAttr(target, attrs);
+        }
     }
 
     /**
@@ -939,13 +1018,9 @@
      * @returns {string|boolean} 翻译后的文本或 false
      */
     function transText(text) {
-        // 跳过不需要翻译的文本：
-        // 1. 空文本（包空白字符）或纯数字
-        // 2. 纯中文字符
-        // 3. 不包含英文字母和,.符号的文本
-        if (/^[\s0-9]*$/.test(text) ||
-            /^[\u4e00-\u9fa5]+$/.test(text) ||
-            !/[a-zA-Z,.]/.test(text)) {
+        // 跳过不需要翻译的文本：不含英文字母和 , . 的文本一律不查词库
+        //（空文本、纯数字、纯中文都落在这里；有英文的文本才可能命中词条或正则）
+        if (!/[a-zA-Z,.]/.test(text)) {
             return false;
         }
 
@@ -962,6 +1037,72 @@
         return false;
     }
 
+    // 单页翻译结果缓存上限：文本重复率高（导航、按钮、时间），缓存命中率远高于随机内容，
+    // 上限只是防止长时间会话里无限增长。
+    const TRANS_CACHE_LIMIT = 5000;
+
+    /**
+     * 清空当前页面的翻译结果缓存 — 正则功能开关变化后必须调用，
+     * 否则会命中「关闭正则时算出的未命中结果」而漏翻。
+     */
+    function resetTransCache() {
+        if (State.pageConfig) State.pageConfig.transCache = new Map();
+    }
+
+    /**
+     * 提取正则规则「一旦匹配就必然出现在文本里」的字面量，用来跳过不可能命中的规则。
+     * 只认长度 >= 4 的纯字母连续段，并保守放弃以下情况：
+     * - 带 i 标志（大小写不敏感，includes 会误判）
+     * - 任意位置的 `|`（分支不共享字面量）
+     * - 前后向断言 / 被可选量词修饰的组（字面量可能不出现）
+     * - 字面量本身后跟可选量词（可能零次出现）
+     * 返回 null 表示这条规则必须照常执行。
+     * @param {RegExp} pattern
+     * @returns {string|null}
+     */
+    function getRequiredLiteral(pattern) {
+        if (!pattern || pattern.flags.includes('i')) return null;
+        const source = pattern.source;
+        if (source.includes('|')) return null;
+        if (/\(\?<?[=!]/.test(source)) return null; // 前后向断言一律不参与
+        // 右花括号用 charCode 表示，避免测试里按花括号配对提取函数时被字面量干扰
+        const optional = char => char === '?' || char === '*' || char === String.fromCharCode(123);
+
+        let best = '';
+        let run = '';
+        let inClass = false;
+        const flush = end => {
+            if (run.length >= 4 && !optional(source[end]) && run.length > best.length) {
+                best = run;
+            }
+            run = '';
+        };
+
+        for (let i = 0; i < source.length; i += 1) {
+            const char = source[i];
+            if (char === '\\') {
+                if (!inClass) flush(i); // 转义序列不是字面量字母
+                i += 1;
+            } else if (inClass) {
+                if (char === ']') inClass = false;
+            } else if (char === '[') {
+                flush(i);
+                inClass = true;
+            } else if (char === ')') {
+                if (optional(source[i + 1])) return null; // 整个组被可选量词修饰
+                flush(i);
+            } else if (char === '(' || char === '^' || char === '$') {
+                flush(i);
+            } else if (/[A-Za-z]/.test(char)) {
+                run += char;
+            } else {
+                flush(i);
+            }
+        }
+        flush(source.length);
+        return best || null;
+    }
+
     /**
      * 从词库获取翻译 — 直接读取 State.pageConfig
      * @param {string} text - 要翻译的文本
@@ -970,31 +1111,50 @@
     function fetchTransResult(text) {
         if (!State.pageConfig) return false;
 
-        // 静态词典查找
-        const staticResult = State.pageConfig.staticDict[text];
-        if (typeof staticResult === 'string') {
-            MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-            return staticResult;
+        const pageConfig = State.pageConfig;
+        // 未命中词条记录依赖「每次查询都记账」，开启时绕开缓存以保证行为不变（仅开发者模式）。
+        const cache = State.featureSet.enable_missedTerms ? null : pageConfig.transCache;
+        if (cache) {
+            const cached = cache.get(text);
+            if (cached !== undefined) return cached;
         }
 
-        // 正则规则查找
-        if (State.featureSet.enable_RegExp) {
-            for (const [pattern, replacement] of State.pageConfig.regexpRules) {
-                const result = text.replace(pattern, replacement);
-                if (result !== text) {
-                    MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-                    return result;
+        let result = false;
+
+        // 静态词典查找
+        const staticResult = pageConfig.staticDict[text];
+        if (typeof staticResult === 'string') {
+            MissedTermsManager.cleanup(text, pageConfig.currentPath);
+            result = staticResult;
+        } else if (State.featureSet.enable_RegExp) {
+            // 正则规则查找：先用「必然出现的字面量」跳过不可能命中的规则
+            const prefilters = pageConfig.regexpPrefilters;
+            const rules = pageConfig.regexpRules;
+            for (let index = 0; index < rules.length; index += 1) {
+                const required = prefilters?.[index];
+                if (required && !text.includes(required)) continue;
+                const [pattern, replacement] = rules[index];
+                const translated = text.replace(pattern, replacement);
+                if (translated !== text) {
+                    MissedTermsManager.cleanup(text, pageConfig.currentPath);
+                    result = translated;
+                    break;
                 }
             }
         }
 
         // 记录未命中词条
-        if (State.featureSet.enable_missedTerms) {
-            MissedTermsManager.record(text, State.pageConfig.currentPath);
+        if (result === false && State.featureSet.enable_missedTerms) {
+            MissedTermsManager.record(text, pageConfig.currentPath);
             refreshMenuStates();
         }
 
-        return false;
+        if (cache) {
+            if (cache.size >= TRANS_CACHE_LIMIT) cache.clear();
+            cache.set(text, result);
+        }
+
+        return result;
     }
 
     /* =========================== 远程翻译 =========================== */
@@ -1002,10 +1162,11 @@
     /**
      * 为描述元素添加翻译按钮
      * @param {string} selector - 描述元素的选择器
+     * @returns {{host: Element, mount: Element}|null} 描述节点与已存在的按钮 / 翻译结果或新按钮
      */
     function transDesc(selector) {
         const element = document.querySelector(selector);
-        if (!element) return;
+        if (!element) return null;
 
         // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
         const nextSibling = element.nextElementSibling;
@@ -1014,7 +1175,7 @@
         // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
         if (nextSibling?.classList?.contains('translate-button') ||
             nextSibling?.classList?.contains('translation-result')) {
-            return;
+            return { host: element, mount: nextSibling };
         }
 
         // 创建翻译按钮
@@ -1025,6 +1186,7 @@
 
         // 绑定点击事件
         button.addEventListener('click', () => handleTransClick(button, element));
+        return { host: element, mount: button };
     }
 
     /**
@@ -1079,6 +1241,7 @@
         // 移除按钮并显示结果
         button.remove();
         element.after(resultContainer);
+        State.descMount = resultContainer;
     }
 
     /**
@@ -1406,6 +1569,8 @@
                 label: "正则功能",
                 key: "enable_RegExp",
                 callback: (enabled) => {
+                    // 缓存里可能存着「关闭正则时算出的未命中结果」，切换后必须先失效
+                    resetTransCache();
                     if (enabled && State.pageConfig) safe(traverseNode, '菜单触发遍历')(document.body);
                 }
             },
@@ -1413,13 +1578,13 @@
                 label: "描述翻译",
                 key: "enable_transDesc",
                 callback: (enabled) => {
-                    const pageType = State.pageConfig?.currentPageType;
-                    if (enabled && pageType) {
-                        // 启用描述翻译
-                        transDesc(CONFIG.DESC_SELECTORS[pageType]);
-                    } else if (!enabled) {
-                        // 禁用描述翻译，移除按钮
+                    if (enabled) {
+                        mountDescButton(true);
+                    } else {
+                        // 禁用描述翻译，移除按钮；重挂由 mountDescButton 的特性检查挡住
                         document.querySelector('.translate-button')?.remove();
+                        State.descHost = null;
+                        State.descMount = null;
                     }
                 }
             }
