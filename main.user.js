@@ -682,6 +682,25 @@
         return !!(ignoredSelectors && element.closest?.(ignoredSelectors));
     }
 
+    /**
+     * 弹层（下拉菜单、选择面板、对话框、气泡）里的文本会在打开后由 React 原地改写。
+     * 这些页面通常不在 characterDataPage 白名单里，若不单独放行，改写结果会退回英文（#575）。
+     */
+    const LIVE_SURFACE_SELECTOR = [
+        '[role="menu"]',
+        '[role="listbox"]',
+        '[role="dialog"]',
+        '[role="tooltip"]',
+        'details-menu',
+        '.Popover',
+        '.dropdown-menu',
+    ].join(', ');
+
+    function isLiveSurfaceNode(node) {
+        const element = node?.nodeType === Node.ELEMENT_NODE ? node : node?.parentElement;
+        return !!element?.closest?.(LIVE_SURFACE_SELECTOR);
+    }
+
     function processMutations(mutations) {
         const nodesToProcess = new Set();
 
@@ -699,7 +718,8 @@
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
                 }
-            } else if (type === 'characterData' && State.pageConfig.characterData) {
+            } else if (type === 'characterData'
+                && (State.pageConfig.characterData || isLiveSurfaceNode(target))) {
                 // 处理文本变化，target 是文本节点，取其父元素
                 if (!shouldIgnoreMutationNode(target)) {
                     nodesToProcess.add(target);
