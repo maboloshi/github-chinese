@@ -58,6 +58,9 @@ I18N.conf = {
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
+        'page-profile': [
+            'article.markdown-body', // 用户资料页 README 正文是用户内容（#759）
+        ],
         'repository/new': [".cm-scroller"], // 代码编辑器
         'repository/edit': [".cm-scroller", "table"], // 代码编辑器
         'repository/pull': [
@@ -129,6 +132,8 @@ I18N.conf = {
             '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
             'div[data-testid="quick-search-input-overlay"]', // 顶部搜索栏 关键词
+            'a[data-hovercard-type="user"]', // 用户名链接是标识符，不翻译（#759）
+            'a.user-mention', // @用户名同理（#759）
         ],
     },
 
@@ -137,6 +142,7 @@ I18N.conf = {
         'page-profile': [
             'span.p-nickname', // 用户昵称
             'span.p-name', // 同上
+            'article.markdown-body', // 用户资料页 README 正文是用户内容（#759）
         ],
         'page-profile/followers': [
             'span.f4.Link--primary',
@@ -272,6 +278,8 @@ I18N.conf = {
             '[contenteditable="plaintext-only"]',
 			'div.styled-input-content', // 筛选条
             'span[class^="suggestionName__"]', // 顶部搜索栏 建议
+            'a[data-hovercard-type="user"]', // 用户名链接是标识符，不翻译（#759）
+            'a.user-mention', // @用户名同理（#759）
         ],
     },
 
