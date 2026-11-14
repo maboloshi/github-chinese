@@ -51,10 +51,10 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp|dreaming)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 组织路径
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -19124,6 +19124,111 @@ defineI18nPage(I18N["zh-CN"], "repository/settings/rules", () => ({ // 仓库设
 defineI18nAlias(I18N["zh-CN"], "orgs/settings/rules", "repository/settings/rules");
 defineI18nAlias(I18N["zh-CN"], "repository/rules", "repository/settings/rules");
 
+I18N["zh-CN"]["orgs-settings-insights"] = { // 组织设置 - 规则洞察公共部分
+    "static": { // 静态翻译
+        "Repository ruleset insights": "仓库规则集洞察",
+        "Actions ruleset insights": "Actions 规则集洞察",
+        "Actions rules insights": "Actions 规则洞察",
+
+        "Rule insights couldn't be loaded": "无法加载规则洞察",
+        "Something went wrong while loading rule evaluations. Try reloading in a few moments.": "加载规则评估时出现问题。请稍后重新加载。",
+        "Rule insights search timed out": "规则洞察搜索超时",
+        "No rule evaluations matched your search": "没有与您的搜索匹配的规则评估",
+        "Try adjusting your filters or reducing the time range of your search": "请尝试调整筛选条件或缩短搜索的时间范围",
+        "Try expanding your search or creating a new ruleset in evaluate mode": "请尝试扩大搜索范围，或以评估模式创建新规则集",
+
+        "Filter rules insights": "筛选规则洞察",
+        "Rule status": "规则状态",
+        "All statuses": "所有状态",
+        "Pass": "通过",
+        "Fail": "失败",
+        "Bypass": "旁路",
+        "Bypassed": "已旁路",
+        "Time period": "时间段",
+        "Last hour": "过去 1 小时",
+        "Last 24 hours": "过去 24 小时",
+        "Last week": "过去一周",
+        "Last month": "过去一个月",
+        "Evaluate status": "评估状态",
+        "Active rules": "活动规则",
+        "Evaluate rules": "评估规则",
+        "All rules": "所有规则",
+        "Branch": "分支",
+        "Ruleset": "规则集",
+        "Commit SHA": "提交 SHA",
+        "Filter by commit SHA": "按提交 SHA 筛选",
+        "Specify the user": "指定用户",
+
+        "Activity on": "活动于",
+        "All rules passed": "所有规则均已通过",
+        "Some rules did not pass": "部分规则未通过",
+        "Some rules were bypassed": "部分规则已被旁路",
+        "No rulesets ran": "没有规则集运行",
+        "Other suites evaluated": "其他套件已评估",
+        "Evaluation timings": "评估耗时",
+        "View evaluation timings": "查看评估耗时",
+        "Hide evaluation timings": "隐藏评估耗时",
+        "Explain aggregate duration": "说明总耗时",
+        "Time budget": "时间预算",
+        "Low time budget": "时间预算不足",
+        "Total time for all runs of this rule type": "此规则类型所有运行的总时间",
+        "Rules had almost no time to run. The request used most of its time budget before rule evaluation started, so this is usually caused by upstream delays rather than by the rules themselves.": "规则几乎没有时间运行。请求在规则评估开始前已用掉大部分时间预算，这通常由上游延迟而非规则本身导致。",
+        "The ruleset that ran for this push has changed.": "本次推送运行的规则集已更改。",
+        "Outdated ruleset details": "规则集详情已过时",
+        "Push rules passed": "推送规则已通过",
+        "Push rules blocked this update, preventing other rulesets from applying.": "推送规则阻止了此更新，导致其他规则集无法应用。",
+        "Rules passed, but PR stack failed": "规则已通过，但 PR 栈失败",
+        "Other updates in this push were blocked impacting this change.": "此推送中的其他更新被阻止，影响了此更改。",
+        "This update failed because another PR in the stack failed to merge.": "此更新失败，因为栈中的另一个 PR 合并失败。",
+        "This update failed because the PR stack failed to merge.": "此更新失败，因为 PR 栈合并失败。",
+        "This update was fast-forwarded. A new merge queue commit was not created and status checks were not re-evaluated during the merge queue.": "此更新已快进。未创建新的合并队列提交，且合并队列期间未重新评估状态检查。",
+        "Pull requests blocked": "拉取请求被阻止",
+        "Would block": "会阻止",
+        "Did not run": "未运行",
+        "Enterprise accounts enable you to review commits against rulesets to track pass, fail, or bypass status for greater oversight and understanding.": "企业账户允许您根据规则集审查提交，以跟踪通过、失败或旁路状态，从而获得更强的监督和了解。",
+        "See how rulesets are affecting this": "查看规则集如何影响此",
+    },
+    "regexp": [ // 正则翻译
+        [/^Activity on (.+)$/, "活动于 $1"],
+    ],
+    "title": {
+        "static": {
+            "Rule insights": "规则洞察",
+            "Repository ruleset insights": "仓库规则集洞察",
+            "Actions ruleset insights": "Actions 规则集洞察",
+            "Actions rules insights": "Actions 规则洞察",
+        },
+        "regexp": [
+            [/^Repository ruleset insights\b/, "仓库规则集洞察"],
+            [/^Actions ruleset insights\b/, "Actions 规则集洞察"],
+            [/^Actions rules insights\b/, "Actions 规则洞察"],
+            [/^Rule insights\b/, "规则洞察"],
+        ],
+    },
+};
+
+I18N["zh-CN"]["orgs/settings/rules/insights"] = { // 组织设置 - 规则 - 规则洞察
+    "static": { // 静态翻译
+        ...I18N["zh-CN"]["orgs/settings/rules"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-insights"]["static"],
+    },
+    "regexp": [ // 正则翻译
+        ...I18N["zh-CN"]["orgs/settings/rules"]["regexp"],
+        ...I18N["zh-CN"]["orgs-settings-insights"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            ...(I18N["zh-CN"]["orgs/settings/rules"]["title"]["static"] || {}),
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["static"],
+        },
+        "regexp": [
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["regexp"],
+            ...I18N["zh-CN"]["orgs/settings/rules"]["title"]["regexp"],
+        ],
+    },
+};
+
+
 defineI18nPage(I18N["zh-CN"], "repository/settings/actions", () => ({ // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
@@ -27081,6 +27186,25 @@ defineI18nPage(I18N["zh-CN"], "orgs/settings/actions", () => ({ // 组织设置 
         ...I18N["zh-CN"]["orgs-public"]["regexp"],
     ],
 }));
+
+I18N["zh-CN"]["orgs/settings/actions/rules/insights"] = { // 组织设置 - Actions - 规则洞察
+    "static": { // 静态翻译
+        ...I18N["zh-CN"]["orgs/settings/actions"]["static"],
+        ...I18N["zh-CN"]["orgs-settings-insights"]["static"],
+    },
+    "regexp": [ // 正则翻译
+        ...I18N["zh-CN"]["orgs/settings/actions"]["regexp"],
+        ...I18N["zh-CN"]["orgs-settings-insights"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["static"],
+        },
+        "regexp": [
+            ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["regexp"],
+        ],
+    },
+};
 
 defineI18nPage(I18N["zh-CN"], "orgs/settings/discussions", () => ({ // 组织设置 - 讨论
     "static": { // 静态翻译
