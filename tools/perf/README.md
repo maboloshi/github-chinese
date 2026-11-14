@@ -35,7 +35,14 @@ profile 默认落在 `%LOCALAPPDATA%\github-chinese-edge-debug\profile`，与日
   装了 Tampermonkey 的 profile 会和基准台注入的仓库脚本打架，所以这个 profile 保持干净。
 
 环境变量覆盖：`EDGE_BIN` / `EDGE_DEBUG_PORT` / `EDGE_DEBUG_PROFILE` / `EDGE_DEBUG_PROXY` /
-`EDGE_DEBUG_URL` / `EDGE_DEBUG_NO_PROXY`。
+`EDGE_DEBUG_URL` / `EDGE_DEBUG_NO_PROXY` / `EDGE_DEBUG_MINIMIZED`（设为 1 时窗口最小化启动）。
+
+代理默认走 `http://127.0.0.1:7890`（`EDGE_DEBUG_NO_PROXY=1` 关闭，`EDGE_DEBUG_PROXY` 改地址）。
+除调试窗口外，`smoke-single-pipeline.mjs` 与 `probe-docstart.mjs` 这类自起 headless 浏览器的脚本
+也读取同一组变量，见 [`lib/edge.mjs`](lib/edge.mjs)。
+
+连续跑 `bench.mjs` / `sweep.mjs` 前要先关掉调试窗口再重开：上一轮的注入登记还留在浏览器里，
+第二次运行会报「残留了上一轮的注入登记」并退出。
 
 ## 跑基准
 

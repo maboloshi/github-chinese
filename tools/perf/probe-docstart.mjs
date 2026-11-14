@@ -15,6 +15,7 @@ import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { connect, sleep } from './lib/cdp.mjs';
+import { proxyArgs } from './lib/edge.mjs';
 
 const CANDIDATES = [
     process.env.EDGE_BIN,
@@ -56,6 +57,7 @@ const child = spawn(EDGE, [
     '--headless=new',
     `--remote-debugging-port=${PORT}`,
     `--user-data-dir=${profile}`,
+    ...proxyArgs(),
     `--load-extension=${extension}`,
     '--no-first-run',
     '--no-default-browser-check',

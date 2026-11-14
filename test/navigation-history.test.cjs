@@ -44,7 +44,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
     if (supported) window.onurlchange = null;
     const walks = [];
     const errors = [];
-    const work = { title: 0, selector: 0, description: 0, menus: 0 };
+    const work = { title: 0, selector: 0, description: 0, menus: 0, builds: 0 };
     const timers = new Map();
     const observers = [];
     let timerId = 0;
@@ -85,6 +85,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
             }
             disconnect() { this.target = null; this.disconnects++; }
             observe(target) { assert.ok(target, 'cannot observe a missing body'); this.target = target; }
+            takeRecords() { return []; }
         },
         setTimeout(callback) { timers.set(++timerId, callback); return timerId; },
         clearTimeout(id) { timers.delete(id); },
@@ -97,6 +98,7 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
             return window.location.pathname.includes('/issues') ? 'repository/issues' : 'repository';
         },
         buildPageConfig(currentPageType) {
+            work.builds += 1;
             return { currentPageType, currentPath: window.location.pathname, ignoreSelectors: '.protected' };
         },
         handleTextNode(node) { node.data = `translated:${context.State.pageConfig.currentPageType}`; },
@@ -111,7 +113,11 @@ function loadRuntime(fileName, { urlchange = false, supported = true, loading = 
     const names = [
         'safe', 'init', 'setupInitTrans', 'setupUrlChangeListener', 'handleUrlChange',
         'setupTurboEvents', 'handleTurboLoad', 'updatePageConfig',
+        'applyPage', 'traversePage', 'hasFreshTraversal', 'markPageTraversed',
         'createMutationObserver', 'attachMutationObserver', 'scheduleIdleTraversal', 'setupMutationObserver',
+        'flushMutationBatch', 'scheduleMutationFlush', 'resetMutationBatch',
+        'mountDescButton',
+        'watchReactCommits',
         'shouldIgnoreMutationNode', 'processMutations', 'traverseNode', 'isBreadcrumbIdentifierLink',
     ];
     const functions = names.map(name => {
@@ -161,8 +167,33 @@ test(`${fileName}: Turbo 换 body 后刷新配置与观察目标`, () => {
     assertObserved(runtime, replacement);
     assert.ok(originalObserver.disconnects > 0);
     assert.equal(originalObserver.target, null);
-    assert.equal(runtime.work.title, 1);
+    // 首次载入已经翻过标题 / 选择器，这次换 body 再应用一次
+    assert.equal(runtime.work.title, 2);
+    assert.equal(runtime.work.selector, 2);
+});
+
+test(`${fileName}: 首次载入即翻标题与选择器，随后的 turbo:load 不重复全量遍历`, () => {
+    const runtime = loadRuntime(fileName);
+    assert.equal(runtime.work.title, 1, '首次载入也要翻标题，晚注入时不能缺译文');
     assert.equal(runtime.work.selector, 1);
+
+    const walks = runtime.walks.length;
+    runtime.document.dispatch('turbo:load');
+    assert.equal(runtime.walks.length, walks, '同一 URL + 同一 body 不应再走一遍树');
+});
+
+test(`${fileName}: 同一页面类型的站内翻页复用词典与规则配置`, () => {
+    const runtime = loadRuntime(fileName);
+    const config = runtime.context.State.pageConfig;
+    const builds = runtime.work.builds;
+    const nextRepo = 'https://github.com/octocat/another-repository';
+
+    runtime.navigate(nextRepo);
+    runtime.document.dispatch('turbo:load');
+
+    assert.equal(runtime.context.State.pageConfig, config, '不应为同一页面类型重建配置');
+    assert.equal(runtime.work.builds, builds, '不应重新展开词库 / 重算前置过滤');
+    assert.equal(config.currentPath, '/octocat/another-repository', '路径仍要跟着导航更新');
 });
 
 for (const lateBody of [false, true]) {
@@ -341,15 +372,17 @@ test(`${fileName}: 刷新保留忽略规则、功能开关与错误边界`, () =
     });
     runtime.document.dispatch('turbo:render');
     assert.equal(protectedText.data, 'user content');
-    assert.equal(runtime.work.description, 1);
+    // 首次载入挂一次 + turbo:render 挂一次
+    assert.equal(runtime.work.description, 2);
     runtime.context.State.featureSet.enable_transDesc = false;
     runtime.document.dispatch('turbo:load');
-    assert.equal(runtime.work.description, 1);
+    assert.equal(runtime.work.description, 2);
     runtime.document.body.fail = true;
+    runtime.context.State.lastTraversal = null; // 模拟一次尚未遍历的页面，让失败路径真的走到
     assert.doesNotThrow(() => runtime.document.dispatch('turbo:load'));
     assert.equal(runtime.errors.length, 1);
-    assert.equal(runtime.work.title, 3);
-    assert.equal(runtime.work.selector, 3);
+    assert.equal(runtime.work.title, 4);
+    assert.equal(runtime.work.selector, 4);
     assert.equal(runtime.context.State.mutationObserver.target, runtime.document.body);
     runtime.context.handleTextNode = () => { throw new Error('mutation failure'); };
     assert.doesNotThrow(() => runtime.mutate());
@@ -357,6 +390,6 @@ test(`${fileName}: 刷新保留忽略规则、功能开关与错误边界`, () =
     runtime.document.body.fail = false;
     runtime.context.transTitle = () => { throw new Error('title failure'); };
     assert.doesNotThrow(() => runtime.document.dispatch('turbo:load'));
-    assert.equal(runtime.work.selector, 4, '标题翻译失败不应挡住选择器翻译');
+    assert.equal(runtime.work.selector, 5, '标题翻译失败不应挡住选择器翻译');
     assert.equal(runtime.context.State.mutationObserver.target, runtime.document.body);
 });

@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜單及內容。原作者為樓教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.5-2026-11-11
+// @version      1.9.4.6-2026-11-13
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.5-2026-11-11
+// @require      https://raw.githubusercontent.com/maboloshi/github-chinese/gh-pages/locals_zh-TW.js?v1.9.4.6-2026-11-13
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -41,8 +41,10 @@
         SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站點類型
         DESC_SELECTORS: { // 簡介元素的CSS選擇器
             repository: [
-                // 'p[class*="SidebarAbout-module_"][class*="_description"]', // 新版 React UI（issue #811）
-                '[class*="borderGrid__"] p[class*="description__"]', // 當前 React UI：About 側欄內的描述
+                // 登錄態是獨立的 React 組件，類名形如 SidebarAbout-module_xxxx_description，
+                // 不含未登錄態的 description__（#811）
+                'p[class*="SidebarAbout-module_"][class*="_description"]', // 登錄態 React UI（issue #811）
+                '[class*="borderGrid__"] p[class*="description__"]', // 未登錄/桌面 About 側欄
             ].join(", "),
             gist: ".gist-content [itemprop='about']"
         },
@@ -135,6 +137,10 @@
         idleSweep: null,         // 恢復訪問時的空閒補掃句柄
         urlChangeHandler: null,  // 存儲URL變化處理器
         dynamicMenus: {},        // 動態菜單ID記錄
+        pendingMutations: [],    // 一幀內攢下的 mutation 記錄
+        mutationFlush: null,     // 已排期的批次處理句柄
+        descHost: null,          // 當前描述元素，用於判斷它是否被 React 替換
+        descMount: null,         // 掛在描述後面的按鈕 / 翻譯結果節點
         initDone: false,
     };
 
@@ -216,6 +222,7 @@
             updatePageConfig('首次載入');
             if (State.pageConfig) {
                 safe(traverseNode, '首次遍歷')(document.body);
+                safe(mountDescButton, '描述按鈕')(true);
             }
             setupMutationObserver(); // 設置DOM變化觀察器
         }
@@ -330,6 +337,28 @@
     }
 
     /**
+     * 確保描述翻譯按鈕掛在該頁的描述節點後面。
+     *
+     * 不監控每個突變：描述節點還在、且按鈕仍是它的下一個兄弟節點時，只做兩次
+     * isConnected / nextElementSibling 判斷；只有 React 換掉描述（或把按鈕挪走）才重新查詢。
+     * @param {boolean} force - 載入 / 導航後強制核對一次，防止同一 body 內換了描述節點
+     */
+    function mountDescButton(force = false) {
+        if (!State.featureSet.enable_transDesc) return;
+        const pageType = State.pageConfig?.currentPageType;
+        if (!pageType) return;
+        const descSelector = CONFIG.DESC_SELECTORS[pageType];
+        if (!descSelector) return;
+        if (!force && State.descHost?.isConnected &&
+            State.descHost.nextElementSibling === State.descMount) {
+            return;
+        }
+        const mounted = transDesc(descSelector);
+        State.descHost = mounted?.host || null;
+        State.descMount = mounted?.mount || null;
+    }
+
+    /**
      * 處理Turbo頁面加載事件
      * 在新頁面加載後執行必要的翻譯
      */
@@ -358,27 +387,25 @@
 
         safe(transTitle, '標題翻譯')(); // 翻譯頁面標題
         safe(transBySelector, '選擇器翻譯')(); // 通過選擇器翻譯特定元素
-
-        // 如果描述翻譯功能啟用，翻譯頁面描述
-        if (State.featureSet.enable_transDesc &&
-            CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]) {
-            safe(transDesc, '描述翻譯')(CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType]);
-        }
+        safe(mountDescButton, '描述翻譯')(true); // 翻譯頁面描述（載入/導航時強制核對一次）
     }
 
     /* =========================== 頁面配置管理 =========================== */
 
     /**
      * 更新頁面配置 — 頁面類型變化時重建 State.pageConfig
+     * 同一頁面類型內只更新路徑：詞庫、正則規則和翻譯緩存都與具體路徑無關，
+     * 站內翻頁（議題列表、倉庫之間）不必重新展開詞庫和重算前置過濾。
      * @param {string} trigger - 觸發更新的原因（用於調試）
      */
     function updatePageConfig(trigger) {
         const newType = detectPageType();
         if (!newType) {
             State.pageConfig = null;
-        } else if (newType !== State.pageConfig?.currentPageType ||
-            window.location.pathname !== State.pageConfig?.currentPath) {
+        } else if (newType !== State.pageConfig?.currentPageType) {
             State.pageConfig = buildPageConfig(newType);
+        } else {
+            State.pageConfig.currentPath = window.location.pathname;
         }
         console.log(`【Debug】${trigger}觸發, 頁面類型為 ${State.pageConfig?.currentPageType}`);
     }
@@ -389,6 +416,10 @@
      * @returns {Object} 頁面配置對象
      */
     function buildPageConfig(pageType) {
+        const regexpRules = [ // 合併公共和頁面特定的正則規則
+            ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
+            ...(I18N[CONFIG.LANG].public.regexp || [])
+        ];
         return {
             currentPageType: pageType, // 當前頁面類型
             currentPath: window.location.pathname, // 當前路徑
@@ -398,10 +429,9 @@
                 ...I18N[CONFIG.LANG].public.static,
                 ...(I18N[CONFIG.LANG][pageType]?.static || {})
             },
-            regexpRules: [ // 合併公共和頁面特定的正則規則
-                ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
-                ...(I18N[CONFIG.LANG].public.regexp || [])
-            ],
+            regexpRules,
+            // 與 regexpRules 一一對應的「匹配時必然出現的字面量」，用於跳過不可能命中的規則
+            regexpPrefilters: regexpRules.map(([pattern]) => getRequiredLiteral(pattern)),
             ignoreMutationSelectors: [ // 忽略的突變選擇器
                 ...(I18N.conf.ignoreMutationSelectorPage['*'] || []),
                 ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
@@ -415,13 +445,14 @@
                 ...(I18N[CONFIG.LANG].public.selector || []),
                 ...(I18N[CONFIG.LANG][pageType]?.selector || [])
             ],
+            transCache: new Map(), // 當前頁面類型的翻譯結果緩存（文本 -> 譯文/false）
         };
     }
 
     /* =========================== 頁面類型檢測 =========================== */
 
     /**
-     * 全局路由保留首段（與 rePagePath 的全局首段一致，幷包含組織頁別名 organizations）。
+     * 全局路由保留首段（與 rePagePath 的全局首段一致，並包含組織頁別名 organizations）。
      * 這些首段是站點固定路徑，不可能是賬號名 / 組織名。
      */
     const RESERVED_ROOTS = new Set([
@@ -545,6 +576,58 @@
     /* =========================== MutationObserver =========================== */
 
     /**
+     * 處理攢下的突變批次（一幀一次）
+     */
+    function flushMutationBatch() {
+        State.mutationFlush = null;
+        if (!State.pendingMutations.length) return;
+
+        const batch = State.pendingMutations;
+        State.pendingMutations = [];
+        if (!State.pageConfig) return;
+
+        try {
+            processMutations(batch);
+
+            // React 替換描述節點時，按鈕會隨舊節點一起消失；下次批次按 isConnected 決定是否重掛。
+            mountDescButton();
+        } finally {
+            // 本次遍歷產生的寫入會再次進入觀察器隊列，若不丟棄，下一幀會重複遍歷自己的譯文。
+            // 這裡的記錄都來自同步執行的本次批次；頁面自己的異步渲染在回調之後才會發生。
+            State.mutationObserver?.takeRecords();
+        }
+    }
+
+    /**
+     * 安排一次批次處理；沒有 requestAnimationFrame 的環境（測試/極老瀏覽器）
+     * 保持同步處理，避免行為變化。
+     */
+    function scheduleMutationFlush() {
+        if (State.mutationFlush) return;
+        if (typeof window.requestAnimationFrame === 'function') {
+            const id = window.requestAnimationFrame(flushMutationBatch);
+            State.mutationFlush = {
+                cancel() {
+                    window.cancelAnimationFrame?.(id);
+                },
+            };
+        } else {
+            flushMutationBatch();
+        }
+    }
+
+    /**
+     * 換 body 時丟棄上一份文檔攢下的突變，避免繼續處理已斷開的節點。
+     */
+    function resetMutationBatch() {
+        State.pendingMutations = [];
+        if (State.mutationFlush) {
+            State.mutationFlush.cancel();
+            State.mutationFlush = null;
+        }
+    }
+
+    /**
      * 創建DOM變化觀察器
      * 監聽頁面變化並觸發翻譯
      */
@@ -558,16 +641,8 @@
                     updatePageConfig("URL變化 (MutationObserver)");
                 }
 
-                // 處理DOM變化
-                if (State.pageConfig) {
-                    processMutations(mutations);
-
-                    // GitHub 會用 React 動態替換倉庫描述節點，舊按鈕隨節點一起丟失：重新掛載
-                    if (State.featureSet?.enable_transDesc) {
-                        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig.currentPageType];
-                        if (descSelector) transDesc(descSelector);
-                    }
-                }
+                State.pendingMutations.push(...mutations);
+                scheduleMutationFlush();
             }, 'MutationObserver')
         );
     }
@@ -578,6 +653,7 @@
      * @param {Element} body
      */
     function attachMutationObserver(body) {
+        resetMutationBatch();
         State.mutationObserver?.disconnect();
         State.mutationObserver = createMutationObserver();
         State.mutationObserver.observe(body, CONFIG.OBSERVER_CONFIG);
@@ -808,7 +884,7 @@
         }
 
         // 帶有 tooltipped 樣式的元素
-        if (/tooltipped/.test(node.className)) {
+        if (typeof node.className === 'string' && node.className.includes('tooltipped')) {
             transElementAttrs(node, 'ariaLabel');
         }
     }
@@ -873,8 +949,11 @@
      * @param {string|string[]} attrs - 要翻譯的屬性名或屬性名數組
      */
     function transElementAttrs(target, attrs) {
-        const attrList = Array.isArray(attrs) ? attrs : [attrs];
-        attrList.forEach(attrName => transElementAttr(target, attrName));
+        if (Array.isArray(attrs)) {
+            for (const attrName of attrs) transElementAttr(target, attrName);
+        } else {
+            transElementAttr(target, attrs);
+        }
     }
 
     /**
@@ -895,13 +974,9 @@
      * @returns {string|boolean} 翻譯後的文本或 false
      */
     function transText(text) {
-        // 跳過不需要翻譯的文本：
-        // 1. 空文本（包空白字符）或純數字
-        // 2. 純中文字符
-        // 3. 不包含英文字母和,.符號的文本
-        if (/^[\s0-9]*$/.test(text) ||
-            /^[\u4e00-\u9fa5]+$/.test(text) ||
-            !/[a-zA-Z,.]/.test(text)) {
+        // 跳過不需要翻譯的文本：不含英文字母和 , . 的文本一律不查詞庫
+        //（空文本、純數字、純中文都落在這裡；有英文的文本才可能命中詞條或正則）
+        if (!/[a-zA-Z,.]/.test(text)) {
             return false;
         }
 
@@ -918,6 +993,72 @@
         return false;
     }
 
+    // 單頁翻譯結果緩存上限：文本重複率高（導航、按鈕、時間），緩存命中率遠高於隨機內容，
+    // 上限只是防止長時間會話裡無限增長。
+    const TRANS_CACHE_LIMIT = 5000;
+
+    /**
+     * 清空當前頁面的翻譯結果緩存 — 正則功能開關變化後必須調用，
+     * 否則會命中「關閉正則時算出的未命中結果」而漏翻。
+     */
+    function resetTransCache() {
+        if (State.pageConfig) State.pageConfig.transCache = new Map();
+    }
+
+    /**
+     * 提取正則規則「一旦匹配就必然出現在文本里」的字面量，用來跳過不可能命中的規則。
+     * 只認長度 >= 4 的純字母連續段，並保守放棄以下情況：
+     * - 帶 i 標誌（大小寫不敏感，includes 會誤判）
+     * - 任意位置的 `|`（分支不共享字面量）
+     * - 前後向斷言 / 被可選量詞修飾的組（字面量可能不出現）
+     * - 字面量本身後跟可選量詞（可能零次出現）
+     * 返回 null 表示這條規則必須照常執行。
+     * @param {RegExp} pattern
+     * @returns {string|null}
+     */
+    function getRequiredLiteral(pattern) {
+        if (!pattern || pattern.flags.includes('i')) return null;
+        const source = pattern.source;
+        if (source.includes('|')) return null;
+        if (/\(\?<?[=!]/.test(source)) return null; // 前後向斷言一律不參與
+        // 右花括號用 charCode 表示，避免測試裡按花括號配對提取函數時被字面量干擾
+        const optional = char => char === '?' || char === '*' || char === String.fromCharCode(123);
+
+        let best = '';
+        let run = '';
+        let inClass = false;
+        const flush = end => {
+            if (run.length >= 4 && !optional(source[end]) && run.length > best.length) {
+                best = run;
+            }
+            run = '';
+        };
+
+        for (let i = 0; i < source.length; i += 1) {
+            const char = source[i];
+            if (char === '\\') {
+                if (!inClass) flush(i); // 轉義序列不是字面量字母
+                i += 1;
+            } else if (inClass) {
+                if (char === ']') inClass = false;
+            } else if (char === '[') {
+                flush(i);
+                inClass = true;
+            } else if (char === ')') {
+                if (optional(source[i + 1])) return null; // 整個組被可選量詞修飾
+                flush(i);
+            } else if (char === '(' || char === '^' || char === '$') {
+                flush(i);
+            } else if (/[A-Za-z]/.test(char)) {
+                run += char;
+            } else {
+                flush(i);
+            }
+        }
+        flush(source.length);
+        return best || null;
+    }
+
     /**
      * 從詞庫獲取翻譯 — 直接讀取 State.pageConfig
      * @param {string} text - 要翻譯的文本
@@ -926,31 +1067,50 @@
     function fetchTransResult(text) {
         if (!State.pageConfig) return false;
 
-        // 靜態詞典查找
-        const staticResult = State.pageConfig.staticDict[text];
-        if (typeof staticResult === 'string') {
-            MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-            return staticResult;
+        const pageConfig = State.pageConfig;
+        // 未命中詞條記錄依賴「每次查詢都記賬」，開啟時繞開緩存以保證行為不變（僅開發者模式）。
+        const cache = State.featureSet.enable_missedTerms ? null : pageConfig.transCache;
+        if (cache) {
+            const cached = cache.get(text);
+            if (cached !== undefined) return cached;
         }
 
-        // 正則規則查找
-        if (State.featureSet.enable_RegExp) {
-            for (const [pattern, replacement] of State.pageConfig.regexpRules) {
-                const result = text.replace(pattern, replacement);
-                if (result !== text) {
-                    MissedTermsManager.cleanup(text, State.pageConfig.currentPath);
-                    return result;
+        let result = false;
+
+        // 靜態詞典查找
+        const staticResult = pageConfig.staticDict[text];
+        if (typeof staticResult === 'string') {
+            MissedTermsManager.cleanup(text, pageConfig.currentPath);
+            result = staticResult;
+        } else if (State.featureSet.enable_RegExp) {
+            // 正則規則查找：先用「必然出現的字面量」跳過不可能命中的規則
+            const prefilters = pageConfig.regexpPrefilters;
+            const rules = pageConfig.regexpRules;
+            for (let index = 0; index < rules.length; index += 1) {
+                const required = prefilters?.[index];
+                if (required && !text.includes(required)) continue;
+                const [pattern, replacement] = rules[index];
+                const translated = text.replace(pattern, replacement);
+                if (translated !== text) {
+                    MissedTermsManager.cleanup(text, pageConfig.currentPath);
+                    result = translated;
+                    break;
                 }
             }
         }
 
         // 記錄未命中詞條
-        if (State.featureSet.enable_missedTerms) {
-            MissedTermsManager.record(text, State.pageConfig.currentPath);
+        if (result === false && State.featureSet.enable_missedTerms) {
+            MissedTermsManager.record(text, pageConfig.currentPath);
             refreshMenuStates();
         }
 
-        return false;
+        if (cache) {
+            if (cache.size >= TRANS_CACHE_LIMIT) cache.clear();
+            cache.set(text, result);
+        }
+
+        return result;
     }
 
     /* =========================== 遠程翻譯 =========================== */
@@ -958,10 +1118,11 @@
     /**
      * 為描述元素添加翻譯按鈕
      * @param {string} selector - 描述元素的選擇器
+     * @returns {{host: Element, mount: Element}|null} 描述節點與已存在的按鈕 / 翻譯結果或新按鈕
      */
     function transDesc(selector) {
         const element = document.querySelector(selector);
-        if (!element) return;
+        if (!element) return null;
 
         // 修復：安全檢查 classList.contains，避免 null sibling 時崩潰
         const nextSibling = element.nextElementSibling;
@@ -970,7 +1131,7 @@
         // 再補一個新按鈕，點一次「翻譯」就疊一層翻譯框（#811 迴歸）。
         if (nextSibling?.classList?.contains('translate-button') ||
             nextSibling?.classList?.contains('translation-result')) {
-            return;
+            return { host: element, mount: nextSibling };
         }
 
         // 創建翻譯按鈕
@@ -981,6 +1142,7 @@
 
         // 綁定點擊事件
         button.addEventListener('click', () => handleTransClick(button, element));
+        return { host: element, mount: button };
     }
 
     /**
@@ -1035,6 +1197,7 @@
         // 移除按鈕並顯示結果
         button.remove();
         element.after(resultContainer);
+        State.descMount = resultContainer;
     }
 
     /**
@@ -1362,6 +1525,8 @@
                 label: "正則功能",
                 key: "enable_RegExp",
                 callback: (enabled) => {
+                    // 緩存裡可能存著「關閉正則時算出的未命中結果」，切換後必須先失效
+                    resetTransCache();
                     if (enabled && State.pageConfig) safe(traverseNode, '菜單觸發遍歷')(document.body);
                 }
             },
@@ -1369,13 +1534,13 @@
                 label: "描述翻譯",
                 key: "enable_transDesc",
                 callback: (enabled) => {
-                    const pageType = State.pageConfig?.currentPageType;
-                    if (enabled && pageType) {
-                        // 啟用描述翻譯
-                        transDesc(CONFIG.DESC_SELECTORS[pageType]);
-                    } else if (!enabled) {
-                        // 禁用描述翻譯，移除按鈕
+                    if (enabled) {
+                        mountDescButton(true);
+                    } else {
+                        // 禁用描述翻譯，移除按鈕；重掛由 mountDescButton 的特性檢查擋住
                         document.querySelector('.translate-button')?.remove();
+                        State.descHost = null;
+                        State.descMount = null;
                     }
                 }
             }

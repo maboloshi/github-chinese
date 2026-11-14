@@ -109,6 +109,7 @@ function loadDetector() {
     vm.runInContext(`
 ${extractConfig()}
 ${extractConst('RESERVED_ROOTS')}
+${extractFunction('readRepositoryNwo')}
 ${extractFunction('isFallbackRepositoryPath')}
 ${extractFunction('detectPageType')}
 globalThis.__detect = detectPageType;
@@ -134,6 +135,7 @@ const repositoryPages = [
     ['https://github.com/acme/project/issues/7', 'repository/issues'],
     ['https://github.com/acme/project/settings', 'repository/settings'],
     ['https://github.com/acme/project/settings/hooks', 'repository/settings/hooks'],
+    ['https://github.com/acme/project/reported_content', 'repository/reported_content'],
 ];
 
 const preservedPages = [
@@ -174,7 +176,6 @@ const rejectedPages = [
     'https://github.com/acme/...',
     'https://github.com/.../project',
     'https://github.com/acme/foo%20bar',
-    'https://github.com/acme/project/reported_content',
     'https://github.com/acme/project/unknown-feature',
 ];
 
@@ -213,7 +214,7 @@ test('不完整路径与未知路由不会被当成仓库页', () => {
     }
     assert.equal(
         classify(loaded, 'https://github.com/acme/project/reported_content', [], '/<user-name>/<repo-name>'),
-        false,
+        'repository/reported_content',
     );
     assert.equal(
         classify(loaded, 'https://github.com/acme/project/unknown-feature', [], '/<user-name>/<repo-name>'),

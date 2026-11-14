@@ -20,6 +20,10 @@ if not defined EDGE_DEBUG_PROFILE set "EDGE_DEBUG_PROFILE=%LOCALAPPDATA%\github-
 if not defined EDGE_DEBUG_PROXY set "EDGE_DEBUG_PROXY=http://127.0.0.1:7890"
 if not defined EDGE_DEBUG_URL set "EDGE_DEBUG_URL=https://github.com/maboloshi/github-chinese"
 
+rem 需要后台跑基准时设 EDGE_DEBUG_MINIMIZED=1，窗口启动即最小化
+set "MIN_ARG="
+if defined EDGE_DEBUG_MINIMIZED set "MIN_ARG=/min"
+
 if not exist "%EDGE_BIN%" (
   echo [错误] 找不到 Edge: "%EDGE_BIN%"
   echo         请设置 EDGE_BIN 指向 msedge.exe
@@ -36,7 +40,7 @@ echo   profile : %EDGE_DEBUG_PROFILE%
 echo   port    : %EDGE_DEBUG_PORT%
 echo   代理    : %PROXY_ARG%
 
-start "" "%EDGE_BIN%" ^
+start "" %MIN_ARG% "%EDGE_BIN%" ^
   --user-data-dir="%EDGE_DEBUG_PROFILE%" ^
   --remote-debugging-port=%EDGE_DEBUG_PORT% ^
   %PROXY_ARG% ^
