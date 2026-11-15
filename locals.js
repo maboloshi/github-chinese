@@ -128,10 +128,9 @@ I18N.conf = {
             '[contenteditable=""]',
             '[contenteditable="true"]',
             '[contenteditable="plaintext-only"]',
-            'div.QueryBuilder-StyledInputContainer', // 顶部搜索栏 关键词
-            '#qb-input-query span', // 搜索页面 搜索栏 关键词
 			'div.styled-input-content', // 筛选条
             'div[data-testid="quick-search-input-overlay"]', // 顶部搜索栏 关键词
+            'header div[class*="searchButtonGroup"] span[class*="placeholder__"]:not(:has(kbd))', // 顶部搜索栏 查询词回显（占位提示含 kbd，仍需翻译）
             'a[data-hovercard-type="user"]', // 用户名链接是标识符，不翻译（#759）
             'a.user-mention', // @用户名同理（#759）
         ],
@@ -267,7 +266,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            'span.ActionListItem-descriptionWrap',  // 顶部搜索栏 关键词
+            'header div[class*="searchButtonGroup"] span[class*="placeholder__"]:not(:has(kbd))', // 顶部搜索栏 查询词回显（占位提示含 kbd，仍需翻译）
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK', // 特定元素标签
             '.highlight',
             '.notranslate',
