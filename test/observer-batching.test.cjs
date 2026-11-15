@@ -29,6 +29,7 @@ function createHarness() {
     const processed = [];
     const updates = [];
     let takeRecordsCalls = 0;
+    let descMountCalls = 0;
     let observer = null;
 
     const window = {
@@ -45,12 +46,14 @@ function createHarness() {
         window,
         document: { body: {} },
         console: { log() {}, error() {} },
+        CONFIG: { DESC_SELECTORS: { repository: '.description' } },
         State: {
             currentURL: window.location.href,
             urlChangeHandler: null,
             pageConfig: { currentPageType: 'repository' },
             pendingMutations: [],
             mutationFlush: null,
+            featureSet: { enable_transDesc: true },
         },
         MutationObserver: class {
             constructor(callback) {
@@ -64,12 +67,13 @@ function createHarness() {
         },
         safe: fn => fn,
         processMutations: batch => processed.push(batch),
+        transDesc: () => { descMountCalls += 1; },
         updatePageConfig: trigger => updates.push(trigger),
     });
 
     const functions = [
         'createMutationObserver', 'flushMutationBatch', 'scheduleMutationFlush',
-        'resetMutationBatch',
+        'resetMutationBatch', 'batchAddedDesc', 'mountDescButton',
     ]
         .map(name => extractFunction(name))
         .join('\n');
@@ -78,11 +82,20 @@ function createHarness() {
     return {
         window, context, frames, cancelled, processed, updates,
         get takeRecordsCalls() { return takeRecordsCalls; },
+        get descMountCalls() { return descMountCalls; },
         get observer() { return observer; },
     };
 }
 
 const record = (id) => ({ type: 'childList', target: {}, addedNodes: [], removedNodes: [], id });
+const element = (options = {}) => ({
+    nodeType: 1,
+    matches: () => false,
+    querySelector: () => null,
+    ...options,
+});
+const descElement = element({ matches: selector => selector === '.description' });
+const wrapperWithDesc = element({ querySelector: selector => (selector === '.description' ? descElement : null) });
 
 test('同一帧内的多次回调只处理一次，并丢弃本次遍历自己产生的记录', () => {
     const harness = createHarness();
@@ -99,6 +112,27 @@ test('同一帧内的多次回调只处理一次，并丢弃本次遍历自己�
     assert.equal(harness.processed.length, 1);
     assert.deepEqual(harness.processed[0].map(item => item.id), [1, 2]);
     assert.equal(harness.takeRecordsCalls, 1, '遍历后必须取走自己写入产生的记录');
+    assert.equal(harness.descMountCalls, 0, '没有新增描述节点的批次不查询、不重挂');
+});
+
+test('批次新增了描述节点（浮层 / 下拉 / 侧栏）时补挂按钮', () => {
+    const harness = createHarness();
+    const observer = vm.runInContext('createMutationObserver()', harness.context);
+
+    observer.callback([{ type: 'childList', target: {}, addedNodes: [wrapperWithDesc], removedNodes: [] }]);
+    harness.frames[0]();
+
+    assert.equal(harness.descMountCalls, 1);
+});
+
+test('批次只移除描述节点时不补挂按钮', () => {
+    const harness = createHarness();
+    const observer = vm.runInContext('createMutationObserver()', harness.context);
+
+    observer.callback([{ type: 'childList', target: {}, addedNodes: [], removedNodes: [wrapperWithDesc] }]);
+    harness.frames[0]();
+
+    assert.equal(harness.descMountCalls, 0);
 });
 
 test('flush 之后的新回调会重新排期', () => {

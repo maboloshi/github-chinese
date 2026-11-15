@@ -348,6 +348,7 @@
      * 载入时往 SSR 描述后面插按钮会造成 hydration mismatch，React 丢弃 SSR 树重渲染，按钮随之消失。
      * react-core 在每次 root 提交后记 performance mark（react-root:commit:<app>），
      * 以这个「提交结束」事件为准，提交后再挂。机制与实测见 docs/github-react.md。
+     * 浮层 / 下拉里后来渲染的描述不走 root 提交，由突变批次补挂（batchAddedDesc）。
      */
     function watchReactCommits() {
         if (typeof PerformanceObserver !== 'function') return;
@@ -656,6 +657,22 @@
     /* =========================== MutationObserver =========================== */
 
     /**
+     * 批次里是否新增了描述节点（含包着描述的祖先子树）。
+     * react-root:commit 只覆盖 React root 的提交：浮层、下拉菜单、侧栏等运行时渲染
+     * 走的是普通状态更新，不会重新打 commit mark。这些新插入的描述节点只能靠这份
+     * 「新增节点」事件补挂（插入发生在 React 已渲染的 DOM 上，不会再触发 hydration mismatch）。
+     * @param {MutationRecord[]} batch
+     * @param {string} selector - 描述元素的选择器
+     * @returns {boolean}
+     */
+    function batchAddedDesc(batch, selector) {
+        return batch.some(({ addedNodes }) =>
+            [...addedNodes].some(node =>
+                node.nodeType === 1 &&
+                (node.matches(selector) || node.querySelector(selector))));
+    }
+
+    /**
      * 处理攒下的突变批次（一帧一次）
      */
     function flushMutationBatch() {
@@ -668,6 +685,10 @@
 
         try {
             processMutations(batch);
+
+            // 浮层 / 下拉 / 侧栏里后来渲染出来的描述：补挂翻译按钮
+            const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig?.currentPageType];
+            if (descSelector && batchAddedDesc(batch, descSelector)) mountDescButton();
         } finally {
             // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
             // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
