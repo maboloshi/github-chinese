@@ -4,7 +4,7 @@
 // @description  中文化 GitHub 界面的部分菜单及内容。原作者为楼教主(http://www.52cik.com/)。
 // @copyright    2021, 沙漠之子 (https://maboloshi.github.io/Blog)
 // @icon         https://github.githubassets.com/pinned-octocat.svg
-// @version      1.9.4.6-2026-11-13
+// @version      1.9.4.6-2026-11-15
 // @author       沙漠之子
 // @license      GPL-3.0
 // @match        https://github.com/*
@@ -12,7 +12,7 @@
 // @match        https://gist.github.com/*
 // @match        https://education.github.com/*
 // @match        https://www.githubstatus.com/*
-// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-11-13
+// @require      https://mirror.nju.edu.cn/github-chinese/locals.js?v=2026-11-15
 // @run-at       document-start
 // @grant        GM_addStyle
 // @grant        GM_xmlhttpRequest
@@ -38,7 +38,6 @@
             'skills.github.com': 'skills',
             'education.github.com': 'education'
         },
-        SPECIAL_SITES: ['gist', 'status', 'skills', 'education'], // 特殊站点类型
         DESC_SELECTORS: { // 简介元素的CSS选择器
             repository: [
                 // 登录态是独立的 React 组件，类名形如 SidebarAbout-module_xxxx_description，
@@ -139,9 +138,7 @@
         dynamicMenus: {},        // 动态菜单ID记录
         pendingMutations: [],    // 一帧内攒下的 mutation 记录
         mutationFlush: null,     // 已排期的批次处理句柄
-        descHost: null,          // 当前描述元素，用于判断它是否被 React 替换
-        descMount: null,         // 挂在描述后面的按钮 / 翻译结果节点
-        initDone: false,
+        lastTraversal: null,     // 最近一次全量遍历的 {url, body}，避免同一次载入遍历两遍
     };
 
     /* =========================== 安全检查 =========================== */
@@ -178,10 +175,10 @@
         initLangEnv();
         injectStyles();
         setupMenuCommands();
+        watchReactCommits();
         setupInitTrans();
         setupUrlChangeListener();
         setupTurboEvents();
-        State.initDone = true;
     }
 
     /**
@@ -217,14 +214,7 @@
      */
     function setupInitTrans() {
         function doInitTrans() {
-            if (!document.body) return;
-            State.currentURL = window.location.href;
-            updatePageConfig('首次载入');
-            if (State.pageConfig) {
-                safe(traverseNode, '首次遍历')(document.body);
-                safe(mountDescButton, '描述按钮')(true);
-            }
-            setupMutationObserver(); // 设置DOM变化观察器
+            applyPage('首次载入');
         }
 
         if (document.readyState === 'interactive' || document.readyState === 'complete') {
@@ -327,7 +317,7 @@
             State.idleSweep = null;
             // 等空闲期间又换页了：新导航已经负责过，别再扫一遍
             if (State.observedBody !== document.body) return;
-            safe(traverseNode, '恢复补扫')(document.body);
+            traversePage('恢复补扫');
         };
         if (typeof window.requestIdleCallback === 'function') {
             State.idleSweep = window.requestIdleCallback(run, { timeout: 1500 });
@@ -337,25 +327,42 @@
     }
 
     /**
-     * 确保描述翻译按钮挂在该页的描述节点后面。
+     * 页面载入 / 导航时挂描述翻译按钮（非 React 页面，如 gist）。
      *
-     * 不监控每个突变：描述节点还在、且按钮仍是它的下一个兄弟节点时，只做两次
-     * isConnected / nextElementSibling 判断；只有 React 换掉描述（或把按钮挪走）才重新查询。
-     * @param {boolean} force - 载入 / 导航后强制核对一次，防止同一 body 内换了描述节点
+     * GitHub 仓库页同时渲染窄屏（NarrowOnly）与桌面侧栏（HideWhenNarrow）两份 About 描述，
+     * 由 CSS 决定显示哪一份；两份都要挂，否则宽屏没有按钮。
+     * 仓库页不在这里挂：SSR 树还没被 React 接管，插入节点会触发 hydration mismatch，
+     * 由 watchReactCommits 在 React 提交之后挂。
      */
-    function mountDescButton(force = false) {
+    function mountDescButton() {
         if (!State.featureSet.enable_transDesc) return;
-        const pageType = State.pageConfig?.currentPageType;
-        if (!pageType) return;
-        const descSelector = CONFIG.DESC_SELECTORS[pageType];
+        const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig?.currentPageType];
         if (!descSelector) return;
-        if (!force && State.descHost?.isConnected &&
-            State.descHost.nextElementSibling === State.descMount) {
-            return;
+        transDesc(descSelector);
+    }
+
+    /**
+     * React 提交之后补挂描述翻译按钮。
+     *
+     * GitHub 新版 UI 是 SSR HTML + 客户端 React app（React 19，react-core）。
+     * 载入时往 SSR 描述后面插按钮会造成 hydration mismatch，React 丢弃 SSR 树重渲染，按钮随之消失。
+     * react-core 在每次 root 提交后记 performance mark（react-root:commit:<app>），
+     * 以这个「提交结束」事件为准，提交后再挂。机制与实测见 docs/github-react.md。
+     * 浮层 / 下拉里后来渲染的描述不走 root 提交，由突变批次补挂（batchAddedDesc）。
+     */
+    function watchReactCommits() {
+        if (typeof PerformanceObserver !== 'function') return;
+        try {
+            // Chromium 不支持 entryTypes + buffered 的组合（控制台会报错），
+            // 且该组合下 buffered 被忽略；只有单个 type 才能回放注册前的 mark。
+            new PerformanceObserver((list) => {
+                if (list.getEntries().some(entry => entry.name.startsWith('react-root:commit:'))) {
+                    safe(mountDescButton, '描述翻译')();
+                }
+            }).observe({ type: 'mark', buffered: true });
+        } catch (e) {
+            console.error('[GitHub 中文化插件] React 提交监听失败:', e);
         }
-        const mounted = transDesc(descSelector);
-        State.descHost = mounted?.host || null;
-        State.descMount = mounted?.mount || null;
     }
 
     /**
@@ -363,31 +370,76 @@
      * 在新页面加载后执行必要的翻译
      */
     function handleTurboLoad() {
+        applyPage('页面导航');
+    }
+
+    /* =========================== 页面应用入口 =========================== */
+
+    /**
+     * 应用当前页面 —— 首次载入与 Turbo 换页共用这一条路径。
+     *
+     * 两条路径曾经各写一份：首次载入不翻标题 / 选择器（晚注入时一直缺译文），
+     * Turbo 载入又会在同一次载入里把整棵树走两遍（DOMContentLoaded + turbo:load）。
+     * 现在统一到这里，由 hasFreshTraversal() 决定还要不要重走 DOM。
+     * @param {string} reason - 触发原因（用于调试日志）
+     */
+    function applyPage(reason) {
         if (!document.body) return;
 
         State.currentURL = window.location.href;
-        const restoring = State.visitAction === 'restore';
-        updatePageConfig('页面导航');
+        updatePageConfig(reason);
 
-        // before-render 已经挂好的观察器直接沿用；否则在这里兜底
+        // before-render 已经挂好的观察器直接沿用；没有页面配置时也要挂上
         const preAttached = State.observedBody === document.body && !!State.mutationObserver;
-        if (!preAttached) {
-            attachMutationObserver(document.body);
-        }
+        if (!preAttached) setupMutationObserver();
 
-        if (State.pageConfig) {
-            if (restoring && preAttached) {
-                scheduleIdleTraversal();
-            } else {
-                safe(traverseNode, '导航遍历')(document.body);
-            }
-        }
+        const pageConfig = State.pageConfig;
+        if (!pageConfig) return;
 
-        if (!State.pageConfig) return;
+        // 恢复访问时快照里已是译文：交给预挂的观察器和空闲补扫，不做同步全量遍历
+        if (State.visitAction === 'restore' && preAttached) {
+            scheduleIdleTraversal();
+        } else if (!hasFreshTraversal()) {
+            traversePage('页面遍历');
+        }
 
         safe(transTitle, '标题翻译')(); // 翻译页面标题
         safe(transBySelector, '选择器翻译')(); // 通过选择器翻译特定元素
-        safe(mountDescButton, '描述翻译')(true); // 翻译页面描述（载入/导航时强制核对一次）
+        // 仓库页等 React 提交后再挂（watchReactCommits）；gist 等非 React 页面载入即挂
+        if (pageConfig.currentPageType !== 'repository' || typeof PerformanceObserver !== 'function') {
+            safe(mountDescButton, '描述翻译')();
+        }
+    }
+
+    /**
+     * 全量遍历当前 body，成功后才记为「已遍历」；失败留给下一次导航重试
+     * @param {string} label - 错误标签
+     */
+    function traversePage(label) {
+        try {
+            traverseNode(document.body);
+            markPageTraversed();
+        } catch (e) {
+            console.error(`[GitHub 中文化插件] ${label} 出错:`, e);
+        }
+    }
+
+    /**
+     * 当前 body 是否已按当前 URL 完整遍历过。
+     * DOMContentLoaded 与 turbo:load 会先后触发同一次页面载入，第二次不必再走一遍树；
+     * 两次之间的增量变化由 MutationObserver 负责，不依赖这里重扫。
+     */
+    function hasFreshTraversal() {
+        return State.lastTraversal !== null
+            && State.lastTraversal.body === document.body
+            && State.lastTraversal.url === window.location.href;
+    }
+
+    /**
+     * 记录「当前 URL + body 已完整遍历」，供 hasFreshTraversal() 判定
+     */
+    function markPageTraversed() {
+        State.lastTraversal = { url: window.location.href, body: document.body };
     }
 
     /* =========================== 页面配置管理 =========================== */
@@ -416,34 +468,35 @@
      * @returns {Object} 页面配置对象
      */
     function buildPageConfig(pageType) {
+        const conf = I18N.conf;
+        const dict = I18N[CONFIG.LANG];
+        const pageDict = dict[pageType] || {};
+
+        // 合并公共（'*'）与页面特定的选择器列表
+        const pickSelectors = key => [...(conf[key]['*'] || []), ...(conf[key][pageType] || [])];
+
         const regexpRules = [ // 合并公共和页面特定的正则规则
-            ...(I18N[CONFIG.LANG][pageType]?.regexp || []),
-            ...(I18N[CONFIG.LANG].public.regexp || [])
+            ...(pageDict.regexp || []),
+            ...(dict.public.regexp || [])
         ];
         return {
             currentPageType: pageType, // 当前页面类型
             currentPath: window.location.pathname, // 当前路径
-            titleStaticDict: I18N[CONFIG.LANG][pageType]?.title?.static || {},
-            titleRegexpRules: I18N[CONFIG.LANG][pageType]?.title?.regexp || [],
+            titleStaticDict: pageDict.title?.static || {},
+            titleRegexpRules: pageDict.title?.regexp || [],
             staticDict: { // 合并公共和页面特定的静态词典
-                ...I18N[CONFIG.LANG].public.static,
-                ...(I18N[CONFIG.LANG][pageType]?.static || {})
+                ...dict.public.static,
+                ...(pageDict.static || {})
             },
             regexpRules,
             // 与 regexpRules 一一对应的「匹配时必然出现的字面量」，用于跳过不可能命中的规则
             regexpPrefilters: regexpRules.map(([pattern]) => getRequiredLiteral(pattern)),
-            ignoreMutationSelectors: [ // 忽略的突变选择器
-                ...(I18N.conf.ignoreMutationSelectorPage['*'] || []),
-                ...(I18N.conf.ignoreMutationSelectorPage[pageType] || [])
-            ].join(', '),
-            ignoreSelectors: [ // 忽略的选择器
-                ...(I18N.conf.ignoreSelectorPage['*'] || []),
-                ...(I18N.conf.ignoreSelectorPage[pageType] || [])
-            ].join(', '),
-            characterData: (I18N.conf.characterDataPage || []).includes(pageType), // 是否监视文本节点变化
+            ignoreMutationSelectors: pickSelectors('ignoreMutationSelectorPage').join(', '), // 忽略的突变选择器
+            ignoreSelectors: pickSelectors('ignoreSelectorPage').join(', '), // 忽略的选择器
+            characterData: (conf.characterDataPage || []).includes(pageType), // 是否监视文本节点变化
             transSelectors: [ // 翻译选择器规则
-                ...(I18N[CONFIG.LANG].public.selector || []),
-                ...(I18N[CONFIG.LANG][pageType]?.selector || [])
+                ...(dict.public.selector || []),
+                ...(pageDict.selector || [])
             ],
             transCache: new Map(), // 当前页面类型的翻译结果缓存（文本 -> 译文/false）
         };
@@ -464,6 +517,35 @@
         'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
         'security', 'sitemap', 'education', 'mcp', 'users',
     ]);
+
+    /**
+     * 当前页面对应的仓库（owner/repo），取自 GitHub 的 octolytics 元数据。
+     * Turbo 导航期间元数据会短暂缺失，调用方自行处理空串。
+     * @returns {string} 形如 "owner/repo" 的小写串；缺失时为空串
+     */
+    function readRepositoryNwo() {
+        const content = document.head
+            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
+            ?.content;
+        return (content || '').trim().toLowerCase();
+    }
+
+    /**
+     * 从 pathname 推断当前页面归属的账号 / 组织名。
+     * 保留首段（settings / notifications 等）是站点固定路径，返回 null。
+     * @returns {string|null} 小写的账号 / 组织名
+     */
+    function getOwnerFromPath() {
+        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
+        if (!segments.length) return null;
+
+        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
+            return segments[1] || null;
+        }
+        // notifications / settings / marketplace 这类保留路径的首段不是账号名
+        if (RESERVED_ROOTS.has(segments[0])) return null;
+        return segments[0];
+    }
 
     /**
      * Turbo 导航会暂时拿掉 analytics-location。
@@ -498,9 +580,8 @@
      * @returns {string|boolean} 页面类型或false（如果未识别）
      */
     function detectPageType() {
-        const url = new URL(window.location.href);
-        const { PAGE_MAP, SPECIAL_SITES } = CONFIG;
-        const { hostname, pathname } = url;
+        const { PAGE_MAP } = CONFIG;
+        const { hostname, pathname, search } = window.location;
 
         // 基础配置
         const site = PAGE_MAP[hostname] || 'github'; // 通过站点映射获取基础类型
@@ -514,7 +595,7 @@
         const isProfile = document.body.classList.contains("page-profile") || metaLocation === '/<user-name>';
         // 元数据优先；Turbo 暂时拿掉 analytics-location 时再按仓库路径回退
         const isRepository = /\/<user-name>\/<repo-name>/.test(metaLocation)
-            || !!document.head.querySelector('meta[name="octolytics-dimension-repository_nwo"]')?.content
+            || !!readRepositoryNwo()
             || (!metaUsable && isFallbackRepositoryPath(pathname));
         const isOrganization = /\/<org-login>/.test(metaLocation) || /^\/(?:orgs|organizations)/.test(pathname);
 
@@ -524,11 +605,11 @@
             case isSession: // 登录/认证页面
                 pageType = 'session-authentication';
                 break;
-            case SPECIAL_SITES.includes(site): // 特殊站点
+            case site !== 'github': // 特殊站点（gist / status / skills / education）
                 pageType = site;
                 break;
             case isProfile: { // 用户资料页面
-                const tabParam = new URLSearchParams(url.search).get('tab');
+                const tabParam = new URLSearchParams(search).get('tab');
                 pageType = pathname.includes('/stars') ? 'page-profile/stars'
                          : tabParam ? `page-profile/${tabParam}`
                          : 'page-profile';
@@ -576,6 +657,22 @@
     /* =========================== MutationObserver =========================== */
 
     /**
+     * 批次里是否新增了描述节点（含包着描述的祖先子树）。
+     * react-root:commit 只覆盖 React root 的提交：浮层、下拉菜单、侧栏等运行时渲染
+     * 走的是普通状态更新，不会重新打 commit mark。这些新插入的描述节点只能靠这份
+     * 「新增节点」事件补挂（插入发生在 React 已渲染的 DOM 上，不会再触发 hydration mismatch）。
+     * @param {MutationRecord[]} batch
+     * @param {string} selector - 描述元素的选择器
+     * @returns {boolean}
+     */
+    function batchAddedDesc(batch, selector) {
+        return batch.some(({ addedNodes }) =>
+            [...addedNodes].some(node =>
+                node.nodeType === 1 &&
+                (node.matches(selector) || node.querySelector(selector))));
+    }
+
+    /**
      * 处理攒下的突变批次（一帧一次）
      */
     function flushMutationBatch() {
@@ -589,8 +686,11 @@
         try {
             processMutations(batch);
 
-            // React 替换描述节点时，按钮会随旧节点一起消失；下次批次按 isConnected 决定是否重挂。
-            mountDescButton();
+            // 只有仓库首页会渲染 About 浮层；gist 等页面在载入时挂载即可
+            if (State.pageConfig.currentPageType === 'repository' &&
+                batchAddedDesc(batch, CONFIG.DESC_SELECTORS.repository)) {
+                mountDescButton();
+            }
         } finally {
             // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
             // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
@@ -683,46 +783,28 @@
     }
 
     function processMutations(mutations) {
+        const { characterData } = State.pageConfig;
         const nodesToProcess = new Set();
+        const collect = node => {
+            if (!shouldIgnoreMutationNode(node)) nodesToProcess.add(node);
+        };
 
-        // 收集需要处理的节点
-        mutations.forEach(({ target, addedNodes, type }) => {
-            if (type === 'childList' && addedNodes.length > 0) {
-                // 处理新增节点
-                addedNodes.forEach(node => {
-                    if (!shouldIgnoreMutationNode(node)) {
-                        nodesToProcess.add(node);
-                    }
-                });
-            } else if (type === 'attributes') {
-                // 处理属性变化，target 就是元素（input / textarea 也走这里）
-                if (!shouldIgnoreMutationNode(target)) {
-                    nodesToProcess.add(target);
-                }
-            } else if (type === 'characterData' && State.pageConfig.characterData) {
-                // 处理文本变化，target 是文本节点，取其父元素
-                if (!shouldIgnoreMutationNode(target)) {
-                    nodesToProcess.add(target);
-                }
+        // 收集需要处理的节点：新增节点、变化的属性、文本变化（页面开启时）
+        for (const { target, addedNodes, type } of mutations) {
+            if (type === 'childList') {
+                for (const node of addedNodes) collect(node);
+            } else if (type === 'attributes' || (type === 'characterData' && characterData)) {
+                collect(target);
             }
-        });
+        }
 
-        // 过滤掉祖先已在集合中的后代节点，避免重复遍历
+        // 祖先也在集合里时只遍历祖先：后代已在它的子树内，不必重复走
         const topNodes = new Set();
-        nodesToProcess.forEach(node => {
+        for (const node of nodesToProcess) {
             let ancestor = node.parentElement;
-            let hasAncestor = false;
-            while (ancestor) {
-                if (nodesToProcess.has(ancestor)) {
-                    hasAncestor = true;
-                    return;
-                }
-                ancestor = ancestor.parentElement;
-            }
-            if (!hasAncestor) {
-                topNodes.add(node);
-            }
-        });
+            while (ancestor && !nodesToProcess.has(ancestor)) ancestor = ancestor.parentElement;
+            if (!ancestor) topNodes.add(node);
+        }
 
         if (CONFIG.DEV) console.log("DOM变化(已过滤)", topNodes);
 
@@ -747,23 +829,16 @@
         const linkPath = element.pathname?.toLowerCase().replace(/\/+$/, '');
         if (!linkPath) return false;
 
-        const repository = document.head
-            .querySelector('meta[name="octolytics-dimension-repository_nwo"]')
-            ?.content?.toLowerCase();
+        const repository = readRepositoryNwo();
         if (repository) {
             const [owner] = repository.split('/');
             return linkPath === `/${owner}` || linkPath === `/${repository}`;
         }
 
-        const segments = window.location.pathname.toLowerCase().split('/').filter(Boolean);
-        if (!segments.length) return false;
-        if (segments[0] === 'orgs' || segments[0] === 'organizations') {
-            return !!segments[1] && linkPath === `/${segments[1]}`;
-        }
-        // 只有「/首段」是账号名时首项才是标识符；notifications / settings / marketplace
-        // 这类保留路径的首段是固定路由，面包屑里的对应项是界面文案，不能拒翻。
-        if (RESERVED_ROOTS.has(segments[0])) return false;
-        return linkPath === `/${segments[0]}`;
+        // 元数据缺失时按 pathname 推断：只有「/首段」是账号名时首项才是标识符；
+        // notifications / settings / marketplace 这类保留路径的首项是界面文案，不能拒翻。
+        const owner = getOwnerFromPath();
+        return !!owner && linkPath === `/${owner}`;
     }
 
     /**
@@ -779,14 +854,16 @@
             return;
         }
 
+        // 忽略选择器在遍历期间不变，提到过滤器外，避免每个节点都读一遍配置
+        const ignoreSelectors = State.pageConfig.ignoreSelectors;
+
         // 创建TreeWalker遍历节点树
         const treeWalker = document.createTreeWalker(
             rootNode,
             NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
             node => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
-                    if (State.pageConfig.ignoreSelectors
-                        && node.matches(State.pageConfig.ignoreSelectors)) {
+                    if (ignoreSelectors && node.matches(ignoreSelectors)) {
                         return NodeFilter.FILTER_REJECT; // 跳过忽略的选择器
                     }
                     if (isBreadcrumbIdentifierLink(node)) {
@@ -830,57 +907,56 @@
      * @param {Element} node - 元素节点
      */
     function handleElementNode(node) {
-        // 根据标签类型进行不同的翻译处理
-        const tag = node.tagName;
-
-        if (tag === "RELATIVE-TIME") { // 相对时间元素
-            if (node.shadowRoot) {
-                transTimeElement(node.shadowRoot);
+        // 按标签分派；只有需要继续检查 tooltipped 的分支才走到末尾
+        switch (node.tagName) {
+            case "RELATIVE-TIME": { // 相对时间元素
+                if (node.shadowRoot) transTimeElement(node.shadowRoot);
+                return;
             }
-            return;
-        }
 
-        if (tag === "INPUT" || tag === "TEXTAREA") { // 输入框和文本域
-            // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
-            // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
-            //
-            // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
-            // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
-            // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
-            transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
-            if (['button', 'submit', 'reset'].includes(node.type)) {
-                // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
-                // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
-                transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
-                transElementAttrs(node, 'value'); // 值属性
-            } else {
-                transElementAttrs(node, 'placeholder'); // 占位符
+            case "INPUT":
+            case "TEXTAREA": { // 输入框和文本域
+                // 标签本身已由通用遍历到达（不在忽略表里），这里只碰界面文案属性：
+                // 文本域的子文本是默认值，由 handleTextNode 拦截，不在这里处理。
+                //
+                // 注意：这段在 #774（2026-08 把 input/textarea 加进忽略表）之前一直是生效的，
+                // 后来被忽略表挡成死代码、改由旁路补翻；单管线重构后又回到这里。
+                // 它翻译 value 是长期行为，不是误留的死代码——不要因为“看起来走不到”就删。
+                transElementAttrs(node, 'ariaLabel'); // 可访问名称（占位符之外的屏幕阅读器文案）
+                if (/^(?:button|submit|reset)$/.test(node.type)) {
+                    // value 是按钮文案；只有 submit 带 name 时它同时是原生表单的提交值，
+                    // GitHub 现在基本不用原生表单提交，暂不特判——若遇到提交异常先查这里
+                    transElementAttrs(node.dataset, 'confirm'); // 确认对话框文本
+                    transElementAttrs(node, 'value'); // 值属性
+                } else {
+                    transElementAttrs(node, 'placeholder'); // 占位符
+                }
+                return;
             }
-            return;
-        }
 
-        if (tag === "OPTGROUP") { // 选项组
-            transElementAttrs(node, 'label'); // 标签文本
-            return;
-        }
+            case "OPTGROUP": // 选项组
+                transElementAttrs(node, 'label'); // 标签文本
+                return;
 
-        if (tag === "BUTTON") { // 按钮
-            transElementAttrs(node, [
-                'title',
-                'cancelConfirmText'
-            ]);
-            transElementAttrs(node.dataset, [
-                'confirm', // 确认文本
-                'confirmText', // 确认按钮文本
-                'confirmCancelText', // 取消按钮文本
-                'disableWith', // 禁用提示
-                'visibleText'
-            ]);
-        }
+            case "BUTTON": // 按钮
+                transElementAttrs(node, [
+                    'title',
+                    'cancelConfirmText'
+                ]);
+                transElementAttrs(node.dataset, [
+                    'confirm', // 确认文本
+                    'confirmText', // 确认按钮文本
+                    'confirmCancelText', // 取消按钮文本
+                    'disableWith', // 禁用提示
+                    'visibleText'
+                ]);
+                break;
 
-        if (tag === "A" || tag === "SPAN") {
-            transElementAttrs(node, 'title'); // 标题提示
-            transElementAttrs(node.dataset, 'visibleText'); // 可见文本
+            case "A":
+            case "SPAN":
+                transElementAttrs(node, 'title'); // 标题提示
+                transElementAttrs(node.dataset, 'visibleText'); // 可见文本
+                break;
         }
 
         // 带有 tooltipped 样式的元素
@@ -895,15 +971,18 @@
      * 翻译页面标题
      */
     function transTitle() {
+        const { titleStaticDict, titleRegexpRules } = State.pageConfig;
         const text = document.title;
-        let result = State.pageConfig.titleStaticDict[text] || '';
+        let result = titleStaticDict[text];
 
-        // 尝试静态翻译
+        // 静态词条未命中才跑正则
         if (!result) {
-            // 尝试正则表达式翻译
-            for (const [pattern, replacement] of State.pageConfig.titleRegexpRules) {
-                result = text.replace(pattern, replacement);
-                if (result !== text) break;
+            for (const [pattern, replacement] of titleRegexpRules) {
+                const translated = text.replace(pattern, replacement);
+                if (translated !== text) {
+                    result = translated;
+                    break;
+                }
             }
         }
 
@@ -980,9 +1059,9 @@
             return false;
         }
 
-        // 清理文本：去除首尾空格和多余空白
+        // 清理文本：去除首尾空格和多余空白（\s 已覆盖不换行空格 \u00a0）
         const trimmedText = text.trim();
-        const cleanedText = trimmedText.replace(/\xa0|[\s]+/g, ' ');
+        const cleanedText = trimmedText.replace(/\s+/g, ' ');
 
         // 获取翻译
         const result = fetchTransResult(cleanedText);
@@ -1080,27 +1159,27 @@
         // 静态词典查找
         const staticResult = pageConfig.staticDict[text];
         if (typeof staticResult === 'string') {
-            MissedTermsManager.cleanup(text, pageConfig.currentPath);
             result = staticResult;
         } else if (State.featureSet.enable_RegExp) {
             // 正则规则查找：先用「必然出现的字面量」跳过不可能命中的规则
-            const prefilters = pageConfig.regexpPrefilters;
-            const rules = pageConfig.regexpRules;
-            for (let index = 0; index < rules.length; index += 1) {
-                const required = prefilters?.[index];
+            const { regexpPrefilters, regexpRules } = pageConfig;
+            for (let index = 0; index < regexpRules.length; index += 1) {
+                const required = regexpPrefilters?.[index];
                 if (required && !text.includes(required)) continue;
-                const [pattern, replacement] = rules[index];
+                const [pattern, replacement] = regexpRules[index];
                 const translated = text.replace(pattern, replacement);
                 if (translated !== text) {
-                    MissedTermsManager.cleanup(text, pageConfig.currentPath);
                     result = translated;
                     break;
                 }
             }
         }
 
-        // 记录未命中词条
-        if (result === false && State.featureSet.enable_missedTerms) {
+        if (result !== false) {
+            // 命中的词条可能还挂在未命中记录里：命中即清理
+            MissedTermsManager.cleanup(text, pageConfig.currentPath);
+        } else if (State.featureSet.enable_missedTerms) {
+            // 未命中才记账，并刷新菜单里的计数
             MissedTermsManager.record(text, pageConfig.currentPath);
             refreshMenuStates();
         }
@@ -1116,33 +1195,22 @@
     /* =========================== 远程翻译 =========================== */
 
     /**
-     * 为描述元素添加翻译按钮
+     * 为每个还没挂载的描述元素添加翻译按钮
      * @param {string} selector - 描述元素的选择器
-     * @returns {{host: Element, mount: Element}|null} 描述节点与已存在的按钮 / 翻译结果或新按钮
      */
     function transDesc(selector) {
-        const element = document.querySelector(selector);
-        if (!element) return null;
+        for (const host of document.querySelectorAll(selector)) {
+            // 按钮或翻译结果已在描述后面：重复调用不叠按钮
+            if (host.nextElementSibling?.matches('.translate-button, .translation-result')) {
+                continue;
+            }
 
-        // 修复：安全检查 classList.contains，避免 null sibling 时崩溃
-        const nextSibling = element.nextElementSibling;
-        // 已有按钮或翻译结果时都不再插入。showTransResult 会移除按钮、把结果容器插到描述后面，
-        // 这次插入又会触发 MutationObserver 重挂载；只认 .translate-button 的话，每轮重挂载都会
-        // 再补一个新按钮，点一次「翻译」就叠一层翻译框（#811 回归）。
-        if (nextSibling?.classList?.contains('translate-button') ||
-            nextSibling?.classList?.contains('translation-result')) {
-            return { host: element, mount: nextSibling };
+            const button = document.createElement('div');
+            button.classList.add('translate-button');
+            button.textContent = '翻译';
+            button.addEventListener('click', () => handleTransClick(button, host));
+            host.after(button);
         }
-
-        // 创建翻译按钮
-        const button = document.createElement('div');
-        button.classList.add('translate-button');
-        button.textContent = '翻译';
-        element.after(button);
-
-        // 绑定点击事件
-        button.addEventListener('click', () => handleTransClick(button, element));
-        return { host: element, mount: button };
     }
 
     /**
@@ -1197,49 +1265,36 @@
         // 移除按钮并显示结果
         button.remove();
         element.after(resultContainer);
-        State.descMount = resultContainer;
     }
 
     /**
      * 请求远程翻译API
      * @param {string} text - 要翻译的文本
-     * @returns {Promise} 返回翻译结果的Promise
+     * @returns {Promise<string>} 翻译结果
      */
-    function requestRemoteTrans(text) {
-        return new Promise((resolve, reject) => {
-            const engine = CONFIG.TRANS_ENGINES[State.transEngine];
-            const { url_api, method, headers, getRequestData, responseIdentifier } = engine;
+    async function requestRemoteTrans(text) {
+        const { url_api, method, headers, getRequestData, responseIdentifier } =
+            CONFIG.TRANS_ENGINES[State.transEngine];
+        const requestData = getRequestData(text);
 
-            // 准备请求数据
-            const requestData = getRequestData(text);
-
-            // 使用GM_xmlhttpRequest发起跨域请求
+        // 使用GM_xmlhttpRequest发起跨域请求
+        const responseText = await new Promise((resolve, reject) => {
             GM_xmlhttpRequest({
-                method: method,
+                method,
                 url: url_api,
-                headers: headers,
+                headers,
                 data: method === 'POST' ? JSON.stringify(requestData) : null,
                 params: method === 'GET' ? requestData : null, // For GET requests
                 timeout: 10000, // 10秒超时
-                onload: (res) => {
-                    try {
-                        const response = JSON.parse(res.responseText);
-                        // 从响应中提取翻译结果
-                        const result = getNestedProperty(response, responseIdentifier);
-                        if (result) {
-                            resolve(result);
-                        } else {
-                            reject(new Error('翻译结果无效'));
-                        }
-                    } catch (err) {
-                        reject(err);
-                    }
-                },
-                onerror: (err) => {
-                    reject(err);
-                }
+                onload: res => resolve(res.responseText),
+                onerror: reject,
             });
         });
+
+        // 从响应中提取翻译结果；解析失败与结果缺失都以 reject 结束
+        const result = getNestedProperty(JSON.parse(responseText), responseIdentifier);
+        if (!result) throw new Error('翻译结果无效');
+        return result;
     }
 
     /**
@@ -1285,17 +1340,12 @@
          */
         record(text, path) {
             if (!path) return false;
-            if (!this.data[path]) {
-                this.data[path] = {};
-            }
+            const bucket = this.data[path] || (this.data[path] = {});
+            if (text in bucket) return false; // 词条已存在
 
-            // 使用对象存储，保持简洁
-            if (!(text in this.data[path])) {
-                this.data[path][text] = "";
-                this.save();
-                return true; // 新增词条
-            }
-            return false; // 词条已存在
+            bucket[text] = "";
+            this.save();
+            return true; // 新增词条
         },
 
         /**
@@ -1304,46 +1354,15 @@
          * @param {string} path - 当前页面路径
          */
         cleanup(text, path) {
-            if (!path) return false;
-            if (this.data[path] && text in this.data[path]) {
-                delete this.data[path][text];
+            const bucket = path ? this.data[path] : null;
+            if (!bucket || !(text in bucket)) return false;
 
-                // 如果该路径下没有词条了，删除路径条目
-                if (Object.keys(this.data[path]).length === 0) {
-                    delete this.data[path];
-                }
-                this.save();
-                return true;
-            }
-            return false;
-        },
+            delete bucket[text];
 
-        /**
-         * 获取所有未命中词条
-         * @returns {Object} 未命中词条数据
-         */
-        getAll() {
-            return this.data;
-        },
-
-        /**
-         * 按路径获取词条
-         * @param {string} path - 页面路径
-         * @returns {Object} 该路径下的词条对象
-         */
-        getByPath(path) {
-            return this.data[path] || {};
-        },
-
-        /**
-         * 获取所有词条的文本数组（按路径分组）
-         * @returns {Array} 格式为 [{path, terms: []}, ...]
-         */
-        getAllTermsArray() {
-            return Object.entries(this.data).map(([path, terms]) => ({
-                path,
-                terms: Object.keys(terms)
-            }));
+            // 如果该路径下没有词条了，删除路径条目
+            if (Object.keys(bucket).length === 0) delete this.data[path];
+            this.save();
+            return true;
         },
 
         /**
@@ -1352,17 +1371,6 @@
         clearAll() {
             this.data = {};
             this.save();
-        },
-
-        /**
-         * 清空指定路径的词条
-         * @param {string} path - 页面路径
-         */
-        clearPath(path) {
-            if (this.data[path]) {
-                delete this.data[path];
-                this.save();
-            }
         },
 
         /**
@@ -1527,7 +1535,7 @@
                 callback: (enabled) => {
                     // 缓存里可能存着「关闭正则时算出的未命中结果」，切换后必须先失效
                     resetTransCache();
-                    if (enabled && State.pageConfig) safe(traverseNode, '菜单触发遍历')(document.body);
+                    if (enabled && State.pageConfig) traversePage('菜单触发遍历');
                 }
             },
             {
@@ -1535,12 +1543,11 @@
                 key: "enable_transDesc",
                 callback: (enabled) => {
                     if (enabled) {
-                        mountDescButton(true);
+                        mountDescButton();
                     } else {
-                        // 禁用描述翻译，移除按钮；重挂由 mountDescButton 的特性检查挡住
-                        document.querySelector('.translate-button')?.remove();
-                        State.descHost = null;
-                        State.descMount = null;
+                        // 禁用描述翻译，移除所有按钮；重新启用时再挂
+                        document.querySelectorAll('.translate-button')
+                            .forEach(button => button.remove());
                     }
                 }
             }
