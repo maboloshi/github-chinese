@@ -19124,7 +19124,7 @@ defineI18nPage(I18N["zh-CN"], "repository/settings/rules", () => ({ // 仓库设
 defineI18nAlias(I18N["zh-CN"], "orgs/settings/rules", "repository/settings/rules");
 defineI18nAlias(I18N["zh-CN"], "repository/rules", "repository/settings/rules");
 
-I18N["zh-CN"]["orgs-settings-insights"] = { // 组织设置 - 规则洞察公共部分
+defineI18nPage(I18N["zh-CN"], "orgs-settings-insights", () => ({ // 组织设置 - 规则洞察公共部分
     "static": { // 静态翻译
         "Repository ruleset insights": "仓库规则集洞察",
         "Actions ruleset insights": "Actions 规则集洞察",
@@ -19205,9 +19205,9 @@ I18N["zh-CN"]["orgs-settings-insights"] = { // 组织设置 - 规则洞察公共
             [/^Rule insights\b/, "规则洞察"],
         ],
     },
-};
+}));
 
-I18N["zh-CN"]["orgs/settings/rules/insights"] = { // 组织设置 - 规则 - 规则洞察
+defineI18nPage(I18N["zh-CN"], "orgs/settings/rules/insights", () => ({ // 组织设置 - 规则 - 规则洞察
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs/settings/rules"]["static"],
         ...I18N["zh-CN"]["orgs-settings-insights"]["static"],
@@ -19226,8 +19226,7 @@ I18N["zh-CN"]["orgs/settings/rules/insights"] = { // 组织设置 - 规则 - 规
             ...I18N["zh-CN"]["orgs/settings/rules"]["title"]["regexp"],
         ],
     },
-};
-
+}));
 
 defineI18nPage(I18N["zh-CN"], "repository/settings/actions", () => ({ // 仓库设置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 静态翻译
@@ -27187,7 +27186,7 @@ defineI18nPage(I18N["zh-CN"], "orgs/settings/actions", () => ({ // 组织设置 
     ],
 }));
 
-I18N["zh-CN"]["orgs/settings/actions/rules/insights"] = { // 组织设置 - Actions - 规则洞察
+defineI18nPage(I18N["zh-CN"], "orgs/settings/actions/rules/insights", () => ({ // 组织设置 - Actions - 规则洞察
     "static": { // 静态翻译
         ...I18N["zh-CN"]["orgs/settings/actions"]["static"],
         ...I18N["zh-CN"]["orgs-settings-insights"]["static"],
@@ -27204,7 +27203,7 @@ I18N["zh-CN"]["orgs/settings/actions/rules/insights"] = { // 组织设置 - Acti
             ...I18N["zh-CN"]["orgs-settings-insights"]["title"]["regexp"],
         ],
     },
-};
+}));
 
 defineI18nPage(I18N["zh-CN"], "orgs/settings/discussions", () => ({ // 组织设置 - 讨论
     "static": { // 静态翻译
