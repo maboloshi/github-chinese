@@ -37,3 +37,12 @@ test('公共块仍可独立访问且内容完整', () => {
     assert.ok(Object.keys(locale.public.static).length > 0);
     assert.ok(Array.isArray(locale.public.regexp));
 });
+
+test('所有词库键都按需构建，没有求值时即展开的页面块', () => {
+    const locale = loadLocale();
+    const eager = Object.entries(Object.getOwnPropertyDescriptors(locale))
+        .filter(([, descriptor]) => typeof descriptor.get !== 'function')
+        .map(([name]) => name);
+
+    assert.deepEqual(eager, [], '上述词库键在求值时即被展开，应改用 defineI18nPage / defineI18nAlias 登记');
+});
