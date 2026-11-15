@@ -135,6 +135,17 @@ test('批次只移除描述节点时不补挂按钮', () => {
     assert.equal(harness.descMountCalls, 0);
 });
 
+test('非仓库首页（gist）不做批次补挂', () => {
+    const harness = createHarness();
+    const observer = vm.runInContext('createMutationObserver()', harness.context);
+    harness.context.State.pageConfig = { currentPageType: 'gist' };
+
+    observer.callback([{ type: 'childList', target: {}, addedNodes: [wrapperWithDesc], removedNodes: [] }]);
+    harness.frames[0]();
+
+    assert.equal(harness.descMountCalls, 0);
+});
+
 test('flush 之后的新回调会重新排期', () => {
     const harness = createHarness();
     const observer = vm.runInContext('createMutationObserver()', harness.context);

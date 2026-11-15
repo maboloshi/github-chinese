@@ -163,8 +163,8 @@ for (const fileName of runtimeScripts) {
             );
             assert.match(
                 source,
-                /batchAddedDesc\(batch, descSelector\)[\s\S]{0,80}?mountDescButton\(\)/,
-                `${fileName} should mount when a later render adds a description node`,
+                /currentPageType === 'repository'[\s\S]{0,160}?batchAddedDesc\(batch, CONFIG\.DESC_SELECTORS\.repository\)/,
+                `${fileName} should mount later-rendered descriptions only on repository pages`,
             );
             assert.ok(
                 !source.includes('enable_descRearm'),

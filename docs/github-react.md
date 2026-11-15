@@ -40,7 +40,7 @@
 
 ## 浮层 / 下拉里的描述
 
-`react-root:commit:*` 只覆盖 React root 的提交。汉堡菜单、仓库切换下拉等浮层是打开时通过普通状态更新渲染的，不会再打 commit mark；脚本用 MutationObserver 的批次检查「新增节点里是否含描述」（`batchAddedDesc`），在这些描述节点插入后补挂按钮。插入发生在 React 已渲染的 DOM 上，不会再触发 hydration mismatch。
+`react-root:commit:*` 只覆盖 React root 的提交。汉堡菜单、仓库切换下拉等浮层是打开时通过普通状态更新渲染的，不会再打 commit mark；脚本用 MutationObserver 的批次检查「新增节点里是否含描述」（`batchAddedDesc`，仅仓库首页启用），在这些描述节点插入后补挂按钮。插入发生在 React 已渲染的 DOM 上，不会再触发 hydration mismatch。
 
 ## 实测对照（同机 Edge headless，1280px）
 

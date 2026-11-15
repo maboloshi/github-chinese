@@ -686,9 +686,11 @@
         try {
             processMutations(batch);
 
-            // 浮层 / 下拉 / 侧栏里后来渲染出来的描述：补挂翻译按钮
-            const descSelector = CONFIG.DESC_SELECTORS[State.pageConfig?.currentPageType];
-            if (descSelector && batchAddedDesc(batch, descSelector)) mountDescButton();
+            // 只有仓库首页会渲染 About 浮层；gist 等页面在载入时挂载即可
+            if (State.pageConfig.currentPageType === 'repository' &&
+                batchAddedDesc(batch, CONFIG.DESC_SELECTORS.repository)) {
+                mountDescButton();
+            }
         } finally {
             // 本次遍历产生的写入会再次进入观察器队列，若不丢弃，下一帧会重复遍历自己的译文。
             // 这里的记录都来自同步执行的本次批次；页面自己的异步渲染在回调之后才会发生。
