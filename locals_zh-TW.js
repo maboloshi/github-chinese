@@ -51,13 +51,16 @@ I18N.conf = {
     rePagePathRepo: /^\/[^\/]+\/[^\/]+\/(issues|pulls|pull|tree|watchers|stargazers|new|edit|delete|upload|find|models|wiki|branches|discussions|activity|rules|releases|packages|tags|labels|milestones?|compare|commit|blob|blame|actions(\/metrics\/(usage|performance))?|runs|deployments|security|pulse|community|forks|fork|import|graphs\/(contributors|community|traffic|commit-activity|code-frequency)|network$|network\/(dependencies|dependents|updates|members)|settings\/(access|code_review_limits|interaction_limits|branches|branch_protection_rules|tag_protection|rules|actions|models\/access-policy|hooks|copilot\/(code_review|coding_agent|internet_access|mcp|dreaming)|suggestions|environments|codespaces|pages|security_analysis|dependabot_rules|keys|secrets|variables|installations|notifications|key_links)|settings|transfer|projects\/new|projects|pkgs|contribute|subscription|invitations|codespaces|attestations|custom-properties|reported_content|agents|tasks)/,
 
     // 組織路徑
-    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules|codespaces|copilot|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
+    rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定頁面，啟用`字符資料`監測
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定頁面，忽略突變元素規則
     ignoreMutationSelectorPage: {
+        'page-profile': [
+            'article.markdown-body', // 用戶資料頁 README 正文是用戶內容（#759）
+        ],
         'repository/new': [".cm-scroller"], // 程式碼編輯器
         'repository/edit': [".cm-scroller", "table"], // 程式碼編輯器
         'repository/pull': [
@@ -121,14 +124,15 @@ I18N.conf = {
             '.notranslate',
             '[translate="no"]',
             // input / textarea 交給通用遍歷的標籤分支處理：只翻 placeholder / aria-label，
-            // 文本域子文本（默認值）在 handleTextNode 攔截，contenteditable 仍整體排除（#727）
+            // 文本域子文本（預設值）在 handleTextNode 攔截，contenteditable 仍整體排除（#727）
             '[contenteditable=""]',
             '[contenteditable="true"]',
             '[contenteditable="plaintext-only"]',
-            'div.QueryBuilder-StyledInputContainer', // 頂部搜尋欄 關鍵詞
-            '#qb-input-query span', // 搜尋頁面 搜尋欄 關鍵詞
 			'div.styled-input-content', // 篩選條
             'div[data-testid="quick-search-input-overlay"]', // 頂部搜尋欄 關鍵詞
+            'header div[class*="searchButtonGroup"] span[class*="placeholder__"]:not(:has(kbd))', // 頂部搜尋欄 查詢詞回顯（佔位提示含 kbd，仍需翻譯）
+            'a[data-hovercard-type="user"]', // 用戶名連結是標識符，不翻譯（#759）
+            'a.user-mention', // @用戶名同理（#759）
         ],
     },
 
@@ -137,6 +141,7 @@ I18N.conf = {
         'page-profile': [
             'span.p-nickname', // 用戶暱稱
             'span.p-name', // 同上
+            'article.markdown-body', // 用戶資料頁 README 正文是用戶內容（#759）
         ],
         'page-profile/followers': [
             'span.f4.Link--primary',
@@ -261,7 +266,7 @@ I18N.conf = {
         '*': [
             '.comment-body', '.js-preview-body',
             '.markdown-title',
-            'span.ActionListItem-descriptionWrap',  // 頂部搜尋欄 關鍵詞
+            'header div[class*="searchButtonGroup"] span[class*="placeholder__"]:not(:has(kbd))', // 頂部搜尋欄 查詢詞回顯（佔位提示含 kbd，仍需翻譯）
             'CODE', 'SCRIPT', 'STYLE', 'LINK', 'IMG', 'MARKED-TEXT', 'PRE', 'KBD', 'SVG', 'MARK', // 特定元素標籤
             '.highlight',
             '.notranslate',
@@ -272,6 +277,8 @@ I18N.conf = {
             '[contenteditable="plaintext-only"]',
 			'div.styled-input-content', // 篩選條
             'span[class^="suggestionName__"]', // 頂部搜尋欄 建議
+            'a[data-hovercard-type="user"]', // 用戶名連結是標識符，不翻譯（#759）
+            'a.user-mention', // @用戶名同理（#759）
         ],
     },
 
@@ -2039,7 +2046,7 @@ defineI18nPage(I18N["zh-TW"], "page-dashboard", () => ({ // 已登入的首頁 -
     "static": { // 靜態翻譯
         // 頂部 GPT 聊天視窗
         "Ask anything or type @ to add context": "詢問任何問題或輸入 @ 來新增上下文",
-        "Ask anything or type @ to add context with Copilot": "詢問任何問題或輸入 @ 以透過 Copilot 新增上下文",
+        "Ask anything or type @ to add context with Copilot": "詢問任何問題或輸入 @ 以通過 Copilot 新增上下文",
         "Ask": "詢問",
         "Send": "發送",
         "Feedback": "回饋",
@@ -11777,7 +11784,7 @@ defineI18nPage(I18N["zh-TW"], "repository/pull", () => ({ // 儲存庫 - 某個�
             "requested a review from": "請求審查",
             "Reply...": "回覆…",
 
-            // 程式碼審查回復
+            // 程式碼審查回覆
             "Suggestions cannot be applied on outdated comments.": "建議不要應用於過時的評論。",
             "Suggested change": "更改建議",
             "This code change can be committed by users with write permissions.": "具有寫入權限的用戶可以提交此程式碼更改。",
@@ -19115,6 +19122,110 @@ defineI18nPage(I18N["zh-TW"], "repository/settings/rules", () => ({ // 儲存庫
 }));
 defineI18nAlias(I18N["zh-TW"], "orgs/settings/rules", "repository/settings/rules");
 defineI18nAlias(I18N["zh-TW"], "repository/rules", "repository/settings/rules");
+
+defineI18nPage(I18N["zh-TW"], "orgs-settings-insights", () => ({ // 組織設置 - 規則分析公共部分
+    "static": { // 靜態翻譯
+        "Repository ruleset insights": "儲存庫規則集分析",
+        "Actions ruleset insights": "Actions 規則集分析",
+        "Actions rules insights": "Actions 規則分析",
+
+        "Rule insights couldn't be loaded": "無法加載規則分析",
+        "Something went wrong while loading rule evaluations. Try reloading in a few moments.": "加載規則評估時出現問題。請稍後重新加載。",
+        "Rule insights search timed out": "規則分析搜尋超時",
+        "No rule evaluations matched your search": "沒有與您的搜尋匹配的規則評估",
+        "Try adjusting your filters or reducing the time range of your search": "請嘗試調整篩選條件或縮短搜尋的時間範圍",
+        "Try expanding your search or creating a new ruleset in evaluate mode": "請嘗試擴大搜尋範圍，或以評估模式創建新規則集",
+
+        "Filter rules insights": "篩選規則分析",
+        "Rule status": "規則狀態",
+        "All statuses": "所有狀態",
+        "Pass": "通過",
+        "Fail": "失敗",
+        "Bypass": "旁路",
+        "Bypassed": "已旁路",
+        "Time period": "時間段",
+        "Last hour": "過去 1 小時",
+        "Last 24 hours": "過去 24 小時",
+        "Last week": "過去一週",
+        "Last month": "過去一個月",
+        "Evaluate status": "評估狀態",
+        "Active rules": "活動規則",
+        "Evaluate rules": "評估規則",
+        "All rules": "所有規則",
+        "Branch": "分支",
+        "Ruleset": "規則集",
+        "Commit SHA": "提交 SHA",
+        "Filter by commit SHA": "按提交 SHA 篩選",
+        "Specify the user": "指定用戶",
+
+        "Activity on": "活動於",
+        "All rules passed": "所有規則均已通過",
+        "Some rules did not pass": "部分規則未通過",
+        "Some rules were bypassed": "部分規則已被旁路",
+        "No rulesets ran": "沒有規則集執行",
+        "Other suites evaluated": "其他套件已評估",
+        "Evaluation timings": "評估耗時",
+        "View evaluation timings": "查看評估耗時",
+        "Hide evaluation timings": "隱藏評估耗時",
+        "Explain aggregate duration": "說明總耗時",
+        "Time budget": "時間預算",
+        "Low time budget": "時間預算不足",
+        "Total time for all runs of this rule type": "此規則類型所有執行的總時間",
+        "Rules had almost no time to run. The request used most of its time budget before rule evaluation started, so this is usually caused by upstream delays rather than by the rules themselves.": "規則幾乎沒有時間執行。請求在規則評估開始前已用掉大部分時間預算，這通常由上游延遲而非規則本身導致。",
+        "The ruleset that ran for this push has changed.": "本次推送執行的規則集已更改。",
+        "Outdated ruleset details": "規則集詳情已過時",
+        "Push rules passed": "推送規則已通過",
+        "Push rules blocked this update, preventing other rulesets from applying.": "推送規則阻止了此更新，導致其他規則集無法應用。",
+        "Rules passed, but PR stack failed": "規則已通過，但 PR 棧失敗",
+        "Other updates in this push were blocked impacting this change.": "此推送中的其他更新被阻止，影響了此更改。",
+        "This update failed because another PR in the stack failed to merge.": "此更新失敗，因為棧中的另一個 PR 合併失敗。",
+        "This update failed because the PR stack failed to merge.": "此更新失敗，因為 PR 棧合併失敗。",
+        "This update was fast-forwarded. A new merge queue commit was not created and status checks were not re-evaluated during the merge queue.": "此更新已快進。未創建新的合併隊列提交，且合併隊列期間未重新評估狀態檢查。",
+        "Pull requests blocked": "合併請求被阻止",
+        "Would block": "會阻止",
+        "Did not run": "未執行",
+        "Enterprise accounts enable you to review commits against rulesets to track pass, fail, or bypass status for greater oversight and understanding.": "企業帳戶允許您根據規則集審查提交，以跟蹤通過、失敗或旁路狀態，從而獲得更強的監督和了解。",
+        "See how rulesets are affecting this": "查看規則集如何影響此",
+    },
+    "regexp": [ // 正則翻譯
+        [/^Activity on (.+)$/, "活動於 $1"],
+    ],
+    "title": {
+        "static": {
+            "Rule insights": "規則分析",
+            "Repository ruleset insights": "儲存庫規則集分析",
+            "Actions ruleset insights": "Actions 規則集分析",
+            "Actions rules insights": "Actions 規則分析",
+        },
+        "regexp": [
+            [/^Repository ruleset insights\b/, "儲存庫規則集分析"],
+            [/^Actions ruleset insights\b/, "Actions 規則集分析"],
+            [/^Actions rules insights\b/, "Actions 規則分析"],
+            [/^Rule insights\b/, "規則分析"],
+        ],
+    },
+}));
+
+defineI18nPage(I18N["zh-TW"], "orgs/settings/rules/insights", () => ({ // 組織設置 - 規則 - 規則分析
+    "static": { // 靜態翻譯
+        ...I18N["zh-TW"]["orgs/settings/rules"]["static"],
+        ...I18N["zh-TW"]["orgs-settings-insights"]["static"],
+    },
+    "regexp": [ // 正則翻譯
+        ...I18N["zh-TW"]["orgs/settings/rules"]["regexp"],
+        ...I18N["zh-TW"]["orgs-settings-insights"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            ...(I18N["zh-TW"]["orgs/settings/rules"]["title"]["static"] || {}),
+            ...I18N["zh-TW"]["orgs-settings-insights"]["title"]["static"],
+        },
+        "regexp": [
+            ...I18N["zh-TW"]["orgs-settings-insights"]["title"]["regexp"],
+            ...I18N["zh-TW"]["orgs/settings/rules"]["title"]["regexp"],
+        ],
+    },
+}));
 
 defineI18nPage(I18N["zh-TW"], "repository/settings/actions", () => ({ // 儲存庫設置 - 操作 /<user-name>/<repo-name>/settings/actions
     "static": { // 靜態翻譯
@@ -27074,6 +27185,25 @@ defineI18nPage(I18N["zh-TW"], "orgs/settings/actions", () => ({ // 組織設置 
     ],
 }));
 
+defineI18nPage(I18N["zh-TW"], "orgs/settings/actions/rules/insights", () => ({ // 組織設置 - Actions - 規則分析
+    "static": { // 靜態翻譯
+        ...I18N["zh-TW"]["orgs/settings/actions"]["static"],
+        ...I18N["zh-TW"]["orgs-settings-insights"]["static"],
+    },
+    "regexp": [ // 正則翻譯
+        ...I18N["zh-TW"]["orgs/settings/actions"]["regexp"],
+        ...I18N["zh-TW"]["orgs-settings-insights"]["regexp"],
+    ],
+    "title": {
+        "static": {
+            ...I18N["zh-TW"]["orgs-settings-insights"]["title"]["static"],
+        },
+        "regexp": [
+            ...I18N["zh-TW"]["orgs-settings-insights"]["title"]["regexp"],
+        ],
+    },
+}));
+
 defineI18nPage(I18N["zh-TW"], "orgs/settings/discussions", () => ({ // 組織設置 - 討論
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["orgs-settings-menu"]["static"],
@@ -30476,7 +30606,7 @@ defineI18nPage(I18N["zh-TW"], "education", () => ({ // 教育頁面，申請學�
 
         "GitHub Education": "GitHub 教育",
         "Empowering the next generation of developers": "增強新一代開發人員的能力",
-            "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在編程教育和技術職業之間架起了一座橋梁，全球每個人都可以免費使用。",
+            "GitHub Education bridges the gap between coding education and a tech career, and is accessible to everyone globally at no cost.": "GitHub 教育在編程教育和技術職業之間架起了一座橋樑，全球每個人都可以免費使用。",
         "Join GitHub Education": "加入 GitHub 教育",
         // 教育包申請 https://education.github.com/pack
             // 右上角選單
