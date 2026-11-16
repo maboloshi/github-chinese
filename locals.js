@@ -10668,6 +10668,10 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Edit": "编辑",
             "Issue body actions": "菜单", // 原文过于啰嗦，直接省略
                 "Block user": "拉黑用户",
+            "Move up": "上移",
+            "Move down": "下移",
+            "Convert to issue": "转换为议题",
+            "Convert to sub-issue": "转换为子议题",
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
