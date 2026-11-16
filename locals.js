@@ -11263,6 +11263,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Turn off Overview preview": "关闭概况预览",
 
             // 新版概况：合并状态
+                "Gathering the council of rubber ducks…": "正在召集橡皮鸭开会…",
                 "Expand checks": "展开检查",
                 "Collapse checks": "折叠检查",
                 "Merging is currently blocked. Click to view details in the merge panel.": "当前无法合并。点击可在合并面板中查看详情。",
