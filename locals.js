@@ -10679,6 +10679,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     "Use a full URL, like https://github.com/owner/repo.": "请输入完整网址，例如 https://github.com/owner/repo。",
                 "Create artifact": "创建工件",
                 "Create HTML artifact": "创建 HTML 工件",
+            "– with": "– 协同",
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
