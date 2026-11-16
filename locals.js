@@ -10212,6 +10212,11 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
             "code of conduct": "行为准则",
             "contributing guidelines": "贡献准则",
 
+            // 评论编辑器
+            "Select an item": "选择一项",
+            "Search saved replies": "搜索快捷回复",
+            "Create new": "新建",
+
             // 被锁定
                 "This conversation has been locked as": "此对话已锁定为",
                     "and limited to collaborators.": "，并限制与协作者对话。",
@@ -10347,7 +10352,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 //"Create sub-issue": "创建子议题",
                     // 窗口
                         "Create new issue": "新建议题",
-                            "Select an item": "选择项目",
                                 "Select repository": "选择仓库",
                             "Templates and forms": "模板和表单",
                                 // 空白议题
