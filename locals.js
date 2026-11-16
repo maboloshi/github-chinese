@@ -11314,6 +11314,11 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Past 7 days": "过去 7 天",
                 "Past 30 days": "过去 30 天",
                 "Search loaded activity by username, automation name, commit summary, or commit SHA. All words must match; use quotes for a phrase. Combine text with type:, actor: (login or ID), and since: (available preset or ISO timestamp). Use commas for multiple types or actors.": "按用户名、自动化名称、提交摘要或提交 SHA 搜索已加载的活动。所有词都必须匹配，搜索短语时请使用引号。可使用 type:、actor:（登录名或 ID）和 since:（预设值或 ISO 时间戳）筛选。多个类型或操作人用逗号分隔。",
+
+            // 新版概况：评论与审查
+                "Skip comments": "跳过评论",
+                "Loading comments": "正在加载评论",
+                "Loading comments...": "正在加载评论…",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
