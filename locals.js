@@ -11261,6 +11261,11 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "View Conversation page": "查看对话页面",
                 "Temporarily return to the classic view": "暂时返回经典视图",
                 "Turn off Overview preview": "关闭概况预览",
+                "Merging is currently blocked. Click to view details in the merge panel.": "当前无法合并。点击可在合并面板中查看详情。",
+                "merge conflicts": "合并冲突",
+                "Resolve the": "请解决",
+                "before this can merge.": "后再合并。",
+                "Files with merge conflicts": "存在合并冲突的文件",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
