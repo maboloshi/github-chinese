@@ -11324,6 +11324,15 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "No comments available": "暂无评论",
                 "Review": "审查",
                 "Review event": "审查结果",
+
+            // 新版概况：Copilot 面板
+                "Ask about the pull request:": "询问有关此拉取请求的问题：",
+                "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
+                "Summarize the high level changes made": "概述主要更改",
+                "Help me review this pull request": "帮我审查此拉取请求",
+                "What feedback is unresolved?": "哪些反馈尚未解决？",
+                "Loading threads…": "正在加载会话…",
+
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
