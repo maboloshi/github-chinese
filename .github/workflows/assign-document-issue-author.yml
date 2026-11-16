@@ -1,0 +1,95 @@
+name: 将议题指派给愿意贡献的议题作者
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+jobs:
+  assign:
+    if: contains(github.event.issue.labels.*.name, 'documentation')
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查贡献意愿
+        id: check
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_ACTION: ${{ github.event.action }}
+          BODY_CHANGED: ${{ github.event.action == 'opened' || github.event.changes.body.from != null }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+
+          option_actions = (
+              (
+                  "assign",
+                  (
+                      "我将自行解决本议题并贡献到本仓库。",
+                      "我將自行解決本議題並貢獻到本倉庫。",
+                  ),
+              ),
+              (
+                  "remove",
+                  (
+                      "我希望他人解决本议题。",
+                      "我希望他人解決本議題。",
+                  ),
+              ),
+          )
+
+          def get_volunteer_option(body):
+              if not body:
+                  return None
+              body = re.sub(r"<!--.*?-->", "", body, flags=re.DOTALL)
+              matches = []
+              for heading in ("贡献意愿", "貢獻意願"):
+                  matches.extend(
+                      re.findall(
+                          rf"^### {re.escape(heading)}[ \t]*\r?\n(.*?)(?=^### |\Z)",
+                          body,
+                          flags=re.MULTILINE | re.DOTALL,
+                      )
+                  )
+              if len(matches) != 1:
+                  return None
+              option = matches[0].strip()
+              return next(
+                  (
+                      action
+                      for action, options in option_actions
+                      if option in options
+                  ),
+                  None,
+              )
+
+          current = get_volunteer_option(os.environ.get("ISSUE_BODY"))
+          match (os.environ["ISSUE_ACTION"], os.environ["BODY_CHANGED"]):
+              case ("opened", _):
+                  action = "assign" if current == "assign" else "none"
+              case ("edited", "true"):
+                  action = current or "none"
+              case _:
+                  action = "none"
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"action={action}\n")
+          PY
+      - name: 将议题分配给议题作者
+        if: steps.check.outputs.action == 'assign'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: gh api --method POST "repos/$REPOSITORY/issues/$ISSUE_NUMBER/assignees" -f "assignees[]=$AUTHOR"
+      - name: 将议题作者从受理人中除名
+        if: steps.check.outputs.action == 'remove'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+        run: gh api --method DELETE "repos/$REPOSITORY/issues/$ISSUE_NUMBER/assignees/$AUTHOR"

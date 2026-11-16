@@ -1,0 +1,69 @@
+name: 文檔問題（繁體中文）
+description: 提出文檔問題
+labels: ["documentation"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 歡迎！
+        感謝您提出文檔問題。
+
+        提交議題前確保您已閱讀[常見問題（FAQ）](https://github.com/maboloshi/github-chinese/issues/493)。
+  - type: dropdown
+    id: document
+    attributes:
+      label: 文檔
+      description: 您認為哪篇文檔存在問題？
+      options:
+        - 通用的自述文件
+        - VS Code 擴展的自述文件
+        - 議題模板「Bug 提交」
+        - 議題模板「功能請求」
+        - 議題模板「文檔問題」
+        - 建議添加文檔
+      default: 0
+    validations:
+      required: true
+  - type: checkboxes
+    id: languages
+    attributes:
+      label: 語言
+      description: 文檔的哪種語言文字版本存在問題？
+      options:
+        - label: 簡體中文
+        - label: 繁體中文
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 問題類型
+      description: 文檔出現了哪種問題？
+      options:
+        - 語言與格式：錯別字或語法錯誤、簡繁未對齊或不地道、格式或結構錯亂或不規範
+        - 準確與完整性：內容錯誤、無效或詳略失當
+        - 信息披露：未記載已有功能、已知限制或注意事項
+        - 其他問題
+    validations:
+      required: true
+  - type: dropdown
+    id: volunteer
+    attributes:
+      label: 貢獻意願
+      description: 您能自行解決本議題並貢獻到本倉庫嗎？
+      options:
+        - 我將自行解決本議題並貢獻到本倉庫。
+        - 我希望他人解決本議題。
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 描述
+      description: |
+        必要時，請提供[指向相關代碼段的永久鏈接](https://docs.github.com/enterprise-cloud@latest/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet)。
+
+        若要設置[標題](https://docs.github.com/enterprise-cloud@latest/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings)，請從四級標題開始。
+    validations:
+      required: true
