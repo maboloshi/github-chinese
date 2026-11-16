@@ -10784,6 +10784,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     "No milestones were found": "未找到里程碑",
                     "Try searching with a different query for results.": "请尝试使用其他关键词搜索。",
                 "Edit Relationships": "编辑关系",
+                "Edit Development": "编辑开发关联",
                 // "Development": "开发",
                     "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
@@ -10791,7 +10792,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
                     "Create a branch": "创建分支",
-                    "for this issue or link a pull request.": "为这个议题或关联一个拉取请求",
+                    "for this issue or link a pull request.": "，或关联拉取请求。",
                     "When branches are created from issues, their pull requests are automatically linked.": "当从议题中创建分支时，它们的拉取请求会自动关联。",
 
                     // 关系
@@ -10851,7 +10852,8 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     // 进展
                         "Link a branch or pull request": "关联分支或拉取请求",
                         "Select a repository to search for branches and pull requests or": "选择一个仓库来搜索分支和拉取请求或",
-                        "create a branch": "创建一分支",
+                        "create a branch": "创建分支",
+                        "Return to repository picker": "返回仓库选择器",
                         "Search pull requests": "搜索拉取请求",
                         "Search for repositories": "搜索仓库",
                         "Link a branch, pull request, or": "关联分支、拉取请求或",
