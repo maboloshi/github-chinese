@@ -10680,6 +10680,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 "Create artifact": "创建工件",
                 "Create HTML artifact": "创建 HTML 工件",
             "– with": "– 协同",
+            "Please follow this repository's": "请遵守此仓库的",
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
