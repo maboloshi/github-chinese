@@ -10672,6 +10672,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Move down": "下移",
             "Convert to issue": "转换为议题",
             "Convert to sub-issue": "转换为子议题",
+                "Draft with Copilot": "使用 Copilot 起草",
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
