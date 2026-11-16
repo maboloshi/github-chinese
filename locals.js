@@ -9852,6 +9852,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
     "static": { // 静态翻译
         // pull 与 request 公共词条
             "Select all": "全选",
+            "React": "添加表情回应",
             "Status": "状态检查",
             "Feedback": "反馈",
                 "Hate it": "非常不喜欢",
