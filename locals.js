@@ -10779,6 +10779,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 "Fields": "字段",
                     "Add fields": "添加字段",
                     "to track more details about your issues.": "以跟踪议题的更多详细信息。",
+                "Edit Projects": "编辑项目",
                 // "Development": "开发",
                     "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
