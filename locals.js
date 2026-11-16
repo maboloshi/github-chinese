@@ -10771,6 +10771,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Metadata": "元数据", // 小屏模式
                 "Edit Assignees": "编辑受理人",
                     "Select assignees": "选择受理人",
+                "Edit Labels": "编辑标签",
                 // "Development": "开发",
                     "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
