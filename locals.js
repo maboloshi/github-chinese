@@ -11283,6 +11283,11 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Select projects": "选择项目",
                 "Deployments": "部署",
                 "No deployments yet": "暂无部署",
+                "Looking for an old friend?": "在找熟悉的功能？",
+                "Try visiting the new homes for": "试试前往新版",
+                "merge box": "合并框",
+                "and the": "和",
+                "timeline": "时间线",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
