@@ -11292,6 +11292,12 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Close panel": "关闭面板",
                 "Close comments panel": "关闭评论面板",
                 "Close Copilot panel": "关闭 Copilot 面板",
+
+            // 新版概况：活动时间线
+                "Since this pull request was created": "自此拉取请求创建以来",
+                "Activity (since this pull request was created)": "活动（自此拉取请求创建以来）",
+                "No new activity": "暂无新活动",
+                "View all activity": "查看所有活动",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
