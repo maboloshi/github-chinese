@@ -10216,6 +10216,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
             "Select an item": "选择一项",
             "Search saved replies": "搜索快捷回复",
             "Create new": "新建",
+            "Comment can not be empty": "评论不能为空",
 
             // 被锁定
                 "This conversation has been locked as": "此对话已锁定为",
@@ -10951,7 +10952,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 "Are you sure you'd like to delete this comment?": "您确定要删除这条评论吗？",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
-            "Comment can not be empty": "评论不能为空",
             "Add files": "添加文件", // 小屏模式
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
