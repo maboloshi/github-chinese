@@ -11261,11 +11261,16 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "View Conversation page": "查看对话页面",
                 "Temporarily return to the classic view": "暂时返回经典视图",
                 "Turn off Overview preview": "关闭概况预览",
+
+            // 新版概况：合并状态
+                "Expand checks": "展开检查",
+                "Collapse checks": "折叠检查",
                 "Merging is currently blocked. Click to view details in the merge panel.": "当前无法合并。点击可在合并面板中查看详情。",
                 "merge conflicts": "合并冲突",
                 "Resolve the": "请解决",
                 "before this can merge.": "后再合并。",
                 "Files with merge conflicts": "存在合并冲突的文件",
+                "No checks have been reported for this pull request yet.": "此拉取请求尚无检查结果。",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
@@ -12391,6 +12396,8 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
         [/added a commit to ([^ ]+) that referenced this pull request/, "向 $1 添加一个提交，其中引用了此拉取请求"],
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合并页面
 
+        [/^([\d,]+) workflows? approval pending$/, "$1 个工作流等待批准"],
+        [/^([\d,]+) workflows? approval pending\. Checks awaiting conflict resolution$/, "$1 个工作流等待批准。检查将在解决冲突后继续"],
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) in progress(es)?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
