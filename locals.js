@@ -2177,6 +2177,11 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
         // 左侧栏
         "View organization": "查看组织", // 组织
         "Browse organization's repositories": "浏览组织的仓库", // 组织
+        "Make Home your homepage": "设置首页为主页",
+        "Make Feed your homepage": "设置动态为主页",
+        "Pin your homepage": "固定您的主页",
+            "Choose whether github.com opens to Home or Feed. Select the pin next to either one.": "选择打开 github.com 时显示首页还是动态。点击其中一个图钉图标。",
+            "Got it": "知道了",
         "Top repositories": "置顶仓库",
         "Top Repositories": "置顶仓库", // 安卓UA
         "New": "新建",
