@@ -11258,6 +11258,9 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Base branch:": "基础分支：",
                 "Head branch:": "头分支：",
                 "Pull request navigation": "拉取请求导航",
+                "View Conversation page": "查看对话页面",
+                "Temporarily return to the classic view": "暂时返回经典视图",
+                "Turn off Overview preview": "关闭概况预览",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
