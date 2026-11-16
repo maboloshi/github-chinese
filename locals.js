@@ -11277,6 +11277,9 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
 
             // 新版概况：侧栏与旧版功能入口
                 "Status and details": "状态和详情",
+                "No reviewers": "暂无审查者",
+                "No reviewers available": "暂无可选审查者",
+                "No reviewers are available for this pull request.": "此拉取请求没有可选的审查者。",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
@@ -12403,6 +12406,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
         [/added a commit to ([^ ]+) that referenced this pull request/, "向 $1 添加一个提交，其中引用了此拉取请求"],
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合并页面
 
+        [/^Request up to (\d+) reviewers$/, "最多可请求 $1 位审查者"],
         [/^([\d,]+) workflows? approval pending$/, "$1 个工作流等待批准"],
         [/^([\d,]+) workflows? approval pending\. Checks awaiting conflict resolution$/, "$1 个工作流等待批准。检查将在解决冲突后继续"],
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
