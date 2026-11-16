@@ -9852,6 +9852,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
     "static": { // 静态翻译
         // pull 与 request 公共词条
             "Select all": "全选",
+            "React": "添加表情回应",
             "Status": "状态检查",
             "Feedback": "反馈",
                 "Hate it": "非常不喜欢",
@@ -10211,6 +10212,12 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
             "code of conduct": "行为准则",
             "contributing guidelines": "贡献准则",
 
+            // 评论编辑器
+            "Select an item": "选择一项",
+            "Search saved replies": "搜索快捷回复",
+            "Create new": "新建",
+            "Comment can not be empty": "评论不能为空",
+
             // 被锁定
                 "This conversation has been locked as": "此对话已锁定为",
                     "and limited to collaborators.": "，并限制与协作者对话。",
@@ -10346,7 +10353,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 //"Create sub-issue": "创建子议题",
                     // 窗口
                         "Create new issue": "新建议题",
-                            "Select an item": "选择项目",
                                 "Select repository": "选择仓库",
                             "Templates and forms": "模板和表单",
                                 // 空白议题
@@ -10662,6 +10668,20 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
 
             "Edit": "编辑",
             "Issue body actions": "菜单", // 原文过于啰嗦，直接省略
+                "Block user": "拉黑用户",
+            "Move up": "上移",
+            "Move down": "下移",
+            "Convert to issue": "转换为议题",
+            "Convert to sub-issue": "转换为子议题",
+                "Draft with Copilot": "使用 Copilot 起草",
+            "Add artifact": "添加工件",
+                "Add link": "添加链接",
+                    "Link title": "链接标题",
+                    "Use a full URL, like https://github.com/owner/repo.": "请输入完整网址，例如 https://github.com/owner/repo。",
+                "Create artifact": "创建工件",
+                "Create HTML artifact": "创建 HTML 工件",
+            "– with": "– 协同",
+            "Please follow this repository's": "请遵守此仓库的",
 
             // 状态词 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了标题",
@@ -10750,6 +10770,23 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
 
             // 右侧栏 补充
             "Metadata": "元数据", // 小屏模式
+                "Edit Assignees": "编辑受理人",
+                    "Select assignees": "选择受理人",
+                "Edit Labels": "编辑标签",
+                "Edit Type": "编辑类型",
+                    "A specific piece of work": "一项具体工作",
+                    "An unexpected problem or behavior": "意外的问题或行为",
+                    "A request, idea, or new functionality": "请求、想法或新功能",
+                "Fields": "字段",
+                    "Add fields": "添加字段",
+                    "to track more details about your issues.": "以跟踪议题的更多详细信息。",
+                "Edit Projects": "编辑项目",
+                "Edit Milestone": "编辑里程碑",
+                    "No milestones were found": "未找到里程碑",
+                    "Try searching with a different query for results.": "请尝试使用其他关键词搜索。",
+                "Edit Relationships": "编辑关系",
+                "Edit Development": "编辑开发关联",
+                "Issue actions": "议题操作",
                 // "Development": "开发",
                     "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
@@ -10757,11 +10794,22 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     "No branches or pull requests": "没有分支或拉取请求",
                     "Shows branches and pull requests linked to this issue.": "显示与该议题相关的分支和拉取请求。",
                     "Create a branch": "创建分支",
-                    "for this issue or link a pull request.": "为这个议题或关联一个拉取请求",
+                    "for this issue or link a pull request.": "，或关联拉取请求。",
                     "When branches are created from issues, their pull requests are automatically linked.": "当从议题中创建分支时，它们的拉取请求会自动关联。",
 
                     // 关系
                         "Add parent": "添加父议题",
+                        "Back to repository selection": "返回仓库选择",
+                        "Mark as blocked by": "标记为受其他议题阻塞",
+                            "Mark current issue as blocked by…": "选择阻塞当前议题的议题…",
+                        "Mark as blocking": "标记为阻塞其他议题",
+                            "Mark current issue as blocking…": "选择被当前议题阻塞的议题…",
+                        "Add relates to": "添加关联议题",
+                            "Mark issues that relate to the current issue…": "选择与当前议题关联的议题…",
+                        "Add security alert": "添加安全警报",
+                            "Search alerts...": "搜索警报…",
+                            "No alerts found": "未找到警报",
+                            "Try changing your search term or selecting a different repository.": "请尝试更换关键词或选择其他仓库。",
                         "Select a repository": "选择一个仓库",
                         "Change or remove parent": "更改或移除父议题",
                             "Selected": "当前",
@@ -10806,7 +10854,8 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     // 进展
                         "Link a branch or pull request": "关联分支或拉取请求",
                         "Select a repository to search for branches and pull requests or": "选择一个仓库来搜索分支和拉取请求或",
-                        "create a branch": "创建一分支",
+                        "create a branch": "创建分支",
+                        "Return to repository picker": "返回仓库选择器",
                         "Search pull requests": "搜索拉取请求",
                         "Search for repositories": "搜索仓库",
                         "Link a branch, pull request, or": "关联分支、拉取请求或",
@@ -10903,7 +10952,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                 "Are you sure you'd like to delete this comment?": "您确定要删除这条评论吗？",
             // 关闭议题
                 "You do not have permissions to close this issue": "您没有权限关闭此议题",
-            "Comment can not be empty": "评论不能为空",
             "Add files": "添加文件", // 小屏模式
 
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
@@ -11205,6 +11253,87 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
 
         // 某条具体的拉取请求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 新版概况
+                "opened": "打开于",
+                "Base branch:": "基础分支：",
+                "Head branch:": "头分支：",
+                "Pull request navigation": "拉取请求导航",
+                "View Conversation page": "查看对话页面",
+                "Temporarily return to the classic view": "暂时返回经典视图",
+                "Turn off Overview preview": "关闭概况预览",
+
+            // 新版概况：合并状态
+                "Gathering the council of rubber ducks…": "正在召集橡皮鸭开会…",
+                "Expand checks": "展开检查",
+                "Collapse checks": "折叠检查",
+                "Merging is currently blocked. Click to view details in the merge panel.": "当前无法合并。点击可在合并面板中查看详情。",
+                "merge conflicts": "合并冲突",
+                "Resolve the": "请解决",
+                "before this can merge.": "后再合并。",
+                "Files with merge conflicts": "存在合并冲突的文件",
+                "No checks have been reported for this pull request yet.": "此拉取请求尚无检查结果。",
+                "Approvals": "批准",
+                "Reviewed": "已审查",
+                "No approvals required": "无需批准",
+
+            // 新版概况：侧栏与旧版功能入口
+                "Status and details": "状态和详情",
+                "No reviewers": "暂无审查者",
+                "No reviewers available": "暂无可选审查者",
+                "No reviewers are available for this pull request.": "此拉取请求没有可选的审查者。",
+                "Select projects": "选择项目",
+                "Deployments": "部署",
+                "No deployments yet": "暂无部署",
+                "Looking for an old friend?": "在找熟悉的功能？",
+                "Try visiting the new homes for": "试试前往新版",
+                "merge box": "合并框",
+                "and the": "和",
+                "timeline": "时间线",
+                "Open panel": "打开面板",
+                "Close panel": "关闭面板",
+                "Close comments panel": "关闭评论面板",
+                "Close Copilot panel": "关闭 Copilot 面板",
+
+            // 新版概况：活动时间线
+                "Since this pull request was created": "自此拉取请求创建以来",
+                "Activity (since this pull request was created)": "活动（自此拉取请求创建以来）",
+                "No new activity": "暂无新活动",
+                "View all activity": "查看所有活动",
+                "Filter activity": "筛选活动",
+                "Loading activity": "正在加载活动",
+                "Activity type": "活动类型",
+                "Base changes and force pushes": "基础分支更改和强制推送",
+                "Commented reviews": "仅发表评论的审查",
+                "Conversation comments": "对话评论",
+                "State changes": "状态更改",
+                "Review requests": "审查请求",
+                "Description edits": "描述编辑",
+                "Actor": "操作人",
+                "Since": "起始时间",
+                "Any time": "不限时间",
+                "Past 24 hours": "过去 24 小时",
+                "Past 7 days": "过去 7 天",
+                "Past 30 days": "过去 30 天",
+                "Search loaded activity by username, automation name, commit summary, or commit SHA. All words must match; use quotes for a phrase. Combine text with type:, actor: (login or ID), and since: (available preset or ISO timestamp). Use commas for multiple types or actors.": "按用户名、自动化名称、提交摘要或提交 SHA 搜索已加载的活动。所有词都必须匹配，搜索短语时请使用引号。可使用 type:、actor:（登录名或 ID）和 since:（预设值或 ISO 时间戳）筛选。多个类型或操作人用逗号分隔。",
+
+            // 新版概况：评论与审查
+                "Skip comments": "跳过评论",
+                "Additional comment filters": "更多评论筛选条件",
+                "Filter comments by author": "按作者筛选评论",
+                "Loading comments": "正在加载评论",
+                "Loading comments...": "正在加载评论…",
+                "No comments available": "暂无评论",
+                "Review": "审查",
+                "Review event": "审查结果",
+
+            // 新版概况：Copilot 面板
+                "Ask about the pull request:": "询问有关此拉取请求的问题：",
+                "Ask anything or type @ to add context": "询问任何问题或输入 @ 来添加上下文",
+                "Summarize the high level changes made": "概述主要更改",
+                "Help me review this pull request": "帮我审查此拉取请求",
+                "What feedback is unresolved?": "哪些反馈尚未解决？",
+                "Loading threads…": "正在加载会话…",
+
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
@@ -12330,6 +12459,10 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
         [/added a commit to ([^ ]+) that referenced this pull request/, "向 $1 添加一个提交，其中引用了此拉取请求"],
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合并页面
 
+        [/^([\d,]+) additional commits?$/, "另有 $1 个提交"],
+        [/^Request up to (\d+) reviewers$/, "最多可请求 $1 位审查者"],
+        [/^([\d,]+) workflows? approval pending$/, "$1 个工作流等待批准"],
+        [/^([\d,]+) workflows? approval pending\. Checks awaiting conflict resolution$/, "$1 个工作流等待批准。检查将在解决冲突后继续"],
         [/(\d+) in progress checks?/, "$1 个正在进行的检查"],
         [/(\d+) in progress(es)?/, "$1 个正在进行的检查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 个跳过, $2 个成功检查"],
