@@ -11317,6 +11317,8 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
 
             // 新版概况：评论与审查
                 "Skip comments": "跳过评论",
+                "Additional comment filters": "更多评论筛选条件",
+                "Filter comments by author": "按作者筛选评论",
                 "Loading comments": "正在加载评论",
                 "Loading comments...": "正在加载评论…",
                 "No comments available": "暂无评论",
