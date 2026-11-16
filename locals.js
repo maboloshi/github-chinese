@@ -11274,6 +11274,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Approvals": "批准",
                 "Reviewed": "已审查",
                 "No approvals required": "无需批准",
+                "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
                 "Your review was submitted on a merged pull request.": "您的审查已提交，一个合并的拉取请求。",
