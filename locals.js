@@ -10785,6 +10785,7 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
                     "Try searching with a different query for results.": "请尝试使用其他关键词搜索。",
                 "Edit Relationships": "编辑关系",
                 "Edit Development": "编辑开发关联",
+                "Issue actions": "议题操作",
                 // "Development": "开发",
                     "Code with agent mode": "智能体模式编程",
                         "Select code repository": "选择仓库",
