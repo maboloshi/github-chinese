@@ -11281,6 +11281,8 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "No reviewers available": "暂无可选审查者",
                 "No reviewers are available for this pull request.": "此拉取请求没有可选的审查者。",
                 "Select projects": "选择项目",
+                "Deployments": "部署",
+                "No deployments yet": "暂无部署",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
