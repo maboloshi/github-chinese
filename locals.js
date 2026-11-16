@@ -11288,6 +11288,10 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "merge box": "合并框",
                 "and the": "和",
                 "timeline": "时间线",
+                "Open panel": "打开面板",
+                "Close panel": "关闭面板",
+                "Close comments panel": "关闭评论面板",
+                "Close Copilot panel": "关闭 Copilot 面板",
                 "No comments available": "暂无评论",
             // 顶部提醒
                 "The head ref may contain hidden characters:": "头部引用可能包含隐藏字符：",
