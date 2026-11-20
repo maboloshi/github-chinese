@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/projects', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/projects', 'repository/milestones', 'repository/labels', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -9780,10 +9780,10 @@ defineI18nAlias(I18N["zh-CN"], "repository/tree", "repository");
 defineI18nPage(I18N["zh-CN"], "repository/milestones", () => ({ // 仓库 - 里程碑页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
 
         // 里程碑页面 /<user-name>/<repo-name>/milestones
             "Labels": "标签",
-            "Milestones": "里程碑",
 
             "You haven’t created any Milestones.": "您尚未创建任何里程碑。",
             "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑为特定版本或项目创建议题和拉取请求的集合。",
