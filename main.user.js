@@ -975,11 +975,12 @@
 
     /* =========================== 翻译功能 =========================== */
 
-    /** 翻译页面词库中明确列出的属性值。 */
+    /** 翻译页面词库中明确列出的属性值，规则可限定页面路径。 */
     function transPageAttributes(node, attributeTranslations) {
-        for (const [selector, name, translations] of attributeTranslations) {
+        for (const [selector, name, translations, pathname] of attributeTranslations) {
             const text = node.getAttribute(name);
-            if (Object.hasOwn(translations, text) && translations[text] !== text && node.matches(selector)) {
+            if (Object.hasOwn(translations, text) && translations[text] !== text
+                && (!pathname || pathname.test(State.pageConfig.currentPath)) && node.matches(selector)) {
                 node.setAttribute(name, translations[text]);
             }
         }

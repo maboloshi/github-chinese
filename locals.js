@@ -10279,7 +10279,19 @@ defineI18nPage(I18N["zh-CN"], "repository/issues-sidebar", () => { // 仓库 - �
 });
 
 defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题页面
-    "attributes": I18N["zh-CN"]["repository/issues-sidebar"]["attributes"],
+    "attributes": [
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["attributes"],
+        ["main button, ul[role='menu'] ul[role='group']", "aria-label", {
+            "Sort by": "排序依据",
+            "Order": "排序方向",
+            "Sort by Updated descending": "排序：按最后更新时间从新到旧",
+            "Sort by Updated ascending": "排序：按最后更新时间从旧到新",
+            "Sort by Newest descending": "排序：按创建时间从新到旧",
+            "Sort by Oldest ascending": "排序：按创建时间从旧到新",
+            "Sort by Name ascending": "排序：按名称升序",
+            "Sort by Name descending": "排序：按名称降序",
+        }, /\/issues\/views\/?$/],
+    ],
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
