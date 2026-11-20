@@ -28958,7 +28958,14 @@ defineI18nAlias(I18N["zh-CN"], "repository/projects/new", "projects");
 
 defineI18nPage(I18N["zh-CN"], "repository/projects", () => ({ // 仓库 - 项目列表
     ...I18N["zh-CN"]["projects"],
-    "attributes": I18N["zh-CN"]["repository/issues-sidebar"]["attributes"],
+    "attributes": [
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["attributes"],
+        ["main ul, main [role='status'], ul[role='menu']", "aria-label", {
+            "Filter projects by state": "按状态筛选项目",
+            "Loading projects": "正在加载项目",
+            "Sort projects by": "项目排序方式",
+        }],
+    ],
     "static": {
         ...I18N["zh-CN"]["projects"]["static"],
         ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
