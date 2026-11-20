@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/projects', 'repository/milestones', 'repository/labels', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -9780,10 +9780,10 @@ defineI18nAlias(I18N["zh-CN"], "repository/tree", "repository");
 defineI18nPage(I18N["zh-CN"], "repository/milestones", () => ({ // 仓库 - 里程碑页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
 
         // 里程碑页面 /<user-name>/<repo-name>/milestones
             "Labels": "标签",
-            "Milestones": "里程碑",
 
             "You haven’t created any Milestones.": "您尚未创建任何里程碑。",
             "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑为特定版本或项目创建议题和拉取请求的集合。",
@@ -10250,14 +10250,28 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
     ]
 }));
 
+defineI18nPage(I18N["zh-CN"], "repository/issues-sidebar", () => ({ // 仓库 - 议题侧栏
+    "static": {
+        "Assigned to me": "分配给您",
+        "Created by me": "由您创建",
+        "Mentioned": "提及",
+        "Recent activity": "最近活动",
+        "Views": "视图",
+        "Milestones": "里程碑",
+        "Collapse sidebar": "折叠侧边栏",
+        "Expand sidebar": "展开侧边栏",
+        "Open Issues sidebar navigation": "打开议题侧栏导航",
+    },
+}));
+
 defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
 
         // 仓库 --> 议题 标签卡/<user-name>/<repo-name>/issues
         // /<user-name>/<repo-name>/labels/<label-name>
-            "Views": "视图",
             // 欢迎信息
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
@@ -10276,14 +10290,15 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Filter by assignees": "筛选受理人",
                 "No assignees": "无人受理",
 
-            // 左侧栏
-            "Assigned to me": "分配给您",
-            "Created by me": "由您创建",
-            "Mentioned": "提及",
-            "Recent activity": "最近活动",
-
-            "Collapse sidebar": "折叠侧边栏",
-            "Expand sidebar": "展开侧边栏",
+            // 议题视图 /<user-name>/<repo-name>/issues/views
+            "Shared": "共享",
+            "No private views yet": "暂无私有视图",
+            "No shared views yet": "暂无共享视图",
+            "Collapse Private": "折叠私有视图",
+            "Expand Private": "展开私有视图",
+            "Collapse Shared": "折叠共享视图",
+            "Expand Shared": "展开共享视图",
+            "Updated": "最后更新",
 
             // 新版内容
                 // 顶部
@@ -10957,7 +10972,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
         // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
             "Labels": "标签",
-            "Milestones": "里程碑",
             "Search all labels": "搜索所有标签",
 
             "labels": "标签",
@@ -11710,6 +11724,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "You're not authorized to push to this branch. Visit": "您没有权限推送到此分支。请访问",
                     "for more information.": "获取更多信息。",
                 // 新版合并界面
+                "Merge is blocked": "合并被阻止",
                 "Merge is not an allowed merge method in this repository.": "合并不是此仓库允许的合并方法。",
                 "Pull request cannot be merged because it has a merge conflict.": "由于存在合并冲突，无法合并拉取请求。",
                 "User does not have push access to the repository.": "用户无权推送到此仓库。",
@@ -16222,6 +16237,10 @@ defineI18nPage(I18N["zh-CN"], "repository/security", () => ({ // 仓库 - 安全
             // 他人库
             "View information about security vulnerabilities from this repository's maintainers.": "查看仓库维护者提供的安全漏洞信息。",
 
+        // 恶意软件警报 /<user-name>/<repo-name>/security/malware
+            "Malware alerts are disabled.": "恶意软件警报已禁用。",
+            "To receive Malware alerts, you must first enable Malware alerts in": "要接收恶意软件警报，请先启用此功能，入口位于",
+
         // Dependabot 警报 /<user-name>/<repo-name>/security/dependabot
             "Dependabot alerts": "Dependabot 警报",
             "Dependency files checked": "检查依赖文件",
@@ -16237,6 +16256,11 @@ defineI18nPage(I18N["zh-CN"], "repository/security", () => ({ // 仓库 - 安全
                 "Learn more about auto-triage": "了解更多关于自动分类的信息",
 
             "opened": "打开于",
+
+            "No open alerts": "暂无未关闭的警报",
+            "There are no open Dependabot alerts for this repository.": "此仓库没有未关闭的 Dependabot 警报。",
+            "No closed alerts": "暂无已关闭的警报",
+            "There are no closed Dependabot alerts for this repository.": "此仓库没有已关闭的 Dependabot 警报。",
 
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
@@ -17234,6 +17258,11 @@ defineI18nPage(I18N["zh-CN"], "repository/community", () => ({ // 仓库 -> 洞�
             "Repository admins accept content reports": "仓库管理员接受内容报告", // 组织仓库?
             "What is": "什么是",
             "the community profile": "社区简介",
+
+            "Additional community file": "其他社区文件",
+                "Describe your project's accessibility commitment, supported environments, known limitations, and how people can report barriers.": "说明项目在无障碍方面的承诺、支持的环境、已知限制，以及如何反馈遇到的无障碍问题。",
+                "Writing an accessibility statement": "编写无障碍声明",
+                "View an ACCESSIBILITY.md example": "查看 ACCESSIBILITY.md 示例",
 
         // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=main
             "Add a license to your project": "为您的项目添加许可证",
@@ -28911,7 +28940,26 @@ defineI18nPage(I18N["zh-CN"], "projects", () => ({ // 项目页面(含仓库项�
 
 defineI18nAlias(I18N["zh-CN"], "new/project", "projects");
 defineI18nAlias(I18N["zh-CN"], "repository/projects/new", "projects");
-defineI18nAlias(I18N["zh-CN"], "repository/projects", "projects");
+
+defineI18nPage(I18N["zh-CN"], "repository/projects", () => ({ // 仓库 - 项目列表
+    ...I18N["zh-CN"]["projects"],
+    "static": {
+        ...I18N["zh-CN"]["projects"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
+        "Repository projects": "仓库项目",
+        "Search by name…": "按名称搜索…",
+        "Clear search query": "清除搜索内容",
+        "No projects found": "未找到项目",
+        "There are no projects linked to this repository.": "此仓库尚未关联任何项目。",
+        "No closed projects": "暂无已关闭的项目",
+        "No projects matched your search": "没有与搜索条件匹配的项目",
+        "Try a different search term or clear the search to see all": "请更换搜索词，或清除搜索条件以查看所有",
+    },
+    "regexp": [
+        [/^No projects matched “(.+)”$/, "未找到与“$1”匹配的项目"],
+        ...I18N["zh-CN"]["projects"]["regexp"],
+    ],
+}));
 
 defineI18nPage(I18N["zh-CN"], "redeem", () => ({ // 兑换页面
     "static": { // 静态翻译
