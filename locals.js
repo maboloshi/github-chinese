@@ -16223,6 +16223,10 @@ defineI18nPage(I18N["zh-CN"], "repository/security", () => ({ // 仓库 - 安全
             // 他人库
             "View information about security vulnerabilities from this repository's maintainers.": "查看仓库维护者提供的安全漏洞信息。",
 
+        // 恶意软件警报 /<user-name>/<repo-name>/security/malware
+            "Malware alerts are disabled.": "恶意软件警报已禁用。",
+            "To receive Malware alerts, you must first enable Malware alerts in": "要接收恶意软件警报，请先启用此功能，入口位于",
+
         // Dependabot 警报 /<user-name>/<repo-name>/security/dependabot
             "Dependabot alerts": "Dependabot 警报",
             "Dependency files checked": "检查依赖文件",
