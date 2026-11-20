@@ -17245,6 +17245,11 @@ defineI18nPage(I18N["zh-CN"], "repository/community", () => ({ // 仓库 -> 洞�
             "What is": "什么是",
             "the community profile": "社区简介",
 
+            "Additional community file": "其他社区文件",
+                "Describe your project's accessibility commitment, supported environments, known limitations, and how people can report barriers.": "说明项目在无障碍方面的承诺、支持的环境、已知限制，以及如何反馈遇到的无障碍问题。",
+                "Writing an accessibility statement": "编写无障碍声明",
+                "View an ACCESSIBILITY.md example": "查看 ACCESSIBILITY.md 示例",
+
         // 添加许可证 /<user-name>/<repo-name>/community/license/new?branch=main
             "Add a license to your project": "为您的项目添加许可证",
             "Choose a license to add to your project": "选择要添加到项目的许可证",
