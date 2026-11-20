@@ -16243,6 +16243,11 @@ defineI18nPage(I18N["zh-CN"], "repository/security", () => ({ // 仓库 - 安全
 
             "opened": "打开于",
 
+            "No open alerts": "暂无未关闭的警报",
+            "There are no open Dependabot alerts for this repository.": "此仓库没有未关闭的 Dependabot 警报。",
+            "No closed alerts": "暂无已关闭的警报",
+            "There are no closed Dependabot alerts for this repository.": "此仓库没有已关闭的 Dependabot 警报。",
+
             "Dependabot alerts are disabled.": "Dependabot 警报已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警报，必须首先启用 Dependabot 警报",
             "this repository’s settings": "在仓库的设置中",
