@@ -484,6 +484,7 @@
             currentPath: window.location.pathname, // 当前路径
             titleStaticDict: pageDict.title?.static || {},
             titleRegexpRules: pageDict.title?.regexp || [],
+            attributeTranslations: pageDict.attributes,
             staticDict: { // 合并公共和页面特定的静态词典
                 ...dict.public.static,
                 ...(pageDict.static || {})
@@ -855,7 +856,13 @@
         }
 
         // 忽略选择器在遍历期间不变，提到过滤器外，避免每个节点都读一遍配置
-        const ignoreSelectors = State.pageConfig.ignoreSelectors;
+        const { ignoreSelectors, attributeTranslations } = State.pageConfig;
+        const translateAttributes = attributeTranslations
+            && !(ignoreSelectors && rootNode.closest?.(ignoreSelectors));
+        // 属性变化的目标是遍历根节点，而 TreeWalker.nextNode() 从其子节点开始。
+        if (translateAttributes && rootNode.nodeType === Node.ELEMENT_NODE) {
+            transPageAttributes(rootNode, attributeTranslations);
+        }
 
         // 创建TreeWalker遍历节点树
         const treeWalker = document.createTreeWalker(
@@ -878,6 +885,7 @@
         // 遍历所有节点
         while ((currentNode = treeWalker.nextNode())) {
             if (currentNode.nodeType === Node.ELEMENT_NODE) {
+                if (translateAttributes) transPageAttributes(currentNode, attributeTranslations);
                 handleElementNode(currentNode);
             } else if (currentNode.nodeType === Node.TEXT_NODE) {
                 handleTextNode(currentNode);
@@ -966,6 +974,16 @@
     }
 
     /* =========================== 翻译功能 =========================== */
+
+    /** 翻译页面词库中明确列出的属性值。 */
+    function transPageAttributes(node, attributeTranslations) {
+        for (const [selector, name, translations] of attributeTranslations) {
+            const text = node.getAttribute(name);
+            if (Object.hasOwn(translations, text) && translations[text] !== text && node.matches(selector)) {
+                node.setAttribute(name, translations[text]);
+            }
+        }
+    }
 
     /**
      * 翻译页面标题
