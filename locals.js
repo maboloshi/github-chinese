@@ -11710,6 +11710,7 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "You're not authorized to push to this branch. Visit": "您没有权限推送到此分支。请访问",
                     "for more information.": "获取更多信息。",
                 // 新版合并界面
+                "Merge is blocked": "合并被阻止",
                 "Merge is not an allowed merge method in this repository.": "合并不是此仓库允许的合并方法。",
                 "Pull request cannot be merged because it has a merge conflict.": "由于存在合并冲突，无法合并拉取请求。",
                 "User does not have push access to the repository.": "用户无权推送到此仓库。",
