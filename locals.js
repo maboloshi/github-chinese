@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定页面，启用`字符数据`监测
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/projects', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定页面，忽略突变元素规则
     ignoreMutationSelectorPage: {
@@ -10250,14 +10250,28 @@ defineI18nPage(I18N["zh-CN"], "repository/pull_issue_public", () => ({ // 仓库
     ]
 }));
 
+defineI18nPage(I18N["zh-CN"], "repository/issues-sidebar", () => ({ // 仓库 - 议题侧栏
+    "static": {
+        "Assigned to me": "分配给您",
+        "Created by me": "由您创建",
+        "Mentioned": "提及",
+        "Recent activity": "最近活动",
+        "Views": "视图",
+        "Milestones": "里程碑",
+        "Collapse sidebar": "折叠侧边栏",
+        "Expand sidebar": "展开侧边栏",
+        "Open Issues sidebar navigation": "打开议题侧栏导航",
+    },
+}));
+
 defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题页面
     "static": { // 静态翻译
         ...I18N["zh-CN"]["repository-public"]["static"],
         ...I18N["zh-CN"]["repository/pull_issue_public"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
 
         // 仓库 --> 议题 标签卡/<user-name>/<repo-name>/issues
         // /<user-name>/<repo-name>/labels/<label-name>
-            "Views": "视图",
             // 欢迎信息
             "Welcome to issues!": "欢迎关注议题！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "议题用于跟踪待办事项、错误、功能请求等。创建议题后，它们将出现在可搜索和可筛选的列表中。要开始，您应该",
@@ -10275,15 +10289,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Filter authors": "筛选作者",
             "Filter by assignees": "筛选受理人",
                 "No assignees": "无人受理",
-
-            // 左侧栏
-            "Assigned to me": "分配给您",
-            "Created by me": "由您创建",
-            "Mentioned": "提及",
-            "Recent activity": "最近活动",
-
-            "Collapse sidebar": "折叠侧边栏",
-            "Expand sidebar": "展开侧边栏",
 
             // 新版内容
                 // 顶部
@@ -10957,7 +10962,6 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
         // 议题标签管理 /<user-name>/<repo-name>/issues/labels
         // 仓库 --> 标签页面 /<user-name>/<repo-name>/labels
             "Labels": "标签",
-            "Milestones": "里程碑",
             "Search all labels": "搜索所有标签",
 
             "labels": "标签",
@@ -28926,7 +28930,14 @@ defineI18nPage(I18N["zh-CN"], "projects", () => ({ // 项目页面(含仓库项�
 
 defineI18nAlias(I18N["zh-CN"], "new/project", "projects");
 defineI18nAlias(I18N["zh-CN"], "repository/projects/new", "projects");
-defineI18nAlias(I18N["zh-CN"], "repository/projects", "projects");
+
+defineI18nPage(I18N["zh-CN"], "repository/projects", () => ({ // 仓库 - 项目列表
+    ...I18N["zh-CN"]["projects"],
+    "static": {
+        ...I18N["zh-CN"]["projects"]["static"],
+        ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
+    },
+}));
 
 defineI18nPage(I18N["zh-CN"], "redeem", () => ({ // 兑换页面
     "static": { // 静态翻译
