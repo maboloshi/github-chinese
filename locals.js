@@ -3634,6 +3634,7 @@ defineI18nPage(I18N["zh-CN"], "settings-menu", () => ({ // 设置 - 公共部分
         "Your personal account": "我的个人账户",
         "Go to settings page": "切换设置页面",  // 存在组织时
         "Select settings context": "选择设置页面",
+        "Switch settings context": "切换设置上下文", // 新版设置顶部按钮
         "Go to your personal profile": "去我的个人资料",
         // 左侧菜单
         "Public profile": "基本资料",
