@@ -10290,6 +10290,16 @@ defineI18nPage(I18N["zh-CN"], "repository/issues", () => ({ // 仓库 - 议题�
             "Filter by assignees": "筛选受理人",
                 "No assignees": "无人受理",
 
+            // 议题视图 /<user-name>/<repo-name>/issues/views
+            "Shared": "共享",
+            "No private views yet": "暂无私有视图",
+            "No shared views yet": "暂无共享视图",
+            "Collapse Private": "折叠私有视图",
+            "Expand Private": "展开私有视图",
+            "Collapse Shared": "折叠共享视图",
+            "Expand Shared": "展开共享视图",
+            "Updated": "最后更新",
+
             // 新版内容
                 // 顶部
                     "👋 Want to contribute to": "👋 想做贡献给",
