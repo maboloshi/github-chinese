@@ -28936,7 +28936,19 @@ defineI18nPage(I18N["zh-CN"], "repository/projects", () => ({ // 仓库 - 项目
     "static": {
         ...I18N["zh-CN"]["projects"]["static"],
         ...I18N["zh-CN"]["repository/issues-sidebar"]["static"],
+        "Repository projects": "仓库项目",
+        "Search by name…": "按名称搜索…",
+        "Clear search query": "清除搜索内容",
+        "No projects found": "未找到项目",
+        "There are no projects linked to this repository.": "此仓库尚未关联任何项目。",
+        "No closed projects": "暂无已关闭的项目",
+        "No projects matched your search": "没有与搜索条件匹配的项目",
+        "Try a different search term or clear the search to see all": "请更换搜索词，或清除搜索条件以查看所有",
     },
+    "regexp": [
+        [/^No projects matched “(.+)”$/, "未找到与“$1”匹配的项目"],
+        ...I18N["zh-CN"]["projects"]["regexp"],
+    ],
 }));
 
 defineI18nPage(I18N["zh-CN"], "redeem", () => ({ // 兑换页面
