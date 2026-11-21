@@ -155,6 +155,10 @@ const preservedPages = [
     ['https://github.com/organizations/acme/settings/profile', [], 'orgs/settings/profile'],
     ['https://github.com/acme/enterprise_plan', [], false],
     ['https://github.com/acme/sponsoring', [], false],
+    // 这些页面形如 /<owner>/<repo>，但没有任何一级路径是账号名（#591）
+    ['https://github.com/advisories/GHSA-25qc-m4pw-2w8r', [], false],
+    ['https://github.com/customer-stories/spotify', [], false],
+    ['https://github.com/readme/featured', [], false],
     ['https://github.com/settings-tools/project', [], 'repository'],
     ['https://github.com/login', [], 'login'],
     ['https://github.com/acme/project', ['session-authentication'], 'session-authentication'],
