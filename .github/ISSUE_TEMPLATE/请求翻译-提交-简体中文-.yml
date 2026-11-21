@@ -1,0 +1,65 @@
+name: 请求翻译（简体中文）
+description: 报告页面上尚未翻译的文字，请求补充词条
+labels: 请求翻译
+
+body:
+- type: markdown
+  attributes:
+    value: "### 欢迎！"
+- type: markdown
+  attributes:
+    value: |
+      感谢您帮忙找出未翻译的界面文字。
+      提交前请先搜索[已有议题](https://github.com/maboloshi/github-chinese/issues?q=is%3Aissue)，避免重复提交。
+- type: textarea
+  id: page-url
+  attributes:
+    label: 页面地址
+    description: 请粘贴出现未翻译文字的页面完整链接。
+    placeholder: https://github.com/settings/emails
+  validations:
+    required: true
+- type: textarea
+  id: untranslated-text
+  attributes:
+    label: 未翻译的文字
+    description: 请逐条列出仍然是英文的文字，一行一条，并注明它出现的位置（页面标题、按钮、菜单、悬浮提示等）。
+    placeholder: |
+      Settings（页面标题）
+      Emails（左侧菜单）
+      Primary email address（表单字段标签）
+  validations:
+    required: true
+- type: textarea
+  id: suggested-translation
+  attributes:
+    label: 建议译法
+    description: 如有建议译法请填写；若不确定可留空。
+  validations:
+    required: false
+- type: textarea
+  id: evidence
+  attributes:
+    label: 附件
+    description: 请提供相关截图（强烈建议，便于快速定位）。
+  validations:
+    required: false
+- type: dropdown
+  id: install-method
+  attributes:
+    label: 使用方式
+    description: 请选择你使用本插件的方式。
+    options:
+      - 用户脚本（篡改猴 Tampermonkey 等）
+      - 浏览器扩展
+      - 其他
+  validations:
+    required: true
+- type: input
+  id: plugin-version
+  attributes:
+    label: 插件版本
+    description: 请填入插件版本，见源码或设置页中 `@version` 的值。
+    placeholder: "1.9.3"
+  validations:
+    required: true
