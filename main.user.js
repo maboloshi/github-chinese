@@ -610,9 +610,13 @@
                 break;
             case isProfile: { // 用户资料页面
                 const tabParam = new URLSearchParams(search).get('tab');
+                // 任意 ?tab= 值都会被拼成页面类型，词库里没有的类型会在末尾校验时
+                // 直接判 false，整个个人主页就不翻译了（?tab=organizations 等）。
+                // 词库没有这种标签页时退回基础类型，让页面照常翻译。
+                const tabType = tabParam ? `page-profile/${tabParam}` : '';
+                const knownTab = tabType && I18N[CONFIG.LANG]?.[tabType] ? tabType : '';
                 pageType = pathname.includes('/stars') ? 'page-profile/stars'
-                         : tabParam ? `page-profile/${tabParam}`
-                         : 'page-profile';
+                         : knownTab || 'page-profile';
                 break;
             }
             case isHomepage: // 首页/仪表盘
