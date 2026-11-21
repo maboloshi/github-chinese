@@ -5,7 +5,7 @@
   "description": "GitHub 中文化插件 —— 构建与测试入口（发布产物 main.user.js 仍随仓库提供）",
   "license": "GPL-3.0",
   "scripts": {
-    "test": "node --test test/"
+    "test": "node --test test/*.test.cjs"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",
