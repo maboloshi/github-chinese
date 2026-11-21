@@ -516,6 +516,12 @@
         'marketplace', 'apps', 'account', 'projects', 'redeem', 'discussions', 'collections',
         'sponsors', 'sponsoring', 'github-copilot', 'codespaces', 'developer', 'features',
         'security', 'sitemap', 'education', 'mcp', 'users',
+        // 市场/文档类页面：形如 /<owner>/<repo>，但没有任何 analytics-location 或
+        // repository_nwo 元数据，路径回退会把它们当成仓库页（advisories 见 #591）
+        'advisories', 'customer-stories', 'readme',
+        // 营销/文档类两段式页面：/about/careers、/resources/articles、
+        // /enterprise/startups 同样没有仓库元数据，回退也会误判成仓库页
+        'about', 'resources', 'enterprise', 'enterprises',
     ]);
 
     /**
