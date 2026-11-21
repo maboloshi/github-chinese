@@ -718,6 +718,8 @@ defineI18nPage(I18N["zh-CN"], "public", () => ({ // 公共区域翻译
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的丰富差异视图",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在拉取请求中启用 Jupyter Notebook 的丰富差异视图",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持对 Jupyter Notebook 的丰富差异视图进行评论",
+                "New Pull Requests Overview": "新版拉取请求概览",
+                    "Try the new pull request landing page, which replaces Conversation, and is designed to help you gain context faster and understand what actions you need to take next.": "尝试新版拉取请求页面，取代了对话功能，有助于更快获取信息和理解接下来的任务。",
                 "Semantic issue search": "语义议题搜索",
                     "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的语义搜索查找问题。在仓库的问题页面上输入自然语言查询，以发现相关的语义索引结果。您还可以结合过滤器和关键字进行传统搜索。",
                 "New Files Changed Experience": "新版文件更改体验",
@@ -2177,6 +2179,11 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
         // 左侧栏
         "View organization": "查看组织", // 组织
         "Browse organization's repositories": "浏览组织的仓库", // 组织
+        "Make Home your homepage": "设置首页为主页",
+        "Make Feed your homepage": "设置动态为主页",
+        "Pin your homepage": "固定您的主页",
+            "Choose whether github.com opens to Home or Feed. Select the pin next to either one.": "选择打开 github.com 时显示首页还是动态。点击其中一个图钉图标。",
+            "Got it": "知道了",
         "Top repositories": "置顶仓库",
         "Top Repositories": "置顶仓库", // 安卓UA
         "New": "新建",
