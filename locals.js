@@ -11379,6 +11379,12 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上移除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
 
+            "Try the Overview page": "试用概览页",
+            "Try the new pull requests Overview page!": "试用新拉取请求概览页！",
+                "Focus on what matters most and take action with confidence.": "专注于最重要的事情并充满信心地采取行动。",
+                "Try Overview": "现在尝试",
+                "Not now": "以后再说",
+
             "View status": "查看状态",
             "Not ready": "未准备好",
             "Able to merge": "可以合并",
@@ -11573,6 +11579,9 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                     "Copilot has failed": "Copilot 已失败",
                     "completed after": "总耗时", // 示例：总耗时 11分45秒
                     "failed after": "失败于",
+
+                // 锁定对话词条下方
+                "Archive pull request": "存档拉取请求",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
