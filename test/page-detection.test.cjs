@@ -131,6 +131,8 @@ const repositoryPages = [
     ['https://github.com/acme/project#readme', 'repository'],
     ['https://github.com/acme/project?files=1#readme', 'repository'],
     ['https://github.com/acme/project/tree/main', 'repository/tree'],
+    ['https://github.com/acme/project/commits/main', 'repository/commits'],
+    ['https://github.com/acme/project/insights', 'repository/insights'],
     ['https://github.com/acme/project/issues', 'repository/issues'],
     ['https://github.com/acme/project/issues/7', 'repository/issues'],
     ['https://github.com/acme/project/settings', 'repository/settings'],
