@@ -11804,6 +11804,10 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "authorized": "权限",
                 "to merge this pull request.": "合并此拉取请求。",
 
+            "Copilot cannot watch this pull request": "Copilot 无法查看此拉取请求",
+                "Agent Merge is not supported for pull requests from forks.": "智能体合并不支持来自复刻的拉取请求。",
+                "Watch and fix": "查看并修复",
+
             "Merge pull request": "合并拉取请求",
                 "Merging is blocked due to failing merge requirements": "由于未满足合并要求，合并已被阻止。",
             // 合并拉取请求 按钮下拉
