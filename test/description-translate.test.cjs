@@ -138,7 +138,7 @@ for (const fileName of runtimeScripts) {
                 /if \(page === "repository"\) \{[^}]{0,120}transDesc\(REPOSITORY_DESC_SELECTOR\)/,
                 `${fileName} should re-mount the description button on mutations`,
             );
-        } else if (fileName === 'main.user.js') {
+        } else if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js') {
             // 首次载入与 Turbo 换页共用 applyPage：载入 / 导航后挂一次；
             // React 之后替换侧栏时，由碰了描述节点的突变批次补挂
             assert.match(
@@ -170,8 +170,8 @@ for (const fileName of runtimeScripts) {
                 !source.includes('enable_descRearm'),
                 `${fileName} should not expose a behavior switch for re-mounting`,
             );
-        } else if (fileName === 'main(nju.edu).user.js' || fileName === 'main_zh-TW.user.js') {
-            // 衍生脚本尚未接入统一入口，仍是载入 + 导航两处各自强制核对
+        } else if (fileName === 'main_zh-TW.user.js') {
+            // 繁体版尚未接入统一入口，仍是载入 + 导航两处各自强制核对
             const traditional = fileName === 'main_zh-TW.user.js';
             const loadLabel = traditional ? '描述翻譯' : '描述翻译';
             const firstLabel = traditional ? '描述按鈕' : '描述按钮';
@@ -286,7 +286,7 @@ for (const fileName of ['main.user.js', 'main(nju.edu).user.js', 'main_zh-TW.use
     test(`${fileName} skips re-mount when the translation result is already shown`, () => {
         const source = fs.readFileSync(path.join(__dirname, '..', fileName), 'utf8');
 
-        if (fileName === 'main.user.js') {
+        if (fileName === 'main.user.js' || fileName === 'main(nju.edu).user.js') {
             assert.match(
                 source,
                 /matches\('\.translate-button, \.translation-result'\)/,
