@@ -54,7 +54,7 @@ I18N.conf = {
     rePagePathOrg: /^\/[^\/]+\/[^\/]+\/(repositories\/new|repositories|sponsoring|discussions|projects|packages|teams|new-team|people|outside-collaborators|pending_collaborators|dashboard|billing_managers\/new|invitations?|settings\/(profile|billing|roles|member_privileges|teams|import-export|blocked_users|interaction_limits|code_review_limits|moderators|repository-defaults|rules\/insights|rules|codespaces|copilot|actions\/rules\/insights|actions|hooks|discussions|packages|pages|projects|security_analysis|security|dependabot_rules|domains|secrets|variables|oauth_application_policy|installations|personal-access-token|reminders|sponsors-log|audit-log|deleted_repositories|applications\/new|applications|apps\/new|apps|publisher|policies\/repositories|custom-properties|issue-fields|sandboxes)|topics|domain\/new|audit-log\/event_settings|billing\/(history|plans)|policies\/applications)|^\/[^\/]+\/(enterprise_plan|sponsoring)/,
 
     // 特定頁面，啟用`字符資料`監測
-    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
+    characterDataPage: ['repository/new', 'repository/edit', 'new', 'new/import', 'orgs/repositories/new', 'repository', 'repository/blob', 'repository/pull', 'marketplace', 'homepage', 'dashboard', 'repository/issues', 'repository/projects', 'repository/milestones', 'repository/labels', 'repository/commit', 'repository/actions', 'repository/pulls', 'repository/releases', 'repository/tags', 'copilot', 'spark', 'repository/settings/rules', 'orgs/settings/rules/insights', 'orgs/settings/actions/rules/insights', 'issues', 'pulls', 'repos', 'settings/billing', 'settings/blocked_users'],
 
     // 特定頁面，忽略突變元素規則
     ignoreMutationSelectorPage: {
@@ -718,6 +718,8 @@ defineI18nPage(I18N["zh-TW"], "public", () => ({ // 公共區域翻譯
                 "Rich Jupyter Notebook Diffs": "Jupyter Notebook 的豐富差異視圖",
                     "Enables rich diffs of Jupyter Notebooks in pull requests": "在合併請求中啟用 Jupyter Notebook 的豐富差異視圖",
                     "Note: commenting on rich diff views of notebooks is not yet supported": "注意：尚不支持對 Jupyter Notebook 的豐富差異視圖進行評論",
+                "New Pull Requests Overview": "新版合併請求概覽",
+                    "Try the new pull request landing page, which replaces Conversation, and is designed to help you gain context faster and understand what actions you need to take next.": "嘗試新版合併請求頁面，取代了對話功能，有助於更快獲取訊息和理解接下來的任務。",
                 "Semantic issue search": "語義議題搜尋",
                     "Find issues using the new semantic search. Enter natural language queries on a repo’s Issues page to discover relevant, semantically-indexed results. You can also combine filters and keywords for traditional searches.": "使用新的語義搜尋查找問題。在儲存庫的問題頁面上輸入自然語言查詢，以發現相關的語義索引結果。您還可以結合過濾器和關鍵字進行傳統搜尋。",
                 "New Files Changed Experience": "新版文件更改體驗",
@@ -2177,6 +2179,11 @@ defineI18nPage(I18N["zh-TW"], "page-dashboard", () => ({ // 已登入的首頁 -
         // 左側欄
         "View organization": "查看組織", // 組織
         "Browse organization's repositories": "瀏覽組織的儲存庫", // 組織
+        "Make Home your homepage": "設置首頁為主頁",
+        "Make Feed your homepage": "設置動態為主頁",
+        "Pin your homepage": "固定您的主頁",
+            "Choose whether github.com opens to Home or Feed. Select the pin next to either one.": "選擇打開 github.com 時顯示首頁還是動態。點擊其中一個圖釘圖示。",
+            "Got it": "知道了",
         "Top repositories": "置頂儲存庫",
         "Top Repositories": "置頂儲存庫", // 安卓UA
         "New": "新建",
@@ -9780,10 +9787,10 @@ defineI18nAlias(I18N["zh-TW"], "repository/tree", "repository");
 defineI18nPage(I18N["zh-TW"], "repository/milestones", () => ({ // 儲存庫 - 里程碑頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
+        ...I18N["zh-TW"]["repository/issues-sidebar"]["static"],
 
         // 里程碑頁面 /<user-name>/<repo-name>/milestones
             "Labels": "標籤",
-            "Milestones": "里程碑",
 
             "You haven’t created any Milestones.": "您尚未創建任何里程碑。",
             "Use Milestones to create collections of Issues and Pull Requests for a particular release or project.": "使用里程碑為特定版本或專案創建議題和合併請求的集合。",
@@ -9852,6 +9859,7 @@ defineI18nPage(I18N["zh-TW"], "repository/pull_issue_public", () => ({ // 儲存
     "static": { // 靜態翻譯
         // pull 與 request 公共詞條
             "Select all": "全選",
+            "React": "新增表情回應",
             "Status": "狀態檢查",
             "Feedback": "回饋",
                 "Hate it": "非常不喜歡",
@@ -10211,6 +10219,12 @@ defineI18nPage(I18N["zh-TW"], "repository/pull_issue_public", () => ({ // 儲存
             "code of conduct": "行為準則",
             "contributing guidelines": "貢獻準則",
 
+            // 評論編輯器
+            "Select an item": "選擇一項",
+            "Search saved replies": "搜尋快捷回覆",
+            "Create new": "新建",
+            "Comment can not be empty": "評論不能為空",
+
             // 被鎖定
                 "This conversation has been locked as": "此對話已鎖定為",
                     "and limited to collaborators.": "，並限制與協作者對話。",
@@ -10243,14 +10257,28 @@ defineI18nPage(I18N["zh-TW"], "repository/pull_issue_public", () => ({ // 儲存
     ]
 }));
 
+defineI18nPage(I18N["zh-TW"], "repository/issues-sidebar", () => ({ // 儲存庫 - 議題側欄
+    "static": {
+        "Assigned to me": "分配給您",
+        "Created by me": "由您創建",
+        "Mentioned": "提及",
+        "Recent activity": "最近活動",
+        "Views": "視圖",
+        "Milestones": "里程碑",
+        "Collapse sidebar": "摺疊側邊欄",
+        "Expand sidebar": "展開側邊欄",
+        "Open Issues sidebar navigation": "打開議題側欄導航",
+    },
+}));
+
 defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議題頁面
     "static": { // 靜態翻譯
         ...I18N["zh-TW"]["repository-public"]["static"],
         ...I18N["zh-TW"]["repository/pull_issue_public"]["static"],
+        ...I18N["zh-TW"]["repository/issues-sidebar"]["static"],
 
         // 儲存庫 --> 議題 標籤卡/<user-name>/<repo-name>/issues
         // /<user-name>/<repo-name>/labels/<label-name>
-            "Views": "視圖",
             // 歡迎訊息
             "Welcome to issues!": "歡迎追蹤議題！",
             "Issues are used to track todos, bugs, feature requests, and more. As issues are created, they’ll appear here in a searchable and filterable list. To get started, you should": "議題用於跟蹤待辦事項、錯誤、功能請求等。創建議題後，它們將出現在可搜尋和可篩選的列表中。要開始，您應該",
@@ -10269,14 +10297,15 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
             "Filter by assignees": "篩選受理人",
                 "No assignees": "無人受理",
 
-            // 左側欄
-            "Assigned to me": "分配給您",
-            "Created by me": "由您創建",
-            "Mentioned": "提及",
-            "Recent activity": "最近活動",
-
-            "Collapse sidebar": "摺疊側邊欄",
-            "Expand sidebar": "展開側邊欄",
+            // 議題視圖 /<user-name>/<repo-name>/issues/views
+            "Shared": "共享",
+            "No private views yet": "暫無私有視圖",
+            "No shared views yet": "暫無共享視圖",
+            "Collapse Private": "摺疊私有視圖",
+            "Expand Private": "展開私有視圖",
+            "Collapse Shared": "摺疊共享視圖",
+            "Expand Shared": "展開共享視圖",
+            "Updated": "最後更新",
 
             // 新版內容
                 // 頂部
@@ -10346,7 +10375,6 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
                 //"Create sub-issue": "創建子議題",
                     // 視窗
                         "Create new issue": "新建議題",
-                            "Select an item": "選擇專案",
                                 "Select repository": "選擇儲存庫",
                             "Templates and forms": "範本和表單",
                                 // 空白議題
@@ -10662,6 +10690,20 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
 
             "Edit": "編輯",
             "Issue body actions": "選單", // 原文過於囉嗦，直接省略
+                "Block user": "拉黑用戶",
+            "Move up": "上移",
+            "Move down": "下移",
+            "Convert to issue": "轉換為議題",
+            "Convert to sub-issue": "轉換為子議題",
+                "Draft with Copilot": "使用 Copilot 起草",
+            "Add artifact": "新增工件",
+                "Add link": "新增連結",
+                    "Link title": "連結標題",
+                    "Use a full URL, like https://github.com/owner/repo.": "請輸入完整網址，例如 https://github.com/owner/repo。",
+                "Create artifact": "創建工件",
+                "Create HTML artifact": "創建 HTML 工件",
+            "– with": "– 協同",
+            "Please follow this repository's": "請遵守此儲存庫的",
 
             // 狀態詞 同 /<user-name>/<repo-name>/pull/<id>
             "changed the title": "修改了標題",
@@ -10750,6 +10792,23 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
 
             // 右側欄 補充
             "Metadata": "元資料", // 小屏模式
+                "Edit Assignees": "編輯受理人",
+                    "Select assignees": "選擇受理人",
+                "Edit Labels": "編輯標籤",
+                "Edit Type": "編輯類型",
+                    "A specific piece of work": "一項具體工作",
+                    "An unexpected problem or behavior": "意外的問題或行為",
+                    "A request, idea, or new functionality": "請求、想法或新功能",
+                "Fields": "字段",
+                    "Add fields": "新增字段",
+                    "to track more details about your issues.": "以跟蹤議題的更多詳細訊息。",
+                "Edit Projects": "編輯專案",
+                "Edit Milestone": "編輯里程碑",
+                    "No milestones were found": "未找到里程碑",
+                    "Try searching with a different query for results.": "請嘗試使用其他關鍵詞搜尋。",
+                "Edit Relationships": "編輯關係",
+                "Edit Development": "編輯開發關聯",
+                "Issue actions": "議題操作",
                 // "Development": "開發",
                     "Code with agent mode": "AI 代理模式編程",
                         "Select code repository": "選擇儲存庫",
@@ -10757,11 +10816,22 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
                     "No branches or pull requests": "沒有分支或合併請求",
                     "Shows branches and pull requests linked to this issue.": "顯示與該議題相關的分支和合併請求。",
                     "Create a branch": "創建分支",
-                    "for this issue or link a pull request.": "為這個議題或關聯一個合併請求",
+                    "for this issue or link a pull request.": "，或關聯合併請求。",
                     "When branches are created from issues, their pull requests are automatically linked.": "當從議題中創建分支時，它們的合併請求會自動關聯。",
 
                     // 關係
                         "Add parent": "新增父議題",
+                        "Back to repository selection": "返回儲存庫選擇",
+                        "Mark as blocked by": "標記為受其他議題阻塞",
+                            "Mark current issue as blocked by…": "選擇阻塞當前議題的議題…",
+                        "Mark as blocking": "標記為阻塞其他議題",
+                            "Mark current issue as blocking…": "選擇被當前議題阻塞的議題…",
+                        "Add relates to": "新增關聯議題",
+                            "Mark issues that relate to the current issue…": "選擇與當前議題關聯的議題…",
+                        "Add security alert": "新增安全警報",
+                            "Search alerts...": "搜尋警報…",
+                            "No alerts found": "未找到警報",
+                            "Try changing your search term or selecting a different repository.": "請嘗試更換關鍵詞或選擇其他儲存庫。",
                         "Select a repository": "選擇一個儲存庫",
                         "Change or remove parent": "更改或移除父議題",
                             "Selected": "當前",
@@ -10806,7 +10876,8 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
                     // 進展
                         "Link a branch or pull request": "關聯分支或合併請求",
                         "Select a repository to search for branches and pull requests or": "選擇一個儲存庫來搜尋分支和合併請求或",
-                        "create a branch": "創建一分支",
+                        "create a branch": "創建分支",
+                        "Return to repository picker": "返回儲存庫選擇器",
                         "Search pull requests": "搜尋合併請求",
                         "Search for repositories": "搜尋儲存庫",
                         "Link a branch, pull request, or": "關聯分支、合併請求或",
@@ -10903,13 +10974,11 @@ defineI18nPage(I18N["zh-TW"], "repository/issues", () => ({ // 儲存庫 - 議�
                 "Are you sure you'd like to delete this comment?": "您確定要刪除這條評論嗎？",
             // 關閉議題
                 "You do not have permissions to close this issue": "您沒有權限關閉此議題",
-            "Comment can not be empty": "評論不能為空",
             "Add files": "新增文件", // 小屏模式
 
         // 議題標籤管理 /<user-name>/<repo-name>/issues/labels
         // 儲存庫 --> 標籤頁面 /<user-name>/<repo-name>/labels
             "Labels": "標籤",
-            "Milestones": "里程碑",
             "Search all labels": "搜尋所有標籤",
 
             "labels": "標籤",
@@ -11205,6 +11274,87 @@ defineI18nPage(I18N["zh-TW"], "repository/pull", () => ({ // 儲存庫 - 某個�
         ...I18N["zh-TW"]["repository/pull_issue_public"]["static"],
 
         // 某條具體的合併請求 /<user-name>/<repo-name>/pull/<id> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+            // 新版概況
+                "opened": "打開於",
+                "Base branch:": "基礎分支：",
+                "Head branch:": "頭分支：",
+                "Pull request navigation": "合併請求導航",
+                "View Conversation page": "查看對話頁面",
+                "Temporarily return to the classic view": "暫時返回經典視圖",
+                "Turn off Overview preview": "關閉概況預覽",
+
+            // 新版概況：合併狀態
+                "Gathering the council of rubber ducks…": "正在召集橡皮鴨開會…",
+                "Expand checks": "展開檢查",
+                "Collapse checks": "摺疊檢查",
+                "Merging is currently blocked. Click to view details in the merge panel.": "當前無法合併。點擊可在合併面板中查看詳情。",
+                "merge conflicts": "合併衝突",
+                "Resolve the": "請解決",
+                "before this can merge.": "後再合併。",
+                "Files with merge conflicts": "存在合併衝突的文件",
+                "No checks have been reported for this pull request yet.": "此合併請求尚無檢查結果。",
+                "Approvals": "批准",
+                "Reviewed": "已審查",
+                "No approvals required": "無需批准",
+
+            // 新版概況：側欄與舊版功能入口
+                "Status and details": "狀態和詳情",
+                "No reviewers": "暫無審查者",
+                "No reviewers available": "暫無可選審查者",
+                "No reviewers are available for this pull request.": "此合併請求沒有可選的審查者。",
+                "Select projects": "選擇專案",
+                "Deployments": "部署",
+                "No deployments yet": "暫無部署",
+                "Looking for an old friend?": "在找熟悉的功能？",
+                "Try visiting the new homes for": "試試前往新版",
+                "merge box": "合併框",
+                "and the": "和",
+                "timeline": "時間線",
+                "Open panel": "打開面板",
+                "Close panel": "關閉面板",
+                "Close comments panel": "關閉評論面板",
+                "Close Copilot panel": "關閉 Copilot 面板",
+
+            // 新版概況：活動時間線
+                "Since this pull request was created": "自此合併請求創建以來",
+                "Activity (since this pull request was created)": "活動（自此合併請求創建以來）",
+                "No new activity": "暫無新活動",
+                "View all activity": "查看所有活動",
+                "Filter activity": "篩選活動",
+                "Loading activity": "正在加載活動",
+                "Activity type": "活動類型",
+                "Base changes and force pushes": "基礎分支更改和強制推送",
+                "Commented reviews": "僅發表評論的審查",
+                "Conversation comments": "對話評論",
+                "State changes": "狀態更改",
+                "Review requests": "審查請求",
+                "Description edits": "描述編輯",
+                "Actor": "操作人",
+                "Since": "起始時間",
+                "Any time": "不限時間",
+                "Past 24 hours": "過去 24 小時",
+                "Past 7 days": "過去 7 天",
+                "Past 30 days": "過去 30 天",
+                "Search loaded activity by username, automation name, commit summary, or commit SHA. All words must match; use quotes for a phrase. Combine text with type:, actor: (login or ID), and since: (available preset or ISO timestamp). Use commas for multiple types or actors.": "按用戶名、自動化名稱、提交摘要或提交 SHA 搜尋已加載的活動。所有詞都必須匹配，搜尋短語時請使用引號。可使用 type:、actor:（登入名或 ID）和 since:（預設值或 ISO 時間戳）篩選。多個類型或操作人用逗號分隔。",
+
+            // 新版概況：評論與審查
+                "Skip comments": "跳過評論",
+                "Additional comment filters": "更多評論篩選條件",
+                "Filter comments by author": "按作者篩選評論",
+                "Loading comments": "正在加載評論",
+                "Loading comments...": "正在加載評論…",
+                "No comments available": "暫無評論",
+                "Review": "審查",
+                "Review event": "審查結果",
+
+            // 新版概況：Copilot 面板
+                "Ask about the pull request:": "詢問有關此合併請求的問題：",
+                "Ask anything or type @ to add context": "詢問任何問題或輸入 @ 來新增上下文",
+                "Summarize the high level changes made": "概述主要更改",
+                "Help me review this pull request": "幫我審查此合併請求",
+                "What feedback is unresolved?": "哪些回饋尚未解決？",
+                "Loading threads…": "正在加載會話…",
+
             // 頂部提醒
                 "The head ref may contain hidden characters:": "頭部引用可能包含隱藏字符：",
                 "Your review was submitted on a merged pull request.": "您的審查已提交，一個合併的合併請求。",
@@ -11581,6 +11731,7 @@ defineI18nPage(I18N["zh-TW"], "repository/pull", () => ({ // 儲存庫 - 某個�
                 "You're not authorized to push to this branch. Visit": "您沒有權限推送到此分支。請訪問",
                     "for more information.": "獲取更多訊息。",
                 // 新版合併介面
+                "Merge is blocked": "合併被阻止",
                 "Merge is not an allowed merge method in this repository.": "合併不是此儲存庫允許的合併方法。",
                 "Pull request cannot be merged because it has a merge conflict.": "由於存在合併衝突，無法合併合併請求。",
                 "User does not have push access to the repository.": "用戶無權推送到此儲存庫。",
@@ -12330,6 +12481,10 @@ defineI18nPage(I18N["zh-TW"], "repository/pull", () => ({ // 儲存庫 - 某個�
         [/added a commit to ([^ ]+) that referenced this pull request/, "向 $1 新增一個提交，其中引用了此合併請求"],
         [/Missing successful active ([^ ]+) deployment./, "未成功激活 $1 部署。"], // 新本合併頁面
 
+        [/^([\d,]+) additional commits?$/, "另有 $1 個提交"],
+        [/^Request up to (\d+) reviewers$/, "最多可請求 $1 位審查者"],
+        [/^([\d,]+) workflows? approval pending$/, "$1 個工作流等待批准"],
+        [/^([\d,]+) workflows? approval pending\. Checks awaiting conflict resolution$/, "$1 個工作流等待批准。檢查將在解決衝突後繼續"],
         [/(\d+) in progress checks?/, "$1 個正在進行的檢查"],
         [/(\d+) in progress(es)?/, "$1 個正在進行的檢查"],
         [/(\d+) skipped and (\d+) successful checks?/, "$1 個跳過, $2 個成功檢查"],
@@ -16089,6 +16244,10 @@ defineI18nPage(I18N["zh-TW"], "repository/security", () => ({ // 儲存庫 - 安
             // 他人庫
             "View information about security vulnerabilities from this repository's maintainers.": "查看儲存庫維護者提供的安全漏洞訊息。",
 
+        // 惡意軟體警報 /<user-name>/<repo-name>/security/malware
+            "Malware alerts are disabled.": "惡意軟體警報已禁用。",
+            "To receive Malware alerts, you must first enable Malware alerts in": "要接收惡意軟體警報，請先啟用此功能，入口位於",
+
         // Dependabot 警報 /<user-name>/<repo-name>/security/dependabot
             "Dependabot alerts": "Dependabot 警報",
             "Dependency files checked": "檢查依賴文件",
@@ -16104,6 +16263,11 @@ defineI18nPage(I18N["zh-TW"], "repository/security", () => ({ // 儲存庫 - 安
                 "Learn more about auto-triage": "瞭解更多關於自動分類的訊息",
 
             "opened": "打開於",
+
+            "No open alerts": "暫無未關閉的警報",
+            "There are no open Dependabot alerts for this repository.": "此儲存庫沒有未關閉的 Dependabot 警報。",
+            "No closed alerts": "暫無已關閉的警報",
+            "There are no closed Dependabot alerts for this repository.": "此儲存庫沒有已關閉的 Dependabot 警報。",
 
             "Dependabot alerts are disabled.": "Dependabot 警報已禁用。",
             "To receive Dependabot alerts, you must first enable Dependabot alerts in": "要接收 Dependabot 警報，必須首先啟用 Dependabot 警報",
@@ -17101,6 +17265,11 @@ defineI18nPage(I18N["zh-TW"], "repository/community", () => ({ // 儲存庫 -> �
             "Repository admins accept content reports": "儲存庫管理員接受內容報告", // 組織儲存庫?
             "What is": "什麼是",
             "the community profile": "社區簡介",
+
+            "Additional community file": "其他社區文件",
+                "Describe your project's accessibility commitment, supported environments, known limitations, and how people can report barriers.": "說明專案在無障礙方面的承諾、支持的環境、已知限制，以及如何回饋遇到的無障礙問題。",
+                "Writing an accessibility statement": "編寫無障礙聲明",
+                "View an ACCESSIBILITY.md example": "查看 ACCESSIBILITY.md 示例",
 
         // 新增許可證 /<user-name>/<repo-name>/community/license/new?branch=main
             "Add a license to your project": "為您的專案新增許可證",
@@ -28778,7 +28947,26 @@ defineI18nPage(I18N["zh-TW"], "projects", () => ({ // 專案頁面(含儲存庫�
 
 defineI18nAlias(I18N["zh-TW"], "new/project", "projects");
 defineI18nAlias(I18N["zh-TW"], "repository/projects/new", "projects");
-defineI18nAlias(I18N["zh-TW"], "repository/projects", "projects");
+
+defineI18nPage(I18N["zh-TW"], "repository/projects", () => ({ // 儲存庫 - 專案列表
+    ...I18N["zh-TW"]["projects"],
+    "static": {
+        ...I18N["zh-TW"]["projects"]["static"],
+        ...I18N["zh-TW"]["repository/issues-sidebar"]["static"],
+        "Repository projects": "儲存庫專案",
+        "Search by name…": "按名稱搜尋…",
+        "Clear search query": "清除搜尋內容",
+        "No projects found": "未找到專案",
+        "There are no projects linked to this repository.": "此儲存庫尚未關聯任何專案。",
+        "No closed projects": "暫無已關閉的專案",
+        "No projects matched your search": "沒有與搜尋條件匹配的專案",
+        "Try a different search term or clear the search to see all": "請更換搜尋詞，或清除搜尋條件以查看所有",
+    },
+    "regexp": [
+        [/^No projects matched “(.+)”$/, "未找到與“$1”匹配的專案"],
+        ...I18N["zh-TW"]["projects"]["regexp"],
+    ],
+}));
 
 defineI18nPage(I18N["zh-TW"], "redeem", () => ({ // 兌換頁面
     "static": { // 靜態翻譯
