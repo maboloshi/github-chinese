@@ -1,0 +1,29 @@
+name: 测试
+
+on:
+  pull_request:
+    paths:
+      - 'main*.user.js'
+      - 'locals.js'
+      - 'test/**'
+      - 'package.json'
+      - '.github/workflows/test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库
+        uses: actions/checkout@v7
+
+      - name: 安装 Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: 运行测试
+        run: npm test
