@@ -2200,6 +2200,15 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
 
         "Forked from": "复刻自", // 复刻仓库
 
+        // 仓库
+        "Add the repositories you use most.": "添加您最常使用的仓库。",
+            "Add repositories": "添加仓库",
+
+            "Edit favorite repositories": "编辑置顶仓库",
+
+            "of": "\/",
+                "repositories selected.": "仓库选择",
+
         // 中间栏
         "Feed": "动态",
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
@@ -2453,6 +2462,7 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
             "Assigned to Copilot": "分配给 Copilot",
     },
     "regexp": [ // 正则翻译
+        [/(\d+) repositor(y|ies) found./, "找到 $1 个仓库。"],
         [/(\d+) pull requests/, "$1 个拉取请求"],
         [/^([\d,]+) repositor(?:y|ies) found$/, "找到 $1 个仓库"],
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
