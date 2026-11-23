@@ -782,8 +782,14 @@
         return !!(ignoredSelectors && element.closest?.(ignoredSelectors));
     }
 
+    function shouldProcessCharacterData(node) {
+        if (State.pageConfig?.characterData) return true;
+
+        const element = node?.nodeType === Node.ELEMENT_NODE ? node : node?.parentElement;
+        return !!element?.closest?.('header.GlobalNav, #__primerPortalRoot__ [role="menu"]');
+    }
+
     function processMutations(mutations) {
-        const { characterData } = State.pageConfig;
         const nodesToProcess = new Set();
         const collect = node => {
             if (!shouldIgnoreMutationNode(node)) nodesToProcess.add(node);
@@ -793,7 +799,7 @@
         for (const { target, addedNodes, type } of mutations) {
             if (type === 'childList') {
                 for (const node of addedNodes) collect(node);
-            } else if (type === 'attributes' || (type === 'characterData' && characterData)) {
+            } else if (type === 'attributes' || (type === 'characterData' && shouldProcessCharacterData(target))) {
                 collect(target);
             }
         }

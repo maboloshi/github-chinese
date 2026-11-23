@@ -67,3 +67,28 @@ test('仪表板词库收录完整 Copilot 无障碍名称', () => {
         '询问任何问题或输入 @ 来添加上下文',
     );
 });
+
+for (const [fileName, localeName, commitDetails, signedOff, lineOptions] of [
+    ['locals.js', 'zh-CN', '打开提交详情', '签字人：Ada', '行 42 选项'],
+    ['locals(greasyfork).js', 'zh-CN', '打开提交详情', '签字人：Ada', '行 42 选项'],
+    ['locals_zh-TW.js', 'zh-TW', '打開提交詳情', '簽字人：Ada', '行 42 選項'],
+]) {
+    test(`${fileName} 精确翻译提交署名与行号菜单`, () => {
+        const locale = loadLocale(fileName, localeName);
+        const repositoryPublic = locale['repository-public'];
+        const publicRules = repositoryPublic.regexp;
+
+        assert.equal(
+            repositoryPublic.static['Open commit details'],
+            commitDetails,
+        );
+        assert.equal(
+            translateWithRules('Signed-off-by: Ada', publicRules),
+            signedOff,
+        );
+        assert.equal(
+            translateWithRules('Line 42 options', publicRules),
+            lineOptions,
+        );
+    });
+}

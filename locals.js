@@ -9478,7 +9478,7 @@ defineI18nPage(I18N["zh-CN"], "repository", () => ({ // 仓库页面 /<user-name
             "success": "成功",
             "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
-            "Open commit details": "打开提交详情", // TODO: 修复该词条翻译不生效问题
+            "Open commit details": "打开提交详情",
 
             "Failed to load latest commit information.": "载入最新提交信息失败。",
 
@@ -9720,7 +9720,7 @@ defineI18nPage(I18N["zh-CN"], "repository", () => ({ // 仓库页面 /<user-name
         [/More than (\d+) unreleased commits since ([^ ]+)/, "$2 以来有超过 $1 个未发布的提交"],
         [/(\d+) unreleased commits since ([^ ]+)/, "$2 以来有 $1 个未发布的提交"],
         [/commits by (.+)/, "由 $1 提交"],
-        [/Signed-off-by: (.*)/, "签字人：$1"], // TODO: 修复该词条翻译不生效问题
+        [/^Signed-off-by:\s*(.+)$/, "签字人：$1"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名为 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保护"], // 仓库主页 分支保护
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版仓库概述
@@ -13442,7 +13442,7 @@ defineI18nPage(I18N["zh-CN"], "repository/blob", () => ({ // 仓库 - 浏览代�
 
         [/First (\d+) files? shown./, "显示前 $1 个文件。"],
 
-        [/Line (\d+) options/, "行 $1 选项"], // TODO: 修复翻译未生效问题
+        [/^Line (\d+) options$/, "行 $1 选项"],
 
         ...I18N["zh-CN"]["repository-public"]["regexp"],
     ],
