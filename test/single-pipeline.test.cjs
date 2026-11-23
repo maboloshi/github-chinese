@@ -38,8 +38,8 @@ test('main.user.js 不再携带 React GlobalNav 旁路引擎', () => {
 test('main.user.js 只有语言守卫与主遍历两个 MutationObserver', () => {
     const observers = mainScript.match(/new MutationObserver\(/g) || [];
     assert.equal(observers.length, 2, '除语言守卫外不应再有专属观察器');
-    assert.doesNotMatch(mainScript, /__primerPortalRoot__/);
-    assert.doesNotMatch(mainScript, /GlobalNav/);
+    assert.match(mainScript, /shouldProcessCharacterData/);
+    assert.match(mainScript, /#__primerPortalRoot__ \[role="menu"\]/);
 });
 
 test('locals.js 把 GlobalNav 与 portal 交还通用遍历', () => {

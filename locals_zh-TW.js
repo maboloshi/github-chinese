@@ -9478,7 +9478,7 @@ defineI18nPage(I18N["zh-TW"], "repository", () => ({ // 儲存庫頁面 /<user-n
             "success": "成功",
             "Approved": "已批准",
             // [/([\d,]+) Commits?/, "$1 次提交"], // 新版儲存庫概述
-            "Open commit details": "打開提交詳情", // TODO: 修復該詞條翻譯不生效問題
+            "Open commit details": "打開提交詳情",
 
             "Failed to load latest commit information.": "載入最新提交訊息失敗。",
 
@@ -9720,7 +9720,7 @@ defineI18nPage(I18N["zh-TW"], "repository", () => ({ // 儲存庫頁面 /<user-n
         [/More than (\d+) unreleased commits since ([^ ]+)/, "$2 以來有超過 $1 個未發布的提交"],
         [/(\d+) unreleased commits since ([^ ]+)/, "$2 以來有 $1 個未發布的提交"],
         [/commits by (.+)/, "由 $1 提交"],
-        [/Signed-off-by: (.*)/, "簽字人：$1"], // TODO: 修復該詞條翻譯不生效問題
+        [/^Signed-off-by:\s*(.+)$/, "簽字人：$1"],
         [/Branch ([^ ]+) was renamed to ([^ ]+)./, "分支 $1 已更名為 $2。"],
         [/Your ([^ ]+) branch isn't protected/, "您的 $1 分支不受保護"], // 儲存庫主頁 分支保護
         [/([\d,]+) Commits?/, "$1 次提交"], // 新版儲存庫概述
@@ -13442,7 +13442,7 @@ defineI18nPage(I18N["zh-TW"], "repository/blob", () => ({ // 儲存庫 - 瀏覽�
 
         [/First (\d+) files? shown./, "顯示前 $1 個文件。"],
 
-        [/Line (\d+) options/, "行 $1 選項"], // TODO: 修復翻譯未生效問題
+        [/^Line (\d+) options$/, "行 $1 選項"],
 
         ...I18N["zh-TW"]["repository-public"]["regexp"],
     ],

@@ -116,6 +116,43 @@ globalThis.__process = processMutations;`, context);
     assert.deepEqual(traversed, [input], '新增与属性变化合并后只遍历一次');
 });
 
+test('React 全局导航和菜单浮层的文本节点变化在所有页面都会重新翻译', () => {
+    const traversed = [];
+    const context = vm.createContext({
+        Node: { ELEMENT_NODE: 1, TEXT_NODE: 3 },
+        State: { pageConfig: { characterData: false } },
+        shouldIgnoreMutationNode: () => false,
+        traverseNode: node => traversed.push(node),
+        console: { log() {} },
+        CONFIG: { DEV: false },
+    });
+    vm.runInContext(`${extractFunction('shouldProcessCharacterData')}
+${extractFunction('processMutations')}
+globalThis.__process = processMutations;`, context);
+
+    const globalNavText = {
+        nodeType: 3,
+        parentElement: { closest: selector => selector.includes('header.GlobalNav') ? {} : null },
+    };
+    const menuText = {
+        nodeType: 3,
+        parentElement: { closest: selector => selector.includes('[role="menu"]') ? {} : null },
+    };
+    const pageText = { nodeType: 3, parentElement: { closest: () => null } };
+
+    context.__process([
+        { type: 'characterData', target: globalNavText, addedNodes: [] },
+        { type: 'characterData', target: menuText, addedNodes: [] },
+        { type: 'characterData', target: pageText, addedNodes: [] },
+    ]);
+
+    assert.deepEqual(
+        traversed,
+        [globalNavText, menuText],
+        '只应额外处理导航和菜单文本，不应扩展到普通页面正文',
+    );
+});
+
 test('输入框与文本域会翻译 aria-label', () => {
     const textarea = { tagName: 'TEXTAREA', type: 'textarea', ariaLabel: 'Ask anything' };
     const textInput = { tagName: 'INPUT', type: 'text', ariaLabel: 'Search' };
