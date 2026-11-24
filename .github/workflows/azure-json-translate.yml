@@ -1,0 +1,43 @@
+name: Azure JSON to Simplified Chinese
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_file:
+        description: JSON file to translate, relative to the repository workspace
+        required: true
+        type: string
+      output_file:
+        description: Destination JSON file, relative to the repository workspace
+        required: true
+        type: string
+      source_language:
+        description: Source language code
+        required: false
+        default: en
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Translate JSON
+        uses: ./.github/actions/azure-json-translate
+        with:
+          api-key: ${{ secrets.AZURE_TRANSLATOR_KEY }}
+          region: ${{ vars.AZURE_TRANSLATOR_REGION }}
+          input-file: ${{ inputs.input_file }}
+          output-file: ${{ inputs.output_file }}
+          source-language: ${{ inputs.source_language }}
+
+      - name: Upload translated JSON
+        uses: actions/upload-artifact@v7
+        with:
+          name: zh-Hans-localization
+          path: ${{ inputs.output_file }}

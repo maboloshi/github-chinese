@@ -1,0 +1,28 @@
+name: Azure JSON to Simplified Chinese
+description: Translate JSON string values with Azure Translator while preserving keys and placeholders.
+
+inputs:
+  api-key:
+    description: Azure Translator subscription key. Pass this through a GitHub secret.
+    required: true
+  region:
+    description: Azure Translator resource region, such as eastus.
+    required: true
+  input-file:
+    description: JSON file to translate, relative to the workflow workspace or an absolute path.
+    required: true
+  output-file:
+    description: Destination JSON file, relative to the workflow workspace or an absolute path.
+    required: true
+  source-language:
+    description: Source language code.
+    required: false
+    default: en
+  endpoint:
+    description: Azure Translator endpoint.
+    required: false
+    default: https://api.cognitive.microsofttranslator.com
+
+runs:
+  using: node24
+  main: index.js
