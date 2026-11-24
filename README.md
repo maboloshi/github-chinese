@@ -36,6 +36,7 @@
 - [💻 安装指南](#-安装指南)
     - [浏览器（Tampermonkey）](#浏览器tampermonkey)
     - [VS Code 市场扩展](#vs-code-市场扩展)
+- [🤖 Azure JSON 翻译 Action](#-azure-json-翻译-action)
 - [🔧 本地调试](#-本地调试)
 - [🔄 更新日志](#-更新日志)
 - [📌 待办事项](#-待办事项)
@@ -91,6 +92,10 @@ VS Code 集成浏览器  |
 ### VS Code 集成浏览器
 
 请参考[扩展的自述文件](vscode-extension/README.md)。
+
+### 🤖 Azure JSON 翻译 Action
+
+仓库提供可复用的 GitHub Action，使用 Azure Translator 将英文 JSON 字符串值翻译为简体中文，并保留 JSON 键、结构和常见占位符。配置 Azure Translator 密钥及区域的方法和工作流示例见[使用文档](docs/azure-json-translate.md)。
 
 ## 🔧 本地调试
 
