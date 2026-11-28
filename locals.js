@@ -2200,6 +2200,15 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
 
         "Forked from": "复刻自", // 复刻仓库
 
+        // 仓库
+        "Add the repositories you use most.": "添加您最常使用的仓库。",
+            "Add repositories": "添加仓库",
+
+            "Edit favorite repositories": "编辑置顶仓库",
+
+            "of": "\/",
+                "repositories selected.": "仓库选择",
+
         // 中间栏
         "Feed": "动态",
         "The home for all developers — including you.": "所有开发者的家园——包括您。",
@@ -2453,6 +2462,7 @@ defineI18nPage(I18N["zh-CN"], "page-dashboard", () => ({ // 已登录的首页 -
             "Assigned to Copilot": "分配给 Copilot",
     },
     "regexp": [ // 正则翻译
+        [/(\d+) repositor(y|ies) found./, "找到 $1 个仓库。"],
         [/(\d+) pull requests/, "$1 个拉取请求"],
         [/^([\d,]+) repositor(?:y|ies) found$/, "找到 $1 个仓库"],
         [/added (\d+) repositor(y|ies) to/, "添加 $1 个仓库到"],
@@ -11379,6 +11389,12 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "Some commits from the old base branch may be removed from the timeline, and old review comments may become outdated.": "旧的基础分支的一些提交可能会从时间线上移除，而旧的审查意见可能会变得过时。",
                 "Change base": "更改基础分支",
 
+            "Try the Overview page": "试用概览页",
+            "Try the new pull requests Overview page!": "试用新拉取请求概览页！",
+                "Focus on what matters most and take action with confidence.": "专注于最重要的事情并充满信心地采取行动。",
+                "Try Overview": "现在尝试",
+                "Not now": "以后再说",
+
             "View status": "查看状态",
             "Not ready": "未准备好",
             "Able to merge": "可以合并",
@@ -11573,6 +11589,9 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                     "Copilot has failed": "Copilot 已失败",
                     "completed after": "总耗时", // 示例：总耗时 11分45秒
                     "failed after": "失败于",
+
+                // 锁定对话词条下方
+                "Archive pull request": "存档拉取请求",
 
             // 讨论标签卡 主页
             "Refresh": "刷新",
@@ -11804,6 +11823,28 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "authorized": "权限",
                 "to merge this pull request.": "合并此拉取请求。",
 
+            "Copilot can watch this pull request": "Copilot 可以查看此拉取请求",
+                "Copilot can monitor this pull request for failed Actions workflows and merge conflicts and fix them automatically.": "Copilot 可以监控此拉取请求，检测 Actions 失败工作流以及合并冲突，并自动进行修复",
+
+            "Copilot is watching this pull request": "Copilot 正在观察此拉取请求",
+                "Copilot will resolve merge conflicts. Fixing failed Actions workflows is off.": "Copilot 将解决合并冲突",
+                "Copilot is resolving merge conflicts.": "Copilot 解决合并冲突中。",
+                "Copilot finished resolving merge conflicts.": "Copilot 已解决合并冲突",
+
+                "Unassign Copilot": "取消",
+                    "Choose which actions Copilot can take": "选择 Copilot 可用操作",
+
+                    "Automatic actions": "自动操作",
+                        "Fix failed Actions workflows": "修复失败 Actions 工作流",
+                            "Identify the root cause of failed Actions workflows, apply a fix and validate the result.": "识别 Actions 工作流失败根因，应用修复并验证结果。",
+                        "Resolve merge conflicts": "解决合并冲突",
+                            "Merge the pull request's base branch into this branch and resolve conflicts.": "合并此拉取请求的基础分支到此分支并解决冲突。",
+                            "Turning this off unassigns Copilot.": "关掉此 Copilot。",
+
+            "Copilot cannot watch this pull request": "Copilot 无法查看此拉取请求",
+                "Agent Merge is not supported for pull requests from forks.": "智能体合并不支持来自复刻的拉取请求。",
+                "Watch and fix": "查看并修复",
+
             "Merge pull request": "合并拉取请求",
                 "Merging is blocked due to failing merge requirements": "由于未满足合并要求，合并已被阻止。",
             // 合并拉取请求 按钮下拉
@@ -11914,6 +11955,8 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
 
                 "Edit on the web": "在线编辑",
                 "Fix with Copilot": "使用 Copilot 修复",
+                "Watch with Copilot": "使用 Copilot 观察",
+                    "Automatically resolve merge conflicts in this pull request.": "自动解决合并冲突",
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者批准",
