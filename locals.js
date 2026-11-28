@@ -11823,6 +11823,24 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
                 "authorized": "权限",
                 "to merge this pull request.": "合并此拉取请求。",
 
+            "Copilot can watch this pull request": "Copilot 可以查看此拉取请求",
+                "Copilot can monitor this pull request for failed Actions workflows and merge conflicts and fix them automatically.": "Copilot 可以监控此拉取请求，检测 Actions 失败工作流以及合并冲突，并自动进行修复",
+
+            "Copilot is watching this pull request": "Copilot 正在观察此拉取请求",
+                "Copilot will resolve merge conflicts. Fixing failed Actions workflows is off.": "Copilot 将解决合并冲突",
+                "Copilot is resolving merge conflicts.": "Copilot 解决合并冲突中。",
+                "Copilot finished resolving merge conflicts.": "Copilot 已解决合并冲突",
+
+                "Unassign Copilot": "取消",
+                    "Choose which actions Copilot can take": "选择 Copilot 可用操作",
+
+                    "Automatic actions": "自动操作",
+                        "Fix failed Actions workflows": "修复失败 Actions 工作流",
+                            "Identify the root cause of failed Actions workflows, apply a fix and validate the result.": "识别 Actions 工作流失败根因，应用修复并验证结果。",
+                        "Resolve merge conflicts": "解决合并冲突",
+                            "Merge the pull request's base branch into this branch and resolve conflicts.": "合并此拉取请求的基础分支到此分支并解决冲突。",
+                            "Turning this off unassigns Copilot.": "关掉此 Copilot。",
+
             "Copilot cannot watch this pull request": "Copilot 无法查看此拉取请求",
                 "Agent Merge is not supported for pull requests from forks.": "智能体合并不支持来自复刻的拉取请求。",
                 "Watch and fix": "查看并修复",
@@ -11937,6 +11955,8 @@ defineI18nPage(I18N["zh-CN"], "repository/pull", () => ({ // 仓库 - 某个拉�
 
                 "Edit on the web": "在线编辑",
                 "Fix with Copilot": "使用 Copilot 修复",
+                "Watch with Copilot": "使用 Copilot 观察",
+                    "Automatically resolve merge conflicts in this pull request.": "自动解决合并冲突",
             "Conflicting files": "冲突的文件:",
 
             "Require approval from specific reviewers before merging": "合并前需要特定审查者批准",
